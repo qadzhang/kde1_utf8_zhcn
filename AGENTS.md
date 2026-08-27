@@ -13,7 +13,7 @@
 3. **浏览器内核跟进**：KDE 1 自带浏览器（kfm）的 HTML 内核过于古老，以 **WebKit2GTK 为新内核**（Debian 12 官方包，完整现代 CSS / JIT JS / HTTPS），与 1999 年原始渲染器构成**新旧双内核可切换**（新内核看现代网页，旧内核保持历史原貌）；CEF（Chromium）为备选路线；Firefox/Gecko 无维护中的嵌入接口，已排除。
 4. **全面中文化与英文对齐**：菜单、帮助、提示等**所有**界面内容全面中文化，覆盖率与英文原文对齐——不是"部分翻译"，而是与英文功能完全对等。**kvt 终端内的中文内容（文件名、命令输出等）显示正常；与系统现代应用（浏览器、现代 Qt/GTK 程序）之间可双向复制粘贴中文文本**。**翻译质量硬性要求**：禁止闭门自造译法——每条新增/修订翻译必须 ① 上网检索通行、准确的中文译法；② **对齐当今 KDE 6（Plasma 6 / KDE Gear）的 zh_CN 官方翻译术语**，保证用词与现代 KDE 一致（用户从 KDE 6 切换到本项目不应感到术语跳变）；③ 1999 年自带的 GB2312 旧翻译仅作参考底稿，其术语与现代 KDE 冲突时以现代术语为准。
 5. **Debian 软件包交付（唯一正式安装方式）**：正式安装**只经 deb 包**（dpkg / apt）——源码包（sdeb：.dsc + .orig.tar.* + .debian.tar.*）与二进制 .deb 包都要产出，且**分目录存放**（`dist/src/` 与 `dist/deb/`，不得混放）。**.deb 须开箱即用、零手工配置**，包内容至少含：① `/usr/kde1` 全树（各模块经 DESTDIR 暂存收编）；② `/usr/share/xsessions/kde1.desktop` 会话入口；③ **startkde 包装启动脚本**（内部完成 PATH / LD_LIBRARY_PATH / KDEDIR 环境设置后 exec 真正的 startkde——用户不需要写 `.xinitrc`、不需要 export 任何变量）；④ moc-qt1 命令入口；⑤ 运行时依赖声明（libxft / fontconfig / libwebkit2gtk、中文字体等）。安装后 lightdm 会话菜单即出现 KDE 1。**安装/卸载走 dpkg 标准生命周期**：`apt install` 安装、`apt remove` 干净移除、不留任何游离于包管理之外的文件；按模块合理拆分核心包与可选应用包（拆分方案实施时定）。`build.sh` 仅负责开发期构建与 `./staging` 暂存运行验证，**不得 sudo 直接安装到系统**。
-6. **现代系统集成**：图形登录由**系统显示管理器管理**（本机为 lightdm，方式与 XFCE 等现代桌面一致）——KDE 1 会话出现在 lightdm 会话菜单、选择后直接进入桌面，**不依赖手工 `startx`**；桌面事件音效**接入现代音频栈**（PipeWire/PulseAudio），1999 年的 `/dev/dsp`（OSS）失效路径必须解决（padsp/osspd 兼容层或原生补丁），提示音正常发声。
+6. **现代系统集成**：图形登录由**系统显示管理器管理**（本机为 lightdm，方式与 XFCE 等现代桌面一致）——KDE 1 会话出现在 lightdm 会话菜单、选择后直接进入桌面，**不依赖手工 `startx`**；桌面事件音效**接入现代音频栈**（PipeWire/PulseAudio），1999 年的 `/dev/dsp`（OSS）失效路径必须解决（padsp/osspd 兼容层或原生补丁），提示音正常发声；**XDG 用户目录兼容**——桌面/模板等用户目录与宿主现代桌面共用同一套（经 `~/.config/user-dirs.dirs`，中文系统即 `~/桌面`、`~/模板`），回收站对齐 freedesktop 标准（`~/.local/share/Trash`），不得另建 1999 年的 `~/Desktop` 体系。
 7. **打印接入 CUPS**：KDE1 的打印（Qt1 QPrinter 经 `lpr` 命令提交）必须正常接入现代 CUPS 打印体系——经 `cups-bsd` 兼容层（提供 `/usr/bin/lpr`）零代码打通，deb 依赖声明完整；实测打印任务能进入 CUPS 队列并产出。
 8. **全面 UTF-8 融合**：多字节感知**不止于编辑部件，而是所有模块全面的接入、融合**——Qt 内核与各 KDE 模块中一切按字节处理文本的路径（光标移动、退格/删除、选区、字符串截断/省略、字符计数与长度限制、宽度测量与对齐、表格/列表列宽、文件名与标题显示、查找替换等），在中文文本上**一律按 UTF-8 字符边界精确操作**：不切断字符、不产生错位、计数与宽度准确。验收口径：KDE 1 作为整体**完美运行于 UTF-8 系统**，用户在任何模块、任何文本交互处都感知不到"这是单字节时代的程序"（该目标 1999 年 CLE 补丁未达成，本项目必须达成）。
 
@@ -195,6 +195,7 @@ int qt_mb_text_width( const char *s, int len )
 - [x] kfm 浏览器内核升级：以 WebKit2GTK 为新内核——kfm 窗口内实现 XEmbed 容器（kfm 侧手写，约一两百行 C）挂载 WebKit 视图（GtkPlug 一侧现成），与 1999 原始渲染器构成新旧双内核可切换；CEF（Chromium）备选，Firefox/Gecko 已排除；实施时先做最小嵌入原型验证，再动 kfm 本体（见 §1 目标 3）
 - [ ] 界面全面中文化：补齐菜单/帮助/提示翻译，覆盖率与英文对齐；译法须上网核实通行译法并与当今 KDE 6 的 zh_CN 官方术语一致（见 §1 目标 4）
 - [x] 打印接入 CUPS：经 cups-bsd 兼容层打通 Qt1 的 lpr 打印路径，deb 依赖声明，实测打印任务进入 CUPS 队列（见 §1 目标 7）
+- [x] XDG 用户目录兼容：KFMPaths 默认值改为经 ~/.config/user-dirs.dirs 解析（桌面=~/桌面、模板=~/模板），Autostart 挪至 ~/.kde/share/autostart，回收站对齐 ~/.local/share/Trash/files；实测 KDE1 桌面与 XFCE 共用 ~/桌面 且不再创建 ~/Desktop（见 §1 目标 6）
 - [x] Debian 打包：按模块拆分核心包与可选包，产出源码包与二进制 .deb 包并分目录存放（dist/src/ 与 dist/deb/）；.deb 开箱即用——含 xsessions 会话入口、startkde 环境包装脚本（PATH/LD_LIBRARY_PATH/KDEDIR 自动设置）、moc-qt1 入口、运行时依赖声明；apt install 即装、lightdm 即现、apt remove 干净移除（见 §1 目标 5）
 
 **暂缓项（明确延后，不纳入当前验收）：**

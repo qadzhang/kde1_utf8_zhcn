@@ -4,6 +4,10 @@
 
 ## 2026-08-28
 
+- XDG 用户目录兼容落地并实机验证：KFMPaths 四项默认值改造——桌面/模板经 ~/.config/user-dirs.dirs 解析（中文系统即 ~/桌面、~/模板，kfm 配置显式设置仍优先）、Autostart 挪至 ~/.kde/share/autostart（不再污染桌面目录）、回收站对齐 freedesktop ~/.local/share/Trash/files（现代文件管理器可见 kfm 删除物）；实测 KDE1 桌面与 XFCE 完全共用 ~/桌面（原有文件+测试文件同屏显示）、不再创建 ~/Desktop。验收标准第 6 条扩充 XGD 表述，路线图记已完成项。
+
+## 2026-08-28
+
 - 全语言 po 转 UTF-8：非中文的 31 种语言约 1900 个 po（Latin-1/2/8、KOI8-R、EUC-JP 等）全部按各自 charset 声明转码为 UTF-8——宿主固定 UTF-8 前提下，任何 XX.UTF-8 locale 的用户经 KLocale 的语言回退命中 XX 目录后拿到的均为合法 UTF-8 内容（此前 Latin-1 系语言会出现重音字符乱码）；1999 年遗留的格式符错误条目以 #~ 废弃、损坏的 ja kstart 两文件重写为合法头，全项目 2064 个 po msgfmt 终检通过；法语 mo 重音字符（é/è/ç）抽查验证为合法 UTF-8；deb 已重打包重装。英文环境无需转换（不经 mo，源码原文即 ASCII）。
 
 ## 2026-08-28
