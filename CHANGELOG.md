@@ -4,6 +4,10 @@
 
 ## 2026-08-27
 
+- XIM 输入通道打通：QKeyEvent 新增 text() 承载输入法整段 UTF-8 提交（XmbLookupString 缓冲 16→64 字节），QLineEdit/QMultiLineEdit 整串插入；fcitx5（拼音 nihao→「你好」）与 fcitx 4.2.9.9（zhongwen→「中文」）两代框架经 XIM 向 Qt1 程序提交中文均实测通过。
+
+## 2026-08-27
+
 - 路线乙两大里程碑落地：①Qt1 Xft 多字节渲染（fontconfig 字体管理 + XRender 抗锯齿，中英混排/标点/度量实机验证通过）；②po 全量转 UTF-8（94 个文件，含 1999 年遗留坏转义与格式符修复）并以 zh_CN.UTF-8 目录统一装载，中文桌面实机验证通过——K 菜单「程序/桌面/窗口/帮助/退出」等全部中文上屏。附带：Qt1 剪贴板 UTF8_STRING/CLIPBOARD 补丁与全面 UTF-8 融合补丁（qutf8 基础设施 17 项单元测试全过，QLineEdit/QMultiLineEdit 编辑按字符边界）同批完成。
 
 ## 2026-08-27
