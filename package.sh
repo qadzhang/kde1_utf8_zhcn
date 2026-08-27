@@ -146,7 +146,7 @@ Version: ${VERSION}-${REL}
 Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
 Architecture: amd64
 Standards-Version: 4.6.2
-Build-Depends: build-essential, cmake, pkg-config, byacc, flex, gettext, libx11-dev, libxext-dev, libxmu-dev, libxpm-dev, libjpeg-dev, libpng-dev, zlib1g-dev, libtiff-dev, libxft-dev, libfontconfig1-dev, libfreetype-dev, libwebkit2gtk-4.1-dev
+Build-Depends: build-essential, cmake, git, pkg-config, byacc, flex, gettext, libx11-dev, libxext-dev, libxmu-dev, libxpm-dev, libjpeg-dev, libpng-dev, zlib1g-dev, libtiff-dev, libssl-dev, libglu1-mesa-dev, libxft-dev, libfontconfig1-dev, libfreetype-dev, libwebkit2gtk-4.1-dev
 Files:
 EOF
 for f in "$OUTSRC/kde1_${VERSION}.orig.tar.xz" "$OUTSRC/kde1_${VERSION}-${REL}.debian.tar.xz"; do

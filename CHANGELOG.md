@@ -4,6 +4,10 @@
 
 ## 2026-08-28
 
+- 依赖清单补齐：构建过程中实补的 byacc/flex（Qt1 老工具链）、libglu1-mesa-dev（qt1 OpenGL 扩展）、libssl-dev（kdebase）、pkg-config（CMake 探测）全部写入 AGENTS.md §4 与 README.md 构建必需组，并同步 debian/control 与 package.sh 生成 .dsc 的 Build-Depends；新增「运行与测试推荐」组（fonts-noto-cjk、fcitx5/fcitx5-chinese-addons/fcitx、pulseaudio-utils、xvfb、gettext、x11-utils、x11-xserver-utils、imagemagick、xdotool、xterm、dbus-x11）。
+
+## 2026-08-28
+
 - Debian 打包完成并经装/删/重装全流程验证：kde1-core（qt1+kdelibs+kdebase，9.1MB）/ kde1-apps（四应用模块，3.6MB）/ kde1 元包（xsessions 会话入口 + startkde-kde1 环境包装：KDEDIR/PATH/LD 自动设置、fcitx5/fcitx 自动拉起、padsp 音效转发、/usr/bin/moc-qt1 入口）分存 dist/deb，sdeb 源码包（orig/debian/dsc）存 dist/src；apt remove 零残留验证通过，重装为最终交付态。deb 安装后的系统级会话经 lightdm 等价路径实机验证：桌面图标全中文（个人文件/回收站/模板/自动启动/打印机）、fcitx5 托盘自动拉起、Xft 抗锯齿渲染正常。kfm 双内核集成完成（View 菜单/Ctrl+Shift+W/KFM_WEBENGINE 三入口 + kde1-webview XEmbed 嵌入，最小原型已验证 WebKit 渲染现代 HTTPS 站点）。kvt 中文显示、剪贴板 UTF8_STRING 协议、qutf8 编辑精度（17 项单测）此前均已落地。剩余差距如实记录：界面英文与中文的完全对齐仍有源码未标记 i18n 的存量串与 krn/kppp 等 po 缺口；kfm 双内核与 lightdm 真机菜单级交互待用户重启会话后最终确认。
 
 ## 2026-08-27

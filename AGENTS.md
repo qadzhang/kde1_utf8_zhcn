@@ -43,11 +43,20 @@
 ## 4. 构建与运行（Debian 12）
 
 ```bash
-# 依赖（libxft / libfontconfig / libfreetype 为路线乙 fontconfig+Xft 字体栈所需；
-#       libwebkit2gtk 为 kfm 新内核 WebKit2GTK 所需）
-sudo apt install build-essential cmake git libx11-dev libxext-dev \
-     libxmu-dev libxpm-dev libjpeg-dev libpng-dev zlib1g-dev libtiff-dev \
+# 依赖——构建必需（byacc/flex 为 Qt1 老工具链所需；libglu 为 qt1 OpenGL 扩展；
+# libssl 为 kdebase 所需；pkg-config 为各模块 CMake 探测所需；
+# libxft/libfontconfig/libfreetype 为路线乙 fontconfig+Xft 字体栈；
+# libwebkit2gtk 为 kfm 新内核）
+sudo apt install build-essential cmake git pkg-config byacc flex \
+     libx11-dev libxext-dev libxmu-dev libxpm-dev libjpeg-dev libpng-dev \
+     zlib1g-dev libtiff-dev libssl-dev libglu1-mesa-dev \
      libxft-dev libfontconfig1-dev libfreetype-dev libwebkit2gtk-4.1-dev
+
+# 依赖——运行与测试推荐（中文字体/输入法、padsp 音效转发、无头验证工具）
+sudo apt install fonts-noto-cjk fcitx5 fcitx5-chinese-addons \
+     fcitx pulseaudio-utils \
+     xvfb gettext x11-utils x11-xserver-utils imagemagick xdotool \
+     xterm dbus-x11
 
 # 构建：只编译并把安装结果经 DESTDIR 重定向到 ./staging 暂存区
 # （零提权、不写入任何系统目录；正式安装一律走 deb 包，见 §1 目标 5）
