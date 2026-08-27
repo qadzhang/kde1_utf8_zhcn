@@ -1,0 +1,26 @@
+#!/bin/sh
+echo "KFM Super User"
+echo "--------------"
+echo ""
+
+HAS_LOCAL="$(xhost | grep -q LOCAL && echo true)"
+if [ ! "$HAS_LOCAL" = "true" ]; then
+  echo "Allowing ALL (!) local users to use this display"
+  xhost +local:
+fi
+
+echo ""
+echo "Logging in as super user"
+
+# Test KDEDIR first, otherwise use hardcoded path (allows to move the KDE dir)
+if test -f $KDEDIR/bin/kfm ; then
+ kfm=$KDEDIR/bin/kfm
+else
+ kfm=@KDE1_BINDIR@/kfm
+fi
+
+su - root -c "DISPLAY=$DISPLAY; export DISPLAY; $kfm -sw >/dev/null"
+
+if [ ! "$HAS_LOCAL" = "true" ]; then
+    xhost -local:
+fi
