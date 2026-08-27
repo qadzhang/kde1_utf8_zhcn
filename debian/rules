@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+#   Written with GLM-5.3 (Z.ai) for the KDE1 Revival Project
+# Debian 构建规则：按依赖序 cmake 各模块并 DESTDIR 收编（与 build.sh 同构）
+%:
+	dh $@
+
+override_dh_auto_build:
+	for i in qt1 kdelibs kdebase kdegames kdeutils kdenetwork kdetoys; do \
+	    mkdir -p $$i/builddh && (cd $$i/builddh && cmake .. \
+	        -DCMAKE_INSTALL_PREFIX=/usr/kde1 -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+	        && make -j$$(nproc)) || exit 1; \
+	done
+
+override_dh_auto_install:
+	for i in qt1 kdelibs kdebase; do \
+	    (cd $$i/builddh && make install DESTDIR=$(CURDIR)/debian/kde1-core) || exit 1; \
+	done
+	for i in kdegames kdeutils kdenetwork kdetoys; do \
+	    (cd $$i/builddh && make install DESTDIR=$(CURDIR)/debian/kde1-apps) || exit 1; \
+	done

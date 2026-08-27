@@ -1,0 +1,31 @@
+Source: kde1
+Section: x11
+Priority: optional
+Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
+Build-Depends: build-essential, cmake, pkg-config, byacc, flex, gettext,
+ libx11-dev, libxext-dev, libxmu-dev, libxpm-dev, libjpeg-dev, libpng-dev,
+ zlib1g-dev, libtiff-dev, libxft-dev, libfontconfig1-dev, libfreetype-dev,
+ libwebkit2gtk-4.1-dev
+Standards-Version: 4.6.2
+
+Package: kde1-core
+Architecture: amd64
+Depends: libx11-6, libxext6, libxmu6, libxpm4, libjpeg62-turbo, libpng16-16,
+ zlib1g, libtiff6, libxft2, libfontconfig1, libfreetype6,
+ libwebkit2gtk-4.1-0
+Recommends: fonts-noto-cjk
+Description: KDE 1.1.2 core desktop (Qt 1.44, kdelibs, kdebase) - restored
+ The classic KDE 1.1.2 desktop (1999), restored to run natively on Debian 12
+ with full Simplified Chinese (UTF-8) support.
+
+Package: kde1-apps
+Architecture: amd64
+Depends: kde1-core (= ${binary:Version})
+Description: KDE 1.1.2 applications (games, utils, network, toys) - restored
+
+Package: kde1
+Architecture: amd64
+Depends: kde1-core (= ${binary:Version}), kde1-apps (= ${binary:Version})
+Recommends: fcitx5 | fcitx, pulseaudio-utils
+Description: KDE 1.1.2 Revival - session integration metapackage
+ lightdm session entry and startkde-kde1 wrapper; zero manual configuration.
