@@ -26,6 +26,6 @@ Description: KDE 1.1.2 applications (games, utils, network, toys) - restored
 Package: kde1
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version}), kde1-apps (= ${binary:Version})
-Recommends: fcitx5 | fcitx, pulseaudio-utils
+Recommends: fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
 Description: KDE 1.1.2 Revival - session integration metapackage
  lightdm session entry and startkde-kde1 wrapper; zero manual configuration.

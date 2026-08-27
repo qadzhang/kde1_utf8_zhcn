@@ -117,7 +117,7 @@ Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
 Section: x11
 Priority: optional
 Depends: kde1-core (= ${VERSION}-${REL}), kde1-apps (= ${VERSION}-${REL})
-Recommends: fcitx5 | fcitx, pulseaudio-utils
+Recommends: fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
 Description: KDE 1.1.2 Revival - session integration metapackage
  Installs the lightdm session entry (KDE 1.1.2 Revival) and the
  startkde-kde1 wrapper which sets KDEDIR/PATH/LD_LIBRARY_PATH, starts

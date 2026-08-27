@@ -4,6 +4,10 @@
 
 ## 2026-08-28
 
+- 打印接入 CUPS 并闭环实测通过：Qt1 QPrinter 的 lpr 命令路径经 cups-bsd 兼容层（/usr/bin/lpr）零代码接入现代 CUPS；kde1 元包 Recommends 声明 cups-bsd/cups（package.sh 与 debian/control 同步）；实测 lpr -P PDF 提交中文文档成功产出 PDF 且内容正确。验收标准增至八条（打印为第 7 条，原 UTF-8 融合顺延为第 8 条），AGENTS/README/路线图同步。
+
+## 2026-08-28
+
 - 依赖清单补齐：构建过程中实补的 byacc/flex（Qt1 老工具链）、libglu1-mesa-dev（qt1 OpenGL 扩展）、libssl-dev（kdebase）、pkg-config（CMake 探测）全部写入 AGENTS.md §4 与 README.md 构建必需组，并同步 debian/control 与 package.sh 生成 .dsc 的 Build-Depends；新增「运行与测试推荐」组（fonts-noto-cjk、fcitx5/fcitx5-chinese-addons/fcitx、pulseaudio-utils、xvfb、gettext、x11-utils、x11-xserver-utils、imagemagick、xdotool、xterm、dbus-x11）。
 
 ## 2026-08-28
