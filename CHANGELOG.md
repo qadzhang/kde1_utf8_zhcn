@@ -4,6 +4,10 @@
 
 ## 2026-08-27
 
+- 仓库初始化为 git 并完成三次分层提交（历史源码基线 → 项目文档与构建脚本 → 路线乙补丁：Xft 渲染/UTF8_STRING 剪贴板/全面 UTF-8 融合），构建产物（*/build、staging、dist）经 .gitignore 排除；同日完成依赖安装与 7 模块全量编译（byacc/flex/libglu/libssl 补装），Xvfb 英文桌面冒烟测试通过，Xft 中文渲染经实机截图验证（中英混排/标点/度量同源正常）。
+
+## 2026-08-27
+
 - 细化 deb 交付内容与安装/卸载要求（AGENTS.md 目标 5、路线图、README 打包交付节）：.deb 开箱即用零手工配置——含 /usr/kde1 全树、xsessions 会话入口、startkde 环境包装脚本（自动设置 PATH/LD_LIBRARY_PATH/KDEDIR，用户无需 .xinitrc 与 export）、moc-qt1 入口、运行时依赖声明；安装卸载走 dpkg 标准生命周期（apt install / apt remove 干净移除）；按模块拆分核心包与可选包；并修正 README 打包节残留的「与 build.sh 直装等价」旧表述。
 
 ## 2026-08-27
