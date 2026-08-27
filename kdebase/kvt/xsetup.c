@@ -33,6 +33,15 @@
 #include "rxvt.h"
 #include "command.h"
 #include "xsetup.h"
+/* [KDE1 Revival 2026] kvt UTF-8 渲染（路线乙）：
+   惰性初始化 Xft 字体与绘制句柄。XftFont 取 monospace 且 pixelsize 对齐
+   原核心字体的单元高度，保证基线/行高一致；XftDraw 绑定 vt_win。
+   screen.c 的绘制段在文本含 UTF-8 多字节时改经 XftDrawStringUtf8 输出。 */
+#include <X11/Xft/Xft.h>
+
+XftFont *kvt_xftfont = 0;
+XftDraw *kvt_xftdraw = 0;
+int kvt_xft_ready(void);	/* 实现见本文件尾部（依赖前部声明的全局量） */
 #include "screen.h"
 #include "sbar.h"
 #include "debug.h"
@@ -788,4 +797,23 @@ void NewFont(int direction)
     }
   
   LoadNewFont();
+}
+
+
+/* [KDE1 Revival 2026] kvt UTF-8 渲染（路线乙）：Xft 惰性初始化。
+   XftFont 取 monospace 且 pixelsize 对齐原核心字体的单元高度（行高/
+   基线一致）；XftDraw 绑定 vt_win 与默认 Visual/colormap。 */
+int kvt_xft_ready(void)
+{
+    if ( !kvt_xftfont ) {
+	char pat[64];
+	snprintf(pat, sizeof(pat), "monospace:pixelsize=%d",
+		 MyWinInfo.fheight > 0 ? MyWinInfo.fheight : 16);
+	kvt_xftfont = XftFontOpenName(display, screen, pat);
+    }
+    if ( kvt_xftfont && !kvt_xftdraw && vt_win )
+	kvt_xftdraw = XftDrawCreate(display, vt_win,
+				    DefaultVisual(display, screen),
+				    colormap);
+    return kvt_xftfont && kvt_xftdraw;
 }

@@ -12,6 +12,14 @@
 
 
 #include <stdio.h>
+
+/* [KDE1 Revival 2026] kvt UTF-8 渲染（路线乙）：绘制段含多字节文本时经
+   Xft/fontconfig 输出，见 xsetup.c 的 kvt_xft_ready 与 qmbxft 同源设计 */
+#include <X11/Xft/Xft.h>
+extern XftFont *kvt_xftfont;
+extern XftDraw *kvt_xftdraw;
+extern int kvt_xft_ready(void);
+extern Colormap colormap;
 #include <sys/types.h>
 #include <sys/ioctl.h>
 #include <X11/Xlib.h>
@@ -2315,12 +2323,52 @@ void screen_refresh()
 #endif
 	      x1 = k*MyWinInfo.fwidth + MARGIN;
 	      
-  	      XDrawImageString(display,vt_win,thisGC,x1,y1,ch,n);  
+	      /* [KDE1 Revival 2026] UTF-8 多字节段：kvt 逐字节存格，连续同属性
+	         字节天然聚合为完整 UTF-8 段；含高位字节的段改经 Xft 绘制
+	         （背景按列网格宽度填充保持网格对齐，bold 以双画近似加粗；
+	         下划线/GRFONT/COLOR 恢复沿用下方公共逻辑，两路径共用） */
+	      {
+		int has_mb = 0;
+		for (x = 0; x < n; x++) {
+		  if ((unsigned char)ch[x] >= 0x80) { has_mb = 1; break; }
+		}
+		if (has_mb && kvt_xft_ready()) {
+		  XGCValues mbgcv;
+		  XColor mbfc, mbbc;
+		  XftColor mbxfg, mbxbg;
+		  Visual *mbvis = DefaultVisual(display, DefaultScreen(display));
+		  XGetGCValues(display, thisGC, GCForeground|GCBackground, &mbgcv);
+		  mbfc.pixel = mbgcv.foreground;
+		  mbbc.pixel = mbgcv.background;
+		  XQueryColor(display, colormap, &mbfc);
+		  XQueryColor(display, colormap, &mbbc);
+		  {
+		    XRenderColor mbrf = { mbfc.red, mbfc.green, mbfc.blue, 0xffff };
+		    XRenderColor mbrb = { mbbc.red, mbbc.green, mbbc.blue, 0xffff };
+		    if (XftColorAllocValue(display, mbvis, colormap, &mbrf, &mbxfg) &&
+			XftColorAllocValue(display, mbvis, colormap, &mbrb, &mbxbg)) {
+		      XftDrawRect(kvt_xftdraw, &mbxbg, x1,
+				  y1 - mainfont->ascent,
+				  n*MyWinInfo.fwidth, MyWinInfo.fheight);
+		      XftDrawStringUtf8(kvt_xftdraw, &mbxfg, kvt_xftfont,
+					x1, y1, (XftChar8*)ch, n);
+		      if (rval & RS_BOLD && color_type != COLOR_TYPE_Linux)
+			XftDrawStringUtf8(kvt_xftdraw, &mbxfg, kvt_xftfont,
+					  x1+1, y1, (XftChar8*)ch, n);
+		      XftColorFree(display, mbvis, colormap, &mbxfg);
+		      XftColorFree(display, mbvis, colormap, &mbxbg);
+		    } else {
+		      XDrawImageString(display,vt_win,thisGC,x1,y1,ch,n);
+		    }
+		  }
+		} else {
+		  XDrawImageString(display,vt_win,thisGC,x1,y1,ch,n);
+		  if (rval & RS_BOLD && color_type != COLOR_TYPE_Linux)
+		    XDrawString(display,vt_win,thisGC,x1+1,y1,ch,n);
+		}
+	      }
 
 	      if(rval != 0) {
-		if (rval & RS_BOLD && color_type != COLOR_TYPE_Linux) {
-		  XDrawString(display,vt_win,thisGC,x1+1,y1,ch,n);
-		}	      
 		  
 		/* On the smallest font, underline overwrites the next row */
 		if ((rval & RS_ULINE)&&(mainfont->descent > 1))
