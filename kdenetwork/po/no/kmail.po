@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kmcomposewin.cpp:1516 kmmainwin.cpp:377 kpgp.cpp:546
@@ -59,7 +59,7 @@ msgid ""
 "Are you sure you want to remove the folder\n"
 "\"%s\", discarding it's contents ?"
 msgstr ""
-"Er du sikker på at du ønsker å fjerne mappen\n"
+"Er du sikker pÃ¥ at du Ã¸nsker Ã¥ fjerne mappen\n"
 "\"%s\", og dermed slette dens innhold ?"
 
 #: kmmainwin.cpp:523
@@ -84,15 +84,15 @@ msgstr "Velg mappe"
 
 #: kmmainwin.cpp:669
 msgid "Queued messages successfully sent."
-msgstr "Meldinger i køen avsendt."
+msgstr "Meldinger i kÃ¸en avsendt."
 
 #: kmmainwin.cpp:671
 msgid "Failed to send (some) queued messages."
-msgstr "Mislykkes å sende (noen) meldinger i køen."
+msgstr "Mislykkes Ã¥ sende (noen) meldinger i kÃ¸en."
 
 #: kmmainwin.cpp:802
 msgid "Opening URL..."
-msgstr "Åpner URL..."
+msgstr "Ã…pner URL..."
 
 #: kmmainwin.cpp:857
 msgid "Address added to addressbook."
@@ -128,7 +128,7 @@ msgstr "Kopier til utklippstavlen"
 
 #: kmmainwin.cpp:917
 msgid "Open URL..."
-msgstr "Åpne URL..."
+msgstr "Ã…pne URL..."
 
 #: kmheaders.cpp:1001 kmmainwin.cpp:927 kmmainwin.cpp:1044
 msgid "&Reply..."
@@ -176,7 +176,7 @@ msgstr "Sjekk post i..."
 
 #: kmmainwin.cpp:984
 msgid "Send Queued"
-msgstr "Send fra køen"
+msgstr "Send fra kÃ¸en"
 
 #: kmmainwin.cpp:987
 msgid "&Settings..."
@@ -208,7 +208,7 @@ msgstr "K&omprimere"
 
 #: kmfoldertree.cpp:314 kmmainwin.cpp:1017
 msgid "&Empty"
-msgstr "&Tøm"
+msgstr "&TÃ¸m"
 
 #: kmfilterdlg.cpp:149 kmheaders.cpp:991 kmmainwin.cpp:1026
 msgid "New"
@@ -228,7 +228,7 @@ msgstr "Besvart"
 
 #: kmheaders.cpp:995 kmmainwin.cpp:1030
 msgid "Queued"
-msgstr "I kø"
+msgstr "I kÃ¸"
 
 #: kmheaders.cpp:996 kmmainwin.cpp:1031
 msgid "Sent"
@@ -272,7 +272,7 @@ msgstr "Bruk filter"
 
 #: kmmainwin.cpp:1070
 msgid "View Source..."
-msgstr "Se på kilde..."
+msgstr "Se pÃ¥ kilde..."
 
 #: kmmainwin.cpp:1077
 msgid "&Brief Headers"
@@ -304,7 +304,7 @@ msgstr "Smart vedlegg"
 
 #: kmmainwin.cpp:1090
 msgid "Inlined Attachments"
-msgstr "Vedlegg på linje"
+msgstr "Vedlegg pÃ¥ linje"
 
 #: kmmainwin.cpp:1101
 msgid "F&older"
@@ -348,7 +348,7 @@ msgstr "Slett melding"
 
 #: kmcomposewin.cpp:609 kmmainwin.cpp:1165
 msgid "Open addressbook..."
-msgstr "Åpne adressebok..."
+msgstr "Ã…pne adressebok..."
 
 #: kmmainwin.cpp:1177
 msgid "Initializing..."
@@ -476,7 +476,7 @@ msgid ""
 "The following placeholders are supported in the reply phrases:\n"
 "%D=date, %S=subject, %F=sender, %%=percent sign"
 msgstr ""
-"De følgende symbolene er støttet i svarstolkningen:\n"
+"De fÃ¸lgende symbolene er stÃ¸ttet i svarstolkningen:\n"
 "%D=dato, %S=emne, %F=sender, %%=prosenttegn"
 
 #: kmsettings.cpp:399
@@ -517,7 +517,7 @@ msgstr "Signer automatisk meldinger ved hjelp av PGP"
 
 #: kmsettings.cpp:450
 msgid "Word wrap at column:"
-msgstr "Bryt linje på kolonne:"
+msgstr "Bryt linje pÃ¥ kolonne:"
 
 #: kmsettings.cpp:460
 msgid "Use monospaced font"
@@ -525,7 +525,7 @@ msgstr "Bruk monospaced skrifttype"
 
 #: kmsettings.cpp:472
 msgid "When sending mail"
-msgstr "Når post blir sendt"
+msgstr "NÃ¥r post blir sendt"
 
 #: kmsettings.cpp:475
 msgid "Default sending:"
@@ -533,7 +533,7 @@ msgstr "Standard sending:"
 
 #: kmsettings.cpp:478
 msgid "send now"
-msgstr "send nå"
+msgstr "send nÃ¥"
 
 #: kmsettings.cpp:482
 msgid "send later"
@@ -557,7 +557,7 @@ msgstr "Ny melding"
 
 #: kmsettings.cpp:542
 msgid "empty trash on exit"
-msgstr "tøm søppelkurv ved avslutning"
+msgstr "tÃ¸m sÃ¸ppelkurv ved avslutning"
 
 #: kmsettings.cpp:546
 msgid "Send Mail in outbox Folder on Check"
@@ -633,11 +633,11 @@ msgstr "Mottar all post fra tjener"
 
 #: kmsettings.cpp:936
 msgid "Enable interval Mail checking"
-msgstr "Slå på periodisk sjekking av epost"
+msgstr "SlÃ¥ pÃ¥ periodisk sjekking av epost"
 
 #: kmsettings.cpp:946
 msgid "Store new mail in account:"
-msgstr "Lagre ny post på konto:"
+msgstr "Lagre ny post pÃ¥ konto:"
 
 #: kmsettings.cpp:960
 msgid "<none>"
@@ -653,7 +653,7 @@ msgstr "Kvittering: "
 
 #: kmaccount.cpp:150
 msgid "Failed to add message:"
-msgstr "Feilet i å legge til melding:"
+msgstr "Feilet i Ã¥ legge til melding:"
 
 #: kmcomposewin.cpp:139 kmheaders.cpp:42
 msgid "F"
@@ -694,7 +694,7 @@ msgstr "Intet emne"
 
 #: kmheaders.cpp:343
 msgid "order of arrival"
-msgstr "rekkefølge for ankomst"
+msgstr "rekkefÃ¸lge for ankomst"
 
 #: kmheaders.cpp:352
 msgid "subject"
@@ -720,7 +720,7 @@ msgstr "Sorterer meldingene synkende etter %s"
 #: kmheaders.cpp:359
 #, c-format
 msgid "Sorting messages ascending by %s"
-msgstr "Sorterer meldingene økende etter %s"
+msgstr "Sorterer meldingene Ã¸kende etter %s"
 
 #: kmheaders.cpp:486
 msgid "Message(s) saved."
@@ -728,7 +728,7 @@ msgstr "Melding(er) lagret."
 
 #: kmheaders.cpp:488
 msgid "Failed to save message(s)."
-msgstr "Mislykkes å lagre melding(er)."
+msgstr "Mislykkes Ã¥ lagre melding(er)."
 
 #: kmcomposewin.cpp:128
 msgid "KMail Composer"
@@ -736,7 +736,7 @@ msgstr "Ny melding"
 
 #: kmcomposewin.cpp:141
 msgid "Size"
-msgstr "Størrelse"
+msgstr "StÃ¸rrelse"
 
 #: kmcomposewin.cpp:142
 msgid "Encoding"
@@ -772,7 +772,7 @@ msgstr "&Nyhetsgrupper"
 
 #: kmcomposewin.cpp:360
 msgid "&Followup-To:"
-msgstr "&Følg-opp-til:"
+msgstr "&FÃ¸lg-opp-til:"
 
 #: kmcomposewin.cpp:432
 msgid "&Send"
@@ -784,7 +784,7 @@ msgstr "S&end senere"
 
 #: kmcomposewin.cpp:437
 msgid "S&end now"
-msgstr "S&end nå"
+msgstr "S&end nÃ¥"
 
 #: kmcomposewin.cpp:439
 msgid "&Insert File..."
@@ -864,11 +864,11 @@ msgstr "&Nyhetsgrupper"
 
 #: kmcomposewin.cpp:519
 msgid "&Followup-To"
-msgstr "&Følg-opp-til"
+msgstr "&FÃ¸lg-opp-til"
 
 #: kmcomposewin.cpp:525
 msgid "Append S&ignature"
-msgstr "Tilføy s&ignatur"
+msgstr "TilfÃ¸y s&ignatur"
 
 #: kmcomposewin.cpp:527
 msgid "&Insert File"
@@ -880,11 +880,11 @@ msgstr "&Legg ved..."
 
 #: kmcomposewin.cpp:532
 msgid "Attach &Public Key"
-msgstr "Legg ved &offentlig nøkkel"
+msgstr "Legg ved &offentlig nÃ¸kkel"
 
 #: kmcomposewin.cpp:534
 msgid "Attach My &Public Key"
-msgstr "Legg ved min &personlige nøkkel"
+msgstr "Legg ved min &personlige nÃ¸kkel"
 
 #: kmcomposewin.cpp:545
 msgid "&Save..."
@@ -956,11 +956,11 @@ msgstr "Inkluder fil"
 
 #: kmcomposewin.cpp:1248
 msgid "my pgp key"
-msgstr "min pgp-nøkkel"
+msgstr "min pgp-nÃ¸kkel"
 
 #: kmcomposewin.cpp:1276
 msgid "pgp key"
-msgstr "pgp-nøkkel"
+msgstr "pgp-nÃ¸kkel"
 
 #: kmcomposewin.cpp:1297 kmreaderwin.cpp:906
 msgid "View..."
@@ -980,7 +980,7 @@ msgstr "Legg til..."
 
 #: kmcomposewin.cpp:1345 kmreaderwin.cpp:978 kmreaderwin.cpp:995
 msgid "View Attachment: "
-msgstr "Se på vedlegg: "
+msgstr "Se pÃ¥ vedlegg: "
 
 #: kmcomposewin.cpp:1539
 msgid "To:"
@@ -996,7 +996,7 @@ msgstr "Dato:"
 
 #: kmcomposewin.cpp:1670
 msgid "Spellcheck complete."
-msgstr "Stavekontroll fullført."
+msgstr "Stavekontroll fullfÃ¸rt."
 
 #: kmcomposewin.cpp:2113
 msgid "Spellcheck - KMail"
@@ -1103,7 +1103,7 @@ msgstr "Advarsel: Feil signatur fra"
 
 #: kmreaderwin.cpp:532
 msgid "unknown key ID"
-msgstr "ukjent nøkkel-ID"
+msgstr "ukjent nÃ¸kkel-ID"
 
 #: kmreaderwin.cpp:870
 msgid "Attachment: "
@@ -1130,8 +1130,8 @@ msgid ""
 "section of the settings in order to\n"
 "receive mail."
 msgstr ""
-"Du trenger å legge til en konto i nettverk\n"
-"seksjonen av innstillingene for å kunne\n"
+"Du trenger Ã¥ legge til en konto i nettverk\n"
+"seksjonen av innstillingene for Ã¥ kunne\n"
 "motta post."
 
 #: main.cpp:121 main.cpp:371
@@ -1164,7 +1164,7 @@ msgid ""
 "\n"
 "Shall KMail move the mail folders now ?"
 msgstr ""
-"Mappen ~/KMail eksisterer. Fra nå av, KMail bruker\n"
+"Mappen ~/KMail eksisterer. Fra nÃ¥ av, KMail bruker\n"
 "mappe ~/Mail for dets meldinger.\n"
 "KMail kan flytte innholdet av mappen ~/KMail inn i\n"
 "~/Mail, men denne vil erstatte eksisterende filer med samme\n"
@@ -1181,7 +1181,7 @@ msgstr "Ukjent kommandolinjevalg: %s"
 
 #: kmacctlocal.cpp:77
 msgid "Cannot open file:"
-msgstr "Kan ikke åpne fil:"
+msgstr "Kan ikke Ã¥pne fil:"
 
 #: kmacctlocal.cpp:113
 #, c-format
@@ -1213,8 +1213,8 @@ msgid ""
 "and try again."
 msgstr ""
 "Vennligst spesifiser vert, port og\n"
-"målmappe i innstillingene\n"
-"og prøv igjen."
+"mÃ¥lmappe i innstillingene\n"
+"og prÃ¸v igjen."
 
 #: kmacctpop.cpp:291
 msgid "Pop Mail Error"
@@ -1278,7 +1278,7 @@ msgid ""
 msgstr ""
 "Vennligst spesifiser en forsendelses\n"
 "metode i innstillingene\n"
-"og forsøk igjen."
+"og forsÃ¸k igjen."
 
 #: kmsender.cpp:130
 msgid ""
@@ -1292,15 +1292,15 @@ msgstr ""
 
 #: kmsender.cpp:155
 msgid "You must specify a receiver"
-msgstr "Du må spesifisere en mottaker"
+msgstr "Du mÃ¥ spesifisere en mottaker"
 
 #: kmsender.cpp:166
 msgid "Cannot add message to outbox folder"
-msgstr "Kan ikke tilføye melding til outbox-mappe"
+msgstr "Kan ikke tilfÃ¸ye melding til outbox-mappe"
 
 #: kmsender.cpp:197
 msgid "Sending still in progress"
-msgstr "Sending pågår fremdeles"
+msgstr "Sending pÃ¥gÃ¥r fremdeles"
 
 #: kmsender.cpp:255 kmsender.cpp:259
 msgid "Initiating sender process..."
@@ -1329,7 +1329,7 @@ msgstr ""
 #: kmsender.cpp:574
 #, c-format
 msgid "Failed to execute mailer program %s"
-msgstr "Mislyktes å kjøre postprogrammet %s"
+msgstr "Mislyktes Ã¥ kjÃ¸re postprogrammet %s"
 
 #: kmsender.cpp:662
 msgid "connecting to server"
@@ -1342,7 +1342,7 @@ msgid ""
 "host %s for sending:\n"
 "%s"
 msgstr ""
-"Kan ikke åpne SMTP-forbindelse til\n"
+"Kan ikke Ã¥pne SMTP-forbindelse til\n"
 "vert %s for sending:\n"
 "%s"
 
@@ -1390,7 +1390,7 @@ msgstr "Pop3"
 
 #: kmfilteraction.cpp:93 kmfilteraction.cpp:197
 msgid "transfer"
-msgstr "overfør"
+msgstr "overfÃ¸r"
 
 #: kmfilteraction.cpp:166 kmfilteraction.cpp:199
 msgid "skip rest"
@@ -1403,7 +1403,7 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
-"Feilet i å kjøre signaturskript\n"
+"Feilet i Ã¥ kjÃ¸re signaturskript\n"
 "%s\n"
 "%s"
 
@@ -1472,7 +1472,7 @@ msgstr "inneholder ikke"
 
 #: kmfilterdlg.cpp:568
 msgid "regular expression"
-msgstr "regulært uttrykk"
+msgstr "regulÃ¦rt uttrykk"
 
 #: kmfilterdlg.cpp:575
 msgid "<message>"
@@ -1492,7 +1492,7 @@ msgid ""
 "Please check your PATH is set correctly."
 msgstr ""
 "Kunne ikke finne PGP-programmet.\n"
-"Vennligst sjekk at søkestien PATH er satt korrekt."
+"Vennligst sjekk at sÃ¸kestien PATH er satt korrekt."
 
 #: kpgp.cpp:193
 msgid ""
@@ -1500,7 +1500,7 @@ msgid ""
 "Please check your PATH is set correctly."
 msgstr ""
 "Kunne ikke finne PGP-programmet.\n"
-"Vennligst sjekk at søkestien PATH er satt korrekt."
+"Vennligst sjekk at sÃ¸kestien PATH er satt korrekt."
 
 #: kpgp.cpp:207
 msgid "The pass phrase is missing."
@@ -1516,13 +1516,13 @@ msgid ""
 "recipients of this mail.\n"
 "Message will not be encrypted."
 msgstr ""
-"Kunne ikke finne offentlig nøkkel for\n"
+"Kunne ikke finne offentlig nÃ¸kkel for\n"
 "mottaker av denne eposten.\n"
 "Meldingen vil ikke bli kryptert."
 
 #: kpgp.cpp:296
 msgid "Could not find the public keys for\n"
-msgstr "Kunne ikke finne offentlig nøkkel for\n"
+msgstr "Kunne ikke finne offentlig nÃ¸kkel for\n"
 
 #: kpgp.cpp:307
 msgid "These persons will not be able to\n"
@@ -1543,20 +1543,20 @@ msgid ""
 "leave the message unsigned, or cancel sending the message?"
 msgstr ""
 "Du har nettopp skrevet inne en ugyldig pass-frase.\n"
-"Ønsker å prøve igjen, fortsette og\n"
-"la meldingen være usignert, eller avbryte sendingen av meldingen?"
+"Ã˜nsker Ã¥ prÃ¸ve igjen, fortsette og\n"
+"la meldingen vÃ¦re usignert, eller avbryte sendingen av meldingen?"
 
 #: kpgp.cpp:331
 msgid "Retry"
-msgstr "Prøv igjen"
+msgstr "PrÃ¸v igjen"
 
 #: kpgp.cpp:342
 msgid ""
 "Do you wan't to encrypt anyway, leave the\n"
 "message as is, or cancel the message?"
 msgstr ""
-"Ønsker du å kryptere likevel, la meldinge\n"
-"være slik den er nå, eller avbryte meldingen?"
+"Ã˜nsker du Ã¥ kryptere likevel, la meldinge\n"
+"vÃ¦re slik den er nÃ¥, eller avbryte meldingen?"
 
 #: kpgp.cpp:346
 msgid "Encrypt"
@@ -1567,7 +1567,7 @@ msgid ""
 "Do you wan't to leave the message as is,\n"
 "or cancel the message?"
 msgstr ""
-"Ønsker du la være slik den er nå,\n"
+"Ã˜nsker du la vÃ¦re slik den er nÃ¥,\n"
 "eller avbryte meldingen?"
 
 #: kpgp.cpp:717
@@ -1584,11 +1584,11 @@ msgstr "PGP-sikkerhetssjekk"
 
 #: kpgp.cpp:769
 msgid "Please select the public key to insert"
-msgstr "Vennligst velg offentlig nøkkel som skal settes inn"
+msgstr "Vennligst velg offentlig nÃ¸kkel som skal settes inn"
 
 #: kpgp.cpp:800
 msgid "Select key"
-msgstr "Velg nøkkel"
+msgstr "Velg nÃ¸kkel"
 
 #: kpgp.cpp:827
 msgid "PGP User Identity:"
@@ -1608,7 +1608,7 @@ msgstr "Uriktig passord-frase; kunne ikke signere"
 
 #: kpgpbase.cpp:361
 msgid "error running pgp"
-msgstr "feil under kjøring av pgp"
+msgstr "feil under kjÃ¸ring av pgp"
 
 #: kpgpbase.cpp:378 kpgpbase.cpp:669
 msgid "Bad pass Phrase; couldn't decrypt"
@@ -1616,11 +1616,11 @@ msgstr "Uriktig passord-frase; kunne ikke dekryptere"
 
 #: kpgpbase.cpp:389 kpgpbase.cpp:680
 msgid "Do not have the secret key for this message"
-msgstr "Du har ikke sikkerhetsnøkkelen for denne meldingen"
+msgstr "Du har ikke sikkerhetsnÃ¸kkelen for denne meldingen"
 
 #: kpgpbase.cpp:417
 msgid "unknown key ID "
-msgstr "Ukjent nøkkel-ID"
+msgstr "Ukjent nÃ¸kkel-ID"
 
 #: kpgpbase.cpp:437
 msgid "??? (file ~/.pgp/pubring.pgp not found)"
@@ -1635,8 +1635,8 @@ msgid ""
 "The key(s) you wan't to encrypt your message\n"
 "to are not trusted. No encryption done."
 msgstr ""
-"Nøklene du ønsker å kryptere meldingen din med har ikke tillit. Ingen\n"
-"kryptering utført."
+"NÃ¸klene du Ã¸nsker Ã¥ kryptere meldingen din med har ikke tillit. Ingen\n"
+"kryptering utfÃ¸rt."
 
 #: kpgpbase.cpp:621
 #, c-format
@@ -1645,7 +1645,7 @@ msgid ""
 "%s\n"
 "They will not be able to decrypt the message"
 msgstr ""
-"Følgende nøkler har ikke tillit:\n"
+"FÃ¸lgende nÃ¸kler har ikke tillit:\n"
 "%s\n"
 "De vil ikke kunne dekryptere meldingen"
 
@@ -1695,7 +1695,7 @@ msgid ""
 "Could not open file:\n"
 "%s"
 msgstr ""
-"Kunne ikke åpne fil:\n"
+"Kunne ikke Ã¥pne fil:\n"
 "%s"
 
 #: kfileio.cpp:78
@@ -1719,7 +1719,7 @@ msgid ""
 "Do you want to replace it ?"
 msgstr ""
 "Fil %s eksisterer.\n"
-"Ønsker du å erstatte den ?"
+"Ã˜nsker du Ã¥ erstatte den ?"
 
 #: kfileio.cpp:144
 #, c-format
@@ -1727,7 +1727,7 @@ msgid ""
 "Failed to make a backup copy of %s.\n"
 "Continue anyway ?"
 msgstr ""
-"Mislykkes å lage en backupkopi av %s.\n"
+"Mislykkes Ã¥ lage en backupkopi av %s.\n"
 "Fortsette likevel ?"
 
 #: kfileio.cpp:156 kfileio.cpp:175
@@ -1745,7 +1745,7 @@ msgid ""
 "Could not open file for writing:\n"
 "%s"
 msgstr ""
-"Kunne ikke åpne fil for skriving:\n"
+"Kunne ikke Ã¥pne fil for skriving:\n"
 "%s"
 
 #: kfileio.cpp:163 kmaddrbook.cpp:158
@@ -1800,15 +1800,15 @@ msgstr "Mottar meldinger fra "
 
 #: kmnewiostatuswdg.cpp:56
 msgid "Preparing transmission..."
-msgstr "Forbereder overføring..."
+msgstr "Forbereder overfÃ¸ring..."
 
 #: kmnewiostatuswdg.cpp:62
 msgid "Transmission completed..."
-msgstr "Overføring fullført..."
+msgstr "OverfÃ¸ring fullfÃ¸rt..."
 
 #: kmnewiostatuswdg.cpp:97
 msgid "Aborting transmission...\n"
-msgstr "Avbryter overføring....\n"
+msgstr "Avbryter overfÃ¸ring....\n"
 
 #: charsetsDlg.cpp:27
 msgid "KRN - Charset Settings"
@@ -1836,4 +1836,4 @@ msgstr "&7-bitt er ASCII"
 
 #: charsetsDlg.cpp:84
 msgid "&Qute unknonw characters"
-msgstr "&Ukjente tegn i anførselstegn"
+msgstr "&Ukjente tegn i anfÃ¸rselstegn"

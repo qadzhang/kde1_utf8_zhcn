@@ -1,16 +1,16 @@
 # KPPP CATALAN TRANSLATION
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Sebasti‡ Pla <sastia@redestb.es>, 1998.
+# Sebasti√† Pla <sastia@redestb.es>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kppp\n"
 "POT-Creation-Date: 1999-04-25 03:13+0200\n"
 "PO-Revision-Date: 1999-08-20 00:14+02:00\n"
-"Last-Translator: Sebasti‡ Pla <sastia@redestb.es>\n"
+"Last-Translator: Sebasti√† Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: accounts.cpp:45
@@ -34,7 +34,7 @@ msgid ""
 "Create a new dialup connection\n"
 "to the internet"
 msgstr ""
-"Crea una nova connexiÛ telefÚnica\n"
+"Crea una nova connexi√≥ telef√≤nica\n"
 "a internet"
 
 #: accounts.cpp:89
@@ -45,7 +45,7 @@ msgid ""
 "needs"
 msgstr ""
 "Fa una copia del compte seleccionat. Tot\n"
-"l'arranjament d'aquest compte Ès copia\n"
+"l'arranjament d'aquest compte √©s copia\n"
 "al compte nou, que podeu modificar segons les\n"
 "vostres necessitats"
 
@@ -61,7 +61,7 @@ msgstr ""
 
 #: accounts.cpp:108
 msgid "Phone Costs:"
-msgstr "Cost telËfon:"
+msgstr "Cost tel√®fon:"
 
 #: accounts.cpp:121
 msgid ""
@@ -72,11 +72,11 @@ msgid ""
 "account - beware, this is <b>NOT</b> the sum \n"
 "of the phone costs of all your accounts!"
 msgstr ""
-"Mostra els costos telefÚnics acumulats\n"
+"Mostra els costos telef√≤nics acumulats\n"
 "pel compte seleccionat.\n"
 "\n"
-"<b>Important</b>: Feu atenciÛ si teniu \n"
-"mÈs d'un compte, aixÚ <b>NO</b> Ès la suma \n"
+"<b>Important</b>: Feu atenci√≥ si teniu \n"
+"m√©s d'un compte, aix√≤ <b>NO</b> √©s la suma \n"
 "dels costos de tots els vostres comptes!"
 
 #: accounts.cpp:128 conwindow.cpp:54
@@ -94,9 +94,9 @@ msgid ""
 msgstr ""
 "Mostra el nombre de bytes transferits\n"
 "pel compte seleccionat. Podeu selecionar quines\n"
-"dades voleu mostrar al di‡leg de comptabilitzaciÛ.\n"
+"dades voleu mostrar al di√†leg de comptabilitzaci√≥.\n"
 "\n"
-"<link #volaccounting>ComptabilitzaciÛ de volum</link>"
+"<link #volaccounting>Comptabilitzaci√≥ de volum</link>"
 
 #: accounts.cpp:152
 msgid "Reset Costs"
@@ -115,12 +115,12 @@ msgid ""
 "Are you sure you want to reset the accumulated\n"
 "telephone costs for the selected account to zero?"
 msgstr ""
-"De veres voleu posar a zero els costos de telËfon\n"
+"De veres voleu posar a zero els costos de tel√®fon\n"
 "acumulats pel compte seleccionat?"
 
 #: accounts.cpp:259 accounts.cpp:280
 msgid "Maximum number of accounts reached."
-msgstr "Heu arribat al m‡xim numero de comptes."
+msgstr "Heu arribat al m√†xim numero de comptes."
 
 #: accounts.cpp:286
 msgid "No account selected."
@@ -165,11 +165,11 @@ msgstr "Portal"
 
 #: accounts.cpp:352
 msgid "Login Script"
-msgstr "GuiÛ de connexiÛ"
+msgstr "Gui√≥ de connexi√≥"
 
 #: accounts.cpp:353
 msgid "Accounting"
-msgstr "ComptabilitzaciÛ"
+msgstr "Comptabilitzaci√≥"
 
 #: accounts.cpp:372
 msgid ""
@@ -177,24 +177,24 @@ msgid ""
 "account name"
 msgstr ""
 "Heu d'entrar un nom\n"
-"de compte ˙nic"
+"de compte √∫nic"
 
 #: accounts.cpp:377
 msgid "Login script has unbalanced loop Start/End"
-msgstr "GuiÛ de connexiÛ amb inici/fi de bucle desaparellat"
+msgstr "Gui√≥ de connexi√≥ amb inici/fi de bucle desaparellat"
 
 #: connect.cpp:92 connect.cpp:190 main.cpp:1049
 msgid "Connecting to: "
-msgstr "S'est‡ connectant amb: "
+msgstr "S'est√† connectant amb: "
 
 #: connect.cpp:101 connect.cpp:205 miniterm.cpp:148 modeminfo.cpp:56
 #: modeminfo.cpp:135
 msgid "Sorry, can't create modem lock file."
-msgstr "Ho sento, no puc crear el fitxer de bloqueig de mÚdem"
+msgstr "Ho sento, no puc crear el fitxer de bloqueig de m√≤dem"
 
 #: connect.cpp:106 connect.cpp:163 modeminfo.cpp:61
 msgid "Looking for Modem ..."
-msgstr "S'est‡ cercant el mÚdem ..."
+msgstr "S'est√† cercant el m√≤dem ..."
 
 #: connect.cpp:115 debug.cpp:80 main.cpp:1062
 msgid "Log"
@@ -202,27 +202,27 @@ msgstr "Registre"
 
 #: connect.cpp:199 miniterm.cpp:143 modeminfo.cpp:129
 msgid "Sorry, modem device is locked."
-msgstr "Ho sento, el dispositiu de mÚdem est‡ bloquejat."
+msgstr "Ho sento, el dispositiu de m√≤dem est√† bloquejat."
 
 #: connect.cpp:251 connect.cpp:252
 msgid "Initializing Modem..."
-msgstr "S'est‡ inicialitzant el mÚdem..."
+msgstr "S'est√† inicialitzant el m√≤dem..."
 
 #: connect.cpp:270 connect.cpp:271
 msgid "Setting speaker volume..."
-msgstr "S'est‡ establint el volum de l'altaveu..."
+msgstr "S'est√† establint el volum de l'altaveu..."
 
 #: connect.cpp:289
 msgid "Dialing"
-msgstr "S'est‡ marcant"
+msgstr "S'est√† marcant"
 
 #: connect.cpp:322
 msgid "Line Busy. Hanging up ..."
-msgstr "LÌnia ocupada. S'est‡ penjant ..."
+msgstr "L√≠nia ocupada. S'est√† penjant ..."
 
 #: connect.cpp:327
 msgid "Line Busy. Waiting: "
-msgstr "LÌnia ocupada. Esperant: "
+msgstr "L√≠nia ocupada. Esperant: "
 
 #: connect.cpp:329 connect.cpp:449 connect.cpp:468
 msgid " seconds"
@@ -238,19 +238,19 @@ msgstr "Sense portadora"
 
 #: connect.cpp:394
 msgid "Scanning "
-msgstr "S'est‡ explorant "
+msgstr "S'est√† explorant "
 
 #: connect.cpp:405
 msgid "Saving "
-msgstr "S'est‡ desant "
+msgstr "S'est√† desant "
 
 #: connect.cpp:424
 msgid "Sending "
-msgstr "S'est‡ enviant "
+msgstr "S'est√† enviant "
 
 #: connect.cpp:435
 msgid "Expecting "
-msgstr "S'est‡ esperant "
+msgstr "S'est√† esperant "
 
 #: connect.cpp:447
 msgid "Pause "
@@ -258,7 +258,7 @@ msgstr "Pausa "
 
 #: connect.cpp:466
 msgid "Timeout "
-msgstr "ExpiraciÛ "
+msgstr "Expiraci√≥ "
 
 #: connect.cpp:480 connect.cpp:481
 msgid "Hangup"
@@ -298,11 +298,11 @@ msgstr "Bucles massa fondament niuats!"
 
 #: connect.cpp:668
 msgid "LoopEnd without matching Start! Line: "
-msgstr "Fi Bucle sense parell Inici! LÌnia: "
+msgstr "Fi Bucle sense parell Inici! L√≠nia: "
 
 #: connect.cpp:748
 msgid "Starting pppd ..."
-msgstr "S'est‡ engegant pppd ..."
+msgstr "S'est√† engegant pppd ..."
 
 #: connect.cpp:828
 msgid "Scan Var: "
@@ -322,7 +322,7 @@ msgstr "Un moment, si us plau ..."
 
 #: connect.cpp:928
 msgid "Script timed out!"
-msgstr "S'ha produÔt una expiraciÛ al guiÛ!"
+msgstr "S'ha produ√Øt una expiraci√≥ al gui√≥!"
 
 #: connect.cpp:947
 msgid "Scanning: "
@@ -334,11 +334,11 @@ msgstr "Esperant: "
 
 #: connect.cpp:984
 msgid "Logging on to Network ..."
-msgstr "S'est‡ registrant a la Xarxa ..."
+msgstr "S'est√† registrant a la Xarxa ..."
 
 #: connect.cpp:1010
 msgid "Running Startup Command ..."
-msgstr "S'est‡ executant l'ordre d'inici ..."
+msgstr "S'est√† executant l'ordre d'inici ..."
 
 #: connect.cpp:1015 connect.cpp:1022
 msgid "Done"
@@ -349,8 +349,8 @@ msgid ""
 "pppd command + command-line arguments exeed\n"
 "2024 characters in length. What are you doing?"
 msgstr ""
-"l'ordre pppd i els seus arguments tenen mÈs\n"
-"de 2024 car‡cters de llarg. QuË esteu fent?"
+"l'ordre pppd i els seus arguments tenen m√©s\n"
+"de 2024 car√†cters de llarg. Qu√® esteu fent?"
 
 #: conwindow.cpp:43
 msgid "Connected at:"
@@ -358,11 +358,11 @@ msgstr "Connectat a:"
 
 #: conwindow.cpp:49
 msgid "Time connected:"
-msgstr "Temps de connexiÛ:"
+msgstr "Temps de connexi√≥:"
 
 #: conwindow.cpp:58
 msgid "Session Bill:"
-msgstr "Factura de la sessiÛ:"
+msgstr "Factura de la sessi√≥:"
 
 #: conwindow.cpp:60
 msgid "Total Bill:"
@@ -378,7 +378,7 @@ msgstr "Detalls"
 
 #: debug.cpp:47
 msgid "Login Script Debug Window"
-msgstr "Finestra de depuraciÛ del guiÛ de connexiÛ"
+msgstr "Finestra de depuraci√≥ del gui√≥ de connexi√≥"
 
 #: edit.cpp:43
 msgid "Dial Setup"
@@ -386,15 +386,15 @@ msgstr "Valors de Marcatge"
 
 #: edit.cpp:46
 msgid "Connection Name:"
-msgstr "Nom de connexiÛ:"
+msgstr "Nom de connexi√≥:"
 
 #: edit.cpp:56
 msgid "Type in a unique name for this connection"
-msgstr "Doneu-li un nom ˙nic a la connexiÛ"
+msgstr "Doneu-li un nom √∫nic a la connexi√≥"
 
 #: edit.cpp:59
 msgid "Phone Number:"
-msgstr "N˙mero de telËfon:"
+msgstr "N√∫mero de tel√®fon:"
 
 #: edit.cpp:66
 msgid ""
@@ -403,18 +403,18 @@ msgid ""
 "a colon. When a number is busy or fails,\n"
 "<i>kppp</i>will try the next number and so on"
 msgstr ""
-"Especifica el n˙mero de telËfon per marcar. Podeu\n"
-"donar mÈs d'un n˙mero separats per dos punts.\n"
-"Si un n˙mero est‡ ocupat o falla, <i>kppp</i>\n"
-"provar‡ el n˙mero seg¸ent"
+"Especifica el n√∫mero de tel√®fon per marcar. Podeu\n"
+"donar m√©s d'un n√∫mero separats per dos punts.\n"
+"Si un n√∫mero est√† ocupat o falla, <i>kppp</i>\n"
+"provar√† el n√∫mero seg√ºent"
 
 #: edit.cpp:75
 msgid "Authentication:"
-msgstr "AutenticaciÛ:"
+msgstr "Autenticaci√≥:"
 
 #: edit.cpp:79
 msgid "Script-based"
-msgstr "Basada en guiÛ"
+msgstr "Basada en gui√≥"
 
 #: edit.cpp:80
 msgid "PAP"
@@ -439,14 +439,14 @@ msgid ""
 "If you can choose between PAP and CHAP,\n"
 "choose CHAP, because it's much safer."
 msgstr ""
-"Especifica el mËtode usat per identificar-se amb el\n"
+"Especifica el m√®tode usat per identificar-se amb el\n"
 "servidor PPP. La major part d'universitats encara\n"
-"usen autenticaciÛ basada en <b>Terminal</b> o <b>GuiÛ</b>.\n"
+"usen autenticaci√≥ basada en <b>Terminal</b> o <b>Gui√≥</b>.\n"
 "Si no esteu segurs, poseu-vos en contacte amb el vostre.\n"
-"proveÔdor d'internet.\n"
+"prove√Ødor d'internet.\n"
 "\n"
 "Si podeu triar entre PAP i CHAP,\n"
-"trieu CHAP, perque Ès molt mÈs segur."
+"trieu CHAP, perque √©s molt m√©s segur."
 
 #: edit.cpp:97
 msgid "Store password"
@@ -463,15 +463,15 @@ msgid ""
 "readable only to you. Make sure nobody\n"
 "gains access to this file!"
 msgstr ""
-"Si est‡ activat, la vostra contrasenya pel\n"
-"proveÔdor es desar‡ al fitxer de configuraciÛ\n"
-"<i>kppp</i>, de manera que no l'haureu d'introduÔr\n"
+"Si est√† activat, la vostra contrasenya pel\n"
+"prove√Ødor es desar√† al fitxer de configuraci√≥\n"
+"<i>kppp</i>, de manera que no l'haureu d'introdu√Ør\n"
 "cada volta.\n"
 "\n"
-"<b><red>AvÌs:<black>la vostra contrasenya es desar‡\n"
-"com text planer al fitxer de configuraciÛ, que nomÈs\n"
-"el podeu llegir vÛs. Assegureu-vos que ning˙ tÈ\n"
-"accÈs a aquest fitxer!"
+"<b><red>Av√≠s:<black>la vostra contrasenya es desar√†\n"
+"com text planer al fitxer de configuraci√≥, que nom√©s\n"
+"el podeu llegir v√≥s. Assegureu-vos que ning√∫ t√©\n"
+"acc√©s a aquest fitxer!"
 
 #: edit.cpp:110
 msgid ""
@@ -490,11 +490,11 @@ msgid ""
 "\n"
 "Very usefull for fetching mail and news"
 msgstr ""
-"Permet executar un programa <b>desprÈs</b> d'establir\n"
-"una connexiÛ. Quan es crida el vostre programa, s'han\n"
-"finalitzat totes les preparacions per la connexiÛ internet.\n"
+"Permet executar un programa <b>despr√©s</b> d'establir\n"
+"una connexi√≥. Quan es crida el vostre programa, s'han\n"
+"finalitzat totes les preparacions per la connexi√≥ internet.\n"
 "\n"
-"Molt ˙til per recuperar correu i notÌcies"
+"Molt √∫til per recuperar correu i not√≠cies"
 
 #: edit.cpp:129
 msgid ""
@@ -511,7 +511,7 @@ msgid ""
 "the program exits."
 msgstr ""
 "Permet executar un programa <b>abans</b> de tancar\n"
-"una connexiÛ. La connexiÛ romandr‡ oberta fins\n"
+"una connexi√≥. La connexi√≥ romandr√† oberta fins\n"
 "que el programa acabi."
 
 #: edit.cpp:145
@@ -527,8 +527,8 @@ msgid ""
 "Allows you to run a program <b>after</b> a connection\n"
 "has been closed."
 msgstr ""
-"Permet executar un programa <b>desprÈs</b> de tancar\n"
-"una connexiÛ."
+"Permet executar un programa <b>despr√©s</b> de tancar\n"
+"una connexi√≥."
 
 #: edit.cpp:161
 msgid "Edit pppd arguments:"
@@ -544,19 +544,19 @@ msgstr "Valors IP"
 
 #: edit.cpp:229
 msgid "IP Address:"
-msgstr "AdreÁa IP:"
+msgstr "Adre√ßa IP:"
 
 #: edit.cpp:232
 msgid ""
 "If your computer has a permanent internet\n"
 "address, you must supply your IP address here"
 msgstr ""
-"Si el vostre ordinador tÈ una adreÁa internet\n"
-"permanent, heu de donar l'adreÁa IP aquÌ"
+"Si el vostre ordinador t√© una adre√ßa internet\n"
+"permanent, heu de donar l'adre√ßa IP aqu√≠"
 
 #: edit.cpp:237
 msgid "Subnet Mask:"
-msgstr "M‡scara de subxarxa:"
+msgstr "M√†scara de subxarxa:"
 
 #: edit.cpp:240
 msgid ""
@@ -567,16 +567,16 @@ msgid ""
 "\n"
 "If unsure, contact your Internet Service Provider"
 msgstr ""
-"Si el vostre ordinador tÈ una adreÁa Internet est‡tica,\n"
-"heu de donar una m‡scara de subxarxa aquÌ. Quasi sempre\n"
-"aquesta m‡scara ser‡ <b>255.255.255.0</b>,\n"
+"Si el vostre ordinador t√© una adre√ßa Internet est√†tica,\n"
+"heu de donar una m√†scara de subxarxa aqu√≠. Quasi sempre\n"
+"aquesta m√†scara ser√† <b>255.255.255.0</b>,\n"
 "pero el vostre cas pot ser diferent.\n"
 "\n"
-"Si no esteu segurs, contacteu amb el vostre proveÔdor d'internet"
+"Si no esteu segurs, contacteu amb el vostre prove√Ødor d'internet"
 
 #: edit.cpp:254
 msgid "Dynamic IP Address"
-msgstr "AdreÁa IP din‡mica"
+msgstr "Adre√ßa IP din√†mica"
 
 #: edit.cpp:256
 msgid ""
@@ -587,15 +587,15 @@ msgid ""
 "Almost every Internet Service Provider uses\n"
 "this method, so this should be turned on."
 msgstr ""
-"Seleccioneu aquesta opciÛ si el vostre\n"
-"ordinador tÈ una adreÁa internet (IP) per cada connexiÛ.\n"
+"Seleccioneu aquesta opci√≥ si el vostre\n"
+"ordinador t√© una adre√ßa internet (IP) per cada connexi√≥.\n"
 "\n"
-"Quasi tots els proveÔdors d'Internet fan servir\n"
-"aquest mËtode, per tant haurÌeu d'activar-ho."
+"Quasi tots els prove√Ødors d'Internet fan servir\n"
+"aquest m√®tode, per tant haur√≠eu d'activar-ho."
 
 #: edit.cpp:264
 msgid "Static IP Address"
-msgstr "AdreÁa IP est‡tica"
+msgstr "Adre√ßa IP est√†tica"
 
 #: edit.cpp:268
 msgid ""
@@ -605,11 +605,11 @@ msgid ""
 "dynamic IP addressing unless you know what you\n"
 "are doing"
 msgstr ""
-"Seleccioneu aquesta opciÛ si el vostre ordinador\n"
-"tÈ una adreÁa internet (IP) fixa. La major part\n"
-"d'ordinadors no ho tenen, per tant haurÌeu de\n"
-"seleccionar adreÁa IP din‡mica, excepte si sabeu\n"
-"quÈ esteu fent"
+"Seleccioneu aquesta opci√≥ si el vostre ordinador\n"
+"t√© una adre√ßa internet (IP) fixa. La major part\n"
+"d'ordinadors no ho tenen, per tant haur√≠eu de\n"
+"seleccionar adre√ßa IP din√†mica, excepte si sabeu\n"
+"qu√© esteu fent"
 
 #: edit.cpp:274
 msgid "Auto-configure hostname from this IP"
@@ -626,13 +626,13 @@ msgid ""
 "\n"
 "Don't enable this unless you really need it"
 msgstr ""
-"AixÚ reconfigura el vostre nom d'ordinador segons\n"
-"l'adreÁa IP que us ha donat el servidor PPP en\n"
-"connectar-vos. Pot ser ˙til si heu de fer servir\n"
-"un protocol que depËn d'aquesta informaciÛ, perÚ tambÈ\n"
+"Aix√≤ reconfigura el vostre nom d'ordinador segons\n"
+"l'adre√ßa IP que us ha donat el servidor PPP en\n"
+"connectar-vos. Pot ser √∫til si heu de fer servir\n"
+"un protocol que dep√®n d'aquesta informaci√≥, per√≤ tamb√©\n"
 "pot causar diversos <link kppp-7.html#autohostname>problemes</link>.\n"
 "\n"
-"No ho activeu si no us Ès realment necessari"
+"No ho activeu si no us √©s realment necessari"
 
 #: edit.cpp:396
 msgid "DNS Servers"
@@ -653,18 +653,18 @@ msgid ""
 "If you leave this field blank, no changes are\n"
 "made to the domain name."
 msgstr ""
-"Si introduÔu un nom de domini, aquest nom\n"
-"s'usar‡ pel vostre ordinador mentres esteu\n"
+"Si introdu√Øu un nom de domini, aquest nom\n"
+"s'usar√† pel vostre ordinador mentres esteu\n"
 "connectat. El nom de domini original del\n"
-"vostre ordinador es restaurar‡ quan es tanqui\n"
-"la connexiÛ.\n"
+"vostre ordinador es restaurar√† quan es tanqui\n"
+"la connexi√≥.\n"
 "\n"
 "No es fan canvis al nom de domini si deixeu\n"
 "aquest camp en blanc."
 
 #: edit.cpp:431
 msgid "DNS IP Address:"
-msgstr "AdreÁa IP del DNS:"
+msgstr "Adre√ßa IP del DNS:"
 
 #: edit.cpp:446
 msgid ""
@@ -678,10 +678,10 @@ msgid ""
 msgstr ""
 "Permet especificar un nou servidor DNS per\n"
 "usar-lo mentres esteu connectat. En tancar la\n"
-"connexiÛ, aquesta entrada DNS s'eliminar‡ un\n"
+"connexi√≥, aquesta entrada DNS s'eliminar√† un\n"
 "altre cop.\n"
 "\n"
-"Per afegir un servidor DNS, teclegeu l'adreÁa\n"
+"Per afegir un servidor DNS, teclegeu l'adre√ßa\n"
 "IP del servidor i feu clic a <b>Afegeix</b>"
 
 #: edit.cpp:465
@@ -690,16 +690,16 @@ msgid ""
 "specified in the field above. The entry\n"
 "will then be added to the list below"
 msgstr ""
-"Feu clic en aquest botÛ per afegir el servidor\n"
+"Feu clic en aquest bot√≥ per afegir el servidor\n"
 "DNS especificat en el camp superior. L'entrada\n"
-"s'afegir‡ a la llista inferior"
+"s'afegir√† a la llista inferior"
 
 #: edit.cpp:477
 msgid ""
 "Click this button to remove the selected DNS\n"
 "server entry from the list below"
 msgstr ""
-"Feu clic en aquest botÛ per eliminar l'entrada del\n"
+"Feu clic en aquest bot√≥ per eliminar l'entrada del\n"
 "servidor DNS seleccionada de la llista inferior"
 
 #: edit.cpp:480
@@ -718,7 +718,7 @@ msgstr ""
 
 #: edit.cpp:496
 msgid "Disable existing DNS Servers during Connection"
-msgstr "Desactiva els servidors DNS existents durant la connexiÛ"
+msgstr "Desactiva els servidors DNS existents durant la connexi√≥"
 
 #: edit.cpp:503
 msgid ""
@@ -732,14 +732,14 @@ msgid ""
 "option, but it may become useful under \n"
 "some circumstances"
 msgstr ""
-"Quan es selecciona aquesta opciÛ, tots els servidors\n"
+"Quan es selecciona aquesta opci√≥, tots els servidors\n"
 "DNS especificats a <i>/etc/resolv.conf</i> es\n"
 "desactiven temporalment mentres s'estableix la\n"
-"connexiÛ telefÚnica. DesprÈs de tancar la connexiÛ\n"
+"connexi√≥ telef√≤nica. Despr√©s de tancar la connexi√≥\n"
 "els servidors es reactivaran\n"
 "\n"
-"Habitualment no hi ha cap raÛ per usar aquesta\n"
-"opciÛ, pero pot ser ˙til sota certes circumst‡ncies"
+"Habitualment no hi ha cap ra√≥ per usar aquesta\n"
+"opci√≥, pero pot ser √∫til sota certes circumst√†ncies"
 
 #: edit.cpp:572
 msgid "Gateway Setup"
@@ -747,7 +747,7 @@ msgstr "Valors portal"
 
 #: edit.cpp:581
 msgid "Default Gateway"
-msgstr "Portal per omissiÛ"
+msgstr "Portal per omissi√≥"
 
 #: edit.cpp:584
 msgid ""
@@ -761,17 +761,17 @@ msgid ""
 "probably leave this option on"
 msgstr ""
 "Fa que l'ordinador PPP parell (aquell ordinador al\n"
-"que esteu connectat amb el vostre mÚdem) actui com\n"
-"portal. El vostre ordinador enviar‡ tots els paquets\n"
+"que esteu connectat amb el vostre m√≤dem) actui com\n"
+"portal. El vostre ordinador enviar√† tots els paquets\n"
 "no destinats a un ordinador de la vostra xarxa local\n"
-"a aquest ordinador, que els encaminar‡.\n"
+"a aquest ordinador, que els encaminar√†.\n"
 "\n"
-"AixÚ Ès aixÌ per la major part de proveÔdors, de manera\n"
-"que probablement heu de deixar aquesta opciÛ activa."
+"Aix√≤ √©s aix√≠ per la major part de prove√Ødors, de manera\n"
+"que probablement heu de deixar aquesta opci√≥ activa."
 
 #: edit.cpp:595
 msgid "Static Gateway"
-msgstr "Portal est‡tic"
+msgstr "Portal est√†tic"
 
 #: edit.cpp:598
 msgid ""
@@ -779,19 +779,19 @@ msgid ""
 "to use as gateway (see <i>Default Gateway</i> above"
 msgstr ""
 "Permet especificar quin ordinador voleu usar\n"
-"com portal (veieu <i>Portal per omissiÛ</i>)"
+"com portal (veieu <i>Portal per omissi√≥</i>)"
 
 #: edit.cpp:603
 msgid ""
 "Gateway\n"
 "IP Address:"
 msgstr ""
-"AdreÁa IP\n"
+"Adre√ßa IP\n"
 "del portal:"
 
 #: edit.cpp:605
 msgid "Assign the Default Route to this Gateway"
-msgstr "Asigna la ruta per omissiÛ al portal"
+msgstr "Asigna la ruta per omissi√≥ al portal"
 
 #: edit.cpp:608
 msgid ""
@@ -801,15 +801,15 @@ msgid ""
 "\n"
 "Normally, you should turn this on"
 msgstr ""
-"Si s'activa aquesta opciÛ, tots els paquets\n"
+"Si s'activa aquesta opci√≥, tots els paquets\n"
 "que no van a la xarxa local, s'encaminen\n"
-"per la connexiÛ PPP.\n"
+"per la connexi√≥ PPP.\n"
 "\n"
 "Normalment, heu d'activar-ho"
 
 #: edit.cpp:703
 msgid "Edit Script"
-msgstr "Edita guiÛ"
+msgstr "Edita gui√≥"
 
 #: general.cpp:50
 msgid "kppp Setup"
@@ -817,7 +817,7 @@ msgstr "Valors kppp"
 
 #: general.cpp:56
 msgid "pppd Timeout:"
-msgstr "ExpiraciÛ pppd"
+msgstr "Expiraci√≥ pppd"
 
 #: general.cpp:69
 msgid ""
@@ -826,10 +826,10 @@ msgid ""
 "If no connection is made in this time frame,\n"
 "<i>kppp</i> will give up and kill pppd."
 msgstr ""
-"<i>kppp</i> s'esperar‡ aquest n˙mero de segons\n"
-"per veure si s'estableix una connexiÛ PPP.\n"
-"Si no s'estableix cap connexiÛ durant aquest temps\n"
-"<i>kppp</i> es donar‡ i aturar‡ pppd."
+"<i>kppp</i> s'esperar√† aquest n√∫mero de segons\n"
+"per veure si s'estableix una connexi√≥ PPP.\n"
+"Si no s'estableix cap connexi√≥ durant aquest temps\n"
+"<i>kppp</i> es donar√† i aturar√† pppd."
 
 #: general.cpp:74 general.cpp:401 general.cpp:490
 msgid "Seconds"
@@ -837,7 +837,7 @@ msgstr "Segons"
 
 #: general.cpp:87
 msgid "Dock into Panel on Connect"
-msgstr "Encasta al plafÛ al connectar"
+msgstr "Encasta al plaf√≥ al connectar"
 
 #: general.cpp:89
 msgid ""
@@ -849,12 +849,12 @@ msgid ""
 "window to it's original location and\n"
 "size."
 msgstr ""
-"DesprÈs d'establir la connexiÛ, es minimitza\n"
+"Despr√©s d'establir la connexi√≥, es minimitza\n"
 "la finestra i es representa amb una petita\n"
 "icona a <i>kpanel</i>.\n"
 "\n"
-"En fer clic sobre aquesta icona es restaurar‡\n"
-"la finestra a la seva mida i posiciÛ originals."
+"En fer clic sobre aquesta icona es restaurar√†\n"
+"la finestra a la seva mida i posici√≥ originals."
 
 #: general.cpp:102
 msgid "Automatic Redial on Disconnect"
@@ -868,15 +868,15 @@ msgid ""
 "\n"
 "See <link #redial>here</link> for more on this topic."
 msgstr ""
-"Quan s'estableix una connexiÛ i per\n"
-"alguna raÛ es desconnecta, <i>kppp</i>\n"
-"provar‡ de reconnectar al mateix compte.\n"
+"Quan s'estableix una connexi√≥ i per\n"
+"alguna ra√≥ es desconnecta, <i>kppp</i>\n"
+"provar√† de reconnectar al mateix compte.\n"
 "\n"
-"<link #redial>AquÌ</link> hi ha mÈs informaciÛ del tema."
+"<link #redial>Aqu√≠</link> hi ha m√©s informaci√≥ del tema."
 
 #: general.cpp:114
 msgid "Show Clock on Caption"
-msgstr "Mostra el rellotge al tÌtol"
+msgstr "Mostra el rellotge al t√≠tol"
 
 #: general.cpp:120
 msgid ""
@@ -885,9 +885,9 @@ msgid ""
 "was established. Very useful, so you \n"
 "should turn this on"
 msgstr ""
-"Quan s'activa aquesta opciÛ, el tÌtol de\n"
+"Quan s'activa aquesta opci√≥, el t√≠tol de\n"
 "la finestra mostra el temps des que es va\n"
-"establir la connexiÛ. Molt ˙til, de manera\n"
+"establir la connexi√≥. Molt √∫til, de manera\n"
 "que haurieu d'activar-ho"
 
 #: general.cpp:125
@@ -903,12 +903,12 @@ msgid ""
 "\n"
 "See <link #disxserver>here</link> for more on this."
 msgstr ""
-"Amb aquesta opciÛ activada es tancaran\n"
+"Amb aquesta opci√≥ activada es tancaran\n"
 "totes les connexions obertes quan s'aturi\n"
-"el servidor X. Heu d'activar aquesta opciÛ\n"
-"excepte si sabeu quÈ esteu fent.\n"
+"el servidor X. Heu d'activar aquesta opci√≥\n"
+"excepte si sabeu qu√© esteu fent.\n"
 "\n"
-"<link #disxserver>AquÌ</link> hi ha mÈs informaciÛ del tema."
+"<link #disxserver>Aqu√≠</link> hi ha m√©s informaci√≥ del tema."
 
 #: general.cpp:138
 msgid "Quit on Disconnect"
@@ -919,7 +919,7 @@ msgid ""
 "When this option is turned on, <i>kppp</i>\n"
 "will be closed when you disconnect"
 msgstr ""
-"Quan s'activa aquesta opciÛ, es tancar‡\n"
+"Quan s'activa aquesta opci√≥, es tancar√†\n"
 "<i>kppp</i> en desconnectar"
 
 #: general.cpp:147
@@ -932,7 +932,7 @@ msgid ""
 "connection is established"
 msgstr ""
 "S'iconitza la finestra <i>kppp</i> en\n"
-"establir una connexiÛ"
+"establir una connexi√≥"
 
 #: general.cpp:202
 msgid "About kppp"
@@ -965,7 +965,7 @@ msgstr ""
 "    Mario Weilguni <mweilguni@kde.org>\n"
 "\n"
 "Autor original: Bernd Johannes Wuebben\n"
-"Actualment Ès mantingut per Harri Porten i Mario\n"
+"Actualment √©s mantingut per Harri Porten i Mario\n"
 "Weilguni. Envieu tots els informes d'error al\n"
 "mantenidor actual.\n"
 "\n"
@@ -974,11 +974,11 @@ msgstr ""
 
 #: general.cpp:238
 msgid "Serial device"
-msgstr "Dispositiu sËrie"
+msgstr "Dispositiu s√®rie"
 
 #: general.cpp:241
 msgid "Modem Device:"
-msgstr "Dispositiu mÚdem:"
+msgstr "Dispositiu m√≤dem:"
 
 #: general.cpp:255
 msgid ""
@@ -990,11 +990,11 @@ msgid ""
 "emulation (most cards under Linux support this), you\n"
 "should select one of the /dev/ttyIx devices."
 msgstr ""
-"Especifica el port sËrie on est‡ connectat el vostre \n"
-"mÚdem. A Linux/86, normalment Ès /dev/ttyS0 (COM1 sota \n"
-"DOS) o bÈ /dev/ttyS1 (COM2 sota DOS).\n"
+"Especifica el port s√®rie on est√† connectat el vostre \n"
+"m√≤dem. A Linux/86, normalment √©s /dev/ttyS0 (COM1 sota \n"
+"DOS) o b√© /dev/ttyS1 (COM2 sota DOS).\n"
 "\n"
-"Si teniu una tarja interna XDSI amb emulaciÛ d'ordres AT\n"
+"Si teniu una tarja interna XDSI amb emulaci√≥ d'ordres AT\n"
 "(la majoria de targes sota Linux ho tenen), heu de\n"
 "seleccionar un dels dispositius /dev/ttyIx."
 
@@ -1014,15 +1014,15 @@ msgid ""
 "\n"
 "<b>Default</b>: CRTSCTS"
 msgstr ""
-"Especifica com es comuniquen el port sËrie i\n"
-"el mÚdem. No ho heu de canviar excepte si\n"
-"sabeu quÈ esteu fent.\n"
+"Especifica com es comuniquen el port s√®rie i\n"
+"el m√≤dem. No ho heu de canviar excepte si\n"
+"sabeu qu√© esteu fent.\n"
 "\n"
-"<b>OmissiÛ</b>: CRTSCTS"
+"<b>Omissi√≥</b>: CRTSCTS"
 
 #: general.cpp:285
 msgid "Line Termination:"
-msgstr "TerminaciÛ de lÌnia:"
+msgstr "Terminaci√≥ de l√≠nia:"
 
 #: general.cpp:298
 msgid ""
@@ -1035,16 +1035,16 @@ msgid ""
 "<b>Default</b>: CR"
 msgstr ""
 "Especifica com s'envien les comandes AT al vostre\n"
-"mÚdem. La major part dels mÚdems funcionen bÈ amb\n"
-"l'omissiÛ <i>CR</i>. Si el vostre mÚdem no reacciona\n"
-"a la cadena d'inicialitzaciÛ, heu de provar diferents\n"
-"arranjaments aquÌ\n"
+"m√≤dem. La major part dels m√≤dems funcionen b√© amb\n"
+"l'omissi√≥ <i>CR</i>. Si el vostre m√≤dem no reacciona\n"
+"a la cadena d'inicialitzaci√≥, heu de provar diferents\n"
+"arranjaments aqu√≠\n"
 "\n"
-"<b>OmissiÛ</b>: CR"
+"<b>Omissi√≥</b>: CR"
 
 #: general.cpp:306
 msgid "Connection Speed:"
-msgstr "Velocitat de connexiÛ:"
+msgstr "Velocitat de connexi√≥:"
 
 #: general.cpp:349
 msgid ""
@@ -1055,11 +1055,11 @@ msgid ""
 "no more than 115200 bits/sec (unless you know\n"
 "that your serial port supports higher speeds)."
 msgstr ""
-"Especifica la velocitat a la que es parlen el mÚdem\n"
-"i el port sËrie. Heu de comenÁar amb 38400 bits/seg\n"
-"per omissiÛ. Si tot funciona, podeu provar d'incrementar\n"
-"aquest valor, pero no mÈs de 115200 bits/seg (excepte si\n"
-"sabeu que el port sËrie suporta velocitats mÈs altes)."
+"Especifica la velocitat a la que es parlen el m√≤dem\n"
+"i el port s√®rie. Heu de comen√ßar amb 38400 bits/seg\n"
+"per omissi√≥. Si tot funciona, podeu provar d'incrementar\n"
+"aquest valor, pero no m√©s de 115200 bits/seg (excepte si\n"
+"sabeu que el port s√®rie suporta velocitats m√©s altes)."
 
 #: general.cpp:364
 msgid "Use Lock File"
@@ -1077,18 +1077,18 @@ msgid ""
 "\n"
 "<b>Default</b>: On"
 msgstr ""
-"Per prevenir a d'altres programes tenir accËs al\n"
-"mÚdem mentres s'estableix una connexiÛ, es pot\n"
-"crear un fitxer per indicar que el mÚdem Ès en ˙s.\n"
+"Per prevenir a d'altres programes tenir acc√®s al\n"
+"m√≤dem mentres s'estableix una connexi√≥, es pot\n"
+"crear un fitxer per indicar que el m√≤dem √©s en √∫s.\n"
 "Un fitxer d'exemple a Linux seria\n"
 "<i>/var/lock/LCK..ttyS1</i>\n"
-"AquÌ podeu seleccionar si s'usar‡ aquest bloqueig.\n"
+"Aqu√≠ podeu seleccionar si s'usar√† aquest bloqueig.\n"
 "\n"
-"<b>OmissiÛ</b>: SÌ"
+"<b>Omissi√≥</b>: S√≠"
 
 #: general.cpp:386
 msgid "Modem Timeout:"
-msgstr "ExpiraciÛ de mÚdem:"
+msgstr "Expiraci√≥ de m√≤dem:"
 
 #: general.cpp:405
 msgid ""
@@ -1097,12 +1097,12 @@ msgid ""
 "recommended value is 30 seconds."
 msgstr ""
 "Especifica quant de temps espera <i>kppp</i>\n"
-"una resposta <i>CONNECT</i> del mÚdem. El\n"
-"valor recomanat sÛn 30 segons."
+"una resposta <i>CONNECT</i> del m√≤dem. El\n"
+"valor recomanat s√≥n 30 segons."
 
 #: general.cpp:466 main.cpp:722
 msgid "Modem"
-msgstr "MÚdem"
+msgstr "M√≤dem"
 
 #: general.cpp:477
 msgid "Busy Wait:"
@@ -1118,17 +1118,17 @@ msgid ""
 "The default is 0 seconds, you should not change\n"
 "this unless you need to."
 msgstr ""
-"Especifica el n˙mero de segons d'espera abans de\n"
-"tornar a marcar si tots els n˙meros estan ocupats.\n"
-"AixÚ Ès necessari perquË hi ha mÚdems que s'enganxen\n"
-"si sempre est‡ ocupat el mateix n˙mero.\n"
+"Especifica el n√∫mero de segons d'espera abans de\n"
+"tornar a marcar si tots els n√∫meros estan ocupats.\n"
+"Aix√≤ √©s necessari perqu√® hi ha m√≤dems que s'enganxen\n"
+"si sempre est√† ocupat el mateix n√∫mero.\n"
 "\n"
-"L'omissiÛ Ès 0 segons, no l'heu de canviar si no\n"
-"Ès necessari."
+"L'omissi√≥ √©s 0 segons, no l'heu de canviar si no\n"
+"√©s necessari."
 
 #: general.cpp:509
 msgid "Modem volume"
-msgstr "Volum de mÚdem"
+msgstr "Volum de m√≤dem"
 
 #: general.cpp:521
 msgid ""
@@ -1140,16 +1140,16 @@ msgid ""
 "If this does not work for your modem,\n"
 "you must modify the modem volume command"
 msgstr ""
-"Molts mÚdems tenen un altaveu que fa molt\n"
-"soroll en marcar. AquÌ podeu apagar-lo del\n"
-"tot o bÈ seleccionar un volum mÈs fluix.\n"
+"Molts m√≤dems tenen un altaveu que fa molt\n"
+"soroll en marcar. Aqu√≠ podeu apagar-lo del\n"
+"tot o b√© seleccionar un volum m√©s fluix.\n"
 "\n"
-"Si no funciona al vostre mÚdem, heu de\n"
-"modificar la comanda de volum del mÚdem"
+"Si no funciona al vostre m√≤dem, heu de\n"
+"modificar la comanda de volum del m√≤dem"
 
 #: general.cpp:533
 msgid "Modem Asserts CD Line."
-msgstr "El mÚdem afirma la lÌnia CD."
+msgstr "El m√≤dem afirma la l√≠nia CD."
 
 #: general.cpp:541
 msgid ""
@@ -1159,15 +1159,15 @@ msgid ""
 "\n"
 "<b>Default</b>: off"
 msgstr ""
-"AixÚ controla com detecta <i>kppp</i> que el mÚdem\n"
+"Aix√≤ controla com detecta <i>kppp</i> que el m√≤dem\n"
 "no respon. No modifiqueu aquest valor si no\n"
 "hi teniu problemes.\n"
 "\n"
-"<b>OmissiÛ</b>: no"
+"<b>Omissi√≥</b>: no"
 
 #: general.cpp:554
 msgid "Modem Commands"
-msgstr "Comandes de mÚdem"
+msgstr "Comandes de m√≤dem"
 
 #: general.cpp:556
 msgid ""
@@ -1175,11 +1175,11 @@ msgid ""
 "your modem."
 msgstr ""
 "Permet de canviar les comandes AT pel\n"
-"mÚdem."
+"m√≤dem."
 
 #: general.cpp:559
 msgid "Query Modem"
-msgstr "Pregunta al mÚdem"
+msgstr "Pregunta al m√≤dem"
 
 #: general.cpp:561
 msgid ""
@@ -1190,12 +1190,12 @@ msgid ""
 "this information.  It can be useful to help\n"
 "you setup the modem"
 msgstr ""
-"Molt mÚdems suporten el conjunt de comandes ATI\n"
-"per buscar el proveÔdor i la revisiÛ del mÚdem.\n"
+"Molt m√≤dems suporten el conjunt de comandes ATI\n"
+"per buscar el prove√Ødor i la revisi√≥ del m√≤dem.\n"
 "\n"
-"Premeu aquest botÛ per demanar-li al mÚdem aquesta\n"
-"informaciÛ. Pot ser ˙til per ajudar-vos a configurar\n"
-"el mÚdem"
+"Premeu aquest bot√≥ per demanar-li al m√≤dem aquesta\n"
+"informaci√≥. Pot ser √∫til per ajudar-vos a configurar\n"
+"el m√≤dem"
 
 #: general.cpp:568
 msgid "Terminal"
@@ -1209,11 +1209,11 @@ msgid ""
 msgstr ""
 "Obre el programa de terminal incorporat.\n"
 "Podeu usar-lo si voleu practicar amb el\n"
-"joc de comandes del mÚdem"
+"joc de comandes del m√≤dem"
 
 #: general.cpp:634
 msgid "Throughput graph"
-msgstr "Gr‡fic de rendiment"
+msgstr "Gr√†fic de rendiment"
 
 #: general.cpp:643
 msgid "Background color"
@@ -1248,13 +1248,13 @@ msgid ""
 "\n"
 "To test it, right-click somewhere in this text."
 msgstr ""
-"Desde la versiÛ 1.4.8, kppp tÈ una nova caracterÌstica\n"
-"anomenada \"ajuda r‡pida\". …s semblant a una pista,\n"
+"Desde la versi√≥ 1.4.8, kppp t√© una nova caracter√≠stica\n"
+"anomenada \"ajuda r√†pida\". √âs semblant a una pista,\n"
 "pero la podeu activar quan vulgueu.\n"
 "\n"
-"Per activar-la, feu clic amb el botÛ dret del ratolÌ\n"
-"damunt d'un control tal com un botÛ o una etiqueta.\n"
-"Si l'Ìtem suporta ajuda r‡pida, es mostrar‡ el men˙\n"
+"Per activar-la, feu clic amb el bot√≥ dret del ratol√≠\n"
+"damunt d'un control tal com un bot√≥ o una etiqueta.\n"
+"Si l'√≠tem suporta ajuda r√†pida, es mostrar√† el men√∫\n"
 "de l'ajuda.\n"
 "\n"
 "Per provar-ho, dret-cliqueu a qualsevol lloc d'aquest text."
@@ -1269,8 +1269,8 @@ msgid ""
 "This window will stay open until you\n"
 "click a mouse button or a hit a key.\n"
 msgstr ""
-"AixÚ Ès un exemple de l'<b>ajuda r‡pida</b>.\n"
-"Aquesta finestra romandr‡ oberta fins\n"
+"Aix√≤ √©s un exemple de l'<b>ajuda r√†pida</b>.\n"
+"Aquesta finestra romandr√† oberta fins\n"
 "que feu clic o premeu una tecla.\n"
 
 #: main.cpp:403
@@ -1295,8 +1295,8 @@ msgid ""
 msgstr ""
 "kppp ha detectat un fitxer %s.\n"
 "\n"
-"Sembla que hi ha una altra inst‡ncia de kppp amb\n"
-"l'identificador de procÈs %d.\n"
+"Sembla que hi ha una altra inst√†ncia de kppp amb\n"
+"l'identificador de proc√©s %d.\n"
 "\n"
 "Assegureu-vos que no esteu executant un altre kppp,\n"
 "esborreu el fitxer pid i reengegeu kppp."
@@ -1323,13 +1323,13 @@ msgid ""
 "<b>Important</b>: case is important here:\n"
 "<i>myusername</i> is not the same as <i>MyUserName</i>!"
 msgstr ""
-"IntroduÔu el nom d'usuari que us ha donat el\n"
-"proveÔdor d'internet. AixÚ Ès especialment important\n"
-"per PAP i CHAP. Podeu ometre-ho quan useu autenticaciÛ\n"
-"basada en terminal o en guiÛ.\n"
+"Introdu√Øu el nom d'usuari que us ha donat el\n"
+"prove√Ødor d'internet. Aix√≤ √©s especialment important\n"
+"per PAP i CHAP. Podeu ometre-ho quan useu autenticaci√≥\n"
+"basada en terminal o en gui√≥.\n"
 "\n"
-"<b>Important</b>: la caixa Ès important aquÌ:\n"
-"<i>nomusuari</i> no Ès el mateix que <i>NomUsuari</i>!"
+"<b>Important</b>: la caixa √©s important aqu√≠:\n"
+"<i>nomusuari</i> no √©s el mateix que <i>NomUsuari</i>!"
 
 #: main.cpp:535
 msgid "Password:"
@@ -1345,13 +1345,13 @@ msgid ""
 "<b>Important</b>: case is important here:\n"
 "<i>mypassword</i> is not the same as <i>MyPassword</i>!"
 msgstr ""
-"IntroduÔu la contrasenya que us ha donat el\n"
-"proveÔdor d'internet. AixÚ Ès especialment important\n"
-"per PAP i CHAP. Podeu ometre-ho quan useu autenticaciÛ\n"
-"basada en terminal o en guiÛ.\n"
+"Introdu√Øu la contrasenya que us ha donat el\n"
+"prove√Ødor d'internet. Aix√≤ √©s especialment important\n"
+"per PAP i CHAP. Podeu ometre-ho quan useu autenticaci√≥\n"
+"basada en terminal o en gui√≥.\n"
 "\n"
-"<b>Important</b>: la caixa Ès important aquÌ:\n"
-"<i>despertaferro</i> no Ès el mateix que <i>DespertaFerro</i>!"
+"<b>Important</b>: la caixa √©s important aqu√≠:\n"
+"<i>despertaferro</i> no √©s el mateix que <i>DespertaFerro</i>!"
 
 #: main.cpp:563
 msgid "Show Log Window"
@@ -1368,8 +1368,8 @@ msgid ""
 "problems"
 msgstr ""
 "Controla si es mostra una finestra de registre.\n"
-"La finestra de registre mostra la comunicaciÛ entre\n"
-"<i>kppp</i> i el mÚdem. AixÚ us pot ajudar a l'hora\n"
+"La finestra de registre mostra la comunicaci√≥ entre\n"
+"<i>kppp</i> i el m√≤dem. Aix√≤ us pot ajudar a l'hora\n"
 "de fer el seguiment dels problemes.\n"
 "\n"
 "Desactiveu-ho si <i>kppp</i> es connecta normalment\n"
@@ -1389,12 +1389,12 @@ msgid ""
 "No such Account:\n"
 "%s"
 msgstr ""
-"No hi Ès el compte:\n"
+"No hi √©s el compte:\n"
 "%s"
 
 #: main.cpp:704
 msgid "kppp Configuration"
-msgstr "ConfiguraciÛ kppp"
+msgstr "Configuraci√≥ kppp"
 
 #: main.cpp:720
 msgid "Accounts"
@@ -1410,11 +1410,11 @@ msgstr "PPP"
 
 #: main.cpp:724
 msgid "Graph"
-msgstr "Gr‡fic"
+msgstr "Gr√†fic"
 
 #: main.cpp:871
 msgid "Timeout expired while waiting for the PPP interface to come up!"
-msgstr "ExpiraciÛ mentre s'esperava que la interfÌcie PPP engeguÈs!"
+msgstr "Expiraci√≥ mentre s'esperava que la interf√≠cie PPP engegu√©s!"
 
 #: main.cpp:876
 msgid "The pppd daemon died unexpectedly!"
@@ -1430,8 +1430,8 @@ msgid ""
 "\n"
 "Since a further execution would be pointless, kppp will shut down right now."
 msgstr ""
-"Ho sento. El procÈs d'ajuda de kppp s'acaba de morir.\n"
-"Com que una altra execuciÛ no tindria sentit, kppp s'aturar‡ ara mateix."
+"Ho sento. El proc√©s d'ajuda de kppp s'acaba de morir.\n"
+"Com que una altra execuci√≥ no tindria sentit, kppp s'aturar√† ara mateix."
 
 #: main.cpp:950 runtests.cpp:400
 msgid ""
@@ -1442,8 +1442,8 @@ msgid ""
 msgstr ""
 "No s'ha pogut trobar el dimoni PPP!\n"
 "\n"
-"Assegureu-vos que pppd Ès instal∑lat i\n"
-"que heu entrat el camÌ correcte."
+"Assegureu-vos que pppd √©s instal¬∑lat i\n"
+"que heu entrat el cam√≠ correcte."
 
 #: main.cpp:959
 #, c-format
@@ -1455,8 +1455,8 @@ msgid ""
 msgstr ""
 "kppp no pot executar:\n"
 " %s\n"
-"Assegureu-vos que heu donat permÌs setuid a kppp i que pppd\n"
-"Ès executable."
+"Assegureu-vos que heu donat perm√≠s setuid a kppp i que pppd\n"
+"√©s executable."
 
 #: main.cpp:974
 #, c-format
@@ -1473,11 +1473,11 @@ msgstr ""
 "kppp no pot trobar:\n"
 " %s\n"
 "Assegureu-vos que heu donat els\n"
-"valors correctes al vostre mÚdem\n"
+"valors correctes al vostre m√≤dem\n"
 "i/o canvieu\n"
-" la ubicaciÛ del dispositiu mÚdem a la lleng¸eta mÚdem del\n"
-"di‡leg dels valors.\n"
-" Moltes gr‡cies"
+" la ubicaci√≥ del dispositiu m√≤dem a la lleng√ºeta m√≤dem del\n"
+"di√†leg dels valors.\n"
+" Moltes gr√†cies"
 
 #: main.cpp:994
 msgid ""
@@ -1485,7 +1485,7 @@ msgid ""
 "method PAP. This requires that you\n"
 "supply a username and a password!"
 msgstr ""
-"Heu triat el mËtode d'autenticaciÛ\n"
+"Heu triat el m√®tode d'autenticaci√≥\n"
 "PAP. Per tant heu de donar un\n"
 "nom d'usuari i una contrasenya!"
 
@@ -1495,8 +1495,8 @@ msgid ""
 "Cannot create PAP authentication\n"
 "file \"%s\""
 msgstr ""
-"No Ès pot crear el fitxer \"%s\"\n"
-"d'autenticaciÛ PAP"
+"No √©s pot crear el fitxer \"%s\"\n"
+"d'autenticaci√≥ PAP"
 
 #: main.cpp:1020
 msgid ""
@@ -1504,7 +1504,7 @@ msgid ""
 "method CHAP. This requires that you\n"
 "supply a username and a password!"
 msgstr ""
-"Heu triat el mËtode d'autenticaciÛ\n"
+"Heu triat el m√®tode d'autenticaci√≥\n"
 "CHAP. Per tant heu de donar un\n"
 "nom d'usuari i una contrasenya!"
 
@@ -1514,12 +1514,12 @@ msgid ""
 "Cannot create CHAP authentication\n"
 "file \"%s\""
 msgstr ""
-"No Ès pot crear el fitxer \"%s\"\n"
-"d'autenticaciÛ CHAP"
+"No √©s pot crear el fitxer \"%s\"\n"
+"d'autenticaci√≥ CHAP"
 
 #: main.cpp:1041
 msgid "You must specify a telephone number!"
-msgstr "Heu d'especificar un n˙mero de telËfon!"
+msgstr "Heu d'especificar un n√∫mero de tel√®fon!"
 
 #: main.cpp:1131
 msgid "Quit kPPP?"
@@ -1527,35 +1527,35 @@ msgstr "Surto de kPPP?"
 
 #: main.cpp:1132
 msgid "Exiting kPPP will close your PPP Session."
-msgstr "Si sortiu de kPPP tancareu la vostra sessiÛ PPP."
+msgstr "Si sortiu de kPPP tancareu la vostra sessi√≥ PPP."
 
 #: main.cpp:1178
 msgid ""
 "Can not load the accounting\n"
 "ruleset \""
 msgstr ""
-"No Ès pot carregar el joc\n"
-"de regles de comptabilitzaciÛ \""
+"No √©s pot carregar el joc\n"
+"de regles de comptabilitzaci√≥ \""
 
 #: modem.cpp:119
 msgid "Sorry, can't open modem."
-msgstr "Ho sento, no puc obrir el mÚdem."
+msgstr "Ho sento, no puc obrir el m√≤dem."
 
 #: modem.cpp:125
 msgid "Sorry, can't detect state of CD line."
-msgstr "Ho sento, no puc detectar l'estat de la lÌnia CD."
+msgstr "Ho sento, no puc detectar l'estat de la l√≠nia CD."
 
 #: modem.cpp:131
 msgid "Sorry, the modem is not ready."
-msgstr "Ho sento, el mÚdem no est‡ preparat."
+msgstr "Ho sento, el m√≤dem no est√† preparat."
 
 #: modem.cpp:142 modem.cpp:186
 msgid "Sorry, the modem is busy."
-msgstr "Ho sento, el mÚdem est‡ ocupat."
+msgstr "Ho sento, el m√≤dem est√† ocupat."
 
 #: modem.cpp:192
 msgid "Modem Ready."
-msgstr "El mÚdem est‡ preparat."
+msgstr "El m√≤dem est√† preparat."
 
 #: modem.cpp:204
 msgid "Can't restore tty settings: tcsetattr()\n"
@@ -1563,7 +1563,7 @@ msgstr "No es poden restaurar els valors tty: tcsetattr()\n"
 
 #: modem.cpp:345
 msgid "Sorry, the modem doesn't respond."
-msgstr "Ho sento, el mÚdem no respon."
+msgstr "Ho sento, el m√≤dem no respon."
 
 #: modem.cpp:446
 msgid "Unknown speed"
@@ -1571,7 +1571,7 @@ msgstr "Velocitat desconeguda"
 
 #: modemcmds.cpp:44
 msgid "Edit Modem Commands"
-msgstr "Edita les ordres de mÚdem"
+msgstr "Edita les ordres de m√≤dem"
 
 #: modemcmds.cpp:72
 msgid "Pre-Init Delay (sec/100):"
@@ -1579,11 +1579,11 @@ msgstr "Retard abans d'inici (seg/100):"
 
 #: modemcmds.cpp:77
 msgid "Initialization String:"
-msgstr "Text d'inicialitzaciÛ:"
+msgstr "Text d'inicialitzaci√≥:"
 
 #: modemcmds.cpp:95
 msgid "Post-Init Delay (sec/100):"
-msgstr "Retard desprËs d'inici (seg/100):"
+msgstr "Retard despr√®s d'inici (seg/100):"
 
 #: modemcmds.cpp:100
 msgid "Init Response:"
@@ -1655,7 +1655,7 @@ msgstr "Argument:"
 
 #: pppdargs.cpp:80
 msgid "Defaults"
-msgstr "OmissiÛ"
+msgstr "Omissi√≥"
 
 #: pppdata.cpp:56
 msgid ""
@@ -1667,45 +1667,45 @@ msgid ""
 "\n"
 "chown {YourUsername} .kde/share/config/kppprc"
 msgstr ""
-"No es pot obrir el fitxer de configuraciÛ especÌfic de\n"
-"l'aplicaciÛ ni en lectura i escriptura ni nomÈs lectura.\n"
+"No es pot obrir el fitxer de configuraci√≥ espec√≠fic de\n"
+"l'aplicaci√≥ ni en lectura i escriptura ni nom√©s lectura.\n"
 "\n"
 "El superusuari hauria de canviar la propietat amb la\n"
-"seg¸ent comanda en el vostre directori inicial:\n"
+"seg√ºent comanda en el vostre directori inicial:\n"
 "\n"
 "chown {VostreUsuari} .kde/share/config/kppprc"
 
 #: modeminfo.cpp:39
 msgid "ATI Query"
-msgstr "PeticiÛ ATI"
+msgstr "Petici√≥ ATI"
 
 #: modeminfo.cpp:117
 msgid "Modem Query timed out."
-msgstr "La peticiÛ al mÚdem ha expirat."
+msgstr "La petici√≥ al m√≤dem ha expirat."
 
 #: miniterm.cpp:164 miniterm.cpp:226 modeminfo.cpp:145
 msgid "Modem Ready"
-msgstr "El mÚdem est‡ preparat"
+msgstr "El m√≤dem est√† preparat"
 
 #: modeminfo.cpp:249
 msgid "Modem Query Results"
-msgstr "Resultats de la peticiÛ al mÚdem"
+msgstr "Resultats de la petici√≥ al m√≤dem"
 
 #: pppstatdlg.cpp:65
 msgid "kppp Statistics"
-msgstr "EstadÌstiques kppp"
+msgstr "Estad√≠stiques kppp"
 
 #: pppstatdlg.cpp:71
 msgid "Statistics"
-msgstr "EstadÌstiques"
+msgstr "Estad√≠stiques"
 
 #: pppstatdlg.cpp:115
 msgid "Local Addr:"
-msgstr "AdreÁa local:"
+msgstr "Adre√ßa local:"
 
 #: pppstatdlg.cpp:121
 msgid "Remote Addr:"
-msgstr "AdreÁa remota:"
+msgstr "Adre√ßa remota:"
 
 #: pppstatdlg.cpp:153
 msgid "bytes in"
@@ -1762,7 +1762,7 @@ msgstr "Mini-terminal Kppp"
 
 #: miniterm.cpp:50
 msgid "&Reset Modem"
-msgstr "&Reajusta mÚdem"
+msgstr "&Reajusta m√≤dem"
 
 #: miniterm.cpp:53
 msgid ""
@@ -1775,7 +1775,7 @@ msgid ""
 "This program is published under the GNU GPL\n"
 "(GNU General Public License)"
 msgstr ""
-"MiniTerm - Una emulaciÛ de terminal per KPPP\n"
+"MiniTerm - Una emulaci√≥ de terminal per KPPP\n"
 "\n"
 "(c) 1997 Bernd Johannes Wuebben <wuebben@kde.org>\n"
 "(c) 1998 Harri Porten <porten@kde.org>\n"
@@ -1786,7 +1786,7 @@ msgstr ""
 
 #: miniterm.cpp:63
 msgid "&Modem"
-msgstr "&MÚdem"
+msgstr "&M√≤dem"
 
 #: miniterm.cpp:107
 msgid "Close MiniTerm"
@@ -1794,27 +1794,27 @@ msgstr "Tanca MiniTerm"
 
 #: miniterm.cpp:112
 msgid "Reset Modem"
-msgstr "Reajusta el mÚdem"
+msgstr "Reajusta el m√≤dem"
 
 #: miniterm.cpp:138
 msgid "Initializing Modem"
-msgstr "S'est‡ inicialitzant el mÚdem"
+msgstr "S'est√† inicialitzant el m√≤dem"
 
 #: miniterm.cpp:205
 msgid "Hanging up ..."
-msgstr "S'est‡ penjant ..."
+msgstr "S'est√† penjant ..."
 
 #: miniterm.cpp:219
 msgid "Resetting Modem"
-msgstr "S'est‡ reajustant el mÚdem"
+msgstr "S'est√† reajustant el m√≤dem"
 
 #: acctselect.cpp:47
 msgid "Accounting Setup"
-msgstr "Valors de comptabilitzaciÛ"
+msgstr "Valors de comptabilitzaci√≥"
 
 #: acctselect.cpp:55
 msgid "Enable accounting"
-msgstr "Habilita comptabilitzaciÛ"
+msgstr "Habilita comptabilitzaci√≥"
 
 #: acctselect.cpp:73
 msgid "Selected:"
@@ -1826,7 +1826,7 @@ msgstr "Volum comptabilitzat:"
 
 #: acctselect.cpp:91
 msgid "No accounting"
-msgstr "Sense comptabilitzaciÛ"
+msgstr "Sense comptabilitzaci√≥"
 
 #: acctselect.cpp:92
 msgid "Bytes in"
@@ -1859,7 +1859,7 @@ msgstr "kppp: el fitxer de regles \"%s\" no s'ha trobat\n"
 
 #: ruleset.cpp:555
 msgid "kppp: rulefiles must have the extension \".rst\"\n"
-msgstr "kppp: els fitxers de regles han de tenir l'extensiÛ \".rst\"\n"
+msgstr "kppp: els fitxers de regles han de tenir l'extensi√≥ \".rst\"\n"
 
 #: ruleset.cpp:564
 msgid "kppp: error parsing the ruleset\n"
@@ -1868,19 +1868,19 @@ msgstr "kppp: error en analitzar el fitxer de regles\n"
 #: ruleset.cpp:569
 #, c-format
 msgid "kppp: parse error in line %d\n"
-msgstr "kppp: error d'an‡lisi a la lÌnia %d\n"
+msgstr "kppp: error d'an√†lisi a la l√≠nia %d\n"
 
 #: ruleset.cpp:575
 msgid "kppp: rulefile does not contain a default rule\n"
-msgstr "kppp: al fitxer de regles no hi ha una regla per omissiÛ\n"
+msgstr "kppp: al fitxer de regles no hi ha una regla per omissi√≥\n"
 
 #: ruleset.cpp:580
 msgid "kppp: rulefile does not contain a \"name=...\" line\n"
-msgstr "kppp: al fitxer de regles no hi ha una lÌnia \"name=...\"\n"
+msgstr "kppp: al fitxer de regles no hi ha una l√≠nia \"name=...\"\n"
 
 #: ruleset.cpp:584
 msgid "kppp: rulefile is ok\n"
-msgstr "kppp: el fitxer de regles Ès correcte\n"
+msgstr "kppp: el fitxer de regles √©s correcte\n"
 
 #: docking.cpp:199
 msgid "Minimize"
@@ -1888,10 +1888,10 @@ msgstr "Minimitza"
 
 #: runtests.cpp:364
 msgid ""
-"You¥re not allowed to dial out with kppp.\n"
+"You¬¥re not allowed to dial out with kppp.\n"
 "Contact your system administrator."
 msgstr ""
-"No teniu permÈs de marcar amb kppp.\n"
+"No teniu perm√©s de marcar amb kppp.\n"
 "Contacteu amb l'administrador del sistema."
 
 #: runtests.cpp:381
@@ -1905,13 +1905,13 @@ msgid ""
 "or\n"
 "  * install a kernel with PPP support\n"
 msgstr ""
-"Aquest kernel no tÈ suport PPP, ni compilat\n"
-"ni via el carregador de mÚduls del kernel.\n"
+"Aquest kernel no t√© suport PPP, ni compilat\n"
+"ni via el carregador de m√≤duls del kernel.\n"
 "\n"
 "Per solucionar aquest problema:\n"
 "  * contacteu l'administrador del sistema\n"
-"o bÈ\n"
-"  * instal∑leu un kernel amb suport PPP\n"
+"o b√©\n"
+"  * instal¬∑leu un kernel amb suport PPP\n"
 
 #: runtests.cpp:412
 msgid ""
@@ -1921,10 +1921,10 @@ msgid ""
 "Contact your system administrator\n"
 "and ask to get access to pppd."
 msgstr ""
-"No teniu permÌs per engegar pppd!\n"
+"No teniu perm√≠s per engegar pppd!\n"
 "\n"
 "Contacteu amb l'administrador del sistema\n"
-"i demaneu-li accÈs a pppd."
+"i demaneu-li acc√©s a pppd."
 
 #: runtests.cpp:423 runtests.cpp:437
 msgid ""
@@ -1934,9 +1934,9 @@ msgid ""
 "with the SUID bit set. Contact your\n"
 "system administrator."
 msgstr ""
-"pppd no s'ha instal∑lat adequadament!\n"
+"pppd no s'ha instal¬∑lat adequadament!\n"
 "\n"
-"El binari pppd ha d'esser instal∑lat\n"
+"El binari pppd ha d'esser instal¬∑lat\n"
 "amb el bit SUID establert. Contacteu\n"
 "l'administrador del sistema."
 
@@ -1948,9 +1948,9 @@ msgid ""
 "itself.\n"
 "Contact your system administrator."
 msgstr ""
-"kppp ha detectat una opciÛ 'lock' a /etc/ppp/options.\n"
+"kppp ha detectat una opci√≥ 'lock' a /etc/ppp/options.\n"
 "\n"
-"Aquesta opciÛ s'ha de treure, atÈs que kppp se n'encarrega del bloqueig de "
+"Aquesta opci√≥ s'ha de treure, at√©s que kppp se n'encarrega del bloqueig de "
 "dispositiu.\n"
 "Contacteu amb l'administrador del sistema."
 
@@ -1962,7 +1962,7 @@ msgid ""
 "a non-empty file that has appropriate\n"
 "read and write permissions."
 msgstr ""
-"no hi Ès!\n"
+"no hi √©s!\n"
 "\n"
 "Demaneu a l'administrador del sistema\n"
 "que crei un fitxer no buit amb els permisos\n"
@@ -1970,7 +1970,7 @@ msgstr ""
 
 #: loginterm.cpp:118
 msgid "Ca&ncel"
-msgstr "Ca&ncel∑la"
+msgstr "Ca&ncel¬∑la"
 
 #: loginterm.cpp:123
 msgid "&Continue"
@@ -1983,8 +1983,8 @@ msgid ""
 "Please use the terminal-based login to verify"
 msgstr ""
 "Heu engegat pppd abans que el servidor remot fos preparat per establir una "
-"connexiÛ PPP.\n"
-"Si us plau, useu la connexiÛ basada en terminal per verificar-ho"
+"connexi√≥ PPP.\n"
+"Si us plau, useu la connexi√≥ basada en terminal per verificar-ho"
 
 #: ppplog.cpp:141
 msgid "You haven't started the PPP software on the peer system."
@@ -2008,15 +2008,15 @@ msgid ""
 "configuration request! Contact your provider!"
 msgstr ""
 "No sembla que el sistema remot respongui a la\n"
-"peticiÛ de configuraciÛ! Contacteu amb el proveÔdor!"
+"petici√≥ de configuraci√≥! Contacteu amb el prove√Ødor!"
 
 #: ppplog.cpp:155
 msgid ""
 "You have passed an invalid option to pppd. See `man pppd' for a complete "
 "list of valid arguments."
 msgstr ""
-"Heu passat una opciÛ no v‡lida a pppd. Si feu `man pppd' tindreu una llista "
-"completa d'arguments v‡lids."
+"Heu passat una opci√≥ no v√†lida a pppd. Si feu `man pppd' tindreu una llista "
+"completa d'arguments v√†lids."
 
 #: ppplog.cpp:170
 #, c-format
@@ -2025,9 +2025,9 @@ msgid ""
 "\"%s\"\n"
 "This may give you a hint why the the connection has failed."
 msgstr ""
-"Anoteu que el sistema remot ha enviat el seg¸ent missatge:\n"
+"Anoteu que el sistema remot ha enviat el seg√ºent missatge:\n"
 "\"%s\"\n"
-"AixÚ us pot donar una pista del perquË ha fallat la connexiÛ."
+"Aix√≤ us pot donar una pista del perqu√® ha fallat la connexi√≥."
 
 #: ppplog.cpp:189
 msgid "Sorry. Can't help you here."
@@ -2035,19 +2035,19 @@ msgstr "Ho sento. No us puc ajudar."
 
 #: ppplog.cpp:206
 msgid ""
-"KPPP could not prepare a PPP log. It¥s very likely\n"
+"KPPP could not prepare a PPP log. It¬¥s very likely\n"
 "that pppd was started without the \"debug\" option.\n"
 "\n"
-"Without this option it¥s difficult to find out PPP\n"
+"Without this option it¬¥s difficult to find out PPP\n"
 "problems, so you should turn on the debug option.\n"
 "\n"
 "Shall I turn it on now?"
 msgstr ""
 "KPPP no pot preparar un registre PPP. Probablement\n"
-"pppd s'ha engegat sense l'opciÛ \"debug\".\n"
+"pppd s'ha engegat sense l'opci√≥ \"debug\".\n"
 "\n"
-"Sense aquesta opciÛ Ès difÌcil trobar els problemes PPP\n"
-"per tant haurieu d'activar l'opciÛ debug.\n"
+"Sense aquesta opci√≥ √©s dif√≠cil trobar els problemes PPP\n"
+"per tant haurieu d'activar l'opci√≥ debug.\n"
 "\n"
 "L'activo ara mateix?"
 
@@ -2058,10 +2058,10 @@ msgid ""
 "again, you will get a PPP log that may help\n"
 "you to track down the connection problem."
 msgstr ""
-"S'ha afegit l'opciÛ \"debug\". Ara podeu\n"
+"S'ha afegit l'opci√≥ \"debug\". Ara podeu\n"
 "provar de tornar a connectar. Si torna a fallar,\n"
-"tindreu un registre PPP que us podr‡ ajudar\n"
-"a fer el seguiment del problema de connexiÛ."
+"tindreu un registre PPP que us podr√† ajudar\n"
+"a fer el seguiment del problema de connexi√≥."
 
 #: ppplog.cpp:232
 msgid "PPP log"
@@ -2069,7 +2069,7 @@ msgstr "Registre PPP"
 
 #: ppplog.cpp:236
 msgid "kppp's diagnosis (just guessing):"
-msgstr "diagnÚstic kppp (provo d'endevinar):"
+msgstr "diagn√≤stic kppp (provo d'endevinar):"
 
 #: ppplog.cpp:241
 msgid "Write to file"
@@ -2077,22 +2077,22 @@ msgstr "Escriu a fitxer"
 
 #: modemdb.cpp:46
 msgid "Select modem type..."
-msgstr "Selecciona el tipus de mÚdem..."
+msgstr "Selecciona el tipus de m√≤dem..."
 
 #: modemdb.cpp:48
 msgid ""
 "To setup your modem, first choose its vendor in the list to the left, and "
-"then select the model from the right list. If you don¥t know which modem you "
+"then select the model from the right list. If you don¬¥t know which modem you "
 "have, you can try out one of the \"Generic\" modems."
 msgstr ""
-"Per configurar el mÚdem, primer escolliu el proveÔdor de la llista de "
-"l'esquerra i desprËs el model de la llista de la dreta. Si no sabeu quin "
-"mÚdem teniu, podeu provar un dels mÚdems \"genËrics\"."
+"Per configurar el m√≤dem, primer escolliu el prove√Ødor de la llista de "
+"l'esquerra i despr√®s el model de la llista de la dreta. Si no sabeu quin "
+"m√≤dem teniu, podeu provar un dels m√≤dems \"gen√®rics\"."
 
 #: modemdb.cpp:151 modemdb.cpp:153 modemdb.cpp:223 modemdb.cpp:238
 msgid "<Generic>"
-msgstr "<GenËric>"
+msgstr "<Gen√®ric>"
 
 #: modemdb.cpp:218
 msgid "Hayes(tm) compatible modem"
-msgstr "MÚdem compatible Hayes(tm)"
+msgstr "M√≤dem compatible Hayes(tm)"

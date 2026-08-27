@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.5.0"
 
@@ -18,32 +18,32 @@ msgstr ""
 #: kab/AssertDialog.cpp:29
 #
 msgid "(unknown file)"
-msgstr "(ismeretlen fájl)"
+msgstr "(ismeretlen fÃ¡jl)"
 
 #: kab/AssertDialog.cpp:30
 msgid "(unknown line number)"
-msgstr "(ismeretlen sorszám)"
+msgstr "(ismeretlen sorszÃ¡m)"
 
 #: kab/AssertDialog.cpp:31
 msgid "(unknown condition)"
-msgstr "(ismeretlen feltétel)"
+msgstr "(ismeretlen feltÃ©tel)"
 
 #: kab/AssertDialog.cpp:39
 msgid "You have found a bug in "
-msgstr "Talált egy hibát: "
+msgstr "TalÃ¡lt egy hibÃ¡t: "
 
 #: kab/AssertDialog.cpp:45
 msgid "Ignore the error, possibly causing much more damage"
 msgstr ""
-"Hagyja figyelmen kívül a hibát, de így lehet, hogy még több kárt fog okozni"
+"Hagyja figyelmen kÃ­vÃ¼l a hibÃ¡t, de Ã­gy lehet, hogy mÃ©g tÃ¶bb kÃ¡rt fog okozni"
 
 #: kab/AssertDialog.cpp:47
 msgid "Kill the application, loosing all data"
-msgstr "Lõjje le a programot, így minden adat elvész"
+msgstr "LÅ‘jje le a programot, Ã­gy minden adat elvÃ©sz"
 
 #: kab/AssertDialog.cpp:49
 msgid "Send an email to the application maintainer"
-msgstr "Küldjön e-mail-t a program karbantartójának"
+msgstr "KÃ¼ldjÃ¶n e-mail-t a program karbantartÃ³jÃ¡nak"
 
 #: kab/AssertDialog.cpp:51 kab/datepickerdialog.cc:25 kab/kabapi.cc:34
 #: kdeui/kcolordlg.cpp:467 kdeui/kcontrol.cpp:46 kdeui/kcontrol.cpp:51
@@ -59,13 +59,13 @@ msgstr "OK"
 
 #: kab/AssertDialog.cpp:140
 msgid "The following condition failed:\n"
-msgstr "A következõ feltétel nem teljesült:\n"
+msgstr "A kÃ¶vetkezÅ‘ feltÃ©tel nem teljesÃ¼lt:\n"
 
 # 
 #: kab/AssertDialog.cpp:141
 #
 msgid "In file "
-msgstr "Ebben a fájlban: "
+msgstr "Ebben a fÃ¡jlban: "
 
 #: kab/AssertDialog.cpp:141
 msgid ", line "
@@ -73,16 +73,16 @@ msgstr ", sorban "
 
 #: kab/AssertDialog.cpp:212 kab/AssertDialog.cpp:217
 msgid "Error handling error"
-msgstr "Hiba a hibakezelõben"
+msgstr "Hiba a hibakezelÅ‘ben"
 
 #: kab/AssertDialog.cpp:213
 #
 msgid "Could not send message."
-msgstr "Nem tudtam elküldeni az üzenetet."
+msgstr "Nem tudtam elkÃ¼ldeni az Ã¼zenetet."
 
 #: kab/AssertDialog.cpp:218
 msgid "The author did not publish an email address."
-msgstr "A szerzõ nem adott meg e-mail címet."
+msgstr "A szerzÅ‘ nem adott meg e-mail cÃ­met."
 
 #: kab/DialogBase.cpp:36
 msgid ""
@@ -90,7 +90,7 @@ msgid ""
 "you made will be used to proceed."
 msgstr ""
 "Ha megnyomja az OK gombot, akkor minden\n"
-"változtatás amit csinált eddig érvénybe lép."
+"vÃ¡ltoztatÃ¡s amit csinÃ¡lt eddig Ã©rvÃ©nybe lÃ©p."
 
 #: kab/DialogBase.cpp:39
 msgid ""
@@ -98,9 +98,9 @@ msgid ""
 "handed over to the program, but the dialog\n"
 "will not be closed.Use this to try different settings."
 msgstr ""
-"Ha az alkalmaz gombra klikkel, akkor a beállítások\n"
-"átadódnak a programnak, de a dialógus ablak\n"
-"nyitva marad. Így lehet többféle beállítást kipróbálni."
+"Ha az alkalmaz gombra klikkel, akkor a beÃ¡llÃ­tÃ¡sok\n"
+"Ã¡tadÃ³dnak a programnak, de a dialÃ³gus ablak\n"
+"nyitva marad. Ãgy lehet tÃ¶bbfÃ©le beÃ¡llÃ­tÃ¡st kiprÃ³bÃ¡lni."
 
 #: kab/DialogBase.cpp:44
 msgid ""
@@ -110,10 +110,10 @@ msgid ""
 "The program will be in the state before\n"
 "opening the dialog."
 msgstr ""
-"Ha megnyomja az Mégsem gombot, akkor minden\n"
-"változtatás elveszik, és a dialógus ablak is bezáródik.\n"
-"A program a dialógus ablak megnyitása elõtti\n"
-"állapotba kerül vissza."
+"Ha megnyomja az MÃ©gsem gombot, akkor minden\n"
+"vÃ¡ltoztatÃ¡s elveszik, Ã©s a dialÃ³gus ablak is bezÃ¡rÃ³dik.\n"
+"A program a dialÃ³gus ablak megnyitÃ¡sa elÅ‘tti\n"
+"Ã¡llapotba kerÃ¼l vissza."
 
 #: kab/DialogBase.cpp:57 kdeui/kkeydialog.cpp:242 kdeui/knotebook.cpp:247
 #: kdeui/kwizard.cpp:228 po/texts.cpp:36
@@ -128,106 +128,106 @@ msgstr "&Alkalmaz"
 #: kab/DialogBase.cpp:59 kdeui/kkeydialog.cpp:245 kdeui/knotebook.cpp:178
 #: kdeui/kwizard.cpp:159 po/texts.cpp:40
 msgid "&Cancel"
-msgstr "&Mégsem"
+msgstr "&MÃ©gsem"
 
 #: kab/PrintDialog.cpp:26
 msgid "Headline text:"
-msgstr "Címsor szöveg:"
+msgstr "CÃ­msor szÃ¶veg:"
 
 #: kab/PrintDialog.cpp:27
 msgid "Right footer text:"
-msgstr "Jobb lábléc szöveg:"
+msgstr "Jobb lÃ¡blÃ©c szÃ¶veg:"
 
 #: kab/PrintDialog.cpp:28
 msgid "Left footer text:"
-msgstr "Bal lábléc szöveg:"
+msgstr "Bal lÃ¡blÃ©c szÃ¶veg:"
 
 #: kab/SearchDialog.cpp:47
 msgid "The title"
-msgstr "Cím"
+msgstr "CÃ­m"
 
 #: kab/SearchDialog.cpp:48
 msgid "The first name"
-msgstr "Keresztnév"
+msgstr "KeresztnÃ©v"
 
 #: kab/SearchDialog.cpp:49
 msgid "The additional name"
-msgstr "Középsõ név"
+msgstr "KÃ¶zÃ©psÅ‘ nÃ©v"
 
 #: kab/SearchDialog.cpp:50
 msgid "The name prefix"
-msgstr "Név elõtag"
+msgstr "NÃ©v elÅ‘tag"
 
 #: kab/SearchDialog.cpp:51
 #
 msgid "The name"
-msgstr "Név"
+msgstr "NÃ©v"
 
 #: kab/SearchDialog.cpp:52
 msgid "The formatted name"
-msgstr "Formázott név"
+msgstr "FormÃ¡zott nÃ©v"
 
 #: kab/SearchDialog.cpp:53
 msgid "The address"
-msgstr "Lakcím"
+msgstr "LakcÃ­m"
 
 #: kab/SearchDialog.cpp:54
 msgid "The town"
-msgstr "Város"
+msgstr "VÃ¡ros"
 
 #: kab/SearchDialog.cpp:55
 msgid "The organization"
-msgstr "Cég"
+msgstr "CÃ©g"
 
 #: kab/SearchDialog.cpp:56
 msgid "The role"
-msgstr "Beosztás"
+msgstr "BeosztÃ¡s"
 
 #: kab/SearchDialog.cpp:57
 msgid "The org unit"
-msgstr "Szervezeti egység"
+msgstr "Szervezeti egysÃ©g"
 
 #: kab/SearchDialog.cpp:58
 msgid "The org subunit"
-msgstr "Szervezeti alegység"
+msgstr "Szervezeti alegysÃ©g"
 
 #: kab/SearchDialog.cpp:59
 msgid "The email address"
-msgstr "E-mail cím"
+msgstr "E-mail cÃ­m"
 
 #: kab/SearchDialog.cpp:60
 msgid "The second email address"
-msgstr "Második e-mail cím"
+msgstr "MÃ¡sodik e-mail cÃ­m"
 
 #: kab/SearchDialog.cpp:61
 msgid "The third email address"
-msgstr "Harmadik e-mail cím"
+msgstr "Harmadik e-mail cÃ­m"
 
 #: kab/SearchDialog.cpp:62
 msgid "The telephone number"
-msgstr "Telefonszám"
+msgstr "TelefonszÃ¡m"
 
 #: kab/SearchDialog.cpp:63
 msgid "The fax number"
-msgstr "Faxszám"
+msgstr "FaxszÃ¡m"
 
 #: kab/SearchDialog.cpp:64
 msgid "The modem number"
-msgstr "Modem telefonszám"
+msgstr "Modem telefonszÃ¡m"
 
 #: kab/SearchDialog.cpp:65
 msgid "The homepage URL"
-msgstr "Honlap címe"
+msgstr "Honlap cÃ­me"
 
 #: kab/SearchDialog.cpp:66
 msgid "The comment"
-msgstr "Megjegyzés"
+msgstr "MegjegyzÃ©s"
 
 # 
 #: kab/SearchDialog.cpp:74
 #
 msgid "kab: Search entries"
-msgstr "kab: Keresés"
+msgstr "kab: KeresÃ©s"
 
 #: kab/SearchDialogMainWidget.cpp:22
 msgid "matches"
@@ -235,53 +235,53 @@ msgstr "egyezik"
 
 #: kab/SearchDialogMainWidget.cpp:23
 msgid "Use shell wildcard patterns here"
-msgstr "Használhat shell rövidítéseket (*, ?)"
+msgstr "HasznÃ¡lhat shell rÃ¶vidÃ­tÃ©seket (*, ?)"
 
 #: kab/SearchDialogMainWidget.cpp:24
 msgid "Select field to match the pattern"
-msgstr "Válassza ki a mezõt, amire illeszkedjen a minta"
+msgstr "VÃ¡lassza ki a mezÅ‘t, amire illeszkedjen a minta"
 
 #: kab/StringListEditWidget.cpp:30
 msgid "Add a new string"
-msgstr "Új karakterlánc hozzáadása"
+msgstr "Ãšj karakterlÃ¡nc hozzÃ¡adÃ¡sa"
 
 #: kab/StringListEditWidget.cpp:31
 msgid "Move this string up"
-msgstr "Mozgassa ezt a karakterláncot feljebb"
+msgstr "Mozgassa ezt a karakterlÃ¡ncot feljebb"
 
 #: kab/StringListEditWidget.cpp:32
 msgid "Move this string down"
-msgstr "Mozgassa ezt a karakterláncot lejjebb"
+msgstr "Mozgassa ezt a karakterlÃ¡ncot lejjebb"
 
 #: kab/StringListEditWidget.cpp:33
 msgid "Delete this string"
-msgstr "Törölje ezt a karakterláncot"
+msgstr "TÃ¶rÃ¶lje ezt a karakterlÃ¡ncot"
 
 #: kab/StringListSelectAndReorderSet.cpp:34
 msgid "Possible values:"
-msgstr "Lehetséges értékek:"
+msgstr "LehetsÃ©ges Ã©rtÃ©kek:"
 
 #: kab/StringListSelectAndReorderSet.cpp:35
 msgid "Selected values:"
-msgstr "Kiválasztott értékek:"
+msgstr "KivÃ¡lasztott Ã©rtÃ©kek:"
 
 #: kdecore/kaccel.cpp:223 kfile/kfiledialog.cpp:559 kfile/kfiledialog.cpp:1219
 #: kfile/kfiledialog.cpp:1379 kfile/kfiledialog.cpp:1413 po/texts.cpp:65
 msgid "Open"
-msgstr "Megnyitás"
+msgstr "MegnyitÃ¡s"
 
 #: kdecore/kaccel.cpp:227
 msgid "New"
-msgstr "Új"
+msgstr "Ãšj"
 
 #: kab/searchresults.cc:30 kdecore/kaccel.cpp:231 po/texts.cpp:80
 msgid "Close"
-msgstr "Bezár"
+msgstr "BezÃ¡r"
 
 #: kdecore/kaccel.cpp:235 kfile/kfiledialog.cpp:1274
 #: kfile/kfiledialog.cpp:1434 po/texts.cpp:75
 msgid "Save"
-msgstr "Mentés"
+msgstr "MentÃ©s"
 
 #: kdecore/kaccel.cpp:239 po/texts.cpp:115
 msgid "Print"
@@ -289,15 +289,15 @@ msgstr "Nyomtat"
 
 #: kdecore/kaccel.cpp:243 po/texts.cpp:52
 msgid "Quit"
-msgstr "Kilép"
+msgstr "KilÃ©p"
 
 #: kdecore/kaccel.cpp:247 po/texts.cpp:69
 msgid "Cut"
-msgstr "Kivág"
+msgstr "KivÃ¡g"
 
 #: kdecore/kaccel.cpp:251 po/texts.cpp:56
 msgid "Copy"
-msgstr "Másol"
+msgstr "MÃ¡sol"
 
 #: kdecore/kaccel.cpp:255 po/texts.cpp:58
 msgid "Paste"
@@ -317,36 +317,36 @@ msgstr "Keres"
 #: kdeui/keditcl2.cpp:470 kdeui/keditcl2.cpp:789 kspell/kspelldlg.cpp:110
 #: po/texts.cpp:133
 msgid "Replace"
-msgstr "Cserél"
+msgstr "CserÃ©l"
 
 #: kdecore/kaccel.cpp:271 po/texts.cpp:134
 msgid "Insert"
-msgstr "Beszúr"
+msgstr "BeszÃºr"
 
 # 
 #: kdecore/kaccel.cpp:275 kfile/kfiledialog.cpp:131
 msgid "Home"
-msgstr "Elejére"
+msgstr "ElejÃ©re"
 
 #: kdecore/kaccel.cpp:279
 msgid "End"
-msgstr "Végére"
+msgstr "VÃ©gÃ©re"
 
 #: kdecore/kaccel.cpp:283
 #
 msgid "Prior"
-msgstr "Elõzõ"
+msgstr "ElÅ‘zÅ‘"
 
 #: kdecore/kaccel.cpp:287
 #
 msgid "Next"
-msgstr "Következõ"
+msgstr "KÃ¶vetkezÅ‘"
 
 #: kdecore/kaccel.cpp:291 kdetest/klocaletest.cpp:102 kdeui/kcolordlg.cpp:463
 #: kdeui/kcontrol.cpp:35 kfile/kfiledialog.cpp:246 kspell/ksconfig.cpp:212
 #: kspell/kspelldlg.cpp:131 po/texts.cpp:44
 msgid "Help"
-msgstr "Segítség"
+msgstr "SegÃ­tsÃ©g"
 
 #: kdecore/kaccel.cpp:589 kdecore/kaccel.cpp:653
 msgid "SHIFT"
@@ -366,15 +366,15 @@ msgstr "&Tartalom"
 
 #: kdecore/kapp.cpp:622
 msgid "&About"
-msgstr "&Névjegy"
+msgstr "&NÃ©vjegy"
 
 #: kdecore/kapp.cpp:629
 msgid "About &KDE..."
-msgstr "&KDE Névjegy..."
+msgstr "&KDE NÃ©vjegy..."
 
 #: kdecore/kapp.cpp:650
 msgid "About KDE"
-msgstr "KDE Névjegy"
+msgstr "KDE NÃ©vjegy"
 
 #: kdecore/kapp.cpp:652
 msgid ""
@@ -389,14 +389,14 @@ msgid ""
 "Please report bugs at http://bugs.kde.org.\n"
 msgstr ""
 "\n"
-"A KDE Felületet a KDE Csoport csinálta,\n"
-"szoftverfejlesztõk világméretû szövetsége,\n"
+"A KDE FelÃ¼letet a KDE Csoport csinÃ¡lta,\n"
+"szoftverfejlesztÅ‘k vilÃ¡gmÃ©retÅ± szÃ¶vetsÃ©ge,\n"
 "akik szabad szoftvert fejlesztenek.\n"
 "\n"
-"Látogassa meg a http://www.kde.org címet további\n"
-"információért a KDE Projecrõl. Esetleg beszállhatna a fejlesztésbe...\n"
+"LÃ¡togassa meg a http://www.kde.org cÃ­met tovÃ¡bbi\n"
+"informÃ¡ciÃ³Ã©rt a KDE ProjecrÅ‘l. Esetleg beszÃ¡llhatna a fejlesztÃ©sbe...\n"
 "\n"
-"Az esetleges hibákat a http://bugs.kde.org címen jelentheti.\n"
+"Az esetleges hibÃ¡kat a http://bugs.kde.org cÃ­men jelentheti.\n"
 
 #: kdetest/klocaletest.cpp:100 kdeui/keditcl1.cpp:412 kdeui/keditcl1.cpp:433
 #: kdeui/keditcl1.cpp:494 kdeui/keditcl1.cpp:514 kdeui/keditcl1.cpp:1661
@@ -425,11 +425,11 @@ msgstr "Nem"
 #: kfile/kfiledialogconf.cpp:59 kfmlib/kfm.cpp:415 kspell/kspelldlg.cpp:143
 #: po/texts.cpp:39
 msgid "Cancel"
-msgstr "Mégsem"
+msgstr "MÃ©gsem"
 
 #: kdeui/kcolordlg.cpp:285
 msgid "Select Color"
-msgstr "Szín kiválasztása"
+msgstr "SzÃ­n kivÃ¡lasztÃ¡sa"
 
 #: kdeui/kcolordlg.cpp:297
 msgid "System Colors"
@@ -437,20 +437,20 @@ msgstr "Rendszerpaletta"
 
 #: kdeui/kcolordlg.cpp:328
 msgid "Custom Colors"
-msgstr "Saját paletta"
+msgstr "SajÃ¡t paletta"
 
 #: kdeui/kcolordlg.cpp:341
 msgid "Add to Custom Colors"
-msgstr "Saját palettához ad"
+msgstr "SajÃ¡t palettÃ¡hoz ad"
 
 #: kdeui/kcolordlg.cpp:789 kdeui/kcolordlg.cpp:841
 msgid "Custom..."
-msgstr "Saját..."
+msgstr "SajÃ¡t..."
 
 # 
 #: kdeui/kcontrol.cpp:41 kdeui/kcontrol.cpp:58 po/texts.cpp:135
 msgid "Default"
-msgstr "Alapértékek"
+msgstr "AlapÃ©rtÃ©kek"
 
 #: kdeui/kcontrol.cpp:47 kdeui/kcontrol.cpp:53 po/texts.cpp:41
 msgid "Apply"
@@ -458,32 +458,32 @@ msgstr "Alkalmaz"
 
 #: kdeui/kdatepik.cpp:102
 msgid "January"
-msgstr "Január"
+msgstr "JanuÃ¡r"
 
 #: kdeui/kdatepik.cpp:102
 msgid "February"
-msgstr "Február"
+msgstr "FebruÃ¡r"
 
 #: kdeui/kdatepik.cpp:103
 msgid "March"
-msgstr "Március"
+msgstr "MÃ¡rcius"
 
 #: kdeui/kdatepik.cpp:103
 msgid "April"
-msgstr "Április"
+msgstr "Ãprilis"
 
 # 
 #: kdeui/kdatepik.cpp:104 kfile/kfileinfo.cpp:225
 msgid "May"
-msgstr "Május"
+msgstr "MÃ¡jus"
 
 #: kdeui/kdatepik.cpp:104
 msgid "June"
-msgstr "Június"
+msgstr "JÃºnius"
 
 #: kdeui/kdatepik.cpp:105
 msgid "July"
-msgstr "Július"
+msgstr "JÃºlius"
 
 #: kdeui/kdatepik.cpp:105
 msgid "August"
@@ -495,7 +495,7 @@ msgstr "Szeptember"
 
 #: kdeui/kdatepik.cpp:106
 msgid "October"
-msgstr "Október"
+msgstr "OktÃ³ber"
 
 #: kdeui/kdatepik.cpp:107
 msgid "November"
@@ -507,7 +507,7 @@ msgstr "December"
 
 #: kdeui/kdatepik.cpp:247
 msgid "(invalid)"
-msgstr "(érvénytelen)"
+msgstr "(Ã©rvÃ©nytelen)"
 
 # 
 #: kdeui/kdatetbl.cpp:49
@@ -517,7 +517,7 @@ msgstr "Vas"
 # 
 #: kdeui/kdatetbl.cpp:49
 msgid "Mon"
-msgstr "Hét"
+msgstr "HÃ©t"
 
 # 
 #: kdeui/kdatetbl.cpp:49
@@ -531,11 +531,11 @@ msgstr "Sze"
 
 #: kdeui/kdatetbl.cpp:50
 msgid "Thu"
-msgstr "Csü"
+msgstr "CsÃ¼"
 
 #: kdeui/kdatetbl.cpp:50
 msgid "Fri"
-msgstr "Pén"
+msgstr "PÃ©n"
 
 # 
 #: kdeui/kdatetbl.cpp:51
@@ -546,97 +546,97 @@ msgstr "Szo"
 #: kdeui/keditcl1.cpp:139 kdeui/keditcl1.cpp:168 kdeui/keditcl1.cpp:189
 #: kdeui/keditcl1.cpp:202 kdeui/keditcl1.cpp:1559 po/texts.cpp:83
 msgid "Sorry"
-msgstr "Sajnálom"
+msgstr "SajnÃ¡lom"
 
 #: kdeui/keditcl1.cpp:140
 msgid "The specified File does not exist"
-msgstr "A megadott file nem létezik"
+msgstr "A megadott file nem lÃ©tezik"
 
 #: kdeui/keditcl1.cpp:153 kdeui/keditcl1.cpp:430 kdeui/keditcl1.cpp:511
 #: kdeui/keditcl1.cpp:1715
 msgid "Sorry:"
-msgstr "Sajnálom:"
+msgstr "SajnÃ¡lom:"
 
 #: kdeui/keditcl1.cpp:154
 msgid "You have specificated a directory"
-msgstr "Egy könyvtárat adott meg"
+msgstr "Egy kÃ¶nyvtÃ¡rat adott meg"
 
 #: kdeui/keditcl1.cpp:169 kdeui/keditcl1.cpp:190
 msgid "You do not have read permission to this file."
-msgstr "Nincs olvasási joga ehhez a file-hoz."
+msgstr "Nincs olvasÃ¡si joga ehhez a file-hoz."
 
 #: kdeui/keditcl1.cpp:203
 msgid "An Error occured while trying to open this Document"
-msgstr "Hiba történt a dokumentum megnyitásakor."
+msgstr "Hiba tÃ¶rtÃ©nt a dokumentum megnyitÃ¡sakor."
 
 #: kdeui/keditcl1.cpp:373
 msgid "Select Document to Insert"
-msgstr "Válassza ki a beillesztendõ dokumentumot"
+msgstr "VÃ¡lassza ki a beillesztendÅ‘ dokumentumot"
 
 #: kdeui/keditcl1.cpp:409 kdeui/keditcl1.cpp:491 kdeui/keditcl1.cpp:1658
 msgid "Warning:"
-msgstr "Figyelmeztetés:"
+msgstr "FigyelmeztetÃ©s:"
 
 #: kdeui/keditcl1.cpp:410 kdeui/keditcl1.cpp:492
 msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"A jelenlegi szöveget módosította.\n"
-"Szeretné elmenteni?"
+"A jelenlegi szÃ¶veget mÃ³dosÃ­totta.\n"
+"SzeretnÃ© elmenteni?"
 
 #: kdeui/keditcl1.cpp:431
 msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
 msgstr ""
-"Nem tudtam elmenteni a szöveget.\n"
-"Azért nyissam meg az újat?"
+"Nem tudtam elmenteni a szÃ¶veget.\n"
+"AzÃ©rt nyissam meg az Ãºjat?"
 
 #: kdeui/keditcl1.cpp:462
 msgid "Select Document to Open"
-msgstr "Válassza ki a megnyitandó dokumentumot"
+msgstr "VÃ¡lassza ki a megnyitandÃ³ dokumentumot"
 
 #: kdeui/keditcl1.cpp:512
 msgid ""
 "Could not save the document.\n"
 "Create a new document anyways?"
 msgstr ""
-"Nem tudtam elmenteni a szöveget.\n"
-"Azért csináljak egy újat?"
+"Nem tudtam elmenteni a szÃ¶veget.\n"
+"AzÃ©rt csinÃ¡ljak egy Ãºjat?"
 
 #: kdeui/keditcl1.cpp:547 kdeui/keditcl1.cpp:1700 kdeui/kpopmenu.cpp:10
 #: po/texts.cpp:34
 msgid "Untitled"
-msgstr "Névtelen"
+msgstr "NÃ©vtelen"
 
 #: kdeui/keditcl1.cpp:1560
 msgid "Could not save the document\n"
-msgstr "Nem sikerült elmenteni a dokumentumot\n"
+msgstr "Nem sikerÃ¼lt elmenteni a dokumentumot\n"
 
 #: kdeui/keditcl1.cpp:1630
 msgid "Save Document As"
-msgstr "Mentés másként"
+msgstr "MentÃ©s mÃ¡skÃ©nt"
 
 #: kdeui/keditcl1.cpp:1659
 msgid ""
 "A Document with this Name exists already\n"
 "Do you want to overwrite it ?"
 msgstr ""
-"Ilyen nevû fájl már létezik\n"
-"Felül akarja írni?"
+"Ilyen nevÅ± fÃ¡jl mÃ¡r lÃ©tezik\n"
+"FelÃ¼l akarja Ã­rni?"
 
 #: kdeui/keditcl1.cpp:1716
 msgid "You do not have write permission to this file.\n"
-msgstr "Nincsen írás jogod ehhez a fájlhoz.\n"
+msgstr "Nincsen Ã­rÃ¡s jogod ehhez a fÃ¡jlhoz.\n"
 
 #: kdeui/keditcl2.cpp:104 kdeui/keditcl2.cpp:361 kdeui/keditcl2.cpp:454
 msgid ""
 "End of document reached.\n"
 "Continue from the beginning?"
 msgstr ""
-"A file végére értem.\n"
-"Folytassam az elejérõl?"
+"A file vÃ©gÃ©re Ã©rtem.\n"
+"Folytassam az elejÃ©rÅ‘l?"
 
 #: kdeui/keditcl2.cpp:121 kdeui/keditcl2.cpp:378 kdeui/keditcl2.cpp:424
 #: kdeui/keditcl2.cpp:471
@@ -644,12 +644,12 @@ msgid ""
 "Beginning of document reached.\n"
 "Continue from the end?"
 msgstr ""
-"A file elejére értem.\n"
-"Folytassam az végérõl?"
+"A file elejÃ©re Ã©rtem.\n"
+"Folytassam az vÃ©gÃ©rÅ‘l?"
 
 #: kdeui/keditcl2.cpp:682 kdeui/keditcl2.cpp:780
 msgid "Case Sensitive"
-msgstr "Kis/nagybetû érzékeny"
+msgstr "Kis/nagybetÅ± Ã©rzÃ©keny"
 
 #: kdeui/keditcl2.cpp:683 kdeui/keditcl2.cpp:783
 msgid "Find Backwards"
@@ -657,7 +657,7 @@ msgstr "Keresd visszafele"
 
 #: kdeui/keditcl2.cpp:688 kdeui/keditcl2.cpp:795
 msgid "Done"
-msgstr "Kész"
+msgstr "KÃ©sz"
 
 #: kdeui/keditcl2.cpp:768
 msgid "Find:"
@@ -665,15 +665,15 @@ msgstr "Keresd:"
 
 #: kdeui/keditcl2.cpp:778
 msgid "Replace with:"
-msgstr "Cseréld erre:"
+msgstr "CserÃ©ld erre:"
 
 #: kdeui/keditcl2.cpp:792 kspell/kspelldlg.cpp:38
 msgid "Replace All"
-msgstr "Mindet cseréld"
+msgstr "Mindet cserÃ©ld"
 
 #: kdeui/keditcl2.cpp:889
 msgid "Goto Line"
-msgstr "Ugrás sorra"
+msgstr "UgrÃ¡s sorra"
 
 #: kdeui/keditcl2.cpp:894
 msgid "Go"
@@ -681,170 +681,170 @@ msgstr "Mehet"
 
 #: kdeui/kfontdialog.cpp:177
 msgid "Select Font"
-msgstr "Kiválasztott betûtípus"
+msgstr "KivÃ¡lasztott betÅ±tÃ­pus"
 
 #: kdeui/kfontdialog.cpp:181
 msgid "Requested Font"
-msgstr "Kért betûtípus"
+msgstr "KÃ©rt betÅ±tÃ­pus"
 
 #: kdeui/kfontdialog.cpp:182
 msgid "Actual Font"
-msgstr "Jelenlegi betûtípus"
+msgstr "Jelenlegi betÅ±tÃ­pus"
 
 #: kdeui/kfontdialog.cpp:202 kdeui/kfontdialog.cpp:207
 msgid "Family:"
-msgstr "Család:"
+msgstr "CsalÃ¡d:"
 
 #: kdeui/kfontdialog.cpp:214 kdeui/kfontdialog.cpp:219 po/texts.cpp:26
 msgid "Charset:"
-msgstr "Betûkészlet:"
+msgstr "BetÅ±kÃ©szlet:"
 
 #: kdeui/kfontdialog.cpp:227 kdeui/kfontdialog.cpp:232 kfile/kpreview.cpp:196
 msgid "Size:"
-msgstr "Méret:"
+msgstr "MÃ©ret:"
 
 #: kdeui/kfontdialog.cpp:239 kdeui/kfontdialog.cpp:244
 msgid "Weight:"
-msgstr "Vastagság:"
+msgstr "VastagsÃ¡g:"
 
 #: kdeui/kfontdialog.cpp:251 kdeui/kfontdialog.cpp:256
 msgid "Style:"
-msgstr "Stílus:"
+msgstr "StÃ­lus:"
 
 #: kdeui/kfontdialog.cpp:284 kfile/kfiledetaillist.cpp:38
 msgid "Size"
-msgstr "Méret"
+msgstr "MÃ©ret"
 
 #: kdeui/kfontdialog.cpp:322
 msgid "Weight"
-msgstr "Vastagság"
+msgstr "VastagsÃ¡g"
 
 #: kdeui/kfontdialog.cpp:325 kdeui/kfontdialog.cpp:484
 msgid "normal"
-msgstr "normál"
+msgstr "normÃ¡l"
 
 #: kdeui/kfontdialog.cpp:326 kdeui/kfontdialog.cpp:486
 msgid "bold"
-msgstr "félkövér"
+msgstr "fÃ©lkÃ¶vÃ©r"
 
 #: kdeui/kfontdialog.cpp:336
 msgid "Style"
-msgstr "Stílus"
+msgstr "StÃ­lus"
 
 # 
 #: kdeui/kfontdialog.cpp:339 kdeui/kfontdialog.cpp:497
 #: kdeui/kfontdialog.cpp:526
 msgid "roman"
-msgstr "román"
+msgstr "romÃ¡n"
 
 #: kdeui/kfontdialog.cpp:340 kdeui/kfontdialog.cpp:499
 #: kdeui/kfontdialog.cpp:524
 msgid "italic"
-msgstr "kurzív"
+msgstr "kurzÃ­v"
 
 #: kdeui/kfontdialog.cpp:348
 msgid "Charset"
-msgstr "Betûkészlet"
+msgstr "BetÅ±kÃ©szlet"
 
 #: kdeui/kfontdialog.cpp:367
 msgid "Dolor Ipse"
-msgstr "árvíztûrõ tükörfúrógép"
+msgstr "Ã¡rvÃ­ztÅ±rÅ‘ tÃ¼kÃ¶rfÃºrÃ³gÃ©p"
 
 #: kdeui/kfontdialog.cpp:519
 msgid "Bold"
-msgstr "Félkövér"
+msgstr "FÃ©lkÃ¶vÃ©r"
 
 #: kdeui/kfontdialog.cpp:521
 msgid "Normal"
-msgstr "Normál"
+msgstr "NormÃ¡l"
 
 #: kdeui/kiconloaderdialog.cpp:247
 msgid "Select Icon"
-msgstr "Ikon kiválasztása"
+msgstr "Ikon kivÃ¡lasztÃ¡sa"
 
 #: kdeui/kiconloaderdialog.cpp:252
 msgid "Filter:"
-msgstr "Szûrõ:"
+msgstr "SzÅ±rÅ‘:"
 
 #: kdeui/kkeydialog.cpp:219
 msgid "Configure key bindings"
-msgstr "Billentyû hozzárendelések beállítása"
+msgstr "BillentyÅ± hozzÃ¡rendelÃ©sek beÃ¡llÃ­tÃ¡sa"
 
 #: kdeui/kkeydialog.cpp:232 kdeui/knotebook.cpp:224 kdeui/kwizard.cpp:205
 #: po/texts.cpp:45
 msgid "&Help"
-msgstr "&Segítség"
+msgstr "&SegÃ­tsÃ©g"
 
 # 
 #: kdeui/kkeydialog.cpp:236 po/texts.cpp:136
 #
 msgid "&Defaults"
-msgstr "&Alapértékek"
+msgstr "&AlapÃ©rtÃ©kek"
 
 #: kdeui/kkeydialog.cpp:320
 msgid "Current key"
-msgstr "Jelenlegi billentyû"
+msgstr "Jelenlegi billentyÅ±"
 
 # 
 #: kdeui/kkeydialog.cpp:332
 #
 msgid "&Action"
-msgstr "&Esemény"
+msgstr "&EsemÃ©ny"
 
 #: kdeui/kkeydialog.cpp:366
 msgid "Choose a key for the selected action"
-msgstr "Válasszon billentyût a kijelölt eseményhez"
+msgstr "VÃ¡lasszon billentyÅ±t a kijelÃ¶lt esemÃ©nyhez"
 
 #: kdeui/kkeydialog.cpp:393
 msgid "&No key"
-msgstr "&Nincs billentyû"
+msgstr "&Nincs billentyÅ±"
 
 # 
 #: kdeui/kkeydialog.cpp:401
 #
 msgid "&Default key"
-msgstr "&Alapértelmezett gomb"
+msgstr "&AlapÃ©rtelmezett gomb"
 
 #: kdeui/kkeydialog.cpp:409
 #
 msgid "&Custom key"
-msgstr "&Saját gomb"
+msgstr "&SajÃ¡t gomb"
 
 #: kdeui/kkeydialog.cpp:472
 msgid "No keys defined"
-msgstr "Nincs billentyû definiálva"
+msgstr "Nincs billentyÅ± definiÃ¡lva"
 
 #: kdeui/kkeydialog.cpp:474
 msgid "Not configurable"
-msgstr "Nem állítható"
+msgstr "Nem Ã¡llÃ­thatÃ³"
 
 #: kdeui/kkeydialog.cpp:530
 msgid "Global Keys"
-msgstr "Globális Billentyûk"
+msgstr "GlobÃ¡lis BillentyÅ±k"
 
 #: kdeui/kkeydialog.cpp:562
 msgid "Keys"
-msgstr "Billentyûk"
+msgstr "BillentyÅ±k"
 
 #: kdeui/kkeydialog.cpp:637 kdeui/kkeydialog.cpp:976
 msgid "Attention : key already used"
-msgstr "Figyelem: a billentyû már használvan van"
+msgstr "Figyelem: a billentyÅ± mÃ¡r hasznÃ¡lvan van"
 
 #: kdeui/kkeydialog.cpp:926
 msgid "Press the wanted key"
-msgstr "Nyomja meg a kívánt billentyût"
+msgstr "Nyomja meg a kÃ­vÃ¡nt billentyÅ±t"
 
 #: kdeui/kkeydialog.cpp:949
 msgid "Undefined key"
-msgstr "Definiálatlan billentyû"
+msgstr "DefiniÃ¡latlan billentyÅ±"
 
 #: kdeui/kkeydialog.cpp:999
 msgid "Return to end edition"
-msgstr "Vissza az utlsó változathoz"
+msgstr "Vissza az utlsÃ³ vÃ¡ltozathoz"
 
 #: kdeui/kkeydialog.cpp:1009
 msgid "Incorrect key"
-msgstr "Hibás billentyû"
+msgstr "HibÃ¡s billentyÅ±"
 
 #: kdeui/kkeydialog.cpp:1035
 #, c-format
@@ -854,14 +854,14 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"A %s billentyû kombináció már ki van osztva\n"
-"a globális %s eseményhez.\n"
+"A %s billentyÅ± kombinÃ¡ciÃ³ mÃ¡r ki van osztva\n"
+"a globÃ¡lis %s esemÃ©nyhez.\n"
 "\n"
-"Válasszon egyedi billentyûkombinációt."
+"VÃ¡lasszon egyedi billentyÅ±kombinÃ¡ciÃ³t."
 
 #: kdeui/kkeydialog.cpp:1039
 msgid "Global key conflict"
-msgstr "Globális billentyû konfliktus"
+msgstr "GlobÃ¡lis billentyÅ± konfliktus"
 
 #: kdeui/kkeydialog.cpp:1062
 #, c-format
@@ -871,14 +871,14 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"A %s billentyû kombináció már ki van osztva\n"
-"az általános %s eseményhez.\n"
+"A %s billentyÅ± kombinÃ¡ciÃ³ mÃ¡r ki van osztva\n"
+"az Ã¡ltalÃ¡nos %s esemÃ©nyhez.\n"
 "\n"
-"Válasszon egyedi billentyûkombinációt."
+"VÃ¡lasszon egyedi billentyÅ±kombinÃ¡ciÃ³t."
 
 #: kdeui/kkeydialog.cpp:1066
 msgid "Standard key conflict"
-msgstr "Álltalános billentyû konfliktus"
+msgstr "ÃlltalÃ¡nos billentyÅ± konfliktus"
 
 #: kdeui/kkeydialog.cpp:1086
 #, c-format
@@ -888,52 +888,52 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"A %s billentyû kombináció már ki van osztva\n"
-"a %s eseményhez.\n"
+"A %s billentyÅ± kombinÃ¡ciÃ³ mÃ¡r ki van osztva\n"
+"a %s esemÃ©nyhez.\n"
 "\n"
-"Válasszon egyedi billentyûkombinációt."
+"VÃ¡lasszon egyedi billentyÅ±kombinÃ¡ciÃ³t."
 
 #: kdeui/kkeydialog.cpp:1090
 msgid "Key conflict"
-msgstr "Billentyû konfliktus"
+msgstr "BillentyÅ± konfliktus"
 
 #: kdeui/kmenubar.cpp:306 kdeui/ktoolbar.cpp:860
 msgid "Top"
-msgstr "Tetején"
+msgstr "TetejÃ©n"
 
 #: kdeui/kmenubar.cpp:307 kdeui/ktoolbar.cpp:862
 msgid "Bottom"
-msgstr "Alján"
+msgstr "AljÃ¡n"
 
 #: kdeui/kmenubar.cpp:308 kdeui/ktoolbar.cpp:863
 msgid "Floating"
-msgstr "Lebegõ"
+msgstr "LebegÅ‘"
 
 #: kdeui/kmenubar.cpp:457 kdeui/kmenubar.cpp:809 kdeui/ktoolbar.cpp:2090
 msgid "Float"
-msgstr "Lebegtetés"
+msgstr "LebegtetÃ©s"
 
 #: kdeui/kmenubar.cpp:761 kdeui/ktoolbar.cpp:2071
 msgid "UnFloat"
-msgstr "Rögzítés"
+msgstr "RÃ¶gzÃ­tÃ©s"
 
 #: kdeui/knotebook.cpp:145
 msgid "Trying to add page when no KWizards are added!"
 msgstr ""
-"Megpróbált egy oldalt hozzáadni, amikor még nem volt KVarázsló hozzáadva!"
+"MegprÃ³bÃ¡lt egy oldalt hozzÃ¡adni, amikor mÃ©g nem volt KVarÃ¡zslÃ³ hozzÃ¡adva!"
 
 # 
 #: kdeui/knotebook.cpp:201 kdeui/kwizard.cpp:182
 msgid "&Default"
-msgstr "&Alapérték"
+msgstr "&AlapÃ©rtÃ©k"
 
 #: kdeui/kquickhelp.cpp:203
 msgid "Quickhelp"
-msgstr "Gyors segítség"
+msgstr "Gyors segÃ­tsÃ©g"
 
 #: kdeui/ktoolbar.cpp:288 kdeui/ktoolbar.cpp:340
 msgid "KToolBarButton: pixmap is empty, perhaps some missing file"
-msgstr "KToolBarButton: pixmap üres, hiányzik a fájl?"
+msgstr "KToolBarButton: pixmap Ã¼res, hiÃ¡nyzik a fÃ¡jl?"
 
 #: kdeui/ktoolbar.cpp:859
 msgid "Left"
@@ -947,12 +947,12 @@ msgstr "Jobb"
 #: kdeui/kwizard.cpp:531 kdeui/kwizard.cpp:678
 #, c-format
 msgid "Page %d of %d"
-msgstr "%d. oldal a %d-bõl"
+msgstr "%d. oldal a %d-bÅ‘l"
 
 # 
 #: kfile/kcombiview.cpp:81
 msgid "Folders:"
-msgstr "Mappák:"
+msgstr "MappÃ¡k:"
 
 # 
 #: kfile/kcombiview.cpp:82
@@ -961,22 +961,22 @@ msgstr "Tartalom:"
 
 #: kfile/kfilebookmark.cpp:246
 msgid "<!-- Do not edit this file -->"
-msgstr "<!-- Ne szerkeszd ezt a fájlt -->"
+msgstr "<!-- Ne szerkeszd ezt a fÃ¡jlt -->"
 
 # 
 #: kab/addressbook.cc:1112 kfile/kfiledetaillist.cpp:36
 msgid "Name"
-msgstr "Név"
+msgstr "NÃ©v"
 
 # 
 #: kfile/kfiledetaillist.cpp:40
 msgid "Permissions"
-msgstr "Hozzáférési jogok"
+msgstr "HozzÃ¡fÃ©rÃ©si jogok"
 
 # 
 #: kfile/kfiledetaillist.cpp:42
 msgid "Date"
-msgstr "Dátum"
+msgstr "DÃ¡tum"
 
 # 
 #: kfile/kfiledetaillist.cpp:45
@@ -994,16 +994,16 @@ msgstr "Vissza"
 
 #: kfile/kfiledialog.cpp:125
 msgid "Forward"
-msgstr "Elõre"
+msgstr "ElÅ‘re"
 
 # 
 #: kfile/kfiledialog.cpp:128
 msgid "Up to parent"
-msgstr "Fel, a szülõhöz"
+msgstr "Fel, a szÃ¼lÅ‘hÃ¶z"
 
 #: kfile/kfiledialog.cpp:134 po/texts.cpp:54
 msgid "Reload"
-msgstr "Újratölt"
+msgstr "ÃšjratÃ¶lt"
 
 # 
 #: kfile/kfiledialog.cpp:156
@@ -1013,53 +1013,53 @@ msgstr "Kedvencek"
 # 
 #: kfile/kfiledialog.cpp:160
 msgid "Create new folder"
-msgstr "Új mappa létrehozás"
+msgstr "Ãšj mappa lÃ©trehozÃ¡s"
 
 # 
 #: kfile/kfiledialog.cpp:163
 msgid "Search for a file"
-msgstr "Fájl keresés"
+msgstr "FÃ¡jl keresÃ©s"
 
 #: kfile/kfiledialog.cpp:166
 msgid "Configure this dialog [development only]"
-msgstr "Dialógus ablak átszerkesztése [csak fejlesztésre]"
+msgstr "DialÃ³gus ablak Ã¡tszerkesztÃ©se [csak fejlesztÃ©sre]"
 
 #: kfile/kfiledialog.cpp:174
 msgid "The path"
-msgstr "Elérési út"
+msgstr "ElÃ©rÃ©si Ãºt"
 
 # 
 #: kfile/kfiledialog.cpp:199
 msgid "&Location:"
-msgstr "E&lérési út:"
+msgstr "E&lÃ©rÃ©si Ãºt:"
 
 # 
 #: kfile/kfiledialog.cpp:212
 msgid "&Filter:"
-msgstr "&Szûrõ:"
+msgstr "&SzÅ±rÅ‘:"
 
 # 
 #: kfile/kfiledialog.cpp:226
 msgid "Show hidden"
-msgstr "Rejtett megjelenítése"
+msgstr "Rejtett megjelenÃ­tÃ©se"
 
 # 
 #: kfile/kfiledialog.cpp:505
 msgid "Error: Not local file"
-msgstr "Hiba: Nem helyi fájl"
+msgstr "Hiba: Nem helyi fÃ¡jl"
 
 #: kfile/kfiledialog.cpp:506
 msgid ""
 "The specified directory is not a local directory\n"
 "But the application accepts just local files."
 msgstr ""
-"A megadott könyvtár nem helyi könyvtár\n"
-"Az alkalmazás pedig csak helyi fájlokat fogad el."
+"A megadott kÃ¶nyvtÃ¡r nem helyi kÃ¶nyvtÃ¡r\n"
+"Az alkalmazÃ¡s pedig csak helyi fÃ¡jlokat fogad el."
 
 # 
 #: kfile/kfiledialog.cpp:520 kfile/kfiledialog.cpp:625
 msgid "Error: Cannot Open Directory"
-msgstr "Hiba: Nem lehet megnyitni a könyvtárat."
+msgstr "Hiba: Nem lehet megnyitni a kÃ¶nyvtÃ¡rat."
 
 # 
 #: kfile/kfiledialog.cpp:521
@@ -1067,8 +1067,8 @@ msgid ""
 "The specified directory does not exist\n"
 "or was not readable."
 msgstr ""
-"A megadott könyvtár nem létezik\n"
-"vagy nem olvasható."
+"A megadott kÃ¶nyvtÃ¡r nem lÃ©tezik\n"
+"vagy nem olvashatÃ³."
 
 #: kfile/kfiledialog.cpp:523 kfile/kfiledialog.cpp:628
 msgid "Dismiss"
@@ -1076,78 +1076,78 @@ msgstr "Elvet"
 
 #: kfile/kfiledialog.cpp:574 kfile/kfiledialog.cpp:1394 po/texts.cpp:77
 msgid "Save As"
-msgstr "Mentés másként"
+msgstr "MentÃ©s mÃ¡skÃ©nt"
 
 # 
 #: kfile/kfiledialog.cpp:597
 msgid "Root Directory"
-msgstr "Gyökér könyvtár"
+msgstr "GyÃ¶kÃ©r kÃ¶nyvtÃ¡r"
 
 # 
 #: kfile/kfiledialog.cpp:626
 msgid "The specified directory does not exist or was not readable."
-msgstr "A megadott könyvtár nem létezik vagy nem olvasható."
+msgstr "A megadott kÃ¶nyvtÃ¡r nem lÃ©tezik vagy nem olvashatÃ³."
 
 # 
 #: kfile/kfiledialog.cpp:887
 msgid "Create new directory in: "
-msgstr "Könyvtár létrehozása: "
+msgstr "KÃ¶nyvtÃ¡r lÃ©trehozÃ¡sa: "
 
 # 
 #: kfile/kfiledialog.cpp:890
 msgid "New Directory"
-msgstr "Új könyvtár"
+msgstr "Ãšj kÃ¶nyvtÃ¡r"
 
 # 
 #: kfile/kfiledialog.cpp:962
 msgid "Add to bookmarks"
-msgstr "Hozzáadás a kedvencekhez"
+msgstr "HozzÃ¡adÃ¡s a kedvencekhez"
 
 # 
 #: kfile/kfiledialog.cpp:1253
 msgid "Choose Directory"
-msgstr "Könyvtár Választás"
+msgstr "KÃ¶nyvtÃ¡r VÃ¡lasztÃ¡s"
 
 # 
 #: kfile/kfiledialog.cpp:1321
 msgid "directory"
-msgstr "könyvtár"
+msgstr "kÃ¶nyvtÃ¡r"
 
 # 
 #: kfile/kfiledialog.cpp:1323
 msgid "directories"
-msgstr "könyvtárak"
+msgstr "kÃ¶nyvtÃ¡rak"
 
 # 
 #: kfile/kfiledialog.cpp:1325 kfile/kpreview.cpp:326
 msgid "file"
-msgstr "fájl"
+msgstr "fÃ¡jl"
 
 # 
 #: kfile/kfiledialog.cpp:1327
 msgid "files"
-msgstr "fájlok"
+msgstr "fÃ¡jlok"
 
 # , c-format
 #: kfile/kfiledialog.cpp:1329
 #, c-format
 msgid "%d %s and %d %s"
-msgstr "%d %s és %d %s"
+msgstr "%d %s Ã©s %d %s"
 
 # 
 #: kfile/kfiledialog.cpp:1339
 msgid "one directory"
-msgstr "egy könyvtár"
+msgstr "egy kÃ¶nyvtÃ¡r"
 
 # 
 #: kfile/kfiledialog.cpp:1341
 #, c-format
 msgid "%d directories"
-msgstr "%d könyvtár"
+msgstr "%d kÃ¶nyvtÃ¡r"
 
 #: kfile/kfiledialogconf.cpp:42
 msgid "Look and Feel"
-msgstr "Kinézet"
+msgstr "KinÃ©zet"
 
 #: kfile/kfiledialogconf.cpp:44
 msgid ""
@@ -1162,76 +1162,76 @@ msgid ""
 "Mario Weilguni <mweilguni@sime.com>\n"
 "and Martin Jones <mjones@kde.org>"
 msgstr ""
-"KDE Fájl Kiválasztó\n"
+"KDE FÃ¡jl KivÃ¡lasztÃ³\n"
 "\n"
-"Szerzõk:\n"
+"SzerzÅ‘k:\n"
 "Richard Moore <rich@kde.org>\n"
 "Stephan Kulow <coolo@kde.org>\n"
-"és Daniel Grana <grana@ie.iwi.unibe.ch>\n"
+"Ã©s Daniel Grana <grana@ie.iwi.unibe.ch>\n"
 "\n"
 "Mario Weilguni <mweilguni@sime.com>\n"
-"és Martin Jones <mjones@kde.org>\n"
-"segítségével."
+"Ã©s Martin Jones <mjones@kde.org>\n"
+"segÃ­tsÃ©gÃ©vel."
 
 #: kfile/kfiledialogconf.cpp:57 po/texts.cpp:32
 msgid "About"
-msgstr "Névjegy"
+msgstr "NÃ©vjegy"
 
 # 
 #: kfile/kfiledialogconf.cpp:71
 msgid "View style"
-msgstr "Stílus megtekintése"
+msgstr "StÃ­lus megtekintÃ©se"
 
 # 
 #: kfile/kfiledialogconf.cpp:75
 msgid "Show Short View"
-msgstr "Mutassa a Rövid Nézetet"
+msgstr "Mutassa a RÃ¶vid NÃ©zetet"
 
 # 
 #: kfile/kfiledialogconf.cpp:81
 msgid "Show Detail View"
-msgstr "Mutassa a Részletes Nézetet"
+msgstr "Mutassa a RÃ©szletes NÃ©zetet"
 
 #: kfile/kfiledialogconf.cpp:90
 msgid "Misc"
-msgstr "Egyéb"
+msgstr "EgyÃ©b"
 
 # 
 #: kfile/kfiledialogconf.cpp:96
 msgid "Show Filter"
-msgstr "Mutassa a szûrõt"
+msgstr "Mutassa a szÅ±rÅ‘t"
 
 # 
 #: kfile/kfiledialogconf.cpp:102
 msgid "Show List Labels"
-msgstr "Mutassa a Lista Cimkéket"
+msgstr "Mutassa a Lista CimkÃ©ket"
 
 # 
 #: kfile/kfiledialogconf.cpp:108
 msgid "Show Hidden"
-msgstr "Mutassa a rejtett fájlokat"
+msgstr "Mutassa a rejtett fÃ¡jlokat"
 
 # 
 #: kfile/kfiledialogconf.cpp:114
 msgid "Show Status Line"
-msgstr "Mutassa a státuszsort"
+msgstr "Mutassa a stÃ¡tuszsort"
 
 #: kfile/kfiledialogconf.cpp:120
 msgid "Use single Click"
-msgstr "Egyszeres klikkelés használata"
+msgstr "Egyszeres klikkelÃ©s hasznÃ¡lata"
 
 #: kfile/kfiledialogconf.cpp:126
 msgid "Mix dirs and files"
-msgstr "Könyvtárak és fájlok vegyesen"
+msgstr "KÃ¶nyvtÃ¡rak Ã©s fÃ¡jlok vegyesen"
 
 #: kfile/kfiledialogconf.cpp:132
 msgid "Keep dirs first"
-msgstr "Könyvtárak elõre"
+msgstr "KÃ¶nyvtÃ¡rak elÅ‘re"
 
 #: kfile/kfilefilter.cpp:35
 #
 msgid "*|All Files"
-msgstr "*|Minden fájl"
+msgstr "*|Minden fÃ¡jl"
 
 # 
 #: kfile/kfileinfo.cpp:97 kfile/kfileinfo.cpp:101
@@ -1250,22 +1250,22 @@ msgstr "Feb"
 # 
 #: kfile/kfileinfo.cpp:223
 msgid "Mar"
-msgstr "Már"
+msgstr "MÃ¡r"
 
 # 
 #: kfile/kfileinfo.cpp:224
 msgid "Apr"
-msgstr "Ápr"
+msgstr "Ãpr"
 
 # 
 #: kfile/kfileinfo.cpp:226
 msgid "Jun"
-msgstr "Jún"
+msgstr "JÃºn"
 
 # 
 #: kfile/kfileinfo.cpp:227
 msgid "Jul"
-msgstr "Júl"
+msgstr "JÃºl"
 
 # 
 #: kfile/kfileinfo.cpp:228
@@ -1295,12 +1295,12 @@ msgstr "Dec"
 # 
 #: kab/editentry.cc:64 kfile/kpreview.cpp:187
 msgid "Name:"
-msgstr "Név:"
+msgstr "NÃ©v:"
 
 # 
 #: kfile/kpreview.cpp:205
 msgid "Date:"
-msgstr "Dátum:"
+msgstr "DÃ¡tum:"
 
 # 
 #: kfile/kpreview.cpp:214
@@ -1315,16 +1315,16 @@ msgstr "Csoport:"
 # 
 #: kfile/kpreview.cpp:232
 msgid "Type:"
-msgstr "Típus:"
+msgstr "TÃ­pus:"
 
 # 
 #: kfile/kpreview.cpp:287
 msgid "locked"
-msgstr "zárolt"
+msgstr "zÃ¡rolt"
 
 #: kfile/kpreview.cpp:311
 msgid "picture"
-msgstr "kép"
+msgstr "kÃ©p"
 
 # 
 #: kfile/kpreview.cpp:343
@@ -1338,8 +1338,8 @@ msgid ""
 "You dont have the file %s\n"
 "Could not do Authorization"
 msgstr ""
-"Hiányzik a %s fájl\n"
-"Így nem tudok azonoítani"
+"HiÃ¡nyzik a %s fÃ¡jl\n"
+"Ãgy nem tudok azonoÃ­tani"
 
 # 
 #: kfmlib/kfm.cpp:200 kfmlib/kfm.cpp:210
@@ -1353,26 +1353,26 @@ msgid ""
 "The file %s is corrupted\n"
 "Could not do Authorization"
 msgstr ""
-"A %s fájl megsérült\n"
-"Így nem tudok azonosítani"
+"A %s fÃ¡jl megsÃ©rÃ¼lt\n"
+"Ãgy nem tudok azonosÃ­tani"
 
 #: kspell/ksconfig.cpp:66
 msgid "Create Root/Affix combinations not in the dictionary"
-msgstr "Szótõ/Toldalék értelmezõ nincs a szótárban"
+msgstr "SzÃ³tÅ‘/ToldalÃ©k Ã©rtelmezÅ‘ nincs a szÃ³tÃ¡rban"
 
 #: kspell/ksconfig.cpp:75
 msgid "Consider run-together words as spelling errors"
-msgstr "Az egybeírt szavak legyenek helyesírási hibák"
+msgstr "Az egybeÃ­rt szavak legyenek helyesÃ­rÃ¡si hibÃ¡k"
 
 # 
 #: kspell/ksconfig.cpp:92
 #
 msgid "Dictionary"
-msgstr "Szótár"
+msgstr "SzÃ³tÃ¡r"
 
 #: kspell/ksconfig.cpp:140
 msgid "Encoding:"
-msgstr "Kódolás:"
+msgstr "KÃ³dolÃ¡s:"
 
 # 
 #: kspell/ksconfig.cpp:147
@@ -1396,11 +1396,11 @@ msgstr "Spanyol"
 #: kspell/ksconfig.cpp:304
 #
 msgid "German"
-msgstr "Német"
+msgstr "NÃ©met"
 
 #: kspell/ksconfig.cpp:311
 msgid "Brazilian Portuguese"
-msgstr "Brazil Portugál"
+msgstr "Brazil PortugÃ¡l"
 
 # 
 #: kspell/ksconfig.cpp:317
@@ -1412,16 +1412,16 @@ msgstr "Ismeretlen"
 #: kspell/ksconfig.cpp:348
 #
 msgid "ISpell Default"
-msgstr "ISpell Alapértékek"
+msgstr "ISpell AlapÃ©rtÃ©kek"
 
 #: kspell/kspelldlg.cpp:58
 msgid "Misspelled Word:"
-msgstr "Helytelen szó:"
+msgstr "Helytelen szÃ³:"
 
 #: kspell/kspelldlg.cpp:68
 #
 msgid "Replacement:"
-msgstr "Cserélje:"
+msgstr "CserÃ©lje:"
 
 #: kspell/kspelldlg.cpp:77
 msgid "Suggestions:"
@@ -1437,11 +1437,11 @@ msgstr "Kihagyja Mindet"
 
 #: kspell/kspelldlg.cpp:120 po/texts.cpp:86
 msgid "Add"
-msgstr "Hozzáad"
+msgstr "HozzÃ¡ad"
 
 #: kspell/kspelldlg.cpp:166 po/texts.cpp:100
 msgid "Stop"
-msgstr "Állj"
+msgstr "Ãllj"
 
 #: kab/widget.cc:162 kab/widget.cc:1164 kab/widget.cc:1222 kab/widget.cc:1233
 #: kab/widget.cc:1972 kab/widget.cc:2064 kab/widget.cc:2148 kab/widget.cc:2194
@@ -1451,15 +1451,15 @@ msgstr "Hiba"
 
 #: po/texts.cpp:25
 msgid "Malformed URL"
-msgstr "Hibás URL"
+msgstr "HibÃ¡s URL"
 
 #: po/texts.cpp:29
 msgid "Warning"
-msgstr "Figyelmeztetés"
+msgstr "FigyelmeztetÃ©s"
 
 #: po/texts.cpp:30
 msgid "Save a file"
-msgstr "File mentése"
+msgstr "File mentÃ©se"
 
 #: po/texts.cpp:31
 msgid "Contents"
@@ -1467,7 +1467,7 @@ msgstr "Tartalom"
 
 #: po/texts.cpp:33
 msgid "A&bout..."
-msgstr "&Névjegy..."
+msgstr "&NÃ©vjegy..."
 
 #: po/texts.cpp:37
 msgid "On"
@@ -1479,43 +1479,43 @@ msgstr "Ki"
 
 #: po/texts.cpp:42
 msgid "File"
-msgstr "Fájl"
+msgstr "FÃ¡jl"
 
 #: po/texts.cpp:43
 msgid "&File"
-msgstr "&Fájl"
+msgstr "&FÃ¡jl"
 
 #: po/texts.cpp:46
 msgid "Edit"
-msgstr "Szerkesztés"
+msgstr "SzerkesztÃ©s"
 
 #: po/texts.cpp:47
 msgid "&Edit"
-msgstr "&Szerkesztés"
+msgstr "&SzerkesztÃ©s"
 
 #: po/texts.cpp:48
 msgid "&Options"
-msgstr "&Beállítások"
+msgstr "&BeÃ¡llÃ­tÃ¡sok"
 
 #: po/texts.cpp:49
 msgid "View"
-msgstr "Nézet"
+msgstr "NÃ©zet"
 
 #: po/texts.cpp:50
 msgid "&View"
-msgstr "&Nézet"
+msgstr "&NÃ©zet"
 
 #: po/texts.cpp:51
 msgid "E&xit"
-msgstr "&Kilépés"
+msgstr "&KilÃ©pÃ©s"
 
 #: po/texts.cpp:53
 msgid "&Quit"
-msgstr "&Kilép"
+msgstr "&KilÃ©p"
 
 #: po/texts.cpp:57
 msgid "&Copy"
-msgstr "&Másol"
+msgstr "&MÃ¡sol"
 
 #: po/texts.cpp:59
 msgid "&Paste"
@@ -1523,71 +1523,71 @@ msgstr "&Beilleszt"
 
 #: po/texts.cpp:60
 msgid "&New Window..."
-msgstr "Új &ablak..."
+msgstr "Ãšj &ablak..."
 
 #: po/texts.cpp:61
 msgid "New &Window..."
-msgstr "&Új ablak..."
+msgstr "&Ãšj ablak..."
 
 #: po/texts.cpp:62
 msgid "&New Window"
-msgstr "Új &ablak"
+msgstr "Ãšj &ablak"
 
 #: po/texts.cpp:63
 msgid "New Game"
-msgstr "Új játék"
+msgstr "Ãšj jÃ¡tÃ©k"
 
 #: po/texts.cpp:64
 msgid "&New Game"
-msgstr "Új &játék"
+msgstr "Ãšj &jÃ¡tÃ©k"
 
 #: po/texts.cpp:66
 msgid "Open a file"
-msgstr "Fájl megnyitása"
+msgstr "FÃ¡jl megnyitÃ¡sa"
 
 #: po/texts.cpp:67
 msgid "Open..."
-msgstr "Megnyitás..."
+msgstr "MegnyitÃ¡s..."
 
 #: po/texts.cpp:68
 msgid "&Open..."
-msgstr "&Megnyitás..."
+msgstr "&MegnyitÃ¡s..."
 
 #: po/texts.cpp:70
 msgid "&Cut"
-msgstr "&Kivág"
+msgstr "&KivÃ¡g"
 
 #: po/texts.cpp:71
 msgid "C&ut"
-msgstr "&Kivág"
+msgstr "&KivÃ¡g"
 
 #: po/texts.cpp:72
 msgid "Font"
-msgstr "Betûtípus"
+msgstr "BetÅ±tÃ­pus"
 
 #: po/texts.cpp:73
 msgid "&Foreground Color"
-msgstr "&Elõtér színe"
+msgstr "&ElÅ‘tÃ©r szÃ­ne"
 
 #: po/texts.cpp:74
 msgid "&Background Color"
-msgstr "&Háttér színe"
+msgstr "&HÃ¡ttÃ©r szÃ­ne"
 
 #: po/texts.cpp:76
 msgid "&Save"
-msgstr "Menté&s"
+msgstr "MentÃ©&s"
 
 #: po/texts.cpp:78
 msgid "Save as..."
-msgstr "Mentés másként..."
+msgstr "MentÃ©s mÃ¡skÃ©nt..."
 
 #: po/texts.cpp:79
 msgid "S&ave as..."
-msgstr "Mentés más&ként..."
+msgstr "MentÃ©s mÃ¡s&kÃ©nt..."
 
 #: po/texts.cpp:81
 msgid "&Close"
-msgstr "&Bezár"
+msgstr "&BezÃ¡r"
 
 #: po/texts.cpp:82
 msgid "&Print..."
@@ -1595,36 +1595,36 @@ msgstr "&Nyomtat..."
 
 #: po/texts.cpp:84
 msgid "Options"
-msgstr "Beállítások"
+msgstr "BeÃ¡llÃ­tÃ¡sok"
 
 #: po/texts.cpp:85
 msgid "Remove"
-msgstr "Eltávolít"
+msgstr "EltÃ¡volÃ­t"
 
 #: po/texts.cpp:87
 msgid "Change"
-msgstr "Változtat"
+msgstr "VÃ¡ltoztat"
 
 #: po/texts.cpp:88
 msgid "Delete"
-msgstr "Töröl"
+msgstr "TÃ¶rÃ¶l"
 
 #: po/texts.cpp:89
 msgid "&Delete"
-msgstr "&Töröl"
+msgstr "&TÃ¶rÃ¶l"
 
 #: po/texts.cpp:90
 msgid "Clear"
-msgstr "Üresre töröl"
+msgstr "Ãœresre tÃ¶rÃ¶l"
 
 #: po/texts.cpp:91
 msgid "Italic"
-msgstr "Kurzív"
+msgstr "KurzÃ­v"
 
 # 
 #: po/texts.cpp:92
 msgid "Roman"
-msgstr "Román"
+msgstr "RomÃ¡n"
 
 #: po/texts.cpp:94
 msgid "&Undo"
@@ -1632,36 +1632,36 @@ msgstr "&Visszavon"
 
 #: po/texts.cpp:95
 msgid "Redo"
-msgstr "Újra végez"
+msgstr "Ãšjra vÃ©gez"
 
 #: po/texts.cpp:96
 msgid "&Redo"
-msgstr "Újra &végez"
+msgstr "Ãšjra &vÃ©gez"
 
 #: po/texts.cpp:97
 msgid "&Game"
-msgstr "&Játék"
+msgstr "&JÃ¡tÃ©k"
 
 #: po/texts.cpp:98
 msgid "Information"
-msgstr "Információ"
+msgstr "InformÃ¡ciÃ³"
 
 #: po/texts.cpp:99
 msgid "Browse..."
-msgstr "Böngész ..."
+msgstr "BÃ¶ngÃ©sz ..."
 
 #: po/texts.cpp:101
 msgid "&Remove"
-msgstr "&Eltávolít"
+msgstr "&EltÃ¡volÃ­t"
 
 # 
 #: po/texts.cpp:102
 msgid "&Properties..."
-msgstr "&Tulajdonságok..."
+msgstr "&TulajdonsÃ¡gok..."
 
 #: po/texts.cpp:103
 msgid "Properties"
-msgstr "Tulajdonságok"
+msgstr "TulajdonsÃ¡gok"
 
 # 
 #: po/texts.cpp:104
@@ -1671,31 +1671,31 @@ msgstr "&Keres"
 # 
 #: po/texts.cpp:105
 msgid "St&op"
-msgstr "Á&llj"
+msgstr "Ã&llj"
 
 #: po/texts.cpp:106
 msgid "Miscellaneous"
-msgstr "Egyéb"
+msgstr "EgyÃ©b"
 
 #: po/texts.cpp:107
 msgid "Font Size"
-msgstr "Betûtípus méret"
+msgstr "BetÅ±tÃ­pus mÃ©ret"
 
 #: po/texts.cpp:108
 msgid "Fonts"
-msgstr "Betûtípusok"
+msgstr "BetÅ±tÃ­pusok"
 
 #: po/texts.cpp:109
 msgid "&Fonts"
-msgstr "&Betûtípusok"
+msgstr "&BetÅ±tÃ­pusok"
 
 #: po/texts.cpp:110
 msgid "&Reload"
-msgstr "Újra&tölt"
+msgstr "Ãšjra&tÃ¶lt"
 
 #: po/texts.cpp:111
 msgid "Files"
-msgstr "Fájlok"
+msgstr "FÃ¡jlok"
 
 #: kab/widget.cc:1390 kab/widget.cc:1432 po/texts.cpp:112
 msgid "Continue"
@@ -1704,15 +1704,15 @@ msgstr "Folytat"
 # 
 #: po/texts.cpp:113
 msgid "Restore"
-msgstr "Visszaállít"
+msgstr "VisszaÃ¡llÃ­t"
 
 #: po/texts.cpp:114
 msgid "Appearance"
-msgstr "Megjelenés"
+msgstr "MegjelenÃ©s"
 
 #: po/texts.cpp:116
 msgid "Monday"
-msgstr "Hétfõ"
+msgstr "HÃ©tfÅ‘"
 
 #: po/texts.cpp:117
 msgid "Tuesday"
@@ -1725,12 +1725,12 @@ msgstr "Szerda"
 # 
 #: po/texts.cpp:119
 msgid "Thursday"
-msgstr "Csütörtök"
+msgstr "CsÃ¼tÃ¶rtÃ¶k"
 
 # 
 #: po/texts.cpp:120
 msgid "Friday"
-msgstr "Péntek"
+msgstr "PÃ©ntek"
 
 #: po/texts.cpp:121
 msgid "Saturday"
@@ -1739,45 +1739,45 @@ msgstr "Szombat"
 # 
 #: po/texts.cpp:122
 msgid "Sunday"
-msgstr "Vasárnap"
+msgstr "VasÃ¡rnap"
 
 # 
 #: po/texts.cpp:123
 msgid "&Update"
-msgstr "&Frissít"
+msgstr "&FrissÃ­t"
 
 # 
 #: po/texts.cpp:124
 msgid "Layout"
-msgstr "Kinézet"
+msgstr "KinÃ©zet"
 
 #: po/texts.cpp:125
 msgid "Highscore"
-msgstr "Eredmények"
+msgstr "EredmÃ©nyek"
 
 # 
 #: po/texts.cpp:126
 msgid "&New View"
-msgstr "Új &Nézet"
+msgstr "Ãšj &NÃ©zet"
 
 #: po/texts.cpp:127
 msgid "&Insert"
-msgstr "&Beszúr"
+msgstr "&BeszÃºr"
 
 # 
 #: po/texts.cpp:130
 msgid "&Next >>"
-msgstr "&Következõ >>"
+msgstr "&KÃ¶vetkezÅ‘ >>"
 
 # 
 #: po/texts.cpp:131
 msgid "<< &Previous"
-msgstr "<< E&lõzõ"
+msgstr "<< E&lÅ‘zÅ‘"
 
 #: po/texts.cpp:138
 #
 msgid "&About..."
-msgstr "&Névjegy..."
+msgstr "&NÃ©vjegy..."
 
 #: kab/addressbook.cc:90
 msgid ""
@@ -1786,14 +1786,14 @@ msgid ""
 "The program will try to create\n"
 "         "
 msgstr ""
-"A könyvtár ahol a címjegyzék program tárolja a\n"
-"felhasználó specifikus adatokat, nem létezik.\n"
-"A program megpróbálja létrehozni\n"
+"A kÃ¶nyvtÃ¡r ahol a cÃ­mjegyzÃ©k program tÃ¡rolja a\n"
+"felhasznÃ¡lÃ³ specifikus adatokat, nem lÃ©tezik.\n"
+"A program megprÃ³bÃ¡lja lÃ©trehozni\n"
 "         "
 
 #: kab/addressbook.cc:94
 msgid "and store all local files in this directory."
-msgstr "és minden lokális fájlt ide tárolni."
+msgstr "Ã©s minden lokÃ¡lis fÃ¡jlt ide tÃ¡rolni."
 
 #: kab/addressbook.cc:98
 msgid ""
@@ -1803,108 +1803,108 @@ msgid ""
 "in your home directory. Run the KDE filemanager\n"
 "kfm once to automatically create it."
 msgstr ""
-"A könyvtár nem hozható létre.\n"
-"Talán még nem használta a KDE-t ezelõtt,\n"
-"ezért nincs helyi \".kde\" könyvtára a saját könyvrárában\n"
-"Futtassa a KDE fájlkezelõjét (kfm)-et egyszer,\n"
-"hogy autómatikusan létrejöjjön."
+"A kÃ¶nyvtÃ¡r nem hozhatÃ³ lÃ©tre.\n"
+"TalÃ¡n mÃ©g nem hasznÃ¡lta a KDE-t ezelÅ‘tt,\n"
+"ezÃ©rt nincs helyi \".kde\" kÃ¶nyvtÃ¡ra a sajÃ¡t kÃ¶nyvrÃ¡rÃ¡ban\n"
+"Futtassa a KDE fÃ¡jlkezelÅ‘jÃ©t (kfm)-et egyszer,\n"
+"hogy autÃ³matikusan lÃ©trejÃ¶jjÃ¶n."
 
 #: kab/addressbook.cc:106
 msgid "The directory has been created.\n"
-msgstr "A könyvtár létrejött.\n"
+msgstr "A kÃ¶nyvtÃ¡r lÃ©trejÃ¶tt.\n"
 
 #: kab/addressbook.cc:140
 msgid "No addressbook database file, creating new one."
-msgstr "Nincs címjegyzék adatbázis fájl, csinálok egy újat."
+msgstr "Nincs cÃ­mjegyzÃ©k adatbÃ¡zis fÃ¡jl, csinÃ¡lok egy Ãºjat."
 
 #: kab/addressbook.cc:159
 msgid "Tried to load database for creating backup, but failed"
 msgstr ""
-"Megpróbáltam betölteni az adatbázist, hogy másolatot készítsek, de nem "
-"sikerült"
+"MegprÃ³bÃ¡ltam betÃ¶lteni az adatbÃ¡zist, hogy mÃ¡solatot kÃ©szÃ­tsek, de nem "
+"sikerÃ¼lt"
 
 #: kab/addressbook.cc:194
 msgid "Unable to save to backup file."
-msgstr "Nem menthetõ el a biztonsági másolat."
+msgstr "Nem menthetÅ‘ el a biztonsÃ¡gi mÃ¡solat."
 
 #: kab/addressbook.cc:200
 msgid "Unable to reset filename after creating backup."
-msgstr "Nem lehet megváltoztatni a fájlnevet a másolat létrehozása után"
+msgstr "Nem lehet megvÃ¡ltoztatni a fÃ¡jlnevet a mÃ¡solat lÃ©trehozÃ¡sa utÃ¡n"
 
 #: kab/addressbook.cc:205
 msgid "Unable to create backup file"
-msgstr "Nem hozható létre a biztonsági másolat."
+msgstr "Nem hozhatÃ³ lÃ©tre a biztonsÃ¡gi mÃ¡solat."
 
 #: kab/addressbook.cc:263
 msgid "Unable to insert \""
-msgstr "Nem szúrható be \""
+msgstr "Nem szÃºrhatÃ³ be \""
 
 #: kab/addressbook.cc:264
 msgid "\" into configuration section (ignored)."
-msgstr "\" a konfigurációs részbe (ezért kihagyva)."
+msgstr "\" a konfigurÃ¡ciÃ³s rÃ©szbe (ezÃ©rt kihagyva)."
 
 #: kab/addressbook.cc:666
 msgid "Unable to add a new entry with available key."
-msgstr "Nem hozható létre új bejegyzés a meglévõ kulccsal."
+msgstr "Nem hozhatÃ³ lÃ©tre Ãºj bejegyzÃ©s a meglÃ©vÅ‘ kulccsal."
 
 #: kab/addressbook.cc:672
 msgid "Cannot find previously created section."
-msgstr "Nem található az elõzõleg készített bejegyzés."
+msgstr "Nem talÃ¡lhatÃ³ az elÅ‘zÅ‘leg kÃ©szÃ­tett bejegyzÃ©s."
 
 #: kab/addressbook.cc:703
 msgid "Unable to create key-value-map for entry."
-msgstr "Nem hozható létre kulcs-érték-térkép a bejegyzéshez."
+msgstr "Nem hozhatÃ³ lÃ©tre kulcs-Ã©rtÃ©k-tÃ©rkÃ©p a bejegyzÃ©shez."
 
 #: kab/addressbook.cc:989
 msgid "entry without name"
-msgstr "bejegyzés név nélkül"
+msgstr "bejegyzÃ©s nÃ©v nÃ©lkÃ¼l"
 
 #: kab/addressbook.cc:1007
 msgid ""
 "Unable to create new database file (probably permission denied), exiting."
 msgstr ""
-"Nem hozható létre új adatbázis (esetleg hozzáférés megtagadva), kilépek."
+"Nem hozhatÃ³ lÃ©tre Ãºj adatbÃ¡zis (esetleg hozzÃ¡fÃ©rÃ©s megtagadva), kilÃ©pek."
 
 #: kab/addressbook.cc:1013
 msgid "Cannot create configuration section, exiting."
-msgstr "Nem hozható létre a konfigurációs bejegyzés, kilépek."
+msgstr "Nem hozhatÃ³ lÃ©tre a konfigurÃ¡ciÃ³s bejegyzÃ©s, kilÃ©pek."
 
 #: kab/addressbook.cc:1018
 msgid "Cannot create entries section, exiting."
-msgstr "Egyáltalán nem hozható létre bejegyzés, ezért kilépek."
+msgstr "EgyÃ¡ltalÃ¡n nem hozhatÃ³ lÃ©tre bejegyzÃ©s, ezÃ©rt kilÃ©pek."
 
 #: kab/addressbook.cc:1023
 msgid "Unable to find previously created section, exiting."
-msgstr "Nem található az elõzõleg létrehozott bejegyzés, ezért kilépek."
+msgstr "Nem talÃ¡lhatÃ³ az elÅ‘zÅ‘leg lÃ©trehozott bejegyzÃ©s, ezÃ©rt kilÃ©pek."
 
 #: kab/addressbook.cc:1031
 msgid "Cannot save newly created database."
-msgstr "Nem menthetõ el az újonnan létrehozott adatbázis."
+msgstr "Nem menthetÅ‘ el az Ãºjonnan lÃ©trehozott adatbÃ¡zis."
 
 #: kab/addressbook.cc:1037
 msgid "Cannot erase database contents."
-msgstr "Nem törölhetõ az adatbázis tartalma."
+msgstr "Nem tÃ¶rÃ¶lhetÅ‘ az adatbÃ¡zis tartalma."
 
 #: kab/addressbook.cc:1116
 msgid "First name"
-msgstr "Keresztnév"
+msgstr "KeresztnÃ©v"
 
 #: kab/addressbook.cc:1120
 msgid "Additional name"
-msgstr "Vezetéknév"
+msgstr "VezetÃ©knÃ©v"
 
 #: kab/addressbook.cc:1124
 msgid "Name prefix"
-msgstr "Név elõtag"
+msgstr "NÃ©v elÅ‘tag"
 
 #: kab/addressbook.cc:1128
 msgid "Formatted name"
-msgstr "Formatált név"
+msgstr "FormatÃ¡lt nÃ©v"
 
 #: kab/addressbook.cc:1132
 #
 msgid "Comment"
-msgstr "Megjegyzés"
+msgstr "MegjegyzÃ©s"
 
 #: kab/addressbook.cc:1136
 msgid "Organization"
@@ -1913,33 +1913,33 @@ msgstr "Szervezet"
 #: kab/addressbook.cc:1140
 #
 msgid "Unit"
-msgstr "Egység"
+msgstr "EgysÃ©g"
 
 # 
 #: kab/addressbook.cc:1144
 #
 msgid "Subunit"
-msgstr "Alegység"
+msgstr "AlegysÃ©g"
 
 # 
 #: kab/addressbook.cc:1148
 #
 msgid "Title"
-msgstr "Cím"
+msgstr "CÃ­m"
 
 # 
 #: kab/addressbook.cc:1152
 #
 msgid "Role"
-msgstr "Beosztás"
+msgstr "BeosztÃ¡s"
 
 #: kab/addressbook.cc:1156
 msgid "Birthday"
-msgstr "Születésnap"
+msgstr "SzÃ¼letÃ©snap"
 
 #: kab/addressbook.cc:1160
 msgid "Talk addresses"
-msgstr "Talk cím"
+msgstr "Talk cÃ­m"
 
 #: kab/addressbook.cc:1164
 msgid "Delivery label"
@@ -1947,28 +1947,28 @@ msgstr "Posta cimke"
 
 #: kab/addressbook.cc:1168
 msgid "Email address"
-msgstr "E-mail cím"
+msgstr "E-mail cÃ­m"
 
 #: kab/addressbook.cc:1172
 msgid "Second email address"
-msgstr "Második e-mail cím"
+msgstr "MÃ¡sodik e-mail cÃ­m"
 
 #: kab/addressbook.cc:1176
 msgid "Third email address"
-msgstr "Harmadik e-mail cím"
+msgstr "Harmadik e-mail cÃ­m"
 
 #: kab/addressbook.cc:1180
 msgid "Email addresses"
-msgstr "E-mail címek"
+msgstr "E-mail cÃ­mek"
 
 #: kab/addressbook.cc:1184
 #
 msgid "Address"
-msgstr "Lakcím"
+msgstr "LakcÃ­m"
 
 #: kab/addressbook.cc:1188
 msgid "City/Town"
-msgstr "Város"
+msgstr "VÃ¡ros"
 
 #: kab/addressbook.cc:1192
 msgid "Telephone"
@@ -1976,73 +1976,73 @@ msgstr "Telefon"
 
 #: kab/addressbook.cc:1196
 msgid "Fax number"
-msgstr "Fax szám"
+msgstr "Fax szÃ¡m"
 
 #: kab/addressbook.cc:1200
 #
 msgid "Modem number"
-msgstr "Modem telefonszám"
+msgstr "Modem telefonszÃ¡m"
 
 #: kab/addressbook.cc:1204
 msgid "Homepage URL"
-msgstr "Honlap címe"
+msgstr "Honlap cÃ­me"
 
 #: kab/addressbook.cc:1208
 msgid "Zip/postal code"
-msgstr "Irányítószám"
+msgstr "IrÃ¡nyÃ­tÃ³szÃ¡m"
 
 #: kab/addressbook.cc:1212
 msgid "State/province"
-msgstr "Állam/Megye"
+msgstr "Ãllam/Megye"
 
 #: kab/addressbook.cc:1216
 #
 msgid "Country"
-msgstr "Ország"
+msgstr "OrszÃ¡g"
 
 #: kab/addressbook.cc:1383
 msgid "(unnamed entry)"
-msgstr "(névtelen bejegyzés)"
+msgstr "(nÃ©vtelen bejegyzÃ©s)"
 
 #: kab/datepickerdialog.cc:34
 #
 msgid "Select birthday"
-msgstr "Születésnap kiválasztás"
+msgstr "SzÃ¼letÃ©snap kivÃ¡lasztÃ¡s"
 
 #: kab/editentry.cc:38
 msgid "Edit the current entry"
-msgstr "Aktuális bejegyzés szerkesztése"
+msgstr "AktuÃ¡lis bejegyzÃ©s szerkesztÃ©se"
 
 #: kab/editentry.cc:61
 #
 msgid "Title:"
-msgstr "Cím:"
+msgstr "CÃ­m:"
 
 #: kab/editentry.cc:62
 msgid "First name:"
-msgstr "Keresztnév:"
+msgstr "KeresztnÃ©v:"
 
 #: kab/editentry.cc:63
 msgid "Additional Name:"
-msgstr "Vezetéknév:"
+msgstr "VezetÃ©knÃ©v:"
 
 #: kab/editentry.cc:65
 msgid "Formatted Name:"
-msgstr "Formatált Név:"
+msgstr "FormatÃ¡lt NÃ©v:"
 
 # 
 #: kab/editentry.cc:88
 #
 msgid "&Name"
-msgstr "&Név:"
+msgstr "&NÃ©v:"
 
 #: kab/editentry.cc:103
 msgid "Address:"
-msgstr "Lakcím:"
+msgstr "LakcÃ­m:"
 
 #: kab/editentry.cc:104
 msgid "Town/City:"
-msgstr "Város:"
+msgstr "VÃ¡ros:"
 
 # 
 #: kab/editentry.cc:105
@@ -2052,15 +2052,15 @@ msgstr "Megye:"
 
 #: kab/editentry.cc:106
 msgid "Zip/Postal Code:"
-msgstr "Irányítószám:"
+msgstr "IrÃ¡nyÃ­tÃ³szÃ¡m:"
 
 #: kab/editentry.cc:107
 msgid "Country:"
-msgstr "Ország:"
+msgstr "OrszÃ¡g:"
 
 #: kab/editentry.cc:130
 msgid "&Address"
-msgstr "&Lakcím"
+msgstr "&LakcÃ­m"
 
 #: kab/editentry.cc:145
 msgid "Organization:"
@@ -2069,17 +2069,17 @@ msgstr "Szervezet:"
 #: kab/editentry.cc:146
 #
 msgid "Department:"
-msgstr "Egység:"
+msgstr "EgysÃ©g:"
 
 #: kab/editentry.cc:147
 msgid "Sub-Department:"
-msgstr "Alegység:"
+msgstr "AlegysÃ©g:"
 
 # 
 #: kab/editentry.cc:148
 #
 msgid "Job/Role:"
-msgstr "Beosztás:"
+msgstr "BeosztÃ¡s:"
 
 #: kab/editentry.cc:169
 msgid "&Organization"
@@ -2104,11 +2104,11 @@ msgstr "Honlap (URL):"
 
 #: kab/editentry.cc:200 kab/editentry.cc:418
 msgid "Edit email addresses"
-msgstr "E-mail címek szerkesztése"
+msgstr "E-mail cÃ­mek szerkesztÃ©se"
 
 #: kab/editentry.cc:206 kab/editentry.cc:400
 msgid "Edit talk addresses"
-msgstr "Talk címek szerkesztése"
+msgstr "Talk cÃ­mek szerkesztÃ©se"
 
 #: kab/editentry.cc:218
 #
@@ -2117,15 +2117,15 @@ msgstr "&Kapcsolat"
 
 #: kab/editentry.cc:239
 msgid "Additional Comment:"
-msgstr "Egyéb megjegyzés:"
+msgstr "EgyÃ©b megjegyzÃ©s:"
 
 #: kab/editentry.cc:246
 msgid "Birthday:"
-msgstr "Születésnap:"
+msgstr "SzÃ¼letÃ©snap:"
 
 #: kab/editentry.cc:249
 msgid "Double click to set date"
-msgstr "Kettõs kattintás a dátum beállításhoz"
+msgstr "KettÅ‘s kattintÃ¡s a dÃ¡tum beÃ¡llÃ­tÃ¡shoz"
 
 #: kab/editentry.cc:256
 msgid "O&thers"
@@ -2133,15 +2133,15 @@ msgstr "E&gyebek"
 
 #: kab/kabapi.cc:138
 msgid "Your new entry could not be added."
-msgstr "Az új bejegyzés nem adható hozzá."
+msgstr "Az Ãºj bejegyzÃ©s nem adhatÃ³ hozzÃ¡."
 
 #: kab/searchresults.cc:33
 msgid "search results"
-msgstr "keresés eredménye"
+msgstr "keresÃ©s eredmÃ©nye"
 
 #: kab/widget.cc:144
 msgid "Conversion problem"
-msgstr "Konverziós probléma"
+msgstr "KonverziÃ³s problÃ©ma"
 
 #: kab/widget.cc:145
 msgid ""
@@ -2150,22 +2150,22 @@ msgid ""
 "You can use it, but not all features will be\n"
 "supported."
 msgstr ""
-"Kab nem tudta átalakítani az adatbázist az\n"
-"új formátumra.\n"
-"Így is használható, de nem használható ki\n"
-"minden lehetõség."
+"Kab nem tudta Ã¡talakÃ­tani az adatbÃ¡zist az\n"
+"Ãºj formÃ¡tumra.\n"
+"Ãgy is hasznÃ¡lhatÃ³, de nem hasznÃ¡lhatÃ³ ki\n"
+"minden lehetÅ‘sÃ©g."
 
 #: kab/widget.cc:163
 msgid ""
 "The application saved the last current entry,\n"
 "but this entry does not exist anymore."
 msgstr ""
-"Az alkalmazás elmentette a legutóbbi bejegyzést,\n"
-"de ez a bejegyzés már nem létezik."
+"Az alkalmazÃ¡s elmentette a legutÃ³bbi bejegyzÃ©st,\n"
+"de ez a bejegyzÃ©s mÃ¡r nem lÃ©tezik."
 
 #: kab/widget.cc:229
 msgid "kab: Removed bug warning"
-msgstr "kab: Hiba figyelmeztetés eltávolítva"
+msgstr "kab: Hiba figyelmeztetÃ©s eltÃ¡volÃ­tva"
 
 #: kab/widget.cc:230
 msgid ""
@@ -2176,23 +2176,23 @@ msgid ""
 "All configuration values have been reset to\n"
 "its default settings."
 msgstr ""
-"Az Ön által eddig használt kab verzió tartalmazott\n"
-"egy hibát ami az adatbázis frissítésére vonatkozott.\n"
-"Ez a hiba ki lett javítva, így többet nem érinti\n"
-"Önt. Minden konfigurációs érték vissza lett állítva\n"
-"az alapértelmezésre."
+"Az Ã–n Ã¡ltal eddig hasznÃ¡lt kab verziÃ³ tartalmazott\n"
+"egy hibÃ¡t ami az adatbÃ¡zis frissÃ­tÃ©sÃ©re vonatkozott.\n"
+"Ez a hiba ki lett javÃ­tva, Ã­gy tÃ¶bbet nem Ã©rinti\n"
+"Ã–nt. Minden konfigurÃ¡ciÃ³s Ã©rtÃ©k vissza lett Ã¡llÃ­tva\n"
+"az alapÃ©rtelmezÃ©sre."
 
 #: kab/widget.cc:248 kab/widget.cc:314 kab/widget.cc:322
 msgid "File handling error"
-msgstr "Fájlkezelési hiba"
+msgstr "FÃ¡jlkezelÃ©si hiba"
 
 #: kab/widget.cc:249
 msgid "Unable to open database file r/w."
-msgstr "Nem nyitható meg írásra/olvasásra az adatbázis fájl."
+msgstr "Nem nyithatÃ³ meg Ã­rÃ¡sra/olvasÃ¡sra az adatbÃ¡zis fÃ¡jl."
 
 #: kab/widget.cc:257
 msgid "Email storage conversion"
-msgstr "E-mail tárolás konverzió"
+msgstr "E-mail tÃ¡rolÃ¡s konverziÃ³"
 
 #: kab/widget.cc:258
 msgid ""
@@ -2200,130 +2200,130 @@ msgid ""
 "the new style supporting unlimited numbers\n"
 "of email addresses per entry."
 msgstr ""
-"A kab átalakítja az e-mail címeit egy új\n"
-"formátumra, ami lehetõvé teszi korlátlan\n"
-"számú cím tárolását bejegyzésenként."
+"A kab Ã¡talakÃ­tja az e-mail cÃ­meit egy Ãºj\n"
+"formÃ¡tumra, ami lehetÅ‘vÃ© teszi korlÃ¡tlan\n"
+"szÃ¡mÃº cÃ­m tÃ¡rolÃ¡sÃ¡t bejegyzÃ©senkÃ©nt."
 
 #: kab/widget.cc:291
 msgid "kab database update"
-msgstr "kab adatbázis frissítés"
+msgstr "kab adatbÃ¡zis frissÃ­tÃ©s"
 
 #: kab/widget.cc:292
 msgid ""
 "Please note that kab now supports some new\n"
 "fields in its addresses. These new fields\n"
 "are:\n"
-"° the state field,\n"
-"° the country field and\n"
-"° the postal code field.\n"
+"Â° the state field,\n"
+"Â° the country field and\n"
+"Â° the postal code field.\n"
 "You will probably need to edit some of your\n"
 "entries to make use of it."
 msgstr ""
-"Figyelmébe ajánljuk, hogy a kab most már támogat\n"
-"Néhány új mezõt a címjegyzékben. Ezek a következõk:\n"
-"° állam/megye mezõ,\n"
-"° ország mezõ,\n"
-"° irányítószám mezõ.\n"
-"Ha gondolja, kitöltheti az eddigi címeknél is\n"
-"ezeket a mezõket."
+"FigyelmÃ©be ajÃ¡nljuk, hogy a kab most mÃ¡r tÃ¡mogat\n"
+"NÃ©hÃ¡ny Ãºj mezÅ‘t a cÃ­mjegyzÃ©kben. Ezek a kÃ¶vetkezÅ‘k:\n"
+"Â° Ã¡llam/megye mezÅ‘,\n"
+"Â° orszÃ¡g mezÅ‘,\n"
+"Â° irÃ¡nyÃ­tÃ³szÃ¡m mezÅ‘.\n"
+"Ha gondolja, kitÃ¶ltheti az eddigi cÃ­meknÃ©l is\n"
+"ezeket a mezÅ‘ket."
 
 #: kab/widget.cc:315
 #
 msgid "Could not save database after update."
-msgstr "Nem sikerült elmenteni az adatbázis fájlt frissítés után."
+msgstr "Nem sikerÃ¼lt elmenteni az adatbÃ¡zis fÃ¡jlt frissÃ­tÃ©s utÃ¡n."
 
 #: kab/widget.cc:323
 msgid "Unable to reopen database file r/o."
-msgstr "Nem lehet megnyitni az adatbázis fájlt csak olvasásra."
+msgstr "Nem lehet megnyitni az adatbÃ¡zis fÃ¡jlt csak olvasÃ¡sra."
 
 # 
 #: kab/widget.cc:482
 #
 msgid "first entry"
-msgstr "elsõ bejegyzés"
+msgstr "elsÅ‘ bejegyzÃ©s"
 
 #: kab/widget.cc:483
 #
 msgid "previous entry"
-msgstr "elõzõ bejegyzés"
+msgstr "elÅ‘zÅ‘ bejegyzÃ©s"
 
 # 
 #: kab/widget.cc:484
 #
 msgid "next entry"
-msgstr "következõ bejegyzés"
+msgstr "kÃ¶vetkezÅ‘ bejegyzÃ©s"
 
 #: kab/widget.cc:485
 msgid "last entry"
-msgstr "utolsó bejegyzés"
+msgstr "utolsÃ³ bejegyzÃ©s"
 
 #: kab/widget.cc:486
 msgid "search entries"
-msgstr "keresés"
+msgstr "keresÃ©s"
 
 #: kab/widget.cc:487
 msgid "add a new entry"
-msgstr "új bejegyzés hozzáadása"
+msgstr "Ãºj bejegyzÃ©s hozzÃ¡adÃ¡sa"
 
 #: kab/widget.cc:488
 msgid "change this entry"
-msgstr "aktuális bejegyzés megváltoztatása"
+msgstr "aktuÃ¡lis bejegyzÃ©s megvÃ¡ltoztatÃ¡sa"
 
 #: kab/widget.cc:489
 msgid "remove this entry"
-msgstr "aktuális bejegyzés törlése"
+msgstr "aktuÃ¡lis bejegyzÃ©s tÃ¶rlÃ©se"
 
 #: kab/widget.cc:528
 msgid "Switched to first entry."
-msgstr "Elsõ bejegyzésre váltás."
+msgstr "ElsÅ‘ bejegyzÃ©sre vÃ¡ltÃ¡s."
 
 #: kab/widget.cc:560
 msgid "Switched to last entry."
-msgstr "Utolsó bejegyzésre váltás."
+msgstr "UtolsÃ³ bejegyzÃ©sre vÃ¡ltÃ¡s."
 
 #: kab/widget.cc:621 kab/widget.cc:678 kab/widget.cc:860 kab/widget.cc:922
 msgid "Sorry, file changed."
-msgstr "Sajnálom, a fájl megváltozott."
+msgstr "SajnÃ¡lom, a fÃ¡jl megvÃ¡ltozott."
 
 # 
 #: kab/widget.cc:625 kab/widget.cc:682 kab/widget.cc:926
 #
 msgid "Permission denied."
-msgstr "Hozzáférés megtagadva."
+msgstr "HozzÃ¡fÃ©rÃ©s megtagadva."
 
 #: kab/widget.cc:636
 #
 msgid "Remove entry?"
-msgstr "Töröljem a bejegyzést?"
+msgstr "TÃ¶rÃ¶ljem a bejegyzÃ©st?"
 
 #: kab/widget.cc:637
 msgid "Really remove this entry?"
-msgstr "Biztos töröljem a bejegyzést?"
+msgstr "Biztos tÃ¶rÃ¶ljem a bejegyzÃ©st?"
 
 #: kab/widget.cc:655
 msgid "Entry deleted."
-msgstr "Bejegyzés törölve."
+msgstr "BejegyzÃ©s tÃ¶rÃ¶lve."
 
 #: kab/widget.cc:694
 msgid "Added a new entry."
-msgstr "Új bejegyzés hozzáadása."
+msgstr "Ãšj bejegyzÃ©s hozzÃ¡adÃ¡sa."
 
 #: kab/widget.cc:821
 msgid "Opened browser window."
-msgstr "Böngészõ ablak megnyitva."
+msgstr "BÃ¶ngÃ©szÅ‘ ablak megnyitva."
 
 #: kab/widget.cc:824
 msgid "No URL."
-msgstr "Nincs URL cím."
+msgstr "Nincs URL cÃ­m."
 
 #: kab/widget.cc:828 kab/widget.cc:997 kab/widget.cc:1176 kab/widget.cc:1813
 #: kab/widget.cc:2003 kab/widget.cc:2087
 msgid "No entries."
-msgstr "Nincs bejegyzés."
+msgstr "Nincs bejegyzÃ©s."
 
 #: kab/widget.cc:833
 msgid "The filemanager is busy, please try again."
-msgstr "A fájlkezelõ dolgozik, próbálja késõbb."
+msgstr "A fÃ¡jlkezelÅ‘ dolgozik, prÃ³bÃ¡lja kÃ©sÅ‘bb."
 
 #: kab/widget.cc:853
 msgid ""
@@ -2331,28 +2331,28 @@ msgid ""
 "locked by another application.\n"
 "kab cannot save it."
 msgstr ""
-"A címejgyzék fájlt már használja\n"
-"egy másik alkalmazás.\n"
-"Ezért a kab nem tudta elmenteni."
+"A cÃ­mejgyzÃ©k fÃ¡jlt mÃ¡r hasznÃ¡lja\n"
+"egy mÃ¡sik alkalmazÃ¡s.\n"
+"EzÃ©rt a kab nem tudta elmenteni."
 
 #: kab/widget.cc:870
 msgid "Database saved successfully."
-msgstr "Adatbázis sikeresen elmentve."
+msgstr "AdatbÃ¡zis sikeresen elmentve."
 
 #: kab/widget.cc:875
 msgid "kab: File error"
-msgstr "kab: Fájl hiba"
+msgstr "kab: FÃ¡jl hiba"
 
 #: kab/widget.cc:875
 #
 msgid "Could not save database."
-msgstr "Nem tudtam elmenteni az adatbázist."
+msgstr "Nem tudtam elmenteni az adatbÃ¡zist."
 
 # 
 #: kab/widget.cc:876
 #
 msgid "&Retry"
-msgstr "&Ismét"
+msgstr "&IsmÃ©t"
 
 #: kab/widget.cc:876
 msgid "&Ignore"
@@ -2361,52 +2361,52 @@ msgstr "&Kihagy"
 #: kab/widget.cc:879
 #
 msgid "Saving cancelled.\n"
-msgstr "Mentés elvetve.\n"
+msgstr "MentÃ©s elvetve.\n"
 
 #: kab/widget.cc:945
 msgid "Entry changed."
-msgstr "A bejegyzés megváltozott."
+msgstr "A bejegyzÃ©s megvÃ¡ltozott."
 
 #: kab/widget.cc:1041
 msgid "Results"
-msgstr "Eredmények"
+msgstr "EredmÃ©nyek"
 
 #: kab/widget.cc:1041
 msgid "No entry matches this."
-msgstr "Egyik bejegyzés sem egyezik."
+msgstr "Egyik bejegyzÃ©s sem egyezik."
 
 #: kab/widget.cc:1050 kab/widget.cc:1720 kab/widget.cc:1855 kab/widget.cc:2032
 #: kab/widget.cc:2055 kab/widget.cc:2112
 msgid "Rejected."
-msgstr "Elutasítva."
+msgstr "ElutasÃ­tva."
 
 #: kab/widget.cc:1066
 msgid "Search results window closed."
-msgstr "Keresési eredmények ablak bezárva."
+msgstr "KeresÃ©si eredmÃ©nyek ablak bezÃ¡rva."
 
 #: kab/widget.cc:1165
 msgid "The talk command must be configured before!"
-msgstr "Elõször be kell állítani a talk parancsot!"
+msgstr "ElÅ‘szÃ¶r be kell Ã¡llÃ­tani a talk parancsot!"
 
 #: kab/widget.cc:1170
 msgid "Talk configuration"
-msgstr "Talk beállítás"
+msgstr "Talk beÃ¡llÃ­tÃ¡s"
 
 #: kab/widget.cc:1171
 msgid "Please configure the parameters for the talk command."
-msgstr "Kérem, állítsa be a talk parancs paramétereit."
+msgstr "KÃ©rem, Ã¡llÃ­tsa be a talk parancs paramÃ©tereit."
 
 #: kab/widget.cc:1184
 msgid "No talk address."
-msgstr "Hiányzik a talk cím."
+msgstr "HiÃ¡nyzik a talk cÃ­m."
 
 #: kab/widget.cc:1192
 msgid "kab: Talk addresses"
-msgstr "kab: Talk címek"
+msgstr "kab: Talk cÃ­mek"
 
 #: kab/widget.cc:1193
 msgid "Available talk addresses:"
-msgstr "Jelenlegi talk címek:"
+msgstr "Jelenlegi talk cÃ­mek:"
 
 #: kab/widget.cc:1199 kab/widget.cc:1963
 #
@@ -2415,72 +2415,72 @@ msgstr "Elvetve."
 
 #: kab/widget.cc:1222
 msgid "The talk command parameters are wrong."
-msgstr "A talk parancs paraméterei hibásak."
+msgstr "A talk parancs paramÃ©terei hibÃ¡sak."
 
 #: kab/widget.cc:1234
 msgid ""
 "Talk command failed.\n"
 "Make sure you did setup your talk command and parameter!"
 msgstr ""
-"A talk parancsot nem sikerült végrehajtani.\n"
-"Ellenõrizze, hogy be van-e állítva a parancs és a paraméterei!"
+"A talk parancsot nem sikerÃ¼lt vÃ©grehajtani.\n"
+"EllenÅ‘rizze, hogy be van-e Ã¡llÃ­tva a parancs Ã©s a paramÃ©terei!"
 
 #: kab/widget.cc:1237
 msgid "Talk program started."
-msgstr "Talk program elindítva."
+msgstr "Talk program elindÃ­tva."
 
 #: kab/widget.cc:1285
 msgid "Attention: printing is still experimental!"
-msgstr "Figyelem: a nyomtatás még mindíg kísérleti stádiumban van!"
+msgstr "Figyelem: a nyomtatÃ¡s mÃ©g mindÃ­g kÃ­sÃ©rleti stÃ¡diumban van!"
 
 #: kab/widget.cc:1387 kab/widget.cc:1429
 msgid "Page size problem"
-msgstr "Lap méret probléma"
+msgstr "Lap mÃ©ret problÃ©ma"
 
 #: kab/widget.cc:1388 kab/widget.cc:1430
 msgid ""
 "The fields you requested to print do\n"
 "not fit into the page width."
 msgstr ""
-"A nymotatásra kiválasztott mezõk\n"
-"nem férnek el széltében a lapon."
+"A nymotatÃ¡sra kivÃ¡lasztott mezÅ‘k\n"
+"nem fÃ©rnek el szÃ©ltÃ©ben a lapon."
 
 #: kab/widget.cc:1624 kab/widget.cc:2066
 msgid "Printing finished successfully."
-msgstr "A nyomtatás sikeresen befejezõdött."
+msgstr "A nyomtatÃ¡s sikeresen befejezÅ‘dÃ¶tt."
 
 #: kab/widget.cc:1651
 msgid "kab: Email addresses"
-msgstr "kab: E-mail címek"
+msgstr "kab: E-mail cÃ­mek"
 
 #: kab/widget.cc:1652
 msgid "Available email addresses:"
-msgstr "Jelenlegi e-mail címek:"
+msgstr "Jelenlegi e-mail cÃ­mek:"
 
 #: kab/widget.cc:1717
 msgid "kab: Select fields to copy"
-msgstr "kab: Válassza ki a másolandó mezõket"
+msgstr "kab: VÃ¡lassza ki a mÃ¡solandÃ³ mezÅ‘ket"
 
 #: kab/widget.cc:1727
 msgid "Nothing selected."
-msgstr "Nincs semmi kiválasztva."
+msgstr "Nincs semmi kivÃ¡lasztva."
 
 #: kab/widget.cc:1785 kab/widget.cc:2049
 msgid "KDE addressbook overview"
-msgstr "KDE címjegyzék áttekintés"
+msgstr "KDE cÃ­mjegyzÃ©k Ã¡ttekintÃ©s"
 
 #: kab/widget.cc:1829
 msgid "Name-Email-Link (!!)"
-msgstr "Név-E-mail-Kapcsolat (!!)"
+msgstr "NÃ©v-E-mail-Kapcsolat (!!)"
 
 #: kab/widget.cc:1831
 #
 msgid "Select table columns"
-msgstr "Táblázat oszlopok választása"
+msgstr "TÃ¡blÃ¡zat oszlopok vÃ¡lasztÃ¡sa"
 
 #: kab/widget.cc:1836
 msgid "Nothing to export."
-msgstr "Nincs mit exportálni."
+msgstr "Nincs mit exportÃ¡lni."
 
 #: kab/widget.cc:1865
 msgid "Email link"
@@ -2488,23 +2488,23 @@ msgstr "E-mail kapcsolat"
 
 #: kab/widget.cc:1952
 msgid "Could not find the users home directory."
-msgstr "Nem található a felhasználó saját könyvtára."
+msgstr "Nem talÃ¡lhatÃ³ a felhasznÃ¡lÃ³ sajÃ¡t kÃ¶nyvtÃ¡ra."
 
 #: kab/widget.cc:1953
 msgid "Intern error!"
-msgstr "Belsõ hiba!"
+msgstr "BelsÅ‘ hiba!"
 
 #: kab/widget.cc:1973
 msgid "Could not open the file to create the HTML table."
-msgstr "Nem nyiható meg a fájl a HTML táblázat számára."
+msgstr "Nem nyihatÃ³ meg a fÃ¡jl a HTML tÃ¡blÃ¡zat szÃ¡mÃ¡ra."
 
 #: kab/widget.cc:2009
 msgid "Printing cancelled."
-msgstr "Nyomtatás elvetve."
+msgstr "NyomtatÃ¡s elvetve."
 
 #: kab/widget.cc:2025
 msgid "kab: Select columns for printing"
-msgstr "kab: Válassza ki a nyomtatandó oszlopokat"
+msgstr "kab: VÃ¡lassza ki a nyomtatandÃ³ oszlopokat"
 
 #: kab/widget.cc:2038
 msgid "Nothing to print."
@@ -2516,76 +2516,76 @@ msgstr "Oldal <p>"
 
 #: kab/widget.cc:2051
 msgid "KDE - the professionals choice."
-msgstr "KDE - a profik választása."
+msgstr "KDE - a profik vÃ¡lasztÃ¡sa."
 
 #: kab/widget.cc:2064
 msgid "Printing failed!"
-msgstr "Nem sikerült a nyomtatása"
+msgstr "Nem sikerÃ¼lt a nyomtatÃ¡sa"
 
 #: kab/widget.cc:2095
 msgid "Empty email address."
-msgstr "Üres e-mail cím."
+msgstr "Ãœres e-mail cÃ­m."
 
 #: kab/widget.cc:2114
 msgid "No email address."
-msgstr "Hiányzik az e-mail cím."
+msgstr "HiÃ¡nyzik az e-mail cÃ­m."
 
 # 
 #: kab/widget.cc:2124
 #
 msgid "Error calling mailer."
-msgstr "Hiba a levelezõ hívásakor."
+msgstr "Hiba a levelezÅ‘ hÃ­vÃ¡sakor."
 
 #: kab/widget.cc:2126
 msgid "Mailer called."
-msgstr "Levelezõ meghívva."
+msgstr "LevelezÅ‘ meghÃ­vva."
 
 #: kab/widget.cc:2149
 msgid "The mail command must be configured before!"
-msgstr "Elõször állítsa be a levelezõ programot!"
+msgstr "ElÅ‘szÃ¶r Ã¡llÃ­tsa be a levelezÅ‘ programot!"
 
 #: kab/widget.cc:2155
 msgid "Mail configuration"
-msgstr "Levelezõ beállítása"
+msgstr "LevelezÅ‘ beÃ¡llÃ­tÃ¡sa"
 
 #: kab/widget.cc:2156
 msgid "Please configure the parameters for the email command."
-msgstr "Kérem állítsa be az e-mail parancs paramétereit."
+msgstr "KÃ©rem Ã¡llÃ­tsa be az e-mail parancs paramÃ©tereit."
 
 #: kab/widget.cc:2194
 msgid "The email command parameters are wrong."
-msgstr "Az e-mail parancs paraméterei hibásak."
+msgstr "Az e-mail parancs paramÃ©terei hibÃ¡sak."
 
 #: kab/widget.cc:2206
 msgid ""
 "Email command failed.\n"
 "Make sure you did setup your email command and parameter!"
 msgstr ""
-"Az e-mail parancs végrehajtása nem sikerült.\n"
-"Ellenõrizze, hogy jól van-e beállítva a parancs és a paraméterei!"
+"Az e-mail parancs vÃ©grehajtÃ¡sa nem sikerÃ¼lt.\n"
+"EllenÅ‘rizze, hogy jÃ³l van-e beÃ¡llÃ­tva a parancs Ã©s a paramÃ©terei!"
 
 #: kab/widget.cc:2210
 msgid "Mail program started."
-msgstr "Levelezõ program elindítva."
+msgstr "LevelezÅ‘ program elindÃ­tva."
 
 #~ msgid "KIO Cache"
-#~ msgstr "KIO Gyorstár"
+#~ msgstr "KIO GyorstÃ¡r"
 
 #~ msgid "Contents of the cache"
-#~ msgstr "Gyorstár tartalma"
+#~ msgstr "GyorstÃ¡r tartalma"
 
 #~ msgid ""
 #~ "Use the icons for drag and drop actions, since they refer to the cache files "
 #~ "on your hard disk, while you should use the textual links for browsing"
 #~ msgstr ""
-#~ "Az ikonokat rádobhatja más alkalmazásokra, mert ezek a gyorstár fájlokra "
-#~ "hivatkonak,a szöveges linkeket pedigböngészésre használhatja"
+#~ "Az ikonokat rÃ¡dobhatja mÃ¡s alkalmazÃ¡sokra, mert ezek a gyorstÃ¡r fÃ¡jlokra "
+#~ "hivatkonak,a szÃ¶veges linkeket pedigbÃ¶ngÃ©szÃ©sre hasznÃ¡lhatja"
 
 #~ msgid "Creation Date"
-#~ msgstr "Létrehozási Dátum"
+#~ msgstr "LÃ©trehozÃ¡si DÃ¡tum"
 
 #~ msgid "Expiration Date"
-#~ msgstr "Lejárati Dátum"
+#~ msgstr "LejÃ¡rati DÃ¡tum"
 
 #, fuzzy
 #~ msgid "Never"
@@ -2596,7 +2596,7 @@ msgstr "Levelezõ program elindítva."
 #~ "%s"
 #~ msgstr ""
 #~ "%s\n"
-#~ "nem olvasható"
+#~ "nem olvashatÃ³"
 
 #, fuzzy
 #~ msgid ""
@@ -2604,7 +2604,7 @@ msgstr "Levelezõ program elindítva."
 #~ "%s"
 #~ msgstr ""
 #~ "%s-be\n"
-#~ "nem tudtam írni"
+#~ "nem tudtam Ã­rni"
 
 #, fuzzy
 #~ msgid ""
@@ -2612,7 +2612,7 @@ msgstr "Levelezõ program elindítva."
 #~ "%s"
 #~ msgstr ""
 #~ "a %s feladatot\n"
-#~ "nem tudtam elindítani"
+#~ "nem tudtam elindÃ­tani"
 
 #~ msgid ""
 #~ "Internal Error\n"
@@ -2620,8 +2620,8 @@ msgstr "Levelezõ program elindítva."
 #~ "\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Belsõ hiba\n"
-#~ "Kérem küldjön egy teljeskörû hibajelentést a kde-bugs@kde.org címre\n"
+#~ "BelsÅ‘ hiba\n"
+#~ "KÃ©rem kÃ¼ldjÃ¶n egy teljeskÃ¶rÅ± hibajelentÃ©st a kde-bugs@kde.org cÃ­mre\n"
 #~ "\n"
 #~ "%s"
 
@@ -2630,7 +2630,7 @@ msgstr "Levelezõ program elindítva."
 #~ "Malformed URL\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Hibás URL\n"
+#~ "HibÃ¡s URL\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2638,20 +2638,20 @@ msgstr "Levelezõ program elindítva."
 #~ " is not supported"
 #~ msgstr ""
 #~ "A %s protokol\n"
-#~ " nincs támogatva"
+#~ " nincs tÃ¡mogatva"
 
 #~ msgid ""
 #~ "The protocol %s\n"
 #~ "is only a filter protocol.\n"
 #~ msgstr ""
 #~ "A %s protokol\n"
-#~ "csak egy szûrõ protokol.\n"
+#~ "csak egy szÅ±rÅ‘ protokol.\n"
 
 #~ msgid ""
 #~ "Unsupported action\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nem támogatott mûvelet\n"
+#~ "Nem tÃ¡mogatott mÅ±velet\n"
 #~ "%s"
 
 #, fuzzy
@@ -2661,8 +2661,8 @@ msgstr "Levelezõ program elindítva."
 #~ "does not exist"
 #~ msgstr ""
 #~ "A %s\n"
-#~ "fájl vagy könyvtár\n"
-#~ "nem létezik"
+#~ "fÃ¡jl vagy kÃ¶nyvtÃ¡r\n"
+#~ "nem lÃ©tezik"
 
 #~ msgid ""
 #~ "%s\n"
@@ -2670,8 +2670,8 @@ msgstr "Levelezõ program elindítva."
 #~ "but a file was expected"
 #~ msgstr ""
 #~ "%s\n"
-#~ " egy könyvtár,\n"
-#~ "pedig fájlt vártam"
+#~ " egy kÃ¶nyvtÃ¡r,\n"
+#~ "pedig fÃ¡jlt vÃ¡rtam"
 
 # , fuzzy
 #, fuzzy
@@ -2680,7 +2680,7 @@ msgstr "Levelezõ program elindítva."
 #~ "%s"
 #~ msgstr ""
 #~ "A %s\n"
-#~ "könyvtár nem hozható létre"
+#~ "kÃ¶nyvtÃ¡r nem hozhatÃ³ lÃ©tre"
 
 #~ msgid ""
 #~ "The file or directory\n"
@@ -2688,14 +2688,14 @@ msgstr "Levelezõ program elindítva."
 #~ "does already exist"
 #~ msgstr ""
 #~ "A %s\n"
-#~ "fájl vagy könyvtár már létezik"
+#~ "fÃ¡jl vagy kÃ¶nyvtÃ¡r mÃ¡r lÃ©tezik"
 
 #~ msgid ""
 #~ "%s\n"
 #~ "Access denied"
 #~ msgstr ""
 #~ "%s\n"
-#~ "Hozzáférés megtagadva"
+#~ "HozzÃ¡fÃ©rÃ©s megtagadva"
 
 #, fuzzy
 #~ msgid ""
@@ -2703,20 +2703,20 @@ msgstr "Levelezõ program elindítva."
 #~ "%s"
 #~ msgstr ""
 #~ "A %s\n"
-#~ "könyvtárba nem tudtam belépni"
+#~ "kÃ¶nyvtÃ¡rba nem tudtam belÃ©pni"
 
 #~ msgid ""
 #~ "The protocol %s\n"
 #~ "does not implement a directory service"
 #~ msgstr ""
 #~ "A %s protokol\n"
-#~ "nem támogat könyvtárkezelést"
+#~ "nem tÃ¡mogat kÃ¶nyvtÃ¡rkezelÃ©st"
 
 #~ msgid ""
 #~ "Found a cyclic link in\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Találtam egy ciklikus linket:\n"
+#~ "TalÃ¡ltam egy ciklikus linket:\n"
 #~ "%s"
 
 #, fuzzy
@@ -2724,7 +2724,7 @@ msgstr "Levelezõ program elindítva."
 #~ "Could not change permissions for\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nem tudtam megváltoztatni a hozzáférési jogokat\n"
+#~ "Nem tudtam megvÃ¡ltoztatni a hozzÃ¡fÃ©rÃ©si jogokat\n"
 #~ "%s-hez"
 
 #~ msgid ""
@@ -2732,29 +2732,29 @@ msgstr "Levelezõ program elindítva."
 #~ "Could not write to\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Hozzáférés megtagadva\n"
-#~ "Nem írható:\n"
+#~ "HozzÃ¡fÃ©rÃ©s megtagadva\n"
+#~ "Nem Ã­rhatÃ³:\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Action has been\n"
 #~ "canceled by the user"
 #~ msgstr ""
-#~ "A mûvelet megszakítva a\n"
-#~ "felhasználó által"
+#~ "A mÅ±velet megszakÃ­tva a\n"
+#~ "felhasznÃ¡lÃ³ Ã¡ltal"
 
 #~ msgid ""
 #~ "Found a cyclic link while copying\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Másolás közben találtam egy ciklikus linket\n"
+#~ "MÃ¡solÃ¡s kÃ¶zben talÃ¡ltam egy ciklikus linket\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not create socket for accessing\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nem hozható létre socket hozzáféréshez:\n"
+#~ "Nem hozhatÃ³ lÃ©tre socket hozzÃ¡fÃ©rÃ©shez:\n"
 #~ "%s"
 
 #, fuzzy
@@ -2763,13 +2763,13 @@ msgstr "Levelezõ program elindítva."
 #~ "%s"
 #~ msgstr ""
 #~ "Nem tudok kapcsolatot teremteni a\n"
-#~ "%s kiszolgálóval"
+#~ "%s kiszolgÃ¡lÃ³val"
 
 #~ msgid ""
 #~ "Unknown host\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Ismeretlen kiszolgáló:\n"
+#~ "Ismeretlen kiszolgÃ¡lÃ³:\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2777,7 +2777,7 @@ msgstr "Levelezõ program elindítva."
 #~ "%s\n"
 #~ "is broken"
 #~ msgstr ""
-#~ "A %s kiszolgálóval\n"
+#~ "A %s kiszolgÃ¡lÃ³val\n"
 #~ "a kapcsolat megszakadt"
 
 #~ msgid ""
@@ -2785,7 +2785,7 @@ msgstr "Levelezõ program elindítva."
 #~ "is not a filter protocol"
 #~ msgstr ""
 #~ "A %s protokol\n"
-#~ "nem szûrõ protokol"
+#~ "nem szÅ±rÅ‘ protokol"
 
 #~ msgid ""
 #~ "%s\n"
@@ -2793,8 +2793,8 @@ msgstr "Levelezõ program elindítva."
 #~ "but a directory was expected"
 #~ msgstr ""
 #~ "%s\n"
-#~ "egy fájl,\n"
-#~ "pedig könyvtárat vártam"
+#~ "egy fÃ¡jl,\n"
+#~ "pedig kÃ¶nyvtÃ¡rat vÃ¡rtam"
 
 #~ msgid ""
 #~ "Could not mount device.\n"
@@ -2802,7 +2802,7 @@ msgstr "Levelezõ program elindítva."
 #~ "\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Az eszköz nem mountolható.\n"
+#~ "Az eszkÃ¶z nem mountolhatÃ³.\n"
 #~ "A jelentett hiba:\n"
 #~ "\n"
 #~ "%s"
@@ -2813,7 +2813,7 @@ msgstr "Levelezõ program elindítva."
 #~ "\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Az eszköz nem unmountolható.\n"
+#~ "Az eszkÃ¶z nem unmountolhatÃ³.\n"
 #~ "A jelentett hiba:\n"
 #~ "\n"
 #~ "%s"
@@ -2824,15 +2824,15 @@ msgstr "Levelezõ program elindítva."
 #~ "died unexpectedly"
 #~ msgstr ""
 #~ "A %s protokolhoz\n"
-#~ "tartozó feladat\n"
-#~ "váratlanul kipukkant"
+#~ "tartozÃ³ feladat\n"
+#~ "vÃ¡ratlanul kipukkant"
 
 #, fuzzy
 #~ msgid ""
 #~ "Could not access\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nem érhetõ el:\n"
+#~ "Nem Ã©rhetÅ‘ el:\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2841,55 +2841,55 @@ msgstr "Levelezõ program elindítva."
 #~ "\n"
 #~ "Please send a full bugreport to kde-bugs@kde.org"
 #~ msgstr ""
-#~ "Ismeretlen hibakód: %i\n"
+#~ "Ismeretlen hibakÃ³d: %i\n"
 #~ "%s\n"
 #~ "\n"
-#~ "Kérem, küldjön teljes hibajelentést: kde-bugs@kde.org"
+#~ "KÃ©rem, kÃ¼ldjÃ¶n teljes hibajelentÃ©st: kde-bugs@kde.org"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"
 
 #~ msgid "Mounting %s ..."
-#~ msgstr "%s csatlakoztatása..."
+#~ msgstr "%s csatlakoztatÃ¡sa..."
 
 #~ msgid "Unmounting %s ..."
-#~ msgstr "%s leválasztása..."
+#~ msgstr "%s levÃ¡lasztÃ¡sa..."
 
 #~ msgid "This group is empty!"
-#~ msgstr "Ez a csoport üres!"
+#~ msgstr "Ez a csoport Ã¼res!"
 
 #, fuzzy
 #~ msgid "&Browser"
-#~ msgstr "&Böngészõ"
+#~ msgstr "&BÃ¶ngÃ©szÅ‘"
 
 #~ msgid "User"
-#~ msgstr "Felhasználó"
+#~ msgstr "FelhasznÃ¡lÃ³"
 
 #~ msgid "Password"
-#~ msgstr "Jelszó"
+#~ msgstr "JelszÃ³"
 
 #~ msgid "The clipboard is empty"
-#~ msgstr "A vágólap üres"
+#~ msgstr "A vÃ¡gÃ³lap Ã¼res"
 
 #~ msgid ""
 #~ "Pasting clipboard data is only supported on the local hard disk currently"
 #~ msgstr ""
-#~ "Vágólap tartalmának beillesztése egyenlõre csak a helyi merevlemezen "
-#~ "támogatott"
+#~ "VÃ¡gÃ³lap tartalmÃ¡nak beillesztÃ©se egyenlÅ‘re csak a helyi merevlemezen "
+#~ "tÃ¡mogatott"
 
 #~ msgid "Filename for clipboard content:"
-#~ msgstr "Fájlnév a vágólap tartalmához:"
+#~ msgstr "FÃ¡jlnÃ©v a vÃ¡gÃ³lap tartalmÃ¡hoz:"
 
 #~ msgid "You did not enter a filename"
-#~ msgstr "Nem adott meg fájlnevet"
+#~ msgstr "Nem adott meg fÃ¡jlnevet"
 
 #, fuzzy
 #~ msgid "The file %s does already exist. Do you really want to overwrite it ?"
-#~ msgstr "A %s nevû file már létezik. Biztos felül akarja írni?"
+#~ msgstr "A %s nevÅ± file mÃ¡r lÃ©tezik. Biztos felÃ¼l akarja Ã­rni?"
 
 #, fuzzy
 #~ msgid "Bytes"
-#~ msgstr " Bájt"
+#~ msgstr " BÃ¡jt"
 
 #, fuzzy
 #~ msgid "Kb"
@@ -2904,7 +2904,7 @@ msgstr "Levelezõ program elindítva."
 #~ msgstr "Befalcolt"
 
 #~ msgid " Bytes/s"
-#~ msgstr " Bájt/mp"
+#~ msgstr " BÃ¡jt/mp"
 
 #~ msgid " Kb/s"
 #~ msgstr " Kb/mp"
@@ -2913,7 +2913,7 @@ msgstr "Levelezõ program elindítva."
 #~ msgstr " Mb/mp"
 
 #~ msgid "%i seconds"
-#~ msgstr "%i másodperc"
+#~ msgstr "%i mÃ¡sodperc"
 
 #~ msgid "%i:%i"
 #~ msgstr "%i:%i"
@@ -2922,35 +2922,35 @@ msgstr "Levelezõ program elindítva."
 #~ msgstr "%i:%i:%i"
 
 #~ msgid "%i%s  Remaining time: %s"
-#~ msgstr "%i%s  Hátralévõ idõ: %s"
+#~ msgstr "%i%s  HÃ¡tralÃ©vÅ‘ idÅ‘: %s"
 
 #, fuzzy
 #~ msgid "Scanning "
-#~ msgstr "Vizsgálat "
+#~ msgstr "VizsgÃ¡lat "
 
 # , fuzzy
 #, fuzzy
 #~ msgid "Creating dir "
-#~ msgstr "Könyvtár létrehozása "
+#~ msgstr "KÃ¶nyvtÃ¡r lÃ©trehozÃ¡sa "
 
 #~ msgid "Fetching file"
-#~ msgstr "Fájl leszedése"
+#~ msgstr "FÃ¡jl leszedÃ©se"
 
 #, fuzzy
 #~ msgid "Rename"
-#~ msgstr "Átnevez"
+#~ msgstr "Ãtnevez"
 
 #~ msgid "Skip"
-#~ msgstr "Átlép"
+#~ msgstr "ÃtlÃ©p"
 
 #~ msgid "Auto Skip"
-#~ msgstr "Autómatikus Kihagyás"
+#~ msgstr "AutÃ³matikus KihagyÃ¡s"
 
 #~ msgid "Overwrite"
-#~ msgstr "Felülír"
+#~ msgstr "FelÃ¼lÃ­r"
 
 #~ msgid "Overwrite All"
-#~ msgstr "Mindent felülír"
+#~ msgstr "Mindent felÃ¼lÃ­r"
 
 #, fuzzy
 #~ msgid "Resume"
@@ -2961,56 +2961,56 @@ msgstr "Levelezõ program elindítva."
 #~ msgstr "Mindet Folytassa"
 
 #~ msgid "You try to overwrite"
-#~ msgstr "Ön felül kívánta írni"
+#~ msgstr "Ã–n felÃ¼l kÃ­vÃ¡nta Ã­rni"
 
 #~ msgid "already exists. Overwrite with"
-#~ msgstr ", ami már létezik.  Felülírja"
+#~ msgstr ", ami mÃ¡r lÃ©tezik.  FelÃ¼lÃ­rja"
 
 #~ msgid "Or rename to"
-#~ msgstr "vagy átnevezi"
+#~ msgstr "vagy Ã¡tnevezi"
 
 #~ msgid "already exists."
-#~ msgstr "már létezik"
+#~ msgstr "mÃ¡r lÃ©tezik"
 
 #~ msgid "Do you want to rename it ?"
-#~ msgstr "Át akarja nevezni?"
+#~ msgstr "Ãt akarja nevezni?"
 
 #, fuzzy
 #~ msgid "Malformed URL\n"
-#~ msgstr "Hibás URL\n"
+#~ msgstr "HibÃ¡s URL\n"
 
 #~ msgid "You must not change the protocol"
-#~ msgstr "Nem változtathatja meg a protokolt"
+#~ msgstr "Nem vÃ¡ltoztathatja meg a protokolt"
 
 #, fuzzy
 #~ msgid "Can not write"
-#~ msgstr "Nem írható"
+#~ msgstr "Nem Ã­rhatÃ³"
 
 # , fuzzy
 #, fuzzy
 #~ msgid "Permission denied!"
-#~ msgstr "Hozzáférés megtagadva!"
+#~ msgstr "HozzÃ¡fÃ©rÃ©s megtagadva!"
 
 #~ msgid "No mime types installed!"
-#~ msgstr "Nincsenek installálva MIME típusok!"
+#~ msgstr "Nincsenek installÃ¡lva MIME tÃ­pusok!"
 
 #~ msgid "Could not find mime type\n"
-#~ msgstr "A mime típus nem található\n"
+#~ msgstr "A mime tÃ­pus nem talÃ¡lhatÃ³\n"
 
 #~ msgid "The mime type config file "
-#~ msgstr "Mime típus konfigurációs fájl"
+#~ msgstr "Mime tÃ­pus konfigurÃ¡ciÃ³s fÃ¡jl"
 
 #~ msgid "does not conatain a MimeType=... entry"
-#~ msgstr "nem tartalmaz MimeType=... bejegyzést"
+#~ msgstr "nem tartalmaz MimeType=... bejegyzÃ©st"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
 #~ "%s\n"
 #~ "has no Type=... entry"
 #~ msgstr ""
-#~ "A kdelnk fájl,\n"
+#~ "A kdelnk fÃ¡jl,\n"
 #~ "%s,\n"
-#~ "nem tartalmaz Type=... bejegyzést "
+#~ "nem tartalmaz Type=... bejegyzÃ©st "
 
 #~ msgid ""
 #~ "The kdelnk type\n"
@@ -3018,7 +3018,7 @@ msgstr "Levelezõ program elindítva."
 #~ "is unknown"
 #~ msgstr ""
 #~ "A %s\n"
-#~ "kdelnk típus\n"
+#~ "kdelnk tÃ­pus\n"
 #~ "ismeretlen"
 
 #~ msgid ""
@@ -3027,24 +3027,24 @@ msgstr "Levelezõ program elindítva."
 #~ "is of type FSDevice but has no Dev=... entry"
 #~ msgstr ""
 #~ "A %s\n"
-#~ "kdelnk fájl\n"
-#~ "FSDevice típusú, de nincs Dev=... bejegyzése"
+#~ "kdelnk fÃ¡jl\n"
+#~ "FSDevice tÃ­pusÃº, de nincs Dev=... bejegyzÃ©se"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
 #~ "%s\n"
 #~ "is of type Link but has no URL=... entry"
 #~ msgstr ""
-#~ "A %s kdelnk fájl\n"
-#~ "kapcsolat típusú, de nincs URL=... bejegyzése"
+#~ "A %s kdelnk fÃ¡jl\n"
+#~ "kapcsolat tÃ­pusÃº, de nincs URL=... bejegyzÃ©se"
 
 # , fuzzy
 #, fuzzy
 #~ msgid "Mount"
-#~ msgstr "Csatlakoztatás"
+#~ msgstr "CsatlakoztatÃ¡s"
 
 #~ msgid "Unmount"
-#~ msgstr "Leválasztás"
+#~ msgstr "LevÃ¡lasztÃ¡s"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
@@ -3052,31 +3052,31 @@ msgstr "Levelezõ program elindítva."
 #~ " has an invalid menu entry\n"
 #~ "%s"
 #~ msgstr ""
-#~ "A %s kdelnk fájl\n"
-#~ "tartalmaz egy érvénytelen menü bejegyzést:\n"
+#~ "A %s kdelnk fÃ¡jl\n"
+#~ "tartalmaz egy Ã©rvÃ©nytelen menÃ¼ bejegyzÃ©st:\n"
 #~ "%s"
 
 #~ msgid "The mime type _cfg file "
-#~ msgstr "A mime típus konfigurációs fájl "
+#~ msgstr "A mime tÃ­pus konfigurÃ¡ciÃ³s fÃ¡jl "
 
 #~ msgid ""
 #~ "Can not enter\n"
 #~ "%s\n"
 #~ "Access denied"
 #~ msgstr ""
-#~ "Nem léphetek be ide\n"
+#~ "Nem lÃ©phetek be ide\n"
 #~ "%s\n"
-#~ "Hozzáférés megtagadva"
+#~ "HozzÃ¡fÃ©rÃ©s megtagadva"
 
 #~ msgid "The application config file\n"
-#~ msgstr "Az applikáció konfigurációs fájl\n"
+#~ msgstr "Az applikÃ¡ciÃ³ konfigurÃ¡ciÃ³s fÃ¡jl\n"
 
 #~ msgid ""
 #~ "\n"
 #~ "does not conatain a Name=... entry"
 #~ msgstr ""
 #~ "\n"
-#~ "nem tartalmaz Name=... bejegyzést"
+#~ "nem tartalmaz Name=... bejegyzÃ©st"
 
 # , fuzzy
 #, fuzzy
@@ -3085,7 +3085,7 @@ msgstr "Levelezõ program elindítva."
 
 #, fuzzy
 #~ msgid "Search"
-#~ msgstr "Március"
+#~ msgstr "MÃ¡rcius"
 
 #, fuzzy
 #~ msgid "contains"
@@ -3101,16 +3101,16 @@ msgstr "Levelezõ program elindítva."
 #~ msgstr "Mozgat"
 
 #~ msgid "&Previous"
-#~ msgstr "E&lõzõ"
+#~ msgstr "E&lÅ‘zÅ‘"
 
 #~ msgid "&Next"
-#~ msgstr "&Következõ"
+#~ msgstr "&KÃ¶vetkezÅ‘"
 
 #~ msgid "Small"
 #~ msgstr "Kicsi"
 
 #~ msgid "Medium"
-#~ msgstr "Közepes"
+#~ msgstr "KÃ¶zepes"
 
 #~ msgid "Large"
 #~ msgstr "Nagy"

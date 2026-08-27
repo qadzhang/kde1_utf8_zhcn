@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: Taiki Komoda <tklab@ma6.seikyou.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 
 #: board.cpp:65 dialogs.cpp:137
 msgid "Anonymous"
-msgstr "Æ¿Ì¾"
+msgstr "åŒ¿å"
 
 #: board.cpp:97
 msgid "Game paused"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: board.cpp:102
 msgid "Press to resume"
-msgstr "¥¯¥ê¥Ã¥¯¤Ç¥¹¥¿¡¼¥È"
+msgstr "ã‚¯ãƒªãƒƒã‚¯ã§ã‚¹ã‚¿ãƒ¼ãƒˆ"
 
 #: board.cpp:119 net.cpp:208
 msgid "Game over"
@@ -33,15 +33,15 @@ msgstr ""
 
 #: board.cpp:123
 msgid "Press Return to replay"
-msgstr "Return¤Ç¥ê¥×¥ì¥¤"
+msgstr "Returnã§ãƒªãƒ—ãƒ¬ã‚¤"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "»Ï¤á¤ë¤Ë¤Ï¥¯¥ê¥Ã¥¯"
+msgstr "å§‹ã‚ã‚‹ã«ã¯ã‚¯ãƒªãƒƒã‚¯"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "¥Ï¥¤¥¹¥³¥¢¤¬½ñ¤­¹ş¤á¤Ş¤»¤ó!"
+msgstr "ãƒã‚¤ã‚¹ã‚³ã‚¢ãŒæ›¸ãè¾¼ã‚ã¾ã›ã‚“!"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -49,15 +49,15 @@ msgstr ""
 
 #: net.cpp:135
 msgid "Null address"
-msgstr "Null ¥¢¥É¥ì¥¹"
+msgstr "Null ã‚¢ãƒ‰ãƒ¬ã‚¹"
 
 #: net.cpp:142
 msgid "Unknown address"
-msgstr "Ì¤ÃÎ¤Î¥¢¥É¥ì¥¹"
+msgstr "æœªçŸ¥ã®ã‚¢ãƒ‰ãƒ¬ã‚¹"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "¥½¥±¥Ã¥È¤¬ºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿"
+msgstr "ã‚½ã‚±ãƒƒãƒˆãŒä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸ"
 
 #: net.cpp:196
 msgid "at"
@@ -65,59 +65,59 @@ msgstr ""
 
 #: net.cpp:233
 msgid "Connect error"
-msgstr "¥³¥Í¥¯¥È¥¨¥é¡¼"
+msgstr "ã‚³ãƒã‚¯ãƒˆã‚¨ãƒ©ãƒ¼"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
-msgstr "¥µ¡¼¥Ğ¡¼¤Ë¤¿¤É¤êÃå¤±¤Ş¤»¤ó¤Ç¤·¤¿"
+msgstr "ã‚µãƒ¼ãƒãƒ¼ã«ãŸã©ã‚Šç€ã‘ã¾ã›ã‚“ã§ã—ãŸ"
 
 #: net.cpp:266
 msgid "The server has died"
-msgstr "¥µ¡¼¥Ğ¡¼¤¬»à¤ó¤Ç¤¤¤Ş¤¹"
+msgstr "ã‚µãƒ¼ãƒãƒ¼ãŒæ­»ã‚“ã§ã„ã¾ã™"
 
 #: net.cpp:267
 msgid "Cancel from server"
-msgstr "¥µ¡¼¥Ğ¡¼¤ËµñÈİ¤µ¤ì¤Ş¤·¤¿"
+msgstr "ã‚µãƒ¼ãƒãƒ¼ã«æ‹’å¦ã•ã‚Œã¾ã—ãŸ"
 
 #: net.cpp:273 net.cpp:333
 msgid "Unknown data from server"
-msgstr "¥µ¡¼¥Ğ¡¼¤«¤éÉÔÌÀ¤Ê¥Ç¡¼¥¿"
+msgstr "ã‚µãƒ¼ãƒãƒ¼ã‹ã‚‰ä¸æ˜ãªãƒ‡ãƒ¼ã‚¿"
 
 #: net.cpp:312
 msgid "Cannot send to server"
-msgstr "¥µ¡¼¥Ğ¡¼¤ËÁ÷¤ì¤Ş¤»¤ó¤Ç¤·¤¿"
+msgstr "ã‚µãƒ¼ãƒãƒ¼ã«é€ã‚Œã¾ã›ã‚“ã§ã—ãŸ"
 
 #: net.cpp:324
 msgid "Client timeout (No message from server)"
-msgstr "Client timeout (¥µ¡¼¥Ğ¡¼¤«¤é¤Î¥á¥Ã¥»¡¼¥¸¤¬¤¢¤ê¤Ş¤»¤ó)"
+msgstr "Client timeout (ã‚µãƒ¼ãƒãƒ¼ã‹ã‚‰ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒã‚ã‚Šã¾ã›ã‚“)"
 
 #: net.cpp:329
 msgid "Server has vanished"
-msgstr "¥µ¡¼¥Ğ¡¼¤¬¾Ã¤¨¤Æ¤¤¤Ş¤¹"
+msgstr "ã‚µãƒ¼ãƒãƒ¼ãŒæ¶ˆãˆã¦ã„ã¾ã™"
 
 #: net.cpp:366
 msgid "Bind error"
-msgstr "Bind ¥¨¥é¡¼"
+msgstr "Bind ã‚¨ãƒ©ãƒ¼"
 
 #: net.cpp:371
 msgid "Listen error"
-msgstr "Listen ¥¨¥é¡¼"
+msgstr "Listen ã‚¨ãƒ©ãƒ¼"
 
 #: net.cpp:390
 msgid "Unknown message from unknown player (??)"
-msgstr "Ì¤ÃÎ¤Î¥×¥ì¡¼¥ä¡¼¤«¤é¤ÎÌ¤ÃÎ¤Î¥á¥Ã¥»¡¼¥¸ (??)"
+msgstr "æœªçŸ¥ã®ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼ã‹ã‚‰ã®æœªçŸ¥ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ (??)"
 
 #: net.cpp:449 net.cpp:490
 msgid "Unknown message from client"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¤«¤é¤ÎÌ¤ÃÎ¤Î¥á¥Ã¥»¡¼¥¸"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ã®æœªçŸ¥ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸"
 
 #: net.cpp:486
 msgid "Client has died"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¤¬»à¤ó¤Ç¤¤¤Ş¤¹"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãŒæ­»ã‚“ã§ã„ã¾ã™"
 
 #: net.cpp:487
 msgid "Cancel from client"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¤ËµñÈİ¤µ¤ì¤Ş¤·¤¿"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«æ‹’å¦ã•ã‚Œã¾ã—ãŸ"
 
 #: net.cpp:494
 msgid "Timeout"
@@ -125,23 +125,23 @@ msgstr ""
 
 #: net.cpp:520
 msgid "No message from client"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¤«¤é¥á¥Ã¥»¡¼¥¸¤¬¤¢¤ê¤Ş¤»¤ó"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒã‚ã‚Šã¾ã›ã‚“"
 
 #: net.cpp:525
 msgid "Client has vanished"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¤¬¾Ã¤¨¤Æ¤¤¤Ş¤¹"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãŒæ¶ˆãˆã¦ã„ã¾ã™"
 
 #: net.cpp:529
 msgid "Unknown data from client"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¤«¤éÉÔÌÀ¤Ê¥Ç¡¼¥¿"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ä¸æ˜ãªãƒ‡ãƒ¼ã‚¿"
 
 #: net.cpp:533
 msgid "End message from client"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¤«¤éºÇ¸å¤Î¥á¥Ã¥»¡¼¥¸"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰æœ€å¾Œã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸"
 
 #: net.cpp:550
 msgid "Cannot send to client"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¤ËÁ÷¤ì¤Ş¤»¤ó¤Ç¤·¤¿"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ã‚Œã¾ã›ã‚“ã§ã—ãŸ"
 
 #: dialogs.cpp:61
 msgid "High Scores"
@@ -149,31 +149,31 @@ msgstr ""
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
-msgstr "ÅÂÆ²"
+msgstr "æ®¿å ‚"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
-msgstr "¤Ş¤À¥ª¥×¥·¥ç¥ó¤Ï¤¢¤ê¤Ş¤»¤ó!"
+msgstr "ã¾ã ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯ã‚ã‚Šã¾ã›ã‚“!"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "¥Í¥Ã¥È¥ï¡¼¥¯¥À¥¤¥¢¥í¥°"
+msgstr "ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ãƒ€ã‚¤ã‚¢ãƒ­ã‚°"
 
 #: dialogs.cpp:178
 msgid "Server"
-msgstr "¥µ¡¼¥Ğ¡¼"
+msgstr "ã‚µãƒ¼ãƒãƒ¼"
 
 #: dialogs.cpp:179
 msgid "Client"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆ"
 
 #: dialogs.cpp:183
 msgid "Player name :"
-msgstr "¥×¥ì¡¼¥ä¡¼Ì¾ :"
+msgstr "ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼å :"
 
 #: dialogs.cpp:185
 msgid "Server address :"
-msgstr "¥µ¡¼¥Ğ¡¼¥¢¥É¥ì¥¹ :"
+msgstr "ã‚µãƒ¼ãƒãƒ¼ã‚¢ãƒ‰ãƒ¬ã‚¹ :"
 
 #: dialogs.cpp:187
 msgid "Port :"
@@ -181,107 +181,107 @@ msgstr ""
 
 #: dialogs.cpp:199
 msgid "Connect"
-msgstr "ÀÜÂ³"
+msgstr "æ¥ç¶š"
 
 #: dialogs.cpp:202
 msgid "Connecting ..."
-msgstr "ÀÜÂ³Ãæ ..."
+msgstr "æ¥ç¶šä¸­ ..."
 
 #: dialogs.cpp:205
 msgid "Play !"
-msgstr "¥¹¥¿¡¼¥È!"
+msgstr "ã‚¹ã‚¿ãƒ¼ãƒˆ!"
 
 #: dialogs.cpp:252
 msgid "Network game"
-msgstr "¥Í¥Ã¥È¥ï¡¼¥¯¥²¡¼¥à"
+msgstr "ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‚²ãƒ¼ãƒ "
 
 #: dialogs.cpp:256
 msgid "Server mode"
-msgstr "¥µ¡¼¥Ğ¡¼¥â¡¼¥É"
+msgstr "ã‚µãƒ¼ãƒãƒ¼ãƒ¢ãƒ¼ãƒ‰"
 
 #: dialogs.cpp:258
 msgid "Client mode"
-msgstr "¥¯¥é¥¤¥¢¥ó¥È¥â¡¼¥É"
+msgstr "ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ¢ãƒ¼ãƒ‰"
 
 #: dialogs.cpp:336
 msgid "Waiting for other player(s) ..."
-msgstr "Â¾¤Î¥×¥ì¥¤¥ä¡¼¤òÂÔ¤Ã¤Æ¤¤¤Ş¤¹ ..."
+msgstr "ä»–ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å¾…ã£ã¦ã„ã¾ã™ ..."
 
 #: field.cpp:27
 msgid "New game"
-msgstr "¿·¤·¤¤¥²¡¼¥à"
+msgstr "æ–°ã—ã„ã‚²ãƒ¼ãƒ "
 
 #: field.cpp:28
 msgid "Pause game"
-msgstr "¥İ¡¼¥º"
+msgstr "ãƒãƒ¼ã‚º"
 
 #: field.cpp:30
 msgid "High scores"
-msgstr "¥Ï¥¤¥¹¥³¥¢"
+msgstr "ãƒã‚¤ã‚¹ã‚³ã‚¢"
 
 #: field.cpp:31
 msgid "Move left"
-msgstr "±¦¤ËÆ°¤¯"
+msgstr "å³ã«å‹•ã"
 
 #: field.cpp:32
 msgid "Move right"
-msgstr "º¸¤ËÆ°¤¯"
+msgstr "å·¦ã«å‹•ã"
 
 #: field.cpp:33
 msgid "Drop down"
-msgstr "Íî¤¹"
+msgstr "è½ã™"
 
 #: field.cpp:34
 msgid "One line down"
-msgstr "°ìÎóÍî¤¹"
+msgstr "ä¸€åˆ—è½ã™"
 
 #: field.cpp:35
 msgid "Rotate left"
-msgstr "º¸¤Ë²ó¤¹"
+msgstr "å·¦ã«å›ã™"
 
 #: field.cpp:36
 msgid "Rotate right"
-msgstr "±¦¤Ë²ó¤¹"
+msgstr "å³ã«å›ã™"
 
 #: field.cpp:51
 msgid "Score"
-msgstr "ÆÀÅÀ"
+msgstr "å¾—ç‚¹"
 
 #: field.cpp:55
 msgid "Lines removed"
-msgstr "¾Ã¤·¤¿¥é¥¤¥ó"
+msgstr "æ¶ˆã—ãŸãƒ©ã‚¤ãƒ³"
 
 #: field.cpp:59
 msgid "Level"
-msgstr "¥ì¥Ù¥ë"
+msgstr "ãƒ¬ãƒ™ãƒ«"
 
 #: field.cpp:63
 msgid "Next tile"
-msgstr "¼¡¤Î¥¿¥¤¥ë"
+msgstr "æ¬¡ã®ã‚¿ã‚¤ãƒ«"
 
 #: field.cpp:185
 msgid "&Restart game"
-msgstr "ºÆ¥¹¥¿¡¼¥È (&R)"
+msgstr "å†ã‚¹ã‚¿ãƒ¼ãƒˆ (&R)"
 
 #: field.cpp:186
 msgid "&Pause game"
-msgstr "¥İ¡¼¥º (&P)"
+msgstr "ãƒãƒ¼ã‚º (&P)"
 
 #: field.cpp:187
 msgid "&Multiplayer game"
-msgstr "ÂĞÀï¥²¡¼¥à (&M)"
+msgstr "å¯¾æˆ¦ã‚²ãƒ¼ãƒ  (&M)"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "¥Ï¥¤¥¹¥³¥¢ (&H)"
+msgstr "ãƒã‚¤ã‚¹ã‚³ã‚¢ (&H)"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"
-msgstr "¥á¥Ë¥å¡¼¤ò±£¤¹"
+msgstr "ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’éš ã™"
 
 #: main.cpp:30
 msgid "&Keys"
-msgstr "¥­¡¼ (&K)"
+msgstr "ã‚­ãƒ¼ (&K)"
 
 #: main.cpp:35
 msgid "by"
@@ -289,4 +289,4 @@ msgstr ""
 
 #: main.cpp:71
 msgid "Show menu"
-msgstr "¥á¥Ë¥å¡¼¤òÉ½¼¨"
+msgstr "ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è¡¨ç¤º"

@@ -7,7 +7,7 @@ msgstr ""
 "POT-Creation-Date: 1999-03-05 01:58+0100\n"
 "PO-Revision-Date: 1999-01-24 16:03+0100\n"
 "Last-Translator: Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: kcalc.cpp:99
 msgid "KCalc Setup/Help"
@@ -15,7 +15,7 @@ msgstr "KCalc Ustawienia/Pomoc"
 
 #: kcalc.cpp:152
 msgid "Angle"
-msgstr "K±t"
+msgstr "KÄ…t"
 
 #: kcalc.cpp:192
 msgid "Base"
@@ -55,14 +55,14 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"Z uwagi na b³êdy w glibc, musia³em zmniejszyæ precyzjê KCalc\n"
-"z 'long double' do 'double'. Posiadacze systemów z poprawnie dzia³aj±cym\n"
-"libc powinni zrekompilowaæ KCalc uaktywniaj±c precyzjê 'long double'.\n"
-"Prosze spojrzeæ do README, by znale¼æ wiêcej szczegó³ów."
+"Z uwagi na bÅ‚Ä™dy w glibc, musiaÅ‚em zmniejszyÄ‡ precyzjÄ™ KCalc\n"
+"z 'long double' do 'double'. Posiadacze systemÃ³w z poprawnie dziaÅ‚ajÄ…cym\n"
+"libc powinni zrekompilowaÄ‡ KCalc uaktywniajÄ…c precyzjÄ™ 'long double'.\n"
+"Prosze spojrzeÄ‡ do README, by znaleÅºÄ‡ wiÄ™cej szczegÃ³Å‚Ã³w."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
 msgid "Defaults"
-msgstr "Domy¶lne"
+msgstr "DomyÅ›lne"
 
 #: kcalc.cpp:1593
 msgid "Display Font"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: kcalc_core.cpp:1115
 msgid "Last stat item erased"
-msgstr "Ostatni element stat usuniêty"
+msgstr "Ostatni element stat usuniÄ™ty"
 
 #: kcalc_core.cpp:1155
 msgid "Stat Mem cleared"
@@ -87,15 +87,15 @@ msgstr "Stat Mem skasowana"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
-msgstr "B³±d przetwarzania stosu - prawy operand"
+msgstr "BÅ‚Ä…d przetwarzania stosu - prawy operand"
 
 #: kcalc_core.cpp:1640
 msgid "Stack processing error - function"
-msgstr "B³±d przetwarzania stosu - funkcja"
+msgstr "BÅ‚Ä…d przetwarzania stosu - funkcja"
 
 #: kcalc_core.cpp:1649
 msgid "Stack processing error - left_op"
-msgstr "B³±d przetwarzania stosu - lewy operand"
+msgstr "BÅ‚Ä…d przetwarzania stosu - lewy operand"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Emergency"
@@ -103,7 +103,7 @@ msgstr "Pilne"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Stack Error!"
-msgstr "B³±d stosu!"
+msgstr "BÅ‚Ä…d stosu!"
 
 #: configdlg.cpp:61
 msgid "Foreground Color:"
@@ -111,7 +111,7 @@ msgstr "Kolor tekstu"
 
 #: configdlg.cpp:78
 msgid "Background Color:"
-msgstr "Kolor t³a:"
+msgstr "Kolor tÅ‚a:"
 
 #: configdlg.cpp:95
 msgid "Precision:"
@@ -119,11 +119,11 @@ msgstr "Precyzja"
 
 #: configdlg.cpp:116
 msgid "Set Fixed Precision at:"
-msgstr "Ustaw zmienn± precyzjê na:"
+msgstr "Ustaw zmiennÄ… precyzjÄ™ na:"
 
 #: configdlg.cpp:145
 msgid "Beep on Error"
-msgstr "D¼wiêk w przypadku b³êdu"
+msgstr "DÅºwiÄ™k w przypadku bÅ‚Ä™du"
 
 #: configdlg.cpp:153
 msgid "Trigonometry Mode"
@@ -135,7 +135,7 @@ msgstr "Tryb statystyczny"
 
 #: fontdlg.cpp:44
 msgid "Set Default Font"
-msgstr "Ustaw domy¶ln± czcionkê"
+msgstr "Ustaw domyÅ›lnÄ… czcionkÄ™"
 
 #: fontdlg.cpp:53
 msgid "Family:"

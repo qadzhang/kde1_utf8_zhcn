@@ -23,25 +23,25 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.4.0"
 
 #: main.cpp:61
 msgid "&Font"
-msgstr "�ե����(&F)"
+msgstr "¥Õ¥©¥ó¥È(&F)"
 
 #: main.cpp:63
 msgid "&Color"
-msgstr "��(&C)"
+msgstr "¿§(&C)"
 
 #: main.cpp:65
 msgid "&Other"
-msgstr "����¾(&O)"
+msgstr "¤½¤ÎÂ¾(&O)"
 
 #: main.cpp:68
 msgid "&Proxy"
-msgstr "�ץ�����(&P)"
+msgstr "¥×¥í¥­¥·(&P)"
 
 #: main.cpp:70
 msgid "&HTTP"
@@ -49,15 +49,15 @@ msgstr ""
 
 #: main.cpp:73
 msgid "User &Agent"
-msgstr "�桼��������(&A)"
+msgstr "¥æ¡¼¥¶ÂåÍý¿Í(&A)"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr "���å���(&k)"
+msgstr "¥¯¥Ã¥­¡¼(&k)"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "�ǥ����ȥåץ�������(&D)"
+msgstr "¥Ç¥¹¥¯¥È¥Ã¥×¥¢¥¤¥³¥ó(&D)"
 
 #: main.cpp:89
 #, c-format
@@ -67,75 +67,75 @@ msgstr ""
 
 #: main.cpp:178
 msgid "KFM Configuration"
-msgstr "KFM����"
+msgstr "KFMÀßÄê"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr "��"
+msgstr "¾®"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr "��"
+msgstr "Ãæ"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr "��"
+msgstr "Âç"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr "ɸ��ե����"
+msgstr "É¸½à¥Õ¥©¥ó¥È"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr "�������ե����"
+msgstr "¸ÇÄêÉý¥Õ¥©¥ó¥È"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "ɸ��ʸ�����å�"
+msgstr "É¸½àÊ¸»ú¥»¥Ã¥È"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "�����Ѥ�ʸ�����åȤ�ȤäƤ�������"
+msgstr "¸À¸ìÍÑ¤ÎÊ¸»ú¥»¥Ã¥È¤ò»È¤Ã¤Æ¤¯¤À¤µ¤¤"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
-msgstr "�طʿ�:"
+msgstr "ÇØ·Ê¿§:"
 
 #: htmlopts.cpp:342
 msgid "Normal Text Color:"
-msgstr "�̾�Υƥ����ȿ�:"
+msgstr "ÄÌ¾ï¤Î¥Æ¥­¥¹¥È¿§:"
 
 #: htmlopts.cpp:354
 msgid "URL Link Color:"
-msgstr "URL��󥯿�:"
+msgstr "URL¥ê¥ó¥¯¿§:"
 
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "ˬ�줿��󥯿�:"
+msgstr "Ë¬¤ì¤¿¥ê¥ó¥¯¿§:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "��󥯾�ǥ���������ѹ�"
+msgstr "¥ê¥ó¥¯¾å¤Ç¥«¡¼¥½¥ë¤òÊÑ¹¹"
 
 #: htmlopts.cpp:384
 msgid "Underline links"
-msgstr "��󥯤˲���"
+msgstr "¥ê¥ó¥¯¤Ë²¼Àþ"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr "��˼�ʬ�ο���Ȥ�"
+msgstr "¾ï¤Ë¼«Ê¬¤Î¿§¤ò»È¤¦"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "URL�����������"
+msgstr "URLËè¤ÎÀßÄê¤òµö²Ä"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "�ĥ꡼�ӥ塼���ʥӥ��������˽���"
+msgstr "¥Ä¥ê¡¼¥Ó¥å¡¼¤¬¥Ê¥Ó¥²¡¼¥·¥ç¥ó¤Ë½¾¤¦"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr "�����ߥʥ�"
+msgstr "¥¿¡¼¥ß¥Ê¥ë"
 
 #: miscopts.cpp:57
 msgid "Editor"
@@ -143,108 +143,108 @@ msgstr "Editor"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "�������¸���뤳�Ȥ�˺��ʤ��Ǥ���������"
+msgstr "ÀßÄê¤òÊÝÂ¸¤¹¤ë¤³¤È¤òËº¤ì¤Ê¤¤¤Ç¤¯¤À¤µ¤¤¡ª"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr "�ץ�������Ȥ�"
+msgstr "¥×¥í¥­¥·¤ò»È¤¦"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr "HTTP�ץ�����:"
+msgstr "HTTP¥×¥í¥­¥·:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr "�ݡ���:"
+msgstr "¥Ý¡¼¥È:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr "FTP�ץ�����:"
+msgstr "FTP¥×¥í¥­¥·:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr "�ץ�������Ȥ�ʤ�:"
+msgstr "¥×¥í¥­¥·¤ò»È¤ï¤Ê¤¤:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr "�ʲ��θ�������:"
+msgstr "°Ê²¼¤Î¸À¸ì¤ò¼õÉÕ:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "�ʲ���ʸ�����åȤ����:"
+msgstr "°Ê²¼¤ÎÊ¸»ú¥»¥Ã¥È¤ò¼õÉÕ:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr "HTML����"
+msgstr "HTML¤ò²¾Äê"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr "������:"
+msgstr "¥µ¡¼¥Ð:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "��������:"
+msgstr "¥í¥°¥¤¥ó:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr "�ɲ�(&A)"
+msgstr "ÄÉ²Ã(&A)"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr "���Τγ������"
+msgstr "´ûÃÎ¤Î³ä¤êÅö¤Æ"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "���å�����ͭ���ˤ���(&E)"
+msgstr "¥¯¥Ã¥­¡¼¤òÍ­¸ú¤Ë¤¹¤ë(&E)"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "ɸ����եݥꥷ��"
+msgstr "É¸½à¼õÉÕ¥Ý¥ê¥·¡¼"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr "�����դ���"
+msgstr "¼õ¤±ÉÕ¤±¤ë"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr "�䤤��碌��"
+msgstr "Ìä¤¤¹ç¤ï¤»¤ë"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr "���ݤ���"
+msgstr "µñÈÝ¤¹¤ë"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr "�ɥᥤ���ͭ������:"
+msgstr "¥É¥á¥¤¥ó¸ÇÍ­¤ÎÀßÄê:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "�ɥᥤ����եݥꥷ�����ѹ�"
+msgstr "¥É¥á¥¤¥ó¼õÉÕ¥Ý¥ê¥·¡¼¤ÎÊÑ¹¹"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "�ޤ��ɥᥤ������Ϥ��Ƥ�������!"
+msgstr "¤Þ¤º¥É¥á¥¤¥ó¤òÆþÎÏ¤·¤Æ¤¯¤À¤µ¤¤!"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "��ʿ�롼�ȥ���åɴֳ�:"
+msgstr "¿åÊ¿¥ë¡¼¥È¥°¥ê¥Ã¥É´Ö³Ö:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "��ľ�롼�ȥ���åɴֳ�:"
+msgstr "¿âÄ¾¥ë¡¼¥È¥°¥ê¥Ã¥É´Ö³Ö:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "�ǥ����ȥåפΥ�������Υƥ����Ȥ�Ʃ����"
+msgstr "¥Ç¥¹¥¯¥È¥Ã¥×¤Î¥¢¥¤¥³¥ó¤Î¥Æ¥­¥¹¥È¤òÆ©ÌÀ¤Ë"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr "�����������̿�:"
+msgstr "¥¢¥¤¥³¥óÁ°ÌÌ¿§:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr "���������طʿ�:"
+msgstr "¥¢¥¤¥³¥óÇØ·Ê¿§:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "�ǥ����ȥåפ˱���ե������ɽ��(&H)"
+msgstr "¥Ç¥¹¥¯¥È¥Ã¥×¤Ë±£¤ì¥Õ¥¡¥¤¥ë¤òÉ½¼¨(&H)"

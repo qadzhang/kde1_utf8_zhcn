@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: about.cpp:40
@@ -80,7 +80,7 @@ msgid ""
 "you have write permission to it."
 msgstr ""
 "Har ikke tilgang til %s\n"
-"Vær sikker på at enheten eksisterer og at\n"
+"VÃ¦r sikker pÃ¥ at enheten eksisterer og at\n"
 "du har skrivetilgang til den."
 
 #: floppy.cpp:339
@@ -91,7 +91,7 @@ msgid ""
 msgstr ""
 "Kan ikke finne kfdformat\n"
 "kfdformat er en del av KFloppy-programmet. \n"
-"Vennligst sørg for at KFloppy er komplett installert."
+"Vennligst sÃ¸rg for at KFloppy er komplett installert."
 
 #: floppy.cpp:355
 msgid ""
@@ -101,7 +101,7 @@ msgid ""
 msgstr ""
 "Kan ikke finne kmke2fs\n"
 "kmke2fs er en del av KFloppy-programmet. \n"
-"Vennligst sørg for at KFloppy er komplett installert. "
+"Vennligst sÃ¸rg for at KFloppy er komplett installert. "
 
 #: floppy.cpp:370
 msgid ""
@@ -111,7 +111,7 @@ msgid ""
 msgstr ""
 "Kan ikke finne kmkdosfs\n"
 "kmkdosfs er en del av KFloppy-programmet. \n"
-"Vennligst sørg for at KFloppy er komplett installert. "
+"Vennligst sÃ¸rg for at KFloppy er komplett installert. "
 
 #: floppy.cpp:430
 msgid "Abort"
@@ -128,7 +128,7 @@ msgid ""
 "have selected a valid floppy drive.\n"
 msgstr ""
 "Har ikke tilgang til en diskett eller diskettstasjon\n"
-"Vennligst sett inn en diskett og vær sikker på at du\n"
+"Vennligst sett inn en diskett og vÃ¦r sikker pÃ¥ at du\n"
 "har valgt en gyldig diskettstasjon.\n"
 
 #: floppy.cpp:593
@@ -143,7 +143,7 @@ msgstr ""
 #: floppy.cpp:640
 #, c-format
 msgid "Block %d is bad. Continuing ..."
-msgstr "Blokk %d er dårlig. Fortsetter ..."
+msgstr "Blokk %d er dÃ¥rlig. Fortsetter ..."
 
 #: floppy.cpp:723
 #, c-format
@@ -151,7 +151,7 @@ msgid ""
 "Cannot create a filesystem on: %s\n"
 "%s"
 msgstr ""
-"Kan ikke lage et filsystem på: %s\n"
+"Kan ikke lage et filsystem pÃ¥: %s\n"
 "%s"
 
 #: floppy.cpp:759
@@ -162,8 +162,8 @@ msgid ""
 "Raw Capacity: %d\n"
 msgstr ""
 "Disketten ble formatert.\n"
-"Dårlige blokker er merket: %d\n"
-"Råkapasitet: %d\n"
+"DÃ¥rlige blokker er merket: %d\n"
+"RÃ¥kapasitet: %d\n"
 
 #: floppy.cpp:780
 msgid "All files were sucessfully erased."
@@ -187,7 +187,7 @@ msgstr ""
 
 #: floppy.cpp:913
 msgid "Error while trying to determine whether floppy is mounted\n"
-msgstr "Feil mens prøvde å fastsette om disketten er mounted\n"
+msgstr "Feil mens prÃ¸vde Ã¥ fastsette om disketten er mounted\n"
 
 #: floppy.cpp:930
 #, c-format
@@ -196,4 +196,4 @@ msgid ""
 "Please unmount the floppy first."
 msgstr ""
 "%s er mounted. \n"
-"Vennligst unmount disketten først."
+"Vennligst unmount disketten fÃ¸rst."

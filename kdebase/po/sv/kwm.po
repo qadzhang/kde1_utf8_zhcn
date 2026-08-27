@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: main.C:68
@@ -19,7 +19,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: det ser ut som om det redan finns en fönsterhanterare. Startar inte "
+"kwm: det ser ut som om det redan finns en fÃ¶nsterhanterare. Startar inte "
 "kwm\n"
 
 #: main.C:82
@@ -28,7 +28,7 @@ msgstr "kwm: initieringsfel; avbryter\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "Förbereder session ... "
+msgstr "FÃ¶rbereder session ... "
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -36,7 +36,7 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:558
 msgid "Usage: "
-msgstr "Användning: "
+msgstr "AnvÃ¤ndning: "
 
 #: main.C:569
 msgid "&Maximize"
@@ -44,7 +44,7 @@ msgstr "&Maximera"
 
 #: main.C:570
 msgid "&Restore"
-msgstr "Å&terställ"
+msgstr "Ã…&terstÃ¤ll"
 
 #: main.C:571
 msgid "&Iconify"
@@ -68,7 +68,7 @@ msgstr "&Flytta"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "Ändra &storlek"
+msgstr "Ã„ndra &storlek"
 
 #: main.C:578
 msgid "&To desktop"
@@ -76,7 +76,7 @@ msgstr "&Till skrivbord"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "&Till det här skrivbordet"
+msgstr "&Till det hÃ¤r skrivbordet"
 
 #: main.C:620
 msgid "One"
@@ -84,7 +84,7 @@ msgstr "Ett"
 
 #: main.C:623
 msgid "Two"
-msgstr "Två"
+msgstr "TvÃ¥"
 
 #: main.C:626
 msgid "Three"
@@ -108,19 +108,19 @@ msgstr "Sju"
 
 #: main.C:641
 msgid "Eight"
-msgstr "Åtta"
+msgstr "Ã…tta"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "Odöpt skrivbord"
+msgstr "OdÃ¶pt skrivbord"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Några pixmapar är ogiltiga: ShapeMode avstängt\n"
+msgstr "NÃ¥gra pixmapar Ã¤r ogiltiga: ShapeMode avstÃ¤ngt\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Några pixmapar är ogiltiga: GimmickMode avstängt\n"
+msgstr "NÃ¥gra pixmapar Ã¤r ogiltiga: GimmickMode avstÃ¤ngt\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -140,31 +140,31 @@ msgstr "Logga ut"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sessionen är klar för utloggning"
+msgstr "Sessionen Ã¤r klar fÃ¶r utloggning"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Följande applikationer innehåller osparad data som\n"
-"kommer att förloras i din nästa session."
+"FÃ¶ljande applikationer innehÃ¥ller osparad data som\n"
+"kommer att fÃ¶rloras i din nÃ¤sta session."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Följande applikationer kan inte återställas i din nästa session,\n"
-"bara omstartas. Se till att de inte innehåller viktig osparad data."
+"FÃ¶ljande applikationer kan inte Ã¥terstÃ¤llas i din nÃ¤sta session,\n"
+"bara omstartas. Se till att de inte innehÃ¥ller viktig osparad data."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Följande applikationer är inte X11-medvetna, och kan inte återstartas\n"
-"i din nästa session. Se till att de inte innehåller viktig osparad data."
+"FÃ¶ljande applikationer Ã¤r inte X11-medvetna, och kan inte Ã¥terstartas\n"
+"i din nÃ¤sta session. Se till att de inte innehÃ¥ller viktig osparad data."
 
 #: taskmgr.C:107
 msgid "Switch to"

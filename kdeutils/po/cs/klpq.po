@@ -7,31 +7,31 @@ msgstr ""
 "Project-Id-Version: klpq\n"
 "POT-Creation-Date: 1999-04-02 02:22+0200\n"
 "PO-Revision-Date: 1999-01-16 10:24+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:178
 msgid "Sorry, can't open your printcap file."
-msgstr "Lituji, není mo¾né otevøít vá¹ printcap soubor"
+msgstr "Lituji, nenÃ­ moÅ¾nÃ© otevÅ™Ã­t vÃ¡Å¡ printcap soubor"
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
-msgstr "Lituji, není mo¾né analyzovat vá¹ printcap soubor"
+msgstr "Lituji, nenÃ­ moÅ¾nÃ© analyzovat vÃ¡Å¡ printcap soubor"
 
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
-msgstr "Prosím, po¹lete vá¹ printcap na adresu Christoph.Neerfeld@home.ivm."
+msgstr "ProsÃ­m, poÅ¡lete vÃ¡Å¡ printcap na adresu Christoph.Neerfeld@home.ivm."
 
 #: klpq.cpp:90
 msgid "Printer"
-msgstr "Tiskárna"
+msgstr "TiskÃ¡rna"
 
 #: klpq.cpp:95
 msgid "Queuing"
-msgstr "Ukladaní do fronty"
+msgstr "UkladanÃ­ do fronty"
 
 #: klpq.cpp:100
 msgid "Printing"
@@ -43,15 +43,15 @@ msgstr "Aktualizace"
 
 #: klpq.cpp:125
 msgid "Rank"
-msgstr "Poøadí"
+msgstr "PoÅ™adÃ­"
 
 #: klpq.cpp:126
 msgid "Owner"
-msgstr "Vlastník"
+msgstr "VlastnÃ­k"
 
 #: klpq.cpp:127
 msgid "Job"
-msgstr "Èinnost/práce"
+msgstr "ÄŒinnost/prÃ¡ce"
 
 #: klpq.cpp:129
 msgid "Size"
@@ -59,7 +59,7 @@ msgstr "Velikost"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
-msgstr "Umístit na zaèátek"
+msgstr "UmÃ­stit na zaÄÃ¡tek"
 
 #: klpq.cpp:160
 msgid "Auto"
@@ -67,11 +67,11 @@ msgstr "Automaticky"
 
 #: klpq.cpp:204
 msgid "&Auto update"
-msgstr "&Automatická aktualizace"
+msgstr "&AutomatickÃ¡ aktualizace"
 
 #: klpq.cpp:205
 msgid "&Spooler"
-msgstr "&Zásobník/Spooler"
+msgstr "&ZÃ¡sobnÃ­k/Spooler"
 
 #: klpq.cpp:208
 #, c-format
@@ -91,7 +91,7 @@ msgstr "&Konfigurace"
 #: klpq.cpp:404
 #, c-format
 msgid "Do you really want to remove job No %d"
-msgstr "Skuteènì si pøejete odstranit úlohu è. %d"
+msgstr "SkuteÄnÄ› si pÅ™ejete odstranit Ãºlohu Ä. %d"
 
 #: klpq.cpp:424
 #, c-format
@@ -100,21 +100,21 @@ msgid ""
 "%d\n"
 "on top of queue"
 msgstr ""
-"Skutoènì si pøejete presunout úlohu è.\n"
+"SkutoÄnÄ› si pÅ™ejete presunout Ãºlohu Ä.\n"
 "%d\n"
 "na vrchol fronty"
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
-msgstr "Pøístup zamítnutý"
+msgstr "PÅ™Ã­stup zamÃ­tnutÃ½"
 
 #: klpq.cpp:573 klpq.cpp:579 klpq.cpp:594
 msgid ""
 "This is a privileged command\n"
 "and you do not have permission to execute it."
 msgstr ""
-"Toto je privilegovaný pøíkaz\n"
-"a vy nemáte povolení jej vykonat."
+"Toto je privilegovanÃ½ pÅ™Ã­kaz\n"
+"a vy nemÃ¡te povolenÃ­ jej vykonat."
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
@@ -122,23 +122,23 @@ msgstr "Konfigurovat automatickou aktualizaci"
 
 #: ConfAutoUpdateData.cpp:17
 msgid "Update frequency in seconds:"
-msgstr "Frekvence aktualizace v sekundách:"
+msgstr "Frekvence aktualizace v sekundÃ¡ch:"
 
 #: klpqspooler.cpp:199 klpqspooler.cpp:269
 msgid "Can't find your lpc program !"
-msgstr "Není mo¾né nalézt Vá¹ program lpc !"
+msgstr "NenÃ­ moÅ¾nÃ© nalÃ©zt VÃ¡Å¡ program lpc !"
 
 #: klpqspooler.cpp:200 klpqspooler.cpp:270
 msgid ""
 "Sorry, I can't find your lpc program.\n"
 "Please check the configuration under Config->Spooler."
 msgstr ""
-"Lituji, není mo¾né nalézt Vá¹ program lpc.\n"
-"Prosím, zkontrolujte va¹e nastavení v Konfigurace->Spooler."
+"Lituji, nenÃ­ moÅ¾nÃ© nalÃ©zt VÃ¡Å¡ program lpc.\n"
+"ProsÃ­m, zkontrolujte vaÅ¡e nastavenÃ­ v Konfigurace->Spooler."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
-msgstr "Vyberte Vá¹ systém pro spooling"
+msgstr "Vyberte VÃ¡Å¡ systÃ©m pro spooling"
 
 #: FirstStartData.cpp:42
 msgid ""
@@ -146,10 +146,10 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Prosím, vyberte Vá¹ systém pro spooling. Vìt¹ina systémù pou¾ívá BSD "
-"spooler. Pokud nevíte, jaký spooler je nainstalovaný na Va¹em systému, BSD "
-"bude pravdìpodobnì dobrou volbou."
+"ProsÃ­m, vyberte VÃ¡Å¡ systÃ©m pro spooling. VÄ›tÅ¡ina systÃ©mÅ¯ pouÅ¾Ã­vÃ¡ BSD "
+"spooler. Pokud nevÃ­te, jakÃ½ spooler je nainstalovanÃ½ na VaÅ¡em systÃ©mu, BSD "
+"bude pravdÄ›podobnÄ› dobrou volbou."
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"
-msgstr "Cesta k pøíkazu pro spooling:"
+msgstr "Cesta k pÅ™Ã­kazu pro spooling:"

@@ -11,24 +11,24 @@ msgstr ""
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:225
 msgid ": Error"
-msgstr " δΰιβω "
+msgstr " Γ¤Γ Γ©ΓΆΓΉ "
 
 #: main.cpp:226
 msgid "Only root is allowed to manage runlevels."
-msgstr "ϊψωδ ϊΰ μδπμ ιΰωψ root ωξϊωξδ χψ"
+msgstr "ΓΊΓΈΓΉΓ¤ ΓΊΓ  Γ¬Γ¤Γ°Γ¬ Γ©Γ ΓΉΓΈ root ΓΉΓ®ΓΊΓΉΓ®Γ¤ Γ·ΓΈ"
 
 #: OldView.cpp:105
 msgid "Available"
-msgstr "ϊεπιξζ"
+msgstr "ΓΊΓ¥Γ°Γ©Γ®Γ¦"
 
 #: OldView.cpp:106
 msgid "&Services"
-msgstr "νιϊεψω"
+msgstr "Γ­Γ©ΓΊΓ¥ΓΈΓΉ"
 
 #: OldView.cpp:110 OldView.cpp:115
 msgid ""
@@ -38,24 +38,24 @@ msgid ""
 "\n"
 "To stop one, do the same for the <bold>\"Stop\"</bold> section."
 msgstr ""
-"ϊψωα νιπιξζδ νιϊεψιωδ κιπτμ\n"
-"εεψβ ,ϊξιερξ δφψδ ϊξψα ,νιερξ ϊεψω μιηϊδμ ϊπξ μς\n"
-".δξψδ μω δμηϊδδ χμη μΰ ϊεψωδ ϊΰ\n"
+"ΓΊΓΈΓΉΓ΅ Γ­Γ©Γ°Γ©Γ®Γ¦Γ¤ Γ­Γ©ΓΊΓ¥ΓΈΓ©ΓΉΓ¤ ΓªΓ©Γ°Γ΄Γ¬\n"
+"Γ¥Γ¥ΓΈΓΆ ,ΓΊΓ®Γ©Γ¥Γ±Γ® Γ¤Γ¶ΓΈΓ¤ ΓΊΓ®ΓΈΓ΅ ,Γ­Γ©Γ¥Γ±Γ® ΓΊΓ¥ΓΈΓΉ Γ¬Γ©Γ§ΓΊΓ¤Γ¬ ΓΊΓ°Γ® Γ¬Γ²\n"
+".Γ¤Γ®ΓΈΓ¤ Γ¬ΓΉ Γ¤Γ¬Γ§ΓΊΓ¤Γ¤ Γ·Γ¬Γ§ Γ¬Γ  ΓΊΓ¥ΓΈΓΉΓ¤ ΓΊΓ \n"
 "\n"
-"δξψδ μω δψιβρδ χμη μΰ εϊεΰ ψεψβ ϊεψω ψεφςμ ιγλ"
+"Γ¤Γ®ΓΈΓ¤ Γ¬ΓΉ Γ¤ΓΈΓ©ΓΆΓ±Γ¤ Γ·Γ¬Γ§ Γ¬Γ  Γ¥ΓΊΓ¥Γ  ΓΈΓ¥ΓΈΓΆ ΓΊΓ¥ΓΈΓΉ ΓΈΓ¥Γ¶Γ²Γ¬ Γ©Γ£Γ«"
 #: OldView.cpp:143
 #, c-format
 msgid "Runlevel &%i"
-msgstr "%i δφψδ ϊξψ"
+msgstr "%i Γ¤Γ¶ΓΈΓ¤ ΓΊΓ®ΓΈ"
 
 #: OldView.cpp:146
 #, c-format
 msgid "Runlevel %i"
-msgstr "%i δφψδ ϊξψ"
+msgstr "%i Γ¤Γ¶ΓΈΓ¤ ΓΊΓ®ΓΈ"
 
 #: OldView.cpp:149
 msgid "Start"
-msgstr "δμηϊδ"
+msgstr "Γ¤Γ¬Γ§ΓΊΓ¤"
 
 #: OldView.cpp:249
 #, c-format
@@ -63,131 +63,131 @@ msgid ""
 "Drag here to start services\n"
 "when entering Runlevel %i"
 msgstr ""
-"ϊεψωδ ϊΰ μιηϊδμ ϊπξ μς οΰλμ ψεψβ\n"
-"%i δφψδ ϊξψ ϊμςτεξ ψωΰλ"
+"ΓΊΓ¥ΓΈΓΉΓ¤ ΓΊΓ  Γ¬Γ©Γ§ΓΊΓ¤Γ¬ ΓΊΓ°Γ® Γ¬Γ² Γ―Γ Γ«Γ¬ ΓΈΓ¥ΓΈΓΆ\n"
+"%i Γ¤Γ¶ΓΈΓ¤ ΓΊΓ®ΓΈ ΓΊΓ¬Γ²Γ΄Γ¥Γ® ΓΈΓΉΓ Γ«"
 #: OldView.cpp:250
 #, c-format
 msgid ""
 "Drag here to stop services\n"
 "when entering Runlevel %i"
 msgstr ""
-"ϊεψωδ ϊΰ νιιρμ ϊπξ μς οΰλμ ψεψβ\n"
-"%i δφψδ ϊξψμ ψαςξα"
+"ΓΊΓ¥ΓΈΓΉΓ¤ ΓΊΓ  Γ­Γ©Γ©Γ±Γ¬ ΓΊΓ°Γ® Γ¬Γ² Γ―Γ Γ«Γ¬ ΓΈΓ¥ΓΈΓΆ\n"
+"%i Γ¤Γ¶ΓΈΓ¤ ΓΊΓ®ΓΈΓ¬ ΓΈΓ΅Γ²Γ®Γ΅"
 #: OldView.cpp:340
 msgid "** WRITING CONFIGURATION **\n"
-msgstr "δωγηδ διφψεβιτπεχδ ϊΰ αϊελ\n"
+msgstr "Γ¤ΓΉΓ£Γ§Γ¤ Γ¤Γ©Γ¶ΓΈΓ¥ΓΆΓ©Γ΄Γ°Γ¥Γ·Γ¤ ΓΊΓ  Γ΅ΓΊΓ¥Γ«\n"
 
 #: OldView.cpp:343
 #, c-format
 msgid "** RUNLEVEL %i **\n"
-msgstr "%i δφψδ ϊξψ\n"
+msgstr "%i Γ¤Γ¶ΓΈΓ¤ ΓΊΓ®ΓΈ\n"
 
 #: OldView.cpp:517
 msgid "Reading configuration: "
-msgstr "ϊιηλεπδ διφψεβιτπεχδ ϊΰ ΰψεχ"
+msgstr "ΓΊΓ©Γ§Γ«Γ¥Γ°Γ¤ Γ¤Γ©Γ¶ΓΈΓ¥ΓΆΓ©Γ΄Γ°Γ¥Γ·Γ¤ ΓΊΓ  Γ ΓΈΓ¥Γ·"
 
 #: OldView.cpp:619
 msgid "** Stopping "
-msgstr "ϊεψωδ ϊΰ ψφες"
+msgstr "ΓΊΓ¥ΓΈΓΉΓ¤ ΓΊΓ  ΓΈΓ¶Γ¥Γ²"
 
 #: OldView.cpp:624
 msgid " stop"
-msgstr " ψεφς "
+msgstr " ΓΈΓ¥Γ¶Γ² "
 
 #: OldView.cpp:639
 msgid "** Starting "
-msgstr " ϊεψωδ ϊΰ μιηϊξ "
+msgstr " ΓΊΓ¥ΓΈΓΉΓ¤ ΓΊΓ  Γ¬Γ©Γ§ΓΊΓ® "
 
 #: OldView.cpp:644
 msgid " start"
-msgstr " δμηϊδ "
+msgstr " Γ¤Γ¬Γ§ΓΊΓ¤ "
 
 #: OldView.cpp:661
 msgid "** Re-starting "
-msgstr " ϊεψωδ ϊΰ ωγηξ μιηϊξ "
+msgstr " ΓΊΓ¥ΓΈΓΉΓ¤ ΓΊΓ  ΓΉΓ£Γ§Γ® Γ¬Γ©Γ§ΓΊΓ® "
 
 #: OldView.cpp:666
 msgid " restart"
-msgstr " ωγηξ μηϊδ "
+msgstr " ΓΉΓ£Γ§Γ® Γ¬Γ§ΓΊΓ¤ "
 
 #: OldView.cpp:811
 msgid "P&roperties..."
-msgstr "...νιπιιτΰξ"
+msgstr "...Γ­Γ©Γ°Γ©Γ©Γ΄Γ Γ®"
 
 #: OldView.cpp:831
 msgid "S&top"
-msgstr "ψεφς"
+msgstr "ΓΈΓ¥Γ¶Γ²"
 
 #: OldView.cpp:833
 msgid "&Restart"
-msgstr "ωγηξ μηϊδ"
+msgstr "ΓΉΓ£Γ§Γ® Γ¬Γ§ΓΊΓ¤"
 
 #: TopWidget.cpp:136
 msgid "&New Configuration"
-msgstr "δωγη διφψεβιτπεχ"
+msgstr "Γ¤ΓΉΓ£Γ§ Γ¤Γ©Γ¶ΓΈΓ¥ΓΆΓ©Γ΄Γ°Γ¥Γ·"
 
 #: TopWidget.cpp:137
 msgid "&Save Configuration"
-msgstr "ϊεψγβδ ψεξω"
+msgstr "ΓΊΓ¥ΓΈΓ£ΓΆΓ¤ ΓΈΓ¥Γ®ΓΉ"
 
 #: TopWidget.cpp:143
 msgid "Print &Log..."
-msgstr "...αχςξ ρτγδ"
+msgstr "...Γ΅Γ·Γ²Γ® Γ±Γ΄Γ£Γ¤"
 
 #: TopWidget.cpp:170
 msgid "Show &Tool Bar"
-msgstr "νιμλ μβψρ βφδ"
+msgstr "Γ­Γ©Γ¬Γ« Γ¬ΓΆΓΈΓ± ΓΆΓ¶Γ¤"
 
 #: TopWidget.cpp:171
 msgid "Show &Status Bar"
-msgstr "αφξ ϊψεω βφδ"
+msgstr "Γ΅Γ¶Γ® ΓΊΓΈΓ¥ΓΉ ΓΆΓ¶Γ¤"
 
 #: TopWidget.cpp:172
 msgid "Show &Log"
-msgstr "αχςξ βφδ"
+msgstr "Γ΅Γ·Γ²Γ® ΓΆΓ¶Γ¤"
 
 #: TopWidget.cpp:174
 msgid "&Configure..."
-msgstr "...ϊεψγβδ"
+msgstr "...ΓΊΓ¥ΓΈΓ£ΓΆΓ¤"
 
 #: TopWidget.cpp:177
 msgid "&Save Options"
-msgstr "...ϊεψγβδ ψεξω"
+msgstr "...ΓΊΓ¥ΓΈΓ£ΓΆΓ¤ ΓΈΓ¥Γ®ΓΉ"
 
 #: TopWidget.cpp:215
 msgid "New"
-msgstr "ωγη"
+msgstr "ΓΉΓ£Γ§"
 
 #: TopWidget.cpp:244
 msgid "Toggle script output"
-msgstr "θμτ ψϊρδ-βφδ"
+msgstr "Γ¨Γ¬Γ΄ ΓΈΓΊΓ±Γ¤-ΓΆΓ¶Γ¤"
 
 #: TopWidget.cpp:261
 msgid ""
 "There are unsaved changes.\n"
 "Are you sure you want to quit?"
 msgstr ""
-"εψξωπ ΰμω νιεπιω εςφεα\n"
-"? νδξ νμςϊδμε ωεθπμ"
+"Γ¥ΓΈΓ®ΓΉΓ° Γ Γ¬ΓΉ Γ­Γ©Γ¥Γ°Γ©ΓΉ Γ¥Γ²Γ¶Γ¥Γ΅\n"
+"? Γ­Γ¤Γ® Γ­Γ¬Γ²ΓΊΓ¤Γ¬Γ¥ ΓΉΓ¥Γ¨Γ°Γ¬"
 #: TopWidget.cpp:263
 msgid "Yes, quit!"
-msgstr "!ωεθπμ ,ολ"
+msgstr "!ΓΉΓ¥Γ¨Γ°Γ¬ ,Γ―Γ«"
 
 #: TopWidget.cpp:264
 msgid "No, don't quit."
-msgstr "ωεθπμ ΰμ ,ΰμ"
+msgstr "ΓΉΓ¥Γ¨Γ°Γ¬ Γ Γ¬ ,Γ Γ¬"
 
 #: TopWidget.cpp:292
 msgid "Clear Changes"
-msgstr "νιιεπιω μθα"
+msgstr "Γ­Γ©Γ©Γ¥Γ°Γ©ΓΉ Γ¬Γ¨Γ΅"
 
 #: TopWidget.cpp:293
 msgid "Do you really want to clear all unsaved changes?"
-msgstr "? εψξωπ ΰμω νιεπιωδ μλ ϊΰ μθαπμ ϊξΰα"
+msgstr "? Γ¥ΓΈΓ®ΓΉΓ° Γ Γ¬ΓΉ Γ­Γ©Γ¥Γ°Γ©ΓΉΓ¤ Γ¬Γ« ΓΊΓ  Γ¬Γ¨Γ΅Γ°Γ¬ ΓΊΓ®Γ Γ΅"
 
 #: TopWidget.cpp:307
 msgid "Save configuration"
-msgstr "διφψεβιτπεχ ψεξω"
+msgstr "Γ¤Γ©Γ¶ΓΈΓ¥ΓΆΓ©Γ΄Γ°Γ¥Γ· ΓΈΓ¥Γ®ΓΉ"
 
 #: TopWidget.cpp:308
 msgid ""
@@ -197,140 +197,140 @@ msgid ""
 "\n"
 "Do you wish to continue?"
 msgstr ""
-"μεηϊιΰδ ιφαχμ νιιεπιω ςφαμ κμεδ κπδ\n"
-"νεψβμ νιμεμς νιπελπ ΰμ νιιεπιωω δγαεςμ ςγεξ διδ\n"
-"δψεωλ ϊεμςμ ΰμε γχτϊμ ΰμ ϊλψςξμ\n"
+"Γ¬Γ¥Γ§ΓΊΓ©Γ Γ¤ Γ©Γ¶Γ΅Γ·Γ¬ Γ­Γ©Γ©Γ¥Γ°Γ©ΓΉ Γ²Γ¶Γ΅Γ¬ ΓªΓ¬Γ¥Γ¤ ΓªΓ°Γ¤\n"
+"Γ­Γ¥ΓΈΓΆΓ¬ Γ­Γ©Γ¬Γ¥Γ¬Γ² Γ­Γ©Γ°Γ¥Γ«Γ° Γ Γ¬ Γ­Γ©Γ©Γ¥Γ°Γ©ΓΉΓΉ Γ¤Γ£Γ΅Γ¥Γ²Γ¬ Γ²Γ£Γ¥Γ® Γ¤Γ©Γ¤\n"
+"Γ¤ΓΈΓ¥ΓΉΓ« ΓΊΓ¥Γ¬Γ²Γ¬ Γ Γ¬Γ¥ Γ£Γ·Γ΄ΓΊΓ¬ Γ Γ¬ ΓΊΓ«ΓΈΓ²Γ®Γ¬\n"
 "\n"
-"? κιωξδμ δφψϊ νΰδ"
+"? ΓªΓ©ΓΉΓ®Γ¤Γ¬ Γ¤Γ¶ΓΈΓΊ Γ­Γ Γ¤"
 #: TopWidget.cpp:313
 msgid "Yes, &save!"
-msgstr "ψεξω ,ολ"
+msgstr "ΓΈΓ¥Γ®ΓΉ ,Γ―Γ«"
 
 #: TopWidget.cpp:314
 msgid "No, &don't save."
-msgstr "ψεξωϊ μΰ ,ΰμ"
+msgstr "ΓΈΓ¥Γ®ΓΉΓΊ Γ¬Γ  ,Γ Γ¬"
 
 #: TopWidget.cpp:397
 msgid "About Qt"
-msgstr "Qt ϊεγεΰ"
+msgstr "Qt ΓΊΓ¥Γ£Γ¥Γ "
 
 #: TopWidget.cpp:472
 msgid "Changed"
-msgstr "δπεω"
+msgstr "Γ¤Γ°Γ¥ΓΉ"
 
 #: TopWidget.cpp:589
 msgid "Could not generate sorting number. Please change manually."
-msgstr "ιπγι οτεΰα δπω ΰπΰ ,οειξ ψτρξ χιτδμ οϊιπ ΰμ"
+msgstr "Γ©Γ°Γ£Γ© Γ―Γ΄Γ¥Γ Γ΅ Γ¤Γ°ΓΉ Γ Γ°Γ  ,Γ―Γ¥Γ©Γ® ΓΈΓ΄Γ±Γ® Γ·Γ©Γ΄Γ¤Γ¬ Γ―ΓΊΓ©Γ° Γ Γ¬"
 
 #: prefs.cpp:48
 #, c-format
 msgid "%s - Preferences"
-msgstr "%s - μω ϊετγςδ"
+msgstr "%s - Γ¬ΓΉ ΓΊΓ¥Γ΄Γ£Γ²Γ¤"
 
 #: prefs.cpp:58
 msgid "Directory containing your init-scripts (&services)"
-msgstr " μεηϊΰδ ιφαχ ϊΰ ϊμμελδ διιψτρδ "
+msgstr " Γ¬Γ¥Γ§ΓΊΓ Γ¤ Γ©Γ¶Γ΅Γ· ΓΊΓ  ΓΊΓ¬Γ¬Γ¥Γ«Γ¤ Γ¤Γ©Γ©ΓΈΓ΄Γ±Γ¤ "
 
 #: prefs.cpp:79
 msgid "Directory containing your &runlevel-directories"
-msgstr " δφψδδ ϊεξψ ϊειψτρ ϊΰ ϊμμελδ διψτρδ "
+msgstr " Γ¤Γ¶ΓΈΓ¤Γ¤ ΓΊΓ¥Γ®ΓΈ ΓΊΓ¥Γ©ΓΈΓ΄Γ± ΓΊΓ  ΓΊΓ¬Γ¬Γ¥Γ«Γ¤ Γ¤Γ©ΓΈΓ΄Γ±Γ¤ "
 
 #: prefs.cpp:117
 msgid "Color for &new entries"
-msgstr " νιωγη νιλψς μω ςαφ "
+msgstr " Γ­Γ©ΓΉΓ£Γ§ Γ­Γ©Γ«ΓΈΓ² Γ¬ΓΉ Γ²Γ΅Γ¶ "
 
 #: prefs.cpp:118
 msgid "Color for c&hanged entries"
-msgstr " επεωω νιλψς μω ςαφ "
+msgstr " Γ¥Γ°Γ¥ΓΉΓΉ Γ­Γ©Γ«ΓΈΓ² Γ¬ΓΉ Γ²Γ΅Γ¶ "
 
 #: prefs.cpp:148
 msgid "&Paths"
-msgstr "ϊειψτρ"
+msgstr "ΓΊΓ¥Γ©ΓΈΓ΄Γ±"
 
 #: prefs.cpp:149
 msgid "&Colors"
-msgstr "νιςαφ"
+msgstr "Γ­Γ©Γ²Γ΅Γ¶"
 
 #: trash.cpp:55 trash.cpp:56
 msgid "Drag here to remove services"
-msgstr "ϊεψω ψιρδμ ϊπξ μς οΰλμ ψεψβ"
+msgstr "ΓΊΓ¥ΓΈΓΉ ΓΈΓ©Γ±Γ¤Γ¬ ΓΊΓ°Γ® Γ¬Γ² Γ―Γ Γ«Γ¬ ΓΈΓ¥ΓΈΓΆ"
 
 #: PropDlg.cpp:52
 msgid "&Name"
-msgstr "νω"
+msgstr "Γ­ΓΉ"
 
 #: PropDlg.cpp:54
 msgid "&Points to"
-msgstr "ϊεγεχπ"
+msgstr "ΓΊΓ¥Γ£Γ¥Γ·Γ°"
 
 #: PropDlg.cpp:56
 msgid "&Sorting number"
-msgstr "οειξ ψτρξ"
+msgstr "Γ―Γ¥Γ©Γ® ΓΈΓ΄Γ±Γ®"
 
 #: PropDlg.cpp:113
 #, c-format
 msgid "%s - Properties"
-msgstr "%s - μω νιπιιτΰξ"
+msgstr "%s - Γ¬ΓΉ Γ­Γ©Γ°Γ©Γ©Γ΄Γ Γ®"
 
 #: IOCore.cpp:48
 #, c-format
 msgid "FAILED to remove %s from %s: \"%s\"\n"
-msgstr "%s ϊΰ %s ξ ψιρδμ οειρπα:%s δΰιβω\n"
+msgstr "%s ΓΊΓ  %s Γ® ΓΈΓ©Γ±Γ¤Γ¬ Γ―Γ¥Γ©Γ±Γ°Γ΅:%s Γ¤Γ Γ©ΓΆΓΉ\n"
 
 #: IOCore.cpp:53
 #, c-format
 msgid "removed %s from %s\n"
-msgstr "%s ϊεψωδ ψρεδ %s δξψξ\n"
+msgstr "%s ΓΊΓ¥ΓΈΓΉΓ¤ ΓΈΓ±Γ¥Γ¤ %s Γ¤Γ®ΓΈΓ®\n"
 
 #: IOCore.cpp:80
 #, c-format
 msgid "created %s in %s\n"
-msgstr "%s ϊεψιωδ σρεδ %s δξψα\n"
+msgstr "%s ΓΊΓ¥ΓΈΓ©ΓΉΓ¤ Γ³Γ±Γ¥Γ¤ %s Γ¤Γ®ΓΈΓ΅\n"
 
 #: IOCore.cpp:84
 #, c-format
 msgid "FAILED to create %s in %s: \"%s\"\n"
-msgstr "%s ϊεψωδ ϊΰ %s μ σιρεδμ οειριπα %s δΰιβω\n"
+msgstr "%s ΓΊΓ¥ΓΈΓΉΓ¤ ΓΊΓ  %s Γ¬ Γ³Γ©Γ±Γ¥Γ¤Γ¬ Γ―Γ¥Γ©Γ±Γ©Γ°Γ΅ %s Γ¤Γ Γ©ΓΆΓΉ\n"
 
 #: About.cpp:46
 #, c-format
 msgid "About %s"
-msgstr "%s ϊεγεΰ"
+msgstr "%s ΓΊΓ¥Γ£Γ¥Γ "
 
 #: About.cpp:64
 msgid "KDE SysV Init Editor"
-msgstr " KDE μω νιϊεψωδ μδπξ"
+msgstr " KDE Γ¬ΓΉ Γ­Γ©ΓΊΓ¥ΓΈΓΉΓ¤ Γ¬Γ¤Γ°Γ®"
 
 #: About.cpp:81
 #, c-format
 msgid "Version %s (KDE %s)"
-msgstr " %s - δπλεϊ ϊρψιβ %s- KDE ϊρψιβ"
+msgstr " %s - Γ¤Γ°Γ«Γ¥ΓΊ ΓΊΓ±ΓΈΓ©ΓΆ %s- KDE ΓΊΓ±ΓΈΓ©ΓΆ"
 
 #: About.cpp:89
-msgid "© 1997-1999 "
-msgstr "1997-9 ϊεψεξω ϊειελζδ μλ"
+msgid "Β© 1997-1999 "
+msgstr "1997-9 ΓΊΓ¥ΓΈΓ¥Γ®ΓΉ ΓΊΓ¥Γ©Γ¥Γ«Γ¦Γ¤ Γ¬Γ«"
 
 #: About.cpp:99
 msgid "Peter Putzer"
-msgstr "ψφετ ψθτ"
+msgstr "ΓΈΓ¶Γ¥Γ΄ ΓΈΓ¨Γ΄"
 
 #: About.cpp:103
 msgid "Mail bug report/success story/lots of money/..."
-msgstr "σρλ δαψδ δαψδε ,δημφδ ιψετιρ ,νιβΰα ιηεειγ ηεμωμ ΰπΰ"
+msgstr "Γ³Γ±Γ« Γ¤Γ΅ΓΈΓ¤ Γ¤Γ΅ΓΈΓ¤Γ¥ ,Γ¤Γ§Γ¬Γ¶Γ¤ Γ©ΓΈΓ¥Γ΄Γ©Γ± ,Γ­Γ©ΓΆΓ Γ΅ Γ©Γ§Γ¥Γ¥Γ©Γ£ Γ§Γ¥Γ¬ΓΉΓ¬ Γ Γ°Γ "
 
 #: About.cpp:115
 msgid ". All rights reserved."
-msgstr "ϊεψεξω ϊειελζδ μλ "
+msgstr "ΓΊΓ¥ΓΈΓ¥Γ®ΓΉ ΓΊΓ¥Γ©Γ¥Γ«Γ¦Γ¤ Γ¬Γ« "
 
 #: About.cpp:122
 msgid ""
-"IPC parts taken from kdehelp © 1997 Martin Jones.\n"
-"Uses the KDE libraries © 1997-1999 The KDE Team.\n"
-"Uses the Qt library © 1992-1998 Troll Tech AS."
+"IPC parts taken from kdehelp Β© 1997 Martin Jones.\n"
+"Uses the KDE libraries Β© 1997-1999 The KDE Team.\n"
+"Uses the Qt library Β© 1992-1998 Troll Tech AS."
 msgstr ""
-"ρπεβ οιθψξ © kdehelp ξ ηχμπ νιλιμδϊ οια ψεωιχ\n"
-"KDE ϊεεφ 1997-1999 © KDE ϊειψτρα ωεξιω ωι\n"
-"χθ μεψθ 1992-1998 © Qt ϊιιψτρα ωξϊωξ"
+"Γ±Γ°Γ¥ΓΆ Γ―Γ©Γ¨ΓΈΓ® Β© kdehelp Γ® Γ§Γ·Γ¬Γ° Γ­Γ©Γ«Γ©Γ¬Γ¤ΓΊ Γ―Γ©Γ΅ ΓΈΓ¥ΓΉΓ©Γ·\n"
+"KDE ΓΊΓ¥Γ¥Γ¶ 1997-1999 Β© KDE ΓΊΓ¥Γ©ΓΈΓ΄Γ±Γ΅ ΓΉΓ¥Γ®Γ©ΓΉ ΓΉΓ©\n"
+"Γ·Γ¨ Γ¬Γ¥ΓΈΓ¨ 1992-1998 Β© Qt ΓΊΓ©Γ©ΓΈΓ΄Γ±Γ΅ ΓΉΓ®ΓΊΓΉΓ®"
 
 #: About.cpp:129
 msgid ""
@@ -338,9 +338,9 @@ msgid ""
 "\"tksysv\",\n"
 "only ksysv allows drag-and-drop, as well as keyboard use."
 msgstr ""
-"tksysv μ δξεγδ δφψδ ϊεξψε μεηϊιΰ ϊειφψεβιτπεχ κψες\n"
-"θΰδ-γψ ϊψαη μω\n"
-"ϊγμχξα ωεξιωμ σρεπα νιμξρ μω δψιψβ ψωτΰξ μαΰ"
+"tksysv Γ¬ Γ¤Γ®Γ¥Γ£Γ¤ Γ¤Γ¶ΓΈΓ¤ ΓΊΓ¥Γ®ΓΈΓ¥ Γ¬Γ¥Γ§ΓΊΓ©Γ  ΓΊΓ¥Γ©Γ¶ΓΈΓ¥ΓΆΓ©Γ΄Γ°Γ¥Γ· ΓªΓΈΓ¥Γ²\n"
+"Γ¨Γ Γ¤-Γ£ΓΈ ΓΊΓΈΓ΅Γ§ Γ¬ΓΉ\n"
+"ΓΊΓ£Γ¬Γ·Γ®Γ΅ ΓΉΓ¥Γ®Γ©ΓΉΓ¬ Γ³Γ±Γ¥Γ°Γ΅ Γ­Γ©Γ¬Γ®Γ± Γ¬ΓΉ Γ¤ΓΈΓ©ΓΈΓΆ ΓΈΓΉΓ΄Γ Γ® Γ¬Γ΅Γ "
 #: About.cpp:142
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
@@ -355,10 +355,10 @@ msgid ""
 "FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License\n"
 "for more details."
 msgstr ""
-"ϊιωτεη δπλεϊ ΰιδ ϊΰζδ δπλεϊδ\n"
-"μω νιΰπϊδ ϊηϊ δϊεΰ ϊεπωμε δϊεΰ χιϊςδμ οϊιπ\n"
-"ϊιωτεηδ δπλεϊδ γρεξ ιγι μς νρψετω ιτλ 2 δρψιβ GNU οειωψ\n"
-"ϊειψηΰ ΰμμ μαΰ ϊιωεξιω διδϊω δεεχϊα ϊφτεξ δπλεϊδ\n"
-"ϊψγβεξ δψθξμ δξΰϊδ μς ϊειψηΰ ΰμμ εμιτΰ\n"
-"2 ψτρξ GNU μω ιαξετδ οειωψα οιιςμ ωι\n"
-"νιτρεπ νιθψτμ"
+"ΓΊΓ©ΓΉΓ΄Γ¥Γ§ Γ¤Γ°Γ«Γ¥ΓΊ Γ Γ©Γ¤ ΓΊΓ Γ¦Γ¤ Γ¤Γ°Γ«Γ¥ΓΊΓ¤\n"
+"Γ¬ΓΉ Γ­Γ©Γ Γ°ΓΊΓ¤ ΓΊΓ§ΓΊ Γ¤ΓΊΓ¥Γ  ΓΊΓ¥Γ°ΓΉΓ¬Γ¥ Γ¤ΓΊΓ¥Γ  Γ·Γ©ΓΊΓ²Γ¤Γ¬ Γ―ΓΊΓ©Γ°\n"
+"ΓΊΓ©ΓΉΓ΄Γ¥Γ§Γ¤ Γ¤Γ°Γ«Γ¥ΓΊΓ¤ Γ£Γ±Γ¥Γ® Γ©Γ£Γ© Γ¬Γ² Γ­Γ±ΓΈΓ¥Γ΄ΓΉ Γ©Γ΄Γ« 2 Γ¤Γ±ΓΈΓ©ΓΆ GNU Γ―Γ¥Γ©ΓΉΓΈ\n"
+"ΓΊΓ¥Γ©ΓΈΓ§Γ  Γ Γ¬Γ¬ Γ¬Γ΅Γ  ΓΊΓ©ΓΉΓ¥Γ®Γ©ΓΉ Γ¤Γ©Γ¤ΓΊΓΉ Γ¤Γ¥Γ¥Γ·ΓΊΓ΅ ΓΊΓ¶Γ΄Γ¥Γ® Γ¤Γ°Γ«Γ¥ΓΊΓ¤\n"
+"ΓΊΓΈΓ£ΓΆΓ¥Γ® Γ¤ΓΈΓ¨Γ®Γ¬ Γ¤Γ®Γ ΓΊΓ¤ Γ¬Γ² ΓΊΓ¥Γ©ΓΈΓ§Γ  Γ Γ¬Γ¬ Γ¥Γ¬Γ©Γ΄Γ \n"
+"2 ΓΈΓ΄Γ±Γ® GNU Γ¬ΓΉ Γ©Γ΅Γ®Γ¥Γ΄Γ¤ Γ―Γ¥Γ©ΓΉΓΈΓ΅ Γ―Γ©Γ©Γ²Γ¬ ΓΉΓ©\n"
+"Γ­Γ©Γ΄Γ±Γ¥Γ° Γ­Γ©Γ¨ΓΈΓ΄Γ¬"

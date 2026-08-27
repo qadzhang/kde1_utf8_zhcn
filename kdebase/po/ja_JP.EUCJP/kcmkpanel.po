@@ -13,218 +13,218 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.4.0"
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "¥Ñ¥Í¥ë(&P)"
+msgstr "Â¥Ã‘Â¥ÃÂ¥Ã«(&P)"
 
 #: main.cpp:70
 msgid "&Desktops"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×(&D)"
+msgstr "Â¥Ã‡Â¥Â¹Â¥Â¯Â¥ÃˆÂ¥ÃƒÂ¥Ã—(&D)"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr "¥Ç¥£¥¹¥¯¥Ê¥Ó¥²¡¼¥¿(&N)"
+msgstr "Â¥Ã‡Â¥Â£Â¥Â¹Â¥Â¯Â¥ÃŠÂ¥Ã“Â¥Â²Â¡Â¼Â¥Â¿(&N)"
 
 #: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "ÍøÍÑË¡: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+msgstr "ÃÃ¸ÃÃ‘Ã‹Â¡: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "KPanel ¤ÎÀßÄê"
+msgstr "KPanel Â¤ÃÃ€ÃŸÃ„Ãª"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "°ÌÃÖ"
+msgstr "Â°ÃŒÃƒÃ–"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "¾å(&T)"
+msgstr "Â¾Ã¥(&T)"
 
 #: panel.cpp:61
 msgid "&Left"
-msgstr "º¸(&L)"
+msgstr "ÂºÂ¸(&L)"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr "²¼(&B)"
+msgstr "Â²Â¼(&B)"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr "±¦(&R)"
+msgstr "Â±Â¦(&R)"
 
 #: panel.cpp:75
 msgid "Taskbar"
-msgstr "¥¿¥¹¥¯¥Ğ¡¼"
+msgstr "Â¥Â¿Â¥Â¹Â¥Â¯Â¥ÃÂ¡Â¼"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "±£¤¹(&H)"
+msgstr "Â±Â£Â¤Â¹(&H)"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "¾å(&O)"
+msgstr "Â¾Ã¥(&O)"
 
 #: panel.cpp:80
 msgid "Botto&m"
-msgstr "²¼(&M)"
+msgstr "Â²Â¼(&M)"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "º¸¾å(F)"
+msgstr "ÂºÂ¸Â¾Ã¥(F)"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr "¥¹¥¿¥¤¥ë"
+msgstr "Â¥Â¹Â¥Â¿Â¥Â¤Â¥Ã«"
 
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "¾®¤µ¤¤(&I)"
+msgstr "Â¾Â®Â¤ÂµÂ¤Â¤(&I)"
 
 #: panel.cpp:99
 msgid "&Normal"
-msgstr "ÉáÄÌ(&N)"
+msgstr "Ã‰Ã¡Ã„ÃŒ(&N)"
 
 #: panel.cpp:101
 msgid "L&arge"
-msgstr "Âç¤­¤¤(&A)"
+msgstr "Ã‚Ã§Â¤Â­Â¤Â¤(&A)"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "¸«¤¨¤ë(&V)"
+msgstr "Â¸Â«Â¤Â¨Â¤Ã«(&V)"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr "Éı(&W)"
+msgstr "Ã‰Ã½(&W)"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "¥á¥Ë¥å¡¼¤Î¥Ò¥ó¥È"
+msgstr "Â¥Ã¡Â¥Ã‹Â¥Ã¥Â¡Â¼Â¤ÃÂ¥Ã’Â¥Ã³Â¥Ãˆ"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "¥á¥Ë¥å¡¼¤Î¥Ò¥ó¥È¤òÉ½¼¨(&M)"
+msgstr "Â¥Ã¡Â¥Ã‹Â¥Ã¥Â¡Â¼Â¤ÃÂ¥Ã’Â¥Ã³Â¥ÃˆÂ¤Ã²Ã‰Â½Â¼Â¨(&M)"
 
 #: options.cpp:84
 msgid "De&lay:"
-msgstr "ÃÙ±ä(&l):"
+msgstr "ÃƒÃ™Â±Ã¤(&l):"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
-msgstr "¾®¤µ¤¤"
+msgstr "Â¾Â®Â¤ÂµÂ¤Â¤"
 
 #: options.cpp:98 options.cpp:167 options.cpp:269
 msgid "Large"
-msgstr "Âç¤­¤¤"
+msgstr "Ã‚Ã§Â¤Â­Â¤Â¤"
 
 #: options.cpp:110
 msgid "Visuals"
-msgstr "¸ú²Ì"
+msgstr "Â¸ÃºÂ²ÃŒ"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "¥Ñ¥Í¥ë¤ò¼«Æ°Åª¤Ë±£¤¹(&H)"
+msgstr "Â¥Ã‘Â¥ÃÂ¥Ã«Â¤Ã²Â¼Â«Ã†Â°Ã…ÂªÂ¤Ã‹Â±Â£Â¤Â¹(&H)"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"
-msgstr "»ş´Ö:"
+msgstr "Â»Ã¾Â´Ã–:"
 
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
-msgstr "Â®¤µ:"
+msgstr "Ã‚Â®Â¤Âµ:"
 
 #: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
-msgstr "ÃÙ¤¤"
+msgstr "ÃƒÃ™Â¤Â¤"
 
 #: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
-msgstr "Â®¤¤"
+msgstr "Ã‚Â®Â¤Â¤"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "¥¿¥¹¥¯¥Ğ¡¼¤ò¼«Æ°Åª¤Ë±£¤¹(&T)"
+msgstr "Â¥Â¿Â¥Â¹Â¥Â¯Â¥ÃÂ¡Â¼Â¤Ã²Â¼Â«Ã†Â°Ã…ÂªÂ¤Ã‹Â±Â£Â¤Â¹(&T)"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
-msgstr "É½¼¨¤ò¥¢¥Ë¥á¡¼¥·¥ç¥ó²½¤¹¤ë"
+msgstr "Ã‰Â½Â¼Â¨Â¤Ã²Â¥Â¢Â¥Ã‹Â¥Ã¡Â¡Â¼Â¥Â·Â¥Ã§Â¥Ã³Â²Â½Â¤Â¹Â¤Ã«"
 
 #: options.cpp:395
 msgid "Others"
-msgstr "¤½¤ÎÂ¾"
+msgstr "Â¤Â½Â¤ÃÃ‚Â¾"
 
 #: options.cpp:408
 msgid "Personal Menu Entries &First"
-msgstr "¸Ä¿Í¤Î¥á¥Ë¥å¡¼¤òÀè¤ËÉ½¼¨"
+msgstr "Â¸Ã„Â¿ÃÂ¤ÃÂ¥Ã¡Â¥Ã‹Â¥Ã¥Â¡Â¼Â¤Ã²Ã€Ã¨Â¤Ã‹Ã‰Â½Â¼Â¨"
 
 #: options.cpp:416
 msgid "Menu F&olders First"
-msgstr "¥á¥Ë¥å¡¼¥Õ¥©¥ë¥À¤òÀè¤ËÉ½¼¨"
+msgstr "Â¥Ã¡Â¥Ã‹Â¥Ã¥Â¡Â¼Â¥Ã•Â¥Â©Â¥Ã«Â¥Ã€Â¤Ã²Ã€Ã¨Â¤Ã‹Ã‰Â½Â¼Â¨"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
-msgstr "»ş´Ö¤òAM/PM·Á¼°¤ÇÉ½¼¨¤¹¤ë"
+msgstr "Â»Ã¾Â´Ã–Â¤Ã²AM/PMÂ·ÃÂ¼Â°Â¤Ã‡Ã‰Â½Â¼Â¨Â¤Â¹Â¤Ã«"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr "»ş´Ö¤ò Internet beats ¤ÇÉ½¼¨¤¹¤ë"
+msgstr "Â»Ã¾Â´Ã–Â¤Ã² Internet beats Â¤Ã‡Ã‰Â½Â¼Â¨Â¤Â¹Â¤Ã«"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr "¥Ò¥¹¥È¥ê"
+msgstr "Â¥Ã’Â¥Â¹Â¥ÃˆÂ¥Ãª"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr "¥¨¥ó¥È¥ê¤òÊÔ½¸: (¥Õ¥©¥ë¥À¤ò¥É¥é¥Ã¥°¤·¤Æ¥ê¥ó¥¯¤òºîÀ®)"
+msgstr "Â¥Â¨Â¥Ã³Â¥ÃˆÂ¥ÃªÂ¤Ã²ÃŠÃ”Â½Â¸: (Â¥Ã•Â¥Â©Â¥Ã«Â¥Ã€Â¤Ã²Â¥Ã‰Â¥Ã©Â¥ÃƒÂ¥Â°Â¤Â·Â¤Ã†Â¥ÃªÂ¥Ã³Â¥Â¯Â¤Ã²ÂºÃ®Ã€Â®)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr "¸Ä¿ÍÍÑÀßÄê¤òÊÔ½¸(&P)..."
+msgstr "Â¸Ã„Â¿ÃÃÃ‘Ã€ÃŸÃ„ÃªÂ¤Ã²ÃŠÃ”Â½Â¸(&P)..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr "¶¦ÍÑÀßÄê¤òÊÔ½¸(&S)..."
+msgstr "Â¶Â¦ÃÃ‘Ã€ÃŸÃ„ÃªÂ¤Ã²ÃŠÃ”Â½Â¸(&S)..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr "¡ÖºÇ¶á»È¤Ã¤¿¥Õ¥©¥ë¥À¡×¤ÎºÇÂç¿ô:"
+msgstr "Â¡Ã–ÂºÃ‡Â¶Ã¡Â»ÃˆÂ¤ÃƒÂ¤Â¿Â¥Ã•Â¥Â©Â¥Ã«Â¥Ã€Â¡Ã—Â¤ÃÂºÃ‡Ã‚Ã§Â¿Ã´:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr "¡ÖºÇ¶á»È¤Ã¤¿¥Õ¥¡¥¤¥ë¡×¤ÎºÇÂç¿ô:"
+msgstr "Â¡Ã–ÂºÃ‡Â¶Ã¡Â»ÃˆÂ¤ÃƒÂ¤Â¿Â¥Ã•Â¥Â¡Â¥Â¤Â¥Ã«Â¡Ã—Â¤ÃÂºÃ‡Ã‚Ã§Â¿Ã´:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr "£±¥Õ¥©¥ë¥ÀÆâ¤ÎºÇÂç¥Õ¥¡¥¤¥ë¿ô:"
+msgstr "Â£Â±Â¥Ã•Â¥Â©Â¥Ã«Â¥Ã€Ã†Ã¢Â¤ÃÂºÃ‡Ã‚Ã§Â¥Ã•Â¥Â¡Â¥Â¤Â¥Ã«Â¿Ã´:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr "¥É¥Ã¥È¥Õ¥¡¥¤¥ë¤òÉ½¼¨"
+msgstr "Â¥Ã‰Â¥ÃƒÂ¥ÃˆÂ¥Ã•Â¥Â¡Â¥Â¤Â¥Ã«Â¤Ã²Ã‰Â½Â¼Â¨"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr "¥½¡¼¥È»ş¤ËÂçÊ¸»ú/¾®Ê¸»ú¤òÌµ»ë"
+msgstr "Â¥Â½Â¡Â¼Â¥ÃˆÂ»Ã¾Â¤Ã‹Ã‚Ã§ÃŠÂ¸Â»Ãº/Â¾Â®ÃŠÂ¸Â»ÃºÂ¤Ã²ÃŒÂµÂ»Ã«"
 
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr "¶¦Í­¥»¥¯¥·¥ç¥ó¤òÉ½¼¨"
+msgstr "Â¶Â¦ÃÂ­Â¥Â»Â¥Â¯Â¥Â·Â¥Ã§Â¥Ã³Â¤Ã²Ã‰Â½Â¼Â¨"
 
 #: disknav.cpp:180
 msgid "Show Personal section"
-msgstr "¸Ä¿ÍÍÑ¥»¥¯¥·¥ç¥ó¤òÉ½¼¨"
+msgstr "Â¸Ã„Â¿ÃÃÃ‘Â¥Â»Â¥Â¯Â¥Â·Â¥Ã§Â¥Ã³Â¤Ã²Ã‰Â½Â¼Â¨"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr "ºÇ¶á»È¤Ã¤¿¥Õ¥©¥ë¥À/¥Õ¥¡¥¤¥ë¤òÉ½¼¨"
+msgstr "ÂºÃ‡Â¶Ã¡Â»ÃˆÂ¤ÃƒÂ¤Â¿Â¥Ã•Â¥Â©Â¥Ã«Â¥Ã€/Â¥Ã•Â¥Â¡Â¥Â¤Â¥Ã«Â¤Ã²Ã‰Â½Â¼Â¨"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "¥ª¥×¥·¥ç¥ó¥¨¥ó¥È¥ê¤òÉ½¼¨"
+msgstr "Â¥ÂªÂ¥Ã—Â¥Â·Â¥Ã§Â¥Ã³Â¥Â¨Â¥Ã³Â¥ÃˆÂ¥ÃªÂ¤Ã²Ã‰Â½Â¼Â¨"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr "Ã¼Ëö¥¢¥×¥ê¥±¡¼¥·¥ç¥ó:"
+msgstr "ÃƒÂ¼Ã‹Ã¶Â¥Â¢Â¥Ã—Â¥ÃªÂ¥Â±Â¡Â¼Â¥Â·Â¥Ã§Â¥Ã³:"

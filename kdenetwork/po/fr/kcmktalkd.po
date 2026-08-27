@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: kcmktalkd\n"
 "POT-Creation-Date: 1998-12-12 15:20+0100\n"
 "PO-Revision-Date: 1999-08-30 23:20+0200\n"
-"Last-Translator: Grégoire COLBERT <gregus@linux-mandrake.com>\n"
+"Last-Translator: GrÃ©goire COLBERT <gregus@linux-mandrake.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:58
@@ -19,7 +19,7 @@ msgstr "&Notification"
 
 #: main.cpp:61
 msgid "Ans&wering machine"
-msgstr "&Répondeur"
+msgstr "&RÃ©pondeur"
 
 #: main.cpp:64
 msgid "&Forward"
@@ -51,7 +51,7 @@ msgstr "Fichier &son"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Des fichiers sonores additionnels peuvent être déposés sur la liste."
+msgstr "Des fichiers sonores additionnels peuvent Ãªtre dÃ©posÃ©s sur la liste."
 
 #: soundpage.cpp:76
 msgid "&Test"
@@ -59,14 +59,14 @@ msgstr "&Tester"
 
 #: soundpage.cpp:156
 msgid "Unsupported URL"
-msgstr "URL non supportée"
+msgstr "URL non supportÃ©e"
 
 #: soundpage.cpp:157
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr "Désolé, ce type d'URL n'est pas actuellement supporté par le Module "
-"Sonore Système de KDE"
+msgstr "DÃ©solÃ©, ce type d'URL n'est pas actuellement supportÃ© par le Module "
+"Sonore SystÃ¨me de KDE"
 
 #: soundpage.cpp:164
 #, c-format
@@ -75,7 +75,7 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Désolé, mais \n"
+"DÃ©solÃ©, mais \n"
 "%s\n"
 "n'est pas un fichier WAV."
 
@@ -92,19 +92,19 @@ msgid ""
 msgstr ""
 "Le fichier\n"
 "%s\n"
-"est déjà dans la liste"
+"est dÃ©jÃ  dans la liste"
 
 #: soundpage.cpp:179
 msgid "File Already in List"
-msgstr "Fichier déjà dans la liste"
+msgstr "Fichier dÃ©jÃ  dans la liste"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
-msgstr "&Activer le répondeur"
+msgstr "&Activer le rÃ©pondeur"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
-msgstr "&Envoyer à"
+msgstr "&Envoyer Ã "
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
@@ -117,20 +117,20 @@ msgstr "Utiliser %s pour le nom de l'appelant"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "&Première ligne"
+msgstr "&PremiÃ¨re ligne"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
-msgstr "Utiliser %s pour le nom de l'appelant, et %s pour le nom d'hôte de l'appelant"
+msgstr "Utiliser %s pour le nom de l'appelant, et %s pour le nom d'hÃ´te de l'appelant"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&Recevoir un courrier même s'il ne reste plus de message"
+msgstr "&Recevoir un courrier mÃªme s'il ne reste plus de message"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Message affiché au démarrage du répondeur :"
+msgstr "&Message affichÃ© au dÃ©marrage du rÃ©pondeur :"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -138,9 +138,9 @@ msgid ""
 "Please leave a message to be delivered via E-Mail.\n"
 "Just start typing and when you're done, exit normally."
 msgstr ""
-"La personne avec qui vous voulez parler ne répond pas.\n"
-"Veuillez laisser un message qui sera envoyé par courrier.\n"
-"Commencez à taper et quand vous aurez fini, quittez normalement."
+"La personne avec qui vous voulez parler ne rÃ©pond pas.\n"
+"Veuillez laisser un message qui sera envoyÃ© par courrier.\n"
+"Commencez Ã  taper et quand vous aurez fini, quittez normalement."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
@@ -150,7 +150,7 @@ msgstr "Message de %s"
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Message laissé dans le répondeur, par %s@%s"
+msgstr "Message laissÃ© dans le rÃ©pondeur, par %s@%s"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
@@ -158,11 +158,11 @@ msgstr "Activer le &suivi des messages"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Destinataire (utilisateur ou utilisateur@hôte)"
+msgstr "&Destinataire (utilisateur ou utilisateur@hÃ´te)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
-msgstr "&Méthode de suivi"
+msgstr "&MÃ©thode de suivi"
 
 #: forwmachpage.cpp:54
 msgid ""
@@ -177,13 +177,13 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Ne faire suivre que les notifications. Connexion directe. Déconseillé.\n"
-"FWR : Faire suivre toutes les requêtes. Connexion directe.\n"
-"FWT : Faire suivre toutes les requêtes, prendre l'appel. Pas de connexion\n"
+"FWA : Ne faire suivre que les notifications. Connexion directe. DÃ©conseillÃ©.\n"
+"FWR : Faire suivre toutes les requÃªtes. Connexion directe.\n"
+"FWT : Faire suivre toutes les requÃªtes, prendre l'appel. Pas de connexion\n"
 "directe.\n"
 "\n"
-"Utilisation recommandée : FWT si vous voulez l'utiliser derrière un part-feu\n"
-"(et si ktalkd peut accéder aux deux réseaux), et FWR dans les autres cas.\n"
+"Utilisation recommandÃ©e : FWT si vous voulez l'utiliser derriÃ¨re un part-feu\n"
+"(et si ktalkd peut accÃ©der aux deux rÃ©seaux), et FWR dans les autres cas.\n"
 "\n"
-"Voir l'aide pour des explications complémentaires.\n"
+"Voir l'aide pour des explications complÃ©mentaires.\n"
 

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kcalc.cpp:99
@@ -49,7 +49,7 @@ msgstr ""
 
 #: kcalc.cpp:1551
 msgid "Base type: long double\n"
-msgstr "Baastüüp: long double\n"
+msgstr "BaastÃ¼Ã¼p: long double\n"
 
 #: kcalc.cpp:1553
 msgid ""
@@ -58,9 +58,9 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"Vigase glibc'i tõttu olen ma vähendanud KCalc täpsust 'long double' tüübist "
-"'double' tüübile. Töötava glibc'i omanikud peavad KCalc'i ise ümber "
-"kompileerima ja lubama 'long double' täpsust. Täpsemaks infoks loe faili "
+"Vigase glibc'i tÃµttu olen ma vÃ¤hendanud KCalc tÃ¤psust 'long double' tÃ¼Ã¼bist "
+"'double' tÃ¼Ã¼bile. TÃ¶Ã¶tava glibc'i omanikud peavad KCalc'i ise Ã¼mber "
+"kompileerima ja lubama 'long double' tÃ¤psust. TÃ¤psemaks infoks loe faili "
 "README."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
@@ -86,23 +86,23 @@ msgstr "Viimane statistiline elment kustutatud"
 
 #: kcalc_core.cpp:1155
 msgid "Stat Mem cleared"
-msgstr "Stat mälu tühjendatud"
+msgstr "Stat mÃ¤lu tÃ¼hjendatud"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
-msgstr "Viga pinu töötlemisel - parem operand"
+msgstr "Viga pinu tÃ¶Ã¶tlemisel - parem operand"
 
 #: kcalc_core.cpp:1640
 msgid "Stack processing error - function"
-msgstr "Viga pinu töötlemisel - funktsioon"
+msgstr "Viga pinu tÃ¶Ã¶tlemisel - funktsioon"
 
 #: kcalc_core.cpp:1649
 msgid "Stack processing error - left_op"
-msgstr "Viga pinu töötlemisel - vasak operand"
+msgstr "Viga pinu tÃ¶Ã¶tlemisel - vasak operand"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Emergency"
-msgstr "Hädaolukord"
+msgstr "HÃ¤daolukord"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Stack Error!"
@@ -110,19 +110,19 @@ msgstr "Viga Pinus!"
 
 #: configdlg.cpp:61
 msgid "Foreground Color:"
-msgstr "Esiplaani värv:"
+msgstr "Esiplaani vÃ¤rv:"
 
 #: configdlg.cpp:78
 msgid "Background Color:"
-msgstr "Tausta värv:"
+msgstr "Tausta vÃ¤rv:"
 
 #: configdlg.cpp:95
 msgid "Precision:"
-msgstr "Täpsus:"
+msgstr "TÃ¤psus:"
 
 #: configdlg.cpp:116
 msgid "Set Fixed Precision at:"
-msgstr "Sea fikseeritud täpsus:"
+msgstr "Sea fikseeritud tÃ¤psus:"
 
 #: configdlg.cpp:145
 msgid "Beep on Error"

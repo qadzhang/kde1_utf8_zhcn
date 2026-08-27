@@ -7,15 +7,15 @@ msgstr ""
 "PO-Revision-Date: 1998-12-10 12:57+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "&Stağlağir flıtihnappar"
+msgstr "&StaÃ°laÃ°ir flÃ½tihnappar"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "&Altækir flıtihnappar"
+msgstr "&AltÃ¦kir flÃ½tihnappar"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
@@ -27,19 +27,19 @@ msgstr "Stillingar hnappatenginga"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "Stilliskrá í gildi"
+msgstr "StilliskrÃ¡ Ã­ gildi"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "Sjálfgefiğ í KDE"
+msgstr "SjÃ¡lfgefiÃ° Ã­ KDE"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "&Hnappastilliskrá"
+msgstr "&HnappastilliskrÃ¡"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "&Bæta viğ..."
+msgstr "&BÃ¦ta viÃ°..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
@@ -47,7 +47,7 @@ msgstr "&Vista breytingar"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr "Ekki tókst ağ fjarlægja stilliskrá"
+msgstr "Ekki tÃ³kst aÃ° fjarlÃ¦gja stilliskrÃ¡"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -55,13 +55,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Ekki tókst ağ fjarlægja şessa hnappastilliskrá.\n"
-"Ef til vill hefur şú ekki skrifréttindi til ağ\n"
-"breyta skráakerfinu şar sem stilliskráin er geymd."
+"Ekki tÃ³kst aÃ° fjarlÃ¦gja Ã¾essa hnappastilliskrÃ¡.\n"
+"Ef til vill hefur Ã¾Ãº ekki skrifrÃ©ttindi til aÃ°\n"
+"breyta skrÃ¡akerfinu Ã¾ar sem stilliskrÃ¡in er geymd."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
-msgstr "Nafnaárekstur"
+msgstr "NafnaÃ¡rekstur"
 
 #: keyconfig.cpp:344
 msgid ""
@@ -69,12 +69,12 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Veldu nıtt nafn fyrir hnappastilliskrána.\n"
-"Şağ sem şú valdir er nú şegar í listanum."
+"Veldu nÃ½tt nafn fyrir hnappastilliskrÃ¡na.\n"
+"ÃaÃ° sem Ã¾Ãº valdir er nÃº Ã¾egar Ã­ listanum."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Bæta hnappastilliskrá viğ"
+msgstr "BÃ¦ta hnappastilliskrÃ¡ viÃ°"
 
 #: savescm.cpp:32
 msgid ""
@@ -84,26 +84,26 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Sláğu inn nafn fyrir hnappastilliskrána\n"
-"sem á ağ bæta viğ listann şinn.\n"
-"Til ağ byrja meğ verğa stillingarnar á\n"
-"skjánum færğar şar inn."
+"&SlÃ¡Ã°u inn nafn fyrir hnappastilliskrÃ¡na\n"
+"sem Ã¡ aÃ° bÃ¦ta viÃ° listann Ã¾inn.\n"
+"Til aÃ° byrja meÃ° verÃ°a stillingarnar Ã¡\n"
+"skjÃ¡num fÃ¦rÃ°ar Ã¾ar inn."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr "Verkefnastjóri"
+msgstr "VerkefnastjÃ³ri"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "Gluggadrápshamur"
+msgstr "GluggadrÃ¡pshamur"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr "Framkvæma skipun"
+msgstr "FramkvÃ¦ma skipun"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "Ağgerğavalmynd glugga"
+msgstr "AÃ°gerÃ°avalmynd glugga"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
@@ -115,7 +115,7 @@ msgstr "Fleyta glugga"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr "Sökkva glugga"
+msgstr "SÃ¶kkva glugga"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
@@ -123,75 +123,75 @@ msgstr "Loka glugga"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr "Glugga í táknmynd"
+msgstr "Glugga Ã­ tÃ¡knmynd"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "Breyta stærğ glugga"
+msgstr "Breyta stÃ¦rÃ° glugga"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr "Færa glugga"
+msgstr "FÃ¦ra glugga"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "Líma viğ eğa losa af gleri"
+msgstr "LÃ­ma viÃ° eÃ°a losa af gleri"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "Skipta á skjáborğ 1"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "Skipta á skjáborğ 2"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Skipta á skjáborğ 3"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "Skipta á skjáborğ 4"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Skipta á skjáborğ 5"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "Skipta á skjáborğ 6"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "Skipta á skjáborğ 7"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "Skipta á skjáborğ 8"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Skipta á skjáborğ til hægri"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° til hÃ¦gri"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "Skipta á skjáborğ til vinstri"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° til vinstri"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "Skipta á skjáborğ fyrir ofan"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° fyrir ofan"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "Skipta á skjáborğ fyrir neğan"
+msgstr "Skipta Ã¡ skjÃ¡borÃ° fyrir neÃ°an"
 
 #: stdbindings.cpp:3
 msgid "New"
-msgstr "Nıtt"
+msgstr "NÃ½tt"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "Næsta"
+msgstr "NÃ¦sta"
 
 #: stdbindings.cpp:9
 msgid "Prior"
@@ -210,4 +210,4 @@ msgid "End"
 msgstr "Enda"
 
 #~ msgid "KDE lite"
-#~ msgstr "Létt-KDE"
+#~ msgstr "LÃ©tt-KDE"

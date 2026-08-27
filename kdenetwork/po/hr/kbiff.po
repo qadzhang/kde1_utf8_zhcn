@@ -9,7 +9,7 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kbiff.cpp:629
@@ -26,7 +26,7 @@ msgstr "&Postavke..."
 
 #: kbiff.cpp:634
 msgid "&Help..."
-msgstr "&Pomoæ..."
+msgstr "&PomoÄ‡..."
 
 #: kbiff.cpp:638
 msgid "&Check Mail Now"
@@ -34,7 +34,7 @@ msgstr "&Odmah provjeri poruke"
 
 #: kbiff.cpp:640
 msgid "&Read Mail Now"
-msgstr "È&itaj poruke"
+msgstr "ÄŒ&itaj poruke"
 
 #: kbiff.cpp:646
 msgid "&Stop"
@@ -52,7 +52,7 @@ msgstr "Nove poruke: %d"
 #: notify.cpp:63
 #, c-format
 msgid "Mailbox: %s"
-msgstr "Po¹tanski sanduèiæ: %s"
+msgstr "PoÅ¡tanski sanduÄiÄ‡: %s"
 
 # This is on a button.  It launches the user's mail client
 #: notify.cpp:73
@@ -77,7 +77,7 @@ msgstr "&Preimenuj..."
 
 #: setupdlg.cpp:143
 msgid "General"
-msgstr "Opæenito"
+msgstr "OpÄ‡enito"
 
 #: setupdlg.cpp:144
 msgid "New Mail"
@@ -85,7 +85,7 @@ msgstr "Nove poruke"
 
 #: setupdlg.cpp:145 status.cpp:33
 msgid "Mailbox"
-msgstr "Po¹tanski sanduèiæ"
+msgstr "PoÅ¡tanski sanduÄiÄ‡"
 
 #: setupdlg.cpp:391
 msgid "New Profile"
@@ -99,11 +99,11 @@ msgstr "Preimenuj profil: %s"
 #: setupdlg.cpp:463
 #, c-format
 msgid "Delete Profile: %s"
-msgstr "Obri¹i profil: %s"
+msgstr "ObriÅ¡i profil: %s"
 
 #: setupdlg.cpp:464
 msgid "Are you sure you wish to delete this profile?\n"
-msgstr "Da li ste sigurni da ¾elite obrisati ovaj profil?\n"
+msgstr "Da li ste sigurni da Å¾elite obrisati ovaj profil?\n"
 
 #: setupdlg.cpp:524
 msgid "Poll (sec):"
@@ -115,7 +115,7 @@ msgstr "E-mail program:"
 
 #: setupdlg.cpp:542
 msgid "Dock in panel"
-msgstr "Pristani na ploèu"
+msgstr "Pristani na ploÄu"
 
 #: setupdlg.cpp:547
 msgid "Use session management"
@@ -145,11 +145,11 @@ msgstr ""
 
 #: setupdlg.cpp:756
 msgid "Run Command"
-msgstr "Izvr¹i naredbu"
+msgstr "IzvrÅ¡i naredbu"
 
 #: setupdlg.cpp:763 setupdlg.cpp:783 setupdlg.cpp:1178
 msgid "Browse"
-msgstr "Potra¾i"
+msgstr "PotraÅ¾i"
 
 #: setupdlg.cpp:769
 msgid "Play Sound"
@@ -175,7 +175,7 @@ msgstr "Napredne opcije"
 
 #: setupdlg.cpp:952
 msgid "Mailbox URL:"
-msgstr "URL po¹tanskog sanduèiæa"
+msgstr "URL poÅ¡tanskog sanduÄiÄ‡a"
 
 #: setupdlg.cpp:956
 msgid "Port:"
@@ -187,7 +187,7 @@ msgstr "PREAUTH"
 
 #: setupdlg.cpp:967
 msgid "Keep Alive"
-msgstr "Stalno dr¾i vezu"
+msgstr "Stalno drÅ¾i vezu"
 
 # If this is selected, then KBiff will do all of it's network work in an
 # asynchronous mode.  That is, it will not wait for the response to any
@@ -198,15 +198,15 @@ msgstr "Asinkrono"
 
 #: setupdlg.cpp:1123 setupdlg.cpp:1152
 msgid "Mailbox:"
-msgstr "Po¹tanski sanduèiæ:"
+msgstr "PoÅ¡tanski sanduÄiÄ‡:"
 
 #: setupdlg.cpp:1136 setupdlg.cpp:1474
 msgid "New Mailbox"
-msgstr "Novi po¹tanski sanduèiæ"
+msgstr "Novi poÅ¡tanski sanduÄiÄ‡"
 
 #: setupdlg.cpp:1143
 msgid "Delete Mailbox"
-msgstr "Obri¹i po¹tanski sanduèiæ"
+msgstr "ObriÅ¡i poÅ¡tanski sanduÄiÄ‡"
 
 #: setupdlg.cpp:1149
 msgid "Protocol:"
@@ -214,7 +214,7 @@ msgstr "Protokol:"
 
 #: setupdlg.cpp:1155
 msgid "Server:"
-msgstr "Poslu¾itelj:"
+msgstr "PosluÅ¾itelj:"
 
 #: setupdlg.cpp:1158
 msgid "User:"
@@ -244,7 +244,7 @@ msgid ""
 "Copyright (C) 1999\n"
 "Kurt Granroth"
 msgstr ""
-"Inaèica %s\n"
+"InaÄica %s\n"
 "\n"
 "Autorska prava (C) 1999\n"
 "Kurt Granroth"

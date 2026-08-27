@@ -4,7 +4,7 @@ msgstr ""
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-04-18 16:07+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: main.cpp:61
 msgid "&Font"
@@ -43,7 +43,7 @@ msgstr "Ikony &biurka"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"u¿ycie: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"uÅ¼ycie: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -51,15 +51,15 @@ msgstr "Konfiguracja KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr "Ma³a"
+msgstr "MaÅ‚a"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr "¦rednia"
+msgstr "Åšrednia"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr "Du¿a"
+msgstr "DuÅ¼a"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
@@ -71,15 +71,15 @@ msgstr "Czcionka proporcjonalna"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "Domy¶lne kodowanie"
+msgstr "DomyÅ›lne kodowanie"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "U¿yj domy¶lnego jêzyka"
+msgstr "UÅ¼yj domyÅ›lnego jÄ™zyka"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
-msgstr "Kolor t³a:"
+msgstr "Kolor tÅ‚a:"
 
 #: htmlopts.cpp:342
 msgid "Normal Text Color:"
@@ -87,7 +87,7 @@ msgstr "Kolor tekstu:"
 
 #: htmlopts.cpp:354
 msgid "URL Link Color:"
-msgstr "Kolor odno¶ników:"
+msgstr "Kolor odnoÅ›nikÃ³w:"
 
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
@@ -95,23 +95,23 @@ msgstr "Kolor odwiedzonych:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Zmieñ kursor ponad odno¶nikiem."
+msgstr "ZmieÅ„ kursor ponad odnoÅ›nikiem."
 
 #: htmlopts.cpp:384
 msgid "Underline links"
-msgstr "Podkre¶lone odno¶niki"
+msgstr "PodkreÅ›lone odnoÅ›niki"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr "Zawsze u¿ywaj wybranych kolorów"
+msgstr "Zawsze uÅ¼ywaj wybranych kolorÃ³w"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "Ustawienia dotycz± &URL"
+msgstr "Ustawienia dotyczÄ… &URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "&Drzewo ¶ledzi odno¶niki"
+msgstr "&Drzewo Å›ledzi odnoÅ›niki"
 
 #: miscopts.cpp:43
 msgid "Terminal"
@@ -123,11 +123,11 @@ msgstr "Edytor"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "Nie zapomnij zachowaæ zmian!"
+msgstr "Nie zapomnij zachowaÄ‡ zmian!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr "U¿ywaj proxy"
+msgstr "UÅ¼ywaj proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
@@ -147,7 +147,7 @@ msgstr "Brak proxy dla:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr "Akceptuj jêzyki:"
+msgstr "Akceptuj jÄ™zyki:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
@@ -155,7 +155,7 @@ msgstr "Akceptuj kodowanie:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr "Domy¶lnie HTML"
+msgstr "DomyÅ›lnie HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
@@ -175,11 +175,11 @@ msgstr "Znane skojarzenia:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "&W³±cz ciasteczka"
+msgstr "&WÅ‚Ä…cz ciasteczka"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "Domy¶lnie akceptuj ciasteczka"
+msgstr "DomyÅ›lnie akceptuj ciasteczka"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
@@ -199,23 +199,23 @@ msgstr "Ustawienia dla domeny:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Zmieñ politykê dla domeny"
+msgstr "ZmieÅ„ politykÄ™ dla domeny"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "Wpierw trzeba podaæ domenê"
+msgstr "Wpierw trzeba podaÄ‡ domenÄ™"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Poziome odstêpy ikon:"
+msgstr "Poziome odstÄ™py ikon:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Pionowe odstêpy ikon:"
+msgstr "Pionowe odstÄ™py ikon:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&Prze¼roczysty tekst pod ikonami na biurku"
+msgstr "&PrzeÅºroczysty tekst pod ikonami na biurku"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
@@ -223,7 +223,7 @@ msgstr "Kolor tekstu pod ikonami:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr "Kolor t³a pod ikonami:"
+msgstr "Kolor tÅ‚a pod ikonami:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"

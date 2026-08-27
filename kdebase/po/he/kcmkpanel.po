@@ -11,20 +11,20 @@ msgstr ""
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "ϊεξιωξ ϊψεω"
+msgstr "ΧªΧ•ΧΧ™Χ©Χ ΧªΧ¨Χ•Χ©"
 
 #: main.cpp:70
 msgid "&Desktops"
-msgstr "δγεας ϊεπημεω"
+msgstr "Χ”Χ“Χ•Χ‘ΧΆ ΧªΧ•Χ Χ—ΧΧ•Χ©"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr "νιχριγ ψιιρ"
+msgstr "ΧΧ™Χ§Χ΅Χ™Χ“ Χ¨Χ™Χ™Χ΅"
 
 #: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
@@ -32,83 +32,83 @@ msgstr "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "ϊεξιωξδ ϊψεω ϊεψγβδ"
+msgstr "ΧªΧ•ΧΧ™Χ©ΧΧ” ΧªΧ¨Χ•Χ© ΧªΧ•Χ¨Χ“Χ’Χ”"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "μπΰτ νεχιξ"
+msgstr "ΧΧ ΧΧ¤ ΧΧ•Χ§Χ™Χ"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "οειμς"
+msgstr "ΧΧ•Χ™ΧΧΆ"
 
 #: panel.cpp:61
 msgid "&Left"
-msgstr "μΰξω"
+msgstr "ΧΧΧΧ©"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr "οεϊηϊ"
+msgstr "ΧΧ•ΧªΧ—Χª"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr "οιξι"
+msgstr "ΧΧ™ΧΧ™"
 
 #: panel.cpp:75
 msgid "Taskbar"
-msgstr "ϊεξιωξ ϊψεω"
+msgstr "ΧªΧ•ΧΧ™Χ©Χ ΧªΧ¨Χ•Χ©"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "ψϊρδ"
+msgstr "Χ¨ΧªΧ΅Χ”"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "οειμς"
+msgstr "ΧΧ•Χ™ΧΧΆ"
 
 #: panel.cpp:80
 msgid "Botto&m"
-msgstr "οεϊηϊ"
+msgstr "ΧΧ•ΧªΧ—Χª"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "δπειμς ϊιμΰξω"
+msgstr "Χ”Χ Χ•Χ™ΧΧΆ ΧªΧ™ΧΧΧΧ©"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr "οεπβρ"
+msgstr "ΧΧ•Χ Χ’Χ΅"
 
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "οθχ"
+msgstr "ΧΧΧ§"
 
 #: panel.cpp:99
 msgid "&Normal"
-msgstr "μιβψ"
+msgstr "ΧΧ™Χ’Χ¨"
 
 #: panel.cpp:101
 msgid "L&arge"
-msgstr "μεγβ"
+msgstr "ΧΧ•Χ“Χ’"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "νιιεμβ"
+msgstr "ΧΧ™Χ™Χ•ΧΧ’"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr "αηεψ"
+msgstr "Χ‘Χ—Χ•Χ¨"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "tooltips - θεψιτ ϊβφδ"
+msgstr "tooltips - ΧΧ•Χ¨Χ™Χ¤ ΧªΧ’Χ¦Χ”"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "θεψιτ βφδ"
+msgstr "ΧΧ•Χ¨Χ™Χ¤ Χ’Χ¦Χ”"
 
 #: options.cpp:84
 msgid "De&lay:"
-msgstr "θεψιτμ δπϊξδ οξζ"
+msgstr "ΧΧ•Χ¨Χ™Χ¤Χ Χ”Χ ΧªΧΧ” ΧΧΧ–"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
@@ -117,7 +117,7 @@ msgstr ""
 #: options.cpp:98 options.cpp:167 options.cpp:269
 #, fuzzy
 msgid "Large"
-msgstr "μεγβ"
+msgstr "ΧΧ•Χ“Χ’"
 
 #: options.cpp:110
 msgid "Visuals"
@@ -125,12 +125,12 @@ msgstr ""
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "μπΰτδ ϊΰ ϊιθξεθεΰ ψϊρδ"
+msgstr "ΧΧ ΧΧ¤Χ” ΧªΧ ΧªΧ™ΧΧΧ•ΧΧ•Χ Χ¨ΧªΧ΅Χ”"
 
 #: options.cpp:153 options.cpp:255
 #, fuzzy
 msgid "Delay:"
-msgstr "θεψιτμ δπϊξδ οξζ"
+msgstr "ΧΧ•Χ¨Χ™Χ¤Χ Χ”Χ ΧªΧΧ” ΧΧΧ–"
 
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
@@ -146,7 +146,7 @@ msgstr ""
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "ϊεξιωξδ ϊψεω ϊΰ ϊιθξεθεΰ ψϊρδ"
+msgstr "ΧªΧ•ΧΧ™Χ©ΧΧ” ΧªΧ¨Χ•Χ© ΧªΧ ΧªΧ™ΧΧΧ•ΧΧ•Χ Χ¨ΧªΧ΅Χ”"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
@@ -154,17 +154,17 @@ msgstr ""
 
 #: options.cpp:395
 msgid "Others"
-msgstr "δβεφϊ"
+msgstr "Χ”Χ’Χ•Χ¦Χª"
 
 #: options.cpp:408
 #, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "νιιωιΰ νιμεξρ μλ νγεχ"
+msgstr "ΧΧ™Χ™Χ©Χ™Χ ΧΧ™ΧΧ•ΧΧ΅ ΧΧ› ΧΧ“Χ•Χ§"
 
 #: options.cpp:416
 #, fuzzy
 msgid "Menu F&olders First"
-msgstr "νιιωιΰ νιμεξρ μλ νγεχ"
+msgstr "ΧΧ™Χ™Χ©Χ™Χ ΧΧ™ΧΧ•ΧΧ΅ ΧΧ› ΧΧ“Χ•Χ§"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
@@ -185,12 +185,12 @@ msgstr ""
 #: disknav.cpp:64
 #, fuzzy
 msgid "Edit &Personal..."
-msgstr "...ιξεχξ κεψς"
+msgstr "...Χ™ΧΧ•Χ§Χ ΧΧ•Χ¨ΧΆ"
 
 #: disknav.cpp:74
 #, fuzzy
 msgid "Edit &Shared..."
-msgstr "...ιξεχξ κεψς"
+msgstr "...Χ™ΧΧ•Χ§Χ ΧΧ•Χ¨ΧΆ"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -219,7 +219,7 @@ msgstr ""
 #: disknav.cpp:180
 #, fuzzy
 msgid "Show Personal section"
-msgstr "νιιωιΰ νιμεξρ μλ νγεχ"
+msgstr "ΧΧ™Χ™Χ©Χ™Χ ΧΧ™ΧΧ•ΧΧ΅ ΧΧ› ΧΧ“Χ•Χ§"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
@@ -234,16 +234,16 @@ msgid "Terminal application:"
 msgstr ""
 
 #~ msgid "ms"
-#~ msgstr "ϊειπω ιμιξ"
+#~ msgstr "ΧªΧ•Χ™Χ Χ© Χ™ΧΧ™Χ"
 
 #~ msgid "Clock"
-#~ msgstr "οεςω"
+#~ msgstr "ΧΧ•ΧΆΧ©"
 
 #~ msgid "&24h"
-#~ msgstr "ϊεςω 24 μω θξψετα οξζ βφδ"
+#~ msgstr "ΧªΧ•ΧΆΧ© 24 ΧΧ© ΧΧΧ¨Χ•Χ¤Χ‘ ΧΧΧ– Χ’Χ¦Χ”"
 
 #~ msgid "&12h AM/PM"
-#~ msgstr "ϊεςω 12 μω θξψετα οξζ βφδ"
+#~ msgstr "ΧªΧ•ΧΆΧ© 12 ΧΧ© ΧΧΧ¨Χ•Χ¤Χ‘ ΧΧΧ– Χ’Χ¦Χ”"
 
 #~ msgid "Edit &Global..."
-#~ msgstr "...ιμαεμβ κεψς"
+#~ msgstr "...Χ™ΧΧ‘Χ•ΧΧ’ ΧΧ•Χ¨ΧΆ"

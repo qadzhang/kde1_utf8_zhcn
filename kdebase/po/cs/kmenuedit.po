@@ -7,19 +7,19 @@ msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
 "POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1998-12-23 13:57 CET\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"
-msgstr "Zmìnit jméno &menu"
+msgstr "ZmÄ›nit jmÃ©no &menu"
 
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
-msgstr "Znovu naèít &vazby"
+msgstr "Znovu naÄÃ­t &vazby"
 
 #: kmenuedit.cpp:77
 msgid "by"
@@ -27,7 +27,7 @@ msgstr "napsal"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
-msgstr "Zmìny nejsou ulo¾eny!"
+msgstr "ZmÄ›ny nejsou uloÅ¾eny!"
 
 #: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
@@ -35,23 +35,23 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Pøejete si ulo¾it va¹e zmìny?"
+"PÅ™ejete si uloÅ¾it vaÅ¡e zmÄ›ny?"
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
-msgstr "PRÁZDNÉ"
+msgstr "PRÃZDNÃ‰"
 
 #: kmenuedit.cpp:343
 msgid "Reload Menus"
-msgstr "Znovu naèíst menu"
+msgstr "Znovu naÄÃ­st menu"
 
 #: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Nové naètení nemu zru¹í v¹echny zmìny.\n"
-"Jste si jist, ¾e si pøejete nové naètení?"
+"NovÃ© naÄtenÃ­ nemu zruÅ¡Ã­ vÅ¡echny zmÄ›ny.\n"
+"Jste si jist, Å¾e si pÅ™ejete novÃ© naÄtenÃ­?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
@@ -62,36 +62,36 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"Adresáø pro va¹e osobní menu neexistuje.\n"
-" Pøejete si jej nyní vytvoøit ?"
+"AdresÃ¡Å™ pro vaÅ¡e osobnÃ­ menu neexistuje.\n"
+" PÅ™ejete si jej nynÃ­ vytvoÅ™it ?"
 
 #: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Není mo¾né vytvoøit adresáø pro osobní menu.\n"
-" Zvolte Ok k ukonèení KMenueditu."
+"NenÃ­ moÅ¾nÃ© vytvoÅ™it adresÃ¡Å™ pro osobnÃ­ menu.\n"
+" Zvolte Ok k ukonÄenÃ­ KMenueditu."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
-msgstr "Oddìlovaè"
+msgstr "OddÄ›lovaÄ"
 
 #: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
-msgstr "Otevøít/ Zavøít"
+msgstr "OtevÅ™Ã­t/ ZavÅ™Ã­t"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr "Vybrat polo¾ku k pøesunutí"
+msgstr "Vybrat poloÅ¾ku k pÅ™esunutÃ­"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr "Vybrat menu k pøesunutí"
+msgstr "Vybrat menu k pÅ™esunutÃ­"
 
 #: confmenu.cpp:120
 msgid "New"
-msgstr "Novı"
+msgstr "NovÃ½"
 
 #: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
@@ -99,43 +99,43 @@ msgstr "Pozor !"
 
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Zru¹ení této polo¾ky vyma¾e v¹echny její submenu"
+msgstr "ZruÅ¡enÃ­ tÃ©to poloÅ¾ky vymaÅ¾e vÅ¡echny jejÃ­ submenu"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
-msgstr "Chybné jméno souboru"
+msgstr "ChybnÃ© jmÃ©no souboru"
 
 #: confmenu.cpp:298
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"Ji¾ existuje kdelnk soubor s tímto jménem. \n"
-"Prosím zvolte jiné jméno souboru."
+"JiÅ¾ existuje kdelnk soubor s tÃ­mto jmÃ©nem. \n"
+"ProsÃ­m zvolte jinÃ© jmÃ©no souboru."
 
 #: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Zmìna typu této polo¾ky vyma¾e v¹echny její submenu"
+msgstr "ZmÄ›na typu tÃ©to poloÅ¾ky vymaÅ¾e vÅ¡echny jejÃ­ submenu"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
-msgstr "¾ádnı pøíkaz"
+msgstr "Å¾Ã¡dnÃ½ pÅ™Ã­kaz"
 
 #: button.cpp:210
 msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Je mi líto, ale musíte ulo¾it své zmìny døíve ne¾ budete \n"
-"moci upustit tuto polo¾ku nad jinım oknem."
+"Je mi lÃ­to, ale musÃ­te uloÅ¾it svÃ© zmÄ›ny dÅ™Ã­ve neÅ¾ budete \n"
+"moci upustit tuto poloÅ¾ku nad jinÃ½m oknem."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Cesta k polo¾kám pracovní plochy KDE není nastavena."
+msgstr "Cesta k poloÅ¾kÃ¡m pracovnÃ­ plochy KDE nenÃ­ nastavena."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "Navrhuji následující polo¾ky:"
+msgstr "Navrhuji nÃ¡sledujÃ­cÃ­ poloÅ¾ky:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
@@ -143,7 +143,7 @@ msgstr "Cesta:"
 
 #: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
-msgstr "Osobní cesta:"
+msgstr "OsobnÃ­ cesta:"
 
 #: entrydialog.cpp:61
 msgid "Submenu"
@@ -156,7 +156,7 @@ msgstr "Aplikace"
 
 #: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
-msgstr "Pohlcovaná aplikace"
+msgstr "PohlcovanÃ¡ aplikace"
 
 #: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
@@ -164,7 +164,7 @@ msgstr "Odkaz"
 
 #: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
-msgstr "Zaøízení"
+msgstr "ZaÅ™Ã­zenÃ­"
 
 #: entrydialog.cpp:72
 msgid "Type:"
@@ -172,11 +172,11 @@ msgstr "Typ:"
 
 #: entrydialog.cpp:79
 msgid "File Name:"
-msgstr "Jméno souboru:"
+msgstr "JmÃ©no souboru:"
 
 #: entrydialog.cpp:94
 msgid "Name:"
-msgstr "Jméno:"
+msgstr "JmÃ©no:"
 
 #: entrydialog.cpp:109
 msgid "Icon:"
@@ -188,11 +188,11 @@ msgstr "Mini ikona:"
 
 #: entrydialog.cpp:149
 msgid "Comment:"
-msgstr "Komentáø:"
+msgstr "KomentÃ¡Å™:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "Vykonat pøíkaz"
+msgstr "Vykonat pÅ™Ã­kaz"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
@@ -200,23 +200,23 @@ msgstr "Vykonat:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
-msgstr "Pracovní adresáø:"
+msgstr "PracovnÃ­ adresÃ¡Å™:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
-msgstr "Provést v terminálu"
+msgstr "ProvÃ©st v terminÃ¡lu"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
-msgstr "Parametry terminálu:"
+msgstr "Parametry terminÃ¡lu:"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "Binární vzor:"
+msgstr "BinÃ¡rnÃ­ vzor:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "Pohlcovaná aplikace:"
+msgstr "PohlcovanÃ¡ aplikace:"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"
@@ -224,7 +224,7 @@ msgstr "Titulek aplikace:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "Aplikace vykonaná po stisku tlaèítka:"
+msgstr "Aplikace vykonanÃ¡ po stisku tlaÄÃ­tka:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -232,36 +232,36 @@ msgstr "URL:"
 
 #: entrydialog.cpp:415
 msgid "Read Only"
-msgstr "Pouze ètení"
+msgstr "Pouze ÄtenÃ­"
 
 #: entrydialog.cpp:420
 msgid "Device:"
-msgstr "Zaøízení:"
+msgstr "ZaÅ™Ã­zenÃ­:"
 
 #: entrydialog.cpp:425
 msgid "Mount Point:"
-msgstr "Místo pøípojení"
+msgstr "MÃ­sto pÅ™Ã­pojenÃ­"
 
 #: entrydialog.cpp:430
 msgid "FS Type:"
-msgstr "Souborovı systém:"
+msgstr "SouborovÃ½ systÃ©m:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"
-msgstr "Ikona odpojeného:"
+msgstr "Ikona odpojenÃ©ho:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Zmìnit jnéno menu"
+msgstr "ZmÄ›nit jnÃ©no menu"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Zmìnit jnéno menu jak je zobrazeno v Panelu"
+msgstr "ZmÄ›nit jnÃ©no menu jak je zobrazeno v Panelu"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"
-msgstr "Osobní:"
+msgstr "OsobnÃ­:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Implicitní:"
+msgstr "ImplicitnÃ­:"

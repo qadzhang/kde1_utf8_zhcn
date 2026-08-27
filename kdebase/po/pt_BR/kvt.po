@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
-"Last-Translator: Elvis Pfützenreuter<epx@netville.com.br>\n"
-"Content-Type: charset=iso-8859-1\n"
+"Last-Translator: Elvis PfÃ¼tzenreuter<epx@netville.com.br>\n"
+"Content-Type: charset=UTF-8\n"
 
 #: main.C:426
 msgid "choose type of color-mode"
@@ -44,7 +44,7 @@ msgstr "&Normal"
 
 #: main.C:628
 msgid "&Tiny"
-msgstr "&Minúscula"
+msgstr "&MinÃºscula"
 
 #: main.C:629
 msgid "&Small"
@@ -52,7 +52,7 @@ msgstr "&Pequena"
 
 #: main.C:630
 msgid "&Medium"
-msgstr "&Média"
+msgstr "&MÃ©dia"
 
 #: main.C:631
 msgid "&Large"
@@ -128,7 +128,7 @@ msgstr "Habilitar &Hot-Keys"
 
 #: main.C:679
 msgid "Save &Options"
-msgstr "Salvar &Opções"
+msgstr "Salvar &OpÃ§Ãµes"
 
 #: main.C:688
 msgid ""
@@ -149,7 +149,7 @@ msgstr ""
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
-"Emulação de terminal para o KDE Desktop Environment\n"
+"EmulaÃ§Ã£o de terminal para o KDE Desktop Environment\n"
 "baseado no rxvt-2.08 de Robert Nation"
 
 #: main.C:897 main.C:1036
@@ -162,7 +162,7 @@ msgstr "Destravar &Teclado"
 
 #: main.C:986
 msgid "Terminal Options"
-msgstr "Opções de terminal"
+msgstr "OpÃ§Ãµes de terminal"
 
 #: main.C:1152
 msgid "Hint"
@@ -173,7 +173,7 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"As novas definições de cor serão mostradas\n"
+"As novas definiÃ§Ãµes de cor serÃ£o mostradas\n"
 "quando o teclado estiver destravado."
 
 #: main.C:1474
@@ -186,18 +186,18 @@ msgid ""
 msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
-"Emulação de terminal para o KDE Desktop Environment\n"
+"EmulaÃ§Ã£o de terminal para o KDE Desktop Environment\n"
 "baseado no rvt-2.08 de Robert Nation\n"
 
 #: main.C:1478
 msgid "Permitted arguments are:\n"
-msgstr "Argumentos aceitos são:\n"
+msgstr "Argumentos aceitos sÃ£o:\n"
 
 #: main.C:1479
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <comando> <arg> ...    executar comando com arg - deve ser o último "
+"-e <comando> <arg> ...    executar comando com arg - deve ser o Ãºltimo "
 "argumento\n"
 
 #: main.C:1480
@@ -250,12 +250,12 @@ msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
-"-T <texto>                texto no título da janela\n"
+"-T <texto>                texto no tÃ­tulo da janela\n"
 "                          (Obsoleto. Use -caption)\n"
 
 #: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr "-tn <TERM>               Tipo de terminal. Padrão é xterm.\n"
+msgstr "-tn <TERM>               Tipo de terminal. PadrÃ£o Ã© xterm.\n"
 
 #: main.C:1494
 msgid "-C                        Capture system console message\n"
@@ -263,7 +263,7 @@ msgstr "-C                        Capturar mensagens do console do sistema\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <texto>                nome no ícone ou janela de ícone\n"
+msgstr "-n <texto>                nome no Ã­cone ou janela de Ã­cone\n"
 
 #: main.C:1496
 msgid ""
@@ -280,7 +280,7 @@ msgid ""
 "(default)\n"
 msgstr ""
 "-ls                       iniciar kvt como shell de login\n"
-"-ls-                      initiar kvt não como shell de login (padrão)\n"
+"-ls-                      initiar kvt nÃ£o como shell de login (padrÃ£o)\n"
 
 #: main.C:1500
 msgid ""
@@ -293,7 +293,7 @@ msgstr ""
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
-"-sl <número>              número de linhas gravadas no buffer de "
+"-sl <nÃºmero>              nÃºmero de linhas gravadas no buffer de "
 "scroll-back\n"
 
 #: main.C:1502
@@ -313,5 +313,5 @@ msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
-"-grk9\t\tgreek kbd = ELOT 928 (padrão)\n"
+"-grk9\t\tgreek kbd = ELOT 928 (padrÃ£o)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

@@ -10,41 +10,41 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-04-01 19:06+0200\n"
 "PO-Revision-Date: Sun Jul 11 1999 19:54:24+0200\n"
-"Last-Translator: °æÂ¼ Îµ°ìÏº <imura@cs.titech.ac.jp>\n"
+"Last-Translator: äº•æ‘ ç«œä¸€éƒ <imura@cs.titech.ac.jp>\n"
 "Language-Team: japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bitX-Generator: KTranslator v 0.4.0"
 "X-Generator: KTranslator v 0.5.0"
 
 #: FilterRuleEditor.cpp:29
 msgid "Edit Filter Rules"
-msgstr "¥Õ¥£¥ë¥¿¡¼¥ë¡¼¥ë¤òÊÔ½¸"
+msgstr "ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ãƒ«ãƒ¼ãƒ«ã‚’ç·¨é›†"
 
 #: FilterRuleEditor.cpp:58 FilterRuleEditor.cpp:79
 #: FilterRuleEditorData.cpp:105
 msgid "&Modify"
-msgstr "½¤Àµ(&M)"
+msgstr "ä¿®æ­£(&M)"
 
 #: FilterRuleEditor.cpp:74
 msgid "Missing Arguments"
-msgstr "¥ª¥×¥·¥ç¥ó¤¬Â­¤ê¤Ş¤»¤ó"
+msgstr "ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãŒè¶³ã‚Šã¾ã›ã‚“"
 
 #: FilterRuleEditor.cpp:75
 msgid ""
 "Cannot create a Rule since not\n"
 "all the fields are filled in."
 msgstr ""
-"Á´¤Æ¤ÎÍó¤¬Ëä¤á¤é¤ì¤Æ¤¤¤Ê¤¤¤Î¤Ç\n"
-"¥ë¡¼¥ë¤òºî¤ì¤Ş¤»¤ó¡£"
+"å…¨ã¦ã®æ¬„ãŒåŸ‹ã‚ã‚‰ã‚Œã¦ã„ãªã„ã®ã§\n"
+"ãƒ«ãƒ¼ãƒ«ã‚’ä½œã‚Œã¾ã›ã‚“ã€‚"
 
 #: FilterRuleEditorData.cpp:33
 msgid "Description:"
-msgstr "ÆÃÄ§:"
+msgstr "ç‰¹å¾´:"
 
 #: FilterRuleEditorData.cpp:51
 msgid "Match:"
-msgstr "°ìÃ×:"
+msgstr "ä¸€è‡´:"
 
 #: FilterRuleEditorData.cpp:69
 msgid "From:"
@@ -56,51 +56,51 @@ msgstr "To:"
 
 #: FilterRuleEditorData.cpp:126
 msgid "New Rule"
-msgstr "¿·¤·¤¤¥ë¡¼¥ë"
+msgstr "æ–°ã—ã„ãƒ«ãƒ¼ãƒ«"
 
 #: FilterRuleEditorData.cpp:145
 msgid "Up"
-msgstr "¾å"
+msgstr "ä¸Š"
 
 #: FilterRuleEditorData.cpp:155
 msgid "Down"
-msgstr "²¼"
+msgstr "ä¸‹"
 
 #: KSircColour.cpp:33
 msgid "Colour Settings"
-msgstr "¿§ÀßÄê"
+msgstr "è‰²è¨­å®š"
 
 #: KSircColourData.cpp:33
 msgid "Generic Text"
-msgstr "°ìÈÌÊ¸½ñ"
+msgstr "ä¸€èˆ¬æ–‡æ›¸"
 
 #: KSircColourData.cpp:62
 msgid "Info"
-msgstr "¾ğÊó"
+msgstr "æƒ…å ±"
 
 #: KSircColourData.cpp:71
 msgid "Chan Messages"
-msgstr "Chan ¥á¥Ã¥»¡¼¥¸"
+msgstr "Chan ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸"
 
 #: KSircColourData.cpp:80
 msgid "Errors"
-msgstr "¥¨¥é¡¼"
+msgstr "ã‚¨ãƒ©ãƒ¼"
 
 #: KSircColourData.cpp:115
 msgid "Background"
-msgstr "ÇØ·Ê"
+msgstr "èƒŒæ™¯"
 
 #: dccDialog.cpp:22
 msgid "DCC Files Offered"
-msgstr "DCC ¥Õ¥¡¥¤¥ë¤¬Äó½Ğ¤µ¤ì¤Ş¤·¤¿"
+msgstr "DCC ãƒ•ã‚¡ã‚¤ãƒ«ãŒæå‡ºã•ã‚Œã¾ã—ãŸ"
 
 #: dccDialogData.cpp:38
 msgid "&Get"
-msgstr "¼èÆÀ(&G)"
+msgstr "å–å¾—(&G)"
 
 #: dccDialogData.cpp:46
 msgid "&Forget"
-msgstr "¾Ãµî(&F)"
+msgstr "æ¶ˆå»(&F)"
 
 #: ksirc.cpp:60
 msgid ""
@@ -110,12 +110,12 @@ msgid ""
 "kSirc-ALPHA HAS EXPIRED!!\n"
 "Please upgrade or use a beta release"
 msgstr ""
-"kSirc ¥¢¥ë¥Õ¥¡¥ê¥ê¡¼¥¹¤Î»ÈÍÑ´ü´Ö¤Ï\n"
-"£¸½µ´Ö¤Ç¤¹¡£\n"
+"kSirc ã‚¢ãƒ«ãƒ•ã‚¡ãƒªãƒªãƒ¼ã‚¹ã®ä½¿ç”¨æœŸé–“ã¯\n"
+"ï¼˜é€±é–“ã§ã™ã€‚\n"
 "\n"
-"kSirc-ALPHA ¤Î»ÈÍÑ´ü¸Â¤¬¤¹¤®¤Ş¤·¤¿¡ª\n"
-"¥¢¥Ã¥×¥°¥ì¡¼¥É¤¹¤ë¤«¥Ù¡¼¥¿¥ê¥ê¡¼¥¹¤ò\n"
-"»ÈÍÑ¤·¤Æ¤¯¤À¤µ¤¤¡£"
+"kSirc-ALPHA ã®ä½¿ç”¨æœŸé™ãŒã™ãã¾ã—ãŸï¼\n"
+"ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰ã™ã‚‹ã‹ãƒ™ãƒ¼ã‚¿ãƒªãƒªãƒ¼ã‚¹ã‚’\n"
+"ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚"
 
 #: ksirc.cpp:68
 msgid ""
@@ -124,127 +124,127 @@ msgid ""
 "\n"
 "THIS VERSION WILL EXPIRE IN UNDER 4 WEEKS"
 msgstr ""
-"kSirc ¥¢¥ë¥Õ¥¡¥ê¥ê¡¼¥¹¤Î»ÈÍÑ´ü´Ö¤Ï\n"
-"£¸½µ´Ö¤Ç¤¹¡£\n"
+"kSirc ã‚¢ãƒ«ãƒ•ã‚¡ãƒªãƒªãƒ¼ã‚¹ã®ä½¿ç”¨æœŸé–“ã¯\n"
+"ï¼˜é€±é–“ã§ã™ã€‚\n"
 "\n"
-"¤³¤Î¥Ğ¡¼¥¸¥ç¥ó¤Ï¤¢¤È£´½µ´Ö¤Ç\n"
-"»ÈÍÑ´ü¸Â¤¬½ª¤ê¤Ş¤¹¡ª"
+"ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¯ã‚ã¨ï¼”é€±é–“ã§\n"
+"ä½¿ç”¨æœŸé™ãŒçµ‚ã‚Šã¾ã™ï¼"
 
 #: open_top.cpp:26
 msgid "New Window For"
-msgstr "¿·¤·¤¤¥¦¥£¥ó¥É¥¦"
+msgstr "æ–°ã—ã„ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦"
 
 #: open_topData.cpp:39
 msgid "Channel/Nick:"
-msgstr "¥Á¥ã¥ó¥Í¥ë/Nick:"
+msgstr "ãƒãƒ£ãƒ³ãƒãƒ«/Nick:"
 
 #: servercontroller.cpp:160
 msgid "&Dock"
-msgstr "¥Ñ¥Í¥ë¤Ë³ÊÇ¼ (&D)"
+msgstr "ãƒ‘ãƒãƒ«ã«æ ¼ç´ (&D)"
 
 #: servercontroller.cpp:168 servercontroller.cpp:750
 msgid "New Server..."
-msgstr "¿·¤·¤¤¥µ¡¼¥Ğ..."
+msgstr "æ–°ã—ã„ã‚µãƒ¼ãƒ..."
 
 #: servercontroller.cpp:169
 msgid "&Join Channel..."
-msgstr "¥Á¥ã¥ó¥Í¥ë¤Ë»²²Ã...(&J)"
+msgstr "ãƒãƒ£ãƒ³ãƒãƒ«ã«å‚åŠ ...(&J)"
 
 #: servercontroller.cpp:171
 msgid "&Connections"
-msgstr "ÀÜÂ³(&C)"
+msgstr "æ¥ç¶š(&C)"
 
 #: servercontroller.cpp:188 servercontroller.cpp:739
 msgid "&Colour Preferences..."
-msgstr "¿§ÀßÄê(&C)"
+msgstr "è‰²è¨­å®š(&C)"
 
 #: servercontroller.cpp:190 servercontroller.cpp:741
 msgid "&Global Fonts..."
-msgstr "Á´ÂÎ¤Î¥Õ¥©¥ó¥È...(&G)"
+msgstr "å…¨ä½“ã®ãƒ•ã‚©ãƒ³ãƒˆ...(&G)"
 
 #: servercontroller.cpp:192 servercontroller.cpp:743
 msgid "&Filter Rule Editor..."
-msgstr "¥Õ¥£¥ë¥¿¡¼¥ë¡¼¥ëÊÔ½¸...(&F)"
+msgstr "ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ãƒ«ãƒ¼ãƒ«ç·¨é›†...(&F)"
 
 #: servercontroller.cpp:194 servercontroller.cpp:745
 msgid "&Web Server Configuration..."
-msgstr "Web ¥µ¡¼¥Ğ¥³¥ó¥Õ¥£¥°¥ì¡¼¥·¥ç¥ó...(&W)"
+msgstr "Web ã‚µãƒ¼ãƒã‚³ãƒ³ãƒ•ã‚£ã‚°ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³...(&W)"
 
 #: servercontroller.cpp:197 servercontroller.cpp:747
 msgid "&Preferences..."
-msgstr "ÀßÄê...(&P)"
+msgstr "è¨­å®š...(&P)"
 
 #: servercontroller.cpp:207
 msgid "Help on Colours..."
-msgstr "¿§¤Ë´Ø¤¹¤ë¥Ø¥ë¥×..."
+msgstr "è‰²ã«é–¢ã™ã‚‹ãƒ˜ãƒ«ãƒ—..."
 
 #: servercontroller.cpp:209
 msgid "Help on Filters..."
-msgstr "¥Õ¥£¥ë¥¿¡¼¤Ë´Ø¤¹¤ë¥Ø¥ë¥×"
+msgstr "ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ã«é–¢ã™ã‚‹ãƒ˜ãƒ«ãƒ—"
 
 #: servercontroller.cpp:211
 msgid "Help on Keys..."
-msgstr "¥­¡¼¤Ë´Ø¤¹¤ë¥Ø¥ë¥×"
+msgstr "ã‚­ãƒ¼ã«é–¢ã™ã‚‹ãƒ˜ãƒ«ãƒ—"
 
 #: servercontroller.cpp:214
 msgid "About kSirc..."
-msgstr "kSirc¤Î¥Ğ¡¼¥¸¥ç¥ó¾ğÊó..."
+msgstr "kSircã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±..."
 
 #: servercontroller.cpp:232
 msgid "Server Control"
-msgstr "¥µ¡¼¥Ğ¥³¥ó¥È¥í¡¼¥ë"
+msgstr "ã‚µãƒ¼ãƒã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«"
 
 #: servercontroller.cpp:293 servercontroller.cpp:457
 msgid "Channels"
-msgstr "¥Á¥ã¥ó¥Í¥ë"
+msgstr "ãƒãƒ£ãƒ³ãƒãƒ«"
 
 #: servercontroller.cpp:293 servercontroller.cpp:457
 msgid "Online"
-msgstr "¥ª¥ó¥é¥¤¥ó"
+msgstr "ã‚ªãƒ³ãƒ©ã‚¤ãƒ³"
 
 #: servercontroller.cpp:695
 msgid "Active Server Connections"
-msgstr "¥¢¥¯¥Æ¥£¥Ö¥µ¡¼¥Ğ¥³¥Í¥¯¥·¥ç¥ó"
+msgstr "ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚µãƒ¼ãƒã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³"
 
 #: servercontroller.cpp:736
 msgid "&Undock"
-msgstr "¥Ñ¥Í¥ë¤«¤é½Ğ¤¹(&U)"
+msgstr "ãƒ‘ãƒãƒ«ã‹ã‚‰å‡ºã™(&U)"
 
 #: ssfeprompt.cpp:25
 msgid "Prompt"
-msgstr "¥×¥í¥ó¥×¥È"
+msgstr "ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆ"
 
 #: toplevel.cpp:140
 msgid "Lag in seconds to the server"
-msgstr "¥µ¡¼¥Ğ¤È¤ÎÉÃ¤Ç¤Î»ş´Öº¹"
+msgstr "ã‚µãƒ¼ãƒã¨ã®ç§’ã§ã®æ™‚é–“å·®"
 
 #: toplevel.cpp:144
 msgid "&Ticker Mode"
-msgstr "²»¤ò½Ğ¤¹¥â¡¼¥É(&T)"
+msgstr "éŸ³ã‚’å‡ºã™ãƒ¢ãƒ¼ãƒ‰(&T)"
 
 #: toplevel.cpp:166
 msgid "&Cut Window..."
-msgstr "¥¦¥£¥ó¥É¥¦¤ò¥«¥Ã¥È(&C)"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ã‚«ãƒƒãƒˆ(&C)"
 
 #: toplevel.cpp:297
 msgid "&Users"
-msgstr "¥æ¡¼¥¶(&U)"
+msgstr "ãƒ¦ãƒ¼ã‚¶(&U)"
 
 #: welcomeWin.cpp:30
 msgid "Welcome to kSirc"
-msgstr "kSirc ¤Ø¤è¤¦¤³¤½"
+msgstr "kSirc ã¸ã‚ˆã†ã“ã"
 
 #: welcomeWinData.cpp:35
 msgid "Show Again"
-msgstr "ºÆ¤ÓÉ½¼¨"
+msgstr "å†ã³è¡¨ç¤º"
 
 #: welcomeWinData.cpp:44
 msgid "Dissmiss"
-msgstr "¤ä¤á¤ë"
+msgstr "ã‚„ã‚ã‚‹"
 
 #: KSColourPicker/kscolourpicker.cpp:28
 msgid "kSirc Colour Picker"
-msgstr "kSirc ¿§¤è¤¦¤¸"
+msgstr "kSirc è‰²ã‚ˆã†ã˜"
 
 #: KSColourPicker/kscolourpickerData.cpp:30
 msgid "Pick"
@@ -252,101 +252,101 @@ msgstr "Pick"
 
 #: KSColourPicker/kscolourpickerData.cpp:46
 msgid "Sample Colour"
-msgstr "¥µ¥ó¥×¥ë¥«¥é¡¼"
+msgstr "ã‚µãƒ³ãƒ—ãƒ«ã‚«ãƒ©ãƒ¼"
 
 #: KSCutDialog/KSCutDialog.cpp:27
 msgid "Cut Window"
-msgstr "¥¦¥£¥ó¥É¥¦¤ò¥«¥Ã¥È"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ã‚«ãƒƒãƒˆ"
 
 #: KSCutDialog/KSCutDialogData.cpp:39
 msgid "Cop&y"
-msgstr "¥³¥Ô¡¼(&Y)"
+msgstr "ã‚³ãƒ”ãƒ¼(&Y)"
 
 #: KSOpenkSirc/open_ksirc.cpp:38
 msgid "Connect to Server"
-msgstr "¥µ¡¼¥Ğ¤ËÀÜÂ³"
+msgstr "ã‚µãƒ¼ãƒã«æ¥ç¶š"
 
 #: KSOpenkSirc/open_ksirc.cpp:186
 msgid "Not Avalable"
-msgstr "Í­¸ú¤Ç¤Ê¤¤"
+msgstr "æœ‰åŠ¹ã§ãªã„"
 
 #: KSOpenkSirc/open_ksircData.cpp:37
 msgid "&Connect"
-msgstr "ÀÜÂ³(&C)"
+msgstr "æ¥ç¶š(&C)"
 
 #: KSOpenkSirc/open_ksircData.cpp:54
 msgid "&Edit Servers"
-msgstr "¥µ¡¼¥Ğ¤òÊÔ½¸(&E)"
+msgstr "ã‚µãƒ¼ãƒã‚’ç·¨é›†(&E)"
 
 #: KSOpenkSirc/open_ksircData.cpp:86
 msgid "Group:"
-msgstr "¥°¥ë¡¼¥×:"
+msgstr "ã‚°ãƒ«ãƒ¼ãƒ—:"
 
 #: KSOpenkSirc/open_ksircData.cpp:103
 msgid "Server/Quick Connect to:"
-msgstr "¥µ¡¼¥Ğ/¥¯¥¤¥Ã¥¯ÀÜÂ³Àè:"
+msgstr "ã‚µãƒ¼ãƒ/ã‚¯ã‚¤ãƒƒã‚¯æ¥ç¶šå…ˆ:"
 
 #: KSOpenkSirc/open_ksircData.cpp:120
 msgid "Port:"
-msgstr "¥İ¡¼¥È¡§"
+msgstr "ãƒãƒ¼ãƒˆï¼š"
 
 #: KSOpenkSirc/open_ksircData.cpp:147
 msgid "Server Desc:"
-msgstr "¥µ¡¼¥Ğ¤ÎÍÍ»Ò:"
+msgstr "ã‚µãƒ¼ãƒã®æ§˜å­:"
 
 #: KSPrefs/UserMenuRefData.cpp:61
 msgid "Menu Name"
-msgstr "¥á¥Ë¥å¡¼¤ÎÌ¾Á°"
+msgstr "ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®åå‰"
 
 #: KSPrefs/UserMenuRefData.cpp:70
 msgid "Type"
-msgstr "¥¿¥¤¥×"
+msgstr "ã‚¿ã‚¤ãƒ—"
 
 #: KSPrefs/UserMenuRefData.cpp:79
 msgid "Command"
-msgstr "¥³¥Ş¥ó¥É"
+msgstr "ã‚³ãƒãƒ³ãƒ‰"
 
 #: KSPrefs/UserMenuRefData.cpp:87
 msgid "OP Only"
-msgstr "OP ¤Î¤ß"
+msgstr "OP ã®ã¿"
 
 #: KSPrefs/UserMenuRefData.cpp:135
 msgid "Modify"
-msgstr "½¤Àµ"
+msgstr "ä¿®æ­£"
 
 #: KSPrefs/ksprefs.cpp:9
 msgid "kSirc Prefrences"
-msgstr "kSirc ÀßÄê"
+msgstr "kSirc è¨­å®š"
 
 #: KSPrefs/ksprefs.cpp:22
 msgid "&General"
-msgstr "°ìÈÌ(&G)"
+msgstr "ä¸€èˆ¬(&G)"
 
 #: KSPrefs/ksprefs.cpp:23
 msgid "&StartUp"
-msgstr "¥¹¥¿¡¼¥È¥¢¥Ã¥×(&S)"
+msgstr "ã‚¹ã‚¿ãƒ¼ãƒˆã‚¢ãƒƒãƒ—(&S)"
 
 #: KSPrefs/ksprefs.cpp:24
 msgid "Servers/&Channels"
-msgstr "¥µ¡¼¥Ğ/¥Á¥ã¥ó¥Í¥ë(&C)"
+msgstr "ã‚µãƒ¼ãƒ/ãƒãƒ£ãƒ³ãƒãƒ«(&C)"
 
 #: KSPrefs/ksprefs.cpp:25
 msgid "&User Menu"
-msgstr "¥æ¡¼¥¶¥á¥Ë¥å¡¼(&U)"
+msgstr "ãƒ¦ãƒ¼ã‚¶ãƒ¡ãƒ‹ãƒ¥ãƒ¼(&U)"
 
 #: KSPrefs/ksprefs.cpp:26
 msgid "&Default Filters"
-msgstr "¥Ç¥Õ¥©¥ë¥È¥Õ¥£¥ë¥¿(&D)"
+msgstr "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ•ã‚£ãƒ«ã‚¿(&D)"
 
 #: KSTicker/speeddialogData.cpp:79
 msgid "Tick Interval"
-msgstr "²»¤ò½Ğ¤¹´Ö³Ö"
+msgstr "éŸ³ã‚’å‡ºã™é–“éš”"
 
 #: KSTicker/speeddialogData.cpp:88
 msgid "Step Size"
-msgstr "¥¹¥Æ¥Ã¥×¥µ¥¤¥º"
+msgstr "ã‚¹ãƒ†ãƒƒãƒ—ã‚µã‚¤ã‚º"
 
 #: puke/kdynlib.cpp:70
 #, c-format
 msgid "No such file \"%s\"!"
-msgstr "\"%s\" ¤È¤¤¤¦¥Õ¥¡¥¤¥ë¤Ï¤¢¤ê¤Ş¤»¤ó!"
+msgstr "\"%s\" ã¨ã„ã†ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã‚ã‚Šã¾ã›ã‚“!"

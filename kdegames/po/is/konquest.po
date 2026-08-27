@@ -7,7 +7,7 @@ msgstr ""
 "POT-Creation-Date: 1999-01-13 01:34+0100\n"
 "Last-Translator: Bjarni R. Einarsson <bre@mmedia.is> \n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: gameboard.cc:55
 msgid "End Turn"
@@ -15,15 +15,15 @@ msgstr "Enda leik"
 
 #: gameboard.cc:203
 msgid ": Select source planet..."
-msgstr ": Veldu upphafsplánetu..."
+msgstr ": Veldu upphafsplÃ¡netu..."
 
 #: gameboard.cc:221
 msgid ": Select destination planet..."
-msgstr ": Veldu áfangastağ..."
+msgstr ": Veldu Ã¡fangastaÄ‘..."
 
 #: gameboard.cc:243
 msgid ": How many ships?"
-msgstr ": Hve mörg geimför?"
+msgstr ": Hve mÃ¶rg geimfÃ¶r?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
@@ -35,8 +35,8 @@ msgid ""
 "The distance from Planet %s to Planet %s is %s light years.\n"
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
-"Fjarlægğin frá plánetu %s til plánetu %s eru %s ljósár.\n"
-"Geimfar sem leggur strax af stağ kemst á áfangastağ í umferğ %s"
+"FjarlÄ‡gÄ‘in frÃ¡ plÃ¡netu %s til plÃ¡netu %s eru %s ljÃ³sÃ¡r.\n"
+"Geimfar sem leggur strax af staÄ‘ kemst Ã¡ Ã¡fangastaÄ‘ Ã­ umferÄ‘ %s"
 
 #: gameboard.cc:291
 msgid "Distance"
@@ -49,52 +49,52 @@ msgstr "Reglustika:  Velja enda."
 #: gameboard.cc:311
 #, c-format
 msgid "Turn #: %2d of %2d"
-msgstr "Umferğ #: %2d af %2d"
+msgstr "UmferÄ‘ #: %2d af %2d"
 
 #: gameboard.cc:426
 #, c-format
 msgid "The once mighty empire of %s has fallen in ruins."
-msgstr "Veldi keisarans %s hefur hruniğ til grunna."
+msgstr "Veldi keisarans %s hefur hruniÄ‘ til grunna."
 
 #: gameboard.cc:428
 msgid "An Empire has fallen..."
-msgstr "Keisaraveldi hefur falliğ..."
+msgstr "Keisaraveldi hefur falliÄ‘..."
 
 #: gameboard.cc:438
 #, c-format
 msgid "The fallen empire of %s has staggered back to life."
-msgstr "Keisarinn %s hefur blásiğ smá lífi aftur í ríkiğ sitt."
+msgstr "Keisarinn %s hefur blÃ¡siÄ‘ smÃ¡ lÃ­fi aftur Ã­ rÃ­kiÄ‘ sitt."
 
 #: gameboard.cc:440
 msgid "Up from the ashes..."
-msgstr "Upp úr rústunum..."
+msgstr "Upp Ãºr rÃºstunum..."
 
 #: gameboard.cc:460
 #, c-format
 msgid "Reinforcements have arrived for planet %s"
-msgstr "Liğsauki hefur er kominn ağ plánetu %s"
+msgstr "LiÄ‘sauki hefur er kominn aÄ‘ plÃ¡netu %s"
 
 #: gameboard.cc:462
 msgid "Fleet Arrival"
-msgstr "Floti mætir"
+msgstr "Floti mÄ‡tir"
 
 #: gameboard.cc:505
 #, c-format
 msgid "Planet %s has held against an attack from %s"
-msgstr "Plánetan %s hefur stağist árás frá %s"
+msgstr "PlÃ¡netan %s hefur staÄ‘ist Ã¡rÃ¡s frÃ¡ %s"
 
 #: gameboard.cc:507
 msgid "Planet Holds"
-msgstr "Pláneta verst"
+msgstr "PlÃ¡neta verst"
 
 #: gameboard.cc:515
 #, c-format
 msgid "Planet %s has fallen to %s"
-msgstr "Plánetan %s hefur falliğ fyrir %s"
+msgstr "PlÃ¡netan %s hefur falliÄ‘ fyrir %s"
 
 #: gameboard.cc:517
 msgid "Planet Conquered"
-msgstr "Pláneta sigruğ"
+msgstr "PlÃ¡neta sigruÄ‘"
 
 #: gameboard.cc:579 mainwin.cc:82
 msgid "End Game"
@@ -102,19 +102,19 @@ msgstr "Leikslok"
 
 #: gameboard.cc:580
 msgid "Do you wish to retire this game?"
-msgstr "Vildu gefast upp á şessum leik?"
+msgstr "Vildu gefast upp Ã¡ Å£essum leik?"
 
 #: gameboard.cc:586
 msgid "Final Standings"
-msgstr "Lokastağa"
+msgstr "LokastaÄ‘a"
 
 #: gameboard.cc:758
 msgid "Not enough ships to send."
-msgstr "Şú hefur ekki nóg geimför!"
+msgstr "Å¢Ãº hefur ekki nÃ³g geimfÃ¶r!"
 
 #: mainwin.cc:23
 msgid "GNU-Lactic Conquest"
-msgstr "GNU Alheimsyfirráğ"
+msgstr "GNU AlheimsyfirrÃ¡Ä‘"
 
 #: mainwin.cc:47
 #, c-format
@@ -126,26 +126,26 @@ msgid ""
 "KDE version by Russ Steffen <rsteffen@ia.net>\n"
 "See http://www.ia.net/~rsteffen/konquest.html for more info"
 msgstr ""
-"Útgáfa %s\n"
-"Höfundarréttur (c) 1998,\n"
+"ÃštgÃ¡fa %s\n"
+"HÃ¶fundarrÃ©ttur (c) 1998,\n"
 "The Gnu-Lactic Conquest Project\n"
 "\n"
-"KDE útgáfa eftir Russ Steffen <rsteffen@ia.net>\n"
-"Meiri uppl. eru á http://www.ia.net/~rsteffen/konquest.html\n"
+"KDE ÃºtgÃ¡fa eftir Russ Steffen <rsteffen@ia.net>\n"
+"Meiri uppl. eru Ã¡ http://www.ia.net/~rsteffen/konquest.html\n"
 "\n"
-"Şığing: Bjarni <bre@mmedia.is>"
+"Å¢Ã½Ä‘ing: Bjarni <bre@mmedia.is>"
 
 #: mainwin.cc:88
 msgid "Measure Distance"
-msgstr "Mæla vegalengd"
+msgstr "MÄ‡la vegalengd"
 
 #: mainwin.cc:92
 msgid "Show Standings"
-msgstr "Sına stöğu"
+msgstr "SÃ½na stÃ¶Ä‘u"
 
 #: newgamedlg.cc:31
 msgid "Preview Map"
-msgstr "Kort í boği"
+msgstr "Kort Ã­ boÄ‘i"
 
 #: newgamedlg.cc:35
 msgid "&Reject Map"
@@ -157,7 +157,7 @@ msgstr "&Listi leikmanna"
 
 #: newgamedlg.cc:48
 msgid "&Add"
-msgstr "&Bæta viğ"
+msgstr "&BÄ‡ta viÄ‘"
 
 #: newgamedlg.cc:54
 msgid "&Clear"
@@ -170,16 +170,16 @@ msgstr "&Hefja leik"
 #: newgamedlg.cc:162
 #, c-format
 msgid "Number of Neutral Planets: %2d"
-msgstr "Fjöldi hlutlausra pláneta: %2d"
+msgstr "FjÃ¶ldi hlutlausra plÃ¡neta: %2d"
 
 #: newgamedlg.cc:174
 #, c-format
 msgid "Number of turns: %2d"
-msgstr "Fjöldi umferğa: %2d"
+msgstr "FjÃ¶ldi umferÄ‘a: %2d"
 
 #: planet_info.cc:81 planet_info.cc:116 planet_info.cc:131
 msgid "Planet Name : "
-msgstr "Nafn plánetu : "
+msgstr "Nafn plÃ¡netu : "
 
 #: planet_info.cc:84 planet_info.cc:134
 msgid "Owner : "
@@ -187,55 +187,55 @@ msgstr "Eigandi : "
 
 #: planet_info.cc:87
 msgid "Ships : "
-msgstr "Geimför : "
+msgstr "GeimfÃ¶r : "
 
 #: planet_info.cc:90
 msgid "Production : "
-msgstr "Afköst : "
+msgstr "AfkÃ¶st : "
 
 #: planet_info.cc:93
 msgid "Kill Percent : "
-msgstr "Stríğshæfni : "
+msgstr "StrÃ­Ä‘shÄ‡fni : "
 
 #: planet_info.cc:137
 #, c-format
 msgid "Ships : %d"
-msgstr "Geimför : %d"
+msgstr "GeimfÃ¶r : %d"
 
 #: planet_info.cc:140
 #, c-format
 msgid "Production : %d"
-msgstr "Afköst : %d"
+msgstr "AfkÃ¶st : %d"
 
 #: planet_info.cc:143
 #, c-format
 msgid "Kill Percent : %.3f"
-msgstr "Stríğshæfni : %.3f"
+msgstr "StrÃ­Ä‘shÄ‡fni : %.3f"
 
 #: gameenddlg.cc:14
 msgid ""
 "This is the last turn.\n"
 "Do you wish to add more turns?"
 msgstr ""
-"Şetta er lokaumferğin.\n"
-"Viltu fjölga umferğum?"
+"Å¢etta er lokaumferÄ‘in.\n"
+"Viltu fjÃ¶lga umferÄ‘um?"
 
 #: gameenddlg.cc:64
 #, c-format
 msgid "Add %d turns"
-msgstr "Bæta viğ %d umferğum"
+msgstr "BÄ‡ta viÄ‘ %d umferÄ‘um"
 
 #: scoredlg.cc:18
 msgid "Player"
-msgstr "Leikmağur"
+msgstr "LeikmaÄ‘ur"
 
 #: scoredlg.cc:19
 msgid "Ships Built"
-msgstr "Geimför smíğuğ"
+msgstr "GeimfÃ¶r smÃ­Ä‘uÄ‘"
 
 #: scoredlg.cc:20
 msgid "Planets Conquered"
-msgstr "Plánetur sigrağar"
+msgstr "PlÃ¡netur sigraÄ‘ar"
 
 #: scoredlg.cc:21
 msgid "Fleets Launched"
@@ -247,4 +247,4 @@ msgstr "Eyddir flotar"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"
-msgstr "Eydd geimför"
+msgstr "Eydd geimfÃ¶r"

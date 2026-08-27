@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -44,7 +44,7 @@ msgstr ""
 "Komentoa ei ole asetettu \n"
 "asetustiedostossa.\n"
 "\n"
-"En voi tehd‰ mit‰‰n...\n"
+"En voi tehd√§ mit√§√§n...\n"
 
 #: knu.cpp:246
 msgid "&New window"
@@ -60,7 +60,7 @@ msgstr "Valitse &kaikki"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "&Tyhjenn‰ tulosikkuna"
+msgstr "&Tyhjenn√§ tulosikkuna"
 
 #: knu.cpp:266
 msgid "P&references..."
@@ -68,8 +68,8 @@ msgstr "&Asetukset"
 
 #: knu.cpp:281
 #, c-format
-msgid "&About %s"
-msgstr "Tietoja &Qt:ta"
+#~ msgid "&About %s"
+#~ msgstr "Tietoja &Qt:ta"
 
 #: knu.cpp:283
 msgid "About &Qt"
@@ -98,7 +98,7 @@ msgstr "Tietoja..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "Verkkotyˆkalut"
+msgstr "Verkkoty√∂kalut"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
@@ -117,7 +117,7 @@ msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"Ohjelmatiedostoa ei lˆytynyt. \n"
+"Ohjelmatiedostoa ei l√∂ytynyt. \n"
 "Voit antaa sen polun Editoi->Asetukset... valikoissa."
 
 #: CommandDlg.cpp:351
@@ -137,15 +137,15 @@ msgstr ""
 "Asetustiedostossa\n"
 "%s/%src\n"
 "on virhe.\n"
-"Ryhm‰ss‰ [%s],\n"
+"Ryhm√§ss√§ [%s],\n"
 "Ei ole oikeaa \"path=\" tietuetta.\n"
 "\n"
-"K‰yt‰ Muokkaa->Asetukset... valikkoa\n"
+"K√§yt√§ Muokkaa->Asetukset... valikkoa\n"
 "asettaaksesi sen uudelleen.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
-msgstr "Virhe polkunimess‰"
+msgstr "Virhe polkunimess√§"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
@@ -157,11 +157,11 @@ msgstr "P&olku ja nimi"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
-msgstr "Ylim‰‰r‰iset optiot:"
+msgstr "Ylim√§√§r√§iset optiot:"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "T‰m‰ komento on poistettu asetustiedostossa"
+msgstr "T√§m√§ komento on poistettu asetustiedostossa"
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
@@ -173,11 +173,11 @@ msgstr "#"
 
 #: MtrDlg.cpp:88
 msgid "Hostname"
-msgstr "Is‰nt‰nimi"
+msgstr "Is√§nt√§nimi"
 
 #: MtrDlg.cpp:89
 msgid "Loss"
-msgstr "H‰viˆ"
+msgstr "H√§vi√∂"
 
 #: MtrDlg.cpp:91
 msgid "Rcv"
@@ -185,7 +185,7 @@ msgstr "Vas"
 
 #: MtrDlg.cpp:93
 msgid "Snt"
-msgstr "L‰h"
+msgstr "L√§h"
 
 #: MtrDlg.cpp:95
 msgid "Best"
@@ -213,7 +213,7 @@ msgstr "ns&lookup"
 
 #: TracerouteDlg.cpp:115
 msgid "&Maximum number of hops:"
-msgstr "&Maksimim‰‰r‰ hyppyj‰:"
+msgstr "&Maksimim√§√§r√§ hyppyj√§:"
 
 #: HostDlg.cpp:112
 msgid "address (A)"
@@ -241,7 +241,7 @@ msgstr "tunnisteen alku (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
-msgstr "mik‰ tahansa (ANY)"
+msgstr "mik√§ tahansa (ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"
@@ -257,4 +257,4 @@ msgstr "Pal&velin"
 
 #: FingerDlg.cpp:77
 msgid "&User:"
-msgstr "&K‰ytt‰j‰:"
+msgstr "&K√§ytt√§j√§:"

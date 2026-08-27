@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kmenuedit.cpp:69
@@ -19,7 +19,7 @@ msgstr "Endre &menynavn"
 
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
-msgstr "Last inn &filtyper på nytt"
+msgstr "Last inn &filtyper pÃ¥ nytt"
 
 #: kmenuedit.cpp:77
 msgid "by"
@@ -35,7 +35,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Ønsker du å lagre dine endringer ?"
+"Ã˜nsker du Ã¥ lagre dine endringer ?"
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
@@ -43,7 +43,7 @@ msgstr "TOM"
 
 #: kmenuedit.cpp:343
 msgid "Reload Menus"
-msgstr "Last inn menyer på nytt"
+msgstr "Last inn menyer pÃ¥ nytt"
 
 #: kmenuedit.cpp:344
 msgid ""
@@ -51,7 +51,7 @@ msgid ""
 "Are you sure you want to reload ?"
 msgstr ""
 "Ny innlasting av menyene vil forkaste alle endringer.\n"
-"Er du sikker på at du ønsker å laste inn på nytt?"
+"Er du sikker pÃ¥ at du Ã¸nsker Ã¥ laste inn pÃ¥ nytt?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
@@ -63,15 +63,15 @@ msgid ""
 " Do you want to create it now ?"
 msgstr ""
 "Mappen for din personlige meny eksisterer ikke.\n"
-" Ønsker du å lage den nå ?"
+" Ã˜nsker du Ã¥ lage den nÃ¥ ?"
 
 #: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Umulig å opprette katalog for personlig meny.\n"
-" Velg Ok for å gå ut av KMenuedit"
+"Umulig Ã¥ opprette katalog for personlig meny.\n"
+" Velg Ok for Ã¥ gÃ¥ ut av KMenuedit"
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
@@ -79,11 +79,11 @@ msgstr "Delelinje"
 
 #: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
-msgstr "Åpne/ Lukk"
+msgstr "Ã…pne/ Lukk"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr "Velg oppføring for flytting"
+msgstr "Velg oppfÃ¸ring for flytting"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
@@ -126,8 +126,8 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Beklager ! Du må lagre dine endringer\n"
-"før du kan slippe denne på et annet vindu."
+"Beklager ! Du mÃ¥ lagre dine endringer\n"
+"fÃ¸r du kan slippe denne pÃ¥ et annet vindu."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
@@ -135,7 +135,7 @@ msgstr "Stil for KDE Desktop Entries er ikke satt."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "Jeg foreslår følgende:"
+msgstr "Jeg foreslÃ¥r fÃ¸lgende:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
@@ -192,11 +192,11 @@ msgstr "Kommentar:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "Utfør"
+msgstr "UtfÃ¸r"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
-msgstr "Utfør:"
+msgstr "UtfÃ¸r:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
@@ -204,7 +204,7 @@ msgstr "Arbeidsmappe:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
-msgstr "Kjør i terminal"
+msgstr "KjÃ¸r i terminal"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
@@ -212,7 +212,7 @@ msgstr "Terminalvalg:"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "Binærmønster:"
+msgstr "BinÃ¦rmÃ¸nster:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
@@ -224,7 +224,7 @@ msgstr "Applikasjonstittel:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "Applikasjon som skal utføres ved knappetrykk:"
+msgstr "Applikasjon som skal utfÃ¸res ved knappetrykk:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -256,7 +256,7 @@ msgstr "Endre menynavn"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Endre navn på menyer som vist i KPanel"
+msgstr "Endre navn pÃ¥ menyer som vist i KPanel"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

@@ -10,96 +10,96 @@ msgstr ""
 "PO-Revision-Date: 1998-02-21 05:58+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: adddata.cpp:38
 msgid "Task Name"
-msgstr "�u�@�W��"
+msgstr "¤u§@¦WºÙ"
 
 #: adddata.cpp:44
 msgid "Accumutated time (in minutes)"
-msgstr "�ֿn�ɶ�(����)"
+msgstr "²Ö¿n®É¶¡(¤ÀÄÁ)"
 
 #: adddlg.cpp:25
 msgid "KArm: New Task"
-msgstr "KArm: �s�u�@"
+msgstr "KArm: ·s¤u§@"
 
 #: karm.cpp:116
 msgid "Karm: Save error"
-msgstr "Karm: �x�s�o�Ϳ��~"
+msgstr "Karm: Àx¦sµo¥Í¿ù»~"
 
 #: karm.cpp:117
 msgid ""
 "There was an error trying to save your data file.\n"
 "Time accumulated this session will NOT be saved!\n"
 msgstr ""
-"�b�x�s����ɮɵo�Ϳ��~.\n"
-"������ƱN���|�Q�x�s!\n"
+"¦bÀx¦s¸ê®ÆÀÉ®Éµo¥Í¿ù»~.\n"
+"¦¹¦¸¸ê®Æ±N¤£·|³QÀx¦s!\n"
 
 #: karm.cpp:119
 msgid "Oh No!"
-msgstr "��! ��!"
+msgstr "³á! ¤£!"
 
 #: karm.cpp:205
 msgid ": Add New Task"
-msgstr ": �s�W�s�u�@"
+msgstr ": ·s¼W·s¤u§@"
 
 #: karm.cpp:216
 msgid "Karm::createNewTask called and there's no dialog!"
-msgstr "�I�s Karm::createNewTask ���S����ܮ�!"
+msgstr "©I¥s Karm::createNewTask ¦ý¨S¦³¹ï¸Ü®Ø!"
 
 #: karm.cpp:243
 msgid ": Edit Task Entry"
-msgstr ": �s��@�Ӥu�@"
+msgstr ": ½s¿è¤@­Ó¤u§@"
 
 #: karm.cpp:256
 msgid "Karm::updateExistingTask called and there's no dlg!"
-msgstr "�I�s Karm::updateExistingTask ���S����ܮ�!"
+msgstr "©I¥s Karm::updateExistingTask ¦ý¨S¦³¹ï¸Ü®Ø!"
 
 #: karm.cpp:280
 msgid ": Deleting Task"
-msgstr ": �R���u�@"
+msgstr ": §R°£¤u§@"
 
 #: karm.cpp:281
 msgid "Are you sure you want to delete this task?"
-msgstr "�T�w�n�R���o�Ӥu�@?"
+msgstr "½T©w­n§R°£³o­Ó¤u§@?"
 
 #: karm.cpp:283
 msgid "&Yes"
-msgstr "�O[&Y]"
+msgstr "¬O[&Y]"
 
 #: top.cpp:57 top.cpp:139
 msgid "clock inactive"
-msgstr "�p�ɾ� ����"
+msgstr "­p®É¾¹ °£¯à"
 
 #: top.cpp:58
 msgid "This session:"
-msgstr "�o������:"
+msgstr "³o­ÓÀô¹Ò:"
 
 #: top.cpp:74 top.cpp:152
 msgid "Start Clock"
-msgstr "�}�ҭp�ɾ�"
+msgstr "¶}±Ò­p®É¾¹"
 
 #: top.cpp:79 top.cpp:154
 msgid "Stop Clock"
-msgstr "����p�ɾ�"
+msgstr "°±¤î­p®É¾¹"
 
 #: top.cpp:85 top.cpp:156
 msgid "New Task"
-msgstr "�s�u�@"
+msgstr "·s¤u§@"
 
 #: top.cpp:89 top.cpp:158
 msgid "Delete Task"
-msgstr "�R���u�@"
+msgstr "§R°£¤u§@"
 
 #: top.cpp:94 top.cpp:160
 msgid "Edit Task"
-msgstr "�s��u�@"
+msgstr "½s¿è¤u§@"
 
 #: top.cpp:132
 msgid "clock active"
-msgstr "�p�ɾ� �P��"
+msgstr "­p®É¾¹ ­P¯à"
 
 #: top.cpp:150
 msgid "Preferences"
@@ -116,11 +116,11 @@ msgstr ""
 
 #: top.cpp:200
 msgid "&Clock"
-msgstr "�p�ɾ�[&C]"
+msgstr "­p®É¾¹[&C]"
 
 #: top.cpp:201
 msgid "&Task"
-msgstr "�u�@[&T]"
+msgstr "¤u§@[&T]"
 
 #: top.cpp:209
 msgid "&Preferences..."
@@ -128,7 +128,7 @@ msgstr ""
 
 #: top.cpp:223
 msgid "S&top"
-msgstr "����[&S]"
+msgstr "°±¤î[&S]"
 
 #: top.cpp:229
 msgid "&New"
@@ -136,13 +136,13 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "&About"
-#~ msgstr "����"
+#~ msgstr "Ãö©ó"
 
 #~ msgid "About "
-#~ msgstr "����"
+#~ msgstr "Ãö©ó"
 
 #~ msgid "&Contents"
-#~ msgstr "���e[&C]"
+#~ msgstr "¤º®e[&C]"
 
 #~ msgid "&Start"
-#~ msgstr "�}�l[&S]"
+#~ msgstr "¶}©l[&S]"

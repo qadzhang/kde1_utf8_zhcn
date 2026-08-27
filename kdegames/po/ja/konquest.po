@@ -11,28 +11,28 @@ msgstr ""
 "Last-Translator: Taiki Komoda <tklab@ma6.seikyou.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: gameboard.cc:55
 msgid "End Turn"
-msgstr "¸òÂØ¤¹¤ë"
+msgstr "äº¤æ›¿ã™ã‚‹"
 
 #: gameboard.cc:203
 msgid ": Select source planet..."
-msgstr ": ½ĞÆ°¸µ¤ÎÏÇÀ±¤òÁªÂò..."
+msgstr ": å‡ºå‹•å…ƒã®æƒ‘æ˜Ÿã‚’é¸æŠ..."
 
 #: gameboard.cc:221
 msgid ": Select destination planet..."
-msgstr ": ½ĞÆ°Àè¤ÎÏÇÀ±¤òÁªÂò..."
+msgstr ": å‡ºå‹•å…ˆã®æƒ‘æ˜Ÿã‚’é¸æŠ..."
 
 #: gameboard.cc:243
 msgid ": How many ships?"
-msgstr ": ²¿ÀÉ½Ğ¤¹?"
+msgstr ": ä½•éš»å‡ºã™?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
-msgstr "Â¬ÎÌ: »ÏÅÀ¤È¤Ê¤ëÏÇÀ±¤òÁªÂò¡£"
+msgstr "æ¸¬é‡: å§‹ç‚¹ã¨ãªã‚‹æƒ‘æ˜Ÿã‚’é¸æŠã€‚"
 
 #: gameboard.cc:287
 #, c-format
@@ -40,82 +40,82 @@ msgid ""
 "The distance from Planet %s to Planet %s is %s light years.\n"
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
-"ÏÇÀ± %s ¤«¤é ÏÇÀ± %s ¤Ş¤Ç¤Îµ÷Î¥¤Ï %s ¸÷Ç¯¤Ç¤¹¡£\n"
-" º£½ĞÆ°¤¹¤ë¤È %s ²óÌÜ¤ËÅşÃå¤·¤Ş¤¹"
+"æƒ‘æ˜Ÿ %s ã‹ã‚‰ æƒ‘æ˜Ÿ %s ã¾ã§ã®è·é›¢ã¯ %s å…‰å¹´ã§ã™ã€‚\n"
+" ä»Šå‡ºå‹•ã™ã‚‹ã¨ %s å›ç›®ã«åˆ°ç€ã—ã¾ã™"
 
 #: gameboard.cc:291
 msgid "Distance"
-msgstr "µ÷Î¥"
+msgstr "è·é›¢"
 
 #: gameboard.cc:296
 msgid "Ruler: Select ending planet."
-msgstr "Â¬ÎÌ: ½ªÅÀ¤È¤Ê¤ëÏÇÀ±¤òÁªÂò¡£"
+msgstr "æ¸¬é‡: çµ‚ç‚¹ã¨ãªã‚‹æƒ‘æ˜Ÿã‚’é¸æŠã€‚"
 
 #: gameboard.cc:311
 #, c-format
 msgid "Turn #: %2d of %2d"
-msgstr "½çÈÖ #: %2d / %2d"
+msgstr "é †ç•ª #: %2d / %2d"
 
 #: gameboard.cc:426
 #, c-format
 msgid "The once mighty empire of %s has fallen in ruins."
-msgstr "¤«¤Ä¤Æ±É¤¨¤¿%sÄë¹ñ¤ÏÊø¤ìÍî¤Á¤¿¡£ "
+msgstr "ã‹ã¤ã¦æ „ãˆãŸ%så¸å›½ã¯å´©ã‚Œè½ã¡ãŸã€‚ "
 
 #: gameboard.cc:428
 msgid "An Empire has fallen..."
-msgstr "Äë¹ñ¤ÏÊø¤ìÍî¤Á¤¿..."
+msgstr "å¸å›½ã¯å´©ã‚Œè½ã¡ãŸ..."
 
 #: gameboard.cc:438
 #, c-format
 msgid "The fallen empire of %s has staggered back to life."
-msgstr "Êø¤ìÍî¤Á¤¿%sÄë¹ñ¤Ï²¿¤È¤«À¸¤­ÊÖ¤Ã¤¿¡£"
+msgstr "å´©ã‚Œè½ã¡ãŸ%så¸å›½ã¯ä½•ã¨ã‹ç”Ÿãè¿”ã£ãŸã€‚"
 
 #: gameboard.cc:440
 msgid "Up from the ashes..."
-msgstr "³¥¤«¤é¤ÎÉü³è..."
+msgstr "ç°ã‹ã‚‰ã®å¾©æ´»..."
 
 #: gameboard.cc:460
 #, c-format
 msgid "Reinforcements have arrived for planet %s"
-msgstr "ÏÇÀ±%s¤Ë±ç·³¤¬ÅşÃå¤·¤¿¡£"
+msgstr "æƒ‘æ˜Ÿ%sã«æ´è»ãŒåˆ°ç€ã—ãŸã€‚"
 
 #: gameboard.cc:462
 msgid "Fleet Arrival"
-msgstr "´ÏÂâÅşÃå"
+msgstr "è‰¦éšŠåˆ°ç€"
 
 #: gameboard.cc:505
 #, c-format
 msgid "Planet %s has held against an attack from %s"
-msgstr "ÏÇÀ±%s¤Ï%s¤«¤é¤Î¹¶·â¤ËÂÑ¤¨¤¿"
+msgstr "æƒ‘æ˜Ÿ%sã¯%sã‹ã‚‰ã®æ”»æ’ƒã«è€ãˆãŸ"
 
 #: gameboard.cc:507
 msgid "Planet Holds"
-msgstr "ÏÇÀ±»à¼é"
+msgstr "æƒ‘æ˜Ÿæ­»å®ˆ"
 
 #: gameboard.cc:515
 #, c-format
 msgid "Planet %s has fallen to %s"
-msgstr "ÏÇÀ±%s¤Ï%s¤Ë¤è¤Ã¤Æ´ÙÍî¤·¤¿"
+msgstr "æƒ‘æ˜Ÿ%sã¯%sã«ã‚ˆã£ã¦é™¥è½ã—ãŸ"
 
 #: gameboard.cc:517
 msgid "Planet Conquered"
-msgstr "ÏÇÀ±¤ÏÀêÎÎ¤µ¤ì¤¿"
+msgstr "æƒ‘æ˜Ÿã¯å é ˜ã•ã‚ŒãŸ"
 
 #: gameboard.cc:579 mainwin.cc:82
 msgid "End Game"
-msgstr "¥²¡¼¥à½ªÎ»"
+msgstr "ã‚²ãƒ¼ãƒ çµ‚äº†"
 
 #: gameboard.cc:580
 msgid "Do you wish to retire this game?"
-msgstr "¤³¤Î¥²¡¼¥à¤ò¤ä¤á¤Ş¤¹¤«?"
+msgstr "ã“ã®ã‚²ãƒ¼ãƒ ã‚’ã‚„ã‚ã¾ã™ã‹?"
 
 #: gameboard.cc:586
 msgid "Final Standings"
-msgstr "ºÇ½ª·ë²Ì"
+msgstr "æœ€çµ‚çµæœ"
 
 #: gameboard.cc:758
 msgid "Not enough ships to send."
-msgstr "´ÏÂâ¤¬Â­¤ê¤Ş¤»¤ó"
+msgstr "è‰¦éšŠãŒè¶³ã‚Šã¾ã›ã‚“"
 
 #: mainwin.cc:23
 msgid "GNU-Lactic Conquest"
@@ -134,114 +134,114 @@ msgstr ""
 
 #: mainwin.cc:88
 msgid "Measure Distance"
-msgstr "µ÷Î¥¤òÂ¬Äê"
+msgstr "è·é›¢ã‚’æ¸¬å®š"
 
 #: mainwin.cc:92
 msgid "Show Standings"
-msgstr "½ç°Ì¤ò¸«¤ë"
+msgstr "é †ä½ã‚’è¦‹ã‚‹"
 
 #: newgamedlg.cc:31
 msgid "Preview Map"
-msgstr "¥Ş¥Ã¥×¤Î¥×¥ì¥Ó¥å¡¼"
+msgstr "ãƒãƒƒãƒ—ã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼"
 
 #: newgamedlg.cc:35
 msgid "&Reject Map"
-msgstr "¥Ş¥Ã¥×µñÈİ (&R)"
+msgstr "ãƒãƒƒãƒ—æ‹’å¦ (&R)"
 
 #: newgamedlg.cc:41
 msgid "&Player List"
-msgstr "¥×¥ì¡¼¥ä¡¼¥ê¥¹¥È (&P)"
+msgstr "ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼ãƒªã‚¹ãƒˆ (&P)"
 
 #: newgamedlg.cc:48
 msgid "&Add"
-msgstr "ÄÉ²Ã (&A)"
+msgstr "è¿½åŠ  (&A)"
 
 #: newgamedlg.cc:54
 msgid "&Clear"
-msgstr "Á´¤Æºï½ü (&C)"
+msgstr "å…¨ã¦å‰Šé™¤ (&C)"
 
 #: newgamedlg.cc:70
 msgid "&Start Game"
-msgstr "¥²¡¼¥à³«»Ï (&S)"
+msgstr "ã‚²ãƒ¼ãƒ é–‹å§‹ (&S)"
 
 #: newgamedlg.cc:162
 #, c-format
 msgid "Number of Neutral Planets: %2d"
-msgstr "ÃæÎ©¤ÎÏÇÀ±¤Î¿ô: %2d"
+msgstr "ä¸­ç«‹ã®æƒ‘æ˜Ÿã®æ•°: %2d"
 
 #: newgamedlg.cc:174
 #, c-format
 msgid "Number of turns: %2d"
-msgstr "½çÈÖ¤Î²ó¿ô: %2d"
+msgstr "é †ç•ªã®å›æ•°: %2d"
 
 #: planet_info.cc:81 planet_info.cc:116 planet_info.cc:131
 msgid "Planet Name : "
-msgstr "ÏÇÀ±Ì¾ : "
+msgstr "æƒ‘æ˜Ÿå : "
 
 #: planet_info.cc:84 planet_info.cc:134
 msgid "Owner : "
-msgstr "½êÍ­¼Ô : "
+msgstr "æ‰€æœ‰è€… : "
 
 #: planet_info.cc:87
 msgid "Ships : "
-msgstr "´ÏÂâ : "
+msgstr "è‰¦éšŠ : "
 
 #: planet_info.cc:90
 msgid "Production : "
-msgstr "À¸»º : "
+msgstr "ç”Ÿç”£ : "
 
 #: planet_info.cc:93
 msgid "Kill Percent : "
-msgstr "¹¶·âÀ®¸ùÎ¨ : "
+msgstr "æ”»æ’ƒæˆåŠŸç‡ : "
 
 #: planet_info.cc:137
 #, c-format
 msgid "Ships : %d"
-msgstr "´ÏÂâ : %d"
+msgstr "è‰¦éšŠ : %d"
 
 #: planet_info.cc:140
 #, c-format
 msgid "Production : %d"
-msgstr "À¸»º : %d"
+msgstr "ç”Ÿç”£ : %d"
 
 #: planet_info.cc:143
 #, c-format
 msgid "Kill Percent : %.3f"
-msgstr "¹¶·âÀ®¸ùÎ¨ : %.3f"
+msgstr "æ”»æ’ƒæˆåŠŸç‡ : %.3f"
 
 #: gameenddlg.cc:14
 msgid ""
 "This is the last turn.\n"
 "Do you wish to add more turns?"
 msgstr ""
-"¤³¤ì¤¬ºÇ¸å¤Î½çÈÖ¤Ç¤¹¡£\n"
-"¤â¤Ã¤È²ó¿ô¤òÁı¤ä¤·¤Ş¤¹¤«?"
+"ã“ã‚ŒãŒæœ€å¾Œã®é †ç•ªã§ã™ã€‚\n"
+"ã‚‚ã£ã¨å›æ•°ã‚’å¢—ã‚„ã—ã¾ã™ã‹?"
 
 #: gameenddlg.cc:64
 #, c-format
 msgid "Add %d turns"
-msgstr "%d ²óÄÉ²Ã"
+msgstr "%d å›è¿½åŠ "
 
 #: scoredlg.cc:18
 msgid "Player"
-msgstr "¥×¥ì¡¼¥ä¡¼"
+msgstr "ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼"
 
 #: scoredlg.cc:19
 msgid "Ships Built"
-msgstr "´ÏÂâÀ¸»º"
+msgstr "è‰¦éšŠç”Ÿç”£"
 
 #: scoredlg.cc:20
 msgid "Planets Conquered"
-msgstr "À¬Éş¤·¤¿ÏÇÀ±"
+msgstr "å¾æœã—ãŸæƒ‘æ˜Ÿ"
 
 #: scoredlg.cc:21
 msgid "Fleets Launched"
-msgstr "½ĞÆ°¤·¤¿±ç·³"
+msgstr "å‡ºå‹•ã—ãŸæ´è»"
 
 #: scoredlg.cc:22
 msgid "Fleets Destroyed"
-msgstr "ÇË²õ¤µ¤ì¤¿±ç·³"
+msgstr "ç ´å£Šã•ã‚ŒãŸæ´è»"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"
-msgstr "ÇË²õ¤µ¤ì¤¿´ÏÂâ"
+msgstr "ç ´å£Šã•ã‚ŒãŸè‰¦éšŠ"

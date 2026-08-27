@@ -7,31 +7,31 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-13 01:34+0100\n"
 "PO-Revision-Date: 1998-12-13 17:01+0100\n"
-"Last-Translator: Karl Backström <backstrom@kde.org>\n"
+"Last-Translator: Karl BackstrÃ¶m <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: gameboard.cc:55
 msgid "End Turn"
-msgstr "Avsluta omgång"
+msgstr "Avsluta omgÃ¥ng"
 
 #: gameboard.cc:203
 msgid ": Select source planet..."
-msgstr ": Välj avgångsplaneten..."
+msgstr ": VÃ¤lj avgÃ¥ngsplaneten..."
 
 #: gameboard.cc:221
 msgid ": Select destination planet..."
-msgstr ": Välj ankomstplaneten..."
+msgstr ": VÃ¤lj ankomstplaneten..."
 
 #: gameboard.cc:243
 msgid ": How many ships?"
-msgstr ": Hur många farkoster?"
+msgstr ": Hur mÃ¥nga farkoster?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
-msgstr "Mätning: Välj utgångsplanet."
+msgstr "MÃ¤tning: VÃ¤lj utgÃ¥ngsplanet."
 
 #: gameboard.cc:287
 #, c-format
@@ -39,26 +39,26 @@ msgid ""
 "The distance from Planet %s to Planet %s is %s light years.\n"
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
-"Avståndet från planeten %s till planeten %s är %s ljusår bort.\n"
-"En farkost som reser den här omgången kommer fram omgång %s"
+"AvstÃ¥ndet frÃ¥n planeten %s till planeten %s Ã¤r %s ljusÃ¥r bort.\n"
+"En farkost som reser den hÃ¤r omgÃ¥ngen kommer fram omgÃ¥ng %s"
 
 #: gameboard.cc:291
 msgid "Distance"
-msgstr "Avstånd"
+msgstr "AvstÃ¥nd"
 
 #: gameboard.cc:296
 msgid "Ruler: Select ending planet."
-msgstr "Mätning: Välj avslutningsplanet."
+msgstr "MÃ¤tning: VÃ¤lj avslutningsplanet."
 
 #: gameboard.cc:311
 #, c-format
 msgid "Turn #: %2d of %2d"
-msgstr "Omgång #: %2d av %2d"
+msgstr "OmgÃ¥ng #: %2d av %2d"
 
 #: gameboard.cc:426
 #, c-format
 msgid "The once mighty empire of %s has fallen in ruins."
-msgstr "Det en gång stora imperiet %s har fallit i ruiner."
+msgstr "Det en gÃ¥ng stora imperiet %s har fallit i ruiner."
 
 #: gameboard.cc:428
 msgid "An Empire has fallen..."
@@ -71,7 +71,7 @@ msgstr "Det fallna riket %s har kommit till liv igen."
 
 #: gameboard.cc:440
 msgid "Up from the ashes..."
-msgstr "Upp från askan..."
+msgstr "Upp frÃ¥n askan..."
 
 #: gameboard.cc:460
 #, c-format
@@ -80,16 +80,16 @@ msgstr "Ytterliggare styrkor har kommit till planeten %s"
 
 #: gameboard.cc:462
 msgid "Fleet Arrival"
-msgstr "Flottan anlände"
+msgstr "Flottan anlÃ¤nde"
 
 #: gameboard.cc:505
 #, c-format
 msgid "Planet %s has held against an attack from %s"
-msgstr "Planeten %s har hållit emot en attack från %s"
+msgstr "Planeten %s har hÃ¥llit emot en attack frÃ¥n %s"
 
 #: gameboard.cc:507
 msgid "Planet Holds"
-msgstr "Planeten höll emot"
+msgstr "Planeten hÃ¶ll emot"
 
 #: gameboard.cc:515
 #, c-format
@@ -98,7 +98,7 @@ msgstr "Planeten %s har fallit till %s"
 
 #: gameboard.cc:517
 msgid "Planet Conquered"
-msgstr "Planeten erövrad"
+msgstr "Planeten erÃ¶vrad"
 
 #: gameboard.cc:579 mainwin.cc:82
 msgid "End Game"
@@ -106,7 +106,7 @@ msgstr "Avsluta spelet"
 
 #: gameboard.cc:580
 msgid "Do you wish to retire this game?"
-msgstr "Vill du dra dig tillbaka från spelet?"
+msgstr "Vill du dra dig tillbaka frÃ¥n spelet?"
 
 #: gameboard.cc:586
 msgid "Final Standings"
@@ -114,7 +114,7 @@ msgstr "Final statistik"
 
 #: gameboard.cc:758
 msgid "Not enough ships to send."
-msgstr "Inte tillräckligt med farkoster att skicka."
+msgstr "Inte tillrÃ¤ckligt med farkoster att skicka."
 
 #: mainwin.cc:23
 msgid "GNU-Lactic Conquest"
@@ -122,24 +122,24 @@ msgstr "GNU-Lactic Conquest"
 
 #: mainwin.cc:47
 #, c-format
-msgid ""
-"Version %s\n"
-"Copyright (c) 1998 by\n"
-"The Gnu-Lactic Conquest Project\n"
-"\n"
-"KDE version by Russ Steffen <rsteffen@ia.net>\n"
-"See http://www.ia.net/~rsteffen/konquest.html for more info"
-msgstr ""
-"Version %d\n"
-"Copyright (c) 1998 av\n"
-"The Gnu-Lactic Conquest Projektet\n"
-"\n"
-"KDE version av Russ Steffen <rsteffen@ia.net>\n"
-"Gå till http://www.ia.net/~rsteffen/konquest.html för mer info."
+#~ msgid ""
+#~ "Version %s\n"
+#~ "Copyright (c) 1998 by\n"
+#~ "The Gnu-Lactic Conquest Project\n"
+#~ "\n"
+#~ "KDE version by Russ Steffen <rsteffen@ia.net>\n"
+#~ "See http://www.ia.net/~rsteffen/konquest.html for more info"
+#~ msgstr ""
+#~ "Version %d\n"
+#~ "Copyright (c) 1998 av\n"
+#~ "The Gnu-Lactic Conquest Projektet\n"
+#~ "\n"
+#~ "KDE version av Russ Steffen <rsteffen@ia.net>\n"
+#~ "GÃ¥ till http://www.ia.net/~rsteffen/konquest.html fÃ¶r mer info."
 
 #: mainwin.cc:88
 msgid "Measure Distance"
-msgstr "Mät avståndet"
+msgstr "MÃ¤t avstÃ¥ndet"
 
 #: mainwin.cc:92
 msgid "Show Standings"
@@ -147,7 +147,7 @@ msgstr "Visa statistik"
 
 #: newgamedlg.cc:31
 msgid "Preview Map"
-msgstr "Föregående karta"
+msgstr "FÃ¶regÃ¥ende karta"
 
 #: newgamedlg.cc:35
 msgid "&Reject Map"
@@ -159,11 +159,11 @@ msgstr "&Spelar lista"
 
 #: newgamedlg.cc:48
 msgid "&Add"
-msgstr "&Lägg till"
+msgstr "&LÃ¤gg till"
 
 #: newgamedlg.cc:54
 msgid "&Clear"
-msgstr "&Töm"
+msgstr "&TÃ¶m"
 
 #: newgamedlg.cc:70
 msgid "&Start Game"
@@ -177,7 +177,7 @@ msgstr "Antal neutrala planeter: %2d"
 #: newgamedlg.cc:174
 #, c-format
 msgid "Number of turns: %2d"
-msgstr "Antal omgångar: %2d"
+msgstr "Antal omgÃ¥ngar: %2d"
 
 #: planet_info.cc:81 planet_info.cc:116 planet_info.cc:131
 msgid "Planet Name : "
@@ -185,7 +185,7 @@ msgstr "Planetens namn:"
 
 #: planet_info.cc:84 planet_info.cc:134
 msgid "Owner : "
-msgstr "Ägare: "
+msgstr "Ã„gare: "
 
 #: planet_info.cc:87
 msgid "Ships : "
@@ -197,7 +197,7 @@ msgstr "Prodution: "
 
 #: planet_info.cc:93
 msgid "Kill Percent : "
-msgstr "Döda i procent: "
+msgstr "DÃ¶da i procent: "
 
 #: planet_info.cc:137
 #, c-format
@@ -212,20 +212,20 @@ msgstr "Prodution: %d"
 #: planet_info.cc:143
 #, c-format
 msgid "Kill Percent : %.3f"
-msgstr "Döda i procent: %.3f"
+msgstr "DÃ¶da i procent: %.3f"
 
 #: gameenddlg.cc:14
 msgid ""
 "This is the last turn.\n"
 "Do you wish to add more turns?"
 msgstr ""
-"Det här är den sista omgången.\n"
-"Vill du lägga till fler omgångar?"
+"Det hÃ¤r Ã¤r den sista omgÃ¥ngen.\n"
+"Vill du lÃ¤gga till fler omgÃ¥ngar?"
 
 #: gameenddlg.cc:64
 #, c-format
 msgid "Add %d turns"
-msgstr "Lägg till %d omgångar"
+msgstr "LÃ¤gg till %d omgÃ¥ngar"
 
 #: scoredlg.cc:18
 msgid "Player"
@@ -237,16 +237,16 @@ msgstr "Farkoster byggda"
 
 #: scoredlg.cc:20
 msgid "Planets Conquered"
-msgstr "Planeter erövrade"
+msgstr "Planeter erÃ¶vrade"
 
 #: scoredlg.cc:21
 msgid "Fleets Launched"
-msgstr "Flottor ivägskickade"
+msgstr "Flottor ivÃ¤gskickade"
 
 #: scoredlg.cc:22
 msgid "Fleets Destroyed"
-msgstr "Flottor förstörda"
+msgstr "Flottor fÃ¶rstÃ¶rda"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"
-msgstr "Farkoster förstörda"
+msgstr "Farkoster fÃ¶rstÃ¶rda"

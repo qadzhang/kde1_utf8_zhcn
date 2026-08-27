@@ -10,12 +10,12 @@ msgstr ""
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
-msgstr "KDE rahvusvaheline klaviatuur on sellel ekraanil juba k‰ivitatud"
+msgstr "KDE rahvusvaheline klaviatuur on sellel ekraanil juba k√§ivitatud"
 
 #: kikbd.cpp:295
 #, c-format
@@ -33,7 +33,7 @@ msgid ""
 "Skipping this map."
 msgstr ""
 "Klahvitabelit \"%s\" ei eksisteeri.\n"
-"See j‰etakse vahele."
+"See j√§etakse vahele."
 
 #: kikbd.cpp:337
 msgid "Setup"
@@ -42,12 +42,12 @@ msgstr "Seadistus"
 #: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
-msgstr "Modifikaatorit %s ei ole vıimalik eemadada.\n"
+msgstr "Modifikaatorit %s ei ole v√µimalik eemadada.\n"
 
 #: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "%s pole vıimalik lisada modifikaatorisse nr.3.\n"
+msgstr "%s pole v√µimalik lisada modifikaatorisse nr.3.\n"
 
 #: kikbd.cpp:384
 #, c-format
@@ -55,8 +55,8 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"Mode switch'i kui %s pole vıimalik seada klaviatuuri %s\n"
-"jaoks. Alt s¸mbolid keelatud"
+"Mode switch'i kui %s pole v√µimalik seada klaviatuuri %s\n"
+"jaoks. Alt s√ºmbolid keelatud"
 
 #
 #: kikbd.cpp:406
@@ -64,24 +64,24 @@ msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"CapsLock'i pole vıimalik modifikaatoritest eemaldada.\n"
+"CapsLock'i pole v√µimalik modifikaatoritest eemaldada.\n"
 "CapsLock'i emuleerimine keelatud"
 
 #: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
-msgstr "Rahvusvahelisest klaviatuurist v‰ljumine"
+msgstr "Rahvusvahelisest klaviatuurist v√§ljumine"
 
 #: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
-"Sa soovisid v‰ljuda programmist \"Rahvusvaheline klaviatuur\".\n"
-"Soovid sa, et see k‰ivitataks automaatselt j‰rgmisel sisse logimisel?"
+"Sa soovisid v√§ljuda programmist \"Rahvusvaheline klaviatuur\".\n"
+"Soovid sa, et see k√§ivitataks automaatselt j√§rgmisel sisse logimisel?"
 
 #: keymap.cpp:186
 msgid "KeyMap: can't allocate memory"
-msgstr "KeyMap: m‰lu pole vıimalik jaotada"
+msgstr "KeyMap: m√§lu pole v√µimalik jaotada"
 
 #: keymap.cpp:233
 #, c-format
@@ -91,15 +91,15 @@ msgid ""
 "You can preset X codes from section \"Advanced\"\n"
 "in the configuration program."
 msgstr ""
-"S¸mbolit \"%s\" pole vıimalik leida.\n"
-"Vıibolla ei lange su vaikimisi X'i koodid kokku.\n"
-"Sa vıid l‰htestada X'i koodid konfiguratsiooni\n"
-"programmi sektsioonis \"T‰psemalt\"."
+"S√ºmbolit \"%s\" pole v√µimalik leida.\n"
+"V√µibolla ei lange su vaikimisi X'i koodid kokku.\n"
+"Sa v√µid l√§htestada X'i koodid konfiguratsiooni\n"
+"programmi sektsioonis \"T√§psemalt\"."
 
 #: keymap.cpp:238
 #, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "Klavitabel: s¸mbolit \"%s\" pole vıimalik leida."
+msgstr "Klavitabel: s√ºmbolit \"%s\" pole v√µimalik leida."
 
 #: keymap.cpp:246
 #, c-format
@@ -109,7 +109,7 @@ msgstr "Klahvitabel: ei saa aru klahvi koodist \"%s\"."
 #: keymap.cpp:252
 #, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "Klahvitabel: klahvi kood \"%s\" on piirkonnast v‰ljas"
+msgstr "Klahvitabel: klahvi kood \"%s\" on piirkonnast v√§ljas"
 
 #: kikbdconf.cpp:102
 msgid "Global"
@@ -161,7 +161,7 @@ msgstr "Vasakud (Ctrl+Shift)"
 
 #: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
-msgstr "Mılemad Shift'id (Shift+Shift)"
+msgstr "M√µlemad Shift'id (Shift+Shift)"
 
 #
 #: kikbdconf.cpp:120
@@ -183,11 +183,11 @@ msgstr "Vasak Meta"
 
 #: kikbdconf.cpp:126
 msgid "Top Left"
-msgstr "‹leval vasakul"
+msgstr "√úleval vasakul"
 
 #: kikbdconf.cpp:127
 msgid "Top Right"
-msgstr "‹leval paremal"
+msgstr "√úleval paremal"
 
 #: kikbdconf.cpp:128
 msgid "Bottom Left"
@@ -208,7 +208,7 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "%s\n"
-"Soovid sa praegu j‰tkata?"
+"Soovid sa praegu j√§tkata?"
 
 #: kikbdconf.cpp:223
 msgid ""
@@ -216,7 +216,7 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 "Sa kasutad \"Rahvusvahelist klaviatuuri\" esimest korda.\n"
-"Ma installeerisin mitmed vaikev‰‰rtused."
+"Ma installeerisin mitmed vaikev√§√§rtused."
 
 #: kikbdconf.cpp:379
 msgid "unknown"
@@ -228,7 +228,7 @@ msgstr "vaikimisi"
 
 #: kikbdconf.cpp:419
 msgid "Author:  Not specified"
-msgstr "Autor:  Ei ole m‰‰ratud"
+msgstr "Autor:  Ei ole m√§√§ratud"
 
 #: kikbdconf.cpp:421
 msgid "Author"
@@ -252,7 +252,7 @@ msgstr "kasutaja fail"
 
 #: kikbdconf.cpp:433
 msgid "system file"
-msgstr "s¸steemne fail"
+msgstr "s√ºsteemne fail"
 
 #: kikbdconf.cpp:438
 msgid "Statistic:  "
@@ -260,7 +260,7 @@ msgstr "Statistika:  "
 
 #: kikbdconf.cpp:446
 msgid "symbols"
-msgstr "s¸mbolid"
+msgstr "s√ºmbolid"
 
 #: kikbdconf.cpp:454
 msgid "codes"
@@ -268,7 +268,7 @@ msgstr "koodid"
 
 #: kikbdconf.cpp:457
 msgid "alternative symbols"
-msgstr "alternatiivsed s¸mbolid"
+msgstr "alternatiivsed s√ºmbolid"
 
 #
 #: kikbdconf.cpp:469
@@ -290,7 +290,7 @@ msgstr "Rahvusvahelise klaviatuuri hoiatus"
 
 #: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
-msgstr "Rahvusvahelise klaviatuuri k¸simus"
+msgstr "Rahvusvahelise klaviatuuri k√ºsimus"
 
 #: kikbdconf.cpp:549
 msgid "Configure"
@@ -302,7 +302,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"Soovid sa j‰tkata?"
+"Soovid sa j√§tkata?"
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
@@ -322,11 +322,11 @@ msgstr "Eemalda valitud klahvitabel"
 
 #: widgets.cpp:136
 msgid "U&p"
-msgstr "‹l&es"
+msgstr "√úl&es"
 
 #: widgets.cpp:136
 msgid "Move up selected keyboard map"
-msgstr "Liiguta valitud klahvitabel ¸les"
+msgstr "Liiguta valitud klahvitabel √ºles"
 
 #: widgets.cpp:140
 msgid "D&own"
@@ -342,7 +342,7 @@ msgstr "&Info"
 
 #: widgets.cpp:145
 msgid "Display information for selected keyboard map"
-msgstr "N‰ita valitud klahvitabeli infot"
+msgstr "N√§ita valitud klahvitabeli infot"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
@@ -353,7 +353,7 @@ msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
 msgstr ""
-"Klaviatuurilt l¸litamiseks kasuta ainult vaikimisi- ja viimast aktiivset "
+"Klaviatuurilt l√ºlitamiseks kasuta ainult vaikimisi- ja viimast aktiivset "
 "klahvitabelit"
 
 #: widgets.cpp:224
@@ -374,7 +374,7 @@ msgstr "Lisa Klaviatuur"
 
 #: widgets.cpp:296
 msgid "Available keyboard maps"
-msgstr "Vıimalikud klahvitabelid"
+msgstr "V√µimalikud klahvitabelid"
 
 #: widgets.cpp:403
 msgid "Keyboard maps"
@@ -382,15 +382,15 @@ msgstr "Klahvitabelid"
 
 #: widgets.cpp:414
 msgid "Switch and Alt Switch"
-msgstr "L¸liti ja alt l¸liti"
+msgstr "L√ºliti ja alt l√ºliti"
 
 #: widgets.cpp:419
 msgid "Key(s) for switching between keyboard maps"
-msgstr "Klahv(id) klahvitabelite vahel l¸litamiseks"
+msgstr "Klahv(id) klahvitabelite vahel l√ºlitamiseks"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "Klahv aktiveerimaks alternatiivseid s¸mboleid k‰esolevas klahvitabelis"
+msgstr "Klahv aktiveerimaks alternatiivseid s√ºmboleid k√§esolevas klahvitabelis"
 
 #: widgets.cpp:438
 msgid "&Beep"
@@ -402,15 +402,15 @@ msgstr "Piiks kui klahvitabelit muudetakse"
 
 #: widgets.cpp:442
 msgid "Ad&vanced"
-msgstr "&T‰psemalt"
+msgstr "&T√§psemalt"
 
 #: widgets.cpp:442
 msgid "Advanced options"
-msgstr "T‰psemad valikud"
+msgstr "T√§psemad valikud"
 
 #: widgets.cpp:459
 msgid "Advanced"
-msgstr "T‰psemalt"
+msgstr "T√§psemalt"
 
 #: widgets.cpp:475
 msgid "&Emulate Caps Lock"
@@ -420,15 +420,15 @@ msgstr "&Emuleeri CapsLock'i"
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Emuleeri XServer'i CapsLock'i. Vajalik mınede keelte puhul"
+msgstr "Emuleeri XServer'i CapsLock'i. Vajalik m√µnede keelte puhul"
 
 #: widgets.cpp:482
 msgid "&World Menu"
-msgstr "&Maailma men¸¸"
+msgstr "&Maailma men√º√º"
 
 #: widgets.cpp:483
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "N‰ita men¸¸d igas aknas hoides all l¸litusklahve"
+msgstr "N√§ita men√º√ºd igas aknas hoides all l√ºlitusklahve"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -436,7 +436,7 @@ msgstr "&Salvesta klassid"
 
 #: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "V‰ljumisel salvesta suhted aknaklasside ja klahvitabelite vahel"
+msgstr "V√§ljumisel salvesta suhted aknaklasside ja klahvitabelite vahel"
 
 #: widgets.cpp:498
 msgid "Define X codes"
@@ -448,12 +448,12 @@ msgstr "Sisend"
 
 #: widgets.cpp:505
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Standartne viis. Klahvitabel on aktiivne kıikide akende jaoks"
+msgstr "Standartne viis. Klahvitabel on aktiivne k√µikide akende jaoks"
 
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "T‰iendatud viis. Klahvitabel salvestatakse iga akna jaoks eraldi"
+msgstr "T√§iendatud viis. Klahvitabel salvestatakse iga akna jaoks eraldi"
 
 #: widgets.cpp:513
 msgid ""
@@ -462,7 +462,7 @@ msgstr "Spetsiaalne viis. Klahvitabel salvestatakse iga aknaklassi jaoks eraldi"
 
 #: widgets.cpp:561
 msgid "Button Colors"
-msgstr "Nupu v‰rvid"
+msgstr "Nupu v√§rvid"
 
 #: widgets.cpp:571
 msgid "Foreground"
@@ -470,7 +470,7 @@ msgstr "Esiplaan"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr "Teksti esiplaani v‰rv"
+msgstr "Teksti esiplaani v√§rv"
 
 #: widgets.cpp:576
 msgid "Background"
@@ -478,7 +478,7 @@ msgstr "Taust"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr "Teksti tausta v‰rv"
+msgstr "Teksti tausta v√§rv"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -506,7 +506,7 @@ msgstr "&Kohanda fonti"
 
 #: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
-msgstr "Muuda teksti pealdise fonti vıi kasuta globaalseid seadistusi"
+msgstr "Muuda teksti pealdise fonti v√µi kasuta globaalseid seadistusi"
 
 #: widgets.cpp:611
 msgid "C&hange Font"
@@ -518,7 +518,7 @@ msgstr "&Autostart"
 
 #: widgets.cpp:657
 msgid "Start up automatically"
-msgstr "K‰ivitu automaatselt"
+msgstr "K√§ivitu automaatselt"
 
 #: widgets.cpp:663
 msgid "&Docked"
@@ -539,7 +539,7 @@ msgstr "Koht valitud nurgas"
 
 #: kcmikbd.cpp:64
 msgid "&General"
-msgstr "‹l&dine"
+msgstr "√úl&dine"
 
 #: kcmikbd.cpp:70
 msgid "&Style"

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:64
@@ -19,7 +19,7 @@ msgstr "&Paneel"
 
 #: main.cpp:70
 msgid "&Desktops"
-msgstr "&Töölauad"
+msgstr "&TÃ¶Ã¶lauad"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
@@ -39,7 +39,7 @@ msgstr "Asukoht"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "Ül&eval"
+msgstr "Ãœl&eval"
 
 #: panel.cpp:61
 msgid "&Left"
@@ -63,7 +63,7 @@ msgstr "Pei&detud"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "Üle&val"
+msgstr "Ãœle&val"
 
 #: panel.cpp:80
 msgid "Botto&m"
@@ -71,7 +71,7 @@ msgstr "A&ll"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "Üleval/vasa&kul"
+msgstr "Ãœleval/vasa&kul"
 
 #: panel.cpp:95
 msgid "Style"
@@ -91,7 +91,7 @@ msgstr "S&uur"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "Nä&htav"
+msgstr "NÃ¤&htav"
 
 #: desktops.cpp:82
 msgid "&Width"
@@ -99,11 +99,11 @@ msgstr "&Laius"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Menüü vihjed"
+msgstr "MenÃ¼Ã¼ vihjed"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Näita &menüü vihjeid"
+msgstr "NÃ¤ita &menÃ¼Ã¼ vihjeid"
 
 #: options.cpp:84
 msgid "De&lay:"
@@ -111,7 +111,7 @@ msgstr "&Viivitus:"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
-msgstr "Väikene"
+msgstr "VÃ¤ikene"
 
 #: options.cpp:98 options.cpp:167 options.cpp:269
 msgid "Large"
@@ -147,7 +147,7 @@ msgstr "Peida tegumiriba automaatselt"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
-msgstr "Animeeri näitamine/peitmine"
+msgstr "Animeeri nÃ¤itamine/peitmine"
 
 #: options.cpp:395
 msgid "Others"
@@ -155,19 +155,19 @@ msgstr "Teised"
 
 #: options.cpp:408
 msgid "Personal Menu Entries &First"
-msgstr "Personaalsed menüükirjed &eespool"
+msgstr "Personaalsed menÃ¼Ã¼kirjed &eespool"
 
 #: options.cpp:416
 msgid "Menu F&olders First"
-msgstr "Menüü ka&ustad eespool"
+msgstr "MenÃ¼Ã¼ ka&ustad eespool"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
-msgstr "Kell näitab aega AM/PM formaadis"
+msgstr "Kell nÃ¤itab aega AM/PM formaadis"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr "Kell näitab aega &Internrti löökides"
+msgstr "Kell nÃ¤itab aega &Internrti lÃ¶Ã¶kides"
 
 #: disknav.cpp:38
 msgid "History"
@@ -195,31 +195,31 @@ msgstr "Maksimaalne hiljutiste failide arv:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr "Maksimaalselt faile ühes kaustas:"
+msgstr "Maksimaalselt faile Ã¼hes kaustas:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr "Näita punktiga faile"
+msgstr "NÃ¤ita punktiga faile"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr "Tõstutundetu sorteerimine"
+msgstr "TÃµstutundetu sorteerimine"
 
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr "Näita jagatud sektsiooni"
+msgstr "NÃ¤ita jagatud sektsiooni"
 
 #: disknav.cpp:180
 msgid "Show Personal section"
-msgstr "Näita personaalset sektsiooni"
+msgstr "NÃ¤ita personaalset sektsiooni"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr "Näita hiljutiste sektsiooni"
+msgstr "NÃ¤ita hiljutiste sektsiooni"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "Näita valikute kirjet"
+msgstr "NÃ¤ita valikute kirjet"
 
 #: disknav.cpp:210
 msgid "Terminal application:"

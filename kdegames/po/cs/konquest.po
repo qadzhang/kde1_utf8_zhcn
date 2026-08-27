@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: konquest\n"
 "POT-Creation-Date: 1999-01-13 01:34+0100\n"
 "PO-Revision-Date: 1999-02-04 09:49+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: gameboard.cc:55
 msgid "End Turn"
-msgstr "Ukonèit tah"
+msgstr "UkonÄit tah"
 
 #: gameboard.cc:203
 msgid ": Select source planet..."
@@ -23,15 +23,15 @@ msgstr ": Vyberte zdrojovou planetu..."
 
 #: gameboard.cc:221
 msgid ": Select destination planet..."
-msgstr ": Vyberte cílovou planetu..."
+msgstr ": Vyberte cÃ­lovou planetu..."
 
 #: gameboard.cc:243
 msgid ": How many ships?"
-msgstr ": Kolik lodí?"
+msgstr ": Kolik lodÃ­?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
-msgstr "Vládce: Vyber poèáteèní planetu."
+msgstr "VlÃ¡dce: Vyber poÄÃ¡teÄnÃ­ planetu."
 
 #: gameboard.cc:287
 #, c-format
@@ -39,35 +39,35 @@ msgid ""
 "The distance from Planet %s to Planet %s is %s light years.\n"
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
-"Vzálenost od planety %s k planetì %s je %s svìtelnıch let.\n"
-"Loï olétající v tomto tahu k ní dorazí v tahu %s"
+"VzÃ¡lenost od planety %s k planetÄ› %s je %s svÄ›telnÃ½ch let.\n"
+"LoÄ olÃ©tajÃ­cÃ­ v tomto tahu k nÃ­ dorazÃ­ v tahu %s"
 
 #: gameboard.cc:291
 msgid "Distance"
-msgstr "Vzdálenost"
+msgstr "VzdÃ¡lenost"
 
 #: gameboard.cc:296
 msgid "Ruler: Select ending planet."
-msgstr "Vládce: Vyber koncovou planetu."
+msgstr "VlÃ¡dce: Vyber koncovou planetu."
 
 #: gameboard.cc:311
 #, c-format
 msgid "Turn #: %2d of %2d"
-msgstr "Tah è.: %2d z %2d"
+msgstr "Tah Ä.: %2d z %2d"
 
 #: gameboard.cc:426
 #, c-format
 msgid "The once mighty empire of %s has fallen in ruins."
-msgstr "Kdysi mocné impérium vládce %s propadlo zkáze."
+msgstr "Kdysi mocnÃ© impÃ©rium vlÃ¡dce %s propadlo zkÃ¡ze."
 
 #: gameboard.cc:428
 msgid "An Empire has fallen..."
-msgstr "Impérium padlo..."
+msgstr "ImpÃ©rium padlo..."
 
 #: gameboard.cc:438
 #, c-format
 msgid "The fallen empire of %s has staggered back to life."
-msgstr "Padlé impérium vládce %s opìt o¾ilo."
+msgstr "PadlÃ© impÃ©rium vlÃ¡dce %s opÄ›t oÅ¾ilo."
 
 #: gameboard.cc:440
 msgid "Up from the ashes..."
@@ -80,16 +80,16 @@ msgstr "Dorazily posily pro planetu %s"
 
 #: gameboard.cc:462
 msgid "Fleet Arrival"
-msgstr "Pøíchod flotily"
+msgstr "PÅ™Ã­chod flotily"
 
 #: gameboard.cc:505
 #, c-format
 msgid "Planet %s has held against an attack from %s"
-msgstr "Planeta %s se ubránila útoku od %s"
+msgstr "Planeta %s se ubrÃ¡nila Ãºtoku od %s"
 
 #: gameboard.cc:507
 msgid "Planet Holds"
-msgstr "Planeta se udr¾ela"
+msgstr "Planeta se udrÅ¾ela"
 
 #: gameboard.cc:515
 #, c-format
@@ -106,19 +106,19 @@ msgstr "Konec hry"
 
 #: gameboard.cc:580
 msgid "Do you wish to retire this game?"
-msgstr "Pøejete si vzdát tuto hru?"
+msgstr "PÅ™ejete si vzdÃ¡t tuto hru?"
 
 #: gameboard.cc:586
 msgid "Final Standings"
-msgstr "Koneènı stav"
+msgstr "KoneÄnÃ½ stav"
 
 #: gameboard.cc:758
 msgid "Not enough ships to send."
-msgstr "Namáte k odeslání dostatek lodí."
+msgstr "NamÃ¡te k odeslÃ¡nÃ­ dostatek lodÃ­."
 
 #: mainwin.cc:23
 msgid "GNU-Lactic Conquest"
-msgstr "GNU-latické dobıvání"
+msgstr "GNU-latickÃ© dobÃ½vÃ¡nÃ­"
 
 #: mainwin.cc:47
 #, c-format
@@ -131,15 +131,15 @@ msgid ""
 "See http://www.ia.net/~rsteffen/konquest.html for more info"
 msgstr ""
 "Verze %s\n"
-"Copyright (c) 1998 vlastní\n"
+"Copyright (c) 1998 vlastnÃ­\n"
 "The Gnu-Lactic Conquest Project\n"
 "\n"
 "KDE verzi napsal Russ Steffen <rsteffen@ia.net>\n"
-"Více informací naleznete na http://www.ia.net/~rsteffen/konquest.html"
+"VÃ­ce informacÃ­ naleznete na http://www.ia.net/~rsteffen/konquest.html"
 
 #: mainwin.cc:88
 msgid "Measure Distance"
-msgstr "Zmìøit vzdálenost"
+msgstr "ZmÄ›Å™it vzdÃ¡lenost"
 
 #: mainwin.cc:92
 msgid "Show Standings"
@@ -147,23 +147,23 @@ msgstr "Zobrazit stav"
 
 #: newgamedlg.cc:31
 msgid "Preview Map"
-msgstr "Náhled mapy"
+msgstr "NÃ¡hled mapy"
 
 #: newgamedlg.cc:35
 msgid "&Reject Map"
-msgstr "&Odmítnout mapu"
+msgstr "&OdmÃ­tnout mapu"
 
 #: newgamedlg.cc:41
 msgid "&Player List"
-msgstr "&Seznam hráèù"
+msgstr "&Seznam hrÃ¡ÄÅ¯"
 
 #: newgamedlg.cc:48
 msgid "&Add"
-msgstr "&Pøidat"
+msgstr "&PÅ™idat"
 
 #: newgamedlg.cc:54
 msgid "&Clear"
-msgstr "&Vyèistit"
+msgstr "&VyÄistit"
 
 #: newgamedlg.cc:70
 msgid "&Start Game"
@@ -172,24 +172,24 @@ msgstr "Sp&ustit hru"
 #: newgamedlg.cc:162
 #, c-format
 msgid "Number of Neutral Planets: %2d"
-msgstr "Poèet neutrálních planet: %2d"
+msgstr "PoÄet neutrÃ¡lnÃ­ch planet: %2d"
 
 #: newgamedlg.cc:174
 #, c-format
 msgid "Number of turns: %2d"
-msgstr "Poèet tahù: %2d"
+msgstr "PoÄet tahÅ¯: %2d"
 
 #: planet_info.cc:81 planet_info.cc:116 planet_info.cc:131
 msgid "Planet Name : "
-msgstr "Jméno planety : "
+msgstr "JmÃ©no planety : "
 
 #: planet_info.cc:84 planet_info.cc:134
 msgid "Owner : "
-msgstr "Vlastník : "
+msgstr "VlastnÃ­k : "
 
 #: planet_info.cc:87
 msgid "Ships : "
-msgstr "Lodí : "
+msgstr "LodÃ­ : "
 
 #: planet_info.cc:90
 msgid "Production : "
@@ -197,12 +197,12 @@ msgstr "Produkce : "
 
 #: planet_info.cc:93
 msgid "Kill Percent : "
-msgstr "Zabitıch v % : "
+msgstr "ZabitÃ½ch v % : "
 
 #: planet_info.cc:137
 #, c-format
 msgid "Ships : %d"
-msgstr "Lodí : %d"
+msgstr "LodÃ­ : %d"
 
 #: planet_info.cc:140
 #, c-format
@@ -211,29 +211,29 @@ msgstr "Produkce : %d"
 
 #: planet_info.cc:143
 #, c-format
-msgid "Kill Percent : %.3f"
-msgstr "Zabitıch v % : %3f"
+#~ msgid "Kill Percent : %.3f"
+#~ msgstr "ZabitÃ½ch v % : %3f"
 
 #: gameenddlg.cc:14
 msgid ""
 "This is the last turn.\n"
 "Do you wish to add more turns?"
 msgstr ""
-"Toto je poslední tah.\n"
-"Pøejete si pøidat dal¹í tahy?"
+"Toto je poslednÃ­ tah.\n"
+"PÅ™ejete si pÅ™idat dalÅ¡Ã­ tahy?"
 
 #: gameenddlg.cc:64
 #, c-format
 msgid "Add %d turns"
-msgstr "Pøidat %d tahù"
+msgstr "PÅ™idat %d tahÅ¯"
 
 #: scoredlg.cc:18
 msgid "Player"
-msgstr "Hráè"
+msgstr "HrÃ¡Ä"
 
 #: scoredlg.cc:19
 msgid "Ships Built"
-msgstr "Postaveno lodí"
+msgstr "Postaveno lodÃ­"
 
 #: scoredlg.cc:20
 msgid "Planets Conquered"
@@ -241,12 +241,12 @@ msgstr "Dobyto planet"
 
 #: scoredlg.cc:21
 msgid "Fleets Launched"
-msgstr "Vypu¹tìno flotil"
+msgstr "VypuÅ¡tÄ›no flotil"
 
 #: scoredlg.cc:22
 msgid "Fleets Destroyed"
-msgstr "Znièeno flotil"
+msgstr "ZniÄeno flotil"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"
-msgstr "Znièeno lodí"
+msgstr "ZniÄeno lodÃ­"

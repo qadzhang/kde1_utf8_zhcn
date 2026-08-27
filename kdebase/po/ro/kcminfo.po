@@ -12,7 +12,7 @@ msgstr ""
 "Last-Translator: Paul Ionescu <ipaul@romsys.ro>\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
@@ -29,12 +29,12 @@ msgstr "  dimensiune         : %dx%d pixeli (%dx%d mm)\n"
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  rezoluþie           : %dx%d puncte pe inch\n"
+msgstr "  rezoluÅ£ie           : %dx%d puncte pe inch\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  adâncime (%d)         :"
+msgstr "  adÃ¢ncime (%d)         :"
 
 #: info.cpp:85
 #, c-format
@@ -44,7 +44,7 @@ msgstr "numele ecranului                :    %s"
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "numãrul versiunii               :    %i.%i"
+msgstr "numÄƒrul versiunii               :    %i.%i"
 
 #: info.cpp:89
 #, c-format
@@ -59,12 +59,12 @@ msgstr "numarul versiunii fabricantului :    %i"
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "numãrul ecranului implicit      :    %i"
+msgstr "numÄƒrul ecranului implicit      :    %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "numãrul de ecrane      :%i"
+msgstr "numÄƒrul de ecrane      :%i"
 
 #: info.cpp:181
 msgid ""
@@ -72,19 +72,19 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Nici o informaþie disponibilã\n"
+"Nici o informaÅ£ie disponibilÄƒ\n"
 " sau\n"
-"acest sistem nu este încã suportat :-("
+"acest sistem nu este Ã®ncÄƒ suportat :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, nu se ºtie viteza"
+msgstr "%s, nu se ÅŸtie viteza"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s rulând la %s MHz"
+msgstr "%s rulÃ¢nd la %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
@@ -100,11 +100,11 @@ msgstr "Punct de montare"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "Tip sistem de fiºiere"
+msgstr "Tip sistem de fiÅŸiere"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr "Opþiuni de montare"
+msgstr "OpÅ£iuni de montare"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
@@ -116,7 +116,7 @@ msgstr "nu este disponibil"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "Numãrul procesoarelor active = "
+msgstr "NumÄƒrul procesoarelor active = "
 
 #: info_linux.cpp:99
 msgid "Value"
@@ -144,7 +144,7 @@ msgstr "&Procesor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr "&Întreruperi"
+msgstr "&ÃŽntreruperi"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
@@ -156,7 +156,7 @@ msgstr "&Porturi-I/O"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr "&Magistralã-PCI"
+msgstr "&MagistralÄƒ-PCI"
 
 #: main.cpp:97
 msgid "S&ound"
@@ -172,7 +172,7 @@ msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr "P&artiþii"
+msgstr "P&artiÅ£ii"
 
 #: main.cpp:109
 msgid "&X-Server"
@@ -190,19 +190,19 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Informaþii sistem"
+msgstr "InformaÅ£ii sistem"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "Memorie totalã"
+msgstr "Memorie totalÄƒ"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "Memorie liberã"
+msgstr "Memorie liberÄƒ"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Memorie partajatã"
+msgstr "Memorie partajatÄƒ"
 
 #: memory.cpp:41
 msgid "Buffer memory"
@@ -214,12 +214,12 @@ msgstr "Memorie de swap"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "Memorie liberã de swap"
+msgstr "Memorie liberÄƒ de swap"
 
 #: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld octeþi = %8.2f MB"
+msgstr "%10ld octeÅ£i = %8.2f MB"
 
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27

@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: kpat\n"
 "POT-Creation-Date: 1999-02-02 01:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: Vatafu Valerica <wally@chuck.tlnet.de>\n"
 
 #: cardmaps.cpp:63
 msgid "please wait, loading cards..."
-msgstr "Vã rugam ceva rãbdare, cãrþile se încarcã..."
+msgstr "VÃ£ rugam ceva rÃ£bdare, cÃ£rÃ¾ile se Ã®ncarcÃ£..."
 
 #: cardmaps.cpp:67
 msgid "KPat - a Solitaire game"
@@ -17,7 +17,7 @@ msgstr "KPat - un joc solitar"
 #: cardmaps.cpp:105
 #, c-format
 msgid "kpat: PANIC, cannot load card pixmap \"%s\"\n"
-msgstr "KPat: Eroare grea, nu pot sã incarc \"%s\" portretul carþii\n"
+msgstr "KPat: Eroare grea, nu pot sÃ£ incarc \"%s\" portretul carÃ¾ii\n"
 
 #: cardmaps.cpp:205
 #, c-format
@@ -26,19 +26,19 @@ msgstr "KPAT: Eroare grea, nu am acces la cartea aceasta %d, %d\n"
 
 #: computation.cpp:98
 msgid "Easy 4"
-msgstr "Uºor 4"
+msgstr "UÂºor 4"
 
 #: computation.cpp:99
 msgid "Easy 3"
-msgstr "Uºor 3"
+msgstr "UÂºor 3"
 
 #: computation.cpp:100
 msgid "Easy 2"
-msgstr "Uºor 2"
+msgstr "UÂºor 2"
 
 #: computation.cpp:101
 msgid "Easy 1"
-msgstr "Uºor 1"
+msgstr "UÂºor 1"
 
 #: computation.cpp:102
 msgid "Normal"
@@ -77,16 +77,16 @@ msgid ""
 "This will end the current game\n"
 "Are you sure you want to do this?"
 msgstr ""
-"Prin aceasta se terminã jocul\n"
-"Eºti sigur cã doreºti aceasta?"
+"Prin aceasta se terminÃ£ jocul\n"
+"EÂºti sigur cÃ£ doreÂºti aceasta?"
 
 #: grandf.cpp:35
 msgid "Try to move card:"
-msgstr "Încerc sã miºc cãrþile:"
+msgstr "ÃŽncerc sÃ£ miÂºc cÃ£rÃ¾ile:"
 
 #: grandf.cpp:114 mod3.cpp:57
 msgid "Redeal"
-msgstr "O noua mînã"
+msgstr "O noua mÃ®nÃ£"
 
 #: grandf.cpp:148
 msgid "Hint"
@@ -94,7 +94,7 @@ msgstr "Propunere"
 
 #: grandf.cpp:175
 msgid "Only 3 deals allowed"
-msgstr "Numa 3 mîini sînt permise"
+msgstr "Numa 3 mÃ®ini sÃ®nt permise"
 
 #: ten.cpp:40
 msgid "Full Auto"
@@ -118,7 +118,7 @@ msgstr "Calculare"
 
 #: pwidget.cpp:103
 msgid "Napoleon's Tomb"
-msgstr "Mormîntul lui Napoleon"
+msgstr "MormÃ®ntul lui Napoleon"
 
 #: pwidget.cpp:104 pwidget.cpp:285
 msgid "The Idiot"
@@ -154,19 +154,19 @@ msgstr "Albastru clasic"
 
 #: pwidget.cpp:118
 msgid "Classic red"
-msgstr "Roºu clasic"
+msgstr "RoÂºu clasic"
 
 #: pwidget.cpp:119
 msgid "Technical"
-msgstr "Amesticãturã technicã"
+msgstr "AmesticÃ£turÃ£ technicÃ£"
 
 #: pwidget.cpp:120
 msgid "Card backside"
-msgstr "Spatele cãrþilor"
+msgstr "Spatele cÃ£rÃ¾ilor"
 
 #: pwidget.cpp:121
 msgid "Animation on startup"
-msgstr "Animaþie la start"
+msgstr "AnimaÃ¾ie la start"
 
 #: pwidget.cpp:126
 msgid "Patience"
@@ -190,20 +190,20 @@ msgstr "Klondike"
 
 #: pwidget.cpp:289
 msgid "Napoleons Tomb"
-msgstr "Mormîntul lui Napoleon"
+msgstr "MormÃ®ntul lui Napoleon"
 
 #: pwidget.cpp:294
 #, c-format
 msgid "kpat: unimplemented game type %d\n"
-msgstr "kpat: Varianta %d nu existã\n"
+msgstr "kpat: Varianta %d nu existÃ£\n"
 
 #: pwidget.cpp:344
 msgid "Could not load background image!"
-msgstr "Nu pot sã incarc imaginea de fond!"
+msgstr "Nu pot sÃ£ incarc imaginea de fond!"
 
 #: mod3.cpp:137
 msgid "No more cards"
-msgstr "Nu mai sînt cãrþi"
+msgstr "Nu mai sÃ®nt cÃ£rÃ¾i"
 
 #~ msgid "Help on &rules..."
 #~ msgstr "Ajutor la &Reguli.."
@@ -212,7 +212,7 @@ msgstr "Nu mai sînt cãrþi"
 #~ msgstr "Despre &Qt..."
 
 #~ msgid "COMMAND %d not implemented!\n"
-#~ msgstr "Comanda %d nu este implementatã!\n"
+#~ msgstr "Comanda %d nu este implementatÃ£!\n"
 
 #, fuzzy
 #~ msgid ""
@@ -244,7 +244,7 @@ msgstr "Nu mai sînt cãrþi"
 #~ "\tMario Weilguni\t<mweilguni@sime.com>\n"
 #~ "\n"
 #~ "Acest program este o parte a \"K Desktop Environment\".\n"
-#~ "Mai mult despre licenþa in Ajutor."
+#~ "Mai mult despre licenÃ¾a in Ajutor."
 
 #~ msgid "About kpat"
 #~ msgstr "Despre kpat"

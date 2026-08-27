@@ -6,13 +6,13 @@ msgstr ""
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Jörg Habenicht <j.habenicht@europemail.com>\n"
+"Translator: JÃ¶rg Habenicht <j.habenicht@europemail.com>\n"
 
 #: KAMenu.cpp:75
 msgid "O&pen in editor"
-msgstr "In E&ditor öffnen"
+msgstr "In E&ditor Ã¶ffnen"
 
 #: KAMenu.cpp:76 KAView.cpp:154
 msgid "&Open Dir"
@@ -36,7 +36,7 @@ msgstr "Lis&te exportieren..."
 
 #: KAMenu.cpp:84
 msgid "&Exit"
-msgstr "&Schließen"
+msgstr "&SchlieÃŸen"
 
 #: KAMenu.cpp:100
 msgid "&Exact"
@@ -48,11 +48,11 @@ msgstr "&Teilstring"
 
 #: KAMenu.cpp:102
 msgid "Substring &case insensitive"
-msgstr "Teilstring &ohne Groß/Klein"
+msgstr "Teilstring &ohne GroÃŸ/Klein"
 
 #: KAMenu.cpp:103
 msgid "&Regular expression"
-msgstr "&Regulärer Ausdruck"
+msgstr "&RegulÃ¤rer Ausdruck"
 
 #: KAMenu.cpp:104 KASettings.cpp:422
 msgid "Exact, then substring"
@@ -60,11 +60,11 @@ msgstr "Exakt, dann Teilstring"
 
 #: KAMenu.cpp:105
 msgid "Exact, then substring case ins."
-msgstr "Exakt, dann Teilstring ohne ohne Groß/Klein"
+msgstr "Exakt, dann Teilstring ohne ohne GroÃŸ/Klein"
 
 #: KAMenu.cpp:106 KASettings.cpp:424
 msgid "Exact, then regular expression"
-msgstr "Exakt, dann regulärer Ausdruck"
+msgstr "Exakt, dann regulÃ¤rer Ausdruck"
 
 #: KAMenu.cpp:114
 msgid "n&ormal"
@@ -100,7 +100,7 @@ msgstr "Such&modus"
 
 #: KAMenu.cpp:130
 msgid "&Nicelevel"
-msgstr "&Prioritätslevel"
+msgstr "&PrioritÃ¤tslevel"
 
 #: KAMenu.cpp:132
 msgid "&All..."
@@ -136,7 +136,7 @@ msgstr "nach D&atum"
 
 #: KAMenu.cpp:163
 msgid "by &Filesize"
-msgstr "nach Datei&größe"
+msgstr "nach Datei&grÃ¶ÃŸe"
 
 #: KAMenu.cpp:169
 msgid "KArchie ver. "
@@ -146,7 +146,7 @@ msgstr "KArchie version"
 msgid ""
 "\n"
 "\n"
-"by Jörg Habenicht <j.habenicht@europemail.com>\n"
+"by JÃ¶rg Habenicht <j.habenicht@europemail.com>\n"
 "\n"
 "based on the work of:\n"
 "  - archie prospero client by\n"
@@ -159,7 +159,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"von Jörg Habenicht <j.habenicht@europemail.com>\n"
+"von JÃ¶rg Habenicht <j.habenicht@europemail.com>\n"
 "\n"
 "aufgebaut auf der Arbeit von:\n"
 "  - archie prospero client von\n"
@@ -200,11 +200,11 @@ msgstr "Port unbekannt"
 
 #: KAQuery.cpp:298
 msgid "Can't open local UDP port"
-msgstr "Kann lokalen UDP-Port nicht öffnen"
+msgstr "Kann lokalen UDP-Port nicht Ã¶ffnen"
 
 #: KAQuery.cpp:299
 msgid "Can't resolve hostname"
-msgstr "Kann Rechnernamen nicht auflösen"
+msgstr "Kann Rechnernamen nicht auflÃ¶sen"
 
 #: KAQuery.cpp:300
 msgid "Didn't send entire message"
@@ -212,7 +212,7 @@ msgstr "Nachricht nicht komplett verschickt"
 
 #: KAQuery.cpp:301
 msgid "Timed out"
-msgstr "Zeit überschritten"
+msgstr "Zeit Ã¼berschritten"
 
 #: KAQuery.cpp:302
 msgid "Recvfrom failed"
@@ -240,7 +240,7 @@ msgstr "Prv-Eintrag nicht in dir->ulinks"
 
 #: KAQuery.cpp:309
 msgid "Temporary not found"
-msgstr "Temporäre Datei nicht gefunden"
+msgstr "TemporÃ¤re Datei nicht gefunden"
 
 #: KAQuery.cpp:310
 msgid "Namespace not closed w/ object::"
@@ -248,7 +248,7 @@ msgstr "Namensbereich nicht geschlossen durch Objekt:"
 
 #: KAQuery.cpp:311
 msgid "No alias for namespace NS#:"
-msgstr "Kein Alias für Namensbereich NS#:"
+msgstr "Kein Alias fÃ¼r Namensbereich NS#:"
 
 #: KAQuery.cpp:312
 msgid "Specified namespace not found"
@@ -256,15 +256,15 @@ msgstr "Angegebener Namensbereich nicht gefunden"
 
 #: KAQuery.cpp:313
 msgid "File access method not supported"
-msgstr "Datei-Zugriffsmethode nicht unterstützt"
+msgstr "Datei-Zugriffsmethode nicht unterstÃ¼tzt"
 
 #: KAQuery.cpp:314
 msgid "Delete cached copy on close"
-msgstr "Kopie im Zwischenspeicher beim Schließen löschen"
+msgstr "Kopie im Zwischenspeicher beim SchlieÃŸen lÃ¶schen"
 
 #: KAQuery.cpp:315
 msgid "Unable to retrieve file"
-msgstr "Übertragung der Datei nicht möglich"
+msgstr "Ãœbertragung der Datei nicht mÃ¶glich"
 
 #: KAQuery.cpp:317
 msgid "Directory already exists"
@@ -312,11 +312,11 @@ msgstr "Kann Umgebung nicht lesen"
 
 #: KAQuery.cpp:329
 msgid "Can't traverse an external file"
-msgstr "Kann eine externe Datei nicht übergehen"
+msgstr "Kann eine externe Datei nicht Ã¼bergehen"
 
 #: KAQuery.cpp:330
 msgid "Exceeded max forward depth"
-msgstr "Max. Anzahl von Weiterleitungen überschritten"
+msgstr "Max. Anzahl von Weiterleitungen Ã¼berschritten"
 
 #: KAQuery.cpp:331
 msgid "Authentication required"
@@ -332,7 +332,7 @@ msgstr "Nicht gefunden"
 
 #: KAQuery.cpp:334
 msgid "Bad version number"
-msgstr "Ungültige Versionsnummer"
+msgstr "UngÃ¼ltige Versionsnummer"
 
 #: KAQuery.cpp:335
 msgid "Not a directory"
@@ -348,7 +348,7 @@ msgstr "Befehl auf Server nicht implementiert"
 
 #: KAQuery.cpp:339
 msgid "Bad format for response"
-msgstr "Ungültiges Antwortformat"
+msgstr "UngÃ¼ltiges Antwortformat"
 
 #: KAQuery.cpp:340
 msgid "Protocol error"
@@ -380,7 +380,7 @@ msgstr "Unbekannte Zeile in Server-Antwort"
 
 #: KAQuery.cpp:409
 msgid "Query running"
-msgstr "Abfrage läuft"
+msgstr "Abfrage lÃ¤uft"
 
 #: KAQuery.cpp:453
 msgid "Query finished"
@@ -392,7 +392,7 @@ msgstr "&Rechner"
 
 #: KASettings.cpp:72
 msgid "&Timeout (seconds)"
-msgstr "&Zeitüberschreitung nach (sec)"
+msgstr "&ZeitÃ¼berschreitung nach (sec)"
 
 #: KASettings.cpp:83
 msgid "Maximal &retries"
@@ -400,7 +400,7 @@ msgstr "Max. Anzahl &Wiederholungen"
 
 #: KASettings.cpp:284
 msgid "&Nice Level"
-msgstr "&Prioritätslevel"
+msgstr "&PrioritÃ¤tslevel"
 
 #: KASettings.cpp:291
 msgid "max. &Hits"
@@ -416,15 +416,15 @@ msgstr "Teilstring"
 
 #: KASettings.cpp:420
 msgid "Substring case insensitive"
-msgstr "Teilstring ohne Groß-/Kleinschreibung"
+msgstr "Teilstring ohne GroÃŸ-/Kleinschreibung"
 
 #: KASettings.cpp:421
 msgid "Regular expression"
-msgstr "Regulärer Ausdruck"
+msgstr "RegulÃ¤rer Ausdruck"
 
 #: KASettings.cpp:423
 msgid "Exact, then substring case insensitive"
-msgstr "Exakt, dann Teilstring ohne Groß/Klein"
+msgstr "Exakt, dann Teilstring ohne GroÃŸ/Klein"
 
 #: KASettings.cpp:427
 msgid "Normal"
@@ -460,7 +460,7 @@ msgstr "Suchmuster"
 
 #: KASettings.cpp:567
 msgid "Reset"
-msgstr "Zurücksetzen"
+msgstr "ZurÃ¼cksetzen"
 
 #: KAStatusBar.cpp:50
 msgid "    0 hits"
@@ -505,7 +505,7 @@ msgstr "%d Versuch."
 
 #: KAView.cpp:66
 msgid "Searchstring, press <ENTER> to start search"
-msgstr "Suchstring, drücken Sie <Eingabe>, um die Suche zu beginnen"
+msgstr "Suchstring, drÃ¼cken Sie <Eingabe>, um die Suche zu beginnen"
 
 #: KAView.cpp:68
 msgid "Search &Term"
@@ -533,7 +533,7 @@ msgstr "Datei:"
 
 #: KAView.cpp:274
 msgid "Size:"
-msgstr "Größe:"
+msgstr "GrÃ¶ÃŸe:"
 
 #: KAView.cpp:276
 msgid "Mode:"
@@ -550,15 +550,15 @@ msgid ""
 "\"%s\""
 msgstr ""
 "Konnte \"%s\"\n"
-"nicht öffnen"
+"nicht Ã¶ffnen"
 
 #: KArchie.cpp:446 KArchie.cpp:488
 msgid "KArchie: bad file"
-msgstr "KArchie: ungültige Datei"
+msgstr "KArchie: ungÃ¼ltige Datei"
 
 #: KArchie.cpp:720
 msgid "Malformed url"
-msgstr "Ungültige URL"
+msgstr "UngÃ¼ltige URL"
 
 #: KArchie.cpp:724
 msgid "Maybe bad list entry, please select an other file"
@@ -574,23 +574,23 @@ msgstr "KArchie: falsche Dateiauswahl"
 
 #: KArchie.cpp:745
 msgid "The selected file is not writeable"
-msgstr "In die ausgewählte Datei kann nicht geschrieben werden"
+msgstr "In die ausgewÃ¤hlte Datei kann nicht geschrieben werden"
 
 #: KArchie.cpp:752
 msgid "KArchie: Overwrite file ?"
-msgstr "KArchie: Datei überschreiben?"
+msgstr "KArchie: Datei Ã¼berschreiben?"
 
 #: KArchie.cpp:753
 msgid ""
 "The selected file is not write protected\n"
 "Should it be overwritten ?"
 msgstr ""
-"Die gewählte Datei ist nicht schreibgeschützt.\n"
-"Soll sie überschrieben werden?"
+"Die gewÃ¤hlte Datei ist nicht schreibgeschÃ¼tzt.\n"
+"Soll sie Ã¼berschrieben werden?"
 
 #: KArchie.cpp:766
 msgid "KArchie: bad selection"
-msgstr "KArchie: ungültige Auswahl"
+msgstr "KArchie: ungÃ¼ltige Auswahl"
 
 #: KArchie.cpp:767
 msgid ""
@@ -598,6 +598,6 @@ msgid ""
 "Please select a file in the list of queryresults\n"
 "or do a query."
 msgstr ""
-"Keine Datei ausgewählt!\n"
+"Keine Datei ausgewÃ¤hlt!\n"
 "Bitte Datei aus den Abfrageergebnissen\n"
-"auswählen oder neue Suche starten."
+"auswÃ¤hlen oder neue Suche starten."

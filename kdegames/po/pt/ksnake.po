@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: game.cpp:41 game.cpp:144 rattler.cpp:350
@@ -27,7 +27,7 @@ msgstr "Pausar"
 
 #: game.cpp:81
 msgid "High Scores..."
-msgstr "Pontuações..."
+msgstr "PontuaÃ§Ãµes..."
 
 #: game.cpp:88 game.cpp:97
 msgid "0"
@@ -55,11 +55,11 @@ msgstr "Principiante"
 
 #: game.cpp:127
 msgid "Intermediate"
-msgstr "Intermédio"
+msgstr "IntermÃ©dio"
 
 #: game.cpp:128
 msgid "Advanced"
-msgstr "Avançado"
+msgstr "AvanÃ§ado"
 
 #: game.cpp:129
 msgid "Expert"
@@ -112,8 +112,8 @@ msgid ""
 "A game is already started\n"
 "Start a new one ?\n"
 msgstr ""
-"Um jogo está a decorrer\n"
-"Começar um novo ?\n"
+"Um jogo estÃ¡ a decorrer\n"
+"ComeÃ§ar um novo ?\n"
 
 #: rattler.cpp:353
 msgid "&Yes"
@@ -121,7 +121,7 @@ msgstr "&Sim"
 
 #: rattler.cpp:353
 msgid "&No"
-msgstr "&Não"
+msgstr "&NÃ£o"
 
 #: startroom.cpp:23
 msgid "Snake Race Starting Room"
@@ -139,12 +139,12 @@ msgid ""
 "\tand minVal must not be greater than maxVal"
 msgstr ""
 "LCDRange::setRange(%d,%d)\n"
-"\tRange têm de ser 0..99\n"
-"\te minVal não pode ser maior do que maxVal"
+"\tRange tÃªm de ser 0..99\n"
+"\te minVal nÃ£o pode ser maior do que maxVal"
 
 #: score.cpp:46 score.cpp:77
 msgid "Snake Race High Scores"
-msgstr "Pontuações da Corrida de Cobras"
+msgstr "PontuaÃ§Ãµes da Corrida de Cobras"
 
 #: score.cpp:50
 msgid "Hall of Fame"
@@ -169,11 +169,11 @@ msgstr "erro ao carregar %s, a abortar\n"
 
 #: keys.cpp:24
 msgid "Defaults"
-msgstr "Por Omissão"
+msgstr "Por OmissÃ£o"
 
 #: keys.cpp:83
 msgid "Change Direction Keys"
-msgstr "Mudar Teclas de Direcção"
+msgstr "Mudar Teclas de DirecÃ§Ã£o"
 
 #: keys.cpp:96
 msgid "Undefined key"

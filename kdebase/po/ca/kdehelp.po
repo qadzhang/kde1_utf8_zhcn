@@ -1,16 +1,16 @@
 # KDEHELP CATALAN TRANSLATION.
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Sebasti‡ Pla <sastia@redestb.es>, 1998.
+# Sebasti√† Pla <sastia@redestb.es>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
 "POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1999-01-10 23:10+0100\n"
-"Last-Translator: Sebasti‡ Pla <sastia@redestb.es>\n"
+"Last-Translator: Sebasti√† Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: helpwin.cpp:55
@@ -39,7 +39,7 @@ msgstr "S'ha completat la recerca"
 
 #: helpwin.cpp:1111
 msgid "Continue search from the top of the page?"
-msgstr "Continuo cercant des de l'inici de la p‡gina?"
+msgstr "Continuo cercant des de l'inici de la p√†gina?"
 
 #: helpwin.cpp:1325
 msgid "Forward"
@@ -47,7 +47,7 @@ msgstr "Endavant"
 
 #: helpwin.cpp:1346
 msgid "Open this Link"
-msgstr "Obre aquest enllaÁ"
+msgstr "Obre aquest enlla√ß"
 
 #: helpwin.cpp:1347
 msgid "Add Bookmark"
@@ -77,7 +77,7 @@ msgstr "Error fatal: "
 
 #: error.cpp:28
 msgid "Warning: "
-msgstr "AvÌs: "
+msgstr "Av√≠s: "
 
 #: options.cpp:38
 msgid "Small"
@@ -93,7 +93,7 @@ msgstr "Gran"
 
 #: options.cpp:50
 msgid "Standard Font"
-msgstr "Font est‡ndard"
+msgstr "Font est√†ndard"
 
 #: options.cpp:67
 msgid "Fixed Font"
@@ -109,15 +109,15 @@ msgstr "Color de text normal:"
 
 #: options.cpp:222
 msgid "URL Link Color:"
-msgstr "Color d'enllaÁ URL:"
+msgstr "Color d'enlla√ß URL:"
 
 #: options.cpp:230
 msgid "Followed Link Color:"
-msgstr "Color d'enllaÁ conegut:"
+msgstr "Color d'enlla√ß conegut:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr "EnllaÁos subratllats"
+msgstr "Enlla√ßos subratllats"
 
 #: options.cpp:246
 msgid "Always use my colors"
@@ -133,17 +133,17 @@ msgstr "Colors"
 
 #: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
-msgstr "Manuals en lÌnia"
+msgstr "Manuals en l√≠nia"
 
 #: man.cpp:62
 #, c-format
 msgid "Section %s"
-msgstr "SecciÛ %s"
+msgstr "Secci√≥ %s"
 
 #: man.cpp:84
 #, c-format
 msgid "Online manual - Section %s"
-msgstr "Manual en lÌnia - SecciÛ %s"
+msgstr "Manual en l√≠nia - Secci√≥ %s"
 
 #: man.cpp:132
 msgid "User Commands"
@@ -171,7 +171,7 @@ msgstr "Jocs"
 
 #: man.cpp:146
 msgid "System Administration"
-msgstr "AdministraciÛ del sistema"
+msgstr "Administraci√≥ del sistema"
 
 #: man.cpp:148
 msgid "New"
@@ -183,7 +183,7 @@ msgstr "Llegint Dir: "
 
 #: man.cpp:443
 msgid "Online Manual - Section"
-msgstr "Manual en lÌnia - SecciÛ"
+msgstr "Manual en l√≠nia - Secci√≥"
 
 #: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
@@ -200,7 +200,7 @@ msgstr "<!-- No editeu aquest fitxer -->"
 #: cgi.cpp:79
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "CGI: URL de destinaciÛ errÚnia: %s\n"
+msgstr "CGI: URL de destinaci√≥ err√≤nia: %s\n"
 
 #: mainwidget.cpp:132
 msgid "&New Help Window"
@@ -220,7 +220,7 @@ msgstr "&Troba..."
 
 #: mainwidget.cpp:159
 msgid "Find &next"
-msgstr "Troba &seg¸ent"
+msgstr "Troba &seg√ºent"
 
 #: mainwidget.cpp:164
 msgid "&Back"
@@ -244,11 +244,11 @@ msgstr "&Previ"
 
 #: mainwidget.cpp:177
 msgid "&Next"
-msgstr "&Seg¸ent"
+msgstr "&Seg√ºent"
 
 #: mainwidget.cpp:190
 msgid "&General Preferences..."
-msgstr "&PreferËncies generals..."
+msgstr "&Prefer√®ncies generals..."
 
 #: mainwidget.cpp:193
 msgid "Show &Toolbar"
@@ -256,7 +256,7 @@ msgstr "Mostra &barra d'eines"
 
 #: mainwidget.cpp:196
 msgid "Show &Location"
-msgstr "Mostra &localitzaciÛ"
+msgstr "Mostra &localitzaci√≥"
 
 #: mainwidget.cpp:198
 msgid "Show Status&bar"
@@ -272,7 +272,7 @@ msgstr "Sistema d'ajut KDE\n"
 
 #: mainwidget.cpp:205
 msgid "Version "
-msgstr "VersiÛ "
+msgstr "Versi√≥ "
 
 #: mainwidget.cpp:207
 msgid ""
@@ -288,13 +288,13 @@ msgstr ""
 "\n"
 "Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
-"Aquest programa est‡ cobert per la General Public License GNU (GPL).\n"
-"KDEHelp no tÈ CAP GARANTIA EN ABSOLUT fins el punt permËs per la legislaciÛ "
+"Aquest programa est√† cobert per la General Public License GNU (GPL).\n"
+"KDEHelp no t√© CAP GARANTIA EN ABSOLUT fins el punt perm√®s per la legislaci√≥ "
 "vigent."
 
 #: mainwidget.cpp:224
 msgid "&Goto"
-msgstr "&VÈs"
+msgstr "&V√©s"
 
 #: mainwidget.cpp:225
 msgid "&Bookmarks"
@@ -306,7 +306,7 @@ msgstr "Document previ"
 
 #: mainwidget.cpp:248
 msgid "Next Document"
-msgstr "Document seg¸ent"
+msgstr "Document seg√ºent"
 
 #: mainwidget.cpp:255
 msgid "Previous Node"
@@ -314,7 +314,7 @@ msgstr "Node previ"
 
 #: mainwidget.cpp:260
 msgid "Next Node"
-msgstr "Node seg¸ent"
+msgstr "Node seg√ºent"
 
 #: mainwidget.cpp:265
 msgid "Up one Node"
@@ -342,7 +342,7 @@ msgid ""
 "Version "
 msgstr ""
 "Sistema d'ajut KDE\n"
-"VersiÛ "
+"Versi√≥ "
 
 #: mainwidget.cpp:614
 msgid "About KDE Help"

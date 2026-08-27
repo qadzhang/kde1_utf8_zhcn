@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO-8859-1\n"
 "Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Date: 1998-03-06 22:13:59-0500\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: about.cpp:40
 msgid "About KDE Floppy Formatter"
-msgstr "‹ber den KDE Floppy Formatierer"
+msgstr "√úber den KDE Floppy Formatierer"
 
 #: about.cpp:49 floppy.cpp:295 floppy.cpp:342 floppy.cpp:358 floppy.cpp:374
 #: floppy.cpp:481 floppy.cpp:584 floppy.cpp:598 floppy.cpp:713 floppy.cpp:727
@@ -51,11 +51,11 @@ msgstr "QuickFormat"
 
 #: floppy.cpp:136
 msgid "Full Format"
-msgstr "Vollst‰ndiges Formatieren"
+msgstr "Vollst√§ndiges Formatieren"
 
 #: floppy.cpp:142
 msgid "Create Label:"
-msgstr "Datentr‰gerbezeichnung:"
+msgstr "Datentr√§gerbezeichnung:"
 
 #: floppy.cpp:148
 msgid "KDE Floppy"
@@ -82,8 +82,8 @@ msgid ""
 "you have write permission to it."
 msgstr ""
 "Auf %s kann nicht zugegriffen werden\n"
-"Stellen Sie sicher, daﬂ das Ger‰t existiert\n"
-"und daﬂ Sie Schreiberlaubnis darauf haben."
+"Stellen Sie sicher, da√ü das Ger√§t existiert\n"
+"und da√ü Sie Schreiberlaubnis darauf haben."
 
 #: floppy.cpp:339
 msgid ""
@@ -129,9 +129,9 @@ msgid ""
 "Please insert a floppy and make sure that you\n"
 "have selected a valid floppy drive.\n"
 msgstr ""
-"Zugriff auf Diskette oder Laufwerk nicht mˆglich.\n"
+"Zugriff auf Diskette oder Laufwerk nicht m√∂glich.\n"
 "Legen Sie bitte eine Diskette ein, und stellen Sie sicher,\n"
-"daﬂ Sie ein g¸ltiges Laufwerk ausgew‰hlt haben.\n"
+"da√ü Sie ein g√ºltiges Laufwerk ausgew√§hlt haben.\n"
 
 #: floppy.cpp:593
 #, c-format
@@ -153,7 +153,7 @@ msgid ""
 "Cannot create a filesystem on: %s\n"
 "%s"
 msgstr ""
-"Erstellen des Dateisystems auf %s ist nicht mˆglich.\n"
+"Erstellen des Dateisystems auf %s ist nicht m√∂glich.\n"
 "%s"
 
 #: floppy.cpp:759
@@ -164,12 +164,12 @@ msgid ""
 "Raw Capacity: %d\n"
 msgstr ""
 "Die Diskette wurde erfolgreich formatiert.\n"
-"Fehlerhaft Blˆcke: %d\n"
-"Rohkapazit‰t: %d\n"
+"Fehlerhaft Bl√∂cke: %d\n"
+"Rohkapazit√§t: %d\n"
 
 #: floppy.cpp:780
 msgid "All files were sucessfully erased."
-msgstr "Alle Dateien wurden erfolgreich gelˆscht."
+msgstr "Alle Dateien wurden erfolgreich gel√∂scht."
 
 #: floppy.cpp:838
 msgid "Creating Filesystem ..."
@@ -177,14 +177,14 @@ msgstr "Erstelle Dateisystem ..."
 
 #: floppy.cpp:842
 msgid "Verifying ..."
-msgstr "‹berpr¸fung ..."
+msgstr "√úberpr√ºfung ..."
 
 #: floppy.cpp:887
 msgid ""
 "Cannot start a new program\n"
 "fork() failed."
 msgstr ""
-"Starten eines neuen Programmes nicht mˆglich\n"
+"Starten eines neuen Programmes nicht m√∂glich\n"
 "fork() fehlgeschlagen."
 
 #: floppy.cpp:913

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -23,7 +23,7 @@ msgstr "F&inn rute"
 
 #: knu.cpp:168 knu.cpp:321
 msgid "Host &resolution"
-msgstr "Verts&oppløsning"
+msgstr "Verts&opplÃ¸sning"
 
 #: knu.cpp:181
 msgid "F&inger"
@@ -43,7 +43,7 @@ msgstr ""
 "Ingen kommando tatt i bruk\n"
 "i konfigurasjonsfilen.\n"
 "\n"
-"Så jeg kan ikke gjøre noe...\n"
+"SÃ¥ jeg kan ikke gjÃ¸re noe...\n"
 
 #: knu.cpp:246
 msgid "&New window"
@@ -59,7 +59,7 @@ msgstr "Velg &alle"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "&Tøm utvindu"
+msgstr "&TÃ¸m utvindu"
 
 #: knu.cpp:266
 msgid "P&references..."
@@ -97,7 +97,7 @@ msgstr "Om..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "Nettverksverktøy"
+msgstr "NettverksverktÃ¸y"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
@@ -105,7 +105,7 @@ msgstr "&Vert:"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
-msgstr "&Kjør!"
+msgstr "&KjÃ¸r!"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
@@ -116,7 +116,7 @@ msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"Denne kommandobinærfil ble ikke funnet. \n"
+"Denne kommandobinÃ¦rfil ble ikke funnet. \n"
 "Du kan oppgi dens sti i Rediger->Preferanser... menyen."
 
 #: CommandDlg.cpp:351
@@ -137,10 +137,10 @@ msgstr ""
 "%s/%src-\n"
 "konfigurasjonfil.\n"
 "I [%s]-gruppen,\n"
-"Kan ikke finne gyldig \"path=\"-oppføring.\n"
+"Kan ikke finne gyldig \"path=\"-oppfÃ¸ring.\n"
 "\n"
 "Vennligst bruk Rediger->Preferanser...-menyen\n"
-"for å konfigurere det på nytt.\n"
+"for Ã¥ konfigurere det pÃ¥ nytt.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
@@ -148,7 +148,7 @@ msgstr "Feil i sti"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
-msgstr "Binærfil"
+msgstr "BinÃ¦rfil"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
@@ -200,7 +200,7 @@ msgstr "Verst"
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "Lage verts&navneoppløsning"
+msgstr "Lage verts&navneopplÃ¸sning"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
@@ -236,7 +236,7 @@ msgstr "alias (CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "begynnelse på autoritet (SOA)"
+msgstr "begynnelse pÃ¥ autoritet (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"

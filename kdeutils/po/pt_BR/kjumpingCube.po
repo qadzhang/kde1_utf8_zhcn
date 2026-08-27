@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: kjumpingCube\n"
 "POT-Creation-Date: 1998-07-16 07:29+0200\n"
 "PO-Revision-Date: 1999-04-16 01:00-0300\n"
-"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
+"Last-Translator: Elvis PfÃ¼tzenreuter <epx@netville.com.br>\n"
 "Language-Team: Brazilian Portuguese\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: base64\n"
 
 #: topwindow.cpp:145
@@ -47,7 +47,7 @@ msgstr "&Expert"
 
 #: topwindow.cpp:197
 msgid "S&kill"
-msgstr "Níve&l"
+msgstr "NÃ­ve&l"
 
 #: topwindow.cpp:199
 msgid "&Playfield"
@@ -55,7 +55,7 @@ msgstr "&Campo de jogo"
 
 #: topwindow.cpp:200
 msgid "Set &Zoom"
-msgstr "Configurar Am&pliação"
+msgstr "Configurar Am&pliaÃ§Ã£o"
 
 #: topwindow.cpp:201
 msgid "Zoom &In"
@@ -83,7 +83,7 @@ msgstr "Mostrar barra de status"
 
 #: topwindow.cpp:212
 msgid "&Save Settings"
-msgstr "&Salvar Configurações"
+msgstr "&Salvar ConfiguraÃ§Ãµes"
 
 #: topwindow.cpp:225
 msgid "Get &Hint"
@@ -99,11 +99,11 @@ msgstr "&Continuar"
 
 #: topwindow.cpp:231
 msgid "Computer plays Player &1"
-msgstr "Computador é o jogador &1"
+msgstr "Computador Ã© o jogador &1"
 
 #: topwindow.cpp:232
 msgid "Computer plays Player &2"
-msgstr "Computador é o jogador &2"
+msgstr "Computador Ã© o jogador &2"
 
 #: topwindow.cpp:234
 msgid "&Undo Move"
@@ -111,7 +111,7 @@ msgstr "&Desfazer movimento"
 
 #: topwindow.cpp:246
 msgid "&Contents"
-msgstr "&Conteúdo"
+msgstr "&ConteÃºdo"
 
 #: topwindow.cpp:247
 msgid "&About..."
@@ -127,7 +127,7 @@ msgstr "&Jogo"
 
 #: topwindow.cpp:258
 msgid "&Options"
-msgstr "&Opções"
+msgstr "&OpÃ§Ãµes"
 
 #: topwindow.cpp:260
 msgid "&Help"
@@ -172,11 +172,11 @@ msgstr "(Computador)"
 
 #: topwindow.cpp:495
 msgid "There is no saved Game !"
-msgstr "Não há jogo salvo !"
+msgstr "NÃ£o hÃ¡ jogo salvo !"
 
 #: topwindow.cpp:496 topwindow.cpp:538
 msgid "Information"
-msgstr "Informação"
+msgstr "InformaÃ§Ã£o"
 
 #: topwindow.cpp:498 topwindow.cpp:540 topwindow.cpp:711
 msgid "OK"
@@ -194,15 +194,15 @@ msgid ""
 " (C) 1998 by Matthias Kiefer \n"
 "Matthias.Kiefer@stud.uni-karlsruhe.de\n"
 "\n"
-msgstr "JumpingCube Versão %s \n\n (C) 1998 Matthias Kiefer \nMatthias.Kiefer@stud.uni-karlsruhe.de\n"
+msgstr "JumpingCube VersÃ£o %s \n\n (C) 1998 Matthias Kiefer \nMatthias.Kiefer@stud.uni-karlsruhe.de\n"
 
 #: topwindow.cpp:704
 msgid "This program is free software; you can redistribute it\n"
-msgstr "Este programa é software livre; você pode redistribuí-lo\n"
+msgstr "Este programa Ã© software livre; vocÃª pode redistribuÃ­-lo\n"
 
 #: topwindow.cpp:705
 msgid "and/or modify it under the terms of the GNU General\n"
-msgstr "e/ou modificá-lo sob os termos da Licença Pública\n"
+msgstr "e/ou modificÃ¡-lo sob os termos da LicenÃ§a PÃºblica\n"
 
 #: topwindow.cpp:706
 msgid "Public License as published by the Free Software\n"
@@ -210,11 +210,11 @@ msgstr "Geral GNU tal como publicada pela Free Software\n"
 
 #: topwindow.cpp:707
 msgid "Foundation; either version 2 of the License, or\n"
-msgstr "Foundation; seja a versão 2 da Licença, ou\n"
+msgstr "Foundation; seja a versÃ£o 2 da LicenÃ§a, ou\n"
 
 #: topwindow.cpp:708
 msgid "(at your option) any later version."
-msgstr "(à sua escolha) qualquer versão mais recente."
+msgstr "(Ã  sua escolha) qualquer versÃ£o mais recente."
 
 #: topwindow.cpp:709
 msgid "About JumpingCube"
@@ -223,7 +223,7 @@ msgstr "Sobre JumpingCube"
 #: cubebox.cpp:129
 #, c-format
 msgid "Winner is Player %d"
-msgstr "Vencedor é o jogador %d"
+msgstr "Vencedor Ã© o jogador %d"
 
 #: cubebox.cpp:130
 msgid "Winner"

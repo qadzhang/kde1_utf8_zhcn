@@ -4,7 +4,7 @@ msgstr ""
 "POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1998-12-27 22:37+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: main.cpp:67
 msgid "&Buttons"
@@ -12,7 +12,7 @@ msgstr "&Przyciski"
 
 #: main.cpp:70
 msgid "&Titlebar"
-msgstr "Pasek &tytu³owy"
+msgstr "Pasek &tytuÅ‚owy"
 
 #: main.cpp:73
 msgid "Bo&rders"
@@ -30,11 +30,11 @@ msgstr "Za&awansowane"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"u¿ycie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
+"uÅ¼ycie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Styl mened¿era okien"
+msgstr "Styl menedÅ¼era okien"
 
 #: titlebar.cpp:125
 msgid "Minimize"
@@ -64,37 +64,37 @@ msgstr "Prawo"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Lewa strona paska tytu³owego jest zape³niona... wy³±czenie przycisku "
+"Lewa strona paska tytuÅ‚owego jest zapeÅ‚niona... wyÅ‚Ä…czenie przycisku "
 "'maksymalizuj'\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Prawa strona paska tytu³owego jest zape³niona... wy³±czenie przycisku "
+"Prawa strona paska tytuÅ‚owego jest zapeÅ‚niona... wyÅ‚Ä…czenie przycisku "
 "'maksymalizuj'\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Lewa strona paska tytu³owego jest zape³niona... wy³±czenie przycisku "
+"Lewa strona paska tytuÅ‚owego jest zapeÅ‚niona... wyÅ‚Ä…czenie przycisku "
 "'minimalizuj'\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Prawa strona paska tytu³owego jest zape³niona... wy³±czenie przycisku "
+"Prawa strona paska tytuÅ‚owego jest zapeÅ‚niona... wyÅ‚Ä…czenie przycisku "
 "'minimalizuj'\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
-msgstr "Umiejscowienie tytu³u"
+msgstr "Umiejscowienie tytuÅ‚u"
 
 #: titlebar.cpp:941
 msgid "Middle"
-msgstr "¦rodek"
+msgstr "Åšrodek"
 
 #: titlebar.cpp:969
 msgid "Shaded Vertically"
@@ -106,7 +106,7 @@ msgstr "Cieniuj poziomo"
 
 #: titlebar.cpp:984
 msgid "Plain"
-msgstr "Wype³niony"
+msgstr "WypeÅ‚niony"
 
 #: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
@@ -114,15 +114,15 @@ msgstr "Pixmapa"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
-msgstr "Aktywny pasek tytu³u ma cieniowan± ramkê"
+msgstr "Aktywny pasek tytuÅ‚u ma cieniowanÄ… ramkÄ™"
 
 #: titlebar.cpp:1046
 msgid "Active pixmap:"
-msgstr "Aktywny pasek tytu³u:"
+msgstr "Aktywny pasek tytuÅ‚u:"
 
 #: titlebar.cpp:1051
 msgid "Inactive pixmap:"
-msgstr "Nieaktywny pasek tytu³u:"
+msgstr "Nieaktywny pasek tytuÅ‚u:"
 
 #: titlebar.cpp:1057
 msgid "No pixmap under text"
@@ -130,11 +130,11 @@ msgstr "Brak pixmapy pod tekstem"
 
 #: titlebar.cpp:1068
 msgid "Mouse action"
-msgstr "Dzia³anie myszy"
+msgstr "DziaÅ‚anie myszy"
 
 #: titlebar.cpp:1076
 msgid "Left Button double click does:"
-msgstr "Podwójne klikniêcie lewym przyciskiem:"
+msgstr "PodwÃ³jne klikniÄ™cie lewym przyciskiem:"
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
@@ -142,7 +142,7 @@ msgstr "(Od)Maksymalizuj"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "(Od)Zwiñ"
+msgstr "(Od)ZwiÅ„"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
@@ -154,7 +154,7 @@ msgstr "(Od)Przypnij"
 
 #: titlebar.cpp:1109
 msgid "Title animation"
-msgstr "Przewijanie tytu³u"
+msgstr "Przewijanie tytuÅ‚u"
 
 #: titlebar.cpp:1125
 msgid "ms"
@@ -162,15 +162,15 @@ msgstr "ms"
 
 #: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
-msgstr "B³±d podczas rekonfiguracji mened¿era okien"
+msgstr "BÅ‚Ä…d podczas rekonfiguracji menedÅ¼era okien"
 
 #: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Wyst±pi³ b³±d podczas zachowywania\n"
-"pixmapy paska tytu³owego. Proszê sprawdziæ prawa dostêpu."
+"WystÄ…piÅ‚ bÅ‚Ä…d podczas zachowywania\n"
+"pixmapy paska tytuÅ‚owego. ProszÄ™ sprawdziÄ‡ prawa dostÄ™pu."
 
 #: windows.cpp:68
 msgid "Windows"
@@ -178,15 +178,15 @@ msgstr "Windows"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "Domy¶nie tylko maksymalizacja w pionie"
+msgstr "DomyÅ›nie tylko maksymalizacja w pionie"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
-msgstr "Pokazuj zawarto¶æ podczas przesuwania okna"
+msgstr "Pokazuj zawartoÅ›Ä‡ podczas przesuwania okna"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr "Pokazuj zawarto¶æ podczas zmiany rozmiaru okna"
+msgstr "Pokazuj zawartoÅ›Ä‡ podczas zmiany rozmiaru okna"
 
 #: windows.cpp:98
 msgid "Resize animation:"
@@ -202,7 +202,7 @@ msgstr "Szybko"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "Sposób umiejscawiania"
+msgstr "SposÃ³b umiejscawiania"
 
 #: windows.cpp:134
 msgid "Smart"
@@ -222,24 +222,24 @@ msgstr "Przypadkowe"
 
 #: windows.cpp:142
 msgid "Manual"
-msgstr "Rêczne"
+msgstr "RÄ™czne"
 
 #: windows.cpp:154
 #, c-format
-msgid ""
-"  Allowed overlap:\n"
-"(% of desktop space)"
-msgstr ""
-"Dozwolone przepe³nienie:\n"
-" (% powierzchni biurka)"
+#~ msgid ""
+#~ "  Allowed overlap:\n"
+#~ "(% of desktop space)"
+#~ msgstr ""
+#~ "Dozwolone przepeÅ‚nienie:\n"
+#~ " (% powierzchni biurka)"
 
 #: windows.cpp:175
 msgid "Focus policy"
-msgstr "Sposób uaktywnienia"
+msgstr "SposÃ³b uaktywnienia"
 
 #: windows.cpp:185
 msgid "Click to focus"
-msgstr "Kliknij by uaktywniæ"
+msgstr "Kliknij by uaktywniÄ‡"
 
 #: windows.cpp:187
 msgid "Focus follows mouse"
@@ -251,19 +251,19 @@ msgstr "Myszka uaktywnia okno (klasycznie)"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Kliknij by uaktywniæ (klasycznie)"
+msgstr "Kliknij by uaktywniÄ‡ (klasycznie)"
 
 #: windows.cpp:203
 msgid "Auto Raise"
-msgstr "Autoprzywo³anie"
+msgstr "AutoprzywoÅ‚anie"
 
 #: windows.cpp:209
 msgid "Click Raise"
-msgstr "Przywo³anie klikniêciem"
+msgstr "PrzywoÅ‚anie klikniÄ™ciem"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
-msgstr "Opó¼nienie (ms)"
+msgstr "OpÃ³Åºnienie (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -271,15 +271,15 @@ msgstr "Aktywne brzegi biurka"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "W³±cz aktywne brzegi biurka"
+msgstr "WÅ‚Ä…cz aktywne brzegi biurka"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Umie¶æ kursor na ¶rodku po prze³±czeniu"
+msgstr "UmieÅ›Ä‡ kursor na Å›rodku po przeÅ‚Ä…czeniu"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Opó¼nienie prze³±czenia biurka:"
+msgstr "OpÃ³Åºnienie przeÅ‚Ä…czenia biurka:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -290,7 +290,7 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Strefa przyci±gania brzegu:\n"
+"Strefa przyciÄ…gania brzegu:\n"
 "       (w pikselach)"
 
 #: desktop.cpp:151
@@ -298,7 +298,7 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Strefa przyci±gania okna:\n"
+"Strefa przyciÄ…gania okna:\n"
 "       (w pikselach)"
 
 #: mouse.cpp:54
@@ -311,15 +311,15 @@ msgstr "Okno nieaktywne"
 
 #: mouse.cpp:62
 msgid "Titlebar and frame:"
-msgstr "Pasek tytu³owy i ramka:"
+msgstr "Pasek tytuÅ‚owy i ramka:"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
-msgstr "Wnêtrze nieaktywnego okna:"
+msgstr "WnÄ™trze nieaktywnego okna:"
 
 #: mouse.cpp:70
 msgid "Inner window, titlebar and frame:"
-msgstr "Wnêtrze okna, pasek tytu³owy i ramka:"
+msgstr "WnÄ™trze okna, pasek tytuÅ‚owy i ramka:"
 
 #: mouse.cpp:74 mouse.cpp:86
 msgid "Left Button"
@@ -327,7 +327,7 @@ msgstr "Lewy przycisk"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
-msgstr "¦rodkowy przycisk"
+msgstr "Åšrodkowy przycisk"
 
 #: mouse.cpp:82 mouse.cpp:94
 msgid "Right Button"
@@ -339,7 +339,7 @@ msgstr "ALT + Lewy przycisk"
 
 #: mouse.cpp:102
 msgid "ALT + Middle Button"
-msgstr "Alt + ¦rodkowy przycisk"
+msgstr "Alt + Åšrodkowy przycisk"
 
 #: mouse.cpp:106
 msgid "ALT + Right Button"
@@ -348,12 +348,12 @@ msgstr "ALT + Prawy przycisk"
 #: mouse.cpp:113 mouse.cpp:122 mouse.cpp:132 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
 msgid "Raise"
-msgstr "Przywo³aj"
+msgstr "PrzywoÅ‚aj"
 
 #: mouse.cpp:114 mouse.cpp:123 mouse.cpp:133 mouse.cpp:197 mouse.cpp:208
 #: mouse.cpp:219
 msgid "Lower"
-msgstr "Odwo³aj"
+msgstr "OdwoÅ‚aj"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
@@ -362,7 +362,7 @@ msgstr "Menu operacji na oknie"
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
 msgid "Toggle raise and lower"
-msgstr "Przywo³aj/odwo³aj"
+msgstr "PrzywoÅ‚aj/odwoÅ‚aj"
 
 #: mouse.cpp:126 mouse.cpp:136 mouse.cpp:198 mouse.cpp:209 mouse.cpp:220
 msgid "Nothing"
@@ -371,7 +371,7 @@ msgstr "Brak"
 #: mouse.cpp:142 mouse.cpp:150 mouse.cpp:158 mouse.cpp:169 mouse.cpp:178
 #: mouse.cpp:187
 msgid "Activate and raise"
-msgstr "Uaktywnij i przywo³aj"
+msgstr "Uaktywnij i przywoÅ‚aj"
 
 #: mouse.cpp:143 mouse.cpp:151 mouse.cpp:159
 msgid "Activate and lower"
@@ -384,7 +384,7 @@ msgstr "Uaktywnij"
 
 #: mouse.cpp:166 mouse.cpp:175 mouse.cpp:184
 msgid "Activate, raise and pass click"
-msgstr "Uaktywnij, przywo³aj i kliknij"
+msgstr "Uaktywnij, przywoÅ‚aj i kliknij"
 
 #: mouse.cpp:167 mouse.cpp:176 mouse.cpp:185
 msgid "Activate and pass click"
@@ -392,11 +392,11 @@ msgstr "Uaktywnij i kliknij"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
 msgid "Move"
-msgstr "Przenie¶"
+msgstr "PrzenieÅ›"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
-msgstr "Zmieñ rozmiar"
+msgstr "ZmieÅ„ rozmiar"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
@@ -404,11 +404,11 @@ msgstr "Klawiatura i mysz"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab prze³±cza biurka"
+msgstr "Ctrl-Tab przeÅ‚Ä…cza biurka"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-Tab jest ograniczony do bie¿±cego biurka"
+msgstr "Alt-Tab jest ograniczony do bieÅ¼Ä…cego biurka"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
@@ -424,7 +424,7 @@ msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
-msgstr "Obs³uga prawego przycisku myszy"
+msgstr "ObsÅ‚uga prawego przycisku myszy"
 
 #: advanced.cpp:78
 msgid "Filters"
@@ -432,11 +432,11 @@ msgstr "Filtry"
 
 #: advanced.cpp:98
 msgid "Windows will:"
-msgstr "Okno bêdzie:"
+msgstr "Okno bÄ™dzie:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "mia³o sk±p± dekoracjê"
+msgstr "miaÅ‚o skÄ…pÄ… dekoracjÄ™"
 
 #: advanced.cpp:105
 msgid "have no decorations"
@@ -444,23 +444,23 @@ msgstr "bez dekoracji"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr "nie uaktywni siê"
+msgstr "nie uaktywni siÄ™"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "otworzy siê przypiête"
+msgstr "otworzy siÄ™ przypiÄ™te"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr "wy³±czone z zarz±dzania sesji"
+msgstr "wyÅ‚Ä…czone z zarzÄ…dzania sesji"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr "je¶li odpowiada kategorii:"
+msgstr "jeÅ›li odpowiada kategorii:"
 
 #: advanced.cpp:121
 msgid "Titles"
-msgstr "Tytu³"
+msgstr "TytuÅ‚"
 
 #: advanced.cpp:126
 msgid "Classes"

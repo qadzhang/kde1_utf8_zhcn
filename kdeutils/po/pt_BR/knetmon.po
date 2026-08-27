@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: KNetMon\n"
 "POT-Creation-Date: 1999-01-18 02:28+0100\n"
 "PO-Revision-Date: 1999-04-20 01:30-0300\n"
-"Last-Translator: Elvis Pf¸tzenreuter <epx@netville.com.br>\n"
+"Last-Translator: Elvis Pf√ºtzenreuter <epx@netville.com.br>\n"
 "Language-Team: Brazilian Portuguese\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: base64\n"
 
 #: knetmon/kconfigdlg.cpp:24
@@ -15,7 +15,7 @@ msgstr "&Grupo de trabalho ativo:"
 
 #: knetmon/kconfigdlg.cpp:26
 msgid "Your &username:"
-msgstr "Seu nome de &usu·rio:"
+msgstr "Seu nome de &usu√°rio:"
 
 #: knetmon/kconfigdlg.cpp:27
 msgid "Use &NSLookup: "
@@ -39,7 +39,7 @@ msgstr "Utilizar &IP para samba"
 
 #: knetmon/kconfigdlg.cpp:34
 msgid "Ask always for &password and username"
-msgstr "Sempre perguntar por &senha e nome de usu·rio"
+msgstr "Sempre perguntar por &senha e nome de usu√°rio"
 
 #: knetmon/kconfigdlg.cpp:35
 msgid "&Change name"
@@ -59,7 +59,7 @@ msgstr "Utilizar programa especial de talk: "
 
 #: knetmon/kconfigdlg.cpp:41
 msgid "&Max. number of button rows:"
-msgstr "N˙mero &m·ximo de linhas de botıes:"
+msgstr "N√∫mero &m√°ximo de linhas de bot√µes:"
 
 #: knetmon/kconfigdlg.cpp:43
 msgid "Adjust &fontsize:"
@@ -71,7 +71,7 @@ msgstr "&Utilizar o seguinte xterm:"
 
 #: knetmon/kconfigdlg.cpp:47
 msgid "&Start xterm with options:"
-msgstr "&Iniciar xterm com opÁıes:"
+msgstr "&Iniciar xterm com op√ß√µes:"
 
 #: knetmon/kconfigdlg.cpp:49
 msgid "&Explore with:"
@@ -83,7 +83,7 @@ msgstr "Montar volumes &compartilhados sob:"
 
 #: knetmon/kconfigdlg.cpp:54
 msgid "&Update period:"
-msgstr "&PerÌodo de AtualizaÁ„o"
+msgstr "&Per√≠odo de Atualiza√ß√£o"
 
 #: knetmon/kconfigdlg.cpp:55
 msgid "Unmount on &exit"
@@ -95,15 +95,15 @@ msgstr "Configurar KNetMon"
 
 #: knetmon/kconfigdlg.cpp:75 knetmon/knetmon.cpp:389
 msgid "Network settings"
-msgstr "ConfiguraÁıes de rede"
+msgstr "Configura√ß√µes de rede"
 
 #: knetmon/kconfigdlg.cpp:76 knetmon/knetmon.cpp:390
 msgid "GUI settings"
-msgstr "ConfiguraÁıes GUI"
+msgstr "Configura√ß√µes GUI"
 
 #: knetmon/kconfigdlg.cpp:77 knetmon/knetmon.cpp:388
 msgid "More settings"
-msgstr "Mais configuraÁıes"
+msgstr "Mais configura√ß√µes"
 
 #: knetmon/kconfigdlg.cpp:83
 msgid "identifier for the current selected workgroup"
@@ -111,45 +111,45 @@ msgstr "identificar do grupo de trabalho correntemente selecionado"
 
 #: knetmon/kconfigdlg.cpp:87
 msgid "you should know"
-msgstr "vocÍ deveria saber"
+msgstr "voc√™ deveria saber"
 
 #: knetmon/kconfigdlg.cpp:94
 msgid ""
 "if checked, knetmon will be able to retrieve the IP addresses from your "
 "nameserver"
-msgstr "se habilitado, knetmon poder· obter os endereÁos IP de seu servidor de nomes"
+msgstr "se habilitado, knetmon poder√° obter os endere√ßos IP de seu servidor de nomes"
 
 #: knetmon/kconfigdlg.cpp:95
 msgid "enter the IP address of your nameserver, its name may work too"
-msgstr "digite o n˙mero IP de seu servidor de nomes, seu nome deve funcionar tambÈm"
+msgstr "digite o n√∫mero IP de seu servidor de nomes, seu nome deve funcionar tamb√©m"
 
 #: knetmon/kconfigdlg.cpp:100
 msgid ""
 "if checked, smbclient is used for getting\n"
 "a list of active hosts, it is recommended to enable this"
-msgstr "se habilitado, smbclient ser· usado para obter\numa lista de m·quinas ativa; È recomend·vel habilitar"
+msgstr "se habilitado, smbclient ser√° usado para obter\numa lista de m√°quinas ativa; √© recomend√°vel habilitar"
 
 #: knetmon/kconfigdlg.cpp:105
 msgid ""
 "name of a host, which provides a browsing list,\n"
 "e.g. the name server or your own machine"
-msgstr "nome de uma m·quina que oferece uma lista de consulta,\npor exemplo o servidor DNS ou sua prÛpria m·quina"
+msgstr "nome de uma m√°quina que oferece uma lista de consulta,\npor exemplo o servidor DNS ou sua pr√≥pria m√°quina"
 
 #: knetmon/kconfigdlg.cpp:109
 msgid ""
 "if checked, samba will use the IP-address for its actions,\n"
 "usually it should work without this option"
-msgstr "se habilitado, o samba usar· o endereÁo IP para seus fins,\nusualmente ele deve funcionar sem esta opÁ„o"
+msgstr "se habilitado, o samba usar√° o endere√ßo IP para seus fins,\nusualmente ele deve funcionar sem esta op√ß√£o"
 
 #: knetmon/kconfigdlg.cpp:113
 msgid "if checked, samba will always use password and username"
-msgstr "se habilitado, o samba sempre usar· senha e nome de usu·rio"
+msgstr "se habilitado, o samba sempre usar√° senha e nome de usu√°rio"
 
 #: knetmon/kconfigdlg.cpp:128
 msgid ""
 "if not checked, the standard talk program in\n"
 "a xterm is used, else the talk you enter here"
-msgstr "se n„o habilitado, o programa programa talk no\nxterm ser· usado; do contr·rio, o que vocÍ digitar aqui"
+msgstr "se n√£o habilitado, o programa programa talk no\nxterm ser√° usado; do contr√°rio, o que voc√™ digitar aqui"
 
 #: knetmon/kconfigdlg.cpp:129
 msgid "the name of a X talk, e.g. \"ktalk\""
@@ -157,44 +157,44 @@ msgstr "O nome de um X talk, como o \"ktalk\""
 
 #: knetmon/kconfigdlg.cpp:133
 msgid "the maximum number of buttons vertically"
-msgstr "o n˙mero m·ximo de botıes verticalmente"
+msgstr "o n√∫mero m√°ximo de bot√µes verticalmente"
 
 #: knetmon/kconfigdlg.cpp:137
 msgid "the font size of the buttons"
-msgstr "o tamanho de fonte dos botıes"
+msgstr "o tamanho de fonte dos bot√µes"
 
 #: knetmon/kconfigdlg.cpp:141
 msgid "the name of your favourite xterm, kvt won't work, I think"
-msgstr "o nome de seu x-term favorito; kvt n„o funcionar·, eu acho"
+msgstr "o nome de seu x-term favorito; kvt n√£o funcionar√°, eu acho"
 
 #: knetmon/kconfigdlg.cpp:145
 msgid ""
 "the xterm entered above will\n"
 "be started with these options"
-msgstr "o xterm digitado acima ser·\niniciado com estas opÁıes"
+msgstr "o xterm digitado acima ser√°\niniciado com estas op√ß√µes"
 
 #: knetmon/kconfigdlg.cpp:149
 #, c-format
 msgid "a filemanager which opens directory %dir"
-msgstr "um gerenciador de arquivos que abre o diretÛrio %dir"
+msgstr "um gerenciador de arquivos que abre o diret√≥rio %dir"
 
 #: knetmon/kconfigdlg.cpp:154
 msgid ""
 "here the shares will be mounted,\n"
 "you MUST have WRITE-PERMISSION"
-msgstr "aqui ser„o montados os volumes compartilhados,\nvocÍ PRECISA ter PERMISS√O DE ESCRITA"
+msgstr "aqui ser√£o montados os volumes compartilhados,\nvoc√™ PRECISA ter PERMISS√ÉO DE ESCRITA"
 
 #: knetmon/kconfigdlg.cpp:160
 msgid "update period in seconds"
-msgstr "perÌodo de atualizaÁ„o em segundos"
+msgstr "per√≠odo de atualiza√ß√£o em segundos"
 
 #: knetmon/kconfigdlg.cpp:163
 msgid "usually you should keep this checked"
-msgstr "normalmente vocÍ deixar· esta opÁ„o habilitada"
+msgstr "normalmente voc√™ deixar√° esta op√ß√£o habilitada"
 
 #: knetmon/kconfigdlg.cpp:334
 msgid "Enter an identifier for the new workgroup"
-msgstr "Digite uma identificaÁ„o para o novo grupo de trabalho"
+msgstr "Digite uma identifica√ß√£o para o novo grupo de trabalho"
 
 #: knetmon/kconfigdlg.cpp:335
 msgid "Name of new work&group:"
@@ -206,7 +206,7 @@ msgstr "Nome do &grupo de trabalho:"
 
 #: knetmon/kconfigdlg.cpp:391
 msgid "Enter an identifier for this workgroup"
-msgstr "Digite uma identificaÁ„o para este grupo de trabalho"
+msgstr "Digite uma identifica√ß√£o para este grupo de trabalho"
 
 #: knetmon/knetmon.cpp:27
 msgid "&Status"
@@ -218,7 +218,7 @@ msgstr "&Mais"
 
 #: knetmon/knetmon.cpp:54
 msgid "Explore host"
-msgstr "Explorar m·quina"
+msgstr "Explorar m√°quina"
 
 #: knetmon/knetmon.cpp:55
 msgid "Mount"
@@ -266,7 +266,7 @@ msgstr "Montar volume compartilhado"
 
 #: knetmon/knetmon.cpp:76
 msgid "Get IP address"
-msgstr "Obter endereÁo IP"
+msgstr "Obter endere√ßo IP"
 
 #: knetmon/knetmon.cpp:79
 msgid "Change workgroup"
@@ -295,7 +295,7 @@ msgstr "&Ping"
 
 #: knetmon/knetmon.cpp:518
 msgid "On host:"
-msgstr "Na m·quina:"
+msgstr "Na m√°quina:"
 
 #: knetmon/knetmon.cpp:595 knetmon/knetmon.cpp:643
 msgid "Enter login name:"
@@ -331,7 +331,7 @@ msgstr "Nome do volume compartilhado:"
 
 #: knetmon/knetmon.cpp:898
 msgid "Connect to host:"
-msgstr "Conectar ‡ m·quina:"
+msgstr "Conectar √† m√°quina:"
 
 #: knetmon/knetmon.cpp:911 knetmon/knetmon.cpp:1044 knetmon/knetmon.cpp:1194
 msgid "Co&nnect"
@@ -348,15 +348,15 @@ msgstr "algo deu errado ;)"
 
 #: knetmon/knetmon.cpp:1035
 msgid "Connect to which share from host "
-msgstr "Conectar a que volume compartilhado da m·quina "
+msgstr "Conectar a que volume compartilhado da m√°quina "
 
 #: knetmon/knetmon.cpp:1180
 msgid "Get list from host:"
-msgstr "Obter lista da m·quina:"
+msgstr "Obter lista da m√°quina:"
 
 #: knetmon/knetmon.cpp:1303
 msgid "Enter username:"
-msgstr "Digite nome de usu·rio:"
+msgstr "Digite nome de usu√°rio:"
 
 #: knetmon/knetmon.cpp:1303 knetmon/knetmon.cpp:2046
 msgid "Use &password"
@@ -372,7 +372,7 @@ msgstr "Montar volume compartilhado: "
 
 #: knetmon/knetmon.cpp:1436
 msgid "Mount share from host:"
-msgstr "Montar volume remoto da m·quina:"
+msgstr "Montar volume remoto da m√°quina:"
 
 #: knetmon/knetmon.cpp:1448
 msgid "Select filesystem:"
@@ -384,7 +384,7 @@ msgstr "&Montar"
 
 #: knetmon/knetmon.cpp:1573
 msgid "Mount shares from host "
-msgstr "Montar volumes compartilhados da m·quina "
+msgstr "Montar volumes compartilhados da m√°quina "
 
 #: knetmon/knetmon.cpp:1583
 msgid "Mount &all shares"
@@ -396,25 +396,25 @@ msgstr "Montar volumes compartilhados &selecionados"
 
 #: knetmon/knetmon.cpp:1838 knetmon/qutilobjects.cpp:303
 msgid "Host not found"
-msgstr "Computador n„o encontrado"
+msgstr "Computador n√£o encontrado"
 
 #: knetmon/knetmon.cpp:1838 knetmon/qutilobjects.cpp:303
 msgid ""
 "Host not found, action failed\n"
 "Stay cool, think it must have been a bug"
-msgstr "M·quina n„o encontrada, operaÁ„o falhou\nFique frio, pense que deve ter sido um bug"
+msgstr "M√°quina n√£o encontrada, opera√ß√£o falhou\nFique frio, pense que deve ter sido um bug"
 
 #: knetmon/knetmon.cpp:1863
 msgid "Some information about host "
-msgstr "Alguma informaÁ„o sobre a m·quina "
+msgstr "Alguma informa√ß√£o sobre a m√°quina "
 
 #: knetmon/knetmon.cpp:1868
 msgid "Comment:"
-msgstr "Coment·rio:"
+msgstr "Coment√°rio:"
 
 #: knetmon/knetmon.cpp:1878
 msgid "IP address:"
-msgstr "EndereÁo IP:"
+msgstr "Endere√ßo IP:"
 
 #: knetmon/knetmon.cpp:1888
 msgid "Running OS:"
@@ -422,7 +422,7 @@ msgstr "Executando OS:"
 
 #: knetmon/knetmon.cpp:1898
 msgid "Available shares:"
-msgstr "Volumes compartilhados disponÌveis:"
+msgstr "Volumes compartilhados dispon√≠veis:"
 
 #: knetmon/knetmon.cpp:1915
 msgid ""
@@ -436,50 +436,50 @@ msgid ""
 "Created using Qt 1.4 by Troll Tech http://www.troll.no"
 msgstr ""
 " por Alexander Neundorf\n"
-"Problemas, coment·rios ... para alexander.neundorf@rz.tu-ilmenau.de\n"
-"Novas versıes em http://www.rz.tu-ilmenau.de/~lekus/netmon.html\n"
+"Problemas, coment√°rios ... para alexander.neundorf@rz.tu-ilmenau.de\n"
+"Novas vers√µes em http://www.rz.tu-ilmenau.de/~lekus/netmon.html\n"
 "\n"
-"Este programa È gratuito sob os termos da LicenÁa GNU."
+"Este programa √© gratuito sob os termos da Licen√ßa GNU."
 "\n"
 "Confeccionado com a biblioteca Qt 1.4 da Troll Tech http://www.troll.no"
 
 #: knetmon/knetmon.cpp:1947
 msgid "Login as user:"
-msgstr "Login como usu·rio:"
+msgstr "Login como usu√°rio:"
 
 #: knetmon/knetmon.cpp:1951
 msgid "Talk to user:"
-msgstr "Talk com usu·rio:"
+msgstr "Talk com usu√°rio:"
 
 #: knetmon/knetmon.cpp:1955
 msgid "Telnet as user:"
-msgstr "Telnet como usu·rio:"
+msgstr "Telnet como usu√°rio:"
 
 #: knetmon/knetmon.cpp:1960
 msgid "Put Finger on host:"
-msgstr "Finger endereÁado ‡ m·quina:"
+msgstr "Finger endere√ßado √† m√°quina:"
 
 #: knetmon/knetmon.cpp:1964
 msgid "Ping to host:"
-msgstr "Ping para m·quina:"
+msgstr "Ping para m√°quina:"
 
 #: knetmon/knetmon.cpp:1969
 msgid "Get address of host:"
-msgstr "Obter endereÁo da m·quina: "
+msgstr "Obter endere√ßo da m√°quina: "
 
 #: knetmon/knetmon.cpp:1975
 msgid "IP address of host "
-msgstr "EndereÁo IP da m·quina "
+msgstr "Endere√ßo IP da m√°quina "
 
 #: knetmon/knetmon.cpp:2046
 msgid "Enter username"
-msgstr "Digite o nome do usu·rio"
+msgstr "Digite o nome do usu√°rio"
 
 #: knetmon/main.cpp:84 knetmon/main.cpp:86 knetmon/main.cpp:88
 #: knetmon/main.cpp:90 knetmon/main.cpp:92 knetmon/main.cpp:94
 #: knetmon/main.cpp:98 knetmon/main.cpp:100
 msgid "Required binary not found"
-msgstr "Bin·rio requerido n„o encontrado"
+msgstr "Bin√°rio requerido n√£o encontrado"
 
 #: knetmon/main.cpp:84
 msgid ""
@@ -489,9 +489,9 @@ msgid ""
 "-d.\n"
 "Continue anyway ?"
 msgstr ""
-"ImpossÌvel executar smbclient,\n"
-"isto poder· trazer problemas.\n"
-"Se vocÍ n„o quer que o knetmon verifique os bin·rios, inicie-o com a opÁ„o "
+"Imposs√≠vel executar smbclient,\n"
+"isto poder√° trazer problemas.\n"
+"Se voc√™ n√£o quer que o knetmon verifique os bin√°rios, inicie-o com a op√ß√£o "
 "-d.\n"
 "Continuar assim mesmo ?"
 
@@ -503,9 +503,9 @@ msgid ""
 "-d.\n"
 "Continue anyway ?"
 msgstr ""
-"ImpossÌvel executar smbmount,\n"
-"vocÍ n„o poder· montar volumes compartilhados do SaMBa.\n"
-"Se vocÍ n„o quer que o knetmon verifique os bin·rios, inicie-o com a opÁ„o"
+"Imposs√≠vel executar smbmount,\n"
+"voc√™ n√£o poder√° montar volumes compartilhados do SaMBa.\n"
+"Se voc√™ n√£o quer que o knetmon verifique os bin√°rios, inicie-o com a op√ß√£o"
 "-d.\n"
 "Continuar assim mesmo ?"
 
@@ -517,9 +517,9 @@ msgid ""
 "-d.\n"
 "Continue anyway ?"
 msgstr ""
-"ImpossÌvel executar smbumount,\n"
-"vocÍ n„o poder· desmontar volumes compartilhados montados do SaMBa.\n"
-"Se vocÍ n„o quer que o knetmon verifique os bin·rios, inicie-o com a opÁ„o"
+"Imposs√≠vel executar smbumount,\n"
+"voc√™ n√£o poder√° desmontar volumes compartilhados montados do SaMBa.\n"
+"Se voc√™ n√£o quer que o knetmon verifique os bin√°rios, inicie-o com a op√ß√£o"
 "-d.\n"
 "Continuar assim mesmo ?"
 
@@ -531,9 +531,9 @@ msgid ""
 "-d.\n"
 "Continue anyway ?"
 msgstr ""
-"ImpossÌvel executar mount,\n"
-"vocÍ n„o poder· montar volumes exportados do NFS.\n"
-"Se vocÍ n„o quer que o knetmon verifique os bin·rios, inicie-o com a opÁ„o"
+"Imposs√≠vel executar mount,\n"
+"voc√™ n√£o poder√° montar volumes exportados do NFS.\n"
+"Se voc√™ n√£o quer que o knetmon verifique os bin√°rios, inicie-o com a op√ß√£o"
 "-d.\n"
 "Continuar assim mesmo ?"
 
@@ -545,9 +545,9 @@ msgid ""
 "-d.\n"
 "Continue anyway ?"
 msgstr ""
-"ImpossÌvel executar umount,\n"
-"vocÍ n„o poder· desmontar volumes montados do NFS.\n"
-"Se vocÍ n„o quer que o knetmon verifique os bin·rios, inicie-o com a opÁ„o"
+"Imposs√≠vel executar umount,\n"
+"voc√™ n√£o poder√° desmontar volumes montados do NFS.\n"
+"Se voc√™ n√£o quer que o knetmon verifique os bin√°rios, inicie-o com a op√ß√£o"
 "-d.\n"
 "Continuar assim mesmo ?"
 
@@ -559,9 +559,9 @@ msgid ""
 "-d.\n"
 "Continue anyway ?"
 msgstr ""
-"ImpossÌvel executar showmount,\n"
-"portanto as operaÁıes NFS n„o funcionar„o.\n"
-"Se vocÍ n„o quer que o knetmon verifique os bin·rios, inicie-o com a opÁ„o"
+"Imposs√≠vel executar showmount,\n"
+"portanto as opera√ß√µes NFS n√£o funcionar√£o.\n"
+"Se voc√™ n√£o quer que o knetmon verifique os bin√°rios, inicie-o com a op√ß√£o"
 "-d.\n"
 "Continuar assim mesmo ?"
 
@@ -573,9 +573,9 @@ msgid ""
 "-d.\n"
 "Continue anyway ?"
 msgstr ""
-"ImpossÌvel executar nslookup,\n"
-"vocÍ ter· problemas se precisar saber os endereÁos IP para o SaMBa.\n"
-"Se vocÍ n„o quer que o knetmon verifique os bin·rios, inicie-o com a opÁ„o"
+"Imposs√≠vel executar nslookup,\n"
+"voc√™ ter√° problemas se precisar saber os endere√ßos IP para o SaMBa.\n"
+"Se voc√™ n√£o quer que o knetmon verifique os bin√°rios, inicie-o com a op√ß√£o"
 "-d.\n"
 "Continuar assim mesmo ?"
 
@@ -587,9 +587,9 @@ msgid ""
 "-d.\n"
 "Continue anyway ?"
 msgstr ""
-"ImpossÌvel executar nmblookup,\n"
-"vocÍ ter· problemas se precisar saber o endereÁo IP para o SaMBa.\n"
-"Se vocÍ n„o quer que o knetmon verifique os bin·rios, inicie-o com a opÁ„o"
+"Imposs√≠vel executar nmblookup,\n"
+"voc√™ ter√° problemas se precisar saber o endere√ßo IP para o SaMBa.\n"
+"Se voc√™ n√£o quer que o knetmon verifique os bin√°rios, inicie-o com a op√ß√£o"
 "-d.\n"
 "Continuar assim mesmo ?"
 
@@ -611,7 +611,7 @@ msgstr " estado"
 
 #: knetmon/qutilobjects.cpp:90
 msgid "Resources accessed by other users:"
-msgstr "Recursos acessados por outros usu·rios:"
+msgstr "Recursos acessados por outros usu√°rios:"
 
 #: knetmon/qutilobjects.cpp:95
 msgid "Network resources mounted on this system:"
@@ -623,7 +623,7 @@ msgstr "Volume compartilhado"
 
 #: knetmon/qutilobjects.cpp:106
 msgid "User"
-msgstr "Usu·rio"
+msgstr "Usu√°rio"
 
 #: knetmon/qutilobjects.cpp:107
 msgid "Group"
@@ -631,7 +631,7 @@ msgstr "Grupo"
 
 #: knetmon/qutilobjects.cpp:108
 msgid "Machine"
-msgstr "M·quina"
+msgstr "M√°quina"
 
 #: knetmon/qutilobjects.cpp:109
 msgid "Since"
@@ -651,11 +651,11 @@ msgstr "Tipo"
 
 #: knetmon/qutilobjects.cpp:120
 msgid "View exports"
-msgstr "Ver diretÛrios exportados"
+msgstr "Ver diret√≥rios exportados"
 
 #: knetmon/qutilobjects.cpp:121
 msgid "View imports"
-msgstr "Ver diretÛrios importados"
+msgstr "Ver diret√≥rios importados"
 
 #: knetmon/qutilobjects.cpp:287
 msgid "Show &hidden shares"
@@ -663,7 +663,7 @@ msgstr "Mostrar volumes compartilhados &escondidos"
 
 #: knetmon/qutilobjects.cpp:390
 msgid "Do nothing"
-msgstr "N„o fazer nada"
+msgstr "N√£o fazer nada"
 
 #: knetmon/qutilobjects.cpp:392
 msgid "Disconnect"
@@ -671,4 +671,4 @@ msgstr "Desconectar"
 
 #: qplus/qplus.cpp:491
 msgid "Save Changes ?"
-msgstr "Salvar mudanÁas ?"
+msgstr "Salvar mudan√ßas ?"

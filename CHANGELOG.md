@@ -4,6 +4,10 @@
 
 ## 2026-08-28
 
+- 全语言 po 转 UTF-8：非中文的 31 种语言约 1900 个 po（Latin-1/2/8、KOI8-R、EUC-JP 等）全部按各自 charset 声明转码为 UTF-8——宿主固定 UTF-8 前提下，任何 XX.UTF-8 locale 的用户经 KLocale 的语言回退命中 XX 目录后拿到的均为合法 UTF-8 内容（此前 Latin-1 系语言会出现重音字符乱码）；1999 年遗留的格式符错误条目以 #~ 废弃、损坏的 ja kstart 两文件重写为合法头，全项目 2064 个 po msgfmt 终检通过；法语 mo 重音字符（é/è/ç）抽查验证为合法 UTF-8；deb 已重打包重装。英文环境无需转换（不经 mo，源码原文即 ASCII）。
+
+## 2026-08-28
+
 - 打印接入 CUPS 并闭环实测通过：Qt1 QPrinter 的 lpr 命令路径经 cups-bsd 兼容层（/usr/bin/lpr）零代码接入现代 CUPS；kde1 元包 Recommends 声明 cups-bsd/cups（package.sh 与 debian/control 同步）；实测 lpr -P PDF 提交中文文档成功产出 PDF 且内容正确。验收标准增至八条（打印为第 7 条，原 UTF-8 融合顺延为第 8 条），AGENTS/README/路线图同步。
 
 ## 2026-08-28

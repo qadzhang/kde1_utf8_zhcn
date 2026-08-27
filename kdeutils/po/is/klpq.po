@@ -10,11 +10,11 @@ msgstr ""
 
 #: main.cpp:178
 msgid "Sorry, can't open your printcap file."
-msgstr "Ekki tókst ağ opna 'printcap' skrána."
+msgstr "Ekki tÃ³kst aÃ° opna 'printcap' skrÃ¡na."
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
-msgstr "Ekki tókst ağ túlka 'printcap' skrána."
+msgstr "Ekki tÃ³kst aÃ° tÃºlka 'printcap' skrÃ¡na."
 
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
@@ -26,7 +26,7 @@ msgstr "Prentari"
 
 #: klpq.cpp:95
 msgid "Queuing"
-msgstr "Biğrağir"
+msgstr "BiÃ°raÃ°ir"
 
 #: klpq.cpp:100
 msgid "Printing"
@@ -34,11 +34,11 @@ msgstr "Prentun"
 
 #: klpq.cpp:105
 msgid "Update"
-msgstr "Uppfæra"
+msgstr "UppfÃ¦ra"
 
 #: klpq.cpp:125
 msgid "Rank"
-msgstr "Stağa"
+msgstr "StaÃ°a"
 
 #: klpq.cpp:126
 msgid "Owner"
@@ -50,23 +50,23 @@ msgstr "Verk"
 
 #: klpq.cpp:129
 msgid "Size"
-msgstr "Stærğ"
+msgstr "StÃ¦rÃ°"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
-msgstr "Færa fremst"
+msgstr "FÃ¦ra fremst"
 
 #: klpq.cpp:160
 msgid "Auto"
-msgstr "Sjálfv."
+msgstr "SjÃ¡lfv."
 
 #: klpq.cpp:204
 msgid "&Auto update"
-msgstr "Sjálfvirk &uppfærsla"
+msgstr "SjÃ¡lfvirk &uppfÃ¦rsla"
 
 #: klpq.cpp:205
 msgid "&Spooler"
-msgstr "&Prentröğ"
+msgstr "&PrentrÃ¶Ã°"
 
 #: klpq.cpp:208
 #, c-format
@@ -76,7 +76,7 @@ msgid ""
 "chris@kde.org"
 msgstr ""
 "Klpq %s\n"
-"Höfundarrétt á Christoph Neerfeld\n"
+"HÃ¶fundarrÃ©tt Ã¡ Christoph Neerfeld\n"
 "chris@kde.org"
 
 #: klpq.cpp:213
@@ -86,7 +86,7 @@ msgstr "&Stillingar"
 #: klpq.cpp:404
 #, c-format
 msgid "Do you really want to remove job No %d"
-msgstr "Viltu virkilega fjarlægja verk nr. %d"
+msgstr "Viltu virkilega fjarlÃ¦gja verk nr. %d"
 
 #: klpq.cpp:424
 #, c-format
@@ -95,45 +95,45 @@ msgid ""
 "%d\n"
 "on top of queue"
 msgstr ""
-"Viltu örugglega færa verk nr.\n"
+"Viltu Ã¶rugglega fÃ¦ra verk nr.\n"
 "%d\n"
-"fremst í biğröğina"
+"fremst Ã­ biÃ°rÃ¶Ã°ina"
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
-msgstr "Ağgangur bannağur"
+msgstr "AÃ°gangur bannaÃ°ur"
 
 #: klpq.cpp:573 klpq.cpp:579 klpq.cpp:594
 msgid ""
 "This is a privileged command\n"
 "and you do not have permission to execute it."
 msgstr ""
-"Şú hefur ekki heimildir til ağ framkvæma\n"
-"şessa ağgerğ."
+"ÃÃº hefur ekki heimildir til aÃ° framkvÃ¦ma\n"
+"Ã¾essa aÃ°gerÃ°."
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
-msgstr "Stilla sjálfvirka uppfærslu"
+msgstr "Stilla sjÃ¡lfvirka uppfÃ¦rslu"
 
 #: ConfAutoUpdateData.cpp:17
 msgid "Update frequency in seconds:"
-msgstr "Tíğni uppfærslna í sekúndum:"
+msgstr "TÃ­Ã°ni uppfÃ¦rslna Ã­ sekÃºndum:"
 
 #: klpqspooler.cpp:199 klpqspooler.cpp:269
 msgid "Can't find your lpc program !"
-msgstr "Fann ekki 'lpc' forritiğ!"
+msgstr "Fann ekki 'lpc' forritiÃ°!"
 
 #: klpqspooler.cpp:200 klpqspooler.cpp:270
 msgid ""
 "Sorry, I can't find your lpc program.\n"
 "Please check the configuration under Config->Spooler."
 msgstr ""
-"Şví miğur fannst 'lpc' forritiğ ekki, athugağu\n"
-"stillingarnar undir Stillingar->Prentröğ."
+"ÃvÃ­ miÃ°ur fannst 'lpc' forritiÃ° ekki, athugaÃ°u\n"
+"stillingarnar undir Stillingar->PrentrÃ¶Ã°."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
-msgstr "Veldu prentröğunarkerfi"
+msgstr "Veldu prentrÃ¶Ã°unarkerfi"
 
 #: FirstStartData.cpp:42
 msgid ""
@@ -141,10 +141,10 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Vinsamlegast gefğu til kynna hvağa prentröğunarkerfi şú notar.  Flest kerfi "
-"nota BSD röğun, ş.a. şú ættir ağ prófa şağ ef şú veist ekki hvağa kerfi şú "
-"ert meğ."
+"Vinsamlegast gefÃ°u til kynna hvaÃ°a prentrÃ¶Ã°unarkerfi Ã¾Ãº notar.  Flest kerfi "
+"nota BSD rÃ¶Ã°un, Ã¾.a. Ã¾Ãº Ã¦ttir aÃ° prÃ³fa Ã¾aÃ° ef Ã¾Ãº veist ekki hvaÃ°a kerfi Ã¾Ãº "
+"ert meÃ°."
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"
-msgstr "Slóğir ağ skipunum prentrağarinnar:"
+msgstr "SlÃ³Ã°ir aÃ° skipunum prentraÃ°arinnar:"

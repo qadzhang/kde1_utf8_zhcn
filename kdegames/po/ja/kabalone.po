@@ -11,120 +11,120 @@ msgstr ""
 "Last-Translator: Taiki Komoda <tklab@ma6.seikyou.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: Move.cpp:17
 msgid "Right"
-msgstr "±¦"
+msgstr "å³"
 
 #: Move.cpp:18
 msgid "RightDown"
-msgstr "±¦²¼"
+msgstr "å³ä¸‹"
 
 #: Move.cpp:19
 msgid "LeftDown"
-msgstr "º¸²¼"
+msgstr "å·¦ä¸‹"
 
 #: Move.cpp:20
 msgid "Left"
-msgstr "º¸"
+msgstr "å·¦"
 
 #: Move.cpp:21
 msgid "LeftUp"
-msgstr "º¸¾å"
+msgstr "å·¦ä¸Š"
 
 #: Move.cpp:22
 msgid "RightUp"
-msgstr "±¦¾å"
+msgstr "å³ä¸Š"
 
 #: Move.cpp:35 Move.cpp:42
 msgid "Side"
-msgstr "¥µ¥¤¥É"
+msgstr "ã‚µã‚¤ãƒ‰"
 
 #: Move.cpp:49
 msgid "Out"
-msgstr "¥¢¥¦¥È"
+msgstr "ã‚¢ã‚¦ãƒˆ"
 
 #: Move.cpp:50
 msgid "Push"
-msgstr "¥×¥Ã¥·¥å"
+msgstr "ãƒ—ãƒƒã‚·ãƒ¥"
 
 #: BoardWidget.cpp:512 BoardWidget.cpp:541 BoardWidget.cpp:576
 msgid "Board value"
-msgstr "¥Ü¡¼¥ÉÃÍ"
+msgstr "ãƒœãƒ¼ãƒ‰å€¤"
 
 #: AbTop.cpp:241 AbTop.cpp:398
 msgid "Move"
-msgstr "°ÜÆ°"
+msgstr "ç§»å‹•"
 
 #: AbTop.cpp:244 AbTop.cpp:402
 msgid "Press F2 for a new game"
-msgstr "F2¤Ç¿·¤·¤¤¥²¡¼¥à"
+msgstr "F2ã§æ–°ã—ã„ã‚²ãƒ¼ãƒ "
 
 #: AbTop.cpp:262 AbTop.cpp:301
 msgid "Stop Search"
-msgstr "»×¹Í¤ò»ß¤á¤ë"
+msgstr "æ€è€ƒã‚’æ­¢ã‚ã‚‹"
 
 #: AbTop.cpp:267 AbTop.cpp:305
 msgid "Take back"
-msgstr "°ì¼êÌá¤ë"
+msgstr "ä¸€æ‰‹æˆ»ã‚‹"
 
 #: AbTop.cpp:272 AbTop.cpp:307
 msgid "Hint"
-msgstr "¥Ò¥ó¥È"
+msgstr "ãƒ’ãƒ³ãƒˆ"
 
 #: AbTop.cpp:296
 msgid "Save Position"
-msgstr "°ÌÃÖ¤òÊİÂ¸"
+msgstr "ä½ç½®ã‚’ä¿å­˜"
 
 #: AbTop.cpp:298
 msgid "Restore Position"
-msgstr "°ÌÃÖ¤ò½¤Éü"
+msgstr "ä½ç½®ã‚’ä¿®å¾©"
 
 #: AbTop.cpp:315
 msgid "Easy"
-msgstr "½éµé"
+msgstr "åˆç´š"
 
 #: AbTop.cpp:317
 msgid "Normal"
-msgstr "Ãæµé"
+msgstr "ä¸­ç´š"
 
 #: AbTop.cpp:319
 msgid "Hard"
-msgstr "¾åµé"
+msgstr "ä¸Šç´š"
 
 #: AbTop.cpp:321
 msgid "Challange"
-msgstr "Ä©Àï"
+msgstr "æŒ‘æˆ¦"
 
 #: AbTop.cpp:327 AbTop.cpp:406 AbTop.cpp:410
 msgid "Red"
-msgstr "ÀÖ"
+msgstr "èµ¤"
 
 #: AbTop.cpp:329 AbTop.cpp:406 AbTop.cpp:410
 msgid "Yellow"
-msgstr "²«¿§"
+msgstr "é»„è‰²"
 
 #: AbTop.cpp:331
 msgid "Both"
-msgstr "Î¾Êı"
+msgstr "ä¸¡æ–¹"
 
 #: AbTop.cpp:337
 msgid "Level"
-msgstr "¥ì¥Ù¥ë"
+msgstr "ãƒ¬ãƒ™ãƒ«"
 
 #: AbTop.cpp:338
 msgid "Computer plays"
-msgstr "¥³¥ó¥Ô¥å¡¼¥¿¡¼"
+msgstr "ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿ãƒ¼"
 
 #: AbTop.cpp:340
 msgid "Move slow"
-msgstr "¤æ¤Ã¤¯¤ê"
+msgstr "ã‚†ã£ãã‚Š"
 
 #: AbTop.cpp:342
 msgid "Spy"
-msgstr "¥¹¥Ñ¥¤"
+msgstr "ã‚¹ãƒ‘ã‚¤"
 
 #: AbTop.cpp:349
 msgid "Abalone"
@@ -139,23 +139,23 @@ msgstr ""
 
 #: AbTop.cpp:407
 msgid "won"
-msgstr "¾¡Íø"
+msgstr "å‹åˆ©"
 
 #: AbTop.cpp:411
 msgid "I am thinking..."
-msgstr "»×¹ÍÃæ..."
+msgstr "æ€è€ƒä¸­..."
 
 #: AbTop.cpp:412
 msgid "It's your turn !"
-msgstr "¤¢¤Ê¤¿¤ÎÈÖ¤Ç¤¹!"
+msgstr "ã‚ãªãŸã®ç•ªã§ã™!"
 
 #: Spy.cpp:21
 msgid "Actual examined position:"
-msgstr "¼Âºİ¤Ë»î¤·¤¿°ÌÃÖ:"
+msgstr "å®Ÿéš›ã«è©¦ã—ãŸä½ç½®:"
 
 #: Spy.cpp:46
 msgid "Best move so far:"
-msgstr "ÎÉ¤¤¼ê¤ËÄø±ó¤¤:"
+msgstr "è‰¯ã„æ‰‹ã«ç¨‹é ã„:"
 
 #: Spy.cpp:75
 msgid "Spion"

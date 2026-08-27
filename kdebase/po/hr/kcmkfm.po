@@ -9,7 +9,7 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:61
@@ -38,11 +38,11 @@ msgstr "User &Agent"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr "&Kolaèiæi"
+msgstr "&KolaÄiÄ‡i"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "Ikone radne povr¹ine"
+msgstr "Ikone radne povrÅ¡ine"
 
 #: main.cpp:89
 #, c-format
@@ -50,7 +50,7 @@ msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
 "uporaba: %s [-init | "
-"{pismo,boja,razno,proxy,http,useragent,kolaèiæi,ikone}]\n"
+"{pismo,boja,razno,proxy,http,useragent,kolaÄiÄ‡i,ikone}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -74,15 +74,15 @@ msgstr "Standardno pismo"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr "Pismo stalne ¹irine"
+msgstr "Pismo stalne Å¡irine"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "Uobièajeni skup znakova"
+msgstr "UobiÄajeni skup znakova"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "Koristi skup znakova za dotièni jezik"
+msgstr "Koristi skup znakova za dotiÄni jezik"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
@@ -98,11 +98,11 @@ msgstr "Boja URL linka:"
 
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "Boja posjeæenog linka:"
+msgstr "Boja posjeÄ‡enog linka:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Promijeni pokazivaè kada je iznad linka"
+msgstr "Promijeni pokazivaÄ kada je iznad linka"
 
 #: htmlopts.cpp:384
 msgid "Underline links"
@@ -126,7 +126,7 @@ msgstr "Terminal"
 
 #: miscopts.cpp:57
 msgid "Editor"
-msgstr "Ureğivaè"
+msgstr "UreÄ‘ivaÄ"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -166,7 +166,7 @@ msgstr "Podrazumijevaj HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr "Na poslu¾itelju:"
+msgstr "Na posluÅ¾itelju:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
@@ -182,7 +182,7 @@ msgstr "Poznate veze:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "&Prihvati kolaèiæe"
+msgstr "&Prihvati kolaÄiÄ‡e"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
@@ -214,15 +214,15 @@ msgstr "Morate prvo unijeti domenu !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Vodoravni razmak izmeğu toèaka mre¾e:"
+msgstr "Vodoravni razmak izmeÄ‘u toÄaka mreÅ¾e:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Okomiti razmak izmeğu toèaka mre¾e:"
+msgstr "Okomiti razmak izmeÄ‘u toÄaka mreÅ¾e:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "Koristi p&rozirni tekst za ikone na radnoj povr¹ini"
+msgstr "Koristi p&rozirni tekst za ikone na radnoj povrÅ¡ini"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
@@ -234,4 +234,4 @@ msgstr "Boja pozadine ikona:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Prika¾i &skrivene datoteke na radnoj povr¹ini"
+msgstr "PrikaÅ¾i &skrivene datoteke na radnoj povrÅ¡ini"

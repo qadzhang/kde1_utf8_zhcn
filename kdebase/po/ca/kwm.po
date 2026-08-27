@@ -1,16 +1,16 @@
 # KWM CATALAN TRANSLATION
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Sebastià Pla <sastia@redestb.es>, 1998.
+# SebastiÃ  Pla <sastia@redestb.es>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1999-02-03 23:48+0100\n"
-"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Last-Translator: SebastiÃ  Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.C:68
@@ -23,11 +23,11 @@ msgstr ""
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: error al inicialitzar; s'està cancel·lant el procés\n"
+msgstr "kwm: error al inicialitzar; s'estÃ  cancelÂ·lant el procÃ©s\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "S'està preparant la sessió ... "
+msgstr "S'estÃ  preparant la sessiÃ³ ... "
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -35,7 +35,7 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:558
 msgid "Usage: "
-msgstr "Ús: "
+msgstr "Ãšs: "
 
 #: main.C:569
 msgid "&Maximize"
@@ -55,11 +55,11 @@ msgstr "&DesIconitza"
 
 #: main.C:573
 msgid "&Sticky"
-msgstr "&Apegalós"
+msgstr "&ApegalÃ³s"
 
 #: main.C:574
 msgid "&UnSticky"
-msgstr "&No apegalós"
+msgstr "&No apegalÃ³s"
 
 #: main.C:575
 msgid "Mo&ve"
@@ -115,11 +115,11 @@ msgstr "Escriptori sense nom"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Alguns pixmaps no són vàlids: desactivo el mode ombrejat\n"
+msgstr "Alguns pixmaps no sÃ³n vÃ lids: desactivo el mode ombrejat\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Alguns pixmaps no són vàlids: desactivo el mode Gimmick\n"
+msgstr "Alguns pixmaps no sÃ³n vÃ lids: desactivo el mode Gimmick\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -139,23 +139,23 @@ msgstr "Sortida"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sessió preparada per a la sortida"
+msgstr "SessiÃ³ preparada per a la sortida"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Les següents aplicacions contenen dades sense desar que\n"
-"s'hauran perdut a la sessió següent."
+"Les segÃ¼ents aplicacions contenen dades sense desar que\n"
+"s'hauran perdut a la sessiÃ³ segÃ¼ent."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Les següents aplicacions no es podran restaurar a la sessió següent,\n"
-"només s'engegaran. Assegureu-vos que no contenen dades importants sense "
+"Les segÃ¼ents aplicacions no es podran restaurar a la sessiÃ³ segÃ¼ent,\n"
+"nomÃ©s s'engegaran. Assegureu-vos que no contenen dades importants sense "
 "desar."
 
 #: logout.C:74
@@ -163,8 +163,8 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Les següents aplicacions no són conformes amb X11 i per tant no poden\n"
-"restaurarse a la sessió següent. Assegureu-vos que no contenen dades\n"
+"Les segÃ¼ents aplicacions no sÃ³n conformes amb X11 i per tant no poden\n"
+"restaurarse a la sessiÃ³ segÃ¼ent. Assegureu-vos que no contenen dades\n"
 "importants sense desar."
 
 #: taskmgr.C:107
@@ -173,4 +173,4 @@ msgstr "Canvia a"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "Sessió actual"
+msgstr "SessiÃ³ actual"

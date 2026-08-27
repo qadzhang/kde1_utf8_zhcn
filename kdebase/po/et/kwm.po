@@ -10,14 +10,14 @@ msgstr ""
 "Last-Translator: Hasso Tepper <hasso@ewsound.estnet.ee>\n"
 "Language-Team: Estonian <linux-ee@eenet.ee>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: n‰ib, et aknahaldur on juba k‰ivitatud. kwm ei k‰ivitunud\n"
+msgstr "kwm: n√§ib, et aknahaldur on juba k√§ivitatud. kwm ei k√§ivitunud\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
@@ -69,15 +69,15 @@ msgstr "Muuda &suurust"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "&Tˆˆlauale"
+msgstr "&T√∂√∂lauale"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "&K‰esolevale tˆˆlauale"
+msgstr "&K√§esolevale t√∂√∂lauale"
 
 #: main.C:620
 msgid "One"
-msgstr "‹ks"
+msgstr "√úks"
 
 #: main.C:623
 msgid "Two"
@@ -109,15 +109,15 @@ msgstr "Kaheksa"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "Nimetu tˆˆlaud"
+msgstr "Nimetu t√∂√∂laud"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Mıned pikselrastrid ei ole kehtivad: ShapeMode keelatud\n"
+msgstr "M√µned pikselrastrid ei ole kehtivad: ShapeMode keelatud\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Mıned pikselrastrid ei ole kehtivad: GimmickMode keelatud\n"
+msgstr "M√µned pikselrastrid ei ole kehtivad: GimmickMode keelatud\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -125,7 +125,7 @@ msgstr "*** Tegumeid pole ***"
 
 #: minicli.C:201
 msgid "Command:"
-msgstr "K‰sk:"
+msgstr "K√§sk:"
 
 #: warning.C:36
 msgid "Ooops!"
@@ -133,27 +133,27 @@ msgstr "Uups!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Lıpeta sessioon"
+msgstr "L√µpeta sessioon"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sessioon lıpetamiseks ette valmistatud"
+msgstr "Sessioon l√µpetamiseks ette valmistatud"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"J‰rgnevad rakendused sisaldavad salvestamata andmeid,\n"
-"mis ei ole taastatavad j‰rgmistes sessioonides."
+"J√§rgnevad rakendused sisaldavad salvestamata andmeid,\n"
+"mis ei ole taastatavad j√§rgmistes sessioonides."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"J‰rgnevaid rakendusi ei saa taastada j‰rgmises sessioonis, vaid ainult\n"
-"uuesti k‰ivitada. Tee kindlaks, et nad ei sisaldaks t‰htsat salveastamata\n"
+"J√§rgnevaid rakendusi ei saa taastada j√§rgmises sessioonis, vaid ainult\n"
+"uuesti k√§ivitada. Tee kindlaks, et nad ei sisaldaks t√§htsat salveastamata\n"
 "informatsiooni."
 
 #: logout.C:74
@@ -161,15 +161,15 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"J‰rgnevad rakendused ei ole X11-teadlikud ja nii ei saa neid taastada "
-"j‰rgmises\n"
-"sessioonis. Tee kindlaks, et nad ei sisaldaks t‰htsat salvestamata "
+"J√§rgnevad rakendused ei ole X11-teadlikud ja nii ei saa neid taastada "
+"j√§rgmises\n"
+"sessioonis. Tee kindlaks, et nad ei sisaldaks t√§htsat salvestamata "
 "informatsiooni."
 
 #: taskmgr.C:107
 msgid "Switch to"
-msgstr "L¸lita"
+msgstr "L√ºlita"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "K‰esolev sessioon"
+msgstr "K√§esolev sessioon"

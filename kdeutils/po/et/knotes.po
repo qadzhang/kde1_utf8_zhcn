@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: knotes.cpp:265
@@ -19,11 +19,11 @@ msgstr "Hello"
 
 #: knotes.cpp:303
 msgid "Text Color..."
-msgstr "Teksti v‰rv..."
+msgstr "Teksti v√§rv..."
 
 #: knotes.cpp:304
 msgid "Background Color..."
-msgstr "Tausta v‰rv..."
+msgstr "Tausta v√§rv..."
 
 #: knotes.cpp:310
 msgid "New Note"
@@ -35,7 +35,7 @@ msgstr "Kustuta sedel"
 
 #: knotes.cpp:314
 msgid "Rename Note..."
-msgstr "Nimeta sedel ¸mber..."
+msgstr "Nimeta sedel √ºmber..."
 
 #: knotes.cpp:316
 msgid "Alarm ..."
@@ -51,7 +51,7 @@ msgstr "Maili sedel ..."
 
 #: knotes.cpp:323
 msgid "Print Note"
-msgstr "Tr¸ki sedel"
+msgstr "Tr√ºki sedel"
 
 #: knotes.cpp:326
 msgid "Save Notes"
@@ -71,11 +71,11 @@ msgstr "Font..."
 
 #: knotes.cpp:337
 msgid "Colors"
-msgstr "V‰rvid"
+msgstr "V√§rvid"
 
 #: knotes.cpp:339
 msgid "Change Defaults ..."
-msgstr "Muuda vaikev‰‰rtusi ..."
+msgstr "Muuda vaikev√§√§rtusi ..."
 
 #: knotes.cpp:340
 msgid "Dock in panel"
@@ -83,7 +83,7 @@ msgstr "Doki paneelile"
 
 #: knotes.cpp:368
 msgid "Insert Date"
-msgstr "Lisa kuup‰ev"
+msgstr "Lisa kuup√§ev"
 
 #: knotes.cpp:371
 msgid "Operations"
@@ -99,8 +99,8 @@ msgid ""
 "Could not save a KNote.\n"
 "Quit anyways?"
 msgstr ""
-"Sedelit pole vıimalik salvestada.\n"
-"Kas v‰ljuda vaatamata sellele?"
+"Sedelit pole v√µimalik salvestada.\n"
+"Kas v√§ljuda vaatamata sellele?"
 
 #: knotes.cpp:495
 msgid "Could not save KNote Alarms\n"
@@ -112,7 +112,7 @@ msgid ""
 "Could not pipe the contents of this KNote into:\n"
 " %s"
 msgstr ""
-"Selle sedeli sisu pole vıimalik suunata j‰rgnevasse:\n"
+"Selle sedeli sisu pole v√µimalik suunata j√§rgnevasse:\n"
 " %s"
 
 #: knotes.cpp:717
@@ -120,12 +120,12 @@ msgid ""
 "You have exeeded the arbitrary and unjustly set limit of 50 knotes.\n"
 " Please complain to the author."
 msgstr ""
-"Sa oled k‰itunud omavoliliselt ja ¸letanud ebaıiglaselt 50 sedeli limiidi.\n"
+"Sa oled k√§itunud omavoliliselt ja √ºletanud eba√µiglaselt 50 sedeli limiidi.\n"
 "Kaeba palun autorile."
 
 #: knotes.cpp:893
 msgid "Question"
-msgstr "K¸simus"
+msgstr "K√ºsimus"
 
 #: knotes.cpp:894
 msgid ""
@@ -133,7 +133,7 @@ msgid ""
 "note permanently?"
 msgstr ""
 "Oled sa kindel, et soovid selle sedeli\n"
-"j‰‰davalt kustutada?"
+"j√§√§davalt kustutada?"
 
 #: knotes.cpp:1072
 #, c-format
@@ -141,7 +141,7 @@ msgid ""
 "Could not load:\n"
 " %s"
 msgstr ""
-"Pole vıimalik laadida:\n"
+"Pole v√µimalik laadida:\n"
 " %s"
 
 #: knotes.cpp:1331
@@ -174,7 +174,7 @@ msgstr ""
 
 #: configdlg.cpp:46 knotes.cpp:1375
 msgid "Defaults"
-msgstr "Vaikev‰‰rtused"
+msgstr "Vaikev√§√§rtused"
 
 #: knotes.cpp:1376
 msgid "More ..."
@@ -187,21 +187,21 @@ msgid ""
 "Please wait until it has finished\n"
 "Alternatively stop the running one."
 msgstr ""
-"KNotes juba ootab ¸he tˆˆ taga,\n"
-"mis on vaja lıpetada.\n"
+"KNotes juba ootab √ºhe t√∂√∂ taga,\n"
+"mis on vaja l√µpetada.\n"
 "Palun oota kuni see on tehtud\n"
-"vıi katkesta see."
+"v√µi katkesta see."
 
 #: knotes.cpp:1549
 msgid "Could not start or find KFM"
-msgstr "KFM'i pole vıimalik leida vıi k‰ivitada"
+msgstr "KFM'i pole v√µimalik leida v√µi k√§ivitada"
 
 #: knotes.cpp:1571
 msgid ""
 "Could not save the KNotes.\n"
 "Close anyways?"
 msgstr ""
-"Sedeleid pole vıimalik salvestada.\n"
+"Sedeleid pole v√µimalik salvestada.\n"
 "Kas sulgeda vaatamata sellele?"
 
 #: knotes.cpp:1683
@@ -227,11 +227,11 @@ msgstr "Vastuolu"
 
 #: configdlg.cpp:50
 msgid "Text Color:"
-msgstr "Teksti v‰rv:"
+msgstr "Teksti v√§rv:"
 
 #: configdlg.cpp:64
 msgid "Background Color:"
-msgstr "Tausta v‰rv:"
+msgstr "Tausta v√§rv:"
 
 #: configdlg.cpp:83
 msgid "Width:"
@@ -239,15 +239,15 @@ msgstr "Laius:"
 
 #: configdlg.cpp:93
 msgid "Height:"
-msgstr "Kırgus:"
+msgstr "K√µrgus:"
 
 #: configdlg.cpp:104
 msgid "Print Command:"
-msgstr "K‰sk tr¸kkimiseke:"
+msgstr "K√§sk tr√ºkkimiseke:"
 
 #: configdlg.cpp:112
 msgid "Mail Command:"
-msgstr "K‰sk mailimiseks:"
+msgstr "K√§sk mailimiseks:"
 
 #: configdlg.cpp:123
 msgid "3d Frame"
@@ -304,7 +304,7 @@ msgstr "Alarmi taimer %s jaoks"
 
 #: alarm.cpp:72
 msgid "Unset"
-msgstr "Vıta maha"
+msgstr "V√µta maha"
 
 #: alarm.cpp:74
 msgid "Set"
@@ -316,7 +316,7 @@ msgstr "Ma kardan, et sa oled kokkusaamise juba maha maganud."
 
 #: bwdatetime.cpp:44
 msgid "Day:"
-msgstr "P‰ev:"
+msgstr "P√§ev:"
 
 #: bwdatetime.cpp:50
 msgid "Month:"
@@ -344,15 +344,15 @@ msgstr "Kellaaeg, mille sa sisestasid, pole paikapidav."
 
 #: bwdatetime.cpp:176
 msgid "The Date you selected is invalid"
-msgstr "Kuup‰ev, mille sa sisestasid, pole paikapidav."
+msgstr "Kuup√§ev, mille sa sisestasid, pole paikapidav."
 
 #: renamedlg.cpp:39
 msgid "Rename this note to"
-msgstr "Nimeta see sedel ¸mber"
+msgstr "Nimeta see sedel √ºmber"
 
 #: renamedlg.cpp:44
 msgid "Rename"
-msgstr "Nimeta ¸mber"
+msgstr "Nimeta √ºmber"
 
 #: renamedlg.cpp:79
 msgid ""
@@ -360,7 +360,7 @@ msgid ""
 "Please choose a different name"
 msgstr ""
 "Nimi \"xyalarms\" on reserveeritud sisemiseks kasutamiseks.\n"
-"Palun vali mıni teine nimi."
+"Palun vali m√µni teine nimi."
 
 #: renamedlg.cpp:92
 msgid ""
@@ -368,20 +368,20 @@ msgid ""
 "Please choose a different name"
 msgstr ""
 "Sellise nimega sedel eksisteerib juba.\n"
-"Palun vali mıni teine nimi."
+"Palun vali m√µni teine nimi."
 
 #: docking.cpp:48
 #, fuzzy, c-format
 msgid "Could not load %s !"
-msgstr "Pole vıimalik laadida %s !"
+msgstr "Pole v√µimalik laadida %s !"
 
 #: docking.cpp:68
 msgid "Change Defaults"
-msgstr "Muuda vaikev‰‰rtusi"
+msgstr "Muuda vaikev√§√§rtusi"
 
 #: docking.cpp:73
 msgid "Exit Knotes"
-msgstr "V‰lju Knotes'ist"
+msgstr "V√§lju Knotes'ist"
 
 #: docking.cpp:92
 msgid "New Knote"

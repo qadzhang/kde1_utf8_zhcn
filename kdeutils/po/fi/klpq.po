@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:178
@@ -20,11 +20,11 @@ msgstr "En saa avattua printcap -tiedostoa."
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
-msgstr "En saa k‰sitelty‰ printcap -tiedostoa"
+msgstr "En saa k√§sitelty√§ printcap -tiedostoa"
 
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
-msgstr "L‰het‰ printcap tiedostosi osoitteeseen Christoph.Neerfeld@home.ivm.de"
+msgstr "L√§het√§ printcap tiedostosi osoitteeseen Christoph.Neerfeld@home.ivm.de"
 
 #: klpq.cpp:90
 msgid "Printer"
@@ -40,7 +40,7 @@ msgstr "Tulostaa"
 
 #: klpq.cpp:105
 msgid "Update"
-msgstr "P‰ivit‰"
+msgstr "P√§ivit√§"
 
 #: klpq.cpp:125
 msgid "Rank"
@@ -52,7 +52,7 @@ msgstr "Omistaja"
 
 #: klpq.cpp:127
 msgid "Job"
-msgstr "Tyˆ"
+msgstr "Ty√∂"
 
 #: klpq.cpp:129
 msgid "Size"
@@ -60,7 +60,7 @@ msgstr "Koko"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
-msgstr "P‰‰lle"
+msgstr "P√§√§lle"
 
 #: klpq.cpp:160
 msgid "Auto"
@@ -68,7 +68,7 @@ msgstr "Autom."
 
 #: klpq.cpp:204
 msgid "&Auto update"
-msgstr "&Automaattip‰ivit‰"
+msgstr "&Automaattip√§ivit√§"
 
 #: klpq.cpp:205
 msgid "&Spooler"
@@ -92,7 +92,7 @@ msgstr "&Asetukset"
 #: klpq.cpp:404
 #, c-format
 msgid "Do you really want to remove job No %d"
-msgstr "Haluatko todella poistaa tyˆn %d"
+msgstr "Haluatko todella poistaa ty√∂n %d"
 
 #: klpq.cpp:424
 #, c-format
@@ -101,40 +101,40 @@ msgid ""
 "%d\n"
 "on top of queue"
 msgstr ""
-"Haluatko todella poistaa tyˆn\n"
+"Haluatko todella poistaa ty√∂n\n"
 "%d\n"
 "jonon huipulta."
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
-msgstr "Ei riitt‰v‰sti oikeuksia"
+msgstr "Ei riitt√§v√§sti oikeuksia"
 
 #: klpq.cpp:573 klpq.cpp:579 klpq.cpp:594
 msgid ""
 "This is a privileged command\n"
 "and you do not have permission to execute it."
 msgstr ""
-"T‰m‰ komento vaatii erikoisoikeuksia\n"
-"eik‰ sinulla ole oikeuksia suorittaa sit‰."
+"T√§m√§ komento vaatii erikoisoikeuksia\n"
+"eik√§ sinulla ole oikeuksia suorittaa sit√§."
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
-msgstr "Aseta automaattip‰ivityst‰"
+msgstr "Aseta automaattip√§ivityst√§"
 
 #: ConfAutoUpdateData.cpp:17
 msgid "Update frequency in seconds:"
-msgstr "P‰ivitysv‰li sekunneissa:"
+msgstr "P√§ivitysv√§li sekunneissa:"
 
 #: klpqspooler.cpp:199 klpqspooler.cpp:269
 msgid "Can't find your lpc program !"
-msgstr "En lˆyd‰ lpc -ohjelmaasi !"
+msgstr "En l√∂yd√§ lpc -ohjelmaasi !"
 
 #: klpqspooler.cpp:200 klpqspooler.cpp:270
 msgid ""
 "Sorry, I can't find your lpc program.\n"
 "Please check the configuration under Config->Spooler."
 msgstr ""
-"En lˆyd‰ lpc -ohjelmaa.\n"
+"En l√∂yd√§ lpc -ohjelmaa.\n"
 "Tarkista asetukset asetusvalikosta."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
@@ -147,8 +147,8 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Valitse k‰ytt‰m‰si jonosysteemi. Yleens‰ BSD -jono. Jos et tied‰ mik‰ "
-"koneellesi on asennettu, BSD on hyv‰ arvaus."
+"Valitse k√§ytt√§m√§si jonosysteemi. Yleens√§ BSD -jono. Jos et tied√§ mik√§ "
+"koneellesi on asennettu, BSD on hyv√§ arvaus."
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"

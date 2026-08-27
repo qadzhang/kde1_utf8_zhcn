@@ -14,33 +14,33 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
 #: kbiff.cpp:629
 msgid "&UnDock"
-msgstr "&KiDokkol·s"
+msgstr "&KiDokkol√°s"
 
 #: kbiff.cpp:631
 msgid "&Dock"
-msgstr "&BeDokkol·s"
+msgstr "&BeDokkol√°s"
 
 #: kbiff.cpp:632
 msgid "&Setup..."
-msgstr "&Be·llÌt·sok..."
+msgstr "&Be√°ll√≠t√°sok..."
 
 #: kbiff.cpp:634
 msgid "&Help..."
-msgstr "&SegÌtsÈg..."
+msgstr "&Seg√≠ts√©g..."
 
 #: kbiff.cpp:638
 msgid "&Check Mail Now"
-msgstr "⁄j &levelek keresÈse"
+msgstr "√öj &levelek keres√©se"
 
 #: kbiff.cpp:640
 msgid "&Read Mail Now"
-msgstr "L&evÈl olvas·s"
+msgstr "L&ev√©l olvas√°s"
 
 #: kbiff.cpp:646
 msgid "&Stop"
@@ -48,26 +48,26 @@ msgstr "&Allj"
 
 #: notify.cpp:33 notify.cpp:50
 msgid "You have new mail!"
-msgstr "⁄j levele Èrkezett!"
+msgstr "√öj levele √©rkezett!"
 
 #: notify.cpp:58 notify.cpp:103
 #, c-format
 msgid "New Messages: %d"
-msgstr "⁄j Levelek: %d"
+msgstr "√öj Levelek: %d"
 
 #: notify.cpp:63
 #, c-format
 msgid "Mailbox: %s"
-msgstr "Postal·da: %s"
+msgstr "Postal√°da: %s"
 
 # This is on a button.  It launches the user's mail client
 #: notify.cpp:73
 msgid "Mailer"
-msgstr "Levelezı"
+msgstr "Levelez≈ë"
 
 #: setupdlg.cpp:83
 msgid "KBiff Setup"
-msgstr "KBiff Be·llÌt·sok"
+msgstr "KBiff Be√°ll√≠t√°sok"
 
 #: setupdlg.cpp:86
 msgid "Profile:"
@@ -75,49 +75,49 @@ msgstr "Profil:"
 
 #: setupdlg.cpp:102
 msgid "&New..."
-msgstr "&⁄j..."
+msgstr "&√öj..."
 
 #: setupdlg.cpp:109
 msgid "&Rename..."
-msgstr "¡&tnevez..."
+msgstr "√Å&tnevez..."
 
 #: setupdlg.cpp:143
 msgid "General"
-msgstr "¡ltal·nos"
+msgstr "√Åltal√°nos"
 
 #: setupdlg.cpp:144
 msgid "New Mail"
-msgstr "⁄j LevÈl"
+msgstr "√öj Lev√©l"
 
 #: setupdlg.cpp:145 status.cpp:33
 msgid "Mailbox"
-msgstr "Postal·da"
+msgstr "Postal√°da"
 
 #: setupdlg.cpp:391
 msgid "New Profile"
-msgstr "⁄j Profil"
+msgstr "√öj Profil"
 
 #: setupdlg.cpp:423
 #, c-format
 msgid "Rename Profile: %s"
-msgstr "Profil ¡tnevezÈse: %s"
+msgstr "Profil √Åtnevez√©se: %s"
 
 #: setupdlg.cpp:463
 #, c-format
 msgid "Delete Profile: %s"
-msgstr "Profil TˆrlÈse: %s"
+msgstr "Profil T√∂rl√©se: %s"
 
 #: setupdlg.cpp:464
 msgid "Are you sure you wish to delete this profile?\n"
-msgstr "Biztos benne, hogy tˆrˆlni akarja ezt a profilt?\n"
+msgstr "Biztos benne, hogy t√∂r√∂lni akarja ezt a profilt?\n"
 
 #: setupdlg.cpp:524
 msgid "Poll (sec):"
-msgstr "EllenırzÈs (mp):"
+msgstr "Ellen≈ërz√©s (mp):"
 
 #: setupdlg.cpp:529
 msgid "Mail client:"
-msgstr "LevÈl olvasÛ:"
+msgstr "Lev√©l olvas√≥:"
 
 #: setupdlg.cpp:542
 msgid "Dock in panel"
@@ -125,7 +125,7 @@ msgstr "Dokkoljon a panelba"
 
 #: setupdlg.cpp:547
 msgid "Use session management"
-msgstr "Vegyen rÈszt a session management-ben"
+msgstr "Vegyen r√©szt a session management-ben"
 
 #: setupdlg.cpp:552
 msgid "Icons:"
@@ -133,15 +133,15 @@ msgstr "Ikonok:"
 
 #: setupdlg.cpp:570
 msgid "No Mail:"
-msgstr "Nincs ‹zenet"
+msgstr "Nincs √úzenet"
 
 #: setupdlg.cpp:579
 msgid "Old Mail"
-msgstr "RÈgi ‹zenet"
+msgstr "R√©gi √úzenet"
 
 #: setupdlg.cpp:589
 msgid "New Mail:"
-msgstr "⁄j ‹zenet"
+msgstr "√öj √úzenet"
 
 # This is the icon that is displayed when KBiff could not make a connection
 # to a remote server
@@ -155,33 +155,33 @@ msgstr "Parancs"
 
 #: setupdlg.cpp:763 setupdlg.cpp:783 setupdlg.cpp:1178
 msgid "Browse"
-msgstr "Kiv·laszt"
+msgstr "Kiv√°laszt"
 
 #: setupdlg.cpp:769
 msgid "Play Sound"
-msgstr "Hang Lej·tsz·s"
+msgstr "Hang Lej√°tsz√°s"
 
 #: setupdlg.cpp:789
 msgid "System Beep"
-msgstr "Csipog·s"
+msgstr "Csipog√°s"
 
 #: setupdlg.cpp:794
 msgid "Notify"
-msgstr "FigyelmeztetÈs"
+msgstr "Figyelmeztet√©s"
 
 # If this is checked, then KBiff will popup a list of mailboxes with the
 # number of new mail whenever the user puts the cursor of a KBiff icon.
 #: setupdlg.cpp:798
 msgid "Floating Status"
-msgstr "Lebegı ·llapot"
+msgstr "Lebeg≈ë √°llapot"
 
 #: setupdlg.cpp:948
 msgid "Advanced Options"
-msgstr "HaladÛ Be·llÌt·sok"
+msgstr "Halad√≥ Be√°ll√≠t√°sok"
 
 #: setupdlg.cpp:952
 msgid "Mailbox URL:"
-msgstr "Postal·da URL cÌme:"
+msgstr "Postal√°da URL c√≠me:"
 
 #: setupdlg.cpp:956
 msgid "Port:"
@@ -193,7 +193,7 @@ msgstr "PREAUTH"
 
 #: setupdlg.cpp:967
 msgid "Keep Alive"
-msgstr "…letben tart·s"
+msgstr "√âletben tart√°s"
 
 # If this is selected, then KBiff will do all of it's network work in an
 # asynchronous mode.  That is, it will not wait for the response to any
@@ -204,15 +204,15 @@ msgstr "Asszinkron"
 
 #: setupdlg.cpp:1123 setupdlg.cpp:1152
 msgid "Mailbox:"
-msgstr "Postal·da:"
+msgstr "Postal√°da:"
 
 #: setupdlg.cpp:1136 setupdlg.cpp:1474
 msgid "New Mailbox"
-msgstr "⁄j Postal·da"
+msgstr "√öj Postal√°da"
 
 #: setupdlg.cpp:1143
 msgid "Delete Mailbox"
-msgstr "Postal·da TˆrlÈs"
+msgstr "Postal√°da T√∂rl√©s"
 
 #: setupdlg.cpp:1149
 msgid "Protocol:"
@@ -220,23 +220,23 @@ msgstr "Protokol:"
 
 #: setupdlg.cpp:1155
 msgid "Server:"
-msgstr "Kiszolg·lÛ:"
+msgstr "Kiszolg√°l√≥:"
 
 #: setupdlg.cpp:1158
 msgid "User:"
-msgstr "Felhaszn·lÛ:"
+msgstr "Felhaszn√°l√≥:"
 
 #: setupdlg.cpp:1161
 msgid "Password:"
-msgstr "JelszÛ:"
+msgstr "Jelsz√≥:"
 
 #: setupdlg.cpp:1195
 msgid "Store password"
-msgstr "JelszÛ t·rol·sa"
+msgstr "Jelsz√≥ t√°rol√°sa"
 
 #: setupdlg.cpp:1198
 msgid "Advanced"
-msgstr "HaladÛknak"
+msgstr "Halad√≥knak"
 
 #: setupdlg.cpp:1675
 msgid "KBiff"
@@ -250,21 +250,21 @@ msgid ""
 "Copyright (C) 1999\n"
 "Kurt Granroth"
 msgstr ""
-"%s-·s verziÛ\n"
+"%s-√°s verzi√≥\n"
 "\n"
 "Copyright (C) 1999\n"
 "Kurt Granroth"
 
 #: setupdlg.cpp:1746
 msgid "New Name:"
-msgstr "⁄j NÈv:"
+msgstr "√öj N√©v:"
 
 #: setupdlg.cpp:1772
 msgid "New Name"
-msgstr "⁄j NÈv"
+msgstr "√öj N√©v"
 
 # This displays the number of new messages for a given mailbox
 #: status.cpp:34
 #
 msgid "New"
-msgstr "⁄j"
+msgstr "√öj"

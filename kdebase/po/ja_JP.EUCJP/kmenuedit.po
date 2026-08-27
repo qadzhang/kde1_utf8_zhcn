@@ -13,24 +13,24 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japanese <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"
-msgstr "¥á¥Ë¥å¡¼Ì¾¤òÊÑ¹¹(&M)"
+msgstr "ãƒ¡ãƒ‹ãƒ¥ãƒ¼åã‚’å¤‰æ›´(&M)"
 
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
-msgstr "¥Õ¥¡¥¤¥ë¥¿¥¤¥×¤òºÆÆÉ¤ß¹ş¤ß(&F)"
+msgstr "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—ã‚’å†èª­ã¿è¾¼ã¿(&F)"
 
 #: kmenuedit.cpp:77
 msgid "by"
-msgstr "¤Ç"
+msgstr "ã§"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
-msgstr "ÊÑ¹¹¤¬ÊİÂ¸¤µ¤ì¤Ş¤»¤ó¤Ç¤·¤¿¡ª"
+msgstr "å¤‰æ›´ãŒä¿å­˜ã•ã‚Œã¾ã›ã‚“ã§ã—ãŸï¼"
 
 #: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
@@ -38,23 +38,23 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"ÊÑ¹¹¤òÊİÂ¸¤·¤Ş¤¹¤«¡©"
+"å¤‰æ›´ã‚’ä¿å­˜ã—ã¾ã™ã‹ï¼Ÿ"
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
-msgstr "¶õ"
+msgstr "ç©º"
 
 #: kmenuedit.cpp:343
 msgid "Reload Menus"
-msgstr "¥á¥Ë¥å¡¼¤òºÆÆÉ¤ß¹ş¤ß"
+msgstr "ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’å†èª­ã¿è¾¼ã¿"
 
 #: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"¥á¥Ë¥å¡¼¤ÎºÆÆÉ¤ß¹ş¤ß¤ÏÁ´¤Æ¤ÎÊÑ¹¹¤òÌµ¸ú¤Ë¤·¤Ş¤¹¡£\n"
-"ËÜÅö¤ËºÆÆÉ¤ß¹ş¤ß¤ò¤·¤Ş¤¹¤«¡©"
+"ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®å†èª­ã¿è¾¼ã¿ã¯å…¨ã¦ã®å¤‰æ›´ã‚’ç„¡åŠ¹ã«ã—ã¾ã™ã€‚\n"
+"æœ¬å½“ã«å†èª­ã¿è¾¼ã¿ã‚’ã—ã¾ã™ã‹ï¼Ÿ"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
@@ -65,169 +65,169 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"¤¢¤Ê¤¿¤Î¸Ä¿Í¥á¥Ë¥å¡¼ÍÑ¤Î¥Ç¥£¥ì¥¯¥È¥ê¤¬¤¢¤ê¤Ş¤»¤ó¡£\n"
-" º£ºî¤ê¤Ş¤¹¤«¡©"
+"ã‚ãªãŸã®å€‹äººãƒ¡ãƒ‹ãƒ¥ãƒ¼ç”¨ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒã‚ã‚Šã¾ã›ã‚“ã€‚\n"
+" ä»Šä½œã‚Šã¾ã™ã‹ï¼Ÿ"
 
 #: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"¸Ä¿Í¥á¥Ë¥å¡¼ÍÑ¤Î¥Ç¥£¥ì¥¯¥È¥ê¤¬ºîÀ®¤Ç¤­¤Ş¤»¤ó¡£\n"
-" KMenuedit¤ò½ªÎ»¤¹¤ë¤¿¤á¤ËOK¤òÁªÂò¤·¤Æ¤¯¤À¤µ¤¤¡£"
+"å€‹äººãƒ¡ãƒ‹ãƒ¥ãƒ¼ç”¨ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒä½œæˆã§ãã¾ã›ã‚“ã€‚\n"
+" KMenueditã‚’çµ‚äº†ã™ã‚‹ãŸã‚ã«OKã‚’é¸æŠã—ã¦ãã ã•ã„ã€‚"
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
-msgstr "¥»¥Ñ¥ì¡¼¥¿"
+msgstr "ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿"
 
 #: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
-msgstr "³«¤¯/ ÊÄ¤¸¤ë"
+msgstr "é–‹ã/ é–‰ã˜ã‚‹"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr "°ÜÆ°¤¹¤ë¥¢¥¤¥Æ¥à¤òÁªÂò"
+msgstr "ç§»å‹•ã™ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’é¸æŠ"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr "°ÜÆ°¤¹¤ë¥á¥Ë¥å¡¼¤òÁªÂò"
+msgstr "ç§»å‹•ã™ã‚‹ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’é¸æŠ"
 
 #: confmenu.cpp:120
 msgid "New"
-msgstr "¿·µ¬ºîÀ®"
+msgstr "æ–°è¦ä½œæˆ"
 
 #: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
-msgstr "·Ù¹ğ¡ª"
+msgstr "è­¦å‘Šï¼"
 
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "¤³¤Î¥Ü¥¿¥ó¤òºï½ü¤¹¤ë¤È¤½¤ÎÁ´¤Æ¤Î¥µ¥Ö¥á¥Ë¥å¡¼¤â¼º¤ï¤ì¤Ş¤¹"
+msgstr "ã“ã®ãƒœã‚¿ãƒ³ã‚’å‰Šé™¤ã™ã‚‹ã¨ãã®å…¨ã¦ã®ã‚µãƒ–ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚‚å¤±ã‚ã‚Œã¾ã™"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
-msgstr "°­¤¤¥Õ¥¡¥¤¥ëÌ¾"
+msgstr "æ‚ªã„ãƒ•ã‚¡ã‚¤ãƒ«å"
 
 #: confmenu.cpp:298
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"¤³¤ÎÌ¾Á°¤Îkdelnk¥Õ¥¡¥¤¥ë¤Ï¤¹¤Ç¤Ë¤¢¤ê¤Ş¤¹¡£\n"
-"Â¾¤Î¥Õ¥¡¥¤¥ëÌ¾¤òÁª¤ó¤Ç¤¯¤À¤µ¤¤¡£"
+"ã“ã®åå‰ã®kdelnkãƒ•ã‚¡ã‚¤ãƒ«ã¯ã™ã§ã«ã‚ã‚Šã¾ã™ã€‚\n"
+"ä»–ã®ãƒ•ã‚¡ã‚¤ãƒ«åã‚’é¸ã‚“ã§ãã ã•ã„ã€‚"
 
 #: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "¤³¤Î¥Ü¥¿¥ó¤Î¥¿¥¤¥×¤ÎÊÑ¹¹¤Ç¤½¤ÎÁ´¤Æ¤Î¥µ¥Ö¥á¥Ë¥å¡¼¤âºï½ü¤µ¤ì¤Ş¤¹"
+msgstr "ã“ã®ãƒœã‚¿ãƒ³ã®ã‚¿ã‚¤ãƒ—ã®å¤‰æ›´ã§ãã®å…¨ã¦ã®ã‚µãƒ–ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚‚å‰Šé™¤ã•ã‚Œã¾ã™"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
-msgstr "¥³¥Ş¥ó¥É¤Ê¤·"
+msgstr "ã‚³ãƒãƒ³ãƒ‰ãªã—"
 
 #: button.cpp:210
 msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"¤¹¤ß¤Ş¤»¤ó¡ª¤³¤Î¥¢¥¤¥Æ¥à¤òÂ¾¤Î¥¦¥£¥ó¥É¥¦¤Ë\n"
-"¥É¥í¥Ã¥×¤¹¤ëÁ°¤ËÊÑ¹¹¤òÊİÂ¸¤·¤Ê¤±¤ì¤Ğ¤¤¤±¤Ş¤»¤ó¡£"
+"ã™ã¿ã¾ã›ã‚“ï¼ã“ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ä»–ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«\n"
+"ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹å‰ã«å¤‰æ›´ã‚’ä¿å­˜ã—ãªã‘ã‚Œã°ã„ã‘ã¾ã›ã‚“ã€‚"
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "KDE¥Ç¥¹¥¯¥È¥Ã¥×¥¨¥ó¥È¥ê¤Ø¤Î¥Ñ¥¹¤¬ÀßÄê¤µ¤ì¤Æ¤¤¤Ş¤»¤ó¡£"
+msgstr "KDEãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã‚¨ãƒ³ãƒˆãƒªã¸ã®ãƒ‘ã‚¹ãŒè¨­å®šã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚"
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "°Ê²¼¤Î¥¨¥ó¥È¥ê¤ò¤ªÁ¦¤á¤·¤Ş¤¹:"
+msgstr "ä»¥ä¸‹ã®ã‚¨ãƒ³ãƒˆãƒªã‚’ãŠè–¦ã‚ã—ã¾ã™:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
-msgstr "¥Ñ¥¹:"
+msgstr "ãƒ‘ã‚¹:"
 
 #: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
-msgstr "¸Ä¿Í¥Ñ¥¹:"
+msgstr "å€‹äººãƒ‘ã‚¹:"
 
 #: entrydialog.cpp:61
 msgid "Submenu"
-msgstr "¥µ¥Ö¥á¥Ë¥å¡¼"
+msgstr "ã‚µãƒ–ãƒ¡ãƒ‹ãƒ¥ãƒ¼"
 
 #: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
 #: entrydialog.cpp:544
 msgid "Application"
-msgstr "¥¢¥×¥ê¥±¡¼¥·¥ç¥ó"
+msgstr "ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³"
 
 #: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
-msgstr "¥¹¥ï¥í¡¼"
+msgstr "ã‚¹ãƒ¯ãƒ­ãƒ¼"
 
 #: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
-msgstr "¥ê¥ó¥¯"
+msgstr "ãƒªãƒ³ã‚¯"
 
 #: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
-msgstr "¥Ç¥Ğ¥¤¥¹"
+msgstr "ãƒ‡ãƒã‚¤ã‚¹"
 
 #: entrydialog.cpp:72
 msgid "Type:"
-msgstr "¥¿¥¤¥×:"
+msgstr "ã‚¿ã‚¤ãƒ—:"
 
 #: entrydialog.cpp:79
 msgid "File Name:"
-msgstr "¥Õ¥¡¥¤¥ëÌ¾:"
+msgstr "ãƒ•ã‚¡ã‚¤ãƒ«å:"
 
 #: entrydialog.cpp:94
 msgid "Name:"
-msgstr "Ì¾Á°:"
+msgstr "åå‰:"
 
 #: entrydialog.cpp:109
 msgid "Icon:"
-msgstr "¥¢¥¤¥³¥ó:"
+msgstr "ã‚¢ã‚¤ã‚³ãƒ³:"
 
 #: entrydialog.cpp:141
 msgid "Mini Icon:"
-msgstr "¾®¥¢¥¤¥³¥ó:"
+msgstr "å°ã‚¢ã‚¤ã‚³ãƒ³:"
 
 #: entrydialog.cpp:149
 msgid "Comment:"
-msgstr "¥³¥á¥ó¥È:"
+msgstr "ã‚³ãƒ¡ãƒ³ãƒˆ:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "¼Â¹Ô"
+msgstr "å®Ÿè¡Œ"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
-msgstr "¼Â¹Ô:"
+msgstr "å®Ÿè¡Œ:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
-msgstr "ºî¶ÈÍÑ¥Ç¥£¥ì¥¯¥È¥ê:"
+msgstr "ä½œæ¥­ç”¨ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
-msgstr "¥¿¡¼¥ß¥Ê¥ë¤Ç¼Â¹Ô"
+msgstr "ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã§å®Ÿè¡Œ"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
-msgstr "¥¿¡¼¥ß¥Ê¥ë¥ª¥×¥·¥ç¥ó:"
+msgstr "ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã‚ªãƒ—ã‚·ãƒ§ãƒ³:"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "¥Ğ¥¤¥Ê¥ê¥Ñ¥¿¡¼¥ó:"
+msgstr "ãƒã‚¤ãƒŠãƒªãƒ‘ã‚¿ãƒ¼ãƒ³:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "¥¹¥ï¥í¡¼¤¹¤ë¥¢¥×¥ê¥±¡¼¥·¥ç¥ó:"
+msgstr "ã‚¹ãƒ¯ãƒ­ãƒ¼ã™ã‚‹ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³:"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"
-msgstr "¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤Î¥¿¥¤¥È¥ë:"
+msgstr "ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ã‚¿ã‚¤ãƒˆãƒ«:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "¥Ü¥¿¥ó¥×¥ì¥¹¤Ç¼Â¹Ô¤¹¤ë¥¢¥×¥ê¥±¡¼¥·¥ç¥ó:"
+msgstr "ãƒœã‚¿ãƒ³ãƒ—ãƒ¬ã‚¹ã§å®Ÿè¡Œã™ã‚‹ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -235,36 +235,36 @@ msgstr "URL:"
 
 #: entrydialog.cpp:415
 msgid "Read Only"
-msgstr "ÆÉ¤ß¹ş¤ßÀìÍÑ"
+msgstr "èª­ã¿è¾¼ã¿å°‚ç”¨"
 
 #: entrydialog.cpp:420
 msgid "Device:"
-msgstr "¥Ç¥Ğ¥¤¥¹:"
+msgstr "ãƒ‡ãƒã‚¤ã‚¹:"
 
 #: entrydialog.cpp:425
 msgid "Mount Point:"
-msgstr "¥Ş¥¦¥ó¥È°ÌÃÖ:"
+msgstr "ãƒã‚¦ãƒ³ãƒˆä½ç½®:"
 
 #: entrydialog.cpp:430
 msgid "FS Type:"
-msgstr "FS¥¿¥¤¥×:"
+msgstr "FSã‚¿ã‚¤ãƒ—:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"
-msgstr "¥Ş¥¦¥ó¥È²ò½ü¥¢¥¤¥³¥ó:"
+msgstr "ãƒã‚¦ãƒ³ãƒˆè§£é™¤ã‚¢ã‚¤ã‚³ãƒ³:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "¥á¥Ë¥å¡¼Ì¾ÊÑ¹¹"
+msgstr "ãƒ¡ãƒ‹ãƒ¥ãƒ¼åå¤‰æ›´"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "¥á¥Ë¥å¡¼¤ÎÌ¾Á°¤òkpanel¤ËÉ½¼¨¤µ¤ì¤Æ¤¤¤ë¤è¤¦¤ËÊÑ¹¹"
+msgstr "ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®åå‰ã‚’kpanelã«è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ã‚ˆã†ã«å¤‰æ›´"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"
-msgstr "¸Ä¿Í:"
+msgstr "å€‹äºº:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "É¸½à:"
+msgstr "æ¨™æº–:"

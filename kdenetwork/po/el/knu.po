@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -19,11 +19,11 @@ msgstr "&Ping"
 
 #: knu.cpp:159 knu.cpp:315
 msgid "&Traceroute"
-msgstr "Εύρεση διαδρομής"
+msgstr "Γ…Γ½Γ±Γ¥Γ³Γ§ Γ¤Γ©Γ΅Γ¤Γ±Γ―Γ¬ΓΓ²"
 
 #: knu.cpp:168 knu.cpp:321
 msgid "Host &resolution"
-msgstr "Ανάλυση διεύθυνσης"
+msgstr "ΓΓ­ΓΓ«ΓµΓ³Γ§ Γ¤Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§Γ²"
 
 #: knu.cpp:181
 #, fuzzy
@@ -41,39 +41,39 @@ msgid ""
 "\n"
 "So I can't do anything...\n"
 msgstr ""
-"Δεν υπάρχει ενεργοποιημένη εντολή\n"
-"στο αρχείο ρυθμίσεων,\n"
+"Γ„Γ¥Γ­ ΓµΓ°ΓΓ±Γ·Γ¥Γ© Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―Γ©Γ§Γ¬ΓΓ­Γ§ Γ¥Γ­Γ΄Γ―Γ«Γ\n"
+"Γ³Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ― Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥ΓΉΓ­,\n"
 "\n"
-"οπότε δεν μπορώ να κάνω τίποτα...\n"
+"Γ―Γ°ΓΌΓ΄Γ¥ Γ¤Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ ΓªΓΓ­ΓΉ Γ΄ΓΓ°Γ―Γ΄Γ΅...\n"
 
 #: knu.cpp:246
 msgid "&New window"
-msgstr "Νέο παράθυρο"
+msgstr "ΓΓΓ― Γ°Γ΅Γ±ΓΓ¨ΓµΓ±Γ―"
 
 #: knu.cpp:249
 msgid "&Close window"
-msgstr "Κλείσιμο παραθύρου"
+msgstr "ΓΓ«Γ¥ΓΓ³Γ©Γ¬Γ― Γ°Γ΅Γ±Γ΅Γ¨Γ½Γ±Γ―Γµ"
 
 #: knu.cpp:260
 msgid "Select &all"
-msgstr "Επιλογή όλων"
+msgstr "Γ…Γ°Γ©Γ«Γ―Γ£Γ ΓΌΓ«ΓΉΓ­"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "Καθαρισμός παραθύρου αποτελεσμάτων"
+msgstr "ΓΓ΅Γ¨Γ΅Γ±Γ©Γ³Γ¬ΓΌΓ² Γ°Γ΅Γ±Γ΅Γ¨Γ½Γ±Γ―Γµ Γ΅Γ°Γ―Γ΄Γ¥Γ«Γ¥Γ³Γ¬ΓΓ΄ΓΉΓ­"
 
 #: knu.cpp:266
 msgid "P&references..."
-msgstr "Προτιμήσεις..."
+msgstr "ΓΓ±Γ―Γ΄Γ©Γ¬ΓΓ³Γ¥Γ©Γ²..."
 
 #: knu.cpp:281
 #, fuzzy, c-format
 msgid "&About %s"
-msgstr "Για το Qt"
+msgstr "ΓƒΓ©Γ΅ Γ΄Γ― Qt"
 
 #: knu.cpp:283
 msgid "About &Qt"
-msgstr "Για το Qt"
+msgstr "ΓƒΓ©Γ΅ Γ΄Γ― Qt"
 
 #: knu.cpp:327
 msgid "&Finger"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: knu.cpp:469
 msgid "About..."
-msgstr "Σχετικά..."
+msgstr "Γ“Γ·Γ¥Γ΄Γ©ΓªΓ..."
 
 #: knu.cpp:602
 msgid "Network utilities"
@@ -98,23 +98,23 @@ msgstr ""
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
-msgstr "Διεύθυνση"
+msgstr "Γ„Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
-msgstr "Συνέχεια"
+msgstr "Γ“ΓµΓ­ΓΓ·Γ¥Γ©Γ΅"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
-msgstr "Στοπ"
+msgstr "Γ“Γ΄Γ―Γ°"
 
 #: CommandDlg.cpp:166
 msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"Το εκτελέσιμο αυτής της εντολής δεν βρέθηκε.\n"
-"Μπορείτε να ορίσετε την τοποθεσία του από το μενού Επεξεργασία->Προτιμήσεις."
+"Γ”Γ― Γ¥ΓªΓ΄Γ¥Γ«ΓΓ³Γ©Γ¬Γ― Γ΅ΓµΓ΄ΓΓ² Γ΄Γ§Γ² Γ¥Γ­Γ΄Γ―Γ«ΓΓ² Γ¤Γ¥Γ­ ΓΆΓ±ΓΓ¨Γ§ΓªΓ¥.\n"
+"ΓΓ°Γ―Γ±Γ¥ΓΓ΄Γ¥ Γ­Γ΅ Γ―Γ±ΓΓ³Γ¥Γ΄Γ¥ Γ΄Γ§Γ­ Γ΄Γ―Γ°Γ―Γ¨Γ¥Γ³ΓΓ΅ Γ΄Γ―Γµ Γ΅Γ°ΓΌ Γ΄Γ― Γ¬Γ¥Γ­Γ―Γ½ Γ…Γ°Γ¥Γ®Γ¥Γ±Γ£Γ΅Γ³ΓΓ΅->ΓΓ±Γ―Γ΄Γ©Γ¬ΓΓ³Γ¥Γ©Γ²."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -130,38 +130,38 @@ msgid ""
 "to configure it again.\n"
 msgstr ""
 "\n"
-"Υπάρχει πρόβλημα στο αρχείο παραμέτρων\n"
+"Γ•Γ°ΓΓ±Γ·Γ¥Γ© Γ°Γ±ΓΌΓΆΓ«Γ§Γ¬Γ΅ Γ³Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ― Γ°Γ΅Γ±Γ΅Γ¬ΓΓ΄Γ±ΓΉΓ­\n"
 "%s/%src\n"
 "\n"
-"Στην ομάδα [%s],\n"
-"δεν μπορώ να βρώ μια έγκυρη αναφορά \"path=\". \n"
+"Γ“Γ΄Γ§Γ­ Γ―Γ¬ΓΓ¤Γ΅ [%s],\n"
+"Γ¤Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ ΓΆΓ±ΓΎ Γ¬Γ©Γ΅ ΓΓ£ΓªΓµΓ±Γ§ Γ΅Γ­Γ΅Γ¶Γ―Γ±Γ \"path=\". \n"
 "\n"
-"Παρακαλώ χρησιμοποιήστε το μενού Επεξεργασία->Προτιμήσεις\n"
-"για να το ρυθμίσετε.\n"
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ·Γ±Γ§Γ³Γ©Γ¬Γ―Γ°Γ―Γ©ΓΓ³Γ΄Γ¥ Γ΄Γ― Γ¬Γ¥Γ­Γ―Γ½ Γ…Γ°Γ¥Γ®Γ¥Γ±Γ£Γ΅Γ³ΓΓ΅->ΓΓ±Γ―Γ΄Γ©Γ¬ΓΓ³Γ¥Γ©Γ²\n"
+"Γ£Γ©Γ΅ Γ­Γ΅ Γ΄Γ― Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥Γ΄Γ¥.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
-msgstr "Σφάλμα στην τοποθεσία"
+msgstr "Γ“Γ¶ΓΓ«Γ¬Γ΅ Γ³Γ΄Γ§Γ­ Γ΄Γ―Γ°Γ―Γ¨Γ¥Γ³ΓΓ΅"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
-msgstr "Δυαδικό"
+msgstr "Γ„ΓµΓ΅Γ¤Γ©ΓªΓΌ"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
-msgstr "Τοποθεσία:"
+msgstr "Γ”Γ―Γ°Γ―Γ¨Γ¥Γ³ΓΓ΅:"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
-msgstr "Επιπλέον ορίσματα:"
+msgstr "Γ…Γ°Γ©Γ°Γ«ΓΓ―Γ­ Γ―Γ±ΓΓ³Γ¬Γ΅Γ΄Γ΅:"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "Αυτή η εντολή έχει απενεργοποιηθεί από το αρχείο παραμέτρων."
+msgstr "ΓΓµΓ΄Γ Γ§ Γ¥Γ­Γ΄Γ―Γ«Γ ΓΓ·Γ¥Γ© Γ΅Γ°Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―Γ©Γ§Γ¨Γ¥Γ Γ΅Γ°ΓΌ Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ― Γ°Γ΅Γ±Γ΅Γ¬ΓΓ΄Γ±ΓΉΓ­."
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
-msgstr "- παράμετροι"
+msgstr "- Γ°Γ΅Γ±ΓΓ¬Γ¥Γ΄Γ±Γ―Γ©"
 
 #: MtrDlg.cpp:87
 msgid "#"
@@ -197,7 +197,7 @@ msgstr ""
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "Ανάλυση διεύθυνσης υπολογιστή"
+msgstr "ΓΓ­ΓΓ«ΓµΓ³Γ§ Γ¤Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§Γ² ΓµΓ°Γ―Γ«Γ―Γ£Γ©Γ³Γ΄Γ"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
@@ -209,56 +209,56 @@ msgstr ""
 
 #: TracerouteDlg.cpp:115
 msgid "&Maximum number of hops:"
-msgstr "Μέγιστος αριθμός μεταβάσεων"
+msgstr "ΓΓΓ£Γ©Γ³Γ΄Γ―Γ² Γ΅Γ±Γ©Γ¨Γ¬ΓΌΓ² Γ¬Γ¥Γ΄Γ΅ΓΆΓΓ³Γ¥ΓΉΓ­"
 
 #: HostDlg.cpp:112
 msgid "address (A)"
-msgstr "διεύθυνση (Α)"
+msgstr "Γ¤Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§ (Γ)"
 
 #: HostDlg.cpp:113
 msgid "name (PTR)"
-msgstr "Όνομα (PTR)"
+msgstr "ΒΌΓ­Γ―Γ¬Γ΅ (PTR)"
 
 #: HostDlg.cpp:114
 msgid "name server (NS)"
-msgstr "Εξυπηρετητής διεθύνσεων (NS)"
+msgstr "Γ…Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄ΓΓ² Γ¤Γ©Γ¥Γ¨Γ½Γ­Γ³Γ¥ΓΉΓ­ (NS)"
 
 #: HostDlg.cpp:115
 msgid "mail exchanger (MX)"
-msgstr "Υπεύθυνος αλληλογραφίας (MX)"
+msgstr "Γ•Γ°Γ¥Γ½Γ¨ΓµΓ­Γ―Γ² Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ² (MX)"
 
 #: HostDlg.cpp:116
 msgid "alias (CNAME)"
-msgstr "εναλλακτικό όνομα (CNAME)"
+msgstr "Γ¥Γ­Γ΅Γ«Γ«Γ΅ΓªΓ΄Γ©ΓªΓΌ ΓΌΓ­Γ―Γ¬Γ΅ (CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "Αρχή (SOA)"
+msgstr "ΓΓ±Γ·Γ (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
-msgstr "Όλες τις εγγραφές (ANY)"
+msgstr "ΒΌΓ«Γ¥Γ² Γ΄Γ©Γ² Γ¥Γ£Γ£Γ±Γ΅Γ¶ΓΓ² (ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"
-msgstr "Ψάξε για:"
+msgstr "ΓΓΓ®Γ¥ Γ£Γ©Γ΅:"
 
 #: HostDlg.cpp:136 HostDlg.cpp:287
 msgid "default server"
-msgstr "Εξυπηρετητής εξ ορισμού"
+msgstr "Γ…Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄ΓΓ² Γ¥Γ® Γ―Γ±Γ©Γ³Γ¬Γ―Γ½"
 
 #: FingerDlg.cpp:95 HostDlg.cpp:145
 msgid "Ser&ver:"
-msgstr "Εξυπηρετητής"
+msgstr "Γ…Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄ΓΓ²"
 
 #: FingerDlg.cpp:77
 #, fuzzy
 msgid "&User:"
-msgstr "Χρήστης:"
+msgstr "Γ—Γ±ΓΓ³Γ΄Γ§Γ²:"
 
 #, fuzzy
 #~ msgid "&Matt's traceroute"
-#~ msgstr "Εύρεση διαδρομής"
+#~ msgstr "Γ…Γ½Γ±Γ¥Γ³Γ§ Γ¤Γ©Γ΅Γ¤Γ±Γ―Γ¬ΓΓ²"
 
 #~ msgid "Server:"
-#~ msgstr "Εξυπηρετητής:"
+#~ msgstr "Γ…Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄ΓΓ²:"

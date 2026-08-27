@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hasso Tepper <hasso@ewsound.estnet.ee>\n"
 "Language-Team: Estonian <linux-ee@eenet.ee>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kmcomposewin.cpp:1516 kmmainwin.cpp:377 kpgp.cpp:546
@@ -31,7 +31,7 @@ msgstr "KMail viga"
 
 #: kmmainwin.cpp:400 kmmainwin.cpp:434
 msgid "Already checking for mail!"
-msgstr "Maili kontrollimine juba k‰ib!"
+msgstr "Maili kontrollimine juba k√§ib!"
 
 #: kmmainwin.cpp:410 kmmainwin.cpp:444
 msgid "No new mail available"
@@ -43,15 +43,15 @@ msgstr "Muuda kausta"
 
 #: kmmainwin.cpp:497
 msgid "Moved all messages into trash"
-msgstr "Kıik teated viidud pr¸gikasti"
+msgstr "K√µik teated viidud pr√ºgikasti"
 
 #: kmmainwin.cpp:516
 msgid ""
 "Cannot remove a\n"
 "system folder."
 msgstr ""
-"S¸steemset kausta pole\n"
-"vıimalik eemaldada."
+"S√ºsteemset kausta pole\n"
+"v√µimalik eemaldada."
 
 #: kmmainwin.cpp:520
 #, c-format
@@ -72,11 +72,11 @@ msgstr "KMaili teadaanne!"
 
 #: kmmainwin.cpp:584
 msgid "Only messages in the outbox folder can be edited!"
-msgstr "Redigeerida on vıimalik ainult kaustas \"outbox\" asuvaid kirju!"
+msgstr "Redigeerida on v√µimalik ainult kaustas \"outbox\" asuvaid kirju!"
 
 #: kmmainwin.cpp:619
 msgid "Message as Plain Text"
-msgstr "Sınumid ainult tekstina"
+msgstr "S√µnumid ainult tekstina"
 
 #: kmmainwin.cpp:626 kmmainwin.cpp:646
 msgid "Select Folder"
@@ -84,11 +84,11 @@ msgstr "Vali kaust"
 
 #: kmmainwin.cpp:669
 msgid "Queued messages successfully sent."
-msgstr "J‰rjekorras asunud sınumid edukalt saadetud."
+msgstr "J√§rjekorras asunud s√µnumid edukalt saadetud."
 
 #: kmmainwin.cpp:671
 msgid "Failed to send (some) queued messages."
-msgstr "(Mınede) sınumite saatmine ebaınnestus."
+msgstr "(M√µnede) s√µnumite saatmine eba√µnnestus."
 
 #: kmmainwin.cpp:802
 msgid "Opening URL..."
@@ -100,11 +100,11 @@ msgstr "Aadress lisatud aadressiraamatusse."
 
 #: kmmainwin.cpp:869
 msgid "Address copied to clipboard."
-msgstr "Aadress kopeeritud lıikepuhvrisse."
+msgstr "Aadress kopeeritud l√µikepuhvrisse."
 
 #: kmmainwin.cpp:874
 msgid "URL copied to clipboard."
-msgstr "URL kopeeritud lıikepuhvrisse."
+msgstr "URL kopeeritud l√µikepuhvrisse."
 
 #: kmmainwin.cpp:901
 msgid "Send to..."
@@ -124,7 +124,7 @@ msgstr "Lisa aadressiraamatusse"
 
 #: kmmainwin.cpp:910 kmmainwin.cpp:919
 msgid "Copy to clipboard"
-msgstr "Kopeeri lıikepuhvrisse"
+msgstr "Kopeeri l√µikepuhvrisse"
 
 #: kmmainwin.cpp:917
 msgid "Open URL..."
@@ -136,7 +136,7 @@ msgstr "&Vasta..."
 
 #: kmheaders.cpp:1003 kmmainwin.cpp:929 kmmainwin.cpp:1046
 msgid "Reply &All..."
-msgstr "Vasta &kıigile..."
+msgstr "Vasta &k√µigile..."
 
 #: kmheaders.cpp:1005 kmmainwin.cpp:931 kmmainwin.cpp:1048
 msgid "&Forward..."
@@ -164,7 +164,7 @@ msgstr "Salvesta kui..."
 
 #: kmmainwin.cpp:970
 msgid "Print..."
-msgstr "Tr¸ki..."
+msgstr "Tr√ºki..."
 
 #: kmmainwin.cpp:973
 msgid "Check Mail..."
@@ -172,11 +172,11 @@ msgstr "Kontrolli maili..."
 
 #: kmmainwin.cpp:982
 msgid "Check Mail in..."
-msgstr "Kontrolli maili j‰rgnevas..."
+msgstr "Kontrolli maili j√§rgnevas..."
 
 #: kmmainwin.cpp:984
 msgid "Send Queued"
-msgstr "Saada j‰rjekorras olevad"
+msgstr "Saada j√§rjekorras olevad"
 
 #: kmmainwin.cpp:987
 msgid "&Settings..."
@@ -208,7 +208,7 @@ msgstr "T&ihenda"
 
 #: kmfoldertree.cpp:314 kmmainwin.cpp:1017
 msgid "&Empty"
-msgstr "T¸hj&enda"
+msgstr "T√ºhj&enda"
 
 #: kmfilterdlg.cpp:149 kmheaders.cpp:991 kmmainwin.cpp:1026
 msgid "New"
@@ -228,7 +228,7 @@ msgstr "Vastatud"
 
 #: kmheaders.cpp:995 kmmainwin.cpp:1030
 msgid "Queued"
-msgstr "J‰rjekorras"
+msgstr "J√§rjekorras"
 
 #: kmheaders.cpp:996 kmmainwin.cpp:1031
 msgid "Sent"
@@ -236,11 +236,11 @@ msgstr "Saadetud"
 
 #: kmmainwin.cpp:1035
 msgid "&Next"
-msgstr "&J‰rgmine"
+msgstr "&J√§rgmine"
 
 #: kmmainwin.cpp:1037
 msgid "Next unread"
-msgstr "J‰rgmine lugemata"
+msgstr "J√§rgmine lugemata"
 
 #: kmmainwin.cpp:1039
 msgid "&Previous"
@@ -260,7 +260,7 @@ msgstr "&Sea staatus"
 
 #: kmmainwin.cpp:1056
 msgid "Mar&k all"
-msgstr "M‰rgi &kıik"
+msgstr "M√§rgi &k√µik"
 
 #: kmmainwin.cpp:1065
 msgid "Send again..."
@@ -272,27 +272,27 @@ msgstr "Rakenda filtrid"
 
 #: kmmainwin.cpp:1070
 msgid "View Source..."
-msgstr "Vaata l‰hteteksti..."
+msgstr "Vaata l√§hteteksti..."
 
 #: kmmainwin.cpp:1077
 msgid "&Brief Headers"
-msgstr "&L¸hikesed p‰ised"
+msgstr "&L√ºhikesed p√§ised"
 
 #: kmmainwin.cpp:1079
 msgid "&Fancy Headers"
-msgstr "&Uhked p‰ised"
+msgstr "&Uhked p√§ised"
 
 #: kmmainwin.cpp:1081
 msgid "&Standard Headers"
-msgstr "&Standardsed p‰ised"
+msgstr "&Standardsed p√§ised"
 
 #: kmmainwin.cpp:1083
 msgid "&Long Headers"
-msgstr "&Pikad p‰ised"
+msgstr "&Pikad p√§ised"
 
 #: kmmainwin.cpp:1085
 msgid "&All Headers"
-msgstr "&Kıik p‰ised"
+msgstr "&K√µik p√§ised"
 
 #: kmmainwin.cpp:1088
 msgid "Iconic Attachments"
@@ -304,7 +304,7 @@ msgstr "\"Targad\" kaasatud failid"
 
 #: kmmainwin.cpp:1090
 msgid "Inlined Attachments"
-msgstr "Kaasatud failid sınumi sees"
+msgstr "Kaasatud failid s√µnumi sees"
 
 #: kmmainwin.cpp:1101
 msgid "F&older"
@@ -316,15 +316,15 @@ msgstr "&Teade"
 
 #: kmcomposewin.cpp:573 kmmainwin.cpp:1121
 msgid "Compose new message"
-msgstr "Koosta uus sınum"
+msgstr "Koosta uus s√µnum"
 
 #: kmcomposewin.cpp:579 kmmainwin.cpp:1126
 msgid "Save message to file"
-msgstr "salvesta sınum faili"
+msgstr "salvesta s√µnum faili"
 
 #: kmcomposewin.cpp:585 kmmainwin.cpp:1131
 msgid "Print message"
-msgstr "Tr¸ki sınum"
+msgstr "Tr√ºki s√µnum"
 
 #: kmmainwin.cpp:1138
 msgid "Get new mail"
@@ -336,15 +336,15 @@ msgstr "Vasta autorile"
 
 #: kmmainwin.cpp:1149
 msgid "Reply to all recipients"
-msgstr "Vasta kıigile saajatele"
+msgstr "Vasta k√µigile saajatele"
 
 #: kmmainwin.cpp:1154
 msgid "Forward message"
-msgstr "Saada sınum edasi"
+msgstr "Saada s√µnum edasi"
 
 #: kmmainwin.cpp:1159
 msgid "Delete message"
-msgstr "Kustuta sınum"
+msgstr "Kustuta s√µnum"
 
 #: kmcomposewin.cpp:609 kmmainwin.cpp:1165
 msgid "Open addressbook..."
@@ -365,7 +365,7 @@ msgstr "nimetu"
 
 #: kmfolderdia.cpp:55
 msgid "Associated with"
-msgstr "Seosta j‰rgevaga"
+msgstr "Seosta j√§rgevaga"
 
 #: kmfolderdia.cpp:65
 msgid "Unassociated Accounts"
@@ -429,7 +429,7 @@ msgstr "Sissetulev mail"
 
 #: kmsettings.cpp:262
 msgid "Accounts:   (add at least one account!)"
-msgstr "Konto:    (lisa v‰hemalt ¸ks konto!)"
+msgstr "Konto:    (lisa v√§hemalt √ºks konto!)"
 
 #: kmcomposewin.cpp:140 kmsettings.cpp:267
 msgid "Name"
@@ -437,7 +437,7 @@ msgstr "Nimi"
 
 #: kmcomposewin.cpp:143 kmsettings.cpp:268
 msgid "Type"
-msgstr "T¸¸p"
+msgstr "T√º√ºp"
 
 #: kmsettings.cpp:269
 msgid "Folder"
@@ -453,15 +453,15 @@ msgstr "Muuda..."
 
 #: kmsettings.cpp:300
 msgid "Network"
-msgstr "Vırk"
+msgstr "V√µrk"
 
 #: kmsettings.cpp:324
 msgid "Message Body Font:"
-msgstr "Sınumi keha font:"
+msgstr "S√µnumi keha font:"
 
 #: kmsettings.cpp:329
 msgid "Message List Font:"
-msgstr "Sınumite nimekirja font:"
+msgstr "S√µnumite nimekirja font:"
 
 #
 #: kmsettings.cpp:357
@@ -477,8 +477,8 @@ msgid ""
 "The following placeholders are supported in the reply phrases:\n"
 "%D=date, %S=subject, %F=sender, %%=percent sign"
 msgstr ""
-"Vastamise fraasides vıib kasutada j‰rgmiseid kohat‰itjaid:\n"
-"%D=kuup‰ev, %S=subjekt, %F=saatja, %%=protsendi m‰rk."
+"Vastamise fraasides v√µib kasutada j√§rgmiseid kohat√§itjaid:\n"
+"%D=kuup√§ev, %S=subjekt, %F=saatja, %%=protsendi m√§rk."
 
 #: kmsettings.cpp:399
 msgid "Reply to sender:"
@@ -486,7 +486,7 @@ msgstr "Saatjale vastamine:"
 
 #: kmsettings.cpp:402
 msgid "Reply to all:"
-msgstr "Kıigile vastamine:"
+msgstr "K√µigile vastamine:"
 
 #: kmsettings.cpp:405
 msgid "Forward:"
@@ -498,15 +498,15 @@ msgstr "Treppimine:"
 
 #: kmmessage.cpp:1383 kmsettings.cpp:420
 msgid "On %D, you wrote:"
-msgstr "‹hel kenal p‰eval (%D) kirjutasid sa:"
+msgstr "√úhel kenal p√§eval (%D) kirjutasid sa:"
 
 #: kmmessage.cpp:1384 kmsettings.cpp:424
 msgid "On %D, %F wrote:"
-msgstr "‹hel kenal p‰eval (%D) kirjutas %F:"
+msgstr "√úhel kenal p√§eval (%D) kirjutas %F:"
 
 #: kmmessage.cpp:1385 kmsettings.cpp:428
 msgid "Forwarded Message"
-msgstr "Edasi saadetud sınum"
+msgstr "Edasi saadetud s√µnum"
 
 #: kmsettings.cpp:439
 msgid "Automatically append signature"
@@ -542,7 +542,7 @@ msgstr "saada hiljem"
 
 #: kmsettings.cpp:487
 msgid "Send messages:"
-msgstr "Saada sınumid:"
+msgstr "Saada s√µnumid:"
 
 #: kmsettings.cpp:490
 msgid "Allow 8-bit"
@@ -558,7 +558,7 @@ msgstr "Redaktor"
 
 #: kmsettings.cpp:542
 msgid "empty trash on exit"
-msgstr "v‰ljumisel t¸hjenda pr¸gikast"
+msgstr "v√§ljumisel t√ºhjenda pr√ºgikast"
 
 #: kmsettings.cpp:546
 msgid "Send Mail in outbox Folder on Check"
@@ -574,11 +574,11 @@ msgstr "PGP"
 
 #: kmsettings.cpp:591
 msgid "Message Body Font"
-msgstr "Sınumi keha font"
+msgstr "S√µnumi keha font"
 
 #: kmsettings.cpp:605
 msgid "Message List Font"
-msgstr "Sınumi nimekirja font"
+msgstr "S√µnumi nimekirja font"
 
 #: kmsettings.cpp:657
 msgid "Select Account"
@@ -598,7 +598,7 @@ msgstr "Vali allkirja fail"
 
 #: kmsettings.cpp:875
 msgid "Type:"
-msgstr "T¸¸p:"
+msgstr "T√º√ºp:"
 
 #: kmsettings.cpp:888
 msgid "Local Account"
@@ -622,7 +622,7 @@ msgstr "Host:"
 
 #: kmsettings.cpp:914
 msgid "Store POP password in config file"
-msgstr "S‰ilita POP parool konfiguratsioonifailis"
+msgstr "S√§ilita POP parool konfiguratsioonifailis"
 
 #: kmsettings.cpp:919
 msgid "Delete mail from server"
@@ -630,7 +630,7 @@ msgstr "Kustuta mailid serverist"
 
 #: kmsettings.cpp:924
 msgid "Retrieve all mail from server"
-msgstr "Otsi kıik mailid serverist"
+msgstr "Otsi k√µik mailid serverist"
 
 #: kmsettings.cpp:936
 msgid "Enable interval Mail checking"
@@ -638,7 +638,7 @@ msgstr "Luba regulaarset maili kontrollimist"
 
 #: kmsettings.cpp:946
 msgid "Store new mail in account:"
-msgstr "S‰ilita uus mail kontos:"
+msgstr "S√§ilita uus mail kontos:"
 
 #: kmsettings.cpp:960
 msgid "<none>"
@@ -650,11 +650,11 @@ msgstr "Vali asukoht"
 
 #: kmaccount.cpp:116
 msgid "Receipt: "
-msgstr "Vastuvıtmine: "
+msgstr "Vastuv√µtmine: "
 
 #: kmaccount.cpp:150
 msgid "Failed to add message:"
-msgstr "Sınumi lisamine ebaınnestus:"
+msgstr "S√µnumi lisamine eba√µnnestus:"
 
 #: kmcomposewin.cpp:139 kmheaders.cpp:42
 msgid "F"
@@ -670,16 +670,16 @@ msgstr "Subjekt"
 
 #: kmheaders.cpp:45
 msgid "Date"
-msgstr "Kuup‰ev"
+msgstr "Kuup√§ev"
 
 #: kmheaders.cpp:222
 msgid "Receiver"
-msgstr "Vastuvıtja"
+msgstr "Vastuv√µtja"
 
 #: kmheaders.cpp:225
 #, c-format
 msgid "%d Messages, %d unread."
-msgstr "%d sınumit, %d lugemata."
+msgstr "%d s√µnumit, %d lugemata."
 
 #: kmheaders.cpp:227
 msgid "Folder is read-only."
@@ -695,7 +695,7 @@ msgstr "Subjekt puudub"
 
 #: kmheaders.cpp:343
 msgid "order of arrival"
-msgstr "saabumise j‰rjekord"
+msgstr "saabumise j√§rjekord"
 
 #: kmheaders.cpp:352
 msgid "subject"
@@ -703,7 +703,7 @@ msgstr "subjekt"
 
 #: kmheaders.cpp:353
 msgid "date"
-msgstr "kuup‰ev"
+msgstr "kuup√§ev"
 
 #: kmheaders.cpp:354
 msgid "sender"
@@ -716,20 +716,20 @@ msgstr "staatus"
 #: kmheaders.cpp:357
 #, c-format
 msgid "Sorting messages descending by %s"
-msgstr "Sınumite sortimine kahanevas j‰rjustuses %s j‰rgi"
+msgstr "S√µnumite sortimine kahanevas j√§rjustuses %s j√§rgi"
 
 #: kmheaders.cpp:359
 #, c-format
 msgid "Sorting messages ascending by %s"
-msgstr "Sınumite sortimine tıusvas j‰rjustuses %s j‰rgi"
+msgstr "S√µnumite sortimine t√µusvas j√§rjustuses %s j√§rgi"
 
 #: kmheaders.cpp:486
 msgid "Message(s) saved."
-msgstr "Sınum(id) salvestatud."
+msgstr "S√µnum(id) salvestatud."
 
 #: kmheaders.cpp:488
 msgid "Failed to save message(s)."
-msgstr "Sınumi(te) salvestamine ebaınnestus."
+msgstr "S√µnumi(te) salvestamine eba√µnnestus."
 
 #: kmcomposewin.cpp:128
 msgid "KMail Composer"
@@ -773,7 +773,7 @@ msgstr "&Uudisgrupid:"
 
 #: kmcomposewin.cpp:360
 msgid "&Followup-To:"
-msgstr "&J‰rg:"
+msgstr "&J√§rg:"
 
 #: kmcomposewin.cpp:432
 msgid "&Send"
@@ -797,7 +797,7 @@ msgstr "&Uus redaktor..."
 
 #: kmcomposewin.cpp:471 kmcomposewin.cpp:705 kmcomposewin.cpp:1923
 msgid "Mark all"
-msgstr "M‰rgi kıik"
+msgstr "M√§rgi k√µik"
 
 #: kmcomposewin.cpp:474 kmcomposewin.cpp:707
 msgid "Find..."
@@ -809,7 +809,7 @@ msgstr "Asenda..."
 
 #: kmcomposewin.cpp:479
 msgid "&Spellcheck..."
-msgstr "&’igekirja kontroll..."
+msgstr "&√ïigekirja kontroll..."
 
 #: kmcomposewin.cpp:486
 msgid "&Urgent"
@@ -817,7 +817,7 @@ msgstr "&Kiire"
 
 #: kmcomposewin.cpp:488
 msgid "&Confirm delivery"
-msgstr "&Kinnita v‰ljastust"
+msgstr "&Kinnita v√§ljastust"
 
 #: kmcomposewin.cpp:490
 msgid "&Confirm read"
@@ -825,7 +825,7 @@ msgstr "&Kinnita lugemist"
 
 #: kmcomposewin.cpp:493
 msgid "&Spellchecker..."
-msgstr "&’igekirja kontroll..."
+msgstr "&√ïigekirja kontroll..."
 
 #: kmcomposewin.cpp:496
 msgid "&Charsets..."
@@ -833,7 +833,7 @@ msgstr "&Kooditabelid..."
 
 #: kmcomposewin.cpp:509
 msgid "&All Fields"
-msgstr "Kıik &v‰ljad"
+msgstr "K√µik &v√§ljad"
 
 #: kmcomposewin.cpp:511
 msgid "&From"
@@ -865,7 +865,7 @@ msgstr "&Uudisgrupid"
 
 #: kmcomposewin.cpp:519
 msgid "&Followup-To"
-msgstr "&J‰rg"
+msgstr "&J√§rg"
 
 #: kmcomposewin.cpp:525
 msgid "Append S&ignature"
@@ -881,11 +881,11 @@ msgstr "K&aasa..."
 
 #: kmcomposewin.cpp:532
 msgid "Attach &Public Key"
-msgstr "Kaasa &avalik vıti"
+msgstr "Kaasa &avalik v√µti"
 
 #: kmcomposewin.cpp:534
 msgid "Attach My &Public Key"
-msgstr "Kaasa m&inu avalik vıti"
+msgstr "Kaasa m&inu avalik v√µti"
 
 #: kmcomposewin.cpp:545
 msgid "&Save..."
@@ -901,11 +901,11 @@ msgstr "K&aasamine"
 
 #: kmcomposewin.cpp:568
 msgid "Send message"
-msgstr "Saada sınum"
+msgstr "Saada s√µnum"
 
 #: kmcomposewin.cpp:594
 msgid "Cut selection"
-msgstr "Lıika valitud"
+msgstr "L√µika valitud"
 
 #: kmcomposewin.cpp:597
 msgid "Copy selection"
@@ -913,7 +913,7 @@ msgstr "Kopeeri valitud"
 
 #: kmcomposewin.cpp:600
 msgid "Paste clipboard contents"
-msgstr "Aseta lıikepuhvri sisu"
+msgstr "Aseta l√µikepuhvri sisu"
 
 #: kmcomposewin.cpp:605
 msgid "Attach file"
@@ -921,11 +921,11 @@ msgstr "Kaasa fail"
 
 #: kmcomposewin.cpp:616
 msgid "sign message"
-msgstr "signeeri sınum"
+msgstr "signeeri s√µnum"
 
 #: kmcomposewin.cpp:621
 msgid "encrypt message"
-msgstr "kr¸pteeri sınum"
+msgstr "kr√ºpteeri s√µnum"
 
 #: kmcomposewin.cpp:638 kmcomposewin.cpp:654
 msgid "Column"
@@ -945,7 +945,7 @@ msgid ""
 "edited message?"
 msgstr ""
 "Kas sulgeda ja loobuda\n"
-"redigeeritavast sınumist?"
+"redigeeritavast s√µnumist?"
 
 #: kmcomposewin.cpp:1194
 msgid "Attach File"
@@ -957,11 +957,11 @@ msgstr "Lisa Fail"
 
 #: kmcomposewin.cpp:1248
 msgid "my pgp key"
-msgstr "minu pgp vıti"
+msgstr "minu pgp v√µti"
 
 #: kmcomposewin.cpp:1276
 msgid "pgp key"
-msgstr "pgp vıti"
+msgstr "pgp v√µti"
 
 #: kmcomposewin.cpp:1297 kmreaderwin.cpp:906
 msgid "View..."
@@ -993,21 +993,21 @@ msgstr "Subjekt:"
 
 #: kmcomposewin.cpp:1546
 msgid "Date:"
-msgstr "Kuup‰ev:"
+msgstr "Kuup√§ev:"
 
 #: kmcomposewin.cpp:1670
 msgid "Spellcheck complete."
-msgstr "’igekirja kontroll tehtud."
+msgstr "√ïigekirja kontroll tehtud."
 
 #: kmcomposewin.cpp:2113
 msgid "Spellcheck - KMail"
-msgstr "’igekirja kontroll - KMail"
+msgstr "√ïigekirja kontroll - KMail"
 
 #: kmcomposewin.cpp:2139
 msgid ""
 "Error starting KSpell. Please make sure you have ISpell properly configured."
 msgstr ""
-"Viga KSpell'i k‰ivitamisel. Tee kindlaks, et ISpell on ıieti konfigureeritud."
+"Viga KSpell'i k√§ivitamisel. Tee kindlaks, et ISpell on √µieti konfigureeritud."
 
 #: kmfolder.cpp:147
 #, c-format
@@ -1017,7 +1017,7 @@ msgstr "Kausta '%s' on muudetud. Indeksi uuesti loomine."
 #: kmfolder.cpp:388
 #, c-format
 msgid "Creating index file: %d messages done"
-msgstr "Indeksfaili loomine: %d sınumit tehtud"
+msgstr "Indeksfaili loomine: %d s√µnumit tehtud"
 
 #: kmfolder.cpp:477
 msgid "Writing index file"
@@ -1026,11 +1026,11 @@ msgstr "Indeksfaili kirjutamine"
 #: kmfolder.cpp:934
 #, c-format
 msgid "Compacting folder: %d messages done"
-msgstr "Kausta tihendamine: %d sınumit tehtud"
+msgstr "Kausta tihendamine: %d s√µnumit tehtud"
 
 #: kmmsgpartdlg.cpp:41
 msgid "Message Part Properties"
-msgstr "Sınumi osa omadused"
+msgstr "S√µnumi osa omadused"
 
 #: kmmsgpartdlg.cpp:73
 msgid "Description:"
@@ -1071,7 +1071,7 @@ msgstr "Viited: "
 
 #: kmreaderwin.cpp:436 kmreaderwin.cpp:449
 msgid "Date: "
-msgstr "Kuup‰ev: "
+msgstr "Kuup√§ev: "
 
 #: kmreaderwin.cpp:458
 msgid "Bcc: "
@@ -1087,15 +1087,15 @@ msgstr "Grupid: "
 
 #: kmreaderwin.cpp:506
 msgid "Encrypted message"
-msgstr "Kodeeritud sınum"
+msgstr "Kodeeritud s√µnum"
 
 #: kmreaderwin.cpp:512
 msgid "Cannot decrypt message:"
-msgstr "Sınumit pole vıimalik dekodeerida:"
+msgstr "S√µnumit pole v√µimalik dekodeerida:"
 
 #: kmreaderwin.cpp:521
 msgid "Message was signed by"
-msgstr "Sınumi oli signeerinud"
+msgstr "S√µnumi oli signeerinud"
 
 #: kmreaderwin.cpp:522
 msgid "Warning: Bad signature from"
@@ -1103,7 +1103,7 @@ msgstr "Hoiatus: Vigane signatuuri vorm"
 
 #: kmreaderwin.cpp:532
 msgid "unknown key ID"
-msgstr "tundmatu vıtme ID"
+msgstr "tundmatu v√µtme ID"
 
 #: kmreaderwin.cpp:870
 msgid "Attachment: "
@@ -1111,7 +1111,7 @@ msgstr "Kaasatud fail: "
 
 #: kmreaderwin.cpp:1084
 msgid "Could not save file"
-msgstr "Faili pole vıimalik salvestada"
+msgstr "Faili pole v√µimalik salvestada"
 
 #: kmacctmgr.cpp:116 kmacctmgr.cpp:223 kmacctmgr.cpp:285
 #, c-format
@@ -1130,8 +1130,8 @@ msgid ""
 "section of the settings in order to\n"
 "receive mail."
 msgstr ""
-"Selleks, et maili vastu vıtta, pead sa\n"
-"lisama seadistuste sektsioonis 'vırk'\n"
+"Selleks, et maili vastu v√µtta, pead sa\n"
+"lisama seadistuste sektsioonis 'v√µrk'\n"
 "oma konto."
 
 #: main.cpp:121 main.cpp:371
@@ -1152,7 +1152,7 @@ msgid ""
 "KMail cannot start without it.\n"
 msgstr ""
 "$HOME ei ole seatud!\n"
-"KMaili pole ilma selleta k‰ivitada.\n"
+"KMaili pole ilma selleta k√§ivitada.\n"
 
 #: main.cpp:373
 msgid ""
@@ -1164,26 +1164,26 @@ msgid ""
 "\n"
 "Shall KMail move the mail folders now ?"
 msgstr ""
-"Kataloog ~/KMail eksisteerib. N¸¸dsest kasutab KMail\n"
-"sınumite s‰ilitamiseks kataloogi ~/Mail.\n"
-"KMail vıib liigutada ~/Kmail sisu kataloogi ~/Mail\n"
-"aga see asendab kıik samanimelised eksisteerivad failid\n"
+"Kataloog ~/KMail eksisteerib. N√º√ºdsest kasutab KMail\n"
+"s√µnumite s√§ilitamiseks kataloogi ~/Mail.\n"
+"KMail v√µib liigutada ~/Kmail sisu kataloogi ~/Mail\n"
+"aga see asendab k√µik samanimelised eksisteerivad failid\n"
 "kataloogis (nt. inbox).\n"
 "\n"
-"Kas KMail teeb selle sinu eest ‰ra?"
+"Kas KMail teeb selle sinu eest √§ra?"
 
 #: main.cpp:485
 msgid "Loading addressbook failed"
-msgstr "Aadressiraamatu laadimine ebaınnestus"
+msgstr "Aadressiraamatu laadimine eba√µnnestus"
 
 #: main.cpp:588 main.cpp:729
 #, c-format
 msgid "Unknown command line option: %s"
-msgstr "Tundmatu k‰surea vıti: %s"
+msgstr "Tundmatu k√§surea v√µti: %s"
 
 #: kmacctlocal.cpp:77
 msgid "Cannot open file:"
-msgstr "Pole vıimalik avada faili:"
+msgstr "Pole v√µimalik avada faili:"
 
 #: kmacctlocal.cpp:113
 #, c-format
@@ -1192,7 +1192,7 @@ msgid ""
 "mailbox `%s':\n"
 "%s"
 msgstr ""
-"Postkastist '%s' pole vıimalik\n"
+"Postkastist '%s' pole v√µimalik\n"
 "maile eemaldada:\n"
 "%s"
 
@@ -1214,7 +1214,7 @@ msgid ""
 "destination folder in the settings\n"
 "and try again."
 msgstr ""
-"Palun m‰‰ra seadistustes kindlaks\n"
+"Palun m√§√§ra seadistustes kindlaks\n"
 "host, port ja sihtkataloog ning proovi\n"
 "uuesti."
 
@@ -1224,7 +1224,7 @@ msgstr "Pop mail viga"
 
 #: kmacctpop.cpp:296
 msgid "Pop Mail Network Error"
-msgstr "Pop maili vırgu viga"
+msgstr "Pop maili v√µrgu viga"
 
 #: kmacctpop.cpp:312
 msgid "Unknown error"
@@ -1269,7 +1269,7 @@ msgid ""
 "Cannot create folder `%s'\n"
 "in %s"
 msgstr ""
-"Kataloogi '%s' pole vıimalik\n"
+"Kataloogi '%s' pole v√µimalik\n"
 "%s -s luua"
 
 #: kmsender.cpp:124
@@ -1278,7 +1278,7 @@ msgid ""
 "method in the settings\n"
 "and try again."
 msgstr ""
-"Palun m‰‰ra saatmise\n"
+"Palun m√§√§ra saatmise\n"
 "meetod seadistustes\n"
 "ja proovi uuesti."
 
@@ -1288,17 +1288,17 @@ msgid ""
 "identity settings:\n"
 "user-name and email-address"
 msgstr ""
-"Palun t‰ida vajalikud v‰ljad\n"
+"Palun t√§ida vajalikud v√§ljad\n"
 "isikuandmete seadistuses:\n"
 "kasutajanimi ja e/maili aadress"
 
 #: kmsender.cpp:155
 msgid "You must specify a receiver"
-msgstr "Sa pead m‰‰rama adressaadi"
+msgstr "Sa pead m√§√§rama adressaadi"
 
 #: kmsender.cpp:166
 msgid "Cannot add message to outbox folder"
-msgstr "Sınumit pole vıimalik lisada kausta \"outbox\""
+msgstr "S√µnumit pole v√µimalik lisada kausta \"outbox\""
 
 #: kmsender.cpp:197
 msgid "Sending still in progress"
@@ -1310,32 +1310,32 @@ msgstr "Saatmide protsessi alustamine..."
 
 #: kmsender.cpp:275
 msgid "Sending message: "
-msgstr "Sınumi saatmine: "
+msgstr "S√µnumi saatmine: "
 
 #: kmsender.cpp:303
 msgid "Done sending messages."
-msgstr "Sınumite saatmine lıpetatud."
+msgstr "S√µnumite saatmine l√µpetatud."
 
 #: kmsender.cpp:335
 msgid "Sending failed:"
-msgstr "Saatmine ebaınnestus:"
+msgstr "Saatmine eba√µnnestus:"
 
 #: kmsender.cpp:525
 msgid ""
 "Please specify a mailer program\n"
 "in the settings."
 msgstr ""
-"Palun m‰‰ra seadistustes maileri\n"
+"Palun m√§√§ra seadistustes maileri\n"
 "programm."
 
 #: kmsender.cpp:574
 #, c-format
 msgid "Failed to execute mailer program %s"
-msgstr "Mailiprogrammi %s k‰ivitamine ebaınnestus"
+msgstr "Mailiprogrammi %s k√§ivitamine eba√µnnestus"
 
 #: kmsender.cpp:662
 msgid "connecting to server"
-msgstr "serverisse ¸hendumine"
+msgstr "serverisse √ºhendumine"
 
 #: kmsender.cpp:667
 #, c-format
@@ -1344,21 +1344,21 @@ msgid ""
 "host %s for sending:\n"
 "%s"
 msgstr ""
-"Pole vıimalik avada SMTP ¸hendust\n"
+"Pole v√µimalik avada SMTP √ºhendust\n"
 "hosti %s, et saata:\n"
 "%s"
 
 #: kmsender.cpp:696
 msgid "Cannot close SMTP connection."
-msgstr "SMTP ¸hendust pole vıimalik sulgeda."
+msgstr "SMTP √ºhendust pole v√µimalik sulgeda."
 
 #: kmsender.cpp:748
 msgid "transmitting message"
-msgstr "sınumi edastamine"
+msgstr "s√µnumi edastamine"
 
 #: kmsender.cpp:785
 msgid "network error"
-msgstr "vırgu viga"
+msgstr "v√µrgu viga"
 
 #: kmsender.cpp:787
 #, c-format
@@ -1369,18 +1369,18 @@ msgid ""
 "Return code: %d"
 msgstr ""
 "Ilmnes SMTP viga.\n"
-"K‰sk: %s\n"
+"K√§sk: %s\n"
 "Vastus: %s\n"
 "Tagastatud kood: %d"
 
 #: kmsender.cpp:802
 #, c-format
 msgid "Sending SMTP command: %s"
-msgstr "SMTP k‰su saatmine: %s"
+msgstr "SMTP k√§su saatmine: %s"
 
 #: kmacctseldlg.cpp:26
 msgid "Account Type"
-msgstr "Konto t¸¸p"
+msgstr "Konto t√º√ºp"
 
 #: kmacctseldlg.cpp:45
 msgid "Local Mailbox"
@@ -1396,7 +1396,7 @@ msgstr "liiguta kausta"
 
 #: kmfilteraction.cpp:166 kmfilteraction.cpp:199
 msgid "skip rest"
-msgstr "j‰ta ¸lej‰‰nud"
+msgstr "j√§ta √ºlej√§√§nud"
 
 #: kmidentity.cpp:162
 #, c-format
@@ -1405,7 +1405,7 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
-"Signatuuri skripti k‰ivitamine ebaınnestus\n"
+"Signatuuri skripti k√§ivitamine eba√µnnestus\n"
 "%s\n"
 "%s"
 
@@ -1430,7 +1430,7 @@ msgstr "Filtri reeglid"
 
 #: kmfilterdlg.cpp:143
 msgid "Up"
-msgstr "‹les"
+msgstr "√úles"
 
 #: kmfilterdlg.cpp:146
 msgid "Down"
@@ -1454,15 +1454,15 @@ msgstr "ilma, et"
 
 #: kmfilterdlg.cpp:558
 msgid "or"
-msgstr "vıi"
+msgstr "v√µi"
 
 #: kmfilterdlg.cpp:564
 msgid "equals"
-msgstr "vırdub"
+msgstr "v√µrdub"
 
 #: kmfilterdlg.cpp:565
 msgid "not equal"
-msgstr "ei vırdu"
+msgstr "ei v√µrdu"
 
 #: kmfilterdlg.cpp:566
 msgid "contains"
@@ -1478,7 +1478,7 @@ msgstr "regulaaravaldis"
 
 #: kmfilterdlg.cpp:575
 msgid "<message>"
-msgstr "<sınum>"
+msgstr "<s√µnum>"
 
 #: kmfilterdlg.cpp:576
 msgid "<body>"
@@ -1486,27 +1486,27 @@ msgstr "<keha>"
 
 #: kmfilterdlg.cpp:577
 msgid "<any header>"
-msgstr "<suvaline p‰is>"
+msgstr "<suvaline p√§is>"
 
 #: kpgp.cpp:151
 msgid ""
 "Couldn't find PGP executable.\n"
 "Please check your PATH is set correctly."
 msgstr ""
-"PGP rakendust pole vıimalik leida.\n"
-"Kontrolli, kas PATH on ıigesti seatud."
+"PGP rakendust pole v√µimalik leida.\n"
+"Kontrolli, kas PATH on √µigesti seatud."
 
 #: kpgp.cpp:193
 msgid ""
 "Could not find PGP executable.\n"
 "Please check your PATH is set correctly."
 msgstr ""
-"PGP rakendust pole vıimalik leida.\n"
-"Kontrolli, kas PATH on ıigesti seatud."
+"PGP rakendust pole v√µimalik leida.\n"
+"Kontrolli, kas PATH on √µigesti seatud."
 
 #: kpgp.cpp:207
 msgid "The pass phrase is missing."
-msgstr "Vıtmefraas puudub."
+msgstr "V√µtmefraas puudub."
 
 #: kpgp.cpp:286 kpgp.cpp:312 kpgp.cpp:325 kpgp.cpp:344 kpgp.cpp:361
 msgid "PGP Warning"
@@ -1518,25 +1518,25 @@ msgid ""
 "recipients of this mail.\n"
 "Message will not be encrypted."
 msgstr ""
-"Seel sınumi adressaatide jaoks pole\n"
-"vıimalik leida avalikku vıtit.\n"
-"Sınumit ei kr¸pteerita."
+"Seel s√µnumi adressaatide jaoks pole\n"
+"v√µimalik leida avalikku v√µtit.\n"
+"S√µnumit ei kr√ºpteerita."
 
 #: kpgp.cpp:296
 msgid "Could not find the public keys for\n"
-msgstr "Avaliku vıtit pole vıimalik leida j‰rgneva jaoks\n"
+msgstr "Avaliku v√µtit pole v√µimalik leida j√§rgneva jaoks\n"
 
 #: kpgp.cpp:307
 msgid "These persons will not be able to\n"
-msgstr "Need isikud ei ole vıimelised\n"
+msgstr "Need isikud ei ole v√µimelised\n"
 
 #: kpgp.cpp:309
 msgid "This person will not be able to\n"
-msgstr "See isik ei ole vıimeline\n"
+msgstr "See isik ei ole v√µimeline\n"
 
 #: kpgp.cpp:311
 msgid "decrypt the message."
-msgstr "sınumit dekr¸pteerima."
+msgstr "s√µnumit dekr√ºpteerima."
 
 #: kpgp.cpp:326
 msgid ""
@@ -1544,9 +1544,9 @@ msgid ""
 "Do you wan't to try again, continue and\n"
 "leave the message unsigned, or cancel sending the message?"
 msgstr ""
-"Sa sisestasid just vale vıtmesına.\n"
-"Soovid sa uuesti proovida, j‰tkata ja j‰tta\n"
-"sınum signeerimata, vıi sınumi saatmine katkestada?"
+"Sa sisestasid just vale v√µtmes√µna.\n"
+"Soovid sa uuesti proovida, j√§tkata ja j√§tta\n"
+"s√µnum signeerimata, v√µi s√µnumi saatmine katkestada?"
 
 #: kpgp.cpp:331
 msgid "Retry"
@@ -1557,20 +1557,20 @@ msgid ""
 "Do you wan't to encrypt anyway, leave the\n"
 "message as is, or cancel the message?"
 msgstr ""
-"Soovid sa kr¸pteerida igal juhul, j‰tta see\n"
-"nii nagu on vıi t¸histada sınumi?"
+"Soovid sa kr√ºpteerida igal juhul, j√§tta see\n"
+"nii nagu on v√µi t√ºhistada s√µnumi?"
 
 #: kpgp.cpp:346
 msgid "Encrypt"
-msgstr "Kr¸pteeri"
+msgstr "Kr√ºpteeri"
 
 #: kpgp.cpp:359
 msgid ""
 "Do you wan't to leave the message as is,\n"
 "or cancel the message?"
 msgstr ""
-"Soovid sa j‰tta sınumi nagu ta on vıi\n"
-"t¸histada selle?"
+"Soovid sa j√§tta s√µnumi nagu ta on v√µi\n"
+"t√ºhistada selle?"
 
 #: kpgp.cpp:717
 msgid ""
@@ -1578,7 +1578,7 @@ msgid ""
 "PGP passphrase"
 msgstr ""
 "Palun sisesta oma\n"
-"PGP vıtmefraas"
+"PGP v√µtmefraas"
 
 #: kpgp.cpp:744
 msgid "PGP Security Check"
@@ -1586,11 +1586,11 @@ msgstr "PGP turvalisuse kontroll"
 
 #: kpgp.cpp:769
 msgid "Please select the public key to insert"
-msgstr "Palun vali avalik vıti lisamiseks"
+msgstr "Palun vali avalik v√µti lisamiseks"
 
 #: kpgp.cpp:800
 msgid "Select key"
-msgstr "Vali vıti"
+msgstr "Vali v√µti"
 
 #: kpgp.cpp:827
 msgid "PGP User Identity:"
@@ -1598,31 +1598,31 @@ msgstr "PGP kasutajatunnus:"
 
 #: kpgp.cpp:838
 msgid "Store passphrase"
-msgstr "S‰ilita vıtmefraas"
+msgstr "S√§ilita v√µtmefraas"
 
 #: kpgp.cpp:844
 msgid "Always encrypt to self"
-msgstr "Kr¸pteeri alati enda jaoks"
+msgstr "Kr√ºpteeri alati enda jaoks"
 
 #: kpgpbase.cpp:322
 msgid "Bad pass Phrase; couldn't sign"
-msgstr "Vigane vıtmefraas: pole vıimalik signeerida"
+msgstr "Vigane v√µtmefraas: pole v√µimalik signeerida"
 
 #: kpgpbase.cpp:361
 msgid "error running pgp"
-msgstr "viga pgp tˆˆtamisel"
+msgstr "viga pgp t√∂√∂tamisel"
 
 #: kpgpbase.cpp:378 kpgpbase.cpp:669
 msgid "Bad pass Phrase; couldn't decrypt"
-msgstr "Vigane vıtmefraas: pole vıimalik dekr¸pteerida"
+msgstr "Vigane v√µtmefraas: pole v√µimalik dekr√ºpteerida"
 
 #: kpgpbase.cpp:389 kpgpbase.cpp:680
 msgid "Do not have the secret key for this message"
-msgstr "Selle sınumi jaoks pole salajast vıtit"
+msgstr "Selle s√µnumi jaoks pole salajast v√µtit"
 
 #: kpgpbase.cpp:417
 msgid "unknown key ID "
-msgstr "tundmatu vıtme ID "
+msgstr "tundmatu v√µtme ID "
 
 #: kpgpbase.cpp:437
 msgid "??? (file ~/.pgp/pubring.pgp not found)"
@@ -1630,15 +1630,15 @@ msgstr "??? (faili ~/.pgp/pubring.pgp ei leitud)"
 
 #: kpgpbase.cpp:592
 msgid "The passphrase you entered is invalid."
-msgstr "Vıtmefraas, mille sa sisestasid, on vale."
+msgstr "V√µtmefraas, mille sa sisestasid, on vale."
 
 #: kpgpbase.cpp:618
 msgid ""
 "The key(s) you wan't to encrypt your message\n"
 "to are not trusted. No encryption done."
 msgstr ""
-"Vıti (vıtmed), millega sa soovid sınumit kr¸pteerida,\n"
-"pole usaldusv‰‰rsed. Kr¸pteerimist ei teostatud."
+"V√µti (v√µtmed), millega sa soovid s√µnumit kr√ºpteerida,\n"
+"pole usaldusv√§√§rsed. Kr√ºpteerimist ei teostatud."
 
 #: kpgpbase.cpp:621
 #, c-format
@@ -1647,9 +1647,9 @@ msgid ""
 "%s\n"
 "They will not be able to decrypt the message"
 msgstr ""
-"J‰rnev(ad) vıti (vıtmed) pole usaldusv‰‰rsed:\n"
+"J√§rnev(ad) v√µti (v√µtmed) pole usaldusv√§√§rsed:\n"
 "%s\n"
-"Nad pole vıimelised sınumit dekr¸pteerima."
+"Nad pole v√µimelised s√µnumit dekr√ºpteerima."
 
 #: kfileio.cpp:26 kmaddrbook.cpp:162
 msgid "File I/O Error"
@@ -1679,7 +1679,7 @@ msgid ""
 "You do not have read permissions to the file:\n"
 "%s"
 msgstr ""
-"Sul ei ole ıigusi faili\n"
+"Sul ei ole √µigusi faili\n"
 "%s lugemiseks."
 
 #: kfileio.cpp:72 kmaddrbook.cpp:152
@@ -1689,7 +1689,7 @@ msgid ""
 "%s"
 msgstr ""
 "Faili %s\n"
-"pole vıimalik lugeda."
+"pole v√µimalik lugeda."
 
 #: kfileio.cpp:75 kmaddrbook.cpp:155
 #, c-format
@@ -1698,7 +1698,7 @@ msgid ""
 "%s"
 msgstr ""
 "Faili %s\n"
-"pole vıimalik avada."
+"pole v√µimalik avada."
 
 #: kfileio.cpp:78
 #, c-format
@@ -1729,8 +1729,8 @@ msgid ""
 "Failed to make a backup copy of %s.\n"
 "Continue anyway ?"
 msgstr ""
-"Varukoopia loomine %s -st ebaımnnestus.\n"
-"Kas j‰tkata vaatmata sellele?"
+"Varukoopia loomine %s -st eba√µmnnestus.\n"
+"Kas j√§tkata vaatmata sellele?"
 
 #: kfileio.cpp:156 kfileio.cpp:175
 #, c-format
@@ -1739,7 +1739,7 @@ msgid ""
 "%s"
 msgstr ""
 "Faili %s\n"
-"pole vıimalik kirjutada."
+"pole v√µimalik kirjutada."
 
 #: kfileio.cpp:159
 #, c-format
@@ -1748,7 +1748,7 @@ msgid ""
 "%s"
 msgstr ""
 "Faili %s\n"
-"pole vıimalik kirjutamiseks avada."
+"pole v√µimalik kirjutamiseks avada."
 
 #: kfileio.cpp:163 kmaddrbook.cpp:158
 #, c-format
@@ -1770,7 +1770,7 @@ msgstr "KMail viga"
 
 #: kmaddrbook.cpp:26
 msgid "Storing the addressbook failed!\n"
-msgstr "Aadressiraamatu s‰ilitamine ebaınnestus!\n"
+msgstr "Aadressiraamatu s√§ilitamine eba√µnnestus!\n"
 
 #: kmaddrbookdlg.cpp:20
 msgid "Addressbook"
@@ -1782,7 +1782,7 @@ msgstr "Addressiraamatu haldur"
 
 #: kmaddrbookdlg.cpp:179
 msgid "Storing addressbook failed"
-msgstr "Aadressiraamatu s‰ilitamine ebaınnestus"
+msgstr "Aadressiraamatu s√§ilitamine eba√µnnestus"
 
 #: kmiostatusdlg.cpp:32
 msgid "&Abort"
@@ -1795,11 +1795,11 @@ msgstr "Katkestamine"
 
 #: kmnewiostatuswdg.cpp:43
 msgid "Sending messages to "
-msgstr "Sınumi saatmine "
+msgstr "S√µnumi saatmine "
 
 #: kmnewiostatuswdg.cpp:46
 msgid "Retrieving messages from "
-msgstr "Sınumite vastuvıtmine "
+msgstr "S√µnumite vastuv√µtmine "
 
 #: kmnewiostatuswdg.cpp:56
 msgid "Preparing transmission..."
@@ -1807,7 +1807,7 @@ msgstr "Ettevalmistus edastamiseks..."
 
 #: kmnewiostatuswdg.cpp:62
 msgid "Transmission completed..."
-msgstr "Edastamine lıpetatud..."
+msgstr "Edastamine l√µpetatud..."
 
 #: kmnewiostatuswdg.cpp:97
 msgid "Aborting transmission...\n"
@@ -1823,7 +1823,7 @@ msgstr "KMail - kooditabeli seadistused"
 
 #: charsetsDlg.cpp:39
 msgid "Message charset"
-msgstr "Sınumi kooditabel"
+msgstr "S√µnumi kooditabel"
 
 #: charsetsDlg.cpp:57
 msgid "Composer charset"
@@ -1831,7 +1831,7 @@ msgstr "Redaktori kooditabel"
 
 #: charsetsDlg.cpp:75
 msgid "Set as &default"
-msgstr "Sea vaikev‰‰rtuseks"
+msgstr "Sea vaikev√§√§rtuseks"
 
 #: charsetsDlg.cpp:80
 msgid "&7 bit is ASCII"
@@ -1839,5 +1839,5 @@ msgstr "&7 bitti on ASCII"
 
 #: charsetsDlg.cpp:84
 msgid "&Qute unknonw characters"
-msgstr "&M‰rgi tundamtud s¸mbolid"
+msgstr "&M√§rgi tundamtud s√ºmbolid"
 

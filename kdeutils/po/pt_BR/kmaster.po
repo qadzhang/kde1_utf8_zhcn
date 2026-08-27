@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Date: 1998-02-08 18:21:23+0100\n"
 "From: root <root@pte.fys.ruu.nl>\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Xgettext-Options: -C -ktranslate\n"
 "Files: kmaster.cpp row.cpp dialog.cpp\n"
 
@@ -24,7 +24,7 @@ msgstr "&Sair"
 
 #: kmaster.cpp:56
 msgid "Easy"
-msgstr "Fácil"
+msgstr "FÃ¡cil"
 
 #: kmaster.cpp:57
 msgid "Normal"
@@ -32,7 +32,7 @@ msgstr "Normal"
 
 #: kmaster.cpp:58
 msgid "Hard"
-msgstr "Difícil"
+msgstr "DifÃ­cil"
 
 #: kmaster.cpp:60
 msgid "Custom"
@@ -44,11 +44,11 @@ msgstr "Configurar teclas"
 
 #: kmaster.cpp:67
 msgid "&Misc options"
-msgstr "Opções diversas"
+msgstr "OpÃ§Ãµes diversas"
 
 #: kmaster.cpp:69
 msgid "Level"
-msgstr "Nível"
+msgstr "NÃ­vel"
 
 #: kmaster.cpp:72 kmaster.cpp:79
 msgid "&Help"
@@ -64,13 +64,13 @@ msgstr "&Arquivo"
 
 #: kmaster.cpp:77
 msgid "&Options"
-msgstr "&Opções"
+msgstr "&OpÃ§Ãµes"
 
 #: kmaster.cpp:206
 msgid ""
 "Loading the game will overwrite current game.\n"
 "Load game anyway?"
-msgstr "Carregar o jogo vai sobre-escreve o jogo corrente.\nCarregá-lo mesmo assim ?"
+msgstr "Carregar o jogo vai sobre-escreve o jogo corrente.\nCarregÃ¡-lo mesmo assim ?"
 
 #: kmaster.cpp:208 kmaster.cpp:241 kmaster.cpp:349
 msgid "&Yes"
@@ -78,13 +78,13 @@ msgstr "&Sim"
 
 #: kmaster.cpp:209 kmaster.cpp:242 kmaster.cpp:350
 msgid "&No"
-msgstr "&Não"
+msgstr "&NÃ£o"
 
 #: kmaster.cpp:239
 msgid ""
 "Saving this game overwrite your previous game.\n"
 "Save game anyway?"
-msgstr "Salvar esse jogo sobrescreverá seu jogo anterior.\nSalvar mesmo assim ?"
+msgstr "Salvar esse jogo sobrescreverÃ¡ seu jogo anterior.\nSalvar mesmo assim ?"
 
 #: kmaster.cpp:348
 msgid "Do you really want to quit?"
@@ -100,15 +100,15 @@ msgstr "\n\nUm jogo simples escrito em C++ com Qt/KDE.\nEscrito por Pieter Eende
 
 #: kmaster.cpp:376
 msgid "Sorry, this function isn't implemented yet..."
-msgstr "Desculpe, esta função ainda não está implementada..."
+msgstr "Desculpe, esta funÃ§Ã£o ainda nÃ£o estÃ¡ implementada..."
 
 #: kmaster.cpp:390
 msgid "You've found the secret code!"
-msgstr "Você encontrou o código secreto!"
+msgstr "VocÃª encontrou o cÃ³digo secreto!"
 
 #: kmaster.cpp:502
 msgid "Could not open pixmaps."
-msgstr "Impossível abrir figuras."
+msgstr "ImpossÃ­vel abrir figuras."
 
 #: kmaster.cpp:522
 msgid "Check row"
@@ -116,7 +116,7 @@ msgstr "Verificar linha"
 
 #: dialog.cpp:30
 msgid "Misc options"
-msgstr "Operações diversas"
+msgstr "OperaÃ§Ãµes diversas"
 
 #: dialog.cpp:34
 msgid "Play sounds"
@@ -124,7 +124,7 @@ msgstr "Reproduzir sons"
 
 #: dialog.cpp:39
 msgid "Use pixmaps"
-msgstr "Usar gráficos"
+msgstr "Usar grÃ¡ficos"
 
 #: dialog.cpp:44 dialog.cpp:100 dialog.cpp:169
 msgid "Ok"
@@ -138,16 +138,16 @@ msgstr "Cancelar"
 msgid ""
 "You didn't guess the secretcode !\n"
 "The secret code was : "
-msgstr "Você não adivinhou o código secreto !\nO código secreto era : "
+msgstr "VocÃª nÃ£o adivinhou o cÃ³digo secreto !\nO cÃ³digo secreto era : "
 
 #: dialog.cpp:152
 msgid "Custom level"
-msgstr "Nível personalizado"
+msgstr "NÃ­vel personalizado"
 
 #: dialog.cpp:156
 msgid "Number of rows :"
-msgstr "Número de linhas :"
+msgstr "NÃºmero de linhas :"
 
 #: dialog.cpp:163
 msgid "Number of slots : "
-msgstr "Número de espaços : "
+msgstr "NÃºmero de espaÃ§os : "

@@ -9,7 +9,7 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: kmenuedit.cpp:69
@@ -26,7 +26,7 @@ msgstr "av"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
-msgstr "Ändringarna ej sparade!"
+msgstr "Ã„ndringarna ej sparade!"
 
 #: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Vill du spara dina ändringar ?"
+"Vill du spara dina Ã¤ndringar ?"
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
@@ -49,8 +49,8 @@ msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Om du laddar in menyerna igen kommer alla dina ändringar försvinna.\n"
-"Är du säker på att du vill ladda in dem igen?"
+"Om du laddar in menyerna igen kommer alla dina Ã¤ndringar fÃ¶rsvinna.\n"
+"Ã„r du sÃ¤ker pÃ¥ att du vill ladda in dem igen?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
@@ -61,7 +61,7 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"Katalogen för dina personliga menyerfinns inte.\n"
+"Katalogen fÃ¶r dina personliga menyerfinns inte.\n"
 " Vill du skapa den nu?"
 
 #: main.cpp:93
@@ -69,8 +69,8 @@ msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Kunde inte skapa katalog för personliga menyer.\n"
-"Tryck på OK för att avsluta KMenyEditor."
+"Kunde inte skapa katalog fÃ¶r personliga menyer.\n"
+"Tryck pÃ¥ OK fÃ¶r att avsluta KMenyEditor."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
@@ -78,15 +78,15 @@ msgstr "Avdelare"
 
 #: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
-msgstr "Öppna/ Stäng"
+msgstr "Ã–ppna/ StÃ¤ng"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr "Välj post att flytta"
+msgstr "VÃ¤lj post att flytta"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr "Välj meny att flytta"
+msgstr "VÃ¤lj meny att flytta"
 
 #: confmenu.cpp:120
 msgid "New"
@@ -99,7 +99,7 @@ msgstr "Varning !"
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
 msgstr ""
-"Om du raderar den här knappen kommer du att förlora alla dess undermenyer"
+"Om du raderar den hÃ¤r knappen kommer du att fÃ¶rlora alla dess undermenyer"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
@@ -110,13 +110,13 @@ msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"En kdelnk-fil med det här namnet finns redan.\n"
-"Vänligen, välj ett annat namn."
+"En kdelnk-fil med det hÃ¤r namnet finns redan.\n"
+"VÃ¤nligen, vÃ¤lj ett annat namn."
 
 #: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr ""
-"Om du ändrar typ på den här knappen kommer alla dess undermenyer försvinna"
+"Om du Ã¤ndrar typ pÃ¥ den hÃ¤r knappen kommer alla dess undermenyer fÃ¶rsvinna"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
@@ -127,24 +127,24 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Tyvärr! Du måste spara dina ändringar\n"
-"innan du kan släppa den här saken på ett annat fönster."
+"TyvÃ¤rr! Du mÃ¥ste spara dina Ã¤ndringar\n"
+"innan du kan slÃ¤ppa den hÃ¤r saken pÃ¥ ett annat fÃ¶nster."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Sökvägen till KDE skrivbordsposter är inte satt."
+msgstr "SÃ¶kvÃ¤gen till KDE skrivbordsposter Ã¤r inte satt."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "Jag föreslår följande poster"
+msgstr "Jag fÃ¶reslÃ¥r fÃ¶ljande poster"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
-msgstr "Sökväg:"
+msgstr "SÃ¶kvÃ¤g:"
 
 #: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
-msgstr "Persinlig sökväg:"
+msgstr "Persinlig sÃ¶kvÃ¤g:"
 
 #: entrydialog.cpp:61
 msgid "Submenu"
@@ -157,11 +157,11 @@ msgstr "Applikation"
 
 #: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
-msgstr "Svälj"
+msgstr "SvÃ¤lj"
 
 #: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
-msgstr "Länk"
+msgstr "LÃ¤nk"
 
 #: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
@@ -193,11 +193,11 @@ msgstr "Kommentar:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "Kör"
+msgstr "KÃ¶r"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
-msgstr "Kör:"
+msgstr "KÃ¶r:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
@@ -205,19 +205,19 @@ msgstr "Start-katalog:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
-msgstr "Kör i terminal"
+msgstr "KÃ¶r i terminal"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
-msgstr "Terminalinställningar:"
+msgstr "TerminalinstÃ¤llningar:"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "Binärt mönster"
+msgstr "BinÃ¤rt mÃ¶nster"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "Program att svälja"
+msgstr "Program att svÃ¤lja"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"
@@ -225,7 +225,7 @@ msgstr "Programmets titel:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "Program att köra vid musklick"
+msgstr "Program att kÃ¶ra vid musklick"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -253,11 +253,11 @@ msgstr "Avmonteringsikon:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Ändra menynamn"
+msgstr "Ã„ndra menynamn"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Ändra namnet på menyerna när de visas i kpanel"
+msgstr "Ã„ndra namnet pÃ¥ menyerna nÃ¤r de visas i kpanel"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

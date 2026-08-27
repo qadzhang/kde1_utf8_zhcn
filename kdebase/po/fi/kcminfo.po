@@ -11,23 +11,23 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "n‰yttˆ #%d"
+msgstr "n√§ytt√∂ #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  mitat               : %dx%d pikseli‰ (%dx%d mm)\n"
+msgstr "  mitat               : %dx%d pikseli√§ (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  resoluutio          : %dx%d pistett‰ tuumalle\n"
+msgstr "  resoluutio          : %dx%d pistett√§ tuumalle\n"
 
 #: info.cpp:61
 #, c-format
@@ -37,7 +37,7 @@ msgstr "  syvyys (%d)          : "
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "n‰ytˆn nimi           : %s"
+msgstr "n√§yt√∂n nimi           : %s"
 
 #: info.cpp:87
 #, c-format
@@ -57,12 +57,12 @@ msgstr "valmistajan versio    : %i"
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "oletusn‰ytˆn numero   : %i"
+msgstr "oletusn√§yt√∂n numero   : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "n‰yttˆjen lukum‰‰r‰   : %i"
+msgstr "n√§ytt√∂jen lukum√§√§r√§   : %i"
 
 #: info.cpp:181
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 msgstr ""
 "Ei tietoja saatavilla\n"
 " tai\n"
-"j‰rjestelm‰‰ ei tueta :-("
+"j√§rjestelm√§√§ ei tueta :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -98,7 +98,7 @@ msgstr "Liitospiste"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "Tiedostoj‰rjestelm‰"
+msgstr "Tiedostoj√§rjestelm√§"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
@@ -126,7 +126,7 @@ msgstr "DMA-kanava"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "k‰ytt‰j‰"
+msgstr "k√§ytt√§j√§"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
@@ -154,11 +154,11 @@ msgstr "&IO-portit"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr "PCI-&V‰yl‰"
+msgstr "PCI-&V√§yl√§"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr "&ƒ‰ni"
+msgstr "&√Ñ√§ni"
 
 #: main.cpp:100
 msgid "&Devices"
@@ -182,13 +182,13 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-"k‰yttˆ: kcminfo [-init | "
+"k√§ytt√∂: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "J‰rjestelm‰n tila"
+msgstr "J√§rjestelm√§n tila"
 
 #: memory.cpp:15
 msgid "Total memory"

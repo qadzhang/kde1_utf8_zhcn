@@ -1,21 +1,21 @@
 # Danish translations for KDE Utils, klpq
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Erik Kjær Pedersen <erik@binghamton.edu>, 1998.
+# Erik KjÃ¦r Pedersen <erik@binghamton.edu>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE UTILS/klpq\n"
 "POT-Creation-Date: 1999-04-02 02:22+0200\n"
 "PO-Revision-Date: 1999-02-17 14:42+0100\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:178
 msgid "Sorry, can't open your printcap file."
-msgstr "Beklager, kan ikke åbne din printcap-fil."
+msgstr "Beklager, kan ikke Ã¥bne din printcap-fil."
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
@@ -31,7 +31,7 @@ msgstr "Skriver"
 
 #: klpq.cpp:95
 msgid "Queuing"
-msgstr "I kø"
+msgstr "I kÃ¸"
 
 #: klpq.cpp:100
 msgid "Printing"
@@ -39,7 +39,7 @@ msgstr "Udskriver"
 
 #: klpq.cpp:105
 msgid "Update"
-msgstr "Opdatér"
+msgstr "OpdatÃ©r"
 
 #: klpq.cpp:125
 msgid "Rank"
@@ -55,7 +55,7 @@ msgstr "Job"
 
 #: klpq.cpp:129
 msgid "Size"
-msgstr "Størrelse"
+msgstr "StÃ¸rrelse"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
@@ -67,7 +67,7 @@ msgstr "Auto"
 
 #: klpq.cpp:204
 msgid "&Auto update"
-msgstr "&Auto-opdatér"
+msgstr "&Auto-opdatÃ©r"
 
 #: klpq.cpp:205
 msgid "&Spooler"
@@ -102,11 +102,11 @@ msgid ""
 msgstr ""
 "Vil du virkelig flytte job nr.\n"
 "%d\n"
-"hen først i køen"
+"hen fÃ¸rst i kÃ¸en"
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
-msgstr "Tilladelse nægtet"
+msgstr "Tilladelse nÃ¦gtet"
 
 #: klpq.cpp:573 klpq.cpp:579 klpq.cpp:594
 msgid ""
@@ -114,7 +114,7 @@ msgid ""
 "and you do not have permission to execute it."
 msgstr ""
 "Dette er en priviligeret kommando\n"
-"og du har ikke ret til at udføre den."
+"og du har ikke ret til at udfÃ¸re den."
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
@@ -134,11 +134,11 @@ msgid ""
 "Please check the configuration under Config->Spooler."
 msgstr ""
 "Beklager, jeg kan ikke finde dit lpc-program.\n"
-"Undersøg venligst dine indstillinger under Indstil->Spole."
+"UndersÃ¸g venligst dine indstillinger under Indstil->Spole."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
-msgstr "Vælg dit spolesystem"
+msgstr "VÃ¦lg dit spolesystem"
 
 #: FirstStartData.cpp:42
 msgid ""
@@ -146,7 +146,7 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Vælg venligst det spolesystem dit system bruger. De fleste systemer bruger "
+"VÃ¦lg venligst det spolesystem dit system bruger. De fleste systemer bruger "
 "BSD-spolen. BSD er formodentlig et godt valg hvis du ikke ved hvad slags "
 "spole som er installeret."
 

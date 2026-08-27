@@ -8,48 +8,48 @@ msgstr ""
 "Project-Id-Version: kfontmanager\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1999-01-25 20:00+0900\n"
-"Last-Translator: 塙 雅典(Masanori Hanawa) <hanawa@es.yamanashi.ac.jp>\n"
-"Language-Team: 日本 <LL@li.org>\n"
+"Last-Translator: å¡ éå¸(Masanori Hanawa) <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: æ¥æ¬ <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDEフォントマネージャ"
+msgstr "KDEãã©ã³ãããã¼ã¸ã£"
 
 #: main.cpp:71
 msgid "KDE Fonts"
-msgstr "KDEフォント"
+msgstr "KDEãã©ã³ã"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr "フォントエクスプローラ"
+msgstr "ãã©ã³ãã¨ã¯ã¹ãã­ã¼ã©"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "元のX11のフォントリスト"
+msgstr "åã®X11ã®ãã©ã³ããªã¹ã"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "利用可能なX11フォント"
+msgstr "å©ç¨å¯è½ãªX11ãã©ã³ã"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
-msgstr "KDEで利用可能なフォント"
+msgstr "KDEã§å©ç¨å¯è½ãªãã©ã³ã"
 
 #: kfontmanager.cpp:89
 msgid ""
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
 msgstr ""
-"敏捷な茶色い狐がのろまな犬を飛び越える\n"
+"ææ·ãªè¶è²ãçãã®ãã¾ãªç¬ãé£ã³è¶ãã\n"
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
-msgstr "kfontmanagerについて"
+msgstr "kfontmanagerã«ã¤ãã¦"
 
 #: kfontmanager.cpp:112
 msgid ""
@@ -64,8 +64,8 @@ msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr ""
-"環境変数HOME\n"
-"が設定されていません\n"
+"ç°å¢å¤æ°HOME\n"
+"ãè¨­å®ããã¦ãã¾ãã\n"
 
 #: kfontmanager.cpp:292
 msgid ""
@@ -73,7 +73,7 @@ msgid ""
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
 "~/.kde/share/config/kdefonts\n"
-" が作成できません\n"
+" ãä½æã§ãã¾ãã\n"
 
 #: kfontmanager.cpp:297
 msgid ""
@@ -81,9 +81,9 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"~/.kde/share/config/kdefontsは存在しますが\n"
-"書き込みできません\n"
-"KDEフォントリストを保存できません。"
+"~/.kde/share/config/kdefontsã¯å­å¨ãã¾ãã\n"
+"æ¸ãè¾¼ã¿ã§ãã¾ãã\n"
+"KDEãã©ã³ããªã¹ããä¿å­ã§ãã¾ããã"
 
 #: kfontlist.cpp:62
 msgid ""
@@ -95,63 +95,63 @@ msgstr ""
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr "フォントを選択"
+msgstr "ãã©ã³ããé¸æ"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr "要求されたフォント"
+msgstr "è¦æ±ããããã©ã³ã"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr "実際のフォント"
+msgstr "å®éã®ãã©ã³ã"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr "ファミリ:"
+msgstr "ãã¡ããª:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr "サイズ:"
+msgstr "ãµã¤ãº:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr "重み:"
+msgstr "éã¿:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr "スタイル:"
+msgstr "ã¹ã¿ã¤ã«:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr "文字セット"
+msgstr "æå­ã»ãã"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr "サイズ"
+msgstr "ãµã¤ãº"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr "重み"
+msgstr "éã¿"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
-msgstr "通常"
+msgstr "éå¸¸"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr "ボールド"
+msgstr "ãã¼ã«ã"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr "スタイル"
+msgstr "ã¹ã¿ã¤ã«"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr "ローマン"
+msgstr "ã­ã¼ãã³"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr "イタリック"
+msgstr "ã¤ã¿ãªãã¯"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
@@ -159,10 +159,10 @@ msgstr ""
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr "ボールド"
+msgstr "ãã¼ã«ã"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
-msgstr "通常"
+msgstr "éå¸¸"
 
 

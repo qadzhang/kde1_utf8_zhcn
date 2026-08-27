@@ -7,31 +7,31 @@ msgstr ""
 "Project-Id-Version: kpm\n"
 "POT-Creation-Date: 1999-04-17 02:13+0200\n"
 "PO-Revision-Date: 1999-02-04 11:28+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: prefs.C:33
 msgid "Graphic Load Display"
-msgstr "Grafické zobrazení zatí¾ení"
+msgstr "GrafickÃ© zobrazenÃ­ zatÃ­Å¾enÃ­"
 
 #: prefs.C:34
 msgid "Graphic CPU Display"
-msgstr "Grafické zobrazení CPU"
+msgstr "GrafickÃ© zobrazenÃ­ CPU"
 
 #: prefs.C:35
 msgid "Graphic Memory Display"
-msgstr "Grafické zobrazení pamìti"
+msgstr "GrafickÃ© zobrazenÃ­ pamÄ›ti"
 
 #: prefs.C:36
 msgid "Graphic Swap Display"
-msgstr "Grafické zobrazení swapu"
+msgstr "GrafickÃ© zobrazenÃ­ swapu"
 
 #: prefs.C:37
 msgid "Load Graph in Icon"
-msgstr "Graf zatí¾ení v ikonì"
+msgstr "Graf zatÃ­Å¾enÃ­ v ikonÄ›"
 
 #: prefs.C:38
 msgid "Dock into kpanel"
@@ -39,35 +39,35 @@ msgstr "Pohltit do panelu"
 
 #: prefs.C:43
 msgid "Green/Black Load Graph"
-msgstr "Zeleno-èernı graf zatí¾ení"
+msgstr "Zeleno-ÄernÃ½ graf zatÃ­Å¾enÃ­"
 
 #: prefs.C:45
 msgid "Solid filled graph"
-msgstr "Vyplnìnı graf"
+msgstr "VyplnÄ›nÃ½ graf"
 
 #: prefs.C:50
 msgid "Host Name Lookup"
-msgstr "Vyhledávání jména hostitele"
+msgstr "VyhledÃ¡vÃ¡nÃ­ jmÃ©na hostitele"
 
 #: prefs.C:55
 msgid "Auto Save Settings on Exit"
-msgstr "Automatické ulo¾ení nastavení pøi ukonèení"
+msgstr "AutomatickÃ© uloÅ¾enÃ­ nastavenÃ­ pÅ™i ukonÄenÃ­"
 
 #: prefs.C:67
 msgid "Status Bar"
-msgstr "Stavová li¹ta"
+msgstr "StavovÃ¡ liÅ¡ta"
 
 #: prefs.C:69
 msgid "Socket Info Window"
-msgstr "Okno informací o socketu"
+msgstr "Okno informacÃ­ o socketu"
 
 #: qps.C:88 qps.C:126
 msgid "Renice..."
-msgstr "Zmìnit prioritu..."
+msgstr "ZmÄ›nit prioritu..."
 
 #: qps.C:91
 msgid "Change Scheduling..."
-msgstr "Zmìna plánování..."
+msgstr "ZmÄ›na plÃ¡novÃ¡nÃ­..."
 
 #: qps.C:95 qps.C:130
 msgid "Socket Info"
@@ -79,7 +79,7 @@ msgstr "Ikonifikovat"
 
 #: qps.C:108 qps.C:132
 msgid "Terminate"
-msgstr "Ukonèit"
+msgstr "UkonÄit"
 
 #: qps.C:111 qps.C:133
 msgid "Hangup"
@@ -87,23 +87,23 @@ msgstr "Hangup"
 
 #: qps.C:114 qps.C:134
 msgid "Interrupt"
-msgstr "Pøeru¹it"
+msgstr "PÅ™eruÅ¡it"
 
 #: qps.C:117 qps.C:136
 msgid "Kill"
-msgstr "Zabít"
+msgstr "ZabÃ­t"
 
 #: qps.C:120
 msgid "Other"
-msgstr "Jiné"
+msgstr "JinÃ©"
 
 #: qps.C:127
 msgid "Scheduling..."
-msgstr "Plánování..."
+msgstr "PlÃ¡novÃ¡nÃ­..."
 
 #: qps.C:137
 msgid "Other signals"
-msgstr "Jiné signály"
+msgstr "JinÃ© signÃ¡ly"
 
 #: qps.C:145
 msgid "Remove field"
@@ -111,63 +111,63 @@ msgstr "Odstranit pole..."
 
 #: qps.C:147
 msgid "Add field..."
-msgstr "Pøidat pole..."
+msgstr "PÅ™idat pole..."
 
 #: qps.C:151
 msgid "Help on field..."
-msgstr "Nápovìda k poli..."
+msgstr "NÃ¡povÄ›da k poli..."
 
 #: qps.C:156
 msgid "Refresh process list"
-msgstr "Obnovit seznam procesù"
+msgstr "Obnovit seznam procesÅ¯"
 
 #: qps.C:159
 msgid "All Processes"
-msgstr "V¹echny procesy"
+msgstr "VÅ¡echny procesy"
 
 #: qps.C:160
 msgid "Your Processes"
-msgstr "Va¹e procesy"
+msgstr "VaÅ¡e procesy"
 
 #: qps.C:161
 msgid "Non-Root Processes"
-msgstr "Ne-rootovské procesy"
+msgstr "Ne-rootovskÃ© procesy"
 
 #: qps.C:162
 msgid "Running Processes"
-msgstr "Bì¾ící procesy"
+msgstr "BÄ›Å¾Ã­cÃ­ procesy"
 
 #: qps.C:164
 msgid "User Fields"
-msgstr "U¾ivatelská pole"
+msgstr "UÅ¾ivatelskÃ¡ pole"
 
 #: qps.C:165
 msgid "Jobs Fields"
-msgstr "Pole úkolù"
+msgstr "Pole ÃºkolÅ¯"
 
 #: qps.C:166
 msgid "Memory Fields"
-msgstr "Pamì»ová pole"
+msgstr "PamÄ›Å¥ovÃ¡ pole"
 
 #: qps.C:168
 msgid "Select Fields..."
-msgstr "Vıbìr polí..."
+msgstr "VÃ½bÄ›r polÃ­..."
 
 #: qps.C:174
 msgid "Update Period..."
-msgstr "Perioda obnovování..."
+msgstr "Perioda obnovovÃ¡nÃ­..."
 
 #: qps.C:179
 msgid "Show command path"
-msgstr "Zobrazit cestu pøíkazu"
+msgstr "Zobrazit cestu pÅ™Ã­kazu"
 
 #: qps.C:181
 msgid "Show ressource info"
-msgstr "Zobrazit informaci o prostøedcích"
+msgstr "Zobrazit informaci o prostÅ™edcÃ­ch"
 
 #: qps.C:183
 msgid "Show toolbar"
-msgstr "Zobrazovat li¹tu nástrojù"
+msgstr "Zobrazovat liÅ¡tu nÃ¡strojÅ¯"
 
 #: qps.C:187
 msgid "Preferences..."
@@ -175,17 +175,17 @@ msgstr "Preference..."
 
 #: qps.C:190
 msgid "Save Settings Now"
-msgstr "Ulo¾it nastavení nyní"
+msgstr "UloÅ¾it nastavenÃ­ nynÃ­"
 
 #: qps.C:195
 msgid ""
 " - A Visual Process Manager (KDE Version)\n"
 "\n"
-"© 1997 Mattias Engdegård (f91-men@nada.kth.se)\n"
-"© 1998 Mario Weilguni (mweilguni@kde.org)\n"
+"Å  1997 Mattias EngdegÄºrd (f91-men@nada.kth.se)\n"
+"Å  1998 Mario Weilguni (mweilguni@kde.org)\n"
 "\n"
 "kpm is the KDE version of qps, written by Matthias\n"
-"Engdegård. The port to KDE was done by Mario\n"
+"EngdegÄºrd. The port to KDE was done by Mario\n"
 "Weilguni. If you are interested on the original\n"
 "qps, you can find it at the following location:\n"
 "    ftp://sunsite.unc.edu/pub/linux/system/status\n"
@@ -194,19 +194,19 @@ msgid ""
 "Public License (GNU GPL). See the file COPYING\n"
 "for details about this."
 msgstr ""
-"kpm %sk%s - Grafickı správce procesù (KDE Version)\n"
+"kpm %sk%s - GrafickÃ½ sprÃ¡vce procesÅ¯ (KDE Version)\n"
 "\n"
-"(c) 1997 Mattias Engdegård (f91-men@nada.kth.se)\n"
+"(c) 1997 Mattias EngdegÄºrd (f91-men@nada.kth.se)\n"
 "(c) 1998 Mario Weilguni (mweilguni@kde.org)\n"
 "\n"
-"kpm je KDE verzí programu qps, napsaného Matthiasem\n"
-"Engdegårdem. Port pro KDE byl proveden Mariem\n"
-"Weilgunim Jestli¾e máte zájem o pùvodní qps,\n"
-"mù¾ete jej nalézt na následujícím místì:\n"
+"kpm je KDE verzÃ­ programu qps, napsanÃ©ho Matthiasem\n"
+"EngdegÄºrdem. Port pro KDE byl proveden Mariem\n"
+"Weilgunim JestliÅ¾e mÃ¡te zÃ¡jem o pÅ¯vodnÃ­ qps,\n"
+"mÅ¯Å¾ete jej nalÃ©zt na nÃ¡sledujÃ­cÃ­m mÃ­stÄ›:\n"
 "    ftp://sunsite.unc.edu/pub/linux/system/status\n"
 "\n"
-"Tento program je zveøejnìn podle GNU General\n"
-"Public License (GNU GPL). Pro podrobnosti nahlédnìte \n"
+"Tento program je zveÅ™ejnÄ›n podle GNU General\n"
+"Public License (GNU GPL). Pro podrobnosti nahlÃ©dnÄ›te \n"
 "do souboru COPYING."
 
 #: qps.C:210
@@ -219,43 +219,43 @@ msgstr "&Proces"
 
 #: qps.C:212
 msgid "&Signal"
-msgstr "&Signál"
+msgstr "&SignÃ¡l"
 
 #: qps.C:308
 msgid "SIGQUIT (quit)"
-msgstr "IGQUIT (ukonèit)"
+msgstr "IGQUIT (ukonÄit)"
 
 #: qps.C:309
 msgid "SIGILL (illegal instruction)"
-msgstr "SIGILL (ilegální instrukce)"
+msgstr "SIGILL (ilegÃ¡lnÃ­ instrukce)"
 
 #: qps.C:310
 msgid "SIGABRT (abort)"
-msgstr "SIGABRT (pøeru¹it)"
+msgstr "SIGABRT (pÅ™eruÅ¡it)"
 
 #: qps.C:311
 msgid "SIGFPE (floating point exception)"
-msgstr "SIGFPE (vıjimka v øádové èárce)"
+msgstr "SIGFPE (vÃ½jimka v Å™Ã¡dovÃ© ÄÃ¡rce)"
 
 #: qps.C:312
 msgid "SIGSEGV (segmentation violation)"
-msgstr "SIGSEGV (poru¹ení segmentace)"
+msgstr "SIGSEGV (poruÅ¡enÃ­ segmentace)"
 
 #: qps.C:313
 msgid "SIGPIPE (broken pipe)"
-msgstr "SIGPIPE (poka¾ená roura)"
+msgstr "SIGPIPE (pokaÅ¾enÃ¡ roura)"
 
 #: qps.C:314
 msgid "SIGALRM (timer signal)"
-msgstr "SIGALRM (signál èasovaèe)"
+msgstr "SIGALRM (signÃ¡l ÄasovaÄe)"
 
 #: qps.C:315
 msgid "SIGUSR1 (user-defined 1)"
-msgstr "SIGUSR1 (definované u¾ivatelem 1)"
+msgstr "SIGUSR1 (definovanÃ© uÅ¾ivatelem 1)"
 
 #: qps.C:316
 msgid "SIGUSR2 (user-defined 2)"
-msgstr "SIGUSR2 (definované u¾ivatelem 2)"
+msgstr "SIGUSR2 (definovanÃ© uÅ¾ivatelem 2)"
 
 #: qps.C:317
 msgid "SIGCHLD (child death)"
@@ -263,7 +263,7 @@ msgstr "SIGCHLD (smrt potomka)"
 
 #: qps.C:318
 msgid "SIGCONT (continue)"
-msgstr "SIGCONT (pokraèovat)"
+msgstr "SIGCONT (pokraÄovat)"
 
 #: qps.C:319
 msgid "SIGSTOP (stop)"
@@ -279,7 +279,7 @@ msgstr "SIGTTIN (tty vstup)"
 
 #: qps.C:322
 msgid "SIGTTOU (tty output)"
-msgstr "SIGTTOU (tty vıstup)"
+msgstr "SIGTTOU (tty vÃ½stup)"
 
 #: qps.C:622
 #, c-format
@@ -289,34 +289,34 @@ msgid ""
 "Only the owner of the process and the\n"
 "super-user may do that."
 msgstr ""
-"Nemáte pøístupová práva k prohlí¾ení\n"
-"otevøenıch socketù procesu %d (%s).\n"
-"Pouze vlastník procesu a superu¾ivatel\n"
-"mohou provést tuto operaci."
+"NemÃ¡te pÅ™Ã­stupovÃ¡ prÃ¡va k prohlÃ­Å¾enÃ­\n"
+"otevÅ™enÃ½ch socketÅ¯ procesu %d (%s).\n"
+"Pouze vlastnÃ­k procesu a superuÅ¾ivatel\n"
+"mohou provÃ©st tuto operaci."
 
 #: qps.C:627 qps.C:836 qps.C:878 qps.C:884 qps.C:907 qps.C:943 qps.C:987
 msgid "Permission denied"
-msgstr "Zakázanı pøístup"
+msgstr "ZakÃ¡zanÃ½ pÅ™Ã­stup"
 
 #: qps.C:700
 msgid "qps: change update period"
-msgstr "qps: zmìna periody obnovování"
+msgstr "qps: zmÄ›na periody obnovovÃ¡nÃ­"
 
 #: qps.C:701
 msgid "New update period:"
-msgstr "Nová perioda obnovování:"
+msgstr "NovÃ¡ perioda obnovovÃ¡nÃ­:"
 
 #: qps.C:716 qps.C:855 scheddlg.C:113
 msgid "Invalid input"
-msgstr "Neplatnı vstup"
+msgstr "NeplatnÃ½ vstup"
 
 #: qps.C:717
 msgid ""
 "The time between updates should be a number, optionally followed\n"
 "by a unit (ms, s or min). If no unit is given, seconds is assumed."
 msgstr ""
-"Èas mezi obnovováními by mìl bıt èíslo, které je pøípadnì následováno \n"
-"jednotkou (ms, s nebo min). Není-li uvedeno, budou pou¾ity sekundy."
+"ÄŒas mezi obnovovÃ¡nÃ­mi by mÄ›l bÃ½t ÄÃ­slo, kterÃ© je pÅ™Ã­padnÄ› nÃ¡sledovÃ¡no \n"
+"jednotkou (ms, s nebo min). NenÃ­-li uvedeno, budou pouÅ¾ity sekundy."
 
 #: qps.C:831
 #, c-format
@@ -326,24 +326,24 @@ msgid ""
 "Only the process owner and the super-user\n"
 "are allowed to do that."
 msgstr ""
-"Nemáte pøístupová práva ke zmìnì priority\n"
-"vybraného procesu %s.\n"
-"Pouze vlastník procesu nebo superu¾ivatel\n"
-"mohou provést tuto operaci."
+"NemÃ¡te pÅ™Ã­stupovÃ¡ prÃ¡va ke zmÄ›nÄ› priority\n"
+"vybranÃ©ho procesu %s.\n"
+"Pouze vlastnÃ­k procesu nebo superuÅ¾ivatel\n"
+"mohou provÃ©st tuto operaci."
 
 #: qps.C:845
 msgid "qps: renice process"
-msgstr "qps: zmìna priority"
+msgstr "qps: zmÄ›na priority"
 
 #: qps.C:846
 msgid "New nice value:"
-msgstr "Nová hodnata priority:"
+msgstr "NovÃ¡ hodnata priority:"
 
 #: qps.C:856
 msgid ""
 "The nice value should be\n"
 "in the range -20 to 20."
-msgstr "Hodnota by mìla bıt v rozsahu -20 a¾ 20."
+msgstr "Hodnota by mÄ›la bÃ½t v rozsahu -20 aÅ¾ 20."
 
 #: qps.C:873
 #, c-format
@@ -351,20 +351,20 @@ msgid ""
 "You do not have permission to renice process %d (%s).\n"
 "Only the process owner and the super-user are allowed to do that."
 msgstr ""
-"Nemáte pøístupová práva ke zmìnì priority procesu %d (%s).\n"
-"Pouze vlastník procesu nebo superu¾ivatel mohou provést tuto operaci."
+"NemÃ¡te pÅ™Ã­stupovÃ¡ prÃ¡va ke zmÄ›nÄ› priority procesu %d (%s).\n"
+"Pouze vlastnÃ­k procesu nebo superuÅ¾ivatel mohou provÃ©st tuto operaci."
 
 #: qps.C:885
 msgid "Only the super-user may lower the nice value of a process."
-msgstr "Pouze superu¾ivatel mù¾e sní¾it hodnotu priority procesu."
+msgstr "Pouze superuÅ¾ivatel mÅ¯Å¾e snÃ­Å¾it hodnotu priority procesu."
 
 #: qps.C:908
 msgid ""
 "Only the super-user may change the\n"
 "scheduling policy and static priority."
 msgstr ""
-"Pouze superu¾ivatel mù¾e zmìnit\n"
-"zpùsob plánování a statickou prioritu."
+"Pouze superuÅ¾ivatel mÅ¯Å¾e zmÄ›nit\n"
+"zpÅ¯sob plÃ¡novÃ¡nÃ­ a statickou prioritu."
 
 #: qps.C:938
 #, c-format
@@ -373,9 +373,9 @@ msgid ""
 "scheduling and/or priority of process %d (%s).\n"
 "Only the super-user may do that."
 msgstr ""
-"Nemáte pøístupová práva ke zmìnì \n"
-"plánování nebo priority procesu %d (%s).\n"
-"Tuto operaci mù¾e provádìt pouze superu¾ivatel."
+"NemÃ¡te pÅ™Ã­stupovÃ¡ prÃ¡va ke zmÄ›nÄ› \n"
+"plÃ¡novÃ¡nÃ­ nebo priority procesu %d (%s).\n"
+"Tuto operaci mÅ¯Å¾e provÃ¡dÄ›t pouze superuÅ¾ivatel."
 
 #: qps.C:982
 #, c-format
@@ -383,28 +383,28 @@ msgid ""
 "You do not have permission to send a signal to process %d (%s).\n"
 "Only the super-user and the owner of the process may send signals to it."
 msgstr ""
-"Nemáte pøístupová práva k poslání signálu procesu %d (%s).\n"
-"pouze superu¾ivatel nebo vlastník procesu mu mohou posílat signály."
+"NemÃ¡te pÅ™Ã­stupovÃ¡ prÃ¡va k poslÃ¡nÃ­ signÃ¡lu procesu %d (%s).\n"
+"pouze superuÅ¾ivatel nebo vlastnÃ­k procesu mu mohou posÃ­lat signÃ¡ly."
 
 #: scheddlg.C:22
 msgid "Change scheduling"
-msgstr "Zmìnit plánování"
+msgstr "ZmÄ›nit plÃ¡novÃ¡nÃ­"
 
 #: scheddlg.C:28
 msgid "Scheduling Policy"
-msgstr "Zpùsob plánování"
+msgstr "ZpÅ¯sob plÃ¡novÃ¡nÃ­"
 
 #: scheddlg.C:29
 msgid "SCHED_OTHER (time-sharing)"
-msgstr "SCHED_OTHER (sdílení èasu)"
+msgstr "SCHED_OTHER (sdÃ­lenÃ­ Äasu)"
 
 #: scheddlg.C:36
 msgid "SCHED_FIFO (real-time)"
-msgstr "SCHED_FIFO (reálnı èas)"
+msgstr "SCHED_FIFO (reÃ¡lnÃ½ Äas)"
 
 #: scheddlg.C:42
 msgid "SCHED_RR (real-time)"
-msgstr "SCHED_RR (reálnı èas)"
+msgstr "SCHED_RR (reÃ¡lnÃ½ Äas)"
 
 #: scheddlg.C:67
 msgid "Priority (1-99):"
@@ -412,4 +412,4 @@ msgstr "Priorita (1-99):"
 
 #: scheddlg.C:114
 msgid "The priority must be in the range 1..99"
-msgstr "Priorita musí bıt v rozsahu 1..99"
+msgstr "Priorita musÃ­ bÃ½t v rozsahu 1..99"

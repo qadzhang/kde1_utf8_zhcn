@@ -6,24 +6,24 @@ msgstr ""
 "Last-Translator: Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:58
 msgid "&Announcement"
-msgstr "&Og³oszenie"
+msgstr "&OgÅ‚oszenie"
 
 #: main.cpp:61
 msgid "Ans&wering machine"
-msgstr "Maszyna odpo&wiadaj±ca"
+msgstr "Maszyna odpo&wiadajÄ…ca"
 
 #: main.cpp:64
 msgid "&Forward"
-msgstr "&Prze¶lij dalej"
+msgstr "&PrzeÅ›lij dalej"
 
 #: main.cpp:70
 msgid "usage: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
-msgstr "u¿ycie: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
+msgstr "uÅ¼ycie: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
 
 #: main.cpp:111
 msgid "KTalkd Configuration"
@@ -31,7 +31,7 @@ msgstr "Konfiguracja KTalkd"
 
 #: soundpage.cpp:46
 msgid "&Announcement program"
-msgstr "Program do &og³aszania"
+msgstr "Program do &ogÅ‚aszania"
 
 #: soundpage.cpp:53
 msgid "&Talk client"
@@ -39,15 +39,15 @@ msgstr "KLient &Talka"
 
 #: soundpage.cpp:57
 msgid "&Play sound"
-msgstr "O&dtwórz d¼wiêk"
+msgstr "O&dtwÃ³rz dÅºwiÄ™k"
 
 #: soundpage.cpp:59
 msgid "&Sound File"
-msgstr "&Plik d¼wiêkowy"
+msgstr "&Plik dÅºwiÄ™kowy"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Dodatkowe pliki WAV mog± byæ upuszczone na listê plików"
+msgstr "Dodatkowe pliki WAV mogÄ… byÄ‡ upuszczone na listÄ™ plikÃ³w"
 
 #: soundpage.cpp:76
 msgid "&Test"
@@ -55,15 +55,15 @@ msgstr "&Test"
 
 #: soundpage.cpp:156
 msgid "Unsupported URL"
-msgstr "Takiego URL-a nie da sie obs³u¿yæ"
+msgstr "Takiego URL-a nie da sie obsÅ‚uÅ¼yÄ‡"
 
 #: soundpage.cpp:157
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Przykro mi, ale takiego typu URL-a (adresu) modu³ d¼wiêków systemowych KDE "
-"nie potrafi obs³u¿yæ"
+"Przykro mi, ale takiego typu URL-a (adresu) moduÅ‚ dÅºwiÄ™kÃ³w systemowych KDE "
+"nie potrafi obsÅ‚uÅ¼yÄ‡"
 
 #: soundpage.cpp:164
 #, c-format
@@ -74,11 +74,11 @@ msgid ""
 msgstr ""
 "Przykro mi, ale \n"
 "%s\n"
-"to nie wydaje siê byæ plik d¼wiêkowy formatu WAV."
+"to nie wydaje siÄ™ byÄ‡ plik dÅºwiÄ™kowy formatu WAV."
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
-msgstr "Niew³a¶ciwe rozszerzenie pliku"
+msgstr "NiewÅ‚aÅ›ciwe rozszerzenie pliku"
 
 #: soundpage.cpp:175
 #, c-format
@@ -89,15 +89,15 @@ msgid ""
 msgstr ""
 "Plik\n"
 "%s\n"
-"ju¿ jest na li¶cie"
+"juÅ¼ jest na liÅ›cie"
 
 #: soundpage.cpp:179
 msgid "File Already in List"
-msgstr "Plik ju¿ jest na li¶cie"
+msgstr "Plik juÅ¼ jest na liÅ›cie"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
-msgstr "&W³±cz maszynê odpowiadaj±c±"
+msgstr "&WÅ‚Ä…cz maszynÄ™ odpowiadajÄ…cÄ…"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
@@ -105,29 +105,29 @@ msgstr "&Adres pocztowy"
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
-msgstr "Temat &wiadomo¶ci"
+msgstr "Temat &wiadomoÅ›ci"
 
 #: answmachpage.cpp:54
 #, c-format
 msgid "Use %s for the caller name"
-msgstr "U¿yj %s dla nazwania nadawcy"
+msgstr "UÅ¼yj %s dla nazwania nadawcy"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "Wy¶lij &pierwsz± liniê"
+msgstr "WyÅ›lij &pierwszÄ… liniÄ™"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
-msgstr "U¿yj pierwsze %s dla nazwania zadawcy, drugie %s dla nazwy komputera"
+msgstr "UÅ¼yj pierwsze %s dla nazwania zadawcy, drugie %s dla nazwy komputera"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&Odbieraj pocztê nawet je¶li nie pozosta³a ¿adna wiadomo¶æ"
+msgstr "&Odbieraj pocztÄ™ nawet jeÅ›li nie pozostaÅ‚a Å¼adna wiadomoÅ›Ä‡"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Nag³ówek wy¶wietlany podczas startu maszyny odpowiadaj±cej :"
+msgstr "&NagÅ‚Ã³wek wyÅ›wietlany podczas startu maszyny odpowiadajÄ…cej :"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -135,27 +135,27 @@ msgid ""
 "Please leave a message to be delivered via E-Mail.\n"
 "Just start typing and when you're done, exit normally."
 msgstr ""
-"Osoba, z któr± chcesz rozmawiaæ nie odpowiada.\n"
-"Zostaw wiadomo¶æ, która bêdzie przekazana e-mailem.\n"
-"Po prostu zacznij pisaæ i zakoñcz w sposób normalny"
+"Osoba, z ktÃ³rÄ… chcesz rozmawiaÄ‡ nie odpowiada.\n"
+"Zostaw wiadomoÅ›Ä‡, ktÃ³ra bÄ™dzie przekazana e-mailem.\n"
+"Po prostu zacznij pisaÄ‡ i zakoÅ„cz w sposÃ³b normalny"
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
 msgid "Message from %s"
-msgstr "Wiadomo¶æ od %s"
+msgstr "WiadomoÅ›Ä‡ od %s"
 
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Wiadomo¶æ pozostawiona w maszynie odpowiadaj±cej przez %s@%s"
+msgstr "WiadomoÅ›Ä‡ pozostawiona w maszynie odpowiadajÄ…cej przez %s@%s"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
-msgstr "Dopu¶æ &przekazywanie dalej"
+msgstr "DopuÅ›Ä‡ &przekazywanie dalej"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Odbiorca (u¿ytkownik lub u¿ytkownik@komputer)"
+msgstr "&Odbiorca (uÅ¼ytkownik lub uÅ¼ytkownik@komputer)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
@@ -174,13 +174,13 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Przeka¿ tylko zg³oszenie. Po³±czenie bezpo¶rednie. Nie zalecane.\n"
-"FWR : Przekazuj ca³e zg³oszenia, zmieniajac informacje w razie potrzeby. "
-"Po³±czenie bezpo¶rednie.\n"
-"FWT : Przeka¿ ca³e zg³oszenie i podejmij rozmowê. Bez bezpo¶rdeniego "
-"po³±czenia.\n"
+"FWA : PrzekaÅ¼ tylko zgÅ‚oszenie. PoÅ‚Ä…czenie bezpoÅ›rednie. Nie zalecane.\n"
+"FWR : Przekazuj caÅ‚e zgÅ‚oszenia, zmieniajac informacje w razie potrzeby. "
+"PoÅ‚Ä…czenie bezpoÅ›rednie.\n"
+"FWT : PrzekaÅ¼ caÅ‚e zgÅ‚oszenie i podejmij rozmowÄ™. Bez bezpoÅ›rdeniego "
+"poÅ‚Ä…czenia.\n"
 "\n"
-"Zalecane u¿ycie : FWT je¶li jeste¶ za firewallem (i je¶li ktalkd\n"
-"mo¿e operowaæ w obu sieciach), oraz FWR w przeciwnym razie.\n"
+"Zalecane uÅ¼ycie : FWT jeÅ›li jesteÅ› za firewallem (i jeÅ›li ktalkd\n"
+"moÅ¼e operowaÄ‡ w obu sieciach), oraz FWR w przeciwnym razie.\n"
 "\n"
-"Spójrz do Pomocy po dalsze wyja¶nienia.\n"
+"SpÃ³jrz do Pomocy po dalsze wyjaÅ›nienia.\n"

@@ -7,27 +7,27 @@ msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1999-04-20 01:17+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
-"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Last-Translator: Juraj BednÃ¡r <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: backgnd.cpp:55
 msgid "Enter new desktop name"
-msgstr "Zadajte novı názov plochy"
+msgstr "Zadajte novÃ½ nÃ¡zov plochy"
 
 #: backgnd.cpp:111 backgnd.cpp:164
 msgid "Desktop"
-msgstr "Pracovná plocha"
+msgstr "PracovnÃ¡ plocha"
 
 #: backgnd.cpp:186
 msgid "&Rename ..."
-msgstr "&Premenova»..."
+msgstr "&PremenovaÅ¥..."
 
 #: backgnd.cpp:197
 msgid "&Common Background"
-msgstr "&Be¾né pozadie"
+msgstr "&BeÅ¾nÃ© pozadie"
 
 #: backgnd.cpp:225 colorscm.cpp:82
 msgid "Colors"
@@ -35,15 +35,15 @@ msgstr "Farby"
 
 #: backgnd.cpp:252
 msgid "&One Color"
-msgstr "&Jednofarebné"
+msgstr "&JednofarebnÃ©"
 
 #: backgnd.cpp:269
 msgid "&Two Color"
-msgstr "&Dvojfarebné"
+msgstr "&DvojfarebnÃ©"
 
 #: backgnd.cpp:288
 msgid "Set&up ..."
-msgstr "Nastavi».."
+msgstr "NastaviÅ¥.."
 
 #: backgnd.cpp:297
 msgid "Wallpaper"
@@ -55,101 +55,101 @@ msgstr "Bez tapety"
 
 #: backgnd.cpp:361
 msgid "&Browse..."
-msgstr "&Nalistova»..."
+msgstr "&NalistovaÅ¥..."
 
 #: backgnd.cpp:369
 msgid "Arrangement:"
-msgstr "Aran¾ovanie:"
+msgstr "AranÅ¾ovanie:"
 
 #: backgnd.cpp:376
 msgid "Tiled"
-msgstr "Vydlá¾dené"
+msgstr "VydlÃ¡Å¾denÃ©"
 
 #: backgnd.cpp:377
 msgid "Mirrored"
-msgstr "Zrkadlené"
+msgstr "ZrkadlenÃ©"
 
 #: backgnd.cpp:378
 msgid "Center Tiled"
-msgstr "Centrovane vydlá¾dené"
+msgstr "Centrovane vydlÃ¡Å¾denÃ©"
 
 #: backgnd.cpp:379
 msgid "Centred"
-msgstr "Centrované"
+msgstr "CentrovanÃ©"
 
 #: backgnd.cpp:380
 msgid "Centred Brick"
-msgstr "Centrovaná tehla"
+msgstr "CentrovanÃ¡ tehla"
 
 #: backgnd.cpp:381
 msgid "Centred Warp"
-msgstr "Centrovanı warp"
+msgstr "CentrovanÃ½ warp"
 
 #: backgnd.cpp:382
 msgid "Centred Maxpect"
-msgstr "Centrovanı maxpect"
+msgstr "CentrovanÃ½ maxpect"
 
 #: backgnd.cpp:383
 msgid "Symmetrical Tiled"
-msgstr "Symetricky vydlá¾dené"
+msgstr "Symetricky vydlÃ¡Å¾denÃ©"
 
 #: backgnd.cpp:384
 msgid "Symmetrical Mirrored"
-msgstr "Symetricky zrkadlené"
+msgstr "Symetricky zrkadlenÃ©"
 
 #: backgnd.cpp:385
 msgid "Scaled"
-msgstr "©kálované"
+msgstr "Å kÃ¡lovanÃ©"
 
 #: backgnd.cpp:400
 msgid "Ra&ndom"
-msgstr "&Náhodné"
+msgstr "&NÃ¡hodnÃ©"
 
 #: backgnd.cpp:409
 msgid "Setu&p..."
-msgstr "Nastavi».."
+msgstr "NastaviÅ¥.."
 
 #: backgnd.cpp:419
 msgid "&Dock into the panel"
-msgstr "&Vsunú» sa do panelu"
+msgstr "&VsunÃºÅ¥ sa do panelu"
 
 #: backgnd.cpp:444
 msgid "Cache size (kB):"
-msgstr "Veµkos» ke¹e (kB):"
+msgstr "VeÄ¾kosÅ¥ keÅ¡e (kB):"
 
 #: backgnd.cpp:1345
 msgid "Desktop names"
-msgstr "Názvy plôch"
+msgstr "NÃ¡zvy plÃ´ch"
 
 #: backgnd.cpp:1390
 msgid "File error"
-msgstr "Chyba súboru"
+msgstr "Chyba sÃºboru"
 
 #: backgnd.cpp:1391
 msgid "Can't load image file"
-msgstr "Nemô¾em nahra» obrázok"
+msgstr "NemÃ´Å¾em nahraÅ¥ obrÃ¡zok"
 
 #: backgnd.cpp:1414 backgnd.cpp:1887
 msgid "Unsupported URL"
-msgstr "Nepodporované URL"
+msgstr "NepodporovanÃ© URL"
 
 #: backgnd.cpp:1415 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
-"Prepáète, ale tento typ URL nie je momentálne podporovanı KDE Display modulom"
+"PrepÃ¡Äte, ale tento typ URL nie je momentÃ¡lne podporovanÃ½ KDE Display modulom"
 
 #: backgnd.cpp:1447
 msgid "Two color backgrounds"
-msgstr "Dvojfarebné pozadia"
+msgstr "DvojfarebnÃ© pozadia"
 
 #: backgnd.cpp:1484
 msgid "Blend colors from &top to bottom"
-msgstr "Vy&tieòova» farby zhora do nadol"
+msgstr "Vy&tieÅˆovaÅ¥ farby zhora do nadol"
 
 #: backgnd.cpp:1490
 msgid "Blend colors from &right to left"
-msgstr "Vytieòova» fa&rby zprava doµava"
+msgstr "VytieÅˆovaÅ¥ fa&rby zprava doÄ¾ava"
 
 #: backgnd.cpp:1496
 msgid "Use &pattern"
@@ -157,19 +157,19 @@ msgstr "&Vzor"
 
 #: backgnd.cpp:1523
 msgid "Preview"
-msgstr "Náhµad"
+msgstr "NÃ¡hÄ¾ad"
 
 #: backgnd.cpp:1534
 msgid "Pattern &name"
-msgstr "Názov vzoru"
+msgstr "NÃ¡zov vzoru"
 
 #: backgnd.cpp:1573
 msgid "Current"
-msgstr "Súèasnı"
+msgstr "SÃºÄasnÃ½"
 
 #: backgnd.cpp:1633
 msgid "Filled"
-msgstr "Vyplòovanı"
+msgstr "VyplÅˆovanÃ½"
 
 #: backgnd.cpp:1636
 msgid "Fish net"
@@ -177,7 +177,7 @@ msgstr "Fish net"
 
 #: backgnd.cpp:1639
 msgid "Triangles"
-msgstr "Trojuholníky"
+msgstr "TrojuholnÃ­ky"
 
 #: backgnd.cpp:1642
 msgid "Flowers"
@@ -193,23 +193,23 @@ msgstr "Cobbled Pavement"
 
 #: backgnd.cpp:1714
 msgid "Random mode setup"
-msgstr "Nastavenie náhodného re¾imu"
+msgstr "Nastavenie nÃ¡hodnÃ©ho reÅ¾imu"
 
 #: backgnd.cpp:1720
 msgid "Pick files from &directory"
-msgstr "Zvoli» súbory z &prieèinku"
+msgstr "ZvoliÅ¥ sÃºbory z &prieÄinku"
 
 #: backgnd.cpp:1734
 msgid "&Browse ..."
-msgstr "&Nalistova»..."
+msgstr "&NalistovaÅ¥..."
 
 #: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
-msgstr "Pauza èasovaèa v sekundách:"
+msgstr "Pauza ÄasovaÄa v sekundÃ¡ch:"
 
 #: backgnd.cpp:1767
 msgid "In &order"
-msgstr "V p&oradí"
+msgstr "V p&oradÃ­"
 
 #: backgnd.cpp:1784
 msgid "Desktops :"
@@ -217,35 +217,35 @@ msgstr "Plochy :"
 
 #: backgnd.cpp:1823
 msgid "&Add"
-msgstr "&Prida»"
+msgstr "&PridaÅ¥"
 
 #: backgnd.cpp:1995
 msgid "Directory error"
-msgstr "Chyba prieèinku"
+msgstr "Chyba prieÄinku"
 
 #: backgnd.cpp:1996
 msgid "Selected directory doesn't exists"
-msgstr "Zvolenı prieèinok neexistuje"
+msgstr "ZvolenÃ½ prieÄinok neexistuje"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
-msgstr "Farebná schéma"
+msgstr "FarebnÃ¡ schÃ©ma"
 
 #: colorscm.cpp:115
 msgid "Current scheme"
-msgstr "Súèasná schéma"
+msgstr "SÃºÄasnÃ¡ schÃ©ma"
 
 #: colorscm.cpp:117
 msgid "KDE default"
-msgstr "KDE ¹tandardná"
+msgstr "KDE Å¡tandardnÃ¡"
 
 #: colorscm.cpp:130
 msgid "&Add ..."
-msgstr "&Prida»..."
+msgstr "&PridaÅ¥..."
 
 #: colorscm.cpp:147
 msgid "&Save changes"
-msgstr "Ulo¾i» zmeny"
+msgstr "UloÅ¾iÅ¥ zmeny"
 
 #: colorscm.cpp:161
 msgid "Widget color"
@@ -253,27 +253,27 @@ msgstr "Farba kontrolky"
 
 #: colorscm.cpp:168
 msgid "Inactive title bar"
-msgstr "Neaktívny titulok"
+msgstr "NeaktÃ­vny titulok"
 
 #: colorscm.cpp:169
 msgid "Inactive title text"
-msgstr "Text neaktívneho titulku"
+msgstr "Text neaktÃ­vneho titulku"
 
 #: colorscm.cpp:170
 msgid "Inactive title blend"
-msgstr "Tieòovanie neaktívneho titulku"
+msgstr "TieÅˆovanie neaktÃ­vneho titulku"
 
 #: colorscm.cpp:171
 msgid "Active title bar"
-msgstr "Aktívny titulok"
+msgstr "AktÃ­vny titulok"
 
 #: colorscm.cpp:172
 msgid "Active title text"
-msgstr "Text aktívneho titulku"
+msgstr "Text aktÃ­vneho titulku"
 
 #: colorscm.cpp:173
 msgid "Active title blend"
-msgstr "Tieòovanie aktívneho titulku"
+msgstr "TieÅˆovanie aktÃ­vneho titulku"
 
 #: colorscm.cpp:174
 msgid "Background"
@@ -285,11 +285,11 @@ msgstr "Text"
 
 #: colorscm.cpp:176
 msgid "Select background"
-msgstr "Vıber pozadia"
+msgstr "VÃ½ber pozadia"
 
 #: colorscm.cpp:177
 msgid "Select text"
-msgstr "Vıber textu"
+msgstr "VÃ½ber textu"
 
 #: colorscm.cpp:178
 msgid "Window background"
@@ -305,15 +305,15 @@ msgstr "Kontrast"
 
 #: colorscm.cpp:223
 msgid "&Low"
-msgstr "&Malı"
+msgstr "&MalÃ½"
 
 #: colorscm.cpp:231
 msgid "High"
-msgstr "Veµkı"
+msgstr "VeÄ¾kÃ½"
 
 #: colorscm.cpp:304
 msgid "Error removing"
-msgstr "Chyba pri odstránení"
+msgstr "Chyba pri odstrÃ¡nenÃ­"
 
 #: colorscm.cpp:305
 msgid ""
@@ -321,13 +321,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
-"Táto farebná schéma nemô¾e by» zru¹ená.\n"
-"Mo¾no nemáte práva na zmenu súboru, v ktorom sú uchovávané\n"
-"farebné schémy."
+"TÃ¡to farebnÃ¡ schÃ©ma nemÃ´Å¾e byÅ¥ zruÅ¡enÃ¡.\n"
+"MoÅ¾no nemÃ¡te prÃ¡va na zmenu sÃºboru, v ktorom sÃº uchovÃ¡vanÃ©\n"
+"farebnÃ© schÃ©my."
 
 #: colorscm.cpp:362
 msgid "Naming error"
-msgstr "Chyba pri pomenovávaní"
+msgstr "Chyba pri pomenovÃ¡vanÃ­"
 
 #: colorscm.cpp:363
 msgid ""
@@ -335,13 +335,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-"Prosím zvoµte jedineènı názov pre novú farebnú\n"
-"schému. To, ktoré ste zadali sa u¾ vyskytuje\n"
-"v zozname farebnıch schém."
+"ProsÃ­m zvoÄ¾te jedineÄnÃ½ nÃ¡zov pre novÃº farebnÃº\n"
+"schÃ©mu. To, ktorÃ© ste zadali sa uÅ¾ vyskytuje\n"
+"v zozname farebnÃ½ch schÃ©m."
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
-msgstr "Prida» farebnú schému"
+msgstr "PridaÅ¥ farebnÃº schÃ©mu"
 
 #: savescm.cpp:32
 msgid ""
@@ -351,35 +351,35 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"Zadajte názov pre novú farebnú schému, ktorá\n"
-"má by» pridaná do vá¹ho osobného zoznamu.\n"
+"Zadajte nÃ¡zov pre novÃº farebnÃº schÃ©mu, ktorÃ¡\n"
+"mÃ¡ byÅ¥ pridanÃ¡ do vÃ¡Å¡ho osobnÃ©ho zoznamu.\n"
 "\n"
-"Farby, ktoré sa momentálne pou¾ívajú v náhµade\n"
-"budú skopírované do tejto schémy."
+"Farby, ktorÃ© sa momentÃ¡lne pouÅ¾Ã­vajÃº v nÃ¡hÄ¾ade\n"
+"budÃº skopÃ­rovanÃ© do tejto schÃ©my."
 
 #: scrnsave.cpp:47
 msgid "Ignore"
-msgstr "Ignorova»"
+msgstr "IgnorovaÅ¥"
 
 #: scrnsave.cpp:48
 msgid "Save Screen"
-msgstr "©etri» obrazovku"
+msgstr "Å etriÅ¥ obrazovku"
 
 #: scrnsave.cpp:49
 msgid "Lock Screen"
-msgstr "Zamknú» obrazovku"
+msgstr "ZamknÃºÅ¥ obrazovku"
 
 #: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
-msgstr "©etriè obrazovky"
+msgstr "Å etriÄ obrazovky"
 
 #: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
 msgid "No screensaver"
-msgstr "Bez ¹etrièa obrazovky"
+msgstr "Bez Å¡etriÄa obrazovky"
 
 #: scrnsave.cpp:209
 msgid "&Setup ..."
-msgstr "&Nastavi».."
+msgstr "&NastaviÅ¥.."
 
 #: scrnsave.cpp:217
 msgid "&Test"
@@ -391,7 +391,7 @@ msgstr "Nastavenie"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
-msgstr "Èakaj"
+msgstr "ÄŒakaj"
 
 #: scrnsave.cpp:260
 msgid "min."
@@ -399,15 +399,15 @@ msgstr "min."
 
 #: scrnsave.cpp:266
 msgid "&Require password"
-msgstr "&Po¾aduje heslo"
+msgstr "&PoÅ¾aduje heslo"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr "&Akceptova» rootovské heslo na odhlásenie"
+msgstr "&AkceptovaÅ¥ rootovskÃ© heslo na odhlÃ¡senie"
 
 #: scrnsave.cpp:280
 msgid "Show &password as stars"
-msgstr "Zo&brazova» heslá ako hviezdièky"
+msgstr "Zo&brazovaÅ¥ heslÃ¡ ako hviezdiÄky"
 
 #: scrnsave.cpp:288
 msgid "Priority"
@@ -415,61 +415,61 @@ msgstr "Priorita:"
 
 #: scrnsave.cpp:301
 msgid "&High"
-msgstr "Vysoká"
+msgstr "VysokÃ¡"
 
 #: scrnsave.cpp:310
 msgid "Low"
-msgstr "Nízka"
+msgstr "NÃ­zka"
 
 #: general.cpp:221
 msgid "Style"
-msgstr "©tıl"
+msgstr "Å tÃ½l"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "&Kresli» kontrolky v ¹tıle Windows 95"
+msgstr "&KresliÅ¥ kontrolky v Å¡tÃ½le Windows 95"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "&Menubar na vrchole obrazovky v ¹tıle MacOS"
+msgstr "&Menubar na vrchole obrazovky v Å¡tÃ½le MacOS"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Aplikova» písmo a farby pre ne-KDE apl."
+msgstr "&AplikovaÅ¥ pÃ­smo a farby pre ne-KDE apl."
 
 #: general.cpp:529
 msgid "General font"
-msgstr "V¹eobecná znaková sada"
+msgstr "VÅ¡eobecnÃ¡ znakovÃ¡ sada"
 
 #: general.cpp:534
 msgid "Fixed font"
-msgstr "Písmo s fixnou ¹írkou"
+msgstr "PÃ­smo s fixnou Å¡Ã­rkou"
 
 #: general.cpp:540
 msgid "Window title font"
-msgstr "Písmo titulku okna"
+msgstr "PÃ­smo titulku okna"
 
 #: general.cpp:545
 msgid "Panel button font"
-msgstr "Písmo tlaèítok panelu"
+msgstr "PÃ­smo tlaÄÃ­tok panelu"
 
 #: general.cpp:550
 msgid "Panel clock font"
-msgstr "Písmo hodín na paneli"
+msgstr "PÃ­smo hodÃ­n na paneli"
 
 #: general.cpp:580
 msgid "Sample text"
-msgstr "Príkl. textu"
+msgstr "PrÃ­kl. textu"
 
 #: general.cpp:588
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+"0 1 2 3 4 5 6 7 8 9   ! \" Å $ % ^ & * ( )"
 msgstr ""
-"RİCHLA HNEDÁ LÍ©KA SKÁÈE CEZ LENIVÉHO PSA\n"
-"rıchla hnedá lí¹ka skáèe cez lenivého psa\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+"RÃCHLA HNEDÃ LÃÅ KA SKÃÄŒE CEZ LENIVÃ‰HO PSA\n"
+"rÃ½chla hnedÃ¡ lÃ­Å¡ka skÃ¡Äe cez lenivÃ©ho psa\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" Å $ % ^ & * ( )"
 
 #: main.cpp:64
 msgid "&Background"
@@ -477,7 +477,7 @@ msgstr "&Pozadie"
 
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "©etriè &obrazovky"
+msgstr "Å etriÄ &obrazovky"
 
 #: main.cpp:71
 msgid "&Colors"
@@ -485,13 +485,13 @@ msgstr "&Farby"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr "©&tıl"
+msgstr "Å &tÃ½l"
 
 #: main.cpp:83
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"Pou¾itie: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+"PouÅ¾itie: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -499,35 +499,35 @@ msgstr "Vlastnosti obrazovky"
 
 #: widgetcanvas.cpp:104 widgetcanvas.cpp:105
 msgid "Inactive window"
-msgstr "Neaktívne okno"
+msgstr "NeaktÃ­vne okno"
 
 #: widgetcanvas.cpp:132 widgetcanvas.cpp:133
 msgid "Active window"
-msgstr "Aktívne okno"
+msgstr "AktÃ­vne okno"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
-msgstr "Vybranı text"
+msgstr "VybranÃ½ text"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr "Novı"
+msgstr "NovÃ½"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr "&Typ písma"
+msgstr "&Typ pÃ­sma"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr "&Tuèné"
+msgstr "&TuÄnÃ©"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr "©&ikmé"
+msgstr "Å &ikmÃ©"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr "&Veµkos»"
+msgstr "&VeÄ¾kosÅ¥"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
@@ -535,20 +535,20 @@ msgstr "Sada &znakov"
 
 #: fontchooser.cpp:262
 msgid "default"
-msgstr "¹tandardné"
+msgstr "Å¡tandardnÃ©"
 
 #: fontchooser.cpp:265
 msgid "any"
-msgstr "µubovoµné"
+msgstr "Ä¾ubovoÄ¾nÃ©"
 
 #~ msgid "Fonts etc."
-#~ msgstr "&Znakové sady"
+#~ msgstr "&ZnakovÃ© sady"
 
 #~ msgid "Desktop fonts"
-#~ msgstr "Pracovná plocha"
+#~ msgstr "PracovnÃ¡ plocha"
 
 #~ msgid "&Fonts etc."
-#~ msgstr "&Znakové sady"
+#~ msgstr "&ZnakovÃ© sady"
 
 #~ msgid "kb"
 #~ msgstr "kb"

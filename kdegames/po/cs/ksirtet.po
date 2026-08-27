@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: ktetris\n"
 "POT-Creation-Date: 1998-10-01 13:29+0200\n"
 "PO-Revision-Date: 1998-10-28 19:03 CET\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: board.cpp:65 dialogs.cpp:137
 msgid "Anonymous"
-msgstr "Anonymní"
+msgstr "AnonymnÃ­"
 
 #: board.cpp:97
 msgid "Game paused"
@@ -23,23 +23,23 @@ msgstr "Hra pozastavena"
 
 #: board.cpp:102
 msgid "Press to resume"
-msgstr "Stiskni klávesu k pokraèování"
+msgstr "Stiskni klÃ¡vesu k pokraÄovÃ¡nÃ­"
 
 #: board.cpp:119 net.cpp:208
 msgid "Game over"
-msgstr "Hra skonèena"
+msgstr "Hra skonÄena"
 
 #: board.cpp:123
 msgid "Press Return to replay"
-msgstr "Stiskni Return pro pøehrání"
+msgstr "Stiskni Return pro pÅ™ehrÃ¡nÃ­"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "Stiskni klávesu ke startu hry"
+msgstr "Stiskni klÃ¡vesu ke startu hry"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "Není mo¾né zapsat do souboru s nejlep¹ími vısledky!"
+msgstr "NenÃ­ moÅ¾nÃ© zapsat do souboru s nejlepÅ¡Ã­mi vÃ½sledky!"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -47,15 +47,15 @@ msgstr "Neplatny port"
 
 #: net.cpp:135
 msgid "Null address"
-msgstr "Nulová adresa"
+msgstr "NulovÃ¡ adresa"
 
 #: net.cpp:142
 msgid "Unknown address"
-msgstr "Neznámá adresa"
+msgstr "NeznÃ¡mÃ¡ adresa"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "Není mo¾né vytvoøit socket"
+msgstr "NenÃ­ moÅ¾nÃ© vytvoÅ™it socket"
 
 #: net.cpp:196
 msgid "at"
@@ -63,11 +63,11 @@ msgstr "na"
 
 #: net.cpp:233
 msgid "Connect error"
-msgstr "Chyba pøi pøipojení"
+msgstr "Chyba pÅ™i pÅ™ipojenÃ­"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
-msgstr "Server není dosa¾itelnı"
+msgstr "Server nenÃ­ dosaÅ¾itelnÃ½"
 
 #: net.cpp:266
 msgid "The server has died"
@@ -75,19 +75,19 @@ msgstr "Server spadl"
 
 #: net.cpp:267
 msgid "Cancel from server"
-msgstr "Ukonèení od serveru"
+msgstr "UkonÄenÃ­ od serveru"
 
 #: net.cpp:273 net.cpp:333
 msgid "Unknown data from server"
-msgstr "Neznáma data ze serveru"
+msgstr "NeznÃ¡ma data ze serveru"
 
 #: net.cpp:312
 msgid "Cannot send to server"
-msgstr "Není poslat na server"
+msgstr "NenÃ­ poslat na server"
 
 #: net.cpp:324
 msgid "Client timeout (No message from server)"
-msgstr "Klient vyèerpal èasovı limit (¾ádna zpráva od serveru)"
+msgstr "Klient vyÄerpal ÄasovÃ½ limit (Å¾Ã¡dna zprÃ¡va od serveru)"
 
 #: net.cpp:329
 msgid "Server has vanished"
@@ -95,27 +95,27 @@ msgstr "Server zmizel"
 
 #: net.cpp:366
 msgid "Bind error"
-msgstr "Chyba pøi navazování spojení"
+msgstr "Chyba pÅ™i navazovÃ¡nÃ­ spojenÃ­"
 
 #: net.cpp:371
 msgid "Listen error"
-msgstr "Chyba pøi naslouchání"
+msgstr "Chyba pÅ™i naslouchÃ¡nÃ­"
 
 #: net.cpp:390
 msgid "Unknown message from unknown player (??)"
-msgstr "Neznámá zpráva od neznámého hráèe (??)"
+msgstr "NeznÃ¡mÃ¡ zprÃ¡va od neznÃ¡mÃ©ho hrÃ¡Äe (??)"
 
 #: net.cpp:449 net.cpp:490
 msgid "Unknown message from client"
-msgstr "Neznámá zpráva od klienta"
+msgstr "NeznÃ¡mÃ¡ zprÃ¡va od klienta"
 
 #: net.cpp:486
 msgid "Client has died"
-msgstr "Klient zemøel"
+msgstr "Klient zemÅ™el"
 
 #: net.cpp:487
 msgid "Cancel from client"
-msgstr "Ukonèení od klienta"
+msgstr "UkonÄenÃ­ od klienta"
 
 #: net.cpp:494
 msgid "Timeout"
@@ -123,7 +123,7 @@ msgstr "Timeout"
 
 #: net.cpp:520
 msgid "No message from client"
-msgstr "®ádna zpráva od klienta"
+msgstr "Å½Ã¡dna zprÃ¡va od klienta"
 
 #: net.cpp:525
 msgid "Client has vanished"
@@ -131,31 +131,31 @@ msgstr "Klient zmizel"
 
 #: net.cpp:529
 msgid "Unknown data from client"
-msgstr "Neznámá data od klienta"
+msgstr "NeznÃ¡mÃ¡ data od klienta"
 
 #: net.cpp:533
 msgid "End message from client"
-msgstr "Ukonèující zpráva od klienta"
+msgstr "UkonÄujÃ­cÃ­ zprÃ¡va od klienta"
 
 #: net.cpp:550
 msgid "Cannot send to client"
-msgstr "Není mo¾né poslat data klientovi"
+msgstr "NenÃ­ moÅ¾nÃ© poslat data klientovi"
 
 #: dialogs.cpp:61
 msgid "High Scores"
-msgstr "Nejlep¹í vısledky"
+msgstr "NejlepÅ¡Ã­ vÃ½sledky"
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
-msgstr "Hala slávy"
+msgstr "Hala slÃ¡vy"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
-msgstr "Zatím ¾ádné mo¾nosti !"
+msgstr "ZatÃ­m Å¾Ã¡dnÃ© moÅ¾nosti !"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "Sí»ovı dialog"
+msgstr "SÃ­Å¥ovÃ½ dialog"
 
 #: dialogs.cpp:178
 msgid "Server"
@@ -167,7 +167,7 @@ msgstr "Klient"
 
 #: dialogs.cpp:183
 msgid "Player name :"
-msgstr "Jméno hráèe :"
+msgstr "JmÃ©no hrÃ¡Äe :"
 
 #: dialogs.cpp:185
 msgid "Server address :"
@@ -179,11 +179,11 @@ msgstr "Port :"
 
 #: dialogs.cpp:199
 msgid "Connect"
-msgstr "Pøipojit"
+msgstr "PÅ™ipojit"
 
 #: dialogs.cpp:202
 msgid "Connecting ..."
-msgstr "Pripojováni ..."
+msgstr "PripojovÃ¡ni ..."
 
 #: dialogs.cpp:205
 msgid "Play !"
@@ -191,23 +191,23 @@ msgstr "Hraj !"
 
 #: dialogs.cpp:252
 msgid "Network game"
-msgstr "Sí»ová hra"
+msgstr "SÃ­Å¥ovÃ¡ hra"
 
 #: dialogs.cpp:256
 msgid "Server mode"
-msgstr "Serverovı mód"
+msgstr "ServerovÃ½ mÃ³d"
 
 #: dialogs.cpp:258
 msgid "Client mode"
-msgstr "Klientskı mód"
+msgstr "KlientskÃ½ mÃ³d"
 
 #: dialogs.cpp:336
 msgid "Waiting for other player(s) ..."
-msgstr "Èekám na ostatní hráèe ..."
+msgstr "ÄŒekÃ¡m na ostatnÃ­ hrÃ¡Äe ..."
 
 #: field.cpp:27
 msgid "New game"
-msgstr "Nová hra"
+msgstr "NovÃ¡ hra"
 
 #: field.cpp:28
 msgid "Pause game"
@@ -215,23 +215,23 @@ msgstr "Pozastavit hru"
 
 #: field.cpp:30
 msgid "High scores"
-msgstr "Nejlep¹í vısledky"
+msgstr "NejlepÅ¡Ã­ vÃ½sledky"
 
 #: field.cpp:31
 msgid "Move left"
-msgstr "Pøesunout vlevo"
+msgstr "PÅ™esunout vlevo"
 
 #: field.cpp:32
 msgid "Move right"
-msgstr "Pøesunout vpravo"
+msgstr "PÅ™esunout vpravo"
 
 #: field.cpp:33
 msgid "Drop down"
-msgstr "Upustit dolù"
+msgstr "Upustit dolÅ¯"
 
 #: field.cpp:34
 msgid "One line down"
-msgstr "O jednu øádku ní¾"
+msgstr "O jednu Å™Ã¡dku nÃ­Å¾"
 
 #: field.cpp:35
 msgid "Rotate left"
@@ -243,19 +243,19 @@ msgstr "Rotovat doprava"
 
 #: field.cpp:51
 msgid "Score"
-msgstr "Vısledky"
+msgstr "VÃ½sledky"
 
 #: field.cpp:55
 msgid "Lines removed"
-msgstr "Odstranìno øádek"
+msgstr "OdstranÄ›no Å™Ã¡dek"
 
 #: field.cpp:59
 msgid "Level"
-msgstr "Úroveò"
+msgstr "ÃšroveÅˆ"
 
 #: field.cpp:63
 msgid "Next tile"
-msgstr "Následující"
+msgstr "NÃ¡sledujÃ­cÃ­"
 
 #: field.cpp:185
 msgid "&Restart game"
@@ -267,19 +267,19 @@ msgstr "&Pozastavit hru"
 
 #: field.cpp:187
 msgid "&Multiplayer game"
-msgstr "Hra po &síti"
+msgstr "Hra po &sÃ­ti"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "&Nejlep¹í vısledky"
+msgstr "&NejlepÅ¡Ã­ vÃ½sledky"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"
-msgstr "Skrıt menu"
+msgstr "SkrÃ½t menu"
 
 #: main.cpp:30
 msgid "&Keys"
-msgstr "&Klávesy"
+msgstr "&KlÃ¡vesy"
 
 #: main.cpp:35
 msgid "by"

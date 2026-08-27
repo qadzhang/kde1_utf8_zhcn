@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: main.cpp:178
 msgid "Sorry, can't open your printcap file."
-msgstr "Tyv‰rr, kan inte ˆppna din printcap-fil."
+msgstr "Tyv√§rr, kan inte √∂ppna din printcap-fil."
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
-msgstr "Tyv‰rr, kan inte tyda din printcap-fil."
+msgstr "Tyv√§rr, kan inte tyda din printcap-fil."
 
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
@@ -31,7 +31,7 @@ msgstr "Skrivare"
 
 #: klpq.cpp:95
 msgid "Queuing"
-msgstr "Kˆar"
+msgstr "K√∂ar"
 
 #: klpq.cpp:100
 msgid "Printing"
@@ -47,7 +47,7 @@ msgstr "Rang"
 
 #: klpq.cpp:126
 msgid "Owner"
-msgstr "ƒgare"
+msgstr "√Ñgare"
 
 #: klpq.cpp:127
 msgid "Job"
@@ -59,7 +59,7 @@ msgstr "Storlek"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
-msgstr "÷verst"
+msgstr "√ñverst"
 
 #: klpq.cpp:160
 msgid "Auto"
@@ -86,7 +86,7 @@ msgstr ""
 
 #: klpq.cpp:213
 msgid "&Config"
-msgstr "&Inst‰llningar"
+msgstr "&Inst√§llningar"
 
 #: klpq.cpp:404
 #, c-format
@@ -102,19 +102,19 @@ msgid ""
 msgstr ""
 "Vill du verkligen flytta jobb nr.\n"
 "%d\n"
-"till toppen av kˆn"
+"till toppen av k√∂n"
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
-msgstr "≈tkomst nekades"
+msgstr "√Ötkomst nekades"
 
 #: klpq.cpp:573 klpq.cpp:579 klpq.cpp:594
 msgid ""
 "This is a privileged command\n"
 "and you do not have permission to execute it."
 msgstr ""
-"Det h‰r ‰r ett privilegierat kommando\n"
-"och du har inte r‰tt att kˆra det."
+"Det h√§r √§r ett privilegierat kommando\n"
+"och du har inte r√§tt att k√∂ra det."
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
@@ -133,8 +133,8 @@ msgid ""
 "Sorry, I can't find your lpc program.\n"
 "Please check the configuration under Config->Spooler."
 msgstr ""
-"Tyv‰rr, jag kan inte hitta ditt lpc-program.\n"
-"Var god kontrollera inst‰llningen under Inst‰llningar->Spooler."
+"Tyv√§rr, jag kan inte hitta ditt lpc-program.\n"
+"Var god kontrollera inst√§llningen under Inst√§llningar->Spooler."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
@@ -146,10 +146,10 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Var god v‰lj det spool-system du anv‰nder. De flesta system anv‰nder "
-"BSD-spooler. SÂ om du inte vet vilken spooler som ‰r installerad i ditt "
-"system ‰r BSD fˆrmodligen ett bra val."
+"Var god v√§lj det spool-system du anv√§nder. De flesta system anv√§nder "
+"BSD-spooler. S√• om du inte vet vilken spooler som √§r installerad i ditt "
+"system √§r BSD f√∂rmodligen ett bra val."
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"
-msgstr "Sˆkv‰gar till spool-kommandon:"
+msgstr "S√∂kv√§gar till spool-kommandon:"

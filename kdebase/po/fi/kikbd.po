@@ -11,12 +11,12 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
-msgstr "KDE Kansainv‰linen n‰pp‰imistˆ k‰ynnistetty jo t‰ll‰ n‰ytˆll‰."
+msgstr "KDE Kansainv√§linen n√§pp√§imist√∂ k√§ynnistetty jo t√§ll√§ n√§yt√∂ll√§."
 
 #: kikbd.cpp:295
 #, c-format
@@ -25,7 +25,7 @@ msgid ""
 "Using X default codes."
 msgstr ""
 "X kooditiedostoa \"%s\" ei ole olemassa.\n"
-"K‰yt‰n X:n oletuskooditiedostoa."
+"K√§yt√§n X:n oletuskooditiedostoa."
 
 #: kikbd.cpp:321
 #, c-format
@@ -33,8 +33,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
-"N‰pp‰inkarttaa \"%s\" ei ole olemassa.\n"
-"Ohitan t‰m‰n kartan."
+"N√§pp√§inkarttaa \"%s\" ei ole olemassa.\n"
+"Ohitan t√§m√§n kartan."
 
 #: kikbd.cpp:337
 msgid "Setup"
@@ -43,12 +43,12 @@ msgstr "Asetukset"
 #: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
-msgstr "En voi poistaa %s:‰‰ Modifiereist‰. \n"
+msgstr "En voi poistaa %s:√§√§ Modifiereist√§. \n"
 
 #: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "En voi lis‰t‰ %s:‰‰ Modifier numero 3:n.\n"
+msgstr "En voi lis√§t√§ %s:√§√§ Modifier numero 3:n.\n"
 
 #: kikbd.cpp:384
 #, c-format
@@ -56,7 +56,7 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"En saanut asetettua Mode Switch:a %s:ksi n‰pp‰imistˆlle %s.\n"
+"En saanut asetettua Mode Switch:a %s:ksi n√§pp√§imist√∂lle %s.\n"
 "Alt -symbolit estetty"
 
 #: kikbd.cpp:406
@@ -69,15 +69,15 @@ msgstr ""
 
 #: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
-msgstr "Lopetetaan Kansainv‰linen n‰pp‰imistˆ"
+msgstr "Lopetetaan Kansainv√§linen n√§pp√§imist√∂"
 
 #: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
-"Olet lopettamassa \"Kansainv‰linen n‰pp‰imistˆ\" tyˆkalun.\n"
-" Haluatko ett‰ se k‰ynnistet‰‰n automaattisesti seuraavalla kerralla?"
+"Olet lopettamassa \"Kansainv√§linen n√§pp√§imist√∂\" ty√∂kalun.\n"
+" Haluatko ett√§ se k√§ynnistet√§√§n automaattisesti seuraavalla kerralla?"
 
 #: keymap.cpp:186
 msgid "KeyMap: can't allocate memory"
@@ -91,25 +91,25 @@ msgid ""
 "You can preset X codes from section \"Advanced\"\n"
 "in the configuration program."
 msgstr ""
-"En lˆyd‰ symbolia \"%s\".\n"
-"Mahdollisesti oletus X -koodisi eiv‰t osu kohdalleen.\n"
+"En l√∂yd√§ symbolia \"%s\".\n"
+"Mahdollisesti oletus X -koodisi eiv√§t osu kohdalleen.\n"
 "Voit esiasettaa X -koodeja \"Edistyneet\" osiosta\n"
 "asetusosiossa."
 
 #: keymap.cpp:238
 #, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "KeyMap: en lˆyd‰ symbolia \"%s\"."
+msgstr "KeyMap: en l√∂yd√§ symbolia \"%s\"."
 
 #: keymap.cpp:246
 #, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: en voi lukea n‰pp‰inkoodia \"%s\"."
+msgstr "KeyMap: en voi lukea n√§pp√§inkoodia \"%s\"."
 
 #: keymap.cpp:252
 #, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "KeyMap: n‰pp‰inkoodi \"%s\" menee rajojen ulkopuolelle."
+msgstr "KeyMap: n√§pp√§inkoodi \"%s\" menee rajojen ulkopuolelle."
 
 #: kikbdconf.cpp:102
 msgid "Global"
@@ -125,7 +125,7 @@ msgstr "Luokka"
 
 #: kikbdconf.cpp:105 kikbdconf.cpp:117
 msgid "(None)"
-msgstr "(Ei mik‰‰n)"
+msgstr "(Ei mik√§√§n)"
 
 #: kikbdconf.cpp:106 kikbdconf.cpp:118
 msgid "Right Alt"
@@ -181,11 +181,11 @@ msgstr "Vasen Meta"
 
 #: kikbdconf.cpp:126
 msgid "Top Left"
-msgstr "Yl‰ vasen"
+msgstr "Yl√§ vasen"
 
 #: kikbdconf.cpp:127
 msgid "Top Right"
-msgstr "Yl‰ oikea"
+msgstr "Yl√§ oikea"
 
 #: kikbdconf.cpp:128
 msgid "Bottom Left"
@@ -213,8 +213,8 @@ msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
-"K‰yt‰t \"Kansainv‰list‰ n‰pp‰imistˆ‰\" ensimm‰isen kerran.\n"
-"Monia oletusasetuksia on otettu k‰yttˆˆn."
+"K√§yt√§t \"Kansainv√§list√§ n√§pp√§imist√∂√§\" ensimm√§isen kerran.\n"
+"Monia oletusasetuksia on otettu k√§ytt√∂√∂n."
 
 #: kikbdconf.cpp:379
 msgid "unknown"
@@ -226,11 +226,11 @@ msgstr "oletus"
 
 #: kikbdconf.cpp:419
 msgid "Author:  Not specified"
-msgstr "Tekij‰: Ei m‰‰ritelty"
+msgstr "Tekij√§: Ei m√§√§ritelty"
 
 #: kikbdconf.cpp:421
 msgid "Author"
-msgstr "Tekij‰"
+msgstr "Tekij√§"
 
 #: kikbdconf.cpp:427
 msgid "Description:  "
@@ -238,7 +238,7 @@ msgstr "Kuvaus:  "
 
 #: kikbdconf.cpp:430
 msgid "Source:  "
-msgstr "L‰hde:  "
+msgstr "L√§hde:  "
 
 #: kikbdconf.cpp:431
 msgid "no file"
@@ -246,11 +246,11 @@ msgstr "ei tiedostoa"
 
 #: kikbdconf.cpp:432
 msgid "user file"
-msgstr "k‰ytt‰j‰tiedosto"
+msgstr "k√§ytt√§j√§tiedosto"
 
 #: kikbdconf.cpp:433
 msgid "system file"
-msgstr "j‰rjestelm‰tiedosto"
+msgstr "j√§rjestelm√§tiedosto"
 
 #: kikbdconf.cpp:438
 msgid "Statistic:  "
@@ -278,15 +278,15 @@ msgstr "Kirjasinperhe"
 
 #: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
-msgstr "Kansainv‰lisen n‰pp‰imistˆn virhe"
+msgstr "Kansainv√§lisen n√§pp√§imist√∂n virhe"
 
 #: kikbdconf.cpp:535
 msgid "International keyboard warning"
-msgstr "Kansainv‰liset n‰pp‰imistˆn varoitus"
+msgstr "Kansainv√§liset n√§pp√§imist√∂n varoitus"
 
 #: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
-msgstr "Kansainv‰lisen n‰pp‰imistˆn kysymys"
+msgstr "Kansainv√§lisen n√§pp√§imist√∂n kysymys"
 
 #: kikbdconf.cpp:549
 msgid "Configure"
@@ -302,27 +302,27 @@ msgstr ""
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
-msgstr "Aktiivisten n‰pp‰inkarttojen lista"
+msgstr "Aktiivisten n√§pp√§inkarttojen lista"
 
 #: widgets.cpp:126
 msgid "&Add"
-msgstr "&Lis‰‰"
+msgstr "&Lis√§√§"
 
 #: widgets.cpp:127
 msgid "Add new keyboard map"
-msgstr "Lis‰‰ uusi n‰pp‰inkartta"
+msgstr "Lis√§√§ uusi n√§pp√§inkartta"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
-msgstr "Poista valittu n‰pp‰inkartta"
+msgstr "Poista valittu n√§pp√§inkartta"
 
 #: widgets.cpp:136
 msgid "U&p"
-msgstr "&Ylˆs"
+msgstr "&Yl√∂s"
 
 #: widgets.cpp:136
 msgid "Move up selected keyboard map"
-msgstr "Siirr‰ ylemm‰s valittua n‰pp‰inkarttaa"
+msgstr "Siirr√§ ylemm√§s valittua n√§pp√§inkarttaa"
 
 #: widgets.cpp:140
 msgid "D&own"
@@ -330,7 +330,7 @@ msgstr "&Alas"
 
 #: widgets.cpp:140
 msgid "Move down selected keyboard map"
-msgstr "Siirr‰ alemmas valittua n‰pp‰inkarttaa"
+msgstr "Siirr√§ alemmas valittua n√§pp√§inkarttaa"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -338,43 +338,43 @@ msgstr "&Tietoja"
 
 #: widgets.cpp:145
 msgid "Display information for selected keyboard map"
-msgstr "N‰yt‰ tietoja n‰pp‰inkartasta"
+msgstr "N√§yt√§ tietoja n√§pp√§inkartasta"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
-msgstr "K‰yt‰ &erikoislistaa"
+msgstr "K√§yt√§ &erikoislistaa"
 
 #: widgets.cpp:155
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
 msgstr ""
-"K‰yt‰ vain oletusta ja edellist‰ aktiivista n‰pp‰inkarttaa n‰pp‰inten "
+"K√§yt√§ vain oletusta ja edellist√§ aktiivista n√§pp√§inkarttaa n√§pp√§inten "
 "vaihtamiseen"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
-msgstr "Lis‰‰n n‰pp‰imistˆn"
+msgstr "Lis√§√§n n√§pp√§imist√∂n"
 
 #: widgets.cpp:225
 msgid "There are no keyboard maps left to add"
-msgstr "Ei ole en‰‰ lis‰tt‰vi‰ n‰pp‰inkarttoja"
+msgstr "Ei ole en√§√§ lis√§tt√§vi√§ n√§pp√§inkarttoja"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
-msgstr "N‰pp‰inkartan tiedot"
+msgstr "N√§pp√§inkartan tiedot"
 
 #: widgets.cpp:292
 msgid "Add Keyboard"
-msgstr "Lis‰‰ m‰pp‰imistˆ"
+msgstr "Lis√§√§ m√§pp√§imist√∂"
 
 #: widgets.cpp:296
 msgid "Available keyboard maps"
-msgstr "Saatavillaolevat n‰pp‰inkartat"
+msgstr "Saatavillaolevat n√§pp√§inkartat"
 
 #: widgets.cpp:403
 msgid "Keyboard maps"
-msgstr "N‰pp‰inkartat"
+msgstr "N√§pp√§inkartat"
 
 #: widgets.cpp:414
 msgid "Switch and Alt Switch"
@@ -382,11 +382,11 @@ msgstr "Vaihto ja Alt Vaihto"
 
 #: widgets.cpp:419
 msgid "Key(s) for switching between keyboard maps"
-msgstr "Vaihton‰pp‰in n‰pp‰inkarttojen v‰lill‰"
+msgstr "Vaihton√§pp√§in n√§pp√§inkarttojen v√§lill√§"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "N‰pp‰in vaihtoehtoisten symbolien aktivoimiseen"
+msgstr "N√§pp√§in vaihtoehtoisten symbolien aktivoimiseen"
 
 #: widgets.cpp:438
 msgid "&Beep"
@@ -394,7 +394,7 @@ msgstr "&Piippaa"
 
 #: widgets.cpp:439
 msgid "Beep when keyboard map is changed"
-msgstr "Piippaa kun n‰pp‰inkarttaa vaihdetaan"
+msgstr "Piippaa kun n√§pp√§inkarttaa vaihdetaan"
 
 #: widgets.cpp:442
 msgid "Ad&vanced"
@@ -425,7 +425,7 @@ msgstr "&Maailma valikko"
 
 #: widgets.cpp:483
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "N‰yt‰ valikko joka ikkunassa painamalla vaihton‰pp‰int‰"
+msgstr "N√§yt√§ valikko joka ikkunassa painamalla vaihton√§pp√§int√§"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -433,34 +433,34 @@ msgstr "&Tallenna luokat"
 
 #: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "Tallenna yhteydet ikkunaluokkien ja n‰pp‰imistˆn v‰lill‰ lopetettaessa"
+msgstr "Tallenna yhteydet ikkunaluokkien ja n√§pp√§imist√∂n v√§lill√§ lopetettaessa"
 
 #: widgets.cpp:498
 msgid "Define X codes"
-msgstr "M‰‰rittele X -koodeja"
+msgstr "M√§√§rittele X -koodeja"
 
 #: widgets.cpp:501
 msgid "Input"
-msgstr "Syˆte"
+msgstr "Sy√∂te"
 
 #: widgets.cpp:505
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Normaalitoiminta, n‰pp‰inkartta aktiivinen kaikille ikkunoille"
+msgstr "Normaalitoiminta, n√§pp√§inkartta aktiivinen kaikille ikkunoille"
 
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Laaja toiminta, n‰pp‰inkartta tallennetaan erikseen joka ikkunalle"
+msgstr "Laaja toiminta, n√§pp√§inkartta tallennetaan erikseen joka ikkunalle"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"Erikoistoiminta, n‰pp‰inkartta tallennetaan erikseen joka ikkunaluokalle"
+"Erikoistoiminta, n√§pp√§inkartta tallennetaan erikseen joka ikkunaluokalle"
 
 #: widgets.cpp:561
 msgid "Button Colors"
-msgstr "N‰pp‰inten v‰rit"
+msgstr "N√§pp√§inten v√§rit"
 
 #: widgets.cpp:571
 msgid "Foreground"
@@ -468,7 +468,7 @@ msgstr "Tausta"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr "Tekstin taustav‰ri"
+msgstr "Tekstin taustav√§ri"
 
 #: widgets.cpp:576
 msgid "Background"
@@ -476,7 +476,7 @@ msgstr "Tausta"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr "Tekstin edustav‰ri"
+msgstr "Tekstin edustav√§ri"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -492,11 +492,11 @@ msgstr "Alt:n kanssa"
 
 #: widgets.cpp:589
 msgid "Background when Alternate switch key is pressed"
-msgstr "Tausta kun Alt-n‰pp‰int‰ painettu"
+msgstr "Tausta kun Alt-n√§pp√§int√§ painettu"
 
 #: widgets.cpp:598
 msgid "Button Font"
-msgstr "N‰pp‰imen kirjasin"
+msgstr "N√§pp√§imen kirjasin"
 
 #: widgets.cpp:606
 msgid "&Customize Font"
@@ -504,7 +504,7 @@ msgstr "&Muuta kirjasinta"
 
 #: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
-msgstr "Muuta kirjasinta tekstikentt‰‰n tai k‰yt‰ yleisi‰ asetuksia"
+msgstr "Muuta kirjasinta tekstikentt√§√§n tai k√§yt√§ yleisi√§ asetuksia"
 
 #: widgets.cpp:611
 msgid "C&hange Font"
@@ -512,11 +512,11 @@ msgstr "&Vaihda kirjasinta"
 
 #: widgets.cpp:656
 msgid "&Autostart"
-msgstr "&Automaattik‰ynnistys"
+msgstr "&Automaattik√§ynnistys"
 
 #: widgets.cpp:657
 msgid "Start up automatically"
-msgstr "K‰ynnist‰ automaattisesti"
+msgstr "K√§ynnist√§ automaattisesti"
 
 #: widgets.cpp:663
 msgid "&Docked"
@@ -544,8 +544,8 @@ msgstr "&Tyyli"
 
 #: kcmikbd.cpp:76
 msgid "Start&Up"
-msgstr "&K‰ynnistys"
+msgstr "&K√§ynnistys"
 
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
-msgstr "Kansainv‰linen n‰pp‰imistˆ"
+msgstr "Kansainv√§linen n√§pp√§imist√∂"

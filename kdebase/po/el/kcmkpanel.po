@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "Πινάκιο"
+msgstr "ΓΓ©Γ­ΓΓªΓ©Γ―"
 
 #: main.cpp:70
 msgid "&Desktops"
-msgstr "Γραφεία"
+msgstr "ΓƒΓ±Γ΅Γ¶Γ¥ΓΓ΅"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
@@ -28,27 +28,27 @@ msgstr ""
 #: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "Σύνταξη: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "Γ“Γ½Γ­Γ΄Γ΅Γ®Γ§: kcmkpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "Ρύθμιση πινακίου"
+msgstr "Γ‘Γ½Γ¨Γ¬Γ©Γ³Γ§ Γ°Γ©Γ­Γ΅ΓªΓΓ―Γµ"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "Θέση"
+msgstr "ΓΓΓ³Γ§"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "Επάνω"
+msgstr "Γ…Γ°ΓΓ­ΓΉ"
 
 #: panel.cpp:61
 msgid "&Left"
-msgstr "Αριστερά"
+msgstr "ΓΓ±Γ©Γ³Γ΄Γ¥Γ±Γ"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr "Κάτω"
+msgstr "ΓΓΓ΄ΓΉ"
 
 #: panel.cpp:63
 msgid "&Right"
@@ -56,23 +56,23 @@ msgstr ""
 
 #: panel.cpp:75
 msgid "Taskbar"
-msgstr "Γραμμή Εργασιών"
+msgstr "ΓƒΓ±Γ΅Γ¬Γ¬Γ Γ…Γ±Γ£Γ΅Γ³Γ©ΓΎΓ­"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "Κρυμμένο"
+msgstr "ΓΓ±ΓµΓ¬Γ¬ΓΓ­Γ―"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "Επάνω"
+msgstr "Γ…Γ°ΓΓ­ΓΉ"
 
 #: panel.cpp:80
 msgid "Botto&m"
-msgstr "Κάτω"
+msgstr "ΓΓΓ΄ΓΉ"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "Επάνω/Αριστερά"
+msgstr "Γ…Γ°ΓΓ­ΓΉ/ΓΓ±Γ©Γ³Γ΄Γ¥Γ±Γ"
 
 #: panel.cpp:95
 msgid "Style"
@@ -80,35 +80,35 @@ msgstr ""
 
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "Μικρό"
+msgstr "ΓΓ©ΓªΓ±ΓΌ"
 
 #: panel.cpp:99
 msgid "&Normal"
-msgstr "Κανονικό"
+msgstr "ΓΓ΅Γ­Γ―Γ­Γ©ΓªΓΌ"
 
 #: panel.cpp:101
 msgid "L&arge"
-msgstr "Μεγάλο"
+msgstr "ΓΓ¥Γ£ΓΓ«Γ―"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "Ορατό"
+msgstr "ΓΓ±Γ΅Γ΄ΓΌ"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr "Πλάτος"
+msgstr "ΓΓ«ΓΓ΄Γ―Γ²"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Βοήθεια Μενού"
+msgstr "Γ‚Γ―ΓΓ¨Γ¥Γ©Γ΅ ΓΓ¥Γ­Γ―Γ½"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Βοήθεια Μενού Ενεργή"
+msgstr "Γ‚Γ―ΓΓ¨Γ¥Γ©Γ΅ ΓΓ¥Γ­Γ―Γ½ Γ…Γ­Γ¥Γ±Γ£Γ"
 
 #: options.cpp:84
 msgid "De&lay:"
-msgstr "Καθυστέρηση"
+msgstr "ΓΓ΅Γ¨ΓµΓ³Γ΄ΓΓ±Γ§Γ³Γ§"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
@@ -117,7 +117,7 @@ msgstr ""
 #: options.cpp:98 options.cpp:167 options.cpp:269
 #, fuzzy
 msgid "Large"
-msgstr "Μεγάλο"
+msgstr "ΓΓ¥Γ£ΓΓ«Γ―"
 
 #: options.cpp:110
 msgid "Visuals"
@@ -125,12 +125,12 @@ msgstr ""
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Αυτόματη απόκρυψη πινακιδίου"
+msgstr "ΓΓµΓ΄ΓΌΓ¬Γ΅Γ΄Γ§ Γ΅Γ°ΓΌΓªΓ±ΓµΓΈΓ§ Γ°Γ©Γ­Γ΅ΓªΓ©Γ¤ΓΓ―Γµ"
 
 #: options.cpp:153 options.cpp:255
 #, fuzzy
 msgid "Delay:"
-msgstr "Καθυστέρηση"
+msgstr "ΓΓ΅Γ¨ΓµΓ³Γ΄ΓΓ±Γ§Γ³Γ§"
 
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
@@ -146,7 +146,7 @@ msgstr ""
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Αυτόματη απόκρυψη γραμμής εργασιών"
+msgstr "ΓΓµΓ΄ΓΌΓ¬Γ΅Γ΄Γ§ Γ΅Γ°ΓΌΓªΓ±ΓµΓΈΓ§ Γ£Γ±Γ΅Γ¬Γ¬ΓΓ² Γ¥Γ±Γ£Γ΅Γ³Γ©ΓΎΓ­"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
@@ -154,17 +154,17 @@ msgstr ""
 
 #: options.cpp:395
 msgid "Others"
-msgstr "Άλλα"
+msgstr "ΒΆΓ«Γ«Γ΅"
 
 #: options.cpp:408
 #, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "Τα προσωπικά πρώτα"
+msgstr "Γ”Γ΅ Γ°Γ±Γ―Γ³ΓΉΓ°Γ©ΓªΓ Γ°Γ±ΓΎΓ΄Γ΅"
 
 #: options.cpp:416
 #, fuzzy
 msgid "Menu F&olders First"
-msgstr "Τα προσωπικά πρώτα"
+msgstr "Γ”Γ΅ Γ°Γ±Γ―Γ³ΓΉΓ°Γ©ΓªΓ Γ°Γ±ΓΎΓ΄Γ΅"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
@@ -213,12 +213,12 @@ msgstr ""
 #: disknav.cpp:173
 #, fuzzy
 msgid "Show Shared section"
-msgstr "Θέση"
+msgstr "ΓΓΓ³Γ§"
 
 #: disknav.cpp:180
 #, fuzzy
 msgid "Show Personal section"
-msgstr "Θέση"
+msgstr "ΓΓΓ³Γ§"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
@@ -233,13 +233,13 @@ msgid "Terminal application:"
 msgstr ""
 
 #~ msgid "ms"
-#~ msgstr "χιλιοστά του δευτερολέπτου"
+#~ msgstr "Γ·Γ©Γ«Γ©Γ―Γ³Γ΄Γ Γ΄Γ―Γµ Γ¤Γ¥ΓµΓ΄Γ¥Γ±Γ―Γ«ΓΓ°Γ΄Γ―Γµ"
 
 #~ msgid "Clock"
-#~ msgstr "Ρολόι"
+#~ msgstr "Γ‘Γ―Γ«ΓΌΓ©"
 
 #~ msgid "&24h"
-#~ msgstr "24ωρο"
+#~ msgstr "24ΓΉΓ±Γ―"
 
 #~ msgid "&12h AM/PM"
-#~ msgstr "12ωρο - πμ/μμ"
+#~ msgstr "12ΓΉΓ±Γ― - Γ°Γ¬/Γ¬Γ¬"

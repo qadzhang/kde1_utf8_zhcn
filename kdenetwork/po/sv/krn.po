@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-18 02:04+0100\n"
 "PO-Revision-Date: 1998-10-29 19:51+0100\n"
-"Last-Translator: Karl Bacsktröm <backstrom@kde.org>\n"
+"Last-Translator: Karl BacsktrÃ¶m <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:219 main.cpp:232 main.cpp:246 main.cpp:264 main.cpp:279
@@ -44,11 +44,11 @@ msgstr "Tog emot %.2f Kb"
 
 #: NNTP.cpp:607
 msgid "Getting Article"
-msgstr "Hämtar artiklar"
+msgstr "HÃ¤mtar artiklar"
 
 #: NNTP.cpp:749
 msgid "Article Received"
-msgstr "Artiklar hämtade"
+msgstr "Artiklar hÃ¤mtade"
 
 #: groupdlg.cpp:130
 msgid "Connect to Server"
@@ -56,15 +56,15 @@ msgstr "Kopplar upp mot servern"
 
 #: groupdlg.cpp:131
 msgid "Disconnect From Server"
-msgstr "Kopplar ner från servern"
+msgstr "Kopplar ner frÃ¥n servern"
 
 #: groupdlg.cpp:132
 msgid "Get Active File"
-msgstr "Hämta aktiv fil"
+msgstr "HÃ¤mta aktiv fil"
 
 #: groupdlg.cpp:134
 msgid "Post Queued Messages"
-msgstr "Skicka köande meddelanden"
+msgstr "Skicka kÃ¶ande meddelanden"
 
 #: groupdlg.cpp:136
 msgid "Exit"
@@ -76,11 +76,11 @@ msgstr "KRN - grupplista"
 
 #: groupdlg.cpp:142 groupdlg.cpp:148
 msgid "Get Subjects"
-msgstr "Hämta ämnen"
+msgstr "HÃ¤mta Ã¤mnen"
 
 #: groupdlg.cpp:143 groupdlg.cpp:149
 msgid "Get Articles"
-msgstr "Hämta artiklar"
+msgstr "HÃ¤mta artiklar"
 
 #: groupdlg.cpp:144 groupdlg.cpp:152 groupdlg.cpp:160
 msgid "Catchup"
@@ -88,7 +88,7 @@ msgstr "Kom ikapp"
 
 #: groupdlg.cpp:150 groupdlg.cpp:158
 msgid "(un)Subscribe"
-msgstr "prenumerera/avbeställ"
+msgstr "prenumerera/avbestÃ¤ll"
 
 #: artdlg.cpp:158 groupdlg.cpp:151
 msgid "Untag"
@@ -96,7 +96,7 @@ msgstr "Avmarkera"
 
 #: artdlg.cpp:167 findArtDlg.cpp:65 groupdlg.cpp:157
 msgid "Find"
-msgstr "Sök"
+msgstr "SÃ¶k"
 
 #: artdlg.cpp:178 groupdlg.cpp:159
 msgid "(Un)Tag"
@@ -108,7 +108,7 @@ msgstr "Skicka nya artiklar"
 
 #: groupdlg.cpp:163
 msgid "Post All Queued Articles"
-msgstr "Skicka alla köande artiklar"
+msgstr "Skicka alla kÃ¶ande artiklar"
 
 #: groupdlg.cpp:165
 msgid "&Subscribed"
@@ -124,15 +124,15 @@ msgstr "Identitet..."
 
 #: groupdlg.cpp:172
 msgid "NNTP Options..."
-msgstr "NNTP Inställningar..."
+msgstr "NNTP InstÃ¤llningar..."
 
 #: groupdlg.cpp:173
 msgid "Expire Options..."
-msgstr "Utgångs inställningar..."
+msgstr "UtgÃ¥ngs instÃ¤llningar..."
 
 #: groupdlg.cpp:174
 msgid "Printing Options..."
-msgstr "Skrivarinställningar..."
+msgstr "SkrivarinstÃ¤llningar..."
 
 #: groupdlg.cpp:181
 msgid "About Krn..."
@@ -148,23 +148,23 @@ msgstr "Koppla upp mot serern"
 
 #: groupdlg.cpp:202
 msgid "Disconnect from server"
-msgstr "Koppla ner från servern"
+msgstr "Koppla ner frÃ¥n servern"
 
 #: groupdlg.cpp:205
 msgid "Get list of active groups"
-msgstr "Hämta lista över aktiva grupper"
+msgstr "HÃ¤mta lista Ã¶ver aktiva grupper"
 
 #: groupdlg.cpp:206
 msgid "Find group"
-msgstr "Sök efter grupp"
+msgstr "SÃ¶k efter grupp"
 
 #: groupdlg.cpp:209
 msgid "(Un)Subscribe"
-msgstr "Prenumerera/avbeställ"
+msgstr "Prenumerera/avbestÃ¤ll"
 
 #: groupdlg.cpp:212
 msgid "Check for Unread Articles"
-msgstr "Kolla efter olästa artiklar"
+msgstr "Kolla efter olÃ¤sta artiklar"
 
 #: groupdlg.cpp:365 groupdlg.cpp:587 groupdlg.cpp:929
 msgid "All Newsgroups."
@@ -172,7 +172,7 @@ msgstr "Alla grupper."
 
 #: groupdlg.cpp:475 groupdlg.cpp:569
 msgid "Subscribed Newsgroups."
-msgstr "Grupper du prenumererar på."
+msgstr "Grupper du prenumererar pÃ¥."
 
 #: groupdlg.cpp:524
 msgid "Disconnected"
@@ -184,11 +184,11 @@ msgstr "Kopplar upp mot server"
 
 #: groupdlg.cpp:536
 msgid "Connected to server - Posting not allowed"
-msgstr "Uppkopplad mot servern - Postning är inte tillåtet"
+msgstr "Uppkopplad mot servern - Postning Ã¤r inte tillÃ¥tet"
 
 #: groupdlg.cpp:538
 msgid "Connected to server - Posting allowed"
-msgstr "Uppkopplad mot servern - Postning är tillåtet"
+msgstr "Uppkopplad mot servern - Postning Ã¤r tillÃ¥tet"
 
 #: groupdlg.cpp:544
 msgid "Can't connect to server"
@@ -208,23 +208,23 @@ msgstr "Uppkopplingen mot servern misslyckades: Autentiserings problem"
 
 #: groupdlg.cpp:607
 msgid "Krn-Question"
-msgstr "Krn-fråga"
+msgstr "Krn-frÃ¥ga"
 
 #: groupdlg.cpp:608
 msgid ""
 "The operation you requested needs a connection to the News server\n"
 "Should I attempt one?"
 msgstr ""
-"Uppgiften som du frågade efter behöver en uppkoppling mot Nyhetsservern\n"
-"Ska jag upprätta en sådan?"
+"Uppgiften som du frÃ¥gade efter behÃ¶ver en uppkoppling mot Nyhetsservern\n"
+"Ska jag upprÃ¤tta en sÃ¥dan?"
 
 #: groupdlg.cpp:872
 msgid ""
 "You don't have an active groups list.\n"
 " get it from server?"
 msgstr ""
-"Du har ingen lista över aktiva grupper.\n"
-"Vill du ha en från servern?"
+"Du har ingen lista Ã¶ver aktiva grupper.\n"
+"Vill du ha en frÃ¥n servern?"
 
 #: groupdlg.cpp:888
 msgid "Listing active newsgroups"
@@ -232,11 +232,11 @@ msgstr "Visa aktiva grupper"
 
 #: groupdlg.cpp:903
 msgid "KRN - Find a Newsgroup"
-msgstr "KRN - Sök efter nyhetsgrupp"
+msgstr "KRN - SÃ¶k efter nyhetsgrupp"
 
 #: groupdlg.cpp:904
 msgid "Enter the name of the Newsgroup"
-msgstr "Skriv in namnet på nyhetsgruppen"
+msgstr "Skriv in namnet pÃ¥ nyhetsgruppen"
 
 #: groupdlg.cpp:988
 msgid "Krn - Message"
@@ -244,15 +244,15 @@ msgstr "Krn - Meddelande"
 
 #: groupdlg.cpp:989
 msgid "I can't find the group you want!"
-msgstr "Jag kan inte hitta gruppen du sökte!"
+msgstr "Jag kan inte hitta gruppen du sÃ¶kte!"
 
 #: groupdlg.cpp:1082
 msgid "Getting messages in "
-msgstr "Hämtar meddelanden i "
+msgstr "HÃ¤mtar meddelanden i "
 
 #: groupdlg.cpp:1095
 msgid "Getting list of messages in "
-msgstr "Hämtar lista över meddelanden i "
+msgstr "HÃ¤mtar lista Ã¶ver meddelanden i "
 
 #: artdlg.cpp:151 artdlg.cpp:166
 msgid "Download"
@@ -260,11 +260,11 @@ msgstr "Ta ner"
 
 #: artdlg.cpp:153 artdlg.cpp:275
 msgid "Mark Read"
-msgstr "Markera läst"
+msgstr "Markera lÃ¤st"
 
 #: artdlg.cpp:154
 msgid "Mark Unread"
-msgstr "Markera oläst"
+msgstr "Markera olÃ¤st"
 
 #: artdlg.cpp:157 artdlg.cpp:177
 msgid "Decode"
@@ -272,11 +272,11 @@ msgstr "okoda"
 
 #: artdlg.cpp:159 artdlg.cpp:179
 msgid "Don't expire"
-msgstr "Inget bästföre datum"
+msgstr "Inget bÃ¤stfÃ¶re datum"
 
 #: artdlg.cpp:168
 msgid "Lookup in Altavista"
-msgstr "Slå upp på Altavista"
+msgstr "SlÃ¥ upp pÃ¥ Altavista"
 
 #: artdlg.cpp:172 artdlg.cpp:259
 msgid "Reply by Mail"
@@ -284,7 +284,7 @@ msgstr "Svara genom brev"
 
 #: artdlg.cpp:173
 msgid "Post Followup"
-msgstr "Skicka Uppföljning"
+msgstr "Skicka UppfÃ¶ljning"
 
 #: artdlg.cpp:174
 msgid "Post & Reply"
@@ -300,7 +300,7 @@ msgstr "Markerad"
 
 #: artdlg.cpp:192
 msgid "Show Only Unread Messages"
-msgstr "Visa bara olästa meddelanden"
+msgstr "Visa bara olÃ¤sta meddelanden"
 
 #: artdlg.cpp:194
 msgid "Show Only Cached Messages"
@@ -308,11 +308,11 @@ msgstr "Visa bara meddelanden i cachen"
 
 #: artdlg.cpp:196
 msgid "Show Locked Messages"
-msgstr "Visa låsta meddelanden"
+msgstr "Visa lÃ¥sta meddelanden"
 
 #: artdlg.cpp:198
 msgid "Expunge"
-msgstr "Utgången"
+msgstr "UtgÃ¥ngen"
 
 #: artdlg.cpp:199
 msgid "Appearance..."
@@ -324,7 +324,7 @@ msgstr "Sortering..."
 
 #: artdlg.cpp:204
 msgid "Edit Rules"
-msgstr "Ändra reglerna"
+msgstr "Ã„ndra reglerna"
 
 #: artdlg.cpp:205
 msgid "Update"
@@ -336,23 +336,23 @@ msgstr ""
 
 #: artdlg.cpp:221
 msgid "Previous Message"
-msgstr "Föregående meddelande"
+msgstr "FÃ¶regÃ¥ende meddelande"
 
 #: artdlg.cpp:223
 msgid "Next Message"
-msgstr "Nästa meddelande"
+msgstr "NÃ¤sta meddelande"
 
 #: artdlg.cpp:225
 msgid "Find Article"
-msgstr "Sök artikel"
+msgstr "SÃ¶k artikel"
 
 #: artdlg.cpp:230
 msgid "Get Article List"
-msgstr "Hämta artikel listan"
+msgstr "HÃ¤mta artikel listan"
 
 #: artdlg.cpp:232
 msgid "Refresh Display"
-msgstr "Uppdatera skärmen"
+msgstr "Uppdatera skÃ¤rmen"
 
 #: artdlg.cpp:248
 msgid "Current"
@@ -364,11 +364,11 @@ msgstr "Alla"
 
 #: artdlg.cpp:251
 msgid "Read"
-msgstr "Läst"
+msgstr "LÃ¤st"
 
 #: artdlg.cpp:252
 msgid "UnRead"
-msgstr "Oläst"
+msgstr "OlÃ¤st"
 
 #: artdlg.cpp:255
 msgid "Save Article"
@@ -380,7 +380,7 @@ msgstr "Skriv ut artikeln"
 
 #: artdlg.cpp:261
 msgid "Post a Followup"
-msgstr "Skicka en uppföljare"
+msgstr "Skicka en uppfÃ¶ljare"
 
 #: artdlg.cpp:263
 msgid "Post & Mail"
@@ -392,7 +392,7 @@ msgstr "Markera artikel"
 
 #: artdlg.cpp:271
 msgid "Lock (keep in cache)"
-msgstr "Lås (behåll i cachen)"
+msgstr "LÃ¥s (behÃ¥ll i cachen)"
 
 #: artdlg.cpp:273
 msgid "Decode Article"
@@ -400,11 +400,11 @@ msgstr "Dekoda artikel"
 
 #: artdlg.cpp:277
 msgid "Mark UnRead"
-msgstr "Markera oläst"
+msgstr "Markera olÃ¤st"
 
 #: artdlg.cpp:299 sortDlg.cpp:34
 msgid "Sender"
-msgstr "Avsändare"
+msgstr "AvsÃ¤ndare"
 
 #: artdlg.cpp:300 sortDlg.cpp:35
 msgid "Date"
@@ -416,15 +416,15 @@ msgstr "Rader"
 
 #: artdlg.cpp:302 sortDlg.cpp:33
 msgid "Score"
-msgstr "Poäng"
+msgstr "PoÃ¤ng"
 
 #: artdlg.cpp:303 sortDlg.cpp:32
 msgid "Subject"
-msgstr "Ämne"
+msgstr "Ã„mne"
 
 #: artdlg.cpp:469
 msgid "Threading..."
-msgstr "Trådning..."
+msgstr "TrÃ¥dning..."
 
 #: artdlg.cpp:478
 msgid "Showing Article List"
@@ -440,11 +440,11 @@ msgstr "Filen du valde existerar redan"
 
 #: artdlg.cpp:1330
 msgid "OverWrite"
-msgstr "Skrivöver"
+msgstr "SkrivÃ¶ver"
 
 #: artdlg.cpp:1332
 msgid "Append"
-msgstr "Lägg till"
+msgstr "LÃ¤gg till"
 
 #: artdlg.cpp:1367 artdlg.cpp:1432
 msgid ""
@@ -454,27 +454,27 @@ msgid ""
 "Error getting article.\n"
 "Server said:\n"
 msgstr ""
-"Från: Krn\n"
+"FrÃ¥n: Krn\n"
 "Till: Dig\n"
 "\n"
-"Fel vid hämtandet av artikeln.\n"
+"Fel vid hÃ¤mtandet av artikeln.\n"
 "Servern sa:\n"
 
 #: artdlg.cpp:1541
 msgid "Getting Article List"
-msgstr "Hämtar artikellistan"
+msgstr "HÃ¤mtar artikellistan"
 
 #: identDlg.cpp:41
 msgid "KRN-Identity Configuration"
-msgstr "KRN-Identitets inställningar"
+msgstr "KRN-Identitets instÃ¤llningar"
 
 #: identDlg.cpp:50
 msgid "Here you should enter your personal information"
-msgstr "Här ska du ange din personliga information"
+msgstr "HÃ¤r ska du ange din personliga information"
 
 #: identDlg.cpp:52
 msgid "You should know what these are!"
-msgstr "Du ska veta vad dessa är!"
+msgstr "Du ska veta vad dessa Ã¤r!"
 
 #: identDlg.cpp:61
 msgid "Real Name"
@@ -490,7 +490,7 @@ msgstr "Organisation"
 
 #: NNTPConfigDlg.cpp:30
 msgid "KRN-NNTP configuration"
-msgstr "KRN-NNTP inställningar"
+msgstr "KRN-NNTP instÃ¤llningar"
 
 #: NNTPConfigDlg.cpp:35
 msgid "Servers"
@@ -510,7 +510,7 @@ msgstr "Koppla upp vid start"
 
 #: NNTPConfigDlg.cpp:71
 msgid "Connect without asking"
-msgstr "Koppla upp utan att fråga"
+msgstr "Koppla upp utan att frÃ¥ga"
 
 #: NNTPConfigDlg.cpp:75
 msgid "Authenticate"
@@ -518,15 +518,15 @@ msgstr ""
 
 #: NNTPConfigDlg.cpp:80
 msgid "User Name"
-msgstr "Användarnamn"
+msgstr "AnvÃ¤ndarnamn"
 
 #: NNTPConfigDlg.cpp:84
 msgid "Password"
-msgstr "Lösenord"
+msgstr "LÃ¶senord"
 
 #: NNTPConfigDlg.cpp:91
 msgid "Ask before downloading more than"
-msgstr "Fråga innan nerladning av fler än"
+msgstr "FrÃ¥ga innan nerladning av fler Ã¤n"
 
 #: NNTPConfigDlg.cpp:94
 msgid "articles"
@@ -546,7 +546,7 @@ msgstr "Ett stort tack till"
 
 #: aboutDlg.cpp:66
 msgid "And Many thanks to:"
-msgstr "Och många tack till:"
+msgstr "Och mÃ¥nga tack till:"
 
 #: aboutDlg.cpp:71
 msgid "All KDE developers"
@@ -563,11 +563,11 @@ msgstr "Alla grupper."
 
 #: fontsDlg.cpp:39
 msgid "Message Display Settings"
-msgstr "Meddelandevisnings inställningar"
+msgstr "Meddelandevisnings instÃ¤llningar"
 
 #: fontsDlg.cpp:46
 msgid "Header Style"
-msgstr "Stil på huvudena"
+msgstr "Stil pÃ¥ huvudena"
 
 #: fontsDlg.cpp:48
 msgid "Fancy"
@@ -583,7 +583,7 @@ msgstr "Standard"
 
 #: fontsDlg.cpp:51
 msgid "Long"
-msgstr "Lång"
+msgstr "LÃ¥ng"
 
 #: fontsDlg.cpp:56
 msgid "Attachment Style"
@@ -619,7 +619,7 @@ msgstr "Stor"
 
 #: fontsDlg.cpp:73
 msgid "Huge"
-msgstr "Väldig stor"
+msgstr "VÃ¤ldig stor"
 
 #: fontsDlg.cpp:78
 msgid "Standard Font"
@@ -639,27 +639,27 @@ msgstr ""
 
 #: fontsDlg.cpp:94
 msgid "Background Color"
-msgstr "Bakgrundsfärg"
+msgstr "BakgrundsfÃ¤rg"
 
 #: fontsDlg.cpp:97
 msgid "Foreground Color"
-msgstr "Förgrundsfärg"
+msgstr "FÃ¶rgrundsfÃ¤rg"
 
 #: fontsDlg.cpp:100
 msgid "Link Color"
-msgstr "Linkfärg"
+msgstr "LinkfÃ¤rg"
 
 #: fontsDlg.cpp:103
 msgid "Followed Color"
-msgstr "Följd link färg"
+msgstr "FÃ¶ljd link fÃ¤rg"
 
 #: fontsDlg.cpp:107
 msgid "Use only one window"
-msgstr "Använd bara ett fönster"
+msgstr "AnvÃ¤nd bara ett fÃ¶nster"
 
 #: fontsDlg.cpp:109
 msgid "Split window vertically"
-msgstr "Dela fönstret vertikalt"
+msgstr "Dela fÃ¶nstret vertikalt"
 
 #: kmmessage.cpp:1340
 msgid "On %D, you wrote:"
@@ -699,7 +699,7 @@ msgstr "Typ"
 
 #: kmcomposewin.cpp:343
 msgid "&From:"
-msgstr "&Från:"
+msgstr "&FrÃ¥n:"
 
 #: kmcomposewin.cpp:345
 msgid "&Reply to:"
@@ -719,7 +719,7 @@ msgstr "&Blind kopia:"
 
 #: kmcomposewin.cpp:353
 msgid "&Subject:"
-msgstr "&Ämne"
+msgstr "&Ã„mne"
 
 #: kmcomposewin.cpp:356
 msgid "&Newsgroups:"
@@ -727,19 +727,19 @@ msgstr "&Nyhetsgrupp"
 
 #: kmcomposewin.cpp:358
 msgid "&Followup-To:"
-msgstr "Upp&följare på:"
+msgstr "Upp&fÃ¶ljare pÃ¥:"
 
 #: kmcomposewin.cpp:430
 msgid "&Send"
-msgstr "&Sänd"
+msgstr "&SÃ¤nd"
 
 #: kmcomposewin.cpp:433
 msgid "S&end later"
-msgstr "S&änd senare"
+msgstr "S&Ã¤nd senare"
 
 #: kmcomposewin.cpp:435
 msgid "S&end now"
-msgstr "S&änd nu"
+msgstr "S&Ã¤nd nu"
 
 #: kmcomposewin.cpp:437
 msgid "&Insert File..."
@@ -755,7 +755,7 @@ msgstr "&Nytt brev..."
 
 #: kmcomposewin.cpp:449
 msgid "New Mailreader"
-msgstr "Ny postläsare"
+msgstr "Ny postlÃ¤sare"
 
 #: kmcomposewin.cpp:469 kmcomposewin.cpp:693 kmcomposewin.cpp:1836
 msgid "Mark all"
@@ -763,31 +763,31 @@ msgstr "Markera alla"
 
 #: kmcomposewin.cpp:472 kmcomposewin.cpp:695
 msgid "Find..."
-msgstr "Sök..."
+msgstr "SÃ¶k..."
 
 #: kmcomposewin.cpp:474 kmcomposewin.cpp:696
 msgid "Replace..."
-msgstr "Ersätt..."
+msgstr "ErsÃ¤tt..."
 
 #: kmcomposewin.cpp:477
 msgid "&Spellcheck..."
-msgstr "&Rättstavning..."
+msgstr "&RÃ¤ttstavning..."
 
 #: kmcomposewin.cpp:484
 msgid "&Urgent"
-msgstr "&Bråttom"
+msgstr "&BrÃ¥ttom"
 
 #: kmcomposewin.cpp:486
 msgid "&Confirm delivery"
-msgstr "&Bekräfta utdelad"
+msgstr "&BekrÃ¤fta utdelad"
 
 #: kmcomposewin.cpp:488
 msgid "&Confirm read"
-msgstr "&Bekräfta läst"
+msgstr "&BekrÃ¤fta lÃ¤st"
 
 #: kmcomposewin.cpp:491
 msgid "&Spellchecker..."
-msgstr "&Rättstavning..."
+msgstr "&RÃ¤ttstavning..."
 
 #: kmcomposewin.cpp:494
 msgid "&Charsets..."
@@ -795,11 +795,11 @@ msgstr "&Teckensnitt..."
 
 #: kmcomposewin.cpp:507
 msgid "&All Fields"
-msgstr "&Alla fält"
+msgstr "&Alla fÃ¤lt"
 
 #: kmcomposewin.cpp:509
 msgid "&From"
-msgstr "&Från"
+msgstr "&FrÃ¥n"
 
 #: kmcomposewin.cpp:510
 msgid "&Reply to"
@@ -819,7 +819,7 @@ msgstr "&Blind kopia"
 
 #: kmcomposewin.cpp:514
 msgid "&Subject"
-msgstr "&Ämne"
+msgstr "&Ã„mne"
 
 #: kmcomposewin.cpp:516
 msgid "&Newsgroups"
@@ -827,11 +827,11 @@ msgstr "&Nyhetsgrupp"
 
 #: kmcomposewin.cpp:517
 msgid "&Followup-To"
-msgstr "&Uppföljare till"
+msgstr "&UppfÃ¶ljare till"
 
 #: kmcomposewin.cpp:523
 msgid "Append S&ignature"
-msgstr "Lägg till s&ignatur"
+msgstr "LÃ¤gg till s&ignatur"
 
 #: kmcomposewin.cpp:525
 msgid "&Insert File"
@@ -883,7 +883,7 @@ msgstr "Kopiera markering"
 
 #: kmcomposewin.cpp:588
 msgid "Paste clipboard contents"
-msgstr "Klistra in klippbordets innehåll"
+msgstr "Klistra in klippbordets innehÃ¥ll"
 
 #: kmcomposewin.cpp:593
 msgid "Attach file"
@@ -891,7 +891,7 @@ msgstr "Bifoga fil"
 
 #: kmcomposewin.cpp:597
 msgid "Open addressbook..."
-msgstr "Öppna adressboken..."
+msgstr "Ã–ppna adressboken..."
 
 #: kmcomposewin.cpp:604
 msgid "sign message"
@@ -911,14 +911,14 @@ msgstr "Rad"
 
 #: kmcomposewin.cpp:908
 msgid "KMail Confirm"
-msgstr "KMail Bekräftelse"
+msgstr "KMail BekrÃ¤ftelse"
 
 #: kmcomposewin.cpp:909
 msgid ""
 "Close and discard\n"
 "edited message?"
 msgstr ""
-"Stäng och kasta bort\n"
+"StÃ¤ng och kasta bort\n"
 "skrivet meddelande?"
 
 #: kmcomposewin.cpp:1182
@@ -954,12 +954,12 @@ msgid ""
 "Sorry, but this feature\n"
 "is still missing"
 msgstr ""
-"Tyvärr, denna funktion\n"
+"TyvÃ¤rr, denna funktion\n"
 "fattas fortfarande."
 
 #: kmcomposewin.cpp:1466
 msgid "unnamed"
-msgstr "namnlös"
+msgstr "namnlÃ¶s"
 
 #: kmcomposewin.cpp:1481
 msgid "To:"
@@ -967,7 +967,7 @@ msgstr "Till:"
 
 #: kmcomposewin.cpp:1485
 msgid "Subject:"
-msgstr "Ämne:"
+msgstr "Ã„mne:"
 
 #: kmcomposewin.cpp:1488
 msgid "Date:"
@@ -975,17 +975,17 @@ msgstr "Datum:"
 
 #: kmcomposewin.cpp:1565
 msgid "Choose Signature File"
-msgstr "Välj en signaturfil"
+msgstr "VÃ¤lj en signaturfil"
 
 #: kmcomposewin.cpp:2018
 msgid "Spellcheck - KMail"
-msgstr "Rättstavning - KMail"
+msgstr "RÃ¤ttstavning - KMail"
 
 #: kmcomposewin.cpp:2044
 msgid ""
 "Error starting KSpell. Please make sure you have ISpell properly configured."
 msgstr ""
-"Fel då KSpell startades. Se till att du har ISpell korrekt installerat."
+"Fel dÃ¥ KSpell startades. Se till att du har ISpell korrekt installerat."
 
 #: kmsender.cpp:116
 msgid ""
@@ -994,7 +994,7 @@ msgid ""
 "and try again."
 msgstr ""
 "Var god ange skicknings-\n"
-"metod och försök igen"
+"metod och fÃ¶rsÃ¶k igen"
 
 #: kmsender.cpp:122
 msgid ""
@@ -1002,25 +1002,25 @@ msgid ""
 "identity settings:\n"
 "user-name and email-address"
 msgstr ""
-"Var god fyll i fälten under\n"
-"identitetsinställningar:\n"
-"användarnamn och e-postadress"
+"Var god fyll i fÃ¤lten under\n"
+"identitetsinstÃ¤llningar:\n"
+"anvÃ¤ndarnamn och e-postadress"
 
 #: kmsender.cpp:147
 msgid "You must specify a receiver"
-msgstr "Du måste ange en mottagare"
+msgstr "Du mÃ¥ste ange en mottagare"
 
 #: kmsender.cpp:158
 msgid "Cannot add message to outbox folder"
-msgstr "Kan inte lägga brevet i utkorgen"
+msgstr "Kan inte lÃ¤gga brevet i utkorgen"
 
 #: kmsender.cpp:189
 msgid "Sending still in progress"
-msgstr "Skickning pågår fortfarande"
+msgstr "Skickning pÃ¥gÃ¥r fortfarande"
 
 #: kmsender.cpp:245
 msgid "Initiating sender process..."
-msgstr "Initierar hämtning..."
+msgstr "Initierar hÃ¤mtning..."
 
 #: kmsender.cpp:261
 msgid "Sending message: "
@@ -1028,7 +1028,7 @@ msgstr "Skickar meddelande:"
 
 #: kmsender.cpp:289
 msgid "Done sending messages."
-msgstr "Färdig med att skicka meddelanden."
+msgstr "FÃ¤rdig med att skicka meddelanden."
 
 #: kmsender.cpp:308
 msgid "Sending failed:"
@@ -1040,7 +1040,7 @@ msgid ""
 "in the settings."
 msgstr ""
 "Var god ange mailerprogram\n"
-"under inställningar."
+"under instÃ¤llningar."
 
 #: kmsender.cpp:501
 #, c-format
@@ -1058,13 +1058,13 @@ msgid ""
 "host %s for sending:\n"
 "%s"
 msgstr ""
-"Kan inte öppna SMTP-port till\n"
-"värden %s för sändning:\n"
+"Kan inte Ã¶ppna SMTP-port till\n"
+"vÃ¤rden %s fÃ¶r sÃ¤ndning:\n"
 "%s"
 
 #: kmsender.cpp:623
 msgid "Cannot close SMTP connection."
-msgstr "Kan inte stänga SMTP-anslutningen."
+msgstr "Kan inte stÃ¤nga SMTP-anslutningen."
 
 #: kmsender.cpp:673
 msgid "transmitting message"
@@ -1072,7 +1072,7 @@ msgstr "skickar meddelande"
 
 #: kmsender.cpp:707
 msgid "network error"
-msgstr "nätverksfel"
+msgstr "nÃ¤tverksfel"
 
 #: kmsender.cpp:709
 #, c-format
@@ -1094,19 +1094,19 @@ msgstr "Skickar SMTP-kommando: %s"
 
 #: findArtDlg.cpp:22
 msgid "KRN - Article Searcher"
-msgstr "KRN - Artikelsökning"
+msgstr "KRN - ArtikelsÃ¶kning"
 
 #: findArtDlg.cpp:29
 msgid "Find Articles With:"
-msgstr "Sök efter artikel med:"
+msgstr "SÃ¶k efter artikel med:"
 
 #: findArtDlg.cpp:34 rulesDlg.cpp:106
 msgid "In Field:"
-msgstr "I fält:"
+msgstr "I fÃ¤lt:"
 
 #: findArtDlg.cpp:53 rulesDlg.cpp:131
 msgid "Case Sensitive"
-msgstr "Storlekskänslig"
+msgstr "StorlekskÃ¤nslig"
 
 #: findArtDlg.cpp:56 rulesDlg.cpp:132
 msgid "Wildcard Mode"
@@ -1114,7 +1114,7 @@ msgstr ""
 
 #: findArtDlg.cpp:66 rulesDlg.cpp:144
 msgid "Done"
-msgstr "Färdig"
+msgstr "FÃ¤rdig"
 
 #: kmidentity.cpp:162
 #, c-format
@@ -1123,7 +1123,7 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
-"Klarade inte att köra signaturskriptet\n"
+"Klarade inte att kÃ¶ra signaturskriptet\n"
 "%s\n"
 "%s"
 
@@ -1146,7 +1146,7 @@ msgid ""
 "This is a directory and not a file:\n"
 "%s"
 msgstr ""
-"Detta är en katalog inte en fil:\n"
+"Detta Ã¤r en katalog inte en fil:\n"
 "%s"
 
 #: kfileio.cpp:61
@@ -1155,7 +1155,7 @@ msgid ""
 "You do not have read permissions to the file:\n"
 "%s"
 msgstr ""
-"Du har inte läsrättigheter för filen:\n"
+"Du har inte lÃ¤srÃ¤ttigheter fÃ¶r filen:\n"
 "%s"
 
 #: kfileio.cpp:72 kmaddrbook.cpp:152
@@ -1164,7 +1164,7 @@ msgid ""
 "Could not read file:\n"
 "%s"
 msgstr ""
-"Kan inte läsa filen:\n"
+"Kan inte lÃ¤sa filen:\n"
 "%s"
 
 #: kfileio.cpp:75 kmaddrbook.cpp:155
@@ -1173,7 +1173,7 @@ msgid ""
 "Could not open file:\n"
 "%s"
 msgstr ""
-"Kan inte öppna filen:\n"
+"Kan inte Ã¶ppna filen:\n"
 "%s"
 
 #: kfileio.cpp:78
@@ -1182,13 +1182,13 @@ msgid ""
 "Error while reading file:\n"
 "%s"
 msgstr ""
-"Fel vid läsningen av filen:\n"
+"Fel vid lÃ¤sningen av filen:\n"
 "%s"
 
 #: kfileio.cpp:95
 #, c-format
 msgid "Could only read %u bytes of %u."
-msgstr "Det gick bara att läsa %u bytes av %u."
+msgstr "Det gick bara att lÃ¤sa %u bytes av %u."
 
 #: kfileio.cpp:124
 #, c-format
@@ -1197,7 +1197,7 @@ msgid ""
 "Do you want to replace it ?"
 msgstr ""
 "Filen %s existerar.\n"
-"Vill du skriva över den ?"
+"Vill du skriva Ã¶ver den ?"
 
 #: kfileio.cpp:144
 #, c-format
@@ -1206,7 +1206,7 @@ msgid ""
 "Continue anyway ?"
 msgstr ""
 "Kan inte skapa backup kopia av %s.\n"
-"Fortsätta ändå ?"
+"FortsÃ¤tta Ã¤ndÃ¥ ?"
 
 #: kfileio.cpp:156 kfileio.cpp:174
 #, c-format
@@ -1223,7 +1223,7 @@ msgid ""
 "Could not open file for writing:\n"
 "%s"
 msgstr ""
-"Kan inte öppna filen för skrivning:\n"
+"Kan inte Ã¶ppna filen fÃ¶r skrivning:\n"
 "%s"
 
 #: kfileio.cpp:163 kmaddrbook.cpp:158
@@ -1237,8 +1237,8 @@ msgstr ""
 
 #: kfileio.cpp:180
 #, c-format
-msgid "Could only write %d bytes of %d."
-msgstr "Det gick bara att skriva %u bytes av %u."
+#~ msgid "Could only write %d bytes of %d."
+#~ msgstr "Det gick bara att skriva %u bytes av %u."
 
 #: kmmsgpartdlg.cpp:41
 msgid "Message Part Properties"
@@ -1275,7 +1275,7 @@ msgstr "Kopia:"
 
 #: kmreaderwin.cpp:328 kmreaderwin.cpp:347 kmreaderwin.cpp:368
 msgid "From: "
-msgstr "Från:"
+msgstr "FrÃ¥n:"
 
 #: kmreaderwin.cpp:330 kmreaderwin.cpp:349 kmreaderwin.cpp:370
 msgid "To: "
@@ -1319,7 +1319,7 @@ msgstr "Varning: Felaktig signatur av"
 
 #: kmreaderwin.cpp:451
 msgid "unknown key ID"
-msgstr "okänt nyckel ID"
+msgstr "okÃ¤nt nyckel ID"
 
 #: kmreaderwin.cpp:701
 msgid "Attachment: "
@@ -1327,12 +1327,12 @@ msgstr "Bilaga:"
 
 #: kmreaderwin.cpp:813
 msgid "Could not create temporary file"
-msgstr "Kan inte skapa temporär fil"
+msgstr "Kan inte skapa temporÃ¤r fil"
 
 #: kmreaderwin.cpp:834
 #, c-format
 msgid "Could not save temporary file %s"
-msgstr "Kan inte spara temporära filen %s"
+msgstr "Kan inte spara temporÃ¤ra filen %s"
 
 #: kmreaderwin.cpp:863
 msgid "Could not save file"
@@ -1344,7 +1344,7 @@ msgid ""
 "Please check your PATH is set correctly."
 msgstr ""
 "Hittade inte PGP programmet.\n"
-"Var vänlig kolla att din PATH är korrekt."
+"Var vÃ¤nlig kolla att din PATH Ã¤r korrekt."
 
 #: kpgp.cpp:193
 msgid ""
@@ -1352,11 +1352,11 @@ msgid ""
 "Please check your PATH is set correctly."
 msgstr ""
 "Hittade inte PGP programmet.\n"
-"Var vänlig kolla att din PATH är korrekt."
+"Var vÃ¤nlig kolla att din PATH Ã¤r korrekt."
 
 #: kpgp.cpp:207
 msgid "The pass phrase is missing."
-msgstr "Lösenordsfrasen saknas."
+msgstr "LÃ¶senordsfrasen saknas."
 
 #: kpgp.cpp:286 kpgp.cpp:312 kpgp.cpp:325 kpgp.cpp:344 kpgp.cpp:361
 msgid "PGP Warning"
@@ -1418,11 +1418,11 @@ msgid ""
 "PGP passphrase"
 msgstr ""
 "Var god och skriv in\n"
-"ditt PGP lösenordsfras"
+"ditt PGP lÃ¶senordsfras"
 
 #: kpgp.cpp:744
 msgid "PGP Security Check"
-msgstr "PGPs Säkerhetskontroll"
+msgstr "PGPs SÃ¤kerhetskontroll"
 
 #: kpgp.cpp:765
 msgid "Identity"
@@ -1430,19 +1430,19 @@ msgstr "Identitet"
 
 #: kpgp.cpp:771
 msgid "PGP User Identity:"
-msgstr "PGP användaridentitet:"
+msgstr "PGP anvÃ¤ndaridentitet:"
 
 #: kpgp.cpp:782
 msgid "Store passphrase"
-msgstr "Spara lösenordsfrasen"
+msgstr "Spara lÃ¶senordsfrasen"
 
 #: kpgp.cpp:788
 msgid "Always encrypt to self"
-msgstr "Alltid kryptera till sig själv"
+msgstr "Alltid kryptera till sig sjÃ¤lv"
 
 #: krnsender.cpp:60
 msgid "This server is read onlyyou can't post here!"
-msgstr "Du saknar skrivrättigheter på denna server!"
+msgstr "Du saknar skrivrÃ¤ttigheter pÃ¥ denna server!"
 
 #: kmaddrbookdlg.cpp:20
 msgid "Addressbook"
@@ -1474,15 +1474,15 @@ msgstr ""
 
 #: expireDlg.cpp:36
 msgid "For how long should we keep things (in days)?"
-msgstr "Hur länge ska vi behålla saker (i dagar)?"
+msgstr "Hur lÃ¤nge ska vi behÃ¥lla saker (i dagar)?"
 
 #: expireDlg.cpp:46
 msgid "Read:"
-msgstr "Läst:"
+msgstr "LÃ¤st:"
 
 #: expireDlg.cpp:47
 msgid "Unread:"
-msgstr "Oläst:"
+msgstr "OlÃ¤st:"
 
 #: expireDlg.cpp:50
 msgid "Article Bodies:"
@@ -1494,11 +1494,11 @@ msgstr "Artikelhuvuden:"
 
 #: printdlg.cpp:21
 msgid "KRN - Print Settings"
-msgstr "KRN - Skrivar inställningar"
+msgstr "KRN - Skrivar instÃ¤llningar"
 
 #: printdlg.cpp:26
 msgid "KRN - Printing Settings"
-msgstr "KRN - Skrivnings inställningar"
+msgstr "KRN - Skrivnings instÃ¤llningar"
 
 #: printdlg.cpp:33
 msgid "General"
@@ -1510,11 +1510,11 @@ msgstr "Utskrivssystem"
 
 #: printdlg.cpp:37
 msgid "Use HTML Printing"
-msgstr "Använd HTML utskrivning"
+msgstr "AnvÃ¤nd HTML utskrivning"
 
 #: printdlg.cpp:40
 msgid "Use Direct Printing"
-msgstr "Använd direkt utskrivning"
+msgstr "AnvÃ¤nd direkt utskrivning"
 
 #: printdlg.cpp:45
 msgid "Direct Printing"
@@ -1522,7 +1522,7 @@ msgstr "Direkt utskrivning"
 
 #: printdlg.cpp:48
 msgid "Print using:"
-msgstr "Utskrift använder:"
+msgstr "Utskrift anvÃ¤nder:"
 
 #: printdlg.cpp:52
 msgid "Feed it with:"
@@ -1594,19 +1594,19 @@ msgstr "Sortera efter:"
 
 #: sortDlg.cpp:56
 msgid "Use Threading"
-msgstr "Använd trådning"
+msgstr "AnvÃ¤nd trÃ¥dning"
 
 #: charsetsDlg.cpp:27
 msgid "KRN - Charset Settings"
-msgstr "KRN - teckenuppsättning"
+msgstr "KRN - teckenuppsÃ¤ttning"
 
 #: charsetsDlg.cpp:29
 msgid "KMail - Charset Settings"
-msgstr "KMail - teckenuppsättning"
+msgstr "KMail - teckenuppsÃ¤ttning"
 
 #: charsetsDlg.cpp:39
 msgid "Message charset"
-msgstr "Meddelandets teckenuppsättning"
+msgstr "Meddelandets teckenuppsÃ¤ttning"
 
 #: charsetsDlg.cpp:57
 msgid "Composer charset"
@@ -1614,7 +1614,7 @@ msgstr ""
 
 #: charsetsDlg.cpp:75
 msgid "Set as &default"
-msgstr "Sätt som &standard"
+msgstr "SÃ¤tt som &standard"
 
 #: charsetsDlg.cpp:80
 msgid "&7 bit is ASCII"
@@ -1622,7 +1622,7 @@ msgstr "&7 bitars Ascii"
 
 #: charsetsDlg.cpp:84
 msgid "&Qute unknonw characters"
-msgstr "&Citera okända tecken"
+msgstr "&Citera okÃ¤nda tecken"
 
 #: expirestatusdlg.cpp:35
 msgid "Please wait a minute, I am expiring!"
@@ -1630,7 +1630,7 @@ msgstr ""
 
 #: kpgpbase.cpp:315
 msgid "Bad pass Phrase; couldn't sign"
-msgstr "Felaktig lösenordsfras; kunde inte signera"
+msgstr "Felaktig lÃ¶senordsfras; kunde inte signera"
 
 #: kpgpbase.cpp:354
 msgid "error running pgp"
@@ -1638,7 +1638,7 @@ msgstr ""
 
 #: kpgpbase.cpp:371 kpgpbase.cpp:662
 msgid "Bad pass Phrase; couldn't decrypt"
-msgstr "Felaktig lösenordsfras; kunde inte dekryptera"
+msgstr "Felaktig lÃ¶senordsfras; kunde inte dekryptera"
 
 #: kpgpbase.cpp:382 kpgpbase.cpp:673
 msgid "Do not have the secret key for this message"
@@ -1654,7 +1654,7 @@ msgstr "??? (filen ~/.pgp/pubring.pgp hittades inte)"
 
 #: kpgpbase.cpp:585
 msgid "The passphrase you entered is invalid."
-msgstr "Lösenordsfrasen felaktig."
+msgstr "LÃ¶senordsfrasen felaktig."
 
 #: kpgpbase.cpp:611
 msgid ""
@@ -1669,17 +1669,17 @@ msgid ""
 "%s\n"
 "They will not be able to decrypt the message"
 msgstr ""
-"Följande nycklar är inte pålitliga:\n"
+"FÃ¶ljande nycklar Ã¤r inte pÃ¥litliga:\n"
 "%s\n"
 "Dessa personer kommer inte att kunna dekryptera sina meddelande."
 
 #: TooManydlg.cpp:25
 msgid "KRN-Confirmation"
-msgstr "KRN-Bekräftelse"
+msgstr "KRN-BekrÃ¤ftelse"
 
 #: TooManydlg.cpp:30
 msgid "Read how many articles?"
-msgstr "Läs hur många artiklar?"
+msgstr "LÃ¤s hur mÃ¥nga artiklar?"
 
 #: TooManydlg.cpp:36
 msgid "Get them from"
@@ -1687,7 +1687,7 @@ msgstr ""
 
 #: TooManydlg.cpp:37
 msgid "Oldest articles"
-msgstr "Äldsta artiklarna"
+msgstr "Ã„ldsta artiklarna"
 
 #: TooManydlg.cpp:39
 msgid "Newest articles"

@@ -1,4 +1,4 @@
-# Esperantaj mesaøoj por "konquest"
+# Esperantaj mesaÄoj por "konquest"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: gameboard.cc:55
@@ -28,7 +28,7 @@ msgstr ": Elektu celplanedon..."
 
 #: gameboard.cc:243
 msgid ": How many ships?"
-msgstr ": Kiom da şipoj?"
+msgstr ": Kiom da Åipoj?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
@@ -41,7 +41,7 @@ msgid ""
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
 "La distanco de planedo %s al planedo %s estas %s da lumjaroj.\n"
-"Şipo eliranta tiun æi rondon alvenos en rondo %s"
+"Åœipo eliranta tiun Ä‰i rondon alvenos en rondo %s"
 
 #: gameboard.cc:291
 msgid "Distance"
@@ -68,11 +68,11 @@ msgstr "Imperio pereis..."
 #: gameboard.cc:438
 #, c-format
 msgid "The fallen empire of %s has staggered back to life."
-msgstr "La pereita imperio de %s şanceliøis al vivo."
+msgstr "La pereita imperio de %s ÅanceliÄis al vivo."
 
 #: gameboard.cc:440
 msgid "Up from the ashes..."
-msgstr "Reviviøo el la cindro..."
+msgstr "ReviviÄo el la cindro..."
 
 #: gameboard.cc:460
 #, c-format
@@ -107,7 +107,7 @@ msgstr "Finu ludon"
 
 #: gameboard.cc:580
 msgid "Do you wish to retire this game?"
-msgstr "Æu vi volas fini tiun æi ludon?"
+msgstr "Äˆu vi volas fini tiun Ä‰i ludon?"
 
 #: gameboard.cc:586
 msgid "Final Standings"
@@ -115,7 +115,7 @@ msgstr "Fina rezulto"
 
 #: gameboard.cc:758
 msgid "Not enough ships to send."
-msgstr "Ne sufiæe da şipoj por sendado."
+msgstr "Ne sufiÄ‰e da Åipoj por sendado."
 
 #: mainwin.cc:23
 msgid "GNU-Lactic Conquest"
@@ -132,7 +132,7 @@ msgid ""
 "See http://www.ia.net/~rsteffen/konquest.html for more info"
 msgstr ""
 "versio %s\n"
-"kopirajto (c) 1998 æe\n"
+"kopirajto (c) 1998 Ä‰e\n"
 "La Gnu-lakta konkero-projekto\n"
 "\n"
 "KDE-versio de Russ Steffen <rsteffen@ia.net>\n"
@@ -148,7 +148,7 @@ msgstr "Montru rezulton"
 
 #: newgamedlg.cc:31
 msgid "Preview Map"
-msgstr "Antaırigardu mapon"
+msgstr "AntaÅ­rigardu mapon"
 
 #: newgamedlg.cc:35
 msgid "&Reject Map"
@@ -164,7 +164,7 @@ msgstr "&Aldonu"
 
 #: newgamedlg.cc:54
 msgid "&Clear"
-msgstr "&Vişu"
+msgstr "&ViÅu"
 
 #: newgamedlg.cc:70
 msgid "&Start Game"
@@ -173,7 +173,7 @@ msgstr "&Komencu ludon"
 #: newgamedlg.cc:162
 #, c-format
 msgid "Number of Neutral Planets: %2d"
-msgstr "Nombro de neıtralaj planedoj: %2d"
+msgstr "Nombro de neÅ­tralaj planedoj: %2d"
 
 #: newgamedlg.cc:174
 #, c-format
@@ -190,7 +190,7 @@ msgstr "Posedanto: "
 
 #: planet_info.cc:87
 msgid "Ships : "
-msgstr "Şipoj: "
+msgstr "Åœipoj: "
 
 #: planet_info.cc:90
 msgid "Production : "
@@ -203,7 +203,7 @@ msgstr "Mortoprocentoj: "
 #: planet_info.cc:137
 #, c-format
 msgid "Ships : %d"
-msgstr "Şipoj: %d"
+msgstr "Åœipoj: %d"
 
 #: planet_info.cc:140
 #, c-format
@@ -221,7 +221,7 @@ msgid ""
 "Do you wish to add more turns?"
 msgstr ""
 "Tio estas la lasta rondo.\n"
-"Æu vi volas aldoni pliajn rondojn?"
+"Äˆu vi volas aldoni pliajn rondojn?"
 
 #: gameenddlg.cc:64
 #, c-format
@@ -234,7 +234,7 @@ msgstr "Ludantoj"
 
 #: scoredlg.cc:19
 msgid "Ships Built"
-msgstr "Konstruitaj şipoj"
+msgstr "Konstruitaj Åipoj"
 
 #: scoredlg.cc:20
 msgid "Planets Conquered"
@@ -250,4 +250,4 @@ msgstr "Detruitaj flugkaravanoj"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"
-msgstr "Detruitaj şipoj"
+msgstr "Detruitaj Åipoj"

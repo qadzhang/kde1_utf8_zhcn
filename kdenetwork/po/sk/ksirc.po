@@ -9,29 +9,29 @@ msgstr ""
 "Last-Translator: Juraj Bednar <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: FilterRuleEditor.cpp:29
 msgid "Edit Filter Rules"
-msgstr "Editovaª filtrovacie pravidl·"
+msgstr "Editova≈• filtrovacie pravidl√°"
 
 #: FilterRuleEditor.cpp:58 FilterRuleEditor.cpp:79
 #: FilterRuleEditorData.cpp:105
 msgid "&Modify"
-msgstr "&Zmeniª"
+msgstr "&Zmeni≈•"
 
 #: FilterRuleEditor.cpp:74
 msgid "Missing Arguments"
-msgstr "Ch˝baj˙ce argumenty"
+msgstr "Ch√Ωbaj√∫ce argumenty"
 
 #: FilterRuleEditor.cpp:75
 msgid ""
 "Cannot create a Rule since not\n"
 "all the fields are filled in."
 msgstr ""
-"NemÙæem vytvoriª pravidlo, pretoæe\n"
-"nie s˙ vyplnenÈ vπetky poloæky."
+"Nem√¥≈æem vytvori≈• pravidlo, preto≈æe\n"
+"nie s√∫ vyplnen√© v≈°etky polo≈æky."
 
 #: FilterRuleEditorData.cpp:33
 msgid "Description:"
@@ -51,7 +51,7 @@ msgstr "Pre:"
 
 #: FilterRuleEditorData.cpp:126
 msgid "New Rule"
-msgstr "NovÈ pravidlo"
+msgstr "Nov√© pravidlo"
 
 #: FilterRuleEditorData.cpp:145
 msgid "Up"
@@ -67,7 +67,7 @@ msgstr "Nastavenie farieb"
 
 #: KSircColourData.cpp:33
 msgid "Generic Text"
-msgstr "Vπeobecn˝ text"
+msgstr "V≈°eobecn√Ω text"
 
 #: KSircColourData.cpp:62
 msgid "Info"
@@ -75,7 +75,7 @@ msgstr "Info"
 
 #: KSircColourData.cpp:71
 msgid "Chan Messages"
-msgstr "Spr·vy kan·la"
+msgstr "Spr√°vy kan√°la"
 
 #: KSircColourData.cpp:80
 msgid "Errors"
@@ -87,15 +87,15 @@ msgstr "Pozadie"
 
 #: dccDialog.cpp:22
 msgid "DCC Files Offered"
-msgstr "Boli pon˙knutÈ DCC s˙bory"
+msgstr "Boli pon√∫knut√© DCC s√∫bory"
 
 #: dccDialogData.cpp:38
 msgid "&Get"
-msgstr "&ZÌskaª"
+msgstr "&Z√≠ska≈•"
 
 #: dccDialogData.cpp:46
 msgid "&Forget"
-msgstr "&Nechaª tak"
+msgstr "&Necha≈• tak"
 
 #: ksirc.cpp:60
 msgid ""
@@ -105,11 +105,11 @@ msgid ""
 "kSirc-ALPHA HAS EXPIRED!!\n"
 "Please upgrade or use a beta release"
 msgstr ""
-"kSirc alfa verzia expiruj˙ kaæd˝ch\n"
-"8 t˝ædÚov.\n"
+"kSirc alfa verzia expiruj√∫ ka≈æd√Ωch\n"
+"8 t√Ω≈æd≈àov.\n"
 "\n"
 "kSirc-ALPHA EXPIROVALA!!\n"
-"ProsÌm upgradnite alebo pouæÌvajte beta verziu"
+"Pros√≠m upgradnite alebo pou≈æ√≠vajte beta verziu"
 
 #: ksirc.cpp:68
 msgid ""
@@ -118,17 +118,17 @@ msgid ""
 "\n"
 "THIS VERSION WILL EXPIRE IN UNDER 4 WEEKS"
 msgstr ""
-"kSirc alfa verzie expiruj˙ kaæd˝ch 8\n"
-"t˝ædÚov.\n"
-"T¡TO VERZIA EXPIRUJE O 4 T›ÆDNE !!!"
+"kSirc alfa verzie expiruj√∫ ka≈æd√Ωch 8\n"
+"t√Ω≈æd≈àov.\n"
+"T√ÅTO VERZIA EXPIRUJE O 4 T√ù≈ΩDNE !!!"
 
 #: open_top.cpp:26
 msgid "New Window For"
-msgstr "NovÈ okno pre"
+msgstr "Nov√© okno pre"
 
 #: open_topData.cpp:39
 msgid "Channel/Nick:"
-msgstr "Kan·l/Nick:"
+msgstr "Kan√°l/Nick:"
 
 #: servercontroller.cpp:160
 msgid "&Dock"
@@ -136,11 +136,11 @@ msgstr "&Do panelu"
 
 #: servercontroller.cpp:168 servercontroller.cpp:750
 msgid "New Server..."
-msgstr "Nov˝ server..."
+msgstr "Nov√Ω server..."
 
 #: servercontroller.cpp:169
 msgid "&Join Channel..."
-msgstr "&Pripojiª sa ku kan·lu..."
+msgstr "&Pripoji≈• sa ku kan√°lu..."
 
 #: servercontroller.cpp:171
 msgid "&Connections"
@@ -152,15 +152,15 @@ msgstr "&Nastavenie farieb..."
 
 #: servercontroller.cpp:190 servercontroller.cpp:741
 msgid "&Global Fonts..."
-msgstr "Glob·lne &pÌsma..."
+msgstr "Glob√°lne &p√≠sma..."
 
 #: servercontroller.cpp:192 servercontroller.cpp:743
 msgid "&Filter Rule Editor..."
-msgstr "Editor &filtrovacÌch pravidiel..."
+msgstr "Editor &filtrovac√≠ch pravidiel..."
 
 #: servercontroller.cpp:194 servercontroller.cpp:745
 msgid "&Web Server Configuration..."
-msgstr "Konfigur·cia &web servera..."
+msgstr "Konfigur√°cia &web servera..."
 
 #: servercontroller.cpp:197 servercontroller.cpp:747
 msgid "&Preferences..."
@@ -168,19 +168,19 @@ msgstr "&Nastavenie..."
 
 #: servercontroller.cpp:207
 msgid "Help on Colours..."
-msgstr "PomocnÌk o farb·ch..."
+msgstr "Pomocn√≠k o farb√°ch..."
 
 #: servercontroller.cpp:209
 msgid "Help on Filters..."
-msgstr "PomocnÌk o filtroch..."
+msgstr "Pomocn√≠k o filtroch..."
 
 #: servercontroller.cpp:211
 msgid "Help on Keys..."
-msgstr "PomocnÌk o kl·ves·ch..."
+msgstr "Pomocn√≠k o kl√°ves√°ch..."
 
 #: servercontroller.cpp:214
 msgid "About kSirc..."
-msgstr "Inform·cie o kSirc..."
+msgstr "Inform√°cie o kSirc..."
 
 #: servercontroller.cpp:232
 msgid "Server Control"
@@ -188,7 +188,7 @@ msgstr "Kontrola servera"
 
 #: servercontroller.cpp:293 servercontroller.cpp:457
 msgid "Channels"
-msgstr "Kan·ly"
+msgstr "Kan√°ly"
 
 #: servercontroller.cpp:293 servercontroller.cpp:457
 msgid "Online"
@@ -196,7 +196,7 @@ msgstr "Online"
 
 #: servercontroller.cpp:695
 msgid "Active Server Connections"
-msgstr "AktÌvne serverovskÈ spojenia"
+msgstr "Akt√≠vne serverovsk√© spojenia"
 
 #: servercontroller.cpp:736
 msgid "&Undock"
@@ -208,19 +208,19 @@ msgstr "Prompt"
 
 #: toplevel.cpp:140
 msgid "Lag in seconds to the server"
-msgstr "Lag v sekund·ch k serveru"
+msgstr "Lag v sekund√°ch k serveru"
 
 #: toplevel.cpp:144
 msgid "&Ticker Mode"
-msgstr "&P·sov˝ mÛd"
+msgstr "&P√°sov√Ω m√≥d"
 
 #: toplevel.cpp:166
 msgid "&Cut Window..."
-msgstr "&Vystihn˙ª okno..."
+msgstr "&Vystihn√∫≈• okno..."
 
 #: toplevel.cpp:297
 msgid "&Users"
-msgstr "&UæÌvatelia"
+msgstr "&U≈æ√≠vatelia"
 
 #: welcomeWin.cpp:30
 msgid "Welcome to kSirc"
@@ -228,47 +228,47 @@ msgstr "Vitajte v kSirc"
 
 #: welcomeWinData.cpp:35
 msgid "Show Again"
-msgstr "Uk·zaª znova"
+msgstr "Uk√°za≈• znova"
 
 #: welcomeWinData.cpp:44
 msgid "Dissmiss"
-msgstr "PokraËovaª"
+msgstr "Pokraƒçova≈•"
 
 #: KSColourPicker/kscolourpicker.cpp:28
 msgid "kSirc Colour Picker"
-msgstr "kSirc vyberaË farieb"
+msgstr "kSirc vyberaƒç farieb"
 
 #: KSColourPicker/kscolourpickerData.cpp:30
 msgid "Pick"
-msgstr "Zvoliª"
+msgstr "Zvoli≈•"
 
 #: KSColourPicker/kscolourpickerData.cpp:46
 msgid "Sample Colour"
-msgstr "PrÌklad farby"
+msgstr "Pr√≠klad farby"
 
 #: KSCutDialog/KSCutDialog.cpp:27
 msgid "Cut Window"
-msgstr "Vystihn˙ª okno"
+msgstr "Vystihn√∫≈• okno"
 
 #: KSCutDialog/KSCutDialogData.cpp:39
 msgid "Cop&y"
-msgstr "Ko&pÌrovaª"
+msgstr "Ko&p√≠rova≈•"
 
 #: KSOpenkSirc/open_ksirc.cpp:38
 msgid "Connect to Server"
-msgstr "Pripojiª sa k serveru"
+msgstr "Pripoji≈• sa k serveru"
 
 #: KSOpenkSirc/open_ksirc.cpp:186
 msgid "Not Avalable"
-msgstr "Nedostupn˝"
+msgstr "Nedostupn√Ω"
 
 #: KSOpenkSirc/open_ksircData.cpp:37
 msgid "&Connect"
-msgstr "&Pripojiª"
+msgstr "&Pripoji≈•"
 
 #: KSOpenkSirc/open_ksircData.cpp:54
 msgid "&Edit Servers"
-msgstr "&Editovaª servery"
+msgstr "&Editova≈• servery"
 
 #: KSOpenkSirc/open_ksircData.cpp:86
 msgid "Group:"
@@ -276,7 +276,7 @@ msgstr "Skupina:"
 
 #: KSOpenkSirc/open_ksircData.cpp:103
 msgid "Server/Quick Connect to:"
-msgstr "Server/R˝chle pripojenie k:"
+msgstr "Server/R√Ωchle pripojenie k:"
 
 #: KSOpenkSirc/open_ksircData.cpp:120
 msgid "Port:"
@@ -288,7 +288,7 @@ msgstr "Popis:"
 
 #: KSPrefs/UserMenuRefData.cpp:61
 msgid "Menu Name"
-msgstr "N·zov v menu"
+msgstr "N√°zov v menu"
 
 #: KSPrefs/UserMenuRefData.cpp:70
 msgid "Type"
@@ -296,7 +296,7 @@ msgstr "Typ"
 
 #: KSPrefs/UserMenuRefData.cpp:79
 msgid "Command"
-msgstr "PrÌkaz"
+msgstr "Pr√≠kaz"
 
 #: KSPrefs/UserMenuRefData.cpp:87
 msgid "OP Only"
@@ -304,7 +304,7 @@ msgstr "Len OP"
 
 #: KSPrefs/UserMenuRefData.cpp:135
 msgid "Modify"
-msgstr "Zmeniª"
+msgstr "Zmeni≈•"
 
 #: KSPrefs/ksprefs.cpp:9
 msgid "kSirc Prefrences"
@@ -312,23 +312,23 @@ msgstr "Nastavenie kSirc"
 
 #: KSPrefs/ksprefs.cpp:22
 msgid "&General"
-msgstr "&VπeobecnÈ"
+msgstr "&V≈°eobecn√©"
 
 #: KSPrefs/ksprefs.cpp:23
 msgid "&StartUp"
-msgstr "&Pri spustenÌ"
+msgstr "&Pri spusten√≠"
 
 #: KSPrefs/ksprefs.cpp:24
 msgid "Servers/&Channels"
-msgstr "Servery/&Kan·ly"
+msgstr "Servery/&Kan√°ly"
 
 #: KSPrefs/ksprefs.cpp:25
 msgid "&User Menu"
-msgstr "&UæÌvateµskÈ menu"
+msgstr "&U≈æ√≠vateƒæsk√© menu"
 
 #: KSPrefs/ksprefs.cpp:26
 msgid "&Default Filters"
-msgstr "©tan&dardnÈ filtre"
+msgstr "≈†tan&dardn√© filtre"
 
 #: KSTicker/speeddialogData.cpp:79
 msgid "Tick Interval"
@@ -336,9 +336,9 @@ msgstr "Interval ticku"
 
 #: KSTicker/speeddialogData.cpp:88
 msgid "Step Size"
-msgstr "Veµkosª kroku"
+msgstr "Veƒækos≈• kroku"
 
 #: puke/kdynlib.cpp:70
 #, c-format
-msgid "No such file \"%s\"!"
-msgstr "S˙bor \"%S\" neexistuje!"
+#~ msgid "No such file \"%s\"!"
+#~ msgstr "S√∫bor \"%S\" neexistuje!"

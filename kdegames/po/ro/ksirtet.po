@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Vatafu Valerica <wally@chuck.tlnet.de>\n"
 "Language-Team: Romanian <kdei18n@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: board.cpp:65 dialogs.cpp:137
@@ -20,11 +20,11 @@ msgstr "Anonim"
 
 #: board.cpp:97
 msgid "Game paused"
-msgstr "Paus„"
+msgstr "Paus√£"
 
 #: board.cpp:102
 msgid "Press to resume"
-msgstr "Apas„ o tast„ s„ rezum„m"
+msgstr "Apas√£ o tast√£ s√£ rezum√£m"
 
 #: board.cpp:119 net.cpp:208
 msgid "Game over"
@@ -32,15 +32,15 @@ msgstr "Game Over"
 
 #: board.cpp:123
 msgid "Press Return to replay"
-msgstr "Apas„ Return s„ rejucam"
+msgstr "Apas√£ Return s√£ rejucam"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "Apas„ o tast„ s„ pornim jocul"
+msgstr "Apas√£ o tast√£ s√£ pornim jocul"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "fŒn i∫ierul Highscore nu se poate scrie"
+msgstr "f√én i¬∫ierul Highscore nu se poate scrie"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -52,11 +52,11 @@ msgstr "Adresa nul"
 
 #: net.cpp:142
 msgid "Unknown address"
-msgstr "Adres„ ne∫tiut„"
+msgstr "Adres√£ ne¬∫tiut√£"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "Nu pot s„ creez solu"
+msgstr "Nu pot s√£ creez solu"
 
 #: net.cpp:196
 msgid "at"
@@ -76,11 +76,11 @@ msgstr "Serverul a murit"
 
 #: net.cpp:267
 msgid "Cancel from server"
-msgstr "Œntreruper de la server"
+msgstr "√éntreruper de la server"
 
 #: net.cpp:273 net.cpp:333
 msgid "Unknown data from server"
-msgstr "Date ne∫tiute de la server"
+msgstr "Date ne¬∫tiute de la server"
 
 #: net.cpp:312
 msgid "Cannot send to server"
@@ -92,11 +92,11 @@ msgstr "Client timeout (Nici un mesaj de la server)"
 
 #: net.cpp:329
 msgid "Server has vanished"
-msgstr "Serverul a disp„rut"
+msgstr "Serverul a disp√£rut"
 
 #: net.cpp:366
 msgid "Bind error"
-msgstr "Eroare de conec˛ie"
+msgstr "Eroare de conec√æie"
 
 #: net.cpp:371
 msgid "Listen error"
@@ -104,11 +104,11 @@ msgstr "Eroare de ascultare"
 
 #: net.cpp:390
 msgid "Unknown message from unknown player (??)"
-msgstr "Mesag nein˛eles de la la un juc„tor ne∫tiut"
+msgstr "Mesag nein√æeles de la la un juc√£tor ne¬∫tiut"
 
 #: net.cpp:449 net.cpp:490
 msgid "Unknown message from client"
-msgstr "Mesaj ne∫tiut de la client"
+msgstr "Mesaj ne¬∫tiut de la client"
 
 #: net.cpp:486
 msgid "Client has died"
@@ -116,7 +116,7 @@ msgstr "Clientul a murit"
 
 #: net.cpp:487
 msgid "Cancel from client"
-msgstr "Œntreruper de la client"
+msgstr "√éntreruper de la client"
 
 #: net.cpp:494
 msgid "Timeout"
@@ -128,15 +128,15 @@ msgstr "Nici un mesaj de la client"
 
 #: net.cpp:525
 msgid "Client has vanished"
-msgstr "Clientul a disp„rut"
+msgstr "Clientul a disp√£rut"
 
 #: net.cpp:529
 msgid "Unknown data from client"
-msgstr "Date ne∫tiute de la client"
+msgstr "Date ne¬∫tiute de la client"
 
 #: net.cpp:533
 msgid "End message from client"
-msgstr "Mesaj de sfÓr∫ire de la client"
+msgstr "Mesaj de sf√Ær¬∫ire de la client"
 
 #: net.cpp:550
 msgid "Cannot send to client"
@@ -152,7 +152,7 @@ msgstr "Hall of Fame"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
-msgstr "Nici o op˛iune acum"
+msgstr "Nici o op√æiune acum"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
@@ -168,7 +168,7 @@ msgstr "Client"
 
 #: dialogs.cpp:183
 msgid "Player name :"
-msgstr "Numele juc„torului"
+msgstr "Numele juc√£torului"
 
 #: dialogs.cpp:185
 msgid "Server address :"
@@ -204,7 +204,7 @@ msgstr "Modul clientului"
 
 #: dialogs.cpp:336
 msgid "Waiting for other player(s) ..."
-msgstr "A∫teapt„ ceilal˛i juc„tor(i)"
+msgstr "A¬∫teapt√£ ceilal√æi juc√£tor(i)"
 
 #: field.cpp:27
 msgid "New game"
@@ -212,7 +212,7 @@ msgstr "Joc nou"
 
 #: field.cpp:28
 msgid "Pause game"
-msgstr "Paus„"
+msgstr "Paus√£"
 
 #: field.cpp:30
 msgid "High scores"
@@ -220,11 +220,11 @@ msgstr "High Scores"
 
 #: field.cpp:31
 msgid "Move left"
-msgstr "Mi∫c„ la stÓnga"
+msgstr "Mi¬∫c√£ la st√Ænga"
 
 #: field.cpp:32
 msgid "Move right"
-msgstr "Mi∫c„ la dreapta"
+msgstr "Mi¬∫c√£ la dreapta"
 
 #: field.cpp:33
 msgid "Drop down"
@@ -236,11 +236,11 @@ msgstr "O linie in jos"
 
 #: field.cpp:35
 msgid "Rotate left"
-msgstr "ŒnvÓrte∫te la stÓnga"
+msgstr "√énv√Ærte¬∫te la st√Ænga"
 
 #: field.cpp:36
 msgid "Rotate right"
-msgstr "ŒnvÓrte∫te la dreapta"
+msgstr "√énv√Ærte¬∫te la dreapta"
 
 #: field.cpp:51
 msgid "Score"
@@ -248,7 +248,7 @@ msgstr "Scorul"
 
 #: field.cpp:55
 msgid "Lines removed"
-msgstr "Linii ∫terse"
+msgstr "Linii ¬∫terse"
 
 #: field.cpp:59
 msgid "Level"
@@ -256,19 +256,19 @@ msgstr "Level"
 
 #: field.cpp:63
 msgid "Next tile"
-msgstr "Urm„torul titlu"
+msgstr "Urm√£torul titlu"
 
 #: field.cpp:185
 msgid "&Restart game"
-msgstr "&Reporne∫te jocul"
+msgstr "&Reporne¬∫te jocul"
 
 #: field.cpp:186
 msgid "&Pause game"
-msgstr "Paus„"
+msgstr "Paus√£"
 
 #: field.cpp:187
 msgid "&Multiplayer game"
-msgstr "&Multi-juc„tori joc"
+msgstr "&Multi-juc√£tori joc"
 
 #: field.cpp:189
 msgid "&High scores"
@@ -288,22 +288,22 @@ msgstr ""
 
 #: main.cpp:71
 msgid "Show menu"
-msgstr "Arat„ meniul"
+msgstr "Arat√£ meniul"
 
 #~ msgid "Close dialog"
-#~ msgstr "Œnchide dialogul"
+#~ msgstr "√énchide dialogul"
 
 #~ msgid "Ok dialog"
 #~ msgstr "Dialog Ok"
 
 #~ msgid "Cancel dialog"
-#~ msgstr "Œntrerup dialogul"
+#~ msgstr "√éntrerup dialogul"
 
 #~ msgid "You suck !"
-#~ msgstr "P„calici"
+#~ msgstr "P√£calici"
 
 #~ msgid "&Contents"
-#~ msgstr "&Con˛inut"
+#~ msgstr "&Con√æinut"
 
 #~ msgid "About &Qt"
 #~ msgstr "Despre &Qt"

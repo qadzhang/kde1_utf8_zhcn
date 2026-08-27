@@ -10,13 +10,13 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
 #: main.C:304
 msgid "&Normal"
-msgstr "&Normál"
+msgstr "&NormÃ¡l"
 
 #: main.C:307
 msgid "&Small"
@@ -24,7 +24,7 @@ msgstr "Kic&si"
 
 #: main.C:308
 msgid "&Medium"
-msgstr "&Közepes"
+msgstr "&KÃ¶zepes"
 
 #: main.C:309
 msgid "&Large"
@@ -32,7 +32,7 @@ msgstr "&Nagy"
 
 #: main.C:310
 msgid "&Huge"
-msgstr "Ó&riás"
+msgstr "Ã“&riÃ¡s"
 
 #: main.C:312
 msgid "&Linux"
@@ -80,7 +80,7 @@ msgstr "80x52 (ibmv&ga)"
 
 #: main.C:342
 msgid "&Menubar"
-msgstr "&Menüsor"
+msgstr "&MenÃ¼sor"
 
 #: main.C:343
 msgid "&Frame"
@@ -88,39 +88,39 @@ msgstr "&Keret"
 
 #: main.C:344
 msgid "Scroll&bar"
-msgstr "Gör&dítõsáv"
+msgstr "GÃ¶r&dÃ­tÅ‘sÃ¡v"
 
 #: main.C:346
 msgid "BS sends &DEL"
-msgstr "BackSpace &DEL-t küld"
+msgstr "BackSpace &DEL-t kÃ¼ld"
 
 #: main.C:348
 msgid "&Font"
-msgstr "&Betûtípus"
+msgstr "&BetÅ±tÃ­pus"
 
 #: main.C:349
 msgid "&Size"
-msgstr "&Méret"
+msgstr "&MÃ©ret"
 
 #: main.C:350
 msgid "&Schema"
-msgstr "&Séma"
+msgstr "&SÃ©ma"
 
 #: main.C:352
 msgid "&Save options"
-msgstr "&Beállítások mentése"
+msgstr "&BeÃ¡llÃ­tÃ¡sok mentÃ©se"
 
 #: main.C:356
 msgid "&About ..."
-msgstr "&Névjegy..."
+msgstr "&NÃ©vjegy..."
 
 #: main.C:357
 msgid "&User's Manual ..."
-msgstr "&Felhasználói kézikönyv..."
+msgstr "&FelhasznÃ¡lÃ³i kÃ©zikÃ¶nyv..."
 
 #: main.C:358
 msgid "&Technical Reference ..."
-msgstr "&Mûszaki leírás..."
+msgstr "&MÅ±szaki leÃ­rÃ¡s..."
 
 #: main.C:362
 msgid "cd"
@@ -128,7 +128,7 @@ msgstr "cd"
 
 #: main.C:375
 msgid "Sessions"
-msgstr "Session-ök"
+msgstr "Session-Ã¶k"
 
 #: main.C:527
 #, c-format
@@ -136,13 +136,13 @@ msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
-"A '%s' betûtípus nem található.\n"
-"Segítségként olvasd el a README.linux.console-t."
+"A '%s' betÅ±tÃ­pus nem talÃ¡lhatÃ³.\n"
+"SegÃ­tsÃ©gkÃ©nt olvasd el a README.linux.console-t."
 
 #: main.C:647
 #, c-format
 msgid "About %s"
-msgstr "%s-ról"
+msgstr "%s-rÃ³l"
 
 #: main.C:649
 #, c-format
@@ -154,21 +154,21 @@ msgid ""
 "This program is free software under the\n"
 "terms of the Artistic License and comes\n"
 "WITHOUT ANY WARRANTY.\n"
-"See `LICENSE.readme´ for details."
+"See `LICENSE.readmeÂ´ for details."
 msgstr ""
-"%s %s verzió - X terminál\n"
+"%s %s verziÃ³ - X terminÃ¡l\n"
 "\n"
-"Szerzõi jogok: 1998 Lars Doelle <lars.doelle@on-line.de>\n"
+"SzerzÅ‘i jogok: 1998 Lars Doelle <lars.doelle@on-line.de>\n"
 "\n"
-"Ez a program szabad szoftver, és az\n"
-"Artistic License vonatkozik rá, de nem\n"
-"garanciális!\n"
-"A LICENSE.readme-ben további részleteket találsz."
+"Ez a program szabad szoftver, Ã©s az\n"
+"Artistic License vonatkozik rÃ¡, de nem\n"
+"garanciÃ¡lis!\n"
+"A LICENSE.readme-ben tovÃ¡bbi rÃ©szleteket talÃ¡lsz."
 
 #: main.C:779
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr "'%s' nem normálisan lépett ki."
+msgstr "'%s' nem normÃ¡lisan lÃ©pett ki."
 
 #: main.C:782
 msgid ""
@@ -176,8 +176,8 @@ msgid ""
 "Return code = "
 msgstr ""
 "\n"
-"Visszatérési érték = "
+"VisszatÃ©rÃ©si Ã©rtÃ©k = "
 
 #: main.C:979
 msgid "Welcome to the console"
-msgstr "Üdvözöllek a konzolban"
+msgstr "ÃœdvÃ¶zÃ¶llek a konzolban"

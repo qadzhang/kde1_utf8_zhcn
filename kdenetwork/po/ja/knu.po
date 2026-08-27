@@ -10,10 +10,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-23 02:09+0100\n"
 "PO-Revision-Date: Sun Jul 11 1999 19:08:50+0200\n"
-"Last-Translator: ��¼ ε��Ϻ <imura@cs.titech.ac.jp>\n"
+"Last-Translator: °æÂ¼ Îµ°ìÏº <imura@cs.titech.ac.jp>\n"
 "Language-Team: japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.5.0"
 
@@ -27,7 +27,7 @@ msgstr "&Traceroute"
 
 #: knu.cpp:168 knu.cpp:321
 msgid "Host &resolution"
-msgstr "�ۥ���̾���(&R)"
+msgstr "¥Û¥¹¥ÈÌ¾²ò·è(&R)"
 
 #: knu.cpp:181
 msgid "F&inger"
@@ -47,32 +47,32 @@ msgstr ""
 
 #: knu.cpp:246
 msgid "&New window"
-msgstr "������������ɥ�(&N)"
+msgstr "¿·¤·¤¤¥¦¥£¥ó¥É¥¦(&N)"
 
 #: knu.cpp:249
 msgid "&Close window"
-msgstr "������ɥ����Ĥ���(&C)"
+msgstr "¥¦¥£¥ó¥É¥¦¤òÊÄ¤¸¤ë(&C)"
 
 #: knu.cpp:260
 msgid "Select &all"
-msgstr "���Ƥ�����(&a)"
+msgstr "Á´¤Æ¤òÁªÂò(&a)"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "���ϥ�����ɥ��򥯥ꥢ(&L)"
+msgstr "½ÐÎÏ¥¦¥£¥ó¥É¥¦¤ò¥¯¥ê¥¢(&L)"
 
 #: knu.cpp:266
 msgid "P&references..."
-msgstr "����...(&R)"
+msgstr "ÀßÄê...(&R)"
 
 #: knu.cpp:281
 #, c-format
 msgid "&About %s"
-msgstr "%s�ΥС���������(&A)"
+msgstr "%s¤Î¥Ð¡¼¥¸¥ç¥ó¾ðÊó(&A)"
 
 #: knu.cpp:283
 msgid "About &Qt"
-msgstr "&Qt �ˤĤ���"
+msgstr "&Qt ¤Ë¤Ä¤¤¤Æ"
 
 #: knu.cpp:327
 msgid "&Finger"
@@ -89,32 +89,32 @@ msgstr ""
 
 #: knu.cpp:469
 msgid "About..."
-msgstr "�С���������..."
+msgstr "¥Ð¡¼¥¸¥ç¥ó¾ðÊó..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "�ͥåȥ���桼�ƥ���ƥ�"
+msgstr "¥Í¥Ã¥È¥ï¡¼¥¯¥æ¡¼¥Æ¥£¥ê¥Æ¥£"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
-msgstr "�ۥ���(&O):"
+msgstr "¥Û¥¹¥È(&O):"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
-msgstr "�¹ԡ�"
+msgstr "¼Â¹Ô¡ª"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
-msgstr "���(&S)"
+msgstr "Ää»ß(&S)"
 
 #: CommandDlg.cpp:166
 msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"���Υ��ޥ�ɤΥХ��ʥ꤬���Ĥ���ޤ���Ǥ�����\n"
-"���Υ��ޥ�ɤΥѥ����˥塼�� �Խ�->����... ��\n"
-"����Ǥ��ޤ���"
+"¤³¤Î¥³¥Þ¥ó¥É¤Î¥Ð¥¤¥Ê¥ê¤¬¸«¤Ä¤«¤ê¤Þ¤»¤ó¤Ç¤·¤¿¡£\n"
+"¤³¤Î¥³¥Þ¥ó¥É¤Î¥Ñ¥¹¤ò¥á¥Ë¥å¡¼¤Î ÊÔ½¸->ÀßÄê... ¤Ç\n"
+"»ØÄê¤Ç¤­¤Þ¤¹¡£"
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -131,36 +131,36 @@ msgid ""
 msgstr ""
 "\n"
 "%s/%src\n"
-"�Ȥ�������ե���������꤬����ޤ���\n"
-"[%s] ���롼�פˡ�\n"
-"ͭ���� \"path=\" �Ȥ�������ȥ꤬���Ĥ���ޤ���\n"
+"¤È¤¤¤¦ÀßÄê¥Õ¥¡¥¤¥ë¤ËÌäÂê¤¬¤¢¤ê¤Þ¤¹¡£\n"
+"[%s] ¥°¥ë¡¼¥×¤Ë¡¢\n"
+"Í­¸ú¤Ê \"path=\" ¤È¤¤¤¦¥¨¥ó¥È¥ê¤¬¸«¤Ä¤«¤ê¤Þ¤»¤ó¡£\n"
 "\n"
-"��˥塼�� �Խ�->����...\n"
-"�����ꤷ�ʤ����Ƥ���������\n"
+"¥á¥Ë¥å¡¼¤Î ÊÔ½¸->ÀßÄê...\n"
+"¤ÇÀßÄê¤·¤Ê¤ª¤·¤Æ¤¯¤À¤µ¤¤¡£\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
-msgstr "�ѥ��͡���˥��顼"
+msgstr "¥Ñ¥¹¥Í¡¼¥à¤Ë¥¨¥é¡¼"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
-msgstr "�Х��ʥ�"
+msgstr "¥Ð¥¤¥Ê¥ê"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
-msgstr "�ѥ��͡���(&N):"
+msgstr "¥Ñ¥¹¥Í¡¼¥à(&N):"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
-msgstr "�ɲä��륪�ץ����(&A):"
+msgstr "ÄÉ²Ã¤¹¤ë¥ª¥×¥·¥ç¥ó(&A):"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "����ե����졼�����ե�����ǥ��ޥ�ɤ�̵���ˤʤ�ޤ�����"
+msgstr "¥³¥ó¥Õ¥£¥°¥ì¡¼¥·¥ç¥ó¥Õ¥¡¥¤¥ë¤Ç¥³¥Þ¥ó¥É¤¬Ìµ¸ú¤Ë¤Ê¤ê¤Þ¤·¤¿¡£"
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
-msgstr " - ����ե����졼�����"
+msgstr " - ¥³¥ó¥Õ¥£¥°¥ì¡¼¥·¥ç¥ó"
 
 #: MtrDlg.cpp:87
 msgid "#"
@@ -168,7 +168,7 @@ msgstr "#"
 
 #: MtrDlg.cpp:88
 msgid "Hostname"
-msgstr "�ۥ��ȥ͡���"
+msgstr "¥Û¥¹¥È¥Í¡¼¥à"
 
 #: MtrDlg.cpp:89
 msgid "Loss"
@@ -196,11 +196,11 @@ msgstr "Worst"
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "�ۥ��ȥ͡���β���Ԥ�(&N)"
+msgstr "¥Û¥¹¥È¥Í¡¼¥à¤Î²ò·è¤ò¹Ô¤¦(&N)"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
-msgstr "�ۥ���(&T)"
+msgstr "¥Û¥¹¥È(&T)"
 
 #: HostDlg.cpp:335 PingDlg.cpp:231
 msgid "ns&lookup"
@@ -208,48 +208,48 @@ msgstr "ns&lookup"
 
 #: TracerouteDlg.cpp:115
 msgid "&Maximum number of hops:"
-msgstr "hops�κ����(&M)"
+msgstr "hops¤ÎºÇÂç¿ô(&M)"
 
 #: HostDlg.cpp:112
 msgid "address (A)"
-msgstr "���ɥ쥹(A)"
+msgstr "¥¢¥É¥ì¥¹(A)"
 
 #: HostDlg.cpp:113
 msgid "name (PTR)"
-msgstr "̾��(PTR)"
+msgstr "Ì¾Á°(PTR)"
 
 #: HostDlg.cpp:114
 msgid "name server (NS)"
-msgstr "�͡��ॵ����(NS)"
+msgstr "¥Í¡¼¥à¥µ¡¼¥Ð(NS)"
 
 #: HostDlg.cpp:115
 msgid "mail exchanger (MX)"
-msgstr "�᡼�륨���������󥸥�(MX)"
+msgstr "¥á¡¼¥ë¥¨¥¯¥¹¥Á¥§¥ó¥¸¥ã(MX)"
 
 #: HostDlg.cpp:116
 msgid "alias (CNAME)"
-msgstr "�����ꥢ��(CNAME)"
+msgstr "¥¨¥¤¥ê¥¢¥¹(CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "��������ƥ�������γ���"
+msgstr "¥ª¡¼¥½¥ê¥Æ¥£¥¾¡¼¥ó¤Î³«»Ï"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
-msgstr "���Ƥε�Ͽ(ANY)"
+msgstr "Á´¤Æ¤Îµ­Ï¿(ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"
-msgstr "����(&A)"
+msgstr "¸¡º÷(&A)"
 
 #: HostDlg.cpp:136 HostDlg.cpp:287
 msgid "default server"
-msgstr "�ǥե���ȥ�����"
+msgstr "¥Ç¥Õ¥©¥ë¥È¥µ¡¼¥Ð"
 
 #: FingerDlg.cpp:95 HostDlg.cpp:145
 msgid "Ser&ver:"
-msgstr "������(&V):"
+msgstr "¥µ¡¼¥Ð(&V):"
 
 #: FingerDlg.cpp:77
 msgid "&User:"
-msgstr "�桼��(&U)"
+msgstr "¥æ¡¼¥¶(&U)"

@@ -1,4 +1,4 @@
-# Перевод kcalc.
+# п÷п╣я─п╣п╡п╬п╢ kcalc.
 # Copyright (C) 1998, 1999 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998, 1999.
 msgid ""
@@ -9,24 +9,24 @@ msgstr ""
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kcalc.cpp:99
 msgid "KCalc Setup/Help"
-msgstr "Установка/Помощь KCalc"
+msgstr "пёя│я┌п╟п╫п╬п╡п╨п╟/п÷п╬п╪п╬я┴я▄ KCalc"
 
 #: kcalc.cpp:152
 msgid "Angle"
-msgstr "Угол"
+msgstr "пёпЁп╬п╩"
 
 #: kcalc.cpp:192
 msgid "Base"
-msgstr "Основа"
+msgstr "п·я│п╫п╬п╡п╟"
 
 #: kcalc.cpp:1524
 msgid "KCalc Configuraton"
-msgstr "Настройка KCalc'а"
+msgstr "п²п╟я│я┌я─п╬п╧п╨п╟ KCalc'п╟"
 
 #: kcalc.cpp:1542
 #, c-format
@@ -49,7 +49,7 @@ msgstr ""
 
 #: kcalc.cpp:1551
 msgid "Base type: long double\n"
-msgstr "Базовый тип: long double\n"
+msgstr "п▒п╟п╥п╬п╡я▀п╧ я┌п╦п©: long double\n"
 
 #: kcalc.cpp:1553
 msgid ""
@@ -58,18 +58,18 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"В следствии ошибки в GLIBC я вынужден уменьшить точность KCalc'а с 'long "
-"double' до 'double'. Владельцы систем с работающим GLIBC должны "
-"перекомпилировать KCalc с включенной поддержкой 'long double'. Смотрите "
+"п▓ я│п╩п╣п╢я│я┌п╡п╦п╦ п╬я┬п╦п╠п╨п╦ п╡ GLIBC я▐ п╡я▀п╫я┐п╤п╢п╣п╫ я┐п╪п╣п╫я▄я┬п╦я┌я▄ я┌п╬я┤п╫п╬я│я┌я▄ KCalc'п╟ я│ 'long "
+"double' п╢п╬ 'double'. п▓п╩п╟п╢п╣п╩я▄я├я▀ я│п╦я│я┌п╣п╪ я│ я─п╟п╠п╬я┌п╟я▌я┴п╦п╪ GLIBC п╢п╬п╩п╤п╫я▀ "
+"п©п╣я─п╣п╨п╬п╪п©п╦п╩п╦я─п╬п╡п╟я┌я▄ KCalc я│ п╡п╨п╩я▌я┤п╣п╫п╫п╬п╧ п©п╬п╢п╢п╣я─п╤п╨п╬п╧ 'long double'. п║п╪п╬я┌я─п╦я┌п╣ "
 "README."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
 msgid "Defaults"
-msgstr "Умолчания"
+msgstr "пёп╪п╬п╩я┤п╟п╫п╦я▐"
 
 #: kcalc.cpp:1593
 msgid "Display Font"
-msgstr "Шрифт"
+msgstr "п╗я─п╦я└я┌"
 
 #: kcalc.cpp:1909
 #, c-format
@@ -82,84 +82,84 @@ msgstr ""
 
 #: kcalc_core.cpp:1115
 msgid "Last stat item erased"
-msgstr "Последний элемент статической памяти удален"
+msgstr "п÷п╬я│п╩п╣п╢п╫п╦п╧ я█п╩п╣п╪п╣п╫я┌ я│я┌п╟я┌п╦я┤п╣я│п╨п╬п╧ п©п╟п╪я▐я┌п╦ я┐п╢п╟п╩п╣п╫"
 
 #: kcalc_core.cpp:1155
 msgid "Stat Mem cleared"
-msgstr "Статистическая память очищена"
+msgstr "п║я┌п╟я┌п╦я│я┌п╦я┤п╣я│п╨п╟я▐ п©п╟п╪я▐я┌я▄ п╬я┤п╦я┴п╣п╫п╟"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
-msgstr "Ошибка обработки стека - правый операнд"
+msgstr "п·я┬п╦п╠п╨п╟ п╬п╠я─п╟п╠п╬я┌п╨п╦ я│я┌п╣п╨п╟ - п©я─п╟п╡я▀п╧ п╬п©п╣я─п╟п╫п╢"
 
 #: kcalc_core.cpp:1640
 msgid "Stack processing error - function"
-msgstr "Ошибка обработки стека - функция"
+msgstr "п·я┬п╦п╠п╨п╟ п╬п╠я─п╟п╠п╬я┌п╨п╦ я│я┌п╣п╨п╟ - я└я┐п╫п╨я├п╦я▐"
 
 #: kcalc_core.cpp:1649
 msgid "Stack processing error - left_op"
-msgstr "Ошибка обработки стека - левый операнд"
+msgstr "п·я┬п╦п╠п╨п╟ п╬п╠я─п╟п╠п╬я┌п╨п╦ я│я┌п╣п╨п╟ - п╩п╣п╡я▀п╧ п╬п©п╣я─п╟п╫п╢"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Emergency"
-msgstr "Внимание"
+msgstr "п▓п╫п╦п╪п╟п╫п╦п╣"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Stack Error!"
-msgstr "Ошибка стека!"
+msgstr "п·я┬п╦п╠п╨п╟ я│я┌п╣п╨п╟!"
 
 #: configdlg.cpp:61
 msgid "Foreground Color:"
-msgstr "Цвет текста:"
+msgstr "п╕п╡п╣я┌ я┌п╣п╨я│я┌п╟:"
 
 #: configdlg.cpp:78
 msgid "Background Color:"
-msgstr "Цвет фона:"
+msgstr "п╕п╡п╣я┌ я└п╬п╫п╟:"
 
 #: configdlg.cpp:95
 msgid "Precision:"
-msgstr "Точность:"
+msgstr "п╒п╬я┤п╫п╬я│я┌я▄:"
 
 #: configdlg.cpp:116
 msgid "Set Fixed Precision at:"
-msgstr "Установить фиксированную точность:"
+msgstr "пёя│я┌п╟п╫п╬п╡п╦я┌я▄ я└п╦п╨я│п╦я─п╬п╡п╟п╫п╫я┐я▌ я┌п╬я┤п╫п╬я│я┌я▄:"
 
 #: configdlg.cpp:145
 msgid "Beep on Error"
-msgstr "Сигнал при ошибке"
+msgstr "п║п╦пЁп╫п╟п╩ п©я─п╦ п╬я┬п╦п╠п╨п╣"
 
 #: configdlg.cpp:153
 msgid "Trigonometry Mode"
-msgstr "Тригонометрический режим"
+msgstr "п╒я─п╦пЁп╬п╫п╬п╪п╣я┌я─п╦я┤п╣я│п╨п╦п╧ я─п╣п╤п╦п╪"
 
 #: configdlg.cpp:158
 msgid "Statistical Mode"
-msgstr "Статистический режим"
+msgstr "п║я┌п╟я┌п╦я│я┌п╦я┤п╣я│п╨п╦п╧ я─п╣п╤п╦п╪"
 
 #: fontdlg.cpp:44
 msgid "Set Default Font"
-msgstr "Установить шрифт по умолчанию"
+msgstr "пёя│я┌п╟п╫п╬п╡п╦я┌я▄ я┬я─п╦я└я┌ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌"
 
 #: fontdlg.cpp:53
 msgid "Family:"
-msgstr "Семейство:"
+msgstr "п║п╣п╪п╣п╧я│я┌п╡п╬:"
 
 #: fontdlg.cpp:63
 msgid "Point Size:"
-msgstr "Размер точки:"
+msgstr "п═п╟п╥п╪п╣я─ я┌п╬я┤п╨п╦:"
 
 #: fontdlg.cpp:76
 msgid "Style:"
-msgstr "Стиль:"
+msgstr "п║я┌п╦п╩я▄:"
 
 #: fontdlg.cpp:91
 msgid "Weight:"
-msgstr "Ширина:"
+msgstr "п╗п╦я─п╦п╫п╟:"
 
 #: fontdlg.cpp:101 fontdlg.cpp:134
 msgid "Bold"
-msgstr "Жирный"
+msgstr "п√п╦я─п╫я▀п╧"
 
 #: fontdlg.cpp:103 fontdlg.cpp:136
 msgid "Normal"
-msgstr "Нормальный"
+msgstr "п²п╬я─п╪п╟п╩я▄п╫я▀п╧"

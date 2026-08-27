@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
@@ -16,15 +16,15 @@ msgid ""
 "started\n"
 msgstr ""
 "kwm: parece que ya hay un administrador de ventanas funcionando. El kwm no "
-"arrancar醆n"
+"arrancar谩\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: error durante la inicializaci髇; abortando\n"
+msgstr "kwm: error durante la inicializaci贸n; abortando\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "Preparando sesi髇 ... "
+msgstr "Preparando sesi贸n ... "
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -64,7 +64,7 @@ msgstr "Mo&ver"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "Cambiar &tama駉"
+msgstr "Cambiar &tama帽o"
 
 #: main.C:578
 msgid "&To desktop"
@@ -112,11 +112,11 @@ msgstr "Escritorio sin nombre"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Algunos pixmaps no son v醠idos: desactivando modo de formas\n"
+msgstr "Algunos pixmaps no son v谩lidos: desactivando modo de formas\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Algunos pixmaps no son v醠idos: desactivando modo de gimmicks\n"
+msgstr "Algunos pixmaps no son v谩lidos: desactivando modo de gimmicks\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -128,7 +128,7 @@ msgstr "Comando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr "ps!"
+msgstr "隆Ups!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
@@ -136,7 +136,7 @@ msgstr "Salir"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sesi髇 preparada para salir"
+msgstr "Sesi贸n preparada para salir"
 
 #: logout.C:52
 msgid ""
@@ -144,7 +144,7 @@ msgid ""
 "will be lost in your next session."
 msgstr ""
 "Las siguientes aplicaciones contienen datos que\n"
-"se perder醤 en la siguiente sesi髇."
+"se perder谩n en la siguiente sesi贸n."
 
 #: logout.C:63
 msgid ""
@@ -152,7 +152,7 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "Las siguientes apliaciones no pueden ser restauradas en la siguiente\n"
-"sesi髇, solo recomenzadas. Aseg鷕ese que no contengan datos importantes\n"
+"sesi贸n, solo recomenzadas. Aseg煤rese que no contengan datos importantes\n"
 "que se puedan perder."
 
 #: logout.C:74
@@ -160,9 +160,9 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Las siguientes apliaciones no se comunican con X11 y no podr醤 ser "
+"Las siguientes apliaciones no se comunican con X11 y no podr谩n ser "
 "restauradas\n"
-"en la siguiente sesi髇. Aseg鷕ese de que no contengan datos importantes\n"
+"en la siguiente sesi贸n. Aseg煤rese de que no contengan datos importantes\n"
 "no salvados."
 
 #: taskmgr.C:107
@@ -171,4 +171,4 @@ msgstr "Cambiar a"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "Sesi髇 actual"
+msgstr "Sesi贸n actual"

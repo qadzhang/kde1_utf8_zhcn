@@ -6,12 +6,12 @@ msgstr ""
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: main.cpp:84
 msgid "&Appearance"
-msgstr "&AparÍncia"
+msgstr "&Apar√™ncia"
 
 #: main.cpp:92
 msgid "&Background"
@@ -23,33 +23,33 @@ msgstr "&Utilizadores"
 
 #: main.cpp:98
 msgid "&Sessions"
-msgstr "&Sessıes"
+msgstr "&Sess√µes"
 
 #: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
-"utilizaÁ„o: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+"utiliza√ß√£o: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
-msgstr "ConfiguraÁ„o do KDM"
+msgstr "Configura√ß√£o do KDM"
 
 #: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"Desculpe, mas n„o tem permissıes de leitura/escrita\n"
-"no ficheiro de configuraÁ„o do KDM."
+"Desculpe, mas n√£o tem permiss√µes de leitura/escrita\n"
+"no ficheiro de configura√ß√£o do KDM."
 
 #: main.cpp:154
 msgid "Missing privileges"
-msgstr "Falta de privilÈgios"
+msgstr "Falta de privil√©gios"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Frase de saudaÁ„o:"
+msgstr "Frase de sauda√ß√£o:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -73,11 +73,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr "LÌngua"
+msgstr "L√≠ngua"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr "LÌngua:"
+msgstr "L√≠ngua:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -114,7 +114,7 @@ msgid ""
 "does not seem to be an image file"
 msgstr ""
 "\n"
-"n„o parece ser um ficheiro de imagem"
+"n√£o parece ser um ficheiro de imagem"
 
 #: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
@@ -122,11 +122,11 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Por favor use ficheiro com estas extensıes\n"
+"Por favor use ficheiro com estas extens√µes\n"
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
-msgstr "Extens„o do Ficheiro ImprÛpria"
+msgstr "Extens√£o do Ficheiro Impr√≥pria"
 
 #: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
@@ -134,7 +134,7 @@ msgid ""
 "It will not be saved..."
 msgstr ""
 "<\n"
-"N„o ser· gravada..."
+"N√£o ser√° gravada..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
@@ -150,7 +150,7 @@ msgstr "Mudar fonte..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
-msgstr "SaudaÁ„o"
+msgstr "Sauda√ß√£o"
 
 #: kdm-font.cpp:58
 msgid "Fail"
@@ -162,7 +162,7 @@ msgstr "Standard"
 
 #: kdm-font.cpp:157
 msgid "Greeting font"
-msgstr "Fonte da saudaÁ„o"
+msgstr "Fonte da sauda√ß√£o"
 
 #: kdm-font.cpp:161
 msgid "Fail font"
@@ -182,7 +182,7 @@ msgstr "Cor"
 
 #: kdm-bgnd.cpp:101
 msgid "Solid Color"
-msgstr "Cor SÛlida"
+msgstr "Cor S√≥lida"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
@@ -274,7 +274,7 @@ msgstr "Nenhum utilizador seleccionado"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
-msgstr "Gravar imagem como imagem por omiss„o?"
+msgstr "Gravar imagem como imagem por omiss√£o?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
@@ -302,11 +302,11 @@ msgstr "Desligar"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
-msgstr "RecomeÁar"
+msgstr "Recome√ßar"
 
 #: kdm-sess.cpp:77
 msgid "Session types"
-msgstr "Tipos de sess„o"
+msgstr "Tipos de sess√£o"
 
 #: kdm-sess.cpp:79
 msgid "New type"
@@ -314,7 +314,7 @@ msgstr "Novo tipo"
 
 #: kdm-sess.cpp:89
 msgid "Available types"
-msgstr "Tipos disponÌveis"
+msgstr "Tipos dispon√≠veis"
 
 #: klangcombo.cpp:133
 msgid "without name!"

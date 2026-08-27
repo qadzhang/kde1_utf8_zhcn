@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:54
@@ -23,11 +23,11 @@ msgstr "&Tangentbord"
 
 #: main.cpp:63
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
-msgstr "användning: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "anvÃ¤ndning: kcminput [-init | {mouse,keyboard}]\n"
 
 #: main.cpp:104
 msgid "Input Devices Properties"
-msgstr "Inställningar för inmatningsenheter"
+msgstr "InstÃ¤llningar fÃ¶r inmatningsenheter"
 
 #: mouse.cpp:68
 msgid "Acceleration"
@@ -35,7 +35,7 @@ msgstr "Acceleration"
 
 #: mouse.cpp:71
 msgid "Threshold"
-msgstr "Tröskelvärde"
+msgstr "TrÃ¶skelvÃ¤rde"
 
 #: mouse.cpp:72
 msgid "pixels"
@@ -47,11 +47,11 @@ msgstr "Knapptolkning"
 
 #: mouse.cpp:83
 msgid "Right handed"
-msgstr "Högerhänt"
+msgstr "HÃ¶gerhÃ¤nt"
 
 #: mouse.cpp:85
 msgid "Left handed"
-msgstr "Vänsterhänt"
+msgstr "VÃ¤nsterhÃ¤nt"
 
 #: keyboard.cpp:61
 msgid "Keyboard repeat"
@@ -59,4 +59,4 @@ msgstr "Tangentbordsupprepning"
 
 #: keyboard.cpp:66
 msgid "Key click volume"
-msgstr "Volym på tangentklick"
+msgstr "Volym pÃ¥ tangentklick"

@@ -7,7 +7,7 @@ msgstr ""
 "Translator: Harri Porten <porten@kde.org>\n"
 "Language-Team: de <de@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: theme.cpp:164
@@ -20,7 +20,7 @@ msgid ""
 "Error during cleanup of work directory: rc=%d\n"
 "%s"
 msgstr ""
-"Fehler beim Aufräumen des Arbeitsverzeichnis: rc=%d\n"
+"Fehler beim AufrÃ¤umen des Arbeitsverzeichnis: rc=%d\n"
 "%s"
 
 #: theme.cpp:217
@@ -45,17 +45,17 @@ msgstr ""
 
 #: theme.cpp:258
 msgid "Theme contains no .themerc file"
-msgstr "Design enthält keine .themerc Datei"
+msgstr "Design enthÃ¤lt keine .themerc Datei"
 
 #: theme.cpp:371 themecreator.cpp:347
 #, c-format
 msgid "Cannot open file %s for reading"
-msgstr "Kann Datei %s nicht zum Lesen öffnen"
+msgstr "Kann Datei %s nicht zum Lesen Ã¶ffnen"
 
 #: theme.cpp:378 themecreator.cpp:354
 #, c-format
 msgid "Cannot open file %s for writing"
-msgstr "Kann Datei %s nicht zum Schreiben öffnen"
+msgstr "Kann Datei %s nicht zum Schreiben Ã¶ffnen"
 
 #: theme.cpp:388 themecreator.cpp:365
 #, c-format
@@ -113,7 +113,7 @@ msgstr "Kann keine Sicherheitskopie von %s erstellen: mv liefert %d"
 #: theme.cpp:797
 #, c-format
 msgid "Icon key name %s can not be used"
-msgstr "Symbol-Schlüsselname %s kann nicht benutzt werden"
+msgstr "Symbol-SchlÃ¼sselname %s kann nicht benutzt werden"
 
 #: theme.cpp:859
 #, c-format
@@ -121,7 +121,7 @@ msgid ""
 "No proper kdelnk file found for %s.\n"
 "Installing icon(s) as %s"
 msgstr ""
-"Keine passende kdelnk Datei für %s gefunden.\n"
+"Keine passende kdelnk Datei fÃ¼r %s gefunden.\n"
 "Installiere Symbol(e) asl %s"
 
 #: theme.cpp:1116
@@ -141,11 +141,11 @@ msgstr "Kann nicht in das Verzeichnis %s wechseln"
 
 #: installer.cpp:83
 msgid "Add..."
-msgstr "Hinzufügen..."
+msgstr "HinzufÃ¼gen..."
 
 #: installer.cpp:84
 msgid "Add a new theme to the list."
-msgstr "Der Liste ein neues Design hinzufügen."
+msgstr "Der Liste ein neues Design hinzufÃ¼gen."
 
 #: installer.cpp:88
 msgid "Save the Work directory"
@@ -165,7 +165,7 @@ msgstr "Aus den aktuellen Einstellungen ein Design erzeugen"
 
 #: installer.cpp:100
 msgid "Remove the selected theme."
-msgstr "Das ausgewählte Design entfernen"
+msgstr "Das ausgewÃ¤hlte Design entfernen"
 
 #: installer.cpp:306
 msgid "Theme created."
@@ -209,11 +209,11 @@ msgstr "Design entfernt"
 
 #: installer.cpp:438
 msgid "(no theme chosen)"
-msgstr "(kein Design ausgewählt)"
+msgstr "(kein Design ausgewÃ¤hlt)"
 
 #: installer.cpp:463
 msgid "Add Theme"
-msgstr "Design hinzufügen"
+msgstr "Design hinzufÃ¼gen"
 
 #: installer.cpp:473
 msgid ""
@@ -236,7 +236,7 @@ msgstr ""
 
 #: installer.cpp:492
 msgid "Theme added."
-msgstr "Design hinzugefügt"
+msgstr "Design hinzugefÃ¼gt"
 
 #: installer.cpp:524
 msgid "Save Theme"
@@ -292,7 +292,7 @@ msgstr "Kontrolleiste"
 
 #: options.cpp:63
 msgid "Sounds"
-msgstr "Klänge"
+msgstr "KlÃ¤nge"
 
 #: options.cpp:64
 msgid "Icons"
@@ -312,7 +312,7 @@ msgstr "Fenster-Gimmick"
 
 #: options.cpp:72
 msgid "Window Button Layout"
-msgstr "Anordnung der Fenster-Knöpfe"
+msgstr "Anordnung der Fenster-KnÃ¶pfe"
 
 #: options.cpp:73
 msgid "File Manager"
@@ -332,7 +332,7 @@ msgstr "unbekannt"
 
 #: options.cpp:250
 msgid "available"
-msgstr "verfügbar"
+msgstr "verfÃ¼gbar"
 
 #: options.cpp:251
 msgid "empty"
@@ -356,7 +356,7 @@ msgstr "Deaktiviert"
 
 #: widgetcanvas.cpp:216 widgetcanvas.cpp:217
 msgid "Selected"
-msgstr "Ausgewählt"
+msgstr "AusgewÃ¤hlt"
 
 #: about.cpp:64
 msgid "KDE Theme Manager"

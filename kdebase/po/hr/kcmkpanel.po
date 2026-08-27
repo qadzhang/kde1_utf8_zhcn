@@ -9,16 +9,16 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "&PloËa"
+msgstr "&Ploƒça"
 
 #: main.cpp:70
 msgid "&Desktops"
-msgstr "&Radne povrπine"
+msgstr "&Radne povr≈°ine"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
@@ -26,7 +26,7 @@ msgstr "&Navigator diska"
 
 #: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "uporaba: kcmkpanel [-init | {ploËa,opcije,radne povrπine,disknav}]\n"
+msgstr "uporaba: kcmkpanel [-init | {ploƒça,opcije,radne povr≈°ine,disknav}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
@@ -34,7 +34,7 @@ msgstr "Postavke za KPanel"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "Poloæaj"
+msgstr "Polo≈æaj"
 
 #: panel.cpp:60
 msgid "&Top"
@@ -90,11 +90,11 @@ msgstr "Veli&ko"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "&Vidljive povrπine"
+msgstr "&Vidljive povr≈°ine"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr "©&irina"
+msgstr "≈†&irina"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
@@ -106,7 +106,7 @@ msgstr "Savjet u &izborniku"
 
 #: options.cpp:84
 msgid "De&lay:"
-msgstr "&Kaπnjenje:"
+msgstr "&Ka≈°njenje:"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
@@ -122,11 +122,11 @@ msgstr ""
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "&Automatski sakrij ploËu"
+msgstr "&Automatski sakrij ploƒçu"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"
-msgstr "Kaπnjenje:"
+msgstr "Ka≈°njenje:"
 
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
@@ -154,11 +154,11 @@ msgstr "Dodatne opcije"
 
 #: options.cpp:408
 msgid "Personal Menu Entries &First"
-msgstr "Pod K gumbom &prvo prikaæi osobne zapise"
+msgstr "Pod K gumbom &prvo prika≈æi osobne zapise"
 
 #: options.cpp:416
 msgid "Menu F&olders First"
-msgstr "Pod K gumbom prvo prikaæi &direktorije s aplikacijama"
+msgstr "Pod K gumbom prvo prika≈æi &direktorije s aplikacijama"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
@@ -186,11 +186,11 @@ msgstr "Promijeni &dijeljene"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr "Max broj skoraπnjih direktorija:"
+msgstr "Max broj skora≈°njih direktorija:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr "Max broj skoraπnjih datoteka:"
+msgstr "Max broj skora≈°njih datoteka:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
@@ -198,7 +198,7 @@ msgstr "Max broj datoteka u jednom direktoriju:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr "Prikaæi datoteke s toËkom"
+msgstr "Prika≈æi datoteke s toƒçkom"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
@@ -206,19 +206,19 @@ msgstr "Ne razlikuj velika/mala slova kod sortiranja"
 
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr "Prikaæi dijeljene zapise"
+msgstr "Prika≈æi dijeljene zapise"
 
 #: disknav.cpp:180
 msgid "Show Personal section"
-msgstr "Prikaæi osobne zapise"
+msgstr "Prika≈æi osobne zapise"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr "Prikaæi skoraπnje"
+msgstr "Prika≈æi skora≈°nje"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "Prikaæi opcije"
+msgstr "Prika≈æi opcije"
 
 #: disknav.cpp:210
 msgid "Terminal application:"

@@ -8,9 +8,9 @@ msgstr ""
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1999-03-04 23:50 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU <duranceau@kde.org>\n"
-"Language-Team: Français\n"
+"Language-Team: FranÃ§ais\n"
 "MIME-Version: 1.0\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:84
@@ -19,7 +19,7 @@ msgstr "&Apparence"
 
 #: main.cpp:92
 msgid "&Background"
-msgstr "A&rrière-plan"
+msgstr "A&rriÃ¨re-plan"
 
 #: main.cpp:95
 msgid "&Users"
@@ -45,13 +45,13 @@ msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"Désolé, vous n'avez pas le droit\n"
-"d'écrire dans le fichier de configuration\n"
+"DÃ©solÃ©, vous n'avez pas le droit\n"
+"d'Ã©crire dans le fichier de configuration\n"
 "de KDM."
 
 #: main.cpp:154
 msgid "Missing privileges"
-msgstr "Privilèges manquants"
+msgstr "PrivilÃ¨ges manquants"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
@@ -63,7 +63,7 @@ msgstr "Logo de KDM :"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
-msgstr "Cliquez ou déposez une image ici"
+msgstr "Cliquez ou dÃ©posez une image ici"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
@@ -112,7 +112,7 @@ msgstr ""
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
-msgstr "Désolé, mais \n"
+msgstr "DÃ©solÃ©, mais \n"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
@@ -120,7 +120,7 @@ msgid ""
 "does not seem to be an image file"
 msgstr ""
 "\n"
-"ne semble pas être un fichier image"
+"ne semble pas Ãªtre un fichier image"
 
 #: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
@@ -132,7 +132,7 @@ msgstr ""
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
-msgstr "Extension de fichier inadéquate"
+msgstr "Extension de fichier inadÃ©quate"
 
 #: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
@@ -140,11 +140,11 @@ msgid ""
 "It will not be saved..."
 msgstr ""
 "<\n"
-"Il ne sera pas enregistré..."
+"Il ne sera pas enregistrÃ©..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "Sélectionner les polices"
+msgstr "SÃ©lectionner les polices"
 
 #: kdm-font.cpp:50
 msgid "Example"
@@ -180,7 +180,7 @@ msgstr "Police Standard"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr "Aperçu"
+msgstr "AperÃ§u"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
@@ -192,11 +192,11 @@ msgstr "Couleur unie"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr "Dégradé horizontal"
+msgstr "DÃ©gradÃ© horizontal"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr "Dégradé vertical"
+msgstr "DÃ©gradÃ© vertical"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -208,15 +208,15 @@ msgstr "Aucun"
 
 #: kdm-bgnd.cpp:176
 msgid "Tile"
-msgstr "Mosaïque"
+msgstr "MosaÃ¯que"
 
 #: kdm-bgnd.cpp:181
 msgid "Center"
-msgstr "Centré"
+msgstr "CentrÃ©"
 
 #: kdm-bgnd.cpp:186
 msgid "Scale"
-msgstr "Adapté"
+msgstr "AdaptÃ©"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
@@ -244,11 +244,11 @@ msgstr "Tous les utilisateurs"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "Utilisateurs sélectionnés"
+msgstr "Utilisateurs sÃ©lectionnÃ©s"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "Utilisateurs à ne pas afficher"
+msgstr "Utilisateurs Ã  ne pas afficher"
 
 #: kdm-users.cpp:79
 msgid ""
@@ -256,7 +256,7 @@ msgid ""
 "selected users"
 msgstr ""
 "Afficher seulement les\n"
-"utilisateurs sélectionnés"
+"utilisateurs sÃ©lectionnÃ©s"
 
 #: kdm-users.cpp:86
 msgid ""
@@ -276,15 +276,15 @@ msgstr "Trier les utilisateurs"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
-msgstr "Pas d'utilisateur sélectionné"
+msgstr "Pas d'utilisateur sÃ©lectionnÃ©"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
-msgstr "Enregistrer l'image comme image pas défaut ?"
+msgstr "Enregistrer l'image comme image pas dÃ©faut ?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "Autoriser l'arrêt de la machine"
+msgstr "Autoriser l'arrÃªt de la machine"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -304,11 +304,11 @@ msgstr "Commandes"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "Arrêt de la machine"
+msgstr "ArrÃªt de la machine"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
-msgstr "Redémarrage"
+msgstr "RedÃ©marrage"
 
 #: kdm-sess.cpp:77
 msgid "Session types"

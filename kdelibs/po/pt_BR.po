@@ -1,10 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 1999-04-24 01:02+0200\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
-"Last-Translator:Elvis Pf¸tzenreuter <epx@netville.com.br>\n"
-"Content-type: charset=iso-8859-2\n"
+"Last-Translator:Elvis Pf√ºtzenreuter <epx@netville.com.br>\n"
+"Content-type: charset=UTF-8\n"
 
 #: kab/AssertDialog.cpp:29
 msgid "(unknown file)"
@@ -12,15 +15,15 @@ msgstr "(arquivo desconhecido)"
 
 #: kab/AssertDialog.cpp:30
 msgid "(unknown line number)"
-msgstr "(n˙mero de linha desconhecido)"
+msgstr "(n√∫mero de linha desconhecido)"
 
 #: kab/AssertDialog.cpp:31
 msgid "(unknown condition)"
-msgstr "(condiÁ„o desconhecida)"
+msgstr "(condi√ßƒÉo desconhecida)"
 
 #: kab/AssertDialog.cpp:39
 msgid "You have found a bug in "
-msgstr "VocÍ encontrou um bug em "
+msgstr "Vocƒô encontrou um bug em "
 
 #: kab/AssertDialog.cpp:45
 msgid "Ignore the error, possibly causing much more damage"
@@ -28,11 +31,11 @@ msgstr "Ignorar o erro, possivelmente causando muito mais danos"
 
 #: kab/AssertDialog.cpp:47
 msgid "Kill the application, loosing all data"
-msgstr "Terminar a aplicaÁ„o, perdendo todos os dados"
+msgstr "Terminar a aplica√ßƒÉo, perdendo todos os dados"
 
 #: kab/AssertDialog.cpp:49
 msgid "Send an email to the application maintainer"
-msgstr "Mandar um e-mail para o mantenedor da aplicaÁ„o"
+msgstr "Mandar um e-mail para o mantenedor da aplica√ßƒÉo"
 
 #: kab/AssertDialog.cpp:51 kab/datepickerdialog.cc:25 kab/kabapi.cc:34
 #: kdeui/kcolordlg.cpp:467 kdeui/kcontrol.cpp:46 kdeui/kcontrol.cpp:51
@@ -48,7 +51,7 @@ msgstr "OK"
 
 #: kab/AssertDialog.cpp:140
 msgid "The following condition failed:\n"
-msgstr "A seguinte condiÁ„o falhou:\n"
+msgstr "A seguinte condi√ßƒÉo falhou:\n"
 
 #: kab/AssertDialog.cpp:141
 msgid "In file "
@@ -60,23 +63,23 @@ msgstr ", linha "
 
 #: kab/AssertDialog.cpp:212 kab/AssertDialog.cpp:217
 msgid "Error handling error"
-msgstr "Erro de manipulaÁ„o de erro"
+msgstr "Erro de manipula√ßƒÉo de erro"
 
 #: kab/AssertDialog.cpp:213
 msgid "Could not send message."
-msgstr "N„o consegui mandar mensagem."
+msgstr "NƒÉo consegui mandar mensagem."
 
 #: kab/AssertDialog.cpp:218
 msgid "The author did not publish an email address."
-msgstr "O autor n„o publicou um e-mail."
+msgstr "O autor nƒÉo publicou um e-mail."
 
 #: kab/DialogBase.cpp:36
 msgid ""
 "If you press the OK button, all changes\n"
 "you made will be used to proceed."
 msgstr ""
-"Se vocÍ pressionar o bot„o OK, todas as mudanÁas\n"
-"que vocÍ fez ser„o procedidas."
+"Se vocƒô pressionar o botƒÉo OK, todas as mudan√ßas\n"
+"que vocƒô fez serƒÉo procedidas."
 
 #: kab/DialogBase.cpp:39
 msgid ""
@@ -84,9 +87,9 @@ msgid ""
 "handed over to the program, but the dialog\n"
 "will not be closed.Use this to try different settings."
 msgstr ""
-"Ao clicar Aplicar, as configuraÁıes ser„o\n"
-"efetivadas, mas a janela n„o ser· fechada.\n"
-"Utilize esta opÁ„o para tentar configuraÁıes\n"
+"Ao clicar Aplicar, as configura√ß≈ëes serƒÉo\n"
+"efetivadas, mas a janela nƒÉo ser√° fechada.\n"
+"Utilize esta op√ßƒÉo para tentar configura√ß≈ëes\n"
 "diferentes."
 
 #: kab/DialogBase.cpp:44
@@ -97,10 +100,10 @@ msgid ""
 "The program will be in the state before\n"
 "opening the dialog."
 msgstr ""
-"Se vocÍ pressionar o bot„o Cancelar, todas\n"
-"as mudanÁas que vocÍ fez ser„o abandonadas\n"
-"e a janela ser· fechada.\n"
-"O programa continuar· no estado anterior ‡\n"
+"Se vocƒô pressionar o botƒÉo Cancelar, todas\n"
+"as mudan√ßas que vocƒô fez serƒÉo abandonadas\n"
+"e a janela ser√° fechada.\n"
+"O programa continuar√° no estado anterior ≈ï\n"
 "abertura da janela."
 
 #: kab/DialogBase.cpp:57 kdeui/kkeydialog.cpp:242 kdeui/knotebook.cpp:247
@@ -119,19 +122,19 @@ msgstr "&Cancelar"
 
 #: kab/PrintDialog.cpp:26
 msgid "Headline text:"
-msgstr "Texto de cabeÁalho:"
+msgstr "Texto de cabe√ßalho:"
 
 #: kab/PrintDialog.cpp:27
 msgid "Right footer text:"
-msgstr "Texto do rodapÈ direito:"
+msgstr "Texto do rodap√© direito:"
 
 #: kab/PrintDialog.cpp:28
 msgid "Left footer text:"
-msgstr "Texto do rodapÈ esquerdo:"
+msgstr "Texto do rodap√© esquerdo:"
 
 #: kab/SearchDialog.cpp:47
 msgid "The title"
-msgstr "O tÌtulo"
+msgstr "O t√≠tulo"
 
 #: kab/SearchDialog.cpp:48
 msgid "The first name"
@@ -155,7 +158,7 @@ msgstr "O nome formatado"
 
 #: kab/SearchDialog.cpp:53
 msgid "The address"
-msgstr "O endereÁo"
+msgstr "O endere√ßo"
 
 #: kab/SearchDialog.cpp:54
 msgid "The town"
@@ -163,11 +166,11 @@ msgstr "A cidade"
 
 #: kab/SearchDialog.cpp:55
 msgid "The organization"
-msgstr "A organizaÁ„o"
+msgstr "A organiza√ßƒÉo"
 
 #: kab/SearchDialog.cpp:56
 msgid "The role"
-msgstr "A funÁ„o"
+msgstr "A fun√ßƒÉo"
 
 #: kab/SearchDialog.cpp:57
 msgid "The org unit"
@@ -191,15 +194,15 @@ msgstr "O terceiro e-mail"
 
 #: kab/SearchDialog.cpp:62
 msgid "The telephone number"
-msgstr "O n˙mero de telefone"
+msgstr "O n√∫mero de telefone"
 
 #: kab/SearchDialog.cpp:63
 msgid "The fax number"
-msgstr "O n˙mero de fax"
+msgstr "O n√∫mero de fax"
 
 #: kab/SearchDialog.cpp:64
 msgid "The modem number"
-msgstr "O n˙mero de modem"
+msgstr "O n√∫mero de modem"
 
 #: kab/SearchDialog.cpp:65
 msgid "The homepage URL"
@@ -207,7 +210,7 @@ msgstr "A URL da home-page"
 
 #: kab/SearchDialog.cpp:66
 msgid "The comment"
-msgstr "O coment·rio"
+msgstr "O coment√°rio"
 
 #: kab/SearchDialog.cpp:74
 msgid "kab: Search entries"
@@ -243,7 +246,7 @@ msgstr "Apagar esse texto"
 
 #: kab/StringListSelectAndReorderSet.cpp:34
 msgid "Possible values:"
-msgstr "Valores possÌveis:"
+msgstr "Valores poss√≠veis:"
 
 #: kab/StringListSelectAndReorderSet.cpp:35
 msgid "Selected values:"
@@ -321,7 +324,7 @@ msgstr "Anterior"
 
 #: kdecore/kaccel.cpp:287
 msgid "Next"
-msgstr "PrÛximo"
+msgstr "Pr√≥ximo"
 
 #: kdecore/kaccel.cpp:291 kdetest/klocaletest.cpp:102 kdeui/kcolordlg.cpp:463
 #: kdeui/kcontrol.cpp:35 kfile/kfiledialog.cpp:246 kspell/ksconfig.cpp:212
@@ -343,7 +346,7 @@ msgstr "ALT"
 
 #: kdecore/kapp.cpp:616 po/texts.cpp:137
 msgid "&Contents"
-msgstr "&Conte˙do"
+msgstr "&Conte√∫do"
 
 #: kdecore/kapp.cpp:622
 msgid "&About"
@@ -370,16 +373,16 @@ msgid ""
 "Please report bugs at http://bugs.kde.org.\n"
 msgstr ""
 "\n"
-"O Ambiente Gr·fico KDE foi desenvolvido pelo Time KDE,\n"
+"O Ambiente Gr√°fico KDE foi desenvolvido pelo Time KDE,\n"
 "uma rede mundial de engenheiros de software comprometidos\n"
 "com o desenvolvimento de software gratuito.\n"
-"Visite http://www.kde.org para maiores informaÁıes sobre\n"
-"o Projeto KDE. Considere juntar-se ‡ equipe KDE.\n"
+"Visite http://www.kde.org para maiores informa√ß≈ëes sobre\n"
+"o Projeto KDE. Considere juntar-se ≈ï equipe KDE.\n"
 "\n"
 "Favor reportar bugs no site http://bugs.kde.org.\n"
 "\n"
-"Envie coment·rios sobre a localizaÁ„o do KDE para PortuguÍs\n"
-"do Brasil para Elvis Pf¸tzenreuter <epx@netville.com.br>\n"
+"Envie coment√°rios sobre a localiza√ßƒÉo do KDE para Portuguƒôs\n"
+"do Brasil para Elvis Pf√ºtzenreuter <epx@netville.com.br>\n"
 
 #: kdetest/klocaletest.cpp:100 kdeui/keditcl1.cpp:412 kdeui/keditcl1.cpp:433
 #: kdeui/keditcl1.cpp:494 kdeui/keditcl1.cpp:514 kdeui/keditcl1.cpp:1661
@@ -397,7 +400,7 @@ msgstr "Sim"
 #: kdeui/keditcl2.cpp:474 kdeui/kmsgbox.cpp:301 kdeui/kmsgbox.cpp:317
 #: po/texts.cpp:28
 msgid "No"
-msgstr "N„o"
+msgstr "NƒÉo"
 
 #: kab/datepickerdialog.cc:26 kab/kabapi.cc:37 kab/widget.cc:1390
 #: kab/widget.cc:1432 kdetest/klocaletest.cpp:103 kdeui/kcolordlg.cpp:470
@@ -432,7 +435,7 @@ msgstr "Personalizar..."
 
 #: kdeui/kcontrol.cpp:41 kdeui/kcontrol.cpp:58 po/texts.cpp:135
 msgid "Default"
-msgstr "Padr„o"
+msgstr "PadrƒÉo"
 
 #: kdeui/kcontrol.cpp:47 kdeui/kcontrol.cpp:53 po/texts.cpp:41
 msgid "Apply"
@@ -448,7 +451,7 @@ msgstr "Fevereiro"
 
 #: kdeui/kdatepik.cpp:103
 msgid "March"
-msgstr "MarÁo"
+msgstr "Mar√ßo"
 
 #: kdeui/kdatepik.cpp:103
 msgid "April"
@@ -488,7 +491,7 @@ msgstr "Dezembro"
 
 #: kdeui/kdatepik.cpp:247
 msgid "(invalid)"
-msgstr "(inv·lido)"
+msgstr "(inv√°lido)"
 
 #: kdeui/kdatetbl.cpp:49
 msgid "Sun"
@@ -516,7 +519,7 @@ msgstr "Sex"
 
 #: kdeui/kdatetbl.cpp:51
 msgid "Sat"
-msgstr "S·b"
+msgstr "S√°b"
 
 #: kab/kabapi.cc:138 kab/widget.cc:832 kab/widget.cc:852 kab/widget.cc:1952
 #: kdeui/keditcl1.cpp:139 kdeui/keditcl1.cpp:168 kdeui/keditcl1.cpp:189
@@ -526,7 +529,7 @@ msgstr "Desculpe"
 
 #: kdeui/keditcl1.cpp:140
 msgid "The specified File does not exist"
-msgstr "O arquivo especificado n„o existe"
+msgstr "O arquivo especificado nƒÉo existe"
 
 #: kdeui/keditcl1.cpp:153 kdeui/keditcl1.cpp:430 kdeui/keditcl1.cpp:511
 #: kdeui/keditcl1.cpp:1715
@@ -535,11 +538,11 @@ msgstr "Desculpe:"
 
 #: kdeui/keditcl1.cpp:154
 msgid "You have specificated a directory"
-msgstr "Especificou um diretÛrio"
+msgstr "Especificou um diret√≥rio"
 
 #: kdeui/keditcl1.cpp:169 kdeui/keditcl1.cpp:190
 msgid "You do not have read permission to this file."
-msgstr "N„o tem permissıes de leitura neste arquivo"
+msgstr "NƒÉo tem permiss≈ëes de leitura neste arquivo"
 
 #: kdeui/keditcl1.cpp:203
 msgid "An Error occured while trying to open this Document"
@@ -559,14 +562,14 @@ msgid ""
 "Would you like to save it?"
 msgstr ""
 "O Documento atual foi modificado.\n"
-"Gostaria de grav·-lo?"
+"Gostaria de grav√°-lo?"
 
 #: kdeui/keditcl1.cpp:431
 msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
 msgstr ""
-"N„o consegui gravar o documento.\n"
+"NƒÉo consegui gravar o documento.\n"
 "Abrir um novo documento de qualquer modo?"
 
 #: kdeui/keditcl1.cpp:462
@@ -578,17 +581,17 @@ msgid ""
 "Could not save the document.\n"
 "Create a new document anyways?"
 msgstr ""
-"N„o consegui gravar o documento.\n"
+"NƒÉo consegui gravar o documento.\n"
 "Criar um novo documento de qualquer modo?"
 
 #: kdeui/keditcl1.cpp:547 kdeui/keditcl1.cpp:1700 kdeui/kpopmenu.cpp:10
 #: po/texts.cpp:34
 msgid "Untitled"
-msgstr "Sem TÌtulo"
+msgstr "Sem T√≠tulo"
 
 #: kdeui/keditcl1.cpp:1560
 msgid "Could not save the document\n"
-msgstr "N„o consegui gravar documento\n"
+msgstr "NƒÉo consegui gravar documento\n"
 
 #: kdeui/keditcl1.cpp:1630
 msgid "Save Document As"
@@ -599,12 +602,12 @@ msgid ""
 "A Document with this Name exists already\n"
 "Do you want to overwrite it ?"
 msgstr ""
-"Um Documento com este Nome j· existe\n"
-"Quer sobrescrevÍ-lo ?"
+"Um Documento com este Nome j√° existe\n"
+"Quer sobrescrevƒô-lo ?"
 
 #: kdeui/keditcl1.cpp:1716
 msgid "You do not have write permission to this file.\n"
-msgstr "N„o tem permissıes de escrita neste arquivo.\n"
+msgstr "NƒÉo tem permiss≈ëes de escrita neste arquivo.\n"
 
 #: kdeui/keditcl2.cpp:104 kdeui/keditcl2.cpp:361 kdeui/keditcl2.cpp:454
 msgid ""
@@ -612,7 +615,7 @@ msgid ""
 "Continue from the beginning?"
 msgstr ""
 "Fim do documento atingido.\n"
-"Continuar do princÌpio?"
+"Continuar do princ√≠pio?"
 
 #: kdeui/keditcl2.cpp:121 kdeui/keditcl2.cpp:378 kdeui/keditcl2.cpp:424
 #: kdeui/keditcl2.cpp:471
@@ -625,11 +628,11 @@ msgstr ""
 
 #: kdeui/keditcl2.cpp:682 kdeui/keditcl2.cpp:780
 msgid "Case Sensitive"
-msgstr "Distinguir Mai˙sculas"
+msgstr "Distinguir Mai√∫sculas"
 
 #: kdeui/keditcl2.cpp:683 kdeui/keditcl2.cpp:783
 msgid "Find Backwards"
-msgstr "Procurar para Tr·s"
+msgstr "Procurar para Tr√°s"
 
 #: kdeui/keditcl2.cpp:688 kdeui/keditcl2.cpp:795
 msgid "Done"
@@ -669,7 +672,7 @@ msgstr "Fonte Efetiva"
 
 #: kdeui/kfontdialog.cpp:202 kdeui/kfontdialog.cpp:207
 msgid "Family:"
-msgstr "FamÌlia:"
+msgstr "Fam√≠lia:"
 
 #: kdeui/kfontdialog.cpp:214 kdeui/kfontdialog.cpp:219 po/texts.cpp:26
 msgid "Charset:"
@@ -715,7 +718,7 @@ msgstr "romano"
 #: kdeui/kfontdialog.cpp:340 kdeui/kfontdialog.cpp:499
 #: kdeui/kfontdialog.cpp:524
 msgid "italic"
-msgstr "it·lico"
+msgstr "it√°lico"
 
 #: kdeui/kfontdialog.cpp:348
 msgid "Charset"
@@ -735,7 +738,7 @@ msgstr "Normal"
 
 #: kdeui/kiconloaderdialog.cpp:247
 msgid "Select Icon"
-msgstr "Escolher Õcone"
+msgstr "Escolher √çcone"
 
 #: kdeui/kiconloaderdialog.cpp:252
 msgid "Filter:"
@@ -743,7 +746,7 @@ msgstr "Filtro:"
 
 #: kdeui/kkeydialog.cpp:219
 msgid "Configure key bindings"
-msgstr "Configurar dependÍncias de teclado"
+msgstr "Configurar dependƒôncias de teclado"
 
 #: kdeui/kkeydialog.cpp:232 kdeui/knotebook.cpp:224 kdeui/kwizard.cpp:205
 #: po/texts.cpp:45
@@ -752,7 +755,7 @@ msgstr "A&juda"
 
 #: kdeui/kkeydialog.cpp:236 po/texts.cpp:136
 msgid "&Defaults"
-msgstr "&Padrıes"
+msgstr "&Padr≈ëes"
 
 #: kdeui/kkeydialog.cpp:320
 msgid "Current key"
@@ -760,11 +763,11 @@ msgstr "Tecla corrente"
 
 #: kdeui/kkeydialog.cpp:332
 msgid "&Action"
-msgstr "&AÁ„o"
+msgstr "&A√ßƒÉo"
 
 #: kdeui/kkeydialog.cpp:366
 msgid "Choose a key for the selected action"
-msgstr "Escolha uma tecla para a aÁ„o selecionada"
+msgstr "Escolha uma tecla para a a√ßƒÉo selecionada"
 
 #: kdeui/kkeydialog.cpp:393
 msgid "&No key"
@@ -772,7 +775,7 @@ msgstr "&Nenhuma tecla"
 
 #: kdeui/kkeydialog.cpp:401
 msgid "&Default key"
-msgstr "&Tecla padr„o"
+msgstr "&Tecla padrƒÉo"
 
 #: kdeui/kkeydialog.cpp:409
 msgid "&Custom key"
@@ -784,7 +787,7 @@ msgstr "Nenhuma tecla definida"
 
 #: kdeui/kkeydialog.cpp:474
 msgid "Not configurable"
-msgstr "N„o configur·vel"
+msgstr "NƒÉo configur√°vel"
 
 #: kdeui/kkeydialog.cpp:530
 msgid "Global Keys"
@@ -796,7 +799,7 @@ msgstr "Teclas"
 
 #: kdeui/kkeydialog.cpp:637 kdeui/kkeydialog.cpp:976
 msgid "Attention : key already used"
-msgstr "AtenÁ„o: tecla j· usada"
+msgstr "Aten√ßƒÉo: tecla j√° usada"
 
 #: kdeui/kkeydialog.cpp:926
 msgid "Press the wanted key"
@@ -808,7 +811,7 @@ msgstr "Tecla indefinida"
 
 #: kdeui/kkeydialog.cpp:999
 msgid "Return to end edition"
-msgstr "Retornar para finalizar ediÁ„o"
+msgstr "Retornar para finalizar edi√ßƒÉo"
 
 #: kdeui/kkeydialog.cpp:1009
 msgid "Incorrect key"
@@ -822,10 +825,10 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"A combinaÁ„o de teclas %s j· foi alocada\n"
-"para a aÁ„o global %s.\n"
+"A combina√ßƒÉo de teclas %s j√° foi alocada\n"
+"para a a√ßƒÉo global %s.\n"
 "\n"
-"Escolha um combinaÁ„o exclusiva de teclas."
+"Escolha um combina√ßƒÉo exclusiva de teclas."
 
 #: kdeui/kkeydialog.cpp:1039
 msgid "Global key conflict"
@@ -839,14 +842,14 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"A combinaÁ„o de teclas %s j· foi alocada\n"
-"para a aÁ„o ordin·ria %s.\n"
+"A combina√ßƒÉo de teclas %s j√° foi alocada\n"
+"para a a√ßƒÉo ordin√°ria %s.\n"
 "\n"
-"Queira escolher uma combinaÁ„o exclusiva de teclas."
+"Queira escolher uma combina√ßƒÉo exclusiva de teclas."
 
 #: kdeui/kkeydialog.cpp:1066
 msgid "Standard key conflict"
-msgstr "Conflito de teclas ordin·rias"
+msgstr "Conflito de teclas ordin√°rias"
 
 #: kdeui/kkeydialog.cpp:1086
 #, c-format
@@ -856,10 +859,10 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"A combinaÁ„o de teclas %s j· foi alocada\n"
-"para a aÁ„o %s.\n"
+"A combina√ßƒÉo de teclas %s j√° foi alocada\n"
+"para a a√ßƒÉo %s.\n"
 "\n"
-"Escolha uma combinaÁ„o exclusiva de teclas."
+"Escolha uma combina√ßƒÉo exclusiva de teclas."
 
 #: kdeui/kkeydialog.cpp:1090
 msgid "Key conflict"
@@ -883,19 +886,19 @@ msgstr "Flutuar"
 
 #: kdeui/kmenubar.cpp:761 kdeui/ktoolbar.cpp:2071
 msgid "UnFloat"
-msgstr "Retirar FlutuaÁ„o"
+msgstr "Retirar Flutua√ßƒÉo"
 
 #: kdeui/knotebook.cpp:145
 msgid "Trying to add page when no KWizards are added!"
-msgstr "Tentando adicionar p·gina quando nenhum KWizard foi adicionado!"
+msgstr "Tentando adicionar p√°gina quando nenhum KWizard foi adicionado!"
 
 #: kdeui/knotebook.cpp:201 kdeui/kwizard.cpp:182
 msgid "&Default"
-msgstr "&Padr„o"
+msgstr "&PadrƒÉo"
 
 #: kdeui/kquickhelp.cpp:203
 msgid "Quickhelp"
-msgstr "Ajuda r·pida"
+msgstr "Ajuda r√°pida"
 
 #: kdeui/ktoolbar.cpp:288 kdeui/ktoolbar.cpp:340
 msgid "KToolBarButton: pixmap is empty, perhaps some missing file"
@@ -912,7 +915,7 @@ msgstr "Direita"
 #: kdeui/kwizard.cpp:531 kdeui/kwizard.cpp:678
 #, c-format
 msgid "Page %d of %d"
-msgstr "P·gina %d de %d"
+msgstr "P√°gina %d de %d"
 
 #: kfile/kcombiview.cpp:81
 msgid "Folders:"
@@ -920,11 +923,11 @@ msgstr "Pastas:"
 
 #: kfile/kcombiview.cpp:82
 msgid "Contents:"
-msgstr "Conte˙do:"
+msgstr "Conte√∫do:"
 
 #: kfile/kfilebookmark.cpp:246
 msgid "<!-- Do not edit this file -->"
-msgstr "<!-- N„o edite este arquivo -->"
+msgstr "<!-- NƒÉo edite este arquivo -->"
 
 #: kab/addressbook.cc:1112 kfile/kfiledetaillist.cpp:36
 msgid "Name"
@@ -932,7 +935,7 @@ msgstr "Nome"
 
 #: kfile/kfiledetaillist.cpp:40
 msgid "Permissions"
-msgstr "Permissıes"
+msgstr "Permiss≈ëes"
 
 #: kfile/kfiledetaillist.cpp:42
 msgid "Date"
@@ -952,7 +955,7 @@ msgstr "Voltar"
 
 #: kfile/kfiledialog.cpp:125
 msgid "Forward"
-msgstr "AvanÁar"
+msgstr "Avan√ßar"
 
 #: kfile/kfiledialog.cpp:128
 msgid "Up to parent"
@@ -976,7 +979,7 @@ msgstr "Procurar arquivo"
 
 #: kfile/kfiledialog.cpp:166
 msgid "Configure this dialog [development only]"
-msgstr "Configurar este di·logo [desenvolvimento apenas]"
+msgstr "Configurar este di√°logo [desenvolvimento apenas]"
 
 #: kfile/kfiledialog.cpp:174
 msgid "The path"
@@ -984,7 +987,7 @@ msgstr "O caminho"
 
 #: kfile/kfiledialog.cpp:199
 msgid "&Location:"
-msgstr "&LocalizaÁ„o:"
+msgstr "&Localiza√ßƒÉo:"
 
 #: kfile/kfiledialog.cpp:212
 msgid "&Filter:"
@@ -996,27 +999,27 @@ msgstr "Mostrar escondidos"
 
 #: kfile/kfiledialog.cpp:505
 msgid "Error: Not local file"
-msgstr "Erro: N„o È um arquivo local"
+msgstr "Erro: NƒÉo √© um arquivo local"
 
 #: kfile/kfiledialog.cpp:506
 msgid ""
 "The specified directory is not a local directory\n"
 "But the application accepts just local files."
 msgstr ""
-"O diretÛrio especifico n„o È local\n"
-"mas a aplicaÁ„o sÛ aceita arquivos locais."
+"O diret√≥rio especifico nƒÉo √© local\n"
+"mas a aplica√ßƒÉo s√≥ aceita arquivos locais."
 
 #: kfile/kfiledialog.cpp:520 kfile/kfiledialog.cpp:625
 msgid "Error: Cannot Open Directory"
-msgstr "Erro: N„o consigo abrir diretÛrio"
+msgstr "Erro: NƒÉo consigo abrir diret√≥rio"
 
 #: kfile/kfiledialog.cpp:521
 msgid ""
 "The specified directory does not exist\n"
 "or was not readable."
 msgstr ""
-"O arquivo especificado n„o existe\n"
-"ou n„o est· acessÌvel para leitura."
+"O arquivo especificado nƒÉo existe\n"
+"ou nƒÉo est√° acess√≠vel para leitura."
 
 #: kfile/kfiledialog.cpp:523 kfile/kfiledialog.cpp:628
 msgid "Dismiss"
@@ -1028,19 +1031,19 @@ msgstr "Salvar Como"
 
 #: kfile/kfiledialog.cpp:597
 msgid "Root Directory"
-msgstr "DiretÛrio Raiz"
+msgstr "Diret√≥rio Raiz"
 
 #: kfile/kfiledialog.cpp:626
 msgid "The specified directory does not exist or was not readable."
-msgstr "O arquivo especificado n„o existe ou n„o est· acessÌvel para leitura."
+msgstr "O arquivo especificado nƒÉo existe ou nƒÉo est√° acess√≠vel para leitura."
 
 #: kfile/kfiledialog.cpp:887
 msgid "Create new directory in: "
-msgstr "Criar novo diretÛrio em: "
+msgstr "Criar novo diret√≥rio em: "
 
 #: kfile/kfiledialog.cpp:890
 msgid "New Directory"
-msgstr "Novo DiretÛrio"
+msgstr "Novo Diret√≥rio"
 
 #: kfile/kfiledialog.cpp:962
 msgid "Add to bookmarks"
@@ -1048,15 +1051,15 @@ msgstr "Adicionar aos favoritos"
 
 #: kfile/kfiledialog.cpp:1253
 msgid "Choose Directory"
-msgstr "Escolha DiretÛrio"
+msgstr "Escolha Diret√≥rio"
 
 #: kfile/kfiledialog.cpp:1321
 msgid "directory"
-msgstr "diretÛrio"
+msgstr "diret√≥rio"
 
 #: kfile/kfiledialog.cpp:1323
 msgid "directories"
-msgstr "diretÛrios"
+msgstr "diret√≥rios"
 
 #: kfile/kfiledialog.cpp:1325 kfile/kpreview.cpp:326
 msgid "file"
@@ -1073,12 +1076,12 @@ msgstr "%d %s e %d %s"
 
 #: kfile/kfiledialog.cpp:1339
 msgid "one directory"
-msgstr "um diretÛrio"
+msgstr "um diret√≥rio"
 
 #: kfile/kfiledialog.cpp:1341
 #, c-format
 msgid "%d directories"
-msgstr "%d diretÛrios"
+msgstr "%d diret√≥rios"
 
 #: kfile/kfiledialogconf.cpp:42
 msgid "Look and Feel"
@@ -1103,7 +1106,7 @@ msgstr ""
 "Stephan Kulow <coolo@kde.org>\n"
 "e Daniel Grana <grana@ie.iwi.unibe.ch>\n"
 "\n"
-"com contribuiÁıes de\n"
+"com contribui√ß≈ëes de\n"
 "\n"
 "Mario Weilguni <mweilguni@sime.com>\n"
 "e Martin Jones <mjones@kde.org>"
@@ -1146,7 +1149,7 @@ msgstr "Mostrar Linha de Status"
 
 #: kfile/kfiledialogconf.cpp:120
 msgid "Use single Click"
-msgstr "Utilizar sÛ um Click"
+msgstr "Utilizar s√≥ um Click"
 
 #: kfile/kfiledialogconf.cpp:126
 msgid "Mix dirs and files"
@@ -1246,8 +1249,8 @@ msgid ""
 "You dont have the file %s\n"
 "Could not do Authorization"
 msgstr ""
-"VocÍ n„o tem o arquivo %s\n"
-"N„o posso proceder ‡ AutorizaÁ„o"
+"Vocƒô nƒÉo tem o arquivo %s\n"
+"NƒÉo posso proceder ≈ï Autoriza√ßƒÉo"
 
 #: kfmlib/kfm.cpp:200 kfmlib/kfm.cpp:210
 msgid "KFM Error"
@@ -1259,12 +1262,12 @@ msgid ""
 "The file %s is corrupted\n"
 "Could not do Authorization"
 msgstr ""
-"O arquivo %s est· corrompido\n"
-"N„o posso proceder ‡ AutorizaÁ„o"
+"O arquivo %s est√° corrompido\n"
+"NƒÉo posso proceder ≈ï Autoriza√ßƒÉo"
 
 #: kspell/ksconfig.cpp:66
 msgid "Create Root/Affix combinations not in the dictionary"
-msgstr "Criar combinaÁıes de raÌzes/sufixos inexistentes no dicion·rio"
+msgstr "Criar combina√ß≈ëes de ra√≠zes/sufixos inexistentes no dicion√°rio"
 
 #: kspell/ksconfig.cpp:75
 msgid "Consider run-together words as spelling errors"
@@ -1272,11 +1275,11 @@ msgstr "Considerar palavras grudadas como erros"
 
 #: kspell/ksconfig.cpp:92
 msgid "Dictionary"
-msgstr "Dicion·rio"
+msgstr "Dicion√°rio"
 
 #: kspell/ksconfig.cpp:140
 msgid "Encoding:"
-msgstr "CodificaÁ„o:"
+msgstr "Codifica√ßƒÉo:"
 
 #: kspell/ksconfig.cpp:147
 msgid "Latin1"
@@ -1288,7 +1291,7 @@ msgstr "&-Bit/ASCII"
 
 #: kspell/ksconfig.cpp:292
 msgid "English"
-msgstr "InglÍs"
+msgstr "Inglƒôs"
 
 #: kspell/ksconfig.cpp:298
 msgid "Spanish"
@@ -1296,11 +1299,11 @@ msgstr "Espanhol"
 
 #: kspell/ksconfig.cpp:304
 msgid "German"
-msgstr "Alem„o"
+msgstr "AlemƒÉo"
 
 #: kspell/ksconfig.cpp:311
 msgid "Brazilian Portuguese"
-msgstr "PortuguÍs do Brasil"
+msgstr "Portuguƒôs do Brasil"
 
 #: kspell/ksconfig.cpp:317
 msgid "Unknown"
@@ -1308,7 +1311,7 @@ msgstr "Desconhecido"
 
 #: kspell/ksconfig.cpp:348
 msgid "ISpell Default"
-msgstr "Padr„o do ISpell"
+msgstr "PadrƒÉo do ISpell"
 
 #: kspell/kspelldlg.cpp:58
 msgid "Misspelled Word:"
@@ -1320,7 +1323,7 @@ msgstr "Substituir por:"
 
 #: kspell/kspelldlg.cpp:77
 msgid "Suggestions:"
-msgstr "Sugestıes:"
+msgstr "Sugest≈ëes:"
 
 #: kspell/kspelldlg.cpp:88
 msgid "Ignore"
@@ -1346,7 +1349,7 @@ msgstr "Erro"
 
 #: po/texts.cpp:25
 msgid "Malformed URL"
-msgstr "URL inv·lida"
+msgstr "URL inv√°lida"
 
 #: po/texts.cpp:29
 msgid "Warning"
@@ -1358,7 +1361,7 @@ msgstr "Salvar um arquivo"
 
 #: po/texts.cpp:31
 msgid "Contents"
-msgstr "Conte˙do"
+msgstr "Conte√∫do"
 
 #: po/texts.cpp:33
 msgid "A&bout..."
@@ -1390,7 +1393,7 @@ msgstr "&Editar"
 
 #: po/texts.cpp:48
 msgid "&Options"
-msgstr "&OpÁıes"
+msgstr "&Op√ß≈ëes"
 
 #: po/texts.cpp:49
 msgid "View"
@@ -1490,7 +1493,7 @@ msgstr "Im&primir..."
 
 #: po/texts.cpp:84
 msgid "Options"
-msgstr "OpÁıes"
+msgstr "Op√ß≈ëes"
 
 #: po/texts.cpp:85
 msgid "Remove"
@@ -1514,7 +1517,7 @@ msgstr "Limpar"
 
 #: po/texts.cpp:91
 msgid "Italic"
-msgstr "It·lico"
+msgstr "It√°lico"
 
 #: po/texts.cpp:92
 msgid "Roman"
@@ -1538,7 +1541,7 @@ msgstr "&Jogo"
 
 #: po/texts.cpp:98
 msgid "Information"
-msgstr "InformaÁ„o"
+msgstr "Informa√ßƒÉo"
 
 #: po/texts.cpp:99
 msgid "Browse..."
@@ -1566,7 +1569,7 @@ msgstr "&Parar"
 
 #: po/texts.cpp:106
 msgid "Miscellaneous"
-msgstr "Miscel‚nea"
+msgstr "Miscel√¢nea"
 
 #: po/texts.cpp:107
 msgid "Font Size"
@@ -1598,7 +1601,7 @@ msgstr "Restaurar"
 
 #: po/texts.cpp:114
 msgid "Appearance"
-msgstr "AparÍncia"
+msgstr "Aparƒôncia"
 
 #: po/texts.cpp:116
 msgid "Monday"
@@ -1606,7 +1609,7 @@ msgstr "Segunda"
 
 #: po/texts.cpp:117
 msgid "Tuesday"
-msgstr "TerÁa"
+msgstr "Ter√ßa"
 
 #: po/texts.cpp:118
 msgid "Wednesday"
@@ -1622,7 +1625,7 @@ msgstr "Sexta"
 
 #: po/texts.cpp:121
 msgid "Saturday"
-msgstr "S·bado"
+msgstr "S√°bado"
 
 #: po/texts.cpp:122
 msgid "Sunday"
@@ -1642,7 +1645,7 @@ msgstr "Escore"
 
 #: po/texts.cpp:126
 msgid "&New View"
-msgstr "&Nova Vis„o"
+msgstr "&Nova VisƒÉo"
 
 #: po/texts.cpp:127
 msgid "&Insert"
@@ -1650,7 +1653,7 @@ msgstr "&Inserir"
 
 #: po/texts.cpp:130
 msgid "&Next >>"
-msgstr "&PrÛximo >>"
+msgstr "&Pr√≥ximo >>"
 
 #: po/texts.cpp:131
 msgid "<< &Previous"
@@ -1667,14 +1670,14 @@ msgid ""
 "The program will try to create\n"
 "         "
 msgstr ""
-"O diretÛrio onde est„o gravados os dados especÌficos do usu·rio da\n"
-"aplicaÁ„o Livro de EndereÁos, n„o existe.\n"
-"O programa tentar· criar\n"
+"O diret√≥rio onde estƒÉo gravados os dados espec√≠ficos do usu√°rio da\n"
+"aplica√ßƒÉo Livro de Endere√ßos, nƒÉo existe.\n"
+"O programa tentar√° criar\n"
 "         "
 
 #: kab/addressbook.cc:94
 msgid "and store all local files in this directory."
-msgstr "e gravar todos os arquivos locais nesse diretÛrio."
+msgstr "e gravar todos os arquivos locais nesse diret√≥rio."
 
 #: kab/addressbook.cc:98
 msgid ""
@@ -1684,56 +1687,56 @@ msgid ""
 "in your home directory. Run the KDE filemanager\n"
 "kfm once to automatically create it."
 msgstr ""
-"O diretÛrio n„o pÙde ser criado.\n"
-"Possivelmente vocÍ nunca usou o KDE antes, portanto\n"
-"vocÍ n„o tem um diretÛrio local \".kde\"\n"
-"em seu diretÛrio de usu·rio. Execute o gerenciador de\n"
-"arquivos do KDE - kfm - para cri·-lo automaticamente."
+"O diret√≥rio nƒÉo p√¥de ser criado.\n"
+"Possivelmente vocƒô nunca usou o KDE antes, portanto\n"
+"vocƒô nƒÉo tem um diret√≥rio local \".kde\"\n"
+"em seu diret√≥rio de usu√°rio. Execute o gerenciador de\n"
+"arquivos do KDE - kfm - para cri√°-lo automaticamente."
 
 #: kab/addressbook.cc:106
 msgid "The directory has been created.\n"
-msgstr "O diretÛrio foi criado.\n"
+msgstr "O diret√≥rio foi criado.\n"
 
 #: kab/addressbook.cc:140
 msgid "No addressbook database file, creating new one."
-msgstr "Nenhum arquivo de dados da Lista de EndereÁos, criando um novo."
+msgstr "Nenhum arquivo de dados da Lista de Endere√ßos, criando um novo."
 
 #: kab/addressbook.cc:159
 msgid "Tried to load database for creating backup, but failed"
 msgstr ""
-"Falha no carregamento do banco de dados a fim de criar cÛpia de seguranÁa"
+"Falha no carregamento do banco de dados a fim de criar c√≥pia de seguran√ßa"
 
 #: kab/addressbook.cc:194
 msgid "Unable to save to backup file."
-msgstr "ImpossÌvel salvar para arquivo de cÛpia de seguranÁa."
+msgstr "Imposs√≠vel salvar para arquivo de c√≥pia de seguran√ßa."
 
 #: kab/addressbook.cc:200
 msgid "Unable to reset filename after creating backup."
-msgstr "ImpossÌvel iniciar nome de arquivo apÛs criar cÛpia de seguranÁa."
+msgstr "Imposs√≠vel iniciar nome de arquivo ap√≥s criar c√≥pia de seguran√ßa."
 
 #: kab/addressbook.cc:205
 msgid "Unable to create backup file"
-msgstr "ImpossÌvel criar arquivo de cÛpia de seguranÁa"
+msgstr "Imposs√≠vel criar arquivo de c√≥pia de seguran√ßa"
 
 #: kab/addressbook.cc:263
 msgid "Unable to insert \""
-msgstr "ImpossÌvel inserir \""
+msgstr "Imposs√≠vel inserir \""
 
 #: kab/addressbook.cc:264
 msgid "\" into configuration section (ignored)."
-msgstr "\" em seÁ„o de configuraÁ„o (ignorado)."
+msgstr "\" em se√ßƒÉo de configura√ßƒÉo (ignorado)."
 
 #: kab/addressbook.cc:666
 msgid "Unable to add a new entry with available key."
-msgstr "ImpossÌvel adicionar novo item com tecla disponÌvel."
+msgstr "Imposs√≠vel adicionar novo item com tecla dispon√≠vel."
 
 #: kab/addressbook.cc:672
 msgid "Cannot find previously created section."
-msgstr "ImpossÌvel encontrar seÁ„o criada previamente"
+msgstr "Imposs√≠vel encontrar se√ßƒÉo criada previamente"
 
 #: kab/addressbook.cc:703
 msgid "Unable to create key-value-map for entry."
-msgstr "ImpossÌvel criar mapa de valores de chaves para o item."
+msgstr "Imposs√≠vel criar mapa de valores de chaves para o item."
 
 #: kab/addressbook.cc:989
 msgid "entry without name"
@@ -1743,28 +1746,28 @@ msgstr "item sem nome"
 msgid ""
 "Unable to create new database file (probably permission denied), exiting."
 msgstr ""
-"ImpossÌvel criar novo banco de dados (provavelmente, permiss„o negada), "
+"Imposs√≠vel criar novo banco de dados (provavelmente, permissƒÉo negada), "
 "saindo"
 
 #: kab/addressbook.cc:1013
 msgid "Cannot create configuration section, exiting."
-msgstr "ImpossÌvel criar seÁ„o de configuraÁ„o, saindo."
+msgstr "Imposs√≠vel criar se√ßƒÉo de configura√ßƒÉo, saindo."
 
 #: kab/addressbook.cc:1018
 msgid "Cannot create entries section, exiting."
-msgstr "ImpossÌvel criar seÁ„o de itens, saindo."
+msgstr "Imposs√≠vel criar se√ßƒÉo de itens, saindo."
 
 #: kab/addressbook.cc:1023
 msgid "Unable to find previously created section, exiting."
-msgstr "ImpossÌvel encontrar seÁ„o previamente criada, saindo."
+msgstr "Imposs√≠vel encontrar se√ßƒÉo previamente criada, saindo."
 
 #: kab/addressbook.cc:1031
 msgid "Cannot save newly created database."
-msgstr "ImpossÌvel salvar banco de dados recÈm-criado."
+msgstr "Imposs√≠vel salvar banco de dados rec√©m-criado."
 
 #: kab/addressbook.cc:1037
 msgid "Cannot erase database contents."
-msgstr "ImpossÌvel apagar o conte˙do do banco de dados."
+msgstr "Imposs√≠vel apagar o conte√∫do do banco de dados."
 
 #: kab/addressbook.cc:1116
 msgid "First name"
@@ -1784,11 +1787,11 @@ msgstr "Nome formatado"
 
 #: kab/addressbook.cc:1132
 msgid "Comment"
-msgstr "Coment·rio"
+msgstr "Coment√°rio"
 
 #: kab/addressbook.cc:1136
 msgid "Organization"
-msgstr "OrganizaÁ„o"
+msgstr "Organiza√ßƒÉo"
 
 #: kab/addressbook.cc:1140
 msgid "Unit"
@@ -1800,11 +1803,11 @@ msgstr "Sub-unidade"
 
 #: kab/addressbook.cc:1148
 msgid "Title"
-msgstr "TÌtulo"
+msgstr "T√≠tulo"
 
 #: kab/addressbook.cc:1152
 msgid "Role"
-msgstr "FunÁ„o"
+msgstr "Fun√ßƒÉo"
 
 #: kab/addressbook.cc:1156
 msgid "Birthday"
@@ -1812,7 +1815,7 @@ msgstr "Data de nascimento"
 
 #: kab/addressbook.cc:1160
 msgid "Talk addresses"
-msgstr "EndereÁos de comunicaÁ„o"
+msgstr "Endere√ßos de comunica√ßƒÉo"
 
 #: kab/addressbook.cc:1164
 msgid "Delivery label"
@@ -1832,11 +1835,11 @@ msgstr "Terceiro e-mail"
 
 #: kab/addressbook.cc:1180
 msgid "Email addresses"
-msgstr "EndereÁos e-mail"
+msgstr "Endere√ßos e-mail"
 
 #: kab/addressbook.cc:1184
 msgid "Address"
-msgstr "EndereÁo"
+msgstr "Endere√ßo"
 
 #: kab/addressbook.cc:1188
 msgid "City/Town"
@@ -1848,11 +1851,11 @@ msgstr "Telefone"
 
 #: kab/addressbook.cc:1196
 msgid "Fax number"
-msgstr "N˙mero de fax"
+msgstr "N√∫mero de fax"
 
 #: kab/addressbook.cc:1200
 msgid "Modem number"
-msgstr "N˙mero do modem"
+msgstr "N√∫mero do modem"
 
 #: kab/addressbook.cc:1204
 msgid "Homepage URL"
@@ -1868,7 +1871,7 @@ msgstr "Estado"
 
 #: kab/addressbook.cc:1216
 msgid "Country"
-msgstr "PaÌs"
+msgstr "Pa√≠s"
 
 #: kab/addressbook.cc:1383
 msgid "(unnamed entry)"
@@ -1876,7 +1879,7 @@ msgstr "(item sem nome)"
 
 #: kab/datepickerdialog.cc:34
 msgid "Select birthday"
-msgstr "Selecionar anivers·rio"
+msgstr "Selecionar anivers√°rio"
 
 #: kab/editentry.cc:38
 msgid "Edit the current entry"
@@ -1884,7 +1887,7 @@ msgstr "Editar o item corrente"
 
 #: kab/editentry.cc:61
 msgid "Title:"
-msgstr "TÌtulo:"
+msgstr "T√≠tulo:"
 
 #: kab/editentry.cc:62
 msgid "First name:"
@@ -1904,7 +1907,7 @@ msgstr "&Nome"
 
 #: kab/editentry.cc:103
 msgid "Address:"
-msgstr "EndereÁo:"
+msgstr "Endere√ßo:"
 
 #: kab/editentry.cc:104
 msgid "Town/City:"
@@ -1920,15 +1923,15 @@ msgstr "CEP:"
 
 #: kab/editentry.cc:107
 msgid "Country:"
-msgstr "PaÌs:"
+msgstr "Pa√≠s:"
 
 #: kab/editentry.cc:130
 msgid "&Address"
-msgstr "&EndereÁo:"
+msgstr "&Endere√ßo:"
 
 #: kab/editentry.cc:145
 msgid "Organization:"
-msgstr "OrganizaÁ„o:"
+msgstr "Organiza√ßƒÉo:"
 
 #: kab/editentry.cc:146
 msgid "Department:"
@@ -1940,11 +1943,11 @@ msgstr "Sub-Departamento:"
 
 #: kab/editentry.cc:148
 msgid "Job/Role:"
-msgstr "FunÁ„o:"
+msgstr "Fun√ßƒÉo:"
 
 #: kab/editentry.cc:169
 msgid "&Organization"
-msgstr "&OrganizaÁ„o"
+msgstr "&Organiza√ßƒÉo"
 
 #: kab/editentry.cc:184
 msgid "Telephone:"
@@ -1968,7 +1971,7 @@ msgstr "Editar e-mails"
 
 #: kab/editentry.cc:206 kab/editentry.cc:400
 msgid "Edit talk addresses"
-msgstr "Editar endereÁos de comunicaÁ„o"
+msgstr "Editar endere√ßos de comunica√ßƒÉo"
 
 #: kab/editentry.cc:218
 msgid "&Contact"
@@ -1976,7 +1979,7 @@ msgstr "&Contato"
 
 #: kab/editentry.cc:239
 msgid "Additional Comment:"
-msgstr "Coment·rio adicional:"
+msgstr "Coment√°rio adicional:"
 
 #: kab/editentry.cc:246
 msgid "Birthday:"
@@ -1992,7 +1995,7 @@ msgstr "Ou&tros"
 
 #: kab/kabapi.cc:138
 msgid "Your new entry could not be added."
-msgstr "Seu novo registro n„o pode ser adicionado."
+msgstr "Seu novo registro nƒÉo pode ser adicionado."
 
 #: kab/searchresults.cc:33
 msgid "search results"
@@ -2000,7 +2003,7 @@ msgstr "resultados da pesquisa"
 
 #: kab/widget.cc:144
 msgid "Conversion problem"
-msgstr "Problema de convers„o"
+msgstr "Problema de conversƒÉo"
 
 #: kab/widget.cc:145
 msgid ""
@@ -2009,18 +2012,18 @@ msgid ""
 "You can use it, but not all features will be\n"
 "supported."
 msgstr ""
-"Kab n„o pÙde converter seu banco de dados para\n"
+"Kab nƒÉo p√¥de converter seu banco de dados para\n"
 "o formato correntet.\n"
-"VocÍ pode us·-lo, mas nem todos os recursos\n"
-"ser„o suportados."
+"Vocƒô pode us√°-lo, mas nem todos os recursos\n"
+"serƒÉo suportados."
 
 #: kab/widget.cc:163
 msgid ""
 "The application saved the last current entry,\n"
 "but this entry does not exist anymore."
 msgstr ""
-"A aplicaÁ„o salvou o ˙ltimo registro corrente,\n"
-"mas esse item n„o existe mais."
+"A aplica√ßƒÉo salvou o √∫ltimo registro corrente,\n"
+"mas esse item nƒÉo existe mais."
 
 #: kab/widget.cc:229
 msgid "kab: Removed bug warning"
@@ -2035,24 +2038,24 @@ msgid ""
 "All configuration values have been reset to\n"
 "its default settings."
 msgstr ""
-"A vers„o do kab que vocÍ usou antes tinha\n"
-"um problema concernente ‡ atualizaÁ„o do\n"
-"banco de dados para novas versıes. Esse \n"
-"erro foi removido e n„o vai mais lhe afetar.\n"
-"Todos os valores da configuraÁ„o foram\n"
+"A versƒÉo do kab que vocƒô usou antes tinha\n"
+"um problema concernente ≈ï atualiza√ßƒÉo do\n"
+"banco de dados para novas vers≈ëes. Esse \n"
+"erro foi removido e nƒÉo vai mais lhe afetar.\n"
+"Todos os valores da configura√ßƒÉo foram\n"
 "preenchidos com os valores originais."
 
 #: kab/widget.cc:248 kab/widget.cc:314 kab/widget.cc:322
 msgid "File handling error"
-msgstr "Erro de manipulaÁ„o de arquivo"
+msgstr "Erro de manipula√ßƒÉo de arquivo"
 
 #: kab/widget.cc:249
 msgid "Unable to open database file r/w."
-msgstr "ImpossÌvel abrir banco de dados para leitura/gravaÁ„o."
+msgstr "Imposs√≠vel abrir banco de dados para leitura/grava√ßƒÉo."
 
 #: kab/widget.cc:257
 msgid "Email storage conversion"
-msgstr "Convers„o de armazenamento de e-mail"
+msgstr "ConversƒÉo de armazenamento de e-mail"
 
 #: kab/widget.cc:258
 msgid ""
@@ -2060,41 +2063,41 @@ msgid ""
 "the new style supporting unlimited numbers\n"
 "of email addresses per entry."
 msgstr ""
-"Kab mover· todos seus endereÁos de e-mail para\n"
-"o novo estilo que suporta um n˙mero ilimitado\n"
+"Kab mover√° todos seus endere√ßos de e-mail para\n"
+"o novo estilo que suporta um n√∫mero ilimitado\n"
 "de mensagens por item."
 
 #: kab/widget.cc:291
 msgid "kab database update"
-msgstr "atualizaÁ„o de banco de dados do kab"
+msgstr "atualiza√ßƒÉo de banco de dados do kab"
 
 #: kab/widget.cc:292
 msgid ""
 "Please note that kab now supports some new\n"
 "fields in its addresses. These new fields\n"
 "are:\n"
-"∞ the state field,\n"
-"∞ the country field and\n"
-"∞ the postal code field.\n"
+"¬∞ the state field,\n"
+"¬∞ the country field and\n"
+"¬∞ the postal code field.\n"
 "You will probably need to edit some of your\n"
 "entries to make use of it."
 msgstr ""
 "Note que agora o kab suporta alguns novos\n"
-"campos em seus endereÁos. Esses novos campos\n"
-"s„o:\n"
-"∞ o campo Estado,\n"
-"∞ o campo PaÌs e\n"
-"∞ o campo CEP.\n"
-"VocÍ provavelmente ter· de editar alguns de seus\n"
+"campos em seus endere√ßos. Esses novos campos\n"
+"sƒÉo:\n"
+"¬∞ o campo Estado,\n"
+"¬∞ o campo Pa√≠s e\n"
+"¬∞ o campo CEP.\n"
+"Vocƒô provavelmente ter√° de editar alguns de seus\n"
 "registros para fazer uso deles."
 
 #: kab/widget.cc:315
 msgid "Could not save database after update."
-msgstr "ImpossÌvel salvar banco de dados apÛs atualizaÁ„o."
+msgstr "Imposs√≠vel salvar banco de dados ap√≥s atualiza√ßƒÉo."
 
 #: kab/widget.cc:323
 msgid "Unable to reopen database file r/o."
-msgstr "ImpossÌvel reabrir banco de dados para somente leitura."
+msgstr "Imposs√≠vel reabrir banco de dados para somente leitura."
 
 #: kab/widget.cc:482
 msgid "first entry"
@@ -2106,7 +2109,7 @@ msgstr "item anterior"
 
 #: kab/widget.cc:484
 msgid "next entry"
-msgstr "prÛximo item"
+msgstr "pr√≥ximo item"
 
 #: kab/widget.cc:485
 msgid "last entry"
@@ -2134,7 +2137,7 @@ msgstr "Mudado para primeiro item."
 
 #: kab/widget.cc:560
 msgid "Switched to last entry."
-msgstr "Mudado para ˙ltimo item."
+msgstr "Mudado para √∫ltimo item."
 
 #: kab/widget.cc:621 kab/widget.cc:678 kab/widget.cc:860 kab/widget.cc:922
 msgid "Sorry, file changed."
@@ -2142,7 +2145,7 @@ msgstr "Desculpe, arquivo modificado."
 
 #: kab/widget.cc:625 kab/widget.cc:682 kab/widget.cc:926
 msgid "Permission denied."
-msgstr "Permiss„o negada."
+msgstr "PermissƒÉo negada."
 
 #: kab/widget.cc:636
 msgid "Remove entry?"
@@ -2150,7 +2153,7 @@ msgstr "Remover item ?"
 
 #: kab/widget.cc:637
 msgid "Really remove this entry?"
-msgstr "Confirma remoÁ„o do registro?"
+msgstr "Confirma remo√ßƒÉo do registro?"
 
 #: kab/widget.cc:655
 msgid "Entry deleted."
@@ -2162,7 +2165,7 @@ msgstr "Novo registro adicionado."
 
 #: kab/widget.cc:821
 msgid "Opened browser window."
-msgstr "Janela de navegaÁ„o aberta."
+msgstr "Janela de navega√ßƒÉo aberta."
 
 #: kab/widget.cc:824
 msgid "No URL."
@@ -2175,7 +2178,7 @@ msgstr "Nenhum registro."
 
 #: kab/widget.cc:833
 msgid "The filemanager is busy, please try again."
-msgstr "O gerenciador de arquivos est· ocupado, tente novamente."
+msgstr "O gerenciador de arquivos est√° ocupado, tente novamente."
 
 #: kab/widget.cc:853
 msgid ""
@@ -2183,9 +2186,9 @@ msgid ""
 "locked by another application.\n"
 "kab cannot save it."
 msgstr ""
-"O livro de endereÁos est·\n"
-"travado por outra aplicaÁ„o.\n"
-"kab n„o pode salv·-lo."
+"O livro de endere√ßos est√°\n"
+"travado por outra aplica√ßƒÉo.\n"
+"kab nƒÉo pode salv√°-lo."
 
 #: kab/widget.cc:870
 msgid "Database saved successfully."
@@ -2197,7 +2200,7 @@ msgstr "kab: erro de arquivo"
 
 #: kab/widget.cc:875
 msgid "Could not save database."
-msgstr "N„o consegui salvar banco de dados."
+msgstr "NƒÉo consegui salvar banco de dados."
 
 #: kab/widget.cc:876
 msgid "&Retry"
@@ -2238,23 +2241,23 @@ msgstr "O comando talk tem de ser configurado primeiro!"
 
 #: kab/widget.cc:1170
 msgid "Talk configuration"
-msgstr "ConfiguraÁ„o do Talk"
+msgstr "Configura√ßƒÉo do Talk"
 
 #: kab/widget.cc:1171
 msgid "Please configure the parameters for the talk command."
-msgstr "Configure os par‚metros para o comando talk."
+msgstr "Configure os par√¢metros para o comando talk."
 
 #: kab/widget.cc:1184
 msgid "No talk address."
-msgstr "Nenhum endereÁo de comunicaÁ„o."
+msgstr "Nenhum endere√ßo de comunica√ßƒÉo."
 
 #: kab/widget.cc:1192
 msgid "kab: Talk addresses"
-msgstr "kab: endereÁos de comunicaÁ„o"
+msgstr "kab: endere√ßos de comunica√ßƒÉo"
 
 #: kab/widget.cc:1193
 msgid "Available talk addresses:"
-msgstr "EndereÁos de comunicaÁ„o disponÌveis:"
+msgstr "Endere√ßos de comunica√ßƒÉo dispon√≠veis:"
 
 #: kab/widget.cc:1199 kab/widget.cc:1963
 msgid "Cancelled."
@@ -2262,7 +2265,7 @@ msgstr "Cancelado."
 
 #: kab/widget.cc:1222
 msgid "The talk command parameters are wrong."
-msgstr "Os par‚metros do comando talk est„o errados."
+msgstr "Os par√¢metros do comando talk estƒÉo errados."
 
 #: kab/widget.cc:1234
 msgid ""
@@ -2270,7 +2273,7 @@ msgid ""
 "Make sure you did setup your talk command and parameter!"
 msgstr ""
 "Comando Talk falhou.\n"
-"Confirme que vocÍ configurou o comando talk e os par‚metros."
+"Confirme que vocƒô configurou o comando talk e os par√¢metros."
 
 #: kab/widget.cc:1237
 msgid "Talk program started."
@@ -2278,31 +2281,31 @@ msgstr "Programa talk iniciado."
 
 #: kab/widget.cc:1285
 msgid "Attention: printing is still experimental!"
-msgstr "AtenÁ„o: impress„o ainda È experimental!"
+msgstr "Aten√ßƒÉo: impressƒÉo ainda √© experimental!"
 
 #: kab/widget.cc:1387 kab/widget.cc:1429
 msgid "Page size problem"
-msgstr "Problema de tamanho de p·gina"
+msgstr "Problema de tamanho de p√°gina"
 
 #: kab/widget.cc:1388 kab/widget.cc:1430
 msgid ""
 "The fields you requested to print do\n"
 "not fit into the page width."
 msgstr ""
-"Os campos requisitaod ‡ impress„o\n"
-"n„o cabem na largura da p·gina."
+"Os campos requisitaod ≈ï impressƒÉo\n"
+"nƒÉo cabem na largura da p√°gina."
 
 #: kab/widget.cc:1624 kab/widget.cc:2066
 msgid "Printing finished successfully."
-msgstr "Impress„o terminou ok."
+msgstr "ImpressƒÉo terminou ok."
 
 #: kab/widget.cc:1651
 msgid "kab: Email addresses"
-msgstr "kab: endereÁos de E-mail"
+msgstr "kab: endere√ßos de E-mail"
 
 #: kab/widget.cc:1652
 msgid "Available email addresses:"
-msgstr "EndereÁos de e-mail disponÌveis:"
+msgstr "Endere√ßos de e-mail dispon√≠veis:"
 
 #: kab/widget.cc:1717
 msgid "kab: Select fields to copy"
@@ -2314,7 +2317,7 @@ msgstr "Nada selecionado."
 
 #: kab/widget.cc:1785 kab/widget.cc:2049
 msgid "KDE addressbook overview"
-msgstr "Vis„o geral do Livro de EndereÁos do KDE"
+msgstr "VisƒÉo geral do Livro de Endere√ßos do KDE"
 
 #: kab/widget.cc:1829
 msgid "Name-Email-Link (!!)"
@@ -2334,7 +2337,7 @@ msgstr "Link de e-mail"
 
 #: kab/widget.cc:1952
 msgid "Could not find the users home directory."
-msgstr "ImpossÌvel encontrar o diretÛrio de usu·rio."
+msgstr "Imposs√≠vel encontrar o diret√≥rio de usu√°rio."
 
 #: kab/widget.cc:1953
 msgid "Intern error!"
@@ -2342,15 +2345,15 @@ msgstr "Erro interno!"
 
 #: kab/widget.cc:1973
 msgid "Could not open the file to create the HTML table."
-msgstr "ImpossÌvel abrir o arquivo para criar a tabela HTML."
+msgstr "Imposs√≠vel abrir o arquivo para criar a tabela HTML."
 
 #: kab/widget.cc:2009
 msgid "Printing cancelled."
-msgstr "Impress„o cancelada."
+msgstr "ImpressƒÉo cancelada."
 
 #: kab/widget.cc:2025
 msgid "kab: Select columns for printing"
-msgstr "kab: Selecione colunas para impress„o"
+msgstr "kab: Selecione colunas para impressƒÉo"
 
 #: kab/widget.cc:2038
 msgid "Nothing to print."
@@ -2358,7 +2361,7 @@ msgstr "Nada para imprimir."
 
 #: kab/widget.cc:2050
 msgid "Page <p>"
-msgstr "P·gina <p>"
+msgstr "P√°gina <p>"
 
 #: kab/widget.cc:2051
 msgid "KDE - the professionals choice."
@@ -2366,11 +2369,11 @@ msgstr "KDE - a escolha dos profissionais."
 
 #: kab/widget.cc:2064
 msgid "Printing failed!"
-msgstr "Impress„o falhou!"
+msgstr "ImpressƒÉo falhou!"
 
 #: kab/widget.cc:2095
 msgid "Empty email address."
-msgstr "EndereÁo de e-mail vazio."
+msgstr "Endere√ßo de e-mail vazio."
 
 #: kab/widget.cc:2114
 msgid "No email address."
@@ -2390,15 +2393,15 @@ msgstr "O comando de correio tem de ser configurado antes!"
 
 #: kab/widget.cc:2155
 msgid "Mail configuration"
-msgstr "ConfiguraÁ„o do correio"
+msgstr "Configura√ßƒÉo do correio"
 
 #: kab/widget.cc:2156
 msgid "Please configure the parameters for the email command."
-msgstr "Configure os par‚metros do comando de e-mail."
+msgstr "Configure os par√¢metros do comando de e-mail."
 
 #: kab/widget.cc:2194
 msgid "The email command parameters are wrong."
-msgstr "Os par‚metros do comando de e-mail est„o errados."
+msgstr "Os par√¢metros do comando de e-mail estƒÉo errados."
 
 #: kab/widget.cc:2206
 msgid ""
@@ -2406,7 +2409,7 @@ msgid ""
 "Make sure you did setup your email command and parameter!"
 msgstr ""
 "Comando de e-mail falhou.\n"
-"Confirme se vocÍ configurou o comando de e-mail e os par‚metros."
+"Confirme se vocƒô configurou o comando de e-mail e os par√¢metros."
 
 #: kab/widget.cc:2210
 msgid "Mail program started."
@@ -2416,20 +2419,20 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr "Cache KIO"
 
 #~ msgid "Contents of the cache"
-#~ msgstr "Conte˙do do cache"
+#~ msgstr "Conte√∫do do cache"
 
 #~ msgid ""
 #~ "Use the icons for drag and drop actions, since they refer to the cache files "
 #~ "on your hard disk, while you should use the textual links for browsing"
 #~ msgstr ""
-#~ "Use os Ìcones para aÁıes arrastar-e-soltar, pois eles referem-se aos "
-#~ "arquivos de cache em seu disco rÌgido; use os links de texto para navegaÁ„o"
+#~ "Use os √≠cones para a√ß≈ëes arrastar-e-soltar, pois eles referem-se aos "
+#~ "arquivos de cache em seu disco r√≠gido; use os links de texto para navega√ßƒÉo"
 
 #~ msgid "Creation Date"
-#~ msgstr "Data de criaÁ„o"
+#~ msgstr "Data de cria√ßƒÉo"
 
 #~ msgid "Expiration Date"
-#~ msgstr "Data de expiraÁ„o"
+#~ msgstr "Data de expira√ßƒÉo"
 
 #~ msgid "Never"
 #~ msgstr "Nunca"
@@ -2438,21 +2441,21 @@ msgstr "Programa de e-mail iniciado."
 #~ "Could not read\n"
 #~ "%s"
 #~ msgstr ""
-#~ "N„o consegui ler de\n"
+#~ "NƒÉo consegui ler de\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not write to\n"
 #~ "%s"
 #~ msgstr ""
-#~ "N„o consegui gravar para\n"
+#~ "NƒÉo consegui gravar para\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not start process\n"
 #~ "%s"
 #~ msgstr ""
-#~ "N„o consegui iniciar processo\n"
+#~ "NƒÉo consegui iniciar processo\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2462,7 +2465,7 @@ msgstr "Programa de e-mail iniciado."
 #~ "%s"
 #~ msgstr ""
 #~ "Erro Interno\n"
-#~ "Queira mandar um relatÛrio de bugs para kde-bugs@kde.org\n"
+#~ "Queira mandar um relat√≥rio de bugs para kde-bugs@kde.org\n"
 #~ "\n"
 #~ "%s"
 
@@ -2470,7 +2473,7 @@ msgstr "Programa de e-mail iniciado."
 #~ "Malformed URL\n"
 #~ "%s"
 #~ msgstr ""
-#~ "URL inv·lida\n"
+#~ "URL inv√°lida\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2478,20 +2481,20 @@ msgstr "Programa de e-mail iniciado."
 #~ " is not supported"
 #~ msgstr ""
 #~ "O protocolo %s\n"
-#~ " n„o È suportado"
+#~ " nƒÉo √© suportado"
 
 #~ msgid ""
 #~ "The protocol %s\n"
 #~ "is only a filter protocol.\n"
 #~ msgstr ""
 #~ "O protocolo %s\n"
-#~ "È somente um protocolo de filtragem.\n"
+#~ "√© somente um protocolo de filtragem.\n"
 
 #~ msgid ""
 #~ "Unsupported action\n"
 #~ "%s"
 #~ msgstr ""
-#~ "AÁ„o n„o suportada\n"
+#~ "A√ßƒÉo nƒÉo suportada\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2499,9 +2502,9 @@ msgstr "Programa de e-mail iniciado."
 #~ "%s\n"
 #~ "does not exist"
 #~ msgstr ""
-#~ "O arquivo ou diretÛrio\n"
+#~ "O arquivo ou diret√≥rio\n"
 #~ "%s\n"
-#~ "n„o existe"
+#~ "nƒÉo existe"
 
 #~ msgid ""
 #~ "%s\n"
@@ -2509,14 +2512,14 @@ msgstr "Programa de e-mail iniciado."
 #~ "but a file was expected"
 #~ msgstr ""
 #~ "%s\n"
-#~ " È um diretÛrio,\n"
+#~ " √© um diret√≥rio,\n"
 #~ "mas era esperado um arquivo"
 
 #~ msgid ""
 #~ "Could not make directory\n"
 #~ "%s"
 #~ msgstr ""
-#~ "ImpossÌvel fazer diretÛrio\n"
+#~ "Imposs√≠vel fazer diret√≥rio\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2524,9 +2527,9 @@ msgstr "Programa de e-mail iniciado."
 #~ "%s\n"
 #~ "does already exist"
 #~ msgstr ""
-#~ "O arquivo ou diretÛrio\n"
+#~ "O arquivo ou diret√≥rio\n"
 #~ "%s\n"
-#~ "j· existe"
+#~ "j√° existe"
 
 #~ msgid ""
 #~ "%s\n"
@@ -2539,7 +2542,7 @@ msgstr "Programa de e-mail iniciado."
 #~ "Could not enter directory\n"
 #~ "%s"
 #~ msgstr ""
-#~ "ImpossÌvel entrar no diretÛrio\n"
+#~ "Imposs√≠vel entrar no diret√≥rio\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2547,7 +2550,7 @@ msgstr "Programa de e-mail iniciado."
 #~ "does not implement a directory service"
 #~ msgstr ""
 #~ "O protocolo %s\n"
-#~ "n„o implementa um serviÁo de diretÛrio."
+#~ "nƒÉo implementa um servi√ßo de diret√≥rio."
 
 #~ msgid ""
 #~ "Found a cyclic link in\n"
@@ -2560,7 +2563,7 @@ msgstr "Programa de e-mail iniciado."
 #~ "Could not change permissions for\n"
 #~ "%s"
 #~ msgstr ""
-#~ "ImpossÌvel mudar permissıes de\n"
+#~ "Imposs√≠vel mudar permiss≈ëes de\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2569,15 +2572,15 @@ msgstr "Programa de e-mail iniciado."
 #~ "%s"
 #~ msgstr ""
 #~ "Acesso negado\n"
-#~ "ImpossÌvel gravar para\n"
+#~ "Imposs√≠vel gravar para\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Action has been\n"
 #~ "canceled by the user"
 #~ msgstr ""
-#~ "AÁ„o foi cancelada\n"
-#~ "pelo usu·rio"
+#~ "A√ßƒÉo foi cancelada\n"
+#~ "pelo usu√°rio"
 
 #~ msgid ""
 #~ "Found a cyclic link while copying\n"
@@ -2590,14 +2593,14 @@ msgstr "Programa de e-mail iniciado."
 #~ "Could not create socket for accessing\n"
 #~ "%s"
 #~ msgstr ""
-#~ "ImpossÌvel criar socket para acessar\n"
+#~ "Imposs√≠vel criar socket para acessar\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not connect to host\n"
 #~ "%s"
 #~ msgstr ""
-#~ "ImpossÌvel conectar ao host\n"
+#~ "Imposs√≠vel conectar ao host\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2612,16 +2615,16 @@ msgstr "Programa de e-mail iniciado."
 #~ "%s\n"
 #~ "is broken"
 #~ msgstr ""
-#~ "Conex„o ao host\n"
+#~ "ConexƒÉo ao host\n"
 #~ "%s\n"
-#~ "est· quebrada"
+#~ "est√° quebrada"
 
 #~ msgid ""
 #~ "The protocol %s\n"
 #~ "is not a filter protocol"
 #~ msgstr ""
 #~ "O protocolo %s\n"
-#~ "n„o È um protocolo de filtragem"
+#~ "nƒÉo √© um protocolo de filtragem"
 
 #~ msgid ""
 #~ "%s\n"
@@ -2629,8 +2632,8 @@ msgstr "Programa de e-mail iniciado."
 #~ "but a directory was expected"
 #~ msgstr ""
 #~ "%s\n"
-#~ "È um arquivo,\n"
-#~ "mas era esperado um diretÛrio"
+#~ "√© um arquivo,\n"
+#~ "mas era esperado um diret√≥rio"
 
 #~ msgid ""
 #~ "Could not mount device.\n"
@@ -2638,7 +2641,7 @@ msgstr "Programa de e-mail iniciado."
 #~ "\n"
 #~ "%s"
 #~ msgstr ""
-#~ "ImpossÌvel montar dispositivo.\n"
+#~ "Imposs√≠vel montar dispositivo.\n"
 #~ "O erro informado foi:\n"
 #~ "\n"
 #~ "%s"
@@ -2649,7 +2652,7 @@ msgstr "Programa de e-mail iniciado."
 #~ "\n"
 #~ "%s"
 #~ msgstr ""
-#~ "ImpossÌvel desmontar dispositivo.\n"
+#~ "Imposs√≠vel desmontar dispositivo.\n"
 #~ "O erro informado foi:\n"
 #~ "\n"
 #~ "%s"
@@ -2667,7 +2670,7 @@ msgstr "Programa de e-mail iniciado."
 #~ "Could not access\n"
 #~ "%s"
 #~ msgstr ""
-#~ "N„o consegui acessar\n"
+#~ "NƒÉo consegui acessar\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2676,10 +2679,10 @@ msgstr "Programa de e-mail iniciado."
 #~ "\n"
 #~ "Please send a full bugreport to kde-bugs@kde.org"
 #~ msgstr ""
-#~ "Erro desconhecido, cÛdigo %i\n"
+#~ "Erro desconhecido, c√≥digo %i\n"
 #~ "%s\n"
 #~ "\n"
-#~ "Queira mandar um relatÛrio completo para kde-bugs@kde.org"
+#~ "Queira mandar um relat√≥rio completo para kde-bugs@kde.org"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"
@@ -2691,32 +2694,32 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr "Desmontando %s ..."
 
 #~ msgid "This group is empty!"
-#~ msgstr "Este grupo est· vazio!"
+#~ msgstr "Este grupo est√° vazio!"
 
 #~ msgid "&Browser"
 #~ msgstr "&Navegador"
 
 #~ msgid "User"
-#~ msgstr "Usu·rio"
+#~ msgstr "Usu√°rio"
 
 #~ msgid "Password"
 #~ msgstr "Senha"
 
 #~ msgid "The clipboard is empty"
-#~ msgstr "A ·rea de transferÍncia est· vazia"
+#~ msgstr "A √°rea de transferƒôncia est√° vazia"
 
 #~ msgid ""
 #~ "Pasting clipboard data is only supported on the local hard disk currently"
-#~ msgstr "Colagem È suportada somente para o disco rÌgido local"
+#~ msgstr "Colagem √© suportada somente para o disco r√≠gido local"
 
 #~ msgid "Filename for clipboard content:"
-#~ msgstr "Nome de arquivo para o conte˙do da ¡rea de TransferÍncia:"
+#~ msgstr "Nome de arquivo para o conte√∫do da √Årea de Transferƒôncia:"
 
 #~ msgid "You did not enter a filename"
-#~ msgstr "VocÍ n„o digitou um nome de arquivo"
+#~ msgstr "Vocƒô nƒÉo digitou um nome de arquivo"
 
 #~ msgid "The file %s does already exist. Do you really want to overwrite it ?"
-#~ msgstr "O arquivo %s j· existe. VocÍ realmente quer sobreescrevÍ-lo ?"
+#~ msgstr "O arquivo %s j√° existe. Vocƒô realmente quer sobreescrevƒô-lo ?"
 
 #~ msgid "Bytes"
 #~ msgstr "Bytes"
@@ -2791,43 +2794,43 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr "Continuar todos"
 
 #~ msgid "You try to overwrite"
-#~ msgstr "VocÍ tentou sobreescrever"
+#~ msgstr "Vocƒô tentou sobreescrever"
 
 #~ msgid "already exists. Overwrite with"
-#~ msgstr "j· existe. Sobreescrever com"
+#~ msgstr "j√° existe. Sobreescrever com"
 
 #~ msgid "Or rename to"
 #~ msgstr "Ou renomear para"
 
 #~ msgid "already exists."
-#~ msgstr "j· existe."
+#~ msgstr "j√° existe."
 
 #~ msgid "Do you want to rename it ?"
-#~ msgstr "VocÍ quer renome·-lo ?"
+#~ msgstr "Vocƒô quer renome√°-lo ?"
 
 #~ msgid "Malformed URL\n"
-#~ msgstr "URL inv·lida\n"
+#~ msgstr "URL inv√°lida\n"
 
 #~ msgid "You must not change the protocol"
-#~ msgstr "VocÍ n„o pode mudar o protocolo"
+#~ msgstr "Vocƒô nƒÉo pode mudar o protocolo"
 
 #~ msgid "Can not write"
-#~ msgstr "ImpossÌvel escrever"
+#~ msgstr "Imposs√≠vel escrever"
 
 #~ msgid "Permission denied!"
-#~ msgstr "Permiss„o negada!"
+#~ msgstr "PermissƒÉo negada!"
 
 #~ msgid "No mime types installed!"
 #~ msgstr "Nenhum tipo MIME instalado!"
 
 #~ msgid "Could not find mime type\n"
-#~ msgstr "ImpossÌvel encontrar tipo MIME\n"
+#~ msgstr "Imposs√≠vel encontrar tipo MIME\n"
 
 #~ msgid "The mime type config file "
 #~ msgstr "O arquivo config. do tipo MIME "
 
 #~ msgid "does not conatain a MimeType=... entry"
-#~ msgstr "n„o contÈm a linha MimeType=..."
+#~ msgstr "nƒÉo cont√©m a linha MimeType=..."
 
 #~ msgid ""
 #~ "The kdelnk file\n"
@@ -2836,7 +2839,7 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr ""
 #~ "O arquivo kdelnk\n"
 #~ "%s\n"
-#~ "n„o tem a linha Type=..."
+#~ "nƒÉo tem a linha Type=..."
 
 #~ msgid ""
 #~ "The kdelnk type\n"
@@ -2845,7 +2848,7 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr ""
 #~ "O tipo kdelnk\n"
 #~ "%s\n"
-#~ "È desconhecido"
+#~ "√© desconhecido"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
@@ -2854,7 +2857,7 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr ""
 #~ "O arquivo kdelnk\n"
 #~ "%s\n"
-#~ "È do tipo FSDevice mas n„o tem linha Dev=..."
+#~ "√© do tipo FSDevice mas nƒÉo tem linha Dev=..."
 
 #~ msgid ""
 #~ "The kdelnk file\n"
@@ -2863,7 +2866,7 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr ""
 #~ "O arquivo kdelnk\n"
 #~ "%s\n"
-#~ "È do tipo Link mas n„o tem a linha URL=..."
+#~ "√© do tipo Link mas nƒÉo tem a linha URL=..."
 
 #~ msgid "Mount"
 #~ msgstr "Montar"
@@ -2879,7 +2882,7 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr ""
 #~ "O arquivo kdelnk\n"
 #~ "%s\n"
-#~ " tem um item de menu inv·lido\n"
+#~ " tem um item de menu inv√°lido\n"
 #~ "%s"
 
 #~ msgid "The mime type _cfg file "
@@ -2890,19 +2893,19 @@ msgstr "Programa de e-mail iniciado."
 #~ "%s\n"
 #~ "Access denied"
 #~ msgstr ""
-#~ "ImpossÌvel entrar em\n"
+#~ "Imposs√≠vel entrar em\n"
 #~ "%s\n"
 #~ "Acesso negado"
 
 #~ msgid "The application config file\n"
-#~ msgstr "O arquivo de configuraÁ„o da aplicaÁ„o\n"
+#~ msgstr "O arquivo de configura√ßƒÉo da aplica√ßƒÉo\n"
 
 #~ msgid ""
 #~ "\n"
 #~ "does not conatain a Name=... entry"
 #~ msgstr ""
 #~ "\n"
-#~ "n„o tem a linha Name=..."
+#~ "nƒÉo tem a linha Name=..."
 
 #~ msgid "Org Unit:"
 #~ msgstr "Unidade org.:"
@@ -2911,10 +2914,10 @@ msgstr "Programa de e-mail iniciado."
 #~ msgstr "Sub-unidade org.:"
 
 #~ msgid "Comment:"
-#~ msgstr "Coment·rio:"
+#~ msgstr "Coment√°rio:"
 
 #~ msgid "Search"
 #~ msgstr "Procurar"
 
 #~ msgid "contains"
-#~ msgstr "contÈm"
+#~ msgstr "cont√©m"

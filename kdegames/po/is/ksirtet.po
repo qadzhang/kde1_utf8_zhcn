@@ -7,7 +7,7 @@ msgstr ""
 "POT-Creation-Date: 1998-10-01 13:29+0200\n"
 "Last-Translator: Bjarni R. Einarsson <bre@mmedia.is>\n"
 "Language-Team: is\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: board.cpp:65 dialogs.cpp:137
 msgid "Anonymous"
@@ -15,11 +15,11 @@ msgstr "Nonni nafnlausi"
 
 #: board.cpp:97
 msgid "Game paused"
-msgstr "Leikurinn er í biğstöğu"
+msgstr "Leikurinn er Ã­ biÄ‘stÃ¶Ä‘u"
 
 #: board.cpp:102
 msgid "Press to resume"
-msgstr "Halda áfram..."
+msgstr "Halda Ã¡fram..."
 
 #: board.cpp:119 net.cpp:208
 msgid "Game over"
@@ -27,19 +27,19 @@ msgstr "Leikslok"
 
 #: board.cpp:123
 msgid "Press Return to replay"
-msgstr "Smelltu á Enter til ağ endurtaka"
+msgstr "Smelltu Ã¡ Enter til aÄ‘ endurtaka"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "Smelltu til ağ hefja leik"
+msgstr "Smelltu til aÄ‘ hefja leik"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "Get ekki skrifağ í methafaskrá!"
+msgstr "Get ekki skrifaÄ‘ Ã­ methafaskrÃ¡!"
 
 #: net.cpp:129
 msgid "Illegal port"
-msgstr "Ólöglegt port"
+msgstr "Ã“lÃ¶glegt port"
 
 #: net.cpp:135
 msgid "Null address"
@@ -47,15 +47,15 @@ msgstr "\"Null\" vistfang"
 
 #: net.cpp:142
 msgid "Unknown address"
-msgstr "Óşekkt vistfang"
+msgstr "Ã“Å£ekkt vistfang"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "Gat ekki smíğağ sökkul"
+msgstr "Gat ekki smÃ­Ä‘aÄ‘ sÃ¶kkul"
 
 #: net.cpp:196
 msgid "at"
-msgstr "á"
+msgstr "Ã¡"
 
 #: net.cpp:233
 msgid "Connect error"
@@ -63,31 +63,31 @@ msgstr "Tengingarvilla"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
-msgstr "Get ekk tengst şjóni"
+msgstr "Get ekk tengst Å£jÃ³ni"
 
 #: net.cpp:266
 msgid "The server has died"
-msgstr "Şjónninn dó"
+msgstr "Å¢jÃ³nninn dÃ³"
 
 #: net.cpp:267
 msgid "Cancel from server"
-msgstr "Şjónninn hætti viğ"
+msgstr "Å¢jÃ³nninn hÄ‡tti viÄ‘"
 
 #: net.cpp:273 net.cpp:333
 msgid "Unknown data from server"
-msgstr "Óşekkt gögn frá şjóninum"
+msgstr "Ã“Å£ekkt gÃ¶gn frÃ¡ Å£jÃ³ninum"
 
 #: net.cpp:312
 msgid "Cannot send to server"
-msgstr "Get ekki sent til şjónsins"
+msgstr "Get ekki sent til Å£jÃ³nsins"
 
 #: net.cpp:324
 msgid "Client timeout (No message from server)"
-msgstr "Tími útrunninn (engin skilaboğ frá şjóni)"
+msgstr "TÃ­mi Ãºtrunninn (engin skilaboÄ‘ frÃ¡ Å£jÃ³ni)"
 
 #: net.cpp:329
 msgid "Server has vanished"
-msgstr "Şjónninn hvarf"
+msgstr "Å¢jÃ³nninn hvarf"
 
 #: net.cpp:366
 msgid "Bind error"
@@ -99,43 +99,43 @@ msgstr "Hlustunarvilla"
 
 #: net.cpp:390
 msgid "Unknown message from unknown player (??)"
-msgstr "Óşekkt skilaboğ frá óşekktum leikmanni (??)"
+msgstr "Ã“Å£ekkt skilaboÄ‘ frÃ¡ Ã³Å£ekktum leikmanni (??)"
 
 #: net.cpp:449 net.cpp:490
 msgid "Unknown message from client"
-msgstr "Óşekkt skilaboğ frá biğlara"
+msgstr "Ã“Å£ekkt skilaboÄ‘ frÃ¡ biÄ‘lara"
 
 #: net.cpp:486
 msgid "Client has died"
-msgstr "Biğlari dó"
+msgstr "BiÄ‘lari dÃ³"
 
 #: net.cpp:487
 msgid "Cancel from client"
-msgstr "Biğlari hætti viğ"
+msgstr "BiÄ‘lari hÄ‡tti viÄ‘"
 
 #: net.cpp:494
 msgid "Timeout"
-msgstr "Tími rann út"
+msgstr "TÃ­mi rann Ãºt"
 
 #: net.cpp:520
 msgid "No message from client"
-msgstr "Engin skilaboğ frá biğlara"
+msgstr "Engin skilaboÄ‘ frÃ¡ biÄ‘lara"
 
 #: net.cpp:525
 msgid "Client has vanished"
-msgstr "Biğlari hvarf"
+msgstr "BiÄ‘lari hvarf"
 
 #: net.cpp:529
 msgid "Unknown data from client"
-msgstr "Óşekkt skilaboğ frá biğlara"
+msgstr "Ã“Å£ekkt skilaboÄ‘ frÃ¡ biÄ‘lara"
 
 #: net.cpp:533
 msgid "End message from client"
-msgstr "Lok skilaboğs frá biğlara"
+msgstr "Lok skilaboÄ‘s frÃ¡ biÄ‘lara"
 
 #: net.cpp:550
 msgid "Cannot send to client"
-msgstr "Get ekki sent til biğlara"
+msgstr "Get ekki sent til biÄ‘lara"
 
 #: dialogs.cpp:61
 msgid "High Scores"
@@ -147,19 +147,19 @@ msgstr "Methafar"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
-msgstr "Enginn valmöguleiki enn !"
+msgstr "Enginn valmÃ¶guleiki enn !"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "Netupplısingagluggi"
+msgstr "NetupplÃ½singagluggi"
 
 #: dialogs.cpp:178
 msgid "Server"
-msgstr "Şjónn"
+msgstr "Å¢jÃ³nn"
 
 #: dialogs.cpp:179
 msgid "Client"
-msgstr "Biğlari"
+msgstr "BiÄ‘lari"
 
 #: dialogs.cpp:183
 msgid "Player name :"
@@ -167,7 +167,7 @@ msgstr "Nafn leikmanns :"
 
 #: dialogs.cpp:185
 msgid "Server address :"
-msgstr "Vistfang şjóns :"
+msgstr "Vistfang Å£jÃ³ns :"
 
 #: dialogs.cpp:187
 msgid "Port :"
@@ -191,23 +191,23 @@ msgstr "Netleikur"
 
 #: dialogs.cpp:256
 msgid "Server mode"
-msgstr "Sem şjónn"
+msgstr "Sem Å£jÃ³nn"
 
 #: dialogs.cpp:258
 msgid "Client mode"
-msgstr "Sem biğlari"
+msgstr "Sem biÄ‘lari"
 
 #: dialogs.cpp:336
 msgid "Waiting for other player(s) ..."
-msgstr "Bíğ eftir hinum leikmönnunum ..."
+msgstr "BÃ­Ä‘ eftir hinum leikmÃ¶nnunum ..."
 
 #: field.cpp:27
 msgid "New game"
-msgstr "Nır leikur"
+msgstr "NÃ½r leikur"
 
 #: field.cpp:28
 msgid "Pause game"
-msgstr "Hvíla"
+msgstr "HvÃ­la"
 
 #: field.cpp:30
 msgid "High scores"
@@ -219,7 +219,7 @@ msgstr "Til vinstri"
 
 #: field.cpp:32
 msgid "Move right"
-msgstr "Til hægri"
+msgstr "Til hÄ‡gri"
 
 #: field.cpp:33
 msgid "Drop down"
@@ -227,15 +227,15 @@ msgstr "Sleppa"
 
 #: field.cpp:34
 msgid "One line down"
-msgstr "Niğur um einn"
+msgstr "NiÄ‘ur um einn"
 
 #: field.cpp:35
 msgid "Rotate left"
-msgstr "Vinstri snúningur"
+msgstr "Vinstri snÃºningur"
 
 #: field.cpp:36
 msgid "Rotate right"
-msgstr "Hægri snúningur"
+msgstr "HÄ‡gri snÃºningur"
 
 #: field.cpp:51
 msgid "Score"
@@ -243,27 +243,27 @@ msgstr "Stig"
 
 #: field.cpp:55
 msgid "Lines removed"
-msgstr "Rağir fjarlægğar"
+msgstr "RaÄ‘ir fjarlÄ‡gÄ‘ar"
 
 #: field.cpp:59
 msgid "Level"
-msgstr "Borğ"
+msgstr "BorÄ‘"
 
 #: field.cpp:63
 msgid "Next tile"
-msgstr "Næsti kubbur"
+msgstr "NÄ‡sti kubbur"
 
 #: field.cpp:185
 msgid "&Restart game"
-msgstr "&Byrja upp á nıtt"
+msgstr "&Byrja upp Ã¡ nÃ½tt"
 
 #: field.cpp:186
 msgid "&Pause game"
-msgstr "&Hvíla"
+msgstr "&HvÃ­la"
 
 #: field.cpp:187
 msgid "&Multiplayer game"
-msgstr "Spila viğ &marga í einu"
+msgstr "Spila viÄ‘ &marga Ã­ einu"
 
 #: field.cpp:189
 msgid "&High scores"
@@ -271,7 +271,7 @@ msgstr "Met&hafar"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"
-msgstr "Fela valmyndarönd"
+msgstr "Fela valmyndarÃ¶nd"
 
 #: main.cpp:30
 msgid "&Keys"
@@ -283,4 +283,4 @@ msgstr "eftir"
 
 #: main.cpp:71
 msgid "Show menu"
-msgstr "Sına valmyndarönd"
+msgstr "SÃ½na valmyndarÃ¶nd"

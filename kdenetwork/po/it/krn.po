@@ -13,7 +13,7 @@ msgstr ""
 "Last-Translator: Francesco Lotti <goo@hey.to>\n"
 "Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.3.0\n"
 
@@ -127,7 +127,7 @@ msgstr "&Selezionati"
 
 #: groupdlg.cpp:171
 msgid "Identity..."
-msgstr "identit‡..."
+msgstr "identit√†..."
 
 #: groupdlg.cpp:172
 msgid "NNTP Options..."
@@ -454,7 +454,7 @@ msgstr "KRN - File Esistente"
 
 #: artdlg.cpp:1324
 msgid "The File you selected already exists"
-msgstr "Il file che hai selezionato esiste gi‡"
+msgstr "Il file che hai selezionato esiste gi√†"
 
 #: artdlg.cpp:1330
 msgid "OverWrite"
@@ -485,7 +485,7 @@ msgstr "Recupero Lista Articoli"
 
 #: identDlg.cpp:41
 msgid "KRN-Identity Configuration"
-msgstr "KRN-Configurazione Identit‡"
+msgstr "KRN-Configurazione Identit√†"
 
 #: identDlg.cpp:50
 msgid "Here you should enter your personal information"
@@ -883,7 +883,7 @@ msgstr "&Salva"
 
 #: kmcomposewin.cpp:536
 msgid "Pr&operties..."
-msgstr "Pr&opriet‡"
+msgstr "Pr&opriet√†"
 
 #: kmcomposewin.cpp:538
 msgid "&Attach"
@@ -977,7 +977,7 @@ msgstr "Salva..."
 #: kmcomposewin.cpp:1241 kmreaderwin.cpp:740
 #, fuzzy
 msgid "Properties..."
-msgstr "Pr&opriet‡"
+msgstr "Pr&opriet√†"
 
 #: kmcomposewin.cpp:1245
 msgid "Attach..."
@@ -993,7 +993,7 @@ msgid ""
 "is still missing"
 msgstr ""
 "Mi dispiace ma questa caratteristica\n"
-"non Ë ancora presente"
+"non √® ancora presente"
 
 #: kmcomposewin.cpp:1466
 msgid "unnamed"
@@ -1043,7 +1043,7 @@ msgid ""
 "user-name and email-address"
 msgstr ""
 "Per favore imposta le voci richieste\n"
-"nelle impostazioni dell'identit‡:\n"
+"nelle impostazioni dell'identit√†:\n"
 "Nome-Utente e Indirizzo-EMail"
 
 #: kmsender.cpp:147
@@ -1052,7 +1052,7 @@ msgstr "Devi specificare un destinatario"
 
 #: kmsender.cpp:158
 msgid "Cannot add message to outbox folder"
-msgstr "Non si puÚ aggiungere un messaggio alla cartella Outbox"
+msgstr "Non si pu√≤ aggiungere un messaggio alla cartella Outbox"
 
 #: kmsender.cpp:189
 msgid "Sending still in progress"
@@ -1122,7 +1122,7 @@ msgid ""
 "Response: %s\n"
 "Return code: %d"
 msgstr ""
-"si Ë verificato un errore SMTP.\n"
+"si √® verificato un errore SMTP.\n"
 "Comando. %s\n"
 "Risposta: %s\n"
 "Codice ritorno: %d"
@@ -1153,7 +1153,7 @@ msgstr ""
 
 #: findArtDlg.cpp:56 rulesDlg.cpp:132
 msgid "Wildcard Mode"
-msgstr "Modalit‡ Caratteri Jolly"
+msgstr "Modalit√† Caratteri Jolly"
 
 #: findArtDlg.cpp:66 rulesDlg.cpp:144
 msgid "Done"
@@ -1189,7 +1189,7 @@ msgid ""
 "This is a directory and not a file:\n"
 "%s"
 msgstr ""
-"Questa Ë una directory non un file:\n"
+"Questa √® una directory non un file:\n"
 "%s"
 
 #: kfileio.cpp:61
@@ -1280,8 +1280,8 @@ msgstr ""
 
 #: kfileio.cpp:180
 #, c-format
-msgid "Could only write %d bytes of %d."
-msgstr "E' stato possibile scrivere solo %s byte su %d."
+#~ msgid "Could only write %d bytes of %d."
+#~ msgstr "E' stato possibile scrivere solo %s byte su %d."
 
 #: kmmsgpartdlg.cpp:41
 #, fuzzy
@@ -1401,7 +1401,7 @@ msgstr ""
 
 #: kpgp.cpp:207
 msgid "The pass phrase is missing."
-msgstr "La frase pass Ë mancante."
+msgstr "La frase pass √® mancante."
 
 #: kpgp.cpp:286 kpgp.cpp:312 kpgp.cpp:325 kpgp.cpp:344 kpgp.cpp:361
 msgid "PGP Warning"
@@ -1473,7 +1473,7 @@ msgstr "PGP Controllo sicurezza"
 #: kpgp.cpp:765
 #, fuzzy
 msgid "Identity"
-msgstr "identit‡..."
+msgstr "identit√†..."
 
 #: kpgp.cpp:771
 msgid "PGP User Identity:"
@@ -1489,7 +1489,7 @@ msgstr ""
 
 #: krnsender.cpp:60
 msgid "This server is read onlyyou can't post here!"
-msgstr "Questo server Ë a sola lettura, non puoi postare qui!"
+msgstr "Questo server √® a sola lettura, non puoi postare qui!"
 
 #: kmaddrbookdlg.cpp:20
 msgid "Addressbook"
@@ -1718,7 +1718,7 @@ msgstr ""
 #: kpgpbase.cpp:585
 #, fuzzy
 msgid "The passphrase you entered is invalid."
-msgstr "La frase pass Ë mancante."
+msgstr "La frase pass √® mancante."
 
 #: kpgpbase.cpp:611
 msgid ""

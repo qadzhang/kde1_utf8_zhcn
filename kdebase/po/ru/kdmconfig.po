@@ -1,4 +1,4 @@
-# Перевод kdmconfig
+# п÷п╣я─п╣п╡п╬п╢ kdmconfig
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998, 1999.
 #
@@ -10,84 +10,84 @@ msgstr ""
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:84
 msgid "&Appearance"
-msgstr "&Вид"
+msgstr "&п▓п╦п╢"
 
 #: main.cpp:92
 msgid "&Background"
-msgstr "&Фон"
+msgstr "&п╓п╬п╫"
 
 #: main.cpp:95
 msgid "&Users"
-msgstr "&Пользователи"
+msgstr "&п÷п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩п╦"
 
 #: main.cpp:98
 msgid "&Sessions"
-msgstr "&Сеансы"
+msgstr "&п║п╣п╟п╫я│я▀"
 
 #: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
-msgstr "использование [-init | {appearance,font,background,sessions,users}]\n"
+msgstr "п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣ [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
-msgstr "Конфигурация KDM"
+msgstr "п п╬п╫я└п╦пЁя┐я─п╟я├п╦я▐ KDM"
 
 #: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"Извините, но вы не имеете права читать\n"
-"и писать в конфигурационный файл KDM."
+"п≤п╥п╡п╦п╫п╦я┌п╣, п╫п╬ п╡я▀ п╫п╣ п╦п╪п╣п╣я┌п╣ п©я─п╟п╡п╟ я┤п╦я┌п╟я┌я▄\n"
+"п╦ п©п╦я│п╟я┌я▄ п╡ п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╬п╫п╫я▀п╧ я└п╟п╧п╩ KDM."
 
 #: main.cpp:154
 msgid "Missing privileges"
-msgstr "Недостаточно привилегий"
+msgstr "п²п╣п╢п╬я│я┌п╟я┌п╬я┤п╫п╬ п©я─п╦п╡п╦п╩п╣пЁп╦п╧"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Приглашение:"
+msgstr "п÷я─п╦пЁп╩п╟я┬п╣п╫п╦п╣:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
-msgstr "Лого KDM:"
+msgstr "п⌡п╬пЁп╬ KDM:"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
-msgstr "Щелкните или киньте картинку сюда"
+msgstr "п╘п╣п╩п╨п╫п╦я┌п╣ п╦п╩п╦ п╨п╦п╫я▄я┌п╣ п╨п╟я─я┌п╦п╫п╨я┐ я│я▌п╢п╟"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "Тип GUI:"
+msgstr "п╒п╦п© GUI:"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
-msgstr "Мотиф"
+msgstr "п°п╬я┌п╦я└"
 
 #: kdm-appear.cpp:117
 msgid "Windows"
-msgstr "Форточки"
+msgstr "п╓п╬я─я┌п╬я┤п╨п╦"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr "Язык"
+msgstr "п╞п╥я▀п╨"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr "Язык:"
+msgstr "п╞п╥я▀п╨:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Ошибка загрузки изображения:\n"
+"п·я┬п╦п╠п╨п╟ п╥п╟пЁя─я┐п╥п╨п╦ п╦п╥п╬п╠я─п╟п╤п╣п╫п╦я▐:\n"
 ">"
 
 #: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
@@ -97,19 +97,19 @@ msgstr "<"
 #: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
 #: kdm-users.cpp:279
 msgid "ERROR"
-msgstr "ОШИБКА"
+msgstr "п·п╗п≤п▒п п░"
 
 #: kdm-appear.cpp:186 kdm-users.cpp:194
 msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Ошибка сохранения изображения:\n"
+"п·я┬п╦п╠п╨п╟ я│п╬я┘я─п╟п╫п╣п╫п╦я▐ п╦п╥п╬п╠я─п╟п╤п╣п╫п╦я▐:\n"
 ">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
-msgstr "Извините, но \n"
+msgstr "п≤п╥п╡п╦п╫п╦я┌п╣, п╫п╬ \n"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
@@ -117,7 +117,7 @@ msgid ""
 "does not seem to be an image file"
 msgstr ""
 "\n"
-"не похож на файл с изображением"
+"п╫п╣ п©п╬я┘п╬п╤ п╫п╟ я└п╟п╧п╩ я│ п╦п╥п╬п╠я─п╟п╤п╣п╫п╦п╣п╪"
 
 #: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
@@ -125,11 +125,11 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Пожайлуста используйте файлы с этими расширениями\n"
+"п÷п╬п╤п╟п╧п╩я┐я│я┌п╟ п╦я│п©п╬п╩я▄п╥я┐п╧я┌п╣ я└п╟п╧п╩я▀ я│ я█я┌п╦п╪п╦ я─п╟я│я┬п╦я─п╣п╫п╦я▐п╪п╦\n"
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
-msgstr "Неправильное Расширение Файла"
+msgstr "п²п╣п©я─п╟п╡п╦п╩я▄п╫п╬п╣ п═п╟я│я┬п╦я─п╣п╫п╦п╣ п╓п╟п╧п╩п╟"
 
 #: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
@@ -137,188 +137,188 @@ msgid ""
 "It will not be saved..."
 msgstr ""
 "<\n"
-"Не будет сохранен..."
+"п²п╣ п╠я┐п╢п╣я┌ я│п╬я┘я─п╟п╫п╣п╫..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "Выберите шрифты"
+msgstr "п▓я▀п╠п╣я─п╦я┌п╣ я┬я─п╦я└я┌я▀"
 
 #: kdm-font.cpp:50
 msgid "Example"
-msgstr "Пример:"
+msgstr "п÷я─п╦п╪п╣я─:"
 
 #: kdm-font.cpp:52
 msgid "Change font..."
-msgstr "Изменить шрифт..."
+msgstr "п≤п╥п╪п╣п╫п╦я┌я▄ я┬я─п╦я└я┌..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
-msgstr "Приглашение"
+msgstr "п÷я─п╦пЁп╩п╟я┬п╣п╫п╦п╣"
 
 #: kdm-font.cpp:58
 msgid "Fail"
-msgstr "Провал"
+msgstr "п÷я─п╬п╡п╟п╩"
 
 #: kdm-font.cpp:59
 msgid "Standard"
-msgstr "Стандартный"
+msgstr "п║я┌п╟п╫п╢п╟я─я┌п╫я▀п╧"
 
 #: kdm-font.cpp:157
 msgid "Greeting font"
-msgstr "Шрифт приглашения"
+msgstr "п╗я─п╦я└я┌ п©я─п╦пЁп╩п╟я┬п╣п╫п╦я▐"
 
 #: kdm-font.cpp:161
 msgid "Fail font"
-msgstr "Шрифт нейдачи"
+msgstr "п╗я─п╦я└я┌ п╫п╣п╧п╢п╟я┤п╦"
 
 #: kdm-font.cpp:165
 msgid "Standard font"
-msgstr "Стандартный шрифт"
+msgstr "п║я┌п╟п╫п╢п╟я─я┌п╫я▀п╧ я┬я─п╦я└я┌"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr "Предпросмотр"
+msgstr "п÷я─п╣п╢п©я─п╬я│п╪п╬я┌я─"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
-msgstr "Цвет"
+msgstr "п╕п╡п╣я┌"
 
 #: kdm-bgnd.cpp:101
 msgid "Solid Color"
-msgstr "Равномерный цвет"
+msgstr "п═п╟п╡п╫п╬п╪п╣я─п╫я▀п╧ я├п╡п╣я┌"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr "Переливается горизонтально"
+msgstr "п÷п╣я─п╣п╩п╦п╡п╟п╣я┌я│я▐ пЁп╬я─п╦п╥п╬п╫я┌п╟п╩я▄п╫п╬"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr "Переливается вертикально"
+msgstr "п÷п╣я─п╣п╩п╦п╡п╟п╣я┌я│я▐ п╡п╣я─я┌п╦п╨п╟п╩я▄п╫п╬"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
-msgstr "Обои"
+msgstr "п·п╠п╬п╦"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr "Никому"
+msgstr "п²п╦п╨п╬п╪я┐"
 
 #: kdm-bgnd.cpp:176
 msgid "Tile"
-msgstr "Черепица"
+msgstr "п╖п╣я─п╣п©п╦я├п╟"
 
 #: kdm-bgnd.cpp:181
 msgid "Center"
-msgstr "В центре"
+msgstr "п▓ я├п╣п╫я┌я─п╣"
 
 #: kdm-bgnd.cpp:186
 msgid "Scale"
-msgstr "Масштаб"
+msgstr "п°п╟я│я┬я┌п╟п╠"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr "Сверху слева"
+msgstr "п║п╡п╣я─я┘я┐ я│п╩п╣п╡п╟"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr "Сверху справа"
+msgstr "п║п╡п╣я─я┘я┐ я│п©я─п╟п╡п╟"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr "Снизу слева"
+msgstr "п║п╫п╦п╥я┐ я│п╩п╣п╡п╟"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr "Снизу справа"
+msgstr "п║п╫п╦п╥я┐ я│п©я─п╟п╡п╟"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr "Веселый"
+msgstr "п▓п╣я│п╣п╩я▀п╧"
 
 #: kdm-users.cpp:48
 msgid "All users"
-msgstr "Все"
+msgstr "п▓я│п╣"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "Выбранные"
+msgstr "п▓я▀п╠я─п╟п╫п╫я▀п╣"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "Скрытые"
+msgstr "п║п╨я─я▀я┌я▀п╣"
 
 #: kdm-users.cpp:79
 msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
-"Показывать\n"
-"только выбранных"
+"п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄\n"
+"я┌п╬п╩я▄п╨п╬ п╡я▀п╠я─п╟п╫п╫я▀я┘"
 
 #: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Показывать всех\n"
-"кроме скрытых"
+"п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄ п╡я│п╣я┘\n"
+"п╨я─п╬п╪п╣ я│п╨я─я▀я┌я▀я┘"
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "Показывать"
+msgstr "п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
-msgstr "Сортировать"
+msgstr "п║п╬я─я┌п╦я─п╬п╡п╟я┌я▄"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
-msgstr "Никого не выбрано"
+msgstr "п²п╦п╨п╬пЁп╬ п╫п╣ п╡я▀п╠я─п╟п╫п╬"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
-msgstr "Сохранить изображение по умолчанию?"
+msgstr "п║п╬я┘я─п╟п╫п╦я┌я▄ п╦п╥п╬п╠я─п╟п╤п╣п╫п╦п╣ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "Разрешать выключать"
+msgstr "п═п╟п╥я─п╣я┬п╟я┌я▄ п╡я▀п╨п╩я▌я┤п╟я┌я▄"
 
 #: kdm-sess.cpp:57
 msgid "All"
-msgstr "Всем"
+msgstr "п▓я│п╣п╪"
 
 #: kdm-sess.cpp:58
 msgid "Root Only"
-msgstr "Только Root"
+msgstr "п╒п╬п╩я▄п╨п╬ Root"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "Только с консоли"
+msgstr "п╒п╬п╩я▄п╨п╬ я│ п╨п╬п╫я│п╬п╩п╦"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
-msgstr "Команды"
+msgstr "п п╬п╪п╟п╫п╢я▀"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "Выключить"
+msgstr "п▓я▀п╨п╩я▌я┤п╦я┌я▄"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
-msgstr "Перезагрузить"
+msgstr "п÷п╣я─п╣п╥п╟пЁя─я┐п╥п╦я┌я▄"
 
 #: kdm-sess.cpp:77
 msgid "Session types"
-msgstr "Виды сеансов"
+msgstr "п▓п╦п╢я▀ я│п╣п╟п╫я│п╬п╡"
 
 #: kdm-sess.cpp:79
 msgid "New type"
-msgstr "Новый вид"
+msgstr "п²п╬п╡я▀п╧ п╡п╦п╢"
 
 #: kdm-sess.cpp:89
 msgid "Available types"
-msgstr "Доступные виды"
+msgstr "п■п╬я│я┌я┐п©п╫я▀п╣ п╡п╦п╢я▀"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr "без имени!"
+msgstr "п╠п╣п╥ п╦п╪п╣п╫п╦!"

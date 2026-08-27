@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 "Date: 1997-12-07 12:23:22-0500\n"
@@ -80,7 +80,7 @@ msgstr "Gelegentlich auffrischen"
 
 #: MainMenu.cpp:67
 msgid "Fast Refresh"
-msgstr "H‰ufig auffrischen"
+msgstr "H√§ufig auffrischen"
 
 #: MainMenu.cpp:79
 msgid "&Refresh Rate"
@@ -88,11 +88,11 @@ msgstr "Auffrisch-&Rate"
 
 #: MainMenu.cpp:80
 msgid "&Process"
-msgstr "&Prozeﬂ"
+msgstr "&Proze√ü"
 
 #: ProcessMenu.cpp:44
 msgid "Renice Task..."
-msgstr "Priorit‰t ‰ndern..."
+msgstr "Priorit√§t √§ndern..."
 
 #: ProcessMenu.cpp:47
 msgid "send SIGINT\t(ctrl-c)"
@@ -125,12 +125,12 @@ msgstr "Taskmanager"
 
 #: ProcessMenu.cpp:75
 msgid "You need to select a process first!"
-msgstr "Sie m¸ssen zuerst einen Prozeﬂ ausw‰hlen!"
+msgstr "Sie m√ºssen zuerst einen Proze√ü ausw√§hlen!"
 
 #: ProcessMenu.cpp:85 ProcessMenu.cpp:149
 #, c-format
 msgid "The process %d is no longer persistent."
-msgstr "Der Prozeﬂ %d ist nicht mehr vorhanden."
+msgstr "Der Proze√ü %d ist nicht mehr vorhanden."
 
 #: ProcessMenu.cpp:98
 msgid "SIGINT"
@@ -166,8 +166,8 @@ msgid ""
 "Send signal %s to process %d?\n"
 "(Process name: %s  Owner: %s)\n"
 msgstr ""
-"Sende Signal %s an Prozeﬂ %d?\n"
-"(Prozeﬂname: %s  Eigent¸mer: %s)\n"
+"Sende Signal %s an Proze√ü %d?\n"
+"(Proze√üname: %s  Eigent√ºmer: %s)\n"
 
 #: ProcessMenu.cpp:126
 msgid "Abort"
@@ -179,13 +179,13 @@ msgid ""
 "Specified process does not exist\n"
 "or permission denied."
 msgstr ""
-"Fehler bei ƒnderung der Priorit‰t...\n"
-"Angegebener Prozeﬂ existiert nicht,\n"
+"Fehler bei √Ñnderung der Priorit√§t...\n"
+"Angegebener Proze√ü existiert nicht,\n"
 "oder Zugriff wurde verweigert."
 
 #: TaskMan.cpp:80
 msgid "Processes &List"
-msgstr "Prozeﬂ&liste"
+msgstr "Proze√ü&liste"
 
 #: TaskMan.cpp:81
 msgid "Performance &Meter"
@@ -197,7 +197,7 @@ msgstr "Laufende Prozesse"
 
 #: ProcListPage.cpp:49
 msgid "Show Tree"
-msgstr "Prozeﬂbaum"
+msgstr "Proze√übaum"
 
 #: ProcListPage.cpp:60
 msgid "All processes"
@@ -221,15 +221,15 @@ msgstr "Jetzt auffrischen"
 
 #: ProcListPage.cpp:85
 msgid "Kill task"
-msgstr "Prozeﬂ beenden"
+msgstr "Proze√ü beenden"
 
 #: ProcessList.cpp:227
 msgid "Remove Column"
-msgstr "Spalte lˆschen"
+msgstr "Spalte l√∂schen"
 
 #: ProcessList.cpp:228
 msgid "Add Column"
-msgstr "Spalte hinzuf¸gen"
+msgstr "Spalte hinzuf√ºgen"
 
 #: ProcessList.cpp:229
 msgid "Help on Column"
@@ -257,7 +257,7 @@ msgstr "Zeit"
 
 #: ProcessList.cpp:702
 msgid "Nice"
-msgstr "Priorit‰tswert"
+msgstr "Priorit√§tswert"
 
 #: ProcessList.cpp:703
 msgid "Status"
@@ -285,30 +285,30 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Kann Verzeichnis \"/proc\" nicht ˆffnen!\n"
-"Der Kernel muﬂ f¸r die Unterst¸tzung\n"
+"Kann Verzeichnis \"/proc\" nicht √∂ffnen!\n"
+"Der Kernel mu√ü f√ºr die Unterst√ºtzung\n"
 "des /proc-Dateisystems kompiliert sein!"
 
 #: OSProcessList.cpp:266
 msgid "Cannot read status of processes\n"
-msgstr "Kann Prozeﬂ-Status nicht ablesen\n"
+msgstr "Kann Proze√ü-Status nicht ablesen\n"
 
 #: OSProcessList.cpp:367
 msgid "Your OS is not supported yet.  Sorry"
-msgstr "Ihr Betriebssystem wird noch nicht unterst¸tzt. Sorry."
+msgstr "Ihr Betriebssystem wird noch nicht unterst√ºtzt. Sorry."
 
 #: OSProcess.cpp:123 OSProcess.cpp:154 OSProcess.cpp:171
 #, c-format
 msgid "Cannot open %s!\n"
-msgstr "Kann %s nicht ˆffnen!\n"
+msgstr "Kann %s nicht √∂ffnen!\n"
 
 #: OSProcess.cpp:183
 msgid "Run"
-msgstr "L‰uft"
+msgstr "L√§uft"
 
 #: OSProcess.cpp:186
 msgid "Sleep"
-msgstr "Schl‰ft"
+msgstr "Schl√§ft"
 
 #: OSProcess.cpp:189
 msgid "Disk"
@@ -329,12 +329,12 @@ msgstr "????"
 #: OSProcess.cpp:320
 #, c-format
 msgid "Could not set new nice level for process %d"
-msgstr "Konnte keine neue Priorit‰t einstellen f¸r Prozeﬂ %d"
+msgstr "Konnte keine neue Priorit√§t einstellen f√ºr Proze√ü %d"
 
 #: OSProcess.cpp:334
 #, c-format
 msgid "Cound not send signal %d to process %d"
-msgstr "Konnte Signal %d nicht an Prozeﬂ %d senden"
+msgstr "Konnte Signal %d nicht an Proze√ü %d senden"
 
 #: PerfMonPage.cpp:49
 msgid "CPU Load History"
@@ -350,7 +350,7 @@ msgstr "Anwendungen (%)"
 
 #: PerfMonPage.cpp:56 PerfMonPage.cpp:114
 msgid "Nice (%)"
-msgstr "Priorit‰tswert (%)"
+msgstr "Priorit√§tswert (%)"
 
 #: PerfMonPage.cpp:57 PerfMonPage.cpp:115
 msgid "System (%)"
@@ -387,8 +387,8 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Kann Datei \"/proc/stat\" nicht ˆffnen!\n"
-"Der Kernel muﬂ f¸r die Unterst¸tzung\n"
+"Kann Datei \"/proc/stat\" nicht √∂ffnen!\n"
+"Der Kernel mu√ü f√ºr die Unterst√ºtzung\n"
 "des /proc-Dateisystems kompiliert sein!"
 
 #: OSStatus.cpp:120 OSStatus.cpp:303 OSStatus.cpp:378
@@ -397,13 +397,13 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Kann Datei \"/proc/meminfo\" nicht ˆffnen!\n"
-"Der Kernel muﬂ f¸r die Unterst¸tzung\n"
+"Kann Datei \"/proc/meminfo\" nicht √∂ffnen!\n"
+"Der Kernel mu√ü f√ºr die Unterst√ºtzung\n"
 "des /proc-Dateisystems kompiliert sein!"
 
 #: OSStatus.cpp:311
 msgid "Cannot read memory info file '/proc/meminfo'!\n"
-msgstr "Kann Speicher-Info-Datei \"/proc/meminfo\" nicht ˆffnen!\n"
+msgstr "Kann Speicher-Info-Datei \"/proc/meminfo\" nicht √∂ffnen!\n"
 
 #: OSStatus.cpp:354
 #, c-format
@@ -412,8 +412,8 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Kann Info-Datei f¸r %s nicht ˆffnen!\n"
-"Der Kernel muﬂ f¸r die Unterst¸tzung\n"
+"Kann Info-Datei f√ºr %s nicht √∂ffnen!\n"
+"Der Kernel mu√ü f√ºr die Unterst√ºtzung\n"
 "des /proc-Dateisystems kompiliert sein!"
 
 #: OSStatus.cpp:386
@@ -425,12 +425,12 @@ msgid ""
 "Your system is not currently supported.\n"
 "Sorry"
 msgstr ""
-"Ihr System wird im Moment nicht unterst¸tzt.\n"
+"Ihr System wird im Moment nicht unterst√ºtzt.\n"
 "Sorry."
 
 #: ReniceDlg.cpp:32
 msgid "Renice Process"
-msgstr "Prozeﬂpriorit‰t ‰ndern"
+msgstr "Proze√üpriorit√§t √§ndern"
 
 #: ReniceDlg.cpp:39
 #, c-format
@@ -442,19 +442,19 @@ msgid ""
 "\n"
 "Please enter the desired nice level:"
 msgstr ""
-"Sie sind dabei die Ablauf-Priorit‰t des Prozesses %d\n"
-"zu ‰ndern. Seien Sie sich bewuﬂt, daﬂ nur der  Superuser (root)\n"
-"die Priorit‰t eines Prozesses erhˆhen kann. Je kleiner die Zahl\n"
-"desto hˆher ist die Priorit‰t.\n"
+"Sie sind dabei die Ablauf-Priorit√§t des Prozesses %d\n"
+"zu √§ndern. Seien Sie sich bewu√üt, da√ü nur der  Superuser (root)\n"
+"die Priorit√§t eines Prozesses erh√∂hen kann. Je kleiner die Zahl\n"
+"desto h√∂her ist die Priorit√§t.\n"
 "\n"
-"Bitte geben Sie die gew¸nschte Priorit‰t ein:"
+"Bitte geben Sie die gew√ºnschte Priorit√§t ein:"
 
 #~ msgid ""
 #~ "Cannot read status of processes\n"
 #~ "from /proc/... directories!\n"
 #~ msgstr ""
-#~ "Kann Prozeﬂ-Status nicht ablesen\n"
+#~ "Kann Proze√ü-Status nicht ablesen\n"
 #~ "aus den /proc/...Verzeichnissen!\n"
 
 #~ msgid "The Process has been terminated!\n"
-#~ msgstr "Der Prozeﬂ wurde beendet!\n"
+#~ msgstr "Der Proze√ü wurde beendet!\n"

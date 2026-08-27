@@ -10,25 +10,25 @@ msgstr ""
 "Last-Translator: Cevat TOPCU <bbm817@hun.edu.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
 #: adddlg.cc:11
 msgid "Add File Options"
-msgstr "Dosya Ekleme Seçenekleri"
+msgstr "Dosya Ekleme SeÃ§enekleri"
 
 #: adddlg.cc:21
 msgid "Store Full Path"
-msgstr "Yolun Tamamını Sakla"
+msgstr "Yolun TamamÃ½nÃ½ Sakla"
 
 #: adddlg.cc:24
 msgid "Only Add Newer Files"
-msgstr "Sadece Daha Yeni Dosyaları Ekle"
+msgstr "Sadece Daha Yeni DosyalarÃ½ Ekle"
 
 #: extractdlg.cc:14
 #, fuzzy
 msgid "Extract"
-msgstr "Aç..."
+msgstr "AÃ§..."
 
 #: extractdlg.cc:28
 msgid "Destination"
@@ -36,23 +36,23 @@ msgstr "Hedef"
 
 #: extractdlg.cc:44
 msgid "Extract Options"
-msgstr "Açma Seçenekleri"
+msgstr "AÃ§ma SeÃ§enekleri"
 
 #: extractdlg.cc:52
 msgid "Preserve Permissions"
-msgstr "İzinleri Koru"
+msgstr "Ãzinleri Koru"
 
 #: extractdlg.cc:57
 msgid "Filenames to Lowercase"
-msgstr "Dosya İsimlerini Küçük Harfe Çevir"
+msgstr "Dosya Ãsimlerini KÃ¼Ã§Ã¼k Harfe Ã‡evir"
 
 #: extractdlg.cc:68
 msgid "All Files"
-msgstr "Tüm Dosyalar"
+msgstr "TÃ¼m Dosyalar"
 
 #: extractdlg.cc:73
 msgid "Selected File"
-msgstr "Seçilen Dosya"
+msgstr "SeÃ§ilen Dosya"
 
 #: extractdlg.cc:78
 msgid "Pattern"
@@ -61,7 +61,7 @@ msgstr "Desen"
 #: extractdlg.cc:190
 #, fuzzy
 msgid "Extract To"
-msgstr "&Aç ..."
+msgstr "&AÃ§ ..."
 
 #: arkwidget.cc:71
 msgid "&New..."
@@ -69,11 +69,11 @@ msgstr ""
 
 #: arkwidget.cc:74
 msgid "&Extract To..."
-msgstr "&Aç ..."
+msgstr "&AÃ§ ..."
 
 #: arkwidget.cc:79
 msgid "E&xtract..."
-msgstr "Aç..."
+msgstr "AÃ§..."
 
 #: arkwidget.cc:80
 msgid "&View file"
@@ -82,29 +82,29 @@ msgstr ""
 #: arkwidget.cc:82
 #, fuzzy
 msgid "&Delete file"
-msgstr "Seçilen Dosya"
+msgstr "SeÃ§ilen Dosya"
 
 #: arkwidget.cc:84
 msgid "&Set Archive Directory..."
-msgstr "Arşiv Dizinini Belirle..."
+msgstr "ArÃ¾iv Dizinini Belirle..."
 
 #: arkwidget.cc:85
 msgid "Set &Tar Executable..."
-msgstr "Tar Programını Belirle"
+msgstr "Tar ProgramÃ½nÃ½ Belirle"
 
 #: arkwidget.cc:86
 msgid "&File Adding Options..."
-msgstr "&Dosyaya Ekleme Seçenekleri"
+msgstr "&Dosyaya Ekleme SeÃ§enekleri"
 
 #: arkwidget.cc:97
 #, fuzzy
 msgid "File Operations"
-msgstr "Dosya Ekleme Seçenekleri"
+msgstr "Dosya Ekleme SeÃ§enekleri"
 
 #: arkwidget.cc:99
 #, fuzzy
 msgid "Extract..."
-msgstr "Aç..."
+msgstr "AÃ§..."
 
 #: arkwidget.cc:100
 msgid "View file"
@@ -113,17 +113,17 @@ msgstr ""
 #: arkwidget.cc:102
 #, fuzzy
 msgid "Delete file"
-msgstr "Seçilen Dosya"
+msgstr "SeÃ§ilen Dosya"
 
 #: arkwidget.cc:114
 #, fuzzy
 msgid "Goto Archive Dir..."
-msgstr "Arşiv Dizinini Belirle..."
+msgstr "ArÃ¾iv Dizinini Belirle..."
 
 #: arkwidget.cc:117
 #, fuzzy
 msgid "Extract To.."
-msgstr "&Aç ..."
+msgstr "&AÃ§ ..."
 
 #: arkwidget.cc:121
 msgid "Exit"
@@ -132,36 +132,36 @@ msgstr ""
 #: arkwidget.cc:128
 #, fuzzy
 msgid "Welcome to ark..."
-msgstr "KZip'e Hoşgeldiniz..."
+msgstr "KZip'e HoÃ¾geldiniz..."
 
 #: arkwidget.cc:235
 msgid "Can't create archive of that type"
-msgstr "Bu tip arşiv yaratılamaz"
+msgstr "Bu tip arÃ¾iv yaratÃ½lamaz"
 
 #: arkwidget.cc:257
 msgid "Create or open an archive first"
-msgstr "Öncelikle bir arşiv yarat ya da aç"
+msgstr "Ã–ncelikle bir arÃ¾iv yarat ya da aÃ§"
 
 #: arkwidget.cc:300
 msgid "Can't add directories with this archive type"
-msgstr "Bu arşiv tipine dizinler eklenmez"
+msgstr "Bu arÃ¾iv tipine dizinler eklenmez"
 
 #: arkwidget.cc:302
 msgid "Error saving to archive"
-msgstr "Arşive saklama hatası"
+msgstr "ArÃ¾ive saklama hatasÃ½"
 
 #: arkwidget.cc:312
 #, fuzzy
 msgid "Archive Dir"
-msgstr "Arşiv Dizini:"
+msgstr "ArÃ¾iv Dizini:"
 
 #: arkwidget.cc:325
 msgid "What runs GNU tar:"
-msgstr "GNU tar ne çalıştırıyor:"
+msgstr "GNU tar ne Ã§alÃ½Ã¾tÃ½rÃ½yor:"
 
 #: arkwidget.cc:376 arkwidget.cc:578
 msgid "Unknown archive format"
-msgstr "Bilinmeyen arşiv formatı"
+msgstr "Bilinmeyen arÃ¾iv formatÃ½"
 
 #: arkwidget.cc:396
 msgid "Size"
@@ -169,8 +169,8 @@ msgstr ""
 
 #: arkwidget.cc:402
 msgid "Archive directory does not exist."
-msgstr "Arşiv dizini bulunmaıyor"
+msgstr "ArÃ¾iv dizini bulunmaÃ½yor"
 
 #: arkwidget.cc:418
 msgid "Archive Directory"
-msgstr "Arşiv Dizini"
+msgstr "ArÃ¾iv Dizini"

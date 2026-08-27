@@ -1,5 +1,5 @@
 # KONQUEST - PT.
-# Copyright (C) 1999 Rick2 Produções, Inc.
+# Copyright (C) 1999 Rick2 ProduÃ§Ãµes, Inc.
 # Ricardo Cruz <rick2@ricjoa.fe.up.pt>, 1999.
 #
 #, fuzzy
@@ -9,9 +9,9 @@ msgstr ""
 "POT-Creation-Date: 1999-01-13 01:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ricardo Cruz <rick2@ricjoa.fe.up.pt>\n"
-"Language-Team: Rick2 Produções <rick2@ricjoa.fe.up.pt>\n"
+"Language-Team: Rick2 ProduÃ§Ãµes <rick2@ricjoa.fe.up.pt>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: gameboard.cc:55
@@ -32,7 +32,7 @@ msgstr ": Quantas naves?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
-msgstr "Régua: Escolha planeta de começo."
+msgstr "RÃ©gua: Escolha planeta de comeÃ§o."
 
 #: gameboard.cc:287
 #, c-format
@@ -40,16 +40,16 @@ msgid ""
 "The distance from Planet %s to Planet %s is %s light years.\n"
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
-"A distância do Planeta %s ao Planeta %s é de %s anos-luz.\n"
-"Uma nave lançada agora chegaria na rodada %s"
+"A distÃ¢ncia do Planeta %s ao Planeta %s Ã© de %s anos-luz.\n"
+"Uma nave lanÃ§ada agora chegaria na rodada %s"
 
 #: gameboard.cc:291
 msgid "Distance"
-msgstr "Distância"
+msgstr "DistÃ¢ncia"
 
 #: gameboard.cc:296
 msgid "Ruler: Select ending planet."
-msgstr "Régua: Escolha planeta final."
+msgstr "RÃ©gua: Escolha planeta final."
 
 #: gameboard.cc:311
 #, c-format
@@ -59,29 +59,29 @@ msgstr "Rodada: %2d de %2d"
 #: gameboard.cc:426
 #, c-format
 msgid "The once mighty empire of %s has fallen in ruins."
-msgstr "O império outrora poderoso de %s caiu em ruínas."
+msgstr "O impÃ©rio outrora poderoso de %s caiu em ruÃ­nas."
 
 #: gameboard.cc:428
 msgid "An Empire has fallen..."
-msgstr "Um império caiu..."
+msgstr "Um impÃ©rio caiu..."
 
 #: gameboard.cc:438
 #, c-format
 msgid "The fallen empire of %s has staggered back to life."
-msgstr "O império outrora em ruínas de %s voltou à vida."
+msgstr "O impÃ©rio outrora em ruÃ­nas de %s voltou Ã  vida."
 
 #: gameboard.cc:440
 msgid "Up from the ashes..."
-msgstr "Nasceu das ruínas..."
+msgstr "Nasceu das ruÃ­nas..."
 
 #: gameboard.cc:460
 #, c-format
 msgid "Reinforcements have arrived for planet %s"
-msgstr "Chegaram reforços ao Planeta %s"
+msgstr "Chegaram reforÃ§os ao Planeta %s"
 
 #: gameboard.cc:462
 msgid "Fleet Arrival"
-msgstr "Chegaram Reforços"
+msgstr "Chegaram ReforÃ§os"
 
 #: gameboard.cc:505
 #, c-format
@@ -115,11 +115,11 @@ msgstr "Resultados Finais"
 
 #: gameboard.cc:758
 msgid "Not enough ships to send."
-msgstr "Não tem naves suficientes para mandar."
+msgstr "NÃ£o tem naves suficientes para mandar."
 
 #: mainwin.cc:23
 msgid "GNU-Lactic Conquest"
-msgstr "GNU-Conquista Galáctica"
+msgstr "GNU-Conquista GalÃ¡ctica"
 
 #: mainwin.cc:47
 #, c-format
@@ -131,17 +131,17 @@ msgid ""
 "KDE version by Russ Steffen <rsteffen@ia.net>\n"
 "See http://www.ia.net/~rsteffen/konquest.html for more info"
 msgstr ""
-"Versão %s\n"
+"VersÃ£o %s\n"
 "Copyright (c) 1998 por\n"
-"Projecto Gnu-Conquista Galáctica\n"
+"Projecto Gnu-Conquista GalÃ¡ctica\n"
 "\n"
-"KDE versão por Russ Steffen <rsteffen@ia.net>\n"
-"Ver http://www.ia.net/~rsteffen/konquest.html para mais informações\n"
-"Traduzido para português por Ricardo Cruz"
+"KDE versÃ£o por Russ Steffen <rsteffen@ia.net>\n"
+"Ver http://www.ia.net/~rsteffen/konquest.html para mais informaÃ§Ãµes\n"
+"Traduzido para portuguÃªs por Ricardo Cruz"
 
 #: mainwin.cc:88
 msgid "Measure Distance"
-msgstr "Distância"
+msgstr "DistÃ¢ncia"
 
 #: mainwin.cc:92
 msgid "Show Standings"
@@ -169,17 +169,17 @@ msgstr "A&pagar"
 
 #: newgamedlg.cc:70
 msgid "&Start Game"
-msgstr "Começar &Jogo"
+msgstr "ComeÃ§ar &Jogo"
 
 #: newgamedlg.cc:162
 #, c-format
 msgid "Number of Neutral Planets: %2d"
-msgstr "Número de Planetas Neutros: %2d"
+msgstr "NÃºmero de Planetas Neutros: %2d"
 
 #: newgamedlg.cc:174
 #, c-format
 msgid "Number of turns: %2d"
-msgstr "Número de rodadas: %2d"
+msgstr "NÃºmero de rodadas: %2d"
 
 #: planet_info.cc:81 planet_info.cc:116 planet_info.cc:131
 msgid "Planet Name : "
@@ -195,11 +195,11 @@ msgstr "Naves : "
 
 #: planet_info.cc:90
 msgid "Production : "
-msgstr "Produção : "
+msgstr "ProduÃ§Ã£o : "
 
 #: planet_info.cc:93
 msgid "Kill Percent : "
-msgstr "% Matança : "
+msgstr "% MatanÃ§a : "
 
 #: planet_info.cc:137
 #, c-format
@@ -209,19 +209,19 @@ msgstr "Naves : %d"
 #: planet_info.cc:140
 #, c-format
 msgid "Production : %d"
-msgstr "Produção : %d"
+msgstr "ProduÃ§Ã£o : %d"
 
 #: planet_info.cc:143
 #, c-format
-msgid "Kill Percent : %.3f"
-msgstr "% Matança : %.3f"
+#~ msgid "Kill Percent : %.3f"
+#~ msgstr "% MatanÃ§a : %.3f"
 
 #: gameenddlg.cc:14
 msgid ""
 "This is the last turn.\n"
 "Do you wish to add more turns?"
 msgstr ""
-"Esta é a última rodada.\n"
+"Esta Ã© a Ãºltima rodada.\n"
 "Quer acrescentar mais rodadas?"
 
 
@@ -244,11 +244,11 @@ msgstr "Planetas Conquistados"
 
 #: scoredlg.cc:21
 msgid "Fleets Launched"
-msgstr "Lançamentos"
+msgstr "LanÃ§amentos"
 
 #: scoredlg.cc:22
 msgid "Fleets Destroyed"
-msgstr "Lançamentos sem sucesso"
+msgstr "LanÃ§amentos sem sucesso"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"

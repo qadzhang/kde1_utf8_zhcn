@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: app.cpp:94 app.cpp:143 board.cpp:222
@@ -20,7 +20,7 @@ msgstr "Shisen-Sho"
 
 #: board.cpp:223
 msgid "Cannot load pixmaps!"
-msgstr "Ne morem nalo¾iti slik!"
+msgstr "Ne morem naloÅ¾iti slik!"
 
 #: app.cpp:108
 msgid "Get &hint"
@@ -32,11 +32,11 @@ msgstr "&Nova igra"
 
 #: app.cpp:111
 msgid "Res&tart game"
-msgstr "&Ponovno zaèni igro"
+msgstr "&Ponovno zaÄni igro"
 
 #: app.cpp:113
 msgid "Is game solvable?"
-msgstr "Je igra re¹ljiva?"
+msgstr "Je igra reÅ¡ljiva?"
 
 #: app.cpp:115
 #, fuzzy
@@ -77,11 +77,11 @@ msgstr "Srednje"
 
 #: app.cpp:136
 msgid "Slow"
-msgstr "Poèasi"
+msgstr "PoÄasi"
 
 #: app.cpp:137
 msgid "Very slow"
-msgstr "Zelo poèasi"
+msgstr "Zelo poÄasi"
 
 #: app.cpp:139
 msgid "Easy"
@@ -89,7 +89,7 @@ msgstr "Lahko"
 
 #: app.cpp:141
 msgid "Hard"
-msgstr "Te¾ko"
+msgstr "TeÅ¾ko"
 
 #: app.cpp:145
 msgid ""
@@ -115,24 +115,24 @@ msgstr "&Stopnja"
 
 #: app.cpp:154
 msgid "Disallow unsolvable games"
-msgstr "Prepreèi nere¹ljive igre"
+msgstr "PrepreÄi nereÅ¡ljive igre"
 
 #: app.cpp:175
 #, fuzzy
 msgid "Your time: XX:XX:XX"
-msgstr "Tvoj èas: XX:XX:XX"
+msgstr "Tvoj Äas: XX:XX:XX"
 
 #: app.cpp:176 app.cpp:273 app.cpp:298
 msgid "Cheat mode"
-msgstr "Goljufivi naèin"
+msgstr "Goljufivi naÄin"
 
 #: app.cpp:264
 msgid "This game is solveable"
-msgstr "Ta igra je re¹ljiva"
+msgstr "Ta igra je reÅ¡ljiva"
 
 #: app.cpp:267
 msgid "This game is NOT solveable"
-msgstr "Ta igra NI re¹ljiva"
+msgstr "Ta igra NI reÅ¡ljiva"
 
 #: app.cpp:389 app.cpp:421
 msgid "End of game"
@@ -140,17 +140,17 @@ msgstr "Konec igre"
 
 #: app.cpp:390
 msgid "No more moves possible!"
-msgstr "Nobena poteza ni veè mogoèa!"
+msgstr "Nobena poteza ni veÄ mogoÄa!"
 
 #: app.cpp:416
 #, c-format
-msgid "Congratulations! You made it in %02d:%02d:%02d"
-msgstr "Èestitam! Konèali ste v %02d:%02d:02d"
+#~ msgid "Congratulations! You made it in %02d:%02d:%02d"
+#~ msgstr "ÄŒestitam! KonÄali ste v %02d:%02d:02d"
 
 #: app.cpp:433
 #, fuzzy, c-format
 msgid "Your time: %02d:%02d:%02d"
-msgstr "Va¹ èas: %02d:02d:02d"
+msgstr "VaÅ¡ Äas: %02d:02d:02d"
 
 #: app.cpp:444
 msgid ""
@@ -159,12 +159,12 @@ msgid ""
 "your cool rating."
 msgstr ""
 "Uvrstili ste se v \"Halo slave\". Prosim vnesite\n"
-"svoje ime, tako da si bo èlove¹tvo za vedno zapomnilo\n"
-"va¹ kul rating."
+"svoje ime, tako da si bo ÄloveÅ¡tvo za vedno zapomnilo\n"
+"vaÅ¡ kul rating."
 
 #: app.cpp:447
 msgid "Your name:"
-msgstr "Va¹e ime:"
+msgstr "VaÅ¡e ime:"
 
 #: app.cpp:608 app.cpp:613
 msgid "Hall Of Fame"
@@ -184,7 +184,7 @@ msgstr "Ime"
 
 #: app.cpp:642
 msgid "Time"
-msgstr "Èas"
+msgstr "ÄŒas"
 
 #: app.cpp:646
 msgid "Size"

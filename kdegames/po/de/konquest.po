@@ -11,7 +11,7 @@ msgstr ""
 "Diehl <th_diehl@csi.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: gameboard.cc:55
@@ -20,11 +20,11 @@ msgstr "Runde beenden"
 
 #: gameboard.cc:203
 msgid ": Select source planet..."
-msgstr ": Herkunftsplaneten auswählen..."
+msgstr ": Herkunftsplaneten auswÃ¤hlen..."
 
 #: gameboard.cc:221
 msgid ": Select destination planet..."
-msgstr ": Zielplanet auswählen..."
+msgstr ": Zielplanet auswÃ¤hlen..."
 
 #: gameboard.cc:243
 msgid ": How many ships?"
@@ -32,7 +32,7 @@ msgstr ": Wieviele Schiffe?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
-msgstr "Herrscher: Wähle den Startplaneten aus."
+msgstr "Herrscher: WÃ¤hle den Startplaneten aus."
 
 #: gameboard.cc:287
 #, c-format
@@ -40,7 +40,7 @@ msgid ""
 "The distance from Planet %s to Planet %s is %s light years.\n"
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
-"Die Entfernung vom Planeten %s zum Planeten %s beträgt %s Lichtjahre.\n"
+"Die Entfernung vom Planeten %s zum Planeten %s betrÃ¤gt %s Lichtjahre.\n"
 "Ein Schiff, das in dieser Runde startet, wird in Runde %s ankommen."
 
 #: gameboard.cc:291
@@ -49,7 +49,7 @@ msgstr "Entfernung"
 
 #: gameboard.cc:296
 msgid "Ruler: Select ending planet."
-msgstr "Herrscher: Wähle den Endplaneten aus."
+msgstr "Herrscher: WÃ¤hle den Endplaneten aus."
 
 #: gameboard.cc:311
 #, c-format
@@ -59,7 +59,7 @@ msgstr "Runde #: %2d von %2d"
 #: gameboard.cc:426
 #, c-format
 msgid "The once mighty empire of %s has fallen in ruins."
-msgstr "Das einst mächtige Reich von %s ist in Trümmern versunken."
+msgstr "Das einst mÃ¤chtige Reich von %s ist in TrÃ¼mmern versunken."
 
 #: gameboard.cc:428
 msgid "An Empire has fallen..."
@@ -68,7 +68,7 @@ msgstr "Ein Reich ist gefallen..."
 #: gameboard.cc:438
 #, c-format
 msgid "The fallen empire of %s has staggered back to life."
-msgstr "Das gefallene Reich von %s ist ins Leben zurückgetaumelt."
+msgstr "Das gefallene Reich von %s ist ins Leben zurÃ¼ckgetaumelt."
 
 #: gameboard.cc:440
 msgid "Up from the ashes..."
@@ -77,7 +77,7 @@ msgstr "Aus der Asche erstanden..."
 #: gameboard.cc:460
 #, c-format
 msgid "Reinforcements have arrived for planet %s"
-msgstr "Für Planet %s ist Verstärkung eingetroffen."
+msgstr "FÃ¼r Planet %s ist VerstÃ¤rkung eingetroffen."
 
 #: gameboard.cc:462
 msgid "Fleet Arrival"
@@ -86,11 +86,11 @@ msgstr "Ankunft der Flotte"
 #: gameboard.cc:505
 #, c-format
 msgid "Planet %s has held against an attack from %s"
-msgstr "Planet %s hat die Attacke von %s überstanden."
+msgstr "Planet %s hat die Attacke von %s Ã¼berstanden."
 
 #: gameboard.cc:507
 msgid "Planet Holds"
-msgstr "Planet hält sich"
+msgstr "Planet hÃ¤lt sich"
 
 #: gameboard.cc:515
 #, c-format
@@ -107,7 +107,7 @@ msgstr "Spielende"
 
 #: gameboard.cc:580
 msgid "Do you wish to retire this game?"
-msgstr "Möchten Sie dieses Spiel aufgeben?"
+msgstr "MÃ¶chten Sie dieses Spiel aufgeben?"
 
 #: gameboard.cc:586
 msgid "Final Standings"
@@ -136,7 +136,7 @@ msgstr ""
 "Gnu-Lactic Conquest Projekt\n"
 "\n"
 "KDE version von Russ Steffen <rsteffen@ia.net>\n"
-"Siehe http://www.ia.net/~rsteffen/konquest.html für nähere Information."
+"Siehe http://www.ia.net/~rsteffen/konquest.html fÃ¼r nÃ¤here Information."
 
 #: mainwin.cc:88
 msgid "Measure Distance"
@@ -152,7 +152,7 @@ msgstr "Kartenvorschau"
 
 #: newgamedlg.cc:35
 msgid "&Reject Map"
-msgstr "&Karte zurückweisen"
+msgstr "&Karte zurÃ¼ckweisen"
 
 #: newgamedlg.cc:41
 msgid "&Player List"
@@ -160,11 +160,11 @@ msgstr "&Spielerliste"
 
 #: newgamedlg.cc:48
 msgid "&Add"
-msgstr "&Hinzufügen"
+msgstr "&HinzufÃ¼gen"
 
 #: newgamedlg.cc:54
 msgid "&Clear"
-msgstr "&Zurücksetzen"
+msgstr "&ZurÃ¼cksetzen"
 
 #: newgamedlg.cc:70
 msgid "&Start Game"
@@ -221,12 +221,12 @@ msgid ""
 "Do you wish to add more turns?"
 msgstr ""
 "Dies ist die letzte Runde.\n"
-"Möchten Sie weitere Runden anhängen?"
+"MÃ¶chten Sie weitere Runden anhÃ¤ngen?"
 
 #: gameenddlg.cc:64
 #, c-format
 msgid "Add %d turns"
-msgstr "%d Runden anhängen"
+msgstr "%d Runden anhÃ¤ngen"
 
 #: scoredlg.cc:18
 msgid "Player"
@@ -246,8 +246,8 @@ msgstr "Flotten entsandt"
 
 #: scoredlg.cc:22
 msgid "Fleets Destroyed"
-msgstr "Flotten zerstört"
+msgstr "Flotten zerstÃ¶rt"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"
-msgstr "Schiffe zerstört"
+msgstr "Schiffe zerstÃ¶rt"

@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: kmenuedit.cpp:69
@@ -23,7 +23,7 @@ msgstr "por"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
-msgstr "ModificaÁıes n„o gravadas!"
+msgstr "Modifica√ß√µes n√£o gravadas!"
 
 #: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
@@ -31,7 +31,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Quer gravar as suas modificaÁıes ?"
+"Quer gravar as suas modifica√ß√µes ?"
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
@@ -46,7 +46,7 @@ msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Recarregando os menus vai perder todas as modificaÁıes.\n"
+"Recarregando os menus vai perder todas as modifica√ß√µes.\n"
 "Tem a certeza que quer recarregar ?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
@@ -58,7 +58,7 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"A directoria para o seu menu personalizado n„o existe.\n"
+"A directoria para o seu menu personalizado n√£o existe.\n"
 " Quer cria-la agora?"
 
 #: main.cpp:93
@@ -66,7 +66,7 @@ msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"N„o È possÌvel criar directory para menu personalizado.\n"
+"N√£o √© poss√≠vel criar directory para menu personalizado.\n"
 " Seleccione Ok para sair do KMenuedit."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
@@ -95,7 +95,7 @@ msgstr "Aviso !"
 
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Se apagar este bot„o vai perder todos os seus submenus"
+msgstr "Se apagar este bot√£o vai perder todos os seus submenus"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
@@ -106,12 +106,12 @@ msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"Um ficheiro kdelnk com este nome j· existe. \n"
+"Um ficheiro kdelnk com este nome j√° existe. \n"
 "Por favor escolha outro nome."
 
 #: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Mudar o tipo deste bot„o vai apagar todos os seus submenus"
+msgstr "Mudar o tipo deste bot√£o vai apagar todos os seus submenus"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
@@ -122,16 +122,16 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Desculpe! Tem de gravar as suas alteraÁıes\n"
+"Desculpe! Tem de gravar as suas altera√ß√µes\n"
 "antes de poder largar este item noutra janela."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Caminho para Entradas de Ambiente de Trabalho KDE n„o est· definido."
+msgstr "Caminho para Entradas de Ambiente de Trabalho KDE n√£o est√° definido."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "Sugiro esta configuraÁ„o:"
+msgstr "Sugiro esta configura√ß√£o:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
@@ -148,7 +148,7 @@ msgstr "Submenu"
 #: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
 #: entrydialog.cpp:544
 msgid "Application"
-msgstr "AplicaÁ„o"
+msgstr "Aplica√ß√£o"
 
 #: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
@@ -156,7 +156,7 @@ msgstr "Engolir"
 
 #: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
-msgstr "LigaÁ„o"
+msgstr "Liga√ß√£o"
 
 #: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
@@ -176,15 +176,15 @@ msgstr "Nome:"
 
 #: entrydialog.cpp:109
 msgid "Icon:"
-msgstr "Õcone:"
+msgstr "√çcone:"
 
 #: entrydialog.cpp:141
 msgid "Mini Icon:"
-msgstr "Mini Õcone:"
+msgstr "Mini √çcone:"
 
 #: entrydialog.cpp:149
 msgid "Comment:"
-msgstr "Coment·rio:"
+msgstr "Coment√°rio:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
@@ -204,23 +204,23 @@ msgstr "Correr em terminal"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
-msgstr "OpÁıes do Terminal:"
+msgstr "Op√ß√µes do Terminal:"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "Padr„o Bin·rio:"
+msgstr "Padr√£o Bin√°rio:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "AplicaÁ„o para engolir:"
+msgstr "Aplica√ß√£o para engolir:"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"
-msgstr "TÌtulo da aplicaÁ„o:"
+msgstr "T√≠tulo da aplica√ß√£o:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "AplicaÁ„o a executar quando clicado:"
+msgstr "Aplica√ß√£o a executar quando clicado:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -260,4 +260,4 @@ msgstr "Pessoal:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Por omiss„o:"
+msgstr "Por omiss√£o:"

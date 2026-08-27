@@ -3,24 +3,24 @@ msgstr ""
 "Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
-"Last-Translator: Elvis Pf¸tzenreuter<epx@netville.com.br>\n"
-"Content-Type: charset=iso-8859-1\n"
+"Last-Translator: Elvis Pf√ºtzenreuter<epx@netville.com.br>\n"
+"Content-Type: charset=UTF-8\n"
 
 #: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: parece que j· est· rodando outro gerenciador de janelas. kwm n„o "
+"kwm: parece que j√° est√° rodando outro gerenciador de janelas. kwm n√£o "
 "inicializou.\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: ocorreu uma falha durante a inicializaÁ„o; abortando\n"
+msgstr "kwm: ocorreu uma falha durante a inicializa√ß√£o; abortando\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "Preparando sess„o ..."
+msgstr "Preparando sess√£o ..."
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -28,7 +28,7 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:558
 msgid "Usage: "
-msgstr "UtilizaÁ„o: "
+msgstr "Utiliza√ß√£o: "
 
 #: main.C:569
 msgid "&Maximize"
@@ -40,11 +40,11 @@ msgstr "&Restaurar"
 
 #: main.C:571
 msgid "&Iconify"
-msgstr "Criar &Õcone"
+msgstr "Criar &√çcone"
 
 #: main.C:572
 msgid "&DeIconify"
-msgstr "R&etirar Õcone"
+msgstr "R&etirar √çcone"
 
 #: main.C:573
 msgid "&Sticky"
@@ -80,7 +80,7 @@ msgstr "Dois"
 
 #: main.C:626
 msgid "Three"
-msgstr "TrÍs"
+msgstr "Tr√™s"
 
 #: main.C:629
 msgid "Four"
@@ -108,11 +108,11 @@ msgstr "Tela sem nome"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Algumas imagens n„o s„o v·lidas: ShapeMode desativado\n"
+msgstr "Algumas imagens n√£o s√£o v√°lidas: ShapeMode desativado\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Alguns pixmaps n„o s„o v·lidos: GimmikMode desativado\n"
+msgstr "Alguns pixmaps n√£o s√£o v√°lidos: GimmikMode desativado\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -132,23 +132,23 @@ msgstr "Sair"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sess„o pronta para desligar"
+msgstr "Sess√£o pronta para desligar"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"As seguintes aplicaÁıes contÍm dados que n„o foram gravados e que\n"
-"n„o ser„o recuperados na sua prÛxima sess„o."
+"As seguintes aplica√ß√µes cont√™m dados que n√£o foram gravados e que\n"
+"n√£o ser√£o recuperados na sua pr√≥xima sess√£o."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"As seguintes aplicaÁıes n„o poder„o ser restauradas na sua prÛxima sess„o,\n"
-"apenas reiniciadas, certifique-se de que n„o contÍm dados importantes para "
+"As seguintes aplica√ß√µes n√£o poder√£o ser restauradas na sua pr√≥xima sess√£o,\n"
+"apenas reiniciadas, certifique-se de que n√£o cont√™m dados importantes para "
 "gravar"
 
 #: logout.C:74
@@ -156,9 +156,9 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"As seguintes aplicaÁıes n„o reconhecem o X11 e por isso n„o podem ser "
+"As seguintes aplica√ß√µes n√£o reconhecem o X11 e por isso n√£o podem ser "
 "restauradas\n"
-"na sua prÛxima sess„o. Certifique-se de que n„o contÍm dados importantes "
+"na sua pr√≥xima sess√£o. Certifique-se de que n√£o cont√™m dados importantes "
 "para gravar."
 
 #: taskmgr.C:107
@@ -167,4 +167,4 @@ msgstr "Mudar para"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "Sess„o atual"
+msgstr "Sess√£o atual"

@@ -1,6 +1,6 @@
 # Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1999
+# JaÃ±-Mai Drapier <jdrapier@club-internet.fr>, 1999
 #
 #, fuzzy
 msgid ""
@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: kcmktalkd-1.1\n"
 "POT-Creation-Date: 1998-12-12 15:20+0100\n"
 "PO-Revision-Date: 1999-03-19 11:56+0100\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Last-Translator: JaÃ±-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8 bit\n"
 
 #: main.cpp:58
@@ -20,7 +20,7 @@ msgstr "&Kemenn"
 
 #: main.cpp:61
 msgid "Ans&wering machine"
-msgstr "Ardivink &eilgeriañ"
+msgstr "Ardivink &eilgeriaÃ±"
 
 #: main.cpp:64
 msgid "&Forward"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: main.cpp:111
 msgid "KTalkd Configuration"
-msgstr "Kefluniañ KTalkd"
+msgstr "KefluniaÃ± KTalkd"
 
 #: soundpage.cpp:46
 msgid "&Announcement program"
@@ -45,7 +45,7 @@ msgstr "&Pratik kaozeal"
 
 #: soundpage.cpp:57
 msgid "&Play sound"
-msgstr "&Mouezhiañ"
+msgstr "&MouezhiaÃ±"
 
 #: soundpage.cpp:59
 msgid "&Sound File"
@@ -53,11 +53,11 @@ msgstr "&Restr son"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Restroù WAV ouzhpenn a c'heller leuskel davet roll ar sonioù."
+msgstr "RestroÃ¹ WAV ouzhpenn a c'heller leuskel davet roll ar sonioÃ¹."
 
 #: soundpage.cpp:76
 msgid "&Test"
-msgstr "&Arnodiñ"
+msgstr "&ArnodiÃ±"
 
 #: soundpage.cpp:156
 msgid "Unsupported URL"
@@ -68,7 +68,7 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Ho tigarez, ar rizh URL-mañ a zo anskoraet evit ar poent gant mollad sonioù "
+"Ho tigarez, ar rizh URL-maÃ± a zo anskoraet evit ar poent gant mollad sonioÃ¹ "
 "ar reizhiad KDE"
 
 #: soundpage.cpp:164
@@ -103,7 +103,7 @@ msgstr "Restr er roll endeo"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
-msgstr "Bevaat an ardinvink eilgeriañ"
+msgstr "Bevaat an ardinvink eilgeriaÃ±"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
@@ -120,13 +120,13 @@ msgstr "Implijit %s evit anv ar galver"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "Lenenn &kentañ ar postel"
+msgstr "Lenenn &kentaÃ± ar postel"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
 msgstr ""
-"Implijit an %s kentañ evit anv ar galver, hag an eil %s evit anv ostiz ar "
+"Implijit an %s kentaÃ± evit anv ar galver, hag an eil %s evit anv ostiz ar "
 "galver "
 
 #: answmachpage.cpp:68
@@ -135,7 +135,7 @@ msgstr "&Resev ur postel zoken ma n'eus kemennad ebet laosket"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Banner diskwelet en ur loc'hañ an ardivink eilgeriañ :"
+msgstr "&Banner diskwelet en ur loc'haÃ± an ardivink eilgeriaÃ± :"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -143,9 +143,9 @@ msgid ""
 "Please leave a message to be delivered via E-Mail.\n"
 "Just start typing and when you're done, exit normally."
 msgstr ""
-"An hini e klaskit kaozeal gantañ ne eilger ket.\n"
-"Laoskit mar plij ur c'hemennad da ingalañ dre bostel.\n"
-"Krogit da vizskrivañ ha p'ho devo echu, kuitit evel boas."
+"An hini e klaskit kaozeal gantaÃ± ne eilger ket.\n"
+"Laoskit mar plij ur c'hemennad da ingalaÃ± dre bostel.\n"
+"Krogit da vizskrivaÃ± ha p'ho devo echu, kuitit evel boas."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
@@ -155,7 +155,7 @@ msgstr "Kemennad a-berzh %s"
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Kemennad laozket en ardivink eilgeriañ, gant by %s@%s"
+msgstr "Kemennad laozket en ardivink eilgeriaÃ±, gant by %s@%s"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
@@ -182,13 +182,13 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Dazkas ar c'hemennoù hepken. Kevreañ war-eeun. N'eo ket erbedet.\n"
-"FWR : Dazkas an holl goulennoù, o kemmañ stlenn pa vez ezhomm. Kevreañ "
+"FWA : Dazkas ar c'hemennoÃ¹ hepken. KevreaÃ± war-eeun. N'eo ket erbedet.\n"
+"FWR : Dazkas an holl goulennoÃ¹, o kemmaÃ± stlenn pa vez ezhomm. KevreaÃ± "
 "war-eeun.\n"
-"FWT : Dazkas an holl goulennoù ha kemer ar gaoz. Kevreañ war eeun ebet.\n"
+"FWT : Dazkas an holl goulennoÃ¹ ha kemer ar gaoz. KevreaÃ± war eeun ebet.\n"
 "\n"
-"Arveriadur erbedet : FWT m'ho peus c'hoant e arverañ a-dreñv ur maltouter "
+"Arveriadur erbedet : FWT m'ho peus c'hoant e arveraÃ± a-dreÃ±v ur maltouter "
 "(ha\n"
 "ma c'hell ktalkd tizhout an daou rouedad), mod all FWR.\n"
 "\n"
-"Gwelit ar skoazell evit muioc'h a zisplegadennoù.\n"
+"Gwelit ar skoazell evit muioc'h a zisplegadennoÃ¹.\n"

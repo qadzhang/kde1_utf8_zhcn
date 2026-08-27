@@ -12,21 +12,21 @@ msgstr ""
 "Last-Translator: Paul Ionescu <ipaul@romsys.ro>\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
 #: adddlg.cc:11
 msgid "Add File Options"
-msgstr "Opþiuni de adãugare"
+msgstr "OpÃ¾iuni de adÃ£ugare"
 
 #: adddlg.cc:21
 msgid "Store Full Path"
-msgstr "Stocheazã calea întreagã"
+msgstr "StocheazÃ£ calea Ã®ntreagÃ£"
 
 #: adddlg.cc:24
 msgid "Only Add Newer Files"
-msgstr "Adaugã doar fiºiere mai noi"
+msgstr "AdaugÃ£ doar fiÂºiere mai noi"
 
 #: extractdlg.cc:14
 msgid "Extract"
@@ -34,27 +34,27 @@ msgstr "Extrage"
 
 #: extractdlg.cc:28
 msgid "Destination"
-msgstr "Destinaþia"
+msgstr "DestinaÃ¾ia"
 
 #: extractdlg.cc:44
 msgid "Extract Options"
-msgstr "Opþiuni de extragere"
+msgstr "OpÃ¾iuni de extragere"
 
 #: extractdlg.cc:52
 msgid "Preserve Permissions"
-msgstr "Pãstreazã atributele"
+msgstr "PÃ£streazÃ£ atributele"
 
 #: extractdlg.cc:57
 msgid "Filenames to Lowercase"
-msgstr "Schimbã în litere mici"
+msgstr "SchimbÃ£ Ã®n litere mici"
 
 #: extractdlg.cc:68
 msgid "All Files"
-msgstr "Toate fiºierele"
+msgstr "Toate fiÂºierele"
 
 #: extractdlg.cc:73
 msgid "Selected File"
-msgstr "Fiºierele selectate"
+msgstr "FiÂºierele selectate"
 
 #: extractdlg.cc:78
 msgid "Pattern"
@@ -62,7 +62,7 @@ msgstr "Filtru"
 
 #: extractdlg.cc:190
 msgid "Extract To"
-msgstr "Extrage în"
+msgstr "Extrage Ã®n"
 
 #: arkwidget.cc:71
 msgid "&New..."
@@ -70,7 +70,7 @@ msgstr "&Nou"
 
 #: arkwidget.cc:74
 msgid "&Extract To..."
-msgstr "&Extrage în..."
+msgstr "&Extrage Ã®n..."
 
 #: arkwidget.cc:79
 msgid "E&xtract..."
@@ -78,27 +78,27 @@ msgstr "E&xtrage..."
 
 #: arkwidget.cc:80
 msgid "&View file"
-msgstr "&Vizualizeazã fiºierul"
+msgstr "&VizualizeazÃ£ fiÂºierul"
 
 #: arkwidget.cc:82
 msgid "&Delete file"
-msgstr "&ªterge fiºierul"
+msgstr "&Âªterge fiÂºierul"
 
 #: arkwidget.cc:84
 msgid "&Set Archive Directory..."
-msgstr "&Seteazã directorul arhivei..."
+msgstr "&SeteazÃ£ directorul arhivei..."
 
 #: arkwidget.cc:85
 msgid "Set &Tar Executable..."
-msgstr "Seteazã &Tar executabil..."
+msgstr "SeteazÃ£ &Tar executabil..."
 
 #: arkwidget.cc:86
 msgid "&File Adding Options..."
-msgstr "&Opþiuni de adãugare..."
+msgstr "&OpÃ¾iuni de adÃ£ugare..."
 
 #: arkwidget.cc:97
 msgid "File Operations"
-msgstr "Operaþii pe fiºiere"
+msgstr "OperaÃ¾ii pe fiÂºiere"
 
 #: arkwidget.cc:99
 msgid "Extract..."
@@ -106,23 +106,23 @@ msgstr "Extrage..."
 
 #: arkwidget.cc:100
 msgid "View file"
-msgstr "Vizualizeazã fiºierul"
+msgstr "VizualizeazÃ£ fiÂºierul"
 
 #: arkwidget.cc:102
 msgid "Delete file"
-msgstr "ªterge fiºierul"
+msgstr "Âªterge fiÂºierul"
 
 #: arkwidget.cc:114
 msgid "Goto Archive Dir..."
-msgstr "Du-te în directorul arhivei..."
+msgstr "Du-te Ã®n directorul arhivei..."
 
 #: arkwidget.cc:117
 msgid "Extract To.."
-msgstr "Extrage în..."
+msgstr "Extrage Ã®n..."
 
 #: arkwidget.cc:121
 msgid "Exit"
-msgstr "Ieºire"
+msgstr "IeÂºire"
 
 #: arkwidget.cc:128
 msgid "Welcome to ark..."
@@ -130,23 +130,23 @@ msgstr "Program de arhivare"
 
 #: arkwidget.cc:235
 msgid "Can't create archive of that type"
-msgstr "Nu pot crea o arhivã de acest tip"
+msgstr "Nu pot crea o arhivÃ£ de acest tip"
 
 #: arkwidget.cc:257
 msgid "Create or open an archive first"
-msgstr "Mai întâi creazã sau deschide o arhivã"
+msgstr "Mai Ã®ntÃ¢i creazÃ£ sau deschide o arhivÃ£"
 
 #: arkwidget.cc:300
 msgid "Can't add directories with this archive type"
-msgstr "Nu pot adãuga directoare în acest tip de arhivã"
+msgstr "Nu pot adÃ£uga directoare Ã®n acest tip de arhivÃ£"
 
 #: arkwidget.cc:302
 msgid "Error saving to archive"
-msgstr "Eroare la salvare în arhivã"
+msgstr "Eroare la salvare Ã®n arhivÃ£"
 
 #: arkwidget.cc:312
 msgid "Archive Dir"
-msgstr "Arhiveazã directorul"
+msgstr "ArhiveazÃ£ directorul"
 
 #: arkwidget.cc:325
 msgid "What runs GNU tar:"
@@ -154,15 +154,15 @@ msgstr "Ce ruleaza GNU tar:"
 
 #: arkwidget.cc:376 arkwidget.cc:578
 msgid "Unknown archive format"
-msgstr "Format de arhivã necunoscut"
+msgstr "Format de arhivÃ£ necunoscut"
 
 #: arkwidget.cc:396
 msgid "Size"
-msgstr "Mãrime"
+msgstr "MÃ£rime"
 
 #: arkwidget.cc:402
 msgid "Archive directory does not exist."
-msgstr "Directorul arhivei nu existã."
+msgstr "Directorul arhivei nu existÃ£."
 
 #: arkwidget.cc:418
 msgid "Archive Directory"

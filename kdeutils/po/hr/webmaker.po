@@ -8,7 +8,7 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"   
 
 #: webmaker.cpp:120
@@ -17,11 +17,11 @@ msgstr "&Nova"
 
 #: webmaker.cpp:121
 msgid "New From &Template..."
-msgstr "Nova koristeÊi &predloæak..."
+msgstr "Nova koristeƒái &predlo≈æak..."
 
 #: webmaker.cpp:127
 msgid "Open &Recent"
-msgstr "Otvori s&koraπnju"
+msgstr "Otvori s&kora≈°nju"
 
 #: webmaker.cpp:131
 msgid "Save &as..."
@@ -41,19 +41,19 @@ msgstr "&Umetni..."
 
 #: webmaker.cpp:164 webmaker.cpp:288
 msgid "Cu&t"
-msgstr "I&zreæi"
+msgstr "I&zre≈æi"
 
 #: webmaker.cpp:167
 msgid "C&lear"
-msgstr "&OËisti"
+msgstr "&Oƒçisti"
 
 #: webmaker.cpp:168
 msgid "&Select All"
-msgstr "&OznaËi sve"
+msgstr "&Oznaƒçi sve"
 
 #: webmaker.cpp:170
 msgid "&Find..."
-msgstr "&Nai..."
+msgstr "&Naƒëi..."
 
 #: webmaker.cpp:171
 msgid "&Replace..."
@@ -61,7 +61,7 @@ msgstr "&Zamijeni..."
 
 #: webmaker.cpp:172
 msgid "Find &Again"
-msgstr "Potraæi &ponovo"
+msgstr "Potra≈æi &ponovo"
 
 #: webmaker.cpp:174
 msgid "&Go to Line..."
@@ -89,15 +89,15 @@ msgstr "Zadebljano"
 
 #: webmaker.cpp:195
 msgid "Underline"
-msgstr "PodvuËeno"
+msgstr "Podvuƒçeno"
 
 #: webmaker.cpp:197
 msgid "Font Size +1"
-msgstr "VeliËina pisma +1"
+msgstr "Veliƒçina pisma +1"
 
 #: webmaker.cpp:198
 msgid "Font Size -1"
-msgstr "VeliËina pisma -1"
+msgstr "Veliƒçina pisma -1"
 
 #: webmaker.cpp:200
 msgid "Quote"
@@ -149,7 +149,7 @@ msgstr "Glavna traka s alatima"
 
 #: webmaker.cpp:222
 msgid "General Toolbar"
-msgstr "OpÊa traka s alatima"
+msgstr "Opƒáa traka s alatima"
 
 #: webmaker.cpp:224
 msgid "Alternate Toolbar Switching"
@@ -177,7 +177,7 @@ msgstr "Auto&matska tabulacija"
 
 #: webmaker.cpp:237
 msgid "Show All Files"
-msgstr "Prikaæi sve datoteke"
+msgstr "Prika≈æi sve datoteke"
 
 #: webmaker.cpp:240
 msgid "Browse Temporary File"
@@ -221,7 +221,7 @@ msgstr "Spremi dokument"
 
 #: webmaker.cpp:315
 msgid "Print Document"
-msgstr "Ispiπi dokument"
+msgstr "Ispi≈°i dokument"
 
 #: webmaker.cpp:323
 msgid "View in External Browser"
@@ -229,7 +229,7 @@ msgstr "Pregledaj u pregledniku"
 
 #: webmaker.cpp:347
 msgid "Search"
-msgstr "Traæi"
+msgstr "Tra≈æi"
 
 #: webmaker.cpp:354
 msgid "Toggle Fonts Toolbar On/Off "
@@ -264,7 +264,7 @@ msgstr "Datoteka otvorena: %s"
 #: webmaker.cpp:603
 #, c-format
 msgid "Template opened: %s"
-msgstr "Predloæak otvoren: %s"
+msgstr "Predlo≈æak otvoren: %s"
 
 #: webmaker.cpp:713 webmaker.cpp:749
 #, c-format
@@ -310,11 +310,11 @@ msgstr ""
 
 #: webmaker.cpp:1128
 msgid "Auto Indent Mode: On"
-msgstr "Automatska tabulacija: ukljuËena"
+msgstr "Automatska tabulacija: ukljuƒçena"
 
 #: webmaker.cpp:1130
 msgid "Auto Indent Mode: Off"
-msgstr "Automatska tabulacija: iskljuËena"
+msgstr "Automatska tabulacija: iskljuƒçena"
 
 #: webmaker.cpp:1138
 msgid "Show All Files: On. Updating disk info..."
@@ -342,11 +342,11 @@ msgstr "Auto. spremi postavke: Iskl."
 
 #: webmaker.cpp:1345 webmaker.cpp:1603
 msgid "Sorry!"
-msgstr "Æao mi je!"
+msgstr "≈Ωao mi je!"
 
 #: webmaker.cpp:1345
 msgid "Sorry, help is not available."
-msgstr "Æalim, pomoÊ nije dostupna."
+msgstr "≈Ωalim, pomoƒá nije dostupna."
 
 #: webmaker.cpp:1436
 #, c-format
@@ -355,7 +355,7 @@ msgstr "Redak: %d Stupac: %d"
 
 #: webmaker.cpp:1603
 msgid "Sorry, feature is not implemented yet."
-msgstr "Æalim, ova moguÊnost joπ nije ugraena."
+msgstr "≈Ωalim, ova moguƒánost jo≈° nije ugraƒëena."
 
 #: htmledit.cpp:95
 msgid ""
@@ -381,7 +381,7 @@ msgstr "Izabrali ste direktorij."
 
 #: htmledit.cpp:126
 msgid "You do not have read permission to this file."
-msgstr "Nemate ovlast Ëitanja ove datoteke."
+msgstr "Nemate ovlast ƒçitanja ove datoteke."
 
 #: htmledit.cpp:134
 msgid "An Error occured while trying to open this Document."
@@ -397,7 +397,7 @@ msgid ""
 "Would you like to save it?"
 msgstr ""
 " je mijenjana.\n"
-"Æelite li je spremiti?"
+"≈Ωelite li je spremiti?"
 
 #: htmledit.cpp:325 htmledit.cpp:575
 msgid "Message"
@@ -405,7 +405,7 @@ msgstr "Poruka"
 
 #: htmledit.cpp:333
 msgid "Error!"
-msgstr "Greπka!"
+msgstr "Gre≈°ka!"
 
 #: htmledit.cpp:333
 msgid "Error saving file! Exit anyway?"
@@ -517,7 +517,7 @@ msgstr ""
 #: htmledit.cpp:3649 htmledit.cpp:3896 htmledit.cpp:4475 htmledit.cpp:5531
 #: htmledit.cpp:5767
 msgid "Width"
-msgstr "©irina"
+msgstr "≈†irina"
 
 #: htmledit.cpp:1417 htmledit.cpp:3656 htmledit.cpp:4482 htmledit.cpp:5538
 #: htmledit.cpp:5774
@@ -560,7 +560,7 @@ msgstr " "
 
 #: htmledit.cpp:1672
 msgid "HTML version"
-msgstr "HTML inaËica"
+msgstr "HTML inaƒçica"
 
 #: htmledit.cpp:1705
 msgid "Http-Equiv"
@@ -574,7 +574,7 @@ msgstr "Ime"
 
 #: htmledit.cpp:1719
 msgid "Content"
-msgstr "Sadræaj"
+msgstr "Sadr≈æaj"
 
 #: htmledit.cpp:1726
 msgid "Scheme"
@@ -590,7 +590,7 @@ msgstr "Stupci"
 
 #: htmledit.cpp:1814 htmledit.cpp:1949
 msgid "On Load"
-msgstr "Prilikom uËitavanja"
+msgstr "Prilikom uƒçitavanja"
 
 #: htmledit.cpp:1821 htmledit.cpp:1956
 msgid "On Unload"
@@ -633,7 +633,7 @@ msgstr "Boja veze"
 
 #: htmledit.cpp:1929
 msgid "Visited Link Color"
-msgstr "Boja posjeÊenih veza"
+msgstr "Boja posjeƒáenih veza"
 
 #: htmledit.cpp:1939
 msgid "Active Link Color"
@@ -645,7 +645,7 @@ msgstr ""
 
 #: htmledit.cpp:2135
 msgid "None"
-msgstr "Niπta"
+msgstr "Ni≈°ta"
 
 #: htmledit.cpp:2225
 msgid "Date of change"
@@ -658,7 +658,7 @@ msgstr "Vrsta"
 
 #: htmledit.cpp:2326
 msgid "Start"
-msgstr "PoËni"
+msgstr "Poƒçni"
 
 #: htmledit.cpp:2419 htmledit.cpp:2814 htmledit.cpp:4986 htmledit.cpp:5114
 #: htmledit.cpp:5395
@@ -681,7 +681,7 @@ msgstr ""
 #: htmledit.cpp:2684 htmledit.cpp:4167 htmledit.cpp:4237 htmledit.cpp:4798
 #: htmledit.cpp:5150
 msgid "Size"
-msgstr "VeliËina"
+msgstr "Veliƒçina"
 
 #: htmledit.cpp:2749 htmledit.cpp:2807
 msgid "Label"
@@ -830,7 +830,7 @@ msgstr ""
 
 #: htmledit.cpp:4313 htmledit.cpp:4489
 msgid "Margin Width"
-msgstr "©irina margine"
+msgstr "≈†irina margine"
 
 #: htmledit.cpp:4320 htmledit.cpp:4496
 msgid "Margin Height"
@@ -894,7 +894,7 @@ msgstr ""
 
 #: htmledit.cpp:4995 htmledit.cpp:5094
 msgid "Reset"
-msgstr "Poniπti"
+msgstr "Poni≈°ti"
 
 #: htmledit.cpp:5089
 msgid "Text"
@@ -982,7 +982,7 @@ msgstr "&Jezgra"
 
 #: htmledit.cpp:6069
 msgid "&Events"
-msgstr "&Dogaaj"
+msgstr "&Dogaƒëaj"
 
 #: htmledit.cpp:6074
 msgid "&i18n"
@@ -1010,7 +1010,7 @@ msgstr "Novo ime:"
 
 #: dirview.cpp:355
 msgid "Error occured while renaming file!"
-msgstr "Javila se greπka prilikom mijenjanja imena datoteke!"
+msgstr "Javila se gre≈°ka prilikom mijenjanja imena datoteke!"
 
 #: dirview.cpp:368
 #, c-format
@@ -1024,7 +1024,7 @@ msgstr "Ukloni datoteku \"%s\"? Da li ste sigurni?"
 
 #: dirview.cpp:387
 msgid "Error occured while removing file!"
-msgstr "Javila se greπka prilikom uklanjanja datoteke!"
+msgstr "Javila se gre≈°ka prilikom uklanjanja datoteke!"
 
 #: dirview.cpp:400
 msgid "New Directory Name:"
@@ -1032,4 +1032,4 @@ msgstr "Ime novog direktorija:"
 
 #: dirview.cpp:411
 msgid "Error occured while creating new directory!"
-msgstr "Javila se greπka prilikom stvaranja novog direktorija!"
+msgstr "Javila se gre≈°ka prilikom stvaranja novog direktorija!"

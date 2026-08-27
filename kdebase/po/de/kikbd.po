@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "Translator: Harri Porten <porten@kde.org>\n"
 "Date: 1998-04-15 09:13:42+0400\n"
@@ -37,7 +37,7 @@ msgid ""
 "Skipping this map."
 msgstr ""
 "Keyboard map \"%s\" existiert nicht.\n"
-"Übergehe diese map."
+"Ãœbergehe diese map."
 
 #: kikbd.cpp:337
 msgid "Setup"
@@ -51,7 +51,7 @@ msgstr "Kann %s nicht aus Modifikatoren entfernen.\n"
 #: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "Kann %s nicht zu Modifikator Nr. 3 hinzufügen.\n"
+msgstr "Kann %s nicht zu Modifikator Nr. 3 hinzufÃ¼gen.\n"
 
 #: kikbd.cpp:384
 #, c-format
@@ -80,7 +80,7 @@ msgid ""
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 "Sie sind dabei, das \"Internationale Tastatur-Tool\" zu verlassen.\n"
-"Möchten Sie es automatisch starten, wenn Sie das nächste Mal einloggen?"
+"MÃ¶chten Sie es automatisch starten, wenn Sie das nÃ¤chste Mal einloggen?"
 
 #: keymap.cpp:186
 msgid "KeyMap: can't allocate memory"
@@ -96,7 +96,7 @@ msgid ""
 msgstr ""
 "Symbol \"%s\" nicht gefunden.\n"
 "Vielleicht passen Ihre Standard-XCodes nicht.\n"
-"Sie können die XCodes unter \"Erweitert\"\n"
+"Sie kÃ¶nnen die XCodes unter \"Erweitert\"\n"
 "im Konfigurationsprogramm voreinstellen."
 
 #: keymap.cpp:238
@@ -112,7 +112,7 @@ msgstr "KeyMap: Kann Zeichencode \"%s\" nicht lesen."
 #: keymap.cpp:252
 #, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "KeyMap: Zeichenkode \"%s\" ist außerhalb des Bereiches"
+msgstr "KeyMap: Zeichenkode \"%s\" ist auÃŸerhalb des Bereiches"
 
 #: kikbdconf.cpp:102
 msgid "Global"
@@ -209,7 +209,7 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "%s\n"
-"Möchten Sie die Konfiguration jetzt vornehmen?"
+"MÃ¶chten Sie die Konfiguration jetzt vornehmen?"
 
 #: kikbdconf.cpp:223
 msgid ""
@@ -301,7 +301,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"Möchten Sie fortfahren?"
+"MÃ¶chten Sie fortfahren?"
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
@@ -309,15 +309,15 @@ msgstr "Liste der aktiven Tastaturtabellen"
 
 #: widgets.cpp:126
 msgid "&Add"
-msgstr "&Hinzufügen"
+msgstr "&HinzufÃ¼gen"
 
 #: widgets.cpp:127
 msgid "Add new keyboard map"
-msgstr "Neue Tastaturtabelle hinzufügen"
+msgstr "Neue Tastaturtabelle hinzufÃ¼gen"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
-msgstr "Ausgewählte Tastaturtabelle entfernen"
+msgstr "AusgewÃ¤hlte Tastaturtabelle entfernen"
 
 #: widgets.cpp:136
 msgid "U&p"
@@ -325,7 +325,7 @@ msgstr "Nach &oben"
 
 #: widgets.cpp:136
 msgid "Move up selected keyboard map"
-msgstr "Ausgewählte Tastaturtabelle nach oben"
+msgstr "AusgewÃ¤hlte Tastaturtabelle nach oben"
 
 #: widgets.cpp:140
 msgid "D&own"
@@ -333,7 +333,7 @@ msgstr "Nach &unten"
 
 #: widgets.cpp:140
 msgid "Move down selected keyboard map"
-msgstr "Ausgewählte Tastaturtabelle nach unten"
+msgstr "AusgewÃ¤hlte Tastaturtabelle nach unten"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -341,7 +341,7 @@ msgstr "&Info"
 
 #: widgets.cpp:145
 msgid "Display information for selected keyboard map"
-msgstr "Zeige Info zu ausgewählter Tastaturtabelle"
+msgstr "Zeige Info zu ausgewÃ¤hlter Tastaturtabelle"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
@@ -357,7 +357,7 @@ msgstr ""
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
-msgstr "Füge Tastatur hinzu"
+msgstr "FÃ¼ge Tastatur hinzu"
 
 #: widgets.cpp:225
 msgid "There are no keyboard maps left to add"
@@ -369,11 +369,11 @@ msgstr "Tastaturtabelle - Information"
 
 #: widgets.cpp:292
 msgid "Add Keyboard"
-msgstr "Tastatur hinzufügen"
+msgstr "Tastatur hinzufÃ¼gen"
 
 #: widgets.cpp:296
 msgid "Available keyboard maps"
-msgstr "Verfügbare Tastaturtabellen"
+msgstr "VerfÃ¼gbare Tastaturtabellen"
 
 #: widgets.cpp:403
 msgid "Keyboard maps"
@@ -420,15 +420,15 @@ msgstr "&Emuliere CapsLock"
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Emuliere XServer-CapsLock. Für manche Sprachen benötigt"
+msgstr "Emuliere XServer-CapsLock. FÃ¼r manche Sprachen benÃ¶tigt"
 
 #: widgets.cpp:482
 msgid "&World Menu"
-msgstr "Weltmenü"
+msgstr "WeltmenÃ¼"
 
 #: widgets.cpp:483
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "Zeige Menü in jedem Fenster durch Drücken der Wechseltasten"
+msgstr "Zeige MenÃ¼ in jedem Fenster durch DrÃ¼cken der Wechseltasten"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -437,7 +437,7 @@ msgstr "Klassen &speichern"
 #: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr ""
-"Speichere Abhängigkeit zwischen Fensterklassen und Tastaturtabellen beim "
+"Speichere AbhÃ¤ngigkeit zwischen Fensterklassen und Tastaturtabellen beim "
 "Beenden"
 
 #: widgets.cpp:498
@@ -456,13 +456,13 @@ msgstr "Standardverhalten: Tastaturtabelle in allen Fenstern aktiv"
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
 msgstr ""
-"Zusatzoption: Status der Tastaturtabelle für jedes Fenster einzeln sichern"
+"Zusatzoption: Status der Tastaturtabelle fÃ¼r jedes Fenster einzeln sichern"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"Extraoption: Status der Tastaturtabelle für jede Klasse von Fenstern einzeln "
+"Extraoption: Status der Tastaturtabelle fÃ¼r jede Klasse von Fenstern einzeln "
 "sichern"
 
 #: widgets.cpp:561
@@ -475,7 +475,7 @@ msgstr "Vordergrund"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr "Vordergrundfarbe für Textfeld"
+msgstr "Vordergrundfarbe fÃ¼r Textfeld"
 
 #: widgets.cpp:576
 msgid "Background"
@@ -483,7 +483,7 @@ msgstr "Hintergrund"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr "Hintergrundfarbe für Textfeld"
+msgstr "Hintergrundfarbe fÃ¼r Textfeld"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -499,7 +499,7 @@ msgstr "Mit Alternieren"
 
 #: widgets.cpp:589
 msgid "Background when Alternate switch key is pressed"
-msgstr "Hintergrund, wenn Alternieren-Schalter gedrückt ist"
+msgstr "Hintergrund, wenn Alternieren-Schalter gedrÃ¼ckt ist"
 
 #: widgets.cpp:598
 msgid "Button Font"
@@ -515,7 +515,7 @@ msgstr "Schrift des Textlabels anpassen oder allgemeine Einstellungen benutzen"
 
 #: widgets.cpp:611
 msgid "C&hange Font"
-msgstr "&Schrift ändern"
+msgstr "&Schrift Ã¤ndern"
 
 #: widgets.cpp:656
 msgid "&Autostart"
@@ -539,7 +539,7 @@ msgstr "Plazieren"
 
 #: widgets.cpp:680
 msgid "Place in selected corner"
-msgstr "Plaziere in ausgewählter Ecke"
+msgstr "Plaziere in ausgewÃ¤hlter Ecke"
 
 #: kcmikbd.cpp:64
 msgid "&General"

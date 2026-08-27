@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Elvis Pf¸tzenreuter <epx@netville.com.br>\n"
+"Last-Translator: Elvis Pf√ºtzenreuter <epx@netville.com.br>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "&Atalhos padrıes"
+msgstr "&Atalhos padr√µes"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
@@ -27,7 +27,7 @@ msgstr "uso: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "ConfiguraÁıes de atalhos de teclado"
+msgstr "Configura√ß√µes de atalhos de teclado"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
@@ -35,7 +35,7 @@ msgstr "Esquema corrente"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "Padr„o do KDE"
+msgstr "Padr√£o do KDE"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
@@ -47,7 +47,7 @@ msgstr "&Adicionar ..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "&Salvar mudanÁas"
+msgstr "&Salvar mudan√ßas"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
@@ -59,9 +59,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Este esquema de teclas n„o pÙde ser removido.\n"
-"Talvez vocÍ n„o tenha permiss„o para alterar esse arquivo\n"
-"no sistema onde o esquema est· armazenado."
+"Este esquema de teclas n√£o p√¥de ser removido.\n"
+"Talvez voc√™ n√£o tenha permiss√£o para alterar esse arquivo\n"
+"no sistema onde o esquema est√° armazenado."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
@@ -73,8 +73,8 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Escolha um nome ˙nico para o novo esquema\n"
-"de teclas. O nome que vocÍ digitou j· existe\n"
+"Escolha um nome √∫nico para o novo esquema\n"
+"de teclas. O nome que voc√™ digitou j√° existe\n"
 "na lista de esquemas de teclas."
 
 #: savescm.cpp:18
@@ -90,9 +90,9 @@ msgid ""
 "be copied into this scheme to begin with."
 msgstr ""
 "&Digite um nome para o novo esquema de teclas\n"
-"a ser adicionado ‡ sua lista pessoal.\n"
+"a ser adicionado √† sua lista pessoal.\n"
 "\n"
-"As teclas em uso na prÈvia ser„o copiadas\n"
+"As teclas em uso na pr√©via ser√£o copiadas\n"
 "para dentro desse esquema."
 
 #: ../../kwm/kwmbindings.cpp:1
@@ -101,7 +101,7 @@ msgstr "Gerenciador de tarefas"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "Modo de destruiÁ„o de janela"
+msgstr "Modo de destrui√ß√£o de janela"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
@@ -109,7 +109,7 @@ msgstr "Executar comando"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "Menu de operaÁıes de janela"
+msgstr "Menu de opera√ß√µes de janela"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
@@ -117,11 +117,11 @@ msgstr "Menu de contexto do sistema"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr "Trazer janela ‡ frente"
+msgstr "Trazer janela √† frente"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr "Mandar janela para tr·s"
+msgstr "Mandar janela para tr√°s"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
@@ -141,7 +141,7 @@ msgstr "Mover janela"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "Comutar bot„o Pregar da janela"
+msgstr "Comutar bot√£o Pregar da janela"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
@@ -197,7 +197,7 @@ msgstr "Novo"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "PrÛximo"
+msgstr "Pr√≥ximo"
 
 #: stdbindings.cpp:9
 msgid "Prior"

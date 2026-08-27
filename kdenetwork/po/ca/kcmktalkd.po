@@ -1,16 +1,16 @@
 # KCMKTALKD CATALAN TRANSLATION
 # Copyright (C) 1999 Free Software Foundation, Inc.
-# Sebasti‡ Pla <sastia@redestb.es>, 1999.
+# Sebasti√† Pla <sastia@redestb.es>, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmktalkd\n"
 "POT-Creation-Date: 1998-12-12 15:20+0100\n"
 "PO-Revision-Date: 1999-02-18 22:50+0100\n"
-"Last-Translator: Sebasti‡ Pla <sastia@redestb.es>\n"
+"Last-Translator: Sebasti√† Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bits\n"
 
 #: main.cpp:58
@@ -27,11 +27,11 @@ msgstr "&Enviament"
 
 #: main.cpp:70
 msgid "usage: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
-msgstr "˙s: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
+msgstr "√∫s: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
 
 #: main.cpp:111
 msgid "KTalkd Configuration"
-msgstr "ConfiguraciÛ KTalkd"
+msgstr "Configuraci√≥ KTalkd"
 
 #: soundpage.cpp:46
 msgid "&Announcement program"
@@ -43,7 +43,7 @@ msgstr "C&lient de conversa"
 
 #: soundpage.cpp:57
 msgid "&Play sound"
-msgstr "A&vÌs sonor"
+msgstr "A&v√≠s sonor"
 
 #: soundpage.cpp:59
 msgid "&Sound File"
@@ -66,7 +66,7 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Ho sento, aquest tipus d'URL no est‡ suportada actualment pel mÚdul del "
+"Ho sento, aquest tipus d'URL no est√† suportada actualment pel m√≤dul del "
 "sistema de so KDE"
 
 #: soundpage.cpp:164
@@ -76,13 +76,13 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Ho sento, perÚ\n"
+"Ho sento, per√≤\n"
 "%s\n"
 "no sembla ser un fitxer WAV."
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
-msgstr "ExtensiÛ de fitxer imprÚpia"
+msgstr "Extensi√≥ de fitxer impr√≤pia"
 
 #: soundpage.cpp:175
 #, c-format
@@ -93,11 +93,11 @@ msgid ""
 msgstr ""
 "El fitxer\n"
 "%s\n"
-"ja Ès a la llista"
+"ja √©s a la llista"
 
 #: soundpage.cpp:179
 msgid "File Already in List"
-msgstr "El fitxer ja Ès a la llista"
+msgstr "El fitxer ja √©s a la llista"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
@@ -105,7 +105,7 @@ msgstr "Activa el &contestador"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
-msgstr "A&dreÁa"
+msgstr "A&dre√ßa"
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
@@ -118,12 +118,12 @@ msgstr "Usa %s com a nom del qui truca"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "&Primera lÌnia"
+msgstr "&Primera l√≠nia"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
-msgstr "El primer %s Ès qui truca i el segon %s Ès la seva m‡quina "
+msgstr "El primer %s √©s qui truca i el segon %s √©s la seva m√†quina "
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
@@ -140,7 +140,7 @@ msgid ""
 "Just start typing and when you're done, exit normally."
 msgstr ""
 "La persona amb qui demaneu de conversar no respon.\n"
-"Deixeu un missage que s'enviar‡ per correu electrÚnic.\n"
+"Deixeu un missage que s'enviar√† per correu electr√≤nic.\n"
 "Comenceu a escriure i en acabar, sortiu normalment."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
@@ -155,15 +155,15 @@ msgstr "Missatge al contestador de %s@%s"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
-msgstr "Activa &transmissiÛ"
+msgstr "Activa &transmissi√≥"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&DestÌ (usuari o usuari@remot)"
+msgstr "&Dest√≠ (usuari o usuari@remot)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
-msgstr "&MËtode de transmissiÛ"
+msgstr "&M√®tode de transmissi√≥"
 
 #: forwmachpage.cpp:54
 msgid ""
@@ -178,13 +178,13 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Transmet nomÈs l'anunci. ConnexiÛ directa. No es recomana.\n"
-"FWR : Transmet totes les peticions, canviant la informaciÛ si cal. ConnexiÛ "
+"FWA : Transmet nom√©s l'anunci. Connexi√≥ directa. No es recomana.\n"
+"FWR : Transmet totes les peticions, canviant la informaci√≥ si cal. Connexi√≥ "
 "directa.\n"
-"FWT : Transmet totes les peticions i accepta la conversa. No Ès connexiÛ "
+"FWT : Transmet totes les peticions i accepta la conversa. No √©s connexi√≥ "
 "directa\n"
 "\n"
-"⁄s recomanat : FWT si voleu usar-lo darrere d'un tallafocs (i si ktalkd pot\n"
+"√ös recomanat : FWT si voleu usar-lo darrere d'un tallafocs (i si ktalkd pot\n"
 "accedir a ambdues xarxes), i FWR en cas contrari.\n"
 "\n"
-"Si voleu mÈs explicacions, consulteu l'ajuda.\n"
+"Si voleu m√©s explicacions, consulteu l'ajuda.\n"

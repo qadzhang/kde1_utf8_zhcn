@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: KPackage\n"
 "POT-Creation-Date: 1999-02-03 02:30+0100\n"
 "PO-Revision-Date: 1999-04-20 01:00-0300\n"
-"Last-Translator: Elvis Pf¸tzenreuter <epx@netville.com.br>\n"
+"Last-Translator: Elvis Pf√ºtzenreuter <epx@netville.com.br>\n"
 "Language-Team: Brazilian Portuguese\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: base64\n"
 
 #: kpackage.cpp:112
@@ -35,11 +35,11 @@ msgstr "Re&carregar"
 
 #: kpackage.cpp:125
 msgid "&Expand Tree"
-msgstr "&Expandir ¡rvore"
+msgstr "&Expandir √Årvore"
 
 #: kpackage.cpp:126
 msgid "&Collapse Tree"
-msgstr "&Colapsar ¡rvore"
+msgstr "&Colapsar √Årvore"
 
 #: kpackage.cpp:127
 msgid "Clear &Selected"
@@ -47,11 +47,11 @@ msgstr "Limpar &Selecionado"
 
 #: kpackage.cpp:129 kpackage.cpp:319
 msgid "Multiple Selection &Mode"
-msgstr "&Modo de M˙ltipla SeleÁ„o"
+msgstr "&Modo de M√∫ltipla Sele√ß√£o"
 
 #: kpackage.cpp:133
 msgid "&Options..."
-msgstr "&OpÁıes..."
+msgstr "&Op√ß√µes..."
 
 #: kpackage.cpp:135
 msgid "&Keys..."
@@ -59,7 +59,7 @@ msgstr "&Teclas..."
 
 #: kpackage.cpp:146
 msgid ": Location of uninstalled packages..."
-msgstr ": LocalizaÁ„o dos pacotes desinstalados..."
+msgstr ": Localiza√ß√£o dos pacotes desinstalados..."
 
 #: kpackage.cpp:155 kpackage.cpp:311
 msgid "Show &Tool Bar"
@@ -71,11 +71,11 @@ msgstr "Esconder &Barra de Ferramentas"
 
 #: kpackage.cpp:161
 msgid "&Save Settings Now"
-msgstr "&Salvar ConfiguraÁıes Agora"
+msgstr "&Salvar Configura√ß√µes Agora"
 
 #: kpackage.cpp:165
 msgid "Clear package &Directory cache"
-msgstr "Limpar cache do &diretÛrio de pacotes"
+msgstr "Limpar cache do &diret√≥rio de pacotes"
 
 #: kpackage.cpp:167
 msgid "Clear &Package cache"
@@ -95,11 +95,11 @@ msgstr "Abrir Pacote"
 
 #: kpackage.cpp:208
 msgid "Expand Package Tree"
-msgstr "Expandir ¡rvore de Pacotes"
+msgstr "Expandir √Årvore de Pacotes"
 
 #: kpackage.cpp:212
 msgid "Collapse Package Tree"
-msgstr "Colapsar ¡rvore de Pacotes"
+msgstr "Colapsar √Årvore de Pacotes"
 
 #: kpackage.cpp:216
 msgid "Find Installed Package"
@@ -111,11 +111,11 @@ msgstr "Procurar Pacote que contenha arquivo"
 
 #: kpackage.cpp:224
 msgid "Reload Package Information"
-msgstr "Recarregar InformaÁıes do Pacote"
+msgstr "Recarregar Informa√ß√µes do Pacote"
 
 #: kpackage.cpp:317
 msgid "Single Selection &Mode"
-msgstr "&Modo de SeleÁ„o Singela"
+msgstr "&Modo de Sele√ß√£o Singela"
 
 #: kpackage.cpp:488
 msgid "Management Mode"
@@ -133,12 +133,12 @@ msgstr "Tipo desconhecido de pacote: %s"
 #: kpackage.cpp:615
 #, c-format
 msgid "File not found: %s"
-msgstr "Arquivo n„o encontrado: %s"
+msgstr "Arquivo n√£o encontrado: %s"
 
 #: cache.cpp:74 kpackage.cpp:653
 #, c-format
 msgid "Malformed URL: %s"
-msgstr "URL inv·lida: %s"
+msgstr "URL inv√°lida: %s"
 
 #: debInterface.cpp:163 kpackage.cpp:703
 msgid "Calling KFM"
@@ -154,7 +154,7 @@ msgstr "KFM falhou"
 
 #: kpackage.cpp:725
 msgid "Open Location:"
-msgstr "Abrir localizaÁ„o:"
+msgstr "Abrir localiza√ß√£o:"
 
 #: managementWidget.cpp:90 managementWidget.cpp:139 pkguninstallDialog.cpp:19
 msgid "Uninstall"
@@ -166,15 +166,15 @@ msgstr "Examinar"
 
 #: managementWidget.cpp:199
 msgid "Building package tree"
-msgstr "Construindo ·rvore de pacotes"
+msgstr "Construindo √°rvore de pacotes"
 
 #: managementWidget.cpp:247 managementWidget.cpp:256
 msgid "Management Mode: Single Selection"
-msgstr "Modo de gerenciamento: seleÁ„o simples"
+msgstr "Modo de gerenciamento: sele√ß√£o simples"
 
 #: managementWidget.cpp:254
 msgid "Management Mode: Multiple Selection"
-msgstr "Modo de gerenciamento: seleÁ„o m˙ltipla"
+msgstr "Modo de gerenciamento: sele√ß√£o m√∫ltipla"
 
 #: managementWidget.cpp:286 pkginstallOptions.cpp:51
 msgid "Install"
@@ -182,7 +182,7 @@ msgstr "Instalar"
 
 #: managementWidget.cpp:324
 msgid "Filename not available\n"
-msgstr "Nome de arquivo n„o disponÌvel\n"
+msgstr "Nome de arquivo n√£o dispon√≠vel\n"
 
 #: packageDisplay.cpp:81
 msgid "File List"
@@ -202,15 +202,15 @@ msgstr "nome"
 
 #: packageProperties.cpp:47
 msgid "summary"
-msgstr "sum·rio"
+msgstr "sum√°rio"
 
 #: packageProperties.cpp:48
 msgid "version"
-msgstr "vers„o"
+msgstr "vers√£o"
 
 #: packageProperties.cpp:49
 msgid "old-version"
-msgstr "vers„o antiga"
+msgstr "vers√£o antiga"
 
 #: packageProperties.cpp:50
 msgid "status"
@@ -230,7 +230,7 @@ msgstr "tamanho-de-arquivo"
 
 #: packageProperties.cpp:54
 msgid "description"
-msgstr "descriÁ„o"
+msgstr "descri√ß√£o"
 
 #: packageProperties.cpp:55
 msgid "architecture"
@@ -238,15 +238,15 @@ msgstr "arquitetura"
 
 #: packageProperties.cpp:57
 msgid "unsatisfied dependencies"
-msgstr "dependÍncias n„o satisfeitas"
+msgstr "depend√™ncias n√£o satisfeitas"
 
 #: packageProperties.cpp:58
 msgid "pre-depends"
-msgstr "prÈ-dependÍncias"
+msgstr "pr√©-depend√™ncias"
 
 #: packageProperties.cpp:59
 msgid "dependencies"
-msgstr "dependÍncias"
+msgstr "depend√™ncias"
 
 #: packageProperties.cpp:60
 msgid "depends"
@@ -282,15 +282,15 @@ msgstr "essencial"
 
 #: packageProperties.cpp:69
 msgid "installtime"
-msgstr "hora da instalaÁ„o"
+msgstr "hora da instala√ß√£o"
 
 #: packageProperties.cpp:70
 msgid "config-version"
-msgstr "vers„o de config."
+msgstr "vers√£o de config."
 
 #: packageProperties.cpp:71
 msgid "distribution"
-msgstr "distribuiÁ„o"
+msgstr "distribui√ß√£o"
 
 #: packageProperties.cpp:72
 msgid "vendor"
@@ -310,11 +310,11 @@ msgstr "fonte"
 
 #: packageProperties.cpp:76
 msgid "build-time"
-msgstr "hora de construÁ„o"
+msgstr "hora de constru√ß√£o"
 
 #: packageProperties.cpp:77
 msgid "build-host"
-msgstr "m·quina de construÁ„o"
+msgstr "m√°quina de constru√ß√£o"
 
 #: packageProperties.cpp:78
 msgid "base"
@@ -389,7 +389,7 @@ msgstr "Nota"
 #: search.cpp:80
 #, c-format
 msgid "%s was not found"
-msgstr "%s n„o foi encontrado"
+msgstr "%s n√£o foi encontrado"
 
 #: installationWidget.cpp:84
 #, c-format
@@ -422,7 +422,7 @@ msgstr "Mostrar Pacotes"
 
 #: options.cpp:62
 msgid "Cache remote package directories"
-msgstr "Conservar em cache diretÛrios remotos de pacotes"
+msgstr "Conservar em cache diret√≥rios remotos de pacotes"
 
 #: options.cpp:68 options.cpp:96
 msgid "Always"
@@ -430,7 +430,7 @@ msgstr "Sempre"
 
 #: options.cpp:72 options.cpp:100
 msgid "During as session"
-msgstr "Durante a sess„o"
+msgstr "Durante a sess√£o"
 
 #: options.cpp:76 options.cpp:104
 msgid "Never"
@@ -438,7 +438,7 @@ msgstr "Nunca"
 
 #: options.cpp:86
 msgid "Directory Cache"
-msgstr "Cache de diretÛrio"
+msgstr "Cache de diret√≥rio"
 
 #: options.cpp:90
 msgid "Cache remote package files"
@@ -454,7 +454,7 @@ msgstr "Verificar lista de arquivos"
 
 #: options.cpp:123
 msgid "Read information from all local package files"
-msgstr "Ler informaÁıes de todos os arquivos locais de pacotes"
+msgstr "Ler informa√ß√µes de todos os arquivos locais de pacotes"
 
 #: options.cpp:128
 msgid "misc"
@@ -471,7 +471,7 @@ msgstr "Instalar: %d %s pacotes"
 
 #: aboutDialog.cpp:34
 msgid "Version 1.1"
-msgstr "Vers„o 1.1"
+msgstr "Vers√£o 1.1"
 
 #: aboutDialog.cpp:35
 msgid "By Toivo Pedaste"
@@ -500,7 +500,7 @@ msgstr "OUTROS"
 #: cache.cpp:38 cache.cpp:60
 #, c-format
 msgid "Cannot create directory %s"
-msgstr "ImpossÌvel criar diretÛrio %s"
+msgstr "Imposs√≠vel criar diret√≥rio %s"
 
 #: debInterface.cpp:73 debInterface.cpp:216
 msgid "Querying DEB package list: "
@@ -512,23 +512,23 @@ msgstr "Kpackage: aguardando por DPKG"
 
 #: debInterface.cpp:78
 msgid "Locate of Debian package archives"
-msgstr "LocalizaÁ„o das coleÁıes de pacotes Debian"
+msgstr "Localiza√ß√£o das cole√ß√µes de pacotes Debian"
 
 #: debInterface.cpp:80
 msgid "Location of directories containg Debian packages"
-msgstr "LocalizaÁ„o dos diretÛrios que contÈm pacotes Debian"
+msgstr "Localiza√ß√£o dos diret√≥rios que cont√©m pacotes Debian"
 
 #: debInterface.cpp:81
 msgid "Location of 'Packages' files for sections of Debian distributions"
-msgstr "LocalizaÁ„o de arquivos 'Packages' para seÁıes de distribuidores Debian"
+msgstr "Localiza√ß√£o de arquivos 'Packages' para se√ß√µes de distribuidores Debian"
 
 #: debInterface.cpp:82
 msgid "Location of base directory of Debian distribution"
-msgstr "LocalizaÁ„o do diretÛrio-base da distribuiÁ„o Debian"
+msgstr "Localiza√ß√£o do diret√≥rio-base da distribui√ß√£o Debian"
 
 #: debInterface.cpp:87
 msgid "Allow Downgrade"
-msgstr "Permitir atualizaÁ„o inversa"
+msgstr "Permitir atualiza√ß√£o inversa"
 
 #: debInterface.cpp:88
 msgid "Check Conflicts"
@@ -537,19 +537,19 @@ msgstr "Verificar Conflitos"
 #: debInterface.cpp:89 debInterface.cpp:93 rpmInterface.cpp:74
 #: rpmInterface.cpp:78
 msgid "Check Dependencies"
-msgstr "Verificar dependÍncias"
+msgstr "Verificar depend√™ncias"
 
 #: debInterface.cpp:90 rpmInterface.cpp:75
 msgid "Test (do not install)"
-msgstr "Testar (n„o instalar)"
+msgstr "Testar (n√£o instalar)"
 
 #: debInterface.cpp:92
 msgid "Purge Config Files"
-msgstr "Limpar arquivos de configuraÁ„o"
+msgstr "Limpar arquivos de configura√ß√£o"
 
 #: debInterface.cpp:94 rpmInterface.cpp:79
 msgid "Test (do not uninstall)"
-msgstr "Testar (n„o desinstalar)"
+msgstr "Testar (n√£o desinstalar)"
 
 #: debInterface.cpp:523 debInterface.cpp:558
 msgid "'Delete this window to continue'"
@@ -565,7 +565,7 @@ msgstr "Arquivo de pacote"
 
 #: updateLoc.cpp:145
 msgid "Package archive"
-msgstr "ColeÁ„o de pacotes"
+msgstr "Cole√ß√£o de pacotes"
 
 #: procbuf.cpp:71
 msgid "Kprocess Failure"
@@ -578,12 +578,12 @@ msgstr "Esperar"
 #: pkgInterface.cpp:176
 #, c-format
 msgid "Cann't write to file %s\n"
-msgstr "ImpossÌvel escrever ao arquivo %s\n"
+msgstr "Imposs√≠vel escrever ao arquivo %s\n"
 
 #: pkgInterface.cpp:193
 #, c-format
 msgid "Cann't read directory %s"
-msgstr "ImpossÌvel ler diretÛrio %s"
+msgstr "Imposs√≠vel ler diret√≥rio %s"
 
 #: pkgInterface.cpp:250 rpmInterface.cpp:570
 msgid "Verifying"
@@ -591,11 +591,11 @@ msgstr "Verificando"
 
 #: rpmInterface.cpp:64
 msgid "Location of RPM package archives"
-msgstr "LocalizaÁ„o das coleÁıes de pacotes RPM"
+msgstr "Localiza√ß√£o das cole√ß√µes de pacotes RPM"
 
 #: rpmInterface.cpp:65
 msgid "Location of directories containg RPM packages"
-msgstr "LocalizaÁ„o dos diretÛrios que contÈm pacotes RPM"
+msgstr "Localiza√ß√£o dos diret√≥rios que cont√©m pacotes RPM"
 
 #: rpmInterface.cpp:71
 msgid "Upgrade"
@@ -619,7 +619,7 @@ msgstr "Consultando lista de pacotes RPM: "
 
 #: rpmInterface.cpp:98
 msgid "Cann't read RPM config files\n"
-msgstr "ImpossÌvel ler arquivos de configuraÁ„o RPM\n"
+msgstr "Imposs√≠vel ler arquivos de configura√ß√£o RPM\n"
 
 #: rpmInterface.cpp:187
 msgid "Querying RPM database for installed packages"
@@ -627,7 +627,7 @@ msgstr "Consultando banco de dados RPM em busca de pacotes instalados"
 
 #: rpmInterface.cpp:203
 msgid "could not read database record\n"
-msgstr "impossÌvel ler registro do banco de dados\n"
+msgstr "imposs√≠vel ler registro do banco de dados\n"
 
 #: rpmInterface.cpp:248 rpmInterface.cpp:458
 #, c-format
@@ -636,7 +636,7 @@ msgstr "Erro ao procurar por pacote %s\n"
 
 #: rpmInterface.cpp:258 rpmInterface.cpp:468
 msgid "Could not read database record\n"
-msgstr "ImpossÌvel ler registro do banco de dados\n"
+msgstr "Imposs√≠vel ler registro do banco de dados\n"
 
 #: rpmInterface.cpp:279
 #, c-format
@@ -645,12 +645,12 @@ msgstr "Problema ao abrir %s\n"
 
 #: rpmInterface.cpp:291
 msgid "Old format source packages cannot be queried!\n"
-msgstr "Pacotes-fonte de formato antigo n„o podem ser consultados!\n"
+msgstr "Pacotes-fonte de formato antigo n√£o podem ser consultados!\n"
 
 #: rpmInterface.cpp:300 rpmInterface.cpp:507
 #, c-format
 msgid "%s does not appear to be a RPM package\n"
-msgstr "%s n„o parece ser um pacote RPM\n"
+msgstr "%s n√£o parece ser um pacote RPM\n"
 
 #: rpmInterface.cpp:303
 #, c-format
@@ -660,7 +660,7 @@ msgstr "Consulta de %s falhou!\n"
 #: rpmInterface.cpp:456
 #, c-format
 msgid "Package %s is not installed\n"
-msgstr "Pacote %s n„o est· instalado\n"
+msgstr "Pacote %s n√£o est√° instalado\n"
 
 #: rpmInterface.cpp:487
 #, c-format
@@ -669,7 +669,7 @@ msgstr "ERRO ao abrir %s\n"
 
 #: rpmInterface.cpp:499
 msgid "Old format source packages cannot be queried\n"
-msgstr "Pacotes-fonte de formato antigo n„o podem ser consultados\n"
+msgstr "Pacotes-fonte de formato antigo n√£o podem ser consultados\n"
 
 #: rpmInterface.cpp:510
 #, c-format
@@ -703,7 +703,7 @@ msgstr "Kpackage: Esperando por SLACK"
 #: rpmInstall.cpp:86 rpmInstall.cpp:182
 #, c-format
 msgid "cannot open file %s"
-msgstr "impossÌvel abrir arquivo %s"
+msgstr "imposs√≠vel abrir arquivo %s"
 
 #: rpmInstall.cpp:103 rpmInstall.cpp:393
 #, c-format
@@ -713,12 +713,12 @@ msgstr "Instalando %s\n"
 #: rpmInstall.cpp:124 rpmInstall.cpp:195
 #, c-format
 msgid "%s does not appear to be a RPM package"
-msgstr "%s n„o parece ser um pacote RPM"
+msgstr "%s n√£o parece ser um pacote RPM"
 
 #: rpmInstall.cpp:128 rpmInstall.cpp:199 rpmInstall.cpp:397
 #, c-format
 msgid "%s cannot be installed"
-msgstr "%s n„o pode ser instalado"
+msgstr "%s n√£o pode ser instalado"
 
 #: rpmInstall.cpp:160
 msgid "counting packages to install"
@@ -731,12 +731,12 @@ msgstr "encontrados %d pacotes"
 
 #: rpmInstall.cpp:176
 msgid "finding source and binary packages"
-msgstr "procurando pacotes-fonte e pacotes bin·rios"
+msgstr "procurando pacotes-fonte e pacotes bin√°rios"
 
 #: rpmInstall.cpp:218
 #, c-format
 msgid "found %d source and %d binary packages"
-msgstr "encontrados %d pacotes-fonte e %d pacotes bin·rios"
+msgstr "encontrados %d pacotes-fonte e %d pacotes bin√°rios"
 
 #: rpmInstall.cpp:224
 #, c-format
@@ -747,15 +747,15 @@ msgstr "modo de abertura do banco de dados: 0%o"
 msgid ""
 "cannot open /var/lib/rpm/packages.rpm\n"
 "Kpackage needs to be running as root"
-msgstr "impossÌvel abrir /var/lib/rpm/packages.rpm\nKPackage precisa executar como superusu·rio (root)"
+msgstr "imposs√≠vel abrir /var/lib/rpm/packages.rpm\nKPackage precisa executar como superusu√°rio (root)"
 
 #: rpmInstall.cpp:249
 msgid "failed dependencies:"
-msgstr "dependÍncias frustradas:"
+msgstr "depend√™ncias frustradas:"
 
 #: rpmInstall.cpp:263
 msgid "installing binary packages"
-msgstr "instalando pacotes bin·rios"
+msgstr "instalando pacotes bin√°rios"
 
 #: rpmInstall.cpp:297
 msgid "counting packages to uninstall"
@@ -769,7 +769,7 @@ msgstr "Encontrados %d pacotes para desinstalar"
 #: rpmInstall.cpp:319
 #, c-format
 msgid "package %s is not installed"
-msgstr "pacote %s n„o est· instalado"
+msgstr "pacote %s n√£o est√° instalado"
 
 #: rpmInstall.cpp:322
 #, c-format
@@ -779,30 +779,30 @@ msgstr "erro ao procurar pacote %s"
 #: rpmInstall.cpp:330
 #, c-format
 msgid "\"%s\" specifies multiple packages"
-msgstr "\"%s\" especifica m˙ltiplos pacotes"
+msgstr "\"%s\" especifica m√∫ltiplos pacotes"
 
 #: rpmInstall.cpp:359
 msgid "removing these packages would break dependencies:\n"
-msgstr "remover esses pacotes quebrar· dependÍncias:\n"
+msgstr "remover esses pacotes quebrar√° depend√™ncias:\n"
 
 #: rpmInstall.cpp:371
 #, c-format
 msgid "uninstalling record number %d"
-msgstr "desinstalando registro n˙mero %d"
+msgstr "desinstalando registro n√∫mero %d"
 
 #: rpmInstall.cpp:388
 #, c-format
 msgid "cannot open %s"
-msgstr "impossÌvel abrir %s"
+msgstr "imposs√≠vel abrir %s"
 
 #: rpmInstall.cpp:440
 msgid "Dependency Problem:\n"
-msgstr "Problema de DependÍncia:\n"
+msgstr "Problema de Depend√™ncia:\n"
 
 #: rpmInstall.cpp:450 rpmInstall.cpp:453
 #, c-format
 msgid " is needed by %s-%s-%s\n"
-msgstr " È requerido por %s-%s-%s\n"
+msgstr " √© requerido por %s-%s-%s\n"
 
 #: rpmInstall.cpp:457 rpmInstall.cpp:460
 #, c-format
@@ -811,7 +811,7 @@ msgstr " conflita com %s-%s-%s\n"
 
 #: rpmInstall.cpp:465
 msgid "Package not installed:"
-msgstr "Pacote n„o instalado:"
+msgstr "Pacote n√£o instalado:"
 
 #: rpmVerify.cpp:65
 #, c-format
@@ -821,20 +821,20 @@ msgstr "faltando   %s\n"
 #: rpmVerify.cpp:126
 #, c-format
 msgid "Unsatisfied dependencies for %s-%s-%s: "
-msgstr "DependÍncias n„o satisfeitas para %s-%s-%s: "
+msgstr "Depend√™ncias n√£o satisfeitas para %s-%s-%s: "
 
 #: rpmVerify.cpp:179
 #, c-format
 msgid "verifying record number %d\n"
-msgstr "verificando registro n˙mero %d\n"
+msgstr "verificando registro n√∫mero %d\n"
 
 #: rpmVerify.cpp:185 rpmutils.cpp:84
 msgid "error: could not read database record\n"
-msgstr "erro: impossÌvel ler registro do banco de dados\n"
+msgstr "erro: imposs√≠vel ler registro do banco de dados\n"
 
 #: rpmVerify.cpp:231
 msgid "could not read database record!\n"
-msgstr "impossÌvel ler registro do banco de dados!\n"
+msgstr "imposs√≠vel ler registro do banco de dados!\n"
 
 #: rpmVerify.cpp:251
 #, c-format
@@ -844,22 +844,22 @@ msgstr "abertura de %s falhou: %s\n"
 #: rpmVerify.cpp:265
 #, c-format
 msgid "%s is not an RPM\n"
-msgstr "%s n„o È um RPM\n"
+msgstr "%s n√£o √© um RPM\n"
 
 #: rpmVerify.cpp:274
 #, c-format
 msgid "group %s does not contain any pacakges\n"
-msgstr "grupo %s n„o contÈm qualquer pacote\n"
+msgstr "grupo %s n√£o cont√©m qualquer pacote\n"
 
 #: rpmVerify.cpp:287
 #, c-format
 msgid "file %s is not owned by any package\n"
-msgstr "arquivo %s n„o È possuÌdo por nenhum pacote\n"
+msgstr "arquivo %s n√£o √© possu√≠do por nenhum pacote\n"
 
 #: rpmVerify.cpp:300
 #, c-format
 msgid "package %s is not installed\n"
-msgstr "pacote %s n„o est· instalado\n"
+msgstr "pacote %s n√£o est√° instalado\n"
 
 #: rpmVerify.cpp:303
 #, c-format
@@ -868,8 +868,8 @@ msgstr "erro na procura do pacote %s\n"
 
 #: kaccelmenu.cpp:156
 msgid "Key already used as default key: "
-msgstr "Tecla j· em uso como padr„o: "
+msgstr "Tecla j√° em uso como padr√£o: "
 
 #: kaccelmenu.cpp:167
 msgid "Default key cannot be changed"
-msgstr "Tecla padr„o n„o pode ser mudada"
+msgstr "Tecla padr√£o n√£o pode ser mudada"

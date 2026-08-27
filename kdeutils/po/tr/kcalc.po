@@ -11,16 +11,16 @@ msgstr ""
 "Last-Translator: Cevat TOPCU <bbm817@hun.edu.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
 #: kcalc.cpp:99
 msgid "KCalc Setup/Help"
-msgstr "KCalc Ayar/Yardım"
+msgstr "KCalc Ayar/YardÃ½m"
 
 #: kcalc.cpp:152
 msgid "Angle"
-msgstr "Açı"
+msgstr "AÃ§Ã½"
 
 #: kcalc.cpp:192
 msgid "Base"
@@ -28,7 +28,7 @@ msgstr "Temel"
 
 #: kcalc.cpp:1524
 msgid "KCalc Configuraton"
-msgstr "KCalc Yapılandırması"
+msgstr "KCalc YapÃ½landÃ½rmasÃ½"
 
 #: kcalc.cpp:1542
 #, c-format
@@ -44,7 +44,7 @@ msgstr ""
 
 #: kcalc.cpp:1551
 msgid "Base type: long double\n"
-msgstr "Kullanılan Değişken: long double\n"
+msgstr "KullanÃ½lan DeÃ°iÃ¾ken: long double\n"
 
 #: kcalc.cpp:1553
 msgid ""
@@ -53,18 +53,18 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"Kullanılan glibc'lerin çoğunda bulunan bir hatadan dolayı KCalc'ta 'long "
-"double' yerine 'double' kullanıldı. Çalışan bir glibc kullanıyorsanızKCalc'ı "
-"'long double' kullanacak şekilde yeniden derlemelisiniz. Ayrıntılar için "
-"README dosyasına bakın."
+"KullanÃ½lan glibc'lerin Ã§oÃ°unda bulunan bir hatadan dolayÃ½ KCalc'ta 'long "
+"double' yerine 'double' kullanÃ½ldÃ½. Ã‡alÃ½Ã¾an bir glibc kullanÃ½yorsanÃ½zKCalc'Ã½ "
+"'long double' kullanacak Ã¾ekilde yeniden derlemelisiniz. AyrÃ½ntÃ½lar iÃ§in "
+"README dosyasÃ½na bakÃ½n."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
 msgid "Defaults"
-msgstr "Öntanımlar"
+msgstr "Ã–ntanÃ½mlar"
 
 #: kcalc.cpp:1593
 msgid "Display Font"
-msgstr "Yazı Tipini Göster"
+msgstr "YazÃ½ Tipini GÃ¶ster"
 
 #: kcalc.cpp:1909
 #, c-format
@@ -79,7 +79,7 @@ msgstr ""
 
 #: kcalc_core.cpp:1155
 msgid "Stat Mem cleared"
-msgstr "İstatistik Belleği Sıfırlandı"
+msgstr "Ãstatistik BelleÃ°i SÃ½fÃ½rlandÃ½"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: configdlg.cpp:61
 msgid "Foreground Color:"
-msgstr "Yazı Rengi:"
+msgstr "YazÃ½ Rengi:"
 
 #: configdlg.cpp:78
 msgid "Background Color:"
@@ -127,11 +127,11 @@ msgstr "Trigonometri Kipi"
 
 #: configdlg.cpp:158
 msgid "Statistical Mode"
-msgstr "İstatistik Kipi"
+msgstr "Ãstatistik Kipi"
 
 #: fontdlg.cpp:44
 msgid "Set Default Font"
-msgstr "Öntanımlı Yazıyüzü Ayarla"
+msgstr "Ã–ntanÃ½mlÃ½ YazÃ½yÃ¼zÃ¼ Ayarla"
 
 #: fontdlg.cpp:53
 msgid "Family:"
@@ -139,7 +139,7 @@ msgstr ""
 
 #: fontdlg.cpp:63
 msgid "Point Size:"
-msgstr "Nokta Sayısı:"
+msgstr "Nokta SayÃ½sÃ½:"
 
 #: fontdlg.cpp:76
 msgid "Style:"

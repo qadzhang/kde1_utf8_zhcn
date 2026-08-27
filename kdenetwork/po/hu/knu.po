@@ -7,7 +7,7 @@ msgstr ""
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "Date: 1997-10-28 22:45:13+0100\n"
 "From: Bertrand Leconte,,, <leconteb@arthur>\n"
@@ -24,7 +24,7 @@ msgstr "&Traceroute"
 
 #: knu.cpp:168 knu.cpp:321
 msgid "Host &resolution"
-msgstr "&GÈpnÈv felold·sa"
+msgstr "&G√©pn√©v felold√°sa"
 
 #: knu.cpp:181
 #
@@ -43,9 +43,9 @@ msgid ""
 "So I can't do anything...\n"
 msgstr ""
 "Nincs semmilyen parancs bekapcsolva\n"
-"a konfigur·ciÛs file-ban.\n"
+"a konfigur√°ci√≥s file-ban.\n"
 "\n"
-"⁄gyhogy nem tehetek semmit...\n"
+"√ögyhogy nem tehetek semmit...\n"
 
 #: knu.cpp:246
 msgid "&New window"
@@ -53,28 +53,28 @@ msgstr "&Uj ablak"
 
 #: knu.cpp:249
 msgid "&Close window"
-msgstr "Albak &bez·r·sa"
+msgstr "Albak &bez√°r√°sa"
 
 #: knu.cpp:260
 msgid "Select &all"
-msgstr "&Mindent kijelˆl"
+msgstr "&Mindent kijel√∂l"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "EredmÈnyablak tˆrlÈse"
+msgstr "Eredm√©nyablak t√∂rl√©se"
 
 #: knu.cpp:266
 msgid "P&references..."
-msgstr "&Be·llÌt·sok"
+msgstr "&Be√°ll√≠t√°sok"
 
 #: knu.cpp:281
 #, c-format
 msgid "&About %s"
-msgstr "%s &nÈvjegy"
+msgstr "%s &n√©vjegy"
 
 #: knu.cpp:283
 msgid "About &Qt"
-msgstr "A &Qt-rıl"
+msgstr "A &Qt-r≈ël"
 
 #: knu.cpp:327
 #
@@ -90,21 +90,21 @@ msgid ""
 "Bertrand"
 msgstr ""
 "Knu\n"
-"%s verziÛ\n"
+"%s verzi√≥\n"
 "\n"
 "Bertrand"
 
 #: knu.cpp:469
 msgid "About..."
-msgstr "NÈvjegy..."
+msgstr "N√©vjegy..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "H·lÛzati segÈdeszkˆzˆk"
+msgstr "H√°l√≥zati seg√©deszk√∂z√∂k"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
-msgstr "&GazdagÈp:"
+msgstr "&Gazdag√©p:"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
@@ -112,15 +112,15 @@ msgstr "&Mehet!"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
-msgstr "&¡llj"
+msgstr "&√Ållj"
 
 #: CommandDlg.cpp:166
 msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"A parancsnak megfelelı bin·rist nem tal·lom.\n"
-"Az elÈrÈsi ˙tvonal·t a SzerkesztÈs->Be·llÌt·sok alatt adhatod meg."
+"A parancsnak megfelel≈ë bin√°rist nem tal√°lom.\n"
+"Az el√©r√©si √∫tvonal√°t a Szerkeszt√©s->Be√°ll√≠t√°sok alatt adhatod meg."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -136,38 +136,38 @@ msgid ""
 "to configure it again.\n"
 msgstr ""
 "\n"
-"Van egy kis problÈma a\n"
+"Van egy kis probl√©ma a\n"
 "%s/%src\n"
-"konfigur·ciÛs f·jlodban.\n"
+"konfigur√°ci√≥s f√°jlodban.\n"
 "A [%s] csoportban,\n"
-"Nem tal·lok ÈrvÈnyes \"path=\" bejegyzÈst.\n"
+"Nem tal√°lok √©rv√©nyes \"path=\" bejegyz√©st.\n"
 "\n"
-"Haszn·ld a SzerkesztÈs->Be·llÌt·sok... men¸t\n"
-"az ˙jra konfigur·l·shoz.\n"
+"Haszn√°ld a Szerkeszt√©s->Be√°ll√≠t√°sok... men√ºt\n"
+"az √∫jra konfigur√°l√°shoz.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
-msgstr "Hiba az elÈrÈsi ˙tban"
+msgstr "Hiba az el√©r√©si √∫tban"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
-msgstr "Bin·ris"
+msgstr "Bin√°ris"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
-msgstr "&⁄tvonal:"
+msgstr "&√ötvonal:"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
-msgstr "&Tov·bbi paramÈterek:"
+msgstr "&Tov√°bbi param√©terek:"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "Ez a parancs ki lett kapcsolva a konfigur·ciÛs f·jlban."
+msgstr "Ez a parancs ki lett kapcsolva a konfigur√°ci√≥s f√°jlban."
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
-msgstr " - konfigur·ciÛ"
+msgstr " - konfigur√°ci√≥"
 
 #: MtrDlg.cpp:87
 msgid "#"
@@ -175,7 +175,7 @@ msgstr "#"
 
 #: MtrDlg.cpp:88
 msgid "Hostname"
-msgstr "GazdagÈp nÈv"
+msgstr "Gazdag√©p n√©v"
 
 #: MtrDlg.cpp:89
 msgid "Loss"
@@ -187,7 +187,7 @@ msgstr "Fog."
 
 #: MtrDlg.cpp:93
 msgid "Snt"
-msgstr "K¸l."
+msgstr "K√ºl."
 
 #: MtrDlg.cpp:95
 msgid "Best"
@@ -195,7 +195,7 @@ msgstr "Legjobb"
 
 #: MtrDlg.cpp:97
 msgid "Avg"
-msgstr "¡tl."
+msgstr "√Åtl."
 
 #: MtrDlg.cpp:99
 msgid "Worst"
@@ -203,11 +203,11 @@ msgstr "Legroszabb"
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "&Oldd fel a gÈpneveket"
+msgstr "&Oldd fel a g√©pneveket"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
-msgstr "&gazdagÈp"
+msgstr "&gazdag√©p"
 
 #: HostDlg.cpp:335 PingDlg.cpp:231
 msgid "ns&lookup"
@@ -219,31 +219,31 @@ msgstr "&Maximum ennyit ugorj:"
 
 #: HostDlg.cpp:112
 msgid "address (A)"
-msgstr "cÌm (A)"
+msgstr "c√≠m (A)"
 
 #: HostDlg.cpp:113
 msgid "name (PTR)"
-msgstr "nÈv (PTR)"
+msgstr "n√©v (PTR)"
 
 #: HostDlg.cpp:114
 msgid "name server (NS)"
-msgstr "nÈvkiszolg·lÛ (NS)"
+msgstr "n√©vkiszolg√°l√≥ (NS)"
 
 #: HostDlg.cpp:115
 msgid "mail exchanger (MX)"
-msgstr "levÈl cserÈlı (MX)"
+msgstr "lev√©l cser√©l≈ë (MX)"
 
 #: HostDlg.cpp:116
 msgid "alias (CNAME)"
-msgstr "·lnÈv (CNAME)"
+msgstr "√°ln√©v (CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "hivataloss·g kezdete (SOA)"
+msgstr "hivataloss√°g kezdete (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
-msgstr "b·rmi (ANY)"
+msgstr "b√°rmi (ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"
@@ -251,15 +251,15 @@ msgstr "&Keress:"
 
 #: HostDlg.cpp:136 HostDlg.cpp:287
 msgid "default server"
-msgstr "alapÈrt kiszolg·lÛ"
+msgstr "alap√©rt kiszolg√°l√≥"
 
 #: FingerDlg.cpp:95 HostDlg.cpp:145
 msgid "Ser&ver:"
-msgstr "Ki&szolg·lÛ:"
+msgstr "Ki&szolg√°l√≥:"
 
 #: FingerDlg.cpp:77
 msgid "&User:"
-msgstr "&Felhaszn·lÛ:"
+msgstr "&Felhaszn√°l√≥:"
 
 #, fuzzy
 #~ msgid "&Matt's traceroute"
@@ -276,28 +276,28 @@ msgstr "&Felhaszn·lÛ:"
 #~ msgid ""
 #~ "You have a problem in your ~/.kde/share/config/knurc configuration file.\n"
 #~ "In the ["
-#~ msgstr "ProbÈma van a ~/.kderc/share/config/knurc file-ban,a ["
+#~ msgstr "Prob√©ma van a ~/.kderc/share/config/knurc file-ban,a ["
 
 #~ msgid "] group, I cannotfind a correct \"path=\" entry."
-#~ msgstr "] csoportban nem tal·lok egy jÛ \"path=\" bejegyzÈst."
+#~ msgstr "] csoportban nem tal√°lok egy j√≥ \"path=\" bejegyz√©st."
 
 #~ msgid "&Quit"
-#~ msgstr "&KilÈpÈs"
+#~ msgstr "&Kil√©p√©s"
 
 #~ msgid "&Copy"
-#~ msgstr "&M·sol"
+#~ msgstr "&M√°sol"
 
 #~ msgid "&File"
 #~ msgstr "&File"
 
 #~ msgid "&Edit"
-#~ msgstr "&SzerkesztÈs"
+#~ msgstr "&Szerkeszt√©s"
 
 #~ msgid "&Help"
-#~ msgstr "&SegÌtsÈg"
+#~ msgstr "&Seg√≠ts√©g"
 
 #~ msgid "&Ok"
 #~ msgstr "&Ok"
 
 #~ msgid "&Cancel"
-#~ msgstr "&MÈgsem"
+#~ msgstr "&M√©gsem"

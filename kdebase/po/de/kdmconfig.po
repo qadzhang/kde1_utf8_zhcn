@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -42,7 +42,7 @@ msgid ""
 "permission to the KDM setup file."
 msgstr ""
 "Sorry, aber du hast keine lese/schreib-\n"
-"Berechtigung für die KDM Konfigurations-Datei."
+"Berechtigung fÃ¼r die KDM Konfigurations-Datei."
 
 #: main.cpp:154
 msgid "Missing privileges"
@@ -50,7 +50,7 @@ msgstr "Fehlende Berechtigungen"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Begrüßungstext"
+msgstr "BegrÃ¼ÃŸungstext"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -147,11 +147,11 @@ msgstr "Beispiel"
 
 #: kdm-font.cpp:52
 msgid "Change font..."
-msgstr "Schriftart ändern..."
+msgstr "Schriftart Ã¤ndern..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
-msgstr "Begrüßung"
+msgstr "BegrÃ¼ÃŸung"
 
 #: kdm-font.cpp:58
 msgid "Fail"
@@ -163,11 +163,11 @@ msgstr "Normal"
 
 #: kdm-font.cpp:157
 msgid "Greeting font"
-msgstr "Begrüßungsschrift"
+msgstr "BegrÃ¼ÃŸungsschrift"
 
 #: kdm-font.cpp:161
 msgid "Fail font"
-msgstr "Schriftart für Fehler"
+msgstr "Schriftart fÃ¼r Fehler"
 
 #: kdm-font.cpp:165
 msgid "Standard font"
@@ -239,7 +239,7 @@ msgstr "Alle Benutzer"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "Ausgewählte Benutzer"
+msgstr "AusgewÃ¤hlte Benutzer"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
@@ -250,7 +250,7 @@ msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
-"Nur ausgewählte\n"
+"Nur ausgewÃ¤hlte\n"
 "Benutzer zeigen"
 
 #: kdm-users.cpp:86
@@ -271,7 +271,7 @@ msgstr "Sortiere Benutzer"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
-msgstr "Kein Benutzer ausgewählt"
+msgstr "Kein Benutzer ausgewÃ¤hlt"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
@@ -279,7 +279,7 @@ msgstr "Speichere Bild als Standard?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "Herunterfahren ermöglichen"
+msgstr "Herunterfahren ermÃ¶glichen"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -315,7 +315,7 @@ msgstr "Neuer Typ"
 
 #: kdm-sess.cpp:89
 msgid "Available types"
-msgstr "Verfügbare Typen"
+msgstr "VerfÃ¼gbare Typen"
 
 #: klangcombo.cpp:133
 msgid "without name!"

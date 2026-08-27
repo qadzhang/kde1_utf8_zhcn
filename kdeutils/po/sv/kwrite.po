@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: highlight.cpp:1715
@@ -47,19 +47,19 @@ msgstr "Standardtypsnitt"
 
 #: highlight.cpp:1950
 msgid "Config Select"
-msgstr "Inst‰llningsval"
+msgstr "Inst√§llningsval"
 
 #: highlight.cpp:1954
 msgid "Highlight:"
-msgstr "F‰rgl‰gg:"
+msgstr "F√§rgl√§gg:"
 
 #: highlight.cpp:1973
 msgid "Highlight Auto Select"
-msgstr "V‰lj f‰rgl‰ggning automatiskt"
+msgstr "V√§lj f√§rgl√§ggning automatiskt"
 
 #: highlight.cpp:1977
 msgid "File Extensions:"
-msgstr "Fil‰ndelser:"
+msgstr "Fil√§ndelser:"
 
 #: highlight.cpp:1984
 msgid "Mime Types:"
@@ -93,15 +93,15 @@ msgstr "Du har angett en katalog"
 
 #: kwview.cpp:1148
 msgid "You do not have read permission to this file"
-msgstr "Du har inte r‰ttighet att l‰sa den h‰r filen"
+msgstr "Du har inte r√§ttighet att l√§sa den h√§r filen"
 
 #: kwview.cpp:1164 kwview.cpp:1194
 msgid "An Error occured while trying to open this Document"
-msgstr "Ett fel intr‰ffade n‰r det h‰r dokumentet skulle ˆppnas"
+msgstr "Ett fel intr√§ffade n√§r det h√§r dokumentet skulle √∂ppnas"
 
 #: kwview.cpp:1178
 msgid "You do not have write permission to this file"
-msgstr "Du har inte r‰ttighet att skriva till den h‰r filen"
+msgstr "Du har inte r√§ttighet att skriva till den h√§r filen"
 
 #: kwview.cpp:1231
 msgid "Loading..."
@@ -113,7 +113,7 @@ msgstr "Infogade"
 
 #: kwview.cpp:1244 kwview.cpp:1369
 msgid "Read"
-msgstr "L‰ste in"
+msgstr "L√§ste in"
 
 #: kwview.cpp:1253 kwview.cpp:1311
 msgid ""
@@ -122,14 +122,14 @@ msgid ""
 "Please wait until it has finished\n"
 "Alternatively stop the running one."
 msgstr ""
-"KWrite v‰ntar redan pÂ\n"
+"KWrite v√§ntar redan p√•\n"
 "att ett internet-jobb ska avsultas\n"
-"Var god v‰nta tills det ‰r klart\n"
-"Alternativt avbryt det som kˆrs."
+"Var god v√§nta tills det √§r klart\n"
+"Alternativt avbryt det som k√∂rs."
 
 #: kwview.cpp:1261 kwview.cpp:1319
 msgid "Waiting for KFM..."
-msgstr "V‰ntar pÂ KFM..."
+msgstr "V√§ntar p√• KFM..."
 
 #: kwview.cpp:1267 kwview.cpp:1332
 msgid "Could not start or find KFM"
@@ -148,7 +148,7 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Det aktuella dokumentet har ‰ndrats.\n"
+"Det aktuella dokumentet har √§ndrats.\n"
 "Vill du spara det?"
 
 #: kwview.cpp:1419
@@ -157,27 +157,27 @@ msgid ""
 "Open a new document anyways?"
 msgstr ""
 "Kunde inte spara dokumentet.\n"
-"÷ppna ett nytt dokument ‰ndÂ?"
+"√ñppna ett nytt dokument √§nd√•?"
 
 #: kwview.cpp:1466
 msgid "No changes need to be saved"
-msgstr "Inga ‰ndringar behˆver sparas"
+msgstr "Inga √§ndringar beh√∂ver sparas"
 
 #: kwview.cpp:1487
 msgid ""
 "A Document with this Name already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"Ett dokument med det h‰r namnet existerar redan.\n"
-"Vill du skriva ˆver det?"
+"Ett dokument med det h√§r namnet existerar redan.\n"
+"Vill du skriva √∂ver det?"
 
 #: kwview.cpp:1690 kwview.cpp:1878
 msgid "End of document reached"
-msgstr "Dokumentets slut har nÂtts"
+msgstr "Dokumentets slut har n√•tts"
 
 #: kwview.cpp:1691 kwview.cpp:1879
 msgid "Continue from the beginning"
-msgstr "Forts‰tta frÂn bˆrjan"
+msgstr "Forts√§tta fr√•n b√∂rjan"
 
 #: kwview.cpp:1693 kwview.cpp:1704 kwview.cpp:1714
 msgid "Find"
@@ -185,19 +185,19 @@ msgstr "Hitta"
 
 #: kwview.cpp:1701 kwview.cpp:1890
 msgid "Beginning of document reached"
-msgstr "Dokumentets bˆrjan har nÂtts"
+msgstr "Dokumentets b√∂rjan har n√•tts"
 
 #: kwview.cpp:1702 kwview.cpp:1891
 msgid "Continue from the end"
-msgstr "Forts‰tta frÂn slutet"
+msgstr "Forts√§tta fr√•n slutet"
 
 #: kwview.cpp:1715
 msgid "Search string not found!"
-msgstr "Sˆkstr‰ngen ej funnen!"
+msgstr "S√∂kstr√§ngen ej funnen!"
 
 #: kwview.cpp:1863 kwview.cpp:1877 kwview.cpp:1889
 msgid "replace(s) made"
-msgstr "ers‰ttningar utfˆrdes"
+msgstr "ers√§ttningar utf√∂rdes"
 
 #: kwview.cpp:2004 toplevel.cpp:477
 msgid "Line"
@@ -209,7 +209,7 @@ msgstr "&Text att hitta:"
 
 #: kwdialog.cpp:43
 msgid "&Replace With:"
-msgstr "&Ers‰tt med:"
+msgstr "&Ers√§tt med:"
 
 #: kwdialog.cpp:57
 msgid "&Case Sensitive"
@@ -221,11 +221,11 @@ msgstr "Endast &hela ord"
 
 #: kwdialog.cpp:65
 msgid "&From Cursor"
-msgstr "&FrÂn markˆren"
+msgstr "&Fr√•n mark√∂ren"
 
 #: kwdialog.cpp:74
 msgid "Find &Backwards"
-msgstr "&Hitta bakÂt"
+msgstr "&Hitta bak√•t"
 
 #: kwdialog.cpp:78
 msgid "&Selected Text"
@@ -233,11 +233,11 @@ msgstr "&Vald text"
 
 #: kwdialog.cpp:91
 msgid "&Prompt On Replace"
-msgstr "&FrÂga vid ers‰ttning"
+msgstr "&Fr√•ga vid ers√§ttning"
 
 #: kwdialog.cpp:167
 msgid "Replace this occurence?"
-msgstr "Ers‰tta detta?"
+msgstr "Ers√§tta detta?"
 
 #: kwdialog.cpp:174
 msgid "&Yes"
@@ -253,11 +253,11 @@ msgstr "&Alla"
 
 #: kwdialog.cpp:251
 msgid "&Goto Line:"
-msgstr "&GÂ till rad:"
+msgstr "&G√• till rad:"
 
 #: kwdialog.cpp:294
 msgid "Edit Options"
-msgstr "Redigeringsinst‰llningar"
+msgstr "Redigeringsinst√§llningar"
 
 #: kwdialog.cpp:295
 msgid "Auto &Indent"
@@ -273,7 +273,7 @@ msgstr "Bryt &rader"
 
 #: kwdialog.cpp:301
 msgid "Replace &Tabs"
-msgstr "&Ers‰tt tabulator"
+msgstr "&Ers√§tt tabulator"
 
 #: kwdialog.cpp:303
 msgid "Remove Trailing &Spaces"
@@ -281,7 +281,7 @@ msgstr "&Inga mellanslag i radslut"
 
 #: kwdialog.cpp:305
 msgid "Wrap &Cursor"
-msgstr "&Markˆrradbrytning"
+msgstr "&Mark√∂rradbrytning"
 
 #: kwdialog.cpp:307
 msgid "&Auto Brackets"
@@ -289,11 +289,11 @@ msgstr "Automatiska &parenteser"
 
 #: kwdialog.cpp:321
 msgid "Select Options"
-msgstr "Markeringsinst‰llningar"
+msgstr "Markeringsinst√§llningar"
 
 #: kwdialog.cpp:322
 msgid "&Persistent Selections"
-msgstr "&LÂnglivade markeringar"
+msgstr "&L√•nglivade markeringar"
 
 #: kwdialog.cpp:324
 msgid "&Multiple Selections"
@@ -309,7 +309,7 @@ msgstr "Radera &vid inmatning"
 
 #: kwdialog.cpp:330
 msgid "&Toggle Old"
-msgstr "V‰xla &gammal"
+msgstr "V√§xla &gammal"
 
 #: kwdialog.cpp:345
 msgid "Wrap Words At:"
@@ -321,7 +321,7 @@ msgstr "Tabulatorbredd:"
 
 #: kwdialog.cpp:358
 msgid "Undo steps:"
-msgstr "Antal Ângra-steg:"
+msgstr "Antal √•ngra-steg:"
 
 #: kwdialog.cpp:479
 msgid "Background:"
@@ -348,7 +348,7 @@ msgid ""
 "This Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Det h‰r dokumentet har ‰ndrats.\n"
+"Det h√§r dokumentet har √§ndrats.\n"
 "Vill du spara det?"
 
 #: toplevel.cpp:166
@@ -362,11 +362,11 @@ msgstr "&Infoga..."
 #: toplevel.cpp:169
 #, fuzzy
 msgid "Open Recen&t"
-msgstr "÷ppna dokument"
+msgstr "√ñppna dokument"
 
 #: toplevel.cpp:180
 msgid "New &Window"
-msgstr "Nytt &fˆnster"
+msgstr "Nytt &f√∂nster"
 
 #: toplevel.cpp:181
 msgid "New &View"
@@ -378,7 +378,7 @@ msgstr "&Hitta..."
 
 #: toplevel.cpp:191
 msgid "&Replace..."
-msgstr "&Ers‰tt..."
+msgstr "&Ers√§tt..."
 
 #: toplevel.cpp:192
 msgid "Find &Again"
@@ -386,15 +386,15 @@ msgstr "Hitta &igen"
 
 #: toplevel.cpp:193
 msgid "&Goto Line..."
-msgstr "&GÂ till rad..."
+msgstr "&G√• till rad..."
 
 #: toplevel.cpp:195
 msgid "U&ndo"
-msgstr "≈&ngra"
+msgstr "√Ö&ngra"
 
 #: toplevel.cpp:196
 msgid "R&edo"
-msgstr "Gˆr &om"
+msgstr "G√∂r &om"
 
 #: toplevel.cpp:198
 msgid "&Indent"
@@ -418,35 +418,35 @@ msgstr "I&nvertera markering"
 
 #: toplevel.cpp:210
 msgid "&Set Bookmark..."
-msgstr "&S‰tt bokm‰rke..."
+msgstr "&S√§tt bokm√§rke..."
 
 #: toplevel.cpp:211
 msgid "&Add Bookmark"
-msgstr "&L‰gg till bokm‰rke"
+msgstr "&L√§gg till bokm√§rke"
 
 #: toplevel.cpp:212
 msgid "&Clear Bookmarks"
-msgstr "&Rensa bokm‰rken"
+msgstr "&Rensa bokm√§rken"
 
 #: toplevel.cpp:224
 msgid "Set Highlight"
-msgstr "S‰tt f‰rgl‰ggning"
+msgstr "S√§tt f√§rgl√§ggning"
 
 #: toplevel.cpp:226
 msgid "&Defaults..."
-msgstr "&Standardv‰rden..."
+msgstr "&Standardv√§rden..."
 
 #: toplevel.cpp:227
 msgid "&Highlight..."
-msgstr "F‰rg&l‰ggning..."
+msgstr "F√§rg&l√§ggning..."
 
 #: toplevel.cpp:230
 msgid "&Options..."
-msgstr "&Inst‰llningar..."
+msgstr "&Inst√§llningar..."
 
 #: toplevel.cpp:231
 msgid "&Colors..."
-msgstr "&F‰rger..."
+msgstr "&F√§rger..."
 
 #: toplevel.cpp:234
 msgid "Show &Toolbar"
@@ -458,7 +458,7 @@ msgstr "Visa s&tatusrad"
 
 #: toplevel.cpp:236
 msgid "Save Config"
-msgstr "Spara inst‰llningar"
+msgstr "Spara inst√§llningar"
 
 #: toplevel.cpp:249
 msgid ""
@@ -471,7 +471,7 @@ msgstr ""
 
 #: toplevel.cpp:272
 msgid "&Bookmarks"
-msgstr "&Bokm‰rken"
+msgstr "&Bokm√§rken"
 
 #: toplevel.cpp:291
 msgid "New Document"
@@ -479,7 +479,7 @@ msgstr "Nytt dokument"
 
 #: toplevel.cpp:295
 msgid "Open Document"
-msgstr "÷ppna dokument"
+msgstr "√ñppna dokument"
 
 #: toplevel.cpp:299
 msgid "Save Document"

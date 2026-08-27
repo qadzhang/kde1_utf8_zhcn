@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: info.cpp:50
@@ -70,17 +70,17 @@ msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "δζ αμωα δπιξζ ΰμ οιιγς ϊΰζδ ϊλψςξδ"
+msgstr "Χ”Χ– Χ‘ΧΧ©Χ‘ Χ”Χ Χ™ΧΧ– ΧΧ ΧΧ™Χ™Χ“ΧΆ ΧªΧΧ–Χ” ΧªΧ›Χ¨ΧΆΧΧ”"
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "δςεγι ΰμ ϊεψιδξ , %s"
+msgstr "Χ”ΧΆΧ•Χ“Χ™ ΧΧ ΧªΧ•Χ¨Χ™Χ”Χ , %s"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s  :γαςξ      %s  :ϊεψιδξ"
+msgstr "%s  :Χ“Χ‘ΧΆΧ      %s  :ΧªΧ•Χ¨Χ™Χ”Χ"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
@@ -105,12 +105,12 @@ msgstr ""
 #: info_hpux.cpp:54
 #, fuzzy
 msgid "unknown CPU type"
-msgstr "δςεγι ΰμ ϊεψιδξ , %s"
+msgstr "Χ”ΧΆΧ•Χ“Χ™ ΧΧ ΧªΧ•Χ¨Χ™Χ”Χ , %s"
 
 #: info_hpux.cpp:62
 #, fuzzy
 msgid "unavailable"
-msgstr "οιξζ ΰμ"
+msgstr "ΧΧ™ΧΧ– ΧΧ"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
@@ -134,11 +134,11 @@ msgstr ""
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "οεψλι&ζ"
+msgstr "ΧΧ•Χ¨Χ›Χ™&Χ–"
 
 #: main.cpp:82
 msgid "&Processor"
-msgstr "γαςξ"
+msgstr "Χ“Χ‘ΧΆΧ"
 
 #: main.cpp:85
 msgid "&Interrupts"
@@ -185,52 +185,52 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "ϊλψςξ ςγιξ"
+msgstr "ΧªΧ›Χ¨ΧΆΧ ΧΆΧ“Χ™Χ"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "μμελ οεψλιζ"
+msgstr "ΧΧΧ•Χ› ΧΧ•Χ¨Χ›Χ™Χ–"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "ιωτεη οεψλιζ"
+msgstr "Χ™Χ©Χ¤Χ•Χ— ΧΧ•Χ¨Χ›Χ™Χ–"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "σϊεωξ οεψλιζ"
+msgstr "Χ£ΧªΧ•Χ©Χ ΧΧ•Χ¨Χ›Χ™Χ–"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "buffered οεψλιζ"
+msgstr "buffered ΧΧ•Χ¨Χ›Χ™Χ–"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "swap οεψλιζ"
+msgstr "swap ΧΧ•Χ¨Χ›Χ™Χ–"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "ιωτεη swap οεψλιζ"
+msgstr "Χ™Χ©Χ¤Χ•Χ— swap ΧΧ•Χ¨Χ›Χ™Χ–"
 
 #: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld νιϊα  = %8.2f MB"
+msgstr "%10ld ΧΧ™ΧªΧ‘  = %8.2f MB"
 
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "οιξζ ΰμ"
+msgstr "ΧΧ™ΧΧ– ΧΧ"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "οιξζ ΰμ"
+msgstr "ΧΧ™ΧΧ– ΧΧ"
 
 #~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr " kcminfo [-init | {processor,memory}]  :ωεξιω\n"
+#~ msgstr " kcminfo [-init | {processor,memory}]  :Χ©Χ•ΧΧ™Χ©\n"
 
 #~ msgid "File Error!"
-#~ msgstr "!υαεχμ δωιβα δΰιβω"
+#~ msgstr "!Χ¥Χ‘Χ•Χ§Χ Χ”Χ©Χ™Χ’Χ‘ Χ”ΧΧ™Χ’Χ©"
 
 #~ msgid "Cannot read /proc/cpuinfo"
-#~ msgstr "/proc/cpuinfo  α ςγιξδ ϊΰ ΰεψχμ οϊιπ ΰμ"
+#~ msgstr "/proc/cpuinfo  Χ‘ ΧΆΧ“Χ™ΧΧ” ΧªΧ ΧΧ•Χ¨Χ§Χ ΧΧªΧ™Χ  ΧΧ"

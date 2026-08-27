@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Bjarni R. Einarsson <bre@netverjar.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO-8859-1\n"
 
 #: main.cpp:58
@@ -20,7 +20,7 @@ msgstr "&Tilkynning"
 
 #: main.cpp:61
 msgid "Ans&wering machine"
-msgstr "Svarş&jónusta"
+msgstr "SvarÃ¾&jÃ³nusta"
 
 #: main.cpp:64
 msgid "&Forward"
@@ -44,29 +44,29 @@ msgstr "&Talforrit"
 
 #: soundpage.cpp:57
 msgid "&Play sound"
-msgstr "S&pila hljóğ"
+msgstr "S&pila hljÃ³Ã°"
 
 #: soundpage.cpp:59
 msgid "&Sound File"
-msgstr "Hljóğ&skrá"
+msgstr "HljÃ³Ã°&skrÃ¡"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Sleppa má fleiri WAV skrám á listann."
+msgstr "Sleppa mÃ¡ fleiri WAV skrÃ¡m Ã¡ listann."
 
 #: soundpage.cpp:76
 msgid "&Test"
-msgstr "&Prófa"
+msgstr "&PrÃ³fa"
 
 #: soundpage.cpp:156
 msgid "Unsupported URL"
-msgstr "Óstudd slóğ"
+msgstr "Ã“studd slÃ³Ã°"
 
 #: soundpage.cpp:157
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr "Şví miğur styğur KDE hljóğkerfiğ ekki şessar tegundir slóğa "
+msgstr "ÃvÃ­ miÃ°ur styÃ°ur KDE hljÃ³Ã°kerfiÃ° ekki Ã¾essar tegundir slÃ³Ã°a "
 
 #: soundpage.cpp:164
 #, c-format
@@ -74,11 +74,11 @@ msgid ""
 "Sorry, but \n"
 "%s\n"
 "does not seem to be a WAV--file."
-msgstr "%s virğist ekki vera WAV skrá"
+msgstr "%s virÃ°ist ekki vera WAV skrÃ¡"
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
-msgstr "Óviğeigandi skráarending"
+msgstr "Ã“viÃ°eigandi skrÃ¡arending"
 
 #: soundpage.cpp:175
 #, c-format
@@ -87,47 +87,47 @@ msgid ""
 "%s\n"
 "is already in the list"
 msgstr ""
-"Skráin\n"
+"SkrÃ¡in\n"
 "%s\n"
-"er şegar á listanum"
+"er Ã¾egar Ã¡ listanum"
 
 #: soundpage.cpp:179
 msgid "File Already in List"
-msgstr "Skráin er şegar á listanum"
+msgstr "SkrÃ¡in er Ã¾egar Ã¡ listanum"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
-msgstr "&Virkja svarşjónustu"
+msgstr "&Virkja svarÃ¾jÃ³nustu"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
-msgstr "&Netfang şitt"
+msgstr "&Netfang Ã¾itt"
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
-msgstr "Titill bré&fa"
+msgstr "Titill brÃ©&fa"
 
 #: answmachpage.cpp:54
 #, c-format
 msgid "Use %s for the caller name"
-msgstr "'%s' táknar nafn şess sem hringir"
+msgstr "'%s' tÃ¡knar nafn Ã¾ess sem hringir"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "&Fyrsta lína"
+msgstr "&Fyrsta lÃ­na"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
-msgstr "Fyrra '%s' táknar nafn notandans og şağ seinna '%s' táknar vélina hans"
+msgstr "Fyrra '%s' tÃ¡knar nafn notandans og Ã¾aÃ° seinna '%s' tÃ¡knar vÃ©lina hans"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&Senda póst, şó engin skilaboğ séu eftir"
+msgstr "&Senda pÃ³st, Ã¾Ã³ engin skilaboÃ° sÃ©u eftir"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "Kveğja svarşjónustunnar:"
+msgstr "KveÃ°ja svarÃ¾jÃ³nustunnar:"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -135,19 +135,19 @@ msgid ""
 "Please leave a message to be delivered via E-Mail.\n"
 "Just start typing and when you're done, exit normally."
 msgstr ""
-"Móttakandi samtalsins er ekki viğ í augnablikinu, vinsamlegast\n"
-"skildu eftir skilaboğ sem verğa send meğ tölvupósti.\n"
-"Skrifağu bara skilaboğin og hættu svo eins og venjulega."
+"MÃ³ttakandi samtalsins er ekki viÃ° Ã­ augnablikinu, vinsamlegast\n"
+"skildu eftir skilaboÃ° sem verÃ°a send meÃ° tÃ¶lvupÃ³sti.\n"
+"SkrifaÃ°u bara skilaboÃ°in og hÃ¦ttu svo eins og venjulega."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
 msgid "Message from %s"
-msgstr "Skilaboğ frá %s"
+msgstr "SkilaboÃ° frÃ¡ %s"
 
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Skilaboğ frá %s@%s á símsvara"
+msgstr "SkilaboÃ° frÃ¡ %s@%s Ã¡ sÃ­msvara"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
@@ -155,11 +155,11 @@ msgstr "Virkja framsendingu"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Móttakandi (notandi eğa notandi@lén)"
+msgstr "&MÃ³ttakandi (notandi eÃ°a notandi@lÃ©n)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
-msgstr "Framsendingarağferğ"
+msgstr "FramsendingaraÃ°ferÃ°"
 
 #: forwmachpage.cpp:54
 msgid ""
@@ -174,11 +174,11 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Framsenda ağeins tilkynninguna. Bein tenging. (Ekki ráğlegt.)\n"
-"FWR : Framsendi allar boğanir, breyti uppl. eftir şörfum.  Bein tenging.\n"
-"FWT : Framsendi allar boğanir og tek á móti tali. Engin bein leiğ.\n"
+"FWA : Framsenda aÃ°eins tilkynninguna. Bein tenging. (Ekki rÃ¡Ã°legt.)\n"
+"FWR : Framsendi allar boÃ°anir, breyti uppl. eftir Ã¾Ã¶rfum.  Bein tenging.\n"
+"FWT : Framsendi allar boÃ°anir og tek Ã¡ mÃ³ti tali. Engin bein leiÃ°.\n"
 "\n"
-"Mælt er meğ: FWT ef şú ert á bakviğ eldvegg (og ef ktalkd hefur\n"
-"ağgang ağ báğum netunum), annars er mælt meğ FWR.\n"
+"MÃ¦lt er meÃ°: FWT ef Ã¾Ãº ert Ã¡ bakviÃ° eldvegg (og ef ktalkd hefur\n"
+"aÃ°gang aÃ° bÃ¡Ã°um netunum), annars er mÃ¦lt meÃ° FWR.\n"
 "\n"
-"Sjá hjálp fyrir frekari útskıringar.\n"
+"SjÃ¡ hjÃ¡lp fyrir frekari ÃºtskÃ½ringar.\n"

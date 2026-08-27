@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: attraction.cpp:718
@@ -47,7 +47,7 @@ msgstr "Haler"
 
 #: attraction.cpp:860 slidescreen.cpp:545
 msgid "Glow"
-msgstr "Gløde"
+msgstr "GlÃ¸de"
 
 #: attraction.cpp:961
 msgid "About Attraction"
@@ -85,7 +85,7 @@ msgstr "Familie:"
 
 #: banner.cpp:122 science.cpp:1049
 msgid "Size:"
-msgstr "Størrelse:"
+msgstr "StÃ¸rrelse:"
 
 #: banner.cpp:142 blankscrn.cpp:84
 msgid "Color:"
@@ -166,7 +166,7 @@ msgstr "Blank skjerm-oppsett"
 
 #: blob.cpp:57
 msgid "Random Linear"
-msgstr "Tilfeldig linjær"
+msgstr "Tilfeldig linjÃ¦r"
 
 #: blob.cpp:58
 msgid "Horizonal Sine"
@@ -174,7 +174,7 @@ msgstr "Horisontal sinus"
 
 #: blob.cpp:59
 msgid "Circular Bounce"
-msgstr "Sirkulær sprett"
+msgstr "SirkulÃ¦r sprett"
 
 #: blob.cpp:60
 msgid "Polar Coordinates"
@@ -234,11 +234,11 @@ msgstr "Antall punkter:"
 
 #: bouboule.cpp:1054
 msgid "Point size:"
-msgstr "Punktstørrelse:"
+msgstr "PunktstÃ¸rrelse:"
 
 #: bouboule.cpp:1068
 msgid "Color-change frequency:"
-msgstr "Hyppighet for å endre farger:"
+msgstr "Hyppighet for Ã¥ endre farger:"
 
 #: bouboule.cpp:1085
 msgid "3D mode"
@@ -256,7 +256,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
-"Bouboule v0.1 -- en liten klass av kuler som vrir seg og endrer størrelse\n"
+"Bouboule v0.1 -- en liten klass av kuler som vrir seg og endrer stÃ¸rrelse\n"
 "\n"
 "Enerett (c) 1996 av Jeremie PETIT\n"
 "\n"
@@ -264,7 +264,7 @@ msgstr ""
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
-msgstr "Dødens sorte skjerm"
+msgstr "DÃ¸dens sorte skjerm"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -276,7 +276,7 @@ msgstr "Flamme-oppsett"
 
 #: flame.cpp:431
 msgid "Max Levels:"
-msgstr "Maks. nivå:"
+msgstr "Maks. nivÃ¥:"
 
 #: flame.cpp:446
 msgid "Num Points:"
@@ -310,7 +310,7 @@ msgstr "Skog-oppsett"
 
 #: forest.cpp:312
 msgid "Num of Trees:"
-msgstr "Antall trær:"
+msgstr "Antall trÃ¦r:"
 
 #: forest.cpp:407
 msgid "About Forest"
@@ -459,7 +459,7 @@ msgstr ""
 #: main.cpp:436
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr "Valg %s er ikke støttet på denne plattform!"
+msgstr "Valg %s er ikke stÃ¸ttet pÃ¥ denne plattform!"
 
 #: main.cpp:491
 msgid ""
@@ -469,11 +469,11 @@ msgid ""
 "Please contact your system administrator.\n"
 "Tell him that you need suid for the kcheckpass program!"
 msgstr ""
-"Varsel: du vil ikke kunne låse sjermen!\n"
+"Varsel: du vil ikke kunne lÃ¥se sjermen!\n"
 "\n"
 "Ditt system bruker skyggepassord!\n"
 "Vennligst kontakt din systemadministrator.\n"
-"Fortell ham at programmet kcheckpass må være suid!"
+"Fortell ham at programmet kcheckpass mÃ¥ vÃ¦re suid!"
 
 #: main.cpp:496
 msgid "Shadow Passwords"
@@ -520,28 +520,28 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Plassering av cursor i hjørne utfører handling:\n"
+"  -corners xxxx     Plassering av cursor i hjÃ¸rne utfÃ¸rer handling:\n"
 "                     x = i  ingen handling (ignorer)\n"
 "                     x = s  lagre skjerm\n"
-"                     x = l  låse skjerm\n"
-"                    rekkefølge: topp-venstre, topp-høyre, bunn-venstre, "
-"bunn-høyre\n"
-"  -delay num        Tid PC ikke er i bruk før skjermsparer\n"
+"                     x = l  lÃ¥se skjerm\n"
+"                    rekkefÃ¸lge: topp-venstre, topp-hÃ¸yre, bunn-venstre, "
+"bunn-hÃ¸yre\n"
+"  -delay num        Tid PC ikke er i bruk fÃ¸r skjermsparer\n"
 "                     starter  (standard 10min)\n"
 "  -desc             Skriv skjermsparerens beskrivelse til stdout\n"
 "  -install          Installer skjermsparer\n"
-"  -lock             Krever passord for å stoppe skjermsparer\n"
-"  -allow-root       Akseptere root-passord for å låse opp\n"
-"  -nice num         Kjør med spesifisert fin verdi\n"
+"  -lock             Krever passord for Ã¥ stoppe skjermsparer\n"
+"  -allow-root       Akseptere root-passord for Ã¥ lÃ¥se opp\n"
+"  -nice num         KjÃ¸r med spesifisert fin verdi\n"
 "\n"
-"  -preview wid      Kjør i det spesifiserte XWindow\n"
-"  -inroot           Kjør i root window\n"
+"  -preview wid      KjÃ¸r i det spesifiserte XWindow\n"
+"  -inroot           KjÃ¸r i root window\n"
 "  -setup            Skjermsparer oppsett\n"
-"  -test             Ta i bruk skjermspareren øyeblikkelig\n"
+"  -test             Ta i bruk skjermspareren Ã¸yeblikkelig\n"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL kan ikke kjøre med visuell rot\n"
+msgstr "GL kan ikke kjÃ¸re med visuell rot\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -575,19 +575,19 @@ msgstr ""
 
 #: pipes.cpp:299
 msgid "Pipes (GL)"
-msgstr "Rør (GL)"
+msgstr "RÃ¸r (GL)"
 
 #: pipes.cpp:680
 msgid "Setup KPipes"
-msgstr "Rør-oppsett"
+msgstr "RÃ¸r-oppsett"
 
 #: pipes.cpp:686
 msgid "Number of Pipes"
-msgstr "Antall rør"
+msgstr "Antall rÃ¸r"
 
 #: pipes.cpp:751
 msgid "About KPipes"
-msgstr "Om Rør"
+msgstr "Om RÃ¸r"
 
 #: pipes.cpp:753
 msgid ""
@@ -595,7 +595,7 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
-"Rør\n"
+"RÃ¸r\n"
 "Enerett (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 
@@ -713,7 +713,7 @@ msgstr "Sammentrekning"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr "Bølge"
+msgstr "BÃ¸lge"
 
 #: science.cpp:80
 msgid "Curvature"

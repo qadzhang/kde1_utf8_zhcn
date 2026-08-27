@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "sk‰rm nr. %d"
+msgstr "sk√§rm nr. %d"
 
 #: info.cpp:52
 #, c-format
@@ -27,7 +27,7 @@ msgstr "  dimensioner         : %dx%d pixlar (%dx%d mm)\n"
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  upplˆsning          : %dx%d punkter per tum\n"
+msgstr "  uppl√∂sning          : %dx%d punkter per tum\n"
 
 #: info.cpp:61
 #, c-format
@@ -37,7 +37,7 @@ msgstr "  djup (%d)            : "
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "sk‰rmens namn         : %s"
+msgstr "sk√§rmens namn         : %s"
 
 #: info.cpp:87
 #, c-format
@@ -57,12 +57,12 @@ msgstr "tillverkarens release : %i"
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "standardsk‰rmnummer   : %i"
+msgstr "standardsk√§rmnummer   : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "antal sk‰rmar         : %i"
+msgstr "antal sk√§rmar         : %i"
 
 #: info.cpp:181
 msgid ""
@@ -70,23 +70,23 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Ingen information tillg‰nglig\n"
+"Ingen information tillg√§nglig\n"
 " eller\n"
-"ditt system stˆds inte ‰n :-("
+"ditt system st√∂ds inte √§n :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, ok‰nd hastighet"
+msgstr "%s, ok√§nd hastighet"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s som kˆr i %s MHz"
+msgstr "%s som k√∂r i %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "ƒsch, kunde inte ˆppna fstab!"
+msgstr "√Ñsch, kunde inte √∂ppna fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
@@ -102,15 +102,15 @@ msgstr "FS-typ"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr "monteringsinst‰llningar"
+msgstr "monteringsinst√§llningar"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr "ok‰nd CPU-typ"
+msgstr "ok√§nd CPU-typ"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "ej tillg‰ngligt"
+msgstr "ej tillg√§ngligt"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
@@ -118,7 +118,7 @@ msgstr "Antal aktiva processorer= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "V‰rde"
+msgstr "V√§rde"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
@@ -126,11 +126,11 @@ msgstr "DMA-kanal"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "anv‰nds av"
+msgstr "anv√§nds av"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "I/O-omrÂde"
+msgstr "I/O-omr√•de"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -182,7 +182,7 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-"anv‰ndning: kcminfo [-init | "
+"anv√§ndning: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 
@@ -222,9 +222,9 @@ msgstr "%10ld byte = %8.2f MB"
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "Inte tillg‰ngligt"
+msgstr "Inte tillg√§ngligt"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "Inte tillg‰ngligt"
+msgstr "Inte tillg√§ngligt"

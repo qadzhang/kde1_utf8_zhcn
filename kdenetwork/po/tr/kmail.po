@@ -10,14 +10,14 @@ msgstr ""
 "Last-Translator: Makbule SHAKALLA <bbm756@hun.edu.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
 #: kmcomposewin.cpp:1516 kmmainwin.cpp:377 kpgp.cpp:546
 msgid ""
 "Sorry, but this feature\n"
 "is still missing"
-msgstr "Üzgünüm ama bu özellik hala yok"
+msgstr "ÃœzgÃ¼nÃ¼m ama bu Ã¶zellik hala yok"
 
 #: kmmainwin.cpp:386
 msgid "New Folder"
@@ -25,11 +25,11 @@ msgstr " Yeni Doysa  "
 
 #: kmaddrbookdlg.cpp:178 kmmainwin.cpp:399 kmmainwin.cpp:433 main.cpp:484
 msgid "KMail error"
-msgstr "Kmail hatası"
+msgstr "Kmail hatasÃ½"
 
 #: kmmainwin.cpp:400 kmmainwin.cpp:434
 msgid "Already checking for mail!"
-msgstr "Zaten yeni mail için bakıyorum"
+msgstr "Zaten yeni mail iÃ§in bakÃ½yorum"
 
 #: kmmainwin.cpp:410 kmmainwin.cpp:444
 msgid "No new mail available"
@@ -37,18 +37,18 @@ msgstr "Yeni mail yok"
 
 #: kmmainwin.cpp:474
 msgid "Modify Folder"
-msgstr " Dosyada Değişiklik Yap "
+msgstr " Dosyada DeÃ°iÃ¾iklik Yap "
 
 #: kmmainwin.cpp:497
 msgid "Moved all messages into trash"
-msgstr "Bütün mesajları çöpe at"
+msgstr "BÃ¼tÃ¼n mesajlarÃ½ Ã§Ã¶pe at"
 
 #: kmmainwin.cpp:516
 msgid ""
 "Cannot remove a\n"
 "system folder."
 msgstr ""
-"Sistem dosyasıdır.\n"
+"Sistem dosyasÃ½dÃ½r.\n"
 "Silinemez"
 
 #: kmmainwin.cpp:520
@@ -57,8 +57,8 @@ msgid ""
 "Are you sure you want to remove the folder\n"
 "\"%s\", discarding it's contents ?"
 msgstr ""
-"\"%s\" dizinini içindekileri silmek\n"
-"pahasına kaldırmak istediğinizden emin misiniz?"
+"\"%s\" dizinini iÃ§indekileri silmek\n"
+"pahasÃ½na kaldÃ½rmak istediÃ°inizden emin misiniz?"
 
 #: kmmainwin.cpp:523
 msgid "Confirmation"
@@ -74,47 +74,47 @@ msgstr ""
 
 #: kmmainwin.cpp:619
 msgid "Message as Plain Text"
-msgstr "İleti Normal Metin"
+msgstr "Ãleti Normal Metin"
 
 #: kmmainwin.cpp:626 kmmainwin.cpp:646
 msgid "Select Folder"
-msgstr "Dizin Seç "
+msgstr "Dizin SeÃ§ "
 
 #: kmmainwin.cpp:669
 msgid "Queued messages successfully sent."
-msgstr "Kuyruktaki iletiler başarıyla gönderildi"
+msgstr "Kuyruktaki iletiler baÃ¾arÃ½yla gÃ¶nderildi"
 
 #: kmmainwin.cpp:671
 msgid "Failed to send (some) queued messages."
-msgstr "Kuyruktaki bazı iletiler gönderilemedi."
+msgstr "Kuyruktaki bazÃ½ iletiler gÃ¶nderilemedi."
 
 #: kmmainwin.cpp:802
 msgid "Opening URL..."
-msgstr " URL açılıyor "
+msgstr " URL aÃ§Ã½lÃ½yor "
 
 #: kmmainwin.cpp:857
 msgid "Address added to addressbook."
-msgstr "Adres adres defterine yazıldı."
+msgstr "Adres adres defterine yazÃ½ldÃ½."
 
 #: kmmainwin.cpp:869
 msgid "Address copied to clipboard."
-msgstr "Adres panoya kopyalandı."
+msgstr "Adres panoya kopyalandÃ½."
 
 #: kmmainwin.cpp:874
 msgid "URL copied to clipboard."
-msgstr "URL panoya kopyalandı."
+msgstr "URL panoya kopyalandÃ½."
 
 #: kmmainwin.cpp:901
 msgid "Send to..."
-msgstr "Gönder "
+msgstr "GÃ¶nder "
 
 #: kmmainwin.cpp:903
 msgid "Send reply to..."
-msgstr "Yanıt Gönder..."
+msgstr "YanÃ½t GÃ¶nder..."
 
 #: kmmainwin.cpp:905
 msgid "Forward to..."
-msgstr "İlet.. "
+msgstr "Ãlet.. "
 
 #: kmmainwin.cpp:908
 msgid "Add to addressbook"
@@ -126,23 +126,23 @@ msgstr "Panoya Kopyala "
 
 #: kmmainwin.cpp:917
 msgid "Open URL..."
-msgstr "URL aç "
+msgstr "URL aÃ§ "
 
 #: kmheaders.cpp:1001 kmmainwin.cpp:927 kmmainwin.cpp:1044
 msgid "&Reply..."
-msgstr "&Yanıt "
+msgstr "&YanÃ½t "
 
 #: kmheaders.cpp:1003 kmmainwin.cpp:929 kmmainwin.cpp:1046
 msgid "Reply &All..."
-msgstr "&Herkese Yanıtla..."
+msgstr "&Herkese YanÃ½tla..."
 
 #: kmheaders.cpp:1005 kmmainwin.cpp:931 kmmainwin.cpp:1048
 msgid "&Forward..."
-msgstr "&İlet... "
+msgstr "&Ãlet... "
 
 #: kmheaders.cpp:1008 kmmainwin.cpp:934 kmmainwin.cpp:1058
 msgid "&Move..."
-msgstr "Yürüt... "
+msgstr "YÃ¼rÃ¼t... "
 
 #: kmheaders.cpp:1010 kmmainwin.cpp:936 kmmainwin.cpp:1060
 msgid "&Copy..."
@@ -150,7 +150,7 @@ msgstr "&Kopyala..."
 
 #: kmmainwin.cpp:963
 msgid "New Composer"
-msgstr "Yeni Düzenleyici"
+msgstr "Yeni DÃ¼zenleyici"
 
 #: kmcomposewin.cpp:451 kmmainwin.cpp:965
 msgid "New Mailreader"
@@ -162,7 +162,7 @@ msgstr "Kaydet... "
 
 #: kmmainwin.cpp:970
 msgid "Print..."
-msgstr "Yazdır..."
+msgstr "YazdÃ½r..."
 
 #: kmmainwin.cpp:973
 msgid "Check Mail..."
@@ -174,7 +174,7 @@ msgstr "Mail'e bak..."
 
 #: kmmainwin.cpp:984
 msgid "Send Queued"
-msgstr "İleti Kuyruğa Eklendi"
+msgstr "Ãleti KuyruÃ°a Eklendi"
 
 #: kmmainwin.cpp:987
 msgid "&Settings..."
@@ -186,7 +186,7 @@ msgstr "Ad&res defteri"
 
 #: kmmainwin.cpp:991
 msgid "&Filter..."
-msgstr "&Süzgeç..."
+msgstr "&SÃ¼zgeÃ§..."
 
 #: kmmainwin.cpp:1005
 msgid "&Find..."
@@ -198,15 +198,15 @@ msgstr "Yara&t"
 
 #: kmfoldertree.cpp:309 kmmainwin.cpp:1012
 msgid "&Modify..."
-msgstr "De&ğiştir.."
+msgstr "De&Ã°iÃ¾tir.."
 
 #: kmfoldertree.cpp:311 kmmainwin.cpp:1014
 msgid "C&ompact"
-msgstr "S&ıkıştır"
+msgstr "S&Ã½kÃ½Ã¾tÃ½r"
 
 #: kmfoldertree.cpp:314 kmmainwin.cpp:1017
 msgid "&Empty"
-msgstr "B&oş"
+msgstr "B&oÃ¾"
 
 #: kmfilterdlg.cpp:149 kmheaders.cpp:991 kmmainwin.cpp:1026
 msgid "New"
@@ -214,23 +214,23 @@ msgstr ""
 
 #: kmheaders.cpp:992 kmmainwin.cpp:1027
 msgid "Unread"
-msgstr "Okunmamış"
+msgstr "OkunmamÃ½Ã¾"
 
 #: kmheaders.cpp:993 kmmainwin.cpp:1028
 msgid "Read"
-msgstr "Okunmuş"
+msgstr "OkunmuÃ¾"
 
 #: kmheaders.cpp:994 kmmainwin.cpp:1029
 msgid "Replied"
-msgstr "Yanıtlanmış"
+msgstr "YanÃ½tlanmÃ½Ã¾"
 
 #: kmheaders.cpp:995 kmmainwin.cpp:1030
 msgid "Queued"
-msgstr "Kuyruğa Eklenmiş"
+msgstr "KuyruÃ°a EklenmiÃ¾"
 
 #: kmheaders.cpp:996 kmmainwin.cpp:1031
 msgid "Sent"
-msgstr "Gönderilmiş"
+msgstr "GÃ¶nderilmiÃ¾"
 
 #: kmmainwin.cpp:1035
 msgid "&Next"
@@ -238,21 +238,21 @@ msgstr ""
 
 #: kmmainwin.cpp:1037
 msgid "Next unread"
-msgstr "Sonraki okunmamış"
+msgstr "Sonraki okunmamÃ½Ã¾"
 
 #: kmmainwin.cpp:1039
 #, fuzzy
 msgid "&Previous"
-msgstr "Önceki okunmamış"
+msgstr "Ã–nceki okunmamÃ½Ã¾"
 
 #: kmmainwin.cpp:1041
 msgid "Previous unread"
-msgstr "Önceki okunmamış"
+msgstr "Ã–nceki okunmamÃ½Ã¾"
 
 #: kmmainwin.cpp:1051
 #, fuzzy
 msgid "Edi&t..."
-msgstr "Yazdır..."
+msgstr "YazdÃ½r..."
 
 #: kmmainwin.cpp:1054
 msgid "&Set Status"
@@ -261,39 +261,39 @@ msgstr "D&urumu Belirle"
 #: kmmainwin.cpp:1056
 #, fuzzy
 msgid "Mar&k all"
-msgstr "Hepsini İşaretle"
+msgstr "Hepsini ÃÃ¾aretle"
 
 #: kmmainwin.cpp:1065
 msgid "Send again..."
-msgstr "Tekrar gönderiliyor"
+msgstr "Tekrar gÃ¶nderiliyor"
 
 #: kmmainwin.cpp:1067
 msgid "Apply filters"
-msgstr "Süzgeçleri uygula"
+msgstr "SÃ¼zgeÃ§leri uygula"
 
 #: kmmainwin.cpp:1070
 msgid "View Source..."
-msgstr "Kaynak kodu göster"
+msgstr "Kaynak kodu gÃ¶ster"
 
 #: kmmainwin.cpp:1077
 msgid "&Brief Headers"
-msgstr "Kı&sa Başlıklar"
+msgstr "KÃ½&sa BaÃ¾lÃ½klar"
 
 #: kmmainwin.cpp:1079
 msgid "&Fancy Headers"
-msgstr "Havalı &Başlıklar"
+msgstr "HavalÃ½ &BaÃ¾lÃ½klar"
 
 #: kmmainwin.cpp:1081
 msgid "&Standard Headers"
-msgstr "S&tandart Başlıklar"
+msgstr "S&tandart BaÃ¾lÃ½klar"
 
 #: kmmainwin.cpp:1083
 msgid "&Long Headers"
-msgstr "U&zun Başlıklar"
+msgstr "U&zun BaÃ¾lÃ½klar"
 
 #: kmmainwin.cpp:1085
 msgid "&All Headers"
-msgstr "&Tüm Başlıklar"
+msgstr "&TÃ¼m BaÃ¾lÃ½klar"
 
 #: kmmainwin.cpp:1088
 msgid "Iconic Attachments"
@@ -301,11 +301,11 @@ msgstr "Simgesel Ekler"
 
 #: kmmainwin.cpp:1089
 msgid "Smart Attachments"
-msgstr "Akıllı Ekler"
+msgstr "AkÃ½llÃ½ Ekler"
 
 #: kmmainwin.cpp:1090
 msgid "Inlined Attachments"
-msgstr "Çevrim İçi Ekler"
+msgstr "Ã‡evrim ÃÃ§i Ekler"
 
 #: kmmainwin.cpp:1101
 msgid "F&older"
@@ -313,7 +313,7 @@ msgstr "D&izin"
 
 #: kmmainwin.cpp:1102
 msgid "&Message"
-msgstr "&İleti"
+msgstr "&Ãleti"
 
 #: kmcomposewin.cpp:573 kmmainwin.cpp:1121
 msgid "Compose new message"
@@ -321,11 +321,11 @@ msgstr "Yeni bir ileti yarat"
 
 #: kmcomposewin.cpp:579 kmmainwin.cpp:1126
 msgid "Save message to file"
-msgstr "İletiyi dosyaya kaydet"
+msgstr "Ãletiyi dosyaya kaydet"
 
 #: kmcomposewin.cpp:585 kmmainwin.cpp:1131
 msgid "Print message"
-msgstr "İletiyi yazdır"
+msgstr "Ãletiyi yazdÃ½r"
 
 #: kmmainwin.cpp:1138
 msgid "Get new mail"
@@ -333,45 +333,45 @@ msgstr "Yeni mail al"
 
 #: kmmainwin.cpp:1144
 msgid "Reply to author"
-msgstr "Yazara yanıt ver"
+msgstr "Yazara yanÃ½t ver"
 
 #: kmmainwin.cpp:1149
 msgid "Reply to all recipients"
-msgstr "Herkese yanıt ver"
+msgstr "Herkese yanÃ½t ver"
 
 #: kmmainwin.cpp:1154
 msgid "Forward message"
-msgstr "İletiyi ilet"
+msgstr "Ãletiyi ilet"
 
 #: kmmainwin.cpp:1159
 msgid "Delete message"
-msgstr "İletiyi sil"
+msgstr "Ãletiyi sil"
 
 #: kmcomposewin.cpp:609 kmmainwin.cpp:1165
 msgid "Open addressbook..."
-msgstr "Adres defterini aç"
+msgstr "Adres defterini aÃ§"
 
 #: kmmainwin.cpp:1177
 msgid "Initializing..."
-msgstr "Hazırlanıyor..."
+msgstr "HazÃ½rlanÃ½yor..."
 
 #: kmfolderdia.cpp:39 kmmsgpartdlg.cpp:62 kmsettings.cpp:175
 #: kmsettings.cpp:883
 #, fuzzy
 msgid "Name:"
-msgstr "Kullanıcı Adı"
+msgstr "KullanÃ½cÃ½ AdÃ½"
 
 #: kmcomposewin.cpp:1524 kmfolderdia.cpp:45 kmfolderdia.cpp:132
 msgid "unnamed"
-msgstr "adsız"
+msgstr "adsÃ½z"
 
 #: kmfolderdia.cpp:55
 msgid "Associated with"
-msgstr "İle ilişkili"
+msgstr "Ãle iliÃ¾kili"
 
 #: kmfolderdia.cpp:65
 msgid "Unassociated Accounts"
-msgstr "İlişkisiz Hesaplar"
+msgstr "ÃliÃ¾kisiz Hesaplar"
 
 #: kmfoldertree.cpp:49 kmsettings.cpp:538
 msgid "Folders"
@@ -391,11 +391,11 @@ msgstr "E-mail adresi"
 
 #: kmsettings.cpp:182
 msgid "Reply-To Address:"
-msgstr "Adrese yanıt ver"
+msgstr "Adrese yanÃ½t ver"
 
 #: kmsettings.cpp:184
 msgid "Signature File:"
-msgstr "İmza dosyası"
+msgstr "Ãmza dosyasÃ½"
 
 #: kmsettings.cpp:193 kpgp.cpp:821
 msgid "Identity"
@@ -403,7 +403,7 @@ msgstr "Kimlik"
 
 #: kmsettings.cpp:212
 msgid "Sending Mail"
-msgstr "Posta Gönderilmekte"
+msgstr "Posta GÃ¶nderilmekte"
 
 #: kmsettings.cpp:218
 msgid "Sendmail"
@@ -411,7 +411,7 @@ msgstr "Sendmail"
 
 #: kmsettings.cpp:223 kmsettings.cpp:890
 msgid "Location:"
-msgstr "Yerleşim:"
+msgstr "YerleÃ¾im:"
 
 #: kmsettings.cpp:228
 msgid "SMTP"
@@ -439,7 +439,7 @@ msgstr ""
 
 #: kmcomposewin.cpp:143 kmsettings.cpp:268
 msgid "Type"
-msgstr "Tür"
+msgstr "TÃ¼r"
 
 #: kmsettings.cpp:269
 msgid "Folder"
@@ -451,48 +451,48 @@ msgstr "Ekle..."
 
 #: kmsettings.cpp:280
 msgid "Modify..."
-msgstr "Değiştir.."
+msgstr "DeÃ°iÃ¾tir.."
 
 #: kmsettings.cpp:300
 msgid "Network"
-msgstr "Ağ"
+msgstr "AÃ°"
 
 #: kmsettings.cpp:324
 msgid "Message Body Font:"
-msgstr "İleti Gövdesi Yazı Tipi:"
+msgstr "Ãleti GÃ¶vdesi YazÃ½ Tipi:"
 
 #: kmsettings.cpp:329
 msgid "Message List Font:"
-msgstr "İleti Dökümü Yazı Tipi:"
+msgstr "Ãleti DÃ¶kÃ¼mÃ¼ YazÃ½ Tipi:"
 
 #: kmsettings.cpp:357
 #, fuzzy
 msgid "Long folder list"
-msgstr "U&zun Başlıklar"
+msgstr "U&zun BaÃ¾lÃ½klar"
 
 #: kmsettings.cpp:386
 msgid "Phrases"
-msgstr "Tümcecik"
+msgstr "TÃ¼mcecik"
 
 #: kmsettings.cpp:391
 msgid ""
 "The following placeholders are supported in the reply phrases:\n"
 "%D=date, %S=subject, %F=sender, %%=percent sign"
 msgstr ""
-"yanıtlarda aşağıdaki özel karakterler kullanılabilir:\n"
-"%D=tarih, %S=konu, %F=gönderen, %%=yüzde işareti"
+"yanÃ½tlarda aÃ¾aÃ°Ã½daki Ã¶zel karakterler kullanÃ½labilir:\n"
+"%D=tarih, %S=konu, %F=gÃ¶nderen, %%=yÃ¼zde iÃ¾areti"
 
 #: kmsettings.cpp:399
 msgid "Reply to sender:"
-msgstr "Gönderene yanıt ver"
+msgstr "GÃ¶nderene yanÃ½t ver"
 
 #: kmsettings.cpp:402
 msgid "Reply to all:"
-msgstr "Herkese yanıt ver"
+msgstr "Herkese yanÃ½t ver"
 
 #: kmsettings.cpp:405
 msgid "Forward:"
-msgstr "İlet"
+msgstr "Ãlet"
 
 #: kmsettings.cpp:408
 msgid "Indentation:"
@@ -508,11 +508,11 @@ msgstr "%D,tarihinde, %F dedi ki:"
 
 #: kmmessage.cpp:1385 kmsettings.cpp:428
 msgid "Forwarded Message"
-msgstr "Özgün İleti"
+msgstr "Ã–zgÃ¼n Ãleti"
 
 #: kmsettings.cpp:439
 msgid "Automatically append signature"
-msgstr "İmzayı ekle"
+msgstr "ÃmzayÃ½ ekle"
 
 #: kmsettings.cpp:445
 msgid "Automatically sign messages using PGP"
@@ -520,31 +520,31 @@ msgstr "PGP kullanarak iletileri imzala "
 
 #: kmsettings.cpp:450
 msgid "Word wrap at column:"
-msgstr "Yazma sınırı sütun:"
+msgstr "Yazma sÃ½nÃ½rÃ½ sÃ¼tun:"
 
 #: kmsettings.cpp:460
 msgid "Use monospaced font"
-msgstr "Eşaralalıklı yazı tipi kullan"
+msgstr "EÃ¾aralalÃ½klÃ½ yazÃ½ tipi kullan"
 
 #: kmsettings.cpp:472
 msgid "When sending mail"
-msgstr "İleti gönderirken"
+msgstr "Ãleti gÃ¶nderirken"
 
 #: kmsettings.cpp:475
 msgid "Default sending:"
-msgstr "Öntanımlı gönderme:"
+msgstr "Ã–ntanÃ½mlÃ½ gÃ¶nderme:"
 
 #: kmsettings.cpp:478
 msgid "send now"
-msgstr "şimdi gönder"
+msgstr "Ã¾imdi gÃ¶nder"
 
 #: kmsettings.cpp:482
 msgid "send later"
-msgstr "sonra gönder"
+msgstr "sonra gÃ¶nder"
 
 #: kmsettings.cpp:487
 msgid "Send messages:"
-msgstr "İletileri gönder"
+msgstr "Ãletileri gÃ¶nder"
 
 #: kmsettings.cpp:490
 msgid "Allow 8-bit"
@@ -556,11 +556,11 @@ msgstr "MIME Uyumlu"
 
 #: kmsettings.cpp:521
 msgid "Composer"
-msgstr "Düzenleyici"
+msgstr "DÃ¼zenleyici"
 
 #: kmsettings.cpp:542
 msgid "empty trash on exit"
-msgstr "çıkışta çöp sepetini boşalt"
+msgstr "Ã§Ã½kÃ½Ã¾ta Ã§Ã¶p sepetini boÃ¾alt"
 
 #: kmsettings.cpp:546
 msgid "Send Mail in outbox Folder on Check"
@@ -576,32 +576,32 @@ msgstr ""
 
 #: kmsettings.cpp:591
 msgid "Message Body Font"
-msgstr "İleti Gövdesi Yazı Tipi"
+msgstr "Ãleti GÃ¶vdesi YazÃ½ Tipi"
 
 #: kmsettings.cpp:605
 msgid "Message List Font"
-msgstr "İleti Dökümü Yazı Tipi"
+msgstr "Ãleti DÃ¶kÃ¼mÃ¼ YazÃ½ Tipi"
 
 #: kmsettings.cpp:657
 msgid "Select Account"
-msgstr "Hesap Seç"
+msgstr "Hesap SeÃ§"
 
 #: kmaccount.cpp:77 kmfilterdlg.cpp:472 kmsettings.cpp:676
 msgid "Unnamed"
-msgstr "Adsız"
+msgstr "AdsÃ½z"
 
 #: kmsettings.cpp:695
 msgid "Choose Sendmail Location"
-msgstr "Sendmail Yerleşimini Seç"
+msgstr "Sendmail YerleÃ¾imini SeÃ§"
 
 #: kmcomposewin.cpp:1623 kmsettings.cpp:704
 msgid "Choose Signature File"
-msgstr "İmza Dosyasını Seç"
+msgstr "Ãmza DosyasÃ½nÃ½ SeÃ§"
 
 #: kmsettings.cpp:875
 #, fuzzy
 msgid "Type:"
-msgstr "Tür"
+msgstr "TÃ¼r"
 
 #: kmsettings.cpp:888
 msgid "Local Account"
@@ -609,7 +609,7 @@ msgstr "Yerel Hesap"
 
 #: kmsettings.cpp:897
 msgid "Pop Account"
-msgstr "POP Hesabı"
+msgstr "POP HesabÃ½"
 
 #: kmsettings.cpp:899
 msgid "Login:"
@@ -629,12 +629,12 @@ msgstr ""
 
 #: kmsettings.cpp:919
 msgid "Delete mail from server"
-msgstr "Sunucudan postayı sil"
+msgstr "Sunucudan postayÃ½ sil"
 
 #: kmsettings.cpp:924
 #, fuzzy
 msgid "Retrieve all mail from server"
-msgstr "Sunucudan postayı sil"
+msgstr "Sunucudan postayÃ½ sil"
 
 #: kmsettings.cpp:936
 msgid "Enable interval Mail checking"
@@ -642,23 +642,23 @@ msgstr ""
 
 #: kmsettings.cpp:946
 msgid "Store new mail in account:"
-msgstr "Yeni gelen postayı hesapta sakla"
+msgstr "Yeni gelen postayÃ½ hesapta sakla"
 
 #: kmsettings.cpp:960
 msgid "<none>"
-msgstr "<hiçbiri>"
+msgstr "<hiÃ§biri>"
 
 #: kmsettings.cpp:1009
 msgid "Choose Location"
-msgstr "Yer Seç"
+msgstr "Yer SeÃ§"
 
 #: kmaccount.cpp:116
 msgid "Receipt: "
-msgstr "Alındı:"
+msgstr "AlÃ½ndÃ½:"
 
 #: kmaccount.cpp:150
 msgid "Failed to add message:"
-msgstr "İleti eklenemedi"
+msgstr "Ãleti eklenemedi"
 
 #: kmcomposewin.cpp:139 kmheaders.cpp:42
 msgid "F"
@@ -666,7 +666,7 @@ msgstr "F"
 
 #: kmheaders.cpp:43 kmheaders.cpp:223
 msgid "Sender"
-msgstr "Gönderen"
+msgstr "GÃ¶nderen"
 
 #: kmheaders.cpp:44
 msgid "Subject"
@@ -684,7 +684,7 @@ msgstr ""
 #: kmheaders.cpp:225
 #, c-format
 msgid "%d Messages, %d unread."
-msgstr "%d ileti ,%d okunmamış"
+msgstr "%d ileti ,%d okunmamÃ½Ã¾"
 
 #: kmheaders.cpp:227
 msgid "Folder is read-only."
@@ -700,7 +700,7 @@ msgstr "Konusuz"
 
 #: kmheaders.cpp:343
 msgid "order of arrival"
-msgstr "varış sırası"
+msgstr "varÃ½Ã¾ sÃ½rasÃ½"
 
 #: kmheaders.cpp:352
 msgid "subject"
@@ -712,7 +712,7 @@ msgstr "tarih"
 
 #: kmheaders.cpp:354
 msgid "sender"
-msgstr "gönderen"
+msgstr "gÃ¶nderen"
 
 #: kmheaders.cpp:355
 msgid "status"
@@ -721,24 +721,24 @@ msgstr "durum"
 #: kmheaders.cpp:357
 #, c-format
 msgid "Sorting messages descending by %s"
-msgstr "İletiler %s'e göre azalarak sıralanıyor"
+msgstr "Ãletiler %s'e gÃ¶re azalarak sÃ½ralanÃ½yor"
 
 #: kmheaders.cpp:359
 #, c-format
 msgid "Sorting messages ascending by %s"
-msgstr "İletiler %s'e göre artarak sıralanıyor"
+msgstr "Ãletiler %s'e gÃ¶re artarak sÃ½ralanÃ½yor"
 
 #: kmheaders.cpp:486
 msgid "Message(s) saved."
-msgstr "İleti(ler) kaydedildi"
+msgstr "Ãleti(ler) kaydedildi"
 
 #: kmheaders.cpp:488
 msgid "Failed to save message(s)."
-msgstr "İleti(ler) kaydedilemedi"
+msgstr "Ãleti(ler) kaydedilemedi"
 
 #: kmcomposewin.cpp:128
 msgid "KMail Composer"
-msgstr "KMail Düzenleyici"
+msgstr "KMail DÃ¼zenleyici"
 
 #: kmcomposewin.cpp:141
 msgid "Size"
@@ -782,15 +782,15 @@ msgstr "&Takip-et:"
 
 #: kmcomposewin.cpp:432
 msgid "&Send"
-msgstr "&Gönder"
+msgstr "&GÃ¶nder"
 
 #: kmcomposewin.cpp:435
 msgid "S&end later"
-msgstr "S&onra gönder"
+msgstr "S&onra gÃ¶nder"
 
 #: kmcomposewin.cpp:437
 msgid "S&end now"
-msgstr "Şimdi &gönder"
+msgstr "Ãimdi &gÃ¶nder"
 
 #: kmcomposewin.cpp:439
 msgid "&Insert File..."
@@ -798,11 +798,11 @@ msgstr "&Dosya Ekle..."
 
 #: kmcomposewin.cpp:448
 msgid "&New Composer..."
-msgstr "&Yeni Düzenleyici..."
+msgstr "&Yeni DÃ¼zenleyici..."
 
 #: kmcomposewin.cpp:471 kmcomposewin.cpp:705 kmcomposewin.cpp:1923
 msgid "Mark all"
-msgstr "Hepsini İşaretle"
+msgstr "Hepsini ÃÃ¾aretle"
 
 #: kmcomposewin.cpp:474 kmcomposewin.cpp:707
 msgid "Find..."
@@ -810,12 +810,12 @@ msgstr "Bul..."
 
 #: kmcomposewin.cpp:476 kmcomposewin.cpp:708
 msgid "Replace..."
-msgstr "Değiştir..."
+msgstr "DeÃ°iÃ¾tir..."
 
 #: kmcomposewin.cpp:479
 #, fuzzy
 msgid "&Spellcheck..."
-msgstr "KMail:İmla Denetimi "
+msgstr "KMail:Ãmla Denetimi "
 
 #: kmcomposewin.cpp:486
 msgid "&Urgent"
@@ -823,16 +823,16 @@ msgstr "&Acil"
 
 #: kmcomposewin.cpp:488
 msgid "&Confirm delivery"
-msgstr "&Teslimi doğrula"
+msgstr "&Teslimi doÃ°rula"
 
 #: kmcomposewin.cpp:490
 msgid "&Confirm read"
-msgstr "&Okumayı dogrula "
+msgstr "&OkumayÃ½ dogrula "
 
 #: kmcomposewin.cpp:493
 #, fuzzy
 msgid "&Spellchecker..."
-msgstr "KMail:İmla Denetimi "
+msgstr "KMail:Ãmla Denetimi "
 
 #: kmcomposewin.cpp:496
 msgid "&Charsets..."
@@ -840,7 +840,7 @@ msgstr "&Karakterler"
 
 #: kmcomposewin.cpp:509
 msgid "&All Fields"
-msgstr "&Bütün Alanlar"
+msgstr "&BÃ¼tÃ¼n Alanlar"
 
 #: kmcomposewin.cpp:511
 msgid "&From"
@@ -848,7 +848,7 @@ msgstr "&Kimden"
 
 #: kmcomposewin.cpp:512
 msgid "&Reply to"
-msgstr "&Yanıt"
+msgstr "&YanÃ½t"
 
 #: kmcomposewin.cpp:513
 msgid "&To"
@@ -868,7 +868,7 @@ msgstr "K&onu"
 
 #: kmcomposewin.cpp:518
 msgid "&Newsgroups"
-msgstr "&Haber grupları"
+msgstr "&Haber gruplarÃ½"
 
 #: kmcomposewin.cpp:519
 msgid "&Followup-To"
@@ -876,7 +876,7 @@ msgstr "&Takip eden"
 
 #: kmcomposewin.cpp:525
 msgid "Append S&ignature"
-msgstr "İm&za Ekle"
+msgstr "Ãm&za Ekle"
 
 #: kmcomposewin.cpp:527
 msgid "&Insert File"
@@ -884,12 +884,12 @@ msgstr "&Dosya Ekle"
 
 #: kmcomposewin.cpp:530
 msgid "&Attach..."
-msgstr "İliş&tir..."
+msgstr "ÃliÃ¾&tir..."
 
 #: kmcomposewin.cpp:532
 #, fuzzy
 msgid "Attach &Public Key"
-msgstr "Dosya iliştir"
+msgstr "Dosya iliÃ¾tir"
 
 #: kmcomposewin.cpp:534
 msgid "Attach My &Public Key"
@@ -901,40 +901,40 @@ msgstr "&Kaydet..."
 
 #: kmcomposewin.cpp:546
 msgid "Pr&operties..."
-msgstr "Ö&zellikler"
+msgstr "Ã–&zellikler"
 
 #: kmcomposewin.cpp:548
 msgid "&Attach"
-msgstr "İliş&tir..."
+msgstr "ÃliÃ¾&tir..."
 
 #: kmcomposewin.cpp:568
 #, fuzzy
 msgid "Send message"
-msgstr "İletileri gönder"
+msgstr "Ãletileri gÃ¶nder"
 
 #: kmcomposewin.cpp:594
 msgid "Cut selection"
-msgstr "Seçileni Kes"
+msgstr "SeÃ§ileni Kes"
 
 #: kmcomposewin.cpp:597
 msgid "Copy selection"
-msgstr "Seçileni Kopyala"
+msgstr "SeÃ§ileni Kopyala"
 
 #: kmcomposewin.cpp:600
 msgid "Paste clipboard contents"
-msgstr "Pano içeriğini yapıştır"
+msgstr "Pano iÃ§eriÃ°ini yapÃ½Ã¾tÃ½r"
 
 #: kmcomposewin.cpp:605
 msgid "Attach file"
-msgstr "Dosya iliştir"
+msgstr "Dosya iliÃ¾tir"
 
 #: kmcomposewin.cpp:616
 msgid "sign message"
-msgstr "İleti imzala"
+msgstr "Ãleti imzala"
 
 #: kmcomposewin.cpp:621
 msgid "encrypt message"
-msgstr "iletiyi şifreleme"
+msgstr "iletiyi Ã¾ifreleme"
 
 #: kmcomposewin.cpp:638 kmcomposewin.cpp:654
 msgid "Column"
@@ -942,23 +942,23 @@ msgstr "Kolon"
 
 #: kmcomposewin.cpp:639 kmcomposewin.cpp:652
 msgid "Line"
-msgstr "Satır"
+msgstr "SatÃ½r"
 
 #: kmcomposewin.cpp:920
 msgid "KMail Confirm"
-msgstr "KMail Doğrula"
+msgstr "KMail DoÃ°rula"
 
 #: kmcomposewin.cpp:921
 msgid ""
 "Close and discard\n"
 "edited message?"
 msgstr ""
-"Düzenlenmiş İletiyi\n"
-"kapatıp atmak?"
+"DÃ¼zenlenmiÃ¾ Ãletiyi\n"
+"kapatÃ½p atmak?"
 
 #: kmcomposewin.cpp:1194
 msgid "Attach File"
-msgstr "Dosya bağlama"
+msgstr "Dosya baÃ°lama"
 
 #: kmcomposewin.cpp:1216
 msgid "Include File"
@@ -974,7 +974,7 @@ msgstr ""
 
 #: kmcomposewin.cpp:1297 kmreaderwin.cpp:906
 msgid "View..."
-msgstr "Görünüm"
+msgstr "GÃ¶rÃ¼nÃ¼m"
 
 #: kmcomposewin.cpp:1298
 msgid "Save..."
@@ -982,15 +982,15 @@ msgstr "Kaydet..."
 
 #: kmcomposewin.cpp:1299 kmreaderwin.cpp:909
 msgid "Properties..."
-msgstr "Özellikler.."
+msgstr "Ã–zellikler.."
 
 #: kmcomposewin.cpp:1303
 msgid "Attach..."
-msgstr "İliştir..."
+msgstr "ÃliÃ¾tir..."
 
 #: kmcomposewin.cpp:1345 kmreaderwin.cpp:978 kmreaderwin.cpp:995
 msgid "View Attachment: "
-msgstr "İlişiktekini göster:"
+msgstr "ÃliÃ¾iktekini gÃ¶ster:"
 
 #: kmcomposewin.cpp:1539
 msgid "To:"
@@ -1008,7 +1008,7 @@ msgstr "Tarih: "
 #: kmcomposewin.cpp:1670
 #, fuzzy
 msgid "Spellcheck complete."
-msgstr "KMail:İmla Denetimi "
+msgstr "KMail:Ãmla Denetimi "
 
 #: kmcomposewin.cpp:2113
 msgid "Spellcheck - KMail"
@@ -1017,34 +1017,34 @@ msgstr ""
 #: kmcomposewin.cpp:2139
 msgid ""
 "Error starting KSpell. Please make sure you have ISpell properly configured."
-msgstr "Kspell çalıştırılamadı. Lütfen ISpell ayarlarına bakın "
+msgstr "Kspell Ã§alÃ½Ã¾tÃ½rÃ½lamadÃ½. LÃ¼tfen ISpell ayarlarÃ½na bakÃ½n "
 
 #: kmfolder.cpp:147
 #, c-format
 msgid "Folder `%s' changed. Recreating index."
-msgstr "`%s' dizini değişti. Yeniden dizin çıkarıyorum."
+msgstr "`%s' dizini deÃ°iÃ¾ti. Yeniden dizin Ã§Ã½karÃ½yorum."
 
 #: kmfolder.cpp:388
 #, c-format
 msgid "Creating index file: %d messages done"
-msgstr "Dizin dosya yaratılıyor: %d ileti tamamlandı"
+msgstr "Dizin dosya yaratÃ½lÃ½yor: %d ileti tamamlandÃ½"
 
 #: kmfolder.cpp:477
 msgid "Writing index file"
-msgstr "Dizin dosyası yazılıyor"
+msgstr "Dizin dosyasÃ½ yazÃ½lÃ½yor"
 
 #: kmfolder.cpp:934
 #, c-format
 msgid "Compacting folder: %d messages done"
-msgstr "Dizin sıkıştırılıyor: %d ileti tamamlandı"
+msgstr "Dizin sÃ½kÃ½Ã¾tÃ½rÃ½lÃ½yor: %d ileti tamamlandÃ½"
 
 #: kmmsgpartdlg.cpp:41
 msgid "Message Part Properties"
-msgstr "İleti Bölümü Özellikleri"
+msgstr "Ãleti BÃ¶lÃ¼mÃ¼ Ã–zellikleri"
 
 #: kmmsgpartdlg.cpp:73
 msgid "Description:"
-msgstr "Tanımlama:"
+msgstr "TanÃ½mlama:"
 
 #: kmmsgpartdlg.cpp:83
 msgid "Encoding:"
@@ -1052,7 +1052,7 @@ msgstr "Kodlama:"
 
 #: kmmsgpartdlg.cpp:89
 msgid "none (8bit)"
-msgstr "hiçbiri(8bit)"
+msgstr "hiÃ§biri(8bit)"
 
 #: kmmsgpartdlg.cpp:90
 msgid "base 64"
@@ -1077,7 +1077,7 @@ msgstr "Kime: "
 
 #: kmreaderwin.cpp:419 kmreaderwin.cpp:440 kmreaderwin.cpp:465
 msgid "References: "
-msgstr "Atıflar: "
+msgstr "AtÃ½flar: "
 
 #: kmreaderwin.cpp:436 kmreaderwin.cpp:449
 msgid "Date: "
@@ -1089,7 +1089,7 @@ msgstr "Bcc: "
 
 #: kmreaderwin.cpp:461
 msgid "Reply to: "
-msgstr "Yanıt adresi: "
+msgstr "YanÃ½t adresi: "
 
 #: kmreaderwin.cpp:468
 msgid "Groups: "
@@ -1097,19 +1097,19 @@ msgstr "Gruplar: "
 
 #: kmreaderwin.cpp:506
 msgid "Encrypted message"
-msgstr "Şifreli ileti"
+msgstr "Ãifreli ileti"
 
 #: kmreaderwin.cpp:512
 msgid "Cannot decrypt message:"
-msgstr "İleti deşifre olamıyor"
+msgstr "Ãleti deÃ¾ifre olamÃ½yor"
 
 #: kmreaderwin.cpp:521
 msgid "Message was signed by"
-msgstr "İletiyi imzalayan"
+msgstr "Ãletiyi imzalayan"
 
 #: kmreaderwin.cpp:522
 msgid "Warning: Bad signature from"
-msgstr "Uyarı: Bozuk imza"
+msgstr "UyarÃ½: Bozuk imza"
 
 #: kmreaderwin.cpp:532
 msgid "unknown key ID"
@@ -1117,11 +1117,11 @@ msgstr ""
 
 #: kmreaderwin.cpp:870
 msgid "Attachment: "
-msgstr "İlişik: "
+msgstr "ÃliÃ¾ik: "
 
 #: kmreaderwin.cpp:1084
 msgid "Could not save file"
-msgstr "Dosya kayıt edilemedi"
+msgstr "Dosya kayÃ½t edilemedi"
 
 #: kmacctmgr.cpp:116 kmacctmgr.cpp:223 kmacctmgr.cpp:285
 #, c-format
@@ -1137,17 +1137,17 @@ msgid ""
 "section of the settings in order to\n"
 "receive mail."
 msgstr ""
-"Mail alabilmek için Ağ ayarları bölümünde\n"
-"bir kullanıcı hesabı belirtmiş olmanız \n"
+"Mail alabilmek iÃ§in AÃ° ayarlarÃ½ bÃ¶lÃ¼mÃ¼nde\n"
+"bir kullanÃ½cÃ½ hesabÃ½ belirtmiÃ¾ olmanÃ½z \n"
 "gerekiyor."
 
 #: main.cpp:121 main.cpp:371
 msgid "warning"
-msgstr "uyarı"
+msgstr "uyarÃ½"
 
 #: main.cpp:128 main.cpp:129
 msgid "fatal error"
-msgstr "Ölümcül hata"
+msgstr "Ã–lÃ¼mcÃ¼l hata"
 
 #: main.cpp:306
 msgid "KMail notification"
@@ -1169,13 +1169,13 @@ msgid ""
 "\n"
 "Shall KMail move the mail folders now ?"
 msgstr ""
-"Bir ~/KMail dizini var. Ancak KMail bu sürümden itibaren\n"
-"~/Mail dizinini iletileri için kullanıyor.\n"
-"KMail, ~/KMail dizini içindeki dosyaları ~/Mail dizinine\n"
-"aktarabilir. Ancak bu hareket aynı isimdeki dosyaların\n"
-"~/Mail dizininde silinmesine neden olacak (örnek inbox).\n"
+"Bir ~/KMail dizini var. Ancak KMail bu sÃ¼rÃ¼mden itibaren\n"
+"~/Mail dizinini iletileri iÃ§in kullanÃ½yor.\n"
+"KMail, ~/KMail dizini iÃ§indeki dosyalarÃ½ ~/Mail dizinine\n"
+"aktarabilir. Ancak bu hareket aynÃ½ isimdeki dosyalarÃ½n\n"
+"~/Mail dizininde silinmesine neden olacak (Ã¶rnek inbox).\n"
 "\n"
-"Kmail ileti dizinlerini taşısın mı?"
+"Kmail ileti dizinlerini taÃ¾Ã½sÃ½n mÃ½?"
 
 #: main.cpp:485
 msgid "Loading addressbook failed"
@@ -1184,14 +1184,14 @@ msgstr ""
 #: main.cpp:588 main.cpp:729
 #, c-format
 msgid "Unknown command line option: %s"
-msgstr "Bilinmeyen komut satırı seçeneği: %s"
+msgstr "Bilinmeyen komut satÃ½rÃ½ seÃ§eneÃ°i: %s"
 
 #: kmacctlocal.cpp:77
 #, fuzzy
 msgid "Cannot open file:"
 msgstr ""
 "%s\n"
-"açılamıyor"
+"aÃ§Ã½lamÃ½yor"
 
 #: kmacctlocal.cpp:113
 #, c-format
@@ -1222,16 +1222,16 @@ msgid ""
 "destination folder in the settings\n"
 "and try again."
 msgstr ""
-"Lütfen, Sunucu, Port ve hedef\n"
-"dizin ayarlarını yapıp tekrar deneyin."
+"LÃ¼tfen, Sunucu, Port ve hedef\n"
+"dizin ayarlarÃ½nÃ½ yapÃ½p tekrar deneyin."
 
 #: kmacctpop.cpp:291
 msgid "Pop Mail Error"
-msgstr "Pop Mail Hatası"
+msgstr "Pop Mail HatasÃ½"
 
 #: kmacctpop.cpp:296
 msgid "Pop Mail Network Error"
-msgstr "Pop Mail Ağ Hatası"
+msgstr "Pop Mail AÃ° HatasÃ½"
 
 #: kmacctpop.cpp:312
 msgid "Unknown error"
@@ -1250,7 +1250,7 @@ msgstr ""
 
 #: kmacctpop.cpp:477
 msgid "Login Name:"
-msgstr "Kullanıcı Adı"
+msgstr "KullanÃ½cÃ½ AdÃ½"
 
 #: kmfolderdir.cpp:78
 #, c-format
@@ -1258,7 +1258,7 @@ msgid ""
 "Error while creating folder `%s':\n"
 "%s"
 msgstr ""
-"`%s' dizini yaratılırken oluşan hata:\n"
+"`%s' dizini yaratÃ½lÃ½rken oluÃ¾an hata:\n"
 "%s"
 
 #: kmfoldermgr.cpp:136
@@ -1268,7 +1268,7 @@ msgid ""
 "`%s'"
 msgstr ""
 "`%s'\n"
-"Eksik dizin yaratılıyor"
+"Eksik dizin yaratÃ½lÃ½yor"
 
 #: kmfoldermgr.cpp:139
 #, c-format
@@ -1277,7 +1277,7 @@ msgid ""
 "in %s"
 msgstr ""
 "%s'de\n"
-"%s dizini yaratılamıyor"
+"%s dizini yaratÃ½lamÃ½yor"
 
 #: kmsender.cpp:124
 msgid ""
@@ -1285,8 +1285,8 @@ msgid ""
 "method in the settings\n"
 "and try again."
 msgstr ""
-"Lütfen  ayarlarda \n"
-"bir gönderme yöntemi belirleyin \n"
+"LÃ¼tfen  ayarlarda \n"
+"bir gÃ¶nderme yÃ¶ntemi belirleyin \n"
 "ve tekrar deneyin"
 
 #: kmsender.cpp:130
@@ -1295,54 +1295,54 @@ msgid ""
 "identity settings:\n"
 "user-name and email-address"
 msgstr ""
-"Lütfen kimlik bilgilerinde gerekli olan\n"
-"kullanıcı ismi ve e-mail adresi\n"
-"alanlarını doldurunuz:"
+"LÃ¼tfen kimlik bilgilerinde gerekli olan\n"
+"kullanÃ½cÃ½ ismi ve e-mail adresi\n"
+"alanlarÃ½nÃ½ doldurunuz:"
 
 #: kmsender.cpp:155
 msgid "You must specify a receiver"
-msgstr "Bir gönderici tanımlamalısınız"
+msgstr "Bir gÃ¶nderici tanÃ½mlamalÃ½sÃ½nÃ½z"
 
 #: kmsender.cpp:166
 msgid "Cannot add message to outbox folder"
-msgstr "İleti gidenler dizinine eklenemiyor"
+msgstr "Ãleti gidenler dizinine eklenemiyor"
 
 #: kmsender.cpp:197
 msgid "Sending still in progress"
-msgstr "Gönderme işlemi Sürüyor"
+msgstr "GÃ¶nderme iÃ¾lemi SÃ¼rÃ¼yor"
 
 #: kmsender.cpp:255 kmsender.cpp:259
 msgid "Initiating sender process..."
-msgstr "Gönderme işlemi başlıyor..."
+msgstr "GÃ¶nderme iÃ¾lemi baÃ¾lÃ½yor..."
 
 #: kmsender.cpp:275
 msgid "Sending message: "
-msgstr "İleti Gönderiliyor:"
+msgstr "Ãleti GÃ¶nderiliyor:"
 
 #: kmsender.cpp:303
 msgid "Done sending messages."
-msgstr "İletiler gönderildi"
+msgstr "Ãletiler gÃ¶nderildi"
 
 #: kmsender.cpp:335
 msgid "Sending failed:"
-msgstr "Gönderme başarısız :"
+msgstr "GÃ¶nderme baÃ¾arÃ½sÃ½z :"
 
 #: kmsender.cpp:525
 msgid ""
 "Please specify a mailer program\n"
 "in the settings."
 msgstr ""
-"Lütfen ayarlarda bir ileti gönderme\n"
-"programı tanımlayınız."
+"LÃ¼tfen ayarlarda bir ileti gÃ¶nderme\n"
+"programÃ½ tanÃ½mlayÃ½nÃ½z."
 
 #: kmsender.cpp:574
 #, c-format
 msgid "Failed to execute mailer program %s"
-msgstr "İleti gönderme programı %s çalıştırılamadı"
+msgstr "Ãleti gÃ¶nderme programÃ½ %s Ã§alÃ½Ã¾tÃ½rÃ½lamadÃ½"
 
 #: kmsender.cpp:662
 msgid "connecting to server"
-msgstr "Sunucuya bağlanılıyor"
+msgstr "Sunucuya baÃ°lanÃ½lÃ½yor"
 
 #: kmsender.cpp:667
 #, c-format
@@ -1351,21 +1351,21 @@ msgid ""
 "host %s for sending:\n"
 "%s"
 msgstr ""
-"%s sunucu makınasına \n"
+"%s sunucu makÃ½nasÃ½na \n"
 "%s\n"
-"göndermek için SMTP bağlantısı kuramıyorum."
+"gÃ¶ndermek iÃ§in SMTP baÃ°lantÃ½sÃ½ kuramÃ½yorum."
 
 #: kmsender.cpp:696
 msgid "Cannot close SMTP connection."
-msgstr "STMP bağlantısını kapatamıyorum"
+msgstr "STMP baÃ°lantÃ½sÃ½nÃ½ kapatamÃ½yorum"
 
 #: kmsender.cpp:748
 msgid "transmitting message"
-msgstr "ileti gönderiliyor"
+msgstr "ileti gÃ¶nderiliyor"
 
 #: kmsender.cpp:785
 msgid "network error"
-msgstr "ağ hatası oluştu"
+msgstr "aÃ° hatasÃ½ oluÃ¾tu"
 
 #: kmsender.cpp:787
 #, c-format
@@ -1375,19 +1375,19 @@ msgid ""
 "Response: %s\n"
 "Return code: %d"
 msgstr ""
-"STMP hatası oluştu\n"
+"STMP hatasÃ½ oluÃ¾tu\n"
 "Komut: %s\n"
 "Cevap: %s\n"
-"Dönen değer: %d"
+"DÃ¶nen deÃ°er: %d"
 
 #: kmsender.cpp:802
 #, c-format
-msgid "Sending SMTP command: %s"
-msgstr "STMP komutu iletiliyor"
+#~ msgid "Sending SMTP command: %s"
+#~ msgstr "STMP komutu iletiliyor"
 
 #: kmacctseldlg.cpp:26
 msgid "Account Type"
-msgstr "Hesap türü"
+msgstr "Hesap tÃ¼rÃ¼"
 
 #: kmacctseldlg.cpp:45
 msgid "Local Mailbox"
@@ -1399,7 +1399,7 @@ msgstr "Pop3"
 
 #: kmfilteraction.cpp:93 kmfilteraction.cpp:197
 msgid "transfer"
-msgstr "aktarım"
+msgstr "aktarÃ½m"
 
 #: kmfilteraction.cpp:166 kmfilteraction.cpp:199
 msgid "skip rest"
@@ -1414,11 +1414,11 @@ msgid ""
 msgstr ""
 "%s\n"
 "%s\n"
-"İmza betiği çalıştırılamadı"
+"Ãmza betiÃ°i Ã§alÃ½Ã¾tÃ½rÃ½lamadÃ½"
 
 #: kmfolderseldlg.cpp:32
 msgid "Select folder"
-msgstr "Dizin seç"
+msgstr "Dizin seÃ§"
 
 #: kmfilter.cpp:197
 #, c-format
@@ -1427,29 +1427,29 @@ msgid ""
 "in filter rule `%s'.\n"
 "Ignoring it."
 msgstr ""
-"`%s' süzgeç eylemi\n"
-"`%s' süzgeç kuralında.\n"
-"Gözardı edildi."
+"`%s' sÃ¼zgeÃ§ eylemi\n"
+"`%s' sÃ¼zgeÃ§ kuralÃ½nda.\n"
+"GÃ¶zardÃ½ edildi."
 
 #: kmfilterdlg.cpp:62
 msgid "Filter Rules"
-msgstr "Süzgeç Kuralları"
+msgstr "SÃ¼zgeÃ§ KurallarÃ½"
 
 #: kmfilterdlg.cpp:143
 msgid "Up"
-msgstr "Yukarı"
+msgstr "YukarÃ½"
 
 #: kmfilterdlg.cpp:146
 msgid "Down"
-msgstr "Aşağı"
+msgstr "AÃ¾aÃ°Ã½"
 
 #: kmfilterdlg.cpp:544
 msgid "<nothing>"
-msgstr "<Hiç>"
+msgstr "<HiÃ§>"
 
 #: kmfilterdlg.cpp:555
 msgid "ignore"
-msgstr "görmezden gel"
+msgstr "gÃ¶rmezden gel"
 
 #: kmfilterdlg.cpp:556
 msgid "and"
@@ -1457,7 +1457,7 @@ msgstr "ve"
 
 #: kmfilterdlg.cpp:557
 msgid "unless"
-msgstr "olmadığı sürece"
+msgstr "olmadÃ½Ã°Ã½ sÃ¼rece"
 
 #: kmfilterdlg.cpp:558
 msgid "or"
@@ -1465,19 +1465,19 @@ msgstr "ya da"
 
 #: kmfilterdlg.cpp:564
 msgid "equals"
-msgstr "eşittir"
+msgstr "eÃ¾ittir"
 
 #: kmfilterdlg.cpp:565
 msgid "not equal"
-msgstr "eşit değil"
+msgstr "eÃ¾it deÃ°il"
 
 #: kmfilterdlg.cpp:566
 msgid "contains"
-msgstr "içeriyor"
+msgstr "iÃ§eriyor"
 
 #: kmfilterdlg.cpp:567
 msgid "doesn't contain"
-msgstr "içermiyor"
+msgstr "iÃ§ermiyor"
 
 #: kmfilterdlg.cpp:568
 msgid "regular expression"
@@ -1485,40 +1485,40 @@ msgstr "regular expression"
 
 #: kmfilterdlg.cpp:575
 msgid "<message>"
-msgstr "<İleti>"
+msgstr "<Ãleti>"
 
 #: kmfilterdlg.cpp:576
 msgid "<body>"
-msgstr "<gövde>"
+msgstr "<gÃ¶vde>"
 
 #: kmfilterdlg.cpp:577
 msgid "<any header>"
-msgstr "<Herhangi başlık>"
+msgstr "<Herhangi baÃ¾lÃ½k>"
 
 #: kpgp.cpp:151
 msgid ""
 "Couldn't find PGP executable.\n"
 "Please check your PATH is set correctly."
 msgstr ""
-"PGP yazılımı bulunamadı. PATH çevre\n"
-"değişkeninizin doğrulunu denetleyin."
+"PGP yazÃ½lÃ½mÃ½ bulunamadÃ½. PATH Ã§evre\n"
+"deÃ°iÃ¾keninizin doÃ°rulunu denetleyin."
 
 #: kpgp.cpp:193
 msgid ""
 "Could not find PGP executable.\n"
 "Please check your PATH is set correctly."
 msgstr ""
-"PGP yazılımı bulunamadı. PATH çevre\n"
-"değişkeninizin doğrulunu denetleyin."
+"PGP yazÃ½lÃ½mÃ½ bulunamadÃ½. PATH Ã§evre\n"
+"deÃ°iÃ¾keninizin doÃ°rulunu denetleyin."
 
 #: kpgp.cpp:207
 msgid "The pass phrase is missing."
-msgstr "Parola kısmı eksik"
+msgstr "Parola kÃ½smÃ½ eksik"
 
 #: kpgp.cpp:286 kpgp.cpp:312 kpgp.cpp:325 kpgp.cpp:344 kpgp.cpp:361
 #, fuzzy
 msgid "PGP Warning"
-msgstr "uyarı"
+msgstr "uyarÃ½"
 
 #: kpgp.cpp:287
 msgid ""
@@ -1542,7 +1542,7 @@ msgstr ""
 #: kpgp.cpp:311
 #, fuzzy
 msgid "decrypt the message."
-msgstr "iletiyi şifreleme"
+msgstr "iletiyi Ã¾ifreleme"
 
 #: kpgp.cpp:326
 msgid ""
@@ -1576,12 +1576,12 @@ msgid ""
 "Please enter your\n"
 "PGP passphrase"
 msgstr ""
-"Lütfen kendi PGP\n"
-"parolanızı girin"
+"LÃ¼tfen kendi PGP\n"
+"parolanÃ½zÃ½ girin"
 
 #: kpgp.cpp:744
 msgid "PGP Security Check"
-msgstr "PGP Güvenlik Denetimi"
+msgstr "PGP GÃ¼venlik Denetimi"
 
 #: kpgp.cpp:769
 msgid "Please select the public key to insert"
@@ -1590,11 +1590,11 @@ msgstr ""
 #: kpgp.cpp:800
 #, fuzzy
 msgid "Select key"
-msgstr "Dizin Seç "
+msgstr "Dizin SeÃ§ "
 
 #: kpgp.cpp:827
 msgid "PGP User Identity:"
-msgstr "PGP Kullanıcı Kimliği"
+msgstr "PGP KullanÃ½cÃ½ KimliÃ°i"
 
 #: kpgp.cpp:838
 msgid "Store passphrase"
@@ -1606,7 +1606,7 @@ msgstr ""
 
 #: kpgpbase.cpp:322
 msgid "Bad pass Phrase; couldn't sign"
-msgstr "Kötü Parola: imzalanamadı"
+msgstr "KÃ¶tÃ¼ Parola: imzalanamadÃ½"
 
 #: kpgpbase.cpp:361
 msgid "error running pgp"
@@ -1614,7 +1614,7 @@ msgstr ""
 
 #: kpgpbase.cpp:378 kpgpbase.cpp:669
 msgid "Bad pass Phrase; couldn't decrypt"
-msgstr "Kötü Parola: deşifre edilmedi"
+msgstr "KÃ¶tÃ¼ Parola: deÃ¾ifre edilmedi"
 
 #: kpgpbase.cpp:389 kpgpbase.cpp:680
 msgid "Do not have the secret key for this message"
@@ -1631,7 +1631,7 @@ msgstr ""
 #: kpgpbase.cpp:592
 #, fuzzy
 msgid "The passphrase you entered is invalid."
-msgstr "Parola kısmı eksik"
+msgstr "Parola kÃ½smÃ½ eksik"
 
 #: kpgpbase.cpp:618
 msgid ""
@@ -1646,12 +1646,12 @@ msgid ""
 "%s\n"
 "They will not be able to decrypt the message"
 msgstr ""
-"%s için genel anahtar bulunamadı\n"
-".Bu kişi ileti şifresini çözemeyecek"
+"%s iÃ§in genel anahtar bulunamadÃ½\n"
+".Bu kiÃ¾i ileti Ã¾ifresini Ã§Ã¶zemeyecek"
 
 #: kfileio.cpp:26 kmaddrbook.cpp:162
 msgid "File I/O Error"
-msgstr "Dosya girdi-çıktı hatası"
+msgstr "Dosya girdi-Ã§Ã½ktÃ½ hatasÃ½"
 
 #: kfileio.cpp:47
 #, c-format
@@ -1660,7 +1660,7 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"Dosyası bulunamıyor."
+"DosyasÃ½ bulunamÃ½yor."
 
 #: kfileio.cpp:54
 #, c-format
@@ -1669,7 +1669,7 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"bir dizin, dosya değil"
+"bir dizin, dosya deÃ°il"
 
 #: kfileio.cpp:61
 #, c-format
@@ -1678,7 +1678,7 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"'e okuma için erişim hakkınız yok"
+"'e okuma iÃ§in eriÃ¾im hakkÃ½nÃ½z yok"
 
 #: kfileio.cpp:72 kmaddrbook.cpp:152
 #, c-format
@@ -1687,7 +1687,7 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"okunamıyor"
+"okunamÃ½yor"
 
 #: kfileio.cpp:75 kmaddrbook.cpp:155
 #, c-format
@@ -1696,7 +1696,7 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"açılamıyor"
+"aÃ§Ã½lamÃ½yor"
 
 #: kfileio.cpp:78
 #, c-format
@@ -1705,7 +1705,7 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"okunurken hata oluştu"
+"okunurken hata oluÃ¾tu"
 
 #: kfileio.cpp:95
 #, c-format
@@ -1718,8 +1718,8 @@ msgid ""
 "File %s exists.\n"
 "Do you want to replace it ?"
 msgstr ""
-"%s dosyası mevcut.\n"
-"Üzerine yazmak istiyor musunuz?"
+"%s dosyasÃ½ mevcut.\n"
+"Ãœzerine yazmak istiyor musunuz?"
 
 #: kfileio.cpp:144
 #, c-format
@@ -1727,7 +1727,7 @@ msgid ""
 "Failed to make a backup copy of %s.\n"
 "Continue anyway ?"
 msgstr ""
-"%s için bir yedek yaratılamadı.\n"
+"%s iÃ§in bir yedek yaratÃ½lamadÃ½.\n"
 "Yine de devam edeyim mi?"
 
 #: kfileio.cpp:156 kfileio.cpp:175
@@ -1737,7 +1737,7 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"'e yazılamıyor"
+"'e yazÃ½lamÃ½yor"
 
 #: kfileio.cpp:159
 #, c-format
@@ -1746,7 +1746,7 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"yazılmak için açılamıyor"
+"yazÃ½lmak iÃ§in aÃ§Ã½lamÃ½yor"
 
 #: kfileio.cpp:163 kmaddrbook.cpp:158
 #, c-format
@@ -1755,17 +1755,17 @@ msgid ""
 "%s"
 msgstr ""
 "%s\n"
-"'e yazılırken hata oluştu"
+"'e yazÃ½lÃ½rken hata oluÃ¾tu"
 
 #: kfileio.cpp:181
 #, c-format
 msgid "Could only write %d bytes of %d."
-msgstr "%d byte (%d byte'dan) yazılabildi."
+msgstr "%d byte (%d byte'dan) yazÃ½labildi."
 
 #: kmaddrbook.cpp:25
 #, fuzzy
 msgid "KMail Error"
-msgstr "Kmail hatası"
+msgstr "Kmail hatasÃ½"
 
 #: kmaddrbook.cpp:26
 msgid "Storing the addressbook failed!\n"
@@ -1777,7 +1777,7 @@ msgstr "Adres Defteri"
 
 #: kmaddrbookdlg.cpp:95
 msgid "Addressbook Manager"
-msgstr "Adres Defteri Düzenleyicisi"
+msgstr "Adres Defteri DÃ¼zenleyicisi"
 
 #: kmaddrbookdlg.cpp:179
 #, fuzzy
@@ -1786,52 +1786,52 @@ msgstr "Adres Defterine Ekle "
 
 #: kmiostatusdlg.cpp:32
 msgid "&Abort"
-msgstr "&Vazgeç"
+msgstr "&VazgeÃ§"
 
 #: kmnewiostatuswdg.cpp:26
 #, fuzzy
 msgid "Abort"
-msgstr "&Vazgeç"
+msgstr "&VazgeÃ§"
 
 #: kmnewiostatuswdg.cpp:43
 msgid "Sending messages to "
-msgstr "İletiler gönderiliyor "
+msgstr "Ãletiler gÃ¶nderiliyor "
 
 #: kmnewiostatuswdg.cpp:46
 msgid "Retrieving messages from "
-msgstr "İletiler alınıyor "
+msgstr "Ãletiler alÃ½nÃ½yor "
 
 #: kmnewiostatuswdg.cpp:56
 msgid "Preparing transmission..."
-msgstr "İletmeye hazırlanılıyor..."
+msgstr "Ãletmeye hazÃ½rlanÃ½lÃ½yor..."
 
 #: kmnewiostatuswdg.cpp:62
 msgid "Transmission completed..."
-msgstr "İletişim tamam..."
+msgstr "ÃletiÃ¾im tamam..."
 
 #: kmnewiostatuswdg.cpp:97
 msgid "Aborting transmission...\n"
-msgstr "İletişim kesiliyor...\n"
+msgstr "ÃletiÃ¾im kesiliyor...\n"
 
 #: charsetsDlg.cpp:27
 msgid "KRN - Charset Settings"
-msgstr "KRN - Karakter ayarlaması"
+msgstr "KRN - Karakter ayarlamasÃ½"
 
 #: charsetsDlg.cpp:29
 msgid "KMail - Charset Settings"
-msgstr "KMail - Karakter ayarlaması"
+msgstr "KMail - Karakter ayarlamasÃ½"
 
 #: charsetsDlg.cpp:39
 msgid "Message charset"
-msgstr "İleti karakterleri"
+msgstr "Ãleti karakterleri"
 
 #: charsetsDlg.cpp:57
 msgid "Composer charset"
-msgstr "Düzenleyici Karakterleri"
+msgstr "DÃ¼zenleyici Karakterleri"
 
 #: charsetsDlg.cpp:75
 msgid "Set as &default"
-msgstr "Ö&ntanımlı olarak kabul et"
+msgstr "Ã–&ntanÃ½mlÃ½ olarak kabul et"
 
 #: charsetsDlg.cpp:80
 msgid "&7 bit is ASCII"
@@ -1839,43 +1839,43 @@ msgstr "&7 bit ASCII"
 
 #: charsetsDlg.cpp:84
 msgid "&Qute unknonw characters"
-msgstr "&Bilinmeyen Karakterleri tırnağa al"
+msgstr "&Bilinmeyen Karakterleri tÃ½rnaÃ°a al"
 
 #~ msgid ""
 #~ "Cannot modify a\n"
 #~ "system folder."
 #~ msgstr ""
-#~ "Sistem dosyasıdır.\n"
-#~ "Değiştirilemez"
+#~ "Sistem dosyasÃ½dÃ½r.\n"
+#~ "DeÃ°iÃ¾tirilemez"
 
 #~ msgid ""
 #~ "Are you sure you want to discard the\n"
 #~ "contents of the folder \"%s\" ?"
 #~ msgstr ""
-#~ "\"%s\" dizininin içindekileri\n"
-#~ "silmek istediğinizden emin misiniz?"
+#~ "\"%s\" dizininin iÃ§indekileri\n"
+#~ "silmek istediÃ°inizden emin misiniz?"
 
 #~ msgid ""
 #~ "Changing fonts currently only occurs when a new\n"
 #~ "window is opened or kmail is restarted"
 #~ msgstr ""
-#~ "Yazı tiplerinde yapacağınız değişiklikler yeni pencere \n"
-#~ "açıldığında veya yenidn başladığınızda etkili olacaktır."
+#~ "YazÃ½ tiplerinde yapacaÃ°Ã½nÃ½z deÃ°iÃ¾iklikler yeni pencere \n"
+#~ "aÃ§Ã½ldÃ½Ã°Ã½nda veya yenidn baÃ¾ladÃ½Ã°Ã½nÃ½zda etkili olacaktÃ½r."
 
 #~ msgid "Could not create temporary file"
-#~ msgstr "Geçici dosya yaratılamadı"
+#~ msgstr "GeÃ§ici dosya yaratÃ½lamadÃ½"
 
 #~ msgid "Could not save temporary file %s"
-#~ msgstr "Geçici dosya %s kayıt edilemedi"
+#~ msgstr "GeÃ§ici dosya %s kayÃ½t edilemedi"
 
 #~ msgid "Error during PGP:"
-#~ msgstr "PGP sırasında hata oluştu"
+#~ msgstr "PGP sÃ½rasÃ½nda hata oluÃ¾tu"
 
 #~ msgid "Message signed by"
-#~ msgstr "İletiyi İmzalayan"
+#~ msgstr "Ãletiyi Ãmzalayan"
 
 #~ msgid "Message has a bad signature from"
-#~ msgstr "İleti kötü bir imza içeriyor"
+#~ msgstr "Ãleti kÃ¶tÃ¼ bir imza iÃ§eriyor"
 
 #~ msgid "End PGP signed message"
-#~ msgstr "PGP imzalı ileti sonu"
+#~ msgstr "PGP imzalÃ½ ileti sonu"

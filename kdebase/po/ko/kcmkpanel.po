@@ -11,16 +11,16 @@ msgstr ""
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "ÆĞ³Î(&P)"
+msgstr "Ã†ÃÂ³Ã(&P)"
 
 #: main.cpp:70
 msgid "&Desktops"
-msgstr "µ¥½ºÅ©Å¾(&D)"
+msgstr "ÂµÂ¥Â½ÂºÃ…Â©Ã…Â¾(&D)"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
@@ -29,27 +29,27 @@ msgstr ""
 #: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "»ç¿ë¹ı: kcmkpanel [-init | {ÆĞ³Î,¿É¼Ç,µ¥½ºÅ©Å¾}]\n"
+msgstr "Â»Ã§Â¿Ã«Â¹Ã½: kcmkpanel [-init | {Ã†ÃÂ³Ã,Â¿Ã‰Â¼Ã‡,ÂµÂ¥Â½ÂºÃ…Â©Ã…Â¾}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "KPanel ¼³Á¤"
+msgstr "KPanel Â¼Â³ÃÂ¤"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "À§Ä¡"
+msgstr "Ã€Â§Ã„Â¡"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "À§(&T)"
+msgstr "Ã€Â§(&T)"
 
 #: panel.cpp:61
 msgid "&Left"
-msgstr "¿ŞÂÊ(&L)"
+msgstr "Â¿ÃÃ‚ÃŠ(&L)"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr "¾Æ·¡(&B)"
+msgstr "Â¾Ã†Â·Â¡(&B)"
 
 #: panel.cpp:63
 msgid "&Right"
@@ -57,23 +57,23 @@ msgstr ""
 
 #: panel.cpp:75
 msgid "Taskbar"
-msgstr "ÅÂ½ºÅ©¹Ù"
+msgstr "Ã…Ã‚Â½ÂºÃ…Â©Â¹Ã™"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "¼û±è(&H)"
+msgstr "Â¼Ã»Â±Ã¨(&H)"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "À§(&o)"
+msgstr "Ã€Â§(&o)"
 
 #: panel.cpp:80
 msgid "Botto&m"
-msgstr "¾Æ·¡(&m)"
+msgstr "Â¾Ã†Â·Â¡(&m)"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "À§/¿ŞÂÊ(&f)"
+msgstr "Ã€Â§/Â¿ÃÃ‚ÃŠ(&f)"
 
 #: panel.cpp:95
 msgid "Style"
@@ -81,35 +81,35 @@ msgstr ""
 
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "ÃÖ¼Ò(&i)"
+msgstr "ÃƒÃ–Â¼Ã’(&i)"
 
 #: panel.cpp:99
 msgid "&Normal"
-msgstr "º¸Åë(&N)"
+msgstr "ÂºÂ¸Ã…Ã«(&N)"
 
 #: panel.cpp:101
 msgid "L&arge"
-msgstr "ÃÖ´ë(&a)"
+msgstr "ÃƒÃ–Â´Ã«(&a)"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "°¡»óÃ¢ °¹¼ö(&V)"
+msgstr "Â°Â¡Â»Ã³ÃƒÂ¢ Â°Â¹Â¼Ã¶(&V)"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr "ÆĞ³Î³ĞÀÌ(&W)"
+msgstr "Ã†ÃÂ³ÃÂ³ÃÃ€ÃŒ(&W)"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Ç³¼±µµ¿ò¸»"
+msgstr "Ã‡Â³Â¼Â±ÂµÂµÂ¿Ã²Â¸Â»"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Ç³¼±µµ¿ò¸» º¸ÀÌ±â(&M)"
+msgstr "Ã‡Â³Â¼Â±ÂµÂµÂ¿Ã²Â¸Â» ÂºÂ¸Ã€ÃŒÂ±Ã¢(&M)"
 
 #: options.cpp:84
 msgid "De&lay:"
-msgstr "Áö¿¬½Ã°£(&l)"
+msgstr "ÃÃ¶Â¿Â¬Â½ÃƒÂ°Â£(&l)"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
@@ -118,7 +118,7 @@ msgstr ""
 #: options.cpp:98 options.cpp:167 options.cpp:269
 #, fuzzy
 msgid "Large"
-msgstr "ÃÖ´ë(&a)"
+msgstr "ÃƒÃ–Â´Ã«(&a)"
 
 #: options.cpp:110
 msgid "Visuals"
@@ -126,12 +126,12 @@ msgstr ""
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "ÆĞ³Î ÀÚµ¿ °¨Ãß±â(&H)"
+msgstr "Ã†ÃÂ³Ã Ã€ÃšÂµÂ¿ Â°Â¨ÃƒÃŸÂ±Ã¢(&H)"
 
 #: options.cpp:153 options.cpp:255
 #, fuzzy
 msgid "Delay:"
-msgstr "Áö¿¬½Ã°£(&l)"
+msgstr "ÃÃ¶Â¿Â¬Â½ÃƒÂ°Â£(&l)"
 
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
@@ -147,7 +147,7 @@ msgstr ""
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "ÅÂ½ºÅ©¹Ù ÀÚµ¿ ¼û±â±â(&T)"
+msgstr "Ã…Ã‚Â½ÂºÃ…Â©Â¹Ã™ Ã€ÃšÂµÂ¿ Â¼Ã»Â±Ã¢Â±Ã¢(&T)"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
@@ -155,17 +155,17 @@ msgstr ""
 
 #: options.cpp:395
 msgid "Others"
-msgstr "±âÅ¸"
+msgstr "Â±Ã¢Ã…Â¸"
 
 #: options.cpp:408
 #, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "°³ÀÎ »ç¿ëÀÚ ¿ì¼±(&F)"
+msgstr "Â°Â³Ã€Ã Â»Ã§Â¿Ã«Ã€Ãš Â¿Ã¬Â¼Â±(&F)"
 
 #: options.cpp:416
 #, fuzzy
 msgid "Menu F&olders First"
-msgstr "°³ÀÎ »ç¿ëÀÚ ¿ì¼±(&F)"
+msgstr "Â°Â³Ã€Ã Â»Ã§Â¿Ã«Ã€Ãš Â¿Ã¬Â¼Â±(&F)"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
@@ -214,12 +214,12 @@ msgstr ""
 #: disknav.cpp:173
 #, fuzzy
 msgid "Show Shared section"
-msgstr "À§Ä¡"
+msgstr "Ã€Â§Ã„Â¡"
 
 #: disknav.cpp:180
 #, fuzzy
 msgid "Show Personal section"
-msgstr "À§Ä¡"
+msgstr "Ã€Â§Ã„Â¡"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
@@ -237,10 +237,10 @@ msgstr ""
 #~ msgstr "ms"
 
 #~ msgid "Clock"
-#~ msgstr "½Ã°è"
+#~ msgstr "Â½ÃƒÂ°Ã¨"
 
 #~ msgid "&24h"
-#~ msgstr "24½Ã°£(&2)"
+#~ msgstr "24Â½ÃƒÂ°Â£(&2)"
 
 #~ msgid "&12h AM/PM"
-#~ msgstr "12½Ã°£ AM/PM(&1)"
+#~ msgstr "12Â½ÃƒÂ°Â£ AM/PM(&1)"

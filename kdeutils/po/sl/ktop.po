@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ktop.cpp:66
@@ -67,11 +67,11 @@ msgstr ""
 
 #: MainMenu.cpp:64
 msgid "Manual Refresh"
-msgstr "RoËno obnovi"
+msgstr "Roƒçno obnovi"
 
 #: MainMenu.cpp:65
 msgid "Slow Refresh"
-msgstr "PoËasno obnavljanje"
+msgstr "Poƒçasno obnavljanje"
 
 #: MainMenu.cpp:66
 msgid "Medium Refresh"
@@ -95,27 +95,27 @@ msgstr "renice opravilo..."
 
 #: ProcessMenu.cpp:47
 msgid "send SIGINT\t(ctrl-c)"
-msgstr "poπlji SIGINT\t(ctrl-c)"
+msgstr "po≈°lji SIGINT\t(ctrl-c)"
 
 #: ProcessMenu.cpp:48
 msgid "send SIGQUIT\t(core)"
-msgstr "poπlji SIGQUIT\t(izvræi core)"
+msgstr "po≈°lji SIGQUIT\t(izvr≈æi core)"
 
 #: ProcessMenu.cpp:49
 msgid "send SIGTERM\t(term.)"
-msgstr "poπlji SIGTERM\t(ukini)"
+msgstr "po≈°lji SIGTERM\t(ukini)"
 
 #: ProcessMenu.cpp:50
 msgid "send SIGKILL\t(term.)"
-msgstr "poπlji SIGKILL\t(ukini)"
+msgstr "po≈°lji SIGKILL\t(ukini)"
 
 #: ProcessMenu.cpp:52
 msgid "send SIGUSR1\t(user1)"
-msgstr "poπlji SIGUSR1t(uporabnik1)"
+msgstr "po≈°lji SIGUSR1t(uporabnik1)"
 
 #: ProcessMenu.cpp:53
 msgid "send SIGUSR2\t(user2)"
-msgstr "poπlji SIGUSR2\t(uporabnik2)"
+msgstr "po≈°lji SIGUSR2\t(uporabnik2)"
 
 #: ProcessMenu.cpp:74 ProcessMenu.cpp:86 ProcessMenu.cpp:150
 #: ProcessMenu.cpp:158 ProcessMenu.cpp:176
@@ -129,7 +129,7 @@ msgstr "Najprej morate izbrati proces!"
 #: ProcessMenu.cpp:85 ProcessMenu.cpp:149
 #, c-format
 msgid "The process %d is no longer persistent."
-msgstr "Proces %d ne vztraja veË."
+msgstr "Proces %d ne vztraja veƒç."
 
 #: ProcessMenu.cpp:98
 msgid "SIGINT"
@@ -165,7 +165,7 @@ msgid ""
 "Send signal %s to process %d?\n"
 "(Process name: %s  Owner: %s)\n"
 msgstr ""
-"Poπljem signal %s procesu %d?\n"
+"Po≈°ljem signal %s procesu %d?\n"
 "(Ime procesa: %s Lastnik: %s)\n"
 
 #: ProcessMenu.cpp:126
@@ -188,15 +188,15 @@ msgstr "&Seznam procesov"
 
 #: TaskMan.cpp:81
 msgid "Performance &Meter"
-msgstr "PerformanËni &meter"
+msgstr "Performanƒçni &meter"
 
 #: ProcListPage.cpp:42
 msgid "Running Processes"
-msgstr "TekoËi procesi"
+msgstr "Tekoƒçi procesi"
 
 #: ProcListPage.cpp:49
 msgid "Show Tree"
-msgstr "Prikaæo drevo"
+msgstr "Prika≈æo drevo"
 
 #: ProcListPage.cpp:60
 msgid "All processes"
@@ -232,7 +232,7 @@ msgstr "Dodaj stolpec"
 
 #: ProcessList.cpp:229
 msgid "Help on Column"
-msgstr "PomoË o stolpcu"
+msgstr "Pomoƒç o stolpcu"
 
 #: ProcessList.cpp:691 ProcessList.cpp:692
 msgid "Name"
@@ -252,7 +252,7 @@ msgstr "CPU"
 
 #: ProcessList.cpp:701
 msgid "Time"
-msgstr "»as"
+msgstr "ƒåas"
 
 #: ProcessList.cpp:702
 msgid "Nice"
@@ -268,7 +268,7 @@ msgstr "Pomnilnik"
 
 #: ProcessList.cpp:705
 msgid "Resident"
-msgstr "BivajoË"
+msgstr "Bivajoƒç"
 
 #: ProcessList.cpp:706
 msgid "Shared"
@@ -286,7 +286,7 @@ msgid ""
 msgstr ""
 "Ne morem odpreti imenika '/proc'!\n"
 "Jedro mora biti prevedeno z vklopljeno\n"
-"podporo za datoteËni sistem /proc!"
+"podporo za datoteƒçni sistem /proc!"
 
 #: OSProcessList.cpp:266
 msgid "Cannot read status of processes\n"
@@ -294,16 +294,16 @@ msgstr "Ne morem prebrati status procesov\n"
 
 #: OSProcessList.cpp:367
 msgid "Your OS is not supported yet.  Sorry"
-msgstr "Vaπ OS πe ni podprt. Oprostite"
+msgstr "Va≈° OS ≈°e ni podprt. Oprostite"
 
 #: OSProcess.cpp:123 OSProcess.cpp:154 OSProcess.cpp:171
 #, c-format
 msgid "Cannot open %s!\n"
-msgstr "Ni moæno odpreti %s!\n"
+msgstr "Ni mo≈æno odpreti %s!\n"
 
 #: OSProcess.cpp:183
 msgid "Run"
-msgstr "Poæeni"
+msgstr "Po≈æeni"
 
 #: OSProcess.cpp:186
 msgid "Sleep"
@@ -328,12 +328,12 @@ msgstr "????"
 #: OSProcess.cpp:320
 #, c-format
 msgid "Could not set new nice level for process %d"
-msgstr "Novega nivoja nice za proces %d ni moæno nastaviti"
+msgstr "Novega nivoja nice za proces %d ni mo≈æno nastaviti"
 
 #: OSProcess.cpp:334
 #, c-format
 msgid "Cound not send signal %d to process %d"
-msgstr "Ni moæno poslati signala %d procesu %d"
+msgstr "Ni mo≈æno poslati signala %d procesu %d"
 
 #: PerfMonPage.cpp:49
 msgid "CPU Load History"
@@ -386,9 +386,9 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Ni moæno odpreti datoteke '/proc/stat'!\n"
-"Jedro mora biti prevedeno z vkljuËeno podporo\n"
-"za datoteËni sistem /proc!"
+"Ni mo≈æno odpreti datoteke '/proc/stat'!\n"
+"Jedro mora biti prevedeno z vkljuƒçeno podporo\n"
+"za datoteƒçni sistem /proc!"
 
 #: OSStatus.cpp:120 OSStatus.cpp:303 OSStatus.cpp:378
 msgid ""
@@ -396,13 +396,13 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Ni moæno odpreti datoteke '/proc/meminfo'!\n"
-"Jedro mora biti prevedeno z vkljuËeno podporo\n"
-"za datoteËni sistem /proc!"
+"Ni mo≈æno odpreti datoteke '/proc/meminfo'!\n"
+"Jedro mora biti prevedeno z vkljuƒçeno podporo\n"
+"za datoteƒçni sistem /proc!"
 
 #: OSStatus.cpp:311
 msgid "Cannot read memory info file '/proc/meminfo'!\n"
-msgstr "Ni moæno prebrati informacij o pomnilniku v '/proc/meminfo'!\n"
+msgstr "Ni mo≈æno prebrati informacij o pomnilniku v '/proc/meminfo'!\n"
 
 #: OSStatus.cpp:354
 #, c-format
@@ -411,21 +411,21 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Ni moæno prebrati informacij o %s iz '/proc/stat'!\n"
-"Jedro mora biti prevedeno z vkljuËeno podporo\n"
-"za datoteËni sistem /proc!"
+"Ni mo≈æno prebrati informacij o %s iz '/proc/stat'!\n"
+"Jedro mora biti prevedeno z vkljuƒçeno podporo\n"
+"za datoteƒçni sistem /proc!"
 
 #: OSStatus.cpp:386
 msgid "Cannot read swap info from '/proc/meminfo'!\n"
 msgstr ""
-"Ni moæno prebrati informacij o izmenjalnem prostoru v '/proc/meminfo'!\n"
+"Ni mo≈æno prebrati informacij o izmenjalnem prostoru v '/proc/meminfo'!\n"
 
 #: OSStatus.cpp:575 OSStatus.cpp:588 OSStatus.cpp:615 OSStatus.cpp:624
 msgid ""
 "Your system is not currently supported.\n"
 "Sorry"
 msgstr ""
-"Vaπ sistem trenutno πe ni podprt.\n"
+"Va≈° sistem trenutno ≈°e ni podprt.\n"
 "Oprostite"
 
 #: ReniceDlg.cpp:32
@@ -444,8 +444,8 @@ msgid ""
 msgstr ""
 "Ste pred tem, da spremenite razporejevalno prioriteto\n"
 "procesa %d. Bodite pozorni na to, da lahko le superuporabnik\n"
-"(root) zmanjπa nice nivo procesa. Manjπa kot je πtevilka,\n"
-"veËjo prioriteto ima proces.\n"
+"(root) zmanj≈°a nice nivo procesa. Manj≈°a kot je ≈°tevilka,\n"
+"veƒçjo prioriteto ima proces.\n"
 "\n"
-"Prosim vnesite æeljeni nivo nice:"
+"Prosim vnesite ≈æeljeni nivo nice:"
 

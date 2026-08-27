@@ -8,7 +8,7 @@ msgstr ""
 "Last-Translator: Andrea Rizzi <BILIBAO@ouverture.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kmcomposewin.cpp:1516 kmmainwin.cpp:377 kpgp.cpp:546
@@ -17,7 +17,7 @@ msgid ""
 "is still missing"
 msgstr ""
 "Mi dispiace ma questa caratteristica\n"
-"non Ë ancora presente"
+"non √® ancora presente"
 
 #: kmmainwin.cpp:386
 msgid "New Folder"
@@ -29,7 +29,7 @@ msgstr "errore KMail"
 
 #: kmmainwin.cpp:400 kmmainwin.cpp:434
 msgid "Already checking for mail!"
-msgstr "Controllo nuova posta gi‡ in corso"
+msgstr "Controllo nuova posta gi√† in corso"
 
 #: kmmainwin.cpp:410 kmmainwin.cpp:444
 msgid "No new mail available"
@@ -48,7 +48,7 @@ msgid ""
 "Cannot remove a\n"
 "system folder."
 msgstr ""
-"Non si puÚ rimuovere una\n"
+"Non si pu√≤ rimuovere una\n"
 "cartella di sistema"
 
 #: kmmainwin.cpp:520
@@ -400,7 +400,7 @@ msgstr "File \"firma\":"
 
 #: kmsettings.cpp:193 kpgp.cpp:821
 msgid "Identity"
-msgstr "Identit‡"
+msgstr "Identit√†"
 
 #: kmsettings.cpp:212
 msgid "Sending Mail"
@@ -688,7 +688,7 @@ msgstr "%d Messaggi, %d non letti."
 
 #: kmheaders.cpp:227
 msgid "Folder is read-only."
-msgstr "La cartella Ë di sola lettura."
+msgstr "La cartella √® di sola lettura."
 
 #: kmheaders.cpp:279
 msgid "Unknown"
@@ -901,7 +901,7 @@ msgstr "&Salva..."
 
 #: kmcomposewin.cpp:546
 msgid "Pr&operties..."
-msgstr "Pr&opriet‡"
+msgstr "Pr&opriet√†"
 
 #: kmcomposewin.cpp:548
 msgid "&Attach"
@@ -982,7 +982,7 @@ msgstr "Salva..."
 
 #: kmcomposewin.cpp:1299 kmreaderwin.cpp:909
 msgid "Properties..."
-msgstr "Propriet‡..."
+msgstr "Propriet√†..."
 
 #: kmcomposewin.cpp:1303
 msgid "Attach..."
@@ -1043,7 +1043,7 @@ msgstr "Compressione cartella: %d messaggi fatti"
 
 #: kmmsgpartdlg.cpp:41
 msgid "Message Part Properties"
-msgstr "Propriet‡ parte messaggio"
+msgstr "Propriet√† parte messaggio"
 
 #: kmmsgpartdlg.cpp:73
 msgid "Description:"
@@ -1165,7 +1165,7 @@ msgid ""
 "KMail cannot start without it.\n"
 msgstr ""
 "$HOME non impostato!\n"
-"KMail non puÚ partire senza di esso.\n"
+"KMail non pu√≤ partire senza di esso.\n"
 
 #: main.cpp:373
 msgid ""
@@ -1177,10 +1177,10 @@ msgid ""
 "\n"
 "Shall KMail move the mail folders now ?"
 msgstr ""
-"La directory ~/KMail esiste. Da adesso, KMail user‡\n"
+"La directory ~/KMail esiste. Da adesso, KMail user√†\n"
 "la directory ~/Mail per i suoi messaggi.\n"
-"KMail puÚ spostare il contenuto della directory ~/KMail in\n"
-"~/Mail, ma in questo modo saranno sovrascritti i file gi‡ esistenti\n"
+"KMail pu√≤ spostare il contenuto della directory ~/KMail in\n"
+"~/Mail, ma in questo modo saranno sovrascritti i file gi√† esistenti\n"
 "con lo stesso nome nella directory ~/Mail (per esempio inbox).\n"
 "\n"
 "Vuoi che KMail sposti le cartelle di posta ora ?"
@@ -1303,7 +1303,7 @@ msgid ""
 "user-name and email-address"
 msgstr ""
 "Per favore imposta le voci richieste\n"
-"nelle impostazioni dell'identit‡:\n"
+"nelle impostazioni dell'identit√†:\n"
 "Nome-Utente e Indirizzo-EMail"
 
 #: kmsender.cpp:155
@@ -1312,7 +1312,7 @@ msgstr "Devi specificare un destinatario"
 
 #: kmsender.cpp:166
 msgid "Cannot add message to outbox folder"
-msgstr "Non si puÚ aggiungere un messaggio alla cartella Outbox"
+msgstr "Non si pu√≤ aggiungere un messaggio alla cartella Outbox"
 
 #: kmsender.cpp:197
 msgid "Sending still in progress"
@@ -1382,7 +1382,7 @@ msgid ""
 "Response: %s\n"
 "Return code: %d"
 msgstr ""
-"si Ë verificato un errore SMTP.\n"
+"si √® verificato un errore SMTP.\n"
 "Comando. %s\n"
 "Risposta: %s\n"
 "Codice ritorno: %d"
@@ -1449,7 +1449,7 @@ msgstr "Su"
 
 #: kmfilterdlg.cpp:146
 msgid "Down"
-msgstr "Gi˘"
+msgstr "Gi√π"
 
 #: kmfilterdlg.cpp:544
 msgid "<nothing>"
@@ -1536,7 +1536,7 @@ msgid ""
 msgstr ""
 "Impossibile trovare la chiave pubblica per\n"
 "i destinatari di questa lettera\n"
-"Il messaggio non sar‡ crittato."
+"Il messaggio non sar√† crittato."
 
 #: kpgp.cpp:296
 msgid "Could not find the public keys for\n"
@@ -1548,7 +1548,7 @@ msgstr "Queste persone non saranno in grado di\n"
 
 #: kpgp.cpp:309
 msgid "This person will not be able to\n"
-msgstr "Questa persona non sar‡ in gardo di\n"
+msgstr "Questa persona non sar√† in gardo di\n"
 
 #
 #: kpgp.cpp:311
@@ -1575,7 +1575,7 @@ msgid ""
 "message as is, or cancel the message?"
 msgstr ""
 "Vuoi crittare il messaggio comunque, lasciarlo come\n"
-"Ë o cancellare il messaggio?"
+"√® o cancellare il messaggio?"
 
 #: kpgp.cpp:346
 msgid "Encrypt"
@@ -1586,7 +1586,7 @@ msgid ""
 "Do you wan't to leave the message as is,\n"
 "or cancel the message?"
 msgstr ""
-"Vuoi lasciare il messaggio come Ë\n"
+"Vuoi lasciare il messaggio come √®\n"
 "o canccellare il messaggio?"
 
 #: kpgp.cpp:717
@@ -1611,7 +1611,7 @@ msgstr "Scegli chiave"
 
 #: kpgp.cpp:827
 msgid "PGP User Identity:"
-msgstr "Identit‡ PGP utente:"
+msgstr "Identit√† PGP utente:"
 
 #: kpgp.cpp:838
 msgid "Store passphrase"
@@ -1685,7 +1685,7 @@ msgid ""
 "This is a directory and not a file:\n"
 "%s"
 msgstr ""
-"Questa Ë una directory non un file:\n"
+"Questa √® una directory non un file:\n"
 "%s"
 
 #: kfileio.cpp:61
@@ -1776,8 +1776,8 @@ msgstr ""
 
 #: kfileio.cpp:181
 #, c-format
-msgid "Could only write %d bytes of %d."
-msgstr "E' stato possibile scrivere solo %s byte su %d."
+#~ msgid "Could only write %d bytes of %d."
+#~ msgstr "E' stato possibile scrivere solo %s byte su %d."
 
 #
 #: kmaddrbook.cpp:25
@@ -1860,7 +1860,7 @@ msgstr ""
 #~ "Cannot modify a\n"
 #~ "system folder."
 #~ msgstr ""
-#~ "Non si puÚ modificare una\n"
+#~ "Non si pu√≤ modificare una\n"
 #~ "cartella di sistema."
 
 #         c-format

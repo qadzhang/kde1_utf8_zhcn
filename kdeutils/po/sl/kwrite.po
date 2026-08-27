@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: highlight.cpp:1715
@@ -27,7 +27,7 @@ msgstr "Krepko"
 
 #: highlight.cpp:1783
 msgid "Family:"
-msgstr "Druæina:"
+msgstr "Dru≈æina:"
 
 #: highlight.cpp:1793
 msgid "Size:"
@@ -59,7 +59,7 @@ msgstr "Poudari samodejni izbor"
 
 #: highlight.cpp:1977
 msgid "File Extensions:"
-msgstr "DatoteËni podaljπki:"
+msgstr "Datoteƒçni podalj≈°ki:"
 
 #: highlight.cpp:1984
 msgid "Mime Types:"
@@ -107,7 +107,7 @@ msgstr "Nalagam..."
 
 #: kwview.cpp:1239 kwview.cpp:1360
 msgid "Inserted"
-msgstr "Vneπen"
+msgstr "Vne≈°en"
 
 #: kwview.cpp:1244 kwview.cpp:1369
 msgid "Read"
@@ -120,14 +120,14 @@ msgid ""
 "Please wait until it has finished\n"
 "Alternatively stop the running one."
 msgstr ""
-"KWrite æe Ëaka na konec\n"
+"KWrite ≈æe ƒçaka na konec\n"
 "internetnega opravila.\n"
-"Prosim poËakajte πe vi ali\n"
-"ustavite tekoËega."
+"Prosim poƒçakajte ≈°e vi ali\n"
+"ustavite tekoƒçega."
 
 #: kwview.cpp:1261 kwview.cpp:1319
 msgid "Waiting for KFM..."
-msgstr "»akam na KFM..."
+msgstr "ƒåakam na KFM..."
 
 #: kwview.cpp:1267 kwview.cpp:1332
 msgid "Could not start or find KFM"
@@ -147,14 +147,14 @@ msgid ""
 "Would you like to save it?"
 msgstr ""
 "Trenutni dokument je bil spremenjen.\n"
-"Ali ga æelite shraniti?"
+"Ali ga ≈æelite shraniti?"
 
 #: kwview.cpp:1419
 msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
 msgstr ""
-"Dokumenta ni moæno shraniti.\n"
+"Dokumenta ni mo≈æno shraniti.\n"
 "Naj vseeno odprem novega?"
 
 #: kwview.cpp:1466
@@ -166,16 +166,16 @@ msgid ""
 "A Document with this Name already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"Dokument s tem imenom æe obstaja.\n"
-"Ali ga æelite prepisati?"
+"Dokument s tem imenom ≈æe obstaja.\n"
+"Ali ga ≈æelite prepisati?"
 
 #: kwview.cpp:1690 kwview.cpp:1878
 msgid "End of document reached"
-msgstr "Doseæen konec dokumenta"
+msgstr "Dose≈æen konec dokumenta"
 
 #: kwview.cpp:1691 kwview.cpp:1879
 msgid "Continue from the beginning"
-msgstr "Nadaljuj na zaËetku"
+msgstr "Nadaljuj na zaƒçetku"
 
 #: kwview.cpp:1693 kwview.cpp:1704 kwview.cpp:1714
 msgid "Find"
@@ -183,7 +183,7 @@ msgstr "Najdi"
 
 #: kwview.cpp:1701 kwview.cpp:1890
 msgid "Beginning of document reached"
-msgstr "Doseæen zaËetek dokumenta"
+msgstr "Dose≈æen zaƒçetek dokumenta"
 
 #: kwview.cpp:1702 kwview.cpp:1891
 msgid "Continue from the end"
@@ -191,7 +191,7 @@ msgstr "Nadaljuj na koncu"
 
 #: kwview.cpp:1715
 msgid "Search string not found!"
-msgstr "Nisem naπel iskani niz!"
+msgstr "Nisem na≈°el iskani niz!"
 
 #: kwview.cpp:1863 kwview.cpp:1877 kwview.cpp:1889
 #, fuzzy
@@ -212,7 +212,7 @@ msgstr "&Zamenjaj z:"
 
 #: kwdialog.cpp:57
 msgid "&Case Sensitive"
-msgstr "&ObËutljiv na velikost Ërk"
+msgstr "&Obƒçutljiv na velikost ƒçrk"
 
 #: kwdialog.cpp:61
 msgid "&Whole Words Only"
@@ -220,7 +220,7 @@ msgstr "Samo &cele besede"
 
 #: kwdialog.cpp:65
 msgid "&From Cursor"
-msgstr "Od &utripaËa"
+msgstr "Od &utripaƒça"
 
 #: kwdialog.cpp:74
 msgid "Find &Backwards"
@@ -232,11 +232,11 @@ msgstr "&Izbrano besedilo"
 
 #: kwdialog.cpp:91
 msgid "&Prompt On Replace"
-msgstr "&Vpraπaj pred zamenjavo"
+msgstr "&Vpra≈°aj pred zamenjavo"
 
 #: kwdialog.cpp:167
 msgid "Replace this occurence?"
-msgstr "Zamenjam to najdiπËe?"
+msgstr "Zamenjam to najdi≈°ƒçe?"
 
 #: kwdialog.cpp:174
 msgid "&Yes"
@@ -264,7 +264,7 @@ msgstr "&Samodejen zamik"
 
 #: kwdialog.cpp:297
 msgid "&Backspace Indent"
-msgstr "V&raËalni zamik"
+msgstr "V&raƒçalni zamik"
 
 #: kwdialog.cpp:299
 msgid "&Word Wrap"
@@ -276,11 +276,11 @@ msgstr "Zamenjaj &tabulatorje"
 
 #: kwdialog.cpp:303
 msgid "Remove Trailing &Spaces"
-msgstr "Od&strani zakljuËne presledke"
+msgstr "Od&strani zakljuƒçne presledke"
 
 #: kwdialog.cpp:305
 msgid "Wrap &Cursor"
-msgstr "&Lomi ob utripaËu"
+msgstr "&Lomi ob utripaƒçu"
 
 #: kwdialog.cpp:307
 msgid "&Auto Brackets"
@@ -296,7 +296,7 @@ msgstr "Vztrajne iz&bire"
 
 #: kwdialog.cpp:324
 msgid "&Multiple Selections"
-msgstr "VeË&kratne izbire"
+msgstr "Veƒç&kratne izbire"
 
 #: kwdialog.cpp:326 toplevel.cpp:233
 msgid "&Vertical Selections"
@@ -304,7 +304,7 @@ msgstr "&Vertikalne izbire"
 
 #: kwdialog.cpp:328
 msgid "&Delete On Input"
-msgstr "&Zbriπi ob vnosu"
+msgstr "&Zbri≈°i ob vnosu"
 
 #: kwdialog.cpp:330
 msgid "&Toggle Old"
@@ -316,7 +316,7 @@ msgstr "Prelomi vrstice pri:"
 
 #: kwdialog.cpp:351
 msgid "Tab Width:"
-msgstr "©irina tabulatorja:"
+msgstr "≈†irina tabulatorja:"
 
 #: kwdialog.cpp:358
 msgid "Undo steps:"
@@ -340,7 +340,7 @@ msgstr "Izbrani + najdeni:"
 
 #: toplevel.cpp:102
 msgid "Message"
-msgstr "SporoËilo"
+msgstr "Sporoƒçilo"
 
 #: toplevel.cpp:103
 msgid ""
@@ -348,7 +348,7 @@ msgid ""
 "Would you like to save it?"
 msgstr ""
 "Ta dokument je bil spremenjen.\n"
-"Ali ga æelite shraniti?"
+"Ali ga ≈æelite shraniti?"
 
 #: toplevel.cpp:166
 msgid "Ne&w..."
@@ -388,7 +388,7 @@ msgstr "&Pojdi v vrstico..."
 
 #: toplevel.cpp:195
 msgid "U&ndo"
-msgstr "Pr&ekliËi"
+msgstr "Pr&ekliƒçi"
 
 #: toplevel.cpp:196
 msgid "R&edo"
@@ -424,7 +424,7 @@ msgstr "Dod&aj zaznamek..."
 
 #: toplevel.cpp:212
 msgid "&Clear Bookmarks"
-msgstr "Po&briπi zaznamke"
+msgstr "Po&bri≈°i zaznamke"
 
 #: toplevel.cpp:224
 msgid "Set Highlight"
@@ -448,11 +448,11 @@ msgstr "&Barve..."
 
 #: toplevel.cpp:234
 msgid "Show &Toolbar"
-msgstr "Prikaæi &orodjarno"
+msgstr "Prika≈æi &orodjarno"
 
 #: toplevel.cpp:235
 msgid "Show &Statusbar"
-msgstr "Prikaæi &statusno vrstico"
+msgstr "Prika≈æi &statusno vrstico"
 
 #: toplevel.cpp:236
 msgid "Save Config"

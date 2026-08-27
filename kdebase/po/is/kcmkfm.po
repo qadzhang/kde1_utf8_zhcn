@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 1998-12-01 21:00+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 
 #: main.cpp:61
 msgid "&Font"
@@ -19,7 +19,7 @@ msgstr "L&itir"
 
 #: main.cpp:65
 msgid "&Other"
-msgstr "&Annağ"
+msgstr "&AnnaÃ°"
 
 #: main.cpp:68
 msgid "&Proxy"
@@ -35,11 +35,11 @@ msgstr "&Kennistrengur"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr "&Smákökur"
+msgstr "&SmÃ¡kÃ¶kur"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "&Táknmyndir á skjáborği"
+msgstr "&TÃ¡knmyndir Ã¡ skjÃ¡borÃ°i"
 
 #: main.cpp:89
 #, c-format
@@ -54,15 +54,15 @@ msgstr "Stillingar KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr "Lítiğ"
+msgstr "LÃ­tiÃ°"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr "Miğlungs"
+msgstr "MiÃ°lungs"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr "Stórt"
+msgstr "StÃ³rt"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
@@ -74,11 +74,11 @@ msgstr "Jafnbreitt letur"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "Sjálfgefin stafatafla"
+msgstr "SjÃ¡lfgefin stafatafla"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "Nota stafatöflu tungumálsins"
+msgstr "Nota stafatÃ¶flu tungumÃ¡lsins"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
@@ -94,7 +94,7 @@ msgstr "Litur tengla:"
 
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "Litur skoğağra tengla:"
+msgstr "Litur skoÃ°aÃ°ra tengla:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
@@ -106,19 +106,19 @@ msgstr "Undirstrika tengla"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr "Nota alltaf mína liti"
+msgstr "Nota alltaf mÃ­na liti"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "&Leyfa stillingar á hverri slóğ"
+msgstr "&Leyfa stillingar Ã¡ hverri slÃ³Ã°"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "Tré fylgir flakki"
+msgstr "TrÃ© fylgir flakki"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr "Skjáhermir"
+msgstr "SkjÃ¡hermir"
 
 #: miscopts.cpp:57
 msgid "Editor"
@@ -126,7 +126,7 @@ msgstr "Ritill"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "Ekki gleyma ağ vista breytingarnar!"
+msgstr "Ekki gleyma aÃ° vista breytingarnar!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
@@ -138,7 +138,7 @@ msgstr "HTTP sel:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr "Gátt"
+msgstr "GÃ¡tt"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
@@ -150,19 +150,19 @@ msgstr "Ekkert sel fyrir:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr "Samşykkt tungumál:"
+msgstr "SamÃ¾ykkt tungumÃ¡l:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "Samşykktar stafatöflur:"
+msgstr "SamÃ¾ykktar stafatÃ¶flur:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr "Gera ráğ fyrir HTML"
+msgstr "Gera rÃ¡Ã° fyrir HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr "Á şjóni:"
+msgstr "Ã Ã¾jÃ³ni:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
@@ -170,23 +170,23 @@ msgstr "Stimpla inn sem:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr "&Bæta viğ"
+msgstr "&BÃ¦ta viÃ°"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr "Şekktar bindingar:"
+msgstr "Ãekktar bindingar:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "&Virkja smákökur"
+msgstr "&Virkja smÃ¡kÃ¶kur"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "Sjálfgefnar samşykktir"
+msgstr "SjÃ¡lfgefnar samÃ¾ykktir"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr "Samşykkja"
+msgstr "SamÃ¾ykkja"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
@@ -198,36 +198,36 @@ msgstr "Hafna"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr "Sértækar stillingar á lén:"
+msgstr "SÃ©rtÃ¦kar stillingar Ã¡ lÃ©n:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Breyta stillingum fyrir lén"
+msgstr "Breyta stillingum fyrir lÃ©n"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "Şú verğur ağ slá inn lén fyrst!"
+msgstr "ÃÃº verÃ°ur aÃ° slÃ¡ inn lÃ©n fyrst!"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Lárétt möskvastærğ rótarnets:"
+msgstr "LÃ¡rÃ©tt mÃ¶skvastÃ¦rÃ° rÃ³tarnets:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Lóğrétt möskvastærğ rótarnets:"
+msgstr "LÃ³Ã°rÃ©tt mÃ¶skvastÃ¦rÃ° rÃ³tarnets:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "Gegnsær texti skjáborğstáknmynda."
+msgstr "GegnsÃ¦r texti skjÃ¡borÃ°stÃ¡knmynda."
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr "Forgrunnslitur táknmynda:"
+msgstr "Forgrunnslitur tÃ¡knmynda:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr "Bakgrunnslitur táknmynda:"
+msgstr "Bakgrunnslitur tÃ¡knmynda:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Sına &faldar skrár á skjáborği"
+msgstr "SÃ½na &faldar skrÃ¡r Ã¡ skjÃ¡borÃ°i"

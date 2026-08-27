@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-04-13 11:23+02:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:61
@@ -23,7 +23,7 @@ msgstr "&Barva"
 
 #: main.cpp:65
 msgid "&Other"
-msgstr "&Ostatní"
+msgstr "&OstatnÃ­"
 
 #: main.cpp:68
 msgid "&Proxy"
@@ -35,7 +35,7 @@ msgstr "&HTTP"
 
 #: main.cpp:73
 msgid "User &Agent"
-msgstr "U¾ivatelskı &agent"
+msgstr "UÅ¾ivatelskÃ½ &agent"
 
 #: main.cpp:76
 msgid "Coo&kies"
@@ -43,54 +43,54 @@ msgstr "Coo&kies"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "&Ikony pracovní plochy"
+msgstr "&Ikony pracovnÃ­ plochy"
 
 #: main.cpp:89
 #, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"Pou¾ití: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"PouÅ¾itÃ­: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
-msgstr "Nastavení KFM"
+msgstr "NastavenÃ­ KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr "Malé"
+msgstr "MalÃ©"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr "Støední"
+msgstr "StÅ™ednÃ­"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr "Velké"
+msgstr "VelkÃ©"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr "Standardní font"
+msgstr "StandardnÃ­ font"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr "Fixovanı font"
+msgstr "FixovanÃ½ font"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "Implicitní znaková sada"
+msgstr "ImplicitnÃ­ znakovÃ¡ sada"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "Pou¾ívat znakovou sadu jazyka"
+msgstr "PouÅ¾Ã­vat znakovou sadu jazyka"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
-msgstr "Barva pozadí:"
+msgstr "Barva pozadÃ­:"
 
 #: htmlopts.cpp:342
 msgid "Normal Text Color:"
-msgstr "Barva normálního textu:"
+msgstr "Barva normÃ¡lnÃ­ho textu:"
 
 #: htmlopts.cpp:354
 msgid "URL Link Color:"
@@ -98,31 +98,31 @@ msgstr "Barva URL odkazu:"
 
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "Barva pou¾itého odkazu:"
+msgstr "Barva pouÅ¾itÃ©ho odkazu:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Zmìnit kurzor nad odkazem."
+msgstr "ZmÄ›nit kurzor nad odkazem."
 
 #: htmlopts.cpp:384
 msgid "Underline links"
-msgstr "Podtrhávat odkazy"
+msgstr "PodtrhÃ¡vat odkazy"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr "V¾dy pou¾ívat mé barvy"
+msgstr "VÅ¾dy pouÅ¾Ã­vat mÃ© barvy"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "Povolit nastavování &jednotlivıch URL"
+msgstr "Povolit nastavovÃ¡nÃ­ &jednotlivÃ½ch URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "&Stromovı náhled sleduje procházení"
+msgstr "&StromovÃ½ nÃ¡hled sleduje prochÃ¡zenÃ­"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr "Terminál"
+msgstr "TerminÃ¡l"
 
 #: miscopts.cpp:57
 msgid "Editor"
@@ -130,11 +130,11 @@ msgstr "Editor"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "Nezapomeòte ulo¾it svá nastavení!"
+msgstr "NezapomeÅˆte uloÅ¾it svÃ¡ nastavenÃ­!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr "Pou¾ívat proxy"
+msgstr "PouÅ¾Ã­vat proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
@@ -150,7 +150,7 @@ msgstr "FTP proxy:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr "®ádné proxy pro:"
+msgstr "Å½Ã¡dnÃ© proxy pro:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
@@ -158,11 +158,11 @@ msgstr "Akceptovat jazyky:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "Akceptovat znakové sady:"
+msgstr "Akceptovat znakovÃ© sady:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr "Pøedpokládat HTML"
+msgstr "PÅ™edpoklÃ¡dat HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
@@ -170,15 +170,15 @@ msgstr "Na serveru:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "Pøihlásit jako:"
+msgstr "PÅ™ihlÃ¡sit jako:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr "Pøid&at"
+msgstr "PÅ™id&at"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr "Známé vazby:"
+msgstr "ZnÃ¡mÃ© vazby:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
@@ -186,7 +186,7 @@ msgstr "Povolit &Cookie"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "Implicitní chování pøi pøijímání"
+msgstr "ImplicitnÃ­ chovÃ¡nÃ­ pÅ™i pÅ™ijÃ­mÃ¡nÃ­"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
@@ -194,44 +194,44 @@ msgstr "Akceptovat"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr "Dotázat se"
+msgstr "DotÃ¡zat se"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr "Odmítnout"
+msgstr "OdmÃ­tnout"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr "Specifická nastavení domén:"
+msgstr "SpecifickÃ¡ nastavenÃ­ domÃ©n:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Zmìnit chování pøi pøijímání pro doménu"
+msgstr "ZmÄ›nit chovÃ¡nÃ­ pÅ™i pÅ™ijÃ­mÃ¡nÃ­ pro domÃ©nu"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "Je nutné nejprve vlo¾it doménu"
+msgstr "Je nutnÃ© nejprve vloÅ¾it domÃ©nu"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Horizontální rozteè møí¾ky:"
+msgstr "HorizontÃ¡lnÃ­ rozteÄ mÅ™Ã­Å¾ky:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Vertikální rozteè møí¾ky:"
+msgstr "VertikÃ¡lnÃ­ rozteÄ mÅ™Ã­Å¾ky:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&Transparentní text pod ikonami na plo¹e"
+msgstr "&TransparentnÃ­ text pod ikonami na ploÅ¡e"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr "Barva popøedí ikon:"
+msgstr "Barva popÅ™edÃ­ ikon:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr "Barva pozadí ikon:"
+msgstr "Barva pozadÃ­ ikon:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "&Zobrazovat skryté soubory na pracovní plo¹e"
+msgstr "&Zobrazovat skrytÃ© soubory na pracovnÃ­ ploÅ¡e"

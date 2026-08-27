@@ -9,9 +9,9 @@ msgstr ""
 "PO-Revision-Date: 1999-03-13 15:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
-"Language-Team: Français <fr@li.org>\n"
+"Language-Team: FranÃ§ais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: ktop.cpp:66
@@ -20,15 +20,15 @@ msgstr "88888 Processus"
 
 #: ktop.cpp:67
 msgid "Memory: 888888 kB used, 888888 kB free"
-msgstr "Mémoire : 888888 ko utilisés, 888888 ko libres"
+msgstr "MÃ©moire : 888888 ko utilisÃ©s, 888888 ko libres"
 
 #: ktop.cpp:69
 msgid "Swap: 888888 kB used, 888888 kB free"
-msgstr "Swap : 888888 ko utilisés, 888888 ko libres"
+msgstr "Swap : 888888 ko utilisÃ©s, 888888 ko libres"
 
 #: ktop.cpp:76
 msgid "KDE Task Manager"
-msgstr "Getionnaire de tâches de KDE"
+msgstr "Getionnaire de tÃ¢ches de KDE"
 
 #: ktop.cpp:137
 #, c-format
@@ -38,12 +38,12 @@ msgstr "%d processus"
 #: ktop.cpp:142
 #, c-format
 msgid "Memory: %d kB used, %d kB free"
-msgstr "Mémoire : %d ko utilisés, %d ko libres"
+msgstr "MÃ©moire : %d ko utilisÃ©s, %d ko libres"
 
 #: ktop.cpp:147
 #, c-format
 msgid "Swap: %d kB used, %d kB free"
-msgstr "Swap : %d ko utilisés, %d ko libres"
+msgstr "Swap : %d ko utilisÃ©s, %d ko libres"
 
 #: MainMenu.cpp:51
 #, c-format
@@ -57,7 +57,7 @@ msgid ""
 "1998 : Nicolas Leclercq <nicknet@planete.net>\n"
 "1999 : Chris Schlaeger <cs@kde.org>\n"
 msgstr ""
-"Gestionnaire de tâches (KTop) Version %s\n"
+"Gestionnaire de tÃ¢ches (KTop) Version %s\n"
 "\n"
 "Copyright :\n"
 "1996 : A. Sanda <alex@darkstar.ping.at>\n"
@@ -84,7 +84,7 @@ msgstr "Rapide"
 
 #: MainMenu.cpp:79
 msgid "&Refresh Rate"
-msgstr "&Rafraîchissement"
+msgstr "&RafraÃ®chissement"
 
 #: MainMenu.cpp:80
 msgid "&Process"
@@ -121,11 +121,11 @@ msgstr "envoyer SIGUSR2\t(user2)"
 #: ProcessMenu.cpp:74 ProcessMenu.cpp:86 ProcessMenu.cpp:150
 #: ProcessMenu.cpp:158 ProcessMenu.cpp:176
 msgid "Task Manager"
-msgstr "Getionnaire de tâches"
+msgstr "Getionnaire de tÃ¢ches"
 
 #: ProcessMenu.cpp:75
 msgid "You need to select a process first!"
-msgstr "Vous devez d'abord sélectionner un processus !"
+msgstr "Vous devez d'abord sÃ©lectionner un processus !"
 
 #: ProcessMenu.cpp:85 ProcessMenu.cpp:149
 #, c-format
@@ -167,7 +167,7 @@ msgid ""
 "(Process name: %s  Owner: %s)\n"
 msgstr ""
 "Envoyer le signal %s au processus %d ?\n"
-"(Nom du processus : %s  Propriétaire: %s)\n"
+"(Nom du processus : %s  PropriÃ©taire: %s)\n"
 
 #: ProcessMenu.cpp:126
 msgid "Abort"
@@ -180,8 +180,8 @@ msgid ""
 "or permission denied."
 msgstr ""
 "Erreur...\n"
-"Le processus spécifié n'existe pas\n"
-"ou la permission est refusée."
+"Le processus spÃ©cifiÃ© n'existe pas\n"
+"ou la permission est refusÃ©e."
 
 #: TaskMan.cpp:80
 msgid "Processes &List"
@@ -193,7 +193,7 @@ msgstr "&Ressources"
 
 #: ProcListPage.cpp:42
 msgid "Running Processes"
-msgstr "Processus en cours d'exécution"
+msgstr "Processus en cours d'exÃ©cution"
 
 #: ProcListPage.cpp:49
 msgid "Show Tree"
@@ -205,7 +205,7 @@ msgstr "Tous les processus"
 
 #: ProcListPage.cpp:61
 msgid "System processes"
-msgstr "Processus du système"
+msgstr "Processus du systÃ¨me"
 
 #: ProcListPage.cpp:62
 msgid "User processes"
@@ -217,11 +217,11 @@ msgstr "Processus personnels"
 
 #: ProcListPage.cpp:79
 msgid "Refresh Now"
-msgstr "Rafraîchir"
+msgstr "RafraÃ®chir"
 
 #: ProcListPage.cpp:85
 msgid "Kill task"
-msgstr "Tuer la tâche"
+msgstr "Tuer la tÃ¢che"
 
 #: ProcessList.cpp:227
 msgid "Remove Column"
@@ -265,15 +265,15 @@ msgstr "Etat"
 
 #: ProcessList.cpp:704
 msgid "Memory"
-msgstr "Mémoire"
+msgstr "MÃ©moire"
 
 #: ProcessList.cpp:705
 msgid "Resident"
-msgstr "Résident"
+msgstr "RÃ©sident"
 
 #: ProcessList.cpp:706
 msgid "Shared"
-msgstr "Partagé"
+msgstr "PartagÃ©"
 
 #: ProcessList.cpp:707
 msgid "Command line"
@@ -285,17 +285,17 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Impossible d'ouvrir le répertoire '/proc'!\n"
-"Le noyau doit être compilé avec le support du\n"
-"système de fichiers /proc."
+"Impossible d'ouvrir le rÃ©pertoire '/proc'!\n"
+"Le noyau doit Ãªtre compilÃ© avec le support du\n"
+"systÃ¨me de fichiers /proc."
 
 #: OSProcessList.cpp:266
 msgid "Cannot read status of processes\n"
-msgstr "Impossible de lire l'état des processus\n"
+msgstr "Impossible de lire l'Ã©tat des processus\n"
 
 #: OSProcessList.cpp:367
 msgid "Your OS is not supported yet.  Sorry"
-msgstr "Votre système d'exploitation n'est pas encore supporté. Désolé !"
+msgstr "Votre systÃ¨me d'exploitation n'est pas encore supportÃ©. DÃ©solÃ© !"
 
 #: OSProcess.cpp:123 OSProcess.cpp:154 OSProcess.cpp:171
 #, c-format
@@ -342,7 +342,7 @@ msgstr "Historique de charge CPU"
 
 #: PerfMonPage.cpp:52
 msgid "System Load History"
-msgstr "Historique de charge du système"
+msgstr "Historique de charge du systÃ¨me"
 
 #: PerfMonPage.cpp:55 PerfMonPage.cpp:113
 msgid "User (%)"
@@ -354,11 +354,11 @@ msgstr "Courtois (%)"
 
 #: PerfMonPage.cpp:57 PerfMonPage.cpp:115
 msgid "System (%)"
-msgstr "Système (%)"
+msgstr "SystÃ¨me (%)"
 
 #: PerfMonPage.cpp:64
 msgid "Memory Usage History"
-msgstr "Historique d'utilisation mémoire"
+msgstr "Historique d'utilisation mÃ©moire"
 
 #: PerfMonPage.cpp:66
 msgid "Program (kB)"
@@ -388,8 +388,8 @@ msgid ""
 "for /proc filesystem enabled!"
 msgstr ""
 "Impossible d'ouvrir le fichier '/proc/stat'!\n"
-"Le noyau doit être compilé avec le support du\n"
-"système de fichiers /proc."
+"Le noyau doit Ãªtre compilÃ© avec le support du\n"
+"systÃ¨me de fichiers /proc."
 
 #: OSStatus.cpp:120 OSStatus.cpp:303 OSStatus.cpp:378
 msgid ""
@@ -398,12 +398,12 @@ msgid ""
 "for /proc filesystem enabled!"
 msgstr ""
 "Impossible d'ouvrir le fichier '/proc/meminfo'!\n"
-"Le noyau doit être compilé avec le support du\n"
-"système de fichiers /proc."
+"Le noyau doit Ãªtre compilÃ© avec le support du\n"
+"systÃ¨me de fichiers /proc."
 
 #: OSStatus.cpp:311
 msgid "Cannot read memory info file '/proc/meminfo'!\n"
-msgstr "Impossible de lire les infos sur la mémoire dans '/proc/meminfo'.\n"
+msgstr "Impossible de lire les infos sur la mÃ©moire dans '/proc/meminfo'.\n"
 
 #: OSStatus.cpp:354
 #, c-format
@@ -413,8 +413,8 @@ msgid ""
 "for /proc filesystem enabled!"
 msgstr ""
 "Impossible de lire les infos sur %s dans le fichier '/proc/stat'!\n"
-"Le noyau doit être compilé avec le support du\n"
-"système de fichiers /proc."
+"Le noyau doit Ãªtre compilÃ© avec le support du\n"
+"systÃ¨me de fichiers /proc."
 
 #: OSStatus.cpp:386
 msgid "Cannot read swap info from '/proc/meminfo'!\n"
@@ -425,8 +425,8 @@ msgid ""
 "Your system is not currently supported.\n"
 "Sorry"
 msgstr ""
-"Votre système n'est pas supporté actuellement.\n"
-"Désolé"
+"Votre systÃ¨me n'est pas supportÃ© actuellement.\n"
+"DÃ©solÃ©"
 
 #: ReniceDlg.cpp:32
 msgid "Renice Process"
@@ -442,19 +442,19 @@ msgid ""
 "\n"
 "Please enter the desired nice level:"
 msgstr ""
-"Vous allez modifier la priorité d'ordonnancement du\n"
+"Vous allez modifier la prioritÃ© d'ordonnancement du\n"
 "processus %d. Uniquement le Super-utilisateur (root)\n"
 "peut diminuer la courtoisie (nice) d'un processus. Plus le\n"
-"nombre est petit, plus la priorité est élevée.\n"
+"nombre est petit, plus la prioritÃ© est Ã©levÃ©e.\n"
 "\n"
-"Entrez la valeur de courtoisie (nice) désirée :"
+"Entrez la valeur de courtoisie (nice) dÃ©sirÃ©e :"
 
 #~ msgid ""
 #~ "Cannot read status of processes\n"
 #~ "from /proc/... directories!\n"
 #~ msgstr ""
-#~ "Impossible de lire l'état des processus\n"
-#~ "dans les répertoires /proc/... !\n"
+#~ "Impossible de lire l'Ã©tat des processus\n"
+#~ "dans les rÃ©pertoires /proc/... !\n"
 
 #~ msgid "The Process has been terminated!\n"
-#~ msgstr "Le processus a été arrêté !\n"
+#~ msgstr "Le processus a Ã©tÃ© arrÃªtÃ© !\n"

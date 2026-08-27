@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: main.cpp:67
@@ -38,12 +38,12 @@ msgstr "&Avancerat"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"användning: kcmkwm [-init | "
+"anvÃ¤ndning: kcmkwm [-init | "
 "{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Fönsterhanterarens inställningar"
+msgstr "FÃ¶nsterhanterarens instÃ¤llningar"
 
 #: titlebar.cpp:125
 msgid "Minimize"
@@ -63,33 +63,33 @@ msgstr "Meny"
 
 #: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
-msgstr "Vänster"
+msgstr "VÃ¤nster"
 
 #: titlebar.cpp:182 titlebar.cpp:946
 msgid "Right"
-msgstr "Höger"
+msgstr "HÃ¶ger"
 
 #: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Den vänstra delen av namnlisten är full. Stänger av 'maximera'-knappen\n"
+"Den vÃ¤nstra delen av namnlisten Ã¤r full. StÃ¤nger av 'maximera'-knappen\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Den högra delen av namnlisten är full. Stänger av 'maximera'-knappen\n"
+msgstr "Den hÃ¶gra delen av namnlisten Ã¤r full. StÃ¤nger av 'maximera'-knappen\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Den vänstra delen av namnlisten är full. Stänger av 'minimera'-knappen\n"
+"Den vÃ¤nstra delen av namnlisten Ã¤r full. StÃ¤nger av 'minimera'-knappen\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Den högra delen av namnlisten är full. Stänger av 'minimera'-knappen\n"
+msgstr "Den hÃ¶gra delen av namnlisten Ã¤r full. StÃ¤nger av 'minimera'-knappen\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
@@ -109,11 +109,11 @@ msgstr "Horisontell toning"
 
 #: titlebar.cpp:984
 msgid "Plain"
-msgstr "Enfärgad"
+msgstr "EnfÃ¤rgad"
 
 #: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
-msgstr "Mönster"
+msgstr "MÃ¶nster"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
@@ -138,16 +138,16 @@ msgstr "Musstyrning"
 #: titlebar.cpp:1076
 msgid "Left Button double click does:"
 msgstr ""
-"Dubbelklick med vänster musknapp\n"
-"på namnlisten utför:"
+"Dubbelklick med vÃ¤nster musknapp\n"
+"pÃ¥ namnlisten utfÃ¶r:"
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
-msgstr "Växla maximering"
+msgstr "VÃ¤xla maximering"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "Växla skuggning"
+msgstr "VÃ¤xla skuggning"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
@@ -155,7 +155,7 @@ msgstr "Ikonifiera"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "Växla klistrighet"
+msgstr "VÃ¤xla klistrighet"
 
 #: titlebar.cpp:1109
 msgid "Title animation"
@@ -167,31 +167,31 @@ msgstr "ms"
 
 #: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
-msgstr "Fönsterhanterarens inställningar - FEL"
+msgstr "FÃ¶nsterhanterarens instÃ¤llningar - FEL"
 
 #: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Det uppstod ett fel när namnlistens pixmapar\n"
-"skulle sparas! Var god kontrollera rättigheter."
+"Det uppstod ett fel nÃ¤r namnlistens pixmapar\n"
+"skulle sparas! Var god kontrollera rÃ¤ttigheter."
 
 #: windows.cpp:68
 msgid "Windows"
-msgstr "Fönster"
+msgstr "FÃ¶nster"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "Standard är att maximera enbart vertikalt"
+msgstr "Standard Ã¤r att maximera enbart vertikalt"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
-msgstr "Visa innehåll i fönster som flyttas"
+msgstr "Visa innehÃ¥ll i fÃ¶nster som flyttas"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr "Visa fönsterinnehåll då fönstrets storlek ändras"
+msgstr "Visa fÃ¶nsterinnehÃ¥ll dÃ¥ fÃ¶nstrets storlek Ã¤ndras"
 
 #: windows.cpp:98
 msgid "Resize animation:"
@@ -223,7 +223,7 @@ msgstr "Interaktiv"
 
 #: windows.cpp:140
 msgid "Random"
-msgstr "Slumpmässig"
+msgstr "SlumpmÃ¤ssig"
 
 #: windows.cpp:142
 msgid "Manual"
@@ -231,12 +231,12 @@ msgstr "Manuell"
 
 #: windows.cpp:154
 #, c-format
-msgid ""
-"  Allowed overlap:\n"
-"(% of desktop space)"
-msgstr ""
-"  Tillåt överlappning:\n"
-"(% av skrivbordets storlek)"
+#~ msgid ""
+#~ "  Allowed overlap:\n"
+#~ "(% of desktop space)"
+#~ msgstr ""
+#~ "  TillÃ¥t Ã¶verlappning:\n"
+#~ "(% av skrivbordets storlek)"
 
 #: windows.cpp:175
 msgid "Focus policy"
@@ -244,15 +244,15 @@ msgstr "Fokuspolicy"
 
 #: windows.cpp:185
 msgid "Click to focus"
-msgstr "Klicka för fokus"
+msgstr "Klicka fÃ¶r fokus"
 
 #: windows.cpp:187
 msgid "Focus follows mouse"
-msgstr "Fokus följer musen"
+msgstr "Fokus fÃ¶ljer musen"
 
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Klassisk fokus följer musen"
+msgstr "Klassisk fokus fÃ¶ljer musen"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
@@ -260,15 +260,15 @@ msgstr "Klassisk hafsig fokus"
 
 #: windows.cpp:203
 msgid "Auto Raise"
-msgstr "Autohöjning"
+msgstr "AutohÃ¶jning"
 
 #: windows.cpp:209
 msgid "Click Raise"
-msgstr "Höj vid klick"
+msgstr "HÃ¶j vid klick"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
-msgstr "Fördröjning (ms)"
+msgstr "FÃ¶rdrÃ¶jning (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -276,7 +276,7 @@ msgstr "Aktiva skrivbordskanter"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "Använd aktiva skrivbordskanter"
+msgstr "AnvÃ¤nd aktiva skrivbordskanter"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
@@ -284,7 +284,7 @@ msgstr "Flytta muspekaren mot mitten efter byte"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Fördröjning innan skrivbordsbyte:"
+msgstr "FÃ¶rdrÃ¶jning innan skrivbordsbyte:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -303,7 +303,7 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Fönstrens kantzoner:\n"
+"FÃ¶nstrens kantzoner:\n"
 "          (pixlar)"
 
 #: mouse.cpp:54
@@ -320,15 +320,15 @@ msgstr "Namnlist och ram"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
-msgstr "Inne i inaktivt fönster:"
+msgstr "Inne i inaktivt fÃ¶nster:"
 
 #: mouse.cpp:70
 msgid "Inner window, titlebar and frame:"
-msgstr "Inne i fönster, namnlist och ram:"
+msgstr "Inne i fÃ¶nster, namnlist och ram:"
 
 #: mouse.cpp:74 mouse.cpp:86
 msgid "Left Button"
-msgstr "Vänster musknapp"
+msgstr "VÃ¤nster musknapp"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
@@ -336,11 +336,11 @@ msgstr "Mittenmusknappen"
 
 #: mouse.cpp:82 mouse.cpp:94
 msgid "Right Button"
-msgstr "Höger musknapp"
+msgstr "HÃ¶ger musknapp"
 
 #: mouse.cpp:98
 msgid "ALT + Left Button"
-msgstr "ALT + vänster musknapp"
+msgstr "ALT + vÃ¤nster musknapp"
 
 #: mouse.cpp:102
 msgid "ALT + Middle Button"
@@ -348,26 +348,26 @@ msgstr "ALT + mittenmusknappen"
 
 #: mouse.cpp:106
 msgid "ALT + Right Button"
-msgstr "ALT + höger musknapp"
+msgstr "ALT + hÃ¶ger musknapp"
 
 #: mouse.cpp:113 mouse.cpp:122 mouse.cpp:132 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
 msgid "Raise"
-msgstr "Höj"
+msgstr "HÃ¶j"
 
 #: mouse.cpp:114 mouse.cpp:123 mouse.cpp:133 mouse.cpp:197 mouse.cpp:208
 #: mouse.cpp:219
 msgid "Lower"
-msgstr "Sänk"
+msgstr "SÃ¤nk"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
-msgstr "Visa fönstermeny"
+msgstr "Visa fÃ¶nstermeny"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
 msgid "Toggle raise and lower"
-msgstr "Höj / sänk"
+msgstr "HÃ¶j / sÃ¤nk"
 
 #: mouse.cpp:126 mouse.cpp:136 mouse.cpp:198 mouse.cpp:209 mouse.cpp:220
 msgid "Nothing"
@@ -376,11 +376,11 @@ msgstr "Ingenting"
 #: mouse.cpp:142 mouse.cpp:150 mouse.cpp:158 mouse.cpp:169 mouse.cpp:178
 #: mouse.cpp:187
 msgid "Activate and raise"
-msgstr "Aktivera och höj"
+msgstr "Aktivera och hÃ¶j"
 
 #: mouse.cpp:143 mouse.cpp:151 mouse.cpp:159
 msgid "Activate and lower"
-msgstr "Aktivera och sänk"
+msgstr "Aktivera och sÃ¤nk"
 
 #: mouse.cpp:144 mouse.cpp:152 mouse.cpp:160 mouse.cpp:168 mouse.cpp:177
 #: mouse.cpp:186
@@ -389,7 +389,7 @@ msgstr "Aktivera"
 
 #: mouse.cpp:166 mouse.cpp:175 mouse.cpp:184
 msgid "Activate, raise and pass click"
-msgstr "Aktivera, höj och skicka vidare musklickningen"
+msgstr "Aktivera, hÃ¶j och skicka vidare musklickningen"
 
 #: mouse.cpp:167 mouse.cpp:176 mouse.cpp:185
 msgid "Activate and pass click"
@@ -401,7 +401,7 @@ msgstr "Flytta"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
-msgstr "Ändra storlek"
+msgstr "Ã„ndra storlek"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
@@ -409,15 +409,15 @@ msgstr "Tangentbord och mus"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-tab går mellan skrivborden"
+msgstr "Ctrl-tab gÃ¥r mellan skrivborden"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-tab är begränsad till aktuellt skrivbord"
+msgstr "Alt-tab Ã¤r begrÃ¤nsad till aktuellt skrivbord"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr "Alt-tab-läge:"
+msgstr "Alt-tab-lÃ¤ge:"
 
 #: advanced.cpp:63
 msgid "KDE"
@@ -429,7 +429,7 @@ msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
-msgstr "Ta över höger musknapp"
+msgstr "Ta Ã¶ver hÃ¶ger musknapp"
 
 #: advanced.cpp:78
 msgid "Filters"
@@ -437,19 +437,19 @@ msgstr "Filter"
 
 #: advanced.cpp:98
 msgid "Windows will:"
-msgstr "Fönstren kommer:"
+msgstr "FÃ¶nstren kommer:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "ha små dekorationer"
+msgstr "ha smÃ¥ dekorationer"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr "inte ha några dekorationer"
+msgstr "inte ha nÃ¥gra dekorationer"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr "aldrig få fokus"
+msgstr "aldrig fÃ¥ fokus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
@@ -457,11 +457,11 @@ msgstr "starta klistriga"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr "undantas från sessionshanteringen"
+msgstr "undantas frÃ¥n sessionshanteringen"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr "om de stämmer överens med följande:"
+msgstr "om de stÃ¤mmer Ã¶verens med fÃ¶ljande:"
 
 #: advanced.cpp:121
 msgid "Titles"

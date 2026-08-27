@@ -13,13 +13,13 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.4.0"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
-msgstr "KDE��ݲ������ܡ��ɤϤ��Υǥ����ץ쥤�Ǵ��˳��Ϥ���Ƥ��ޤ���"
+msgstr "KDE¹ñºÝ²½¥­¡¼¥Ü¡¼¥É¤Ï¤³¤Î¥Ç¥£¥¹¥×¥ì¥¤¤Ç´û¤Ë³«»Ï¤µ¤ì¤Æ¤¤¤Þ¤¹¡£"
 
 #: kikbd.cpp:295
 #, c-format
@@ -27,8 +27,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
-"X������\"%s\"�ե����뤬����ޤ���\n"
-"X��ɸ�ॳ���ɤ�Ȥ��ޤ���"
+"X¥³¡¼¥É\"%s\"¥Õ¥¡¥¤¥ë¤¬¤¢¤ê¤Þ¤»¤ó¡£\n"
+"X¤ÎÉ¸½à¥³¡¼¥É¤ò»È¤¤¤Þ¤¹¡£"
 
 #: kikbd.cpp:321
 #, c-format
@@ -36,22 +36,22 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
-"�����ܡ��ɥޥå�\"%s\"������ޤ���\n"
-"���Υޥåפ򥹥��åפ��ޤ���"
+"¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×\"%s\"¤¬¤¢¤ê¤Þ¤»¤ó¡£\n"
+"¤³¤Î¥Þ¥Ã¥×¤ò¥¹¥­¥Ã¥×¤·¤Þ¤¹¡£"
 
 #: kikbd.cpp:337
 msgid "Setup"
-msgstr "����"
+msgstr "ÀßÄê"
 
 #: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
-msgstr "��ǥ��ե���������%s�����Ǥ��ޤ���\n"
+msgstr "¥â¥Ç¥£¥Õ¥¡¥¤¥¢¤«¤é%s¤òºï½ü¤Ç¤­¤Þ¤»¤ó¡£\n"
 
 #: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "��ǥ��ե������ֹ�3��%s���ɲäǤ��ޤ���\n"
+msgstr "¥â¥Ç¥£¥Õ¥¡¥¤¥¢ÈÖ¹æ3¤Ë%s¤òÄÉ²Ã¤Ç¤­¤Þ¤»¤ó¡£\n"
 
 #: kikbd.cpp:384
 #, c-format
@@ -59,32 +59,32 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"�⡼�ɥ����å���%s�Ȥ��ƥ����ܡ���%s������Ǥ��ޤ���\n"
-"Alt����ܥ������Բ�ǽ�ˤ��ޤ�"
+"¥â¡¼¥É¥¹¥¤¥Ã¥Á¤ò%s¤È¤·¤Æ¥­¡¼¥Ü¡¼¥É%s¤ËÀßÄê¤Ç¤­¤Þ¤»¤ó¡£\n"
+"Alt¥·¥ó¥Ü¥ë¤ò»ÈÍÑÉÔ²ÄÇ½¤Ë¤·¤Þ¤¹"
 
 #: kikbd.cpp:406
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"��ǥ��ե��������饭��ץ����å������Ǥ��ޤ���\n"
-"����ץ����å����ߥ�졼������̵���ˤ��ޤ�"
+"¥â¥Ç¥£¥Õ¥¡¥¤¥¢¤«¤é¥­¥ã¥×¥¹¥í¥Ã¥¯¤òºï½ü¤Ç¤­¤Þ¤»¤ó¡£\n"
+"¥­¥ã¥×¥¹¥í¥Ã¥¯¥¨¥ß¥å¥ì¡¼¥·¥ç¥ó¤òÌµ¸ú¤Ë¤·¤Þ¤¹"
 
 #: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
-msgstr "��ݲ������ܡ��ɤ�λ���ޤ�"
+msgstr "¹ñºÝ²½¥­¡¼¥Ü¡¼¥É¤ò½ªÎ»¤·¤Þ¤¹"
 
 #: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
-"\"��ݲ������ܡ���\"�ġ����λ���褦�Ȥ��Ƥ��ޤ���\n"
-" ���Υ���������ˤ����ưŪ�˥������Ȥ��ޤ�����"
+"\"¹ñºÝ²½¥­¡¼¥Ü¡¼¥É\"¥Ä¡¼¥ë¤ò½ªÎ»¤·¤è¤¦¤È¤·¤Æ¤¤¤Þ¤¹¡£\n"
+" ¼¡¤Î¥í¥°¥¤¥ó»þ¤Ë¤³¤ì¤ò¼«Æ°Åª¤Ë¥¹¥¿¡¼¥È¤·¤Þ¤¹¤«¡©"
 
 #: keymap.cpp:186
 msgid "KeyMap: can't allocate memory"
-msgstr "�����ޥå�: ����������Ƥ��ޤ���"
+msgstr "¥­¡¼¥Þ¥Ã¥×: ¥á¥â¥ê¤ò³ä¤êÅö¤Æ¤é¤ì¤Þ¤»¤ó"
 
 #: keymap.cpp:233
 #, c-format
@@ -94,77 +94,77 @@ msgid ""
 "You can preset X codes from section \"Advanced\"\n"
 "in the configuration program."
 msgstr ""
-"����ܥ�\"%s\"�򸫤Ĥ����ޤ���\n"
-"���֤�ɸ��X�����ɤ����פ��Ƥ��ޤ���\n"
-"����ץ�������\"�ܺ�\"����������\n"
-"X�����ɤ�����Ǥ��ޤ���"
+"¥·¥ó¥Ü¥ë\"%s\"¤ò¸«¤Ä¤±¤é¤ì¤Þ¤»¤ó¡£\n"
+"¤¿¤Ö¤óÉ¸½àX¥³¡¼¥É¤¬°ìÃ×¤·¤Æ¤¤¤Þ¤»¤ó¡£\n"
+"ÀßÄê¥×¥í¥°¥é¥à¤Î\"¾ÜºÙ\"¥»¥¯¥·¥ç¥ó¤Ç\n"
+"X¥³¡¼¥É¤òÀßÄê¤Ç¤­¤Þ¤¹¡£"
 
 #: keymap.cpp:238
 #, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "KeyMap: ����ܥ�\"%s\"�򸫤Ĥ����ޤ���"
+msgstr "KeyMap: ¥·¥ó¥Ü¥ë\"%s\"¤ò¸«¤Ä¤±¤é¤ì¤Þ¤»¤ó¡£"
 
 #: keymap.cpp:246
 #, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: ����������\"%s\"���ɤ�ޤ���"
+msgstr "KeyMap: ¥­¡¼¥³¡¼¥É\"%s\"¤òÆÉ¤á¤Þ¤»¤ó¡£"
 
 #: keymap.cpp:252
 #, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "KeyMap: ����������\"%s\"���ϰϳ��Ǥ���"
+msgstr "KeyMap: ¥­¡¼¥³¡¼¥É\"%s\"¤ÏÈÏ°Ï³°¤Ç¤¹¡£"
 
 #: kikbdconf.cpp:102
 msgid "Global"
-msgstr "����Ū"
+msgstr "¹­°èÅª"
 
 #: kikbdconf.cpp:102
 msgid "Window"
-msgstr "������ɥ�"
+msgstr "¥¦¥£¥ó¥É¥¦"
 
 #: kikbdconf.cpp:102
 msgid "Class"
-msgstr "���饹"
+msgstr "¥¯¥é¥¹"
 
 #: kikbdconf.cpp:105 kikbdconf.cpp:117
 msgid "(None)"
-msgstr "(�ʤ�)"
+msgstr "(¤Ê¤·)"
 
 #: kikbdconf.cpp:106 kikbdconf.cpp:118
 msgid "Right Alt"
-msgstr "��Alt"
+msgstr "±¦Alt"
 
 #: kikbdconf.cpp:107 kikbdconf.cpp:119
 msgid "Right Control"
-msgstr "������ȥ�����"
+msgstr "±¦¥³¥ó¥È¥í¡¼¥ë"
 
 #: kikbdconf.cpp:108
 msgid "Rights (Alt+Shift)"
-msgstr "�� (Alt+Shift)"
+msgstr "±¦ (Alt+Shift)"
 
 #: kikbdconf.cpp:109
 msgid "Rights (Ctrl+Alt)"
-msgstr "�� (Ctrl+Alt)"
+msgstr "±¦ (Ctrl+Alt)"
 
 #: kikbdconf.cpp:110
 msgid "Rights (Ctrl+Shift)"
-msgstr "�� (Ctrl+Shift)"
+msgstr "±¦ (Ctrl+Shift)"
 
 #: kikbdconf.cpp:111
 msgid "Lefts  (Alt+Shift)"
-msgstr "�� (Alt+Shift)"
+msgstr "º¸ (Alt+Shift)"
 
 #: kikbdconf.cpp:112
 msgid "Lefts  (Ctrl+Alt)"
-msgstr "�� (Ctrl+Alt)"
+msgstr "º¸ (Ctrl+Alt)"
 
 #: kikbdconf.cpp:113
 msgid "Lefts  (Ctrl+Shift)"
-msgstr "�� (Ctrl+Shift)"
+msgstr "º¸ (Ctrl+Shift)"
 
 #: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
-msgstr "ξ¦��Shift (Shift+Shift)"
+msgstr "Î¾Â¦¤ÎShift (Shift+Shift)"
 
 #: kikbdconf.cpp:120
 msgid "Right Meta"
@@ -172,11 +172,11 @@ msgstr "Right Meta"
 
 #: kikbdconf.cpp:121
 msgid "Left  Alt"
-msgstr "�� Alt"
+msgstr "º¸ Alt"
 
 #: kikbdconf.cpp:122
 msgid "Left  Control"
-msgstr "�� Control"
+msgstr "º¸ Control"
 
 #: kikbdconf.cpp:123
 msgid "Left  Meta"
@@ -184,23 +184,23 @@ msgstr "Left  Meta"
 
 #: kikbdconf.cpp:126
 msgid "Top Left"
-msgstr "����"
+msgstr "º¸¾å"
 
 #: kikbdconf.cpp:127
 msgid "Top Right"
-msgstr "����"
+msgstr "±¦¾å"
 
 #: kikbdconf.cpp:128
 msgid "Bottom Left"
-msgstr "����"
+msgstr "º¸²¼"
 
 #: kikbdconf.cpp:129
 msgid "Bottom Right"
-msgstr "����"
+msgstr "±¦²¼"
 
 #: kikbdconf.cpp:156
 msgid "X default codes"
-msgstr "Xɸ�ॳ����"
+msgstr "XÉ¸½à¥³¡¼¥É"
 
 #: kikbdconf.cpp:215
 #, c-format
@@ -209,91 +209,91 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "%s\n"
-"�����ꤷ�ޤ�����"
+"º£ÀßÄê¤·¤Þ¤¹¤«¡©"
 
 #: kikbdconf.cpp:223
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
-"\"��ݲ������ܡ���\"��Ϥ�����Ѥ��Ƥ��ޤ���\n"
-"���������ɸ������򥤥󥹥ȡ��뤷�ޤ�����"
+"\"¹ñºÝ²½¥­¡¼¥Ü¡¼¥É\"¤ò»Ï¤á¤ÆÍøÍÑ¤·¤Æ¤¤¤Þ¤¹¡£\n"
+"¤¿¤¯¤µ¤ó¤ÎÉ¸½àÀßÄê¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Þ¤·¤¿¡£"
 
 #: kikbdconf.cpp:379
 msgid "unknown"
-msgstr "̤��"
+msgstr "Ì¤ÃÎ"
 
 #: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
-msgstr "ɸ��"
+msgstr "É¸½à"
 
 #: kikbdconf.cpp:419
 msgid "Author:  Not specified"
-msgstr "����: ���ꤵ��Ƥ��ޤ���"
+msgstr "Ãø¼Ô: ÆÃÄê¤µ¤ì¤Æ¤¤¤Þ¤»¤ó"
 
 #: kikbdconf.cpp:421
 msgid "Author"
-msgstr "����"
+msgstr "Ãø¼Ô"
 
 #: kikbdconf.cpp:427
 msgid "Description:  "
-msgstr "����:  "
+msgstr "µ­½Ò:  "
 
 #: kikbdconf.cpp:430
 msgid "Source:  "
-msgstr "������:  "
+msgstr "¥½¡¼¥¹:  "
 
 #: kikbdconf.cpp:431
 msgid "no file"
-msgstr "�ե�����ʤ�"
+msgstr "¥Õ¥¡¥¤¥ë¤Ê¤·"
 
 #: kikbdconf.cpp:432
 msgid "user file"
-msgstr "�桼���ե�����"
+msgstr "¥æ¡¼¥¶¥Õ¥¡¥¤¥ë"
 
 #: kikbdconf.cpp:433
 msgid "system file"
-msgstr "�����ƥ�ե�����"
+msgstr "¥·¥¹¥Æ¥à¥Õ¥¡¥¤¥ë"
 
 #: kikbdconf.cpp:438
 msgid "Statistic:  "
-msgstr "����:  "
+msgstr "Åý·×:  "
 
 #: kikbdconf.cpp:446
 msgid "symbols"
-msgstr "����ܥ�"
+msgstr "¥·¥ó¥Ü¥ë"
 
 #: kikbdconf.cpp:454
 msgid "codes"
-msgstr "���"
+msgstr "Éä¹æ"
 
 #: kikbdconf.cpp:457
 msgid "alternative symbols"
-msgstr "���Υ���ܥ�"
+msgstr "Âå¤ê¤Î¥·¥ó¥Ü¥ë"
 
 #: kikbdconf.cpp:469
 msgid "Language"
-msgstr "����"
+msgstr "¸À¸ì"
 
 #: kikbdconf.cpp:473
 msgid "Charset"
-msgstr "ʸ�����å�"
+msgstr "Ê¸»ú¥»¥Ã¥È"
 
 #: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
-msgstr "��ݲ������ܡ��ɤΥ��顼"
+msgstr "¹ñºÝ²½¥­¡¼¥Ü¡¼¥É¤Î¥¨¥é¡¼"
 
 #: kikbdconf.cpp:535
 msgid "International keyboard warning"
-msgstr "��ݲ������ܡ��ɤηٹ�"
+msgstr "¹ñºÝ²½¥­¡¼¥Ü¡¼¥É¤Î·Ù¹ð"
 
 #: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
-msgstr "��ݲ������ܡ��ɤμ���"
+msgstr "¹ñºÝ²½¥­¡¼¥Ü¡¼¥É¤Î¼ÁÌä"
 
 #: kikbdconf.cpp:549
 msgid "Configure"
-msgstr "����"
+msgstr "ÀßÄê"
 
 #: kikbdconf.cpp:559
 msgid ""
@@ -301,256 +301,256 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"³���ޤ�����"
+"Â³¤±¤Þ¤¹¤«¡©"
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
-msgstr "�����ƥ��֥����ܡ��ɥޥåפΥꥹ��"
+msgstr "¥¢¥¯¥Æ¥£¥Ö¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤Î¥ê¥¹¥È"
 
 #: widgets.cpp:126
 msgid "&Add"
-msgstr "�ɲ�(&A)"
+msgstr "ÄÉ²Ã(&A)"
 
 #: widgets.cpp:127
 msgid "Add new keyboard map"
-msgstr "�����������ޥåפ��ɲ�"
+msgstr "¿·¤·¤¤¥­¡¼¥Þ¥Ã¥×¤òÄÉ²Ã"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
-msgstr "���򤵤줿�����ܡ��ɥޥåפκ��"
+msgstr "ÁªÂò¤µ¤ì¤¿¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤Îºï½ü"
 
 #: widgets.cpp:136
 msgid "U&p"
-msgstr "���(&U)"
+msgstr "¾å¤Ø(&U)"
 
 #: widgets.cpp:136
 msgid "Move up selected keyboard map"
-msgstr "���򥭡��ܡ��ɥޥåפ��˰�ư"
+msgstr "ÁªÂò¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤ò¾å¤Ë°ÜÆ°"
 
 #: widgets.cpp:140
 msgid "D&own"
-msgstr "����(&D)"
+msgstr "²¼¤Ø(&D)"
 
 #: widgets.cpp:140
 msgid "Move down selected keyboard map"
-msgstr "���򥭡��ܡ��ɥޥåפ򲼤˰�ư"
+msgstr "ÁªÂò¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤ò²¼¤Ë°ÜÆ°"
 
 #: widgets.cpp:144
 msgid "&Info"
-msgstr "����(&I)"
+msgstr "¾ðÊó(&I)"
 
 #: widgets.cpp:145
 msgid "Display information for selected keyboard map"
-msgstr "���򤵤줿�����ܡ��ɥޥåפξ����ɽ��"
+msgstr "ÁªÂò¤µ¤ì¤¿¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤Î¾ðÊó¤òÉ½¼¨"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
-msgstr "�ۥåȥꥹ�Ȥ�Ȥ�(&h)"
+msgstr "¥Û¥Ã¥È¥ê¥¹¥È¤ò»È¤¦(&h)"
 
 #: widgets.cpp:155
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
 msgstr ""
-"�����å������������󥹤��Ȥ���Ȥ��ˤ�\n"
-"ɸ��ǺǸ�����Ѥ��줿�����ܡ��ɥޥåפ�����ȤäƤ���������"
+"¥¹¥¤¥Ã¥Á¥­¡¼¥·¡¼¥±¥ó¥¹¤¬»È¤ï¤ì¤ë¤È¤­¤Ë¤Ï\n"
+"É¸½à¤ÇºÇ¸å¤ËÍøÍÑ¤µ¤ì¤¿¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤À¤±¤ò»È¤Ã¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
-msgstr "�����ܡ��ɤ��ɲ�"
+msgstr "¥­¡¼¥Ü¡¼¥É¤òÄÉ²Ã"
 
 #: widgets.cpp:225
 msgid "There are no keyboard maps left to add"
-msgstr "�ɲä��٤������ܡ��ɥޥåפ��ĤäƤ��ޤ���"
+msgstr "ÄÉ²Ã¤¹¤Ù¤­¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤¬»Ä¤Ã¤Æ¤¤¤Þ¤»¤ó"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
-msgstr "�����ܡ��ɥޥå׾���"
+msgstr "¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¾ðÊó"
 
 #: widgets.cpp:292
 msgid "Add Keyboard"
-msgstr "�����ܡ��ɤ��ɲ�"
+msgstr "¥­¡¼¥Ü¡¼¥É¤òÄÉ²Ã"
 
 #: widgets.cpp:296
 msgid "Available keyboard maps"
-msgstr "���Ѳ�ǽ�ʥ����ܡ��ɥޥå�"
+msgstr "ÍøÍÑ²ÄÇ½¤Ê¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×"
 
 #: widgets.cpp:403
 msgid "Keyboard maps"
-msgstr "�����ܡ��ɥޥå�"
+msgstr "¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×"
 
 #: widgets.cpp:414
 msgid "Switch and Alt Switch"
-msgstr "�����å���Alt�����å�"
+msgstr "¥¹¥¤¥Ã¥Á¤ÈAlt¥¹¥¤¥Ã¥Á"
 
 #: widgets.cpp:419
 msgid "Key(s) for switching between keyboard maps"
-msgstr "�����ܡ��ɥޥåפ򥹥��å����뤿��Υ���"
+msgstr "¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤ò¥¹¥¤¥Ã¥Á¤¹¤ë¤¿¤á¤Î¥­¡¼"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "���ߤΥ����ܡ��ɥޥåפ����إ���ܥ����Ѥ��뤿��Υ���"
+msgstr "¸½ºß¤Î¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤ÇÂåÂØ¥·¥ó¥Ü¥ëÍøÍÑ¤¹¤ë¤¿¤á¤Î¥­¡¼"
 
 #: widgets.cpp:438
 msgid "&Beep"
-msgstr "�ӡ���(&B)"
+msgstr "¥Ó¡¼¥×(&B)"
 
 #: widgets.cpp:439
 msgid "Beep when keyboard map is changed"
-msgstr "�����ܡ��ɥޥåפ��ѹ����줿�Ȥ��Υӡ���"
+msgstr "¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤¬ÊÑ¹¹¤µ¤ì¤¿¤È¤­¤Î¥Ó¡¼¥×"
 
 #: widgets.cpp:442
 msgid "Ad&vanced"
-msgstr "�ܺ�����(&v)"
+msgstr "¾ÜºÙÀßÄê(&v)"
 
 #: widgets.cpp:442
 msgid "Advanced options"
-msgstr "�ܺ٥��ץ����"
+msgstr "¾ÜºÙ¥ª¥×¥·¥ç¥ó"
 
 #: widgets.cpp:459
 msgid "Advanced"
-msgstr "�ܺ�����"
+msgstr "¾ÜºÙÀßÄê"
 
 #: widgets.cpp:475
 msgid "&Emulate Caps Lock"
-msgstr "����ץ����å����ϵ�"
+msgstr "¥­¥ã¥×¥¹¥í¥Ã¥¯¤òÌÏµ¼"
 
 #: widgets.cpp:476
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
 msgstr ""
-"X�����Х���ץ����å����ϵ����������Ǥ������������ܡ������Τ����\n"
-"ɬ�פǤ�"
+"X¥µ¡¼¥Ð¥­¥ã¥×¥¹¥í¥Ã¥¯¤òÌÏµ¼¡£¤¢¤ë¸À¸ì¤Ç¤ÏÀµ¤·¤¤¥­¡¼¥Ü¡¼¥ÉÁàºî¤Î¤¿¤á¤Ë\n"
+"É¬Í×¤Ç¤¹"
 
 #: widgets.cpp:482
 msgid "&World Menu"
-msgstr "������˥塼(&W)"
+msgstr "À¤³¦¥á¥Ë¥å¡¼(&W)"
 
 #: widgets.cpp:483
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "���򤵤줿�����å������򲡤����Ȥ�Ǥ�դΥ�����ɥ���ǥ�˥塼��ɽ��"
+msgstr "ÁªÂò¤µ¤ì¤¿¥¹¥¤¥Ã¥Á¥­¡¼¤ò²¡¤¹¤³¤È¤ÇÇ¤°Õ¤Î¥¦¥£¥ó¥É¥¦Æâ¤Ç¥á¥Ë¥å¡¼¤òÉ½¼¨"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
-msgstr "���饹����¸(&S)"
+msgstr "¥¯¥é¥¹¤òÊÝÂ¸(&S)"
 
 #: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "������ɥ����饹�ȥ����ܡ��ɥޥåפδط���λ������¸"
+msgstr "¥¦¥£¥ó¥É¥¦¥¯¥é¥¹¤È¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤Î´Ø·¸¤ò½¤Î»»þ¤ËÊÝÂ¸"
 
 #: widgets.cpp:498
 msgid "Define X codes"
-msgstr "X�����ɤ����"
+msgstr "X¥³¡¼¥É¤òÄêµÁ"
 
 #: widgets.cpp:501
 msgid "Input"
-msgstr "����"
+msgstr "ÆþÎÏ"
 
 #: widgets.cpp:505
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "ɸ��ư������ܡ��ɥޥåפ����ƤΥ�����ɥ���ͭ���Ǥ�"
+msgstr "É¸½àÆ°ºî¡£¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¤¬Á´¤Æ¤Î¥¦¥£¥ó¥É¥¦¤ÇÍ­¸ú¤Ç¤¹"
 
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
 msgstr ""
-"��ĥ����ư�������ɥ���˰ۤʤ륭���ܡ��ɥޥå׾��֤���¸"
+"³ÈÄ¥¤·¤¿Æ°ºî¡£¥¦¥£¥ó¥É¥¦Ëè¤Ë°Û¤Ê¤ë¥­¡¼¥Ü¡¼¥É¥Þ¥Ã¥×¾õÂÖ¤òÊÝÂ¸"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"���̤�ư�������ɥ����饹��˰ۤʤ륭���ܡ��ɾ��֤���¸"
+"ÆÃÊÌ¤ÊÆ°ºî¡£¥¦¥£¥ó¥É¥¦¥¯¥é¥¹Ëè¤Ë°Û¤Ê¤ë¥­¡¼¥Ü¡¼¥É¾õÂÖ¤òÊÝÂ¸"
 
 #: widgets.cpp:561
 msgid "Button Colors"
-msgstr "�ܥ���"
+msgstr "¥Ü¥¿¥ó¿§"
 
 #: widgets.cpp:571
 msgid "Foreground"
-msgstr "���̿�"
+msgstr "Á°ÌÌ¿§"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr "�ƥ����ȥ�٥�����̿�"
+msgstr "¥Æ¥­¥¹¥È¥é¥Ù¥ë¤ÎÁ°ÌÌ¿§"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr "�ط�"
+msgstr "ÇØ·Ê"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr "�ƥ����ȥ�٥���طʿ�"
+msgstr "¥Æ¥­¥¹¥È¥é¥Ù¥ë¤ÎÇØ·Ê¿§"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
-msgstr "����ץ����å�����"
+msgstr "¥­¥ã¥×¥¹¥í¥Ã¥¯¤¢¤ê"
 
 #: widgets.cpp:582
 msgid "Background when Emulated Caps Lock active"
-msgstr "�ϵ���������ץ����å�������������Ƥ���Ȥ����ط�"
+msgstr "ÌÏµ¼¤·¤¿¥­¥ã¥×¥¹¥í¥Ã¥¯¤¬³èÀ­²½¤µ¤ì¤Æ¤¤¤ë¤È¤­¤ÎÇØ·Ê"
 
 #: widgets.cpp:588
 msgid "With Alternate"
-msgstr "��ꤢ��"
+msgstr "Âå¤ê¤¢¤ê"
 
 #: widgets.cpp:589
 msgid "Background when Alternate switch key is pressed"
-msgstr "���إ����å�������������Ƥ���Ȥ����ط�"
+msgstr "ÂåÂØ¥¹¥¤¥Ã¥Á¥­¡¼¤¬²¡¤µ¤ì¤Æ¤¤¤ë¤È¤­¤ÎÇØ·Ê"
 
 #: widgets.cpp:598
 msgid "Button Font"
-msgstr "�ܥ���ե����"
+msgstr "¥Ü¥¿¥ó¥Õ¥©¥ó¥È"
 
 #: widgets.cpp:606
 msgid "&Customize Font"
-msgstr "�ե���Ȥ򥫥����ޥ���"
+msgstr "¥Õ¥©¥ó¥È¤ò¥«¥¹¥¿¥Þ¥¤¥º"
 
 #: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
-msgstr "�ƥ����ȥ�٥�Υե��������乭�����������"
+msgstr "¥Æ¥­¥¹¥È¥é¥Ù¥ë¤Î¥Õ¥©¥ó¥ÈÀßÄê¤ä¹­°èÀßÄê¤ÎÍøÍÑ"
 
 #: widgets.cpp:611
 msgid "C&hange Font"
-msgstr "�ե���Ȥ��ѹ�(&h)"
+msgstr "¥Õ¥©¥ó¥È¤òÊÑ¹¹(&h)"
 
 #: widgets.cpp:656
 msgid "&Autostart"
-msgstr "��ưŪ�˳���(&A)"
+msgstr "¼«Æ°Åª¤Ë³«»Ï(&A)"
 
 #: widgets.cpp:657
 msgid "Start up automatically"
-msgstr "��ưŪ�˳��Ϥ��ޤ���"
+msgstr "¼«Æ°Åª¤Ë³«»Ï¤·¤Þ¤·¤¿"
 
 #: widgets.cpp:663
 msgid "&Docked"
-msgstr "�ɥå���(&D)"
+msgstr "¥É¥Ã¥¯²½(&D)"
 
 #: widgets.cpp:664
 msgid "Dock into special area in the panel"
-msgstr "�ѥͥ�����̤��ΰ�˥ɥå�"
+msgstr "¥Ñ¥Í¥ë¤ÎÆÃÊÌ¤ÊÎÎ°è¤Ë¥É¥Ã¥¯"
 
 #: widgets.cpp:673
 msgid "Place"
-msgstr "���"
+msgstr "¾ì½ê"
 
 #: widgets.cpp:680
 msgid "Place in selected corner"
-msgstr "���򤵤줿�����ʤξ��"
+msgstr "ÁªÂò¤µ¤ì¤¿¥³¡¼¥Ê¤Î¾ì½ê"
 
 #: kcmikbd.cpp:64
 msgid "&General"
-msgstr "����(&G)"
+msgstr "°ìÈÌ(&G)"
 
 #: kcmikbd.cpp:70
 msgid "&Style"
-msgstr "��������(&S)"
+msgstr "¥¹¥¿¥¤¥ë(&S)"
 
 #: kcmikbd.cpp:76
 msgid "Start&Up"
-msgstr "����(&U)"
+msgstr "³«»Ï(&U)"
 
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
-msgstr "��ݲ������ܡ���"
+msgstr "¹ñºÝ²½¥­¡¼¥Ü¡¼¥É"

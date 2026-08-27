@@ -1,20 +1,20 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Karl Backström <backstrom@kde.org>, 1998.
+# Karl BackstrÃ¶m <backstrom@kde.org>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-04-13 01:26+0200\n"
 "PO-Revision-Date: 1999-01-30 01:31+01:00\n"
-"Last-Translator: Karl Backström <backstrom@kde.org>\n"
+"Last-Translator: Karl BackstrÃ¶m <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
-msgstr "Kde Internationellt Tangentbord har redan startats på den här skärmen."
+msgstr "Kde Internationellt Tangentbord har redan startats pÃ¥ den hÃ¤r skÃ¤rmen."
 
 #: kikbd.cpp:295
 #, c-format
@@ -23,7 +23,7 @@ msgid ""
 "Using X default codes."
 msgstr ""
 "X-kodsfilen \"%s\" hittades inte.\n"
-"Använder X standardkoder."
+"AnvÃ¤nder X standardkoder."
 
 #: kikbd.cpp:321
 #, c-format
@@ -32,21 +32,21 @@ msgid ""
 "Skipping this map."
 msgstr ""
 "Tangentbordslayouten \"%s\" hittades inte.\n"
-"Hoppar över layouten."
+"Hoppar Ã¶ver layouten."
 
 #: kikbd.cpp:337
 msgid "Setup"
-msgstr "Inställnigar"
+msgstr "InstÃ¤llnigar"
 
 #: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
-msgstr "Kan inte ta bort %s från väljarna.\n"
+msgstr "Kan inte ta bort %s frÃ¥n vÃ¤ljarna.\n"
 
 #: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "Kan inte lägga till %s till väljare nummer 3.\n"
+msgstr "Kan inte lÃ¤gga till %s till vÃ¤ljare nummer 3.\n"
 
 #: kikbd.cpp:384
 #, c-format
@@ -54,8 +54,8 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"Kan inte sätta lägesbytare som %s för tangentbordet %s.\n"
-"Alternativsymboler avstängda."
+"Kan inte sÃ¤tta lÃ¤gesbytare som %s fÃ¶r tangentbordet %s.\n"
+"Alternativsymboler avstÃ¤ngda."
 
 #: kikbd.cpp:406
 #, fuzzy
@@ -63,8 +63,8 @@ msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"Kan inte ta bort Caps Lock från väljarna.\n"
-"Caps Lock-emulering avstängd"
+"Kan inte ta bort Caps Lock frÃ¥n vÃ¤ljarna.\n"
+"Caps Lock-emulering avstÃ¤ngd"
 
 #: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
@@ -75,8 +75,8 @@ msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
-"Du är på väg att avsluta \"Internationellt tangentbord\"-verktyget.\n"
-" Vill du att det ska startas automatiskt nästa gång du loggar in?"
+"Du Ã¤r pÃ¥ vÃ¤g att avsluta \"Internationellt tangentbord\"-verktyget.\n"
+" Vill du att det ska startas automatiskt nÃ¤sta gÃ¥ng du loggar in?"
 
 #: keymap.cpp:186
 #, fuzzy
@@ -92,9 +92,9 @@ msgid ""
 "in the configuration program."
 msgstr ""
 "Kan inte hitta symbolen \"%s\".\n"
-"Det kan bero på att dina standard-X-symboler inte passar.\n"
-"Du kan förinställa X-koder i \"Advancerat\"-delen\n"
-"av inställningsprogrammet."
+"Det kan bero pÃ¥ att dina standard-X-symboler inte passar.\n"
+"Du kan fÃ¶rinstÃ¤lla X-koder i \"Advancerat\"-delen\n"
+"av instÃ¤llningsprogrammet."
 
 #: keymap.cpp:238
 #, fuzzy, c-format
@@ -104,12 +104,12 @@ msgstr "KeyMap: kan inte hitta symbolen \"%s\"."
 #: keymap.cpp:246
 #, fuzzy, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: förstår inte tangentkoden \"%s\"."
+msgstr "KeyMap: fÃ¶rstÃ¥r inte tangentkoden \"%s\"."
 
 #: keymap.cpp:252
 #, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "KeyMap: tangentkoden \"%s\" är utanför gränsen."
+msgstr "KeyMap: tangentkoden \"%s\" Ã¤r utanfÃ¶r grÃ¤nsen."
 
 #: kikbdconf.cpp:102
 msgid "Global"
@@ -117,7 +117,7 @@ msgstr "Global"
 
 #: kikbdconf.cpp:102
 msgid "Window"
-msgstr "Fönster"
+msgstr "FÃ¶nster"
 
 #: kikbdconf.cpp:102
 msgid "Class"
@@ -129,71 +129,71 @@ msgstr "(Ingen)"
 
 #: kikbdconf.cpp:106 kikbdconf.cpp:118
 msgid "Right Alt"
-msgstr "Höger alt"
+msgstr "HÃ¶ger alt"
 
 #: kikbdconf.cpp:107 kikbdconf.cpp:119
 msgid "Right Control"
-msgstr "Höger control"
+msgstr "HÃ¶ger control"
 
 #: kikbdconf.cpp:108
 msgid "Rights (Alt+Shift)"
-msgstr "Höger (Alt+Shift)"
+msgstr "HÃ¶ger (Alt+Shift)"
 
 #: kikbdconf.cpp:109
 msgid "Rights (Ctrl+Alt)"
-msgstr "Höger (Ctrl+Alt)"
+msgstr "HÃ¶ger (Ctrl+Alt)"
 
 #: kikbdconf.cpp:110
 msgid "Rights (Ctrl+Shift)"
-msgstr "Höger (Ctrl+Shift)"
+msgstr "HÃ¶ger (Ctrl+Shift)"
 
 #: kikbdconf.cpp:111
 msgid "Lefts  (Alt+Shift)"
-msgstr "Vänster (Alt+Shift)"
+msgstr "VÃ¤nster (Alt+Shift)"
 
 #: kikbdconf.cpp:112
 msgid "Lefts  (Ctrl+Alt)"
-msgstr "Vänster (Ctrl+Alt)"
+msgstr "VÃ¤nster (Ctrl+Alt)"
 
 #: kikbdconf.cpp:113
 msgid "Lefts  (Ctrl+Shift)"
-msgstr "Vänster (Ctrl+Shift)"
+msgstr "VÃ¤nster (Ctrl+Shift)"
 
 #: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
-msgstr "Båda shiftknapparna (Shift+Shift)"
+msgstr "BÃ¥da shiftknapparna (Shift+Shift)"
 
 #: kikbdconf.cpp:120
 msgid "Right Meta"
-msgstr "Höger meta"
+msgstr "HÃ¶ger meta"
 
 #: kikbdconf.cpp:121
 msgid "Left  Alt"
-msgstr "Vänster alt"
+msgstr "VÃ¤nster alt"
 
 #: kikbdconf.cpp:122
 msgid "Left  Control"
-msgstr "Vänster control"
+msgstr "VÃ¤nster control"
 
 #: kikbdconf.cpp:123
 msgid "Left  Meta"
-msgstr "Vänster meta"
+msgstr "VÃ¤nster meta"
 
 #: kikbdconf.cpp:126
 msgid "Top Left"
-msgstr "Övre vänstra"
+msgstr "Ã–vre vÃ¤nstra"
 
 #: kikbdconf.cpp:127
 msgid "Top Right"
-msgstr "Övre högra"
+msgstr "Ã–vre hÃ¶gra"
 
 #: kikbdconf.cpp:128
 msgid "Bottom Left"
-msgstr "Nedre vänstra"
+msgstr "Nedre vÃ¤nstra"
 
 #: kikbdconf.cpp:129
 msgid "Bottom Right"
-msgstr "Nedre högra"
+msgstr "Nedre hÃ¶gra"
 
 #: kikbdconf.cpp:156
 msgid "X default codes"
@@ -206,19 +206,19 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "%s\n"
-"Vill du ändra inställningarna nu?"
+"Vill du Ã¤ndra instÃ¤llningarna nu?"
 
 #: kikbdconf.cpp:223
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
-"Du använder \"Internationellt tangentbord\" för första gången.\n"
-"Jag installerade ett antal standardinställningar."
+"Du anvÃ¤nder \"Internationellt tangentbord\" fÃ¶r fÃ¶rsta gÃ¥ngen.\n"
+"Jag installerade ett antal standardinstÃ¤llningar."
 
 #: kikbdconf.cpp:379
 msgid "unknown"
-msgstr "okänd"
+msgstr "okÃ¤nd"
 
 #: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
@@ -238,7 +238,7 @@ msgstr "Beskrivning:  "
 
 #: kikbdconf.cpp:430
 msgid "Source:  "
-msgstr "Källa:  "
+msgstr "KÃ¤lla:  "
 
 #: kikbdconf.cpp:431
 msgid "no file"
@@ -246,7 +246,7 @@ msgstr "ingen fil"
 
 #: kikbdconf.cpp:432
 msgid "user file"
-msgstr "användarfil"
+msgstr "anvÃ¤ndarfil"
 
 #: kikbdconf.cpp:433
 msgid "system file"
@@ -270,7 +270,7 @@ msgstr "alternativa symboler"
 
 #: kikbdconf.cpp:469
 msgid "Language"
-msgstr "Språk"
+msgstr "SprÃ¥k"
 
 #: kikbdconf.cpp:473
 msgid "Charset"
@@ -286,11 +286,11 @@ msgstr "Internationellt tangentbord: varning"
 
 #: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
-msgstr "Internationellt tangentbord: fråga"
+msgstr "Internationellt tangentbord: frÃ¥ga"
 
 #: kikbdconf.cpp:549
 msgid "Configure"
-msgstr "Ställ in"
+msgstr "StÃ¤ll in"
 
 #: kikbdconf.cpp:559
 msgid ""
@@ -298,20 +298,20 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"Vill du fortsätta?"
+"Vill du fortsÃ¤tta?"
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
-msgstr "Lista över aktiva tagentbordslayouter"
+msgstr "Lista Ã¶ver aktiva tagentbordslayouter"
 
 #: widgets.cpp:126
 msgid "&Add"
-msgstr "&Lägg till"
+msgstr "&LÃ¤gg till"
 
 #: widgets.cpp:127
 #, fuzzy
 msgid "Add new keyboard map"
-msgstr "Lägg till ny tagentbordslayouter"
+msgstr "LÃ¤gg till ny tagentbordslayouter"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
@@ -345,7 +345,7 @@ msgstr "Visa information om den valda tagentbordslayouten"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
-msgstr "Använd &snabblista"
+msgstr "AnvÃ¤nd &snabblista"
 
 #: widgets.cpp:155
 #, fuzzy
@@ -353,12 +353,12 @@ msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
 msgstr ""
-"Använd bara standard och senast aktiva tagentbordslayouten för "
-"tangentbordsväxling"
+"AnvÃ¤nd bara standard och senast aktiva tagentbordslayouten fÃ¶r "
+"tangentbordsvÃ¤xling"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
-msgstr "Lägger till tangentbord"
+msgstr "LÃ¤gger till tangentbord"
 
 #: widgets.cpp:225
 #, fuzzy
@@ -371,11 +371,11 @@ msgstr "Information om tagentbordslayout"
 
 #: widgets.cpp:292
 msgid "Add Keyboard"
-msgstr "Lägg till tangentbord"
+msgstr "LÃ¤gg till tangentbord"
 
 #: widgets.cpp:296
 msgid "Available keyboard maps"
-msgstr "Tillgängliga tagentbordslayouter"
+msgstr "TillgÃ¤ngliga tagentbordslayouter"
 
 #: widgets.cpp:403
 msgid "Keyboard maps"
@@ -388,13 +388,13 @@ msgstr "Byte och alt byte"
 #: widgets.cpp:419
 #, fuzzy
 msgid "Key(s) for switching between keyboard maps"
-msgstr "Tangent(er) för att byta mellan tagentbordslayouter"
+msgstr "Tangent(er) fÃ¶r att byta mellan tagentbordslayouter"
 
 #: widgets.cpp:425
 #, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr ""
-"Tangent för att aktivera alternativa symboler i aktuell tagentbordslayout"
+"Tangent fÃ¶r att aktivera alternativa symboler i aktuell tagentbordslayout"
 
 #: widgets.cpp:438
 msgid "&Beep"
@@ -403,7 +403,7 @@ msgstr "&Summer"
 #: widgets.cpp:439
 #, fuzzy
 msgid "Beep when keyboard map is changed"
-msgstr "Använd summer när tagentbordslayouten ändras"
+msgstr "AnvÃ¤nd summer nÃ¤r tagentbordslayouten Ã¤ndras"
 
 #: widgets.cpp:442
 msgid "Ad&vanced"
@@ -411,7 +411,7 @@ msgstr "A&vancerat"
 
 #: widgets.cpp:442
 msgid "Advanced options"
-msgstr "Avancerade inställningar"
+msgstr "Avancerade instÃ¤llningar"
 
 #: widgets.cpp:459
 msgid "Advanced"
@@ -426,17 +426,17 @@ msgstr "&Emulera Caps Lock"
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Emulera XServer-Caps Lock. Behövs för att vissa språk ska bli rätt"
+msgstr "Emulera XServer-Caps Lock. BehÃ¶vs fÃ¶r att vissa sprÃ¥k ska bli rÃ¤tt"
 
 #: widgets.cpp:482
 msgid "&World Menu"
-msgstr "&Världsmeny"
+msgstr "&VÃ¤rldsmeny"
 
 #: widgets.cpp:483
 #, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr ""
-"Visa meny i vilket fönster som helst genom att hålla ner bytes-knapparna"
+"Visa meny i vilket fÃ¶nster som helst genom att hÃ¥lla ner bytes-knapparna"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -445,7 +445,7 @@ msgstr "&Spara klasser"
 #: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr ""
-"Spara relationer mellan fönsterklasser och tagentbordslayouter vid avslut"
+"Spara relationer mellan fÃ¶nsterklasser och tagentbordslayouter vid avslut"
 
 #: widgets.cpp:498
 msgid "Define X codes"
@@ -458,27 +458,27 @@ msgstr "Inmatning"
 #: widgets.cpp:505
 #, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Standarduppförande. Tagentbordslayouten är aktiv för alla fönster"
+msgstr "StandarduppfÃ¶rande. Tagentbordslayouten Ã¤r aktiv fÃ¶r alla fÃ¶nster"
 
 #: widgets.cpp:509
 #, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Standarduppförande. Tagentbordslayouten är aktiv för alla fönster"
+msgstr "StandarduppfÃ¶rande. Tagentbordslayouten Ã¤r aktiv fÃ¶r alla fÃ¶nster"
 
 #: widgets.cpp:513
 #, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Standarduppförande. Tagentbordslayouten är aktiv för alla fönster"
+msgstr "StandarduppfÃ¶rande. Tagentbordslayouten Ã¤r aktiv fÃ¶r alla fÃ¶nster"
 
 #: widgets.cpp:561
 msgid "Button Colors"
-msgstr "Knappfärger"
+msgstr "KnappfÃ¤rger"
 
 #: widgets.cpp:571
 msgid "Foreground"
-msgstr "Förgrund"
+msgstr "FÃ¶rgrund"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
@@ -498,7 +498,7 @@ msgstr "Med Caps Lock"
 
 #: widgets.cpp:582
 msgid "Background when Emulated Caps Lock active"
-msgstr "Bakgrund när emulerad Caps Lock är aktiverad"
+msgstr "Bakgrund nÃ¤r emulerad Caps Lock Ã¤r aktiverad"
 
 #: widgets.cpp:588
 msgid "With Alternate"
@@ -507,7 +507,7 @@ msgstr "Med Alt"
 #: widgets.cpp:589
 #, fuzzy
 msgid "Background when Alternate switch key is pressed"
-msgstr "Bakgund då alternatiknappen är nertryckt"
+msgstr "Bakgund dÃ¥ alternatiknappen Ã¤r nertryckt"
 
 #: widgets.cpp:598
 msgid "Button Font"
@@ -519,7 +519,7 @@ msgstr "&Anpassa typsnitt"
 
 #: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
-msgstr "Anpassa typsnitt för texten eller använd globala inställningar"
+msgstr "Anpassa typsnitt fÃ¶r texten eller anvÃ¤nd globala instÃ¤llningar"
 
 #: widgets.cpp:611
 msgid "C&hange Font"
@@ -547,11 +547,11 @@ msgstr "Plats"
 
 #: widgets.cpp:680
 msgid "Place in selected corner"
-msgstr "Placera i valt hörn"
+msgstr "Placera i valt hÃ¶rn"
 
 #: kcmikbd.cpp:64
 msgid "&General"
-msgstr "&Allmänt"
+msgstr "&AllmÃ¤nt"
 
 #: kcmikbd.cpp:70
 msgid "&Style"
@@ -570,11 +570,11 @@ msgstr "Internationellt Tangentbord"
 
 #~ msgid "Extended behavior. Each windows remember it's own keyboard map"
 #~ msgstr ""
-#~ "Utökat uppförande. Varje fönster kommer ihåg sin egen tagentbordslayout"
+#~ "UtÃ¶kat uppfÃ¶rande. Varje fÃ¶nster kommer ihÃ¥g sin egen tagentbordslayout"
 
 #~ msgid "Special behavior. Each windows class remember it's own keyboard map"
 #~ msgstr ""
-#~ "Specialuppförande. Varje fönsterklass kommer ihåg sin egen tagentbordslayout"
+#~ "SpecialuppfÃ¶rande. Varje fÃ¶nsterklass kommer ihÃ¥g sin egen tagentbordslayout"
 
 #~ msgid "Color of the text label"
-#~ msgstr "Färg på texten"
+#~ msgstr "FÃ¤rg pÃ¥ texten"

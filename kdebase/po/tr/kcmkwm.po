@@ -10,21 +10,21 @@ msgstr ""
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
 #: main.cpp:67
 msgid "&Buttons"
-msgstr "&Düğme"
+msgstr "&DÃ¼Ã°me"
 
 #: main.cpp:70
 msgid "&Titlebar"
-msgstr "&Başlık Çubuğu"
+msgstr "&BaÃ¾lÃ½k Ã‡ubuÃ°u"
 
 #: main.cpp:73
 #, fuzzy
 msgid "Bo&rders"
-msgstr "Sihirli Çerçeve"
+msgstr "Sihirli Ã‡erÃ§eve"
 
 #: main.cpp:76
 msgid "&Mouse"
@@ -38,19 +38,19 @@ msgstr ""
 #, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "Kullanım: kcmkwm [-init | {pencere,düğme,başlık çubuğu,masaüstü}]\n"
+msgstr "KullanÃ½m: kcmkwm [-init | {pencere,dÃ¼Ã°me,baÃ¾lÃ½k Ã§ubuÃ°u,masaÃ¼stÃ¼}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Pencere yöneticisi türü"
+msgstr "Pencere yÃ¶neticisi tÃ¼rÃ¼"
 
 #: titlebar.cpp:125
 msgid "Minimize"
-msgstr "Küçült"
+msgstr "KÃ¼Ã§Ã¼lt"
 
 #: titlebar.cpp:129
 msgid "Maximize"
-msgstr "Büyült"
+msgstr "BÃ¼yÃ¼lt"
 
 #: titlebar.cpp:133
 msgid "Sticky"
@@ -58,7 +58,7 @@ msgstr "Sabit"
 
 #: titlebar.cpp:141
 msgid "Menu"
-msgstr "Menü"
+msgstr "MenÃ¼"
 
 #: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
@@ -71,27 +71,27 @@ msgstr ""
 #: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Başlık çubuğunun sol tarafı dolu... Büyült tuşu geçersiz\n"
+msgstr "BaÃ¾lÃ½k Ã§ubuÃ°unun sol tarafÃ½ dolu... BÃ¼yÃ¼lt tuÃ¾u geÃ§ersiz\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Başlık çubuğunun sağ tarafı dolu... Büyült tuşu geçersiz\n"
+msgstr "BaÃ¾lÃ½k Ã§ubuÃ°unun saÃ° tarafÃ½ dolu... BÃ¼yÃ¼lt tuÃ¾u geÃ§ersiz\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Başlık çubuğunun sol tarafı dolu... Küçült tuşu geçersiz\n"
+msgstr "BaÃ¾lÃ½k Ã§ubuÃ°unun sol tarafÃ½ dolu... KÃ¼Ã§Ã¼lt tuÃ¾u geÃ§ersiz\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Başlık çubuğunun sağ tarafı dolu... Küçült tuşu geçersiz\n"
+msgstr "BaÃ¾lÃ½k Ã§ubuÃ°unun saÃ° tarafÃ½ dolu... KÃ¼Ã§Ã¼lt tuÃ¾u geÃ§ersiz\n"
 
 #: titlebar.cpp:932
 #, fuzzy
 msgid "Title Alignment"
-msgstr "Başlık Animasyonu"
+msgstr "BaÃ¾lÃ½k Animasyonu"
 
 #: titlebar.cpp:941
 msgid "Middle"
@@ -99,19 +99,19 @@ msgstr ""
 
 #: titlebar.cpp:969
 msgid "Shaded Vertically"
-msgstr "Dikey gölgeli"
+msgstr "Dikey gÃ¶lgeli"
 
 #: titlebar.cpp:975
 msgid "Shaded Horizontally"
-msgstr "Yatay gölgeli"
+msgstr "Yatay gÃ¶lgeli"
 
 #: titlebar.cpp:984
 msgid "Plain"
-msgstr "Düz"
+msgstr "DÃ¼z"
 
 #: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
-msgstr "Sİmge"
+msgstr "SÃmge"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
@@ -139,16 +139,16 @@ msgstr "Fare Hareketi"
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
-"SolFareTuşu ile başlık çubuğunda\n"
-"çift tıklama şunu yapar:"
+"SolFareTuÃ¾u ile baÃ¾lÃ½k Ã§ubuÃ°unda\n"
+"Ã§ift tÃ½klama Ã¾unu yapar:"
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
-msgstr "Büyült(Küçült)"
+msgstr "BÃ¼yÃ¼lt(KÃ¼Ã§Ã¼lt)"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "Gölgelendir(Kaldır)"
+msgstr "GÃ¶lgelendir(KaldÃ½r)"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
@@ -161,7 +161,7 @@ msgstr "Sabit(Serbest)"
 #: titlebar.cpp:1109
 #, fuzzy
 msgid "Title animation"
-msgstr "Başlık Animasyonu"
+msgstr "BaÃ¾lÃ½k Animasyonu"
 
 #: titlebar.cpp:1125
 msgid "ms"
@@ -170,7 +170,7 @@ msgstr "ms"
 #: titlebar.cpp:1368
 #, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Pencere yöneticisi türü"
+msgstr "Pencere yÃ¶neticisi tÃ¼rÃ¼"
 
 #: titlebar.cpp:1369
 msgid ""
@@ -198,7 +198,7 @@ msgstr ""
 #: windows.cpp:98
 #, fuzzy
 msgid "Resize animation:"
-msgstr "Başlık Animasyonu"
+msgstr "BaÃ¾lÃ½k Animasyonu"
 
 #: windows.cpp:111
 msgid "None"
@@ -206,15 +206,15 @@ msgstr ""
 
 #: windows.cpp:117
 msgid "Fast"
-msgstr "Hızlı"
+msgstr "HÃ½zlÃ½"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "Yerleştirme Şekli"
+msgstr "YerleÃ¾tirme Ãekli"
 
 #: windows.cpp:134
 msgid "Smart"
-msgstr "Akıllı"
+msgstr "AkÃ½llÃ½"
 
 #: windows.cpp:136
 msgid "Cascade"
@@ -222,7 +222,7 @@ msgstr "Basamakla"
 
 #: windows.cpp:138
 msgid "Interactive"
-msgstr "Etkileşimli"
+msgstr "EtkileÃ¾imli"
 
 #: windows.cpp:140
 msgid "Random"
@@ -242,11 +242,11 @@ msgstr ""
 #: windows.cpp:175
 #, fuzzy
 msgid "Focus policy"
-msgstr "Focus Şekli"
+msgstr "Focus Ãekli"
 
 #: windows.cpp:185
 msgid "Click to focus"
-msgstr "Tıklayarak Focus"
+msgstr "TÃ½klayarak Focus"
 
 #: windows.cpp:187
 msgid "Focus follows mouse"
@@ -274,31 +274,31 @@ msgstr ""
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
-msgstr "Aktif masaüstü köşeleri"
+msgstr "Aktif masaÃ¼stÃ¼ kÃ¶Ã¾eleri"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "Aktif masaüstü köşeleri mümkün"
+msgstr "Aktif masaÃ¼stÃ¼ kÃ¶Ã¾eleri mÃ¼mkÃ¼n"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "İşaretleyiciyi merkeze doğru haraket ettir"
+msgstr "ÃÃ¾aretleyiciyi merkeze doÃ°ru haraket ettir"
 
 #: desktop.cpp:87
 #, fuzzy
 msgid "Desktop switch delay:"
-msgstr "Masaüstü değiştirme gecikmesi:"
+msgstr "MasaÃ¼stÃ¼ deÃ°iÃ¾tirme gecikmesi:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
-msgstr "Sihirli Çerçeve"
+msgstr "Sihirli Ã‡erÃ§eve"
 
 #: desktop.cpp:126
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Çerçeve Yapışma Bölgesi:\n"
+"Ã‡erÃ§eve YapÃ½Ã¾ma BÃ¶lgesi:\n"
 "    (benek olarak)"
 
 #: desktop.cpp:151
@@ -306,7 +306,7 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Pencere Yapışma Bölgesi:\n"
+"Pencere YapÃ½Ã¾ma BÃ¶lgesi:\n"
 "    (benek olarak)"
 
 #: mouse.cpp:54
@@ -316,12 +316,12 @@ msgstr ""
 #: mouse.cpp:58
 #, fuzzy
 msgid "Inactive"
-msgstr "Etkileşimli"
+msgstr "EtkileÃ¾imli"
 
 #: mouse.cpp:62
 #, fuzzy
 msgid "Titlebar and frame:"
-msgstr "Başlık çubuğu görünümü"
+msgstr "BaÃ¾lÃ½k Ã§ubuÃ°u gÃ¶rÃ¼nÃ¼mÃ¼"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
@@ -334,7 +334,7 @@ msgstr ""
 #: mouse.cpp:74 mouse.cpp:86
 #, fuzzy
 msgid "Left Button"
-msgstr "&Düğme"
+msgstr "&DÃ¼Ã°me"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
@@ -369,7 +369,7 @@ msgstr ""
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 #, fuzzy
 msgid "Operations menu"
-msgstr "İşlemler Menüsü"
+msgstr "ÃÃ¾lemler MenÃ¼sÃ¼"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
@@ -408,7 +408,7 @@ msgstr ""
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
-msgstr "Yeniden Boyutlandır"
+msgstr "Yeniden BoyutlandÃ½r"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
@@ -474,14 +474,14 @@ msgstr ""
 #: advanced.cpp:121
 #, fuzzy
 msgid "Titles"
-msgstr "&Başlık Çubuğu"
+msgstr "&BaÃ¾lÃ½k Ã‡ubuÃ°u"
 
 #: advanced.cpp:126
 msgid "Classes"
 msgstr ""
 
 #~ msgid "&Desktop"
-#~ msgstr "&Masaüstü"
+#~ msgstr "&MasaÃ¼stÃ¼"
 
 #~ msgid "Window movement"
 #~ msgstr "Pencere Hareketi"
@@ -493,29 +493,29 @@ msgstr ""
 #~ msgstr "Opak"
 
 #~ msgid "Window resize"
-#~ msgstr "Pencere boyutlandır"
+#~ msgstr "Pencere boyutlandÃ½r"
 
 #~ msgid "Animation:"
 #~ msgstr "Animasyon:"
 
 #~ msgid "Allowed Overlap:"
-#~ msgstr "İzin Verilen Örtüşme:"
+#~ msgstr "Ãzin Verilen Ã–rtÃ¼Ã¾me:"
 
 #~ msgid "Maximize Style"
-#~ msgstr "Büyültme Biçimi"
+#~ msgstr "BÃ¼yÃ¼ltme BiÃ§imi"
 
 #~ msgid "Maximize fully"
-#~ msgstr "Tamamen büyült"
+#~ msgstr "Tamamen bÃ¼yÃ¼lt"
 
 #~ msgid "Maximize vertically"
-#~ msgstr "Düşey Büyült"
+#~ msgstr "DÃ¼Ã¾ey BÃ¼yÃ¼lt"
 
 #~ msgid ""
 #~ "Auto raise delay\n"
 #~ "(<100 disables)"
 #~ msgstr ""
-#~ "Otomatik yükseltme\n"
-#~ "gecikmesi (<100 kapatır)"
+#~ "Otomatik yÃ¼kseltme\n"
+#~ "gecikmesi (<100 kapatÃ½r)"
 
 #~ msgid "miliseconds"
 #~ msgstr "milisaniye"

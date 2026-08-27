@@ -13,46 +13,46 @@ msgstr ""
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: cardmaps.cpp:63
 msgid "please wait, loading cards..."
-msgstr "Kérem várjon, keresem a kártyáimat... (Hova is tettem õket?)"
+msgstr "KÃ©rem vÃ¡rjon, keresem a kÃ¡rtyÃ¡imat... (Hova is tettem Å‘ket?)"
 
 #: cardmaps.cpp:67
 msgid "KPat - a Solitaire game"
-msgstr "KPat - egy Solitaire játék"
+msgstr "KPat - egy Solitaire jÃ¡tÃ©k"
 
 #: cardmaps.cpp:105
 #, c-format
 msgid "kpat: PANIC, cannot load card pixmap \"%s\"\n"
-msgstr "kpat: HÛHA, nem tudom betölteni a %s képet\n"
+msgstr "kpat: HÅ°HA, nem tudom betÃ¶lteni a %s kÃ©pet\n"
 
 #: cardmaps.cpp:205
 #, c-format
 msgid "KPAT: access to invalid card %d, %d\n"
-msgstr "KPAT: hozzáférés egy hibás kártyához %d, %d\n"
+msgstr "KPAT: hozzÃ¡fÃ©rÃ©s egy hibÃ¡s kÃ¡rtyÃ¡hoz %d, %d\n"
 
 #: computation.cpp:98
 msgid "Easy 4"
-msgstr "Iszonyú könnyû"
+msgstr "IszonyÃº kÃ¶nnyÅ±"
 
 #: computation.cpp:99
 msgid "Easy 3"
-msgstr "Nagyon könnyû"
+msgstr "Nagyon kÃ¶nnyÅ±"
 
 #: computation.cpp:100
 msgid "Easy 2"
-msgstr "Elég könnyû"
+msgstr "ElÃ©g kÃ¶nnyÅ±"
 
 #: computation.cpp:101
 msgid "Easy 1"
-msgstr "Könnyû"
+msgstr "KÃ¶nnyÅ±"
 
 #: computation.cpp:102
 msgid "Normal"
-msgstr "Közepes"
+msgstr "KÃ¶zepes"
 
 #: computation.cpp:103
 msgid "Hard 1"
@@ -60,27 +60,27 @@ msgstr "Kicsit nehezebb"
 
 #: computation.cpp:104
 msgid "Hard 2"
-msgstr "Jóval nehezebb"
+msgstr "JÃ³val nehezebb"
 
 #: computation.cpp:105
 msgid "Hard 3"
-msgstr "Nehéz"
+msgstr "NehÃ©z"
 
 #: computation.cpp:106
 msgid "Hard 4"
-msgstr "Elég nehéz"
+msgstr "ElÃ©g nehÃ©z"
 
 #: computation.cpp:107
 msgid "Hard 5"
-msgstr "Durvanehéz"
+msgstr "DurvanehÃ©z"
 
 #: klondike.cpp:67
 msgid "Easy rules"
-msgstr "Könnyû szabályok"
+msgstr "KÃ¶nnyÅ± szabÃ¡lyok"
 
 #: klondike.cpp:68
 msgid "Hard rules"
-msgstr "Nehéz szabályok"
+msgstr "NehÃ©z szabÃ¡lyok"
 
 #: klondike.cpp:94
 msgid ""
@@ -88,15 +88,15 @@ msgid ""
 "Are you sure you want to do this?"
 msgstr ""
 "Azt hiszem, hogy rossz gombot nyomott meg,\n"
-"mert ha most igent mond, akkor vége lesz a játéknak."
+"mert ha most igent mond, akkor vÃ©ge lesz a jÃ¡tÃ©knak."
 
 #: grandf.cpp:35
 msgid "Try to move card:"
-msgstr "Próbáld ezt a kártyát:"
+msgstr "PrÃ³bÃ¡ld ezt a kÃ¡rtyÃ¡t:"
 
 #: grandf.cpp:114 mod3.cpp:57
 msgid "Redeal"
-msgstr "Új leosztás"
+msgstr "Ãšj leosztÃ¡s"
 
 #: grandf.cpp:148
 msgid "Hint"
@@ -104,7 +104,7 @@ msgstr "Tipp"
 
 #: grandf.cpp:175
 msgid "Only 3 deals allowed"
-msgstr "Csak 3 új leosztás engedélyezett"
+msgstr "Csak 3 Ãºj leosztÃ¡s engedÃ©lyezett"
 
 #: ten.cpp:40
 msgid "Full Auto"
@@ -124,15 +124,15 @@ msgstr "MicroSolitaire"
 
 #: pwidget.cpp:102 pwidget.cpp:281
 msgid "Calculation"
-msgstr "Kalkuláció"
+msgstr "KalkulÃ¡ciÃ³"
 
 #: pwidget.cpp:103
 msgid "Napoleon's Tomb"
-msgstr "Napóleon sírja"
+msgstr "NapÃ³leon sÃ­rja"
 
 #: pwidget.cpp:104 pwidget.cpp:285
 msgid "The Idiot"
-msgstr "Az idióta"
+msgstr "Az idiÃ³ta"
 
 #: pwidget.cpp:105 pwidget.cpp:269
 msgid "Grandfather"
@@ -140,7 +140,7 @@ msgstr "Nagypapi"
 
 #: pwidget.cpp:106 pwidget.cpp:257
 msgid "Ten"
-msgstr "Tíz"
+msgstr "TÃ­z"
 
 #: pwidget.cpp:107 pwidget.cpp:261
 msgid "Mod3"
@@ -148,11 +148,11 @@ msgstr "Mod3"
 
 #: pwidget.cpp:108 pwidget.cpp:265
 msgid "Freecell"
-msgstr "Admirális"
+msgstr "AdmirÃ¡lis"
 
 #: pwidget.cpp:110
 msgid "Choose new game"
-msgstr "Válassz új játékot"
+msgstr "VÃ¡lassz Ãºj jÃ¡tÃ©kot"
 
 #: pwidget.cpp:116
 msgid "KDE"
@@ -160,7 +160,7 @@ msgstr "KDE"
 
 #: pwidget.cpp:117
 msgid "Classic blue"
-msgstr "Klasszikus kék"
+msgstr "Klasszikus kÃ©k"
 
 #: pwidget.cpp:118
 msgid "Classic red"
@@ -172,15 +172,15 @@ msgstr "Technikus"
 
 #: pwidget.cpp:120
 msgid "Card backside"
-msgstr "Kártya hátoldala"
+msgstr "KÃ¡rtya hÃ¡toldala"
 
 #: pwidget.cpp:121
 msgid "Animation on startup"
-msgstr "Animáció indulásnál"
+msgstr "AnimÃ¡ciÃ³ indulÃ¡snÃ¡l"
 
 #: pwidget.cpp:126
 msgid "Patience"
-msgstr "Türelem"
+msgstr "TÃ¼relem"
 
 #: pwidget.cpp:128
 msgid ""
@@ -191,12 +191,12 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"szerzõ: Paul Olav Tvetei\n"
+"szerzÅ‘: Paul Olav Tvetei\n"
 ""
 
 #: pwidget.cpp:129
 msgid "Additional work done by:\n"
-msgstr "Besegítettek még:\n"
+msgstr "BesegÃ­tettek mÃ©g:\n"
 
 #: pwidget.cpp:273
 msgid "Klondike"
@@ -204,71 +204,71 @@ msgstr "Klondike"
 
 #: pwidget.cpp:289
 msgid "Napoleons Tomb"
-msgstr "Napóleon sírja"
+msgstr "NapÃ³leon sÃ­rja"
 
 #: pwidget.cpp:294
 #, c-format
 msgid "kpat: unimplemented game type %d\n"
-msgstr "kpat: nem implement játéktípus: %d\n"
+msgstr "kpat: nem implement jÃ¡tÃ©ktÃ­pus: %d\n"
 
 #: pwidget.cpp:344
 msgid "Could not load background image!"
-msgstr "Nem tudom betölteni a háttér-képet"
+msgstr "Nem tudom betÃ¶lteni a hÃ¡ttÃ©r-kÃ©pet"
 
 #: mod3.cpp:137
 #
 msgid "No more cards"
-msgstr "Nincs több kártya"
+msgstr "Nincs tÃ¶bb kÃ¡rtya"
 
 #, fuzzy
 #~ msgid "Help on &rules..."
-#~ msgstr "Szabályok..."
+#~ msgstr "SzabÃ¡lyok..."
 
 #, fuzzy
 #~ msgid "About &Qt..."
-#~ msgstr "A programról..."
+#~ msgstr "A programrÃ³l..."
 
 #~ msgid "COMMAND %d not implemented!\n"
-#~ msgstr "A %d parancs nincs implementálva!\n"
+#~ msgstr "A %d parancs nincs implementÃ¡lva!\n"
 
 #~ msgid "About kpat"
-#~ msgstr "A kpat-ról"
+#~ msgstr "A kpat-rÃ³l"
 
 #, fuzzy
 #~ msgid "&Help..."
-#~ msgstr "Segítség..."
+#~ msgstr "SegÃ­tsÃ©g..."
 
 #, fuzzy
 #~ msgid "A&bout..."
-#~ msgstr "A programról..."
+#~ msgstr "A programrÃ³l..."
 
 #~ msgid "Information"
-#~ msgstr "Információ"
+#~ msgstr "InformÃ¡ciÃ³"
 
 #~ msgid "Warning"
 #~ msgstr "Figyelem"
 
 #~ msgid "&Quit"
-#~ msgstr "&Kilépés"
+#~ msgstr "&KilÃ©pÃ©s"
 
 #~ msgid "&File"
 #~ msgstr "&File"
 
 #~ msgid "&Game"
-#~ msgstr "&Játék"
+#~ msgstr "&JÃ¡tÃ©k"
 
 #~ msgid "&Undo"
 #~ msgstr "&Visszavon"
 
 #~ msgid "&Options"
-#~ msgstr "&Beállítások"
+#~ msgstr "&BeÃ¡llÃ­tÃ¡sok"
 
 #, fuzzy
 #~ msgid "Help"
-#~ msgstr "&Segítség"
+#~ msgstr "&SegÃ­tsÃ©g"
 
 #~ msgid "Quit"
-#~ msgstr "Kilépés"
+#~ msgstr "KilÃ©pÃ©s"
 
 #~ msgid "Error"
 #~ msgstr "Hiba"

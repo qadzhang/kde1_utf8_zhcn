@@ -13,59 +13,59 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.4.0"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "е╣епеъб╝еє #%d"
+msgstr "┬е┬╣┬е┬п┬е├к┬б┬╝┬е├│ #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  е╟егесеєе╕ечеє      : %dx%d pixels (%dx%d mm)\n"
+msgstr "  ┬е├З┬е┬г┬е├б┬е├│┬е┬╕┬е├з┬е├│      : %dx%d pixels (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  ▓Є┴№┼┘              : %dx%d dots per inch\n"
+msgstr "  ┬▓├▓├Б├╝├Е├Щ              : %dx%d dots per inch\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  ┐з┐Ї (%d)            : "
+msgstr "  ┬┐┬з┬┐├┤ (%d)            : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "е╟еге╣е╫еьедд╬╠╛┴░    : %s"
+msgstr "┬е├З┬е┬г┬е┬╣┬е├Ч┬е├м┬е┬д┬д├О├М┬╛├Б┬░    : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "е╨б╝е╕ечеє╚╓╣ц        : %i.%i"
+msgstr "┬е├Р┬б┬╝┬е┬╕┬е├з┬е├│├И├Ц┬╣├ж        : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "е┘еєе└б╝╛Ё╩є          : %s"
+msgstr "┬е├Щ┬е├│┬е├А┬б┬╝┬╛├░├К├│          : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "е┘еєе└б╝еъеъб╝е╣╚╓╣ц  : %i"
+msgstr "┬е├Щ┬е├│┬е├А┬б┬╝┬е├к┬е├к┬б┬╝┬е┬╣├И├Ц┬╣├ж  : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "╔╕╜ре╣епеъб╝еє╚╓╣ц    : %i"
+msgstr "├Й┬╕┬╜├а┬е┬╣┬е┬п┬е├к┬б┬╝┬е├│├И├Ц┬╣├ж    : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "е╣епеъб╝еєд╬┐Ї        : %i"
+msgstr "┬е┬╣┬е┬п┬е├к┬б┬╝┬е├│┬д├О┬┐├┤        : %i"
 
 #: info.cpp:181
 msgid ""
@@ -73,98 +73,98 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"▓┐д╬╛Ё╩єдт═┐дидщдьд╞ддд╩дддл\n"
-"д│д╬е╖е╣е╞ерд╧д▐д└е╡е▌б╝е╚д╡дьд╞ддд▐д╗дє :-("
+"┬▓┬┐┬д├О┬╛├░├К├│┬д├в├Н┬┐┬д┬и┬д├й┬д├м┬д├Ж┬д┬д┬д├К┬д┬д┬д┬л\n"
+"┬д┬│┬д├О┬е┬╖┬е┬╣┬е├Ж┬е├а┬д├П┬д├Ю┬д├А┬е┬╡┬е├Э┬б┬╝┬е├И┬д┬╡┬д├м┬д├Ж┬д┬д┬д├Ю┬д┬╗┬д├│ :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, ╠д├╬д╬е╣е╘б╝е╔д╟д╣"
+msgstr "%s, ├М┬д├Г├О┬д├О┬е┬╣┬е├Ф┬б┬╝┬е├Й┬д├З┬д┬╣"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s (%s MHzд╟╞░║ю├ц)"
+msgstr "%s (%s MHz┬д├З├Ж┬░┬║├о├Г├ж)"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "двблб┴бвfstabдм│лд▒д▐д╗дєд╟д╖д┐бк"
+msgstr "┬д┬в┬б┬л┬б├Б┬б┬вfstab┬д┬м┬│┬л┬д┬▒┬д├Ю┬д┬╗┬д├│┬д├З┬д┬╖┬д┬┐┬б┬к"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "е╟е╨еде╣"
+msgstr "┬е├З┬е├Р┬е┬д┬е┬╣"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr "е▐ежеєе╚░╠├╓"
+msgstr "┬е├Ю┬е┬ж┬е├│┬е├И┬░├М├Г├Ц"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "FS е┐еде╫"
+msgstr "FS ┬е┬┐┬е┬д┬е├Ч"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr "е▐ежеєе╚еке╫е╖ечеє"
+msgstr "┬е├Ю┬е┬ж┬е├│┬е├И┬е┬к┬е├Ч┬е┬╖┬е├з┬е├│"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr "╠д├╬д╬CPUе┐еде╫"
+msgstr "├М┬д├Г├О┬д├ОCPU┬е┬┐┬е┬д┬е├Ч"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "═°═╤д╟днд▐д╗дє"
+msgstr "├Н├╕├Н├С┬д├З┬д┬н┬д├Ю┬д┬╗┬д├│"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "евепе╞еге╓д╩е╫еэе╗е├е╡д╬┐Ї= "
+msgstr "┬е┬в┬е┬п┬е├Ж┬е┬г┬е├Ц┬д├К┬е├Ч┬е├н┬е┬╗┬е├Г┬е┬╡┬д├О┬┐├┤= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "├═"
+msgstr "├Г├Н"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr "DMAе┴еуе═еы"
+msgstr "DMA┬е├Б┬е├г┬е├Н┬е├л"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "░╩▓╝д╦дшд├д╞╗╚дядьд╞ддд▐д╣"
+msgstr "┬░├К┬▓┬╝┬д├Л┬д├и┬д├Г┬д├Ж┬╗├И┬д├п┬д├м┬д├Ж┬д┬д┬д├Ю┬д┬╣"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "I/O╚╧░╧"
+msgstr "I/O├И├П┬░├П"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "есетеъ(&M)"
+msgstr "┬е├б┬е├в┬е├к(&M)"
 
 #: main.cpp:82
 msgid "&Processor"
-msgstr "е╫еэе╗е├е╡(&P)"
+msgstr "┬е├Ч┬е├н┬е┬╗┬е├Г┬е┬╡(&P)"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr "│фдъ╣■д▀(&I)"
+msgstr "┬│├д┬д├к┬╣├╛┬д├Я(&I)"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "DMA-е┴еуе═еы(&C)"
+msgstr "DMA-┬е├Б┬е├г┬е├Н┬е├л(&C)"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "IO-е▌б╝е╚(&I)"
+msgstr "IO-┬е├Э┬б┬╝┬е├И(&I)"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr "PCI-е╨е╣(&B)"
+msgstr "PCI-┬е├Р┬е┬╣(&B)"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr "е╡ежеєе╔(&S)"
+msgstr "┬е┬╡┬е┬ж┬е├│┬е├Й(&S)"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "е╟е╨еде╣(&D)"
+msgstr "┬е├З┬е├Р┬е┬д┬е┬╣(&D)"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -172,11 +172,11 @@ msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr "е╤б╝е╞еге╖ечеє(&P)"
+msgstr "┬е├С┬б┬╝┬е├Ж┬е┬г┬е┬╖┬е├з┬е├│(&P)"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr "Xе╡б╝е╨(&X)"
+msgstr "X┬е┬╡┬б┬╝┬е├Р(&X)"
 
 #: main.cpp:120
 msgid ""
@@ -187,31 +187,31 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "е╖е╣е╞ер╛Ё╩є"
+msgstr "┬е┬╖┬е┬╣┬е├Ж┬е├а┬╛├░├К├│"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "е╚б╝е┐еыесетеъ"
+msgstr "┬е├И┬б┬╝┬е┬┐┬е├л┬е├б┬е├в┬е├к"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "╢їднесетеъ"
+msgstr "┬╢├╡┬д┬н┬е├б┬е├в┬е├к"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "╢ж═несетеъ"
+msgstr "┬╢┬ж├Н┬н┬е├б┬е├в┬е├к"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "е╨е├е╒ебесетеъ"
+msgstr "┬е├Р┬е├Г┬е├Х┬е┬б┬е├б┬е├в┬е├к"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "е╣еяе├е╫есетеъ"
+msgstr "┬е┬╣┬е├п┬е├Г┬е├Ч┬е├б┬е├в┬е├к"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "╢їдне╣еяе├е╫есетеъ"
+msgstr "┬╢├╡┬д┬н┬е┬╣┬е├п┬е├Г┬е├Ч┬е├б┬е├в┬е├к"
 
 #: memory.cpp:78
 #, c-format
@@ -221,9 +221,9 @@ msgstr "%10ld bytes  = %8.2f MB"
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "═°═╤д╟днд▐д╗дє"
+msgstr "├Н├╕├Н├С┬д├З┬д┬н┬д├Ю┬д┬╗┬д├│"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "═°═╤д╟днд▐д╗дє"
+msgstr "├Н├╕├Н├С┬д├З┬д┬н┬д├Ю┬д┬╗┬д├│"

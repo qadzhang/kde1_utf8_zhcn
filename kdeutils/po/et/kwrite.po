@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hasso Tepper <hasso@ewsound.estnet.ee>\n"
 "Language-Team: Estonian <linux-ee@eenet.ee>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: highlight.cpp:1715
@@ -51,11 +51,11 @@ msgstr "Konfiguratsiooni valimine"
 
 #: highlight.cpp:1954
 msgid "Highlight:"
-msgstr "Esiletıst:"
+msgstr "Esilet√µst:"
 
 #: highlight.cpp:1973
 msgid "Highlight Auto Select"
-msgstr "Esiletıstu automaatne valimine"
+msgstr "Esilet√µstu automaatne valimine"
 
 #: highlight.cpp:1977
 msgid "File Extensions:"
@@ -63,7 +63,7 @@ msgstr "Faili laiendid:"
 
 #: highlight.cpp:1984
 msgid "Mime Types:"
-msgstr "Mime t¸¸bid:"
+msgstr "Mime t√º√ºbid:"
 
 #: highlight.cpp:1991
 msgid "Item Style"
@@ -79,7 +79,7 @@ msgstr "Vertikaalne selekteermine sisse"
 
 #: kwview.cpp:1057
 msgid "Vertical Selections Off"
-msgstr "Vertikaalne selekteerimine v‰lja"
+msgstr "Vertikaalne selekteerimine v√§lja"
 
 #: kwview.cpp:1116
 msgid "The specified File does not exist"
@@ -91,7 +91,7 @@ msgstr "Sa oled valinud kataloogi"
 
 #: kwview.cpp:1136
 msgid "You do not have read permission to this file"
-msgstr "Sul ei ole ıigusi selle faili lugemiseks"
+msgstr "Sul ei ole √µigusi selle faili lugemiseks"
 
 #: kwview.cpp:1152 kwview.cpp:1182
 msgid "An Error occured while trying to open this Document"
@@ -99,7 +99,7 @@ msgstr "Selle dokumendi avamisel ilmnes viga"
 
 #: kwview.cpp:1166
 msgid "You do not have write permission to this file"
-msgstr "Sul ei ole ıigusi kirjutada sellesse faili"
+msgstr "Sul ei ole √µigusi kirjutada sellesse faili"
 
 #: kwview.cpp:1219
 msgid "Loading..."
@@ -121,16 +121,16 @@ msgid ""
 "Alternatively stop the running one."
 msgstr ""
 "KWrite ootab juba interneti\n"
-"tˆˆ taga. Palun oota kuni see\n"
-"on tehtud vıi lıpeta mıni neist."
+"t√∂√∂ taga. Palun oota kuni see\n"
+"on tehtud v√µi l√µpeta m√µni neist."
 
 #: kwview.cpp:1249 kwview.cpp:1307
 msgid "Waiting for KFM..."
-msgstr "KFM j‰rel ootamine..."
+msgstr "KFM j√§rel ootamine..."
 
 #: kwview.cpp:1255 kwview.cpp:1320
 msgid "Could not start or find KFM"
-msgstr "Failihaldurit pole vıimalik leida vıi k‰ivitada"
+msgstr "Failihaldurit pole v√µimalik leida v√µi k√§ivitada"
 
 #: kwview.cpp:1282
 msgid "Saving..."
@@ -145,7 +145,7 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"K‰esolevat dokumenti on muudetud.\n"
+"K√§esolevat dokumenti on muudetud.\n"
 "Soovid sa selle salvestada?"
 
 #: kwview.cpp:1407
@@ -153,7 +153,7 @@ msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
 msgstr ""
-"Dokumenti pole vıimalik salvestada.\n"
+"Dokumenti pole v√µimalik salvestada.\n"
 "Kas avada vaatamata selle uus dokument?"
 
 #: kwview.cpp:1454
@@ -166,15 +166,15 @@ msgid ""
 "Do you want to overwrite it?"
 msgstr ""
 "Sellise nimega dokument eksisteerib juba.\n"
-"Soovid sa selle ¸le kirjutada?"
+"Soovid sa selle √ºle kirjutada?"
 
 #: kwview.cpp:1678 kwview.cpp:1866
 msgid "End of document reached"
-msgstr "Jıudsime dokumendi lıppu"
+msgstr "J√µudsime dokumendi l√µppu"
 
 #: kwview.cpp:1679 kwview.cpp:1867
 msgid "Continue from the beginning"
-msgstr "J‰tka algusest"
+msgstr "J√§tka algusest"
 
 #: kwview.cpp:1681 kwview.cpp:1692 kwview.cpp:1702
 msgid "Find"
@@ -182,11 +182,11 @@ msgstr "Leia"
 
 #: kwview.cpp:1689 kwview.cpp:1878
 msgid "Beginning of document reached"
-msgstr "Jıudsime dokumendi algusesse"
+msgstr "J√µudsime dokumendi algusesse"
 
 #: kwview.cpp:1690 kwview.cpp:1879
 msgid "Continue from the end"
-msgstr "J‰tka lıpust"
+msgstr "J√§tka l√µpust"
 
 #: kwview.cpp:1703
 msgid "Search string not found!"
@@ -206,15 +206,15 @@ msgstr "&Tekst, mida otsida:"
 
 #: kwdialog.cpp:40
 msgid "&Replace With:"
-msgstr "Asenda j‰&rgnevaga:"
+msgstr "Asenda j√§&rgnevaga:"
 
 #: kwdialog.cpp:51
 msgid "&Case Sensitive"
-msgstr "&Tıstutundlik"
+msgstr "&T√µstutundlik"
 
 #: kwdialog.cpp:52
 msgid "&Whole Words Only"
-msgstr "&Ainult terved sınad"
+msgstr "&Ainult terved s√µnad"
 
 #: kwdialog.cpp:53
 msgid "&From Cursor"
@@ -246,7 +246,7 @@ msgstr "&Ei"
 
 #: kwdialog.cpp:159
 msgid "&All"
-msgstr "Kı&ik"
+msgstr "K√µ&ik"
 
 #: kwdialog.cpp:217
 msgid "&Goto Line:"
@@ -274,7 +274,7 @@ msgstr "Asenda TA&B'id"
 
 #: kwdialog.cpp:260
 msgid "Remove Trailing &Spaces"
-msgstr "Kustuta &lıput¸hikud"
+msgstr "Kustuta &l√µput√ºhikud"
 
 #: kwdialog.cpp:261
 msgid "Wrap &Cursor"
@@ -290,7 +290,7 @@ msgstr "Teksti valimise valikud"
 
 #: kwdialog.cpp:291
 msgid "&Persistent Selections"
-msgstr "&P¸sivad valikud"
+msgstr "&P√ºsivad valikud"
 
 #: kwdialog.cpp:292
 msgid "&Multiple Selections"
@@ -306,7 +306,7 @@ msgstr "S&isetamisel kustuta"
 
 #: kwdialog.cpp:295
 msgid "&Toggle Old"
-msgstr "&L¸lita vana"
+msgstr "&L√ºlita vana"
 
 #: kwdialog.cpp:322
 msgid "Wrap Words At:"
@@ -318,7 +318,7 @@ msgstr "TAB laius:"
 
 #: kwdialog.cpp:342
 msgid "Undo steps:"
-msgstr "Tagasivıtu sammud:"
+msgstr "Tagasiv√µtu sammud:"
 
 #: kwdialog.cpp:402
 msgid "Background:"
@@ -386,7 +386,7 @@ msgstr "&Mine reale..."
 
 #: toplevel.cpp:195
 msgid "U&ndo"
-msgstr "Ta&gasivıtt"
+msgstr "Ta&gasiv√µtt"
 
 #: toplevel.cpp:196
 msgid "R&edo"
@@ -402,11 +402,11 @@ msgstr "Trepi &eemaldamine"
 
 #: toplevel.cpp:203
 msgid "&Select All"
-msgstr "&Vali kıik"
+msgstr "&Vali k√µik"
 
 #: toplevel.cpp:204
 msgid "&Deselect All"
-msgstr "T¸hista kıik valikud"
+msgstr "T√ºhista k√µik valikud"
 
 #: toplevel.cpp:205
 msgid "In&vert Selection"
@@ -414,27 +414,27 @@ msgstr "Inverteeri &valik"
 
 #: toplevel.cpp:210
 msgid "&Set Bookmark..."
-msgstr "&Sea j‰rjehoidja..."
+msgstr "&Sea j√§rjehoidja..."
 
 #: toplevel.cpp:211
 msgid "&Add Bookmark"
-msgstr "&Lisa j‰rjehoidja"
+msgstr "&Lisa j√§rjehoidja"
 
 #: toplevel.cpp:212
 msgid "&Clear Bookmarks"
-msgstr "&Puhasta j‰rjehoidjad"
+msgstr "&Puhasta j√§rjehoidjad"
 
 #: toplevel.cpp:224
 msgid "Set Highlight"
-msgstr "Sea esiletıstmist"
+msgstr "Sea esilet√µstmist"
 
 #: toplevel.cpp:226
 msgid "&Defaults..."
-msgstr "&Vaikev‰‰rtused..."
+msgstr "&Vaikev√§√§rtused..."
 
 #: toplevel.cpp:227
 msgid "&Highlight..."
-msgstr "&Esiletıstmine..."
+msgstr "&Esilet√µstmine..."
 
 #: toplevel.cpp:230
 msgid "&Options..."
@@ -442,15 +442,15 @@ msgstr "V&alikud..."
 
 #: toplevel.cpp:231
 msgid "&Colors..."
-msgstr "V‰&rvid..."
+msgstr "V√§&rvid..."
 
 #: toplevel.cpp:234
 msgid "Show &Toolbar"
-msgstr "N‰ita &tˆˆriistariba"
+msgstr "N√§ita &t√∂√∂riistariba"
 
 #: toplevel.cpp:235
 msgid "Show &Statusbar"
-msgstr "N‰ita &olekuriba"
+msgstr "N√§ita &olekuriba"
 
 #: toplevel.cpp:236
 msgid "Save Config"
@@ -472,7 +472,7 @@ msgstr ""
 
 #: toplevel.cpp:272
 msgid "&Bookmarks"
-msgstr "&J‰rjehoidjad"
+msgstr "&J√§rjehoidjad"
 
 #: toplevel.cpp:291
 msgid "New Document"

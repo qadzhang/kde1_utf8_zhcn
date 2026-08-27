@@ -1,16 +1,16 @@
 # KCALC CATALAN TRANSLATION
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Sebasti‡ Pla <sastia@redestb.es>, 1998.
+# Sebasti√† Pla <sastia@redestb.es>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcalc\n"
 "POT-Creation-Date: 1999-03-05 01:58+0100\n"
 "PO-Revision-Date: 1999-01-20 23:36+0100\n"
-"Last-Translator: Sebasti‡ Pla <sastia@redestb.es>\n"
+"Last-Translator: Sebasti√† Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kcalc.cpp:99
@@ -27,7 +27,7 @@ msgstr "Base"
 
 #: kcalc.cpp:1524
 msgid "KCalc Configuraton"
-msgstr "ConfiguraciÛ KCalc"
+msgstr "Configuraci√≥ KCalc"
 
 #: kcalc.cpp:1542
 #, c-format
@@ -59,14 +59,14 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"Per causa de les glibc errÚnies a tot arreu, he hagut de reduÔr la precisiÛ "
+"Per causa de les glibc err√≤nies a tot arreu, he hagut de redu√Ør la precisi√≥ "
 "de KCalc de 'long double' a 'double'. Si teniu un sistema amb una libc que "
-"funcioni, heu de recompilar KCalc amb la precisiÛ 'long double' habilitada. "
-"Veieu el README per a mÈs detalls."
+"funcioni, heu de recompilar KCalc amb la precisi√≥ 'long double' habilitada. "
+"Veieu el README per a m√©s detalls."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
 msgid "Defaults"
-msgstr "OmissiÛ"
+msgstr "Omissi√≥"
 
 #: kcalc.cpp:1593
 msgid "Display Font"
@@ -83,11 +83,11 @@ msgstr ""
 
 #: kcalc_core.cpp:1115
 msgid "Last stat item erased"
-msgstr "S'ha esborrat el darrer Ìtem d'estadÌstiques"
+msgstr "S'ha esborrat el darrer √≠tem d'estad√≠stiques"
 
 #: kcalc_core.cpp:1155
 msgid "Stat Mem cleared"
-msgstr "S'ha netejat la memÚria estadÌstica"
+msgstr "S'ha netejat la mem√≤ria estad√≠stica"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
@@ -95,7 +95,7 @@ msgstr "Error en processar la pila - op. dret"
 
 #: kcalc_core.cpp:1640
 msgid "Stack processing error - function"
-msgstr "Error en processar la pila - funciÛ"
+msgstr "Error en processar la pila - funci√≥"
 
 #: kcalc_core.cpp:1649
 msgid "Stack processing error - left_op"
@@ -103,7 +103,7 @@ msgstr "Error en processar la pila - op. esquerre"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Emergency"
-msgstr "EmergËncia"
+msgstr "Emerg√®ncia"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Stack Error!"
@@ -119,11 +119,11 @@ msgstr "Color de fons:"
 
 #: configdlg.cpp:95
 msgid "Precision:"
-msgstr "PrecisiÛ:"
+msgstr "Precisi√≥:"
 
 #: configdlg.cpp:116
 msgid "Set Fixed Precision at:"
-msgstr "PrecisiÛ fixa a:"
+msgstr "Precisi√≥ fixa a:"
 
 #: configdlg.cpp:145
 msgid "Beep on Error"
@@ -131,19 +131,19 @@ msgstr "Fes bip pels errors"
 
 #: configdlg.cpp:153
 msgid "Trigonometry Mode"
-msgstr "Mode trigonomËtric"
+msgstr "Mode trigonom√®tric"
 
 #: configdlg.cpp:158
 msgid "Statistical Mode"
-msgstr "Mode estadÌstic"
+msgstr "Mode estad√≠stic"
 
 #: fontdlg.cpp:44
 msgid "Set Default Font"
-msgstr "Estableix la font per omissiÛ"
+msgstr "Estableix la font per omissi√≥"
 
 #: fontdlg.cpp:53
 msgid "Family:"
-msgstr "FamÌlia:"
+msgstr "Fam√≠lia:"
 
 #: fontdlg.cpp:63
 msgid "Point Size:"

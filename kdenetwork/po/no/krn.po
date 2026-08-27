@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:219 main.cpp:232 main.cpp:246 main.cpp:264 main.cpp:279
@@ -60,15 +60,15 @@ msgstr "Kople fra tjener"
 
 #: groupdlg.cpp:132
 msgid "Get Active File"
-msgstr "Få tak i aktivfil"
+msgstr "FÃ¥ tak i aktivfil"
 
 #: groupdlg.cpp:134
 msgid "Post Queued Messages"
-msgstr "Postlegg alle meldingene i køen"
+msgstr "Postlegg alle meldingene i kÃ¸en"
 
 #: groupdlg.cpp:136
 msgid "Exit"
-msgstr "Gå ut"
+msgstr "GÃ¥ ut"
 
 #: groupdlg.cpp:139
 msgid "KRN - Group List"
@@ -76,11 +76,11 @@ msgstr "KRN - gruppeliste"
 
 #: groupdlg.cpp:142 groupdlg.cpp:148
 msgid "Get Subjects"
-msgstr "Få tak i subjekter"
+msgstr "FÃ¥ tak i subjekter"
 
 #: groupdlg.cpp:143 groupdlg.cpp:149
 msgid "Get Articles"
-msgstr "Få tak i artikler"
+msgstr "FÃ¥ tak i artikler"
 
 #: groupdlg.cpp:144 groupdlg.cpp:152 groupdlg.cpp:160
 msgid "Catchup"
@@ -108,7 +108,7 @@ msgstr "Poste ny artikkel"
 
 #: groupdlg.cpp:163
 msgid "Post All Queued Articles"
-msgstr "Post alle meldinger i køen"
+msgstr "Post alle meldinger i kÃ¸en"
 
 #: groupdlg.cpp:165
 msgid "&Subscribed"
@@ -128,7 +128,7 @@ msgstr "NNTP-valg..."
 
 #: groupdlg.cpp:173
 msgid "Expire Options..."
-msgstr "Utløpingsvalg..."
+msgstr "UtlÃ¸pingsvalg..."
 
 #: groupdlg.cpp:174
 msgid "Printing Options..."
@@ -152,7 +152,7 @@ msgstr "Kople fra tjener"
 
 #: groupdlg.cpp:205
 msgid "Get list of active groups"
-msgstr "Få tak i liste av aktive grupper"
+msgstr "FÃ¥ tak i liste av aktive grupper"
 
 #: groupdlg.cpp:206
 msgid "Find group"
@@ -208,7 +208,7 @@ msgstr "Oppkobling til tjener slo feil: Autoriseringsproblem"
 
 #: groupdlg.cpp:607
 msgid "Krn-Question"
-msgstr "KRn-spørsmål"
+msgstr "KRn-spÃ¸rsmÃ¥l"
 
 #: groupdlg.cpp:608
 msgid ""
@@ -216,7 +216,7 @@ msgid ""
 "Should I attempt one?"
 msgstr ""
 "Operasjonen du ba om trenger en oppkobling til Nyhets tjeneren\n"
-"Skal jeg forsøke en?"
+"Skal jeg forsÃ¸ke en?"
 
 #: groupdlg.cpp:872
 msgid ""
@@ -224,7 +224,7 @@ msgid ""
 " get it from server?"
 msgstr ""
 "Du har ikke en aktivgruppeliste.\n"
-" få fatt i den fra tjener?"
+" fÃ¥ fatt i den fra tjener?"
 
 #: groupdlg.cpp:888
 msgid "Listing active newsgroups"
@@ -244,7 +244,7 @@ msgstr "KRn - melding"
 
 #: groupdlg.cpp:989
 msgid "I can't find the group you want!"
-msgstr "Jeg kan ikke finne gruppen du ønsker!"
+msgstr "Jeg kan ikke finne gruppen du Ã¸nsker!"
 
 #: groupdlg.cpp:1082
 msgid "Getting messages in "
@@ -272,7 +272,7 @@ msgstr "Dekod"
 
 #: artdlg.cpp:159 artdlg.cpp:179
 msgid "Don't expire"
-msgstr "Ikke utløp"
+msgstr "Ikke utlÃ¸p"
 
 #: artdlg.cpp:168
 msgid "Lookup in Altavista"
@@ -308,7 +308,7 @@ msgstr "Vis bare cached meldinger"
 
 #: artdlg.cpp:196
 msgid "Show Locked Messages"
-msgstr "Vis låste meldinger"
+msgstr "Vis lÃ¥ste meldinger"
 
 #: artdlg.cpp:198
 msgid "Expunge"
@@ -348,7 +348,7 @@ msgstr "Finn artikkel"
 
 #: artdlg.cpp:230
 msgid "Get Article List"
-msgstr "Få tak i artikkelliste"
+msgstr "FÃ¥ tak i artikkelliste"
 
 #: artdlg.cpp:232
 msgid "Refresh Display"
@@ -392,7 +392,7 @@ msgstr "Merk artikkelen"
 
 #: artdlg.cpp:271
 msgid "Lock (keep in cache)"
-msgstr "Lås (behold i mellomlager)"
+msgstr "LÃ¥s (behold i mellomlager)"
 
 #: artdlg.cpp:273
 msgid "Decode Article"
@@ -424,7 +424,7 @@ msgstr "Subjekt"
 
 #: artdlg.cpp:469
 msgid "Threading..."
-msgstr "Tråder..."
+msgstr "TrÃ¥der..."
 
 #: artdlg.cpp:478
 msgid "Showing Article List"
@@ -444,7 +444,7 @@ msgstr "Skriv over"
 
 #: artdlg.cpp:1332
 msgid "Append"
-msgstr "Tilføy"
+msgstr "TilfÃ¸y"
 
 #: artdlg.cpp:1367 artdlg.cpp:1432
 msgid ""
@@ -470,11 +470,11 @@ msgstr "KRn-Identitets konfigurasjon"
 
 #: identDlg.cpp:50
 msgid "Here you should enter your personal information"
-msgstr "Her bør du oppgi din personlige informasjon"
+msgstr "Her bÃ¸r du oppgi din personlige informasjon"
 
 #: identDlg.cpp:52
 msgid "You should know what these are!"
-msgstr "Du bør vite hva disse er!"
+msgstr "Du bÃ¸r vite hva disse er!"
 
 #: identDlg.cpp:61
 msgid "Real Name"
@@ -510,7 +510,7 @@ msgstr "Tilkobling ved oppstart"
 
 #: NNTPConfigDlg.cpp:71
 msgid "Connect without asking"
-msgstr "Oppkobling uten å spørre"
+msgstr "Oppkobling uten Ã¥ spÃ¸rre"
 
 #: NNTPConfigDlg.cpp:75
 msgid "Authenticate"
@@ -526,7 +526,7 @@ msgstr "Passord"
 
 #: NNTPConfigDlg.cpp:91
 msgid "Ask before downloading more than"
-msgstr "Spør før nedlasting av mer enn"
+msgstr "SpÃ¸r fÃ¸r nedlasting av mer enn"
 
 #: NNTPConfigDlg.cpp:94
 msgid "articles"
@@ -554,7 +554,7 @@ msgstr "Alle KDE-utviklere"
 
 #: aboutDlg.cpp:73
 msgid "Chuck, for helping in time of need"
-msgstr "Chuck, for å hjelpe når det trengs"
+msgstr "Chuck, for Ã¥ hjelpe nÃ¥r det trengs"
 
 #: aboutDlg.cpp:74
 msgid "All testers"
@@ -598,11 +598,11 @@ msgstr "Smart"
 
 #: fontsDlg.cpp:60
 msgid "Inline"
-msgstr "På linje"
+msgstr "PÃ¥ linje"
 
 #: fontsDlg.cpp:67
 msgid "Font Size:"
-msgstr "Skrifttypestørrelse:"
+msgstr "SkrifttypestÃ¸rrelse:"
 
 #: fontsDlg.cpp:70
 msgid "Small"
@@ -626,7 +626,7 @@ msgstr "Standard skrifttype"
 
 #: fontsDlg.cpp:84
 msgid "Standard Font Test"
-msgstr "Standard skriftprøve"
+msgstr "Standard skriftprÃ¸ve"
 
 #: fontsDlg.cpp:86
 msgid "Fixed Font"
@@ -634,7 +634,7 @@ msgstr "Fast skrifttype"
 
 #: fontsDlg.cpp:91
 msgid "Fixed Font Test"
-msgstr "Fast skriftprøve"
+msgstr "Fast skriftprÃ¸ve"
 
 #: fontsDlg.cpp:94
 msgid "Background Color"
@@ -686,7 +686,7 @@ msgstr "Navn"
 
 #: kmcomposewin.cpp:140
 msgid "Size"
-msgstr "Størrelse"
+msgstr "StÃ¸rrelse"
 
 #: kmcomposewin.cpp:141
 msgid "Encoding"
@@ -726,7 +726,7 @@ msgstr "&Nyhetsgrupper:"
 
 #: kmcomposewin.cpp:358
 msgid "&Followup-To:"
-msgstr "&Oppfølling-til:"
+msgstr "&OppfÃ¸lling-til:"
 
 #: kmcomposewin.cpp:430
 msgid "&Send"
@@ -738,7 +738,7 @@ msgstr "S&end sender"
 
 #: kmcomposewin.cpp:435
 msgid "S&end now"
-msgstr "S&end nå"
+msgstr "S&end nÃ¥"
 
 #: kmcomposewin.cpp:437
 msgid "&Insert File..."
@@ -826,7 +826,7 @@ msgstr "&Nyhetsgrupper"
 
 #: kmcomposewin.cpp:517
 msgid "&Followup-To"
-msgstr "&Oppfølging-til"
+msgstr "&OppfÃ¸lging-til"
 
 #: kmcomposewin.cpp:523
 msgid "Append S&ignature"
@@ -838,7 +838,7 @@ msgstr "&Sett inn fil"
 
 #: kmcomposewin.cpp:527
 msgid "Insert My &Public Key"
-msgstr "Sett inn min &offentlige nøkkel"
+msgstr "Sett inn min &offentlige nÃ¸kkel"
 
 #: kmcomposewin.cpp:532
 msgid "&Attach..."
@@ -890,7 +890,7 @@ msgstr "Legg ved fil"
 
 #: kmcomposewin.cpp:597
 msgid "Open addressbook..."
-msgstr "Åpne adressebok..."
+msgstr "Ã…pne adressebok..."
 
 #: kmcomposewin.cpp:604
 msgid "sign message"
@@ -994,7 +994,7 @@ msgid ""
 "and try again."
 msgstr ""
 "Vennligst oppgi en sendemetode\n"
-"i innstillingene og prøv igjen."
+"i innstillingene og prÃ¸v igjen."
 
 #: kmsender.cpp:122
 msgid ""
@@ -1002,13 +1002,13 @@ msgid ""
 "identity settings:\n"
 "user-name and email-address"
 msgstr ""
-"Vennligst sett de påkrevde feltene i\n"
+"Vennligst sett de pÃ¥krevde feltene i\n"
 "identitetinnstillingene:\n"
 "brukernanv og epostadresse"
 
 #: kmsender.cpp:147
 msgid "You must specify a receiver"
-msgstr "Du må oppgi en mottager"
+msgstr "Du mÃ¥ oppgi en mottager"
 
 #: kmsender.cpp:158
 msgid "Cannot add message to outbox folder"
@@ -1020,7 +1020,7 @@ msgstr "Sender fortsatt i fremgang"
 
 #: kmsender.cpp:245
 msgid "Initiating sender process..."
-msgstr "Gjør klart sendeprosess..."
+msgstr "GjÃ¸r klart sendeprosess..."
 
 #: kmsender.cpp:261
 msgid "Sending message: "
@@ -1028,7 +1028,7 @@ msgstr "Sender melding: "
 
 #: kmsender.cpp:289
 msgid "Done sending messages."
-msgstr "Fullført sending av melding."
+msgstr "FullfÃ¸rt sending av melding."
 
 #: kmsender.cpp:308
 msgid "Sending failed:"
@@ -1045,7 +1045,7 @@ msgstr ""
 #: kmsender.cpp:501
 #, c-format
 msgid "Failed to execute mailer program %s"
-msgstr "Mislyktes å utføre postprogram %s"
+msgstr "Mislyktes Ã¥ utfÃ¸re postprogram %s"
 
 #: kmsender.cpp:589
 msgid "connecting to server"
@@ -1058,7 +1058,7 @@ msgid ""
 "host %s for sending:\n"
 "%s"
 msgstr ""
-"Kan ikke åpne SMTP-forbindelse til\n"
+"Kan ikke Ã¥pne SMTP-forbindelse til\n"
 "vert %s for sending:\n"
 "%s"
 
@@ -1068,7 +1068,7 @@ msgstr "Kan ikke lukke SMTP-forbindelse."
 
 #: kmsender.cpp:673
 msgid "transmitting message"
-msgstr "overfører melding"
+msgstr "overfÃ¸rer melding"
 
 #: kmsender.cpp:707
 msgid "network error"
@@ -1106,7 +1106,7 @@ msgstr "I felt:"
 
 #: findArtDlg.cpp:53 rulesDlg.cpp:131
 msgid "Case Sensitive"
-msgstr "Avhengig av bokstavstørrelse"
+msgstr "Avhengig av bokstavstÃ¸rrelse"
 
 #: findArtDlg.cpp:56 rulesDlg.cpp:132
 msgid "Wildcard Mode"
@@ -1123,7 +1123,7 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
-"Mislyktes å utføre signaturfilskript\n"
+"Mislyktes Ã¥ utfÃ¸re signaturfilskript\n"
 "%s\n"
 "%s"
 
@@ -1173,7 +1173,7 @@ msgid ""
 "Could not open file:\n"
 "%s"
 msgstr ""
-"Kunne ikke åpne fil:\n"
+"Kunne ikke Ã¥pne fil:\n"
 "%s"
 
 #: kfileio.cpp:78
@@ -1205,7 +1205,7 @@ msgid ""
 "Failed to make a backup copy of %s.\n"
 "Continue anyway ?"
 msgstr ""
-"Mislyktes å lage sikkerhetskopi av %s.\n"
+"Mislyktes Ã¥ lage sikkerhetskopi av %s.\n"
 "Fortsett likevel?"
 
 #: kfileio.cpp:156 kfileio.cpp:174
@@ -1223,7 +1223,7 @@ msgid ""
 "Could not open file for writing:\n"
 "%s"
 msgstr ""
-"Kunne ikke åpne fil for skriving:\n"
+"Kunne ikke Ã¥pne fil for skriving:\n"
 "%s"
 
 #: kfileio.cpp:163 kmaddrbook.cpp:158
@@ -1319,7 +1319,7 @@ msgstr "Varsel: Feil signatur fra"
 
 #: kmreaderwin.cpp:451
 msgid "unknown key ID"
-msgstr "ukjent nøkkel"
+msgstr "ukjent nÃ¸kkel"
 
 #: kmreaderwin.cpp:701
 msgid "Attachment: "
@@ -1368,13 +1368,13 @@ msgid ""
 "recipients of this mail.\n"
 "Message will not be encrypted."
 msgstr ""
-"Kunne ikke finne offentlig nøkkel for\n"
+"Kunne ikke finne offentlig nÃ¸kkel for\n"
 "mottageren av denne posten.\n"
 "Meldingen vil ikke bli kryptert."
 
 #: kpgp.cpp:296
 msgid "Could not find the public keys for\n"
-msgstr "Kunne ikke finne offentlig nøkkel for\n"
+msgstr "Kunne ikke finne offentlig nÃ¸kkel for\n"
 
 #: kpgp.cpp:307
 msgid "These persons will not be able to\n"
@@ -1395,12 +1395,12 @@ msgid ""
 "leave the message unsigned, or cancel sending the message?"
 msgstr ""
 "Du skrev nettopp inn en ugyldig passfrase.\n"
-"Vil du prøve igjen, fortsette og la meldingen være usignert, eller vil\n"
+"Vil du prÃ¸ve igjen, fortsette og la meldingen vÃ¦re usignert, eller vil\n"
 "du avbryte sendingen av meldingen?"
 
 #: kpgp.cpp:331
 msgid "Retry"
-msgstr "Prøv igjen"
+msgstr "PrÃ¸v igjen"
 
 #: kpgp.cpp:342
 msgid ""
@@ -1419,7 +1419,7 @@ msgid ""
 "Do you wan't to leave the message as is,\n"
 "or cancel the message?"
 msgstr ""
-"Vil du la meldigen være slik den er,\n"
+"Vil du la meldigen vÃ¦re slik den er,\n"
 "eller vil du avbryte meldingen?"
 
 #: kpgp.cpp:717
@@ -1480,7 +1480,7 @@ msgstr "Lagring av adresseboken mislyktes!\n"
 
 #: expireDlg.cpp:22 expireDlg.cpp:27
 msgid "KRN - Expire Settings"
-msgstr "KRN - Utløpningsinnstillinger"
+msgstr "KRN - UtlÃ¸pningsinnstillinger"
 
 #: expireDlg.cpp:36
 msgid "For how long should we keep things (in days)?"
@@ -1604,7 +1604,7 @@ msgstr "Sorter ved:"
 
 #: sortDlg.cpp:56
 msgid "Use Threading"
-msgstr "Bruk tråder"
+msgstr "Bruk trÃ¥der"
 
 #: charsetsDlg.cpp:27
 msgid "KRN - Charset Settings"
@@ -1636,7 +1636,7 @@ msgstr "&Sett ukjente tegn i klammer"
 
 #: expirestatusdlg.cpp:35
 msgid "Please wait a minute, I am expiring!"
-msgstr "Vennligst vent litt, jeg utgår!"
+msgstr "Vennligst vent litt, jeg utgÃ¥r!"
 
 #: kpgpbase.cpp:315
 msgid "Bad pass Phrase; couldn't sign"
@@ -1644,7 +1644,7 @@ msgstr "Feil passfrase; kunne ikke signere"
 
 #: kpgpbase.cpp:354
 msgid "error running pgp"
-msgstr "feil under kjøring av pgp"
+msgstr "feil under kjÃ¸ring av pgp"
 
 #: kpgpbase.cpp:371 kpgpbase.cpp:662
 msgid "Bad pass Phrase; couldn't decrypt"
@@ -1652,11 +1652,11 @@ msgstr "Feil passfrase; kunne ikke dekryptere"
 
 #: kpgpbase.cpp:382 kpgpbase.cpp:673
 msgid "Do not have the secret key for this message"
-msgstr "Du har ikke sikkerhetsnøkkelen for denne meldingen"
+msgstr "Du har ikke sikkerhetsnÃ¸kkelen for denne meldingen"
 
 #: kpgpbase.cpp:410
 msgid "unknown key ID "
-msgstr "ukjent nøkkel-ID "
+msgstr "ukjent nÃ¸kkel-ID "
 
 #: kpgpbase.cpp:430
 msgid "??? (file ~/.pgp/pubring.pgp not found)"
@@ -1671,8 +1671,8 @@ msgid ""
 "The key(s) you wan't to encrypt your message\n"
 "to are not trusted. No encryption done."
 msgstr ""
-"Nøklene du vil kryptere meldingen din til har ikke tillitt. Ingen\n"
-"kryptering blir utført."
+"NÃ¸klene du vil kryptere meldingen din til har ikke tillitt. Ingen\n"
+"kryptering blir utfÃ¸rt."
 
 #: kpgpbase.cpp:614
 #, c-format
@@ -1681,7 +1681,7 @@ msgid ""
 "%s\n"
 "They will not be able to decrypt the message"
 msgstr ""
-"Følgende nøkkeler har ikke tillitt:\n"
+"FÃ¸lgende nÃ¸kkeler har ikke tillitt:\n"
 "%s\n"
 "De vil ikke kunne dekryptere meldingen"
 
@@ -1695,7 +1695,7 @@ msgstr "Les hvor mange artikler?"
 
 #: TooManydlg.cpp:36
 msgid "Get them from"
-msgstr "Få dem fra"
+msgstr "FÃ¥ dem fra"
 
 #: TooManydlg.cpp:37
 msgid "Oldest articles"
@@ -1707,4 +1707,4 @@ msgstr "Nyeste artikler"
 
 #: TooManydlg.cpp:43
 msgid "Make this the new threshold"
-msgstr "Gjør dette til den nye terskelen"
+msgstr "GjÃ¸r dette til den nye terskelen"

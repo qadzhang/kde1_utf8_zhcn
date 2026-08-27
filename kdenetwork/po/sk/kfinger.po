@@ -3,27 +3,27 @@ msgstr ""
 "Project-Id-Version: kfinger\n"
 "POT-Creation-Date: 1999-04-15 03:01+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
-"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Last-Translator: Juraj BednÃ¡r <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kfinger.C:30
 msgid "F&inger Now"
-msgstr "F&ingernú» teraz"
+msgstr "F&ingernÃºÅ¥ teraz"
 
 #: kfinger.C:31
 msgid "&Talk..."
-msgstr "&Rozpráva»..."
+msgstr "&RozprÃ¡vaÅ¥..."
 
 #: kfinger.C:35
 msgid "Setup"
-msgstr "Nastavi»"
+msgstr "NastaviÅ¥"
 
 #: kfinger.C:36
 msgid "&Save Options"
-msgstr "U&lo¾i» nastavenie"
+msgstr "U&loÅ¾iÅ¥ nastavenie"
 
 #: kfinger.C:38
 msgid ""
@@ -45,11 +45,11 @@ msgstr "Finger"
 
 #: kfinger.C:51
 msgid "Stop current finger"
-msgstr "Zastavi» be¾iaci finger"
+msgstr "ZastaviÅ¥ beÅ¾iaci finger"
 
 #: kfinger.C:53
 msgid "Talk..."
-msgstr "Rozpráva»..."
+msgstr "RozprÃ¡vaÅ¥..."
 
 #: kfinger.C:54
 msgid "AutoFinger On/Off"
@@ -61,7 +61,7 @@ msgstr "Vitajte v KDE Finger\n"
 
 #: kfinger.C:67
 msgid "Finger result"
-msgstr "Vısledok fingeru"
+msgstr "VÃ½sledok fingeru"
 
 #: kfinger.C:272
 #, c-format
@@ -71,7 +71,7 @@ msgstr "Chyba na serveri : %s"
 #: kfinger.C:284
 #, c-format
 msgid "Connection refused by  %s"
-msgstr "Spojenie zamietnuté od %s"
+msgstr "Spojenie zamietnutÃ© od %s"
 
 #: kfinger.C:296
 #, c-format
@@ -94,7 +94,7 @@ msgstr "Nastavenie KFingeru"
 
 #: kfinger.C:391 kfinger.C:431
 msgid "&Add"
-msgstr "&Prida»"
+msgstr "&PridaÅ¥"
 
 #: kfinger.C:401
 msgid "Server Name"
@@ -106,32 +106,32 @@ msgstr "Zoznam serverov"
 
 #: kfinger.C:441
 msgid "User Name"
-msgstr "Meno u¾ívateµa"
+msgstr "Meno uÅ¾Ã­vateÄ¾a"
 
 #: kfinger.C:445 kfinger.C:448
 msgid "Users list"
-msgstr "Zoznam u¾ívateµov"
+msgstr "Zoznam uÅ¾Ã­vateÄ¾ov"
 
 #: kfinger.C:462
 msgid "Timed finger"
-msgstr "Èasovanı finger"
+msgstr "ÄŒasovanÃ½ finger"
 
 #: kfinger.C:477 kfinger.C:664
 #, c-format
 msgid "Finger wait: %d\""
-msgstr "Èakanie: %d"
+msgstr "ÄŒakanie: %d"
 
 #: kfinger.C:482
 msgid "Talk Command "
-msgstr "Príkaz na talk "
+msgstr "PrÃ­kaz na talk "
 
 #: kfinger.C:492
 msgid "Misc"
-msgstr "Rôzne"
+msgstr "RÃ´zne"
 
 #: kfinger.C:497 kfinger.C:509
 msgid "Finger Output"
-msgstr "Vıstup z fingera"
+msgstr "VÃ½stup z fingera"
 
 #: kfinger.C:501
 msgid "Finger server"
@@ -139,23 +139,23 @@ msgstr "Meno finger servera"
 
 #: kfinger.C:505 kfinger.C:517
 msgid "Fixed"
-msgstr "Pevné"
+msgstr "PevnÃ©"
 
 #: kfinger.C:513
 msgid "Finger User"
-msgstr "U¾ívateµ"
+msgstr "UÅ¾Ã­vateÄ¾"
 
 #: kfinger.C:533
 msgid "Lines to skip :"
-msgstr "Preskoèi» riadkov:"
+msgstr "PreskoÄiÅ¥ riadkov:"
 
 #: kfinger.C:541 kfinger.C:546
 msgid "Format..."
-msgstr "Formát..."
+msgstr "FormÃ¡t..."
 
 #: kfinger.C:553
 msgid "User"
-msgstr "U¾ívateµ"
+msgstr "UÅ¾Ã­vateÄ¾"
 
 #: kfinger.C:564
 msgid "Server"
@@ -163,19 +163,19 @@ msgstr "Server"
 
 #: kfinger.C:576
 msgid "Talk"
-msgstr "Rozpráva»"
+msgstr "RozprÃ¡vaÅ¥"
 
 #: kfinger.C:711
 msgid "Talk with..."
-msgstr "Rozpráva» s..."
+msgstr "RozprÃ¡vaÅ¥ s..."
 
 #: kfinger.C:778
 msgid "Format string for var1(string)"
-msgstr "Re»azec formátu pre var1(string)"
+msgstr "ReÅ¥azec formÃ¡tu pre var1(string)"
 
 #: kfinger.C:784
 msgid "Fromat string for var2(int)"
-msgstr "Re»azec formátu pre var2(int)"
+msgstr "ReÅ¥azec formÃ¡tu pre var2(int)"
 
 #: kfinger.C:804 kfinger.C:810
 msgid "Offset"
@@ -199,12 +199,12 @@ msgstr "var2, var1"
 
 #: kfinger.C:854
 msgid "Output format string"
-msgstr "Vıstupnı formát"
+msgstr "VÃ½stupnÃ½ formÃ¡t"
 
 #: kfinger.C:861
 msgid "Save & Quit"
-msgstr "Ulo¾ a ukonèi"
+msgstr "UloÅ¾ a ukonÄi"
 
 #: kfinger.C:871
 msgid "Output parameters "
-msgstr "Vıstupné parametre "
+msgstr "VÃ½stupnÃ© parametre "

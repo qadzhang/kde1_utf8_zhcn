@@ -13,48 +13,48 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japanese <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "標準ショートカット(&S)"
+msgstr "æ¨æºã·ã§ã¼ãã«ãã(&S)"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "広域ショートカット(&G)"
+msgstr "åºåã·ã§ã¼ãã«ãã(&G)"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "利用法: kcmkeys [-init | {standard,global}]\n"
+msgstr "å©ç¨æ³: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "キー割り当て設定"
+msgstr "ã­ã¼å²ãå½ã¦è¨­å®"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "現在のスキーム"
+msgstr "ç¾å¨ã®ã¹ã­ã¼ã "
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "KDE標準"
+msgstr "KDEæ¨æº"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "キースキーム(&K)"
+msgstr "ã­ã¼ã¹ã­ã¼ã (&K)"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "追加 ...(&A)"
+msgstr "è¿½å  ...(&A)"
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "変更を保存(&S)"
+msgstr "å¤æ´ãä¿å­(&S)"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr "スキーム削除エラー"
+msgstr "ã¹ã­ã¼ã åé¤ã¨ã©ã¼"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -62,13 +62,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"このスキームは削除できませんでした。\n"
-"たぶんあなたはそのキースキームが保管されている\n"
-"ファイルシステムを置き換える許可を与えられていません。"
+"ãã®ã¹ã­ã¼ã ã¯åé¤ã§ãã¾ããã§ããã\n"
+"ãã¶ãããªãã¯ãã®ã­ã¼ã¹ã­ã¼ã ãä¿ç®¡ããã¦ãã\n"
+"ãã¡ã¤ã«ã·ã¹ãã ãç½®ãæããè¨±å¯ãä¸ãããã¦ãã¾ããã"
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
-msgstr "名前の衝突"
+msgstr "ååã®è¡çª"
 
 #: keyconfig.cpp:344
 msgid ""
@@ -76,13 +76,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"新しいキースキームには一意な名前を選択してください\n"
-"あなたが入力した名前は既にキースキームリストに\n"
-"存在しています。"
+"æ°ããã­ã¼ã¹ã­ã¼ã ã«ã¯ä¸æãªååãé¸æãã¦ãã ãã\n"
+"ããªããå¥åããååã¯æ¢ã«ã­ã¼ã¹ã­ã¼ã ãªã¹ãã«\n"
+"å­å¨ãã¦ãã¾ãã"
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "新しいキースキームを追加"
+msgstr "æ°ããã­ã¼ã¹ã­ã¼ã ãè¿½å "
 
 #: savescm.cpp:32
 msgid ""
@@ -92,128 +92,128 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"あなたの個人リストに追加する新しい\n"
-"キースキームの名前を入力してください。(&E)\n"
+"ããªãã®åäººãªã¹ãã«è¿½å ããæ°ãã\n"
+"ã­ã¼ã¹ã­ã¼ã ã®ååãå¥åãã¦ãã ããã(&E)\n"
 "\n"
-"プレビューで現在使われているキーは\n"
-"始めにこのスキームにコピーされます。"
+"ãã¬ãã¥ã¼ã§ç¾å¨ä½¿ããã¦ããã­ã¼ã¯\n"
+"å§ãã«ãã®ã¹ã­ã¼ã ã«ã³ãã¼ããã¾ãã"
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr "タスクマネージャ"
+msgstr "ã¿ã¹ã¯ããã¼ã¸ã£"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "ウィンドウモードを削除"
+msgstr "ã¦ã£ã³ãã¦ã¢ã¼ããåé¤"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr "コマンドを実行"
+msgstr "ã³ãã³ããå®è¡"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "ウィンドウ操作メニュー"
+msgstr "ã¦ã£ã³ãã¦æä½ã¡ãã¥ã¼"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr "ポップアップシステムメニュー"
+msgstr "ãããã¢ããã·ã¹ãã ã¡ãã¥ã¼"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr "ウィンドウを前面へ"
+msgstr "ã¦ã£ã³ãã¦ãåé¢ã¸"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr "ウィンドウを背面へ"
+msgstr "ã¦ã£ã³ãã¦ãèé¢ã¸"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr "ウィンドウを閉じる"
+msgstr "ã¦ã£ã³ãã¦ãéãã"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr "ウィンドウをアイコン化"
+msgstr "ã¦ã£ã³ãã¦ãã¢ã¤ã³ã³å"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "ウィンドウサイズを変更"
+msgstr "ã¦ã£ã³ãã¦ãµã¤ãºãå¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr "ウィンドウを移動"
+msgstr "ã¦ã£ã³ãã¦ãç§»å"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "常に表示か否かの切替"
+msgstr "å¸¸ã«è¡¨ç¤ºãå¦ãã®åæ¿"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "デスクトップ１に変更"
+msgstr "ãã¹ã¯ãããï¼ã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "デスクトップ２に変更"
+msgstr "ãã¹ã¯ãããï¼ã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "デスクトップ３に変更"
+msgstr "ãã¹ã¯ãããï¼ã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "デスクトップ４に変更"
+msgstr "ãã¹ã¯ãããï¼ã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "デスクトップ５に変更"
+msgstr "ãã¹ã¯ãããï¼ã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "デスクトップ６に変更"
+msgstr "ãã¹ã¯ãããï¼ã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "デスクトップ７に変更"
+msgstr "ãã¹ã¯ãããï¼ã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "デスクトップ８に変更"
+msgstr "ãã¹ã¯ãããï¼ã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "右のデスクトップに変更"
+msgstr "å³ã®ãã¹ã¯ãããã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "左のデスクトップに変更"
+msgstr "å·¦ã®ãã¹ã¯ãããã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "上のデスクトップに変更"
+msgstr "ä¸ã®ãã¹ã¯ãããã«å¤æ´"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "下のデスクトップに変更"
+msgstr "ä¸ã®ãã¹ã¯ãããã«å¤æ´"
 
 #: stdbindings.cpp:3
 msgid "New"
-msgstr "新規作成"
+msgstr "æ°è¦ä½æ"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "次"
+msgstr "æ¬¡"
 
 #: stdbindings.cpp:9
 msgid "Prior"
-msgstr "前"
+msgstr "å"
 
 #: stdbindings.cpp:14
 msgid "Find"
-msgstr "検索"
+msgstr "æ¤ç´¢"
 
 #: stdbindings.cpp:17
 msgid "Home"
-msgstr "ホーム"
+msgstr "ãã¼ã "
 
 #: stdbindings.cpp:18
 msgid "End"
-msgstr "終了"
+msgstr "çµäº"

@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:67
 msgid "&Buttons"
-msgstr "Πλήκτρα"
+msgstr "ΓΓ«ΓΓªΓ΄Γ±Γ΅"
 
 #: main.cpp:70
 msgid "&Titlebar"
-msgstr "Γραμμή τίτλου"
+msgstr "ΓƒΓ±Γ΅Γ¬Γ¬Γ Γ΄ΓΓ΄Γ«Γ―Γµ"
 
 #: main.cpp:73
 msgid "Bo&rders"
@@ -37,27 +37,27 @@ msgstr ""
 #, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "Σύνταξη: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "Γ“Γ½Γ­Γ΄Γ΅Γ®Γ§: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Μορφή Διαχειριστή Παραθύρων"
+msgstr "ΓΓ―Γ±Γ¶Γ Γ„Γ©Γ΅Γ·Γ¥Γ©Γ±Γ©Γ³Γ΄Γ ΓΓ΅Γ±Γ΅Γ¨Γ½Γ±ΓΉΓ­"
 
 #: titlebar.cpp:125
 msgid "Minimize"
-msgstr "Ελαχιστοποίηση"
+msgstr "Γ…Γ«Γ΅Γ·Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #: titlebar.cpp:129
 msgid "Maximize"
-msgstr "Μεγιστοποίηση"
+msgstr "ΓΓ¥Γ£Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Σταθερό"
+msgstr "Γ“Γ΄Γ΅Γ¨Γ¥Γ±ΓΌ"
 
 #: titlebar.cpp:141
 msgid "Menu"
-msgstr "Μενού"
+msgstr "ΓΓ¥Γ­Γ―Γ½"
 
 #: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
@@ -71,29 +71,29 @@ msgstr ""
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Η αριστερή πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
-"μεγιστοποίησης\n"
+"Γ‡ Γ΅Γ±Γ©Γ³Γ΄Γ¥Γ±Γ Γ°Γ«Γ¥ΓµΓ±Γ Γ΄Γ§Γ² Γ£Γ±Γ΅Γ¬Γ¬ΓΓ² Γ΄ΓΓ΄Γ«Γ―Γµ Γ¥ΓΓ­Γ΅Γ© Γ£Γ¥Γ¬ΓΓ΄Γ§... ΓΓ°Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ°Γ«ΓΓªΓ΄Γ±Γ―Γµ "
+"Γ¬Γ¥Γ£Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§Γ²\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Η δεξιά πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
-"μεγιστοποίησης\n"
+"Γ‡ Γ¤Γ¥Γ®Γ©Γ Γ°Γ«Γ¥ΓµΓ±Γ Γ΄Γ§Γ² Γ£Γ±Γ΅Γ¬Γ¬ΓΓ² Γ΄ΓΓ΄Γ«Γ―Γµ Γ¥ΓΓ­Γ΅Γ© Γ£Γ¥Γ¬ΓΓ΄Γ§... ΓΓ°Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ°Γ«ΓΓªΓ΄Γ±Γ―Γµ "
+"Γ¬Γ¥Γ£Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§Γ²\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Η αριστερή πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
-"ελαχιστοποίησης\n"
+"Γ‡ Γ΅Γ±Γ©Γ³Γ΄Γ¥Γ±Γ Γ°Γ«Γ¥ΓµΓ±Γ Γ΄Γ§Γ² Γ£Γ±Γ΅Γ¬Γ¬ΓΓ² Γ΄ΓΓ΄Γ«Γ―Γµ Γ¥ΓΓ­Γ΅Γ© Γ£Γ¥Γ¬ΓΓ΄Γ§... ΓΓ°Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ°Γ«ΓΓªΓ΄Γ±Γ―Γµ "
+"Γ¥Γ«Γ΅Γ·Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§Γ²\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Η δεξιά πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
-"ελαχιστοποίησης\n"
+"Γ‡ Γ¤Γ¥Γ®Γ©Γ Γ°Γ«Γ¥ΓµΓ±Γ Γ΄Γ§Γ² Γ£Γ±Γ΅Γ¬Γ¬ΓΓ² Γ΄ΓΓ΄Γ«Γ―Γµ Γ¥ΓΓ­Γ΅Γ© Γ£Γ¥Γ¬ΓΓ΄Γ§... ΓΓ°Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ°Γ«ΓΓªΓ΄Γ±Γ―Γµ "
+"Γ¥Γ«Γ΅Γ·Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§Γ²\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
@@ -106,7 +106,7 @@ msgstr ""
 #: titlebar.cpp:969
 #, fuzzy
 msgid "Shaded Vertically"
-msgstr "Κατακόρυφη μεγιστοποίηση"
+msgstr "ΓΓ΅Γ΄Γ΅ΓªΓΌΓ±ΓµΓ¶Γ§ Γ¬Γ¥Γ£Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #: titlebar.cpp:975
 msgid "Shaded Horizontally"
@@ -114,11 +114,11 @@ msgstr ""
 
 #: titlebar.cpp:984
 msgid "Plain"
-msgstr "Απλό"
+msgstr "ΓΓ°Γ«ΓΌ"
 
 #: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
-msgstr "Με εικόνα"
+msgstr "ΓΓ¥ Γ¥Γ©ΓªΓΌΓ­Γ΅"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
@@ -127,12 +127,12 @@ msgstr ""
 #: titlebar.cpp:1046
 #, fuzzy
 msgid "Active pixmap:"
-msgstr "Εικόνα Ενεργού Παραθύρου"
+msgstr "Γ…Γ©ΓªΓΌΓ­Γ΅ Γ…Γ­Γ¥Γ±Γ£Γ―Γ½ ΓΓ΅Γ±Γ΅Γ¨Γ½Γ±Γ―Γµ"
 
 #: titlebar.cpp:1051
 #, fuzzy
 msgid "Inactive pixmap:"
-msgstr "Εικόνα ανενεργού παραθύρου"
+msgstr "Γ…Γ©ΓªΓΌΓ­Γ΅ Γ΅Γ­Γ¥Γ­Γ¥Γ±Γ£Γ―Γ½ Γ°Γ΅Γ±Γ΅Γ¨Γ½Γ±Γ―Γµ"
 
 #: titlebar.cpp:1057
 msgid "No pixmap under text"
@@ -140,42 +140,42 @@ msgstr ""
 
 #: titlebar.cpp:1068
 msgid "Mouse action"
-msgstr "Ενέργεια ποντικιού "
+msgstr "Γ…Γ­ΓΓ±Γ£Γ¥Γ©Γ΅ Γ°Γ―Γ­Γ΄Γ©ΓªΓ©Γ―Γ½ "
 
 #: titlebar.cpp:1076
 #, fuzzy
 msgid "Left Button double click does:"
-msgstr "Διπλό αριστερό κλικ στην γραμμή τίτλου προκαλεί: "
+msgstr "Γ„Γ©Γ°Γ«ΓΌ Γ΅Γ±Γ©Γ³Γ΄Γ¥Γ±ΓΌ ΓªΓ«Γ©Γª Γ³Γ΄Γ§Γ­ Γ£Γ±Γ΅Γ¬Γ¬Γ Γ΄ΓΓ΄Γ«Γ―Γµ Γ°Γ±Γ―ΓªΓ΅Γ«Γ¥Γ: "
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
-msgstr "(Απο)Μεγιστοποίηση"
+msgstr "(ΓΓ°Γ―)ΓΓ¥Γ£Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "(Απο)Σκίαση"
+msgstr "(ΓΓ°Γ―)Γ“ΓªΓΓ΅Γ³Γ§"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
-msgstr "Εικονοποίηση"
+msgstr "Γ…Γ©ΓªΓ―Γ­Γ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "(Απο)Σταθεροποίηση"
+msgstr "(ΓΓ°Γ―)Γ“Γ΄Γ΅Γ¨Γ¥Γ±Γ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #: titlebar.cpp:1109
 #, fuzzy
 msgid "Title animation"
-msgstr "Κίνηση τίτλου"
+msgstr "ΓΓΓ­Γ§Γ³Γ§ Γ΄ΓΓ΄Γ«Γ―Γµ"
 
 #: titlebar.cpp:1125
 msgid "ms"
-msgstr "χιλιοστά του δευτερολέπτου"
+msgstr "Γ·Γ©Γ«Γ©Γ―Γ³Γ΄Γ Γ΄Γ―Γµ Γ¤Γ¥ΓµΓ΄Γ¥Γ±Γ―Γ«ΓΓ°Γ΄Γ―Γµ"
 
 #: titlebar.cpp:1368
 #, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Μορφή Διαχειριστή Παραθύρων"
+msgstr "ΓΓ―Γ±Γ¶Γ Γ„Γ©Γ΅Γ·Γ¥Γ©Γ±Γ©Γ³Γ΄Γ ΓΓ΅Γ±Γ΅Γ¨Γ½Γ±ΓΉΓ­"
 
 #: titlebar.cpp:1369
 msgid ""
@@ -186,7 +186,7 @@ msgstr ""
 #: windows.cpp:68
 #, fuzzy
 msgid "Windows"
-msgstr "Παράθυρα"
+msgstr "ΓΓ΅Γ±ΓΓ¨ΓµΓ±Γ΅"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
@@ -203,7 +203,7 @@ msgstr ""
 #: windows.cpp:98
 #, fuzzy
 msgid "Resize animation:"
-msgstr "Κίνηση αλλαγής μεγέθους"
+msgstr "ΓΓΓ­Γ§Γ³Γ§ Γ΅Γ«Γ«Γ΅Γ£ΓΓ² Γ¬Γ¥Γ£ΓΓ¨Γ―ΓµΓ²"
 
 #: windows.cpp:111
 msgid "None"
@@ -215,7 +215,7 @@ msgstr ""
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "Πολιτική τοποθέτησης"
+msgstr "ΓΓ―Γ«Γ©Γ΄Γ©ΓªΓ Γ΄Γ―Γ°Γ―Γ¨ΓΓ΄Γ§Γ³Γ§Γ²"
 
 #: windows.cpp:134
 msgid "Smart"
@@ -236,7 +236,7 @@ msgstr ""
 #: windows.cpp:142
 #, fuzzy
 msgid "Manual"
-msgstr "Μενού"
+msgstr "ΓΓ¥Γ­Γ―Γ½"
 
 #: windows.cpp:154
 #, c-format
@@ -248,25 +248,25 @@ msgstr ""
 #: windows.cpp:175
 #, fuzzy
 msgid "Focus policy"
-msgstr "Πολιτική ενεργοποίησης"
+msgstr "ΓΓ―Γ«Γ©Γ΄Γ©ΓªΓ Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§Γ²"
 
 #: windows.cpp:185
 msgid "Click to focus"
-msgstr "Ενεργοποίηση με κλικ"
+msgstr "Γ…Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ¬Γ¥ ΓªΓ«Γ©Γª"
 
 #: windows.cpp:187
 msgid "Focus follows mouse"
-msgstr "Η ενεργοποίηση ακολουθεί τον δείκτη του ποντικιού"
+msgstr "Γ‡ Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ΅ΓªΓ―Γ«Γ―ΓµΓ¨Γ¥Γ Γ΄Γ―Γ­ Γ¤Γ¥ΓΓªΓ΄Γ§ Γ΄Γ―Γµ Γ°Γ―Γ­Γ΄Γ©ΓªΓ©Γ―Γ½"
 
 #: windows.cpp:189
 #, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Η ενεργοποίηση ακολουθεί τον δείκτη του ποντικιού"
+msgstr "Γ‡ Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ΅ΓªΓ―Γ«Γ―ΓµΓ¨Γ¥Γ Γ΄Γ―Γ­ Γ¤Γ¥ΓΓªΓ΄Γ§ Γ΄Γ―Γµ Γ°Γ―Γ­Γ΄Γ©ΓªΓ©Γ―Γ½"
 
 #: windows.cpp:191
 #, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Ενεργοποίηση με κλικ"
+msgstr "Γ…Γ­Γ¥Γ±Γ£Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ¬Γ¥ ΓªΓ«Γ©Γª"
 
 #: windows.cpp:203
 msgid "Auto Raise"
@@ -319,12 +319,12 @@ msgstr ""
 #: mouse.cpp:58
 #, fuzzy
 msgid "Inactive"
-msgstr "Εικόνα ανενεργού παραθύρου"
+msgstr "Γ…Γ©ΓªΓΌΓ­Γ΅ Γ΅Γ­Γ¥Γ­Γ¥Γ±Γ£Γ―Γ½ Γ°Γ΅Γ±Γ΅Γ¨Γ½Γ±Γ―Γµ"
 
 #: mouse.cpp:62
 #, fuzzy
 msgid "Titlebar and frame:"
-msgstr "Μορφή γραμμής τίτλου"
+msgstr "ΓΓ―Γ±Γ¶Γ Γ£Γ±Γ΅Γ¬Γ¬ΓΓ² Γ΄ΓΓ΄Γ«Γ―Γµ"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
@@ -337,7 +337,7 @@ msgstr ""
 #: mouse.cpp:74 mouse.cpp:86
 #, fuzzy
 msgid "Left Button"
-msgstr "Πλήκτρα"
+msgstr "ΓΓ«ΓΓªΓ΄Γ±Γ΅"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
@@ -372,7 +372,7 @@ msgstr ""
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 #, fuzzy
 msgid "Operations menu"
-msgstr "Μενού Λειτουργιών"
+msgstr "ΓΓ¥Γ­Γ―Γ½ Γ‹Γ¥Γ©Γ΄Γ―ΓµΓ±Γ£Γ©ΓΎΓ­"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
@@ -407,11 +407,11 @@ msgstr ""
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
 msgid "Move"
-msgstr "Μετακίνηση"
+msgstr "ΓΓ¥Γ΄Γ΅ΓªΓΓ­Γ§Γ³Γ§"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
-msgstr "Αλλαγή Μεγέθους"
+msgstr "ΓΓ«Γ«Γ΅Γ£Γ ΓΓ¥Γ£ΓΓ¨Γ―ΓµΓ²"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
@@ -448,7 +448,7 @@ msgstr ""
 #: advanced.cpp:98
 #, fuzzy
 msgid "Windows will:"
-msgstr "Παράθυρα"
+msgstr "ΓΓ΅Γ±ΓΓ¨ΓµΓ±Γ΅"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
@@ -477,60 +477,60 @@ msgstr ""
 #: advanced.cpp:121
 #, fuzzy
 msgid "Titles"
-msgstr "Γραμμή τίτλου"
+msgstr "ΓƒΓ±Γ΅Γ¬Γ¬Γ Γ΄ΓΓ΄Γ«Γ―Γµ"
 
 #: advanced.cpp:126
 msgid "Classes"
 msgstr ""
 
 #~ msgid "Titlebar appearance"
-#~ msgstr "Μορφή γραμμής τίτλου"
+#~ msgstr "ΓΓ―Γ±Γ¶Γ Γ£Γ±Γ΅Γ¬Γ¬ΓΓ² Γ΄ΓΓ΄Γ«Γ―Γµ"
 
 #~ msgid "Operations Menu"
-#~ msgstr "Μενού Λειτουργιών"
+#~ msgstr "ΓΓ¥Γ­Γ―Γ½ Γ‹Γ¥Γ©Γ΄Γ―ΓµΓ±Γ£Γ©ΓΎΓ­"
 
 #~ msgid "Window movement"
-#~ msgstr "Μετακίνηση παραθύρου"
+#~ msgstr "ΓΓ¥Γ΄Γ΅ΓªΓΓ­Γ§Γ³Γ§ Γ°Γ΅Γ±Γ΅Γ¨Γ½Γ±Γ―Γµ"
 
 #~ msgid "Transparent"
-#~ msgstr "Διάφανο"
+#~ msgstr "Γ„Γ©ΓΓ¶Γ΅Γ­Γ―"
 
 #~ msgid "Opaque"
-#~ msgstr "Αδιαφανές"
+#~ msgstr "ΓΓ¤Γ©Γ΅Γ¶Γ΅Γ­ΓΓ²"
 
 #, fuzzy
 #~ msgid "Window resize"
-#~ msgstr "Παράθυρα"
+#~ msgstr "ΓΓ΅Γ±ΓΓ¨ΓµΓ±Γ΅"
 
 #, fuzzy
 #~ msgid "Animation:"
-#~ msgstr "Κίνηση τίτλου"
+#~ msgstr "ΓΓΓ­Γ§Γ³Γ§ Γ΄ΓΓ΄Γ«Γ―Γµ"
 
 #~ msgid "Maximize Style"
-#~ msgstr "Μορφή μεγιστοποίησης"
+#~ msgstr "ΓΓ―Γ±Γ¶Γ Γ¬Γ¥Γ£Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§Γ²"
 
 #~ msgid "Maximize fully"
-#~ msgstr "Πλήρης μεγιστοποίηση"
+#~ msgstr "ΓΓ«ΓΓ±Γ§Γ² Γ¬Γ¥Γ£Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #~ msgid "Maximize vertically"
-#~ msgstr "Κατακόρυφη μεγιστοποίηση"
+#~ msgstr "ΓΓ΅Γ΄Γ΅ΓªΓΌΓ±ΓµΓ¶Γ§ Γ¬Γ¥Γ£Γ©Γ³Γ΄Γ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #~ msgid ""
 #~ "Auto raise delay\n"
 #~ "(<100 disables)"
 #~ msgstr ""
-#~ "Καθυστέρηση αυτόματης ανάδυσης\n"
-#~ "(<100 απενεργοποιεί)"
+#~ "ΓΓ΅Γ¨ΓµΓ³Γ΄ΓΓ±Γ§Γ³Γ§ Γ΅ΓµΓ΄ΓΌΓ¬Γ΅Γ΄Γ§Γ² Γ΅Γ­ΓΓ¤ΓµΓ³Γ§Γ²\n"
+#~ "(<100 Γ΅Γ°Γ¥Γ­Γ¥Γ±Γ£Γ―Γ°Γ―Γ©Γ¥Γ)"
 
 #~ msgid "miliseconds"
-#~ msgstr "χιλιοστά του δευτερολέπτου"
+#~ msgstr "Γ·Γ©Γ«Γ©Γ―Γ³Γ΄Γ Γ΄Γ―Γµ Γ¤Γ¥ΓµΓ΄Γ¥Γ±Γ―Γ«ΓΓ°Γ΄Γ―Γµ"
 
 #, fuzzy
 #~ msgid "With animation"
-#~ msgstr "Κίνηση τίτλου"
+#~ msgstr "ΓΓΓ­Γ§Γ³Γ§ Γ΄ΓΓ΄Γ«Γ―Γµ"
 
 #~ msgid "Restore"
-#~ msgstr "Επαναφορά"
+#~ msgstr "Γ…Γ°Γ΅Γ­Γ΅Γ¶Γ―Γ±Γ"
 
 #~ msgid "Shaded"
-#~ msgstr "Σκιασμένο"
+#~ msgstr "Γ“ΓªΓ©Γ΅Γ³Γ¬ΓΓ­Γ―"

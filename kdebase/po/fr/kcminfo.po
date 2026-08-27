@@ -8,15 +8,15 @@ msgstr ""
 "POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-01-09 22:15 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU <duranceau@kde.org>\n"
-"Language-Team: Français\n"
+"Language-Team: FranÃ§ais\n"
 "MIME-Version: 1.0\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding:8bit\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "écran n°%d"
+msgstr "Ã©cran nÂ°%d"
 
 #: info.cpp:52
 #, c-format
@@ -26,7 +26,7 @@ msgstr "  dimensions          : %dx%d pixels (%dx%d mm)\n"
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  résolution          : %dx%d points par pouce\n"
+msgstr "  rÃ©solution          : %dx%d points par pouce\n"
 
 #: info.cpp:61
 #, c-format
@@ -41,7 +41,7 @@ msgstr "nom de l'affichage                 : %s"
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "numéro de version                  : %i.%i"
+msgstr "numÃ©ro de version                  : %i.%i"
 
 #: info.cpp:89
 #, c-format
@@ -51,17 +51,17 @@ msgstr "fournisseur                        : %s"
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "numéro de release du fournisseur   : %i"
+msgstr "numÃ©ro de release du fournisseur   : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "numéro de l'écran par défaut       : %i"
+msgstr "numÃ©ro de l'Ã©cran par dÃ©faut       : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "nombre d'écrans                    : %i"
+msgstr "nombre d'Ã©crans                    : %i"
 
 #: info.cpp:181
 msgid ""
@@ -71,7 +71,7 @@ msgid ""
 msgstr ""
 "Aucune information disponible\n"
 " ou bien\n"
-"ce système n'est pas encore supporté :-("
+"ce systÃ¨me n'est pas encore supportÃ© :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -81,7 +81,7 @@ msgstr "%s, vitesse inconnue"
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s fonctionnant à %s MHz"
+msgstr "%s fonctionnant Ã  %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
@@ -89,7 +89,7 @@ msgstr "Impossible d'ouvrir fstab !"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "Périphérique"
+msgstr "PÃ©riphÃ©rique"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
@@ -97,7 +97,7 @@ msgstr "Point de montage"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "Type de Système de fichiers"
+msgstr "Type de SystÃ¨me de fichiers"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
@@ -125,15 +125,15 @@ msgstr "Canal DMA"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "utilisé par"
+msgstr "utilisÃ© par"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "Plage d'entrée-sortie"
+msgstr "Plage d'entrÃ©e-sortie"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "&Mémoire"
+msgstr "&MÃ©moire"
 
 #: main.cpp:82
 msgid "&Processor"
@@ -149,7 +149,7 @@ msgstr "Ca&naux DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "Ports d'entrée sort&ie"
+msgstr "Ports d'entrÃ©e sort&ie"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
@@ -161,7 +161,7 @@ msgstr "S&on"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "Pé&riphériques"
+msgstr "PÃ©&riphÃ©riques"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -187,31 +187,31 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Informations système"
+msgstr "Informations systÃ¨me"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "Mémoire totale"
+msgstr "MÃ©moire totale"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "Mémoire libre"
+msgstr "MÃ©moire libre"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Mémoire partagée"
+msgstr "MÃ©moire partagÃ©e"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "Mémoire tampon"
+msgstr "MÃ©moire tampon"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "Mémoire d'échange"
+msgstr "MÃ©moire d'Ã©change"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "Mémoire d'échange libre"
+msgstr "MÃ©moire d'Ã©change libre"
 
 #: memory.cpp:78
 #, c-format

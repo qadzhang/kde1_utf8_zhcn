@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:58
@@ -51,7 +51,7 @@ msgstr "&Lydfil"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Ytligere WAV-filer kan bli sluppet ned på lydlisten."
+msgstr "Ytligere WAV-filer kan bli sluppet ned pÃ¥ lydlisten."
 
 #: soundpage.cpp:76
 msgid "&Test"
@@ -59,14 +59,14 @@ msgstr "&Test"
 
 #: soundpage.cpp:156
 msgid "Unsupported URL"
-msgstr "Ustøttet URL"
+msgstr "UstÃ¸ttet URL"
 
 #: soundpage.cpp:157
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Beklager, denne typen URL er foreløbig ikke støttet av KDE-lydsystemmodulen"
+"Beklager, denne typen URL er forelÃ¸big ikke stÃ¸ttet av KDE-lydsystemmodulen"
 
 #: soundpage.cpp:164
 #, c-format
@@ -77,7 +77,7 @@ msgid ""
 msgstr ""
 "Beklager, men \n"
 "%s\n"
-"ser ikke ut til å være en WAV--fil."
+"ser ikke ut til Ã¥ vÃ¦re en WAV--fil."
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
@@ -117,21 +117,21 @@ msgstr "Bruk %s for ringerens navn"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "Post &første linje"
+msgstr "Post &fÃ¸rste linje"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
 msgstr ""
-"Bruk første %s for ringerens navn, og den andre %s for ringerens vertsnavn"
+"Bruk fÃ¸rste %s for ringerens navn, og den andre %s for ringerens vertsnavn"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&Motta post selv når ingen meldinger ble lagt igjen"
+msgstr "&Motta post selv nÃ¥r ingen meldinger ble lagt igjen"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Banner som vises på den svarende maskinen ved oppstart:"
+msgstr "&Banner som vises pÃ¥ den svarende maskinen ved oppstart:"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -139,9 +139,9 @@ msgid ""
 "Please leave a message to be delivered via E-Mail.\n"
 "Just start typing and when you're done, exit normally."
 msgstr ""
-"Personen du ønsker å snakke med svarer ikke.\n"
+"Personen du Ã¸nsker Ã¥ snakke med svarer ikke.\n"
 "Vennligst legg igjen en melding for levering pr epost.\n"
-"Bare start å skrive, og bare avslutt normalt når du er ferdig."
+"Bare start Ã¥ skrive, og bare avslutt normalt nÃ¥r du er ferdig."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
@@ -159,7 +159,7 @@ msgstr "Aktiver &videresende "
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Mål (bruker eller bruker@vert)"
+msgstr "&MÃ¥l (bruker eller bruker@vert)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
@@ -179,13 +179,13 @@ msgid ""
 "See Help for further explanations.\n"
 msgstr ""
 "FWA : Videresend kun annonser. Direkte forbindelse. Anbefales ikke.\n"
-"FWR : Videresend alle forespørsler, endre informasjon når nødvendig. Direkte "
+"FWR : Videresend alle forespÃ¸rsler, endre informasjon nÃ¥r nÃ¸dvendig. Direkte "
 "forbindelse.\n"
-"FWT : Videresend alle forespørsler og ta samtalen. Ingen direkte "
+"FWT : Videresend alle forespÃ¸rsler og ta samtalen. Ingen direkte "
 "forbindelser.\n"
 "\n"
-"Anbefalt å bruke: FWT hvis du ønsker å bruke det bak en brannmur (og hvis "
+"Anbefalt Ã¥ bruke: FWT hvis du Ã¸nsker Ã¥ bruke det bak en brannmur (og hvis "
 "ktalkd\n"
 "kan bruke begge nettverk), og FWR ellers.\n"
 "\n"
-"Se Hjelp for nærmere forklaring.\n"
+"Se Hjelp for nÃ¦rmere forklaring.\n"

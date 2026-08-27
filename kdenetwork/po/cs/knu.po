@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: knu 0.3.4\n"
 "POT-Creation-Date: 1999-01-23 02:09+0100\n"
 "PO-Revision-Date: 1999-02-04 10:42+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -40,26 +40,26 @@ msgid ""
 "\n"
 "So I can't do anything...\n"
 msgstr ""
-"V konfiguraèním souboru není \n"
-"aktivovánı ¾ádnı pøíkaz.\n"
+"V konfiguraÄnÃ­m souboru nenÃ­ \n"
+"aktivovÃ¡nÃ½ Å¾Ã¡dnÃ½ pÅ™Ã­kaz.\n"
 "\n"
-"Tuïí¾ nemohu nic vykonávat ...\n"
+"TuÄÃ­Å¾ nemohu nic vykonÃ¡vat ...\n"
 
 #: knu.cpp:246
 msgid "&New window"
-msgstr "&Nové okno"
+msgstr "&NovÃ© okno"
 
 #: knu.cpp:249
 msgid "&Close window"
-msgstr "&Zavøít okno"
+msgstr "&ZavÅ™Ã­t okno"
 
 #: knu.cpp:260
 msgid "Select &all"
-msgstr "Vy&ber v¹e"
+msgstr "Vy&ber vÅ¡e"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "&Vyèistit okno s vıstupem"
+msgstr "&VyÄistit okno s vÃ½stupem"
 
 #: knu.cpp:266
 msgid "P&references..."
@@ -97,7 +97,7 @@ msgstr "Informace..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "Sí»ové nástroje"
+msgstr "SÃ­Å¥ovÃ© nÃ¡stroje"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
@@ -116,8 +116,8 @@ msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"Program vykonávající tuto funkci nebyl nalezen. \n"
-"Je mo¾né zadat jeho jméno a cestu v menu Úpravy->Preference..."
+"Program vykonÃ¡vajÃ­cÃ­ tuto funkci nebyl nalezen. \n"
+"Je moÅ¾nÃ© zadat jeho jmÃ©no a cestu v menu Ãšpravy->Preference..."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -133,18 +133,18 @@ msgid ""
 "to configure it again.\n"
 msgstr ""
 "\n"
-"Máte problém ve va¹em\n"
-"konfiguraèním souboru\n"
+"MÃ¡te problÃ©m ve vaÅ¡em\n"
+"konfiguraÄnÃ­m souboru\n"
 "%s/%src.\n"
-"Ve skupinì [%s] není mo¾né \n"
-"nalézt správnou polo¾ku \"path=\".\n"
+"Ve skupinÄ› [%s] nenÃ­ moÅ¾nÃ© \n"
+"nalÃ©zt sprÃ¡vnou poloÅ¾ku \"path=\".\n"
 "\n"
-"Prosím pou¾ijte menu Úpravy->Preference\n"
-"a proveïte znovu nastavení.\n"
+"ProsÃ­m pouÅ¾ijte menu Ãšpravy->Preference\n"
+"a proveÄte znovu nastavenÃ­.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
-msgstr "Chyba ve jménu cesty"
+msgstr "Chyba ve jmÃ©nu cesty"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
@@ -152,15 +152,15 @@ msgstr "Program"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
-msgstr "U&místìní:"
+msgstr "U&mÃ­stÄ›nÃ­:"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
-msgstr "&Dal¹í parametry"
+msgstr "&DalÅ¡Ã­ parametry"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "Tento pøíkaz byl vypnut v konfiguraèním souboru."
+msgstr "Tento pÅ™Ã­kaz byl vypnut v konfiguraÄnÃ­m souboru."
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
@@ -172,15 +172,15 @@ msgstr "#"
 
 #: MtrDlg.cpp:88
 msgid "Hostname"
-msgstr "Jméno hostitele"
+msgstr "JmÃ©no hostitele"
 
 #: MtrDlg.cpp:89
 msgid "Loss"
-msgstr "Ztráta"
+msgstr "ZtrÃ¡ta"
 
 #: MtrDlg.cpp:91
 msgid "Rcv"
-msgstr "Pøijm."
+msgstr "PÅ™ijm."
 
 #: MtrDlg.cpp:93
 msgid "Snt"
@@ -192,7 +192,7 @@ msgstr "Nejl."
 
 #: MtrDlg.cpp:97
 msgid "Avg"
-msgstr "Prùm."
+msgstr "PrÅ¯m."
 
 #: MtrDlg.cpp:99
 msgid "Worst"
@@ -200,7 +200,7 @@ msgstr "Nejhor."
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "Provádìt resoluci j&ména hostitele"
+msgstr "ProvÃ¡dÄ›t resoluci j&mÃ©na hostitele"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
@@ -212,7 +212,7 @@ msgstr "ns&lookup"
 
 #: TracerouteDlg.cpp:115
 msgid "&Maximum number of hops:"
-msgstr "M&aximalní poèet skokù:"
+msgstr "M&aximalnÃ­ poÄet skokÅ¯:"
 
 #: HostDlg.cpp:112
 msgid "address (A)"
@@ -220,15 +220,15 @@ msgstr "adresa (A)"
 
 #: HostDlg.cpp:113
 msgid "name (PTR)"
-msgstr "jméno (PTR)"
+msgstr "jmÃ©no (PTR)"
 
 #: HostDlg.cpp:114
 msgid "name server (NS)"
-msgstr "jmennı server (NS)"
+msgstr "jmennÃ½ server (NS)"
 
 #: HostDlg.cpp:115
 msgid "mail exchanger (MX)"
-msgstr "po¹tovní zprostøedkovatel (MX)"
+msgstr "poÅ¡tovnÃ­ zprostÅ™edkovatel (MX)"
 
 #: HostDlg.cpp:116
 msgid "alias (CNAME)"
@@ -240,7 +240,7 @@ msgstr "start autority (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
-msgstr "libovolnı záznam (ANY)"
+msgstr "libovolnÃ½ zÃ¡znam (ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"
@@ -248,7 +248,7 @@ msgstr "H&ledej:"
 
 #: HostDlg.cpp:136 HostDlg.cpp:287
 msgid "default server"
-msgstr "implicitní server"
+msgstr "implicitnÃ­ server"
 
 #: FingerDlg.cpp:95 HostDlg.cpp:145
 msgid "Ser&ver:"
@@ -256,4 +256,4 @@ msgstr "Ser&ver:"
 
 #: FingerDlg.cpp:77
 msgid "&User:"
-msgstr "&U¾ivatel:"
+msgstr "&UÅ¾ivatel:"

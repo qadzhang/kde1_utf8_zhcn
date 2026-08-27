@@ -1,6 +1,6 @@
 # Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1998
+# JaÃ±-Mai Drapier <jdrapier@club-internet.fr>, 1998
 #
 #, fuzzy
 msgid ""
@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: krn-1.1\n"
 "POT-Creation-Date: 1999-01-18 02:04+0100\n"
 "PO-Revision-Date: 1999-04-15 07:30+0200\n"
-"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
+"Last-Translator: JaÃ±-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8 bit\n"
 
 #: main.cpp:219 main.cpp:232 main.cpp:246 main.cpp:264 main.cpp:279
 msgid "KRN-Missing Configuration info"
-msgstr "KRN-Stlenn kefluniañ a vank"
+msgstr "KRN-Stlenn kefluniaÃ± a vank"
 
 #: main.cpp:220
 msgid "Please enter your email adress"
@@ -53,19 +53,19 @@ msgstr "Pennad enkarget"
 
 #: groupdlg.cpp:130
 msgid "Connect to Server"
-msgstr "Kevreañ ouzh ar servijer"
+msgstr "KevreaÃ± ouzh ar servijer"
 
 #: groupdlg.cpp:131
 msgid "Disconnect From Server"
-msgstr "Digevreañ diouzh ar servijer"
+msgstr "DigevreaÃ± diouzh ar servijer"
 
 #: groupdlg.cpp:132
 msgid "Get Active File"
-msgstr "Resev roll ar strolladoù bev"
+msgstr "Resev roll ar strolladoÃ¹ bev"
 
 #: groupdlg.cpp:134
 msgid "Post Queued Messages"
-msgstr "Kas kemennadoù el lost"
+msgstr "Kas kemennadoÃ¹ el lost"
 
 #: groupdlg.cpp:136
 msgid "Exit"
@@ -73,27 +73,27 @@ msgstr "Er-maez"
 
 #: groupdlg.cpp:139
 msgid "KRN - Group List"
-msgstr "KRN - Roll ar strolladoù"
+msgstr "KRN - Roll ar strolladoÃ¹"
 
 #: groupdlg.cpp:142 groupdlg.cpp:148
 msgid "Get Subjects"
-msgstr "Resev dodennoù"
+msgstr "Resev dodennoÃ¹"
 
 #: groupdlg.cpp:143 groupdlg.cpp:149
 msgid "Get Articles"
-msgstr "Resev pennadoù"
+msgstr "Resev pennadoÃ¹"
 
 #: groupdlg.cpp:144 groupdlg.cpp:152 groupdlg.cpp:160
 msgid "Catchup"
-msgstr "Merkañ lennet"
+msgstr "MerkaÃ± lennet"
 
 #: groupdlg.cpp:150 groupdlg.cpp:158
 msgid "(un)Subscribe"
-msgstr "(an)koumanantiñ"
+msgstr "(an)koumanantiÃ±"
 
 #: artdlg.cpp:158 groupdlg.cpp:151
 msgid "Untag"
-msgstr "Diverkañ"
+msgstr "DiverkaÃ±"
 
 #: artdlg.cpp:167 findArtDlg.cpp:65 groupdlg.cpp:157
 msgid "Find"
@@ -101,7 +101,7 @@ msgstr "Kavout"
 
 #: artdlg.cpp:178 groupdlg.cpp:159
 msgid "(Un)Tag"
-msgstr "(div/)merkañ"
+msgstr "(div/)merkaÃ±"
 
 #: artdlg.cpp:171 artdlg.cpp:228 groupdlg.cpp:162 groupdlg.cpp:214
 msgid "Post New Article"
@@ -109,7 +109,7 @@ msgstr "Kas ur pennad nevez"
 
 #: groupdlg.cpp:163
 msgid "Post All Queued Articles"
-msgstr "Kas an holl pennadoù el lost"
+msgstr "Kas an holl pennadoÃ¹ el lost"
 
 #: groupdlg.cpp:165
 msgid "&Subscribed"
@@ -125,15 +125,15 @@ msgstr "Anvelezh..."
 
 #: groupdlg.cpp:172
 msgid "NNTP Options..."
-msgstr "Dibarzhoù NNTP..."
+msgstr "DibarzhoÃ¹ NNTP..."
 
 #: groupdlg.cpp:173
 msgid "Expire Options..."
-msgstr "Dibarzhoù kabac'hded..."
+msgstr "DibarzhoÃ¹ kabac'hded..."
 
 #: groupdlg.cpp:174
 msgid "Printing Options..."
-msgstr "Dibarzhoù moulañ..."
+msgstr "DibarzhoÃ¹ moulaÃ±..."
 
 #: groupdlg.cpp:181
 msgid "About Krn..."
@@ -141,19 +141,19 @@ msgstr "Diwar-benn Krn..."
 
 #: groupdlg.cpp:193
 msgid "&Newsgroup"
-msgstr "&Strolladoù kelaouiñ"
+msgstr "&StrolladoÃ¹ kelaouiÃ±"
 
 #: groupdlg.cpp:200
 msgid "Connect to server"
-msgstr "Kevreañ ouzh ar servijer"
+msgstr "KevreaÃ± ouzh ar servijer"
 
 #: groupdlg.cpp:202
 msgid "Disconnect from server"
-msgstr "Digevreañ diouzh ar servijer"
+msgstr "DigevreaÃ± diouzh ar servijer"
 
 #: groupdlg.cpp:205
 msgid "Get list of active groups"
-msgstr "Resev roll ar strolladoù bev"
+msgstr "Resev roll ar strolladoÃ¹ bev"
 
 #: groupdlg.cpp:206
 msgid "Find group"
@@ -161,19 +161,19 @@ msgstr "Kavout ur strollad"
 
 #: groupdlg.cpp:209
 msgid "(Un)Subscribe"
-msgstr "(Dig/)Koumanatiñ"
+msgstr "(Dig/)KoumanatiÃ±"
 
 #: groupdlg.cpp:212
 msgid "Check for Unread Articles"
-msgstr "Klask pennadoù anlennet"
+msgstr "Klask pennadoÃ¹ anlennet"
 
 #: groupdlg.cpp:365 groupdlg.cpp:587 groupdlg.cpp:929
 msgid "All Newsgroups."
-msgstr "An holl strolladoù kelaouiñ"
+msgstr "An holl strolladoÃ¹ kelaouiÃ±"
 
 #: groupdlg.cpp:475 groupdlg.cpp:569
 msgid "Subscribed Newsgroups."
-msgstr "Strolladoù koumanantet."
+msgstr "StrolladoÃ¹ koumanantet."
 
 #: groupdlg.cpp:524
 msgid "Disconnected"
@@ -181,7 +181,7 @@ msgstr "Digevreet"
 
 #: groupdlg.cpp:531
 msgid "Connecting to server"
-msgstr "O kevreañ ouzh ar servijer"
+msgstr "O kevreaÃ± ouzh ar servijer"
 
 #: groupdlg.cpp:536
 msgid "Connected to server - Posting not allowed"
@@ -193,11 +193,11 @@ msgstr "Kevreet ouzh ar servijer - Kas aotreet"
 
 #: groupdlg.cpp:544
 msgid "Can't connect to server"
-msgstr "N'hellan ket kevreañ ouzh ar servijer"
+msgstr "N'hellan ket kevreaÃ± ouzh ar servijer"
 
 #: groupdlg.cpp:546
 msgid "Connection to server failed"
-msgstr "Kevreañ ouzh ar servijer sac'het"
+msgstr "KevreaÃ± ouzh ar servijer sac'het"
 
 #: groupdlg.cpp:555
 msgid "Authentication Failed"
@@ -205,7 +205,7 @@ msgstr "Dilesadur sac'het"
 
 #: groupdlg.cpp:558
 msgid "Connection to server failed: Authentication problem"
-msgstr "Kevreañ ouzh ar servijer sac'het : Kudenn dilesadur"
+msgstr "KevreaÃ± ouzh ar servijer sac'het : Kudenn dilesadur"
 
 #: groupdlg.cpp:607
 msgid "Krn-Question"
@@ -216,28 +216,28 @@ msgid ""
 "The operation you requested needs a connection to the News server\n"
 "Should I attempt one?"
 msgstr ""
-"Evit an oberiadenn oc'h eus goulennet eo ret bezañ kevreet ouzh ar servijer "
-"kelaouiñ.Ha klask a rafen hen ober ?"
+"Evit an oberiadenn oc'h eus goulennet eo ret bezaÃ± kevreet ouzh ar servijer "
+"kelaouiÃ±.Ha klask a rafen hen ober ?"
 
 #: groupdlg.cpp:872
 msgid ""
 "You don't have an active groups list.\n"
 " get it from server?"
 msgstr ""
-"N'oc'h eus ket a roll strolladoù bev.\n"
+"N'oc'h eus ket a roll strolladoÃ¹ bev.\n"
 "E resev diwar ar servijer ?"
 
 #: groupdlg.cpp:888
 msgid "Listing active newsgroups"
-msgstr "O tiskouez ar strolladoù kelaouiñ bev"
+msgstr "O tiskouez ar strolladoÃ¹ kelaouiÃ± bev"
 
 #: groupdlg.cpp:903
 msgid "KRN - Find a Newsgroup"
-msgstr "KRN - Klask ur strollad kelaouiñ"
+msgstr "KRN - Klask ur strollad kelaouiÃ±"
 
 #: groupdlg.cpp:904
 msgid "Enter the name of the Newsgroup"
-msgstr "Bizskrivit anv ar strollad kelaouiñ"
+msgstr "Bizskrivit anv ar strollad kelaouiÃ±"
 
 #: groupdlg.cpp:988
 msgid "Krn - Message"
@@ -249,27 +249,27 @@ msgstr "N'hellan ket kavout ar strollad a fell deoc'h !"
 
 #: groupdlg.cpp:1082
 msgid "Getting messages in "
-msgstr "O'ch enkargañ kemennadoù"
+msgstr "O'ch enkargaÃ± kemennadoÃ¹"
 
 #: groupdlg.cpp:1095
 msgid "Getting list of messages in "
-msgstr "O'ch enkargañ roll ar c'hemennadoù"
+msgstr "O'ch enkargaÃ± roll ar c'hemennadoÃ¹"
 
 #: artdlg.cpp:151 artdlg.cpp:166
 msgid "Download"
-msgstr "Enkargañ"
+msgstr "EnkargaÃ±"
 
 #: artdlg.cpp:153 artdlg.cpp:275
 msgid "Mark Read"
-msgstr "Merkañ lennet"
+msgstr "MerkaÃ± lennet"
 
 #: artdlg.cpp:154
 msgid "Mark Unread"
-msgstr "Merkañ anlennet"
+msgstr "MerkaÃ± anlennet"
 
 #: artdlg.cpp:157 artdlg.cpp:177
 msgid "Decode"
-msgstr "Ezvonegañ"
+msgstr "EzvonegaÃ±"
 
 #: artdlg.cpp:159 artdlg.cpp:179
 msgid "Don't expire"
@@ -281,11 +281,11 @@ msgstr "Klask en Altavista"
 
 #: artdlg.cpp:172 artdlg.cpp:259
 msgid "Reply by Mail"
-msgstr "Eilgeriañ dre postel"
+msgstr "EilgeriaÃ± dre postel"
 
 #: artdlg.cpp:173
 msgid "Post Followup"
-msgstr "Eilgeriañ er strollad"
+msgstr "EilgeriaÃ± er strollad"
 
 #: artdlg.cpp:174
 msgid "Post & Reply"
@@ -321,15 +321,15 @@ msgstr "Neuziadur..."
 
 #: artdlg.cpp:200
 msgid "Sorting..."
-msgstr "Rummañ..."
+msgstr "RummaÃ±..."
 
 #: artdlg.cpp:204
 msgid "Edit Rules"
-msgstr "Aozañ ar reolennoù"
+msgstr "AozaÃ± ar reolennoÃ¹"
 
 #: artdlg.cpp:205
 msgid "Update"
-msgstr "Bremañaat"
+msgstr "BremaÃ±aat"
 
 #: artdlg.cpp:214
 msgid "&Scoring"
@@ -349,7 +349,7 @@ msgstr "Kavout ur pennad"
 
 #: artdlg.cpp:230
 msgid "Get Article List"
-msgstr "Resev roll ar pennadoù"
+msgstr "Resev roll ar pennadoÃ¹"
 
 #: artdlg.cpp:232
 msgid "Refresh Display"
@@ -373,11 +373,11 @@ msgstr "Anlennet"
 
 #: artdlg.cpp:255
 msgid "Save Article"
-msgstr "Enrollañ ar pennad"
+msgstr "EnrollaÃ± ar pennad"
 
 #: artdlg.cpp:257
 msgid "Print Article"
-msgstr "Moulañ ar pennad"
+msgstr "MoulaÃ± ar pennad"
 
 #: artdlg.cpp:261
 msgid "Post a Followup"
@@ -389,19 +389,19 @@ msgstr "Postel & Strollad"
 
 #: artdlg.cpp:269
 msgid "Tag Article"
-msgstr "Merkañ ar pennad"
+msgstr "MerkaÃ± ar pennad"
 
 #: artdlg.cpp:271
 msgid "Lock (keep in cache)"
-msgstr "Prennañ (derc'hel er grubuilh)"
+msgstr "PrennaÃ± (derc'hel er grubuilh)"
 
 #: artdlg.cpp:273
 msgid "Decode Article"
-msgstr "Ezvonegañ ar pennad"
+msgstr "EzvonegaÃ± ar pennad"
 
 #: artdlg.cpp:277
 msgid "Mark UnRead"
-msgstr "Merkañ anlennet"
+msgstr "MerkaÃ± anlennet"
 
 #: artdlg.cpp:299 sortDlg.cpp:34
 msgid "Sender"
@@ -413,7 +413,7 @@ msgstr "Deiziad"
 
 #: artdlg.cpp:301 sortDlg.cpp:36
 msgid "Lines"
-msgstr "Linennoù"
+msgstr "LinennoÃ¹"
 
 #: artdlg.cpp:302 sortDlg.cpp:33
 msgid "Score"
@@ -425,11 +425,11 @@ msgstr "Dodenn"
 
 #: artdlg.cpp:469
 msgid "Threading..."
-msgstr "O strobañ..."
+msgstr "O strobaÃ±..."
 
 #: artdlg.cpp:478
 msgid "Showing Article List"
-msgstr "O tiskouez roll ar pennadoù"
+msgstr "O tiskouez roll ar pennadoÃ¹"
 
 #: artdlg.cpp:1323
 msgid "KRN - Existing File"
@@ -441,11 +441,11 @@ msgstr "Ar restr oc'h eus diuzet a zo c'hoazh"
 
 #: artdlg.cpp:1330
 msgid "OverWrite"
-msgstr "Rasklañ"
+msgstr "RasklaÃ±"
 
 #: artdlg.cpp:1332
 msgid "Append"
-msgstr "Ouzhpennañ en diwezh"
+msgstr "OuzhpennaÃ± en diwezh"
 
 #: artdlg.cpp:1367 artdlg.cpp:1432
 msgid ""
@@ -458,20 +458,20 @@ msgstr ""
 "Digant : Krn\n"
 "Deoc'h\n"
 "\n"
-"Fazi o kargañ ur pennad.\n"
+"Fazi o kargaÃ± ur pennad.\n"
 "Gouez d'ar servijer :\n"
 
 #: artdlg.cpp:1541
 msgid "Getting Article List"
-msgstr "O kargañ roll ar pennadoù"
+msgstr "O kargaÃ± roll ar pennadoÃ¹"
 
 #: identDlg.cpp:41
 msgid "KRN-Identity Configuration"
-msgstr "KRN-Kefluniañ an anvelezh"
+msgstr "KRN-KefluniaÃ± an anvelezh"
 
 #: identDlg.cpp:50
 msgid "Here you should enter your personal information"
-msgstr "Bizskrivit amañ stlennad o tennañ deoc'h"
+msgstr "Bizskrivit amaÃ± stlennad o tennaÃ± deoc'h"
 
 #: identDlg.cpp:52
 msgid "You should know what these are!"
@@ -491,7 +491,7 @@ msgstr "Aozadur"
 
 #: NNTPConfigDlg.cpp:30
 msgid "KRN-NNTP configuration"
-msgstr "KRN-Kefluniañ NNTP"
+msgstr "KRN-KefluniaÃ± NNTP"
 
 #: NNTPConfigDlg.cpp:35
 msgid "Servers"
@@ -507,11 +507,11 @@ msgstr "Servijer NNTP"
 
 #: NNTPConfigDlg.cpp:67
 msgid "Connect on Startup"
-msgstr "Kevreañ pa loc'her"
+msgstr "KevreaÃ± pa loc'her"
 
 #: NNTPConfigDlg.cpp:71
 msgid "Connect without asking"
-msgstr "Kevreañ hep goulenn"
+msgstr "KevreaÃ± hep goulenn"
 
 #: NNTPConfigDlg.cpp:75
 msgid "Authenticate"
@@ -527,7 +527,7 @@ msgstr "Tremenger"
 
 #: NNTPConfigDlg.cpp:91
 msgid "Ask before downloading more than"
-msgstr "Goulenn a-raok enkargañ ouzhpenn"
+msgstr "Goulenn a-raok enkargaÃ± ouzhpenn"
 
 #: NNTPConfigDlg.cpp:94
 msgid "articles"
@@ -563,7 +563,7 @@ msgstr "An holl arnoderien"
 
 #: fontsDlg.cpp:39
 msgid "Message Display Settings"
-msgstr "Kefluniañ diskwel ar c'hemennadoù"
+msgstr "KefluniaÃ± diskwel ar c'hemennadoÃ¹"
 
 #: fontsDlg.cpp:46
 msgid "Header Style"
@@ -587,7 +587,7 @@ msgstr "Hir"
 
 #: fontsDlg.cpp:56
 msgid "Attachment Style"
-msgstr "Giz ar stagadennoù"
+msgstr "Giz ar stagadennoÃ¹"
 
 #: fontsDlg.cpp:58
 msgid "Iconic"
@@ -627,7 +627,7 @@ msgstr "Nodrezh standard"
 
 #: fontsDlg.cpp:84
 msgid "Standard Font Test"
-msgstr "Amprouiñ an nodrezh standard"
+msgstr "AmprouiÃ± an nodrezh standard"
 
 #: fontsDlg.cpp:86
 msgid "Fixed Font"
@@ -635,7 +635,7 @@ msgstr "Nodrezh ingal"
 
 #: fontsDlg.cpp:91
 msgid "Fixed Font Test"
-msgstr "Amprouiñ an nodrezh ingal"
+msgstr "AmprouiÃ± an nodrezh ingal"
 
 #: fontsDlg.cpp:94
 msgid "Background Color"
@@ -659,7 +659,7 @@ msgstr "Implij ur prenestr hepken"
 
 #: fontsDlg.cpp:109
 msgid "Split window vertically"
-msgstr "Rannañ ar prenestr a-serzh"
+msgstr "RannaÃ± ar prenestr a-serzh"
 
 #: kmmessage.cpp:1340
 msgid "On %D, you wrote:"
@@ -691,7 +691,7 @@ msgstr "Ment"
 
 #: kmcomposewin.cpp:141
 msgid "Encoding"
-msgstr "Bonegañ"
+msgstr "BonegaÃ±"
 
 #: kmcomposewin.cpp:142
 msgid "Type"
@@ -703,7 +703,7 @@ msgstr "D&igant :"
 
 #: kmcomposewin.cpp:345
 msgid "&Reply to:"
-msgstr "&Eilgeriañ da :"
+msgstr "&EilgeriaÃ± da :"
 
 #: kmcomposewin.cpp:347
 msgid "&To:"
@@ -723,11 +723,11 @@ msgstr "D&odenn :"
 
 #: kmcomposewin.cpp:356
 msgid "&Newsgroups:"
-msgstr "&Foromoù :"
+msgstr "&ForomoÃ¹ :"
 
 #: kmcomposewin.cpp:358
 msgid "&Followup-To:"
-msgstr "&Heuliañ-e :"
+msgstr "&HeuliaÃ±-e :"
 
 #: kmcomposewin.cpp:430
 msgid "&Send"
@@ -739,15 +739,15 @@ msgstr "Kas &diwezhatoc'h"
 
 #: kmcomposewin.cpp:435
 msgid "S&end now"
-msgstr "Kas &bremañ"
+msgstr "Kas &bremaÃ±"
 
 #: kmcomposewin.cpp:437
 msgid "&Insert File..."
-msgstr "&Ensoc'hañ ur restr..."
+msgstr "&Ensoc'haÃ± ur restr..."
 
 #: kmcomposewin.cpp:441
 msgid "&Addressbook..."
-msgstr "&Karned Chomlec'hioù..."
+msgstr "&Karned Chomlec'hioÃ¹..."
 
 #: kmcomposewin.cpp:446
 msgid "&New Composer..."
@@ -755,7 +755,7 @@ msgstr "&Aozer nevez..."
 
 #: kmcomposewin.cpp:449
 msgid "New Mailreader"
-msgstr "Lenner posteloù nevez..."
+msgstr "Lenner posteloÃ¹ nevez..."
 
 #: kmcomposewin.cpp:469 kmcomposewin.cpp:693 kmcomposewin.cpp:1836
 msgid "Mark all"
@@ -767,11 +767,11 @@ msgstr "Klask..."
 
 #: kmcomposewin.cpp:474 kmcomposewin.cpp:696
 msgid "Replace..."
-msgstr "Erlec'hiañ..."
+msgstr "Erlec'hiaÃ±..."
 
 #: kmcomposewin.cpp:477
 msgid "&Spellcheck..."
-msgstr "&Gwiriañ ar skritur..."
+msgstr "&GwiriaÃ± ar skritur..."
 
 #: kmcomposewin.cpp:484
 msgid "&Urgent"
@@ -779,7 +779,7 @@ msgstr "&Mallus"
 
 #: kmcomposewin.cpp:486
 msgid "&Confirm delivery"
-msgstr "Kadarnaat an &ingalañ"
+msgstr "Kadarnaat an &ingalaÃ±"
 
 #: kmcomposewin.cpp:488
 msgid "&Confirm read"
@@ -787,7 +787,7 @@ msgstr "Kadarnaat al &lenn"
 
 #: kmcomposewin.cpp:491
 msgid "&Spellchecker..."
-msgstr "&Gwiriañ ar skritur..."
+msgstr "&GwiriaÃ± ar skritur..."
 
 #: kmcomposewin.cpp:494
 msgid "&Charsets..."
@@ -795,7 +795,7 @@ msgstr "&Arouezenneg..."
 
 #: kmcomposewin.cpp:507
 msgid "&All Fields"
-msgstr "&An holl dachennoù"
+msgstr "&An holl dachennoÃ¹"
 
 #: kmcomposewin.cpp:509
 msgid "&From"
@@ -803,7 +803,7 @@ msgstr "D&igant"
 
 #: kmcomposewin.cpp:510
 msgid "&Reply to"
-msgstr "&Eilgeriañ da"
+msgstr "&EilgeriaÃ± da"
 
 #: kmcomposewin.cpp:511
 msgid "&To"
@@ -823,39 +823,39 @@ msgstr "D&odenn"
 
 #: kmcomposewin.cpp:516
 msgid "&Newsgroups"
-msgstr "&Strolladoù kelaouiñ"
+msgstr "&StrolladoÃ¹ kelaouiÃ±"
 
 #: kmcomposewin.cpp:517
 msgid "&Followup-To"
-msgstr "&Heuliañ e"
+msgstr "&HeuliaÃ± e"
 
 #: kmcomposewin.cpp:523
 msgid "Append S&ignature"
-msgstr "Ouzhpennañ ar si&nadur"
+msgstr "OuzhpennaÃ± ar si&nadur"
 
 #: kmcomposewin.cpp:525
 msgid "&Insert File"
-msgstr "&Ensoc'hañ ur restr"
+msgstr "&Ensoc'haÃ± ur restr"
 
 #: kmcomposewin.cpp:527
 msgid "Insert My &Public Key"
-msgstr "Ensoc'hañ ma &alc'hwez foran"
+msgstr "Ensoc'haÃ± ma &alc'hwez foran"
 
 #: kmcomposewin.cpp:532
 msgid "&Attach..."
-msgstr "&Stagañ..."
+msgstr "&StagaÃ±..."
 
 #: kmcomposewin.cpp:535
 msgid "&Save..."
-msgstr "&Enrollañ..."
+msgstr "&EnrollaÃ±..."
 
 #: kmcomposewin.cpp:536
 msgid "Pr&operties..."
-msgstr "&Perzhioù..."
+msgstr "&PerzhioÃ¹..."
 
 #: kmcomposewin.cpp:538
 msgid "&Attach"
-msgstr "&Stagañ"
+msgstr "&StagaÃ±"
 
 #: kmcomposewin.cpp:558
 msgid "Send message"
@@ -863,43 +863,43 @@ msgstr "Kas ar c'hemennad"
 
 #: kmcomposewin.cpp:563
 msgid "Compose new message"
-msgstr "Aozañ ur c'hemennad nevez"
+msgstr "AozaÃ± ur c'hemennad nevez"
 
 #: kmcomposewin.cpp:568
 msgid "Save message to file"
-msgstr "Enrollañ en ur restr"
+msgstr "EnrollaÃ± en ur restr"
 
 #: kmcomposewin.cpp:573
 msgid "Print message"
-msgstr "Moulañ ar c'hemmenad"
+msgstr "MoulaÃ± ar c'hemmenad"
 
 #: kmcomposewin.cpp:582
 msgid "Cut selection"
-msgstr "Troc'hañ an diuzadenn"
+msgstr "Troc'haÃ± an diuzadenn"
 
 #: kmcomposewin.cpp:585
 msgid "Copy selection"
-msgstr "Eilañ an diuzadenn"
+msgstr "EilaÃ± an diuzadenn"
 
 #: kmcomposewin.cpp:588
 msgid "Paste clipboard contents"
-msgstr "Pegañ endalc'had ar golver"
+msgstr "PegaÃ± endalc'had ar golver"
 
 #: kmcomposewin.cpp:593
 msgid "Attach file"
-msgstr "Stagañ ur restr"
+msgstr "StagaÃ± ur restr"
 
 #: kmcomposewin.cpp:597
 msgid "Open addressbook..."
-msgstr "Digeriñ ar c'harned chomlec'hioù..."
+msgstr "DigeriÃ± ar c'harned chomlec'hioÃ¹..."
 
 #: kmcomposewin.cpp:604
 msgid "sign message"
-msgstr "sinañ ar c'hemennad"
+msgstr "sinaÃ± ar c'hemennad"
 
 #: kmcomposewin.cpp:609
 msgid "encrypt message"
-msgstr "enrinegañ ar c'hemennad"
+msgstr "enrinegaÃ± ar c'hemennad"
 
 #: kmcomposewin.cpp:626 kmcomposewin.cpp:642
 msgid "Column"
@@ -918,16 +918,16 @@ msgid ""
 "Close and discard\n"
 "edited message?"
 msgstr ""
-"Serriñ ha diskar\n"
+"SerriÃ± ha diskar\n"
 "ar c'hemennad-red ?"
 
 #: kmcomposewin.cpp:1182
 msgid "Attach File"
-msgstr "Stagañ ur restr"
+msgstr "StagaÃ± ur restr"
 
 #: kmcomposewin.cpp:1204
 msgid "Include File"
-msgstr "Ensoc'hañ ur restr"
+msgstr "Ensoc'haÃ± ur restr"
 
 #: kmcomposewin.cpp:1239 kmreaderwin.cpp:737
 msgid "View..."
@@ -935,19 +935,19 @@ msgstr "Gwelet..."
 
 #: kmcomposewin.cpp:1240
 msgid "Save..."
-msgstr "Enrollañ..."
+msgstr "EnrollaÃ±..."
 
 #: kmcomposewin.cpp:1241 kmreaderwin.cpp:740
 msgid "Properties..."
-msgstr "Perzhioù..."
+msgstr "PerzhioÃ¹..."
 
 #: kmcomposewin.cpp:1245
 msgid "Attach..."
-msgstr "Stagañ..."
+msgstr "StagaÃ±..."
 
 #: kmcomposewin.cpp:1287 kmreaderwin.cpp:782
 msgid "View Attachment: "
-msgstr "Gwelet stagadennoù :"
+msgstr "Gwelet stagadennoÃ¹ :"
 
 #: kmcomposewin.cpp:1458 kpgp.cpp:546
 msgid ""
@@ -955,7 +955,7 @@ msgid ""
 "is still missing"
 msgstr ""
 "Ho tigarez, hogen e vank c'hoazh\n"
-"an arc'hwel-mañ."
+"an arc'hwel-maÃ±."
 
 #: kmcomposewin.cpp:1466
 msgid "unnamed"
@@ -979,13 +979,13 @@ msgstr "Dibab restr ar sinadur"
 
 #: kmcomposewin.cpp:2018
 msgid "Spellcheck - KMail"
-msgstr "Gwririañ ar skritur - KMail"
+msgstr "GwririaÃ± ar skritur - KMail"
 
 #: kmcomposewin.cpp:2044
 msgid ""
 "Error starting KSpell. Please make sure you have ISpell properly configured."
 msgstr ""
-"Fazi en ul loc'hañ KSpell. Bezit sur mar plij oc'h eus ISpell staliaet reizh "
+"Fazi en ul loc'haÃ± KSpell. Bezit sur mar plij oc'h eus ISpell staliaet reizh "
 "war ho reizhiad."
 
 #: kmsender.cpp:116
@@ -1004,17 +1004,17 @@ msgid ""
 "identity settings:\n"
 "user-name and email-address"
 msgstr ""
-"Termenit mar plij an tachennoù ret e\n"
+"Termenit mar plij an tachennoÃ¹ ret e\n"
 "kefluniadur an anvelezh :\n"
 "anv-arveriad ha chomlec'h-postel"
 
 #: kmsender.cpp:147
 msgid "You must specify a receiver"
-msgstr "Ret eo deoc'h termeniñ ur resever"
+msgstr "Ret eo deoc'h termeniÃ± ur resever"
 
 #: kmsender.cpp:158
 msgid "Cannot add message to outbox folder"
-msgstr "N'hellan ket ouzhpennañ ur c'hemennad en teuliad outbox"
+msgstr "N'hellan ket ouzhpennaÃ± ur c'hemennad en teuliad outbox"
 
 #: kmsender.cpp:189
 msgid "Sending still in progress"
@@ -1022,7 +1022,7 @@ msgstr "En ur c'has c'hoazh"
 
 #: kmsender.cpp:245
 msgid "Initiating sender process..."
-msgstr "O teraouiñ an argerzh kaser..."
+msgstr "O teraouiÃ± an argerzh kaser..."
 
 #: kmsender.cpp:261
 msgid "Sending message: "
@@ -1030,7 +1030,7 @@ msgstr "O kas kemennad : "
 
 #: kmsender.cpp:289
 msgid "Done sending messages."
-msgstr "Kemennadoù peurgaset."
+msgstr "KemennadoÃ¹ peurgaset."
 
 #: kmsender.cpp:308
 msgid "Sending failed:"
@@ -1047,11 +1047,11 @@ msgstr ""
 #: kmsender.cpp:501
 #, c-format
 msgid "Failed to execute mailer program %s"
-msgstr "Sac'het o seveniñ goulev postel %s"
+msgstr "Sac'het o seveniÃ± goulev postel %s"
 
 #: kmsender.cpp:589
 msgid "connecting to server"
-msgstr "o kevreañ ouzh ar servijer"
+msgstr "o kevreaÃ± ouzh ar servijer"
 
 #: kmsender.cpp:594
 #, c-format
@@ -1060,13 +1060,13 @@ msgid ""
 "host %s for sending:\n"
 "%s"
 msgstr ""
-"N'hellan ket digeriñ kevereadenn\n"
+"N'hellan ket digeriÃ± kevereadenn\n"
 "SMTP ouzh ostiz %s evit kas :\n"
 "%s"
 
 #: kmsender.cpp:623
 msgid "Cannot close SMTP connection."
-msgstr "N'hellan ket serriñ ar gevreadenn SMTP."
+msgstr "N'hellan ket serriÃ± ar gevreadenn SMTP."
 
 #: kmsender.cpp:673
 msgid "transmitting message"
@@ -1096,11 +1096,11 @@ msgstr "O kas urzhiad SMTP : %s"
 
 #: findArtDlg.cpp:22
 msgid "KRN - Article Searcher"
-msgstr "KRN - Klasker pennadoù"
+msgstr "KRN - Klasker pennadoÃ¹"
 
 #: findArtDlg.cpp:29
 msgid "Find Articles With:"
-msgstr "Kavout pennadoù gant :"
+msgstr "Kavout pennadoÃ¹ gant :"
 
 #: findArtDlg.cpp:34 rulesDlg.cpp:106
 msgid "In Field:"
@@ -1125,7 +1125,7 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
-"Fazi en ur seveniñ skrid sinadur\n"
+"Fazi en ur seveniÃ± skrid sinadur\n"
 "%s\n"
 "%s"
 
@@ -1139,7 +1139,7 @@ msgid ""
 "The specified file does not exist:\n"
 "%s"
 msgstr ""
-"Ar restr lavaret n'eus ket anezhañ :\n"
+"Ar restr lavaret n'eus ket anezhaÃ± :\n"
 "%s"
 
 #: kfileio.cpp:54
@@ -1175,7 +1175,7 @@ msgid ""
 "Could not open file:\n"
 "%s"
 msgstr ""
-"Ne m'eus ket gallet digeriñ ar restr :\n"
+"Ne m'eus ket gallet digeriÃ± ar restr :\n"
 "%s"
 
 #: kfileio.cpp:78
@@ -1199,7 +1199,7 @@ msgid ""
 "Do you want to replace it ?"
 msgstr ""
 "Bez' ez eus ar restr %s endeo.\n"
-"Ha fellout a ra deoc'h e erlec'hiañ ?"
+"Ha fellout a ra deoc'h e erlec'hiaÃ± ?"
 
 #: kfileio.cpp:144
 #, c-format
@@ -1207,7 +1207,7 @@ msgid ""
 "Failed to make a backup copy of %s.\n"
 "Continue anyway ?"
 msgstr ""
-"Sac'het en ur eilañ %s.\n"
+"Sac'het en ur eilaÃ± %s.\n"
 "Kenderc'hel evelato ?"
 
 #: kfileio.cpp:156 kfileio.cpp:174
@@ -1216,7 +1216,7 @@ msgid ""
 "Could not write to file:\n"
 "%s"
 msgstr ""
-"Ne m'eus ket gallet skrivañ er restr :\n"
+"Ne m'eus ket gallet skrivaÃ± er restr :\n"
 "%s"
 
 #: kfileio.cpp:159
@@ -1225,7 +1225,7 @@ msgid ""
 "Could not open file for writing:\n"
 "%s"
 msgstr ""
-"Ne m'eus ket gallet digeriñ ar restr evit skrivañ :\n"
+"Ne m'eus ket gallet digeriÃ± ar restr evit skrivaÃ± :\n"
 "%s"
 
 #: kfileio.cpp:163 kmaddrbook.cpp:158
@@ -1234,17 +1234,17 @@ msgid ""
 "Error while writing file:\n"
 "%s"
 msgstr ""
-"Fazi en ur skrivañ er restr :\n"
+"Fazi en ur skrivaÃ± er restr :\n"
 "%s"
 
 #: kfileio.cpp:180
 #, c-format
 msgid "Could only write %d bytes of %d."
-msgstr "Ne m'eus gallet skrivañ nemet %d diwar %d."
+msgstr "Ne m'eus gallet skrivaÃ± nemet %d diwar %d."
 
 #: kmmsgpartdlg.cpp:41
 msgid "Message Part Properties"
-msgstr "Perzhioù lodennoù ar c'hemennad"
+msgstr "PerzhioÃ¹ lodennoÃ¹ ar c'hemennad"
 
 #: kmmsgpartdlg.cpp:62
 msgid "Name:"
@@ -1256,7 +1256,7 @@ msgstr "Deskrivadur :"
 
 #: kmmsgpartdlg.cpp:83
 msgid "Encoding:"
-msgstr "Bonegañ :"
+msgstr "BonegaÃ± :"
 
 #: kmmsgpartdlg.cpp:89
 msgid "none (8bit)"
@@ -1285,7 +1285,7 @@ msgstr "Da : "
 
 #: kmreaderwin.cpp:337 kmreaderwin.cpp:358 kmreaderwin.cpp:383
 msgid "References: "
-msgstr "Daveennoù : "
+msgstr "DaveennoÃ¹ : "
 
 #: kmreaderwin.cpp:354 kmreaderwin.cpp:367
 msgid "Date: "
@@ -1297,11 +1297,11 @@ msgstr "Bcc : "
 
 #: kmreaderwin.cpp:379
 msgid "Reply to: "
-msgstr "Eilgeriañ da : "
+msgstr "EilgeriaÃ± da : "
 
 #: kmreaderwin.cpp:386
 msgid "Groups: "
-msgstr "Strolladoù : "
+msgstr "StrolladoÃ¹ : "
 
 #: kmreaderwin.cpp:425
 msgid "Encrypted message"
@@ -1309,7 +1309,7 @@ msgstr "Kemennad rineget"
 
 #: kmreaderwin.cpp:431
 msgid "Cannot decrypt message:"
-msgstr "N'hellan ket ezrinegañ ar c'hemennad :"
+msgstr "N'hellan ket ezrinegaÃ± ar c'hemennad :"
 
 #: kmreaderwin.cpp:440
 msgid "Message was signed by"
@@ -1329,16 +1329,16 @@ msgstr "Stagadenn :"
 
 #: kmreaderwin.cpp:813
 msgid "Could not create temporary file"
-msgstr "Ne m'eus ket gallet krouiñ a restr padennek"
+msgstr "Ne m'eus ket gallet krouiÃ± a restr padennek"
 
 #: kmreaderwin.cpp:834
 #, c-format
 msgid "Could not save temporary file %s"
-msgstr "Ne m'eus ket gallet enrollañ restr padennek %s"
+msgstr "Ne m'eus ket gallet enrollaÃ± restr padennek %s"
 
 #: kmreaderwin.cpp:863
 msgid "Could not save file"
-msgstr "Dibossubl enrollañ ar restr"
+msgstr "Dibossubl enrollaÃ± ar restr"
 
 #: kpgp.cpp:151
 msgid ""
@@ -1370,13 +1370,13 @@ msgid ""
 "recipients of this mail.\n"
 "Message will not be encrypted."
 msgstr ""
-"Ne m'eus ket gallet kavout an alc'hwezioù foran\n"
-"evit reseverien ar postel-mañ.\n"
+"Ne m'eus ket gallet kavout an alc'hwezioÃ¹ foran\n"
+"evit reseverien ar postel-maÃ±.\n"
 "Ne vo ket enrineget ar c'hemennad."
 
 #: kpgp.cpp:296
 msgid "Could not find the public keys for\n"
-msgstr "Ne m'eus ket gallet kavout an alc'hwezioù foran evit\n"
+msgstr "Ne m'eus ket gallet kavout an alc'hwezioÃ¹ foran evit\n"
 
 #: kpgp.cpp:307
 msgid "These persons will not be able to\n"
@@ -1388,7 +1388,7 @@ msgstr "An den-se a vo dic'houest da\n"
 
 #: kpgp.cpp:311
 msgid "decrypt the message."
-msgstr "ezrinegañ ar c'hemennad."
+msgstr "ezrinegaÃ± ar c'hemennad."
 
 #: kpgp.cpp:326
 msgid ""
@@ -1396,9 +1396,9 @@ msgid ""
 "Do you wan't to try again, continue and\n"
 "leave the message unsigned, or cancel sending the message?"
 msgstr ""
-"Emaoc'h o paouez bizskrivañ ul alvarenn tremen siek.\n"
+"Emaoc'h o paouez bizskrivaÃ± ul alvarenn tremen siek.\n"
 "Hag e fell deoc'h klask adarre, kenderc'hel ha\n"
-"leuskel ar c'hemennad ansinet, pe nullañ kas ar c'hemennad ?"
+"leuskel ar c'hemennad ansinet, pe nullaÃ± kas ar c'hemennad ?"
 
 #: kpgp.cpp:331
 msgid "Retry"
@@ -1409,20 +1409,20 @@ msgid ""
 "Do you wan't to encrypt anyway, leave the\n"
 "message as is, or cancel the message?"
 msgstr ""
-"Hag e fell deoc'h enrinegañ evelato, leuskel ar\n"
-"c'hemennad evel m'emañ, pe nullañ ar c'hemennad ?"
+"Hag e fell deoc'h enrinegaÃ± evelato, leuskel ar\n"
+"c'hemennad evel m'emaÃ±, pe nullaÃ± ar c'hemennad ?"
 
 #: kpgp.cpp:346
 msgid "Encrypt"
-msgstr "Enrinegañ"
+msgstr "EnrinegaÃ±"
 
 #: kpgp.cpp:359
 msgid ""
 "Do you wan't to leave the message as is,\n"
 "or cancel the message?"
 msgstr ""
-"Hag e fell deoc'h leuskel ar c'hemennad evel m'emañ,\n"
-"pe nullañ ar c'hemennad ?"
+"Hag e fell deoc'h leuskel ar c'hemennad evel m'emaÃ±,\n"
+"pe nullaÃ± ar c'hemennad ?"
 
 #: kpgp.cpp:717
 msgid ""
@@ -1446,23 +1446,23 @@ msgstr "Anvelezh PGP an arveriad :"
 
 #: kpgp.cpp:782
 msgid "Store passphrase"
-msgstr "Boniañ al lavarenn tremen"
+msgstr "BoniaÃ± al lavarenn tremen"
 
 #: kpgp.cpp:788
 msgid "Always encrypt to self"
-msgstr "Enrinegañ bepred an unan"
+msgstr "EnrinegaÃ± bepred an unan"
 
 #: krnsender.cpp:60
 msgid "This server is read onlyyou can't post here!"
-msgstr "Ar servijer-mañ a zo lenn hepken, n'hellit ket postañ amañ !"
+msgstr "Ar servijer-maÃ± a zo lenn hepken, n'hellit ket postaÃ± amaÃ± !"
 
 #: kmaddrbookdlg.cpp:20
 msgid "Addressbook"
-msgstr "Karned  chomlec'hioù"
+msgstr "Karned  chomlec'hioÃ¹"
 
 #: kmaddrbookdlg.cpp:95
 msgid "Addressbook Manager"
-msgstr "Merour ar c'harned  chomlec'hioù"
+msgstr "Merour ar c'harned  chomlec'hioÃ¹"
 
 #: kmaddrbookdlg.cpp:178
 msgid "KMail error"
@@ -1470,7 +1470,7 @@ msgstr "Fazi KMail"
 
 #: kmaddrbookdlg.cpp:179
 msgid "Storing addressbook failed"
-msgstr "Enrollañ karned chomlec'hioù sac'het"
+msgstr "EnrollaÃ± karned chomlec'hioÃ¹ sac'het"
 
 #: kmaddrbook.cpp:25
 msgid "KMail Error"
@@ -1478,15 +1478,15 @@ msgstr "Fazi KMail"
 
 #: kmaddrbook.cpp:26
 msgid "Storing the addressbook failed!\n"
-msgstr "Enrollañ ar c'harned chomlec'hioù sac'het !\n"
+msgstr "EnrollaÃ± ar c'harned chomlec'hioÃ¹ sac'het !\n"
 
 #: expireDlg.cpp:22 expireDlg.cpp:27
 msgid "KRN - Expire Settings"
-msgstr "KRN - Kefluniañ ar c'habac'hded"
+msgstr "KRN - KefluniaÃ± ar c'habac'hded"
 
 #: expireDlg.cpp:36
 msgid "For how long should we keep things (in days)?"
-msgstr "Pegeit e rankfen mirout ar pennadoù (devezh)"
+msgstr "Pegeit e rankfen mirout ar pennadoÃ¹ (devezh)"
 
 #: expireDlg.cpp:46
 msgid "Read:"
@@ -1498,19 +1498,19 @@ msgstr "Anlennet :"
 
 #: expireDlg.cpp:50
 msgid "Article Bodies:"
-msgstr "Korf ar pennadoù :"
+msgstr "Korf ar pennadoÃ¹ :"
 
 #: expireDlg.cpp:55
 msgid "Article Headers:"
-msgstr "Reollin ar pennadoù :"
+msgstr "Reollin ar pennadoÃ¹ :"
 
 #: printdlg.cpp:21
 msgid "KRN - Print Settings"
-msgstr "KRN - Kefluniañ ar moulañ"
+msgstr "KRN - KefluniaÃ± ar moulaÃ±"
 
 #: printdlg.cpp:26
 msgid "KRN - Printing Settings"
-msgstr "KRN - Kefluniañ ar mouladur"
+msgstr "KRN - KefluniaÃ± ar mouladur"
 
 #: printdlg.cpp:33
 msgid "General"
@@ -1518,27 +1518,27 @@ msgstr "Hollek"
 
 #: printdlg.cpp:35
 msgid "Printing System"
-msgstr "Reizhiad moulañ"
+msgstr "Reizhiad moulaÃ±"
 
 #: printdlg.cpp:37
 msgid "Use HTML Printing"
-msgstr "Implij moulañ HTML"
+msgstr "Implij moulaÃ± HTML"
 
 #: printdlg.cpp:40
 msgid "Use Direct Printing"
-msgstr "Implij moulañ ent-eeun"
+msgstr "Implij moulaÃ± ent-eeun"
 
 #: printdlg.cpp:45
 msgid "Direct Printing"
-msgstr "Moulañ ent-eeun"
+msgstr "MoulaÃ± ent-eeun"
 
 #: printdlg.cpp:48
 msgid "Print using:"
-msgstr "Moulañ oc'h implij :"
+msgstr "MoulaÃ± oc'h implij :"
 
 #: printdlg.cpp:52
 msgid "Feed it with:"
-msgstr "Bouetañ gant :"
+msgstr "BouetaÃ± gant :"
 
 #: printdlg.cpp:54
 msgid "Postscript"
@@ -1554,31 +1554,31 @@ msgstr "Skrid"
 
 #: rulesDlg.cpp:38
 msgid "KRN - Scoring Rules Editor"
-msgstr "KRN -Aozer reolennoù dereadegezh"
+msgstr "KRN -Aozer reolennoÃ¹ dereadegezh"
 
 #: rulesDlg.cpp:45
 msgid "Global Rules"
-msgstr "Reolennoù hollek"
+msgstr "ReolennoÃ¹ hollek"
 
 #: rulesDlg.cpp:47
 msgid "All Rules"
-msgstr "An holl reolennoù"
+msgstr "An holl reolennoÃ¹"
 
 #: rulesDlg.cpp:63
 msgid "Active Rules"
-msgstr "Reolennoù bev"
+msgstr "ReolennoÃ¹ bev"
 
 #: rulesDlg.cpp:70
 msgid "Rule Editor"
-msgstr "Aozer reolennoù"
+msgstr "Aozer reolennoÃ¹"
 
 #: rulesDlg.cpp:87
 msgid "Save as"
-msgstr "Enrollañ e"
+msgstr "EnrollaÃ± e"
 
 #: rulesDlg.cpp:101
 msgid "Match Articles With:"
-msgstr "Klotat pennadoù gant :"
+msgstr "Klotat pennadoÃ¹ gant :"
 
 #: rulesDlg.cpp:124
 msgid "Weight:"
@@ -1594,7 +1594,7 @@ msgstr "Anv ar reolenn :"
 
 #: sortDlg.cpp:23
 msgid "KRN - Header Sorting"
-msgstr "KRN - Rummañ ar reollinoù"
+msgstr "KRN - RummaÃ± ar reollinoÃ¹"
 
 #: sortDlg.cpp:37
 msgid "None"
@@ -1602,19 +1602,19 @@ msgstr "Hini ebet"
 
 #: sortDlg.cpp:39
 msgid "Sort by:"
-msgstr "Rummañ dre :"
+msgstr "RummaÃ± dre :"
 
 #: sortDlg.cpp:56
 msgid "Use Threading"
-msgstr "Arverañ ar strobañ"
+msgstr "ArveraÃ± ar strobaÃ±"
 
 #: charsetsDlg.cpp:27
 msgid "KRN - Charset Settings"
-msgstr "KRN - Kefluniañ an nodrezhoù"
+msgstr "KRN - KefluniaÃ± an nodrezhoÃ¹"
 
 #: charsetsDlg.cpp:29
 msgid "KMail - Charset Settings"
-msgstr "KMail - Kefluniañ an nodrezhoù"
+msgstr "KMail - KefluniaÃ± an nodrezhoÃ¹"
 
 #: charsetsDlg.cpp:39
 msgid "Message charset"
@@ -1634,7 +1634,7 @@ msgstr "&7 bit a zo ASCII"
 
 #: charsetsDlg.cpp:84
 msgid "&Qute unknonw characters"
-msgstr "&Krochediñ arouezennoù dianav"
+msgstr "&KrochediÃ± arouezennoÃ¹ dianav"
 
 #: expirestatusdlg.cpp:35
 msgid "Please wait a minute, I am expiring!"
@@ -1646,15 +1646,15 @@ msgstr "Lavarenn tremen fall ; sinadur dibosubl"
 
 #: kpgpbase.cpp:354
 msgid "error running pgp"
-msgstr "fazi en ur seveniñ pgp"
+msgstr "fazi en ur seveniÃ± pgp"
 
 #: kpgpbase.cpp:371 kpgpbase.cpp:662
 msgid "Bad pass Phrase; couldn't decrypt"
-msgstr "Lavarenn tremen fall ; ezrinegañ dibosubl"
+msgstr "Lavarenn tremen fall ; ezrinegaÃ± dibosubl"
 
 #: kpgpbase.cpp:382 kpgpbase.cpp:673
 msgid "Do not have the secret key for this message"
-msgstr "N'em eus ket a alc'hwez kuzh evit ar c'hemennad-mañ"
+msgstr "N'em eus ket a alc'hwez kuzh evit ar c'hemennad-maÃ±"
 
 #: kpgpbase.cpp:410
 msgid "unknown key ID "
@@ -1673,8 +1673,8 @@ msgid ""
 "The key(s) you wan't to encrypt your message\n"
 "to are not trusted. No encryption done."
 msgstr ""
-"An alc'hwez(ioù) e klaskit enrinagañ ho kemennad\n"
-"ganto zo diasur. Enrinegañ ebet graet."
+"An alc'hwez(ioÃ¹) e klaskit enrinagaÃ± ho kemennad\n"
+"ganto zo diasur. EnrinegaÃ± ebet graet."
 
 #: kpgpbase.cpp:614
 #, c-format
@@ -1683,9 +1683,9 @@ msgid ""
 "%s\n"
 "They will not be able to decrypt the message"
 msgstr ""
-"An alc'hwez(ioù) a heul zo diasur :\n"
+"An alc'hwez(ioÃ¹) a heul zo diasur :\n"
 "%s\n"
-"Dic'houest e vint da ezrinegañ ar c'hemennad"
+"Dic'houest e vint da ezrinegaÃ± ar c'hemennad"
 
 #: TooManydlg.cpp:25
 msgid "KRN-Confirmation"
@@ -1701,12 +1701,12 @@ msgstr "Tapout anezho diwar"
 
 #: TooManydlg.cpp:37
 msgid "Oldest articles"
-msgstr "Pennadoù koshañ"
+msgstr "PennadoÃ¹ koshaÃ±"
 
 #: TooManydlg.cpp:39
 msgid "Newest articles"
-msgstr "Pennadoù neveshañ"
+msgstr "PennadoÃ¹ neveshaÃ±"
 
 #: TooManydlg.cpp:43
 msgid "Make this the new threshold"
-msgstr "Ober an trezoù nevez eus kement-mañ"
+msgstr "Ober an trezoÃ¹ nevez eus kement-maÃ±"

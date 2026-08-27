@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: app.cpp:218 app.cpp:553
@@ -19,7 +19,7 @@ msgid ""
 "A problem with the sound server occured!\n"
 "Cannot enable sound support."
 msgstr ""
-"Pojavil se je problem z zvoènim stre¾nikom!\n"
+"Pojavil se je problem z zvoÄnim streÅ¾nikom!\n"
 "Ne morem vklopiti podpore za zvok."
 
 #: app.cpp:245
@@ -28,7 +28,7 @@ msgstr "&Nova igra"
 
 #: app.cpp:246
 msgid "&Load game"
-msgstr "Na&lo¾i igro"
+msgstr "Na&loÅ¾i igro"
 
 #: app.cpp:247
 msgid "&Save game"
@@ -40,7 +40,7 @@ msgstr "&Prejmi namig"
 
 #: app.cpp:254
 msgid "&Stop thinking"
-msgstr "P&renehaj razmi¹ljati"
+msgstr "P&renehaj razmiÅ¡ljati"
 
 #: app.cpp:255
 msgid "&Continue"
@@ -48,7 +48,7 @@ msgstr "N&adaljuj"
 
 #: app.cpp:257
 msgid "&Undo move"
-msgstr "&Preklièi potezo"
+msgstr "&PrekliÄi potezo"
 
 #: app.cpp:258
 msgid "Switch si&des"
@@ -60,11 +60,11 @@ msgstr "Hala slave..."
 
 #: app.cpp:266
 msgid "Level 1 (Wimp)"
-msgstr "Stopnja 1 (slabiè)"
+msgstr "Stopnja 1 (slabiÄ)"
 
 #: app.cpp:267
 msgid "Level 2 (Beginner)"
-msgstr "Stopnja 2 (zaèetnik)"
+msgstr "Stopnja 2 (zaÄetnik)"
 
 #: app.cpp:268
 msgid "Level 3 (Novice)"
@@ -72,7 +72,7 @@ msgstr "Stopnja 3 (novinec)"
 
 #: app.cpp:269
 msgid "Level 4 (Average)"
-msgstr "Stopnja 4 (povpreène¾)"
+msgstr "Stopnja 4 (povpreÄneÅ¾)"
 
 #: app.cpp:270
 msgid "Level 5 (Good)"
@@ -92,15 +92,15 @@ msgstr "Spretnost"
 
 #: app.cpp:275
 msgid "&Shrink board"
-msgstr "&Skrèi plo¹èo"
+msgstr "&SkrÄi ploÅ¡Äo"
 
 #: app.cpp:276
 msgid "&Enlarge board"
-msgstr "Pov&eèaj plo¹èo"
+msgstr "Pov&eÄaj ploÅ¡Äo"
 
 #: app.cpp:280
 msgid "&Half size"
-msgstr "&Polovièna velikost"
+msgstr "&PoloviÄna velikost"
 
 #: app.cpp:281
 #, c-format
@@ -170,7 +170,7 @@ msgstr "1 (najhitreje)"
 
 #: app.cpp:321
 msgid "10 (slowest)"
-msgstr "10 (najpoèasneje)"
+msgstr "10 (najpoÄasneje)"
 
 #: app.cpp:322
 msgid "Animation speed"
@@ -182,7 +182,7 @@ msgstr "&Zvok"
 
 #: app.cpp:369
 msgid "Stop thinking"
-msgstr "Nehaj razmi¹ljati"
+msgstr "Nehaj razmiÅ¡ljati"
 
 #: app.cpp:370
 msgid "Undo move"
@@ -190,11 +190,11 @@ msgstr "Vrni potezo"
 
 #: app.cpp:371
 msgid "Shrink board"
-msgstr "Skrèi plo¹èo"
+msgstr "SkrÄi ploÅ¡Äo"
 
 #: app.cpp:372
 msgid "Enlarge board"
-msgstr "Poveèaj plo¹èo"
+msgstr "PoveÄaj ploÅ¡Äo"
 
 #: app.cpp:373
 msgid "Get hint"
@@ -202,7 +202,7 @@ msgstr "Prejmi namig"
 
 #: app.cpp:374
 msgid "Get help"
-msgstr "Prejmi pomoè"
+msgstr "Prejmi pomoÄ"
 
 #: app.cpp:381
 msgid "XXXXX's turn"
@@ -214,7 +214,7 @@ msgstr "Ti (XXXXX): 88"
 
 #: app.cpp:383
 msgid "Computer (XXXXX): 88"
-msgstr "Raèunalnik (XXXXX): 88"
+msgstr "RaÄunalnik (XXXXX): 88"
 
 #: app.cpp:429
 msgid "Game saved"
@@ -222,7 +222,7 @@ msgstr "Igra je shranjena"
 
 #: app.cpp:591
 msgid "not yet implemented"
-msgstr "¹e ni narejeno"
+msgstr "Å¡e ni narejeno"
 
 #: app.cpp:604 app.cpp:609
 #, fuzzy, c-format
@@ -236,11 +236,11 @@ msgstr "modra"
 #: app.cpp:606 app.cpp:611
 #, fuzzy, c-format
 msgid "Computer (%s): %d"
-msgstr "Raèunalnik (%s): %d"
+msgstr "RaÄunalnik (%s): %d"
 
 #: app.cpp:607 app.cpp:610 app.cpp:914
 msgid "red"
-msgstr "rdeèa"
+msgstr "rdeÄa"
 
 #: app.cpp:656
 msgid "End of game"
@@ -254,14 +254,14 @@ msgid ""
 "You     : %d\n"
 "Computer: %d"
 msgstr ""
-"Igra je konèana!\n"
+"Igra je konÄana!\n"
 "\n"
 "Ti         : %d\n"
-"Raèunalnik : %d"
+"RaÄunalnik : %d"
 
 #: app.cpp:667 app.cpp:679 app.cpp:699
 msgid "Game ended"
-msgstr "Igra je konèana"
+msgstr "Igra je konÄana"
 
 #: app.cpp:677
 #, fuzzy
@@ -272,10 +272,10 @@ msgid ""
 "Computer: %d\n"
 "Your rating %4.1f%%"
 msgstr ""
-"Èestitam, zmagal si!\n"
+"ÄŒestitam, zmagal si!\n"
 "\n"
 "Ti         : %d\n"
-"Raèunalnik : %d\n"
+"RaÄunalnik : %d\n"
 "Tvoj rating : %4.1f%%"
 
 #: app.cpp:697
@@ -289,12 +289,12 @@ msgstr ""
 "Izgubil si igro!\n"
 "\n"
 "Ti         : %d\n"
-"Raèunalnik : %d"
+"RaÄunalnik : %d"
 
 #: app.cpp:708
 #, fuzzy
 msgid "Red's"
-msgstr "Rdeèi"
+msgstr "RdeÄi"
 
 #: app.cpp:708 app.cpp:710
 msgid "turn"
@@ -339,8 +339,8 @@ msgid ""
 "your name so mankind will always remember\n"
 "your cool rating."
 msgstr ""
-"Pri¹el si v \"Halo slave\". Vpi¹i svoje\n"
-"ime, da si bo èlove¹tvo za vedno zapomnilo\n"
+"PriÅ¡el si v \"Halo slave\". VpiÅ¡i svoje\n"
+"ime, da si bo ÄloveÅ¡tvo za vedno zapomnilo\n"
 "tvoj kul rating."
 
 #: app.cpp:990
@@ -381,17 +381,17 @@ msgstr ""
 "Ta program je prosto programje\n"
 "objavljen pod the GNU General\n"
 "Public License (oglejte si\n"
-"pomoè za podrobnosti)\n"
+"pomoÄ za podrobnosti)\n"
 "\n"
 "Zahvala gre:\n"
 "\tMats Luthman za ustroj igre\n"
 "\t(prenesel sem jo z njegovega java programa)\n"
 "\n"
 "\tStephan Kulow\n"
-"\tza komentarje in popravke hro¹èov\n"
+"\tza komentarje in popravke hroÅ¡Äov\n"
 "\n"
 "\tArne Klaassen\n"
-"\tza izrisane ¾etone"
+"\tza izrisane Å¾etone"
 
 #, fuzzy
 

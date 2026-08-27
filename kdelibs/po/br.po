@@ -1,16 +1,16 @@
 # KDE breton translation
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1998
+# JaÃ±-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1998
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs-1.1\n"
 "POT-Creation-Date: 1999-04-24 01:02+0200\n"
 "PO-Revision-Date: 1999-04-20 17:15+0200\n"
-"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
+"Last-Translator: JaÃ±-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kab/AssertDialog.cpp:29
@@ -35,7 +35,7 @@ msgstr "Tremen e-biou ar c'hammad, en ur sevel kalz muioc'h a reuz marteze"
 
 #: kab/AssertDialog.cpp:47
 msgid "Kill the application, loosing all data"
-msgstr "Lazhañ an arload, en ur goll an holl roadoù"
+msgstr "LazhaÃ± an arload, en ur goll an holl roadoÃ¹"
 
 #: kab/AssertDialog.cpp:49
 msgid "Send an email to the application maintainer"
@@ -67,7 +67,7 @@ msgstr ", linenn"
 
 #: kab/AssertDialog.cpp:212 kab/AssertDialog.cpp:217
 msgid "Error handling error"
-msgstr "Fazi o tazverañ ur c'hammad"
+msgstr "Fazi o tazveraÃ± ur c'hammad"
 
 #: kab/AssertDialog.cpp:213
 msgid "Could not send message."
@@ -83,7 +83,7 @@ msgid ""
 "you made will be used to proceed."
 msgstr ""
 "Ma pouezit an nozelenn Mat eo, an holl\n"
-"kemmoù oc'h eus graet a vo sevenet."
+"kemmoÃ¹ oc'h eus graet a vo sevenet."
 
 #: kab/DialogBase.cpp:39
 msgid ""
@@ -91,9 +91,9 @@ msgid ""
 "handed over to the program, but the dialog\n"
 "will not be closed.Use this to try different settings."
 msgstr ""
-"Pa glikit arloañ, ar c'hefluniadur a vo\n"
+"Pa glikit arloaÃ±, ar c'hefluniadur a vo\n"
 "treuzkaset d'ar goulev, hogen ar c'hendiviz a\n"
-"chomo digor. Grit gant se evit amprouiñ lies kefluniadur."
+"chomo digor. Grit gant se evit amprouiÃ± lies kefluniadur."
 
 #: kab/DialogBase.cpp:44
 msgid ""
@@ -103,11 +103,11 @@ msgid ""
 "The program will be in the state before\n"
 "opening the dialog."
 msgstr ""
-"Ma pouezit an nozelenn Nullañ, e vo dilaosket\n"
-"holl ho kemmoù hag ar c'hendiviz\n"
+"Ma pouezit an nozelenn NullaÃ±, e vo dilaosket\n"
+"holl ho kemmoÃ¹ hag ar c'hendiviz\n"
 "a vo serret.\n"
 "Ar goulev a vo en dro er stad ma oa kent\n"
-"digeriñ ar c'hendiviz."
+"digeriÃ± ar c'hendiviz."
 
 #: kab/DialogBase.cpp:57 kdeui/kkeydialog.cpp:242 kdeui/knotebook.cpp:247
 #: kdeui/kwizard.cpp:228 po/texts.cpp:36
@@ -116,12 +116,12 @@ msgstr "&Mat eo"
 
 #: kab/DialogBase.cpp:58
 msgid "&Apply"
-msgstr "&Arloañ"
+msgstr "&ArloaÃ±"
 
 #: kab/DialogBase.cpp:59 kdeui/kkeydialog.cpp:245 kdeui/knotebook.cpp:178
 #: kdeui/kwizard.cpp:159 po/texts.cpp:40
 msgid "&Cancel"
-msgstr "&Nullañ"
+msgstr "&NullaÃ±"
 
 #: kab/PrintDialog.cpp:26
 msgid "Headline text:"
@@ -129,11 +129,11 @@ msgstr "Testenn laez :"
 
 #: kab/PrintDialog.cpp:27
 msgid "Right footer text:"
-msgstr "Testenn traoñ a-zehoù :"
+msgstr "Testenn traoÃ± a-zehoÃ¹ :"
 
 #: kab/PrintDialog.cpp:28
 msgid "Left footer text:"
-msgstr "Testenn traoñ a-gleiz :"
+msgstr "Testenn traoÃ± a-gleiz :"
 
 #: kab/SearchDialog.cpp:47
 msgid "The title"
@@ -141,7 +141,7 @@ msgstr "An titl"
 
 #: kab/SearchDialog.cpp:48
 msgid "The first name"
-msgstr "An anv pennañ"
+msgstr "An anv pennaÃ±"
 
 #: kab/SearchDialog.cpp:49
 msgid "The additional name"
@@ -165,7 +165,7 @@ msgstr "Ar chomlec'h"
 
 #: kab/SearchDialog.cpp:54
 msgid "The town"
-msgstr "Ar gêr"
+msgstr "Ar gÃªr"
 
 #: kab/SearchDialog.cpp:55
 msgid "The organization"
@@ -217,7 +217,7 @@ msgstr "An askelenn"
 
 #: kab/SearchDialog.cpp:74
 msgid "kab: Search entries"
-msgstr "kab : Klask enmontoù"
+msgstr "kab : Klask enmontoÃ¹"
 
 #: kab/SearchDialogMainWidget.cpp:22
 msgid "matches"
@@ -225,7 +225,7 @@ msgstr "a glot"
 
 #: kab/SearchDialogMainWidget.cpp:23
 msgid "Use shell wildcard patterns here"
-msgstr "Implijit patromoù shell amañ"
+msgstr "Implijit patromoÃ¹ shell amaÃ±"
 
 #: kab/SearchDialogMainWidget.cpp:24
 msgid "Select field to match the pattern"
@@ -237,28 +237,28 @@ msgstr "Ouzpennit ur hedad nevez"
 
 #: kab/StringListEditWidget.cpp:31
 msgid "Move this string up"
-msgstr "Pignit an hedad-mañ"
+msgstr "Pignit an hedad-maÃ±"
 
 #: kab/StringListEditWidget.cpp:32
 msgid "Move this string down"
-msgstr "Diskennit an hedad-mañ"
+msgstr "Diskennit an hedad-maÃ±"
 
 #: kab/StringListEditWidget.cpp:33
 msgid "Delete this string"
-msgstr "Dilamit an hedad-mañ"
+msgstr "Dilamit an hedad-maÃ±"
 
 #: kab/StringListSelectAndReorderSet.cpp:34
 msgid "Possible values:"
-msgstr "Gwerzhioù possubl :"
+msgstr "GwerzhioÃ¹ possubl :"
 
 #: kab/StringListSelectAndReorderSet.cpp:35
 msgid "Selected values:"
-msgstr "Gwerzhioù diuzet :"
+msgstr "GwerzhioÃ¹ diuzet :"
 
 #: kdecore/kaccel.cpp:223 kfile/kfiledialog.cpp:559 kfile/kfiledialog.cpp:1219
 #: kfile/kfiledialog.cpp:1379 kfile/kfiledialog.cpp:1413 po/texts.cpp:65
 msgid "Open"
-msgstr "Digeriñ"
+msgstr "DigeriÃ±"
 
 #: kdecore/kaccel.cpp:227
 msgid "New"
@@ -266,16 +266,16 @@ msgstr "Nevez"
 
 #: kab/searchresults.cc:30 kdecore/kaccel.cpp:231 po/texts.cpp:80
 msgid "Close"
-msgstr "Serriñ"
+msgstr "SerriÃ±"
 
 #: kdecore/kaccel.cpp:235 kfile/kfiledialog.cpp:1274
 #: kfile/kfiledialog.cpp:1434 po/texts.cpp:75
 msgid "Save"
-msgstr "Enrollañ"
+msgstr "EnrollaÃ±"
 
 #: kdecore/kaccel.cpp:239 po/texts.cpp:115
 msgid "Print"
-msgstr "Moulañ"
+msgstr "MoulaÃ±"
 
 #: kdecore/kaccel.cpp:243 po/texts.cpp:52
 msgid "Quit"
@@ -283,15 +283,15 @@ msgstr "Kuitaat"
 
 #: kdecore/kaccel.cpp:247 po/texts.cpp:69
 msgid "Cut"
-msgstr "Troc'hañ"
+msgstr "Troc'haÃ±"
 
 #: kdecore/kaccel.cpp:251 po/texts.cpp:56
 msgid "Copy"
-msgstr "Eilañ"
+msgstr "EilaÃ±"
 
 #: kdecore/kaccel.cpp:255 po/texts.cpp:58
 msgid "Paste"
-msgstr "Pegañ"
+msgstr "PegaÃ±"
 
 #: kdecore/kaccel.cpp:259 po/texts.cpp:93
 msgid "Undo"
@@ -307,7 +307,7 @@ msgstr "Kavout"
 #: kdeui/keditcl2.cpp:470 kdeui/keditcl2.cpp:789 kspell/kspelldlg.cpp:110
 #: po/texts.cpp:133
 msgid "Replace"
-msgstr "Erlec'hiañ"
+msgstr "Erlec'hiaÃ±"
 
 #: kdecore/kaccel.cpp:271 po/texts.cpp:134
 msgid "Insert"
@@ -315,7 +315,7 @@ msgstr "Enlakaat"
 
 #: kdecore/kaccel.cpp:275 kfile/kfiledialog.cpp:131
 msgid "Home"
-msgstr "Du-mañ"
+msgstr "Du-maÃ±"
 
 #: kdecore/kaccel.cpp:279
 msgid "End"
@@ -378,9 +378,9 @@ msgstr ""
 "\n"
 "An Endro Gorretoal KDE a zo bet skrivet gant skipailh KDE,\n"
 "ur rouedad ijinerien meziantel war ar bed a-bezh emroet da\n"
-"ziorren meziantoù frank.\n"
+"ziorren meziantoÃ¹ frank.\n"
 "\n"
-"Gweladennit http://www.kde.org evit muioc'h a ditouroù war ar\n"
+"Gweladennit http://www.kde.org evit muioc'h a ditouroÃ¹ war ar\n"
 "raktres KDE. Pedet oc'h da gemer perzh ha da skoazell KDE.\n"
 "\n"
 "Mar plij kemennit an drein kavet da http://bugs.kde.org.\n"
@@ -412,7 +412,7 @@ msgstr "Nann"
 #: kfile/kfiledialogconf.cpp:59 kfmlib/kfm.cpp:415 kspell/kspelldlg.cpp:143
 #: po/texts.cpp:39
 msgid "Cancel"
-msgstr "Nullañ"
+msgstr "NullaÃ±"
 
 #: kdeui/kcolordlg.cpp:285
 msgid "Select Color"
@@ -420,15 +420,15 @@ msgstr "Diuzit ul liv"
 
 #: kdeui/kcolordlg.cpp:297
 msgid "System Colors"
-msgstr "Livioù ar reizhiad"
+msgstr "LivioÃ¹ ar reizhiad"
 
 #: kdeui/kcolordlg.cpp:328
 msgid "Custom Colors"
-msgstr "Livioù diouzhoc'h"
+msgstr "LivioÃ¹ diouzhoc'h"
 
 #: kdeui/kcolordlg.cpp:341
 msgid "Add to Custom Colors"
-msgstr "Ouzhpennañ d'al livioù diouzhoc'h"
+msgstr "OuzhpennaÃ± d'al livioÃ¹ diouzhoc'h"
 
 #: kdeui/kcolordlg.cpp:789 kdeui/kcolordlg.cpp:841
 msgid "Custom..."
@@ -440,7 +440,7 @@ msgstr "Dre ziouer"
 
 #: kdeui/kcontrol.cpp:47 kdeui/kcontrol.cpp:53 po/texts.cpp:41
 msgid "Apply"
-msgstr "Arloañ"
+msgstr "ArloaÃ±"
 
 #: kdeui/kdatepik.cpp:102
 msgid "January"
@@ -530,7 +530,7 @@ msgstr "Ho tigarez"
 
 #: kdeui/keditcl1.cpp:140
 msgid "The specified File does not exist"
-msgstr "Ar restr goulennet n'eus ket anezhañ"
+msgstr "Ar restr goulennet n'eus ket anezhaÃ±"
 
 #: kdeui/keditcl1.cpp:153 kdeui/keditcl1.cpp:430 kdeui/keditcl1.cpp:511
 #: kdeui/keditcl1.cpp:1715
@@ -543,11 +543,11 @@ msgstr "Goulennet oc'h eus ur renkell"
 
 #: kdeui/keditcl1.cpp:169 kdeui/keditcl1.cpp:190
 msgid "You do not have read permission to this file."
-msgstr "N'oc'h ket aotreet da lenn ar restr-mañ."
+msgstr "N'oc'h ket aotreet da lenn ar restr-maÃ±."
 
 #: kdeui/keditcl1.cpp:203
 msgid "An Error occured while trying to open this Document"
-msgstr "Bez' ez eus bet ur c'hammad en ur glask digeriñ an teul-mañ"
+msgstr "Bez' ez eus bet ur c'hammad en ur glask digeriÃ± an teul-maÃ±"
 
 #: kdeui/keditcl1.cpp:373
 msgid "Select Document to Insert"
@@ -563,27 +563,27 @@ msgid ""
 "Would you like to save it?"
 msgstr ""
 "Kemmet eo bet an teul-red.\n"
-"Ha fellout a ra deoc'h e enrollañ ?"
+"Ha fellout a ra deoc'h e enrollaÃ± ?"
 
 #: kdeui/keditcl1.cpp:431
 msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
 msgstr ""
-"Ne m'eus ket gallet enrollañ an teul.\n"
-"Digeriñ un teul nevez memestra ?"
+"Ne m'eus ket gallet enrollaÃ± an teul.\n"
+"DigeriÃ± un teul nevez memestra ?"
 
 #: kdeui/keditcl1.cpp:462
 msgid "Select Document to Open"
-msgstr "Diuzit an teul da zigeriñ"
+msgstr "Diuzit an teul da zigeriÃ±"
 
 #: kdeui/keditcl1.cpp:512
 msgid ""
 "Could not save the document.\n"
 "Create a new document anyways?"
 msgstr ""
-"Ne m'eus ket gallet enrollañ an teul\n"
-"Krouiñ un teul nevez memestra ?"
+"Ne m'eus ket gallet enrollaÃ± an teul\n"
+"KrouiÃ± un teul nevez memestra ?"
 
 #: kdeui/keditcl1.cpp:547 kdeui/keditcl1.cpp:1700 kdeui/kpopmenu.cpp:10
 #: po/texts.cpp:34
@@ -592,11 +592,11 @@ msgstr "Diditl"
 
 #: kdeui/keditcl1.cpp:1560
 msgid "Could not save the document\n"
-msgstr "Ne m'eus ket gallet enrollañ an teul\n"
+msgstr "Ne m'eus ket gallet enrollaÃ± an teul\n"
 
 #: kdeui/keditcl1.cpp:1630
 msgid "Save Document As"
-msgstr "Enrollañ an teul e"
+msgstr "EnrollaÃ± an teul e"
 
 #: kdeui/keditcl1.cpp:1659
 msgid ""
@@ -604,11 +604,11 @@ msgid ""
 "Do you want to overwrite it ?"
 msgstr ""
 "Bez' ez eus un teul gant an anv-se endeo\n"
-"Ha fellout a ra deoc'h e rasklañ ?"
+"Ha fellout a ra deoc'h e rasklaÃ± ?"
 
 #: kdeui/keditcl1.cpp:1716
 msgid "You do not have write permission to this file.\n"
-msgstr "N'oc'h ket aotreet da skrivañ war ar restr-mañ.\n"
+msgstr "N'oc'h ket aotreet da skrivaÃ± war ar restr-maÃ±.\n"
 
 #: kdeui/keditcl2.cpp:104 kdeui/keditcl2.cpp:361 kdeui/keditcl2.cpp:454
 msgid ""
@@ -616,7 +616,7 @@ msgid ""
 "Continue from the beginning?"
 msgstr ""
 "Tizhet eo diwezh an teul.\n"
-"Kenderc'hel adalek an deroù ?"
+"Kenderc'hel adalek an deroÃ¹ ?"
 
 #: kdeui/keditcl2.cpp:121 kdeui/keditcl2.cpp:378 kdeui/keditcl2.cpp:424
 #: kdeui/keditcl2.cpp:471
@@ -645,11 +645,11 @@ msgstr "Kavout :"
 
 #: kdeui/keditcl2.cpp:778
 msgid "Replace with:"
-msgstr "Erlec'hiañ gant :"
+msgstr "Erlec'hiaÃ± gant :"
 
 #: kdeui/keditcl2.cpp:792 kspell/kspelldlg.cpp:38
 msgid "Replace All"
-msgstr "Erlec'hiañ pep tra"
+msgstr "Erlec'hiaÃ± pep tra"
 
 #: kdeui/keditcl2.cpp:889
 msgid "Goto Line"
@@ -747,7 +747,7 @@ msgstr "Sil :"
 
 #: kdeui/kkeydialog.cpp:219
 msgid "Configure key bindings"
-msgstr "Kefluniit liammoù stokell"
+msgstr "Kefluniit liammoÃ¹ stokell"
 
 #: kdeui/kkeydialog.cpp:232 kdeui/knotebook.cpp:224 kdeui/kwizard.cpp:205
 #: po/texts.cpp:45
@@ -792,11 +792,11 @@ msgstr "Digeflunius"
 
 #: kdeui/kkeydialog.cpp:530
 msgid "Global Keys"
-msgstr "Stokelloù hollek"
+msgstr "StokelloÃ¹ hollek"
 
 #: kdeui/kkeydialog.cpp:562
 msgid "Keys"
-msgstr "Stokelloù"
+msgstr "StokelloÃ¹"
 
 #: kdeui/kkeydialog.cpp:637 kdeui/kkeydialog.cpp:976
 msgid "Attention : key already used"
@@ -812,7 +812,7 @@ msgstr "Stokell didermenet"
 
 #: kdeui/kkeydialog.cpp:999
 msgid "Return to end edition"
-msgstr "Enmont evit echuiñ an aozañ"
+msgstr "Enmont evit echuiÃ± an aozaÃ±"
 
 #: kdeui/kkeydialog.cpp:1009
 msgid "Incorrect key"
@@ -826,45 +826,45 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"Ar blokad stokelloù %s zo bet derannet endeo\n"
+"Ar blokad stokelloÃ¹ %s zo bet derannet endeo\n"
 "d'an obererezh hollek %s.\n"
-"Diuzit mar plij ur blokad stokelloù dieil."
+"Diuzit mar plij ur blokad stokelloÃ¹ dieil."
 
 #: kdeui/kkeydialog.cpp:1039
 msgid "Global key conflict"
-msgstr "Enebiezh stokelloù hollek"
+msgstr "Enebiezh stokelloÃ¹ hollek"
 
 #: kdeui/kkeydialog.cpp:1062
 #, c-format
-msgid ""
-"The %s key combination has already been allocated\n"
-"to the standard %s action.\n"
-"\n"
-"Please choose a unique key combination."
-msgstr ""
-"Ar blokad stokelloù % zo bet derannet c'hoazh\n"
-"d'an obererezh standard %s.\n"
-"Diuzit mar plij ur blokad stokelloù dieil."
+#~ msgid ""
+#~ "The %s key combination has already been allocated\n"
+#~ "to the standard %s action.\n"
+#~ "\n"
+#~ "Please choose a unique key combination."
+#~ msgstr ""
+#~ "Ar blokad stokelloÃ¹ % zo bet derannet c'hoazh\n"
+#~ "d'an obererezh standard %s.\n"
+#~ "Diuzit mar plij ur blokad stokelloÃ¹ dieil."
 
 #: kdeui/kkeydialog.cpp:1066
 msgid "Standard key conflict"
-msgstr "Enebiezh stokelloù standard"
+msgstr "Enebiezh stokelloÃ¹ standard"
 
 #: kdeui/kkeydialog.cpp:1086
 #, c-format
-msgid ""
-"The %s key combination has already been allocated\n"
-"to the %s action.\n"
-"\n"
-"Please choose a unique key combination."
-msgstr ""
-"Ar blokad stokelloù % zo bet derannet c'hoazh\n"
-"d'an obererezh %s.\n"
-"Diuzit mar plij ur blokad stokelloù dieil."
+#~ msgid ""
+#~ "The %s key combination has already been allocated\n"
+#~ "to the %s action.\n"
+#~ "\n"
+#~ "Please choose a unique key combination."
+#~ msgstr ""
+#~ "Ar blokad stokelloÃ¹ % zo bet derannet c'hoazh\n"
+#~ "d'an obererezh %s.\n"
+#~ "Diuzit mar plij ur blokad stokelloÃ¹ dieil."
 
 #: kdeui/kkeydialog.cpp:1090
 msgid "Key conflict"
-msgstr "Enebiez stokelloù"
+msgstr "Enebiez stokelloÃ¹"
 
 #: kdeui/kmenubar.cpp:306 kdeui/ktoolbar.cpp:860
 msgid "Top"
@@ -872,7 +872,7 @@ msgstr "Laez"
 
 #: kdeui/kmenubar.cpp:307 kdeui/ktoolbar.cpp:862
 msgid "Bottom"
-msgstr "Traoñ"
+msgstr "TraoÃ±"
 
 #: kdeui/kmenubar.cpp:308 kdeui/ktoolbar.cpp:863
 msgid "Floating"
@@ -884,11 +884,11 @@ msgstr "Da nijal"
 
 #: kdeui/kmenubar.cpp:761 kdeui/ktoolbar.cpp:2071
 msgid "UnFloat"
-msgstr "Stagañ"
+msgstr "StagaÃ±"
 
 #: kdeui/knotebook.cpp:145
 msgid "Trying to add page when no KWizards are added!"
-msgstr "O klask ouzhpennañ ur bajenn pa n'eus KWizard ouzhpennet ebet !"
+msgstr "O klask ouzhpennaÃ± ur bajenn pa n'eus KWizard ouzhpennet ebet !"
 
 #: kdeui/knotebook.cpp:201 kdeui/kwizard.cpp:182
 msgid "&Default"
@@ -908,7 +908,7 @@ msgstr "Kleiz"
 
 #: kdeui/ktoolbar.cpp:861
 msgid "Right"
-msgstr "Dehoù"
+msgstr "DehoÃ¹"
 
 #: kdeui/kwizard.cpp:531 kdeui/kwizard.cpp:678
 #, c-format
@@ -917,7 +917,7 @@ msgstr "Pajenn %d diwar %d"
 
 #: kfile/kcombiview.cpp:81
 msgid "Folders:"
-msgstr "Renkelloù :"
+msgstr "RenkelloÃ¹ :"
 
 #: kfile/kcombiview.cpp:82
 msgid "Contents:"
@@ -925,7 +925,7 @@ msgstr "Endalc'had :"
 
 #: kfile/kfilebookmark.cpp:246
 msgid "<!-- Do not edit this file -->"
-msgstr "<!-- Na aozit ket ar restr-mañ -->"
+msgstr "<!-- Na aozit ket ar restr-maÃ± -->"
 
 #: kab/addressbook.cc:1112 kfile/kfiledetaillist.cpp:36
 msgid "Name"
@@ -933,7 +933,7 @@ msgstr "Anv"
 
 #: kfile/kfiledetaillist.cpp:40
 msgid "Permissions"
-msgstr "Aotreoù"
+msgstr "AotreoÃ¹"
 
 #: kfile/kfiledetaillist.cpp:42
 msgid "Date"
@@ -961,15 +961,15 @@ msgstr "D'ar c'har"
 
 #: kfile/kfiledialog.cpp:134 po/texts.cpp:54
 msgid "Reload"
-msgstr "Adkargañ"
+msgstr "AdkargaÃ±"
 
 #: kfile/kfiledialog.cpp:156
 msgid "Bookmarks"
-msgstr "Sinedoù"
+msgstr "SinedoÃ¹"
 
 #: kfile/kfiledialog.cpp:160
 msgid "Create new folder"
-msgstr "Krouiñ ur renkell nevez"
+msgstr "KrouiÃ± ur renkell nevez"
 
 #: kfile/kfiledialog.cpp:163
 msgid "Search for a file"
@@ -977,7 +977,7 @@ msgstr "Klask ur restr"
 
 #: kfile/kfiledialog.cpp:166
 msgid "Configure this dialog [development only]"
-msgstr "Kefluniañ ar c'hendiviz-mañ [diorren hepken]"
+msgstr "KefluniaÃ± ar c'hendiviz-maÃ± [diorren hepken]"
 
 #: kfile/kfiledialog.cpp:174
 msgid "The path"
@@ -1005,11 +1005,11 @@ msgid ""
 "But the application accepts just local files."
 msgstr ""
 "Ar renkell resisaet n'eo ket ur renkell lec'hel\n"
-"Hogen an arload a gemer e kont ar restroù lec'hel hepken."
+"Hogen an arload a gemer e kont ar restroÃ¹ lec'hel hepken."
 
 #: kfile/kfiledialog.cpp:520 kfile/kfiledialog.cpp:625
 msgid "Error: Cannot Open Directory"
-msgstr "Kammad : n'hell ket digeriñ ar renkell"
+msgstr "Kammad : n'hell ket digeriÃ± ar renkell"
 
 #: kfile/kfiledialog.cpp:521
 msgid ""
@@ -1025,7 +1025,7 @@ msgstr "Dilezel"
 
 #: kfile/kfiledialog.cpp:574 kfile/kfiledialog.cpp:1394 po/texts.cpp:77
 msgid "Save As"
-msgstr "Enrollañ e"
+msgstr "EnrollaÃ± e"
 
 #: kfile/kfiledialog.cpp:597
 msgid "Root Directory"
@@ -1037,7 +1037,7 @@ msgstr "Ar renkell resisaet n'eus ket anezhi pe a oa anlennadus."
 
 #: kfile/kfiledialog.cpp:887
 msgid "Create new directory in: "
-msgstr "Krouiñ ur renkell nevez e :"
+msgstr "KrouiÃ± ur renkell nevez e :"
 
 #: kfile/kfiledialog.cpp:890
 msgid "New Directory"
@@ -1045,7 +1045,7 @@ msgstr "Renkell nevez"
 
 #: kfile/kfiledialog.cpp:962
 msgid "Add to bookmarks"
-msgstr "Ouzhpennañ d'ar sinedoù"
+msgstr "OuzhpennaÃ± d'ar sinedoÃ¹"
 
 #: kfile/kfiledialog.cpp:1253
 msgid "Choose Directory"
@@ -1147,15 +1147,15 @@ msgstr "Diskouez linenn a stad"
 
 #: kfile/kfiledialogconf.cpp:120
 msgid "Use single Click"
-msgstr "Arverañ klik eeun"
+msgstr "ArveraÃ± klik eeun"
 
 #: kfile/kfiledialogconf.cpp:126
 msgid "Mix dirs and files"
-msgstr "Meskañ renkelloù ha restroù"
+msgstr "MeskaÃ± renkelloÃ¹ ha restroÃ¹"
 
 #: kfile/kfiledialogconf.cpp:132
 msgid "Keep dirs first"
-msgstr "Derc'hel renkelloù da gentañ"
+msgstr "Derc'hel renkelloÃ¹ da gentaÃ±"
 
 #: kfile/kfilefilter.cpp:35
 msgid "*|All Files"
@@ -1265,11 +1265,11 @@ msgstr ""
 
 #: kspell/ksconfig.cpp:66
 msgid "Create Root/Affix combinations not in the dictionary"
-msgstr "Krouiñ Gwrizienn/Stagell a-gevret zo er-maez ar geriadur"
+msgstr "KrouiÃ± Gwrizienn/Stagell a-gevret zo er-maez ar geriadur"
 
 #: kspell/ksconfig.cpp:75
 msgid "Consider run-together words as spelling errors"
-msgstr "Sellit ouzh gerioù sevenet a-stroll evel fazioù"
+msgstr "Sellit ouzh gerioÃ¹ sevenet a-stroll evel fazioÃ¹"
 
 #: kspell/ksconfig.cpp:92
 msgid "Dictionary"
@@ -1313,15 +1313,15 @@ msgstr "Dre ziouer ISpell"
 
 #: kspell/kspelldlg.cpp:58
 msgid "Misspelled Word:"
-msgstr "Gerioù falsskrivet"
+msgstr "GerioÃ¹ falsskrivet"
 
 #: kspell/kspelldlg.cpp:68
 msgid "Replacement:"
-msgstr "Erlec'hiañ :"
+msgstr "Erlec'hiaÃ± :"
 
 #: kspell/kspelldlg.cpp:77
 msgid "Suggestions:"
-msgstr "Kinnigoù :"
+msgstr "KinnigoÃ¹ :"
 
 #: kspell/kspelldlg.cpp:88
 msgid "Ignore"
@@ -1333,7 +1333,7 @@ msgstr "Tremen e-biou pep lec'h"
 
 #: kspell/kspelldlg.cpp:120 po/texts.cpp:86
 msgid "Add"
-msgstr "Ouzhpennañ"
+msgstr "OuzhpennaÃ±"
 
 #: kspell/kspelldlg.cpp:166 po/texts.cpp:100
 msgid "Stop"
@@ -1355,7 +1355,7 @@ msgstr "Diwallit"
 
 #: po/texts.cpp:30
 msgid "Save a file"
-msgstr "Enrollañ ur restr"
+msgstr "EnrollaÃ± ur restr"
 
 #: po/texts.cpp:31
 msgid "Contents"
@@ -1383,15 +1383,15 @@ msgstr "&Restr"
 
 #: po/texts.cpp:46
 msgid "Edit"
-msgstr "Aozañ"
+msgstr "AozaÃ±"
 
 #: po/texts.cpp:47
 msgid "&Edit"
-msgstr "&Aozañ"
+msgstr "&AozaÃ±"
 
 #: po/texts.cpp:48
 msgid "&Options"
-msgstr "&Dibaboù"
+msgstr "&DibaboÃ¹"
 
 #: po/texts.cpp:49
 msgid "View"
@@ -1411,11 +1411,11 @@ msgstr "&Kuit"
 
 #: po/texts.cpp:57
 msgid "&Copy"
-msgstr "&Eilañ"
+msgstr "&EilaÃ±"
 
 #: po/texts.cpp:59
 msgid "&Paste"
-msgstr "&Pegañ"
+msgstr "&PegaÃ±"
 
 #: po/texts.cpp:60
 msgid "&New Window..."
@@ -1439,23 +1439,23 @@ msgstr "&C'hoari nevez"
 
 #: po/texts.cpp:66
 msgid "Open a file"
-msgstr "Digeriñ ur restr"
+msgstr "DigeriÃ± ur restr"
 
 #: po/texts.cpp:67
 msgid "Open..."
-msgstr "Digeriñ..."
+msgstr "DigeriÃ±..."
 
 #: po/texts.cpp:68
 msgid "&Open..."
-msgstr "&Digeriñ..."
+msgstr "&DigeriÃ±..."
 
 #: po/texts.cpp:70
 msgid "&Cut"
-msgstr "&Troc'hañ"
+msgstr "&Troc'haÃ±"
 
 #: po/texts.cpp:71
 msgid "C&ut"
-msgstr "T&roc'hañ"
+msgstr "T&roc'haÃ±"
 
 #: po/texts.cpp:72
 msgid "Font"
@@ -1467,31 +1467,31 @@ msgstr "Liv war-&c'horre"
 
 #: po/texts.cpp:74
 msgid "&Background Color"
-msgstr "Liv a-&dreñv"
+msgstr "Liv a-&dreÃ±v"
 
 #: po/texts.cpp:76
 msgid "&Save"
-msgstr "&Enrollañ"
+msgstr "&EnrollaÃ±"
 
 #: po/texts.cpp:78
 msgid "Save as..."
-msgstr "Enrollañ e..."
+msgstr "EnrollaÃ± e..."
 
 #: po/texts.cpp:79
 msgid "S&ave as..."
-msgstr "E&nrollañ e..."
+msgstr "E&nrollaÃ± e..."
 
 #: po/texts.cpp:81
 msgid "&Close"
-msgstr "&Serriñ"
+msgstr "&SerriÃ±"
 
 #: po/texts.cpp:82
 msgid "&Print..."
-msgstr "&Moulañ..."
+msgstr "&MoulaÃ±..."
 
 #: po/texts.cpp:84
 msgid "Options"
-msgstr "Dibaboù"
+msgstr "DibaboÃ¹"
 
 #: po/texts.cpp:85
 msgid "Remove"
@@ -1499,7 +1499,7 @@ msgstr "Lemel"
 
 #: po/texts.cpp:87
 msgid "Change"
-msgstr "Kemmañ"
+msgstr "KemmaÃ±"
 
 #: po/texts.cpp:88
 msgid "Delete"
@@ -1511,7 +1511,7 @@ msgstr "&Distruj"
 
 #: po/texts.cpp:90
 msgid "Clear"
-msgstr "Goullonderiñ"
+msgstr "GoullonderiÃ±"
 
 #: po/texts.cpp:91
 msgid "Italic"
@@ -1539,7 +1539,7 @@ msgstr "&C'hoari"
 
 #: po/texts.cpp:98
 msgid "Information"
-msgstr "Titouroù"
+msgstr "TitouroÃ¹"
 
 #: po/texts.cpp:99
 msgid "Browse..."
@@ -1551,15 +1551,15 @@ msgstr "&Lemel"
 
 #: po/texts.cpp:102
 msgid "&Properties..."
-msgstr "&Perzhioù..."
+msgstr "&PerzhioÃ¹..."
 
 #: po/texts.cpp:103
 msgid "Properties"
-msgstr "Perzhioù"
+msgstr "PerzhioÃ¹"
 
 #: po/texts.cpp:104
 msgid "&Start"
-msgstr "&Loc'hañ"
+msgstr "&Loc'haÃ±"
 
 #: po/texts.cpp:105
 msgid "St&op"
@@ -1575,19 +1575,19 @@ msgstr "Ment an nodrezh"
 
 #: po/texts.cpp:108
 msgid "Fonts"
-msgstr "Nodrezhoù"
+msgstr "NodrezhoÃ¹"
 
 #: po/texts.cpp:109
 msgid "&Fonts"
-msgstr "&Nodrezhoù"
+msgstr "&NodrezhoÃ¹"
 
 #: po/texts.cpp:110
 msgid "&Reload"
-msgstr "&Adkargañ"
+msgstr "&AdkargaÃ±"
 
 #: po/texts.cpp:111
 msgid "Files"
-msgstr "Restroù"
+msgstr "RestroÃ¹"
 
 #: kab/widget.cc:1390 kab/widget.cc:1432 po/texts.cpp:112
 msgid "Continue"
@@ -1595,7 +1595,7 @@ msgstr "Kenderc'hel"
 
 #: po/texts.cpp:113
 msgid "Restore"
-msgstr "Adoazañ"
+msgstr "AdoazaÃ±"
 
 #: po/texts.cpp:114
 msgid "Appearance"
@@ -1639,7 +1639,7 @@ msgstr "Reizhadur"
 
 #: po/texts.cpp:125
 msgid "Highscore"
-msgstr "Kampionoù"
+msgstr "KampionoÃ¹"
 
 #: po/texts.cpp:126
 msgid "&New View"
@@ -1647,15 +1647,15 @@ msgstr "&Gwel nevez"
 
 #: po/texts.cpp:127
 msgid "&Insert"
-msgstr "&Ensoc'hañ"
+msgstr "&Ensoc'haÃ±"
 
 #: po/texts.cpp:130
 msgid "&Next >>"
-msgstr "&Kentañ>>"
+msgstr "&KentaÃ±>>"
 
 #: po/texts.cpp:131
 msgid "<< &Previous"
-msgstr "<<&Diwezhañ"
+msgstr "<<&DiwezhaÃ±"
 
 #: po/texts.cpp:138
 msgid "&About..."
@@ -1668,14 +1668,14 @@ msgid ""
 "The program will try to create\n"
 "         "
 msgstr ""
-"Ar renkell lec'h ma vez renkent ar roadennoù dibar d'an\n"
-"arveriad evit arload ar c'harned chomlec'hioù n'eus ket anezhi.\n"
-"Ar goulev a glasko krouiñ\n"
+"Ar renkell lec'h ma vez renkent ar roadennoÃ¹ dibar d'an\n"
+"arveriad evit arload ar c'harned chomlec'hioÃ¹ n'eus ket anezhi.\n"
+"Ar goulev a glasko krouiÃ±\n"
 "         "
 
 #: kab/addressbook.cc:94
 msgid "and store all local files in this directory."
-msgstr "ha renkañ an holl restroù lec'hell er renkell-se"
+msgstr "ha renkaÃ± an holl restroÃ¹ lec'hell er renkell-se"
 
 #: kab/addressbook.cc:98
 msgid ""
@@ -1685,11 +1685,11 @@ msgid ""
 "in your home directory. Run the KDE filemanager\n"
 "kfm once to automatically create it."
 msgstr ""
-"Ar renkell n'eus ket bet gallet krouiñ.\n"
+"Ar renkell n'eus ket bet gallet krouiÃ±.\n"
 "Marteze n'oc'h eus ket implijet KDE c'hoazh, ha\n"
 "gant se e vank deoc'h ur renkell \".kde\" en ho\n"
-"renkell Er Gêr. Lañsit ur wech kfm, anezhañ ar merour\n"
-"restroù KDE evit he krouiñ ent-emgefreek."
+"renkell Er GÃªr. LaÃ±sit ur wech kfm, anezhaÃ± ar merour\n"
+"restroÃ¹ KDE evit he krouiÃ± ent-emgefreek."
 
 #: kab/addressbook.cc:106
 msgid "The directory has been created.\n"
@@ -1697,36 +1697,36 @@ msgstr "Krouet eo bet ar renkell.\n"
 
 #: kab/addressbook.cc:140
 msgid "No addressbook database file, creating new one."
-msgstr "Diaz karned chomlec'hioù ebet, o krouiñ unan nevez."
+msgstr "Diaz karned chomlec'hioÃ¹ ebet, o krouiÃ± unan nevez."
 
 #: kab/addressbook.cc:159
 msgid "Tried to load database for creating backup, but failed"
 msgstr ""
-"Klasket am eus kargañ an diaz evit krouiñ ar warezadur, hogen sac'het on bet"
+"Klasket am eus kargaÃ± an diaz evit krouiÃ± ar warezadur, hogen sac'het on bet"
 
 #: kab/addressbook.cc:194
 msgid "Unable to save to backup file."
-msgstr "Divarrek da enrollañ ar restr gwareziñ"
+msgstr "Divarrek da enrollaÃ± ar restr gwareziÃ±"
 
 #: kab/addressbook.cc:200
 msgid "Unable to reset filename after creating backup."
-msgstr "Divarrek da adsevel anv ar restr goude krouiñ gwarezadur"
+msgstr "Divarrek da adsevel anv ar restr goude krouiÃ± gwarezadur"
 
 #: kab/addressbook.cc:205
 msgid "Unable to create backup file"
-msgstr "Divarrek da grouiñ restr gwareziñ"
+msgstr "Divarrek da grouiÃ± restr gwareziÃ±"
 
 #: kab/addressbook.cc:263
 msgid "Unable to insert \""
-msgstr "Divarrek da ensoc'hañ \""
+msgstr "Divarrek da ensoc'haÃ± \""
 
 #: kab/addressbook.cc:264
 msgid "\" into configuration section (ignored)."
-msgstr "\" er rann kefluniañ (tremenet e-biou)."
+msgstr "\" er rann kefluniaÃ± (tremenet e-biou)."
 
 #: kab/addressbook.cc:666
 msgid "Unable to add a new entry with available key."
-msgstr "Divarrek da ouzhpennañ un enmont gant an alc'hwezioù e kerz."
+msgstr "Divarrek da ouzhpennaÃ± un enmont gant an alc'hwezioÃ¹ e kerz."
 
 #: kab/addressbook.cc:672
 msgid "Cannot find previously created section."
@@ -1734,7 +1734,7 @@ msgstr "N'hell ket kavout ur rann bet krouet a-raok."
 
 #: kab/addressbook.cc:703
 msgid "Unable to create key-value-map for entry."
-msgstr "Divarrek da grouiñ un daolenn-alc'hwez-gwerzh evit an enmont"
+msgstr "Divarrek da grouiÃ± un daolenn-alc'hwez-gwerzh evit an enmont"
 
 #: kab/addressbook.cc:989
 msgid "entry without name"
@@ -1744,15 +1744,15 @@ msgstr "enmont dianav"
 msgid ""
 "Unable to create new database file (probably permission denied), exiting."
 msgstr ""
-"Divarrek da grouiñ ur rest diaz nevez (aotre nac'het moarvat), o kuitaat."
+"Divarrek da grouiÃ± ur rest diaz nevez (aotre nac'het moarvat), o kuitaat."
 
 #: kab/addressbook.cc:1013
 msgid "Cannot create configuration section, exiting."
-msgstr "N'hell ket krouiñ rann ar c'hefluniadur, o kuitaat."
+msgstr "N'hell ket krouiÃ± rann ar c'hefluniadur, o kuitaat."
 
 #: kab/addressbook.cc:1018
 msgid "Cannot create entries section, exiting."
-msgstr "N'hell ket krouiñ rann an enmontoù, o kuitaat"
+msgstr "N'hell ket krouiÃ± rann an enmontoÃ¹, o kuitaat"
 
 #: kab/addressbook.cc:1023
 msgid "Unable to find previously created section, exiting."
@@ -1760,15 +1760,15 @@ msgstr "Divarrek da gavout ur rann bet krouet a-raok, o kuitaat"
 
 #: kab/addressbook.cc:1031
 msgid "Cannot save newly created database."
-msgstr "N'hell ket enrollañ an diaz krouet a-nevez."
+msgstr "N'hell ket enrollaÃ± an diaz krouet a-nevez."
 
 #: kab/addressbook.cc:1037
 msgid "Cannot erase database contents."
-msgstr "N'hell ket diverkañ endalc'had an diaz."
+msgstr "N'hell ket diverkaÃ± endalc'had an diaz."
 
 #: kab/addressbook.cc:1116
 msgid "First name"
-msgstr "Anv kentañ"
+msgstr "Anv kentaÃ±"
 
 #: kab/addressbook.cc:1120
 msgid "Additional name"
@@ -1832,7 +1832,7 @@ msgstr "Trede chomlec'h postel"
 
 #: kab/addressbook.cc:1180
 msgid "Email addresses"
-msgstr "Chomlec'hioù postel"
+msgstr "Chomlec'hioÃ¹ postel"
 
 #: kab/addressbook.cc:1184
 msgid "Address"
@@ -1840,7 +1840,7 @@ msgstr "Chomlec'h"
 
 #: kab/addressbook.cc:1188
 msgid "City/Town"
-msgstr "Kêr"
+msgstr "KÃªr"
 
 #: kab/addressbook.cc:1192
 msgid "Telephone"
@@ -1888,7 +1888,7 @@ msgstr "Titl :"
 
 #: kab/editentry.cc:62
 msgid "First name:"
-msgstr "Anv kentañ :"
+msgstr "Anv kentaÃ± :"
 
 #: kab/editentry.cc:63
 msgid "Additional Name:"
@@ -1908,7 +1908,7 @@ msgstr "Chomlec'h"
 
 #: kab/editentry.cc:104
 msgid "Town/City:"
-msgstr "Kêr/Bourc'h"
+msgstr "KÃªr/Bourc'h"
 
 #: kab/editentry.cc:105
 msgid "State:"
@@ -1964,15 +1964,15 @@ msgstr "Pennbajenn (URL)"
 
 #: kab/editentry.cc:200 kab/editentry.cc:418
 msgid "Edit email addresses"
-msgstr "Aozañ chomlec'h postel"
+msgstr "AozaÃ± chomlec'h postel"
 
 #: kab/editentry.cc:206 kab/editentry.cc:400
 msgid "Edit talk addresses"
-msgstr "Aozañ chomlec'h talk"
+msgstr "AozaÃ± chomlec'h talk"
 
 #: kab/editentry.cc:218
 msgid "&Contact"
-msgstr "&Daremprediñ"
+msgstr "&DaremprediÃ±"
 
 #: kab/editentry.cc:239
 msgid "Additional Comment:"
@@ -1984,15 +1984,15 @@ msgstr "Deiz-ha-bloaz :"
 
 #: kab/editentry.cc:249
 msgid "Double click to set date"
-msgstr "Daouglikañ evit termeniñ an deiziad"
+msgstr "DaouglikaÃ± evit termeniÃ± an deiziad"
 
 #: kab/editentry.cc:256
 msgid "O&thers"
-msgstr "&Traoù all"
+msgstr "&TraoÃ¹ all"
 
 #: kab/kabapi.cc:138
 msgid "Your new entry could not be added."
-msgstr "Ne oa ket tu ouzhpennañ ho enmont nevez."
+msgstr "Ne oa ket tu ouzhpennaÃ± ho enmont nevez."
 
 #: kab/searchresults.cc:33
 msgid "search results"
@@ -2000,7 +2000,7 @@ msgstr "disoc'h ar c'hlask"
 
 #: kab/widget.cc:144
 msgid "Conversion problem"
-msgstr "Kudennoù amdreiñ"
+msgstr "KudennoÃ¹ amdreiÃ±"
 
 #: kab/widget.cc:145
 msgid ""
@@ -2009,18 +2009,18 @@ msgid ""
 "You can use it, but not all features will be\n"
 "supported."
 msgstr ""
-"Kab n'eus ket gallet amdreiñ ho diaz d'ar\n"
+"Kab n'eus ket gallet amdreiÃ± ho diaz d'ar\n"
 "furmad restr red.\n"
 "Gallout a rit e implij, hogen ne vo ket sevenet\n"
-"an holl arc'hwelioù."
+"an holl arc'hwelioÃ¹."
 
 #: kab/widget.cc:163
 msgid ""
 "The application saved the last current entry,\n"
 "but this entry does not exist anymore."
 msgstr ""
-"An arload a enrollas an enmont-red diwezhañ,\n"
-"hogen an emont-se n'eus ket anezhañ ken."
+"An arload a enrollas an enmont-red diwezhaÃ±,\n"
+"hogen an emont-se n'eus ket anezhaÃ± ken."
 
 #: kab/widget.cc:229
 msgid "kab: Removed bug warning"
@@ -2036,23 +2036,23 @@ msgid ""
 "its default settings."
 msgstr ""
 "Faziek e oa doare kab oc'h eus arveret a-gent\n"
-"evit a sell hizivaat an diaz da-geñver doareoù\n"
+"evit a sell hizivaat an diaz da-geÃ±ver doareoÃ¹\n"
 "nevez. Dilamet eo bet ar fazi-se hiviziken ha\n"
 "ne klevot ket mui diwar e gont.\n"
-"Gwerzhioù diouzh an den a zo bet adlakaet d'o\n"
+"GwerzhioÃ¹ diouzh an den a zo bet adlakaet d'o\n"
 "kefluniadur dre ziouer."
 
 #: kab/widget.cc:248 kab/widget.cc:314 kab/widget.cc:322
 msgid "File handling error"
-msgstr "Fazi dazverañ ur restr"
+msgstr "Fazi dazveraÃ± ur restr"
 
 #: kab/widget.cc:249
 msgid "Unable to open database file r/w."
-msgstr "Divarrek da zigeriñ l/s restr an diaz"
+msgstr "Divarrek da zigeriÃ± l/s restr an diaz"
 
 #: kab/widget.cc:257
 msgid "Email storage conversion"
-msgstr "Amdreiñ diell postel"
+msgstr "AmdreiÃ± diell postel"
 
 #: kab/widget.cc:258
 msgid ""
@@ -2060,9 +2060,9 @@ msgid ""
 "the new style supporting unlimited numbers\n"
 "of email addresses per entry."
 msgstr ""
-"Kab a dreuzfurmo holl ho chomlec'hioù postel\n"
+"Kab a dreuzfurmo holl ho chomlec'hioÃ¹ postel\n"
 "d'ar c'hiz nevez a aotre un niver diharz a\n"
-"chomlec'hioù postel dre enmont."
+"chomlec'hioÃ¹ postel dre enmont."
 
 #: kab/widget.cc:291
 msgid "kab database update"
@@ -2073,32 +2073,32 @@ msgid ""
 "Please note that kab now supports some new\n"
 "fields in its addresses. These new fields\n"
 "are:\n"
-"° the state field,\n"
-"° the country field and\n"
-"° the postal code field.\n"
+"Â° the state field,\n"
+"Â° the country field and\n"
+"Â° the postal code field.\n"
 "You will probably need to edit some of your\n"
 "entries to make use of it."
 msgstr ""
-"Taolit evezh mar plij chomlec'hioù kab a ensoc'h\n"
-"bremañ tachennoù nevez. An dachennoù-se a denn\n"
+"Taolit evezh mar plij chomlec'hioÃ¹ kab a ensoc'h\n"
+"bremaÃ± tachennoÃ¹ nevez. An dachennoÃ¹-se a denn\n"
 "ouzh :\n"
-"° ar rannvro,\n"
-"° ar vro hag\n"
-"° ar c'hod-post.\n"
-"Ret vo deoc'h aozañ un enmontoù bennak evit\n"
-"tennañ splet diouto moarvat."
+"Â° ar rannvro,\n"
+"Â° ar vro hag\n"
+"Â° ar c'hod-post.\n"
+"Ret vo deoc'h aozaÃ± un enmontoÃ¹ bennak evit\n"
+"tennaÃ± splet diouto moarvat."
 
 #: kab/widget.cc:315
 msgid "Could not save database after update."
-msgstr "Ne m'eus ket gallet enrollañ an diaz goude hizivaat."
+msgstr "Ne m'eus ket gallet enrollaÃ± an diaz goude hizivaat."
 
 #: kab/widget.cc:323
 msgid "Unable to reopen database file r/o."
-msgstr "Divarrek da addigeriñ l/h restr an diaz."
+msgstr "Divarrek da addigeriÃ± l/h restr an diaz."
 
 #: kab/widget.cc:482
 msgid "first entry"
-msgstr "enmont kentañ"
+msgstr "enmont kentaÃ±"
 
 #: kab/widget.cc:483
 msgid "previous entry"
@@ -2110,31 +2110,31 @@ msgstr "enmont a-heul"
 
 #: kab/widget.cc:485
 msgid "last entry"
-msgstr "enmont diwezhañ"
+msgstr "enmont diwezhaÃ±"
 
 #: kab/widget.cc:486
 msgid "search entries"
-msgstr "klask enmontoù"
+msgstr "klask enmontoÃ¹"
 
 #: kab/widget.cc:487
 msgid "add a new entry"
-msgstr "ouzhpennañ un enmont nevez"
+msgstr "ouzhpennaÃ± un enmont nevez"
 
 #: kab/widget.cc:488
 msgid "change this entry"
-msgstr "kemmañ an enmont-mañ"
+msgstr "kemmaÃ± an enmont-maÃ±"
 
 #: kab/widget.cc:489
 msgid "remove this entry"
-msgstr "dilemel an enmont-mañ"
+msgstr "dilemel an enmont-maÃ±"
 
 #: kab/widget.cc:528
 msgid "Switched to first entry."
-msgstr "Kemmet d'an enmont kentañ"
+msgstr "Kemmet d'an enmont kentaÃ±"
 
 #: kab/widget.cc:560
 msgid "Switched to last entry."
-msgstr "Kemmet d'an enmont diwezhañ"
+msgstr "Kemmet d'an enmont diwezhaÃ±"
 
 #: kab/widget.cc:621 kab/widget.cc:678 kab/widget.cc:860 kab/widget.cc:922
 msgid "Sorry, file changed."
@@ -2150,7 +2150,7 @@ msgstr "Dilemel enmont ?"
 
 #: kab/widget.cc:637
 msgid "Really remove this entry?"
-msgstr "Dilemel an enmont-mañ da vat ?"
+msgstr "Dilemel an enmont-maÃ± da vat ?"
 
 #: kab/widget.cc:655
 msgid "Entry deleted."
@@ -2175,7 +2175,7 @@ msgstr "Enmont ebet"
 
 #: kab/widget.cc:833
 msgid "The filemanager is busy, please try again."
-msgstr "Bec'h zo war ar merour restroù, klaskit adarre mar plij."
+msgstr "Bec'h zo war ar merour restroÃ¹, klaskit adarre mar plij."
 
 #: kab/widget.cc:853
 msgid ""
@@ -2183,9 +2183,9 @@ msgid ""
 "locked by another application.\n"
 "kab cannot save it."
 msgstr ""
-"Restr ar c'harned chomlec'hioù a zo\n"
+"Restr ar c'harned chomlec'hioÃ¹ a zo\n"
 "prennet gant un arload all evit ar mare.\n"
-"kab n'hell ket e enrollañ."
+"kab n'hell ket e enrollaÃ±."
 
 #: kab/widget.cc:870
 msgid "Database saved successfully."
@@ -2197,7 +2197,7 @@ msgstr "kab : fazi restr"
 
 #: kab/widget.cc:875
 msgid "Could not save database."
-msgstr "Ne m'eus ket gallet enrollañ an diaz."
+msgstr "Ne m'eus ket gallet enrollaÃ± an diaz."
 
 #: kab/widget.cc:876
 msgid "&Retry"
@@ -2217,7 +2217,7 @@ msgstr "Enmont kemmet."
 
 #: kab/widget.cc:1041
 msgid "Results"
-msgstr "Disoc'hoù"
+msgstr "Disoc'hoÃ¹"
 
 #: kab/widget.cc:1041
 msgid "No entry matches this."
@@ -2230,11 +2230,11 @@ msgstr "Skarzhet."
 
 #: kab/widget.cc:1066
 msgid "Search results window closed."
-msgstr "Prenestr disoc'hoù ar c'hlask serret."
+msgstr "Prenestr disoc'hoÃ¹ ar c'hlask serret."
 
 #: kab/widget.cc:1165
 msgid "The talk command must be configured before!"
-msgstr "Un urzhiad talk a rank bezañ kefluniaet da gentañ !"
+msgstr "Un urzhiad talk a rank bezaÃ± kefluniaet da gentaÃ± !"
 
 #: kab/widget.cc:1170
 msgid "Talk configuration"
@@ -2242,7 +2242,7 @@ msgstr "Kefluniadur talk"
 
 #: kab/widget.cc:1171
 msgid "Please configure the parameters for the talk command."
-msgstr "Kefluniit mar plij arventennoù an urzhiad talk."
+msgstr "Kefluniit mar plij arventennoÃ¹ an urzhiad talk."
 
 #: kab/widget.cc:1184
 msgid "No talk address."
@@ -2254,7 +2254,7 @@ msgstr "kab : chomlec'h talk"
 
 #: kab/widget.cc:1193
 msgid "Available talk addresses:"
-msgstr "Chomlec'hioù talk hegerz :"
+msgstr "Chomlec'hioÃ¹ talk hegerz :"
 
 #: kab/widget.cc:1199 kab/widget.cc:1963
 msgid "Cancelled."
@@ -2262,7 +2262,7 @@ msgstr "Nullaet"
 
 #: kab/widget.cc:1222
 msgid "The talk command parameters are wrong."
-msgstr "Siek eo arventennoù an urzhiad talk."
+msgstr "Siek eo arventennoÃ¹ an urzhiad talk."
 
 #: kab/widget.cc:1234
 msgid ""
@@ -2270,7 +2270,7 @@ msgid ""
 "Make sure you did setup your talk command and parameter!"
 msgstr ""
 "Sac'het eo an urzhiad talk.\n"
-"Bezit sur eo kefluniaet ho urzhiad talk hag e arventennoù !"
+"Bezit sur eo kefluniaet ho urzhiad talk hag e arventennoÃ¹ !"
 
 #: kab/widget.cc:1237
 msgid "Talk program started."
@@ -2278,7 +2278,7 @@ msgstr "Goulev talk loc'het."
 
 #: kab/widget.cc:1285
 msgid "Attention: printing is still experimental!"
-msgstr "Da ziwall ! moulañ a zo arnodennel c'hoazh !"
+msgstr "Da ziwall ! moulaÃ± a zo arnodennel c'hoazh !"
 
 #: kab/widget.cc:1387 kab/widget.cc:1429
 msgid "Page size problem"
@@ -2289,12 +2289,12 @@ msgid ""
 "The fields you requested to print do\n"
 "not fit into the page width."
 msgstr ""
-"Ne zalc'h ket an tachennoù oc'h eus\n"
+"Ne zalc'h ket an tachennoÃ¹ oc'h eus\n"
 "goulennet e ledander ar bajenn."
 
 #: kab/widget.cc:1624 kab/widget.cc:2066
 msgid "Printing finished successfully."
-msgstr "Moulañ kaset da benn"
+msgstr "MoulaÃ± kaset da benn"
 
 #: kab/widget.cc:1651
 msgid "kab: Email addresses"
@@ -2302,11 +2302,11 @@ msgstr "kab : chomlec'h postel"
 
 #: kab/widget.cc:1652
 msgid "Available email addresses:"
-msgstr "Chomlec'hioù postel hegerzh"
+msgstr "Chomlec'hioÃ¹ postel hegerzh"
 
 #: kab/widget.cc:1717
 msgid "kab: Select fields to copy"
-msgstr "kab : diuzit tachennoù da eilañ"
+msgstr "kab : diuzit tachennoÃ¹ da eilaÃ±"
 
 #: kab/widget.cc:1727
 msgid "Nothing selected."
@@ -2314,7 +2314,7 @@ msgstr "Netra diuzet"
 
 #: kab/widget.cc:1785 kab/widget.cc:2049
 msgid "KDE addressbook overview"
-msgstr "Hollgwel karned chomlec'hioù KDE"
+msgstr "Hollgwel karned chomlec'hioÃ¹ KDE"
 
 #: kab/widget.cc:1829
 msgid "Name-Email-Link (!!)"
@@ -2322,11 +2322,11 @@ msgstr "Liamm-anv-postel (!!)"
 
 #: kab/widget.cc:1831
 msgid "Select table columns"
-msgstr "Diuzit bannoù an daol"
+msgstr "Diuzit bannoÃ¹ an daol"
 
 #: kab/widget.cc:1836
 msgid "Nothing to export."
-msgstr "Netra da ezporzhiañ"
+msgstr "Netra da ezporzhiaÃ±"
 
 #: kab/widget.cc:1865
 msgid "Email link"
@@ -2334,7 +2334,7 @@ msgstr "Liamm postel"
 
 #: kab/widget.cc:1952
 msgid "Could not find the users home directory."
-msgstr "Ne m'eus ket gallet kavout renkell du-mañ an arveriaded"
+msgstr "Ne m'eus ket gallet kavout renkell du-maÃ± an arveriaded"
 
 #: kab/widget.cc:1953
 msgid "Intern error!"
@@ -2342,19 +2342,19 @@ msgstr "Fazi diabarzh !"
 
 #: kab/widget.cc:1973
 msgid "Could not open the file to create the HTML table."
-msgstr "Ne m'eus ket gallet digeriñ ar restr da grouiñ an daolenn HTML"
+msgstr "Ne m'eus ket gallet digeriÃ± ar restr da grouiÃ± an daolenn HTML"
 
 #: kab/widget.cc:2009
 msgid "Printing cancelled."
-msgstr "Moulañ nullaet"
+msgstr "MoulaÃ± nullaet"
 
 #: kab/widget.cc:2025
 msgid "kab: Select columns for printing"
-msgstr "kab : diuzit bannoù da voulañ"
+msgstr "kab : diuzit bannoÃ¹ da voulaÃ±"
 
 #: kab/widget.cc:2038
 msgid "Nothing to print."
-msgstr "Netra da voulañ"
+msgstr "Netra da voulaÃ±"
 
 #: kab/widget.cc:2050
 msgid "Page <p>"
@@ -2366,7 +2366,7 @@ msgstr "KDE - dibab an dud a vicher"
 
 #: kab/widget.cc:2064
 msgid "Printing failed!"
-msgstr "Moulañ sac'het"
+msgstr "MoulaÃ± sac'het"
 
 #: kab/widget.cc:2095
 msgid "Empty email address."
@@ -2386,7 +2386,7 @@ msgstr "Posteler nullaet."
 
 #: kab/widget.cc:2149
 msgid "The mail command must be configured before!"
-msgstr "An urzhiad mail a rank bezañ kefluniaet da gentañ !"
+msgstr "An urzhiad mail a rank bezaÃ± kefluniaet da gentaÃ± !"
 
 #: kab/widget.cc:2155
 msgid "Mail configuration"
@@ -2394,11 +2394,11 @@ msgstr "Kefluniadur mail"
 
 #: kab/widget.cc:2156
 msgid "Please configure the parameters for the email command."
-msgstr "Kefluniit mar plij an arventennoù evit an urzhiad postel."
+msgstr "Kefluniit mar plij an arventennoÃ¹ evit an urzhiad postel."
 
 #: kab/widget.cc:2194
 msgid "The email command parameters are wrong."
-msgstr "Arventennoù an urzhiad postel a zo siek."
+msgstr "ArventennoÃ¹ an urzhiad postel a zo siek."
 
 #: kab/widget.cc:2206
 msgid ""
@@ -2406,7 +2406,7 @@ msgid ""
 "Make sure you did setup your email command and parameter!"
 msgstr ""
 "Urzhiad postel sac'het.\n"
-"Bezit sur eo kefluniaet ho urzhiad postel hag e arventennoù !"
+"Bezit sur eo kefluniaet ho urzhiad postel hag e arventennoÃ¹ !"
 
 #: kab/widget.cc:2210
 msgid "Mail program started."

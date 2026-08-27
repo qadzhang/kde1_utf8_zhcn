@@ -7,7 +7,7 @@ msgstr ""
 "Weilguni <mweilguni@sime.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: app.cpp:218 app.cpp:553
@@ -15,7 +15,7 @@ msgid ""
 "A problem with the sound server occured!\n"
 "Cannot enable sound support."
 msgstr ""
-"Es ist ein Problem mit der Soundunterstützung\n"
+"Es ist ein Problem mit der SoundunterstÃ¼tzung\n"
 "aufgetreten! Der Sound kann daher nicht\n"
 "aktiviert werden."
 
@@ -45,7 +45,7 @@ msgstr "Zugberechnung &fortsetzen"
 
 #: app.cpp:257
 msgid "&Undo move"
-msgstr "Zug &zurücknehmen"
+msgstr "Zug &zurÃ¼cknehmen"
 
 #: app.cpp:258
 msgid "Switch si&des"
@@ -57,11 +57,11 @@ msgstr "Zeige &Ruhmeshalle"
 
 #: app.cpp:266
 msgid "Level 1 (Wimp)"
-msgstr "Stufe 1 (Schwächling)"
+msgstr "Stufe 1 (SchwÃ¤chling)"
 
 #: app.cpp:267
 msgid "Level 2 (Beginner)"
-msgstr "Stufe 2 (Anfänger)"
+msgstr "Stufe 2 (AnfÃ¤nger)"
 
 #: app.cpp:268
 msgid "Level 3 (Novice)"
@@ -85,7 +85,7 @@ msgstr "Stufe 7 (Meister)"
 
 #: app.cpp:273
 msgid "Skill"
-msgstr "Spielstärke"
+msgstr "SpielstÃ¤rke"
 
 #: app.cpp:275
 msgid "&Shrink board"
@@ -93,11 +93,11 @@ msgstr "Spielfeld ver&kleinern"
 
 #: app.cpp:276
 msgid "&Enlarge board"
-msgstr "Spielfeld ver&größern"
+msgstr "Spielfeld ver&grÃ¶ÃŸern"
 
 #: app.cpp:280
 msgid "&Half size"
-msgstr "&Halbe Größe"
+msgstr "&Halbe GrÃ¶ÃŸe"
 
 #: app.cpp:281
 #, c-format
@@ -111,7 +111,7 @@ msgstr "80%"
 
 #: app.cpp:283
 msgid "D&efault size"
-msgstr "&Standardgröße"
+msgstr "&StandardgrÃ¶ÃŸe"
 
 #: app.cpp:284
 #, c-format
@@ -135,11 +135,11 @@ msgstr "180%"
 
 #: app.cpp:288
 msgid "&Double size"
-msgstr "&Doppelte Größe"
+msgstr "&Doppelte GrÃ¶ÃŸe"
 
 #: app.cpp:289
 msgid "Set size"
-msgstr "Größe einstellen"
+msgstr "GrÃ¶ÃŸe einstellen"
 
 #: app.cpp:292
 msgid "Select &background color..."
@@ -151,7 +151,7 @@ msgstr "keine"
 
 #: app.cpp:308
 msgid "Select background image"
-msgstr "Hintergrundbild wählen"
+msgstr "Hintergrundbild wÃ¤hlen"
 
 #: app.cpp:309
 msgid "&Grayscale"
@@ -183,7 +183,7 @@ msgstr "Zugberechnung abbrechen"
 
 #: app.cpp:370
 msgid "Undo move"
-msgstr "Zug zurücknehmen"
+msgstr "Zug zurÃ¼cknehmen"
 
 #: app.cpp:371
 msgid "Shrink board"
@@ -191,7 +191,7 @@ msgstr "Spielfeld verkleinern"
 
 #: app.cpp:372
 msgid "Enlarge board"
-msgstr "Spielfeld vergrößern"
+msgstr "Spielfeld vergrÃ¶ÃŸern"
 
 #: app.cpp:373
 msgid "Get hint"
@@ -220,7 +220,7 @@ msgstr "Spiel gespeichert"
 
 #: app.cpp:591
 msgid "not yet implemented"
-msgstr "nicht verfügbares Feature"
+msgstr "nicht verfÃ¼gbares Feature"
 
 #: app.cpp:604 app.cpp:609
 #, c-format
@@ -269,7 +269,7 @@ msgid ""
 "Computer: %d\n"
 "Your rating %4.1f%%"
 msgstr ""
-"Glückwunsch, Sie haben gewonnen!\n"
+"GlÃ¼ckwunsch, Sie haben gewonnen!\n"
 "\n"
 "Sie     : %d\n"
 "Computer: %d\n"
@@ -326,7 +326,7 @@ msgstr "Punkte"
 
 #: app.cpp:897
 msgid "Rating"
-msgstr "Maßstab"
+msgstr "MaÃŸstab"
 
 #: app.cpp:987
 msgid ""
@@ -336,7 +336,7 @@ msgid ""
 msgstr ""
 "Sie haben den Einzug in die Ruhmeshalle geschafft.\n"
 "Geben Sie Ihren Namen ein, damit die Menschheit sich\n"
-"an Ihre Wertung erinnern möge."
+"an Ihre Wertung erinnern mÃ¶ge."
 
 #: app.cpp:990
 msgid "Your name:"
@@ -344,7 +344,7 @@ msgstr "Ihr Name:"
 
 #: about.cpp:52
 msgid "About kreversi"
-msgstr "Über KReversi"
+msgstr "Ãœber KReversi"
 
 #: about.cpp:65
 msgid "Version "
@@ -375,11 +375,11 @@ msgstr ""
 "\n"
 "Dieses Programm ist freie Software\n"
 "im Sinne der GNU General Public\n"
-"License (GPL). Näheres dazu finden\n"
+"License (GPL). NÃ¤heres dazu finden\n"
 "Sie in der Hilfe\n"
 "\n"
-"Danke für die Unterstützung:\n"
-"\tMats Luthman für die Spielalgorithmen\n"
+"Danke fÃ¼r die UnterstÃ¼tzung:\n"
+"\tMats Luthman fÃ¼r die Spielalgorithmen\n"
 "\t(die ich von seinem JAVA\n"
 "\tApplet portiert habe)\n"
 "\n"
@@ -387,4 +387,4 @@ msgstr ""
 "\tKommentare and Bugfixes\n"
 "\n"
 "\tArne Klaassen\n"
-"\tfür die Bilder der Spielsteine"
+"\tfÃ¼r die Bilder der Spielsteine"

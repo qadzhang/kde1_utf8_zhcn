@@ -1,4 +1,4 @@
-# Перевод kcmkfm.
+# п÷п╣я─п╣п╡п╬п╢ kcmkfm.
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com<>, 1998, 1999.
 #
@@ -10,24 +10,24 @@ msgstr ""
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:61
 msgid "&Font"
-msgstr "Шрифт"
+msgstr "п╗я─п╦я└я┌"
 
 #: main.cpp:63
 msgid "&Color"
-msgstr "Цвет"
+msgstr "п╕п╡п╣я┌"
 
 #: main.cpp:65
 msgid "&Other"
-msgstr "&Другие"
+msgstr "&п■я─я┐пЁп╦п╣"
 
 #: main.cpp:68
 msgid "&Proxy"
-msgstr "Прокси"
+msgstr "п÷я─п╬п╨я│п╦"
 
 #: main.cpp:70
 msgid "&HTTP"
@@ -35,7 +35,7 @@ msgstr "HTTP"
 
 #: main.cpp:73
 msgid "User &Agent"
-msgstr "&Агент пользователя"
+msgstr "&п░пЁп╣п╫я┌ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩я▐"
 
 #: main.cpp:76
 msgid "Coo&kies"
@@ -43,198 +43,198 @@ msgstr "Cookie"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "Пиктограммы рабочего стола"
+msgstr "п÷п╦п╨я┌п╬пЁя─п╟п╪п╪я▀ я─п╟п╠п╬я┤п╣пЁп╬ я│я┌п╬п╩п╟"
 
 #: main.cpp:89
 #, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"использование: %s [-init | "
+"п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣: %s [-init | "
 "{font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
-msgstr "Настройка KFM"
+msgstr "п²п╟я│я┌я─п╬п╧п╨п╟ KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr "Маленький"
+msgstr "п°п╟п╩п╣п╫я▄п╨п╦п╧"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr "Средний"
+msgstr "п║я─п╣п╢п╫п╦п╧"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr "Большой"
+msgstr "п▒п╬п╩я▄я┬п╬п╧"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr "Стандартный шрифт"
+msgstr "п║я┌п╟п╫п╢п╟я─я┌п╫я▀п╧ я┬я─п╦я└я┌"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr "Фиксированный шрифт"
+msgstr "п╓п╦п╨я│п╦я─п╬п╡п╟п╫п╫я▀п╧ я┬я─п╦я└я┌"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "Кодировка по умолчанию"
+msgstr "п п╬п╢п╦я─п╬п╡п╨п╟ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "Использовать кодировку"
+msgstr "п≤я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ п╨п╬п╢п╦я─п╬п╡п╨я┐"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
-msgstr "Цвет фона:"
+msgstr "п╕п╡п╣я┌ я└п╬п╫п╟:"
 
 #: htmlopts.cpp:342
 msgid "Normal Text Color:"
-msgstr "Цвет нормального текста:"
+msgstr "п╕п╡п╣я┌ п╫п╬я─п╪п╟п╩я▄п╫п╬пЁп╬ я┌п╣п╨я│я┌п╟:"
 
 #: htmlopts.cpp:354
 msgid "URL Link Color:"
-msgstr "Цвет ссылки:"
+msgstr "п╕п╡п╣я┌ я│я│я▀п╩п╨п╦:"
 
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "Цвет пройденной ссылки:"
+msgstr "п╕п╡п╣я┌ п©я─п╬п╧п╢п╣п╫п╫п╬п╧ я│я│я▀п╩п╨п╦:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Изменять курсор над ссылками."
+msgstr "п≤п╥п╪п╣п╫я▐я┌я▄ п╨я┐я─я│п╬я─ п╫п╟п╢ я│я│я▀п╩п╨п╟п╪п╦."
 
 #: htmlopts.cpp:384
 msgid "Underline links"
-msgstr "Подчеркивать ссылки."
+msgstr "п÷п╬п╢я┤п╣я─п╨п╦п╡п╟я┌я▄ я│я│я▀п╩п╨п╦."
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr "Всегда использовать мои цвета"
+msgstr "п▓я│п╣пЁп╢п╟ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ п╪п╬п╦ я├п╡п╣я┌п╟"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "Разрешать настройки на каждый URL"
+msgstr "п═п╟п╥я─п╣я┬п╟я┌я▄ п╫п╟я│я┌я─п╬п╧п╨п╦ п╫п╟ п╨п╟п╤п╢я▀п╧ URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "Дерево следует за движениями"
+msgstr "п■п╣я─п╣п╡п╬ я│п╩п╣п╢я┐п╣я┌ п╥п╟ п╢п╡п╦п╤п╣п╫п╦я▐п╪п╦"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr "Терминал"
+msgstr "п╒п╣я─п╪п╦п╫п╟п╩"
 
 #: miscopts.cpp:57
 msgid "Editor"
-msgstr "Редактор"
+msgstr "п═п╣п╢п╟п╨я┌п╬я─"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "Не забудьте сохранить свои установки!"
+msgstr "п²п╣ п╥п╟п╠я┐п╢я▄я┌п╣ я│п╬я┘я─п╟п╫п╦я┌я▄ я│п╡п╬п╦ я┐я│я┌п╟п╫п╬п╡п╨п╦!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr "Использовать прокси"
+msgstr "п≤я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ п©я─п╬п╨я│п╦"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr "HTTP прокси:"
+msgstr "HTTP п©я─п╬п╨я│п╦:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr "Порт:"
+msgstr "п÷п╬я─я┌:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr "FTP прокси:"
+msgstr "FTP п©я─п╬п╨я│п╦:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr "Напрямую:"
+msgstr "п²п╟п©я─я▐п╪я┐я▌:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr "Допустимые языки:"
+msgstr "п■п╬п©я┐я│я┌п╦п╪я▀п╣ я▐п╥я▀п╨п╦:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "Допустимые кодировки:"
+msgstr "п■п╬п©я┐я│я┌п╦п╪я▀п╣ п╨п╬п╢п╦я─п╬п╡п╨п╦:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr "Подразумевать HTML"
+msgstr "п÷п╬п╢я─п╟п╥я┐п╪п╣п╡п╟я┌я▄ HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr "На сервер:"
+msgstr "п²п╟ я│п╣я─п╡п╣я─:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "заходить как:"
+msgstr "п╥п╟я┘п╬п╢п╦я┌я▄ п╨п╟п╨:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr "Добавить"
+msgstr "п■п╬п╠п╟п╡п╦я┌я▄"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr "Известные привязки:"
+msgstr "п≤п╥п╡п╣я│я┌п╫я▀п╣ п©я─п╦п╡я▐п╥п╨п╦:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "Разрешить cookie"
+msgstr "п═п╟п╥я─п╣я┬п╦я┌я▄ cookie"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "По умолчанию разрешать"
+msgstr "п÷п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌ я─п╟п╥я─п╣я┬п╟я┌я▄"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr "Разрешить"
+msgstr "п═п╟п╥я─п╣я┬п╦я┌я▄"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr "Спрашивать"
+msgstr "п║п©я─п╟я┬п╦п╡п╟я┌я▄"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr "Запрещать"
+msgstr "п≈п╟п©я─п╣я┴п╟я┌я▄"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
 msgstr ""
-"Настройки, специфичные\n"
-"для домена:"
+"п²п╟я│я┌я─п╬п╧п╨п╦, я│п©п╣я├п╦я└п╦я┤п╫я▀п╣\n"
+"п╢п╩я▐ п╢п╬п╪п╣п╫п╟:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Изменить политику разрешения для домена"
+msgstr "п≤п╥п╪п╣п╫п╦я┌я▄ п©п╬п╩п╦я┌п╦п╨я┐ я─п╟п╥я─п╣я┬п╣п╫п╦я▐ п╢п╩я▐ п╢п╬п╪п╣п╫п╟"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "Вы вначале должны ввести домен !"
+msgstr "п▓я▀ п╡п╫п╟я┤п╟п╩п╣ п╢п╬п╩п╤п╫я▀ п╡п╡п╣я│я┌п╦ п╢п╬п╪п╣п╫ !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Горизонтальное расстояние основной сетки:"
+msgstr "п⌠п╬я─п╦п╥п╬п╫я┌п╟п╩я▄п╫п╬п╣ я─п╟я│я│я┌п╬я▐п╫п╦п╣ п╬я│п╫п╬п╡п╫п╬п╧ я│п╣я┌п╨п╦:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Вертикальное расстояние основной сетки:"
+msgstr "п▓п╣я─я┌п╦п╨п╟п╩я▄п╫п╬п╣ я─п╟я│я│я┌п╬я▐п╫п╦п╣ п╬я│п╫п╬п╡п╫п╬п╧ я│п╣я┌п╨п╦:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "Прозрачный текст для пиктограмм рабочего стола."
+msgstr "п÷я─п╬п╥я─п╟я┤п╫я▀п╧ я┌п╣п╨я│я┌ п╢п╩я▐ п©п╦п╨я┌п╬пЁя─п╟п╪п╪ я─п╟п╠п╬я┤п╣пЁп╬ я│я┌п╬п╩п╟."
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr "Цвет пиктограммы:"
+msgstr "п╕п╡п╣я┌ п©п╦п╨я┌п╬пЁя─п╟п╪п╪я▀:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr "Цвет фона пиктограммы:"
+msgstr "п╕п╡п╣я┌ я└п╬п╫п╟ п©п╦п╨я┌п╬пЁя─п╟п╪п╪я▀:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Показывать скрытые файлы на рабочем столе"
+msgstr "п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄ я│п╨я─я▀я┌я▀п╣ я└п╟п╧п╩я▀ п╫п╟ я─п╟п╠п╬я┤п╣п╪ я│я┌п╬п╩п╣"

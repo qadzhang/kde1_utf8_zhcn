@@ -1,4 +1,4 @@
-# Esperantaj mesaøoj por "kmnu"
+# Esperantaj mesaÄoj por "kmnu"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -42,7 +42,7 @@ msgid ""
 "So I can't do anything...\n"
 msgstr ""
 "Neniu komando estas aktivigita\n"
-"en la konfigura¼dosiero.\n"
+"en la konfiguraÄµdosiero.\n"
 "\n"
 "Do mi povas fari nenion...\n"
 
@@ -56,11 +56,11 @@ msgstr "F&ermu fenestron"
 
 #: knu.cpp:260
 msgid "Select &all"
-msgstr "Elektu æ&iujn"
+msgstr "Elektu Ä‰&iujn"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "&Vişu eligfenestron"
+msgstr "&ViÅu eligfenestron"
 
 #: knu.cpp:266
 msgid "P&references..."
@@ -113,8 +113,8 @@ msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"La programo por tiu komando ne troviøis.\n"
-"Vi indiku øian padon en la menu Redakto->Preferoj..."
+"La programo por tiu komando ne troviÄis.\n"
+"Vi indiku Äian padon en la menu Redakto->Preferoj..."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -134,10 +134,10 @@ msgstr ""
 "%s/%src.\n"
 "\n"
 "En la grupo [%s]\n"
-"ne troviøas valida ero \"path=\".\n"
+"ne troviÄas valida ero \"path=\".\n"
 "\n"
 "Bonvolu uzi la menuon Redakto->PReferoj...\n"
-"por rekonfiguri øin.\n"
+"por rekonfiguri Äin.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
@@ -161,7 +161,7 @@ msgstr "Tiu komando estas malaktivigita en la konfigurodosiero."
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
-msgstr " - konfigura¼o"
+msgstr " - konfiguraÄµo"
 
 #: MtrDlg.cpp:87
 msgid "#"
@@ -225,7 +225,7 @@ msgstr "nomservilo (NS)"
 
 #: HostDlg.cpp:115
 msgid "mail exchanger (MX)"
-msgstr "poştservilo (MX)"
+msgstr "poÅtservilo (MX)"
 
 #: HostDlg.cpp:116
 msgid "alias (CNAME)"
@@ -237,11 +237,11 @@ msgstr "komenco de identigo (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
-msgstr "æiuj eroj (ANY)"
+msgstr "Ä‰iuj eroj (ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"
-msgstr "&Seræu:"
+msgstr "&SerÄ‰u:"
 
 #: HostDlg.cpp:136 HostDlg.cpp:287
 msgid "default server"

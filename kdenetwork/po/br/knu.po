@@ -1,6 +1,6 @@
 # Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1999
+# JaÃ±-Mai Drapier <jdrapier@club-internet.fr>, 1999
 #
 #, fuzzy
 msgid ""
@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: knu-1.1\n"
 "POT-Creation-Date: 1999-01-23 02:09+0100\n"
 "PO-Revision-Date: 1999-03-24 07:23+0100\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Last-Translator: JaÃ±-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8 bit\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -24,7 +24,7 @@ msgstr ""
 
 #: knu.cpp:168 knu.cpp:321
 msgid "Host &resolution"
-msgstr "&Dirouestlañ an ostiz"
+msgstr "&DirouestlaÃ± an ostiz"
 
 #: knu.cpp:181
 msgid "F&inger"
@@ -42,7 +42,7 @@ msgid ""
 "So I can't do anything...\n"
 msgstr ""
 "N'eus urzhiad ebet gweredekaet\n"
-"er restr kefluniañ.\n"
+"er restr kefluniaÃ±.\n"
 "\n"
 "Neuze n'hellan ober netra...\n"
 
@@ -52,7 +52,7 @@ msgstr "Prenestr &Nevez"
 
 #: knu.cpp:249
 msgid "&Close window"
-msgstr "&Serriñ ar prenestr"
+msgstr "&SerriÃ± ar prenestr"
 
 #: knu.cpp:260
 msgid "Select &all"
@@ -60,11 +60,11 @@ msgstr "Diuz an &holl"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "&Goullonderiñ ar prenestr diskas"
+msgstr "&GoullonderiÃ± ar prenestr diskas"
 
 #: knu.cpp:266
 msgid "P&references..."
-msgstr "&Dibarzhoù..."
+msgstr "&DibarzhoÃ¹..."
 
 #: knu.cpp:281
 #, c-format
@@ -98,7 +98,7 @@ msgstr "Diwar-benn..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "Mavegoù rouedad"
+msgstr "MavegoÃ¹ rouedad"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
@@ -117,8 +117,8 @@ msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"Binarel an urzhiad-mañ zo digavus.\n"
-"Gallout a rit spisaat e hent el lañser Aozañ->Dibarzhoù."
+"Binarel an urzhiad-maÃ± zo digavus.\n"
+"Gallout a rit spisaat e hent el laÃ±ser AozaÃ±->DibarzhoÃ¹."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -135,13 +135,13 @@ msgid ""
 msgstr ""
 "\n"
 "Ur gudenn oc'h eus gant\n"
-"ho restr kefluniañ.\n"
+"ho restr kefluniaÃ±.\n"
 "%s/%src\n"
 "Er strollad [%s], n'hellan kavout\n"
 "enmont \"path=\" talvoudus ebet\n"
 "\n"
-"Arverit mar plij al lañser\n"
-"Aozañ->Dibarzhoù evit e gefluniañ adarre.\n"
+"Arverit mar plij al laÃ±ser\n"
+"AozaÃ±->DibarzhoÃ¹ evit e gefluniaÃ± adarre.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
@@ -157,15 +157,15 @@ msgstr "&Hent tizhout :"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
-msgstr "&Arventennoù ouzhpenn :"
+msgstr "&ArventennoÃ¹ ouzhpenn :"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "Diweredekaet eo bet an urzhiad-mañ er restr kefluniañ."
+msgstr "Diweredekaet eo bet an urzhiad-maÃ± er restr kefluniaÃ±."
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
-msgstr " - kefluniañ"
+msgstr " - kefluniaÃ±"
 
 #: MtrDlg.cpp:87
 msgid "#"
@@ -201,7 +201,7 @@ msgstr "Gwas"
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "Dirouestlañ &anv an ostiz"
+msgstr "DirouestlaÃ± &anv an ostiz"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
@@ -213,7 +213,7 @@ msgstr ""
 
 #: TracerouteDlg.cpp:115
 msgid "&Maximum number of hops:"
-msgstr "&Muiañ niver a lammoù :"
+msgstr "&MuiaÃ± niver a lammoÃ¹ :"
 
 #: HostDlg.cpp:112
 msgid "address (A)"
@@ -237,7 +237,7 @@ msgstr "lesanv (CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "deroù ar veli (SOA)"
+msgstr "deroÃ¹ ar veli (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"

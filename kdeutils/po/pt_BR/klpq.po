@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:178
 msgid "Sorry, can't open your printcap file."
-msgstr "Desculpe, você não pode abrir o arquivo printcap."
+msgstr "Desculpe, vocÃª nÃ£o pode abrir o arquivo printcap."
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
-msgstr "Desculpe, impossível analisar seu printcap."
+msgstr "Desculpe, impossÃ­vel analisar seu printcap."
 
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
@@ -44,7 +44,7 @@ msgstr "Atualizar"
 
 #: klpq.cpp:125
 msgid "Rank"
-msgstr "Classificação"
+msgstr "ClassificaÃ§Ã£o"
 
 #: klpq.cpp:126
 msgid "Owner"
@@ -52,7 +52,7 @@ msgstr "Dono"
 
 #: klpq.cpp:127
 msgid "Job"
-msgstr "Serviço"
+msgstr "ServiÃ§o"
 
 #: klpq.cpp:129
 msgid "Size"
@@ -87,12 +87,12 @@ msgstr ""
 
 #: klpq.cpp:213
 msgid "&Config"
-msgstr "&Configuração"
+msgstr "&ConfiguraÃ§Ã£o"
 
 #: klpq.cpp:404
 #, c-format
 msgid "Do you really want to remove job No %d"
-msgstr "Você quer mesmo remover o serviço nr. %d"
+msgstr "VocÃª quer mesmo remover o serviÃ§o nr. %d"
 
 #: klpq.cpp:424
 #, c-format
@@ -101,40 +101,40 @@ msgid ""
 "%d\n"
 "on top of queue"
 msgstr ""
-"Você quer mesmo mover o serviço nr. %d\n"
+"VocÃª quer mesmo mover o serviÃ§o nr. %d\n"
 " para o topo da fila"
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
-msgstr "Permissão negada"
+msgstr "PermissÃ£o negada"
 
 #: klpq.cpp:573 klpq.cpp:579 klpq.cpp:594
 msgid ""
 "This is a privileged command\n"
 "and you do not have permission to execute it."
 msgstr ""
-"Este é um comando privilegiado e você\n"
-"não tem permissão para executá-lo."
+"Este Ã© um comando privilegiado e vocÃª\n"
+"nÃ£o tem permissÃ£o para executÃ¡-lo."
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
-msgstr "Configurar auto-atualização"
+msgstr "Configurar auto-atualizaÃ§Ã£o"
 
 #: ConfAutoUpdateData.cpp:17
 msgid "Update frequency in seconds:"
-msgstr "Freqüência de atualização em segundos:"
+msgstr "FreqÃ¼Ãªncia de atualizaÃ§Ã£o em segundos:"
 
 #: klpqspooler.cpp:199 klpqspooler.cpp:269
 msgid "Can't find your lpc program !"
-msgstr "Programa lpc não encontrado !"
+msgstr "Programa lpc nÃ£o encontrado !"
 
 #: klpqspooler.cpp:200 klpqspooler.cpp:270
 msgid ""
 "Sorry, I can't find your lpc program.\n"
 "Please check the configuration under Config->Spooler."
 msgstr ""
-"Não pude encontrar o programa lpc.\n"
-"Cheque a configuração em Configuração->Fila."
+"NÃ£o pude encontrar o programa lpc.\n"
+"Cheque a configuraÃ§Ã£o em ConfiguraÃ§Ã£o->Fila."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
@@ -146,9 +146,9 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Selecione o sistema de fila que você usa. Muitos sistema usam a fila do BSD. "
-"Se você não sabe que fila está instalada em seu sistema, o BSD é a escolha "
-"mais provável."
+"Selecione o sistema de fila que vocÃª usa. Muitos sistema usam a fila do BSD. "
+"Se vocÃª nÃ£o sabe que fila estÃ¡ instalada em seu sistema, o BSD Ã© a escolha "
+"mais provÃ¡vel."
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"

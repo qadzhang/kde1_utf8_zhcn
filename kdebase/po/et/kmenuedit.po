@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"
-msgstr "Muuda &menüü nime"
+msgstr "Muuda &menÃ¼Ã¼ nime"
 
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
-msgstr "Laadi &failitüübid uuesti"
+msgstr "Laadi &failitÃ¼Ã¼bid uuesti"
 
 #: kmenuedit.cpp:77
 msgid "by"
@@ -39,18 +39,18 @@ msgstr ""
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
-msgstr "TÜHI"
+msgstr "TÃœHI"
 
 #: kmenuedit.cpp:343
 msgid "Reload Menus"
-msgstr "Laadi menüüd uuesti"
+msgstr "Laadi menÃ¼Ã¼d uuesti"
 
 #: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Menüüde uuesti laadimine tühistab kõik muudatused.\n"
+"MenÃ¼Ã¼de uuesti laadimine tÃ¼histab kÃµik muudatused.\n"
 "Oled sa kindel, et sa soovid uuesti laadida?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
@@ -62,7 +62,7 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"Kataloogi sinu personaalse menüü jaoks ei eksisteeri.\n"
+"Kataloogi sinu personaalse menÃ¼Ã¼ jaoks ei eksisteeri.\n"
 "Soovid sa praegu selle luua ?"
 
 #: main.cpp:93
@@ -70,8 +70,8 @@ msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Kataloogi su personaalse menüü jaoks pole võimalik luua.\n"
-"Programmist väljumiseks vali OK."
+"Kataloogi su personaalse menÃ¼Ã¼ jaoks pole vÃµimalik luua.\n"
+"Programmist vÃ¤ljumiseks vali OK."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
@@ -87,7 +87,7 @@ msgstr "Vali element, mida liigutada"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr "Vali menüü, mida liigutada"
+msgstr "Vali menÃ¼Ã¼, mida liigutada"
 
 #: confmenu.cpp:120
 msgid "New"
@@ -99,7 +99,7 @@ msgstr "Hoiatus !"
 
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Selle nupu kustutamisega kaotad sa kõik selle alammenüüd"
+msgstr "Selle nupu kustutamisega kaotad sa kÃµik selle alammenÃ¼Ã¼d"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
@@ -115,11 +115,11 @@ msgstr ""
 
 #: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Selle nupu tüübi muutmisega kaotad sa kõik selle alammenüüd"
+msgstr "Selle nupu tÃ¼Ã¼bi muutmisega kaotad sa kÃµik selle alammenÃ¼Ã¼d"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
-msgstr "käsk puudub"
+msgstr "kÃ¤sk puudub"
 
 #: button.cpp:210
 msgid ""
@@ -131,11 +131,11 @@ msgstr ""
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Tee KDE töölaua kirjete jaoks on seadmata."
+msgstr "Tee KDE tÃ¶Ã¶laua kirjete jaoks on seadmata."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "Ma soovitan järgmiseid kirjeid:"
+msgstr "Ma soovitan jÃ¤rgmiseid kirjeid:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
@@ -147,7 +147,7 @@ msgstr "Personaalne tee:"
 
 #: entrydialog.cpp:61
 msgid "Submenu"
-msgstr "Alammenüü"
+msgstr "AlammenÃ¼Ã¼"
 
 #: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
 #: entrydialog.cpp:544
@@ -168,7 +168,7 @@ msgstr "Seade"
 
 #: entrydialog.cpp:72
 msgid "Type:"
-msgstr "Tüüp:"
+msgstr "TÃ¼Ã¼p:"
 
 #: entrydialog.cpp:79
 msgid "File Name:"
@@ -192,19 +192,19 @@ msgstr "Kommentaar:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "Käivita"
+msgstr "KÃ¤ivita"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
-msgstr "Käivita:"
+msgstr "KÃ¤ivita:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
-msgstr "Töökataloog:"
+msgstr "TÃ¶Ã¶kataloog:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
-msgstr "Käivita terminalil"
+msgstr "KÃ¤ivita terminalil"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
@@ -224,7 +224,7 @@ msgstr "Rakenduse tiitel:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "Nupule vajutamisel käivitada rakendus:"
+msgstr "Nupule vajutamisel kÃ¤ivitada rakendus:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -240,23 +240,23 @@ msgstr "Seade:"
 
 #: entrydialog.cpp:425
 msgid "Mount Point:"
-msgstr "Ühenduspunkt:"
+msgstr "Ãœhenduspunkt:"
 
 #: entrydialog.cpp:430
 msgid "FS Type:"
-msgstr "FS tüüp:"
+msgstr "FS tÃ¼Ã¼p:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"
-msgstr "Ikoon lahti ühendatud seadmele:"
+msgstr "Ikoon lahti Ã¼hendatud seadmele:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Muuda menüü nimesid"
+msgstr "Muuda menÃ¼Ã¼ nimesid"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Muuda menüüde nimesid, nagu neid näidatakse paneelil"
+msgstr "Muuda menÃ¼Ã¼de nimesid, nagu neid nÃ¤idatakse paneelil"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

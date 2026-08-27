@@ -1,16 +1,16 @@
 # Danish translation for KDE Network, kcmtalkd
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Erik Kjær Pedersen, erik@binghamton.edu 1998.
+# Erik KjÃ¦r Pedersen, erik@binghamton.edu 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE NETWORK/kcmtalkd\n"
 "POT-Creation-Date: 1998-12-12 15:20+0100\n"
 "PO-Revision-Date: 1999-02-17 17:00+CET-1\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:58
@@ -51,7 +51,7 @@ msgstr "&Lydfil"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Ekstra WAV-filer kan droppes ned på lydlisten."
+msgstr "Ekstra WAV-filer kan droppes ned pÃ¥ lydlisten."
 
 #: soundpage.cpp:76
 msgid "&Test"
@@ -59,14 +59,14 @@ msgstr "&Test"
 
 #: soundpage.cpp:156
 msgid "Unsupported URL"
-msgstr "Ikke understøttet URL"
+msgstr "Ikke understÃ¸ttet URL"
 
 #: soundpage.cpp:157
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Undskyld, denne type URL er for øjeblikket ikke understøttet af KDE's "
+"Undskyld, denne type URL er for Ã¸jeblikket ikke understÃ¸ttet af KDE's "
 "lydsystem"
 
 #: soundpage.cpp:164
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 "Undskyld, men\n"
 "%s\n"
-"synes ikke at være en WAV-fil."
+"synes ikke at vÃ¦re en WAV-fil."
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
@@ -93,11 +93,11 @@ msgid ""
 msgstr ""
 "Filen\n"
 "%s\n"
-"er allerede på listen"
+"er allerede pÃ¥ listen"
 
 #: soundpage.cpp:179
 msgid "File Already in List"
-msgstr "Fil allerede på listen"
+msgstr "Fil allerede pÃ¥ listen"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
@@ -118,21 +118,21 @@ msgstr "Brug %s for opringerens navn"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "Post &første linie"
+msgstr "Post &fÃ¸rste linie"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
 msgstr ""
-"Brug første %s for opringerens navn, og anden %s for opringerens værtsnavn"
+"Brug fÃ¸rste %s for opringerens navn, og anden %s for opringerens vÃ¦rtsnavn"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&Modtag post selv når der ikke er tilbagemelding"
+msgstr "&Modtag post selv nÃ¥r der ikke er tilbagemelding"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Banner som vises på den svarende maskine ved opstart :"
+msgstr "&Banner som vises pÃ¥ den svarende maskine ved opstart :"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -142,8 +142,8 @@ msgid ""
 msgstr ""
 "Den person du beder om at tale med svarer ikke.\n"
 "Efterlad venligst besked leveret som e-post.\n"
-"Begynd blot med at skrive og afbryd normalt når du er\n"
-"færdig."
+"Begynd blot med at skrive og afbryd normalt nÃ¥r du er\n"
+"fÃ¦rdig."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
@@ -161,7 +161,7 @@ msgstr "Aktiver &videresend"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Mål (bruger eller bruger@vært)"
+msgstr "&MÃ¥l (bruger eller bruger@vÃ¦rt)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
@@ -181,12 +181,12 @@ msgid ""
 "See Help for further explanations.\n"
 msgstr ""
 "FWA : Videresend kun annonceringer. Direkte forbindelse. Ikke anbefalet.\n"
-"FWR : Videresend alle forspørgsler, Ændr info når nødvendigt. Direkte "
+"FWR : Videresend alle forspÃ¸rgsler, Ã†ndr info nÃ¥r nÃ¸dvendigt. Direkte "
 "forbindelse.\n"
-"FWT : Videresend alle forspørgsler og tag samtalen. Ingen direkte "
+"FWT : Videresend alle forspÃ¸rgsler og tag samtalen. Ingen direkte "
 "forbindelse.\n"
 "\n"
 "Anbefalet brug: FWT Hvis du vil bruge det bag en brandmur (og hvis ktalkd\n"
-"Har adgang til begge netværk), FWR ellers.\n"
+"Har adgang til begge netvÃ¦rk), FWR ellers.\n"
 "\n"
-"Se Hjælp for yderligere forklaring.\n"
+"Se HjÃ¦lp for yderligere forklaring.\n"

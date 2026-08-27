@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-02-04 09:08+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: info.cpp:50
@@ -21,12 +21,12 @@ msgstr "obrazovka #%d"
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  rozmìry                   : %dx%d pixelù (%dx%d mm)\n"
+msgstr "  rozmÄ›ry                   : %dx%d pixelÅ¯ (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  rozli¹ení                 : %dx%d bodù na palec\n"
+msgstr "  rozliÅ¡enÃ­                 : %dx%d bodÅ¯ na palec\n"
 
 #: info.cpp:61
 #, c-format
@@ -36,12 +36,12 @@ msgstr "  hloubka (%d)               : "
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "jméno zobrazovaèe           : %s"
+msgstr "jmÃ©no zobrazovaÄe           : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "èíslo verze                 : %i.%i"
+msgstr "ÄÃ­slo verze                 : %i.%i"
 
 #: info.cpp:89
 #, c-format
@@ -51,17 +51,17 @@ msgstr "poskytovatel                : %s"
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "poskytovatelovo èíslo verze : %i"
+msgstr "poskytovatelovo ÄÃ­slo verze : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "implicitní èíslo obrazovky  : %i"
+msgstr "implicitnÃ­ ÄÃ­slo obrazovky  : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "poèet obrazovek             : %i"
+msgstr "poÄet obrazovek             : %i"
 
 #: info.cpp:181
 msgid ""
@@ -69,51 +69,51 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Není dostupná ¾ádná informace\n"
+"NenÃ­ dostupnÃ¡ Å¾Ã¡dnÃ¡ informace\n"
 " nebo\n"
-"tento systém není je¹tì podporován :-("
+"tento systÃ©m nenÃ­ jeÅ¡tÄ› podporovÃ¡n :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, neznámá rychlost"
+msgstr "%s, neznÃ¡mÃ¡ rychlost"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s bì¾ící na %s MHz"
+msgstr "%s bÄ›Å¾Ã­cÃ­ na %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Není mo¾né otevøít fstab!"
+msgstr "NenÃ­ moÅ¾nÃ© otevÅ™Ã­t fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "Zaøízení"
+msgstr "ZaÅ™Ã­zenÃ­"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr "Pøípojné místo"
+msgstr "PÅ™Ã­pojnÃ© mÃ­sto"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "Typ filesystému"
+msgstr "Typ filesystÃ©mu"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr "Vlastnosti pøipojení"
+msgstr "Vlastnosti pÅ™ipojenÃ­"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr "neznámı typ CPU"
+msgstr "neznÃ¡mÃ½ typ CPU"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "nedostupné"
+msgstr "nedostupnÃ©"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "Poèet aktivních procesorù= "
+msgstr "PoÄet aktivnÃ­ch procesorÅ¯= "
 
 #: info_linux.cpp:99
 msgid "Value"
@@ -121,11 +121,11 @@ msgstr "Hodnota"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr "DMA-kanál"
+msgstr "DMA-kanÃ¡l"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "pou¾íván"
+msgstr "pouÅ¾Ã­vÃ¡n"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
@@ -133,7 +133,7 @@ msgstr "I/O rozsah"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "&Pamì»"
+msgstr "&PamÄ›Å¥"
 
 #: main.cpp:82
 msgid "&Processor"
@@ -141,11 +141,11 @@ msgstr "P&rocesor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr "Pø&eru¹ení"
+msgstr "PÅ™&eruÅ¡enÃ­"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "DMA-&kanály"
+msgstr "DMA-&kanÃ¡ly"
 
 #: main.cpp:91
 msgid "&IO-Ports"
@@ -153,7 +153,7 @@ msgstr "&IO-porty"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr "PCI-S&bìrnice"
+msgstr "PCI-S&bÄ›rnice"
 
 #: main.cpp:97
 msgid "S&ound"
@@ -161,7 +161,7 @@ msgstr "Zv&uk"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "&Zaøízení"
+msgstr "&ZaÅ™Ã­zenÃ­"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -181,49 +181,49 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-"Pou¾ití: kcminfo [-init | "
+"PouÅ¾itÃ­: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Informace o systému"
+msgstr "Informace o systÃ©mu"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "Pamì» celkem"
+msgstr "PamÄ›Å¥ celkem"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "Volná pamì»"
+msgstr "VolnÃ¡ pamÄ›Å¥"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Sdílená pamì»"
+msgstr "SdÃ­lenÃ¡ pamÄ›Å¥"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "Vyrovnávací pamì»"
+msgstr "VyrovnÃ¡vacÃ­ pamÄ›Å¥"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "Swapovací pamì»"
+msgstr "SwapovacÃ­ pamÄ›Å¥"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "Volná swapovací pamì»"
+msgstr "VolnÃ¡ swapovacÃ­ pamÄ›Å¥"
 
 #: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld bytù  = %8.2f MB"
+msgstr "%10ld bytÅ¯  = %8.2f MB"
 
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "Není pøístupná"
+msgstr "NenÃ­ pÅ™Ã­stupnÃ¡"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "Není pøístupná"
+msgstr "NenÃ­ pÅ™Ã­stupnÃ¡"

@@ -1,4 +1,4 @@
-# Esperantaj mesaøoj por "kdelibs"
+# Esperantaj mesaÄoj por "kdelibs"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kab/AssertDialog.cpp:29
@@ -24,7 +24,7 @@ msgstr "(nekonata lininombro)"
 
 #: kab/AssertDialog.cpp:31
 msgid "(unknown condition)"
-msgstr "(nekonata kondiæo)"
+msgstr "(nekonata kondiÄ‰o)"
 
 #: kab/AssertDialog.cpp:39
 msgid "You have found a bug in "
@@ -32,15 +32,15 @@ msgstr "Vi trovis eraron en "
 
 #: kab/AssertDialog.cpp:45
 msgid "Ignore the error, possibly causing much more damage"
-msgstr "Ignoru la eraron, sciante, ke tio povus kaızi plian damaøon"
+msgstr "Ignoru la eraron, sciante, ke tio povus kaÅ­zi plian damaÄon"
 
 #: kab/AssertDialog.cpp:47
 msgid "Kill the application, loosing all data"
-msgstr "Mortigu la aplika¼on, perdante æiujn datumojn"
+msgstr "Mortigu la aplikaÄµon, perdante Ä‰iujn datumojn"
 
 #: kab/AssertDialog.cpp:49
 msgid "Send an email to the application maintainer"
-msgstr "Sendu retpoşton al la fleganto de la aplika¼o"
+msgstr "Sendu retpoÅton al la fleganto de la aplikaÄµo"
 
 #: kab/AssertDialog.cpp:51 kab/datepickerdialog.cc:25 kab/kabapi.cc:34
 #: kdeui/kcolordlg.cpp:467 kdeui/kcontrol.cpp:46 kdeui/kcontrol.cpp:51
@@ -72,18 +72,18 @@ msgstr "Eraro dum erartraktado"
 
 #: kab/AssertDialog.cpp:213
 msgid "Could not send message."
-msgstr "Ne eblis sendi mesaøon."
+msgstr "Ne eblis sendi mesaÄon."
 
 #: kab/AssertDialog.cpp:218
 msgid "The author did not publish an email address."
-msgstr "La aıtoro ne publikigis retpoştan adreson."
+msgstr "La aÅ­toro ne publikigis retpoÅtan adreson."
 
 #: kab/DialogBase.cpp:36
 msgid ""
 "If you press the OK button, all changes\n"
 "you made will be used to proceed."
 msgstr ""
-"Se vi premas \"Konfirmu\", æiuj şanøoj\n"
+"Se vi premas \"Konfirmu\", Ä‰iuj ÅanÄoj\n"
 "faritaj de vi estos ekuzataj."
 
 #: kab/DialogBase.cpp:39
@@ -92,9 +92,9 @@ msgid ""
 "handed over to the program, but the dialog\n"
 "will not be closed.Use this to try different settings."
 msgstr ""
-"Se vi premas \"Apliku\" æiuj şanøoj estos transdonataj\n"
+"Se vi premas \"Apliku\" Ä‰iuj ÅanÄoj estos transdonataj\n"
 "al la programo sen fermi la dialogfenestron,\n"
-"Uzu tiun butonon por elprovi la faritajn şanøojn."
+"Uzu tiun butonon por elprovi la faritajn ÅanÄojn."
 
 #: kab/DialogBase.cpp:44
 msgid ""
@@ -104,9 +104,9 @@ msgid ""
 "The program will be in the state before\n"
 "opening the dialog."
 msgstr ""
-"Se vi premas \"Rezignu\", æiuj şanøoj faritaj\n"
-"de vi estos ignorataj kaj la dialogfenestro fermiøos.\n"
-"La programo estos en la sama stato kiel antaı\n"
+"Se vi premas \"Rezignu\", Ä‰iuj ÅanÄoj faritaj\n"
+"de vi estos ignorataj kaj la dialogfenestro fermiÄos.\n"
+"La programo estos en la sama stato kiel antaÅ­\n"
 "malfermo de la dialogo."
 
 #: kab/DialogBase.cpp:57 kdeui/kkeydialog.cpp:242 kdeui/knotebook.cpp:247
@@ -141,7 +141,7 @@ msgstr "La titolo"
 
 #: kab/SearchDialog.cpp:48
 msgid "The first name"
-msgstr "La antaınomo"
+msgstr "La antaÅ­nomo"
 
 #: kab/SearchDialog.cpp:49
 msgid "The additional name"
@@ -149,7 +149,7 @@ msgstr "La kromnomo"
 
 #: kab/SearchDialog.cpp:50
 msgid "The name prefix"
-msgstr "La nom-antaıa¼o"
+msgstr "La nom-antaÅ­aÄµo"
 
 #: kab/SearchDialog.cpp:51
 msgid "The name"
@@ -169,7 +169,7 @@ msgstr "La urbo"
 
 #: kab/SearchDialog.cpp:55
 msgid "The organization"
-msgstr "La organiza¼o"
+msgstr "La organizaÄµo"
 
 #: kab/SearchDialog.cpp:56
 msgid "The role"
@@ -185,15 +185,15 @@ msgstr "La subsekcio"
 
 #: kab/SearchDialog.cpp:59
 msgid "The email address"
-msgstr "La retpoşta adreso"
+msgstr "La retpoÅta adreso"
 
 #: kab/SearchDialog.cpp:60
 msgid "The second email address"
-msgstr "La dua retpoştadreso"
+msgstr "La dua retpoÅtadreso"
 
 #: kab/SearchDialog.cpp:61
 msgid "The third email address"
-msgstr "La tria retpoştadreso"
+msgstr "La tria retpoÅtadreso"
 
 #: kab/SearchDialog.cpp:62
 msgid "The telephone number"
@@ -209,7 +209,7 @@ msgstr "La modemnumero"
 
 #: kab/SearchDialog.cpp:65
 msgid "The homepage URL"
-msgstr "La TTT-hejmpaøo"
+msgstr "La TTT-hejmpaÄo"
 
 #: kab/SearchDialog.cpp:66
 msgid "The comment"
@@ -217,7 +217,7 @@ msgstr "La komento"
 
 #: kab/SearchDialog.cpp:74
 msgid "kab: Search entries"
-msgstr "kab: Seræu erojn"
+msgstr "kab: SerÄ‰u erojn"
 
 #: kab/SearchDialogMainWidget.cpp:22
 msgid "matches"
@@ -225,27 +225,27 @@ msgstr "trovoj"
 
 #: kab/SearchDialogMainWidget.cpp:23
 msgid "Use shell wildcard patterns here"
-msgstr "Uzu komandliniajn ¼okersignojn tie æi"
+msgstr "Uzu komandliniajn Äµokersignojn tie Ä‰i"
 
 #: kab/SearchDialogMainWidget.cpp:24
 msgid "Select field to match the pattern"
-msgstr "Elektu kampon por la seræo"
+msgstr "Elektu kampon por la serÄ‰o"
 
 #: kab/StringListEditWidget.cpp:30
 msgid "Add a new string"
-msgstr "Aldonu novan signoæenon"
+msgstr "Aldonu novan signoÄ‰enon"
 
 #: kab/StringListEditWidget.cpp:31
 msgid "Move this string up"
-msgstr "Şovu tiun signoæenon supren"
+msgstr "Åœovu tiun signoÄ‰enon supren"
 
 #: kab/StringListEditWidget.cpp:32
 msgid "Move this string down"
-msgstr "Şovu tiun signoæenon malsupren"
+msgstr "Åœovu tiun signoÄ‰enon malsupren"
 
 #: kab/StringListEditWidget.cpp:33
 msgid "Delete this string"
-msgstr "Forigu tiun signoæenon"
+msgstr "Forigu tiun signoÄ‰enon"
 
 #: kab/StringListSelectAndReorderSet.cpp:34
 msgid "Possible values:"
@@ -307,7 +307,7 @@ msgstr "Trovu"
 #: kdeui/keditcl2.cpp:470 kdeui/keditcl2.cpp:789 kspell/kspelldlg.cpp:110
 #: po/texts.cpp:133
 msgid "Replace"
-msgstr "Anstataıigu"
+msgstr "AnstataÅ­igu"
 
 #: kdecore/kaccel.cpp:271 po/texts.cpp:134
 msgid "Insert"
@@ -377,14 +377,14 @@ msgid ""
 msgstr ""
 "\n"
 "La labortabula medio KDE estas farita de la\n"
-"KDE-teamo, mondvasta reto de softvar-inøenieroj\n"
+"KDE-teamo, mondvasta reto de softvar-inÄenieroj\n"
 "subtenantaj la evoluigadon de libera softvaro.\n"
 "\n"
 "Vizitu http://www.kde.org por ricevi pli da informoj pri\n"
-"la KDE-projekto. Bonvolu ankaı konsideri aliøon kaj \n"
+"la KDE-projekto. Bonvolu ankaÅ­ konsideri aliÄon kaj \n"
 "subtenon de KDE.\n"
 "\n"
-"Bonvolu raporti erarojn æe http://bugs.kde.org.\n"
+"Bonvolu raporti erarojn Ä‰e http://bugs.kde.org.\n"
 
 #: kdetest/klocaletest.cpp:100 kdeui/keditcl1.cpp:412 kdeui/keditcl1.cpp:433
 #: kdeui/keditcl1.cpp:494 kdeui/keditcl1.cpp:514 kdeui/keditcl1.cpp:1661
@@ -473,7 +473,7 @@ msgstr "Julio"
 
 #: kdeui/kdatepik.cpp:105
 msgid "August"
-msgstr "Aıgusto"
+msgstr "AÅ­gusto"
 
 #: kdeui/kdatepik.cpp:106
 msgid "September"
@@ -513,7 +513,7 @@ msgstr "Mer"
 
 #: kdeui/kdatetbl.cpp:50
 msgid "Thu"
-msgstr "¬aı"
+msgstr "Ä´aÅ­"
 
 #: kdeui/kdatetbl.cpp:50
 msgid "Fri"
@@ -544,11 +544,11 @@ msgstr "Vi ne indikis dosierujon"
 
 #: kdeui/keditcl1.cpp:169 kdeui/keditcl1.cpp:190
 msgid "You do not have read permission to this file."
-msgstr "Vi ne havas legopermeson por tiu æi dosiero."
+msgstr "Vi ne havas legopermeson por tiu Ä‰i dosiero."
 
 #: kdeui/keditcl1.cpp:203
 msgid "An Error occured while trying to open this Document"
-msgstr "Okazis eraro dum malfermado de tiu æi dokumento"
+msgstr "Okazis eraro dum malfermado de tiu Ä‰i dokumento"
 
 #: kdeui/keditcl1.cpp:373
 msgid "Select Document to Insert"
@@ -563,8 +563,8 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"La aktuala dokumento estas şaøita.\n"
-"Æu vi volas savi øin?"
+"La aktuala dokumento estas ÅaÄita.\n"
+"Äˆu vi volas savi Äin?"
 
 #: kdeui/keditcl1.cpp:431
 msgid ""
@@ -572,7 +572,7 @@ msgid ""
 "Open a new document anyways?"
 msgstr ""
 "Ne eblis savi la dokumenton.\n"
-"Æu tamen malfermi novan dokumenton?"
+"Äˆu tamen malfermi novan dokumenton?"
 
 #: kdeui/keditcl1.cpp:462
 msgid "Select Document to Open"
@@ -584,7 +584,7 @@ msgid ""
 "Create a new document anyways?"
 msgstr ""
 "Ne eblis savi la dokumenton.\n"
-"Æu tamen krei novan dokumenton?"
+"Äˆu tamen krei novan dokumenton?"
 
 #: kdeui/keditcl1.cpp:547 kdeui/keditcl1.cpp:1700 kdeui/kpopmenu.cpp:10
 #: po/texts.cpp:34
@@ -605,11 +605,11 @@ msgid ""
 "Do you want to overwrite it ?"
 msgstr ""
 "Dokumento kun tiu nomo jam ekzistas\n"
-"Æu vi volas øin anstataıigi?"
+"Äˆu vi volas Äin anstataÅ­igi?"
 
 #: kdeui/keditcl1.cpp:1716
 msgid "You do not have write permission to this file.\n"
-msgstr "Vi ne havas skribpermeson por tiu æi dosiero.\n"
+msgstr "Vi ne havas skribpermeson por tiu Ä‰i dosiero.\n"
 
 #: kdeui/keditcl2.cpp:104 kdeui/keditcl2.cpp:361 kdeui/keditcl2.cpp:454
 msgid ""
@@ -617,7 +617,7 @@ msgid ""
 "Continue from the beginning?"
 msgstr ""
 "Fino de la dokumento atingita.\n"
-"Æu daırigi de la komenco?"
+"Äˆu daÅ­rigi de la komenco?"
 
 #: kdeui/keditcl2.cpp:121 kdeui/keditcl2.cpp:378 kdeui/keditcl2.cpp:424
 #: kdeui/keditcl2.cpp:471
@@ -626,7 +626,7 @@ msgid ""
 "Continue from the end?"
 msgstr ""
 "Komenco de la dokumento atingita.\n"
-"Æu daırigi de la fino?"
+"Äˆu daÅ­rigi de la fino?"
 
 #: kdeui/keditcl2.cpp:682 kdeui/keditcl2.cpp:780
 msgid "Case Sensitive"
@@ -646,11 +646,11 @@ msgstr "Trovu:"
 
 #: kdeui/keditcl2.cpp:778
 msgid "Replace with:"
-msgstr "Anstataıigu per:"
+msgstr "AnstataÅ­igu per:"
 
 #: kdeui/keditcl2.cpp:792 kspell/kspelldlg.cpp:38
 msgid "Replace All"
-msgstr "Anstataıigu æie"
+msgstr "AnstataÅ­igu Ä‰ie"
 
 #: kdeui/keditcl2.cpp:889
 msgid "Goto Line"
@@ -882,7 +882,7 @@ msgstr "Neglite"
 
 #: kdeui/knotebook.cpp:145
 msgid "Trying to add page when no KWizards are added!"
-msgstr "Provante aldoni paøon sen aldonitaj Kwizard-oj!"
+msgstr "Provante aldoni paÄon sen aldonitaj Kwizard-oj!"
 
 #: kdeui/knotebook.cpp:201 kdeui/kwizard.cpp:182
 msgid "&Default"
@@ -894,7 +894,7 @@ msgstr "Helpeto"
 
 #: kdeui/ktoolbar.cpp:288 kdeui/ktoolbar.cpp:340
 msgid "KToolBarButton: pixmap is empty, perhaps some missing file"
-msgstr "KToolBarButton: rastrumo estas malplena, verşajne mankas dosiero"
+msgstr "KToolBarButton: rastrumo estas malplena, verÅajne mankas dosiero"
 
 #: kdeui/ktoolbar.cpp:859
 msgid "Left"
@@ -907,7 +907,7 @@ msgstr "Dekstre"
 #: kdeui/kwizard.cpp:531 kdeui/kwizard.cpp:678
 #, c-format
 msgid "Page %d of %d"
-msgstr "Paøo %d de %d"
+msgstr "PaÄo %d de %d"
 
 #: kfile/kcombiview.cpp:81
 msgid "Folders:"
@@ -919,7 +919,7 @@ msgstr "Enhavo:"
 
 #: kfile/kfilebookmark.cpp:246
 msgid "<!-- Do not edit this file -->"
-msgstr "<!-- Ne redaktu tiun æi dosieron -->"
+msgstr "<!-- Ne redaktu tiun Ä‰i dosieron -->"
 
 #: kab/addressbook.cc:1112 kfile/kfiledetaillist.cpp:36
 msgid "Name"
@@ -943,11 +943,11 @@ msgstr "Grupo"
 
 #: kfile/kfiledialog.cpp:122 po/texts.cpp:55
 msgid "Back"
-msgstr "Malantaıen"
+msgstr "MalantaÅ­en"
 
 #: kfile/kfiledialog.cpp:125
 msgid "Forward"
-msgstr "Antaıen"
+msgstr "AntaÅ­en"
 
 #: kfile/kfiledialog.cpp:128
 msgid "Up to parent"
@@ -967,11 +967,11 @@ msgstr "Kreu novan dosierujon"
 
 #: kfile/kfiledialog.cpp:163
 msgid "Search for a file"
-msgstr "Seræu dosieron"
+msgstr "SerÄ‰u dosieron"
 
 #: kfile/kfiledialog.cpp:166
 msgid "Configure this dialog [development only]"
-msgstr "Agordu tiun æi dialogon"
+msgstr "Agordu tiun Ä‰i dialogon"
 
 #: kfile/kfiledialog.cpp:174
 msgid "The path"
@@ -987,7 +987,7 @@ msgstr "&Filtrilo:"
 
 #: kfile/kfiledialog.cpp:226
 msgid "Show hidden"
-msgstr "Montru kaşitajn"
+msgstr "Montru kaÅitajn"
 
 #: kfile/kfiledialog.cpp:505
 msgid "Error: Not local file"
@@ -999,7 +999,7 @@ msgid ""
 "But the application accepts just local files."
 msgstr ""
 "La indikita dosierujo ne estas loka dosierujo\n"
-"Se la aplika¼o akceptas nur lokajn dosierojn."
+"Se la aplikaÄµo akceptas nur lokajn dosierojn."
 
 #: kfile/kfiledialog.cpp:520 kfile/kfiledialog.cpp:625
 msgid "Error: Cannot Open Directory"
@@ -1011,7 +1011,7 @@ msgid ""
 "or was not readable."
 msgstr ""
 "La indikita dosierujo ne ekzistas\n"
-"aı ne estis legebla."
+"aÅ­ ne estis legebla."
 
 #: kfile/kfiledialog.cpp:523 kfile/kfiledialog.cpp:628
 msgid "Dismiss"
@@ -1027,7 +1027,7 @@ msgstr "Radika dosierujo"
 
 #: kfile/kfiledialog.cpp:626
 msgid "The specified directory does not exist or was not readable."
-msgstr "La indikita dosierujo ne ekzistas aı ne estis legebla."
+msgstr "La indikita dosierujo ne ekzistas aÅ­ ne estis legebla."
 
 #: kfile/kfiledialog.cpp:887
 msgid "Create new directory in: "
@@ -1133,7 +1133,7 @@ msgstr "Montru listotitolojn"
 
 #: kfile/kfiledialogconf.cpp:108
 msgid "Show Hidden"
-msgstr "Montru kaşitajn"
+msgstr "Montru kaÅitajn"
 
 #: kfile/kfiledialogconf.cpp:114
 msgid "Show Status Line"
@@ -1186,7 +1186,7 @@ msgstr "Jul"
 
 #: kfile/kfileinfo.cpp:228
 msgid "Aug"
-msgstr "Aıg"
+msgstr "AÅ­g"
 
 #: kfile/kfileinfo.cpp:229
 msgid "Sep"
@@ -1226,7 +1226,7 @@ msgstr "Tipo:"
 
 #: kfile/kpreview.cpp:287
 msgid "locked"
-msgstr "şlosita"
+msgstr "Ålosita"
 
 #: kfile/kpreview.cpp:311
 msgid "picture"
@@ -1317,7 +1317,7 @@ msgstr ""
 #: kspell/kspelldlg.cpp:68
 #, fuzzy
 msgid "Replacement:"
-msgstr "Anstataıigu"
+msgstr "AnstataÅ­igu"
 
 #: kspell/kspelldlg.cpp:77
 msgid "Suggestions:"
@@ -1369,11 +1369,11 @@ msgstr "&Pri..."
 
 #: po/texts.cpp:37
 msgid "On"
-msgstr "Enşaltita"
+msgstr "EnÅaltita"
 
 #: po/texts.cpp:38
 msgid "Off"
-msgstr "Elşaltita"
+msgstr "ElÅaltita"
 
 #: po/texts.cpp:42
 msgid "File"
@@ -1501,19 +1501,19 @@ msgstr "Forigu"
 
 #: po/texts.cpp:87
 msgid "Change"
-msgstr "Şanøu"
+msgstr "ÅœanÄu"
 
 #: po/texts.cpp:88
 msgid "Delete"
-msgstr "For¼etu"
+msgstr "ForÄµetu"
 
 #: po/texts.cpp:89
 msgid "&Delete"
-msgstr "&For¼etu"
+msgstr "&ForÄµetu"
 
 #: po/texts.cpp:90
 msgid "Clear"
-msgstr "Forvişu"
+msgstr "ForviÅu"
 
 #: po/texts.cpp:91
 msgid "Italic"
@@ -1593,7 +1593,7 @@ msgstr "Dosieroj"
 
 #: kab/widget.cc:1390 kab/widget.cc:1432 po/texts.cpp:112
 msgid "Continue"
-msgstr "Daırigu"
+msgstr "DaÅ­rigu"
 
 #: po/texts.cpp:113
 msgid "Restore"
@@ -1617,7 +1617,7 @@ msgstr "Merkredo"
 
 #: po/texts.cpp:119
 msgid "Thursday"
-msgstr "¬aıdo"
+msgstr "Ä´aÅ­do"
 
 #: po/texts.cpp:120
 msgid "Friday"
@@ -1629,7 +1629,7 @@ msgstr "Sabato"
 
 #: po/texts.cpp:122
 msgid "Sunday"
-msgstr "Dimanæo"
+msgstr "DimanÄ‰o"
 
 #: po/texts.cpp:123
 msgid "&Update"
@@ -1637,7 +1637,7 @@ msgstr "&Renovigu"
 
 #: po/texts.cpp:124
 msgid "Layout"
-msgstr "Aranøo"
+msgstr "AranÄo"
 
 #: po/texts.cpp:125
 msgid "Highscore"
@@ -1657,7 +1657,7 @@ msgstr "&Sekva >>"
 
 #: po/texts.cpp:131
 msgid "<< &Previous"
-msgstr "<< &Antaıa"
+msgstr "<< &AntaÅ­a"
 
 #: po/texts.cpp:138
 #, fuzzy
@@ -1671,13 +1671,13 @@ msgid ""
 "The program will try to create\n"
 "         "
 msgstr ""
-"La dosierujo por la datumoj de la adresaro-aplika¼o\n"
-"ne ekzistas. La programo provos krei øin\n"
+"La dosierujo por la datumoj de la adresaro-aplikaÄµo\n"
+"ne ekzistas. La programo provos krei Äin\n"
 "         "
 
 #: kab/addressbook.cc:94
 msgid "and store all local files in this directory."
-msgstr "kaj sekurigos æiujn lokaj dosierojn en tiu dosierujo"
+msgstr "kaj sekurigos Ä‰iujn lokaj dosierojn en tiu dosierujo"
 
 #: kab/addressbook.cc:98
 msgid ""
@@ -1688,11 +1688,11 @@ msgid ""
 "kfm once to automatically create it."
 msgstr ""
 "Ne eblis krei la dosierujon.\n"
-"Verşajne vi ne uzis KDE antaıe tiel, ke\n"
+"VerÅajne vi ne uzis KDE antaÅ­e tiel, ke\n"
 "vi ne havas lokan \".kde\"-dosierujon\n"
-"en via hejmdosierujo. Lanæu unufoje \n"
+"en via hejmdosierujo. LanÄ‰u unufoje \n"
 "KDE-dosieradministrilon \"kfm\" por krei\n"
-"øin aıtomate."
+"Äin aÅ­tomate."
 
 #: kab/addressbook.cc:106
 msgid "The directory has been created.\n"
@@ -1700,11 +1700,11 @@ msgstr "La dosierujo estas kreita.\n"
 
 #: kab/addressbook.cc:140
 msgid "No addressbook database file, creating new one."
-msgstr "Ne ekzistas adresara datumbazo-dosiero, kreas øin."
+msgstr "Ne ekzistas adresara datumbazo-dosiero, kreas Äin."
 
 #: kab/addressbook.cc:159
 msgid "Tried to load database for creating backup, but failed"
-msgstr "Provis şargi la datumbazon por fari sekureckopion, sed malsukcesis"
+msgstr "Provis Åargi la datumbazon por fari sekureckopion, sed malsukcesis"
 
 #: kab/addressbook.cc:194
 msgid "Unable to save to backup file."
@@ -1728,15 +1728,15 @@ msgstr "\" en la agordosekcion (ignorate)."
 
 #: kab/addressbook.cc:666
 msgid "Unable to add a new entry with available key."
-msgstr "Ne eblas aldoni novan eron kun ekzistanta şlosilo."
+msgstr "Ne eblas aldoni novan eron kun ekzistanta Ålosilo."
 
 #: kab/addressbook.cc:672
 msgid "Cannot find previously created section."
-msgstr "Ne troveblis antaıe kreita sekcio."
+msgstr "Ne troveblis antaÅ­e kreita sekcio."
 
 #: kab/addressbook.cc:703
 msgid "Unable to create key-value-map for entry."
-msgstr "Ne eblis krei şlosilo-valoro-tableon por la ero."
+msgstr "Ne eblis krei Ålosilo-valoro-tableon por la ero."
 
 #: kab/addressbook.cc:989
 msgid "entry without name"
@@ -1746,7 +1746,7 @@ msgstr "ero sen nomo"
 msgid ""
 "Unable to create new database file (probably permission denied), exiting."
 msgstr ""
-"Ne eblis krei novan datumbazo-dosieron (verşajne vi ne havas permeson), "
+"Ne eblis krei novan datumbazo-dosieron (verÅajne vi ne havas permeson), "
 "finas."
 
 #: kab/addressbook.cc:1013
@@ -1759,7 +1759,7 @@ msgstr "Ne eblas krei ero-sekcion, finas."
 
 #: kab/addressbook.cc:1023
 msgid "Unable to find previously created section, exiting."
-msgstr "Ne troveblas antaıe kreita sekcio, finas."
+msgstr "Ne troveblas antaÅ­e kreita sekcio, finas."
 
 #: kab/addressbook.cc:1031
 msgid "Cannot save newly created database."
@@ -1779,7 +1779,7 @@ msgstr "Kromnomo"
 
 #: kab/addressbook.cc:1124
 msgid "Name prefix"
-msgstr "Nomantaıa¼o"
+msgstr "NomantaÅ­aÄµo"
 
 #: kab/addressbook.cc:1128
 msgid "Formatted name"
@@ -1791,7 +1791,7 @@ msgstr "Komento"
 
 #: kab/addressbook.cc:1136
 msgid "Organization"
-msgstr "Organiza¼o"
+msgstr "OrganizaÄµo"
 
 #: kab/addressbook.cc:1140
 msgid "Unit"
@@ -1811,7 +1811,7 @@ msgstr "Funkcio"
 
 #: kab/addressbook.cc:1156
 msgid "Birthday"
-msgstr "Naskiødato"
+msgstr "NaskiÄdato"
 
 #: kab/addressbook.cc:1160
 msgid "Talk addresses"
@@ -1859,7 +1859,7 @@ msgstr "Modemnumero"
 
 #: kab/addressbook.cc:1204
 msgid "Homepage URL"
-msgstr "TTT-hejmpaøo"
+msgstr "TTT-hejmpaÄo"
 
 #: kab/addressbook.cc:1208
 msgid "Zip/postal code"
@@ -1867,7 +1867,7 @@ msgstr "Urbokodo"
 
 #: kab/addressbook.cc:1212
 msgid "State/province"
-msgstr "Ştato/regiono"
+msgstr "Åœtato/regiono"
 
 #: kab/addressbook.cc:1216
 msgid "Country"
@@ -1879,7 +1879,7 @@ msgstr "(sennoma ero)"
 
 #: kab/datepickerdialog.cc:34
 msgid "Select birthday"
-msgstr "Elektu naskiødaton"
+msgstr "Elektu naskiÄdaton"
 
 #: kab/editentry.cc:38
 msgid "Edit the current entry"
@@ -1916,7 +1916,7 @@ msgstr "Urbo:"
 
 #: kab/editentry.cc:105
 msgid "State:"
-msgstr "Ştato:"
+msgstr "Åœtato:"
 
 #: kab/editentry.cc:106
 #, fuzzy
@@ -1933,12 +1933,12 @@ msgstr "&Adreso"
 
 #: kab/editentry.cc:145
 msgid "Organization:"
-msgstr "Organiza¼o:"
+msgstr "OrganizaÄµo:"
 
 #: kab/editentry.cc:146
 #, fuzzy
 msgid "Department:"
-msgstr "Anstataıigu"
+msgstr "AnstataÅ­igu"
 
 #: kab/editentry.cc:147
 msgid "Sub-Department:"
@@ -1951,7 +1951,7 @@ msgstr "Funkcio:"
 
 #: kab/editentry.cc:169
 msgid "&Organization"
-msgstr "&Organiza¼o"
+msgstr "&OrganizaÄµo"
 
 #: kab/editentry.cc:184
 msgid "Telephone:"
@@ -1967,7 +1967,7 @@ msgstr "Modemo:"
 
 #: kab/editentry.cc:187
 msgid "Homepage (URL):"
-msgstr "TTT-hejmpaøo:"
+msgstr "TTT-hejmpaÄo:"
 
 #: kab/editentry.cc:200 kab/editentry.cc:418
 msgid "Edit email addresses"
@@ -1988,7 +1988,7 @@ msgstr "Aldona nomo:"
 
 #: kab/editentry.cc:246
 msgid "Birthday:"
-msgstr "Naskiøo:"
+msgstr "NaskiÄo:"
 
 #: kab/editentry.cc:249
 msgid "Double click to set date"
@@ -2004,7 +2004,7 @@ msgstr "Ne eblis aldoni vian novan eron."
 
 #: kab/searchresults.cc:33
 msgid "search results"
-msgstr "serærezulto"
+msgstr "serÄ‰rezulto"
 
 #: kab/widget.cc:144
 msgid "Conversion problem"
@@ -2019,7 +2019,7 @@ msgid ""
 msgstr ""
 "Kab ne povis konverti vian datumbazon al la\n"
 "aktuala dosierformo.\n"
-"Vi povas uzi øin, sed ne æiuj eblecoj estos\n"
+"Vi povas uzi Äin, sed ne Ä‰iuj eblecoj estos\n"
 "uzeblaj."
 
 #: kab/widget.cc:163
@@ -2027,7 +2027,7 @@ msgid ""
 "The application saved the last current entry,\n"
 "but this entry does not exist anymore."
 msgstr ""
-"La aplika¼o sekurigis la laste aktualan eron,\n"
+"La aplikaÄµo sekurigis la laste aktualan eron,\n"
 "sed tiu ero ne plu ekzistas."
 
 #: kab/widget.cc:229
@@ -2043,11 +2043,11 @@ msgid ""
 "All configuration values have been reset to\n"
 "its default settings."
 msgstr ""
-"La versio de kab, kiun vi uzis antaıe\n"
+"La versio de kab, kiun vi uzis antaÅ­e\n"
 "havis eraron pri aktualigo de la datumbazo\n"
 "por novaj versioj. Tiu eraro estas forigita\n"
-"nun kaj ne plu øenos vin.\n"
-"Æiuj agorderoj nun estas remetitaj al\n"
+"nun kaj ne plu Äenos vin.\n"
+"Äˆiuj agorderoj nun estas remetitaj al\n"
 "la implicitaj valoroj."
 
 #: kab/widget.cc:248 kab/widget.cc:314 kab/widget.cc:322
@@ -2060,7 +2060,7 @@ msgstr "Ne eblis malfermi la datumbazan dosieron por lego kaj skribo."
 
 #: kab/widget.cc:257
 msgid "Email storage conversion"
-msgstr "Konverto de retpoşto-storejo"
+msgstr "Konverto de retpoÅto-storejo"
 
 #: kab/widget.cc:258
 msgid ""
@@ -2068,9 +2068,9 @@ msgid ""
 "the new style supporting unlimited numbers\n"
 "of email addresses per entry."
 msgstr ""
-"Kab konvertos æiujn viajn retadresojn al\n"
+"Kab konvertos Ä‰iujn viajn retadresojn al\n"
 "la nova formo ebliganta senliman nombron\n"
-"de retadresoj por æiu ero."
+"de retadresoj por Ä‰iu ero."
 
 #: kab/widget.cc:291
 msgid "kab database update"
@@ -2081,19 +2081,19 @@ msgid ""
 "Please note that kab now supports some new\n"
 "fields in its addresses. These new fields\n"
 "are:\n"
-"° the state field,\n"
-"° the country field and\n"
-"° the postal code field.\n"
+"Â° the state field,\n"
+"Â° the country field and\n"
+"Â° the postal code field.\n"
 "You will probably need to edit some of your\n"
 "entries to make use of it."
 msgstr ""
 "Bonvolu noti, ke Kab nun subtenas kelkajn\n"
 "novajn erojn en la adresoj.\n"
 "Tiuj estas:\n"
-"° la ştato,\n"
-"° la lando kaj\n"
-"° la urbokodo.\n"
-"Verşajne vi devos redakti kelkajn el viaj\n"
+"Â° la Åtato,\n"
+"Â° la lando kaj\n"
+"Â° la urbokodo.\n"
+"VerÅajne vi devos redakti kelkajn el viaj\n"
 "adresoj por uzi la novajn eblecojn."
 
 #: kab/widget.cc:315
@@ -2110,7 +2110,7 @@ msgstr "unua ero"
 
 #: kab/widget.cc:483
 msgid "previous entry"
-msgstr "antaıa ero"
+msgstr "antaÅ­a ero"
 
 #: kab/widget.cc:484
 msgid "next entry"
@@ -2122,7 +2122,7 @@ msgstr "lasta ero"
 
 #: kab/widget.cc:486
 msgid "search entries"
-msgstr "seræu erojn"
+msgstr "serÄ‰u erojn"
 
 #: kab/widget.cc:487
 msgid "add a new entry"
@@ -2130,23 +2130,23 @@ msgstr "aldonu novan eron"
 
 #: kab/widget.cc:488
 msgid "change this entry"
-msgstr "Şanøu tiun æi eron"
+msgstr "ÅœanÄu tiun Ä‰i eron"
 
 #: kab/widget.cc:489
 msgid "remove this entry"
-msgstr "forigu tiun æi eron"
+msgstr "forigu tiun Ä‰i eron"
 
 #: kab/widget.cc:528
 msgid "Switched to first entry."
-msgstr "Æe la unua ero"
+msgstr "Äˆe la unua ero"
 
 #: kab/widget.cc:560
 msgid "Switched to last entry."
-msgstr "Æe la lasta ero"
+msgstr "Äˆe la lasta ero"
 
 #: kab/widget.cc:621 kab/widget.cc:678 kab/widget.cc:860 kab/widget.cc:922
 msgid "Sorry, file changed."
-msgstr "Pardonu, dosiero şanøiøis."
+msgstr "Pardonu, dosiero ÅanÄiÄis."
 
 #: kab/widget.cc:625 kab/widget.cc:682 kab/widget.cc:926
 msgid "Permission denied."
@@ -2158,7 +2158,7 @@ msgstr "Forigu eron?"
 
 #: kab/widget.cc:637
 msgid "Really remove this entry?"
-msgstr "Æu vere forigi la eron?"
+msgstr "Äˆu vere forigi la eron?"
 
 #: kab/widget.cc:655
 msgid "Entry deleted."
@@ -2192,8 +2192,8 @@ msgid ""
 "kab cannot save it."
 msgstr ""
 "La dosiero de la adreslibro momente\n"
-"estas şlosita de alia aplika¼o.\n"
-"Kab ne pobas sekurigi øin."
+"estas Ålosita de alia aplikaÄµo.\n"
+"Kab ne pobas sekurigi Äin."
 
 #: kab/widget.cc:870
 msgid "Database saved successfully."
@@ -2221,7 +2221,7 @@ msgstr "Sekurigo rompita.\n"
 
 #: kab/widget.cc:945
 msgid "Entry changed."
-msgstr "Ero şanøiøis."
+msgstr "Ero ÅanÄiÄis."
 
 #: kab/widget.cc:1041
 msgid "Results"
@@ -2238,11 +2238,11 @@ msgstr "Refutita."
 
 #: kab/widget.cc:1066
 msgid "Search results window closed."
-msgstr "Fenestro kun serærezultoj fermita."
+msgstr "Fenestro kun serÄ‰rezultoj fermita."
 
 #: kab/widget.cc:1165
 msgid "The talk command must be configured before!"
-msgstr "Antaıe la komando por \"talk\" devas esti kofigurita!"
+msgstr "AntaÅ­e la komando por \"talk\" devas esti kofigurita!"
 
 #: kab/widget.cc:1170
 msgid "Talk configuration"
@@ -2270,7 +2270,7 @@ msgstr "Rompita"
 
 #: kab/widget.cc:1222
 msgid "The talk command parameters are wrong."
-msgstr "La parametroj por la komando \"talk\" ne estas øustaj."
+msgstr "La parametroj por la komando \"talk\" ne estas Äustaj."
 
 #: kab/widget.cc:1234
 msgid ""
@@ -2282,15 +2282,15 @@ msgstr ""
 
 #: kab/widget.cc:1237
 msgid "Talk program started."
-msgstr "Programo \"talk\" lanæita."
+msgstr "Programo \"talk\" lanÄ‰ita."
 
 #: kab/widget.cc:1285
 msgid "Attention: printing is still experimental!"
-msgstr "Atentu: presado estas ankoraı eksperimenta!"
+msgstr "Atentu: presado estas ankoraÅ­ eksperimenta!"
 
 #: kab/widget.cc:1387 kab/widget.cc:1429
 msgid "Page size problem"
-msgstr "Problemo pri paøformato"
+msgstr "Problemo pri paÄformato"
 
 #: kab/widget.cc:1388 kab/widget.cc:1430
 msgid ""
@@ -2298,11 +2298,11 @@ msgid ""
 "not fit into the page width."
 msgstr ""
 "La eroj, kiujn vi deziris presi ne estas\n"
-"tro grandaj por la paøo."
+"tro grandaj por la paÄo."
 
 #: kab/widget.cc:1624 kab/widget.cc:2066
 msgid "Printing finished successfully."
-msgstr "PResado sukcese finiøis."
+msgstr "PResado sukcese finiÄis."
 
 #: kab/widget.cc:1651
 msgid "kab: Email addresses"
@@ -2366,7 +2366,7 @@ msgstr "Nenio presenda."
 
 #: kab/widget.cc:2050
 msgid "Page <p>"
-msgstr "Paøo <p>"
+msgstr "PaÄo <p>"
 
 #: kab/widget.cc:2051
 msgid "KDE - the professionals choice."
@@ -2386,19 +2386,19 @@ msgstr "Neniuj retadresoj."
 
 #: kab/widget.cc:2124
 msgid "Error calling mailer."
-msgstr "Eraro dum lanæo de poştsendilo"
+msgstr "Eraro dum lanÄ‰o de poÅtsendilo"
 
 #: kab/widget.cc:2126
 msgid "Mailer called."
-msgstr "Poştsendilo lanæita."
+msgstr "PoÅtsendilo lanÄ‰ita."
 
 #: kab/widget.cc:2149
 msgid "The mail command must be configured before!"
-msgstr "La send-komando devas esti agordita antaıe!"
+msgstr "La send-komando devas esti agordita antaÅ­e!"
 
 #: kab/widget.cc:2155
 msgid "Mail configuration"
-msgstr "Agordo de poştsendilo"
+msgstr "Agordo de poÅtsendilo"
 
 #: kab/widget.cc:2156
 msgid "Please configure the parameters for the email command."
@@ -2406,7 +2406,7 @@ msgstr "Bonvolu agordi la parametrojn por la send-komando"
 
 #: kab/widget.cc:2194
 msgid "The email command parameters are wrong."
-msgstr "La parametroj por la send-komando estas maløustaj."
+msgstr "La parametroj por la send-komando estas malÄustaj."
 
 #: kab/widget.cc:2206
 msgid ""
@@ -2414,11 +2414,11 @@ msgid ""
 "Make sure you did setup your email command and parameter!"
 msgstr ""
 "Sendkomando malsukcesis.\n"
-"Certigu, ke vi agordis la komandon por poştsendado kaj øiajn parametrojn!"
+"Certigu, ke vi agordis la komandon por poÅtsendado kaj Äiajn parametrojn!"
 
 #: kab/widget.cc:2210
 msgid "Mail program started."
-msgstr "Poştsendilo lanæita."
+msgstr "PoÅtsendilo lanÄ‰ita."
 
 #~ msgid "KIO Cache"
 #~ msgstr "KIO-Tenejo"
@@ -2430,14 +2430,14 @@ msgstr "Poştsendilo lanæita."
 #~ "Use the icons for drag and drop actions, since they refer to the cache files "
 #~ "on your hard disk, while you should use the textual links for browsing"
 #~ msgstr ""
-#~ "Uzu la piktogramoj por şovi agojn, se ili referencas al la tenejaj dosieroj "
+#~ "Uzu la piktogramoj por Åovi agojn, se ili referencas al la tenejaj dosieroj "
 #~ "sur via disko. Uzu la tekstajn ligojn por legado"
 
 #~ msgid "Creation Date"
 #~ msgstr "Kreu daton"
 
 #~ msgid "Expiration Date"
-#~ msgstr "Malvalidiøodato"
+#~ msgstr "MalvalidiÄodato"
 
 #~ msgid "Never"
 #~ msgstr "Neniam"
@@ -2464,7 +2464,7 @@ msgstr "Poştsendilo lanæita."
 #~ "%s"
 #~ msgstr ""
 #~ "Ne eblis savi la dokumenton\n"
-#~ "Ne eblis lanæi procezon\n"
+#~ "Ne eblis lanÄ‰i procezon\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2513,7 +2513,7 @@ msgstr "Poştsendilo lanæita."
 #~ "%s\n"
 #~ "does not exist"
 #~ msgstr ""
-#~ "La dosiero aı dosierujo\n"
+#~ "La dosiero aÅ­ dosierujo\n"
 #~ "%s\n"
 #~ "ne ekzistas"
 
@@ -2538,7 +2538,7 @@ msgstr "Poştsendilo lanæita."
 #~ "%s\n"
 #~ "does already exist"
 #~ msgstr ""
-#~ "La dosiero aı dosierujo\n"
+#~ "La dosiero aÅ­ dosierujo\n"
 #~ "%s\n"
 #~ "jam ekzistas"
 
@@ -2574,7 +2574,7 @@ msgstr "Poştsendilo lanæita."
 #~ "Could not change permissions for\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Ne eblis şanøi la permesojn por\n"
+#~ "Ne eblis ÅanÄi la permesojn por\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2733,7 +2733,7 @@ msgstr "Poştsendilo lanæita."
 #~ msgstr "Vi ne entajpis dosiernomon"
 
 #~ msgid "The file %s does already exist. Do you really want to overwrite it ?"
-#~ msgstr "La dosiero %s jam ekzistas. Æu vi vere volas anstataıigi øin?"
+#~ msgstr "La dosiero %s jam ekzistas. Äˆu vi vere volas anstataÅ­igi Äin?"
 
 #, fuzzy
 #~ msgid "Bytes"
@@ -2787,40 +2787,40 @@ msgstr "Poştsendilo lanæita."
 #~ msgstr "Lasu"
 
 #~ msgid "Auto Skip"
-#~ msgstr "Aıtom. lasu"
+#~ msgstr "AÅ­tom. lasu"
 
 #~ msgid "Overwrite"
-#~ msgstr "Anstataıigu"
+#~ msgstr "AnstataÅ­igu"
 
 #~ msgid "Overwrite All"
-#~ msgstr "Anstataıigu æiujn"
+#~ msgstr "AnstataÅ­igu Ä‰iujn"
 
 #~ msgid "Resume"
 #~ msgstr "Restarigu"
 
 #~ msgid "Resume All"
-#~ msgstr "Restarigu æiujn"
+#~ msgstr "Restarigu Ä‰iujn"
 
 #~ msgid "You try to overwrite"
-#~ msgstr "Vi provis anstataıigi"
+#~ msgstr "Vi provis anstataÅ­igi"
 
 #~ msgid "already exists. Overwrite with"
-#~ msgstr "jam ekzistas. Anstataıigu per"
+#~ msgstr "jam ekzistas. AnstataÅ­igu per"
 
 #~ msgid "Or rename to"
-#~ msgstr "Aı alinomu al"
+#~ msgstr "AÅ­ alinomu al"
 
 #~ msgid "already exists."
 #~ msgstr "jam ekzistas."
 
 #~ msgid "Do you want to rename it ?"
-#~ msgstr "Æu vi volas anstataıigi øin?"
+#~ msgstr "Äˆu vi volas anstataÅ­igi Äin?"
 
 #~ msgid "Malformed URL\n"
 #~ msgstr "Misformita URL\n"
 
 #~ msgid "You must not change the protocol"
-#~ msgstr "Vi devas şanøi la protokolon"
+#~ msgstr "Vi devas ÅanÄi la protokolon"
 
 #~ msgid "Can not write"
 #~ msgstr "Ne eblas skribi"
@@ -2906,7 +2906,7 @@ msgstr "Poştsendilo lanæita."
 #~ "Aliro malpermesita"
 
 #~ msgid "The application config file\n"
-#~ msgstr "La agordodosiero de la aplika¼o\n"
+#~ msgstr "La agordodosiero de la aplikaÄµo\n"
 
 #~ msgid ""
 #~ "\n"

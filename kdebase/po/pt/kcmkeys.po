@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: main.cpp:72
@@ -19,11 +19,11 @@ msgstr "Atalhos &Globais"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "utilizaÁ„o: kcmkeys [-init | {standard,global}]\n"
+msgstr "utiliza√ß√£o: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "ConfiguraÁ„o dos atalhos de teclado"
+msgstr "Configura√ß√£o dos atalhos de teclado"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
@@ -43,7 +43,7 @@ msgstr "&Adicionar ..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "&Gravar alteraÁıes"
+msgstr "&Gravar altera√ß√µes"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
@@ -55,9 +55,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Este esquema de teclas n„o pode ser removido.\n"
-"Talvez n„o tenha permiss„o para alteraÁ„o o ficheiro\n"
-"onde ele est· armazenado."
+"Este esquema de teclas n√£o pode ser removido.\n"
+"Talvez n√£o tenha permiss√£o para altera√ß√£o o ficheiro\n"
+"onde ele est√° armazenado."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
@@ -69,8 +69,8 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Por favor escolha um nome ˙nico para o novo\n"
-"esquema de teclas. O que inseriu j· faz parte\n"
+"Por favor escolha um nome √∫nico para o novo\n"
+"esquema de teclas. O que inseriu j√° faz parte\n"
 "da lista de esquemas de teclas."
 
 #: savescm.cpp:18
@@ -86,9 +86,9 @@ msgid ""
 "be copied into this scheme to begin with."
 msgstr ""
 "Insira um nome para o novo esquema de teclas\n"
-"que ir· ser adicionado ‡ sua lista pessoal.\n"
+"que ir√° ser adicionado √† sua lista pessoal.\n"
 "\n"
-"As teclas actualmente utilizadas ser„o copiadas\n"
+"As teclas actualmente utilizadas ser√£o copiadas\n"
 "para este esquema."
 
 #: ../../kwm/kwmbindings.cpp:1
@@ -105,7 +105,7 @@ msgstr "Executar comando"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "Menu de operaÁıes da janela"
+msgstr "Menu de opera√ß√µes da janela"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
@@ -141,51 +141,51 @@ msgstr "Pregar janela"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "Mudar para o ecr„ 1"
+msgstr "Mudar para o ecr√£ 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "Mudar para o ecr„ 2"
+msgstr "Mudar para o ecr√£ 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Mudar para o ecr„ 3"
+msgstr "Mudar para o ecr√£ 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "Mudar para o ecr„ 4"
+msgstr "Mudar para o ecr√£ 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Mudar para o ecr„ 5"
+msgstr "Mudar para o ecr√£ 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "Mudar para o ecr„ 6"
+msgstr "Mudar para o ecr√£ 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "Mudar para o ecr„ 7"
+msgstr "Mudar para o ecr√£ 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "Mudar para o ecr„ 8"
+msgstr "Mudar para o ecr√£ 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Mudar um ecr„ para a direita"
+msgstr "Mudar um ecr√£ para a direita"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "Mudar um ecr„ para a esquerda"
+msgstr "Mudar um ecr√£ para a esquerda"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "Mudar um ecr„ para cima"
+msgstr "Mudar um ecr√£ para cima"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "Mudar um ecr„ para baixo"
+msgstr "Mudar um ecr√£ para baixo"
 
 #: stdbindings.cpp:3
 msgid "New"
@@ -193,7 +193,7 @@ msgstr "Novo"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "PrÛximo"
+msgstr "Pr√≥ximo"
 
 #: stdbindings.cpp:9
 msgid "Prior"
@@ -205,7 +205,7 @@ msgstr "Procurar"
 
 #: stdbindings.cpp:17
 msgid "Home"
-msgstr "InÌcio"
+msgstr "In√≠cio"
 
 #: stdbindings.cpp:18
 msgid "End"

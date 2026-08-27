@@ -3,7 +3,7 @@ msgstr ""
 "POT-Creation-Date: 1999-03-05 01:58+0100\n"
 "PO-Revision-Date: 1999-01-13 13:55+MET\n"
 "Last-Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
-"Content-Type: text/plain; charset=\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Date: 1998-03-06 23:13:09-0500\n"
 "From: Bernd Johannes Wuebben,201 Lincoln Hall,,256-1036, "
 "<root@petit.cornell.edu>\n"
@@ -57,9 +57,9 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"Aufgrund verschiedener defekter glibcs muﬂte ich die Pr‰zision von KCalc von "
+"Aufgrund verschiedener defekter glibcs mu√üte ich die Pr√§zision von KCalc von "
 "'long double' auf 'double' heruntersetzen. Besitzer von Systemen mit "
-"funktionierender libc sollten KCalc mit 'long double'-Pr‰zision erneut "
+"funktionierender libc sollten KCalc mit 'long double'-Pr√§zision erneut "
 "kompilieren. Weitere Informationen finden Sie in der Datei README."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
@@ -81,11 +81,11 @@ msgstr ""
 
 #: kcalc_core.cpp:1115
 msgid "Last stat item erased"
-msgstr "Letzte gelˆschte Statistik-Position"
+msgstr "Letzte gel√∂schte Statistik-Position"
 
 #: kcalc_core.cpp:1155
 msgid "Stat Mem cleared"
-msgstr "Statistik-Speicher gelˆscht"
+msgstr "Statistik-Speicher gel√∂scht"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
@@ -145,7 +145,7 @@ msgstr "Familie:"
 
 #: fontdlg.cpp:63
 msgid "Point Size:"
-msgstr "Punkt-Grˆﬂe:"
+msgstr "Punkt-Gr√∂√üe:"
 
 #: fontdlg.cpp:76
 msgid "Style:"
@@ -153,7 +153,7 @@ msgstr "Schnitt:"
 
 #: fontdlg.cpp:91
 msgid "Weight:"
-msgstr "St‰rke:"
+msgstr "St√§rke:"
 
 #: fontdlg.cpp:101 fontdlg.cpp:134
 msgid "Bold"

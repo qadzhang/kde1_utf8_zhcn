@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: Hasso Tepper <hasso@ewsound.estnet.ee>\n"
 "Language-Team: Estonian <linux-ee@eenet.ee>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: gameboard.cc:55
 msgid "End Turn"
-msgstr "K‰igu lıpp"
+msgstr "K√§igu l√µpp"
 
 #: gameboard.cc:203
 msgid ": Select source planet..."
-msgstr ": Vali l‰hteplaneet..."
+msgstr ": Vali l√§hteplaneet..."
 
 #: gameboard.cc:221
 msgid ": Select destination planet..."
@@ -31,7 +31,7 @@ msgstr ": Mitu laeva?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
-msgstr "Mııtmine: Vali planeet kust mııta."
+msgstr "M√µ√µtmine: Vali planeet kust m√µ√µta."
 
 #: gameboard.cc:287
 #, c-format
@@ -40,7 +40,7 @@ msgid ""
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
 "Vahemaa planeedist %s planeedini %s on %s valguasaastat.\n"
-"Laev, mis lahkub sellel k‰igul, jıuab kohale k‰igul %s"
+"Laev, mis lahkub sellel k√§igul, j√µuab kohale k√§igul %s"
 
 #: gameboard.cc:291
 msgid "Distance"
@@ -48,17 +48,17 @@ msgstr "Vahemaa"
 
 #: gameboard.cc:296
 msgid "Ruler: Select ending planet."
-msgstr "Mııtmine: Vali planeet kuhuni mııta."
+msgstr "M√µ√µtmine: Vali planeet kuhuni m√µ√µta."
 
 #: gameboard.cc:311
 #, c-format
 msgid "Turn #: %2d of %2d"
-msgstr "K‰ik #: %2d/%2d"
+msgstr "K√§ik #: %2d/%2d"
 
 #: gameboard.cc:426
 #, c-format
 msgid "The once mighty empire of %s has fallen in ruins."
-msgstr "Kunagine vıimas %s impeerium on langenud varemetesse."
+msgstr "Kunagine v√µimas %s impeerium on langenud varemetesse."
 
 #: gameboard.cc:428
 msgid "An Empire has fallen..."
@@ -71,12 +71,12 @@ msgstr "Hukkunud impeerium %s on taas ellu tagasi vankunud"
 
 #: gameboard.cc:440
 msgid "Up from the ashes..."
-msgstr "Tuhast tıusnusd..."
+msgstr "Tuhast t√µusnusd..."
 
 #: gameboard.cc:460
 #, c-format
 msgid "Reinforcements have arrived for planet %s"
-msgstr "Planeet %s jaoks on saabunud tugijıud"
+msgstr "Planeet %s jaoks on saabunud tugij√µud"
 
 #: gameboard.cc:462
 msgid "Fleet Arrival"
@@ -85,7 +85,7 @@ msgstr "Laevastiku saabumine"
 #: gameboard.cc:505
 #, c-format
 msgid "Planet %s has held against an attack from %s"
-msgstr "Planeet %s on tagasi tırjunud planeet %s r¸nnaku"
+msgstr "Planeet %s on tagasi t√µrjunud planeet %s r√ºnnaku"
 
 #: gameboard.cc:507
 msgid "Planet Holds"
@@ -102,15 +102,15 @@ msgstr "Planeet on vallutatud"
 
 #: gameboard.cc:579 mainwin.cc:82
 msgid "End Game"
-msgstr "M‰ngu lıpp"
+msgstr "M√§ngu l√µpp"
 
 #: gameboard.cc:580
 msgid "Do you wish to retire this game?"
-msgstr "Soovid sa m‰ngust lahkuda?"
+msgstr "Soovid sa m√§ngust lahkuda?"
 
 #: gameboard.cc:586
 msgid "Final Standings"
-msgstr "Lıplik seis"
+msgstr "L√µplik seis"
 
 #: gameboard.cc:758
 msgid "Not enough ships to send."
@@ -135,15 +135,15 @@ msgstr ""
 "The Gnu-Lactic Conquest Project\n"
 "\n"
 "KDE versioon kirjutatud Russ Steffen'i <rsteffen@ia.net> poolt.\n"
-"Kui soovid rohkem infot, k¸lasta http://www.ia.net/~rsteffen/konquest.html"
+"Kui soovid rohkem infot, k√ºlasta http://www.ia.net/~rsteffen/konquest.html"
 
 #: mainwin.cc:88
 msgid "Measure Distance"
-msgstr "Mııda kaugust"
+msgstr "M√µ√µda kaugust"
 
 #: mainwin.cc:92
 msgid "Show Standings"
-msgstr "N‰ita seisu"
+msgstr "N√§ita seisu"
 
 #: newgamedlg.cc:31
 msgid "Preview Map"
@@ -155,7 +155,7 @@ msgstr "&Keeldu kaartist"
 
 #: newgamedlg.cc:41
 msgid "&Player List"
-msgstr "&M‰ngijate nimekiri"
+msgstr "&M√§ngijate nimekiri"
 
 #: newgamedlg.cc:48
 msgid "&Add"
@@ -167,7 +167,7 @@ msgstr "&Puhasta"
 
 #: newgamedlg.cc:70
 msgid "&Start Game"
-msgstr "&K‰ivita m‰ng"
+msgstr "&K√§ivita m√§ng"
 
 #: newgamedlg.cc:162
 #, c-format
@@ -177,7 +177,7 @@ msgstr "Neutraalsete planeetide arv: %2d"
 #: newgamedlg.cc:174
 #, c-format
 msgid "Number of turns: %2d"
-msgstr "K‰ikude arv: %2d"
+msgstr "K√§ikude arv: %2d"
 
 #: planet_info.cc:81 planet_info.cc:116 planet_info.cc:131
 msgid "Planet Name : "
@@ -211,25 +211,25 @@ msgstr "Tootmine : %d"
 
 #: planet_info.cc:143
 #, c-format
-msgid "Kill Percent : %.3f"
-msgstr "Tapetute % : %.3f"
+#~ msgid "Kill Percent : %.3f"
+#~ msgstr "Tapetute % : %.3f"
 
 #: gameenddlg.cc:14
 msgid ""
 "This is the last turn.\n"
 "Do you wish to add more turns?"
 msgstr ""
-"See on viimane k‰ik.\n"
-"Soovid sa k‰ike juurde lisada?"
+"See on viimane k√§ik.\n"
+"Soovid sa k√§ike juurde lisada?"
 
 #: gameenddlg.cc:64
 #, c-format
 msgid "Add %d turns"
-msgstr "Lisa %d k‰iku"
+msgstr "Lisa %d k√§iku"
 
 #: scoredlg.cc:18
 msgid "Player"
-msgstr "M‰ngija"
+msgstr "M√§ngija"
 
 #: scoredlg.cc:19
 msgid "Ships Built"
@@ -245,8 +245,8 @@ msgstr "Teele saadetud laevastikke"
 
 #: scoredlg.cc:22
 msgid "Fleets Destroyed"
-msgstr "H‰vitatud laevastikke"
+msgstr "H√§vitatud laevastikke"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"
-msgstr "H‰vitatud laevu"
+msgstr "H√§vitatud laevu"

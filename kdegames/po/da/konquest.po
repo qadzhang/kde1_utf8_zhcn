@@ -1,29 +1,29 @@
 # Danish translation for KDE Games, konquest 
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Erik Kjær Pedersen <erik@binghamton.edu>, 1999.
+# Erik KjÃ¦r Pedersen <erik@binghamton.edu>, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE Games/konquest\n"
 "POT-Creation-Date: 1999-01-13 01:34+0100\n"
 "PO-Revision-Date: 1999-02-16 11:52-0500\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: gameboard.cc:55
 msgid "End Turn"
-msgstr "Slut på omgangen"
+msgstr "Slut pÃ¥ omgangen"
 
 #: gameboard.cc:203
 msgid ": Select source planet..."
-msgstr ": Udvælg start planet..."
+msgstr ": UdvÃ¦lg start planet..."
 
 #: gameboard.cc:221
 msgid ": Select destination planet..."
-msgstr ": Udvælg slutplanet..."
+msgstr ": UdvÃ¦lg slutplanet..."
 
 #: gameboard.cc:243
 msgid ": How many ships?"
@@ -31,7 +31,7 @@ msgstr ": Hvor mange skibe?"
 
 #: gameboard.cc:267
 msgid "Ruler: Select starting planet."
-msgstr "Regent: Udvælg startplanet."
+msgstr "Regent: UdvÃ¦lg startplanet."
 
 #: gameboard.cc:287
 #, c-format
@@ -39,7 +39,7 @@ msgid ""
 "The distance from Planet %s to Planet %s is %s light years.\n"
 "A ship leaving this turn will arrive on turn %s"
 msgstr ""
-"Afstanden fra planet %s til planet %s er %s lys år.\n"
+"Afstanden fra planet %s til planet %s er %s lys Ã¥r.\n"
 "Et skib der tager afsted denne omgang vil ankomme i omgang %s"
 
 #: gameboard.cc:291
@@ -48,7 +48,7 @@ msgstr "Afstand"
 
 #: gameboard.cc:296
 msgid "Ruler: Select ending planet."
-msgstr "Regent: Udvælg slutplanet."
+msgstr "Regent: UdvÃ¦lg slutplanet."
 
 #: gameboard.cc:311
 #, c-format
@@ -58,7 +58,7 @@ msgstr "Omgang #: %2d of %2d"
 #: gameboard.cc:426
 #, c-format
 msgid "The once mighty empire of %s has fallen in ruins."
-msgstr "Det tidligere mægtige imperium %s ligger i ruiner."
+msgstr "Det tidligere mÃ¦gtige imperium %s ligger i ruiner."
 
 #: gameboard.cc:428
 msgid "An Empire has fallen..."
@@ -76,16 +76,16 @@ msgstr "Op af asken..."
 #: gameboard.cc:460
 #, c-format
 msgid "Reinforcements have arrived for planet %s"
-msgstr "Forstærkning er ankommet for planet %s"
+msgstr "ForstÃ¦rkning er ankommet for planet %s"
 
 #: gameboard.cc:462
 msgid "Fleet Arrival"
-msgstr "Flådeanskomst"
+msgstr "FlÃ¥deanskomst"
 
 #: gameboard.cc:505
 #, c-format
 msgid "Planet %s has held against an attack from %s"
-msgstr "Planet %s har modstået angrebet fra %s"
+msgstr "Planet %s har modstÃ¥et angrebet fra %s"
 
 #: gameboard.cc:507
 msgid "Planet Holds"
@@ -106,7 +106,7 @@ msgstr "Slut spil"
 
 #: gameboard.cc:580
 msgid "Do you wish to retire this game?"
-msgstr "Vil du trække dig tilbage fra dette spil?"
+msgstr "Vil du trÃ¦kke dig tilbage fra dette spil?"
 
 #: gameboard.cc:586
 msgid "Final Standings"
@@ -139,7 +139,7 @@ msgstr ""
 
 #: mainwin.cc:88
 msgid "Measure Distance"
-msgstr "Mål afstanden"
+msgstr "MÃ¥l afstanden"
 
 #: mainwin.cc:92
 msgid "Show Standings"
@@ -147,11 +147,11 @@ msgstr "Vis stillingen"
 
 #: newgamedlg.cc:31
 msgid "Preview Map"
-msgstr "Kig på kortet"
+msgstr "Kig pÃ¥ kortet"
 
 #: newgamedlg.cc:35
 msgid "&Reject Map"
-msgstr "&Afslå kortet"
+msgstr "&AfslÃ¥ kortet"
 
 #: newgamedlg.cc:41
 msgid "&Player List"
@@ -159,7 +159,7 @@ msgstr "S&pillerliste"
 
 #: newgamedlg.cc:48
 msgid "&Add"
-msgstr "&Tilføj"
+msgstr "&TilfÃ¸j"
 
 #: newgamedlg.cc:54
 msgid "&Clear"
@@ -197,7 +197,7 @@ msgstr "Produktion : "
 
 #: planet_info.cc:93
 msgid "Kill Percent : "
-msgstr "Dødsprocent : "
+msgstr "DÃ¸dsprocent : "
 
 #: planet_info.cc:137
 #, c-format
@@ -212,7 +212,7 @@ msgstr "Produktion : %d"
 #: planet_info.cc:143
 #, c-format
 msgid "Kill Percent : %.3f"
-msgstr "Dødsprocent : %.3f"
+msgstr "DÃ¸dsprocent : %.3f"
 
 #: gameenddlg.cc:14
 msgid ""
@@ -225,7 +225,7 @@ msgstr ""
 #: gameenddlg.cc:64
 #, c-format
 msgid "Add %d turns"
-msgstr "Tilføj %d omgange"
+msgstr "TilfÃ¸j %d omgange"
 
 #: scoredlg.cc:18
 msgid "Player"
@@ -241,12 +241,12 @@ msgstr "Planeter erobret"
 
 #: scoredlg.cc:21
 msgid "Fleets Launched"
-msgstr "Flåder sendt afsted"
+msgstr "FlÃ¥der sendt afsted"
 
 #: scoredlg.cc:22
 msgid "Fleets Destroyed"
-msgstr "Flåder ødelagt"
+msgstr "FlÃ¥der Ã¸delagt"
 
 #: scoredlg.cc:23
 msgid "Ships Destroyed"
-msgstr "Skibe ødelagt"
+msgstr "Skibe Ã¸delagt"

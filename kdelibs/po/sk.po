@@ -3,39 +3,39 @@ msgstr ""
 "Project-Id-Version: kuser\n"
 "POT-Creation-Date: 1999-04-24 01:02+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
-"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Last-Translator: Juraj BednÃ¡r <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kab/AssertDialog.cpp:29
 msgid "(unknown file)"
-msgstr "(neznámy súbor)"
+msgstr "(neznÃ¡my sÃºbor)"
 
 #: kab/AssertDialog.cpp:30
 msgid "(unknown line number)"
-msgstr "(neznáme èíslo riadku)"
+msgstr "(neznÃ¡me ÄÃ­slo riadku)"
 
 #: kab/AssertDialog.cpp:31
 msgid "(unknown condition)"
-msgstr "(neznáma podmienka)"
+msgstr "(neznÃ¡ma podmienka)"
 
 #: kab/AssertDialog.cpp:39
 msgid "You have found a bug in "
-msgstr "Na¹li ste chybu v "
+msgstr "NaÅ¡li ste chybu v "
 
 #: kab/AssertDialog.cpp:45
 msgid "Ignore the error, possibly causing much more damage"
-msgstr "Ignorova» chybu, èo pravdepodobne spôsobí oveµa viac ¹kody"
+msgstr "IgnorovaÅ¥ chybu, Äo pravdepodobne spÃ´sobÃ­ oveÄ¾a viac Å¡kody"
 
 #: kab/AssertDialog.cpp:47
 msgid "Kill the application, loosing all data"
-msgstr "Zru¹i» aplikáciu (stratíte dáta)"
+msgstr "ZruÅ¡iÅ¥ aplikÃ¡ciu (stratÃ­te dÃ¡ta)"
 
 #: kab/AssertDialog.cpp:49
 msgid "Send an email to the application maintainer"
-msgstr "Posla» správu správcovi aplikácie"
+msgstr "PoslaÅ¥ sprÃ¡vu sprÃ¡vcovi aplikÃ¡cie"
 
 #: kab/AssertDialog.cpp:51 kab/datepickerdialog.cc:25 kab/kabapi.cc:34
 #: kdeui/kcolordlg.cpp:467 kdeui/kcontrol.cpp:46 kdeui/kcontrol.cpp:51
@@ -51,11 +51,11 @@ msgstr "OK"
 
 #: kab/AssertDialog.cpp:140
 msgid "The following condition failed:\n"
-msgstr "Nasledujúca podmienka zlyhala:\n"
+msgstr "NasledujÃºca podmienka zlyhala:\n"
 
 #: kab/AssertDialog.cpp:141
 msgid "In file "
-msgstr "V súbore "
+msgstr "V sÃºbore "
 
 #: kab/AssertDialog.cpp:141
 msgid ", line "
@@ -63,11 +63,11 @@ msgstr ", na riadku "
 
 #: kab/AssertDialog.cpp:212 kab/AssertDialog.cpp:217
 msgid "Error handling error"
-msgstr "Chyba pri obhospodarovaní chyby"
+msgstr "Chyba pri obhospodarovanÃ­ chyby"
 
 #: kab/AssertDialog.cpp:213
 msgid "Could not send message."
-msgstr "Nie je mo¾né posla» správu."
+msgstr "Nie je moÅ¾nÃ© poslaÅ¥ sprÃ¡vu."
 
 #: kab/AssertDialog.cpp:218
 msgid "The author did not publish an email address."
@@ -78,8 +78,8 @@ msgid ""
 "If you press the OK button, all changes\n"
 "you made will be used to proceed."
 msgstr ""
-"Ak stlaèíte tlaèidlo OK, v¹etky zmeny,\n"
-"ktoré ste spravili budú pou¾ité."
+"Ak stlaÄÃ­te tlaÄidlo OK, vÅ¡etky zmeny,\n"
+"ktorÃ© ste spravili budÃº pouÅ¾itÃ©."
 
 #: kab/DialogBase.cpp:39
 msgid ""
@@ -87,9 +87,9 @@ msgid ""
 "handed over to the program, but the dialog\n"
 "will not be closed.Use this to try different settings."
 msgstr ""
-"Ak stlaèíte Aplikova», mo¾nosti budú zaslané\n"
-"programu, ale dialóg nebude uzavretı. Pou¾ite to\n"
-"na vyskú¹anie rôznych mo¾ností."
+"Ak stlaÄÃ­te AplikovaÅ¥, moÅ¾nosti budÃº zaslanÃ©\n"
+"programu, ale dialÃ³g nebude uzavretÃ½. PouÅ¾ite to\n"
+"na vyskÃºÅ¡anie rÃ´znych moÅ¾nostÃ­."
 
 #: kab/DialogBase.cpp:44
 msgid ""
@@ -99,11 +99,11 @@ msgid ""
 "The program will be in the state before\n"
 "opening the dialog."
 msgstr ""
-"Ak stlaèíte tlaèítko Zru¹i», ¾iadne zmeny\n"
-"ktoré ste spravili nebudú akceptované a\n"
-"dialóg bude zavretı.\n"
-"Program bude v rovnakom ¹tádiu ako pred\n"
-"otvorením dialógu."
+"Ak stlaÄÃ­te tlaÄÃ­tko ZruÅ¡iÅ¥, Å¾iadne zmeny\n"
+"ktorÃ© ste spravili nebudÃº akceptovanÃ© a\n"
+"dialÃ³g bude zavretÃ½.\n"
+"Program bude v rovnakom Å¡tÃ¡diu ako pred\n"
+"otvorenÃ­m dialÃ³gu."
 
 #: kab/DialogBase.cpp:57 kdeui/kkeydialog.cpp:242 kdeui/knotebook.cpp:247
 #: kdeui/kwizard.cpp:228 po/texts.cpp:36
@@ -112,12 +112,12 @@ msgstr "&OK"
 
 #: kab/DialogBase.cpp:58
 msgid "&Apply"
-msgstr "&Pou¾i»"
+msgstr "&PouÅ¾iÅ¥"
 
 #: kab/DialogBase.cpp:59 kdeui/kkeydialog.cpp:245 kdeui/knotebook.cpp:178
 #: kdeui/kwizard.cpp:159 po/texts.cpp:40
 msgid "&Cancel"
-msgstr "&Zru¹i»"
+msgstr "&ZruÅ¡iÅ¥"
 
 #: kab/PrintDialog.cpp:26
 msgid "Headline text:"
@@ -125,11 +125,11 @@ msgstr "Text titulku:"
 
 #: kab/PrintDialog.cpp:27
 msgid "Right footer text:"
-msgstr "Pravá päta:"
+msgstr "PravÃ¡ pÃ¤ta:"
 
 #: kab/PrintDialog.cpp:28
 msgid "Left footer text:"
-msgstr "¥avä päta:"
+msgstr "Ä½avÃ¤ pÃ¤ta:"
 
 #: kab/SearchDialog.cpp:47
 msgid "The title"
@@ -137,11 +137,11 @@ msgstr "Titul"
 
 #: kab/SearchDialog.cpp:48
 msgid "The first name"
-msgstr "Prvé meno"
+msgstr "PrvÃ© meno"
 
 #: kab/SearchDialog.cpp:49
 msgid "The additional name"
-msgstr "Ïal¹ie meno"
+msgstr "ÄalÅ¡ie meno"
 
 #: kab/SearchDialog.cpp:50
 msgid "The name prefix"
@@ -153,7 +153,7 @@ msgstr "Meno"
 
 #: kab/SearchDialog.cpp:52
 msgid "The formatted name"
-msgstr "Preformátované meno"
+msgstr "PreformÃ¡tovanÃ© meno"
 
 #: kab/SearchDialog.cpp:53
 msgid "The address"
@@ -165,7 +165,7 @@ msgstr "Mesto"
 
 #: kab/SearchDialog.cpp:55
 msgid "The organization"
-msgstr "Organizácia"
+msgstr "OrganizÃ¡cia"
 
 #: kab/SearchDialog.cpp:56
 msgid "The role"
@@ -173,11 +173,11 @@ msgstr "Funkcia"
 
 #: kab/SearchDialog.cpp:57
 msgid "The org unit"
-msgstr "Divízia"
+msgstr "DivÃ­zia"
 
 #: kab/SearchDialog.cpp:58
 msgid "The org subunit"
-msgstr "Poboèka divízie"
+msgstr "PoboÄka divÃ­zie"
 
 #: kab/SearchDialog.cpp:59
 msgid "The email address"
@@ -185,7 +185,7 @@ msgstr "E-mail adresa"
 
 #: kab/SearchDialog.cpp:60
 msgid "The second email address"
-msgstr "Druhá e-mail adresa"
+msgstr "DruhÃ¡ e-mail adresa"
 
 #: kab/SearchDialog.cpp:61
 msgid "The third email address"
@@ -193,27 +193,27 @@ msgstr "Tretia e-mail adresa"
 
 #: kab/SearchDialog.cpp:62
 msgid "The telephone number"
-msgstr "Telefónne èíslo"
+msgstr "TelefÃ³nne ÄÃ­slo"
 
 #: kab/SearchDialog.cpp:63
 msgid "The fax number"
-msgstr "Faxové èíslo"
+msgstr "FaxovÃ© ÄÃ­slo"
 
 #: kab/SearchDialog.cpp:64
 msgid "The modem number"
-msgstr "Modemové èíslo"
+msgstr "ModemovÃ© ÄÃ­slo"
 
 #: kab/SearchDialog.cpp:65
 msgid "The homepage URL"
-msgstr "URL domovskej stránky"
+msgstr "URL domovskej strÃ¡nky"
 
 #: kab/SearchDialog.cpp:66
 msgid "The comment"
-msgstr "Komentár"
+msgstr "KomentÃ¡r"
 
 #: kab/SearchDialog.cpp:74
 msgid "kab: Search entries"
-msgstr "kab: Hµada» polo¾ky"
+msgstr "kab: HÄ¾adaÅ¥ poloÅ¾ky"
 
 #: kab/SearchDialogMainWidget.cpp:22
 msgid "matches"
@@ -221,57 +221,57 @@ msgstr "zhoda"
 
 #: kab/SearchDialogMainWidget.cpp:23
 msgid "Use shell wildcard patterns here"
-msgstr "Pou¾i» tu divoké karty shellu"
+msgstr "PouÅ¾iÅ¥ tu divokÃ© karty shellu"
 
 #: kab/SearchDialogMainWidget.cpp:24
 msgid "Select field to match the pattern"
-msgstr "Zvoli» polo¾ky, ktoré sa majú zhodova»"
+msgstr "ZvoliÅ¥ poloÅ¾ky, ktorÃ© sa majÃº zhodovaÅ¥"
 
 #: kab/StringListEditWidget.cpp:30
 msgid "Add a new string"
-msgstr "Prida» re»azec"
+msgstr "PridaÅ¥ reÅ¥azec"
 
 #: kab/StringListEditWidget.cpp:31
 msgid "Move this string up"
-msgstr "Presunú» re»azec vy¹¹ie"
+msgstr "PresunÃºÅ¥ reÅ¥azec vyÅ¡Å¡ie"
 
 #: kab/StringListEditWidget.cpp:32
 msgid "Move this string down"
-msgstr "Presunú» re»azec ni¾¹ie"
+msgstr "PresunÃºÅ¥ reÅ¥azec niÅ¾Å¡ie"
 
 #: kab/StringListEditWidget.cpp:33
 msgid "Delete this string"
-msgstr "Zmaza» re»azec"
+msgstr "ZmazaÅ¥ reÅ¥azec"
 
 #: kab/StringListSelectAndReorderSet.cpp:34
 msgid "Possible values:"
-msgstr "Mo¾né hodnoty:"
+msgstr "MoÅ¾nÃ© hodnoty:"
 
 #: kab/StringListSelectAndReorderSet.cpp:35
 msgid "Selected values:"
-msgstr "Zvolené hodnoty:"
+msgstr "ZvolenÃ© hodnoty:"
 
 #: kdecore/kaccel.cpp:223 kfile/kfiledialog.cpp:559 kfile/kfiledialog.cpp:1219
 #: kfile/kfiledialog.cpp:1379 kfile/kfiledialog.cpp:1413 po/texts.cpp:65
 msgid "Open"
-msgstr "Otvori»"
+msgstr "OtvoriÅ¥"
 
 #: kdecore/kaccel.cpp:227
 msgid "New"
-msgstr "Novı"
+msgstr "NovÃ½"
 
 #: kab/searchresults.cc:30 kdecore/kaccel.cpp:231 po/texts.cpp:80
 msgid "Close"
-msgstr "Zavrie»"
+msgstr "ZavrieÅ¥"
 
 #: kdecore/kaccel.cpp:235 kfile/kfiledialog.cpp:1274
 #: kfile/kfiledialog.cpp:1434 po/texts.cpp:75
 msgid "Save"
-msgstr "Ulo¾i»"
+msgstr "UloÅ¾iÅ¥"
 
 #: kdecore/kaccel.cpp:239 po/texts.cpp:115
 msgid "Print"
-msgstr "Tlaèi»"
+msgstr "TlaÄiÅ¥"
 
 #: kdecore/kaccel.cpp:243 po/texts.cpp:52
 msgid "Quit"
@@ -279,35 +279,35 @@ msgstr "Koniec"
 
 #: kdecore/kaccel.cpp:247 po/texts.cpp:69
 msgid "Cut"
-msgstr "Vystrihnú»"
+msgstr "VystrihnÃºÅ¥"
 
 #: kdecore/kaccel.cpp:251 po/texts.cpp:56
 msgid "Copy"
-msgstr "Kopírova»"
+msgstr "KopÃ­rovaÅ¥"
 
 #: kdecore/kaccel.cpp:255 po/texts.cpp:58
 msgid "Paste"
-msgstr "Vlo¾i»"
+msgstr "VloÅ¾iÅ¥"
 
 #: kdecore/kaccel.cpp:259 po/texts.cpp:93
 msgid "Undo"
-msgstr "Vráti» spä»"
+msgstr "VrÃ¡tiÅ¥ spÃ¤Å¥"
 
 #: kdecore/kaccel.cpp:263 kdeui/keditcl2.cpp:103 kdeui/keditcl2.cpp:120
 #: kdeui/keditcl2.cpp:360 kdeui/keditcl2.cpp:377 kdeui/keditcl2.cpp:676
 #: kdeui/keditcl2.cpp:685 kdeui/keditcl2.cpp:786
 msgid "Find"
-msgstr "Hµada»"
+msgstr "HÄ¾adaÅ¥"
 
 #: kdecore/kaccel.cpp:267 kdeui/keditcl2.cpp:423 kdeui/keditcl2.cpp:453
 #: kdeui/keditcl2.cpp:470 kdeui/keditcl2.cpp:789 kspell/kspelldlg.cpp:110
 #: po/texts.cpp:133
 msgid "Replace"
-msgstr "Nahradi»"
+msgstr "NahradiÅ¥"
 
 #: kdecore/kaccel.cpp:271 po/texts.cpp:134
 msgid "Insert"
-msgstr "Vlo¾i»"
+msgstr "VloÅ¾iÅ¥"
 
 #: kdecore/kaccel.cpp:275 kfile/kfiledialog.cpp:131
 msgid "Home"
@@ -323,13 +323,13 @@ msgstr "Prior"
 
 #: kdecore/kaccel.cpp:287
 msgid "Next"
-msgstr "Ïal¹í"
+msgstr "ÄalÅ¡Ã­"
 
 #: kdecore/kaccel.cpp:291 kdetest/klocaletest.cpp:102 kdeui/kcolordlg.cpp:463
 #: kdeui/kcontrol.cpp:35 kfile/kfiledialog.cpp:246 kspell/ksconfig.cpp:212
 #: kspell/kspelldlg.cpp:131 po/texts.cpp:44
 msgid "Help"
-msgstr "Pomocník"
+msgstr "PomocnÃ­k"
 
 #: kdecore/kaccel.cpp:589 kdecore/kaccel.cpp:653
 msgid "SHIFT"
@@ -349,15 +349,15 @@ msgstr "&Obsah"
 
 #: kdecore/kapp.cpp:622
 msgid "&About"
-msgstr "&Informácie"
+msgstr "&InformÃ¡cie"
 
 #: kdecore/kapp.cpp:629
 msgid "About &KDE..."
-msgstr "Informácie o &KDE ..."
+msgstr "InformÃ¡cie o &KDE ..."
 
 #: kdecore/kapp.cpp:650
 msgid "About KDE"
-msgstr "Informácie o KDE"
+msgstr "InformÃ¡cie o KDE"
 
 #: kdecore/kapp.cpp:652
 msgid ""
@@ -372,13 +372,13 @@ msgid ""
 "Please report bugs at http://bugs.kde.org.\n"
 msgstr ""
 "\n"
-"KDE Desktop Environment napísal KDE tím,\n"
-"celosvetová sie» poèítaèovıch in¾inierov zaujatıch tvorbou\n"
-"voµne ¹íriteµného softvéru.\n"
+"KDE Desktop Environment napÃ­sal KDE tÃ­m,\n"
+"celosvetovÃ¡ sieÅ¥ poÄÃ­taÄovÃ½ch inÅ¾inierov zaujatÃ½ch tvorbou\n"
+"voÄ¾ne Å¡Ã­riteÄ¾nÃ©ho softvÃ©ru.\n"
 "\n"
-"Nav¹tívte http://www.kde.org pre viac informácií o KDE\n"
-"projekte. Prosím pripojte sa a podporte KDE.\n"
-"Prosím oznamujte chyby na http://bugs.kde.org.\n"
+"NavÅ¡tÃ­vte http://www.kde.org pre viac informÃ¡ciÃ­ o KDE\n"
+"projekte. ProsÃ­m pripojte sa a podporte KDE.\n"
+"ProsÃ­m oznamujte chyby na http://bugs.kde.org.\n"
 
 #: kdetest/klocaletest.cpp:100 kdeui/keditcl1.cpp:412 kdeui/keditcl1.cpp:433
 #: kdeui/keditcl1.cpp:494 kdeui/keditcl1.cpp:514 kdeui/keditcl1.cpp:1661
@@ -387,7 +387,7 @@ msgstr ""
 #: kdeui/keditcl2.cpp:473 kdeui/kmsgbox.cpp:303 kdeui/kmsgbox.cpp:319
 #: po/texts.cpp:27
 msgid "Yes"
-msgstr "Áno"
+msgstr "Ãno"
 
 #: kdetest/klocaletest.cpp:101 kdeui/keditcl1.cpp:413 kdeui/keditcl1.cpp:434
 #: kdeui/keditcl1.cpp:495 kdeui/keditcl1.cpp:515 kdeui/keditcl1.cpp:1662
@@ -407,43 +407,43 @@ msgstr "Nie"
 #: kfile/kfiledialogconf.cpp:59 kfmlib/kfm.cpp:415 kspell/kspelldlg.cpp:143
 #: po/texts.cpp:39
 msgid "Cancel"
-msgstr "Zru¹i»"
+msgstr "ZruÅ¡iÅ¥"
 
 #: kdeui/kcolordlg.cpp:285
 msgid "Select Color"
-msgstr "Vybra» farbu"
+msgstr "VybraÅ¥ farbu"
 
 #: kdeui/kcolordlg.cpp:297
 msgid "System Colors"
-msgstr "Sytémové farby"
+msgstr "SytÃ©movÃ© farby"
 
 #: kdeui/kcolordlg.cpp:328
 msgid "Custom Colors"
-msgstr "Vlastné farby"
+msgstr "VlastnÃ© farby"
 
 #: kdeui/kcolordlg.cpp:341
 msgid "Add to Custom Colors"
-msgstr "Prida» k vlastnım farbám"
+msgstr "PridaÅ¥ k vlastnÃ½m farbÃ¡m"
 
 #: kdeui/kcolordlg.cpp:789 kdeui/kcolordlg.cpp:841
 msgid "Custom..."
-msgstr "Vlastné..."
+msgstr "VlastnÃ©..."
 
 #: kdeui/kcontrol.cpp:41 kdeui/kcontrol.cpp:58 po/texts.cpp:135
 msgid "Default"
-msgstr "©tand."
+msgstr "Å tand."
 
 #: kdeui/kcontrol.cpp:47 kdeui/kcontrol.cpp:53 po/texts.cpp:41
 msgid "Apply"
-msgstr "Pou¾i»"
+msgstr "PouÅ¾iÅ¥"
 
 #: kdeui/kdatepik.cpp:102
 msgid "January"
-msgstr "Január"
+msgstr "JanuÃ¡r"
 
 #: kdeui/kdatepik.cpp:102
 msgid "February"
-msgstr "Február"
+msgstr "FebruÃ¡r"
 
 #: kdeui/kdatepik.cpp:103
 msgid "March"
@@ -451,19 +451,19 @@ msgstr "Marec"
 
 #: kdeui/kdatepik.cpp:103
 msgid "April"
-msgstr "Apríl"
+msgstr "AprÃ­l"
 
 #: kdeui/kdatepik.cpp:104 kfile/kfileinfo.cpp:225
 msgid "May"
-msgstr "Máj"
+msgstr "MÃ¡j"
 
 #: kdeui/kdatepik.cpp:104
 msgid "June"
-msgstr "Jún"
+msgstr "JÃºn"
 
 #: kdeui/kdatepik.cpp:105
 msgid "July"
-msgstr "Júl"
+msgstr "JÃºl"
 
 #: kdeui/kdatepik.cpp:105
 msgid "August"
@@ -475,7 +475,7 @@ msgstr "September"
 
 #: kdeui/kdatepik.cpp:106
 msgid "October"
-msgstr "Október"
+msgstr "OktÃ³ber"
 
 #: kdeui/kdatepik.cpp:107
 msgid "November"
@@ -487,7 +487,7 @@ msgstr "December"
 
 #: kdeui/kdatepik.cpp:247
 msgid "(invalid)"
-msgstr "(neplatnı)"
+msgstr "(neplatnÃ½)"
 
 #: kdeui/kdatetbl.cpp:49
 msgid "Sun"
@@ -507,7 +507,7 @@ msgstr "Str"
 
 #: kdeui/kdatetbl.cpp:50
 msgid "Thu"
-msgstr "©tv"
+msgstr "Å tv"
 
 #: kdeui/kdatetbl.cpp:50
 msgid "Fri"
@@ -521,32 +521,32 @@ msgstr "Sob"
 #: kdeui/keditcl1.cpp:139 kdeui/keditcl1.cpp:168 kdeui/keditcl1.cpp:189
 #: kdeui/keditcl1.cpp:202 kdeui/keditcl1.cpp:1559 po/texts.cpp:83
 msgid "Sorry"
-msgstr "Je mi µúto"
+msgstr "Je mi Ä¾Ãºto"
 
 #: kdeui/keditcl1.cpp:140
 msgid "The specified File does not exist"
-msgstr "©pecifikovanı súbor neexistuje"
+msgstr "Å pecifikovanÃ½ sÃºbor neexistuje"
 
 #: kdeui/keditcl1.cpp:153 kdeui/keditcl1.cpp:430 kdeui/keditcl1.cpp:511
 #: kdeui/keditcl1.cpp:1715
 msgid "Sorry:"
-msgstr "¥utujem:"
+msgstr "Ä½utujem:"
 
 #: kdeui/keditcl1.cpp:154
 msgid "You have specificated a directory"
-msgstr "Zadali ste prieèinok"
+msgstr "Zadali ste prieÄinok"
 
 #: kdeui/keditcl1.cpp:169 kdeui/keditcl1.cpp:190
 msgid "You do not have read permission to this file."
-msgstr "Nemáte práva na èítanie tohto súboru."
+msgstr "NemÃ¡te prÃ¡va na ÄÃ­tanie tohto sÃºboru."
 
 #: kdeui/keditcl1.cpp:203
 msgid "An Error occured while trying to open this Document"
-msgstr "Nastala chyba pri otváraní tohto dokumentu"
+msgstr "Nastala chyba pri otvÃ¡ranÃ­ tohto dokumentu"
 
 #: kdeui/keditcl1.cpp:373
 msgid "Select Document to Insert"
-msgstr "Vybra» dokument pre vlo¾enie"
+msgstr "VybraÅ¥ dokument pre vloÅ¾enie"
 
 #: kdeui/keditcl1.cpp:409 kdeui/keditcl1.cpp:491 kdeui/keditcl1.cpp:1658
 msgid "Warning:"
@@ -557,28 +557,28 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Aktuálny dokument bol zmenenı.\n"
-"Prajete si ho ulo¾i»?"
+"AktuÃ¡lny dokument bol zmenenÃ½.\n"
+"Prajete si ho uloÅ¾iÅ¥?"
 
 #: kdeui/keditcl1.cpp:431
 msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
 msgstr ""
-"Nie je mo¾né ulo¾i» dokument.\n"
-"Otvori» novı dokument aj tak?"
+"Nie je moÅ¾nÃ© uloÅ¾iÅ¥ dokument.\n"
+"OtvoriÅ¥ novÃ½ dokument aj tak?"
 
 #: kdeui/keditcl1.cpp:462
 msgid "Select Document to Open"
-msgstr "Zvoµte dokument na otvorenie"
+msgstr "ZvoÄ¾te dokument na otvorenie"
 
 #: kdeui/keditcl1.cpp:512
 msgid ""
 "Could not save the document.\n"
 "Create a new document anyways?"
 msgstr ""
-"Nemô¾em ulo¾i» dokument.\n"
-"Vytvori» aj tak novı dokument?"
+"NemÃ´Å¾em uloÅ¾iÅ¥ dokument.\n"
+"VytvoriÅ¥ aj tak novÃ½ dokument?"
 
 #: kdeui/keditcl1.cpp:547 kdeui/keditcl1.cpp:1700 kdeui/kpopmenu.cpp:10
 #: po/texts.cpp:34
@@ -587,23 +587,23 @@ msgstr "Bez mena"
 
 #: kdeui/keditcl1.cpp:1560
 msgid "Could not save the document\n"
-msgstr "Nie je mo¾né ulo¾i» dokument\n"
+msgstr "Nie je moÅ¾nÃ© uloÅ¾iÅ¥ dokument\n"
 
 #: kdeui/keditcl1.cpp:1630
 msgid "Save Document As"
-msgstr "Ulo¾i» dokument ako"
+msgstr "UloÅ¾iÅ¥ dokument ako"
 
 #: kdeui/keditcl1.cpp:1659
 msgid ""
 "A Document with this Name exists already\n"
 "Do you want to overwrite it ?"
 msgstr ""
-"Dokument s takımto menom u¾ existuje,\n"
-"prajete si ho prepísa»?"
+"Dokument s takÃ½mto menom uÅ¾ existuje,\n"
+"prajete si ho prepÃ­saÅ¥?"
 
 #: kdeui/keditcl1.cpp:1716
 msgid "You do not have write permission to this file.\n"
-msgstr "Nemáte práva na zápis do tohto súboru.\n"
+msgstr "NemÃ¡te prÃ¡va na zÃ¡pis do tohto sÃºboru.\n"
 
 #: kdeui/keditcl2.cpp:104 kdeui/keditcl2.cpp:361 kdeui/keditcl2.cpp:454
 msgid ""
@@ -611,7 +611,7 @@ msgid ""
 "Continue from the beginning?"
 msgstr ""
 "Dosiahol som koniec dokumentu.\n"
-"Pokraèova» od zaèiatku?"
+"PokraÄovaÅ¥ od zaÄiatku?"
 
 #: kdeui/keditcl2.cpp:121 kdeui/keditcl2.cpp:378 kdeui/keditcl2.cpp:424
 #: kdeui/keditcl2.cpp:471
@@ -619,16 +619,16 @@ msgid ""
 "Beginning of document reached.\n"
 "Continue from the end?"
 msgstr ""
-"Dosiahol som zaèiatok dokumentu.\n"
-"Pokraèova» od konca?"
+"Dosiahol som zaÄiatok dokumentu.\n"
+"PokraÄovaÅ¥ od konca?"
 
 #: kdeui/keditcl2.cpp:682 kdeui/keditcl2.cpp:780
 msgid "Case Sensitive"
-msgstr "Rozli¹ova» veµkos» písmen"
+msgstr "RozliÅ¡ovaÅ¥ veÄ¾kosÅ¥ pÃ­smen"
 
 #: kdeui/keditcl2.cpp:683 kdeui/keditcl2.cpp:783
 msgid "Find Backwards"
-msgstr "Hµada» odzadu"
+msgstr "HÄ¾adaÅ¥ odzadu"
 
 #: kdeui/keditcl2.cpp:688 kdeui/keditcl2.cpp:795
 msgid "Done"
@@ -636,35 +636,35 @@ msgstr "Hotovo"
 
 #: kdeui/keditcl2.cpp:768
 msgid "Find:"
-msgstr "Hµada»:"
+msgstr "HÄ¾adaÅ¥:"
 
 #: kdeui/keditcl2.cpp:778
 msgid "Replace with:"
-msgstr "Nahradi» s:"
+msgstr "NahradiÅ¥ s:"
 
 #: kdeui/keditcl2.cpp:792 kspell/kspelldlg.cpp:38
 msgid "Replace All"
-msgstr "Nahradi» v¹etko"
+msgstr "NahradiÅ¥ vÅ¡etko"
 
 #: kdeui/keditcl2.cpp:889
 msgid "Goto Line"
-msgstr "Ís» na riadok"
+msgstr "ÃsÅ¥ na riadok"
 
 #: kdeui/keditcl2.cpp:894
 msgid "Go"
-msgstr "Ís»"
+msgstr "ÃsÅ¥"
 
 #: kdeui/kfontdialog.cpp:177
 msgid "Select Font"
-msgstr "Vybra» znakovú sadu"
+msgstr "VybraÅ¥ znakovÃº sadu"
 
 #: kdeui/kfontdialog.cpp:181
 msgid "Requested Font"
-msgstr "Po¾adovaná znaková sada"
+msgstr "PoÅ¾adovanÃ¡ znakovÃ¡ sada"
 
 #: kdeui/kfontdialog.cpp:182
 msgid "Actual Font"
-msgstr "Aktuálna znaková sada"
+msgstr "AktuÃ¡lna znakovÃ¡ sada"
 
 #: kdeui/kfontdialog.cpp:202 kdeui/kfontdialog.cpp:207
 msgid "Family:"
@@ -672,53 +672,53 @@ msgstr "Rodina:"
 
 #: kdeui/kfontdialog.cpp:214 kdeui/kfontdialog.cpp:219 po/texts.cpp:26
 msgid "Charset:"
-msgstr "Kódovanie:"
+msgstr "KÃ³dovanie:"
 
 #: kdeui/kfontdialog.cpp:227 kdeui/kfontdialog.cpp:232 kfile/kpreview.cpp:196
 msgid "Size:"
-msgstr "Veµkos»:"
+msgstr "VeÄ¾kosÅ¥:"
 
 #: kdeui/kfontdialog.cpp:239 kdeui/kfontdialog.cpp:244
 msgid "Weight:"
-msgstr "Váha:"
+msgstr "VÃ¡ha:"
 
 #: kdeui/kfontdialog.cpp:251 kdeui/kfontdialog.cpp:256
 msgid "Style:"
-msgstr "©tıl:"
+msgstr "Å tÃ½l:"
 
 #: kdeui/kfontdialog.cpp:284 kfile/kfiledetaillist.cpp:38
 msgid "Size"
-msgstr "Veµkos»"
+msgstr "VeÄ¾kosÅ¥"
 
 #: kdeui/kfontdialog.cpp:322
 msgid "Weight"
-msgstr "Váha"
+msgstr "VÃ¡ha"
 
 #: kdeui/kfontdialog.cpp:325 kdeui/kfontdialog.cpp:484
 msgid "normal"
-msgstr "normálne"
+msgstr "normÃ¡lne"
 
 #: kdeui/kfontdialog.cpp:326 kdeui/kfontdialog.cpp:486
 msgid "bold"
-msgstr "tuèné"
+msgstr "tuÄnÃ©"
 
 #: kdeui/kfontdialog.cpp:336
 msgid "Style"
-msgstr "©tıl"
+msgstr "Å tÃ½l"
 
 #: kdeui/kfontdialog.cpp:339 kdeui/kfontdialog.cpp:497
 #: kdeui/kfontdialog.cpp:526
 msgid "roman"
-msgstr "rímske"
+msgstr "rÃ­mske"
 
 #: kdeui/kfontdialog.cpp:340 kdeui/kfontdialog.cpp:499
 #: kdeui/kfontdialog.cpp:524
 msgid "italic"
-msgstr "¹ikmé"
+msgstr "Å¡ikmÃ©"
 
 #: kdeui/kfontdialog.cpp:348
 msgid "Charset"
-msgstr "Kódovanie"
+msgstr "KÃ³dovanie"
 
 #: kdeui/kfontdialog.cpp:367
 msgid "Dolor Ipse"
@@ -726,11 +726,11 @@ msgstr "Dolor Ipse"
 
 #: kdeui/kfontdialog.cpp:519
 msgid "Bold"
-msgstr "Tuèné"
+msgstr "TuÄnÃ©"
 
 #: kdeui/kfontdialog.cpp:521
 msgid "Normal"
-msgstr "Normálne"
+msgstr "NormÃ¡lne"
 
 #: kdeui/kiconloaderdialog.cpp:247
 msgid "Select Icon"
@@ -742,20 +742,20 @@ msgstr "Filter:"
 
 #: kdeui/kkeydialog.cpp:219
 msgid "Configure key bindings"
-msgstr "Nastavi» klávesy"
+msgstr "NastaviÅ¥ klÃ¡vesy"
 
 #: kdeui/kkeydialog.cpp:232 kdeui/knotebook.cpp:224 kdeui/kwizard.cpp:205
 #: po/texts.cpp:45
 msgid "&Help"
-msgstr "&Pomocník"
+msgstr "&PomocnÃ­k"
 
 #: kdeui/kkeydialog.cpp:236 po/texts.cpp:136
 msgid "&Defaults"
-msgstr "&©tandardné"
+msgstr "&Å tandardnÃ©"
 
 #: kdeui/kkeydialog.cpp:320
 msgid "Current key"
-msgstr "Aktuálny kláves"
+msgstr "AktuÃ¡lny klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:332
 msgid "&Action"
@@ -763,55 +763,55 @@ msgstr "&Akcia"
 
 #: kdeui/kkeydialog.cpp:366
 msgid "Choose a key for the selected action"
-msgstr "Zvoµte kláves pre oznaèenú akciu"
+msgstr "ZvoÄ¾te klÃ¡ves pre oznaÄenÃº akciu"
 
 #: kdeui/kkeydialog.cpp:393
 msgid "&No key"
-msgstr "®iad&ny kláves"
+msgstr "Å½iad&ny klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:401
 msgid "&Default key"
-msgstr "&©tandardnı kláves"
+msgstr "&Å tandardnÃ½ klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:409
 msgid "&Custom key"
-msgstr "&Vlastnı kláves"
+msgstr "&VlastnÃ½ klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:472
 msgid "No keys defined"
-msgstr "®iadne definované klávesy"
+msgstr "Å½iadne definovanÃ© klÃ¡vesy"
 
 #: kdeui/kkeydialog.cpp:474
 msgid "Not configurable"
-msgstr "Nenastaviteµné"
+msgstr "NenastaviteÄ¾nÃ©"
 
 #: kdeui/kkeydialog.cpp:530
 msgid "Global Keys"
-msgstr "V¹eobecné klávesy"
+msgstr "VÅ¡eobecnÃ© klÃ¡vesy"
 
 #: kdeui/kkeydialog.cpp:562
 msgid "Keys"
-msgstr "Klávesy"
+msgstr "KlÃ¡vesy"
 
 #: kdeui/kkeydialog.cpp:637 kdeui/kkeydialog.cpp:976
 msgid "Attention : key already used"
-msgstr "Dôle¾ité : klávesy boli u¾ pou¾ité"
+msgstr "DÃ´leÅ¾itÃ© : klÃ¡vesy boli uÅ¾ pouÅ¾itÃ©"
 
 #: kdeui/kkeydialog.cpp:926
 msgid "Press the wanted key"
-msgstr "Stlaète po¾adovanı kláves"
+msgstr "StlaÄte poÅ¾adovanÃ½ klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:949
 msgid "Undefined key"
-msgstr "Nedefinovanı kláves"
+msgstr "NedefinovanÃ½ klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:999
 msgid "Return to end edition"
-msgstr "Spä» na koniec editácie"
+msgstr "SpÃ¤Å¥ na koniec editÃ¡cie"
 
 #: kdeui/kkeydialog.cpp:1009
 msgid "Incorrect key"
-msgstr "Nesprávny kláves"
+msgstr "NesprÃ¡vny klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:1035
 #, c-format
@@ -821,14 +821,14 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"Klávesová kombinácia %s u¾ bola alokovaná\n"
-"na globálnu akciu %s.\n"
+"KlÃ¡vesovÃ¡ kombinÃ¡cia %s uÅ¾ bola alokovanÃ¡\n"
+"na globÃ¡lnu akciu %s.\n"
 "\n"
-"Prosím zvoµte unikátnu kombináciu."
+"ProsÃ­m zvoÄ¾te unikÃ¡tnu kombinÃ¡ciu."
 
 #: kdeui/kkeydialog.cpp:1039
 msgid "Global key conflict"
-msgstr "Konflikt globálnych kláves"
+msgstr "Konflikt globÃ¡lnych klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:1062
 #, c-format
@@ -838,14 +838,14 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"Kombinácia kláves %s u¾ bola alokovaná na ¹tandardnú\n"
+"KombinÃ¡cia klÃ¡ves %s uÅ¾ bola alokovanÃ¡ na Å¡tandardnÃº\n"
 "akciu %s.\n"
 "\n"
-"Prosím zvoµte unikátnu kombináciu."
+"ProsÃ­m zvoÄ¾te unikÃ¡tnu kombinÃ¡ciu."
 
 #: kdeui/kkeydialog.cpp:1066
 msgid "Standard key conflict"
-msgstr "Konflikt ¹tandardnıch kláves"
+msgstr "Konflikt Å¡tandardnÃ½ch klÃ¡ves"
 
 #: kdeui/kkeydialog.cpp:1086
 #, c-format
@@ -855,14 +855,14 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"Kombinácia kláves %s u¾ bola alokovaná pre\n"
+"KombinÃ¡cia klÃ¡ves %s uÅ¾ bola alokovanÃ¡ pre\n"
 "akciu %s.\n"
 "\n"
-"Prosím zvoµte unikátnu kombináciu."
+"ProsÃ­m zvoÄ¾te unikÃ¡tnu kombinÃ¡ciu."
 
 #: kdeui/kkeydialog.cpp:1090
 msgid "Key conflict"
-msgstr "Konflikt kláves"
+msgstr "Konflikt klÃ¡ves"
 
 #: kdeui/kmenubar.cpp:306 kdeui/ktoolbar.cpp:860
 msgid "Top"
@@ -874,35 +874,35 @@ msgstr "Dole"
 
 #: kdeui/kmenubar.cpp:308 kdeui/ktoolbar.cpp:863
 msgid "Floating"
-msgstr "Plávajúci"
+msgstr "PlÃ¡vajÃºci"
 
 #: kdeui/kmenubar.cpp:457 kdeui/kmenubar.cpp:809 kdeui/ktoolbar.cpp:2090
 msgid "Float"
-msgstr "Plávajúci"
+msgstr "PlÃ¡vajÃºci"
 
 #: kdeui/kmenubar.cpp:761 kdeui/ktoolbar.cpp:2071
 msgid "UnFloat"
-msgstr "Pripevni»"
+msgstr "PripevniÅ¥"
 
 #: kdeui/knotebook.cpp:145
 msgid "Trying to add page when no KWizards are added!"
-msgstr "Sna¾ím sa prida» stránku, keï sa ¾iadne ïal¹ie KWizardy nepridávajú!"
+msgstr "SnaÅ¾Ã­m sa pridaÅ¥ strÃ¡nku, keÄ sa Å¾iadne ÄalÅ¡ie KWizardy nepridÃ¡vajÃº!"
 
 #: kdeui/knotebook.cpp:201 kdeui/kwizard.cpp:182
 msgid "&Default"
-msgstr "&©tandardné"
+msgstr "&Å tandardnÃ©"
 
 #: kdeui/kquickhelp.cpp:203
 msgid "Quickhelp"
-msgstr "Rıchla pomoc"
+msgstr "RÃ½chla pomoc"
 
 #: kdeui/ktoolbar.cpp:288 kdeui/ktoolbar.cpp:340
 msgid "KToolBarButton: pixmap is empty, perhaps some missing file"
-msgstr "KToolBarButton: pixmapa je prázdna, pravdepodovne chıba nejakı súbor"
+msgstr "KToolBarButton: pixmapa je prÃ¡zdna, pravdepodovne chÃ½ba nejakÃ½ sÃºbor"
 
 #: kdeui/ktoolbar.cpp:859
 msgid "Left"
-msgstr "Vµavo"
+msgstr "VÄ¾avo"
 
 #: kdeui/ktoolbar.cpp:861
 msgid "Right"
@@ -916,7 +916,7 @@ msgstr "Strana %d z %d"
 
 #: kfile/kcombiview.cpp:81
 msgid "Folders:"
-msgstr "Prieèinky:"
+msgstr "PrieÄinky:"
 
 #: kfile/kcombiview.cpp:82
 msgid "Contents:"
@@ -928,19 +928,19 @@ msgstr "<!-- Needitujte tento subor -->"
 
 #: kab/addressbook.cc:1112 kfile/kfiledetaillist.cpp:36
 msgid "Name"
-msgstr "Názov"
+msgstr "NÃ¡zov"
 
 #: kfile/kfiledetaillist.cpp:40
 msgid "Permissions"
-msgstr "Prístupové práva"
+msgstr "PrÃ­stupovÃ© prÃ¡va"
 
 #: kfile/kfiledetaillist.cpp:42
 msgid "Date"
-msgstr "Dátum"
+msgstr "DÃ¡tum"
 
 #: kfile/kfiledetaillist.cpp:45
 msgid "Owner"
-msgstr "Vlastník"
+msgstr "VlastnÃ­k"
 
 #: kfile/kfiledetaillist.cpp:47
 msgid "Group"
@@ -948,7 +948,7 @@ msgstr "Skupina"
 
 #: kfile/kfiledialog.cpp:122 po/texts.cpp:55
 msgid "Back"
-msgstr "Spä»"
+msgstr "SpÃ¤Å¥"
 
 #: kfile/kfiledialog.cpp:125
 msgid "Forward"
@@ -956,27 +956,27 @@ msgstr "Vpred"
 
 #: kfile/kfiledialog.cpp:128
 msgid "Up to parent"
-msgstr "Naspä» na rodièa"
+msgstr "NaspÃ¤Å¥ na rodiÄa"
 
 #: kfile/kfiledialog.cpp:134 po/texts.cpp:54
 msgid "Reload"
-msgstr "Nahra» znovu"
+msgstr "NahraÅ¥ znovu"
 
 #: kfile/kfiledialog.cpp:156
 msgid "Bookmarks"
-msgstr "Zálo¾ky"
+msgstr "ZÃ¡loÅ¾ky"
 
 #: kfile/kfiledialog.cpp:160
 msgid "Create new folder"
-msgstr "Vytvori» novı prieèinok"
+msgstr "VytvoriÅ¥ novÃ½ prieÄinok"
 
 #: kfile/kfiledialog.cpp:163
 msgid "Search for a file"
-msgstr "Hµada» súbor"
+msgstr "HÄ¾adaÅ¥ sÃºbor"
 
 #: kfile/kfiledialog.cpp:166
 msgid "Configure this dialog [development only]"
-msgstr "Nastavi» tento dialóg [iba pre vıvoj]"
+msgstr "NastaviÅ¥ tento dialÃ³g [iba pre vÃ½voj]"
 
 #: kfile/kfiledialog.cpp:174
 msgid "The path"
@@ -992,79 +992,79 @@ msgstr "&Filter:"
 
 #: kfile/kfiledialog.cpp:226
 msgid "Show hidden"
-msgstr "Ukáza» skryté"
+msgstr "UkÃ¡zaÅ¥ skrytÃ©"
 
 #: kfile/kfiledialog.cpp:505
 msgid "Error: Not local file"
-msgstr "Chyba:Nie je miestny súbor"
+msgstr "Chyba:Nie je miestny sÃºbor"
 
 #: kfile/kfiledialog.cpp:506
 msgid ""
 "The specified directory is not a local directory\n"
 "But the application accepts just local files."
 msgstr ""
-"Vybranı prieèinok nie je miestny\n"
-"a aplikácia akceptuje iba lokálne súbory."
+"VybranÃ½ prieÄinok nie je miestny\n"
+"a aplikÃ¡cia akceptuje iba lokÃ¡lne sÃºbory."
 
 #: kfile/kfiledialog.cpp:520 kfile/kfiledialog.cpp:625
 msgid "Error: Cannot Open Directory"
-msgstr "Chyba: Nemô¾em otvori» prieèinok"
+msgstr "Chyba: NemÃ´Å¾em otvoriÅ¥ prieÄinok"
 
 #: kfile/kfiledialog.cpp:521
 msgid ""
 "The specified directory does not exist\n"
 "or was not readable."
 msgstr ""
-"©pecifikovanı prieèinok neexistuje\n"
-"alebo sa nedá preèíta»"
+"Å pecifikovanÃ½ prieÄinok neexistuje\n"
+"alebo sa nedÃ¡ preÄÃ­taÅ¥"
 
 #: kfile/kfiledialog.cpp:523 kfile/kfiledialog.cpp:628
 msgid "Dismiss"
-msgstr "Zru¹i»"
+msgstr "ZruÅ¡iÅ¥"
 
 #: kfile/kfiledialog.cpp:574 kfile/kfiledialog.cpp:1394 po/texts.cpp:77
 msgid "Save As"
-msgstr "Ulo¾i» ako"
+msgstr "UloÅ¾iÅ¥ ako"
 
 #: kfile/kfiledialog.cpp:597
 msgid "Root Directory"
-msgstr "Koreòovı prieèinok"
+msgstr "KoreÅˆovÃ½ prieÄinok"
 
 #: kfile/kfiledialog.cpp:626
 msgid "The specified directory does not exist or was not readable."
-msgstr "©pecifikovanı prieèinok neexistuje alebo sa nedá preèíta»."
+msgstr "Å pecifikovanÃ½ prieÄinok neexistuje alebo sa nedÃ¡ preÄÃ­taÅ¥."
 
 #: kfile/kfiledialog.cpp:887
 msgid "Create new directory in: "
-msgstr "Vytvori» novı prieèinok v:"
+msgstr "VytvoriÅ¥ novÃ½ prieÄinok v:"
 
 #: kfile/kfiledialog.cpp:890
 msgid "New Directory"
-msgstr "Novı prieèinok"
+msgstr "NovÃ½ prieÄinok"
 
 #: kfile/kfiledialog.cpp:962
 msgid "Add to bookmarks"
-msgstr "Prida» k zálo¾kám"
+msgstr "PridaÅ¥ k zÃ¡loÅ¾kÃ¡m"
 
 #: kfile/kfiledialog.cpp:1253
 msgid "Choose Directory"
-msgstr "Vybra» prieèinok"
+msgstr "VybraÅ¥ prieÄinok"
 
 #: kfile/kfiledialog.cpp:1321
 msgid "directory"
-msgstr "prieèinok"
+msgstr "prieÄinok"
 
 #: kfile/kfiledialog.cpp:1323
 msgid "directories"
-msgstr "prieèinky"
+msgstr "prieÄinky"
 
 #: kfile/kfiledialog.cpp:1325 kfile/kpreview.cpp:326
 msgid "file"
-msgstr "do súboru"
+msgstr "do sÃºboru"
 
 #: kfile/kfiledialog.cpp:1327
 msgid "files"
-msgstr "súbory"
+msgstr "sÃºbory"
 
 # , c-format
 #: kfile/kfiledialog.cpp:1329
@@ -1074,16 +1074,16 @@ msgstr "%d %s a %d %s"
 
 #: kfile/kfiledialog.cpp:1339
 msgid "one directory"
-msgstr "prieèinok"
+msgstr "prieÄinok"
 
 #: kfile/kfiledialog.cpp:1341
 #, c-format
 msgid "%d directories"
-msgstr "%d prieèinkov"
+msgstr "%d prieÄinkov"
 
 #: kfile/kfiledialogconf.cpp:42
 msgid "Look and Feel"
-msgstr "Vzhµad a tvar"
+msgstr "VzhÄ¾ad a tvar"
 
 #: kfile/kfiledialogconf.cpp:44
 msgid ""
@@ -1098,73 +1098,73 @@ msgid ""
 "Mario Weilguni <mweilguni@sime.com>\n"
 "and Martin Jones <mjones@kde.org>"
 msgstr ""
-"KDE Voliè súborov napísali:\n"
+"KDE VoliÄ sÃºborov napÃ­sali:\n"
 "\n"
 "Richard Moore <rich@kde.org>,\n"
 "Stephan Kulow <coolo@kde.org>\n"
 "a Daniel Grana\n"
 "<grana@ie.iwi.unibe.ch>.\n"
 "\n"
-"s prispením \n"
+"s prispenÃ­m \n"
 "\n"
 "Mario Weilguni <mweilguni@sime.com>\n"
 "a Martin Jones <mjones@kde.org>"
 
 #: kfile/kfiledialogconf.cpp:57 po/texts.cpp:32
 msgid "About"
-msgstr "Informácie"
+msgstr "InformÃ¡cie"
 
 #: kfile/kfiledialogconf.cpp:71
 msgid "View style"
-msgstr "©tıl pohµadu"
+msgstr "Å tÃ½l pohÄ¾adu"
 
 #: kfile/kfiledialogconf.cpp:75
 msgid "Show Short View"
-msgstr "Ukáza» krátky náhµad"
+msgstr "UkÃ¡zaÅ¥ krÃ¡tky nÃ¡hÄ¾ad"
 
 #: kfile/kfiledialogconf.cpp:81
 msgid "Show Detail View"
-msgstr "Ukáza» detailnı náhµad"
+msgstr "UkÃ¡zaÅ¥ detailnÃ½ nÃ¡hÄ¾ad"
 
 #: kfile/kfiledialogconf.cpp:90
 msgid "Misc"
-msgstr "Rozlièné"
+msgstr "RozliÄnÃ©"
 
 #: kfile/kfiledialogconf.cpp:96
 msgid "Show Filter"
-msgstr "Ukáza» filter:"
+msgstr "UkÃ¡zaÅ¥ filter:"
 
 #: kfile/kfiledialogconf.cpp:102
 msgid "Show List Labels"
-msgstr "Ukáza» nálepky"
+msgstr "UkÃ¡zaÅ¥ nÃ¡lepky"
 
 #: kfile/kfiledialogconf.cpp:108
 msgid "Show Hidden"
-msgstr "Ukáza» skryté"
+msgstr "UkÃ¡zaÅ¥ skrytÃ©"
 
 #: kfile/kfiledialogconf.cpp:114
 msgid "Show Status Line"
-msgstr "Ukáza» stavovı riadok"
+msgstr "UkÃ¡zaÅ¥ stavovÃ½ riadok"
 
 #: kfile/kfiledialogconf.cpp:120
 msgid "Use single Click"
-msgstr "Pou¾i» jeden klik"
+msgstr "PouÅ¾iÅ¥ jeden klik"
 
 #: kfile/kfiledialogconf.cpp:126
 msgid "Mix dirs and files"
-msgstr "Zmie¹a» prieèinky a súbory"
+msgstr "ZmieÅ¡aÅ¥ prieÄinky a sÃºbory"
 
 #: kfile/kfiledialogconf.cpp:132
 msgid "Keep dirs first"
-msgstr "Prieèinky najprv"
+msgstr "PrieÄinky najprv"
 
 #: kfile/kfilefilter.cpp:35
 msgid "*|All Files"
-msgstr "*|V¹etky súbory"
+msgstr "*|VÅ¡etky sÃºbory"
 
 #: kfile/kfileinfo.cpp:97 kfile/kfileinfo.cpp:101
 msgid "unknown"
-msgstr "neznáme"
+msgstr "neznÃ¡me"
 
 #: kfile/kfileinfo.cpp:221
 msgid "Jan"
@@ -1184,11 +1184,11 @@ msgstr "Apr"
 
 #: kfile/kfileinfo.cpp:226
 msgid "Jun"
-msgstr "Jún"
+msgstr "JÃºn"
 
 #: kfile/kfileinfo.cpp:227
 msgid "Jul"
-msgstr "Júl"
+msgstr "JÃºl"
 
 #: kfile/kfileinfo.cpp:228
 msgid "Aug"
@@ -1216,11 +1216,11 @@ msgstr "Meno:"
 
 #: kfile/kpreview.cpp:205
 msgid "Date:"
-msgstr "Dátum:"
+msgstr "DÃ¡tum:"
 
 #: kfile/kpreview.cpp:214
 msgid "Owner:"
-msgstr "Vlastník:"
+msgstr "VlastnÃ­k:"
 
 #: kfile/kpreview.cpp:223
 msgid "Group:"
@@ -1232,15 +1232,15 @@ msgstr "Typ:"
 
 #: kfile/kpreview.cpp:287
 msgid "locked"
-msgstr "uzamknutı"
+msgstr "uzamknutÃ½"
 
 #: kfile/kpreview.cpp:311
 msgid "picture"
-msgstr "obrázok"
+msgstr "obrÃ¡zok"
 
 #: kfile/kpreview.cpp:343
 msgid "folder"
-msgstr "prieèinok"
+msgstr "prieÄinok"
 
 # , c-format
 #: kfmlib/kfm.cpp:197
@@ -1249,8 +1249,8 @@ msgid ""
 "You dont have the file %s\n"
 "Could not do Authorization"
 msgstr ""
-"Nemáte súbor %s.\n"
-"Nemô¾em autorizova»."
+"NemÃ¡te sÃºbor %s.\n"
+"NemÃ´Å¾em autorizovaÅ¥."
 
 #: kfmlib/kfm.cpp:200 kfmlib/kfm.cpp:210
 msgid "KFM Error"
@@ -1263,24 +1263,24 @@ msgid ""
 "The file %s is corrupted\n"
 "Could not do Authorization"
 msgstr ""
-"Súbor %s je po¹kodenı.\n"
-"Nemô¾em autorizova»."
+"SÃºbor %s je poÅ¡kodenÃ½.\n"
+"NemÃ´Å¾em autorizovaÅ¥."
 
 #: kspell/ksconfig.cpp:66
 msgid "Create Root/Affix combinations not in the dictionary"
-msgstr "Vytvori» Root/Affix kombinácie, ktoré nie sú v slovníku"
+msgstr "VytvoriÅ¥ Root/Affix kombinÃ¡cie, ktorÃ© nie sÃº v slovnÃ­ku"
 
 #: kspell/ksconfig.cpp:75
 msgid "Consider run-together words as spelling errors"
-msgstr "Pova¾ova» spojené slová za chyby"
+msgstr "PovaÅ¾ovaÅ¥ spojenÃ© slovÃ¡ za chyby"
 
 #: kspell/ksconfig.cpp:92
 msgid "Dictionary"
-msgstr "Slovník"
+msgstr "SlovnÃ­k"
 
 #: kspell/ksconfig.cpp:140
 msgid "Encoding:"
-msgstr "Kódovanie:"
+msgstr "KÃ³dovanie:"
 
 #: kspell/ksconfig.cpp:147
 msgid "Latin1"
@@ -1292,51 +1292,51 @@ msgstr "7-Bit/ASCII"
 
 #: kspell/ksconfig.cpp:292
 msgid "English"
-msgstr "Anglickı"
+msgstr "AnglickÃ½"
 
 #: kspell/ksconfig.cpp:298
 msgid "Spanish"
-msgstr "©panielsky"
+msgstr "Å panielsky"
 
 #: kspell/ksconfig.cpp:304
 msgid "German"
-msgstr "Nemeckı"
+msgstr "NemeckÃ½"
 
 #: kspell/ksconfig.cpp:311
 msgid "Brazilian Portuguese"
-msgstr "Brazílsko-portugalskı"
+msgstr "BrazÃ­lsko-portugalskÃ½"
 
 #: kspell/ksconfig.cpp:317
 msgid "Unknown"
-msgstr "Neznámy"
+msgstr "NeznÃ¡my"
 
 #: kspell/ksconfig.cpp:348
 msgid "ISpell Default"
-msgstr "ISpell ©tand."
+msgstr "ISpell Å tand."
 
 #: kspell/kspelldlg.cpp:58
 msgid "Misspelled Word:"
-msgstr "Chybné slovo:"
+msgstr "ChybnÃ© slovo:"
 
 #: kspell/kspelldlg.cpp:68
 msgid "Replacement:"
-msgstr "Náhrada:"
+msgstr "NÃ¡hrada:"
 
 #: kspell/kspelldlg.cpp:77
 msgid "Suggestions:"
-msgstr "Odporúèania:"
+msgstr "OdporÃºÄania:"
 
 #: kspell/kspelldlg.cpp:88
 msgid "Ignore"
-msgstr "Ignorova»"
+msgstr "IgnorovaÅ¥"
 
 #: kspell/kspelldlg.cpp:99
 msgid "Ignore All"
-msgstr "Ignorova» v¹etky"
+msgstr "IgnorovaÅ¥ vÅ¡etky"
 
 #: kspell/kspelldlg.cpp:120 po/texts.cpp:86
 msgid "Add"
-msgstr "Prida»"
+msgstr "PridaÅ¥"
 
 #: kspell/kspelldlg.cpp:166 po/texts.cpp:100
 msgid "Stop"
@@ -1350,7 +1350,7 @@ msgstr "Chyba"
 
 #: po/texts.cpp:25
 msgid "Malformed URL"
-msgstr "URL má chybnı formát"
+msgstr "URL mÃ¡ chybnÃ½ formÃ¡t"
 
 #: po/texts.cpp:29
 msgid "Warning"
@@ -1358,7 +1358,7 @@ msgstr "Varovanie"
 
 #: po/texts.cpp:30
 msgid "Save a file"
-msgstr "Ulo¾i» súbor"
+msgstr "UloÅ¾iÅ¥ sÃºbor"
 
 #: po/texts.cpp:31
 msgid "Contents"
@@ -1366,43 +1366,43 @@ msgstr "Obsah"
 
 #: po/texts.cpp:33
 msgid "A&bout..."
-msgstr "&Informácie..."
+msgstr "&InformÃ¡cie..."
 
 #: po/texts.cpp:37
 msgid "On"
-msgstr "Zapnú»"
+msgstr "ZapnÃºÅ¥"
 
 #: po/texts.cpp:38
 msgid "Off"
-msgstr "Vypnú»"
+msgstr "VypnÃºÅ¥"
 
 #: po/texts.cpp:42
 msgid "File"
-msgstr "Súbor"
+msgstr "SÃºbor"
 
 #: po/texts.cpp:43
 msgid "&File"
-msgstr "&Súbor"
+msgstr "&SÃºbor"
 
 #: po/texts.cpp:46
 msgid "Edit"
-msgstr "Upravi»"
+msgstr "UpraviÅ¥"
 
 #: po/texts.cpp:47
 msgid "&Edit"
-msgstr "&Upravi»"
+msgstr "&UpraviÅ¥"
 
 #: po/texts.cpp:48
 msgid "&Options"
-msgstr "&Mo¾nosti"
+msgstr "&MoÅ¾nosti"
 
 #: po/texts.cpp:49
 msgid "View"
-msgstr "Pozrie»"
+msgstr "PozrieÅ¥"
 
 #: po/texts.cpp:50
 msgid "&View"
-msgstr "&Zobrazi»"
+msgstr "&ZobraziÅ¥"
 
 #: po/texts.cpp:51
 msgid "E&xit"
@@ -1414,55 +1414,55 @@ msgstr "&Koniec"
 
 #: po/texts.cpp:57
 msgid "&Copy"
-msgstr "&Kopírova»"
+msgstr "&KopÃ­rovaÅ¥"
 
 #: po/texts.cpp:59
 msgid "&Paste"
-msgstr "V&lo¾i»"
+msgstr "V&loÅ¾iÅ¥"
 
 #: po/texts.cpp:60
 msgid "&New Window..."
-msgstr "&Nové okno..."
+msgstr "&NovÃ© okno..."
 
 #: po/texts.cpp:61
 msgid "New &Window..."
-msgstr "Nové &okno..."
+msgstr "NovÃ© &okno..."
 
 #: po/texts.cpp:62
 msgid "&New Window"
-msgstr "&Nové okno"
+msgstr "&NovÃ© okno"
 
 #: po/texts.cpp:63
 msgid "New Game"
-msgstr "Nová hra"
+msgstr "NovÃ¡ hra"
 
 #: po/texts.cpp:64
 msgid "&New Game"
-msgstr "&Nová hra"
+msgstr "&NovÃ¡ hra"
 
 #: po/texts.cpp:66
 msgid "Open a file"
-msgstr "Otvori» súbor"
+msgstr "OtvoriÅ¥ sÃºbor"
 
 #: po/texts.cpp:67
 msgid "Open..."
-msgstr "Otvori»..."
+msgstr "OtvoriÅ¥..."
 
 #: po/texts.cpp:68
 msgid "&Open..."
-msgstr "&Otvori» ..."
+msgstr "&OtvoriÅ¥ ..."
 
 #: po/texts.cpp:70
 msgid "&Cut"
-msgstr "V&ystrihnú»"
+msgstr "V&ystrihnÃºÅ¥"
 
 #: po/texts.cpp:71
 msgid "C&ut"
-msgstr "Vystri&hnú»"
+msgstr "Vystri&hnÃºÅ¥"
 
 #: po/texts.cpp:72
 msgid "Font"
-msgstr "Znaková sada"
+msgstr "ZnakovÃ¡ sada"
 
 #: po/texts.cpp:73
 msgid "&Foreground Color"
@@ -1474,23 +1474,23 @@ msgstr "Farba &pozadia"
 
 #: po/texts.cpp:76
 msgid "&Save"
-msgstr "&Ulo¾"
+msgstr "&UloÅ¾"
 
 #: po/texts.cpp:78
 msgid "Save as..."
-msgstr "Ulo¾i» ako..."
+msgstr "UloÅ¾iÅ¥ ako..."
 
 #: po/texts.cpp:79
 msgid "S&ave as..."
-msgstr "Ulo¾i» &ako"
+msgstr "UloÅ¾iÅ¥ &ako"
 
 #: po/texts.cpp:81
 msgid "&Close"
-msgstr "&Zavrie»"
+msgstr "&ZavrieÅ¥"
 
 #: po/texts.cpp:82
 msgid "&Print..."
-msgstr "&Tlaèi» ..."
+msgstr "&TlaÄiÅ¥ ..."
 
 #: po/texts.cpp:84
 msgid "Options"
@@ -1498,43 +1498,43 @@ msgstr "Nastavenie"
 
 #: po/texts.cpp:85
 msgid "Remove"
-msgstr "Odstráni»"
+msgstr "OdstrÃ¡niÅ¥"
 
 #: po/texts.cpp:87
 msgid "Change"
-msgstr "Zmeni»"
+msgstr "ZmeniÅ¥"
 
 #: po/texts.cpp:88
 msgid "Delete"
-msgstr "Zmaza»"
+msgstr "ZmazaÅ¥"
 
 #: po/texts.cpp:89
 msgid "&Delete"
-msgstr "&Zmaza»"
+msgstr "&ZmazaÅ¥"
 
 #: po/texts.cpp:90
 msgid "Clear"
-msgstr "Zmaza»"
+msgstr "ZmazaÅ¥"
 
 #: po/texts.cpp:91
 msgid "Italic"
-msgstr "©ikmé"
+msgstr "Å ikmÃ©"
 
 #: po/texts.cpp:92
 msgid "Roman"
-msgstr "Rímske"
+msgstr "RÃ­mske"
 
 #: po/texts.cpp:94
 msgid "&Undo"
-msgstr "&Vráti» spä»"
+msgstr "&VrÃ¡tiÅ¥ spÃ¤Å¥"
 
 #: po/texts.cpp:95
 msgid "Redo"
-msgstr "Opakova» vrátené"
+msgstr "OpakovaÅ¥ vrÃ¡tenÃ©"
 
 #: po/texts.cpp:96
 msgid "&Redo"
-msgstr "Opakova» v&rátené"
+msgstr "OpakovaÅ¥ v&rÃ¡tenÃ©"
 
 #: po/texts.cpp:97
 msgid "&Game"
@@ -1542,15 +1542,15 @@ msgstr "&Hra"
 
 #: po/texts.cpp:98
 msgid "Information"
-msgstr "Informácie"
+msgstr "InformÃ¡cie"
 
 #: po/texts.cpp:99
 msgid "Browse..."
-msgstr "Listova»..."
+msgstr "ListovaÅ¥..."
 
 #: po/texts.cpp:101
 msgid "&Remove"
-msgstr "Z&ru¹i»"
+msgstr "Z&ruÅ¡iÅ¥"
 
 #: po/texts.cpp:102
 msgid "&Properties..."
@@ -1562,23 +1562,23 @@ msgstr "Vlastnosti"
 
 #: po/texts.cpp:104
 msgid "&Start"
-msgstr "©t&art"
+msgstr "Å t&art"
 
 #: po/texts.cpp:105
 msgid "St&op"
-msgstr "Zas&tavi»"
+msgstr "Zas&taviÅ¥"
 
 #: po/texts.cpp:106
 msgid "Miscellaneous"
-msgstr "Rôzne"
+msgstr "RÃ´zne"
 
 #: po/texts.cpp:107
 msgid "Font Size"
-msgstr "Veµkos» fontu"
+msgstr "VeÄ¾kosÅ¥ fontu"
 
 #: po/texts.cpp:108
 msgid "Fonts"
-msgstr "Písma"
+msgstr "PÃ­sma"
 
 #: po/texts.cpp:109
 msgid "&Fonts"
@@ -1586,15 +1586,15 @@ msgstr "&Fonty"
 
 #: po/texts.cpp:110
 msgid "&Reload"
-msgstr "O&bnovi»"
+msgstr "O&bnoviÅ¥"
 
 #: po/texts.cpp:111
 msgid "Files"
-msgstr "Súbory"
+msgstr "SÃºbory"
 
 #: kab/widget.cc:1390 kab/widget.cc:1432 po/texts.cpp:112
 msgid "Continue"
-msgstr "Pokraèova»"
+msgstr "PokraÄovaÅ¥"
 
 #: po/texts.cpp:113
 msgid "Restore"
@@ -1602,7 +1602,7 @@ msgstr "Obnovenie"
 
 #: po/texts.cpp:114
 msgid "Appearance"
-msgstr "Vzhµad"
+msgstr "VzhÄ¾ad"
 
 #: po/texts.cpp:116
 msgid "Monday"
@@ -1618,7 +1618,7 @@ msgstr "Streda"
 
 #: po/texts.cpp:119
 msgid "Thursday"
-msgstr "©tvrtok"
+msgstr "Å tvrtok"
 
 #: po/texts.cpp:120
 msgid "Friday"
@@ -1630,11 +1630,11 @@ msgstr "Sobota"
 
 #: po/texts.cpp:122
 msgid "Sunday"
-msgstr "Nedeµa"
+msgstr "NedeÄ¾a"
 
 #: po/texts.cpp:123
 msgid "&Update"
-msgstr "Akt&ualizova»"
+msgstr "Akt&ualizovaÅ¥"
 
 #: po/texts.cpp:124
 msgid "Layout"
@@ -1642,27 +1642,27 @@ msgstr "Rozmiestnenie"
 
 #: po/texts.cpp:125
 msgid "Highscore"
-msgstr "©tatistika"
+msgstr "Å tatistika"
 
 #: po/texts.cpp:126
 msgid "&New View"
-msgstr "&Nové zobrazenie"
+msgstr "&NovÃ© zobrazenie"
 
 #: po/texts.cpp:127
 msgid "&Insert"
-msgstr "&Vlo¾i»"
+msgstr "&VloÅ¾iÅ¥"
 
 #: po/texts.cpp:130
 msgid "&Next >>"
-msgstr "Ï&al¹í >>"
+msgstr "Ä&alÅ¡Ã­ >>"
 
 #: po/texts.cpp:131
 msgid "<< &Previous"
-msgstr "<< &Predchádzajúci"
+msgstr "<< &PredchÃ¡dzajÃºci"
 
 #: po/texts.cpp:138
 msgid "&About..."
-msgstr "&Informácie..."
+msgstr "&InformÃ¡cie..."
 
 #: kab/addressbook.cc:90
 msgid ""
@@ -1671,14 +1671,14 @@ msgid ""
 "The program will try to create\n"
 "         "
 msgstr ""
-"Prieèinok, kde sa ukladajú dáta ¹pecifické pre\n"
-"daného u¾ívateµa v aplikácii kniha adries neexistuje.\n"
-"Program sa pokúsi vytvori»\n"
+"PrieÄinok, kde sa ukladajÃº dÃ¡ta Å¡pecifickÃ© pre\n"
+"danÃ©ho uÅ¾Ã­vateÄ¾a v aplikÃ¡cii kniha adries neexistuje.\n"
+"Program sa pokÃºsi vytvoriÅ¥\n"
 "         "
 
 #: kab/addressbook.cc:94
 msgid "and store all local files in this directory."
-msgstr "a uklada» v¹etky lokálne súbory do tohto prieèinku."
+msgstr "a ukladaÅ¥ vÅ¡etky lokÃ¡lne sÃºbory do tohto prieÄinku."
 
 #: kab/addressbook.cc:98
 msgid ""
@@ -1688,94 +1688,94 @@ msgid ""
 "in your home directory. Run the KDE filemanager\n"
 "kfm once to automatically create it."
 msgstr ""
-"Prieèinok nemohol by» vytvorenı.\n"
-"Pravdepodobne ste nepou¾ívali predtım KDE, tak¾e\n"
-"nemáte lokálny \".kde\" prieèinok vo va¹om domovskom\n"
-"prieèinku. Prosím spustite raz kfm, aby sa automaticky\n"
+"PrieÄinok nemohol byÅ¥ vytvorenÃ½.\n"
+"Pravdepodobne ste nepouÅ¾Ã­vali predtÃ½m KDE, takÅ¾e\n"
+"nemÃ¡te lokÃ¡lny \".kde\" prieÄinok vo vaÅ¡om domovskom\n"
+"prieÄinku. ProsÃ­m spustite raz kfm, aby sa automaticky\n"
 "vytvoril."
 
 #: kab/addressbook.cc:106
 msgid "The directory has been created.\n"
-msgstr "Prieèinok bol vytvorenı.\n"
+msgstr "PrieÄinok bol vytvorenÃ½.\n"
 
 #: kab/addressbook.cc:140
 msgid "No addressbook database file, creating new one."
-msgstr "Nemáte databázovı súbor knihy adries, vytváram ho."
+msgstr "NemÃ¡te databÃ¡zovÃ½ sÃºbor knihy adries, vytvÃ¡ram ho."
 
 #: kab/addressbook.cc:159
 msgid "Tried to load database for creating backup, but failed"
-msgstr "Sna¾il som sa naèíta» databázu na vytvorenie zálohy, ale zlyhal som"
+msgstr "SnaÅ¾il som sa naÄÃ­taÅ¥ databÃ¡zu na vytvorenie zÃ¡lohy, ale zlyhal som"
 
 #: kab/addressbook.cc:194
 msgid "Unable to save to backup file."
-msgstr "Nemô¾em ulo¾i» súbor so zálohou."
+msgstr "NemÃ´Å¾em uloÅ¾iÅ¥ sÃºbor so zÃ¡lohou."
 
 #: kab/addressbook.cc:200
 msgid "Unable to reset filename after creating backup."
-msgstr "Nemô¾em resetnú» meno súboru po vytvorení zálohy."
+msgstr "NemÃ´Å¾em resetnÃºÅ¥ meno sÃºboru po vytvorenÃ­ zÃ¡lohy."
 
 #: kab/addressbook.cc:205
 msgid "Unable to create backup file"
-msgstr "Nemô¾em vytvori» zálo¾nı súbor."
+msgstr "NemÃ´Å¾em vytvoriÅ¥ zÃ¡loÅ¾nÃ½ sÃºbor."
 
 #: kab/addressbook.cc:263
 msgid "Unable to insert \""
-msgstr "Nemô¾em vlo¾i» \""
+msgstr "NemÃ´Å¾em vloÅ¾iÅ¥ \""
 
 #: kab/addressbook.cc:264
 msgid "\" into configuration section (ignored)."
-msgstr "\" do konfiguraènej sekcie (ignorované)."
+msgstr "\" do konfiguraÄnej sekcie (ignorovanÃ©)."
 
 #: kab/addressbook.cc:666
 msgid "Unable to add a new entry with available key."
-msgstr "Nemô¾em prida» novú polo¾ku s dostupnım kµúèom."
+msgstr "NemÃ´Å¾em pridaÅ¥ novÃº poloÅ¾ku s dostupnÃ½m kÄ¾ÃºÄom."
 
 #: kab/addressbook.cc:672
 msgid "Cannot find previously created section."
-msgstr "Nemô¾em nájs» u¾ vytvorenú sekciu."
+msgstr "NemÃ´Å¾em nÃ¡jsÅ¥ uÅ¾ vytvorenÃº sekciu."
 
 #: kab/addressbook.cc:703
 msgid "Unable to create key-value-map for entry."
-msgstr "Nemô¾em vytvori» kµúè-hodnota-mapa pre polo¾ku."
+msgstr "NemÃ´Å¾em vytvoriÅ¥ kÄ¾ÃºÄ-hodnota-mapa pre poloÅ¾ku."
 
 #: kab/addressbook.cc:989
 msgid "entry without name"
-msgstr "polo¾ka bez mena"
+msgstr "poloÅ¾ka bez mena"
 
 #: kab/addressbook.cc:1007
 msgid ""
 "Unable to create new database file (probably permission denied), exiting."
 msgstr ""
-"Nemô¾em vytvori» novı databázovı súbor (pravdepodobne nemám práva), "
-"odchádzam."
+"NemÃ´Å¾em vytvoriÅ¥ novÃ½ databÃ¡zovÃ½ sÃºbor (pravdepodobne nemÃ¡m prÃ¡va), "
+"odchÃ¡dzam."
 
 #: kab/addressbook.cc:1013
 msgid "Cannot create configuration section, exiting."
-msgstr "Nemô¾em vytvori» konfiguraènú sekciu, odchádzam."
+msgstr "NemÃ´Å¾em vytvoriÅ¥ konfiguraÄnÃº sekciu, odchÃ¡dzam."
 
 #: kab/addressbook.cc:1018
 msgid "Cannot create entries section, exiting."
-msgstr "Nemô¾em vytvori» sekciu s polo¾kami, odchádzam."
+msgstr "NemÃ´Å¾em vytvoriÅ¥ sekciu s poloÅ¾kami, odchÃ¡dzam."
 
 #: kab/addressbook.cc:1023
 msgid "Unable to find previously created section, exiting."
-msgstr "Nemô¾em nájs» u¾ vytvorenú sekciu, odchádzam."
+msgstr "NemÃ´Å¾em nÃ¡jsÅ¥ uÅ¾ vytvorenÃº sekciu, odchÃ¡dzam."
 
 #: kab/addressbook.cc:1031
 msgid "Cannot save newly created database."
-msgstr "Nemô¾em ulo¾i» novovytvorenú databázu."
+msgstr "NemÃ´Å¾em uloÅ¾iÅ¥ novovytvorenÃº databÃ¡zu."
 
 #: kab/addressbook.cc:1037
 msgid "Cannot erase database contents."
-msgstr "Nemô¾em zmaza» obsah databázy."
+msgstr "NemÃ´Å¾em zmazaÅ¥ obsah databÃ¡zy."
 
 #: kab/addressbook.cc:1116
 msgid "First name"
-msgstr "Prvé meno"
+msgstr "PrvÃ© meno"
 
 #: kab/addressbook.cc:1120
 msgid "Additional name"
-msgstr "Ïal¹ie mená"
+msgstr "ÄalÅ¡ie menÃ¡"
 
 #: kab/addressbook.cc:1124
 msgid "Name prefix"
@@ -1783,23 +1783,23 @@ msgstr "Prefix mena"
 
 #: kab/addressbook.cc:1128
 msgid "Formatted name"
-msgstr "Preformátované meno"
+msgstr "PreformÃ¡tovanÃ© meno"
 
 #: kab/addressbook.cc:1132
 msgid "Comment"
-msgstr "Komentár"
+msgstr "KomentÃ¡r"
 
 #: kab/addressbook.cc:1136
 msgid "Organization"
-msgstr "Organizácia"
+msgstr "OrganizÃ¡cia"
 
 #: kab/addressbook.cc:1140
 msgid "Unit"
-msgstr "Zlo¾ka"
+msgstr "ZloÅ¾ka"
 
 #: kab/addressbook.cc:1144
 msgid "Subunit"
-msgstr "Podzlo¾ka"
+msgstr "PodzloÅ¾ka"
 
 #: kab/addressbook.cc:1148
 msgid "Title"
@@ -1819,7 +1819,7 @@ msgstr "Adresa pre talk"
 
 #: kab/addressbook.cc:1164
 msgid "Delivery label"
-msgstr "Menovka doruèenia"
+msgstr "Menovka doruÄenia"
 
 #: kab/addressbook.cc:1168
 msgid "Email address"
@@ -1827,7 +1827,7 @@ msgstr "E-mail adresa"
 
 #: kab/addressbook.cc:1172
 msgid "Second email address"
-msgstr "Druhá e-mail adresa"
+msgstr "DruhÃ¡ e-mail adresa"
 
 #: kab/addressbook.cc:1176
 msgid "Third email address"
@@ -1847,27 +1847,27 @@ msgstr "Mesto"
 
 #: kab/addressbook.cc:1192
 msgid "Telephone"
-msgstr "Telefón"
+msgstr "TelefÃ³n"
 
 #: kab/addressbook.cc:1196
 msgid "Fax number"
-msgstr "Faxové èíslo"
+msgstr "FaxovÃ© ÄÃ­slo"
 
 #: kab/addressbook.cc:1200
 msgid "Modem number"
-msgstr "Èíslo na modem"
+msgstr "ÄŒÃ­slo na modem"
 
 #: kab/addressbook.cc:1204
 msgid "Homepage URL"
-msgstr "URL dom. stránky"
+msgstr "URL dom. strÃ¡nky"
 
 #: kab/addressbook.cc:1208
 msgid "Zip/postal code"
-msgstr "PSÈ/po¹tovı kód"
+msgstr "PSÄŒ/poÅ¡tovÃ½ kÃ³d"
 
 #: kab/addressbook.cc:1212
 msgid "State/province"
-msgstr "©tát/provincia"
+msgstr "Å tÃ¡t/provincia"
 
 #: kab/addressbook.cc:1216
 msgid "Country"
@@ -1875,15 +1875,15 @@ msgstr "Krajina"
 
 #: kab/addressbook.cc:1383
 msgid "(unnamed entry)"
-msgstr "(nepomenovaná polo¾ka)"
+msgstr "(nepomenovanÃ¡ poloÅ¾ka)"
 
 #: kab/datepickerdialog.cc:34
 msgid "Select birthday"
-msgstr "Deò narodenia.."
+msgstr "DeÅˆ narodenia.."
 
 #: kab/editentry.cc:38
 msgid "Edit the current entry"
-msgstr "Editova» aktuálnu polo¾ku"
+msgstr "EditovaÅ¥ aktuÃ¡lnu poloÅ¾ku"
 
 #: kab/editentry.cc:61
 msgid "Title:"
@@ -1891,15 +1891,15 @@ msgstr "Titul:"
 
 #: kab/editentry.cc:62
 msgid "First name:"
-msgstr "Prvé meno:"
+msgstr "PrvÃ© meno:"
 
 #: kab/editentry.cc:63
 msgid "Additional Name:"
-msgstr "Ïal¹ie meno:"
+msgstr "ÄalÅ¡ie meno:"
 
 #: kab/editentry.cc:65
 msgid "Formatted Name:"
-msgstr "Preformátované meno:"
+msgstr "PreformÃ¡tovanÃ© meno:"
 
 #: kab/editentry.cc:88
 msgid "&Name"
@@ -1915,15 +1915,15 @@ msgstr "Obec/Mesto:"
 
 #: kab/editentry.cc:105
 msgid "State:"
-msgstr "©tát:"
+msgstr "Å tÃ¡t:"
 
 #: kab/editentry.cc:106
 msgid "Zip/Postal Code:"
-msgstr "PSÈ/po¹tovı kód:"
+msgstr "PSÄŒ/poÅ¡tovÃ½ kÃ³d:"
 
 #: kab/editentry.cc:107
 msgid "Country:"
-msgstr "©tát:"
+msgstr "Å tÃ¡t:"
 
 #: kab/editentry.cc:130
 msgid "&Address"
@@ -1931,7 +1931,7 @@ msgstr "&Adresa"
 
 #: kab/editentry.cc:145
 msgid "Organization:"
-msgstr "Organizácia:"
+msgstr "OrganizÃ¡cia:"
 
 #: kab/editentry.cc:146
 msgid "Department:"
@@ -1943,15 +1943,15 @@ msgstr "Sub-Oddelenie:"
 
 #: kab/editentry.cc:148
 msgid "Job/Role:"
-msgstr "Práca/Funkcia:"
+msgstr "PrÃ¡ca/Funkcia:"
 
 #: kab/editentry.cc:169
 msgid "&Organization"
-msgstr "&Organizácia"
+msgstr "&OrganizÃ¡cia"
 
 #: kab/editentry.cc:184
 msgid "Telephone:"
-msgstr "Telefón:"
+msgstr "TelefÃ³n:"
 
 #: kab/editentry.cc:185
 msgid "Fax:"
@@ -1963,15 +1963,15 @@ msgstr "Modem"
 
 #: kab/editentry.cc:187
 msgid "Homepage (URL):"
-msgstr "Dom. stránka:"
+msgstr "Dom. strÃ¡nka:"
 
 #: kab/editentry.cc:200 kab/editentry.cc:418
 msgid "Edit email addresses"
-msgstr "Editova» e-mail adresy"
+msgstr "EditovaÅ¥ e-mail adresy"
 
 #: kab/editentry.cc:206 kab/editentry.cc:400
 msgid "Edit talk addresses"
-msgstr "Editova» talk adresy"
+msgstr "EditovaÅ¥ talk adresy"
 
 #: kab/editentry.cc:218
 msgid "&Contact"
@@ -1979,7 +1979,7 @@ msgstr "&Kontakt"
 
 #: kab/editentry.cc:239
 msgid "Additional Comment:"
-msgstr "Ïal¹ie komentáre:"
+msgstr "ÄalÅ¡ie komentÃ¡re:"
 
 #: kab/editentry.cc:246
 msgid "Birthday:"
@@ -1987,23 +1987,23 @@ msgstr "Narodeniny:"
 
 #: kab/editentry.cc:249
 msgid "Double click to set date"
-msgstr "Dvojklik na nastavenie dátumu"
+msgstr "Dvojklik na nastavenie dÃ¡tumu"
 
 #: kab/editentry.cc:256
 msgid "O&thers"
-msgstr "Os&tatné"
+msgstr "Os&tatnÃ©"
 
 #: kab/kabapi.cc:138
 msgid "Your new entry could not be added."
-msgstr "Va¹a nová polo¾ka nemohla by» pridaná."
+msgstr "VaÅ¡a novÃ¡ poloÅ¾ka nemohla byÅ¥ pridanÃ¡."
 
 #: kab/searchresults.cc:33
 msgid "search results"
-msgstr "vısledky hµadania"
+msgstr "vÃ½sledky hÄ¾adania"
 
 #: kab/widget.cc:144
 msgid "Conversion problem"
-msgstr "Problém konverzie"
+msgstr "ProblÃ©m konverzie"
 
 #: kab/widget.cc:145
 msgid ""
@@ -2012,22 +2012,22 @@ msgid ""
 "You can use it, but not all features will be\n"
 "supported."
 msgstr ""
-"Kab nemohol skonvertova» va¹u databázu do\n"
-"súèasného formátu.\n"
-"Mô¾ete ju pou¾íva», ale nebudú podporované\n"
-"v¹etky mo¾nosti."
+"Kab nemohol skonvertovaÅ¥ vaÅ¡u databÃ¡zu do\n"
+"sÃºÄasnÃ©ho formÃ¡tu.\n"
+"MÃ´Å¾ete ju pouÅ¾Ã­vaÅ¥, ale nebudÃº podporovanÃ©\n"
+"vÅ¡etky moÅ¾nosti."
 
 #: kab/widget.cc:163
 msgid ""
 "The application saved the last current entry,\n"
 "but this entry does not exist anymore."
 msgstr ""
-"Aplikácia ulo¾ila poslednú aktuálnu polo¾ku,\n"
-"ale táto polo¾ka u¾ neexistuje."
+"AplikÃ¡cia uloÅ¾ila poslednÃº aktuÃ¡lnu poloÅ¾ku,\n"
+"ale tÃ¡to poloÅ¾ka uÅ¾ neexistuje."
 
 #: kab/widget.cc:229
 msgid "kab: Removed bug warning"
-msgstr "kab: Zmazané varovanie o chybe"
+msgstr "kab: ZmazanÃ© varovanie o chybe"
 
 #: kab/widget.cc:230
 msgid ""
@@ -2038,20 +2038,20 @@ msgid ""
 "All configuration values have been reset to\n"
 "its default settings."
 msgstr ""
-"Verzia kab ktorú ste pou¾ívali predtım mala\n"
-"chybu vz»ahujúcu sa na upgrade databázy pre\n"
-"nové verzie. Táto chyba bola zru¹ená a u¾ vás\n"
+"Verzia kab ktorÃº ste pouÅ¾Ã­vali predtÃ½m mala\n"
+"chybu vzÅ¥ahujÃºcu sa na upgrade databÃ¡zy pre\n"
+"novÃ© verzie. TÃ¡to chyba bola zruÅ¡enÃ¡ a uÅ¾ vÃ¡s\n"
 "nezasiahne.\n"
-"V¹etky konfiguraèné mo¾nosti boli nastavené\n"
-"na ¹tandardné hodnoty."
+"VÅ¡etky konfiguraÄnÃ© moÅ¾nosti boli nastavenÃ©\n"
+"na Å¡tandardnÃ© hodnoty."
 
 #: kab/widget.cc:248 kab/widget.cc:314 kab/widget.cc:322
 msgid "File handling error"
-msgstr "Chyba pri práci so súbormi"
+msgstr "Chyba pri prÃ¡ci so sÃºbormi"
 
 #: kab/widget.cc:249
 msgid "Unable to open database file r/w."
-msgstr "Nemô¾em otvori» databázovı súbor r/w."
+msgstr "NemÃ´Å¾em otvoriÅ¥ databÃ¡zovÃ½ sÃºbor r/w."
 
 #: kab/widget.cc:257
 msgid "Email storage conversion"
@@ -2063,122 +2063,122 @@ msgid ""
 "the new style supporting unlimited numbers\n"
 "of email addresses per entry."
 msgstr ""
-"Kab skonvertuje v¹etky va¹e emailové adresy\n"
-"do nového formátu podporujúceho nekoneènı\n"
-"poèet adries na polo¾ku."
+"Kab skonvertuje vÅ¡etky vaÅ¡e emailovÃ© adresy\n"
+"do novÃ©ho formÃ¡tu podporujÃºceho nekoneÄnÃ½\n"
+"poÄet adries na poloÅ¾ku."
 
 #: kab/widget.cc:291
 msgid "kab database update"
-msgstr "obnovenie databázy kab"
+msgstr "obnovenie databÃ¡zy kab"
 
 #: kab/widget.cc:292
 msgid ""
 "Please note that kab now supports some new\n"
 "fields in its addresses. These new fields\n"
 "are:\n"
-"° the state field,\n"
-"° the country field and\n"
-"° the postal code field.\n"
+"Â° the state field,\n"
+"Â° the country field and\n"
+"Â° the postal code field.\n"
 "You will probably need to edit some of your\n"
 "entries to make use of it."
 msgstr ""
-"Prosím nezabudnite, ¾e kab teraz podporuje\n"
-"aj niektoré nové polo¾ky v adresách. Sú\n"
+"ProsÃ­m nezabudnite, Å¾e kab teraz podporuje\n"
+"aj niektorÃ© novÃ© poloÅ¾ky v adresÃ¡ch. SÃº\n"
 "to :\n"
-"° ¹tát,\n"
-"° krajina a\n"
-"° PSÈ/po¹tovı kód.\n"
-"Asi budete musie» zmeni» niektoré polo¾ky,\n"
-"aby ste to vyu¾ili."
+"Â° Å¡tÃ¡t,\n"
+"Â° krajina a\n"
+"Â° PSÄŒ/poÅ¡tovÃ½ kÃ³d.\n"
+"Asi budete musieÅ¥ zmeniÅ¥ niektorÃ© poloÅ¾ky,\n"
+"aby ste to vyuÅ¾ili."
 
 #: kab/widget.cc:315
 msgid "Could not save database after update."
-msgstr "Nie je mo¾né ulo¾i» databázu po zmene."
+msgstr "Nie je moÅ¾nÃ© uloÅ¾iÅ¥ databÃ¡zu po zmene."
 
 #: kab/widget.cc:323
 msgid "Unable to reopen database file r/o."
-msgstr "Nemô¾em otvori» databázovı súbor r/o."
+msgstr "NemÃ´Å¾em otvoriÅ¥ databÃ¡zovÃ½ sÃºbor r/o."
 
 #: kab/widget.cc:482
 msgid "first entry"
-msgstr "prvá polo¾ka"
+msgstr "prvÃ¡ poloÅ¾ka"
 
 #: kab/widget.cc:483
 msgid "previous entry"
-msgstr "predchádzajúca polo¾ka"
+msgstr "predchÃ¡dzajÃºca poloÅ¾ka"
 
 #: kab/widget.cc:484
 msgid "next entry"
-msgstr "nasledujúca polo¾ka"
+msgstr "nasledujÃºca poloÅ¾ka"
 
 #: kab/widget.cc:485
 msgid "last entry"
-msgstr "posledná polo¾ka"
+msgstr "poslednÃ¡ poloÅ¾ka"
 
 #: kab/widget.cc:486
 msgid "search entries"
-msgstr "hµada» polo¾ky"
+msgstr "hÄ¾adaÅ¥ poloÅ¾ky"
 
 #: kab/widget.cc:487
 msgid "add a new entry"
-msgstr "prida» polo¾ku"
+msgstr "pridaÅ¥ poloÅ¾ku"
 
 #: kab/widget.cc:488
 msgid "change this entry"
-msgstr "zmeni» polo¾ku"
+msgstr "zmeniÅ¥ poloÅ¾ku"
 
 #: kab/widget.cc:489
 msgid "remove this entry"
-msgstr "zmaza» polo¾ku"
+msgstr "zmazaÅ¥ poloÅ¾ku"
 
 #: kab/widget.cc:528
 msgid "Switched to first entry."
-msgstr "Prepnutı na prvú polo¾ku."
+msgstr "PrepnutÃ½ na prvÃº poloÅ¾ku."
 
 #: kab/widget.cc:560
 msgid "Switched to last entry."
-msgstr "Prepnutı na poslednú polo¾ku."
+msgstr "PrepnutÃ½ na poslednÃº poloÅ¾ku."
 
 #: kab/widget.cc:621 kab/widget.cc:678 kab/widget.cc:860 kab/widget.cc:922
 msgid "Sorry, file changed."
-msgstr "Prepáète, súbor sa zmenil."
+msgstr "PrepÃ¡Äte, sÃºbor sa zmenil."
 
 #: kab/widget.cc:625 kab/widget.cc:682 kab/widget.cc:926
 msgid "Permission denied."
-msgstr "Prístup zamietnutı."
+msgstr "PrÃ­stup zamietnutÃ½."
 
 #: kab/widget.cc:636
 msgid "Remove entry?"
-msgstr "Odstráni» polo¾ku?"
+msgstr "OdstrÃ¡niÅ¥ poloÅ¾ku?"
 
 #: kab/widget.cc:637
 msgid "Really remove this entry?"
-msgstr "Skutoène chcete vymaza» túto polo¾ku?"
+msgstr "SkutoÄne chcete vymazaÅ¥ tÃºto poloÅ¾ku?"
 
 #: kab/widget.cc:655
 msgid "Entry deleted."
-msgstr "Polo¾ka vymazaná."
+msgstr "PoloÅ¾ka vymazanÃ¡."
 
 #: kab/widget.cc:694
 msgid "Added a new entry."
-msgstr "Pridal som novú polo¾ku."
+msgstr "Pridal som novÃº poloÅ¾ku."
 
 #: kab/widget.cc:821
 msgid "Opened browser window."
-msgstr "Okno prehliadaèa otvorené."
+msgstr "Okno prehliadaÄa otvorenÃ©."
 
 #: kab/widget.cc:824
 msgid "No URL."
-msgstr "®iadne URL."
+msgstr "Å½iadne URL."
 
 #: kab/widget.cc:828 kab/widget.cc:997 kab/widget.cc:1176 kab/widget.cc:1813
 #: kab/widget.cc:2003 kab/widget.cc:2087
 msgid "No entries."
-msgstr "®iadne polo¾ky."
+msgstr "Å½iadne poloÅ¾ky."
 
 #: kab/widget.cc:833
 msgid "The filemanager is busy, please try again."
-msgstr "Súborovı mana¾ér je zaneprázdnenı, prosím skúste znova."
+msgstr "SÃºborovÃ½ manaÅ¾Ã©r je zaneprÃ¡zdnenÃ½, prosÃ­m skÃºste znova."
 
 #: kab/widget.cc:853
 msgid ""
@@ -2186,21 +2186,21 @@ msgid ""
 "locked by another application.\n"
 "kab cannot save it."
 msgstr ""
-"Súbor knihy adries je momentálne\n"
-"zamknutı inou aplikáciou.\n"
-"kab ho nemô¾e ulo¾i»."
+"SÃºbor knihy adries je momentÃ¡lne\n"
+"zamknutÃ½ inou aplikÃ¡ciou.\n"
+"kab ho nemÃ´Å¾e uloÅ¾iÅ¥."
 
 #: kab/widget.cc:870
 msgid "Database saved successfully."
-msgstr "Databáza úspe¹ne ulo¾ená."
+msgstr "DatabÃ¡za ÃºspeÅ¡ne uloÅ¾enÃ¡."
 
 #: kab/widget.cc:875
 msgid "kab: File error"
-msgstr "kab: Chyba súboru"
+msgstr "kab: Chyba sÃºboru"
 
 #: kab/widget.cc:875
 msgid "Could not save database."
-msgstr "Nie je mo¾né ulo¾i» databázu."
+msgstr "Nie je moÅ¾nÃ© uloÅ¾iÅ¥ databÃ¡zu."
 
 #: kab/widget.cc:876
 msgid "&Retry"
@@ -2208,48 +2208,48 @@ msgstr "&Znova"
 
 #: kab/widget.cc:876
 msgid "&Ignore"
-msgstr "&Ignorova»"
+msgstr "&IgnorovaÅ¥"
 
 #: kab/widget.cc:879
 msgid "Saving cancelled.\n"
-msgstr "Ukladanie zru¹ené.\n"
+msgstr "Ukladanie zruÅ¡enÃ©.\n"
 
 #: kab/widget.cc:945
 msgid "Entry changed."
-msgstr "Polo¾ka sa zmenila."
+msgstr "PoloÅ¾ka sa zmenila."
 
 #: kab/widget.cc:1041
 msgid "Results"
-msgstr "Vısledky"
+msgstr "VÃ½sledky"
 
 #: kab/widget.cc:1041
 msgid "No entry matches this."
-msgstr "®iadna polo¾ka nevyhovuje."
+msgstr "Å½iadna poloÅ¾ka nevyhovuje."
 
 #: kab/widget.cc:1050 kab/widget.cc:1720 kab/widget.cc:1855 kab/widget.cc:2032
 #: kab/widget.cc:2055 kab/widget.cc:2112
 msgid "Rejected."
-msgstr "Odopreté."
+msgstr "OdopretÃ©."
 
 #: kab/widget.cc:1066
 msgid "Search results window closed."
-msgstr "Uzavreté okno vısledkov hµadania."
+msgstr "UzavretÃ© okno vÃ½sledkov hÄ¾adania."
 
 #: kab/widget.cc:1165
 msgid "The talk command must be configured before!"
-msgstr "Najprv musíte nastavi» talk príkaz !"
+msgstr "Najprv musÃ­te nastaviÅ¥ talk prÃ­kaz !"
 
 #: kab/widget.cc:1170
 msgid "Talk configuration"
-msgstr "Konfigurácia talku"
+msgstr "KonfigurÃ¡cia talku"
 
 #: kab/widget.cc:1171
 msgid "Please configure the parameters for the talk command."
-msgstr "Prosím nastavte parametre pre príkaz talk."
+msgstr "ProsÃ­m nastavte parametre pre prÃ­kaz talk."
 
 #: kab/widget.cc:1184
 msgid "No talk address."
-msgstr "®iadna talk adresa."
+msgstr "Å½iadna talk adresa."
 
 #: kab/widget.cc:1192
 msgid "kab: Talk addresses"
@@ -2257,47 +2257,47 @@ msgstr "kab: talk adresy"
 
 #: kab/widget.cc:1193
 msgid "Available talk addresses:"
-msgstr "Dostupné talk adresy:"
+msgstr "DostupnÃ© talk adresy:"
 
 #: kab/widget.cc:1199 kab/widget.cc:1963
 msgid "Cancelled."
-msgstr "Zru¹ené."
+msgstr "ZruÅ¡enÃ©."
 
 #: kab/widget.cc:1222
 msgid "The talk command parameters are wrong."
-msgstr "Parametre príkazu talk sú zlé."
+msgstr "Parametre prÃ­kazu talk sÃº zlÃ©."
 
 #: kab/widget.cc:1234
 msgid ""
 "Talk command failed.\n"
 "Make sure you did setup your talk command and parameter!"
 msgstr ""
-"Talk príkaz zlyhal.\n"
-"Prosím uistite sa, ¾e ste ho správne nastavili !"
+"Talk prÃ­kaz zlyhal.\n"
+"ProsÃ­m uistite sa, Å¾e ste ho sprÃ¡vne nastavili !"
 
 #: kab/widget.cc:1237
 msgid "Talk program started."
-msgstr "Talk program spustenı."
+msgstr "Talk program spustenÃ½."
 
 #: kab/widget.cc:1285
 msgid "Attention: printing is still experimental!"
-msgstr "Varovanie: tlaè je stále experimentálna !"
+msgstr "Varovanie: tlaÄ je stÃ¡le experimentÃ¡lna !"
 
 #: kab/widget.cc:1387 kab/widget.cc:1429
 msgid "Page size problem"
-msgstr "Problém s veµkos»ou strany"
+msgstr "ProblÃ©m s veÄ¾kosÅ¥ou strany"
 
 #: kab/widget.cc:1388 kab/widget.cc:1430
 msgid ""
 "The fields you requested to print do\n"
 "not fit into the page width."
 msgstr ""
-"Polo¾ky, ktoré ste chceli vytlaèi»\n"
-"sa nezmestia na ¹írku strany."
+"PoloÅ¾ky, ktorÃ© ste chceli vytlaÄiÅ¥\n"
+"sa nezmestia na Å¡Ã­rku strany."
 
 #: kab/widget.cc:1624 kab/widget.cc:2066
 msgid "Printing finished successfully."
-msgstr "Tlaè skonèila úspe¹ne."
+msgstr "TlaÄ skonÄila ÃºspeÅ¡ne."
 
 #: kab/widget.cc:1651
 msgid "kab: Email addresses"
@@ -2305,15 +2305,15 @@ msgstr "kab: email adresy"
 
 #: kab/widget.cc:1652
 msgid "Available email addresses:"
-msgstr "Dostupné e-mail adresy:"
+msgstr "DostupnÃ© e-mail adresy:"
 
 #: kab/widget.cc:1717
 msgid "kab: Select fields to copy"
-msgstr "kab: Zvoµte polo¾ky na skopírovanie"
+msgstr "kab: ZvoÄ¾te poloÅ¾ky na skopÃ­rovanie"
 
 #: kab/widget.cc:1727
 msgid "Nothing selected."
-msgstr "Niè nie je zvolené."
+msgstr "NiÄ nie je zvolenÃ©."
 
 #: kab/widget.cc:1785 kab/widget.cc:2049
 msgid "KDE addressbook overview"
@@ -2325,11 +2325,11 @@ msgstr "Meno-Email-Odkaz (!!)"
 
 #: kab/widget.cc:1831
 msgid "Select table columns"
-msgstr "Vybra» ståpce tabuµky"
+msgstr "VybraÅ¥ stÄºpce tabuÄ¾ky"
 
 #: kab/widget.cc:1836
 msgid "Nothing to export."
-msgstr "Nemám èo exportnú»."
+msgstr "NemÃ¡m Äo exportnÃºÅ¥."
 
 #: kab/widget.cc:1865
 msgid "Email link"
@@ -2337,27 +2337,27 @@ msgstr "Email odkaz"
 
 #: kab/widget.cc:1952
 msgid "Could not find the users home directory."
-msgstr "Nemô¾em nájs» domovskı prieèinok u¾ívateµa."
+msgstr "NemÃ´Å¾em nÃ¡jsÅ¥ domovskÃ½ prieÄinok uÅ¾Ã­vateÄ¾a."
 
 #: kab/widget.cc:1953
 msgid "Intern error!"
-msgstr "Interná chyba!"
+msgstr "InternÃ¡ chyba!"
 
 #: kab/widget.cc:1973
 msgid "Could not open the file to create the HTML table."
-msgstr "Nemô¾em otvori» súbor, aby som vytvoril HTML tabuµku."
+msgstr "NemÃ´Å¾em otvoriÅ¥ sÃºbor, aby som vytvoril HTML tabuÄ¾ku."
 
 #: kab/widget.cc:2009
 msgid "Printing cancelled."
-msgstr "Tlaè zru¹ená."
+msgstr "TlaÄ zruÅ¡enÃ¡."
 
 #: kab/widget.cc:2025
 msgid "kab: Select columns for printing"
-msgstr "kab: Zvoµte ståpce pre tlaè"
+msgstr "kab: ZvoÄ¾te stÄºpce pre tlaÄ"
 
 #: kab/widget.cc:2038
 msgid "Nothing to print."
-msgstr "Nemám èo tlaèi»."
+msgstr "NemÃ¡m Äo tlaÄiÅ¥."
 
 #: kab/widget.cc:2050
 msgid "Page <p>"
@@ -2365,74 +2365,74 @@ msgstr "Strana <p>"
 
 #: kab/widget.cc:2051
 msgid "KDE - the professionals choice."
-msgstr "KDE - voµba profesionálov."
+msgstr "KDE - voÄ¾ba profesionÃ¡lov."
 
 #: kab/widget.cc:2064
 msgid "Printing failed!"
-msgstr "Tlaè zlyhala!"
+msgstr "TlaÄ zlyhala!"
 
 #: kab/widget.cc:2095
 msgid "Empty email address."
-msgstr "Prázdna e-mail adresa."
+msgstr "PrÃ¡zdna e-mail adresa."
 
 #: kab/widget.cc:2114
 msgid "No email address."
-msgstr "®iadna talk adresa."
+msgstr "Å½iadna talk adresa."
 
 #: kab/widget.cc:2124
 msgid "Error calling mailer."
-msgstr "Chyba spú¹»ania maileru."
+msgstr "Chyba spÃºÅ¡Å¥ania maileru."
 
 #: kab/widget.cc:2126
 msgid "Mailer called."
-msgstr "Mailer spustenı."
+msgstr "Mailer spustenÃ½."
 
 #: kab/widget.cc:2149
 msgid "The mail command must be configured before!"
-msgstr "Najprv musíte nastavi» príkaz pre mail!"
+msgstr "Najprv musÃ­te nastaviÅ¥ prÃ­kaz pre mail!"
 
 #: kab/widget.cc:2155
 msgid "Mail configuration"
-msgstr "Konfigurácia mailu"
+msgstr "KonfigurÃ¡cia mailu"
 
 #: kab/widget.cc:2156
 msgid "Please configure the parameters for the email command."
-msgstr "Prosím nastavte parametre pre e-mail príkaz."
+msgstr "ProsÃ­m nastavte parametre pre e-mail prÃ­kaz."
 
 #: kab/widget.cc:2194
 msgid "The email command parameters are wrong."
-msgstr "Parametre e-mail príkazu sú zlé."
+msgstr "Parametre e-mail prÃ­kazu sÃº zlÃ©."
 
 #: kab/widget.cc:2206
 msgid ""
 "Email command failed.\n"
 "Make sure you did setup your email command and parameter!"
 msgstr ""
-"Email príkaz zlyhal.\n"
-"Uistite sa, ¾e ste nastavili vá¹ email príkaz a parametre!"
+"Email prÃ­kaz zlyhal.\n"
+"Uistite sa, Å¾e ste nastavili vÃ¡Å¡ email prÃ­kaz a parametre!"
 
 #: kab/widget.cc:2210
 msgid "Mail program started."
-msgstr "Mail program spustenı."
+msgstr "Mail program spustenÃ½."
 
 #~ msgid "KIO Cache"
-#~ msgstr "KIO ke¹"
+#~ msgstr "KIO keÅ¡"
 
 #~ msgid "Contents of the cache"
-#~ msgstr "Obsah ke¹e"
+#~ msgstr "Obsah keÅ¡e"
 
 #~ msgid ""
 #~ "Use the icons for drag and drop actions, since they refer to the cache files "
 #~ "on your hard disk, while you should use the textual links for browsing"
 #~ msgstr ""
-#~ "Pou¾ite ikonky pre akcie »ahaj a pusti, preto¾e odkazujú na ke¹ové súbory na "
-#~ "va¹om hard disku, zatiaµèo by ste mali pou¾íva» textové odkazy na prehl."
+#~ "PouÅ¾ite ikonky pre akcie Å¥ahaj a pusti, pretoÅ¾e odkazujÃº na keÅ¡ovÃ© sÃºbory na "
+#~ "vaÅ¡om hard disku, zatiaÄ¾Äo by ste mali pouÅ¾Ã­vaÅ¥ textovÃ© odkazy na prehl."
 
 #~ msgid "Creation Date"
-#~ msgstr "Dátum vytvorenia"
+#~ msgstr "DÃ¡tum vytvorenia"
 
 #~ msgid "Expiration Date"
-#~ msgstr "Dátum expirácie"
+#~ msgstr "DÃ¡tum expirÃ¡cie"
 
 #~ msgid "Never"
 #~ msgstr "Nikdy"
@@ -2441,21 +2441,21 @@ msgstr "Mail program spustenı."
 #~ "Could not read\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em èíta»\n"
+#~ "NemÃ´Å¾em ÄÃ­taÅ¥\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not write to\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em zapisova» do\n"
+#~ "NemÃ´Å¾em zapisovaÅ¥ do\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not start process\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em spusti» proces\n"
+#~ "NemÃ´Å¾em spustiÅ¥ proces\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2464,8 +2464,8 @@ msgstr "Mail program spustenı."
 #~ "\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Interná chyba\n"
-#~ "Prosím po¹lite kompletnı popis chyby na kde-bugs@kde.org\n"
+#~ "InternÃ¡ chyba\n"
+#~ "ProsÃ­m poÅ¡lite kompletnÃ½ popis chyby na kde-bugs@kde.org\n"
 #~ "\n"
 #~ "%s"
 
@@ -2473,7 +2473,7 @@ msgstr "Mail program spustenı."
 #~ "Malformed URL\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Chybnı formát URL\n"
+#~ "ChybnÃ½ formÃ¡t URL\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2481,7 +2481,7 @@ msgstr "Mail program spustenı."
 #~ " is not supported"
 #~ msgstr ""
 #~ "Protokol %s\n"
-#~ " nie je podporovanı"
+#~ " nie je podporovanÃ½"
 
 #~ msgid ""
 #~ "The protocol %s\n"
@@ -2494,7 +2494,7 @@ msgstr "Mail program spustenı."
 #~ "Unsupported action\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nepodporovaná akcia\n"
+#~ "NepodporovanÃ¡ akcia\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2502,7 +2502,7 @@ msgstr "Mail program spustenı."
 #~ "%s\n"
 #~ "does not exist"
 #~ msgstr ""
-#~ "Tento súbor alebo prieèinok\n"
+#~ "Tento sÃºbor alebo prieÄinok\n"
 #~ "%s\n"
 #~ "neexistuje"
 
@@ -2512,14 +2512,14 @@ msgstr "Mail program spustenı."
 #~ "but a file was expected"
 #~ msgstr ""
 #~ "%s\n"
-#~ " je prieèinok,\n"
-#~ "ale oèakával som súbor"
+#~ " je prieÄinok,\n"
+#~ "ale oÄakÃ¡val som sÃºbor"
 
 #~ msgid ""
 #~ "Could not make directory\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em vytvori» prieèinok\n"
+#~ "NemÃ´Å¾em vytvoriÅ¥ prieÄinok\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2527,23 +2527,23 @@ msgstr "Mail program spustenı."
 #~ "%s\n"
 #~ "does already exist"
 #~ msgstr ""
-#~ "Súbor alebo prieèinok\n"
+#~ "SÃºbor alebo prieÄinok\n"
 #~ "%s\n"
-#~ "u¾ existuje"
+#~ "uÅ¾ existuje"
 
 #~ msgid ""
 #~ "%s\n"
 #~ "Access denied"
 #~ msgstr ""
 #~ "%s\n"
-#~ "Prístup zamietnutı"
+#~ "PrÃ­stup zamietnutÃ½"
 
 #~ msgid ""
 #~ "Could not enter directory\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em vojs» do prieèinka\n"
-#~ "%sNemô¾em vstúpi» do prieèinku\n"
+#~ "NemÃ´Å¾em vojsÅ¥ do prieÄinka\n"
+#~ "%sNemÃ´Å¾em vstÃºpiÅ¥ do prieÄinku\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2551,20 +2551,20 @@ msgstr "Mail program spustenı."
 #~ "does not implement a directory service"
 #~ msgstr ""
 #~ "Protokol %s\n"
-#~ "neimplementuje adresárovú slu¾bu"
+#~ "neimplementuje adresÃ¡rovÃº sluÅ¾bu"
 
 #~ msgid ""
 #~ "Found a cyclic link in\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Na¹iel som zacyklenı odkaz v\n"
+#~ "NaÅ¡iel som zacyklenÃ½ odkaz v\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not change permissions for\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em zmeni» práva pre\n"
+#~ "NemÃ´Å¾em zmeniÅ¥ prÃ¡va pre\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2572,43 +2572,43 @@ msgstr "Mail program spustenı."
 #~ "Could not write to\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Prísutp zamietnutı\n"
-#~ "Nemô¾em zapisova» do\n"
+#~ "PrÃ­sutp zamietnutÃ½\n"
+#~ "NemÃ´Å¾em zapisovaÅ¥ do\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Action has been\n"
 #~ "canceled by the user"
 #~ msgstr ""
-#~ "Akcia bola zru¹ená\n"
-#~ "u¾ívateµom"
+#~ "Akcia bola zruÅ¡enÃ¡\n"
+#~ "uÅ¾Ã­vateÄ¾om"
 
 #~ msgid ""
 #~ "Found a cyclic link while copying\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Na¹iel som zacyklenı odkaz poèas kopírovania\n"
+#~ "NaÅ¡iel som zacyklenÃ½ odkaz poÄas kopÃ­rovania\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not create socket for accessing\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em vytvori» socket pre prístup k\n"
+#~ "NemÃ´Å¾em vytvoriÅ¥ socket pre prÃ­stup k\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not connect to host\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em sa pripoji» k hostiteµovi\n"
+#~ "NemÃ´Å¾em sa pripojiÅ¥ k hostiteÄ¾ovi\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Unknown host\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Neznámy hostiteµ\n"
+#~ "NeznÃ¡my hostiteÄ¾\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2616,16 +2616,16 @@ msgstr "Mail program spustenı."
 #~ "%s\n"
 #~ "is broken"
 #~ msgstr ""
-#~ "Spojenie na hostiteµa\n"
+#~ "Spojenie na hostiteÄ¾a\n"
 #~ "%s\n"
-#~ "je po¹kodené"
+#~ "je poÅ¡kodenÃ©"
 
 #~ msgid ""
 #~ "The protocol %s\n"
 #~ "is not a filter protocol"
 #~ msgstr ""
 #~ "Protokol %s\n"
-#~ "nie je filtrovací protokol"
+#~ "nie je filtrovacÃ­ protokol"
 
 #~ msgid ""
 #~ "%s\n"
@@ -2633,8 +2633,8 @@ msgstr "Mail program spustenı."
 #~ "but a directory was expected"
 #~ msgstr ""
 #~ "%s\n"
-#~ "je súbor,\n"
-#~ "ale bol oèakávanı prieèinok"
+#~ "je sÃºbor,\n"
+#~ "ale bol oÄakÃ¡vanÃ½ prieÄinok"
 
 #~ msgid ""
 #~ "Could not mount device.\n"
@@ -2642,8 +2642,8 @@ msgstr "Mail program spustenı."
 #~ "\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em pripoji» zariadenie.\n"
-#~ "Nahlásená chyba bola:\n"
+#~ "NemÃ´Å¾em pripojiÅ¥ zariadenie.\n"
+#~ "NahlÃ¡senÃ¡ chyba bola:\n"
 #~ "\n"
 #~ "%s"
 
@@ -2653,8 +2653,8 @@ msgstr "Mail program spustenı."
 #~ "\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em odpoji» zariadenie.\n"
-#~ "Nahlásená chyba bola:\n"
+#~ "NemÃ´Å¾em odpojiÅ¥ zariadenie.\n"
+#~ "NahlÃ¡senÃ¡ chyba bola:\n"
 #~ "\n"
 #~ "%s"
 
@@ -2664,13 +2664,13 @@ msgstr "Mail program spustenı."
 #~ "died unexpectedly"
 #~ msgstr ""
 #~ "Proces pre protokol\n"
-#~ "%sneoèakávane skonèil"
+#~ "%sneoÄakÃ¡vane skonÄil"
 
 #~ msgid ""
 #~ "Could not access\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Nemô¾em pristúpi» k\n"
+#~ "NemÃ´Å¾em pristÃºpiÅ¥ k\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2679,48 +2679,48 @@ msgstr "Mail program spustenı."
 #~ "\n"
 #~ "Please send a full bugreport to kde-bugs@kde.org"
 #~ msgstr ""
-#~ "Neznámy popis chyby %i\n"
+#~ "NeznÃ¡my popis chyby %i\n"
 #~ "%s\n"
 #~ "\n"
-#~ "Prosím po¹lite kompletnı popis chyby na kde-bugs@kde.org"
+#~ "ProsÃ­m poÅ¡lite kompletnÃ½ popis chyby na kde-bugs@kde.org"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"
 
 #~ msgid "Mounting %s ..."
-#~ msgstr "Prípájam %s ..."
+#~ msgstr "PrÃ­pÃ¡jam %s ..."
 
 #~ msgid "Unmounting %s ..."
-#~ msgstr "Odpájam %s ..."
+#~ msgstr "OdpÃ¡jam %s ..."
 
 #~ msgid "This group is empty!"
-#~ msgstr "Táto skupina je prázdna!"
+#~ msgstr "TÃ¡to skupina je prÃ¡zdna!"
 
 #~ msgid "&Browser"
-#~ msgstr "&Prehliada»"
+#~ msgstr "&PrehliadaÅ¥"
 
 #~ msgid "User"
-#~ msgstr "U¾ívateµ"
+#~ msgstr "UÅ¾Ã­vateÄ¾"
 
 #~ msgid "Password"
 #~ msgstr "Heslo"
 
 #~ msgid "The clipboard is empty"
-#~ msgstr "Schránka je prázdna"
+#~ msgstr "SchrÃ¡nka je prÃ¡zdna"
 
 #~ msgid ""
 #~ "Pasting clipboard data is only supported on the local hard disk currently"
 #~ msgstr ""
-#~ "Vkladanie dát zo schránky je momentálne podporované len na lokálnom disku"
+#~ "Vkladanie dÃ¡t zo schrÃ¡nky je momentÃ¡lne podporovanÃ© len na lokÃ¡lnom disku"
 
 #~ msgid "Filename for clipboard content:"
-#~ msgstr "Názov súboru pre obsah schránky:"
+#~ msgstr "NÃ¡zov sÃºboru pre obsah schrÃ¡nky:"
 
 #~ msgid "You did not enter a filename"
-#~ msgstr "Nezadali ste názov súboru"
+#~ msgstr "Nezadali ste nÃ¡zov sÃºboru"
 
 #~ msgid "The file %s does already exist. Do you really want to overwrite it ?"
-#~ msgstr "Súbor %s u¾ existuje. Naozaj ho chcete prepísa» ?"
+#~ msgstr "SÃºbor %s uÅ¾ existuje. Naozaj ho chcete prepÃ­saÅ¥ ?"
 
 #~ msgid "Bytes"
 #~ msgstr "Bajtov"
@@ -2735,7 +2735,7 @@ msgstr "Mail program spustenı."
 #~ msgstr "z"
 
 #~ msgid "Stalled"
-#~ msgstr "Stagnované"
+#~ msgstr "StagnovanÃ©"
 
 #~ msgid " Bytes/s"
 #~ msgstr " Bajtov/s"
@@ -2747,7 +2747,7 @@ msgstr "Mail program spustenı."
 #~ msgstr " Mb/s"
 
 #~ msgid "%i seconds"
-#~ msgstr "%i sekúnd"
+#~ msgstr "%i sekÃºnd"
 
 #~ msgid "%i:%i"
 #~ msgstr "%i:%i"
@@ -2756,7 +2756,7 @@ msgstr "Mail program spustenı."
 #~ msgstr "%i:%i:%i"
 
 #~ msgid "%i%s  Remaining time: %s"
-#~ msgstr "%i%s  Zostávajúci èas: %s"
+#~ msgstr "%i%s  ZostÃ¡vajÃºci Äas: %s"
 
 #~ msgid "Scanning "
 #~ msgstr "Skenujem "
@@ -2768,79 +2768,79 @@ msgstr "Mail program spustenı."
 #~ msgstr "Do: "
 
 #~ msgid "Creating dir "
-#~ msgstr "Vytváram prieèinok "
+#~ msgstr "VytvÃ¡ram prieÄinok "
 
 #~ msgid "Fetching file"
-#~ msgstr "S»ahujem súbor"
+#~ msgstr "SÅ¥ahujem sÃºbor"
 
 #~ msgid "Rename"
-#~ msgstr "Premenova»"
+#~ msgstr "PremenovaÅ¥"
 
 #~ msgid "Skip"
-#~ msgstr "Preskoèi»"
+#~ msgstr "PreskoÄiÅ¥"
 
 #~ msgid "Auto Skip"
-#~ msgstr "Auto preskoè."
+#~ msgstr "Auto preskoÄ."
 
 #~ msgid "Overwrite"
-#~ msgstr "Prepísa»"
+#~ msgstr "PrepÃ­saÅ¥"
 
 #~ msgid "Overwrite All"
-#~ msgstr "Prepísa» v¹etky"
+#~ msgstr "PrepÃ­saÅ¥ vÅ¡etky"
 
 #~ msgid "Resume"
-#~ msgstr "Obnovi»"
+#~ msgstr "ObnoviÅ¥"
 
 #~ msgid "Resume All"
-#~ msgstr "Obnovi» v¹etko"
+#~ msgstr "ObnoviÅ¥ vÅ¡etko"
 
 #~ msgid "You try to overwrite"
-#~ msgstr "Sna¾íte sa prepísa»"
+#~ msgstr "SnaÅ¾Ã­te sa prepÃ­saÅ¥"
 
 #~ msgid "already exists. Overwrite with"
-#~ msgstr "u¾ existuje. Prepísa» s"
+#~ msgstr "uÅ¾ existuje. PrepÃ­saÅ¥ s"
 
 #~ msgid "Or rename to"
-#~ msgstr "Alebo premenova» na"
+#~ msgstr "Alebo premenovaÅ¥ na"
 
 #~ msgid "already exists."
-#~ msgstr "u¾ existuje."
+#~ msgstr "uÅ¾ existuje."
 
 #~ msgid "Do you want to rename it ?"
-#~ msgstr "Chcete ho premenova» ?"
+#~ msgstr "Chcete ho premenovaÅ¥ ?"
 
 #~ msgid "Malformed URL\n"
-#~ msgstr "URL má chybnı formát\n"
+#~ msgstr "URL mÃ¡ chybnÃ½ formÃ¡t\n"
 
 #~ msgid "You must not change the protocol"
-#~ msgstr "Nesmiete zmeni» protokol"
+#~ msgstr "Nesmiete zmeniÅ¥ protokol"
 
 #~ msgid "Can not write"
-#~ msgstr "Nemô¾em zapisova»"
+#~ msgstr "NemÃ´Å¾em zapisovaÅ¥"
 
 #~ msgid "Permission denied!"
-#~ msgstr "Prístup zamietnutı!"
+#~ msgstr "PrÃ­stup zamietnutÃ½!"
 
 #~ msgid "No mime types installed!"
-#~ msgstr "Nemáte nain¹talované mime typy!"
+#~ msgstr "NemÃ¡te nainÅ¡talovanÃ© mime typy!"
 
 #~ msgid "Could not find mime type\n"
-#~ msgstr "Nemô¾em nájs» mime typ\n"
+#~ msgstr "NemÃ´Å¾em nÃ¡jsÅ¥ mime typ\n"
 
 #~ msgid "The mime type config file "
-#~ msgstr "Konfiguraènı súbor mime typov "
+#~ msgstr "KonfiguraÄnÃ½ sÃºbor mime typov "
 
 #~ msgid "does not conatain a MimeType=... entry"
-#~ msgstr "neobsahuje MimeType=... polo¾ku"
+#~ msgstr "neobsahuje MimeType=... poloÅ¾ku"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
 #~ "%s\n"
 #~ "has no Type=... entry"
 #~ msgstr ""
-#~ "kdelnk súbor\n"
+#~ "kdelnk sÃºbor\n"
 #~ "%s\n"
-#~ "nemá polo¾ku Type=..."
+#~ "nemÃ¡ poloÅ¾ku Type=..."
 
 #~ msgid ""
 #~ "The kdelnk type\n"
@@ -2849,31 +2849,31 @@ msgstr "Mail program spustenı."
 #~ msgstr ""
 #~ "kdelnk typ\n"
 #~ "%s\n"
-#~ "je neznámy"
+#~ "je neznÃ¡my"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
 #~ "%s\n"
 #~ "is of type FSDevice but has no Dev=... entry"
 #~ msgstr ""
-#~ "kdelnk súbor\n"
+#~ "kdelnk sÃºbor\n"
 #~ "%s\n"
-#~ "je typu FSDevice, ale nemá polo¾ku Dev=..."
+#~ "je typu FSDevice, ale nemÃ¡ poloÅ¾ku Dev=..."
 
 #~ msgid ""
 #~ "The kdelnk file\n"
 #~ "%s\n"
 #~ "is of type Link but has no URL=... entry"
 #~ msgstr ""
-#~ "kdelnk súbor\n"
+#~ "kdelnk sÃºbor\n"
 #~ "%s\n"
-#~ "je typu Odkaz, ale nemá URL=... polo¾ku"
+#~ "je typu Odkaz, ale nemÃ¡ URL=... poloÅ¾ku"
 
 #~ msgid "Mount"
-#~ msgstr "Pripoji»"
+#~ msgstr "PripojiÅ¥"
 
 #~ msgid "Unmount"
-#~ msgstr "Odpoji»"
+#~ msgstr "OdpojiÅ¥"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
@@ -2881,59 +2881,59 @@ msgstr "Mail program spustenı."
 #~ " has an invalid menu entry\n"
 #~ "%s"
 #~ msgstr ""
-#~ "kdelnk súbor\n"
+#~ "kdelnk sÃºbor\n"
 #~ "%s\n"
-#~ " má chybnú polo¾ku menu\n"
+#~ " mÃ¡ chybnÃº poloÅ¾ku menu\n"
 #~ "%s"
 
 #~ msgid "The mime type _cfg file "
-#~ msgstr "Mime typ _cfg súboru "
+#~ msgstr "Mime typ _cfg sÃºboru "
 
 #~ msgid ""
 #~ "Can not enter\n"
 #~ "%s\n"
 #~ "Access denied"
 #~ msgstr ""
-#~ "Nemô¾em vstúpi»\n"
+#~ "NemÃ´Å¾em vstÃºpiÅ¥\n"
 #~ "%s\n"
-#~ "Prístup zamietnutı"
+#~ "PrÃ­stup zamietnutÃ½"
 
 #~ msgid "The application config file\n"
-#~ msgstr "Konfiguraènı súbor aplikácie\n"
+#~ msgstr "KonfiguraÄnÃ½ sÃºbor aplikÃ¡cie\n"
 
 #~ msgid ""
 #~ "\n"
 #~ "does not conatain a Name=... entry"
 #~ msgstr ""
 #~ "\n"
-#~ "neobsahuje Name=... polo¾ku"
+#~ "neobsahuje Name=... poloÅ¾ku"
 
 #~ msgid "Org Unit:"
-#~ msgstr "Divízia:"
+#~ msgstr "DivÃ­zia:"
 
 #~ msgid "Org Subunit:"
 #~ msgstr "Oddelenie div.:"
 
 #~ msgid "Comment:"
-#~ msgstr "Komentár:"
+#~ msgstr "KomentÃ¡r:"
 
 #~ msgid "Search"
-#~ msgstr "Hµada»"
+#~ msgstr "HÄ¾adaÅ¥"
 
 #~ msgid "contains"
 #~ msgstr "obsahuje"
 
 #~ msgid "&New"
-#~ msgstr "&Novı"
+#~ msgstr "&NovÃ½"
 
 #~ msgid "&New..."
-#~ msgstr "&Novı ..."
+#~ msgstr "&NovÃ½ ..."
 
 #~ msgid "Move"
-#~ msgstr "Presuò"
+#~ msgstr "PresuÅˆ"
 
 #~ msgid "&Previous"
-#~ msgstr "&Predchádzajúci uzol"
+#~ msgstr "&PredchÃ¡dzajÃºci uzol"
 
 #~ msgid "&Next"
-#~ msgstr "&Nasledujúci uzol"
+#~ msgstr "&NasledujÃºci uzol"

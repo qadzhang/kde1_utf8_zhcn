@@ -10,29 +10,29 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-11-13 02:01+0100\n"
 "PO-Revision-Date: Sun Jul 11 1999 18:44:41+0200\n"
-"Last-Translator: ��¼ ε��Ϻ <imura@cs.titech.ac.jp>\n"
+"Last-Translator: °æÂ¼ Îµ°ìÏº <imura@cs.titech.ac.jp>\n"
 "Language-Team: japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.5.0"
 
 #: hexdata.cpp:39
 #, c-format
 msgid "Error opening %s"
-msgstr "%s �򳫤��Τ˥��顼�������ޤ���"
+msgstr "%s ¤ò³«¤¯¤Î¤Ë¥¨¥é¡¼¤¬À¸¤¸¤Þ¤·¤¿"
 
 #: hexwidget.cpp:66
 msgid "Save &As..."
-msgstr "������ (&A)"
+msgstr "¥»¡¼¥Ö (&A)"
 
 #: hexwidget.cpp:77
 msgid "&Toggle Toolbar"
-msgstr "�ġ���С��򱣤� (&T)"
+msgstr "¥Ä¡¼¥ë¥Ð¡¼¤ò±£¤¹ (&T)"
 
 #: hexwidget.cpp:80
 msgid "Hex Editor"
-msgstr "16�� ���ǥ���"
+msgstr "16¿Ê ¥¨¥Ç¥£¥¿"
 
 #: hexwidget.cpp:82
 msgid ""
@@ -43,31 +43,31 @@ msgstr ""
 
 #: hexwidget.cpp:105
 msgid "New Window"
-msgstr "������������ɥ�"
+msgstr "¿·¤·¤¤¥¦¥£¥ó¥É¥¦"
 
 #: hexwidget.cpp:109
 msgid "Save the file"
-msgstr "�����֤���"
+msgstr "¥»¡¼¥Ö¤¹¤ë"
 
 #: hexwidget.cpp:112 hexwidget.cpp:114 hexwidget.cpp:116 hexwidget.cpp:119
 msgid "Not implemented"
-msgstr "�¹ԤǤ��ޤ���Ǥ���"
+msgstr "¼Â¹Ô¤Ç¤­¤Þ¤»¤ó¤Ç¤·¤¿"
 
 #: hexwidget.cpp:150
 msgid ""
 "The current file has been modified.\n"
 "Do you want to save it?"
 msgstr ""
-"�ե�����˼꤬�ä����Ƥ��ޤ���\n"
-"�����֤��ޤ�����"
+"¥Õ¥¡¥¤¥ë¤Ë¼ê¤¬²Ã¤¨¤é¤ì¤Æ¤¤¤Þ¤¹¡£\n"
+"¥»¡¼¥Ö¤·¤Þ¤¹¤«¡©"
 
 #: hexwidget.cpp:173
 msgid ""
 "The current file has been modified.\n"
 "Discard your changes?"
 msgstr ""
-"�ե�����˼꤬�ä����Ƥ��ޤ���\n"
-"�������˴����ޤ�����"
+"¥Õ¥¡¥¤¥ë¤Ë¼ê¤¬²Ã¤¨¤é¤ì¤Æ¤¤¤Þ¤¹¡£\n"
+"½¤Àµ¤òÇË´þ¤·¤Þ¤¹¤«¡©"
 
 #: hexwidget.cpp:254
 msgid ""
@@ -77,12 +77,12 @@ msgid ""
 "Wait until this one is finished\n"
 "or stop the running one."
 msgstr ""
-"KHexdit �ϥ��󥿡��ͥåȾ�Ǥ�\n"
-"��Ȥ���λ����Τ��ԤäƤ��ޤ���\n"
+"KHexdit ¤Ï¥¤¥ó¥¿¡¼¥Í¥Ã¥È¾å¤Ç¤Î\n"
+"ºî¶È¤¬½ªÎ»¤¹¤ë¤Î¤òÂÔ¤Ã¤Æ¤¤¤Þ¤¹¡£\n"
 "\n"
-"���줬��λ����Τ��ԤĤ���\n"
-"������λ���Ƥ���������"
+"¤³¤ì¤¬½ªÎ»¤¹¤ë¤Î¤òÂÔ¤Ä¤«¡¢\n"
+"¶¯À©½ªÎ»¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: hexwidget.cpp:262
 msgid "Could not start KFM"
-msgstr "KFM ��ư�Ǥ��ޤ���"
+msgstr "KFM ¤òµ¯Æ°¤Ç¤­¤Þ¤»¤ó"

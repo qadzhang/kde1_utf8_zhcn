@@ -7,51 +7,51 @@ msgstr ""
 "Project-Id-Version: kcmkeys\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-18 09:59+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "Standardní &zkratky"
+msgstr "StandardnÃ­ &zkratky"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "&Globální zkratky"
+msgstr "&GlobÃ¡lnÃ­ zkratky"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "Pou¾ití: kcmkeys [-init | {standard,global}]\n"
+msgstr "PouÅ¾itÃ­: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "Nastavení klávesovıch vazeb"
+msgstr "NastavenÃ­ klÃ¡vesovÃ½ch vazeb"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "Souèasné schéma"
+msgstr "SouÄasnÃ© schÃ©ma"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "KDE implicitní"
+msgstr "KDE implicitnÃ­"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "Schéma &kláves"
+msgstr "SchÃ©ma &klÃ¡ves"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "Pøid&at ..."
+msgstr "PÅ™id&at ..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "&Ulo¾it zmìny"
+msgstr "&UloÅ¾it zmÄ›ny"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr "Chyba pøi ru¹ení schématu"
+msgstr "Chyba pÅ™i ruÅ¡enÃ­ schÃ©matu"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -59,9 +59,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Toto schéma kláves nemu¾e bıy zru¹ené.\n"
-"Pravdìpodobnì nemáte pøístup k souboru, kde je\n"
-"schéma ulo¾ené."
+"Toto schÃ©ma klÃ¡ves nemuÅ¾e bÃ½y zruÅ¡enÃ©.\n"
+"PravdÄ›podobnÄ› nemÃ¡te pÅ™Ã­stup k souboru, kde je\n"
+"schÃ©ma uloÅ¾enÃ©."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
@@ -73,13 +73,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Prosím zvolte si unikátní jméno pro nové\n"
-"schéma kláves. Vámi zadané jméno je ji¾\n"
-"na seznamu schémat."
+"ProsÃ­m zvolte si unikÃ¡tnÃ­ jmÃ©no pro novÃ©\n"
+"schÃ©ma klÃ¡ves. VÃ¡mi zadanÃ© jmÃ©no je jiÅ¾\n"
+"na seznamu schÃ©mat."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Pøidávám schéma"
+msgstr "PÅ™idÃ¡vÃ¡m schÃ©ma"
 
 #: savescm.cpp:32
 msgid ""
@@ -89,43 +89,43 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Zadejte jméno pro nové schéma, která má\n"
-"bıt pøidána do va¹eho osobního seznamu.\n"
+"&Zadejte jmÃ©no pro novÃ© schÃ©ma, kterÃ¡ mÃ¡\n"
+"bÃ½t pÅ™idÃ¡na do vaÅ¡eho osobnÃ­ho seznamu.\n"
 "\n"
-"Klávesy pou¾ité v náhledu budou do tohoto\n"
-"schématu zkopírované."
+"KlÃ¡vesy pouÅ¾itÃ© v nÃ¡hledu budou do tohoto\n"
+"schÃ©matu zkopÃ­rovanÃ©."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr "Správce úloh"
+msgstr "SprÃ¡vce Ãºloh"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "Re¾im zavírání oken"
+msgstr "ReÅ¾im zavÃ­rÃ¡nÃ­ oken"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr "Vykonání pøíkazu"
+msgstr "VykonÃ¡nÃ­ pÅ™Ã­kazu"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "Menu operací s oknem"
+msgstr "Menu operacÃ­ s oknem"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr "Systémové pop-up menu"
+msgstr "SystÃ©movÃ© pop-up menu"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr "Pøesunutí okna do popøedí"
+msgstr "PÅ™esunutÃ­ okna do popÅ™edÃ­"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr "Pøesunutí okna do pozadí"
+msgstr "PÅ™esunutÃ­ okna do pozadÃ­"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr "Zavøení okna"
+msgstr "ZavÅ™enÃ­ okna"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
@@ -133,83 +133,83 @@ msgstr "Ikonifikace okna"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "Zmìna velikosti okna"
+msgstr "ZmÄ›na velikosti okna"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr "Pøesun okna"
+msgstr "PÅ™esun okna"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "Pøepnutí pøilepení okna"
+msgstr "PÅ™epnutÃ­ pÅ™ilepenÃ­ okna"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "Pøepnutí na plochu 1"
+msgstr "PÅ™epnutÃ­ na plochu 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "Pøepnutí na plochu 2"
+msgstr "PÅ™epnutÃ­ na plochu 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Pøepnutí na plochu 3"
+msgstr "PÅ™epnutÃ­ na plochu 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "Pøepnutí na plochu 4"
+msgstr "PÅ™epnutÃ­ na plochu 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Pøepnutí na plochu 5"
+msgstr "PÅ™epnutÃ­ na plochu 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "Pøepnutí na plochu 6"
+msgstr "PÅ™epnutÃ­ na plochu 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "Pøepnutí na plochu 7"
+msgstr "PÅ™epnutÃ­ na plochu 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "Pøepnutí na plochu 8"
+msgstr "PÅ™epnutÃ­ na plochu 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Pøepnutí o jednu plochu vpravo"
+msgstr "PÅ™epnutÃ­ o jednu plochu vpravo"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "Pøepnutí o jednu plochu vlevo"
+msgstr "PÅ™epnutÃ­ o jednu plochu vlevo"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "Pøepnutí o jednu plochu nahoru"
+msgstr "PÅ™epnutÃ­ o jednu plochu nahoru"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "Pøepnutí o jednu plochu dolù"
+msgstr "PÅ™epnutÃ­ o jednu plochu dolÅ¯"
 
 #: stdbindings.cpp:3
 msgid "New"
-msgstr "Novı"
+msgstr "NovÃ½"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "Dal¹í"
+msgstr "DalÅ¡Ã­"
 
 #: stdbindings.cpp:9
 msgid "Prior"
-msgstr "Pøede¹lı"
+msgstr "PÅ™edeÅ¡lÃ½"
 
 #: stdbindings.cpp:14
 msgid "Find"
-msgstr "Nalézt"
+msgstr "NalÃ©zt"
 
 #: stdbindings.cpp:17
 msgid "Home"
-msgstr "Domù"
+msgstr "DomÅ¯"
 
 #: stdbindings.cpp:18
 msgid "End"

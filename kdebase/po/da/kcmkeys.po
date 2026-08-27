@@ -1,16 +1,16 @@
 # Danish translations for KDE Base, kcmkeys
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Erik Kjær Pedersen <erik@binghamton.edu>, 1998.
+# Erik KjÃ¦r Pedersen <erik@binghamton.edu>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkeys\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1999-01-16 15:15+0200\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:72
@@ -31,7 +31,7 @@ msgstr "Genvejstaster"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "Nuværende valg"
+msgstr "NuvÃ¦rende valg"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
@@ -43,11 +43,11 @@ msgstr "G&envejssamling"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "&Tilføj ..."
+msgstr "&TilfÃ¸j ..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "&Gem ændringer"
+msgstr "&Gem Ã¦ndringer"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
@@ -60,7 +60,7 @@ msgid ""
 "system where the key scheme is stored."
 msgstr ""
 "Dette tastevalg kunne ikke fjernes.\n"
-"Måske har du ikke tilladelse til at ændre de filer\n"
+"MÃ¥ske har du ikke tilladelse til at Ã¦ndre de filer\n"
 "hvor tastevalget er gemt."
 
 #: keyconfig.cpp:343
@@ -73,12 +73,12 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Vælg venligst et entydigt navn for den nye genvejssamling.\n"
+"VÃ¦lg venligst et entydigt navn for den nye genvejssamling.\n"
 "Det findes allerede en genvejssamling med det valgte navn."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Tilføj en genvejssamling"
+msgstr "TilfÃ¸j en genvejssamling"
 
 #: savescm.cpp:32
 msgid ""
@@ -88,23 +88,23 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Indtast navn på ny genvejssamling,\n"
-"som skal lægges til din personlige liste.\n"
+"&Indtast navn pÃ¥ ny genvejssamling,\n"
+"som skal lÃ¦gges til din personlige liste.\n"
 "\n"
 "De viste genveje vil blive kopieret til den nye\n"
 "genvejssamling til at begynde med."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr "Jobhåndtering"
+msgstr "JobhÃ¥ndtering"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "Dræb vindue-modus"
+msgstr "DrÃ¦b vindue-modus"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr "Kør kommando"
+msgstr "KÃ¸r kommando"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
@@ -116,11 +116,11 @@ msgstr "Vis systemmenu"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr "Læg vindue øverst"
+msgstr "LÃ¦g vindue Ã¸verst"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr "Læg vindue underst"
+msgstr "LÃ¦g vindue underst"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
@@ -132,7 +132,7 @@ msgstr "Minimer vindue"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "Ændr vinduesstørrelse"
+msgstr "Ã†ndr vinduesstÃ¸rrelse"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
@@ -140,7 +140,7 @@ msgstr "Flyt vindue"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "Fastsæt/frigør vindue"
+msgstr "FastsÃ¦t/frigÃ¸r vindue"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
@@ -176,7 +176,7 @@ msgstr "Flyt til skrivebord 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Flyt et skrivebord til højre"
+msgstr "Flyt et skrivebord til hÃ¸jre"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
@@ -196,7 +196,7 @@ msgstr "Ny"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "Næste"
+msgstr "NÃ¦ste"
 
 #: stdbindings.cpp:9
 msgid "Prior"

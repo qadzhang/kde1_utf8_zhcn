@@ -1,16 +1,16 @@
 # Danish translations for KDE Utils, kfloppy
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Erik Kjær Pedersen <erik@binghamton.edu>, 1998.
+# Erik KjÃ¦r Pedersen <erik@binghamton.edu>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE UTILS/kfloppy\n"
 "POT-Creation-Date: 1999-03-13 01:55+0100\n"
 "PO-Revision-Date: 1999-02-17 14:42+0100\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: about.cpp:40
@@ -33,7 +33,7 @@ msgstr "Diskettedrev:"
 
 #: floppy.cpp:65
 msgid "Density:"
-msgstr "Tæthed:"
+msgstr "TÃ¦thed:"
 
 #: floppy.cpp:74
 msgid "File System:"
@@ -41,7 +41,7 @@ msgstr "Filsystem:"
 
 #: floppy.cpp:108 floppy.cpp:414
 msgid "Format"
-msgstr "Formatér"
+msgstr "FormatÃ©r"
 
 #: floppy.cpp:131
 msgid "Quick Erase"
@@ -80,7 +80,7 @@ msgid ""
 "you have write permission to it."
 msgstr ""
 "Har ikke adgang til %s\n"
-"Vær sikker på at enheden eksisterer og at\n"
+"VÃ¦r sikker pÃ¥ at enheden eksisterer og at\n"
 "du har skriverettighed til den."
 
 #: floppy.cpp:339
@@ -91,7 +91,7 @@ msgid ""
 msgstr ""
 "Kan ikke finde kfdformat\n"
 "kfdformat er en del af KFloppy-programmet. \n"
-"Sørg Venligst for at KFloppy er fuldstændigt installeret."
+"SÃ¸rg Venligst for at KFloppy er fuldstÃ¦ndigt installeret."
 
 #: floppy.cpp:355
 msgid ""
@@ -101,7 +101,7 @@ msgid ""
 msgstr ""
 "Kan ikke finde kmke2fs\n"
 "kmke2fs er en del af KFloppy-programmet. \n"
-"Sørg Venligst for at KFloppy er fuldtændigt installeret. "
+"SÃ¸rg Venligst for at KFloppy er fuldtÃ¦ndigt installeret. "
 
 #: floppy.cpp:370
 msgid ""
@@ -111,7 +111,7 @@ msgid ""
 msgstr ""
 "Kan ikke finde kmkdosfs\n"
 "kmkdosfs er en del af KFloppy-programmet. \n"
-"Sørg Venligst sørg for at KFloppy er fuldstændigt installeret. "
+"SÃ¸rg Venligst sÃ¸rg for at KFloppy er fuldstÃ¦ndigt installeret. "
 
 #: floppy.cpp:430
 msgid "Abort"
@@ -128,7 +128,7 @@ msgid ""
 "have selected a valid floppy drive.\n"
 msgstr ""
 "Har ikke adgang til en diskette eller et diskettedrev\n"
-"Sæt Venligst en diskette ind og vær sikker på at du\n"
+"SÃ¦t Venligst en diskette ind og vÃ¦r sikker pÃ¥ at du\n"
 "har valgt et gyldigt diskettedrev.\n"
 
 #: floppy.cpp:593
@@ -143,7 +143,7 @@ msgstr ""
 #: floppy.cpp:640
 #, c-format
 msgid "Block %d is bad. Continuing ..."
-msgstr "Blok %d er dårlig. Fortsætter ..."
+msgstr "Blok %d er dÃ¥rlig. FortsÃ¦tter ..."
 
 #: floppy.cpp:723
 #, c-format
@@ -151,7 +151,7 @@ msgid ""
 "Cannot create a filesystem on: %s\n"
 "%s"
 msgstr ""
-"Kan ikke lave et filsystem på: %s\n"
+"Kan ikke lave et filsystem pÃ¥: %s\n"
 "%s"
 
 #: floppy.cpp:759
@@ -162,8 +162,8 @@ msgid ""
 "Raw Capacity: %d\n"
 msgstr ""
 "Disketten blev formateret.\n"
-"Dårlige blokke er markeret: %d\n"
-"Råkapacitet: %d\n"
+"DÃ¥rlige blokke er markeret: %d\n"
+"RÃ¥kapacitet: %d\n"
 
 #: floppy.cpp:780
 msgid "All files were sucessfully erased."
@@ -187,7 +187,7 @@ msgstr ""
 
 #: floppy.cpp:913
 msgid "Error while trying to determine whether floppy is mounted\n"
-msgstr "Fejl mens jeg prøvede at fastslå om disketten er monteret\n"
+msgstr "Fejl mens jeg prÃ¸vede at fastslÃ¥ om disketten er monteret\n"
 
 #: floppy.cpp:930
 #, c-format
@@ -196,4 +196,4 @@ msgid ""
 "Please unmount the floppy first."
 msgstr ""
 "%s er monteret. \n"
-"Afmonter venligst disketten først."
+"Afmonter venligst disketten fÃ¸rst."

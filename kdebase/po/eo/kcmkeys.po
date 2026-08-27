@@ -1,4 +1,4 @@
-# Esperantaj mesa-Aøoj-C por "kcmkeys"
+# Esperantaj mesa-AÄoj-C por "kcmkeys"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:72
@@ -28,7 +28,7 @@ msgstr "uzo: kcmkeys [-init | [standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "Konfigura¼o de klavkombinoj"
+msgstr "KonfiguraÄµo de klavkombinoj"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
@@ -48,7 +48,7 @@ msgstr "&Aldonu..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "&Sekurigu şanøojn"
+msgstr "&Sekurigu ÅanÄojn"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
@@ -60,8 +60,8 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Ne eblis forigi tiun æi skemon.\n"
-"Verşajne vi ne havas permeson şanøi la dosieraron\n"
+"Ne eblis forigi tiun Ä‰i skemon.\n"
+"VerÅajne vi ne havas permeson ÅanÄi la dosieraron\n"
 "en kiu la klavoskemo rezidas."
 
 #: keyconfig.cpp:343
@@ -75,7 +75,7 @@ msgid ""
 "in the key scheme list."
 msgstr ""
 "Bonvolu elekti unikan nomon por la nova klavoskemo.\n"
-"Tiun, kiun vi tajpis jam troviøas en la skemolisto."
+"Tiun, kiun vi tajpis jam troviÄas en la skemolisto."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
@@ -92,7 +92,7 @@ msgstr ""
 "&Tajpu nomon por la nova klavoskemo\n"
 "aldonota al via persona listo.\n"
 "\n"
-"La klavoj, kiuj estas uzataj en la antaıvida¼o\n"
+"La klavoj, kiuj estas uzataj en la antaÅ­vidaÄµo\n"
 "servos kiel inicialaj kombinoj en la skemo."
 
 #: ../../kwm/kwmbindings.cpp:1
@@ -201,7 +201,7 @@ msgstr "Sekva"
 
 #: stdbindings.cpp:9
 msgid "Prior"
-msgstr "Antaıa"
+msgstr "AntaÅ­a"
 
 #: stdbindings.cpp:14
 msgid "Find"

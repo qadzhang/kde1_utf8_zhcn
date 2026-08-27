@@ -7,28 +7,28 @@ msgstr ""
 "Project-Id-Version: kcmtalkd\n"
 "POT-Creation-Date: 1998-12-12 15:20+0100\n"
 "PO-Revision-Date: 1998-09-25 10:00+0001\n"
-"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Last-Translator: Juraj BednÃ¡r <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:58
 msgid "&Announcement"
-msgstr "&Oznámenie"
+msgstr "&OznÃ¡menie"
 
 #: main.cpp:61
 msgid "Ans&wering machine"
-msgstr "Záz&namník"
+msgstr "ZÃ¡z&namnÃ­k"
 
 #: main.cpp:64
 msgid "&Forward"
-msgstr "&Posunú»"
+msgstr "&PosunÃºÅ¥"
 
 #: main.cpp:70
 msgid "usage: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
 msgstr ""
-"pou¾itie: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
+"pouÅ¾itie: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
 
 #: main.cpp:111
 msgid "KTalkd Configuration"
@@ -44,15 +44,15 @@ msgstr "&Talk klient"
 
 #: soundpage.cpp:57
 msgid "&Play sound"
-msgstr "&Prehráva» zvuky"
+msgstr "&PrehrÃ¡vaÅ¥ zvuky"
 
 #: soundpage.cpp:59
 msgid "&Sound File"
-msgstr "&Súbor so zvukom"
+msgstr "&SÃºbor so zvukom"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Dodatoèné WAV súbory sa mô¾u pusti» nad zoznam zvukov."
+msgstr "DodatoÄnÃ© WAV sÃºbory sa mÃ´Å¾u pustiÅ¥ nad zoznam zvukov."
 
 #: soundpage.cpp:76
 msgid "&Test"
@@ -60,14 +60,14 @@ msgstr "&Test"
 
 #: soundpage.cpp:156
 msgid "Unsupported URL"
-msgstr "Nepodporované URL"
+msgstr "NepodporovanÃ© URL"
 
 #: soundpage.cpp:157
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Prepáète, ale tento typ URL nie je momentálne podporovanı KDE System Sound "
+"PrepÃ¡Äte, ale tento typ URL nie je momentÃ¡lne podporovanÃ½ KDE System Sound "
 "modulom"
 
 #: soundpage.cpp:164
@@ -77,13 +77,13 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Prepáète, ale\n"
+"PrepÃ¡Äte, ale\n"
 "%s\n"
-"pravdepodobne nie je WAV--súbor."
+"pravdepodobne nie je WAV--sÃºbor."
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
-msgstr "Nesprávna prípona súboru"
+msgstr "NesprÃ¡vna prÃ­pona sÃºboru"
 
 #: soundpage.cpp:175
 #, c-format
@@ -92,17 +92,17 @@ msgid ""
 "%s\n"
 "is already in the list"
 msgstr ""
-"Súbor\n"
+"SÃºbor\n"
 "%s\n"
-"je u¾ na zozname"
+"je uÅ¾ na zozname"
 
 #: soundpage.cpp:179
 msgid "File Already in List"
-msgstr "Súbor je u¾ na zozname"
+msgstr "SÃºbor je uÅ¾ na zozname"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
-msgstr "&Aktivuj záznamník"
+msgstr "&Aktivuj zÃ¡znamnÃ­k"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
@@ -115,24 +115,24 @@ msgstr "Predmet e-m&ailu"
 #: answmachpage.cpp:54
 #, c-format
 msgid "Use %s for the caller name"
-msgstr "Pou¾i» %s pre volajúceho"
+msgstr "PouÅ¾iÅ¥ %s pre volajÃºceho"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "&Prvı riadok"
+msgstr "&PrvÃ½ riadok"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
-msgstr "Pou¾i» najprv %s pre meno volajúceho a potom %s pre meno jeho hostu"
+msgstr "PouÅ¾iÅ¥ najprv %s pre meno volajÃºceho a potom %s pre meno jeho hostu"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&Posla» správu aj ak volajúci nenechal odkaz"
+msgstr "&PoslaÅ¥ sprÃ¡vu aj ak volajÃºci nenechal odkaz"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Oznam zobrazenı pri spustení záznamníka :"
+msgstr "&Oznam zobrazenÃ½ pri spustenÃ­ zÃ¡znamnÃ­ka :"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -148,24 +148,24 @@ msgstr ""
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
 msgid "Message from %s"
-msgstr "Správa od %s"
+msgstr "SprÃ¡va od %s"
 
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Správa zanechaná na odkazovaèi od %s@%s"
+msgstr "SprÃ¡va zanechanÃ¡ na odkazovaÄi od %s@%s"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
-msgstr "Aktivova» &posunutie"
+msgstr "AktivovaÅ¥ &posunutie"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Cieµ (u¾ívateµ alebo u¾ívateµ@host)"
+msgstr "&CieÄ¾ (uÅ¾Ã­vateÄ¾ alebo uÅ¾Ã­vateÄ¾@host)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
-msgstr "&Metóda posunutia"
+msgstr "&MetÃ³da posunutia"
 
 #: forwmachpage.cpp:54
 msgid ""
@@ -180,12 +180,12 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Posúva len oznam. Priame spojenie. Neodporúèané.\n"
-"FWR : Posúva v¹etky po¾iadavky, ak je potrebné mení informácie. Priame "
+"FWA : PosÃºva len oznam. Priame spojenie. NeodporÃºÄanÃ©.\n"
+"FWR : PosÃºva vÅ¡etky poÅ¾iadavky, ak je potrebnÃ© menÃ­ informÃ¡cie. Priame "
 "spojenie.\n"
-"FWT : Posúva v¹etky po¾iadavky a vezme hovor. ®iadne priame spojenie.\n"
+"FWT : PosÃºva vÅ¡etky poÅ¾iadavky a vezme hovor. Å½iadne priame spojenie.\n"
 "\n"
-"Odporúèané pou¾itie : FWT, ak to chcete pou¾íva» za firewallom (a ktalkd\n"
-"mô¾e pristupova» na obidve siete), inak FWR.\n"
+"OdporÃºÄanÃ© pouÅ¾itie : FWT, ak to chcete pouÅ¾Ã­vaÅ¥ za firewallom (a ktalkd\n"
+"mÃ´Å¾e pristupovaÅ¥ na obidve siete), inak FWR.\n"
 "\n"
-"Pozrite dokumentáciu pre podrobnej¹í opis.\n"
+"Pozrite dokumentÃ¡ciu pre podrobnejÅ¡Ã­ opis.\n"

@@ -7,71 +7,71 @@ msgstr ""
 "Project-Id-Version: kjots\n"
 "POT-Creation-Date: 1998-12-07 01:48+0100\n"
 "PO-Revision-Date: 1999-02-04 11:36+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cz@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: KJotsMain.cpp:76
 msgid "Book name:"
-msgstr "Název knihy:"
+msgstr "NÃ¡zev knihy:"
 
 #: KJotsMain.cpp:101
 msgid "Open URL"
-msgstr "Otevøí URL"
+msgstr "OtevÅ™Ã­ URL"
 
 #: KJotsMain.cpp:344
 msgid "New Book"
-msgstr "Nová kniha"
+msgstr "NovÃ¡ kniha"
 
 #: KJotsMain.cpp:354
 msgid "PreviousPage"
-msgstr "Pøedcházející strana"
+msgstr "PÅ™edchÃ¡zejÃ­cÃ­ strana"
 
 #: KJotsMain.cpp:355
 msgid "NextPage"
-msgstr "Následující strana"
+msgstr "NÃ¡sledujÃ­cÃ­ strana"
 
 #: KJotsMain.cpp:356
 msgid "ShowSubjectList"
-msgstr "Ukázat seznam pøedmìtù"
+msgstr "UkÃ¡zat seznam pÅ™edmÄ›tÅ¯"
 
 #: KJotsMain.cpp:357
 msgid "AddNewPage"
-msgstr "Pøidat novou stranu"
+msgstr "PÅ™idat novou stranu"
 
 #: KJotsMain.cpp:358
 msgid "MoveFocus"
-msgstr "Pøesout pozornost"
+msgstr "PÅ™esout pozornost"
 
 #: KJotsMain.cpp:359
 msgid "CopySelection"
-msgstr "Kopírovat vıbìr"
+msgstr "KopÃ­rovat vÃ½bÄ›r"
 
 #: KJotsMain.cpp:371
 msgid "&New Book"
-msgstr "&Nová kniha"
+msgstr "&NovÃ¡ kniha"
 
 #: KJotsMain.cpp:375
 msgid "Save current book"
-msgstr "Ulo¾it souèasnou knihu"
+msgstr "UloÅ¾it souÄasnou knihu"
 
 #: KJotsMain.cpp:377
 msgid "Save book to ascii file"
-msgstr "Ulo¾it knihu do ASCII souboru"
+msgstr "UloÅ¾it knihu do ASCII souboru"
 
 #: KJotsMain.cpp:378
 msgid "Save page to ascii file"
-msgstr "Ulo¾it stranu do ASCII souboru"
+msgstr "UloÅ¾it stranu do ASCII souboru"
 
 #: KJotsMain.cpp:380 KJotsMain.cpp:661
 msgid "Delete current book"
-msgstr "Smazat souèasnou knihu"
+msgstr "Smazat souÄasnou knihu"
 
 #: KJotsMain.cpp:394
 msgid "&New Page"
-msgstr "&Nová strana"
+msgstr "&NovÃ¡ strana"
 
 #: KJotsMain.cpp:396
 msgid "&Delete Page"
@@ -83,15 +83,15 @@ msgstr "&Nastavit"
 
 #: KJotsMain.cpp:400
 msgid "Configure &Keys"
-msgstr "Nastavit &klávesy"
+msgstr "Nastavit &klÃ¡vesy"
 
 #: KJotsMain.cpp:403
 msgid "Add current book to hotlist"
-msgstr "Pøidat souèasnou knihu do hotlistu"
+msgstr "PÅ™idat souÄasnou knihu do hotlistu"
 
 #: KJotsMain.cpp:405
 msgid "Remove current book from hotlist"
-msgstr "Odstranit souèasnou knihu z hotlistu"
+msgstr "Odstranit souÄasnou knihu z hotlistu"
 
 #: KJotsMain.cpp:410
 msgid "Hot&list"
@@ -107,27 +107,27 @@ msgstr "podle"
 
 #: KJotsMain.cpp:427
 msgid "New"
-msgstr "Novı"
+msgstr "NovÃ½"
 
 #: KJotsMain.cpp:433
 msgid "Previous"
-msgstr "Pøedcházející"
+msgstr "PÅ™edchÃ¡zejÃ­cÃ­"
 
 #: KJotsMain.cpp:436
 msgid "Next"
-msgstr "Následující"
+msgstr "NÃ¡sledujÃ­cÃ­"
 
 #: KJotsMain.cpp:440
 msgid "Subject List"
-msgstr "Seznam pøedmìtù"
+msgstr "Seznam pÅ™edmÄ›tÅ¯"
 
 #: KJotsMain.cpp:614
 msgid "A book with this name already exists."
-msgstr "Kniha s takovım jménem ji¾ existuje."
+msgstr "Kniha s takovÃ½m jmÃ©nem jiÅ¾ existuje."
 
 #: KJotsMain.cpp:662
 msgid "Are you sure you want to delete the current book ?"
-msgstr "Jste si jistı(á), ¾e chcete smazat souèasnou knihu ?"
+msgstr "Jste si jistÃ½(Ã¡), Å¾e chcete smazat souÄasnou knihu ?"
 
 #: KJotsMain.cpp:913 KJotsMain.cpp:942
 msgid "File exists !"
@@ -138,8 +138,8 @@ msgid ""
 "File already exists. \n"
 " Do you want to overwrite it ?"
 msgstr ""
-"Soubor ji¾ existuje. \n"
-" Chcete jej pøepsat ?"
+"Soubor jiÅ¾ existuje. \n"
+" Chcete jej pÅ™epsat ?"
 
 #: confdialog.cpp:39
 msgid "Configure KJots"
@@ -151,7 +151,7 @@ msgstr "URL"
 
 #: confdialog.cpp:72
 msgid "Specify which command to execute"
-msgstr "Specifikovat pøíkaz"
+msgstr "Specifikovat pÅ™Ã­kaz"
 
 #: confdialog.cpp:78
 msgid "for HTTP:"
@@ -164,7 +164,7 @@ msgstr "pro FTP:"
 #: confdialog.cpp:104
 #, c-format
 msgid "( %u is replaced with the selected URL )"
-msgstr "( %u je nahrazené zvolenım URL )"
+msgstr "( %u je nahrazenÃ© zvolenÃ½m URL )"
 
 #: confdialog.cpp:111
 msgid "Font for editor:"

@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Bjarni R. Einarsson <bre@mmedia.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO-8859-1\n"
 
 #: kbiff.cpp:629
@@ -20,7 +20,7 @@ msgstr "&Af spjaldinu"
 
 #: kbiff.cpp:631
 msgid "&Dock"
-msgstr "Á spjal&d"
+msgstr "Ã spjal&d"
 
 #: kbiff.cpp:632
 msgid "&Setup..."
@@ -28,38 +28,38 @@ msgstr "&Stillingar..."
 
 #: kbiff.cpp:634
 msgid "&Help..."
-msgstr "&Hjálp..."
+msgstr "&HjÃ¡lp..."
 
 #: kbiff.cpp:638
 msgid "&Check Mail Now"
-msgstr "A&thuga póst"
+msgstr "A&thuga pÃ³st"
 
 #: kbiff.cpp:640
 msgid "&Read Mail Now"
-msgstr "&Lesa póst"
+msgstr "&Lesa pÃ³st"
 
 #: kbiff.cpp:646
 msgid "&Stop"
-msgstr "&Stöğva"
+msgstr "&StÃ¶Ã°va"
 
 #: notify.cpp:33 notify.cpp:50
 msgid "You have new mail!"
-msgstr "Şú hefur fengiğ nıjan póst!"
+msgstr "ÃÃº hefur fengiÃ° nÃ½jan pÃ³st!"
 
 #: notify.cpp:58 notify.cpp:103
 #, c-format
 msgid "New Messages: %d"
-msgstr "Nır póstur: %d"
+msgstr "NÃ½r pÃ³stur: %d"
 
 #: notify.cpp:63
 #, c-format
 msgid "Mailbox: %s"
-msgstr "Pósthólf: %s"
+msgstr "PÃ³sthÃ³lf: %s"
 
 # This is on a button.  It launches the user's mail client
 #: notify.cpp:73
 msgid "Mailer"
-msgstr "Póstforrit"
+msgstr "PÃ³stforrit"
 
 #: setupdlg.cpp:83
 msgid "KBiff Setup"
@@ -67,11 +67,11 @@ msgstr "Stillingar KBiff"
 
 #: setupdlg.cpp:86
 msgid "Profile:"
-msgstr "Hólf:"
+msgstr "HÃ³lf:"
 
 #: setupdlg.cpp:102
 msgid "&New..."
-msgstr "&Nıtt..."
+msgstr "&NÃ½tt..."
 
 #: setupdlg.cpp:109
 msgid "&Rename..."
@@ -83,61 +83,61 @@ msgstr "Almennt"
 
 #: setupdlg.cpp:144
 msgid "New Mail"
-msgstr "Nır póstur"
+msgstr "NÃ½r pÃ³stur"
 
 #: setupdlg.cpp:145 status.cpp:33
 msgid "Mailbox"
-msgstr "Pósthólf"
+msgstr "PÃ³sthÃ³lf"
 
 #: setupdlg.cpp:391
 msgid "New Profile"
-msgstr "Nıtt hólf"
+msgstr "NÃ½tt hÃ³lf"
 
 #: setupdlg.cpp:423
 #, c-format
 msgid "Rename Profile: %s"
-msgstr "Endurnefna hólf: %s"
+msgstr "Endurnefna hÃ³lf: %s"
 
 #: setupdlg.cpp:463
 #, c-format
 msgid "Delete Profile: %s"
-msgstr "Eyğa hólfi: %s"
+msgstr "EyÃ°a hÃ³lfi: %s"
 
 #: setupdlg.cpp:464
 msgid "Are you sure you wish to delete this profile?\n"
-msgstr "Ertu viss um ağ şú viljir eyğa şessu hólfi?\n"
+msgstr "Ertu viss um aÃ° Ã¾Ãº viljir eyÃ°a Ã¾essu hÃ³lfi?\n"
 
 #: setupdlg.cpp:524
 msgid "Poll (sec):"
-msgstr "Tími milli póstathugana (sek.):"
+msgstr "TÃ­mi milli pÃ³stathugana (sek.):"
 
 #: setupdlg.cpp:529
 msgid "Mail client:"
-msgstr "Póstforrit:"
+msgstr "PÃ³stforrit:"
 
 #: setupdlg.cpp:542
 msgid "Dock in panel"
-msgstr "Á spjald"
+msgstr "Ã spjald"
 
 #: setupdlg.cpp:547
 msgid "Use session management"
-msgstr "Nota setustjóra"
+msgstr "Nota setustjÃ³ra"
 
 #: setupdlg.cpp:552
 msgid "Icons:"
-msgstr "Táknmyndir:"
+msgstr "TÃ¡knmyndir:"
 
 #: setupdlg.cpp:570
 msgid "No Mail:"
-msgstr "Enginn póstur:"
+msgstr "Enginn pÃ³stur:"
 
 #: setupdlg.cpp:579
 msgid "Old Mail"
-msgstr "Gamall póstur"
+msgstr "Gamall pÃ³stur"
 
 #: setupdlg.cpp:589
 msgid "New Mail:"
-msgstr "Nır póstur:"
+msgstr "NÃ½r pÃ³stur:"
 
 # This is the icon that is displayed when KBiff could not make a connection
 # to a remote server
@@ -155,21 +155,21 @@ msgstr "Flakka"
 
 #: setupdlg.cpp:769
 msgid "Play Sound"
-msgstr "Spila hljóğ"
+msgstr "Spila hljÃ³Ã°"
 
 #: setupdlg.cpp:789
 msgid "System Beep"
-msgstr "Pípa"
+msgstr "PÃ­pa"
 
 #: setupdlg.cpp:794
 msgid "Notify"
-msgstr "Láta vita"
+msgstr "LÃ¡ta vita"
 
 # If this is checked, then KBiff will popup a list of mailboxes with the
 # number of new mail whenever the user puts the cursor of a KBiff icon.
 #: setupdlg.cpp:798
 msgid "Floating Status"
-msgstr "Yfirlit undir mús"
+msgstr "Yfirlit undir mÃºs"
 
 #: setupdlg.cpp:948
 msgid "Advanced Options"
@@ -177,7 +177,7 @@ msgstr "Frekari stillingar"
 
 #: setupdlg.cpp:952
 msgid "Mailbox URL:"
-msgstr "Slóğ pósthólfs:"
+msgstr "SlÃ³Ã° pÃ³sthÃ³lfs:"
 
 #: setupdlg.cpp:956
 msgid "Port:"
@@ -200,23 +200,23 @@ msgstr "Asynchronous"
 
 #: setupdlg.cpp:1123 setupdlg.cpp:1152
 msgid "Mailbox:"
-msgstr "Pósthólf:"
+msgstr "PÃ³sthÃ³lf:"
 
 #: setupdlg.cpp:1136 setupdlg.cpp:1474
 msgid "New Mailbox"
-msgstr "Nıtt pósthólf"
+msgstr "NÃ½tt pÃ³sthÃ³lf"
 
 #: setupdlg.cpp:1143
 msgid "Delete Mailbox"
-msgstr "Eyğa pósthólfi"
+msgstr "EyÃ°a pÃ³sthÃ³lfi"
 
 #: setupdlg.cpp:1149
 msgid "Protocol:"
-msgstr "Samskiptamáti:"
+msgstr "SamskiptamÃ¡ti:"
 
 #: setupdlg.cpp:1155
 msgid "Server:"
-msgstr "Şjónn:"
+msgstr "ÃjÃ³nn:"
 
 #: setupdlg.cpp:1158
 msgid "User:"
@@ -224,11 +224,11 @@ msgstr "Notandi:"
 
 #: setupdlg.cpp:1161
 msgid "Password:"
-msgstr "Lykilorğ:"
+msgstr "LykilorÃ°:"
 
 #: setupdlg.cpp:1195
 msgid "Store password"
-msgstr "Geyma lykilorğ"
+msgstr "Geyma lykilorÃ°"
 
 #: setupdlg.cpp:1198
 msgid "Advanced"
@@ -246,20 +246,20 @@ msgid ""
 "Copyright (C) 1999\n"
 "Kurt Granroth"
 msgstr ""
-"Útgáfa %s\n"
+"ÃštgÃ¡fa %s\n"
 "\n"
-"Höfundarréttur (C) 1999\n"
+"HÃ¶fundarrÃ©ttur (C) 1999\n"
 "Kurt Granroth"
 
 #: setupdlg.cpp:1746
 msgid "New Name:"
-msgstr "Nıtt heiti:"
+msgstr "NÃ½tt heiti:"
 
 #: setupdlg.cpp:1772
 msgid "New Name"
-msgstr "Nıtt heiti"
+msgstr "NÃ½tt heiti"
 
 # This displays the number of new messages for a given mailbox
 #: status.cpp:34
 msgid "New"
-msgstr "Nıtt"
+msgstr "NÃ½tt"

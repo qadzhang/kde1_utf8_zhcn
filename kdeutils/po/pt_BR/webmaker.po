@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: WebMaker\n"
 "POT-Creation-Date: 1999-01-25 02:21+0100\n"
 "PO-Revision-Date: 1999-04-20 01:30-0300\n"
-"Last-Translator: Elvis Pf¸tzenreuter <epx@netville.com.br>\n"
+"Last-Translator: Elvis Pf√ºtzenreuter <epx@netville.com.br>\n"
 "Language-Team: Brazilian Portuguese\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: base64\n"
 
 #: webmaker.cpp:112
@@ -67,7 +67,7 @@ msgstr "&Ir para Linha..."
 
 #: webmaker.cpp:170
 msgid "Tag &Chooser"
-msgstr "&SeleÁ„o de Tag"
+msgstr "&Sele√ß√£o de Tag"
 
 #: webmaker.cpp:171 webmaker.cpp:262
 msgid "&Edit tag..."
@@ -99,7 +99,7 @@ msgstr "Tamanho de Fonte -1"
 
 #: webmaker.cpp:192
 msgid "Quote"
-msgstr "Coment·rio"
+msgstr "Coment√°rio"
 
 #: webmaker.cpp:193
 msgid "Center"
@@ -107,11 +107,11 @@ msgstr "Centrado"
 
 #: webmaker.cpp:194
 msgid "Horizontal Rule"
-msgstr "RÈgua Horizontal"
+msgstr "R√©gua Horizontal"
 
 #: webmaker.cpp:195
 msgid "Non-breaking Space"
-msgstr "EspaÁo n„o separ·vel"
+msgstr "Espa√ßo n√£o separ√°vel"
 
 #: webmaker.cpp:196
 msgid "Line Break"
@@ -119,7 +119,7 @@ msgstr "Quebra de Linha"
 
 #: webmaker.cpp:197
 msgid "Paragraph"
-msgstr "Par·grafo"
+msgstr "Par√°grafo"
 
 #: webmaker.cpp:199
 msgid "H1"
@@ -167,7 +167,7 @@ msgstr "Mostrar Todos os Arquivos"
 
 #: webmaker.cpp:225
 msgid "Browse Temporary File"
-msgstr "Navegar em Arquivo Tempor·rio"
+msgstr "Navegar em Arquivo Tempor√°rio"
 
 #: webmaker.cpp:227
 msgid "&External Browsers..."
@@ -175,11 +175,11 @@ msgstr "Navegadores &Externos..."
 
 #: webmaker.cpp:230
 msgid "Auto Save Options"
-msgstr "Auto-salvar OpÁıes"
+msgstr "Auto-salvar Op√ß√µes"
 
 #: webmaker.cpp:232
 msgid "&Save Options"
-msgstr "&Salvar OpÁıes"
+msgstr "&Salvar Op√ß√µes"
 
 #: webmaker.cpp:236
 msgid "&Windows"
@@ -187,7 +187,7 @@ msgstr "&Janelas"
 
 #: webmaker.cpp:261
 msgid "&Tag Chooser"
-msgstr "SeleÁ„o de &Tag"
+msgstr "Sele√ß√£o de &Tag"
 
 #: webmaker.cpp:265
 msgid "Ne&w..."
@@ -291,7 +291,7 @@ msgstr "Salvo: %s"
 
 #: webmaker.cpp:682
 msgid "No changes need to be saved"
-msgstr "Nenhuma mudanÁa a ser salva"
+msgstr "Nenhuma mudan√ßa a ser salva"
 
 #: webmaker.cpp:692
 #, c-format
@@ -304,35 +304,35 @@ msgstr "Arquivo inserido"
 
 #: webmaker.cpp:1028
 msgid "Auto Indent Mode: On"
-msgstr "Modo de Auto IndentaÁ„o: Ligado"
+msgstr "Modo de Auto Indenta√ß√£o: Ligado"
 
 #: webmaker.cpp:1030
 msgid "Auto Indent Mode: Off"
-msgstr "Modo de Auto IndentaÁ„o: Desligado"
+msgstr "Modo de Auto Indenta√ß√£o: Desligado"
 
 #: webmaker.cpp:1038
 msgid "Show All Files: On. Updating disk info..."
-msgstr "Mostrar Todos os Arquivos: Ligado. Atualizando informaÁıes de disco..."
+msgstr "Mostrar Todos os Arquivos: Ligado. Atualizando informa√ß√µes de disco..."
 
 #: webmaker.cpp:1040
 msgid "Show All Files: Off. Updating disk info..."
-msgstr "Mostrar Todos os Arquivos: Desligado. Atualizando informaÁıes de disco..."
+msgstr "Mostrar Todos os Arquivos: Desligado. Atualizando informa√ß√µes de disco..."
 
 #: webmaker.cpp:1049
 msgid "Browse Temporary File: On"
-msgstr "Navegar em Arquivo Tempor·rio: Ligado"
+msgstr "Navegar em Arquivo Tempor√°rio: Ligado"
 
 #: webmaker.cpp:1051
 msgid "Browse Temporary File: Off"
-msgstr "Navegar em Arquivo Tempor·rio: Desligado"
+msgstr "Navegar em Arquivo Tempor√°rio: Desligado"
 
 #: webmaker.cpp:1059
 msgid "Auto Save Options: On"
-msgstr "Auto-salvar OpÁıes: Ligado"
+msgstr "Auto-salvar Op√ß√µes: Ligado"
 
 #: webmaker.cpp:1061
 msgid "Auto Save Options: Off"
-msgstr "Auto-salvar OpÁıes: Desligado"
+msgstr "Auto-salvar Op√ß√µes: Desligado"
 
 #: webmaker.cpp:1192 webmaker.cpp:1379
 msgid "Sorry!"
@@ -340,7 +340,7 @@ msgstr "Desculpe!"
 
 #: webmaker.cpp:1192
 msgid "Sorry, help is not available."
-msgstr "Desculpe, ajuda n„o disponÌvel."
+msgstr "Desculpe, ajuda n√£o dispon√≠vel."
 
 #: webmaker.cpp:1212
 #, c-format
@@ -349,31 +349,31 @@ msgstr "Linha: %d Coluna: %d"
 
 #: webmaker.cpp:1379
 msgid "Sorry, feature is not implemented yet."
-msgstr "Desculpe, recurso ainda n„o implementado."
+msgstr "Desculpe, recurso ainda n√£o implementado."
 
 #: htmledit.cpp:92
 msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
-msgstr "O documento corrente foi modificado.\nVocÍ gostaria de salv·-lo ?"
+msgstr "O documento corrente foi modificado.\nVoc√™ gostaria de salv√°-lo ?"
 
 #: htmledit.cpp:99
 msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
-msgstr "ImpossÌvel salvar o documento.\nAbrir um novo documento assim mesmo ?"
+msgstr "Imposs√≠vel salvar o documento.\nAbrir um novo documento assim mesmo ?"
 
 #: htmledit.cpp:113
 msgid "The specified File does not exist."
-msgstr "O arquivo especificado n„o existe."
+msgstr "O arquivo especificado n√£o existe."
 
 #: htmledit.cpp:118
 msgid "You have specificated a directory."
-msgstr "VocÍ especificou um diretÛrio."
+msgstr "Voc√™ especificou um diret√≥rio."
 
 #: htmledit.cpp:123
 msgid "You do not have read permission to this file."
-msgstr "VocÍ n„o tem permiss„o de leitura para este arquivo."
+msgstr "Voc√™ n√£o tem permiss√£o de leitura para este arquivo."
 
 #: htmledit.cpp:131
 msgid "An Error occured while trying to open this Document."
@@ -387,7 +387,7 @@ msgstr "Arquivo "
 msgid ""
 " has been modified.\n"
 "Would you like to save it?"
-msgstr " foi modificado.\nVocÍ gostaria de salv·-lo ?"
+msgstr " foi modificado.\nVoc√™ gostaria de salv√°-lo ?"
 
 #: htmledit.cpp:322 htmledit.cpp:572
 msgid "Message"
@@ -403,13 +403,13 @@ msgstr "Erro ao salvar arquivo ! Sair assim mesmo ?"
 
 #: htmledit.cpp:442 htmledit.cpp:478 htmledit.cpp:520
 msgid "Other filter is running. Sorry..."
-msgstr "Outro filtro est· em curso. Desculpe..."
+msgstr "Outro filtro est√° em curso. Desculpe..."
 
 #: htmledit.cpp:490
 msgid ""
 "A Document with this Name exists already.\n"
 "Do you want to overwrite it ?"
-msgstr "Um documento com este nome j· existe.\nVocÍ gostaria de sobrescrevÍ-lo ?"
+msgstr "Um documento com este nome j√° existe.\nVoc√™ gostaria de sobrescrev√™-lo ?"
 
 #: htmledit.cpp:573
 msgid "Filter job finished."
@@ -417,15 +417,15 @@ msgstr "Processo de filtragem terminado."
 
 #: htmledit.cpp:1009
 msgid "C&aption"
-msgstr "C&abeÁalho"
+msgstr "C&abe√ßalho"
 
 #: htmledit.cpp:1019
 msgid "Head rows"
-msgstr "Linhas de cabeÁalho"
+msgstr "Linhas de cabe√ßalho"
 
 #: htmledit.cpp:1026
 msgid "Head columns"
-msgstr "Colunas de cabeÁalho"
+msgstr "Colunas de cabe√ßalho"
 
 #: htmledit.cpp:1034
 msgid "&Rows"
@@ -453,7 +453,7 @@ msgstr "&Inserir tag"
 
 #: htmledit.cpp:1149
 msgid "WebMaker: TagChooser"
-msgstr "WebMaker: SeleÁ„o de Tag"
+msgstr "WebMaker: Sele√ß√£o de Tag"
 
 #: htmledit.cpp:1229 htmledit.cpp:4143 htmledit.cpp:5338
 msgid "Id"
@@ -469,7 +469,7 @@ msgstr "Estilo"
 
 #: htmledit.cpp:1250 htmledit.cpp:2613
 msgid "Title"
-msgstr "TÌtulo"
+msgstr "T√≠tulo"
 
 #: htmledit.cpp:1286
 msgid "Language"
@@ -485,7 +485,7 @@ msgstr "Linguagem"
 #: htmledit.cpp:4634 htmledit.cpp:4949 htmledit.cpp:5045 htmledit.cpp:5135
 #: htmledit.cpp:5358 htmledit.cpp:5515 htmledit.cpp:5751
 msgid "Implied"
-msgstr "IncluÌdo"
+msgstr "Inclu√≠do"
 
 #: htmledit.cpp:1293
 msgid "Left to Right"
@@ -497,7 +497,7 @@ msgstr "Direita para Esquerda"
 
 #: htmledit.cpp:1296
 msgid "Text direction"
-msgstr "DireÁ„o do Texto"
+msgstr "Dire√ß√£o do Texto"
 
 #: htmledit.cpp:1357 htmledit.cpp:5078
 msgid "Image Source"
@@ -528,7 +528,7 @@ msgstr "Texto Alternativo"
 
 #: htmledit.cpp:1405 htmledit.cpp:4284 htmledit.cpp:4460
 msgid "Link to Long Description"
-msgstr "VÌnculo para DescriÁ„o Longa"
+msgstr "V√≠nculo para Descri√ß√£o Longa"
 
 #: htmledit.cpp:1416 htmledit.cpp:3151 htmledit.cpp:5529
 msgid "Border"
@@ -550,7 +550,7 @@ msgstr " "
 
 #: htmledit.cpp:1629
 msgid "HTML version"
-msgstr "Vers„o HTML"
+msgstr "Vers√£o HTML"
 
 #: htmledit.cpp:1662
 msgid "Http-Equiv"
@@ -564,7 +564,7 @@ msgstr "Nome"
 
 #: htmledit.cpp:1676
 msgid "Content"
-msgstr "Conte˙do"
+msgstr "Conte√∫do"
 
 #: htmledit.cpp:1683
 msgid "Scheme"
@@ -619,19 +619,19 @@ msgstr "Cor do Texto"
 
 #: htmledit.cpp:1876
 msgid "Link Color"
-msgstr "Cor do VÌnculo"
+msgstr "Cor do V√≠nculo"
 
 #: htmledit.cpp:1886
 msgid "Visited Link Color"
-msgstr "Cor do VÌnculo Visitado"
+msgstr "Cor do V√≠nculo Visitado"
 
 #: htmledit.cpp:1896
 msgid "Active Link Color"
-msgstr "Cor de VÌnculo Ativo"
+msgstr "Cor de V√≠nculo Ativo"
 
 #: htmledit.cpp:2061 htmledit.cpp:2164
 msgid "Cite"
-msgstr "CitaÁ„o"
+msgstr "Cita√ß√£o"
 
 #: htmledit.cpp:2092
 msgid "None"
@@ -639,7 +639,7 @@ msgstr "Nenhum"
 
 #: htmledit.cpp:2182
 msgid "Date of change"
-msgstr "Data da mudanÁa"
+msgstr "Data da mudan√ßa"
 
 #: htmledit.cpp:2213 htmledit.cpp:2276 htmledit.cpp:2369 htmledit.cpp:2599
 #: htmledit.cpp:3036 htmledit.cpp:4954 htmledit.cpp:5057 htmledit.cpp:5917
@@ -666,7 +666,7 @@ msgstr "Alvo"
 
 #: htmledit.cpp:2606 htmledit.cpp:5924
 msgid "Media"
-msgstr "MÌdia"
+msgstr "M√≠dia"
 
 #: htmledit.cpp:2641 htmledit.cpp:4124 htmledit.cpp:4194 htmledit.cpp:4755
 #: htmledit.cpp:5107
@@ -675,7 +675,7 @@ msgstr "Tamanho"
 
 #: htmledit.cpp:2706 htmledit.cpp:2764
 msgid "Label"
-msgstr "RÛtulo"
+msgstr "R√≥tulo"
 
 #: htmledit.cpp:2727 htmledit.cpp:4783 htmledit.cpp:4888 htmledit.cpp:5177
 msgid "On Change"
@@ -691,7 +691,7 @@ msgstr "Fonte do Roteiro"
 
 #: htmledit.cpp:2916 htmledit.cpp:5370
 msgid "Content Type"
-msgstr "Tipo de Conte˙do"
+msgstr "Tipo de Conte√∫do"
 
 #: htmledit.cpp:2923 htmledit.cpp:3050 htmledit.cpp:5938
 msgid "Character Set"
@@ -712,7 +712,7 @@ msgstr "Rev"
 #: htmledit.cpp:3029 htmledit.cpp:4037 htmledit.cpp:4762 htmledit.cpp:4860
 #: htmledit.cpp:4969 htmledit.cpp:5129 htmledit.cpp:5554
 msgid "Tab Index"
-msgstr "Õndice da Aba"
+msgstr "√çndice da Aba"
 
 #: htmledit.cpp:3043 htmledit.cpp:5931
 msgid "HREF Language"
@@ -736,15 +736,15 @@ msgstr "Regras"
 
 #: htmledit.cpp:3212
 msgid "Cell Spacing"
-msgstr "Espacejamento de CÈlulas"
+msgstr "Espacejamento de C√©lulas"
 
 #: htmledit.cpp:3219
 msgid "Cell Padding"
-msgstr "Alinhamento das CÈlunas"
+msgstr "Alinhamento das C√©lunas"
 
 #: htmledit.cpp:3226
 msgid "Summary"
-msgstr "Sum·rio"
+msgstr "Sum√°rio"
 
 #: htmledit.cpp:3340 htmledit.cpp:3459 htmledit.cpp:3640 htmledit.cpp:3866
 msgid "Horizontal Alignment"
@@ -772,7 +772,7 @@ msgstr "Colunas Quebradas"
 
 #: htmledit.cpp:3674
 msgid "Headers"
-msgstr "CabeÁalhos"
+msgstr "Cabe√ßalhos"
 
 #: htmledit.cpp:3681
 msgid "row"
@@ -848,15 +848,15 @@ msgstr "Rolagem"
 
 #: htmledit.cpp:4623
 msgid "Action"
-msgstr "AÁ„o"
+msgstr "A√ß√£o"
 
 #: htmledit.cpp:4638
 msgid "Method"
-msgstr "MÈtodo"
+msgstr "M√©todo"
 
 #: htmledit.cpp:4647
 msgid "Encoding Type"
-msgstr "Tipo de CodificaÁ„o"
+msgstr "Tipo de Codifica√ß√£o"
 
 #: htmledit.cpp:4661
 msgid "Accept-charset"
@@ -864,7 +864,7 @@ msgstr "Aceitar-charset"
 
 #: htmledit.cpp:4668
 msgid "On Submit"
-msgstr "Na Submiss„o"
+msgstr "Na Submiss√£o"
 
 #: htmledit.cpp:4675
 msgid "On Reset"
@@ -872,11 +872,11 @@ msgstr "Na Limpeza"
 
 #: htmledit.cpp:4881 htmledit.cpp:5170
 msgid "On Select"
-msgstr "Na SeleÁ„o"
+msgstr "Na Sele√ß√£o"
 
 #: htmledit.cpp:4950 htmledit.cpp:5055
 msgid "Button"
-msgstr "Bot„o"
+msgstr "Bot√£o"
 
 #: htmledit.cpp:4951 htmledit.cpp:5050
 msgid "Submit"
@@ -896,11 +896,11 @@ msgstr "Senha"
 
 #: htmledit.cpp:5048
 msgid "Checkbox"
-msgstr "Caixa de verificaÁ„o"
+msgstr "Caixa de verifica√ß√£o"
 
 #: htmledit.cpp:5049
 msgid "Radio Button"
-msgstr "Bot„o de R·dio"
+msgstr "Bot√£o de R√°dio"
 
 #: htmledit.cpp:5053
 msgid "Hidden"
@@ -912,7 +912,7 @@ msgstr "Imagem"
 
 #: htmledit.cpp:5114
 msgid "Maximum Length"
-msgstr "Comprimento M·ximo"
+msgstr "Comprimento M√°ximo"
 
 #: htmledit.cpp:5149
 msgid "Accept Types"
@@ -928,15 +928,15 @@ msgstr "URL-Base"
 
 #: htmledit.cpp:5434
 msgid "Code Location"
-msgstr "LocalizaÁ„o do CÛdigo"
+msgstr "Localiza√ß√£o do C√≥digo"
 
 #: htmledit.cpp:5445
 msgid "Data Location"
-msgstr "LocalizaÁ„o dos Dados"
+msgstr "Localiza√ß√£o dos Dados"
 
 #: htmledit.cpp:5456 htmledit.cpp:5692
 msgid "Archive Location"
-msgstr "LocalizaÁ„o dos Pacotes"
+msgstr "Localiza√ß√£o dos Pacotes"
 
 #: htmledit.cpp:5467
 msgid "Standby Message"
@@ -944,7 +944,7 @@ msgstr "Mensagem de descanso"
 
 #: htmledit.cpp:5474
 msgid "Code Type"
-msgstr "Tipo de CÛdigo"
+msgstr "Tipo de C√≥digo"
 
 #: htmledit.cpp:5481
 msgid "Data Type"
@@ -968,7 +968,7 @@ msgstr "&Principal"
 
 #: htmledit.cpp:6021
 msgid "C&ore"
-msgstr "&N˙cleo"
+msgstr "&N√∫cleo"
 
 #: htmledit.cpp:6026
 msgid "&Events"
@@ -980,7 +980,7 @@ msgstr "&i18n"
 
 #: dirview.cpp:242
 msgid "Directory Tree"
-msgstr "¡rvore de DiretÛrios"
+msgstr "√Årvore de Diret√≥rios"
 
 #: dirview.cpp:253
 msgid "&Open"
@@ -992,7 +992,7 @@ msgstr "Re&nomear"
 
 #: dirview.cpp:257
 msgid "&New Directory"
-msgstr "&Novo DiretÛrio"
+msgstr "&Novo Diret√≥rio"
 
 #: dirview.cpp:343
 msgid "New Name:"
@@ -1005,7 +1005,7 @@ msgstr "Erro ocorrido ao renomear arquivo!"
 #: dirview.cpp:368
 #, c-format
 msgid "Remove directory \"%s\"? Are you sure?"
-msgstr "Remover diretÛrio \"%s\" ? Tem certeza ?"
+msgstr "Remover diret√≥rio \"%s\" ? Tem certeza ?"
 
 #: dirview.cpp:370
 #, c-format
@@ -1018,8 +1018,8 @@ msgstr "Erro ocorrido ao remover arquivo!"
 
 #: dirview.cpp:400
 msgid "New Directory Name:"
-msgstr "Novo Nome de DiretÛrio:"
+msgstr "Novo Nome de Diret√≥rio:"
 
 #: dirview.cpp:411
 msgid "Error occured while creating new directory!"
-msgstr "Erro ocorrido durante criaÁ„o de novo diretÛrio!"
+msgstr "Erro ocorrido durante cria√ß√£o de novo diret√≥rio!"

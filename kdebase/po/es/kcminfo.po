@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
@@ -23,7 +23,7 @@ msgstr "  dimensiones         : %dx%d pixels (%dx%d mm)\n"
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  resolución          : %dx%d puntos por pulgada\n"
+msgstr "  resoluciÃ³n          : %dx%d puntos por pulgada\n"
 
 #: info.cpp:61
 #, c-format
@@ -38,7 +38,7 @@ msgstr "nombre del display    : %s"
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "versión               : %i.%i"
+msgstr "versiÃ³n               : %i.%i"
 
 #: info.cpp:89
 #, c-format
@@ -48,7 +48,7 @@ msgstr "Cadena del vendedor   : %s"
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "versión del vendedor  : %i"
+msgstr "versiÃ³n del vendedor  : %i"
 
 #: info.cpp:93
 #, c-format
@@ -58,7 +58,7 @@ msgstr "pantalla por defecto  : %i"
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "número de pantallas   : %i"
+msgstr "nÃºmero de pantallas   : %i"
 
 #: info.cpp:181
 msgid ""
@@ -66,9 +66,9 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"No hay información disponible\n"
+"No hay informaciÃ³n disponible\n"
 " o\n"
-"este sistema no está soportado todavía :-("
+"este sistema no estÃ¡ soportado todavÃ­a :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -110,7 +110,7 @@ msgstr "No disponible"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "Número de procesadores activos= "
+msgstr "NÃºmero de procesadores activos= "
 
 #: info_linux.cpp:99
 msgid "Value"
@@ -184,7 +184,7 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Información del sistema"
+msgstr "InformaciÃ³n del sistema"
 
 #: memory.cpp:15
 msgid "Total memory"

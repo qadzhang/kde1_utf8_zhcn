@@ -21,7 +21,7 @@ msgstr "Formatador"
 
 #: about.cpp:54
 msgid "Version "
-msgstr "Vers„o "
+msgstr "Vers√£o "
 
 #: floppy.cpp:56
 msgid "Floppy Drive:"
@@ -45,7 +45,7 @@ msgstr "Apagar Apenas"
 
 #: floppy.cpp:136
 msgid "Full Format"
-msgstr "FormaÁ„o Completa"
+msgstr "Forma√ß√£o Completa"
 
 #: floppy.cpp:142
 msgid "Create Label:"
@@ -77,7 +77,7 @@ msgid ""
 msgstr ""
 "Nco consigo aceder a %s\n"
 "Verifique se o dispositivo existe\n"
-"e que tem permiss„o de escrita nele."
+"e que tem permiss√£o de escrita nele."
 
 #: floppy.cpp:339
 msgid ""
@@ -85,7 +85,7 @@ msgid ""
 "kfdformat is part of the KFloppy distribution.\n"
 "Please install KFloppy properly."
 msgstr ""
-"N„o consigo encontrar o kfdformat\n"
+"N√£o consigo encontrar o kfdformat\n"
 "kfdformat faz parte deste formatador.\n"
 "Instale-o correctamente."
 
@@ -95,7 +95,7 @@ msgid ""
 "kmke2fs is part of the KFloppy distribution.\n"
 "Please install KFloppy properly."
 msgstr ""
-"N„o consigo encontrar o kmke2fs\n"
+"N√£o consigo encontrar o kmke2fs\n"
 "kmkde2fs faz parte deste formatador.\n"
 "Instale-o correctamente."
 
@@ -105,7 +105,7 @@ msgid ""
 "kmkdosfs is part of the KFloppy distribution.\n"
 "Please install KFloppy properly."
 msgstr ""
-"N„o consigo encontrar o kmkdosfs\n"
+"N√£o consigo encontrar o kmkdosfs\n"
 "kmkdosfs faz parte deste formatador.\n"
 "Instale-o correctamente."
 
@@ -115,7 +115,7 @@ msgstr "Abortar"
 
 #: floppy.cpp:478
 msgid "Cannot start a new program: fork() failed."
-msgstr "N„o consigo comeÁar nova programa: fork() falhou."
+msgstr "N√£o consigo come√ßar nova programa: fork() falhou."
 
 #: floppy.cpp:578 floppy.cpp:706
 msgid ""
@@ -123,7 +123,7 @@ msgid ""
 "Please insert a floppy and make sure that you\n"
 "have selected a valid floppy drive.\n"
 msgstr ""
-"N„o consigo aceder ‡ diskette ou ‡ drive de diskettes\n"
+"N√£o consigo aceder √† diskette ou √† drive de diskettes\n"
 "Por favor insira uma diskette e certifique-se que\n"
 "seleccionou uma drive valida.\n"
 
@@ -133,13 +133,13 @@ msgid ""
 "Cannot format: %s\n"
 "%s"
 msgstr ""
-"N„o consigo formatar: %s\n"
+"N√£o consigo formatar: %s\n"
 "%s"
 
 #: floppy.cpp:640
 #, c-format
 msgid "Block %d is bad. Continuing ..."
-msgstr "Bloco %d est· estragado. A continuar ..."
+msgstr "Bloco %d est√° estragado. A continuar ..."
 
 #: floppy.cpp:723
 #, c-format
@@ -147,7 +147,7 @@ msgid ""
 "Cannot create a filesystem on: %s\n"
 "%s"
 msgstr ""
-"N„o consigo criar sistema de ficheiros em: %s\n"
+"N√£o consigo criar sistema de ficheiros em: %s\n"
 "%s"
 
 #: floppy.cpp:759
@@ -178,12 +178,12 @@ msgid ""
 "Cannot start a new program\n"
 "fork() failed."
 msgstr ""
-"N„o consigo iniciar programa\n"
+"N√£o consigo iniciar programa\n"
 "fork() falhou."
 
 #: floppy.cpp:913
 msgid "Error while trying to determine whether floppy is mounted\n"
-msgstr "Erro ao tentar determinar se a diskette est· montada\n"
+msgstr "Erro ao tentar determinar se a diskette est√° montada\n"
 
 #: floppy.cpp:930
 #, c-format
@@ -191,5 +191,5 @@ msgid ""
 "%s is mounted.\n"
 "Please unmount the floppy first."
 msgstr ""
-"%s est· montada.\n"
+"%s est√° montada.\n"
 "Por favor desmonte a diskette primeiro."

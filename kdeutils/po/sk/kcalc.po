@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: kcalc\n"
 "POT-Creation-Date: 1999-03-05 01:58+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
-"Last-Translator: Juraj Bedn·r <bednar@isternet.sk>\n"
+"Last-Translator: Juraj Bedn√°r <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kcalc.cpp:99
 msgid "KCalc Setup/Help"
-msgstr "KCalc Nastavenie/pomocnÌk"
+msgstr "KCalc Nastavenie/pomocn√≠k"
 
 #: kcalc.cpp:152
 msgid "Angle"
@@ -19,7 +19,7 @@ msgstr "Uhol"
 
 #: kcalc.cpp:192
 msgid "Base"
-msgstr "S˙stava"
+msgstr "S√∫stava"
 
 #: kcalc.cpp:1524
 msgid "KCalc Configuraton"
@@ -46,7 +46,7 @@ msgstr ""
 
 #: kcalc.cpp:1551
 msgid "Base type: long double\n"
-msgstr "Z·kladn˝ typ:long double\n"
+msgstr "Z√°kladn√Ω typ:long double\n"
 
 #: kcalc.cpp:1553
 msgid ""
@@ -55,18 +55,18 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"Vzhµadom na to, æe moment·lne s˙ vπade po svete chybnÈ verzie glibc, musel "
-"som znÌæiª presnosª kcalcu z 'long double' na 'double'. Majitelia systÈmov s "
-"funguj˙cou verziou glibc mÙæu prekompilovaª KCalc s povolenou presnosªou na "
-"'long double'. PreËÌtajte si README, ak tak chcete urobiª."
+"Vzhƒæadom na to, ≈æe moment√°lne s√∫ v≈°ade po svete chybn√© verzie glibc, musel "
+"som zn√≠≈æi≈• presnos≈• kcalcu z 'long double' na 'double'. Majitelia syst√©mov s "
+"funguj√∫cou verziou glibc m√¥≈æu prekompilova≈• KCalc s povolenou presnos≈•ou na "
+"'long double'. Preƒç√≠tajte si README, ak tak chcete urobi≈•."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
 msgid "Defaults"
-msgstr "ImplicitnÈ"
+msgstr "Implicitn√©"
 
 #: kcalc.cpp:1593
 msgid "Display Font"
-msgstr "PÌsmo"
+msgstr "P√≠smo"
 
 #: kcalc.cpp:1909
 #, c-format
@@ -79,27 +79,27 @@ msgstr ""
 
 #: kcalc_core.cpp:1115
 msgid "Last stat item erased"
-msgstr "Posledn· stat poloæka zmazan·"
+msgstr "Posledn√° stat polo≈æka zmazan√°"
 
 #: kcalc_core.cpp:1155
 msgid "Stat Mem cleared"
-msgstr "Pam‰ª vymazan·"
+msgstr "Pam√§≈• vymazan√°"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
-msgstr "Chyba pri spracov·vanÌ z·sobnÌka - right_op"
+msgstr "Chyba pri spracov√°van√≠ z√°sobn√≠ka - right_op"
 
 #: kcalc_core.cpp:1640
 msgid "Stack processing error - function"
-msgstr "Chyba pri spracov·vanÌ z·sobnÌka - funkcia"
+msgstr "Chyba pri spracov√°van√≠ z√°sobn√≠ka - funkcia"
 
 #: kcalc_core.cpp:1649
 msgid "Stack processing error - left_op"
-msgstr "Chyba pri spracov·vanÌ z·sobnÌka - left_op"
+msgstr "Chyba pri spracov√°van√≠ z√°sobn√≠ka - left_op"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Emergency"
-msgstr "NebezpeËenstvo"
+msgstr "Nebezpeƒçenstvo"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Stack Error!"
@@ -115,27 +115,27 @@ msgstr "Farba pozadia:"
 
 #: configdlg.cpp:95
 msgid "Precision:"
-msgstr "Presnosª:"
+msgstr "Presnos≈•:"
 
 #: configdlg.cpp:116
 msgid "Set Fixed Precision at:"
-msgstr "Nastaviª pevn˙ presnosª na :"
+msgstr "Nastavi≈• pevn√∫ presnos≈• na :"
 
 #: configdlg.cpp:145
 msgid "Beep on Error"
-msgstr "PÌpnuª pri chybe"
+msgstr "P√≠pnu≈• pri chybe"
 
 #: configdlg.cpp:153
 msgid "Trigonometry Mode"
-msgstr "Trigonometrick˝ reæim"
+msgstr "Trigonometrick√Ω re≈æim"
 
 #: configdlg.cpp:158
 msgid "Statistical Mode"
-msgstr "©tatistick˝ reæim"
+msgstr "≈†tatistick√Ω re≈æim"
 
 #: fontdlg.cpp:44
 msgid "Set Default Font"
-msgstr "Nastaviª πtandardnÈ pÌsmo"
+msgstr "Nastavi≈• ≈°tandardn√© p√≠smo"
 
 #: fontdlg.cpp:53
 msgid "Family:"
@@ -143,20 +143,20 @@ msgstr "Rodina:"
 
 #: fontdlg.cpp:63
 msgid "Point Size:"
-msgstr "Veµkosª:"
+msgstr "Veƒækos≈•:"
 
 #: fontdlg.cpp:76
 msgid "Style:"
-msgstr "©t˝l:"
+msgstr "≈†t√Ωl:"
 
 #: fontdlg.cpp:91
 msgid "Weight:"
-msgstr "V·ha:"
+msgstr "V√°ha:"
 
 #: fontdlg.cpp:101 fontdlg.cpp:134
 msgid "Bold"
-msgstr "TuËnÈ"
+msgstr "Tuƒçn√©"
 
 #: fontdlg.cpp:103 fontdlg.cpp:136
 msgid "Normal"
-msgstr "Norm·lne"
+msgstr "Norm√°lne"

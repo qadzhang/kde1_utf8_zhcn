@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: backgnd.cpp:55
@@ -55,7 +55,7 @@ msgstr "&Escolher..."
 
 #: backgnd.cpp:369
 msgid "Arrangement:"
-msgstr "DisposiÁ„o:"
+msgstr "Disposi√ß√£o:"
 
 #: backgnd.cpp:376
 msgid "Tiled"
@@ -87,11 +87,11 @@ msgstr "Centrado+Esticado"
 
 #: backgnd.cpp:383
 msgid "Symmetrical Tiled"
-msgstr "Mosaico SimÈtrico"
+msgstr "Mosaico Sim√©trico"
 
 #: backgnd.cpp:384
 msgid "Symmetrical Mirrored"
-msgstr "Espelho SimÈtrico"
+msgstr "Espelho Sim√©trico"
 
 #: backgnd.cpp:385
 msgid "Scaled"
@@ -99,7 +99,7 @@ msgstr "Escalado"
 
 #: backgnd.cpp:400
 msgid "Ra&ndom"
-msgstr "&AleatÛrio"
+msgstr "&Aleat√≥rio"
 
 #: backgnd.cpp:409
 msgid "Setu&p..."
@@ -107,7 +107,7 @@ msgstr "Config&urar..."
 
 #: backgnd.cpp:419
 msgid "&Dock into the panel"
-msgstr "Õcone no &painel"
+msgstr "√çcone no &painel"
 
 #: backgnd.cpp:444
 msgid "Cache size (kB):"
@@ -123,16 +123,16 @@ msgstr "Erro de ficheiro"
 
 #: backgnd.cpp:1391
 msgid "Can't load image file"
-msgstr "N„o consigo carregar imagem"
+msgstr "N√£o consigo carregar imagem"
 
 #: backgnd.cpp:1414 backgnd.cpp:1887
 msgid "Unsupported URL"
-msgstr "URL n„o suportado"
+msgstr "URL n√£o suportado"
 
 #: backgnd.cpp:1415 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
-msgstr "Desculpe, este tipo de URL n„o È suportada."
+msgstr "Desculpe, este tipo de URL n√£o √© suportada."
 
 #: backgnd.cpp:1447
 msgid "Two color backgrounds"
@@ -148,15 +148,15 @@ msgstr "Misturar cores da di&reita para a esquerda"
 
 #: backgnd.cpp:1496
 msgid "Use &pattern"
-msgstr "Utilizar &padr„o"
+msgstr "Utilizar &padr√£o"
 
 #: backgnd.cpp:1523
 msgid "Preview"
-msgstr "Previs„o"
+msgstr "Previs√£o"
 
 #: backgnd.cpp:1534
 msgid "Pattern &name"
-msgstr "&Nome do padr„o"
+msgstr "&Nome do padr√£o"
 
 #: backgnd.cpp:1573
 msgid "Current"
@@ -164,7 +164,7 @@ msgstr "Actual"
 
 #: backgnd.cpp:1633
 msgid "Filled"
-msgstr "SÛlido"
+msgstr "S√≥lido"
 
 #: backgnd.cpp:1636
 msgid "Fish net"
@@ -172,7 +172,7 @@ msgstr "Rede de pesca"
 
 #: backgnd.cpp:1639
 msgid "Triangles"
-msgstr "Tri‚ngulos"
+msgstr "Tri√¢ngulos"
 
 #: backgnd.cpp:1642
 msgid "Flowers"
@@ -188,7 +188,7 @@ msgstr "Pavimento"
 
 #: backgnd.cpp:1714
 msgid "Random mode setup"
-msgstr "ConfiguraÁ„o modo aleatÛrio"
+msgstr "Configura√ß√£o modo aleat√≥rio"
 
 #: backgnd.cpp:1720
 msgid "Pick files from &directory"
@@ -220,7 +220,7 @@ msgstr "Erro na directoria"
 
 #: backgnd.cpp:1996
 msgid "Selected directory doesn't exists"
-msgstr "A directoria seleccionada n„o existe"
+msgstr "A directoria seleccionada n√£o existe"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
@@ -232,7 +232,7 @@ msgstr "Esquema actual"
 
 #: colorscm.cpp:117
 msgid "KDE default"
-msgstr "KDE por omiss„o"
+msgstr "KDE por omiss√£o"
 
 #: colorscm.cpp:130
 msgid "&Add ..."
@@ -240,7 +240,7 @@ msgstr "&Adicionar ..."
 
 #: colorscm.cpp:147
 msgid "&Save changes"
-msgstr "&Gravar alteraÁıes"
+msgstr "&Gravar altera√ß√µes"
 
 #: colorscm.cpp:161
 msgid "Widget color"
@@ -248,27 +248,27 @@ msgstr "Cor dos widgets"
 
 #: colorscm.cpp:168
 msgid "Inactive title bar"
-msgstr "Barra de tÌtulo inactiva"
+msgstr "Barra de t√≠tulo inactiva"
 
 #: colorscm.cpp:169
 msgid "Inactive title text"
-msgstr "Texto de tÌtulo inactivo"
+msgstr "Texto de t√≠tulo inactivo"
 
 #: colorscm.cpp:170
 msgid "Inactive title blend"
-msgstr "Mistura do tÌtulo inactivo"
+msgstr "Mistura do t√≠tulo inactivo"
 
 #: colorscm.cpp:171
 msgid "Active title bar"
-msgstr "Barra de tÌtulo activa"
+msgstr "Barra de t√≠tulo activa"
 
 #: colorscm.cpp:172
 msgid "Active title text"
-msgstr "Texto de tÌtulo activo"
+msgstr "Texto de t√≠tulo activo"
 
 #: colorscm.cpp:173
 msgid "Active title blend"
-msgstr "Mistura do tÌtulo activo"
+msgstr "Mistura do t√≠tulo activo"
 
 #: colorscm.cpp:174
 msgid "Background"
@@ -316,9 +316,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
-"Este padr„o de cores n„o pode ser removido.\n"
-"Talvez n„o tenha permiss„o para alterar o sistema de\n"
-"ficheiros onde o padr„o de cores est· armazenado."
+"Este padr√£o de cores n√£o pode ser removido.\n"
+"Talvez n√£o tenha permiss√£o para alterar o sistema de\n"
+"ficheiros onde o padr√£o de cores est√° armazenado."
 
 #: colorscm.cpp:362
 msgid "Naming error"
@@ -330,13 +330,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-"Por favor escolha um nome ˙nico para o novo\n"
-"padr„o de cores. O que inseriu j· faz parte\n"
-"da lista de padrıes de cores."
+"Por favor escolha um nome √∫nico para o novo\n"
+"padr√£o de cores. O que inseriu j√° faz parte\n"
+"da lista de padr√µes de cores."
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
-msgstr "Adicionar padr„o de cores"
+msgstr "Adicionar padr√£o de cores"
 
 #: savescm.cpp:32
 msgid ""
@@ -346,11 +346,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Insira um nome para o novo padr„o de cores\n"
-"a ser adicionado ‡ sua lista pessoal.\n"
+"&Insira um nome para o novo padr√£o de cores\n"
+"a ser adicionado √† sua lista pessoal.\n"
 "\n"
-"As cores usadas na previs„o ser„o copiadas\n"
-"para este padr„o."
+"As cores usadas na previs√£o ser√£o copiadas\n"
+"para este padr√£o."
 
 #: scrnsave.cpp:47
 msgid "Ignore"
@@ -358,15 +358,15 @@ msgstr "Ignorar"
 
 #: scrnsave.cpp:48
 msgid "Save Screen"
-msgstr "Proteger Ecr„"
+msgstr "Proteger Ecr√£"
 
 #: scrnsave.cpp:49
 msgid "Lock Screen"
-msgstr "Bloquear Ecr„"
+msgstr "Bloquear Ecr√£"
 
 #: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
-msgstr "ProtecÁ„o do Ecr„"
+msgstr "Protec√ß√£o do Ecr√£"
 
 #: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
 msgid "No screensaver"
@@ -382,7 +382,7 @@ msgstr "&Testar"
 
 #: scrnsave.cpp:230
 msgid "Settings"
-msgstr "DefiniÁıes"
+msgstr "Defini√ß√µes"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
@@ -426,11 +426,11 @@ msgstr "&Desenhar interface ao estilo do Windows 95"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "&Menu no topo do ecr„ ao estilo do MacOS"
+msgstr "&Menu no topo do ecr√£ ao estilo do MacOS"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Aplicar fontes e cores a aplicaÁıes n„o-KDE"
+msgstr "&Aplicar fontes e cores a aplica√ß√µes n√£o-KDE"
 
 #: general.cpp:529
 msgid "General font"
@@ -442,15 +442,15 @@ msgstr "Fixa"
 
 #: general.cpp:540
 msgid "Window title font"
-msgstr "TÌtulo da janela"
+msgstr "T√≠tulo da janela"
 
 #: general.cpp:545
 msgid "Panel button font"
-msgstr "Botıes do painel"
+msgstr "Bot√µes do painel"
 
 #: general.cpp:550
 msgid "Panel clock font"
-msgstr "RelÛgio do painel"
+msgstr "Rel√≥gio do painel"
 
 #: general.cpp:580
 msgid "Sample text"
@@ -460,11 +460,11 @@ msgstr "Exemplo"
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+"0 1 2 3 4 5 6 7 8 9   ! \" ¬£ $ % ^ & * ( )"
 msgstr ""
-"Vejam a bruxa Saltapocinhas e o c„o feliz que dorme regalado\n"
-"VEJAM A BRUXA SALTAPOCINHAS E O C√O FELIZ QUE DORME REGALADO\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+"Vejam a bruxa Saltapocinhas e o c√£o feliz que dorme regalado\n"
+"VEJAM A BRUXA SALTAPOCINHAS E O C√ÉO FELIZ QUE DORME REGALADO\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" ¬£ $ % ^ & * ( )"
 
 #: main.cpp:64
 msgid "&Background"
@@ -472,7 +472,7 @@ msgstr "&Fundo"
 
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "&ProtecÁ„o do Ecr„"
+msgstr "&Protec√ß√£o do Ecr√£"
 
 #: main.cpp:71
 msgid "&Colors"
@@ -486,12 +486,12 @@ msgstr "&Estilo"
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"utilizaÁ„o: kcmdisplay [-init | "
+"utiliza√ß√£o: kcmdisplay [-init | "
 "{background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
-msgstr "ConfiguraÁ„o do Ecr„"
+msgstr "Configura√ß√£o do Ecr√£"
 
 #: widgetcanvas.cpp:104 widgetcanvas.cpp:105
 msgid "Inactive window"
@@ -519,7 +519,7 @@ msgstr "&Negrito"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr "&It·lico"
+msgstr "&It√°lico"
 
 #: fontchooser.cpp:125
 msgid "&Size"
@@ -531,7 +531,7 @@ msgstr "&Caracteres"
 
 #: fontchooser.cpp:262
 msgid "default"
-msgstr "por omiss„o"
+msgstr "por omiss√£o"
 
 #: fontchooser.cpp:265
 msgid "any"

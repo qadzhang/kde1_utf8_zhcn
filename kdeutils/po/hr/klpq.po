@@ -9,24 +9,24 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:178
 msgid "Sorry, can't open your printcap file."
-msgstr "®alim, ne mogu otvoriti printcap datoteku."
+msgstr "Å½alim, ne mogu otvoriti printcap datoteku."
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
-msgstr "®alim, ne mogu analizirati printcap datoteku."
+msgstr "Å½alim, ne mogu analizirati printcap datoteku."
 
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
-msgstr "Molim po¹aljite va¹ printcap na Christoph.Neerfeld@home.ivm.de"
+msgstr "Molim poÅ¡aljite vaÅ¡ printcap na Christoph.Neerfeld@home.ivm.de"
 
 #: klpq.cpp:90
 msgid "Printer"
-msgstr "Pisaè"
+msgstr "PisaÄ"
 
 #: klpq.cpp:95
 msgid "Queuing"
@@ -38,7 +38,7 @@ msgstr "Ispisujem"
 
 #: klpq.cpp:105
 msgid "Update"
-msgstr "Osvje¾i"
+msgstr "OsvjeÅ¾i"
 
 #: klpq.cpp:125
 msgid "Rank"
@@ -54,7 +54,7 @@ msgstr "Posao"
 
 #: klpq.cpp:129
 msgid "Size"
-msgstr "Velièina"
+msgstr "VeliÄina"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
@@ -66,7 +66,7 @@ msgstr "Auto"
 
 #: klpq.cpp:204
 msgid "&Auto update"
-msgstr "Osvje¾i &automatski..."
+msgstr "OsvjeÅ¾i &automatski..."
 
 #: klpq.cpp:205
 msgid "&Spooler"
@@ -90,7 +90,7 @@ msgstr "&Postava"
 #: klpq.cpp:404
 #, c-format
 msgid "Do you really want to remove job No %d"
-msgstr "Da li zbilja ¾elite ukloniti posao br. %d"
+msgstr "Da li zbilja Å¾elite ukloniti posao br. %d"
 
 #: klpq.cpp:424
 #, c-format
@@ -99,7 +99,7 @@ msgid ""
 "%d\n"
 "on top of queue"
 msgstr ""
-"Da li zbilja ¾elite pomaknuti posao br.\n"
+"Da li zbilja Å¾elite pomaknuti posao br.\n"
 "%d\n"
 "na vrh reda"
 
@@ -113,31 +113,31 @@ msgid ""
 "and you do not have permission to execute it."
 msgstr ""
 "Ovo je privilegirana komanda\n"
-"a ti nema¹ privilegije da ju izvr¹i¹."
+"a ti nemaÅ¡ privilegije da ju izvrÅ¡iÅ¡."
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
-msgstr "Podesi Auto Osvje¾avanje"
+msgstr "Podesi Auto OsvjeÅ¾avanje"
 
 #: ConfAutoUpdateData.cpp:17
 msgid "Update frequency in seconds:"
-msgstr "Frekvencija osvje¾avanja (sek):"
+msgstr "Frekvencija osvjeÅ¾avanja (sek):"
 
 #: klpqspooler.cpp:199 klpqspooler.cpp:269
 msgid "Can't find your lpc program !"
-msgstr "Ne mogu naæi lpc program !"
+msgstr "Ne mogu naÄ‡i lpc program !"
 
 #: klpqspooler.cpp:200 klpqspooler.cpp:270
 msgid ""
 "Sorry, I can't find your lpc program.\n"
 "Please check the configuration under Config->Spooler."
 msgstr ""
-"®alim, ne mogu naæi lpc program.\n"
+"Å½alim, ne mogu naÄ‡i lpc program.\n"
 "Provjerite postavu pod Postava->Posrednik."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
-msgstr "Izaberi posrednièki sustav"
+msgstr "Izaberi posredniÄki sustav"
 
 #: FirstStartData.cpp:42
 msgid ""
@@ -145,10 +145,10 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Izaberi posrednièki sustav koji koristi¹. Veæina sustava koristi BSD "
-"posrednika. Ako ne zna¹ koji posrednik ima¹ instaliran BSD je vjerojatno "
+"Izaberi posredniÄki sustav koji koristiÅ¡. VeÄ‡ina sustava koristi BSD "
+"posrednika. Ako ne znaÅ¡ koji posrednik imaÅ¡ instaliran BSD je vjerojatno "
 "dobar izbor."
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"
-msgstr "Putevi posrednièkih komandi:"
+msgstr "Putevi posredniÄkih komandi:"

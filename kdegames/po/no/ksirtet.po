@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: board.cpp:65 dialogs.cpp:137
@@ -23,7 +23,7 @@ msgstr "Pause i spillet"
 
 #: board.cpp:102
 msgid "Press to resume"
-msgstr "Trykk for å fortsette"
+msgstr "Trykk for Ã¥ fortsette"
 
 #: board.cpp:119 net.cpp:208
 msgid "Game over"
@@ -35,11 +35,11 @@ msgstr "Trykk Return for spille om igjen"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "Trykk for å starte spill"
+msgstr "Trykk for Ã¥ starte spill"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "Kan ikke skrive til fil for høy poengsum !"
+msgstr "Kan ikke skrive til fil for hÃ¸y poengsum !"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -71,7 +71,7 @@ msgstr "Tjener ikke tilgjengelig"
 
 #: net.cpp:266
 msgid "The server has died"
-msgstr "Tjeneren døde"
+msgstr "Tjeneren dÃ¸de"
 
 #: net.cpp:267
 msgid "Cancel from server"
@@ -111,7 +111,7 @@ msgstr "Ukjent melding fra klient"
 
 #: net.cpp:486
 msgid "Client has died"
-msgstr "Klienten døde"
+msgstr "Klienten dÃ¸de"
 
 #: net.cpp:487
 msgid "Cancel from client"
@@ -135,7 +135,7 @@ msgstr "Ukjent data fra klient"
 
 #: net.cpp:533
 msgid "End message from client"
-msgstr "Slutt på melding fra klient"
+msgstr "Slutt pÃ¥ melding fra klient"
 
 #: net.cpp:550
 msgid "Cannot send to client"
@@ -143,15 +143,15 @@ msgstr "Kan ikke sende til klient"
 
 #: dialogs.cpp:61
 msgid "High Scores"
-msgstr "Høy poengsum"
+msgstr "HÃ¸y poengsum"
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
-msgstr "På toppen av seierspallen"
+msgstr "PÃ¥ toppen av seierspallen"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
-msgstr "Intet valg ennå !"
+msgstr "Intet valg ennÃ¥ !"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
@@ -203,7 +203,7 @@ msgstr "Klient mode"
 
 #: dialogs.cpp:336
 msgid "Waiting for other player(s) ..."
-msgstr "Venter på annen(andre) spiller(e) ..."
+msgstr "Venter pÃ¥ annen(andre) spiller(e) ..."
 
 #: field.cpp:27
 msgid "New game"
@@ -215,7 +215,7 @@ msgstr "Pause i spillet"
 
 #: field.cpp:30
 msgid "High scores"
-msgstr "Høy poengsum"
+msgstr "HÃ¸y poengsum"
 
 #: field.cpp:31
 msgid "Move left"
@@ -223,7 +223,7 @@ msgstr "Flytt til venstre"
 
 #: field.cpp:32
 msgid "Move right"
-msgstr "Flytt til høyre"
+msgstr "Flytt til hÃ¸yre"
 
 #: field.cpp:33
 msgid "Drop down"
@@ -239,7 +239,7 @@ msgstr "Roter til venstre"
 
 #: field.cpp:36
 msgid "Rotate right"
-msgstr "Roter til høyre"
+msgstr "Roter til hÃ¸yre"
 
 #: field.cpp:51
 msgid "Score"
@@ -251,7 +251,7 @@ msgstr "Linjer er fjernet"
 
 #: field.cpp:59
 msgid "Level"
-msgstr "Nivå"
+msgstr "NivÃ¥"
 
 #: field.cpp:63
 msgid "Next tile"
@@ -271,7 +271,7 @@ msgstr "&Flere spillere deltar"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "&Høy poengsum"
+msgstr "&HÃ¸y poengsum"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"

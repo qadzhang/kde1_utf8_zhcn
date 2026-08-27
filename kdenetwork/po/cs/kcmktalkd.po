@@ -7,36 +7,36 @@ msgstr ""
 "Project-Id-Version: kcmktalkd\n"
 "POT-Creation-Date: 1998-12-12 15:20+0100\n"
 "PO-Revision-Date: 1998-12-23 20:57 CET\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:58
 msgid "&Announcement"
-msgstr "&Oznámení"
+msgstr "&OznÃ¡menÃ­"
 
 #: main.cpp:61
 msgid "Ans&wering machine"
-msgstr "&Záznamník"
+msgstr "&ZÃ¡znamnÃ­k"
 
 #: main.cpp:64
 msgid "&Forward"
-msgstr "Pøe&smìrování"
+msgstr "PÅ™e&smÄ›rovÃ¡nÃ­"
 
 #: main.cpp:70
 msgid "usage: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
 msgstr ""
-"Pou¾ití: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
+"PouÅ¾itÃ­: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
 
 #: main.cpp:111
 msgid "KTalkd Configuration"
-msgstr "Nastavení programu KTalkd"
+msgstr "NastavenÃ­ programu KTalkd"
 
 #: soundpage.cpp:46
 msgid "&Announcement program"
-msgstr "&Oznamovací program"
+msgstr "&OznamovacÃ­ program"
 
 #: soundpage.cpp:53
 msgid "&Talk client"
@@ -44,15 +44,15 @@ msgstr "&Talk klient"
 
 #: soundpage.cpp:57
 msgid "&Play sound"
-msgstr "&Pøehrávat zvuk"
+msgstr "&PÅ™ehrÃ¡vat zvuk"
 
 #: soundpage.cpp:59
 msgid "&Sound File"
-msgstr "Z&vukovı soubor"
+msgstr "Z&vukovÃ½ soubor"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Dal¹í WAV soubory je mo¾no upustit nad seznamem zvukù"
+msgstr "DalÅ¡Ã­ WAV soubory je moÅ¾no upustit nad seznamem zvukÅ¯"
 
 #: soundpage.cpp:76
 msgid "&Test"
@@ -60,15 +60,15 @@ msgstr "T&est"
 
 #: soundpage.cpp:156
 msgid "Unsupported URL"
-msgstr "Nepodporované URL"
+msgstr "NepodporovanÃ© URL"
 
 #: soundpage.cpp:157
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Lituji, ale tento typ URL není momentálnì podporován modulem systémovıch "
-"zvukù"
+"Lituji, ale tento typ URL nenÃ­ momentÃ¡lnÄ› podporovÃ¡n modulem systÃ©movÃ½ch "
+"zvukÅ¯"
 
 #: soundpage.cpp:164
 #, c-format
@@ -77,13 +77,13 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Lituji, ale nezdá se, ¾e by\n"
+"Lituji, ale nezdÃ¡ se, Å¾e by\n"
 "%s\n"
 "byl WAv souborem"
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
-msgstr "Nesprávná koncovka souborù"
+msgstr "NesprÃ¡vnÃ¡ koncovka souborÅ¯"
 
 #: soundpage.cpp:175
 #, c-format
@@ -93,45 +93,45 @@ msgid ""
 "is already in the list"
 msgstr ""
 "Soubor\n"
-"%s je ji¾ v seznamu"
+"%s je jiÅ¾ v seznamu"
 
 #: soundpage.cpp:179
 msgid "File Already in List"
-msgstr "Soubor je ji¾ v seznamu"
+msgstr "Soubor je jiÅ¾ v seznamu"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
-msgstr "Aktivovat &záznamník"
+msgstr "Aktivovat &zÃ¡znamnÃ­k"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
-msgstr "Po¹tovní &adresa"
+msgstr "PoÅ¡tovnÃ­ &adresa"
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
-msgstr "Pøed&mìt zprávy"
+msgstr "PÅ™ed&mÄ›t zprÃ¡vy"
 
 #: answmachpage.cpp:54
 #, c-format
 msgid "Use %s for the caller name"
-msgstr "Pou¾ijte %s jako jméno volajícího"
+msgstr "PouÅ¾ijte %s jako jmÃ©no volajÃ­cÃ­ho"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "P&rvní øádka zprávy"
+msgstr "P&rvnÃ­ Å™Ã¡dka zprÃ¡vy"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
-msgstr "Pou¾íjte první %s pro jméno volajícího a druhé %s pro jméno hostitele"
+msgstr "PouÅ¾Ã­jte prvnÃ­ %s pro jmÃ©no volajÃ­cÃ­ho a druhÃ© %s pro jmÃ©no hostitele"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&Pøijmout zprávu, i kdy¾ není zanechána zpráva"
+msgstr "&PÅ™ijmout zprÃ¡vu, i kdyÅ¾ nenÃ­ zanechÃ¡na zprÃ¡va"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Text vypisovanı pøi startu záznamníku :"
+msgstr "&Text vypisovanÃ½ pÅ™i startu zÃ¡znamnÃ­ku :"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -146,24 +146,24 @@ msgstr ""
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
 msgid "Message from %s"
-msgstr "Zpráva od %s"
+msgstr "ZprÃ¡va od %s"
 
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Zprávu zanechál v záznamníku %s@%s"
+msgstr "ZprÃ¡vu zanechÃ¡l v zÃ¡znamnÃ­ku %s@%s"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
-msgstr "Aktivovat &pøesmìrování"
+msgstr "Aktivovat &pÅ™esmÄ›rovÃ¡nÃ­"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Cíl (u¾ivatel nebo u¾ivatel@hostitel)"
+msgstr "&CÃ­l (uÅ¾ivatel nebo uÅ¾ivatel@hostitel)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
-msgstr "&Metoda pøesmìrování"
+msgstr "&Metoda pÅ™esmÄ›rovÃ¡nÃ­"
 
 #: forwmachpage.cpp:54
 msgid ""
@@ -178,14 +178,14 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Pouze oznámení pøesmìrování. Pøímé spojení. Nedoporuèuje se.\n"
-"FWR : Pøesmìrovat v¹echny po¾adavky, zmìnit informace podle potøeby. Pøímé "
-"spojení.\n"
-"FWT : Pøesmìrovat v¹echny po¾adavky a brát v¹echny hovory. ®ádné pøímé "
-"spojení.\n"
+"FWA : Pouze oznÃ¡menÃ­ pÅ™esmÄ›rovÃ¡nÃ­. PÅ™Ã­mÃ© spojenÃ­. NedoporuÄuje se.\n"
+"FWR : PÅ™esmÄ›rovat vÅ¡echny poÅ¾adavky, zmÄ›nit informace podle potÅ™eby. PÅ™Ã­mÃ© "
+"spojenÃ­.\n"
+"FWT : PÅ™esmÄ›rovat vÅ¡echny poÅ¾adavky a brÃ¡t vÅ¡echny hovory. Å½Ã¡dnÃ© pÅ™Ã­mÃ© "
+"spojenÃ­.\n"
 "\n"
-"Doporuèené pou¾ití: FWT jestli¾e jej chece pou¾ívat za firewallem (a má-li "
+"DoporuÄenÃ© pouÅ¾itÃ­: FWT jestliÅ¾e jej chece pouÅ¾Ã­vat za firewallem (a mÃ¡-li "
 "ktald\n"
-"pøístup k oboum sítím), jinak FWR.\n"
+"pÅ™Ã­stup k oboum sÃ­tÃ­m), jinak FWR.\n"
 "\n"
-"Nahlédnìte do nápovìdy pro podrobnìj¹í vıklad.\n"
+"NahlÃ©dnÄ›te do nÃ¡povÄ›dy pro podrobnÄ›jÅ¡Ã­ vÃ½klad.\n"

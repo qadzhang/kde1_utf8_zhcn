@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:67
@@ -47,15 +47,15 @@ msgstr "Stil WM"
 
 #: titlebar.cpp:125
 msgid "Minimize"
-msgstr "Minimizeazã"
+msgstr "MinimizeazÄƒ"
 
 #: titlebar.cpp:129
 msgid "Maximize"
-msgstr "Maximizeazã"
+msgstr "MaximizeazÄƒ"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Þintuieºte"
+msgstr "Å¢intuieÅŸte"
 
 #: titlebar.cpp:141
 msgid "Menu"
@@ -73,28 +73,28 @@ msgstr ""
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Partea stângã a zonei de titlu este plinã... dezactivez butonul de "
+"Partea stÃ¢ngÄƒ a zonei de titlu este plinÄƒ... dezactivez butonul de "
 "'maximizare'\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de "
+"Partea dreaptÄƒ a zonei de titlu este plinÄƒ... dezactivez butonul de "
 "'maximizare'\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Partea stângã a zonei de titlu este plinã... dezactivez butonul de "
+"Partea stÃ¢ngÄƒ a zonei de titlu este plinÄƒ... dezactivez butonul de "
 "'minimizare'\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de "
+"Partea dreaptÄƒ a zonei de titlu este plinÄƒ... dezactivez butonul de "
 "'minimizare'\n"
 
 #: titlebar.cpp:932
@@ -107,15 +107,15 @@ msgstr ""
 
 #: titlebar.cpp:969
 msgid "Shaded Vertically"
-msgstr "Umbritã vertical"
+msgstr "UmbritÄƒ vertical"
 
 #: titlebar.cpp:975
 msgid "Shaded Horizontally"
-msgstr "Umbritã orizontal"
+msgstr "UmbritÄƒ orizontal"
 
 #: titlebar.cpp:984
 msgid "Plain"
-msgstr "Planã"
+msgstr "PlanÄƒ"
 
 #: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
@@ -128,12 +128,12 @@ msgstr ""
 #: titlebar.cpp:1046
 #, fuzzy
 msgid "Active pixmap:"
-msgstr "Pixmap pentru &Activã"
+msgstr "Pixmap pentru &ActivÄƒ"
 
 #: titlebar.cpp:1051
 #, fuzzy
 msgid "Inactive pixmap:"
-msgstr "Pixmap pentru &Inactivã"
+msgstr "Pixmap pentru &InactivÄƒ"
 
 #: titlebar.cpp:1057
 msgid "No pixmap under text"
@@ -141,35 +141,35 @@ msgstr ""
 
 #: titlebar.cpp:1068
 msgid "Mouse action"
-msgstr "Acþiune ºoarec"
+msgstr "AcÅ£iune ÅŸoarec"
 
 #: titlebar.cpp:1076
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
-"Dublu clic cu butonul din stânga\n"
+"Dublu clic cu butonul din stÃ¢nga\n"
 "    pe zona de titlu face:"
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
-msgstr "(De)Maximizeazã"
+msgstr "(De)MaximizeazÄƒ"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "(De)Umbreºte"
+msgstr "(De)UmbreÅŸte"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
-msgstr "Iconificã"
+msgstr "IconificÄƒ"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "(De)Þintuieºte"
+msgstr "(De)Å¢intuieÅŸte"
 
 #: titlebar.cpp:1109
 #, fuzzy
 msgid "Title animation"
-msgstr "Animaþia titlului"
+msgstr "AnimaÅ£ia titlului"
 
 #: titlebar.cpp:1125
 msgid "ms"
@@ -206,7 +206,7 @@ msgstr ""
 #: windows.cpp:98
 #, fuzzy
 msgid "Resize animation:"
-msgstr "Animaþia titlului"
+msgstr "AnimaÅ£ia titlului"
 
 #: windows.cpp:111
 msgid "None"
@@ -214,23 +214,23 @@ msgstr ""
 
 #: windows.cpp:117
 msgid "Fast"
-msgstr "Rapidã"
+msgstr "RapidÄƒ"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "Politicã de amplasare"
+msgstr "PoliticÄƒ de amplasare"
 
 #: windows.cpp:134
 msgid "Smart"
-msgstr "Isteaþã"
+msgstr "IsteaÅ£Äƒ"
 
 #: windows.cpp:136
 msgid "Cascade"
-msgstr "Cascadatã"
+msgstr "CascadatÄƒ"
 
 #: windows.cpp:138
 msgid "Interactive"
-msgstr "Interactivã"
+msgstr "InteractivÄƒ"
 
 #: windows.cpp:140
 msgid "Random"
@@ -238,7 +238,7 @@ msgstr "Aleatoare"
 
 #: windows.cpp:142
 msgid "Manual"
-msgstr "Manualã"
+msgstr "ManualÄƒ"
 
 #: windows.cpp:154
 #, c-format
@@ -258,11 +258,11 @@ msgstr "Clic pentru focus"
 
 #: windows.cpp:187
 msgid "Focus follows mouse"
-msgstr "Focusul urmãreºte ºoarecul"
+msgstr "Focusul urmÄƒreÅŸte ÅŸoarecul"
 
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Focusul urmãreºte ºoarecul (clasic)"
+msgstr "Focusul urmÄƒreÅŸte ÅŸoarecul (clasic)"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
@@ -286,16 +286,16 @@ msgstr "Marginile active ale ecranului"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "Activeazã marginile active ale ecranului"
+msgstr "ActiveazÄƒ marginile active ale ecranului"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Mutã cursorul în centru dupã schimbare"
+msgstr "MutÄƒ cursorul Ã®n centru dupÄƒ schimbare"
 
 #: desktop.cpp:87
 #, fuzzy
 msgid "Desktop switch delay:"
-msgstr "Intârzierea schimbãrii ecranului:"
+msgstr "IntÃ¢rzierea schimbÄƒrii ecranului:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -324,12 +324,12 @@ msgstr ""
 #: mouse.cpp:58
 #, fuzzy
 msgid "Inactive"
-msgstr "Interactivã"
+msgstr "InteractivÄƒ"
 
 #: mouse.cpp:62
 #, fuzzy
 msgid "Titlebar and frame:"
-msgstr "Aparenþa zonei de titlu"
+msgstr "AparenÅ£a zonei de titlu"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
@@ -377,7 +377,7 @@ msgstr ""
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 #, fuzzy
 msgid "Operations menu"
-msgstr "Meniu de operaþii"
+msgstr "Meniu de operaÅ£ii"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
@@ -416,7 +416,7 @@ msgstr ""
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
-msgstr "Rescaleazã"
+msgstr "RescaleazÄƒ"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
@@ -489,44 +489,44 @@ msgid "Classes"
 msgstr ""
 
 #~ msgid "Titlebar appearance"
-#~ msgstr "Aparenþa zonei de titlu"
+#~ msgstr "AparenÅ£a zonei de titlu"
 
 #~ msgid "Operations Menu"
-#~ msgstr "Meniu de operaþii"
+#~ msgstr "Meniu de operaÅ£ii"
 
 #~ msgid "Window movement"
-#~ msgstr "Miºcarea ferestrelor"
+#~ msgstr "MiÅŸcarea ferestrelor"
 
 #~ msgid "Transparent"
-#~ msgstr "Transparentã"
+#~ msgstr "TransparentÄƒ"
 
 #~ msgid "Opaque"
-#~ msgstr "Opacã"
+#~ msgstr "OpacÄƒ"
 
 #~ msgid "Window resize"
 #~ msgstr "Rescalarea ferestrelor"
 
 #~ msgid "Animation:"
-#~ msgstr "Animaþie:"
+#~ msgstr "AnimaÅ£ie:"
 
 #~ msgid "Allowed Overlap:"
-#~ msgstr "Suprapunere permisã:"
+#~ msgstr "Suprapunere permisÄƒ:"
 
 #~ msgid "Maximize Style"
 #~ msgstr "Stil de maximizare"
 
 #~ msgid "Maximize fully"
-#~ msgstr "Maximizare completã"
+#~ msgstr "Maximizare completÄƒ"
 
 #~ msgid "Maximize vertically"
-#~ msgstr "Maximizare verticalã"
+#~ msgstr "Maximizare verticalÄƒ"
 
 #~ msgid ""
 #~ "Auto raise delay\n"
 #~ "(<100 disables)"
 #~ msgstr ""
 #~ "Timpul de auto raise\n"
-#~ "(<100 dezactiveazã)"
+#~ "(<100 dezactiveazÄƒ)"
 
 #~ msgid "miliseconds"
 #~ msgstr "milisecunde"

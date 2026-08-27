@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Roman Maurer <roman.maurer@hermes.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:58
@@ -23,7 +23,7 @@ msgstr "Ta&jnica"
 
 #: main.cpp:64
 msgid "&Forward"
-msgstr "&Po¹iljanje naprej"
+msgstr "&PoÅ¡iljanje naprej"
 
 #: main.cpp:70
 msgid "usage: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
@@ -36,7 +36,7 @@ msgstr "Nastavitve KTalkd"
 
 #: soundpage.cpp:46
 msgid "&Announcement program"
-msgstr "&Obve¹èevalni program"
+msgstr "&ObveÅ¡Äevalni program"
 
 #: soundpage.cpp:53
 msgid "&Talk client"
@@ -48,7 +48,7 @@ msgstr "&Predvajaj zvok"
 
 #: soundpage.cpp:59
 msgid "&Sound File"
-msgstr "&Zvoèna datoteka"
+msgstr "&ZvoÄna datoteka"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
@@ -82,7 +82,7 @@ msgstr ""
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
-msgstr "Nepravilna datoteèna konènica"
+msgstr "Nepravilna datoteÄna konÄnica"
 
 #: soundpage.cpp:175
 #, c-format
@@ -93,11 +93,11 @@ msgid ""
 msgstr ""
 "Datoteka\n"
 "%s\n"
-"se ¾e nahaja na seznamu"
+"se Å¾e nahaja na seznamu"
 
 #: soundpage.cpp:179
 msgid "File Already in List"
-msgstr "Datoteka ¾e obstaja na seznamu"
+msgstr "Datoteka Å¾e obstaja na seznamu"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
@@ -105,11 +105,11 @@ msgstr "Vklopi t&ajnico"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
-msgstr "&Po¹tni naslov"
+msgstr "&PoÅ¡tni naslov"
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
-msgstr "Pre&dmet po¹te"
+msgstr "Pre&dmet poÅ¡te"
 
 #: answmachpage.cpp:54
 #, c-format
@@ -118,18 +118,18 @@ msgstr "Uporabi %s za ime klicatelja"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "Po¹lji &prvo vrstico"
+msgstr "PoÅ¡lji &prvo vrstico"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
 msgstr ""
 "Uporabi prvo %s za ime klicatelja, in drugi %s za ime klicateljevega "
-"raèunalnika"
+"raÄunalnika"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "Sp&rejemaj po¹to tudi èe ni veè sporoèil"
+msgstr "Sp&rejemaj poÅ¡to tudi Äe ni veÄ sporoÄil"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
@@ -141,31 +141,31 @@ msgid ""
 "Please leave a message to be delivered via E-Mail.\n"
 "Just start typing and when you're done, exit normally."
 msgstr ""
-"Oseba s katero se ¾elite pogovarjati ne odgovarja.\n"
-"Prosim pustite sporoèilo, ki bo dostavljeno po epo¹ti.\n"
-"Zaènite tipkati in ko boste konèali, zapustite program kot obièajno."
+"Oseba s katero se Å¾elite pogovarjati ne odgovarja.\n"
+"Prosim pustite sporoÄilo, ki bo dostavljeno po epoÅ¡ti.\n"
+"ZaÄnite tipkati in ko boste konÄali, zapustite program kot obiÄajno."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
 msgid "Message from %s"
-msgstr "Sporoèilo od %s"
+msgstr "SporoÄilo od %s"
 
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Sporoèilo od %s@%s ostalo na tajnici"
+msgstr "SporoÄilo od %s@%s ostalo na tajnici"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
-msgstr "Vklopite po¹iljanje naprej"
+msgstr "Vklopite poÅ¡iljanje naprej"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Cilj (uporabnik ali uporabnik@raèunalnik)"
+msgstr "&Cilj (uporabnik ali uporabnik@raÄunalnik)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
-msgstr "&Metoda po¹iljanja naprej"
+msgstr "&Metoda poÅ¡iljanja naprej"
 
 #: forwmachpage.cpp:54
 msgid ""
@@ -180,13 +180,13 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Po¹lji naprej le obvestila. Neposredna povezava. Odsvetovano.\n"
-"FWR : Po¹lji naprej vse zahteve, spremeni informacije le, ko je potrebno. "
+"FWA : PoÅ¡lji naprej le obvestila. Neposredna povezava. Odsvetovano.\n"
+"FWR : PoÅ¡lji naprej vse zahteve, spremeni informacije le, ko je potrebno. "
 "Neposredna povezava.\n"
-"FWT : Po¹lji naprej vse zahteve in sprejmi pogovor. Posredna povezava.\n"
+"FWT : PoÅ¡lji naprej vse zahteve in sprejmi pogovor. Posredna povezava.\n"
 "\n"
-"Priporoèena uporaba : FWT, èe ga ¾elite uporabljati za po¾arnim zidom (in èe "
+"PriporoÄena uporaba : FWT, Äe ga Å¾elite uporabljati za poÅ¾arnim zidom (in Äe "
 "ktalkd\n"
-"dose¾e obe omre¾ji), sicer FWR.\n"
+"doseÅ¾e obe omreÅ¾ji), sicer FWR.\n"
 "\n"
-"Oglejte si Pomoè za nadaljna pojasnila.\n"
+"Oglejte si PomoÄ za nadaljna pojasnila.\n"

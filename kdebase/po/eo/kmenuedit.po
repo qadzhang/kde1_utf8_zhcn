@@ -1,4 +1,4 @@
-# Esperantaj mesaøoj por "kmenuedit"
+# Esperantaj mesaÄoj por "kmenuedit"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,12 +11,12 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"
-msgstr "Şanøu &menunomon"
+msgstr "ÅœanÄu &menunomon"
 
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
@@ -24,11 +24,11 @@ msgstr "Relegu &dosiertipojn"
 
 #: kmenuedit.cpp:77
 msgid "by"
-msgstr "æe"
+msgstr "Ä‰e"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
-msgstr "Şanøoj ne sekurigitaj!"
+msgstr "ÅœanÄoj ne sekurigitaj!"
 
 #: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
@@ -36,7 +36,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Æu vi volas sekurigi viajn şanøojn?"
+"Äˆu vi volas sekurigi viajn ÅanÄojn?"
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
@@ -51,8 +51,8 @@ msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Relego de la menuoj malvalidigos æiujn viajn şanøojn.\n"
-"Æu vi estas certa, ke vi volas relegi?"
+"Relego de la menuoj malvalidigos Ä‰iujn viajn ÅanÄojn.\n"
+"Äˆu vi estas certa, ke vi volas relegi?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
@@ -64,7 +64,7 @@ msgid ""
 " Do you want to create it now ?"
 msgstr ""
 "LA dosierujo por via persona menuo ne ekzistas.\n"
-" Æu vi volas krei øin nun?"
+" Äˆu vi volas krei Äin nun?"
 
 #: main.cpp:93
 msgid ""
@@ -100,11 +100,11 @@ msgstr "Averto!"
 
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Se vi forigas tiun butonon vi perdos æiujn viajn submenuojn"
+msgstr "Se vi forigas tiun butonon vi perdos Ä‰iujn viajn submenuojn"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
-msgstr "Maløusta dosiernomo"
+msgstr "MalÄusta dosiernomo"
 
 #: confmenu.cpp:298
 msgid ""
@@ -116,7 +116,7 @@ msgstr ""
 
 #: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Şanøo de la tipo de tiu butono forigos æiujn viajn submenuojn"
+msgstr "ÅœanÄo de la tipo de tiu butono forigos Ä‰iujn viajn submenuojn"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
@@ -127,8 +127,8 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"PArdonu! Vi devas sekurigi viajn şanøojn antaı kiam\n"
-"vi povas faligi tiun æi objekton sur alia fenestro."
+"PArdonu! Vi devas sekurigi viajn ÅanÄojn antaÅ­ kiam\n"
+"vi povas faligi tiun Ä‰i objekton sur alia fenestro."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
@@ -153,7 +153,7 @@ msgstr "Submenuo"
 #: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
 #: entrydialog.cpp:544
 msgid "Application"
-msgstr "Aplika¼o"
+msgstr "AplikaÄµo"
 
 #: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
@@ -195,11 +195,11 @@ msgstr "Komento:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "Lanæu"
+msgstr "LanÄ‰u"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
-msgstr "Lanæu"
+msgstr "LanÄ‰u"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
@@ -215,19 +215,19 @@ msgstr "Terminalopcioj:"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "Duuma şablono:"
+msgstr "Duuma Åablono:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "Gastigenda aplika¼o:"
+msgstr "Gastigenda aplikaÄµo:"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"
-msgstr "Titolo de la aplika¼o:"
+msgstr "Titolo de la aplikaÄµo:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "Aplika¼o lanæenda æe butonpremo:"
+msgstr "AplikaÄµo lanÄ‰enda Ä‰e butonpremo:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -255,11 +255,11 @@ msgstr "Piktogramo por Malmunto"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Şanøu menunomojn"
+msgstr "ÅœanÄu menunomojn"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Şanøu la nomon de la menuo kiel legebla en Kpanel"
+msgstr "ÅœanÄu la nomon de la menuo kiel legebla en Kpanel"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

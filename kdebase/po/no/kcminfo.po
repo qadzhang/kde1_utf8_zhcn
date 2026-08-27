@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: info.cpp:50
@@ -21,12 +21,12 @@ msgstr "skjerm #%d"
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  størrelse               : %dx%d piksler (%dx%d mm)\n"
+msgstr "  stÃ¸rrelse               : %dx%d piksler (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  oppløsning              : %dx%d punkter pr tomme\n"
+msgstr "  opplÃ¸sning              : %dx%d punkter pr tomme\n"
 
 #: info.cpp:61
 #, c-format
@@ -36,7 +36,7 @@ msgstr "  dybde (%d)               : "
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "navn på skjerm            : %s"
+msgstr "navn pÃ¥ skjerm            : %s"
 
 #: info.cpp:87
 #, c-format
@@ -46,12 +46,12 @@ msgstr "versjonsnummer            : %i.%i"
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "leverandørstreng          : %s"
+msgstr "leverandÃ¸rstreng          : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "leverandørutgivelsesnummer: %i"
+msgstr "leverandÃ¸rutgivelsesnummer: %i"
 
 #: info.cpp:93
 #, c-format
@@ -71,7 +71,7 @@ msgid ""
 msgstr ""
 "Ingen informasjon tilgjengelig\n"
 "eller\n"
-"dette systemet er foreløbig ikke støttet :-("
+"dette systemet er forelÃ¸big ikke stÃ¸ttet :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -81,11 +81,11 @@ msgstr "%s, ukjent hastighet"
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s kjører på %s MHz"
+msgstr "%s kjÃ¸rer pÃ¥ %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Åhh. Kunne ikke åpne fstab!"
+msgstr "Ã…hh. Kunne ikke Ã¥pne fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
@@ -129,7 +129,7 @@ msgstr "brukt av"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "I/O-område"
+msgstr "I/O-omrÃ¥de"
 
 #: main.cpp:79
 msgid "&Memory"

@@ -1,9 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 1999-04-24 01:02+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
-"Context-Type: charset=iso-8859-2\n"
+"Context-Type: charset=UTF-8\n"
 
 #: kab/AssertDialog.cpp:29
 #, fuzzy
@@ -53,7 +56,7 @@ msgstr ""
 #: kab/AssertDialog.cpp:141
 #, fuzzy
 msgid "In file "
-msgstr "fiºier"
+msgstr "fiÅŸier"
 
 #: kab/AssertDialog.cpp:141
 msgid ", line "
@@ -102,12 +105,12 @@ msgstr "&Ochei"
 #: kab/DialogBase.cpp:58
 #, fuzzy
 msgid "&Apply"
-msgstr "Seteazã"
+msgstr "SeteazÄƒ"
 
 #: kab/DialogBase.cpp:59 kdeui/kkeydialog.cpp:245 kdeui/knotebook.cpp:178
 #: kdeui/kwizard.cpp:159 po/texts.cpp:40
 msgid "&Cancel"
-msgstr "&Renunþã"
+msgstr "&RenunÅ£Äƒ"
 
 #: kab/PrintDialog.cpp:26
 msgid "Headline text:"
@@ -206,7 +209,7 @@ msgstr ""
 #: kab/SearchDialog.cpp:74
 #, fuzzy
 msgid "kab: Search entries"
-msgstr "Cautã un fiºier"
+msgstr "CautÄƒ un fiÅŸier"
 
 #: kab/SearchDialogMainWidget.cpp:22
 msgid "matches"
@@ -255,16 +258,16 @@ msgstr "Nou"
 
 #: kab/searchresults.cc:30 kdecore/kaccel.cpp:231 po/texts.cpp:80
 msgid "Close"
-msgstr "Închide"
+msgstr "ÃŽnchide"
 
 #: kdecore/kaccel.cpp:235 kfile/kfiledialog.cpp:1274
 #: kfile/kfiledialog.cpp:1434 po/texts.cpp:75
 msgid "Save"
-msgstr "Salveazã"
+msgstr "SalveazÄƒ"
 
 #: kdecore/kaccel.cpp:239 po/texts.cpp:115
 msgid "Print"
-msgstr "Tipãreºte"
+msgstr "TipÄƒreÅŸte"
 
 #: kdecore/kaccel.cpp:243 po/texts.cpp:52
 msgid "Quit"
@@ -276,11 +279,11 @@ msgstr "Taie"
 
 #: kdecore/kaccel.cpp:251 po/texts.cpp:56
 msgid "Copy"
-msgstr "Copiazã"
+msgstr "CopiazÄƒ"
 
 #: kdecore/kaccel.cpp:255 po/texts.cpp:58
 msgid "Paste"
-msgstr "Lipeºte"
+msgstr "LipeÅŸte"
 
 #: kdecore/kaccel.cpp:259 po/texts.cpp:93
 msgid "Undo"
@@ -290,22 +293,22 @@ msgstr "Desface"
 #: kdeui/keditcl2.cpp:360 kdeui/keditcl2.cpp:377 kdeui/keditcl2.cpp:676
 #: kdeui/keditcl2.cpp:685 kdeui/keditcl2.cpp:786
 msgid "Find"
-msgstr "Cautã"
+msgstr "CautÄƒ"
 
 #: kdecore/kaccel.cpp:267 kdeui/keditcl2.cpp:423 kdeui/keditcl2.cpp:453
 #: kdeui/keditcl2.cpp:470 kdeui/keditcl2.cpp:789 kspell/kspelldlg.cpp:110
 #: po/texts.cpp:133
 msgid "Replace"
-msgstr "Înlocuieºte"
+msgstr "ÃŽnlocuieÅŸte"
 
 #: kdecore/kaccel.cpp:271 po/texts.cpp:134
 #, fuzzy
 msgid "Insert"
-msgstr "&Insereazã"
+msgstr "&InsereazÄƒ"
 
 #: kdecore/kaccel.cpp:275 kfile/kfiledialog.cpp:131
 msgid "Home"
-msgstr "Acasã"
+msgstr "AcasÄƒ"
 
 #: kdecore/kaccel.cpp:279
 msgid "End"
@@ -319,7 +322,7 @@ msgstr "Eroare"
 #: kdecore/kaccel.cpp:287
 #, fuzzy
 msgid "Next"
-msgstr "&Urmãtor"
+msgstr "&UrmÄƒtor"
 
 #: kdecore/kaccel.cpp:291 kdetest/klocaletest.cpp:102 kdeui/kcolordlg.cpp:463
 #: kdeui/kcontrol.cpp:35 kfile/kfiledialog.cpp:246 kspell/ksconfig.cpp:212
@@ -368,11 +371,11 @@ msgid ""
 "Please report bugs at http://bugs.kde.org.\n"
 msgstr ""
 "\n"
-"KDE a fost creat de o echipã internaþionalã de programatori\n"
-"dedicaþi dezvoltãrii de software gratuit.\n"
+"KDE a fost creat de o echipÄƒ internaÅ£ionalÄƒ de programatori\n"
+"dedicaÅ£i dezvoltÄƒrii de software gratuit.\n"
 "\n"
-"Pentru informaþii suplimentare, vizitaþi http://www.kde.org.\n"
-"Vã rugãm sa încurajaþi ºi sã susþineþi acest proiect.\n"
+"Pentru informaÅ£ii suplimentare, vizitaÅ£i http://www.kde.org.\n"
+"VÄƒ rugÄƒm sa Ã®ncurajaÅ£i ÅŸi sÄƒ susÅ£ineÅ£i acest proiect.\n"
 "\n"
 
 #: kdetest/klocaletest.cpp:100 kdeui/keditcl1.cpp:412 kdeui/keditcl1.cpp:433
@@ -402,7 +405,7 @@ msgstr "Nu"
 #: kfile/kfiledialogconf.cpp:59 kfmlib/kfm.cpp:415 kspell/kspelldlg.cpp:143
 #: po/texts.cpp:39
 msgid "Cancel"
-msgstr "Renunþã"
+msgstr "RenunÅ£Äƒ"
 
 #: kdeui/kcolordlg.cpp:285
 msgid "Select Color"
@@ -418,7 +421,7 @@ msgstr "Culori utilizator"
 
 #: kdeui/kcolordlg.cpp:341
 msgid "Add to Custom Colors"
-msgstr "Adaugã la culorile utilizator"
+msgstr "AdaugÄƒ la culorile utilizator"
 
 #: kdeui/kcolordlg.cpp:789 kdeui/kcolordlg.cpp:841
 msgid "Custom..."
@@ -430,7 +433,7 @@ msgstr "Implicit"
 
 #: kdeui/kcontrol.cpp:47 kdeui/kcontrol.cpp:53 po/texts.cpp:41
 msgid "Apply"
-msgstr "Seteazã"
+msgstr "SeteazÄƒ"
 
 #: kdeui/kdatepik.cpp:102
 msgid "January"
@@ -520,7 +523,7 @@ msgstr "Pardon ..."
 
 #: kdeui/keditcl1.cpp:140
 msgid "The specified File does not exist"
-msgstr "Fiºierul specificat nu existã"
+msgstr "FiÅŸierul specificat nu existÄƒ"
 
 #: kdeui/keditcl1.cpp:153 kdeui/keditcl1.cpp:430 kdeui/keditcl1.cpp:511
 #: kdeui/keditcl1.cpp:1715
@@ -533,19 +536,19 @@ msgstr "Ai specificat un director"
 
 #: kdeui/keditcl1.cpp:169 kdeui/keditcl1.cpp:190
 msgid "You do not have read permission to this file."
-msgstr "Nu ai voie sã citeºti acest fiºier ;)"
+msgstr "Nu ai voie sÄƒ citeÅŸti acest fiÅŸier ;)"
 
 #: kdeui/keditcl1.cpp:203
 msgid "An Error occured while trying to open this Document"
-msgstr "A apãrut o eroare la încercarea de deschidere a acestui document"
+msgstr "A apÄƒrut o eroare la Ã®ncercarea de deschidere a acestui document"
 
 #: kdeui/keditcl1.cpp:373
 msgid "Select Document to Insert"
-msgstr "Selecteazã Documentul de Inserat"
+msgstr "SelecteazÄƒ Documentul de Inserat"
 
 #: kdeui/keditcl1.cpp:409 kdeui/keditcl1.cpp:491 kdeui/keditcl1.cpp:1658
 msgid "Warning:"
-msgstr "Atenþie :"
+msgstr "AtenÅ£ie :"
 
 #: kdeui/keditcl1.cpp:410 kdeui/keditcl1.cpp:492
 msgid ""
@@ -553,7 +556,7 @@ msgid ""
 "Would you like to save it?"
 msgstr ""
 "Documentul curent a fost modificat.\n"
-"Vrei sã îl salvez ?"
+"Vrei sÄƒ Ã®l salvez ?"
 
 #: kdeui/keditcl1.cpp:431
 msgid ""
@@ -561,11 +564,11 @@ msgid ""
 "Open a new document anyways?"
 msgstr ""
 "Nu pot salva documentul.\n"
-"Mai vrei sã deschid un nou document ?"
+"Mai vrei sÄƒ deschid un nou document ?"
 
 #: kdeui/keditcl1.cpp:462
 msgid "Select Document to Open"
-msgstr "Selecteazã ce document sã deschid"
+msgstr "SelecteazÄƒ ce document sÄƒ deschid"
 
 #: kdeui/keditcl1.cpp:512
 msgid ""
@@ -573,12 +576,12 @@ msgid ""
 "Create a new document anyways?"
 msgstr ""
 "Nu pot salva documentul.\n"
-"Mai vrei sã creez un nou document ?"
+"Mai vrei sÄƒ creez un nou document ?"
 
 #: kdeui/keditcl1.cpp:547 kdeui/keditcl1.cpp:1700 kdeui/kpopmenu.cpp:10
 #: po/texts.cpp:34
 msgid "Untitled"
-msgstr "Farã_titlu"
+msgstr "FarÄƒ_titlu"
 
 #: kdeui/keditcl1.cpp:1560
 msgid "Could not save the document\n"
@@ -593,20 +596,20 @@ msgid ""
 "A Document with this Name exists already\n"
 "Do you want to overwrite it ?"
 msgstr ""
-"Un document cu acest nume existã deja\n"
-"Vrei sã îl suprascriu ?"
+"Un document cu acest nume existÄƒ deja\n"
+"Vrei sÄƒ Ã®l suprascriu ?"
 
 #: kdeui/keditcl1.cpp:1716
 msgid "You do not have write permission to this file.\n"
-msgstr "Nu ai voie sã scrii în acest fiºier !.\n"
+msgstr "Nu ai voie sÄƒ scrii Ã®n acest fiÅŸier !.\n"
 
 #: kdeui/keditcl2.cpp:104 kdeui/keditcl2.cpp:361 kdeui/keditcl2.cpp:454
 msgid ""
 "End of document reached.\n"
 "Continue from the beginning?"
 msgstr ""
-"Am ajuns la sfârºitul documentului.\n"
-"Vrei sã o iau de la capãt ?"
+"Am ajuns la sfÃ¢rÅŸitul documentului.\n"
+"Vrei sÄƒ o iau de la capÄƒt ?"
 
 #: kdeui/keditcl2.cpp:121 kdeui/keditcl2.cpp:378 kdeui/keditcl2.cpp:424
 #: kdeui/keditcl2.cpp:471
@@ -614,8 +617,8 @@ msgid ""
 "Beginning of document reached.\n"
 "Continue from the end?"
 msgstr ""
-"Am ajuns la începutul documentului.\n"
-"Vrei sa o iau de la coadã ?"
+"Am ajuns la Ã®nceputul documentului.\n"
+"Vrei sa o iau de la coadÄƒ ?"
 
 #: kdeui/keditcl2.cpp:682 kdeui/keditcl2.cpp:780
 msgid "Case Sensitive"
@@ -623,7 +626,7 @@ msgstr "Sensibil la majuscule"
 
 #: kdeui/keditcl2.cpp:683 kdeui/keditcl2.cpp:783
 msgid "Find Backwards"
-msgstr "Cãutare înapoi"
+msgstr "CÄƒutare Ã®napoi"
 
 #: kdeui/keditcl2.cpp:688 kdeui/keditcl2.cpp:795
 msgid "Done"
@@ -631,15 +634,15 @@ msgstr "Gata"
 
 #: kdeui/keditcl2.cpp:768
 msgid "Find:"
-msgstr "Cautã:"
+msgstr "CautÄƒ:"
 
 #: kdeui/keditcl2.cpp:778
 msgid "Replace with:"
-msgstr "Înlocuieºte cu:"
+msgstr "ÃŽnlocuieÅŸte cu:"
 
 #: kdeui/keditcl2.cpp:792 kspell/kspelldlg.cpp:38
 msgid "Replace All"
-msgstr "Înlocuieºte peste tot"
+msgstr "ÃŽnlocuieÅŸte peste tot"
 
 #: kdeui/keditcl2.cpp:889
 msgid "Goto Line"
@@ -671,7 +674,7 @@ msgstr "Setul de caractere:"
 
 #: kdeui/kfontdialog.cpp:227 kdeui/kfontdialog.cpp:232 kfile/kpreview.cpp:196
 msgid "Size:"
-msgstr "Mãrime:"
+msgstr "MÄƒrime:"
 
 #: kdeui/kfontdialog.cpp:239 kdeui/kfontdialog.cpp:244
 msgid "Weight:"
@@ -683,7 +686,7 @@ msgstr "Stil:"
 
 #: kdeui/kfontdialog.cpp:284 kfile/kfiledetaillist.cpp:38
 msgid "Size"
-msgstr "Mãrime"
+msgstr "MÄƒrime"
 
 #: kdeui/kfontdialog.cpp:322
 msgid "Weight"
@@ -717,7 +720,7 @@ msgstr "Caractere"
 
 #: kdeui/kfontdialog.cpp:367
 msgid "Dolor Ipse"
-msgstr "Probe de Font (ºªþÞãÃâÂîÎ)"
+msgstr "Probe de Font (ÅŸÅžÅ£Å¢ÄƒÄ‚Ã¢Ã‚Ã®ÃŽ)"
 
 #: kdeui/kfontdialog.cpp:519
 msgid "Bold"
@@ -729,7 +732,7 @@ msgstr "Normal"
 
 #: kdeui/kiconloaderdialog.cpp:247
 msgid "Select Icon"
-msgstr "Selectare Icoanã"
+msgstr "Selectare IcoanÄƒ"
 
 #: kdeui/kiconloaderdialog.cpp:252
 msgid "Filter:"
@@ -756,7 +759,7 @@ msgstr ""
 #: kdeui/kkeydialog.cpp:332
 #, fuzzy
 msgid "&Action"
-msgstr "&Locaþia"
+msgstr "&LocaÅ£ia"
 
 #: kdeui/kkeydialog.cpp:366
 msgid "Choose a key for the selected action"
@@ -869,11 +872,11 @@ msgstr "Flotare"
 
 #: kdeui/kmenubar.cpp:761 kdeui/ktoolbar.cpp:2071
 msgid "UnFloat"
-msgstr "Lipeºte"
+msgstr "LipeÅŸte"
 
 #: kdeui/knotebook.cpp:145
 msgid "Trying to add page when no KWizards are added!"
-msgstr "Încerc sã adaug o paginã când nici un KWizard nu a fost adãugat!"
+msgstr "ÃŽncerc sÄƒ adaug o paginÄƒ cÃ¢nd nici un KWizard nu a fost adÄƒugat!"
 
 #: kdeui/knotebook.cpp:201 kdeui/kwizard.cpp:182
 msgid "&Default"
@@ -885,11 +888,11 @@ msgstr ""
 
 #: kdeui/ktoolbar.cpp:288 kdeui/ktoolbar.cpp:340
 msgid "KToolBarButton: pixmap is empty, perhaps some missing file"
-msgstr "KToolBarButton: pixmap-ul este gol, poate lipsesc niºte fiºiere "
+msgstr "KToolBarButton: pixmap-ul este gol, poate lipsesc niÅŸte fiÅŸiere "
 
 #: kdeui/ktoolbar.cpp:859
 msgid "Left"
-msgstr "Stânga"
+msgstr "StÃ¢nga"
 
 #: kdeui/ktoolbar.cpp:861
 msgid "Right"
@@ -911,7 +914,7 @@ msgstr "Cuprins:"
 
 #: kfile/kfilebookmark.cpp:246
 msgid "<!-- Do not edit this file -->"
-msgstr "<!-- Nu edita acest fiºier --!>"
+msgstr "<!-- Nu edita acest fiÅŸier --!>"
 
 #: kab/addressbook.cc:1112 kfile/kfiledetaillist.cpp:36
 msgid "Name"
@@ -927,7 +930,7 @@ msgstr "Data"
 
 #: kfile/kfiledetaillist.cpp:45
 msgid "Owner"
-msgstr "Aparþine"
+msgstr "AparÅ£ine"
 
 #: kfile/kfiledetaillist.cpp:47
 msgid "Group"
@@ -935,19 +938,19 @@ msgstr "Grup"
 
 #: kfile/kfiledialog.cpp:122 po/texts.cpp:55
 msgid "Back"
-msgstr "Înapoi"
+msgstr "ÃŽnapoi"
 
 #: kfile/kfiledialog.cpp:125
 msgid "Forward"
-msgstr "Înainte"
+msgstr "ÃŽnainte"
 
 #: kfile/kfiledialog.cpp:128
 msgid "Up to parent"
-msgstr "Înapoi la pãrinte"
+msgstr "ÃŽnapoi la pÄƒrinte"
 
 #: kfile/kfiledialog.cpp:134 po/texts.cpp:54
 msgid "Reload"
-msgstr "ReÎncarcã"
+msgstr "ReÃŽncarcÄƒ"
 
 #: kfile/kfiledialog.cpp:156
 msgid "Bookmarks"
@@ -955,15 +958,15 @@ msgstr "Semne"
 
 #: kfile/kfiledialog.cpp:160
 msgid "Create new folder"
-msgstr "Creazã un nou cuprins"
+msgstr "CreazÄƒ un nou cuprins"
 
 #: kfile/kfiledialog.cpp:163
 msgid "Search for a file"
-msgstr "Cautã un fiºier"
+msgstr "CautÄƒ un fiÅŸier"
 
 #: kfile/kfiledialog.cpp:166
 msgid "Configure this dialog [development only]"
-msgstr "Configureazã acest dialog [în curs de dezvoltare]"
+msgstr "ConfigureazÄƒ acest dialog [Ã®n curs de dezvoltare]"
 
 #: kfile/kfiledialog.cpp:174
 msgid "The path"
@@ -971,7 +974,7 @@ msgstr "Calea"
 
 #: kfile/kfiledialog.cpp:199
 msgid "&Location:"
-msgstr "&Locaþia"
+msgstr "&LocaÅ£ia"
 
 #: kfile/kfiledialog.cpp:212
 msgid "&Filter:"
@@ -979,11 +982,11 @@ msgstr "&Filtru:"
 
 #: kfile/kfiledialog.cpp:226
 msgid "Show hidden"
-msgstr "Aratã ºi pe cele ascunse"
+msgstr "AratÄƒ ÅŸi pe cele ascunse"
 
 #: kfile/kfiledialog.cpp:505
 msgid "Error: Not local file"
-msgstr "Eroare: Fiºierul nu este local"
+msgstr "Eroare: FiÅŸierul nu este local"
 
 #: kfile/kfiledialog.cpp:506
 msgid ""
@@ -991,7 +994,7 @@ msgid ""
 "But the application accepts just local files."
 msgstr ""
 "Directorul specificat nu este local\n"
-"ªi aceast program nu acceptã decît fiºiere locale."
+"Åži aceast program nu acceptÄƒ decÃ®t fiÅŸiere locale."
 
 #: kfile/kfiledialog.cpp:520 kfile/kfiledialog.cpp:625
 msgid "Error: Cannot Open Directory"
@@ -1002,7 +1005,7 @@ msgid ""
 "The specified directory does not exist\n"
 "or was not readable."
 msgstr ""
-"Fiºierul specificat nu existã,\n"
+"FiÅŸierul specificat nu existÄƒ,\n"
 "sau nu este accesibil."
 
 #: kfile/kfiledialog.cpp:523 kfile/kfiledialog.cpp:628
@@ -1011,19 +1014,19 @@ msgstr "Mersi"
 
 #: kfile/kfiledialog.cpp:574 kfile/kfiledialog.cpp:1394 po/texts.cpp:77
 msgid "Save As"
-msgstr "Salveazã în"
+msgstr "SalveazÄƒ Ã®n"
 
 #: kfile/kfiledialog.cpp:597
 msgid "Root Directory"
-msgstr "Directorul Rãdãcinã"
+msgstr "Directorul RÄƒdÄƒcinÄƒ"
 
 #: kfile/kfiledialog.cpp:626
 msgid "The specified directory does not exist or was not readable."
-msgstr "Fiºierul specificat nu existã"
+msgstr "FiÅŸierul specificat nu existÄƒ"
 
 #: kfile/kfiledialog.cpp:887
 msgid "Create new directory in: "
-msgstr "Creazã dirctor nou în:"
+msgstr "CreazÄƒ dirctor nou Ã®n:"
 
 #: kfile/kfiledialog.cpp:890
 msgid "New Directory"
@@ -1031,7 +1034,7 @@ msgstr "Director nou"
 
 #: kfile/kfiledialog.cpp:962
 msgid "Add to bookmarks"
-msgstr "Adaugã la semne"
+msgstr "AdaugÄƒ la semne"
 
 #: kfile/kfiledialog.cpp:1253
 msgid "Choose Directory"
@@ -1047,17 +1050,17 @@ msgstr "directorii"
 
 #: kfile/kfiledialog.cpp:1325 kfile/kpreview.cpp:326
 msgid "file"
-msgstr "fiºier"
+msgstr "fiÅŸier"
 
 #: kfile/kfiledialog.cpp:1327
 msgid "files"
-msgstr "fiºiere"
+msgstr "fiÅŸiere"
 
 # , c-format
 #: kfile/kfiledialog.cpp:1329
 #, c-format
 msgid "%d %s and %d %s"
-msgstr "%d %s ºi %d %s"
+msgstr "%d %s ÅŸi %d %s"
 
 #: kfile/kfiledialog.cpp:1339
 msgid "one directory"
@@ -1085,16 +1088,16 @@ msgid ""
 "Mario Weilguni <mweilguni@sime.com>\n"
 "and Martin Jones <mjones@kde.org>"
 msgstr ""
-"KDE File Selector fãcut de:\n"
+"KDE File Selector fÄƒcut de:\n"
 "\n"
 "Richard Moore <rich@kde.org>\n"
 "Stephan Kulow <coolo@kde.org>\n"
-"ºi Daniel Grana <grana@ie.iwi.unibe.ch>\n"
+"ÅŸi Daniel Grana <grana@ie.iwi.unibe.ch>\n"
 "\n"
-"cu contribuþia lui\n"
+"cu contribuÅ£ia lui\n"
 "\n"
 "Mario Weilguni <mweilguni@sime.com>\n"
-"ºi Martin Jones <mjones@kde.org>"
+"ÅŸi Martin Jones <mjones@kde.org>"
 
 #: kfile/kfiledialogconf.cpp:57 po/texts.cpp:32
 msgid "About"
@@ -1102,15 +1105,15 @@ msgstr "Despre"
 
 #: kfile/kfiledialogconf.cpp:71
 msgid "View style"
-msgstr "Afiºare"
+msgstr "AfiÅŸare"
 
 #: kfile/kfiledialogconf.cpp:75
 msgid "Show Short View"
-msgstr "Aratã un rezumat"
+msgstr "AratÄƒ un rezumat"
 
 #: kfile/kfiledialogconf.cpp:81
 msgid "Show Detail View"
-msgstr "Aratã în detaliu"
+msgstr "AratÄƒ Ã®n detaliu"
 
 #: kfile/kfiledialogconf.cpp:90
 msgid "Misc"
@@ -1118,36 +1121,36 @@ msgstr "Diverse"
 
 #: kfile/kfiledialogconf.cpp:96
 msgid "Show Filter"
-msgstr "Aratã filtru"
+msgstr "AratÄƒ filtru"
 
 #: kfile/kfiledialogconf.cpp:102
 msgid "Show List Labels"
-msgstr "Aratã lista cu etichete"
+msgstr "AratÄƒ lista cu etichete"
 
 #: kfile/kfiledialogconf.cpp:108
 msgid "Show Hidden"
-msgstr "Afiºeazã fiºierele ascunse"
+msgstr "AfiÅŸeazÄƒ fiÅŸierele ascunse"
 
 #: kfile/kfiledialogconf.cpp:114
 msgid "Show Status Line"
-msgstr "Afiºeazã Linia de stare"
+msgstr "AfiÅŸeazÄƒ Linia de stare"
 
 #: kfile/kfiledialogconf.cpp:120
 msgid "Use single Click"
-msgstr "Utilizeazã simplu click"
+msgstr "UtilizeazÄƒ simplu click"
 
 #: kfile/kfiledialogconf.cpp:126
 msgid "Mix dirs and files"
-msgstr "Mixeazã directori si fiºiere"
+msgstr "MixeazÄƒ directori si fiÅŸiere"
 
 #: kfile/kfiledialogconf.cpp:132
 msgid "Keep dirs first"
-msgstr "Pune directoarele la început"
+msgstr "Pune directoarele la Ã®nceput"
 
 #: kfile/kfilefilter.cpp:35
 #, fuzzy
 msgid "*|All Files"
-msgstr "Fiºiere"
+msgstr "FiÅŸiere"
 
 #: kfile/kfileinfo.cpp:97 kfile/kfileinfo.cpp:101
 msgid "unknown"
@@ -1207,7 +1210,7 @@ msgstr "Data:"
 
 #: kfile/kpreview.cpp:214
 msgid "Owner:"
-msgstr "Aparþine:"
+msgstr "AparÅ£ine:"
 
 #: kfile/kpreview.cpp:223
 msgid "Group:"
@@ -1219,11 +1222,11 @@ msgstr "Tip:"
 
 #: kfile/kpreview.cpp:287
 msgid "locked"
-msgstr "încuiat"
+msgstr "Ã®ncuiat"
 
 #: kfile/kpreview.cpp:311
 msgid "picture"
-msgstr "pozã"
+msgstr "pozÄƒ"
 
 #: kfile/kpreview.cpp:343
 msgid "folder"
@@ -1236,7 +1239,7 @@ msgid ""
 "You dont have the file %s\n"
 "Could not do Authorization"
 msgstr ""
-"Nu deþii fiºierul %s\n"
+"Nu deÅ£ii fiÅŸierul %s\n"
 "Nu pot face autorizarea"
 
 #: kfmlib/kfm.cpp:200 kfmlib/kfm.cpp:210
@@ -1250,7 +1253,7 @@ msgid ""
 "The file %s is corrupted\n"
 "Could not do Authorization"
 msgstr ""
-"Fiºierul %s este corupt\n"
+"FiÅŸierul %s este corupt\n"
 "Nu pot face autorizarea"
 
 #: kspell/ksconfig.cpp:66
@@ -1273,7 +1276,7 @@ msgstr ""
 #: kspell/ksconfig.cpp:147
 #, fuzzy
 msgid "Latin1"
-msgstr "&Locaþia"
+msgstr "&LocaÅ£ia"
 
 #: kspell/ksconfig.cpp:148
 msgid "7-Bit/ASCII"
@@ -1313,7 +1316,7 @@ msgstr ""
 #: kspell/kspelldlg.cpp:68
 #, fuzzy
 msgid "Replacement:"
-msgstr "Înlocuieºte"
+msgstr "ÃŽnlocuieÅŸte"
 
 #: kspell/kspelldlg.cpp:77
 msgid "Suggestions:"
@@ -1329,7 +1332,7 @@ msgstr ""
 
 #: kspell/kspelldlg.cpp:120 po/texts.cpp:86
 msgid "Add"
-msgstr "Adaugã"
+msgstr "AdaugÄƒ"
 
 #: kspell/kspelldlg.cpp:166 po/texts.cpp:100
 msgid "Stop"
@@ -1347,11 +1350,11 @@ msgstr "URL malformat"
 
 #: po/texts.cpp:29
 msgid "Warning"
-msgstr "Atenþie"
+msgstr "AtenÅ£ie"
 
 #: po/texts.cpp:30
 msgid "Save a file"
-msgstr "Salveazã un fiºier"
+msgstr "SalveazÄƒ un fiÅŸier"
 
 #: po/texts.cpp:31
 msgid "Contents"
@@ -1371,15 +1374,15 @@ msgstr "Dezactivat"
 
 #: po/texts.cpp:42
 msgid "File"
-msgstr "Fiºier"
+msgstr "FiÅŸier"
 
 #: po/texts.cpp:43
 msgid "&File"
-msgstr "&Fiºier"
+msgstr "&FiÅŸier"
 
 #: po/texts.cpp:46
 msgid "Edit"
-msgstr "Editeazã"
+msgstr "EditeazÄƒ"
 
 #: po/texts.cpp:47
 msgid "&Edit"
@@ -1387,7 +1390,7 @@ msgstr "&Editare"
 
 #: po/texts.cpp:48
 msgid "&Options"
-msgstr "&Opþiuni"
+msgstr "&OpÅ£iuni"
 
 #: po/texts.cpp:49
 msgid "View"
@@ -1399,7 +1402,7 @@ msgstr "&Vizualizare"
 
 #: po/texts.cpp:51
 msgid "E&xit"
-msgstr "&Ieºire"
+msgstr "&IeÅŸire"
 
 #: po/texts.cpp:53
 msgid "&Quit"
@@ -1407,23 +1410,23 @@ msgstr "&Terminare"
 
 #: po/texts.cpp:57
 msgid "&Copy"
-msgstr "&Copiazã"
+msgstr "&CopiazÄƒ"
 
 #: po/texts.cpp:59
 msgid "&Paste"
-msgstr "&Lipeºte"
+msgstr "&LipeÅŸte"
 
 #: po/texts.cpp:60
 msgid "&New Window..."
-msgstr "Fereastrã &Nouã"
+msgstr "FereastrÄƒ &NouÄƒ"
 
 #: po/texts.cpp:61
 msgid "New &Window..."
-msgstr "&Fereastrã Nouã"
+msgstr "&FereastrÄƒ NouÄƒ"
 
 #: po/texts.cpp:62
 msgid "&New Window"
-msgstr "Fereastrã &Nouã"
+msgstr "FereastrÄƒ &NouÄƒ"
 
 #: po/texts.cpp:63
 msgid "New Game"
@@ -1435,7 +1438,7 @@ msgstr "&Joc nou"
 
 #: po/texts.cpp:66
 msgid "Open a file"
-msgstr "Deschide un fiºier"
+msgstr "Deschide un fiÅŸier"
 
 #: po/texts.cpp:67
 msgid "Open..."
@@ -1471,23 +1474,23 @@ msgstr "&Salvare"
 
 #: po/texts.cpp:78
 msgid "Save as..."
-msgstr "Salveazã în..."
+msgstr "SalveazÄƒ Ã®n..."
 
 #: po/texts.cpp:79
 msgid "S&ave as..."
-msgstr "S&alveazã în ..."
+msgstr "S&alveazÄƒ Ã®n ..."
 
 #: po/texts.cpp:81
 msgid "&Close"
-msgstr "&Închide"
+msgstr "&ÃŽnchide"
 
 #: po/texts.cpp:82
 msgid "&Print..."
-msgstr "Ti&pãreºte..."
+msgstr "Ti&pÄƒreÅŸte..."
 
 #: po/texts.cpp:84
 msgid "Options"
-msgstr "Opþiuni"
+msgstr "OpÅ£iuni"
 
 #: po/texts.cpp:85
 msgid "Remove"
@@ -1495,19 +1498,19 @@ msgstr "Scoate"
 
 #: po/texts.cpp:87
 msgid "Change"
-msgstr "Schimbã"
+msgstr "SchimbÄƒ"
 
 #: po/texts.cpp:88
 msgid "Delete"
-msgstr "ªterge"
+msgstr "Åžterge"
 
 #: po/texts.cpp:89
 msgid "&Delete"
-msgstr "&ªterge"
+msgstr "&Åžterge"
 
 #: po/texts.cpp:90
 msgid "Clear"
-msgstr "ªterge"
+msgstr "Åžterge"
 
 #: po/texts.cpp:91
 msgid "Italic"
@@ -1535,7 +1538,7 @@ msgstr "&Joc"
 
 #: po/texts.cpp:98
 msgid "Information"
-msgstr "Informaþie"
+msgstr "InformaÅ£ie"
 
 #: po/texts.cpp:99
 msgid "Browse..."
@@ -1543,19 +1546,19 @@ msgstr "Expandare..."
 
 #: po/texts.cpp:101
 msgid "&Remove"
-msgstr "&ªterge"
+msgstr "&Åžterge"
 
 #: po/texts.cpp:102
 msgid "&Properties..."
-msgstr "Proprietãþi..."
+msgstr "ProprietÄƒÅ£i..."
 
 #: po/texts.cpp:103
 msgid "Properties"
-msgstr "Proprietãþi"
+msgstr "ProprietÄƒÅ£i"
 
 #: po/texts.cpp:104
 msgid "&Start"
-msgstr "&Porneºte"
+msgstr "&PorneÅŸte"
 
 #: po/texts.cpp:105
 msgid "St&op"
@@ -1579,15 +1582,15 @@ msgstr "&Fonts"
 
 #: po/texts.cpp:110
 msgid "&Reload"
-msgstr "&Reîncarcã"
+msgstr "&ReÃ®ncarcÄƒ"
 
 #: po/texts.cpp:111
 msgid "Files"
-msgstr "Fiºiere"
+msgstr "FiÅŸiere"
 
 #: kab/widget.cc:1390 kab/widget.cc:1432 po/texts.cpp:112
 msgid "Continue"
-msgstr "Continuã"
+msgstr "ContinuÄƒ"
 
 #: po/texts.cpp:113
 msgid "Restore"
@@ -1595,7 +1598,7 @@ msgstr "Restaurare"
 
 #: po/texts.cpp:114
 msgid "Appearance"
-msgstr "Aparenþã"
+msgstr "AparenÅ£Äƒ"
 
 #: po/texts.cpp:116
 msgid "Monday"
@@ -1619,11 +1622,11 @@ msgstr "Vineri"
 
 #: po/texts.cpp:121
 msgid "Saturday"
-msgstr "Sâmbãtã"
+msgstr "SÃ¢mbÄƒtÄƒ"
 
 #: po/texts.cpp:122
 msgid "Sunday"
-msgstr "Duminicã"
+msgstr "DuminicÄƒ"
 
 #: po/texts.cpp:123
 msgid "&Update"
@@ -1631,7 +1634,7 @@ msgstr "Apdeit"
 
 #: po/texts.cpp:124
 msgid "Layout"
-msgstr "Schemã"
+msgstr "SchemÄƒ"
 
 #: po/texts.cpp:125
 msgid "Highscore"
@@ -1639,15 +1642,15 @@ msgstr "Cel mai mare scor"
 
 #: po/texts.cpp:126
 msgid "&New View"
-msgstr "Vedere &Nouã"
+msgstr "Vedere &NouÄƒ"
 
 #: po/texts.cpp:127
 msgid "&Insert"
-msgstr "&Insereazã"
+msgstr "&InsereazÄƒ"
 
 #: po/texts.cpp:130
 msgid "&Next >>"
-msgstr "&Urmãtor >>"
+msgstr "&UrmÄƒtor >>"
 
 #: po/texts.cpp:131
 msgid "<< &Previous"
@@ -1780,7 +1783,7 @@ msgstr ""
 #: kab/addressbook.cc:1140
 #, fuzzy
 msgid "Unit"
-msgstr "Farã_titlu"
+msgstr "FarÄƒ_titlu"
 
 #: kab/addressbook.cc:1144
 #, fuzzy
@@ -1790,7 +1793,7 @@ msgstr "D"
 #: kab/addressbook.cc:1148
 #, fuzzy
 msgid "Title"
-msgstr "fiºier"
+msgstr "fiÅŸier"
 
 #: kab/addressbook.cc:1152
 #, fuzzy
@@ -1828,7 +1831,7 @@ msgstr ""
 #: kab/addressbook.cc:1184
 #, fuzzy
 msgid "Address"
-msgstr "Adaugã"
+msgstr "AdaugÄƒ"
 
 #: kab/addressbook.cc:1188
 msgid "City/Town"
@@ -1931,7 +1934,7 @@ msgstr ""
 #: kab/editentry.cc:146
 #, fuzzy
 msgid "Department:"
-msgstr "Înlocuieºte"
+msgstr "ÃŽnlocuieÅŸte"
 
 #: kab/editentry.cc:147
 msgid "Sub-Department:"
@@ -1957,7 +1960,7 @@ msgstr ""
 #: kab/editentry.cc:186
 #, fuzzy
 msgid "Modem:"
-msgstr "Mutã"
+msgstr "MutÄƒ"
 
 #: kab/editentry.cc:187
 msgid "Homepage (URL):"
@@ -2060,9 +2063,9 @@ msgid ""
 "Please note that kab now supports some new\n"
 "fields in its addresses. These new fields\n"
 "are:\n"
-"° the state field,\n"
-"° the country field and\n"
-"° the postal code field.\n"
+"Â° the state field,\n"
+"Â° the country field and\n"
+"Â° the postal code field.\n"
 "You will probably need to edit some of your\n"
 "entries to make use of it."
 msgstr ""
@@ -2194,7 +2197,7 @@ msgstr ""
 #: kab/widget.cc:879
 #, fuzzy
 msgid "Saving cancelled.\n"
-msgstr "Renunþã"
+msgstr "RenunÅ£Äƒ"
 
 #: kab/widget.cc:945
 msgid "Entry changed."
@@ -2244,7 +2247,7 @@ msgstr ""
 #: kab/widget.cc:1199 kab/widget.cc:1963
 #, fuzzy
 msgid "Cancelled."
-msgstr "Renunþã"
+msgstr "RenunÅ£Äƒ"
 
 #: kab/widget.cc:1222
 msgid "The talk command parameters are wrong."
@@ -2305,7 +2308,7 @@ msgstr ""
 #: kab/widget.cc:1831
 #, fuzzy
 msgid "Select table columns"
-msgstr "Selectare Icoanã"
+msgstr "Selectare IcoanÄƒ"
 
 #: kab/widget.cc:1836
 msgid "Nothing to export."
@@ -2362,7 +2365,7 @@ msgstr ""
 #: kab/widget.cc:2124
 #, fuzzy
 msgid "Error calling mailer."
-msgstr "Eroare: Fiºierul nu este local"
+msgstr "Eroare: FiÅŸierul nu este local"
 
 #: kab/widget.cc:2126
 msgid "Mailer called."
@@ -2421,7 +2424,7 @@ msgstr ""
 #~ "The file or directory\n"
 #~ "%s\n"
 #~ "does not exist"
-#~ msgstr "Fiºierul specificat nu existã"
+#~ msgstr "FiÅŸierul specificat nu existÄƒ"
 
 #, fuzzy
 #~ msgid ""
@@ -2439,7 +2442,7 @@ msgstr ""
 #~ msgid ""
 #~ "Could not change permissions for\n"
 #~ "%s"
-#~ msgstr "Nu ai voie sã scrii în acest fiºier !.\n"
+#~ msgstr "Nu ai voie sÄƒ scrii Ã®n acest fiÅŸier !.\n"
 
 #, fuzzy
 #~ msgid ""
@@ -2463,8 +2466,8 @@ msgstr ""
 #, fuzzy
 #~ msgid "The file %s does already exist. Do you really want to overwrite it ?"
 #~ msgstr ""
-#~ "Un document cu acest nume existã deja\n"
-#~ "Vrei sã îl suprascriu ?"
+#~ "Un document cu acest nume existÄƒ deja\n"
+#~ "Vrei sÄƒ Ã®l suprascriu ?"
 
 #, fuzzy
 #~ msgid "Stalled"
@@ -2472,11 +2475,11 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Scanning "
-#~ msgstr "Atenþie"
+#~ msgstr "AtenÅ£ie"
 
 #, fuzzy
 #~ msgid "Creating dir "
-#~ msgstr "Creazã un nou cuprins"
+#~ msgstr "CreazÄƒ un nou cuprins"
 
 #, fuzzy
 #~ msgid "Rename"
@@ -2488,7 +2491,7 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Resume All"
-#~ msgstr "Înlocuieºte peste tot"
+#~ msgstr "ÃŽnlocuieÅŸte peste tot"
 
 #, fuzzy
 #~ msgid "Malformed URL\n"
@@ -2525,13 +2528,13 @@ msgstr ""
 #~ msgstr "&Nou..."
 
 #~ msgid "Move"
-#~ msgstr "Mutã"
+#~ msgstr "MutÄƒ"
 
 #~ msgid "&Previous"
 #~ msgstr "&Precedent"
 
 #~ msgid "&Next"
-#~ msgstr "&Urmãtor"
+#~ msgstr "&UrmÄƒtor"
 
 #~ msgid "Small"
 #~ msgstr "Mic"

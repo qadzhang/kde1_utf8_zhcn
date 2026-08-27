@@ -6,13 +6,13 @@ msgstr ""
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
-msgstr "KDE Teclado Internacional ya se está ejecutando."
+msgstr "KDE Teclado Internacional ya se estÃ¡ ejecutando."
 
 #: kikbd.cpp:295
 #, c-format
@@ -20,8 +20,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
-"Archivo de códigos X \"%s\" no existe.\n"
-"Usando códigos de X por defecto."
+"Archivo de cÃ³digos X \"%s\" no existe.\n"
+"Usando cÃ³digos de X por defecto."
 
 #: kikbd.cpp:321
 #, c-format
@@ -44,7 +44,7 @@ msgstr "No se puede eliminar %s de los Modificados\n"
 #: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "No se pudo añadir %s al modificador número 3\n"
+msgstr "No se pudo aÃ±adir %s al modificador nÃºmero 3\n"
 
 #: kikbd.cpp:384
 #, c-format
@@ -53,15 +53,15 @@ msgid ""
 "Alt symbols disabled"
 msgstr ""
 "No se puede establecer el Cambio de Modo a %s para el teclado %s.\n"
-"Símbolos Alt inhabilitados"
+"SÃ­mbolos Alt inhabilitados"
 
 #: kikbd.cpp:406
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"No se pude eliminar el Bloqueo de Mayúsculas de los modificadores.\n"
-"Emulación de Bloqueo de Mayúsculas inhabilitada"
+"No se pude eliminar el Bloqueo de MayÃºsculas de los modificadores.\n"
+"EmulaciÃ³n de Bloqueo de MayÃºsculas inhabilitada"
 
 #: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
@@ -87,25 +87,25 @@ msgid ""
 "You can preset X codes from section \"Advanced\"\n"
 "in the configuration program."
 msgstr ""
-"Imposible encontrar símbolo \"%s\".\n"
-"Tal vez sus códigos de X por defcto no coinciden.\n"
-"Puede definir códigos X en la sección \"Avanzado\"\n"
-"del programa de configuración."
+"Imposible encontrar sÃ­mbolo \"%s\".\n"
+"Tal vez sus cÃ³digos de X por defcto no coinciden.\n"
+"Puede definir cÃ³digos X en la secciÃ³n \"Avanzado\"\n"
+"del programa de configuraciÃ³n."
 
 #: keymap.cpp:238
 #, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "KeyMap: no se pudo encontrar el símbolo \"%s\"."
+msgstr "KeyMap: no se pudo encontrar el sÃ­mbolo \"%s\"."
 
 #: keymap.cpp:246
 #, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: no se puede leer el código \"%s\"."
+msgstr "KeyMap: no se puede leer el cÃ³digo \"%s\"."
 
 #: keymap.cpp:252
 #, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "KeyMap: código \"%s\" fuera de rango."
+msgstr "KeyMap: cÃ³digo \"%s\" fuera de rango."
 
 # ######################################################
 #: kikbdconf.cpp:102
@@ -194,7 +194,7 @@ msgstr "Abajo derecha"
 
 #: kikbdconf.cpp:156
 msgid "X default codes"
-msgstr "códigos que usa X por defecto"
+msgstr "cÃ³digos que usa X por defecto"
 
 #: kikbdconf.cpp:215
 #, c-format
@@ -231,7 +231,7 @@ msgstr "Autor"
 
 #: kikbdconf.cpp:427
 msgid "Description:  "
-msgstr "Descripción: "
+msgstr "DescripciÃ³n: "
 
 #: kikbdconf.cpp:430
 msgid "Source:  "
@@ -251,19 +251,19 @@ msgstr "archivo del sistema"
 
 #: kikbdconf.cpp:438
 msgid "Statistic:  "
-msgstr "Estadística: "
+msgstr "EstadÃ­stica: "
 
 #: kikbdconf.cpp:446
 msgid "symbols"
-msgstr "símbolos"
+msgstr "sÃ­mbolos"
 
 #: kikbdconf.cpp:454
 msgid "codes"
-msgstr "códigos"
+msgstr "cÃ³digos"
 
 #: kikbdconf.cpp:457
 msgid "alternative symbols"
-msgstr "símbolos alternativos"
+msgstr "sÃ­mbolos alternativos"
 
 #: kikbdconf.cpp:469
 msgid "Language"
@@ -303,11 +303,11 @@ msgstr "Lista de mapas de teclado activos"
 
 #: widgets.cpp:126
 msgid "&Add"
-msgstr "&Añadir"
+msgstr "&AÃ±adir"
 
 #: widgets.cpp:127
 msgid "Add new keyboard map"
-msgstr "Añadir nuevo mapa de teclado"
+msgstr "AÃ±adir nuevo mapa de teclado"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
@@ -331,11 +331,11 @@ msgstr "Mover abajo mapa de teclado seleccionado"
 
 #: widgets.cpp:144
 msgid "&Info"
-msgstr "Información"
+msgstr "InformaciÃ³n"
 
 #: widgets.cpp:145
 msgid "Display information for selected keyboard map"
-msgstr "Mostrar información del mapa seleccionado"
+msgstr "Mostrar informaciÃ³n del mapa seleccionado"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
@@ -346,24 +346,24 @@ msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
 msgstr ""
-"Usar solo teclado por defecto y últimos mapas de teclado activos cuando se "
+"Usar solo teclado por defecto y Ãºltimos mapas de teclado activos cuando se "
 "use la secuencia de teclas para cambiar"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
-msgstr "Añadiendo teclado"
+msgstr "AÃ±adiendo teclado"
 
 #: widgets.cpp:225
 msgid "There are no keyboard maps left to add"
-msgstr "No hay más mapas de teclados para añadir"
+msgstr "No hay mÃ¡s mapas de teclados para aÃ±adir"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
-msgstr "Información de mapas de teclados"
+msgstr "InformaciÃ³n de mapas de teclados"
 
 #: widgets.cpp:292
 msgid "Add Keyboard"
-msgstr "Añadir Teclado"
+msgstr "AÃ±adir Teclado"
 
 #: widgets.cpp:296
 msgid "Available keyboard maps"
@@ -383,7 +383,7 @@ msgstr "Tecla(s) para cambiar entre mapas de teclado"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "Teclas para activar símbolos alternativos en el mapa activo"
+msgstr "Teclas para activar sÃ­mbolos alternativos en el mapa activo"
 
 #: widgets.cpp:438
 msgid "&Beep"
@@ -407,21 +407,21 @@ msgstr "Avanzadas"
 
 #: widgets.cpp:475
 msgid "&Emulate Caps Lock"
-msgstr "&Emular BloqMayús"
+msgstr "&Emular BloqMayÃºs"
 
 #: widgets.cpp:476
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Emular BloqMayús del Servidor X. Necesario para ciertos idiomas"
+msgstr "Emular BloqMayÃºs del Servidor X. Necesario para ciertos idiomas"
 
 #: widgets.cpp:482
 msgid "&World Menu"
-msgstr "Menú global"
+msgstr "MenÃº global"
 
 #: widgets.cpp:483
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "Mostrar menú en cualquier ventana al presionar teclas de cambio"
+msgstr "Mostrar menÃº en cualquier ventana al presionar teclas de cambio"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -433,7 +433,7 @@ msgstr "Guardar relaciones entre ventanas y mapas de teclado al salir"
 
 #: widgets.cpp:498
 msgid "Define X codes"
-msgstr "Definir códigos X"
+msgstr "Definir cÃ³digos X"
 
 #: widgets.cpp:501
 msgid "Input"
@@ -441,7 +441,7 @@ msgstr "Entrada"
 
 #: widgets.cpp:505
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Comportamiento estándar. Mapa activo usado para todas las ventanas"
+msgstr "Comportamiento estÃ¡ndar. Mapa activo usado para todas las ventanas"
 
 #: widgets.cpp:509
 msgid ""
@@ -459,7 +459,7 @@ msgstr ""
 
 #: widgets.cpp:561
 msgid "Button Colors"
-msgstr "Colores del botón"
+msgstr "Colores del botÃ³n"
 
 #: widgets.cpp:571
 msgid "Foreground"
@@ -479,11 +479,11 @@ msgstr "Color del fondo de la etiqueta"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
-msgstr "Con BloqMayús"
+msgstr "Con BloqMayÃºs"
 
 #: widgets.cpp:582
 msgid "Background when Emulated Caps Lock active"
-msgstr "Fondo cuando BloqMayús emulado esta activado"
+msgstr "Fondo cuando BloqMayÃºs emulado esta activado"
 
 #: widgets.cpp:588
 msgid "With Alternate"
@@ -491,11 +491,11 @@ msgstr "Con Alt"
 
 #: widgets.cpp:589
 msgid "Background when Alternate switch key is pressed"
-msgstr "Fondo cuando la tecla de cambio alternativo está pulsada"
+msgstr "Fondo cuando la tecla de cambio alternativo estÃ¡ pulsada"
 
 #: widgets.cpp:598
 msgid "Button Font"
-msgstr "Fuente del botón"
+msgstr "Fuente del botÃ³n"
 
 #: widgets.cpp:606
 msgid "&Customize Font"
@@ -515,7 +515,7 @@ msgstr "&Autoinicio"
 
 #: widgets.cpp:657
 msgid "Start up automatically"
-msgstr "Iniciar automáticamente"
+msgstr "Iniciar automÃ¡ticamente"
 
 #: widgets.cpp:663
 msgid "&Docked"

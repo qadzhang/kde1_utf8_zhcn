@@ -7,11 +7,11 @@ msgstr ""
 "POT-Creation-Date: 1999-01-18 01:39+0100\n"
 "Last-Translator: Bjarni R. Einarsson <bre@mmedia.is>\n"
 "Language-Team: is\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: game.cpp:41 game.cpp:144 rattler.cpp:350
 msgid "Snake Race"
-msgstr "Snákaleikur"
+msgstr "SnÃ¡kaleikur"
 
 #: game.cpp:45
 msgid "KConfig error ??\n"
@@ -19,11 +19,11 @@ msgstr "KConfig villa ??\n"
 
 #: game.cpp:79
 msgid "New"
-msgstr "Nıtt"
+msgstr "NÃ½tt"
 
 #: game.cpp:80
 msgid "Pause"
-msgstr "Hvíla"
+msgstr "HvÃ­la"
 
 #: game.cpp:81
 msgid "High Scores..."
@@ -55,11 +55,11 @@ msgstr "Byrjandi"
 
 #: game.cpp:127
 msgid "Intermediate"
-msgstr "Meğaljón"
+msgstr "MeÄ‘aljÃ³n"
 
 #: game.cpp:128
 msgid "Advanced"
-msgstr "Hæfur"
+msgstr "HÄ‡fur"
 
 #: game.cpp:129
 msgid "Expert"
@@ -71,7 +71,7 @@ msgstr "Boltar"
 
 #: game.cpp:132
 msgid "Computer Snakes"
-msgstr "Tölvustırğir snákar"
+msgstr "TÃ¶lvustÃ½rÄ‘ir snÃ¡kar"
 
 #: game.cpp:134
 msgid "Select background color..."
@@ -83,7 +83,7 @@ msgstr "Velja bakgrunnsmynd"
 
 #: game.cpp:137
 msgid "Change keys..."
-msgstr "Breyta hnöppum..."
+msgstr "Breyta hnÃ¶ppum..."
 
 #: game.cpp:139
 msgid "Starting Room..."
@@ -99,27 +99,27 @@ msgstr ""
 "\n"
 "eftir Michel Filippi (mfilippi@sade.rhein-main.de)\n"
 "\n"
-"Şığing: Bjarni <bre@mmedia.is>"
+"Å¢Ã½Ä‘ing: Bjarni <bre@mmedia.is>"
 
 #: rattler.cpp:278
 msgid ""
 "Game Paused\n"
 " Press F3 to resume\n"
 msgstr ""
-" Leikurinn er í biğstöğu \n"
-" İttu á F3 til ağ halda áfram \n"
+" Leikurinn er Ã­ biÄ‘stÃ¶Ä‘u \n"
+" Ãttu Ã¡ F3 til aÄ‘ halda Ã¡fram \n"
 
 #: rattler.cpp:351
 msgid ""
 "A game is already started\n"
 "Start a new one ?\n"
 msgstr ""
-"Leikur er şegar hafinn\n"
-"Viltu hefja nıjan ?\n"
+"Leikur er Å£egar hafinn\n"
+"Viltu hefja nÃ½jan ?\n"
 
 #: rattler.cpp:353
 msgid "&Yes"
-msgstr "&Já"
+msgstr "&JÃ¡"
 
 #: rattler.cpp:353
 msgid "&No"
@@ -127,7 +127,7 @@ msgstr "&Nei"
 
 #: startroom.cpp:23
 msgid "Snake Race Starting Room"
-msgstr "Byrjunarherbergi snákaleiksins"
+msgstr "Byrjunarherbergi snÃ¡kaleiksins"
 
 #: startroom.cpp:41
 msgid "Starting Room"
@@ -141,12 +141,12 @@ msgid ""
 "\tand minVal must not be greater than maxVal"
 msgstr ""
 "LCDRange::setRange(%d,%d)\n"
-"\t\"Range\" verğur ağ vera á bilinu 0..99\n"
-"og lágmarkiğ skal vera minna en hámarkiğ."
+"\t\"Range\" verÄ‘ur aÄ‘ vera Ã¡ bilinu 0..99\n"
+"og lÃ¡gmarkiÄ‘ skal vera minna en hÃ¡markiÄ‘."
 
 #: score.cpp:46 score.cpp:77
 msgid "Snake Race High Scores"
-msgstr "Methafar snákaleiksins"
+msgstr "Methafar snÃ¡kaleiksins"
 
 #: score.cpp:50
 msgid "Hall of Fame"
@@ -161,25 +161,25 @@ msgid ""
 "you have achieved a high score!\n"
 " please enter your name"
 msgstr ""
-"Şú settir nıtt met!\n"
-" Hvağ heitir şú?"
+"Å¢Ãº settir nÃ½tt met!\n"
+" HvaÄ‘ heitir Å£Ãº?"
 
 #: pixServer.cpp:182
 #, c-format
 msgid "error loading %s, aborting\n"
-msgstr "villa í innlestri %s, hætti viğ\n"
+msgstr "villa Ã­ innlestri %s, hÄ‡tti viÄ‘\n"
 
 #: keys.cpp:24
 msgid "Defaults"
-msgstr "Sjálfgefin gildi"
+msgstr "SjÃ¡lfgefin gildi"
 
 #: keys.cpp:83
 msgid "Change Direction Keys"
-msgstr "Breyta stefnuhnöppum"
+msgstr "Breyta stefnuhnÃ¶ppum"
 
 #: keys.cpp:96
 msgid "Undefined key"
-msgstr "Óskilgreindur hnappur"
+msgstr "Ã“skilgreindur hnappur"
 
 #: keys.cpp:153
 msgid "Up"
@@ -187,7 +187,7 @@ msgstr "Upp"
 
 #: keys.cpp:154
 msgid "Down"
-msgstr "Niğur"
+msgstr "NiÄ‘ur"
 
 #: keys.cpp:155
 msgid "Left"
@@ -195,4 +195,4 @@ msgstr "Vinstri"
 
 #: keys.cpp:156
 msgid "Right"
-msgstr "Hægri"
+msgstr "HÄ‡gri"

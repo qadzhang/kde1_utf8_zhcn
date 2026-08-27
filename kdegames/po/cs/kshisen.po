@@ -7,19 +7,19 @@ msgstr ""
 "Project-Id-Version: kshisen\n"
 "POT-Creation-Date: 1999-01-04 01:41+0100\n"
 "PO-Revision-Date: 1999-01-16 10:36+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: app.cpp:94 app.cpp:143 board.cpp:222
 msgid "Shisen-Sho"
-msgstr "©isen-©o"
+msgstr "Å isen-Å o"
 
 #: board.cpp:223
 msgid "Cannot load pixmaps!"
-msgstr "Není mo¾né naèíst obrázky!"
+msgstr "NenÃ­ moÅ¾nÃ© naÄÃ­st obrÃ¡zky!"
 
 #: app.cpp:108
 msgid "Get &hint"
@@ -27,7 +27,7 @@ msgstr "Poskytnout &radu"
 
 #: app.cpp:110
 msgid "&New game"
-msgstr "&Nová hra"
+msgstr "&NovÃ¡ hra"
 
 #: app.cpp:111
 msgid "Res&tart game"
@@ -35,11 +35,11 @@ msgstr "&Restartovat hru"
 
 #: app.cpp:113
 msgid "Is game solvable?"
-msgstr "Je hra øe¹itelná?"
+msgstr "Je hra Å™eÅ¡itelnÃ¡?"
 
 #: app.cpp:115
 msgid "&Hall of Fame"
-msgstr "&Hala slávy"
+msgstr "&Hala slÃ¡vy"
 
 #: app.cpp:125
 msgid "14x6"
@@ -63,31 +63,31 @@ msgstr "30x16"
 
 #: app.cpp:133
 msgid "Very fast"
-msgstr "Velmi rychlá"
+msgstr "Velmi rychlÃ¡"
 
 #: app.cpp:134
 msgid "Fast"
-msgstr "Rychlá"
+msgstr "RychlÃ¡"
 
 #: app.cpp:135 app.cpp:140
 msgid "Medium"
-msgstr "Støední"
+msgstr "StÅ™ednÃ­"
 
 #: app.cpp:136
 msgid "Slow"
-msgstr "Pomalá"
+msgstr "PomalÃ¡"
 
 #: app.cpp:137
 msgid "Very slow"
-msgstr "Velmi pomalá"
+msgstr "Velmi pomalÃ¡"
 
 #: app.cpp:139
 msgid "Easy"
-msgstr "Snadná"
+msgstr "SnadnÃ¡"
 
 #: app.cpp:141
 msgid "Hard"
-msgstr "Tì¾ká"
+msgstr "TÄ›Å¾kÃ¡"
 
 #: app.cpp:145
 msgid ""
@@ -109,27 +109,27 @@ msgstr "&Rychlost"
 
 #: app.cpp:153
 msgid "&Level"
-msgstr "Ú&roveò"
+msgstr "Ãš&roveÅˆ"
 
 #: app.cpp:154
 msgid "Disallow unsolvable games"
-msgstr "Nepøipustit neøe¹itelné hry"
+msgstr "NepÅ™ipustit neÅ™eÅ¡itelnÃ© hry"
 
 #: app.cpp:175
 msgid "Your time: XX:XX:XX"
-msgstr "Vá¹ èas: XX:XX:XX"
+msgstr "VÃ¡Å¡ Äas: XX:XX:XX"
 
 #: app.cpp:176 app.cpp:273 app.cpp:298
 msgid "Cheat mode"
-msgstr "©vindlování"
+msgstr "Å vindlovÃ¡nÃ­"
 
 #: app.cpp:264
 msgid "This game is solveable"
-msgstr "Tato hra je øe¹itelná"
+msgstr "Tato hra je Å™eÅ¡itelnÃ¡"
 
 #: app.cpp:267
 msgid "This game is NOT solveable"
-msgstr "Tato hra NENÍ øe¹itelná"
+msgstr "Tato hra NENÃ Å™eÅ¡itelnÃ¡"
 
 #: app.cpp:389 app.cpp:421
 msgid "End of game"
@@ -137,17 +137,17 @@ msgstr "Konec hry"
 
 #: app.cpp:390
 msgid "No more moves possible!"
-msgstr "Dal¹í tahy jsou ji¾ nemo¾né!"
+msgstr "DalÅ¡Ã­ tahy jsou jiÅ¾ nemoÅ¾nÃ©!"
 
 #: app.cpp:416
 #, c-format
 msgid "Congratulations! You made it in %02d:%02d:%02d"
-msgstr "Gratuluji! Zvládli jste to za %02d:%02d:%02d"
+msgstr "Gratuluji! ZvlÃ¡dli jste to za %02d:%02d:%02d"
 
 #: app.cpp:433
 #, c-format
 msgid "Your time: %02d:%02d:%02d"
-msgstr "Vá¹ èas je: %02d:%02d:%02d"
+msgstr "VÃ¡Å¡ Äas je: %02d:%02d:%02d"
 
 #: app.cpp:444
 msgid ""
@@ -155,32 +155,32 @@ msgid ""
 "your name so mankind will always remember\n"
 "your cool rating."
 msgstr ""
-"Dostal jste se do \"Haly Slávy\". Vlo¾ své jméno aby si \n"
-"lidstvo stále pøipomínalo Va¹e skvìlé hodnocení"
+"Dostal jste se do \"Haly SlÃ¡vy\". VloÅ¾ svÃ© jmÃ©no aby si \n"
+"lidstvo stÃ¡le pÅ™ipomÃ­nalo VaÅ¡e skvÄ›lÃ© hodnocenÃ­"
 
 #: app.cpp:447
 msgid "Your name:"
-msgstr "Va¹e jméno:"
+msgstr "VaÅ¡e jmÃ©no:"
 
 #: app.cpp:608 app.cpp:613
 msgid "Hall Of Fame"
-msgstr "Hala slávy"
+msgstr "Hala slÃ¡vy"
 
 #: app.cpp:609
 msgid "Shisen-Sho: Hall Of Fame"
-msgstr "©isen-©o: Hala Slávy"
+msgstr "Å isen-Å o: Hala SlÃ¡vy"
 
 #: app.cpp:634
 msgid "Rank"
-msgstr "Poøadí"
+msgstr "PoÅ™adÃ­"
 
 #: app.cpp:638
 msgid "Name"
-msgstr "Jméno"
+msgstr "JmÃ©no"
 
 #: app.cpp:642
 msgid "Time"
-msgstr "Èas"
+msgstr "ÄŒas"
 
 #: app.cpp:646
 msgid "Size"
@@ -188,4 +188,4 @@ msgstr "Velikost"
 
 #: app.cpp:650
 msgid "Score"
-msgstr "Skóre"
+msgstr "SkÃ³re"

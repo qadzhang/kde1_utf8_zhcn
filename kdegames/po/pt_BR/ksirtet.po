@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: kuser\n"
 "POT-Creation-Date: 1998-10-01 13:29+0200\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
 #: board.cpp:65 dialogs.cpp:137
 msgid "Anonymous"
-msgstr "AnÙnimo"
+msgstr "An√¥nimo"
 
 #: board.cpp:97
 msgid "Game paused"
@@ -24,15 +24,15 @@ msgstr "Jogo terminado"
 
 #: board.cpp:123
 msgid "Press Return to replay"
-msgstr "Carregue em RecomeÁar"
+msgstr "Carregue em Recome√ßar"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "Carregue para comeÁar"
+msgstr "Carregue para come√ßar"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "ImpossÌvel escrever arquivo do PÛdio!"
+msgstr "Imposs√≠vel escrever arquivo do P√≥dio!"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -40,15 +40,15 @@ msgstr "Porta ilegal"
 
 #: net.cpp:135
 msgid "Null address"
-msgstr "EndereÁo nulo"
+msgstr "Endere√ßo nulo"
 
 #: net.cpp:142
 msgid "Unknown address"
-msgstr "EndereÁo desconhecido"
+msgstr "Endere√ßo desconhecido"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "N„o foi possÌvel criar socket"
+msgstr "N√£o foi poss√≠vel criar socket"
 
 #: net.cpp:196
 msgid "at"
@@ -56,11 +56,11 @@ msgstr "em"
 
 #: net.cpp:233
 msgid "Connect error"
-msgstr "Erro conex„o"
+msgstr "Erro conex√£o"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
-msgstr "Servidor inatingÌvel"
+msgstr "Servidor inating√≠vel"
 
 #: net.cpp:266
 msgid "The server has died"
@@ -76,7 +76,7 @@ msgstr "Data desconhecida do servidor"
 
 #: net.cpp:312
 msgid "Cannot send to server"
-msgstr "N„o foi possÌvel mandar para o servidor"
+msgstr "N√£o foi poss√≠vel mandar para o servidor"
 
 #: net.cpp:324
 msgid "Client timeout (No message from server)"
@@ -132,23 +132,23 @@ msgstr "Mensagem de fim do cliente"
 
 #: net.cpp:550
 msgid "Cannot send to client"
-msgstr "N„o foi possÌvel enviar para o cliente"
+msgstr "N√£o foi poss√≠vel enviar para o cliente"
 
 #: dialogs.cpp:61
 msgid "High Scores"
-msgstr "PÛdio"
+msgstr "P√≥dio"
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
-msgstr "PÛdio"
+msgstr "P√≥dio"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
-msgstr "Nenhuma opÁ„o selecionada !"
+msgstr "Nenhuma op√ß√£o selecionada !"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "Di·logo de Rede"
+msgstr "Di√°logo de Rede"
 
 #: dialogs.cpp:178
 msgid "Server"
@@ -164,7 +164,7 @@ msgstr "Nome do jogador :"
 
 #: dialogs.cpp:185
 msgid "Server address :"
-msgstr "EndereÁo do servidor :"
+msgstr "Endere√ßo do servidor :"
 
 #: dialogs.cpp:187
 msgid "Port :"
@@ -196,7 +196,7 @@ msgstr "Modo cliente"
 
 #: dialogs.cpp:336
 msgid "Waiting for other player(s) ..."
-msgstr "¿ espera do(s) outro(s) jogador(es) ..."
+msgstr "√Ä espera do(s) outro(s) jogador(es) ..."
 
 #: field.cpp:27
 msgid "New game"
@@ -236,7 +236,7 @@ msgstr "Rodar direita"
 
 #: field.cpp:51
 msgid "Score"
-msgstr "PontuaÁ„o"
+msgstr "Pontua√ß√£o"
 
 #: field.cpp:55
 msgid "Lines removed"
@@ -244,11 +244,11 @@ msgstr "Linhas feitas"
 
 #: field.cpp:59
 msgid "Level"
-msgstr "NÌvel"
+msgstr "N√≠vel"
 
 #: field.cpp:63
 msgid "Next tile"
-msgstr "PrÛxima peÁa"
+msgstr "Pr√≥xima pe√ßa"
 
 #: field.cpp:185
 msgid "&Restart game"
@@ -260,11 +260,11 @@ msgstr "&Pausar o jogo"
 
 #: field.cpp:187
 msgid "&Multiplayer game"
-msgstr "Jogo &Multiusu·rio"
+msgstr "Jogo &Multiusu√°rio"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "Mel&hores pontuaÁıes"
+msgstr "Mel&hores pontua√ß√µes"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"

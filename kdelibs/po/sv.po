@@ -11,20 +11,20 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: kab/AssertDialog.cpp:29
 msgid "(unknown file)"
-msgstr "(ok‰nd fil)"
+msgstr "(ok√§nd fil)"
 
 #: kab/AssertDialog.cpp:30
 msgid "(unknown line number)"
-msgstr "(ok‰nt radnummer)"
+msgstr "(ok√§nt radnummer)"
 
 #: kab/AssertDialog.cpp:31
 msgid "(unknown condition)"
-msgstr "(ok‰nt villkor)"
+msgstr "(ok√§nt villkor)"
 
 #: kab/AssertDialog.cpp:39
 msgid "You have found a bug in "
@@ -32,15 +32,15 @@ msgstr "Du har hittat ett fel i "
 
 #: kab/AssertDialog.cpp:45
 msgid "Ignore the error, possibly causing much more damage"
-msgstr "Strunta i felet, med risken att orsaka mycket v‰rre skada"
+msgstr "Strunta i felet, med risken att orsaka mycket v√§rre skada"
 
 #: kab/AssertDialog.cpp:47
 msgid "Kill the application, loosing all data"
-msgstr "Avsluta programmet, och fˆrlora alla data"
+msgstr "Avsluta programmet, och f√∂rlora alla data"
 
 #: kab/AssertDialog.cpp:49
 msgid "Send an email to the application maintainer"
-msgstr "Skicka E-post till den som underhÂller programmet"
+msgstr "Skicka E-post till den som underh√•ller programmet"
 
 #: kab/AssertDialog.cpp:51 kab/datepickerdialog.cc:25 kab/kabapi.cc:34
 #: kdeui/kcolordlg.cpp:467 kdeui/kcontrol.cpp:46 kdeui/kcontrol.cpp:51
@@ -56,7 +56,7 @@ msgstr "OK"
 
 #: kab/AssertDialog.cpp:140
 msgid "The following condition failed:\n"
-msgstr "Fˆljande villkor misslyckades:\n"
+msgstr "F√∂ljande villkor misslyckades:\n"
 
 #: kab/AssertDialog.cpp:141
 msgid "In file "
@@ -76,15 +76,15 @@ msgstr "Kunde inte skicka meddelandet."
 
 #: kab/AssertDialog.cpp:218
 msgid "The author did not publish an email address."
-msgstr "Upphovsmannen har inte angivit nÂgon E-postadress."
+msgstr "Upphovsmannen har inte angivit n√•gon E-postadress."
 
 #: kab/DialogBase.cpp:36
 msgid ""
 "If you press the OK button, all changes\n"
 "you made will be used to proceed."
 msgstr ""
-"Om du klickar pÂ OK-knappen kommer alla ‰ndringar\n"
-"du gjort anv‰ndas fˆr att forts‰tta."
+"Om du klickar p√• OK-knappen kommer alla √§ndringar\n"
+"du gjort anv√§ndas f√∂r att forts√§tta."
 
 #: kab/DialogBase.cpp:39
 msgid ""
@@ -92,10 +92,10 @@ msgid ""
 "handed over to the program, but the dialog\n"
 "will not be closed.Use this to try different settings."
 msgstr ""
-"Om du klickar pÂ verkst‰ll kommer inst‰llningarna\n"
-"ˆverl‰mnas till programmet, men dialogfˆnstret\n"
-"kommer inte st‰ngas. Anv‰nd detta fˆr att prova\n"
-"olika inst‰llningar."
+"Om du klickar p√• verkst√§ll kommer inst√§llningarna\n"
+"√∂verl√§mnas till programmet, men dialogf√∂nstret\n"
+"kommer inte st√§ngas. Anv√§nd detta f√∂r att prova\n"
+"olika inst√§llningar."
 
 #: kab/DialogBase.cpp:44
 msgid ""
@@ -105,10 +105,10 @@ msgid ""
 "The program will be in the state before\n"
 "opening the dialog."
 msgstr ""
-"Om du klickar pÂ Avbryt-knappen kommer alla ‰ndringar\n"
-"du gjort kastas bort och dialogfˆnstret kommer st‰ngas.\n"
-"Programmet kommer att vara i samma tillstÂnd som\n"
-"innan dialogfˆnstret ˆppnades."
+"Om du klickar p√• Avbryt-knappen kommer alla √§ndringar\n"
+"du gjort kastas bort och dialogf√∂nstret kommer st√§ngas.\n"
+"Programmet kommer att vara i samma tillst√•nd som\n"
+"innan dialogf√∂nstret √∂ppnades."
 
 #: kab/DialogBase.cpp:57 kdeui/kkeydialog.cpp:242 kdeui/knotebook.cpp:247
 #: kdeui/kwizard.cpp:228 po/texts.cpp:36
@@ -117,7 +117,7 @@ msgstr "&OK"
 
 #: kab/DialogBase.cpp:58
 msgid "&Apply"
-msgstr "&Verkst‰ll"
+msgstr "&Verkst√§ll"
 
 #: kab/DialogBase.cpp:59 kdeui/kkeydialog.cpp:245 kdeui/knotebook.cpp:178
 #: kdeui/kwizard.cpp:159 po/texts.cpp:40
@@ -130,11 +130,11 @@ msgstr "Rubrik:"
 
 #: kab/PrintDialog.cpp:27
 msgid "Right footer text:"
-msgstr "Text till hˆger i sidfot:"
+msgstr "Text till h√∂ger i sidfot:"
 
 #: kab/PrintDialog.cpp:28
 msgid "Left footer text:"
-msgstr "Text till v‰nster i sidfot:"
+msgstr "Text till v√§nster i sidfot:"
 
 #: kab/SearchDialog.cpp:47
 msgid "The title"
@@ -142,7 +142,7 @@ msgstr "Titeln"
 
 #: kab/SearchDialog.cpp:48
 msgid "The first name"
-msgstr "Fˆrnamnet"
+msgstr "F√∂rnamnet"
 
 #: kab/SearchDialog.cpp:49
 msgid "The additional name"
@@ -218,48 +218,48 @@ msgstr "Kommentaren"
 
 #: kab/SearchDialog.cpp:74
 msgid "kab: Search entries"
-msgstr "kab: Sˆk bland poster"
+msgstr "kab: S√∂k bland poster"
 
 #: kab/SearchDialogMainWidget.cpp:22
 msgid "matches"
-msgstr "ˆverensst‰mmer med"
+msgstr "√∂verensst√§mmer med"
 
 #: kab/SearchDialogMainWidget.cpp:23
 msgid "Use shell wildcard patterns here"
-msgstr "Anv‰nd samma typ av jokertecken som i ett UNIX-skal"
+msgstr "Anv√§nd samma typ av jokertecken som i ett UNIX-skal"
 
 #: kab/SearchDialogMainWidget.cpp:24
 msgid "Select field to match the pattern"
-msgstr "V‰lj f‰lt som ska ˆverensst‰mma med mˆnstret"
+msgstr "V√§lj f√§lt som ska √∂verensst√§mma med m√∂nstret"
 
 #: kab/StringListEditWidget.cpp:30
 msgid "Add a new string"
-msgstr "L‰gg till en ny str‰ng"
+msgstr "L√§gg till en ny str√§ng"
 
 #: kab/StringListEditWidget.cpp:31
 msgid "Move this string up"
-msgstr "Flytta upp den h‰r str‰ngen"
+msgstr "Flytta upp den h√§r str√§ngen"
 
 #: kab/StringListEditWidget.cpp:32
 msgid "Move this string down"
-msgstr "Flytta ner den h‰r str‰ngen"
+msgstr "Flytta ner den h√§r str√§ngen"
 
 #: kab/StringListEditWidget.cpp:33
 msgid "Delete this string"
-msgstr "Ta bort den h‰r str‰ngen"
+msgstr "Ta bort den h√§r str√§ngen"
 
 #: kab/StringListSelectAndReorderSet.cpp:34
 msgid "Possible values:"
-msgstr "Mˆjliga v‰rden:"
+msgstr "M√∂jliga v√§rden:"
 
 #: kab/StringListSelectAndReorderSet.cpp:35
 msgid "Selected values:"
-msgstr "Valda v‰rden:"
+msgstr "Valda v√§rden:"
 
 #: kdecore/kaccel.cpp:223 kfile/kfiledialog.cpp:559 kfile/kfiledialog.cpp:1219
 #: kfile/kfiledialog.cpp:1379 kfile/kfiledialog.cpp:1413 po/texts.cpp:65
 msgid "Open"
-msgstr "÷ppna"
+msgstr "√ñppna"
 
 #: kdecore/kaccel.cpp:227
 msgid "New"
@@ -267,7 +267,7 @@ msgstr "Ny"
 
 #: kab/searchresults.cc:30 kdecore/kaccel.cpp:231 po/texts.cpp:80
 msgid "Close"
-msgstr "St‰ng"
+msgstr "St√§ng"
 
 #: kdecore/kaccel.cpp:235 kfile/kfiledialog.cpp:1274
 #: kfile/kfiledialog.cpp:1434 po/texts.cpp:75
@@ -296,19 +296,19 @@ msgstr "Klistra in"
 
 #: kdecore/kaccel.cpp:259 po/texts.cpp:93
 msgid "Undo"
-msgstr "≈ngra"
+msgstr "√Öngra"
 
 #: kdecore/kaccel.cpp:263 kdeui/keditcl2.cpp:103 kdeui/keditcl2.cpp:120
 #: kdeui/keditcl2.cpp:360 kdeui/keditcl2.cpp:377 kdeui/keditcl2.cpp:676
 #: kdeui/keditcl2.cpp:685 kdeui/keditcl2.cpp:786
 msgid "Find"
-msgstr "Sˆk"
+msgstr "S√∂k"
 
 #: kdecore/kaccel.cpp:267 kdeui/keditcl2.cpp:423 kdeui/keditcl2.cpp:453
 #: kdeui/keditcl2.cpp:470 kdeui/keditcl2.cpp:789 kspell/kspelldlg.cpp:110
 #: po/texts.cpp:133
 msgid "Replace"
-msgstr "Ers‰tt"
+msgstr "Ers√§tt"
 
 #: kdecore/kaccel.cpp:271 po/texts.cpp:134
 msgid "Insert"
@@ -324,17 +324,17 @@ msgstr "Slut"
 
 #: kdecore/kaccel.cpp:283
 msgid "Prior"
-msgstr "FˆregÂende"
+msgstr "F√∂reg√•ende"
 
 #: kdecore/kaccel.cpp:287
 msgid "Next"
-msgstr "N‰sta"
+msgstr "N√§sta"
 
 #: kdecore/kaccel.cpp:291 kdetest/klocaletest.cpp:102 kdeui/kcolordlg.cpp:463
 #: kdeui/kcontrol.cpp:35 kfile/kfiledialog.cpp:246 kspell/ksconfig.cpp:212
 #: kspell/kspelldlg.cpp:131 po/texts.cpp:44
 msgid "Help"
-msgstr "Hj‰lp"
+msgstr "Hj√§lp"
 
 #: kdecore/kaccel.cpp:589 kdecore/kaccel.cpp:653
 msgid "SHIFT"
@@ -350,7 +350,7 @@ msgstr "ALT"
 
 #: kdecore/kapp.cpp:616 po/texts.cpp:137
 msgid "&Contents"
-msgstr "&InnehÂll"
+msgstr "&Inneh√•ll"
 
 #: kdecore/kapp.cpp:622
 msgid "&About"
@@ -377,12 +377,12 @@ msgid ""
 "Please report bugs at http://bugs.kde.org.\n"
 msgstr ""
 "\n"
-"KDE Desktop Environment ‰r utvecklat av KDE-teamet,\n"
-"ett v‰rldsomsp‰nnande n‰tverk av programmerare engagerade\n"
+"KDE Desktop Environment √§r utvecklat av KDE-teamet,\n"
+"ett v√§rldsomsp√§nnande n√§tverk av programmerare engagerade\n"
 "i utveckling av fri mjukvara.\n"
 "\n"
-"Besˆk http://www.kde.org fˆr mer information om KDE-projektet.\n"
-"GÂ g‰rna med och stˆd KDE.\n"
+"Bes√∂k http://www.kde.org f√∂r mer information om KDE-projektet.\n"
+"G√• g√§rna med och st√∂d KDE.\n"
 "\n"
 "Rapportera fel till http://bugs.kde.org\n"
 
@@ -417,19 +417,19 @@ msgstr "Avbryt"
 
 #: kdeui/kcolordlg.cpp:285
 msgid "Select Color"
-msgstr "V‰lj f‰rg"
+msgstr "V√§lj f√§rg"
 
 #: kdeui/kcolordlg.cpp:297
 msgid "System Colors"
-msgstr "Systemf‰rger"
+msgstr "Systemf√§rger"
 
 #: kdeui/kcolordlg.cpp:328
 msgid "Custom Colors"
-msgstr "Egna f‰rger"
+msgstr "Egna f√§rger"
 
 #: kdeui/kcolordlg.cpp:341
 msgid "Add to Custom Colors"
-msgstr "L‰gg till bland egna f‰rger"
+msgstr "L√§gg till bland egna f√§rger"
 
 #: kdeui/kcolordlg.cpp:789 kdeui/kcolordlg.cpp:841
 msgid "Custom..."
@@ -441,7 +441,7 @@ msgstr "Standard"
 
 #: kdeui/kcontrol.cpp:47 kdeui/kcontrol.cpp:53 po/texts.cpp:41
 msgid "Apply"
-msgstr "Verkst‰ll"
+msgstr "Verkst√§ll"
 
 #: kdeui/kdatepik.cpp:102
 msgid "January"
@@ -497,11 +497,11 @@ msgstr "(ogiltigt)"
 
 #: kdeui/kdatetbl.cpp:49
 msgid "Sun"
-msgstr "sˆn"
+msgstr "s√∂n"
 
 #: kdeui/kdatetbl.cpp:49
 msgid "Mon"
-msgstr "mÂn"
+msgstr "m√•n"
 
 #: kdeui/kdatetbl.cpp:49
 msgid "Tue"
@@ -521,13 +521,13 @@ msgstr "fre"
 
 #: kdeui/kdatetbl.cpp:51
 msgid "Sat"
-msgstr "lˆr"
+msgstr "l√∂r"
 
 #: kab/kabapi.cc:138 kab/widget.cc:832 kab/widget.cc:852 kab/widget.cc:1952
 #: kdeui/keditcl1.cpp:139 kdeui/keditcl1.cpp:168 kdeui/keditcl1.cpp:189
 #: kdeui/keditcl1.cpp:202 kdeui/keditcl1.cpp:1559 po/texts.cpp:83
 msgid "Sorry"
-msgstr "Tyv‰rr"
+msgstr "Tyv√§rr"
 
 #: kdeui/keditcl1.cpp:140
 msgid "The specified File does not exist"
@@ -536,7 +536,7 @@ msgstr "Den angivna filen finns inte"
 #: kdeui/keditcl1.cpp:153 kdeui/keditcl1.cpp:430 kdeui/keditcl1.cpp:511
 #: kdeui/keditcl1.cpp:1715
 msgid "Sorry:"
-msgstr "Tyv‰rr:"
+msgstr "Tyv√§rr:"
 
 #: kdeui/keditcl1.cpp:154
 msgid "You have specificated a directory"
@@ -544,15 +544,15 @@ msgstr "Du har angivit en katalog"
 
 #: kdeui/keditcl1.cpp:169 kdeui/keditcl1.cpp:190
 msgid "You do not have read permission to this file."
-msgstr "Du har inte l‰sr‰ttigheter till den h‰r filen."
+msgstr "Du har inte l√§sr√§ttigheter till den h√§r filen."
 
 #: kdeui/keditcl1.cpp:203
 msgid "An Error occured while trying to open this Document"
-msgstr "Ett fel uppstod n‰r dokumentet skulle ˆppnas"
+msgstr "Ett fel uppstod n√§r dokumentet skulle √∂ppnas"
 
 #: kdeui/keditcl1.cpp:373
 msgid "Select Document to Insert"
-msgstr "V‰lj dokument att infoga"
+msgstr "V√§lj dokument att infoga"
 
 #: kdeui/keditcl1.cpp:409 kdeui/keditcl1.cpp:491 kdeui/keditcl1.cpp:1658
 msgid "Warning:"
@@ -563,7 +563,7 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Det aktuella dokumentet har ‰ndrats.\n"
+"Det aktuella dokumentet har √§ndrats.\n"
 "Vill du spara det?"
 
 #: kdeui/keditcl1.cpp:431
@@ -572,11 +572,11 @@ msgid ""
 "Open a new document anyways?"
 msgstr ""
 "Kunde inte spara dokumentet.\n"
-"Vill du ˆppna ett nytt ‰ndÂ?"
+"Vill du √∂ppna ett nytt √§nd√•?"
 
 #: kdeui/keditcl1.cpp:462
 msgid "Select Document to Open"
-msgstr "V‰lj dokument att ˆppna"
+msgstr "V√§lj dokument att √∂ppna"
 
 #: kdeui/keditcl1.cpp:512
 msgid ""
@@ -584,12 +584,12 @@ msgid ""
 "Create a new document anyways?"
 msgstr ""
 "Kunde inte spara dokumentet.\n"
-"Vill du skapa ett nytt ‰ndÂ?"
+"Vill du skapa ett nytt √§nd√•?"
 
 #: kdeui/keditcl1.cpp:547 kdeui/keditcl1.cpp:1700 kdeui/kpopmenu.cpp:10
 #: po/texts.cpp:34
 msgid "Untitled"
-msgstr "Namnlˆs"
+msgstr "Namnl√∂s"
 
 #: kdeui/keditcl1.cpp:1560
 msgid "Could not save the document\n"
@@ -604,20 +604,20 @@ msgid ""
 "A Document with this Name exists already\n"
 "Do you want to overwrite it ?"
 msgstr ""
-"Ett dokument med det h‰r namnet finns redan\n"
-"Vill du skriva ˆver det?"
+"Ett dokument med det h√§r namnet finns redan\n"
+"Vill du skriva √∂ver det?"
 
 #: kdeui/keditcl1.cpp:1716
 msgid "You do not have write permission to this file.\n"
-msgstr "Du har inte skrivr‰ttigheter till den h‰r filen.\n"
+msgstr "Du har inte skrivr√§ttigheter till den h√§r filen.\n"
 
 #: kdeui/keditcl2.cpp:104 kdeui/keditcl2.cpp:361 kdeui/keditcl2.cpp:454
 msgid ""
 "End of document reached.\n"
 "Continue from the beginning?"
 msgstr ""
-"Slutet pÂ dokumentet nÂtt.\n"
-"Vill du forts‰tta frÂn bˆrjan?"
+"Slutet p√• dokumentet n√•tt.\n"
+"Vill du forts√§tta fr√•n b√∂rjan?"
 
 #: kdeui/keditcl2.cpp:121 kdeui/keditcl2.cpp:378 kdeui/keditcl2.cpp:424
 #: kdeui/keditcl2.cpp:471
@@ -625,16 +625,16 @@ msgid ""
 "Beginning of document reached.\n"
 "Continue from the end?"
 msgstr ""
-"Bˆrjan pÂ dokumentet nÂdd.\n"
-"Vill du forts‰tta frÂn slutet?"
+"B√∂rjan p√• dokumentet n√•dd.\n"
+"Vill du forts√§tta fr√•n slutet?"
 
 #: kdeui/keditcl2.cpp:682 kdeui/keditcl2.cpp:780
 msgid "Case Sensitive"
-msgstr "K‰nslig fˆr stora/smÂ bokst‰ver"
+msgstr "K√§nslig f√∂r stora/sm√• bokst√§ver"
 
 #: kdeui/keditcl2.cpp:683 kdeui/keditcl2.cpp:783
 msgid "Find Backwards"
-msgstr "Sˆk bakl‰nges"
+msgstr "S√∂k bakl√§nges"
 
 #: kdeui/keditcl2.cpp:688 kdeui/keditcl2.cpp:795
 msgid "Done"
@@ -642,27 +642,27 @@ msgstr "Klar"
 
 #: kdeui/keditcl2.cpp:768
 msgid "Find:"
-msgstr "Sˆk efter:"
+msgstr "S√∂k efter:"
 
 #: kdeui/keditcl2.cpp:778
 msgid "Replace with:"
-msgstr "Ers‰tt med:"
+msgstr "Ers√§tt med:"
 
 #: kdeui/keditcl2.cpp:792 kspell/kspelldlg.cpp:38
 msgid "Replace All"
-msgstr "Ers‰tt alla"
+msgstr "Ers√§tt alla"
 
 #: kdeui/keditcl2.cpp:889
 msgid "Goto Line"
-msgstr "GÂ till rad"
+msgstr "G√• till rad"
 
 #: kdeui/keditcl2.cpp:894
 msgid "Go"
-msgstr "GÂ"
+msgstr "G√•"
 
 #: kdeui/kfontdialog.cpp:177
 msgid "Select Font"
-msgstr "V‰lj typsnitt"
+msgstr "V√§lj typsnitt"
 
 #: kdeui/kfontdialog.cpp:181
 msgid "Requested Font"
@@ -728,7 +728,7 @@ msgstr "Kodning"
 
 #: kdeui/kfontdialog.cpp:367
 msgid "Dolor Ipse"
-msgstr "Brˆder, gutÂr!"
+msgstr "Br√∂der, gut√•r!"
 
 #: kdeui/kfontdialog.cpp:519
 msgid "Bold"
@@ -740,7 +740,7 @@ msgstr "normal"
 
 #: kdeui/kiconloaderdialog.cpp:247
 msgid "Select Icon"
-msgstr "V‰lj ikon"
+msgstr "V√§lj ikon"
 
 #: kdeui/kiconloaderdialog.cpp:252
 msgid "Filter:"
@@ -753,7 +753,7 @@ msgstr "Konfigurera tangentbindningar"
 #: kdeui/kkeydialog.cpp:232 kdeui/knotebook.cpp:224 kdeui/kwizard.cpp:205
 #: po/texts.cpp:45
 msgid "&Help"
-msgstr "&Hj‰lp"
+msgstr "&Hj√§lp"
 
 #: kdeui/kkeydialog.cpp:236 po/texts.cpp:136
 msgid "&Defaults"
@@ -769,7 +769,7 @@ msgstr "&Operation"
 
 #: kdeui/kkeydialog.cpp:366
 msgid "Choose a key for the selected action"
-msgstr "V‰lj en tangent fˆr den valda operationen"
+msgstr "V√§lj en tangent f√∂r den valda operationen"
 
 #: kdeui/kkeydialog.cpp:393
 msgid "&No key"
@@ -801,11 +801,11 @@ msgstr "Tangenter"
 
 #: kdeui/kkeydialog.cpp:637 kdeui/kkeydialog.cpp:976
 msgid "Attention : key already used"
-msgstr "Observera : tangenten anv‰nds redan"
+msgstr "Observera : tangenten anv√§nds redan"
 
 #: kdeui/kkeydialog.cpp:926
 msgid "Press the wanted key"
-msgstr "Tryck pÂ den ˆnskade tangenten"
+msgstr "Tryck p√• den √∂nskade tangenten"
 
 #: kdeui/kkeydialog.cpp:949
 msgid "Undefined key"
@@ -813,7 +813,7 @@ msgstr "Odefinierad tangent"
 
 #: kdeui/kkeydialog.cpp:999
 msgid "Return to end edition"
-msgstr "Retur fˆr att avsluta editering"
+msgstr "Retur f√∂r att avsluta editering"
 
 #: kdeui/kkeydialog.cpp:1009
 msgid "Incorrect key"
@@ -827,10 +827,10 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"Tangentkombinationen %s anv‰nds redan av\n"
+"Tangentkombinationen %s anv√§nds redan av\n"
 "den globala operationen %s.\n"
 "\n"
-"Var god v‰lj en unik tangentkombination."
+"Var god v√§lj en unik tangentkombination."
 
 #: kdeui/kkeydialog.cpp:1039
 msgid "Global key conflict"
@@ -844,10 +844,10 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"Tangentkombinationen %s anv‰nds redan av\n"
+"Tangentkombinationen %s anv√§nds redan av\n"
 "standardoperationen %s.\n"
 "\n"
-"Var god v‰lj en unik tangentkombination."
+"Var god v√§lj en unik tangentkombination."
 
 #: kdeui/kkeydialog.cpp:1066
 msgid "Standard key conflict"
@@ -861,10 +861,10 @@ msgid ""
 "\n"
 "Please choose a unique key combination."
 msgstr ""
-"Tangentkombinationen %s anv‰nds redan av\n"
+"Tangentkombinationen %s anv√§nds redan av\n"
 "operationen %s.\n"
 "\n"
-"Var god v‰lj en unik tangentkombination."
+"Var god v√§lj en unik tangentkombination."
 
 #: kdeui/kkeydialog.cpp:1090
 msgid "Key conflict"
@@ -872,7 +872,7 @@ msgstr "Tangentkonflikt"
 
 #: kdeui/kmenubar.cpp:306 kdeui/ktoolbar.cpp:860
 msgid "Top"
-msgstr "÷verst"
+msgstr "√ñverst"
 
 #: kdeui/kmenubar.cpp:307 kdeui/ktoolbar.cpp:862
 msgid "Bottom"
@@ -880,11 +880,11 @@ msgstr "Underst"
 
 #: kdeui/kmenubar.cpp:308 kdeui/ktoolbar.cpp:863
 msgid "Floating"
-msgstr "Sv‰vande"
+msgstr "Sv√§vande"
 
 #: kdeui/kmenubar.cpp:457 kdeui/kmenubar.cpp:809 kdeui/ktoolbar.cpp:2090
 msgid "Float"
-msgstr "Sv‰va"
+msgstr "Sv√§va"
 
 #: kdeui/kmenubar.cpp:761 kdeui/ktoolbar.cpp:2071
 msgid "UnFloat"
@@ -892,7 +892,7 @@ msgstr "Landa"
 
 #: kdeui/knotebook.cpp:145
 msgid "Trying to add page when no KWizards are added!"
-msgstr "Fˆrsˆker l‰gga till sida n‰r inga KWizards har lagts till!"
+msgstr "F√∂rs√∂ker l√§gga till sida n√§r inga KWizards har lagts till!"
 
 #: kdeui/knotebook.cpp:201 kdeui/kwizard.cpp:182
 msgid "&Default"
@@ -900,19 +900,19 @@ msgstr "&Standard"
 
 #: kdeui/kquickhelp.cpp:203
 msgid "Quickhelp"
-msgstr "Snabbhj‰lp"
+msgstr "Snabbhj√§lp"
 
 #: kdeui/ktoolbar.cpp:288 kdeui/ktoolbar.cpp:340
 msgid "KToolBarButton: pixmap is empty, perhaps some missing file"
-msgstr "KToolBarButton: pixmapen ‰r tom, kanske saknas nÂgon fil"
+msgstr "KToolBarButton: pixmapen √§r tom, kanske saknas n√•gon fil"
 
 #: kdeui/ktoolbar.cpp:859
 msgid "Left"
-msgstr "V‰nster"
+msgstr "V√§nster"
 
 #: kdeui/ktoolbar.cpp:861
 msgid "Right"
-msgstr "Hˆger"
+msgstr "H√∂ger"
 
 # , c-format
 #: kdeui/kwizard.cpp:531 kdeui/kwizard.cpp:678
@@ -926,11 +926,11 @@ msgstr "Kataloger:"
 
 #: kfile/kcombiview.cpp:82
 msgid "Contents:"
-msgstr "InnehÂll:"
+msgstr "Inneh√•ll:"
 
 #: kfile/kfilebookmark.cpp:246
 msgid "<!-- Do not edit this file -->"
-msgstr "<!-- Gˆr inga ‰ndringar i den h‰r filen -->"
+msgstr "<!-- G√∂r inga √§ndringar i den h√§r filen -->"
 
 #: kab/addressbook.cc:1112 kfile/kfiledetaillist.cpp:36
 msgid "Name"
@@ -938,7 +938,7 @@ msgstr "Namn"
 
 #: kfile/kfiledetaillist.cpp:40
 msgid "Permissions"
-msgstr "R‰ttigheter"
+msgstr "R√§ttigheter"
 
 #: kfile/kfiledetaillist.cpp:42
 msgid "Date"
@@ -946,7 +946,7 @@ msgstr "Datum"
 
 #: kfile/kfiledetaillist.cpp:45
 msgid "Owner"
-msgstr "ƒgare"
+msgstr "√Ñgare"
 
 #: kfile/kfiledetaillist.cpp:47
 msgid "Group"
@@ -958,11 +958,11 @@ msgstr "Tillbaka"
 
 #: kfile/kfiledialog.cpp:125
 msgid "Forward"
-msgstr "FramÂt"
+msgstr "Fram√•t"
 
 #: kfile/kfiledialog.cpp:128
 msgid "Up to parent"
-msgstr "Upp till fˆr‰lder"
+msgstr "Upp till f√∂r√§lder"
 
 #: kfile/kfiledialog.cpp:134 po/texts.cpp:54
 msgid "Reload"
@@ -970,7 +970,7 @@ msgstr "Uppdatera"
 
 #: kfile/kfiledialog.cpp:156
 msgid "Bookmarks"
-msgstr "Bokm‰rken"
+msgstr "Bokm√§rken"
 
 #: kfile/kfiledialog.cpp:160
 msgid "Create new folder"
@@ -978,15 +978,15 @@ msgstr "Skapa ny katalog"
 
 #: kfile/kfiledialog.cpp:163
 msgid "Search for a file"
-msgstr "Sˆk efter en fil"
+msgstr "S√∂k efter en fil"
 
 #: kfile/kfiledialog.cpp:166
 msgid "Configure this dialog [development only]"
-msgstr "Inst‰llningar fˆr denna dialog [endast utveckling]"
+msgstr "Inst√§llningar f√∂r denna dialog [endast utveckling]"
 
 #: kfile/kfiledialog.cpp:174
 msgid "The path"
-msgstr "Sˆkv‰gen"
+msgstr "S√∂kv√§gen"
 
 #: kfile/kfiledialog.cpp:199
 msgid "&Location:"
@@ -998,23 +998,23 @@ msgstr "&Filter:"
 
 #: kfile/kfiledialog.cpp:226
 msgid "Show hidden"
-msgstr "Visa gˆmda"
+msgstr "Visa g√∂mda"
 
 #: kfile/kfiledialog.cpp:505
 msgid "Error: Not local file"
-msgstr "Fel: det ‰r ingen lokal fil"
+msgstr "Fel: det √§r ingen lokal fil"
 
 #: kfile/kfiledialog.cpp:506
 msgid ""
 "The specified directory is not a local directory\n"
 "But the application accepts just local files."
 msgstr ""
-"Den angivna katalogen ‰r ej lokal, men programmet\n"
+"Den angivna katalogen √§r ej lokal, men programmet\n"
 "accepterar bara lokala filer."
 
 #: kfile/kfiledialog.cpp:520 kfile/kfiledialog.cpp:625
 msgid "Error: Cannot Open Directory"
-msgstr "Fel: Kan inte ˆppna katalogen"
+msgstr "Fel: Kan inte √∂ppna katalogen"
 
 #: kfile/kfiledialog.cpp:521
 msgid ""
@@ -1022,11 +1022,11 @@ msgid ""
 "or was not readable."
 msgstr ""
 "Den angivna katalogen finns inte\n"
-"eller var ol‰sbar."
+"eller var ol√§sbar."
 
 #: kfile/kfiledialog.cpp:523 kfile/kfiledialog.cpp:628
 msgid "Dismiss"
-msgstr "St‰ng"
+msgstr "St√§ng"
 
 #: kfile/kfiledialog.cpp:574 kfile/kfiledialog.cpp:1394 po/texts.cpp:77
 msgid "Save As"
@@ -1038,7 +1038,7 @@ msgstr "Rotkatalogen"
 
 #: kfile/kfiledialog.cpp:626
 msgid "The specified directory does not exist or was not readable."
-msgstr "Den angivna katalogen finns inte eller var ol‰sbar."
+msgstr "Den angivna katalogen finns inte eller var ol√§sbar."
 
 #: kfile/kfiledialog.cpp:887
 msgid "Create new directory in: "
@@ -1050,11 +1050,11 @@ msgstr "Ny katalog"
 
 #: kfile/kfiledialog.cpp:962
 msgid "Add to bookmarks"
-msgstr "L‰gg till bokm‰rken"
+msgstr "L√§gg till bokm√§rken"
 
 #: kfile/kfiledialog.cpp:1253
 msgid "Choose Directory"
-msgstr "V‰lj katalog"
+msgstr "V√§lj katalog"
 
 #: kfile/kfiledialog.cpp:1321
 msgid "directory"
@@ -1089,7 +1089,7 @@ msgstr "%d kataloger"
 
 #: kfile/kfiledialogconf.cpp:42
 msgid "Look and Feel"
-msgstr "Utseende och k‰nsla"
+msgstr "Utseende och k√§nsla"
 
 #: kfile/kfiledialogconf.cpp:44
 msgid ""
@@ -1104,13 +1104,13 @@ msgid ""
 "Mario Weilguni <mweilguni@sime.com>\n"
 "and Martin Jones <mjones@kde.org>"
 msgstr ""
-"KDE:s filv‰ljare ‰r skriven av:\n"
+"KDE:s filv√§ljare √§r skriven av:\n"
 "\n"
 "Richard Moore <rich@kde.org>\n"
 "Stephan Kulow <coolo@kde.org>\n"
 "och Daniel Grana <grana@ie.iwi.unibe.ch>\n"
 "\n"
-"med bidrag frÂn\n"
+"med bidrag fr√•n\n"
 "\n"
 "Mario Weilguni <mweilguni@sime.com>\n"
 "och Martin Jones <mjones@kde.org>"
@@ -1145,7 +1145,7 @@ msgstr "Visa kolumnrubriker"
 
 #: kfile/kfiledialogconf.cpp:108
 msgid "Show Hidden"
-msgstr "Visa gˆmda filer"
+msgstr "Visa g√∂mda filer"
 
 #: kfile/kfiledialogconf.cpp:114
 msgid "Show Status Line"
@@ -1153,7 +1153,7 @@ msgstr "Visa statusrad"
 
 #: kfile/kfiledialogconf.cpp:120
 msgid "Use single Click"
-msgstr "Anv‰nd enkelklick"
+msgstr "Anv√§nd enkelklick"
 
 #: kfile/kfiledialogconf.cpp:126
 msgid "Mix dirs and files"
@@ -1161,7 +1161,7 @@ msgstr "Blanda kataloger och filer"
 
 #: kfile/kfiledialogconf.cpp:132
 msgid "Keep dirs first"
-msgstr "Lista kataloger fˆrst"
+msgstr "Lista kataloger f√∂rst"
 
 #: kfile/kfilefilter.cpp:35
 msgid "*|All Files"
@@ -1169,7 +1169,7 @@ msgstr "*|Alla filer"
 
 #: kfile/kfileinfo.cpp:97 kfile/kfileinfo.cpp:101
 msgid "unknown"
-msgstr "ok‰nd"
+msgstr "ok√§nd"
 
 #: kfile/kfileinfo.cpp:221
 msgid "Jan"
@@ -1225,7 +1225,7 @@ msgstr "Datum:"
 
 #: kfile/kpreview.cpp:214
 msgid "Owner:"
-msgstr "ƒgare:"
+msgstr "√Ñgare:"
 
 #: kfile/kpreview.cpp:223
 msgid "Group:"
@@ -1237,7 +1237,7 @@ msgstr "Typ:"
 
 #: kfile/kpreview.cpp:287
 msgid "locked"
-msgstr "lÂst"
+msgstr "l√•st"
 
 #: kfile/kpreview.cpp:311
 msgid "picture"
@@ -1268,12 +1268,12 @@ msgid ""
 "The file %s is corrupted\n"
 "Could not do Authorization"
 msgstr ""
-"Filen %s ‰r trasig\n"
+"Filen %s √§r trasig\n"
 "Kunde ej kontrollera identitet"
 
 #: kspell/ksconfig.cpp:66
 msgid "Create Root/Affix combinations not in the dictionary"
-msgstr "Skapa stam-/‰ndelsekombinationer som inte finns i ordlistan"
+msgstr "Skapa stam-/√§ndelsekombinationer som inte finns i ordlistan"
 
 #: kspell/ksconfig.cpp:75
 msgid "Consider run-together words as spelling errors"
@@ -1313,7 +1313,7 @@ msgstr "Brasiliansk portugisiska"
 
 #: kspell/ksconfig.cpp:317
 msgid "Unknown"
-msgstr "Ok‰nd"
+msgstr "Ok√§nd"
 
 #: kspell/ksconfig.cpp:348
 msgid "ISpell Default"
@@ -1325,11 +1325,11 @@ msgstr "Felstavat ord:"
 
 #: kspell/kspelldlg.cpp:68
 msgid "Replacement:"
-msgstr "Ers‰tt med:"
+msgstr "Ers√§tt med:"
 
 #: kspell/kspelldlg.cpp:77
 msgid "Suggestions:"
-msgstr "Fˆrslag:"
+msgstr "F√∂rslag:"
 
 #: kspell/kspelldlg.cpp:88
 msgid "Ignore"
@@ -1341,7 +1341,7 @@ msgstr "Ignorera alla"
 
 #: kspell/kspelldlg.cpp:120 po/texts.cpp:86
 msgid "Add"
-msgstr "L‰gg till"
+msgstr "L√§gg till"
 
 #: kspell/kspelldlg.cpp:166 po/texts.cpp:100
 msgid "Stop"
@@ -1367,7 +1367,7 @@ msgstr "Spara en fil"
 
 #: po/texts.cpp:31
 msgid "Contents"
-msgstr "InnehÂll"
+msgstr "Inneh√•ll"
 
 #: po/texts.cpp:33
 msgid "A&bout..."
@@ -1375,7 +1375,7 @@ msgstr "&Om..."
 
 #: po/texts.cpp:37
 msgid "On"
-msgstr "PÂ"
+msgstr "P√•"
 
 #: po/texts.cpp:38
 msgid "Off"
@@ -1399,7 +1399,7 @@ msgstr "&Redigera"
 
 #: po/texts.cpp:48
 msgid "&Options"
-msgstr "&Inst‰llningar"
+msgstr "&Inst√§llningar"
 
 #: po/texts.cpp:49
 msgid "View"
@@ -1427,15 +1427,15 @@ msgstr "K&listra in"
 
 #: po/texts.cpp:60
 msgid "&New Window..."
-msgstr "Nytt &fˆnster..."
+msgstr "Nytt &f√∂nster..."
 
 #: po/texts.cpp:61
 msgid "New &Window..."
-msgstr "Nytt &fˆnster..."
+msgstr "Nytt &f√∂nster..."
 
 #: po/texts.cpp:62
 msgid "&New Window"
-msgstr "Nytt &fˆnster"
+msgstr "Nytt &f√∂nster"
 
 #: po/texts.cpp:63
 msgid "New Game"
@@ -1447,15 +1447,15 @@ msgstr "&Spela igen"
 
 #: po/texts.cpp:66
 msgid "Open a file"
-msgstr "÷ppna en fil"
+msgstr "√ñppna en fil"
 
 #: po/texts.cpp:67
 msgid "Open..."
-msgstr "÷ppna..."
+msgstr "√ñppna..."
 
 #: po/texts.cpp:68
 msgid "&Open..."
-msgstr "÷&ppna..."
+msgstr "√ñ&ppna..."
 
 #: po/texts.cpp:70
 msgid "&Cut"
@@ -1471,11 +1471,11 @@ msgstr "Typsnitt"
 
 #: po/texts.cpp:73
 msgid "&Foreground Color"
-msgstr "&Fˆrgrundsf‰rg"
+msgstr "&F√∂rgrundsf√§rg"
 
 #: po/texts.cpp:74
 msgid "&Background Color"
-msgstr "&Bakgrundsf‰rg"
+msgstr "&Bakgrundsf√§rg"
 
 #: po/texts.cpp:76
 msgid "&Save"
@@ -1491,7 +1491,7 @@ msgstr "Spara s&om..."
 
 #: po/texts.cpp:81
 msgid "&Close"
-msgstr "St‰n&g"
+msgstr "St√§n&g"
 
 #: po/texts.cpp:82
 msgid "&Print..."
@@ -1499,7 +1499,7 @@ msgstr "Skriv &ut..."
 
 #: po/texts.cpp:84
 msgid "Options"
-msgstr "Inst‰llningar"
+msgstr "Inst√§llningar"
 
 #: po/texts.cpp:85
 msgid "Remove"
@@ -1507,7 +1507,7 @@ msgstr "Ta bort"
 
 #: po/texts.cpp:87
 msgid "Change"
-msgstr "ƒndra"
+msgstr "√Ñndra"
 
 #: po/texts.cpp:88
 msgid "Delete"
@@ -1519,7 +1519,7 @@ msgstr "&Ta bort"
 
 #: po/texts.cpp:90
 msgid "Clear"
-msgstr "Tˆm"
+msgstr "T√∂m"
 
 #: po/texts.cpp:91
 msgid "Italic"
@@ -1531,15 +1531,15 @@ msgstr "Rak"
 
 #: po/texts.cpp:94
 msgid "&Undo"
-msgstr "≈&ngra"
+msgstr "√Ö&ngra"
 
 #: po/texts.cpp:95
 msgid "Redo"
-msgstr "Gˆr om"
+msgstr "G√∂r om"
 
 #: po/texts.cpp:96
 msgid "&Redo"
-msgstr "&Gˆr om"
+msgstr "&G√∂r om"
 
 #: po/texts.cpp:97
 msgid "&Game"
@@ -1551,7 +1551,7 @@ msgstr "Information"
 
 #: po/texts.cpp:99
 msgid "Browse..."
-msgstr "Bl‰ddra..."
+msgstr "Bl√§ddra..."
 
 #: po/texts.cpp:101
 msgid "&Remove"
@@ -1599,11 +1599,11 @@ msgstr "Filer"
 
 #: kab/widget.cc:1390 kab/widget.cc:1432 po/texts.cpp:112
 msgid "Continue"
-msgstr "Forts‰tt"
+msgstr "Forts√§tt"
 
 #: po/texts.cpp:113
 msgid "Restore"
-msgstr "≈terst‰ll"
+msgstr "√Öterst√§ll"
 
 #: po/texts.cpp:114
 msgid "Appearance"
@@ -1611,7 +1611,7 @@ msgstr "Utseende"
 
 #: po/texts.cpp:116
 msgid "Monday"
-msgstr "mÂndag"
+msgstr "m√•ndag"
 
 #: po/texts.cpp:117
 msgid "Tuesday"
@@ -1631,11 +1631,11 @@ msgstr "fredag"
 
 #: po/texts.cpp:121
 msgid "Saturday"
-msgstr "lˆrdag"
+msgstr "l√∂rdag"
 
 #: po/texts.cpp:122
 msgid "Sunday"
-msgstr "sˆndag"
+msgstr "s√∂ndag"
 
 #: po/texts.cpp:123
 msgid "&Update"
@@ -1647,7 +1647,7 @@ msgstr "Layout"
 
 #: po/texts.cpp:125
 msgid "Highscore"
-msgstr "Toppo‰ng"
+msgstr "Toppo√§ng"
 
 #: po/texts.cpp:126
 msgid "&New View"
@@ -1659,11 +1659,11 @@ msgstr "Stoppa &in"
 
 #: po/texts.cpp:130
 msgid "&Next >>"
-msgstr "&N‰sta >>"
+msgstr "&N√§sta >>"
 
 #: po/texts.cpp:131
 msgid "<< &Previous"
-msgstr "<< &FˆregÂende"
+msgstr "<< &F√∂reg√•ende"
 
 #: po/texts.cpp:138
 msgid "&About..."
@@ -1676,9 +1676,9 @@ msgid ""
 "The program will try to create\n"
 "         "
 msgstr ""
-"Katalogen d‰r anv‰ndarspecifik data fˆr\n"
+"Katalogen d√§r anv√§ndarspecifik data f√∂r\n"
 "adressboksprogrammet lagras existerar inte.\n"
-"Progammet kommer fˆrsˆka skapa\n"
+"Progammet kommer f√∂rs√∂ka skapa\n"
 "         "
 
 #: kab/addressbook.cc:94
@@ -1694,10 +1694,10 @@ msgid ""
 "kfm once to automatically create it."
 msgstr ""
 "Katalogen kunde inte skapas.\n"
-"Fˆrmodligen har du inte anv‰nt KDE fˆrut, och\n"
-"har d‰rfˆr inte nÂgon lokal \".kde\"-katalog\n"
-"i din hemkatalog. Kˆr KDE:s filhanterare\n"
-"kfm en gÂng fˆr att automatiskt skapa den."
+"F√∂rmodligen har du inte anv√§nt KDE f√∂rut, och\n"
+"har d√§rf√∂r inte n√•gon lokal \".kde\"-katalog\n"
+"i din hemkatalog. K√∂r KDE:s filhanterare\n"
+"kfm en g√•ng f√∂r att automatiskt skapa den."
 
 #: kab/addressbook.cc:106
 msgid "The directory has been created.\n"
@@ -1705,11 +1705,11 @@ msgstr "Katalogen har skapats.\n"
 
 #: kab/addressbook.cc:140
 msgid "No addressbook database file, creating new one."
-msgstr "Ingen datafil fˆr adressboken, skapar en ny."
+msgstr "Ingen datafil f√∂r adressboken, skapar en ny."
 
 #: kab/addressbook.cc:159
 msgid "Tried to load database for creating backup, but failed"
-msgstr "Fˆrsˆkte ladda databasen fˆr att skapa en backup, men misslyckades"
+msgstr "F√∂rs√∂kte ladda databasen f√∂r att skapa en backup, men misslyckades"
 
 #: kab/addressbook.cc:194
 msgid "Unable to save to backup file."
@@ -1717,7 +1717,7 @@ msgstr "Kunde inte spara till backupfilen."
 
 #: kab/addressbook.cc:200
 msgid "Unable to reset filename after creating backup."
-msgstr "Kunde inte Âterst‰lla filnamnet efter att ha skapat backupen."
+msgstr "Kunde inte √•terst√§lla filnamnet efter att ha skapat backupen."
 
 #: kab/addressbook.cc:205
 msgid "Unable to create backup file"
@@ -1729,11 +1729,11 @@ msgstr "Kunde inte stoppa in \""
 
 #: kab/addressbook.cc:264
 msgid "\" into configuration section (ignored)."
-msgstr "\" i inst‰llningssektionen (ignoreras)."
+msgstr "\" i inst√§llningssektionen (ignoreras)."
 
 #: kab/addressbook.cc:666
 msgid "Unable to add a new entry with available key."
-msgstr "Kunde inte l‰gga till en ny post med tillg‰nglig nyckel."
+msgstr "Kunde inte l√§gga till en ny post med tillg√§nglig nyckel."
 
 #: kab/addressbook.cc:672
 msgid "Cannot find previously created section."
@@ -1741,7 +1741,7 @@ msgstr "Kan inte hitta tidigare skapad sektion."
 
 #: kab/addressbook.cc:703
 msgid "Unable to create key-value-map for entry."
-msgstr "Kunde inte skapa nyckel/v‰rde-karta fˆr posten."
+msgstr "Kunde inte skapa nyckel/v√§rde-karta f√∂r posten."
 
 #: kab/addressbook.cc:989
 msgid "entry without name"
@@ -1750,11 +1750,11 @@ msgstr "post utan namn"
 #: kab/addressbook.cc:1007
 msgid ""
 "Unable to create new database file (probably permission denied), exiting."
-msgstr "Kunde inte skapa ny databasfil (troligen nekades Âtkomst), avslutar."
+msgstr "Kunde inte skapa ny databasfil (troligen nekades √•tkomst), avslutar."
 
 #: kab/addressbook.cc:1013
 msgid "Cannot create configuration section, exiting."
-msgstr "Kan inte skapa inst‰llningssektion, avslutar."
+msgstr "Kan inte skapa inst√§llningssektion, avslutar."
 
 #: kab/addressbook.cc:1018
 msgid "Cannot create entries section, exiting."
@@ -1770,11 +1770,11 @@ msgstr "Kan inte spara den nyskapade databasen."
 
 #: kab/addressbook.cc:1037
 msgid "Cannot erase database contents."
-msgstr "Kan inte radera databasens innehÂll."
+msgstr "Kan inte radera databasens inneh√•ll."
 
 #: kab/addressbook.cc:1116
 msgid "First name"
-msgstr "Fˆrnamn"
+msgstr "F√∂rnamn"
 
 #: kab/addressbook.cc:1120
 msgid "Additional name"
@@ -1786,7 +1786,7 @@ msgstr "Namnprefix"
 
 #: kab/addressbook.cc:1128
 msgid "Formatted name"
-msgstr "Fullst‰ndigt namn"
+msgstr "Fullst√§ndigt namn"
 
 #: kab/addressbook.cc:1132
 msgid "Comment"
@@ -1814,7 +1814,7 @@ msgstr "Befattning"
 
 #: kab/addressbook.cc:1156
 msgid "Birthday"
-msgstr "Fˆdelsedatum"
+msgstr "F√∂delsedatum"
 
 #: kab/addressbook.cc:1160
 msgid "Talk addresses"
@@ -1878,11 +1878,11 @@ msgstr "Land"
 
 #: kab/addressbook.cc:1383
 msgid "(unnamed entry)"
-msgstr "(odˆpt post)"
+msgstr "(od√∂pt post)"
 
 #: kab/datepickerdialog.cc:34
 msgid "Select birthday"
-msgstr "V‰lj fˆdelsedatum"
+msgstr "V√§lj f√∂delsedatum"
 
 #: kab/editentry.cc:38
 msgid "Edit the current entry"
@@ -1894,7 +1894,7 @@ msgstr "Titel:"
 
 #: kab/editentry.cc:62
 msgid "First name:"
-msgstr "Fˆrnamn:"
+msgstr "F√∂rnamn:"
 
 #: kab/editentry.cc:63
 msgid "Additional Name:"
@@ -1902,7 +1902,7 @@ msgstr "Andranamn:"
 
 #: kab/editentry.cc:65
 msgid "Formatted Name:"
-msgstr "Fullst‰ndigt namn:"
+msgstr "Fullst√§ndigt namn:"
 
 #: kab/editentry.cc:88
 msgid "&Name"
@@ -1970,11 +1970,11 @@ msgstr "Hemsida (URL):"
 
 #: kab/editentry.cc:200 kab/editentry.cc:418
 msgid "Edit email addresses"
-msgstr "ƒndra E-postadresser"
+msgstr "√Ñndra E-postadresser"
 
 #: kab/editentry.cc:206 kab/editentry.cc:400
 msgid "Edit talk addresses"
-msgstr "ƒndra pratadresser"
+msgstr "√Ñndra pratadresser"
 
 #: kab/editentry.cc:218
 msgid "&Contact"
@@ -1986,27 +1986,27 @@ msgstr "Ytterligare kommentar:"
 
 #: kab/editentry.cc:246
 msgid "Birthday:"
-msgstr "Fˆdelsedatum:"
+msgstr "F√∂delsedatum:"
 
 #: kab/editentry.cc:249
 msgid "Double click to set date"
-msgstr "Dubbelklicka fˆr att st‰lla in datumet"
+msgstr "Dubbelklicka f√∂r att st√§lla in datumet"
 
 #: kab/editentry.cc:256
 msgid "O&thers"
-msgstr "÷&vrigt"
+msgstr "√ñ&vrigt"
 
 #: kab/kabapi.cc:138
 msgid "Your new entry could not be added."
-msgstr "Kunde inte l‰gga till din nya post."
+msgstr "Kunde inte l√§gga till din nya post."
 
 #: kab/searchresults.cc:33
 msgid "search results"
-msgstr "sˆkresultat"
+msgstr "s√∂kresultat"
 
 #: kab/widget.cc:144
 msgid "Conversion problem"
-msgstr "÷vers‰ttningsproblem"
+msgstr "√ñvers√§ttningsproblem"
 
 #: kab/widget.cc:145
 msgid ""
@@ -2015,10 +2015,10 @@ msgid ""
 "You can use it, but not all features will be\n"
 "supported."
 msgstr ""
-"Kab kunde inte ˆvers‰tta din databas till det\n"
+"Kab kunde inte √∂vers√§tta din databas till det\n"
 "nuvarande filformatet.\n"
-"Du kan anv‰nda den, men kommer inte kunna\n"
-"anv‰nda alla finesser."
+"Du kan anv√§nda den, men kommer inte kunna\n"
+"anv√§nda alla finesser."
 
 #: kab/widget.cc:163
 msgid ""
@@ -2026,7 +2026,7 @@ msgid ""
 "but this entry does not exist anymore."
 msgstr ""
 "Programmet sparade den senast aktuella posten,\n"
-"men den existerar inte l‰ngre."
+"men den existerar inte l√§ngre."
 
 #: kab/widget.cc:229
 msgid "kab: Removed bug warning"
@@ -2041,12 +2041,12 @@ msgid ""
 "All configuration values have been reset to\n"
 "its default settings."
 msgstr ""
-"Den version av kab du anv‰nde fˆrut hade ett\n"
-"fel i uppgraderingen av databasen fˆr nya\n"
+"Den version av kab du anv√§nde f√∂rut hade ett\n"
+"fel i uppgraderingen av databasen f√∂r nya\n"
 "versioner. Detta fel har tagits bort nu och\n"
-"kommer inte pÂverka dig mer.\n"
-"Alla inst‰llningar har Âterst‰llts till sina\n"
-"standardv‰rden."
+"kommer inte p√•verka dig mer.\n"
+"Alla inst√§llningar har √•terst√§llts till sina\n"
+"standardv√§rden."
 
 #: kab/widget.cc:248 kab/widget.cc:314 kab/widget.cc:322
 msgid "File handling error"
@@ -2054,7 +2054,7 @@ msgstr "Filhanteringsfel"
 
 #: kab/widget.cc:249
 msgid "Unable to open database file r/w."
-msgstr "Kunde inte ˆppna databasfilen fˆr l‰s/skriv."
+msgstr "Kunde inte √∂ppna databasfilen f√∂r l√§s/skriv."
 
 #: kab/widget.cc:257
 msgid "Email storage conversion"
@@ -2067,7 +2067,7 @@ msgid ""
 "of email addresses per entry."
 msgstr ""
 "Kab kommer att flytta alla dina E-postadresser till\n"
-"det nya formatet som stˆdjer obegr‰nsat antal\n"
+"det nya formatet som st√∂djer obegr√§nsat antal\n"
 "E-postadresser per post."
 
 #: kab/widget.cc:291
@@ -2079,19 +2079,19 @@ msgid ""
 "Please note that kab now supports some new\n"
 "fields in its addresses. These new fields\n"
 "are:\n"
-"∞ the state field,\n"
-"∞ the country field and\n"
-"∞ the postal code field.\n"
+"¬∞ the state field,\n"
+"¬∞ the country field and\n"
+"¬∞ the postal code field.\n"
 "You will probably need to edit some of your\n"
 "entries to make use of it."
 msgstr ""
-"Var god observera att kab nu stˆdjer nÂgra nya\n"
-"f‰lt i sina adresser. Dessa nya f‰lt ‰r:\n"
-"∞ delstatsf‰ltet,\n"
-"∞ landsf‰ltet och\n"
-"∞ postnummerf‰ltet\n"
-"Du kommer fˆrmodligen behˆva editera nÂgra av\n"
-"dina poster fˆr att dra nytta av dem."
+"Var god observera att kab nu st√∂djer n√•gra nya\n"
+"f√§lt i sina adresser. Dessa nya f√§lt √§r:\n"
+"¬∞ delstatsf√§ltet,\n"
+"¬∞ landsf√§ltet och\n"
+"¬∞ postnummerf√§ltet\n"
+"Du kommer f√∂rmodligen beh√∂va editera n√•gra av\n"
+"dina poster f√∂r att dra nytta av dem."
 
 #: kab/widget.cc:315
 msgid "Could not save database after update."
@@ -2099,19 +2099,19 @@ msgstr "Kunde inte spara databasen efter uppdateringen."
 
 #: kab/widget.cc:323
 msgid "Unable to reopen database file r/o."
-msgstr "Kunde inte ˆppna databasfilen igen fˆr l‰sning."
+msgstr "Kunde inte √∂ppna databasfilen igen f√∂r l√§sning."
 
 #: kab/widget.cc:482
 msgid "first entry"
-msgstr "fˆrsta posten"
+msgstr "f√∂rsta posten"
 
 #: kab/widget.cc:483
 msgid "previous entry"
-msgstr "fˆregÂende post"
+msgstr "f√∂reg√•ende post"
 
 #: kab/widget.cc:484
 msgid "next entry"
-msgstr "n‰sta post"
+msgstr "n√§sta post"
 
 #: kab/widget.cc:485
 msgid "last entry"
@@ -2119,15 +2119,15 @@ msgstr "sista posten"
 
 #: kab/widget.cc:486
 msgid "search entries"
-msgstr "sˆk bland posterna"
+msgstr "s√∂k bland posterna"
 
 #: kab/widget.cc:487
 msgid "add a new entry"
-msgstr "l‰gg till en ny post"
+msgstr "l√§gg till en ny post"
 
 #: kab/widget.cc:488
 msgid "change this entry"
-msgstr "‰ndra denna post"
+msgstr "√§ndra denna post"
 
 #: kab/widget.cc:489
 msgid "remove this entry"
@@ -2135,7 +2135,7 @@ msgstr "ta bort denna post"
 
 #: kab/widget.cc:528
 msgid "Switched to first entry."
-msgstr "Bytte till fˆrsta posten."
+msgstr "Bytte till f√∂rsta posten."
 
 #: kab/widget.cc:560
 msgid "Switched to last entry."
@@ -2143,11 +2143,11 @@ msgstr "Bytte till sista posten."
 
 #: kab/widget.cc:621 kab/widget.cc:678 kab/widget.cc:860 kab/widget.cc:922
 msgid "Sorry, file changed."
-msgstr "Tyv‰rr, filen har ‰ndrats."
+msgstr "Tyv√§rr, filen har √§ndrats."
 
 #: kab/widget.cc:625 kab/widget.cc:682 kab/widget.cc:926
 msgid "Permission denied."
-msgstr "≈tkomst nekades."
+msgstr "√Ötkomst nekades."
 
 #: kab/widget.cc:636
 msgid "Remove entry?"
@@ -2167,7 +2167,7 @@ msgstr "Lade till en ny post."
 
 #: kab/widget.cc:821
 msgid "Opened browser window."
-msgstr "÷ppnade bl‰ddrarfˆnster."
+msgstr "√ñppnade bl√§ddrarf√∂nster."
 
 #: kab/widget.cc:824
 msgid "No URL."
@@ -2180,7 +2180,7 @@ msgstr "Inga poster."
 
 #: kab/widget.cc:833
 msgid "The filemanager is busy, please try again."
-msgstr "Filhanteraren ‰r upptagen, var god fˆrsˆk igen."
+msgstr "Filhanteraren √§r upptagen, var god f√∂rs√∂k igen."
 
 #: kab/widget.cc:853
 msgid ""
@@ -2188,8 +2188,8 @@ msgid ""
 "locked by another application.\n"
 "kab cannot save it."
 msgstr ""
-"Adressboksfilen ‰r fˆr n‰rvarande\n"
-"lÂst av ett annat program.\n"
+"Adressboksfilen √§r f√∂r n√§rvarande\n"
+"l√•st av ett annat program.\n"
 "kab kan inte spara den."
 
 #: kab/widget.cc:870
@@ -2198,7 +2198,7 @@ msgstr "Databasen sparades utan problem."
 
 #: kab/widget.cc:875
 msgid "kab: File error"
-msgstr "kab: Fel pÂ filen"
+msgstr "kab: Fel p√• filen"
 
 #: kab/widget.cc:875
 msgid "Could not save database."
@@ -2206,7 +2206,7 @@ msgstr "Kunde inte spara databasen."
 
 #: kab/widget.cc:876
 msgid "&Retry"
-msgstr "&Fˆrsˆk igen"
+msgstr "&F√∂rs√∂k igen"
 
 #: kab/widget.cc:876
 msgid "&Ignore"
@@ -2214,11 +2214,11 @@ msgstr "&Ignorera"
 
 #: kab/widget.cc:879
 msgid "Saving cancelled.\n"
-msgstr "Sparandet avbrˆts.\n"
+msgstr "Sparandet avbr√∂ts.\n"
 
 #: kab/widget.cc:945
 msgid "Entry changed."
-msgstr "Posten ‰ndrad."
+msgstr "Posten √§ndrad."
 
 #: kab/widget.cc:1041
 msgid "Results"
@@ -2226,7 +2226,7 @@ msgstr "Resultat"
 
 #: kab/widget.cc:1041
 msgid "No entry matches this."
-msgstr "Ingen post ˆverensst‰mmer med detta."
+msgstr "Ingen post √∂verensst√§mmer med detta."
 
 #: kab/widget.cc:1050 kab/widget.cc:1720 kab/widget.cc:1855 kab/widget.cc:2032
 #: kab/widget.cc:2055 kab/widget.cc:2112
@@ -2235,19 +2235,19 @@ msgstr "Avslogs."
 
 #: kab/widget.cc:1066
 msgid "Search results window closed."
-msgstr "Fˆnstret med sˆkresultat st‰ngdes."
+msgstr "F√∂nstret med s√∂kresultat st√§ngdes."
 
 #: kab/widget.cc:1165
 msgid "The talk command must be configured before!"
-msgstr "Pratkommandot mÂste st‰llas in fˆrst!"
+msgstr "Pratkommandot m√•ste st√§llas in f√∂rst!"
 
 #: kab/widget.cc:1170
 msgid "Talk configuration"
-msgstr "Pratinst‰llningar"
+msgstr "Pratinst√§llningar"
 
 #: kab/widget.cc:1171
 msgid "Please configure the parameters for the talk command."
-msgstr "Var god st‰ll in parametrarna till pratkommandot."
+msgstr "Var god st√§ll in parametrarna till pratkommandot."
 
 #: kab/widget.cc:1184
 msgid "No talk address."
@@ -2259,7 +2259,7 @@ msgstr "kab: Pratadresser"
 
 #: kab/widget.cc:1193
 msgid "Available talk addresses:"
-msgstr "Tillg‰ngliga pratadresser:"
+msgstr "Tillg√§ngliga pratadresser:"
 
 #: kab/widget.cc:1199 kab/widget.cc:1963
 msgid "Cancelled."
@@ -2267,7 +2267,7 @@ msgstr "Avbruten."
 
 #: kab/widget.cc:1222
 msgid "The talk command parameters are wrong."
-msgstr "Pratkommandots parametrar ‰r felaktiga."
+msgstr "Pratkommandots parametrar √§r felaktiga."
 
 #: kab/widget.cc:1234
 msgid ""
@@ -2275,7 +2275,7 @@ msgid ""
 "Make sure you did setup your talk command and parameter!"
 msgstr ""
 "Pratkommandot misslyckades.\n"
-"Kontrollera att du verkligen st‰llt in pratkommando och parametrar!"
+"Kontrollera att du verkligen st√§llt in pratkommando och parametrar!"
 
 #: kab/widget.cc:1237
 msgid "Talk program started."
@@ -2283,7 +2283,7 @@ msgstr "Startade pratkommandot."
 
 #: kab/widget.cc:1285
 msgid "Attention: printing is still experimental!"
-msgstr "Observera: utskrifter ‰r fortfarande pÂ fˆrsˆksstadiet!"
+msgstr "Observera: utskrifter √§r fortfarande p√• f√∂rs√∂ksstadiet!"
 
 #: kab/widget.cc:1387 kab/widget.cc:1429
 msgid "Page size problem"
@@ -2294,8 +2294,8 @@ msgid ""
 "The fields you requested to print do\n"
 "not fit into the page width."
 msgstr ""
-"F‰lten du beg‰rt utskrift pÂ\n"
-"fÂr inte plats pÂ sidan."
+"F√§lten du beg√§rt utskrift p√•\n"
+"f√•r inte plats p√• sidan."
 
 #: kab/widget.cc:1624 kab/widget.cc:2066
 msgid "Printing finished successfully."
@@ -2307,27 +2307,27 @@ msgstr "kab: E-postadresser"
 
 #: kab/widget.cc:1652
 msgid "Available email addresses:"
-msgstr "Tillg‰ngliga E-postadresser:"
+msgstr "Tillg√§ngliga E-postadresser:"
 
 #: kab/widget.cc:1717
 msgid "kab: Select fields to copy"
-msgstr "kab: V‰lj f‰lt att kopiera"
+msgstr "kab: V√§lj f√§lt att kopiera"
 
 #: kab/widget.cc:1727
 msgid "Nothing selected."
-msgstr "Ingenting ‰r valt."
+msgstr "Ingenting √§r valt."
 
 #: kab/widget.cc:1785 kab/widget.cc:2049
 msgid "KDE addressbook overview"
-msgstr "÷versikt av KDE adressbok"
+msgstr "√ñversikt av KDE adressbok"
 
 #: kab/widget.cc:1829
 msgid "Name-Email-Link (!!)"
-msgstr "Namn-E-postl‰nk (!!)"
+msgstr "Namn-E-postl√§nk (!!)"
 
 #: kab/widget.cc:1831
 msgid "Select table columns"
-msgstr "V‰lj tabellkolumner"
+msgstr "V√§lj tabellkolumner"
 
 #: kab/widget.cc:1836
 msgid "Nothing to export."
@@ -2335,11 +2335,11 @@ msgstr "Inget att exportera."
 
 #: kab/widget.cc:1865
 msgid "Email link"
-msgstr "E-postl‰nk"
+msgstr "E-postl√§nk"
 
 #: kab/widget.cc:1952
 msgid "Could not find the users home directory."
-msgstr "Kunde inte hitta anv‰ndarens hemkatalog."
+msgstr "Kunde inte hitta anv√§ndarens hemkatalog."
 
 #: kab/widget.cc:1953
 msgid "Intern error!"
@@ -2347,15 +2347,15 @@ msgstr "Internt fel!"
 
 #: kab/widget.cc:1973
 msgid "Could not open the file to create the HTML table."
-msgstr "Kunde inte ˆppna filen fˆr att skapa HTML-tabellen."
+msgstr "Kunde inte √∂ppna filen f√∂r att skapa HTML-tabellen."
 
 #: kab/widget.cc:2009
 msgid "Printing cancelled."
-msgstr "Utskriften avbrˆts."
+msgstr "Utskriften avbr√∂ts."
 
 #: kab/widget.cc:2025
 msgid "kab: Select columns for printing"
-msgstr "kab: V‰lj kolumner fˆr utskriften"
+msgstr "kab: V√§lj kolumner f√∂r utskriften"
 
 #: kab/widget.cc:2038
 msgid "Nothing to print."
@@ -2391,19 +2391,19 @@ msgstr "E-postprogrammet har anropats."
 
 #: kab/widget.cc:2149
 msgid "The mail command must be configured before!"
-msgstr "E-postkommandot mÂste st‰llas in fˆrst!"
+msgstr "E-postkommandot m√•ste st√§llas in f√∂rst!"
 
 #: kab/widget.cc:2155
 msgid "Mail configuration"
-msgstr "E-postinst‰llning"
+msgstr "E-postinst√§llning"
 
 #: kab/widget.cc:2156
 msgid "Please configure the parameters for the email command."
-msgstr "Var god st‰ll in parametrar fˆr E-postkommandot."
+msgstr "Var god st√§ll in parametrar f√∂r E-postkommandot."
 
 #: kab/widget.cc:2194
 msgid "The email command parameters are wrong."
-msgstr "E-postkommandots parametrar ‰r felaktiga."
+msgstr "E-postkommandots parametrar √§r felaktiga."
 
 #: kab/widget.cc:2206
 msgid ""
@@ -2411,7 +2411,7 @@ msgid ""
 "Make sure you did setup your email command and parameter!"
 msgstr ""
 "E-postkommandot misslyckades.\n"
-"Kontrollera att du verkligen st‰llt in E-postkommando och parametrar!"
+"Kontrollera att du verkligen st√§llt in E-postkommando och parametrar!"
 
 #: kab/widget.cc:2210
 msgid "Mail program started."
@@ -2421,14 +2421,14 @@ msgstr "Startade E-postprogrammet."
 #~ msgstr "KIO Cache"
 
 #~ msgid "Contents of the cache"
-#~ msgstr "InnehÂll i cachen"
+#~ msgstr "Inneh√•ll i cachen"
 
 #~ msgid ""
 #~ "Use the icons for drag and drop actions, since they refer to the cache files "
 #~ "on your hard disk, while you should use the textual links for browsing"
 #~ msgstr ""
-#~ "Anv‰nd ikonerna fˆr dra-och-sl‰pp, eftersom de pekar pÂ cache-filerna pÂ din "
-#~ "hÂrddisk. Anv‰nd textl‰nkarna n‰r du surfar."
+#~ "Anv√§nd ikonerna f√∂r dra-och-sl√§pp, eftersom de pekar p√• cache-filerna p√• din "
+#~ "h√•rddisk. Anv√§nd textl√§nkarna n√§r du surfar."
 
 #~ msgid "Creation Date"
 #~ msgstr "Skapad den"
@@ -2443,7 +2443,7 @@ msgstr "Startade E-postprogrammet."
 #~ "Could not read\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Kunde inte l‰sa\n"
+#~ "Kunde inte l√§sa\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2467,7 +2467,7 @@ msgstr "Startade E-postprogrammet."
 #~ "%s"
 #~ msgstr ""
 #~ "Internt fel\n"
-#~ "Var god skicka fullst‰ndig felrapport till kde-bugs@kde.org\n"
+#~ "Var god skicka fullst√§ndig felrapport till kde-bugs@kde.org\n"
 #~ "\n"
 #~ "%s"
 
@@ -2483,20 +2483,20 @@ msgstr "Startade E-postprogrammet."
 #~ " is not supported"
 #~ msgstr ""
 #~ "Protokollet %s\n"
-#~ " stˆds inte"
+#~ " st√∂ds inte"
 
 #~ msgid ""
 #~ "The protocol %s\n"
 #~ "is only a filter protocol.\n"
 #~ msgstr ""
 #~ "Protokollet %s\n"
-#~ "‰r bara ett filterprotokoll.\n"
+#~ "√§r bara ett filterprotokoll.\n"
 
 #~ msgid ""
 #~ "Unsupported action\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Operationen stˆds ej:\n"
+#~ "Operationen st√∂ds ej:\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2514,8 +2514,8 @@ msgstr "Startade E-postprogrammet."
 #~ "but a file was expected"
 #~ msgstr ""
 #~ "%s\n"
-#~ " ‰r en katalog,\n"
-#~ "men en fil fˆrv‰ntades"
+#~ " √§r en katalog,\n"
+#~ "men en fil f√∂rv√§ntades"
 
 #~ msgid ""
 #~ "Could not make directory\n"
@@ -2538,13 +2538,13 @@ msgstr "Startade E-postprogrammet."
 #~ "Access denied"
 #~ msgstr ""
 #~ "%s\n"
-#~ "≈tkomst nekades"
+#~ "√Ötkomst nekades"
 
 #~ msgid ""
 #~ "Could not enter directory\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Kunde inte gÂ in i katalogen\n"
+#~ "Kunde inte g√• in i katalogen\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2552,20 +2552,20 @@ msgstr "Startade E-postprogrammet."
 #~ "does not implement a directory service"
 #~ msgstr ""
 #~ "Protokollet %s\n"
-#~ "har inte nÂgon katalogfunktion"
+#~ "har inte n√•gon katalogfunktion"
 
 #~ msgid ""
 #~ "Found a cyclic link in\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Hittade en cyklisk l‰nk i\n"
+#~ "Hittade en cyklisk l√§nk i\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not change permissions for\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Kunde inte ‰ndra r‰ttigheter fˆr\n"
+#~ "Kunde inte √§ndra r√§ttigheter f√∂r\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2573,7 +2573,7 @@ msgstr "Startade E-postprogrammet."
 #~ "Could not write to\n"
 #~ "%s"
 #~ msgstr ""
-#~ "≈tkomst nekades\n"
+#~ "√Ötkomst nekades\n"
 #~ "Kunde inte skriva till\n"
 #~ "%s"
 
@@ -2582,7 +2582,7 @@ msgstr "Startade E-postprogrammet."
 #~ "canceled by the user"
 #~ msgstr ""
 #~ "Operationen har avbrutits\n"
-#~ "av anv‰ndaren"
+#~ "av anv√§ndaren"
 
 #~ msgid ""
 #~ "Found a cyclic link while copying\n"
@@ -2595,21 +2595,21 @@ msgstr "Startade E-postprogrammet."
 #~ "Could not create socket for accessing\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Kunde inte skapa socket fˆr att komma Ât\n"
+#~ "Kunde inte skapa socket f√∂r att komma √•t\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Could not connect to host\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Kunde inte skapa fˆrbindelse med v‰rd\n"
+#~ "Kunde inte skapa f√∂rbindelse med v√§rd\n"
 #~ "%s"
 
 #~ msgid ""
 #~ "Unknown host\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Ok‰nd v‰rd\n"
+#~ "Ok√§nd v√§rd\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2617,16 +2617,16 @@ msgstr "Startade E-postprogrammet."
 #~ "%s\n"
 #~ "is broken"
 #~ msgstr ""
-#~ "Fˆrbindelsen med v‰rd\n"
+#~ "F√∂rbindelsen med v√§rd\n"
 #~ "%s\n"
-#~ "‰r bruten"
+#~ "√§r bruten"
 
 #~ msgid ""
 #~ "The protocol %s\n"
 #~ "is not a filter protocol"
 #~ msgstr ""
 #~ "Protokollet %s\n"
-#~ "‰r inte nÂgot filterprotokoll"
+#~ "√§r inte n√•got filterprotokoll"
 
 #~ msgid ""
 #~ "%s\n"
@@ -2634,8 +2634,8 @@ msgstr "Startade E-postprogrammet."
 #~ "but a directory was expected"
 #~ msgstr ""
 #~ "%s\n"
-#~ "‰r en fil,\n"
-#~ "men en katalog fˆrv‰ntades"
+#~ "√§r en fil,\n"
+#~ "men en katalog f√∂rv√§ntades"
 
 #~ msgid ""
 #~ "Could not mount device.\n"
@@ -2664,15 +2664,15 @@ msgstr "Startade E-postprogrammet."
 #~ "%s protocol\n"
 #~ "died unexpectedly"
 #~ msgstr ""
-#~ "Processen fˆr protokollet\n"
+#~ "Processen f√∂r protokollet\n"
 #~ "%s\n"
-#~ "dog ov‰ntat"
+#~ "dog ov√§ntat"
 
 #~ msgid ""
 #~ "Could not access\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Kunde inte komma Ât\n"
+#~ "Kunde inte komma √•t\n"
 #~ "%s"
 
 #~ msgid ""
@@ -2681,10 +2681,10 @@ msgstr "Startade E-postprogrammet."
 #~ "\n"
 #~ "Please send a full bugreport to kde-bugs@kde.org"
 #~ msgstr ""
-#~ "Ok‰nd felkod %i\n"
+#~ "Ok√§nd felkod %i\n"
 #~ "%s\n"
 #~ "\n"
-#~ "Var god skicka fullst‰ndig felrapport till kde-bugs@kde.org"
+#~ "Var god skicka fullst√§ndig felrapport till kde-bugs@kde.org"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"
@@ -2696,32 +2696,32 @@ msgstr "Startade E-postprogrammet."
 #~ msgstr "Avmonterar %s ..."
 
 #~ msgid "This group is empty!"
-#~ msgstr "Den h‰r gruppen ‰r tom!"
+#~ msgstr "Den h√§r gruppen √§r tom!"
 
 #~ msgid "&Browser"
-#~ msgstr "&Bl‰ddrare"
+#~ msgstr "&Bl√§ddrare"
 
 #~ msgid "User"
-#~ msgstr "Anv‰ndare"
+#~ msgstr "Anv√§ndare"
 
 #~ msgid "Password"
-#~ msgstr "Lˆsenord"
+#~ msgstr "L√∂senord"
 
 #~ msgid "The clipboard is empty"
-#~ msgstr "Klippbordet ‰r tomt"
+#~ msgstr "Klippbordet √§r tomt"
 
 #~ msgid ""
 #~ "Pasting clipboard data is only supported on the local hard disk currently"
-#~ msgstr "Fˆr n‰rvarande kan man bara klistra in data lokalt frÂn klippbordet"
+#~ msgstr "F√∂r n√§rvarande kan man bara klistra in data lokalt fr√•n klippbordet"
 
 #~ msgid "Filename for clipboard content:"
-#~ msgstr "Filnamn fˆr klippbordets innehÂll:"
+#~ msgstr "Filnamn f√∂r klippbordets inneh√•ll:"
 
 #~ msgid "You did not enter a filename"
-#~ msgstr "Du skrev inte in nÂgot filnamn"
+#~ msgstr "Du skrev inte in n√•got filnamn"
 
 #~ msgid "The file %s does already exist. Do you really want to overwrite it ?"
-#~ msgstr "Filen %s finns redan. Vill du verkligen skriva ˆver den?"
+#~ msgstr "Filen %s finns redan. Vill du verkligen skriva √∂ver den?"
 
 #~ msgid "Bytes"
 #~ msgstr "Byte"
@@ -2757,13 +2757,13 @@ msgstr "Startade E-postprogrammet."
 #~ msgstr "%i:%i:%i"
 
 #~ msgid "%i%s  Remaining time: %s"
-#~ msgstr "%i%s  ≈terstÂende tid: %s"
+#~ msgstr "%i%s  √Öterst√•ende tid: %s"
 
 #~ msgid "Scanning "
-#~ msgstr "Sˆker "
+#~ msgstr "S√∂ker "
 
 #~ msgid "From : "
-#~ msgstr "FrÂn : "
+#~ msgstr "Fr√•n : "
 
 #~ msgid "To: "
 #~ msgstr "Till: "
@@ -2772,55 +2772,55 @@ msgstr "Startade E-postprogrammet."
 #~ msgstr "Skapar katalog"
 
 #~ msgid "Fetching file"
-#~ msgstr "H‰mtar fil"
+#~ msgstr "H√§mtar fil"
 
 #~ msgid "Rename"
 #~ msgstr "Byt namn"
 
 #~ msgid "Skip"
-#~ msgstr "Hoppa ˆver"
+#~ msgstr "Hoppa √∂ver"
 
 #~ msgid "Auto Skip"
-#~ msgstr "Hoppa ˆver automatiskt"
+#~ msgstr "Hoppa √∂ver automatiskt"
 
 #~ msgid "Overwrite"
-#~ msgstr "Skriv ˆver"
+#~ msgstr "Skriv √∂ver"
 
 #~ msgid "Overwrite All"
-#~ msgstr "Skriv ˆver alla"
+#~ msgstr "Skriv √∂ver alla"
 
 #~ msgid "Resume"
-#~ msgstr "Forts‰tt"
+#~ msgstr "Forts√§tt"
 
 #~ msgid "Resume All"
-#~ msgstr "Forts‰tt alla"
+#~ msgstr "Forts√§tt alla"
 
 #~ msgid "You try to overwrite"
-#~ msgstr "Du fˆrsˆker skriva ˆver"
+#~ msgstr "Du f√∂rs√∂ker skriva √∂ver"
 
 #~ msgid "already exists. Overwrite with"
-#~ msgstr "finns redan. Skriva ˆver med"
+#~ msgstr "finns redan. Skriva √∂ver med"
 
 #~ msgid "Or rename to"
-#~ msgstr "Eller dˆpa om till"
+#~ msgstr "Eller d√∂pa om till"
 
 #~ msgid "already exists."
 #~ msgstr "finns redan."
 
 #~ msgid "Do you want to rename it ?"
-#~ msgstr "Vill du dˆpa om den?"
+#~ msgstr "Vill du d√∂pa om den?"
 
 #~ msgid "Malformed URL\n"
 #~ msgstr "Felaktig URL\n"
 
 #~ msgid "You must not change the protocol"
-#~ msgstr "Du fÂr inte ‰ndra protokollet"
+#~ msgstr "Du f√•r inte √§ndra protokollet"
 
 #~ msgid "Can not write"
 #~ msgstr "Kan inte skriva"
 
 #~ msgid "Permission denied!"
-#~ msgstr "≈tkomst nekades!"
+#~ msgstr "√Ötkomst nekades!"
 
 #~ msgid "No mime types installed!"
 #~ msgstr "Inga mime-typer installerade"
@@ -2829,10 +2829,10 @@ msgstr "Startade E-postprogrammet."
 #~ msgstr "Kunde inte hitta mime-typ\n"
 
 #~ msgid "The mime type config file "
-#~ msgstr "Mime-typens inst‰llningsfil "
+#~ msgstr "Mime-typens inst√§llningsfil "
 
 #~ msgid "does not conatain a MimeType=... entry"
-#~ msgstr "innehÂller inte nÂgon MimeType=... - post"
+#~ msgstr "inneh√•ller inte n√•gon MimeType=... - post"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
@@ -2850,7 +2850,7 @@ msgstr "Startade E-postprogrammet."
 #~ msgstr ""
 #~ "kdelnk-typen\n"
 #~ "%s\n"
-#~ "‰r ok‰nd"
+#~ "√§r ok√§nd"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
@@ -2859,7 +2859,7 @@ msgstr "Startade E-postprogrammet."
 #~ msgstr ""
 #~ "kdelnk-filen\n"
 #~ "%s\n"
-#~ "‰r av FSDevice-typ men har ingen Dev=... - post"
+#~ "√§r av FSDevice-typ men har ingen Dev=... - post"
 
 #~ msgid ""
 #~ "The kdelnk file\n"
@@ -2868,7 +2868,7 @@ msgstr "Startade E-postprogrammet."
 #~ msgstr ""
 #~ "kdelnk-filen\n"
 #~ "%s\n"
-#~ "‰r av Link-typ men har ingen URL=... - post"
+#~ "√§r av Link-typ men har ingen URL=... - post"
 
 #~ msgid "Mount"
 #~ msgstr "Montera"
@@ -2895,19 +2895,19 @@ msgstr "Startade E-postprogrammet."
 #~ "%s\n"
 #~ "Access denied"
 #~ msgstr ""
-#~ "Kan inte gÂ in i\n"
+#~ "Kan inte g√• in i\n"
 #~ "%s\n"
-#~ "≈tkomst nekas"
+#~ "√Ötkomst nekas"
 
 #~ msgid "The application config file\n"
-#~ msgstr "Programmets inst‰llningsfil\n"
+#~ msgstr "Programmets inst√§llningsfil\n"
 
 #~ msgid ""
 #~ "\n"
 #~ "does not conatain a Name=... entry"
 #~ msgstr ""
 #~ "\n"
-#~ "innehÂller ingen Name=... - post"
+#~ "inneh√•ller ingen Name=... - post"
 
 #~ msgid "Org Unit:"
 #~ msgstr "Avdelning:"

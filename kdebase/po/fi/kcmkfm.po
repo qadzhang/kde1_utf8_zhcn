@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:61
@@ -20,7 +20,7 @@ msgstr "&Kirjasin"
 
 #: main.cpp:63
 msgid "&Color"
-msgstr "&V‰ri"
+msgstr "&V√§ri"
 
 #: main.cpp:65
 msgid "&Other"
@@ -28,7 +28,7 @@ msgstr "&Muut"
 
 #: main.cpp:68
 msgid "&Proxy"
-msgstr "V‰&lityspalvelin"
+msgstr "V√§&lityspalvelin"
 
 #: main.cpp:70
 msgid "&HTTP"
@@ -40,18 +40,18 @@ msgstr "&Tunniste"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr "&Ev‰steet"
+msgstr "&Ev√§steet"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "Tyˆpˆyd‰n &kuvakkeet"
+msgstr "Ty√∂p√∂yd√§n &kuvakkeet"
 
 #: main.cpp:89
 #, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"k‰yttˆ: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"k√§ytt√∂: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -75,7 +75,7 @@ msgstr "Oletuskirjasin"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr "Tasav‰linen kirjasin"
+msgstr "Tasav√§linen kirjasin"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
@@ -83,27 +83,27 @@ msgstr "Oletuskirjasinkoodaus"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "K‰yt‰ kielen koodausta"
+msgstr "K√§yt√§ kielen koodausta"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
-msgstr "Taustan v‰ri:"
+msgstr "Taustan v√§ri:"
 
 #: htmlopts.cpp:342
 msgid "Normal Text Color:"
-msgstr "Tavallisen tekstin v‰ri:"
+msgstr "Tavallisen tekstin v√§ri:"
 
 #: htmlopts.cpp:354
 msgid "URL Link Color:"
-msgstr "URL -linkin v‰ri:"
+msgstr "URL -linkin v√§ri:"
 
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "Seuratun linkin v‰ri:"
+msgstr "Seuratun linkin v√§ri:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Vaihda kohdistin linkin p‰‰ll‰"
+msgstr "Vaihda kohdistin linkin p√§√§ll√§"
 
 #: htmlopts.cpp:384
 msgid "Underline links"
@@ -111,15 +111,15 @@ msgstr "Alleviivaa linkit"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr "K‰yt‰ aina omia v‰rej‰"
+msgstr "K√§yt√§ aina omia v√§rej√§"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "&Hyv‰ksy URL -kohtaiset asetukset"
+msgstr "&Hyv√§ksy URL -kohtaiset asetukset"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "&Puun‰kym‰ seuraa selausta"
+msgstr "&Puun√§kym√§ seuraa selausta"
 
 #: miscopts.cpp:43
 msgid "Terminal"
@@ -131,15 +131,15 @@ msgstr "Editori"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "ƒl‰ unohda tallentaa muutoksia!"
+msgstr "√Ñl√§ unohda tallentaa muutoksia!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr "K‰yt‰ v‰lityst‰"
+msgstr "K√§yt√§ v√§lityst√§"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr "HTTP V‰litys:"
+msgstr "HTTP V√§litys:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
@@ -147,19 +147,19 @@ msgstr "Portti:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr "FTP v‰litys:"
+msgstr "FTP v√§litys:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr "Ei v‰lityst‰:"
+msgstr "Ei v√§lityst√§:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr "Hyv‰ksy kielet:"
+msgstr "Hyv√§ksy kielet:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "Hyv‰ksy kirjasinkoodaukset:"
+msgstr "Hyv√§ksy kirjasinkoodaukset:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
@@ -171,11 +171,11 @@ msgstr "Palvelimella:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "kirjaudu nimell‰:"
+msgstr "kirjaudu nimell√§:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr "&Lis‰‰"
+msgstr "&Lis√§√§"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
@@ -183,15 +183,15 @@ msgstr "Tunnetut sidokset:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "&K‰yt‰ ev‰steit‰"
+msgstr "&K√§yt√§ ev√§steit√§"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "Hyv‰ksymistapa"
+msgstr "Hyv√§ksymistapa"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr "Hyv‰ksy"
+msgstr "Hyv√§ksy"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
@@ -199,7 +199,7 @@ msgstr "Kysy"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr "Hylk‰‰"
+msgstr "Hylk√§√§"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
@@ -207,7 +207,7 @@ msgstr "Verkkoaluekohtaiset asetukset:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Muuta verkkoalueen hyv‰ksymist‰"
+msgstr "Muuta verkkoalueen hyv√§ksymist√§"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
@@ -215,24 +215,24 @@ msgstr "Sinun on annettava verkkoalue ensin !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Vaakasuuntainen hilav‰li:"
+msgstr "Vaakasuuntainen hilav√§li:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Pystysuunatainen hilav‰li:"
+msgstr "Pystysuunatainen hilav√§li:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&L‰pin‰kyv‰ teksti tyˆpˆyd‰n kuvakkeille"
+msgstr "&L√§pin√§kyv√§ teksti ty√∂p√∂yd√§n kuvakkeille"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr "Kuvakkeen edustav‰ri:"
+msgstr "Kuvakkeen edustav√§ri:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr "Kuvakkeen taustav‰ri:"
+msgstr "Kuvakkeen taustav√§ri:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "N‰yt‰ &piilotiedostot tyˆpˆyd‰ll‰"
+msgstr "N√§yt√§ &piilotiedostot ty√∂p√∂yd√§ll√§"

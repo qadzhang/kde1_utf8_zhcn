@@ -1,4 +1,4 @@
-# Перевод kcminfo
+# п÷п╣я─п╣п╡п╬п╢ kcminfo
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998.
 #
@@ -11,58 +11,58 @@ msgstr ""
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "экран #%d"
+msgstr "я█п╨я─п╟п╫ #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  размеры             : %dx%d пикселей (%dx%d мм)\n"
+msgstr "  я─п╟п╥п╪п╣я─я▀             : %dx%d п©п╦п╨я│п╣п╩п╣п╧ (%dx%d п╪п╪)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  разрешение          : %dx%d точек на дюйм\n"
+msgstr "  я─п╟п╥я─п╣я┬п╣п╫п╦п╣          : %dx%d я┌п╬я┤п╣п╨ п╫п╟ п╢я▌п╧п╪\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  глубины (%d)         :"
+msgstr "  пЁп╩я┐п╠п╦п╫я▀ (%d)         :"
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "имя дисплея           : %s"
+msgstr "п╦п╪я▐ п╢п╦я│п©п╩п╣я▐           : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "версия                : %i.%i"
+msgstr "п╡п╣я─я│п╦я▐                : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "производитель         : %s"
+msgstr "п©я─п╬п╦п╥п╡п╬п╢п╦я┌п╣п╩я▄         : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "версия производителя  : %i"
+msgstr "п╡п╣я─я│п╦я▐ п©я─п╬п╦п╥п╡п╬п╢п╦я┌п╣п╩я▐  : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "номер экрана по умолчанию : %i"
+msgstr "п╫п╬п╪п╣я─ я█п╨я─п╟п╫п╟ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌ : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "количество экранов    : %i"
+msgstr "п╨п╬п╩п╦я┤п╣я│я┌п╡п╬ я█п╨я─п╟п╫п╬п╡    : %i"
 
 #: info.cpp:181
 msgid ""
@@ -70,100 +70,100 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Нет информации\n"
-" или\n"
-"эта система еще не поддерживается."
+"п²п╣я┌ п╦п╫я└п╬я─п╪п╟я├п╦п╦\n"
+" п╦п╩п╦\n"
+"я█я┌п╟ я│п╦я│я┌п╣п╪п╟ п╣я┴п╣ п╫п╣ п©п╬п╢п╢п╣я─п╤п╦п╡п╟п╣я┌я│я▐."
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, неизвестная скорость"
+msgstr "%s, п╫п╣п╦п╥п╡п╣я│я┌п╫п╟я▐ я│п╨п╬я─п╬я│я┌я▄"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s работающий на %s МГц"
+msgstr "%s я─п╟п╠п╬я┌п╟я▌я┴п╦п╧ п╫п╟ %s п°п⌠я├"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Ошибка открытия fstab!"
+msgstr "п·я┬п╦п╠п╨п╟ п╬я┌п╨я─я▀я┌п╦я▐ fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "Устройство"
+msgstr "пёя│я┌я─п╬п╧я│я┌п╡п╬"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr "Точка монтирования"
+msgstr "п╒п╬я┤п╨п╟ п╪п╬п╫я┌п╦я─п╬п╡п╟п╫п╦я▐"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "Тип ФС"
+msgstr "п╒п╦п© п╓п║"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr "Опции"
+msgstr "п·п©я├п╦п╦"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr "неизвестный тип процессора"
+msgstr "п╫п╣п╦п╥п╡п╣я│я┌п╫я▀п╧ я┌п╦п© п©я─п╬я├п╣я│я│п╬я─п╟"
 
 #
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "Не известно"
+msgstr "п²п╣ п╦п╥п╡п╣я│я┌п╫п╬"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "Количество активных процессоров= "
+msgstr "п п╬п╩п╦я┤п╣я│я┌п╡п╬ п╟п╨я┌п╦п╡п╫я▀я┘ п©я─п╬я├п╣я│я│п╬я─п╬п╡= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "Значение"
+msgstr "п≈п╫п╟я┤п╣п╫п╦п╣"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr "Канал DMA"
+msgstr "п п╟п╫п╟п╩ DMA"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "используется"
+msgstr "п╦я│п©п╬п╩я▄п╥я┐п╣я┌я│я▐"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "Диапазон ввода-вывода"
+msgstr "п■п╦п╟п©п╟п╥п╬п╫ п╡п╡п╬п╢п╟-п╡я▀п╡п╬п╢п╟"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "&Память"
+msgstr "&п÷п╟п╪я▐я┌я▄"
 
 #: main.cpp:82
 msgid "&Processor"
-msgstr "&Процессор"
+msgstr "&п÷я─п╬я├п╣я│я│п╬я─"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr "П&рерывания"
+msgstr "п÷&я─п╣я─я▀п╡п╟п╫п╦я▐"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "&Каналы DMA"
+msgstr "&п п╟п╫п╟п╩я▀ DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "П&орты ввода/вывода"
+msgstr "п÷&п╬я─я┌я▀ п╡п╡п╬п╢п╟/п╡я▀п╡п╬п╢п╟"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr "&Шина PCI"
+msgstr "&п╗п╦п╫п╟ PCI"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr "&Звук"
+msgstr "&п≈п╡я┐п╨"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "&Устройства"
+msgstr "&пёя│я┌я─п╬п╧я│я┌п╡п╟"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -171,11 +171,11 @@ msgstr "SCSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr "&Разделы"
+msgstr "&п═п╟п╥п╢п╣п╩я▀"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr "X-&сервер"
+msgstr "X-&я│п╣я─п╡п╣я─"
 
 #: main.cpp:120
 msgid ""
@@ -183,51 +183,51 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-"использование: kcminfo [-init | "
+"п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Системная информация"
+msgstr "п║п╦я│я┌п╣п╪п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "Всего памяти"
+msgstr "п▓я│п╣пЁп╬ п©п╟п╪я▐я┌п╦"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "Свободно памяти"
+msgstr "п║п╡п╬п╠п╬п╢п╫п╬ п©п╟п╪я▐я┌п╦"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Разделяемой памяти"
+msgstr "п═п╟п╥п╢п╣п╩я▐п╣п╪п╬п╧ п©п╟п╪я▐я┌п╦"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "Занято под буфера"
+msgstr "п≈п╟п╫я▐я┌п╬ п©п╬п╢ п╠я┐я└п╣я─п╟"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "Подгружаемой памяти"
+msgstr "п÷п╬п╢пЁя─я┐п╤п╟п╣п╪п╬п╧ п©п╟п╪я▐я┌п╦"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "Свободно подгружаемой памяти"
+msgstr "п║п╡п╬п╠п╬п╢п╫п╬ п©п╬п╢пЁя─я┐п╤п╟п╣п╪п╬п╧ п©п╟п╪я▐я┌п╦"
 
 #: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld байт  = %8.2f Мб"
+msgstr "%10ld п╠п╟п╧я┌  = %8.2f п°п╠"
 
 #
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "Не известно"
+msgstr "п²п╣ п╦п╥п╡п╣я│я┌п╫п╬"
 
 #
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "Не известно"
+msgstr "п²п╣ п╦п╥п╡п╣я│я┌п╫п╬"

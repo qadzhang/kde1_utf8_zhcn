@@ -2,7 +2,7 @@
 
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Sári Gábor <saga@mail.externet.hu>, 1999.
+# SÃ¡ri GÃ¡bor <saga@mail.externet.hu>, 1999.
 #
 #
 msgid ""
@@ -13,33 +13,33 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KTranslator v 0.5.0"
 
 #: accounts.cpp:45
 msgid "Account Setup"
-msgstr "Hozzáférés beállítás"
+msgstr "HozzÃ¡fÃ©rÃ©s beÃ¡llÃ­tÃ¡s"
 
 #: accounts.cpp:66
 msgid "Edit..."
-msgstr "Módosítás..."
+msgstr "MÃ³dosÃ­tÃ¡s..."
 
 #: accounts.cpp:68
 msgid "Allows you to modify the selected account"
-msgstr "Az aktuális hozzáférés módosítása"
+msgstr "Az aktuÃ¡lis hozzÃ¡fÃ©rÃ©s mÃ³dosÃ­tÃ¡sa"
 
 #: accounts.cpp:77
 msgid "New..."
-msgstr "Új..."
+msgstr "Ãšj..."
 
 #: accounts.cpp:81
 msgid ""
 "Create a new dialup connection\n"
 "to the internet"
 msgstr ""
-"Új telefonos internet\n"
-"kapcsolat létrehozása"
+"Ãšj telefonos internet\n"
+"kapcsolat lÃ©trehozÃ¡sa"
 
 #: accounts.cpp:89
 msgid ""
@@ -48,10 +48,10 @@ msgid ""
 "to a new account, that you can modify to fit your\n"
 "needs"
 msgstr ""
-"Másolat a kiválasztott hozzáférésrõl.\n"
+"MÃ¡solat a kivÃ¡lasztott hozzÃ¡fÃ©rÃ©srÅ‘l.\n"
 "\n"
-"Az összes beállítás lemásolódik, melyek\n"
-"bármelyike módosítható szükség esetén."
+"Az Ã¶sszes beÃ¡llÃ­tÃ¡s lemÃ¡solÃ³dik, melyek\n"
+"bÃ¡rmelyike mÃ³dosÃ­thatÃ³ szÃ¼ksÃ©g esetÃ©n."
 
 #: accounts.cpp:99
 msgid ""
@@ -59,13 +59,13 @@ msgid ""
 "\n"
 "<red><b>Use with care!"
 msgstr ""
-"A kiválasztott hozzáférés törlése.\n"
+"A kivÃ¡lasztott hozzÃ¡fÃ©rÃ©s tÃ¶rlÃ©se.\n"
 "\n"
-"<red><b>Használd elõvigyázatosan !"
+"<red><b>HasznÃ¡ld elÅ‘vigyÃ¡zatosan !"
 
 #: accounts.cpp:108
 msgid "Phone Costs:"
-msgstr "Telefon költség:"
+msgstr "Telefon kÃ¶ltsÃ©g:"
 
 #: accounts.cpp:121
 msgid ""
@@ -76,16 +76,16 @@ msgid ""
 "account - beware, this is <b>NOT</b> the sum \n"
 "of the phone costs of all your accounts!"
 msgstr ""
-"Az összesített telefon költségeket mutatja meg\n"
-"amit a kiválasztott hozzáférés termelt.\n"
+"Az Ã¶sszesÃ­tett telefon kÃ¶ltsÃ©geket mutatja meg\n"
+"amit a kivÃ¡lasztott hozzÃ¡fÃ©rÃ©s termelt.\n"
 "\n"
-"<b>Fontos</b>: Ha több hozzáférésed is van \n"
-"akkor ez <b>NEM</b> az összes hozzáférés által \n"
-"felhalmozott összeget mutatja!"
+"<b>Fontos</b>: Ha tÃ¶bb hozzÃ¡fÃ©rÃ©sed is van \n"
+"akkor ez <b>NEM</b> az Ã¶sszes hozzÃ¡fÃ©rÃ©s Ã¡ltal \n"
+"felhalmozott Ã¶sszeget mutatja!"
 
 #: accounts.cpp:128 conwindow.cpp:54
 msgid "Volume:"
-msgstr "Mennyiség:"
+msgstr "MennyisÃ©g:"
 
 #: accounts.cpp:140
 msgid ""
@@ -96,40 +96,40 @@ msgid ""
 "\n"
 "<link #volaccounting>More on volume accounting</link>"
 msgstr ""
-"A kiválasztott hozzáférés által átvitt bájtok\n"
-"számát mutatja (nem az összes hozzáférését)\n"
-"A számlázás párbeszédablakban lehet beállítani\n"
+"A kivÃ¡lasztott hozzÃ¡fÃ©rÃ©s Ã¡ltal Ã¡tvitt bÃ¡jtok\n"
+"szÃ¡mÃ¡t mutatja (nem az Ã¶sszes hozzÃ¡fÃ©rÃ©sÃ©t)\n"
+"A szÃ¡mlÃ¡zÃ¡s pÃ¡rbeszÃ©dablakban lehet beÃ¡llÃ­tani\n"
 "hogy mi jelenje meg.\n"
 "\n"
-"<link #volaccounting>Részletek a számlázásról</link>"
+"<link #volaccounting>RÃ©szletek a szÃ¡mlÃ¡zÃ¡srÃ³l</link>"
 
 #: accounts.cpp:152
 msgid "Reset Costs"
-msgstr "Költségek nullázása"
+msgstr "KÃ¶ltsÃ©gek nullÃ¡zÃ¡sa"
 
 #: accounts.cpp:158
 msgid "View Logs"
-msgstr "Napló megtekintése"
+msgstr "NaplÃ³ megtekintÃ©se"
 
 #: accounts.cpp:224
 msgid "Reset Total"
-msgstr "Összes nullázása"
+msgstr "Ã–sszes nullÃ¡zÃ¡sa"
 
 #: accounts.cpp:225
 msgid ""
 "Are you sure you want to reset the accumulated\n"
 "telephone costs for the selected account to zero?"
 msgstr ""
-"Biztos vagy benne, hogy nullázni szertnéd a felhalmozott\n"
-"telefon költségeket a kiváasztott hozzáférésnél?"
+"Biztos vagy benne, hogy nullÃ¡zni szertnÃ©d a felhalmozott\n"
+"telefon kÃ¶ltsÃ©geket a kivÃ¡asztott hozzÃ¡fÃ©rÃ©snÃ©l?"
 
 #: accounts.cpp:259 accounts.cpp:280
 msgid "Maximum number of accounts reached."
-msgstr "Elértem a maximális hozzáférések számát."
+msgstr "ElÃ©rtem a maximÃ¡lis hozzÃ¡fÃ©rÃ©sek szÃ¡mÃ¡t."
 
 #: accounts.cpp:286
 msgid "No account selected."
-msgstr "Nincs kiválasztott hozzáférés."
+msgstr "Nincs kivÃ¡lasztott hozzÃ¡fÃ©rÃ©s."
 
 #: accounts.cpp:301
 #, c-format
@@ -137,24 +137,24 @@ msgid ""
 "Are you sure you want to delete\n"
 "the account \"%s\"?"
 msgstr ""
-"Biztos vagy benne, hogy törölni akarod a(z)\n"
-"\"%s\" hozzáférést?"
+"Biztos vagy benne, hogy tÃ¶rÃ¶lni akarod a(z)\n"
+"\"%s\" hozzÃ¡fÃ©rÃ©st?"
 
 #: accounts.cpp:306
 msgid "Confirm"
-msgstr "Megerõsítés"
+msgstr "MegerÅ‘sÃ­tÃ©s"
 
 #: accounts.cpp:328
 msgid "New Account"
-msgstr "Új hozzáférés"
+msgstr "Ãšj hozzÃ¡fÃ©rÃ©s"
 
 #: accounts.cpp:331
 msgid "Edit Account: "
-msgstr "Hozzáférés módosítása: "
+msgstr "HozzÃ¡fÃ©rÃ©s mÃ³dosÃ­tÃ¡sa: "
 
 #: accounts.cpp:348
 msgid "Dial"
-msgstr "Hívás"
+msgstr "HÃ­vÃ¡s"
 
 #: accounts.cpp:349
 msgid "IP"
@@ -166,15 +166,15 @@ msgstr "DNS"
 
 #: accounts.cpp:351
 msgid "Gateway"
-msgstr "Átjáró"
+msgstr "ÃtjÃ¡rÃ³"
 
 #: accounts.cpp:352
 msgid "Login Script"
-msgstr "Bejelentkezõ szkript"
+msgstr "BejelentkezÅ‘ szkript"
 
 #: accounts.cpp:353
 msgid "Accounting"
-msgstr "Számlázás"
+msgstr "SzÃ¡mlÃ¡zÃ¡s"
 
 #: accounts.cpp:372
 msgid ""
@@ -182,44 +182,44 @@ msgid ""
 "account name"
 msgstr ""
 "Adj meg egy egyedi\n"
-"hozzáférés nevet"
+"hozzÃ¡fÃ©rÃ©s nevet"
 
 #: accounts.cpp:377
 msgid "Login script has unbalanced loop Start/End"
-msgstr "A bejelentkezõ parancsfájl hibás"
+msgstr "A bejelentkezÅ‘ parancsfÃ¡jl hibÃ¡s"
 
 #: connect.cpp:92 connect.cpp:190 main.cpp:1049
 msgid "Connecting to: "
-msgstr "Csatlakozás: "
+msgstr "CsatlakozÃ¡s: "
 
 #: connect.cpp:101 connect.cpp:205 miniterm.cpp:148 modeminfo.cpp:56
 #: modeminfo.cpp:135
 msgid "Sorry, can't create modem lock file."
-msgstr "Sajnálom, nem hozható létre a modem zár fájl."
+msgstr "SajnÃ¡lom, nem hozhatÃ³ lÃ©tre a modem zÃ¡r fÃ¡jl."
 
 #: connect.cpp:106 connect.cpp:163 modeminfo.cpp:61
 msgid "Looking for Modem ..."
-msgstr "Modem keresése folyik ..."
+msgstr "Modem keresÃ©se folyik ..."
 
 #: connect.cpp:115 debug.cpp:80 main.cpp:1062
 msgid "Log"
-msgstr "Napló"
+msgstr "NaplÃ³"
 
 #: connect.cpp:199 miniterm.cpp:143 modeminfo.cpp:129
 msgid "Sorry, modem device is locked."
-msgstr "Sajnálom, a modem foglalt."
+msgstr "SajnÃ¡lom, a modem foglalt."
 
 #: connect.cpp:251 connect.cpp:252
 msgid "Initializing Modem..."
-msgstr "Modem inicializálása ..."
+msgstr "Modem inicializÃ¡lÃ¡sa ..."
 
 #: connect.cpp:270 connect.cpp:271
 msgid "Setting speaker volume..."
-msgstr "Hangerõ beállítása ..."
+msgstr "HangerÅ‘ beÃ¡llÃ­tÃ¡sa ..."
 
 #: connect.cpp:289
 msgid "Dialing"
-msgstr "Hívás"
+msgstr "HÃ­vÃ¡s"
 
 #: connect.cpp:322
 msgid "Line Busy. Hanging up ..."
@@ -227,51 +227,51 @@ msgstr "Foglalt a vonal. Leteszem ..."
 
 #: connect.cpp:327
 msgid "Line Busy. Waiting: "
-msgstr "Foglalt a vonal. Várakozás: "
+msgstr "Foglalt a vonal. VÃ¡rakozÃ¡s: "
 
 #: connect.cpp:329 connect.cpp:449 connect.cpp:468
 msgid " seconds"
-msgstr " másodperc"
+msgstr " mÃ¡sodperc"
 
 #: connect.cpp:347
 msgid "No Dialtone"
-msgstr "Nincs tárcsahang"
+msgstr "Nincs tÃ¡rcsahang"
 
 #: connect.cpp:356
 msgid "No Carrier"
-msgstr "Nincs vivõ frekvencia"
+msgstr "Nincs vivÅ‘ frekvencia"
 
 #: connect.cpp:394
 msgid "Scanning "
-msgstr "Keresés "
+msgstr "KeresÃ©s "
 
 #: connect.cpp:405
 msgid "Saving "
-msgstr "Mentés "
+msgstr "MentÃ©s "
 
 #: connect.cpp:424
 msgid "Sending "
-msgstr "Küldés "
+msgstr "KÃ¼ldÃ©s "
 
 #: connect.cpp:435
 msgid "Expecting "
-msgstr "Várakozás "
+msgstr "VÃ¡rakozÃ¡s "
 
 #: connect.cpp:447
 msgid "Pause "
-msgstr "Szünet "
+msgstr "SzÃ¼net "
 
 #: connect.cpp:466
 msgid "Timeout "
-msgstr "Idõtúllépés "
+msgstr "IdÅ‘tÃºllÃ©pÃ©s "
 
 #: connect.cpp:480 connect.cpp:481
 msgid "Hangup"
-msgstr "Bontás"
+msgstr "BontÃ¡s"
 
 #: connect.cpp:494 connect.cpp:495
 msgid "Answer"
-msgstr "Válaszolás"
+msgstr "VÃ¡laszolÃ¡s"
 
 #: connect.cpp:503
 msgid "ID "
@@ -279,7 +279,7 @@ msgstr "ID "
 
 #: connect.cpp:540
 msgid "Password "
-msgstr "Jelszó "
+msgstr "JelszÃ³ "
 
 #: connect.cpp:578
 msgid "Prompting "
@@ -287,7 +287,7 @@ msgstr "Prompt "
 
 #: connect.cpp:615
 msgid "PW Prompt "
-msgstr "Jelszó prompt "
+msgstr "JelszÃ³ prompt "
 
 #: connect.cpp:641
 msgid "Loop Start "
@@ -295,15 +295,15 @@ msgstr "Hurok eleje "
 
 #: connect.cpp:645
 msgid "ERROR: Nested too deep, ignored."
-msgstr "HIBA: Túl mély beágyazás, kihagyva."
+msgstr "HIBA: TÃºl mÃ©ly beÃ¡gyazÃ¡s, kihagyva."
 
 #: connect.cpp:650
 msgid "Loops nested too deeply!"
-msgstr "A hurkok túlmélyen vannak egymásba ágyazva!"
+msgstr "A hurkok tÃºlmÃ©lyen vannak egymÃ¡sba Ã¡gyazva!"
 
 #: connect.cpp:668
 msgid "LoopEnd without matching Start! Line: "
-msgstr "LoopEnd utasítás LoopStart nélkül! Sorszám: "
+msgstr "LoopEnd utasÃ­tÃ¡s LoopStart nÃ©lkÃ¼l! SorszÃ¡m: "
 
 #: connect.cpp:748
 msgid "Starting pppd ..."
@@ -315,7 +315,7 @@ msgstr ""
 
 #: connect.cpp:839
 msgid "Found: "
-msgstr "Találat: "
+msgstr "TalÃ¡lat: "
 
 #: connect.cpp:851
 msgid "Looping: "
@@ -327,19 +327,19 @@ msgstr "Egy pillanat ..."
 
 #: connect.cpp:928
 msgid "Script timed out!"
-msgstr "Szkript idõtúllépés!"
+msgstr "Szkript idÅ‘tÃºllÃ©pÃ©s!"
 
 #: connect.cpp:947
 msgid "Scanning: "
-msgstr "Keresés: "
+msgstr "KeresÃ©s: "
 
 #: connect.cpp:957
 msgid "Expecting: "
-msgstr "Várakozás: "
+msgstr "VÃ¡rakozÃ¡s: "
 
 #: connect.cpp:984
 msgid "Logging on to Network ..."
-msgstr "Bejelentkezés a Hálózatra ..."
+msgstr "BejelentkezÃ©s a HÃ¡lÃ³zatra ..."
 
 #: connect.cpp:1010
 msgid "Running Startup Command ..."
@@ -354,40 +354,40 @@ msgid ""
 "pppd command + command-line arguments exeed\n"
 "2024 characters in length. What are you doing?"
 msgstr ""
-"pppd parancs + parancssor túllépi a 2024 karakter\n"
-"hosszúságot. Mit csinálsz tulajdonképpen?"
+"pppd parancs + parancssor tÃºllÃ©pi a 2024 karakter\n"
+"hosszÃºsÃ¡got. Mit csinÃ¡lsz tulajdonkÃ©ppen?"
 
 #: conwindow.cpp:43
 msgid "Connected at:"
-msgstr "Csatlakozás a:"
+msgstr "CsatlakozÃ¡s a:"
 
 #: conwindow.cpp:49
 msgid "Time connected:"
-msgstr "Eltelt idõ:"
+msgstr "Eltelt idÅ‘:"
 
 #: conwindow.cpp:58
 msgid "Session Bill:"
-msgstr "Jelenlegi számla:"
+msgstr "Jelenlegi szÃ¡mla:"
 
 #: conwindow.cpp:60
 msgid "Total Bill:"
-msgstr "Egész számla:"
+msgstr "EgÃ©sz szÃ¡mla:"
 
 #: conwindow.cpp:66 docking.cpp:76
 msgid "Disconnect"
-msgstr "Kapcsolat bontása"
+msgstr "Kapcsolat bontÃ¡sa"
 
 #: conwindow.cpp:70 docking.cpp:74
 msgid "Details"
-msgstr "Részletek"
+msgstr "RÃ©szletek"
 
 #: debug.cpp:47
 msgid "Login Script Debug Window"
-msgstr "Bejelentkezö szkript nyomkövetõ ablak"
+msgstr "BejelentkezÃ¶ szkript nyomkÃ¶vetÅ‘ ablak"
 
 #: edit.cpp:43
 msgid "Dial Setup"
-msgstr "Hívás beállítása"
+msgstr "HÃ­vÃ¡s beÃ¡llÃ­tÃ¡sa"
 
 #: edit.cpp:46
 msgid "Connection Name:"
@@ -395,11 +395,11 @@ msgstr "A kapcsolat neve:"
 
 #: edit.cpp:56
 msgid "Type in a unique name for this connection"
-msgstr "Adj egy nevet a kapcsolat számára"
+msgstr "Adj egy nevet a kapcsolat szÃ¡mÃ¡ra"
 
 #: edit.cpp:59
 msgid "Phone Number:"
-msgstr "Telefonszám:"
+msgstr "TelefonszÃ¡m:"
 
 #: edit.cpp:66
 msgid ""
@@ -408,19 +408,19 @@ msgid ""
 "a colon. When a number is busy or fails,\n"
 "<i>kppp</i>will try the next number and so on"
 msgstr ""
-"A híváshoz használandó telefonszámok megadása. \n"
-"Lehetöség van több szám megadására is, kettõspontal\n"
-"elválasztva. Ha a szám foglalt, vagy hiba történik \n"
-"a hívás közben, a <i>kppp</i> a következö \n"
-"számmal próbálkozik tovább."
+"A hÃ­vÃ¡shoz hasznÃ¡landÃ³ telefonszÃ¡mok megadÃ¡sa. \n"
+"LehetÃ¶sÃ©g van tÃ¶bb szÃ¡m megadÃ¡sÃ¡ra is, kettÅ‘spontal\n"
+"elvÃ¡lasztva. Ha a szÃ¡m foglalt, vagy hiba tÃ¶rtÃ©nik \n"
+"a hÃ­vÃ¡s kÃ¶zben, a <i>kppp</i> a kÃ¶vetkezÃ¶ \n"
+"szÃ¡mmal prÃ³bÃ¡lkozik tovÃ¡bb."
 
 #: edit.cpp:75
 msgid "Authentication:"
-msgstr "Azonosítási mód:"
+msgstr "AzonosÃ­tÃ¡si mÃ³d:"
 
 #: edit.cpp:79
 msgid "Script-based"
-msgstr "Szkript alapú"
+msgstr "Szkript alapÃº"
 
 #: edit.cpp:80
 msgid "PAP"
@@ -428,7 +428,7 @@ msgstr "PAP"
 
 #: edit.cpp:81
 msgid "Terminal-based"
-msgstr "Terminál alapú"
+msgstr "TerminÃ¡l alapÃº"
 
 #: edit.cpp:82
 msgid "CHAP"
@@ -445,18 +445,18 @@ msgid ""
 "If you can choose between PAP and CHAP,\n"
 "choose CHAP, because it's much safer."
 msgstr ""
-"Azt lehet itt megadni, hogy hogyan fog azonosítani Téged\n"
-"a PPP kiszolgáló. A legtöbb egyetem például még mindíg\n"
-"<b>Terminál</b>- vagy <b>Szkript</b> alapú azonosítást\n"
-"használ, míg a szolgáltatók <b>PAP</b>-ot vagy <b>CHAP</b>-ot.\n"
-"Ha nem tudod, akkor kérdezd meg a szolgáltatótól.\n"
+"Azt lehet itt megadni, hogy hogyan fog azonosÃ­tani TÃ©ged\n"
+"a PPP kiszolgÃ¡lÃ³. A legtÃ¶bb egyetem pÃ©ldÃ¡ul mÃ©g mindÃ­g\n"
+"<b>TerminÃ¡l</b>- vagy <b>Szkript</b> alapÃº azonosÃ­tÃ¡st\n"
+"hasznÃ¡l, mÃ­g a szolgÃ¡ltatÃ³k <b>PAP</b>-ot vagy <b>CHAP</b>-ot.\n"
+"Ha nem tudod, akkor kÃ©rdezd meg a szolgÃ¡ltatÃ³tÃ³l.\n"
 "\n"
-"Ha választhatsz a PAP és CHAP között, akkor a CHAP-ot\n"
-"válaszd, mert az biztonságosabb."
+"Ha vÃ¡laszthatsz a PAP Ã©s CHAP kÃ¶zÃ¶tt, akkor a CHAP-ot\n"
+"vÃ¡laszd, mert az biztonsÃ¡gosabb."
 
 #: edit.cpp:97
 msgid "Store password"
-msgstr "Jelszó tárolása"
+msgstr "JelszÃ³ tÃ¡rolÃ¡sa"
 
 #: edit.cpp:101
 msgid ""
@@ -469,21 +469,21 @@ msgid ""
 "readable only to you. Make sure nobody\n"
 "gains access to this file!"
 msgstr ""
-"Ha ez be van kapcsolva, akkor a hozzáférésed jelszava\n"
-"a <i>kppp</i> konfigurációs fájljában eltárolódik\n"
-"és nem kell mindíg beírnod.\n"
+"Ha ez be van kapcsolva, akkor a hozzÃ¡fÃ©rÃ©sed jelszava\n"
+"a <i>kppp</i> konfigurÃ¡ciÃ³s fÃ¡jljÃ¡ban eltÃ¡rolÃ³dik\n"
+"Ã©s nem kell mindÃ­g beÃ­rnod.\n"
 "\n"
-"<b><red>Figyelem:<black> a jelszó síma szövegként lesz\n"
-"tárolva a konfigurációs fájlban, amit viszont csak Te\n"
-"olvashatsz. Figyelj oda, hogy mások ne férhessenek hozzá!"
+"<b><red>Figyelem:<black> a jelszÃ³ sÃ­ma szÃ¶vegkÃ©nt lesz\n"
+"tÃ¡rolva a konfigurÃ¡ciÃ³s fÃ¡jlban, amit viszont csak Te\n"
+"olvashatsz. Figyelj oda, hogy mÃ¡sok ne fÃ©rhessenek hozzÃ¡!"
 
 #: edit.cpp:110
 msgid ""
 "Execute program\n"
 "upon connect:"
 msgstr ""
-"Program futtatása\n"
-"kapcsolódáskor:"
+"Program futtatÃ¡sa\n"
+"kapcsolÃ³dÃ¡skor:"
 
 #: edit.cpp:121
 msgid ""
@@ -494,19 +494,19 @@ msgid ""
 "\n"
 "Very usefull for fetching mail and news"
 msgstr ""
-"Ezzel lehetõség van a kapcsolat létrejötte <b>után</b>\n"
-"futtatni egy programot. Amikor a program meghívódik\n"
-"a kapcsolat már teljesen felépült.\n"
+"Ezzel lehetÅ‘sÃ©g van a kapcsolat lÃ©trejÃ¶tte <b>utÃ¡n</b>\n"
+"futtatni egy programot. Amikor a program meghÃ­vÃ³dik\n"
+"a kapcsolat mÃ¡r teljesen felÃ©pÃ¼lt.\n"
 "\n"
-"Hasznos például levelek és hírek leszedésére."
+"Hasznos pÃ©ldÃ¡ul levelek Ã©s hÃ­rek leszedÃ©sÃ©re."
 
 #: edit.cpp:129
 msgid ""
 "Execute program\n"
 "before disconnect:"
 msgstr ""
-"Program futtatása\n"
-"kapcsolat buntás elõtt:"
+"Program futtatÃ¡sa\n"
+"kapcsolat buntÃ¡s elÅ‘tt:"
 
 #: edit.cpp:141
 msgid ""
@@ -514,53 +514,53 @@ msgid ""
 "is closed. The connection will stay open until\n"
 "the program exits."
 msgstr ""
-"Ezzel lehetõség van a kapcsolat <b>bontás elõtt</b> futtatni\n"
-"egy programot. A kapcsolat megmarad addig amíg a program\n"
-"be nem fejezõdik."
+"Ezzel lehetÅ‘sÃ©g van a kapcsolat <b>bontÃ¡s elÅ‘tt</b> futtatni\n"
+"egy programot. A kapcsolat megmarad addig amÃ­g a program\n"
+"be nem fejezÅ‘dik."
 
 #: edit.cpp:145
 msgid ""
 "Execute program\n"
 "upon disconnect:"
 msgstr ""
-"Program futtatása\n"
-"kapcsolat bontáskor:"
+"Program futtatÃ¡sa\n"
+"kapcsolat bontÃ¡skor:"
 
 #: edit.cpp:157
 msgid ""
 "Allows you to run a program <b>after</b> a connection\n"
 "has been closed."
 msgstr ""
-"Ezzel lehetõség van a kapcsolat <b>bontás után</b> futtatni\n"
+"Ezzel lehetÅ‘sÃ©g van a kapcsolat <b>bontÃ¡s utÃ¡n</b> futtatni\n"
 "egy programot."
 
 #: edit.cpp:161
 msgid "Edit pppd arguments:"
-msgstr "pppd paraméterek módosítása:"
+msgstr "pppd paramÃ©terek mÃ³dosÃ­tÃ¡sa:"
 
 #: edit.cpp:166
 msgid "Arguments"
-msgstr "Paraméterek"
+msgstr "ParamÃ©terek"
 
 #: edit.cpp:223
 msgid "IP Setup"
-msgstr "IP beállítások"
+msgstr "IP beÃ¡llÃ­tÃ¡sok"
 
 #: edit.cpp:229
 msgid "IP Address:"
-msgstr "IP cím:"
+msgstr "IP cÃ­m:"
 
 #: edit.cpp:232
 msgid ""
 "If your computer has a permanent internet\n"
 "address, you must supply your IP address here"
 msgstr ""
-"Ha a számítógépnek fix internet címe van,\n"
-"akkor itt kell megadni az IP címet"
+"Ha a szÃ¡mÃ­tÃ³gÃ©pnek fix internet cÃ­me van,\n"
+"akkor itt kell megadni az IP cÃ­met"
 
 #: edit.cpp:237
 msgid "Subnet Mask:"
-msgstr "Alhálózati maszk:"
+msgstr "AlhÃ¡lÃ³zati maszk:"
 
 #: edit.cpp:240
 msgid ""
@@ -571,16 +571,16 @@ msgid ""
 "\n"
 "If unsure, contact your Internet Service Provider"
 msgstr ""
-"Ha a számítógépnek fix internet címe van, akkor\n"
-"meg kell adni egy alhálózati maszkot. Legtöbbször\n"
-"ez a hálózati maszk <b>255.255.255.0</b>, de ez nem\n"
-"feltétlenül igaz minden esetben.\n"
+"Ha a szÃ¡mÃ­tÃ³gÃ©pnek fix internet cÃ­me van, akkor\n"
+"meg kell adni egy alhÃ¡lÃ³zati maszkot. LegtÃ¶bbszÃ¶r\n"
+"ez a hÃ¡lÃ³zati maszk <b>255.255.255.0</b>, de ez nem\n"
+"feltÃ©tlenÃ¼l igaz minden esetben.\n"
 "\n"
-"Ha bizonytalan vagy, kérdezd meg a szolgáltatódat."
+"Ha bizonytalan vagy, kÃ©rdezd meg a szolgÃ¡ltatÃ³dat."
 
 #: edit.cpp:254
 msgid "Dynamic IP Address"
-msgstr "Dinamikus IP cím"
+msgstr "Dinamikus IP cÃ­m"
 
 #: edit.cpp:256
 msgid ""
@@ -591,15 +591,15 @@ msgid ""
 "Almost every Internet Service Provider uses\n"
 "this method, so this should be turned on."
 msgstr ""
-"Ezt az opciót kell választani, ha a számítógép\n"
-"minden kapcsolatkor új internet címet (IP) kap.\n"
+"Ezt az opciÃ³t kell vÃ¡lasztani, ha a szÃ¡mÃ­tÃ³gÃ©p\n"
+"minden kapcsolatkor Ãºj internet cÃ­met (IP) kap.\n"
 "\n"
-"Majdnem minden internet szolgáltató ezt a módszert\n"
-"használja, úgyhogy ajánlatos bekapcsolni."
+"Majdnem minden internet szolgÃ¡ltatÃ³ ezt a mÃ³dszert\n"
+"hasznÃ¡lja, Ãºgyhogy ajÃ¡nlatos bekapcsolni."
 
 #: edit.cpp:264
 msgid "Static IP Address"
-msgstr "Statikus IP cím"
+msgstr "Statikus IP cÃ­m"
 
 #: edit.cpp:268
 msgid ""
@@ -609,14 +609,14 @@ msgid ""
 "dynamic IP addressing unless you know what you\n"
 "are doing"
 msgstr ""
-"Ezt kell választani, ha a számítógépnek fix\n"
-"internet címe (IP) van. A legtöbb számítógépnek\n"
-"nincs, tehát valószínûleg inkább a dinamikus IP\n"
-"címet kell választani, kivéve ha tudod mit csinálsz."
+"Ezt kell vÃ¡lasztani, ha a szÃ¡mÃ­tÃ³gÃ©pnek fix\n"
+"internet cÃ­me (IP) van. A legtÃ¶bb szÃ¡mÃ­tÃ³gÃ©pnek\n"
+"nincs, tehÃ¡t valÃ³szÃ­nÅ±leg inkÃ¡bb a dinamikus IP\n"
+"cÃ­met kell vÃ¡lasztani, kivÃ©ve ha tudod mit csinÃ¡lsz."
 
 #: edit.cpp:274
 msgid "Auto-configure hostname from this IP"
-msgstr "Automatikus hostnév konfiguráció az IP-hez"
+msgstr "Automatikus hostnÃ©v konfigurÃ¡ciÃ³ az IP-hez"
 
 #: edit.cpp:279
 msgid ""
@@ -629,21 +629,21 @@ msgid ""
 "\n"
 "Don't enable this unless you really need it"
 msgstr ""
-"Amikor csak kapcsolatot teremtesz, újra konfigurálódik\n"
-"a gép neve, hogy egyezzen az új IP címmel amit a PPP\n"
-"kiszolgáló oszt ki. Ez hasznos lehet, ha valami olyan\n"
-"protokolt használsz ami igényli ezt, de ez egy csomó\n"
-"<link kppp-7.html#autohostname>problémát</link> is okozhat.\n"
+"Amikor csak kapcsolatot teremtesz, Ãºjra konfigurÃ¡lÃ³dik\n"
+"a gÃ©p neve, hogy egyezzen az Ãºj IP cÃ­mmel amit a PPP\n"
+"kiszolgÃ¡lÃ³ oszt ki. Ez hasznos lehet, ha valami olyan\n"
+"protokolt hasznÃ¡lsz ami igÃ©nyli ezt, de ez egy csomÃ³\n"
+"<link kppp-7.html#autohostname>problÃ©mÃ¡t</link> is okozhat.\n"
 "\n"
-"Ne kapcsold be, hacsak nincs rá feltétlenül szükséged."
+"Ne kapcsold be, hacsak nincs rÃ¡ feltÃ©tlenÃ¼l szÃ¼ksÃ©ged."
 
 #: edit.cpp:396
 msgid "DNS Servers"
-msgstr "DNS kiszolgálók"
+msgstr "DNS kiszolgÃ¡lÃ³k"
 
 #: edit.cpp:411
 msgid "Domain Name:"
-msgstr "Tartomány név:"
+msgstr "TartomÃ¡ny nÃ©v:"
 
 #: edit.cpp:422
 msgid ""
@@ -656,17 +656,17 @@ msgid ""
 "If you leave this field blank, no changes are\n"
 "made to the domain name."
 msgstr ""
-"Ha megadsz itt egy tartomány (domain) nevet, akkor\n"
-"a kapcsolat alatt ezt a nevet fogja használni a\n"
-"számítógép. A kapcsolat végeztével az eredeti\n"
-"tartománynév állítódik vissza.\n"
+"Ha megadsz itt egy tartomÃ¡ny (domain) nevet, akkor\n"
+"a kapcsolat alatt ezt a nevet fogja hasznÃ¡lni a\n"
+"szÃ¡mÃ­tÃ³gÃ©p. A kapcsolat vÃ©geztÃ©vel az eredeti\n"
+"tartomÃ¡nynÃ©v Ã¡llÃ­tÃ³dik vissza.\n"
 "\n"
-"Ha üresen marad ez a mezõ, akkor nem történik\n"
-"változás a tartomány névben."
+"Ha Ã¼resen marad ez a mezÅ‘, akkor nem tÃ¶rtÃ©nik\n"
+"vÃ¡ltozÃ¡s a tartomÃ¡ny nÃ©vben."
 
 #: edit.cpp:431
 msgid "DNS IP Address:"
-msgstr "DNS IP címe:"
+msgstr "DNS IP cÃ­me:"
 
 #: edit.cpp:446
 msgid ""
@@ -678,12 +678,12 @@ msgid ""
 "To add a DNS server, type in the IP address of\n"
 "of the DNS server here and click on <b>Add</b>"
 msgstr ""
-"Lehetõség van új DNS kiszolgálót megadni, ami\n"
-"a kapcsolat ideje alatt lesz használva. A kapcsolat\n"
-"végeztével ez a DNS bejegyzés törlõdik.\n"
+"LehetÅ‘sÃ©g van Ãºj DNS kiszolgÃ¡lÃ³t megadni, ami\n"
+"a kapcsolat ideje alatt lesz hasznÃ¡lva. A kapcsolat\n"
+"vÃ©geztÃ©vel ez a DNS bejegyzÃ©s tÃ¶rlÅ‘dik.\n"
 "\n"
-"DNS kiszolgáló megadásához be kell írni a DNS\n"
-"kiszolgáló IP címét, és a <b>Hozzáadás</b> gombra\n"
+"DNS kiszolgÃ¡lÃ³ megadÃ¡sÃ¡hoz be kell Ã­rni a DNS\n"
+"kiszolgÃ¡lÃ³ IP cÃ­mÃ©t, Ã©s a <b>HozzÃ¡adÃ¡s</b> gombra\n"
 "kikkelni."
 
 #: edit.cpp:465
@@ -693,20 +693,20 @@ msgid ""
 "will then be added to the list below"
 msgstr ""
 "Erre a gombra kell klikkelni, hogy a fenti\n"
-"mezõben lévõ DNS kiszolgáló bejegyzés\n"
-"hozzáadódjon a lenti listához."
+"mezÅ‘ben lÃ©vÅ‘ DNS kiszolgÃ¡lÃ³ bejegyzÃ©s\n"
+"hozzÃ¡adÃ³djon a lenti listÃ¡hoz."
 
 #: edit.cpp:477
 msgid ""
 "Click this button to remove the selected DNS\n"
 "server entry from the list below"
 msgstr ""
-"Erre a gombra kell klikkelni, hogy a kiválasztott\n"
-"DNS kiszolgáló törlõdjön az alábbi listából"
+"Erre a gombra kell klikkelni, hogy a kivÃ¡lasztott\n"
+"DNS kiszolgÃ¡lÃ³ tÃ¶rlÅ‘djÃ¶n az alÃ¡bbi listÃ¡bÃ³l"
 
 #: edit.cpp:480
 msgid "DNS Address List:"
-msgstr "DNS cím lista:"
+msgstr "DNS cÃ­m lista:"
 
 #: edit.cpp:491
 msgid ""
@@ -714,14 +714,14 @@ msgid ""
 "while you are connected. Use the <b>Add</b> and\n"
 "<b>Remove</b> buttons to modify the list"
 msgstr ""
-"Ez a lista tartalmazza azokat a DNS kiszolgálókat\n"
-"amik a kapcsolat alatt használva lesznek. A \n"
-"<b>Hozzáadás</b> és az <b>Eltávolítás</b> gombokkal\n"
-"módosítható a lista"
+"Ez a lista tartalmazza azokat a DNS kiszolgÃ¡lÃ³kat\n"
+"amik a kapcsolat alatt hasznÃ¡lva lesznek. A \n"
+"<b>HozzÃ¡adÃ¡s</b> Ã©s az <b>EltÃ¡volÃ­tÃ¡s</b> gombokkal\n"
+"mÃ³dosÃ­thatÃ³ a lista"
 
 #: edit.cpp:496
 msgid "Disable existing DNS Servers during Connection"
-msgstr "Létezõ DNS kiszolgálók kikapcsolása a kapcsolat alatt"
+msgstr "LÃ©tezÅ‘ DNS kiszolgÃ¡lÃ³k kikapcsolÃ¡sa a kapcsolat alatt"
 
 #: edit.cpp:503
 msgid ""
@@ -735,23 +735,23 @@ msgid ""
 "option, but it may become useful under \n"
 "some circumstances"
 msgstr ""
-"Ha ez az opció ki van választva, minden DNS\n"
-"kiszolgáló ami az <i>/etc/resolv.conf</i>-ban van\n"
+"Ha ez az opciÃ³ ki van vÃ¡lasztva, minden DNS\n"
+"kiszolgÃ¡lÃ³ ami az <i>/etc/resolv.conf</i>-ban van\n"
 "megadva, ideiglenesen ki lesz kapcsolva a kapcsolat\n"
-"idejére. Miután a kapcsolat befejezõdött, újra ezek\n"
-"a kiszolgálók lesznek használva.\n"
+"idejÃ©re. MiutÃ¡n a kapcsolat befejezÅ‘dÃ¶tt, Ãºjra ezek\n"
+"a kiszolgÃ¡lÃ³k lesznek hasznÃ¡lva.\n"
 "\n"
-"Az esetek többségében nem kell használni ezt a\n"
-"funkciót, de bizonyos körülmények közöt haszosnak\n"
+"Az esetek tÃ¶bbsÃ©gÃ©ben nem kell hasznÃ¡lni ezt a\n"
+"funkciÃ³t, de bizonyos kÃ¶rÃ¼lmÃ©nyek kÃ¶zÃ¶t haszosnak\n"
 "bizonyulhat."
 
 #: edit.cpp:572
 msgid "Gateway Setup"
-msgstr "Átjáró beállítása"
+msgstr "ÃtjÃ¡rÃ³ beÃ¡llÃ­tÃ¡sa"
 
 #: edit.cpp:581
 msgid "Default Gateway"
-msgstr "Alapértelmezett átjáró"
+msgstr "AlapÃ©rtelmezett Ã¡tjÃ¡rÃ³"
 
 #: edit.cpp:584
 msgid ""
@@ -764,38 +764,38 @@ msgid ""
 "This is the default for most ISPs, so you should\n"
 "probably leave this option on"
 msgstr ""
-"Ezzel azt lehet beállítani, hogy a PPP társ gép\n"
-"(akivel modemen keresztül kapcsolatban áll a géped)\n"
-"átjáróként viselkedik. Ez azt jelenti, hogy a helyi gép\n"
-"minden csomagot, ami nem a helyi hálózatra megy, e felé\n"
-"a gép felé fog küldeni, és õ majd tovább küldi azokat.\n"
+"Ezzel azt lehet beÃ¡llÃ­tani, hogy a PPP tÃ¡rs gÃ©p\n"
+"(akivel modemen keresztÃ¼l kapcsolatban Ã¡ll a gÃ©ped)\n"
+"Ã¡tjÃ¡rÃ³kÃ©nt viselkedik. Ez azt jelenti, hogy a helyi gÃ©p\n"
+"minden csomagot, ami nem a helyi hÃ¡lÃ³zatra megy, e felÃ©\n"
+"a gÃ©p felÃ© fog kÃ¼ldeni, Ã©s Å‘ majd tovÃ¡bb kÃ¼ldi azokat.\n"
 "\n"
-"Ez az alapértelmezett beállítás a legtöbb szolgáltatónál,\n"
-"ezért ajánlatos bekapcsolva hagyni."
+"Ez az alapÃ©rtelmezett beÃ¡llÃ­tÃ¡s a legtÃ¶bb szolgÃ¡ltatÃ³nÃ¡l,\n"
+"ezÃ©rt ajÃ¡nlatos bekapcsolva hagyni."
 
 #: edit.cpp:595
 msgid "Static Gateway"
-msgstr "Statikus átjáró"
+msgstr "Statikus Ã¡tjÃ¡rÃ³"
 
 #: edit.cpp:598
 msgid ""
 "Allows you to specify which computer you want\n"
 "to use as gateway (see <i>Default Gateway</i> above"
 msgstr ""
-"Lehetõség van egy gép megadására, aki az átjátó\n"
-"lesz. (látsd az <i>Alapértelmezett átjáró</i>t fent"
+"LehetÅ‘sÃ©g van egy gÃ©p megadÃ¡sÃ¡ra, aki az Ã¡tjÃ¡tÃ³\n"
+"lesz. (lÃ¡tsd az <i>AlapÃ©rtelmezett Ã¡tjÃ¡rÃ³</i>t fent"
 
 #: edit.cpp:603
 msgid ""
 "Gateway\n"
 "IP Address:"
 msgstr ""
-"Átjáró\n"
-"IP címe:"
+"ÃtjÃ¡rÃ³\n"
+"IP cÃ­me:"
 
 #: edit.cpp:605
 msgid "Assign the Default Route to this Gateway"
-msgstr "A Default Route hozzárendelése ehhez az átjáróhoz"
+msgstr "A Default Route hozzÃ¡rendelÃ©se ehhez az Ã¡tjÃ¡rÃ³hoz"
 
 #: edit.cpp:608
 msgid ""
@@ -805,23 +805,23 @@ msgid ""
 "\n"
 "Normally, you should turn this on"
 msgstr ""
-"Ha ez az opció be van kapcsolva, minden csomag\n"
-"ami nem a helyi hálóra megy, a PPP kapcsolaton\n"
-"keresztül küldõdik el.\n"
+"Ha ez az opciÃ³ be van kapcsolva, minden csomag\n"
+"ami nem a helyi hÃ¡lÃ³ra megy, a PPP kapcsolaton\n"
+"keresztÃ¼l kÃ¼ldÅ‘dik el.\n"
 "\n"
-"Normális esetben be kell kapcsolni."
+"NormÃ¡lis esetben be kell kapcsolni."
 
 #: edit.cpp:703
 msgid "Edit Script"
-msgstr "Szkript módosítása"
+msgstr "Szkript mÃ³dosÃ­tÃ¡sa"
 
 #: general.cpp:50
 msgid "kppp Setup"
-msgstr "kppp beállítások"
+msgstr "kppp beÃ¡llÃ­tÃ¡sok"
 
 #: general.cpp:56
 msgid "pppd Timeout:"
-msgstr "pppd idõtúllépés:"
+msgstr "pppd idÅ‘tÃºllÃ©pÃ©s:"
 
 #: general.cpp:69
 msgid ""
@@ -830,18 +830,18 @@ msgid ""
 "If no connection is made in this time frame,\n"
 "<i>kppp</i> will give up and kill pppd."
 msgstr ""
-"A <i>kppp</i>a mezõben megadott ideig vár\n"
-"a PPP kapcsolat stabilizálódására.\n"
-"Amennyiben a kapcsolat a megadott idõn belül nem\n"
-"épül ki, a <i>kppp</i> megszakítja a pppd mûködését."
+"A <i>kppp</i>a mezÅ‘ben megadott ideig vÃ¡r\n"
+"a PPP kapcsolat stabilizÃ¡lÃ³dÃ¡sÃ¡ra.\n"
+"Amennyiben a kapcsolat a megadott idÅ‘n belÃ¼l nem\n"
+"Ã©pÃ¼l ki, a <i>kppp</i> megszakÃ­tja a pppd mÅ±kÃ¶dÃ©sÃ©t."
 
 #: general.cpp:74 general.cpp:401 general.cpp:490
 msgid "Seconds"
-msgstr "másodperc"
+msgstr "mÃ¡sodperc"
 
 #: general.cpp:87
 msgid "Dock into Panel on Connect"
-msgstr "Dokkolás a panelre a kapcsolat létrejötte után"
+msgstr "DokkolÃ¡s a panelre a kapcsolat lÃ©trejÃ¶tte utÃ¡n"
 
 #: general.cpp:89
 msgid ""
@@ -853,17 +853,17 @@ msgid ""
 "window to it's original location and\n"
 "size."
 msgstr ""
-"A kapcsolat stabilizálódása után, az\n"
-"alkalmazás ablaka minimizálódik, és egy\n"
+"A kapcsolat stabilizÃ¡lÃ³dÃ¡sa utÃ¡n, az\n"
+"alkalmazÃ¡s ablaka minimizÃ¡lÃ³dik, Ã©s egy\n"
 "kicsi ikon jelenik meg a <i>kpanel</i>-en.\n"
 "\n"
 "Kattints erre az ikonra, amennyiben vissza\n"
-"akarod állítani a kppp alkalmazást az eredeti\n"
-"méretû ablakba."
+"akarod Ã¡llÃ­tani a kppp alkalmazÃ¡st az eredeti\n"
+"mÃ©retÅ± ablakba."
 
 #: general.cpp:102
 msgid "Automatic Redial on Disconnect"
-msgstr "Automatikus újrahívás"
+msgstr "Automatikus ÃºjrahÃ­vÃ¡s"
 
 #: general.cpp:108
 msgid ""
@@ -873,16 +873,16 @@ msgid ""
 "\n"
 "See <link #redial>here</link> for more on this topic."
 msgstr ""
-"Amennyiben a kapcsolat nem áll fel,\n"
-"vagy megszakad, a <i>kppp</i> újratárcsáz\n"
-"a megfelelõ account adatokkal.\n"
+"Amennyiben a kapcsolat nem Ã¡ll fel,\n"
+"vagy megszakad, a <i>kppp</i> ÃºjratÃ¡rcsÃ¡z\n"
+"a megfelelÅ‘ account adatokkal.\n"
 "\n"
-"Kattints <link #redial>ide</link>, ha több\n"
-"információt akarsz a témáról."
+"Kattints <link #redial>ide</link>, ha tÃ¶bb\n"
+"informÃ¡ciÃ³t akarsz a tÃ©mÃ¡rÃ³l."
 
 #: general.cpp:114
 msgid "Show Clock on Caption"
-msgstr "Idõmérés az ablak-címben"
+msgstr "IdÅ‘mÃ©rÃ©s az ablak-cÃ­mben"
 
 #: general.cpp:120
 msgid ""
@@ -891,14 +891,14 @@ msgid ""
 "was established. Very useful, so you \n"
 "should turn this on"
 msgstr ""
-"Amennyiben ez a jelzõ bekapcsolt állapotú,\n"
-"az ablak címsorában megjelenik a kapcsolat\n"
-"stabilizálódása óta eltelt idõ.\n"
-"Hasznos funkció, tartsuk bekapcsolva!"
+"Amennyiben ez a jelzÅ‘ bekapcsolt Ã¡llapotÃº,\n"
+"az ablak cÃ­msorÃ¡ban megjelenik a kapcsolat\n"
+"stabilizÃ¡lÃ³dÃ¡sa Ã³ta eltelt idÅ‘.\n"
+"Hasznos funkciÃ³, tartsuk bekapcsolva!"
 
 #: general.cpp:125
 msgid "Disconnect on X-server shutdown"
-msgstr "Bontás az X-szerver leállításakor"
+msgstr "BontÃ¡s az X-szerver leÃ¡llÃ­tÃ¡sakor"
 
 #: general.cpp:131
 msgid ""
@@ -909,41 +909,41 @@ msgid ""
 "\n"
 "See <link #disxserver>here</link> for more on this."
 msgstr ""
-"Ez a kapcsoló engedélyezi a kapcsolat\n"
-"bontását, az X-szerver leállításakor.\n"
-"Tartsuk bekapcsolva ezt a jelzõt a késõbbi\n"
-"problémák elkerülése végett.\n"
+"Ez a kapcsolÃ³ engedÃ©lyezi a kapcsolat\n"
+"bontÃ¡sÃ¡t, az X-szerver leÃ¡llÃ­tÃ¡sakor.\n"
+"Tartsuk bekapcsolva ezt a jelzÅ‘t a kÃ©sÅ‘bbi\n"
+"problÃ©mÃ¡k elkerÃ¼lÃ©se vÃ©gett.\n"
 "\n"
 "Kattints <link #disxserver>ide</link>, ha\n"
-"több információt akarsz a témáról."
+"tÃ¶bb informÃ¡ciÃ³t akarsz a tÃ©mÃ¡rÃ³l."
 
 #: general.cpp:138
 msgid "Quit on Disconnect"
-msgstr "Kilépés a kapcsolat megszakadása után"
+msgstr "KilÃ©pÃ©s a kapcsolat megszakadÃ¡sa utÃ¡n"
 
 #: general.cpp:144
 msgid ""
 "When this option is turned on, <i>kppp</i>\n"
 "will be closed when you disconnect"
 msgstr ""
-"Amennyiben ezt a kapcsolót bekapcsoljuk,\n"
-"a <i>kppp</i>kilép a kapcsolat megszakadásakor"
+"Amennyiben ezt a kapcsolÃ³t bekapcsoljuk,\n"
+"a <i>kppp</i>kilÃ©p a kapcsolat megszakadÃ¡sakor"
 
 #: general.cpp:147
 msgid "Minimize Window on Connect"
-msgstr "Ablak minimalizálása kapcsolatkor"
+msgstr "Ablak minimalizÃ¡lÃ¡sa kapcsolatkor"
 
 #: general.cpp:153
 msgid ""
 "Iconifies <i>kppp</i>'s window when a\n"
 "connection is established"
 msgstr ""
-"Ikonizálja a <i>kppp</i> ablakát miután\n"
-"a kapcsolat stabilizálódott"
+"IkonizÃ¡lja a <i>kppp</i> ablakÃ¡t miutÃ¡n\n"
+"a kapcsolat stabilizÃ¡lÃ³dott"
 
 #: general.cpp:202
 msgid "About kppp"
-msgstr "kppp névjegy"
+msgstr "kppp nÃ©vjegy"
 
 #: general.cpp:210
 msgid ""
@@ -964,29 +964,29 @@ msgid ""
 "(GNU General Public License)."
 msgstr ""
 "\n"
-"Tárcsázó és front-end a pppd démon elé\n"
+"TÃ¡rcsÃ¡zÃ³ Ã©s front-end a pppd dÃ©mon elÃ©\n"
 "\n"
 "(c) 1997, 1998\n"
 "    Bernd Johannes Wuebben <wuebben@kde.org>\n"
 "    Harri Porten <porten@kde.org>\n"
 "    Mario Weilguni <mweilguni@kde.org>\n"
 "\n"
-"Eredeti szerzõ: Bernd Johannes Wuebben\n"
-"Jelenlegi karbantartó: Harri Porten és Mario Weilguni.\n"
+"Eredeti szerzÅ‘: Bernd Johannes Wuebben\n"
+"Jelenlegi karbantartÃ³: Harri Porten Ã©s Mario Weilguni.\n"
 "\n"
-"Bármilyen hiba leírását kizárólag a\n"
-"jelenlegi karbantartóknak címezd!\n"
+"BÃ¡rmilyen hiba leÃ­rÃ¡sÃ¡t kizÃ¡rÃ³lag a\n"
+"jelenlegi karbantartÃ³knak cÃ­mezd!\n"
 "\n"
-"Ez a program GNU licensz alá tartozik\n"
+"Ez a program GNU licensz alÃ¡ tartozik\n"
 "(GNU General Public License)."
 
 #: general.cpp:238
 msgid "Serial device"
-msgstr "Soros eszköz"
+msgstr "Soros eszkÃ¶z"
 
 #: general.cpp:241
 msgid "Modem Device:"
-msgstr "Modem eszköz:"
+msgstr "Modem eszkÃ¶z:"
 
 #: general.cpp:255
 msgid ""
@@ -998,13 +998,13 @@ msgid ""
 "emulation (most cards under Linux support this), you\n"
 "should select one of the /dev/ttyIx devices."
 msgstr ""
-"A mezõben azt a soros portot adhatjuk meg, amelyre a\n"
+"A mezÅ‘ben azt a soros portot adhatjuk meg, amelyre a\n"
 "modem csatlakozik. Linux/x86 alatt ez a /dev/ttyS0\n"
 "(DOS alatt a COM1) vagy a /dev/ttyS1 (DOS alatt a COM2).\n"
 "\n"
-"Amennyiben belsõ ISDN kártyád van AT parancs\n"
-"emulációval (a legtöbb kártya Linux portolása ilyen),\n"
-"válaszd ki a megfelelõ /dev/ttyIx eszközt."
+"Amennyiben belsÅ‘ ISDN kÃ¡rtyÃ¡d van AT parancs\n"
+"emulÃ¡ciÃ³val (a legtÃ¶bb kÃ¡rtya Linux portolÃ¡sa ilyen),\n"
+"vÃ¡laszd ki a megfelelÅ‘ /dev/ttyIx eszkÃ¶zt."
 
 #: general.cpp:264
 msgid "Flow Control:"
@@ -1022,15 +1022,15 @@ msgid ""
 "\n"
 "<b>Default</b>: CRTSCTS"
 msgstr ""
-"Az itt lévõ adat meghatározza, hogy a soros port \n"
-"és a modem hogyan kommunikál egymással.\n"
-"Ne változtasd meg, csak ha tudod mit csinálsz!\n"
+"Az itt lÃ©vÅ‘ adat meghatÃ¡rozza, hogy a soros port \n"
+"Ã©s a modem hogyan kommunikÃ¡l egymÃ¡ssal.\n"
+"Ne vÃ¡ltoztasd meg, csak ha tudod mit csinÃ¡lsz!\n"
 "\n"
-"<b>Alapértelmezés</b>: CRTSCTS"
+"<b>AlapÃ©rtelmezÃ©s</b>: CRTSCTS"
 
 #: general.cpp:285
 msgid "Line Termination:"
-msgstr "Vonal megszakítás:"
+msgstr "Vonal megszakÃ­tÃ¡s:"
 
 #: general.cpp:298
 msgid ""
@@ -1042,15 +1042,15 @@ msgid ""
 "\n"
 "<b>Default</b>: CR"
 msgstr ""
-"Az itt lévõ adat meghatározza, hogy a soros port \n"
-"és a modem hogyan kommunikál egymással.\n"
-"Ne változtasd meg, csak ha tudod mit csinálsz!\n"
+"Az itt lÃ©vÅ‘ adat meghatÃ¡rozza, hogy a soros port \n"
+"Ã©s a modem hogyan kommunikÃ¡l egymÃ¡ssal.\n"
+"Ne vÃ¡ltoztasd meg, csak ha tudod mit csinÃ¡lsz!\n"
 "\n"
-"<b>Alapértelmezés</b>: CRTSCTS"
+"<b>AlapÃ©rtelmezÃ©s</b>: CRTSCTS"
 
 #: general.cpp:306
 msgid "Connection Speed:"
-msgstr "Vonal sebessége:"
+msgstr "Vonal sebessÃ©ge:"
 
 #: general.cpp:349
 msgid ""
@@ -1061,16 +1061,16 @@ msgid ""
 "no more than 115200 bits/sec (unless you know\n"
 "that your serial port supports higher speeds)."
 msgstr ""
-"Meghatározható a soros port és a modem közötti\n"
-"kommunikáció sebessége. Elsõ indításkor az\n"
-"alapértelmezés 38.400 bit/másodperc. Növelhetjük\n"
-"az értéket a mindennapi munkához, de ne emeljük\n"
-"115.200 bit/másodperc fölé, csak ha nagysebességû\n"
-"soros porttal rendelkezünk)."
+"MeghatÃ¡rozhatÃ³ a soros port Ã©s a modem kÃ¶zÃ¶tti\n"
+"kommunikÃ¡ciÃ³ sebessÃ©ge. ElsÅ‘ indÃ­tÃ¡skor az\n"
+"alapÃ©rtelmezÃ©s 38.400 bit/mÃ¡sodperc. NÃ¶velhetjÃ¼k\n"
+"az Ã©rtÃ©ket a mindennapi munkÃ¡hoz, de ne emeljÃ¼k\n"
+"115.200 bit/mÃ¡sodperc fÃ¶lÃ©, csak ha nagysebessÃ©gÅ±\n"
+"soros porttal rendelkezÃ¼nk)."
 
 #: general.cpp:364
 msgid "Use Lock File"
-msgstr "Zároló fájl használata"
+msgstr "ZÃ¡rolÃ³ fÃ¡jl hasznÃ¡lata"
 
 #: general.cpp:375
 msgid ""
@@ -1084,19 +1084,19 @@ msgid ""
 "\n"
 "<b>Default</b>: On"
 msgstr ""
-"Ha meg akarjuk akadályozni, hogy egyéb programok\n"
-"hozzáférjenek a modemhez a kapcsolat idelye alatt,\n"
-"egy fájl létrehozásával jelezhetjük hogy a modemet\n"
-"használja egy program. Linux alatt ez a fájl a\n"
-"<i>/var/lock/LCK..ttyS1</i>elérési úton található meg.\n"
-"Amennyiben használni akarod ezt az opciót,\n"
-"kapcsold be mezõt.\n"
+"Ha meg akarjuk akadÃ¡lyozni, hogy egyÃ©b programok\n"
+"hozzÃ¡fÃ©rjenek a modemhez a kapcsolat idelye alatt,\n"
+"egy fÃ¡jl lÃ©trehozÃ¡sÃ¡val jelezhetjÃ¼k hogy a modemet\n"
+"hasznÃ¡lja egy program. Linux alatt ez a fÃ¡jl a\n"
+"<i>/var/lock/LCK..ttyS1</i>elÃ©rÃ©si Ãºton talÃ¡lhatÃ³ meg.\n"
+"Amennyiben hasznÃ¡lni akarod ezt az opciÃ³t,\n"
+"kapcsold be mezÅ‘t.\n"
 "\n"
-"<b>Alapértelmezés</b>: Bekapcsolva"
+"<b>AlapÃ©rtelmezÃ©s</b>: Bekapcsolva"
 
 #: general.cpp:386
 msgid "Modem Timeout:"
-msgstr "Modem Idõtúllépés:"
+msgstr "Modem IdÅ‘tÃºllÃ©pÃ©s:"
 
 #: general.cpp:405
 msgid ""
@@ -1104,9 +1104,9 @@ msgid ""
 "<i>CONNECT</i> response from your modem. The\n"
 "recommended value is 30 seconds."
 msgstr ""
-"Itt meghatározható az az idõtartam amíg a <i>kppp</i>\n"
-"várakozik a modem <i>CONNECT</i> válaszára.\n"
-"A kívánatos érték 30 másodperc."
+"Itt meghatÃ¡rozhatÃ³ az az idÅ‘tartam amÃ­g a <i>kppp</i>\n"
+"vÃ¡rakozik a modem <i>CONNECT</i> vÃ¡laszÃ¡ra.\n"
+"A kÃ­vÃ¡natos Ã©rtÃ©k 30 mÃ¡sodperc."
 
 #: general.cpp:466 main.cpp:722
 msgid "Modem"
@@ -1114,7 +1114,7 @@ msgstr "Modem"
 
 #: general.cpp:477
 msgid "Busy Wait:"
-msgstr "Várakozás foglaltság esetén:"
+msgstr "VÃ¡rakozÃ¡s foglaltsÃ¡g esetÃ©n:"
 
 #: general.cpp:495
 msgid ""
@@ -1126,13 +1126,13 @@ msgid ""
 "The default is 0 seconds, you should not change\n"
 "this unless you need to."
 msgstr ""
-"Meghatározható az az idõtartam, aminek letelte\n"
-"után foglaltság esetén a számot újra kell hívni.\n"
-"Egyes modemeknél ennek beállítására fokozottan\n"
+"MeghatÃ¡rozhatÃ³ az az idÅ‘tartam, aminek letelte\n"
+"utÃ¡n foglaltsÃ¡g esetÃ©n a szÃ¡mot Ãºjra kell hÃ­vni.\n"
+"Egyes modemeknÃ©l ennek beÃ¡llÃ­tÃ¡sÃ¡ra fokozottan\n"
 "oda kell figyelni.\n"
 "\n"
-"Az alapértelmezett érték 0 másodperc.\n"
-"Ne változtasd meg, ha nincs rá szükség."
+"Az alapÃ©rtelmezett Ã©rtÃ©k 0 mÃ¡sodperc.\n"
+"Ne vÃ¡ltoztasd meg, ha nincs rÃ¡ szÃ¼ksÃ©g."
 
 #: general.cpp:509
 msgid "Modem volume"
@@ -1148,13 +1148,13 @@ msgid ""
 "If this does not work for your modem,\n"
 "you must modify the modem volume command"
 msgstr ""
-"Egyes modemek beépített hangszóróval\n"
-"rendelkeznek, amely hangot ad hívás alatt.\n"
-"Beállítható a hangerõ alacsonyra, vagy ki is\n"
-"kapcsolható teljesen.\n"
+"Egyes modemek beÃ©pÃ­tett hangszÃ³rÃ³val\n"
+"rendelkeznek, amely hangot ad hÃ­vÃ¡s alatt.\n"
+"BeÃ¡llÃ­thatÃ³ a hangerÅ‘ alacsonyra, vagy ki is\n"
+"kapcsolhatÃ³ teljesen.\n"
 "\n"
-"Ha nem mûködik a modemeddel a hangerõ változtatás,\n"
-"módosítsd a parancsokat a megfelelõ modem parancsra"
+"Ha nem mÅ±kÃ¶dik a modemeddel a hangerÅ‘ vÃ¡ltoztatÃ¡s,\n"
+"mÃ³dosÃ­tsd a parancsokat a megfelelÅ‘ modem parancsra"
 
 #: general.cpp:533
 msgid "Modem Asserts CD Line."
@@ -1168,11 +1168,11 @@ msgid ""
 "\n"
 "<b>Default</b>: off"
 msgstr ""
-"Ez a kapcsoló a <i>kppp</i>modem detektálási\n"
-"módján változtat, amennyiben a modem nem válaszol.\n"
-"Problémák lehetnek a kapcsoló átállítása miatt, így\n"
-"csak szükség esetén változtasd meg az alapértelmezést!\n"
-"<b>Alapértelmezés</b>: Kikapcsolva"
+"Ez a kapcsolÃ³ a <i>kppp</i>modem detektÃ¡lÃ¡si\n"
+"mÃ³djÃ¡n vÃ¡ltoztat, amennyiben a modem nem vÃ¡laszol.\n"
+"ProblÃ©mÃ¡k lehetnek a kapcsolÃ³ Ã¡tÃ¡llÃ­tÃ¡sa miatt, Ã­gy\n"
+"csak szÃ¼ksÃ©g esetÃ©n vÃ¡ltoztasd meg az alapÃ©rtelmezÃ©st!\n"
+"<b>AlapÃ©rtelmezÃ©s</b>: Kikapcsolva"
 
 #: general.cpp:554
 msgid "Modem Commands"
@@ -1183,11 +1183,11 @@ msgid ""
 "Allows you to change the AT command for\n"
 "your modem."
 msgstr ""
-"Az AT modem-parancsok megváltoztatása"
+"Az AT modem-parancsok megvÃ¡ltoztatÃ¡sa"
 
 #: general.cpp:559
 msgid "Query Modem"
-msgstr "Modem lekérdezés"
+msgstr "Modem lekÃ©rdezÃ©s"
 
 #: general.cpp:561
 msgid ""
@@ -1198,16 +1198,16 @@ msgid ""
 "this information.  It can be useful to help\n"
 "you setup the modem"
 msgstr ""
-"A legtöbb modem tartalmaz egy ATI parancs-készletet\n"
-"ami kiolvasható belõle.\n"
+"A legtÃ¶bb modem tartalmaz egy ATI parancs-kÃ©szletet\n"
+"ami kiolvashatÃ³ belÅ‘le.\n"
 "\n"
 "Nyomd meg ezt a gombot, ha ki akarod olvasni\n"
-"ezeket az információkat. Segítséget nyújthatnak\n"
-"a modemed beállításához"
+"ezeket az informÃ¡ciÃ³kat. SegÃ­tsÃ©get nyÃºjthatnak\n"
+"a modemed beÃ¡llÃ­tÃ¡sÃ¡hoz"
 
 #: general.cpp:568
 msgid "Terminal"
-msgstr "Terminál"
+msgstr "TerminÃ¡l"
 
 #: general.cpp:570
 msgid ""
@@ -1215,33 +1215,33 @@ msgid ""
 "can use this if you want to play around\n"
 "with your modem's AT command set"
 msgstr ""
-"Elindít egy beépített terminál programot.\n"
-"Használhatod a különbözõ modem-parancsok\n"
-"kipróbálásához."
+"ElindÃ­t egy beÃ©pÃ­tett terminÃ¡l programot.\n"
+"HasznÃ¡lhatod a kÃ¼lÃ¶nbÃ¶zÅ‘ modem-parancsok\n"
+"kiprÃ³bÃ¡lÃ¡sÃ¡hoz."
 
 #: general.cpp:634
 msgid "Throughput graph"
-msgstr "Átvitel grafikon"
+msgstr "Ãtvitel grafikon"
 
 #: general.cpp:643
 msgid "Background color"
-msgstr "Háttér szín"
+msgstr "HÃ¡ttÃ©r szÃ­n"
 
 #: general.cpp:650
 msgid "Text color"
-msgstr "Szöveg szín"
+msgstr "SzÃ¶veg szÃ­n"
 
 #: general.cpp:657
 msgid "Input bytes color"
-msgstr "Bejövõ adatok színe"
+msgstr "BejÃ¶vÅ‘ adatok szÃ­ne"
 
 #: general.cpp:664
 msgid "Output bytes color"
-msgstr "Kimenõ adatok színe"
+msgstr "KimenÅ‘ adatok szÃ­ne"
 
 #: main.cpp:116
 msgid "Recent changes in kppp"
-msgstr "Új lehetöség a kppp-ben"
+msgstr "Ãšj lehetÃ¶sÃ©g a kppp-ben"
 
 #: main.cpp:129
 msgid ""
@@ -1255,20 +1255,20 @@ msgid ""
 "will appear leading to Quickhelp.\n"
 "\n"
 "To test it, right-click somewhere in this text."
-msgstr "A kppp 1.4.8 verziójától kezdve egy új lehetöség\n"
-"lett megvalósítva a \"Gyors segítség\". Ez egy\n"
-"egyszerü segítö eszköz, amely bármikor aktiválható.\n"
+msgstr "A kppp 1.4.8 verziÃ³jÃ¡tÃ³l kezdve egy Ãºj lehetÃ¶sÃ©g\n"
+"lett megvalÃ³sÃ­tva a \"Gyors segÃ­tsÃ©g\". Ez egy\n"
+"egyszerÃ¼ segÃ­tÃ¶ eszkÃ¶z, amely bÃ¡rmikor aktivÃ¡lhatÃ³.\n"
 "\n"
-"Használatához csak kattints a kívánt képernyö-elemre\n"
-"a jobb egérgombbal, majd a megjelenö címkére.\n"
-"Amennyiben létezik a kijelölt elemre\n"
-"gyors segítség-szöveg, az megjelenik.\n"
+"HasznÃ¡latÃ¡hoz csak kattints a kÃ­vÃ¡nt kÃ©pernyÃ¶-elemre\n"
+"a jobb egÃ©rgombbal, majd a megjelenÃ¶ cÃ­mkÃ©re.\n"
+"Amennyiben lÃ©tezik a kijelÃ¶lt elemre\n"
+"gyors segÃ­tsÃ©g-szÃ¶veg, az megjelenik.\n"
 "\n"
-"Próbaképpen kattints a jobb gombbal e szövegre."
+"PrÃ³bakÃ©ppen kattints a jobb gombbal e szÃ¶vegre."
 
 #: main.cpp:141
 msgid "Don't show this hint again"
-msgstr "Legközelebb ne jelenjen meg az üzenet!"
+msgstr "LegkÃ¶zelebb ne jelenjen meg az Ã¼zenet!"
 
 #: main.cpp:160
 msgid ""
@@ -1276,10 +1276,10 @@ msgid ""
 "This window will stay open until you\n"
 "click a mouse button or a hit a key.\n"
 msgstr ""
-"Ez egy példa a <b>Gyors segítségre</b>.\n"
-"A megjelenö ablak mindaddig a képernyön marad,\n"
-"amíg egy billentyü lenyomása, vagy egy\n"
-"kattintás az egérrel nem történik.\n"
+"Ez egy pÃ©lda a <b>Gyors segÃ­tsÃ©gre</b>.\n"
+"A megjelenÃ¶ ablak mindaddig a kÃ©pernyÃ¶n marad,\n"
+"amÃ­g egy billentyÃ¼ lenyomÃ¡sa, vagy egy\n"
+"kattintÃ¡s az egÃ©rrel nem tÃ¶rtÃ©nik.\n"
 
 #: main.cpp:403
 #, c-format
@@ -1287,7 +1287,7 @@ msgid ""
 "kppp can't create or read from\n"
 "%s."
 msgstr ""
-"kppp nem tudja létrehozni, vagy olvasni:\n"
+"kppp nem tudja lÃ©trehozni, vagy olvasni:\n"
 "%s."
 
 #: main.cpp:432
@@ -1301,25 +1301,25 @@ msgid ""
 "Make sure that you are not running another kppp,\n"
 "delete the pid file, and restart kppp."
 msgstr ""
-"A kppp egy %s fájlt észlelt.\n"
+"A kppp egy %s fÃ¡jlt Ã©szlelt.\n"
 "\n"
-"A kppp-nek egy másik példánya is fut, %d folyamat\n"
-"azonosítóval.\n"
+"A kppp-nek egy mÃ¡sik pÃ©ldÃ¡nya is fut, %d folyamat\n"
+"azonosÃ­tÃ³val.\n"
 "\n"
-"Ellenõrizd, hogy nem futtatsz-e egy másik kppp-t,\n"
-"töröld le a pid fájlt, és indítsd úrja a kppp-t."
+"EllenÅ‘rizd, hogy nem futtatsz-e egy mÃ¡sik kppp-t,\n"
+"tÃ¶rÃ¶ld le a pid fÃ¡jlt, Ã©s indÃ­tsd Ãºrja a kppp-t."
 
 #: main.cpp:438
 msgid "Exit"
-msgstr "Kilépés"
+msgstr "KilÃ©pÃ©s"
 
 #: main.cpp:501
 msgid "Connect to: "
-msgstr "Kapcsolódás: "
+msgstr "KapcsolÃ³dÃ¡s: "
 
 #: main.cpp:513
 msgid "Login ID:"
-msgstr "Bejelentkezõ név:"
+msgstr "BejelentkezÅ‘ nÃ©v:"
 
 #: main.cpp:526
 msgid ""
@@ -1331,18 +1331,18 @@ msgid ""
 "<b>Important</b>: case is important here:\n"
 "<i>myusername</i> is not the same as <i>MyUserName</i>!"
 msgstr ""
-"Írd be ide a kapcsolódáshoz szükséges felhasználói\n"
-"nevet, melyet az Internet Szolgáltatód megadott.\n"
-"Ez az információ különösen fontos a PAP és a CHAP\n"
-"(Terminál és szkript) típusú bejelentkezéseknél).\n"
+"Ãrd be ide a kapcsolÃ³dÃ¡shoz szÃ¼ksÃ©ges felhasznÃ¡lÃ³i\n"
+"nevet, melyet az Internet SzolgÃ¡ltatÃ³d megadott.\n"
+"Ez az informÃ¡ciÃ³ kÃ¼lÃ¶nÃ¶sen fontos a PAP Ã©s a CHAP\n"
+"(TerminÃ¡l Ã©s szkript) tÃ­pusÃº bejelentkezÃ©seknÃ©l).\n"
 "\n"
-"<b>Fontos</b>: a kis és nagybetû nem keverhetõ:\n"
+"<b>Fontos</b>: a kis Ã©s nagybetÅ± nem keverhetÅ‘:\n"
 "\n"
-"a <i>saga</i> nem azonos a <i>sAGA</i> szöveggel!"
+"a <i>saga</i> nem azonos a <i>sAGA</i> szÃ¶veggel!"
 
 #: main.cpp:535
 msgid "Password:"
-msgstr "Jelszó:"
+msgstr "JelszÃ³:"
 
 #: main.cpp:549
 msgid ""
@@ -1354,17 +1354,17 @@ msgid ""
 "<b>Important</b>: case is important here:\n"
 "<i>mypassword</i> is not the same as <i>MyPassword</i>!"
 msgstr ""
-"Írd be a kapcsolódáshoz szükséges felhasználói\n"
-"jelszót, melyet az Internet szolgáltatód megadott.\n"
-"Ez az információ különösen fontos a PAP és a CHAP\n"
-"(Terminál és szkript) típusú bejelentkezéseknél).\n"
+"Ãrd be a kapcsolÃ³dÃ¡shoz szÃ¼ksÃ©ges felhasznÃ¡lÃ³i\n"
+"jelszÃ³t, melyet az Internet szolgÃ¡ltatÃ³d megadott.\n"
+"Ez az informÃ¡ciÃ³ kÃ¼lÃ¶nÃ¶sen fontos a PAP Ã©s a CHAP\n"
+"(TerminÃ¡l Ã©s szkript) tÃ­pusÃº bejelentkezÃ©seknÃ©l).\n"
 "\n"
-"<b>Fontos</b>: a kis és nagybetû nem keverhetõ:\n"
-"a <i>jelszavam</i> nem azonos a <i>JeLSZaVaM</i> jelszóval!"
+"<b>Fontos</b>: a kis Ã©s nagybetÅ± nem keverhetÅ‘:\n"
+"a <i>jelszavam</i> nem azonos a <i>JeLSZaVaM</i> jelszÃ³val!"
 
 #: main.cpp:563
 msgid "Show Log Window"
-msgstr "Látszódjon a Napló ablak"
+msgstr "LÃ¡tszÃ³djon a NaplÃ³ ablak"
 
 #: main.cpp:570
 msgid ""
@@ -1376,21 +1376,21 @@ msgid ""
 "Turn it off if <i>kppp</i> routinely connects without\n"
 "problems"
 msgstr ""
-"Ez a kapcsoló a napló ablak megjelenítését szabályozza.\n"
-"A napló ablakban megfigyelhetõ a <i>kppp</i> és a modem\n"
-"közötti kommunikáció. Ez sok esetben segít\n"
-"a problémák megoldásában.\n"
+"Ez a kapcsolÃ³ a naplÃ³ ablak megjelenÃ­tÃ©sÃ©t szabÃ¡lyozza.\n"
+"A naplÃ³ ablakban megfigyelhetÅ‘ a <i>kppp</i> Ã©s a modem\n"
+"kÃ¶zÃ¶tti kommunikÃ¡ciÃ³. Ez sok esetben segÃ­t\n"
+"a problÃ©mÃ¡k megoldÃ¡sÃ¡ban.\n"
 "\n"
-"Kapcsold ki amennyiben a <i>kppp</i> probléma mentesen\n"
-"mûködik."
+"Kapcsold ki amennyiben a <i>kppp</i> problÃ©ma mentesen\n"
+"mÅ±kÃ¶dik."
 
 #: main.cpp:593
 msgid "Setup"
-msgstr "Beállítás"
+msgstr "BeÃ¡llÃ­tÃ¡s"
 
 #: main.cpp:609
 msgid "Connect"
-msgstr "Kapcsolódás"
+msgstr "KapcsolÃ³dÃ¡s"
 
 #: main.cpp:689
 #, c-format
@@ -1398,20 +1398,20 @@ msgid ""
 "No such Account:\n"
 "%s"
 msgstr ""
-"Nincs ilyen hozzáférés:\n"
+"Nincs ilyen hozzÃ¡fÃ©rÃ©s:\n"
 "%s"
 
 #: main.cpp:704
 msgid "kppp Configuration"
-msgstr "kppp konfigurálás"
+msgstr "kppp konfigurÃ¡lÃ¡s"
 
 #: main.cpp:720
 msgid "Accounts"
-msgstr "Hozzáférések"
+msgstr "HozzÃ¡fÃ©rÃ©sek"
 
 #: main.cpp:721
 msgid "Device"
-msgstr "Eszköz"
+msgstr "EszkÃ¶z"
 
 #: main.cpp:723
 msgid "PPP"
@@ -1423,15 +1423,15 @@ msgstr "Grafikon"
 
 #: main.cpp:871
 msgid "Timeout expired while waiting for the PPP interface to come up!"
-msgstr "Idõtúllépés történt, amíg a PPP eszközre vártam!"
+msgstr "IdÅ‘tÃºllÃ©pÃ©s tÃ¶rtÃ©nt, amÃ­g a PPP eszkÃ¶zre vÃ¡rtam!"
 
 #: main.cpp:876
 msgid "The pppd daemon died unexpectedly!"
-msgstr "A pppd démon leállt!"
+msgstr "A pppd dÃ©mon leÃ¡llt!"
 
 #: main.cpp:884
 msgid "Details..."
-msgstr "Részletek..."
+msgstr "RÃ©szletek..."
 
 #: main.cpp:916
 msgid ""
@@ -1439,9 +1439,9 @@ msgid ""
 "\n"
 "Since a further execution would be pointless, kppp will shut down right now."
 msgstr ""
-"Sajnálom. A kppp segítõ folyamata meghalt.\n"
+"SajnÃ¡lom. A kppp segÃ­tÅ‘ folyamata meghalt.\n"
 "\n"
-"Mivel egy új indítása értelmetlen lenne, ezért a kppp most lezárja magát."
+"Mivel egy Ãºj indÃ­tÃ¡sa Ã©rtelmetlen lenne, ezÃ©rt a kppp most lezÃ¡rja magÃ¡t."
 
 #: main.cpp:950 runtests.cpp:400
 msgid ""
@@ -1450,10 +1450,10 @@ msgid ""
 "Make sure that pppd is installed and\n"
 "you have entered the correct path."
 msgstr ""
-"Nem található a PPP démon!\n"
+"Nem talÃ¡lhatÃ³ a PPP dÃ©mon!\n"
 "\n"
-"Ellenõrizd, hogy a pppd telepítve van-e\n"
-"és helyes elérési utat adtál meg."
+"EllenÅ‘rizd, hogy a pppd telepÃ­tve van-e\n"
+"Ã©s helyes elÃ©rÃ©si utat adtÃ¡l meg."
 
 #: main.cpp:959
 #, c-format
@@ -1465,8 +1465,8 @@ msgid ""
 msgstr ""
 "A kppp nem tudja futtatni ezt a programot:\n"
 " %s\n"
-"Ellenõrizd, hogy adtál-e setuid jogot a kppp-nek, és hogy a pppd\n"
-"futtatható-e."
+"EllenÅ‘rizd, hogy adtÃ¡l-e setuid jogot a kppp-nek, Ã©s hogy a pppd\n"
+"futtathatÃ³-e."
 ""
 
 #: main.cpp:974
@@ -1480,13 +1480,13 @@ msgid ""
 " the location of the modem device on the modem tab of\n"
 "the setup dialog.\n"
 " Thank You"
-msgstr "A kppp nem találja ezt:\n"
+msgstr "A kppp nem talÃ¡lja ezt:\n"
 " %s\n"
-"Ellenõrizd, hogy helyesen van-e beállítva a\n"
-"modemed, és/vagy állítsd be a megfelelõ\n"
-"modem eszközt a beállítás párbeszéd ablak\n"
-"modem fejezetében.\n"
-" Köszönöm"
+"EllenÅ‘rizd, hogy helyesen van-e beÃ¡llÃ­tva a\n"
+"modemed, Ã©s/vagy Ã¡llÃ­tsd be a megfelelÅ‘\n"
+"modem eszkÃ¶zt a beÃ¡llÃ­tÃ¡s pÃ¡rbeszÃ©d ablak\n"
+"modem fejezetÃ©ben.\n"
+" KÃ¶szÃ¶nÃ¶m"
 
 #: main.cpp:994
 msgid ""
@@ -1494,9 +1494,9 @@ msgid ""
 "method PAP. This requires that you\n"
 "supply a username and a password!"
 msgstr ""
-"A bejelentkezési azonosítás módjának\n"
-"a PAP-t választottad. Ez megköveteli a\n"
-"felhasználói név és a jelszó megadását!"
+"A bejelentkezÃ©si azonosÃ­tÃ¡s mÃ³djÃ¡nak\n"
+"a PAP-t vÃ¡lasztottad. Ez megkÃ¶veteli a\n"
+"felhasznÃ¡lÃ³i nÃ©v Ã©s a jelszÃ³ megadÃ¡sÃ¡t!"
 
 #: main.cpp:1003
 #, c-format
@@ -1504,8 +1504,8 @@ msgid ""
 "Cannot create PAP authentication\n"
 "file \"%s\""
 msgstr ""
-"Nem hozahtó létre a PAP azonosító\n"
-"fájl \"%s\""
+"Nem hozahtÃ³ lÃ©tre a PAP azonosÃ­tÃ³\n"
+"fÃ¡jl \"%s\""
 
 #: main.cpp:1020
 msgid ""
@@ -1513,9 +1513,9 @@ msgid ""
 "method CHAP. This requires that you\n"
 "supply a username and a password!"
 msgstr ""
-"A bejelentkezési azonosítás módjának\n"
-"a CHAP-ot választottad. Ez megköveteli a\n"
-"felhasználói név és a jelszó megadását!"
+"A bejelentkezÃ©si azonosÃ­tÃ¡s mÃ³djÃ¡nak\n"
+"a CHAP-ot vÃ¡lasztottad. Ez megkÃ¶veteli a\n"
+"felhasznÃ¡lÃ³i nÃ©v Ã©s a jelszÃ³ megadÃ¡sÃ¡t!"
 
 #: main.cpp:1029
 #, c-format
@@ -1523,121 +1523,121 @@ msgid ""
 "Cannot create CHAP authentication\n"
 "file \"%s\""
 msgstr ""
-"Nem hozható létre a CHAP azonosító\n"
-"fájl: \"%s\""
+"Nem hozhatÃ³ lÃ©tre a CHAP azonosÃ­tÃ³\n"
+"fÃ¡jl: \"%s\""
 ""
 
 #: main.cpp:1041
 msgid "You must specify a telephone number!"
-msgstr "Add meg a telefonszámot!"
+msgstr "Add meg a telefonszÃ¡mot!"
 
 #: main.cpp:1131
 msgid "Quit kPPP?"
-msgstr "Valóban ki akarsz lépni?"
+msgstr "ValÃ³ban ki akarsz lÃ©pni?"
 
 #: main.cpp:1132
 msgid "Exiting kPPP will close your PPP Session."
-msgstr "A kilépés megszakítja a PPP kapcsolatot."
+msgstr "A kilÃ©pÃ©s megszakÃ­tja a PPP kapcsolatot."
 
 #: main.cpp:1178
 msgid ""
 "Can not load the accounting\n"
 "ruleset \""
 msgstr ""
-"Nem tölthetõ be a számlázási\n"
-"szabály: \""
+"Nem tÃ¶lthetÅ‘ be a szÃ¡mlÃ¡zÃ¡si\n"
+"szabÃ¡ly: \""
 
 #: modem.cpp:119
 msgid "Sorry, can't open modem."
-msgstr "Sajnálom, a modem nem kezelhetõ (számodra)."
+msgstr "SajnÃ¡lom, a modem nem kezelhetÅ‘ (szÃ¡modra)."
 
 #: modem.cpp:125
 msgid "Sorry, can't detect state of CD line."
-msgstr "Sajnálom, nem tudom megállapítani, hogy van-e vonal."
+msgstr "SajnÃ¡lom, nem tudom megÃ¡llapÃ­tani, hogy van-e vonal."
 
 #: modem.cpp:131
 msgid "Sorry, the modem is not ready."
-msgstr "Sajnálom, a modem nem üzemkész."
+msgstr "SajnÃ¡lom, a modem nem Ã¼zemkÃ©sz."
 
 #: modem.cpp:142 modem.cpp:186
 msgid "Sorry, the modem is busy."
-msgstr "Sajnálom, a modem foglalt."
+msgstr "SajnÃ¡lom, a modem foglalt."
 
 #: modem.cpp:192
 msgid "Modem Ready."
-msgstr "A modem üzemkész."
+msgstr "A modem Ã¼zemkÃ©sz."
 
 #: modem.cpp:204
 msgid "Can't restore tty settings: tcsetattr()\n"
-msgstr "Nem állathatóak vissza a tty beállítások: tcsetattr()\n"
+msgstr "Nem Ã¡llathatÃ³ak vissza a tty beÃ¡llÃ­tÃ¡sok: tcsetattr()\n"
 
 #: modem.cpp:345
 msgid "Sorry, the modem doesn't respond."
-msgstr "Sajnálom, a modem nem válaszol."
+msgstr "SajnÃ¡lom, a modem nem vÃ¡laszol."
 
 #: modem.cpp:446
 msgid "Unknown speed"
-msgstr "Ismeretlen sebesség"
+msgstr "Ismeretlen sebessÃ©g"
 
 #: modemcmds.cpp:44
 msgid "Edit Modem Commands"
-msgstr "Modem parancsok módosítása"
+msgstr "Modem parancsok mÃ³dosÃ­tÃ¡sa"
 
 #: modemcmds.cpp:72
 msgid "Pre-Init Delay (sec/100):"
-msgstr "Inicializálás elõtti késleltetés (mp/100):"
+msgstr "InicializÃ¡lÃ¡s elÅ‘tti kÃ©sleltetÃ©s (mp/100):"
 
 #: modemcmds.cpp:77
 msgid "Initialization String:"
-msgstr "Inicializáló parancs:"
+msgstr "InicializÃ¡lÃ³ parancs:"
 
 #: modemcmds.cpp:95
 msgid "Post-Init Delay (sec/100):"
-msgstr "Inicializálás utáni késleltetés (mp/100):"
+msgstr "InicializÃ¡lÃ¡s utÃ¡ni kÃ©sleltetÃ©s (mp/100):"
 
 #: modemcmds.cpp:100
 msgid "Init Response:"
-msgstr "Inicializálás válasz:"
+msgstr "InicializÃ¡lÃ¡s vÃ¡lasz:"
 
 #: modemcmds.cpp:107
 msgid "Dial String:"
-msgstr "Tárcsázó parancs:"
+msgstr "TÃ¡rcsÃ¡zÃ³ parancs:"
 
 #: modemcmds.cpp:114
 msgid "Connect Response:"
-msgstr "Kapcsolat válasz:"
+msgstr "Kapcsolat vÃ¡lasz:"
 
 #: modemcmds.cpp:121
 msgid "Busy Response:"
-msgstr "Foglalt válasz:"
+msgstr "Foglalt vÃ¡lasz:"
 
 #: modemcmds.cpp:128
 msgid "No Carrier Response:"
-msgstr "Nincs vivõ válasz:"
+msgstr "Nincs vivÅ‘ vÃ¡lasz:"
 
 #: modemcmds.cpp:135
 msgid "No Dialtone Response:"
-msgstr "Nincs vonalhang válasz:"
+msgstr "Nincs vonalhang vÃ¡lasz:"
 
 #: modemcmds.cpp:142
 msgid "Hangup String:"
-msgstr "Lerakás parancs:"
+msgstr "LerakÃ¡s parancs:"
 
 #: modemcmds.cpp:149
 msgid "Hangup Response:"
-msgstr "Lerakás válasz:"
+msgstr "LerakÃ¡s vÃ¡lasz:"
 
 #: modemcmds.cpp:156
 msgid "Answer String:"
-msgstr "Hívásra-válasz parancs:"
+msgstr "HÃ­vÃ¡sra-vÃ¡lasz parancs:"
 
 #: modemcmds.cpp:163
 msgid "Ring Response:"
-msgstr "Csöngés válasz:"
+msgstr "CsÃ¶ngÃ©s vÃ¡lasz:"
 
 #: modemcmds.cpp:170
 msgid "Answer Response:"
-msgstr "Hívásra-válasz válasz:"
+msgstr "HÃ­vÃ¡sra-vÃ¡lasz vÃ¡lasz:"
 
 #: modemcmds.cpp:177
 msgid "Escape String:"
@@ -1645,27 +1645,27 @@ msgstr "Escape parancs:"
 
 #: modemcmds.cpp:184
 msgid "Escape Response:"
-msgstr "Escape válasz:"
+msgstr "Escape vÃ¡lasz:"
 
 #: modemcmds.cpp:203
 msgid "Guard Time (sec/50):"
-msgstr "Guard Idõ (mp/50):"
+msgstr "Guard IdÅ‘ (mp/50):"
 
 #: modemcmds.cpp:207
 msgid "Volume off/low/high"
-msgstr "Hangerõ ki/halk/hangos"
+msgstr "HangerÅ‘ ki/halk/hangos"
 
 #: pppdargs.cpp:38
 msgid "Customize pppd Arguments"
-msgstr "pppd paraméterek beállítása"
+msgstr "pppd paramÃ©terek beÃ¡llÃ­tÃ¡sa"
 
 #: pppdargs.cpp:51
 msgid "Argument:"
-msgstr "Paraméter:"
+msgstr "ParamÃ©ter:"
 
 #: pppdargs.cpp:80
 msgid "Defaults"
-msgstr "Alapértelmezés"
+msgstr "AlapÃ©rtelmezÃ©s"
 
 #: pppdata.cpp:56
 msgid ""
@@ -1677,21 +1677,21 @@ msgid ""
 "\n"
 "chown {YourUsername} .kde/share/config/kppprc"
 msgstr ""
-"Az alkalmazás-specifikus konfigurációs fájl nem nyitható\n"
-"meg sem csak íthatóként, sem csak olvashatóként.\n"
+"Az alkalmazÃ¡s-specifikus konfigurÃ¡ciÃ³s fÃ¡jl nem nyithatÃ³\n"
+"meg sem csak Ã­thatÃ³kÃ©nt, sem csak olvashatÃ³kÃ©nt.\n"
 "\n"
-"Esetleg a rendszergazdának meg kell változtatnia a fájl\n"
-"tulajdonosát a Te saját könyvtáradban ezzel a paranccsal:\n"
+"Esetleg a rendszergazdÃ¡nak meg kell vÃ¡ltoztatnia a fÃ¡jl\n"
+"tulajdonosÃ¡t a Te sajÃ¡t kÃ¶nyvtÃ¡radban ezzel a paranccsal:\n"
 "\n"
-"chown {Felhasználóneved} .kde/share/config/kppprc"
+"chown {FelhasznÃ¡lÃ³neved} .kde/share/config/kppprc"
 
 #: modeminfo.cpp:39
 msgid "ATI Query"
-msgstr "ATI lekérdezések"
+msgstr "ATI lekÃ©rdezÃ©sek"
 
 #: modeminfo.cpp:117
 msgid "Modem Query timed out."
-msgstr "Idötúllépés modem lekérdezés közben."
+msgstr "IdÃ¶tÃºllÃ©pÃ©s modem lekÃ©rdezÃ©s kÃ¶zben."
 
 #: miniterm.cpp:164 miniterm.cpp:226 modeminfo.cpp:145
 msgid "Modem Ready"
@@ -1699,7 +1699,7 @@ msgstr "Modem rendben."
 
 #: modeminfo.cpp:249
 msgid "Modem Query Results"
-msgstr "Modem lekérdezés kimenete"
+msgstr "Modem lekÃ©rdezÃ©s kimenete"
 
 #: pppstatdlg.cpp:65
 msgid "kppp Statistics"
@@ -1711,19 +1711,19 @@ msgstr "Statisztika"
 
 #: pppstatdlg.cpp:115
 msgid "Local Addr:"
-msgstr "Helyi cím:"
+msgstr "Helyi cÃ­m:"
 
 #: pppstatdlg.cpp:121
 msgid "Remote Addr:"
-msgstr "Távoli cím:"
+msgstr "TÃ¡voli cÃ­m:"
 
 #: pppstatdlg.cpp:153
 msgid "bytes in"
-msgstr "Letöltött bájt"
+msgstr "LetÃ¶ltÃ¶tt bÃ¡jt"
 
 #: pppstatdlg.cpp:154
 msgid "bytes out"
-msgstr "Feltöltött bájt"
+msgstr "FeltÃ¶ltÃ¶tt bÃ¡jt"
 
 #: pppstatdlg.cpp:156
 msgid "packets in"
@@ -1764,11 +1764,11 @@ msgstr "%d kb/mp"
 
 #: pppstatdlg.cpp:432 pppstatdlg.cpp:437
 msgid "unavailable"
-msgstr "nem elérhetõ"
+msgstr "nem elÃ©rhetÅ‘"
 
 #: miniterm.cpp:44
 msgid "Kppp Mini-Terminal"
-msgstr "Kppp Mini-terminál"
+msgstr "Kppp Mini-terminÃ¡l"
 
 #: miniterm.cpp:50
 msgid "&Reset Modem"
@@ -1785,13 +1785,13 @@ msgid ""
 "This program is published under the GNU GPL\n"
 "(GNU General Public License)"
 msgstr ""
-"MiniTerm - Terminál emulátor a KPPP-hez\n"
+"MiniTerm - TerminÃ¡l emulÃ¡tor a KPPP-hez\n"
 "\n"
 "(c) 1997 Bernd Johannes Wuebben <wuebben@kde.org>\n"
 "(c) 1998 Harri Porten <porten@kde.org>\n"
 "(c) 1998 Mario Weilguni <mweilguni@kde.org>\n"
 "\n"
-"Ez a program a GNU GPL alá esik.\n"
+"Ez a program a GNU GPL alÃ¡ esik.\n"
 "(GNU General Public License)"
 
 #: miniterm.cpp:63
@@ -1800,7 +1800,7 @@ msgstr "&Modem"
 
 #: miniterm.cpp:107
 msgid "Close MiniTerm"
-msgstr "MiniTerm bezárása"
+msgstr "MiniTerm bezÃ¡rÃ¡sa"
 
 #: miniterm.cpp:112
 msgid "Reset Modem"
@@ -1808,51 +1808,51 @@ msgstr "Modem Reset"
 
 #: miniterm.cpp:138
 msgid "Initializing Modem"
-msgstr "Modem inicializálása folyik"
+msgstr "Modem inicializÃ¡lÃ¡sa folyik"
 
 #: miniterm.cpp:205
 msgid "Hanging up ..."
-msgstr "Kapcsolat bontása ..."
+msgstr "Kapcsolat bontÃ¡sa ..."
 
 #: miniterm.cpp:219
 msgid "Resetting Modem"
-msgstr "Modem visszaállítása"
+msgstr "Modem visszaÃ¡llÃ­tÃ¡sa"
 
 #: acctselect.cpp:47
 msgid "Accounting Setup"
-msgstr "Számlázás beállítása"
+msgstr "SzÃ¡mlÃ¡zÃ¡s beÃ¡llÃ­tÃ¡sa"
 
 #: acctselect.cpp:55
 msgid "Enable accounting"
-msgstr "Számlázás engedélyezése"
+msgstr "SzÃ¡mlÃ¡zÃ¡s engedÃ©lyezÃ©se"
 
 #: acctselect.cpp:73
 msgid "Selected:"
-msgstr "Kiválasztott:"
+msgstr "KivÃ¡lasztott:"
 
 #: acctselect.cpp:87
 msgid "Volume accounting:"
-msgstr "Mennyiség számlázás:"
+msgstr "MennyisÃ©g szÃ¡mlÃ¡zÃ¡s:"
 
 #: acctselect.cpp:91
 msgid "No accounting"
-msgstr "Nincs számlálás"
+msgstr "Nincs szÃ¡mlÃ¡lÃ¡s"
 
 #: acctselect.cpp:92
 msgid "Bytes in"
-msgstr "Letöltött bájtok"
+msgstr "LetÃ¶ltÃ¶tt bÃ¡jtok"
 
 #: acctselect.cpp:93
 msgid "Bytes out"
-msgstr "Feltöltött bájtok"
+msgstr "FeltÃ¶ltÃ¶tt bÃ¡jtok"
 
 #: acctselect.cpp:94
 msgid "Bytes in and out"
-msgstr "Le és feltöltés összesen"
+msgstr "Le Ã©s feltÃ¶ltÃ©s Ã¶sszesen"
 
 #: acctselect.cpp:164 acctselect.cpp:270
 msgid "Available rules"
-msgstr "Lehetöségek"
+msgstr "LehetÃ¶sÃ©gek"
 
 #: acctselect.cpp:305
 msgid "(none)"
@@ -1860,49 +1860,49 @@ msgstr "(nincs)"
 
 #: ruleset.cpp:544
 msgid "kppp: no rulefile specified\n"
-msgstr "kppp: nincs szabályfájl definiálva\n"
+msgstr "kppp: nincs szabÃ¡lyfÃ¡jl definiÃ¡lva\n"
 
 #: ruleset.cpp:550
 #, c-format
 msgid "kppp: rulefile \"%s\" not found\n"
-msgstr "kppp: a \"%s\" szabályfájl nem található\n"
+msgstr "kppp: a \"%s\" szabÃ¡lyfÃ¡jl nem talÃ¡lhatÃ³\n"
 
 #: ruleset.cpp:555
 msgid "kppp: rulefiles must have the extension \".rst\"\n"
-msgstr "kppp: a szabályfájloknak \".rst\" kiterjeszésûeknek kell lenniük\n"
+msgstr "kppp: a szabÃ¡lyfÃ¡jloknak \".rst\" kiterjeszÃ©sÅ±eknek kell lenniÃ¼k\n"
 
 #: ruleset.cpp:564
 msgid "kppp: error parsing the ruleset\n"
-msgstr "kppp: hiba a szbály értelmezése közben\n"
+msgstr "kppp: hiba a szbÃ¡ly Ã©rtelmezÃ©se kÃ¶zben\n"
 
 #: ruleset.cpp:569
 #, c-format
 msgid "kppp: parse error in line %d\n"
-msgstr "kppp: hiba a %d sor értelmezésekor\n"
+msgstr "kppp: hiba a %d sor Ã©rtelmezÃ©sekor\n"
 
 #: ruleset.cpp:575
 msgid "kppp: rulefile does not contain a default rule\n"
-msgstr "kppp: a szabályfájlban nincs alapértelmezett szabály\n"
+msgstr "kppp: a szabÃ¡lyfÃ¡jlban nincs alapÃ©rtelmezett szabÃ¡ly\n"
 
 #: ruleset.cpp:580
 msgid "kppp: rulefile does not contain a \"name=...\" line\n"
-msgstr "kppp: a szabályfájl nem tartalmaz \"name=...\" sort\n"
+msgstr "kppp: a szabÃ¡lyfÃ¡jl nem tartalmaz \"name=...\" sort\n"
 
 #: ruleset.cpp:584
 msgid "kppp: rulefile is ok\n"
-msgstr "kppp: szabályfájl rendben\n"
+msgstr "kppp: szabÃ¡lyfÃ¡jl rendben\n"
 
 #: docking.cpp:199
 msgid "Minimize"
-msgstr "Minimalizálás"
+msgstr "MinimalizÃ¡lÃ¡s"
 
 #: runtests.cpp:364
 msgid ""
-"You´re not allowed to dial out with kppp.\n"
+"YouÂ´re not allowed to dial out with kppp.\n"
 "Contact your system administrator."
 msgstr ""
-"Te nem használhatod a kppp-t.\n"
-"Beszélj a rendszer adminisztrátorral."
+"Te nem hasznÃ¡lhatod a kppp-t.\n"
+"BeszÃ©lj a rendszer adminisztrÃ¡torral."
 
 #: runtests.cpp:381
 msgid ""
@@ -1915,12 +1915,12 @@ msgid ""
 "or\n"
 "  * install a kernel with PPP support\n"
 msgstr ""
-"A jelenlegi kernel nem tartalmaz PPP támogatást.\n"
+"A jelenlegi kernel nem tartalmaz PPP tÃ¡mogatÃ¡st.\n"
 "\n"
-"A probléma megoldása:\n"
-"  * Keresd meg a rendszeradminisztrátort!\n"
+"A problÃ©ma megoldÃ¡sa:\n"
+"  * Keresd meg a rendszeradminisztrÃ¡tort!\n"
 "vagy\n"
-"  * Új kernel fordítása PPP támogatással\n"
+"  * Ãšj kernel fordÃ­tÃ¡sa PPP tÃ¡mogatÃ¡ssal\n"
 ""
 
 #: runtests.cpp:412
@@ -1931,10 +1931,10 @@ msgid ""
 "Contact your system administrator\n"
 "and ask to get access to pppd."
 msgstr ""
-"Nem rendelkezel futtatási joggal\n"
+"Nem rendelkezel futtatÃ¡si joggal\n"
 "a pppd-re!\n"
 "\n"
-"Kérd meg a rendszeradminisztrátort,\n"
+"KÃ©rd meg a rendszeradminisztrÃ¡tort,\n"
 "hogy a pppd-t futtathasd!"
 
 #: runtests.cpp:423 runtests.cpp:437
@@ -1945,11 +1945,11 @@ msgid ""
 "with the SUID bit set. Contact your\n"
 "system administrator."
 msgstr ""
-"pppd nincsen rendesen telepítve!\n"
+"pppd nincsen rendesen telepÃ­tve!\n"
 "\n"
-"A pppd programot úgy kell telepíteni, hogy\n"
-"a SUID bit be legyen állítva. Szólj a rendszer-\n"
-"gazdának."
+"A pppd programot Ãºgy kell telepÃ­teni, hogy\n"
+"a SUID bit be legyen Ã¡llÃ­tva. SzÃ³lj a rendszer-\n"
+"gazdÃ¡nak."
 
 #: runtests.cpp:472
 msgid ""
@@ -1959,10 +1959,10 @@ msgid ""
 "itself.\n"
 "Contact your system administrator."
 msgstr ""
-"A kppp felfedezett egy 'lock' paramétert a /etc/ppp/options fájlban.\n"
+"A kppp felfedezett egy 'lock' paramÃ©tert a /etc/ppp/options fÃ¡jlban.\n"
 "\n"
-"Eltávolítottam ezt, mivel a kppp saját maga kezeli a modem zárolást.\n"
-"Szólj a rendszergazdának."
+"EltÃ¡volÃ­tottam ezt, mivel a kppp sajÃ¡t maga kezeli a modem zÃ¡rolÃ¡st.\n"
+"SzÃ³lj a rendszergazdÃ¡nak."
 
 #: runtests.cpp:497
 msgid ""
@@ -1972,19 +1972,19 @@ msgid ""
 "a non-empty file that has appropriate\n"
 "read and write permissions."
 msgstr ""
-"hiányzik!\n"
+"hiÃ¡nyzik!\n"
 "\n"
-"Kérd meg a rendszer adminisztrátort, hogy\n"
-"hozza létre ezt a fájlt (ne legyen üres) a\n"
-"megfelelõ irás/olvasás jogokkal."
+"KÃ©rd meg a rendszer adminisztrÃ¡tort, hogy\n"
+"hozza lÃ©tre ezt a fÃ¡jlt (ne legyen Ã¼res) a\n"
+"megfelelÅ‘ irÃ¡s/olvasÃ¡s jogokkal."
 
 #: loginterm.cpp:118
 msgid "Ca&ncel"
-msgstr "&Mégsem"
+msgstr "&MÃ©gsem"
 
 #: loginterm.cpp:123
 msgid "&Continue"
-msgstr "&Tovább"
+msgstr "&TovÃ¡bb"
 
 #: ppplog.cpp:136
 msgid ""
@@ -1992,41 +1992,41 @@ msgid ""
 "connection.\n"
 "Please use the terminal-based login to verify"
 msgstr ""
-"Elõbb elindítottad a pppd-t mint, hogy a távoli kiszolgáló felkészült volna "
+"ElÅ‘bb elindÃ­tottad a pppd-t mint, hogy a tÃ¡voli kiszolgÃ¡lÃ³ felkÃ©szÃ¼lt volna "
 "a PPP kapcsolatra.\n"
-"Használd a terminál alapú bejelentkezést ennek ellenõrzésére."
+"HasznÃ¡ld a terminÃ¡l alapÃº bejelentkezÃ©st ennek ellenÅ‘rzÃ©sÃ©re."
 
 #: ppplog.cpp:141
 msgid "You haven't started the PPP software on the peer system."
-msgstr "Nem indítottad el a PPP programot a távoli rendszeren."
+msgstr "Nem indÃ­tottad el a PPP programot a tÃ¡voli rendszeren."
 
 #: ppplog.cpp:144
 msgid "Check that you supplied the correct username and password!"
-msgstr "Ellenõrizd, hogy jó-e a felhasználó név és a jelszó!"
+msgstr "EllenÅ‘rizd, hogy jÃ³-e a felhasznÃ¡lÃ³ nÃ©v Ã©s a jelszÃ³!"
 
 #: ppplog.cpp:147
 msgid ""
 "You shouldn't pass 'lock' as an argument to pppd. Check /etc/ppp/options and "
 "~/.ppprc"
 msgstr ""
-"Nem szabad 'lock' paramétert adni a pppd-nek. Ellenõrizd a /etc/ppp/options "
-"és a ~/.ppprc fájlokat"
+"Nem szabad 'lock' paramÃ©tert adni a pppd-nek. EllenÅ‘rizd a /etc/ppp/options "
+"Ã©s a ~/.ppprc fÃ¡jlokat"
 
 #: ppplog.cpp:151
 msgid ""
 "The remote system does not seem to answer to\n"
 "configuration request! Contact your provider!"
 msgstr ""
-"A távoli rendszer nem akar válaszolni a konfigurációs\n"
-"kérésünkre! Beszélj a szolgáltatóddal!"
+"A tÃ¡voli rendszer nem akar vÃ¡laszolni a konfigurÃ¡ciÃ³s\n"
+"kÃ©rÃ©sÃ¼nkre! BeszÃ©lj a szolgÃ¡ltatÃ³ddal!"
 
 #: ppplog.cpp:155
 msgid ""
 "You have passed an invalid option to pppd. See `man pppd' for a complete "
 "list of valid arguments."
 msgstr ""
-"Érvénytelen paramétert adtál meg a pppd-nek. Látsd a `man pppd'-t a "
-"lehetséges paraméterekhez."
+"Ã‰rvÃ©nytelen paramÃ©tert adtÃ¡l meg a pppd-nek. LÃ¡tsd a `man pppd'-t a "
+"lehetsÃ©ges paramÃ©terekhez."
 
 #: ppplog.cpp:170
 #, c-format
@@ -2035,30 +2035,30 @@ msgid ""
 "\"%s\"\n"
 "This may give you a hint why the the connection has failed."
 msgstr ""
-"A távoli rendszer ezt az üzenetet küldte:\n"
+"A tÃ¡voli rendszer ezt az Ã¼zenetet kÃ¼ldte:\n"
 "\"%s\"\n"
-"Hasznos lehet annak a kiderítéséhez, hogy miért nem jött össze a kpcsolat."
+"Hasznos lehet annak a kiderÃ­tÃ©sÃ©hez, hogy miÃ©rt nem jÃ¶tt Ã¶ssze a kpcsolat."
 ""
 
 #: ppplog.cpp:189
 msgid "Sorry. Can't help you here."
-msgstr "Sajnálom. Itt tudok segíteni."
+msgstr "SajnÃ¡lom. Itt tudok segÃ­teni."
 
 #: ppplog.cpp:206
 msgid ""
-"KPPP could not prepare a PPP log. It´s very likely\n"
+"KPPP could not prepare a PPP log. ItÂ´s very likely\n"
 "that pppd was started without the \"debug\" option.\n"
 "\n"
-"Without this option it´s difficult to find out PPP\n"
+"Without this option itÂ´s difficult to find out PPP\n"
 "problems, so you should turn on the debug option.\n"
 "\n"
 "Shall I turn it on now?"
 msgstr ""
-"A KPPP nem tudott PPP naplót készíteni. Valószínûleg\n"
-"a pppd \"debug\" paraméter nélkül lett indítva.\n"
+"A KPPP nem tudott PPP naplÃ³t kÃ©szÃ­teni. ValÃ³szÃ­nÅ±leg\n"
+"a pppd \"debug\" paramÃ©ter nÃ©lkÃ¼l lett indÃ­tva.\n"
 "\n"
-"Ennélkül a paraméter nélkül nehéz kitalálni a PPP\n"
-"problémáket, tehát ajánlatos bekapcsolni a debugot.\n"
+"EnnÃ©lkÃ¼l a paramÃ©ter nÃ©lkÃ¼l nehÃ©z kitalÃ¡lni a PPP\n"
+"problÃ©mÃ¡ket, tehÃ¡t ajÃ¡nlatos bekapcsolni a debugot.\n"
 "\n"
 "Bekapcsoljam most?"
 
@@ -2069,41 +2069,41 @@ msgid ""
 "again, you will get a PPP log that may help\n"
 "you to track down the connection problem."
 msgstr ""
-"Hozzûadtam \"debug\" paramétert. Próbálj meg\n"
-"új kapcsolatot létrehozni. Ha megint nem sikerül,\n"
-"nézd meg a PPP naplót, az segíthet a probléma\n"
-"megoldásában."
+"HozzÅ±adtam \"debug\" paramÃ©tert. PrÃ³bÃ¡lj meg\n"
+"Ãºj kapcsolatot lÃ©trehozni. Ha megint nem sikerÃ¼l,\n"
+"nÃ©zd meg a PPP naplÃ³t, az segÃ­thet a problÃ©ma\n"
+"megoldÃ¡sÃ¡ban."
 ""
 
 #: ppplog.cpp:232
 msgid "PPP log"
-msgstr "PPP napló"
+msgstr "PPP naplÃ³"
 
 #: ppplog.cpp:236
 msgid "kppp's diagnosis (just guessing):"
-msgstr "kppp diagnózis (csak találgatás):"
+msgstr "kppp diagnÃ³zis (csak talÃ¡lgatÃ¡s):"
 
 #: ppplog.cpp:241
 msgid "Write to file"
-msgstr "Fájlba írás"
+msgstr "FÃ¡jlba Ã­rÃ¡s"
 
 #: modemdb.cpp:46
 msgid "Select modem type..."
-msgstr "Modem típus megadása..."
+msgstr "Modem tÃ­pus megadÃ¡sa..."
 
 #: modemdb.cpp:48
 msgid ""
 "To setup your modem, first choose its vendor in the list to the left, and "
-"then select the model from the right list. If you don´t know which modem you "
+"then select the model from the right list. If you donÂ´t know which modem you "
 "have, you can try out one of the \"Generic\" modems."
 msgstr ""
-"A modem beállításához válaszd ki a gyártót a bal oldali listából, utána "
-"válaszd ki a modellt a jobb oldali listából. Ha nem tudod milyen modemed "
-"van, megpróbálkozhatsz az egyik \"Általános\" modemmel."
+"A modem beÃ¡llÃ­tÃ¡sÃ¡hoz vÃ¡laszd ki a gyÃ¡rtÃ³t a bal oldali listÃ¡bÃ³l, utÃ¡na "
+"vÃ¡laszd ki a modellt a jobb oldali listÃ¡bÃ³l. Ha nem tudod milyen modemed "
+"van, megprÃ³bÃ¡lkozhatsz az egyik \"ÃltalÃ¡nos\" modemmel."
 
 #: modemdb.cpp:151 modemdb.cpp:153 modemdb.cpp:223 modemdb.cpp:238
 msgid "<Generic>"
-msgstr "<Általános>"
+msgstr "<ÃltalÃ¡nos>"
 
 #: modemdb.cpp:218
 msgid "Hayes(tm) compatible modem"

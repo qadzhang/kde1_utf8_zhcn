@@ -1,16 +1,16 @@
 # Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1998
+# JaÃ±-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1998
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt-1.1\n"
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-04-20 11:38+0200\n"
-"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
+"Last-Translator: JaÃ±-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.C:426
@@ -19,7 +19,7 @@ msgstr "Dibabit rizh ar mod-liv"
 
 #: main.C:432
 msgid "Add characters to word class"
-msgstr "Ouzhpennañ arouezennoù er renkad word"
+msgstr "OuzhpennaÃ± arouezennoÃ¹ er renkad word"
 
 #: main.C:438
 msgid "The backspace key will send a"
@@ -91,23 +91,23 @@ msgstr "Letrin Linu&x"
 
 #: main.C:657
 msgid "&Custom Colors"
-msgstr "Livioù &diouzhouc'h"
+msgstr "LivioÃ¹ &diouzhouc'h"
 
 #: main.C:665 main.C:969
 msgid "Hide &Menubar"
-msgstr "Kuzhat Barrenn ar &Lañser"
+msgstr "Kuzhat Barrenn ar &LaÃ±ser"
 
 #: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
-msgstr "Diskouez Barrenn ar &Lañser"
+msgstr "Diskouez Barrenn ar &LaÃ±ser"
 
 #: main.C:668 main.C:979
 msgid "Secure &keyboard"
-msgstr "Prennañ ar s&tokellaoueg"
+msgstr "PrennaÃ± ar s&tokellaoueg"
 
 #: main.C:670
 msgid "Scroll&bar"
-msgstr "&Barrenn dibunañ"
+msgstr "&Barrenn dibunaÃ±"
 
 #: main.C:671
 msgid "&Font size"
@@ -131,11 +131,11 @@ msgstr "Nodrezh..."
 
 #: main.C:676
 msgid "Enable &hotkeys"
-msgstr "A&otren berradennoù"
+msgstr "A&otren berradennoÃ¹"
 
 #: main.C:679
 msgid "Save &Options"
-msgstr "Enrollañ an &Dibaboù"
+msgstr "EnrollaÃ± an &DibaboÃ¹"
 
 #: main.C:688
 msgid ""
@@ -165,11 +165,11 @@ msgstr "&Diskouez"
 
 #: main.C:975
 msgid "Unsecure &keyboard"
-msgstr "Dibrennañ ar s&tokellaoueg"
+msgstr "DibrennaÃ± ar s&tokellaoueg"
 
 #: main.C:986
 msgid "Terminal Options"
-msgstr "Dibaboù an dermenel"
+msgstr "DibaboÃ¹ an dermenel"
 
 #: main.C:1152
 msgid "Hint"
@@ -180,7 +180,7 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Al livioù nevez a dalvezo\n"
+"Al livioÃ¹ nevez a dalvezo\n"
 "pa vo dibrenn ar stokellaoueg."
 
 #: main.C:1474
@@ -191,22 +191,22 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"Gwirioù eilañ(C) 1996, 1997 Matthias Ettrich\n"
-"Gwirioù eilañ (C) 1997 M G Berberich\n"
+"GwirioÃ¹ eilaÃ±(C) 1996, 1997 Matthias Ettrich\n"
+"GwirioÃ¹ eilaÃ± (C) 1997 M G Berberich\n"
 "Kendarvanerezh termenell evit an Endro Gorretaol KDE\n"
 "diazezet war rxvt-2.08 digant Robert Nation\n"
 "\n"
 
 #: main.C:1478
 msgid "Permitted arguments are:\n"
-msgstr "An arventennoù aotreet zo :\n"
+msgstr "An arventennoÃ¹ aotreet zo :\n"
 
 #: main.C:1479
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <command> <arv> ...    sevbeniñ urzhiad gant arv - a rank bezañ an\n"
-"                          arventenn diwezhañ\n"
+"-e <command> <arv> ...    sevbeniÃ± urzhiad gant arv - a rank bezaÃ± an\n"
+"                          arventenn diwezhaÃ±\n"
 
 #: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
@@ -214,7 +214,7 @@ msgstr "-display <name>           resisaat an diskouez (titourer)\n"
 
 #: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <spec>       mentrezh ar prenestr vt kentañ\n"
+msgstr "-vt_geometry <spec>       mentrezh ar prenestr vt kentaÃ±\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
@@ -242,15 +242,15 @@ msgstr "-vt_size <ment>           tiny, small, normal, large, huge\n"
 
 #: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    keflunia kvt da varmouzañ letrin linux\n"
+msgstr "-linux                    keflunia kvt da varmouzaÃ± letrin linux\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar               kuzat barrenn al lañser\n"
+msgstr "-no_menubar               kuzat barrenn al laÃ±ser\n"
 
 #: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar             kuzaat ar varrenn dibunañ\n"
+msgstr "-no_scrollbar             kuzaat ar varrenn dibunaÃ±\n"
 
 #: main.C:1491
 msgid ""
@@ -266,7 +266,7 @@ msgstr "-tn <TERM>                Rizh an termenell. xterm dre ziouer.\n"
 
 #: main.C:1494
 msgid "-C                        Capture system console message\n"
-msgstr "-C                        Tapout kemennadoù letrin ar reizhad\n"
+msgstr "-C                        Tapout kemennadoÃ¹ letrin ar reizhad\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
@@ -277,8 +277,8 @@ msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        seveniñ mod 7 bit\n"
-"-8                        seveniñ mod 8 bit\n"
+"-7                        seveniÃ± mod 7 bit\n"
+"-8                        seveniÃ± mod 8 bit\n"
 
 #: main.C:1498
 msgid ""
@@ -286,8 +286,8 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       loc'hañ shell kvt evel ul login shell\n"
-"-ls-                      loc'hañ shell kvt evel un nann-login shell\n"
+"-ls                       loc'haÃ± shell kvt evel ul login shell\n"
+"-ls-                      loc'haÃ± shell kvt evel un nann-login shell\n"
 "                          (dre ziouer)\n"
 
 #: main.C:1500
@@ -295,12 +295,12 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arv>               merañ Meta evel araogenn ESCAPE, 8vet BIT\n"
+"-meta <arv>               meraÃ± Meta evel araogenn ESCAPE, 8vet BIT\n"
 "                          termenet, pe na ober van\n"
 
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <niver>               enrollañ <niver> linenn er skurzer dibunañ\n"
+msgstr "-sl <niver>               enrollaÃ± <niver> linenn er skurzer dibunaÃ±\n"
 
 #: main.C:1502
 msgid ""
@@ -309,10 +309,10 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <stokarouez>      arverañ berradenn alt-stokarouez evit dibunañ\n"
+"-pageup <stokarouez>      arveraÃ± berradenn alt-stokarouez evit dibunaÃ±\n"
 "                          davet gorre ar skurzer\n"
-"-pagedown <stokarouez>    arverañ berradenn alt-stokarouez evit dibunañ\n"
-"                          davet traoñ ar skurzer\n"
+"-pagedown <stokarouez>    arveraÃ± berradenn alt-stokarouez evit dibunaÃ±\n"
+"                          davet traoÃ± ar skurzer\n"
 
 #: main.C:1506
 msgid ""

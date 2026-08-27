@@ -1,15 +1,15 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Karl Backstrˆm <backstrom@kde.org>, 1998.
+# Karl Backstr√∂m <backstrom@kde.org>, 1998.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-07-20 15:16+0200\n"
 "PO-Revision-Date: 1998-12-29 22:10+0100\n"
-"Last-Translator: Karl Backstrˆm <backstrom@kde.org>\n"
+"Last-Translator: Karl Backstr√∂m <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:55
@@ -22,11 +22,11 @@ msgstr "Telefons&varare"
 
 #: main.cpp:64
 msgid "usage: kcmktalkd [-init | soundpage | answmachpage]\n"
-msgstr "anv‰ndning: kcmktalkd [-init | soundpage | answmachpage]\n"
+msgstr "anv√§ndning: kcmktalkd [-init | soundpage | answmachpage]\n"
 
 #: main.cpp:100
 msgid "KTalkd Configuration"
-msgstr "KTalkd-inst‰llningar"
+msgstr "KTalkd-inst√§llningar"
 
 #: soundpage.cpp:47
 msgid "&Announcement program"
@@ -46,7 +46,7 @@ msgstr "Ljud&fil"
 
 #: soundpage.cpp:62
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Fler Wav-filer kan sl‰ppas ˆver ljudlistan"
+msgstr "Fler Wav-filer kan sl√§ppas √∂ver ljudlistan"
 
 #: soundpage.cpp:77
 msgid "&Test"
@@ -61,7 +61,7 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Tyv‰rr, den h‰r typen av URL ‰r fortfarande ogiltig fˆr KDE system ljuds"
+"Tyv√§rr, den h√§r typen av URL √§r fortfarande ogiltig f√∂r KDE system ljuds"
 "modulen"
 
 #: soundpage.cpp:165
@@ -104,29 +104,29 @@ msgstr "&E-post-adress"
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
-msgstr "E-post-&‰mne"
+msgstr "E-post-&√§mne"
 
 #: answmachpage.cpp:54
 #, c-format
 msgid "Use %s for the caller name"
-msgstr "Anv‰nd %s som avs‰ndarnamn"
+msgstr "Anv√§nd %s som avs√§ndarnamn"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "Skicka &fˆrsta raden"
+msgstr "Skicka &f√∂rsta raden"
 
 #: answmachpage.cpp:64
 #, c-format
 msgid "Use first %s for caller name, and second %s for caller hostname"
-msgstr "Anv‰nd fˆrst %s som avs‰ndarnamn, och sedan %s som avs‰ndarv‰rdnamn"
+msgstr "Anv√§nd f√∂rst %s som avs√§ndarnamn, och sedan %s som avs√§ndarv√§rdnamn"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&H‰mta brev ‰ven fast det inte fanns nÂgra meddelanden kvar"
+msgstr "&H√§mta brev √§ven fast det inte fanns n√•gra meddelanden kvar"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Baner att visa dÂ telefonsvararen startar :"
+msgstr "&Baner att visa d√• telefonsvararen startar :"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -134,16 +134,16 @@ msgid ""
 "Please leave a message to be delivered via E-Mail.\n"
 "Just start typing and when you're done, exit normally."
 msgstr ""
-"Personen som du frÂgade att fÂ tala med svarade inte.\n"
-"Var v‰nlig l‰mna ett meddelande som kommer att skickas med E-post.\n"
-"Skriv bara in meddelandet och n‰r du ‰r klar, avsluta som vanlig."
+"Personen som du fr√•gade att f√• tala med svarade inte.\n"
+"Var v√§nlig l√§mna ett meddelande som kommer att skickas med E-post.\n"
+"Skriv bara in meddelandet och n√§r du √§r klar, avsluta som vanlig."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
 msgid "Message from %s"
-msgstr "Meddelande frÂn %s"
+msgstr "Meddelande fr√•n %s"
 
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Meddelande kvar i telefonsvararen, frÂn %s@%s"
+msgstr "Meddelande kvar i telefonsvararen, fr√•n %s@%s"

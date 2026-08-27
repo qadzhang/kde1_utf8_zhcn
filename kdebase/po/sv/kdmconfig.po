@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: main.cpp:84
@@ -24,7 +24,7 @@ msgstr "&Bakgrund"
 
 #: main.cpp:95
 msgid "&Users"
-msgstr "&Anv‰ndare"
+msgstr "&Anv√§ndare"
 
 #: main.cpp:98
 msgid "&Sessions"
@@ -34,7 +34,7 @@ msgstr "&Sessioner"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
-"anv‰ndning: kdmconfig [-init] {appearance,font,background,sessions,users}]\n"
+"anv√§ndning: kdmconfig [-init] {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
@@ -45,16 +45,16 @@ msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"Tyv‰rr, du har inte l‰s/skriv-r‰ttigheter\n"
-"till KDMs inst‰llningsfil."
+"Tyv√§rr, du har inte l√§s/skriv-r√§ttigheter\n"
+"till KDMs inst√§llningsfil."
 
 #: main.cpp:154
 msgid "Missing privileges"
-msgstr "Saknade r‰ttigheter"
+msgstr "Saknade r√§ttigheter"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "V‰lkomsttext:"
+msgstr "V√§lkomsttext:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -62,11 +62,11 @@ msgstr "KDM-logo:"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
-msgstr "Klicka eller sl‰pp en blid h‰r"
+msgstr "Klicka eller sl√§pp en blid h√§r"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "Gr‰nssnittsstil"
+msgstr "Gr√§nssnittsstil"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
@@ -78,18 +78,18 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr "SprÂk"
+msgstr "Spr√•k"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr "SprÂk:"
+msgstr "Spr√•k:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Det uppstod ett fel n‰r bilden laddades:\n"
+"Det uppstod ett fel n√§r bilden laddades:\n"
 ">"
 
 #: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
@@ -106,12 +106,12 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Det uppstod ett fel n‰r bilden sparades:\n"
+"Det uppstod ett fel n√§r bilden sparades:\n"
 ">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
-msgstr "Tyv‰rr, men\n"
+msgstr "Tyv√§rr, men\n"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
@@ -127,11 +127,11 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"V‰nligen anv‰nd filer med dessa till‰g\n"
+"V√§nligen anv√§nd filer med dessa till√§g\n"
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
-msgstr "Felaktigt filtill‰g"
+msgstr "Felaktigt filtill√§g"
 
 #: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
@@ -143,7 +143,7 @@ msgstr ""
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "V‰lj typsnitt"
+msgstr "V√§lj typsnitt"
 
 #: kdm-font.cpp:50
 msgid "Example"
@@ -151,11 +151,11 @@ msgstr "Exempel"
 
 #: kdm-font.cpp:52
 msgid "Change font..."
-msgstr "ƒndra typsnitt..."
+msgstr "√Ñndra typsnitt..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
-msgstr "V‰lkomsttext"
+msgstr "V√§lkomsttext"
 
 #: kdm-font.cpp:58
 msgid "Fail"
@@ -167,11 +167,11 @@ msgstr "Standard"
 
 #: kdm-font.cpp:157
 msgid "Greeting font"
-msgstr "Typsnitt fˆr v‰lkomsttext"
+msgstr "Typsnitt f√∂r v√§lkomsttext"
 
 #: kdm-font.cpp:161
 msgid "Fail font"
-msgstr "Typsnitt fˆr misslyckat inloggningsfˆrsˆk"
+msgstr "Typsnitt f√∂r misslyckat inloggningsf√∂rs√∂k"
 
 #: kdm-font.cpp:165
 msgid "Standard font"
@@ -179,15 +179,15 @@ msgstr "Standardtypsnitt"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr "Fˆrhandsgranskning"
+msgstr "F√∂rhandsgranskning"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
-msgstr "F‰rg:"
+msgstr "F√§rg:"
 
 #: kdm-bgnd.cpp:101
 msgid "Solid Color"
-msgstr "Enf‰rgad"
+msgstr "Enf√§rgad"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
@@ -215,39 +215,39 @@ msgstr "Centrerad"
 
 #: kdm-bgnd.cpp:186
 msgid "Scale"
-msgstr "Fˆrstorad"
+msgstr "F√∂rstorad"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr "÷verst till v‰nster"
+msgstr "√ñverst till v√§nster"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr "÷verst till hˆger"
+msgstr "√ñverst till h√∂ger"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr "Nederst till v‰nster"
+msgstr "Nederst till v√§nster"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr "Nederst till hˆger"
+msgstr "Nederst till h√∂ger"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr "Utspˆkad"
+msgstr "Utsp√∂kad"
 
 #: kdm-users.cpp:48
 msgid "All users"
-msgstr "Alla anv‰ndare"
+msgstr "Alla anv√§ndare"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "Valda anv‰ndare"
+msgstr "Valda anv√§ndare"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "Gˆmda anv‰ndare"
+msgstr "G√∂mda anv√§ndare"
 
 #: kdm-users.cpp:79
 msgid ""
@@ -255,27 +255,27 @@ msgid ""
 "selected users"
 msgstr ""
 "Visa bara\n"
-"valda anv‰ndare"
+"valda anv√§ndare"
 
 #: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Visa alla anv‰ndare\n"
-" som inte ‰r gˆmda"
+"Visa alla anv√§ndare\n"
+" som inte √§r g√∂mda"
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "Visa anv‰ndare"
+msgstr "Visa anv√§ndare"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
-msgstr "Sortera anv‰ndare"
+msgstr "Sortera anv√§ndare"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
-msgstr "Ingen anv‰ndare vald"
+msgstr "Ingen anv√§ndare vald"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
@@ -283,7 +283,7 @@ msgstr "Spara bild som standardbild?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "TillÂt att st‰nga av"
+msgstr "Till√•t att st√§nga av"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -295,7 +295,7 @@ msgstr "Endas root"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "Endast frÂn konsolen"
+msgstr "Endast fr√•n konsolen"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
@@ -303,7 +303,7 @@ msgstr "Kommandon"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "St‰ng av"
+msgstr "St√§ng av"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
@@ -319,7 +319,7 @@ msgstr "Ny typ"
 
 #: kdm-sess.cpp:89
 msgid "Available types"
-msgstr "Tillg‰ngliga typer"
+msgstr "Tillg√§ngliga typer"
 
 #: klangcombo.cpp:133
 msgid "without name!"

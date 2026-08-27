@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: KAMenu.cpp:75
@@ -24,7 +24,7 @@ msgstr "&Avaa hakemisto"
 
 #: KAMenu.cpp:77 KAView.cpp:155
 msgid "&Download..."
-msgstr "&Siirr‰..."
+msgstr "&Siirr√§..."
 
 #: KAMenu.cpp:80
 msgid "&Load List..."
@@ -56,7 +56,7 @@ msgstr "Osajoukko &merkkikoko ei vaikuta"
 
 #: KAMenu.cpp:103
 msgid "&Regular expression"
-msgstr "&S‰‰nnˆllinen lause"
+msgstr "&S√§√§nn√∂llinen lause"
 
 #: KAMenu.cpp:104 KASettings.cpp:422
 msgid "Exact, then substring"
@@ -68,7 +68,7 @@ msgstr "Tarkka, sitten osajoukko ilman merkkikokoa"
 
 #: KAMenu.cpp:106 KASettings.cpp:424
 msgid "Exact, then regular expression"
-msgstr "Tarkka, sitten s‰‰nnˆllinen lause"
+msgstr "Tarkka, sitten s√§√§nn√∂llinen lause"
 
 #: KAMenu.cpp:114
 msgid "n&ormal"
@@ -84,7 +84,7 @@ msgstr "piene&mpi"
 
 #: KAMenu.cpp:117
 msgid "&even more nice"
-msgstr "&eritt‰in pieni"
+msgstr "&eritt√§in pieni"
 
 #: KAMenu.cpp:118
 msgid "n&icest"
@@ -92,7 +92,7 @@ msgstr "pien&in"
 
 #: KAMenu.cpp:125
 msgid "Show &File discription"
-msgstr "N‰yt‰ &tiedostokuvaukset"
+msgstr "N√§yt√§ &tiedostokuvaukset"
 
 #: KAMenu.cpp:128
 msgid "Archie&server"
@@ -100,7 +100,7 @@ msgstr "Archie -&palvelin"
 
 #: KAMenu.cpp:129
 msgid "Search&mode"
-msgstr "Etsint‰&tila"
+msgstr "Etsint√§&tila"
 
 #: KAMenu.cpp:130
 msgid "&Nicelevel"
@@ -120,7 +120,7 @@ msgstr "&polulle"
 
 #: KAMenu.cpp:141
 msgid "for &Hostname"
-msgstr "&is‰nn‰lle"
+msgstr "&is√§nn√§lle"
 
 #: KAMenu.cpp:143
 msgid "&STOP"
@@ -128,7 +128,7 @@ msgstr "&STOP"
 
 #: KAMenu.cpp:160
 msgid "by &Hostname"
-msgstr "&is‰nn‰n mukaan"
+msgstr "&is√§nn√§n mukaan"
 
 #: KAMenu.cpp:161
 msgid "by &Domain"
@@ -136,7 +136,7 @@ msgstr "&verkkoalueen mukaan"
 
 #: KAMenu.cpp:162
 msgid "by D&ate"
-msgstr "p&‰iv‰yksen mukaan"
+msgstr "p&√§iv√§yksen mukaan"
 
 #: KAMenu.cpp:163
 msgid "by &Filesize"
@@ -150,7 +150,7 @@ msgstr "KArchie ver. "
 msgid ""
 "\n"
 "\n"
-"by Jˆrg Habenicht <j.habenicht@europemail.com>\n"
+"by J√∂rg Habenicht <j.habenicht@europemail.com>\n"
 "\n"
 "based on the work of:\n"
 "  - archie prospero client by\n"
@@ -163,16 +163,16 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Jˆrg Habenicht <j.habenicht@europemail.com>\n"
+"J√∂rg Habenicht <j.habenicht@europemail.com>\n"
 "\n"
-"perustuu seuraavien henkilˆiden tyˆhˆn:\n"
+"perustuu seuraavien henkil√∂iden ty√∂h√∂n:\n"
 "  - archie prospero client\n"
 "      Clifford Neuman ja\n"
 "      Brendan Kehoe (brendan@cygnus.com)\n"
 "  - ja xarchie\n"
 "      George Ferguson (ferguson@cs.rochester.edu)\n"
 "(Katso README ja copyright.h tiedostoja).\n"
-"Tekij‰n oma ohjelmakoodi on GPL:n alla."
+"Tekij√§n oma ohjelmakoodi on GPL:n alla."
 
 #: KAMenu.cpp:184
 msgid "&Settings"
@@ -184,7 +184,7 @@ msgstr "&Haku"
 
 #: KAMenu.cpp:186
 msgid "S&ort"
-msgstr "&J‰rjestys"
+msgstr "&J√§rjestys"
 
 #: KAQuery.cpp:180
 msgid "Query setup"
@@ -208,11 +208,11 @@ msgstr "En saa avattua paikallista UDP porttia"
 
 #: KAQuery.cpp:299
 msgid "Can't resolve hostname"
-msgstr "En saa selvitetty‰ is‰nn‰n nime‰"
+msgstr "En saa selvitetty√§ is√§nn√§n nime√§"
 
 #: KAQuery.cpp:300
 msgid "Didn't send entire message"
-msgstr "En saanut l‰hetetty‰ koko viesti‰"
+msgstr "En saanut l√§hetetty√§ koko viesti√§"
 
 #: KAQuery.cpp:301
 msgid "Timed out"
@@ -220,15 +220,15 @@ msgstr "Aikavalvonta"
 
 #: KAQuery.cpp:302
 msgid "Recvfrom failed"
-msgstr "Recvfrom ep‰onnistui"
+msgstr "Recvfrom ep√§onnistui"
 
 #: KAQuery.cpp:303
 msgid "Reply: sendto failed"
-msgstr "Vastaus: sendto ep‰onnistui"
+msgstr "Vastaus: sendto ep√§onnistui"
 
 #: KAQuery.cpp:304
 msgid "Link exists with same name"
-msgstr "Samalla nimell‰ on linkki"
+msgstr "Samalla nimell√§ on linkki"
 
 #: KAQuery.cpp:306
 msgid "Link already exists"
@@ -240,11 +240,11 @@ msgstr "Korvaan olemassaolevan linkin"
 
 #: KAQuery.cpp:308
 msgid "Prv entry not in dir->ulinks"
-msgstr "Prv tietuetta ei ole dir->ulinks:ss‰"
+msgstr "Prv tietuetta ei ole dir->ulinks:ss√§"
 
 #: KAQuery.cpp:309
 msgid "Temporary not found"
-msgstr "V‰liaikaistiedostoa ei lˆydy"
+msgstr "V√§liaikaistiedostoa ei l√∂ydy"
 
 #: KAQuery.cpp:310
 msgid "Namespace not closed w/ object::"
@@ -256,7 +256,7 @@ msgstr "Ei aliasta nimitilalle NS#:"
 
 #: KAQuery.cpp:312
 msgid "Specified namespace not found"
-msgstr "M‰‰ritetty‰ nimitilaa ei lˆydy"
+msgstr "M√§√§ritetty√§ nimitilaa ei l√∂ydy"
 
 #: KAQuery.cpp:313
 msgid "File access method not supported"
@@ -264,7 +264,7 @@ msgstr "Tiedostonhakua ei tueta"
 
 #: KAQuery.cpp:314
 msgid "Delete cached copy on close"
-msgstr "Tuhoa v‰limuistikopio lopetettaessa"
+msgstr "Tuhoa v√§limuistikopio lopetettaessa"
 
 #: KAQuery.cpp:315
 msgid "Unable to retrieve file"
@@ -276,15 +276,15 @@ msgstr "Hakemisto on jo olemassa"
 
 #: KAQuery.cpp:319 KAQuery.cpp:337
 msgid "Link with name already exists"
-msgstr "Linkki nimell‰ on jo olemassa"
+msgstr "Linkki nimell√§ on jo olemassa"
 
 #: KAQuery.cpp:320
 msgid "Not a virtual system"
-msgstr "Ei virtuaalinen j‰rjestelm‰"
+msgstr "Ei virtuaalinen j√§rjestelm√§"
 
 #: KAQuery.cpp:321
 msgid "Can't find directory"
-msgstr "En lˆyd‰ hakemistoa"
+msgstr "En l√∂yd√§ hakemistoa"
 
 #: KAQuery.cpp:322
 msgid "Not a directory name"
@@ -292,7 +292,7 @@ msgstr "Ei hakemiston nimi"
 
 #: KAQuery.cpp:323
 msgid "Object not found"
-msgstr "Objektia ei lˆydy"
+msgstr "Objektia ei l√∂ydy"
 
 #: KAQuery.cpp:324
 msgid "Object has moved"
@@ -300,19 +300,19 @@ msgstr "Objekti on siirtynyt"
 
 #: KAQuery.cpp:325
 msgid "File not found"
-msgstr "Tiedostoa ei lˆydy"
+msgstr "Tiedostoa ei l√∂ydy"
 
 #: KAQuery.cpp:326
 msgid "Directory in path not found"
-msgstr "Hakemistopolkua ei lˆydy"
+msgstr "Hakemistopolkua ei l√∂ydy"
 
 #: KAQuery.cpp:327
 msgid "Symbolic links nested too deep"
-msgstr "Liian monta sis‰kk‰ist‰ linkki‰"
+msgstr "Liian monta sis√§kk√§ist√§ linkki√§"
 
 #: KAQuery.cpp:328
 msgid "Can't read environment"
-msgstr "En voi lukea ymp‰ristˆ‰"
+msgstr "En voi lukea ymp√§rist√∂√§"
 
 #: KAQuery.cpp:329
 msgid "Can't traverse an external file"
@@ -332,7 +332,7 @@ msgstr "Ei tunnistettu"
 
 #: KAQuery.cpp:333
 msgid "Not found"
-msgstr "Ei lˆydy"
+msgstr "Ei l√∂ydy"
 
 #: KAQuery.cpp:334
 msgid "Bad version number"
@@ -360,7 +360,7 @@ msgstr "Protokollavirhe"
 
 #: KAQuery.cpp:341
 msgid "Unspecified server failure"
-msgstr "M‰‰rittelem‰yˆn palvelinvirhe"
+msgstr "M√§√§rittelem√§y√∂n palvelinvirhe"
 
 #: KAQuery.cpp:343
 msgid "Generic Failure"
@@ -372,7 +372,7 @@ msgstr "Ei varoitusta"
 
 #: KAQuery.cpp:348
 msgid "You are using an old version of this program"
-msgstr "K‰yt‰t ohjelman vanhaa versiota"
+msgstr "K√§yt√§t ohjelman vanhaa versiota"
 
 #: KAQuery.cpp:349
 msgid "From server: "
@@ -384,7 +384,7 @@ msgstr "Tuntematon vastausrivi palvelimelta"
 
 #: KAQuery.cpp:409
 msgid "Query running"
-msgstr "Haku k‰ynniss‰"
+msgstr "Haku k√§ynniss√§"
 
 #: KAQuery.cpp:453
 msgid "Query finished"
@@ -392,7 +392,7 @@ msgstr "Haku valmis"
 
 #: KASettings.cpp:59
 msgid "&Host"
-msgstr "&Is‰nt‰"
+msgstr "&Is√§nt√§"
 
 #: KASettings.cpp:72
 msgid "&Timeout (seconds)"
@@ -424,7 +424,7 @@ msgstr "Osajoukko merkkikoko ei vaikuta"
 
 #: KASettings.cpp:421
 msgid "Regular expression"
-msgstr "S‰‰nnˆllinen lause"
+msgstr "S√§√§nn√∂llinen lause"
 
 #: KASettings.cpp:423
 msgid "Exact, then substring case insensitive"
@@ -444,7 +444,7 @@ msgstr "pienempi"
 
 #: KASettings.cpp:430
 msgid "Even more nice"
-msgstr "eritt‰in pieni"
+msgstr "eritt√§in pieni"
 
 #: KASettings.cpp:431
 msgid "Nicest"
@@ -476,7 +476,7 @@ msgstr "    0. yritys"
 
 #: KAStatusBar.cpp:52
 msgid "Host: none                               "
-msgstr "Is‰nt‰: ei mik‰‰n                        "
+msgstr "Is√§nt√§: ei mik√§√§n                        "
 
 #: KAStatusBar.cpp:53
 msgid "Status: ready                        "
@@ -490,7 +490,7 @@ msgstr "Tila: %s"
 #: KAStatusBar.cpp:91
 #, c-format
 msgid "Hosts: %s"
-msgstr "Is‰nt‰: %s"
+msgstr "Is√§nt√§: %s"
 
 #: KAStatusBar.cpp:101
 #, c-format
@@ -517,7 +517,7 @@ msgstr "&Hakusana"
 
 #: KAView.cpp:134
 msgid "Host"
-msgstr "Is‰nt‰"
+msgstr "Is√§nt√§"
 
 #: KAView.cpp:135
 msgid "Path"
@@ -525,7 +525,7 @@ msgstr "Polku"
 
 #: KAView.cpp:268
 msgid "Host:"
-msgstr "Is‰nt‰:"
+msgstr "Is√§nt√§:"
 
 #: KAView.cpp:270
 msgid "Path:"
@@ -545,7 +545,7 @@ msgstr "Tila:"
 
 #: KAView.cpp:278
 msgid "Date:"
-msgstr "P‰iv‰:"
+msgstr "P√§iv√§:"
 
 #: KArchie.cpp:441 KArchie.cpp:483
 #, c-format
@@ -574,7 +574,7 @@ msgstr "KArchie: viallinen URL"
 
 #: KArchie.cpp:744
 msgid "KArchie: Wrong fileselection"
-msgstr "KArchie: V‰‰r‰ tiedostovalinta"
+msgstr "KArchie: V√§√§r√§ tiedostovalinta"
 
 #: KArchie.cpp:745
 msgid "The selected file is not writeable"

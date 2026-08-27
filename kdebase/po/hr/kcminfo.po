@@ -9,23 +9,23 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: info.cpp:50
 #, c-format
-msgid "screen #%d"
-msgstr "zaslon #%"
+#~ msgid "screen #%d"
+#~ msgstr "zaslon #%"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  velièina            : %dx%d piksela (%dx%d mm)\n"
+msgstr "  veliÄina            : %dx%d piksela (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  rezolucija\t      : %dx%d toèaka po inèu\n"
+msgstr "  rezolucija\t      : %dx%d toÄaka po inÄu\n"
 
 #: info.cpp:61
 #, c-format
@@ -40,22 +40,22 @@ msgstr "ime prikaza\t      : %s"
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "inaèica               : %i.%i"
+msgstr "inaÄica               : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "proizvoğaèev niz      : %s"
+msgstr "proizvoÄ‘aÄev niz      : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "proizvoğaèevo izdanje : %i"
+msgstr "proizvoÄ‘aÄevo izdanje : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "uobièajeni broj zaslona: %i"
+msgstr "uobiÄajeni broj zaslona: %i"
 
 #: info.cpp:95
 #, c-format
@@ -70,7 +70,7 @@ msgid ""
 msgstr ""
 "Nema dostupnih informacija\n"
 " ili\n"
-"ovaj sistem za sada nije podr¾an :-("
+"ovaj sistem za sada nije podrÅ¾an :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -88,7 +88,7 @@ msgstr "Ahh ne mogu otvoriti fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "Ureğaj"
+msgstr "UreÄ‘aj"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
@@ -124,7 +124,7 @@ msgstr "DMA-kanal"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "kori¹ten od "
+msgstr "koriÅ¡ten od "
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
@@ -160,7 +160,7 @@ msgstr "&Zvuk"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "&Ureğaji"
+msgstr "&UreÄ‘aji"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -172,7 +172,7 @@ msgstr "P&articije"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr "&X-poslu¾itelj"
+msgstr "&X-posluÅ¾itelj"
 
 #: main.cpp:120
 msgid ""
@@ -181,8 +181,8 @@ msgid ""
 "erver}]\n"
 msgstr ""
 "uporaba: kcminfo [-init | "
-"{memorija,procesor,interupti,dma,ioportovi,pci,zvuk,ureğaji,scsi,particije,xp"
-"oslu¾itelj}]\n"
+"{memorija,procesor,interupti,dma,ioportovi,pci,zvuk,ureÄ‘aji,scsi,particije,xp"
+"osluÅ¾itelj}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -202,7 +202,7 @@ msgstr "Dijeljena memorija"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "Meğumemorija (buffer)"
+msgstr "MeÄ‘umemorija (buffer)"
 
 #: memory.cpp:49
 msgid "Swap memory"

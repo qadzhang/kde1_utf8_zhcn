@@ -7,11 +7,11 @@ msgstr ""
 "PO-Revision-Date: 1999-03-25 01:20+0000\n"
 "Last-Translator: Bjarni R. Einarsson <bre@netverjar.is>\n"
 "Language-Team: isn\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 
 #: main.cpp:84
 msgid "&Appearance"
-msgstr "Út&lit"
+msgstr "Ãšt&lit"
 
 #: main.cpp:92
 msgid "&Background"
@@ -39,15 +39,15 @@ msgstr "Stillingar KDM"
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr "Şú hefur ekki les-/skrifheimild ağ KDM-stilliskránni."
+msgstr "ÃÃº hefur ekki les-/skrifheimild aÃ° KDM-stilliskrÃ¡nni."
 
 #: main.cpp:154
 msgid "Missing privileges"
-msgstr "Réttindi vantar"
+msgstr "RÃ©ttindi vantar"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Kveğjustrengur:"
+msgstr "KveÃ°justrengur:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -55,11 +55,11 @@ msgstr "Merki KDM:"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
-msgstr "Smelltu hér eğa slepptu mynd"
+msgstr "Smelltu hÃ©r eÃ°a slepptu mynd"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "Stíll viğmóts:"
+msgstr "StÃ­ll viÃ°mÃ³ts:"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
@@ -71,18 +71,18 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr "Tungumál"
+msgstr "TungumÃ¡l"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr "Tungumál:"
+msgstr "TungumÃ¡l:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Villa kom upp viğ lestur myndarinnar:\n"
+"Villa kom upp viÃ° lestur myndarinnar:\n"
 ">"
 
 #: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
@@ -99,12 +99,12 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Ekki tókst ağ vista myndina:\n"
+"Ekki tÃ³kst aÃ° vista myndina:\n"
 ">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
-msgstr "Mér şykir şağ leitt, en\n"
+msgstr "MÃ©r Ã¾ykir Ã¾aÃ° leitt, en\n"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
@@ -112,7 +112,7 @@ msgid ""
 "does not seem to be an image file"
 msgstr ""
 "\n"
-"virğist ekki vera myndaskrá"
+"virÃ°ist ekki vera myndaskrÃ¡"
 
 #: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
@@ -120,11 +120,11 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Notağu skrár meğ şessar endingar\n"
+"NotaÃ°u skrÃ¡r meÃ° Ã¾essar endingar\n"
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
-msgstr "Óviğeigandi skráarnafnsending"
+msgstr "Ã“viÃ°eigandi skrÃ¡arnafnsending"
 
 #: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
@@ -132,7 +132,7 @@ msgid ""
 "It will not be saved..."
 msgstr ""
 "<\n"
-"Şağ verğur ekki vistağ..."
+"ÃaÃ° verÃ°ur ekki vistaÃ°..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
@@ -140,7 +140,7 @@ msgstr "Veldu letur"
 
 #: kdm-font.cpp:50
 msgid "Example"
-msgstr "Dæmi"
+msgstr "DÃ¦mi"
 
 #: kdm-font.cpp:52
 msgid "Change font..."
@@ -148,11 +148,11 @@ msgstr "Breyta letri..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
-msgstr "Kveğja"
+msgstr "KveÃ°ja"
 
 #: kdm-font.cpp:58
 msgid "Fail"
-msgstr "Mistök"
+msgstr "MistÃ¶k"
 
 #: kdm-font.cpp:59
 msgid "Standard"
@@ -160,7 +160,7 @@ msgstr "Venjulegt"
 
 #: kdm-font.cpp:157
 msgid "Greeting font"
-msgstr "Letur kveğju"
+msgstr "Letur kveÃ°ju"
 
 #: kdm-font.cpp:161
 msgid "Fail font"
@@ -172,7 +172,7 @@ msgstr "Venjulegt letur"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr "Forsın"
+msgstr "ForsÃ½n"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
@@ -184,15 +184,15 @@ msgstr "Heilir litir"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr "Lárétt blöndun"
+msgstr "LÃ¡rÃ©tt blÃ¶ndun"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr "Lóğrétt blöndun"
+msgstr "LÃ³Ã°rÃ©tt blÃ¶ndun"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
-msgstr "Veggfóğur"
+msgstr "VeggfÃ³Ã°ur"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
@@ -200,11 +200,11 @@ msgstr "Ekkert"
 
 #: kdm-bgnd.cpp:176
 msgid "Tile"
-msgstr "Flísalagt"
+msgstr "FlÃ­salagt"
 
 #: kdm-bgnd.cpp:181
 msgid "Center"
-msgstr "Miğjağ"
+msgstr "MiÃ°jaÃ°"
 
 #: kdm-bgnd.cpp:186
 msgid "Scale"
@@ -216,19 +216,19 @@ msgstr "Efst til vinstri"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr "Efst til hægri"
+msgstr "Efst til hÃ¦gri"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr "Neğst til vinstri"
+msgstr "NeÃ°st til vinstri"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr "Neğst til hægri"
+msgstr "NeÃ°st til hÃ¦gri"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr "Fínerí"
+msgstr "FÃ­nerÃ­"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -236,35 +236,35 @@ msgstr "Allir notendur"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "Útvaldir notendur"
+msgstr "Ãštvaldir notendur"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "Ósınilegir notendur"
+msgstr "Ã“sÃ½nilegir notendur"
 
 #: kdm-users.cpp:79
 msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
-"Sına ağeins\n"
-"útvalda notendur"
+"SÃ½na aÃ°eins\n"
+"Ãºtvalda notendur"
 
 #: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Sına alla nema\n"
-"ósınilega notendur"
+"SÃ½na alla nema\n"
+"Ã³sÃ½nilega notendur"
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "Sına notendur"
+msgstr "SÃ½na notendur"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
-msgstr "Rağa notendum"
+msgstr "RaÃ°a notendum"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
@@ -272,23 +272,23 @@ msgstr "Enginn notandi valinn"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
-msgstr "Vista mynd sem sjálfgefna?"
+msgstr "Vista mynd sem sjÃ¡lfgefna?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "Boğiğ upp á ağ slökkva"
+msgstr "BoÃ°iÃ° upp Ã¡ aÃ° slÃ¶kkva"
 
 #: kdm-sess.cpp:57
 msgid "All"
-msgstr "Öllum"
+msgstr "Ã–llum"
 
 #: kdm-sess.cpp:58
 msgid "Root Only"
-msgstr "Bara rót"
+msgstr "Bara rÃ³t"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "Bara af meginskjá"
+msgstr "Bara af meginskjÃ¡"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
@@ -296,11 +296,11 @@ msgstr "Skipanir"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "Slökkt"
+msgstr "SlÃ¶kkt"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
-msgstr "Endurræst"
+msgstr "EndurrÃ¦st"
 
 #: kdm-sess.cpp:77
 msgid "Session types"
@@ -308,11 +308,11 @@ msgstr "Tegundir seta"
 
 #: kdm-sess.cpp:79
 msgid "New type"
-msgstr "Nı tegund"
+msgstr "NÃ½ tegund"
 
 #: kdm-sess.cpp:89
 msgid "Available types"
-msgstr "Tiltækar tegundir"
+msgstr "TiltÃ¦kar tegundir"
 
 #: klangcombo.cpp:133
 msgid "without name!"

@@ -1,7 +1,7 @@
 # KTranslator Generated File
 # Breton version of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1999
+# JaÃ±-Mai Drapier <jdrapier@club-internet.fr>, 1999
 #
 #, fuzzy
 msgid ""
@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: kfloppy-1.1\n"
 "POT-Creation-Date: 1999-03-13 01:55+0100\n"
 "PO-Revision-Date: 1999-03-04 07:10+0100\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Last-Translator: JaÃ±-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8 bit\n"
 
 #: about.cpp:40
@@ -39,7 +39,7 @@ msgstr "Douester :"
 
 #: floppy.cpp:74
 msgid "File System:"
-msgstr "Reizhiad restroù :"
+msgstr "Reizhiad restroÃ¹ :"
 
 #: floppy.cpp:108 floppy.cpp:414
 msgid "Format"
@@ -47,15 +47,15 @@ msgstr "Mentrezh"
 
 #: floppy.cpp:131
 msgid "Quick Erase"
-msgstr "Diverkañ buan"
+msgstr "DiverkaÃ± buan"
 
 #: floppy.cpp:136
 msgid "Full Format"
-msgstr "Mentrezhañ klok"
+msgstr "MentrezhaÃ± klok"
 
 #: floppy.cpp:142
 msgid "Create Label:"
-msgstr "Krouiñ kelig :"
+msgstr "KrouiÃ± kelig :"
 
 #: floppy.cpp:148
 msgid "KDE Floppy"
@@ -83,7 +83,7 @@ msgid ""
 msgstr ""
 "N'hellan ket tizhout %s\n"
 "Bezit sur ez eus deus an trobarzhell, hag oc'h\n"
-"eus an aotre da skrivañ warni."
+"eus an aotre da skrivaÃ± warni."
 
 #: floppy.cpp:339
 msgid ""
@@ -117,11 +117,11 @@ msgstr ""
 
 #: floppy.cpp:430
 msgid "Abort"
-msgstr "Darniñ"
+msgstr "DarniÃ±"
 
 #: floppy.cpp:478
 msgid "Cannot start a new program: fork() failed."
-msgstr "N'hellan ket loc'hañ ur goulev nevez : fork() sac'het"
+msgstr "N'hellan ket loc'haÃ± ur goulev nevez : fork() sac'het"
 
 #: floppy.cpp:578 floppy.cpp:706
 msgid ""
@@ -139,7 +139,7 @@ msgid ""
 "Cannot format: %s\n"
 "%s"
 msgstr ""
-"N'hellan ket  mentrezhañ : %s\n"
+"N'hellan ket  mentrezhaÃ± : %s\n"
 "%s"
 
 #: floppy.cpp:640
@@ -153,7 +153,7 @@ msgid ""
 "Cannot create a filesystem on: %s\n"
 "%s"
 msgstr ""
-"N'hellan ket krouiñ ur reizhiad restroù war : %s\n"
+"N'hellan ket krouiÃ± ur reizhiad restroÃ¹ war : %s\n"
 "%s"
 
 #: floppy.cpp:759
@@ -164,32 +164,32 @@ msgid ""
 "Raw Capacity: %d\n"
 msgstr ""
 "Ar pladennig a zo bet mentrezhet ent reizh.\n"
-"Bloc'hoù merket fall : %d\n"
+"Bloc'hoÃ¹ merket fall : %d\n"
 "Barr diaoz  : %d\n"
 
 #: floppy.cpp:780
 msgid "All files were sucessfully erased."
-msgstr "An holl restroù a zo bet diverket ent reizh."
+msgstr "An holl restroÃ¹ a zo bet diverket ent reizh."
 
 #: floppy.cpp:838
 msgid "Creating Filesystem ..."
-msgstr "O krouiñ ur reizhiad restroù..."
+msgstr "O krouiÃ± ur reizhiad restroÃ¹..."
 
 #: floppy.cpp:842
 msgid "Verifying ..."
-msgstr "O wiriañ ..."
+msgstr "O wiriaÃ± ..."
 
 #: floppy.cpp:887
 msgid ""
 "Cannot start a new program\n"
 "fork() failed."
 msgstr ""
-"N'hellan ket loc'hañ ur goulev nevez\n"
+"N'hellan ket loc'haÃ± ur goulev nevez\n"
 "fork() sac'het."
 
 #: floppy.cpp:913
 msgid "Error while trying to determine whether floppy is mounted\n"
-msgstr "Fazi en ur glask amprouiñ ma eo mountet ar bladennig\n"
+msgstr "Fazi en ur glask amprouiÃ± ma eo mountet ar bladennig\n"
 
 #: floppy.cpp:930
 #, c-format
@@ -198,4 +198,4 @@ msgid ""
 "Please unmount the floppy first."
 msgstr ""
 "%s a zo mountet.\n"
-"Divountit ar pladennig da gentañ mar plij."
+"Divountit ar pladennig da gentaÃ± mar plij."

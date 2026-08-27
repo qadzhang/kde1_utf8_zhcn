@@ -10,72 +10,72 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-04-02 02:22+0200\n"
 "PO-Revision-Date: Sun Jul 11 1999 18:48:23+0200\n"
-"Last-Translator: ��¼ ε��Ϻ <imura@cs.titech.ac.jp>\n"
+"Last-Translator: °æÂ¼ Îµ°ìÏº <imura@cs.titech.ac.jp>\n"
 "Language-Team: japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.5.0"
 
 #: main.cpp:178
 msgid "Sorry, can't open your printcap file."
-msgstr "���ʤ��� printcap �ե�����򳫤��ޤ���"
+msgstr "¤¢¤Ê¤¿¤Î printcap ¥Õ¥¡¥¤¥ë¤ò³«¤±¤Þ¤»¤ó¡£"
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
-msgstr "���ʤ��� printcap ������Ǥ��ޤ���"
+msgstr "¤¢¤Ê¤¿¤Î printcap ¤òÍý²ò¤Ç¤­¤Þ¤»¤ó¡£"
 
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
-msgstr "���ʤ��� printcap �� Christoph.Neerfeld@home.ivm.de ��email �����äƲ�������"
+msgstr "¤¢¤Ê¤¿¤Î printcap ¤ò Christoph.Neerfeld@home.ivm.de ¤Ëemail ¤ÇÁ÷¤Ã¤Æ²¼¤µ¤¤¡£"
 
 #: klpq.cpp:90
 msgid "Printer"
-msgstr "�ץ�󥿡�"
+msgstr "¥×¥ê¥ó¥¿¡¼"
 
 #: klpq.cpp:95
 msgid "Queuing"
-msgstr "Ĵ����"
+msgstr "Ä´ººÃæ"
 
 #: klpq.cpp:100
 msgid "Printing"
-msgstr "�ץ�����"
+msgstr "¥×¥ê¥ó¥ÈÃæ"
 
 #: klpq.cpp:105
 msgid "Update"
-msgstr "����"
+msgstr "¹¹¿·"
 
 #: klpq.cpp:125
 msgid "Rank"
-msgstr "����"
+msgstr "½çÈÖ"
 
 #: klpq.cpp:126
 msgid "Owner"
-msgstr "��ͭ��"
+msgstr "½êÍ­¼Ô"
 
 #: klpq.cpp:127
 msgid "Job"
-msgstr "���"
+msgstr "ºî¶È"
 
 #: klpq.cpp:129
 msgid "Size"
-msgstr "������"
+msgstr "¥µ¥¤¥º"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
-msgstr "��Ƭ��"
+msgstr "ÀèÆ¬¤Ø"
 
 #: klpq.cpp:160
 msgid "Auto"
-msgstr "��ư"
+msgstr "¼«Æ°"
 
 #: klpq.cpp:204
 msgid "&Auto update"
-msgstr "��ưŪ�˹���(&A)"
+msgstr "¼«Æ°Åª¤Ë¹¹¿·(&A)"
 
 #: klpq.cpp:205
 msgid "&Spooler"
-msgstr "���ס���(&S)"
+msgstr "¥¹¥×¡¼¥é(&S)"
 
 #: klpq.cpp:208
 #, c-format
@@ -87,12 +87,12 @@ msgstr ""
 
 #: klpq.cpp:213
 msgid "&Config"
-msgstr "���� (&C)"
+msgstr "ÀßÄê (&C)"
 
 #: klpq.cpp:404
 #, c-format
 msgid "Do you really want to remove job No %d"
-msgstr "��� No %d �������ƹ����ޤ��󤫡�"
+msgstr "ºî¶È No %d ¤òºï½ü¤·¤Æ¹½¤¤¤Þ¤»¤ó¤«¡©"
 
 #: klpq.cpp:424
 #, c-format
@@ -101,45 +101,45 @@ msgid ""
 "%d\n"
 "on top of queue"
 msgstr ""
-"��� No\n"
+"ºî¶È No\n"
 "%d\n"
-"�򥭥塼����Ƭ�˰�ư���Ƥ�������Ǥ��͡�"
+"¤ò¥­¥å¡¼¤ÎÀèÆ¬¤Ë°ÜÆ°¤·¤Æ¤è¤í¤·¤¤¤Ç¤¹¤Í¡©"
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
-msgstr "���ʤ��ˤϸ��¤�����ޤ���"
+msgstr "¤¢¤Ê¤¿¤Ë¤Ï¸¢¸Â¤¬¤¢¤ê¤Þ¤»¤ó"
 
 #: klpq.cpp:573 klpq.cpp:579 klpq.cpp:594
 msgid ""
 "This is a privileged command\n"
 "and you do not have permission to execute it."
 msgstr ""
-"��������̤ʥ��ޥ�ɤ�\n"
-"���ʤ��ˤϼ¹Ԥ��븢�¤�����ޤ���"
+"¤³¤ì¤ÏÆÃÊÌ¤Ê¥³¥Þ¥ó¥É¤Ç\n"
+"¤¢¤Ê¤¿¤Ë¤Ï¼Â¹Ô¤¹¤ë¸¢¸Â¤¬¤¢¤ê¤Þ¤»¤ó¡£"
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
-msgstr "��ư����������"
+msgstr "¼«Æ°¹¹¿·¤òÀßÄê"
 
 #: ConfAutoUpdateData.cpp:17
 msgid "Update frequency in seconds:"
-msgstr "���ä����˹������뤫:"
+msgstr "²¿ÉÃ¤ª¤­¤Ë¹¹¿·¤¹¤ë¤«:"
 
 #: klpqspooler.cpp:199 klpqspooler.cpp:269
 msgid "Can't find your lpc program !"
-msgstr "lpc �ץ�����ब�ߤĤ���ޤ���"
+msgstr "lpc ¥×¥í¥°¥é¥à¤¬¤ß¤Ä¤«¤ê¤Þ¤»¤ó¡ª"
 
 #: klpqspooler.cpp:200 klpqspooler.cpp:270
 msgid ""
 "Sorry, I can't find your lpc program.\n"
 "Please check the configuration under Config->Spooler."
 msgstr ""
-"lpc �ץ�����ब�ߤĤ���ޤ���\n"
-"����->���ס��� ��������ǧ���Ʋ�������"
+"lpc ¥×¥í¥°¥é¥à¤¬¤ß¤Ä¤«¤ê¤Þ¤»¤ó¡£\n"
+"ÀßÄê->¥¹¥×¡¼¥é ¤ÇÀßÄê¤ò³ÎÇ§¤·¤Æ²¼¤µ¤¤¡£"
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
-msgstr "���ʤ��Υ��ס���󥰥����ƥ������ǲ�������"
+msgstr "¤¢¤Ê¤¿¤Î¥¹¥×¡¼¥ê¥ó¥°¥·¥¹¥Æ¥à¤òÁª¤ó¤Ç²¼¤µ¤¤¡£"
 
 #: FirstStartData.cpp:42
 msgid ""
@@ -147,10 +147,10 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"���ʤ��λ��Ѥ��륹�ס���󥰥����ƥ�����򤷤Ƥ����������ۤȤ�ɤΥ����ƥ��\n"
-" BSD ���ס�����Ѥ��Ƥ��ޤ������äơ��⤷�ɤΥ��ס��餬���󥹥ȡ��뤵��Ƥ��뤫\n"
-"�ο������Ƥʤ����ϡ�BSD ������Ǥ����Ф褤�Ǥ��礦��"
+"¤¢¤Ê¤¿¤Î»ÈÍÑ¤¹¤ë¥¹¥×¡¼¥ê¥ó¥°¥·¥¹¥Æ¥à¤òÁªÂò¤·¤Æ¤¯¤À¤µ¤¤¡£¤Û¤È¤ó¤É¤Î¥·¥¹¥Æ¥à¤Ï\n"
+" BSD ¥¹¥×¡¼¥é¤òÍÑ¤¤¤Æ¤¤¤Þ¤¹¡£½¾¤Ã¤Æ¡¢¤â¤·¤É¤Î¥¹¥×¡¼¥é¤¬¥¤¥ó¥¹¥È¡¼¥ë¤µ¤ì¤Æ¤¤¤ë¤«\n"
+"³Î¿®¤¬»ý¤Æ¤Ê¤¤»þ¤Ï¡¢BSD ¤òÁª¤ó¤Ç¤ª¤±¤Ð¤è¤¤¤Ç¤·¤ç¤¦¡£"
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"
-msgstr "���ס���󥰥��ޥ�ɤΥѥ�"
+msgstr "¥¹¥×¡¼¥ê¥ó¥°¥³¥Þ¥ó¥É¤Î¥Ñ¥¹"

@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: kljettool\n"
 "POT-Creation-Date: 1999-01-18 01:54+0100\n"
 "PO-Revision-Date: 1999-01-18 08:29+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:49
@@ -19,11 +19,11 @@ msgstr "LJet Tool"
 
 #: main.cpp:69
 msgid "Paper"
-msgstr "Papír"
+msgstr "PapÃ­r"
 
 #: PrinterData.cpp:93 main.cpp:70
 msgid "Printer"
-msgstr "Tiskárna"
+msgstr "TiskÃ¡rna"
 
 #: main.cpp:71
 msgid "Operations"
@@ -31,15 +31,15 @@ msgstr "Operace"
 
 #: PaperData.cpp:59
 msgid "Format"
-msgstr "Formát"
+msgstr "FormÃ¡t"
 
 #: PaperData.cpp:65
 msgid "Copies"
-msgstr "Poèet kopií"
+msgstr "PoÄet kopiÃ­"
 
 #: PaperData.cpp:80
 msgid "Lines"
-msgstr "Poèet øádek"
+msgstr "PoÄet Å™Ã¡dek"
 
 #: PaperData.cpp:96
 msgid "Orientation"
@@ -47,19 +47,19 @@ msgstr "Orientace"
 
 #: PaperData.cpp:102
 msgid "Portrait"
-msgstr "Na vı¹ku"
+msgstr "Na vÃ½Å¡ku"
 
 #: PaperData.cpp:111
 msgid "Landscape"
-msgstr "Na ¹íøku"
+msgstr "Na Å¡Ã­Å™ku"
 
 #: PaperData.cpp:127
 msgid "Manual Feed"
-msgstr "Ruèní podávání"
+msgstr "RuÄnÃ­ podÃ¡vÃ¡nÃ­"
 
 #: PaperData.cpp:136
 msgid "Auto Continue"
-msgstr "Auto. pokraèovat"
+msgstr "Auto. pokraÄovat"
 
 #: FontsData.cpp:38
 msgid "Language"
@@ -67,47 +67,47 @@ msgstr "Jazyk"
 
 #: FontsData.cpp:57
 msgid "Symbol Set"
-msgstr "Znaková sada"
+msgstr "ZnakovÃ¡ sada"
 
 #: FontsData.cpp:125
 msgid "Pitch"
-msgstr "Stupeò"
+msgstr "StupeÅˆ"
 
 #: FontsData.cpp:141
 msgid "Point Size"
-msgstr "Bodová velikost"
+msgstr "BodovÃ¡ velikost"
 
 #: FontsData.cpp:156
 msgid "points"
-msgstr "bodù"
+msgstr "bodÅ¯"
 
 #: PrinterData.cpp:41
 msgid "Mode"
-msgstr "Re¾im"
+msgstr "ReÅ¾im"
 
 #: PrinterData.cpp:47
 msgid "Economy"
-msgstr "Ekonomickı"
+msgstr "EkonomickÃ½"
 
 #: PrinterData.cpp:56
 msgid "Presentation"
-msgstr "Prezentaèní"
+msgstr "PrezentaÄnÃ­"
 
 #: PrinterData.cpp:65
 msgid "Resolution"
-msgstr "Rozli¹ení"
+msgstr "RozliÅ¡enÃ­"
 
 #: PrinterData.cpp:87
 msgid "Density"
-msgstr "Svìtlost"
+msgstr "SvÄ›tlost"
 
 #: PrinterData.cpp:99
 msgid "Resolution Enh."
-msgstr "Zvı¹ení rozli¹ení"
+msgstr "ZvÃ½Å¡enÃ­ rozliÅ¡enÃ­"
 
 #: MiscData.cpp:43
 msgid "End of Line Mode"
-msgstr "Mód konce øádky"
+msgstr "MÃ³d konce Å™Ã¡dky"
 
 #: MiscData.cpp:65
 msgid "PageProtect"
@@ -115,7 +115,7 @@ msgstr "Ochrana strany"
 
 #: MiscData.cpp:80
 msgid "Powersave Time"
-msgstr "Úspornı re¾im"
+msgstr "ÃšspornÃ½ reÅ¾im"
 
 #: MiscData.cpp:99
 msgid "Eject"
@@ -135,7 +135,7 @@ msgid ""
 "Unable to print with:\n"
 " %s"
 msgstr ""
-"Není mo¾né tisknout s:\n"
+"NenÃ­ moÅ¾nÃ© tisknout s:\n"
 " %s"
 
 #: about.cpp:38

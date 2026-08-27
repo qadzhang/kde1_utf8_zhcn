@@ -7,23 +7,23 @@ msgstr ""
 "Project-Id-Version: kppplogview\n"
 "POT-Creation-Date: 1999-04-25 03:13+0200\n"
 "PO-Revision-Date: 1999-07-03 14:28+02:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: log.cpp:48
 msgid "Loading log files"
-msgstr "Náhrávám soubory se záznamy"
+msgstr "NÃ¡hrÃ¡vÃ¡m soubory se zÃ¡znamy"
 
 #: main.cpp:37
 msgid "kPPP log viewer"
-msgstr "Prohlí¾eè záznamù programu kPPP "
+msgstr "ProhlÃ­Å¾eÄ zÃ¡znamÅ¯ programu kPPP "
 
 #: main.cpp:65
 msgid "Monthly log"
-msgstr "Mìsíèní záznam"
+msgstr "MÄ›sÃ­ÄnÃ­ zÃ¡znam"
 
 #: monthly.cpp:27
 #, c-format
@@ -52,15 +52,15 @@ msgstr "%dh %dm %ds"
 
 #: monthly.cpp:58
 msgid "Prev month"
-msgstr "Pøed. mìsíc"
+msgstr "PÅ™ed. mÄ›sÃ­c"
 
 #: monthly.cpp:59
 msgid "Next month"
-msgstr "Násl. mìsíc"
+msgstr "NÃ¡sl. mÄ›sÃ­c"
 
 #: monthly.cpp:61
 msgid "Current month"
-msgstr "Souèasnı mìsíc"
+msgstr "SouÄasnÃ½ mÄ›sÃ­c"
 
 #: monthly.cpp:96
 msgid "January"
@@ -68,11 +68,11 @@ msgstr "Leden"
 
 #: monthly.cpp:97
 msgid "February"
-msgstr "Únor"
+msgstr "Ãšnor"
 
 #: monthly.cpp:98
 msgid "March"
-msgstr "Bøezen"
+msgstr "BÅ™ezen"
 
 #: monthly.cpp:99
 msgid "April"
@@ -80,15 +80,15 @@ msgstr "Duben"
 
 #: monthly.cpp:100
 msgid "May"
-msgstr "Kvìten"
+msgstr "KvÄ›ten"
 
 #: monthly.cpp:101
 msgid "June"
-msgstr "Èerven"
+msgstr "ÄŒerven"
 
 #: monthly.cpp:102
 msgid "July"
-msgstr "Èervenec"
+msgstr "ÄŒervenec"
 
 #: monthly.cpp:103
 msgid "August"
@@ -96,11 +96,11 @@ msgstr "Srpen"
 
 #: monthly.cpp:104
 msgid "September"
-msgstr "Záøí"
+msgstr "ZÃ¡Å™Ã­"
 
 #: monthly.cpp:105
 msgid "October"
-msgstr "Øíjen"
+msgstr "Å˜Ã­jen"
 
 #: monthly.cpp:106
 msgid "November"
@@ -118,4 +118,4 @@ msgstr "n/p"
 #: monthly.cpp:231
 #, c-format
 msgid "%d connections\t%s\t%s\t%s\t%s\t%6.2f\t%s\t%s\t%s"
-msgstr "%d spojení      %s      %s      %s      %s      %6.2f   %s      %s      %s"
+msgstr "%d spojenÃ­      %s      %s      %s      %s      %6.2f   %s      %s      %s"

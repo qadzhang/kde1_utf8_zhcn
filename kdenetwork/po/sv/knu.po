@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-23 02:09+0100\n"
 "PO-Revision-Date: 1998-10-14 01:10+0100\n"
-"Last-Translator: Karl Backstrˆm <backstrom@kde.org>\n"
+"Last-Translator: Karl Backstr√∂m <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -23,7 +23,7 @@ msgstr "F&inna routen"
 
 #: knu.cpp:168 knu.cpp:321
 msgid "Host &resolution"
-msgstr "V‰rds&upplysning"
+msgstr "V√§rds&upplysning"
 
 #: knu.cpp:181
 msgid "F&inger"
@@ -43,27 +43,27 @@ msgstr ""
 "Inget kommando finns angivet\n"
 "i konfigurationsfilen.\n"
 "\n"
-"SÂ jag kan inte gˆra nÂgot...\n"
+"S√• jag kan inte g√∂ra n√•got...\n"
 
 #: knu.cpp:246
 msgid "&New window"
-msgstr "&Nytt fˆnster"
+msgstr "&Nytt f√∂nster"
 
 #: knu.cpp:249
 msgid "&Close window"
-msgstr "&St‰ng fˆnster"
+msgstr "&St√§ng f√∂nster"
 
 #: knu.cpp:260
 msgid "Select &all"
-msgstr "V‰lj &allt"
+msgstr "V√§lj &allt"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "&Tˆm utfˆnstret"
+msgstr "&T√∂m utf√∂nstret"
 
 #: knu.cpp:266
 msgid "P&references..."
-msgstr "&Inst‰llningar..."
+msgstr "&Inst√§llningar..."
 
 #: knu.cpp:281
 #, c-format
@@ -97,11 +97,11 @@ msgstr ""
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
-msgstr "&V‰rd:"
+msgstr "&V√§rd:"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
-msgstr "&Kˆr!"
+msgstr "&K√∂r!"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
@@ -112,8 +112,8 @@ msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"Kommandots bin‰rfil hittades inte. \n"
-"Du kan uppge dess sˆkv‰g i Redigera->Inst‰llningar... menyn."
+"Kommandots bin√§rfil hittades inte. \n"
+"Du kan uppge dess s√∂kv√§g i Redigera->Inst√§llningar... menyn."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -135,20 +135,20 @@ msgstr ""
 "I [%s]-gruppen,\n"
 "Kan inte hitta giltig \"path=\"-parameter.\n"
 "\n"
-"Anv‰nd Redigera->Inst‰llningar...-menyn\n"
-"fˆr att st‰lla in det.\n"
+"Anv√§nd Redigera->Inst√§llningar...-menyn\n"
+"f√∂r att st√§lla in det.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
-msgstr "Fel i sˆkv‰gen"
+msgstr "Fel i s√∂kv√§gen"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
-msgstr "Bin‰rfil"
+msgstr "Bin√§rfil"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
-msgstr "&Sˆkv‰g:"
+msgstr "&S√∂kv√§g:"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
@@ -156,7 +156,7 @@ msgstr "Ytterligare &argument:"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "Det h‰r kommandot var frÂnkopplat i konfigurationsfilen."
+msgstr "Det h√§r kommandot var fr√•nkopplat i konfigurationsfilen."
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
@@ -196,11 +196,11 @@ msgstr ""
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "Gˆr v‰rds&namnsupplˆsning"
+msgstr "G√∂r v√§rds&namnsuppl√∂sning"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
-msgstr "v‰r&d"
+msgstr "v√§r&d"
 
 #: HostDlg.cpp:335 PingDlg.cpp:231
 msgid "ns&lookup"
@@ -232,7 +232,7 @@ msgstr "alias (CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "start pÂ autoritet (SOA)"
+msgstr "start p√• autoritet (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
@@ -252,7 +252,7 @@ msgstr ""
 
 #: FingerDlg.cpp:77
 msgid "&User:"
-msgstr "&Anv‰ndare:"
+msgstr "&Anv√§ndare:"
 
 #~ msgid "&Matt's traceroute"
 #~ msgstr "&Matts traceroute"

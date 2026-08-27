@@ -7,27 +7,27 @@ msgstr ""
 "PO-Revision-Date: 1999-02-13 10:41+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 
 #: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"Svo virğist sem gluggastjóri sé nú şegar í gangi.\n"
+"Svo virÃ°ist sem gluggastjÃ³ri sÃ© nÃº Ã¾egar Ã­ gangi.\n"
 "kwm er ekki gangsettur\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: villa í frumstillingu. Hætt viğ!\n"
+msgstr "kwm: villa Ã­ frumstillingu. HÃ¦tt viÃ°!\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "Geng frá setu..."
+msgstr "Geng frÃ¡ setu..."
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Höfundarréttur 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "HÃ¶fundarrÃ©ttur 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:558
 msgid "Usage: "
@@ -35,7 +35,7 @@ msgstr "Notkun: "
 
 #: main.C:569
 msgid "&Maximize"
-msgstr "&Hámarka"
+msgstr "&HÃ¡marka"
 
 #: main.C:570
 msgid "&Restore"
@@ -43,15 +43,15 @@ msgstr "&Endurheimta"
 
 #: main.C:571
 msgid "&Iconify"
-msgstr "Í &táknmynd"
+msgstr "Ã &tÃ¡knmynd"
 
 #: main.C:572
 msgid "&DeIconify"
-msgstr "Úr táknmynd"
+msgstr "Ãšr tÃ¡knmynd"
 
 #: main.C:573
 msgid "&Sticky"
-msgstr "&Festa viğ gler"
+msgstr "&Festa viÃ° gler"
 
 #: main.C:574
 msgid "&UnSticky"
@@ -59,19 +59,19 @@ msgstr "&Losa af gleri"
 
 #: main.C:575
 msgid "Mo&ve"
-msgstr "&Færa"
+msgstr "&FÃ¦ra"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "&Breyta stærğ"
+msgstr "&Breyta stÃ¦rÃ°"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "Á &skjáborğ"
+msgstr "Ã &skjÃ¡borÃ°"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "Á şetta &skjáborğ"
+msgstr "Ã Ã¾etta &skjÃ¡borÃ°"
 
 #: main.C:620
 msgid "One"
@@ -79,15 +79,15 @@ msgstr "Eitt"
 
 #: main.C:623
 msgid "Two"
-msgstr "Tvö"
+msgstr "TvÃ¶"
 
 #: main.C:626
 msgid "Three"
-msgstr "Şrjú"
+msgstr "ÃrjÃº"
 
 #: main.C:629
 msgid "Four"
-msgstr "Fjögur"
+msgstr "FjÃ¶gur"
 
 #: main.C:632
 msgid "Five"
@@ -99,23 +99,23 @@ msgstr "Sex"
 
 #: main.C:638
 msgid "Seven"
-msgstr "Sjö"
+msgstr "SjÃ¶"
 
 #: main.C:641
 msgid "Eight"
-msgstr "Átta"
+msgstr "Ãtta"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "Ónefnt skjáborğ"
+msgstr "Ã“nefnt skjÃ¡borÃ°"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Sumar bitamyndir eru ekki í lagi. Şví er slökkt á formham\n"
+msgstr "Sumar bitamyndir eru ekki Ã­ lagi. ÃvÃ­ er slÃ¶kkt Ã¡ formham\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Sumar bitamyndir eru ekki í lagi. Şví er slökkt á glingurham\n"
+msgstr "Sumar bitamyndir eru ekki Ã­ lagi. ÃvÃ­ er slÃ¶kkt Ã¡ glingurham\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -127,42 +127,42 @@ msgstr "Skipun:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr "Úps!"
+msgstr "Ãšps!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Stimpla út"
+msgstr "Stimpla Ãºt"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Tilbúin ağ loka setu"
+msgstr "TilbÃºin aÃ° loka setu"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
-msgstr "Şessi forrit innihalda óvistuğ gögn sem munu glatast."
+msgstr "Ãessi forrit innihalda Ã³vistuÃ° gÃ¶gn sem munu glatast."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Şessi forrit er ekki hægt ağ endurheimta í næstu setu, heldur bara\n"
-"endurræsa. Gaktu úr skugga um ağ í şeim séu engin mikilvæg óvistuğ gögn."
+"Ãessi forrit er ekki hÃ¦gt aÃ° endurheimta Ã­ nÃ¦stu setu, heldur bara\n"
+"endurrÃ¦sa. Gaktu Ãºr skugga um aÃ° Ã­ Ã¾eim sÃ©u engin mikilvÃ¦g Ã³vistuÃ° gÃ¶gn."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Şessi forrit kunna ekki á X11 og şau er şví ekki hægt ağ endurheimta í "
-"næstu\n"
-"setu. Gakktu úr skugga um ağ í şeim séu engin mikilvæg óvistuğ gögn."
+"Ãessi forrit kunna ekki Ã¡ X11 og Ã¾au er Ã¾vÃ­ ekki hÃ¦gt aÃ° endurheimta Ã­ "
+"nÃ¦stu\n"
+"setu. Gakktu Ãºr skugga um aÃ° Ã­ Ã¾eim sÃ©u engin mikilvÃ¦g Ã³vistuÃ° gÃ¶gn."
 
 #: taskmgr.C:107
 msgid "Switch to"
-msgstr "Skipta á"
+msgstr "Skipta Ã¡"
 
 #: taskmgr.C:121
 msgid "Current session"

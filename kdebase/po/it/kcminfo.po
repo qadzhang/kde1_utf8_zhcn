@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: info.cpp:50
@@ -16,8 +16,8 @@ msgstr "schermo #%d"
 
 #: info.cpp:52
 #, c-format
-msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  dimesnione          : %dx%s pixel (%dx%d mm)\n"
+#~ msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
+#~ msgstr "  dimesnione          : %dx%s pixel (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
@@ -67,17 +67,17 @@ msgid ""
 msgstr ""
 "Nessuna informazione disponibile\n"
 " o\n"
-"questo sistema non Ë ancora supportato :-("
+"questo sistema non √® ancora supportato :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, velocit‡ sconosciuta"
+msgstr "%s, velocit√† sconosciuta"
 
 #: info_fbsd.cpp:75
 #, c-format
-msgid "%s running at %s MHz"
-msgstr "%s attivo a % MHz"
+#~ msgid "%s running at %s MHz"
+#~ msgstr "%s attivo a % MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"

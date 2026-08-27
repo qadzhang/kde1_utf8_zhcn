@@ -10,12 +10,12 @@ msgstr ""
 "Last-Translator: Thorbjoern Ravn Andersen <ravn@mip.sdu.dk>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDE Skrifthåndtering"
+msgstr "KDE SkrifthÃ¥ndtering"
 
 #: main.cpp:71
 msgid "KDE Fonts"
@@ -27,15 +27,15 @@ msgstr "Skrifttypefremviser"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Rå X11 skrifttypeoversigt"
+msgstr "RÃ¥ X11 skrifttypeoversigt"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Tilgængelige X11-skrifttyper"
+msgstr "TilgÃ¦ngelige X11-skrifttyper"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
-msgstr "Skrifter tilgængelige for KDE"
+msgstr "Skrifter tilgÃ¦ngelige for KDE"
 
 #: kfontmanager.cpp:89
 msgid ""
@@ -43,7 +43,7 @@ msgid ""
 "AaBbCc123"
 msgstr ""
 "The Quick Brown Fox jumps Over The Lazy Dog\n"
-"AaBbCc123ÆæØøÅå"
+"AaBbCc123Ã†Ã¦Ã˜Ã¸Ã…Ã¥"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
@@ -67,7 +67,7 @@ msgid ""
 "is not set\n"
 msgstr ""
 "Variablen HOME\n"
-"er ikke sat i det omgivende miljø\n"
+"er ikke sat i det omgivende miljÃ¸\n"
 
 #: kfontmanager.cpp:292
 msgid ""
@@ -101,11 +101,11 @@ msgstr ""
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr "Vælg skrift"
+msgstr "VÃ¦lg skrift"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr "Ønsket skrifttype"
+msgstr "Ã˜nsket skrifttype"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
@@ -117,11 +117,11 @@ msgstr "Familie:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr "Størrelse:"
+msgstr "StÃ¸rrelse:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr "Vægt:"
+msgstr "VÃ¦gt:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
@@ -129,15 +129,15 @@ msgstr "Stil:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr "Tegnsæt"
+msgstr "TegnsÃ¦t"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr "Størrelse"
+msgstr "StÃ¸rrelse"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr "Vægt"
+msgstr "VÃ¦gt"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
@@ -161,7 +161,7 @@ msgstr "kursiv"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr "The quick brown fox jumped over the lazy dog ÆØÅæøå"
+msgstr "The quick brown fox jumped over the lazy dog Ã†Ã˜Ã…Ã¦Ã¸Ã¥"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"

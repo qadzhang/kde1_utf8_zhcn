@@ -3,11 +3,11 @@ msgstr ""
 "POT-Creation-Date: 1998-10-01 13:29+0200\n"
 "PO-Revision-Date: 1998-10-18 21:27+0200\n"
 "Last-Translator: Alonso Lara <jlaram@nexo.es>\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: board.cpp:65 dialogs.cpp:137
 msgid "Anonymous"
-msgstr "Anónimo"
+msgstr "AnÃ³nimo"
 
 #: board.cpp:97
 msgid "Game paused"
@@ -31,7 +31,7 @@ msgstr "Presione para empezar juego"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "¡El archivo de puntuaciones no es modificable!"
+msgstr "Â¡El archivo de puntuaciones no es modificable!"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -39,11 +39,11 @@ msgstr "Puerto ilegal"
 
 #: net.cpp:135
 msgid "Null address"
-msgstr "Dirección no válida"
+msgstr "DirecciÃ³n no vÃ¡lida"
 
 #: net.cpp:142
 msgid "Unknown address"
-msgstr "Dirección desconocida"
+msgstr "DirecciÃ³n desconocida"
 
 #: net.cpp:157
 msgid "Cannot create socket"
@@ -55,7 +55,7 @@ msgstr "en"
 
 #: net.cpp:233
 msgid "Connect error"
-msgstr "Error de conexión"
+msgstr "Error de conexiÃ³n"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
@@ -87,7 +87,7 @@ msgstr "El servidor ha desaparecido"
 
 #: net.cpp:366
 msgid "Bind error"
-msgstr "Error de unión"
+msgstr "Error de uniÃ³n"
 
 #: net.cpp:371
 msgid "Listen error"
@@ -95,7 +95,7 @@ msgstr "Error de escucha"
 
 #: net.cpp:390
 msgid "Unknown message from unknown player (??)"
-msgstr "Mensaje desconocido de jugador desconocido (¿?)"
+msgstr "Mensaje desconocido de jugador desconocido (Â¿?)"
 
 #: net.cpp:449 net.cpp:490
 msgid "Unknown message from client"
@@ -107,7 +107,7 @@ msgstr "El cliente ha muerto"
 
 #: net.cpp:487
 msgid "Cancel from client"
-msgstr "Cancelación del cliente"
+msgstr "CancelaciÃ³n del cliente"
 
 #: net.cpp:494
 msgid "Timeout"
@@ -143,11 +143,11 @@ msgstr "Sala de la Fama"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
-msgstr "¡Sin opciones todavia!"
+msgstr "Â¡Sin opciones todavia!"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "Diálogo de Red"
+msgstr "DiÃ¡logo de Red"
 
 #: dialogs.cpp:178
 msgid "Server"
@@ -163,7 +163,7 @@ msgstr "Nombre del jugador :"
 
 #: dialogs.cpp:185
 msgid "Server address :"
-msgstr "Dirección del servidor :"
+msgstr "DirecciÃ³n del servidor :"
 
 #: dialogs.cpp:187
 msgid "Port :"
@@ -171,7 +171,7 @@ msgstr "Puerto :"
 
 #: dialogs.cpp:199
 msgid "Connect"
-msgstr "Connexión"
+msgstr "ConnexiÃ³n"
 
 #: dialogs.cpp:202
 msgid "Connecting ..."
@@ -179,7 +179,7 @@ msgstr "Conectando ..."
 
 #: dialogs.cpp:205
 msgid "Play !"
-msgstr "¡ Juega !"
+msgstr "Â¡ Juega !"
 
 #: dialogs.cpp:252
 msgid "Network game"
@@ -223,7 +223,7 @@ msgstr "Posar abajo"
 
 #: field.cpp:34
 msgid "One line down"
-msgstr "Mover una línea abajo"
+msgstr "Mover una lÃ­nea abajo"
 
 #: field.cpp:35
 msgid "Rotate left"
@@ -235,11 +235,11 @@ msgstr "Rotar a la derecha"
 
 #: field.cpp:51
 msgid "Score"
-msgstr "Puntuación"
+msgstr "PuntuaciÃ³n"
 
 #: field.cpp:55
 msgid "Lines removed"
-msgstr "Líneas borradas"
+msgstr "LÃ­neas borradas"
 
 #: field.cpp:59
 msgid "Level"
@@ -279,7 +279,7 @@ msgstr "por"
 
 #: main.cpp:71
 msgid "Show menu"
-msgstr "Mostrar menú"
+msgstr "Mostrar menÃº"
 
 #~ msgid "Close dialog"
 #~ msgstr "Cerrar charla"

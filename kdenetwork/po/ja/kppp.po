@@ -10,36 +10,36 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-06-11 15:03+0200\n"
 "PO-Revision-Date: Sun Jul 11 1999 19:16:54+0200\n"
-"Last-Translator: ��¼ ε��Ϻ <imura@cs.titech.ac.jp>\n"
+"Last-Translator: °æÂ¼ Îµ°ìÏº <imura@cs.titech.ac.jp>\n"
 "Language-Team: japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.5.0"
 
 #: accounts.cpp:45
 msgid "Account Setup"
-msgstr "��³��Υ��åȥ��å�"
+msgstr "ÀÜÂ³Àè¤Î¥»¥Ã¥È¥¢¥Ã¥×"
 
 #: accounts.cpp:66
 msgid "Edit..."
-msgstr "�Խ�..."
+msgstr "ÊÔ½¸..."
 
 #: accounts.cpp:68
 msgid "Allows you to modify the selected account"
-msgstr "���򤷤���³����Խ����Ǥ��ޤ�"
+msgstr "ÁªÂò¤·¤¿ÀÜÂ³Àè¤ÎÊÔ½¸¤¬¤Ç¤­¤Þ¤¹"
 
 #: accounts.cpp:77
 msgid "New..."
-msgstr "����..."
+msgstr "¿·µ¬..."
 
 #: accounts.cpp:81
 msgid ""
 "Create a new dialup connection\n"
 "to the internet"
 msgstr ""
-"�������������륢�å���³��\n"
-"�Ĥ���ޤ�"
+"¿·¤·¤¤¥À¥¤¥¢¥ë¥¢¥Ã¥×ÀÜÂ³¤ò\n"
+"¤Ä¤¯¤ê¤Þ¤¹"
 
 #: accounts.cpp:89
 msgid ""
@@ -48,9 +48,9 @@ msgid ""
 "to a new account, that you can modify to fit your\n"
 "needs"
 msgstr ""
-"���򤷤���³��Υ��ԡ�����ޤ���\n"
-"���ԡ��������Ƥ�����Ͽ�������³�˥��ԡ�\n"
-"���졢ɬ�פ˱������Խ����뤳�Ȥ��Ǥ��ޤ���"
+"ÁªÂò¤·¤¿ÀÜÂ³Àè¤Î¥³¥Ô¡¼¤òºî¤ê¤Þ¤¹¡£\n"
+"¥³¥Ô¡¼¸µ¤ÎÁ´¤Æ¤ÎÀßÄê¤Ï¿·¤·¤¤ÀÜÂ³¤Ë¥³¥Ô¡¼\n"
+"¤µ¤ì¡¢É¬Í×¤Ë±þ¤¸¤ÆÊÔ½¸¤¹¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£"
 
 #: accounts.cpp:99
 msgid ""
@@ -58,13 +58,13 @@ msgid ""
 "\n"
 "<red><b>Use with care!"
 msgstr ""
-"���򤷤���³��������ޤ���\n"
+"ÁªÂò¤·¤¿ÀÜÂ³Àè¤òºï½ü¤·¤Þ¤¹¡£\n"
 "\n"
-"<red><b>���Ť�����Ǥ���������"
+"<red><b>¿µ½Å¤ËÁª¤ó¤Ç¤¯¤À¤µ¤¤¡ª"
 
 #: accounts.cpp:108
 msgid "Phone Costs:"
-msgstr "�����塧"
+msgstr "ÅÅÏÃÂå¡§"
 
 #: accounts.cpp:121
 msgid ""
@@ -75,14 +75,14 @@ msgid ""
 "account - beware, this is <b>NOT</b> the sum \n"
 "of the phone costs of all your accounts!"
 msgstr ""
-"���򤷤���³��ؤ�����������ѳۤ��狼��ޤ���\n"
+"ÁªÂò¤·¤¿ÀÜÂ³Àè¤Ø¤ÎÅÅÏÃÂå¤ÎÎßÀÑ³Û¤¬¤ï¤«¤ê¤Þ¤¹¡£\n"
 "\n"
-"<b>����</b>: �⤷��ʣ������³�褬���ä���\n"
-"���Ƥ⡢���٤Ƥ���³������ۤǤ�<b>����ޤ���</b>��"
+"<b>½ÅÍ×</b>: ¤â¤·¡¢Ê£¿ô¤ÎÀÜÂ³Àè¤¬¤¢¤Ã¤¿¤È\n"
+"¤·¤Æ¤â¡¢¤¹¤Ù¤Æ¤ÎÀÜÂ³Àè¤ÎÁí³Û¤Ç¤Ï<b>¤¢¤ê¤Þ¤»¤ó</b>¡ª"
 
 #: accounts.cpp:128 conwindow.cpp:54
 msgid "Volume:"
-msgstr "�̿��̡�"
+msgstr "ÄÌ¿®ÎÌ¡§"
 
 #: accounts.cpp:140
 msgid ""
@@ -93,39 +93,39 @@ msgid ""
 "\n"
 "<link #volaccounting>More on volume accounting</link>"
 msgstr ""
-"���򤷤���³��Ȳ��Х����̿������ä����򼨤��ޤ���\n"
-"(���Ƥ���³����Ф��ƤǤϤ���ޤ�����³���\n"
-"�������Τ��оݤˤʤ�ޤ���\n"
+"ÁªÂò¤·¤¿ÀÜÂ³Àè¤È²¿¥Ð¥¤¥ÈÄÌ¿®¤¬¤¢¤Ã¤¿¤«¤ò¼¨¤·¤Þ¤¹¡£\n"
+"(Á´¤Æ¤ÎÀÜÂ³Àè¤ËÂÐ¤·¤Æ¤Ç¤Ï¤¢¤ê¤Þ¤»¤ó¡£ÀÜÂ³Àè¤Ë\n"
+"Áª¤ó¤À¤â¤Î¤¬ÂÐ¾Ý¤Ë¤Ê¤ê¤Þ¤¹¡£\n"
 "\n"
-"<link #volaccounting>�̿��̤˴ؤ��Ƥξܺ�</link>"
+"<link #volaccounting>ÄÌ¿®ÎÌ¤Ë´Ø¤·¤Æ¤Î¾ÜºÙ</link>"
 
 #: accounts.cpp:152
 msgid "Reset Costs"
-msgstr "������Υꥻ�å�"
+msgstr "ÅÅÏÃÂå¤Î¥ê¥»¥Ã¥È"
 
 #: accounts.cpp:158
 msgid "View Logs"
-msgstr "�����򸫤�"
+msgstr "¥í¥°¤ò¸«¤ë"
 
 #: accounts.cpp:224
 msgid "Reset Total"
-msgstr "��ۤΥꥻ�å�"
+msgstr "¶â³Û¤Î¥ê¥»¥Ã¥È"
 
 #: accounts.cpp:225
 msgid ""
 "Are you sure you want to reset the accumulated\n"
 "telephone costs for the selected account to zero?"
 msgstr ""
-"���������򤷤���³����������ꥻ�åȤ���\n"
-"�����ˤ������ΤǤ�����"
+"ËÜÅö¤ËÁªÂò¤·¤¿ÀÜÂ³Àè¤ÎÅÅÏÃÂå¤ò¥ê¥»¥Ã¥È¤·¤Æ\n"
+"¥¼¥í¤Ë¤·¤¿¤¤¤Î¤Ç¤¹¤«¡©"
 
 #: accounts.cpp:259 accounts.cpp:280
 msgid "Maximum number of accounts reached."
-msgstr "��³��Ϥ⤦���䤻�ޤ���"
+msgstr "ÀÜÂ³Àè¤Ï¤â¤¦Áý¤ä¤»¤Þ¤»¤ó¡£"
 
 #: accounts.cpp:286
 msgid "No account selected."
-msgstr "�ʤˤ���³�褬���Ф�Ƥ��ޤ���"
+msgstr "¤Ê¤Ë¤âÀÜÂ³Àè¤¬Áª¤Ð¤ì¤Æ¤¤¤Þ¤»¤ó¡£"
 
 #: accounts.cpp:301
 #, c-format
@@ -133,24 +133,24 @@ msgid ""
 "Are you sure you want to delete\n"
 "the account \"%s\"?"
 msgstr ""
-"��������� \"%s\" ��������\n"
-"�����˹����ޤ���?"
+"¥¢¥«¥¦¥ó¥È \"%s\" ¤òºï½ü¤·¤Æ\n"
+"ËÜÅö¤Ë¹½¤¤¤Þ¤»¤ó¤«?"
 
 #: accounts.cpp:306
 msgid "Confirm"
-msgstr "��ǧ"
+msgstr "³ÎÇ§"
 
 #: accounts.cpp:328
 msgid "New Account"
-msgstr "������³��"
+msgstr "¿·µ¬ÀÜÂ³Àè"
 
 #: accounts.cpp:331
 msgid "Edit Account: "
-msgstr "��³���Խ���"
+msgstr "ÀÜÂ³ÀèÊÔ½¸¡§"
 
 #: accounts.cpp:348
 msgid "Dial"
-msgstr "��������"
+msgstr "¥À¥¤¥¢¥ë"
 
 #: accounts.cpp:349
 msgid "IP"
@@ -162,112 +162,112 @@ msgstr "DNS"
 
 #: accounts.cpp:351
 msgid "Gateway"
-msgstr "�����ȥ�����"
+msgstr "¥²¡¼¥È¥¦¥§¥¤"
 
 #: accounts.cpp:352
 msgid "Login Script"
-msgstr "�������󥹥���ץ�"
+msgstr "¥í¥°¥¤¥ó¥¹¥¯¥ê¥×¥È"
 
 #: accounts.cpp:353
 msgid "Accounting"
-msgstr "�̿���/��"
+msgstr "ÄÌ¿®ÎÁ/ÎÌ"
 
 #: accounts.cpp:372
 msgid ""
 "You must enter an unique\n"
 "account name"
 msgstr ""
-"���Ǥˤ���̾����\n"
-"�Ȥ�ʤ��Ǥ���������"
+"¤¹¤Ç¤Ë¤¢¤ëÌ¾Á°¤Ï\n"
+"»È¤ï¤Ê¤¤¤Ç¤¯¤À¤µ¤¤¡£"
 
 #: accounts.cpp:377
 msgid "Login script has unbalanced loop Start/End"
-msgstr "�������󥹥���ץȤϽ��Ƚ���ΥХ�󥹤����Ƥ��ޤ���"
+msgstr "¥í¥°¥¤¥ó¥¹¥¯¥ê¥×¥È¤Ï½é¤á¤È½ª¤ê¤Î¥Ð¥é¥ó¥¹¤¬¼è¤ì¤Æ¤¤¤Þ¤»¤ó"
 
 #: connect.cpp:92 connect.cpp:190 main.cpp:1049
 msgid "Connecting to: "
-msgstr "��³�衧"
+msgstr "ÀÜÂ³Àè¡§"
 
 #: connect.cpp:101 connect.cpp:205 miniterm.cpp:148 modeminfo.cpp:56
 #: modeminfo.cpp:135
 msgid "Sorry, can't create modem lock file."
-msgstr "��ǥ�Υ��å��ե��������ޤ���Ǥ�����"
+msgstr "¥â¥Ç¥à¤Î¥í¥Ã¥¯¥Õ¥¡¥¤¥ë¤òºî¤ì¤Þ¤»¤ó¤Ç¤·¤¿¡£"
 
 #: connect.cpp:106 connect.cpp:163 modeminfo.cpp:61
 msgid "Looking for Modem ..."
-msgstr "��ǥ��õ���Ƥ��ޤ� ..."
+msgstr "¥â¥Ç¥à¤òÃµ¤·¤Æ¤¤¤Þ¤¹ ..."
 
 #: connect.cpp:115 debug.cpp:80 main.cpp:1062
 msgid "Log"
-msgstr "����"
+msgstr "¥í¥°"
 
 #: connect.cpp:199 miniterm.cpp:143 modeminfo.cpp:129
 msgid "Sorry, modem device is locked."
-msgstr "��ǥ�ΥǥХ����ϥ��å�����Ƥ��ޤ���"
+msgstr "¥â¥Ç¥à¤Î¥Ç¥Ð¥¤¥¹¤Ï¥í¥Ã¥¯¤µ¤ì¤Æ¤¤¤Þ¤¹¡£"
 
 #: connect.cpp:251 connect.cpp:252
 msgid "Initializing Modem..."
-msgstr "��ǥ���������Ƥ��ޤ� ..."
+msgstr "¥â¥Ç¥à¤ò½é´ü²½¤·¤Æ¤¤¤Þ¤¹ ..."
 
 #: connect.cpp:270 connect.cpp:271
 msgid "Setting speaker volume..."
-msgstr "���ԡ����β��̤򥻥åȤ��Ƥ��ޤ� ..."
+msgstr "¥¹¥Ô¡¼¥«¤Î²»ÎÌ¤ò¥»¥Ã¥È¤·¤Æ¤¤¤Þ¤¹ ..."
 
 #: connect.cpp:289
 msgid "Dialing"
-msgstr "����������"
+msgstr "¥À¥¤¥¢¥ëÃæ"
 
 #: connect.cpp:322
 msgid "Line Busy. Hanging up ..."
-msgstr "�ä���Ǥ�����ߤ��ޤ� ..."
+msgstr "ÏÃ¤·Ãæ¤Ç¤¹¡£Ãæ»ß¤·¤Þ¤¹ ..."
 
 #: connect.cpp:327
 msgid "Line Busy. Waiting: "
-msgstr "�ä���Ǥ����Ե����Ƥ��ޤ���"
+msgstr "ÏÃ¤·Ãæ¤Ç¤¹¡£ÂÔµ¡¤·¤Æ¤¤¤Þ¤¹¡§"
 
 #: connect.cpp:329 connect.cpp:449 connect.cpp:468
 msgid " seconds"
-msgstr " ��"
+msgstr " ÉÃ"
 
 #: connect.cpp:347
 msgid "No Dialtone"
-msgstr "��������ȡ��󤬤���ޤ���"
+msgstr "¥À¥¤¥¢¥ë¥È¡¼¥ó¤¬¤¢¤ê¤Þ¤»¤ó"
 
 #: connect.cpp:356
 msgid "No Carrier"
-msgstr "����ꥢ�Ӽ�"
+msgstr "¥­¥ã¥ê¥¢ÁÓ¼º"
 
 #: connect.cpp:394
 msgid "Scanning "
-msgstr "��������� "
+msgstr "¥¹¥­¥ã¥óÃæ "
 
 #: connect.cpp:405
 msgid "Saving "
-msgstr "�������� "
+msgstr "¥»¡¼¥ÖÃæ "
 
 #: connect.cpp:424
 msgid "Sending "
-msgstr "������ "
+msgstr "Á÷¿®Ãæ "
 
 #: connect.cpp:435
 msgid "Expecting "
-msgstr "�������ԤäƤ��ޤ� "
+msgstr "±þÅú¤òÂÔ¤Ã¤Æ¤¤¤Þ¤¹ "
 
 #: connect.cpp:447
 msgid "Pause "
-msgstr "�ݡ��� "
+msgstr "¥Ý¡¼¥º "
 
 #: connect.cpp:466
 msgid "Timeout "
-msgstr "�����ڤ� "
+msgstr "»þ´ÖÀÚ¤ì "
 
 #: connect.cpp:480 connect.cpp:481
 msgid "Hangup"
-msgstr "���"
+msgstr "Ãæ»ß"
 
 #: connect.cpp:494 connect.cpp:495
 msgid "Answer"
-msgstr "����"
+msgstr "±þÅú"
 
 #: connect.cpp:503
 msgid "ID "
@@ -275,35 +275,35 @@ msgstr "ID "
 
 #: connect.cpp:540
 msgid "Password "
-msgstr "�ѥ����"
+msgstr "¥Ñ¥¹¥ï¡¼¥É"
 
 #: connect.cpp:578
 msgid "Prompting "
-msgstr "�ץ���ץ�ɽ���� "
+msgstr "¥×¥í¥ó¥×¥ÈÉ½¼¨Ãæ "
 
 #: connect.cpp:615
 msgid "PW Prompt "
-msgstr "�ѥ���ɥץ���ץ�"
+msgstr "¥Ñ¥¹¥ï¡¼¥É¥×¥í¥ó¥×¥È"
 
 #: connect.cpp:641
 msgid "Loop Start "
-msgstr "�����֤���������"
+msgstr "·«¤êÊÖ¤·¥¹¥¿¡¼¥È"
 
 #: connect.cpp:645
 msgid "ERROR: Nested too deep, ignored."
-msgstr "���顼�����ޤ�ˤ�����Ҥˤ������Ǥ���̵�뤷�ޤ���"
+msgstr "¥¨¥é¡¼¡§¤¢¤Þ¤ê¤Ë¤âÆþ¤ì»Ò¤Ë¤·¤¹¤®¤Ç¤¹¡£Ìµ»ë¤·¤Þ¤¹¡£"
 
 #: connect.cpp:650
 msgid "Loops nested too deeply!"
-msgstr "����Ҥ������Ǥ���"
+msgstr "Æþ¤ì»Ò¤·¤¹¤®¤Ç¤¹¡ª"
 
 #: connect.cpp:668
 msgid "LoopEnd without matching Start! Line: "
-msgstr "Start ��Ŭ�礻���˷����֤��������ޤ����� �Ԥϡ�"
+msgstr "Start ¤ËÅ¬¹ç¤»¤º¤Ë·«¤êÊÖ¤·¤¬¤ª¤ï¤ê¤Þ¤·¤¿¡ª ¹Ô¤Ï¡§"
 
 #: connect.cpp:748
 msgid "Starting pppd ..."
-msgstr "pppd ��ư���Ƥ��ޤ� ..."
+msgstr "pppd ¤òµ¯Æ°¤·¤Æ¤¤¤Þ¤¹ ..."
 
 #: connect.cpp:828
 msgid "Scan Var: "
@@ -311,91 +311,91 @@ msgstr "Scan Var: "
 
 #: connect.cpp:839
 msgid "Found: "
-msgstr "ȯ����"
+msgstr "È¯¸«¡§"
 
 #: connect.cpp:851
 msgid "Looping: "
-msgstr "�����֤��ޤ���"
+msgstr "·«¤êÊÖ¤·¤Þ¤¹¡§"
 
 #: connect.cpp:884 modeminfo.cpp:227
 msgid "One Moment Please ..."
-msgstr "�������Ԥ��������� ..."
+msgstr "¾¯¡¹¤ªÂÔ¤Á¤¯¤À¤µ¤¤ ..."
 
 #: connect.cpp:928
 msgid "Script timed out!"
-msgstr "������ץȤλ����ڤ�Ǥ���"
+msgstr "¥¹¥¯¥ê¥×¥È¤Î»þ´ÖÀÚ¤ì¤Ç¤¹¡ª"
 
 #: connect.cpp:947
 msgid "Scanning: "
-msgstr "��������桧"
+msgstr "¥¹¥­¥ã¥óÃæ¡§"
 
 #: connect.cpp:957
 msgid "Expecting: "
-msgstr "����ʸ����"
+msgstr "´üÂÔÊ¸»úÎó¡§"
 
 #: connect.cpp:984
 msgid "Logging on to Network ..."
-msgstr "�ͥåȥ������³���Ƥ��ޤ� ..."
+msgstr "¥Í¥Ã¥È¥ï¡¼¥¯¤ËÀÜÂ³¤·¤Æ¤¤¤Þ¤¹ ..."
 
 #: connect.cpp:1010
 msgid "Running Startup Command ..."
-msgstr "�������ȥ��åץ��ޥ�ɤ�ư���Ƥ��ޤ� ..."
+msgstr "¥¹¥¿¡¼¥È¥¢¥Ã¥×¥³¥Þ¥ó¥É¤òµ¯Æ°¤·¤Æ¤¤¤Þ¤¹ ..."
 
 #: connect.cpp:1015 connect.cpp:1022
 msgid "Done"
-msgstr "��λ"
+msgstr "½ªÎ»"
 
 #: connect.cpp:1134
 msgid ""
 "pppd command + command-line arguments exeed\n"
 "2024 characters in length. What are you doing?"
 msgstr ""
-"pppd �Υ��ޥ�ɤȥ��ޥ�ɥ饤�󥪥ץ�����ʸ������\n"
-"2024 ʸ����ۤ��Ƥ��ޤ��������ְ�äƤ��ޤ��󤫡�"
+"pppd ¤Î¥³¥Þ¥ó¥É¤È¥³¥Þ¥ó¥É¥é¥¤¥ó¥ª¥×¥·¥ç¥ó¤ÎÊ¸»ú¿ô¤¬\n"
+"2024 Ê¸»ú¤ò±Û¤¨¤Æ¤¤¤Þ¤¹¡£²¿¤«´Ö°ã¤Ã¤Æ¤¤¤Þ¤»¤ó¤«¡©"
 
 #: conwindow.cpp:43
 msgid "Connected at:"
-msgstr "��³�������ֹ桧"
+msgstr "ÀÜÂ³ÀèÅÅÏÃÈÖ¹æ¡§"
 
 #: conwindow.cpp:49
 msgid "Time connected:"
-msgstr "��³���֡�"
+msgstr "ÀÜÂ³»þ´Ö¡§"
 
 #: conwindow.cpp:58
 msgid "Session Bill:"
-msgstr "������³�Ǥ����⡧"
+msgstr "¤³¤ÎÀÜÂ³¤Ç¤ÎÎÁ¶â¡§"
 
 #: conwindow.cpp:60
 msgid "Total Bill:"
-msgstr "���ޤޤǤ�����ι�ס�"
+msgstr "¤¤¤Þ¤Þ¤Ç¤ÎÎÁ¶â¤Î¹ç·×¡§"
 
 #: conwindow.cpp:66 docking.cpp:76
 msgid "Disconnect"
-msgstr "����"
+msgstr "ÀÚÃÇ"
 
 #: conwindow.cpp:70 docking.cpp:74
 msgid "Details"
-msgstr "�ܺ�"
+msgstr "¾ÜºÙ"
 
 #: debug.cpp:47
 msgid "Login Script Debug Window"
-msgstr "�������󥹥���ץȥǥХå�������ɥ�"
+msgstr "¥í¥°¥¤¥ó¥¹¥¯¥ê¥×¥È¥Ç¥Ð¥Ã¥°¥¦¥£¥ó¥É¥¦"
 
 #: edit.cpp:43
 msgid "Dial Setup"
-msgstr "������������"
+msgstr "¥À¥¤¥¢¥ëÀßÄê"
 
 #: edit.cpp:46
 msgid "Connection Name:"
-msgstr "��³̾��"
+msgstr "ÀÜÂ³Ì¾¡§"
 
 #: edit.cpp:56
 msgid "Type in a unique name for this connection"
-msgstr "�ޤ��ȤäƤ��ʤ�̾�������Ϥ��Ƥ�������"
+msgstr "¤Þ¤À»È¤Ã¤Æ¤¤¤Ê¤¤Ì¾Á°¤òÆþÎÏ¤·¤Æ¤¯¤À¤µ¤¤"
 
 #: edit.cpp:59
 msgid "Phone Number:"
-msgstr "�����ֹ桧"
+msgstr "ÅÅÏÃÈÖ¹æ¡§"
 
 #: edit.cpp:66
 msgid ""
@@ -404,18 +404,18 @@ msgid ""
 "a colon. When a number is busy or fails,\n"
 "<i>kppp</i>will try the next number and so on"
 msgstr ""
-"�����������ֹ�򤦤�Ƥ�����������(������)\n"
-"�Ƕ��ڤä�ʣ���������ֹ����ꤹ�뤳�Ȥ��Ǥ��ޤ���\n"
-"�⤷���ǽ���ֹ椬�ä��椫���Ԥ�����硢<i>kppp</i>\n"
-"�ϼ��ˤ����줿�ֹ����³���褦�Ȥ��ޤ���"
+"Áê¼êÀè¤ÎÅÅÏÃÈÖ¹æ¤ò¤¦¤á¤Æ¤¯¤À¤µ¤¤¡£¡§(¥³¥í¥ó)\n"
+"¤Ç¶èÀÚ¤Ã¤ÆÊ£¿ô¤ÎÅÅÏÃÈÖ¹æ¤ò»ØÄê¤¹¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£\n"
+"¤â¤·¡¢ºÇ½é¤ÎÈÖ¹æ¤¬ÏÃ¤·Ãæ¤«¼ºÇÔ¤·¤¿¾ì¹ç¡¢<i>kppp</i>\n"
+"¤Ï¼¡¤Ë¤«¤«¤ì¤¿ÈÖ¹æ¤ÇÀÜÂ³¤·¤è¤¦¤È¤·¤Þ¤¹¡£"
 
 #: edit.cpp:75
 msgid "Authentication:"
-msgstr "ǧ������"
+msgstr "Ç§¾ÚÊý¼°"
 
 #: edit.cpp:79
 msgid "Script-based"
-msgstr "������ץȥ١���"
+msgstr "¥¹¥¯¥ê¥×¥È¥Ù¡¼¥¹"
 
 #: edit.cpp:80
 msgid "PAP"
@@ -423,7 +423,7 @@ msgstr "PAP"
 
 #: edit.cpp:81
 msgid "Terminal-based"
-msgstr "�����ߥʥ�١���"
+msgstr "¥¿¡¼¥ß¥Ê¥ë¥Ù¡¼¥¹"
 
 #: edit.cpp:82
 msgid "CHAP"
@@ -440,18 +440,18 @@ msgid ""
 "If you can choose between PAP and CHAP,\n"
 "choose CHAP, because it's much safer."
 msgstr ""
-"���ʤ����Ȥ�������뤿��˻��Ѥ�����ʤ�����Ǥ���������\n"
-"�ۤȤ�ɤ�ISP��<b>PAP</b>��<b>CHAP</b>����Ѥ��Ƥ���ˤ�\n"
-"������餺�� ¿������ؤϤ��ޤ���<b>�����ߥʥ�</b>��\n"
-"<b>������ץ�</b>�١�����ǧ�ڤ��Ѥ��Ƥ��ޤ����⤷��������\n"
-"�ʤ���Ф��ʤ��η��󤷤Ƥ���ISP���䤤��碌�ƤߤƤ���������\n"
+"¤¢¤Ê¤¿¼«¿È¤ò¾ÚÌÀ¤¹¤ë¤¿¤á¤Ë»ÈÍÑ¤¹¤ë¼êÃÊ¤òÁª¤ó¤Ç¤¯¤À¤µ¤¤¡£\n"
+"¤Û¤È¤ó¤É¤ÎISP¤¬<b>PAP</b>¤ä<b>CHAP</b>¤òºÎÍÑ¤·¤Æ¤¤¤ë¤Ë¤â\n"
+"¤«¤«¤ï¤é¤º¡¢ Â¿¤¯¤ÎÂç³Ø¤Ï¤¤¤Þ¤À¤Ë<b>¥¿¡¼¥ß¥Ê¥ë</b>¤«\n"
+"<b>¥¹¥¯¥ê¥×¥È</b>¥Ù¡¼¥¹¤ÎÇ§¾Ú¤òÍÑ¤¤¤Æ¤¤¤Þ¤¹¡£¤â¤·¡¢¼«¿®¤¬\n"
+"¤Ê¤±¤ì¤Ð¤¢¤Ê¤¿¤Î·ÀÌó¤·¤Æ¤¤¤ëISP¤ËÌä¤¤¹ç¤ï¤»¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£\n"
 "\n"
-"�⤷��PAP��CHAP����������ѤǤ���ΤǤ����顢��������\n"
-"CHAP���Ѥ��Ƥ���������"
+"¤â¤·¡¢PAP¤ÈCHAP¤ÎÁÐÊý¤ò»ÈÍÑ¤Ç¤­¤ë¤Î¤Ç¤·¤¿¤é¡¢¤è¤ê°ÂÁ´¤Ê\n"
+"CHAP¤òÍÑ¤¤¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: edit.cpp:97
 msgid "Store password"
-msgstr "�ѥ���ɤ���¸����"
+msgstr "¥Ñ¥¹¥ï¡¼¥É¤òÊÝÂ¸¤¹¤ë"
 
 #: edit.cpp:101
 msgid ""
@@ -464,21 +464,21 @@ msgid ""
 "readable only to you. Make sure nobody\n"
 "gains access to this file!"
 msgstr ""
-"�⤷���줬ͭ���ˤʤäƤ���С����ʤ��η��󤷤Ƥ���ISP��\n"
-"�ѥ���ɤ�<i>kppp</i>�Υ���ե����ե�����˥����֤���ޤ���\n"
-"���äơ����ѥ���ɤ����Ϥ���ɬ�פϤ���ޤ���\n"
+"¤â¤·¤³¤ì¤¬Í­¸ú¤Ë¤Ê¤Ã¤Æ¤¤¤ì¤Ð¡¢¤¢¤Ê¤¿¤Î·ÀÌó¤·¤Æ¤¤¤ëISP¤Î\n"
+"¥Ñ¥¹¥ï¡¼¥É¤Ï<i>kppp</i>¤Î¥³¥ó¥Õ¥£¥°¥Õ¥¡¥¤¥ë¤Ë¥»¡¼¥Ö¤µ¤ì¤Þ¤¹¡£\n"
+"½¾¤Ã¤Æ¡¢Ëè²ó¥Ñ¥¹¥ï¡¼¥É¤òÆþÎÏ¤¹¤ëÉ¬Í×¤Ï¤¢¤ê¤Þ¤»¤ó¡£\n"
 "\n"
-"<b><red>�ٹ�<black>�ѥ���ɤ����Υƥ����ȤȤ��ơ�\n"
-"���ʤ��������ɤ����ǥ���ե����ե�����˥����֤���ޤ���\n"
-"�褷��¾�ͤ��ɤޤ�ʤ��褦�˵����դ��Ƥ���������"
+"<b><red>·Ù¹ð¡§<black>¥Ñ¥¹¥ï¡¼¥É¤ÏÀ¸¤Î¥Æ¥­¥¹¥È¤È¤·¤Æ¡¢\n"
+"¤¢¤Ê¤¿¤À¤±¤¬ÆÉ¤á¤ë·Á¤Ç¥³¥ó¥Õ¥£¥°¥Õ¥¡¥¤¥ë¤Ë¥»¡¼¥Ö¤µ¤ì¤Þ¤¹¡£\n"
+"·è¤·¤ÆÂ¾¿Í¤ËÆÉ¤Þ¤ì¤Ê¤¤¤è¤¦¤Ëµ¤¤òÉÕ¤±¤Æ¤¯¤À¤µ¤¤¡ª"
 
 #: edit.cpp:110
 msgid ""
 "Execute program\n"
 "upon connect:"
 msgstr ""
-"�¹ԥ��ޥ��\n"
-"��³����"
+"¼Â¹Ô¥³¥Þ¥ó¥É\n"
+"ÀÜÂ³»þ¡§"
 
 #: edit.cpp:121
 msgid ""
@@ -489,19 +489,19 @@ msgid ""
 "\n"
 "Very usefull for fetching mail and news"
 msgstr ""
-"��³����Ω����<b>��</b>�˼¹Ԥ���륳�ޥ�ɤǤ���\n"
-"�ץ�����ब�¹Ԥ������ϡ������˥��󥿡��ͥåȤؤ�\n"
-"��³�ν��������ä���Ǥ���\n"
+"ÀÜÂ³¤¬³ÎÎ©¤·¤¿<b>¸å</b>¤Ë¼Â¹Ô¤µ¤ì¤ë¥³¥Þ¥ó¥É¤Ç¤¹¡£\n"
+"¥×¥í¥°¥é¥à¤¬¼Â¹Ô¤µ¤ì¤ë»þ¤Ï¡¢´°Á´¤Ë¥¤¥ó¥¿¡¼¥Í¥Ã¥È¤Ø¤Î\n"
+"ÀÜÂ³¤Î½àÈ÷¤¬À°¤Ã¤¿¸å¤Ç¤¹¡£\n"
 "\n"
-"�᡼���˥塼�����ä����ΤˤȤƤ�ͭ�ѤǤ���"
+"¥á¡¼¥ë¤ä¥Ë¥å¡¼¥¹¤ò¼è¤Ã¤ÆÍè¤ë¤Î¤Ë¤È¤Æ¤âÍ­ÍÑ¤Ç¤¹¡£"
 
 #: edit.cpp:129
 msgid ""
 "Execute program\n"
 "before disconnect:"
 msgstr ""
-"�¹ԥ��ޥ��\n"
-"��������"
+"¼Â¹Ô¥³¥Þ¥ó¥É\n"
+"ÀÚÃÇÁ°¡§"
 
 #: edit.cpp:141
 msgid ""
@@ -509,51 +509,51 @@ msgid ""
 "is closed. The connection will stay open until\n"
 "the program exits."
 msgstr ""
-"��³�����Ǥ����<b>��</b>�˼¹Ԥ���륳�ޥ�ɤǤ���\n"
-"���Υ��ޥ�ɤ���λ����ޤ���³���ݤ���ޤ���"
+"ÀÜÂ³¤¬ÀÚÃÇ¤µ¤ì¤ë<b>Á°</b>¤Ë¼Â¹Ô¤µ¤ì¤ë¥³¥Þ¥ó¥É¤Ç¤¹¡£\n"
+"¤³¤Î¥³¥Þ¥ó¥É¤¬½ªÎ»¤¹¤ë¤Þ¤ÇÀÜÂ³¤ÏÊÝ¤¿¤ì¤Þ¤¹¡£"
 
 #: edit.cpp:145
 msgid ""
 "Execute program\n"
 "upon disconnect:"
 msgstr ""
-"�¹ԥ��ޥ��\n"
-"���ǻ���"
+"¼Â¹Ô¥³¥Þ¥ó¥É\n"
+"ÀÚÃÇ»þ¡§"
 
 #: edit.cpp:157
 msgid ""
 "Allows you to run a program <b>after</b> a connection\n"
 "has been closed."
 msgstr ""
-"��³�����Ǥ��줿<b>��</b>�˼¹Ԥ���륳�ޥ�ɤǤ���"
+"ÀÜÂ³¤¬ÀÚÃÇ¤µ¤ì¤¿<b>¸å</b>¤Ë¼Â¹Ô¤µ¤ì¤ë¥³¥Þ¥ó¥É¤Ç¤¹¡£"
 
 #: edit.cpp:161
 msgid "Edit pppd arguments:"
-msgstr "pppd �Υ��ץ������Խ���"
+msgstr "pppd ¤Î¥ª¥×¥·¥ç¥ó¤ÎÊÔ½¸¡§"
 
 #: edit.cpp:166
 msgid "Arguments"
-msgstr "���ץ����"
+msgstr "¥ª¥×¥·¥ç¥ó"
 
 #: edit.cpp:223
 msgid "IP Setup"
-msgstr "IP������"
+msgstr "IP¤ÎÀßÄê"
 
 #: edit.cpp:229
 msgid "IP Address:"
-msgstr "IP���ɥ쥹��"
+msgstr "IP¥¢¥É¥ì¥¹¡§"
 
 #: edit.cpp:232
 msgid ""
 "If your computer has a permanent internet\n"
 "address, you must supply your IP address here"
 msgstr ""
-"���ʤ��Υ���ԥ塼����IP���ɥ쥹�����Ǥ�\n"
-"��ޤäƤ�����Ϥ����˵�������ɬ�פ�����ޤ���"
+"¤¢¤Ê¤¿¤Î¥³¥ó¥Ô¥å¡¼¥¿¤ÎIP¥¢¥É¥ì¥¹¤¬¤¹¤Ç¤Ë\n"
+"·è¤Þ¤Ã¤Æ¤¤¤ë¾ì¹ç¤Ï¤³¤³¤Ëµ­Æþ¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£"
 
 #: edit.cpp:237
 msgid "Subnet Mask:"
-msgstr "���֥ͥåȥޥ�����"
+msgstr "¥µ¥Ö¥Í¥Ã¥È¥Þ¥¹¥¯¡§"
 
 #: edit.cpp:240
 msgid ""
@@ -564,16 +564,16 @@ msgid ""
 "\n"
 "If unsure, contact your Internet Service Provider"
 msgstr ""
-"���ʤ��Υ���ԥ塼������餦�٤�IP���ɥ쥹����������\n"
-"��ޤäƤ�����ϥͥåȥޥ����򤳤��˵�������ɬ�פ�����ޤ���\n"
-"�ۤȤ�ɤξ�硢���Υͥåȥޥ�����<b>255.255.255.0</b>\n"
-"�ǻ�­��ޤ��������ˤ�ꤳ�Ȥʤ�ޤ���\n"
+"¤¢¤Ê¤¿¤Î¥³¥ó¥Ô¥å¡¼¥¿¤¬¤â¤é¤¦¤Ù¤­IP¥¢¥É¥ì¥¹¤¬¤À¤¤¤¿¤¤\n"
+"·è¤Þ¤Ã¤Æ¤¤¤ë¾ì¹ç¤Ï¥Í¥Ã¥È¥Þ¥¹¥¯¤ò¤³¤³¤Ëµ­Æþ¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£\n"
+"¤Û¤È¤ó¤É¤Î¾ì¹ç¡¢¤³¤Î¥Í¥Ã¥È¥Þ¥¹¥¯¤Ï<b>255.255.255.0</b>\n"
+"¤Ç»öÂ­¤ê¤Þ¤¹¤¬¡¢¾ì¹ç¤Ë¤è¤ê¤³¤È¤Ê¤ê¤Þ¤¹¡£\n"
 "\n"
-"�⤷�������ʤ��Τʤ顢ISP���䤤��碌�ƤߤƤ���������"
+"¤â¤·¼«¿®¤¬¤Ê¤¤¤Î¤Ê¤é¡¢ISP¤ËÌä¤¤¹ç¤ï¤»¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: edit.cpp:254
 msgid "Dynamic IP Address"
-msgstr "�����ʥߥå�IP���ɥ쥹"
+msgstr "¥À¥¤¥Ê¥ß¥Ã¥¯IP¥¢¥É¥ì¥¹"
 
 #: edit.cpp:256
 msgid ""
@@ -584,15 +584,15 @@ msgid ""
 "Almost every Internet Service Provider uses\n"
 "this method, so this should be turned on."
 msgstr ""
-"���ʤ��Υ���ԥ塼�������󥿡��ͥåȤ���³�������\n"
-"��������IP���ɥ쥹�����ۤʤ���ϡ����������Ǥ���������\n"
+"¤¢¤Ê¤¿¤Î¥³¥ó¥Ô¥å¡¼¥¿¤¬¥¤¥ó¥¿¡¼¥Í¥Ã¥È¤ËÀÜÂ³¤¹¤ë»þ¤Ë\n"
+"¼èÆÀ¤¹¤ëIP¥¢¥É¥ì¥¹¤¬Ëè²ó°Û¤Ê¤ë»þ¤Ï¡¢¤³¤ì¤òÁª¤ó¤Ç¤¯¤À¤µ¤¤¡£\n"
 "\n"
-"�ۤȤ�ɤ�ISP�ǤϤ��η��֤�ȤäƤ��ޤ��Τǡ�\n"
-"���������Ǥ����ޤ��礦��"
+"¤Û¤È¤ó¤É¤ÎISP¤Ç¤Ï¤³¤Î·ÁÂÖ¤ò¤È¤Ã¤Æ¤¤¤Þ¤¹¤Î¤Ç¡¢\n"
+"¤³¤ì¤òÁª¤ó¤Ç¤ª¤­¤Þ¤·¤ç¤¦¡£"
 
 #: edit.cpp:264
 msgid "Static IP Address"
-msgstr "�����ƥ��å�IP���ɥ쥹"
+msgstr "¥¹¥¿¥Æ¥£¥Ã¥¯IP¥¢¥É¥ì¥¹"
 
 #: edit.cpp:268
 msgid ""
@@ -602,15 +602,15 @@ msgid ""
 "dynamic IP addressing unless you know what you\n"
 "are doing"
 msgstr ""
-"���ʤ��Υ���ԥ塼�������Ǥ˷�ޤä�IP���ɥ쥹��\n"
-"���äƤ�����Ϥ��������Ǥ����������ۤȤ�ɤ�\n"
-"����ԥ塼���Ϥ��Τ褦��IP���ɥ쥹����äƤ��ޤ���Τ�\n"
-"�褯ʬ����ʤ����ϡ������ʥߥå�IP���ɥ쥹�������\n"
-"�����Τ��褤�Ǥ��礦��"
+"¤¢¤Ê¤¿¤Î¥³¥ó¥Ô¥å¡¼¥¿¤¬¤¹¤Ç¤Ë·è¤Þ¤Ã¤¿IP¥¢¥É¥ì¥¹¤ò\n"
+"»ý¤Ã¤Æ¤¤¤ë¾ì¹ç¤Ï¤³¤ì¤òÁª¤ó¤Ç¤¯¤À¤µ¤¤¡£¤Û¤È¤ó¤É¤Î\n"
+"¥³¥ó¥Ô¥å¡¼¥¿¤Ï¤½¤Î¤è¤¦¤ÊIP¥¢¥É¥ì¥¹¤ò»ý¤Ã¤Æ¤¤¤Þ¤»¤ó¤Î¤Ç\n"
+"¤è¤¯Ê¬¤«¤é¤Ê¤¤»þ¤Ï¡¢¥À¥¤¥Ê¥ß¥Ã¥¯IP¥¢¥É¥ì¥¹¤òÁª¤ó¤Ç\n"
+"¤ª¤¯¤Î¤¬¤è¤¤¤Ç¤·¤ç¤¦¡£"
 
 #: edit.cpp:274
 msgid "Auto-configure hostname from this IP"
-msgstr "IP���ɥ쥹���鼫ưŪ�˥ۥ��ȥ͡����������"
+msgstr "IP¥¢¥É¥ì¥¹¤«¤é¼«Æ°Åª¤Ë¥Û¥¹¥È¥Í¡¼¥à¤ò½¤Àµ¤¹¤ë"
 
 #: edit.cpp:279
 msgid ""
@@ -623,20 +623,20 @@ msgid ""
 "\n"
 "Don't enable this unless you really need it"
 msgstr ""
-"��³�������Ϥ��Ĥ�PPP�����Ф�������IP���ɥ쥹��\n"
-"���פ���褦�˥ۥ��ȥ͡���������ޤ���\n"
-"�ۥ��ȥ͡���˰�¸�����ץ��ȥ����Ȥ�ɬ�פ�\n"
-"�������ͭ�ѤǤ������͡���<link kppp-7.html#autohostname>����</link>�θ����Ȥʤ�ޤ���\n"
+"ÀÜÂ³¤·¤¿»þ¤Ï¤¤¤Ä¤âPPP¥µ¡¼¥Ð¤«¤éÆÀ¤¿IP¥¢¥É¥ì¥¹¤Ë\n"
+"¹çÃ×¤¹¤ë¤è¤¦¤Ë¥Û¥¹¥È¥Í¡¼¥à¤ò½¤Àµ¤·¤Þ¤¹¡£\n"
+"¥Û¥¹¥È¥Í¡¼¥à¤Ë°ÍÂ¸¤·¤¿¥×¥í¥È¥³¥ë¤ò»È¤¦É¬Í×¤¬\n"
+"¤¢¤ë¾ì¹ç¤ÏÍ­ÍÑ¤Ç¤¹¤¬¡¢ÍÍ¡¹¤Ê<link kppp-7.html#autohostname>ÌäÂê</link>¤Î¸¶°ø¤È¤Ê¤ê¤Þ¤¹¡£\n"
 "\n"
-"������ɬ�פʾ��ʳ��ϥ����å����ʤ��Ǥ���������"
+"ËÜÅö¤ËÉ¬Í×¤Ê¾ì¹ç°Ê³°¤Ï¥Á¥§¥Ã¥¯¤·¤Ê¤¤¤Ç¤¯¤À¤µ¤¤¡£"
 
 #: edit.cpp:396
 msgid "DNS Servers"
-msgstr "DNS������"
+msgstr "DNS¥µ¡¼¥Ð"
 
 #: edit.cpp:411
 msgid "Domain Name:"
-msgstr "�ɥᥤ��"
+msgstr "¥É¥á¥¤¥ó¡§"
 
 #: edit.cpp:422
 msgid ""
@@ -649,17 +649,17 @@ msgid ""
 "If you leave this field blank, no changes are\n"
 "made to the domain name."
 msgstr ""
-"�����˥ɥᥤ��̾��������ȡ���³��Ϥ��ʤ���\n"
-"����ԥ塼���ˤ��Υɥᥤ�󤬻Ȥ��ޤ�����³��\n"
-"������ȡ���Ȥ�ȻȤ��Ƥ����ɥᥤ��̾��\n"
-"�ᤵ��ޤ���\n"
+"¤³¤³¤Ë¥É¥á¥¤¥óÌ¾¤òµ­Æþ¤¹¤ë¤È¡¢ÀÜÂ³Ãæ¤Ï¤¢¤Ê¤¿¤Î\n"
+"¥³¥ó¥Ô¥å¡¼¥¿¤Ë¤½¤Î¥É¥á¥¤¥ó¤¬»È¤ï¤ì¤Þ¤¹¡£ÀÜÂ³¤¬\n"
+"¼º¤ï¤ì¤ë¤È¡¢¤â¤È¤â¤È»È¤ï¤ì¤Æ¤¤¤¿¥É¥á¥¤¥óÌ¾¤Ë\n"
+"Ìá¤µ¤ì¤Þ¤¹¡£\n"
 "\n"
-"������˲��⵭�����ʤ���С��ɥᥤ��̾���ѹ���\n"
-"����ޤ���"
+"¤³¤ÎÍó¤Ë²¿¤âµ­Æþ¤·¤Ê¤±¤ì¤Ð¡¢¥É¥á¥¤¥óÌ¾¤ËÊÑ¹¹¤Ï\n"
+"¤¢¤ê¤Þ¤»¤ó¡£"
 
 #: edit.cpp:431
 msgid "DNS IP Address:"
-msgstr "DNS IP ���ɥ쥹��"
+msgstr "DNS IP ¥¢¥É¥ì¥¹¡§"
 
 #: edit.cpp:446
 msgid ""
@@ -671,12 +671,12 @@ msgid ""
 "To add a DNS server, type in the IP address of\n"
 "of the DNS server here and click on <b>Add</b>"
 msgstr ""
-"��³���˻��Ѥ���DNS�����Ф򤳤��ǻ��ꤹ�뤳�Ȥ�\n"
-"�Ǥ��ޤ�����³��������С�����DNS�Υ���ȥ��\n"
-"�������ޤ���\n"
+"ÀÜÂ³»þ¤Ë»ÈÍÑ¤¹¤ëDNS¥µ¡¼¥Ð¤ò¤³¤³¤Ç»ØÄê¤¹¤ë¤³¤È¤¬\n"
+"¤Ç¤­¤Þ¤¹¡£ÀÜÂ³¤¬¼º¤ï¤ì¤ì¤Ð¡¢¤³¤ÎDNS¤Î¥¨¥ó¥È¥ê¤Ï\n"
+"ºï½ü¤µ¤ì¤Þ¤¹¡£\n"
 "\n"
-"DNS�����Ф��ɲä���ˤϡ�DNS�����Ф�IP���ɥ쥹��\n"
-"������<b>�ɲ�</b>�򥯥�å����Ƥ���������"
+"DNS¥µ¡¼¥Ð¤òÄÉ²Ã¤¹¤ë¤Ë¤Ï¡¢DNS¥µ¡¼¥Ð¤ÎIP¥¢¥É¥ì¥¹¤ò\n"
+"µ­Æþ¤·<b>ÄÉ²Ã</b>¤ò¥¯¥ê¥Ã¥¯¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: edit.cpp:465
 msgid ""
@@ -684,21 +684,21 @@ msgid ""
 "specified in the field above. The entry\n"
 "will then be added to the list below"
 msgstr ""
-"���Υܥ���򥯥�å�����Ⱦ����˵�������\n"
-"DNS�����Ф��ɲä���ޤ�����������ȡ�\n"
-"���Υꥹ�Ȥ˥���ȥ꤬�ä����ޤ���"
+"¤³¤Î¥Ü¥¿¥ó¤ò¥¯¥ê¥Ã¥¯¤¹¤ë¤È¾å¤ÎÍó¤Ëµ­Æþ¤·¤¿\n"
+"DNS¥µ¡¼¥Ð¤¬ÄÉ²Ã¤µ¤ì¤Þ¤¹¡£¤½¤¦¤¹¤ë¤È¡¢\n"
+"²¼¤Î¥ê¥¹¥È¤Ë¥¨¥ó¥È¥ê¤¬²Ã¤¨¤é¤ì¤Þ¤¹¡£"
 
 #: edit.cpp:477
 msgid ""
 "Click this button to remove the selected DNS\n"
 "server entry from the list below"
 msgstr ""
-"���Υܥ���򥯥�å�����Ȳ��Υꥹ�Ȥ������\n"
-"DNS�����ФΥ���ȥ꤬�������ޤ���"
+"¤³¤Î¥Ü¥¿¥ó¤ò¥¯¥ê¥Ã¥¯¤¹¤ë¤È²¼¤Î¥ê¥¹¥È¤ÇÁª¤ó¤À\n"
+"DNS¥µ¡¼¥Ð¤Î¥¨¥ó¥È¥ê¤¬ºï½ü¤µ¤ì¤Þ¤¹¡£"
 
 #: edit.cpp:480
 msgid "DNS Address List:"
-msgstr "DNS ���ɥ쥹�ꥹ�ȡ�"
+msgstr "DNS ¥¢¥É¥ì¥¹¥ê¥¹¥È¡§"
 
 #: edit.cpp:491
 msgid ""
@@ -706,13 +706,13 @@ msgid ""
 "while you are connected. Use the <b>Add</b> and\n"
 "<b>Remove</b> buttons to modify the list"
 msgstr ""
-"��³���˻��Ѥ���DNS�����Фΰ�����ɽ������ޤ���\n"
-"<b>�ɲ�</b>�ܥ����<b>���</b>�ܥ���ǽ�����\n"
-"�Ǥ��ޤ���"
+"ÀÜÂ³»þ¤Ë»ÈÍÑ¤¹¤ëDNS¥µ¡¼¥Ð¤Î°ìÍ÷¤¬É½¼¨¤µ¤ì¤Þ¤¹¡£\n"
+"<b>ÄÉ²Ã</b>¥Ü¥¿¥ó¤ä<b>ºï½ü</b>¥Ü¥¿¥ó¤Ç½¤Àµ¤¬\n"
+"¤Ç¤­¤Þ¤¹¡£"
 
 #: edit.cpp:496
 msgid "Disable existing DNS Servers during Connection"
-msgstr "��³���ϸ��߻������DNS�����Ф�̵���ˤ���"
+msgstr "ÀÜÂ³»þ¤Ï¸½ºß»ÈÍÑÃæ¤ÎDNS¥µ¡¼¥Ð¤òÌµ¸ú¤Ë¤¹¤ë"
 
 #: edit.cpp:503
 msgid ""
@@ -726,22 +726,22 @@ msgid ""
 "option, but it may become useful under \n"
 "some circumstances"
 msgstr ""
-"���Υ��ץ�������Ф��ȡ��������륢�å�\n"
-"��³����Ω����Ƥ���֡�<i>/etc/resolv.conf</i>��\n"
-"�����줿���Ƥ�DNS�����Ф����Ū��̵���ˤʤ�ޤ���\n"
-"��³����λ����С�������DNS�����ФϺƤ�\n"
-"ͭ���ˤʤ�ޤ���\n"
+"¤³¤Î¥ª¥×¥·¥ç¥ó¤¬Áª¤Ð¤ì¤ë¤È¡¢¥À¥¤¥¢¥ë¥¢¥Ã¥×\n"
+"ÀÜÂ³¤¬³ÎÎ©¤µ¤ì¤Æ¤¤¤ë´Ö¡¢<i>/etc/resolv.conf</i>¤Ë\n"
+"¤«¤«¤ì¤¿Á´¤Æ¤ÎDNS¥µ¡¼¥Ð¤¬°ì»þÅª¤ËÌµ¸ú¤Ë¤Ê¤ê¤Þ¤¹¡£\n"
+"ÀÜÂ³¤¬½ªÎ»¤¹¤ì¤Ð¡¢¤½¤ì¤é¤ÎDNS¥µ¡¼¥Ð¤ÏºÆ¤Ó\n"
+"Í­¸ú¤Ë¤Ê¤ê¤Þ¤¹¡£\n"
 "\n"
-"�����ơ����Υ��ץ�������Ѥ���ɬ�פϤ���ޤ���\n"
-"�������Ķ��ˤ�äƤ�ͭ�Ѥ����Τ�ޤ���"
+"³µ¤·¤Æ¡¢¤³¤Î¥ª¥×¥·¥ç¥ó¤ò»ÈÍÑ¤¹¤ëÉ¬Í×¤Ï¤¢¤ê¤Þ¤»¤ó¡£\n"
+"¤·¤«¤·´Ä¶­¤Ë¤è¤Ã¤Æ¤ÏÍ­ÍÑ¤«¤âÃÎ¤ì¤Þ¤»¤ó¡£"
 
 #: edit.cpp:572
 msgid "Gateway Setup"
-msgstr "�����ȥ�����������"
+msgstr "¥²¡¼¥È¥¦¥§¥¤¤ÎÀßÄê"
 
 #: edit.cpp:581
 msgid "Default Gateway"
-msgstr "�ǥե���ȥ����ȥ�����"
+msgstr "¥Ç¥Õ¥©¥ë¥È¥²¡¼¥È¥¦¥§¥¤"
 
 #: edit.cpp:584
 msgid ""
@@ -754,38 +754,38 @@ msgid ""
 "This is the default for most ISPs, so you should\n"
 "probably leave this option on"
 msgstr ""
-"����ˤ�ä�PPP�ϥ���ԥ塼��(���ʤ��Υ�ǥ��\n"
-"�Ĥʤ�������ԥ塼��)�������ȥ������Ǥ����\n"
-"�ߤʤ��ޤ������ʤ��Υ���ԥ塼���ϥ�������ͥåȤ�\n"
-"������줿�ʳ������ƤΥѥ��åȤ򤳤Υ���ԥ塼����\n"
-"���ꡢ���Υ���ԥ塼���ϥѥ��åȤιԤ������ޤ���\n"
+"¤³¤ì¤Ë¤è¤Ã¤ÆPPP¤Ï¥³¥ó¥Ô¥å¡¼¥¿(¤¢¤Ê¤¿¤Î¥â¥Ç¥à¤Ç\n"
+"¤Ä¤Ê¤²¤¿¥³¥ó¥Ô¥å¡¼¥¿)¤¬¥²¡¼¥È¥¦¥§¥¤¤Ç¤¢¤ë¤È\n"
+"¤ß¤Ê¤·¤Þ¤¹¡£¤¢¤Ê¤¿¤Î¥³¥ó¥Ô¥å¡¼¥¿¤Ï¥í¡¼¥«¥ë¥Í¥Ã¥È¤Ë\n"
+"¸þ¤±¤é¤ì¤¿°Ê³°¤ÎÁ´¤Æ¤Î¥Ñ¥±¥Ã¥È¤ò¤³¤Î¥³¥ó¥Ô¥å¡¼¥¿¤Ë\n"
+"Á÷¤ê¡¢¤³¤Î¥³¥ó¥Ô¥å¡¼¥¿¤Ï¥Ñ¥±¥Ã¥È¤Î¹Ô¤­Àè¤ò·è¤á¤Þ¤¹¡£\n"
 "\n"
-"����ϤۤȤ�ɤ�ISP�ǥǥե���ȤȤʤäƤ��ꡢ\n"
-"�����ͭ���ˤ��Ƥ���ɬ�פ�����Ǥ��礦��"
+"¤³¤ì¤Ï¤Û¤È¤ó¤É¤ÎISP¤Ç¥Ç¥Õ¥©¥ë¥È¤È¤Ê¤Ã¤Æ¤ª¤ê¡¢\n"
+"¤³¤ì¤ÏÍ­¸ú¤Ë¤·¤Æ¤ª¤¯É¬Í×¤¬¤¢¤ë¤Ç¤·¤ç¤¦¡£"
 
 #: edit.cpp:595
 msgid "Static Gateway"
-msgstr "�����ƥ��å������ȥ�����"
+msgstr "¥¹¥¿¥Æ¥£¥Ã¥¯¥²¡¼¥È¥¦¥§¥¤"
 
 #: edit.cpp:598
 msgid ""
 "Allows you to specify which computer you want\n"
 "to use as gateway (see <i>Default Gateway</i> above"
 msgstr ""
-"�ɤΥ���ԥ塼���򥲡��ȥ������Ȥ����Ѥ��뤫��\n"
-"����Ǥ��ޤ�(���<i>�ǥե���ȥ����ȥ�����</i>����)"
+"¤É¤Î¥³¥ó¥Ô¥å¡¼¥¿¤ò¥²¡¼¥È¥¦¥§¥¤¤È¤·¤ÆÍÑ¤¤¤ë¤«¤ò\n"
+"»ØÄê¤Ç¤­¤Þ¤¹(¾å¤Î<i>¥Ç¥Õ¥©¥ë¥È¥²¡¼¥È¥¦¥§¥¤</i>»²¾È)"
 
 #: edit.cpp:603
 msgid ""
 "Gateway\n"
 "IP Address:"
 msgstr ""
-"�����ȥ�����\n"
-"IP���ɥ쥹"
+"¥²¡¼¥È¥¦¥§¥¤\n"
+"IP¥¢¥É¥ì¥¹"
 
 #: edit.cpp:605
 msgid "Assign the Default Route to this Gateway"
-msgstr "�ǥե���ȥ롼�Ȥˤ��Υ����ȥ������������Ƥ�"
+msgstr "¥Ç¥Õ¥©¥ë¥È¥ë¡¼¥È¤Ë¤³¤Î¥²¡¼¥È¥¦¥§¥¤¤ò³ä¤êÅö¤Æ¤ë"
 
 #: edit.cpp:608
 msgid ""
@@ -795,23 +795,23 @@ msgid ""
 "\n"
 "Normally, you should turn this on"
 msgstr ""
-"���Υ��ץ�����ͭ���ˤ���ȡ���������ͥåȤ�\n"
-"�Ԥ��ʳ������ƤΥѥ��åȤ�PPP��³���̤���\n"
-"�Ԥ�����꿶���ޤ���\n"
+"¤³¤Î¥ª¥×¥·¥ç¥ó¤òÍ­¸ú¤Ë¤¹¤ë¤È¡¢¥í¡¼¥«¥ë¥Í¥Ã¥È¤Ë\n"
+"¹Ô¤¯°Ê³°¤ÎÁ´¤Æ¤Î¥Ñ¥±¥Ã¥È¤ÏPPPÀÜÂ³¤òÄÌ¤·¤Æ\n"
+"¹Ô¤­Àè¤ò³ä¤ê¿¶¤é¤ì¤Þ¤¹¡£\n"
 "\n"
-"�̾�ϥ����å����Ƥ���������"
+"ÄÌ¾ï¤Ï¥Á¥§¥Ã¥¯¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: edit.cpp:703
 msgid "Edit Script"
-msgstr "������ץȤ��Խ�"
+msgstr "¥¹¥¯¥ê¥×¥È¤ÎÊÔ½¸"
 
 #: general.cpp:50
 msgid "kppp Setup"
-msgstr "kppp������"
+msgstr "kppp¤ÎÀßÄê"
 
 #: general.cpp:56
 msgid "pppd Timeout:"
-msgstr "pppd�Υ����ॢ���ȡ�"
+msgstr "pppd¤Î¥¿¥¤¥à¥¢¥¦¥È¡§"
 
 #: general.cpp:69
 msgid ""
@@ -820,17 +820,17 @@ msgid ""
 "If no connection is made in this time frame,\n"
 "<i>kppp</i> will give up and kill pppd."
 msgstr ""
-"<i>kppp</i>�Ϥ����ǻ��ꤷ���ÿ�����PPP��³����Ω\n"
-"���뤫�ɤ����Ԥ��ޤ������λ��ְ������³��\n"
-"��Ω���ʤ����<i>kppp</i>�Ϥ�������pppd��λ�����ޤ���"
+"<i>kppp</i>¤Ï¤³¤³¤Ç»ØÄê¤·¤¿ÉÃ¿ô¤À¤±PPPÀÜÂ³¤¬³ÎÎ©\n"
+"¤¹¤ë¤«¤É¤¦¤«ÂÔ¤Á¤Þ¤¹¡£¤³¤Î»þ´Ö°ÊÆâ¤ËÀÜÂ³¤¬\n"
+"³ÎÎ©¤·¤Ê¤±¤ì¤Ð<i>kppp</i>¤Ï¤¢¤­¤é¤á¤Æpppd¤ò½ªÎ»¤µ¤»¤Þ¤¹¡£"
 
 #: general.cpp:74 general.cpp:401 general.cpp:490
 msgid "Seconds"
-msgstr "��"
+msgstr "ÉÃ"
 
 #: general.cpp:87
 msgid "Dock into Panel on Connect"
-msgstr "��³���ϥѥͥ�˳�Ǽ"
+msgstr "ÀÜÂ³»þ¤Ï¥Ñ¥Í¥ë¤Ë³ÊÇ¼"
 
 #: general.cpp:89
 msgid ""
@@ -842,16 +842,16 @@ msgid ""
 "window to it's original location and\n"
 "size."
 msgstr ""
-"��³����Ω����ȥ�����ɥ��ϺǾ�������\n"
-"<i>kpanel</i>�Τʤ��ǥ�������ˤʤꡢ�Ƥ�\n"
-"������ɥ�ɽ�������Τ��Ԥ��ޤ���\n"
+"ÀÜÂ³¤¬³ÎÎ©¤¹¤ë¤È¥¦¥£¥ó¥É¥¦¤ÏºÇ¾®²½¤·¡¢\n"
+"<i>kpanel</i>¤Î¤Ê¤«¤Ç¥¢¥¤¥³¥ó¤Ë¤Ê¤ê¡¢ºÆ¤Ó\n"
+"¥¦¥£¥ó¥É¥¦É½¼¨¤µ¤ì¤ë¤Î¤òÂÔ¤Á¤Þ¤¹¡£\n"
 "\n"
-"���Υ�������򥯥�å�����ȥ�����ɥ���\n"
-"�����ä�����Ʊ������������������ޤ���"
+"¤³¤Î¥¢¥¤¥³¥ó¤ò¥¯¥ê¥Ã¥¯¤¹¤ë¤È¥¦¥£¥ó¥É¥¦¤Ï\n"
+"¸µ¤¢¤Ã¤¿¾ì½ê¤ËÆ±¤¸¥µ¥¤¥º¤ÇÉü¸µ¤µ¤ì¤Þ¤¹¡£"
 
 #: general.cpp:102
 msgid "Automatic Redial on Disconnect"
-msgstr "���Ǥ��줿���ϼ�ưŪ�˥��������"
+msgstr "ÀÚÃÇ¤µ¤ì¤¿»þ¤Ï¼«Æ°Åª¤Ë¥ê¥À¥¤¥¢¥ë"
 
 #: general.cpp:108
 msgid ""
@@ -861,15 +861,15 @@ msgid ""
 "\n"
 "See <link #redial>here</link> for more on this topic."
 msgstr ""
-"��³����Ω���줿�塢���餫�η�����³��\n"
-"������ȡ�<i>kppp</i>��Ʊ����³���\n"
-"���ä򤫤��ʤ����ޤ�\n"
+"ÀÜÂ³¤¬³ÎÎ©¤µ¤ì¤¿¸å¡¢²¿¤é¤«¤Î·Á¤ÇÀÜÂ³¤¬\n"
+"¼º¤ï¤ì¤ë¤È¡¢<i>kppp</i>¤ÏÆ±¤¸ÀÜÂ³Àè¤Ë\n"
+"ÅÅÏÃ¤ò¤«¤±¤Ê¤ª¤·¤Þ¤¹\n"
 "\n"
-"�ܤ�����<link #redial>����</link>�򻲾Ȥ��Ƥ���������"
+"¾Ü¤·¤¯¤Ï<link #redial>¤³¤³</link>¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: general.cpp:114
 msgid "Show Clock on Caption"
-msgstr "��³���Ƥ���λ��֤�ɽ��"
+msgstr "ÀÜÂ³¤·¤Æ¤«¤é¤Î»þ´Ö¤òÉ½¼¨"
 
 #: general.cpp:120
 msgid ""
@@ -878,13 +878,13 @@ msgid ""
 "was established. Very useful, so you \n"
 "should turn this on"
 msgstr ""
-"���Υ��ץ���������Ǥ����ȡ���³���Ƥ����\n"
-"���֤�������ɥ��Υ����ȥ�Ȥ���ɽ������ޤ���\n"
-"�ȤƤ������ʤΤǥ���å����Ƥ����ޤ��礦��"
+"¤³¤Î¥ª¥×¥·¥ç¥ó¤òÁª¤ó¤Ç¤ª¤¯¤È¡¢ÀÜÂ³¤·¤Æ¤«¤é¤Î\n"
+"»þ´Ö¤¬¥¦¥£¥ó¥É¥¦¤Î¥¿¥¤¥È¥ë¤È¤·¤ÆÉ½¼¨¤µ¤ì¤Þ¤¹¡£\n"
+"¤È¤Æ¤âÊØÍø¤Ê¤Î¤Ç¥¯¥ê¥Ã¥¯¤·¤Æ¤ª¤­¤Þ¤·¤ç¤¦¡£"
 
 #: general.cpp:125
 msgid "Disconnect on X-server shutdown"
-msgstr "X����λ������������"
+msgstr "X¤¬½ªÎ»¤·¤¿»þ¤ÏÀÚÃÇ"
 
 #: general.cpp:131
 msgid ""
@@ -895,39 +895,39 @@ msgid ""
 "\n"
 "See <link #disxserver>here</link> for more on this."
 msgstr ""
-"���Υ��ץ���������Ǥ����ȡ�X����λ��������\n"
-"���Ƥ���³�����Ǥ��ޤ����ɤ�ʬ����ʤ�����\n"
-"ͭ���ˤ��Ƥ����ޤ��礦\n"
+"¤³¤Î¥ª¥×¥·¥ç¥ó¤òÁª¤ó¤Ç¤ª¤¯¤È¡¢X¤¬½ªÎ»¤·¤¿»þ¤Ë\n"
+"Á´¤Æ¤ÎÀÜÂ³¤òÀÚÃÇ¤·¤Þ¤¹¡£ÎÉ¤¯Ê¬¤«¤é¤Ê¤¤»þ¤Ï\n"
+"Í­¸ú¤Ë¤·¤Æ¤ª¤­¤Þ¤·¤ç¤¦\n"
 "\n"
-"�ܤ�����<link #disxserver>����</link>�򻲾Ȥ��Ƥ���������"
+"¾Ü¤·¤¯¤Ï<link #disxserver>¤³¤³</link>¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: general.cpp:138
 msgid "Quit on Disconnect"
-msgstr "���ǻ��˽�λ"
+msgstr "ÀÚÃÇ»þ¤Ë½ªÎ»"
 
 #: general.cpp:144
 msgid ""
 "When this option is turned on, <i>kppp</i>\n"
 "will be closed when you disconnect"
 msgstr ""
-"���Υ��ץ���������Ǥ����ȡ�\n"
-"��³�����Ǥ��줿����<i>kppp</i>�⽪λ���ޤ���"
+"¤³¤Î¥ª¥×¥·¥ç¥ó¤òÁª¤ó¤Ç¤ª¤¯¤È¡¢\n"
+"ÀÜÂ³¤¬ÀÚÃÇ¤µ¤ì¤¿»þ¤Ë<i>kppp</i>¤â½ªÎ»¤·¤Þ¤¹¡£"
 
 #: general.cpp:147
 msgid "Minimize Window on Connect"
-msgstr "��³���˥�����ɥ���Ǿ���"
+msgstr "ÀÜÂ³»þ¤Ë¥¦¥£¥ó¥É¥¦¤òºÇ¾®²½"
 
 #: general.cpp:153
 msgid ""
 "Iconifies <i>kppp</i>'s window when a\n"
 "connection is established"
 msgstr ""
-"��³����Ω���줿����<i>kppp</i>�Υ�����ɥ���\n"
-"�Ǿ������ޤ���"
+"ÀÜÂ³¤¬³ÎÎ©¤µ¤ì¤¿»þ¤Ë<i>kppp</i>¤Î¥¦¥£¥ó¥É¥¦¤ò\n"
+"ºÇ¾®²½¤·¤Þ¤¹¡£"
 
 #: general.cpp:202
 msgid "About kppp"
-msgstr "kppp�ΥС���������"
+msgstr "kppp¤Î¥Ð¡¼¥¸¥ç¥ó¾ðÊó"
 
 #: general.cpp:210
 msgid ""
@@ -948,27 +948,27 @@ msgid ""
 "(GNU General Public License)."
 msgstr ""
 "\n"
-"�������顼�ڤ�pppd�Υե���ȥ����\n"
+"¥À¥¤¥¢¥é¡¼µÚ¤Ópppd¤Î¥Õ¥í¥ó¥È¥¨¥ó¥É\n"
 "\n"
 "(c) 1997, 1998\n"
 "    Bernd Johannes Wuebben <wuebben@kde.org>\n"
 "    Harri Porten <porten@kde.org>\n"
 "    Mario Weilguni <mweilguni@kde.org>\n"
 "\n"
-"���ꥸ�ʥ�κ��: Bernd Johannes Wuebben\n"
-"���ߤδ����ԡ� Harri Porten and Mario Weilguni\n"
-"���٤ƤΥХ���ݡ��Ȥϸ��ߤδ����Ԥ����äƤ���������\n"
+"¥ª¥ê¥¸¥Ê¥ë¤Îºî¼Ô: Bernd Johannes Wuebben\n"
+"¸½ºß¤Î´ÉÍý¼Ô¡§ Harri Porten and Mario Weilguni\n"
+"¤¹¤Ù¤Æ¤Î¥Ð¥°¥ê¥Ý¡¼¥È¤Ï¸½ºß¤Î´ÉÍý¼Ô¤ËÁ÷¤Ã¤Æ¤¯¤À¤µ¤¤¡£\n"
 "\n"
-"���Υץ�������GNU GPL(GNU General Public License)\n"
-"�Τ�Ȥ����ۤ��뤳�Ȥ��Ǥ��ޤ���"
+"¤³¤Î¥×¥í¥°¥é¥à¤ÏGNU GPL(GNU General Public License)\n"
+"¤Î¤â¤È¤ËÇÛÉÛ¤¹¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£"
 
 #: general.cpp:238
 msgid "Serial device"
-msgstr "���ꥢ��ǥХ���"
+msgstr "¥·¥ê¥¢¥ë¥Ç¥Ð¥¤¥¹"
 
 #: general.cpp:241
 msgid "Modem Device:"
-msgstr "��ǥ�ǥХ���"
+msgstr "¥â¥Ç¥à¥Ç¥Ð¥¤¥¹"
 
 #: general.cpp:255
 msgid ""
@@ -980,21 +980,21 @@ msgid ""
 "emulation (most cards under Linux support this), you\n"
 "should select one of the /dev/ttyIx devices."
 msgstr ""
-"��ǥ�ΤĤʤ���Ƥ��륷�ꥢ��ݡ��ȤǤ���\n"
-"Linux/x86 �ǤϤ������� /dev/ttyS0 (DOS�Ǥ����Ȥ�����COM1)��\n"
-"/dev/ttyS1 (Ʊ����COM2)�Ǥ��礦��\n"
+"¥â¥Ç¥à¤Î¤Ä¤Ê¤¬¤ì¤Æ¤¤¤ë¥·¥ê¥¢¥ë¥Ý¡¼¥È¤Ç¤¹¡£\n"
+"Linux/x86 ¤Ç¤Ï¤À¤¤¤¿¤¤ /dev/ttyS0 (DOS¤Ç¤¤¤¦¤È¤³¤í¤ÎCOM1)¤«\n"
+"/dev/ttyS1 (Æ±¤¸¤¯COM2)¤Ç¤·¤ç¤¦¡£\n"
 "\n"
-"AT���ޥ�ɥ��ߥ�졼�����(Linux�ǤϤۤȤ�ɤΥ����ɤ�\n"
-"������Ѥ��ޤ�)���Ѥ�������ISDN�����ɤξ��ϡ�\n"
-"/dev/ttyIx �Τɤ줫������ɬ�פ�����ޤ���"
+"AT¥³¥Þ¥ó¥É¥¨¥ß¥å¥ì¡¼¥·¥ç¥ó(Linux¤Ç¤Ï¤Û¤È¤ó¤É¤Î¥«¡¼¥É¤¬\n"
+"¤³¤ì¤òÍÑ¤¤¤Þ¤¹)¤ÇÍÑ¤¤¤ëÆâÉôISDN¥«¡¼¥É¤Î¾ì¹ç¤Ï¡¢\n"
+"/dev/ttyIx ¤Î¤É¤ì¤«¤òÁª¤ÖÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£"
 
 #: general.cpp:264
 msgid "Flow Control:"
-msgstr "�ե������桧"
+msgstr "¥Õ¥í¡¼À©¸æ¡§"
 
 #: general.cpp:270
 msgid "None"
-msgstr "�ʤ�"
+msgstr "¤Ê¤·"
 
 #: general.cpp:279
 msgid ""
@@ -1004,15 +1004,15 @@ msgid ""
 "\n"
 "<b>Default</b>: CRTSCTS"
 msgstr ""
-"���ꥢ��ݡ��Ȥȥ�ǥब�ɤΤ褦��\n"
-"�̿����뤫���ꤷ�ޤ���ʬ����ʤ��Τʤ�\n"
-"�ѹ����ʤ��Ǥ���������\n"
+"¥·¥ê¥¢¥ë¥Ý¡¼¥È¤È¥â¥Ç¥à¤¬¤É¤Î¤è¤¦¤Ë\n"
+"ÄÌ¿®¤¹¤ë¤«»ØÄê¤·¤Þ¤¹¡£Ê¬¤«¤é¤Ê¤¤¤Î¤Ê¤é\n"
+"ÊÑ¹¹¤·¤Ê¤¤¤Ç¤¯¤À¤µ¤¤¡£\n"
 "\n"
-"<b>�ǥե����</b>��CRTSCTS"
+"<b>¥Ç¥Õ¥©¥ë¥È</b>¡§CRTSCTS"
 
 #: general.cpp:285
 msgid "Line Termination:"
-msgstr "���ԥ�����"
+msgstr "²þ¹Ô¥³¡¼¥É"
 
 #: general.cpp:298
 msgid ""
@@ -1024,17 +1024,17 @@ msgid ""
 "\n"
 "<b>Default</b>: CR"
 msgstr ""
-"���ʤ��Υ�ǥ�ˤɤΤ褦��AT���ޥ�ɤ������뤫\n"
-"���ꤷ�Ƥ����������ۤȤ�ɤΥ�ǥ�ϥǥե���Ȥ�\n"
-"<i>CR</i> ��ư���ޤ����⤷���ʤ��Υ�ǥब�����\n"
-"���ޥ�ɤ�ȿ�����ʤ��褦�Ǥ����顢������¾�������\n"
-"��ƤߤƤ���������\n"
+"¤¢¤Ê¤¿¤Î¥â¥Ç¥à¤Ë¤É¤Î¤è¤¦¤ËAT¥³¥Þ¥ó¥É¤¬Á÷¤é¤ì¤ë¤«\n"
+"»ØÄê¤·¤Æ¤¯¤À¤µ¤¤¡£¤Û¤È¤ó¤É¤Î¥â¥Ç¥à¤Ï¥Ç¥Õ¥©¥ë¥È¤Î\n"
+"<i>CR</i> ¤ÇÆ°¤­¤Þ¤¹¡£¤â¤·¤¢¤Ê¤¿¤Î¥â¥Ç¥à¤¬½é´ü²½\n"
+"¥³¥Þ¥ó¥É¤ËÈ¿±þ¤·¤Ê¤¤¤è¤¦¤Ç¤·¤¿¤é¡¢¤³¤³¤ÇÂ¾¤ÎÀßÄê¤ò\n"
+"»î¤·¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£\n"
 "\n"
-"<b>�ǥե����</b>: CR"
+"<b>¥Ç¥Õ¥©¥ë¥È</b>: CR"
 
 #: general.cpp:306
 msgid "Connection Speed:"
-msgstr "��³®��"
+msgstr "ÀÜÂ³Â®ÅÙ"
 
 #: general.cpp:349
 msgid ""
@@ -1045,16 +1045,16 @@ msgid ""
 "no more than 115200 bits/sec (unless you know\n"
 "that your serial port supports higher speeds)."
 msgstr ""
-"��ǥ�ȥ��ꥢ��ݡ��Ȥ���ߤ��̿�����®�٤�\n"
-"���ꤷ�Ƥ����������ޤ����ǥե���Ȥ� 38400�ӥå�\n"
-"���äǻ�ޤ��礦������Ǥ��ޤ����äƤ���褦�ʤ顢\n"
-"115200�ӥå����ðʲ���(���ꥢ��ݡ��Ȥ����®��®�٤�\n"
-"���ݡ��Ȥ��Ƥ���Τʤ餽��ʾ�Ǥ⹽���ޤ���)��\n"
-"���ο��������䤹���Ȥ��Ǥ��ޤ���"
+"¥â¥Ç¥à¤È¥·¥ê¥¢¥ë¥Ý¡¼¥È¤¬Áê¸ß¤ËÄÌ¿®¤¹¤ëÂ®ÅÙ¤ò\n"
+"»ØÄê¤·¤Æ¤¯¤À¤µ¤¤¡£¤Þ¤º¡¢¥Ç¥Õ¥©¥ë¥È¤Î 38400¥Ó¥Ã¥È\n"
+"ËèÉÃ¤Ç»î¤·¤Þ¤·¤ç¤¦¡£¤½¤ì¤Ç¤¦¤Þ¤¯¤¤¤Ã¤Æ¤¤¤ë¤è¤¦¤Ê¤é¡¢\n"
+"115200¥Ó¥Ã¥ÈËèÉÃ°Ê²¼¤Ç(¥·¥ê¥¢¥ë¥Ý¡¼¥È¤¬¤è¤êÂ®¤¤Â®ÅÙ¤ò\n"
+"¥µ¥Ý¡¼¥È¤·¤Æ¤¤¤ë¤Î¤Ê¤é¤½¤ì°Ê¾å¤Ç¤â¹½¤¤¤Þ¤»¤ó¤¬)¡¢\n"
+"¤³¤Î¿ô»ú¤òÁý¤ä¤¹¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£"
 
 #: general.cpp:364
 msgid "Use Lock File"
-msgstr "���å��ե�������Ѥ���"
+msgstr "¥í¥Ã¥¯¥Õ¥¡¥¤¥ë¤òÍÑ¤¤¤ë"
 
 #: general.cpp:375
 msgid ""
@@ -1068,17 +1068,17 @@ msgid ""
 "\n"
 "<b>Default</b>: On"
 msgstr ""
-"��³����¾�Υץ�����ब��ǥ�˥����������ʤ��褦\n"
-"��ǥब������Ǥ��뤳�Ȥ��Τ餻�뤿��˥ե������\n"
-"���ޤ���Linux �Ǥ��㤨��<i>/var/lock/LCK..ttyS1</i>\n"
-"�Τ褦�ˤʤ�ޤ���\n"
-"���Υ��å�������Ȥ����ɤ����򤳤������٤ޤ���\n"
+"ÀÜÂ³»þ¤ËÂ¾¤Î¥×¥í¥°¥é¥à¤¬¥â¥Ç¥à¤Ë¥¢¥¯¥»¥¹¤·¤Ê¤¤¤è¤¦\n"
+"¥â¥Ç¥à¤¬»ÈÍÑÃæ¤Ç¤¢¤ë¤³¤È¤òÃÎ¤é¤»¤ë¤¿¤á¤Ë¥Õ¥¡¥¤¥ë¤ò\n"
+"ºî¤ê¤Þ¤¹¡£Linux ¤Ç¤ÏÎã¤¨¤Ð<i>/var/lock/LCK..ttyS1</i>\n"
+"¤Î¤è¤¦¤Ë¤Ê¤ê¤Þ¤¹¡£\n"
+"¤³¤Î¥í¥Ã¥¯µ¡¹½¤ò»È¤¦¤«¤É¤¦¤«¤ò¤³¤³¤ÇÁª¤Ù¤Þ¤¹¡£\n"
 "\n"
-"<b>�ǥե����</b>������"
+"<b>¥Ç¥Õ¥©¥ë¥È</b>¡§¥ª¥ó"
 
 #: general.cpp:386
 msgid "Modem Timeout:"
-msgstr "��ǥ�Υ����ॢ���ȡ�"
+msgstr "¥â¥Ç¥à¤Î¥¿¥¤¥à¥¢¥¦¥È¡§"
 
 #: general.cpp:405
 msgid ""
@@ -1086,17 +1086,17 @@ msgid ""
 "<i>CONNECT</i> response from your modem. The\n"
 "recommended value is 30 seconds."
 msgstr ""
-"<i>CONNECT</i>�Ȥ���ʸ���󤬥�ǥफ���֤äƤ���ޤǡ�\n"
-"<i>kppp</i>���ɤ������ԤĤ��򤳤��ǻ���Ǥ��ޤ���\n"
-"�侩�ͤ�30�äǤ���"
+"<i>CONNECT</i>¤È¤¤¤¦Ê¸»úÎó¤¬¥â¥Ç¥à¤«¤éÊÖ¤Ã¤Æ¤¯¤ë¤Þ¤Ç¡¢\n"
+"<i>kppp</i>¤¬¤É¤ÎÄøÅÙÂÔ¤Ä¤«¤ò¤³¤³¤Ç»ØÄê¤Ç¤­¤Þ¤¹¡£\n"
+"¿ä¾©ÃÍ¤Ï30ÉÃ¤Ç¤¹¡£"
 
 #: general.cpp:466 main.cpp:722
 msgid "Modem"
-msgstr "��ǥ�"
+msgstr "¥â¥Ç¥à"
 
 #: general.cpp:477
 msgid "Busy Wait:"
-msgstr "�ä�����ԤĻ���"
+msgstr "ÏÃ¤·Ãæ¤ÇÂÔ¤Ä»þ´Ö"
 
 #: general.cpp:495
 msgid ""
@@ -1108,17 +1108,17 @@ msgid ""
 "The default is 0 seconds, you should not change\n"
 "this unless you need to."
 msgstr ""
-"���Ƥ������ֹ椬�ä�����ä����ˡ���������뤹��\n"
-"�ޤǤλ��֤���ꤷ�ޤ���Ʊ�������ֹ椬����ä��夦\n"
-"�ä�����ȥѥ˥å����Ƥ��ޤ���ǥ��ʤ��ˤϤ���Τǡ�\n"
-"�����ɬ�פǤ���\n"
+"Á´¤Æ¤ÎÅÅÏÃÈÖ¹æ¤¬ÏÃ¤·Ãæ¤À¤Ã¤¿¾ì¹ç¤Ë¡¢¥ê¥À¥¤¥¢¥ë¤¹¤ë\n"
+"¤Þ¤Ç¤Î»þ´Ö¤ò»ØÄê¤·¤Þ¤¹¡£Æ±¤¸ÅÅÏÃÈÖ¹æ¤¬¤·¤ç¤Ã¤Á¤å¤¦\n"
+"ÏÃ¤·Ãæ¤À¤È¥Ñ¥Ë¥Ã¥¯¤·¤Æ¤·¤Þ¤¦¥â¥Ç¥à¤â¤Ê¤«¤Ë¤Ï¤¢¤ë¤Î¤Ç¡¢\n"
+"¤³¤ì¤ÏÉ¬Í×¤Ç¤¹¡£\n"
 "\n"
-"�ǥե���Ȥϣ��äǤ���ɬ�פǤʤ��¤��ѹ����ʤ��ۤ���\n"
-"�����Ǥ��礦��"
+"¥Ç¥Õ¥©¥ë¥È¤Ï£°ÉÃ¤Ç¤¹¡£É¬Í×¤Ç¤Ê¤¤¸Â¤êÊÑ¹¹¤·¤Ê¤¤¤Û¤¦¤¬\n"
+"¤¤¤¤¤Ç¤·¤ç¤¦¡£"
 
 #: general.cpp:509
 msgid "Modem volume"
-msgstr "��ǥ�Υܥ�塼��"
+msgstr "¥â¥Ç¥à¤Î¥Ü¥ê¥å¡¼¥à"
 
 #: general.cpp:521
 msgid ""
@@ -1130,17 +1130,17 @@ msgid ""
 "If this does not work for your modem,\n"
 "you must modify the modem volume command"
 msgstr ""
-"�ۤȤ�ɤΥ�ǥ�ϥ���������ˤ�Τ������Υ�����\n"
-"ȯ���ޤ��������ǡ��ܥ�塼������˥��դˤ��뤫\n"
-"�������Ǥ��ޤ���\n"
+"¤Û¤È¤ó¤É¤Î¥â¥Ç¥à¤Ï¥À¥¤¥¢¥ëÃæ¤Ë¤â¤Î¤¹¤´¤¤¥Î¥¤¥º¤ò\n"
+"È¯¤·¤Þ¤¹¡£¤³¤³¤Ç¡¢¥Ü¥ê¥å¡¼¥à¤ò´°Á´¤Ë¥ª¥Õ¤Ë¤¹¤ë¤«\n"
+"¾®¤µ¤¯¤Ç¤­¤Þ¤¹¡£\n"
 "\n"
-"�⤷���ʤ��Υ�ǥ�Ǥ��ޤ���ǽ���ʤ��褦��\n"
-"����С���ǥ�Υܥ�塼���Ϣ�Υ��ޥ�ɤ�������\n"
-"ɬ�פ�����ޤ���"
+"¤â¤·¤¢¤Ê¤¿¤Î¥â¥Ç¥à¤Ç¤¦¤Þ¤¯µ¡Ç½¤·¤Ê¤¤¤è¤¦¤Ç\n"
+"¤¢¤ì¤Ð¡¢¥â¥Ç¥à¤Î¥Ü¥ê¥å¡¼¥à´ØÏ¢¤Î¥³¥Þ¥ó¥É¤ò½¤Àµ¤¹¤ë\n"
+"É¬Í×¤¬¤¢¤ê¤Þ¤¹¡£"
 
 #: general.cpp:533
 msgid "Modem Asserts CD Line."
-msgstr "��ǥ��CD�饤���Ȥ�"
+msgstr "¥â¥Ç¥à¤ÏCD¥é¥¤¥ó¤ò»È¤¦"
 
 #: general.cpp:541
 msgid ""
@@ -1150,26 +1150,26 @@ msgid ""
 "\n"
 "<b>Default</b>: off"
 msgstr ""
-"<i>kppp</i>���ɤΤ褦�˥�ǥफ���ȿ���򸡽Ф��뤫��\n"
-"���椷�ޤ������Τޤޤ����꤬�ʤ��Τʤ餳�������\n"
-"�ѹ����ʤ��Ǥ���������\n"
+"<i>kppp</i>¤¬¤É¤Î¤è¤¦¤Ë¥â¥Ç¥à¤«¤é¤ÎÈ¿±þ¤ò¸¡½Ð¤¹¤ë¤«¤ò\n"
+"À©¸æ¤·¤Þ¤¹¡£¤³¤Î¤Þ¤Þ¤ÇÌäÂê¤¬¤Ê¤¤¤Î¤Ê¤é¤³¤ÎÀßÄê¤ò\n"
+"ÊÑ¹¹¤·¤Ê¤¤¤Ç¤¯¤À¤µ¤¤¡£\n"
 "\n"
-"<b>�ǥե����</b>������"
+"<b>¥Ç¥Õ¥©¥ë¥È</b>¡§¥ª¥Õ"
 
 #: general.cpp:554
 msgid "Modem Commands"
-msgstr "��ǥॳ�ޥ��"
+msgstr "¥â¥Ç¥à¥³¥Þ¥ó¥É"
 
 #: general.cpp:556
 msgid ""
 "Allows you to change the AT command for\n"
 "your modem."
 msgstr ""
-"���ʤ��Υ�ǥ��AT���ޥ�ɤ��ѹ��Ǥ��ޤ�"
+"¤¢¤Ê¤¿¤Î¥â¥Ç¥à¤ÎAT¥³¥Þ¥ó¥É¤òÊÑ¹¹¤Ç¤­¤Þ¤¹"
 
 #: general.cpp:559
 msgid "Query Modem"
-msgstr "��ǥ��Ĵ��"
+msgstr "¥â¥Ç¥à¤ÎÄ´ºº"
 
 #: general.cpp:561
 msgid ""
@@ -1180,15 +1180,15 @@ msgid ""
 "this information.  It can be useful to help\n"
 "you setup the modem"
 msgstr ""
-"�ۤȤ�ɤΥ�ǥ��ATI���ޥ�ɥ��åȤ�\n"
-"������¤����С�������Ĵ�٤��ޤ���\n"
+"¤Û¤È¤ó¤É¤Î¥â¥Ç¥à¤ÏATI¥³¥Þ¥ó¥É¥»¥Ã¥È¤Ç\n"
+"¤½¤ÎÀ½Â¤¸µ¤ä¥Ð¡¼¥¸¥ç¥ó¤òÄ´¤Ù¤é¤ì¤Þ¤¹¡£\n"
 "\n"
-"���Υܥ���򲡤��Ƥ����ξ����Ĵ�٤ƤߤƤ�������\n"
-"��ǥ�򥻥åȥ��åפ���ݤ�ͭ���Ȥʤ�Ǥ��礦��"
+"¤³¤Î¥Ü¥¿¥ó¤ò²¡¤·¤Æ¤³¤ì¤é¤Î¾ðÊó¤òÄ´¤Ù¤Æ¤ß¤Æ¤¯¤À¤µ¤¤\n"
+"¥â¥Ç¥à¤ò¥»¥Ã¥È¥¢¥Ã¥×¤¹¤ëºÝ¤ËÍ­¸ú¤È¤Ê¤ë¤Ç¤·¤ç¤¦¡£"
 
 #: general.cpp:568
 msgid "Terminal"
-msgstr "�����ߥʥ�"
+msgstr "¥¿¡¼¥ß¥Ê¥ë"
 
 #: general.cpp:570
 msgid ""
@@ -1196,33 +1196,33 @@ msgid ""
 "can use this if you want to play around\n"
 "with your modem's AT command set"
 msgstr ""
-"��¢�Υ����ߥʥ�ץ������򳫤��ޤ���\n"
-"��ǥ��AT���ޥ�ɤ��������Ȥ���\n"
-"�Ȥ����Ȥ��Ǥ��ޤ���"
+"ÆâÂ¢¤Î¥¿¡¼¥ß¥Ê¥ë¥×¥í¥°¥é¥à¤ò³«¤­¤Þ¤¹¡£\n"
+"¥â¥Ç¥à¤ÎAT¥³¥Þ¥ó¥É¤òÁàºî¤·¤¿¤¤¤È¤­¤Ë\n"
+"»È¤¦¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£"
 
 #: general.cpp:634
 msgid "Throughput graph"
-msgstr "���롼�ץåȥ����"
+msgstr "¥¹¥ë¡¼¥×¥Ã¥È¥°¥é¥Õ"
 
 #: general.cpp:643
 msgid "Background color"
-msgstr "�طʿ�"
+msgstr "ÇØ·Ê¿§"
 
 #: general.cpp:650
 msgid "Text color"
-msgstr "ʸ����"
+msgstr "Ê¸»ú¿§"
 
 #: general.cpp:657
 msgid "Input bytes color"
-msgstr "�����Х��Ȥο�"
+msgstr "¼õ¿®¥Ð¥¤¥È¤Î¿§"
 
 #: general.cpp:664
 msgid "Output bytes color"
-msgstr "�����Х��Ȥο�"
+msgstr "Á÷¿®¥Ð¥¤¥È¤Î¿§"
 
 #: main.cpp:116
 msgid "Recent changes in kppp"
-msgstr "kppp�ο�������ǽ"
+msgstr "kppp¤Î¿·¤·¤¤µ¡Ç½"
 
 #: main.cpp:129
 msgid ""
@@ -1237,21 +1237,21 @@ msgid ""
 "\n"
 "To test it, right-click somewhere in this text."
 msgstr ""
-"�С������1.4.8�ʹߡ�kppp��\"�����å��إ��\"�Ȥ���\n"
-"��������ǽ��Τ�����ޤ�������ñ�ʥإ�פǡ�\n"
-"ɬ�פʻ��Ϥ��ĤǤ⻲�ȤǤ��ޤ���\n"
+"¥Ð¡¼¥¸¥ç¥ó1.4.8°Ê¹ß¡¢kppp¤Ï\"¥¯¥¤¥Ã¥¯¥Ø¥ë¥×\"¤È¤¤¤¦\n"
+"¿·¤·¤¤µ¡Ç½¤òºÎ¤êÆþ¤ì¤Þ¤·¤¿¡£´ÊÃ±¤Ê¥Ø¥ë¥×¤Ç¡¢\n"
+"É¬Í×¤Ê»þ¤Ï¤¤¤Ä¤Ç¤â»²¾È¤Ç¤­¤Þ¤¹¡£\n"
 "\n"
-"���Ȥ��뤿��ˤ�ñ�˥ܥ�����٥�ʤɤξ��\n"
-"�ޥ����α�����å��򤹤�����Ǥ����⤷ʸ�Ϥ�\n"
-"�Ѱդ���Ƥ���С���˥塼���ݥåץ��åפ�\n"
-"�����å��إ�פ��ɤळ�Ȥ��Ǥ��ޤ���\n"
+"»²¾È¤¹¤ë¤¿¤á¤Ë¤ÏÃ±¤Ë¥Ü¥¿¥ó¤ä¥é¥Ù¥ë¤Ê¤É¤Î¾å¤Ç\n"
+"¥Þ¥¦¥¹¤Î±¦¥¯¥ê¥Ã¥¯¤ò¤¹¤ë¤À¤±¤Ç¤¹¡£¤â¤·Ê¸¾Ï¤¬\n"
+"ÍÑ°Õ¤µ¤ì¤Æ¤¤¤ì¤Ð¡¢¥á¥Ë¥å¡¼¤¬¥Ý¥Ã¥×¥¢¥Ã¥×¤·\n"
+"¥¯¥¤¥Ã¥¯¥Ø¥ë¥×¤òÆÉ¤à¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£\n"
 "\n"
-"����ʸ�ϤΤɤ����Ǳ�����å����ƤߤƤ���������\n"
-"�ƥ��ȤǤ��ޤ���"
+"¤³¤ÎÊ¸¾Ï¤Î¤É¤³¤«¤Ç±¦¥¯¥ê¥Ã¥¯¤·¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£\n"
+"¥Æ¥¹¥È¤Ç¤­¤Þ¤¹¡£"
 
 #: main.cpp:141
 msgid "Don't show this hint again"
-msgstr "�����餳�Υ�����ɥ���ɽ�����ʤ�"
+msgstr "¼¡¤«¤é¤³¤Î¥¦¥£¥ó¥É¥¦¤òÉ½¼¨¤·¤Ê¤¤"
 
 #: main.cpp:160
 msgid ""
@@ -1259,9 +1259,9 @@ msgid ""
 "This window will stay open until you\n"
 "click a mouse button or a hit a key.\n"
 msgstr ""
-"<b>�����å��إ��</b>�θ��ܤǤ���\n"
-"�ޥ����򥯥�å����뤫�����������򲡤��ޤ�\n"
-"ɽ������ޤ���\n"
+"<b>¥¯¥¤¥Ã¥¯¥Ø¥ë¥×</b>¤Î¸«ËÜ¤Ç¤¹¡£\n"
+"¥Þ¥¦¥¹¤ò¥¯¥ê¥Ã¥¯¤¹¤ë¤«¡¢²¿¤«¥­¡¼¤ò²¡¤¹¤Þ¤Ç\n"
+"É½¼¨¤µ¤ì¤Þ¤¹¡£\n"
 
 #: main.cpp:403
 #, c-format
@@ -1269,8 +1269,8 @@ msgid ""
 "kppp can't create or read from\n"
 "%s."
 msgstr ""
-"kppp�� %s ������⤷�����ɤ߹��ळ�Ȥ�\n"
-"�Ǥ��ޤ���Ǥ�����"
+"kppp¤Ï %s ¤òºîÀ®¤â¤·¤¯¤ÏÆÉ¤ß¹þ¤à¤³¤È¤¬\n"
+"¤Ç¤­¤Þ¤»¤ó¤Ç¤·¤¿¡£"
 
 #: main.cpp:432
 #, c-format
@@ -1283,24 +1283,24 @@ msgid ""
 "Make sure that you are not running another kppp,\n"
 "delete the pid file, and restart kppp."
 msgstr ""
-"%s �Ȥ����ե����뤬ȯ������ޤ�����\n"
+"%s ¤È¤¤¤¦¥Õ¥¡¥¤¥ë¤¬È¯¸«¤µ¤ì¤Þ¤·¤¿¡£\n"
 "\n"
-"¾�� kppp ���ץ�����ID %d �Ǥ��Ǥ�ư���Ƥ���褦�Ǥ���\n"
+"Â¾¤Î kppp ¤¬¥×¥í¥»¥¹ID %d ¤Ç¤¹¤Ç¤ËÆ°¤¤¤Æ¤¤¤ë¤è¤¦¤Ç¤¹¡£\n"
 "\n"
-"¾�� kppp ���¹���Ǥʤ����Ȥ��ǧ���� pid �ե������\n"
-"�������kppp ��Ƶ�ư���Ƥ���������"
+"Â¾¤Î kppp ¤¬¼Â¹ÔÃæ¤Ç¤Ê¤¤¤³¤È¤ò³ÎÇ§¤·¤Æ pid ¥Õ¥¡¥¤¥ë¤ò\n"
+"ºï½ü¤·¡¢kppp ¤òºÆµ¯Æ°¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: main.cpp:438
 msgid "Exit"
-msgstr "��λ"
+msgstr "½ªÎ»"
 
 #: main.cpp:501
 msgid "Connect to: "
-msgstr "��³�衧"
+msgstr "ÀÜÂ³Àè¡§"
 
 #: main.cpp:513
 msgid "Login ID:"
-msgstr "��������ID��"
+msgstr "¥í¥°¥¤¥óID¡§"
 
 #: main.cpp:526
 msgid ""
@@ -1312,16 +1312,16 @@ msgid ""
 "<b>Important</b>: case is important here:\n"
 "<i>myusername</i> is not the same as <i>MyUserName</i>!"
 msgstr ""
-"ISP������������桼�����͡���������Ƥ���������\n"
-"����� PAP �� CHAP ���ä˽��פǤ��������ߥʥ�١�����\n"
-"������ץȥ١�����ǧ�ڤ��Ѥ�����Ͼ�ά�Ǥ��ޤ���\n"
+"ISP¤«¤é¼èÆÀ¤·¤¿¥æ¡¼¥¶¡¼¥Í¡¼¥à¤òµ­Æþ¤·¤Æ¤¯¤À¤µ¤¤¡£\n"
+"¤³¤ì¤Ï PAP ¤ä CHAP ¤ÇÆÃ¤Ë½ÅÍ×¤Ç¤¹¡£¥¿¡¼¥ß¥Ê¥ë¥Ù¡¼¥¹¤ä\n"
+"¥¹¥¯¥ê¥×¥È¥Ù¡¼¥¹¤ÎÇ§¾Ú¤òÍÑ¤¤¤ë¾ì¹ç¤Ï¾ÊÎ¬¤Ç¤­¤Þ¤¹¡£\n"
 "\n"
-"<b>����</b>�������դ���٤����Ȥ�����ޤ���\n"
-"<i>myusername</i>��<i>MyUserName</i>��Ʊ���ǤϤ���ޤ���"
+"<b>½ÅÍ×</b>¡§µ¤¤òÉÕ¤±¤ë¤Ù¤­¤³¤È¤¬¤¢¤ê¤Þ¤¹¡§\n"
+"<i>myusername</i>¤È<i>MyUserName</i>¤ÏÆ±¤¸¤Ç¤Ï¤¢¤ê¤Þ¤»¤ó¡ª"
 
 #: main.cpp:535
 msgid "Password:"
-msgstr "�ѥ���ɡ�"
+msgstr "¥Ñ¥¹¥ï¡¼¥É¡§"
 
 #: main.cpp:549
 msgid ""
@@ -1333,16 +1333,16 @@ msgid ""
 "<b>Important</b>: case is important here:\n"
 "<i>mypassword</i> is not the same as <i>MyPassword</i>!"
 msgstr ""
-"ISP������������ѥ���ɤ������Ƥ���������\n"
-"����� PAP �� CHAP ���ä˽��פǤ��������ߥʥ�١�����\n"
-"������ץȥ١�����ǧ�ڤ��Ѥ�����Ͼ�ά�Ǥ��ޤ���\n"
+"ISP¤«¤é¼èÆÀ¤·¤¿¥Ñ¥¹¥ï¡¼¥É¤òµ­Æþ¤·¤Æ¤¯¤À¤µ¤¤¡£\n"
+"¤³¤ì¤Ï PAP ¤ä CHAP ¤ÇÆÃ¤Ë½ÅÍ×¤Ç¤¹¡£¥¿¡¼¥ß¥Ê¥ë¥Ù¡¼¥¹¤ä\n"
+"¥¹¥¯¥ê¥×¥È¥Ù¡¼¥¹¤ÎÇ§¾Ú¤òÍÑ¤¤¤ë¾ì¹ç¤Ï¾ÊÎ¬¤Ç¤­¤Þ¤¹¡£\n"
 "\n"
-"<b>����</b>�������դ���٤����Ȥ�����ޤ���\n"
-"<i>mypassword</i>��<i>MyPassword</i>��Ʊ���ǤϤ���ޤ���"
+"<b>½ÅÍ×</b>¡§µ¤¤òÉÕ¤±¤ë¤Ù¤­¤³¤È¤¬¤¢¤ê¤Þ¤¹¡§\n"
+"<i>mypassword</i>¤È<i>MyPassword</i>¤ÏÆ±¤¸¤Ç¤Ï¤¢¤ê¤Þ¤»¤ó¡ª"
 
 #: main.cpp:563
 msgid "Show Log Window"
-msgstr "����������ɥ���Ф�"
+msgstr "¥í¥°¥¦¥£¥ó¥É¥¦¤ò½Ð¤¹"
 
 #: main.cpp:570
 msgid ""
@@ -1354,20 +1354,20 @@ msgid ""
 "Turn it off if <i>kppp</i> routinely connects without\n"
 "problems"
 msgstr ""
-"����������ɥ���ɽ�����뤫�ɤ��������椷�ޤ���\n"
-"����������ɥ��ˤ�<i>kppp</i>�ȥ�ǥ�ȤΤ��Ȥ꤬\n"
-"ɽ������ޤ���������褹�������Ω�ĤǤ��礦��\n"
+"¥í¥°¥¦¥£¥ó¥É¥¦¤òÉ½¼¨¤¹¤ë¤«¤É¤¦¤«¤òÀ©¸æ¤·¤Þ¤¹¡£\n"
+"¥í¥°¥¦¥£¥ó¥É¥¦¤Ë¤Ï<i>kppp</i>¤È¥â¥Ç¥à¤È¤Î¤ä¤ê¤È¤ê¤¬\n"
+"É½¼¨¤µ¤ì¤Þ¤¹¡£ÌäÂê¤ò²ò·è¤¹¤ë¾ì¹ç¤ËÌòÎ©¤Ä¤Ç¤·¤ç¤¦¡£\n"
 "\n"
-"���Ĥ�����ʤ�<i>kppp</i>����³�Ǥ���褦�Ǥ�����\n"
-"�����å��򳰤��Ƥ���������"
+"¤¤¤Ä¤âÌäÂê¤Ê¤¯<i>kppp</i>¤ÇÀÜÂ³¤Ç¤­¤ë¤è¤¦¤Ç¤·¤¿¤é\n"
+"¥Á¥§¥Ã¥¯¤ò³°¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: main.cpp:593
 msgid "Setup"
-msgstr "����"
+msgstr "ÀßÄê"
 
 #: main.cpp:609
 msgid "Connect"
-msgstr "��³"
+msgstr "ÀÜÂ³"
 
 #: main.cpp:689
 #, c-format
@@ -1375,20 +1375,20 @@ msgid ""
 "No such Account:\n"
 "%s"
 msgstr ""
-"���Τ褦����³��Ϥ���ޤ���\n"
+"¤½¤Î¤è¤¦¤ÊÀÜÂ³Àè¤Ï¤¢¤ê¤Þ¤»¤ó¡§\n"
 "%s"
 
 #: main.cpp:704
 msgid "kppp Configuration"
-msgstr "kppp ����ե����졼�����"
+msgstr "kppp ¥³¥ó¥Õ¥£¥°¥ì¡¼¥·¥ç¥ó"
 
 #: main.cpp:720
 msgid "Accounts"
-msgstr "��³��"
+msgstr "ÀÜÂ³Àè"
 
 #: main.cpp:721
 msgid "Device"
-msgstr "�ǥХ���"
+msgstr "¥Ç¥Ð¥¤¥¹"
 
 #: main.cpp:723
 msgid "PPP"
@@ -1396,19 +1396,19 @@ msgstr "PPP"
 
 #: main.cpp:724
 msgid "Graph"
-msgstr "�����"
+msgstr "¥°¥é¥Õ"
 
 #: main.cpp:871
 msgid "Timeout expired while waiting for the PPP interface to come up!"
-msgstr "PPP �Υ��󥿡��ե��������ԤĴ֤˥����ॢ���Ȥ�̵���ˤʤ�ޤ�����"
+msgstr "PPP ¤Î¥¤¥ó¥¿¡¼¥Õ¥§¡¼¥¹¤òÂÔ¤Ä´Ö¤Ë¥¿¥¤¥à¥¢¥¦¥È¤ÇÌµ¸ú¤Ë¤Ê¤ê¤Þ¤·¤¿¡ª"
 
 #: main.cpp:876
 msgid "The pppd daemon died unexpectedly!"
-msgstr "�ʤ���pppd�ǡ���󤬽�λ���Ƥ��ޤ��ޤ�����"
+msgstr "¤Ê¤¼¤«pppd¥Ç¡¼¥â¥ó¤¬½ªÎ»¤·¤Æ¤·¤Þ¤¤¤Þ¤·¤¿¡£"
 
 #: main.cpp:884
 msgid "Details..."
-msgstr "�ܺ١�"
+msgstr "¾ÜºÙ¡Ä"
 
 #: main.cpp:916
 msgid ""
@@ -1416,9 +1416,9 @@ msgid ""
 "\n"
 "Since a further execution would be pointless, kppp will shut down right now."
 msgstr ""
-"kppp �Υإ�ѡ��ץ���������λ���ޤ�����\n"
+"kppp ¤Î¥Ø¥ë¥Ñ¡¼¥×¥í¥»¥¹¤¬½ªÎ»¤·¤Þ¤·¤¿¡£\n"
 "\n"
-"�ƽ��褬̵��̣���ä��Τǡ�kppp �Ͻ�λ���ޤ�����"
+"¸Æ½ÐÀè¤¬Ìµ°ÕÌ£¤À¤Ã¤¿¤Î¤Ç¡¢kppp ¤Ï½ªÎ»¤·¤Þ¤·¤¿¡£"
 
 #: main.cpp:950 runtests.cpp:400
 msgid ""
@@ -1427,11 +1427,11 @@ msgid ""
 "Make sure that pppd is installed and\n"
 "you have entered the correct path."
 msgstr ""
-"PPP �ǡ����򸫤Ĥ����ޤ���!\n"
+"PPP ¥Ç¡¼¥â¥ó¤ò¸«¤Ä¤±¤é¤ì¤Þ¤»¤ó!\n"
 "\n"
-"pppd �����󥹥ȡ��뤵��Ƥ���\n"
-"���ʤ����������ѥ������Ϥ��Ƥ��뤫\n"
-"��ǧ���Ƥ���������"
+"pppd ¤¬¥¤¥ó¥¹¥È¡¼¥ë¤µ¤ì¤Æ¤¤¤Æ\n"
+"¤¢¤Ê¤¿¤¬Àµ¤·¤¤¥Ñ¥¹¤òÆþÎÏ¤·¤Æ¤¤¤ë¤«\n"
+"³ÎÇ§¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: main.cpp:959
 #, c-format
@@ -1441,9 +1441,9 @@ msgid ""
 "Please make sure thatyou have given kppp setuid permission and that\n"
 "pppd is executable."
 msgstr ""
-"�����¹ԤǤ��ޤ���\n"
+"¤³¤ì¤ò¼Â¹Ô¤Ç¤­¤Þ¤»¤ó¡§\n"
 " %s\n"
-"pppd �Υѡ��ߥ���󤬼¹Բ�ǽ���ɤ���Ĵ�٤Ƥ���������"
+"pppd ¤Î¥Ñ¡¼¥ß¥·¥ç¥ó¤¬¼Â¹Ô²ÄÇ½¤«¤É¤¦¤«Ä´¤Ù¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: main.cpp:974
 #, c-format
@@ -1457,12 +1457,12 @@ msgid ""
 "the setup dialog.\n"
 " Thank You"
 msgstr ""
-"���줬�ߤĤ���ޤ���\n"
+"¤³¤ì¤¬¤ß¤Ä¤«¤ê¤Þ¤»¤ó¡§\n"
 " %s\n"
-"��������ǥ�ǥХ����򥻥åȥ��å�\n"
-"���Ƥ��뤫��ǧ��������/�⤷���ϡ�\n"
-"��ǥ�ι��ܤǥ�ǥ�ǥХ�����������\n"
-"Ĵ�ᤷ�Ƥ���������"
+"Àµ¤·¤¯¥â¥Ç¥à¥Ç¥Ð¥¤¥¹¤ò¥»¥Ã¥È¥¢¥Ã¥×\n"
+"¤·¤Æ¤¢¤ë¤«³ÎÇ§¤·¡¢¤«¤Ä/¤â¤·¤¯¤Ï¡¢\n"
+"¥â¥Ç¥à¤Î¹àÌÜ¤Ç¥â¥Ç¥à¥Ç¥Ð¥¤¥¹¤òÀµ¤·¤¯\n"
+"Ä´Àá¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: main.cpp:994
 msgid ""
@@ -1470,9 +1470,9 @@ msgid ""
 "method PAP. This requires that you\n"
 "supply a username and a password!"
 msgstr ""
-"ǧ�������Ȥ���PAP�����Ф�Ƥ��ޤ���\n"
-"���ξ�硢�桼�����͡���ȥѥ���ɤ�\n"
-"ɬ�פǤ���"
+"Ç§¾ÚÊý¼°¤È¤·¤ÆPAP¤¬Áª¤Ð¤ì¤Æ¤¤¤Þ¤¹¡£\n"
+"¤³¤Î¾ì¹ç¡¢¥æ¡¼¥¶¡¼¥Í¡¼¥à¤È¥Ñ¥¹¥ï¡¼¥É¤¬\n"
+"É¬Í×¤Ç¤¹¡ª"
 
 #: main.cpp:1003
 #, c-format
@@ -1480,9 +1480,9 @@ msgid ""
 "Cannot create PAP authentication\n"
 "file \"%s\""
 msgstr ""
-"PAP ��ǧ�ڥե�����\n"
+"PAP ¤ÎÇ§¾Ú¥Õ¥¡¥¤¥ë\n"
 "\"%s\"\n"
-"����ޤ���"
+"¤òºî¤ì¤Þ¤»¤ó¡£"
 
 #: main.cpp:1020
 msgid ""
@@ -1490,9 +1490,9 @@ msgid ""
 "method CHAP. This requires that you\n"
 "supply a username and a password!"
 msgstr ""
-"ǧ�������Ȥ���CHAP�����Ф�Ƥ��ޤ���\n"
-"���ξ�硢�桼�����͡���ȥѥ���ɤ�\n"
-"ɬ�פǤ���"
+"Ç§¾ÚÊý¼°¤È¤·¤ÆCHAP¤¬Áª¤Ð¤ì¤Æ¤¤¤Þ¤¹¡£\n"
+"¤³¤Î¾ì¹ç¡¢¥æ¡¼¥¶¡¼¥Í¡¼¥à¤È¥Ñ¥¹¥ï¡¼¥É¤¬\n"
+"É¬Í×¤Ç¤¹¡ª"
 
 #: main.cpp:1029
 #, c-format
@@ -1500,149 +1500,149 @@ msgid ""
 "Cannot create CHAP authentication\n"
 "file \"%s\""
 msgstr ""
-"CHAP ��ǧ�ڥե�����\n"
+"CHAP ¤ÎÇ§¾Ú¥Õ¥¡¥¤¥ë\n"
 "\"%s\"\n"
-"��Ĥ���ޤ���"
+"¤ò¤Ä¤¯¤ì¤Þ¤»¤ó¡£"
 
 #: main.cpp:1041
 msgid "You must specify a telephone number!"
-msgstr "�����ֹ����ꤷ�Ƥ���������"
+msgstr "ÅÅÏÃÈÖ¹æ¤ò»ØÄê¤·¤Æ¤¯¤À¤µ¤¤¡ª"
 
 #: main.cpp:1131
 msgid "Quit kPPP?"
-msgstr "kppp��λ���ޤ�����"
+msgstr "kppp¤ò½ªÎ»¤·¤Þ¤¹¤«¡©"
 
 #: main.cpp:1132
 msgid "Exiting kPPP will close your PPP Session."
-msgstr "kppp��λ�����PPP��³�����Ǥ���ޤ���"
+msgstr "kppp¤ò½ªÎ»¤¹¤ë¤ÈPPPÀÜÂ³¤âÀÚÃÇ¤µ¤ì¤Þ¤¹¡£"
 
 #: main.cpp:1178
 msgid ""
 "Can not load the accounting\n"
 "ruleset \""
 msgstr ""
-"��³�����Υ롼�륻�åȤ��ɤ߹���ޤ���\n"
-"�롼�륻�å� \""
+"ÀÜÂ³²óÀþ¤Î¥ë¡¼¥ë¥»¥Ã¥È¤òÆÉ¤ß¹þ¤á¤Þ¤»¤ó\n"
+"¥ë¡¼¥ë¥»¥Ã¥È \""
 
 #: modem.cpp:119
 msgid "Sorry, can't open modem."
-msgstr "��ǥ�򳫤��ޤ���"
+msgstr "¥â¥Ç¥à¤ò³«¤±¤Þ¤»¤ó¡£"
 
 #: modem.cpp:125
 msgid "Sorry, can't detect state of CD line."
-msgstr "CD�饤��ξ��֤򸡽ФǤ��ޤ���"
+msgstr "CD¥é¥¤¥ó¤Î¾õÂÖ¤ò¸¡½Ð¤Ç¤­¤Þ¤»¤ó¡£"
 
 #: modem.cpp:131
 msgid "Sorry, the modem is not ready."
-msgstr "��ǥ�ϻ��ѤǤ��ޤ���"
+msgstr "¥â¥Ç¥à¤Ï»ÈÍÑ¤Ç¤­¤Þ¤»¤ó¡£"
 
 #: modem.cpp:142 modem.cpp:186
 msgid "Sorry, the modem is busy."
-msgstr "��ǥ�ϻ�����Ǥ���"
+msgstr "¥â¥Ç¥à¤Ï»ÈÍÑÃæ¤Ç¤¹¡£"
 
 #: modem.cpp:192
 msgid "Modem Ready."
-msgstr "��ǥ������λ"
+msgstr "¥â¥Ç¥à½àÈ÷´°Î»"
 
 #: modem.cpp:204
 msgid "Can't restore tty settings: tcsetattr()\n"
-msgstr "tty ��������Ȥ��᤻�ޤ���: tcsetattr()\n"
+msgstr "tty ¤ÎÀßÄê¤ò¤â¤È¤ËÌá¤»¤Þ¤»¤ó: tcsetattr()\n"
 
 #: modem.cpp:345
 msgid "Sorry, the modem doesn't respond."
-msgstr "��ǥफ�������������ޤ���"
+msgstr "¥â¥Ç¥à¤«¤é¤ÎÊÖÅú¤¬¤¢¤ê¤Þ¤»¤ó¡£"
 
 #: modem.cpp:446
 msgid "Unknown speed"
-msgstr "̤�ΤΥ��ԡ��ɤǤ�"
+msgstr "Ì¤ÃÎ¤Î¥¹¥Ô¡¼¥É¤Ç¤¹"
 
 #: modemcmds.cpp:44
 msgid "Edit Modem Commands"
-msgstr "��ǥॳ�ޥ�ɤ��Խ�"
+msgstr "¥â¥Ç¥à¥³¥Þ¥ó¥É¤ÎÊÔ½¸"
 
 #: modemcmds.cpp:72
 msgid "Pre-Init Delay (sec/100):"
-msgstr "����������ٱ� (��/100)��"
+msgstr "½é´ü²½Á°¤ÎÃÙ±ä (ÉÃ/100)¡§"
 
 #: modemcmds.cpp:77
 msgid "Initialization String:"
-msgstr "�����ʸ����"
+msgstr "½é´ü²½Ê¸»ú¡§"
 
 #: modemcmds.cpp:95
 msgid "Post-Init Delay (sec/100):"
-msgstr "���������ٱ� (��/100)��"
+msgstr "½é´ü²½¸å¤ÎÃÙ±ä (ÉÃ/100)¡§"
 
 #: modemcmds.cpp:100
 msgid "Init Response:"
-msgstr "�����������"
+msgstr "½é´ü²½À®¸ù¡§"
 
 #: modemcmds.cpp:107
 msgid "Dial String:"
-msgstr "��������ʸ����"
+msgstr "¥À¥¤¥¢¥ëÊ¸»úÎó¡§"
 
 #: modemcmds.cpp:114
 msgid "Connect Response:"
-msgstr "��³������"
+msgstr "ÀÜÂ³À®¸ù¡§"
 
 #: modemcmds.cpp:121
 msgid "Busy Response:"
-msgstr "�����桧"
+msgstr "»ÈÍÑÃæ¡§"
 
 #: modemcmds.cpp:128
 msgid "No Carrier Response:"
-msgstr "����ꥢ�Ӽ���"
+msgstr "¥­¥ã¥ê¥¢ÁÓ¼º¡§"
 
 #: modemcmds.cpp:135
 msgid "No Dialtone Response:"
-msgstr "��������ȡ���ʤ���"
+msgstr "¥À¥¤¥¢¥ë¥È¡¼¥ó¤Ê¤·¡§"
 
 #: modemcmds.cpp:142
 msgid "Hangup String:"
-msgstr "���̿�ᡧ"
+msgstr "Ãæ»ßÌ¿Îá¡§"
 
 #: modemcmds.cpp:149
 msgid "Hangup Response:"
-msgstr "���������"
+msgstr "Ãæ»ßÀ®¸ù¡§"
 
 #: modemcmds.cpp:156
 msgid "Answer String:"
-msgstr "�ƽб���̿�ᡧ"
+msgstr "¸Æ½Ð±þÅúÌ¿Îá¡§"
 
 #: modemcmds.cpp:163
 msgid "Ring Response:"
-msgstr "��������������"
+msgstr "¥À¥¤¥¢¥ëÀ®¸ù¡§"
 
 #: modemcmds.cpp:170
 msgid "Answer Response:"
-msgstr "�ƽб���������"
+msgstr "¸Æ½Ð±þÅúÀ®¸ù¡§"
 
 #: modemcmds.cpp:177
 msgid "Escape String:"
-msgstr "����������̿�ᡧ"
+msgstr "¥¨¥¹¥±¡¼¥×Ì¿Îá¡§"
 
 #: modemcmds.cpp:184
 msgid "Escape Response:"
-msgstr "����������������"
+msgstr "¥¨¥¹¥±¡¼¥×À®¸ù¡§"
 
 #: modemcmds.cpp:203
 msgid "Guard Time (sec/50):"
-msgstr "�����ɻ��� (��/50)��"
+msgstr "¥¬¡¼¥É»þ´Ö (ÉÃ/50)¡§"
 
 #: modemcmds.cpp:207
 msgid "Volume off/low/high"
-msgstr "�ܥ�塼�� ����/��/��"
+msgstr "¥Ü¥ê¥å¡¼¥à ¥ª¥Õ/¾®/Âç"
 
 #: pppdargs.cpp:38
 msgid "Customize pppd Arguments"
-msgstr "pppd �Υ��ץ������Խ�"
+msgstr "pppd ¤Î¥ª¥×¥·¥ç¥ó¤òÊÔ½¸"
 
 #: pppdargs.cpp:51
 msgid "Argument:"
-msgstr "���ץ����"
+msgstr "¥ª¥×¥·¥ç¥ó¡§"
 
 #: pppdargs.cpp:80
 msgid "Defaults"
-msgstr "�ǥե����"
+msgstr "¥Ç¥Õ¥©¥ë¥È"
 
 #: pppdata.cpp:56
 msgid ""
@@ -1654,87 +1654,87 @@ msgid ""
 "\n"
 "chown {YourUsername} .kde/share/config/kppprc"
 msgstr ""
-"���Υ��ץꥱ�������Υ���ե����ե����뤬\n"
-"�ɤ߽񤭲ĤǤ��ɤ߹��ߤΤ߲ĤǤ�ʤ������\n"
-"�������Ȥ��Ǥ��ޤ���\n"
+"¤³¤Î¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤Î¥³¥ó¥Õ¥£¥°¥Õ¥¡¥¤¥ë¤¬\n"
+"ÆÉ¤ß½ñ¤­²Ä¤Ç¤âÆÉ¤ß¹þ¤ß¤Î¤ß²Ä¤Ç¤â¤Ê¤¤¤¿¤á¤Ë\n"
+"³«¤¯¤³¤È¤¬¤Ç¤­¤Þ¤»¤ó¡£\n"
 "\n"
-"���Υե�����ν�ͭ�Ԥ��Ѥ��뤿��˥����ѡ��桼����\n"
-"���Υ��ޥ�ɤ򤢤ʤ��Υۡ���ǥ��쥯�ȥ�Ǽ¹Ԥ��ʤ��Ƥ�\n"
-"�ʤ�ʤ����⤷��ޤ���\n"
+"¤½¤Î¥Õ¥¡¥¤¥ë¤Î½êÍ­¼Ô¤òÊÑ¤¨¤ë¤¿¤á¤Ë¥¹¡¼¥Ñ¡¼¥æ¡¼¥¶¤¬\n"
+"¼¡¤Î¥³¥Þ¥ó¥É¤ò¤¢¤Ê¤¿¤Î¥Û¡¼¥à¥Ç¥£¥ì¥¯¥È¥ê¤Ç¼Â¹Ô¤·¤Ê¤¯¤Æ¤Ï\n"
+"¤Ê¤é¤Ê¤¤¤«¤â¤·¤ì¤Þ¤»¤ó¡£\n"
 "\n"
 "chown {YourUsername} .kde/share/config/kppprc"
 
 #: modeminfo.cpp:39
 msgid "ATI Query"
-msgstr "ATIĴ��"
+msgstr "ATIÄ´ºº"
 
 #: modeminfo.cpp:117
 msgid "Modem Query timed out."
-msgstr "��ǥ�Ĵ���λ����ڤ졣"
+msgstr "¥â¥Ç¥àÄ´ºº¤Î»þ´ÖÀÚ¤ì¡£"
 
 #: miniterm.cpp:164 miniterm.cpp:226 modeminfo.cpp:145
 msgid "Modem Ready"
-msgstr "��ǥ�"
+msgstr "¥â¥Ç¥à"
 
 #: modeminfo.cpp:249
 msgid "Modem Query Results"
-msgstr "��ǥ�Ĵ���η��"
+msgstr "¥â¥Ç¥àÄ´ºº¤Î·ë²Ì"
 
 #: pppstatdlg.cpp:65
 msgid "kppp Statistics"
-msgstr "kppp �̿��̤�����"
+msgstr "kppp ÄÌ¿®ÎÌ¤ÎÅý·×"
 
 #: pppstatdlg.cpp:71
 msgid "Statistics"
-msgstr "�̿�����"
+msgstr "ÄÌ¿®Åý·×"
 
 #: pppstatdlg.cpp:115
 msgid "Local Addr:"
-msgstr "�������륢�ɥ쥹��"
+msgstr "¥í¡¼¥«¥ë¥¢¥É¥ì¥¹¡§"
 
 #: pppstatdlg.cpp:121
 msgid "Remote Addr:"
-msgstr "��⡼�ȥ��ɥ쥹��"
+msgstr "¥ê¥â¡¼¥È¥¢¥É¥ì¥¹¡§"
 
 #: pppstatdlg.cpp:153
 msgid "bytes in"
-msgstr "�����Х���"
+msgstr "¼õ¿®¥Ð¥¤¥È"
 
 #: pppstatdlg.cpp:154
 msgid "bytes out"
-msgstr "�����ѥ��å�"
+msgstr "Á÷¿®¥Ñ¥±¥Ã¥È"
 
 #: pppstatdlg.cpp:156
 msgid "packets in"
-msgstr "�����ѥ��å�"
+msgstr "¼õ¿®¥Ñ¥±¥Ã¥È"
 
 #: pppstatdlg.cpp:157
 msgid "packets out"
-msgstr "�����ѥ��å�"
+msgstr "Á÷¿®¥Ñ¥±¥Ã¥È"
 
 #: pppstatdlg.cpp:159
 msgid "vjcomp in"
-msgstr "����VJ�إå�����"
+msgstr "¼õ¿®VJ¥Ø¥Ã¥À°µ½Ì"
 
 #: pppstatdlg.cpp:160
 msgid "vjcomp out"
-msgstr "����VJ�إå�����"
+msgstr "Á÷¿®VJ¥Ø¥Ã¥À°µ½Ì"
 
 #: pppstatdlg.cpp:162
 msgid "vjunc in"
-msgstr "����VJ�إå��󰵽�"
+msgstr "¼õ¿®VJ¥Ø¥Ã¥ÀÈó°µ½Ì"
 
 #: pppstatdlg.cpp:163
 msgid "vjunc out"
-msgstr "����VJ�إå��󰵽�"
+msgstr "Á÷¿®VJ¥Ø¥Ã¥ÀÈó°µ½Ì"
 
 #: pppstatdlg.cpp:165
 msgid "vjerr"
-msgstr "VJ���顼"
+msgstr "VJ¥¨¥é¡¼"
 
 #: pppstatdlg.cpp:166
 msgid "non-vj"
-msgstr "VJ�Ǥʤ��̿�"
+msgstr "VJ¤Ç¤Ê¤¤ÄÌ¿®"
 
 #: pppstatdlg.cpp:285
 #, c-format
@@ -1743,15 +1743,15 @@ msgstr "%d kb/s"
 
 #: pppstatdlg.cpp:432 pppstatdlg.cpp:437
 msgid "unavailable"
-msgstr "���ѤǤ��ޤ���"
+msgstr "ÍøÍÑ¤Ç¤­¤Þ¤»¤ó"
 
 #: miniterm.cpp:44
 msgid "Kppp Mini-Terminal"
-msgstr "Kppp �ߥ˥����ߥʥ�"
+msgstr "Kppp ¥ß¥Ë¥¿¡¼¥ß¥Ê¥ë"
 
 #: miniterm.cpp:50
 msgid "&Reset Modem"
-msgstr "��ǥ��ꥻ�å� (&R)"
+msgstr "¥â¥Ç¥à¤ò¥ê¥»¥Ã¥È (&R)"
 
 #: miniterm.cpp:53
 msgid ""
@@ -1764,124 +1764,124 @@ msgid ""
 "This program is published under the GNU GPL\n"
 "(GNU General Public License)"
 msgstr ""
-"MiniTerm - KPPP �Τ���Υ����ߥʥ륨�ߥ�졼�����\n"
+"MiniTerm - KPPP ¤Î¤¿¤á¤Î¥¿¡¼¥ß¥Ê¥ë¥¨¥ß¥å¥ì¡¼¥·¥ç¥ó\n"
 "\n"
 "(c) 1997 Bernd Johannes Wuebben <wuebben@kde.org>\n"
 "(c) 1998 Harri Porten <porten@kde.org>\n"
 "(c) 1998 Mario Weilguni <mweilguni@kde.org>\n"
 "\n"
-"���Υץ������� GNU GPL(GNU General Public License)\n"
-"�Τ�Ȥ˸�������ޤ�����"
+"¤³¤Î¥×¥í¥°¥é¥à¤Ï GNU GPL(GNU General Public License)\n"
+"¤Î¤â¤È¤Ë¸ø³«¤µ¤ì¤Þ¤·¤¿¡£"
 
 #: miniterm.cpp:63
 msgid "&Modem"
-msgstr "��ǥ� (&M)"
+msgstr "¥â¥Ç¥à (&M)"
 
 #: miniterm.cpp:107
 msgid "Close MiniTerm"
-msgstr "MiniTerm ���Ĥ���"
+msgstr "MiniTerm ¤òÊÄ¤¸¤ë"
 
 #: miniterm.cpp:112
 msgid "Reset Modem"
-msgstr "��ǥ��ꥻ�å�"
+msgstr "¥â¥Ç¥à¤ò¥ê¥»¥Ã¥È"
 
 #: miniterm.cpp:138
 msgid "Initializing Modem"
-msgstr "��ǥ��������"
+msgstr "¥â¥Ç¥à¤ò½é´ü²½Ãæ"
 
 #: miniterm.cpp:205
 msgid "Hanging up ..."
-msgstr "��� ..."
+msgstr "Ãæ»ß ..."
 
 #: miniterm.cpp:219
 msgid "Resetting Modem"
-msgstr "��ǥ��ꥻ�å���"
+msgstr "¥â¥Ç¥à¤ò¥ê¥»¥Ã¥ÈÃæ"
 
 #: acctselect.cpp:47
 msgid "Accounting Setup"
-msgstr "�̿���������"
+msgstr "ÄÌ¿®ÎÁ¤ÎÀßÄê"
 
 #: acctselect.cpp:55
 msgid "Enable accounting"
-msgstr "�̿�����ͭ����"
+msgstr "ÄÌ¿®ÎÁ¤òÍ­¸ú²Ä"
 
 #: acctselect.cpp:73
 msgid "Selected:"
-msgstr "���򤷤�������"
+msgstr "ÁªÂò¤·¤¿²óÀþ¡§"
 
 #: acctselect.cpp:87
 msgid "Volume accounting:"
-msgstr "�̿��̤�¬�ꡧ"
+msgstr "ÄÌ¿®ÎÌ¤ÎÂ¬Äê¡§"
 
 #: acctselect.cpp:91
 msgid "No accounting"
-msgstr "¬�ꤷ�ʤ�"
+msgstr "Â¬Äê¤·¤Ê¤¤"
 
 #: acctselect.cpp:92
 msgid "Bytes in"
-msgstr "�����Х���"
+msgstr "¼õ¿®¥Ð¥¤¥È"
 
 #: acctselect.cpp:93
 msgid "Bytes out"
-msgstr "�����Х���"
+msgstr "Á÷¿®¥Ð¥¤¥È"
 
 #: acctselect.cpp:94
 msgid "Bytes in and out"
-msgstr "�������Х���"
+msgstr "Á÷¼õ¿®¥Ð¥¤¥È"
 
 #: acctselect.cpp:164 acctselect.cpp:270
 msgid "Available rules"
-msgstr "���ѤǤ���롼��"
+msgstr "ÍøÍÑ¤Ç¤­¤ë¥ë¡¼¥ë"
 
 #: acctselect.cpp:305
 msgid "(none)"
-msgstr "(�ʤ�)"
+msgstr "(¤Ê¤·)"
 
 #: ruleset.cpp:544
 msgid "kppp: no rulefile specified\n"
-msgstr "kppp: �롼��ե����뤬���Ф�Ƥ��ޤ���\n"
+msgstr "kppp: ¥ë¡¼¥ë¥Õ¥¡¥¤¥ë¤¬Áª¤Ð¤ì¤Æ¤¤¤Þ¤»¤ó\n"
 
 #: ruleset.cpp:550
 #, c-format
 msgid "kppp: rulefile \"%s\" not found\n"
-msgstr "kppp: �롼��ե����� \"%s\" �����Ĥ���ޤ���\n"
+msgstr "kppp: ¥ë¡¼¥ë¥Õ¥¡¥¤¥ë \"%s\" ¤¬¸«¤Ä¤«¤ê¤Þ¤»¤ó\n"
 
 #: ruleset.cpp:555
 msgid "kppp: rulefiles must have the extension \".rst\"\n"
-msgstr "kppp: �롼��ե�����ϳ�ĥ�Ҥ� \".rst\" �Ǥʤ���Фʤ�ޤ���\n"
+msgstr "kppp: ¥ë¡¼¥ë¥Õ¥¡¥¤¥ë¤Ï³ÈÄ¥»Ò¤¬ \".rst\" ¤Ç¤Ê¤±¤ì¤Ð¤Ê¤ê¤Þ¤»¤ó\n"
 
 #: ruleset.cpp:564
 msgid "kppp: error parsing the ruleset\n"
-msgstr "kppp: �롼�륻�å��ɤ߹�����Υ��顼\n"
+msgstr "kppp: ¥ë¡¼¥ë¥»¥Ã¥ÈÆÉ¤ß¹þ¤ßÃæ¤Î¥¨¥é¡¼\n"
 
 #: ruleset.cpp:569
 #, c-format
 msgid "kppp: parse error in line %d\n"
-msgstr "kppp: %d ���ܤǤΥ��顼\n"
+msgstr "kppp: %d ¹ÔÌÜ¤Ç¤Î¥¨¥é¡¼\n"
 
 #: ruleset.cpp:575
 msgid "kppp: rulefile does not contain a default rule\n"
-msgstr "kppp: �롼��ե�����˥ǥե���ȤΥ롼�뤬���äƤ��ޤ���\n"
+msgstr "kppp: ¥ë¡¼¥ë¥Õ¥¡¥¤¥ë¤Ë¥Ç¥Õ¥©¥ë¥È¤Î¥ë¡¼¥ë¤¬Æþ¤Ã¤Æ¤¤¤Þ¤»¤ó\n"
 
 #: ruleset.cpp:580
 msgid "kppp: rulefile does not contain a \"name=...\" line\n"
-msgstr "kppp: �롼��ե������ \"name=...\" �Ȥ����Ԥ�����ޤ���\n"
+msgstr "kppp: ¥ë¡¼¥ë¥Õ¥¡¥¤¥ë¤Ë \"name=...\" ¤È¤¤¤¦¹Ô¤¬¤¢¤ê¤Þ¤»¤ó\n"
 
 #: ruleset.cpp:584
 msgid "kppp: rulefile is ok\n"
-msgstr "kppp: �롼��ե����� OK\n"
+msgstr "kppp: ¥ë¡¼¥ë¥Õ¥¡¥¤¥ë OK\n"
 
 #: docking.cpp:199
 msgid "Minimize"
-msgstr "�Ǿ���"
+msgstr "ºÇ¾®²½"
 
 #: runtests.cpp:364
 msgid ""
-"You�re not allowed to dial out with kppp.\n"
+"You´re not allowed to dial out with kppp.\n"
 "Contact your system administrator."
 msgstr ""
-"���ʤ��ˤ�kppp��Ȥäƥ������뤹�븢�¤�\n"
-"����ޤ��󡣴����Ԥ��䤤��碌�ƤߤƤ���������"
+"¤¢¤Ê¤¿¤Ë¤Ïkppp¤ò»È¤Ã¤Æ¥À¥¤¥¢¥ë¤¹¤ë¸¢¸Â¤¬\n"
+"¤¢¤ê¤Þ¤»¤ó¡£´ÉÍý¼Ô¤ËÌä¤¤¹ç¤ï¤»¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: runtests.cpp:381
 msgid ""
@@ -1894,14 +1894,14 @@ msgid ""
 "or\n"
 "  * install a kernel with PPP support\n"
 msgstr ""
-"���Υ����ͥ�ˤ� ppp ���Ȥ߹��ޤ�Ƥ��餺��\n"
-"�����ͥ�⥸�塼��Ȥ��Ƥ⥳��ѥ���\n"
-"����Ƥ��ޤ���\n"
+"¤³¤Î¥«¡¼¥Í¥ë¤Ë¤Ï ppp ¤¬ÁÈ¤ß¹þ¤Þ¤ì¤Æ¤ª¤é¤º¡¢\n"
+"¥«¡¼¥Í¥ë¥â¥¸¥å¡¼¥ë¤È¤·¤Æ¤â¥³¥ó¥Ñ¥¤¥ë\n"
+"¤µ¤ì¤Æ¤¤¤Þ¤»¤ó¡£\n"
 "\n"
-"����������褹����ˡ��:\n"
-" * �����Ԥ��䤤��碌��\n"
-"�⤷����\n"
-" * PPP ���Ȥ߹���������ͥ�򥤥󥹥ȡ��뤹��\n"
+"¤³¤ÎÌäÂê¤ò²ò·è¤¹¤ëÊýË¡¤Ï:\n"
+" * ´ÉÍý¼Ô¤ËÌä¤¤¹ç¤ï¤»¤ë\n"
+"¤â¤·¤¯¤Ï\n"
+" * PPP ¤òÁÈ¤ß¹þ¤ó¤À¥«¡¼¥Í¥ë¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë\n"
 
 #: runtests.cpp:412
 msgid ""
@@ -1911,10 +1911,10 @@ msgid ""
 "Contact your system administrator\n"
 "and ask to get access to pppd."
 msgstr ""
-"���ʤ��� pppd ��ư���븢�¤���äƤ��ޤ���\n"
+"¤¢¤Ê¤¿¤Ï pppd ¤òµ¯Æ°¤¹¤ë¸¢¸Â¤ò»ý¤Ã¤Æ¤¤¤Þ¤»¤ó¡ª\n"
 "\n"
-"�����Ԥ��䤤��碌��pppd ��ư������ˡ\n"
-"��ʹ���ƤߤƤ���������"
+"´ÉÍý¼Ô¤ËÌä¤¤¹ç¤ï¤»¡¢pppd ¤òµ¯Æ°¤¹¤ëÊýË¡\n"
+"¤òÊ¹¤¤¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: runtests.cpp:423 runtests.cpp:437
 msgid ""
@@ -1924,10 +1924,10 @@ msgid ""
 "with the SUID bit set. Contact your\n"
 "system administrator."
 msgstr ""
-"pppd �����������󥹥ȡ��뤵��Ƥ��ޤ���\n"
+"pppd ¤¬Àµ¤·¤¯¥¤¥ó¥¹¥È¡¼¥ë¤µ¤ì¤Æ¤¤¤Þ¤»¤ó¡ª\n"
 "\n"
-"pppd �ΥХ��ʥ�� SUID ���äƤʤ��Ƥ�\n"
-"�ʤ�ޤ��󡣴����Ԥ��䤤��碌�Ƥ���������"
+"pppd ¤Î¥Ð¥¤¥Ê¥ê¤Ï SUID ¤ò¤â¤Ã¤Æ¤Ê¤¯¤Æ¤Ï\n"
+"¤Ê¤ê¤Þ¤»¤ó¡£´ÉÍý¼Ô¤ËÌä¤¤¹ç¤ï¤»¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: runtests.cpp:472
 msgid ""
@@ -1937,11 +1937,11 @@ msgid ""
 "itself.\n"
 "Contact your system administrator."
 msgstr ""
-"/etc/ppp/options �� 'lock' ���ץ����򸫤Ĥ��ޤ�����\n"
+"/etc/ppp/options ¤Ë 'lock' ¥ª¥×¥·¥ç¥ó¤ò¸«¤Ä¤±¤Þ¤·¤¿¡£\n"
 "\n"
-"kppp �Ϥ��켫�ȡ��ǥХ�������å����뵡ǽ����äƤ��ޤ��Τǡ�\n"
-"���Υ��ץ�����������Ƥ���������\n"
-"�����Ԥ��䤤��碌�ƤߤƤ���������"
+"kppp ¤Ï¤½¤ì¼«¿È¡¢¥Ç¥Ð¥¤¥¹¤ò¥í¥Ã¥¯¤¹¤ëµ¡Ç½¤ò»ý¤Ã¤Æ¤¤¤Þ¤¹¤Î¤Ç¡¢\n"
+"¤³¤Î¥ª¥×¥·¥ç¥ó¤ò¼è¤ê½ü¤¤¤Æ¤¯¤À¤µ¤¤¡£\n"
+"´ÉÍý¼Ô¤ËÌä¤¤¹ç¤ï¤»¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: runtests.cpp:497
 msgid ""
@@ -1951,18 +1951,18 @@ msgid ""
 "a non-empty file that has appropriate\n"
 "read and write permissions."
 msgstr ""
-"���礱�Ƥ��ޤ���\n"
+"¤¬·ç¤±¤Æ¤¤¤Þ¤¹¡ª\n"
 "\n"
-"���Ǥʤ���Ŭ���ʥѡ��ߥ������ä��ե������\n"
-"���褦�������Ԥ��䤤��碌�ƤߤƤ���������"
+"¶õ¤Ç¤Ê¤¯¡¢Å¬Åö¤Ê¥Ñ¡¼¥ß¥·¥ç¥ó¤ò¤â¤Ã¤¿¥Õ¥¡¥¤¥ë¤ò\n"
+"ºî¤ë¤è¤¦¡¢´ÉÍý¼Ô¤ËÌä¤¤¹ç¤ï¤»¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: loginterm.cpp:118
 msgid "Ca&ncel"
-msgstr "����󥻥� (&N)"
+msgstr "¥­¥ã¥ó¥»¥ë (&N)"
 
 #: loginterm.cpp:123
 msgid "&Continue"
-msgstr "³�� (&C)"
+msgstr "Â³¹Ô (&C)"
 
 #: ppplog.cpp:136
 msgid ""
@@ -1970,40 +1970,40 @@ msgid ""
 "connection.\n"
 "Please use the terminal-based login to verify"
 msgstr ""
-"��⡼�ȥ����Ф� PPP ��³�ν�����λ���������� pppd ����ư���ޤ�����\n"
-"��ǧ�Τ��᥿���ߥʥ�١����Υ����������Ѥ��Ƥ���������"
+"¥ê¥â¡¼¥È¥µ¡¼¥Ð¤¬ PPP ÀÜÂ³¤Î½àÈ÷¤ò´°Î»¤µ¤»¤ëÁ°¤Ë pppd ¤¬µ¯Æ°¤·¤Þ¤·¤¿¡£\n"
+"³ÎÇ§¤Î¤¿¤á¥¿¡¼¥ß¥Ê¥ë¥Ù¡¼¥¹¤Î¥í¥°¥¤¥ó¤ò»ÈÍÑ¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: ppplog.cpp:141
 msgid "You haven't started the PPP software on the peer system."
-msgstr "��³��Υ����ƥ��PPP���եȥ������򥹥����ȤǤ��ޤ���Ǥ�����"
+msgstr "ÀÜÂ³Àè¤Î¥·¥¹¥Æ¥à¤ÇPPP¥½¥Õ¥È¥¦¥§¥¢¤ò¥¹¥¿¡¼¥È¤Ç¤­¤Þ¤»¤ó¤Ç¤·¤¿¡£"
 
 #: ppplog.cpp:144
 msgid "Check that you supplied the correct username and password!"
-msgstr "�桼�����͡���ȥѥ���ɤ�����������ǧ���Ƥ���������"
+msgstr "¥æ¡¼¥¶¡¼¥Í¡¼¥à¤È¥Ñ¥¹¥ï¡¼¥É¤¬Àµ¤·¤¤¤«³ÎÇ§¤·¤Æ¤¯¤À¤µ¤¤¡ª"
 
 #: ppplog.cpp:147
 msgid ""
 "You shouldn't pass 'lock' as an argument to pppd. Check /etc/ppp/options and "
 "~/.ppprc"
 msgstr ""
-"pppd �� 'lock' �Ȥ������ץ�����ä��ƤϤʤ�ޤ���\n"
-"/etc/ppp/options �� ~/.ppprc ������å����Ƥ���������"
+"pppd ¤Ë 'lock' ¤È¤¤¤¦¥ª¥×¥·¥ç¥ó¤ò²Ã¤¨¤Æ¤Ï¤Ê¤ê¤Þ¤»¤ó¡£\n"
+"/etc/ppp/options ¤ä ~/.ppprc ¤ò¥Á¥§¥Ã¥¯¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: ppplog.cpp:151
 msgid ""
 "The remote system does not seem to answer to\n"
 "configuration request! Contact your provider!"
 msgstr ""
-"��⡼�ȥ����ƥ�Ϥ�������׵�������ʤ��褦�Ǥ���\n"
-"�ץ��Х������䤤��碌�Ƥ���������"
+"¥ê¥â¡¼¥È¥·¥¹¥Æ¥à¤Ï¤³¤Á¤é¤ÎÍ×µá¤ËÅú¤¨¤Ê¤¤¤è¤¦¤Ç¤¹¡ª\n"
+"¥×¥í¥Ð¥¤¥À¤ËÌä¤¤¹ç¤ï¤»¤Æ¤¯¤À¤µ¤¤¡ª"
 
 #: ppplog.cpp:155
 msgid ""
 "You have passed an invalid option to pppd. See `man pppd' for a complete "
 "list of valid arguments."
 msgstr ""
-"pppd �������ʥ��ץ�������Ϥ���Ƥ��ޤ���'man pppd' �򤷤�\n"
-"ͭ���ʥ��ץ������ǧ���Ƥ���������"
+"pppd ¤ËÉÔÀµ¤Ê¥ª¥×¥·¥ç¥ó¤¬ÆþÎÏ¤µ¤ì¤Æ¤¤¤Þ¤¹¡£'man pppd' ¤ò¤·¤Æ\n"
+"Í­¸ú¤Ê¥ª¥×¥·¥ç¥ó¤ò³ÎÇ§¤·¤Æ¤¯¤À¤µ¤¤¡£"
 
 #: ppplog.cpp:170
 #, c-format
@@ -2012,31 +2012,31 @@ msgid ""
 "\"%s\"\n"
 "This may give you a hint why the the connection has failed."
 msgstr ""
-"��⡼�ȥ����ƥब���Τ褦�ʥ�å����������äƤ��ޤ���:\n"
+"¥ê¥â¡¼¥È¥·¥¹¥Æ¥à¤¬¼¡¤Î¤è¤¦¤Ê¥á¥Ã¥»¡¼¥¸¤òÁ÷¤Ã¤Æ¤­¤Þ¤·¤¿:\n"
 "\"%s\"\n"
-"���Ԥ���������ʬ���뤫�⤷��ޤ���"
+"¼ºÇÔ¤·¤¿¸¶°ø¤¬Ê¬¤«¤ë¤«¤â¤·¤ì¤Þ¤»¤ó¡£"
 
 #: ppplog.cpp:189
 msgid "Sorry. Can't help you here."
-msgstr "��Ω�ľ���Ϥ���ޤ���"
+msgstr "ÌòÎ©¤Ä¾ðÊó¤Ï¤¢¤ê¤Þ¤»¤ó¡£"
 
 #: ppplog.cpp:206
 msgid ""
-"KPPP could not prepare a PPP log. It�s very likely\n"
+"KPPP could not prepare a PPP log. It´s very likely\n"
 "that pppd was started without the \"debug\" option.\n"
 "\n"
-"Without this option it�s difficult to find out PPP\n"
+"Without this option it´s difficult to find out PPP\n"
 "problems, so you should turn on the debug option.\n"
 "\n"
 "Shall I turn it on now?"
 msgstr ""
-"KPPP �� PPP �Υ������ѰդǤ��ޤ���Ǥ����������餯\n"
-"pppd �� \"debug\" ���ץ������դ����˵�ư���줿�ΤǤ��礦��\n"
+"KPPP ¤Ï PPP ¤Î¥í¥°¤òÍÑ°Õ¤Ç¤­¤Þ¤»¤ó¤Ç¤·¤¿¡£¤ª¤½¤é¤¯\n"
+"pppd ¤¬ \"debug\" ¥ª¥×¥·¥ç¥ó¤òÉÕ¤±¤º¤Ëµ¯Æ°¤µ¤ì¤¿¤Î¤Ç¤·¤ç¤¦¡£\n"
 "\n"
-"���Υ��ץ���󤬤ʤ��� PPP ������򸫤Ĥ���Τ��񤷤�\n"
-"�ʤ�ޤ��Τǡ�debug ���ץ������դ��Ƥ���������\n"
+"¤³¤Î¥ª¥×¥·¥ç¥ó¤¬¤Ê¤¤¤È PPP ¤ÎÌäÂê¤ò¸«¤Ä¤±¤ë¤Î¤¬Æñ¤·¤¯\n"
+"¤Ê¤ê¤Þ¤¹¤Î¤Ç¡¢debug ¥ª¥×¥·¥ç¥ó¤ÏÉÕ¤±¤Æ¤¯¤À¤µ¤¤¡£\n"
 "\n"
-"������ͭ���ˤ��Ƥ⹽���ޤ���?"
+"º£¤¹¤°Í­¸ú¤Ë¤·¤Æ¤â¹½¤¤¤Þ¤»¤ó¤«?"
 
 #: ppplog.cpp:217
 msgid ""
@@ -2045,40 +2045,40 @@ msgid ""
 "again, you will get a PPP log that may help\n"
 "you to track down the connection problem."
 msgstr ""
-"\"debug\" ���ץ�����ɲä���ޤ������⤦����\n"
-"��³���Ƥߤޤ��礦���⤷�ޤ����Ԥ��Ƥ⡢PPP ��\n"
-"�����򸫤�С���³�������꤬���Ǥ��뤫���Τ�ޤ���"
+"\"debug\" ¥ª¥×¥·¥ç¥ó¤¬ÄÉ²Ã¤µ¤ì¤Þ¤·¤¿¡£¤â¤¦£±ÅÙ\n"
+"ÀÜÂ³¤·¤Æ¤ß¤Þ¤·¤ç¤¦¡£¤â¤·¤Þ¤¿¼ºÇÔ¤·¤Æ¤â¡¢PPP ¤Î\n"
+"¥í¥°¤ò¸«¤ì¤Ð¡¢ÀÜÂ³»þ¤ÎÌäÂê¤¬²ò·è¤Ç¤­¤ë¤«¤âÃÎ¤ì¤Þ¤»¤ó¡£"
 
 #: ppplog.cpp:232
 msgid "PPP log"
-msgstr "PPP ����"
+msgstr "PPP ¥í¥°"
 
 #: ppplog.cpp:236
 msgid "kppp's diagnosis (just guessing):"
-msgstr "kppp �ο��� (��¬�ˤ����ޤ���)��"
+msgstr "kppp ¤Î¿ÇÃÇ (¿äÂ¬¤Ë¤¹¤®¤Þ¤»¤ó)¡§"
 
 #: ppplog.cpp:241
 msgid "Write to file"
-msgstr "�ե�����˽���"
+msgstr "¥Õ¥¡¥¤¥ë¤Ë½ÐÎÏ"
 
 #: modemdb.cpp:46
 msgid "Select modem type..."
-msgstr "��ǥ�Υ����פ�����Ǥ�������..."
+msgstr "¥â¥Ç¥à¤Î¥¿¥¤¥×¤òÁª¤ó¤Ç¤¯¤À¤µ¤¤..."
 
 #: modemdb.cpp:48
 msgid ""
 "To setup your modem, first choose its vendor in the list to the left, and "
-"then select the model from the right list. If you don�t know which modem you "
+"then select the model from the right list. If you don´t know which modem you "
 "have, you can try out one of the \"Generic\" modems."
 msgstr ""
-"��ǥ�򥻥åȥ��åפ���ˤϡ��ޤ������Υꥹ�Ȥ��餽����¤�������ӡ�\n"
-"���Υꥹ�Ȥ����ǥ������Ǥ����������⤷�ɤΥ�ǥफʬ����ʤ��ΤǤ����\n"
-"\"����\" ��ǥ�򣱤�����Ǥ����Ф����Ǥ���"
+"¥â¥Ç¥à¤ò¥»¥Ã¥È¥¢¥Ã¥×¤¹¤ë¤Ë¤Ï¡¢¤Þ¤º¡¢º¸¤Î¥ê¥¹¥È¤«¤é¤½¤ÎÀ½Â¤¸µ¤òÁª¤Ó¡¢\n"
+"±¦¤Î¥ê¥¹¥È¤«¤é¥â¥Ç¥ë¤òÁª¤ó¤Ç¤¯¤À¤µ¤¤¡£¤â¤·¤É¤Î¥â¥Ç¥à¤«Ê¬¤«¤é¤Ê¤¤¤Î¤Ç¤¢¤ì¤Ð\n"
+"\"°ìÈÌ\" ¥â¥Ç¥à¤ò£±¤ÄÁª¤ó¤Ç¤ª¤±¤Ð¤¤¤¤¤Ç¤¹¡£"
 
 #: modemdb.cpp:151 modemdb.cpp:153 modemdb.cpp:223 modemdb.cpp:238
 msgid "<Generic>"
-msgstr "<����>"
+msgstr "<°ìÈÌ>"
 
 #: modemdb.cpp:218
 msgid "Hayes(tm) compatible modem"
-msgstr "Hayes(tm) �ߴ��Υ�ǥ�"
+msgstr "Hayes(tm) ¸ß´¹¤Î¥â¥Ç¥à"

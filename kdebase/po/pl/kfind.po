@@ -4,7 +4,7 @@ msgstr ""
 "POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-01-27 23:24+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -12,7 +12,7 @@ msgstr "Katalogi:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Nie mo¿na otworzyæ lub odczytaæ katalogu."
+msgstr "Nie moÅ¼na otworzyÄ‡ lub odczytaÄ‡ katalogu."
 
 #: kfindtop.cpp:121
 msgid "&Start search"
@@ -24,7 +24,7 @@ msgstr "&Zatrzymaj szukanie"
 
 #: kfindtop.cpp:128
 msgid "&Open"
-msgstr "&Otwórz"
+msgstr "&OtwÃ³rz"
 
 #: kfindtop.cpp:130
 msgid "&Add to archive"
@@ -32,11 +32,11 @@ msgstr "&Dodaj do archiwum"
 
 #: kfindtop.cpp:135
 msgid "&Properties"
-msgstr "&W³a¶ciwo¶ci..."
+msgstr "&WÅ‚aÅ›ciwoÅ›ci..."
 
 #: kfindtop.cpp:138
 msgid "Open Containing &Folder"
-msgstr "Otwórz zawarto¶æ &katalogu"
+msgstr "OtwÃ³rz zawartoÅ›Ä‡ &katalogu"
 
 #: kfindtop.cpp:141
 msgid "&Save Search"
@@ -52,7 +52,7 @@ msgstr "&Odeznacz wszyskie"
 
 #: kfindtop.cpp:162
 msgid "&Invert Selection"
-msgstr "&Odwróæ zaznaczenie"
+msgstr "&OdwrÃ³Ä‡ zaznaczenie"
 
 #: kfindtop.cpp:174
 msgid "&Preferences ..."
@@ -63,19 +63,19 @@ msgstr "&Ustawienia..."
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
-"Nak³adka na program find\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"NakÅ‚adka na program find\n"
+"Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "\n"
-"Specjalne podziêkowania dla Stephana Kulow'a\n"
+"Specjalne podziÄ™kowania dla Stephana Kulow'a\n"
 "<coolo@kde.org>\n"
 "\n"
-"Polskie t³umaczenie\n"
+"Polskie tÅ‚umaczenie\n"
 "Piotr Roszatycki <dexter@fnet.pl>"
 
 #: kfindtop.cpp:199
@@ -96,7 +96,7 @@ msgstr "Dodaj do archiwum:"
 
 #: kfindtop.cpp:237
 msgid "Open Containing Folder"
-msgstr "Otwórz zawarto¶æ katalogu"
+msgstr "OtwÃ³rz zawartoÅ›Ä‡ katalogu"
 
 #: kfindtop.cpp:242
 msgid "Save Search Results"
@@ -112,11 +112,11 @@ msgstr "&Szukaj w:"
 
 #: kftabdlg.cpp:78
 msgid "&Browse ..."
-msgstr "&Przegl±daj..."
+msgstr "&PrzeglÄ…daj..."
 
 #: kftabdlg.cpp:84
 msgid "Include &subfolders"
-msgstr "Do³±cz &podkatalogi"
+msgstr "DoÅ‚Ä…cz &podkatalogi"
 
 #: kftabdlg.cpp:118
 msgid " Name& Location "
@@ -128,7 +128,7 @@ msgstr "i"
 
 #: kftabdlg.cpp:131
 msgid "month(s)"
-msgstr "miesi±ca/miesiêcy"
+msgstr "miesiÄ…ca/miesiÄ™cy"
 
 #: kftabdlg.cpp:132
 msgid "day(s)"
@@ -140,11 +140,11 @@ msgstr "&Wszystkie pliki"
 
 #: kftabdlg.cpp:148
 msgid "Find all files created or &modified:"
-msgstr "Znajd¼ wszystkie pliki sworzone lub &zmodyfikowane"
+msgstr "ZnajdÅº wszystkie pliki sworzone lub &zmodyfikowane"
 
 #: kftabdlg.cpp:149
 msgid "&between"
-msgstr "&pomiêdzy"
+msgstr "&pomiÄ™dzy"
 
 #: kftabdlg.cpp:150
 msgid "during the previou&s "
@@ -164,7 +164,7 @@ msgstr "&Typu:"
 
 #: kftabdlg.cpp:208
 msgid "&Containing Text:"
-msgstr "&Zawieraj±ce:"
+msgstr "&ZawierajÄ…ce:"
 
 #: kftabdlg.cpp:213
 msgid "&Size is:"
@@ -184,11 +184,11 @@ msgstr "Katalogi"
 
 #: kftabdlg.cpp:239
 msgid "Symbolic links"
-msgstr "Symboliczne odno¶niki"
+msgstr "Symboliczne odnoÅ›niki"
 
 #: kftabdlg.cpp:240
 msgid "Special files (sockets, device files...)"
-msgstr "Pliki specjalne (gniazdka, urz±dzenia...)"
+msgstr "Pliki specjalne (gniazdka, urzÄ…dzenia...)"
 
 #: kftabdlg.cpp:241
 msgid "Executable files"
@@ -208,7 +208,7 @@ msgstr "Co najmniej"
 
 #: kftabdlg.cpp:252
 msgid "At Most"
-msgstr "Najwy¿ej"
+msgstr "NajwyÅ¼ej"
 
 #: kftabdlg.cpp:263
 msgid " Advanced "
@@ -220,11 +220,11 @@ msgstr "Data nie jest poprawna!!"
 
 #: kftabdlg.cpp:513
 msgid "The month(s) value isn't valid!!"
-msgstr "Miesi±c nie jest poprawny"
+msgstr "MiesiÄ…c nie jest poprawny"
 
 #: kftabdlg.cpp:524
 msgid "The day(s) value isn't valid!!"
-msgstr "Dzieñ nie jest poprawny!!"
+msgstr "DzieÅ„ nie jest poprawny!!"
 
 #: kftabdlg.cpp:541
 msgid "The value in size isn't valid number!!"
@@ -248,7 +248,7 @@ msgstr "Zachowaj rezultaty w pliku ~/.kfind-results.html"
 
 #: kfoptions.cpp:81
 msgid "Browse"
-msgstr "Przegl±daj"
+msgstr "PrzeglÄ…daj"
 
 #: kfoptions.cpp:94
 msgid "Plain Text"
@@ -281,11 +281,11 @@ msgstr "Archiwizatory"
 #: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
 #, c-format
 msgid "%d file(s) found"
-msgstr "%d plik(ów) znaleziono"
+msgstr "%d plik(Ã³w) znaleziono"
 
 #: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
-msgstr "Nie mo¿na zapisaæ wyników!"
+msgstr "Nie moÅ¼na zapisaÄ‡ wynikÃ³w!"
 
 #: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
@@ -293,7 +293,7 @@ msgstr "Plik z rezultatami KFind"
 
 #: kfwin.cpp:287
 msgid "Results were saved to file\n"
-msgstr "Rezultaty zosta³y zapisane do pliku\n"
+msgstr "Rezultaty zostaÅ‚y zapisane do pliku\n"
 
 #: kfwin.cpp:302
 #, c-format
@@ -301,7 +301,7 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
-"Czy na pewno chcesz skasowaæ plik:\n"
+"Czy na pewno chcesz skasowaÄ‡ plik:\n"
 "%s"
 
 #: kfwin.cpp:304
@@ -313,15 +313,15 @@ msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
-"Nie masz uprawnieñ\n"
-" by skasowaæ ten plik"
+"Nie masz uprawnieÅ„\n"
+" by skasowaÄ‡ ten plik"
 
 #: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr ""
-"Nie mo¿na skasowaæ\n"
+"Nie moÅ¼na skasowaÄ‡\n"
 "zaznaczonego pliku"
 
 #: kfwin.cpp:340
@@ -329,8 +329,8 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Nie masz uprawnieñ\n"
-" by skasowaæ ten katalog"
+"Nie masz uprawnieÅ„\n"
+" by skasowaÄ‡ ten katalog"
 
 #: kfwin.cpp:345
 msgid ""
@@ -345,13 +345,13 @@ msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
-"Nie mo¿na skasowaæ\n"
+"Nie moÅ¼na skasowaÄ‡\n"
 "zaznaczonego katalogu"
 
 #: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"
-msgstr "Nie mo¿na rozpoznaæ typu arhiwum!"
+msgstr "Nie moÅ¼na rozpoznaÄ‡ typu arhiwum!"
 
 #: kfwin.cpp:501
 msgid "Error while creating child process!"
-msgstr "B³±d podczas tworzenia procesu potomnego!"
+msgstr "BÅ‚Ä…d podczas tworzenia procesu potomnego!"

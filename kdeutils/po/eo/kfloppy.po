@@ -1,4 +1,4 @@
-# Esperantaj mesaøoj por "kfloppy"
+# Esperantaj mesaÄoj por "kfloppy"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: about.cpp:40
@@ -83,7 +83,7 @@ msgid ""
 msgstr ""
 "Ne povas aliri %s\n"
 "Certigu, ke la aparato ekzistas kaj ke\n"
-"vi havas skribpermeson por øi."
+"vi havas skribpermeson por Äi."
 
 #: floppy.cpp:339
 msgid ""
@@ -93,7 +93,7 @@ msgid ""
 msgstr ""
 "Ne eblis trovi Kfdformat\n"
 "Kfdformat estas parto de KFloppy.\n"
-"Bonvolu instali KFloppy øuste."
+"Bonvolu instali KFloppy Äuste."
 
 #: floppy.cpp:355
 msgid ""
@@ -103,7 +103,7 @@ msgid ""
 msgstr ""
 "Ne eblis trovi Kmke2fs\n"
 "Kmke2fs estas parto de KFloppy.\n"
-"Bonvolu instali KFloppy øuste."
+"Bonvolu instali KFloppy Äuste."
 
 #: floppy.cpp:370
 msgid ""
@@ -113,7 +113,7 @@ msgid ""
 msgstr ""
 "Ne eblis trovi Kmkdosfs\n"
 "Kmkdosf2 estas parto de KFloppy.\n"
-"Bonvolu instali KFloppy øuste."
+"Bonvolu instali KFloppy Äuste."
 
 #: floppy.cpp:430
 msgid "Abort"
@@ -121,7 +121,7 @@ msgstr "Interrompu"
 
 #: floppy.cpp:478
 msgid "Cannot start a new program: fork() failed."
-msgstr "Ne eblas lanæi novan programon: fork() fiaskis."
+msgstr "Ne eblas lanÄ‰i novan programon: fork() fiaskis."
 
 #: floppy.cpp:578 floppy.cpp:706
 msgid ""
@@ -129,7 +129,7 @@ msgid ""
 "Please insert a floppy and make sure that you\n"
 "have selected a valid floppy drive.\n"
 msgstr ""
-"Ne eblas aliri la disketon aı la disketlegilon\n"
+"Ne eblas aliri la disketon aÅ­ la disketlegilon\n"
 "Bonvolu enmeti disketon kaj certigu, ke vi\n"
 "elektis validan disketlegilon.\n"
 
@@ -145,7 +145,7 @@ msgstr ""
 #: floppy.cpp:640
 #, c-format
 msgid "Block %d is bad. Continuing ..."
-msgstr "Bloko %d estas difektita. Daırigante ...."
+msgstr "Bloko %d estas difektita. DaÅ­rigante ...."
 
 #: floppy.cpp:723
 #, c-format
@@ -163,13 +163,13 @@ msgid ""
 "Blocks marked bad: %d\n"
 "Raw Capacity: %d\n"
 msgstr ""
-"La disketo sukcese formatiøis.\n"
+"La disketo sukcese formatiÄis.\n"
 "Bolkoj difektitaj: %d\n"
 "Kruda kapacito: %d\n"
 
 #: floppy.cpp:780
 msgid "All files were sucessfully erased."
-msgstr "Æiuj dosieroj estas sukceses estingitaj."
+msgstr "Äˆiuj dosieroj estas sukceses estingitaj."
 
 #: floppy.cpp:838
 msgid "Creating Filesystem ..."
@@ -184,12 +184,12 @@ msgid ""
 "Cannot start a new program\n"
 "fork() failed."
 msgstr ""
-"Ne eblas lanæi novan programon\n"
+"Ne eblas lanÄ‰i novan programon\n"
 "fork() fiaskis."
 
 #: floppy.cpp:913
 msgid "Error while trying to determine whether floppy is mounted\n"
-msgstr "Eraro dum la testo, æu ladisketo estas muntita.\n"
+msgstr "Eraro dum la testo, Ä‰u ladisketo estas muntita.\n"
 
 #: floppy.cpp:930
 #, c-format

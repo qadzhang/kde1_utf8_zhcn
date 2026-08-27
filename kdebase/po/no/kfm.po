@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kfmgui.cpp:204
@@ -23,15 +23,15 @@ msgstr "Nytt &vindu"
 
 #: kfmgui.cpp:225
 msgid "&Run..."
-msgstr "&Kjør..."
+msgstr "&KjÃ¸r..."
 
 #: kfmgui.cpp:227
 msgid "Open &Terminal"
-msgstr "Åpne &terminal"
+msgstr "Ã…pne &terminal"
 
 #: kfmgui.cpp:230
 msgid "&Open Location..."
-msgstr "Å&pne ..."
+msgstr "Ã…&pne ..."
 
 #: finddlg.cpp:66 kfmgui.cpp:232
 msgid "&Find"
@@ -119,16 +119,16 @@ msgstr "&Kort visning"
 # kfmgui.cpp:373
 #: kfmgui.cpp:313
 msgid "Rel&oad Tree"
-msgstr "L&ast tre på nytt"
+msgstr "L&ast tre pÃ¥ nytt"
 
 # kfmgui.cpp:375
 #: kfmgui.cpp:315
 msgid "&Reload Document"
-msgstr "&Last dokument på nytt"
+msgstr "&Last dokument pÃ¥ nytt"
 
 #: kfmgui.cpp:317
 msgid "Rescan &Bindings"
-msgstr "Les til&ordninger på nytt"
+msgstr "Les til&ordninger pÃ¥ nytt"
 
 # kfmgui.cpp:380
 #: kfmgui.cpp:320
@@ -151,7 +151,7 @@ msgstr "&Dokumentkoding"
 # kfmgui.cpp:397
 #: kfmgui.cpp:353
 msgid "Clear Cache"
-msgstr "Tøm mellomlager"
+msgstr "TÃ¸m mellomlager"
 
 # kfmgui.cpp:400
 #: kfmgui.cpp:356
@@ -183,7 +183,7 @@ msgstr "Vis &statuslinje"
 
 #: kfmgui.cpp:377
 msgid "Show &Toolbar"
-msgstr "Vis &verktøylinje"
+msgstr "Vis &verktÃ¸ylinje"
 
 #: kfmgui.cpp:379
 msgid "Show &Location bar"
@@ -241,12 +241,12 @@ msgid ""
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 "\n"
-"Hvis du oppdager feil i programmet eller har ønsker, vennligst send dem inn "
-"som beskrevet på http://bugs.kde.org"
+"Hvis du oppdager feil i programmet eller har Ã¸nsker, vennligst send dem inn "
+"som beskrevet pÃ¥ http://bugs.kde.org"
 
 #: kfmgui.cpp:450
 msgid "&Go"
-msgstr "&Gå"
+msgstr "&GÃ¥"
 
 #: kfmgui.cpp:451
 msgid "&Bookmarks"
@@ -311,11 +311,11 @@ msgstr "Velg filer:"
 
 #: kfmgui.cpp:1052
 msgid "Find Complete"
-msgstr "Finn fullført"
+msgstr "Finn fullfÃ¸rt"
 
 #: kfmgui.cpp:1053
 msgid "Continue search from the top of the page?"
-msgstr "Fortsett søk fra toppen av siden?"
+msgstr "Fortsett sÃ¸k fra toppen av siden?"
 
 # kfmgui.cpp:886
 #: kfmgui.cpp:1071
@@ -355,7 +355,7 @@ msgstr "FEIL: Misdannet URL"
 # kfmgui.cpp:1139 kfmserver.cpp:178
 #: kfmgui.cpp:1387 kfmserver.cpp:241
 msgid "Open Location:"
-msgstr "Åpne ...:"
+msgstr "Ã…pne ...:"
 
 # kfmgui.cpp:1195
 #: kfmgui.cpp:1444
@@ -401,7 +401,7 @@ msgid ""
 "There is no way to restore them."
 msgstr ""
 "Vil du virkelig slette de(n) markerte filen(e)?\n"
-"Det er ikke mulig å få dem tilbake."
+"Det er ikke mulig Ã¥ fÃ¥ dem tilbake."
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
 #: kfmtree.cpp:504 kfmview.cpp:584 kfmview.cpp:814 root.cpp:1253
@@ -416,12 +416,12 @@ msgstr "FEIL: Du droppet en katalog over et av sine barn"
 # kfmexec.cpp:254 kfmman.cpp:880 kfmview.cpp:468
 #: kfmexec.cpp:303 kfmman.cpp:1214 kfmview.cpp:606 root.cpp:1134
 msgid "Open With:"
-msgstr "Åpne Med:"
+msgstr "Ã…pne Med:"
 
 # kfmview.cpp:485 root.cpp:1057
 #: kfmview.cpp:642 root.cpp:1190
 msgid "ERROR: Can not open properties for multiple files"
-msgstr "FEIL: Kan ikke åpne egenskaper for flere filer samtidig"
+msgstr "FEIL: Kan ikke Ã¥pne egenskaper for flere filer samtidig"
 
 #: kfmview.cpp:715
 msgid ""
@@ -433,7 +433,7 @@ msgstr ""
 "Kan ikke lagre egenskaper fordi\n"
 "denne katalogen er hverken skrivbar eller som et bokmerke.\n"
 "\n"
-" Legg først dette stedet som et bokmerke, eller lag en kdelnk til det på\n"
+" Legg fÃ¸rst dette stedet som et bokmerke, eller lag en kdelnk til det pÃ¥\n"
 "skrivebordet."
 
 #: kfmview.cpp:719
@@ -444,15 +444,15 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 "Kan ikke lagre egenskaper fordi\n"
-"denne URLen er hverken som bokmerke eller på skrivebordet.\n"
+"denne URLen er hverken som bokmerke eller pÃ¥ skrivebordet.\n"
 "\n"
-" Legg først dette stedet som et bokmerke, eller lag en kdelnk til det på\n"
+" Legg fÃ¸rst dette stedet som et bokmerke, eller lag en kdelnk til det pÃ¥\n"
 "skrivebordet."
 
 # kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
 #: kfmtree.cpp:467 kfmview.cpp:758 root.cpp:1340
 msgid "Could not access Trash Bin"
-msgstr "Kunne ikke få adgang til papirkurven"
+msgstr "Kunne ikke fÃ¥ adgang til papirkurven"
 
 # kfmview.cpp:553 root.cpp:1088
 #: kfmview.cpp:785 root.cpp:1229
@@ -548,7 +548,7 @@ msgstr "FEIL: Ingen terminalinstillinger"
 # kbind.cpp:1332 kbind.cpp:1418
 #: kbind.cpp:1387
 msgid "Could not execute program\n"
-msgstr "Kunne ikke utføre program\n"
+msgstr "Kunne ikke utfÃ¸re program\n"
 
 # kbind.cpp:1528
 #: kbind.cpp:1559
@@ -567,7 +567,7 @@ msgstr ""
 # kbind.cpp:1556 kbind.cpp:1573
 #: kbind.cpp:1587 kbind.cpp:1606
 msgid "Can only start executables on local disks\n"
-msgstr "Kan bare starte programmer på lokale disker\n"
+msgstr "Kan bare starte programmer pÃ¥ lokale disker\n"
 
 # kbind.cpp:1631 kbind.cpp:1705 kbind.cpp:1856
 #: kbind.cpp:1665 kbind.cpp:1745 kbind.cpp:1908
@@ -575,7 +575,7 @@ msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
-"Kan bare bruke *.kdelnk filer på\n"
+"Kan bare bruke *.kdelnk filer pÃ¥\n"
 "den lokale harddisken"
 
 # kbind.cpp:1641
@@ -585,7 +585,7 @@ msgid ""
 "Could not access\n"
 "%s"
 msgstr ""
-"Kunne ikke få adgang til\n"
+"Kunne ikke fÃ¥ adgang til\n"
 "%s"
 
 # kbind.cpp:1670
@@ -601,7 +601,7 @@ msgstr "Konfigurasjonsfilen har ikke noen \"Type=...\"-linje"
 # kbind.cpp:1715 kbind.cpp:1866
 #: kbind.cpp:1755 kbind.cpp:1918
 msgid "Could not access"
-msgstr "Kunne ikke få adgang til"
+msgstr "Kunne ikke fÃ¥ adgang til"
 
 # kbind.cpp:1734
 #: kbind.cpp:1773
@@ -614,7 +614,7 @@ msgstr ""
 "Denne filen inneholder ikke noe\n"
 "Exec=....-innslag.\n"
 "Rediger egenskaper\n"
-"for å løse problemet"
+"for Ã¥ lÃ¸se problemet"
 
 # kbind.cpp:1913
 #: kbind.cpp:1965
@@ -639,7 +639,7 @@ msgid ""
 "Would you like to install the new ones?"
 msgstr ""
 "En ny KDE-versjon har blitt installert.\n"
-"Malfilene kan være endret.\n"
+"Malfilene kan vÃ¦re endret.\n"
 "\n"
 "Vil du installere de nye?"
 
@@ -661,7 +661,7 @@ msgstr "Flytt til papirkurven"
 # main.cpp:241
 #: main.cpp:287
 msgid "Open with"
-msgstr "Åpne med"
+msgstr "Ã…pne med"
 
 #: kfmman.cpp:1694 kfmtree.cpp:331 main.cpp:289
 msgid "Move"
@@ -675,7 +675,7 @@ msgstr "Lenk"
 # main.cpp:246
 #: main.cpp:292
 msgid "Empty Trash Bin"
-msgstr "Tøm papirkurven"
+msgstr "TÃ¸m papirkurven"
 
 # main.cpp:247
 #: main.cpp:293
@@ -698,7 +698,7 @@ msgstr "&Bla gjennom"
 # kfmprops.cpp:707
 #: kfmdlg.cpp:130 kfmprops.cpp:771
 msgid "Run in terminal"
-msgstr "Kjør i terminal"
+msgstr "KjÃ¸r i terminal"
 
 # bookmark.cpp:259
 #: bookmark.cpp:304
@@ -733,7 +733,7 @@ msgstr "Peker til"
 #: kfmprops.cpp:310
 #, c-format
 msgid "Size: %i"
-msgstr "Størrelse: %i"
+msgstr "StÃ¸rrelse: %i"
 
 # kfmprops.cpp:304
 #: kfmprops.cpp:320
@@ -752,7 +752,7 @@ msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Kunne ikke endre navn på filen eller katalogen\n"
+"Kunne ikke endre navn pÃ¥ filen eller katalogen\n"
 "%s\n"
 
 # kfmprops.cpp:407
@@ -800,7 +800,7 @@ msgstr ""
 # kfmprops.cpp:429
 #: kfmprops.cpp:456
 msgid "Exec"
-msgstr "Utfør"
+msgstr "UtfÃ¸r"
 
 # kfmprops.cpp:433
 #: kfmprops.cpp:460
@@ -879,7 +879,7 @@ msgstr ""
 # kfmprops.cpp:672 kfmprops.cpp:695
 #: kfmprops.cpp:674 kfmprops.cpp:737
 msgid "Execute"
-msgstr "Utfør"
+msgstr "UtfÃ¸r"
 
 #: kfmprops.cpp:690 kfmprops.cpp:1177
 msgid "&Browse..."
@@ -888,7 +888,7 @@ msgstr "&Bla gjennom..."
 # kfmprops.cpp:654
 #: kfmprops.cpp:724
 msgid "Swallowing on panel"
-msgstr "Svelging på panel"
+msgstr "Svelging pÃ¥ panel"
 
 # kfmprops.cpp:703
 #: kfmprops.cpp:751
@@ -941,7 +941,7 @@ msgstr "(Ingen)"
 # kfmprops.cpp:1224
 #: kfmprops.cpp:1429
 msgid "Binary Pattern (netscape;Netscape;)"
-msgstr "Binærmønster (netscape;Netscape;)"
+msgstr "BinÃ¦rmÃ¸nster (netscape;Netscape;)"
 
 # kfmprops.cpp:1231 kfmprops.cpp:1483
 #: kfmprops.cpp:1436 kfmprops.cpp:1831
@@ -951,12 +951,12 @@ msgstr "Kommentar"
 # kfmprops.cpp:1242
 #: kfmprops.cpp:1447
 msgid "Name ( in your language )"
-msgstr "Navn ( i ditt språk )"
+msgstr "Navn ( i ditt sprÃ¥k )"
 
 # kfmprops.cpp:1471
 #: kfmprops.cpp:1808
 msgid "Pattern ( example: *.html;*.HTML; )"
-msgstr "Mønster ( eksempel: *.html;*.HTML; )"
+msgstr "MÃ¸nster ( eksempel: *.html;*.HTML; )"
 
 # kfmprops.cpp:1479
 #: kfmprops.cpp:1820
@@ -1010,7 +1010,7 @@ msgstr "Kan ikke opprette ~/.kde/share/apps/kfm/magic"
 # kfmserver.cpp:78
 #: kfmserver.cpp:130
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Ønsker du virkelig å omorganisere ikonene dine?"
+msgstr "Ã˜nsker du virkelig Ã¥ omorganisere ikonene dine?"
 
 # kfmserver.cpp:234
 #: kfmserver.cpp:310
@@ -1048,8 +1048,8 @@ msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
-"En eller annen prøvde å autorisere seg selv\n"
-"ved å bruke feil passord"
+"En eller annen prÃ¸vde Ã¥ autorisere seg selv\n"
+"ved Ã¥ bruke feil passord"
 
 # root.cpp:661
 #: root.cpp:734
@@ -1058,8 +1058,8 @@ msgid ""
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
-"Kan ikke utføre forespørsel.\n"
-"Ny bunnrammestørrelse vil flytte noen ikoner\n"
+"Kan ikke utfÃ¸re forespÃ¸rsel.\n"
+"Ny bunnrammestÃ¸rrelse vil flytte noen ikoner\n"
 "fra skrivebordet."
 
 # root.cpp:696
@@ -1081,7 +1081,7 @@ msgstr "FEIL: Kunne ikke akseptere slipp"
 # kfmman.cpp:1212 root.cpp:1695
 #: kfmman.cpp:1657 kfmman.cpp:1703 kfmtree.cpp:340 root.cpp:1865 root.cpp:1890
 msgid "Dont know what to do."
-msgstr "Jeg vet ikke hva jeg skal gjøre."
+msgstr "Jeg vet ikke hva jeg skal gjÃ¸re."
 
 # kfmexec.cpp:93 kfmman.cpp:297
 #: kfmexec.cpp:117 kfmman.cpp:371
@@ -1101,7 +1101,7 @@ msgstr "Jobber ..."
 # kiojob.cpp:120
 #: kiojob.cpp:140
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "INTERN FEIL: Du må i det minste spesifisere en enhet for montering"
+msgstr "INTERN FEIL: Du mÃ¥ i det minste spesifisere en enhet for montering"
 
 # kiojob.cpp:223 kiojob.cpp:231 kiojob.cpp:1190 kiojob.cpp:1330
 #: kiojob.cpp:243 kiojob.cpp:251 kiojob.cpp:1340 kiojob.cpp:1419
@@ -1116,7 +1116,7 @@ msgstr ""
 # kiojob.cpp:240
 #: kiojob.cpp:260
 msgid "Can only make links on local file system"
-msgstr "Kan bare lage lenker på det lokale filsystemet"
+msgstr "Kan bare lage lenker pÃ¥ det lokale filsystemet"
 
 # kiojob.cpp:263 kiojob.cpp:282
 #: kiojob.cpp:283 kiojob.cpp:302
@@ -1168,7 +1168,7 @@ msgstr ""
 #: kiojob.cpp:603 kiojob.cpp:1173
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
-msgstr "FEIL: Kunne ikke åpne katalog '%s'"
+msgstr "FEIL: Kunne ikke Ã¥pne katalog '%s'"
 
 #: kiojob.cpp:667
 #, c-format
@@ -1213,7 +1213,7 @@ msgid ""
 "Could not access directory\n"
 "%s"
 msgstr ""
-"Kunne ikke åpne katalog\n"
+"Kunne ikke Ã¥pne katalog\n"
 "%s"
 
 # kiojob.cpp:850
@@ -1285,7 +1285,7 @@ msgid ""
 "Unknown host in\n"
 "%s"
 msgstr ""
-"Ukjent vert på\n"
+"Ukjent vert pÃ¥\n"
 "%s"
 
 # kiojob.cpp:1231 kiojob.cpp:1362
@@ -1308,7 +1308,7 @@ msgid ""
 msgstr ""
 "Den etterspurte handlingen\n"
 "%s\n"
-"er ikke implementert ennå."
+"er ikke implementert ennÃ¥."
 
 # kiojob.cpp:1255
 #: kiojob.cpp:1370
@@ -1502,7 +1502,7 @@ msgid ""
 "Check it before clearing the cache.\n"
 msgstr ""
 " er ikke en katalog! Sikkerhetsadvarsel!\n"
-"Sjekk den før opprensing av mellomlager.\n"
+"Sjekk den fÃ¸r opprensing av mellomlager.\n"
 
 # autostart.cpp:28
 #: autostart.cpp:28
@@ -1542,7 +1542,7 @@ msgstr "Rot"
 # krenamewin.cpp:26
 #: krenamewin.cpp:30
 msgid "Rename"
-msgstr "Omdøp"
+msgstr "OmdÃ¸p"
 
 # krenamewin.cpp:31
 #: krenamewin.cpp:35
@@ -1562,7 +1562,7 @@ msgstr "Overskriv alt"
 # krenamewin.cpp:52
 #: krenamewin.cpp:56
 msgid "You try to overwrite"
-msgstr "Du prøver å overskrive"
+msgstr "Du prÃ¸ver Ã¥ overskrive"
 
 # krenamewin.cpp:63
 #: krenamewin.cpp:67
@@ -1572,7 +1572,7 @@ msgstr "eksisterer allerede. Overskriv med"
 # krenamewin.cpp:71
 #: krenamewin.cpp:75
 msgid "Or rename to"
-msgstr "Eller omdøp til"
+msgstr "Eller omdÃ¸p til"
 
 # krenamewin.cpp:121
 #: krenamewin.cpp:125
@@ -1587,7 +1587,7 @@ msgstr "Passord"
 # kfmexec.cpp:136
 #: kfmexec.cpp:165
 msgid "Trying to open"
-msgstr "Prøver å åpne"
+msgstr "PrÃ¸ver Ã¥ Ã¥pne"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
@@ -1599,7 +1599,7 @@ msgstr "Finn:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr "&Avhengig av bokstavstørrelse"
+msgstr "&Avhengig av bokstavstÃ¸rrelse"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
@@ -1648,7 +1648,7 @@ msgid ""
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
 "Kildefil eksisterer ikke mer!\n"
-"Bruk \"Les tilordninger på nytt\" i Vis-menyen for å oppdatere menyen"
+"Bruk \"Les tilordninger pÃ¥ nytt\" i Vis-menyen for Ã¥ oppdatere menyen"
 
 #: popup.cpp:121 popup.cpp:128
 msgid "New "
@@ -1667,7 +1667,7 @@ msgstr "&Tilgang"
 # kfmprops.h:198
 #: kfmprops.h:200
 msgid "E&xecute"
-msgstr "&Kjøre"
+msgstr "&KjÃ¸re"
 
 # kfmprops.h:246
 #: kfmprops.h:246
@@ -1721,7 +1721,7 @@ msgstr ""
 # kfmexec/main.cpp:133
 #: kfmexec/main.cpp:136
 msgid "KFM Question"
-msgstr "KFM-spørsmål"
+msgstr "KFM-spÃ¸rsmÃ¥l"
 
 # kfmexec/main.cpp:199
 #: kfmexec/main.cpp:202

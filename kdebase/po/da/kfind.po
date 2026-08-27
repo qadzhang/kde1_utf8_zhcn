@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kfind\n"
 "POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-07-09 23:10-0500\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kfdird.cpp:46
@@ -19,23 +19,23 @@ msgstr "Kataloger:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Kan ikke åbne eller læse katalog."
+msgstr "Kan ikke Ã¥bne eller lÃ¦se katalog."
 
 #: kfindtop.cpp:121
 msgid "&Start search"
-msgstr "Sta&rt søgning"
+msgstr "Sta&rt sÃ¸gning"
 
 #: kfindtop.cpp:123
 msgid "S&top search"
-msgstr "S&top søgning"
+msgstr "S&top sÃ¸gning"
 
 #: kfindtop.cpp:128
 msgid "&Open"
-msgstr "Å&bn"
+msgstr "Ã…&bn"
 
 #: kfindtop.cpp:130
 msgid "&Add to archive"
-msgstr "Til&føj til arkiv"
+msgstr "Til&fÃ¸j til arkiv"
 
 #: kfindtop.cpp:135
 msgid "&Properties"
@@ -43,7 +43,7 @@ msgstr "&Indstillinger"
 
 #: kfindtop.cpp:138
 msgid "Open Containing &Folder"
-msgstr "Åbn &mappe"
+msgstr "Ã…bn &mappe"
 
 #: kfindtop.cpp:141
 msgid "&Save Search"
@@ -51,11 +51,11 @@ msgstr "&Gem resultat"
 
 #: kfindtop.cpp:158
 msgid "&Select All"
-msgstr "&Vælg alle"
+msgstr "&VÃ¦lg alle"
 
 #: kfindtop.cpp:160
 msgid "Unse&lect All"
-msgstr "Afvæl&g alle"
+msgstr "AfvÃ¦l&g alle"
 
 #: kfindtop.cpp:162
 msgid "&Invert Selection"
@@ -70,41 +70,41 @@ msgstr "&Indstillinger..."
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
-"Frontend for find værktøjet\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Frontend for find vÃ¦rktÃ¸jet\n"
+"Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "\n"
-"Særlig tak til Stephan Kulow\n"
+"SÃ¦rlig tak til Stephan Kulow\n"
 "<coolo@kde.org>"
 
 #: kfindtop.cpp:199
 msgid "Start Search"
-msgstr "Start søgning"
+msgstr "Start sÃ¸gning"
 
 #: kfindtop.cpp:204
 msgid "New Search"
-msgstr "Ny søgning"
+msgstr "Ny sÃ¸gning"
 
 #: kfindtop.cpp:209
 msgid "Stop Search"
-msgstr "Stop søgning"
+msgstr "Stop sÃ¸gning"
 
 #: kfindtop.cpp:222
 msgid "Add to archive"
-msgstr "Tilføj til arkiv"
+msgstr "TilfÃ¸j til arkiv"
 
 #: kfindtop.cpp:237
 msgid "Open Containing Folder"
-msgstr "Åbn mappe"
+msgstr "Ã…bn mappe"
 
 #: kfindtop.cpp:242
 msgid "Save Search Results"
-msgstr "Gem søgeresultater"
+msgstr "Gem sÃ¸geresultater"
 
 #: kftabdlg.cpp:72
 msgid "&Named:"
@@ -112,7 +112,7 @@ msgstr "Ved &navn:"
 
 #: kftabdlg.cpp:75
 msgid "&Look in:"
-msgstr "&Søg i:"
+msgstr "&SÃ¸g i:"
 
 #: kftabdlg.cpp:78
 msgid "&Browse ..."
@@ -132,7 +132,7 @@ msgstr "og"
 
 #: kftabdlg.cpp:131
 msgid "month(s)"
-msgstr "måned(er)"
+msgstr "mÃ¥ned(er)"
 
 #: kftabdlg.cpp:132
 msgid "day(s)"
@@ -144,7 +144,7 @@ msgstr "&Alle filer"
 
 #: kftabdlg.cpp:148
 msgid "Find all files created or &modified:"
-msgstr "Fi&nd alle filer oprettet eller ændret:"
+msgstr "Fi&nd alle filer oprettet eller Ã¦ndret:"
 
 #: kftabdlg.cpp:149
 msgid "&between"
@@ -160,7 +160,7 @@ msgstr "blandt &de sidste"
 
 #: kftabdlg.cpp:199
 msgid " Date Modified "
-msgstr " Dato ændret"
+msgstr " Dato Ã¦ndret"
 
 #: kftabdlg.cpp:206
 msgid "Of &type:"
@@ -172,7 +172,7 @@ msgstr "&Indeholdende tekst:"
 
 #: kftabdlg.cpp:213
 msgid "&Size is:"
-msgstr "&Størrelse er:"
+msgstr "&StÃ¸rrelse er:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
@@ -212,7 +212,7 @@ msgstr "Mindst"
 
 #: kftabdlg.cpp:252
 msgid "At Most"
-msgstr "Højst"
+msgstr "HÃ¸jst"
 
 #: kftabdlg.cpp:263
 msgid " Advanced "
@@ -224,15 +224,15 @@ msgstr "Ugyldig dato!"
 
 #: kftabdlg.cpp:513
 msgid "The month(s) value isn't valid!!"
-msgstr "Ugyldig(e) måned(er)!"
+msgstr "Ugyldig(e) mÃ¥ned(er)!"
 
 #: kftabdlg.cpp:524
 msgid "The day(s) value isn't valid!!"
-msgstr "Ugyldig(e) dag-værdi(er)!"
+msgstr "Ugyldig(e) dag-vÃ¦rdi(er)!"
 
 #: kftabdlg.cpp:541
 msgid "The value in size isn't valid number!!"
-msgstr "Værdien i størrelse er ikke gyldig!!"
+msgstr "VÃ¦rdien i stÃ¸rrelse er ikke gyldig!!"
 
 #: kfoptions.cpp:52
 msgid "Preferences"
@@ -268,15 +268,15 @@ msgstr "Opret arkiv:"
 
 #: kfoptions.cpp:132
 msgid "Add to Archive:"
-msgstr "Tilføj til arkiv:"
+msgstr "TilfÃ¸j til arkiv:"
 
 #: kfoptions.cpp:136
 msgid "Patterns:"
-msgstr "Mønstre:"
+msgstr "MÃ¸nstre:"
 
 #: kfoptions.cpp:139
 msgid "Add New"
-msgstr "Tilføj ny"
+msgstr "TilfÃ¸j ny"
 
 #: kfoptions.cpp:180
 msgid "Archivers"

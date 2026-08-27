@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -23,7 +23,7 @@ msgstr "  Abmessungen          : %dx%d pixels (%dx%d mm)\n"
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  Auflösung          : %dx%d dots per inch\n"
+msgstr "  AuflÃ¶sung          : %dx%d dots per inch\n"
 
 #: info.cpp:61
 #, c-format
@@ -66,9 +66,9 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Keine Information verfügbar\n"
+"Keine Information verfÃ¼gbar\n"
 "oder\n"
-"das System wird noch nicht unterstützt :-("
+"das System wird noch nicht unterstÃ¼tzt :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -78,15 +78,15 @@ msgstr "%s, unbekannte Geschwindigkeit"
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s läuft auf %s MHz"
+msgstr "%s lÃ¤uft auf %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Hmm -- konnte die fstab nicht öffnen!"
+msgstr "Hmm -- konnte die fstab nicht Ã¶ffnen!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "Gerät"
+msgstr "GerÃ¤t"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
@@ -106,7 +106,7 @@ msgstr "Unbekannter CPU-Typ"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "Nicht verfügbar"
+msgstr "Nicht verfÃ¼gbar"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
@@ -118,7 +118,7 @@ msgstr "Wert"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr "DMA-Kanäle"
+msgstr "DMA-KanÃ¤le"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
@@ -142,7 +142,7 @@ msgstr "&Interrupts"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "DMA-K&anäle"
+msgstr "DMA-K&anÃ¤le"
 
 #: main.cpp:91
 msgid "&IO-Ports"
@@ -158,7 +158,7 @@ msgstr "&Klang"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "&Geräte"
+msgstr "&GerÃ¤te"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -204,7 +204,7 @@ msgstr "Gepufferter Speicher"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "Größe des Swap-Bereichs"
+msgstr "GrÃ¶ÃŸe des Swap-Bereichs"
 
 #: memory.cpp:57
 msgid "Free swap memory"
@@ -218,9 +218,9 @@ msgstr "%10ld Bytes  = %8.2f MB"
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "Nicht verfügbar"
+msgstr "Nicht verfÃ¼gbar"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "Nicht verfügbar"
+msgstr "Nicht verfÃ¼gbar"

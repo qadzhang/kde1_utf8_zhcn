@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hasso Tepper <hasso@ewsound.estnet.ee>\n"
 "Language-Team: Estonian <linux-ee@eenet.ee>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kab/AssertDialog.cpp:29
@@ -31,11 +31,11 @@ msgstr "Sa oled leidnud vea failis "
 
 #: kab/AssertDialog.cpp:45
 msgid "Ignore the error, possibly causing much more damage"
-msgstr "Ignoreeri viga, pıhjustab tıen‰oliselt rohkem kahju"
+msgstr "Ignoreeri viga, p√µhjustab t√µen√§oliselt rohkem kahju"
 
 #: kab/AssertDialog.cpp:47
 msgid "Kill the application, loosing all data"
-msgstr "Sulge programm, kaotad kıik salvestamata andmed"
+msgstr "Sulge programm, kaotad k√µik salvestamata andmed"
 
 #: kab/AssertDialog.cpp:49
 msgid "Send an email to the application maintainer"
@@ -55,7 +55,7 @@ msgstr "OK"
 
 #: kab/AssertDialog.cpp:140
 msgid "The following condition failed:\n"
-msgstr "J‰rgneva tingimuse t‰itmine ebaınnestus:\n"
+msgstr "J√§rgneva tingimuse t√§itmine eba√µnnestus:\n"
 
 #: kab/AssertDialog.cpp:141
 msgid "In file "
@@ -67,11 +67,11 @@ msgstr ", rida "
 
 #: kab/AssertDialog.cpp:212 kab/AssertDialog.cpp:217
 msgid "Error handling error"
-msgstr "Viga vea k‰sitlemisel"
+msgstr "Viga vea k√§sitlemisel"
 
 #: kab/AssertDialog.cpp:213
 msgid "Could not send message."
-msgstr "Teadet ei ole vıimalik saata."
+msgstr "Teadet ei ole v√µimalik saata."
 
 #: kab/AssertDialog.cpp:218
 msgid "The author did not publish an email address."
@@ -82,8 +82,8 @@ msgid ""
 "If you press the OK button, all changes\n"
 "you made will be used to proceed."
 msgstr ""
-"Kui sa vajutad nuppu 'OK', siis l‰hevad kıik\n"
-"muudatused, mida sa oled teinud, t‰itmisele."
+"Kui sa vajutad nuppu 'OK', siis l√§hevad k√µik\n"
+"muudatused, mida sa oled teinud, t√§itmisele."
 
 #: kab/DialogBase.cpp:39
 msgid ""
@@ -91,7 +91,7 @@ msgid ""
 "handed over to the program, but the dialog\n"
 "will not be closed.Use this to try different settings."
 msgstr ""
-"Kui sa klikid nuppu 'Rakenda', siis jıustuvad\n"
+"Kui sa klikid nuppu 'Rakenda', siis j√µustuvad\n"
 "seadistused programmis, kuid dialoogi ei suleta.\n"
 "Kasuta seda erinevate seadistuste proovimiseks."
 
@@ -103,8 +103,8 @@ msgid ""
 "The program will be in the state before\n"
 "opening the dialog."
 msgstr ""
-"Kui sa vajutad nuppu 'Katkesta', siis kıik\n"
-"muudatused, mis sa tegid, t¸histatakse\n"
+"Kui sa vajutad nuppu 'Katkesta', siis k√µik\n"
+"muudatused, mis sa tegid, t√ºhistatakse\n"
 "ja dialoog suletakse.\n"
 "Programm on siis samas seisus,mis enne\n"
 "dialoogi avamist."
@@ -125,7 +125,7 @@ msgstr "&Katkesta"
 
 #: kab/PrintDialog.cpp:26
 msgid "Headline text:"
-msgstr "P‰ise tekst:"
+msgstr "P√§ise tekst:"
 
 #: kab/PrintDialog.cpp:27
 msgid "Right footer text:"
@@ -157,7 +157,7 @@ msgstr "Nimi"
 
 #: kab/SearchDialog.cpp:52
 msgid "The formatted name"
-msgstr "T‰ielik nimi"
+msgstr "T√§ielik nimi"
 
 #: kab/SearchDialog.cpp:53
 msgid "The address"
@@ -209,7 +209,7 @@ msgstr "Modemi number"
 
 #: kab/SearchDialog.cpp:65
 msgid "The homepage URL"
-msgstr "Kodulehek¸lje aadress"
+msgstr "Kodulehek√ºlje aadress"
 
 #: kab/SearchDialog.cpp:66
 msgid "The comment"
@@ -229,7 +229,7 @@ msgstr "Kasuta siin shelli metaelemente"
 
 #: kab/SearchDialogMainWidget.cpp:24
 msgid "Select field to match the pattern"
-msgstr "Vali v‰li, mis peab vastama mustrile"
+msgstr "Vali v√§li, mis peab vastama mustrile"
 
 #: kab/StringListEditWidget.cpp:30
 msgid "Add a new string"
@@ -237,7 +237,7 @@ msgstr "Lisa uus string"
 
 #: kab/StringListEditWidget.cpp:31
 msgid "Move this string up"
-msgstr "Liiguta see string ¸les"
+msgstr "Liiguta see string √ºles"
 
 #: kab/StringListEditWidget.cpp:32
 msgid "Move this string down"
@@ -249,11 +249,11 @@ msgstr "Kustuta see string"
 
 #: kab/StringListSelectAndReorderSet.cpp:34
 msgid "Possible values:"
-msgstr "Vıimalikud v‰‰rtused:"
+msgstr "V√µimalikud v√§√§rtused:"
 
 #: kab/StringListSelectAndReorderSet.cpp:35
 msgid "Selected values:"
-msgstr "Valitud v‰‰rtused:"
+msgstr "Valitud v√§√§rtused:"
 
 #: kdecore/kaccel.cpp:223 kfile/kfiledialog.cpp:559 kfile/kfiledialog.cpp:1219
 #: kfile/kfiledialog.cpp:1379 kfile/kfiledialog.cpp:1413 po/texts.cpp:65
@@ -275,15 +275,15 @@ msgstr "Salvesta"
 
 #: kdecore/kaccel.cpp:239 po/texts.cpp:115
 msgid "Print"
-msgstr "Tr¸ki"
+msgstr "Tr√ºki"
 
 #: kdecore/kaccel.cpp:243 po/texts.cpp:52
 msgid "Quit"
-msgstr "V‰lju"
+msgstr "V√§lju"
 
 #: kdecore/kaccel.cpp:247 po/texts.cpp:69
 msgid "Cut"
-msgstr "Lıika"
+msgstr "L√µika"
 
 #: kdecore/kaccel.cpp:251 po/texts.cpp:56
 msgid "Copy"
@@ -295,7 +295,7 @@ msgstr "Aseta"
 
 #: kdecore/kaccel.cpp:259 po/texts.cpp:93
 msgid "Undo"
-msgstr "T¸hista"
+msgstr "T√ºhista"
 
 #: kdecore/kaccel.cpp:263 kdeui/keditcl2.cpp:103 kdeui/keditcl2.cpp:120
 #: kdeui/keditcl2.cpp:360 kdeui/keditcl2.cpp:377 kdeui/keditcl2.cpp:676
@@ -319,7 +319,7 @@ msgstr "Kodu"
 
 #: kdecore/kaccel.cpp:279
 msgid "End"
-msgstr "Lıpp"
+msgstr "L√µpp"
 
 #: kdecore/kaccel.cpp:283
 msgid "Prior"
@@ -327,7 +327,7 @@ msgstr "Eelmine"
 
 #: kdecore/kaccel.cpp:287
 msgid "Next"
-msgstr "J‰rgmine"
+msgstr "J√§rgmine"
 
 #: kdecore/kaccel.cpp:291 kdetest/klocaletest.cpp:102 kdeui/kcolordlg.cpp:463
 #: kdeui/kcontrol.cpp:35 kfile/kfiledialog.cpp:246 kspell/ksconfig.cpp:212
@@ -376,13 +376,13 @@ msgid ""
 "Please report bugs at http://bugs.kde.org.\n"
 msgstr ""
 "\n"
-"KDE tˆˆlaua keskkond on loodud KDE meeskonna, ¸lemaailmse\n"
-"programeerijate ¸henduse, kes on sidunud ennast vaba tarkvara\n"
+"KDE t√∂√∂laua keskkond on loodud KDE meeskonna, √ºlemaailmse\n"
+"programeerijate √ºhenduse, kes on sidunud ennast vaba tarkvara\n"
 "loomisega,poolt.\n"
 "\n"
-"Kui soovite saada rohkem informatsiooni KDE kohta, k¸lastage\n"
-"http://www.kde.org. Palun kaaluge projekti toetamist vıi sellega\n"
-"¸hinemist.\n"
+"Kui soovite saada rohkem informatsiooni KDE kohta, k√ºlastage\n"
+"http://www.kde.org. Palun kaaluge projekti toetamist v√µi sellega\n"
+"√ºhinemist.\n"
 "\n"
 "Vigade avastamisel palun teatage nendest aadressil\n"
 "http://bugs.kde.org.\n"
@@ -418,19 +418,19 @@ msgstr "Katkesta"
 
 #: kdeui/kcolordlg.cpp:285
 msgid "Select Color"
-msgstr "Vali v‰rv"
+msgstr "Vali v√§rv"
 
 #: kdeui/kcolordlg.cpp:297
 msgid "System Colors"
-msgstr "S¸steemsed v‰rvid"
+msgstr "S√ºsteemsed v√§rvid"
 
 #: kdeui/kcolordlg.cpp:328
 msgid "Custom Colors"
-msgstr "Omatehtud v‰rvid"
+msgstr "Omatehtud v√§rvid"
 
 #: kdeui/kcolordlg.cpp:341
 msgid "Add to Custom Colors"
-msgstr "Lisa omatehtud v‰rvidele"
+msgstr "Lisa omatehtud v√§rvidele"
 
 #: kdeui/kcolordlg.cpp:789 kdeui/kcolordlg.cpp:841
 msgid "Custom..."
@@ -454,7 +454,7 @@ msgstr "Veebruar"
 
 #: kdeui/kdatepik.cpp:103
 msgid "March"
-msgstr "M‰rts"
+msgstr "M√§rts"
 
 #: kdeui/kdatepik.cpp:103
 msgid "April"
@@ -545,7 +545,7 @@ msgstr "Sa oled kirjeldanud kataloogi"
 
 #: kdeui/keditcl1.cpp:169 kdeui/keditcl1.cpp:190
 msgid "You do not have read permission to this file."
-msgstr "Sul ei ole ıigusi selle faili lugemiseks."
+msgstr "Sul ei ole √µigusi selle faili lugemiseks."
 
 #: kdeui/keditcl1.cpp:203
 msgid "An Error occured while trying to open this Document"
@@ -564,7 +564,7 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"K‰esolevat dokumenti on muudetud.\n"
+"K√§esolevat dokumenti on muudetud.\n"
 "Soovid sa selle salvestada?"
 
 #: kdeui/keditcl1.cpp:431
@@ -572,7 +572,7 @@ msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
 msgstr ""
-"Dokumenti pole vıimalik salvestada.\n"
+"Dokumenti pole v√µimalik salvestada.\n"
 "Kas avada vaatamata sellele uus dokument?"
 
 #: kdeui/keditcl1.cpp:462
@@ -584,7 +584,7 @@ msgid ""
 "Could not save the document.\n"
 "Create a new document anyways?"
 msgstr ""
-"Dokumenti pole vıimalik salvestada.\n"
+"Dokumenti pole v√µimalik salvestada.\n"
 "Kas luua vaatamata sellele uus dokument?"
 
 #: kdeui/keditcl1.cpp:547 kdeui/keditcl1.cpp:1700 kdeui/kpopmenu.cpp:10
@@ -594,7 +594,7 @@ msgstr "Nimetu"
 
 #: kdeui/keditcl1.cpp:1560
 msgid "Could not save the document\n"
-msgstr "Dokumenti pole vıimalik salvestada\n"
+msgstr "Dokumenti pole v√µimalik salvestada\n"
 
 #: kdeui/keditcl1.cpp:1630
 msgid "Save Document As"
@@ -606,18 +606,18 @@ msgid ""
 "Do you want to overwrite it ?"
 msgstr ""
 "Sellise nimega dokument eksisteerib juba\n"
-"Soovid sa selle ¸le kirjutada?"
+"Soovid sa selle √ºle kirjutada?"
 
 #: kdeui/keditcl1.cpp:1716
 msgid "You do not have write permission to this file.\n"
-msgstr "Sul ei ole ıigusi kirjutada sellesse faili.\n"
+msgstr "Sul ei ole √µigusi kirjutada sellesse faili.\n"
 
 #: kdeui/keditcl2.cpp:104 kdeui/keditcl2.cpp:361 kdeui/keditcl2.cpp:454
 msgid ""
 "End of document reached.\n"
 "Continue from the beginning?"
 msgstr ""
-"Jıudsime dokumendi lıppu.\n"
+"J√µudsime dokumendi l√µppu.\n"
 "Kas alustada algusest?"
 
 #: kdeui/keditcl2.cpp:121 kdeui/keditcl2.cpp:378 kdeui/keditcl2.cpp:424
@@ -626,12 +626,12 @@ msgid ""
 "Beginning of document reached.\n"
 "Continue from the end?"
 msgstr ""
-"Jıudsime dokumendi algusesse.\n"
-"Kas j‰tkata lıpust?"
+"J√µudsime dokumendi algusesse.\n"
+"Kas j√§tkata l√µpust?"
 
 #: kdeui/keditcl2.cpp:682 kdeui/keditcl2.cpp:780
 msgid "Case Sensitive"
-msgstr "Tıstutundlik"
+msgstr "T√µstutundlik"
 
 #: kdeui/keditcl2.cpp:683 kdeui/keditcl2.cpp:783
 msgid "Find Backwards"
@@ -651,7 +651,7 @@ msgstr "Asenda:"
 
 #: kdeui/keditcl2.cpp:792 kspell/kspelldlg.cpp:38
 msgid "Replace All"
-msgstr "Asenda kıik"
+msgstr "Asenda k√µik"
 
 #: kdeui/keditcl2.cpp:889
 msgid "Goto Line"
@@ -716,7 +716,7 @@ msgstr "Stiil"
 #: kdeui/kfontdialog.cpp:339 kdeui/kfontdialog.cpp:497
 #: kdeui/kfontdialog.cpp:526
 msgid "roman"
-msgstr "p¸stkiri"
+msgstr "p√ºstkiri"
 
 #: kdeui/kfontdialog.cpp:340 kdeui/kfontdialog.cpp:499
 #: kdeui/kfontdialog.cpp:524
@@ -758,11 +758,11 @@ msgstr "&Abi"
 
 #: kdeui/kkeydialog.cpp:236 po/texts.cpp:136
 msgid "&Defaults"
-msgstr "&Vaikev‰‰rtused"
+msgstr "&Vaikev√§√§rtused"
 
 #: kdeui/kkeydialog.cpp:320
 msgid "Current key"
-msgstr "K‰esolev klahv"
+msgstr "K√§esolev klahv"
 
 #: kdeui/kkeydialog.cpp:332
 msgid "&Action"
@@ -814,7 +814,7 @@ msgstr "Defineerimata klahv"
 
 #: kdeui/kkeydialog.cpp:999
 msgid "Return to end edition"
-msgstr "Tagasi redigeerimise lıppu"
+msgstr "Tagasi redigeerimise l√µppu"
 
 #: kdeui/kkeydialog.cpp:1009
 msgid "Incorrect key"
@@ -873,7 +873,7 @@ msgstr "Konflikt klahviga"
 
 #: kdeui/kmenubar.cpp:306 kdeui/ktoolbar.cpp:860
 msgid "Top"
-msgstr "‹leval"
+msgstr "√úleval"
 
 #: kdeui/kmenubar.cpp:307 kdeui/ktoolbar.cpp:862
 msgid "Bottom"
@@ -893,7 +893,7 @@ msgstr "Liikumatu"
 
 #: kdeui/knotebook.cpp:145
 msgid "Trying to add page when no KWizards are added!"
-msgstr "‹ritatud lisada lehek¸lge samal ajal kui KWizard'it ei ole lisatud!"
+msgstr "√úritatud lisada lehek√ºlge samal ajal kui KWizard'it ei ole lisatud!"
 
 #: kdeui/knotebook.cpp:201 kdeui/kwizard.cpp:182
 msgid "&Default"
@@ -905,7 +905,7 @@ msgstr "Kiirabi"
 
 #: kdeui/ktoolbar.cpp:288 kdeui/ktoolbar.cpp:340
 msgid "KToolBarButton: pixmap is empty, perhaps some missing file"
-msgstr "KToolBarButton: pikselraster on t¸hi, ilmselt mıni puuduv fail"
+msgstr "KToolBarButton: pikselraster on t√ºhi, ilmselt m√µni puuduv fail"
 
 #: kdeui/ktoolbar.cpp:859
 msgid "Left"
@@ -918,7 +918,7 @@ msgstr "Parem"
 #: kdeui/kwizard.cpp:531 kdeui/kwizard.cpp:678
 #, c-format
 msgid "Page %d of %d"
-msgstr "Lehek¸lg %d %d -st"
+msgstr "Lehek√ºlg %d %d -st"
 
 #: kfile/kcombiview.cpp:81
 msgid "Folders:"
@@ -942,7 +942,7 @@ msgstr "Loabitid"
 
 #: kfile/kfiledetaillist.cpp:42
 msgid "Date"
-msgstr "Kuup‰ev"
+msgstr "Kuup√§ev"
 
 #: kfile/kfiledetaillist.cpp:45
 msgid "Owner"
@@ -962,7 +962,7 @@ msgstr "Edasi"
 
 #: kfile/kfiledialog.cpp:128
 msgid "Up to parent"
-msgstr "‹les naaberkataloogi"
+msgstr "√úles naaberkataloogi"
 
 #: kfile/kfiledialog.cpp:134 po/texts.cpp:54
 msgid "Reload"
@@ -970,7 +970,7 @@ msgstr "Laadi uuesti"
 
 #: kfile/kfiledialog.cpp:156
 msgid "Bookmarks"
-msgstr "J‰rjehoidjad"
+msgstr "J√§rjehoidjad"
 
 #: kfile/kfiledialog.cpp:160
 msgid "Create new folder"
@@ -998,7 +998,7 @@ msgstr "&Filter:"
 
 #: kfile/kfiledialog.cpp:226
 msgid "Show hidden"
-msgstr "N‰ita peidetuid"
+msgstr "N√§ita peidetuid"
 
 #: kfile/kfiledialog.cpp:505
 msgid "Error: Not local file"
@@ -1010,23 +1010,23 @@ msgid ""
 "But the application accepts just local files."
 msgstr ""
 "Soovitud kataloog ei ole kohalik, kuid see\n"
-"programm suudab k‰sitleda ainult kohalikke faile."
+"programm suudab k√§sitleda ainult kohalikke faile."
 
 #: kfile/kfiledialog.cpp:520 kfile/kfiledialog.cpp:625
 msgid "Error: Cannot Open Directory"
-msgstr "Viga: Kataloogi pole vıimalik avada"
+msgstr "Viga: Kataloogi pole v√µimalik avada"
 
 #: kfile/kfiledialog.cpp:521
 msgid ""
 "The specified directory does not exist\n"
 "or was not readable."
 msgstr ""
-"Soovitud kataloogi kas ei eksisteeri vıi\n"
+"Soovitud kataloogi kas ei eksisteeri v√µi\n"
 "ei ole selle lugemine lubatud."
 
 #: kfile/kfiledialog.cpp:523 kfile/kfiledialog.cpp:628
 msgid "Dismiss"
-msgstr "Heida kırvale"
+msgstr "Heida k√µrvale"
 
 #: kfile/kfiledialog.cpp:574 kfile/kfiledialog.cpp:1394 po/texts.cpp:77
 msgid "Save As"
@@ -1038,7 +1038,7 @@ msgstr "Juur kataloog"
 
 #: kfile/kfiledialog.cpp:626
 msgid "The specified directory does not exist or was not readable."
-msgstr "Soovitud kataloogi kas ei eksisteeri vıi ei ole ta lugemine lubatud."
+msgstr "Soovitud kataloogi kas ei eksisteeri v√µi ei ole ta lugemine lubatud."
 
 #: kfile/kfiledialog.cpp:887
 msgid "Create new directory in: "
@@ -1050,7 +1050,7 @@ msgstr "Uus kataloog"
 
 #: kfile/kfiledialog.cpp:962
 msgid "Add to bookmarks"
-msgstr "Lisa j‰rjehoidjatesse"
+msgstr "Lisa j√§rjehoidjatesse"
 
 #: kfile/kfiledialog.cpp:1253
 msgid "Choose Directory"
@@ -1079,7 +1079,7 @@ msgstr "%d %s ja %d %s"
 
 #: kfile/kfiledialog.cpp:1339
 msgid "one directory"
-msgstr "¸ks kataloog"
+msgstr "√ºks kataloog"
 
 #: kfile/kfiledialog.cpp:1341
 #, c-format
@@ -1088,7 +1088,7 @@ msgstr "%d kataloogi"
 
 #: kfile/kfiledialogconf.cpp:42
 msgid "Look and Feel"
-msgstr "V‰ljan‰gemine ja kasutamistunne"
+msgstr "V√§ljan√§gemine ja kasutamistunne"
 
 #: kfile/kfiledialogconf.cpp:44
 msgid ""
@@ -1109,7 +1109,7 @@ msgstr ""
 "Stephan Kulow <coolo@kde.org>\n"
 "ja Daniel Grana <grana@ie.iwi.unibe.ch>\n"
 "\n"
-"Kaastˆˆd tegid:\n"
+"Kaast√∂√∂d tegid:\n"
 "\n"
 "Mario Weilguni <mweilguni@sime.com>\n"
 "ja Martin Jones <mjones@kde.org>"
@@ -1124,11 +1124,11 @@ msgstr "Vaate stiil"
 
 #: kfile/kfiledialogconf.cpp:75
 msgid "Show Short View"
-msgstr "N‰ita l¸hikeses vaates"
+msgstr "N√§ita l√ºhikeses vaates"
 
 #: kfile/kfiledialogconf.cpp:81
 msgid "Show Detail View"
-msgstr "N‰ita detailses vaates"
+msgstr "N√§ita detailses vaates"
 
 #: kfile/kfiledialogconf.cpp:90
 msgid "Misc"
@@ -1136,23 +1136,23 @@ msgstr "Muud"
 
 #: kfile/kfiledialogconf.cpp:96
 msgid "Show Filter"
-msgstr "N‰ita filtrit"
+msgstr "N√§ita filtrit"
 
 #: kfile/kfiledialogconf.cpp:102
 msgid "Show List Labels"
-msgstr "N‰ita nimekirja pealdisi"
+msgstr "N√§ita nimekirja pealdisi"
 
 #: kfile/kfiledialogconf.cpp:108
 msgid "Show Hidden"
-msgstr "N‰ita peidetuid"
+msgstr "N√§ita peidetuid"
 
 #: kfile/kfiledialogconf.cpp:114
 msgid "Show Status Line"
-msgstr "N‰ita olekurida"
+msgstr "N√§ita olekurida"
 
 #: kfile/kfiledialogconf.cpp:120
 msgid "Use single Click"
-msgstr "Kasuta ¸ksiskklıpsu"
+msgstr "Kasuta √ºksiskkl√µpsu"
 
 #: kfile/kfiledialogconf.cpp:126
 msgid "Mix dirs and files"
@@ -1165,7 +1165,7 @@ msgstr "Hoia kataloogid eespool"
 #
 #: kfile/kfilefilter.cpp:35
 msgid "*|All Files"
-msgstr "*|Kıik failid"
+msgstr "*|K√µik failid"
 
 #: kfile/kfileinfo.cpp:97 kfile/kfileinfo.cpp:101
 msgid "unknown"
@@ -1181,7 +1181,7 @@ msgstr "Veebr."
 
 #: kfile/kfileinfo.cpp:223
 msgid "Mar"
-msgstr "M‰rts"
+msgstr "M√§rts"
 
 #: kfile/kfileinfo.cpp:224
 msgid "Apr"
@@ -1221,7 +1221,7 @@ msgstr "Nimi:"
 
 #: kfile/kpreview.cpp:205
 msgid "Date:"
-msgstr "Kuup‰ev:"
+msgstr "Kuup√§ev:"
 
 #: kfile/kpreview.cpp:214
 msgid "Owner:"
@@ -1233,7 +1233,7 @@ msgstr "Grupp:"
 
 #: kfile/kpreview.cpp:232
 msgid "Type:"
-msgstr "T¸¸p:"
+msgstr "T√º√ºp:"
 
 #: kfile/kpreview.cpp:287
 msgid "locked"
@@ -1254,7 +1254,7 @@ msgid ""
 "Could not do Authorization"
 msgstr ""
 "Sul ei ole faili nimega %s\n"
-"Autoriseerida pole vıimalik"
+"Autoriseerida pole v√µimalik"
 
 #: kfmlib/kfm.cpp:200 kfmlib/kfm.cpp:210
 msgid "KFM Error"
@@ -1267,20 +1267,20 @@ msgid ""
 "Could not do Authorization"
 msgstr ""
 "Fail nimega %s on kahjustatud\n"
-"Autoriseerimine pole vıimalik."
+"Autoriseerimine pole v√µimalik."
 
 #: kspell/ksconfig.cpp:66
 msgid "Create Root/Affix combinations not in the dictionary"
-msgstr "Loo juure/lisandi kombinatsioonid, mida ei leidu sınaraamatus"
+msgstr "Loo juure/lisandi kombinatsioonid, mida ei leidu s√µnaraamatus"
 
 #: kspell/ksconfig.cpp:75
 msgid "Consider run-together words as spelling errors"
-msgstr "Tılgenda kokkujooksnud sınu vigadena"
+msgstr "T√µlgenda kokkujooksnud s√µnu vigadena"
 
 #
 #: kspell/ksconfig.cpp:92
 msgid "Dictionary"
-msgstr "Sınaraamat"
+msgstr "S√µnaraamat"
 
 #: kspell/ksconfig.cpp:140
 msgid "Encoding:"
@@ -1319,11 +1319,11 @@ msgstr "Tundmatu"
 #
 #: kspell/ksconfig.cpp:348
 msgid "ISpell Default"
-msgstr "ISpell'i vaikev‰‰rtused"
+msgstr "ISpell'i vaikev√§√§rtused"
 
 #: kspell/kspelldlg.cpp:58
 msgid "Misspelled Word:"
-msgstr "Valesti kirjutatud sına:"
+msgstr "Valesti kirjutatud s√µna:"
 
 #
 #: kspell/kspelldlg.cpp:68
@@ -1342,7 +1342,7 @@ msgstr "Ignoreeri"
 #
 #: kspell/kspelldlg.cpp:99
 msgid "Ignore All"
-msgstr "Ignoreeri kıiki"
+msgstr "Ignoreeri k√µiki"
 
 #: kspell/kspelldlg.cpp:120 po/texts.cpp:86
 msgid "Add"
@@ -1384,7 +1384,7 @@ msgstr "Sisse"
 
 #: po/texts.cpp:38
 msgid "Off"
-msgstr "V‰lja"
+msgstr "V√§lja"
 
 #: po/texts.cpp:42
 msgid "File"
@@ -1416,11 +1416,11 @@ msgstr "&Vaade"
 
 #: po/texts.cpp:51
 msgid "E&xit"
-msgstr "V‰lju"
+msgstr "V√§lju"
 
 #: po/texts.cpp:53
 msgid "&Quit"
-msgstr "&Lıpeta"
+msgstr "&L√µpeta"
 
 #: po/texts.cpp:57
 msgid "&Copy"
@@ -1444,11 +1444,11 @@ msgstr "&Uus aken"
 
 #: po/texts.cpp:63
 msgid "New Game"
-msgstr "Uus m‰ng"
+msgstr "Uus m√§ng"
 
 #: po/texts.cpp:64
 msgid "&New Game"
-msgstr "&Uus m‰ng"
+msgstr "&Uus m√§ng"
 
 #: po/texts.cpp:66
 msgid "Open a file"
@@ -1464,11 +1464,11 @@ msgstr "&Ava..."
 
 #: po/texts.cpp:70
 msgid "&Cut"
-msgstr "&Lıika"
+msgstr "&L√µika"
 
 #: po/texts.cpp:71
 msgid "C&ut"
-msgstr "L&ıika"
+msgstr "L&√µika"
 
 #: po/texts.cpp:72
 msgid "Font"
@@ -1476,11 +1476,11 @@ msgstr "Font"
 
 #: po/texts.cpp:73
 msgid "&Foreground Color"
-msgstr "&Esiplaani v‰rv"
+msgstr "&Esiplaani v√§rv"
 
 #: po/texts.cpp:74
 msgid "&Background Color"
-msgstr "&Tausta v‰rv"
+msgstr "&Tausta v√§rv"
 
 #: po/texts.cpp:76
 msgid "&Save"
@@ -1500,7 +1500,7 @@ msgstr "S&ulge"
 
 #: po/texts.cpp:82
 msgid "&Print..."
-msgstr "&Tr¸ki..."
+msgstr "&Tr√ºki..."
 
 #: po/texts.cpp:84
 msgid "Options"
@@ -1532,11 +1532,11 @@ msgstr "Kaldkiri"
 
 #: po/texts.cpp:92
 msgid "Roman"
-msgstr "P¸stkiri"
+msgstr "P√ºstkiri"
 
 #: po/texts.cpp:94
 msgid "&Undo"
-msgstr "&T¸hista"
+msgstr "&T√ºhista"
 
 #: po/texts.cpp:95
 msgid "Redo"
@@ -1548,7 +1548,7 @@ msgstr "&Korda"
 
 #: po/texts.cpp:97
 msgid "&Game"
-msgstr "&M‰ng"
+msgstr "&M√§ng"
 
 #: po/texts.cpp:98
 msgid "Information"
@@ -1604,7 +1604,7 @@ msgstr "Failid"
 
 #: kab/widget.cc:1390 kab/widget.cc:1432 po/texts.cpp:112
 msgid "Continue"
-msgstr "J‰tka"
+msgstr "J√§tka"
 
 #: po/texts.cpp:113
 msgid "Restore"
@@ -1612,23 +1612,23 @@ msgstr "Taasta"
 
 #: po/texts.cpp:114
 msgid "Appearance"
-msgstr "V‰limus"
+msgstr "V√§limus"
 
 #: po/texts.cpp:116
 msgid "Monday"
-msgstr "Esmasp‰ev"
+msgstr "Esmasp√§ev"
 
 #: po/texts.cpp:117
 msgid "Tuesday"
-msgstr "Teisip‰ev"
+msgstr "Teisip√§ev"
 
 #: po/texts.cpp:118
 msgid "Wednesday"
-msgstr "Kolmap‰ev"
+msgstr "Kolmap√§ev"
 
 #: po/texts.cpp:119
 msgid "Thursday"
-msgstr "Neljap‰ev"
+msgstr "Neljap√§ev"
 
 #: po/texts.cpp:120
 msgid "Friday"
@@ -1636,15 +1636,15 @@ msgstr "Reede"
 
 #: po/texts.cpp:121
 msgid "Saturday"
-msgstr "Laup‰ev"
+msgstr "Laup√§ev"
 
 #: po/texts.cpp:122
 msgid "Sunday"
-msgstr "P¸hap‰ev"
+msgstr "P√ºhap√§ev"
 
 #: po/texts.cpp:123
 msgid "&Update"
-msgstr "&V‰rskenda"
+msgstr "&V√§rskenda"
 
 #: po/texts.cpp:124
 msgid "Layout"
@@ -1664,7 +1664,7 @@ msgstr "&Lisa"
 
 #: po/texts.cpp:130
 msgid "&Next >>"
-msgstr "&J‰rgmine >>"
+msgstr "&J√§rgmine >>"
 
 #: po/texts.cpp:131
 msgid "<< &Previous"
@@ -1681,14 +1681,14 @@ msgid ""
 "The program will try to create\n"
 "         "
 msgstr ""
-"Kataloogi, kus aadressiraamatu programm s‰ilitab\n"
+"Kataloogi, kus aadressiraamatu programm s√§ilitab\n"
 "kasutajaspetsiifilisi andmeid, ei eksisteeri.\n"
-"Programm ¸ritab seda luua\n"
+"Programm √ºritab seda luua\n"
 "\t  "
 
 #: kab/addressbook.cc:94
 msgid "and store all local files in this directory."
-msgstr "ning salvestada kıik kohalikud failid sellesse kataloogi."
+msgstr "ning salvestada k√µik kohalikud failid sellesse kataloogi."
 
 #: kab/addressbook.cc:98
 msgid ""
@@ -1701,7 +1701,7 @@ msgstr ""
 "Kataloogi ei suudetud luua.\n"
 "Ilmselt ei ole sa varem KDE'd kasutanud ning\n"
 "sinu kodukataloogis ei ole kataloogi \".kde\".\n"
-"Et seda luua automaatselt, k‰ivita KDE failihaldur\n"
+"Et seda luua automaatselt, k√§ivita KDE failihaldur\n"
 "kfm."
 
 #: kab/addressbook.cc:106
@@ -1714,23 +1714,23 @@ msgstr "Puudub aadressraamatu andmebaasi fail, uus on loomisel."
 
 #: kab/addressbook.cc:159
 msgid "Tried to load database for creating backup, but failed"
-msgstr "Andmebaasi laadimine varukoopia loomiseks ebaınnestus"
+msgstr "Andmebaasi laadimine varukoopia loomiseks eba√µnnestus"
 
 #: kab/addressbook.cc:194
 msgid "Unable to save to backup file."
-msgstr "Varukoopiat ei ole vıimalik salvestada."
+msgstr "Varukoopiat ei ole v√µimalik salvestada."
 
 #: kab/addressbook.cc:200
 msgid "Unable to reset filename after creating backup."
-msgstr "Faili nime ei ole vıimalik peale varukoopia loomist nullida."
+msgstr "Faili nime ei ole v√µimalik peale varukoopia loomist nullida."
 
 #: kab/addressbook.cc:205
 msgid "Unable to create backup file"
-msgstr "Varukoopiat ei ole vıimalik luua"
+msgstr "Varukoopiat ei ole v√µimalik luua"
 
 #: kab/addressbook.cc:263
 msgid "Unable to insert \""
-msgstr "Pole vıimalik lisada \""
+msgstr "Pole v√µimalik lisada \""
 
 #: kab/addressbook.cc:264
 msgid "\" into configuration section (ignored)."
@@ -1738,15 +1738,15 @@ msgstr "\" konfiguratsiooni sektsiooni (ignoreeritakse)."
 
 #: kab/addressbook.cc:666
 msgid "Unable to add a new entry with available key."
-msgstr "Saadaoleva vıtmega pole vıimalik uut kirjet lisada."
+msgstr "Saadaoleva v√µtmega pole v√µimalik uut kirjet lisada."
 
 #: kab/addressbook.cc:672
 msgid "Cannot find previously created section."
-msgstr "Eelnevalt loodud sektsiooni pole vıimalik leida."
+msgstr "Eelnevalt loodud sektsiooni pole v√µimalik leida."
 
 #: kab/addressbook.cc:703
 msgid "Unable to create key-value-map for entry."
-msgstr "Kirje jaoks pole vıimalik luua vıtmev‰‰rtuse kaarti."
+msgstr "Kirje jaoks pole v√µimalik luua v√µtmev√§√§rtuse kaarti."
 
 #: kab/addressbook.cc:989
 msgid "entry without name"
@@ -1756,28 +1756,28 @@ msgstr "kirje ilma nimeta"
 msgid ""
 "Unable to create new database file (probably permission denied), exiting."
 msgstr ""
-"Uut andmebaasi faili pole vıimalik luua (ilmselt on juurdep‰‰s keelatud), "
-"v‰ljumine."
+"Uut andmebaasi faili pole v√µimalik luua (ilmselt on juurdep√§√§s keelatud), "
+"v√§ljumine."
 
 #: kab/addressbook.cc:1013
 msgid "Cannot create configuration section, exiting."
-msgstr "Konfiguratsiooni sektsiooni pole vıimalik luua, v‰ljumine."
+msgstr "Konfiguratsiooni sektsiooni pole v√µimalik luua, v√§ljumine."
 
 #: kab/addressbook.cc:1018
 msgid "Cannot create entries section, exiting."
-msgstr "Kirjete sektsiooni pole vıimalik luua, v‰ljumine."
+msgstr "Kirjete sektsiooni pole v√µimalik luua, v√§ljumine."
 
 #: kab/addressbook.cc:1023
 msgid "Unable to find previously created section, exiting."
-msgstr "Eelnevalt loodud sektsiooni pole vıimalik leida, v‰ljumine."
+msgstr "Eelnevalt loodud sektsiooni pole v√µimalik leida, v√§ljumine."
 
 #: kab/addressbook.cc:1031
 msgid "Cannot save newly created database."
-msgstr "Loodud andmebaasi pole vıimalik salvestada."
+msgstr "Loodud andmebaasi pole v√µimalik salvestada."
 
 #: kab/addressbook.cc:1037
 msgid "Cannot erase database contents."
-msgstr "Andmebaasi sisu pole vıimalik kustutada."
+msgstr "Andmebaasi sisu pole v√µimalik kustutada."
 
 #: kab/addressbook.cc:1116
 msgid "First name"
@@ -1793,7 +1793,7 @@ msgstr "Nime eesliide"
 
 #: kab/addressbook.cc:1128
 msgid "Formatted name"
-msgstr "T‰ielik nimi"
+msgstr "T√§ielik nimi"
 
 #: kab/addressbook.cc:1132
 msgid "Comment"
@@ -1821,15 +1821,15 @@ msgstr "Amet"
 
 #: kab/addressbook.cc:1156
 msgid "Birthday"
-msgstr "S¸nnip‰ev"
+msgstr "S√ºnnip√§ev"
 
 #: kab/addressbook.cc:1160
 msgid "Talk addresses"
-msgstr "Kıneaadressid"
+msgstr "K√µneaadressid"
 
 #: kab/addressbook.cc:1164
 msgid "Delivery label"
-msgstr "K‰ttetoimetussedel"
+msgstr "K√§ttetoimetussedel"
 
 #: kab/addressbook.cc:1168
 msgid "Email address"
@@ -1869,7 +1869,7 @@ msgstr "Modemi number"
 
 #: kab/addressbook.cc:1204
 msgid "Homepage URL"
-msgstr "Kodulehek¸lje aadress"
+msgstr "Kodulehek√ºlje aadress"
 
 #: kab/addressbook.cc:1208
 msgid "Zip/postal code"
@@ -1889,11 +1889,11 @@ msgstr "(nimetu kirje)"
 
 #: kab/datepickerdialog.cc:34
 msgid "Select birthday"
-msgstr "Sisesta s¸nnip‰ev"
+msgstr "Sisesta s√ºnnip√§ev"
 
 #: kab/editentry.cc:38
 msgid "Edit the current entry"
-msgstr "Redigeeri k‰esolevat kirjet"
+msgstr "Redigeeri k√§esolevat kirjet"
 
 #: kab/editentry.cc:61
 msgid "Title:"
@@ -1909,7 +1909,7 @@ msgstr "Perekonnanimi"
 
 #: kab/editentry.cc:65
 msgid "Formatted Name:"
-msgstr "T‰ielik nimi:"
+msgstr "T√§ielik nimi:"
 
 #: kab/editentry.cc:88
 msgid "&Name"
@@ -1977,7 +1977,7 @@ msgstr "Modem:"
 
 #: kab/editentry.cc:187
 msgid "Homepage (URL):"
-msgstr "Kodulehek¸lg (aadress):"
+msgstr "Kodulehek√ºlg (aadress):"
 
 #: kab/editentry.cc:200 kab/editentry.cc:418
 msgid "Edit email addresses"
@@ -1985,7 +1985,7 @@ msgstr "Muuda e-maili aadresseid"
 
 #: kab/editentry.cc:206 kab/editentry.cc:400
 msgid "Edit talk addresses"
-msgstr "Redigeeri kıneaadresseid"
+msgstr "Redigeeri k√µneaadresseid"
 
 #: kab/editentry.cc:218
 msgid "&Contact"
@@ -1994,15 +1994,15 @@ msgstr "&Kontakt"
 #
 #: kab/editentry.cc:239
 msgid "Additional Comment:"
-msgstr "T‰iendav kommentaar:"
+msgstr "T√§iendav kommentaar:"
 
 #: kab/editentry.cc:246
 msgid "Birthday:"
-msgstr "S¸nnip‰ev:"
+msgstr "S√ºnnip√§ev:"
 
 #: kab/editentry.cc:249
 msgid "Double click to set date"
-msgstr "Topeltklıps kuup‰eva asetamiseks"
+msgstr "Topeltkl√µps kuup√§eva asetamiseks"
 
 #: kab/editentry.cc:256
 msgid "O&thers"
@@ -2010,7 +2010,7 @@ msgstr "&Teised"
 
 #: kab/kabapi.cc:138
 msgid "Your new entry could not be added."
-msgstr "Sinu uut kirjet ei ole vıimalik lisada"
+msgstr "Sinu uut kirjet ei ole v√µimalik lisada"
 
 #: kab/searchresults.cc:33
 msgid "search results"
@@ -2028,8 +2028,8 @@ msgid ""
 "supported."
 msgstr ""
 "Kab ei suuda konverteerida andmebaasi\n"
-"k‰esolevasse failiformaati.\n"
-"Sa vıid seda kasutada, kuid mitte kıik\n"
+"k√§esolevasse failiformaati.\n"
+"Sa v√µid seda kasutada, kuid mitte k√µik\n"
 "omadused pole toetatud."
 
 #: kab/widget.cc:163
@@ -2037,7 +2037,7 @@ msgid ""
 "The application saved the last current entry,\n"
 "but this entry does not exist anymore."
 msgstr ""
-"Programm salvestatas viimase k‰esoleva kirje,\n"
+"Programm salvestatas viimase k√§esoleva kirje,\n"
 "kuid seda kirjet enam ei eksisteeri."
 
 #: kab/widget.cc:229
@@ -2055,21 +2055,21 @@ msgid ""
 msgstr ""
 "Sellel kab'i versioonil, mida sa eelnevalt kasutasid\n"
 "oli viga andmebaaside uuendamisel uuteks versioonideks.\n"
-"See viga on n¸¸dseks parandatud ja ei mıjuta enam tˆˆd.\n"
-"Kıik konfiguratsiooni v‰‰rtused on l‰htestatud vaikimisi\n"
-"s‰teteks."
+"See viga on n√º√ºdseks parandatud ja ei m√µjuta enam t√∂√∂d.\n"
+"K√µik konfiguratsiooni v√§√§rtused on l√§htestatud vaikimisi\n"
+"s√§teteks."
 
 #: kab/widget.cc:248 kab/widget.cc:314 kab/widget.cc:322
 msgid "File handling error"
-msgstr "Viga failik‰sitlusel."
+msgstr "Viga failik√§sitlusel."
 
 #: kab/widget.cc:249
 msgid "Unable to open database file r/w."
-msgstr "Andmebaasi faili pole vıimalik kirjutamiseks avada."
+msgstr "Andmebaasi faili pole v√µimalik kirjutamiseks avada."
 
 #: kab/widget.cc:257
 msgid "Email storage conversion"
-msgstr "E-maili s‰ilitamise teisendus"
+msgstr "E-maili s√§ilitamise teisendus"
 
 #: kab/widget.cc:258
 msgid ""
@@ -2077,7 +2077,7 @@ msgid ""
 "the new style supporting unlimited numbers\n"
 "of email addresses per entry."
 msgstr ""
-"Kab teisendab kıik sinu e-maili aadressid uude\n"
+"Kab teisendab k√µik sinu e-maili aadressid uude\n"
 "stiili, mis toetab piiramatut arvu e-maili aadresse\n"
 "kirje kohta."
 
@@ -2090,27 +2090,27 @@ msgid ""
 "Please note that kab now supports some new\n"
 "fields in its addresses. These new fields\n"
 "are:\n"
-"∞ the state field,\n"
-"∞ the country field and\n"
-"∞ the postal code field.\n"
+"¬∞ the state field,\n"
+"¬∞ the country field and\n"
+"¬∞ the postal code field.\n"
 "You will probably need to edit some of your\n"
 "entries to make use of it."
 msgstr ""
-"Palun t‰hele panna, et kab toetab oma aadressides\n"
-"uusi v‰lju.Need uued v‰ljad on:\n"
-"∞ riigi v‰li,\n"
-"∞ maa v‰li ja\n"
-"∞ postiindeksi v‰li.\n"
-"Ilmselt vajad sa mıne oma kirje redigeerimist,\n"
+"Palun t√§hele panna, et kab toetab oma aadressides\n"
+"uusi v√§lju.Need uued v√§ljad on:\n"
+"¬∞ riigi v√§li,\n"
+"¬∞ maa v√§li ja\n"
+"¬∞ postiindeksi v√§li.\n"
+"Ilmselt vajad sa m√µne oma kirje redigeerimist,\n"
 "et neist kasu oleks."
 
 #: kab/widget.cc:315
 msgid "Could not save database after update."
-msgstr "Andmebaasi pole vıimalik p‰rast uuendamist salvestada."
+msgstr "Andmebaasi pole v√µimalik p√§rast uuendamist salvestada."
 
 #: kab/widget.cc:323
 msgid "Unable to reopen database file r/o."
-msgstr "Andmebaasi uuesti avamine ainult lugemiseks pole vıiamlik."
+msgstr "Andmebaasi uuesti avamine ainult lugemiseks pole v√µiamlik."
 
 #: kab/widget.cc:482
 msgid "first entry"
@@ -2122,7 +2122,7 @@ msgstr "eelmine kirje"
 
 #: kab/widget.cc:484
 msgid "next entry"
-msgstr "j‰rgmine kirje"
+msgstr "j√§rgmine kirje"
 
 #: kab/widget.cc:485
 msgid "last entry"
@@ -2158,7 +2158,7 @@ msgstr "Vabandust, faili on muudetud."
 
 #: kab/widget.cc:625 kab/widget.cc:682 kab/widget.cc:926
 msgid "Permission denied."
-msgstr "Juurdep‰‰s keelatud."
+msgstr "Juurdep√§√§s keelatud."
 
 #: kab/widget.cc:636
 msgid "Remove entry?"
@@ -2166,7 +2166,7 @@ msgstr "Kustutada kirje?"
 
 #: kab/widget.cc:637
 msgid "Really remove this entry?"
-msgstr "Kas soovid tıesti kustutada selle kirje?"
+msgstr "Kas soovid t√µesti kustutada selle kirje?"
 
 #: kab/widget.cc:655
 msgid "Entry deleted."
@@ -2191,7 +2191,7 @@ msgstr "Kirjeid pole."
 
 #: kab/widget.cc:833
 msgid "The filemanager is busy, please try again."
-msgstr "Failihaldur on hıivatud, palun proovige uuesti."
+msgstr "Failihaldur on h√µivatud, palun proovige uuesti."
 
 #: kab/widget.cc:853
 msgid ""
@@ -2213,7 +2213,7 @@ msgstr "kab: Faili viga"
 
 #: kab/widget.cc:875
 msgid "Could not save database."
-msgstr "Andmebaasi pole vıimalik salvestada."
+msgstr "Andmebaasi pole v√µimalik salvestada."
 
 #: kab/widget.cc:876
 msgid "&Retry"
@@ -2237,12 +2237,12 @@ msgstr "Tulemused"
 
 #: kab/widget.cc:1041
 msgid "No entry matches this."
-msgstr "Sellele ei vasta ¸htki kirjet."
+msgstr "Sellele ei vasta √ºhtki kirjet."
 
 #: kab/widget.cc:1050 kab/widget.cc:1720 kab/widget.cc:1855 kab/widget.cc:2032
 #: kab/widget.cc:2055 kab/widget.cc:2112
 msgid "Rejected."
-msgstr "Tagasi l¸katud."
+msgstr "Tagasi l√ºkatud."
 
 #: kab/widget.cc:1066
 msgid "Search results window closed."
@@ -2250,27 +2250,27 @@ msgstr "Otsingu tulemuste aken suletud."
 
 #: kab/widget.cc:1165
 msgid "The talk command must be configured before!"
-msgstr "Kınek‰sk peab olema eelnevalt konfigureeritud!"
+msgstr "K√µnek√§sk peab olema eelnevalt konfigureeritud!"
 
 #: kab/widget.cc:1170
 msgid "Talk configuration"
-msgstr "Kıne konfiguratsioon"
+msgstr "K√µne konfiguratsioon"
 
 #: kab/widget.cc:1171
 msgid "Please configure the parameters for the talk command."
-msgstr "Palun konfigureeri kıne k‰su parameetrid."
+msgstr "Palun konfigureeri k√µne k√§su parameetrid."
 
 #: kab/widget.cc:1184
 msgid "No talk address."
-msgstr "Puudub kıne aadress."
+msgstr "Puudub k√µne aadress."
 
 #: kab/widget.cc:1192
 msgid "kab: Talk addresses"
-msgstr "Kıne aadressid"
+msgstr "K√µne aadressid"
 
 #: kab/widget.cc:1193
 msgid "Available talk addresses:"
-msgstr "Saadaolevad kıne aadressid:"
+msgstr "Saadaolevad k√µne aadressid:"
 
 #: kab/widget.cc:1199 kab/widget.cc:1963
 msgid "Cancelled."
@@ -2278,39 +2278,39 @@ msgstr "Katkestatud."
 
 #: kab/widget.cc:1222
 msgid "The talk command parameters are wrong."
-msgstr "Kıne k‰su parameetrid on valed."
+msgstr "K√µne k√§su parameetrid on valed."
 
 #: kab/widget.cc:1234
 msgid ""
 "Talk command failed.\n"
 "Make sure you did setup your talk command and parameter!"
 msgstr ""
-"Kıne k‰su t‰itmine ebaınnestus.\n"
-"Kontrolli kıne k‰su ja parameetrite seadistusi!"
+"K√µne k√§su t√§itmine eba√µnnestus.\n"
+"Kontrolli k√µne k√§su ja parameetrite seadistusi!"
 
 #: kab/widget.cc:1237
 msgid "Talk program started."
-msgstr "Kıne programm k‰ivitatud."
+msgstr "K√µne programm k√§ivitatud."
 
 #: kab/widget.cc:1285
 msgid "Attention: printing is still experimental!"
-msgstr "Hoiatus: Tr¸kkimine on veel eksperimentaalne!"
+msgstr "Hoiatus: Tr√ºkkimine on veel eksperimentaalne!"
 
 #: kab/widget.cc:1387 kab/widget.cc:1429
 msgid "Page size problem"
-msgstr "Probleem lehek¸lje suurusega"
+msgstr "Probleem lehek√ºlje suurusega"
 
 #: kab/widget.cc:1388 kab/widget.cc:1430
 msgid ""
 "The fields you requested to print do\n"
 "not fit into the page width."
 msgstr ""
-"V‰ljad, mida sa soovisid tr¸kkida,\n"
+"V√§ljad, mida sa soovisid tr√ºkkida,\n"
 "ei mahu sellise laiusega lehele."
 
 #: kab/widget.cc:1624 kab/widget.cc:2066
 msgid "Printing finished successfully."
-msgstr "Tr¸kkimine edukalt lıpetatud."
+msgstr "Tr√ºkkimine edukalt l√µpetatud."
 
 #: kab/widget.cc:1651
 msgid "kab: Email addresses"
@@ -2322,7 +2322,7 @@ msgstr "Saadaolevad e-maili aadressid:"
 
 #: kab/widget.cc:1717
 msgid "kab: Select fields to copy"
-msgstr "kab: Vali kopeeritavad v‰ljad"
+msgstr "kab: Vali kopeeritavad v√§ljad"
 
 #: kab/widget.cc:1727
 msgid "Nothing selected."
@@ -2330,7 +2330,7 @@ msgstr "Midagi pole valitud"
 
 #: kab/widget.cc:1785 kab/widget.cc:2049
 msgid "KDE addressbook overview"
-msgstr "KDE aadressiraamatu ¸levaade"
+msgstr "KDE aadressiraamatu √ºlevaade"
 
 #: kab/widget.cc:1829
 msgid "Name-Email-Link (!!)"
@@ -2350,7 +2350,7 @@ msgstr "E-maili link"
 
 #: kab/widget.cc:1952
 msgid "Could not find the users home directory."
-msgstr "Kasutajate kodukataloogi pole vıimalik leida."
+msgstr "Kasutajate kodukataloogi pole v√µimalik leida."
 
 #: kab/widget.cc:1953
 msgid "Intern error!"
@@ -2358,23 +2358,23 @@ msgstr "Sisemine viga!"
 
 #: kab/widget.cc:1973
 msgid "Could not open the file to create the HTML table."
-msgstr "HTML tabeli loomiseks vajalikku faili pole vıimalik avada."
+msgstr "HTML tabeli loomiseks vajalikku faili pole v√µimalik avada."
 
 #: kab/widget.cc:2009
 msgid "Printing cancelled."
-msgstr "Tr¸kkimine katkestatud."
+msgstr "Tr√ºkkimine katkestatud."
 
 #: kab/widget.cc:2025
 msgid "kab: Select columns for printing"
-msgstr "kab: Vali veerud tr¸kkimiseks"
+msgstr "kab: Vali veerud tr√ºkkimiseks"
 
 #: kab/widget.cc:2038
 msgid "Nothing to print."
-msgstr "Pole midagi tr¸kkida."
+msgstr "Pole midagi tr√ºkkida."
 
 #: kab/widget.cc:2050
 msgid "Page <p>"
-msgstr "Lehek¸lg <p>"
+msgstr "Lehek√ºlg <p>"
 
 #: kab/widget.cc:2051
 msgid "KDE - the professionals choice."
@@ -2382,11 +2382,11 @@ msgstr "KDE - professionaalide valik."
 
 #: kab/widget.cc:2064
 msgid "Printing failed!"
-msgstr "Tr¸kkimine ebaınnestus!"
+msgstr "Tr√ºkkimine eba√µnnestus!"
 
 #: kab/widget.cc:2095
 msgid "Empty email address."
-msgstr "T¸hi e-maili aadress."
+msgstr "T√ºhi e-maili aadress."
 
 #: kab/widget.cc:2114
 msgid "No email address."
@@ -2402,7 +2402,7 @@ msgstr "Kutse edastatud meilerile."
 
 #: kab/widget.cc:2149
 msgid "The mail command must be configured before!"
-msgstr "Meili k‰sk peab olema eelnevalt konfigureeritud!"
+msgstr "Meili k√§sk peab olema eelnevalt konfigureeritud!"
 
 #: kab/widget.cc:2155
 msgid "Mail configuration"
@@ -2410,21 +2410,21 @@ msgstr "Meili konfiguratsioon"
 
 #: kab/widget.cc:2156
 msgid "Please configure the parameters for the email command."
-msgstr "Palun konfigureeri e-maili k‰su parameetrid."
+msgstr "Palun konfigureeri e-maili k√§su parameetrid."
 
 #: kab/widget.cc:2194
 msgid "The email command parameters are wrong."
-msgstr "E-maili k‰su parameetrid on valed."
+msgstr "E-maili k√§su parameetrid on valed."
 
 #: kab/widget.cc:2206
 msgid ""
 "Email command failed.\n"
 "Make sure you did setup your email command and parameter!"
 msgstr ""
-"E-maili k‰su t‰itmine ebaınnestus.\n"
-"Kontrolli oma e-maili k‰su ja parameetrite seadistust!"
+"E-maili k√§su t√§itmine eba√µnnestus.\n"
+"Kontrolli oma e-maili k√§su ja parameetrite seadistust!"
 
 #: kab/widget.cc:2210
 msgid "Mail program started."
-msgstr "Meiliprogramm k‰ivitus."
+msgstr "Meiliprogramm k√§ivitus."
 

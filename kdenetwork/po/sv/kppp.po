@@ -11,20 +11,20 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: accounts.cpp:45
 msgid "Account Setup"
-msgstr "Kontoinställningar"
+msgstr "KontoinstÃ¤llningar"
 
 #: accounts.cpp:66
 msgid "Edit..."
-msgstr "Ändra..."
+msgstr "Ã„ndra..."
 
 #: accounts.cpp:68
 msgid "Allows you to modify the selected account"
-msgstr "Tillåter dig att ändra det valda kontot"
+msgstr "TillÃ¥ter dig att Ã¤ndra det valda kontot"
 
 #: accounts.cpp:77
 msgid "New..."
@@ -35,7 +35,7 @@ msgid ""
 "Create a new dialup connection\n"
 "to the internet"
 msgstr ""
-"Skapa en ny uppringd förbindelse\n"
+"Skapa en ny uppringd fÃ¶rbindelse\n"
 "till internet"
 
 #: accounts.cpp:89
@@ -46,8 +46,8 @@ msgid ""
 "needs"
 msgstr ""
 "Skapar en kopia av det valda kontot. Alla\n"
-"det valda kontots inställningar kopieras\n"
-"till det nya kontot, som du kan anpassa så\n"
+"det valda kontots instÃ¤llningar kopieras\n"
+"till det nya kontot, som du kan anpassa sÃ¥\n"
 "att det passar dina behov"
 
 #: accounts.cpp:99
@@ -58,7 +58,7 @@ msgid ""
 msgstr ""
 "Tar bort det valda kontot\n"
 "\n"
-"<red><b>Var försiktig!"
+"<red><b>Var fÃ¶rsiktig!"
 
 #: accounts.cpp:108
 msgid "Phone Costs:"
@@ -73,12 +73,12 @@ msgid ""
 "account - beware, this is <b>NOT</b> the sum \n"
 "of the phone costs of all your accounts!"
 msgstr ""
-"Här visas de sammanlagda telefonkostnaderna\n"
-"för det valda kontot.\n"
+"HÃ¤r visas de sammanlagda telefonkostnaderna\n"
+"fÃ¶r det valda kontot.\n"
 "\n"
-"<b>Viktigt</b>: Om du har fler än ett konto\n"
-"så är det här <b>INTE</b> den totala summan\n"
-"av telefonkostnaderna för alla dina konton!"
+"<b>Viktigt</b>: Om du har fler Ã¤n ett konto\n"
+"sÃ¥ Ã¤r det hÃ¤r <b>INTE</b> den totala summan\n"
+"av telefonkostnaderna fÃ¶r alla dina konton!"
 
 #: accounts.cpp:128 conwindow.cpp:54
 msgid "Volume:"
@@ -93,15 +93,15 @@ msgid ""
 "\n"
 "<link #volaccounting>More on volume accounting</link>"
 msgstr ""
-"Här visas antalet byte som överförts för det\n"
+"HÃ¤r visas antalet byte som Ã¶verfÃ¶rts fÃ¶r det\n"
 "valda kontot (inte alla dina konton). Vad som\n"
-"ska visas kan du välja i kostnadsdialogen.\n"
+"ska visas kan du vÃ¤lja i kostnadsdialogen.\n"
 "\n"
 "<link #volaccounting>Mer om volymkostnad</link>"
 
 #: accounts.cpp:152
 msgid "Reset Costs"
-msgstr "Nollställ kostnader"
+msgstr "NollstÃ¤ll kostnader"
 
 #: accounts.cpp:158
 msgid "View Logs"
@@ -109,23 +109,23 @@ msgstr "Visa loggar"
 
 #: accounts.cpp:224
 msgid "Reset Total"
-msgstr "Nollställ totalkostnad"
+msgstr "NollstÃ¤ll totalkostnad"
 
 #: accounts.cpp:225
 msgid ""
 "Are you sure you want to reset the accumulated\n"
 "telephone costs for the selected account to zero?"
 msgstr ""
-"Är du säker på att du vill nollställa de totala\n"
-"telekostnaderna för det valda kontot?"
+"Ã„r du sÃ¤ker pÃ¥ att du vill nollstÃ¤lla de totala\n"
+"telekostnaderna fÃ¶r det valda kontot?"
 
 #: accounts.cpp:259 accounts.cpp:280
 msgid "Maximum number of accounts reached."
-msgstr "Maximalt antal konton har uppnåtts."
+msgstr "Maximalt antal konton har uppnÃ¥tts."
 
 #: accounts.cpp:286
 msgid "No account selected."
-msgstr "Inget konto är valt."
+msgstr "Inget konto Ã¤r valt."
 
 #: accounts.cpp:301
 #, c-format
@@ -133,12 +133,12 @@ msgid ""
 "Are you sure you want to delete\n"
 "the account \"%s\"?"
 msgstr ""
-"Är du säker på att du vill ta bort\n"
+"Ã„r du sÃ¤ker pÃ¥ att du vill ta bort\n"
 "kontot \"%s\"?"
 
 #: accounts.cpp:306
 msgid "Confirm"
-msgstr "Bekräfta"
+msgstr "BekrÃ¤fta"
 
 #: accounts.cpp:328
 msgid "New Account"
@@ -146,7 +146,7 @@ msgstr "Nytt konto"
 
 #: accounts.cpp:331
 msgid "Edit Account: "
-msgstr "Ändra kontot: "
+msgstr "Ã„ndra kontot: "
 
 #: accounts.cpp:348
 msgid "Dial"
@@ -177,7 +177,7 @@ msgid ""
 "You must enter an unique\n"
 "account name"
 msgstr ""
-"Du måste ange ett unikt\n"
+"Du mÃ¥ste ange ett unikt\n"
 "kontonamn"
 
 #: accounts.cpp:377
@@ -191,7 +191,7 @@ msgstr "Ansluter till: "
 #: connect.cpp:101 connect.cpp:205 miniterm.cpp:148 modeminfo.cpp:56
 #: modeminfo.cpp:135
 msgid "Sorry, can't create modem lock file."
-msgstr "Tyvärr, kan inte skapa låsfil för modemet."
+msgstr "TyvÃ¤rr, kan inte skapa lÃ¥sfil fÃ¶r modemet."
 
 #: connect.cpp:106 connect.cpp:163 modeminfo.cpp:61
 msgid "Looking for Modem ..."
@@ -203,7 +203,7 @@ msgstr "Visa logg"
 
 #: connect.cpp:199 miniterm.cpp:143 modeminfo.cpp:129
 msgid "Sorry, modem device is locked."
-msgstr "Tyvärr, modemetenheten är låst."
+msgstr "TyvÃ¤rr, modemetenheten Ã¤r lÃ¥st."
 
 #: connect.cpp:251 connect.cpp:252
 msgid "Initializing Modem..."
@@ -211,7 +211,7 @@ msgstr "Initierar modemet..."
 
 #: connect.cpp:270 connect.cpp:271
 msgid "Setting speaker volume..."
-msgstr "Ställer in högtalarvolymen..."
+msgstr "StÃ¤ller in hÃ¶gtalarvolymen..."
 
 #: connect.cpp:289
 msgid "Dialing"
@@ -219,11 +219,11 @@ msgstr "Ringer"
 
 #: connect.cpp:322
 msgid "Line Busy. Hanging up ..."
-msgstr "Upptaget. Lägger på ..."
+msgstr "Upptaget. LÃ¤gger pÃ¥ ..."
 
 #: connect.cpp:327
 msgid "Line Busy. Waiting: "
-msgstr "Upptaget. Väntar: "
+msgstr "Upptaget. VÃ¤ntar: "
 
 #: connect.cpp:329 connect.cpp:449 connect.cpp:468
 msgid " seconds"
@@ -235,11 +235,11 @@ msgstr "Ingen kopplingston"
 
 #: connect.cpp:356
 msgid "No Carrier"
-msgstr "Ingen bärvåg"
+msgstr "Ingen bÃ¤rvÃ¥g"
 
 #: connect.cpp:394
 msgid "Scanning "
-msgstr "Söker "
+msgstr "SÃ¶ker "
 
 #: connect.cpp:405
 msgid "Saving "
@@ -251,7 +251,7 @@ msgstr "Skickar "
 
 #: connect.cpp:435
 msgid "Expecting "
-msgstr "Väntar på "
+msgstr "VÃ¤ntar pÃ¥ "
 
 #: connect.cpp:447
 msgid "Pause "
@@ -263,7 +263,7 @@ msgstr "Tiden tog slut "
 
 #: connect.cpp:480 connect.cpp:481
 msgid "Hangup"
-msgstr "Lägger på"
+msgstr "LÃ¤gger pÃ¥"
 
 #: connect.cpp:494 connect.cpp:495
 msgid "Answer"
@@ -275,15 +275,15 @@ msgstr "ID "
 
 #: connect.cpp:540
 msgid "Password "
-msgstr "Lösenord "
+msgstr "LÃ¶senord "
 
 #: connect.cpp:578
 msgid "Prompting "
-msgstr "Frågar "
+msgstr "FrÃ¥gar "
 
 #: connect.cpp:615
 msgid "PW Prompt "
-msgstr "Frågar efter lösenord "
+msgstr "FrÃ¥gar efter lÃ¶senord "
 
 #: connect.cpp:641
 msgid "Loop Start "
@@ -291,11 +291,11 @@ msgstr "Loopstart "
 
 #: connect.cpp:645
 msgid "ERROR: Nested too deep, ignored."
-msgstr "FEL: Loopar för djupt nästlade, ignorerar."
+msgstr "FEL: Loopar fÃ¶r djupt nÃ¤stlade, ignorerar."
 
 #: connect.cpp:650
 msgid "Loops nested too deeply!"
-msgstr "Loopar för djupt nästlade"
+msgstr "Loopar fÃ¶r djupt nÃ¤stlade"
 
 #: connect.cpp:668
 msgid "LoopEnd without matching Start! Line: "
@@ -307,7 +307,7 @@ msgstr "Startar pppd ..."
 
 #: connect.cpp:828
 msgid "Scan Var: "
-msgstr "Sökvariabel: "
+msgstr "SÃ¶kvariabel: "
 
 #: connect.cpp:839
 msgid "Found: "
@@ -319,7 +319,7 @@ msgstr "Loopar: "
 
 #: connect.cpp:884 modeminfo.cpp:227
 msgid "One Moment Please ..."
-msgstr "Ett ögonblick ..."
+msgstr "Ett Ã¶gonblick ..."
 
 #: connect.cpp:928
 msgid "Script timed out!"
@@ -327,19 +327,19 @@ msgstr "Skriptets tid tog slut!"
 
 #: connect.cpp:947
 msgid "Scanning: "
-msgstr "Söker: "
+msgstr "SÃ¶ker: "
 
 #: connect.cpp:957
 msgid "Expecting: "
-msgstr "Förväntar: "
+msgstr "FÃ¶rvÃ¤ntar: "
 
 #: connect.cpp:984
 msgid "Logging on to Network ..."
-msgstr "Ansluter till nätverket ..."
+msgstr "Ansluter till nÃ¤tverket ..."
 
 #: connect.cpp:1010
 msgid "Running Startup Command ..."
-msgstr "Kör startkommandot ..."
+msgstr "KÃ¶r startkommandot ..."
 
 #: connect.cpp:1015 connect.cpp:1022
 msgid "Done"
@@ -350,8 +350,8 @@ msgid ""
 "pppd command + command-line arguments exeed\n"
 "2024 characters in length. What are you doing?"
 msgstr ""
-"pppd-kommandot + argumenten till det är över\n"
-"2024 tecken långt. Vad håller du på med?"
+"pppd-kommandot + argumenten till det Ã¤r Ã¶ver\n"
+"2024 tecken lÃ¥ngt. Vad hÃ¥ller du pÃ¥ med?"
 
 #: conwindow.cpp:43
 msgid "Connected at:"
@@ -379,11 +379,11 @@ msgstr "Detaljer"
 
 #: debug.cpp:47
 msgid "Login Script Debug Window"
-msgstr "Inloggningsskript - avlusningsfönster"
+msgstr "Inloggningsskript - avlusningsfÃ¶nster"
 
 #: edit.cpp:43
 msgid "Dial Setup"
-msgstr "Uppringningsinställningar"
+msgstr "UppringningsinstÃ¤llningar"
 
 #: edit.cpp:46
 msgid "Connection Name:"
@@ -391,7 +391,7 @@ msgstr "Anslutningens namn:"
 
 #: edit.cpp:56
 msgid "Type in a unique name for this connection"
-msgstr "Skriv in ett unikt namn för den här anslutningen"
+msgstr "Skriv in ett unikt namn fÃ¶r den hÃ¤r anslutningen"
 
 #: edit.cpp:59
 msgid "Phone Number:"
@@ -405,10 +405,10 @@ msgid ""
 "<i>kppp</i>will try the next number and so on"
 msgstr ""
 "Anger telefonnumret att ringa. Du kan ange\n"
-"flera nummer åtskilda med kolon. När ett\n"
-"nummer är upptaget eller inte funkar så\n"
-"kommer <i>kppp</i> försöka nästa nummer\n"
-"och så vidare"
+"flera nummer Ã¥tskilda med kolon. NÃ¤r ett\n"
+"nummer Ã¤r upptaget eller inte funkar sÃ¥\n"
+"kommer <i>kppp</i> fÃ¶rsÃ¶ka nÃ¤sta nummer\n"
+"och sÃ¥ vidare"
 
 #: edit.cpp:75
 msgid "Authentication:"
@@ -441,19 +441,19 @@ msgid ""
 "If you can choose between PAP and CHAP,\n"
 "choose CHAP, because it's much safer."
 msgstr ""
-"Anger metoden som ska användas för att bevisa din identitet\n"
-"för PPP-servern. De flesta universitet använder fortfarande\n"
+"Anger metoden som ska anvÃ¤ndas fÃ¶r att bevisa din identitet\n"
+"fÃ¶r PPP-servern. De flesta universitet anvÃ¤nder fortfarande\n"
 "<b>terminal</b>- eller <b>skript</b>baserad identifiering,\n"
-"medan de flesta internetleverantörer använder <b>PAP</b>\n"
-"och/eller <b>CHAP</b>. Om du är osäker, kontakta din\n"
-"internetleverantör.\n"
+"medan de flesta internetleverantÃ¶rer anvÃ¤nder <b>PAP</b>\n"
+"och/eller <b>CHAP</b>. Om du Ã¤r osÃ¤ker, kontakta din\n"
+"internetleverantÃ¶r.\n"
 "\n"
-"Om du kan välja mellan PAP och CHAP så välj CHAP, eftersom\n"
-"det är mycket säkrare."
+"Om du kan vÃ¤lja mellan PAP och CHAP sÃ¥ vÃ¤lj CHAP, eftersom\n"
+"det Ã¤r mycket sÃ¤krare."
 
 #: edit.cpp:97
 msgid "Store password"
-msgstr "Spara lösenordet"
+msgstr "Spara lÃ¶senordet"
 
 #: edit.cpp:101
 msgid ""
@@ -466,21 +466,21 @@ msgid ""
 "readable only to you. Make sure nobody\n"
 "gains access to this file!"
 msgstr ""
-"När detta är påslaget så sparas ditt lösenord\n"
-"i <i>kppp</i>:s inställningsfil så att du inte\n"
-"behöver skriva in det varje gång\n"
+"NÃ¤r detta Ã¤r pÃ¥slaget sÃ¥ sparas ditt lÃ¶senord\n"
+"i <i>kppp</i>:s instÃ¤llningsfil sÃ¥ att du inte\n"
+"behÃ¶ver skriva in det varje gÃ¥ng\n"
 "\n"
-"<b><red>Varning:<black> ditt lösenord kommer\n"
-"lagras i klartext i inställningsfilen, som\n"
-"endast du kan läsa. Försäkra dig om att ingen\n"
-"får tillgång till den filen!"
+"<b><red>Varning:<black> ditt lÃ¶senord kommer\n"
+"lagras i klartext i instÃ¤llningsfilen, som\n"
+"endast du kan lÃ¤sa. FÃ¶rsÃ¤kra dig om att ingen\n"
+"fÃ¥r tillgÃ¥ng till den filen!"
 
 #: edit.cpp:110
 msgid ""
 "Execute program\n"
 "upon connect:"
 msgstr ""
-"Kör program\n"
+"KÃ¶r program\n"
 "vid anslutning:"
 
 #: edit.cpp:121
@@ -492,11 +492,11 @@ msgid ""
 "\n"
 "Very usefull for fetching mail and news"
 msgstr ""
-"Tillåter dig att köra ett program <b>efter</b> att en\n"
-"förbindelse kopplats upp. När ditt program startas är\n"
-"alla förberedelser för en internetkoppling klara.\n"
+"TillÃ¥ter dig att kÃ¶ra ett program <b>efter</b> att en\n"
+"fÃ¶rbindelse kopplats upp. NÃ¤r ditt program startas Ã¤r\n"
+"alla fÃ¶rberedelser fÃ¶r en internetkoppling klara.\n"
 "\n"
-"Väldigt användbart för att hämta E-post och\n"
+"VÃ¤ldigt anvÃ¤ndbart fÃ¶r att hÃ¤mta E-post och\n"
 "diskussionsgrupper"
 
 #: edit.cpp:129
@@ -504,8 +504,8 @@ msgid ""
 "Execute program\n"
 "before disconnect:"
 msgstr ""
-"Kör program\n"
-"före nerkoppling:"
+"KÃ¶r program\n"
+"fÃ¶re nerkoppling:"
 
 #: edit.cpp:141
 msgid ""
@@ -513,16 +513,16 @@ msgid ""
 "is closed. The connection will stay open until\n"
 "the program exits."
 msgstr ""
-"Tillåter dig att köra ett program <b>före</b> det att\n"
-"en förbindelse kopplas ner. Förbindelsen kommer vara\n"
-"uppe ända tills programmet har avslutats."
+"TillÃ¥ter dig att kÃ¶ra ett program <b>fÃ¶re</b> det att\n"
+"en fÃ¶rbindelse kopplas ner. FÃ¶rbindelsen kommer vara\n"
+"uppe Ã¤nda tills programmet har avslutats."
 
 #: edit.cpp:145
 msgid ""
 "Execute program\n"
 "upon disconnect:"
 msgstr ""
-"Kör program\n"
+"KÃ¶r program\n"
 "vid nerkoppling:"
 
 #: edit.cpp:157
@@ -530,12 +530,12 @@ msgid ""
 "Allows you to run a program <b>after</b> a connection\n"
 "has been closed."
 msgstr ""
-"Tillåter dig att köra ett program <b>efter</b> det att\n"
-"en förbindelse har kopplats ner."
+"TillÃ¥ter dig att kÃ¶ra ett program <b>efter</b> det att\n"
+"en fÃ¶rbindelse har kopplats ner."
 
 #: edit.cpp:161
 msgid "Edit pppd arguments:"
-msgstr "Ändra pppd-parametrar:"
+msgstr "Ã„ndra pppd-parametrar:"
 
 #: edit.cpp:166
 msgid "Arguments"
@@ -543,7 +543,7 @@ msgstr "Parametrar"
 
 #: edit.cpp:223
 msgid "IP Setup"
-msgstr "IP-inställningar"
+msgstr "IP-instÃ¤llningar"
 
 #: edit.cpp:229
 msgid "IP Address:"
@@ -555,11 +555,11 @@ msgid ""
 "address, you must supply your IP address here"
 msgstr ""
 "Om din dator har en permanent internetadress\n"
-"så ska du ange din IP-adress här"
+"sÃ¥ ska du ange din IP-adress hÃ¤r"
 
 #: edit.cpp:237
 msgid "Subnet Mask:"
-msgstr "Undernät-mask:"
+msgstr "UndernÃ¤t-mask:"
 
 #: edit.cpp:240
 msgid ""
@@ -570,12 +570,12 @@ msgid ""
 "\n"
 "If unsure, contact your Internet Service Provider"
 msgstr ""
-"Om din dator har en fast internetadress så ska du\n"
-"ange en nätverksmask här. I de allra flesta fallen\n"
-"kommer denna nätmask vara <b>255.255.255.0</b>,\n"
+"Om din dator har en fast internetadress sÃ¥ ska du\n"
+"ange en nÃ¤tverksmask hÃ¤r. I de allra flesta fallen\n"
+"kommer denna nÃ¤tmask vara <b>255.255.255.0</b>,\n"
 "men det kan variera.\n"
 "\n"
-"Om du är osäker, kontakta din internetoperator."
+"Om du Ã¤r osÃ¤ker, kontakta din internetoperator."
 
 #: edit.cpp:254
 msgid "Dynamic IP Address"
@@ -590,11 +590,11 @@ msgid ""
 "Almost every Internet Service Provider uses\n"
 "this method, so this should be turned on."
 msgstr ""
-"Välj detta om din dator får en internetadress (IP)\n"
-"varje gång en förbindelse kopplas upp.\n"
+"VÃ¤lj detta om din dator fÃ¥r en internetadress (IP)\n"
+"varje gÃ¥ng en fÃ¶rbindelse kopplas upp.\n"
 "\n"
-"Nästan alla internetleverantörer använder den här\n"
-"metoden, så den bör vara påslagen."
+"NÃ¤stan alla internetleverantÃ¶rer anvÃ¤nder den hÃ¤r\n"
+"metoden, sÃ¥ den bÃ¶r vara pÃ¥slagen."
 
 #: edit.cpp:264
 msgid "Static IP Address"
@@ -608,14 +608,14 @@ msgid ""
 "dynamic IP addressing unless you know what you\n"
 "are doing"
 msgstr ""
-"Välj detta om din dator har en fast internetadress (IP).\n"
-"De flesta datorer har inte det, så du bör nog välja\n"
-"dynamisk IP-adresss såvida du inte vet vad du håller\n"
-"på med."
+"VÃ¤lj detta om din dator har en fast internetadress (IP).\n"
+"De flesta datorer har inte det, sÃ¥ du bÃ¶r nog vÃ¤lja\n"
+"dynamisk IP-adresss sÃ¥vida du inte vet vad du hÃ¥ller\n"
+"pÃ¥ med."
 
 #: edit.cpp:274
 msgid "Auto-configure hostname from this IP"
-msgstr "Ändra automatiskt datorns namn till det för IP-adressen"
+msgstr "Ã„ndra automatiskt datorns namn till det fÃ¶r IP-adressen"
 
 #: edit.cpp:279
 msgid ""
@@ -628,14 +628,14 @@ msgid ""
 "\n"
 "Don't enable this unless you really need it"
 msgstr ""
-"När du kopplar upp dig så ställer detta om din\n"
-"dators namn att stämma överens med den IP-adress\n"
-"du fick från PPP-servern. Detta kan vara användbart\n"
-"om du behöver använda ett protokoll som beror av\n"
-"den informationen, men det kan också orsaka flera\n"
+"NÃ¤r du kopplar upp dig sÃ¥ stÃ¤ller detta om din\n"
+"dators namn att stÃ¤mma Ã¶verens med den IP-adress\n"
+"du fick frÃ¥n PPP-servern. Detta kan vara anvÃ¤ndbart\n"
+"om du behÃ¶ver anvÃ¤nda ett protokoll som beror av\n"
+"den informationen, men det kan ocksÃ¥ orsaka flera\n"
 "olika <link kppp-7.html#autohostname>problems</link>.\n"
 "\n"
-"Aktivera inte detta om du inte verkligen behöver det."
+"Aktivera inte detta om du inte verkligen behÃ¶ver det."
 
 #: edit.cpp:396
 msgid "DNS Servers"
@@ -643,7 +643,7 @@ msgstr "DNS-servrar"
 
 #: edit.cpp:411
 msgid "Domain Name:"
-msgstr "Domännamn:"
+msgstr "DomÃ¤nnamn:"
 
 #: edit.cpp:422
 msgid ""
@@ -656,14 +656,14 @@ msgid ""
 "If you leave this field blank, no changes are\n"
 "made to the domain name."
 msgstr ""
-"Om du skriver in ett domännamn här så kommer\n"
-"det domännamnet användas för din dator medan\n"
-"du är uppkopplad. När förbindelsen kopplas ner\n"
-"så kommer det ursprungliga domännamnet\n"
-"återställas.\n"
+"Om du skriver in ett domÃ¤nnamn hÃ¤r sÃ¥ kommer\n"
+"det domÃ¤nnamnet anvÃ¤ndas fÃ¶r din dator medan\n"
+"du Ã¤r uppkopplad. NÃ¤r fÃ¶rbindelsen kopplas ner\n"
+"sÃ¥ kommer det ursprungliga domÃ¤nnamnet\n"
+"Ã¥terstÃ¤llas.\n"
 "\n"
-"Om du lämnar detta fält tomt så kommer\n"
-"domännamnet inte att ändras."
+"Om du lÃ¤mnar detta fÃ¤lt tomt sÃ¥ kommer\n"
+"domÃ¤nnamnet inte att Ã¤ndras."
 
 #: edit.cpp:431
 msgid "DNS IP Address:"
@@ -679,13 +679,13 @@ msgid ""
 "To add a DNS server, type in the IP address of\n"
 "of the DNS server here and click on <b>Add</b>"
 msgstr ""
-"Tillåter dig att ange en ny DNS-server som ska\n"
-"användas medan du är uppkopplad. När förbindelsen\n"
-"kopplas ner så kommer denna DNS-server att tas\n"
+"TillÃ¥ter dig att ange en ny DNS-server som ska\n"
+"anvÃ¤ndas medan du Ã¤r uppkopplad. NÃ¤r fÃ¶rbindelsen\n"
+"kopplas ner sÃ¥ kommer denna DNS-server att tas\n"
 "bort igen.\n"
 "\n"
-"För att lägga till en DNS-server, skriv in\n"
-"DNS-serverns IP-adress här och klicka på <b>Lägg till</b>"
+"FÃ¶r att lÃ¤gga till en DNS-server, skriv in\n"
+"DNS-serverns IP-adress hÃ¤r och klicka pÃ¥ <b>LÃ¤gg till</b>"
 
 #: edit.cpp:465
 msgid ""
@@ -693,17 +693,17 @@ msgid ""
 "specified in the field above. The entry\n"
 "will then be added to the list below"
 msgstr ""
-"Klicka på den här knappen för att lägga till\n"
-"DNS-serverns som angetts i fälten ovan.\n"
-"Posten kommer läggas till listan nedanför."
+"Klicka pÃ¥ den hÃ¤r knappen fÃ¶r att lÃ¤gga till\n"
+"DNS-serverns som angetts i fÃ¤lten ovan.\n"
+"Posten kommer lÃ¤ggas till listan nedanfÃ¶r."
 
 #: edit.cpp:477
 msgid ""
 "Click this button to remove the selected DNS\n"
 "server entry from the list below"
 msgstr ""
-"Klicka på den här knappen för att ta bort den\n"
-"valda DNS-servern från listan nedanför."
+"Klicka pÃ¥ den hÃ¤r knappen fÃ¶r att ta bort den\n"
+"valda DNS-servern frÃ¥n listan nedanfÃ¶r."
 
 #: edit.cpp:480
 msgid "DNS Address List:"
@@ -715,14 +715,14 @@ msgid ""
 "while you are connected. Use the <b>Add</b> and\n"
 "<b>Remove</b> buttons to modify the list"
 msgstr ""
-"Här visas alla definierade DNS-servrar som ska\n"
-"användas när du är uppkopplad. Använd <b>Lägg till</b>-\n"
-"och <b>Ta bort</b>-knapparna för att ändra i\n"
+"HÃ¤r visas alla definierade DNS-servrar som ska\n"
+"anvÃ¤ndas nÃ¤r du Ã¤r uppkopplad. AnvÃ¤nd <b>LÃ¤gg till</b>-\n"
+"och <b>Ta bort</b>-knapparna fÃ¶r att Ã¤ndra i\n"
 "listan."
 
 #: edit.cpp:496
 msgid "Disable existing DNS Servers during Connection"
-msgstr "Använd inte redan existerande DNS-servrar under anslutningen"
+msgstr "AnvÃ¤nd inte redan existerande DNS-servrar under anslutningen"
 
 #: edit.cpp:503
 msgid ""
@@ -736,19 +736,19 @@ msgid ""
 "option, but it may become useful under \n"
 "some circumstances"
 msgstr ""
-"När detta är valt så stängs alla DNS-servrar i\n"
-"<i>/etc/resolv.conf</i> tillfälligt av medan\n"
-"den uppringda förbindelsen är uppe. Efter att\n"
-"förbindelsen har kopplats ner kommer servrarna\n"
-"åter att användas.\n"
+"NÃ¤r detta Ã¤r valt sÃ¥ stÃ¤ngs alla DNS-servrar i\n"
+"<i>/etc/resolv.conf</i> tillfÃ¤lligt av medan\n"
+"den uppringda fÃ¶rbindelsen Ã¤r uppe. Efter att\n"
+"fÃ¶rbindelsen har kopplats ner kommer servrarna\n"
+"Ã¥ter att anvÃ¤ndas.\n"
 "\n"
 "Det finns normalt sett ingen anledning att\n"
-"använda detta, men det kan vara användbart\n"
-"under vissa omständigheter"
+"anvÃ¤nda detta, men det kan vara anvÃ¤ndbart\n"
+"under vissa omstÃ¤ndigheter"
 
 #: edit.cpp:572
 msgid "Gateway Setup"
-msgstr "Gateway-inställningar"
+msgstr "Gateway-instÃ¤llningar"
 
 #: edit.cpp:581
 msgid "Default Gateway"
@@ -765,13 +765,13 @@ msgid ""
 "This is the default for most ISPs, so you should\n"
 "probably leave this option on"
 msgstr ""
-"Detta låter PPP-servern fungera som en gateway.\n"
+"Detta lÃ¥ter PPP-servern fungera som en gateway.\n"
 "Din dator kommer skicka alla paket som inte ska till\n"
-"någon dator inom det lokala nätveret till PPP-\n"
+"nÃ¥gon dator inom det lokala nÃ¤tveret till PPP-\n"
 "servern, som kommer routa paketet.\n"
 "\n"
-"Detta är standard för de flesta interneoperatörer,\n"
-"så du bör förmodligen låta det vara påslaget"
+"Detta Ã¤r standard fÃ¶r de flesta interneoperatÃ¶rer,\n"
+"sÃ¥ du bÃ¶r fÃ¶rmodligen lÃ¥ta det vara pÃ¥slaget"
 
 #: edit.cpp:595
 msgid "Static Gateway"
@@ -782,7 +782,7 @@ msgid ""
 "Allows you to specify which computer you want\n"
 "to use as gateway (see <i>Default Gateway</i> above"
 msgstr ""
-"Tillåter dig att ange vilken dator du vill använda\n"
+"TillÃ¥ter dig att ange vilken dator du vill anvÃ¤nda\n"
 "som gateway (se <i>Standard-gateway</i> ovan)"
 
 #: edit.cpp:603
@@ -790,12 +790,12 @@ msgid ""
 "Gateway\n"
 "IP Address:"
 msgstr ""
-"IP-adress för\n"
+"IP-adress fÃ¶r\n"
 "gateway:"
 
 #: edit.cpp:605
 msgid "Assign the Default Route to this Gateway"
-msgstr "Sätt standardrutt (default route) till denna gateway"
+msgstr "SÃ¤tt standardrutt (default route) till denna gateway"
 
 #: edit.cpp:608
 msgid ""
@@ -805,23 +805,23 @@ msgid ""
 "\n"
 "Normally, you should turn this on"
 msgstr ""
-"Om detta är valt så kommer alla paket som inte\n"
-"ska till det lokala nätverket att routas genom\n"
-"PPP-förbindelsen.\n"
+"Om detta Ã¤r valt sÃ¥ kommer alla paket som inte\n"
+"ska till det lokala nÃ¤tverket att routas genom\n"
+"PPP-fÃ¶rbindelsen.\n"
 "\n"
 "Detta ska normalt vara aktiverat"
 
 #: edit.cpp:703
 msgid "Edit Script"
-msgstr "Ändra skript"
+msgstr "Ã„ndra skript"
 
 #: general.cpp:50
 msgid "kppp Setup"
-msgstr "Kppp-inställningar"
+msgstr "Kppp-instÃ¤llningar"
 
 #: general.cpp:56
 msgid "pppd Timeout:"
-msgstr "tidsgräns för pppd:"
+msgstr "tidsgrÃ¤ns fÃ¶r pppd:"
 
 #: general.cpp:69
 msgid ""
@@ -830,11 +830,11 @@ msgid ""
 "If no connection is made in this time frame,\n"
 "<i>kppp</i> will give up and kill pppd."
 msgstr ""
-"<i>kppp</i> kommer vänta så här många sekunder\n"
-"på att en PPP-förbindelse upprättas.\n"
-"Om ingen förbindelse upprättades inom den\n"
-"angivna tidsramen så kommer <i>kppp</i> ge upp\n"
-"och döda pppd."
+"<i>kppp</i> kommer vÃ¤nta sÃ¥ hÃ¤r mÃ¥nga sekunder\n"
+"pÃ¥ att en PPP-fÃ¶rbindelse upprÃ¤ttas.\n"
+"Om ingen fÃ¶rbindelse upprÃ¤ttades inom den\n"
+"angivna tidsramen sÃ¥ kommer <i>kppp</i> ge upp\n"
+"och dÃ¶da pppd."
 
 #: general.cpp:74 general.cpp:401 general.cpp:490
 msgid "Seconds"
@@ -854,16 +854,16 @@ msgid ""
 "window to it's original location and\n"
 "size."
 msgstr ""
-"Efter att förbindelsen har upprättats minimeras\n"
-"fönstret och representeras av en liten ikon som\n"
+"Efter att fÃ¶rbindelsen har upprÃ¤ttats minimeras\n"
+"fÃ¶nstret och representeras av en liten ikon som\n"
 "visas i <i>kpanel</i>.\n"
 "\n"
-"Om du klickar på den ikonen återställs fönstret\n"
+"Om du klickar pÃ¥ den ikonen Ã¥terstÃ¤lls fÃ¶nstret\n"
 "till dess ursprungliga plats och storlek."
 
 #: general.cpp:102
 msgid "Automatic Redial on Disconnect"
-msgstr "Ring automatiskt upp igen vid frånkoppling"
+msgstr "Ring automatiskt upp igen vid frÃ¥nkoppling"
 
 #: general.cpp:108
 msgid ""
@@ -873,11 +873,11 @@ msgid ""
 "\n"
 "See <link #redial>here</link> for more on this topic."
 msgstr ""
-"Om en förbindelse är upprättad och av någon anledning\n"
-"bryts så kommer <i>kppp</i> försöka återupprätta\n"
-"förbindelsen till samma konto.\n"
+"Om en fÃ¶rbindelse Ã¤r upprÃ¤ttad och av nÃ¥gon anledning\n"
+"bryts sÃ¥ kommer <i>kppp</i> fÃ¶rsÃ¶ka Ã¥terupprÃ¤tta\n"
+"fÃ¶rbindelsen till samma konto.\n"
 "\n"
-"Kolla <link #redial>här</link> för mer om detta."
+"Kolla <link #redial>hÃ¤r</link> fÃ¶r mer om detta."
 
 #: general.cpp:114
 msgid "Show Clock on Caption"
@@ -890,9 +890,9 @@ msgid ""
 "was established. Very useful, so you \n"
 "should turn this on"
 msgstr ""
-"När detta är valt visas tiden uppkopplad i\n"
-"fönstrets namnlist. Väldigt praktiskt, så\n"
-"du bör aktivera detta"
+"NÃ¤r detta Ã¤r valt visas tiden uppkopplad i\n"
+"fÃ¶nstrets namnlist. VÃ¤ldigt praktiskt, sÃ¥\n"
+"du bÃ¶r aktivera detta"
 
 #: general.cpp:125
 msgid "Disconnect on X-server shutdown"
@@ -907,11 +907,11 @@ msgid ""
 "\n"
 "See <link #disxserver>here</link> for more on this."
 msgstr ""
-"Om detta är valt så kommer förbindelsen att kopplas\n"
-"ner om X-servern avslutas. Du bör aktivera detta\n"
-"såvida du inte vet vad du håller på med.\n"
+"Om detta Ã¤r valt sÃ¥ kommer fÃ¶rbindelsen att kopplas\n"
+"ner om X-servern avslutas. Du bÃ¶r aktivera detta\n"
+"sÃ¥vida du inte vet vad du hÃ¥ller pÃ¥ med.\n"
 "\n"
-"Kolla <link #disxserver>här</link> för mer om detta."
+"Kolla <link #disxserver>hÃ¤r</link> fÃ¶r mer om detta."
 
 #: general.cpp:138
 msgid "Quit on Disconnect"
@@ -922,20 +922,20 @@ msgid ""
 "When this option is turned on, <i>kppp</i>\n"
 "will be closed when you disconnect"
 msgstr ""
-"Om det här är valt så kommer <i>kppp</i> avslutas\n"
-"när du kopplar ner förbindelsen"
+"Om det hÃ¤r Ã¤r valt sÃ¥ kommer <i>kppp</i> avslutas\n"
+"nÃ¤r du kopplar ner fÃ¶rbindelsen"
 
 #: general.cpp:147
 msgid "Minimize Window on Connect"
-msgstr "Minimera fönstret vid uppkoppling"
+msgstr "Minimera fÃ¶nstret vid uppkoppling"
 
 #: general.cpp:153
 msgid ""
 "Iconifies <i>kppp</i>'s window when a\n"
 "connection is established"
 msgstr ""
-"Ikonifierar <i>kppp</i>:s fönster när en\n"
-"förbindelse upprättas"
+"Ikonifierar <i>kppp</i>:s fÃ¶nster nÃ¤r en\n"
+"fÃ¶rbindelse upprÃ¤ttas"
 
 #: general.cpp:202
 msgid "About kppp"
@@ -968,11 +968,11 @@ msgstr ""
 "    Mario Weilguni <mweilguni@kde.org>\n"
 "\n"
 "Ursprunglig upphovsman: Bernd Johannes Wuebben\n"
-"Underhålls för närvarande av Harri Porten och Mario\n"
+"UnderhÃ¥lls fÃ¶r nÃ¤rvarande av Harri Porten och Mario\n"
 "Weilguni. Var god skicka alla felrapporter till den\n"
-"nuvarande underhållaren.\n"
+"nuvarande underhÃ¥llaren.\n"
 "\n"
-"Det här programmet distribueras under GNU GPL\n"
+"Det hÃ¤r programmet distribueras under GNU GPL\n"
 "(GNU General Public License)."
 
 #: general.cpp:238
@@ -993,17 +993,17 @@ msgid ""
 "emulation (most cards under Linux support this), you\n"
 "should select one of the /dev/ttyIx devices."
 msgstr ""
-"Det her anger den seriellport som ditt modem är anslutet\n"
-"till. Under Linux/x86 är detta typiskt antingen /dev/ttyS0 \n"
+"Det her anger den seriellport som ditt modem Ã¤r anslutet\n"
+"till. Under Linux/x86 Ã¤r detta typiskt antingen /dev/ttyS0 \n"
 "(COM1 under DOS) eller /dev/ttyS1 (COM2 under DOS).\n"
 "\n"
 "Om du har ett internt ISDN-kort med AT-kommandoemulering\n"
-"(de flesta kort under Linux stödjer detta) så ska du välja\n"
-"någon av /dev/ttyIx-enheterna."
+"(de flesta kort under Linux stÃ¶djer detta) sÃ¥ ska du vÃ¤lja\n"
+"nÃ¥gon av /dev/ttyIx-enheterna."
 
 #: general.cpp:264
 msgid "Flow Control:"
-msgstr "Flödeskontroll:"
+msgstr "FlÃ¶deskontroll:"
 
 #: general.cpp:270
 msgid "None"
@@ -1018,8 +1018,8 @@ msgid ""
 "<b>Default</b>: CRTSCTS"
 msgstr ""
 "Anger hur seriellporten och modemet kommunicerar.\n"
-"Du bör inte ändra detta såvida du inte vet vad du\n"
-"håller på med.\n"
+"Du bÃ¶r inte Ã¤ndra detta sÃ¥vida du inte vet vad du\n"
+"hÃ¥ller pÃ¥ med.\n"
 "\n"
 "<b>Standard</b>: CRTSCTS"
 
@@ -1038,10 +1038,10 @@ msgid ""
 "<b>Default</b>: CR"
 msgstr ""
 "Anger hur AT-kommandon skickas till ditt\n"
-"modem. De flesta modem fungerar utmärkt med\n"
-"standardvärdet <i>CR</i>. Om ditt modem inte\n"
-"reagrear på initsträngen så bör du försöka med\n"
-"att ändra den här inställningen.\n"
+"modem. De flesta modem fungerar utmÃ¤rkt med\n"
+"standardvÃ¤rdet <i>CR</i>. Om ditt modem inte\n"
+"reagrear pÃ¥ initstrÃ¤ngen sÃ¥ bÃ¶r du fÃ¶rsÃ¶ka med\n"
+"att Ã¤ndra den hÃ¤r instÃ¤llningen.\n"
 "\n"
 "<b>Standard</b>: CR"
 
@@ -1059,15 +1059,15 @@ msgid ""
 "that your serial port supports higher speeds)."
 msgstr ""
 "Anger hastigheten som ditt modem och seriellporten\n"
-"pratar med varandra med. Du bör börja med\n"
-"standardvärdet 38400 bitar/sekund. Om allting\n"
-"fungerar kan du prova att öka det här värdet, men\n"
-"inte till mer än 115200 bits/sec (såvida du inte\n"
-"vet att din seriellport stödjer högre hastigheter)."
+"pratar med varandra med. Du bÃ¶r bÃ¶rja med\n"
+"standardvÃ¤rdet 38400 bitar/sekund. Om allting\n"
+"fungerar kan du prova att Ã¶ka det hÃ¤r vÃ¤rdet, men\n"
+"inte till mer Ã¤n 115200 bits/sec (sÃ¥vida du inte\n"
+"vet att din seriellport stÃ¶djer hÃ¶gre hastigheter)."
 
 #: general.cpp:364
 msgid "Use Lock File"
-msgstr "Använd låsfil"
+msgstr "AnvÃ¤nd lÃ¥sfil"
 
 #: general.cpp:375
 msgid ""
@@ -1081,17 +1081,17 @@ msgid ""
 "\n"
 "<b>Default</b>: On"
 msgstr ""
-"För att förhindra att andra program använder modemet\n"
-"när en förbindelse är upprättad kan man skapa en fil\n"
-"som anger att modemet används. Under Linux kan en\n"
-"sådan fil till exempel heta <i>/var/lock/LCK..ttyS1</i>\n"
-"Här kan du välja om sådan låsning ska utföras.\n"
+"FÃ¶r att fÃ¶rhindra att andra program anvÃ¤nder modemet\n"
+"nÃ¤r en fÃ¶rbindelse Ã¤r upprÃ¤ttad kan man skapa en fil\n"
+"som anger att modemet anvÃ¤nds. Under Linux kan en\n"
+"sÃ¥dan fil till exempel heta <i>/var/lock/LCK..ttyS1</i>\n"
+"HÃ¤r kan du vÃ¤lja om sÃ¥dan lÃ¥sning ska utfÃ¶ras.\n"
 "\n"
-"<b>Standard</b>: På"
+"<b>Standard</b>: PÃ¥"
 
 #: general.cpp:386
 msgid "Modem Timeout:"
-msgstr "Tidsgräns för modem:"
+msgstr "TidsgrÃ¤ns fÃ¶r modem:"
 
 #: general.cpp:405
 msgid ""
@@ -1099,9 +1099,9 @@ msgid ""
 "<i>CONNECT</i> response from your modem. The\n"
 "recommended value is 30 seconds."
 msgstr ""
-"Detta anger hur lång tid <i>kppp</i> väntar på ett\n"
-"<i>CONNECT</i>-svar från ditt modem. Det rekommenderade\n"
-"värdet är 30 sekunder."
+"Detta anger hur lÃ¥ng tid <i>kppp</i> vÃ¤ntar pÃ¥ ett\n"
+"<i>CONNECT</i>-svar frÃ¥n ditt modem. Det rekommenderade\n"
+"vÃ¤rdet Ã¤r 30 sekunder."
 
 #: general.cpp:466 main.cpp:722
 msgid "Modem"
@@ -1109,7 +1109,7 @@ msgstr "Modem"
 
 #: general.cpp:477
 msgid "Busy Wait:"
-msgstr "Vänta vid upptaget:"
+msgstr "VÃ¤nta vid upptaget:"
 
 #: general.cpp:495
 msgid ""
@@ -1121,13 +1121,13 @@ msgid ""
 "The default is 0 seconds, you should not change\n"
 "this unless you need to."
 msgstr ""
-"Anger antalet sekunder att vänta innan nästa försök\n"
-"om alla uppringda nummer är upptagna. Detta är\n"
-"nödvändigt eftersom vissa modem fastnar ifall samma\n"
-"nummer är upptaget för ofta.\n"
+"Anger antalet sekunder att vÃ¤nta innan nÃ¤sta fÃ¶rsÃ¶k\n"
+"om alla uppringda nummer Ã¤r upptagna. Detta Ã¤r\n"
+"nÃ¶dvÃ¤ndigt eftersom vissa modem fastnar ifall samma\n"
+"nummer Ã¤r upptaget fÃ¶r ofta.\n"
 "\n"
-"Standardvärdet är 0 sekunder. Du bör inte ändra det\n"
-"ifall du inte behöver."
+"StandardvÃ¤rdet Ã¤r 0 sekunder. Du bÃ¶r inte Ã¤ndra det\n"
+"ifall du inte behÃ¶ver."
 
 #: general.cpp:509
 msgid "Modem volume"
@@ -1143,13 +1143,13 @@ msgid ""
 "If this does not work for your modem,\n"
 "you must modify the modem volume command"
 msgstr ""
-"De flesta modem har en högtalare som ger ifrån\n"
-"sig en hel del oljud under uppringningen. Här kan\n"
-"du antingen stänga av ljudet helt och hållet eller\n"
-"välja en lägre volym.\n"
+"De flesta modem har en hÃ¶gtalare som ger ifrÃ¥n\n"
+"sig en hel del oljud under uppringningen. HÃ¤r kan\n"
+"du antingen stÃ¤nga av ljudet helt och hÃ¥llet eller\n"
+"vÃ¤lja en lÃ¤gre volym.\n"
 "\n"
-"Om detta inte fungerar med ditt modem, så\n"
-"måste du ändra volymkommandot för modemet"
+"Om detta inte fungerar med ditt modem, sÃ¥\n"
+"mÃ¥ste du Ã¤ndra volymkommandot fÃ¶r modemet"
 
 #: general.cpp:533
 msgid "Modem Asserts CD Line."
@@ -1163,8 +1163,8 @@ msgid ""
 "\n"
 "<b>Default</b>: off"
 msgstr ""
-"Detta ställer in hur <i>kppp</i> upptäcker att modemet\n"
-"inte svarar. Ändra inte detta såvida du inte har problem\n"
+"Detta stÃ¤ller in hur <i>kppp</i> upptÃ¤cker att modemet\n"
+"inte svarar. Ã„ndra inte detta sÃ¥vida du inte har problem\n"
 "med det.\n"
 "\n"
 "<b>Standard</b>: av"
@@ -1178,12 +1178,12 @@ msgid ""
 "Allows you to change the AT command for\n"
 "your modem."
 msgstr ""
-"Tillåter dig att ändra AT-kommandona för\n"
+"TillÃ¥ter dig att Ã¤ndra AT-kommandona fÃ¶r\n"
 "ditt modem."
 
 #: general.cpp:559
 msgid "Query Modem"
-msgstr "Undersök modemet"
+msgstr "UndersÃ¶k modemet"
 
 #: general.cpp:561
 msgid ""
@@ -1194,12 +1194,12 @@ msgid ""
 "this information.  It can be useful to help\n"
 "you setup the modem"
 msgstr ""
-"De flesta modem stödjer ATI-kommandouppsättningen för\n"
-"att ta reda på tillverkare och version av modemet.\n"
+"De flesta modem stÃ¶djer ATI-kommandouppsÃ¤ttningen fÃ¶r\n"
+"att ta reda pÃ¥ tillverkare och version av modemet.\n"
 "\n"
-"Tryck på den här knappen för att begära denna information\n"
-"från ditt modem. Det kan vara användbart för att hjälpa\n"
-"dig att ställa in ditt modem"
+"Tryck pÃ¥ den hÃ¤r knappen fÃ¶r att begÃ¤ra denna information\n"
+"frÃ¥n ditt modem. Det kan vara anvÃ¤ndbart fÃ¶r att hjÃ¤lpa\n"
+"dig att stÃ¤lla in ditt modem"
 
 #: general.cpp:568
 msgid "Terminal"
@@ -1211,33 +1211,33 @@ msgid ""
 "can use this if you want to play around\n"
 "with your modem's AT command set"
 msgstr ""
-"Öppnar det inbyggda terminalprogrammet. Du kan\n"
-"använda det om du vill leka med modemets\n"
+"Ã–ppnar det inbyggda terminalprogrammet. Du kan\n"
+"anvÃ¤nda det om du vill leka med modemets\n"
 "AT-kommandon"
 
 #: general.cpp:634
 msgid "Throughput graph"
-msgstr "Överföringsgraf"
+msgstr "Ã–verfÃ¶ringsgraf"
 
 #: general.cpp:643
 msgid "Background color"
-msgstr "Bakgrundsfärg"
+msgstr "BakgrundsfÃ¤rg"
 
 #: general.cpp:650
 msgid "Text color"
-msgstr "Textfärg"
+msgstr "TextfÃ¤rg"
 
 #: general.cpp:657
 msgid "Input bytes color"
-msgstr "Färg på inkommande byte"
+msgstr "FÃ¤rg pÃ¥ inkommande byte"
 
 #: general.cpp:664
 msgid "Output bytes color"
-msgstr "Färg på utgående byte"
+msgstr "FÃ¤rg pÃ¥ utgÃ¥ende byte"
 
 #: main.cpp:116
 msgid "Recent changes in kppp"
-msgstr "Senaste ändringarna i kppp"
+msgstr "Senaste Ã¤ndringarna i kppp"
 
 #: main.cpp:129
 msgid ""
@@ -1252,21 +1252,21 @@ msgid ""
 "\n"
 "To test it, right-click somewhere in this text."
 msgstr ""
-"Från och med version 1.4.8 har kppp en ny finess\n"
-"kallad \"Snabbhjälp\". Det liknar en beskrivningsruta,\n"
-"men du kan aktivera det närhelst du vill.\n"
+"FrÃ¥n och med version 1.4.8 har kppp en ny finess\n"
+"kallad \"SnabbhjÃ¤lp\". Det liknar en beskrivningsruta,\n"
+"men du kan aktivera det nÃ¤rhelst du vill.\n"
 "\n"
-"För att aktivera det är det bara att klicka på något,\n"
-"t ex en knapp eller en text, med höger musknapp. Om\n"
-"det du klickade på stödjer snabbhjälp så poppar det\n"
-"upp en meny som leder till snabbhjälpen.\n"
+"FÃ¶r att aktivera det Ã¤r det bara att klicka pÃ¥ nÃ¥got,\n"
+"t ex en knapp eller en text, med hÃ¶ger musknapp. Om\n"
+"det du klickade pÃ¥ stÃ¶djer snabbhjÃ¤lp sÃ¥ poppar det\n"
+"upp en meny som leder till snabbhjÃ¤lpen.\n"
 "\n"
-"För att testa det, högerklicka någostans i den\n"
-"här texten."
+"FÃ¶r att testa det, hÃ¶gerklicka nÃ¥gostans i den\n"
+"hÃ¤r texten."
 
 #: main.cpp:141
 msgid "Don't show this hint again"
-msgstr "Visa inte det här tipset igen"
+msgstr "Visa inte det hÃ¤r tipset igen"
 
 #: main.cpp:160
 msgid ""
@@ -1274,9 +1274,9 @@ msgid ""
 "This window will stay open until you\n"
 "click a mouse button or a hit a key.\n"
 msgstr ""
-"Det här är ett exempel på <b>snabbhjälp</b>.\n"
-"Det här fönstret kommer vara öppet tills du\n"
-"klickar med musknappen eller trycker på\n"
+"Det hÃ¤r Ã¤r ett exempel pÃ¥ <b>snabbhjÃ¤lp</b>.\n"
+"Det hÃ¤r fÃ¶nstret kommer vara Ã¶ppet tills du\n"
+"klickar med musknappen eller trycker pÃ¥\n"
 "en tangent.\n"
 
 #: main.cpp:403
@@ -1285,7 +1285,7 @@ msgid ""
 "kppp can't create or read from\n"
 "%s."
 msgstr ""
-"kppp kan inte skapa eller läsa från\n"
+"kppp kan inte skapa eller lÃ¤sa frÃ¥n\n"
 "%s."
 
 #: main.cpp:432
@@ -1299,12 +1299,12 @@ msgid ""
 "Make sure that you are not running another kppp,\n"
 "delete the pid file, and restart kppp."
 msgstr ""
-"kppp har upptäckt en %s-fil.\n"
+"kppp har upptÃ¤ckt en %s-fil.\n"
 "\n"
-"Det verkar som om kppp redan kör med\n"
+"Det verkar som om kppp redan kÃ¶r med\n"
 "process-ID %d.\n"
 "\n"
-"Se till att du inte redan kör kppp, radera\n"
+"Se till att du inte redan kÃ¶r kppp, radera\n"
 "pid-filen, och starta om kppp."
 
 #: main.cpp:438
@@ -1317,7 +1317,7 @@ msgstr "Anslut till: "
 
 #: main.cpp:513
 msgid "Login ID:"
-msgstr "Användarnamn:"
+msgstr "AnvÃ¤ndarnamn:"
 
 #: main.cpp:526
 msgid ""
@@ -1329,19 +1329,19 @@ msgid ""
 "<b>Important</b>: case is important here:\n"
 "<i>myusername</i> is not the same as <i>MyUserName</i>!"
 msgstr ""
-"Skriv in det användarnamn som du fått från din\n"
-"internetleverantör. Det är särskilt viktigt för\n"
-"PAP och CHAP. Det är inte nödvändigt att skriva\n"
-"in det om du använder terminal- eller\n"
+"Skriv in det anvÃ¤ndarnamn som du fÃ¥tt frÃ¥n din\n"
+"internetleverantÃ¶r. Det Ã¤r sÃ¤rskilt viktigt fÃ¶r\n"
+"PAP och CHAP. Det Ã¤r inte nÃ¶dvÃ¤ndigt att skriva\n"
+"in det om du anvÃ¤nder terminal- eller\n"
 "skriptbaserad identifiering.\n"
 "\n"
-"<b>Viktigt</b>: det är skillnad mellan stora och\n"
-"små bokstäver här:\n"
-"<i>mittnamn</i> är inte samma sak som <i>MittNamn</i>!"
+"<b>Viktigt</b>: det Ã¤r skillnad mellan stora och\n"
+"smÃ¥ bokstÃ¤ver hÃ¤r:\n"
+"<i>mittnamn</i> Ã¤r inte samma sak som <i>MittNamn</i>!"
 
 #: main.cpp:535
 msgid "Password:"
-msgstr "Lösenord:"
+msgstr "LÃ¶senord:"
 
 #: main.cpp:549
 msgid ""
@@ -1353,19 +1353,19 @@ msgid ""
 "<b>Important</b>: case is important here:\n"
 "<i>mypassword</i> is not the same as <i>MyPassword</i>!"
 msgstr ""
-"Skriv in det lösenord som du fått från din\n"
-"internetleverantör. Det är särskilt viktigt för\n"
-"PAP och CHAP. Det är inte nödvändigt att skriva\n"
-"in det om du använder terminal- eller\n"
+"Skriv in det lÃ¶senord som du fÃ¥tt frÃ¥n din\n"
+"internetleverantÃ¶r. Det Ã¤r sÃ¤rskilt viktigt fÃ¶r\n"
+"PAP och CHAP. Det Ã¤r inte nÃ¶dvÃ¤ndigt att skriva\n"
+"in det om du anvÃ¤nder terminal- eller\n"
 "skriptbaserad identifiering.\n"
 "\n"
-"<b>Viktigt</b>: det är skillnad mellan stora och\n"
-"små bokstäver här:\n"
-"<i>mittlösen</i> är inte samma sak som <i>MittLösen</i>!"
+"<b>Viktigt</b>: det Ã¤r skillnad mellan stora och\n"
+"smÃ¥ bokstÃ¤ver hÃ¤r:\n"
+"<i>mittlÃ¶sen</i> Ã¤r inte samma sak som <i>MittLÃ¶sen</i>!"
 
 #: main.cpp:563
 msgid "Show Log Window"
-msgstr "Visa loggfönster"
+msgstr "Visa loggfÃ¶nster"
 
 #: main.cpp:570
 msgid ""
@@ -1377,16 +1377,16 @@ msgid ""
 "Turn it off if <i>kppp</i> routinely connects without\n"
 "problems"
 msgstr ""
-"Detta anger om ett loggfönster ska visas. Ett\n"
-"loggfönster visar kommunikationen mellan <i>kppp</i>\n"
-"och ditt modem. Det hjälper dig att felsöka.\n"
+"Detta anger om ett loggfÃ¶nster ska visas. Ett\n"
+"loggfÃ¶nster visar kommunikationen mellan <i>kppp</i>\n"
+"och ditt modem. Det hjÃ¤lper dig att felsÃ¶ka.\n"
 "\n"
-"Stäng av det när du lyckats få <i>kppp</i> att koppla\n"
-"upp förbindelsen utan problem"
+"StÃ¤ng av det nÃ¤r du lyckats fÃ¥ <i>kppp</i> att koppla\n"
+"upp fÃ¶rbindelsen utan problem"
 
 #: main.cpp:593
 msgid "Setup"
-msgstr "Inställningar"
+msgstr "InstÃ¤llningar"
 
 #: main.cpp:609
 msgid "Connect"
@@ -1403,7 +1403,7 @@ msgstr ""
 
 #: main.cpp:704
 msgid "kppp Configuration"
-msgstr "kppp inställningar"
+msgstr "kppp instÃ¤llningar"
 
 #: main.cpp:720
 msgid "Accounts"
@@ -1423,11 +1423,11 @@ msgstr "Graf"
 
 #: main.cpp:871
 msgid "Timeout expired while waiting for the PPP interface to come up!"
-msgstr "Tiden tog slut för PPP-gränssnittet att komma upp!"
+msgstr "Tiden tog slut fÃ¶r PPP-grÃ¤nssnittet att komma upp!"
 
 #: main.cpp:876
 msgid "The pppd daemon died unexpectedly!"
-msgstr "pppd-demonen dog oväntat!"
+msgstr "pppd-demonen dog ovÃ¤ntat!"
 
 #: main.cpp:884
 msgid "Details..."
@@ -1439,9 +1439,9 @@ msgid ""
 "\n"
 "Since a further execution would be pointless, kppp will shut down right now."
 msgstr ""
-"Tyvärr. kppp:s hjälpprocess dog just.\n"
+"TyvÃ¤rr. kppp:s hjÃ¤lpprocess dog just.\n"
 "\n"
-"Eftersom det vore meningslöst att starta den igen kommer kppp avslutas nu."
+"Eftersom det vore meningslÃ¶st att starta den igen kommer kppp avslutas nu."
 
 #: main.cpp:950 runtests.cpp:400
 #, fuzzy
@@ -1453,8 +1453,8 @@ msgid ""
 msgstr ""
 "Hittade inte pppd-demonen!\n"
 "\n"
-"Kontrollera att pppd är installerad och\n"
-"att du har angett rätt sökväg.\n"
+"Kontrollera att pppd Ã¤r installerad och\n"
+"att du har angett rÃ¤tt sÃ¶kvÃ¤g.\n"
 
 #: main.cpp:959
 #, c-format
@@ -1464,10 +1464,10 @@ msgid ""
 "Please make sure thatyou have given kppp setuid permission and that\n"
 "pppd is executable."
 msgstr ""
-"kppp kan inte köra:\n"
+"kppp kan inte kÃ¶ra:\n"
 " %s\n"
-"Var god kontrollera att du har gett kppp setuid-rättigheter och att\n"
-"pppd är körbar."
+"Var god kontrollera att du har gett kppp setuid-rÃ¤ttigheter och att\n"
+"pppd Ã¤r kÃ¶rbar."
 
 #: main.cpp:974
 #, c-format
@@ -1483,10 +1483,10 @@ msgid ""
 msgstr ""
 "kppp kan inte hitta:\n"
 " %s\n"
-"Var god kontrollera att du har ställt\n"
+"Var god kontrollera att du har stÃ¤llt\n"
 "in modemenheten korrekt och/eller\n"
-"ändra modemenhet på modemfliken\n"
-"bland inställningarna."
+"Ã¤ndra modemenhet pÃ¥ modemfliken\n"
+"bland instÃ¤llningarna."
 
 #: main.cpp:994
 msgid ""
@@ -1495,8 +1495,8 @@ msgid ""
 "supply a username and a password!"
 msgstr ""
 "Du har valt identifikationsmetoden\n"
-"PAP. Den kräver att du anger ett\n"
-"användarnamn och lösenord!"
+"PAP. Den krÃ¤ver att du anger ett\n"
+"anvÃ¤ndarnamn och lÃ¶senord!"
 
 #: main.cpp:1003
 #, c-format
@@ -1514,8 +1514,8 @@ msgid ""
 "supply a username and a password!"
 msgstr ""
 "Du har valt autentiseringsmetoden\n"
-"CHAP. Den kräver att du anger ett\n"
-"användarnamn och lösenord!"
+"CHAP. Den krÃ¤ver att du anger ett\n"
+"anvÃ¤ndarnamn och lÃ¶senord!"
 
 #: main.cpp:1029
 #, c-format
@@ -1528,7 +1528,7 @@ msgstr ""
 
 #: main.cpp:1041
 msgid "You must specify a telephone number!"
-msgstr "Du måste ange ett telefonnummer!"
+msgstr "Du mÃ¥ste ange ett telefonnummer!"
 
 #: main.cpp:1131
 msgid "Quit kPPP?"
@@ -1536,31 +1536,31 @@ msgstr "Avsluta kPPP?"
 
 #: main.cpp:1132
 msgid "Exiting kPPP will close your PPP Session."
-msgstr "Om du avslutar kPPP så avslutas din PPP-anslutning."
+msgstr "Om du avslutar kPPP sÃ¥ avslutas din PPP-anslutning."
 
 #: main.cpp:1178
 msgid ""
 "Can not load the accounting\n"
 "ruleset \""
 msgstr ""
-"Kan inte ladda regler för\n"
-"kostnadsberäkning \""
+"Kan inte ladda regler fÃ¶r\n"
+"kostnadsberÃ¤kning \""
 
 #: modem.cpp:119
 msgid "Sorry, can't open modem."
-msgstr "Kan tyvärr inte komma åt modemet."
+msgstr "Kan tyvÃ¤rr inte komma Ã¥t modemet."
 
 #: modem.cpp:125
 msgid "Sorry, can't detect state of CD line."
-msgstr "Tyvärr, kan inte avgöra CD-signalens tillstånd."
+msgstr "TyvÃ¤rr, kan inte avgÃ¶ra CD-signalens tillstÃ¥nd."
 
 #: modem.cpp:131
 msgid "Sorry, the modem is not ready."
-msgstr "Modemet är tyvärr inte klart."
+msgstr "Modemet Ã¤r tyvÃ¤rr inte klart."
 
 #: modem.cpp:142 modem.cpp:186
 msgid "Sorry, the modem is busy."
-msgstr "Modemet är tyvärr upptaget."
+msgstr "Modemet Ã¤r tyvÃ¤rr upptaget."
 
 #: modem.cpp:192
 msgid "Modem Ready."
@@ -1568,31 +1568,31 @@ msgstr "Modemet klart"
 
 #: modem.cpp:204
 msgid "Can't restore tty settings: tcsetattr()\n"
-msgstr "Kan inte återställa tty-inställningar: tcsetattr()\n"
+msgstr "Kan inte Ã¥terstÃ¤lla tty-instÃ¤llningar: tcsetattr()\n"
 
 #: modem.cpp:345
 msgid "Sorry, the modem doesn't respond."
-msgstr "Tyvärr, modemet svarar inte."
+msgstr "TyvÃ¤rr, modemet svarar inte."
 
 #: modem.cpp:446
 msgid "Unknown speed"
-msgstr "Okänd hastighet"
+msgstr "OkÃ¤nd hastighet"
 
 #: modemcmds.cpp:44
 msgid "Edit Modem Commands"
-msgstr "Ändra modemkommandon"
+msgstr "Ã„ndra modemkommandon"
 
 #: modemcmds.cpp:72
 msgid "Pre-Init Delay (sec/100):"
-msgstr "Fördröjning innan init (sekunder/100):"
+msgstr "FÃ¶rdrÃ¶jning innan init (sekunder/100):"
 
 #: modemcmds.cpp:77
 msgid "Initialization String:"
-msgstr "Kommando för att initiera:"
+msgstr "Kommando fÃ¶r att initiera:"
 
 #: modemcmds.cpp:95
 msgid "Post-Init Delay (sec/100):"
-msgstr "Fördröjning efter init (sekunder/100):"
+msgstr "FÃ¶rdrÃ¶jning efter init (sekunder/100):"
 
 #: modemcmds.cpp:100
 msgid "Init Response:"
@@ -1600,7 +1600,7 @@ msgstr "Meddelande efter initiering:"
 
 #: modemcmds.cpp:107
 msgid "Dial String:"
-msgstr "Kommando för att ringa upp:"
+msgstr "Kommando fÃ¶r att ringa upp:"
 
 #: modemcmds.cpp:114
 msgid "Connect Response:"
@@ -1612,7 +1612,7 @@ msgstr "Meddelande vid upptaget:"
 
 #: modemcmds.cpp:128
 msgid "No Carrier Response:"
-msgstr "Meddelande om bärvåg saknas:"
+msgstr "Meddelande om bÃ¤rvÃ¥g saknas:"
 
 #: modemcmds.cpp:135
 msgid "No Dialtone Response:"
@@ -1620,15 +1620,15 @@ msgstr "Meddelande om kopplingston saknas:"
 
 #: modemcmds.cpp:142
 msgid "Hangup String:"
-msgstr "Kommando för att lägga på:"
+msgstr "Kommando fÃ¶r att lÃ¤gga pÃ¥:"
 
 #: modemcmds.cpp:149
 msgid "Hangup Response:"
-msgstr "Meddelande efter påläggning:"
+msgstr "Meddelande efter pÃ¥lÃ¤ggning:"
 
 #: modemcmds.cpp:156
 msgid "Answer String:"
-msgstr "Kommando för att svara:"
+msgstr "Kommando fÃ¶r att svara:"
 
 #: modemcmds.cpp:163
 msgid "Ring Response:"
@@ -1636,7 +1636,7 @@ msgstr "Meddelande vid ringsignal:"
 
 #: modemcmds.cpp:170
 msgid "Answer Response:"
-msgstr "Meddelande då någon svarar:"
+msgstr "Meddelande dÃ¥ nÃ¥gon svarar:"
 
 #: modemcmds.cpp:177
 msgid "Escape String:"
@@ -1652,7 +1652,7 @@ msgstr "Vakttid (sekunder/50):"
 
 #: modemcmds.cpp:207
 msgid "Volume off/low/high"
-msgstr "Volym av/låg/hög"
+msgstr "Volym av/lÃ¥g/hÃ¶g"
 
 #: pppdargs.cpp:38
 msgid "Customize pppd Arguments"
@@ -1676,21 +1676,21 @@ msgid ""
 "\n"
 "chown {YourUsername} .kde/share/config/kppprc"
 msgstr ""
-"Den programspecifika inställningsfilen kunde varken\n"
-"öppnas för skrivning eller läsning.\n"
+"Den programspecifika instÃ¤llningsfilen kunde varken\n"
+"Ã¶ppnas fÃ¶r skrivning eller lÃ¤sning.\n"
 "\n"
-"Systemadminstratören måste kanske ändra filens ägare\n"
-"genom att ge följande kommando i ditt hembibliotek:\n"
+"SystemadminstratÃ¶ren mÃ¥ste kanske Ã¤ndra filens Ã¤gare\n"
+"genom att ge fÃ¶ljande kommando i ditt hembibliotek:\n"
 "\n"
-"chown {DittAnvändarnamn} .kde/share/config/kppprc"
+"chown {DittAnvÃ¤ndarnamn} .kde/share/config/kppprc"
 
 #: modeminfo.cpp:39
 msgid "ATI Query"
-msgstr "ATI-förfrågan"
+msgstr "ATI-fÃ¶rfrÃ¥gan"
 
 #: modeminfo.cpp:117
 msgid "Modem Query timed out."
-msgstr "Modemförfrågningens tid tog slut."
+msgstr "ModemfÃ¶rfrÃ¥gningens tid tog slut."
 
 #: miniterm.cpp:164 miniterm.cpp:226 modeminfo.cpp:145
 msgid "Modem Ready"
@@ -1698,7 +1698,7 @@ msgstr "Modemet klart"
 
 #: modeminfo.cpp:249
 msgid "Modem Query Results"
-msgstr "Resultat av modemförfrågan"
+msgstr "Resultat av modemfÃ¶rfrÃ¥gan"
 
 #: pppstatdlg.cpp:65
 msgid "kppp Statistics"
@@ -1714,7 +1714,7 @@ msgstr "Lokal adr:"
 
 #: pppstatdlg.cpp:121
 msgid "Remote Addr:"
-msgstr "Fjärradr:"
+msgstr "FjÃ¤rradr:"
 
 #: pppstatdlg.cpp:153
 msgid "bytes in"
@@ -1763,7 +1763,7 @@ msgstr "%d KB/s"
 
 #: pppstatdlg.cpp:432 pppstatdlg.cpp:437
 msgid "unavailable"
-msgstr "ej tillgängligt"
+msgstr "ej tillgÃ¤ngligt"
 
 #: miniterm.cpp:44
 msgid "Kppp Mini-Terminal"
@@ -1771,7 +1771,7 @@ msgstr "Kppp:s miniterminal"
 
 #: miniterm.cpp:50
 msgid "&Reset Modem"
-msgstr "Å&terställ modemet"
+msgstr "Ã…&terstÃ¤ll modemet"
 
 #: miniterm.cpp:53
 msgid ""
@@ -1784,13 +1784,13 @@ msgid ""
 "This program is published under the GNU GPL\n"
 "(GNU General Public License)"
 msgstr ""
-"MiniTerm - en terminalemulator för KPPP\n"
+"MiniTerm - en terminalemulator fÃ¶r KPPP\n"
 "\n"
 "(c) 1997 Bernd Johannes Wuebben <wuebben@kde.org>\n"
 "(c) 1998 Harri Porten <porten@kde.org>\n"
 "(c) 1998 Mario Weilguni <mweilguni@kde.org>\n"
 "\n"
-"Detta program är publicerat under GNU GPL\n"
+"Detta program Ã¤r publicerat under GNU GPL\n"
 "(GNU General Public License)"
 
 #: miniterm.cpp:63
@@ -1799,11 +1799,11 @@ msgstr "&Modem"
 
 #: miniterm.cpp:107
 msgid "Close MiniTerm"
-msgstr "Stäng MiniTerm"
+msgstr "StÃ¤ng MiniTerm"
 
 #: miniterm.cpp:112
 msgid "Reset Modem"
-msgstr "Återställ modemet"
+msgstr "Ã…terstÃ¤ll modemet"
 
 #: miniterm.cpp:138
 msgid "Initializing Modem"
@@ -1811,19 +1811,19 @@ msgstr "Initierar modemet"
 
 #: miniterm.cpp:205
 msgid "Hanging up ..."
-msgstr "Lägger på ..."
+msgstr "LÃ¤gger pÃ¥ ..."
 
 #: miniterm.cpp:219
 msgid "Resetting Modem"
-msgstr "Återställer modemet"
+msgstr "Ã…terstÃ¤ller modemet"
 
 #: acctselect.cpp:47
 msgid "Accounting Setup"
-msgstr "Kostnadsberäkning"
+msgstr "KostnadsberÃ¤kning"
 
 #: acctselect.cpp:55
 msgid "Enable accounting"
-msgstr "Använd kostnadsberäkning"
+msgstr "AnvÃ¤nd kostnadsberÃ¤kning"
 
 #: acctselect.cpp:73
 msgid "Selected:"
@@ -1831,11 +1831,11 @@ msgstr "Vald:"
 
 #: acctselect.cpp:87
 msgid "Volume accounting:"
-msgstr "Volymberäkning:"
+msgstr "VolymberÃ¤kning:"
 
 #: acctselect.cpp:91
 msgid "No accounting"
-msgstr "Ingen volymberäkning"
+msgstr "Ingen volymberÃ¤kning"
 
 #: acctselect.cpp:92
 msgid "Bytes in"
@@ -1851,7 +1851,7 @@ msgstr "Byte in och ut"
 
 #: acctselect.cpp:164 acctselect.cpp:270
 msgid "Available rules"
-msgstr "Tillgängliga regler"
+msgstr "TillgÃ¤ngliga regler"
 
 #: acctselect.cpp:305
 msgid "(none)"
@@ -1868,28 +1868,28 @@ msgstr "kppp: regelfilen \"%s\" kunde inte hittas\n"
 
 #: ruleset.cpp:555
 msgid "kppp: rulefiles must have the extension \".rst\"\n"
-msgstr "kppp: regelfiler måste ha ändelsen \".rst\"\n"
+msgstr "kppp: regelfiler mÃ¥ste ha Ã¤ndelsen \".rst\"\n"
 
 #: ruleset.cpp:564
 msgid "kppp: error parsing the ruleset\n"
-msgstr "kppp: fel vid tolkning av regeluppsättningen\n"
+msgstr "kppp: fel vid tolkning av regeluppsÃ¤ttningen\n"
 
 #: ruleset.cpp:569
 #, c-format
 msgid "kppp: parse error in line %d\n"
-msgstr "kppp: parse-fel på rad %d\n"
+msgstr "kppp: parse-fel pÃ¥ rad %d\n"
 
 #: ruleset.cpp:575
 msgid "kppp: rulefile does not contain a default rule\n"
-msgstr "kppp: regelfilen innehåller ingen standardregel\n"
+msgstr "kppp: regelfilen innehÃ¥ller ingen standardregel\n"
 
 #: ruleset.cpp:580
 msgid "kppp: rulefile does not contain a \"name=...\" line\n"
-msgstr "kppp: regelfilen innehåller ingen\"name=...\"-rad\n"
+msgstr "kppp: regelfilen innehÃ¥ller ingen\"name=...\"-rad\n"
 
 #: ruleset.cpp:584
 msgid "kppp: rulefile is ok\n"
-msgstr "kppp: regelfilen är ok\n"
+msgstr "kppp: regelfilen Ã¤r ok\n"
 
 #: docking.cpp:199
 msgid "Minimize"
@@ -1897,10 +1897,10 @@ msgstr "Minimera"
 
 #: runtests.cpp:364
 msgid ""
-"You´re not allowed to dial out with kppp.\n"
+"YouÂ´re not allowed to dial out with kppp.\n"
 "Contact your system administrator."
 msgstr ""
-"Du har inte rättigheter för att ringa ut med kppp.\n"
+"Du har inte rÃ¤ttigheter fÃ¶r att ringa ut med kppp.\n"
 "Kontakta systemansvarig."
 
 #: runtests.cpp:381
@@ -1914,13 +1914,13 @@ msgid ""
 "or\n"
 "  * install a kernel with PPP support\n"
 msgstr ""
-"Den här kärnan har inget stöd för PPP; varken\n"
-"inkompilerat eller via kärnans modulladdare.\n"
+"Den hÃ¤r kÃ¤rnan har inget stÃ¶d fÃ¶r PPP; varken\n"
+"inkompilerat eller via kÃ¤rnans modulladdare.\n"
 "\n"
-"För att lösa detta problem:\n"
+"FÃ¶r att lÃ¶sa detta problem:\n"
 "  * kontakta din systemansvarige\n"
 "eller\n"
-"  * installera en kärna som stödjer PPP\n"
+"  * installera en kÃ¤rna som stÃ¶djer PPP\n"
 
 #: runtests.cpp:412
 msgid ""
@@ -1930,11 +1930,11 @@ msgid ""
 "Contact your system administrator\n"
 "and ask to get access to pppd."
 msgstr ""
-"Du har inte rättigheter för att\n"
+"Du har inte rÃ¤ttigheter fÃ¶r att\n"
 "starta pppd!\n"
 "\n"
 "Kontakta systemansvarig och\n"
-"be att få tillgång till pppd."
+"be att fÃ¥ tillgÃ¥ng till pppd."
 
 #: runtests.cpp:423 runtests.cpp:437
 msgid ""
@@ -1944,9 +1944,9 @@ msgid ""
 "with the SUID bit set. Contact your\n"
 "system administrator."
 msgstr ""
-"pppd är inte korrekt installerad!\n"
+"pppd Ã¤r inte korrekt installerad!\n"
 "\n"
-"pppd-programmet måste vara installerat\n"
+"pppd-programmet mÃ¥ste vara installerat\n"
 "med SUID-biten satt. Kontakta din\n"
 "systemansvarige."
 
@@ -1960,7 +1960,7 @@ msgid ""
 msgstr ""
 "kppp har hittat ett 'lock'-alternativ i /etc/ppp/options\n"
 "\n"
-"Det måste tas bort eftersom kppp själv tar hand om enhetslåsning.\n"
+"Det mÃ¥ste tas bort eftersom kppp sjÃ¤lv tar hand om enhetslÃ¥sning.\n"
 "Kontakta din systemansvarige."
 
 #: runtests.cpp:497
@@ -1974,8 +1974,8 @@ msgstr ""
 "saknas!\n"
 "\n"
 "Be din systemansvarige att skapa en\n"
-"ej tom fil som har lämpliga läs- och\n"
-"skrivrättigheter."
+"ej tom fil som har lÃ¤mpliga lÃ¤s- och\n"
+"skrivrÃ¤ttigheter."
 
 #: loginterm.cpp:118
 msgid "Ca&ncel"
@@ -1983,7 +1983,7 @@ msgstr "&Avbryt"
 
 #: loginterm.cpp:123
 msgid "&Continue"
-msgstr "&Fortsätt"
+msgstr "&FortsÃ¤tt"
 
 #: ppplog.cpp:136
 msgid ""
@@ -1991,24 +1991,24 @@ msgid ""
 "connection.\n"
 "Please use the terminal-based login to verify"
 msgstr ""
-"Du har startat pppd innan servern var beredd att upprätta en "
-"PPP-förbindelse.\n"
-"Var god använd den terminalbaserade inloggningen för att kolla"
+"Du har startat pppd innan servern var beredd att upprÃ¤tta en "
+"PPP-fÃ¶rbindelse.\n"
+"Var god anvÃ¤nd den terminalbaserade inloggningen fÃ¶r att kolla"
 
 #: ppplog.cpp:141
 msgid "You haven't started the PPP software on the peer system."
-msgstr "Du har inte startat PPP-mjukvaran på det andra systemet."
+msgstr "Du har inte startat PPP-mjukvaran pÃ¥ det andra systemet."
 
 #: ppplog.cpp:144
 msgid "Check that you supplied the correct username and password!"
-msgstr "Kolla att du har angett rätt användarnamn och lösenord!"
+msgstr "Kolla att du har angett rÃ¤tt anvÃ¤ndarnamn och lÃ¶senord!"
 
 #: ppplog.cpp:147
 msgid ""
 "You shouldn't pass 'lock' as an argument to pppd. Check /etc/ppp/options and "
 "~/.ppprc"
 msgstr ""
-"Du bör inte skicka 'lock' som parameter till pppd. Kolla /etc/ppp/options "
+"Du bÃ¶r inte skicka 'lock' som parameter till pppd. Kolla /etc/ppp/options "
 "och ~/.ppprc"
 
 #: ppplog.cpp:151
@@ -2016,16 +2016,16 @@ msgid ""
 "The remote system does not seem to answer to\n"
 "configuration request! Contact your provider!"
 msgstr ""
-"Det andra systemet verkar inte svara på inställningsbegäran!\n"
-"Kontakta din internetleverantör!"
+"Det andra systemet verkar inte svara pÃ¥ instÃ¤llningsbegÃ¤ran!\n"
+"Kontakta din internetleverantÃ¶r!"
 
 #: ppplog.cpp:155
 msgid ""
 "You have passed an invalid option to pppd. See `man pppd' for a complete "
 "list of valid arguments."
 msgstr ""
-"Du har skickat en ogiltig parameter till pppd. Kolla 'man pppd' för en "
-"fullständig lista med tillåtna parametrar."
+"Du har skickat en ogiltig parameter till pppd. Kolla 'man pppd' fÃ¶r en "
+"fullstÃ¤ndig lista med tillÃ¥tna parametrar."
 
 #: ppplog.cpp:170
 #, c-format
@@ -2034,29 +2034,29 @@ msgid ""
 "\"%s\"\n"
 "This may give you a hint why the the connection has failed."
 msgstr ""
-"Observera att det andra systemet har skickat följande meddelande:\n"
+"Observera att det andra systemet har skickat fÃ¶ljande meddelande:\n"
 "\"%s\"\n"
-"Det kan kanske tipsa dig om varför förbindelsen misslyckades."
+"Det kan kanske tipsa dig om varfÃ¶r fÃ¶rbindelsen misslyckades."
 
 #: ppplog.cpp:189
 msgid "Sorry. Can't help you here."
-msgstr "Tyvärr. Kan inte hjälpa dig här."
+msgstr "TyvÃ¤rr. Kan inte hjÃ¤lpa dig hÃ¤r."
 
 #: ppplog.cpp:206
 msgid ""
-"KPPP could not prepare a PPP log. It´s very likely\n"
+"KPPP could not prepare a PPP log. ItÂ´s very likely\n"
 "that pppd was started without the \"debug\" option.\n"
 "\n"
-"Without this option it´s difficult to find out PPP\n"
+"Without this option itÂ´s difficult to find out PPP\n"
 "problems, so you should turn on the debug option.\n"
 "\n"
 "Shall I turn it on now?"
 msgstr ""
-"KPPP kunde inte förbereda en PPP-logg. Det är väldigt troligt\n"
+"KPPP kunde inte fÃ¶rbereda en PPP-logg. Det Ã¤r vÃ¤ldigt troligt\n"
 "att pppd hade startats utan \"debug\"-parametern.\n"
 "\n"
-"Utan den parametern är det svårt att lista ut PPP:s problem,\n"
-"så du bör använda den.\n"
+"Utan den parametern Ã¤r det svÃ¥rt att lista ut PPP:s problem,\n"
+"sÃ¥ du bÃ¶r anvÃ¤nda den.\n"
 "\n"
 "Ska jag aktivera den nu?"
 
@@ -2068,9 +2068,9 @@ msgid ""
 "you to track down the connection problem."
 msgstr ""
 "\"debug\"-parametern har lagts till. Du\n"
-"kan försöka ansluta igen. Om det misslyckas\n"
-"igen så får du en PPP-logg som kan hjälpa dig\n"
-"att hitta problemet med förbindelsen."
+"kan fÃ¶rsÃ¶ka ansluta igen. Om det misslyckas\n"
+"igen sÃ¥ fÃ¥r du en PPP-logg som kan hjÃ¤lpa dig\n"
+"att hitta problemet med fÃ¶rbindelsen."
 
 #: ppplog.cpp:232
 msgid "PPP log"
@@ -2086,17 +2086,17 @@ msgstr "Skriv till fil"
 
 #: modemdb.cpp:46
 msgid "Select modem type..."
-msgstr "Välj modemtyp..."
+msgstr "VÃ¤lj modemtyp..."
 
 #: modemdb.cpp:48
 msgid ""
 "To setup your modem, first choose its vendor in the list to the left, and "
-"then select the model from the right list. If you don´t know which modem you "
+"then select the model from the right list. If you donÂ´t know which modem you "
 "have, you can try out one of the \"Generic\" modems."
 msgstr ""
-"För att ställa in ditt modem, välj först tillverkare i den vänstra listan, "
-"och sedan modell från den högra listan. Om du inte vet vad du har för något "
-"modem så kan du försöka med någon av \"Generic\"-modemen."
+"FÃ¶r att stÃ¤lla in ditt modem, vÃ¤lj fÃ¶rst tillverkare i den vÃ¤nstra listan, "
+"och sedan modell frÃ¥n den hÃ¶gra listan. Om du inte vet vad du har fÃ¶r nÃ¥got "
+"modem sÃ¥ kan du fÃ¶rsÃ¶ka med nÃ¥gon av \"Generic\"-modemen."
 
 #: modemdb.cpp:151 modemdb.cpp:153 modemdb.cpp:223 modemdb.cpp:238
 msgid "<Generic>"
@@ -2118,6 +2118,6 @@ msgstr "Hayes(tm)-kompatibelt modem"
 #~ msgstr ""
 #~ "kppp kan inte hitta:\n"
 #~ " %s\n"
-#~ "Var god installera pppd korrekt och/eller ändra\n"
-#~ "sökvägen till 'pppd' i PPP-fliken bland\n"
-#~ "inställningarna."
+#~ "Var god installera pppd korrekt och/eller Ã¤ndra\n"
+#~ "sÃ¶kvÃ¤gen till 'pppd' i PPP-fliken bland\n"
+#~ "instÃ¤llningarna."

@@ -1,4 +1,4 @@
-# Esperantaj mesaøoj por "kikbd"
+# Esperantaj mesaÄoj por "kikbd"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,12 +11,12 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
-msgstr "Internacia KDE-Klavaro jam lanæita sur tiu æi ekrano"
+msgstr "Internacia KDE-Klavaro jam lanÄ‰ita sur tiu Ä‰i ekrano"
 
 #: kikbd.cpp:295
 #, c-format
@@ -38,7 +38,7 @@ msgstr ""
 
 #: kikbd.cpp:337
 msgid "Setup"
-msgstr "Agorda¼o"
+msgstr "AgordaÄµo"
 
 #: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
@@ -56,7 +56,7 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"Ne eblas difini modoşaltilon %s por la klavaro %s.\n"
+"Ne eblas difini modoÅaltilon %s por la klavaro %s.\n"
 "Alt-simboloj malebligitaj"
 
 #: kikbd.cpp:406
@@ -65,8 +65,8 @@ msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"Ne eblas forigi Majusklecşaltilon de la modifiloj.\n"
-"Majusklecşaltil-imitado malebligita"
+"Ne eblas forigi MajusklecÅaltilon de la modifiloj.\n"
+"MajusklecÅaltil-imitado malebligita"
 
 #: kikbd.cpp:1097
 #, fuzzy
@@ -94,7 +94,7 @@ msgid ""
 msgstr ""
 "Ne eblis trovi la simbolon \"%s\".\n"
 "Eble viaj implicitaj X-kodoj ne konvenas.\n"
-"Vi povas antaıdifini X-kodojn en la sekcio\n"
+"Vi povas antaÅ­difini X-kodojn en la sekcio\n"
 "\"Pli da\" de la agordoprogramo."
 
 #: keymap.cpp:238
@@ -162,7 +162,7 @@ msgstr "Maldekstra (KTRL+MAJUSKL)"
 
 #: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
-msgstr "Ambaı MAJUSKL (samtempe)"
+msgstr "AmbaÅ­ MAJUSKL (samtempe)"
 
 #: kikbdconf.cpp:120
 #, fuzzy
@@ -209,7 +209,7 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "\n"
-"Æu vi volas daırigi?"
+"Äˆu vi volas daÅ­rigi?"
 
 #: kikbdconf.cpp:223
 msgid ""
@@ -227,11 +227,11 @@ msgstr "implicita"
 
 #: kikbdconf.cpp:419
 msgid "Author:  Not specified"
-msgstr "Aıtoro: ne indikita"
+msgstr "AÅ­toro: ne indikita"
 
 #: kikbdconf.cpp:421
 msgid "Author"
-msgstr "Aıtoro"
+msgstr "AÅ­toro"
 
 #: kikbdconf.cpp:427
 msgid "Description:  "
@@ -301,7 +301,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"Æu vi volas daırigi?"
+"Äˆu vi volas daÅ­rigi?"
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
@@ -336,7 +336,7 @@ msgstr "&Malsupren"
 #: widgets.cpp:140
 #, fuzzy
 msgid "Move down selected keyboard map"
-msgstr "Şovu elektitan klavartableon malsupren"
+msgstr "Åœovu elektitan klavartableon malsupren"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -355,7 +355,7 @@ msgstr "Uzu aktivliston"
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
-msgstr "Uzu nur implicitan kaj laste aktivan klavartabelon por klavarşalto"
+msgstr "Uzu nur implicitan kaj laste aktivan klavartabelon por klavarÅalto"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
@@ -384,12 +384,12 @@ msgstr "Klavartabeloj"
 
 #: widgets.cpp:414
 msgid "Switch and Alt Switch"
-msgstr "Şalto kaj ALT Şalto"
+msgstr "Åœalto kaj ALT Åœalto"
 
 #: widgets.cpp:419
 #, fuzzy
 msgid "Key(s) for switching between keyboard maps"
-msgstr "Klavo(j) por şaltado inter klavartabeloj"
+msgstr "Klavo(j) por Åaltado inter klavartabeloj"
 
 #: widgets.cpp:425
 #, fuzzy
@@ -403,7 +403,7 @@ msgstr "&Pepu"
 #: widgets.cpp:439
 #, fuzzy
 msgid "Beep when keyboard map is changed"
-msgstr "Pepu æiam, kiam şaltiøis la klavatabelo"
+msgstr "Pepu Ä‰iam, kiam ÅaltiÄis la klavatabelo"
 
 #: widgets.cpp:442
 msgid "Ad&vanced"
@@ -437,7 +437,7 @@ msgstr "&Mondomenuo"
 #: widgets.cpp:483
 #, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "Montru menuon en æiu fenestro æe tenado de şaltklavoj"
+msgstr "Montru menuon en Ä‰iu fenestro Ä‰e tenado de Åaltklavoj"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -445,7 +445,7 @@ msgstr "&Sekurigu klasojn"
 
 #: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "Sekurigu æe eliro la rilatojn inter fenestroklasoj kaj klavartabeloj"
+msgstr "Sekurigu Ä‰e eliro la rilatojn inter fenestroklasoj kaj klavartabeloj"
 
 #: widgets.cpp:498
 msgid "Define X codes"
@@ -458,19 +458,19 @@ msgstr "Enigo"
 #: widgets.cpp:505
 #, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Normala konduto. Klavartabelo estas aktiva por æiuj fenestroj"
+msgstr "Normala konduto. Klavartabelo estas aktiva por Ä‰iuj fenestroj"
 
 #: widgets.cpp:509
 #, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Normala konduto. Klavartabelo estas aktiva por æiuj fenestroj"
+msgstr "Normala konduto. Klavartabelo estas aktiva por Ä‰iuj fenestroj"
 
 #: widgets.cpp:513
 #, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Normala konduto. Klavartabelo estas aktiva por æiuj fenestroj"
+msgstr "Normala konduto. Klavartabelo estas aktiva por Ä‰iuj fenestroj"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -507,7 +507,7 @@ msgstr "Per ALT-klavo"
 #: widgets.cpp:589
 #, fuzzy
 msgid "Background when Alternate switch key is pressed"
-msgstr "Fonigu kiam ALT-şaltilo estas premita"
+msgstr "Fonigu kiam ALT-Åaltilo estas premita"
 
 #: widgets.cpp:598
 msgid "Button Font"
@@ -519,19 +519,19 @@ msgstr "&Propra tiparon"
 
 #: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
-msgstr "Propra tiparo por teksteto aı uzu mallokan agorda¼on"
+msgstr "Propra tiparo por teksteto aÅ­ uzu mallokan agordaÄµon"
 
 #: widgets.cpp:611
 msgid "C&hange Font"
-msgstr "Ş&anøu tiparon"
+msgstr "Åœ&anÄu tiparon"
 
 #: widgets.cpp:656
 msgid "&Autostart"
-msgstr "&Aıtomata lanæo"
+msgstr "&AÅ­tomata lanÄ‰o"
 
 #: widgets.cpp:657
 msgid "Start up automatically"
-msgstr "Lanæiøu aıtomate"
+msgstr "LanÄ‰iÄu aÅ­tomate"
 
 #: widgets.cpp:663
 msgid "&Docked"
@@ -552,7 +552,7 @@ msgstr "Loku en elektita angulo"
 
 #: kcmikbd.cpp:64
 msgid "&General"
-msgstr "Ø&enerale"
+msgstr "Äœ&enerale"
 
 #: kcmikbd.cpp:70
 msgid "&Style"
@@ -560,20 +560,20 @@ msgstr "&Stilo"
 
 #: kcmikbd.cpp:76
 msgid "Start&Up"
-msgstr "&Lanæo"
+msgstr "&LanÄ‰o"
 
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internacia Klavaro"
 
 #~ msgid "Up selected keyboard map"
-#~ msgstr "Şovu elektitan klavartabelon supren"
+#~ msgstr "Åœovu elektitan klavartabelon supren"
 
 #~ msgid "Extended behavior. Each windows remember it's own keyboard map"
-#~ msgstr "Speciala konduto. Æiu fenestro memoras sian klavartabelon"
+#~ msgstr "Speciala konduto. Äˆiu fenestro memoras sian klavartabelon"
 
 #~ msgid "Special behavior. Each windows class remember it's own keyboard map"
-#~ msgstr "Speciala konduto. Æiu fenestroklaso memoras sian klavartabelon"
+#~ msgstr "Speciala konduto. Äˆiu fenestroklaso memoras sian klavartabelon"
 
 #~ msgid "Color of the text label"
 #~ msgstr "Koloroj de la teksteto"
@@ -583,10 +583,10 @@ msgstr "Internacia Klavaro"
 #~ "Do you want to start Configuration?"
 #~ msgstr ""
 #~ "%s\n"
-#~ "Æu vi volas lanæi la agorda¼on?"
+#~ "Äˆu vi volas lanÄ‰i la agordaÄµon?"
 
 #~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "Via agorda¼o estas malplena. Instalas sistem-implica¼oj."
+#~ msgstr "Via agordaÄµo estas malplena. Instalas sistem-implicaÄµoj."
 
 #, fuzzy
 #~ msgid ""
@@ -594,7 +594,7 @@ msgstr "Internacia Klavaro"
 #~ "Some settings may be incorrect."
 #~ msgstr ""
 #~ "Agordodosiero via estas de pli malnova formo ol atendita.\n"
-#~ "Kelkaj aferoj povus esti maløustaj."
+#~ "Kelkaj aferoj povus esti malÄustaj."
 
 #, fuzzy
 #~ msgid ""
@@ -602,4 +602,4 @@ msgstr "Internacia Klavaro"
 #~ "Some settings may be incorrect."
 #~ msgstr ""
 #~ "Agordodosiero via estas de pli nova formo ol atendita.\n"
-#~ "Klakaj aferoj povus esti maløustaj."
+#~ "Klakaj aferoj povus esti malÄustaj."

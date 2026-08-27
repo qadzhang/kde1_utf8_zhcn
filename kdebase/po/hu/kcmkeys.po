@@ -10,48 +10,48 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "&Alapvetõ rövidítések"
+msgstr "&AlapvetÅ‘ rÃ¶vidÃ­tÃ©sek"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "&Globális rövidítések"
+msgstr "&GlobÃ¡lis rÃ¶vidÃ­tÃ©sek"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "használat: kcmkeys [-init | {standard,global}]\n"
+msgstr "hasznÃ¡lat: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "Billentyû kötések beállítása"
+msgstr "BillentyÅ± kÃ¶tÃ©sek beÃ¡llÃ­tÃ¡sa"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "Jelenlegi összeállítás"
+msgstr "Jelenlegi Ã¶sszeÃ¡llÃ­tÃ¡s"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "KDE alapértelmezett"
+msgstr "KDE alapÃ©rtelmezett"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "&Bilentyû kötések"
+msgstr "&BilentyÅ± kÃ¶tÃ©sek"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "Hozzá&adás..."
+msgstr "HozzÃ¡&adÃ¡s..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "Változtatá&sok Mentése"
+msgstr "VÃ¡ltoztatÃ¡&sok MentÃ©se"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr "Hiba az összeállítás törlésekor"
+msgstr "Hiba az Ã¶sszeÃ¡llÃ­tÃ¡s tÃ¶rlÃ©sekor"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -59,12 +59,12 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Ez az összeállítás nem távolítható el.\n"
-"Talán nincsen jogosultsága az állomány megváltoztatására"
+"Ez az Ã¶sszeÃ¡llÃ­tÃ¡s nem tÃ¡volÃ­thatÃ³ el.\n"
+"TalÃ¡n nincsen jogosultsÃ¡ga az Ã¡llomÃ¡ny megvÃ¡ltoztatÃ¡sÃ¡ra"
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
-msgstr "Elnevezési hiba"
+msgstr "ElnevezÃ©si hiba"
 
 #: keyconfig.cpp:344
 msgid ""
@@ -72,12 +72,12 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Kérem válasszon egy egyedi nevet az új összeállítás\n"
-"számára. Amit megadott, az már szerepel a listában."
+"KÃ©rem vÃ¡lasszon egy egyedi nevet az Ãºj Ã¶sszeÃ¡llÃ­tÃ¡s\n"
+"szÃ¡mÃ¡ra. Amit megadott, az mÃ¡r szerepel a listÃ¡ban."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Összeállítás hozzáadása"
+msgstr "Ã–sszeÃ¡llÃ­tÃ¡s hozzÃ¡adÃ¡sa"
 
 #: savescm.cpp:32
 msgid ""
@@ -87,90 +87,90 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"Adjon meg egy nevet az új összeállítás számára\n"
+"Adjon meg egy nevet az Ãºj Ã¶sszeÃ¡llÃ­tÃ¡s szÃ¡mÃ¡ra\n"
 "\n"
-"A billentyûk, amiket lát bemásolódnak az \n"
-"új összeállításba kiindulásnak."
+"A billentyÅ±k, amiket lÃ¡t bemÃ¡solÃ³dnak az \n"
+"Ãºj Ã¶sszeÃ¡llÃ­tÃ¡sba kiindulÃ¡snak."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr "Feladat vezérlõ"
+msgstr "Feladat vezÃ©rlÅ‘"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "Ablak elpusztítási mód"
+msgstr "Ablak elpusztÃ­tÃ¡si mÃ³d"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr "Parancs végrehajtás"
+msgstr "Parancs vÃ©grehajtÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "Ablak mûveletek menü"
+msgstr "Ablak mÅ±veletek menÃ¼"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr "Felbukkanó rendszer menü"
+msgstr "FelbukkanÃ³ rendszer menÃ¼"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr "Ablak elõrehozás"
+msgstr "Ablak elÅ‘rehozÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr "Ablak hátra küldés"
+msgstr "Ablak hÃ¡tra kÃ¼ldÃ©s"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr "Ablak bezárás"
+msgstr "Ablak bezÃ¡rÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr "Ablak ikonizálás"
+msgstr "Ablak ikonizÃ¡lÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "Ablak átméretezés"
+msgstr "Ablak Ã¡tmÃ©retezÃ©s"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr "Ablak mozgatás"
+msgstr "Ablak mozgatÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "Ablakba rajzszög ki/beszúrás"
+msgstr "Ablakba rajzszÃ¶g ki/beszÃºrÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "1. Asztalra váltás"
+msgstr "1. Asztalra vÃ¡ltÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "2. Asztalra váltás"
+msgstr "2. Asztalra vÃ¡ltÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "3. Asztalra váltás"
+msgstr "3. Asztalra vÃ¡ltÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "4. Asztalra váltás"
+msgstr "4. Asztalra vÃ¡ltÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "5. Asztalra váltás"
+msgstr "5. Asztalra vÃ¡ltÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "6. Asztalra váltás"
+msgstr "6. Asztalra vÃ¡ltÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "7. Asztalra váltás"
+msgstr "7. Asztalra vÃ¡ltÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "8. Asztalra váltás"
+msgstr "8. Asztalra vÃ¡ltÃ¡s"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
@@ -190,24 +190,24 @@ msgstr "Egy asztallal lejjebb"
 
 #: stdbindings.cpp:3
 msgid "New"
-msgstr "Új"
+msgstr "Ãšj"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "Következõ"
+msgstr "KÃ¶vetkezÅ‘"
 
 #: stdbindings.cpp:9
 msgid "Prior"
-msgstr "Elõzõ"
+msgstr "ElÅ‘zÅ‘"
 
 #: stdbindings.cpp:14
 msgid "Find"
-msgstr "Keresés"
+msgstr "KeresÃ©s"
 
 #: stdbindings.cpp:17
 msgid "Home"
-msgstr "Elejére"
+msgstr "ElejÃ©re"
 
 #: stdbindings.cpp:18
 msgid "End"
-msgstr "Végére"
+msgstr "VÃ©gÃ©re"

@@ -11,97 +11,97 @@ msgstr ""
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: adddata.cpp:38
 msgid "Task Name"
-msgstr "ÀÛ¾÷ ÀÌ¸§"
+msgstr "Ã€Ã›Â¾Ã· Ã€ÃŒÂ¸Â§"
 
 #: adddata.cpp:44
 msgid "Accumutated time (in minutes)"
-msgstr "´©Àû ½Ã°£(ºĞ)"
+msgstr "Â´Â©Ã€Ã» Â½ÃƒÂ°Â£(ÂºÃ)"
 
 #: adddlg.cpp:25
 msgid "KArm: New Task"
-msgstr "KArm: »õ·Î¿î ÀÛ¾÷"
+msgstr "KArm: Â»ÃµÂ·ÃÂ¿Ã® Ã€Ã›Â¾Ã·"
 
 #: karm.cpp:116
 msgid "Karm: Save error"
-msgstr "Karm: ÀúÀå ¿À·ù"
+msgstr "Karm: Ã€ÃºÃ€Ã¥ Â¿Ã€Â·Ã¹"
 
 #: karm.cpp:117
 msgid ""
 "There was an error trying to save your data file.\n"
 "Time accumulated this session will NOT be saved!\n"
 msgstr ""
-"µ¥ÀÌÅÍ ÆÄÀÏ ÀúÀåÁß ¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù.\n"
-"ÀÌ¹ø ¼¼¼ÇÁß ´©ÀûµÈ ½Ã°£ÀÌ ÀúÀåµÇÁö ¾ÊÀ» °ÍÀÔ´Ï´Ù!\n"
+"ÂµÂ¥Ã€ÃŒÃ…Ã Ã†Ã„Ã€Ã Ã€ÃºÃ€Ã¥ÃÃŸ Â¿Ã€Â·Ã¹Â°Â¡ Â¹ÃŸÂ»Ã½Ã‡ÃŸÂ½Ã€Â´ÃÂ´Ã™.\n"
+"Ã€ÃŒÂ¹Ã¸ Â¼Â¼Â¼Ã‡ÃÃŸ Â´Â©Ã€Ã»ÂµÃˆ Â½ÃƒÂ°Â£Ã€ÃŒ Ã€ÃºÃ€Ã¥ÂµÃ‡ÃÃ¶ Â¾ÃŠÃ€Â» Â°ÃÃ€Ã”Â´ÃÂ´Ã™!\n"
 
 #: karm.cpp:119
 msgid "Oh No!"
-msgstr "¾ÈµË´Ï´Ù!"
+msgstr "Â¾ÃˆÂµÃ‹Â´ÃÂ´Ã™!"
 
 #: karm.cpp:205
 msgid ": Add New Task"
-msgstr ": »õ ÀÛ¾÷ Ãß°¡"
+msgstr ": Â»Ãµ Ã€Ã›Â¾Ã· ÃƒÃŸÂ°Â¡"
 
 #: karm.cpp:216
 msgid "Karm::createNewTask called and there's no dialog!"
-msgstr "Karm::»õ ÀÛ¾÷ ¸¸µé±â ±â´ÉÀÌ È£ÃâµÇ¾ú½À´Ï´Ù. ´ëÈ­Ã¢ÀÌ ¾ø½À´Ï´Ù!"
+msgstr "Karm::Â»Ãµ Ã€Ã›Â¾Ã· Â¸Â¸ÂµÃ©Â±Ã¢ Â±Ã¢Â´Ã‰Ã€ÃŒ ÃˆÂ£ÃƒÃ¢ÂµÃ‡Â¾ÃºÂ½Ã€Â´ÃÂ´Ã™. Â´Ã«ÃˆÂ­ÃƒÂ¢Ã€ÃŒ Â¾Ã¸Â½Ã€Â´ÃÂ´Ã™!"
 
 #: karm.cpp:243
 msgid ": Edit Task Entry"
-msgstr ": ÀÛ¾÷ Ç×¸ñ ÆíÁı"
+msgstr ": Ã€Ã›Â¾Ã· Ã‡Ã—Â¸Ã± Ã†Ã­ÃÃ½"
 
 #: karm.cpp:256
 #, fuzzy
 msgid "Karm::updateExistingTask called and there's no dlg!"
-msgstr "Karm::±âÁ¸ ÀÛ¾÷ °»½Å ±â´ÉÀÌ È£ÃâµÇ¾ú½À´Ï´Ù. ´ëÈ­Ã¢ÀÌ ¾ø½À´Ï´Ù!"
+msgstr "Karm::Â±Ã¢ÃÂ¸ Ã€Ã›Â¾Ã· Â°Â»Â½Ã… Â±Ã¢Â´Ã‰Ã€ÃŒ ÃˆÂ£ÃƒÃ¢ÂµÃ‡Â¾ÃºÂ½Ã€Â´ÃÂ´Ã™. Â´Ã«ÃˆÂ­ÃƒÂ¢Ã€ÃŒ Â¾Ã¸Â½Ã€Â´ÃÂ´Ã™!"
 
 #: karm.cpp:280
 msgid ": Deleting Task"
-msgstr ": ÀÛ¾÷ »èÁ¦"
+msgstr ": Ã€Ã›Â¾Ã· Â»Ã¨ÃÂ¦"
 
 #: karm.cpp:281
 msgid "Are you sure you want to delete this task?"
-msgstr "ÀÌ ÀÛ¾÷À» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?"
+msgstr "Ã€ÃŒ Ã€Ã›Â¾Ã·Ã€Â» Â»Ã¨ÃÂ¦Ã‡ÃÂ½ÃƒÂ°ÃšÂ½Ã€Â´ÃÂ±Ã®?"
 
 #: karm.cpp:283
 msgid "&Yes"
-msgstr "¿¹(&Y)"
+msgstr "Â¿Â¹(&Y)"
 
 #: top.cpp:57 top.cpp:139
 msgid "clock inactive"
-msgstr "½Ã°è ºñÈ°¼ºÈ­"
+msgstr "Â½ÃƒÂ°Ã¨ ÂºÃ±ÃˆÂ°Â¼ÂºÃˆÂ­"
 
 #: top.cpp:58
 msgid "This session:"
-msgstr "ÀÌ¹ø ¼¼¼Ç:"
+msgstr "Ã€ÃŒÂ¹Ã¸ Â¼Â¼Â¼Ã‡:"
 
 #: top.cpp:74 top.cpp:152
 msgid "Start Clock"
-msgstr "½Ã°è ½ÃÀÛ"
+msgstr "Â½ÃƒÂ°Ã¨ Â½ÃƒÃ€Ã›"
 
 #: top.cpp:79 top.cpp:154
 msgid "Stop Clock"
-msgstr "½Ã°è ¸ØÃã"
+msgstr "Â½ÃƒÂ°Ã¨ Â¸Ã˜ÃƒÃ£"
 
 #: top.cpp:85 top.cpp:156
 msgid "New Task"
-msgstr "»õ ÀÛ¾÷"
+msgstr "Â»Ãµ Ã€Ã›Â¾Ã·"
 
 #: top.cpp:89 top.cpp:158
 msgid "Delete Task"
-msgstr "ÀÛ¾÷ »èÁ¦"
+msgstr "Ã€Ã›Â¾Ã· Â»Ã¨ÃÂ¦"
 
 #: top.cpp:94 top.cpp:160
 msgid "Edit Task"
-msgstr "ÀÛ¾÷ ÆíÁı"
+msgstr "Ã€Ã›Â¾Ã· Ã†Ã­ÃÃ½"
 
 #: top.cpp:132
 msgid "clock active"
-msgstr "½Ã°è È°¼ºÈ­"
+msgstr "Â½ÃƒÂ°Ã¨ ÃˆÂ°Â¼ÂºÃˆÂ­"
 
 #: top.cpp:150
 msgid "Preferences"
@@ -116,17 +116,17 @@ msgid ""
 "The K Desktop Environment"
 msgstr ""
 " 0.3 -- Sirtaj Singh Kang\n"
-"taj@kde.org, 1997³â 10¿ù\n"
+"taj@kde.org, 1997Â³Ã¢ 10Â¿Ã¹\n"
 "\n"
 "K Desktop Environment"
 
 #: top.cpp:200
 msgid "&Clock"
-msgstr "½Ã°è(&C)"
+msgstr "Â½ÃƒÂ°Ã¨(&C)"
 
 #: top.cpp:201
 msgid "&Task"
-msgstr "ÀÛ¾÷(&T)"
+msgstr "Ã€Ã›Â¾Ã·(&T)"
 
 #: top.cpp:209
 msgid "&Preferences..."
@@ -134,7 +134,7 @@ msgstr ""
 
 #: top.cpp:223
 msgid "S&top"
-msgstr "¸ØÃã(&t)"
+msgstr "Â¸Ã˜ÃƒÃ£(&t)"
 
 #: top.cpp:229
 msgid "&New"
@@ -142,7 +142,7 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "&About"
-#~ msgstr "Á¤º¸ "
+#~ msgstr "ÃÂ¤ÂºÂ¸ "
 
 #~ msgid "About "
-#~ msgstr "Á¤º¸ "
+#~ msgstr "ÃÂ¤ÂºÂ¸ "

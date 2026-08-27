@@ -1,16 +1,16 @@
 # KCMKWM CATALAN TRANSLATION
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Sebasti‡ Pla <sastia@redestb.es>, 1998.
+# Sebasti√† Pla <sastia@redestb.es>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1998-12-22 00:28+0100\n"
-"Last-Translator: Sebasti‡ Pla <sastia@redestb.es>\n"
+"Last-Translator: Sebasti√† Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:67
@@ -19,7 +19,7 @@ msgstr "&Botons"
 
 #: main.cpp:70
 msgid "&Titlebar"
-msgstr "Barra de &TÌtol"
+msgstr "Barra de &T√≠tol"
 
 #: main.cpp:73
 msgid "Bo&rders"
@@ -27,11 +27,11 @@ msgstr "Vo&res"
 
 #: main.cpp:76
 msgid "&Mouse"
-msgstr "&RatolÌ"
+msgstr "&Ratol√≠"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr "&AvanÁat"
+msgstr "&Avan√ßat"
 
 #: main.cpp:86
 msgid ""
@@ -53,11 +53,11 @@ msgstr "Maximitza"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "ApegalÛs"
+msgstr "Apegal√≥s"
 
 #: titlebar.cpp:141
 msgid "Menu"
-msgstr "Men˙"
+msgstr "Men√∫"
 
 #: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
@@ -71,33 +71,33 @@ msgstr "Dreta"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"La banda esquerra de la barra Ès plena... desactivem el botÛ 'maximitza'\n"
+"La banda esquerra de la barra √©s plena... desactivem el bot√≥ 'maximitza'\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"La banda dreta de la barra Ès plena... desactivem el botÛ 'maximitza'\n"
+"La banda dreta de la barra √©s plena... desactivem el bot√≥ 'maximitza'\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"La banda esquerra de la barra Ès plena... desactivem el botÛ 'minimitza'\n"
+"La banda esquerra de la barra √©s plena... desactivem el bot√≥ 'minimitza'\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"La banda dreta de la barra Ès plena... desactivem el botÛ 'minimitza'\n"
+"La banda dreta de la barra √©s plena... desactivem el bot√≥ 'minimitza'\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
-msgstr "AlineaciÛ de tÌtol"
+msgstr "Alineaci√≥ de t√≠tol"
 
 #: titlebar.cpp:941
 msgid "Middle"
-msgstr "Mitj‡"
+msgstr "Mitj√†"
 
 #: titlebar.cpp:969
 msgid "Shaded Vertically"
@@ -117,7 +117,7 @@ msgstr "Pixmap"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
-msgstr "El tÌtol actiu tÈ el marc ombrejat"
+msgstr "El t√≠tol actiu t√© el marc ombrejat"
 
 #: titlebar.cpp:1046
 msgid "Active pixmap:"
@@ -133,11 +133,11 @@ msgstr "No hi ha pixmap sota el text"
 
 #: titlebar.cpp:1068
 msgid "Mouse action"
-msgstr "AcciÛ del ratolÌ"
+msgstr "Acci√≥ del ratol√≠"
 
 #: titlebar.cpp:1076
 msgid "Left Button double click does:"
-msgstr "El doble clic del botÛ esquerre provoca:"
+msgstr "El doble clic del bot√≥ esquerre provoca:"
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
@@ -153,11 +153,11 @@ msgstr "Iconitza"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "(Des)ApegalÛs"
+msgstr "(Des)Apegal√≥s"
 
 #: titlebar.cpp:1109
 msgid "Title animation"
-msgstr "AnimaciÛ de tÌtol"
+msgstr "Animaci√≥ de t√≠tol"
 
 #: titlebar.cpp:1125
 msgid "ms"
@@ -165,7 +165,7 @@ msgstr "ms"
 
 #: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
-msgstr "ConfiguraciÛ del gestor de finestres - ERROR"
+msgstr "Configuraci√≥ del gestor de finestres - ERROR"
 
 #: titlebar.cpp:1369
 msgid ""
@@ -173,7 +173,7 @@ msgid ""
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
 "Hi ha hagut un error en desar\n"
-"els pixmaps de la barra de tÌtol! Comproveu els permisos."
+"els pixmaps de la barra de t√≠tol! Comproveu els permisos."
 
 #: windows.cpp:68
 msgid "Windows"
@@ -181,7 +181,7 @@ msgstr "Finestres"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "NomÈs es maximitza verticalment per omissiÛ"
+msgstr "Nom√©s es maximitza verticalment per omissi√≥"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
@@ -193,7 +193,7 @@ msgstr "Mostra el contingut en dimensionar les finestres"
 
 #: windows.cpp:98
 msgid "Resize animation:"
-msgstr "AnimaciÛ en dimensionar:"
+msgstr "Animaci√≥ en dimensionar:"
 
 #: windows.cpp:111
 msgid "None"
@@ -201,11 +201,11 @@ msgstr "Cap"
 
 #: windows.cpp:117
 msgid "Fast"
-msgstr "R‡pid"
+msgstr "R√†pid"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "PolÌtica de col∑locaciÛ"
+msgstr "Pol√≠tica de col¬∑locaci√≥"
 
 #: windows.cpp:134
 msgid "Smart"
@@ -221,7 +221,7 @@ msgstr "Interactiva"
 
 #: windows.cpp:140
 msgid "Random"
-msgstr "AleatÚria"
+msgstr "Aleat√≤ria"
 
 #: windows.cpp:142
 msgid "Manual"
@@ -229,16 +229,16 @@ msgstr "Manual"
 
 #: windows.cpp:154
 #, c-format
-msgid ""
-"  Allowed overlap:\n"
-"(% of desktop space)"
-msgstr ""
-"  Encavallament permËs:\n"
-"(% de l'espai d'escriptori)"
+#~ msgid ""
+#~ "  Allowed overlap:\n"
+#~ "(% of desktop space)"
+#~ msgstr ""
+#~ "  Encavallament perm√®s:\n"
+#~ "(% de l'espai d'escriptori)"
 
 #: windows.cpp:175
 msgid "Focus policy"
-msgstr "PolÌtica de focus"
+msgstr "Pol√≠tica de focus"
 
 #: windows.cpp:185
 msgid "Click to focus"
@@ -246,19 +246,19 @@ msgstr "Focus al clic"
 
 #: windows.cpp:187
 msgid "Focus follows mouse"
-msgstr "Focus al ratolÌ"
+msgstr "Focus al ratol√≠"
 
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Focus al ratolÌ cl‡ssic"
+msgstr "Focus al ratol√≠ cl√†ssic"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Focus descurat cl‡ssic"
+msgstr "Focus descurat cl√†ssic"
 
 #: windows.cpp:203
 msgid "Auto Raise"
-msgstr "AutoelevaciÛ"
+msgstr "Autoelevaci√≥"
 
 #: windows.cpp:209
 msgid "Click Raise"
@@ -278,7 +278,7 @@ msgstr "Habilita vores de l'escriptori actives"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Mou el punter cap al centre desprÈs de canviar"
+msgstr "Mou el punter cap al centre despr√©s de canviar"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
@@ -286,7 +286,7 @@ msgstr "Retard en canviar d'escriptori:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
-msgstr "Vores m‡giques"
+msgstr "Vores m√†giques"
 
 #: desktop.cpp:126
 msgid ""
@@ -314,7 +314,7 @@ msgstr "Inactiva"
 
 #: mouse.cpp:62
 msgid "Titlebar and frame:"
-msgstr "Barra de tÌtol i marc:"
+msgstr "Barra de t√≠tol i marc:"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
@@ -322,31 +322,31 @@ msgstr "Finestra interior inactiva:"
 
 #: mouse.cpp:70
 msgid "Inner window, titlebar and frame:"
-msgstr "Finestra interior, barra de tÌtol i marc:"
+msgstr "Finestra interior, barra de t√≠tol i marc:"
 
 #: mouse.cpp:74 mouse.cpp:86
 msgid "Left Button"
-msgstr "BotÛ esquerre"
+msgstr "Bot√≥ esquerre"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
-msgstr "BotÛ mitj‡"
+msgstr "Bot√≥ mitj√†"
 
 #: mouse.cpp:82 mouse.cpp:94
 msgid "Right Button"
-msgstr "BotÛ dret"
+msgstr "Bot√≥ dret"
 
 #: mouse.cpp:98
 msgid "ALT + Left Button"
-msgstr "ALT + BotÛ esquerre"
+msgstr "ALT + Bot√≥ esquerre"
 
 #: mouse.cpp:102
 msgid "ALT + Middle Button"
-msgstr "ALT + BotÛ mitj‡"
+msgstr "ALT + Bot√≥ mitj√†"
 
 #: mouse.cpp:106
 msgid "ALT + Right Button"
-msgstr "ALT + BotÛ dret"
+msgstr "ALT + Bot√≥ dret"
 
 #: mouse.cpp:113 mouse.cpp:122 mouse.cpp:132 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
@@ -360,7 +360,7 @@ msgstr "Abaixa"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
-msgstr "Men˙ d'operacions"
+msgstr "Men√∫ d'operacions"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
@@ -403,7 +403,7 @@ msgstr "Dimensiona"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr "Teclat i RatolÌ"
+msgstr "Teclat i Ratol√≠"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
@@ -411,7 +411,7 @@ msgstr "Ctrl-Tab recorre els escriptoris"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-Tab est‡ limitat a l'escriptori actual"
+msgstr "Alt-Tab est√† limitat a l'escriptori actual"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
@@ -427,7 +427,7 @@ msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
-msgstr "Captura el botÛ dret del ratolÌ"
+msgstr "Captura el bot√≥ dret del ratol√≠"
 
 #: advanced.cpp:78
 msgid "Filters"
@@ -439,7 +439,7 @@ msgstr "Les finestres:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "tindran decoracions min˙scules"
+msgstr "tindran decoracions min√∫scules"
 
 #: advanced.cpp:105
 msgid "have no decorations"
@@ -451,19 +451,19 @@ msgstr "mai guanyaran el focus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "engegaran en mode apegalÛs"
+msgstr "engegaran en mode apegal√≥s"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr "estaran excloses de la gestiÛ de sessiÛ"
+msgstr "estaran excloses de la gesti√≥ de sessi√≥"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr "si casen amb el seg¸ent:"
+msgstr "si casen amb el seg√ºent:"
 
 #: advanced.cpp:121
 msgid "Titles"
-msgstr "TÌtols"
+msgstr "T√≠tols"
 
 #: advanced.cpp:126
 msgid "Classes"

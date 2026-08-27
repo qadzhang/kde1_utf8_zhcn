@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: app.cpp:218 app.cpp:553
@@ -15,7 +15,7 @@ msgid ""
 "Cannot enable sound support."
 msgstr ""
 "Ocorreu um problema com o servidor de som!\n"
-"Não foi possível activar o suporte de som."
+"NÃ£o foi possÃ­vel activar o suporte de som."
 
 #: app.cpp:245
 msgid "&New game"
@@ -55,35 +55,35 @@ msgstr "Quadro de &Honra..."
 
 #: app.cpp:266
 msgid "Level 1 (Wimp)"
-msgstr "Nível 1 (Cobarde)"
+msgstr "NÃ­vel 1 (Cobarde)"
 
 #: app.cpp:267
 msgid "Level 2 (Beginner)"
-msgstr "Nível 2 (Iniciante)"
+msgstr "NÃ­vel 2 (Iniciante)"
 
 #: app.cpp:268
 msgid "Level 3 (Novice)"
-msgstr "Nível 3 (Novato)"
+msgstr "NÃ­vel 3 (Novato)"
 
 #: app.cpp:269
 msgid "Level 4 (Average)"
-msgstr "Nível 4 (Médio)"
+msgstr "NÃ­vel 4 (MÃ©dio)"
 
 #: app.cpp:270
 msgid "Level 5 (Good)"
-msgstr "Nível 5 (Bom)"
+msgstr "NÃ­vel 5 (Bom)"
 
 #: app.cpp:271
 msgid "Level 6 (Expert)"
-msgstr "Nível 6 (Perito)"
+msgstr "NÃ­vel 6 (Perito)"
 
 #: app.cpp:272
 msgid "Level 7 (Master)"
-msgstr "Nível 7 (Mestre)"
+msgstr "NÃ­vel 7 (Mestre)"
 
 #: app.cpp:273
 msgid "Skill"
-msgstr "Perícia"
+msgstr "PerÃ­cia"
 
 #: app.cpp:275
 msgid "&Shrink board"
@@ -157,19 +157,19 @@ msgstr "&Escala de cinzento"
 
 #: app.cpp:311
 msgid "&Animations"
-msgstr "&Animações"
+msgstr "&AnimaÃ§Ãµes"
 
 #: app.cpp:315
 msgid "1 (fastest)"
-msgstr "1 (rapidíssimo)"
+msgstr "1 (rapidÃ­ssimo)"
 
 #: app.cpp:321
 msgid "10 (slowest)"
-msgstr "10 (lentíssimo)"
+msgstr "10 (lentÃ­ssimo)"
 
 #: app.cpp:322
 msgid "Animation speed"
-msgstr "Velocidade da Animação"
+msgstr "Velocidade da AnimaÃ§Ã£o"
 
 #: app.cpp:325
 msgid "S&ound"
@@ -205,7 +205,7 @@ msgstr "turno de XXXXX's"
 
 #: app.cpp:382
 msgid "You (XXXXX): 88"
-msgstr "Você (XXXXX): 88"
+msgstr "VocÃª (XXXXX): 88"
 
 #: app.cpp:383
 msgid "Computer (XXXXX): 88"
@@ -217,12 +217,12 @@ msgstr "Jogo gravado"
 
 #: app.cpp:591
 msgid "not yet implemented"
-msgstr "ainda não implementada"
+msgstr "ainda nÃ£o implementada"
 
 #: app.cpp:604 app.cpp:609
 #, c-format
 msgid "You (%s): %d"
-msgstr "Você (%s): %d"
+msgstr "VocÃª (%s): %d"
 
 #: app.cpp:605 app.cpp:612 app.cpp:912
 msgid "blue"
@@ -249,9 +249,9 @@ msgid ""
 "You     : %d\n"
 "Computer: %d"
 msgstr ""
-"O jogo está empatado!\n"
+"O jogo estÃ¡ empatado!\n"
 "\n"
-"Você: %d\n"
+"VocÃª: %d\n"
 "Ele : %d"
 
 #: app.cpp:667 app.cpp:679 app.cpp:699
@@ -266,11 +266,11 @@ msgid ""
 "Computer: %d\n"
 "Your rating %4.1f%%"
 msgstr ""
-"Parabéns, ganhou!\n"
+"ParabÃ©ns, ganhou!\n"
 "\n"
-"Você: %d\n"
+"VocÃª: %d\n"
 "Ele : %d\n"
-"A sua posição %4.1f%%"
+"A sua posiÃ§Ã£o %4.1f%%"
 
 #: app.cpp:697
 #, c-format
@@ -282,7 +282,7 @@ msgid ""
 msgstr ""
 "Perdeu o jogo!\n"
 "\n"
-"Você: %d\n"
+"VocÃª: %d\n"
 "Ele : %d"
 
 #: app.cpp:708
@@ -307,7 +307,7 @@ msgstr "KReversi: Quadro de Honra"
 
 #: app.cpp:881
 msgid "Rank"
-msgstr "Posição"
+msgstr "PosiÃ§Ã£o"
 
 #: app.cpp:885
 msgid "Name"
@@ -319,11 +319,11 @@ msgstr "Cor"
 
 #: app.cpp:893
 msgid "Score"
-msgstr "Pontuação"
+msgstr "PontuaÃ§Ã£o"
 
 #: app.cpp:897
 msgid "Rating"
-msgstr "Classificação"
+msgstr "ClassificaÃ§Ã£o"
 
 #: app.cpp:987
 msgid ""
@@ -333,7 +333,7 @@ msgid ""
 msgstr ""
 "Conseguiu entrar no \"Quadro de Honra\". Introduza o\n"
 "seu nome para que a humanidade se lembre\n"
-"sempre da sua posição."
+"sempre da sua posiÃ§Ã£o."
 
 #: app.cpp:990
 msgid "Your name:"
@@ -345,7 +345,7 @@ msgstr "Acerca do kreversi"
 
 #: about.cpp:65
 msgid "Version "
-msgstr "Versão "
+msgstr "VersÃ£o "
 
 #: about.cpp:67
 msgid ""
@@ -370,9 +370,9 @@ msgstr ""
 "\n"
 "(c) 1997 Mario Weilguni <mweilguni@sime.com>\n"
 "\n"
-"Este programa é software livre\n"
-"publicado sob os termos da Licença\n"
-"Pública Geral GNU\n"
+"Este programa Ã© software livre\n"
+"publicado sob os termos da LicenÃ§a\n"
+"PÃºblica Geral GNU\n"
 "(veja a ajuda para obter detalhes)\n"
 "\n"
 "Agradecimentos:\n"
@@ -380,7 +380,7 @@ msgstr ""
 "\t(transferi-o do seu applet JAVA)\n"
 "\n"
 "\tStephan Kulow\n"
-"\tpelos comentários e correcções\n"
+"\tpelos comentÃ¡rios e correcÃ§Ãµes\n"
 "\n"
 "\tArne Klaassen\n"
-"\tpelas peças raytraced"
+"\tpelas peÃ§as raytraced"

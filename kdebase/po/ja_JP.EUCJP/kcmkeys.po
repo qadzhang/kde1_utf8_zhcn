@@ -13,48 +13,48 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japanese <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "É¸½à¥·¥ç¡¼¥È¥«¥Ã¥È(&S)"
+msgstr "æ¨™æº–ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆ(&S)"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "¹­°è¥·¥ç¡¼¥È¥«¥Ã¥È(&G)"
+msgstr "åºƒåŸŸã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆ(&G)"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "ÍøÍÑË¡: kcmkeys [-init | {standard,global}]\n"
+msgstr "åˆ©ç”¨æ³•: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "¥­¡¼³ä¤êÅö¤ÆÀßÄê"
+msgstr "ã‚­ãƒ¼å‰²ã‚Šå½“ã¦è¨­å®š"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "¸½ºß¤Î¥¹¥­¡¼¥à"
+msgstr "ç¾åœ¨ã®ã‚¹ã‚­ãƒ¼ãƒ "
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "KDEÉ¸½à"
+msgstr "KDEæ¨™æº–"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "¥­¡¼¥¹¥­¡¼¥à(&K)"
+msgstr "ã‚­ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ (&K)"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "ÄÉ²Ã ...(&A)"
+msgstr "è¿½åŠ  ...(&A)"
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "ÊÑ¹¹¤òÊİÂ¸(&S)"
+msgstr "å¤‰æ›´ã‚’ä¿å­˜(&S)"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr "¥¹¥­¡¼¥àºï½ü¥¨¥é¡¼"
+msgstr "ã‚¹ã‚­ãƒ¼ãƒ å‰Šé™¤ã‚¨ãƒ©ãƒ¼"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -62,13 +62,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"¤³¤Î¥¹¥­¡¼¥à¤Ïºï½ü¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£\n"
-"¤¿¤Ö¤ó¤¢¤Ê¤¿¤Ï¤½¤Î¥­¡¼¥¹¥­¡¼¥à¤¬Êİ´É¤µ¤ì¤Æ¤¤¤ë\n"
-"¥Õ¥¡¥¤¥ë¥·¥¹¥Æ¥à¤òÃÖ¤­´¹¤¨¤ëµö²Ä¤òÍ¿¤¨¤é¤ì¤Æ¤¤¤Ş¤»¤ó¡£"
+"ã“ã®ã‚¹ã‚­ãƒ¼ãƒ ã¯å‰Šé™¤ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚\n"
+"ãŸã¶ã‚“ã‚ãªãŸã¯ãã®ã‚­ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ ãŒä¿ç®¡ã•ã‚Œã¦ã„ã‚‹\n"
+"ãƒ•ã‚¡ã‚¤ãƒ«ã‚·ã‚¹ãƒ†ãƒ ã‚’ç½®ãæ›ãˆã‚‹è¨±å¯ã‚’ä¸ãˆã‚‰ã‚Œã¦ã„ã¾ã›ã‚“ã€‚"
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
-msgstr "Ì¾Á°¤Î¾×ÆÍ"
+msgstr "åå‰ã®è¡çª"
 
 #: keyconfig.cpp:344
 msgid ""
@@ -76,13 +76,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"¿·¤·¤¤¥­¡¼¥¹¥­¡¼¥à¤Ë¤Ï°ì°Õ¤ÊÌ¾Á°¤òÁªÂò¤·¤Æ¤¯¤À¤µ¤¤\n"
-"¤¢¤Ê¤¿¤¬ÆşÎÏ¤·¤¿Ì¾Á°¤Ï´û¤Ë¥­¡¼¥¹¥­¡¼¥à¥ê¥¹¥È¤Ë\n"
-"Â¸ºß¤·¤Æ¤¤¤Ş¤¹¡£"
+"æ–°ã—ã„ã‚­ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ ã«ã¯ä¸€æ„ãªåå‰ã‚’é¸æŠã—ã¦ãã ã•ã„\n"
+"ã‚ãªãŸãŒå…¥åŠ›ã—ãŸåå‰ã¯æ—¢ã«ã‚­ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ ãƒªã‚¹ãƒˆã«\n"
+"å­˜åœ¨ã—ã¦ã„ã¾ã™ã€‚"
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "¿·¤·¤¤¥­¡¼¥¹¥­¡¼¥à¤òÄÉ²Ã"
+msgstr "æ–°ã—ã„ã‚­ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ ã‚’è¿½åŠ "
 
 #: savescm.cpp:32
 msgid ""
@@ -92,128 +92,128 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"¤¢¤Ê¤¿¤Î¸Ä¿Í¥ê¥¹¥È¤ËÄÉ²Ã¤¹¤ë¿·¤·¤¤\n"
-"¥­¡¼¥¹¥­¡¼¥à¤ÎÌ¾Á°¤òÆşÎÏ¤·¤Æ¤¯¤À¤µ¤¤¡£(&E)\n"
+"ã‚ãªãŸã®å€‹äººãƒªã‚¹ãƒˆã«è¿½åŠ ã™ã‚‹æ–°ã—ã„\n"
+"ã‚­ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ ã®åå‰ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚(&E)\n"
 "\n"
-"¥×¥ì¥Ó¥å¡¼¤Ç¸½ºß»È¤ï¤ì¤Æ¤¤¤ë¥­¡¼¤Ï\n"
-"»Ï¤á¤Ë¤³¤Î¥¹¥­¡¼¥à¤Ë¥³¥Ô¡¼¤µ¤ì¤Ş¤¹¡£"
+"ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã§ç¾åœ¨ä½¿ã‚ã‚Œã¦ã„ã‚‹ã‚­ãƒ¼ã¯\n"
+"å§‹ã‚ã«ã“ã®ã‚¹ã‚­ãƒ¼ãƒ ã«ã‚³ãƒ”ãƒ¼ã•ã‚Œã¾ã™ã€‚"
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr "¥¿¥¹¥¯¥Ş¥Í¡¼¥¸¥ã"
+msgstr "ã‚¿ã‚¹ã‚¯ãƒãƒãƒ¼ã‚¸ãƒ£"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "¥¦¥£¥ó¥É¥¦¥â¡¼¥É¤òºï½ü"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰ã‚’å‰Šé™¤"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr "¥³¥Ş¥ó¥É¤ò¼Â¹Ô"
+msgstr "ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿè¡Œ"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "¥¦¥£¥ó¥É¥¦Áàºî¥á¥Ë¥å¡¼"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦æ“ä½œãƒ¡ãƒ‹ãƒ¥ãƒ¼"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr "¥İ¥Ã¥×¥¢¥Ã¥×¥·¥¹¥Æ¥à¥á¥Ë¥å¡¼"
+msgstr "ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã‚·ã‚¹ãƒ†ãƒ ãƒ¡ãƒ‹ãƒ¥ãƒ¼"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr "¥¦¥£¥ó¥É¥¦¤òÁ°ÌÌ¤Ø"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’å‰é¢ã¸"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr "¥¦¥£¥ó¥É¥¦¤òÇØÌÌ¤Ø"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’èƒŒé¢ã¸"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr "¥¦¥£¥ó¥É¥¦¤òÊÄ¤¸¤ë"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ã‚‹"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr "¥¦¥£¥ó¥É¥¦¤ò¥¢¥¤¥³¥ó²½"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ã‚¢ã‚¤ã‚³ãƒ³åŒ–"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "¥¦¥£¥ó¥É¥¦¥µ¥¤¥º¤òÊÑ¹¹"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºã‚’å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr "¥¦¥£¥ó¥É¥¦¤ò°ÜÆ°"
+msgstr "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ç§»å‹•"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "¾ï¤ËÉ½¼¨¤«Èİ¤«¤ÎÀÚÂØ"
+msgstr "å¸¸ã«è¡¨ç¤ºã‹å¦ã‹ã®åˆ‡æ›¿"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×£±¤ËÊÑ¹¹"
+msgstr "ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ï¼‘ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×£²¤ËÊÑ¹¹"
+msgstr "ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ï¼’ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×£³¤ËÊÑ¹¹"
+msgstr "ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ï¼“ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×£´¤ËÊÑ¹¹"
+msgstr "ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ï¼”ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×£µ¤ËÊÑ¹¹"
+msgstr "ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ï¼•ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×£¶¤ËÊÑ¹¹"
+msgstr "ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ï¼–ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×£·¤ËÊÑ¹¹"
+msgstr "ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ï¼—ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "¥Ç¥¹¥¯¥È¥Ã¥×£¸¤ËÊÑ¹¹"
+msgstr "ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ï¼˜ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "±¦¤Î¥Ç¥¹¥¯¥È¥Ã¥×¤ËÊÑ¹¹"
+msgstr "å³ã®ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "º¸¤Î¥Ç¥¹¥¯¥È¥Ã¥×¤ËÊÑ¹¹"
+msgstr "å·¦ã®ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "¾å¤Î¥Ç¥¹¥¯¥È¥Ã¥×¤ËÊÑ¹¹"
+msgstr "ä¸Šã®ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã«å¤‰æ›´"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "²¼¤Î¥Ç¥¹¥¯¥È¥Ã¥×¤ËÊÑ¹¹"
+msgstr "ä¸‹ã®ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã«å¤‰æ›´"
 
 #: stdbindings.cpp:3
 msgid "New"
-msgstr "¿·µ¬ºîÀ®"
+msgstr "æ–°è¦ä½œæˆ"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "¼¡"
+msgstr "æ¬¡"
 
 #: stdbindings.cpp:9
 msgid "Prior"
-msgstr "Á°"
+msgstr "å‰"
 
 #: stdbindings.cpp:14
 msgid "Find"
-msgstr "¸¡º÷"
+msgstr "æ¤œç´¢"
 
 #: stdbindings.cpp:17
 msgid "Home"
-msgstr "¥Û¡¼¥à"
+msgstr "ãƒ›ãƒ¼ãƒ "
 
 #: stdbindings.cpp:18
 msgid "End"
-msgstr "½ªÎ»"
+msgstr "çµ‚äº†"

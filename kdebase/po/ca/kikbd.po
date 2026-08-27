@@ -1,16 +1,16 @@
 # KIKBD CATALAN TRANSLATION
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Sebastià Pla <sastia@redestb.es>, 1998.
+# SebastiÃ  Pla <sastia@redestb.es>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-04-13 01:26+0200\n"
 "PO-Revision-Date: 1999-08-18 23:04+02:00\n"
-"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Last-Translator: SebastiÃ  Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kikbd.cpp:124
@@ -24,7 +24,7 @@ msgid ""
 "Using X default codes."
 msgstr ""
 "El fitxer de codis X \"%s\" no existeix.\n"
-"Es faran servir els codis X per omissió."
+"Es faran servir els codis X per omissiÃ³."
 
 #: kikbd.cpp:321
 #, c-format
@@ -47,7 +47,7 @@ msgstr "No es pot eliminar %s dels modificadors.\n"
 #: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "No es pot afegir %s al modificador número 3.\n"
+msgstr "No es pot afegir %s al modificador nÃºmero 3.\n"
 
 #: kikbd.cpp:384
 #, c-format
@@ -56,19 +56,19 @@ msgid ""
 "Alt symbols disabled"
 msgstr ""
 "No es pot establir el mode canvi %s pel teclat %s.\n"
-"Es desactiven els símbols Alt"
+"Es desactiven els sÃ­mbols Alt"
 
 #: kikbd.cpp:406
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"No es pot eliminar Bloq Majús dels modificadors.\n"
-"Es desactiva l'emulació Bloq Majús"
+"No es pot eliminar Bloq MajÃºs dels modificadors.\n"
+"Es desactiva l'emulaciÃ³ Bloq MajÃºs"
 
 #: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
-msgstr "S'està sortint del teclat internacional"
+msgstr "S'estÃ  sortint del teclat internacional"
 
 #: kikbd.cpp:1098
 msgid ""
@@ -76,11 +76,11 @@ msgid ""
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 "Esteu a punt d'abandonar l'eina \"Teclat Internacional\".\n"
-"Voleu que s'autoengegui a la propera sessió?"
+"Voleu que s'autoengegui a la propera sessiÃ³?"
 
 #: keymap.cpp:186
 msgid "KeyMap: can't allocate memory"
-msgstr "KeyMap: no es pot assignar memòria"
+msgstr "KeyMap: no es pot assignar memÃ²ria"
 
 #: keymap.cpp:233
 #, c-format
@@ -90,15 +90,15 @@ msgid ""
 "You can preset X codes from section \"Advanced\"\n"
 "in the configuration program."
 msgstr ""
-"No es pot trobar el símbol \"%s\".\n"
-"Potser els vostres codis X per omissió no casen.\n"
-"Podeu prefixar els codis X a la secció \"Avançat\"\n"
-"del programa de configuració."
+"No es pot trobar el sÃ­mbol \"%s\".\n"
+"Potser els vostres codis X per omissiÃ³ no casen.\n"
+"Podeu prefixar els codis X a la secciÃ³ \"AvanÃ§at\"\n"
+"del programa de configuraciÃ³."
 
 #: keymap.cpp:238
 #, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "KeyMap: no es pot trobar el símbol \"%s\"."
+msgstr "KeyMap: no es pot trobar el sÃ­mbol \"%s\"."
 
 #: keymap.cpp:246
 #, c-format
@@ -136,7 +136,7 @@ msgstr "Control dreta"
 
 #: kikbdconf.cpp:108
 msgid "Rights (Alt+Shift)"
-msgstr "Dreta (Alt+Majús)"
+msgstr "Dreta (Alt+MajÃºs)"
 
 #: kikbdconf.cpp:109
 msgid "Rights (Ctrl+Alt)"
@@ -144,11 +144,11 @@ msgstr "Dreta (Ctrl+Alt)"
 
 #: kikbdconf.cpp:110
 msgid "Rights (Ctrl+Shift)"
-msgstr "Dreta (Ctrl+Majús)"
+msgstr "Dreta (Ctrl+MajÃºs)"
 
 #: kikbdconf.cpp:111
 msgid "Lefts  (Alt+Shift)"
-msgstr "Esquerra (Alt+Majús)"
+msgstr "Esquerra (Alt+MajÃºs)"
 
 #: kikbdconf.cpp:112
 msgid "Lefts  (Ctrl+Alt)"
@@ -156,11 +156,11 @@ msgstr "Esquerra (Ctrl+Alt)"
 
 #: kikbdconf.cpp:113
 msgid "Lefts  (Ctrl+Shift)"
-msgstr "Esquerra (Ctrl+Majús)"
+msgstr "Esquerra (Ctrl+MajÃºs)"
 
 #: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
-msgstr "Ambdues Majús (Majús+Majús)"
+msgstr "Ambdues MajÃºs (MajÃºs+MajÃºs)"
 
 #: kikbdconf.cpp:120
 msgid "Right Meta"
@@ -196,7 +196,7 @@ msgstr "Baix dreta"
 
 #: kikbdconf.cpp:156
 msgid "X default codes"
-msgstr "Codis X per omissió"
+msgstr "Codis X per omissiÃ³"
 
 #: kikbdconf.cpp:215
 #, c-format
@@ -213,7 +213,7 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 "Esteu fent servir \"Teclat internacional\" per primer cop.\n"
-"He instal·lat un arranjament per omissió."
+"He instalÂ·lat un arranjament per omissiÃ³."
 
 #: kikbdconf.cpp:379
 msgid "unknown"
@@ -221,7 +221,7 @@ msgstr "desconegut"
 
 #: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
-msgstr "omissió"
+msgstr "omissiÃ³"
 
 #: kikbdconf.cpp:419
 msgid "Author:  Not specified"
@@ -233,7 +233,7 @@ msgstr "Autor"
 
 #: kikbdconf.cpp:427
 msgid "Description:  "
-msgstr "Descripció:   "
+msgstr "DescripciÃ³:   "
 
 #: kikbdconf.cpp:430
 msgid "Source:  "
@@ -253,11 +253,11 @@ msgstr "fitxer del sistema"
 
 #: kikbdconf.cpp:438
 msgid "Statistic:  "
-msgstr "Estadístic: "
+msgstr "EstadÃ­stic: "
 
 #: kikbdconf.cpp:446
 msgid "symbols"
-msgstr "símbols"
+msgstr "sÃ­mbols"
 
 #: kikbdconf.cpp:454
 msgid "codes"
@@ -265,7 +265,7 @@ msgstr "codis"
 
 #: kikbdconf.cpp:457
 msgid "alternative symbols"
-msgstr "símbols alternatius"
+msgstr "sÃ­mbols alternatius"
 
 #: kikbdconf.cpp:469
 msgid "Language"
@@ -273,7 +273,7 @@ msgstr "Idioma"
 
 #: kikbdconf.cpp:473
 msgid "Charset"
-msgstr "Joc de caràcters"
+msgstr "Joc de carÃ cters"
 
 #: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
@@ -281,7 +281,7 @@ msgstr "ERROR del teclat internacional"
 
 #: kikbdconf.cpp:535
 msgid "International keyboard warning"
-msgstr "Avís del teclat internacional"
+msgstr "AvÃ­s del teclat internacional"
 
 #: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
@@ -337,7 +337,7 @@ msgstr "&Info"
 
 #: widgets.cpp:145
 msgid "Display information for selected keyboard map"
-msgstr "Mostra informació pel map de teclat seleccionat"
+msgstr "Mostra informaciÃ³ pel map de teclat seleccionat"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
@@ -347,7 +347,7 @@ msgstr "Usa la llista dels &bons"
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
-msgstr "Usa només els mapes de teclat per omissió i darrer actiu quan s'usa la seqüència de tecles de canvi"
+msgstr "Usa nomÃ©s els mapes de teclat per omissiÃ³ i darrer actiu quan s'usa la seqÃ¼Ã¨ncia de tecles de canvi"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
@@ -355,11 +355,11 @@ msgstr "Afegint teclat"
 
 #: widgets.cpp:225
 msgid "There are no keyboard maps left to add"
-msgstr "No hi ha més mapes de teclat per afegir"
+msgstr "No hi ha mÃ©s mapes de teclat per afegir"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
-msgstr "Informació de mapa de teclat"
+msgstr "InformaciÃ³ de mapa de teclat"
 
 #: widgets.cpp:292
 msgid "Add Keyboard"
@@ -383,7 +383,7 @@ msgstr "Tecla/es per canviar entre mapes de teclat"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "Tecla per activar símbols alternatius al mapa de teclat actual"
+msgstr "Tecla per activar sÃ­mbols alternatius al mapa de teclat actual"
 
 #: widgets.cpp:438
 msgid "&Beep"
@@ -395,35 +395,35 @@ msgstr "Bip sempre que canvii el mapa de teclat"
 
 #: widgets.cpp:442
 msgid "Ad&vanced"
-msgstr "A&vançat"
+msgstr "A&vanÃ§at"
 
 #: widgets.cpp:442
 msgid "Advanced options"
-msgstr "Opcions avançades"
+msgstr "Opcions avanÃ§ades"
 
 #: widgets.cpp:459
 msgid "Advanced"
-msgstr "Avançat"
+msgstr "AvanÃ§at"
 
 #: widgets.cpp:475
 msgid "&Emulate Caps Lock"
-msgstr "&Emula Bloq Majús"
+msgstr "&Emula Bloq MajÃºs"
 
 #: widgets.cpp:476
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
 msgstr ""
-"Emula Bloq Majús del servidor X. És necessària per l'operació correcta del "
+"Emula Bloq MajÃºs del servidor X. Ã‰s necessÃ ria per l'operaciÃ³ correcta del "
 "teclat per alguns idiomes"
 
 #: widgets.cpp:482
 msgid "&World Menu"
-msgstr "Menú &mundial"
+msgstr "MenÃº &mundial"
 
 #: widgets.cpp:483
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "Mostra el menú en qualsevol finestra prement les tecles Canviar"
+msgstr "Mostra el menÃº en qualsevol finestra prement les tecles Canviar"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -443,7 +443,7 @@ msgstr "Entrada"
 
 #: widgets.cpp:505
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Comportament estàndard. Mapa de teclat actiu per totes les finestres"
+msgstr "Comportament estÃ ndard. Mapa de teclat actiu per totes les finestres"
 
 #: widgets.cpp:509
 msgid ""
@@ -457,7 +457,7 @@ msgstr "Comportament especial. L'estat del teclat es desa per cada classe de fin
 
 #: widgets.cpp:561
 msgid "Button Colors"
-msgstr "Colors de botó"
+msgstr "Colors de botÃ³"
 
 #: widgets.cpp:571
 msgid "Foreground"
@@ -477,11 +477,11 @@ msgstr "Color de fons del text de l'etiqueta"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
-msgstr "Amb Bloq Majús"
+msgstr "Amb Bloq MajÃºs"
 
 #: widgets.cpp:582
 msgid "Background when Emulated Caps Lock active"
-msgstr "Fons quan està actiu l'emulació Bloq Majús"
+msgstr "Fons quan estÃ  actiu l'emulaciÃ³ Bloq MajÃºs"
 
 #: widgets.cpp:588
 msgid "With Alternate"
@@ -489,11 +489,11 @@ msgstr "Amb alternatiu"
 
 #: widgets.cpp:589
 msgid "Background when Alternate switch key is pressed"
-msgstr "Fons en prèmer la tecla del canvi alternatiu"
+msgstr "Fons en prÃ¨mer la tecla del canvi alternatiu"
 
 #: widgets.cpp:598
 msgid "Button Font"
-msgstr "Font de botó"
+msgstr "Font de botÃ³"
 
 #: widgets.cpp:606
 msgid "&Customize Font"
@@ -513,7 +513,7 @@ msgstr "&Autoengega"
 
 #: widgets.cpp:657
 msgid "Start up automatically"
-msgstr "Engega automàticament"
+msgstr "Engega automÃ ticament"
 
 #: widgets.cpp:663
 msgid "&Docked"
@@ -521,15 +521,15 @@ msgstr "&Encastat"
 
 #: widgets.cpp:664
 msgid "Dock into special area in the panel"
-msgstr "Encasta a l'àrea especial del plafó"
+msgstr "Encasta a l'Ã rea especial del plafÃ³"
 
 #: widgets.cpp:673
 msgid "Place"
-msgstr "Col·loca"
+msgstr "ColÂ·loca"
 
 #: widgets.cpp:680
 msgid "Place in selected corner"
-msgstr "Col·loca al cantó"
+msgstr "ColÂ·loca al cantÃ³"
 
 #: kcmikbd.cpp:64
 msgid "&General"

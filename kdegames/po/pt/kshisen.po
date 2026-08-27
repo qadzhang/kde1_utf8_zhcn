@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: app.cpp:94 app.cpp:143 board.cpp:222
@@ -15,7 +15,7 @@ msgstr "Shisen-Sho"
 
 #: board.cpp:223
 msgid "Cannot load pixmaps!"
-msgstr "Não consigo carregar imagens!"
+msgstr "NÃ£o consigo carregar imagens!"
 
 #: app.cpp:108
 msgid "Get &hint"
@@ -27,11 +27,11 @@ msgstr "&Novo jogo"
 
 #: app.cpp:111
 msgid "Res&tart game"
-msgstr "&Recomeçar jogo"
+msgstr "&RecomeÃ§ar jogo"
 
 #: app.cpp:113
 msgid "Is game solvable?"
-msgstr "O &jogo é resolúvel?"
+msgstr "O &jogo Ã© resolÃºvel?"
 
 #: app.cpp:115
 msgid "&Hall of Fame"
@@ -59,15 +59,15 @@ msgstr "30x16"
 
 #: app.cpp:133
 msgid "Very fast"
-msgstr "Muito rápido"
+msgstr "Muito rÃ¡pido"
 
 #: app.cpp:134
 msgid "Fast"
-msgstr "Rápido"
+msgstr "RÃ¡pido"
 
 #: app.cpp:135 app.cpp:140
 msgid "Medium"
-msgstr "Médio"
+msgstr "MÃ©dio"
 
 #: app.cpp:136
 msgid "Slow"
@@ -79,11 +79,11 @@ msgstr "Muito lento"
 
 #: app.cpp:139
 msgid "Easy"
-msgstr "Fácil"
+msgstr "FÃ¡cil"
 
 #: app.cpp:141
 msgid "Hard"
-msgstr "Difícil"
+msgstr "DifÃ­cil"
 
 #: app.cpp:145
 msgid ""
@@ -105,11 +105,11 @@ msgstr "&Velocidade"
 
 #: app.cpp:153
 msgid "&Level"
-msgstr "&Nível"
+msgstr "&NÃ­vel"
 
 #: app.cpp:154
 msgid "Disallow unsolvable games"
-msgstr "Não permitir jogos não resolúveis"
+msgstr "NÃ£o permitir jogos nÃ£o resolÃºveis"
 
 #: app.cpp:175
 msgid "Your time: XX:XX:XX"
@@ -121,11 +121,11 @@ msgstr "Modo de batota"
 
 #: app.cpp:264
 msgid "This game is solveable"
-msgstr "Este jogo é resolúvel"
+msgstr "Este jogo Ã© resolÃºvel"
 
 #: app.cpp:267
 msgid "This game is NOT solveable"
-msgstr "Este jogo NÃO é resolúvel"
+msgstr "Este jogo NÃƒO Ã© resolÃºvel"
 
 #: app.cpp:389 app.cpp:421
 msgid "End of game"
@@ -133,12 +133,12 @@ msgstr "Fim do jogo"
 
 #: app.cpp:390
 msgid "No more moves possible!"
-msgstr "Não há mais jogadas possíveis!"
+msgstr "NÃ£o hÃ¡ mais jogadas possÃ­veis!"
 
 #: app.cpp:416
 #, c-format
 msgid "Congratulations! You made it in %02d:%02d:%02d"
-msgstr "Parabéns! Conseguiste em %02d:%02d:%02d"
+msgstr "ParabÃ©ns! Conseguiste em %02d:%02d:%02d"
 
 #: app.cpp:433
 #, c-format
@@ -153,7 +153,7 @@ msgid ""
 msgstr ""
 "Entraste para o \"Quadro de Honra\". Escreve o teu\n"
 "nome para que a humanidade saiba para sempre que\n"
-"és mesmo bom nisto."
+"Ã©s mesmo bom nisto."
 
 #: app.cpp:447
 msgid "Your name:"
@@ -169,7 +169,7 @@ msgstr "Shisen-Sho: Quadro de Honra"
 
 #: app.cpp:634
 msgid "Rank"
-msgstr "Posição"
+msgstr "PosiÃ§Ã£o"
 
 #: app.cpp:638
 msgid "Name"
@@ -185,4 +185,4 @@ msgstr "Tamanho"
 
 #: app.cpp:650
 msgid "Score"
-msgstr "Pontuação"
+msgstr "PontuaÃ§Ã£o"

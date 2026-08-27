@@ -1,4 +1,4 @@
-# Esperantaj mesaøoj por "kbiff"
+# Esperantaj mesaÄoj por "kbiff"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kbiff.cpp:629
@@ -32,11 +32,11 @@ msgstr "&Helpu..."
 
 #: kbiff.cpp:638
 msgid "&Check Mail Now"
-msgstr "&Rigardu je poşto nun"
+msgstr "&Rigardu je poÅto nun"
 
 #: kbiff.cpp:640
 msgid "&Read Mail Now"
-msgstr "&Prenu la poşton nun"
+msgstr "&Prenu la poÅton nun"
 
 #: kbiff.cpp:646
 msgid "&Stop"
@@ -44,17 +44,17 @@ msgstr "&Stop"
 
 #: notify.cpp:33 notify.cpp:50
 msgid "You have new mail!"
-msgstr "Vi havas novajn poştat¼ojn!"
+msgstr "Vi havas novajn poÅtatÄµojn!"
 
 #: notify.cpp:58 notify.cpp:103
 #, c-format
 msgid "New Messages: %d"
-msgstr "Novaj mesaøoj: %d"
+msgstr "Novaj mesaÄoj: %d"
 
 #: notify.cpp:63
 #, c-format
 msgid "Mailbox: %s"
-msgstr "Poştkesto: %s"
+msgstr "PoÅtkesto: %s"
 
 # This is on a button.  It launches the user's mail client
 #: notify.cpp:73
@@ -67,7 +67,7 @@ msgstr "KBiff-agordo"
 
 #: setupdlg.cpp:86
 msgid "Profile:"
-msgstr "Agorda¼o:"
+msgstr "AgordaÄµo:"
 
 #: setupdlg.cpp:102
 msgid "&New..."
@@ -79,33 +79,33 @@ msgstr "&Alinomu..."
 
 #: setupdlg.cpp:143
 msgid "General"
-msgstr "Øenerale"
+msgstr "Äœenerale"
 
 #: setupdlg.cpp:144
 msgid "New Mail"
-msgstr "Nova poşto"
+msgstr "Nova poÅto"
 
 #: setupdlg.cpp:145 status.cpp:33
 msgid "Mailbox"
-msgstr "Poştkesto"
+msgstr "PoÅtkesto"
 
 #: setupdlg.cpp:391
 msgid "New Profile"
-msgstr "Nova agorda¼o"
+msgstr "Nova agordaÄµo"
 
 #: setupdlg.cpp:423
 #, c-format
 msgid "Rename Profile: %s"
-msgstr "Alinomu agorda¼on: %s"
+msgstr "Alinomu agordaÄµon: %s"
 
 #: setupdlg.cpp:463
 #, c-format
 msgid "Delete Profile: %s"
-msgstr "Forigu agorda¼on: %s"
+msgstr "Forigu agordaÄµon: %s"
 
 #: setupdlg.cpp:464
 msgid "Are you sure you wish to delete this profile?\n"
-msgstr "Æu vi estas certa, ke vi volas forigi tiun æi agorda¼on?\n"
+msgstr "Äˆu vi estas certa, ke vi volas forigi tiun Ä‰i agordaÄµon?\n"
 
 #: setupdlg.cpp:524
 msgid "Poll (sec):"
@@ -113,7 +113,7 @@ msgstr "Kontrolintervalo (s):"
 
 #: setupdlg.cpp:529
 msgid "Mail client:"
-msgstr "Poştkliento:"
+msgstr "PoÅtkliento:"
 
 #: setupdlg.cpp:542
 msgid "Dock in panel"
@@ -129,15 +129,15 @@ msgstr "Piktogramoj:"
 
 #: setupdlg.cpp:570
 msgid "No Mail:"
-msgstr "Neniu poşto:"
+msgstr "Neniu poÅto:"
 
 #: setupdlg.cpp:579
 msgid "Old Mail"
-msgstr "Malnova poşto"
+msgstr "Malnova poÅto"
 
 #: setupdlg.cpp:589
 msgid "New Mail:"
-msgstr "Nova poşto"
+msgstr "Nova poÅto"
 
 # This is the icon that is displayed when KBiff could not make a connection
 # to a remote server
@@ -147,7 +147,7 @@ msgstr ""
 
 #: setupdlg.cpp:756
 msgid "Run Command"
-msgstr "Lanæ-komando"
+msgstr "LanÄ‰-komando"
 
 #: setupdlg.cpp:763 setupdlg.cpp:783 setupdlg.cpp:1178
 msgid "Browse"
@@ -177,7 +177,7 @@ msgstr "Ekstraj opcioj"
 
 #: setupdlg.cpp:952
 msgid "Mailbox URL:"
-msgstr "Poştkesta URL:"
+msgstr "PoÅtkesta URL:"
 
 #: setupdlg.cpp:956
 msgid "Port:"
@@ -200,15 +200,15 @@ msgstr ""
 
 #: setupdlg.cpp:1123 setupdlg.cpp:1152
 msgid "Mailbox:"
-msgstr "Poştkesto"
+msgstr "PoÅtkesto"
 
 #: setupdlg.cpp:1136 setupdlg.cpp:1474
 msgid "New Mailbox"
-msgstr "Nova poştkesto"
+msgstr "Nova poÅtkesto"
 
 #: setupdlg.cpp:1143
 msgid "Delete Mailbox"
-msgstr "Forigu poştkeston"
+msgstr "Forigu poÅtkeston"
 
 #: setupdlg.cpp:1149
 msgid "Protocol:"

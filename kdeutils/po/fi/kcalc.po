@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-03-05 01:58+0100\n"
-"Content-Type: text/plain; charset=\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Date: 1998-03-06 23:13:09-0500\n"
 "From: Bernd Johannes Wuebben,201 Lincoln Hall,,256-1036, "
 "<root@petit.cornell.edu>\n"
@@ -55,9 +55,9 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"Johtuen rikkin‰isist‰ glibc-kirjastoista, KCalc:n tarkkuus on laskettu 'long "
+"Johtuen rikkin√§isist√§ glibc-kirjastoista, KCalc:n tarkkuus on laskettu 'long "
 "double'-tarkkuudesta 'double'-tarkkuuteen. Ne, joilla on toimiva libc, "
-"voivat k‰‰nt‰‰ kcalcin 'long double' tarkkuudella. Lue README-tiedostosta "
+"voivat k√§√§nt√§√§ kcalcin 'long double' tarkkuudella. Lue README-tiedostosta "
 "tarkemmat tiedot."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
@@ -66,7 +66,7 @@ msgstr "Oletukset"
 
 #: kcalc.cpp:1593
 msgid "Display Font"
-msgstr "N‰yttˆkirjasin"
+msgstr "N√§ytt√∂kirjasin"
 
 #: kcalc.cpp:1909
 #, c-format
@@ -87,7 +87,7 @@ msgstr "Tilastomuisti puhdistettu"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
-msgstr "Pinonk‰sittelyvirhe - right_op"
+msgstr "Pinonk√§sittelyvirhe - right_op"
 
 #: kcalc_core.cpp:1640
 msgid "Stack processing error - function"
@@ -95,11 +95,11 @@ msgstr "Pinonprosessointivirhe - funktio"
 
 #: kcalc_core.cpp:1649
 msgid "Stack processing error - left_op"
-msgstr "Pinonk‰sittelyvirhe - left_op"
+msgstr "Pinonk√§sittelyvirhe - left_op"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Emergency"
-msgstr "H‰t‰tila"
+msgstr "H√§t√§tila"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Stack Error!"
@@ -107,11 +107,11 @@ msgstr "Pinovirhe!"
 
 #: configdlg.cpp:61
 msgid "Foreground Color:"
-msgstr "Taustan v‰ri:"
+msgstr "Taustan v√§ri:"
 
 #: configdlg.cpp:78
 msgid "Background Color:"
-msgstr "Edustan v‰ri:"
+msgstr "Edustan v√§ri:"
 
 #: configdlg.cpp:95
 msgid "Precision:"
@@ -119,11 +119,11 @@ msgstr "Tarkkuus:"
 
 #: configdlg.cpp:116
 msgid "Set Fixed Precision at:"
-msgstr "Aseta kiinte‰ tarkkuus:"
+msgstr "Aseta kiinte√§ tarkkuus:"
 
 #: configdlg.cpp:145
 msgid "Beep on Error"
-msgstr "Virheen yhteydess‰ ‰‰nimerkki"
+msgstr "Virheen yhteydess√§ √§√§nimerkki"
 
 #: configdlg.cpp:153
 msgid "Trigonometry Mode"

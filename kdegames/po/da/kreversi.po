@@ -1,16 +1,16 @@
 # Danish translation for KDE Games, kreversi 
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Erik Kjær Pedersen <erik@binghamton.edu>, 1999.
+# Erik KjÃ¦r Pedersen <erik@binghamton.edu>, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE Games/kreversi\n"
 "POT-Creation-Date: 1998-10-01 13:21+0200\n"
 "PO-Revision-Date: 1999-02-16 21:52-0500\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: app.cpp:218 app.cpp:553
@@ -27,7 +27,7 @@ msgstr "&Nyt spil"
 
 #: app.cpp:246
 msgid "&Load game"
-msgstr "&Indlæs spil"
+msgstr "&IndlÃ¦s spil"
 
 #: app.cpp:247
 msgid "&Save game"
@@ -35,19 +35,19 @@ msgstr "&Gem spil"
 
 #: app.cpp:252
 msgid "Get &hint"
-msgstr "Få &vink"
+msgstr "FÃ¥ &vink"
 
 #: app.cpp:254
 msgid "&Stop thinking"
-msgstr "&Hold op med at tænke"
+msgstr "&Hold op med at tÃ¦nke"
 
 #: app.cpp:255
 msgid "&Continue"
-msgstr "&Fortsæt"
+msgstr "&FortsÃ¦t"
 
 #: app.cpp:257
 msgid "&Undo move"
-msgstr "Fortr&yd det sidste træk"
+msgstr "Fortr&yd det sidste trÃ¦k"
 
 #: app.cpp:258
 msgid "Switch si&des"
@@ -59,7 +59,7 @@ msgstr "&Topresultaterne..."
 
 #: app.cpp:266
 msgid "Level 1 (Wimp)"
-msgstr "Niveau 1 (tøsedreng)"
+msgstr "Niveau 1 (tÃ¸sedreng)"
 
 #: app.cpp:267
 msgid "Level 2 (Beginner)"
@@ -91,15 +91,15 @@ msgstr "Evner"
 
 #: app.cpp:275
 msgid "&Shrink board"
-msgstr "Ind&skrænk bræt"
+msgstr "Ind&skrÃ¦nk brÃ¦t"
 
 #: app.cpp:276
 msgid "&Enlarge board"
-msgstr "&Forstør brædt"
+msgstr "&ForstÃ¸r brÃ¦dt"
 
 #: app.cpp:280
 msgid "&Half size"
-msgstr "&Halv størrelse"
+msgstr "&Halv stÃ¸rrelse"
 
 #: app.cpp:281
 #, c-format
@@ -113,7 +113,7 @@ msgstr "80%"
 
 #: app.cpp:283
 msgid "D&efault size"
-msgstr "Standard størr&else"
+msgstr "Standard stÃ¸rr&else"
 
 #: app.cpp:284
 #, c-format
@@ -137,15 +137,15 @@ msgstr "180%"
 
 #: app.cpp:288
 msgid "&Double size"
-msgstr "&Dobbelt størrelse"
+msgstr "&Dobbelt stÃ¸rrelse"
 
 #: app.cpp:289
 msgid "Set size"
-msgstr "Sæt størrelse"
+msgstr "SÃ¦t stÃ¸rrelse"
 
 #: app.cpp:292
 msgid "Select &background color..."
-msgstr "Vælg &baggrundsfarve..."
+msgstr "VÃ¦lg &baggrundsfarve..."
 
 #: app.cpp:298
 msgid "none"
@@ -153,11 +153,11 @@ msgstr "ingen"
 
 #: app.cpp:308
 msgid "Select background image"
-msgstr "Vælg baggrundsbillede"
+msgstr "VÃ¦lg baggrundsbillede"
 
 #: app.cpp:309
 msgid "&Grayscale"
-msgstr "&Gråskala"
+msgstr "&GrÃ¥skala"
 
 #: app.cpp:311
 msgid "&Animations"
@@ -181,27 +181,27 @@ msgstr "&Lyd"
 
 #: app.cpp:369
 msgid "Stop thinking"
-msgstr "Hold op med at tænke"
+msgstr "Hold op med at tÃ¦nke"
 
 #: app.cpp:370
 msgid "Undo move"
-msgstr "Fortryd sidste træk"
+msgstr "Fortryd sidste trÃ¦k"
 
 #: app.cpp:371
 msgid "Shrink board"
-msgstr "Formindsk bræt"
+msgstr "Formindsk brÃ¦t"
 
 #: app.cpp:372
 msgid "Enlarge board"
-msgstr "Forstør brædt"
+msgstr "ForstÃ¸r brÃ¦dt"
 
 #: app.cpp:373
 msgid "Get hint"
-msgstr "Få vink"
+msgstr "FÃ¥ vink"
 
 #: app.cpp:374
 msgid "Get help"
-msgstr "Få hjælp"
+msgstr "FÃ¥ hjÃ¦lp"
 
 #: app.cpp:381
 msgid "XXXXX's turn"
@@ -230,7 +230,7 @@ msgstr "Du (%s): %d"
 
 #: app.cpp:605 app.cpp:612 app.cpp:912
 msgid "blue"
-msgstr "blå"
+msgstr "blÃ¥"
 
 #: app.cpp:606 app.cpp:611
 #, c-format
@@ -239,7 +239,7 @@ msgstr "Computer (%s): %d"
 
 #: app.cpp:607 app.cpp:610 app.cpp:914
 msgid "red"
-msgstr "rød"
+msgstr "rÃ¸d"
 
 #: app.cpp:656
 msgid "End of game"
@@ -291,7 +291,7 @@ msgstr ""
 
 #: app.cpp:708
 msgid "Red's"
-msgstr "Rød's"
+msgstr "RÃ¸d's"
 
 #: app.cpp:708 app.cpp:710
 msgid "turn"
@@ -299,7 +299,7 @@ msgstr "tur"
 
 #: app.cpp:710
 msgid "Blue's"
-msgstr "Blå's"
+msgstr "BlÃ¥'s"
 
 #: app.cpp:855
 msgid "Hall of Fame"
@@ -335,8 +335,8 @@ msgid ""
 "your name so mankind will always remember\n"
 "your cool rating."
 msgstr ""
-"Du er kommet på topscoringslisten. Skriv dit navn\n"
-"så menneskeheden altid vil huske hvor cool du er"
+"Du er kommet pÃ¥ topscoringslisten. Skriv dit navn\n"
+"sÃ¥ menneskeheden altid vil huske hvor cool du er"
 
 #: app.cpp:990
 msgid "Your name:"
@@ -375,11 +375,11 @@ msgstr ""
 "\n"
 "Dette program er frit programmel\n"
 "Publiceret under GNU's almindelige \n"
-"offentlige licens (kig i hjælp for detaljer)\n"
+"offentlige licens (kig i hjÃ¦lp for detaljer)\n"
 "\n"
 "Tak til:\n"
 "\tMats Luthman for the spil engine\n"
-"\t(Jeg har overført denne fra hans java applet)\n"
+"\t(Jeg har overfÃ¸rt denne fra hans java applet)\n"
 "\n"
 "\tStephan Kulow\n"
 "\tfor kommentarer og programrettelser\n"

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: gamewindow.cpp:49
@@ -51,22 +51,22 @@ msgstr "&Lyder"
 
 #: gamewindow.cpp:73
 #, c-format
-msgid ""
-"KSmiletris %s\n"
-"\n"
-"by Sandro Sigala <ssigala@globalnet.it>\n"
-"\n"
-"Feedbacks are welcome!\n"
-msgstr ""
-"KSmiletris %d\n"
-"\n"
-"av Sandro Sigala <ssigala@globalnet.it>\n"
-"\n"
-"Tilbakemeldinger ønskes!\n"
+#~ msgid ""
+#~ "KSmiletris %s\n"
+#~ "\n"
+#~ "by Sandro Sigala <ssigala@globalnet.it>\n"
+#~ "\n"
+#~ "Feedbacks are welcome!\n"
+#~ msgstr ""
+#~ "KSmiletris %d\n"
+#~ "\n"
+#~ "av Sandro Sigala <ssigala@globalnet.it>\n"
+#~ "\n"
+#~ "Tilbakemeldinger Ã¸nskes!\n"
 
 #: gamewindow.cpp:88
 msgid "Level: 99"
-msgstr "Nivå: 99"
+msgstr "NivÃ¥: 99"
 
 #: gamewindow.cpp:89
 msgid "Score: 999999"
@@ -78,7 +78,7 @@ msgstr "Poengtavle"
 
 #: scoredialog.cpp:42
 msgid "Level"
-msgstr "Nivå"
+msgstr "NivÃ¥"
 
 #: scoredialog.cpp:45
 msgid "Score"

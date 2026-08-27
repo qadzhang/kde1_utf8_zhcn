@@ -9,7 +9,7 @@ msgstr ""
 "PO-Revision-Date: 1999-03-04 22:25 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
-"Language-Team: Français\n"
+"Language-Team: FranÃ§ais\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,15 +24,15 @@ msgstr "Cacher la barre d'&outils"
 
 #: kedit.cpp:90 kedit.cpp:1071
 msgid "Show &Status Bar"
-msgstr "Afficher la barre d'é&tat"
+msgstr "Afficher la barre d'Ã©&tat"
 
 #: kedit.cpp:92 kedit.cpp:1064
 msgid "Hide &Status Bar"
-msgstr "Cacher la barre d'é&tat"
+msgstr "Cacher la barre d'Ã©&tat"
 
 #: kedit.cpp:154
 msgid "Select All"
-msgstr "Sélectionner tout"
+msgstr "SÃ©lectionner tout"
 
 #: kedit.cpp:157
 msgid "Font..."
@@ -44,7 +44,7 @@ msgstr "&Nouveau..."
 
 #: kedit.cpp:208
 msgid "Open Recen&t..."
-msgstr "Récemment ou&vert..."
+msgstr "RÃ©cemment ou&vert..."
 
 #: kedit.cpp:220
 msgid "Open &URL..."
@@ -60,19 +60,19 @@ msgstr "&Courrier..."
 
 #: kedit.cpp:242
 msgid "New &Window"
-msgstr "Nouvelle &fenêtre"
+msgstr "Nouvelle &fenÃªtre"
 
 #: kedit.cpp:254
 msgid "&Select All"
-msgstr "&Sélectionner tout"
+msgstr "&SÃ©lectionner tout"
 
 #: kedit.cpp:257
 msgid "&Insert File"
-msgstr "Insérer un &fichier"
+msgstr "InsÃ©rer un &fichier"
 
 #: kedit.cpp:259
 msgid "Insert &Date"
-msgstr "Insérer la &date"
+msgstr "InsÃ©rer la &date"
 
 #: kedit.cpp:262
 msgid "&Find..."
@@ -80,7 +80,7 @@ msgstr "C&hercher..."
 
 #: kedit.cpp:264
 msgid "Find &Again"
-msgstr "Chercher à &nouveau"
+msgstr "Chercher Ã  &nouveau"
 
 #: kedit.cpp:266
 msgid "&Replace"
@@ -92,7 +92,7 @@ msgstr "Orthographe..."
 
 #: kedit.cpp:273
 msgid "&Goto Line..."
-msgstr "&Aller à la ligne..."
+msgstr "&Aller Ã  la ligne..."
 
 #: kedit.cpp:277
 msgid "&Font..."
@@ -116,7 +116,7 @@ msgstr "Barre d'&outils"
 
 #: kedit.cpp:291
 msgid "&Status Bar"
-msgstr "Barre d'é&tat"
+msgstr "Barre d'Ã©&tat"
 
 #: kedit.cpp:294
 msgid "Save Options"
@@ -155,7 +155,7 @@ msgstr "Imprimer le document"
 
 #: kedit.cpp:373
 msgid "Mail Document"
-msgstr "Expédier le document"
+msgstr "ExpÃ©dier le document"
 
 #: kedit.cpp:493 kedit.cpp:581 kedit.cpp:1533 keditcl2.cpp:721
 #: keditcl2.cpp:857
@@ -179,7 +179,7 @@ msgid ""
 "This Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Ce document à été modifié.\n"
+"Ce document Ã  Ã©tÃ© modifiÃ©.\n"
 "Voulez-vous l'enregistrer ?"
 
 #: kedit.cpp:664 kedit.cpp:819
@@ -188,7 +188,7 @@ msgid ""
 "Exit anyways?"
 msgstr ""
 "Impossible d'enregistrer le fichier.\n"
-"Désirez-vous quand même quitter ?"
+"DÃ©sirez-vous quand mÃªme quitter ?"
 
 #: kedit.cpp:710
 msgid ""
@@ -196,17 +196,17 @@ msgid ""
 "If you exit now, you will loose those changes\n"
 "Quit anyways?"
 msgstr ""
-"Certaines fenêtres contiennent des modifications non enregistrées.\n"
+"Certaines fenÃªtres contiennent des modifications non enregistrÃ©es.\n"
 "Si vous quittez maintenant l'application, ces modifications seront perdues.\n"
-"Désirez-vous quand même quitter ?"
+"DÃ©sirez-vous quand mÃªme quitter ?"
 
 #: kedit.cpp:739
 msgid ""
 "The current document has been modified.\n"
 "Continue anyways ?"
 msgstr ""
-"Le document en cours a été modifié.\n"
-"Désirez-vous quand même continuer ?"
+"Le document en cours a Ã©tÃ© modifiÃ©.\n"
+"DÃ©sirez-vous quand mÃªme continuer ?"
 
 #: kedit.cpp:880
 #, c-format
@@ -215,12 +215,12 @@ msgstr "Ecrit : %s"
 
 #: kedit.cpp:886
 msgid "No changes need to be saved"
-msgstr "Aucun changement n'a besoin d'être enregistré"
+msgstr "Aucun changement n'a besoin d'Ãªtre enregistrÃ©"
 
 #: kedit.cpp:905
 #, c-format
 msgid "Saved as: %s"
-msgstr "Enregistré sous : %s"
+msgstr "EnregistrÃ© sous : %s"
 
 #: kedit.cpp:938
 #, c-format
@@ -254,8 +254,8 @@ msgid ""
 "Would you like to save the changes before \n"
 "printing this Document?"
 msgstr ""
-"Le document courant a été modifié.\n"
-"Désirez-vous enregistrer les modifications avant\n"
+"Le document courant a Ã©tÃ© modifiÃ©.\n"
+"DÃ©sirez-vous enregistrer les modifications avant\n"
 "de l'imprimer ?"
 
 #: kedit.cpp:1218
@@ -264,12 +264,12 @@ msgid ""
 "Print anyways?"
 msgstr ""
 "Impossible d'enregistrer le fichier.\n"
-"Désirez-vous quand même l'imprimer ?"
+"DÃ©sirez-vous quand mÃªme l'imprimer ?"
 
 #: kedit.cpp:1311
 #, c-format
 msgid "Printing: %s Untitled (Selection)"
-msgstr "Impression : %s sans nom (sélection)"
+msgstr "Impression : %s sans nom (sÃ©lection)"
 
 #: kedit.cpp:1314
 #, c-format
@@ -284,7 +284,7 @@ msgstr "Impression : %s"
 #: kedit.cpp:1362
 #, c-format
 msgid "Printing: %s %s (Selection)"
-msgstr "Impression : %s %s (sélection)"
+msgstr "Impression : %s %s (sÃ©lection)"
 
 #: kedit.cpp:1386
 msgid "Saving ..."
@@ -301,9 +301,9 @@ msgid ""
 "Please wait until has finished\n"
 "Alternatively stop the running one."
 msgstr ""
-"KEdit attend déjà la fin d'une tâche\n"
+"KEdit attend dÃ©jÃ  la fin d'une tÃ¢che\n"
 "utilisant la connexion Internet.\n"
-"Veuillez attendre la fin de cette tâche\n"
+"Veuillez attendre la fin de cette tÃ¢che\n"
 "ou annulez-la manuellement."
 
 #: kedit.cpp:1444 kedit.cpp:1539
@@ -316,7 +316,7 @@ msgid ""
 "Malformed URL\n"
 "%s"
 msgstr ""
-"URL mal écrite\n"
+"URL mal Ã©crite\n"
 "%s"
 
 #: kedit.cpp:1506
@@ -330,11 +330,11 @@ msgstr "Appel de KFM"
 
 #: kedit.cpp:1549
 msgid "Starting Job"
-msgstr "Lancement de la tâche"
+msgstr "Lancement de la tÃ¢che"
 
 #: kedit.cpp:1552
 msgid "Connected"
-msgstr "Connecté"
+msgstr "ConnectÃ©"
 
 #: kedit.cpp:1554
 msgid "Waiting..."
@@ -347,15 +347,15 @@ msgstr "Fin de '%s'"
 
 #: kedit.cpp:1603
 msgid "New Window"
-msgstr "Nouvelle fenêtre"
+msgstr "Nouvelle fenÃªtre"
 
 #: kedit.cpp:1607
 msgid "New Window Created"
-msgstr "Nouvelle fenêtre créée"
+msgstr "Nouvelle fenÃªtre crÃ©Ã©e"
 
 #: kedit.cpp:1613
 msgid "Load Command Done"
-msgstr "Lecture du fichier effectuée"
+msgstr "Lecture du fichier effectuÃ©e"
 
 #: kedit.cpp:2034
 #, c-format
@@ -363,24 +363,24 @@ msgid ""
 "Can not create:\n"
 "%s"
 msgstr ""
-"Impossible de créer :\n"
+"Impossible de crÃ©er :\n"
 "%s"
 
 #: kedit.cpp:2073
 msgid "Spellchecker Options"
-msgstr "Options du vérificateur d'orthographe"
+msgstr "Options du vÃ©rificateur d'orthographe"
 
 #: keditcl1.cpp:150
 msgid "The specified File does not exist"
-msgstr "Le fichier spécifié n'existe pas"
+msgstr "Le fichier spÃ©cifiÃ© n'existe pas"
 
 #: keditcl1.cpp:163 keditcl1.cpp:439 keditcl1.cpp:522 keditcl1.cpp:1709
 msgid "Sorry:"
-msgstr "Désolé :"
+msgstr "DÃ©solÃ© :"
 
 #: keditcl1.cpp:164
 msgid "You have specificated a directory"
-msgstr "Vous avez spécifié un répertoire"
+msgstr "Vous avez spÃ©cifiÃ© un rÃ©pertoire"
 
 #: keditcl1.cpp:179 keditcl1.cpp:200
 msgid "You do not have read permission to this file."
@@ -399,7 +399,7 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Ce document à été modifié.\n"
+"Ce document Ã  Ã©tÃ© modifiÃ©.\n"
 "Voulez-vous l'enregistrer ?"
 
 #: keditcl1.cpp:440
@@ -408,7 +408,7 @@ msgid ""
 "Open a new document anyways?"
 msgstr ""
 "Impossible d'enregistrer le fichier.\n"
-"Désirez-vous quand même ouvrir un nouveau document ?"
+"DÃ©sirez-vous quand mÃªme ouvrir un nouveau document ?"
 
 #: keditcl1.cpp:523
 msgid ""
@@ -416,7 +416,7 @@ msgid ""
 "Create a new document anyways?"
 msgstr ""
 "Impossible d'enregistrer le fichier.\n"
-"Désirez-vous quand même créer un nouveau document ?"
+"DÃ©sirez-vous quand mÃªme crÃ©er un nouveau document ?"
 
 #: keditcl1.cpp:1570
 msgid "Could not save the document\n"
@@ -427,12 +427,12 @@ msgid ""
 "A Document with this Name exists already\n"
 "Do you want to overwrite it ?"
 msgstr ""
-"Un document ayant le même nom existe déjà\n"
-"Voulez-vous l'écraser ?"
+"Un document ayant le mÃªme nom existe dÃ©jÃ \n"
+"Voulez-vous l'Ã©craser ?"
 
 #: keditcl1.cpp:1710
 msgid "You do not have write permission to this file.\n"
-msgstr "Vous n'avez pas la permission d'écrire dans ce fichier.\n"
+msgstr "Vous n'avez pas la permission d'Ã©crire dans ce fichier.\n"
 
 #: keditcl2.cpp:112 keditcl2.cpp:129 keditcl2.cpp:369 keditcl2.cpp:386
 #: keditcl2.cpp:688 keditcl2.cpp:714 keditcl2.cpp:838
@@ -444,16 +444,16 @@ msgid ""
 "End of document reached.\n"
 "Continue from the beginning?"
 msgstr ""
-"La fin du document a été atteinte.\n"
-"Désirez-vous recommencer par le debut ?"
+"La fin du document a Ã©tÃ© atteinte.\n"
+"DÃ©sirez-vous recommencer par le debut ?"
 
 #: keditcl2.cpp:130 keditcl2.cpp:387 keditcl2.cpp:433 keditcl2.cpp:480
 msgid ""
 "Beginning of document reached.\n"
 "Continue from the end?"
 msgstr ""
-"Le début du document a été atteint.\n"
-"Désirez-vous recommencer par la fin ?"
+"Le dÃ©but du document a Ã©tÃ© atteint.\n"
+"DÃ©sirez-vous recommencer par la fin ?"
 
 #: keditcl2.cpp:702 keditcl2.cpp:822
 msgid "Case Sensitive"
@@ -461,7 +461,7 @@ msgstr "Respecter la casse"
 
 #: keditcl2.cpp:705 keditcl2.cpp:827
 msgid "Find Backwards"
-msgstr "Chercher en arrière"
+msgstr "Chercher en arriÃ¨re"
 
 #: keditcl2.cpp:797
 msgid "Find:"
@@ -477,11 +477,11 @@ msgstr "Remplacer tout"
 
 #: keditcl2.cpp:932
 msgid "Goto Line"
-msgstr "Aller à la ligne"
+msgstr "Aller Ã  la ligne"
 
 #: keditcl2.cpp:937
 msgid "Go"
-msgstr "Aller à"
+msgstr "Aller Ã "
 
 #: print.cpp:74
 msgid "Print Dialog"
@@ -497,15 +497,15 @@ msgstr "Imprimer en utilisant la commande : "
 
 #: print.cpp:109
 msgid "Print Selection"
-msgstr "Imprimer la sélection"
+msgstr "Imprimer la sÃ©lection"
 
 #: filldlg.cpp:46
 msgid "Set Fill-Column at:"
-msgstr "Couper à la colonne :"
+msgstr "Couper Ã  la colonne :"
 
 #: filldlg.cpp:57
 msgid "Word Wrap"
-msgstr "Césure automatique"
+msgstr "CÃ©sure automatique"
 
 #: filldlg.cpp:63
 msgid "Backup Copies"
@@ -521,7 +521,7 @@ msgstr "Vous devez saisir un entier."
 
 #: mail.cpp:37
 msgid "Mail Document to:"
-msgstr "Expédier le document à :"
+msgstr "ExpÃ©dier le document Ã  :"
 
 #: mail.cpp:55
 msgid "Subject:"
@@ -529,8 +529,8 @@ msgstr "Sujet :"
 
 #: mail.cpp:57
 msgid "Mail"
-msgstr "Expédier"
+msgstr "ExpÃ©dier"
 
 #: mail.cpp:96
 msgid "You must specify a Recipient"
-msgstr "Vous devez spécifier un destinataire"
+msgstr "Vous devez spÃ©cifier un destinataire"

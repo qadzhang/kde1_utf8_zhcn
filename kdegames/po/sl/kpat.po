@@ -11,12 +11,12 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: cardmaps.cpp:63
 msgid "please wait, loading cards..."
-msgstr "prosim poèakajte, nalagam karte..."
+msgstr "prosim poÄakajte, nalagam karte..."
 
 #: cardmaps.cpp:67
 msgid "KPat - a Solitaire game"
@@ -25,7 +25,7 @@ msgstr "KPat - igra pasjanse"
 #: cardmaps.cpp:105
 #, fuzzy, c-format
 msgid "kpat: PANIC, cannot load card pixmap \"%s\"\n"
-msgstr "kpat: PANIKA, ne morem nalo¾iti slike kart \"%s\"\n"
+msgstr "kpat: PANIKA, ne morem naloÅ¾iti slike kart \"%s\"\n"
 
 #: cardmaps.cpp:205
 #, c-format
@@ -54,23 +54,23 @@ msgstr "Normalna"
 
 #: computation.cpp:103
 msgid "Hard 1"
-msgstr "Te¾ka 1"
+msgstr "TeÅ¾ka 1"
 
 #: computation.cpp:104
 msgid "Hard 2"
-msgstr "Te¾ka 2"
+msgstr "TeÅ¾ka 2"
 
 #: computation.cpp:105
 msgid "Hard 3"
-msgstr "Te¾ka 3"
+msgstr "TeÅ¾ka 3"
 
 #: computation.cpp:106
 msgid "Hard 4"
-msgstr "Te¾ka 4"
+msgstr "TeÅ¾ka 4"
 
 #: computation.cpp:107
 msgid "Hard 5"
-msgstr "Te¾ka 5"
+msgstr "TeÅ¾ka 5"
 
 #: klondike.cpp:67
 msgid "Easy rules"
@@ -78,15 +78,15 @@ msgstr "Lahka pravila"
 
 #: klondike.cpp:68
 msgid "Hard rules"
-msgstr "Te¾ka pravila"
+msgstr "TeÅ¾ka pravila"
 
 #: klondike.cpp:94
 msgid ""
 "This will end the current game\n"
 "Are you sure you want to do this?"
 msgstr ""
-"To bo konèalo va¹o trenutno igro\n"
-"Ali ste preprièani, da to ¾elite?"
+"To bo konÄalo vaÅ¡o trenutno igro\n"
+"Ali ste prepriÄani, da to Å¾elite?"
 
 #: grandf.cpp:35
 msgid "Try to move card:"
@@ -110,7 +110,7 @@ msgstr "Popolnoma samodejno"
 
 #: pwidget.cpp:96
 msgid "&Restart game"
-msgstr "&Ponovno zaèni igro"
+msgstr "&Ponovno zaÄni igro"
 
 #: pwidget.cpp:100
 msgid "&Klondike"
@@ -122,7 +122,7 @@ msgstr "Mikropasjansa"
 
 #: pwidget.cpp:102 pwidget.cpp:281
 msgid "Calculation"
-msgstr "Izraèun"
+msgstr "IzraÄun"
 
 #: pwidget.cpp:103
 msgid "Napoleon's Tomb"
@@ -158,15 +158,15 @@ msgstr "KDE"
 
 #: pwidget.cpp:117
 msgid "Classic blue"
-msgstr "Klasièno modra"
+msgstr "KlasiÄno modra"
 
 #: pwidget.cpp:118
 msgid "Classic red"
-msgstr "Klasièno rdeèa"
+msgstr "KlasiÄno rdeÄa"
 
 #: pwidget.cpp:119
 msgid "Technical"
-msgstr "Tehnièna"
+msgstr "TehniÄna"
 
 #: pwidget.cpp:120
 msgid "Card backside"
@@ -211,7 +211,7 @@ msgstr "kpat: neimplementiran tip igre %d\n"
 
 #: pwidget.cpp:344
 msgid "Could not load background image!"
-msgstr "Nisem mogel nalo¾iti slike ozadja!"
+msgstr "Nisem mogel naloÅ¾iti slike ozadja!"
 
 #: mod3.cpp:137
 msgid "No more cards"

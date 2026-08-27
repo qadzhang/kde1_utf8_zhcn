@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: ksnake\n"
 "POT-Creation-Date: 1999-01-18 01:39+0100\n"
 "PO-Revision-Date: 1999-01-18 08:38+01:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: game.cpp:41 game.cpp:144 rattler.cpp:350
 msgid "Snake Race"
-msgstr "Závod hadù"
+msgstr "ZÃ¡vod hadÅ¯"
 
 #: game.cpp:45
 msgid "KConfig error ??\n"
@@ -23,7 +23,7 @@ msgstr "Chyba KConfigu ??\n"
 
 #: game.cpp:79
 msgid "New"
-msgstr "Nová"
+msgstr "NovÃ¡"
 
 #: game.cpp:80
 msgid "Pause"
@@ -31,7 +31,7 @@ msgstr "Pauza"
 
 #: game.cpp:81
 msgid "High Scores..."
-msgstr "Nejvy¹¹í skóre ..."
+msgstr "NejvyÅ¡Å¡Ã­ skÃ³re ..."
 
 #: game.cpp:88 game.cpp:97
 msgid "0"
@@ -51,19 +51,19 @@ msgstr "3"
 
 #: game.cpp:111
 msgid "none"
-msgstr "¾ádnı"
+msgstr "Å¾Ã¡dnÃ½"
 
 #: game.cpp:126
 msgid "Beginner"
-msgstr "Zaèáteèník"
+msgstr "ZaÄÃ¡teÄnÃ­k"
 
 #: game.cpp:127
 msgid "Intermediate"
-msgstr "Mírne pokroèilı"
+msgstr "MÃ­rne pokroÄilÃ½"
 
 #: game.cpp:128
 msgid "Advanced"
-msgstr "Pokroèilı"
+msgstr "PokroÄilÃ½"
 
 #: game.cpp:129
 msgid "Expert"
@@ -71,27 +71,27 @@ msgstr "Expert"
 
 #: game.cpp:131
 msgid "Balls"
-msgstr "Poèet míèù"
+msgstr "PoÄet mÃ­ÄÅ¯"
 
 #: game.cpp:132
 msgid "Computer Snakes"
-msgstr "Poèet poèítaèovıch hadù"
+msgstr "PoÄet poÄÃ­taÄovÃ½ch hadÅ¯"
 
 #: game.cpp:134
 msgid "Select background color..."
-msgstr "Vıbìr barvy pozadí ..."
+msgstr "VÃ½bÄ›r barvy pozadÃ­ ..."
 
 #: game.cpp:135
 msgid "Select background pixmap"
-msgstr "Vıbìr obrázku na pozadí ..."
+msgstr "VÃ½bÄ›r obrÃ¡zku na pozadÃ­ ..."
 
 #: game.cpp:137
 msgid "Change keys..."
-msgstr "Zmìna kláves ..."
+msgstr "ZmÄ›na klÃ¡ves ..."
 
 #: game.cpp:139
 msgid "Starting Room..."
-msgstr "Úvodní místnost ..."
+msgstr "ÃšvodnÃ­ mÃ­stnost ..."
 
 #: game.cpp:146
 msgid ""
@@ -110,14 +110,14 @@ msgid ""
 " Press F3 to resume\n"
 msgstr ""
 "Hra pozastavena\n"
-"Stisknìte F3\n"
+"StisknÄ›te F3\n"
 
 #: rattler.cpp:351
 msgid ""
 "A game is already started\n"
 "Start a new one ?\n"
 msgstr ""
-"Hra je ji¾ zahájena\n"
+"Hra je jiÅ¾ zahÃ¡jena\n"
 "Odstartovat novou?\n"
 
 #: rattler.cpp:353
@@ -130,11 +130,11 @@ msgstr "&Ne"
 
 #: startroom.cpp:23
 msgid "Snake Race Starting Room"
-msgstr "Úvodní místnost Závodu hadù"
+msgstr "ÃšvodnÃ­ mÃ­stnost ZÃ¡vodu hadÅ¯"
 
 #: startroom.cpp:41
 msgid "Starting Room"
-msgstr "Úvodní místnost"
+msgstr "ÃšvodnÃ­ mÃ­stnost"
 
 #: lcdrange.cpp:61
 #, c-format
@@ -144,45 +144,45 @@ msgid ""
 "\tand minVal must not be greater than maxVal"
 msgstr ""
 "LCDRange::setRange(%d,%d)\n"
-"\tRozsah musí bıt 0..99\n"
-"\ta minVal nesmí bıt vìt¹í ne¾ maxVal"
+"\tRozsah musÃ­ bÃ½t 0..99\n"
+"\ta minVal nesmÃ­ bÃ½t vÄ›tÅ¡Ã­ neÅ¾ maxVal"
 
 #: score.cpp:46 score.cpp:77
 msgid "Snake Race High Scores"
-msgstr "Nejvy¹¹í skóre v Závodech hadù"
+msgstr "NejvyÅ¡Å¡Ã­ skÃ³re v ZÃ¡vodech hadÅ¯"
 
 #: score.cpp:50
 msgid "Hall of Fame"
-msgstr "Hala slávy"
+msgstr "Hala slÃ¡vy"
 
 #: score.cpp:54
 msgid "Today's High Scores"
-msgstr "Dne¹ní nejvy¹¹í skóre"
+msgstr "DneÅ¡nÃ­ nejvyÅ¡Å¡Ã­ skÃ³re"
 
 #: score.cpp:78
 msgid ""
 "you have achieved a high score!\n"
 " please enter your name"
 msgstr ""
-"dosáhli jste vysoké skóre!\n"
-" prosím vlo¾te své jméno"
+"dosÃ¡hli jste vysokÃ© skÃ³re!\n"
+" prosÃ­m vloÅ¾te svÃ© jmÃ©no"
 
 #: pixServer.cpp:182
 #, c-format
 msgid "error loading %s, aborting\n"
-msgstr "chyba pøi nahrávání %s, pøeru¹uji\n"
+msgstr "chyba pÅ™i nahrÃ¡vÃ¡nÃ­ %s, pÅ™eruÅ¡uji\n"
 
 #: keys.cpp:24
 msgid "Defaults"
-msgstr "Implicitní"
+msgstr "ImplicitnÃ­"
 
 #: keys.cpp:83
 msgid "Change Direction Keys"
-msgstr "Zmìna smìrovıch klávs"
+msgstr "ZmÄ›na smÄ›rovÃ½ch klÃ¡vs"
 
 #: keys.cpp:96
 msgid "Undefined key"
-msgstr "Nedefinovaná klávesa"
+msgstr "NedefinovanÃ¡ klÃ¡vesa"
 
 #: keys.cpp:153
 msgid "Up"
@@ -190,7 +190,7 @@ msgstr "Nahoru"
 
 #: keys.cpp:154
 msgid "Down"
-msgstr "Dolù"
+msgstr "DolÅ¯"
 
 #: keys.cpp:155
 msgid "Left"

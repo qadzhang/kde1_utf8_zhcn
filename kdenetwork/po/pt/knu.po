@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -15,11 +15,11 @@ msgstr "&Ping"
 
 #: knu.cpp:159 knu.cpp:315
 msgid "&Traceroute"
-msgstr "&TraÁar rota"
+msgstr "&Tra√ßar rota"
 
 #: knu.cpp:168 knu.cpp:321
 msgid "Host &resolution"
-msgstr "&ResoluÁ„o de servidor"
+msgstr "&Resolu√ß√£o de servidor"
 
 #: knu.cpp:181
 msgid "F&inger"
@@ -36,10 +36,10 @@ msgid ""
 "\n"
 "So I can't do anything...\n"
 msgstr ""
-"N„o h· nenhum comando activado\n"
-"no ficheiro de configuraÁ„o.\n"
+"N√£o h√° nenhum comando activado\n"
+"no ficheiro de configura√ß√£o.\n"
 "\n"
-"Por isso n„o posso fazer nada...\n"
+"Por isso n√£o posso fazer nada...\n"
 
 #: knu.cpp:246
 msgid "&New window"
@@ -55,11 +55,11 @@ msgstr "Seleccion&ar tudo"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "&Limpar janela de saÌda"
+msgstr "&Limpar janela de sa√≠da"
 
 #: knu.cpp:266
 msgid "P&references..."
-msgstr "P&referÍncias"
+msgstr "P&refer√™ncias"
 
 #: knu.cpp:281
 #, c-format
@@ -83,7 +83,7 @@ msgid ""
 "Bertrand"
 msgstr ""
 "Knu\n"
-"Vers„o %s\n"
+"Vers√£o %s\n"
 "Bertrand"
 
 #: knu.cpp:469
@@ -92,7 +92,7 @@ msgstr "Acerca..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "Utilit·rios de rede"
+msgstr "Utilit√°rios de rede"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
@@ -100,7 +100,7 @@ msgstr "H&ost:"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
-msgstr "&ComeÁar!"
+msgstr "&Come√ßar!"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
@@ -111,8 +111,8 @@ msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"O execut·vel deste comando n„o foi encontrado. \n"
-"Pode inserir a sua localizaÁ„o no menu Editar->PreferÍncias."
+"O execut√°vel deste comando n√£o foi encontrado. \n"
+"Pode inserir a sua localiza√ß√£o no menu Editar->Prefer√™ncias."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -129,10 +129,10 @@ msgid ""
 msgstr ""
 "\n"
 "Tem um problema no seu\n"
-"ficheiro de configuraÁ„o\n"
+"ficheiro de configura√ß√£o\n"
 "%s/%src.\n"
-"No grupo [%s], n„o consigo\n"
-"encontrar uma entrada \"path=\" v·lida.\n"
+"No grupo [%s], n√£o consigo\n"
+"encontrar uma entrada \"path=\" v√°lida.\n"
 "\n"
 
 #: CommandDlg.cpp:360
@@ -141,11 +141,11 @@ msgstr "Erro no caminho"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
-msgstr "Execut·vel"
+msgstr "Execut√°vel"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
-msgstr "&LocalizaÁ„o:"
+msgstr "&Localiza√ß√£o:"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
@@ -153,11 +153,11 @@ msgstr "&Argumentos adicionais:"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "Este comando foi desactivado no ficheiro de configuraÁ„o"
+msgstr "Este comando foi desactivado no ficheiro de configura√ß√£o"
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
-msgstr " - configuraÁ„o"
+msgstr " - configura√ß√£o"
 
 #: MtrDlg.cpp:87
 msgid "#"
@@ -185,7 +185,7 @@ msgstr "Melhor"
 
 #: MtrDlg.cpp:97
 msgid "Avg"
-msgstr "MÈdia"
+msgstr "M√©dia"
 
 #: MtrDlg.cpp:99
 msgid "Worst"
@@ -205,11 +205,11 @@ msgstr "ns&lookup"
 
 #: TracerouteDlg.cpp:115
 msgid "&Maximum number of hops:"
-msgstr "N˙mero &m·ximo de hops:"
+msgstr "N√∫mero &m√°ximo de hops:"
 
 #: HostDlg.cpp:112
 msgid "address (A)"
-msgstr "endereÁo (A)"
+msgstr "endere√ßo (A)"
 
 #: HostDlg.cpp:113
 msgid "name (PTR)"
@@ -229,7 +229,7 @@ msgstr "alias (CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "inÌcio de autoridade (SOA)"
+msgstr "in√≠cio de autoridade (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
@@ -241,7 +241,7 @@ msgstr "Procur&ar por:"
 
 #: HostDlg.cpp:136 HostDlg.cpp:287
 msgid "default server"
-msgstr "servidor por omiss„o"
+msgstr "servidor por omiss√£o"
 
 #: FingerDlg.cpp:95 HostDlg.cpp:145
 msgid "Ser&ver:"

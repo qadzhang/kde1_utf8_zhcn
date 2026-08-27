@@ -10,58 +10,58 @@ msgstr ""
 "PO-Revision-Date: 1998-04-21 05:01+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: adddlg.cc:11
 msgid "Add File Options"
-msgstr "¥[¤JÀÉ®× ¿ï¶µ"
+msgstr "Â¥[Â¤JÃ€Ã‰Â®Ã— Â¿Ã¯Â¶Âµ"
 
 #: adddlg.cc:21
 msgid "Store Full Path"
-msgstr "Àx¦s§¹¾ã¸ô®|"
+msgstr "Ã€xÂ¦sÂ§Â¹Â¾Ã£Â¸Ã´Â®|"
 
 #: adddlg.cc:24
 msgid "Only Add Newer Files"
-msgstr "¥u¥[¤J·sªºÀÉ®×"
+msgstr "Â¥uÂ¥[Â¤JÂ·sÂªÂºÃ€Ã‰Â®Ã—"
 
 #: extractdlg.cc:14
 #, fuzzy
 msgid "Extract"
-msgstr "¸ÑÀ£ÁY...[&X]"
+msgstr "Â¸Ã‘Ã€Â£ÃY...[&X]"
 
 #: extractdlg.cc:28
 msgid "Destination"
-msgstr "¥Øªº¦a"
+msgstr "Â¥Ã˜ÂªÂºÂ¦a"
 
 #: extractdlg.cc:44
 msgid "Extract Options"
-msgstr "¸ÑÀ£ÁY¿ï¶µ"
+msgstr "Â¸Ã‘Ã€Â£ÃYÂ¿Ã¯Â¶Âµ"
 
 #: extractdlg.cc:52
 msgid "Preserve Permissions"
-msgstr "«O¯dÅv­­"
+msgstr "Â«OÂ¯dÃ…vÂ­Â­"
 
 #: extractdlg.cc:57
 msgid "Filenames to Lowercase"
-msgstr "ÀÉ®×¦WºÙ§ï¦¨¤p¼g"
+msgstr "Ã€Ã‰Â®Ã—Â¦WÂºÃ™Â§Ã¯Â¦Â¨Â¤pÂ¼g"
 
 #: extractdlg.cc:68
 msgid "All Files"
-msgstr "¥ş³¡ÀÉ®×"
+msgstr "Â¥Ã¾Â³Â¡Ã€Ã‰Â®Ã—"
 
 #: extractdlg.cc:73
 msgid "Selected File"
-msgstr "¿ï¾ÜªºÀÉ®×"
+msgstr "Â¿Ã¯Â¾ÃœÂªÂºÃ€Ã‰Â®Ã—"
 
 #: extractdlg.cc:78
 msgid "Pattern"
-msgstr "¦¡¼Ë"
+msgstr "Â¦Â¡Â¼Ã‹"
 
 #: extractdlg.cc:190
 #, fuzzy
 msgid "Extract To"
-msgstr "¸ÑÀ£ÁY¦Ü...[&E]"
+msgstr "Â¸Ã‘Ã€Â£ÃYÂ¦Ãœ...[&E]"
 
 #: arkwidget.cc:71
 msgid "&New..."
@@ -69,11 +69,11 @@ msgstr ""
 
 #: arkwidget.cc:74
 msgid "&Extract To..."
-msgstr "¸ÑÀ£ÁY¦Ü...[&E]"
+msgstr "Â¸Ã‘Ã€Â£ÃYÂ¦Ãœ...[&E]"
 
 #: arkwidget.cc:79
 msgid "E&xtract..."
-msgstr "¸ÑÀ£ÁY...[&X]"
+msgstr "Â¸Ã‘Ã€Â£ÃY...[&X]"
 
 #: arkwidget.cc:80
 msgid "&View file"
@@ -82,11 +82,11 @@ msgstr ""
 #: arkwidget.cc:82
 #, fuzzy
 msgid "&Delete file"
-msgstr "¿ï¾ÜªºÀÉ®×"
+msgstr "Â¿Ã¯Â¾ÃœÂªÂºÃ€Ã‰Â®Ã—"
 
 #: arkwidget.cc:84
 msgid "&Set Archive Directory..."
-msgstr "³]©wÀ£ÁYÀÉ¥Ø¿ı[&S]..."
+msgstr "Â³]Â©wÃ€Â£ÃYÃ€Ã‰Â¥Ã˜Â¿Ã½[&S]..."
 
 #: arkwidget.cc:85
 msgid "Set &Tar Executable..."
@@ -94,17 +94,17 @@ msgstr ""
 
 #: arkwidget.cc:86
 msgid "&File Adding Options..."
-msgstr "ÀÉ®×¼W¥[ ¿ï¶µ[&F]"
+msgstr "Ã€Ã‰Â®Ã—Â¼WÂ¥[ Â¿Ã¯Â¶Âµ[&F]"
 
 #: arkwidget.cc:97
 #, fuzzy
 msgid "File Operations"
-msgstr "¥[¤JÀÉ®× ¿ï¶µ"
+msgstr "Â¥[Â¤JÃ€Ã‰Â®Ã— Â¿Ã¯Â¶Âµ"
 
 #: arkwidget.cc:99
 #, fuzzy
 msgid "Extract..."
-msgstr "¸ÑÀ£ÁY...[&X]"
+msgstr "Â¸Ã‘Ã€Â£ÃY...[&X]"
 
 #: arkwidget.cc:100
 msgid "View file"
@@ -113,17 +113,17 @@ msgstr ""
 #: arkwidget.cc:102
 #, fuzzy
 msgid "Delete file"
-msgstr "¿ï¾ÜªºÀÉ®×"
+msgstr "Â¿Ã¯Â¾ÃœÂªÂºÃ€Ã‰Â®Ã—"
 
 #: arkwidget.cc:114
 #, fuzzy
 msgid "Goto Archive Dir..."
-msgstr "³]©wÀ£ÁYÀÉ¥Ø¿ı[&S]..."
+msgstr "Â³]Â©wÃ€Â£ÃYÃ€Ã‰Â¥Ã˜Â¿Ã½[&S]..."
 
 #: arkwidget.cc:117
 #, fuzzy
 msgid "Extract To.."
-msgstr "¸ÑÀ£ÁY¦Ü...[&E]"
+msgstr "Â¸Ã‘Ã€Â£ÃYÂ¦Ãœ...[&E]"
 
 #: arkwidget.cc:121
 msgid "Exit"
@@ -132,28 +132,28 @@ msgstr ""
 #: arkwidget.cc:128
 #, fuzzy
 msgid "Welcome to ark..."
-msgstr "Åwªï¨Ó¨ì KZip..."
+msgstr "Ã…wÂªÃ¯Â¨Ã“Â¨Ã¬ KZip..."
 
 #: arkwidget.cc:235
 msgid "Can't create archive of that type"
-msgstr "¨S¿ìªk³y¥X³oºØ®æ¦¡ªºÀ£ÁYÀÉ"
+msgstr "Â¨SÂ¿Ã¬ÂªkÂ³yÂ¥XÂ³oÂºÃ˜Â®Ã¦Â¦Â¡ÂªÂºÃ€Â£ÃYÃ€Ã‰"
 
 #: arkwidget.cc:257
 msgid "Create or open an archive first"
-msgstr "½Ğ¥ı³y¥X©Î¶}±Ò¤@­ÓÀ£ÁYÀÉ"
+msgstr "Â½ÃÂ¥Ã½Â³yÂ¥XÂ©ÃÂ¶}Â±Ã’Â¤@Â­Ã“Ã€Â£ÃYÃ€Ã‰"
 
 #: arkwidget.cc:300
 msgid "Can't add directories with this archive type"
-msgstr "¦¹ºØÀ£ÁYÀÉ®æ¦¡µLªk¥[¤J¥Ø¿ı"
+msgstr "Â¦Â¹ÂºÃ˜Ã€Â£ÃYÃ€Ã‰Â®Ã¦Â¦Â¡ÂµLÂªkÂ¥[Â¤JÂ¥Ã˜Â¿Ã½"
 
 #: arkwidget.cc:302
 msgid "Error saving to archive"
-msgstr "Àx¦s¦ÜÀ£ÁYÀÉ®Éµo¥Í¿ù»~"
+msgstr "Ã€xÂ¦sÂ¦ÃœÃ€Â£ÃYÃ€Ã‰Â®Ã‰ÂµoÂ¥ÃÂ¿Ã¹Â»~"
 
 #: arkwidget.cc:312
 #, fuzzy
 msgid "Archive Dir"
-msgstr "À£ÁYÀÉ¥Ø¿ı:"
+msgstr "Ã€Â£ÃYÃ€Ã‰Â¥Ã˜Â¿Ã½:"
 
 #: arkwidget.cc:325
 msgid "What runs GNU tar:"
@@ -161,7 +161,7 @@ msgstr ""
 
 #: arkwidget.cc:376 arkwidget.cc:578
 msgid "Unknown archive format"
-msgstr "¥¼ª¾ªºÀ£ÁYÀÉ®æ¦¡"
+msgstr "Â¥Â¼ÂªÂ¾ÂªÂºÃ€Â£ÃYÃ€Ã‰Â®Ã¦Â¦Â¡"
 
 #: arkwidget.cc:396
 msgid "Size"
@@ -170,11 +170,11 @@ msgstr ""
 #: arkwidget.cc:402
 #, fuzzy
 msgid "Archive directory does not exist."
-msgstr "À£ÁYÀÉ¥Ø¿ı"
+msgstr "Ã€Â£ÃYÃ€Ã‰Â¥Ã˜Â¿Ã½"
 
 #: arkwidget.cc:418
 msgid "Archive Directory"
-msgstr "À£ÁYÀÉ¥Ø¿ı"
+msgstr "Ã€Â£ÃYÃ€Ã‰Â¥Ã˜Â¿Ã½"
 
 #~ msgid "Files"
-#~ msgstr "ÀÉ®×"
+#~ msgstr "Ã€Ã‰Â®Ã—"

@@ -1,21 +1,21 @@
 # Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1999
+# JaÃ±-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1999
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm-1.1\n"
 "POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1999-04-20 15:47+0200\n"
-"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
+"Last-Translator: JaÃ±-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:67
 msgid "&Buttons"
-msgstr "&Nozellennoù"
+msgstr "&NozellennoÃ¹"
 
 #: main.cpp:70
 msgid "&Titlebar"
@@ -23,7 +23,7 @@ msgstr "B&arrenn-ditl"
 
 #: main.cpp:73
 msgid "Bo&rders"
-msgstr "Be&vennoù"
+msgstr "Be&vennoÃ¹"
 
 #: main.cpp:76
 msgid "&Mouse"
@@ -58,7 +58,7 @@ msgstr "Pegus"
 
 #: titlebar.cpp:141
 msgid "Menu"
-msgstr "Lañser"
+msgstr "LaÃ±ser"
 
 #: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
@@ -66,31 +66,31 @@ msgstr "A-gleiz"
 
 #: titlebar.cpp:182 titlebar.cpp:946
 msgid "Right"
-msgstr "A-zehoù"
+msgstr "A-zehoÃ¹"
 
 #: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Leun eo tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
+"Leun eo tu kleiz ar varrenn-ditl... o tizoberiaÃ± an nozelenn 'uhelaÃ±'\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
+"Leun eo tu dehou ar varrenn-ditl... o tizoberiaÃ± an nozelenn 'uhelaÃ±'\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Leun ro tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
+"Leun ro tu kleiz ar varrenn-ditl... o tizoberiaÃ± an nozelenn 'izelaat'\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
+"Leun eo tu dehou ar varrenn-ditl... o tizoberiaÃ± an nozelenn 'izelaat'\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
@@ -138,7 +138,7 @@ msgstr "Obererezh al logodenn"
 
 #: titlebar.cpp:1076
 msgid "Left Button double click does:"
-msgstr "Daouglikañ al logodenn a ra :"
+msgstr "DaouglikaÃ± al logodenn a ra :"
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
@@ -146,15 +146,15 @@ msgstr "(Diz)Uhelaat"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "(Dis)Heoliañ"
+msgstr "(Dis)HeoliaÃ±"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
-msgstr "Arlunañ"
+msgstr "ArlunaÃ±"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "(Dis)Pegañ"
+msgstr "(Dis)PegaÃ±"
 
 #: titlebar.cpp:1109
 msgid "Title animation"
@@ -166,15 +166,15 @@ msgstr "me"
 
 #: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
-msgstr "Kefluniañ ar merour prenester - FAZI"
+msgstr "KefluniaÃ± ar merour prenester - FAZI"
 
 #: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Ur fazi a zo bet en ur enrollañ piksmapoù\n"
-"ar varrenn-ditl ! Gwiriit aotreoù mar plij."
+"Ur fazi a zo bet en ur enrollaÃ± piksmapoÃ¹\n"
+"ar varrenn-ditl ! Gwiriit aotreoÃ¹ mar plij."
 
 #: windows.cpp:68
 msgid "Windows"
@@ -194,7 +194,7 @@ msgstr "Diskouez an endalc'had pa adventer ur prenester"
 
 #: windows.cpp:98
 msgid "Resize animation:"
-msgstr "Buhezadur an adventañ :"
+msgstr "Buhezadur an adventaÃ± :"
 
 #: windows.cpp:111
 msgid "None"
@@ -230,12 +230,12 @@ msgstr "Dornel"
 
 #: windows.cpp:154
 #, c-format
-msgid ""
-"  Allowed overlap:\n"
-"(% of desktop space)"
-msgstr ""
-"  Kenguzhadur aotreet:\n"
-"(% egor ar gorretaol)"
+#~ msgid ""
+#~ "  Allowed overlap:\n"
+#~ "(% of desktop space)"
+#~ msgstr ""
+#~ "  Kenguzhadur aotreet:\n"
+#~ "(% egor ar gorretaol)"
 
 #: windows.cpp:175
 msgid "Focus policy"
@@ -243,7 +243,7 @@ msgstr "Politikerezh fokus"
 
 #: windows.cpp:185
 msgid "Click to focus"
-msgstr "Klikañ evit fokus"
+msgstr "KlikaÃ± evit fokus"
 
 #: windows.cpp:187
 msgid "Focus follows mouse"
@@ -263,7 +263,7 @@ msgstr "Emsevel"
 
 #: windows.cpp:209
 msgid "Click Raise"
-msgstr "Klikañ evit sevel"
+msgstr "KlikaÃ± evit sevel"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -271,40 +271,40 @@ msgstr "Gedvezh (me)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
-msgstr "Bordoù ar gorretaol oberiant"
+msgstr "BordoÃ¹ ar gorretaol oberiant"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "Laka bordoù ar gorretaol oberiant"
+msgstr "Laka bordoÃ¹ ar gorretaol oberiant"
 
 #: desktop.cpp:81
 #, fuzzy
 msgid "Move pointer towards center after switch"
-msgstr "Dilec'hiañ ar reti davet ar c'hreizh goude kemmañ"
+msgstr "Dilec'hiaÃ± ar reti davet ar c'hreizh goude kemmaÃ±"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Gedvezh kent gwintañ gorretaol :"
+msgstr "Gedvezh kent gwintaÃ± gorretaol :"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
-msgstr "Bevennoù Hud"
+msgstr "BevennoÃ¹ Hud"
 
 #: desktop.cpp:126
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Takad sachañ ar Vevenn :\n"
-"       (pikseloù)"
+"Takad sachaÃ± ar Vevenn :\n"
+"       (pikseloÃ¹)"
 
 #: desktop.cpp:151
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Takad sachañ ar Prenestr:\n"
-"       (pikseloù)"
+"Takad sachaÃ± ar Prenestr:\n"
+"       (pikseloÃ¹)"
 
 #: mouse.cpp:54
 msgid "Active"
@@ -362,12 +362,12 @@ msgstr "Izelaat"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
-msgstr "Lañser obererezhoù"
+msgstr "LaÃ±ser obererezhoÃ¹"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
 msgid "Toggle raise and lower"
-msgstr "Gwintañ sevel hag izelaat"
+msgstr "GwintaÃ± sevel hag izelaat"
 
 #: mouse.cpp:126 mouse.cpp:136 mouse.cpp:198 mouse.cpp:209 mouse.cpp:220
 msgid "Nothing"
@@ -397,11 +397,11 @@ msgstr "Bevaat ha tremen ar c'hlik"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
 msgid "Move"
-msgstr "Dilec'hiañ"
+msgstr "Dilec'hiaÃ±"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
-msgstr "Adventañ"
+msgstr "AdventaÃ±"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
@@ -409,7 +409,7 @@ msgstr "Stokellaoueg ha logodenn"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab a vale dre ar gorretaolioù"
+msgstr "Ctrl-Tab a vale dre ar gorretaolioÃ¹"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
@@ -433,7 +433,7 @@ msgstr "Tapout afell dehou al logodenn"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr "Siloù"
+msgstr "SiloÃ¹"
 
 #: advanced.cpp:98
 msgid "Windows will:"
@@ -441,11 +441,11 @@ msgstr "Ar prenestr a vo :"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "kinkladur tanav dezhañ"
+msgstr "kinkladur tanav dezhaÃ±"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr "kinkladur ebet dezhañ"
+msgstr "kinkladur ebet dezhaÃ±"
 
 #: advanced.cpp:106
 msgid "never gain focus"
@@ -465,8 +465,8 @@ msgstr "gant ma glot ouzh :"
 
 #: advanced.cpp:121
 msgid "Titles"
-msgstr "Titloù"
+msgstr "TitloÃ¹"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr "Renkadoù"
+msgstr "RenkadoÃ¹"

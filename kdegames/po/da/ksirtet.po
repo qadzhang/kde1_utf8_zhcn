@@ -1,16 +1,16 @@
 # Danish translation for KDE Games, ktetris 
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Erik Kjær Pedersen <erik@binghamton.edu>, 1999.
+# Erik KjÃ¦r Pedersen <erik@binghamton.edu>, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE Games/ktetris\n"
 "POT-Creation-Date: 1998-10-01 13:29+0200\n"
 "PO-Revision-Date: 1999-02-16 11:52-0500\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: board.cpp:65 dialogs.cpp:137
@@ -31,7 +31,7 @@ msgstr "Spil forbi"
 
 #: board.cpp:123
 msgid "Press Return to replay"
-msgstr "Tryk på enter for at gøre om"
+msgstr "Tryk pÃ¥ enter for at gÃ¸re om"
 
 #: board.cpp:127
 msgid "Press to start game"
@@ -67,11 +67,11 @@ msgstr "Forbindelsesfejl"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
-msgstr "Server kan ikke nås"
+msgstr "Server kan ikke nÃ¥s"
 
 #: net.cpp:266
 msgid "The server has died"
-msgstr "Serveren døde"
+msgstr "Serveren dÃ¸de"
 
 #: net.cpp:267
 msgid "Cancel from server"
@@ -87,7 +87,7 @@ msgstr "Kan ikke sende til server"
 
 #: net.cpp:324
 msgid "Client timeout (No message from server)"
-msgstr "Klient tid løb ud (Intet budskab fra server)"
+msgstr "Klient tid lÃ¸b ud (Intet budskab fra server)"
 
 #: net.cpp:329
 msgid "Server has vanished"
@@ -111,7 +111,7 @@ msgstr "Ukendt budskab fra klient"
 
 #: net.cpp:486
 msgid "Client has died"
-msgstr "Klienten døde"
+msgstr "Klienten dÃ¸de"
 
 #: net.cpp:487
 msgid "Cancel from client"
@@ -143,7 +143,7 @@ msgstr "Kan ikke sende til klient"
 
 #: dialogs.cpp:61
 msgid "High Scores"
-msgstr "Højeste resultater"
+msgstr "HÃ¸jeste resultater"
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
@@ -155,7 +155,7 @@ msgstr "Ingen mulighed endnu !"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "Netværksdialog"
+msgstr "NetvÃ¦rksdialog"
 
 #: dialogs.cpp:178
 msgid "Server"
@@ -191,7 +191,7 @@ msgstr "Spil !"
 
 #: dialogs.cpp:252
 msgid "Network game"
-msgstr "Netværksspil"
+msgstr "NetvÃ¦rksspil"
 
 #: dialogs.cpp:256
 msgid "Server mode"
@@ -203,7 +203,7 @@ msgstr "Klient modus"
 
 #: dialogs.cpp:336
 msgid "Waiting for other player(s) ..."
-msgstr "Venter på andre spiller(e) ..."
+msgstr "Venter pÃ¥ andre spiller(e) ..."
 
 #: field.cpp:27
 msgid "New game"
@@ -215,7 +215,7 @@ msgstr "Pause i spillet"
 
 #: field.cpp:30
 msgid "High scores"
-msgstr "Højeste resultater"
+msgstr "HÃ¸jeste resultater"
 
 #: field.cpp:31
 msgid "Move left"
@@ -223,7 +223,7 @@ msgstr "Flyt til venstre"
 
 #: field.cpp:32
 msgid "Move right"
-msgstr "Flyt til højre"
+msgstr "Flyt til hÃ¸jre"
 
 #: field.cpp:33
 msgid "Drop down"
@@ -239,7 +239,7 @@ msgstr "Roter til venstre"
 
 #: field.cpp:36
 msgid "Rotate right"
-msgstr "Roter til højre"
+msgstr "Roter til hÃ¸jre"
 
 #: field.cpp:51
 msgid "Score"
@@ -255,7 +255,7 @@ msgstr "Niveau"
 
 #: field.cpp:63
 msgid "Next tile"
-msgstr "Næste brik"
+msgstr "NÃ¦ste brik"
 
 #: field.cpp:185
 msgid "&Restart game"
@@ -271,7 +271,7 @@ msgstr "&Multispiller spil"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "&Højeste resultater"
+msgstr "&HÃ¸jeste resultater"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"

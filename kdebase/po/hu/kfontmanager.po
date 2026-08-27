@@ -26,33 +26,33 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDE betûtípus kezelõ"
+msgstr "KDE betÅ±tÃ­pus kezelÅ‘"
 
 #: main.cpp:71
 msgid "KDE Fonts"
-msgstr "KDE betûtípusok"
+msgstr "KDE betÅ±tÃ­pusok"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr "Betûtípus felfedezõ"
+msgstr "BetÅ±tÃ­pus felfedezÅ‘"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Nyers X11 betûtípus lista"
+msgstr "Nyers X11 betÅ±tÃ­pus lista"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Elérhetõ X11 betûtípusok"
+msgstr "ElÃ©rhetÅ‘ X11 betÅ±tÃ­pusok"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
-msgstr "KDE számára használható betûtípusok"
+msgstr "KDE szÃ¡mÃ¡ra hasznÃ¡lhatÃ³ betÅ±tÃ­pusok"
 
 #: kfontmanager.cpp:89
 msgid ""
@@ -64,7 +64,7 @@ msgstr ""
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
-msgstr "A kfontmanager névjegye"
+msgstr "A kfontmanager nÃ©vjegye"
 
 #: kfontmanager.cpp:112
 msgid ""
@@ -73,8 +73,8 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 msgstr ""
-"kfontmanager 0.2 verzió\n"
-"Szerzõi jog 1997\n"
+"kfontmanager 0.2 verziÃ³\n"
+"SzerzÅ‘i jog 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
@@ -83,16 +83,16 @@ msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr ""
-"A HOME környezeti változó\n"
-"nincs beállítva\n"
+"A HOME kÃ¶rnyezeti vÃ¡ltozÃ³\n"
+"nincs beÃ¡llÃ­tva\n"
 
 #: kfontmanager.cpp:292
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
-"Nem lehet létrehozni a(z)\n"
-" ~/.kde/config/kdefonts fájlt\n"
+"Nem lehet lÃ©trehozni a(z)\n"
+" ~/.kde/config/kdefonts fÃ¡jlt\n"
 
 #: kfontmanager.cpp:297
 msgid ""
@@ -100,9 +100,9 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"A ~/.kde/config/kdefonts fájl\n"
-"létezik, de nem írható, ezért\n"
-"nem lehet elmenteni a betûtípus listát."
+"A ~/.kde/config/kdefonts fÃ¡jl\n"
+"lÃ©tezik, de nem Ã­rhatÃ³, ezÃ©rt\n"
+"nem lehet elmenteni a betÅ±tÃ­pus listÃ¡t."
 
 #: kfontlist.cpp:62
 msgid ""
@@ -111,82 +111,82 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 msgstr ""
-"kfontmanager  0.1 verzió\n"
-"Szerzõi jog 1997\n"
+"kfontmanager  0.1 verziÃ³\n"
+"SzerzÅ‘i jog 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr "Kiválasztott betûtípus"
+msgstr "KivÃ¡lasztott betÅ±tÃ­pus"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr "Kért betûtípus"
+msgstr "KÃ©rt betÅ±tÃ­pus"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr "Jelenlegi betûtípus"
+msgstr "Jelenlegi betÅ±tÃ­pus"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr "Család:"
+msgstr "CsalÃ¡d:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr "Méret:"
+msgstr "MÃ©ret:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr "Vastagság:"
+msgstr "VastagsÃ¡g:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr "Stílus:"
+msgstr "StÃ­lus:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr "Betûkészlet"
+msgstr "BetÅ±kÃ©szlet"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr "Méret"
+msgstr "MÃ©ret"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr "Vastagság"
+msgstr "VastagsÃ¡g"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
-msgstr "normál"
+msgstr "normÃ¡l"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr "félkövér"
+msgstr "fÃ©lkÃ¶vÃ©r"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr "Stílus"
+msgstr "StÃ­lus"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr "román"
+msgstr "romÃ¡n"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr "kurzív"
+msgstr "kurzÃ­v"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr "árvíztûrõ tükörfúrógép"
+msgstr "Ã¡rvÃ­ztÅ±rÅ‘ tÃ¼kÃ¶rfÃºrÃ³gÃ©p"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr "Félkövér"
+msgstr "FÃ©lkÃ¶vÃ©r"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
-msgstr "Normál"
+msgstr "NormÃ¡l"
 
 #~ msgid "The KDE Font Manager Example String"
-#~ msgstr "árvíztûrõ tükörfúrógép ABC ÁÍÛÕ ÜÖÚÓÉ"
+#~ msgstr "Ã¡rvÃ­ztÅ±rÅ‘ tÃ¼kÃ¶rfÃºrÃ³gÃ©p ABC ÃÃÅ°Å ÃœÃ–ÃšÃ“Ã‰"

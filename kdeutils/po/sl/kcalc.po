@@ -10,12 +10,12 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kcalc.cpp:99
 msgid "KCalc Setup/Help"
-msgstr "KCalc Nastavitev/Pomoè"
+msgstr "KCalc Nastavitev/PomoÄ"
 
 #: kcalc.cpp:152
 msgid "Angle"
@@ -59,9 +59,9 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"Zaradi napak v knji¾nicah glibc je bilo potrebno zmanj¹ati natanènost "
+"Zaradi napak v knjiÅ¾nicah glibc je bilo potrebno zmanjÅ¡ati natanÄnost "
 "kalkulatorja KCalc iz 'long double' na 'double'. Lastniki sistemov z "
-"delujoèo knji¾nico libc bi morali prevesti KCalc z vkljuèeno natanènostjo "
+"delujoÄo knjiÅ¾nico libc bi morali prevesti KCalc z vkljuÄeno natanÄnostjo "
 "'long double'. Za podrobnosti si oglejte datoteko README."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
@@ -119,11 +119,11 @@ msgstr "Barva ozadja:"
 
 #: configdlg.cpp:95
 msgid "Precision:"
-msgstr "Natanènost:"
+msgstr "NatanÄnost:"
 
 #: configdlg.cpp:116
 msgid "Set Fixed Precision at:"
-msgstr "Fiksna natanènost pri:"
+msgstr "Fiksna natanÄnost pri:"
 
 #: configdlg.cpp:145
 msgid "Beep on Error"
@@ -131,11 +131,11 @@ msgstr "Zapiskaj ob napaki"
 
 #: configdlg.cpp:153
 msgid "Trigonometry Mode"
-msgstr "Trigonometrièni naèin"
+msgstr "TrigonometriÄni naÄin"
 
 #: configdlg.cpp:158
 msgid "Statistical Mode"
-msgstr "Statistièni naèin"
+msgstr "StatistiÄni naÄin"
 
 #: fontdlg.cpp:44
 msgid "Set Default Font"
@@ -143,11 +143,11 @@ msgstr "Nastavi privzeto pisavo"
 
 #: fontdlg.cpp:53
 msgid "Family:"
-msgstr "Dru¾ina:"
+msgstr "DruÅ¾ina:"
 
 #: fontdlg.cpp:63
 msgid "Point Size:"
-msgstr "Velikost v toèkah:"
+msgstr "Velikost v toÄkah:"
 
 #: fontdlg.cpp:76
 msgid "Style:"
@@ -155,7 +155,7 @@ msgstr "Stil:"
 
 #: fontdlg.cpp:91
 msgid "Weight:"
-msgstr "Te¾a:"
+msgstr "TeÅ¾a:"
 
 #: fontdlg.cpp:101 fontdlg.cpp:134
 msgid "Bold"

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
 #: main.C:68
@@ -18,15 +18,15 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: Zaten çalışan bir pencere denetleyicisi var gözüküyor. kwmbaşlamayacak\n"
+"kwm: Zaten Ã§alÃ½Ã¾an bir pencere denetleyicisi var gÃ¶zÃ¼kÃ¼yor. kwmbaÃ¾lamayacak\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: başlama aşamasında hata; vazgeçiliyor\n"
+msgstr "kwm: baÃ¾lama aÃ¾amasÃ½nda hata; vazgeÃ§iliyor\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "Oturum hazırlanıyor... "
+msgstr "Oturum hazÃ½rlanÃ½yor... "
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -34,11 +34,11 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:558
 msgid "Usage: "
-msgstr "Kullanım:"
+msgstr "KullanÃ½m:"
 
 #: main.C:569
 msgid "&Maximize"
-msgstr "&Büyült"
+msgstr "&BÃ¼yÃ¼lt"
 
 #: main.C:570
 msgid "&Restore"
@@ -62,19 +62,19 @@ msgstr "&Serbest"
 
 #: main.C:575
 msgid "Mo&ve"
-msgstr "&Yürüt"
+msgstr "&YÃ¼rÃ¼t"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "&Yeniden boyutlandır"
+msgstr "&Yeniden boyutlandÃ½r"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "&Masa üstüne"
+msgstr "&Masa Ã¼stÃ¼ne"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "&Şu anki masa üstüne"
+msgstr "&Ãu anki masa Ã¼stÃ¼ne"
 
 #: main.C:620
 msgid "One"
@@ -82,23 +82,23 @@ msgstr "Bir"
 
 #: main.C:623
 msgid "Two"
-msgstr "İki"
+msgstr "Ãki"
 
 #: main.C:626
 msgid "Three"
-msgstr "Üç"
+msgstr "ÃœÃ§"
 
 #: main.C:629
 msgid "Four"
-msgstr "Dört"
+msgstr "DÃ¶rt"
 
 #: main.C:632
 msgid "Five"
-msgstr "Beş"
+msgstr "BeÃ¾"
 
 #: main.C:635
 msgid "Six"
-msgstr "Altı"
+msgstr "AltÃ½"
 
 #: main.C:638
 msgid "Seven"
@@ -110,19 +110,19 @@ msgstr "Sekiz"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "İsimsiz Masa üstü"
+msgstr "Ãsimsiz Masa Ã¼stÃ¼"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Bazi simgeler geçersiz: ShapeMode kullanılmıyor\n"
+msgstr "Bazi simgeler geÃ§ersiz: ShapeMode kullanÃ½lmÃ½yor\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Bazı simgeler geçersiz: GimmickMode kullanılmıyor\n"
+msgstr "BazÃ½ simgeler geÃ§ersiz: GimmickMode kullanÃ½lmÃ½yor\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
-msgstr "*** Görev Yok ***"
+msgstr "*** GÃ¶rev Yok ***"
 
 #: minicli.C:201
 msgid "Command:"
@@ -138,36 +138,36 @@ msgstr "Oturumu kapat"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Oturum kapatılmak için hazırlandı"
+msgstr "Oturum kapatÃ½lmak iÃ§in hazÃ½rlandÃ½"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Takip eden uygulamalar kaydedilmemiş veri içermektedir\n"
-"Ve gelecek oturumda bulunamayacaktır."
+"Takip eden uygulamalar kaydedilmemiÃ¾ veri iÃ§ermektedir\n"
+"Ve gelecek oturumda bulunamayacaktÃ½r."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Takip eden uygulamalar bir sonraki oturumunuzda geri yüklenemeyecek.\n"
-"Önemli bilgi içermediğinden emin olunuz."
+"Takip eden uygulamalar bir sonraki oturumunuzda geri yÃ¼klenemeyecek.\n"
+"Ã–nemli bilgi iÃ§ermediÃ°inden emin olunuz."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Takip eden uygulamalar bir sonraki X11 oturumunuzda geri yüklenemeyecek.\n"
-"Önemli bilgi içermediğinden emin olunuz."
+"Takip eden uygulamalar bir sonraki X11 oturumunuzda geri yÃ¼klenemeyecek.\n"
+"Ã–nemli bilgi iÃ§ermediÃ°inden emin olunuz."
 
 #: taskmgr.C:107
 msgid "Switch to"
-msgstr "Göreve geç"
+msgstr "GÃ¶reve geÃ§"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "Şu anki oturum"
+msgstr "Ãu anki oturum"

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Roman Maurer <roman.maurer@hermes.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kbiff.cpp:629
@@ -27,15 +27,15 @@ msgstr "P&rikroji..."
 
 #: kbiff.cpp:634
 msgid "&Help..."
-msgstr "&PomoË..."
+msgstr "&Pomoƒç..."
 
 #: kbiff.cpp:638
 msgid "&Check Mail Now"
-msgstr "&Takoj preveri poπto"
+msgstr "&Takoj preveri po≈°to"
 
 #: kbiff.cpp:640
 msgid "&Read Mail Now"
-msgstr "Takoj p&reberi poπto"
+msgstr "Takoj p&reberi po≈°to"
 
 #: kbiff.cpp:646
 msgid "&Stop"
@@ -43,21 +43,21 @@ msgstr "&Stoj"
 
 #: notify.cpp:33 notify.cpp:50
 msgid "You have new mail!"
-msgstr "Imate novo poπto!"
+msgstr "Imate novo po≈°to!"
 
 #: notify.cpp:58 notify.cpp:103
 #, c-format
 msgid "New Messages: %d"
-msgstr "Novih sporoËil: %d"
+msgstr "Novih sporoƒçil: %d"
 
 #: notify.cpp:63
 #, c-format
 msgid "Mailbox: %s"
-msgstr "Poπtni predal: %s"
+msgstr "Po≈°tni predal: %s"
 
 #: notify.cpp:73
 msgid "Mailer"
-msgstr "Poπtni program"
+msgstr "Po≈°tni program"
 
 #: setupdlg.cpp:83
 msgid "KBiff Setup"
@@ -77,15 +77,15 @@ msgstr "P&reimenuj..."
 
 #: setupdlg.cpp:143
 msgid "General"
-msgstr "Sploπno"
+msgstr "Splo≈°no"
 
 #: setupdlg.cpp:144
 msgid "New Mail"
-msgstr "Nova poπta"
+msgstr "Nova po≈°ta"
 
 #: setupdlg.cpp:145 status.cpp:33
 msgid "Mailbox"
-msgstr "Poπtni predal"
+msgstr "Po≈°tni predal"
 
 #: setupdlg.cpp:391
 msgid "New Profile"
@@ -99,19 +99,19 @@ msgstr "Preimenuj profil: %s"
 #: setupdlg.cpp:463
 #, c-format
 msgid "Delete Profile: %s"
-msgstr "Zbriπi profil: %s"
+msgstr "Zbri≈°i profil: %s"
 
 #: setupdlg.cpp:464
 msgid "Are you sure you wish to delete this profile?\n"
-msgstr "Ali ste prepriËani, da æelite pobrisati ta profil?\n"
+msgstr "Ali ste prepriƒçani, da ≈æelite pobrisati ta profil?\n"
 
 #: setupdlg.cpp:524
 msgid "Poll (sec):"
-msgstr "Povpraπaj (sek):"
+msgstr "Povpra≈°aj (sek):"
 
 #: setupdlg.cpp:529
 msgid "Mail client:"
-msgstr "Poπtni odjemalec:"
+msgstr "Po≈°tni odjemalec:"
 
 #: setupdlg.cpp:542
 msgid "Dock in panel"
@@ -127,15 +127,15 @@ msgstr "Ikone:"
 
 #: setupdlg.cpp:570
 msgid "No Mail:"
-msgstr "Ni poπte:"
+msgstr "Ni po≈°te:"
 
 #: setupdlg.cpp:579
 msgid "Old Mail"
-msgstr "Stara poπta"
+msgstr "Stara po≈°ta"
 
 #: setupdlg.cpp:589
 msgid "New Mail:"
-msgstr "Nova poπta:"
+msgstr "Nova po≈°ta:"
 
 # This is the icon that is displayed when KBiff could not make a connection
 # to a remote server
@@ -146,7 +146,7 @@ msgstr ""
 #: setupdlg.cpp:756
 #, fuzzy
 msgid "Run Command"
-msgstr "Poæe&ni ukaz"
+msgstr "Po≈æe&ni ukaz"
 
 #: setupdlg.cpp:763 setupdlg.cpp:783 setupdlg.cpp:1178
 msgid "Browse"
@@ -170,7 +170,7 @@ msgstr "Sezna&ni"
 #: setupdlg.cpp:798
 #, fuzzy
 msgid "Floating Status"
-msgstr "LedbeËi status"
+msgstr "Ledbeƒçi status"
 
 #: setupdlg.cpp:948
 msgid "Advanced Options"
@@ -179,7 +179,7 @@ msgstr "Napredne nastavitve"
 #: setupdlg.cpp:952
 #, fuzzy
 msgid "Mailbox URL:"
-msgstr "&URL poπtnega predala:"
+msgstr "&URL po≈°tnega predala:"
 
 #: setupdlg.cpp:956
 #, fuzzy
@@ -194,7 +194,7 @@ msgstr "&PREDAVT"
 #: setupdlg.cpp:967
 #, fuzzy
 msgid "Keep Alive"
-msgstr "Ohrani &æivo"
+msgstr "Ohrani &≈æivo"
 
 #: setupdlg.cpp:974
 #, fuzzy
@@ -203,15 +203,15 @@ msgstr "&Asinhrono"
 
 #: setupdlg.cpp:1123 setupdlg.cpp:1152
 msgid "Mailbox:"
-msgstr "Poπtni predal:"
+msgstr "Po≈°tni predal:"
 
 #: setupdlg.cpp:1136 setupdlg.cpp:1474
 msgid "New Mailbox"
-msgstr "Nov poπtni predal"
+msgstr "Nov po≈°tni predal"
 
 #: setupdlg.cpp:1143
 msgid "Delete Mailbox"
-msgstr "Zbriπi poπtni predal"
+msgstr "Zbri≈°i po≈°tni predal"
 
 #: setupdlg.cpp:1149
 #, fuzzy
@@ -221,7 +221,7 @@ msgstr "Pro&tokol:"
 #: setupdlg.cpp:1155
 #, fuzzy
 msgid "Server:"
-msgstr "&Streænik:"
+msgstr "&Stre≈ænik:"
 
 #: setupdlg.cpp:1158
 #, fuzzy

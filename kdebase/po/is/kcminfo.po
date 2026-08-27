@@ -7,57 +7,57 @@ msgstr ""
 "PO-Revision-Date: 1999-02-13 10:42+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "skjáflötur númer %d"
+msgstr "skjÃ¡flÃ¶tur nÃºmer %d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  stærğ               : %dx%d punktar (%dx%d mm)\n"
+msgstr "  stÃ¦rÃ°               : %dx%d punktar (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  upplausn            : %dx%d punktar á tommu\n"
+msgstr "  upplausn            : %dx%d punktar Ã¡ tommu\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  litadıpt (%d)        : "
+msgstr "  litadÃ½pt (%d)        : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "nafn skjás            : %s"
+msgstr "nafn skjÃ¡s            : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "útgáfunúmer           : %i.%i"
+msgstr "ÃºtgÃ¡funÃºmer           : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "einkenni framleiğanda : %s"
+msgstr "einkenni framleiÃ°anda : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "útfærslunúmer         : %i"
+msgstr "ÃºtfÃ¦rslunÃºmer         : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "sjálfgefinn skjáflötur : %i"
+msgstr "sjÃ¡lfgefinn skjÃ¡flÃ¶tur : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "fjöldi skjáflata      : %i"
+msgstr "fjÃ¶ldi skjÃ¡flata      : %i"
 
 #: info.cpp:181
 msgid ""
@@ -65,22 +65,22 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Annağ hvort eru engar upplısingar fánlegar,\n"
-"eğa şá ağ şetta kerfi er ennşá óstutt."
+"AnnaÃ° hvort eru engar upplÃ½singar fÃ¡nlegar,\n"
+"eÃ°a Ã¾Ã¡ aÃ° Ã¾etta kerfi er ennÃ¾Ã¡ Ã³stutt."
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, óşekktur hraği"
+msgstr "%s, Ã³Ã¾ekktur hraÃ°i"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s á %s MHz"
+msgstr "%s Ã¡ %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Ekki tókst ağ opna fstab-skrána!"
+msgstr "Ekki tÃ³kst aÃ° opna fstab-skrÃ¡na!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
@@ -92,7 +92,7 @@ msgstr "Tengipunktur"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "Tegund skráakerfis"
+msgstr "Tegund skrÃ¡akerfis"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
@@ -100,15 +100,15 @@ msgstr "Tengi"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr "óşekktur örgjörvi"
+msgstr "Ã³Ã¾ekktur Ã¶rgjÃ¶rvi"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "ekki tiltækt"
+msgstr "ekki tiltÃ¦kt"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "Fjöldi virkra örgjörva= "
+msgstr "FjÃ¶ldi virkra Ã¶rgjÃ¶rva= "
 
 #: info_linux.cpp:99
 msgid "Value"
@@ -116,7 +116,7 @@ msgstr "Gildi"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr "DMA-rás"
+msgstr "DMA-rÃ¡s"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
@@ -124,7 +124,7 @@ msgstr "hver notar"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "inn/út-bil"
+msgstr "inn/Ãºt-bil"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -132,19 +132,19 @@ msgstr "&Minni"
 
 #: main.cpp:82
 msgid "&Processor"
-msgstr "Ör&gjörvi"
+msgstr "Ã–r&gjÃ¶rvi"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr "Ígri&p"
+msgstr "Ãgri&p"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "DMA-&rásir"
+msgstr "DMA-&rÃ¡sir"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "&Inn/út-gáttir"
+msgstr "&Inn/Ãºt-gÃ¡ttir"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
@@ -152,7 +152,7 @@ msgstr "PCI-&braut"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr "&Hljóğ"
+msgstr "&HljÃ³Ã°"
 
 #: main.cpp:100
 msgid "&Devices"
@@ -164,11 +164,11 @@ msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr "&Disksvæği"
+msgstr "&DisksvÃ¦Ã°i"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr "&X-şjónn"
+msgstr "&X-Ã¾jÃ³nn"
 
 #: main.cpp:120
 msgid ""
@@ -182,7 +182,7 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Kerfisupplısingar"
+msgstr "KerfisupplÃ½singar"
 
 #: memory.cpp:15
 msgid "Total memory"
@@ -194,11 +194,11 @@ msgstr "Laust minni"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Samnıtt minni"
+msgstr "SamnÃ½tt minni"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "Biğminni"
+msgstr "BiÃ°minni"
 
 #: memory.cpp:49
 msgid "Swap memory"
@@ -211,7 +211,7 @@ msgstr "Laust diskminni"
 #: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld bæti  = %8.2f MB"
+msgstr "%10ld bÃ¦ti  = %8.2f MB"
 
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27

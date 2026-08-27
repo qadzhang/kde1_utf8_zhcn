@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.C:68
@@ -19,12 +19,12 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: se pare ca este deja în funcşiune un alt Window Manager, aºa cã nu am "
+"kwm: se pare ca este deja Ã®n funcÅ£iune un alt Window Manager, aÅŸa cÄƒ nu am "
 "pornit kwm-ul\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: eroare în timpul inişializãrii; pa \n"
+msgstr "kwm: eroare Ã®n timpul iniÅ£ializÄƒrii; pa \n"
 
 #: main.C:527
 msgid "Preparing session ... "
@@ -56,27 +56,27 @@ msgstr "&DeMinimizare"
 
 #: main.C:573
 msgid "&Sticky"
-msgstr "Ş&intuitã"
+msgstr "Å¢&intuitÄƒ"
 
 #: main.C:574
 msgid "&UnSticky"
-msgstr "&Deşintuitã"
+msgstr "&DeÅ£intuitÄƒ"
 
 #: main.C:575
 msgid "Mo&ve"
-msgstr "&Mutã"
+msgstr "&MutÄƒ"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "R&edimensioneazã"
+msgstr "R&edimensioneazÄƒ"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "În &ecranul"
+msgstr "Ãn &ecranul"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "&În ecranul curent"
+msgstr "&Ãn ecranul curent"
 
 #: main.C:620
 msgid "One"
@@ -100,11 +100,11 @@ msgstr "Cinci"
 
 #: main.C:635
 msgid "Six"
-msgstr "ªase"
+msgstr "Åase"
 
 #: main.C:638
 msgid "Seven"
-msgstr "ªapte"
+msgstr "Åapte"
 
 #: main.C:641
 msgid "Eight"
@@ -112,15 +112,15 @@ msgstr "Opt"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "Ecran fãrã nume"
+msgstr "Ecran fÄƒrÄƒ nume"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
+msgstr "NiÅŸte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Niºte pixmap-uri sunt defecte: GimmickMode nu este activat\n"
+msgstr "NiÅŸte pixmap-uri sunt defecte: GimmickMode nu este activat\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -128,7 +128,7 @@ msgstr "*** Nici un Program ***"
 
 #: minicli.C:201
 msgid "Command:"
-msgstr "Comandã : "
+msgstr "ComandÄƒ : "
 
 #: warning.C:36
 msgid "Ooops!"
@@ -136,40 +136,40 @@ msgstr "Hopa!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Ieºire"
+msgstr "IeÅŸire"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sesiune pregãtitã pentru ieºire"
+msgstr "Sesiune pregÄƒtitÄƒ pentru ieÅŸire"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Aplicaşiile urmãtoare conşin date nesalvate care \n"
-"vor fi pierdute în sesiunea urmãtoare."
+"AplicaÅ£iile urmÄƒtoare conÅ£in date nesalvate care \n"
+"vor fi pierdute Ã®n sesiunea urmÄƒtoare."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Aplicaşiile urmãtoare nu pot fi refãcute în sesiunea urmãtoare,\n"
-"ci doar restartate. Asigurã-te cã nu conşin date nesalvate importante."
+"AplicaÅ£iile urmÄƒtoare nu pot fi refÄƒcute Ã®n sesiunea urmÄƒtoare,\n"
+"ci doar restartate. AsigurÄƒ-te cÄƒ nu conÅ£in date nesalvate importante."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Aplicaşiile urmãtoare nu sunt X11 native ºi de aceea nu pot fi restaurate\n"
-"în sesiunea urmãtoare. Asigurã-te cã nu conşin date importante nesalvate."
+"AplicaÅ£iile urmÄƒtoare nu sunt X11 native ÅŸi de aceea nu pot fi restaurate\n"
+"Ã®n sesiunea urmÄƒtoare. AsigurÄƒ-te cÄƒ nu conÅ£in date importante nesalvate."
 
 #: taskmgr.C:107
 msgid "Switch to"
-msgstr "Schimbã la"
+msgstr "SchimbÄƒ la"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "Sesiune curentã"
+msgstr "Sesiune curentÄƒ"

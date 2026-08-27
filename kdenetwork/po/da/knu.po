@@ -1,16 +1,16 @@
 # Danish translation for KDE Network, knu
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Erik Kjær Pedersen, erik@binghamton.edu 1998.
+# Erik KjÃ¦r Pedersen, erik@binghamton.edu 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE NETWORK/knu\n"
 "POT-Creation-Date: 1999-01-23 02:09+0100\n"
 "PO-Revision-Date: 1999-02-17 17:00+CET-1\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -23,7 +23,7 @@ msgstr "Find r&ute"
 
 #: knu.cpp:168 knu.cpp:321
 msgid "Host &resolution"
-msgstr "Vært&opløsning"
+msgstr "VÃ¦rt&oplÃ¸sning"
 
 #: knu.cpp:181
 msgid "F&inger"
@@ -43,7 +43,7 @@ msgstr ""
 "Der er ingen kommando taget i\n"
 "brug i indstillingsfilen.\n"
 "\n"
-"Så jeg kan ikke gøre noget...\n"
+"SÃ¥ jeg kan ikke gÃ¸re noget...\n"
 
 #: knu.cpp:246
 msgid "&New window"
@@ -55,7 +55,7 @@ msgstr "&Luk vindue"
 
 #: knu.cpp:260
 msgid "Select &all"
-msgstr "Udvælg &alt"
+msgstr "UdvÃ¦lg &alt"
 
 #: knu.cpp:263
 msgid "C&lear output window"
@@ -97,15 +97,15 @@ msgstr "Om..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "Netværksværktøj"
+msgstr "NetvÃ¦rksvÃ¦rktÃ¸j"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
-msgstr "&Vært:"
+msgstr "&VÃ¦rt:"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
-msgstr "&Kør!"
+msgstr "&KÃ¸r!"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
@@ -116,8 +116,8 @@ msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"Kunne ikke finde denne kommandobinærfil. \n"
-"Du kan give dens sti i Rediger->Præferancer...menuen."
+"Kunne ikke finde denne kommandobinÃ¦rfil. \n"
+"Du kan give dens sti i Rediger->PrÃ¦ferancer...menuen."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -148,7 +148,7 @@ msgstr "Fejl i stinavn"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
-msgstr "Binær"
+msgstr "BinÃ¦r"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
@@ -172,7 +172,7 @@ msgstr "#"
 
 #: MtrDlg.cpp:88
 msgid "Hostname"
-msgstr "Værtnavn"
+msgstr "VÃ¦rtnavn"
 
 #: MtrDlg.cpp:89
 msgid "Loss"
@@ -196,15 +196,15 @@ msgstr "Gen.s."
 
 #: MtrDlg.cpp:99
 msgid "Worst"
-msgstr "Værst"
+msgstr "VÃ¦rst"
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "Lav værts&navneopløsning"
+msgstr "Lav vÃ¦rts&navneoplÃ¸sning"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
-msgstr "vær&t"
+msgstr "vÃ¦r&t"
 
 #: HostDlg.cpp:335 PingDlg.cpp:231
 msgid "ns&lookup"
@@ -236,11 +236,11 @@ msgstr "alias (CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "begyndelse på autoritet (SOA)"
+msgstr "begyndelse pÃ¥ autoritet (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
-msgstr "vilkårlig oplysning (ANY)"
+msgstr "vilkÃ¥rlig oplysning (ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"

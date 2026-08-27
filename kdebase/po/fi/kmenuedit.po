@@ -11,12 +11,12 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"
-msgstr "&Vaihda valikon nime‰"
+msgstr "&Vaihda valikon nime√§"
 
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
-msgstr "TYHJƒ"
+msgstr "TYHJ√Ñ"
 
 #: kmenuedit.cpp:343
 msgid "Reload Menus"
@@ -52,7 +52,7 @@ msgid ""
 "Are you sure you want to reload ?"
 msgstr ""
 "Valikoiden lataaminen kumoaa muutokset.\n"
-"Oletko varma, ett‰ haluat ladata valikot ?"
+"Oletko varma, ett√§ haluat ladata valikot ?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
@@ -63,7 +63,7 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"Hakemistoa henkilˆkohtaisille valikoille ei ole olemassa.\n"
+"Hakemistoa henkil√∂kohtaisille valikoille ei ole olemassa.\n"
 " Haluatko luoda sen nyt ?"
 
 #: main.cpp:93
@@ -71,7 +71,7 @@ msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"En pysty luomaan hakemistoa henkilˆkohtaiselle valikolle.\n"
+"En pysty luomaan hakemistoa henkil√∂kohtaiselle valikolle.\n"
 " Valitse Ok poistuaksesi Valikkomuokkaimesta."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
@@ -84,11 +84,11 @@ msgstr "Avaa / Sulje"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr "Valitse siirrett‰v‰ tietue"
+msgstr "Valitse siirrett√§v√§ tietue"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr "Valitse siirrett‰v‰ valikko"
+msgstr "Valitse siirrett√§v√§ valikko"
 
 #: confmenu.cpp:120
 msgid "New"
@@ -100,18 +100,18 @@ msgstr "Varoitus !"
 
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Jos tuhoat t‰m‰n napin, menet‰t sen kaikki alivalikot"
+msgstr "Jos tuhoat t√§m√§n napin, menet√§t sen kaikki alivalikot"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
-msgstr "V‰‰r‰ tiedostonimi"
+msgstr "V√§√§r√§ tiedostonimi"
 
 #: confmenu.cpp:298
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"kdelnk-tiedosto samalla nimell‰ on jo olemassa. \n"
+"kdelnk-tiedosto samalla nimell√§ on jo olemassa. \n"
 "Valitse toinen tiedostonimi."
 
 #: confmenu.cpp:319
@@ -127,8 +127,8 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Sinun pit‰‰ tallentaa muutoksesi\n"
-"ennen kuin voit pudottaa t‰m‰n toiseen ikkunaan."
+"Sinun pit√§√§ tallentaa muutoksesi\n"
+"ennen kuin voit pudottaa t√§m√§n toiseen ikkunaan."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
@@ -144,7 +144,7 @@ msgstr "Polku:"
 
 #: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
-msgstr "Henkilˆkohtainen Polku:"
+msgstr "Henkil√∂kohtainen Polku:"
 
 #: entrydialog.cpp:61
 msgid "Submenu"
@@ -193,7 +193,7 @@ msgstr "Kommentti:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "K‰ynnist‰"
+msgstr "K√§ynnist√§"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
@@ -201,19 +201,19 @@ msgstr "Suorita:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
-msgstr "Tyˆhakemisto:"
+msgstr "Ty√∂hakemisto:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
-msgstr "Aja p‰‰tteess‰"
+msgstr "Aja p√§√§tteess√§"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
-msgstr "P‰‰tteen asetukset:"
+msgstr "P√§√§tteen asetukset:"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "Bin‰‰rikuvio:"
+msgstr "Bin√§√§rikuvio:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
@@ -245,7 +245,7 @@ msgstr "Liitospiste:"
 
 #: entrydialog.cpp:430
 msgid "FS Type:"
-msgstr "Tiedostoj‰rjestelm‰:"
+msgstr "Tiedostoj√§rjestelm√§:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"
@@ -253,15 +253,15 @@ msgstr "Irrotuskuvake:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Vaihda valikkonimi‰"
+msgstr "Vaihda valikkonimi√§"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Vaihda panelissa n‰ytettyjen valikkojen nimi‰"
+msgstr "Vaihda panelissa n√§ytettyjen valikkojen nimi√§"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"
-msgstr "Henkilˆkohtainen:"
+msgstr "Henkil√∂kohtainen:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"

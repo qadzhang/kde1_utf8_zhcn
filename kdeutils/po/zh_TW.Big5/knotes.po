@@ -10,7 +10,7 @@ msgstr ""
 "PO-Revision-Date: 1998-02-21 06:19+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: knotes.cpp:265
@@ -19,64 +19,64 @@ msgstr ""
 
 #: knotes.cpp:303
 msgid "Text Color..."
-msgstr "��r�C��..."
+msgstr "¤å¦rÃC¦â..."
 
 #: knotes.cpp:304
 msgid "Background Color..."
-msgstr "�I���C��..."
+msgstr "­I´ºÃC¦â..."
 
 #: knotes.cpp:310
 msgid "New Note"
-msgstr "�s�� Note"
+msgstr "·sªº Note"
 
 #: knotes.cpp:312
 msgid "Delete Note"
-msgstr "�R�� Note"
+msgstr "§R°£ Note"
 
 #: knotes.cpp:314
 msgid "Rename Note..."
-msgstr "���s�R�W Note ..."
+msgstr "­«·s©R¦W Note ..."
 
 #: knotes.cpp:316
 msgid "Alarm ..."
-msgstr "�x�� ..."
+msgstr "¾xÄÁ ..."
 
 #: knotes.cpp:319
 msgid "Calendar"
-msgstr "���"
+msgstr "¤ë¾ä"
 
 #: knotes.cpp:321
 msgid "Mail Note ..."
-msgstr "�l�H Note ..."
+msgstr "¶l±H Note ..."
 
 #: knotes.cpp:323
 msgid "Print Note"
-msgstr "�C�L Note"
+msgstr "¦C¦L Note"
 
 #: knotes.cpp:326
 #, fuzzy
 msgid "Save Notes"
-msgstr "�s�� Note"
+msgstr "·sªº Note"
 
 #: knotes.cpp:332
 msgid "3D Frame"
-msgstr "3D �~��"
+msgstr "3D ¥~®Ø"
 
 #: configdlg.cpp:128 knotes.cpp:333
 msgid "Auto Indent"
-msgstr "�۰ʴ���"
+msgstr "¦Û°Ê´«¦æ"
 
 #: knotes.cpp:336
 msgid "Font..."
-msgstr "�r��..."
+msgstr "¦r«¬..."
 
 #: knotes.cpp:337
 msgid "Colors"
-msgstr "�C��"
+msgstr "ÃC¦â"
 
 #: knotes.cpp:339
 msgid "Change Defaults ..."
-msgstr "���ܹw�]��"
+msgstr "§ïÅÜ¹w³]­È"
 
 #: knotes.cpp:340
 msgid "Dock in panel"
@@ -84,11 +84,11 @@ msgstr ""
 
 #: knotes.cpp:368
 msgid "Insert Date"
-msgstr "���J���"
+msgstr "´¡¤J¤é´Á"
 
 #: knotes.cpp:371
 msgid "Operations"
-msgstr "�ާ@�R�O"
+msgstr "¾Þ§@©R¥O"
 
 #: knotes.cpp:445 knotes.cpp:449 knotes.cpp:618 knotes.cpp:845 knotes.cpp:849
 #: timer.cpp:87 timer.cpp:110
@@ -100,12 +100,12 @@ msgid ""
 "Could not save a KNote.\n"
 "Quit anyways?"
 msgstr ""
-"�L�k�x�s�@�� KNote.\n"
-"�������}?"
+"µLªkÀx¦s¤@­Ó KNote.\n"
+"ª½±µÂ÷¶}?"
 
 #: knotes.cpp:495
 msgid "Could not save KNote Alarms\n"
-msgstr "�L�k�x�s KNote �x��\n"
+msgstr "µLªkÀx¦s KNote ¾xÄÁ\n"
 
 #: knotes.cpp:556 knotes.cpp:661
 #, c-format
@@ -113,7 +113,7 @@ msgid ""
 "Could not pipe the contents of this KNote into:\n"
 " %s"
 msgstr ""
-"�S��k�N�o�� KNote �����e�g�� pipi ��X��:\n"
+"¨S¿ìªk±N³o­Ó KNote ªº¤º®e¸g¥Ñ pipi ¿é¥X¦Ü:\n"
 " %s"
 
 #: knotes.cpp:717
@@ -124,13 +124,13 @@ msgstr ""
 
 #: knotes.cpp:893
 msgid "Question"
-msgstr "���D"
+msgstr "°ÝÃD"
 
 #: knotes.cpp:894
 msgid ""
 "Are you sure you want to delete this\n"
 "note permanently?"
-msgstr "�T�w�n�ä[���R���o�� Note?"
+msgstr "½T©w­n¥Ã¤[ªº§R°£³o¥÷ Note?"
 
 #: knotes.cpp:1072
 #, c-format
@@ -138,12 +138,12 @@ msgid ""
 "Could not load:\n"
 " %s"
 msgstr ""
-"�L�k���J:\n"
+"µLªk¸ü¤J:\n"
 " %s"
 
 #: knotes.cpp:1331
 msgid "KNotes Configuraton"
-msgstr "KNotes �]�w"
+msgstr "KNotes ³]©w"
 
 #: knotes.cpp:1348
 #, c-format
@@ -162,11 +162,11 @@ msgstr ""
 
 #: configdlg.cpp:46 knotes.cpp:1375
 msgid "Defaults"
-msgstr "�w�]��"
+msgstr "¹w³]­È"
 
 #: knotes.cpp:1376
 msgid "More ..."
-msgstr "��h ..."
+msgstr "§ó¦h ..."
 
 #: knotes.cpp:1535
 msgid ""
@@ -178,15 +178,15 @@ msgstr ""
 
 #: knotes.cpp:1549
 msgid "Could not start or find KFM"
-msgstr "�L�k�}�ҩΧ䤣�� KFM"
+msgstr "µLªk¶}±Ò©Î§ä¤£¨ì KFM"
 
 #: knotes.cpp:1571
 msgid ""
 "Could not save the KNotes.\n"
 "Close anyways?"
 msgstr ""
-"�L�k�x�s���� KNotes.\n"
-"����������?"
+"µLªkÀx¦s¦¹¥÷ KNotes.\n"
+"ª½±µÃö³¬¶Ü?"
 
 #: knotes.cpp:1683
 #, c-format
@@ -201,39 +201,39 @@ msgstr ""
 
 #: knotes.cpp:1691
 msgid "Inconsistency"
-msgstr "���@�P"
+msgstr "¤£¤@­P"
 
 #: configdlg.cpp:50
 msgid "Text Color:"
-msgstr "��r�C��:"
+msgstr "¤å¦rÃC¦â:"
 
 #: configdlg.cpp:64
 msgid "Background Color:"
-msgstr "�I���C��"
+msgstr "­I´ºÃC¦â"
 
 #: configdlg.cpp:83
 msgid "Width:"
-msgstr "�e��:"
+msgstr "¼e«×:"
 
 #: configdlg.cpp:93
 msgid "Height:"
-msgstr "����:"
+msgstr "°ª«×:"
 
 #: configdlg.cpp:104
 msgid "Print Command:"
-msgstr "�C�L�R�O:"
+msgstr "¦C¦L©R¥O:"
 
 #: configdlg.cpp:112
 msgid "Mail Command:"
-msgstr "�l�H�R�O:"
+msgstr "¶l±H©R¥O:"
 
 #: configdlg.cpp:123
 msgid "3d Frame"
-msgstr "3D �~��"
+msgstr "3D ¥~®Ø"
 
 #: fontdlg.cpp:45
 msgid "Set Default Font"
-msgstr "�]�w�w�]�r��"
+msgstr "³]©w¹w³]¦r«¬"
 
 #: fontdlg.cpp:54
 msgid "Family:"
@@ -250,7 +250,7 @@ msgstr ""
 #: fontdlg.cpp:87
 #, fuzzy
 msgid "Weight:"
-msgstr "����:"
+msgstr "°ª«×:"
 
 #: fontdlg.cpp:93 fontdlg.cpp:117 fontdlg.cpp:150
 msgid "Bold"
@@ -263,7 +263,7 @@ msgstr ""
 #: mail.cpp:40
 #, fuzzy
 msgid "Mail Note to:"
-msgstr "�l�H Note ..."
+msgstr "¶l±H Note ..."
 
 #: mail.cpp:49
 msgid "Subject:"
@@ -280,35 +280,35 @@ msgstr ""
 #: alarm.cpp:58
 #, c-format
 msgid "Alarm Timer for: %s"
-msgstr "�x���p�ɾ�: %s"
+msgstr "¾xÄÁ­p®É¾¹: %s"
 
 #: alarm.cpp:72
 msgid "Unset"
-msgstr "�Ѱ�"
+msgstr "¸Ñ°£"
 
 #: alarm.cpp:74
 msgid "Set"
-msgstr "�]�w"
+msgstr "³]©w"
 
 #: alarm.cpp:153
 msgid "I am afraid you already missed your appointment."
-msgstr "�کȱz�w�g���L�z�����|�F."
+msgstr "§Ú©È±z¤w¸g¿ù¹L±zªº¬ù·|¤F."
 
 #: bwdatetime.cpp:44
 msgid "Day:"
-msgstr "���:"
+msgstr "¤é´Á:"
 
 #: bwdatetime.cpp:50
 msgid "Month:"
-msgstr "���:"
+msgstr "¤ë¥÷:"
 
 #: bwdatetime.cpp:57
 msgid "Year:"
-msgstr "�~��:"
+msgstr "¦~¥÷:"
 
 #: bwdatetime.cpp:72
 msgid "Time:"
-msgstr "�ɶ�:"
+msgstr "®É¶¡:"
 
 #: bwdatetime.cpp:85
 msgid "AM"
@@ -320,47 +320,47 @@ msgstr ""
 
 #: bwdatetime.cpp:161
 msgid "The Time you selected is invalid"
-msgstr "�z��ܪ��ɶ��O�L�Ī�."
+msgstr "±z¿ï¾Üªº®É¶¡¬OµL®Äªº."
 
 #: bwdatetime.cpp:176
 msgid "The Date you selected is invalid"
-msgstr "�z��ܪ�����O�L�Ī�."
+msgstr "±z¿ï¾Üªº¤é´Á¬OµL®Äªº."
 
 #: renamedlg.cpp:39
 msgid "Rename this note to"
-msgstr "���s�R�W note ��"
+msgstr "­«·s©R¦W note ¦Ü"
 
 #: renamedlg.cpp:44
 msgid "Rename"
-msgstr "���s�R�W"
+msgstr "­«·s©R¦W"
 
 #: renamedlg.cpp:79
 msgid ""
 "The name \"xyalarms\" is reserved for internal usage.\n"
 "Please choose a different name"
 msgstr ""
-"\"xyalarms\" �W�٬������O�d�ϥ�.\n"
-"�п�t�@�Ӥ��P���W��"
+"\"xyalarms\" ¦WºÙ¬°¤º³¡«O¯d¨Ï¥Î.\n"
+"½Ð¿ï¥t¤@­Ó¤£¦Pªº¦WºÙ"
 
 #: renamedlg.cpp:92
 msgid ""
 "A KNotes note with this name already exists\n"
 "Please choose a different name"
 msgstr ""
-"�@�ӬۦP�W�٪� note �w�g�s�b\n"
-"�п�t�@�Ӥ��P���W��"
+"¤@­Ó¬Û¦P¦WºÙªº note ¤w¸g¦s¦b\n"
+"½Ð¿ï¥t¤@­Ó¤£¦Pªº¦WºÙ"
 
 #: docking.cpp:48
 #, fuzzy, c-format
 msgid "Could not load %s !"
 msgstr ""
-"�L�k���J:\n"
+"µLªk¸ü¤J:\n"
 " %s"
 
 #: docking.cpp:68
 #, fuzzy
 msgid "Change Defaults"
-msgstr "���ܹw�]��"
+msgstr "§ïÅÜ¹w³]­È"
 
 #: docking.cpp:73
 msgid "Exit Knotes"
@@ -369,10 +369,10 @@ msgstr ""
 #: docking.cpp:92
 #, fuzzy
 msgid "New Knote"
-msgstr "�s�� Note"
+msgstr "·sªº Note"
 
 #~ msgid "No Frame"
-#~ msgstr "�S���~��"
+#~ msgstr "¨S¦³¥~®Ø"
 
 #~ msgid "Hide Note"
-#~ msgstr "���� Note"
+#~ msgstr "ÁôÂÃ Note"

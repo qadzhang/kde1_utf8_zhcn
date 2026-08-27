@@ -10,12 +10,12 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
-msgstr "KDE internacionalna tipkovnica veÊ zapoËeta na ovom zaslonu."
+msgstr "KDE internacionalna tipkovnica veƒá zapoƒçeta na ovom zaslonu."
 
 #: kikbd.cpp:295
 #, c-format
@@ -31,7 +31,7 @@ msgid ""
 "Skipping this map."
 msgstr ""
 "Mapa tipkovnice \"%s\" ne postoji.\n"
-"PreskaËem ovu mapu."
+"Preskaƒçem ovu mapu."
 
 #: kikbd.cpp:337
 msgid "Setup"
@@ -54,7 +54,7 @@ msgid ""
 "Alt symbols disabled"
 msgstr ""
 "Ne mogu namjestiti sklopku za promjenu kao %s za tipkovnicu %s\n"
-"Alt znakovi iskljuËeni"
+"Alt znakovi iskljuƒçeni"
 
 #: kikbd.cpp:406
 msgid ""
@@ -62,7 +62,7 @@ msgid ""
 "Caps Lock Emulation disabled"
 msgstr ""
 "Ne mogu ukloniti Caps Lock iz Modifiers.\n"
-"Caps Lock oponaπanje iskljuËeno"
+"Caps Lock opona≈°anje iskljuƒçeno"
 
 #: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
@@ -89,7 +89,7 @@ msgstr ""
 
 #: keymap.cpp:238
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "KeyMap: ne mogu naÊi znak \"%s\"."
+msgstr "KeyMap: ne mogu naƒái znak \"%s\"."
 
 #: keymap.cpp:246
 msgid "KeyMap: can't read keycode \"%s\"."
@@ -185,7 +185,7 @@ msgstr "Na dnu desno"
 
 #: kikbdconf.cpp:156
 msgid "X default codes"
-msgstr "X uobiËajeni kodovi"
+msgstr "X uobiƒçajeni kodovi"
 
 #: kikbdconf.cpp:215
 #, c-format
@@ -194,7 +194,7 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "%s\n"
-"Da li æelite poËeti sa postavom?"
+"Da li ≈æelite poƒçeti sa postavom?"
 
 #: kikbdconf.cpp:223
 msgid ""
@@ -202,7 +202,7 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 "Koristite \"Internacionalnu tipkovnicu\" po prvi put.\n"
-"Instalirao sam uobiËajene postavke."
+"Instalirao sam uobiƒçajene postavke."
 
 #: kikbdconf.cpp:379
 msgid "unknown"
@@ -210,7 +210,7 @@ msgstr "nepoznat"
 
 #: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
-msgstr "uobiËajen"
+msgstr "uobiƒçajen"
 
 #: kikbdconf.cpp:419
 msgid "Author:  Not specified"
@@ -266,7 +266,7 @@ msgstr "skup znakova"
 
 #: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
-msgstr "Internacionalna tipkovnica - GRE©KA"
+msgstr "Internacionalna tipkovnica - GRE≈†KA"
 
 #: kikbdconf.cpp:535
 msgid "International keyboard warning"
@@ -286,7 +286,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"Da li æelite nastaviti?"
+"Da li ≈æelite nastaviti?"
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
@@ -326,7 +326,7 @@ msgstr "&Info"
 
 #: widgets.cpp:145
 msgid "Display information for selected keyboard map"
-msgstr "Prikaæi informacije za izabranu mapu tipkovnice"
+msgstr "Prika≈æi informacije za izabranu mapu tipkovnice"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
@@ -344,7 +344,7 @@ msgstr "Dodajem tipkovnicu"
 
 #: widgets.cpp:225
 msgid "There are no keyboard maps left to add"
-msgstr "Nema viπe mapa za tipkovnice koje je moguÊe dodati"
+msgstr "Nema vi≈°e mapa za tipkovnice koje je moguƒáe dodati"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
@@ -368,7 +368,7 @@ msgstr ""
 
 #: widgets.cpp:419
 msgid "Key(s) for switching between keyboard maps"
-msgstr "Tipka(e) za promjenu izmeu mapa tipkovnica"
+msgstr "Tipka(e) za promjenu izmeƒëu mapa tipkovnica"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
@@ -396,14 +396,14 @@ msgstr "Napredno"
 
 #: widgets.cpp:475
 msgid "&Emulate Caps Lock"
-msgstr "&Oponaπaj CapsLock"
+msgstr "&Opona≈°aj CapsLock"
 
 #: widgets.cpp:476
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
 msgstr ""
-"Oponaπaj XServer CapsLock. Neki jezici zahtjevaju ovu opciju."
+"Opona≈°aj XServer CapsLock. Neki jezici zahtjevaju ovu opciju."
 ""
 
 #: widgets.cpp:482
@@ -432,19 +432,19 @@ msgstr "Ulaz"
 
 #: widgets.cpp:505
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Standardno ponaπanje. Mapa tipkovnice aktivna za sve prozore"
+msgstr "Standardno pona≈°anje. Mapa tipkovnice aktivna za sve prozore"
 
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
 msgstr ""
-"Proπireno ponaπanje. Mapa tipkovnice podeπava se za svaki prozor posebno"
+"Pro≈°ireno pona≈°anje. Mapa tipkovnice pode≈°ava se za svaki prozor posebno"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"Posebno ponaπanje. Mapa tipkovnice podeπava se za svaki razred prozora posebno"
+"Posebno pona≈°anje. Mapa tipkovnice pode≈°ava se za svaki razred prozora posebno"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -508,23 +508,23 @@ msgstr "Pokreni automatski"
 
 #: widgets.cpp:663
 msgid "&Docked"
-msgstr "&Pristani na ploËu"
+msgstr "&Pristani na ploƒçu"
 
 #: widgets.cpp:664
 msgid "Dock into special area in the panel"
-msgstr "Pristani na ploËu"
+msgstr "Pristani na ploƒçu"
 
 #: widgets.cpp:673
 msgid "Place"
-msgstr "Poloæi"
+msgstr "Polo≈æi"
 
 #: widgets.cpp:680
 msgid "Place in selected corner"
-msgstr "Poloæi u izabrani kut"
+msgstr "Polo≈æi u izabrani kut"
 
 #: kcmikbd.cpp:64
 msgid "&General"
-msgstr "&OpÊenito"
+msgstr "&Opƒáenito"
 
 #: kcmikbd.cpp:70
 msgid "&Style"
@@ -532,7 +532,7 @@ msgstr "&Stil"
 
 #: kcmikbd.cpp:76
 msgid "Start&Up"
-msgstr "P&oËni"
+msgstr "P&oƒçni"
 
 #: kcmikbd.cpp:80
 msgid "International Keyboard"

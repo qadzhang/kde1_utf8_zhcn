@@ -11,12 +11,12 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: board.cpp:65 dialogs.cpp:137
 msgid "Anonymous"
-msgstr "Anonimneæ"
+msgstr "Anonimne≈æ"
 
 #: board.cpp:97
 msgid "Game paused"
@@ -28,7 +28,7 @@ msgstr "Pritisni za nadaljevanje"
 
 #: board.cpp:119 net.cpp:208
 msgid "Game over"
-msgstr "Igra je konËana"
+msgstr "Igra je konƒçana"
 
 #: board.cpp:123
 msgid "Press Return to replay"
@@ -36,11 +36,11 @@ msgstr "Pritisni Return za novo igro"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "Pritisni za zaËetek igre"
+msgstr "Pritisni za zaƒçetek igre"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "Datoteka z najboljπimi rezultati ni zapisljiva!"
+msgstr "Datoteka z najbolj≈°imi rezultati ni zapisljiva!"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -48,7 +48,7 @@ msgstr "Nelegalna vrata"
 
 #: net.cpp:135
 msgid "Null address"
-msgstr "NiËni naslov"
+msgstr "Niƒçni naslov"
 
 #: net.cpp:142
 msgid "Unknown address"
@@ -56,7 +56,7 @@ msgstr "Neznan naslov"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "Ne morem ustvariti vtiËnice"
+msgstr "Ne morem ustvariti vtiƒçnice"
 
 #: net.cpp:196
 msgid "at"
@@ -68,31 +68,31 @@ msgstr "Napaka pri povezavi"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
-msgstr "Streænik nedosegljiv"
+msgstr "Stre≈ænik nedosegljiv"
 
 #: net.cpp:266
 msgid "The server has died"
-msgstr "Streænik je preminil"
+msgstr "Stre≈ænik je preminil"
 
 #: net.cpp:267
 msgid "Cancel from server"
-msgstr "Preklic s streænika"
+msgstr "Preklic s stre≈ænika"
 
 #: net.cpp:273 net.cpp:333
 msgid "Unknown data from server"
-msgstr "Neznani podatki s streænika"
+msgstr "Neznani podatki s stre≈ænika"
 
 #: net.cpp:312
 msgid "Cannot send to server"
-msgstr "Ne morem poslati streæniku"
+msgstr "Ne morem poslati stre≈æniku"
 
 #: net.cpp:324
 msgid "Client timeout (No message from server)"
-msgstr "Odjemalcu je potekel Ëas (nobenega sporoËila od streænika)"
+msgstr "Odjemalcu je potekel ƒças (nobenega sporoƒçila od stre≈ænika)"
 
 #: net.cpp:329
 msgid "Server has vanished"
-msgstr "Streænik je izginil"
+msgstr "Stre≈ænik je izginil"
 
 #: net.cpp:366
 msgid "Bind error"
@@ -100,15 +100,15 @@ msgstr "Bind napaka"
 
 #: net.cpp:371
 msgid "Listen error"
-msgstr "Napaka pri posluπanju"
+msgstr "Napaka pri poslu≈°anju"
 
 #: net.cpp:390
 msgid "Unknown message from unknown player (??)"
-msgstr "Neznano sporoËilo od neznanega igralca (??)"
+msgstr "Neznano sporoƒçilo od neznanega igralca (??)"
 
 #: net.cpp:449 net.cpp:490
 msgid "Unknown message from client"
-msgstr "Neznano sporoËilo z odjemalca"
+msgstr "Neznano sporoƒçilo z odjemalca"
 
 #: net.cpp:486
 msgid "Client has died"
@@ -120,11 +120,11 @@ msgstr "Preklic z odjemalca"
 
 #: net.cpp:494
 msgid "Timeout"
-msgstr "»as je potekel"
+msgstr "ƒåas je potekel"
 
 #: net.cpp:520
 msgid "No message from client"
-msgstr "Nobenega sporoËila od odjemalca"
+msgstr "Nobenega sporoƒçila od odjemalca"
 
 #: net.cpp:525
 msgid "Client has vanished"
@@ -136,7 +136,7 @@ msgstr "Neznani podatki od odjemalca"
 
 #: net.cpp:533
 msgid "End message from client"
-msgstr "KonËaj sporoËilo od odjemalca"
+msgstr "Konƒçaj sporoƒçilo od odjemalca"
 
 #: net.cpp:550
 msgid "Cannot send to client"
@@ -144,7 +144,7 @@ msgstr "Ne morem poslati odjemalcu"
 
 #: dialogs.cpp:61
 msgid "High Scores"
-msgstr "Najboljπi rezultati"
+msgstr "Najbolj≈°i rezultati"
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
@@ -152,15 +152,15 @@ msgstr "Hala slave"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
-msgstr "©e brez opcij !"
+msgstr "≈†e brez opcij !"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "Omreæni pogovorno okno"
+msgstr "Omre≈æni pogovorno okno"
 
 #: dialogs.cpp:178
 msgid "Server"
-msgstr "Streænik"
+msgstr "Stre≈ænik"
 
 #: dialogs.cpp:179
 msgid "Client"
@@ -172,7 +172,7 @@ msgstr "Ime igralca :"
 
 #: dialogs.cpp:185
 msgid "Server address :"
-msgstr "Naslov streænika :"
+msgstr "Naslov stre≈ænika :"
 
 #: dialogs.cpp:187
 msgid "Port :"
@@ -180,7 +180,7 @@ msgstr "Vrata :"
 
 #: dialogs.cpp:199
 msgid "Connect"
-msgstr "Poveæi"
+msgstr "Pove≈æi"
 
 #: dialogs.cpp:202
 msgid "Connecting ..."
@@ -192,19 +192,19 @@ msgstr "Igraj !"
 
 #: dialogs.cpp:252
 msgid "Network game"
-msgstr "Omreæna igra"
+msgstr "Omre≈æna igra"
 
 #: dialogs.cpp:256
 msgid "Server mode"
-msgstr "Streæniπki naËin"
+msgstr "Stre≈æni≈°ki naƒçin"
 
 #: dialogs.cpp:258
 msgid "Client mode"
-msgstr "Odjemalski naËin"
+msgstr "Odjemalski naƒçin"
 
 #: dialogs.cpp:336
 msgid "Waiting for other player(s) ..."
-msgstr "»akam na ostale igralce ..."
+msgstr "ƒåakam na ostale igralce ..."
 
 #: field.cpp:27
 msgid "New game"
@@ -216,7 +216,7 @@ msgstr "Pavziraj igro"
 
 #: field.cpp:30
 msgid "High scores"
-msgstr "Najboljπi rezultati"
+msgstr "Najbolj≈°i rezultati"
 
 #: field.cpp:31
 msgid "Move left"
@@ -260,7 +260,7 @@ msgstr "Naslednji kos"
 
 #: field.cpp:185
 msgid "&Restart game"
-msgstr "P&onovno zaæeni igro"
+msgstr "P&onovno za≈æeni igro"
 
 #: field.cpp:186
 msgid "&Pause game"
@@ -268,11 +268,11 @@ msgstr "&Pavziraj igro"
 
 #: field.cpp:187
 msgid "&Multiplayer game"
-msgstr "Igra z &veË igralci"
+msgstr "Igra z &veƒç igralci"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "&Najboljπi rezultati"
+msgstr "&Najbolj≈°i rezultati"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"
@@ -288,4 +288,4 @@ msgstr "od"
 
 #: main.cpp:71
 msgid "Show menu"
-msgstr "Prikaæi meni"
+msgstr "Prika≈æi meni"

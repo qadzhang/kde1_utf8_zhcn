@@ -7,12 +7,12 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"   
 
 #: theme.cpp:175
 msgid "Mappings file theme.mappings not found."
-msgstr "Datoteka mapiranja theme.mappins nije pronağena"
+msgstr "Datoteka mapiranja theme.mappins nije pronaÄ‘ena"
 
 #: theme.cpp:193
 #, c-format
@@ -40,7 +40,7 @@ msgstr ""
 
 #: theme.cpp:267
 msgid "Theme contains no .themerc file"
-msgstr "Tema ne sadr¾i .themerc datoteku"
+msgstr "Tema ne sadrÅ¾i .themerc datoteku"
 
 #: theme.cpp:315
 #, c-format
@@ -54,7 +54,7 @@ msgstr ""
 #: theme.cpp:381 themecreator.cpp:339
 #, c-format
 msgid "Cannot open file %s for reading"
-msgstr "Ne mogu otvoriti datoteku %s za èitanje"
+msgstr "Ne mogu otvoriti datoteku %s za Äitanje"
 
 #: theme.cpp:388 themecreator.cpp:346
 #, c-format
@@ -67,7 +67,7 @@ msgid ""
 "Write error to %s:\n"
 "%s"
 msgstr ""
-"Gre¹ka prilikom pisanja u %s:\n"
+"GreÅ¡ka prilikom pisanja u %s:\n"
 "%s"
 
 
@@ -137,12 +137,12 @@ msgstr ""
 #: theme.cpp:1200
 #, c-format
 msgid "Cannot create directory %s"
-msgstr "Ne mogu naèiniti direktorij %s"
+msgstr "Ne mogu naÄiniti direktorij %s"
 
 #: theme.cpp:1208
 #, c-format
 msgid "Cannot enter directory %s"
-msgstr "Ne mogu uæi u direktorij %s"
+msgstr "Ne mogu uÄ‡i u direktorij %s"
 
 #: installer.cpp:78
 msgid "New..."
@@ -198,7 +198,7 @@ msgstr "upozorenje"
 
 #: main.cpp:157 main.cpp:158
 msgid "fatal error"
-msgstr "nepovratna pogre¹ka"
+msgstr "nepovratna pogreÅ¡ka"
 
 #: main.cpp:186
 msgid "Kde Theme Manager"
@@ -226,7 +226,7 @@ msgstr "Pozadinske slike"
 
 #: options.cpp:59
 msgid "Panel"
-msgstr "ploèa"
+msgstr "ploÄa"
 
 #: options.cpp:60
 msgid "Sounds"
@@ -286,7 +286,7 @@ msgstr "Tekst u prozoru"
 
 #: widgetcanvas.cpp:209
 msgid "Disabled"
-msgstr "Onemoguæen"
+msgstr "OnemoguÄ‡en"
 
 #: widgetcanvas.cpp:216 widgetcanvas.cpp:217
 msgid "Selected"
@@ -306,7 +306,7 @@ msgid ""
 "\n"
 "Gnu Public License (GPL)"
 msgstr ""
-"Inaèica %s\n"
+"InaÄica %s\n"
 "\n"
 "Autorska prava (C) 1998\n"
 "%s\n"
@@ -335,11 +335,11 @@ msgstr ""
 #: themecreator.cpp:66
 #, c-format
 msgid "Failed to create directory %s: %s"
-msgstr "Ne mogu naèiniti direktorij %s: %s"
+msgstr "Ne mogu naÄiniti direktorij %s: %s"
 
 #: newthemedlg.cpp:37
 msgid "Create New Theme"
-msgstr "Naèini novu temu"
+msgstr "NaÄini novu temu"
 
 #: newthemedlg.cpp:45
 msgid "File name"

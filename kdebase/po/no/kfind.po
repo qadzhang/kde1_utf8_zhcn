@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kfdird.cpp:46
@@ -19,19 +19,19 @@ msgstr "Mapper:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Kan ikke åpne eller lese mappe."
+msgstr "Kan ikke Ã¥pne eller lese mappe."
 
 #: kfindtop.cpp:121
 msgid "&Start search"
-msgstr "&Start søk"
+msgstr "&Start sÃ¸k"
 
 #: kfindtop.cpp:123
 msgid "S&top search"
-msgstr "S&topp søk"
+msgstr "S&topp sÃ¸k"
 
 #: kfindtop.cpp:128
 msgid "&Open"
-msgstr "Å&pne"
+msgstr "Ã…&pne"
 
 #: kfindtop.cpp:130
 msgid "&Add to archive"
@@ -43,11 +43,11 @@ msgstr "&Egenskaper"
 
 #: kfindtop.cpp:138
 msgid "Open Containing &Folder"
-msgstr "Åpne inneholdene mappe"
+msgstr "Ã…pne inneholdene mappe"
 
 #: kfindtop.cpp:141
 msgid "&Save Search"
-msgstr "&Lagre søk"
+msgstr "&Lagre sÃ¸k"
 
 #: kfindtop.cpp:158
 msgid "&Select All"
@@ -70,29 +70,29 @@ msgstr "&Preferanser..."
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
 "Front til programmet \"find\"\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "\n"
 "Spesiell takk til Stephan Kulow\n"
 "<coolo@kde.org>"
 
 #: kfindtop.cpp:199
 msgid "Start Search"
-msgstr "Start søk"
+msgstr "Start sÃ¸k"
 
 #: kfindtop.cpp:204
 msgid "New Search"
-msgstr "Nytt søk"
+msgstr "Nytt sÃ¸k"
 
 #: kfindtop.cpp:209
 msgid "Stop Search"
-msgstr "Stopp søk"
+msgstr "Stopp sÃ¸k"
 
 #: kfindtop.cpp:222
 msgid "Add to archive"
@@ -100,11 +100,11 @@ msgstr "Legg til arkiv"
 
 #: kfindtop.cpp:237
 msgid "Open Containing Folder"
-msgstr "Åpne inneholdene mappe"
+msgstr "Ã…pne inneholdene mappe"
 
 #: kfindtop.cpp:242
 msgid "Save Search Results"
-msgstr "Lagre søkeresulatater"
+msgstr "Lagre sÃ¸keresulatater"
 
 #: kftabdlg.cpp:72
 msgid "&Named:"
@@ -132,7 +132,7 @@ msgstr "og"
 
 #: kftabdlg.cpp:131
 msgid "month(s)"
-msgstr "måned(er)"
+msgstr "mÃ¥ned(er)"
 
 #: kftabdlg.cpp:132
 msgid "day(s)"
@@ -152,11 +152,11 @@ msgstr "&mellom"
 
 #: kftabdlg.cpp:150
 msgid "during the previou&s "
-msgstr "iløpet av foregåend&e"
+msgstr "ilÃ¸pet av foregÃ¥end&e"
 
 #: kftabdlg.cpp:151
 msgid "&during the previous "
-msgstr "&iløpet av foregående"
+msgstr "&ilÃ¸pet av foregÃ¥ende"
 
 #: kftabdlg.cpp:199
 msgid " Date Modified "
@@ -172,7 +172,7 @@ msgstr "&Inneholder tekst:"
 
 #: kftabdlg.cpp:213
 msgid "&Size is:"
-msgstr "&Størrelsen er:"
+msgstr "&StÃ¸rrelsen er:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
@@ -224,7 +224,7 @@ msgstr "Datoen er ikke gyldig!!"
 
 #: kftabdlg.cpp:513
 msgid "The month(s) value isn't valid!!"
-msgstr "Månedens(enes) verdi er ikke gyldig!!"
+msgstr "MÃ¥nedens(enes) verdi er ikke gyldig!!"
 
 #: kftabdlg.cpp:524
 msgid "The day(s) value isn't valid!!"
@@ -232,7 +232,7 @@ msgstr "Dagen(enes) verdi er ikke gyldig!!"
 
 #: kftabdlg.cpp:541
 msgid "The value in size isn't valid number!!"
-msgstr "Verdiens størrelse er ikke et gyldig tall!!"
+msgstr "Verdiens stÃ¸rrelse er ikke et gyldig tall!!"
 
 #: kfoptions.cpp:52
 msgid "Preferences"
@@ -272,7 +272,7 @@ msgstr "Legg til arkiv"
 
 #: kfoptions.cpp:136
 msgid "Patterns:"
-msgstr "Mønster:"
+msgstr "MÃ¸nster:"
 
 #: kfoptions.cpp:139
 msgid "Add New"
@@ -289,7 +289,7 @@ msgstr "%d file(r) funnet"
 
 #: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
-msgstr "Det var ikke mulig å lagre resultatet!"
+msgstr "Det var ikke mulig Ã¥ lagre resultatet!"
 
 #: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
@@ -305,7 +305,7 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
-"Ønsker du virkelig å slette fil:\n"
+"Ã˜nsker du virkelig Ã¥ slette fil:\n"
 "%s"
 
 #: kfwin.cpp:304
@@ -318,14 +318,14 @@ msgid ""
 " to delete this file"
 msgstr ""
 "Du har ingen tillatelse\n"
-"til å slette denne fil"
+"til Ã¥ slette denne fil"
 
 #: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr ""
-"Det er ikke mulig å slette\n"
+"Det er ikke mulig Ã¥ slette\n"
 "valgt fil"
 
 #: kfwin.cpp:340
@@ -334,7 +334,7 @@ msgid ""
 " to delete this directory"
 msgstr ""
 "Du har ingen tillatelse\n"
-"til å slette denne mappe"
+"til Ã¥ slette denne mappe"
 
 #: kfwin.cpp:345
 msgid ""
@@ -349,7 +349,7 @@ msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
-"Det er ikke mulig å slette\n"
+"Det er ikke mulig Ã¥ slette\n"
 "valgt mappe"
 
 #: kfwin.cpp:442

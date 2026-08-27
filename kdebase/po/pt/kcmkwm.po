@@ -6,16 +6,16 @@ msgstr ""
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: main.cpp:67
 msgid "&Buttons"
-msgstr "&Botıes"
+msgstr "&Bot√µes"
 
 #: main.cpp:70
 msgid "&Titlebar"
-msgstr "&Barra de TÌtulo"
+msgstr "&Barra de T√≠tulo"
 
 #: main.cpp:73
 msgid "Bo&rders"
@@ -27,13 +27,13 @@ msgstr "&Rato"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr "&AvanÁado"
+msgstr "&Avan√ßado"
 
 #: main.cpp:86
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"utilizaÁ„o: kcmkwm [-init | "
+"utiliza√ß√£o: kcmkwm [-init | "
 "{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
@@ -68,33 +68,33 @@ msgstr "Direita"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"O lado esquerdo da barra de titulo est· cheio... desactivando o bot„o de "
+"O lado esquerdo da barra de titulo est√° cheio... desactivando o bot√£o de "
 "maximizar\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"O lado direito da barra de titulo est· cheio... desactivando o bot„o de "
+"O lado direito da barra de titulo est√° cheio... desactivando o bot√£o de "
 "maximizar\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"O lado esquerdo da barra de titulo est· cheio... desactivando o bot„o de "
+"O lado esquerdo da barra de titulo est√° cheio... desactivando o bot√£o de "
 "minimizar\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"O lado direito da barra de titulo est· cheio... desactivando o bot„o de "
+"O lado direito da barra de titulo est√° cheio... desactivando o bot√£o de "
 "minimizar\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
-msgstr "Alinhamento do tÌtulo"
+msgstr "Alinhamento do t√≠tulo"
 
 #: titlebar.cpp:941
 msgid "Middle"
@@ -118,7 +118,7 @@ msgstr "Imagem"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
-msgstr "TÌtulo activo tem moldura sombreada"
+msgstr "T√≠tulo activo tem moldura sombreada"
 
 #: titlebar.cpp:1046
 msgid "Active pixmap:"
@@ -134,11 +134,11 @@ msgstr "Sem imagem debaixo do texto"
 
 #: titlebar.cpp:1068
 msgid "Mouse action"
-msgstr "AcÁ„o do rato"
+msgstr "Ac√ß√£o do rato"
 
 #: titlebar.cpp:1076
 msgid "Left Button double click does:"
-msgstr "Duplo click com bot„o esquerdo faz:"
+msgstr "Duplo click com bot√£o esquerdo faz:"
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
@@ -158,7 +158,7 @@ msgstr "(Des)Pregar"
 
 #: titlebar.cpp:1109
 msgid "Title animation"
-msgstr "AnimaÁ„o do tÌtulo"
+msgstr "Anima√ß√£o do t√≠tulo"
 
 #: titlebar.cpp:1125
 msgid "ms"
@@ -166,7 +166,7 @@ msgstr "ms"
 
 #: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
-msgstr "ConfiguraÁ„o do gestor de janelas - ERRO"
+msgstr "Configura√ß√£o do gestor de janelas - ERRO"
 
 #: titlebar.cpp:1369
 msgid ""
@@ -174,7 +174,7 @@ msgid ""
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
 "Houve um erro ao gravar as imagens da\n"
-"barra de tÌtulo! Verifique as permissıes."
+"barra de t√≠tulo! Verifique as permiss√µes."
 
 #: windows.cpp:68
 msgid "Windows"
@@ -182,21 +182,21 @@ msgstr "Janelas"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "MaximizaÁ„o vertical apenas"
+msgstr "Maximiza√ß√£o vertical apenas"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
-msgstr "Mostrar conte˙do das janelas enquanto s„o movidas"
+msgstr "Mostrar conte√∫do das janelas enquanto s√£o movidas"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr "Mostrar conte˙do das janelas enquanto mudam tamanho"
+msgstr "Mostrar conte√∫do das janelas enquanto mudam tamanho"
 
 #: windows.cpp:98
 msgid "Resize animation:"
 msgstr ""
-"AnimaÁ„o\n"
-"mudanÁa tamanho:"
+"Anima√ß√£o\n"
+"mudan√ßa tamanho:"
 
 #: windows.cpp:111
 msgid "None"
@@ -204,11 +204,11 @@ msgstr "Nenhuma"
 
 #: windows.cpp:117
 msgid "Fast"
-msgstr "R·pida"
+msgstr "R√°pida"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "PolÌtica de Posicionamento"
+msgstr "Pol√≠tica de Posicionamento"
 
 #: windows.cpp:134
 msgid "Smart"
@@ -224,7 +224,7 @@ msgstr "Interactiva"
 
 #: windows.cpp:140
 msgid "Random"
-msgstr "AleatÛria"
+msgstr "Aleat√≥ria"
 
 #: windows.cpp:142
 msgid "Manual"
@@ -232,16 +232,16 @@ msgstr "Manual"
 
 #: windows.cpp:154
 #, c-format
-msgid ""
-"  Allowed overlap:\n"
-"(% of desktop space)"
-msgstr ""
-"SobreposiÁ„o permitida:\n"
-"(% do tamanho do ecr„)"
+#~ msgid ""
+#~ "  Allowed overlap:\n"
+#~ "(% of desktop space)"
+#~ msgstr ""
+#~ "Sobreposi√ß√£o permitida:\n"
+#~ "(% do tamanho do ecr√£)"
 
 #: windows.cpp:175
 msgid "Focus policy"
-msgstr "PolÌtica de foco"
+msgstr "Pol√≠tica de foco"
 
 #: windows.cpp:185
 msgid "Click to focus"
@@ -253,11 +253,11 @@ msgstr "Foco segue o rato"
 
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Foco segue o rato cl·ssico"
+msgstr "Foco segue o rato cl√°ssico"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Foco escorregadio cl·ssico"
+msgstr "Foco escorregadio cl√°ssico"
 
 #: windows.cpp:203
 msgid "Auto Raise"
@@ -273,23 +273,23 @@ msgstr "Atraso (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
-msgstr "MudanÁa de ecr„"
+msgstr "Mudan√ßa de ecr√£"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "Mudar de ecr„ ao mover rato para os extremos"
+msgstr "Mudar de ecr√£ ao mover rato para os extremos"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Mover rato para o centro depois de mudar de ecr„"
+msgstr "Mover rato para o centro depois de mudar de ecr√£"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Segundos atÈ mudar:"
+msgstr "Segundos at√© mudar:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
-msgstr "Bordas m·gicas"
+msgstr "Bordas m√°gicas"
 
 #: desktop.cpp:126
 msgid ""
@@ -317,7 +317,7 @@ msgstr "Inactiva"
 
 #: mouse.cpp:62
 msgid "Titlebar and frame:"
-msgstr "TÌtulo e moldura:"
+msgstr "T√≠tulo e moldura:"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
@@ -325,31 +325,31 @@ msgstr "Interior das janelas inactivas:"
 
 #: mouse.cpp:70
 msgid "Inner window, titlebar and frame:"
-msgstr "Interior das janelas, barra de tÌtulo e moldura:"
+msgstr "Interior das janelas, barra de t√≠tulo e moldura:"
 
 #: mouse.cpp:74 mouse.cpp:86
 msgid "Left Button"
-msgstr "Bot„o Esquerdo"
+msgstr "Bot√£o Esquerdo"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
-msgstr "Bot„o Central"
+msgstr "Bot√£o Central"
 
 #: mouse.cpp:82 mouse.cpp:94
 msgid "Right Button"
-msgstr "Bot„o Direito"
+msgstr "Bot√£o Direito"
 
 #: mouse.cpp:98
 msgid "ALT + Left Button"
-msgstr "ALT + Bot„o Esquerdo"
+msgstr "ALT + Bot√£o Esquerdo"
 
 #: mouse.cpp:102
 msgid "ALT + Middle Button"
-msgstr "ALT + Bot„o Central"
+msgstr "ALT + Bot√£o Central"
 
 #: mouse.cpp:106
 msgid "ALT + Right Button"
-msgstr "ALT + Bot„o Direito"
+msgstr "ALT + Bot√£o Direito"
 
 #: mouse.cpp:113 mouse.cpp:122 mouse.cpp:132 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
@@ -363,7 +363,7 @@ msgstr "Baixar"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
-msgstr "Menu de operaÁıes"
+msgstr "Menu de opera√ß√µes"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
@@ -410,11 +410,11 @@ msgstr "Teclado e Rato"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab muda de ecr„ virtual"
+msgstr "Ctrl-Tab muda de ecr√£ virtual"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-Tab est· limitado ao ecr„ actual"
+msgstr "Alt-Tab est√° limitado ao ecr√£ actual"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
@@ -430,7 +430,7 @@ msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
-msgstr "Capturar o Bot„o Direito do rato"
+msgstr "Capturar o Bot√£o Direito do rato"
 
 #: advanced.cpp:78
 msgid "Filters"
@@ -442,11 +442,11 @@ msgstr "Janelas:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "tÍm decoraÁıes pequenas"
+msgstr "t√™m decora√ß√µes pequenas"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr "n„o tÍm decoraÁ„o"
+msgstr "n√£o t√™m decora√ß√£o"
 
 #: advanced.cpp:106
 msgid "never gain focus"
@@ -454,19 +454,19 @@ msgstr "nunca recebem foco"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "comeÁam pregadas"
+msgstr "come√ßam pregadas"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr "est„o excluÌdas da gest„o de sess„o"
+msgstr "est√£o exclu√≠das da gest√£o de sess√£o"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr "se obedecerem aos seguintes critÈrios:"
+msgstr "se obedecerem aos seguintes crit√©rios:"
 
 #: advanced.cpp:121
 msgid "Titles"
-msgstr "TÌtulos"
+msgstr "T√≠tulos"
 
 #: advanced.cpp:126
 msgid "Classes"

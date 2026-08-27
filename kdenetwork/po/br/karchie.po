@@ -1,41 +1,41 @@
 # Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1999
+# JaÃ±-Mai Drapier <jdrapier@club-internet.fr>, 1999
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: karchie-1.1\n"
 "POT-Creation-Date: 1999-03-05 02:18+0100\n"
 "PO-Revision-Date: 1999-04-20 15:13+0200\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Last-Translator: JaÃ±-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8 bit\n"
 
 #: KAMenu.cpp:75
 msgid "O&pen in editor"
-msgstr "D&igeriñ en aozer"
+msgstr "D&igeriÃ± en aozer"
 
 #: KAMenu.cpp:76 KAView.cpp:154
 msgid "&Open Dir"
-msgstr "&Digeriñ ar renkell"
+msgstr "&DigeriÃ± ar renkell"
 
 #: KAMenu.cpp:77 KAView.cpp:155
 msgid "&Download..."
-msgstr "&Ezkargañ..."
+msgstr "&EzkargaÃ±..."
 
 #: KAMenu.cpp:80
 msgid "&Load List..."
-msgstr "&Roll kargañ..."
+msgstr "&Roll kargaÃ±..."
 
 #: KAMenu.cpp:81
 msgid "&Save List..."
-msgstr "R&oll enrollañ"
+msgstr "R&oll enrollaÃ±"
 
 #: KAMenu.cpp:82
 msgid "Expor&t List..."
-msgstr "Roll &ezporzhañ"
+msgstr "Roll &ezporzhaÃ±"
 
 #: KAMenu.cpp:84
 msgid "&Exit"
@@ -87,7 +87,7 @@ msgstr "bravoc'h &c'hoazh"
 
 #: KAMenu.cpp:118
 msgid "n&icest"
-msgstr "&ar vravañ"
+msgstr "&ar vravaÃ±"
 
 #: KAMenu.cpp:125
 msgid "Show &File discription"
@@ -149,7 +149,7 @@ msgstr "KArchie doare "
 msgid ""
 "\n"
 "\n"
-"by Jörg Habenicht <j.habenicht@europemail.com>\n"
+"by JÃ¶rg Habenicht <j.habenicht@europemail.com>\n"
 "\n"
 "based on the work of:\n"
 "  - archie prospero client by\n"
@@ -162,7 +162,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"gant Jörg Habenicht <j.habenicht@europemail.com>\n"
+"gant JÃ¶rg Habenicht <j.habenicht@europemail.com>\n"
 "\n"
 "diazezet war labour :\n"
 "  - arval archie prospero gant\n"
@@ -170,7 +170,7 @@ msgstr ""
 "      Brendan Kehoe (brendan@cygnus.com)\n"
 "  - ha xarchie gant\n"
 "      George Ferguson (ferguson@cs.rochester.edu)\n"
-"(Gwelit ar restroù README ha copyright.h).\n"
+"(Gwelit ar restroÃ¹ README ha copyright.h).\n"
 "Ma kod zo hervez ar GPL"
 
 #: KAMenu.cpp:184
@@ -183,11 +183,11 @@ msgstr "&Aters"
 
 #: KAMenu.cpp:186
 msgid "S&ort"
-msgstr "&Rummañ"
+msgstr "&RummaÃ±"
 
 #: KAQuery.cpp:180
 msgid "Query setup"
-msgstr "Kefluniañ an aters"
+msgstr "KefluniaÃ± an aters"
 
 #: KAQuery.cpp:289
 msgid "Query aborted"
@@ -203,11 +203,11 @@ msgstr "Porzh dianav"
 
 #: KAQuery.cpp:298
 msgid "Can't open local UDP port"
-msgstr "N'hellan ket digeriñ ar porzh UDP lec'hel"
+msgstr "N'hellan ket digeriÃ± ar porzh UDP lec'hel"
 
 #: KAQuery.cpp:299
 msgid "Can't resolve hostname"
-msgstr "N'hellañ ket diluziañ anv an ostiz"
+msgstr "N'hellaÃ± ket diluziaÃ± anv an ostiz"
 
 #: KAQuery.cpp:300
 msgid "Didn't send entire message"
@@ -235,7 +235,7 @@ msgstr "Un ere a zo c'hoazh"
 
 #: KAQuery.cpp:307
 msgid "Replacing existing link"
-msgstr "Oc'h erlec'hiañ an ere a zo"
+msgstr "Oc'h erlec'hiaÃ± an ere a zo"
 
 #: KAQuery.cpp:308
 msgid "Prv entry not in dir->ulinks"
@@ -307,7 +307,7 @@ msgstr "Renkell en hent digavus"
 
 #: KAQuery.cpp:327
 msgid "Symbolic links nested too deep"
-msgstr "Arouzereoù kenempret re zon"
+msgstr "ArouzereoÃ¹ kenempret re zon"
 
 #: KAQuery.cpp:328
 msgid "Can't read environment"
@@ -315,11 +315,11 @@ msgstr "N'hellan ket lenn an endro"
 
 #: KAQuery.cpp:329
 msgid "Can't traverse an external file"
-msgstr "N'hellan ket treuziñ ur restr diavaez"
+msgstr "N'hellan ket treuziÃ± ur restr diavaez"
 
 #: KAQuery.cpp:330
 msgid "Exceeded max forward depth"
-msgstr "Aet pelloc'h eget an donder dazkas brasañ"
+msgstr "Aet pelloc'h eget an donder dazkas brasaÃ±"
 
 #: KAQuery.cpp:331
 msgid "Authentication required"
@@ -343,7 +343,7 @@ msgstr "Ket ur renkell"
 
 #: KAQuery.cpp:336
 msgid "Identical link already exists"
-msgstr "Un ere heñvel a zo c'hoazh"
+msgstr "Un ere heÃ±vel a zo c'hoazh"
 
 #: KAQuery.cpp:338
 msgid "Command not implemented on server"
@@ -371,7 +371,7 @@ msgstr "Kemennadenn ebet"
 
 #: KAQuery.cpp:348
 msgid "You are using an old version of this program"
-msgstr "Un doare kozh ar goulev-mañ emaoc'h oc'h arverañ"
+msgstr "Un doare kozh ar goulev-maÃ± emaoc'h oc'h arveraÃ±"
 
 #: KAQuery.cpp:349
 msgid "From server: "
@@ -383,7 +383,7 @@ msgstr "Linenn dianavezet da eilger ar servijer"
 
 #: KAQuery.cpp:409
 msgid "Query running"
-msgstr "Aters war seveniñ"
+msgstr "Aters war seveniÃ±"
 
 #: KAQuery.cpp:453
 msgid "Query finished"
@@ -399,7 +399,7 @@ msgstr "&Amzer-hont"
 
 #: KASettings.cpp:83
 msgid "Maximal &retries"
-msgstr "&Taolioù-esa d'ar muiañ"
+msgstr "&TaolioÃ¹-esa d'ar muiaÃ±"
 
 #: KASettings.cpp:284
 msgid "&Nice Level"
@@ -407,7 +407,7 @@ msgstr "Live &nice"
 
 #: KASettings.cpp:291
 msgid "max. &Hits"
-msgstr "muiañ &pal"
+msgstr "muiaÃ± &pal"
 
 #: KASettings.cpp:418
 msgid "Exact"
@@ -447,7 +447,7 @@ msgstr "Bravoc'h c'hoazh"
 
 #: KASettings.cpp:431
 msgid "Nicest"
-msgstr "Ar vravañ"
+msgstr "Ar vravaÃ±"
 
 #: KASettings.cpp:525
 msgid "KArchie Settings"
@@ -503,12 +503,12 @@ msgstr "Araokadenn : %d"
 
 #: KAStatusBar.cpp:121
 #, c-format
-msgid "%d try."
-msgstr "% klask"
+#~ msgid "%d try."
+#~ msgstr "% klask"
 
 #: KAView.cpp:66
 msgid "Searchstring, press <ENTER> to start search"
-msgstr "Klask un hedad, stokit <ENKAS> evit loc'hañ ar c'hlask"
+msgstr "Klask un hedad, stokit <ENKAS> evit loc'haÃ± ar c'hlask"
 
 #: KAView.cpp:68
 msgid "Search &Term"
@@ -552,7 +552,7 @@ msgid ""
 "Couldn't open \n"
 "\"%s\""
 msgstr ""
-"N'e m'eus ket gallet digeriñ\n"
+"N'e m'eus ket gallet digeriÃ±\n"
 "\"%s\""
 
 #: KArchie.cpp:446 KArchie.cpp:488
@@ -581,15 +581,15 @@ msgstr "Ar restr diuzet n'eo ket skrivadus"
 
 #: KArchie.cpp:752
 msgid "KArchie: Overwrite file ?"
-msgstr "KArchie : rasklañ ar restr ?"
+msgstr "KArchie : rasklaÃ± ar restr ?"
 
 #: KArchie.cpp:753
 msgid ""
 "The selected file is not write protected\n"
 "Should it be overwritten ?"
 msgstr ""
-"Ar restr diuzet n'eo ket diwallet mod-skrivañ\n"
-"Ha rasklet e rankfe bezañ ?"
+"Ar restr diuzet n'eo ket diwallet mod-skrivaÃ±\n"
+"Ha rasklet e rankfe bezaÃ± ?"
 
 #: KArchie.cpp:766
 msgid "KArchie: bad selection"

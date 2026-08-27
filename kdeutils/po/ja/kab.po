@@ -10,36 +10,36 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-03-24 02:39+0100\n"
 "PO-Revision-Date: Sun Jul 11 1999 17:57:25+0200\n"
-"Last-Translator: ��¼ ε��Ϻ <imura@cs.titech.ac.jp>\n"
+"Last-Translator: °æÂ¼ Îµ°ìÏº <imura@cs.titech.ac.jp>\n"
 "Language-Team: japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.5.0"
 
 #: AddressBookAbout.cpp:25
 msgid "About addressbook"
-msgstr "���ɥ쥹Ģ�ˤĤ���"
+msgstr "¥¢¥É¥ì¥¹Ä¢¤Ë¤Ä¤¤¤Æ"
 
 #: AddressBookAbout.cpp:35
 msgid "Image load failure"
-msgstr "�����ɼ���"
+msgstr "¥í¡¼¥É¼ºÇÔ"
 
 #: AddressBookAbout.cpp:36
 msgid "Could not load addressbook logo image!"
-msgstr "���ɥ쥹Ģ����������ɤǤ��ޤ���"
+msgstr "¥¢¥É¥ì¥¹Ä¢¥í¥´¤ò¥í¡¼¥É¤Ç¤­¤Þ¤»¤ó"
 
 #: AddressBookAbout.cpp:37
 msgid ""
 "Here you would see\n"
 "the addressbook logo."
 msgstr ""
-"�����ǥ��ɥ쥹Ģ�Υ�����\n"
-"�����ޤ�"
+"¤³¤³¤Ç¥¢¥É¥ì¥¹Ä¢¤Î¥í¥´¤¬\n"
+"¸«¤é¤ì¤Þ¤¹"
 
 #: AddressBookAbout.cpp:44
 msgid "written and maintained by"
-msgstr "��� �����  �ᥤ��ƥ��ʡ���"
+msgstr "ºî¼Ô ¤ª¤è¤Ó  ¥á¥¤¥ó¥Æ¥¤¥Ê¡¼¤Ï"
 
 #: AddressBookAboutData.cpp:62
 msgid "kab 1.0, May 1999"
@@ -47,80 +47,80 @@ msgstr "kab 1.0, May 1999"
 
 #: toplevelwidget.cc:35 toplevelwidget.cc:43
 msgid "Initialization failure"
-msgstr "���������"
+msgstr "½é´ü²½¼ºÇÔ"
 
 #: toplevelwidget.cc:37
 msgid "The program's menubar could not be constructed."
-msgstr "���Υץ������ʥ�С��Ϥ���ޤ���"
+msgstr "¤½¤Î¥×¥í¥°¥é¥à¥Ê¥ó¥Ð¡¼¤Ï¤¢¤ê¤Þ¤»¤ó"
 
 #: toplevelwidget.cc:45
 msgid "The program's statusbar could not be constructed."
-msgstr "���Υץ������Υ��ơ������С��Ϥ���ޤ���"
+msgstr "¤½¤Î¥×¥í¥°¥é¥à¤Î¥¹¥Æ¡¼¥¿¥¹¥Ð¡¼¤Ï¤¢¤ê¤Þ¤»¤ó"
 
 #: toplevelwidget.cc:58
 msgid "KDE addressbook."
-msgstr "KDE ���ɥ쥹Ģ"
+msgstr "KDE ¥¢¥É¥ì¥¹Ä¢"
 
 #: toplevelwidget.cc:73
 msgid "HTML table"
-msgstr "HTML �ơ��֥�"
+msgstr "HTML ¥Æ¡¼¥Ö¥ë"
 
 #: toplevelwidget.cc:82
 msgid "Export"
-msgstr "͢��"
+msgstr "Í¢½Ð"
 
 #: toplevelwidget.cc:84
 msgid "Search &entries"
-msgstr "����ȥ꡼�θ���(&e)"
+msgstr "¥¨¥ó¥È¥ê¡¼¤Î¸¡º÷(&e)"
 
 #: toplevelwidget.cc:86
 msgid "&Print"
-msgstr "����(&P)"
+msgstr "°õºþ(&P)"
 
 #: toplevelwidget.cc:98
 msgid "&Add entry"
-msgstr "����ȥ꡼���ɲ�(&A)"
+msgstr "¥¨¥ó¥È¥ê¡¼¤ÎÄÉ²Ã(&A)"
 
 #: toplevelwidget.cc:100
 msgid "&Edit entry"
-msgstr "����ȥ꡼���Խ�(&E)"
+msgstr "¥¨¥ó¥È¥ê¡¼¤ÎÊÔ½¸(&E)"
 
 #: toplevelwidget.cc:102
 msgid "&Remove entry"
-msgstr "����ȥ꡼�κ��(&R)"
+msgstr "¥¨¥ó¥È¥ê¡¼¤Îºï½ü(&R)"
 
 #: toplevelwidget.cc:114
 msgid "&Mail"
-msgstr "����(&M)"
+msgstr "Á÷¿®(&M)"
 
 #: toplevelwidget.cc:116
 msgid "&Talk"
-msgstr "�ȡ���(&T)"
+msgstr "¥È¡¼¥¯(&T)"
 
 #: toplevelwidget.cc:118
 msgid "&Browse"
-msgstr "�֥饦��(&B)"
+msgstr "¥Ö¥é¥¦¥¶(&B)"
 
 #: toplevelwidget.cc:123
 msgid "Help on Addressbook"
-msgstr "���ɥ쥹Ģ�إ��"
+msgstr "¥¢¥É¥ì¥¹Ä¢¥Ø¥ë¥×"
 
 #: toplevelwidget.cc:128
 msgid "About Addressbook"
-msgstr "���ɥ쥹Ģ�ˤĤ���"
+msgstr "¥¢¥É¥ì¥¹Ä¢¤Ë¤Ä¤¤¤Æ"
 
 #: toplevelwidget.cc:130
 msgid "About &Qt"
-msgstr "Qt�ˤĤ���(&Q)"
+msgstr "Qt¤Ë¤Ä¤¤¤Æ(&Q)"
 
 #: toplevelwidget.cc:131
 msgid "About &KDE"
-msgstr "KDE�ˤĤ���(&K)"
+msgstr "KDE¤Ë¤Ä¤¤¤Æ(&K)"
 
 #: toplevelwidget.cc:138
 msgid "&About"
-msgstr "�С���������(&A)"
+msgstr "¥Ð¡¼¥¸¥ç¥ó¾ðÊó(&A)"
 
 #: toplevelwidget.cc:190
 msgid "About Qt"
-msgstr "Qt�ˤĤ���"
+msgstr "Qt¤Ë¤Ä¤¤¤Æ"

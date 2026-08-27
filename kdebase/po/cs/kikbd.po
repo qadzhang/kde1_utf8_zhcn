@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: kibd\n"
 "POT-Creation-Date: 1999-04-13 01:26+0200\n"
 "PO-Revision-Date: 1999-04-13 11:21+02:00\n"
-"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Miroslav FlÃ­dr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
-msgstr "Mezinárodní klávesnice byla ji¾ na této obrazovce spu¹tìná."
+msgstr "MezinÃ¡rodnÃ­ klÃ¡vesnice byla jiÅ¾ na tÃ©to obrazovce spuÅ¡tÄ›nÃ¡."
 
 #: kikbd.cpp:295
 #, c-format
@@ -19,8 +19,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
-"Soubor X kódù \"%s\" neexistuje.\n"
-"Pou¾ívám implicitní X kódy."
+"Soubor X kÃ³dÅ¯ \"%s\" neexistuje.\n"
+"PouÅ¾Ã­vÃ¡m implicitnÃ­ X kÃ³dy."
 
 #: kikbd.cpp:321
 #, c-format
@@ -28,22 +28,22 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
-"Mapa kláves \"%s\" neexistuje.\n"
-"Vynechávám tuto mapu."
+"Mapa klÃ¡ves \"%s\" neexistuje.\n"
+"VynechÃ¡vÃ¡m tuto mapu."
 
 #: kikbd.cpp:337
 msgid "Setup"
-msgstr "Nastavení"
+msgstr "NastavenÃ­"
 
 #: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
-msgstr "Není mo¾né odstranit z modifikátorù %s.\n"
+msgstr "NenÃ­ moÅ¾nÃ© odstranit z modifikÃ¡torÅ¯ %s.\n"
 
 #: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "Není mo¾né pøidat %s k modifikátoru 3.\n"
+msgstr "NenÃ­ moÅ¾nÃ© pÅ™idat %s k modifikÃ¡toru 3.\n"
 
 #: kikbd.cpp:384
 #, c-format
@@ -51,32 +51,32 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"Není mo¾né nastavit %s jako pøepínaè re¾imu pro klávesnici %s.\n"
-"Alt symboly zablokovány"
+"NenÃ­ moÅ¾nÃ© nastavit %s jako pÅ™epÃ­naÄ reÅ¾imu pro klÃ¡vesnici %s.\n"
+"Alt symboly zablokovÃ¡ny"
 
 #: kikbd.cpp:406
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"Není mo¾né odstranit Caps Lock z modifikátorù.\n"
-"Emulace Caps Locku zablokována"
+"NenÃ­ moÅ¾nÃ© odstranit Caps Lock z modifikÃ¡torÅ¯.\n"
+"Emulace Caps Locku zablokovÃ¡na"
 
 #: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
-msgstr "Ukonèuji mezinárodní klávesnici"
+msgstr "UkonÄuji mezinÃ¡rodnÃ­ klÃ¡vesnici"
 
 #: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
-"Chystáte se ukonèit nástroj \"Mezinárodní klávesnice\".\n"
-" Pøejete si, aby se pøístì spou¹tìla automaticky?"
+"ChystÃ¡te se ukonÄit nÃ¡stroj \"MezinÃ¡rodnÃ­ klÃ¡vesnice\".\n"
+" PÅ™ejete si, aby se pÅ™Ã­stÄ› spouÅ¡tÄ›la automaticky?"
 
 #: keymap.cpp:186
 msgid "KeyMap: can't allocate memory"
-msgstr "KeyMap: není mo¾né alokovat pamì»"
+msgstr "KeyMap: nenÃ­ moÅ¾nÃ© alokovat pamÄ›Å¥"
 
 #: keymap.cpp:233
 #, c-format
@@ -86,29 +86,29 @@ msgid ""
 "You can preset X codes from section \"Advanced\"\n"
 "in the configuration program."
 msgstr ""
-"Není mo¾né nalézt symbol \"%s\".\n"
-"Pravdìpodobnì nesouhlasí va¹e implicitní X kódy.\n"
-"Mù¾ete nastavit X kódy v sekci \"Pokroèilé\"\n"
-"konfiguraèního programu."
+"NenÃ­ moÅ¾nÃ© nalÃ©zt symbol \"%s\".\n"
+"PravdÄ›podobnÄ› nesouhlasÃ­ vaÅ¡e implicitnÃ­ X kÃ³dy.\n"
+"MÅ¯Å¾ete nastavit X kÃ³dy v sekci \"PokroÄilÃ©\"\n"
+"konfiguraÄnÃ­ho programu."
 
 #: keymap.cpp:238
 #, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "KeyMap: není mo¾né nalézt symbol \"%s\"."
+msgstr "KeyMap: nenÃ­ moÅ¾nÃ© nalÃ©zt symbol \"%s\"."
 
 #: keymap.cpp:246
 #, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: není mo¾né pøeèíst kód klávesy \"%s\"."
+msgstr "KeyMap: nenÃ­ moÅ¾nÃ© pÅ™eÄÃ­st kÃ³d klÃ¡vesy \"%s\"."
 
 #: keymap.cpp:252
 #, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsah."
+msgstr "KeyMap: kÃ³d klÃ¡vesy \"%s\" je mimo rozsah."
 
 #: kikbdconf.cpp:102
 msgid "Global"
-msgstr "Globální"
+msgstr "GlobÃ¡lnÃ­"
 
 #: kikbdconf.cpp:102
 msgid "Window"
@@ -116,71 +116,71 @@ msgstr "Okno"
 
 #: kikbdconf.cpp:102
 msgid "Class"
-msgstr "Tøída"
+msgstr "TÅ™Ã­da"
 
 #: kikbdconf.cpp:105 kikbdconf.cpp:117
 msgid "(None)"
-msgstr "(®ádné)"
+msgstr "(Å½Ã¡dnÃ©)"
 
 #: kikbdconf.cpp:106 kikbdconf.cpp:118
 msgid "Right Alt"
-msgstr "Pravı Alt"
+msgstr "PravÃ½ Alt"
 
 #: kikbdconf.cpp:107 kikbdconf.cpp:119
 msgid "Right Control"
-msgstr "Pravı Control"
+msgstr "PravÃ½ Control"
 
 #: kikbdconf.cpp:108
 msgid "Rights (Alt+Shift)"
-msgstr "Pravé (Alt+Shift)"
+msgstr "PravÃ© (Alt+Shift)"
 
 #: kikbdconf.cpp:109
 msgid "Rights (Ctrl+Alt)"
-msgstr "Pravé (Crtl+Alt)"
+msgstr "PravÃ© (Crtl+Alt)"
 
 #: kikbdconf.cpp:110
 msgid "Rights (Ctrl+Shift)"
-msgstr "Pravé (Crtl+Shift)"
+msgstr "PravÃ© (Crtl+Shift)"
 
 #: kikbdconf.cpp:111
 msgid "Lefts  (Alt+Shift)"
-msgstr "Levé (Alt+Shift)"
+msgstr "LevÃ© (Alt+Shift)"
 
 #: kikbdconf.cpp:112
 msgid "Lefts  (Ctrl+Alt)"
-msgstr "Levé (Crtl+Alt)"
+msgstr "LevÃ© (Crtl+Alt)"
 
 #: kikbdconf.cpp:113
 msgid "Lefts  (Ctrl+Shift)"
-msgstr "Levé (Crtl+Shift)"
+msgstr "LevÃ© (Crtl+Shift)"
 
 #: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
-msgstr "Oba pøepínaèe (Shift+Shift)"
+msgstr "Oba pÅ™epÃ­naÄe (Shift+Shift)"
 
 #: kikbdconf.cpp:120
 msgid "Right Meta"
-msgstr "Pravá Meta"
+msgstr "PravÃ¡ Meta"
 
 #: kikbdconf.cpp:121
 msgid "Left  Alt"
-msgstr "Levı Alt"
+msgstr "LevÃ½ Alt"
 
 #: kikbdconf.cpp:122
 msgid "Left  Control"
-msgstr "Levı Control"
+msgstr "LevÃ½ Control"
 
 #: kikbdconf.cpp:123
 msgid "Left  Meta"
-msgstr "Levá Meta"
+msgstr "LevÃ¡ Meta"
 
 #: kikbdconf.cpp:126
 msgid "Top Left"
-msgstr "Vleho nahoøe"
+msgstr "Vleho nahoÅ™e"
 
 #: kikbdconf.cpp:127
 msgid "Top Right"
-msgstr "Vpravo nahoøe"
+msgstr "Vpravo nahoÅ™e"
 
 #: kikbdconf.cpp:128
 msgid "Bottom Left"
@@ -192,7 +192,7 @@ msgstr "Vpravo dole"
 
 #: kikbdconf.cpp:156
 msgid "X default codes"
-msgstr "Implicitní X kódy"
+msgstr "ImplicitnÃ­ X kÃ³dy"
 
 #: kikbdconf.cpp:215
 #, c-format
@@ -201,23 +201,23 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "%s\n"
-"Pøejete provést nastavení?"
+"PÅ™ejete provÃ©st nastavenÃ­?"
 
 #: kikbdconf.cpp:223
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
-"Pou¾íváte nástroj \"Mezinárdní klávesnice\" poprvé.\n"
-"Instaluji nìkolik implicitních nastavení."
+"PouÅ¾Ã­vÃ¡te nÃ¡stroj \"MezinÃ¡rdnÃ­ klÃ¡vesnice\" poprvÃ©.\n"
+"Instaluji nÄ›kolik implicitnÃ­ch nastavenÃ­."
 
 #: kikbdconf.cpp:379
 msgid "unknown"
-msgstr "neznámı"
+msgstr "neznÃ¡mÃ½"
 
 #: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
-msgstr "implicitní"
+msgstr "implicitnÃ­"
 
 #: kikbdconf.cpp:419
 msgid "Author:  Not specified"
@@ -237,15 +237,15 @@ msgstr "Zdroj:  "
 
 #: kikbdconf.cpp:431
 msgid "no file"
-msgstr "¾ádnı soubor"
+msgstr "Å¾Ã¡dnÃ½ soubor"
 
 #: kikbdconf.cpp:432
 msgid "user file"
-msgstr "u¾ivatelskı soubor"
+msgstr "uÅ¾ivatelskÃ½ soubor"
 
 #: kikbdconf.cpp:433
 msgid "system file"
-msgstr "systémovı soubor"
+msgstr "systÃ©movÃ½ soubor"
 
 #: kikbdconf.cpp:438
 msgid "Statistic:  "
@@ -257,11 +257,11 @@ msgstr "symboly"
 
 #: kikbdconf.cpp:454
 msgid "codes"
-msgstr "kódy"
+msgstr "kÃ³dy"
 
 #: kikbdconf.cpp:457
 msgid "alternative symbols"
-msgstr "alternativní symboly"
+msgstr "alternativnÃ­ symboly"
 
 #: kikbdconf.cpp:469
 msgid "Language"
@@ -269,19 +269,19 @@ msgstr "jazyk"
 
 #: kikbdconf.cpp:473
 msgid "Charset"
-msgstr "Znaková sada"
+msgstr "ZnakovÃ¡ sada"
 
 #: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
-msgstr "Chyba mezinárodní klávesnice"
+msgstr "Chyba mezinÃ¡rodnÃ­ klÃ¡vesnice"
 
 #: kikbdconf.cpp:535
 msgid "International keyboard warning"
-msgstr "Warování mezinárodní klávesnice"
+msgstr "WarovÃ¡nÃ­ mezinÃ¡rodnÃ­ klÃ¡vesnice"
 
 #: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
-msgstr "Dotaz mezinárodní klávesnice"
+msgstr "Dotaz mezinÃ¡rodnÃ­ klÃ¡vesnice"
 
 #: kikbdconf.cpp:549
 msgid "Configure"
@@ -293,19 +293,19 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"Pøejete si pokraèovat?"
+"PÅ™ejete si pokraÄovat?"
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
-msgstr "Seznam aktivních kláv. máp"
+msgstr "Seznam aktivnÃ­ch klÃ¡v. mÃ¡p"
 
 #: widgets.cpp:126
 msgid "&Add"
-msgstr "Pøid&at"
+msgstr "PÅ™id&at"
 
 #: widgets.cpp:127
 msgid "Add new keyboard map"
-msgstr "Pøidat novou klávesovou mapu"
+msgstr "PÅ™idat novou klÃ¡vesovou mapu"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
@@ -317,15 +317,15 @@ msgstr "Na&horu"
 
 #: widgets.cpp:136
 msgid "Move up selected keyboard map"
-msgstr "Pøesunout zvolenou mapu vı¹e"
+msgstr "PÅ™esunout zvolenou mapu vÃ½Å¡e"
 
 #: widgets.cpp:140
 msgid "D&own"
-msgstr "D&olù"
+msgstr "D&olÅ¯"
 
 #: widgets.cpp:140
 msgid "Move down selected keyboard map"
-msgstr "Pøesunout zvolenou mapu ní¾e"
+msgstr "PÅ™esunout zvolenou mapu nÃ­Å¾e"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -333,75 +333,75 @@ msgstr "&Info"
 
 #: widgets.cpp:145
 msgid "Display information for selected keyboard map"
-msgstr "Zobrazit informace o vybrané klávesové mapì"
+msgstr "Zobrazit informace o vybranÃ© klÃ¡vesovÃ© mapÄ›"
 
 #: widgets.cpp:154
 msgid "Use &hot list"
-msgstr "Pou¾ít &hotlist"
+msgstr "PouÅ¾Ã­t &hotlist"
 
 #: widgets.cpp:155
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
 msgstr ""
-"Pou¾ívat pouze standardní a naposledy aktivní klávesovou mapu pøi pøepínání "
-"z klávesnice"
+"PouÅ¾Ã­vat pouze standardnÃ­ a naposledy aktivnÃ­ klÃ¡vesovou mapu pÅ™i pÅ™epÃ­nÃ¡nÃ­ "
+"z klÃ¡vesnice"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
-msgstr "Pøidání klávesnice"
+msgstr "PÅ™idÃ¡nÃ­ klÃ¡vesnice"
 
 #: widgets.cpp:225
 msgid "There are no keyboard maps left to add"
-msgstr "Ji¾ zde není víc klávesovıch map k pøidání"
+msgstr "JiÅ¾ zde nenÃ­ vÃ­c klÃ¡vesovÃ½ch map k pÅ™idÃ¡nÃ­"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
-msgstr "Informace o klávesové mapì"
+msgstr "Informace o klÃ¡vesovÃ© mapÄ›"
 
 #: widgets.cpp:292
 msgid "Add Keyboard"
-msgstr "Pøidat klávesnici"
+msgstr "PÅ™idat klÃ¡vesnici"
 
 #: widgets.cpp:296
 msgid "Available keyboard maps"
-msgstr "Dostupné klávesové mapy"
+msgstr "DostupnÃ© klÃ¡vesovÃ© mapy"
 
 #: widgets.cpp:403
 msgid "Keyboard maps"
-msgstr "Klávesové mapy"
+msgstr "KlÃ¡vesovÃ© mapy"
 
 #: widgets.cpp:414
 msgid "Switch and Alt Switch"
-msgstr "Pøepnutí a pøepnutí s Altem"
+msgstr "PÅ™epnutÃ­ a pÅ™epnutÃ­ s Altem"
 
 #: widgets.cpp:419
 msgid "Key(s) for switching between keyboard maps"
-msgstr "Klávesa(y) na pøepínání mezi mapami"
+msgstr "KlÃ¡vesa(y) na pÅ™epÃ­nÃ¡nÃ­ mezi mapami"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "Klávesa pro aktivaci altern. symbolù v aktuální kláv. mapì"
+msgstr "KlÃ¡vesa pro aktivaci altern. symbolÅ¯ v aktuÃ¡lnÃ­ klÃ¡v. mapÄ›"
 
 #: widgets.cpp:438
 msgid "&Beep"
-msgstr "&Pípnutí"
+msgstr "&PÃ­pnutÃ­"
 
 #: widgets.cpp:439
 msgid "Beep when keyboard map is changed"
-msgstr "Pípnout pøi ka¾dé zmìnì klávesové mapy"
+msgstr "PÃ­pnout pÅ™i kaÅ¾dÃ© zmÄ›nÄ› klÃ¡vesovÃ© mapy"
 
 #: widgets.cpp:442
 msgid "Ad&vanced"
-msgstr "Pok&roèilé"
+msgstr "Pok&roÄilÃ©"
 
 #: widgets.cpp:442
 msgid "Advanced options"
-msgstr "Pokroèilé mo¾nosti"
+msgstr "PokroÄilÃ© moÅ¾nosti"
 
 #: widgets.cpp:459
 msgid "Advanced"
-msgstr "Pokroèilé"
+msgstr "PokroÄilÃ©"
 
 #: widgets.cpp:475
 msgid "&Emulate Caps Lock"
@@ -412,27 +412,27 @@ msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
 msgstr ""
-"Emulovat Capslock XServeru. Potøebné pro správnou funkci v nìkterıch jazycích"
+"Emulovat Capslock XServeru. PotÅ™ebnÃ© pro sprÃ¡vnou funkci v nÄ›kterÃ½ch jazycÃ­ch"
 
 #: widgets.cpp:482
 msgid "&World Menu"
-msgstr "&Svìtové menu"
+msgstr "&SvÄ›tovÃ© menu"
 
 #: widgets.cpp:483
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "Ukazovat menu v ka¾dém oknì pøi stiskuté pøepínací klávese"
+msgstr "Ukazovat menu v kaÅ¾dÃ©m oknÄ› pÅ™i stiskutÃ© pÅ™epÃ­nacÃ­ klÃ¡vese"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
-msgstr "&Ulo¾it tøídy"
+msgstr "&UloÅ¾it tÅ™Ã­dy"
 
 #: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "Ulo¾it vztahy mezi tøídami oken a klávesovıch map pøi ukonèení"
+msgstr "UloÅ¾it vztahy mezi tÅ™Ã­dami oken a klÃ¡vesovÃ½ch map pÅ™i ukonÄenÃ­"
 
 #: widgets.cpp:498
 msgid "Define X codes"
-msgstr "Definovat X kódy"
+msgstr "Definovat X kÃ³dy"
 
 #: widgets.cpp:501
 msgid "Input"
@@ -440,40 +440,40 @@ msgstr "Vstup"
 
 #: widgets.cpp:505
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Standardní chování. Klávesová mapa aktivní pro v¹echna okna"
+msgstr "StandardnÃ­ chovÃ¡nÃ­. KlÃ¡vesovÃ¡ mapa aktivnÃ­ pro vÅ¡echna okna"
 
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
 msgstr ""
-"Roz¹íøené chování. Stav klávesové mapy je ukládán nezávisle pro ka¾dé okno"
+"RozÅ¡Ã­Å™enÃ© chovÃ¡nÃ­. Stav klÃ¡vesovÃ© mapy je uklÃ¡dÃ¡n nezÃ¡visle pro kaÅ¾dÃ© okno"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"Speciální chování. Stav klávesové mapy je ukládán nezávisle pro ka¾dou tøídu "
+"SpeciÃ¡lnÃ­ chovÃ¡nÃ­. Stav klÃ¡vesovÃ© mapy je uklÃ¡dÃ¡n nezÃ¡visle pro kaÅ¾dou tÅ™Ã­du "
 "oken"
 
 #: widgets.cpp:561
 msgid "Button Colors"
-msgstr "Barvy tlaèítek"
+msgstr "Barvy tlaÄÃ­tek"
 
 #: widgets.cpp:571
 msgid "Foreground"
-msgstr "Popøedí"
+msgstr "PopÅ™edÃ­"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr "Barva popøedí popisky"
+msgstr "Barva popÅ™edÃ­ popisky"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr "Pozadí"
+msgstr "PozadÃ­"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr "Barva pozadí popisky"
+msgstr "Barva pozadÃ­ popisky"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -481,7 +481,7 @@ msgstr "S CapsLockem"
 
 #: widgets.cpp:582
 msgid "Background when Emulated Caps Lock active"
-msgstr "Pozadí, pøi aktivní emulaci Capslocku"
+msgstr "PozadÃ­, pÅ™i aktivnÃ­ emulaci Capslocku"
 
 #: widgets.cpp:588
 msgid "With Alternate"
@@ -489,23 +489,23 @@ msgstr "S Alt"
 
 #: widgets.cpp:589
 msgid "Background when Alternate switch key is pressed"
-msgstr "Pozadí, pøi stisknutí pøepínaèe Alternate"
+msgstr "PozadÃ­, pÅ™i stisknutÃ­ pÅ™epÃ­naÄe Alternate"
 
 #: widgets.cpp:598
 msgid "Button Font"
-msgstr "Písmo tlaèítka"
+msgstr "PÃ­smo tlaÄÃ­tka"
 
 #: widgets.cpp:606
 msgid "&Customize Font"
-msgstr "&Nastavit písmo"
+msgstr "&Nastavit pÃ­smo"
 
 #: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
-msgstr "Nastavte písmo pro textovı popisek nebo pou¾ijte globální nastavení"
+msgstr "Nastavte pÃ­smo pro textovÃ½ popisek nebo pouÅ¾ijte globÃ¡lnÃ­ nastavenÃ­"
 
 #: widgets.cpp:611
 msgid "C&hange Font"
-msgstr "&Zmìnit písmo"
+msgstr "&ZmÄ›nit pÃ­smo"
 
 #: widgets.cpp:656
 msgid "&Autostart"
@@ -513,27 +513,27 @@ msgstr "&Autostart"
 
 #: widgets.cpp:657
 msgid "Start up automatically"
-msgstr "Spou¹tìt automaticky"
+msgstr "SpouÅ¡tÄ›t automaticky"
 
 #: widgets.cpp:663
 msgid "&Docked"
-msgstr "&Dokované"
+msgstr "&DokovanÃ©"
 
 #: widgets.cpp:664
 msgid "Dock into special area in the panel"
-msgstr "Pohlcovat ve speciální oblasti v kpanelu"
+msgstr "Pohlcovat ve speciÃ¡lnÃ­ oblasti v kpanelu"
 
 #: widgets.cpp:673
 msgid "Place"
-msgstr "Umístit"
+msgstr "UmÃ­stit"
 
 #: widgets.cpp:680
 msgid "Place in selected corner"
-msgstr "Umístit do zvoleného rohu"
+msgstr "UmÃ­stit do zvolenÃ©ho rohu"
 
 #: kcmikbd.cpp:64
 msgid "&General"
-msgstr "&V¹eobecné"
+msgstr "&VÅ¡eobecnÃ©"
 
 #: kcmikbd.cpp:70
 msgid "&Style"
@@ -541,8 +541,8 @@ msgstr "&Styl"
 
 #: kcmikbd.cpp:76
 msgid "Start&Up"
-msgstr "Sp&u¹tení"
+msgstr "Sp&uÅ¡tenÃ­"
 
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
-msgstr "Mezinárodní klávesnice"
+msgstr "MezinÃ¡rodnÃ­ klÃ¡vesnice"

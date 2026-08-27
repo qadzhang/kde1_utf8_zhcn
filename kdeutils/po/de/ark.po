@@ -6,13 +6,13 @@ msgstr ""
 "Last-Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO-8859-1\n"
 "Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: adddlg.cc:11
 msgid "Add File Options"
-msgstr "Einstellung für Hinzufügen v. Dateien"
+msgstr "Einstellung fÃ¼r HinzufÃ¼gen v. Dateien"
 
 #: adddlg.cc:21
 msgid "Store Full Path"
@@ -20,7 +20,7 @@ msgstr "Ganzen Pfad abspeichern"
 
 #: adddlg.cc:24
 msgid "Only Add Newer Files"
-msgstr "Nur neuere Dateien hinzufügen"
+msgstr "Nur neuere Dateien hinzufÃ¼gen"
 
 #: extractdlg.cc:14
 msgid "Extract"
@@ -32,7 +32,7 @@ msgstr "Ziel"
 
 #: extractdlg.cc:44
 msgid "Extract Options"
-msgstr "Einstellungen fürs Entpacken"
+msgstr "Einstellungen fÃ¼rs Entpacken"
 
 #: extractdlg.cc:52
 msgid "Preserve Permissions"
@@ -48,7 +48,7 @@ msgstr "Alle Dateien"
 
 #: extractdlg.cc:73
 msgid "Selected File"
-msgstr "Ausgewählte Datei"
+msgstr "AusgewÃ¤hlte Datei"
 
 #: extractdlg.cc:78
 msgid "Pattern"
@@ -76,7 +76,7 @@ msgstr "&Datei anzeigen"
 
 #: arkwidget.cc:82
 msgid "&Delete file"
-msgstr "Datei &löschen"
+msgstr "Datei &lÃ¶schen"
 
 #: arkwidget.cc:84
 msgid "&Set Archive Directory..."
@@ -88,7 +88,7 @@ msgstr "Auswahl des &Tar-Programms..."
 
 #: arkwidget.cc:86
 msgid "&File Adding Options..."
-msgstr "&Hinzufüge-Optionen..."
+msgstr "&HinzufÃ¼ge-Optionen..."
 
 #: arkwidget.cc:97
 msgid "File Operations"
@@ -104,7 +104,7 @@ msgstr "Datei anzeigen"
 
 #: arkwidget.cc:102
 msgid "Delete file"
-msgstr "Datei löschen"
+msgstr "Datei lÃ¶schen"
 
 #: arkwidget.cc:114
 msgid "Goto Archive Dir..."
@@ -116,7 +116,7 @@ msgstr "Entpacke nach..."
 
 #: arkwidget.cc:121
 msgid "Exit"
-msgstr "Schließen"
+msgstr "SchlieÃŸen"
 
 #: arkwidget.cc:128
 msgid "Welcome to ark..."
@@ -128,11 +128,11 @@ msgstr "Kann Archiv dieses Typs nicht erstellen"
 
 #: arkwidget.cc:257
 msgid "Create or open an archive first"
-msgstr "Erstellen oder öffnen Sie zuerst ein Archiv"
+msgstr "Erstellen oder Ã¶ffnen Sie zuerst ein Archiv"
 
 #: arkwidget.cc:300
 msgid "Can't add directories with this archive type"
-msgstr "Zu diesem Typ von Archiv können keine Verzeichnisse hinzugefügt werden"
+msgstr "Zu diesem Typ von Archiv kÃ¶nnen keine Verzeichnisse hinzugefÃ¼gt werden"
 
 #: arkwidget.cc:302
 msgid "Error saving to archive"
@@ -144,7 +144,7 @@ msgstr "Archiv-Verzeichnis"
 
 #: arkwidget.cc:325
 msgid "What runs GNU tar:"
-msgstr "Befehl für GNU-tar:"
+msgstr "Befehl fÃ¼r GNU-tar:"
 
 #: arkwidget.cc:376 arkwidget.cc:578
 msgid "Unknown archive format"
@@ -152,7 +152,7 @@ msgstr "Unbekanntes Archiv-Format"
 
 #: arkwidget.cc:396
 msgid "Size"
-msgstr "Größe"
+msgstr "GrÃ¶ÃŸe"
 
 #: arkwidget.cc:402
 msgid "Archive directory does not exist."

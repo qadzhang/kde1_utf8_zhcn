@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -41,39 +41,39 @@ msgid ""
 "\n"
 "So I can't do anything...\n"
 msgstr ""
-"¼³Á¤ ÆÄÀÏ¿¡ »ç¿ë °¡´ÉÇÑ\n"
-"¸í·ÉÀÌ ¾ø½À´Ï´Ù.\n"
+"Â¼Â³ÃÂ¤ Ã†Ã„Ã€ÃÂ¿Â¡ Â»Ã§Â¿Ã« Â°Â¡Â´Ã‰Ã‡Ã‘\n"
+"Â¸Ã­Â·Ã‰Ã€ÃŒ Â¾Ã¸Â½Ã€Â´ÃÂ´Ã™.\n"
 "\n"
-"¾Æ¹« °Íµµ ÇÒ ¼ö ¾ø½À´Ï´Ù.\n"
+"Â¾Ã†Â¹Â« Â°ÃÂµÂµ Ã‡Ã’ Â¼Ã¶ Â¾Ã¸Â½Ã€Â´ÃÂ´Ã™.\n"
 
 #: knu.cpp:246
 msgid "&New window"
-msgstr "»õ À©µµ¿ì(&N)"
+msgstr "Â»Ãµ Ã€Â©ÂµÂµÂ¿Ã¬(&N)"
 
 #: knu.cpp:249
 msgid "&Close window"
-msgstr "À©µµ¿ì ´İ±â(&C)"
+msgstr "Ã€Â©ÂµÂµÂ¿Ã¬ Â´ÃÂ±Ã¢(&C)"
 
 #: knu.cpp:260
 msgid "Select &all"
-msgstr "¸ğµÎ ¼±ÅÃ(&a)"
+msgstr "Â¸Ã°ÂµÃ Â¼Â±Ã…Ãƒ(&a)"
 
 #: knu.cpp:263
 msgid "C&lear output window"
-msgstr "Ãâ·Â À©µµ¿ì Á¤¸®(&l)"
+msgstr "ÃƒÃ¢Â·Ã‚ Ã€Â©ÂµÂµÂ¿Ã¬ ÃÂ¤Â¸Â®(&l)"
 
 #: knu.cpp:266
 msgid "P&references..."
-msgstr "µî·ÏÁ¤º¸(&r)..."
+msgstr "ÂµÃ®Â·ÃÃÂ¤ÂºÂ¸(&r)..."
 
 #: knu.cpp:281
 #, c-format
 msgid "&About %s"
-msgstr "%s Á¤º¸(&A)"
+msgstr "%s ÃÂ¤ÂºÂ¸(&A)"
 
 #: knu.cpp:283
 msgid "About &Qt"
-msgstr "Qt Á¤º¸(&Q)"
+msgstr "Qt ÃÂ¤ÂºÂ¸(&Q)"
 
 #: knu.cpp:327
 msgid "&Finger"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: knu.cpp:469
 msgid "About..."
-msgstr "Á¤º¸..."
+msgstr "ÃÂ¤ÂºÂ¸..."
 
 #: knu.cpp:602
 msgid "Network utilities"
@@ -98,23 +98,23 @@ msgstr ""
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
-msgstr "È£½ºÆ®(&o):"
+msgstr "ÃˆÂ£Â½ÂºÃ†Â®(&o):"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
-msgstr "½ÇÇà!(&G)"
+msgstr "Â½Ã‡Ã‡Ã !(&G)"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
-msgstr "ÁßÁö(&S)"
+msgstr "ÃÃŸÃÃ¶(&S)"
 
 #: CommandDlg.cpp:166
 msgid ""
 "This command binary was not found. \n"
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
-"ÀÌ ¸í·ÉÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù. \n"
-"ÆíÁı->µî·ÏÁ¤º¸... ¸Ş´º¿¡¼­ °æ·Î¸¦ ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù."
+"Ã€ÃŒ Â¸Ã­Â·Ã‰Ã€Â» ÃƒÂ£Ã€Â» Â¼Ã¶ Â¾Ã¸Â½Ã€Â´ÃÂ´Ã™. \n"
+"Ã†Ã­ÃÃ½->ÂµÃ®Â·ÃÃÂ¤ÂºÂ¸... Â¸ÃÂ´ÂºÂ¿Â¡Â¼Â­ Â°Ã¦Â·ÃÂ¸Â¦ Â¼Â³ÃÂ¤Ã‡Ã’ Â¼Ã¶ Ã€Ã–Â½Ã€Â´ÃÂ´Ã™."
 
 #: CommandDlg.cpp:351
 #, c-format
@@ -130,38 +130,38 @@ msgid ""
 "to configure it again.\n"
 msgstr ""
 "\n"
-"±ÍÇÏÀÇ %s/%src ¼³Á¤ÆÄÀÏ¿¡\n"
-"¹®Á¦°¡\n"
-"ÀÖ½À´Ï´Ù.\n"
-"[%s] ±×·ì¿¡¼­\n"
-"\"path=\" Ç×¸ñÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.\n"
+"Â±ÃÃ‡ÃÃ€Ã‡ %s/%src Â¼Â³ÃÂ¤Ã†Ã„Ã€ÃÂ¿Â¡\n"
+"Â¹Â®ÃÂ¦Â°Â¡\n"
+"Ã€Ã–Â½Ã€Â´ÃÂ´Ã™.\n"
+"[%s] Â±Ã—Â·Ã¬Â¿Â¡Â¼Â­\n"
+"\"path=\" Ã‡Ã—Â¸Ã±Ã€Â» ÃƒÂ£Ã€Â» Â¼Ã¶ Â¾Ã¸Â½Ã€Â´ÃÂ´Ã™.\n"
 "\n"
-"ÆíÁı->µî·ÏÁ¤º¸... ¸Ş´º¸¦\n"
-"ÀÌ¿ëÇØ ´Ù½Ã ¼³Á¤ÇÏ½Ê½Ã¿À.\n"
+"Ã†Ã­ÃÃ½->ÂµÃ®Â·ÃÃÂ¤ÂºÂ¸... Â¸ÃÂ´ÂºÂ¸Â¦\n"
+"Ã€ÃŒÂ¿Ã«Ã‡Ã˜ Â´Ã™Â½Ãƒ Â¼Â³ÃÂ¤Ã‡ÃÂ½ÃŠÂ½ÃƒÂ¿Ã€.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
-msgstr "°æ·Î¸í ¿À·ù"
+msgstr "Â°Ã¦Â·ÃÂ¸Ã­ Â¿Ã€Â·Ã¹"
 
 #: CommandDlg.cpp:516
 msgid "Binary"
-msgstr "¹ÙÀÌ³Ê¸®"
+msgstr "Â¹Ã™Ã€ÃŒÂ³ÃŠÂ¸Â®"
 
 #: CommandDlg.cpp:524
 msgid "Path&name:"
-msgstr "°æ·Î¸í(&n)"
+msgstr "Â°Ã¦Â·ÃÂ¸Ã­(&n)"
 
 #: CommandDlg.cpp:533
 msgid "Additional &arguments:"
-msgstr "Ãß°¡ ÀÎ¼ö(&a):"
+msgstr "ÃƒÃŸÂ°Â¡ Ã€ÃÂ¼Ã¶(&a):"
 
 #: CommandDlg.cpp:558
 msgid "This command had been disabled in the configuration file."
-msgstr "ÀÌ ¸í·ÉÀº ¼³Á¤ ÆÄÀÏ¿¡¼­ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù"
+msgstr "Ã€ÃŒ Â¸Ã­Â·Ã‰Ã€Âº Â¼Â³ÃÂ¤ Ã†Ã„Ã€ÃÂ¿Â¡Â¼Â­ Â»Ã§Â¿Ã«Ã‡Ã’ Â¼Ã¶ Â¾Ã¸Â½Ã€Â´ÃÂ´Ã™"
 
 #: OptionsDlg.cpp:69
 msgid " - configuration"
-msgstr " - ¼³Á¤"
+msgstr " - Â¼Â³ÃÂ¤"
 
 #: MtrDlg.cpp:87
 msgid "#"
@@ -242,19 +242,19 @@ msgstr "any record (ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"
-msgstr "Ã£±â(&a):"
+msgstr "ÃƒÂ£Â±Ã¢(&a):"
 
 #: HostDlg.cpp:136 HostDlg.cpp:287
 msgid "default server"
-msgstr "±âº» ¼­¹ö"
+msgstr "Â±Ã¢ÂºÂ» Â¼Â­Â¹Ã¶"
 
 #: FingerDlg.cpp:95 HostDlg.cpp:145
 msgid "Ser&ver:"
-msgstr "¼­¹ö(&v):"
+msgstr "Â¼Â­Â¹Ã¶(&v):"
 
 #: FingerDlg.cpp:77
 msgid "&User:"
-msgstr "»ç¿ëÀÚ(&U):"
+msgstr "Â»Ã§Â¿Ã«Ã€Ãš(&U):"
 
 #~ msgid "&Matt's traceroute"
 #~ msgstr "&Matt's traceroute"

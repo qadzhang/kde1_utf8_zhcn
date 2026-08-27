@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: German <kde-n18i@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -28,7 +28,7 @@ msgstr "Statusleiste n&icht anzeigen"
 
 #: kedit.cpp:154
 msgid "Select All"
-msgstr "Alles auswählen"
+msgstr "Alles auswÃ¤hlen"
 
 #: kedit.cpp:157
 msgid "Font..."
@@ -40,11 +40,11 @@ msgstr "&Neu..."
 
 #: kedit.cpp:208
 msgid "Open Recen&t..."
-msgstr "&Letzte öffnen..."
+msgstr "&Letzte Ã¶ffnen..."
 
 #: kedit.cpp:220
 msgid "Open &URL..."
-msgstr "&URL öffnen"
+msgstr "&URL Ã¶ffnen"
 
 #: kedit.cpp:222
 msgid "Save to U&RL..."
@@ -60,15 +60,15 @@ msgstr "Neues &Fenster"
 
 #: kedit.cpp:254
 msgid "&Select All"
-msgstr "A&lles auswählen"
+msgstr "A&lles auswÃ¤hlen"
 
 #: kedit.cpp:257
 msgid "&Insert File"
-msgstr "Date&i einfügen"
+msgstr "Date&i einfÃ¼gen"
 
 #: kedit.cpp:259
 msgid "Insert &Date"
-msgstr "&Datum einfügen"
+msgstr "&Datum einfÃ¼gen"
 
 #: kedit.cpp:262
 msgid "&Find..."
@@ -84,7 +84,7 @@ msgstr "&Ersetzen"
 
 #: kedit.cpp:268
 msgid "Spellcheck..."
-msgstr "Rechtschreibprüfung..."
+msgstr "RechtschreibprÃ¼fung..."
 
 #: kedit.cpp:273
 msgid "&Goto Line..."
@@ -104,7 +104,7 @@ msgstr "KEdit &Optionen..."
 
 #: kedit.cpp:286
 msgid "Auto &Indent"
-msgstr "Autom. Einrücken"
+msgstr "Autom. EinrÃ¼cken"
 
 #: kedit.cpp:289
 msgid "&Tool Bar"
@@ -139,7 +139,7 @@ msgstr "Neues Dokument"
 
 #: kedit.cpp:338
 msgid "Open Document"
-msgstr "Dokument öffnen"
+msgstr "Dokument Ã¶ffnen"
 
 #: kedit.cpp:343
 msgid "Save Document"
@@ -160,7 +160,7 @@ msgstr "Fertig"
 
 #: kedit.cpp:606
 msgid "Open Location:"
-msgstr "URL öffnen:"
+msgstr "URL Ã¶ffnen:"
 
 #: kedit.cpp:620
 msgid "Save to Location:"
@@ -175,7 +175,7 @@ msgid ""
 "This Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Das Dokument wurde verändert!\n"
+"Das Dokument wurde verÃ¤ndert!\n"
 "Wollen Sie es speichern?"
 
 #: kedit.cpp:664 kedit.cpp:819
@@ -193,15 +193,15 @@ msgid ""
 "Quit anyways?"
 msgstr ""
 "Es gibt noch ungespeicherte Dokumente.\n"
-"Wenn Sie jetzt beenden, werden Sie diese Änderungen verlieren\n"
-"Trotzdem schließen?"
+"Wenn Sie jetzt beenden, werden Sie diese Ã„nderungen verlieren\n"
+"Trotzdem schlieÃŸen?"
 
 #: kedit.cpp:739
 msgid ""
 "The current document has been modified.\n"
 "Continue anyways ?"
 msgstr ""
-"Das aktuelle Dokument wurde geändert.\n"
+"Das aktuelle Dokument wurde geÃ¤ndert.\n"
 "Trotzdem fortfahren?"
 
 #: kedit.cpp:880
@@ -211,7 +211,7 @@ msgstr "Gespeichert: %s"
 
 #: kedit.cpp:886
 msgid "No changes need to be saved"
-msgstr "Keine Änderungen zu sichern"
+msgstr "Keine Ã„nderungen zu sichern"
 
 #: kedit.cpp:905
 #, c-format
@@ -224,16 +224,16 @@ msgid ""
 "Could not pipe the contentsof this Document into:\n"
 " %s"
 msgstr ""
-"Es war nicht möglich, den Dokumentinhalt weiterzuleiten nach:\n"
+"Es war nicht mÃ¶glich, den Dokumentinhalt weiterzuleiten nach:\n"
 " %s"
 
 #: kedit.cpp:1032
 msgid "Auto Indent Mode: On"
-msgstr "Autom. Einrücken: An"
+msgstr "Autom. EinrÃ¼cken: An"
 
 #: kedit.cpp:1034
 msgid "Auto Indent Mode: Off"
-msgstr "Autom. Einrücken: Aus"
+msgstr "Autom. EinrÃ¼cken: Aus"
 
 #: kedit.cpp:1130
 #, c-format
@@ -250,8 +250,8 @@ msgid ""
 "Would you like to save the changes before \n"
 "printing this Document?"
 msgstr ""
-"Das aktuelle Dokument wurde geändert.\n"
-"Wollen Sie die Änderungen speichern, bevor\n"
+"Das aktuelle Dokument wurde geÃ¤ndert.\n"
+"Wollen Sie die Ã„nderungen speichern, bevor\n"
 "Sie es drucken?"
 
 #: kedit.cpp:1218
@@ -297,9 +297,9 @@ msgid ""
 "Please wait until has finished\n"
 "Alternatively stop the running one."
 msgstr ""
-"KEdit wartet schon auf den Abschluß\n"
+"KEdit wartet schon auf den AbschluÃŸ\n"
 "eines Internetvorgangs.\n"
-"Warten Sie bis zum Abschluß,\n"
+"Warten Sie bis zum AbschluÃŸ,\n"
 "oder brechen Sie den Vorgang ab."
 
 #: kedit.cpp:1444 kedit.cpp:1539
@@ -351,7 +351,7 @@ msgstr "Neues Fenster erstellt"
 
 #: kedit.cpp:1613
 msgid "Load Command Done"
-msgstr "Ladebefehl ausgeführt"
+msgstr "Ladebefehl ausgefÃ¼hrt"
 
 #: kedit.cpp:2034
 #, c-format
@@ -380,7 +380,7 @@ msgstr "Der angebene Name ist ein Verzeichnis"
 
 #: keditcl1.cpp:179 keditcl1.cpp:200
 msgid "You do not have read permission to this file."
-msgstr "Sie haben kein Leserecht für die Datei."
+msgstr "Sie haben kein Leserecht fÃ¼r die Datei."
 
 #: keditcl1.cpp:213
 msgid "An Error occured while trying to open this Document"
@@ -395,7 +395,7 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Das aktuelle Dokument wurde verändert.\n"
+"Das aktuelle Dokument wurde verÃ¤ndert.\n"
 "Wollen Sie es speichern?"
 
 #: keditcl1.cpp:440
@@ -404,7 +404,7 @@ msgid ""
 "Open a new document anyways?"
 msgstr ""
 "Konnte die Datei nicht speichern.\n"
-"Wollen Sie trotzdem eine neue öffnen?"
+"Wollen Sie trotzdem eine neue Ã¶ffnen?"
 
 #: keditcl1.cpp:523
 msgid ""
@@ -424,11 +424,11 @@ msgid ""
 "Do you want to overwrite it ?"
 msgstr ""
 "Ein Dokument mit diesem Namen existiert bereits.\n"
-"Wollen Sie es überschreiben?"
+"Wollen Sie es Ã¼berschreiben?"
 
 #: keditcl1.cpp:1710
 msgid "You do not have write permission to this file.\n"
-msgstr "Sie haben kein Schreibrecht für diese Datei.\n"
+msgstr "Sie haben kein Schreibrecht fÃ¼r diese Datei.\n"
 
 #: keditcl2.cpp:112 keditcl2.cpp:129 keditcl2.cpp:369 keditcl2.cpp:386
 #: keditcl2.cpp:688 keditcl2.cpp:714 keditcl2.cpp:838
@@ -453,11 +453,11 @@ msgstr ""
 
 #: keditcl2.cpp:702 keditcl2.cpp:822
 msgid "Case Sensitive"
-msgstr "Beachte Groß-/Kleinschreibung"
+msgstr "Beachte GroÃŸ-/Kleinschreibung"
 
 #: keditcl2.cpp:705 keditcl2.cpp:827
 msgid "Find Backwards"
-msgstr "Suche rückwärts"
+msgstr "Suche rÃ¼ckwÃ¤rts"
 
 #: keditcl2.cpp:797
 msgid "Find:"
@@ -513,7 +513,7 @@ msgstr "Email-Befehl:"
 
 #: filldlg.cpp:171
 msgid "You must enter an integer."
-msgstr "Sie müssen einen ganzzahligen Wert eingeben."
+msgstr "Sie mÃ¼ssen einen ganzzahligen Wert eingeben."
 
 #: mail.cpp:37
 msgid "Mail Document to:"
@@ -529,4 +529,4 @@ msgstr "Email"
 
 #: mail.cpp:96
 msgid "You must specify a Recipient"
-msgstr "Sie müssen einen Empfänger angeben"
+msgstr "Sie mÃ¼ssen einen EmpfÃ¤nger angeben"

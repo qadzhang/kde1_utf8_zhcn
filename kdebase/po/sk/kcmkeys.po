@@ -7,51 +7,51 @@ msgstr ""
 "Project-Id-Version: KCMKEYS\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-10-20 20:00+0001\n"
-"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Last-Translator: Juraj BednÃ¡r <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: plain\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "©tandardné &skratky"
+msgstr "Å tandardnÃ© &skratky"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "&Globálne skratky"
+msgstr "&GlobÃ¡lne skratky"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "pou¾itie: kcmkeys [-init | {standard,global}]\n"
+msgstr "pouÅ¾itie: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "Nastavenie kláves"
+msgstr "Nastavenie klÃ¡ves"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "Súèasná schéma"
+msgstr "SÃºÄasnÃ¡ schÃ©ma"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "KDE ¹tandardná"
+msgstr "KDE Å¡tandardnÃ¡"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "Schéma &kláves"
+msgstr "SchÃ©ma &klÃ¡ves"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "Prid&a»..."
+msgstr "Prid&aÅ¥..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
-msgstr "&Ulo¾i» zmeny"
+msgstr "&UloÅ¾iÅ¥ zmeny"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr "Chyba pri ru¹ení schémy"
+msgstr "Chyba pri ruÅ¡enÃ­ schÃ©my"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -59,9 +59,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Táto schéma kláves nemô¾e by» zru¹ená.\n"
-"Pravdepodobne nemô¾ete pristupova» k súboru, kde je\n"
-"schéma ulo¾ená."
+"TÃ¡to schÃ©ma klÃ¡ves nemÃ´Å¾e byÅ¥ zruÅ¡enÃ¡.\n"
+"Pravdepodobne nemÃ´Å¾ete pristupovaÅ¥ k sÃºboru, kde je\n"
+"schÃ©ma uloÅ¾enÃ¡."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
@@ -73,13 +73,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Prosím zvoµte si unikátne meno pre novú\n"
-"schému kláves. To, èo ste zadali u¾ je na\n"
-"zozname schém."
+"ProsÃ­m zvoÄ¾te si unikÃ¡tne meno pre novÃº\n"
+"schÃ©mu klÃ¡ves. To, Äo ste zadali uÅ¾ je na\n"
+"zozname schÃ©m."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Pridávam schému"
+msgstr "PridÃ¡vam schÃ©mu"
 
 #: savescm.cpp:32
 msgid ""
@@ -89,115 +89,115 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Zadajte meno pre novú schému, ktorá má\n"
-"by» pridaná do vá¹ho osobného zoznamu.\n"
+"&Zadajte meno pre novÃº schÃ©mu, ktorÃ¡ mÃ¡\n"
+"byÅ¥ pridanÃ¡ do vÃ¡Å¡ho osobnÃ©ho zoznamu.\n"
 "\n"
-"Klávesy pou¾ité v náhµade budú skopírované\n"
-"do tejto schémy."
+"KlÃ¡vesy pouÅ¾itÃ© v nÃ¡hÄ¾ade budÃº skopÃ­rovanÃ©\n"
+"do tejto schÃ©my."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr "Mana¾ér úloh"
+msgstr "ManaÅ¾Ã©r Ãºloh"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "Re¾im zatvárania okna"
+msgstr "ReÅ¾im zatvÃ¡rania okna"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr "Spusti» príkaz"
+msgstr "SpustiÅ¥ prÃ­kaz"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "Menu operácií s oknom"
+msgstr "Menu operÃ¡ciÃ­ s oknom"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr "Systémové pop-up menu"
+msgstr "SystÃ©movÃ© pop-up menu"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr "Zdvihnú» okno"
+msgstr "ZdvihnÃºÅ¥ okno"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr "Zní¾i» okno"
+msgstr "ZnÃ­Å¾iÅ¥ okno"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr "Zavrie» okno"
+msgstr "ZavrieÅ¥ okno"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr "Ikonifikova» okno"
+msgstr "IkonifikovaÅ¥ okno"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "Zmeni» veµkos» okna"
+msgstr "ZmeniÅ¥ veÄ¾kosÅ¥ okna"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr "Presunú» okno"
+msgstr "PresunÃºÅ¥ okno"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "Prepína» prilepenie okna"
+msgstr "PrepÃ­naÅ¥ prilepenie okna"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "Prepnú» na plochu 1"
+msgstr "PrepnÃºÅ¥ na plochu 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "Prepnú» na plochu 2"
+msgstr "PrepnÃºÅ¥ na plochu 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Prepnú» na plochu 3"
+msgstr "PrepnÃºÅ¥ na plochu 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "Prepnú» na plochu 4"
+msgstr "PrepnÃºÅ¥ na plochu 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Prepnú» na plochu 5"
+msgstr "PrepnÃºÅ¥ na plochu 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "Prepnú» na plochu 6"
+msgstr "PrepnÃºÅ¥ na plochu 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "Prepnú» na plochu 7"
+msgstr "PrepnÃºÅ¥ na plochu 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "Prepnú» na plochu 8"
+msgstr "PrepnÃºÅ¥ na plochu 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Prepnú» o jednu plochu vpravo"
+msgstr "PrepnÃºÅ¥ o jednu plochu vpravo"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "Prepnú» o jednu plochu vµavo"
+msgstr "PrepnÃºÅ¥ o jednu plochu vÄ¾avo"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "Prepnú» o jednu plochu hore"
+msgstr "PrepnÃºÅ¥ o jednu plochu hore"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "Prepnú» o jednu plochu dole"
+msgstr "PrepnÃºÅ¥ o jednu plochu dole"
 
 #: stdbindings.cpp:3
 msgid "New"
-msgstr "Nová"
+msgstr "NovÃ¡"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "Ïalej"
+msgstr "Äalej"
 
 #: stdbindings.cpp:9
 msgid "Prior"
@@ -205,7 +205,7 @@ msgstr "Prior"
 
 #: stdbindings.cpp:14
 msgid "Find"
-msgstr "Hµada»"
+msgstr "HÄ¾adaÅ¥"
 
 #: stdbindings.cpp:17
 msgid "Home"

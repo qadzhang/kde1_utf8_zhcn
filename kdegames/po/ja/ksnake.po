@@ -11,28 +11,28 @@ msgstr ""
 "Last-Translator: Taiki Komoda <tklab@ma6.seikyou.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: game.cpp:41 game.cpp:144 rattler.cpp:350
 msgid "Snake Race"
-msgstr "¥¹¥Í¡¼¥¯¥ì¡¼¥¹"
+msgstr "ã‚¹ãƒãƒ¼ã‚¯ãƒ¬ãƒ¼ã‚¹"
 
 #: game.cpp:45
 msgid "KConfig error ??\n"
-msgstr "KConfig ¥¨¥é¡¼??\n"
+msgstr "KConfig ã‚¨ãƒ©ãƒ¼??\n"
 
 #: game.cpp:79
 msgid "New"
-msgstr "¿·µ¬"
+msgstr "æ–°è¦"
 
 #: game.cpp:80
 msgid "Pause"
-msgstr "Ää»ß"
+msgstr "åœæ­¢"
 
 #: game.cpp:81
 msgid "High Scores..."
-msgstr "¥Ï¥¤¥¹¥³¥¢..."
+msgstr "ãƒã‚¤ã‚¹ã‚³ã‚¢..."
 
 #: game.cpp:88 game.cpp:97
 msgid "0"
@@ -52,47 +52,47 @@ msgstr "3"
 
 #: game.cpp:111
 msgid "none"
-msgstr "³ºÅö¤Ê¤·"
+msgstr "è©²å½“ãªã—"
 
 #: game.cpp:126
 msgid "Beginner"
-msgstr "½éµé"
+msgstr "åˆç´š"
 
 #: game.cpp:127
 msgid "Intermediate"
-msgstr "Ãæµé"
+msgstr "ä¸­ç´š"
 
 #: game.cpp:128
 msgid "Advanced"
-msgstr "¾åµé"
+msgstr "ä¸Šç´š"
 
 #: game.cpp:129
 msgid "Expert"
-msgstr "¥Ø¥Ó¡¼"
+msgstr "ãƒ˜ãƒ“ãƒ¼"
 
 #: game.cpp:131
 msgid "Balls"
-msgstr "¥Ü¡¼¥ë¤Î¿ô"
+msgstr "ãƒœãƒ¼ãƒ«ã®æ•°"
 
 #: game.cpp:132
 msgid "Computer Snakes"
-msgstr "¥Ø¥Ó¤Î¿ô"
+msgstr "ãƒ˜ãƒ“ã®æ•°"
 
 #: game.cpp:134
 msgid "Select background color..."
-msgstr "ÇØ·Ê¿§¤òÁªÂò..."
+msgstr "èƒŒæ™¯è‰²ã‚’é¸æŠ..."
 
 #: game.cpp:135
 msgid "Select background pixmap"
-msgstr "ÇØ·Ê²èÁü¤òÁªÂò"
+msgstr "èƒŒæ™¯ç”»åƒã‚’é¸æŠ"
 
 #: game.cpp:137
 msgid "Change keys..."
-msgstr "¥­¡¼ÊÑ¹¹..."
+msgstr "ã‚­ãƒ¼å¤‰æ›´..."
 
 #: game.cpp:139
 msgid "Starting Room..."
-msgstr "³«»Ï¥ì¥Ù¥ë..."
+msgstr "é–‹å§‹ãƒ¬ãƒ™ãƒ«..."
 
 #: game.cpp:146
 msgid ""
@@ -110,31 +110,31 @@ msgid ""
 " Press F3 to resume\n"
 msgstr ""
 "Game Paused\n"
-" F3 ¤ÇºÆ³«\n"
+" F3 ã§å†é–‹\n"
 
 #: rattler.cpp:351
 msgid ""
 "A game is already started\n"
 "Start a new one ?\n"
 msgstr ""
-"¥²¡¼¥à¤Ï»Ï¤Ş¤Ã¤Æ¤¤¤Ş¤¹\n"
-"¿·¤·¤¯»Ï¤á¤Ş¤¹¤«?\n"
+"ã‚²ãƒ¼ãƒ ã¯å§‹ã¾ã£ã¦ã„ã¾ã™\n"
+"æ–°ã—ãå§‹ã‚ã¾ã™ã‹?\n"
 
 #: rattler.cpp:353
 msgid "&Yes"
-msgstr "¤Ï¤¤ (&Y)"
+msgstr "ã¯ã„ (&Y)"
 
 #: rattler.cpp:353
 msgid "&No"
-msgstr "¤¤¤¤¤¨ (&N)"
+msgstr "ã„ã„ãˆ (&N)"
 
 #: startroom.cpp:23
 msgid "Snake Race Starting Room"
-msgstr "¥¹¥Í¡¼¥¯¥ì¡¼¥¹ ³«»Ï¥ì¥Ù¥ë"
+msgstr "ã‚¹ãƒãƒ¼ã‚¯ãƒ¬ãƒ¼ã‚¹ é–‹å§‹ãƒ¬ãƒ™ãƒ«"
 
 #: startroom.cpp:41
 msgid "Starting Room"
-msgstr "³«»Ï¥ì¥Ù¥ë"
+msgstr "é–‹å§‹ãƒ¬ãƒ™ãƒ«"
 
 #: lcdrange.cpp:61
 #, c-format
@@ -149,53 +149,53 @@ msgstr ""
 
 #: score.cpp:46 score.cpp:77
 msgid "Snake Race High Scores"
-msgstr "¥¹¥Í¡¼¥¯¥ì¡¼¥¹ ¥Ù¥¹¥È5"
+msgstr "ã‚¹ãƒãƒ¼ã‚¯ãƒ¬ãƒ¼ã‚¹ ãƒ™ã‚¹ãƒˆ5"
 
 #: score.cpp:50
 msgid "Hall of Fame"
-msgstr "ÅÂÆ²"
+msgstr "æ®¿å ‚"
 
 #: score.cpp:54
 msgid "Today's High Scores"
-msgstr "º£Æü¤Î¥Ù¥¹¥È5"
+msgstr "ä»Šæ—¥ã®ãƒ™ã‚¹ãƒˆ5"
 
 #: score.cpp:78
 msgid ""
 "you have achieved a high score!\n"
 " please enter your name"
 msgstr ""
-"¥Ù¥¹¥È5¤Ç¤¹!\n"
-" Ì¾Á°¤òÆş¤ì¤Æ²¼¤µ¤¤"
+"ãƒ™ã‚¹ãƒˆ5ã§ã™!\n"
+" åå‰ã‚’å…¥ã‚Œã¦ä¸‹ã•ã„"
 
 #: pixServer.cpp:182
 #, c-format
 msgid "error loading %s, aborting\n"
-msgstr "%s ¤ò¥í¡¼¥ÉÃæ¤Ë¥¨¥é¡¼, Ãæ»ß¤·¤Ş¤·¤¿\n"
+msgstr "%s ã‚’ãƒ­ãƒ¼ãƒ‰ä¸­ã«ã‚¨ãƒ©ãƒ¼, ä¸­æ­¢ã—ã¾ã—ãŸ\n"
 
 #: keys.cpp:24
 msgid "Defaults"
-msgstr "¥Ç¥Õ¥©¥ë¥È"
+msgstr "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ"
 
 #: keys.cpp:83
 msgid "Change Direction Keys"
-msgstr "Êı¸ş¥­¡¼¤òÊÑ¤¨¤Ş¤·¤¿"
+msgstr "æ–¹å‘ã‚­ãƒ¼ã‚’å¤‰ãˆã¾ã—ãŸ"
 
 #: keys.cpp:96
 msgid "Undefined key"
-msgstr "ÄêµÁ¤µ¤ì¤Æ¤¤¤Ê¤¤¥­¡¼"
+msgstr "å®šç¾©ã•ã‚Œã¦ã„ãªã„ã‚­ãƒ¼"
 
 #: keys.cpp:153
 msgid "Up"
-msgstr "¾å"
+msgstr "ä¸Š"
 
 #: keys.cpp:154
 msgid "Down"
-msgstr "²¼"
+msgstr "ä¸‹"
 
 #: keys.cpp:155
 msgid "Left"
-msgstr "º¸"
+msgstr "å·¦"
 
 #: keys.cpp:156
 msgid "Right"
-msgstr "±¦"
+msgstr "å³"

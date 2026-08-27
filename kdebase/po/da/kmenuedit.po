@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kmenuedit\n"
 "POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1999-01-26 13:22+0100\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Erik KjÃ¦r Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kmenuedit.cpp:69
@@ -19,7 +19,7 @@ msgstr "Skift &menunavn"
 
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
-msgstr "Genindlæs &filtyper"
+msgstr "GenindlÃ¦s &filtyper"
 
 #: kmenuedit.cpp:77
 msgid "by"
@@ -27,7 +27,7 @@ msgstr "ved"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
-msgstr "Ændringer ikke gemt!"
+msgstr "Ã†ndringer ikke gemt!"
 
 #: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
@@ -35,7 +35,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Vil du gemme dine ændringer?"
+"Vil du gemme dine Ã¦ndringer?"
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
@@ -43,15 +43,15 @@ msgstr "TOM"
 
 #: kmenuedit.cpp:343
 msgid "Reload Menus"
-msgstr "Genindlæs menuer"
+msgstr "GenindlÃ¦s menuer"
 
 #: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Hvis du genindlæser menuerne vil du miste alle dine ændringer.\n"
-"Er du sikker på du vil genindlæse dem?"
+"Hvis du genindlÃ¦ser menuerne vil du miste alle dine Ã¦ndringer.\n"
+"Er du sikker pÃ¥ du vil genindlÃ¦se dem?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
@@ -71,7 +71,7 @@ msgid ""
 " Select Ok to exit KMenuedit."
 msgstr ""
 "Kan ikke oprette katalog til din personlige menu.\n"
-"Vælg Ok for at afslutte Menu Editoren."
+"VÃ¦lg Ok for at afslutte Menu Editoren."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
@@ -79,15 +79,15 @@ msgstr "Adskiller"
 
 #: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
-msgstr "Åben/Luk"
+msgstr "Ã…ben/Luk"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr "Vælg det der skal flyttes"
+msgstr "VÃ¦lg det der skal flyttes"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr "Vælg menu der skal flyttes"
+msgstr "VÃ¦lg menu der skal flyttes"
 
 #: confmenu.cpp:120
 msgid "New"
@@ -111,11 +111,11 @@ msgid ""
 "Please choose another filename."
 msgstr ""
 "En kdelnk fil med dette navn eksisterer allerede.\n"
-"Vælg venlist et andet navn."
+"VÃ¦lg venlist et andet navn."
 
 #: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Hvis du ændrer typen på denne knap vil du miste alle dens undermenuer"
+msgstr "Hvis du Ã¦ndrer typen pÃ¥ denne knap vil du miste alle dens undermenuer"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
@@ -126,8 +126,8 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Du bliver nødt til at gemme dine ændringer\n"
-"før du kan placere dette element i et andet vindue"
+"Du bliver nÃ¸dt til at gemme dine Ã¦ndringer\n"
+"fÃ¸r du kan placere dette element i et andet vindue"
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
@@ -135,7 +135,7 @@ msgstr "Stien til KDE Desktop Entries er ikke sat."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "Jeg foreslår de følgende indgange:"
+msgstr "Jeg foreslÃ¥r de fÃ¸lgende indgange:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
@@ -192,11 +192,11 @@ msgstr "Kommentar:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "Kør"
+msgstr "KÃ¸r"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
-msgstr "Kør:"
+msgstr "KÃ¸r:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
@@ -204,7 +204,7 @@ msgstr "Arbejdskatalog:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
-msgstr "Kør i terminal"
+msgstr "KÃ¸r i terminal"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
@@ -224,7 +224,7 @@ msgstr "Anvendelsens navn"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "Anvendelse der udføres ved tryk på knap:"
+msgstr "Anvendelse der udfÃ¸res ved tryk pÃ¥ knap:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -232,7 +232,7 @@ msgstr "URL:"
 
 #: entrydialog.cpp:415
 msgid "Read Only"
-msgstr "Kun læsbar"
+msgstr "Kun lÃ¦sbar"
 
 #: entrydialog.cpp:420
 msgid "Device:"
@@ -256,7 +256,7 @@ msgstr "Skift menunavne"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Skift navn på menuen som det bliver vist i Panelet"
+msgstr "Skift navn pÃ¥ menuen som det bliver vist i Panelet"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

@@ -10,9 +10,9 @@ msgstr ""
 "POT-Creation-Date: 1998-10-01 13:29+0200\n"
 "PO-Revision-Date: 1999-03-16 16:34+0100\n"
 "Last-Translator: Philippe Thomin <Philippe.Thomin@univ-valenciennes.fr>\n"
-"Language-Team: Français\n"
+"Language-Team: FranÃ§ais\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: MIME\n"
 
 #: board.cpp:65 dialogs.cpp:137
@@ -33,7 +33,7 @@ msgstr "Fini"
 
 #: board.cpp:123
 msgid "Press Return to replay"
-msgstr "Appuyez sur entrée"
+msgstr "Appuyez sur entrÃ©e"
 
 #: board.cpp:127
 msgid "Press to start game"
@@ -41,11 +41,11 @@ msgstr "Appuyez pour commencer"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "Mise à jour des meilleurs scores impossible !"
+msgstr "Mise Ã  jour des meilleurs scores impossible !"
 
 #: net.cpp:129
 msgid "Illegal port"
-msgstr "Port illégal"
+msgstr "Port illÃ©gal"
 
 #: net.cpp:135
 msgid "Null address"
@@ -57,7 +57,7 @@ msgstr "Adresse inconnue"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "Impossible de créer le socket"
+msgstr "Impossible de crÃ©er le socket"
 
 #: net.cpp:196
 msgid "at"
@@ -81,7 +81,7 @@ msgstr "Annulation en provenance du serveur"
 
 #: net.cpp:273 net.cpp:333
 msgid "Unknown data from server"
-msgstr "Données inconnues en provenance du serveur"
+msgstr "DonnÃ©es inconnues en provenance du serveur"
 
 #: net.cpp:312
 msgid "Cannot send to server"
@@ -101,7 +101,7 @@ msgstr "Erreur de liaison (Bind)"
 
 #: net.cpp:371
 msgid "Listen error"
-msgstr "Erreur d'écoute (Listen)"
+msgstr "Erreur d'Ã©coute (Listen)"
 
 #: net.cpp:390
 msgid "Unknown message from unknown player (??)"
@@ -133,7 +133,7 @@ msgstr "Le client a disparu"
 
 #: net.cpp:529
 msgid "Unknown data from client"
-msgstr "Données inconnues en provenance du client"
+msgstr "DonnÃ©es inconnues en provenance du client"
 
 #: net.cpp:533
 msgid "End message from client"
@@ -149,7 +149,7 @@ msgstr "Meilleurs scores"
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
-msgstr "Panthéon"
+msgstr "PanthÃ©on"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
@@ -157,7 +157,7 @@ msgstr "Pas encore d'options !"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "Réseau"
+msgstr "RÃ©seau"
 
 #: dialogs.cpp:178
 msgid "Server"
@@ -193,7 +193,7 @@ msgstr "Jouer !"
 
 #: dialogs.cpp:252
 msgid "Network game"
-msgstr "Partie en réseau"
+msgstr "Partie en rÃ©seau"
 
 #: dialogs.cpp:256
 msgid "Server mode"
@@ -217,15 +217,15 @@ msgstr "Pause"
 
 #: field.cpp:30
 msgid "High scores"
-msgstr "Panthéon"
+msgstr "PanthÃ©on"
 
 #: field.cpp:31
 msgid "Move left"
-msgstr "Déplacer à gauche"
+msgstr "DÃ©placer Ã  gauche"
 
 #: field.cpp:32
 msgid "Move right"
-msgstr "Déplacer à droite"
+msgstr "DÃ©placer Ã  droite"
 
 #: field.cpp:33
 msgid "Drop down"
@@ -237,11 +237,11 @@ msgstr "Une ligne vers le bas"
 
 #: field.cpp:35
 msgid "Rotate left"
-msgstr "Tourner à gauche"
+msgstr "Tourner Ã  gauche"
 
 #: field.cpp:36
 msgid "Rotate right"
-msgstr "Tourner à droite"
+msgstr "Tourner Ã  droite"
 
 #: field.cpp:51
 msgid "Score"
@@ -249,7 +249,7 @@ msgstr "Score"
 
 #: field.cpp:55
 msgid "Lines removed"
-msgstr "Lignes effacées"
+msgstr "Lignes effacÃ©es"
 
 #: field.cpp:59
 msgid "Level"
@@ -261,7 +261,7 @@ msgstr "Prochaine piece"
 
 #: field.cpp:185
 msgid "&Restart game"
-msgstr "&Redémarrer la partie"
+msgstr "&RedÃ©marrer la partie"
 
 #: field.cpp:186
 msgid "&Pause game"
@@ -273,7 +273,7 @@ msgstr "&Multijoueur"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "&Panthéon"
+msgstr "&PanthÃ©on"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"

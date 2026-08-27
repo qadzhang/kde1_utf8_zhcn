@@ -2,7 +2,7 @@
 
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# S·ri G·bor <saga@mail.externet.hu>, 1999.
+# S√°ri G√°bor <saga@mail.externet.hu>, 1999.
 #
 #
 msgid ""
@@ -10,28 +10,28 @@ msgstr ""
 "Project-Id-Version: kcalc 1.2.7\n"
 "POT-Creation-Date: 1999-08-27 01:21+0200\n"
 "PO-Revision-Date: 1999-08-02 13:44+0200\n"
-"Last-Translator: S·ri G·bor <saga@mail.externet.hu>\n"
+"Last-Translator: S√°ri G√°bor <saga@mail.externet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 ""
 
 #: kcalc.cpp:99
 msgid "KCalc Setup/Help"
-msgstr "KCalc Be·llÌt·sok/SegÌtsÈg"
+msgstr "KCalc Be√°ll√≠t√°sok/Seg√≠ts√©g"
 
 #: kcalc.cpp:152
 msgid "Angle"
-msgstr "Szˆg mÈrtÈkegysÈg"
+msgstr "Sz√∂g m√©rt√©kegys√©g"
 
 #: kcalc.cpp:192
 msgid "Base"
-msgstr "Sz·mrendszer"
+msgstr "Sz√°mrendszer"
 
 #: kcalc.cpp:1524
 msgid "KCalc Configuraton"
-msgstr "KCalc be·llÌt·sok"
+msgstr "KCalc be√°ll√≠t√°sok"
 
 #: kcalc.cpp:1542
 #, c-format
@@ -54,7 +54,7 @@ msgstr ""
 
 #: kcalc.cpp:1551
 msgid "Base type: long double\n"
-msgstr "Alap tÌpus : hossz˙ dupla\n"
+msgstr "Alap t√≠pus : hossz√∫ dupla\n"
 
 #: kcalc.cpp:1553
 msgid ""
@@ -63,18 +63,18 @@ msgid ""
 "recompile KCalc with 'long double' precision enabled. See the README for "
 "details."
 msgstr ""
-"A hib·s glibc-k miatt le kellett csˆkkenteni a sz·molÛgÈp pontoss·g·t 'hossz˙ "
-"dupla'-rÛl 'dupla'-ra. A hib·tlan libc-k tulajdonosai ˙jra fordÌthatj·k a "
-"programot 'long double' pontoss·g engedÈlyezÈsÈvel. L·tsd a README-t tov·bbi "
-"inform·ciÛkÈrt."
+"A hib√°s glibc-k miatt le kellett cs√∂kkenteni a sz√°mol√≥g√©p pontoss√°g√°t 'hossz√∫ "
+"dupla'-r√≥l 'dupla'-ra. A hib√°tlan libc-k tulajdonosai √∫jra ford√≠thatj√°k a "
+"programot 'long double' pontoss√°g enged√©lyez√©s√©vel. L√°tsd a README-t tov√°bbi "
+"inform√°ci√≥k√©rt."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
 msgid "Defaults"
-msgstr "AlapÈrtelmezÈs"
+msgstr "Alap√©rtelmez√©s"
 
 #: kcalc.cpp:1593
 msgid "Display Font"
-msgstr "Bet˚tÌpus"
+msgstr "Bet≈±t√≠pus"
 
 #: kcalc.cpp:1909
 #, c-format
@@ -87,11 +87,11 @@ msgstr ""
 
 #: kcalc_core.cpp:1115
 msgid "Last stat item erased"
-msgstr "Az utolsÛ tÈtel tˆrˆlve"
+msgstr "Az utols√≥ t√©tel t√∂r√∂lve"
 
 #: kcalc_core.cpp:1155
 msgid "Stat Mem cleared"
-msgstr "MemÛria tˆrˆlve"
+msgstr "Mem√≥ria t√∂r√∂lve"
 
 #: kcalc_core.cpp:1632
 msgid "Stack processing error - right_op"
@@ -99,7 +99,7 @@ msgstr "Stack hiba - right_op"
 
 #: kcalc_core.cpp:1640
 msgid "Stack processing error - function"
-msgstr "Stack hiba - f¸ggvÈny"
+msgstr "Stack hiba - f√ºggv√©ny"
 
 #: kcalc_core.cpp:1649
 msgid "Stack processing error - left_op"
@@ -107,7 +107,7 @@ msgstr "Stack hiba - left_op"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Emergency"
-msgstr "VeszÈly"
+msgstr "Vesz√©ly"
 
 #: kcalc_core.cpp:1953 kcalc_core.cpp:1961
 msgid "Stack Error!"
@@ -115,23 +115,23 @@ msgstr "Stack hiba!"
 
 #: configdlg.cpp:61
 msgid "Foreground Color:"
-msgstr "Tinta szÌne:"
+msgstr "Tinta sz√≠ne:"
 
 #: configdlg.cpp:78
 msgid "Background Color:"
-msgstr "H·ttÈr szÌne:"
+msgstr "H√°tt√©r sz√≠ne:"
 
 #: configdlg.cpp:95
 msgid "Precision:"
-msgstr "Pontoss·g:"
+msgstr "Pontoss√°g:"
 
 #: configdlg.cpp:116
 msgid "Set Fixed Precision at:"
-msgstr "Fix pontoss·g:"
+msgstr "Fix pontoss√°g:"
 
 #: configdlg.cpp:145
 msgid "Beep on Error"
-msgstr "Csippant·s hiba esetÈn"
+msgstr "Csippant√°s hiba eset√©n"
 
 #: configdlg.cpp:153
 msgid "Trigonometry Mode"
@@ -143,28 +143,28 @@ msgstr "Statisztikai"
 
 #: fontdlg.cpp:44
 msgid "Set Default Font"
-msgstr "AlapÈrtelmezett bet˚tÌpus"
+msgstr "Alap√©rtelmezett bet≈±t√≠pus"
 
 #: fontdlg.cpp:53
 msgid "Family:"
-msgstr "Csal·d:"
+msgstr "Csal√°d:"
 
 #: fontdlg.cpp:63
 msgid "Point Size:"
-msgstr "MÈret:"
+msgstr "M√©ret:"
 
 #: fontdlg.cpp:76
 msgid "Style:"
-msgstr "StÌlus:"
+msgstr "St√≠lus:"
 
 #: fontdlg.cpp:91
 msgid "Weight:"
-msgstr "Magass·g:"
+msgstr "Magass√°g:"
 
 #: fontdlg.cpp:101 fontdlg.cpp:134
 msgid "Bold"
-msgstr "FÈlkˆvÈr"
+msgstr "F√©lk√∂v√©r"
 
 #: fontdlg.cpp:103 fontdlg.cpp:136
 msgid "Normal"
-msgstr "Norm·l"
+msgstr "Norm√°l"

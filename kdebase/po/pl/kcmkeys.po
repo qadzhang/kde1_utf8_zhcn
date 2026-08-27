@@ -4,19 +4,19 @@ msgstr ""
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-27 21:23+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "&Standardowe skróty"
+msgstr "&Standardowe skrÃ³ty"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "&Ogólne skróty"
+msgstr "&OgÃ³lne skrÃ³ty"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "u¿ycie: kcmkeys [-init | {standard,global}]\n"
+msgstr "uÅ¼ycie: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
@@ -24,11 +24,11 @@ msgstr "Przypisania klawiszy"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "Bie¿±cy schemat"
+msgstr "BieÅ¼Ä…cy schemat"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "KDE domy¶lne"
+msgstr "KDE domyÅ›lne"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
@@ -44,7 +44,7 @@ msgstr "&Zapisz zmiany"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr "B³±d usuniêcia schematu"
+msgstr "BÅ‚Ä…d usuniÄ™cia schematu"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -52,9 +52,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Ten schemat klawiszy nie mo¿e zostaæ usuniêty.\n"
+"Ten schemat klawiszy nie moÅ¼e zostaÄ‡ usuniÄ™ty.\n"
 "Prawdopodobnie nie masz praw do pliku systemowego,\n"
-"w którym przechowywane s± schematy kolorów."
+"w ktÃ³rym przechowywane sÄ… schematy kolorÃ³w."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
@@ -66,9 +66,9 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Proszê wybraæ unikaln± nazwê dla nowego schematu\n"
-"klawiszy. Aktualnie wybrana nazwa ju¿ jest wprowadzona\n"
-"do listy schematów klawiszy."
+"ProszÄ™ wybraÄ‡ unikalnÄ… nazwÄ™ dla nowego schematu\n"
+"klawiszy. Aktualnie wybrana nazwa juÅ¼ jest wprowadzona\n"
+"do listy schematÃ³w klawiszy."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
@@ -82,15 +82,15 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Wprowad¼ nazwê dla nowego schematu klawiszy,\n"
-"aby dodaæ go do prywatnej listy.\n"
+"&WprowadÅº nazwÄ™ dla nowego schematu klawiszy,\n"
+"aby dodaÄ‡ go do prywatnej listy.\n"
 "\n"
-"Klawisze, które widzisz w zapowiedzi, zostan±\n"
+"Klawisze, ktÃ³re widzisz w zapowiedzi, zostanÄ…\n"
 "skopiowane do tego schematu."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr "Pasek zadañ"
+msgstr "Pasek zadaÅ„"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
@@ -110,7 +110,7 @@ msgstr "Menu systemowe"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr "Przywo³aj okno"
+msgstr "PrzywoÅ‚aj okno"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
@@ -126,11 +126,11 @@ msgstr "Ikonizuj okno"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "Zmieñ rozmiar okna"
+msgstr "ZmieÅ„ rozmiar okna"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr "Przesuñ okno"
+msgstr "PrzesuÅ„ okno"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
@@ -138,51 +138,51 @@ msgstr "Przypnij/odepnij okno"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "Prze³±cz na biurko 1"
+msgstr "PrzeÅ‚Ä…cz na biurko 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "Prze³±cz na biurko 2"
+msgstr "PrzeÅ‚Ä…cz na biurko 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Prze³±cz na biurko 3"
+msgstr "PrzeÅ‚Ä…cz na biurko 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "Prze³±cz na biurko 4"
+msgstr "PrzeÅ‚Ä…cz na biurko 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Prze³±cz na biurko 5"
+msgstr "PrzeÅ‚Ä…cz na biurko 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "Prze³±cz na biurko 6"
+msgstr "PrzeÅ‚Ä…cz na biurko 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "Prze³±cz na biurko 7"
+msgstr "PrzeÅ‚Ä…cz na biurko 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "Prze³±cz na biurko 8"
+msgstr "PrzeÅ‚Ä…cz na biurko 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Prze³±cz na biurko po prawej"
+msgstr "PrzeÅ‚Ä…cz na biurko po prawej"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "Prze³±cz na biurko po lewej"
+msgstr "PrzeÅ‚Ä…cz na biurko po lewej"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "Prze³±cz na biurko w górê"
+msgstr "PrzeÅ‚Ä…cz na biurko w gÃ³rÄ™"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "Prze³±cz na biurko w dó³"
+msgstr "PrzeÅ‚Ä…cz na biurko w dÃ³Å‚"
 
 #: stdbindings.cpp:3
 msgid "New"
@@ -190,7 +190,7 @@ msgstr "Nowy"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "Nastêpny"
+msgstr "NastÄ™pny"
 
 #: stdbindings.cpp:9
 msgid "Prior"
@@ -198,11 +198,11 @@ msgstr "Prior"
 
 #: stdbindings.cpp:14
 msgid "Find"
-msgstr "Znajd¼"
+msgstr "ZnajdÅº"
 
 #: stdbindings.cpp:17
 msgid "Home"
-msgstr "Pocz±tek"
+msgstr "PoczÄ…tek"
 
 #: stdbindings.cpp:18
 msgid "End"

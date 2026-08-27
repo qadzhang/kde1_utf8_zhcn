@@ -1,4 +1,4 @@
-# Перевод kcmkwm.
+# п÷п╣я─п╣п╡п╬п╢ kcmkwm.
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998.
 #
@@ -11,423 +11,423 @@ msgstr ""
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:67
 msgid "&Buttons"
-msgstr "&Кнопки"
+msgstr "&п п╫п╬п©п╨п╦"
 
 #: main.cpp:70
 msgid "&Titlebar"
-msgstr "&Заголовок"
+msgstr "&п≈п╟пЁп╬п╩п╬п╡п╬п╨"
 
 #: main.cpp:73
 msgid "Bo&rders"
-msgstr "Границы"
+msgstr "п⌠я─п╟п╫п╦я├я▀"
 
 #: main.cpp:76
 msgid "&Mouse"
-msgstr "Мышь"
+msgstr "п°я▀я┬я▄"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr "Расширенные"
+msgstr "п═п╟я│я┬п╦я─п╣п╫п╫я▀п╣"
 
 #
 #: main.cpp:86
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"использование: kcmkwm [-init | "
+"п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣: kcmkwm [-init | "
 "{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Вид главного форточника"
+msgstr "п▓п╦п╢ пЁп╩п╟п╡п╫п╬пЁп╬ я└п╬я─я┌п╬я┤п╫п╦п╨п╟"
 
 #: titlebar.cpp:125
 msgid "Minimize"
-msgstr "Свернуть"
+msgstr "п║п╡п╣я─п╫я┐я┌я▄"
 
 #: titlebar.cpp:129
 msgid "Maximize"
-msgstr "Развернуть"
+msgstr "п═п╟п╥п╡п╣я─п╫я┐я┌я▄"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Прилепить"
+msgstr "п÷я─п╦п╩п╣п©п╦я┌я▄"
 
 #: titlebar.cpp:141
 msgid "Menu"
-msgstr "Меню"
+msgstr "п°п╣п╫я▌"
 
 #: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
-msgstr "Слева"
+msgstr "п║п╩п╣п╡п╟"
 
 #: titlebar.cpp:182 titlebar.cpp:946
 msgid "Right"
-msgstr "Справа"
+msgstr "п║п©я─п╟п╡п╟"
 
 #: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Левая часть заголовка переполнена... отключаю кнопку 'развернуть'\n"
+msgstr "п⌡п╣п╡п╟я▐ я┤п╟я│я┌я▄ п╥п╟пЁп╬п╩п╬п╡п╨п╟ п©п╣я─п╣п©п╬п╩п╫п╣п╫п╟... п╬я┌п╨п╩я▌я┤п╟я▌ п╨п╫п╬п©п╨я┐ 'я─п╟п╥п╡п╣я─п╫я┐я┌я▄'\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Правая часть заголовка переполнена... отключаю кнопку 'развернуть'\n"
+msgstr "п÷я─п╟п╡п╟я▐ я┤п╟я│я┌я▄ п╥п╟пЁп╬п╩п╬п╡п╨п╟ п©п╣я─п╣п©п╬п╩п╫п╣п╫п╟... п╬я┌п╨п╩я▌я┤п╟я▌ п╨п╫п╬п©п╨я┐ 'я─п╟п╥п╡п╣я─п╫я┐я┌я▄'\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Левая часть заголовка переполнена... отключаю кнопку 'свернуть'\n"
+msgstr "п⌡п╣п╡п╟я▐ я┤п╟я│я┌я▄ п╥п╟пЁп╬п╩п╬п╡п╨п╟ п©п╣я─п╣п©п╬п╩п╫п╣п╫п╟... п╬я┌п╨п╩я▌я┤п╟я▌ п╨п╫п╬п©п╨я┐ 'я│п╡п╣я─п╫я┐я┌я▄'\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Правая часть заголовка переполнена... отключаю кнопку 'свернуть'\n"
+msgstr "п÷я─п╟п╡п╟я▐ я┤п╟я│я┌я▄ п╥п╟пЁп╬п╩п╬п╡п╨п╟ п©п╣я─п╣п©п╬п╩п╫п╣п╫п╟... п╬я┌п╨п╩я▌я┤п╟я▌ п╨п╫п╬п©п╨я┐ 'я│п╡п╣я─п╫я┐я┌я▄'\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
-msgstr "Выравнивание заголовка"
+msgstr "п▓я▀я─п╟п╡п╫п╦п╡п╟п╫п╦п╣ п╥п╟пЁп╬п╩п╬п╡п╨п╟"
 
 #: titlebar.cpp:941
 msgid "Middle"
-msgstr "Средний"
+msgstr "п║я─п╣п╢п╫п╦п╧"
 
 #
 #: titlebar.cpp:969
 msgid "Shaded Vertically"
-msgstr "Вертикальный переход"
+msgstr "п▓п╣я─я┌п╦п╨п╟п╩я▄п╫я▀п╧ п©п╣я─п╣я┘п╬п╢"
 
 #: titlebar.cpp:975
 msgid "Shaded Horizontally"
-msgstr "Горизонтальный переход"
+msgstr "п⌠п╬я─п╦п╥п╬п╫я┌п╟п╩я▄п╫я▀п╧ п©п╣я─п╣я┘п╬п╢"
 
 #: titlebar.cpp:984
 msgid "Plain"
-msgstr "Обычный"
+msgstr "п·п╠я▀я┤п╫я▀п╧"
 
 #: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
-msgstr "Картинка"
+msgstr "п п╟я─я┌п╦п╫п╨п╟"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
 msgstr ""
-"Активный заголовок имеет\n"
-"переливающуюся рамку"
+"п░п╨я┌п╦п╡п╫я▀п╧ п╥п╟пЁп╬п╩п╬п╡п╬п╨ п╦п╪п╣п╣я┌\n"
+"п©п╣я─п╣п╩п╦п╡п╟я▌я┴я┐я▌я│я▐ я─п╟п╪п╨я┐"
 
 #: titlebar.cpp:1046
 msgid "Active pixmap:"
-msgstr "Активная пиктограмма:"
+msgstr "п░п╨я┌п╦п╡п╫п╟я▐ п©п╦п╨я┌п╬пЁя─п╟п╪п╪п╟:"
 
 #: titlebar.cpp:1051
 msgid "Inactive pixmap:"
-msgstr "Неактивная пиктограмма:"
+msgstr "п²п╣п╟п╨я┌п╦п╡п╫п╟я▐ п©п╦п╨я┌п╬пЁя─п╟п╪п╪п╟:"
 
 #: titlebar.cpp:1057
 msgid "No pixmap under text"
 msgstr ""
-"Изображение не фон\n"
-"для текста"
+"п≤п╥п╬п╠я─п╟п╤п╣п╫п╦п╣ п╫п╣ я└п╬п╫\n"
+"п╢п╩я▐ я┌п╣п╨я│я┌п╟"
 
 #: titlebar.cpp:1068
 msgid "Mouse action"
-msgstr "Действие мышью"
+msgstr "п■п╣п╧я│я┌п╡п╦п╣ п╪я▀я┬я▄я▌"
 
 #: titlebar.cpp:1076
 msgid "Left Button double click does:"
 msgstr ""
-"Двойной щелчок левой кнопкой\n"
-"мыши делает:"
+"п■п╡п╬п╧п╫п╬п╧ я┴п╣п╩я┤п╬п╨ п╩п╣п╡п╬п╧ п╨п╫п╬п©п╨п╬п╧\n"
+"п╪я▀я┬п╦ п╢п╣п╩п╟п╣я┌:"
 
 #
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
-msgstr "Свернуть/Развернуть"
+msgstr "п║п╡п╣я─п╫я┐я┌я▄/п═п╟п╥п╡п╣я─п╫я┐я┌я▄"
 
 #
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "Градиент"
+msgstr "п⌠я─п╟п╢п╦п╣п╫я┌"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
-msgstr "Свернуть"
+msgstr "п║п╡п╣я─п╫я┐я┌я▄"
 
 #
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "(От)Прилепить"
+msgstr "(п·я┌)п÷я─п╦п╩п╣п©п╦я┌я▄"
 
 #: titlebar.cpp:1109
 msgid "Title animation"
-msgstr "Анимация заголовка"
+msgstr "п░п╫п╦п╪п╟я├п╦я▐ п╥п╟пЁп╬п╩п╬п╡п╨п╟"
 
 #: titlebar.cpp:1125
 msgid "ms"
-msgstr "мс"
+msgstr "п╪я│"
 
 #: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
-msgstr "Ошибка установки менеджера окон"
+msgstr "п·я┬п╦п╠п╨п╟ я┐я│я┌п╟п╫п╬п╡п╨п╦ п╪п╣п╫п╣п╢п╤п╣я─п╟ п╬п╨п╬п╫"
 
 #: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Ошибка сохранения пиктограмм заголовка!\n"
-"Проверьте права доступа."
+"п·я┬п╦п╠п╨п╟ я│п╬я┘я─п╟п╫п╣п╫п╦я▐ п©п╦п╨я┌п╬пЁя─п╟п╪п╪ п╥п╟пЁп╬п╩п╬п╡п╨п╟!\n"
+"п÷я─п╬п╡п╣я─я▄я┌п╣ п©я─п╟п╡п╟ п╢п╬я│я┌я┐п©п╟."
 
 #: windows.cpp:68
 msgid "Windows"
-msgstr "Окна"
+msgstr "п·п╨п╫п╟"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "По умолчанию только вертикальная максимизация"
+msgstr "п÷п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌ я┌п╬п╩я▄п╨п╬ п╡п╣я─я┌п╦п╨п╟п╩я▄п╫п╟я▐ п╪п╟п╨я│п╦п╪п╦п╥п╟я├п╦я▐"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
-msgstr "Показывать содержимое в перемещаемых окнах"
+msgstr "п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄ я│п╬п╢п╣я─п╤п╦п╪п╬п╣ п╡ п©п╣я─п╣п╪п╣я┴п╟п╣п╪я▀я┘ п╬п╨п╫п╟я┘"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr "Показывать содержимое в окнах изменяющих размер"
+msgstr "п÷п╬п╨п╟п╥я▀п╡п╟я┌я▄ я│п╬п╢п╣я─п╤п╦п╪п╬п╣ п╡ п╬п╨п╫п╟я┘ п╦п╥п╪п╣п╫я▐я▌я┴п╦я┘ я─п╟п╥п╪п╣я─"
 
 #: windows.cpp:98
 msgid "Resize animation:"
-msgstr "Анимация изменения размера:"
+msgstr "п░п╫п╦п╪п╟я├п╦я▐ п╦п╥п╪п╣п╫п╣п╫п╦я▐ я─п╟п╥п╪п╣я─п╟:"
 
 #: windows.cpp:111
 msgid "None"
-msgstr "Нет"
+msgstr "п²п╣я┌"
 
 #: windows.cpp:117
 msgid "Fast"
-msgstr "Быстро"
+msgstr "п▒я▀я│я┌я─п╬"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "Правила расположения"
+msgstr "п÷я─п╟п╡п╦п╩п╟ я─п╟я│п©п╬п╩п╬п╤п╣п╫п╦я▐"
 
 #: windows.cpp:134
 msgid "Smart"
-msgstr "Умные"
+msgstr "пёп╪п╫я▀п╣"
 
 #: windows.cpp:136
 msgid "Cascade"
-msgstr "Каскадом"
+msgstr "п п╟я│п╨п╟п╢п╬п╪"
 
 #: windows.cpp:138
 msgid "Interactive"
-msgstr "Диалоговый"
+msgstr "п■п╦п╟п╩п╬пЁп╬п╡я▀п╧"
 
 #: windows.cpp:140
 msgid "Random"
-msgstr "Случайно"
+msgstr "п║п╩я┐я┤п╟п╧п╫п╬"
 
 #
 #: windows.cpp:142
 msgid "Manual"
-msgstr "Ручное"
+msgstr "п═я┐я┤п╫п╬п╣"
 
 #: windows.cpp:154
 #, c-format
-msgid ""
-"  Allowed overlap:\n"
-"(% of desktop space)"
-msgstr ""
-"  Допустимое перекрывание:\n"
-"(% от площади рабочего стола)"
+#~ msgid ""
+#~ "  Allowed overlap:\n"
+#~ "(% of desktop space)"
+#~ msgstr ""
+#~ "  п■п╬п©я┐я│я┌п╦п╪п╬п╣ п©п╣я─п╣п╨я─я▀п╡п╟п╫п╦п╣:\n"
+#~ "(% п╬я┌ п©п╩п╬я┴п╟п╢п╦ я─п╟п╠п╬я┤п╣пЁп╬ я│я┌п╬п╩п╟)"
 
 #: windows.cpp:175
 msgid "Focus policy"
-msgstr "Вид фокуса"
+msgstr "п▓п╦п╢ я└п╬п╨я┐я│п╟"
 
 #: windows.cpp:185
 msgid "Click to focus"
-msgstr "Щелчком"
+msgstr "п╘п╣п╩я┤п╨п╬п╪"
 
 #: windows.cpp:187
 msgid "Focus follows mouse"
-msgstr "Фокус за мышкой"
+msgstr "п╓п╬п╨я┐я│ п╥п╟ п╪я▀я┬п╨п╬п╧"
 
 #
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Классический фокус за мышкой"
+msgstr "п п╩п╟я│я│п╦я┤п╣я│п╨п╦п╧ я└п╬п╨я┐я│ п╥п╟ п╪я▀я┬п╨п╬п╧"
 
 #
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Классический фокус щелчком"
+msgstr "п п╩п╟я│я│п╦я┤п╣я│п╨п╦п╧ я└п╬п╨я┐я│ я┴п╣п╩я┤п╨п╬п╪"
 
 #: windows.cpp:203
 msgid "Auto Raise"
-msgstr "Автоматически наверх"
+msgstr "п░п╡я┌п╬п╪п╟я┌п╦я┤п╣я│п╨п╦ п╫п╟п╡п╣я─я┘"
 
 #: windows.cpp:209
 msgid "Click Raise"
-msgstr "Щелчком наверх"
+msgstr "п╘п╣п╩я┤п╨п╬п╪ п╫п╟п╡п╣я─я┘"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
-msgstr "Задержка (мс)"
+msgstr "п≈п╟п╢п╣я─п╤п╨п╟ (п╪я│)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
-msgstr "Активные границы рабочего стола"
+msgstr "п░п╨я┌п╦п╡п╫я▀п╣ пЁя─п╟п╫п╦я├я▀ я─п╟п╠п╬я┤п╣пЁп╬ я│я┌п╬п╩п╟"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "Включить активные границы рабочего стола"
+msgstr "п▓п╨п╩я▌я┤п╦я┌я▄ п╟п╨я┌п╦п╡п╫я▀п╣ пЁя─п╟п╫п╦я├я▀ я─п╟п╠п╬я┤п╣пЁп╬ я│я┌п╬п╩п╟"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Перемещать курсор к центру после переключения"
+msgstr "п÷п╣я─п╣п╪п╣я┴п╟я┌я▄ п╨я┐я─я│п╬я─ п╨ я├п╣п╫я┌я─я┐ п©п╬я│п╩п╣ п©п╣я─п╣п╨п╩я▌я┤п╣п╫п╦я▐"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Задержка при переключении:"
+msgstr "п≈п╟п╢п╣я─п╤п╨п╟ п©я─п╦ п©п╣я─п╣п╨п╩я▌я┤п╣п╫п╦п╦:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
-msgstr "Волшебные границы"
+msgstr "п▓п╬п╩я┬п╣п╠п╫я▀п╣ пЁя─п╟п╫п╦я├я▀"
 
 #: desktop.cpp:126
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Зона захвата по границе:\n"
-"       (пикселов)"
+"п≈п╬п╫п╟ п╥п╟я┘п╡п╟я┌п╟ п©п╬ пЁя─п╟п╫п╦я├п╣:\n"
+"       (п©п╦п╨я│п╣п╩п╬п╡)"
 
 #: desktop.cpp:151
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Зона захвата по окну:\n"
-"       (пикселов)"
+"п≈п╬п╫п╟ п╥п╟я┘п╡п╟я┌п╟ п©п╬ п╬п╨п╫я┐:\n"
+"       (п©п╦п╨я│п╣п╩п╬п╡)"
 
 #: mouse.cpp:54
 msgid "Active"
-msgstr "Активное"
+msgstr "п░п╨я┌п╦п╡п╫п╬п╣"
 
 #: mouse.cpp:58
 msgid "Inactive"
-msgstr "Неактивное"
+msgstr "п²п╣п╟п╨я┌п╦п╡п╫п╬п╣"
 
 #: mouse.cpp:62
 msgid "Titlebar and frame:"
-msgstr "Заголовок и рамка:"
+msgstr "п≈п╟пЁп╬п╩п╬п╡п╬п╨ п╦ я─п╟п╪п╨п╟:"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
-msgstr "Внутри неактивного окна:"
+msgstr "п▓п╫я┐я┌я─п╦ п╫п╣п╟п╨я┌п╦п╡п╫п╬пЁп╬ п╬п╨п╫п╟:"
 
 #: mouse.cpp:70
 msgid "Inner window, titlebar and frame:"
-msgstr "Внутри окна, заголовка и рамки:"
+msgstr "п▓п╫я┐я┌я─п╦ п╬п╨п╫п╟, п╥п╟пЁп╬п╩п╬п╡п╨п╟ п╦ я─п╟п╪п╨п╦:"
 
 #: mouse.cpp:74 mouse.cpp:86
 msgid "Left Button"
-msgstr "Левая кнопка"
+msgstr "п⌡п╣п╡п╟я▐ п╨п╫п╬п©п╨п╟"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
-msgstr "Средняя кнопка"
+msgstr "п║я─п╣п╢п╫я▐я▐ п╨п╫п╬п©п╨п╟"
 
 #: mouse.cpp:82 mouse.cpp:94
 msgid "Right Button"
-msgstr "Правая кнопка"
+msgstr "п÷я─п╟п╡п╟я▐ п╨п╫п╬п©п╨п╟"
 
 #: mouse.cpp:98
 msgid "ALT + Left Button"
-msgstr "ALT + Левая кнопка"
+msgstr "ALT + п⌡п╣п╡п╟я▐ п╨п╫п╬п©п╨п╟"
 
 #: mouse.cpp:102
 msgid "ALT + Middle Button"
-msgstr "ALT + Средняя кнопка"
+msgstr "ALT + п║я─п╣п╢п╫я▐я▐ п╨п╫п╬п©п╨п╟"
 
 #: mouse.cpp:106
 msgid "ALT + Right Button"
-msgstr "ALT + Правая кнопка"
+msgstr "ALT + п÷я─п╟п╡п╟я▐ п╨п╫п╬п©п╨п╟"
 
 #: mouse.cpp:113 mouse.cpp:122 mouse.cpp:132 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
 msgid "Raise"
-msgstr "Наверх"
+msgstr "п²п╟п╡п╣я─я┘"
 
 #: mouse.cpp:114 mouse.cpp:123 mouse.cpp:133 mouse.cpp:197 mouse.cpp:208
 #: mouse.cpp:219
 msgid "Lower"
-msgstr "Вниз"
+msgstr "п▓п╫п╦п╥"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
-msgstr "Меню операций"
+msgstr "п°п╣п╫я▌ п╬п©п╣я─п╟я├п╦п╧"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
 msgid "Toggle raise and lower"
-msgstr "Переключать наверх/вниз"
+msgstr "п÷п╣я─п╣п╨п╩я▌я┤п╟я┌я▄ п╫п╟п╡п╣я─я┘/п╡п╫п╦п╥"
 
 #: mouse.cpp:126 mouse.cpp:136 mouse.cpp:198 mouse.cpp:209 mouse.cpp:220
 msgid "Nothing"
-msgstr "Ничего"
+msgstr "п²п╦я┤п╣пЁп╬"
 
 #: mouse.cpp:142 mouse.cpp:150 mouse.cpp:158 mouse.cpp:169 mouse.cpp:178
 #: mouse.cpp:187
 msgid "Activate and raise"
-msgstr "Активизировать и наверх"
+msgstr "п░п╨я┌п╦п╡п╦п╥п╦я─п╬п╡п╟я┌я▄ п╦ п╫п╟п╡п╣я─я┘"
 
 #: mouse.cpp:143 mouse.cpp:151 mouse.cpp:159
 msgid "Activate and lower"
-msgstr "Активизировать и вниз"
+msgstr "п░п╨я┌п╦п╡п╦п╥п╦я─п╬п╡п╟я┌я▄ п╦ п╡п╫п╦п╥"
 
 #: mouse.cpp:144 mouse.cpp:152 mouse.cpp:160 mouse.cpp:168 mouse.cpp:177
 #: mouse.cpp:186
 msgid "Activate"
-msgstr "Активизировать"
+msgstr "п░п╨я┌п╦п╡п╦п╥п╦я─п╬п╡п╟я┌я▄"
 
 #: mouse.cpp:166 mouse.cpp:175 mouse.cpp:184
 msgid "Activate, raise and pass click"
-msgstr "Активизировать, наверх и передать щелчок"
+msgstr "п░п╨я┌п╦п╡п╦п╥п╦я─п╬п╡п╟я┌я▄, п╫п╟п╡п╣я─я┘ п╦ п©п╣я─п╣п╢п╟я┌я▄ я┴п╣п╩я┤п╬п╨"
 
 #: mouse.cpp:167 mouse.cpp:176 mouse.cpp:185
 msgid "Activate and pass click"
-msgstr "Активизировать и передать щелчок"
+msgstr "п░п╨я┌п╦п╡п╦п╥п╦я─п╬п╡п╟я┌я▄ п╦ п©п╣я─п╣п╢п╟я┌я▄ я┴п╣п╩я┤п╬п╨"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
 msgid "Move"
-msgstr "Перемещать"
+msgstr "п÷п╣я─п╣п╪п╣я┴п╟я┌я▄"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
-msgstr "Изменить размер"
+msgstr "п≤п╥п╪п╣п╫п╦я┌я▄ я─п╟п╥п╪п╣я─"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr "Клавиатура и мышь"
+msgstr "п п╩п╟п╡п╦п╟я┌я┐я─п╟ п╦ п╪я▀я┬я▄"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab переключает рабочие столы"
+msgstr "Ctrl-Tab п©п╣я─п╣п╨п╩я▌я┤п╟п╣я┌ я─п╟п╠п╬я┤п╦п╣ я│я┌п╬п╩я▀"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-Tab ограничен в задачами текущего рабочего стола"
+msgstr "Alt-Tab п╬пЁя─п╟п╫п╦я┤п╣п╫ п╡ п╥п╟п╢п╟я┤п╟п╪п╦ я┌п╣п╨я┐я┴п╣пЁп╬ я─п╟п╠п╬я┤п╣пЁп╬ я│я┌п╬п╩п╟"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr "Режим Alt-Tab:"
+msgstr "п═п╣п╤п╦п╪ Alt-Tab:"
 
 #: advanced.cpp:63
 msgid "KDE"
@@ -439,44 +439,44 @@ msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
-msgstr "Перехватывать правую кнопку мыши"
+msgstr "п÷п╣я─п╣я┘п╡п╟я┌я▀п╡п╟я┌я▄ п©я─п╟п╡я┐я▌ п╨п╫п╬п©п╨я┐ п╪я▀я┬п╦"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr "Фильтры"
+msgstr "п╓п╦п╩я▄я┌я─я▀"
 
 #: advanced.cpp:98
 msgid "Windows will:"
-msgstr "Окна будут:"
+msgstr "п·п╨п╫п╟ п╠я┐п╢я┐я┌:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "иметь минимальное обрамление"
+msgstr "п╦п╪п╣я┌я▄ п╪п╦п╫п╦п╪п╟п╩я▄п╫п╬п╣ п╬п╠я─п╟п╪п╩п╣п╫п╦п╣"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr "не иметь обрамления"
+msgstr "п╫п╣ п╦п╪п╣я┌я▄ п╬п╠я─п╟п╪п╩п╣п╫п╦я▐"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr "никогда не получать фокус"
+msgstr "п╫п╦п╨п╬пЁп╢п╟ п╫п╣ п©п╬п╩я┐я┤п╟я┌я▄ я└п╬п╨я┐я│"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "запускаться как Прилепленные"
+msgstr "п╥п╟п©я┐я│п╨п╟я┌я▄я│я▐ п╨п╟п╨ п÷я─п╦п╩п╣п©п╩п╣п╫п╫я▀п╣"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr "исключены из управления сеансами"
+msgstr "п╦я│п╨п╩я▌я┤п╣п╫я▀ п╦п╥ я┐п©я─п╟п╡п╩п╣п╫п╦я▐ я│п╣п╟п╫я│п╟п╪п╦"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr "если они соответствуют:"
+msgstr "п╣я│п╩п╦ п╬п╫п╦ я│п╬п╬я┌п╡п╣я┌я│я┌п╡я┐я▌я┌:"
 
 #: advanced.cpp:121
 msgid "Titles"
-msgstr "Заголовки"
+msgstr "п≈п╟пЁп╬п╩п╬п╡п╨п╦"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr "Классы"
+msgstr "п п╩п╟я│я│я▀"

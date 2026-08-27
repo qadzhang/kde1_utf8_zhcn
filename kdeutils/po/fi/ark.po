@@ -11,12 +11,12 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: adddlg.cc:11
 msgid "Add File Options"
-msgstr "Tiedostonlis‰yksen asetukset"
+msgstr "Tiedostonlis√§yksen asetukset"
 
 #: adddlg.cc:21
 msgid "Store Full Path"
@@ -24,7 +24,7 @@ msgstr "Tallenna koko polku"
 
 #: adddlg.cc:24
 msgid "Only Add Newer Files"
-msgstr "Lis‰‰ vain uudet"
+msgstr "Lis√§√§ vain uudet"
 
 #: extractdlg.cc:14
 msgid "Extract"
@@ -40,7 +40,7 @@ msgstr "Purkuasetukset"
 
 #: extractdlg.cc:52
 msgid "Preserve Permissions"
-msgstr "S‰ilyt‰ oikeudet"
+msgstr "S√§ilyt√§ oikeudet"
 
 #: extractdlg.cc:57
 msgid "Filenames to Lowercase"
@@ -76,7 +76,7 @@ msgstr "P&ura..."
 
 #: arkwidget.cc:80
 msgid "&View file"
-msgstr "&N‰yt‰ tiedosto"
+msgstr "&N√§yt√§ tiedosto"
 
 #: arkwidget.cc:82
 msgid "&Delete file"
@@ -92,7 +92,7 @@ msgstr "Aseta &Tar-ohjelma..."
 
 #: arkwidget.cc:86
 msgid "&File Adding Options..."
-msgstr "&Tiedostonlis‰yksen asetukset..."
+msgstr "&Tiedostonlis√§yksen asetukset..."
 
 #: arkwidget.cc:97
 msgid "File Operations"
@@ -104,7 +104,7 @@ msgstr "Pura..."
 
 #: arkwidget.cc:100
 msgid "View file"
-msgstr "N‰yt‰ tiedosto"
+msgstr "N√§yt√§ tiedosto"
 
 #: arkwidget.cc:102
 msgid "Delete file"
@@ -128,7 +128,7 @@ msgstr "Tervetuloa arkkiin..."
 
 #: arkwidget.cc:235
 msgid "Can't create archive of that type"
-msgstr "En voi luoda t‰m‰ntyyppist‰ arkistoa"
+msgstr "En voi luoda t√§m√§ntyyppist√§ arkistoa"
 
 #: arkwidget.cc:257
 msgid "Create or open an archive first"
@@ -136,7 +136,7 @@ msgstr "Luo tai avaa paketti ensin"
 
 #: arkwidget.cc:300
 msgid "Can't add directories with this archive type"
-msgstr "En voi lis‰t‰ hakemistoja t‰h‰n arkistotyyppiin"
+msgstr "En voi lis√§t√§ hakemistoja t√§h√§n arkistotyyppiin"
 
 #: arkwidget.cc:302
 msgid "Error saving to archive"
@@ -148,7 +148,7 @@ msgstr "Arkiston hakemisto"
 
 #: arkwidget.cc:325
 msgid "What runs GNU tar:"
-msgstr "Mik‰ suorittaa GNU tarrin:"
+msgstr "Mik√§ suorittaa GNU tarrin:"
 
 #: arkwidget.cc:376 arkwidget.cc:578
 msgid "Unknown archive format"

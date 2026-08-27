@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: KAMenu.cpp:75
 msgid "O&pen in editor"
-msgstr "Åpne i &redigerer"
+msgstr "Ã…pne i &redigerer"
 
 #: KAMenu.cpp:76 KAView.cpp:154
 msgid "&Open Dir"
-msgstr "Å&pne katalog"
+msgstr "Ã…&pne katalog"
 
 #: KAMenu.cpp:77 KAView.cpp:155
 msgid "&Download..."
@@ -51,23 +51,23 @@ msgstr "&Understreng"
 
 #: KAMenu.cpp:102
 msgid "Substring &case insensitive"
-msgstr "Understreng sørrelseufølsom"
+msgstr "Understreng sÃ¸rrelseufÃ¸lsom"
 
 #: KAMenu.cpp:103
 msgid "&Regular expression"
-msgstr "&Regulært uttrykk"
+msgstr "&RegulÃ¦rt uttrykk"
 
 #: KAMenu.cpp:104 KASettings.cpp:422
 msgid "Exact, then substring"
-msgstr "Pakk ut, så understreng"
+msgstr "Pakk ut, sÃ¥ understreng"
 
 #: KAMenu.cpp:105
 msgid "Exact, then substring case ins."
-msgstr "Pakk ut, så understreng sørrelseufølsom"
+msgstr "Pakk ut, sÃ¥ understreng sÃ¸rrelseufÃ¸lsom"
 
 #: KAMenu.cpp:106 KASettings.cpp:424
 msgid "Exact, then regular expression"
-msgstr "Pakk ut, så rekulært uttrykk"
+msgstr "Pakk ut, sÃ¥ rekulÃ¦rt uttrykk"
 
 #: KAMenu.cpp:114
 msgid "n&ormal"
@@ -99,11 +99,11 @@ msgstr "Archie-&tjener"
 
 #: KAMenu.cpp:129
 msgid "Search&mode"
-msgstr "Søke&modus"
+msgstr "SÃ¸ke&modus"
 
 #: KAMenu.cpp:130
 msgid "&Nicelevel"
-msgstr "&Finnivå"
+msgstr "&FinnivÃ¥"
 
 #: KAMenu.cpp:132
 msgid "&All..."
@@ -139,7 +139,7 @@ msgstr "med d&ato"
 
 #: KAMenu.cpp:163
 msgid "by &Filesize"
-msgstr "med &filstørrelse"
+msgstr "med &filstÃ¸rrelse"
 
 #: KAMenu.cpp:169
 msgid "KArchie ver. "
@@ -149,7 +149,7 @@ msgstr "Archie ver. "
 msgid ""
 "\n"
 "\n"
-"by Jörg Habenicht <j.habenicht@europemail.com>\n"
+"by JÃ¶rg Habenicht <j.habenicht@europemail.com>\n"
 "\n"
 "based on the work of:\n"
 "  - archie prospero client by\n"
@@ -162,16 +162,16 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"av Jörg Habenicht <j.habenicht@europemail.com>\n"
+"av JÃ¶rg Habenicht <j.habenicht@europemail.com>\n"
 "\n"
-"basert på arbeid fra:\n"
+"basert pÃ¥ arbeid fra:\n"
 "  - archie prospero-klient av\n"
 "      Clifford Neuman and\n"
 "      Brendan Kehoe (brendan@cygnus.com)\n"
 "  - og xarchie av\n"
 "      George Ferguson (ferguson@cs.rochester.edu)\n"
 "(Se README-filene og copyright.h).\n"
-"Min egen kode er basert på GPL"
+"Min egen kode er basert pÃ¥ GPL"
 
 #: KAMenu.cpp:184
 msgid "&Settings"
@@ -179,7 +179,7 @@ msgstr "&Innstillinger"
 
 #: KAMenu.cpp:185
 msgid "&Query"
-msgstr "&Spørring"
+msgstr "&SpÃ¸rring"
 
 #: KAMenu.cpp:186
 msgid "S&ort"
@@ -187,11 +187,11 @@ msgstr "S&orter"
 
 #: KAQuery.cpp:180
 msgid "Query setup"
-msgstr "Spør etter oppsett"
+msgstr "SpÃ¸r etter oppsett"
 
 #: KAQuery.cpp:289
 msgid "Query aborted"
-msgstr "Spørring avbrutt"
+msgstr "SpÃ¸rring avbrutt"
 
 #: KAQuery.cpp:296 KArchie.cpp:793
 msgid "Success"
@@ -203,11 +203,11 @@ msgstr "Ukjent port "
 
 #: KAQuery.cpp:298
 msgid "Can't open local UDP port"
-msgstr "Kan ikke åpne lokal UDP-port"
+msgstr "Kan ikke Ã¥pne lokal UDP-port"
 
 #: KAQuery.cpp:299
 msgid "Can't resolve hostname"
-msgstr "Kan ikke løse vertsnavn"
+msgstr "Kan ikke lÃ¸se vertsnavn"
 
 #: KAQuery.cpp:300
 msgid "Didn't send entire message"
@@ -239,7 +239,7 @@ msgstr "Ersatt eksisterende lenke"
 
 #: KAQuery.cpp:308
 msgid "Prv entry not in dir->ulinks"
-msgstr "Forrige oppføring ikke i dir->ulinks"
+msgstr "Forrige oppfÃ¸ring ikke i dir->ulinks"
 
 #: KAQuery.cpp:309
 msgid "Temporary not found"
@@ -259,7 +259,7 @@ msgstr "Oppgitt navnemellomrom ikke funnet"
 
 #: KAQuery.cpp:313
 msgid "File access method not supported"
-msgstr "Filtilgangsmetode ikke støttet"
+msgstr "Filtilgangsmetode ikke stÃ¸ttet"
 
 #: KAQuery.cpp:314
 msgid "Delete cached copy on close"
@@ -311,7 +311,7 @@ msgstr "Symbolsk lenke fulgt for dypt"
 
 #: KAQuery.cpp:328
 msgid "Can't read environment"
-msgstr "Kunne ikke lese miljø"
+msgstr "Kunne ikke lese miljÃ¸"
 
 #: KAQuery.cpp:329
 msgid "Can't traverse an external file"
@@ -319,7 +319,7 @@ msgstr "Kan ikke krysse ekstern fil"
 
 #: KAQuery.cpp:330
 msgid "Exceeded max forward depth"
-msgstr "Støtet på maks antall vidresendinger"
+msgstr "StÃ¸tet pÃ¥ maks antall vidresendinger"
 
 #: KAQuery.cpp:331
 msgid "Authentication required"
@@ -347,7 +347,7 @@ msgstr "Identisk lenke eksisterer allerede"
 
 #: KAQuery.cpp:338
 msgid "Command not implemented on server"
-msgstr "Kommando ikke søttet på tjener"
+msgstr "Kommando ikke sÃ¸ttet pÃ¥ tjener"
 
 #: KAQuery.cpp:339
 msgid "Bad format for response"
@@ -383,11 +383,11 @@ msgstr "Ugjenkjennelig linje i svar fra tjener"
 
 #: KAQuery.cpp:409
 msgid "Query running"
-msgstr "Spørring kjører"
+msgstr "SpÃ¸rring kjÃ¸rer"
 
 #: KAQuery.cpp:453
 msgid "Query finished"
-msgstr "Spørring fullført"
+msgstr "SpÃ¸rring fullfÃ¸rt"
 
 #: KASettings.cpp:59
 msgid "&Host"
@@ -399,11 +399,11 @@ msgstr "&Tidsbegrensning (sekunder)"
 
 #: KASettings.cpp:83
 msgid "Maximal &retries"
-msgstr "Maks f&orskøk"
+msgstr "Maks f&orskÃ¸k"
 
 #: KASettings.cpp:284
 msgid "&Nice Level"
-msgstr "&Hyggelighetsnivå"
+msgstr "&HyggelighetsnivÃ¥"
 
 #: KASettings.cpp:291
 msgid "max. &Hits"
@@ -419,15 +419,15 @@ msgstr "Understreng"
 
 #: KASettings.cpp:420
 msgid "Substring case insensitive"
-msgstr "Understreng sørrelseufølsom"
+msgstr "Understreng sÃ¸rrelseufÃ¸lsom"
 
 #: KASettings.cpp:421
 msgid "Regular expression"
-msgstr "Regulært uttrykk"
+msgstr "RegulÃ¦rt uttrykk"
 
 #: KASettings.cpp:423
 msgid "Exact, then substring case insensitive"
-msgstr "Pakk ut, så understreng sørrelseufølsom"
+msgstr "Pakk ut, sÃ¥ understreng sÃ¸rrelseufÃ¸lsom"
 
 #: KASettings.cpp:427
 msgid "Normal"
@@ -459,7 +459,7 @@ msgstr "Archie-tjenerinnstillinger"
 
 #: KASettings.cpp:543
 msgid "Search init"
-msgstr "Søkestart"
+msgstr "SÃ¸kestart"
 
 #: KASettings.cpp:567
 msgid "Reset"
@@ -471,7 +471,7 @@ msgstr "    0 treff"
 
 #: KAStatusBar.cpp:51
 msgid "    0. try"
-msgstr "    0. forsøk"
+msgstr "    0. forsÃ¸k"
 
 #: KAStatusBar.cpp:52
 msgid "Host: none                               "
@@ -504,15 +504,15 @@ msgstr "Fremgang: %d"
 #: KAStatusBar.cpp:121
 #, c-format
 msgid "%d try."
-msgstr "%d. forsøk."
+msgstr "%d. forsÃ¸k."
 
 #: KAView.cpp:66
 msgid "Searchstring, press <ENTER> to start search"
-msgstr "Søkestreng, trykk linjeskift for å starte"
+msgstr "SÃ¸kestreng, trykk linjeskift for Ã¥ starte"
 
 #: KAView.cpp:68
 msgid "Search &Term"
-msgstr "Søke&term"
+msgstr "SÃ¸ke&term"
 
 #: KAView.cpp:134
 msgid "Host"
@@ -536,7 +536,7 @@ msgstr "Fil:"
 
 #: KAView.cpp:274
 msgid "Size:"
-msgstr "Størrelse:"
+msgstr "StÃ¸rrelse:"
 
 #: KAView.cpp:276
 msgid "Mode:"
@@ -552,12 +552,12 @@ msgid ""
 "Couldn't open \n"
 "\"%s\""
 msgstr ""
-"Kunne ikke åpne \n"
+"Kunne ikke Ã¥pne \n"
 "\"%s\""
 
 #: KArchie.cpp:446 KArchie.cpp:488
 msgid "KArchie: bad file"
-msgstr "KArchie: dårlig fil"
+msgstr "KArchie: dÃ¥rlig fil"
 
 #: KArchie.cpp:720
 msgid "Malformed url"
@@ -565,7 +565,7 @@ msgstr "Misdannet url"
 
 #: KArchie.cpp:724
 msgid "Maybe bad list entry, please select an other file"
-msgstr "Kanskje feil listeoppføring, vennligst velg en annen fil"
+msgstr "Kanskje feil listeoppfÃ¸ring, vennligst velg en annen fil"
 
 #: KArchie.cpp:725
 msgid "KArchie: bad URL"
@@ -602,5 +602,5 @@ msgid ""
 "or do a query."
 msgstr ""
 "Ingen fil valgt !\n"
-"Vennligst velg en fil i listen over spørringsresultater\n"
-"eller gjør en spørring."
+"Vennligst velg en fil i listen over spÃ¸rringsresultater\n"
+"eller gjÃ¸r en spÃ¸rring."

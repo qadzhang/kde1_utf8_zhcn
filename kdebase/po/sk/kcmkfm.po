@@ -9,12 +9,12 @@ msgstr ""
 "Last-Translator: Juraj Bednar <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:61
 msgid "&Font"
-msgstr "&PÌsmo"
+msgstr "&P√≠smo"
 
 #: main.cpp:63
 msgid "&Color"
@@ -22,7 +22,7 @@ msgstr "&Farba"
 
 #: main.cpp:65
 msgid "&Other"
-msgstr "&OstatnÈ"
+msgstr "&Ostatn√©"
 
 #: main.cpp:68
 msgid "&Proxy"
@@ -49,7 +49,7 @@ msgstr "&Ikonky plochy"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"pouæitie: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"pou≈æitie: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -57,31 +57,31 @@ msgstr "Nastavenie KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr "Mal˝"
+msgstr "Mal√Ω"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr "Stredn˝"
+msgstr "Stredn√Ω"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr "Veµk˝"
+msgstr "Veƒæk√Ω"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr "©tandardnÈ pÌsmo"
+msgstr "≈†tandardn√© p√≠smo"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr "FixovanÈ pÌsmo"
+msgstr "Fixovan√© p√≠smo"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "©tandardn· znakov· sada"
+msgstr "≈†tandardn√° znakov√° sada"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "PouæÌvaª znak. sadu jazyka"
+msgstr "Pou≈æ√≠va≈• znak. sadu jazyka"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
@@ -101,27 +101,27 @@ msgstr "Farba nasl. linky:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Zmeniª kurzor ponad linku"
+msgstr "Zmeni≈• kurzor ponad linku"
 
 #: htmlopts.cpp:384
 msgid "Underline links"
-msgstr "Podtrhn˙ª linky"
+msgstr "Podtrhn√∫≈• linky"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr "Vædy pouæÌvaª moje farby"
+msgstr "V≈ædy pou≈æ√≠va≈• moje farby"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "&Dovoliª pre URL πpecifickÈ nast."
+msgstr "&Dovoli≈• pre URL ≈°pecifick√© nast."
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "Stromov˝ &pohµad nasleduje navig·ciu"
+msgstr "Stromov√Ω &pohƒæad nasleduje navig√°ciu"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr "Termin·l"
+msgstr "Termin√°l"
 
 #: miscopts.cpp:57
 msgid "Editor"
@@ -129,11 +129,11 @@ msgstr "Editor"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "Nezabudnite uloæiª vaπe nastavenie!"
+msgstr "Nezabudnite ulo≈æi≈• va≈°e nastavenie!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr "PouæÌvaª proxy"
+msgstr "Pou≈æ√≠va≈• proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
@@ -149,19 +149,19 @@ msgstr "FTP Proxy:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr "Æiadne proxy pre:"
+msgstr "≈Ωiadne proxy pre:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr "Akceptovaª jazyky:"
+msgstr "Akceptova≈• jazyky:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "Akceptovaª znak. sady:"
+msgstr "Akceptova≈• znak. sady:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr "Predpokladaª HTML"
+msgstr "Predpoklada≈• HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
@@ -169,55 +169,55 @@ msgstr "Na serveri:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "meno uæÌv.:"
+msgstr "meno u≈æ√≠v.:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr "&Pridaª"
+msgstr "&Prida≈•"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr "Zn·me v‰zby:"
+msgstr "Zn√°me v√§zby:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "Povoliª Cooki&es"
+msgstr "Povoli≈• Cooki&es"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "©tandardn˝ typ akcept·cie"
+msgstr "≈†tandardn√Ω typ akcept√°cie"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr "Akceptovaª"
+msgstr "Akceptova≈•"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr "Op˝taª sa"
+msgstr "Op√Ωta≈• sa"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr "Odmietnuª"
+msgstr "Odmietnu≈•"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr "Pre domÈnu πpecifickÈ nastavenie:"
+msgstr "Pre dom√©nu ≈°pecifick√© nastavenie:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Zmeniª typ akcept·cie domÈny"
+msgstr "Zmeni≈• typ akcept√°cie dom√©ny"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "Najprv musÌte zadaª domÈnu !"
+msgstr "Najprv mus√≠te zada≈• dom√©nu !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Horizont·lny odstup mrieæky:"
+msgstr "Horizont√°lny odstup mrie≈æky:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Vertik·lny odstup mrieæky:"
+msgstr "Vertik√°lny odstup mrie≈æky:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
@@ -233,4 +233,4 @@ msgstr "Pozadie ikonky:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Ukazovaª &skrytÈ s˙bory na ploche"
+msgstr "Ukazova≈• &skryt√© s√∫bory na ploche"

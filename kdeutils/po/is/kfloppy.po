@@ -10,17 +10,17 @@ msgstr ""
 
 #: about.cpp:40
 msgid "About KDE Floppy Formatter"
-msgstr "Um KDE diskettutólið"
+msgstr "Um KDE diskettutÃ³liÃ°"
 
 #: about.cpp:49 floppy.cpp:295 floppy.cpp:342 floppy.cpp:358 floppy.cpp:374
 #: floppy.cpp:481 floppy.cpp:584 floppy.cpp:598 floppy.cpp:713 floppy.cpp:727
 #: floppy.cpp:774 floppy.cpp:783 floppy.cpp:890 floppy.cpp:911 floppy.cpp:935
 msgid "KFloppy"
-msgstr "Diskettutól"
+msgstr "DiskettutÃ³l"
 
 #: about.cpp:54
 msgid "Version "
-msgstr "Útgáfa"
+msgstr "ÃštgÃ¡fa"
 
 #: floppy.cpp:56
 msgid "Floppy Drive:"
@@ -28,23 +28,23 @@ msgstr "Diskettudrif:"
 
 #: floppy.cpp:65
 msgid "Density:"
-msgstr "Þéttleiki:"
+msgstr "ÃžÃ©ttleiki:"
 
 #: floppy.cpp:74
 msgid "File System:"
-msgstr "Skráarkerfi:"
+msgstr "SkrÃ¡arkerfi:"
 
 #: floppy.cpp:108 floppy.cpp:414
 msgid "Format"
-msgstr "Forsníða"
+msgstr "ForsnÃ­Ã°a"
 
 #: floppy.cpp:131
 msgid "Quick Erase"
-msgstr "Tæma hratt"
+msgstr "TÃ¦ma hratt"
 
 #: floppy.cpp:136
 msgid "Full Format"
-msgstr "Nákvæm forsníðun"
+msgstr "NÃ¡kvÃ¦m forsnÃ­Ã°un"
 
 #: floppy.cpp:142
 msgid "Create Label:"
@@ -56,7 +56,7 @@ msgstr "KDE disketta"
 
 #: floppy.cpp:162
 msgid "KDE Floppy Formatter"
-msgstr "KDE diskettutól"
+msgstr "KDE diskettutÃ³l"
 
 #: floppy.cpp:168 floppy.cpp:222 floppy.cpp:240 floppy.cpp:255 floppy.cpp:273
 #: floppy.cpp:1016
@@ -74,9 +74,9 @@ msgid ""
 "Make sure that the device exists and that\n"
 "you have write permission to it."
 msgstr ""
-"Gat ekki opnað %s\n"
-"Vertu viss um að tækið sé til og að þú hafir\n"
-"skrifréttindi fyrir það."
+"Gat ekki opnaÃ° %s\n"
+"Vertu viss um aÃ° tÃ¦kiÃ° sÃ© til og aÃ° Ã¾Ãº hafir\n"
+"skrifrÃ©ttindi fyrir Ã¾aÃ°."
 
 #: floppy.cpp:339
 msgid ""
@@ -86,7 +86,7 @@ msgid ""
 msgstr ""
 "Fann ekki kfdformat\n"
 "kfdformat er hluti af KFloppy pakkanum.\n"
-"Vinsamlegast settu KFloppy upp rétt!"
+"Vinsamlegast settu KFloppy upp rÃ©tt!"
 
 #: floppy.cpp:355
 msgid ""
@@ -96,7 +96,7 @@ msgid ""
 msgstr ""
 "Fann ekki kmke2fs\n"
 "kmke2fs er hluti af KFloppy pakkanum.\n"
-"Vinsamlegast settu KFloppy upp rétt!"
+"Vinsamlegast settu KFloppy upp rÃ©tt!"
 
 #: floppy.cpp:370
 msgid ""
@@ -106,15 +106,15 @@ msgid ""
 msgstr ""
 "Fann ekki kmkdosfs\n"
 "kmkdosfs er hluti af KFloppy pakkanum.\n"
-"Vinsamlegast settu KFloppy upp rétt!"
+"Vinsamlegast settu KFloppy upp rÃ©tt!"
 
 #: floppy.cpp:430
 msgid "Abort"
-msgstr "Hætta við"
+msgstr "HÃ¦tta viÃ°"
 
 #: floppy.cpp:478
 msgid "Cannot start a new program: fork() failed."
-msgstr "Gat ekki ræst nýtt forrit: fork() mistókst."
+msgstr "Gat ekki rÃ¦st nÃ½tt forrit: fork() mistÃ³kst."
 
 #: floppy.cpp:578 floppy.cpp:706
 msgid ""
@@ -122,9 +122,9 @@ msgid ""
 "Please insert a floppy and make sure that you\n"
 "have selected a valid floppy drive.\n"
 msgstr ""
-"Náði ekki sambandi við diskettu eða drif.\n"
-"Vinsamlegast settu diskettu í drifið, og athugaðu\n"
-"hvort þú hafir valið rétt drif.\n"
+"NÃ¡Ã°i ekki sambandi viÃ° diskettu eÃ°a drif.\n"
+"Vinsamlegast settu diskettu Ã­ drifiÃ°, og athugaÃ°u\n"
+"hvort Ã¾Ãº hafir valiÃ° rÃ©tt drif.\n"
 
 #: floppy.cpp:593
 #, c-format
@@ -132,13 +132,13 @@ msgid ""
 "Cannot format: %s\n"
 "%s"
 msgstr ""
-"Gat ekki forsniðið: %s\n"
+"Gat ekki forsniÃ°iÃ°: %s\n"
 "%s"
 
 #: floppy.cpp:640
 #, c-format
 msgid "Block %d is bad. Continuing ..."
-msgstr "Blokk %d er skemmd.  Held áfram ..."
+msgstr "Blokk %d er skemmd.  Held Ã¡fram ..."
 
 #: floppy.cpp:723
 #, c-format
@@ -146,7 +146,7 @@ msgid ""
 "Cannot create a filesystem on: %s\n"
 "%s"
 msgstr ""
-"Gat ekki smíðað skráarkerfi á: %s\n"
+"Gat ekki smÃ­Ã°aÃ° skrÃ¡arkerfi Ã¡: %s\n"
 "%s"
 
 #: floppy.cpp:759
@@ -156,33 +156,33 @@ msgid ""
 "Blocks marked bad: %d\n"
 "Raw Capacity: %d\n"
 msgstr ""
-"Forsníðun diskettunnar tókst.\n"
+"ForsnÃ­Ã°un diskettunnar tÃ³kst.\n"
 "Merkti %d skemmdar blokkir.\n"
-"Hrá geymslugeta: %d\n"
+"HrÃ¡ geymslugeta: %d\n"
 
 #: floppy.cpp:780
 msgid "All files were sucessfully erased."
-msgstr "Það tókst að eyða öllum skrám."
+msgstr "ÃžaÃ° tÃ³kst aÃ° eyÃ°a Ã¶llum skrÃ¡m."
 
 #: floppy.cpp:838
 msgid "Creating Filesystem ..."
-msgstr "Smíða skráarkerfi ..."
+msgstr "SmÃ­Ã°a skrÃ¡arkerfi ..."
 
 #: floppy.cpp:842
 msgid "Verifying ..."
-msgstr "Staðfesti ..."
+msgstr "StaÃ°festi ..."
 
 #: floppy.cpp:887
 msgid ""
 "Cannot start a new program\n"
 "fork() failed."
 msgstr ""
-"Gat ekki ræst nýtt forrit\n"
-"fork() mistókst."
+"Gat ekki rÃ¦st nÃ½tt forrit\n"
+"fork() mistÃ³kst."
 
 #: floppy.cpp:913
 msgid "Error while trying to determine whether floppy is mounted\n"
-msgstr "Villa kom upp við athugun hvort diskettan væri tengd.\n"
+msgstr "Villa kom upp viÃ° athugun hvort diskettan vÃ¦ri tengd.\n"
 
 #: floppy.cpp:930
 #, c-format
@@ -191,4 +191,4 @@ msgid ""
 "Please unmount the floppy first."
 msgstr ""
 "%s er tengd.\n"
-"Vinsamlegast aftengdu hana frá trénu fyrst."
+"Vinsamlegast aftengdu hana frÃ¡ trÃ©nu fyrst."

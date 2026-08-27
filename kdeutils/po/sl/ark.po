@@ -10,12 +10,12 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: adddlg.cc:11
 msgid "Add File Options"
-msgstr "Dodaj datoteène opcije"
+msgstr "Dodaj datoteÄne opcije"
 
 #: adddlg.cc:21
 msgid "Store Full Path"
@@ -23,11 +23,11 @@ msgstr "Shrani celo pot"
 
 #: adddlg.cc:24
 msgid "Only Add Newer Files"
-msgstr "Dodaj le novej¹e datoteke"
+msgstr "Dodaj le novejÅ¡e datoteke"
 
 #: extractdlg.cc:14
 msgid "Extract"
-msgstr "Izvleèek"
+msgstr "IzvleÄek"
 
 #: extractdlg.cc:28
 msgid "Destination"
@@ -35,7 +35,7 @@ msgstr "Cilj"
 
 #: extractdlg.cc:44
 msgid "Extract Options"
-msgstr "Opcije izvleèka"
+msgstr "Opcije izvleÄka"
 
 #: extractdlg.cc:52
 msgid "Preserve Permissions"
@@ -43,7 +43,7 @@ msgstr "Ohrani dovoljenja"
 
 #: extractdlg.cc:57
 msgid "Filenames to Lowercase"
-msgstr "Datoteèna imena spremeni v male èrke"
+msgstr "DatoteÄna imena spremeni v male Ärke"
 
 #: extractdlg.cc:68
 msgid "All Files"
@@ -59,7 +59,7 @@ msgstr "Vzorec"
 
 #: extractdlg.cc:190
 msgid "Extract To"
-msgstr "Izvleèi v"
+msgstr "IzvleÄi v"
 
 #: arkwidget.cc:71
 msgid "&New..."
@@ -68,11 +68,11 @@ msgstr "&Nov..."
 #: arkwidget.cc:74
 #, fuzzy
 msgid "&Extract To..."
-msgstr "Izvleèi v..."
+msgstr "IzvleÄi v..."
 
 #: arkwidget.cc:79
 msgid "E&xtract..."
-msgstr "I&zvleèek..."
+msgstr "I&zvleÄek..."
 
 #: arkwidget.cc:80
 msgid "&View file"
@@ -81,7 +81,7 @@ msgstr "&Poglej datoteko"
 #: arkwidget.cc:82
 #, fuzzy
 msgid "&Delete file"
-msgstr "Zbri¹i datoteko"
+msgstr "ZbriÅ¡i datoteko"
 
 #: arkwidget.cc:84
 msgid "&Set Archive Directory..."
@@ -101,7 +101,7 @@ msgstr "Operacije z datotekami"
 
 #: arkwidget.cc:99
 msgid "Extract..."
-msgstr "Izvleèek..."
+msgstr "IzvleÄek..."
 
 #: arkwidget.cc:100
 msgid "View file"
@@ -109,7 +109,7 @@ msgstr "Poglej datoteko"
 
 #: arkwidget.cc:102
 msgid "Delete file"
-msgstr "Zbri¹i datoteko"
+msgstr "ZbriÅ¡i datoteko"
 
 #: arkwidget.cc:114
 #, fuzzy
@@ -118,7 +118,7 @@ msgstr "Pojdi v arhivski imenik"
 
 #: arkwidget.cc:117
 msgid "Extract To.."
-msgstr "Izvleèi v..."
+msgstr "IzvleÄi v..."
 
 #: arkwidget.cc:121
 msgid "Exit"
@@ -126,7 +126,7 @@ msgstr "Izhod"
 
 #: arkwidget.cc:128
 msgid "Welcome to ark..."
-msgstr "Dobrodo¹li v ark..."
+msgstr "DobrodoÅ¡li v ark..."
 
 #: arkwidget.cc:235
 msgid "Can't create archive of that type"
@@ -155,7 +155,7 @@ msgstr "Kaj poganja GNU tar:"
 #: arkwidget.cc:376 arkwidget.cc:578
 #, fuzzy
 msgid "Unknown archive format"
-msgstr "Neznan format arhiva ali po¹kodovan arhiv"
+msgstr "Neznan format arhiva ali poÅ¡kodovan arhiv"
 
 #: arkwidget.cc:396
 msgid "Size"

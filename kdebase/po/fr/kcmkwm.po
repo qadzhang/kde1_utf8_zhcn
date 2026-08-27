@@ -9,9 +9,9 @@ msgstr ""
 "PO-Revision-Date: 1999-02-03 19:00+0100\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
-"Language-Team: Français\n"
+"Language-Team: FranÃ§ais\n"
 "MIME-Version: 1.0\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:67
@@ -32,7 +32,7 @@ msgstr "&Souris"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr "&Avancé"
+msgstr "&AvancÃ©"
 
 #: main.cpp:86
 msgid ""
@@ -43,11 +43,11 @@ msgstr ""
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Style du gestionnaire de fenêtres"
+msgstr "Style du gestionnaire de fenÃªtres"
 
 #: titlebar.cpp:125
 msgid "Minimize"
-msgstr "Icônifier"
+msgstr "IcÃ´nifier"
 
 #: titlebar.cpp:129
 msgid "Maximize"
@@ -74,28 +74,28 @@ msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La partie gauche de la barre de titre est pleine...\n"
-"Désactivation du bouton \"Maximiser\".\n"
+"DÃ©sactivation du bouton \"Maximiser\".\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La partie droite de la barre de titre est pleine...\n"
-"Désactivation du bouton \"Maximiser\".\n"
+"DÃ©sactivation du bouton \"Maximiser\".\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La partie gauche de la barre de titre est pleine...\n"
-"Désactivation du bouton \"Icônifier\".\n"
+"DÃ©sactivation du bouton \"IcÃ´nifier\".\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La partie droite de la barre de titre est pleine...\n"
-"Désactivation du bouton \"Icônifier\".\n"
+"DÃ©sactivation du bouton \"IcÃ´nifier\".\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
@@ -103,15 +103,15 @@ msgstr "Alignement du Titre"
 
 #: titlebar.cpp:941
 msgid "Middle"
-msgstr "Centré"
+msgstr "CentrÃ©"
 
 #: titlebar.cpp:969
 msgid "Shaded Vertically"
-msgstr "Ombrée verticalement"
+msgstr "OmbrÃ©e verticalement"
 
 #: titlebar.cpp:975
 msgid "Shaded Horizontally"
-msgstr "Ombrée horizontalement"
+msgstr "OmbrÃ©e horizontalement"
 
 #: titlebar.cpp:984
 msgid "Plain"
@@ -123,7 +123,7 @@ msgstr "Image"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
-msgstr "Le titre actif a un cadre ombré"
+msgstr "Le titre actif a un cadre ombrÃ©"
 
 #: titlebar.cpp:1046
 msgid "Active pixmap:"
@@ -147,19 +147,19 @@ msgstr "Un double-clic sur le bouton gauche"
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
-msgstr "(Dé)Maximise"
+msgstr "(DÃ©)Maximise"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "(Dé)Masque"
+msgstr "(DÃ©)Masque"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
-msgstr "Icônifie"
+msgstr "IcÃ´nifie"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "(Dé)Cloue"
+msgstr "(DÃ©)Cloue"
 
 #: titlebar.cpp:1109
 msgid "Title animation"
@@ -171,7 +171,7 @@ msgstr "millisecondes"
 
 #: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
-msgstr "Configuration du gestionnaire de fenêtres - ERREUR"
+msgstr "Configuration du gestionnaire de fenÃªtres - ERREUR"
 
 #: titlebar.cpp:1369
 msgid ""
@@ -179,23 +179,23 @@ msgid ""
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
 "Une erreur s'est produite durant l'enregistrement\n"
-"des images de la barre de titre ! Vérifiez vos permissions."
+"des images de la barre de titre ! VÃ©rifiez vos permissions."
 
 #: windows.cpp:68
 msgid "Windows"
-msgstr "Fenêtres"
+msgstr "FenÃªtres"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "Maximisation verticale par défaut"
+msgstr "Maximisation verticale par dÃ©faut"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
-msgstr "Afficher le contenu de la fenêtre lors du déplacement"
+msgstr "Afficher le contenu de la fenÃªtre lors du dÃ©placement"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr "Afficher le contenu de la fenêtre lors du redimensionnement"
+msgstr "Afficher le contenu de la fenÃªtre lors du redimensionnement"
 
 #: windows.cpp:98
 msgid "Resize animation:"
@@ -211,7 +211,7 @@ msgstr "Rapide"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "Politique de placement des fenêtres"
+msgstr "Politique de placement des fenÃªtres"
 
 #: windows.cpp:134
 msgid "Smart"
@@ -227,7 +227,7 @@ msgstr "Interactive"
 
 #: windows.cpp:140
 msgid "Random"
-msgstr "Aléatoire"
+msgstr "AlÃ©atoire"
 
 #: windows.cpp:142
 msgid "Manual"
@@ -235,12 +235,12 @@ msgstr "Manuelle"
 
 #: windows.cpp:154
 #, c-format
-msgid ""
-"  Allowed overlap:\n"
-"(% of desktop space)"
-msgstr ""
-"  Chevauchement autorisé :\n"
-"(% de l'espace du bureau)"
+#~ msgid ""
+#~ "  Allowed overlap:\n"
+#~ "(% of desktop space)"
+#~ msgstr ""
+#~ "  Chevauchement autorisÃ© :\n"
+#~ "(% de l'espace du bureau)"
 
 #: windows.cpp:175
 msgid "Focus policy"
@@ -260,7 +260,7 @@ msgstr "Le focus classique suit la souris"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Focus classique relâché"
+msgstr "Focus classique relÃ¢chÃ©"
 
 #: windows.cpp:203
 msgid "Auto Raise"
@@ -272,7 +272,7 @@ msgstr "Cliquer pour placer dessus"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
-msgstr "Délai (ms)"
+msgstr "DÃ©lai (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -284,11 +284,11 @@ msgstr "Rendre actifs les bords du bureau"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Placer la souris au centre de l'écran après un changement de bureau"
+msgstr "Placer la souris au centre de l'Ã©cran aprÃ¨s un changement de bureau"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Délai avant un changement de bureau :"
+msgstr "DÃ©lai avant un changement de bureau :"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -307,7 +307,7 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Zone d'attraction des fenêtres :\n"
+"Zone d'attraction des fenÃªtres :\n"
 "       (pixels)"
 
 #: mouse.cpp:54
@@ -324,11 +324,11 @@ msgstr "Barre de titre et cadre :"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
-msgstr "Intérieur de fenêtre inactive :"
+msgstr "IntÃ©rieur de fenÃªtre inactive :"
 
 #: mouse.cpp:70
 msgid "Inner window, titlebar and frame:"
-msgstr "Intérieur de la fenêtre, barre de titre et cadre :"
+msgstr "IntÃ©rieur de la fenÃªtre, barre de titre et cadre :"
 
 #: mouse.cpp:74 mouse.cpp:86
 msgid "Left Button"
@@ -366,7 +366,7 @@ msgstr "Placer dessous"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
-msgstr "Menu des opérations"
+msgstr "Menu des opÃ©rations"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
@@ -401,7 +401,7 @@ msgstr "Activer et passer le clic"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
 msgid "Move"
-msgstr "Déplacer"
+msgstr "DÃ©placer"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
@@ -413,11 +413,11 @@ msgstr "Clavier et souris"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab fait défiler les bureaux"
+msgstr "Ctrl-Tab fait dÃ©filer les bureaux"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-Tab est limité au bureau courant"
+msgstr "Alt-Tab est limitÃ© au bureau courant"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
@@ -441,15 +441,15 @@ msgstr "Filtres"
 
 #: advanced.cpp:98
 msgid "Windows will:"
-msgstr "Les Fenêtres :"
+msgstr "Les FenÃªtres :"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "ont une décoration allégée (cadre simple)"
+msgstr "ont une dÃ©coration allÃ©gÃ©e (cadre simple)"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr "n'ont pas de décoration (aucun enrobage)"
+msgstr "n'ont pas de dÃ©coration (aucun enrobage)"
 
 #: advanced.cpp:106
 msgid "never gain focus"
@@ -457,7 +457,7 @@ msgstr "n'obtiennent jamais le focus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "démarrent clouées"
+msgstr "dÃ©marrent clouÃ©es"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
@@ -465,7 +465,7 @@ msgstr "sont exclues du gestionnaire de session"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr "si elles correspondent au(x) critère(s) :"
+msgstr "si elles correspondent au(x) critÃ¨re(s) :"
 
 #: advanced.cpp:121
 msgid "Titles"

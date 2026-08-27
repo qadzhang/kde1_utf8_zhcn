@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Alonso Lara <jlaram@nexo.es>\n"
 "Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kedit.cpp:85 kedit.cpp:1091
@@ -83,11 +83,11 @@ msgstr "&Reemplazar"
 
 #: kedit.cpp:268
 msgid "Spellcheck..."
-msgstr "Ortografía..."
+msgstr "OrtografÃ­a..."
 
 #: kedit.cpp:273
 msgid "&Goto Line..."
-msgstr "&Ir a la línea..."
+msgstr "&Ir a la lÃ­nea..."
 
 #: kedit.cpp:277
 msgid "&Font..."
@@ -103,7 +103,7 @@ msgstr "&Opciones KEdit..."
 
 #: kedit.cpp:286
 msgid "Auto &Indent"
-msgstr "Auto &Indentación"
+msgstr "Auto &IndentaciÃ³n"
 
 #: kedit.cpp:289
 msgid "&Tool Bar"
@@ -159,11 +159,11 @@ msgstr "Hecho"
 
 #: kedit.cpp:606
 msgid "Open Location:"
-msgstr "Abrir localización"
+msgstr "Abrir localizaciÃ³n"
 
 #: kedit.cpp:620
 msgid "Save to Location:"
-msgstr "Guardar en localización"
+msgstr "Guardar en localizaciÃ³n"
 
 #: kedit.cpp:646 kedit.cpp:709 kedit.cpp:738 kedit.cpp:801 kedit.cpp:1199
 msgid "Message"
@@ -175,7 +175,7 @@ msgid ""
 "Would you like to save it?"
 msgstr ""
 "Este documento ha sido modificado.\n"
-"¿Desea guardarlo?"
+"Â¿Desea guardarlo?"
 
 #: kedit.cpp:664 kedit.cpp:819
 msgid ""
@@ -183,7 +183,7 @@ msgid ""
 "Exit anyways?"
 msgstr ""
 "No puedo guardar el archivo.\n"
-"¿Salir de todas maneras?"
+"Â¿Salir de todas maneras?"
 
 #: kedit.cpp:710
 msgid ""
@@ -192,8 +192,8 @@ msgid ""
 "Quit anyways?"
 msgstr ""
 "Hay ventanas cuyo contenido ha sido modificado.\n"
-"Si sale ahora, perderá todos los cambios\n"
-"¿Salir igualmente?"
+"Si sale ahora, perderÃ¡ todos los cambios\n"
+"Â¿Salir igualmente?"
 
 #: kedit.cpp:739
 msgid ""
@@ -201,7 +201,7 @@ msgid ""
 "Continue anyways ?"
 msgstr ""
 "El documento actual ha sido modificado.\n"
-"¿Continuar de todos modos?"
+"Â¿Continuar de todos modos?"
 
 #: kedit.cpp:880
 #, c-format
@@ -228,16 +228,16 @@ msgstr ""
 
 #: kedit.cpp:1032
 msgid "Auto Indent Mode: On"
-msgstr "Auto indentación: Sí"
+msgstr "Auto indentaciÃ³n: SÃ­"
 
 #: kedit.cpp:1034
 msgid "Auto Indent Mode: Off"
-msgstr "Auto indentación: No"
+msgstr "Auto indentaciÃ³n: No"
 
 #: kedit.cpp:1130
 #, c-format
 msgid "Line: %d Col: %d"
-msgstr "Lín.: %d Col.: %d"
+msgstr "LÃ­n.: %d Col.: %d"
 
 #: filldlg.cpp:35 kedit.cpp:1147
 msgid "KEdit Options"
@@ -250,7 +250,7 @@ msgid ""
 "printing this Document?"
 msgstr ""
 "El documento actual se ha modificado.\n"
-"¿Desea guardar los cambios antes de \n"
+"Â¿Desea guardar los cambios antes de \n"
 "imprimir este documento?"
 
 #: kedit.cpp:1218
@@ -259,17 +259,17 @@ msgid ""
 "Print anyways?"
 msgstr ""
 "no puedo guardar el archivo.\n"
-"¿Imprimir de todas maneras?"
+"Â¿Imprimir de todas maneras?"
 
 #: kedit.cpp:1311
 #, c-format
 msgid "Printing: %s Untitled (Selection)"
-msgstr "Imprimiendo: %s Sin título (selección)"
+msgstr "Imprimiendo: %s Sin tÃ­tulo (selecciÃ³n)"
 
 #: kedit.cpp:1314
 #, c-format
 msgid "Printing: %s Untitled"
-msgstr "Imprimiendo: %s Sin título"
+msgstr "Imprimiendo: %s Sin tÃ­tulo"
 
 #: kedit.cpp:1352
 #, c-format
@@ -279,7 +279,7 @@ msgstr "Imprimiendo: %s"
 #: kedit.cpp:1362
 #, c-format
 msgid "Printing: %s %s (Selection)"
-msgstr "Imprimiendo: %s %s (selección)"
+msgstr "Imprimiendo: %s %s (selecciÃ³n)"
 
 #: kedit.cpp:1386
 msgid "Saving ..."
@@ -296,7 +296,7 @@ msgid ""
 "Please wait until has finished\n"
 "Alternatively stop the running one."
 msgstr ""
-"KEdit está esperando \n"
+"KEdit estÃ¡ esperando \n"
 "a que un trabajo de Internet finalice.\n"
 "Por favor, espere hasta que se haya finalizado o, \n"
 "alternativamente, finalice el primero."
@@ -311,7 +311,7 @@ msgid ""
 "Malformed URL\n"
 "%s"
 msgstr ""
-"URL inválida\n"
+"URL invÃ¡lida\n"
 "%s"
 
 #: kedit.cpp:1506
@@ -350,7 +350,7 @@ msgstr "Nueva ventana creada"
 
 #: kedit.cpp:1613
 msgid "Load Command Done"
-msgstr "Recuperación finalizada"
+msgstr "RecuperaciÃ³n finalizada"
 
 #: kedit.cpp:2034
 #, c-format
@@ -363,7 +363,7 @@ msgstr ""
 
 #: kedit.cpp:2073
 msgid "Spellchecker Options"
-msgstr "Opciones Ortografía"
+msgstr "Opciones OrtografÃ­a"
 
 #: keditcl1.cpp:150
 msgid "The specified File does not exist"
@@ -383,7 +383,7 @@ msgstr "No tiene permiso de escritura en este archivo."
 
 #: keditcl1.cpp:213
 msgid "An Error occured while trying to open this Document"
-msgstr "Ocurrió un error mientras intentaba abrir este Documento"
+msgstr "OcurriÃ³ un error mientras intentaba abrir este Documento"
 
 #: keditcl1.cpp:418 keditcl1.cpp:502 keditcl1.cpp:1651
 msgid "Warning:"
@@ -395,7 +395,7 @@ msgid ""
 "Would you like to save it?"
 msgstr ""
 "El documento actual ha sido modificado.\n"
-"¿Desea guardarlo?"
+"Â¿Desea guardarlo?"
 
 #: keditcl1.cpp:440
 msgid ""
@@ -403,7 +403,7 @@ msgid ""
 "Open a new document anyways?"
 msgstr ""
 "No puedo guardar el documento.\n"
-"¿Abrir de todas maneras un nuevo?"
+"Â¿Abrir de todas maneras un nuevo?"
 
 #: keditcl1.cpp:523
 msgid ""
@@ -411,7 +411,7 @@ msgid ""
 "Create a new document anyways?"
 msgstr ""
 "No puedo guardar el documento.\n"
-"¿Crear de todas maneras uno nuevo?"
+"Â¿Crear de todas maneras uno nuevo?"
 
 #: keditcl1.cpp:1570
 msgid "Could not save the document\n"
@@ -423,7 +423,7 @@ msgid ""
 "Do you want to overwrite it ?"
 msgstr ""
 "Ya existe un Documento con este nombre\n"
-"¿Desea sobreescribirlo?"
+"Â¿Desea sobreescribirlo?"
 
 #: keditcl1.cpp:1710
 msgid "You do not have write permission to this file.\n"
@@ -440,7 +440,7 @@ msgid ""
 "Continue from the beginning?"
 msgstr ""
 "Final del documento alcanzado.\n"
-"¿Continuar por el principio?"
+"Â¿Continuar por el principio?"
 
 #: keditcl2.cpp:130 keditcl2.cpp:387 keditcl2.cpp:433 keditcl2.cpp:480
 msgid ""
@@ -448,11 +448,11 @@ msgid ""
 "Continue from the end?"
 msgstr ""
 "Principio del documento alcanzado.\n"
-"¿Continuar por el final?"
+"Â¿Continuar por el final?"
 
 #: keditcl2.cpp:702 keditcl2.cpp:822
 msgid "Case Sensitive"
-msgstr "Ignorar Mayúsculas"
+msgstr "Ignorar MayÃºsculas"
 
 #: keditcl2.cpp:705 keditcl2.cpp:827
 msgid "Find Backwards"
@@ -472,7 +472,7 @@ msgstr "Reemplazar Todo"
 
 #: keditcl2.cpp:932
 msgid "Goto Line"
-msgstr "Ir a la línea"
+msgstr "Ir a la lÃ­nea"
 
 #: keditcl2.cpp:937
 msgid "Go"
@@ -480,7 +480,7 @@ msgstr "Ir"
 
 #: print.cpp:74
 msgid "Print Dialog"
-msgstr "Diálogo de impresión"
+msgstr "DiÃ¡logo de impresiÃ³n"
 
 #: print.cpp:80
 msgid "Print directly using lpr"
@@ -492,7 +492,7 @@ msgstr "Imprimir usando el comando:"
 
 #: print.cpp:109
 msgid "Print Selection"
-msgstr "Selección de impresión"
+msgstr "SelecciÃ³n de impresiÃ³n"
 
 #: filldlg.cpp:46
 msgid "Set Fill-Column at:"
@@ -512,7 +512,7 @@ msgstr "Comando de correo:"
 
 #: filldlg.cpp:171
 msgid "You must enter an integer."
-msgstr "Debe introducir un número entero"
+msgstr "Debe introducir un nÃºmero entero"
 
 #: mail.cpp:37
 msgid "Mail Document to:"

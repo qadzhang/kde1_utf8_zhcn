@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:58
@@ -28,7 +28,7 @@ msgstr "&Edelleenohjaa"
 
 #: main.cpp:70
 msgid "usage: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
-msgstr "k‰yttˆ: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
+msgstr "k√§ytt√∂: kcmktalkd [-init | soundpage | answmachpage | forwmachpage ]\n"
 
 #: main.cpp:111
 msgid "KTalkd Configuration"
@@ -44,15 +44,15 @@ msgstr "&Talk ohjelma"
 
 #: soundpage.cpp:57
 msgid "&Play sound"
-msgstr "&Soita ‰‰ni"
+msgstr "&Soita √§√§ni"
 
 #: soundpage.cpp:59
 msgid "&Sound File"
-msgstr "ƒ‰ni&tiedosto"
+msgstr "√Ñ√§ni&tiedosto"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Lis‰‰ WAV -tiedostoja voidaan tiputtaa ‰‰nilistaan."
+msgstr "Lis√§√§ WAV -tiedostoja voidaan tiputtaa √§√§nilistaan."
 
 #: soundpage.cpp:76
 msgid "&Test"
@@ -66,7 +66,7 @@ msgstr "Tuntematon URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr "T‰t‰ URL tyyppi‰ ei viel‰ tueta KDE:n j‰rjestelm‰-‰‰ni modulissa"
+msgstr "T√§t√§ URL tyyppi√§ ei viel√§ tueta KDE:n j√§rjestelm√§-√§√§ni modulissa"
 
 #: soundpage.cpp:164
 #, c-format
@@ -77,11 +77,11 @@ msgid ""
 msgstr ""
 "Tiedosto \n"
 "%s\n"
-"ei n‰yt‰ olevan WAV-tiedosto."
+"ei n√§yt√§ olevan WAV-tiedosto."
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
-msgstr "Soveltumaton tiedostop‰‰te"
+msgstr "Soveltumaton tiedostop√§√§te"
 
 #: soundpage.cpp:175
 #, c-format
@@ -100,11 +100,11 @@ msgstr "Tiedosto on jo listalla"
 
 #: answmachpage.cpp:39
 msgid "&Activate answering machine"
-msgstr "&K‰ynnist‰ vastaaja"
+msgstr "&K√§ynnist√§ vastaaja"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
-msgstr "&S‰hkˆposti"
+msgstr "&S√§hk√∂posti"
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
@@ -113,24 +113,24 @@ msgstr "&Otsikko"
 #: answmachpage.cpp:54
 #, c-format
 msgid "Use %s for the caller name"
-msgstr "K‰yt‰ %s:‰‰ kutsujan nimen‰"
+msgstr "K√§yt√§ %s:√§√§ kutsujan nimen√§"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "&Ensimm‰inen rivi"
+msgstr "&Ensimm√§inen rivi"
 
 #: answmachpage.cpp:64
 #, c-format
-msgid "Use first %s for caller name, and second %s for caller hostname"
-msgstr "K‰yt‰ ensimm‰ist‰ %s:‰‰ kutsujan nimen‰ ja toista koneennimen‰."
+#~ msgid "Use first %s for caller name, and second %s for caller hostname"
+#~ msgstr "K√§yt√§ ensimm√§ist√§ %s:√§√§ kutsujan nimen√§ ja toista koneennimen√§."
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&L‰het‰ posti vaikka viesti‰ ei ole j‰tetty"
+msgstr "&L√§het√§ posti vaikka viesti√§ ei ole j√§tetty"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Ilmoitus joka n‰ytet‰‰n vastaajan k‰ynnistyess‰ :"
+msgstr "&Ilmoitus joka n√§ytet√§√§n vastaajan k√§ynnistyess√§ :"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -138,8 +138,8 @@ msgid ""
 "Please leave a message to be delivered via E-Mail.\n"
 "Just start typing and when you're done, exit normally."
 msgstr ""
-"Tavoittelemasi henkilˆ ei vastaa. J‰t‰ viesti vastaajaan.\n"
-"Viesti toimitetaan perille s‰hkˆpostilla.\n"
+"Tavoittelemasi henkil√∂ ei vastaa. J√§t√§ viesti vastaajaan.\n"
+"Viesti toimitetaan perille s√§hk√∂postilla.\n"
 "Kirjoita viesti normaalisti ja kun olet valmis lopeta talk normaalisti."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
@@ -150,15 +150,15 @@ msgstr "Viesti %s:ta"
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Viestin j‰tti vastaajaan %s@%s"
+msgstr "Viestin j√§tti vastaajaan %s@%s"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"
-msgstr "K‰yt‰ &edelleenohjausta"
+msgstr "K√§yt√§ &edelleenohjausta"
 
 #: forwmachpage.cpp:39
 msgid "&Destination (user or user@host)"
-msgstr "&Kohde (k‰ytt‰j‰ tai k‰ytt‰j‰&is‰nt‰)"
+msgstr "&Kohde (k√§ytt√§j√§ tai k√§ytt√§j√§&is√§nt√§)"
 
 #: forwmachpage.cpp:49
 msgid "Forward &method"
@@ -177,11 +177,11 @@ msgid ""
 "\n"
 "See Help for further explanations.\n"
 msgstr ""
-"FWA : Ohjaa vain ilmoitus. Kiinte‰ yhteys. Ei suositella.\n"
-"FWR : Ohjaa kaikki pyynnˆt, muuta tietoja jos tarpeen. Kiinte‰ yhteys.\n"
-"FWT : Ohjaa kaikki pyynnˆt ja juttele. Ei kiinte‰‰ yhteytt‰.\n"
+"FWA : Ohjaa vain ilmoitus. Kiinte√§ yhteys. Ei suositella.\n"
+"FWR : Ohjaa kaikki pyynn√∂t, muuta tietoja jos tarpeen. Kiinte√§ yhteys.\n"
+"FWT : Ohjaa kaikki pyynn√∂t ja juttele. Ei kiinte√§√§ yhteytt√§.\n"
 "\n"
-"Suositeltava k‰yttˆ : FWT jos olet palomuurin takana (ja jos ktalkd\n"
-"n‰kee molemmat verkot), ja FWR muuten.\n"
+"Suositeltava k√§ytt√∂ : FWT jos olet palomuurin takana (ja jos ktalkd\n"
+"n√§kee molemmat verkot), ja FWR muuten.\n"
 "\n"
-"Lue ohjetta saadaksesi lis‰‰ tietoja.\n"
+"Lue ohjetta saadaksesi lis√§√§ tietoja.\n"

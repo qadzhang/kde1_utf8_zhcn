@@ -10,12 +10,12 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.C:426
 msgid "choose type of color-mode"
-msgstr "izberi tip barvnega naèina"
+msgstr "izberi tip barvnega naÄina"
 
 #: main.C:432
 msgid "Add characters to word class"
@@ -23,7 +23,7 @@ msgstr "Dodaj znake razredu beseda"
 
 #: main.C:438
 msgid "The backspace key will send a"
-msgstr "Vraèalka bo poslala"
+msgstr "VraÄalka bo poslala"
 
 #: main.C:444
 msgid "Cursor key set"
@@ -71,19 +71,19 @@ msgstr "&Ogromno"
 
 #: main.C:644
 msgid "&black/white"
-msgstr "&èrno/belo"
+msgstr "&Ärno/belo"
 
 #: main.C:645
 msgid "&white/black"
-msgstr "&belo/èrno"
+msgstr "&belo/Ärno"
 
 #: main.C:646
 msgid "&green/black"
-msgstr "&zeleno/èrno"
+msgstr "&zeleno/Ärno"
 
 #: main.C:647
 msgid "black/light&yellow"
-msgstr "èrno/svetlo&rumeno"
+msgstr "Ärno/svetlo&rumeno"
 
 #: main.C:648
 msgid "Linu&x Console"
@@ -99,11 +99,11 @@ msgstr "Skrij i&zbirno letev"
 
 #: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
-msgstr "Prika¾i i&zbirno letev"
+msgstr "PrikaÅ¾i i&zbirno letev"
 
 #: main.C:668 main.C:979
 msgid "Secure &keyboard"
-msgstr "Za¹èiti tip&kovnico"
+msgstr "ZaÅ¡Äiti tip&kovnico"
 
 #: main.C:670
 msgid "Scroll&bar"
@@ -131,7 +131,7 @@ msgstr "Pisava..."
 
 #: main.C:676
 msgid "Enable &hotkeys"
-msgstr "Vklopi &tipke z bli¾njicami"
+msgstr "Vklopi &tipke z bliÅ¾njicami"
 
 #: main.C:679
 msgid "Save &Options"
@@ -157,15 +157,15 @@ msgstr ""
 "(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Posnemanje terminala za namizje KDE\n"
-"temeljeèe na Robert Nationovemu rxvt-2.08"
+"temeljeÄe na Robert Nationovemu rxvt-2.08"
 
 #: main.C:897 main.C:1036
 msgid "&Show"
-msgstr "&Prika¾i"
+msgstr "&PrikaÅ¾i"
 
 #: main.C:975
 msgid "Unsecure &keyboard"
-msgstr "Od¹èiti &tipkovnico"
+msgstr "OdÅ¡Äiti &tipkovnico"
 
 #: main.C:986
 msgid "Terminal Options"
@@ -181,7 +181,7 @@ msgid ""
 "when the keyboard is unsecured."
 msgstr ""
 "Nove barvne nastavitve bodo prikazane,\n"
-"ko bo tipkovnica od¹èitena."
+"ko bo tipkovnica odÅ¡Äitena."
 
 #: main.C:1474
 msgid ""
@@ -194,7 +194,7 @@ msgstr ""
 "Avtorske pravice (C) 1996, 1997 Matthias Ettrich\n"
 "Avtorske pravice (C) 1997 M G Berberich\n"
 "Posnemanje terminala za namizje KDE\n"
-"temeljeèe na Robert Nationovemu rxvt-2.08\n"
+"temeljeÄe na Robert Nationovemu rxvt-2.08\n"
 "\n"
 
 #: main.C:1478
@@ -209,15 +209,15 @@ msgstr ""
 
 #: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
-msgstr "-display <ime>            doloèi zaslon (stre¾nik)\n"
+msgstr "-display <ime>            doloÄi zaslon (streÅ¾nik)\n"
 
 #: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <spec>       zaèetna velikost okna vt\n"
+msgstr "-vt_geometry <spec>       zaÄetna velikost okna vt\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-print-pipe <ime>         doloèi cevovod za vt100 tiskalnik\n"
+msgstr "-print-pipe <ime>         doloÄi cevovod za vt100 tiskalnik\n"
 
 #: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
@@ -233,7 +233,7 @@ msgstr "-vt_font <ime pisave>     normalna pisava\n"
 
 #: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             izklopi popravek za hro¹è Qt pisav\n"
+msgstr "-no_font_hack             izklopi popravek za hroÅ¡Ä Qt pisav\n"
 
 #: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -241,7 +241,7 @@ msgstr "-vt_size <velikost>       majcena, majhna, normalna, velika, ogromna\n"
 
 #: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    nastavi kvt da opona¹a linux konzolo\n"
+msgstr "-linux                    nastavi kvt da oponaÅ¡a linux konzolo\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
@@ -265,7 +265,7 @@ msgstr "-tn <TERM>                Tip terminala. Privzet je xterm.\n"
 
 #: main.C:1494
 msgid "-C                        Capture system console message\n"
-msgstr "-C                        Ujemi sporoèila sistemske konzole\n"
+msgstr "-C                        Ujemi sporoÄila sistemske konzole\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
@@ -276,8 +276,8 @@ msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        teèi v 7 bitnem naèinu\n"
-"-8                        teèi v 8 bitnem naèinu\n"
+"-7                        teÄi v 7 bitnem naÄinu\n"
+"-8                        teÄi v 8 bitnem naÄinu\n"
 
 #: main.C:1498
 msgid ""
@@ -285,8 +285,8 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       za¾eni lupino kvt kot prijavno lupino\n"
-"-ls-                      za¾eni lupino kvt kot neprijavno lupino "
+"-ls                       zaÅ¾eni lupino kvt kot prijavno lupino\n"
+"-ls-                      zaÅ¾eni lupino kvt kot neprijavno lupino "
 "(privzeto)\n"
 
 #: main.C:1500
@@ -299,7 +299,7 @@ msgstr ""
 
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <¹tevilo>             shrani ¹tevilo vrstic v vmesni pomnilnik\n"
+msgstr "-sl <Å¡tevilo>             shrani Å¡tevilo vrstic v vmesni pomnilnik\n"
 
 #: main.C:1502
 msgid ""
@@ -308,9 +308,9 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <simbtip>         uporabi tipko z bli¾njico alt-simbtip za pomikanje "
+"-pageup <simbtip>         uporabi tipko z bliÅ¾njico alt-simbtip za pomikanje "
 "navzgor po vmesnem pomnilniku\n"
-"-pagedown <simbtip>       uporabi tipko z bli¾njico alt-simbtip za pomikanje "
+"-pagedown <simbtip>       uporabi tipko z bliÅ¾njico alt-simbtip za pomikanje "
 "navzdol po vmesnem pomnilniku\n"
 
 #: main.C:1506

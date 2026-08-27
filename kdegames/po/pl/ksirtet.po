@@ -4,7 +4,7 @@ msgstr ""
 "POT-Creation-Date: 1998-10-01 13:29+0200\n"
 "PO-Revision-Date: 1999-01-15 00:26+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: board.cpp:65 dialogs.cpp:137
 msgid "Anonymous"
@@ -16,7 +16,7 @@ msgstr "Gra wstrzymana"
 
 #: board.cpp:102
 msgid "Press to resume"
-msgstr "Kliknij aby kontynuowaæ"
+msgstr "Kliknij aby kontynuowaÄ‡"
 
 #: board.cpp:119 net.cpp:208
 msgid "Game over"
@@ -24,15 +24,15 @@ msgstr "Koniec gry"
 
 #: board.cpp:123
 msgid "Press Return to replay"
-msgstr "Kliknij aby powtórzyæ"
+msgstr "Kliknij aby powtÃ³rzyÄ‡"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "Kliknij aby rozpocz±æ"
+msgstr "Kliknij aby rozpoczÄ…Ä‡"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "Lista zwyciêzców jest nie zapisywalna !"
+msgstr "Lista zwyciÄ™zcÃ³w jest nie zapisywalna !"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -48,7 +48,7 @@ msgstr "Nieznany adres"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "Nie mo¿na otworzyæ gniazdka"
+msgstr "Nie moÅ¼na otworzyÄ‡ gniazdka"
 
 #: net.cpp:196
 msgid "at"
@@ -56,19 +56,19 @@ msgstr "w"
 
 #: net.cpp:233
 msgid "Connect error"
-msgstr "B³±d po³±czenia"
+msgstr "BÅ‚Ä…d poÅ‚Ä…czenia"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
-msgstr "Serwer nieosi±galny"
+msgstr "Serwer nieosiÄ…galny"
 
 #: net.cpp:266
 msgid "The server has died"
-msgstr "Serwer umar³"
+msgstr "Serwer umarÅ‚"
 
 #: net.cpp:267
 msgid "Cancel from server"
-msgstr "Zakoñczenie z serwera"
+msgstr "ZakoÅ„czenie z serwera"
 
 #: net.cpp:273 net.cpp:333
 msgid "Unknown data from server"
@@ -76,7 +76,7 @@ msgstr "Nierozpoznane dane z serwera"
 
 #: net.cpp:312
 msgid "Cannot send to server"
-msgstr "Nie mo¿na wys³aæ do serwera"
+msgstr "Nie moÅ¼na wysÅ‚aÄ‡ do serwera"
 
 #: net.cpp:324
 msgid "Client timeout (No message from server)"
@@ -84,15 +84,15 @@ msgstr "Przekroczenie czasu klienta (Brak komunikatu z serwera)"
 
 #: net.cpp:329
 msgid "Server has vanished"
-msgstr "Serwer zosta³ zrestartowany"
+msgstr "Serwer zostaÅ‚ zrestartowany"
 
 #: net.cpp:366
 msgid "Bind error"
-msgstr "B³±d serwera nazw"
+msgstr "BÅ‚Ä…d serwera nazw"
 
 #: net.cpp:371
 msgid "Listen error"
-msgstr "B³±d nas³uchu"
+msgstr "BÅ‚Ä…d nasÅ‚uchu"
 
 #: net.cpp:390
 msgid "Unknown message from unknown player (??)"
@@ -104,11 +104,11 @@ msgstr "Nieznany komunikat od klienta"
 
 #: net.cpp:486
 msgid "Client has died"
-msgstr "Klient umar³"
+msgstr "Klient umarÅ‚"
 
 #: net.cpp:487
 msgid "Cancel from client"
-msgstr "Zakoñczenie od klienta"
+msgstr "ZakoÅ„czenie od klienta"
 
 #: net.cpp:494
 msgid "Timeout"
@@ -120,7 +120,7 @@ msgstr "Brak komunikatu od klienta"
 
 #: net.cpp:525
 msgid "Client has vanished"
-msgstr "Klient zosta³ zrestartowany"
+msgstr "Klient zostaÅ‚ zrestartowany"
 
 #: net.cpp:529
 msgid "Unknown data from client"
@@ -128,11 +128,11 @@ msgstr "Nierozpoznane dane od klienta"
 
 #: net.cpp:533
 msgid "End message from client"
-msgstr "Komunikat zakoñczenia od klienta"
+msgstr "Komunikat zakoÅ„czenia od klienta"
 
 #: net.cpp:550
 msgid "Cannot send to client"
-msgstr "Nie mo¿na wys³aæ do klienta"
+msgstr "Nie moÅ¼na wysÅ‚aÄ‡ do klienta"
 
 #: dialogs.cpp:61
 msgid "High Scores"
@@ -140,7 +140,7 @@ msgstr "Notowania"
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
-msgstr "Lista zwyciêzców"
+msgstr "Lista zwyciÄ™zcÃ³w"
 
 #: dialogs.cpp:156
 msgid "No option yet !"
@@ -148,7 +148,7 @@ msgstr "Brak opcji !"
 
 #: dialogs.cpp:175 dialogs.cpp:232
 msgid "Network Dialog"
-msgstr "Sieæ"
+msgstr "SieÄ‡"
 
 #: dialogs.cpp:178
 msgid "Server"
@@ -160,7 +160,7 @@ msgstr "Klient"
 
 #: dialogs.cpp:183
 msgid "Player name :"
-msgstr "Imiê gracza:"
+msgstr "ImiÄ™ gracza:"
 
 #: dialogs.cpp:185
 msgid "Server address :"
@@ -172,11 +172,11 @@ msgstr "Port:"
 
 #: dialogs.cpp:199
 msgid "Connect"
-msgstr "Po³±cz"
+msgstr "PoÅ‚Ä…cz"
 
 #: dialogs.cpp:202
 msgid "Connecting ..."
-msgstr "£±czenie..."
+msgstr "ÅÄ…czenie..."
 
 #: dialogs.cpp:205
 msgid "Play !"
@@ -208,7 +208,7 @@ msgstr "Wstrzymanie gry"
 
 #: field.cpp:30
 msgid "High scores"
-msgstr "Lista zwyciêzców"
+msgstr "Lista zwyciÄ™zcÃ³w"
 
 #: field.cpp:31
 msgid "Move left"
@@ -220,19 +220,19 @@ msgstr "Ruch w prawo"
 
 #: field.cpp:33
 msgid "Drop down"
-msgstr "Zrzuæ w dó³"
+msgstr "ZrzuÄ‡ w dÃ³Å‚"
 
 #: field.cpp:34
 msgid "One line down"
-msgstr "Jedna linia w dó³"
+msgstr "Jedna linia w dÃ³Å‚"
 
 #: field.cpp:35
 msgid "Rotate left"
-msgstr "Obrót w lewo"
+msgstr "ObrÃ³t w lewo"
 
 #: field.cpp:36
 msgid "Rotate right"
-msgstr "Obrót w prawo"
+msgstr "ObrÃ³t w prawo"
 
 #: field.cpp:51
 msgid "Score"
@@ -240,7 +240,7 @@ msgstr "Wynik"
 
 #: field.cpp:55
 msgid "Lines removed"
-msgstr "Linie usuniête"
+msgstr "Linie usuniÄ™te"
 
 #: field.cpp:59
 msgid "Level"
@@ -248,15 +248,15 @@ msgstr "Poziom"
 
 #: field.cpp:63
 msgid "Next tile"
-msgstr "Nastêpny"
+msgstr "NastÄ™pny"
 
 #: field.cpp:185
 msgid "&Restart game"
-msgstr "Ponownie u&ruchom grê"
+msgstr "Ponownie u&ruchom grÄ™"
 
 #: field.cpp:186
 msgid "&Pause game"
-msgstr "Ws&trzymaj grê"
+msgstr "Ws&trzymaj grÄ™"
 
 #: field.cpp:187
 msgid "&Multiplayer game"
@@ -264,7 +264,7 @@ msgstr "Gra &wieloosobowa"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "&Lista zwyciêzców"
+msgstr "&Lista zwyciÄ™zcÃ³w"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"
@@ -280,4 +280,4 @@ msgstr "przez"
 
 #: main.cpp:71
 msgid "Show menu"
-msgstr "Poka¿ menu"
+msgstr "PokaÅ¼ menu"

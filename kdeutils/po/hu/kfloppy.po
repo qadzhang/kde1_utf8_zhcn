@@ -2,7 +2,7 @@
 
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# S·ri G·bor <saga@mail.externet.hu>, 1999.
+# S√°ri G√°bor <saga@mail.externet.hu>, 1999.
 #
 #
 msgid ""
@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: kfloppy 1.1.0\n"
 "POT-Creation-Date: 1999-08-27 01:21+0200\n"
 "PO-Revision-Date: 1999-08-02 13:53+0200\n"
-"Last-Translator: S·ri G·bor <saga@mail.externet.hu>\n"
+"Last-Translator: S√°ri G√°bor <saga@mail.externet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 ""
 
 #: about.cpp:40
 msgid "About KDE Floppy Formatter"
-msgstr "KDE m·gneslemez formatt·lÛ"
+msgstr "KDE m√°gneslemez formatt√°l√≥"
 
 #: about.cpp:49 floppy.cpp:295 floppy.cpp:342 floppy.cpp:358 floppy.cpp:374
 #: floppy.cpp:481 floppy.cpp:584 floppy.cpp:598 floppy.cpp:713 floppy.cpp:727
@@ -29,35 +29,35 @@ msgstr "KFloppy"
 
 #: about.cpp:54
 msgid "Version "
-msgstr "VerziÛ"
+msgstr "Verzi√≥"
 
 #: floppy.cpp:56
 msgid "Floppy Drive:"
-msgstr "MeghajtÛ:"
+msgstr "Meghajt√≥:"
 
 #: floppy.cpp:65
 msgid "Density:"
-msgstr "S˚r˚sÈg:"
+msgstr "S≈±r≈±s√©g:"
 
 #: floppy.cpp:74
 msgid "File System:"
-msgstr "F·jlrendszer:"
+msgstr "F√°jlrendszer:"
 
 #: floppy.cpp:108 floppy.cpp:414
 msgid "Format"
-msgstr "Formatt·l·s"
+msgstr "Formatt√°l√°s"
 
 #: floppy.cpp:131
 msgid "Quick Erase"
-msgstr "Gyors tˆrlÈs"
+msgstr "Gyors t√∂rl√©s"
 
 #: floppy.cpp:136
 msgid "Full Format"
-msgstr "Teljes formatt·l·s"
+msgstr "Teljes formatt√°l√°s"
 
 #: floppy.cpp:142
 msgid "Create Label:"
-msgstr "KˆtetnÈv:"
+msgstr "K√∂tetn√©v:"
 
 #: floppy.cpp:148
 msgid "KDE Floppy"
@@ -65,7 +65,7 @@ msgstr "KDE floppy"
 
 #: floppy.cpp:162
 msgid "KDE Floppy Formatter"
-msgstr "KDE m·gneslemez formatt·lÛ"
+msgstr "KDE m√°gneslemez formatt√°l√≥"
 
 #: floppy.cpp:168 floppy.cpp:222 floppy.cpp:240 floppy.cpp:255 floppy.cpp:273
 #: floppy.cpp:1016
@@ -83,9 +83,9 @@ msgid ""
 "Make sure that the device exists and that\n"
 "you have write permission to it."
 msgstr ""
-"Nem tudok hozz·fÈrni a(z) %s meghajtÛhoz\n"
-"Ellenırizd le, hogy lÈtezik-e ez az eszkˆz,\n"
-"vagy van-e jogod Ìrni r·."
+"Nem tudok hozz√°f√©rni a(z) %s meghajt√≥hoz\n"
+"Ellen≈ërizd le, hogy l√©tezik-e ez az eszk√∂z,\n"
+"vagy van-e jogod √≠rni r√°."
 
 #: floppy.cpp:339
 msgid ""
@@ -93,9 +93,9 @@ msgid ""
 "kfdformat is part of the KFloppy distribution.\n"
 "Please install KFloppy properly."
 msgstr ""
-"Nem tal·lom a kfdformat parancsot\n"
-"A kfdformat rÈsze a KFloppy csomagnak.\n"
-"KÈrem telepÌtse ˙jra."
+"Nem tal√°lom a kfdformat parancsot\n"
+"A kfdformat r√©sze a KFloppy csomagnak.\n"
+"K√©rem telep√≠tse √∫jra."
 
 #: floppy.cpp:355
 msgid ""
@@ -103,9 +103,9 @@ msgid ""
 "kmke2fs is part of the KFloppy distribution.\n"
 "Please install KFloppy properly."
 msgstr ""
-"Nem tal·lom a kmke2fs parancsot\n"
-"A kmke2fs rÈsze a KFloppy csomagnak.\n"
-"KÈrem telepÌtse ˙jra."
+"Nem tal√°lom a kmke2fs parancsot\n"
+"A kmke2fs r√©sze a KFloppy csomagnak.\n"
+"K√©rem telep√≠tse √∫jra."
 
 #: floppy.cpp:370
 msgid ""
@@ -113,17 +113,17 @@ msgid ""
 "kmkdosfs is part of the KFloppy distribution.\n"
 "Please install KFloppy properly."
 msgstr ""
-"Nem tal·lom a kmkdosfs parancsot\n"
-"A kmkdosfs rÈsze a KFloppy csomagnak.\n"
-"KÈrem telepÌtse ˙jra."
+"Nem tal√°lom a kmkdosfs parancsot\n"
+"A kmkdosfs r√©sze a KFloppy csomagnak.\n"
+"K√©rem telep√≠tse √∫jra."
 
 #: floppy.cpp:430
 msgid "Abort"
-msgstr "MegszakÌt"
+msgstr "Megszak√≠t"
 
 #: floppy.cpp:478
 msgid "Cannot start a new program: fork() failed."
-msgstr "Nem tudok ˙j programot indÌtani: a fork() nem siker¸lt."
+msgstr "Nem tudok √∫j programot ind√≠tani: a fork() nem siker√ºlt."
 
 #: floppy.cpp:578 floppy.cpp:706
 msgid ""
@@ -131,9 +131,9 @@ msgid ""
 "Please insert a floppy and make sure that you\n"
 "have selected a valid floppy drive.\n"
 msgstr ""
-"Nem Èrem el a lemezt vagy a lemez meghajtÛt\n"
-"TegyÈl be egy lemezt, vagy ellenırizd, hogy\n"
-"ÈrvÈnyes meghajtÛt v·lasztott·l-e.\n"
+"Nem √©rem el a lemezt vagy a lemez meghajt√≥t\n"
+"Tegy√©l be egy lemezt, vagy ellen≈ërizd, hogy\n"
+"√©rv√©nyes meghajt√≥t v√°lasztott√°l-e.\n"
 ""
 
 #: floppy.cpp:593
@@ -142,13 +142,13 @@ msgid ""
 "Cannot format: %s\n"
 "%s"
 msgstr ""
-"Nem form·zhatÛ: %s\n"
+"Nem form√°zhat√≥: %s\n"
 "%s"
 
 #: floppy.cpp:640
 #, c-format
 msgid "Block %d is bad. Continuing ..."
-msgstr "%d blokk hib·s. Folytat·s ..."
+msgstr "%d blokk hib√°s. Folytat√°s ..."
 
 #: floppy.cpp:723
 #, c-format
@@ -156,7 +156,7 @@ msgid ""
 "Cannot create a filesystem on: %s\n"
 "%s"
 msgstr ""
-"A %s-n nem hozhatÛ lÈtre f·jlrendszer\n"
+"A %s-n nem hozhat√≥ l√©tre f√°jlrendszer\n"
 "%s"
 
 #: floppy.cpp:759
@@ -166,33 +166,33 @@ msgid ""
 "Blocks marked bad: %d\n"
 "Raw Capacity: %d\n"
 msgstr ""
-"A m·gneslemez formatt·l·sa befejezıdˆtt.\n"
-"Hib·s blokk: %d\n"
-"‹res kapacit·s: %d\n"
+"A m√°gneslemez formatt√°l√°sa befejez≈ëd√∂tt.\n"
+"Hib√°s blokk: %d\n"
+"√úres kapacit√°s: %d\n"
 
 #: floppy.cpp:780
 msgid "All files were sucessfully erased."
-msgstr "Az ˆsszes f·jl sikeresen letˆrˆlve."
+msgstr "Az √∂sszes f√°jl sikeresen let√∂r√∂lve."
 
 #: floppy.cpp:838
 msgid "Creating Filesystem ..."
-msgstr "F·jlrendszer lÈtrehoz·sa ..."
+msgstr "F√°jlrendszer l√©trehoz√°sa ..."
 
 #: floppy.cpp:842
 msgid "Verifying ..."
-msgstr "EllenırzÈs ..."
+msgstr "Ellen≈ërz√©s ..."
 
 #: floppy.cpp:887
 msgid ""
 "Cannot start a new program\n"
 "fork() failed."
 msgstr ""
-"Nem tudok ˙j programot indÌtani\n"
-"fork() nem siker¸lt."
+"Nem tudok √∫j programot ind√≠tani\n"
+"fork() nem siker√ºlt."
 
 #: floppy.cpp:913
 msgid "Error while trying to determine whether floppy is mounted\n"
-msgstr "Hiba tˆrtÈnt mikˆzben megprÛb·ltam kiderÌteni, hogy mountolva van-e a floppy\n"
+msgstr "Hiba t√∂rt√©nt mik√∂zben megpr√≥b√°ltam kider√≠teni, hogy mountolva van-e a floppy\n"
 
 #: floppy.cpp:930
 #, c-format
@@ -200,5 +200,5 @@ msgid ""
 "%s is mounted.\n"
 "Please unmount the floppy first."
 msgstr ""
-"A %s mountolva van a f·jlrendszerhez.\n"
-"KÈrem az umount-al szabadÌtsa fel."
+"A %s mountolva van a f√°jlrendszerhez.\n"
+"K√©rem az umount-al szabad√≠tsa fel."

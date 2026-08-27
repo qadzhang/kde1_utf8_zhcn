@@ -5,7 +5,7 @@ msgstr ""
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "Date: 1997-08-23 15:45:33+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
@@ -14,15 +14,15 @@ msgstr ""
 
 #: main.C:426
 msgid "choose type of color-mode"
-msgstr "Farbmodus wählen"
+msgstr "Farbmodus wÃ¤hlen"
 
 #: main.C:432
 msgid "Add characters to word class"
-msgstr "Zeichen zur Wortklasse hinzufügen"
+msgstr "Zeichen zur Wortklasse hinzufÃ¼gen"
 
 #: main.C:438
 msgid "The backspace key will send a"
-msgstr "Die Rücktaste wirkt wie ein "
+msgstr "Die RÃ¼cktaste wirkt wie ein "
 
 #: main.C:444
 msgid "Cursor key set"
@@ -62,7 +62,7 @@ msgstr "&Mittel"
 
 #: main.C:631
 msgid "&Large"
-msgstr "&Groß"
+msgstr "&GroÃŸ"
 
 #: main.C:632
 msgid "&Huge"
@@ -70,15 +70,15 @@ msgstr "&Riesig"
 
 #: main.C:644
 msgid "&black/white"
-msgstr "schwarz/weiß"
+msgstr "schwarz/weiÃŸ"
 
 #: main.C:645
 msgid "&white/black"
-msgstr "&weiß/schwarz"
+msgstr "&weiÃŸ/schwarz"
 
 #: main.C:646
 msgid "&green/black"
-msgstr "&grün/schwarz"
+msgstr "&grÃ¼n/schwarz"
 
 #: main.C:647
 msgid "black/light&yellow"
@@ -94,11 +94,11 @@ msgstr "&Eigene Farben"
 
 #: main.C:665 main.C:969
 msgid "Hide &Menubar"
-msgstr "&Menüleiste ausblenden"
+msgstr "&MenÃ¼leiste ausblenden"
 
 #: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
-msgstr "M&enüleiste anzeigen"
+msgstr "M&enÃ¼leiste anzeigen"
 
 #: main.C:668 main.C:979
 msgid "Secure &keyboard"
@@ -110,7 +110,7 @@ msgstr "&Rollbalken"
 
 #: main.C:671
 msgid "&Font size"
-msgstr "&Schriftgröße"
+msgstr "&SchriftgrÃ¶ÃŸe"
 
 #: main.C:672
 msgid "&Color"
@@ -118,7 +118,7 @@ msgstr "&Farben"
 
 #: main.C:673
 msgid "&Size"
-msgstr "Fenster&größe"
+msgstr "Fenster&grÃ¶ÃŸe"
 
 #: main.C:674
 msgid "Terminal..."
@@ -156,7 +156,7 @@ msgstr ""
 "(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "\n"
-"Terminalemulation für das KDE Desktop Environment\n"
+"Terminalemulation fÃ¼r das KDE Desktop Environment\n"
 "basierend auf Robert Nations rxvt-2.08"
 
 #: main.C:897 main.C:1036
@@ -193,19 +193,19 @@ msgid ""
 msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
-"Terminal für das KDE Desktop Environment\n"
+"Terminal fÃ¼r das KDE Desktop Environment\n"
 "basierend auf Robert Nations rxvt-2.08\n"
 "\n"
 
 #: main.C:1478
 msgid "Permitted arguments are:\n"
-msgstr "Zulässige Parameter:\n"
+msgstr "ZulÃ¤ssige Parameter:\n"
 
 #: main.C:1479
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <Befehl> <Arg> ...   Befehl mit Argumenten ausführen - muß letzter "
+"-e <Befehl> <Arg> ...   Befehl mit Argumenten ausfÃ¼hren - muÃŸ letzter "
 "Parameter sein\n"
 
 #: main.C:1480
@@ -216,11 +216,11 @@ msgstr ""
 
 #: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <Größe>      Anfängliche Fenstergröße\n"
+msgstr "-vt_geometry <GrÃ¶ÃŸe>      AnfÃ¤ngliche FenstergrÃ¶ÃŸe\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-print-pipe <Name>        gibt die Pipe für den vt100 Printer an\n"
+msgstr "-print-pipe <Name>        gibt die Pipe fÃ¼r den vt100 Printer an\n"
 
 #: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
@@ -248,7 +248,7 @@ msgstr "-linux                    Kvt wie Linux-Konsole einstellen\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar               Menüleiste ausblenden\n"
+msgstr "-no_menubar               MenÃ¼leiste ausblenden\n"
 
 #: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
@@ -268,11 +268,11 @@ msgstr "-tn <TERM>                Terminaltyp, Voreinstellung ist \"xterm\"\n"
 
 #: main.C:1494
 msgid "-C                        Capture system console message\n"
-msgstr "-C                        Meldungen für die Systemkonsole anzeigen\n"
+msgstr "-C                        Meldungen fÃ¼r die Systemkonsole anzeigen\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <text>                 Text für Symbol\n"
+msgstr "-n <text>                 Text fÃ¼r Symbol\n"
 
 #: main.C:1496
 msgid ""
@@ -308,8 +308,8 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <Taste>           <Alt>-<Taste> zum Rückwärtsrollen benutzen\n"
-"-pagedown <Taste>         <Alt>-<Taste> zum Vorwärtsrollen benutzen\n"
+"-pageup <Taste>           <Alt>-<Taste> zum RÃ¼ckwÃ¤rtsrollen benutzen\n"
+"-pagedown <Taste>         <Alt>-<Taste> zum VorwÃ¤rtsrollen benutzen\n"
 
 #: main.C:1506
 msgid ""

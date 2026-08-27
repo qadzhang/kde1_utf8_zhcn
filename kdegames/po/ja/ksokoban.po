@@ -11,57 +11,57 @@ msgstr ""
 "Last-Translator: Taiki Komoda <tklab@ma6.seikyou.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.4.0"
 
 #: MainWindow.C:42
 msgid "&Next level"
-msgstr "¼¡¤Î¥ì¥Ù¥ë (&N)"
+msgstr "æ¬¡ã®ãƒ¬ãƒ™ãƒ« (&N)"
 
 #: MainWindow.C:43
 msgid "&Previous level"
-msgstr "Á°¤Î¥ì¥Ù¥ë (&P)"
+msgstr "å‰ã®ãƒ¬ãƒ™ãƒ« (&P)"
 
 #: MainWindow.C:44
 msgid "Re&start level"
-msgstr "ºÆ¥¹¥¿¡¼¥È (&S)"
+msgstr "å†ã‚¹ã‚¿ãƒ¼ãƒˆ (&S)"
 
 #: MainWindow.C:55
 msgid "&Level collection"
-msgstr "¥ì¥Ù¥ë½¸ (&L)"
+msgstr "ãƒ¬ãƒ™ãƒ«é›† (&L)"
 
 #: MainWindow.C:66
 msgid "&Small"
-msgstr "¾® (&S)"
+msgstr "å° (&S)"
 
 #: MainWindow.C:67 MainWindow.C:78
 msgid "&Medium"
-msgstr "Ãæ (&M)"
+msgstr "ä¸­ (&M)"
 
 #: MainWindow.C:68
 msgid "&Large"
-msgstr "Âç (&L)"
+msgstr "å¤§ (&L)"
 
 #: MainWindow.C:71
 msgid "G&raphics"
-msgstr "¥°¥é¥Õ¥£¥Ã¥¯ (&R)"
+msgstr "ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ (&R)"
 
 #: MainWindow.C:77
 msgid "&Slow"
-msgstr "ÃÙ¤¤ (&S)"
+msgstr "é…ã„ (&S)"
 
 #: MainWindow.C:79
 msgid "&Fast"
-msgstr "Â®¤¤ (&F)"
+msgstr "é€Ÿã„ (&F)"
 
 #: MainWindow.C:80
 msgid "&Off"
-msgstr "¥ª¥Õ (&O)"
+msgstr "ã‚ªãƒ• (&O)"
 
 #: MainWindow.C:83
 msgid "&Animation"
-msgstr "¥¢¥Ë¥á¡¼¥·¥ç¥ó (&A)"
+msgstr "ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ (&A)"
 
 #: MainWindow.C:87 MainWindow.C:89 MainWindow.C:91 MainWindow.C:93
 #: MainWindow.C:95 MainWindow.C:97 MainWindow.C:99 MainWindow.C:101
@@ -69,19 +69,19 @@ msgstr "¥¢¥Ë¥á¡¼¥·¥ç¥ó (&A)"
 #: MainWindow.C:115 MainWindow.C:117 MainWindow.C:119 MainWindow.C:121
 #: MainWindow.C:123 MainWindow.C:125 MainWindow.C:127 MainWindow.C:129
 msgid "(unused)"
-msgstr "(ÉÔ»ÈÍÑ)"
+msgstr "(ä¸ä½¿ç”¨)"
 
 #: MainWindow.C:108
 msgid "&Set bookmark"
-msgstr "¥Ö¥Ã¥¯¥Ş¡¼¥¯¤ËÄÉ²Ã (&S)"
+msgstr "ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ã«è¿½åŠ  (&S)"
 
 #: MainWindow.C:132
 msgid "&Go to bookmark"
-msgstr "¥Ö¥Ã¥¯¥Ş¡¼¥¯¤Ø¥¸¥ã¥ó¥× (&G)"
+msgstr "ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ã¸ã‚¸ãƒ£ãƒ³ãƒ— (&G)"
 
 #: MainWindow.C:133
 msgid "&Bookmarks"
-msgstr "¥Ö¥Ã¥¯¥Ş¡¼¥¯ (&B)"
+msgstr "ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ (&B)"
 
 #: MainWindow.C:142
 msgid ""
@@ -104,44 +104,44 @@ msgstr ""
 
 #: MainWindow.C:173 PlayField.C:128
 msgid "Pushes:"
-msgstr "¥×¥Ã¥·¥å:"
+msgstr "ãƒ—ãƒƒã‚·ãƒ¥:"
 
 #: MainWindow.C:175 PlayField.C:120
 msgid "Moves:"
-msgstr "°ÜÆ°:"
+msgstr "ç§»å‹•:"
 
 #: MainWindow.C:177 PlayField.C:106
 msgid "Level:"
-msgstr "¥ì¥Ù¥ë:"
+msgstr "ãƒ¬ãƒ™ãƒ«:"
 
 #: MainWindow.C:249
 msgid "(invalid)"
-msgstr "(ÉÔÀµ)"
+msgstr "(ä¸æ­£)"
 
 #: PlayField.C:264
 msgid "Level completed"
-msgstr "¥ì¥Ù¥ë ¥¯¥ê¥¢¡¼"
+msgstr "ãƒ¬ãƒ™ãƒ« ã‚¯ãƒªã‚¢ãƒ¼"
 
 #: PlayField.C:493
 msgid ""
 "This is the last level in\n"
 "the current collection."
 msgstr ""
-"¤³¤³¤Ï¸½ºß¤Î¥³¥ì¥¯¥·¥ç¥ó¤Î\n"
-"ºÇ¸å¤Î¥ì¥Ù¥ë¤Ç¤¹¡£"
+"ã“ã“ã¯ç¾åœ¨ã®ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã®\n"
+"æœ€å¾Œã®ãƒ¬ãƒ™ãƒ«ã§ã™ã€‚"
 
 #: PlayField.C:499
 msgid ""
 "You have not completed\n"
 "this level yet."
 msgstr ""
-"¤¢¤Ê¤¿¤Ï¤Ş¤À¤³¤Î¥ì¥Ù¥ë¤ò\n"
-"¥¯¥ê¥¢¡¼¤·¤Æ¤¤¤Ş¤»¤ó¡£"
+"ã‚ãªãŸã¯ã¾ã ã“ã®ãƒ¬ãƒ™ãƒ«ã‚’\n"
+"ã‚¯ãƒªã‚¢ãƒ¼ã—ã¦ã„ã¾ã›ã‚“ã€‚"
 
 #: PlayField.C:513
 msgid ""
 "This is the first level in\n"
 "the current collection."
 msgstr ""
-"¤³¤³¤Ï¸½ºß¤Î¥³¥ì¥¯¥·¥ç¥ó¤Î\n"
-"ºÇ½é¤Î¥ì¥Ù¥ë¤Ç¤¹¡£"
+"ã“ã“ã¯ç¾åœ¨ã®ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã®\n"
+"æœ€åˆã®ãƒ¬ãƒ™ãƒ«ã§ã™ã€‚"

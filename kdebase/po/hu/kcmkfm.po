@@ -14,21 +14,21 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
 #: main.cpp:61
 msgid "&Font"
-msgstr "&Betûtípus"
+msgstr "&BetÅ±tÃ­pus"
 
 #: main.cpp:63
 msgid "&Color"
-msgstr "&Szín"
+msgstr "&SzÃ­n"
 
 #: main.cpp:65
 msgid "&Other"
-msgstr "&Egyéb"
+msgstr "&EgyÃ©b"
 
 #: main.cpp:68
 msgid "&Proxy"
@@ -40,7 +40,7 @@ msgstr "&HTTP"
 
 #: main.cpp:73
 msgid "User &Agent"
-msgstr "&Bejelentkezés"
+msgstr "&BejelentkezÃ©s"
 
 #: main.cpp:76
 msgid "Coo&kies"
@@ -54,11 +54,11 @@ msgstr "&Asztal Ikonok"
 #, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "használat: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr "hasznÃ¡lat: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
-msgstr "KFM Beálítás"
+msgstr "KFM BeÃ¡lÃ­tÃ¡s"
 
 #: htmlopts.cpp:64
 msgid "Small"
@@ -66,7 +66,7 @@ msgstr "Kicsi"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr "Közepes"
+msgstr "KÃ¶zepes"
 
 #: htmlopts.cpp:74
 msgid "Large"
@@ -74,71 +74,71 @@ msgstr "Nagy"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr "Közönséges betûtípus"
+msgstr "KÃ¶zÃ¶nsÃ©ges betÅ±tÃ­pus"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr "Állandó szélességû betûtípus"
+msgstr "ÃllandÃ³ szÃ©lessÃ©gÅ± betÅ±tÃ­pus"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "Alapértelmezett betûkészlet"
+msgstr "AlapÃ©rtelmezett betÅ±kÃ©szlet"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "Használja a nyelv betûkészletét"
+msgstr "HasznÃ¡lja a nyelv betÅ±kÃ©szletÃ©t"
 
 #: htmlopts.cpp:330
 msgid "Background Color:"
-msgstr "Háttér szín:"
+msgstr "HÃ¡ttÃ©r szÃ­n:"
 
 #: htmlopts.cpp:342
 msgid "Normal Text Color:"
-msgstr "Közönséges szöveg színe:"
+msgstr "KÃ¶zÃ¶nsÃ©ges szÃ¶veg szÃ­ne:"
 
 #: htmlopts.cpp:354
 msgid "URL Link Color:"
-msgstr "URL link színe:"
+msgstr "URL link szÃ­ne:"
 
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "Meglátogatott link színe:"
+msgstr "MeglÃ¡togatott link szÃ­ne:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Vátozzon meg a kurzor a link fölött."
+msgstr "VÃ¡tozzon meg a kurzor a link fÃ¶lÃ¶tt."
 
 #: htmlopts.cpp:384
 msgid "Underline links"
-msgstr "Húzza alá a linkeket"
+msgstr "HÃºzza alÃ¡ a linkeket"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr "Mindíg a saját színeimet használja"
+msgstr "MindÃ­g a sajÃ¡t szÃ­neimet hasznÃ¡lja"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "URL-enként be&állítások engedélyezése"
+msgstr "URL-enkÃ©nt be&Ã¡llÃ­tÃ¡sok engedÃ©lyezÃ©se"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "Fa nézet kö&vesse a navigációt"
+msgstr "Fa nÃ©zet kÃ¶&vesse a navigÃ¡ciÃ³t"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr "Terminál"
+msgstr "TerminÃ¡l"
 
 #: miscopts.cpp:57
 msgid "Editor"
-msgstr "Szerkesztõ"
+msgstr "SzerkesztÅ‘"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "Ne felejtse el menteni a beállításokat!"
+msgstr "Ne felejtse el menteni a beÃ¡llÃ­tÃ¡sokat!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr "Használjon proxyt"
+msgstr "HasznÃ¡ljon proxyt"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
@@ -158,40 +158,40 @@ msgstr "Nincs Proxy:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr "Elfogadható nyelvek:"
+msgstr "ElfogadhatÃ³ nyelvek:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "Elfogadható karakterkészletek:"
+msgstr "ElfogadhatÃ³ karakterkÃ©szletek:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr "Feltételezze, hogy HTML"
+msgstr "FeltÃ©telezze, hogy HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr "Ezen a kiszolgálón:"
+msgstr "Ezen a kiszolgÃ¡lÃ³n:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "így jelentkezzen be:"
+msgstr "Ã­gy jelentkezzen be:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr "Hozzá&adás"
+msgstr "HozzÃ¡&adÃ¡s"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr "Ismert kötések:"
+msgstr "Ismert kÃ¶tÃ©sek:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "Cookies &engedélyezése"
+msgstr "Cookies &engedÃ©lyezÃ©se"
 
 #
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "Alapértelmezett fogadás"
+msgstr "AlapÃ©rtelmezett fogadÃ¡s"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
@@ -199,44 +199,44 @@ msgstr "Elfogadja"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr "Megkérdezi"
+msgstr "MegkÃ©rdezi"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr "Elutasítja"
+msgstr "ElutasÃ­tja"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr "Tartomány specifikus beállítások:"
+msgstr "TartomÃ¡ny specifikus beÃ¡llÃ­tÃ¡sok:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Tartományban, fogadás megváltoztatása"
+msgstr "TartomÃ¡nyban, fogadÃ¡s megvÃ¡ltoztatÃ¡sa"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "Elõször írj be egy tartományt!"
+msgstr "ElÅ‘szÃ¶r Ã­rj be egy tartomÃ¡nyt!"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Vízszíntes rácspont távolság:"
+msgstr "VÃ­zszÃ­ntes rÃ¡cspont tÃ¡volsÃ¡g:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Függõleges rácspont távolság:"
+msgstr "FÃ¼ggÅ‘leges rÃ¡cspont tÃ¡volsÃ¡g:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "Átlátszó szövegháttér az Asztal ikonjainál"
+msgstr "ÃtlÃ¡tszÃ³ szÃ¶veghÃ¡ttÃ©r az Asztal ikonjainÃ¡l"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr "Ikon elõtér szín:"
+msgstr "Ikon elÅ‘tÃ©r szÃ­n:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr "Ikon háttér szín:"
+msgstr "Ikon hÃ¡ttÃ©r szÃ­n:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "M&utassa a rejtett fájlokat az Asztalon"
+msgstr "M&utassa a rejtett fÃ¡jlokat az Asztalon"

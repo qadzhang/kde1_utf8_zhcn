@@ -2,54 +2,54 @@
 
 # Hungarian messages fo kmines.
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Székely Krisztián <szekelyk@edasz.hu>, 1998.
+# SzÃ©kely KrisztiÃ¡n <szekelyk@edasz.hu>, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmines VERSION\n"
 "POT-Creation-Date: 1999-01-27 01:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Székely Krisztián <szekelyk@edasz.hu>\n"
+"Last-Translator: SzÃ©kely KrisztiÃ¡n <szekelyk@edasz.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: dialogs.cpp:95
 #
 msgid "Customize Game"
-msgstr "Egyéni szint"
+msgstr "EgyÃ©ni szint"
 
 #: dialogs.cpp:124
 #
 msgid "Width"
-msgstr "Szélesség "
+msgstr "SzÃ©lessÃ©g "
 
 #: dialogs.cpp:149
 #
 msgid "Height"
-msgstr "Magasság "
+msgstr "MagassÃ¡g "
 
 #: dialogs.cpp:174
 #
 msgid "Mines"
-msgstr "Aknák "
+msgstr "AknÃ¡k "
 
 #: dialogs.cpp:258
 msgid "Hall of Fame"
-msgstr "Dicsõség Csarnok"
+msgstr "DicsÅ‘sÃ©g Csarnok"
 
 #: dialogs.cpp:288 main.cpp:68
 msgid "Easy"
-msgstr "Könnyû"
+msgstr "KÃ¶nnyÅ±"
 
 #: dialogs.cpp:289 main.cpp:69
 msgid "Normal"
-msgstr "Normál"
+msgstr "NormÃ¡l"
 
 #: dialogs.cpp:290 main.cpp:70
 msgid "Expert"
-msgstr "Szakértõ"
+msgstr "SzakÃ©rtÅ‘"
 
 #: dialogs.cpp:317
 msgid "in"
@@ -62,11 +62,11 @@ msgstr "perc"
 
 #: dialogs.cpp:342
 msgid "and"
-msgstr "és"
+msgstr "Ã©s"
 
 #: dialogs.cpp:354
 msgid "seconds."
-msgstr "másodperc."
+msgstr "mÃ¡sodperc."
 
 #: dialogs.cpp:384 status.cpp:98
 msgid "Anonymous"
@@ -74,15 +74,15 @@ msgstr "Ismeretlen"
 
 #: field.cpp:81
 msgid "Game paused"
-msgstr "A játék szünetel"
+msgstr "A jÃ¡tÃ©k szÃ¼netel"
 
 #: field.cpp:82
 msgid "Press to resume"
-msgstr "Nyomd meg a folytatáshoz"
+msgstr "Nyomd meg a folytatÃ¡shoz"
 
 #: status.cpp:217
 msgid "You did it ... but not in time."
-msgstr "Megcsináltad ... de nem elég gyorsan"
+msgstr "MegcsinÃ¡ltad ... de nem elÃ©g gyorsan"
 
 #: status.cpp:218
 msgid "Yeeessss !"
@@ -90,15 +90,15 @@ msgstr "Igeeeen !"
 
 #: status.cpp:221
 msgid "Bad luck !"
-msgstr "Ez nem sikerült !"
+msgstr "Ez nem sikerÃ¼lt !"
 
 #: main.cpp:22
 msgid "New game"
-msgstr "Új játék"
+msgstr "Ãšj jÃ¡tÃ©k"
 
 #: main.cpp:23
 msgid "Pause game"
-msgstr "Szünet"
+msgstr "SzÃ¼net"
 
 #: main.cpp:24
 msgid "High scores"
@@ -106,17 +106,17 @@ msgstr "Rekord pontok"
 
 #: main.cpp:45 main.cpp:163
 msgid "Hide menu bar"
-msgstr "Menüsor elrejtése"
+msgstr "MenÃ¼sor elrejtÃ©se"
 
 #: main.cpp:48
 #
 msgid "&New game"
-msgstr "&Új játék"
+msgstr "&Ãšj jÃ¡tÃ©k"
 
 #: main.cpp:51
 #
 msgid "&Pause game"
-msgstr "&Szünet"
+msgstr "&SzÃ¼net"
 
 #: main.cpp:54
 #
@@ -125,7 +125,7 @@ msgstr "&Rekord pontok"
 
 #: main.cpp:56
 msgid "&Print"
-msgstr "&Nyomtatás"
+msgstr "&NyomtatÃ¡s"
 
 #: main.cpp:64
 msgid "? mark"
@@ -137,11 +137,11 @@ msgstr "Gombok"
 
 #: main.cpp:72
 msgid "Custom"
-msgstr "Egyéni"
+msgstr "EgyÃ©ni"
 
 #: main.cpp:78
 msgid "by"
-msgstr "által"
+msgstr "Ã¡ltal"
 
 #: main.cpp:83
 #
@@ -150,7 +150,7 @@ msgstr "S&zint"
 
 #: main.cpp:160
 msgid "Show menu bar"
-msgstr "Menüsor megjelenítése"
+msgstr "MenÃ¼sor megjelenÃ­tÃ©se"
 
 #, fuzzy
 #~ msgid "kmines : High Scores"
@@ -158,39 +158,39 @@ msgstr "Menüsor megjelenítése"
 
 #, fuzzy
 #~ msgid "Easy :"
-#~ msgstr "Könnyû"
+#~ msgstr "KÃ¶nnyÅ±"
 
 #, fuzzy
 #~ msgid "Expert :"
-#~ msgstr "Szakértõ"
+#~ msgstr "SzakÃ©rtÅ‘"
 
 #, fuzzy
 #~ msgid "minutes."
-#~ msgstr "perc és"
+#~ msgstr "perc Ã©s"
 
 #~ msgid "Highscore file is not writable !"
-#~ msgstr "A rekord pontokat tartalmazó fájl nem írható !"
+#~ msgstr "A rekord pontokat tartalmazÃ³ fÃ¡jl nem Ã­rhatÃ³ !"
 
 #~ msgid "kmines : Error"
 #~ msgstr "kmines : Hiba"
 
 #~ msgid "Close dialog"
-#~ msgstr "Bezárás"
+#~ msgstr "BezÃ¡rÃ¡s"
 
 #~ msgid "Ok dialog"
 #~ msgstr "Rendben"
 
 #~ msgid "Cancel dialog"
-#~ msgstr "Mégsem"
+#~ msgstr "MÃ©gsem"
 
 #~ msgid "Uncertain (?) mark"
 #~ msgstr "Bizonytalan (?) jel"
 
 #~ msgid "Try again"
-#~ msgstr "Próbáld újra"
+#~ msgstr "PrÃ³bÃ¡ld Ãºjra"
 
 #~ msgid "About..."
-#~ msgstr "Névjegy..."
+#~ msgstr "NÃ©vjegy..."
 
 #~ msgid ""
 #~ "%s (%s) \n"
@@ -200,8 +200,8 @@ msgstr "Menüsor megjelenítése"
 #~ msgstr ""
 #~ "%s (%s) \n"
 #~ "\n"
-#~ "Készítette: Nicolas HADACEK (hadacek@kde.org)\n"
+#~ "KÃ©szÃ­tette: Nicolas HADACEK (hadacek@kde.org)\n"
 #~ " http://www.via.ecp.fr/~hadacek/KDE/kmines.html"
 
 #~ msgid "kmines : About"
-#~ msgstr "kmines : Névjegy"
+#~ msgstr "kmines : NÃ©vjegy"

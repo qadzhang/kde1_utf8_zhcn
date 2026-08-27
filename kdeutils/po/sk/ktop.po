@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-03-19 01:51+0100\n"
 "Last-Translator: Peter Ivanyi <ivanyi@internet.sk>\n"
-"Content-Type: text/plain; charset=\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Date: 1997-12-07 12:23:22-0500\n"
 "From: root,,, <root@petit>\n"
 "Xgettext-Options: -C -ktranslate -kktr\n"
@@ -14,15 +14,15 @@ msgstr "88888 Procesov"
 
 #: ktop.cpp:67
 msgid "Memory: 888888 kB used, 888888 kB free"
-msgstr "Pamä»: 888888 kB pou¾itých, 888888 kB voµných"
+msgstr "PamÃ¤Â»: 888888 kB pouÂ¾itÃ½ch, 888888 kB voÂµnÃ½ch"
 
 #: ktop.cpp:69
 msgid "Swap: 888888 kB used, 888888 kB free"
-msgstr "Swap: 888888 kB pou¾itých, 888888 kB voµných"
+msgstr "Swap: 888888 kB pouÂ¾itÃ½ch, 888888 kB voÂµnÃ½ch"
 
 #: ktop.cpp:76
 msgid "KDE Task Manager"
-msgstr "KDE mana¾ér úloh"
+msgstr "KDE manaÂ¾Ã©r Ãºloh"
 
 #: ktop.cpp:137
 #, c-format
@@ -32,12 +32,12 @@ msgstr "%d Procesov"
 #: ktop.cpp:142
 #, c-format
 msgid "Memory: %d kB used, %d kB free"
-msgstr "Pamä»: %d kB pou¾itých, %d kB voµných"
+msgstr "PamÃ¤Â»: %d kB pouÂ¾itÃ½ch, %d kB voÂµnÃ½ch"
 
 #: ktop.cpp:147
 #, c-format
 msgid "Swap: %d kB used, %d kB free"
-msgstr "Swap: %d kB pou¾itých, %d kB voµných"
+msgstr "Swap: %d kB pouÂ¾itÃ½ch, %d kB voÂµnÃ½ch"
 
 #: MainMenu.cpp:51
 #, c-format
@@ -51,7 +51,7 @@ msgid ""
 "1998 : Nicolas Leclercq <nicknet@planete.net>\n"
 "1999 : Chris Schlaeger <cs@kde.org>\n"
 msgstr ""
-"KDE Mana¾ér úloh (KTop) Verzia %s\n"
+"KDE ManaÂ¾Ã©r Ãºloh (KTop) Verzia %s\n"
 "\n"
 "Copyright:\n"
 "1996 A. Sanda <alex@darkstar.ping.at>\n"
@@ -62,23 +62,23 @@ msgstr ""
 
 #: MainMenu.cpp:64
 msgid "Manual Refresh"
-msgstr "Manuálne aktualizova»"
+msgstr "ManuÃ¡lne aktualizovaÂ»"
 
 #: MainMenu.cpp:65
 msgid "Slow Refresh"
-msgstr "Pomalá aktualizácia"
+msgstr "PomalÃ¡ aktualizÃ¡cia"
 
 #: MainMenu.cpp:66
 msgid "Medium Refresh"
-msgstr "Stredne rýchla aktualizácia"
+msgstr "Stredne rÃ½chla aktualizÃ¡cia"
 
 #: MainMenu.cpp:67
 msgid "Fast Refresh"
-msgstr "Rýchla aktualizácia"
+msgstr "RÃ½chla aktualizÃ¡cia"
 
 #: MainMenu.cpp:79
 msgid "&Refresh Rate"
-msgstr "&Aktualizácia"
+msgstr "&AktualizÃ¡cia"
 
 #: MainMenu.cpp:80
 msgid "&Process"
@@ -90,41 +90,41 @@ msgstr "Renice procesu..."
 
 #: ProcessMenu.cpp:47
 msgid "send SIGINT\t(ctrl-c)"
-msgstr "posla» SIGINT\t(ctrl-c)"
+msgstr "poslaÂ» SIGINT\t(ctrl-c)"
 
 #: ProcessMenu.cpp:48
 msgid "send SIGQUIT\t(core)"
-msgstr "posla» SIGQUIT\t(core)"
+msgstr "poslaÂ» SIGQUIT\t(core)"
 
 #: ProcessMenu.cpp:49
 msgid "send SIGTERM\t(term.)"
-msgstr "po¹ku SIGTERM\t(ukon.)"
+msgstr "poÂ¹ku SIGTERM\t(ukon.)"
 
 #: ProcessMenu.cpp:50
 msgid "send SIGKILL\t(term.)"
-msgstr "posla» SIGTERM\t(ukon.)"
+msgstr "poslaÂ» SIGTERM\t(ukon.)"
 
 #: ProcessMenu.cpp:52
 msgid "send SIGUSR1\t(user1)"
-msgstr "posla» SIGUSR1\t(u¾ív1)"
+msgstr "poslaÂ» SIGUSR1\t(uÂ¾Ã­v1)"
 
 #: ProcessMenu.cpp:53
 msgid "send SIGUSR2\t(user2)"
-msgstr "posla» SIGUSR2\t(u¾ív2)"
+msgstr "poslaÂ» SIGUSR2\t(uÂ¾Ã­v2)"
 
 #: ProcessMenu.cpp:74 ProcessMenu.cpp:86 ProcessMenu.cpp:150
 #: ProcessMenu.cpp:158 ProcessMenu.cpp:176
 msgid "Task Manager"
-msgstr "Mana¾ér úloh"
+msgstr "ManaÂ¾Ã©r Ãºloh"
 
 #: ProcessMenu.cpp:75
 msgid "You need to select a process first!"
-msgstr "Najprv musíte ¹pecifikova» proces!"
+msgstr "Najprv musÃ­te Â¹pecifikovaÂ» proces!"
 
 #: ProcessMenu.cpp:85 ProcessMenu.cpp:149
 #, c-format
 msgid "The process %d is no longer persistent."
-msgstr "Proces %d u¾ neexistuje."
+msgstr "Proces %d uÂ¾ neexistuje."
 
 #: ProcessMenu.cpp:98
 msgid "SIGINT"
@@ -152,7 +152,7 @@ msgstr "SIGUSR2"
 
 #: ProcessMenu.cpp:116
 msgid "Unkown Signal"
-msgstr "Neznámy signál"
+msgstr "NeznÃ¡my signÃ¡l"
 
 #: ProcessMenu.cpp:122
 #, c-format
@@ -160,12 +160,12 @@ msgid ""
 "Send signal %s to process %d?\n"
 "(Process name: %s  Owner: %s)\n"
 msgstr ""
-"Posla» signál %s procesu %d?\n"
-"(Proces menom %s, vlastník %s)\n"
+"PoslaÂ» signÃ¡l %s procesu %d?\n"
+"(Proces menom %s, vlastnÃ­k %s)\n"
 
 #: ProcessMenu.cpp:126
 msgid "Abort"
-msgstr "Zru¹i»"
+msgstr "ZruÂ¹iÂ»"
 
 #: ProcessMenu.cpp:159 ProcessMenu.cpp:177
 msgid ""
@@ -174,8 +174,8 @@ msgid ""
 "or permission denied."
 msgstr ""
 "Chyba renice...\n"
-"©pecifikovaný proces neexistuje\n"
-"alebo naò nemáte právo."
+"Â©pecifikovanÃ½ proces neexistuje\n"
+"alebo naÃ² nemÃ¡te prÃ¡vo."
 
 #: TaskMan.cpp:80
 msgid "Processes &List"
@@ -183,51 +183,51 @@ msgstr "Zoznam &procesov"
 
 #: TaskMan.cpp:81
 msgid "Performance &Meter"
-msgstr "Monitor &výkonu"
+msgstr "Monitor &vÃ½konu"
 
 #: ProcListPage.cpp:42
 msgid "Running Processes"
-msgstr "Be¾iace procesy"
+msgstr "BeÂ¾iace procesy"
 
 #: ProcListPage.cpp:49
 msgid "Show Tree"
-msgstr "Ukáza» strom"
+msgstr "UkÃ¡zaÂ» strom"
 
 #: ProcListPage.cpp:60
 msgid "All processes"
-msgstr "V¹etky procesy"
+msgstr "VÂ¹etky procesy"
 
 #: ProcListPage.cpp:61
 msgid "System processes"
-msgstr "Systémové procesy"
+msgstr "SystÃ©movÃ© procesy"
 
 #: ProcListPage.cpp:62
 msgid "User processes"
-msgstr "U¾ívateµské procesy"
+msgstr "UÂ¾Ã­vateÂµskÃ© procesy"
 
 #: ProcListPage.cpp:63
 msgid "Own processes"
-msgstr "Vlastné procesy"
+msgstr "VlastnÃ© procesy"
 
 #: ProcListPage.cpp:79
 msgid "Refresh Now"
-msgstr "Aktualizova» teraz"
+msgstr "AktualizovaÂ» teraz"
 
 #: ProcListPage.cpp:85
 msgid "Kill task"
-msgstr "Ukonèi» úlohu"
+msgstr "UkonÃ¨iÂ» Ãºlohu"
 
 #: ProcessList.cpp:227
 msgid "Remove Column"
-msgstr "Odstráni» ståpec"
+msgstr "OdstrÃ¡niÂ» stÃ¥pec"
 
 #: ProcessList.cpp:228
 msgid "Add Column"
-msgstr "Prida» ståpec"
+msgstr "PridaÂ» stÃ¥pec"
 
 #: ProcessList.cpp:229
 msgid "Help on Column"
-msgstr "Pomocník na ståpec"
+msgstr "PomocnÃ­k na stÃ¥pec"
 
 #: ProcessList.cpp:691 ProcessList.cpp:692
 msgid "Name"
@@ -239,7 +239,7 @@ msgstr "PID"
 
 #: ProcessList.cpp:699
 msgid "User ID"
-msgstr "U¾ív ID"
+msgstr "UÂ¾Ã­v ID"
 
 #: ProcessList.cpp:700
 msgid "CPU"
@@ -247,7 +247,7 @@ msgstr "CPU"
 
 #: ProcessList.cpp:701
 msgid "Time"
-msgstr "Èas"
+msgstr "Ãˆas"
 
 #: ProcessList.cpp:702
 msgid "Nice"
@@ -259,7 +259,7 @@ msgstr "Stav"
 
 #: ProcessList.cpp:704
 msgid "Memory"
-msgstr "Pamä»"
+msgstr "PamÃ¤Â»"
 
 #: ProcessList.cpp:705
 msgid "Resident"
@@ -267,11 +267,11 @@ msgstr "Rezident"
 
 #: ProcessList.cpp:706
 msgid "Shared"
-msgstr "Zdieµaný"
+msgstr "ZdieÂµanÃ½"
 
 #: ProcessList.cpp:707
 msgid "Command line"
-msgstr "Príkazový riadok"
+msgstr "PrÃ­kazovÃ½ riadok"
 
 #: OSProcessList.cpp:76 OSProcessList.cpp:104
 msgid ""
@@ -279,26 +279,26 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Nemô¾em otvori» prieèinok '/proc'!\n"
-"Jadro treba skompilova» s podporou\n"
-"pre /proc filesystém!"
+"NemÃ´Â¾em otvoriÂ» prieÃ¨inok '/proc'!\n"
+"Jadro treba skompilovaÂ» s podporou\n"
+"pre /proc filesystÃ©m!"
 
 #: OSProcessList.cpp:266
 msgid "Cannot read status of processes\n"
-msgstr "Nemô¾em preèíta» stav procesov\n"
+msgstr "NemÃ´Â¾em preÃ¨Ã­taÂ» stav procesov\n"
 
 #: OSProcessList.cpp:367
 msgid "Your OS is not supported yet.  Sorry"
-msgstr "Bohu¾iaµ, vá¹ operaèný systém e¹te nie je podporovaný."
+msgstr "BohuÂ¾iaÂµ, vÃ¡Â¹ operaÃ¨nÃ½ systÃ©m eÂ¹te nie je podporovanÃ½."
 
 #: OSProcess.cpp:123 OSProcess.cpp:154 OSProcess.cpp:171
 #, c-format
 msgid "Cannot open %s!\n"
-msgstr "Nemô¾em otvori» %s!\n"
+msgstr "NemÃ´Â¾em otvoriÂ» %s!\n"
 
 #: OSProcess.cpp:183
 msgid "Run"
-msgstr "Be¾iace"
+msgstr "BeÂ¾iace"
 
 #: OSProcess.cpp:186
 msgid "Sleep"
@@ -323,24 +323,24 @@ msgstr "????"
 #: OSProcess.cpp:320
 #, c-format
 msgid "Could not set new nice level for process %d"
-msgstr "Nemô¾em nastavi» novú nice hodnotu pre proces %d"
+msgstr "NemÃ´Â¾em nastaviÂ» novÃº nice hodnotu pre proces %d"
 
 #: OSProcess.cpp:334
 #, c-format
 msgid "Cound not send signal %d to process %d"
-msgstr "Nemô¾em posla» signál %d procesu %d"
+msgstr "NemÃ´Â¾em poslaÂ» signÃ¡l %d procesu %d"
 
 #: PerfMonPage.cpp:49
 msgid "CPU Load History"
-msgstr "História za»a¾enia CPU"
+msgstr "HistÃ³ria zaÂ»aÂ¾enia CPU"
 
 #: PerfMonPage.cpp:52
 msgid "System Load History"
-msgstr "História za»a¾enia systému"
+msgstr "HistÃ³ria zaÂ»aÂ¾enia systÃ©mu"
 
 #: PerfMonPage.cpp:55 PerfMonPage.cpp:113
 msgid "User (%)"
-msgstr "U¾ív (%)"
+msgstr "UÂ¾Ã­v (%)"
 
 #: PerfMonPage.cpp:56 PerfMonPage.cpp:114
 msgid "Nice (%)"
@@ -348,11 +348,11 @@ msgstr "Nice (%)"
 
 #: PerfMonPage.cpp:57 PerfMonPage.cpp:115
 msgid "System (%)"
-msgstr "Systém (%)"
+msgstr "SystÃ©m (%)"
 
 #: PerfMonPage.cpp:64
 msgid "Memory Usage History"
-msgstr "História vyu¾itia pamäte"
+msgstr "HistÃ³ria vyuÂ¾itia pamÃ¤te"
 
 #: PerfMonPage.cpp:66
 msgid "Program (kB)"
@@ -364,7 +364,7 @@ msgstr "Buffer (kB)"
 
 #: PerfMonPage.cpp:68
 msgid "Cache (kB)"
-msgstr "Ke¹ (kB)"
+msgstr "KeÂ¹ (kB)"
 
 #: PerfMonPage.cpp:69
 msgid "Swap (kB)"
@@ -373,7 +373,7 @@ msgstr "Swap (kB)"
 #: PerfMonPage.cpp:109
 #, c-format
 msgid "CPU%d Load History"
-msgstr "História za»a¾enia CPU%d"
+msgstr "HistÃ³ria zaÂ»aÂ¾enia CPU%d"
 
 #: OSStatus.cpp:98
 msgid ""
@@ -381,9 +381,9 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Nemô¾em otvori» súbor '/proc/stat'!\n"
-"Jadro musí by» skompilované s podporou\n"
-"pre /proc filesystém!"
+"NemÃ´Â¾em otvoriÂ» sÃºbor '/proc/stat'!\n"
+"Jadro musÃ­ byÂ» skompilovanÃ© s podporou\n"
+"pre /proc filesystÃ©m!"
 
 #: OSStatus.cpp:120 OSStatus.cpp:303 OSStatus.cpp:378
 msgid ""
@@ -391,13 +391,13 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Nemô¾em otvori» súbor '/proc/meminfo'!\n"
-"Jadro musí by» skompilované s podporou\n"
-"pre /proc filesystém!"
+"NemÃ´Â¾em otvoriÂ» sÃºbor '/proc/meminfo'!\n"
+"Jadro musÃ­ byÂ» skompilovanÃ© s podporou\n"
+"pre /proc filesystÃ©m!"
 
 #: OSStatus.cpp:311
 msgid "Cannot read memory info file '/proc/meminfo'!\n"
-msgstr "Nemô¾em èíta» informácie o pamäti '/proc/meminfo'!\n"
+msgstr "NemÃ´Â¾em Ã¨Ã­taÂ» informÃ¡cie o pamÃ¤ti '/proc/meminfo'!\n"
 
 #: OSStatus.cpp:354
 #, c-format
@@ -406,21 +406,21 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Nemô¾em preèíta» info pre %s zo súboru '/proc/stat'!\n"
-"Jadro musí by» skompilované s podporou\n"
-"pre /proc filesystém!"
+"NemÃ´Â¾em preÃ¨Ã­taÂ» info pre %s zo sÃºboru '/proc/stat'!\n"
+"Jadro musÃ­ byÂ» skompilovanÃ© s podporou\n"
+"pre /proc filesystÃ©m!"
 
 #: OSStatus.cpp:386
 msgid "Cannot read swap info from '/proc/meminfo'!\n"
-msgstr "Nemô¾em èíta» informácie o swapu z '/proc/meminfo'!\n"
+msgstr "NemÃ´Â¾em Ã¨Ã­taÂ» informÃ¡cie o swapu z '/proc/meminfo'!\n"
 
 #: OSStatus.cpp:575 OSStatus.cpp:588 OSStatus.cpp:615 OSStatus.cpp:624
 msgid ""
 "Your system is not currently supported.\n"
 "Sorry"
 msgstr ""
-"Vá¹ systém bohu¾iaµ nie je momentálne\n"
-"podporovaný."
+"VÃ¡Â¹ systÃ©m bohuÂ¾iaÂµ nie je momentÃ¡lne\n"
+"podporovanÃ½."
 
 #: ReniceDlg.cpp:32
 msgid "Renice Process"
@@ -436,8 +436,8 @@ msgid ""
 "\n"
 "Please enter the desired nice level:"
 msgstr ""
-"Práve chcete zmeni» prioritu èasovania procesu %d\n"
-".Nezabudnite, ¾e len Superu¾ívateµ (root) mô¾e zní¾i»\n"
-"nice hodnotu procesu. Èím ni¾¹ie èíslo, tým vy¹¹ia priorita.\n"
+"PrÃ¡ve chcete zmeniÂ» prioritu Ã¨asovania procesu %d\n"
+".Nezabudnite, Â¾e len SuperuÂ¾Ã­vateÂµ (root) mÃ´Â¾e znÃ­Â¾iÂ»\n"
+"nice hodnotu procesu. ÃˆÃ­m niÂ¾Â¹ie Ã¨Ã­slo, tÃ½m vyÂ¹Â¹ia priorita.\n"
 "\n"
-"Prosím zadajte ¾iadanú hodnotu nice:"
+"ProsÃ­m zadajte Â¾iadanÃº hodnotu nice:"

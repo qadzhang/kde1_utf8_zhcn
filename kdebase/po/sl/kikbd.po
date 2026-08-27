@@ -10,12 +10,12 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kikbd.cpp:127
 msgid "KDE International Keyboard already started on this display."
-msgstr "Na tem zaslonu je æe bila zagnana KDE Internacionalna tipkovnica."
+msgstr "Na tem zaslonu je ≈æe bila zagnana KDE Internacionalna tipkovnica."
 
 #: kikbd.cpp:299
 #, c-format
@@ -32,8 +32,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
-"TipkovniËina shema \"%s\" ne obstaja.\n"
-"To shemo bom preskoËil."
+"Tipkovniƒçina shema \"%s\" ne obstaja.\n"
+"To shemo bom preskoƒçil."
 
 #: kikbd.cpp:341
 msgid "Setup"
@@ -47,7 +47,7 @@ msgstr "Ne morem odstraniti %s iz Spremenljivk.\n"
 #: kikbd.cpp:366
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "Ne morem dodati %s k Spremenljivki πtevilka 3.\n"
+msgstr "Ne morem dodati %s k Spremenljivki ≈°tevilka 3.\n"
 
 #: kikbd.cpp:388
 #, c-format
@@ -55,7 +55,7 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"Ne morem nastaviti stikala naËina na %s za tipkovnico %s.\n"
+"Ne morem nastaviti stikala naƒçina na %s za tipkovnico %s.\n"
 "Alt simbol je izklopljen"
 
 #: kikbd.cpp:410
@@ -63,8 +63,8 @@ msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"Caps Lock ni moæno odstraniti iz Spremenljivk.\n"
-"Posnemanje Caps Lock je izkljuËeno"
+"Caps Lock ni mo≈æno odstraniti iz Spremenljivk.\n"
+"Posnemanje Caps Lock je izkljuƒçeno"
 
 #: kikbd.cpp:1109
 msgid "Exiting International Keyboard"
@@ -76,11 +76,11 @@ msgid ""
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 "Ste pred izhodom iz orodja \"Internacionalna tipkovnica\".\n"
-"Æelite, da se ob naslednji prijavi samodejno zaæene?"
+"≈Ωelite, da se ob naslednji prijavi samodejno za≈æene?"
 
 #: keymap.cpp:187
 msgid "KeyMap: can't allocate memory"
-msgstr "KeyMap: ni moæno dodeliti pomnilnika"
+msgstr "KeyMap: ni mo≈æno dodeliti pomnilnika"
 
 #: keymap.cpp:234
 #, c-format
@@ -90,20 +90,20 @@ msgid ""
 "You can preset X codes from section \"Advanced\"\n"
 "in the configuration program."
 msgstr ""
-"Simbola \"%s\" ni moæno najti.\n"
-"MogoËe se vaπe privzete X-kode ne ujemajo.\n"
-"Na zaËetne vrednosti jih lahko nastavite v razdelku \"Napredne\"\n"
+"Simbola \"%s\" ni mo≈æno najti.\n"
+"Mogoƒçe se va≈°e privzete X-kode ne ujemajo.\n"
+"Na zaƒçetne vrednosti jih lahko nastavite v razdelku \"Napredne\"\n"
 "v konfiguracijskem programu."
 
 #: keymap.cpp:239
 #, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "KeyMap: simbola \"%s\" ni moæno najti."
+msgstr "KeyMap: simbola \"%s\" ni mo≈æno najti."
 
 #: keymap.cpp:247
 #, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: kode \"%s\" ni moæno prebrati."
+msgstr "KeyMap: kode \"%s\" ni mo≈æno prebrati."
 
 #: keymap.cpp:253
 #, c-format
@@ -124,7 +124,7 @@ msgstr "Razred"
 
 #: kikbdconf.cpp:112 kikbdconf.cpp:124
 msgid "(None)"
-msgstr "(NiË)"
+msgstr "(Niƒç)"
 
 #: kikbdconf.cpp:113 kikbdconf.cpp:125
 msgid "Right Alt"
@@ -205,14 +205,14 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "%s\n"
-"Ali hoËeπ sedaj prikrojiti?"
+"Ali hoƒçe≈° sedaj prikrojiti?"
 
 #: kikbdconf.cpp:230
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
-"PrviË uporabljate \"Internacionalno tipkovnico\".\n"
+"Prviƒç uporabljate \"Internacionalno tipkovnico\".\n"
 "Namestil sem nekatere privzete nastavitve."
 
 #: kikbdconf.cpp:386
@@ -225,7 +225,7 @@ msgstr "privzeto"
 
 #: kikbdconf.cpp:426
 msgid "Author:  Not specified"
-msgstr "Avtor: Ni doloËeno"
+msgstr "Avtor: Ni doloƒçeno"
 
 #: kikbdconf.cpp:428
 msgid "Author"
@@ -285,7 +285,7 @@ msgstr "Internacionalna tipkovnica - opozorilo"
 
 #: kikbdconf.cpp:543 kikbdconf.cpp:548 kikbdconf.cpp:561
 msgid "International keyboard question"
-msgstr "Internacionalna tipkovnica - vpraπanje"
+msgstr "Internacionalna tipkovnica - vpra≈°anje"
 
 #: kikbdconf.cpp:550
 msgid "Configure"
@@ -297,7 +297,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"Ali hoËete nadaljevati?"
+"Ali hoƒçete nadaljevati?"
 
 #: widgets.cpp:117
 msgid "List of active keyboard maps"
@@ -337,11 +337,11 @@ msgstr "&Info"
 
 #: widgets.cpp:146
 msgid "Display information for selected keyboard map"
-msgstr "Izpiπi informacije o izbrani shemi tipkovnice"
+msgstr "Izpi≈°i informacije o izbrani shemi tipkovnice"
 
 #: widgets.cpp:155
 msgid "Use &hot list"
-msgstr "Uporabi &vroË seznam"
+msgstr "Uporabi &vroƒç seznam"
 
 #: widgets.cpp:156
 msgid ""
@@ -355,7 +355,7 @@ msgstr "Dodaj tipkovnico"
 
 #: widgets.cpp:226
 msgid "There are no keyboard maps left to add"
-msgstr "Nobenih shem tipkovnic se ne da veË dodati"
+msgstr "Nobenih shem tipkovnic se ne da veƒç dodati"
 
 #: widgets.cpp:259
 msgid "Keyboard map information"
@@ -367,7 +367,7 @@ msgstr "Dodaj tipkovnico"
 
 #: widgets.cpp:297
 msgid "Available keyboard maps"
-msgstr "Moæne sheme tipkovnic"
+msgstr "Mo≈æne sheme tipkovnic"
 
 #: widgets.cpp:411
 msgid "Keyboard maps"
@@ -421,7 +421,7 @@ msgstr "&Meni sveta"
 
 #: widgets.cpp:491
 msgid "Show menu in any window by holding down the selected Switch keys"
-msgstr "Prikaæi meni v vsakem oknu ob dræanju tipk za preklop"
+msgstr "Prika≈æi meni v vsakem oknu ob dr≈æanju tipk za preklop"
 
 #: widgets.cpp:499
 msgid "&Save Classes"
@@ -441,17 +441,17 @@ msgstr "Vnos"
 
 #: widgets.cpp:513
 msgid "Standard behavior. Keyboard map effective for all windows"
-msgstr "Standardno obnaπanje. Shema tipkovnice aktivna za vsa okna"
+msgstr "Standardno obna≈°anje. Shema tipkovnice aktivna za vsa okna"
 
 #: widgets.cpp:517
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Razπirjeno obnaπanje. Stanje sheme tipkovnice se shrani za vsako okno posebej"
+msgstr "Raz≈°irjeno obna≈°anje. Stanje sheme tipkovnice se shrani za vsako okno posebej"
 
 #: widgets.cpp:521
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Posebno obnaπanje. Stanje tipkovnice se shranjuje za vsak razred oken posebej"
+msgstr "Posebno obna≈°anje. Stanje tipkovnice se shranjuje za vsak razred oken posebej"
 
 #: widgets.cpp:569
 msgid "Button Colors"
@@ -511,7 +511,7 @@ msgstr "S&amodejni zagon"
 
 #: widgets.cpp:665
 msgid "Start up automatically"
-msgstr "Samodejno se zaæeni"
+msgstr "Samodejno se za≈æeni"
 
 #: widgets.cpp:671
 msgid "&Docked"
@@ -519,7 +519,7 @@ msgstr "Zasi&draj"
 
 #: widgets.cpp:672
 msgid "Dock into special area in the panel"
-msgstr "Zasidraj se v poseben predel ploπËe"
+msgstr "Zasidraj se v poseben predel plo≈°ƒçe"
 
 #: widgets.cpp:681
 msgid "Place"
@@ -527,11 +527,11 @@ msgstr "Postavi"
 
 #: widgets.cpp:688
 msgid "Place in selected corner"
-msgstr "Postavi v doloËen kot"
+msgstr "Postavi v doloƒçen kot"
 
 #: kcmikbd.cpp:67
 msgid "&General"
-msgstr "Sp&loπno"
+msgstr "Sp&lo≈°no"
 
 #: kcmikbd.cpp:73
 msgid "&Style"

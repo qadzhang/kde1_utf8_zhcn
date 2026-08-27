@@ -1,6 +1,6 @@
 # Danish translations for KDE Base, kcmkfm
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Erik Kjær Pedersen <erik@binghamton.edu>, 1998.
+# Erik KjÃ¦r Pedersen <erik@binghamton.edu>, 1998.
 #
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:61
@@ -84,11 +84,11 @@ msgstr "Fast skrifttype"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr "Standard tegnsæt"
+msgstr "Standard tegnsÃ¦t"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr "Brug sprogets tegnsæt"
+msgstr "Brug sprogets tegnsÃ¦t"
 
 # htmlopts.cpp:214
 #: htmlopts.cpp:330
@@ -108,12 +108,12 @@ msgstr "URL-linkfarve:"
 # htmlopts.cpp:238
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "Farve på fulgte henvisninger:"
+msgstr "Farve pÃ¥ fulgte henvisninger:"
 
 # htmlopts.cpp:246
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Ændr markør over henvisninger."
+msgstr "Ã†ndr markÃ¸r over henvisninger."
 
 #: htmlopts.cpp:384
 msgid "Underline links"
@@ -129,7 +129,7 @@ msgstr "&Tillad per-URL-indstillinger"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "Filhierarki følger na&vigation"
+msgstr "Filhierarki fÃ¸lger na&vigation"
 
 #: miscopts.cpp:43
 msgid "Terminal"
@@ -173,7 +173,7 @@ msgstr "Accepter sprog:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "Accepter tegnsæt:"
+msgstr "Accepter tegnsÃ¦t:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
@@ -182,7 +182,7 @@ msgstr "Antag HTML"
 # useragentdlg.cpp:20
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr "På server:"
+msgstr "PÃ¥ server:"
 
 # useragentdlg.cpp:31
 #: useragentdlg.cpp:67
@@ -191,16 +191,16 @@ msgstr "skal der bruges:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr "&Tilføj"
+msgstr "&TilfÃ¸j"
 
 # useragentdlg.cpp:52
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr "Nuværende konfigurationer:"
+msgstr "NuvÃ¦rende konfigurationer:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr "&Slå cookier til"
+msgstr "&SlÃ¥ cookier til"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
@@ -212,7 +212,7 @@ msgstr "Godtag"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr "Spørg"
+msgstr "SpÃ¸rg"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
@@ -220,15 +220,15 @@ msgstr "Afvis"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr "Domæne-specifikke indstillinger:"
+msgstr "DomÃ¦ne-specifikke indstillinger:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Ret politik for accepterede domæner"
+msgstr "Ret politik for accepterede domÃ¦ner"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "Angiv domæne først!"
+msgstr "Angiv domÃ¦ne fÃ¸rst!"
 
 # htmlopts.cpp:321
 #: rootopts.cpp:73
@@ -242,7 +242,7 @@ msgstr "Afstand i lodret bundgitter:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&Gennemsigtig tekst for ikoner på skrivebordt."
+msgstr "&Gennemsigtig tekst for ikoner pÃ¥ skrivebordt."
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
@@ -254,4 +254,4 @@ msgstr "Baggrundsfarve for ikon:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Vis skj&ulte filer på skrivebord"
+msgstr "Vis skj&ulte filer pÃ¥ skrivebord"

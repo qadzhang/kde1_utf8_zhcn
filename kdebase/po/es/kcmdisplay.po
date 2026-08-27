@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
@@ -24,7 +24,7 @@ msgstr "&Renombrar ..."
 
 #: backgnd.cpp:197
 msgid "&Common Background"
-msgstr "&Fondo común"
+msgstr "&Fondo comÃºn"
 
 #: backgnd.cpp:225 colorscm.cpp:82
 msgid "Colors"
@@ -40,7 +40,7 @@ msgstr "&Dos colores"
 
 #: backgnd.cpp:288
 msgid "Set&up ..."
-msgstr "Configuración..."
+msgstr "ConfiguraciÃ³n..."
 
 #: backgnd.cpp:297
 msgid "Wallpaper"
@@ -56,11 +56,11 @@ msgstr "Examinar..."
 
 #: backgnd.cpp:369
 msgid "Arrangement:"
-msgstr "Disposición:"
+msgstr "DisposiciÃ³n:"
 
 #: backgnd.cpp:376
 msgid "Tiled"
-msgstr "Mosáico"
+msgstr "MosÃ¡ico"
 
 #: backgnd.cpp:377
 msgid "Mirrored"
@@ -68,7 +68,7 @@ msgstr "Espejismo"
 
 #: backgnd.cpp:378
 msgid "Center Tiled"
-msgstr "Mosáico centrado"
+msgstr "MosÃ¡ico centrado"
 
 #: backgnd.cpp:379
 msgid "Centred"
@@ -88,11 +88,11 @@ msgstr "Maxpect centrado"
 
 #: backgnd.cpp:383
 msgid "Symmetrical Tiled"
-msgstr "Mosáico simétrico"
+msgstr "MosÃ¡ico simÃ©trico"
 
 #: backgnd.cpp:384
 msgid "Symmetrical Mirrored"
-msgstr "Espejismo simétrico"
+msgstr "Espejismo simÃ©trico"
 
 #: backgnd.cpp:385
 msgid "Scaled"
@@ -104,7 +104,7 @@ msgstr "Al azar"
 
 #: backgnd.cpp:409
 msgid "Setu&p..."
-msgstr "Configuración..."
+msgstr "ConfiguraciÃ³n..."
 
 #: backgnd.cpp:419
 msgid "&Dock into the panel"
@@ -112,7 +112,7 @@ msgstr "Fijar en el panel"
 
 #: backgnd.cpp:444
 msgid "Cache size (kB):"
-msgstr "Tamaño de caché (kB):"
+msgstr "TamaÃ±o de cachÃ© (kB):"
 
 #: backgnd.cpp:1345
 msgid "Desktop names"
@@ -124,7 +124,7 @@ msgstr "Error de archivo"
 
 #: backgnd.cpp:1391
 msgid "Can't load image file"
-msgstr "Imposible cargar archivo de imágen"
+msgstr "Imposible cargar archivo de imÃ¡gen"
 
 #: backgnd.cpp:1414 backgnd.cpp:1887
 msgid "Unsupported URL"
@@ -134,7 +134,7 @@ msgstr "URL no soportada"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
-"Perdón, este tipo de URL no es soportada por el módulo de despliegue del KDE"
+"PerdÃ³n, este tipo de URL no es soportada por el mÃ³dulo de despliegue del KDE"
 
 #: backgnd.cpp:1447
 msgid "Two color backgrounds"
@@ -174,7 +174,7 @@ msgstr "Red de pescador"
 
 #: backgnd.cpp:1639
 msgid "Triangles"
-msgstr "Triángulos"
+msgstr "TriÃ¡ngulos"
 
 #: backgnd.cpp:1642
 msgid "Flowers"
@@ -214,7 +214,7 @@ msgstr "Escritorios :"
 
 #: backgnd.cpp:1823
 msgid "&Add"
-msgstr "&Añadir"
+msgstr "&AÃ±adir"
 
 #: backgnd.cpp:1995
 msgid "Directory error"
@@ -234,11 +234,11 @@ msgstr "Esquema actual"
 
 #: colorscm.cpp:117
 msgid "KDE default"
-msgstr "Estándar de KDE"
+msgstr "EstÃ¡ndar de KDE"
 
 #: colorscm.cpp:130
 msgid "&Add ..."
-msgstr "&Añadir"
+msgstr "&AÃ±adir"
 
 #: colorscm.cpp:147
 msgid "&Save changes"
@@ -250,27 +250,27 @@ msgstr "Color del widget"
 
 #: colorscm.cpp:168
 msgid "Inactive title bar"
-msgstr "Barra de título inactiva"
+msgstr "Barra de tÃ­tulo inactiva"
 
 #: colorscm.cpp:169
 msgid "Inactive title text"
-msgstr "Texto de título inactivo"
+msgstr "Texto de tÃ­tulo inactivo"
 
 #: colorscm.cpp:170
 msgid "Inactive title blend"
-msgstr "Colorizado de título inactivo"
+msgstr "Colorizado de tÃ­tulo inactivo"
 
 #: colorscm.cpp:171
 msgid "Active title bar"
-msgstr "Barra de título activa"
+msgstr "Barra de tÃ­tulo activa"
 
 #: colorscm.cpp:172
 msgid "Active title text"
-msgstr "Texto de título activo"
+msgstr "Texto de tÃ­tulo activo"
 
 #: colorscm.cpp:173
 msgid "Active title blend"
-msgstr "Colorizado de título activo"
+msgstr "Colorizado de tÃ­tulo activo"
 
 #: colorscm.cpp:174
 msgid "Background"
@@ -320,7 +320,7 @@ msgid ""
 msgstr ""
 "Este esquema de colores no puede ser removido.\n"
 "Tal vez no tiene permiso para modificar el archivo\n"
-"del sistema donde los esquemas de colores están guardados."
+"del sistema donde los esquemas de colores estÃ¡n guardados."
 
 #: colorscm.cpp:362
 msgid "Naming error"
@@ -332,13 +332,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-"Por favor escoja un nombre único para el esquema\n"
+"Por favor escoja un nombre Ãºnico para el esquema\n"
 "de colores nuevo. El que acaba de dar ya esta en\n"
 "la lista de esquemas de colores."
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
-msgstr "Añadir un esquema de colores"
+msgstr "AÃ±adir un esquema de colores"
 
 #: savescm.cpp:32
 msgid ""
@@ -348,11 +348,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Déle un nombre al nuevo esquema de\n"
-"colores a ser añadido a su lista personal.\n"
+"&DÃ©le un nombre al nuevo esquema de\n"
+"colores a ser aÃ±adido a su lista personal.\n"
 "\n"
 "Los colores en uso actualmente en la ventana\n"
-"serán copiados a este esquema para empezar."
+"serÃ¡n copiados a este esquema para empezar."
 
 #: scrnsave.cpp:47
 msgid "Ignore"
@@ -376,7 +376,7 @@ msgstr "Sin salvapantalla"
 
 #: scrnsave.cpp:209
 msgid "&Setup ..."
-msgstr "Configuración..."
+msgstr "ConfiguraciÃ³n..."
 
 #: scrnsave.cpp:217
 msgid "&Test"
@@ -396,15 +396,15 @@ msgstr "minutos"
 
 #: scrnsave.cpp:266
 msgid "&Require password"
-msgstr "Pedir &contraseña"
+msgstr "Pedir &contraseÃ±a"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr "&Aceptar contraseña del superusuario"
+msgstr "&Aceptar contraseÃ±a del superusuario"
 
 #: scrnsave.cpp:280
 msgid "Show &password as stars"
-msgstr "Mostrar contraseña con &estrellas"
+msgstr "Mostrar contraseÃ±a con &estrellas"
 
 #: scrnsave.cpp:288
 msgid "Priority"
@@ -428,7 +428,7 @@ msgstr "Pintar widgets en el estilo de Windows 95"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "Barra de &Menú arriba de la pantalla al estilo de MacOS"
+msgstr "Barra de &MenÃº arriba de la pantalla al estilo de MacOS"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
@@ -444,7 +444,7 @@ msgstr "Fuente fija"
 
 #: general.cpp:540
 msgid "Window title font"
-msgstr "Fuente del texto del título de la ventana"
+msgstr "Fuente del texto del tÃ­tulo de la ventana"
 
 #: general.cpp:545
 msgid "Panel button font"
@@ -462,11 +462,11 @@ msgstr "Muestra de texto"
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+"0 1 2 3 4 5 6 7 8 9   ! \" Â£ $ % ^ & * ( )"
 msgstr ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+"0 1 2 3 4 5 6 7 8 9   ! \" Â£ $ % ^ & * ( )"
 
 #: main.cpp:64
 msgid "&Background"
@@ -493,7 +493,7 @@ msgstr ""
 
 #: main.cpp:150
 msgid "Display settings"
-msgstr "Configuración de la pantalla"
+msgstr "ConfiguraciÃ³n de la pantalla"
 
 #: widgetcanvas.cpp:104 widgetcanvas.cpp:105
 msgid "Inactive window"
@@ -525,11 +525,11 @@ msgstr "&Cursiva"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr "&Tamaño"
+msgstr "&TamaÃ±o"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr "&Tabla de códigos"
+msgstr "&Tabla de cÃ³digos"
 
 #: fontchooser.cpp:262
 msgid "default"

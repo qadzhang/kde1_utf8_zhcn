@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"
-msgstr "&Menü Adını Değiştir"
+msgstr "&MenÃ¼ AdÃ½nÃ½ DeÃ°iÃ¾tir"
 
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
-msgstr "&Dosya türlerini yeniden yükle"
+msgstr "&Dosya tÃ¼rlerini yeniden yÃ¼kle"
 
 #: kmenuedit.cpp:77
 msgid "by"
@@ -27,7 +27,7 @@ msgstr "ile"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
-msgstr "Değişiklikler kaydedilmedi !"
+msgstr "DeÃ°iÃ¾iklikler kaydedilmedi !"
 
 #: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
@@ -35,23 +35,23 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Değişikliklerinizi kaydetmek istiyor musunuz?"
+"DeÃ°iÃ¾ikliklerinizi kaydetmek istiyor musunuz?"
 
 #: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
 msgid "EMPTY"
-msgstr "Boş"
+msgstr "BoÃ¾"
 
 #: kmenuedit.cpp:343
 msgid "Reload Menus"
-msgstr "Menüleri Yükle"
+msgstr "MenÃ¼leri YÃ¼kle"
 
 #: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Menüleri yeniden yüklemek değişikliklerinizi\n"
-"iptal edecektir. Geri yüklemek istiyor musunuz?"
+"MenÃ¼leri yeniden yÃ¼klemek deÃ°iÃ¾ikliklerinizi\n"
+"iptal edecektir. Geri yÃ¼klemek istiyor musunuz?"
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
@@ -62,24 +62,24 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"Kişisel menüleriniz için dizin mevcut değil.\n"
-"Şimdi yaratılsın mı?"
+"KiÃ¾isel menÃ¼leriniz iÃ§in dizin mevcut deÃ°il.\n"
+"Ãimdi yaratÃ½lsÃ½n mÃ½?"
 
 #: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Kişisel menü için dizin yaratılamıyor.\n"
-"KMenuedit'ten çıkmak için Peki'yi tıklayınız."
+"KiÃ¾isel menÃ¼ iÃ§in dizin yaratÃ½lamÃ½yor.\n"
+"KMenuedit'ten Ã§Ã½kmak iÃ§in Peki'yi tÃ½klayÃ½nÃ½z."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
-msgstr "Ayıraç"
+msgstr "AyÃ½raÃ§"
 
 #: confmenu.cpp:103 confmenu.cpp:335
 msgid "Open/ Close"
-msgstr "Aç/ Kapa"
+msgstr "AÃ§/ Kapa"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
@@ -95,27 +95,27 @@ msgstr ""
 
 #: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
-msgstr "Uyarı !"
+msgstr "UyarÃ½ !"
 
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Bu tuşu silerseniz tüm alt menüleri kaybedeceksiniz"
+msgstr "Bu tuÃ¾u silerseniz tÃ¼m alt menÃ¼leri kaybedeceksiniz"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
-msgstr "Yanlış dosya adı"
+msgstr "YanlÃ½Ã¾ dosya adÃ½"
 
 #: confmenu.cpp:298
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"Bu isimde bir kdelnk dosyası zaten var.\n"
-"Lütfen farklı bir ad seçiniz."
+"Bu isimde bir kdelnk dosyasÃ½ zaten var.\n"
+"LÃ¼tfen farklÃ½ bir ad seÃ§iniz."
 
 #: confmenu.cpp:319
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Bu tuşun türünü değiştirmek ile bütün alt menüleri yok edeceksiniz"
+msgstr "Bu tuÃ¾un tÃ¼rÃ¼nÃ¼ deÃ°iÃ¾tirmek ile bÃ¼tÃ¼n alt menÃ¼leri yok edeceksiniz"
 
 #: confmenu.cpp:340 confmenu.cpp:940
 msgid "no command"
@@ -126,16 +126,16 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Bu nesneyi başka bir pencereye bırakmadan önce\n"
-"değişikliklerinizi kaydetmelisiniz."
+"Bu nesneyi baÃ¾ka bir pencereye bÃ½rakmadan Ã¶nce\n"
+"deÃ°iÃ¾ikliklerinizi kaydetmelisiniz."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "KDE Masaüstü girdileri için yol düzenlenmemiş"
+msgstr "KDE MasaÃ¼stÃ¼ girdileri iÃ§in yol dÃ¼zenlenmemiÃ¾"
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "Aşşağıdaki girdileri öneririm:"
+msgstr "AÃ¾Ã¾aÃ°Ã½daki girdileri Ã¶neririm:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
@@ -143,11 +143,11 @@ msgstr "Yol:"
 
 #: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
-msgstr "Kişisel Yol:"
+msgstr "KiÃ¾isel Yol:"
 
 #: entrydialog.cpp:61
 msgid "Submenu"
-msgstr "Alt Menü"
+msgstr "Alt MenÃ¼"
 
 #: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
 #: entrydialog.cpp:544
@@ -160,11 +160,11 @@ msgstr "Yut"
 
 #: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
-msgstr "Bağ"
+msgstr "BaÃ°"
 
 #: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
-msgstr "Aygıt"
+msgstr "AygÃ½t"
 
 #: entrydialog.cpp:72
 #, fuzzy
@@ -173,12 +173,12 @@ msgstr "Dosya Sistemi:"
 
 #: entrydialog.cpp:79
 msgid "File Name:"
-msgstr "Dosya Adı:"
+msgstr "Dosya AdÃ½:"
 
 #: entrydialog.cpp:94
 #, fuzzy
 msgid "Name:"
-msgstr "Dosya Adı:"
+msgstr "Dosya AdÃ½:"
 
 #: entrydialog.cpp:109
 msgid "Icon:"
@@ -186,7 +186,7 @@ msgstr "Simge:"
 
 #: entrydialog.cpp:141
 msgid "Mini Icon:"
-msgstr "Küçük Simge:"
+msgstr "KÃ¼Ã§Ã¼k Simge:"
 
 #: entrydialog.cpp:149
 msgid "Comment:"
@@ -194,39 +194,39 @@ msgstr "Yorum:"
 
 #: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
-msgstr "Çalıştır"
+msgstr "Ã‡alÃ½Ã¾tÃ½r"
 
 #: entrydialog.cpp:222
 msgid "Execute:"
-msgstr "Çalıştır:"
+msgstr "Ã‡alÃ½Ã¾tÃ½r:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
-msgstr "Çalışma Dizini:"
+msgstr "Ã‡alÃ½Ã¾ma Dizini:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"
-msgstr "Uçbirim içinde çalıştır"
+msgstr "UÃ§birim iÃ§inde Ã§alÃ½Ã¾tÃ½r"
 
 #: entrydialog.cpp:245
 msgid "Terminal Options:"
-msgstr "Uçbirim Seçenekleri:"
+msgstr "UÃ§birim SeÃ§enekleri:"
 
 #: entrydialog.cpp:310
 msgid "Binary Pattern:"
-msgstr "İkili Deseni:"
+msgstr "Ãkili Deseni:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "Yutmak için uygulama:"
+msgstr "Yutmak iÃ§in uygulama:"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"
-msgstr "Uygulama başlığı:"
+msgstr "Uygulama baÃ¾lÃ½Ã°Ã½:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "Tuş basımında çalışacak uygulama:"
+msgstr "TuÃ¾ basÃ½mÃ½nda Ã§alÃ½Ã¾acak uygulama:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -238,11 +238,11 @@ msgstr "Salt Oku"
 
 #: entrydialog.cpp:420
 msgid "Device:"
-msgstr "Aygıt:"
+msgstr "AygÃ½t:"
 
 #: entrydialog.cpp:425
 msgid "Mount Point:"
-msgstr "Bağlama Noktası:"
+msgstr "BaÃ°lama NoktasÃ½:"
 
 #: entrydialog.cpp:430
 msgid "FS Type:"
@@ -250,23 +250,23 @@ msgstr "Dosya Sistemi:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"
-msgstr "Çözme Simgesi:"
+msgstr "Ã‡Ã¶zme Simgesi:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Menü Adlarını Değiştir"
+msgstr "MenÃ¼ AdlarÃ½nÃ½ DeÃ°iÃ¾tir"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "KPanel'de gösterilen menü adlarını değiştir"
+msgstr "KPanel'de gÃ¶sterilen menÃ¼ adlarÃ½nÃ½ deÃ°iÃ¾tir"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"
-msgstr "Kişisel:"
+msgstr "KiÃ¾isel:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Öntanımlı:"
+msgstr "Ã–ntanÃ½mlÃ½:"
 
 #~ msgid "! PROTECTED Button !"
-#~ msgstr "! Korunmuş Tuş !"
+#~ msgstr "! KorunmuÃ¾ TuÃ¾ !"

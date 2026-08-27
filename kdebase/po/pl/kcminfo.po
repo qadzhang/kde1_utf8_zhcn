@@ -4,7 +4,7 @@ msgstr ""
 "POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1998-12-27 20:51+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: info.cpp:50
 #, c-format
@@ -19,17 +19,17 @@ msgstr "  wymiary             : %dx%d pikseli (%dx%d mm)\n"
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  rozdzielczo¶æ       : %dx%d punktów na cal\n"
+msgstr "  rozdzielczoÅ›Ä‡       : %dx%d punktÃ³w na cal\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  g³êbia (%d)          : "
+msgstr "  gÅ‚Ä™bia (%d)          : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "nazwa wy¶wietlacza    : %s"
+msgstr "nazwa wyÅ›wietlacza    : %s"
 
 #: info.cpp:87
 #, c-format
@@ -49,12 +49,12 @@ msgstr "wersja producenta     : %i"
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "domy¶lny numer ekranu : %i"
+msgstr "domyÅ›lny numer ekranu : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "ilo¶æ ekranów         : %i"
+msgstr "iloÅ›Ä‡ ekranÃ³w         : %i"
 
 #: info.cpp:181
 msgid ""
@@ -62,13 +62,13 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Brak dostêpnych informacji\n"
-"lub ten system jest jeszcze nie obs³ugiwany :-("
+"Brak dostÄ™pnych informacji\n"
+"lub ten system jest jeszcze nie obsÅ‚ugiwany :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, nieznana prêdko¶æ"
+msgstr "%s, nieznana prÄ™dkoÅ›Ä‡"
 
 #: info_fbsd.cpp:75
 #, c-format
@@ -77,11 +77,11 @@ msgstr "%s z zegarem %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Nie mo¿na otworzyæ fstab!"
+msgstr "Nie moÅ¼na otworzyÄ‡ fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "Urz±dzenie"
+msgstr "UrzÄ…dzenie"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
@@ -101,23 +101,23 @@ msgstr "nieznany procesor"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "Nie dostêpne"
+msgstr "Nie dostÄ™pne"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "Liczba aktywnych procesorów = "
+msgstr "Liczba aktywnych procesorÃ³w = "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "Warto¶æ"
+msgstr "WartoÅ›Ä‡"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr "Kana³y DMA"
+msgstr "KanaÅ‚y DMA"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "u¿ywane przez"
+msgstr "uÅ¼ywane przez"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
@@ -125,7 +125,7 @@ msgstr "Zakres I/O"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "Pa&miêæ"
+msgstr "Pa&miÄ™Ä‡"
 
 #: main.cpp:82
 msgid "&Processor"
@@ -137,7 +137,7 @@ msgstr "P&rzerwania"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "Kana³y &DMA"
+msgstr "KanaÅ‚y &DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
@@ -149,11 +149,11 @@ msgstr "P&CI"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr "&D¼wiêk"
+msgstr "&DÅºwiÄ™k"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "&Urz±dzenia"
+msgstr "&UrzÄ…dzenia"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -173,7 +173,7 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-"u¿ycie: kcminfo [-init | "
+"uÅ¼ycie: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 
@@ -183,39 +183,39 @@ msgstr "Informacje o systemie"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "Pamiêæ ca³kowita"
+msgstr "PamiÄ™Ä‡ caÅ‚kowita"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "Pamiêæ wolna"
+msgstr "PamiÄ™Ä‡ wolna"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Pamiêæ dzielona"
+msgstr "PamiÄ™Ä‡ dzielona"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "Pamiêæ buforowana"
+msgstr "PamiÄ™Ä‡ buforowana"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "Pamiêæ wymiany"
+msgstr "PamiÄ™Ä‡ wymiany"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "Wolna pamiêæ wymiany"
+msgstr "Wolna pamiÄ™Ä‡ wymiany"
 
 #: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld bajtów  = %8.2f MB"
+msgstr "%10ld bajtÃ³w  = %8.2f MB"
 
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "Nie dostêpne"
+msgstr "Nie dostÄ™pne"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "Nie dostêpne"
+msgstr "Nie dostÄ™pne"

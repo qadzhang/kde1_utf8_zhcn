@@ -10,13 +10,13 @@ msgstr ""
 "Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
 "Language-Team: <da@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "skærm #%d"
+msgstr "skÃ¦rm #%d"
 
 #: info.cpp:52
 #, c-format
@@ -26,7 +26,7 @@ msgstr " dimensioner        : %dx%d pixels (%dx%d mm)\n"
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr " opløsning          : %dx%d dots per inch\n"
+msgstr " oplÃ¸sning          : %dx%d dots per inch\n"
 
 #: info.cpp:61
 #, c-format
@@ -36,7 +36,7 @@ msgstr " dybder (%d)        : "
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "navn på skærm        : %s"
+msgstr "navn pÃ¥ skÃ¦rm        : %s"
 
 #: info.cpp:87
 #, c-format
@@ -46,22 +46,22 @@ msgstr "versionsnummer       : %i.%i"
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "leverandørnavn         : %s"
+msgstr "leverandÃ¸rnavn         : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "leverandørs versionsnummer : %i"
+msgstr "leverandÃ¸rs versionsnummer : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "standard skærmnummer : %i"
+msgstr "standard skÃ¦rmnummer : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "antal skærme : %i"
+msgstr "antal skÃ¦rme : %i"
 
 #: info.cpp:181
 msgid ""
@@ -69,9 +69,9 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Ingen tilgængelig information\n"
+"Ingen tilgÃ¦ngelig information\n"
 "eller\n"
-"Dette system er ikke understøttet endnu"
+"Dette system er ikke understÃ¸ttet endnu"
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -81,11 +81,11 @@ msgstr "ukendt hastighed: %s"
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s kører ved %s MHz"
+msgstr "%s kÃ¸rer ved %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Kunne ikke åbne fstab"
+msgstr "Kunne ikke Ã¥bne fstab"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
@@ -109,7 +109,7 @@ msgstr "Ukendt CPU-type"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "Ikke tilgængeligt"
+msgstr "Ikke tilgÃ¦ngeligt"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
@@ -117,7 +117,7 @@ msgstr "Antal aktive CPU'er="
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "Værdi"
+msgstr "VÃ¦rdi"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
@@ -129,7 +129,7 @@ msgstr "brugt af"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "I/O-område"
+msgstr "I/O-omrÃ¥de"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -221,9 +221,9 @@ msgstr "%10ld bytes  = %8.2f MB"
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "Ikke tilgængeligt"
+msgstr "Ikke tilgÃ¦ngeligt"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "Ikke tilgængeligt"
+msgstr "Ikke tilgÃ¦ngeligt"

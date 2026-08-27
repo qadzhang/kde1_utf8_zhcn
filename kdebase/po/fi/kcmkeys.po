@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:72
@@ -24,11 +24,11 @@ msgstr "&Yleiset lyhytvalinnat"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "k‰yttˆ: kcmkeys [-init | {standard,global}]\n"
+msgstr "k√§ytt√∂: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "N‰pp‰insidosten asetukset"
+msgstr "N√§pp√§insidosten asetukset"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
@@ -40,11 +40,11 @@ msgstr "KDE oletus"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "&N‰pp‰inteema"
+msgstr "&N√§pp√§inteema"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "&Lis‰‰ ..."
+msgstr "&Lis√§√§ ..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
@@ -60,7 +60,7 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"N‰pp‰inteemaa ei saatu poistettua.\n"
+"N√§pp√§inteemaa ei saatu poistettua.\n"
 "Sinulle ei ole mahdollisesti oikeuksia muuttaa tiedostoa\n"
 "johon teema on tallennettu."
 
@@ -74,12 +74,12 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Valitse uniikki nimi uudelle n‰pp‰inteemalle.\n"
-"Antamasi nimi n‰ytt‰‰ jo olevan teemalistalla."
+"Valitse uniikki nimi uudelle n√§pp√§inteemalle.\n"
+"Antamasi nimi n√§ytt√§√§ jo olevan teemalistalla."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Lis‰‰ n‰pp‰inteema"
+msgstr "Lis√§√§ n√§pp√§inteema"
 
 #: savescm.cpp:32
 msgid ""
@@ -89,11 +89,11 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Anna nimi uudelle n‰pp‰inteemalle, joka\n"
-"tullaan lis‰‰m‰‰n henkilˆkohtaiseen listaasi.\n"
+"&Anna nimi uudelle n√§pp√§inteemalle, joka\n"
+"tullaan lis√§√§m√§√§n henkil√∂kohtaiseen listaasi.\n"
 "\n"
-"Esikatselussa k‰ytetyt n‰pp‰imet kopioidaan\n"
-"aluksi t‰h‰n teemaan."
+"Esikatselussa k√§ytetyt n√§pp√§imet kopioidaan\n"
+"aluksi t√§h√§n teemaan."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
@@ -129,7 +129,7 @@ msgstr "Sulje ikkuna"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr "Pienenn‰ ikkuna"
+msgstr "Pienenn√§ ikkuna"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
@@ -137,7 +137,7 @@ msgstr "Ikkunan koko"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr "Siirr‰ ikkunaa"
+msgstr "Siirr√§ ikkunaa"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
@@ -145,51 +145,51 @@ msgstr "Naulaa ikkuna"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "Vaihda tyˆpˆyt‰‰n 1"
+msgstr "Vaihda ty√∂p√∂yt√§√§n 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "Vaihda tyˆpˆyt‰‰n 2"
+msgstr "Vaihda ty√∂p√∂yt√§√§n 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Vaihda tyˆpˆyt‰‰n 3"
+msgstr "Vaihda ty√∂p√∂yt√§√§n 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "Vaihda tyˆpˆyt‰‰n 4"
+msgstr "Vaihda ty√∂p√∂yt√§√§n 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Vaihda tyˆpˆyt‰‰n 5"
+msgstr "Vaihda ty√∂p√∂yt√§√§n 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "Vaihda tyˆpˆyt‰‰n 6"
+msgstr "Vaihda ty√∂p√∂yt√§√§n 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "Vaihda tyˆpˆyt‰‰n 7"
+msgstr "Vaihda ty√∂p√∂yt√§√§n 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "Vaihda tyˆpˆyt‰‰n 8"
+msgstr "Vaihda ty√∂p√∂yt√§√§n 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Siirr‰ tyˆpˆyt‰ oikealle"
+msgstr "Siirr√§ ty√∂p√∂yt√§ oikealle"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "Siirr‰ tyˆpˆyt‰ vasemmalle"
+msgstr "Siirr√§ ty√∂p√∂yt√§ vasemmalle"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "Siirr‰ tyˆpˆyt‰ ylˆs"
+msgstr "Siirr√§ ty√∂p√∂yt√§ yl√∂s"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "Siirr‰ tyˆpˆyt‰ alas"
+msgstr "Siirr√§ ty√∂p√∂yt√§ alas"
 
 #: stdbindings.cpp:3
 msgid "New"

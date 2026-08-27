@@ -10,16 +10,16 @@ msgstr ""
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.C:426
 msgid "choose type of color-mode"
-msgstr "Vali v‰rvireziimi t¸¸p"
+msgstr "Vali v√§rvireziimi t√º√ºp"
 
 #: main.C:432
 msgid "Add characters to word class"
-msgstr "Lisa s¸mbolid sına klassi"
+msgstr "Lisa s√ºmbolid s√µna klassi"
 
 #: main.C:438
 msgid "The backspace key will send a"
@@ -55,7 +55,7 @@ msgstr "&Pisike"
 
 #: main.C:629
 msgid "&Small"
-msgstr "&V‰ike"
+msgstr "&V√§ike"
 
 #: main.C:630
 msgid "&Medium"
@@ -91,15 +91,15 @@ msgstr "Linu&xi konsool"
 
 #: main.C:657
 msgid "&Custom Colors"
-msgstr "&Omad v‰rvid"
+msgstr "&Omad v√§rvid"
 
 #: main.C:665 main.C:969
 msgid "Hide &Menubar"
-msgstr "Peida &men¸¸riba"
+msgstr "Peida &men√º√ºriba"
 
 #: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
-msgstr "N‰ita &men¸¸ribam"
+msgstr "N√§ita &men√º√ºribam"
 
 #: main.C:668 main.C:979
 msgid "Secure &keyboard"
@@ -115,7 +115,7 @@ msgstr "&Fondi suurus"
 
 #: main.C:672
 msgid "&Color"
-msgstr "&V‰rv"
+msgstr "&V√§rv"
 
 #: main.C:673
 msgid "&Size"
@@ -156,12 +156,12 @@ msgstr ""
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
-"Terminali emulaator KDE tˆˆlaua keskkonna jaoks\n"
+"Terminali emulaator KDE t√∂√∂laua keskkonna jaoks\n"
 "baseerub Robert Nation'i rakendusel rxvt-2.08"
 
 #: main.C:897 main.C:1036
 msgid "&Show"
-msgstr "&N‰ita"
+msgstr "&N√§ita"
 
 #: main.C:975
 msgid "Unsecure &keyboard"
@@ -180,7 +180,7 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Uusi v‰rviseadistusi n‰idatakse peale seda\n"
+"Uusi v√§rviseadistusi n√§idatakse peale seda\n"
 "kui sa oled muutnud klaviatuuri mitteturvaliseks."
 
 #: main.C:1474
@@ -193,7 +193,7 @@ msgid ""
 msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
-"Terminali emulaator KDE tˆˆlaua keskkonna jaoks\n"
+"Terminali emulaator KDE t√∂√∂laua keskkonna jaoks\n"
 "baseerub Robert Nation'i rakendusel rxvt-2.08\n"
 
 #: main.C:1478
@@ -204,12 +204,12 @@ msgstr "Lubatud argumendid on:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <command> <arg> ...    k‰ivita k‰sk argumentidega - peab olema viimane "
+"-e <command> <arg> ...    k√§ivita k√§sk argumentidega - peab olema viimane "
 "argument\n"
 
 #: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
-msgstr "-display <name>           t‰psusta ekraan (server)\n"
+msgstr "-display <name>           t√§psusta ekraan (server)\n"
 
 #: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
@@ -217,15 +217,15 @@ msgstr "-vt_geometry <spec>       esialgne vt akna geomeetria\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-print-pipe <name>        m‰‰ra vt100 printeri toru\n"
+msgstr "-print-pipe <name>        m√§√§ra vt100 printeri toru\n"
 
 #: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
-msgstr "-vt_bg <colour>           tausta v‰rv\n"
+msgstr "-vt_bg <colour>           tausta v√§rv\n"
 
 #: main.C:1484
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr "-vt_fg <colour>           esiplaani v‰rv\n"
+msgstr "-vt_fg <colour>           esiplaani v√§rv\n"
 
 #: main.C:1485
 msgid "-vt_font <fontname>       normal font\n"
@@ -242,11 +242,11 @@ msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 #: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr ""
-"-linux                    seadista kvt kui j‰releaimatud linux'i konsool\n"
+"-linux                    seadista kvt kui j√§releaimatud linux'i konsool\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar               peida men¸¸riba\n"
+msgstr "-no_menubar               peida men√º√ºriba\n"
 
 #: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
@@ -262,15 +262,15 @@ msgstr ""
 
 #: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr "-tn <TERM>                Terminali t¸¸p. Vaikimisi on xterm.\n"
+msgstr "-tn <TERM>                Terminali t√º√ºp. Vaikimisi on xterm.\n"
 
 #: main.C:1494
 msgid "-C                        Capture system console message\n"
-msgstr "-C                        N‰ita teateid s¸steemselt konsoolilt\n"
+msgstr "-C                        N√§ita teateid s√ºsteemselt konsoolilt\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <text>                 nimi ikoonil vıi ikooni aknal\n"
+msgstr "-n <text>                 nimi ikoonil v√µi ikooni aknal\n"
 
 #: main.C:1496
 msgid ""
@@ -286,8 +286,8 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       k‰ivita kvt shell kui login shell\n"
-"-ls-                      k‰ivita kvt shell kui mitte-login shell "
+"-ls                       k√§ivita kvt shell kui login shell\n"
+"-ls-                      k√§ivita kvt shell kui mitte-login shell "
 "(vaikimisi)\n"
 
 #: main.C:1500
@@ -295,8 +295,8 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               k‰sitle Meta't prefiksiga ESCAPE, 8.biti "
-"seadmiseks vıi ignoreeri\n"
+"-meta <arg>               k√§sitle Meta't prefiksiga ESCAPE, 8.biti "
+"seadmiseks v√µi ignoreeri\n"
 
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
@@ -310,7 +310,7 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          kasuta kombinatsiooni ALT+keysym puhvris ¸les "
+"-pageup <keysym>          kasuta kombinatsiooni ALT+keysym puhvris √ºles "
 "kerimiseks\n"
 "-pagedown <keysym>        kasuta kombinatsiooni ALT+keysym puhvris alla "
 "kerimiseks\n"

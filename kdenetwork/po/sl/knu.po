@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Roman Maurer <roman.maurer@hermes.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: knu.cpp:150 knu.cpp:309
@@ -43,7 +43,7 @@ msgstr ""
 "Noben ukaz ni vklopljen v\n"
 "nastavitveni datoteki.\n"
 "\n"
-"Tako da ne morem nièesar narediti...\n"
+"Tako da ne morem niÄesar narediti...\n"
 
 #: knu.cpp:246
 msgid "&New window"
@@ -97,7 +97,7 @@ msgstr "O..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr "Omre¾ni pripomoèki"
+msgstr "OmreÅ¾ni pripomoÄki"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
@@ -105,7 +105,7 @@ msgstr "G&ostitelj:"
 
 #: CommandDlg.cpp:140
 msgid "&Go!"
-msgstr "Pr&ièni!"
+msgstr "Pr&iÄni!"
 
 #: CommandDlg.cpp:150
 msgid "&Stop"
@@ -117,29 +117,29 @@ msgid ""
 "You can give its path in the Edit->Preferences... menu."
 msgstr ""
 "Tega ukaza ne najdem.\n"
-"Pot do njega lahko doloèite v meniju Uredi->Nastavitve..."
+"Pot do njega lahko doloÄite v meniju Uredi->Nastavitve..."
 
 #: CommandDlg.cpp:351
 #, c-format
-msgid ""
-"\n"
-"You have a problem in your\n"
-"%s/%src\n"
-"configuration file.\n"
-"In the [%s] group,\n"
-"I can't find a valid \"path=\" entry.\n"
-"\n"
-"Please use Edit->Preferences... menu\n"
-"to configure it again.\n"
-msgstr ""
-"\n"
-"Obstaja te¾ava z va¹o\n"
-"nastavitveno datoteko '%s'.\n"
-"V skupini [%s]\n"
-"ne morem najti veljavnega vnosa \"path=\".\n"
-"\n"
-"Prosim uporabite meni Uredi->Nastavitve...\n"
-"za ponovno nastavitev.\n"
+#~ msgid ""
+#~ "\n"
+#~ "You have a problem in your\n"
+#~ "%s/%src\n"
+#~ "configuration file.\n"
+#~ "In the [%s] group,\n"
+#~ "I can't find a valid \"path=\" entry.\n"
+#~ "\n"
+#~ "Please use Edit->Preferences... menu\n"
+#~ "to configure it again.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Obstaja teÅ¾ava z vaÅ¡o\n"
+#~ "nastavitveno datoteko '%s'.\n"
+#~ "V skupini [%s]\n"
+#~ "ne morem najti veljavnega vnosa \"path=\".\n"
+#~ "\n"
+#~ "Prosim uporabite meni Uredi->Nastavitve...\n"
+#~ "za ponovno nastavitev.\n"
 
 #: CommandDlg.cpp:360
 msgid "Error in pathname"
@@ -187,19 +187,19 @@ msgstr "Psln"
 
 #: MtrDlg.cpp:95
 msgid "Best"
-msgstr "Najbolj¹e"
+msgstr "NajboljÅ¡e"
 
 #: MtrDlg.cpp:97
 msgid "Avg"
-msgstr "Povpreèno"
+msgstr "PovpreÄno"
 
 #: MtrDlg.cpp:99
 msgid "Worst"
-msgstr "Najslab¹e"
+msgstr "NajslabÅ¡e"
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
-msgstr "I¹èi i&me gostitelja"
+msgstr "IÅ¡Äi i&me gostitelja"
 
 #: HostDlg.cpp:331 PingDlg.cpp:227
 msgid "hos&t"
@@ -211,7 +211,7 @@ msgstr "ns&lookup"
 
 #: TracerouteDlg.cpp:115
 msgid "&Maximum number of hops:"
-msgstr "Na&jveèje ¹tevilo skokov:"
+msgstr "Na&jveÄje Å¡tevilo skokov:"
 
 #: HostDlg.cpp:112
 msgid "address (A)"
@@ -223,11 +223,11 @@ msgstr "ime (PTR)"
 
 #: HostDlg.cpp:114
 msgid "name server (NS)"
-msgstr "imenski stre¾nik (NS)"
+msgstr "imenski streÅ¾nik (NS)"
 
 #: HostDlg.cpp:115
 msgid "mail exchanger (MX)"
-msgstr "izmenjevalnik po¹te (MX)"
+msgstr "izmenjevalnik poÅ¡te (MX)"
 
 #: HostDlg.cpp:116
 msgid "alias (CNAME)"
@@ -235,7 +235,7 @@ msgstr "vzdevek (CNAME)"
 
 #: HostDlg.cpp:117
 msgid "start of authority (SOA)"
-msgstr "zaèetek avtoritete (SOA)"
+msgstr "zaÄetek avtoritete (SOA)"
 
 #: HostDlg.cpp:118
 msgid "any record (ANY)"
@@ -243,15 +243,15 @@ msgstr "katerikoli vnos (ANY)"
 
 #: HostDlg.cpp:124
 msgid "Se&arch for:"
-msgstr "I¹èi &za:"
+msgstr "IÅ¡Äi &za:"
 
 #: HostDlg.cpp:136 HostDlg.cpp:287
 msgid "default server"
-msgstr "privzeti stre¾nik"
+msgstr "privzeti streÅ¾nik"
 
 #: FingerDlg.cpp:95 HostDlg.cpp:145
 msgid "Ser&ver:"
-msgstr "S&tre¾nik:"
+msgstr "S&treÅ¾nik:"
 
 #: FingerDlg.cpp:77
 msgid "&User:"

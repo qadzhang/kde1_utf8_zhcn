@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Thorarinn R. Einarsson <thori@mindspring.com>\n"
 "Language-Team: Icelandic <kde-isl@mmedia.is>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 
 #: kpackage.cpp:117 kpackage.cpp:213
@@ -19,11 +19,11 @@ msgstr "&Opna"
 
 #: kpackage.cpp:118 kpackage.cpp:214
 msgid "Open &URL"
-msgstr "Opna s&lóğ"
+msgstr "Opna s&lÃ³Ã°"
 
 #: kpackage.cpp:120 kpackage.cpp:216
 msgid "Open &Recent..."
-msgstr "Opna &nılegt..."
+msgstr "Opna &nÃ½legt..."
 
 #: kpackage.cpp:123 kpackage.cpp:219
 msgid "Find &Package..."
@@ -31,27 +31,27 @@ msgstr "Finna &pakka..."
 
 #: kpackage.cpp:125 kpackage.cpp:220
 msgid "Find &File..."
-msgstr "Finna &skrá"
+msgstr "Finna &skrÃ¡"
 
 #: kpackage.cpp:126 kpackage.cpp:221
 msgid "Re&load"
-msgstr "Sækja &aftur"
+msgstr "SÃ¦kja &aftur"
 
 #: kpackage.cpp:130 kpackage.cpp:225
 msgid "&Expand Tree"
-msgstr "&Opna tré"
+msgstr "&Opna trÃ©"
 
 #: kpackage.cpp:131 kpackage.cpp:226
 msgid "&Collapse Tree"
-msgstr "&Loka tré"
+msgstr "&Loka trÃ©"
 
 #: kpackage.cpp:132 kpackage.cpp:227
 msgid "Clear &Selected"
-msgstr "&Sleppa völdum pökkum"
+msgstr "&Sleppa vÃ¶ldum pÃ¶kkum"
 
 #: kpackage.cpp:134 kpackage.cpp:229 kpackage.cpp:414
 msgid "Multiple Selection &Mode"
-msgstr "Nota fjölvals&ham"
+msgstr "Nota fjÃ¶lvals&ham"
 
 #: kpackage.cpp:138 kpackage.cpp:233
 msgid "&Options..."
@@ -63,19 +63,19 @@ msgstr "&Lyklar..."
 
 #: kpackage.cpp:144 kpackage.cpp:236
 msgid "&Location of uninstalled packages"
-msgstr "St&ağsetning óinnsettra pakka"
+msgstr "St&aÃ°setning Ã³innsettra pakka"
 
 #: kpackage.cpp:149 kpackage.cpp:241
 msgid "Location "
-msgstr "Stağsetning "
+msgstr "StaÃ°setning "
 
 #: kpackage.cpp:164 kpackage.cpp:256 kpackage.cpp:406
 msgid "Show &Tool Bar"
-msgstr "Sına &tækjaslá"
+msgstr "SÃ½na &tÃ¦kjaslÃ¡"
 
 #: kpackage.cpp:167 kpackage.cpp:258 kpackage.cpp:401
 msgid "Hide &Tool Bar"
-msgstr "Fela &tækjaslá"
+msgstr "Fela &tÃ¦kjaslÃ¡"
 
 #: kpackage.cpp:170 kpackage.cpp:260
 msgid "&Save Settings Now"
@@ -83,11 +83,11 @@ msgstr "&Vista stillingar"
 
 #: kpackage.cpp:174 kpackage.cpp:263
 msgid "Clear package &Directory cache"
-msgstr "Hreinsa &möppubiğminni"
+msgstr "Hreinsa &mÃ¶ppubiÃ°minni"
 
 #: kpackage.cpp:176 kpackage.cpp:265
 msgid "Clear &Package cache"
-msgstr "Hreinsa &pakkabiğminni"
+msgstr "Hreinsa &pakkabiÃ°minni"
 
 #: kpackage.cpp:187 kpackage.cpp:275
 msgid "&Packages"
@@ -95,7 +95,7 @@ msgstr "&Pakkar"
 
 #: kpackage.cpp:189 kpackage.cpp:277
 msgid "&Cache"
-msgstr "&Biğminni"
+msgstr "&BiÃ°minni"
 
 #: kpackage.cpp:300
 msgid "Open Package"
@@ -103,11 +103,11 @@ msgstr "Opna pakka"
 
 #: kpackage.cpp:304
 msgid "Expand Package Tree"
-msgstr "Opna pakkatré"
+msgstr "Opna pakkatrÃ©"
 
 #: kpackage.cpp:308
 msgid "Collapse Package Tree"
-msgstr "Loka pakkatré"
+msgstr "Loka pakkatrÃ©"
 
 #: kpackage.cpp:312
 msgid "Find Installed Package"
@@ -115,11 +115,11 @@ msgstr "Finna innsettan pakka"
 
 #: kpackage.cpp:316
 msgid "Find Package containing file"
-msgstr "Finna pakka sem inniheldur skrá"
+msgstr "Finna pakka sem inniheldur skrÃ¡"
 
 #: kpackage.cpp:320
 msgid "Reload Package Information"
-msgstr "Endurhlağa pakkaupplısingar"
+msgstr "EndurhlaÃ°a pakkaupplÃ½singar"
 
 #: kpackage.cpp:412
 msgid "Single Selection &Mode"
@@ -127,46 +127,46 @@ msgstr "Nota einvals&ham"
 
 #: kpackage.cpp:586
 msgid "Management Mode"
-msgstr "Skráarval"
+msgstr "SkrÃ¡arval"
 
 #: kpackage.cpp:659
 msgid "Select Document to Open"
-msgstr "Veldu skrá til ağ opna"
+msgstr "Veldu skrÃ¡ til aÃ° opna"
 
 #: kpackage.cpp:711
 #, c-format
 msgid "Unknown package type: %s"
-msgstr "Óşekkt pakkagerğ: %s"
+msgstr "Ã“Ã¾ekkt pakkagerÃ°: %s"
 
 #: kpackage.cpp:713
 #, c-format
 msgid "File not found: %s"
-msgstr "Skrá fannst ekki: %s"
+msgstr "SkrÃ¡ fannst ekki: %s"
 
 #: cache.cpp:74 kpackage.cpp:751
 #, c-format
 msgid "Malformed URL: %s"
-msgstr "Gölluğ slóğ(URL): %s"
+msgstr "GÃ¶lluÃ° slÃ³Ã°(URL): %s"
 
 #: kpackage.cpp:801 pkgInterface.cpp:169
 msgid "Calling KFM"
-msgstr "Ræsi KFM"
+msgstr "RÃ¦si KFM"
 
 #: kpackage.cpp:804 pkgInterface.cpp:172
 msgid "KFM finished"
-msgstr "KFM búinn"
+msgstr "KFM bÃºinn"
 
 #: kpackage.cpp:813 pkgInterface.cpp:181
 msgid "KFM failed"
-msgstr "KFM brást"
+msgstr "KFM brÃ¡st"
 
 #: kpackage.cpp:823
 msgid "Open Location:"
-msgstr "Opna slóğ:"
+msgstr "Opna slÃ³Ã°:"
 
 #: managementWidget.cpp:91 managementWidget.cpp:140 pkguninstallDialog.cpp:19
 msgid "Uninstall"
-msgstr "Fjarlægja"
+msgstr "FjarlÃ¦gja"
 
 #: managementWidget.cpp:93 managementWidget.cpp:131 managementWidget.cpp:273
 msgid "Examine"
@@ -174,15 +174,15 @@ msgstr "Rannsaka"
 
 #: managementWidget.cpp:200
 msgid "Building package tree"
-msgstr "Bı til pakkatré"
+msgstr "BÃ½ til pakkatrÃ©"
 
 #: managementWidget.cpp:248 managementWidget.cpp:257
 msgid "Management Mode: Single Selection"
-msgstr "Skráarval: Einvalshamur"
+msgstr "SkrÃ¡arval: Einvalshamur"
 
 #: managementWidget.cpp:255
 msgid "Management Mode: Multiple Selection"
-msgstr "Skráarval: Fjölvalshamur"
+msgstr "SkrÃ¡arval: FjÃ¶lvalshamur"
 
 #: managementWidget.cpp:287 pkginstallOptions.cpp:51
 msgid "Install"
@@ -190,19 +190,19 @@ msgstr "Setja inn"
 
 #: managementWidget.cpp:325
 msgid "Filename not available\n"
-msgstr "Skráarnafn ekki notanlegt\n"
+msgstr "SkrÃ¡arnafn ekki notanlegt\n"
 
 #: packageDisplay.cpp:81
 msgid "File List"
-msgstr "Skráarlisti"
+msgstr "SkrÃ¡arlisti"
 
 #: packageDisplay.cpp:184 packageDisplay.cpp:211
 msgid "Updating File List"
-msgstr "Uppfæri skráarlista"
+msgstr "UppfÃ¦ri skrÃ¡arlista"
 
 #: packageDisplay.cpp:222
 msgid " files"
-msgstr " skrár"
+msgstr " skrÃ¡r"
 
 #: packageProperties.cpp:46
 msgid "name"
@@ -214,15 +214,15 @@ msgstr "Yfirlit"
 
 #: packageProperties.cpp:48
 msgid "version"
-msgstr "Útgáfa"
+msgstr "ÃštgÃ¡fa"
 
 #: packageProperties.cpp:49
 msgid "old-version"
-msgstr "Eldri útgáfa"
+msgstr "Eldri ÃºtgÃ¡fa"
 
 #: packageProperties.cpp:50
 msgid "status"
-msgstr "Stağa"
+msgstr "StaÃ°a"
 
 #: packageProperties.cpp:51
 msgid "group"
@@ -230,23 +230,23 @@ msgstr "Flokkur"
 
 #: packageProperties.cpp:52
 msgid "size"
-msgstr "Stærğ"
+msgstr "StÃ¦rÃ°"
 
 #: packageProperties.cpp:53
 msgid "file-size"
-msgstr "Skráarstærğ"
+msgstr "SkrÃ¡arstÃ¦rÃ°"
 
 #: packageProperties.cpp:54
 msgid "description"
-msgstr "Upplısingar"
+msgstr "UpplÃ½singar"
 
 #: packageProperties.cpp:55
 msgid "architecture"
-msgstr "Vélbúnağur"
+msgstr "VÃ©lbÃºnaÃ°ur"
 
 #: packageProperties.cpp:57
 msgid "unsatisfied dependencies"
-msgstr "Óuppfylltar kröfur"
+msgstr "Ã“uppfylltar krÃ¶fur"
 
 #: packageProperties.cpp:58
 msgid "pre-depends"
@@ -254,15 +254,15 @@ msgstr ""
 
 #: packageProperties.cpp:59
 msgid "dependencies"
-msgstr "Er háğ"
+msgstr "Er hÃ¡Ã°"
 
 #: packageProperties.cpp:60
 msgid "depends"
-msgstr "háğ"
+msgstr "hÃ¡Ã°"
 
 #: packageProperties.cpp:61
 msgid "conflicts"
-msgstr "Árekstur viğ"
+msgstr "Ãrekstur viÃ°"
 
 #: packageProperties.cpp:62
 msgid "provides"
@@ -270,15 +270,15 @@ msgstr "Skaffar"
 
 #: packageProperties.cpp:63
 msgid "recommends"
-msgstr "Mælir meğ"
+msgstr "MÃ¦lir meÃ°"
 
 #: packageProperties.cpp:64
 msgid "replaces"
-msgstr "Kemur í stağ"
+msgstr "Kemur Ã­ staÃ°"
 
 #: packageProperties.cpp:65
 msgid "suggests"
-msgstr "Ráğleggur"
+msgstr "RÃ¡Ã°leggur"
 
 #: packageProperties.cpp:66
 msgid "priority"
@@ -286,15 +286,15 @@ msgstr "Forgangur"
 
 #: packageProperties.cpp:68
 msgid "essential"
-msgstr "Nauğsynlegt"
+msgstr "NauÃ°synlegt"
 
 #: packageProperties.cpp:69
 msgid "installtime"
-msgstr "Sett inn şann"
+msgstr "Sett inn Ã¾ann"
 
 #: packageProperties.cpp:70
 msgid "config-version"
-msgstr "Uppsetn.útgáfa"
+msgstr "Uppsetn.ÃºtgÃ¡fa"
 
 #: packageProperties.cpp:71
 msgid "distribution"
@@ -302,19 +302,19 @@ msgstr "Dreifing"
 
 #: packageProperties.cpp:72
 msgid "vendor"
-msgstr "Fengiğ frá"
+msgstr "FengiÃ° frÃ¡"
 
 #: packageProperties.cpp:73
 msgid "maintainer"
-msgstr "Haldiğ viğ af"
+msgstr "HaldiÃ° viÃ° af"
 
 #: packageProperties.cpp:74
 msgid "packager"
-msgstr "Pakkağ af"
+msgstr "PakkaÃ° af"
 
 #: packageProperties.cpp:75
 msgid "source"
-msgstr "Şula"
+msgstr "Ãula"
 
 #: packageProperties.cpp:76
 msgid "build-time"
@@ -330,7 +330,7 @@ msgstr ""
 
 #: packageProperties.cpp:79
 msgid "filename"
-msgstr "Skráarnafn"
+msgstr "SkrÃ¡arnafn"
 
 #: packageProperties.cpp:80
 msgid "serial"
@@ -339,20 +339,20 @@ msgstr ""
 #: pkguninstallDialog.cpp:85
 #, c-format
 msgid "Uninstall: %s\n"
-msgstr "Fjarlægja: %s\n"
+msgstr "FjarlÃ¦gja: %s\n"
 
 #: pkguninstallDialog.cpp:127
 #, c-format
 msgid "Uninstall: %d %s Packages\n"
-msgstr "Fjarlægja: %d %s pakka\n"
+msgstr "FjarlÃ¦gja: %d %s pakka\n"
 
 #: findf.cpp:23
 msgid "Find File"
-msgstr "Finna skrá"
+msgstr "Finna skrÃ¡"
 
 #: findf.cpp:36
 msgid "Type"
-msgstr "Gerğ"
+msgstr "GerÃ°"
 
 #: findf.cpp:37
 msgid "Package"
@@ -360,7 +360,7 @@ msgstr "Pakki"
 
 #: findf.cpp:38
 msgid "File Name"
-msgstr "Skráarnafn"
+msgstr "SkrÃ¡arnafn"
 
 #: findf.cpp:44 search.cpp:46
 msgid "Find"
@@ -368,7 +368,7 @@ msgstr "Finna"
 
 #: findf.cpp:51 search.cpp:51
 msgid "Done"
-msgstr "Í lagi"
+msgstr "Ã lagi"
 
 #: findf.cpp:110
 msgid "--Nothing found--"
@@ -376,7 +376,7 @@ msgstr "--Fannst ekki--"
 
 #: findf.cpp:151
 msgid "Incorrect URL type"
-msgstr "Röng gerğ slóğar"
+msgstr "RÃ¶ng gerÃ° slÃ³Ã°ar"
 
 #: search.cpp:18
 msgid "Find Package"
@@ -414,11 +414,11 @@ msgstr "Innsettir pakkar"
 
 #: options.cpp:42
 msgid "Updated Packages"
-msgstr "Uppfærğir pakkar"
+msgstr "UppfÃ¦rÃ°ir pakkar"
 
 #: options.cpp:46
 msgid "New and Updated  Packages"
-msgstr "Nıir og uppfærğir pakkar"
+msgstr "NÃ½ir og uppfÃ¦rÃ°ir pakkar"
 
 #: options.cpp:50
 msgid "All Packages"
@@ -430,7 +430,7 @@ msgstr "Pakkalisti"
 
 #: options.cpp:62
 msgid "Cache remote package directories"
-msgstr "Setja möppur fjarlægra pakka í biğminni"
+msgstr "Setja mÃ¶ppur fjarlÃ¦gra pakka Ã­ biÃ°minni"
 
 #: options.cpp:68 options.cpp:96
 msgid "Always"
@@ -438,7 +438,7 @@ msgstr "Alltaf"
 
 #: options.cpp:72 options.cpp:100
 msgid "During as session"
-msgstr "Ağeins í şessari setu"
+msgstr "AÃ°eins Ã­ Ã¾essari setu"
 
 #: options.cpp:76 options.cpp:104
 msgid "Never"
@@ -446,27 +446,27 @@ msgstr "Aldrei"
 
 #: options.cpp:86
 msgid "Directory Cache"
-msgstr "Möppubiğminni"
+msgstr "MÃ¶ppubiÃ°minni"
 
 #: options.cpp:90
 msgid "Cache remote package files"
-msgstr "Setja skrár fjarlægra pakka í biğminni"
+msgstr "Setja skrÃ¡r fjarlÃ¦gra pakka Ã­ biÃ°minni"
 
 #: options.cpp:114
 msgid "Package Cache"
-msgstr "Pakkabiğminni"
+msgstr "PakkabiÃ°minni"
 
 #: options.cpp:119
 msgid "Verify file list"
-msgstr "Stağfesta skráarlista"
+msgstr "StaÃ°festa skrÃ¡arlista"
 
 #: options.cpp:123
 msgid "Read information from all local package files"
-msgstr "Upplısingar úr öllum pakkaskrám á şessari vél"
+msgstr "UpplÃ½singar Ãºr Ã¶llum pakkaskrÃ¡m Ã¡ Ã¾essari vÃ©l"
 
 #: options.cpp:128
 msgid "misc"
-msgstr "İmisl."
+msgstr "Ãmisl."
 
 #: pkginstallOptions.cpp:46
 msgid "Install Package"
@@ -479,7 +479,7 @@ msgstr "Setja inn: %d %s pakka"
 
 #: aboutDialog.cpp:34
 msgid "Version 1.1"
-msgstr "Útgáfa 1.2"
+msgstr "ÃštgÃ¡fa 1.2"
 
 #: aboutDialog.cpp:35
 msgid "By Toivo Pedaste"
@@ -491,7 +491,7 @@ msgstr "Upprunalega eftir: Damyan Pepper"
 
 #: aboutDialog.cpp:37
 msgid "Addional Developers:"
-msgstr "Ağrir forritarar:"
+msgstr "AÃ°rir forritarar:"
 
 #: aboutDialog.cpp:38
 msgid "Bill McFarland and Thinh Van"
@@ -503,24 +503,24 @@ msgstr "Marco Zuehlke"
 
 #: packageInfo.cpp:77 slackInterface.cpp:344
 msgid "OTHER"
-msgstr "ANNAĞ"
+msgstr "ANNAÃ"
 
 #: cache.cpp:38 cache.cpp:60
 #, c-format
 msgid "Cannot create directory %s"
-msgstr "Get ekki búiğ til möppu %s"
+msgstr "Get ekki bÃºiÃ° til mÃ¶ppu %s"
 
 #: debInterface.cpp:72 debInterface.cpp:185
 msgid "Querying DEB package list: "
-msgstr "Skoğa DEB pakkalista: "
+msgstr "SkoÃ°a DEB pakkalista: "
 
 #: debInterface.cpp:74
 msgid "Kpackage: Waiting on DPKG"
-msgstr "Kpackage: Bíğ eftir DPKG"
+msgstr "Kpackage: BÃ­Ã° eftir DPKG"
 
 #: debInterface.cpp:76
 msgid "Location of Debian package archives"
-msgstr "Stağsetning Debian pakkasafnskráa"
+msgstr "StaÃ°setning Debian pakkasafnskrÃ¡a"
 
 #: debInterface.cpp:77 rpmInterface.cpp:64 slackInterface.cpp:82
 msgid "D"
@@ -528,7 +528,7 @@ msgstr "D"
 
 #: debInterface.cpp:79
 msgid "Location of directories containg Debian packages"
-msgstr "Stağsetning á möppum sem innihalda Debian pakka"
+msgstr "StaÃ°setning Ã¡ mÃ¶ppum sem innihalda Debian pakka"
 
 #: debInterface.cpp:80 slackInterface.cpp:78
 msgid "P"
@@ -536,40 +536,40 @@ msgstr "P"
 
 #: debInterface.cpp:82
 msgid "Location of 'Packages' files for sections of Debian distributions"
-msgstr "Stağsetning á 'pakka' skrám fyrir hluta Debian"
+msgstr "StaÃ°setning Ã¡ 'pakka' skrÃ¡m fyrir hluta Debian"
 
 #: debInterface.cpp:83
 msgid "Location of base directory of Debian distribution"
-msgstr "Stağsetning rótarmöppu Debian"
+msgstr "StaÃ°setning rÃ³tarmÃ¶ppu Debian"
 
 #: debInterface.cpp:88
 msgid "Allow Downgrade"
-msgstr "Leyfa niğurfærslu"
+msgstr "Leyfa niÃ°urfÃ¦rslu"
 
 #: debInterface.cpp:89
 msgid "Check Conflicts"
-msgstr "Athuga árekstra"
+msgstr "Athuga Ã¡rekstra"
 
 #: debInterface.cpp:90 debInterface.cpp:94 rpmInterface.cpp:74
 #: rpmInterface.cpp:78
 msgid "Check Dependencies"
-msgstr "Skoğa sambönd"
+msgstr "SkoÃ°a sambÃ¶nd"
 
 #: debInterface.cpp:91 rpmInterface.cpp:75 slackInterface.cpp:90
 msgid "Test (do not install)"
-msgstr "Prófa (ekki setja inn)"
+msgstr "PrÃ³fa (ekki setja inn)"
 
 #: debInterface.cpp:93
 msgid "Purge Config Files"
-msgstr "Eyğa uppsetningarskrám"
+msgstr "EyÃ°a uppsetningarskrÃ¡m"
 
 #: debInterface.cpp:95 rpmInterface.cpp:79 slackInterface.cpp:92
 msgid "Test (do not uninstall)"
-msgstr "Prófa (ekki fjarlægja)"
+msgstr "PrÃ³fa (ekki fjarlÃ¦gja)"
 
 #: debInterface.cpp:492 debInterface.cpp:527
 msgid "'Delete this window to continue'"
-msgstr "'Lokağu şessum glugga til ağ halda áfram'"
+msgstr "'LokaÃ°u Ã¾essum glugga til aÃ° halda Ã¡fram'"
 
 #: updateLoc.cpp:33
 msgid "Use"
@@ -577,7 +577,7 @@ msgstr "Nota"
 
 #: updateLoc.cpp:120
 msgid "Package file"
-msgstr "Pakkaskrá"
+msgstr "PakkaskrÃ¡"
 
 #: updateLoc.cpp:145
 msgid "Package archive"
@@ -585,7 +585,7 @@ msgstr "Pakkasafn"
 
 #: procbuf.cpp:71
 msgid "Kprocess Failure"
-msgstr "Kprocess brást"
+msgstr "Kprocess brÃ¡st"
 
 #: procbuf.cpp:77
 msgid "Wait"
@@ -594,36 +594,36 @@ msgstr "Augnablik"
 #: pkgInterface.cpp:213
 #, c-format
 msgid "Cann't write to file %s\n"
-msgstr "Get ekki skrifağ í skrá %s\n"
+msgstr "Get ekki skrifaÃ° Ã­ skrÃ¡ %s\n"
 
 #: pkgInterface.cpp:230
 #, c-format
 msgid "Cann't read directory %s"
-msgstr "Get ekki lesiğ úr möppu %s"
+msgstr "Get ekki lesiÃ° Ãºr mÃ¶ppu %s"
 
 #: pkgInterface.cpp:287 rpmInterface.cpp:570
 msgid "Verifying"
-msgstr "Stağfesti"
+msgstr "StaÃ°festi"
 
 #: rpmInterface.cpp:63
 msgid "Location of RPM package archives"
-msgstr "Stağsetning RPM pakkasafna"
+msgstr "StaÃ°setning RPM pakkasafna"
 
 #: rpmInterface.cpp:65
 msgid "Location of directories containg RPM packages"
-msgstr "Stağsetning á möppum sem innihalda RPM pakka"
+msgstr "StaÃ°setning Ã¡ mÃ¶ppum sem innihalda RPM pakka"
 
 #: rpmInterface.cpp:71
 msgid "Upgrade"
-msgstr "Uppfæra"
+msgstr "UppfÃ¦ra"
 
 #: rpmInterface.cpp:72
 msgid "Replace Files"
-msgstr "Nıjar skrár"
+msgstr "NÃ½jar skrÃ¡r"
 
 #: rpmInterface.cpp:73
 msgid "Replace Packages"
-msgstr "Nıja pakka"
+msgstr "NÃ½ja pakka"
 
 #: rpmInterface.cpp:77
 msgid "Use Scripts"
@@ -631,74 +631,74 @@ msgstr "Nota skriftur"
 
 #: rpmInterface.cpp:92
 msgid "Querying RPM package list: "
-msgstr "Sæki RPM pakkalista:"
+msgstr "SÃ¦ki RPM pakkalista:"
 
 #: rpmInterface.cpp:98
 msgid "Cann't read RPM config files\n"
-msgstr "Get ekki lesiğ RPM uppsetningarskrár\n"
+msgstr "Get ekki lesiÃ° RPM uppsetningarskrÃ¡r\n"
 
 #: rpmInterface.cpp:187
 msgid "Querying RPM database for installed packages"
-msgstr "Athuga innsetta pakka í RPM gagnskrá"
+msgstr "Athuga innsetta pakka Ã­ RPM gagnskrÃ¡"
 
 #: rpmInterface.cpp:203
 msgid "could not read database record\n"
-msgstr "Gat ekki lesiğ færslu í gagnaskrá\n"
+msgstr "Gat ekki lesiÃ° fÃ¦rslu Ã­ gagnaskrÃ¡\n"
 
 #: rpmInterface.cpp:248 rpmInterface.cpp:458
 #, c-format
 msgid "Error looking for package %s\n"
-msgstr "Villa viğ leit ağ pakka %s\n"
+msgstr "Villa viÃ° leit aÃ° pakka %s\n"
 
 #: rpmInterface.cpp:258 rpmInterface.cpp:468
 msgid "Could not read database record\n"
-msgstr "Gat ekki lesiğ færslu í gagnaskrá\n"
+msgstr "Gat ekki lesiÃ° fÃ¦rslu Ã­ gagnaskrÃ¡\n"
 
 #: rpmInterface.cpp:279
 #, c-format
 msgid "Problem opening %s\n"
-msgstr "Vandamál viğ opnun %s\n"
+msgstr "VandamÃ¡l viÃ° opnun %s\n"
 
 #: rpmInterface.cpp:291
 msgid "Old format source packages cannot be queried!\n"
-msgstr "Get ekki lesiğ pakka meğ gamla sniğinu!\n"
+msgstr "Get ekki lesiÃ° pakka meÃ° gamla sniÃ°inu!\n"
 
 #: rpmInterface.cpp:300 rpmInterface.cpp:507
 #, c-format
 msgid "%s does not appear to be a RPM package\n"
-msgstr "%s virğist ekki vera RPM pakki\n"
+msgstr "%s virÃ°ist ekki vera RPM pakki\n"
 
 #: rpmInterface.cpp:303
 #, c-format
 msgid "Query of %s failed!\n"
-msgstr "Lestur á %s brást!\n"
+msgstr "Lestur Ã¡ %s brÃ¡st!\n"
 
 #: rpmInterface.cpp:456
 #, c-format
 msgid "Package %s is not installed\n"
-msgstr "Pakki %s er ekki til stağar\n"
+msgstr "Pakki %s er ekki til staÃ°ar\n"
 
 #: rpmInterface.cpp:487
 #, c-format
 msgid "ERROR opening %s\n"
-msgstr "Villa viğ ağ opna %s\n"
+msgstr "Villa viÃ° aÃ° opna %s\n"
 
 #: rpmInterface.cpp:499
 msgid "Old format source packages cannot be queried\n"
-msgstr "Get ekki lesiğ pakka meğ gamla sniğinu!\n"
+msgstr "Get ekki lesiÃ° pakka meÃ° gamla sniÃ°inu!\n"
 
 #: rpmInterface.cpp:510
 #, c-format
 msgid "Query of %s failed\n"
-msgstr "Lestur á %s brást\n"
+msgstr "Lestur Ã¡ %s brÃ¡st\n"
 
 #: rpmInterface.cpp:527
 msgid "Getting file list"
-msgstr "Sæki skráarlista"
+msgstr "SÃ¦ki skrÃ¡arlista"
 
 #: rpmInterface.cpp:552
 msgid "Depends"
-msgstr "Veltur á"
+msgstr "Veltur Ã¡"
 
 #: kissInterface.cpp:61 kissInterface.cpp:116
 msgid "Querying KISS package list: "
@@ -706,7 +706,7 @@ msgstr "Les KISS pakkalista: "
 
 #: kissInterface.cpp:63
 msgid "Kpackage: Waiting on KISS"
-msgstr "Kpackage: Bíğ eftir KISS"
+msgstr "Kpackage: BÃ­Ã° eftir KISS"
 
 #: slackInterface.cpp:68 slackInterface.cpp:206 slackInterface.cpp:258
 #: slackInterface.cpp:625
@@ -715,11 +715,11 @@ msgstr "Les SLACK pakkalista: "
 
 #: slackInterface.cpp:70
 msgid "Kpackage: Waiting on SLACK"
-msgstr "Kpackage: Bíğ eftir SLACK"
+msgstr "Kpackage: BÃ­Ã° eftir SLACK"
 
 #: slackInterface.cpp:74
 msgid "Location of Slackware package archives"
-msgstr "Stağsetning Slackware pakkasafna"
+msgstr "StaÃ°setning Slackware pakkasafna"
 
 #: slackInterface.cpp:75
 msgid "I"
@@ -727,23 +727,23 @@ msgstr "I"
 
 #: slackInterface.cpp:77
 msgid "Location of a 'PACKAGES.TXT' file for extended information"
-msgstr "Stağsetning 'PACKAGES.TXT' skrár fyrir frekari upplısingar"
+msgstr "StaÃ°setning 'PACKAGES.TXT' skrÃ¡r fyrir frekari upplÃ½singar"
 
 #: slackInterface.cpp:80
 msgid "Location of 'PACKAGES.TXT' file for Slackware distribution"
-msgstr "Stağsetning 'PACKAGES.TXT' skrár fyrir Slackware"
+msgstr "StaÃ°setning 'PACKAGES.TXT' skrÃ¡r fyrir Slackware"
 
 #: slackInterface.cpp:81
 msgid "Location of base directory of Slackware distribution"
-msgstr "Stağsetning rótarmöppu Slackware"
+msgstr "StaÃ°setning rÃ³tarmÃ¶ppu Slackware"
 
 #: slackInterface.cpp:84
 msgid "Location of directories containg Slackware packages"
-msgstr "Stağsetning á möppum sem hafa ağ geyma Slackware pakka"
+msgstr "StaÃ°setning Ã¡ mÃ¶ppum sem hafa aÃ° geyma Slackware pakka"
 
 #: slackInterface.cpp:108
 msgid "Base System"
-msgstr "Grunnkerfiğ"
+msgstr "GrunnkerfiÃ°"
 
 #: slackInterface.cpp:109
 msgid "Linux Applications"
@@ -763,7 +763,7 @@ msgstr "SOS"
 
 #: slackInterface.cpp:113
 msgid "Kernel Source"
-msgstr "Kjarnaşulan"
+msgstr "KjarnaÃ¾ulan"
 
 #: slackInterface.cpp:114
 msgid "Networking"
@@ -775,11 +775,11 @@ msgstr "TeX dreifing"
 
 #: slackInterface.cpp:116
 msgid "TCL Script Language"
-msgstr "Tcl máliğ"
+msgstr "Tcl mÃ¡liÃ°"
 
 #: slackInterface.cpp:117
 msgid "X Window System"
-msgstr "X gluggakerfiğ"
+msgstr "X gluggakerfiÃ°"
 
 #: slackInterface.cpp:118
 msgid "X Applications"
@@ -787,7 +787,7 @@ msgstr "X forrit"
 
 #: slackInterface.cpp:119
 msgid "X Development Tools"
-msgstr "X forritunartól"
+msgstr "X forritunartÃ³l"
 
 #: slackInterface.cpp:120
 msgid "XView and OpenLook"
@@ -800,7 +800,7 @@ msgstr "Leikir"
 #: rpmInstall.cpp:86 rpmInstall.cpp:182
 #, c-format
 msgid "cannot open file %s"
-msgstr "get ekki opnağ skrá %s"
+msgstr "get ekki opnaÃ° skrÃ¡ %s"
 
 #: rpmInstall.cpp:103 rpmInstall.cpp:393
 #, c-format
@@ -810,7 +810,7 @@ msgstr "Set inn %s\n"
 #: rpmInstall.cpp:124 rpmInstall.cpp:195
 #, c-format
 msgid "%s does not appear to be a RPM package"
-msgstr "%s virğist ekki vera RPM pakki"
+msgstr "%s virÃ°ist ekki vera RPM pakki"
 
 #: rpmInstall.cpp:128 rpmInstall.cpp:199 rpmInstall.cpp:397
 #, c-format
@@ -819,7 +819,7 @@ msgstr "Get ekki sett %s inn"
 
 #: rpmInstall.cpp:160
 msgid "counting packages to install"
-msgstr "Tel fjölda pakka til ağ setja inn"
+msgstr "Tel fjÃ¶lda pakka til aÃ° setja inn"
 
 #: rpmInstall.cpp:164
 #, c-format
@@ -828,12 +828,12 @@ msgstr "fann %d pakka"
 
 #: rpmInstall.cpp:176
 msgid "finding source and binary packages"
-msgstr "Leita ağ şulu- og keyrslupökkum"
+msgstr "Leita aÃ° Ã¾ulu- og keyrslupÃ¶kkum"
 
 #: rpmInstall.cpp:218
 #, c-format
 msgid "found %d source and %d binary packages"
-msgstr "Fann %d şulupakka og %d keyrslupakka"
+msgstr "Fann %d Ã¾ulupakka og %d keyrslupakka"
 
 #: rpmInstall.cpp:224
 #, c-format
@@ -845,12 +845,12 @@ msgid ""
 "cannot open /var/lib/rpm/packages.rpm\n"
 "Kpackage needs to be running as root"
 msgstr ""
-"Get ekki opnağ /var/lib/rpm/packages.rpm\n"
-"Kpackage şarf ağ keyra sem ofurpaur (root)"
+"Get ekki opnaÃ° /var/lib/rpm/packages.rpm\n"
+"Kpackage Ã¾arf aÃ° keyra sem ofurpaur (root)"
 
 #: rpmInstall.cpp:249
 msgid "failed dependencies:"
-msgstr "óuppfyllt ákvæği:"
+msgstr "Ã³uppfyllt Ã¡kvÃ¦Ã°i:"
 
 #: rpmInstall.cpp:263
 msgid "installing binary packages"
@@ -858,22 +858,22 @@ msgstr "Set inn keyrslupakka"
 
 #: rpmInstall.cpp:297
 msgid "counting packages to uninstall"
-msgstr "Tel fjölda pakka til ağ fjarlægja"
+msgstr "Tel fjÃ¶lda pakka til aÃ° fjarlÃ¦gja"
 
 #: rpmInstall.cpp:301
 #, c-format
 msgid "found %d packages to uninstall"
-msgstr "Fann %d pakka til ağ fjarlægja"
+msgstr "Fann %d pakka til aÃ° fjarlÃ¦gja"
 
 #: rpmInstall.cpp:319
 #, c-format
 msgid "package %s is not installed"
-msgstr "Pakki %s er ekki til stağar"
+msgstr "Pakki %s er ekki til staÃ°ar"
 
 #: rpmInstall.cpp:322
 #, c-format
 msgid "error searching for package %s"
-msgstr "Villa viğ leit ağ %s"
+msgstr "Villa viÃ° leit aÃ° %s"
 
 #: rpmInstall.cpp:330
 #, c-format
@@ -882,31 +882,31 @@ msgstr "\"%s\" tilgreinir marga pakka"
 
 #: rpmInstall.cpp:359
 msgid "removing these packages would break dependencies:\n"
-msgstr "óuppfyllt ákvæği ef şessir pakkar eru fjarlægğir:\n"
+msgstr "Ã³uppfyllt Ã¡kvÃ¦Ã°i ef Ã¾essir pakkar eru fjarlÃ¦gÃ°ir:\n"
 
 #: rpmInstall.cpp:371
 #, c-format
 msgid "uninstalling record number %d"
-msgstr "Fjarlægji færslu númer %d"
+msgstr "FjarlÃ¦gji fÃ¦rslu nÃºmer %d"
 
 #: rpmInstall.cpp:388
 #, c-format
 msgid "cannot open %s"
-msgstr "Get ekki opnağ %s"
+msgstr "Get ekki opnaÃ° %s"
 
 #: rpmInstall.cpp:440
 msgid "Dependency Problem:\n"
-msgstr "Ákvæğisvandamál:\n"
+msgstr "ÃkvÃ¦Ã°isvandamÃ¡l:\n"
 
 #: rpmInstall.cpp:450 rpmInstall.cpp:453
 #, c-format
 msgid " is needed by %s-%s-%s\n"
-msgstr " er notağ af %s-%s-%s\n"
+msgstr " er notaÃ° af %s-%s-%s\n"
 
 #: rpmInstall.cpp:457 rpmInstall.cpp:460
 #, c-format
 msgid " conflicts with %s-%s-%s\n"
-msgstr " rekst á %s-%s-%s\n"
+msgstr " rekst Ã¡ %s-%s-%s\n"
 
 #: rpmInstall.cpp:465
 msgid "Package not installed:"
@@ -920,30 +920,30 @@ msgstr "Vantar    %s\n"
 #: rpmVerify.cpp:126
 #, c-format
 msgid "Unsatisfied dependencies for %s-%s-%s: "
-msgstr "Óuppfyllt ákvæği fyrir %s-%s-%s: "
+msgstr "Ã“uppfyllt Ã¡kvÃ¦Ã°i fyrir %s-%s-%s: "
 
 #: rpmVerify.cpp:179
 #, c-format
 msgid "verifying record number %d\n"
-msgstr "Stağfesti færslunúmer %d\n"
+msgstr "StaÃ°festi fÃ¦rslunÃºmer %d\n"
 
 #: rpmVerify.cpp:185 rpmutils.cpp:84
 msgid "error: could not read database record\n"
-msgstr "Villa: Gat ekki lesiğ færslu í gagnaskrá\n"
+msgstr "Villa: Gat ekki lesiÃ° fÃ¦rslu Ã­ gagnaskrÃ¡\n"
 
 #: rpmVerify.cpp:231
 msgid "could not read database record!\n"
-msgstr "Gat ekki lesiğ færslu í gagnaskrá!\n"
+msgstr "Gat ekki lesiÃ° fÃ¦rslu Ã­ gagnaskrÃ¡!\n"
 
 #: rpmVerify.cpp:251
 #, c-format
 msgid "open of %s failed: %s\n"
-msgstr "Gat ekki opnağ %s: %s\n"
+msgstr "Gat ekki opnaÃ° %s: %s\n"
 
 #: rpmVerify.cpp:265
 #, c-format
-msgid "%s is not an RPM\n"
-msgstr "% er ekki RPM skrá\n"
+#~ msgid "%s is not an RPM\n"
+#~ msgstr "% er ekki RPM skrÃ¡\n"
 
 #: rpmVerify.cpp:274
 #, c-format
@@ -953,14 +953,14 @@ msgstr "Flokkur %s inniheldur enga pakka\n"
 #: rpmVerify.cpp:287
 #, c-format
 msgid "file %s is not owned by any package\n"
-msgstr "Skrá %s er ekki í eigu neins pakka\n"
+msgstr "SkrÃ¡ %s er ekki Ã­ eigu neins pakka\n"
 
 #: rpmVerify.cpp:300
 #, c-format
 msgid "package %s is not installed\n"
-msgstr "Pakki %s er ekki til stağar\n"
+msgstr "Pakki %s er ekki til staÃ°ar\n"
 
 #: rpmVerify.cpp:303
 #, c-format
 msgid "error looking for package %s\n"
-msgstr "Villa viğ leit ağ pakka %s\n"
+msgstr "Villa viÃ° leit aÃ° pakka %s\n"

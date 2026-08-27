@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.5.0"
 
@@ -19,49 +19,49 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: valÛszÌn˚leg m·r fut egy m·sik ablakmenedzser,\n"
-"Õgy a kwm nem indÌthatÛ.\n"
+"kwm: val√≥sz√≠n≈±leg m√°r fut egy m√°sik ablakmenedzser,\n"
+"√çgy a kwm nem ind√≠that√≥.\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: hiba inicializ·l·s kˆzben; a futtat·s megszakadt\n"
+msgstr "kwm: hiba inicializ√°l√°s k√∂zben; a futtat√°s megszakadt\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "Session elıkÈszÌtÈse..."
+msgstr "Session el≈ëk√©sz√≠t√©se..."
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Szerzıi jog: (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Szerz≈ëi jog: (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:558
 msgid "Usage: "
-msgstr "Haszn·lat: "
+msgstr "Haszn√°lat: "
 
 #: main.C:569
 msgid "&Maximize"
-msgstr "Ma&ximaliz·l"
+msgstr "Ma&ximaliz√°l"
 
 #: main.C:570
 msgid "&Restore"
-msgstr "&Vissza·llÌt"
+msgstr "&Vissza√°ll√≠t"
 
 #: main.C:571
 msgid "&Iconify"
-msgstr "&Ikoniz·l"
+msgstr "&Ikoniz√°l"
 
 #: main.C:572
 msgid "&DeIconify"
-msgstr "&Nem Ikoniz·l"
+msgstr "&Nem Ikoniz√°l"
 
 #: main.C:573
 msgid "&Sticky"
-msgstr "&Rajzszˆg be"
+msgstr "&Rajzsz√∂g be"
 
 #: main.C:574
 #
 msgid "&UnSticky"
-msgstr "&Rajzszˆg ki"
+msgstr "&Rajzsz√∂g ki"
 
 #: main.C:575
 msgid "Mo&ve"
@@ -69,11 +69,11 @@ msgstr "&Mozgat"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "MÈ&retez"
+msgstr "M√©&retez"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "&M·sik asztalra"
+msgstr "&M√°sik asztalra"
 
 #: main.C:580
 msgid "&Onto current desktop"
@@ -89,15 +89,15 @@ msgstr "Kettes"
 
 #: main.C:626
 msgid "Three"
-msgstr "H·rmas"
+msgstr "H√°rmas"
 
 #: main.C:629
 msgid "Four"
-msgstr "NÈgyes"
+msgstr "N√©gyes"
 
 #: main.C:632
 msgid "Five"
-msgstr "÷tˆs"
+msgstr "√ñt√∂s"
 
 #: main.C:635
 msgid "Six"
@@ -113,15 +113,15 @@ msgstr "Nyolcas"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "NÈvtelen Asztal"
+msgstr "N√©vtelen Asztal"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "NÈh·ny kÈp nem megfelelı: ShapeMÛd kikapcsolva\n"
+msgstr "N√©h√°ny k√©p nem megfelel≈ë: ShapeM√≥d kikapcsolva\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "NÈh·ny kÈp nem megfelelı: GimmickMÛd kikapcsolva\n"
+msgstr "N√©h√°ny k√©p nem megfelel≈ë: GimmickM√≥d kikapcsolva\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -133,31 +133,31 @@ msgstr "Parancs:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr "Hopp·!"
+msgstr "Hopp√°!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "KilÈpÈs"
+msgstr "Kil√©p√©s"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "KilÈpÈs a rendszerbıl"
+msgstr "Kil√©p√©s a rendszerb≈ël"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Az al·bbi alkalmaz·sok mentetlen adatot tartalmaznak,\n"
-"amik a kˆvetkezı belÈpÈsre elvesznek."
+"Az al√°bbi alkalmaz√°sok mentetlen adatot tartalmaznak,\n"
+"amik a k√∂vetkez≈ë bel√©p√©sre elvesznek."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Az al·bbi alkalmaz·sokat nem lehet vissza·llÌtani, csak ˙jraindÌtani\n"
-"a kˆvetkezı bejelentkezÈskor.  Ellenırizze, hogy nem tartalmaznak-e\n"
+"Az al√°bbi alkalmaz√°sokat nem lehet vissza√°ll√≠tani, csak √∫jraind√≠tani\n"
+"a k√∂vetkez≈ë bejelentkez√©skor.  Ellen≈ërizze, hogy nem tartalmaznak-e\n"
 "fontos elmentetlen adatot."
 
 #: logout.C:74
@@ -165,13 +165,13 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Az al·bbi alkalmaz·sok nem X11-ÈrzÈkenyek, Ìgy nem lehet vissza·llÌtani\n"
-"a kˆvetkezı bejelentkezÈskor.  Ellenırizze, hogy nem tartalmaznak-e\n"
+"Az al√°bbi alkalmaz√°sok nem X11-√©rz√©kenyek, √≠gy nem lehet vissza√°ll√≠tani\n"
+"a k√∂vetkez≈ë bejelentkez√©skor.  Ellen≈ërizze, hogy nem tartalmaznak-e\n"
 "fontos elmentetlen adatot."
 
 #: taskmgr.C:107
 msgid "Switch to"
-msgstr "V·lt·s"
+msgstr "V√°lt√°s"
 
 #: taskmgr.C:121
 msgid "Current session"

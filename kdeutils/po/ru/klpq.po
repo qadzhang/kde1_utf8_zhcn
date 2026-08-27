@@ -1,4 +1,4 @@
-# Перевод klpq.
+# п÷п╣я─п╣п╡п╬п╢ klpq.
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998.
 msgid ""
@@ -9,68 +9,68 @@ msgstr ""
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:178
 msgid "Sorry, can't open your printcap file."
-msgstr "Не могу открыть ваш файл printcap."
+msgstr "п²п╣ п╪п╬пЁя┐ п╬я┌п╨я─я▀я┌я▄ п╡п╟я┬ я└п╟п╧п╩ printcap."
 
 #: main.cpp:183
 msgid "Sorry, unable to parse your printcap."
-msgstr "Не могу обработать ваш файл printcap."
+msgstr "п²п╣ п╪п╬пЁя┐ п╬п╠я─п╟п╠п╬я┌п╟я┌я▄ п╡п╟я┬ я└п╟п╧п╩ printcap."
 
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
-msgstr "Отправьте почтой ваш файл printcap Christoph.Neerfeld@home.ivm.de"
+msgstr "п·я┌п©я─п╟п╡я▄я┌п╣ п©п╬я┤я┌п╬п╧ п╡п╟я┬ я└п╟п╧п╩ printcap Christoph.Neerfeld@home.ivm.de"
 
 #: klpq.cpp:90
 msgid "Printer"
-msgstr "Принтер"
+msgstr "п÷я─п╦п╫я┌п╣я─"
 
 #: klpq.cpp:95
 msgid "Queuing"
-msgstr "В очереди"
+msgstr "п▓ п╬я┤п╣я─п╣п╢п╦"
 
 #: klpq.cpp:100
 msgid "Printing"
-msgstr "Печатается"
+msgstr "п÷п╣я┤п╟я┌п╟п╣я┌я│я▐"
 
 #: klpq.cpp:105
 msgid "Update"
-msgstr "Обновить"
+msgstr "п·п╠п╫п╬п╡п╦я┌я▄"
 
 #: klpq.cpp:125
 msgid "Rank"
-msgstr "Ранг"
+msgstr "п═п╟п╫пЁ"
 
 #: klpq.cpp:126
 msgid "Owner"
-msgstr "Владелец"
+msgstr "п▓п╩п╟п╢п╣п╩п╣я├"
 
 #: klpq.cpp:127
 msgid "Job"
-msgstr "Задание"
+msgstr "п≈п╟п╢п╟п╫п╦п╣"
 
 #: klpq.cpp:129
 msgid "Size"
-msgstr "Размер"
+msgstr "п═п╟п╥п╪п╣я─"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
-msgstr "Перенести наверх"
+msgstr "п÷п╣я─п╣п╫п╣я│я┌п╦ п╫п╟п╡п╣я─я┘"
 
 #: klpq.cpp:160
 msgid "Auto"
-msgstr "Авто"
+msgstr "п░п╡я┌п╬"
 
 #: klpq.cpp:204
 msgid "&Auto update"
-msgstr "Авто обновление"
+msgstr "п░п╡я┌п╬ п╬п╠п╫п╬п╡п╩п╣п╫п╦п╣"
 
 #: klpq.cpp:205
 msgid "&Spooler"
-msgstr "Спулер"
+msgstr "п║п©я┐п╩п╣я─"
 
 #: klpq.cpp:208
 #, c-format
@@ -80,17 +80,17 @@ msgid ""
 "chris@kde.org"
 msgstr ""
 "Klpq %s\n"
-"(C) Кристоф Неерфелд\n"
+"(C) п я─п╦я│я┌п╬я└ п²п╣п╣я─я└п╣п╩п╢\n"
 "chris@kde.org"
 
 #: klpq.cpp:213
 msgid "&Config"
-msgstr "Настройки"
+msgstr "п²п╟я│я┌я─п╬п╧п╨п╦"
 
 #: klpq.cpp:404
 #, c-format
 msgid "Do you really want to remove job No %d"
-msgstr "Вы действительно хотите удалить задание No %d"
+msgstr "п▓я▀ п╢п╣п╧я│я┌п╡п╦я┌п╣п╩я▄п╫п╬ я┘п╬я┌п╦я┌п╣ я┐п╢п╟п╩п╦я┌я▄ п╥п╟п╢п╟п╫п╦п╣ No %d"
 
 #: klpq.cpp:424
 #, c-format
@@ -99,45 +99,45 @@ msgid ""
 "%d\n"
 "on top of queue"
 msgstr ""
-"Вы действительно хотите переместить задание No\n"
+"п▓я▀ п╢п╣п╧я│я┌п╡п╦я┌п╣п╩я▄п╫п╬ я┘п╬я┌п╦я┌п╣ п©п╣я─п╣п╪п╣я│я┌п╦я┌я▄ п╥п╟п╢п╟п╫п╦п╣ No\n"
 "%d\n"
-"в верх очереди"
+"п╡ п╡п╣я─я┘ п╬я┤п╣я─п╣п╢п╦"
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
-msgstr "Доступ запрещен"
+msgstr "п■п╬я│я┌я┐п© п╥п╟п©я─п╣я┴п╣п╫"
 
 #: klpq.cpp:573 klpq.cpp:579 klpq.cpp:594
 msgid ""
 "This is a privileged command\n"
 "and you do not have permission to execute it."
 msgstr ""
-"Это привилегированная команда\n"
-"и вы не имеете прав ее запускать."
+"п╜я┌п╬ п©я─п╦п╡п╦п╩п╣пЁп╦я─п╬п╡п╟п╫п╫п╟я▐ п╨п╬п╪п╟п╫п╢п╟\n"
+"п╦ п╡я▀ п╫п╣ п╦п╪п╣п╣я┌п╣ п©я─п╟п╡ п╣п╣ п╥п╟п©я┐я│п╨п╟я┌я▄."
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
-msgstr "Настроить Авто обновление"
+msgstr "п²п╟я│я┌я─п╬п╦я┌я▄ п░п╡я┌п╬ п╬п╠п╫п╬п╡п╩п╣п╫п╦п╣"
 
 #: ConfAutoUpdateData.cpp:17
 msgid "Update frequency in seconds:"
-msgstr "Частота обновления в секундах:"
+msgstr "п╖п╟я│я┌п╬я┌п╟ п╬п╠п╫п╬п╡п╩п╣п╫п╦я▐ п╡ я│п╣п╨я┐п╫п╢п╟я┘:"
 
 #: klpqspooler.cpp:199 klpqspooler.cpp:269
 msgid "Can't find your lpc program !"
-msgstr "Не могу найти вашу программу lpc!"
+msgstr "п²п╣ п╪п╬пЁя┐ п╫п╟п╧я┌п╦ п╡п╟я┬я┐ п©я─п╬пЁя─п╟п╪п╪я┐ lpc!"
 
 #: klpqspooler.cpp:200 klpqspooler.cpp:270
 msgid ""
 "Sorry, I can't find your lpc program.\n"
 "Please check the configuration under Config->Spooler."
 msgstr ""
-"Не могу найти программу lpc.\n"
-"Проверьте настройки в Настройки->Спулер."
+"п²п╣ п╪п╬пЁя┐ п╫п╟п╧я┌п╦ п©я─п╬пЁя─п╟п╪п╪я┐ lpc.\n"
+"п÷я─п╬п╡п╣я─я▄я┌п╣ п╫п╟я│я┌я─п╬п╧п╨п╦ п╡ п²п╟я│я┌я─п╬п╧п╨п╦->п║п©я┐п╩п╣я─."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
-msgstr "Выберите вашу систему очереди"
+msgstr "п▓я▀п╠п╣я─п╦я┌п╣ п╡п╟я┬я┐ я│п╦я│я┌п╣п╪я┐ п╬я┤п╣я─п╣п╢п╦"
 
 #: FirstStartData.cpp:42
 msgid ""
@@ -145,10 +145,10 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Выберите, какую систему очереди вы используете. Большинство систем "
-"используют систему очереди BSD. Поэтому, если вы не знаете, выбирайте BSD."
+"п▓я▀п╠п╣я─п╦я┌п╣, п╨п╟п╨я┐я▌ я│п╦я│я┌п╣п╪я┐ п╬я┤п╣я─п╣п╢п╦ п╡я▀ п╦я│п©п╬п╩я▄п╥я┐п╣я┌п╣. п▒п╬п╩я▄я┬п╦п╫я│я┌п╡п╬ я│п╦я│я┌п╣п╪ "
+"п╦я│п©п╬п╩я▄п╥я┐я▌я┌ я│п╦я│я┌п╣п╪я┐ п╬я┤п╣я─п╣п╢п╦ BSD. п÷п╬я█я┌п╬п╪я┐, п╣я│п╩п╦ п╡я▀ п╫п╣ п╥п╫п╟п╣я┌п╣, п╡я▀п╠п╦я─п╟п╧я┌п╣ BSD."
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"
-msgstr "Путь к командам управления очередью:"
+msgstr "п÷я┐я┌я▄ п╨ п╨п╬п╪п╟п╫п╢п╟п╪ я┐п©я─п╟п╡п╩п╣п╫п╦я▐ п╬я┤п╣я─п╣п╢я▄я▌:"
 

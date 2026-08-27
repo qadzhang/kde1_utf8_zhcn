@@ -6,23 +6,23 @@ msgstr ""
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
 "MIME-Version:\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 "Content-Transfer-Encoding:\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "ecr„ #%d"
+msgstr "ecr√£ #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  dimensıes            : %dx%d pixels (%dx%d mm)\n"
+msgstr "  dimens√µes            : %dx%d pixels (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  resoluÁ„o            : %dx%d dpi\n"
+msgstr "  resolu√ß√£o            : %dx%d dpi\n"
 
 #: info.cpp:61
 #, c-format
@@ -32,12 +32,12 @@ msgstr "  profundidade cor (%d) : "
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "identificador do ecr„  : %s"
+msgstr "identificador do ecr√£  : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "vers„o                 : %i.%i"
+msgstr "vers√£o                 : %i.%i"
 
 #: info.cpp:89
 #, c-format
@@ -47,17 +47,17 @@ msgstr "fabricante             : %s"
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "vers„o (fabricante)    : %i"
+msgstr "vers√£o (fabricante)    : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "n˙mero ecr„ por omiss„o: %i"
+msgstr "n√∫mero ecr√£ por omiss√£o: %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "n˙mero de ecr„s        : %i"
+msgstr "n√∫mero de ecr√£s        : %i"
 
 #: info.cpp:181
 msgid ""
@@ -65,9 +65,9 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Nenhuma informaÁ„o disponÌvel\n"
+"Nenhuma informa√ß√£o dispon√≠vel\n"
 "ou\n"
-"este sistema ainda n„o È suportado"
+"este sistema ainda n√£o √© suportado"
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -81,7 +81,7 @@ msgstr "%s a correr a %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "N„o consegui abrir fstab!"
+msgstr "N√£o consegui abrir fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
@@ -97,7 +97,7 @@ msgstr "Tipo"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr "OpÁıes"
+msgstr "Op√ß√µes"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
@@ -105,15 +105,15 @@ msgstr "tipo cpu desconhecido"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "n„o disponÌvel"
+msgstr "n√£o dispon√≠vel"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "N˙mero de processador(es) activo(s)= "
+msgstr "N√∫mero de processador(es) activo(s)= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "Conte˙do"
+msgstr "Conte√∫do"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
@@ -125,11 +125,11 @@ msgstr "Utilizado por"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "EndereÁos"
+msgstr "Endere√ßos"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "&MemÛria"
+msgstr "&Mem√≥ria"
 
 #: main.cpp:82
 msgid "&Processor"
@@ -137,7 +137,7 @@ msgstr "&Processador"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr "&InterrupÁıes"
+msgstr "&Interrup√ß√µes"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
@@ -145,7 +145,7 @@ msgstr "C&anais de DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "Entradas/SaÌdas"
+msgstr "Entradas/Sa√≠das"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
@@ -165,7 +165,7 @@ msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr "P&artiÁıes"
+msgstr "P&arti√ß√µes"
 
 #: main.cpp:109
 msgid "&X-Server"
@@ -177,37 +177,37 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-"utilizaÁ„o: kcminfo [-init | "
+"utiliza√ß√£o: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "InformaÁıes sobre o Sistema"
+msgstr "Informa√ß√µes sobre o Sistema"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "MemÛria total"
+msgstr "Mem√≥ria total"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "MemÛria livre"
+msgstr "Mem√≥ria livre"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "MemÛria partilhada"
+msgstr "Mem√≥ria partilhada"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "MemÛria de buffers"
+msgstr "Mem√≥ria de buffers"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "MemÛria virtual"
+msgstr "Mem√≥ria virtual"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "MemÛria virtual livre"
+msgstr "Mem√≥ria virtual livre"
 
 #: memory.cpp:78
 #, c-format
@@ -217,9 +217,9 @@ msgstr "%10ld bytes  = %8.2f MB"
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "N„o disponÌvel"
+msgstr "N√£o dispon√≠vel"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "N„o DisponÌvel"
+msgstr "N√£o Dispon√≠vel"

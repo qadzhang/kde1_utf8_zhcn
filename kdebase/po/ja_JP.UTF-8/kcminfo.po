@@ -13,59 +13,59 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 "X-Generator: KTranslator v 0.4.0"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "スクリーン #%d"
+msgstr "ã¹ã¯ãªã¼ã³ #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  ディメンジョン      : %dx%d pixels (%dx%d mm)\n"
+msgstr "  ãã£ã¡ã³ã¸ã§ã³      : %dx%d pixels (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  解像度              : %dx%d dots per inch\n"
+msgstr "  è§£ååº¦              : %dx%d dots per inch\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  色数 (%d)            : "
+msgstr "  è²æ° (%d)            : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "ディスプレイの名前    : %s"
+msgstr "ãã£ã¹ãã¬ã¤ã®åå    : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "バージョン番号        : %i.%i"
+msgstr "ãã¼ã¸ã§ã³çªå·        : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "ベンダー情報          : %s"
+msgstr "ãã³ãã¼æå ±          : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "ベンダーリリース番号  : %i"
+msgstr "ãã³ãã¼ãªãªã¼ã¹çªå·  : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "標準スクリーン番号    : %i"
+msgstr "æ¨æºã¹ã¯ãªã¼ã³çªå·    : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "スクリーンの数        : %i"
+msgstr "ã¹ã¯ãªã¼ã³ã®æ°        : %i"
 
 #: info.cpp:181
 msgid ""
@@ -73,98 +73,98 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"何の情報も与えられていないか\n"
-"このシステムはまだサポートされていません :-("
+"ä½ã®æå ±ãä¸ãããã¦ããªãã\n"
+"ãã®ã·ã¹ãã ã¯ã¾ã ãµãã¼ãããã¦ãã¾ãã :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, 未知のスピードです"
+msgstr "%s, æªç¥ã®ã¹ãã¼ãã§ã"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr "%s (%s MHzで動作中)"
+msgstr "%s (%s MHzã§åä½ä¸­)"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "あ゛〜、fstabが開けませんでした！"
+msgstr "ããããfstabãéãã¾ããã§ããï¼"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "デバイス"
+msgstr "ããã¤ã¹"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr "マウント位置"
+msgstr "ãã¦ã³ãä½ç½®"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "FS タイプ"
+msgstr "FS ã¿ã¤ã"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr "マウントオプション"
+msgstr "ãã¦ã³ããªãã·ã§ã³"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr "未知のCPUタイプ"
+msgstr "æªç¥ã®CPUã¿ã¤ã"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "利用できません"
+msgstr "å©ç¨ã§ãã¾ãã"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "アクティブなプロセッサの数= "
+msgstr "ã¢ã¯ãã£ããªãã­ã»ããµã®æ°= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "値"
+msgstr "å¤"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr "DMAチャネル"
+msgstr "DMAãã£ãã«"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "以下によって使われています"
+msgstr "ä»¥ä¸ã«ãã£ã¦ä½¿ããã¦ãã¾ã"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "I/O範囲"
+msgstr "I/Oç¯å²"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "メモリ(&M)"
+msgstr "ã¡ã¢ãª(&M)"
 
 #: main.cpp:82
 msgid "&Processor"
-msgstr "プロセッサ(&P)"
+msgstr "ãã­ã»ããµ(&P)"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr "割り込み(&I)"
+msgstr "å²ãè¾¼ã¿(&I)"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "DMA-チャネル(&C)"
+msgstr "DMA-ãã£ãã«(&C)"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "IO-ポート(&I)"
+msgstr "IO-ãã¼ã(&I)"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr "PCI-バス(&B)"
+msgstr "PCI-ãã¹(&B)"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr "サウンド(&S)"
+msgstr "ãµã¦ã³ã(&S)"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "デバイス(&D)"
+msgstr "ããã¤ã¹(&D)"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -172,11 +172,11 @@ msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr "パーティション(&P)"
+msgstr "ãã¼ãã£ã·ã§ã³(&P)"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr "Xサーバ(&X)"
+msgstr "Xãµã¼ã(&X)"
 
 #: main.cpp:120
 msgid ""
@@ -187,31 +187,31 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "システム情報"
+msgstr "ã·ã¹ãã æå ±"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "トータルメモリ"
+msgstr "ãã¼ã¿ã«ã¡ã¢ãª"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "空きメモリ"
+msgstr "ç©ºãã¡ã¢ãª"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "共有メモリ"
+msgstr "å±æã¡ã¢ãª"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "バッファメモリ"
+msgstr "ãããã¡ã¡ã¢ãª"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "スワップメモリ"
+msgstr "ã¹ã¯ããã¡ã¢ãª"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "空きスワップメモリ"
+msgstr "ç©ºãã¹ã¯ããã¡ã¢ãª"
 
 #: memory.cpp:78
 #, c-format
@@ -221,9 +221,9 @@ msgstr "%10ld bytes  = %8.2f MB"
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "利用できません"
+msgstr "å©ç¨ã§ãã¾ãã"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "利用できません"
+msgstr "å©ç¨ã§ãã¾ãã"

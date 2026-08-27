@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: attraction.cpp:718
@@ -39,7 +39,7 @@ msgstr "Jooned"
 
 #: attraction.cpp:846 polygon.cpp:64 slidescreen.cpp:531
 msgid "Polygons"
-msgstr "Pol¸gonid"
+msgstr "Pol√ºgonid"
 
 #: attraction.cpp:847 slidescreen.cpp:532
 msgid "Tails"
@@ -89,7 +89,7 @@ msgstr "Suurus:"
 
 #: banner.cpp:142 blankscrn.cpp:84
 msgid "Color:"
-msgstr "V‰rv:"
+msgstr "V√§rv:"
 
 #: banner.cpp:155
 msgid "Bold"
@@ -124,7 +124,7 @@ msgstr ""
 
 #: banner.cpp:469
 msgid "KDE is great"
-msgstr "KDE on suurep‰rane"
+msgstr "KDE on suurep√§rane"
 
 #: bat.cpp:462
 msgid "Bat"
@@ -158,11 +158,11 @@ msgstr ""
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
-msgstr "T¸hi ekraan"
+msgstr "T√ºhi ekraan"
 
 #: blankscrn.cpp:75
 msgid "Setup kblankscrn"
-msgstr "T¸hja ekraani seadistus"
+msgstr "T√ºhja ekraani seadistus"
 
 #: blob.cpp:57
 msgid "Random Linear"
@@ -174,7 +174,7 @@ msgstr "Horisontaalne siinus"
 
 #: blob.cpp:59
 msgid "Circular Bounce"
-msgstr "Ringikujuline pırkumine"
+msgstr "Ringikujuline p√µrkumine"
 
 #: blob.cpp:60
 msgid "Polar Coordinates"
@@ -186,7 +186,7 @@ msgstr "Juhuslik"
 
 #: blob.cpp:77
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Vabandust. See ekraanis‰‰stja vajab v‰rvilist ekraani"
+msgstr "Vabandust. See ekraanis√§√§stja vajab v√§rvilist ekraani"
 
 #: blob.cpp:461
 msgid "Setup Blob Saver"
@@ -194,7 +194,7 @@ msgstr "Blob seadistus"
 
 #: blob.cpp:471
 msgid "Frame Show sec."
-msgstr "Kaadri n‰itamine sek."
+msgstr "Kaadri n√§itamine sek."
 
 #: blob.cpp:483
 msgid "Algorithm"
@@ -238,7 +238,7 @@ msgstr "Punkti suurus:"
 
 #: bouboule.cpp:1068
 msgid "Color-change frequency:"
-msgstr "V‰rvivahetuse sagedus:"
+msgstr "V√§rvivahetuse sagedus:"
 
 #: bouboule.cpp:1085
 msgid "3D mode"
@@ -256,7 +256,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
-"Bouboule v0.1 -- pallikeste kera, mis keerlevad ja muudavad v‰rvi\n"
+"Bouboule v0.1 -- pallikeste kera, mis keerlevad ja muudavad v√§rvi\n"
 "\n"
 "Copyright (c) 1996 Jeremie PETIT\n"
 "\n"
@@ -340,11 +340,11 @@ msgstr "KHop seadistus"
 
 #: hop.cpp:345
 msgid "Samecolor Pixels:"
-msgstr "Samav‰rvilised pikselid:"
+msgstr "Samav√§rvilised pikselid:"
 
 #: hop.cpp:359 lissie.cpp:375
 msgid "Cycles:"
-msgstr "Ts¸klid:"
+msgstr "Ts√ºklid:"
 
 #: hop.cpp:472
 msgid "About Hop"
@@ -408,7 +408,7 @@ msgstr "Keskkoht:"
 
 #: lines.cpp:203
 msgid "End:"
-msgstr "Lıpp:"
+msgstr "L√µpp:"
 
 #: lines.cpp:302
 msgid "About Lines"
@@ -470,11 +470,11 @@ msgid ""
 "Please contact your system administrator.\n"
 "Tell him that you need suid for the kcheckpass program!"
 msgstr ""
-"Hoiatus: Sul ei ole vıimalik ekraani lukustada!\n"
+"Hoiatus: Sul ei ole v√µimalik ekraani lukustada!\n"
 "\n"
-"Sinu s¸steem kasutab variparoole.\n"
-"Palun vıta kontakti oma s¸steemi administraatoriga\n"
-"ja ¸tle talle, et sa vajad SUID'i programmile kcheckpass!"
+"Sinu s√ºsteem kasutab variparoole.\n"
+"Palun v√µta kontakti oma s√ºsteemi administraatoriga\n"
+"ja √ºtle talle, et sa vajad SUID'i programmile kcheckpass!"
 
 #: main.cpp:496
 msgid "Shadow Passwords"
@@ -488,7 +488,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Palun ‰ra kasuta koos vıtmeid -test ja -lock.\n"
+"Palun √§ra kasuta koos v√µtmeid -test ja -lock.\n"
 "Kasuta selle asemel klock'i.\n"
 "\n"
 
@@ -521,24 +521,24 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Kursori asetamine nurka tekitab j‰rgneva:\n"
+"  -corners xxxx     Kursori asetamine nurka tekitab j√§rgneva:\n"
 "                     x = i  tegevus puudub (ignoreeri)\n"
-"                     x = s  l¸lita sisse ekraanis‰‰stja\n"
+"                     x = s  l√ºlita sisse ekraanis√§√§stja\n"
 "                     x = l  lukusta ekraan\n"
-"                    j‰rjekord: ¸lal-vasakul, ¸lal-paremal, all-vasakul, "
+"                    j√§rjekord: √ºlal-vasakul, √ºlal-paremal, all-vasakul, "
 "all-paremal\n"
-"  -delay num        Viivitus enne kui ekraanis‰‰stja\n"
-"                     k‰ivitub (vaikimisi 10min)\n"
-"  -desc             Tr¸ki ekraanis‰‰stja kirjeldus standardv‰ljundisse\n"
-"  -install          Installeeri ekraanis‰‰stja\n"
-"  -lock             Nıua parooli ekraanis‰‰stja eemaldamiseks\n"
+"  -delay num        Viivitus enne kui ekraanis√§√§stja\n"
+"                     k√§ivitub (vaikimisi 10min)\n"
+"  -desc             Tr√ºki ekraanis√§√§stja kirjeldus standardv√§ljundisse\n"
+"  -install          Installeeri ekraanis√§√§stja\n"
+"  -lock             N√µua parooli ekraanis√§√§stja eemaldamiseks\n"
 "  -allow-root       Aktsepteeri juure parooli lukustuse eemaldamiseks\n"
-"  -nice num         K‰ivita t‰psustatud kena v‰‰rtusega\n"
+"  -nice num         K√§ivita t√§psustatud kena v√§√§rtusega\n"
 "\n"
-"  -preview wid      K‰ivita t‰psustatud XWindow'is\n"
-"  -inroot           K‰ivita juure aknas\n"
-"  -setup            Seadista ekraanis‰‰stja\n"
-"  -test             Kohene kutsung ekraanis‰‰stja\n"
+"  -preview wid      K√§ivita t√§psustatud XWindow'is\n"
+"  -inroot           K√§ivita juure aknas\n"
+"  -setup            Seadista ekraanis√§√§stja\n"
+"  -test             Kohene kutsung ekraanis√§√§stja\n"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
@@ -554,7 +554,7 @@ msgstr "KMorph3d seadistus"
 
 #: morph3d.cpp:1039
 msgid "Object Type:"
-msgstr "Objekti t¸¸p:"
+msgstr "Objekti t√º√ºp:"
 
 #: morph3d.cpp:1128
 msgid "About Morph3D"
@@ -694,11 +694,11 @@ msgstr "Sisesta parool"
 
 #: saver.cpp:127
 msgid "Failed"
-msgstr "Ebaınnestunud"
+msgstr "Eba√µnnestunud"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr "Pˆˆris"
+msgstr "P√∂√∂ris"
 
 #: science.cpp:68
 msgid "Sphere"
@@ -710,7 +710,7 @@ msgstr "Eksponentsiaalne"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr "Kokkutımbumine"
+msgstr "Kokkut√µmbumine"
 
 #: science.cpp:77
 msgid "Wave"
@@ -718,7 +718,7 @@ msgstr "Laine"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr "Kıverdumine"
+msgstr "K√µverdumine"
 
 #: science.cpp:112
 msgid "Science"
@@ -726,7 +726,7 @@ msgstr "Science"
 
 #: science.cpp:504
 msgid "rendering lens..."
-msgstr "l‰‰tse renderdamine..."
+msgstr "l√§√§tse renderdamine..."
 
 #: science.cpp:826
 msgid "grabbing screen..."

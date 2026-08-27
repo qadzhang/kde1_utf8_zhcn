@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kmenuedit.cpp:71
@@ -19,7 +19,7 @@ msgstr "Spremeni ime &menija"
 
 #: kmenuedit.cpp:72
 msgid "Reload &Filetypes"
-msgstr "Ponovno naloæi &datoteËne tipe"
+msgstr "Ponovno nalo≈æi &datoteƒçne tipe"
 
 #: kmenuedit.cpp:79
 msgid "by"
@@ -35,7 +35,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Ali hoËete shraniti spremembe ?"
+"Ali hoƒçete shraniti spremembe ?"
 
 #: confmenu.cpp:340 confmenu.cpp:940 kmenuedit.cpp:266
 msgid "EMPTY"
@@ -43,7 +43,7 @@ msgstr "PRAZNO"
 
 #: kmenuedit.cpp:345
 msgid "Reload Menus"
-msgstr "Ponovno naloæi menije"
+msgstr "Ponovno nalo≈æi menije"
 
 #: kmenuedit.cpp:346
 msgid ""
@@ -51,7 +51,7 @@ msgid ""
 "Are you sure you want to reload ?"
 msgstr ""
 "Ponovno nalaganje menijev bo zavrglo vse spremembe.\n"
-"Ali ste prepriËani, da jih hoËete ponovno naloæiti?"
+"Ali ste prepriƒçani, da jih hoƒçete ponovno nalo≈æiti?"
 
 #: button.cpp:211 main.cpp:82 main.cpp:95
 msgid "KMenuedit"
@@ -62,20 +62,20 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"Imenik za vaπe osebne menije ne obstaja.\n"
-" Ali ga hoËete sedaj ustvariti ?"
+"Imenik za va≈°e osebne menije ne obstaja.\n"
+" Ali ga hoƒçete sedaj ustvariti ?"
 
 #: main.cpp:96
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select OK to exit KMenuedit."
 msgstr ""
-"Imenika za osebni meni ni bilo moæno ustvariti.\n"
+"Imenika za osebni meni ni bilo mo≈æno ustvariti.\n"
 " Izberite V redu za izhod iz KMenuedit"
 
 #: confmenu.cpp:92 entrydialog.cpp:61
 msgid "Separator"
-msgstr "LoËilo"
+msgstr "Loƒçilo"
 
 #: confmenu.cpp:104 confmenu.cpp:336
 msgid "Open/ Close"
@@ -99,18 +99,18 @@ msgstr "Opozorilo !"
 
 #: confmenu.cpp:179
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "»e pobriπete ta gumb, boste izgubili vse njegove podmenije"
+msgstr "ƒåe pobri≈°ete ta gumb, boste izgubili vse njegove podmenije"
 
 #: confmenu.cpp:298
 msgid "Wrong filename"
-msgstr "NapaËno ime datoteke"
+msgstr "Napaƒçno ime datoteke"
 
 #: confmenu.cpp:299
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"A kdelnk-datoteka s tem imenom æe obstaja. \n"
+"A kdelnk-datoteka s tem imenom ≈æe obstaja. \n"
 "Prosim izberite novo ime datoteke."
 
 #: confmenu.cpp:320
@@ -127,7 +127,7 @@ msgid ""
 "before you can drop this item on another window."
 msgstr ""
 "Oprostite ! Morate shraniti spremembe\n"
-"preden lahko odvræete ta predmet na drugo okno."
+"preden lahko odvr≈æete ta predmet na drugo okno."
 
 #: DesktopPathDialogData.cpp:38
 msgid "Path for KDE Desktop Entries is not set."
@@ -192,11 +192,11 @@ msgstr "Komentar:"
 
 #: entrydialog.cpp:197 entrydialog.cpp:539
 msgid "Execute"
-msgstr "Izvrπi"
+msgstr "Izvr≈°i"
 
 #: entrydialog.cpp:223
 msgid "Execute:"
-msgstr "Izvrπi:"
+msgstr "Izvr≈°i:"
 
 #: entrydialog.cpp:229
 msgid "Working Directory:"
@@ -204,7 +204,7 @@ msgstr "Delovni imenik:"
 
 #: entrydialog.cpp:242
 msgid "Run in terminal"
-msgstr "TeËi v terminalskem oknu"
+msgstr "Teƒçi v terminalskem oknu"
 
 #: entrydialog.cpp:246
 msgid "Terminal Options:"
@@ -224,7 +224,7 @@ msgstr "Naslov programa:"
 
 #: entrydialog.cpp:338
 msgid "Application to execute on button press:"
-msgstr "Program, ki se naj izvrπi ob pritisnjenem gumbu"
+msgstr "Program, ki se naj izvr≈°i ob pritisnjenem gumbu"
 
 #: entrydialog.cpp:368
 msgid "URL:"
@@ -240,11 +240,11 @@ msgstr "Naprava:"
 
 #: entrydialog.cpp:426
 msgid "Mount Point:"
-msgstr "Priklopna toËka:"
+msgstr "Priklopna toƒçka:"
 
 #: entrydialog.cpp:431
 msgid "FS Type:"
-msgstr "Tip datoteËnega sistema:"
+msgstr "Tip datoteƒçnega sistema:"
 
 #: entrydialog.cpp:436
 msgid "Unmount Icon:"
@@ -256,7 +256,7 @@ msgstr "Spremeni imena menijev"
 
 #: MenuNameDialogData.cpp:32
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Spremeni imena menijev, kot so prikazani v kploπËi"
+msgstr "Spremeni imena menijev, kot so prikazani v kplo≈°ƒçi"
 
 #: MenuNameDialogData.cpp:37
 msgid "Personal:"

@@ -11,20 +11,20 @@ msgstr ""
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
 #: adddlg.cc:11
 msgid "Add File Options"
-msgstr "Inställningar för Lägg till fil"
+msgstr "InstÃ¤llningar fÃ¶r LÃ¤gg till fil"
 
 #: adddlg.cc:21
 msgid "Store Full Path"
-msgstr "Lagra fullständig sökväg"
+msgstr "Lagra fullstÃ¤ndig sÃ¶kvÃ¤g"
 
 #: adddlg.cc:24
 msgid "Only Add Newer Files"
-msgstr "Lägg bara till nya filer"
+msgstr "LÃ¤gg bara till nya filer"
 
 #: extractdlg.cc:14
 msgid "Extract"
@@ -36,11 +36,11 @@ msgstr "Destination"
 
 #: extractdlg.cc:44
 msgid "Extract Options"
-msgstr "Inställningar för Packa upp"
+msgstr "InstÃ¤llningar fÃ¶r Packa upp"
 
 #: extractdlg.cc:52
 msgid "Preserve Permissions"
-msgstr "Bevara rättigheter"
+msgstr "Bevara rÃ¤ttigheter"
 
 #: extractdlg.cc:57
 msgid "Filenames to Lowercase"
@@ -56,7 +56,7 @@ msgstr "Valda filer"
 
 #: extractdlg.cc:78
 msgid "Pattern"
-msgstr "Mönster"
+msgstr "MÃ¶nster"
 
 #: extractdlg.cc:190
 msgid "Extract To"
@@ -84,15 +84,15 @@ msgstr "&Radera fil"
 
 #: arkwidget.cc:84
 msgid "&Set Archive Directory..."
-msgstr "&Välj arkivkatalog..."
+msgstr "&VÃ¤lj arkivkatalog..."
 
 #: arkwidget.cc:85
 msgid "Set &Tar Executable..."
-msgstr "Välj &Tar-program"
+msgstr "VÃ¤lj &Tar-program"
 
 #: arkwidget.cc:86
 msgid "&File Adding Options..."
-msgstr "Inställningar för &Lägg till fil..."
+msgstr "InstÃ¤llningar fÃ¶r &LÃ¤gg till fil..."
 
 #: arkwidget.cc:97
 msgid "File Operations"
@@ -112,7 +112,7 @@ msgstr "Radera fil"
 
 #: arkwidget.cc:114
 msgid "Goto Archive Dir..."
-msgstr "Gå till arkivkatalogen..."
+msgstr "GÃ¥ till arkivkatalogen..."
 
 #: arkwidget.cc:117
 msgid "Extract To.."
@@ -124,7 +124,7 @@ msgstr "Avsluta"
 
 #: arkwidget.cc:128
 msgid "Welcome to ark..."
-msgstr "Välkommen till ark..."
+msgstr "VÃ¤lkommen till ark..."
 
 #: arkwidget.cc:235
 msgid "Can't create archive of that type"
@@ -132,15 +132,15 @@ msgstr "Kan inte skapa arkiv av den typen"
 
 #: arkwidget.cc:257
 msgid "Create or open an archive first"
-msgstr "Skapa eller öppna ett arkiv först"
+msgstr "Skapa eller Ã¶ppna ett arkiv fÃ¶rst"
 
 #: arkwidget.cc:300
 msgid "Can't add directories with this archive type"
-msgstr "Kan inte lägga till kataloger med denna arkivtyp"
+msgstr "Kan inte lÃ¤gga till kataloger med denna arkivtyp"
 
 #: arkwidget.cc:302
 msgid "Error saving to archive"
-msgstr "Fel då arkivet sparades"
+msgstr "Fel dÃ¥ arkivet sparades"
 
 #: arkwidget.cc:312
 msgid "Archive Dir"
@@ -148,11 +148,11 @@ msgstr "Arkivkatalog"
 
 #: arkwidget.cc:325
 msgid "What runs GNU tar:"
-msgstr "Vad kör GNU tar:"
+msgstr "Vad kÃ¶r GNU tar:"
 
 #: arkwidget.cc:376 arkwidget.cc:578
 msgid "Unknown archive format"
-msgstr "Okänt arkivformat"
+msgstr "OkÃ¤nt arkivformat"
 
 #: arkwidget.cc:396
 msgid "Size"

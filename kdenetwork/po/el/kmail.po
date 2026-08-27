@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kmcomposewin.cpp:1516 kmmainwin.cpp:377 kpgp.cpp:546
@@ -18,17 +18,17 @@ msgid ""
 "Sorry, but this feature\n"
 "is still missing"
 msgstr ""
-"Συγγνώμη, αλλά αυτή η δυνατότητα\n"
-"δεν έχει ακόμα υλοποιηθεί."
+"Γ“ΓµΓ£Γ£Γ­ΓΎΓ¬Γ§, Γ΅Γ«Γ«Γ Γ΅ΓµΓ΄Γ Γ§ Γ¤ΓµΓ­Γ΅Γ΄ΓΌΓ΄Γ§Γ΄Γ΅\n"
+"Γ¤Γ¥Γ­ ΓΓ·Γ¥Γ© Γ΅ΓªΓΌΓ¬Γ΅ ΓµΓ«Γ―Γ°Γ―Γ©Γ§Γ¨Γ¥Γ."
 
 #: kmmainwin.cpp:386
 msgid "New Folder"
-msgstr "Νέος φάκελλος"
+msgstr "ΓΓΓ―Γ² Γ¶ΓΓªΓ¥Γ«Γ«Γ―Γ²"
 
 #: kmaddrbookdlg.cpp:178 kmmainwin.cpp:399 kmmainwin.cpp:433 main.cpp:484
 #, fuzzy
 msgid "KMail error"
-msgstr "μοιραίο λάθος"
+msgstr "Γ¬Γ―Γ©Γ±Γ΅ΓΓ― Γ«ΓΓ¨Γ―Γ²"
 
 #: kmmainwin.cpp:400 kmmainwin.cpp:434
 msgid "Already checking for mail!"
@@ -36,24 +36,24 @@ msgstr ""
 
 #: kmmainwin.cpp:410 kmmainwin.cpp:444
 msgid "No new mail available"
-msgstr "Δεν υπάρχει καινούρια αλληλογραφία"
+msgstr "Γ„Γ¥Γ­ ΓµΓ°ΓΓ±Γ·Γ¥Γ© ΓªΓ΅Γ©Γ­Γ―Γ½Γ±Γ©Γ΅ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅"
 
 #: kmmainwin.cpp:474
 msgid "Modify Folder"
-msgstr "Τροποποίηση φακέλλου"
+msgstr "Γ”Γ±Γ―Γ°Γ―Γ°Γ―ΓΓ§Γ³Γ§ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ"
 
 #: kmmainwin.cpp:497
 #, fuzzy
 msgid "Moved all messages into trash"
-msgstr "Αποστολή μηνυμάτων στο "
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­ Γ³Γ΄Γ― "
 
 #: kmmainwin.cpp:516
 msgid ""
 "Cannot remove a\n"
 "system folder."
 msgstr ""
-"Η διαγραφή φακέλλου συστήματος\n"
-"δεν επιτρέπεται."
+"Γ‡ Γ¤Γ©Γ΅Γ£Γ±Γ΅Γ¶Γ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ Γ³ΓµΓ³Γ΄ΓΓ¬Γ΅Γ΄Γ―Γ²\n"
+"Γ¤Γ¥Γ­ Γ¥Γ°Γ©Γ΄Γ±ΓΓ°Γ¥Γ΄Γ΅Γ©."
 
 #: kmmainwin.cpp:520
 #, c-format
@@ -61,12 +61,12 @@ msgid ""
 "Are you sure you want to remove the folder\n"
 "\"%s\", discarding it's contents ?"
 msgstr ""
-"Είστε σίγουρος ότι θέλετε να διαγράψετε τον φάκελλο\n"
-"\"%s\" καί ό,τι αυτός περιέχει;"
+"Γ…ΓΓ³Γ΄Γ¥ Γ³ΓΓ£Γ―ΓµΓ±Γ―Γ² ΓΌΓ΄Γ© Γ¨ΓΓ«Γ¥Γ΄Γ¥ Γ­Γ΅ Γ¤Γ©Γ΅Γ£Γ±ΓΓΈΓ¥Γ΄Γ¥ Γ΄Γ―Γ­ Γ¶ΓΓªΓ¥Γ«Γ«Γ―\n"
+"\"%s\" ΓªΓ΅Γ ΓΌ,Γ΄Γ© Γ΅ΓµΓ΄ΓΌΓ² Γ°Γ¥Γ±Γ©ΓΓ·Γ¥Γ©;"
 
 #: kmmainwin.cpp:523
 msgid "Confirmation"
-msgstr "Επιβεβαίωση"
+msgstr "Γ…Γ°Γ©ΓΆΓ¥ΓΆΓ΅ΓΓΉΓ³Γ§"
 
 #: kmmainwin.cpp:583
 msgid "KMail notification!"
@@ -78,140 +78,140 @@ msgstr ""
 
 #: kmmainwin.cpp:619
 msgid "Message as Plain Text"
-msgstr "Μήνυμα ως απλό κείμενο"
+msgstr "ΓΓΓ­ΓµΓ¬Γ΅ ΓΉΓ² Γ΅Γ°Γ«ΓΌ ΓªΓ¥ΓΓ¬Γ¥Γ­Γ―"
 
 #: kmmainwin.cpp:626 kmmainwin.cpp:646
 msgid "Select Folder"
-msgstr "Επιλογή φακέλλου"
+msgstr "Γ…Γ°Γ©Γ«Γ―Γ£Γ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ"
 
 #: kmmainwin.cpp:669
 msgid "Queued messages successfully sent."
-msgstr "Αποστολή καθυστερούμενων μηνυμάτων επιτυχής."
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ ΓªΓ΅Γ¨ΓµΓ³Γ΄Γ¥Γ±Γ―Γ½Γ¬Γ¥Γ­ΓΉΓ­ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­ Γ¥Γ°Γ©Γ΄ΓµΓ·ΓΓ²."
 
 #: kmmainwin.cpp:671
 msgid "Failed to send (some) queued messages."
-msgstr "Αποτυχία αποστολής (κάποιων ή όλων) καθυστερούμενων μηνυμάτων."
+msgstr "ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅ Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«ΓΓ² (ΓªΓΓ°Γ―Γ©ΓΉΓ­ Γ ΓΌΓ«ΓΉΓ­) ΓªΓ΅Γ¨ΓµΓ³Γ΄Γ¥Γ±Γ―Γ½Γ¬Γ¥Γ­ΓΉΓ­ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­."
 
 #: kmmainwin.cpp:802
 msgid "Opening URL..."
-msgstr "Άνοιγμα URL"
+msgstr "ΒΆΓ­Γ―Γ©Γ£Γ¬Γ΅ URL"
 
 #: kmmainwin.cpp:857
 msgid "Address added to addressbook."
-msgstr "Η διεύθυνση προσετέθη στο βιβλίο διευθύνσεων"
+msgstr "Γ‡ Γ¤Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§ Γ°Γ±Γ―Γ³Γ¥Γ΄ΓΓ¨Γ§ Γ³Γ΄Γ― ΓΆΓ©ΓΆΓ«ΓΓ― Γ¤Γ©Γ¥ΓµΓ¨Γ½Γ­Γ³Γ¥ΓΉΓ­"
 
 #: kmmainwin.cpp:869
 msgid "Address copied to clipboard."
-msgstr "Η διεύθυνση αντιγράφτηκε στο σημειωματάριο."
+msgstr "Γ‡ Γ¤Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§ Γ΅Γ­Γ΄Γ©Γ£Γ±ΓΓ¶Γ΄Γ§ΓªΓ¥ Γ³Γ΄Γ― Γ³Γ§Γ¬Γ¥Γ©ΓΉΓ¬Γ΅Γ΄ΓΓ±Γ©Γ―."
 
 #: kmmainwin.cpp:874
 msgid "URL copied to clipboard."
-msgstr "Το URL αντιγράφτηκε στο σημειωματάριο."
+msgstr "Γ”Γ― URL Γ΅Γ­Γ΄Γ©Γ£Γ±ΓΓ¶Γ΄Γ§ΓªΓ¥ Γ³Γ΄Γ― Γ³Γ§Γ¬Γ¥Γ©ΓΉΓ¬Γ΅Γ΄ΓΓ±Γ©Γ―."
 
 #: kmmainwin.cpp:901
 msgid "Send to..."
-msgstr "Αποστολή προς..."
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ°Γ±Γ―Γ²..."
 
 #: kmmainwin.cpp:903
 msgid "Send reply to..."
-msgstr "Αποστολή απάντησης προς..."
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ΅Γ°ΓΓ­Γ΄Γ§Γ³Γ§Γ² Γ°Γ±Γ―Γ²..."
 
 #: kmmainwin.cpp:905
 msgid "Forward to..."
-msgstr "Προώθηση προς..."
+msgstr "ΓΓ±Γ―ΓΎΓ¨Γ§Γ³Γ§ Γ°Γ±Γ―Γ²..."
 
 #: kmmainwin.cpp:908
 msgid "Add to addressbook"
-msgstr "Προσθήκη στο βιβλίο διευθύνσεων"
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§ Γ³Γ΄Γ― ΓΆΓ©ΓΆΓ«ΓΓ― Γ¤Γ©Γ¥ΓµΓ¨Γ½Γ­Γ³Γ¥ΓΉΓ­"
 
 #: kmmainwin.cpp:910 kmmainwin.cpp:919
 msgid "Copy to clipboard"
-msgstr "Αντιγραφή στο σημειωματάριο"
+msgstr "ΓΓ­Γ΄Γ©Γ£Γ±Γ΅Γ¶Γ Γ³Γ΄Γ― Γ³Γ§Γ¬Γ¥Γ©ΓΉΓ¬Γ΅Γ΄ΓΓ±Γ©Γ―"
 
 #: kmmainwin.cpp:917
 msgid "Open URL..."
-msgstr "'Ανοιγμα URL..."
+msgstr "'ΓΓ­Γ―Γ©Γ£Γ¬Γ΅ URL..."
 
 #: kmheaders.cpp:1001 kmmainwin.cpp:927 kmmainwin.cpp:1044
 msgid "&Reply..."
-msgstr "Απάντηση..."
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§..."
 
 #: kmheaders.cpp:1003 kmmainwin.cpp:929 kmmainwin.cpp:1046
 msgid "Reply &All..."
-msgstr "Απάντηση σε όλους..."
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§ Γ³Γ¥ ΓΌΓ«Γ―ΓµΓ²..."
 
 #: kmheaders.cpp:1005 kmmainwin.cpp:931 kmmainwin.cpp:1048
 msgid "&Forward..."
-msgstr "Προώθηση..."
+msgstr "ΓΓ±Γ―ΓΎΓ¨Γ§Γ³Γ§..."
 
 #: kmheaders.cpp:1008 kmmainwin.cpp:934 kmmainwin.cpp:1058
 msgid "&Move..."
-msgstr "Μετακίνηση..."
+msgstr "ΓΓ¥Γ΄Γ΅ΓªΓΓ­Γ§Γ³Γ§..."
 
 #: kmheaders.cpp:1010 kmmainwin.cpp:936 kmmainwin.cpp:1060
 msgid "&Copy..."
-msgstr "Αντιγραφή..."
+msgstr "ΓΓ­Γ΄Γ©Γ£Γ±Γ΅Γ¶Γ..."
 
 #: kmmainwin.cpp:963
 msgid "New Composer"
-msgstr "Νέο παράθυρο σύνταξης μηνύματος"
+msgstr "ΓΓΓ― Γ°Γ΅Γ±ΓΓ¨ΓµΓ±Γ― Γ³Γ½Γ­Γ΄Γ΅Γ®Γ§Γ² Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmcomposewin.cpp:451 kmmainwin.cpp:965
 msgid "New Mailreader"
-msgstr "Νέο παράθυρο ανάγνωσης"
+msgstr "ΓΓΓ― Γ°Γ΅Γ±ΓΓ¨ΓµΓ±Γ― Γ΅Γ­ΓΓ£Γ­ΓΉΓ³Γ§Γ²"
 
 #: kmmainwin.cpp:968
 msgid "Save As..."
-msgstr "Αποθήκευση ως..."
+msgstr "ΓΓ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§ ΓΉΓ²..."
 
 #: kmmainwin.cpp:970
 msgid "Print..."
-msgstr "Εκτύπωση..."
+msgstr "Γ…ΓªΓ΄Γ½Γ°ΓΉΓ³Γ§..."
 
 #: kmmainwin.cpp:973
 msgid "Check Mail..."
-msgstr "Έλεγχος για νέα αλληλογραφία..."
+msgstr "ΒΈΓ«Γ¥Γ£Γ·Γ―Γ² Γ£Γ©Γ΅ Γ­ΓΓ΅ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅..."
 
 #: kmmainwin.cpp:982
 #, fuzzy
 msgid "Check Mail in..."
-msgstr "Έλεγχος για νέα αλληλογραφία..."
+msgstr "ΒΈΓ«Γ¥Γ£Γ·Γ―Γ² Γ£Γ©Γ΅ Γ­ΓΓ΅ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅..."
 
 #: kmmainwin.cpp:984
 msgid "Send Queued"
-msgstr "Αποστολή καθυστερούμενων μηνυμάτων"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ ΓªΓ΅Γ¨ΓµΓ³Γ΄Γ¥Γ±Γ―Γ½Γ¬Γ¥Γ­ΓΉΓ­ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­"
 
 #: kmmainwin.cpp:987
 msgid "&Settings..."
-msgstr "Ρυθμίσεις..."
+msgstr "Γ‘ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ²..."
 
 #: kmcomposewin.cpp:443 kmmainwin.cpp:989
 msgid "&Addressbook..."
-msgstr "Κατάλογος διευθύνσεων..."
+msgstr "ΓΓ΅Γ΄ΓΓ«Γ―Γ£Γ―Γ² Γ¤Γ©Γ¥ΓµΓ¨Γ½Γ­Γ³Γ¥ΓΉΓ­..."
 
 #: kmmainwin.cpp:991
 msgid "&Filter..."
-msgstr "Φίλτρα..."
+msgstr "Γ–ΓΓ«Γ΄Γ±Γ΅..."
 
 #: kmmainwin.cpp:1005
 msgid "&Find..."
-msgstr "Εύρεση..."
+msgstr "Γ…Γ½Γ±Γ¥Γ³Γ§..."
 
 #: kmfoldertree.cpp:307 kmmainwin.cpp:1010
 msgid "&Create..."
-msgstr "Δημιουργία..."
+msgstr "Γ„Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅..."
 
 #: kmfoldertree.cpp:309 kmmainwin.cpp:1012
 msgid "&Modify..."
-msgstr "Τροποποίηση..."
+msgstr "Γ”Γ±Γ―Γ°Γ―Γ°Γ―ΓΓ§Γ³Γ§..."
 
 #: kmfoldertree.cpp:311 kmmainwin.cpp:1014
 msgid "C&ompact"
-msgstr "Συμπίεση"
+msgstr "Γ“ΓµΓ¬Γ°ΓΓ¥Γ³Γ§"
 
 #: kmfoldertree.cpp:314 kmmainwin.cpp:1017
 msgid "&Empty"
-msgstr "Άδειασμα"
+msgstr "ΒΆΓ¤Γ¥Γ©Γ΅Γ³Γ¬Γ΅"
 
 #: kmfilterdlg.cpp:149 kmheaders.cpp:991 kmmainwin.cpp:1026
 msgid "New"
@@ -219,27 +219,27 @@ msgstr ""
 
 #: kmheaders.cpp:992 kmmainwin.cpp:1027
 msgid "Unread"
-msgstr "Αδιάβαστο"
+msgstr "ΓΓ¤Γ©ΓΓΆΓ΅Γ³Γ΄Γ―"
 
 #: kmheaders.cpp:993 kmmainwin.cpp:1028
 msgid "Read"
-msgstr "Διαβασμένο"
+msgstr "Γ„Γ©Γ΅ΓΆΓ΅Γ³Γ¬ΓΓ­Γ―"
 
 #: kmheaders.cpp:994 kmmainwin.cpp:1029
 msgid "Replied"
-msgstr "Απαντημένο"
+msgstr "ΓΓ°Γ΅Γ­Γ΄Γ§Γ¬ΓΓ­Γ―"
 
 #: kmheaders.cpp:995 kmmainwin.cpp:1030
 msgid "Queued"
-msgstr "Καθυστερούμενο"
+msgstr "ΓΓ΅Γ¨ΓµΓ³Γ΄Γ¥Γ±Γ―Γ½Γ¬Γ¥Γ­Γ―"
 
 #: kmheaders.cpp:996 kmmainwin.cpp:1031
 msgid "Sent"
-msgstr "Απεσταλμένο"
+msgstr "ΓΓ°Γ¥Γ³Γ΄Γ΅Γ«Γ¬ΓΓ­Γ―"
 
 #: kmmainwin.cpp:1035
 msgid "&Next"
-msgstr "Επόμενο"
+msgstr "Γ…Γ°ΓΌΓ¬Γ¥Γ­Γ―"
 
 #: kmmainwin.cpp:1037
 msgid "Next unread"
@@ -248,167 +248,167 @@ msgstr ""
 #: kmmainwin.cpp:1039
 #, fuzzy
 msgid "&Previous"
-msgstr "Προηγούμενο"
+msgstr "ΓΓ±Γ―Γ§Γ£Γ―Γ½Γ¬Γ¥Γ­Γ―"
 
 #: kmmainwin.cpp:1041
 #, fuzzy
 msgid "Previous unread"
-msgstr "Προηγούμενο"
+msgstr "ΓΓ±Γ―Γ§Γ£Γ―Γ½Γ¬Γ¥Γ­Γ―"
 
 #: kmmainwin.cpp:1051
 #, fuzzy
 msgid "Edi&t..."
-msgstr "Εκτύπωση..."
+msgstr "Γ…ΓªΓ΄Γ½Γ°ΓΉΓ³Γ§..."
 
 #: kmmainwin.cpp:1054
 msgid "&Set Status"
-msgstr "Ορισμός κατάστασης"
+msgstr "ΓΓ±Γ©Γ³Γ¬ΓΌΓ² ΓªΓ΅Γ΄ΓΓ³Γ΄Γ΅Γ³Γ§Γ²"
 
 #: kmmainwin.cpp:1056
 #, fuzzy
 msgid "Mar&k all"
-msgstr "Σήμανση όλων"
+msgstr "Γ“ΓΓ¬Γ΅Γ­Γ³Γ§ ΓΌΓ«ΓΉΓ­"
 
 #: kmmainwin.cpp:1065
 msgid "Send again..."
-msgstr "Επαναποστολή"
+msgstr "Γ…Γ°Γ΅Γ­Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«Γ"
 
 #: kmmainwin.cpp:1067
 msgid "Apply filters"
-msgstr "Εφαρμογή φίλτρων"
+msgstr "Γ…Γ¶Γ΅Γ±Γ¬Γ―Γ£Γ Γ¶ΓΓ«Γ΄Γ±ΓΉΓ­"
 
 #: kmmainwin.cpp:1070
 msgid "View Source..."
-msgstr "Προβολή πηγαίου αρχείου..."
+msgstr "ΓΓ±Γ―ΓΆΓ―Γ«Γ Γ°Γ§Γ£Γ΅ΓΓ―Γµ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ..."
 
 #: kmmainwin.cpp:1077
 msgid "&Brief Headers"
-msgstr "Σύντομες επικεφαλίδες"
+msgstr "Γ“Γ½Γ­Γ΄Γ―Γ¬Γ¥Γ² Γ¥Γ°Γ©ΓªΓ¥Γ¶Γ΅Γ«ΓΓ¤Γ¥Γ²"
 
 #: kmmainwin.cpp:1079
 msgid "&Fancy Headers"
-msgstr "Πλούσιες επικεφαλίδες"
+msgstr "ΓΓ«Γ―Γ½Γ³Γ©Γ¥Γ² Γ¥Γ°Γ©ΓªΓ¥Γ¶Γ΅Γ«ΓΓ¤Γ¥Γ²"
 
 #: kmmainwin.cpp:1081
 msgid "&Standard Headers"
-msgstr "Κανονικές επικεφαλίδες"
+msgstr "ΓΓ΅Γ­Γ―Γ­Γ©ΓªΓΓ² Γ¥Γ°Γ©ΓªΓ¥Γ¶Γ΅Γ«ΓΓ¤Γ¥Γ²"
 
 #: kmmainwin.cpp:1083
 msgid "&Long Headers"
-msgstr "Επεκταμένες επικεφαλίδες"
+msgstr "Γ…Γ°Γ¥ΓªΓ΄Γ΅Γ¬ΓΓ­Γ¥Γ² Γ¥Γ°Γ©ΓªΓ¥Γ¶Γ΅Γ«ΓΓ¤Γ¥Γ²"
 
 #: kmmainwin.cpp:1085
 msgid "&All Headers"
-msgstr "Όλες οι επικεφαλίδες"
+msgstr "ΒΌΓ«Γ¥Γ² Γ―Γ© Γ¥Γ°Γ©ΓªΓ¥Γ¶Γ΅Γ«ΓΓ¤Γ¥Γ²"
 
 #: kmmainwin.cpp:1088
 msgid "Iconic Attachments"
-msgstr "Συνημμένα με εικονίδια"
+msgstr "Γ“ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ΅ Γ¬Γ¥ Γ¥Γ©ΓªΓ―Γ­ΓΓ¤Γ©Γ΅"
 
 #: kmmainwin.cpp:1089
 msgid "Smart Attachments"
-msgstr "Έξυπνα συνημμένα"
+msgstr "ΒΈΓ®ΓµΓ°Γ­Γ΅ Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ΅"
 
 #: kmmainwin.cpp:1090
 msgid "Inlined Attachments"
-msgstr "Ενσωματωμένα συνημμένα"
+msgstr "Γ…Γ­Γ³ΓΉΓ¬Γ΅Γ΄ΓΉΓ¬ΓΓ­Γ΅ Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ΅"
 
 #: kmmainwin.cpp:1101
 msgid "F&older"
-msgstr "Φάκελλος"
+msgstr "Γ–ΓΓªΓ¥Γ«Γ«Γ―Γ²"
 
 #: kmmainwin.cpp:1102
 msgid "&Message"
-msgstr "Μήνυμα"
+msgstr "ΓΓΓ­ΓµΓ¬Γ΅"
 
 #: kmcomposewin.cpp:573 kmmainwin.cpp:1121
 msgid "Compose new message"
-msgstr "Σύνταξη νέου μηνύματος"
+msgstr "Γ“Γ½Γ­Γ΄Γ΅Γ®Γ§ Γ­ΓΓ―Γµ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmcomposewin.cpp:579 kmmainwin.cpp:1126
 msgid "Save message to file"
-msgstr "Αποθήκευση μηνύματος σε αρχείο"
+msgstr "ΓΓ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ² Γ³Γ¥ Γ΅Γ±Γ·Γ¥ΓΓ―"
 
 #: kmcomposewin.cpp:585 kmmainwin.cpp:1131
 msgid "Print message"
-msgstr "Εκτύπωση μηνύματος"
+msgstr "Γ…ΓªΓ΄Γ½Γ°ΓΉΓ³Γ§ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmmainwin.cpp:1138
 msgid "Get new mail"
-msgstr "Εύρεση νέας αλληλογραφίας"
+msgstr "Γ…Γ½Γ±Γ¥Γ³Γ§ Γ­ΓΓ΅Γ² Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ²"
 
 #: kmmainwin.cpp:1144
 msgid "Reply to author"
-msgstr "Απάντηση στον συντάκτη"
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§ Γ³Γ΄Γ―Γ­ Γ³ΓµΓ­Γ΄ΓΓªΓ΄Γ§"
 
 #: kmmainwin.cpp:1149
 msgid "Reply to all recipients"
-msgstr "Απάντηση σε όλους τους παραλήπτες"
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§ Γ³Γ¥ ΓΌΓ«Γ―ΓµΓ² Γ΄Γ―ΓµΓ² Γ°Γ΅Γ±Γ΅Γ«ΓΓ°Γ΄Γ¥Γ²"
 
 #: kmmainwin.cpp:1154
 msgid "Forward message"
-msgstr "Προώθηση μηνύματος"
+msgstr "ΓΓ±Γ―ΓΎΓ¨Γ§Γ³Γ§ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmmainwin.cpp:1159
 msgid "Delete message"
-msgstr "Διαγραφή μηνύματος"
+msgstr "Γ„Γ©Γ΅Γ£Γ±Γ΅Γ¶Γ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmcomposewin.cpp:609 kmmainwin.cpp:1165
 msgid "Open addressbook..."
-msgstr "Άνοιγμα βιβλίου διευθύνσεων"
+msgstr "ΒΆΓ­Γ―Γ©Γ£Γ¬Γ΅ ΓΆΓ©ΓΆΓ«ΓΓ―Γµ Γ¤Γ©Γ¥ΓµΓ¨Γ½Γ­Γ³Γ¥ΓΉΓ­"
 
 #: kmmainwin.cpp:1177
 msgid "Initializing..."
-msgstr "Αρχικοποίηση..."
+msgstr "ΓΓ±Γ·Γ©ΓªΓ―Γ°Γ―ΓΓ§Γ³Γ§..."
 
 #: kmfolderdia.cpp:39 kmmsgpartdlg.cpp:62 kmsettings.cpp:175
 #: kmsettings.cpp:883
 msgid "Name:"
-msgstr "Όνομα:"
+msgstr "ΒΌΓ­Γ―Γ¬Γ΅:"
 
 #: kmcomposewin.cpp:1524 kmfolderdia.cpp:45 kmfolderdia.cpp:132
 msgid "unnamed"
-msgstr "ανώνυμο"
+msgstr "Γ΅Γ­ΓΎΓ­ΓµΓ¬Γ―"
 
 #: kmfolderdia.cpp:55
 msgid "Associated with"
-msgstr "Σχετισμένο με"
+msgstr "Γ“Γ·Γ¥Γ΄Γ©Γ³Γ¬ΓΓ­Γ― Γ¬Γ¥"
 
 #: kmfolderdia.cpp:65
 msgid "Unassociated Accounts"
-msgstr "Μη σχετισμένοι λογαριασμοί"
+msgstr "ΓΓ§ Γ³Γ·Γ¥Γ΄Γ©Γ³Γ¬ΓΓ­Γ―Γ© Γ«Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬Γ―Γ"
 
 #: kmfoldertree.cpp:49 kmsettings.cpp:538
 msgid "Folders"
-msgstr "Φάκελλοι"
+msgstr "Γ–ΓΓªΓ¥Γ«Γ«Γ―Γ©"
 
 #: kmsettings.cpp:54
 msgid "Settings"
-msgstr "Ρυθμίσεις"
+msgstr "Γ‘ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ²"
 
 #: kmsettings.cpp:177
 msgid "Organization:"
-msgstr "Οργανισμός:"
+msgstr "ΓΓ±Γ£Γ΅Γ­Γ©Γ³Γ¬ΓΌΓ²:"
 
 #: kmsettings.cpp:179
 msgid "Email Address:"
-msgstr "Ηλεκτρονική διεύθυνση:"
+msgstr "Γ‡Γ«Γ¥ΓªΓ΄Γ±Γ―Γ­Γ©ΓªΓ Γ¤Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§:"
 
 #: kmsettings.cpp:182
 msgid "Reply-To Address:"
-msgstr "Διεύθυνση απάντησης:"
+msgstr "Γ„Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§ Γ΅Γ°ΓΓ­Γ΄Γ§Γ³Γ§Γ²:"
 
 #: kmsettings.cpp:184
 msgid "Signature File:"
-msgstr "Αρχείο υπογραφής:"
+msgstr "ΓΓ±Γ·Γ¥ΓΓ― ΓµΓ°Γ―Γ£Γ±Γ΅Γ¶ΓΓ²:"
 
 #: kmsettings.cpp:193 kpgp.cpp:821
 msgid "Identity"
-msgstr "Ταυτότητα"
+msgstr "Γ”Γ΅ΓµΓ΄ΓΌΓ΄Γ§Γ΄Γ΅"
 
 #: kmsettings.cpp:212
 msgid "Sending Mail"
-msgstr "Αποστολή αλληλογραφίας"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ²"
 
 #: kmsettings.cpp:218
 msgid "Sendmail"
@@ -416,7 +416,7 @@ msgstr "Sendmail"
 
 #: kmsettings.cpp:223 kmsettings.cpp:890
 msgid "Location:"
-msgstr "Τοποθεσία:"
+msgstr "Γ”Γ―Γ°Γ―Γ¨Γ¥Γ³ΓΓ΅:"
 
 #: kmsettings.cpp:228
 msgid "SMTP"
@@ -424,7 +424,7 @@ msgstr "SMTP"
 
 #: kmsettings.cpp:233
 msgid "Server:"
-msgstr "Εξυπηρετητής:"
+msgstr "Γ…Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄ΓΓ²:"
 
 #: kmsettings.cpp:235 kmsettings.cpp:911
 msgid "Port:"
@@ -432,35 +432,35 @@ msgstr "Port:"
 
 #: kmsettings.cpp:257
 msgid "Incoming Mail"
-msgstr "Εισερχόμενη αλληλογραφία"
+msgstr "Γ…Γ©Γ³Γ¥Γ±Γ·ΓΌΓ¬Γ¥Γ­Γ§ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅"
 
 #: kmsettings.cpp:262
 msgid "Accounts:   (add at least one account!)"
-msgstr "Λογαριασμοί (απαιτείται τουλάχιστον ένας!)"
+msgstr "Γ‹Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬Γ―Γ (Γ΅Γ°Γ΅Γ©Γ΄Γ¥ΓΓ΄Γ΅Γ© Γ΄Γ―ΓµΓ«ΓΓ·Γ©Γ³Γ΄Γ―Γ­ ΓΓ­Γ΅Γ²!)"
 
 #: kmcomposewin.cpp:140 kmsettings.cpp:267
 msgid "Name"
-msgstr "Όνομα"
+msgstr "ΒΌΓ­Γ―Γ¬Γ΅"
 
 #: kmcomposewin.cpp:143 kmsettings.cpp:268
 msgid "Type"
-msgstr "Τύπος"
+msgstr "Γ”Γ½Γ°Γ―Γ²"
 
 #: kmsettings.cpp:269
 msgid "Folder"
-msgstr "Φάκελλος"
+msgstr "Γ–ΓΓªΓ¥Γ«Γ«Γ―Γ²"
 
 #: kmsettings.cpp:277
 msgid "Add..."
-msgstr "Προσθήκη..."
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§..."
 
 #: kmsettings.cpp:280
 msgid "Modify..."
-msgstr "Τροποποίηση..."
+msgstr "Γ”Γ±Γ―Γ°Γ―Γ°Γ―ΓΓ§Γ³Γ§..."
 
 #: kmsettings.cpp:300
 msgid "Network"
-msgstr "Δίκτυο"
+msgstr "Γ„ΓΓªΓ΄ΓµΓ―"
 
 #: kmsettings.cpp:324
 msgid "Message Body Font:"
@@ -469,104 +469,104 @@ msgstr ""
 #: kmsettings.cpp:329
 #, fuzzy
 msgid "Message List Font:"
-msgstr "Μήνυμα ως απλό κείμενο"
+msgstr "ΓΓΓ­ΓµΓ¬Γ΅ ΓΉΓ² Γ΅Γ°Γ«ΓΌ ΓªΓ¥ΓΓ¬Γ¥Γ­Γ―"
 
 #: kmsettings.cpp:357
 #, fuzzy
 msgid "Long folder list"
-msgstr "Επεκταμένες επικεφαλίδες"
+msgstr "Γ…Γ°Γ¥ΓªΓ΄Γ΅Γ¬ΓΓ­Γ¥Γ² Γ¥Γ°Γ©ΓªΓ¥Γ¶Γ΅Γ«ΓΓ¤Γ¥Γ²"
 
 #: kmsettings.cpp:386
 msgid "Phrases"
-msgstr "Φράσεις"
+msgstr "Γ–Γ±ΓΓ³Γ¥Γ©Γ²"
 
 #: kmsettings.cpp:391
 msgid ""
 "The following placeholders are supported in the reply phrases:\n"
 "%D=date, %S=subject, %F=sender, %%=percent sign"
 msgstr ""
-"Τα παρακάτω σύμβολα αντικατάστασης υποστηρίζονται στις φράσεις απάντησης:\n"
-"%D=iΗμερομηνία, %S=Θέμα, %F=Αποστολέας, %%=Σύμβολο \"%\""
+"Γ”Γ΅ Γ°Γ΅Γ±Γ΅ΓªΓΓ΄ΓΉ Γ³Γ½Γ¬ΓΆΓ―Γ«Γ΅ Γ΅Γ­Γ΄Γ©ΓªΓ΅Γ΄ΓΓ³Γ΄Γ΅Γ³Γ§Γ² ΓµΓ°Γ―Γ³Γ΄Γ§Γ±ΓΓ¦Γ―Γ­Γ΄Γ΅Γ© Γ³Γ΄Γ©Γ² Γ¶Γ±ΓΓ³Γ¥Γ©Γ² Γ΅Γ°ΓΓ­Γ΄Γ§Γ³Γ§Γ²:\n"
+"%D=iΓ‡Γ¬Γ¥Γ±Γ―Γ¬Γ§Γ­ΓΓ΅, %S=ΓΓΓ¬Γ΅, %F=ΓΓ°Γ―Γ³Γ΄Γ―Γ«ΓΓ΅Γ², %%=Γ“Γ½Γ¬ΓΆΓ―Γ«Γ― \"%\""
 
 #: kmsettings.cpp:399
 msgid "Reply to sender:"
-msgstr "Απάντηση στον αποστολέα:"
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§ Γ³Γ΄Γ―Γ­ Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«ΓΓ΅:"
 
 #: kmsettings.cpp:402
 msgid "Reply to all:"
-msgstr "Απάντηση σε όλους:"
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§ Γ³Γ¥ ΓΌΓ«Γ―ΓµΓ²:"
 
 #: kmsettings.cpp:405
 msgid "Forward:"
-msgstr "Προώθηση:"
+msgstr "ΓΓ±Γ―ΓΎΓ¨Γ§Γ³Γ§:"
 
 #: kmsettings.cpp:408
 msgid "Indentation:"
-msgstr "Στοίχιση:"
+msgstr "Γ“Γ΄Γ―ΓΓ·Γ©Γ³Γ§:"
 
 #: kmmessage.cpp:1383 kmsettings.cpp:420
 msgid "On %D, you wrote:"
-msgstr "Στις %D, γράψατε:"
+msgstr "Γ“Γ΄Γ©Γ² %D, Γ£Γ±ΓΓΈΓ΅Γ΄Γ¥:"
 
 #: kmmessage.cpp:1384 kmsettings.cpp:424
 msgid "On %D, %F wrote:"
-msgstr "Στις %D, ο/η %F έγραψε:"
+msgstr "Γ“Γ΄Γ©Γ² %D, Γ―/Γ§ %F ΓΓ£Γ±Γ΅ΓΈΓ¥:"
 
 #: kmmessage.cpp:1385 kmsettings.cpp:428
 msgid "Forwarded Message"
-msgstr "Προωθημένο μήνυμα"
+msgstr "ΓΓ±Γ―ΓΉΓ¨Γ§Γ¬ΓΓ­Γ― Γ¬ΓΓ­ΓµΓ¬Γ΅"
 
 #: kmsettings.cpp:439
 msgid "Automatically append signature"
-msgstr "Αυτόματη προσκόλληση υπογραφής"
+msgstr "ΓΓµΓ΄ΓΌΓ¬Γ΅Γ΄Γ§ Γ°Γ±Γ―Γ³ΓªΓΌΓ«Γ«Γ§Γ³Γ§ ΓµΓ°Γ―Γ£Γ±Γ΅Γ¶ΓΓ²"
 
 #: kmsettings.cpp:445
 msgid "Automatically sign messages using PGP"
-msgstr "Αυτόματη υπογραφή μηνύματος με PGP"
+msgstr "ΓΓµΓ΄ΓΌΓ¬Γ΅Γ΄Γ§ ΓµΓ°Γ―Γ£Γ±Γ΅Γ¶Γ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ² Γ¬Γ¥ PGP"
 
 #: kmsettings.cpp:450
 msgid "Word wrap at column:"
-msgstr "Αυτόματη αλλαγή γραμμής στη στήλη:"
+msgstr "ΓΓµΓ΄ΓΌΓ¬Γ΅Γ΄Γ§ Γ΅Γ«Γ«Γ΅Γ£Γ Γ£Γ±Γ΅Γ¬Γ¬ΓΓ² Γ³Γ΄Γ§ Γ³Γ΄ΓΓ«Γ§:"
 
 #: kmsettings.cpp:460
 msgid "Use monospaced font"
-msgstr "Χρήση monospaced γραμματοσειράς"
+msgstr "Γ—Γ±ΓΓ³Γ§ monospaced Γ£Γ±Γ΅Γ¬Γ¬Γ΅Γ΄Γ―Γ³Γ¥Γ©Γ±ΓΓ²"
 
 #: kmsettings.cpp:472
 msgid "When sending mail"
-msgstr "Κατά την αποστολή αλληλογραφίας"
+msgstr "ΓΓ΅Γ΄Γ Γ΄Γ§Γ­ Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«Γ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ²"
 
 #: kmsettings.cpp:475
 msgid "Default sending:"
-msgstr "Ρύθμιση εξ ορισμού:"
+msgstr "Γ‘Γ½Γ¨Γ¬Γ©Γ³Γ§ Γ¥Γ® Γ―Γ±Γ©Γ³Γ¬Γ―Γ½:"
 
 #: kmsettings.cpp:478
 msgid "send now"
-msgstr "Αποστολή τώρα"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ΄ΓΎΓ±Γ΅"
 
 #: kmsettings.cpp:482
 msgid "send later"
-msgstr "Αποστολή αργότερα"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ΅Γ±Γ£ΓΌΓ΄Γ¥Γ±Γ΅"
 
 #: kmsettings.cpp:487
 msgid "Send messages:"
-msgstr "Αποστολή μηνυμάτων:"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­:"
 
 #: kmsettings.cpp:490
 msgid "Allow 8-bit"
-msgstr "8-bit δεκτό"
+msgstr "8-bit Γ¤Γ¥ΓªΓ΄ΓΌ"
 
 #: kmsettings.cpp:495
 msgid "MIME Compilant (Quoted Printable)"
-msgstr "Συβατότητα MIME"
+msgstr "Γ“ΓµΓΆΓ΅Γ΄ΓΌΓ΄Γ§Γ΄Γ΅ MIME"
 
 #: kmsettings.cpp:521
 msgid "Composer"
-msgstr "Σύνταξη"
+msgstr "Γ“Γ½Γ­Γ΄Γ΅Γ®Γ§"
 
 #: kmsettings.cpp:542
 msgid "empty trash on exit"
-msgstr "Άδειασμα φακέλλου διεγραμμένων κατά την έξοδο"
+msgstr "ΒΆΓ¤Γ¥Γ©Γ΅Γ³Γ¬Γ΅ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ Γ¤Γ©Γ¥Γ£Γ±Γ΅Γ¬Γ¬ΓΓ­ΓΉΓ­ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ ΓΓ®Γ―Γ¤Γ―"
 
 #: kmsettings.cpp:546
 msgid "Send Mail in outbox Folder on Check"
@@ -574,7 +574,7 @@ msgstr ""
 
 #: kmsettings.cpp:561
 msgid "Misc"
-msgstr "Διάφορα"
+msgstr "Γ„Γ©ΓΓ¶Γ―Γ±Γ΅"
 
 #: kmsettings.cpp:568
 msgid "PGP"
@@ -587,47 +587,47 @@ msgstr ""
 #: kmsettings.cpp:605
 #, fuzzy
 msgid "Message List Font"
-msgstr "Μήνυμα ως απλό κείμενο"
+msgstr "ΓΓΓ­ΓµΓ¬Γ΅ ΓΉΓ² Γ΅Γ°Γ«ΓΌ ΓªΓ¥ΓΓ¬Γ¥Γ­Γ―"
 
 #: kmsettings.cpp:657
 msgid "Select Account"
-msgstr "Επιλογή λογαριασμού"
+msgstr "Γ…Γ°Γ©Γ«Γ―Γ£Γ Γ«Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬Γ―Γ½"
 
 #: kmaccount.cpp:77 kmfilterdlg.cpp:472 kmsettings.cpp:676
 msgid "Unnamed"
-msgstr "Ανώνυμος"
+msgstr "ΓΓ­ΓΎΓ­ΓµΓ¬Γ―Γ²"
 
 #: kmsettings.cpp:695
 msgid "Choose Sendmail Location"
-msgstr "Επιλέξτε τοποθεσία Sendmail"
+msgstr "Γ…Γ°Γ©Γ«ΓΓ®Γ΄Γ¥ Γ΄Γ―Γ°Γ―Γ¨Γ¥Γ³ΓΓ΅ Sendmail"
 
 #: kmcomposewin.cpp:1623 kmsettings.cpp:704
 msgid "Choose Signature File"
-msgstr "Επιλέξτε αρχείο υπογραφής"
+msgstr "Γ…Γ°Γ©Γ«ΓΓ®Γ΄Γ¥ Γ΅Γ±Γ·Γ¥ΓΓ― ΓµΓ°Γ―Γ£Γ±Γ΅Γ¶ΓΓ²"
 
 #: kmsettings.cpp:875
 msgid "Type:"
-msgstr "Τύπος:"
+msgstr "Γ”Γ½Γ°Γ―Γ²:"
 
 #: kmsettings.cpp:888
 msgid "Local Account"
-msgstr "Τοπικός λογαριασμός"
+msgstr "Γ”Γ―Γ°Γ©ΓªΓΌΓ² Γ«Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬ΓΌΓ²"
 
 #: kmsettings.cpp:897
 msgid "Pop Account"
-msgstr "Λογαριασμός Pop"
+msgstr "Γ‹Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬ΓΌΓ² Pop"
 
 #: kmsettings.cpp:899
 msgid "Login:"
-msgstr "Όνομα:"
+msgstr "ΒΌΓ­Γ―Γ¬Γ΅:"
 
 #: kmacctpop.cpp:486 kmsettings.cpp:902
 msgid "Password:"
-msgstr "Λέξη κλειδί:"
+msgstr "Γ‹ΓΓ®Γ§ ΓªΓ«Γ¥Γ©Γ¤Γ:"
 
 #: kmsettings.cpp:906
 msgid "Host:"
-msgstr "Διεύθυνση εξυπηρετητή:"
+msgstr "Γ„Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§ Γ¥Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄Γ:"
 
 #: kmsettings.cpp:914
 msgid "Store POP password in config file"
@@ -635,12 +635,12 @@ msgstr ""
 
 #: kmsettings.cpp:919
 msgid "Delete mail from server"
-msgstr "Διαγραφή αλληλογραφίας από τον εξυπηρετητή"
+msgstr "Γ„Γ©Γ΅Γ£Γ±Γ΅Γ¶Γ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ² Γ΅Γ°ΓΌ Γ΄Γ―Γ­ Γ¥Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄Γ"
 
 #: kmsettings.cpp:924
 #, fuzzy
 msgid "Retrieve all mail from server"
-msgstr "Διαγραφή αλληλογραφίας από τον εξυπηρετητή"
+msgstr "Γ„Γ©Γ΅Γ£Γ±Γ΅Γ¶Γ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ² Γ΅Γ°ΓΌ Γ΄Γ―Γ­ Γ¥Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄Γ"
 
 #: kmsettings.cpp:936
 msgid "Enable interval Mail checking"
@@ -648,23 +648,23 @@ msgstr ""
 
 #: kmsettings.cpp:946
 msgid "Store new mail in account:"
-msgstr "Αποθήκευση νέας αλληλογραφίας στον λογαριασμό:"
+msgstr "ΓΓ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§ Γ­ΓΓ΅Γ² Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ² Γ³Γ΄Γ―Γ­ Γ«Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬ΓΌ:"
 
 #: kmsettings.cpp:960
 msgid "<none>"
-msgstr "<κανένα>"
+msgstr "<ΓªΓ΅Γ­ΓΓ­Γ΅>"
 
 #: kmsettings.cpp:1009
 msgid "Choose Location"
-msgstr "Επιλογή τοποθεσίας"
+msgstr "Γ…Γ°Γ©Γ«Γ―Γ£Γ Γ΄Γ―Γ°Γ―Γ¨Γ¥Γ³ΓΓ΅Γ²"
 
 #: kmaccount.cpp:116
 msgid "Receipt: "
-msgstr "Απόδειξη: "
+msgstr "ΓΓ°ΓΌΓ¤Γ¥Γ©Γ®Γ§: "
 
 #: kmaccount.cpp:150
 msgid "Failed to add message:"
-msgstr "Αποτυχία κατά την προσθήκη μηνύματος:"
+msgstr "ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ Γ°Γ±Γ―Γ³Γ¨ΓΓªΓ§ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²:"
 
 #: kmcomposewin.cpp:139 kmheaders.cpp:42
 msgid "F"
@@ -672,15 +672,15 @@ msgstr "F"
 
 #: kmheaders.cpp:43 kmheaders.cpp:223
 msgid "Sender"
-msgstr "Αποστολέας"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«ΓΓ΅Γ²"
 
 #: kmheaders.cpp:44
 msgid "Subject"
-msgstr "Θέμα"
+msgstr "ΓΓΓ¬Γ΅"
 
 #: kmheaders.cpp:45
 msgid "Date"
-msgstr "Ημερομηνία"
+msgstr "Γ‡Γ¬Γ¥Γ±Γ―Γ¬Γ§Γ­ΓΓ΅"
 
 #: kmheaders.cpp:222
 msgid "Receiver"
@@ -689,21 +689,21 @@ msgstr ""
 #: kmheaders.cpp:225
 #, c-format
 msgid "%d Messages, %d unread."
-msgstr "%d μηνύματα, %d αδιάβαστα."
+msgstr "%d Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ΅, %d Γ΅Γ¤Γ©ΓΓΆΓ΅Γ³Γ΄Γ΅."
 
 #: kmheaders.cpp:227
 msgid "Folder is read-only."
-msgstr "Ο φάκελλος είναι μόνο για ανάγνωση."
+msgstr "Γ Γ¶ΓΓªΓ¥Γ«Γ«Γ―Γ² Γ¥ΓΓ­Γ΅Γ© Γ¬ΓΌΓ­Γ― Γ£Γ©Γ΅ Γ΅Γ­ΓΓ£Γ­ΓΉΓ³Γ§."
 
 #: kmheaders.cpp:279
 #, fuzzy
 msgid "Unknown"
-msgstr "Άγνωστο σφάλμα"
+msgstr "ΒΆΓ£Γ­ΓΉΓ³Γ΄Γ― Γ³Γ¶ΓΓ«Γ¬Γ΅"
 
 #: kmheaders.cpp:282
 #, fuzzy
 msgid "No Subject"
-msgstr "Θέμα"
+msgstr "ΓΓΓ¬Γ΅"
 
 #: kmheaders.cpp:343
 msgid "order of arrival"
@@ -712,17 +712,17 @@ msgstr ""
 #: kmheaders.cpp:352
 #, fuzzy
 msgid "subject"
-msgstr "Θέμα"
+msgstr "ΓΓΓ¬Γ΅"
 
 #: kmheaders.cpp:353
 #, fuzzy
 msgid "date"
-msgstr "Ημερομηνία"
+msgstr "Γ‡Γ¬Γ¥Γ±Γ―Γ¬Γ§Γ­ΓΓ΅"
 
 #: kmheaders.cpp:354
 #, fuzzy
 msgid "sender"
-msgstr "Αποστολέας"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«ΓΓ΅Γ²"
 
 #: kmheaders.cpp:355
 msgid "status"
@@ -740,15 +740,15 @@ msgstr ""
 
 #: kmheaders.cpp:486
 msgid "Message(s) saved."
-msgstr "Τα Μηνύματα αποθηκέυτηκαν."
+msgstr "Γ”Γ΅ ΓΓ§Γ­Γ½Γ¬Γ΅Γ΄Γ΅ Γ΅Γ°Γ―Γ¨Γ§ΓªΓΓµΓ΄Γ§ΓªΓ΅Γ­."
 
 #: kmheaders.cpp:488
 msgid "Failed to save message(s)."
-msgstr "Αποτυχία κατά την αποθήκευση των μηνυμάτων."
+msgstr "ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ Γ΅Γ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§ Γ΄ΓΉΓ­ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­."
 
 #: kmcomposewin.cpp:128
 msgid "KMail Composer"
-msgstr "Συντάκτης KMail"
+msgstr "Γ“ΓµΓ­Γ΄ΓΓªΓ΄Γ§Γ² KMail"
 
 #: kmcomposewin.cpp:141
 msgid "Size"
@@ -756,23 +756,23 @@ msgstr ""
 
 #: kmcomposewin.cpp:142
 msgid "Encoding"
-msgstr "Κωδικοποίηση"
+msgstr "ΓΓΉΓ¤Γ©ΓªΓ―Γ°Γ―ΓΓ§Γ³Γ§"
 
 #: kmcomposewin.cpp:345
 msgid "&From:"
-msgstr "Από:"
+msgstr "ΓΓ°ΓΌ:"
 
 #: kmcomposewin.cpp:347
 msgid "&Reply to:"
-msgstr "Απάντηση προς:"
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§ Γ°Γ±Γ―Γ²:"
 
 #: kmcomposewin.cpp:349
 msgid "&To:"
-msgstr "Προς:"
+msgstr "ΓΓ±Γ―Γ²:"
 
 #: kmcomposewin.cpp:351
 msgid "&Cc:"
-msgstr "Αντίγραφο:"
+msgstr "ΓΓ­Γ΄ΓΓ£Γ±Γ΅Γ¶Γ―:"
 
 #: kmcomposewin.cpp:353
 msgid "&Bcc:"
@@ -780,93 +780,93 @@ msgstr "&Bcc:"
 
 #: kmcomposewin.cpp:355
 msgid "&Subject:"
-msgstr "Θέμα"
+msgstr "ΓΓΓ¬Γ΅"
 
 #: kmcomposewin.cpp:358
 msgid "&Newsgroups:"
-msgstr "Ομάδες συζήτησης:"
+msgstr "ΓΓ¬ΓΓ¤Γ¥Γ² Γ³ΓµΓ¦ΓΓ΄Γ§Γ³Γ§Γ²:"
 
 #: kmcomposewin.cpp:360
 msgid "&Followup-To:"
-msgstr "Συνέχεια συζήτησης στο:"
+msgstr "Γ“ΓµΓ­ΓΓ·Γ¥Γ©Γ΅ Γ³ΓµΓ¦ΓΓ΄Γ§Γ³Γ§Γ² Γ³Γ΄Γ―:"
 
 #: kmcomposewin.cpp:432
 msgid "&Send"
-msgstr "Αποστολή"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ"
 
 #: kmcomposewin.cpp:435
 msgid "S&end later"
-msgstr "Αποστολή αργότερα"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ΅Γ±Γ£ΓΌΓ΄Γ¥Γ±Γ΅"
 
 #: kmcomposewin.cpp:437
 msgid "S&end now"
-msgstr "Αποστολή τώρα"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ΄ΓΎΓ±Γ΅"
 
 #: kmcomposewin.cpp:439
 msgid "&Insert File..."
-msgstr "Εισαγωγή αρχείου..."
+msgstr "Γ…Γ©Γ³Γ΅Γ£ΓΉΓ£Γ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ..."
 
 #: kmcomposewin.cpp:448
 msgid "&New Composer..."
-msgstr "Νέο παράθυρο σύνταξης μηνύματος..."
+msgstr "ΓΓΓ― Γ°Γ΅Γ±ΓΓ¨ΓµΓ±Γ― Γ³Γ½Γ­Γ΄Γ΅Γ®Γ§Γ² Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²..."
 
 #: kmcomposewin.cpp:471 kmcomposewin.cpp:705 kmcomposewin.cpp:1923
 msgid "Mark all"
-msgstr "Σήμανση όλων"
+msgstr "Γ“ΓΓ¬Γ΅Γ­Γ³Γ§ ΓΌΓ«ΓΉΓ­"
 
 #: kmcomposewin.cpp:474 kmcomposewin.cpp:707
 msgid "Find..."
-msgstr "Εύρεση..."
+msgstr "Γ…Γ½Γ±Γ¥Γ³Γ§..."
 
 #: kmcomposewin.cpp:476 kmcomposewin.cpp:708
 msgid "Replace..."
-msgstr "Αντικατάσταση"
+msgstr "ΓΓ­Γ΄Γ©ΓªΓ΅Γ΄ΓΓ³Γ΄Γ΅Γ³Γ§"
 
 #: kmcomposewin.cpp:479
 #, fuzzy
 msgid "&Spellcheck..."
-msgstr "KMail: Έλεγχος ορθογραφίας"
+msgstr "KMail: ΒΈΓ«Γ¥Γ£Γ·Γ―Γ² Γ―Γ±Γ¨Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ²"
 
 #: kmcomposewin.cpp:486
 msgid "&Urgent"
-msgstr "Επείγον"
+msgstr "Γ…Γ°Γ¥ΓΓ£Γ―Γ­"
 
 #: kmcomposewin.cpp:488
 msgid "&Confirm delivery"
-msgstr "Επιβεβαίωση παράδοσης"
+msgstr "Γ…Γ°Γ©ΓΆΓ¥ΓΆΓ΅ΓΓΉΓ³Γ§ Γ°Γ΅Γ±ΓΓ¤Γ―Γ³Γ§Γ²"
 
 #: kmcomposewin.cpp:490
 msgid "&Confirm read"
-msgstr "Επιβεβαίωση ανάγνωσης"
+msgstr "Γ…Γ°Γ©ΓΆΓ¥ΓΆΓ΅ΓΓΉΓ³Γ§ Γ΅Γ­ΓΓ£Γ­ΓΉΓ³Γ§Γ²"
 
 #: kmcomposewin.cpp:493
 #, fuzzy
 msgid "&Spellchecker..."
-msgstr "KMail: Έλεγχος ορθογραφίας"
+msgstr "KMail: ΒΈΓ«Γ¥Γ£Γ·Γ―Γ² Γ―Γ±Γ¨Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ²"
 
 #: kmcomposewin.cpp:496
 msgid "&Charsets..."
-msgstr "Σύνολα χαρακτήρων..."
+msgstr "Γ“Γ½Γ­Γ―Γ«Γ΅ Γ·Γ΅Γ±Γ΅ΓªΓ΄ΓΓ±ΓΉΓ­..."
 
 #: kmcomposewin.cpp:509
 msgid "&All Fields"
-msgstr "Όλα τα πεδία"
+msgstr "ΒΌΓ«Γ΅ Γ΄Γ΅ Γ°Γ¥Γ¤ΓΓ΅"
 
 #: kmcomposewin.cpp:511
 msgid "&From"
-msgstr "Από"
+msgstr "ΓΓ°ΓΌ"
 
 #: kmcomposewin.cpp:512
 msgid "&Reply to"
-msgstr "Απάντηση προς"
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§ Γ°Γ±Γ―Γ²"
 
 #: kmcomposewin.cpp:513
 msgid "&To"
-msgstr "Προς"
+msgstr "ΓΓ±Γ―Γ²"
 
 #: kmcomposewin.cpp:514
 msgid "&Cc"
-msgstr "Αντίγραφο"
+msgstr "ΓΓ­Γ΄ΓΓ£Γ±Γ΅Γ¶Γ―"
 
 #: kmcomposewin.cpp:515
 msgid "&Bcc"
@@ -874,32 +874,32 @@ msgstr "&Bcc"
 
 #: kmcomposewin.cpp:516
 msgid "&Subject"
-msgstr "Θέμα"
+msgstr "ΓΓΓ¬Γ΅"
 
 #: kmcomposewin.cpp:518
 msgid "&Newsgroups"
-msgstr "Ομάδες συζήτησης"
+msgstr "ΓΓ¬ΓΓ¤Γ¥Γ² Γ³ΓµΓ¦ΓΓ΄Γ§Γ³Γ§Γ²"
 
 #: kmcomposewin.cpp:519
 msgid "&Followup-To"
-msgstr "Συνέχεια συζήτησης στο"
+msgstr "Γ“ΓµΓ­ΓΓ·Γ¥Γ©Γ΅ Γ³ΓµΓ¦ΓΓ΄Γ§Γ³Γ§Γ² Γ³Γ΄Γ―"
 
 #: kmcomposewin.cpp:525
 msgid "Append S&ignature"
-msgstr "Επικόλληση υπογραφής"
+msgstr "Γ…Γ°Γ©ΓªΓΌΓ«Γ«Γ§Γ³Γ§ ΓµΓ°Γ―Γ£Γ±Γ΅Γ¶ΓΓ²"
 
 #: kmcomposewin.cpp:527
 msgid "&Insert File"
-msgstr "Εισαγωγή αρχείου"
+msgstr "Γ…Γ©Γ³Γ΅Γ£ΓΉΓ£Γ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ"
 
 #: kmcomposewin.cpp:530
 msgid "&Attach..."
-msgstr "Προσθήκη συνημμένου..."
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§ Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ―Γµ..."
 
 #: kmcomposewin.cpp:532
 #, fuzzy
 msgid "Attach &Public Key"
-msgstr "Προσθήκη αρχείου ως συνημμένου"
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ ΓΉΓ² Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ―Γµ"
 
 #: kmcomposewin.cpp:534
 msgid "Attach My &Public Key"
@@ -907,72 +907,72 @@ msgstr ""
 
 #: kmcomposewin.cpp:545
 msgid "&Save..."
-msgstr "Αποθήκευση..."
+msgstr "ΓΓ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§..."
 
 #: kmcomposewin.cpp:546
 msgid "Pr&operties..."
-msgstr "Ιδιότητες..."
+msgstr "Γ‰Γ¤Γ©ΓΌΓ΄Γ§Γ΄Γ¥Γ²..."
 
 #: kmcomposewin.cpp:548
 msgid "&Attach"
-msgstr "Προσθήκη συνημμένου"
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§ Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ―Γµ"
 
 #: kmcomposewin.cpp:568
 #, fuzzy
 msgid "Send message"
-msgstr "Αποστολή μηνυμάτων:"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­:"
 
 #: kmcomposewin.cpp:594
 msgid "Cut selection"
-msgstr "Αποκοπή επιλογής"
+msgstr "ΓΓ°Γ―ΓªΓ―Γ°Γ Γ¥Γ°Γ©Γ«Γ―Γ£ΓΓ²"
 
 #: kmcomposewin.cpp:597
 msgid "Copy selection"
-msgstr "Αντιγραφή επιλογής"
+msgstr "ΓΓ­Γ΄Γ©Γ£Γ±Γ΅Γ¶Γ Γ¥Γ°Γ©Γ«Γ―Γ£ΓΓ²"
 
 #: kmcomposewin.cpp:600
 msgid "Paste clipboard contents"
-msgstr "Επικόλληση περιεχομένων σημειωματάριου"
+msgstr "Γ…Γ°Γ©ΓªΓΌΓ«Γ«Γ§Γ³Γ§ Γ°Γ¥Γ±Γ©Γ¥Γ·Γ―Γ¬ΓΓ­ΓΉΓ­ Γ³Γ§Γ¬Γ¥Γ©ΓΉΓ¬Γ΅Γ΄ΓΓ±Γ©Γ―Γµ"
 
 #: kmcomposewin.cpp:605
 msgid "Attach file"
-msgstr "Προσθήκη αρχείου ως συνημμένου"
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ ΓΉΓ² Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ―Γµ"
 
 #: kmcomposewin.cpp:616
 msgid "sign message"
-msgstr "Υπογραφή μηνύματος"
+msgstr "Γ•Γ°Γ―Γ£Γ±Γ΅Γ¶Γ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmcomposewin.cpp:621
 msgid "encrypt message"
-msgstr "Κρυπτογράφηση μηνύματος"
+msgstr "ΓΓ±ΓµΓ°Γ΄Γ―Γ£Γ±ΓΓ¶Γ§Γ³Γ§ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmcomposewin.cpp:638 kmcomposewin.cpp:654
 msgid "Column"
-msgstr "Στήλη"
+msgstr "Γ“Γ΄ΓΓ«Γ§"
 
 #: kmcomposewin.cpp:639 kmcomposewin.cpp:652
 msgid "Line"
-msgstr "Γραμμή"
+msgstr "ΓƒΓ±Γ΅Γ¬Γ¬Γ"
 
 #: kmcomposewin.cpp:920
 msgid "KMail Confirm"
-msgstr "Επιβεβαίωση KMail"
+msgstr "Γ…Γ°Γ©ΓΆΓ¥ΓΆΓ΅ΓΓΉΓ³Γ§ KMail"
 
 #: kmcomposewin.cpp:921
 msgid ""
 "Close and discard\n"
 "edited message?"
 msgstr ""
-"Κλείσιμο και διαγραφή\n"
-"επεξεργαζόμενου μηνύματος;"
+"ΓΓ«Γ¥ΓΓ³Γ©Γ¬Γ― ΓªΓ΅Γ© Γ¤Γ©Γ΅Γ£Γ±Γ΅Γ¶Γ\n"
+"Γ¥Γ°Γ¥Γ®Γ¥Γ±Γ£Γ΅Γ¦ΓΌΓ¬Γ¥Γ­Γ―Γµ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²;"
 
 #: kmcomposewin.cpp:1194
 msgid "Attach File"
-msgstr "Προσθήκη αρχείου ως συνημμένου"
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ ΓΉΓ² Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ―Γµ"
 
 #: kmcomposewin.cpp:1216
 msgid "Include File"
-msgstr "Εισαγωγή αρχείου"
+msgstr "Γ…Γ©Γ³Γ΅Γ£ΓΉΓ£Γ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ"
 
 #: kmcomposewin.cpp:1248
 msgid "my pgp key"
@@ -984,40 +984,40 @@ msgstr ""
 
 #: kmcomposewin.cpp:1297 kmreaderwin.cpp:906
 msgid "View..."
-msgstr "Προβολή..."
+msgstr "ΓΓ±Γ―ΓΆΓ―Γ«Γ..."
 
 #: kmcomposewin.cpp:1298
 msgid "Save..."
-msgstr "Αποθήκευση..."
+msgstr "ΓΓ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§..."
 
 #: kmcomposewin.cpp:1299 kmreaderwin.cpp:909
 msgid "Properties..."
-msgstr "Ιδιότητες..."
+msgstr "Γ‰Γ¤Γ©ΓΌΓ΄Γ§Γ΄Γ¥Γ²..."
 
 #: kmcomposewin.cpp:1303
 msgid "Attach..."
-msgstr "Προσθήκη συνημμένου..."
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§ Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ―Γµ..."
 
 #: kmcomposewin.cpp:1345 kmreaderwin.cpp:978 kmreaderwin.cpp:995
 msgid "View Attachment: "
-msgstr "Προβολή συνημμένου: "
+msgstr "ΓΓ±Γ―ΓΆΓ―Γ«Γ Γ³ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ―Γµ: "
 
 #: kmcomposewin.cpp:1539
 msgid "To:"
-msgstr "Προς:"
+msgstr "ΓΓ±Γ―Γ²:"
 
 #: kmcomposewin.cpp:1543
 msgid "Subject:"
-msgstr "Θέμα:"
+msgstr "ΓΓΓ¬Γ΅:"
 
 #: kmcomposewin.cpp:1546
 msgid "Date:"
-msgstr "Ημερομηνία:"
+msgstr "Γ‡Γ¬Γ¥Γ±Γ―Γ¬Γ§Γ­ΓΓ΅:"
 
 #: kmcomposewin.cpp:1670
 #, fuzzy
 msgid "Spellcheck complete."
-msgstr "KMail: Έλεγχος ορθογραφίας"
+msgstr "KMail: ΒΈΓ«Γ¥Γ£Γ·Γ―Γ² Γ―Γ±Γ¨Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ²"
 
 #: kmcomposewin.cpp:2113
 msgid "Spellcheck - KMail"
@@ -1027,20 +1027,20 @@ msgstr ""
 msgid ""
 "Error starting KSpell. Please make sure you have ISpell properly configured."
 msgstr ""
-"Σφάλμα κατά την εκκίνηση του KSpell. Παρακαλώ βεβαιωθείτε ότι έχετε "
-"εγκαταστήσει και ρυθμίσει σωστά το ISpell."
+"Γ“Γ¶ΓΓ«Γ¬Γ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ Γ¥ΓªΓªΓΓ­Γ§Γ³Γ§ Γ΄Γ―Γµ KSpell. ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ ΓΆΓ¥ΓΆΓ΅Γ©ΓΉΓ¨Γ¥ΓΓ΄Γ¥ ΓΌΓ΄Γ© ΓΓ·Γ¥Γ΄Γ¥ "
+"Γ¥Γ£ΓªΓ΅Γ΄Γ΅Γ³Γ΄ΓΓ³Γ¥Γ© ΓªΓ΅Γ© Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥Γ© Γ³ΓΉΓ³Γ΄Γ Γ΄Γ― ISpell."
 
 #: kmfolder.cpp:147
 #, fuzzy, c-format
 msgid "Folder `%s' changed. Recreating index."
 msgstr ""
-"Τα περιεχόμενα του φακέλλου `%s' άλλαξαν.\n"
-"Επαναδημιουργία ευρετηρίου."
+"Γ”Γ΅ Γ°Γ¥Γ±Γ©Γ¥Γ·ΓΌΓ¬Γ¥Γ­Γ΅ Γ΄Γ―Γµ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ `%s' ΓΓ«Γ«Γ΅Γ®Γ΅Γ­.\n"
+"Γ…Γ°Γ΅Γ­Γ΅Γ¤Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅ Γ¥ΓµΓ±Γ¥Γ΄Γ§Γ±ΓΓ―Γµ."
 
 #: kmfolder.cpp:388
 #, c-format
 msgid "Creating index file: %d messages done"
-msgstr "Δημιουργία ευρετηρίου: Ολοκληρώθηκαν %d μηνύματα"
+msgstr "Γ„Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅ Γ¥ΓµΓ±Γ¥Γ΄Γ§Γ±ΓΓ―Γµ: ΓΓ«Γ―ΓªΓ«Γ§Γ±ΓΎΓ¨Γ§ΓªΓ΅Γ­ %d Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ΅"
 
 #: kmfolder.cpp:477
 msgid "Writing index file"
@@ -1049,23 +1049,23 @@ msgstr ""
 #: kmfolder.cpp:934
 #, fuzzy, c-format
 msgid "Compacting folder: %d messages done"
-msgstr "Δημιουργία ευρετηρίου: Ολοκληρώθηκαν %d μηνύματα"
+msgstr "Γ„Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅ Γ¥ΓµΓ±Γ¥Γ΄Γ§Γ±ΓΓ―Γµ: ΓΓ«Γ―ΓªΓ«Γ§Γ±ΓΎΓ¨Γ§ΓªΓ΅Γ­ %d Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ΅"
 
 #: kmmsgpartdlg.cpp:41
 msgid "Message Part Properties"
-msgstr "Ιδιότητες μέρους μηνύματος"
+msgstr "Γ‰Γ¤Γ©ΓΌΓ΄Γ§Γ΄Γ¥Γ² Γ¬ΓΓ±Γ―ΓµΓ² Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmmsgpartdlg.cpp:73
 msgid "Description:"
-msgstr "Περιγραφή:"
+msgstr "ΓΓ¥Γ±Γ©Γ£Γ±Γ΅Γ¶Γ:"
 
 #: kmmsgpartdlg.cpp:83
 msgid "Encoding:"
-msgstr "Κωδικοποίηση:"
+msgstr "ΓΓΉΓ¤Γ©ΓªΓ―Γ°Γ―ΓΓ§Γ³Γ§:"
 
 #: kmmsgpartdlg.cpp:89
 msgid "none (8bit)"
-msgstr "καμία (8bit)"
+msgstr "ΓªΓ΅Γ¬ΓΓ΅ (8bit)"
 
 #: kmmsgpartdlg.cpp:90
 msgid "base 64"
@@ -1078,23 +1078,23 @@ msgstr "quoted printable"
 #: kmreaderwin.cpp:402 kmreaderwin.cpp:415 kmreaderwin.cpp:434
 #: kmreaderwin.cpp:455
 msgid "Cc: "
-msgstr "Αντίγραφο: "
+msgstr "ΓΓ­Γ΄ΓΓ£Γ±Γ΅Γ¶Γ―: "
 
 #: kmreaderwin.cpp:410 kmreaderwin.cpp:429 kmreaderwin.cpp:450
 msgid "From: "
-msgstr "Από: "
+msgstr "ΓΓ°ΓΌ: "
 
 #: kmreaderwin.cpp:412 kmreaderwin.cpp:431 kmreaderwin.cpp:452
 msgid "To: "
-msgstr "Προς: "
+msgstr "ΓΓ±Γ―Γ²: "
 
 #: kmreaderwin.cpp:419 kmreaderwin.cpp:440 kmreaderwin.cpp:465
 msgid "References: "
-msgstr "Αναφορές: "
+msgstr "ΓΓ­Γ΅Γ¶Γ―Γ±ΓΓ²: "
 
 #: kmreaderwin.cpp:436 kmreaderwin.cpp:449
 msgid "Date: "
-msgstr "Ημερομηνία: "
+msgstr "Γ‡Γ¬Γ¥Γ±Γ―Γ¬Γ§Γ­ΓΓ΅: "
 
 #: kmreaderwin.cpp:458
 msgid "Bcc: "
@@ -1102,27 +1102,27 @@ msgstr "Bcc: "
 
 #: kmreaderwin.cpp:461
 msgid "Reply to: "
-msgstr "Απάντηση προς: "
+msgstr "ΓΓ°ΓΓ­Γ΄Γ§Γ³Γ§ Γ°Γ±Γ―Γ²: "
 
 #: kmreaderwin.cpp:468
 msgid "Groups: "
-msgstr "Ομάδες: "
+msgstr "ΓΓ¬ΓΓ¤Γ¥Γ²: "
 
 #: kmreaderwin.cpp:506
 msgid "Encrypted message"
-msgstr "Κρυπτογραφημένο μήνυμα"
+msgstr "ΓΓ±ΓµΓ°Γ΄Γ―Γ£Γ±Γ΅Γ¶Γ§Γ¬ΓΓ­Γ― Γ¬ΓΓ­ΓµΓ¬Γ΅"
 
 #: kmreaderwin.cpp:512
 msgid "Cannot decrypt message:"
-msgstr "Δεν μπορώ να αποκρυπτογραφήσω το μήνυμα:"
+msgstr "Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ΅Γ°Γ―ΓªΓ±ΓµΓ°Γ΄Γ―Γ£Γ±Γ΅Γ¶ΓΓ³ΓΉ Γ΄Γ― Γ¬ΓΓ­ΓµΓ¬Γ΅:"
 
 #: kmreaderwin.cpp:521
 msgid "Message was signed by"
-msgstr "Το μήνυμα είναι υπογεγραμμένο από"
+msgstr "Γ”Γ― Γ¬ΓΓ­ΓµΓ¬Γ΅ Γ¥ΓΓ­Γ΅Γ© ΓµΓ°Γ―Γ£Γ¥Γ£Γ±Γ΅Γ¬Γ¬ΓΓ­Γ― Γ΅Γ°ΓΌ"
 
 #: kmreaderwin.cpp:522
 msgid "Warning: Bad signature from"
-msgstr "Προσοχή: Άκυρη υπογραφή από"
+msgstr "ΓΓ±Γ―Γ³Γ―Γ·Γ: ΒΆΓªΓµΓ±Γ§ ΓµΓ°Γ―Γ£Γ±Γ΅Γ¶Γ Γ΅Γ°ΓΌ"
 
 #: kmreaderwin.cpp:532
 msgid "unknown key ID"
@@ -1130,11 +1130,11 @@ msgstr ""
 
 #: kmreaderwin.cpp:870
 msgid "Attachment: "
-msgstr "Συνημμένο: "
+msgstr "Γ“ΓµΓ­Γ§Γ¬Γ¬ΓΓ­Γ―: "
 
 #: kmreaderwin.cpp:1084
 msgid "Could not save file"
-msgstr "Δεν μπορώ να αποθηκεύσω το αρχείο"
+msgstr "Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ΅Γ°Γ―Γ¨Γ§ΓªΓ¥Γ½Γ³ΓΉ Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―"
 
 #: kmacctmgr.cpp:116 kmacctmgr.cpp:223 kmacctmgr.cpp:285
 #, c-format
@@ -1150,17 +1150,17 @@ msgid ""
 "section of the settings in order to\n"
 "receive mail."
 msgstr ""
-"Πρέπει να προσθέσετε έναν λογαριασμό στο τμήμα\n"
-"δικτύου των ρυθμίσεων για να μπορέσετε να λάβετε\n"
-"αλληλογραφία."
+"ΓΓ±ΓΓ°Γ¥Γ© Γ­Γ΅ Γ°Γ±Γ―Γ³Γ¨ΓΓ³Γ¥Γ΄Γ¥ ΓΓ­Γ΅Γ­ Γ«Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬ΓΌ Γ³Γ΄Γ― Γ΄Γ¬ΓΓ¬Γ΅\n"
+"Γ¤Γ©ΓªΓ΄Γ½Γ―Γµ Γ΄ΓΉΓ­ Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥ΓΉΓ­ Γ£Γ©Γ΅ Γ­Γ΅ Γ¬Γ°Γ―Γ±ΓΓ³Γ¥Γ΄Γ¥ Γ­Γ΅ Γ«ΓΓΆΓ¥Γ΄Γ¥\n"
+"Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅."
 
 #: main.cpp:121 main.cpp:371
 msgid "warning"
-msgstr "προσοχή"
+msgstr "Γ°Γ±Γ―Γ³Γ―Γ·Γ"
 
 #: main.cpp:128 main.cpp:129
 msgid "fatal error"
-msgstr "μοιραίο λάθος"
+msgstr "Γ¬Γ―Γ©Γ±Γ΅ΓΓ― Γ«ΓΓ¨Γ―Γ²"
 
 #: main.cpp:306
 msgid "KMail notification"
@@ -1182,13 +1182,13 @@ msgid ""
 "\n"
 "Shall KMail move the mail folders now ?"
 msgstr ""
-"Ο κατάλογος ~/KMail υπάρχει ήδη. Από εδώ και πέρα, το KMail χρησιμοποιεί\n"
-"τον κατάλογο ~/Mail για τα μηνύματά του.\n"
-"Το KMail μπορεί να μεταφέρει τα περιεχόμενα του ~/KMail στο ~/Mail, \n"
-"αλλά αυτό θα προκαλέσει την αντικατάσταση των αρχείων που ήδη υπάρχουν\n"
-"στον κατάλογο ~/Mail με το ίδιο όνομα (π.χ. inbox).\n"
+"Γ ΓªΓ΅Γ΄ΓΓ«Γ―Γ£Γ―Γ² ~/KMail ΓµΓ°ΓΓ±Γ·Γ¥Γ© ΓΓ¤Γ§. ΓΓ°ΓΌ Γ¥Γ¤ΓΎ ΓªΓ΅Γ© Γ°ΓΓ±Γ΅, Γ΄Γ― KMail Γ·Γ±Γ§Γ³Γ©Γ¬Γ―Γ°Γ―Γ©Γ¥Γ\n"
+"Γ΄Γ―Γ­ ΓªΓ΅Γ΄ΓΓ«Γ―Γ£Γ― ~/Mail Γ£Γ©Γ΅ Γ΄Γ΅ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ Γ΄Γ―Γµ.\n"
+"Γ”Γ― KMail Γ¬Γ°Γ―Γ±Γ¥Γ Γ­Γ΅ Γ¬Γ¥Γ΄Γ΅Γ¶ΓΓ±Γ¥Γ© Γ΄Γ΅ Γ°Γ¥Γ±Γ©Γ¥Γ·ΓΌΓ¬Γ¥Γ­Γ΅ Γ΄Γ―Γµ ~/KMail Γ³Γ΄Γ― ~/Mail, \n"
+"Γ΅Γ«Γ«Γ Γ΅ΓµΓ΄ΓΌ Γ¨Γ΅ Γ°Γ±Γ―ΓªΓ΅Γ«ΓΓ³Γ¥Γ© Γ΄Γ§Γ­ Γ΅Γ­Γ΄Γ©ΓªΓ΅Γ΄ΓΓ³Γ΄Γ΅Γ³Γ§ Γ΄ΓΉΓ­ Γ΅Γ±Γ·Γ¥ΓΓΉΓ­ Γ°Γ―Γµ ΓΓ¤Γ§ ΓµΓ°ΓΓ±Γ·Γ―ΓµΓ­\n"
+"Γ³Γ΄Γ―Γ­ ΓªΓ΅Γ΄ΓΓ«Γ―Γ£Γ― ~/Mail Γ¬Γ¥ Γ΄Γ― ΓΓ¤Γ©Γ― ΓΌΓ­Γ―Γ¬Γ΅ (Γ°.Γ·. inbox).\n"
 "\n"
-"Θέλετε να μετακινηθούν οι κατάλογοι τώρα;"
+"ΓΓΓ«Γ¥Γ΄Γ¥ Γ­Γ΅ Γ¬Γ¥Γ΄Γ΅ΓªΓ©Γ­Γ§Γ¨Γ―Γ½Γ­ Γ―Γ© ΓªΓ΅Γ΄ΓΓ«Γ―Γ£Γ―Γ© Γ΄ΓΎΓ±Γ΅;"
 
 #: main.cpp:485
 msgid "Loading addressbook failed"
@@ -1203,7 +1203,7 @@ msgstr ""
 #, fuzzy
 msgid "Cannot open file:"
 msgstr ""
-"Δεν μπορώ να ανοίξω το αρχείο:\n"
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ΅Γ­Γ―ΓΓ®ΓΉ Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―:\n"
 "%s"
 
 #: kmacctlocal.cpp:113
@@ -1213,8 +1213,8 @@ msgid ""
 "mailbox `%s':\n"
 "%s"
 msgstr ""
-"Δεν μπορώ να διαγράψω αλληλογραφία από\n"
-"το κουτί αλληλογραφίας `%s':\n"
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ¤Γ©Γ΅Γ£Γ±ΓΓΈΓΉ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅ Γ΅Γ°ΓΌ\n"
+"Γ΄Γ― ΓªΓ―ΓµΓ΄Γ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ² `%s':\n"
 "%s"
 
 #: kmacctpop.cpp:100
@@ -1235,20 +1235,20 @@ msgid ""
 "destination folder in the settings\n"
 "and try again."
 msgstr ""
-"Παρακαλώ προσδιορίστε εξυπηρετητή, port και\n"
-"φάκελλο προορισμού στις ρυθμίσεις και ξαναπροσπαθήστε."
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ°Γ±Γ―Γ³Γ¤Γ©Γ―Γ±ΓΓ³Γ΄Γ¥ Γ¥Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄Γ, port ΓªΓ΅Γ©\n"
+"Γ¶ΓΓªΓ¥Γ«Γ«Γ― Γ°Γ±Γ―Γ―Γ±Γ©Γ³Γ¬Γ―Γ½ Γ³Γ΄Γ©Γ² Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ² ΓªΓ΅Γ© Γ®Γ΅Γ­Γ΅Γ°Γ±Γ―Γ³Γ°Γ΅Γ¨ΓΓ³Γ΄Γ¥."
 
 #: kmacctpop.cpp:291
 msgid "Pop Mail Error"
-msgstr "Σφάλμα αλληλογραφίας pop"
+msgstr "Γ“Γ¶ΓΓ«Γ¬Γ΅ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ² pop"
 
 #: kmacctpop.cpp:296
 msgid "Pop Mail Network Error"
-msgstr "Σφάλμα δικτύου αλληλογραφίας pop"
+msgstr "Γ“Γ¶ΓΓ«Γ¬Γ΅ Γ¤Γ©ΓªΓ΄Γ½Γ―Γµ Γ΅Γ«Γ«Γ§Γ«Γ―Γ£Γ±Γ΅Γ¶ΓΓ΅Γ² pop"
 
 #: kmacctpop.cpp:312
 msgid "Unknown error"
-msgstr "Άγνωστο σφάλμα"
+msgstr "ΒΆΓ£Γ­ΓΉΓ³Γ΄Γ― Γ³Γ¶ΓΓ«Γ¬Γ΅"
 
 #: kmacctpop.cpp:317
 #, c-format
@@ -1257,13 +1257,13 @@ msgid ""
 "In %s:\n"
 "%s"
 msgstr ""
-"Λογαριασμός: %s\n"
-"Στο %s:\n"
+"Γ‹Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬ΓΌΓ²: %s\n"
+"Γ“Γ΄Γ― %s:\n"
 "%s"
 
 #: kmacctpop.cpp:477
 msgid "Login Name:"
-msgstr "Όνομα λογαριασμού: "
+msgstr "ΒΌΓ­Γ―Γ¬Γ΅ Γ«Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬Γ―Γ½: "
 
 #: kmfolderdir.cpp:78
 #, c-format
@@ -1271,7 +1271,7 @@ msgid ""
 "Error while creating folder `%s':\n"
 "%s"
 msgstr ""
-"Σφάλμα κατά τη δημιουργία του φακέλλου `%s':\n"
+"Γ“Γ¶ΓΓ«Γ¬Γ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§ Γ¤Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅ Γ΄Γ―Γµ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ `%s':\n"
 "%s"
 
 #: kmfoldermgr.cpp:136
@@ -1280,7 +1280,7 @@ msgid ""
 "Creating missing folder\n"
 "`%s'"
 msgstr ""
-"Δημιουργία απόντως φακέλλου\n"
+"Γ„Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅ Γ΅Γ°ΓΌΓ­Γ΄ΓΉΓ² Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ\n"
 "`%s'"
 
 #: kmfoldermgr.cpp:139
@@ -1289,8 +1289,8 @@ msgid ""
 "Cannot create folder `%s'\n"
 "in %s"
 msgstr ""
-"Αδύνατη η δημιουργία του φακέλου `%s'\n"
-"στο %s"
+"ΓΓ¤Γ½Γ­Γ΅Γ΄Γ§ Γ§ Γ¤Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅ Γ΄Γ―Γµ Γ¶Γ΅ΓªΓΓ«Γ―Γµ `%s'\n"
+"Γ³Γ΄Γ― %s"
 
 #: kmsender.cpp:124
 msgid ""
@@ -1298,9 +1298,9 @@ msgid ""
 "method in the settings\n"
 "and try again."
 msgstr ""
-"Παρακαλώ προσδιορίστε μια\n"
-"μέθοδο αποστολής στις ρυθμίσεις\n"
-"και ξαναπροσπαθήστε."
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ°Γ±Γ―Γ³Γ¤Γ©Γ―Γ±ΓΓ³Γ΄Γ¥ Γ¬Γ©Γ΅\n"
+"Γ¬ΓΓ¨Γ―Γ¤Γ― Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«ΓΓ² Γ³Γ΄Γ©Γ² Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ²\n"
+"ΓªΓ΅Γ© Γ®Γ΅Γ­Γ΅Γ°Γ±Γ―Γ³Γ°Γ΅Γ¨ΓΓ³Γ΄Γ¥."
 
 #: kmsender.cpp:130
 msgid ""
@@ -1308,54 +1308,54 @@ msgid ""
 "identity settings:\n"
 "user-name and email-address"
 msgstr ""
-"Παρακαλώ ορίστε τα απαιτούμενα πεδία στις\n"
-"ρυθμίσεις ταυτότητας:\n"
-"Όνομα και ηλεκτρονική διεύθυνση"
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ―Γ±ΓΓ³Γ΄Γ¥ Γ΄Γ΅ Γ΅Γ°Γ΅Γ©Γ΄Γ―Γ½Γ¬Γ¥Γ­Γ΅ Γ°Γ¥Γ¤ΓΓ΅ Γ³Γ΄Γ©Γ²\n"
+"Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ² Γ΄Γ΅ΓµΓ΄ΓΌΓ΄Γ§Γ΄Γ΅Γ²:\n"
+"ΒΌΓ­Γ―Γ¬Γ΅ ΓªΓ΅Γ© Γ§Γ«Γ¥ΓªΓ΄Γ±Γ―Γ­Γ©ΓªΓ Γ¤Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§"
 
 #: kmsender.cpp:155
 msgid "You must specify a receiver"
-msgstr "Πρέπει να ορίσετε παραλήπτη"
+msgstr "ΓΓ±ΓΓ°Γ¥Γ© Γ­Γ΅ Γ―Γ±ΓΓ³Γ¥Γ΄Γ¥ Γ°Γ΅Γ±Γ΅Γ«ΓΓ°Γ΄Γ§"
 
 #: kmsender.cpp:166
 msgid "Cannot add message to outbox folder"
-msgstr "Δεν μπορώ να προσθέσω το μήνυμα στον φάκελλο απεσταλμένων"
+msgstr "Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ°Γ±Γ―Γ³Γ¨ΓΓ³ΓΉ Γ΄Γ― Γ¬ΓΓ­ΓµΓ¬Γ΅ Γ³Γ΄Γ―Γ­ Γ¶ΓΓªΓ¥Γ«Γ«Γ― Γ΅Γ°Γ¥Γ³Γ΄Γ΅Γ«Γ¬ΓΓ­ΓΉΓ­"
 
 #: kmsender.cpp:197
 msgid "Sending still in progress"
-msgstr "Αποστολή εν εξελίξει"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ¥Γ­ Γ¥Γ®Γ¥Γ«ΓΓ®Γ¥Γ©"
 
 #: kmsender.cpp:255 kmsender.cpp:259
 msgid "Initiating sender process..."
-msgstr "Αρχικοποίηση διαδικασίας αποστολής..."
+msgstr "ΓΓ±Γ·Γ©ΓªΓ―Γ°Γ―ΓΓ§Γ³Γ§ Γ¤Γ©Γ΅Γ¤Γ©ΓªΓ΅Γ³ΓΓ΅Γ² Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«ΓΓ²..."
 
 #: kmsender.cpp:275
 msgid "Sending message: "
-msgstr "Αποστολή μηνύματος: "
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²: "
 
 #: kmsender.cpp:303
 msgid "Done sending messages."
-msgstr "Τέλος αποστολής μηνύματος."
+msgstr "Γ”ΓΓ«Γ―Γ² Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«ΓΓ² Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²."
 
 #: kmsender.cpp:335
 msgid "Sending failed:"
-msgstr "Αποστολή απέτυχε:"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ΅Γ°ΓΓ΄ΓµΓ·Γ¥:"
 
 #: kmsender.cpp:525
 msgid ""
 "Please specify a mailer program\n"
 "in the settings."
 msgstr ""
-"Παρακαλώ ορίστε ένα πρόγραμμα αποστολής\n"
-"στις ρυθμίσεις."
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ―Γ±ΓΓ³Γ΄Γ¥ ΓΓ­Γ΅ Γ°Γ±ΓΌΓ£Γ±Γ΅Γ¬Γ¬Γ΅ Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«ΓΓ²\n"
+"Γ³Γ΄Γ©Γ² Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ²."
 
 #: kmsender.cpp:574
 #, c-format
 msgid "Failed to execute mailer program %s"
-msgstr "Αποτυχία εκτέλεσης προγράμματος αποστολής %s"
+msgstr "ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅ Γ¥ΓªΓ΄ΓΓ«Γ¥Γ³Γ§Γ² Γ°Γ±Γ―Γ£Γ±ΓΓ¬Γ¬Γ΅Γ΄Γ―Γ² Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«ΓΓ² %s"
 
 #: kmsender.cpp:662
 msgid "connecting to server"
-msgstr "σύνδεση στον εξυπηρετητή"
+msgstr "Γ³Γ½Γ­Γ¤Γ¥Γ³Γ§ Γ³Γ΄Γ―Γ­ Γ¥Γ®ΓµΓ°Γ§Γ±Γ¥Γ΄Γ§Γ΄Γ"
 
 #: kmsender.cpp:667
 #, c-format
@@ -1364,21 +1364,21 @@ msgid ""
 "host %s for sending:\n"
 "%s"
 msgstr ""
-"Δεν μπορώ να πραγματοποιήσω SMTP σύνδεση στη\n"
-"διεύθυνση %s για την αποστολή:\n"
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ°Γ±Γ΅Γ£Γ¬Γ΅Γ΄Γ―Γ°Γ―Γ©ΓΓ³ΓΉ SMTP Γ³Γ½Γ­Γ¤Γ¥Γ³Γ§ Γ³Γ΄Γ§\n"
+"Γ¤Γ©Γ¥Γ½Γ¨ΓµΓ­Γ³Γ§ %s Γ£Γ©Γ΅ Γ΄Γ§Γ­ Γ΅Γ°Γ―Γ³Γ΄Γ―Γ«Γ:\n"
 "%s"
 
 #: kmsender.cpp:696
 msgid "Cannot close SMTP connection."
-msgstr "Δεν μπορώ να κλείσω την SMTP σύνδεση."
+msgstr "Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ ΓªΓ«Γ¥ΓΓ³ΓΉ Γ΄Γ§Γ­ SMTP Γ³Γ½Γ­Γ¤Γ¥Γ³Γ§."
 
 #: kmsender.cpp:748
 msgid "transmitting message"
-msgstr "Αποστολή μηνύματος"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kmsender.cpp:785
 msgid "network error"
-msgstr "Σφάλμα δικτύου"
+msgstr "Γ“Γ¶ΓΓ«Γ¬Γ΅ Γ¤Γ©ΓªΓ΄Γ½Γ―Γµ"
 
 #: kmsender.cpp:787
 #, c-format
@@ -1388,23 +1388,23 @@ msgid ""
 "Response: %s\n"
 "Return code: %d"
 msgstr ""
-"Προκλήθηκε σφάλμα SMTP.\n"
-"Εντολή: %s\n"
-"Απόκριση: %s\n"
-"Κωδικός: %d"
+"ΓΓ±Γ―ΓªΓ«ΓΓ¨Γ§ΓªΓ¥ Γ³Γ¶ΓΓ«Γ¬Γ΅ SMTP.\n"
+"Γ…Γ­Γ΄Γ―Γ«Γ: %s\n"
+"ΓΓ°ΓΌΓªΓ±Γ©Γ³Γ§: %s\n"
+"ΓΓΉΓ¤Γ©ΓªΓΌΓ²: %d"
 
 #: kmsender.cpp:802
 #, c-format
 msgid "Sending SMTP command: %s"
-msgstr "Αποστολή εντολής SMTP: %s"
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ¥Γ­Γ΄Γ―Γ«ΓΓ² SMTP: %s"
 
 #: kmacctseldlg.cpp:26
 msgid "Account Type"
-msgstr "Τύπος λογαριασμού"
+msgstr "Γ”Γ½Γ°Γ―Γ² Γ«Γ―Γ£Γ΅Γ±Γ©Γ΅Γ³Γ¬Γ―Γ½"
 
 #: kmacctseldlg.cpp:45
 msgid "Local Mailbox"
-msgstr "Τοπικό γραμματοκιβώτιο"
+msgstr "Γ”Γ―Γ°Γ©ΓªΓΌ Γ£Γ±Γ΅Γ¬Γ¬Γ΅Γ΄Γ―ΓªΓ©ΓΆΓΎΓ΄Γ©Γ―"
 
 #: kmacctseldlg.cpp:49
 msgid "Pop3"
@@ -1412,11 +1412,11 @@ msgstr "Pop3"
 
 #: kmfilteraction.cpp:93 kmfilteraction.cpp:197
 msgid "transfer"
-msgstr "Μεταφορά"
+msgstr "ΓΓ¥Γ΄Γ΅Γ¶Γ―Γ±Γ"
 
 #: kmfilteraction.cpp:166 kmfilteraction.cpp:199
 msgid "skip rest"
-msgstr "αγνόησε τα επόμενα"
+msgstr "Γ΅Γ£Γ­ΓΌΓ§Γ³Γ¥ Γ΄Γ΅ Γ¥Γ°ΓΌΓ¬Γ¥Γ­Γ΅"
 
 #: kmidentity.cpp:162
 #, c-format
@@ -1425,14 +1425,14 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
-"Αποτυχία εκτέλεσης υπογραφής\n"
+"ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅ Γ¥ΓªΓ΄ΓΓ«Γ¥Γ³Γ§Γ² ΓµΓ°Γ―Γ£Γ±Γ΅Γ¶ΓΓ²\n"
 "%s\n"
 "%s"
 
 #: kmfolderseldlg.cpp:32
 #, fuzzy
 msgid "Select folder"
-msgstr "Επιλογή φακέλλου"
+msgstr "Γ…Γ°Γ©Γ«Γ―Γ£Γ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ"
 
 #: kmfilter.cpp:197
 #, c-format
@@ -1441,98 +1441,98 @@ msgid ""
 "in filter rule `%s'.\n"
 "Ignoring it."
 msgstr ""
-"Άγνωστη εντολή φίλτρου `%s'\n"
-"στον κανόνα φίλτρου `%s'.\n"
-"Την αγνοώ."
+"ΒΆΓ£Γ­ΓΉΓ³Γ΄Γ§ Γ¥Γ­Γ΄Γ―Γ«Γ Γ¶ΓΓ«Γ΄Γ±Γ―Γµ `%s'\n"
+"Γ³Γ΄Γ―Γ­ ΓªΓ΅Γ­ΓΌΓ­Γ΅ Γ¶ΓΓ«Γ΄Γ±Γ―Γµ `%s'.\n"
+"Γ”Γ§Γ­ Γ΅Γ£Γ­Γ―ΓΎ."
 
 #: kmfilterdlg.cpp:62
 msgid "Filter Rules"
-msgstr "Κανόνες φίλτρου"
+msgstr "ΓΓ΅Γ­ΓΌΓ­Γ¥Γ² Γ¶ΓΓ«Γ΄Γ±Γ―Γµ"
 
 #: kmfilterdlg.cpp:143
 msgid "Up"
-msgstr "Πάνω"
+msgstr "ΓΓΓ­ΓΉ"
 
 #: kmfilterdlg.cpp:146
 msgid "Down"
-msgstr "Κάτω"
+msgstr "ΓΓΓ΄ΓΉ"
 
 #: kmfilterdlg.cpp:544
 msgid "<nothing>"
-msgstr "<τίποτα>"
+msgstr "<Γ΄ΓΓ°Γ―Γ΄Γ΅>"
 
 #: kmfilterdlg.cpp:555
 msgid "ignore"
-msgstr "αγνόησε"
+msgstr "Γ΅Γ£Γ­ΓΌΓ§Γ³Γ¥"
 
 #: kmfilterdlg.cpp:556
 msgid "and"
-msgstr "και"
+msgstr "ΓªΓ΅Γ©"
 
 #: kmfilterdlg.cpp:557
 msgid "unless"
-msgstr "εκτός"
+msgstr "Γ¥ΓªΓ΄ΓΌΓ²"
 
 #: kmfilterdlg.cpp:558
 msgid "or"
-msgstr "ή"
+msgstr "Γ"
 
 #: kmfilterdlg.cpp:564
 msgid "equals"
-msgstr "ίσο με"
+msgstr "ΓΓ³Γ― Γ¬Γ¥"
 
 #: kmfilterdlg.cpp:565
 msgid "not equal"
-msgstr "διάφορο του"
+msgstr "Γ¤Γ©ΓΓ¶Γ―Γ±Γ― Γ΄Γ―Γµ"
 
 #: kmfilterdlg.cpp:566
 msgid "contains"
-msgstr "περιέχει"
+msgstr "Γ°Γ¥Γ±Γ©ΓΓ·Γ¥Γ©"
 
 #: kmfilterdlg.cpp:567
 msgid "doesn't contain"
-msgstr "δεν περιέχει"
+msgstr "Γ¤Γ¥Γ­ Γ°Γ¥Γ±Γ©ΓΓ·Γ¥Γ©"
 
 #: kmfilterdlg.cpp:568
 msgid "regular expression"
-msgstr "λογική φόρμουλα"
+msgstr "Γ«Γ―Γ£Γ©ΓªΓ Γ¶ΓΌΓ±Γ¬Γ―ΓµΓ«Γ΅"
 
 #: kmfilterdlg.cpp:575
 msgid "<message>"
-msgstr "<μήνυμα>"
+msgstr "<Γ¬ΓΓ­ΓµΓ¬Γ΅>"
 
 #: kmfilterdlg.cpp:576
 msgid "<body>"
-msgstr "<κυρίως σώμα>"
+msgstr "<ΓªΓµΓ±ΓΓΉΓ² Γ³ΓΎΓ¬Γ΅>"
 
 #: kmfilterdlg.cpp:577
 msgid "<any header>"
-msgstr "<οποιαδήποτε επικεφαλίδα>"
+msgstr "<Γ―Γ°Γ―Γ©Γ΅Γ¤ΓΓ°Γ―Γ΄Γ¥ Γ¥Γ°Γ©ΓªΓ¥Γ¶Γ΅Γ«ΓΓ¤Γ΅>"
 
 #: kpgp.cpp:151
 msgid ""
 "Couldn't find PGP executable.\n"
 "Please check your PATH is set correctly."
 msgstr ""
-"Δεν μπορώ να βρώ το εκτελέσιμο του PGP.\n"
-"Παρακαλώ ελέγξτε την μεταβλητή PATH."
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ ΓΆΓ±ΓΎ Γ΄Γ― Γ¥ΓªΓ΄Γ¥Γ«ΓΓ³Γ©Γ¬Γ― Γ΄Γ―Γµ PGP.\n"
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ¥Γ«ΓΓ£Γ®Γ΄Γ¥ Γ΄Γ§Γ­ Γ¬Γ¥Γ΄Γ΅ΓΆΓ«Γ§Γ΄Γ PATH."
 
 #: kpgp.cpp:193
 msgid ""
 "Could not find PGP executable.\n"
 "Please check your PATH is set correctly."
 msgstr ""
-"Δεν μπορώ να βρώ το εκτελέσιμο του PGP.\n"
-"Παρακαλώ ελέγξτε την μεταβλητή PATH."
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ ΓΆΓ±ΓΎ Γ΄Γ― Γ¥ΓªΓ΄Γ¥Γ«ΓΓ³Γ©Γ¬Γ― Γ΄Γ―Γµ PGP.\n"
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ¥Γ«ΓΓ£Γ®Γ΄Γ¥ Γ΄Γ§Γ­ Γ¬Γ¥Γ΄Γ΅ΓΆΓ«Γ§Γ΄Γ PATH."
 
 #: kpgp.cpp:207
 msgid "The pass phrase is missing."
-msgstr "Η φράση κλειδί λείπει."
+msgstr "Γ‡ Γ¶Γ±ΓΓ³Γ§ ΓªΓ«Γ¥Γ©Γ¤Γ Γ«Γ¥ΓΓ°Γ¥Γ©."
 
 #: kpgp.cpp:286 kpgp.cpp:312 kpgp.cpp:325 kpgp.cpp:344 kpgp.cpp:361
 #, fuzzy
 msgid "PGP Warning"
-msgstr "προσοχή"
+msgstr "Γ°Γ±Γ―Γ³Γ―Γ·Γ"
 
 #: kpgp.cpp:287
 msgid ""
@@ -1556,7 +1556,7 @@ msgstr ""
 #: kpgp.cpp:311
 #, fuzzy
 msgid "decrypt the message."
-msgstr "Κρυπτογράφηση μηνύματος"
+msgstr "ΓΓ±ΓµΓ°Γ΄Γ―Γ£Γ±ΓΓ¶Γ§Γ³Γ§ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: kpgp.cpp:326
 msgid ""
@@ -1590,12 +1590,12 @@ msgid ""
 "Please enter your\n"
 "PGP passphrase"
 msgstr ""
-"Παρακαλώ εισάγετε την\n"
-"φράση κλειδί του PGP."
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ¥Γ©Γ³ΓΓ£Γ¥Γ΄Γ¥ Γ΄Γ§Γ­\n"
+"Γ¶Γ±ΓΓ³Γ§ ΓªΓ«Γ¥Γ©Γ¤Γ Γ΄Γ―Γµ PGP."
 
 #: kpgp.cpp:744
 msgid "PGP Security Check"
-msgstr "Έλεγχος ασφαλείας PGP"
+msgstr "ΒΈΓ«Γ¥Γ£Γ·Γ―Γ² Γ΅Γ³Γ¶Γ΅Γ«Γ¥ΓΓ΅Γ² PGP"
 
 #: kpgp.cpp:769
 msgid "Please select the public key to insert"
@@ -1604,11 +1604,11 @@ msgstr ""
 #: kpgp.cpp:800
 #, fuzzy
 msgid "Select key"
-msgstr "Επιλογή φακέλλου"
+msgstr "Γ…Γ°Γ©Γ«Γ―Γ£Γ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ"
 
 #: kpgp.cpp:827
 msgid "PGP User Identity:"
-msgstr "Ταυτότητα χρήστη PGP:"
+msgstr "Γ”Γ΅ΓµΓ΄ΓΌΓ΄Γ§Γ΄Γ΅ Γ·Γ±ΓΓ³Γ΄Γ§ PGP:"
 
 #: kpgp.cpp:838
 msgid "Store passphrase"
@@ -1620,7 +1620,7 @@ msgstr ""
 
 #: kpgpbase.cpp:322
 msgid "Bad pass Phrase; couldn't sign"
-msgstr "Λανθασμένη φράση κλειδί. Υπογραφή αδύνατη."
+msgstr "Γ‹Γ΅Γ­Γ¨Γ΅Γ³Γ¬ΓΓ­Γ§ Γ¶Γ±ΓΓ³Γ§ ΓªΓ«Γ¥Γ©Γ¤Γ. Γ•Γ°Γ―Γ£Γ±Γ΅Γ¶Γ Γ΅Γ¤Γ½Γ­Γ΅Γ΄Γ§."
 
 #: kpgpbase.cpp:361
 msgid "error running pgp"
@@ -1628,7 +1628,7 @@ msgstr ""
 
 #: kpgpbase.cpp:378 kpgpbase.cpp:669
 msgid "Bad pass Phrase; couldn't decrypt"
-msgstr "Λανθασμένη φράση κλειδί. Αποκρυπτογράφηση αδύνατη."
+msgstr "Γ‹Γ΅Γ­Γ¨Γ΅Γ³Γ¬ΓΓ­Γ§ Γ¶Γ±ΓΓ³Γ§ ΓªΓ«Γ¥Γ©Γ¤Γ. ΓΓ°Γ―ΓªΓ±ΓµΓ°Γ΄Γ―Γ£Γ±ΓΓ¶Γ§Γ³Γ§ Γ΅Γ¤Γ½Γ­Γ΅Γ΄Γ§."
 
 #: kpgpbase.cpp:389 kpgpbase.cpp:680
 msgid "Do not have the secret key for this message"
@@ -1645,7 +1645,7 @@ msgstr ""
 #: kpgpbase.cpp:592
 #, fuzzy
 msgid "The passphrase you entered is invalid."
-msgstr "Η φράση κλειδί λείπει."
+msgstr "Γ‡ Γ¶Γ±ΓΓ³Γ§ ΓªΓ«Γ¥Γ©Γ¤Γ Γ«Γ¥ΓΓ°Γ¥Γ©."
 
 #: kpgpbase.cpp:618
 msgid ""
@@ -1660,12 +1660,12 @@ msgid ""
 "%s\n"
 "They will not be able to decrypt the message"
 msgstr ""
-"Το δημόσιο κλειδί για %s δεν βρέθηκε.\n"
-"Αυτό το πρόσωπο δεν θα μπορεί να αποκρυπτογραφήσει το μήνυμα."
+"Γ”Γ― Γ¤Γ§Γ¬ΓΌΓ³Γ©Γ― ΓªΓ«Γ¥Γ©Γ¤Γ Γ£Γ©Γ΅ %s Γ¤Γ¥Γ­ ΓΆΓ±ΓΓ¨Γ§ΓªΓ¥.\n"
+"ΓΓµΓ΄ΓΌ Γ΄Γ― Γ°Γ±ΓΌΓ³ΓΉΓ°Γ― Γ¤Γ¥Γ­ Γ¨Γ΅ Γ¬Γ°Γ―Γ±Γ¥Γ Γ­Γ΅ Γ΅Γ°Γ―ΓªΓ±ΓµΓ°Γ΄Γ―Γ£Γ±Γ΅Γ¶ΓΓ³Γ¥Γ© Γ΄Γ― Γ¬ΓΓ­ΓµΓ¬Γ΅."
 
 #: kfileio.cpp:26 kmaddrbook.cpp:162
 msgid "File I/O Error"
-msgstr "Σφάλμα εισόδου/εξόδου αρχείου"
+msgstr "Γ“Γ¶ΓΓ«Γ¬Γ΅ Γ¥Γ©Γ³ΓΌΓ¤Γ―Γµ/Γ¥Γ®ΓΌΓ¤Γ―Γµ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ"
 
 #: kfileio.cpp:47
 #, c-format
@@ -1673,7 +1673,7 @@ msgid ""
 "The specified file does not exist:\n"
 "%s"
 msgstr ""
-"Το συγκεκριμένο αρχείο δεν υπάρχει:\n"
+"Γ”Γ― Γ³ΓµΓ£ΓªΓ¥ΓªΓ±Γ©Γ¬ΓΓ­Γ― Γ΅Γ±Γ·Γ¥ΓΓ― Γ¤Γ¥Γ­ ΓµΓ°ΓΓ±Γ·Γ¥Γ©:\n"
 "%s"
 
 #: kfileio.cpp:54
@@ -1682,7 +1682,7 @@ msgid ""
 "This is a directory and not a file:\n"
 "%s"
 msgstr ""
-"Αυτό είναι κατάλογος και όχι αρχείο:\n"
+"ΓΓµΓ΄ΓΌ Γ¥ΓΓ­Γ΅Γ© ΓªΓ΅Γ΄ΓΓ«Γ―Γ£Γ―Γ² ΓªΓ΅Γ© ΓΌΓ·Γ© Γ΅Γ±Γ·Γ¥ΓΓ―:\n"
 "%s"
 
 #: kfileio.cpp:61
@@ -1691,7 +1691,7 @@ msgid ""
 "You do not have read permissions to the file:\n"
 "%s"
 msgstr ""
-"Δεν έχετε δικαιώματα πρόσβασης στο αρχείο:\n"
+"Γ„Γ¥Γ­ ΓΓ·Γ¥Γ΄Γ¥ Γ¤Γ©ΓªΓ΅Γ©ΓΎΓ¬Γ΅Γ΄Γ΅ Γ°Γ±ΓΌΓ³ΓΆΓ΅Γ³Γ§Γ² Γ³Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―:\n"
 "%s"
 
 #: kfileio.cpp:72 kmaddrbook.cpp:152
@@ -1700,7 +1700,7 @@ msgid ""
 "Could not read file:\n"
 "%s"
 msgstr ""
-"Δεν μπορώ να διαβάσω το αρχείο:\n"
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ¤Γ©Γ΅ΓΆΓΓ³ΓΉ Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―:\n"
 "%s"
 
 #: kfileio.cpp:75 kmaddrbook.cpp:155
@@ -1709,7 +1709,7 @@ msgid ""
 "Could not open file:\n"
 "%s"
 msgstr ""
-"Δεν μπορώ να ανοίξω το αρχείο:\n"
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ΅Γ­Γ―ΓΓ®ΓΉ Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―:\n"
 "%s"
 
 #: kfileio.cpp:78
@@ -1718,13 +1718,13 @@ msgid ""
 "Error while reading file:\n"
 "%s"
 msgstr ""
-"Σφάλμα κατά την ανάγνωση του αρχείου:\n"
+"Γ“Γ¶ΓΓ«Γ¬Γ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ Γ΅Γ­ΓΓ£Γ­ΓΉΓ³Γ§ Γ΄Γ―Γµ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ:\n"
 "%s"
 
 #: kfileio.cpp:95
 #, c-format
 msgid "Could only read %u bytes of %u."
-msgstr "Μπόρεσα να διαβάσω μόνο %u bytes από %u."
+msgstr "ΓΓ°ΓΌΓ±Γ¥Γ³Γ΅ Γ­Γ΅ Γ¤Γ©Γ΅ΓΆΓΓ³ΓΉ Γ¬ΓΌΓ­Γ― %u bytes Γ΅Γ°ΓΌ %u."
 
 #: kfileio.cpp:124
 #, c-format
@@ -1732,8 +1732,8 @@ msgid ""
 "File %s exists.\n"
 "Do you want to replace it ?"
 msgstr ""
-"Το αρχείο %s υπάρχει.\n"
-"Θέλετε να το αντικαταστήσετε;"
+"Γ”Γ― Γ΅Γ±Γ·Γ¥ΓΓ― %s ΓµΓ°ΓΓ±Γ·Γ¥Γ©.\n"
+"ΓΓΓ«Γ¥Γ΄Γ¥ Γ­Γ΅ Γ΄Γ― Γ΅Γ­Γ΄Γ©ΓªΓ΅Γ΄Γ΅Γ³Γ΄ΓΓ³Γ¥Γ΄Γ¥;"
 
 #: kfileio.cpp:144
 #, c-format
@@ -1741,8 +1741,8 @@ msgid ""
 "Failed to make a backup copy of %s.\n"
 "Continue anyway ?"
 msgstr ""
-"Αποτυχία κατά την δημιουργία αντιγράφου ασφαλείας του  %s.\n"
-"Να συνεχίσω;"
+"ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ Γ¤Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅ Γ΅Γ­Γ΄Γ©Γ£Γ±ΓΓ¶Γ―Γµ Γ΅Γ³Γ¶Γ΅Γ«Γ¥ΓΓ΅Γ² Γ΄Γ―Γµ  %s.\n"
+"ΓΓ΅ Γ³ΓµΓ­Γ¥Γ·ΓΓ³ΓΉ;"
 
 #: kfileio.cpp:156 kfileio.cpp:175
 #, c-format
@@ -1750,7 +1750,7 @@ msgid ""
 "Could not write to file:\n"
 "%s"
 msgstr ""
-"Δεν μπορώ να γράψω στο αρχείο:\n"
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ£Γ±ΓΓΈΓΉ Γ³Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―:\n"
 "%s"
 
 #: kfileio.cpp:159
@@ -1759,7 +1759,7 @@ msgid ""
 "Could not open file for writing:\n"
 "%s"
 msgstr ""
-"Δεν μπορώ να ανοίξω για γράψιμο το αρχείο:\n"
+"Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ΅Γ­Γ―ΓΓ®ΓΉ Γ£Γ©Γ΅ Γ£Γ±ΓΓΈΓ©Γ¬Γ― Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―:\n"
 "%s"
 
 #: kfileio.cpp:163 kmaddrbook.cpp:158
@@ -1768,18 +1768,18 @@ msgid ""
 "Error while writing file:\n"
 "%s"
 msgstr ""
-"Σφάλμα κατά το γράψιμο στο αρχείο:\n"
+"Γ“Γ¶ΓΓ«Γ¬Γ΅ ΓªΓ΅Γ΄Γ Γ΄Γ― Γ£Γ±ΓΓΈΓ©Γ¬Γ― Γ³Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―:\n"
 "%s"
 
 #: kfileio.cpp:181
 #, c-format
 msgid "Could only write %d bytes of %d."
-msgstr "Μπόρεσα να γράψω μόνο %d bytes από %d."
+msgstr "ΓΓ°ΓΌΓ±Γ¥Γ³Γ΅ Γ­Γ΅ Γ£Γ±ΓΓΈΓΉ Γ¬ΓΌΓ­Γ― %d bytes Γ΅Γ°ΓΌ %d."
 
 #: kmaddrbook.cpp:25
 #, fuzzy
 msgid "KMail Error"
-msgstr "μοιραίο λάθος"
+msgstr "Γ¬Γ―Γ©Γ±Γ΅ΓΓ― Γ«ΓΓ¨Γ―Γ²"
 
 #: kmaddrbook.cpp:26
 msgid "Storing the addressbook failed!\n"
@@ -1787,65 +1787,65 @@ msgstr ""
 
 #: kmaddrbookdlg.cpp:20
 msgid "Addressbook"
-msgstr "Βιβλίο διευθύνσεων"
+msgstr "Γ‚Γ©ΓΆΓ«ΓΓ― Γ¤Γ©Γ¥ΓµΓ¨Γ½Γ­Γ³Γ¥ΓΉΓ­"
 
 #: kmaddrbookdlg.cpp:95
 msgid "Addressbook Manager"
-msgstr "Διαχείριση βιβλίου διευθύνσεων"
+msgstr "Γ„Γ©Γ΅Γ·Γ¥ΓΓ±Γ©Γ³Γ§ ΓΆΓ©ΓΆΓ«ΓΓ―Γµ Γ¤Γ©Γ¥ΓµΓ¨Γ½Γ­Γ³Γ¥ΓΉΓ­"
 
 #: kmaddrbookdlg.cpp:179
 #, fuzzy
 msgid "Storing addressbook failed"
-msgstr "Προσθήκη στο βιβλίο διευθύνσεων"
+msgstr "ΓΓ±Γ―Γ³Γ¨ΓΓªΓ§ Γ³Γ΄Γ― ΓΆΓ©ΓΆΓ«ΓΓ― Γ¤Γ©Γ¥ΓµΓ¨Γ½Γ­Γ³Γ¥ΓΉΓ­"
 
 #: kmiostatusdlg.cpp:32
 msgid "&Abort"
-msgstr "Εγκατάλειψη"
+msgstr "Γ…Γ£ΓªΓ΅Γ΄ΓΓ«Γ¥Γ©ΓΈΓ§"
 
 #: kmnewiostatuswdg.cpp:26
 #, fuzzy
 msgid "Abort"
-msgstr "Εγκατάλειψη"
+msgstr "Γ…Γ£ΓªΓ΅Γ΄ΓΓ«Γ¥Γ©ΓΈΓ§"
 
 #: kmnewiostatuswdg.cpp:43
 msgid "Sending messages to "
-msgstr "Αποστολή μηνυμάτων στο "
+msgstr "ΓΓ°Γ―Γ³Γ΄Γ―Γ«Γ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­ Γ³Γ΄Γ― "
 
 #: kmnewiostatuswdg.cpp:46
 msgid "Retrieving messages from "
-msgstr "Ανεύρεση μηνυμάτων από "
+msgstr "ΓΓ­Γ¥Γ½Γ±Γ¥Γ³Γ§ Γ¬Γ§Γ­ΓµΓ¬ΓΓ΄ΓΉΓ­ Γ΅Γ°ΓΌ "
 
 #: kmnewiostatuswdg.cpp:56
 msgid "Preparing transmission..."
-msgstr "Προετοιμασία μετάδοσης..."
+msgstr "ΓΓ±Γ―Γ¥Γ΄Γ―Γ©Γ¬Γ΅Γ³ΓΓ΅ Γ¬Γ¥Γ΄ΓΓ¤Γ―Γ³Γ§Γ²..."
 
 #: kmnewiostatuswdg.cpp:62
 msgid "Transmission completed..."
-msgstr "Η μετάδοση ολοκληρώθηκε..."
+msgstr "Γ‡ Γ¬Γ¥Γ΄ΓΓ¤Γ―Γ³Γ§ Γ―Γ«Γ―ΓªΓ«Γ§Γ±ΓΎΓ¨Γ§ΓªΓ¥..."
 
 #: kmnewiostatuswdg.cpp:97
 msgid "Aborting transmission...\n"
-msgstr "Εγκατάλειψη μετάδοσης...\n"
+msgstr "Γ…Γ£ΓªΓ΅Γ΄ΓΓ«Γ¥Γ©ΓΈΓ§ Γ¬Γ¥Γ΄ΓΓ¤Γ―Γ³Γ§Γ²...\n"
 
 #: charsetsDlg.cpp:27
 msgid "KRN - Charset Settings"
-msgstr "KRN - Ρυθμίσεις συνόλων χαρακτήρων"
+msgstr "KRN - Γ‘ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ² Γ³ΓµΓ­ΓΌΓ«ΓΉΓ­ Γ·Γ΅Γ±Γ΅ΓªΓ΄ΓΓ±ΓΉΓ­"
 
 #: charsetsDlg.cpp:29
 msgid "KMail - Charset Settings"
-msgstr "KMail - Ρυθμίσεις συνόλων χαρακτήρων"
+msgstr "KMail - Γ‘ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ² Γ³ΓµΓ­ΓΌΓ«ΓΉΓ­ Γ·Γ΅Γ±Γ΅ΓªΓ΄ΓΓ±ΓΉΓ­"
 
 #: charsetsDlg.cpp:39
 msgid "Message charset"
-msgstr "Σύνολο χαρακτήρων μηνύματος"
+msgstr "Γ“Γ½Γ­Γ―Γ«Γ― Γ·Γ΅Γ±Γ΅ΓªΓ΄ΓΓ±ΓΉΓ­ Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ²"
 
 #: charsetsDlg.cpp:57
 msgid "Composer charset"
-msgstr "Σύνολο χαρακτήρων σύνταξης"
+msgstr "Γ“Γ½Γ­Γ―Γ«Γ― Γ·Γ΅Γ±Γ΅ΓªΓ΄ΓΓ±ΓΉΓ­ Γ³Γ½Γ­Γ΄Γ΅Γ®Γ§Γ²"
 
 #: charsetsDlg.cpp:75
 msgid "Set as &default"
-msgstr "Ορισμός ως αρχικής τιμής"
+msgstr "ΓΓ±Γ©Γ³Γ¬ΓΌΓ² ΓΉΓ² Γ΅Γ±Γ·Γ©ΓªΓΓ² Γ΄Γ©Γ¬ΓΓ²"
 
 #: charsetsDlg.cpp:80
 msgid "&7 bit is ASCII"
@@ -1853,39 +1853,39 @@ msgstr "7 bit ASCII"
 
 #: charsetsDlg.cpp:84
 msgid "&Qute unknonw characters"
-msgstr "Εγκλεισμός άγνωστων χαρακτήρων"
+msgstr "Γ…Γ£ΓªΓ«Γ¥Γ©Γ³Γ¬ΓΌΓ² ΓΓ£Γ­ΓΉΓ³Γ΄ΓΉΓ­ Γ·Γ΅Γ±Γ΅ΓªΓ΄ΓΓ±ΓΉΓ­"
 
 #~ msgid ""
 #~ "Cannot modify a\n"
 #~ "system folder."
 #~ msgstr ""
-#~ "Δεν μπορώ να τροποποιήσω\n"
-#~ "φάκελλο συστήματος."
+#~ "Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ΄Γ±Γ―Γ°Γ―Γ°Γ―Γ©ΓΓ³ΓΉ\n"
+#~ "Γ¶ΓΓªΓ¥Γ«Γ«Γ― Γ³ΓµΓ³Γ΄ΓΓ¬Γ΅Γ΄Γ―Γ²."
 
 #~ msgid ""
 #~ "Are you sure you want to discard the\n"
 #~ "contents of the folder \"%s\" ?"
 #~ msgstr ""
-#~ "Είστε σίγουρος ότι θέλετε να διαγράψετε\n"
-#~ "τα περιεχόμενα του φακέλλου \"%s\" ;"
+#~ "Γ…ΓΓ³Γ΄Γ¥ Γ³ΓΓ£Γ―ΓµΓ±Γ―Γ² ΓΌΓ΄Γ© Γ¨ΓΓ«Γ¥Γ΄Γ¥ Γ­Γ΅ Γ¤Γ©Γ΅Γ£Γ±ΓΓΈΓ¥Γ΄Γ¥\n"
+#~ "Γ΄Γ΅ Γ°Γ¥Γ±Γ©Γ¥Γ·ΓΌΓ¬Γ¥Γ­Γ΅ Γ΄Γ―Γµ Γ¶Γ΅ΓªΓΓ«Γ«Γ―Γµ \"%s\" ;"
 
 #~ msgid "Could not create temporary file"
-#~ msgstr "Δεν μπορώ να δημιουργήσω προσωρινό αρχείο"
+#~ msgstr "Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ¤Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ³ΓΉ Γ°Γ±Γ―Γ³ΓΉΓ±Γ©Γ­ΓΌ Γ΅Γ±Γ·Γ¥ΓΓ―"
 
 #~ msgid "Could not save temporary file %s"
-#~ msgstr "Δεν μπορώ να αποθηκεύσω το προσωρινό αρχείο %s"
+#~ msgstr "Γ„Γ¥Γ­ Γ¬Γ°Γ―Γ±ΓΎ Γ­Γ΅ Γ΅Γ°Γ―Γ¨Γ§ΓªΓ¥Γ½Γ³ΓΉ Γ΄Γ― Γ°Γ±Γ―Γ³ΓΉΓ±Γ©Γ­ΓΌ Γ΅Γ±Γ·Γ¥ΓΓ― %s"
 
 #~ msgid "Error during PGP:"
-#~ msgstr "Σφάλμα κατά την PGP κρυπτογράφηση:"
+#~ msgstr "Γ“Γ¶ΓΓ«Γ¬Γ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ PGP ΓªΓ±ΓµΓ°Γ΄Γ―Γ£Γ±ΓΓ¶Γ§Γ³Γ§:"
 
 #~ msgid "Message signed by"
-#~ msgstr "Μήνυμα υπογεγραμμένο από"
+#~ msgstr "ΓΓΓ­ΓµΓ¬Γ΅ ΓµΓ°Γ―Γ£Γ¥Γ£Γ±Γ΅Γ¬Γ¬ΓΓ­Γ― Γ΅Γ°ΓΌ"
 
 #~ msgid "Message has a bad signature from"
-#~ msgstr "Μήνυμα λανθασμένα υπογεγραμμένο από"
+#~ msgstr "ΓΓΓ­ΓµΓ¬Γ΅ Γ«Γ΅Γ­Γ¨Γ΅Γ³Γ¬ΓΓ­Γ΅ ΓµΓ°Γ―Γ£Γ¥Γ£Γ±Γ΅Γ¬Γ¬ΓΓ­Γ― Γ΅Γ°ΓΌ"
 
 #~ msgid "End PGP signed message"
-#~ msgstr "Τέλος μηνύματος υπογεγραμμένου με PGP"
+#~ msgstr "Γ”ΓΓ«Γ―Γ² Γ¬Γ§Γ­Γ½Γ¬Γ΅Γ΄Γ―Γ² ΓµΓ°Γ―Γ£Γ¥Γ£Γ±Γ΅Γ¬Γ¬ΓΓ­Γ―Γµ Γ¬Γ¥ PGP"
 
 #, fuzzy
 #~ msgid ""
@@ -1893,18 +1893,18 @@ msgstr "Εγκλεισμός άγνωστων χαρακτήρων"
 #~ "userid(s) %s. These persons won't be able\n"
 #~ "to read the message."
 #~ msgstr ""
-#~ "Το δημόσιο κλειδί για %s δεν βρέθηκε.\n"
-#~ "Αυτό το πρόσωπο δεν θα μπορεί να αποκρυπτογραφήσει το μήνυμα."
+#~ "Γ”Γ― Γ¤Γ§Γ¬ΓΌΓ³Γ©Γ― ΓªΓ«Γ¥Γ©Γ¤Γ Γ£Γ©Γ΅ %s Γ¤Γ¥Γ­ ΓΆΓ±ΓΓ¨Γ§ΓªΓ¥.\n"
+#~ "ΓΓµΓ΄ΓΌ Γ΄Γ― Γ°Γ±ΓΌΓ³ΓΉΓ°Γ― Γ¤Γ¥Γ­ Γ¨Γ΅ Γ¬Γ°Γ―Γ±Γ¥Γ Γ­Γ΅ Γ΅Γ°Γ―ΓªΓ±ΓµΓ°Γ΄Γ―Γ£Γ±Γ΅Γ¶ΓΓ³Γ¥Γ© Γ΄Γ― Γ¬ΓΓ­ΓµΓ¬Γ΅."
 
 #~ msgid "&Remove"
-#~ msgstr "Διαγραφή"
+#~ msgstr "Γ„Γ©Γ΅Γ£Γ±Γ΅Γ¶Γ"
 
 #, fuzzy
 #~ msgid "Fonts"
-#~ msgstr "περιέχει"
+#~ msgstr "Γ°Γ¥Γ±Γ©ΓΓ·Γ¥Γ©"
 
 #~ msgid "Appearance"
-#~ msgstr "Εμφάνιση"
+#~ msgstr "Γ…Γ¬Γ¶ΓΓ­Γ©Γ³Γ§"
 
 #~ msgid "&Ok"
 #~ msgstr "&Ok"

@@ -1,4 +1,4 @@
-# Esperantaj mesaøoj por "kbiff"
+# Esperantaj mesaÄoj por "kbiff"
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:58
@@ -33,7 +33,7 @@ msgstr "uzo: kcmtalkd [-init | soundpage | answmachpage]\n"
 
 #: main.cpp:111
 msgid "KTalkd Configuration"
-msgstr "KTalkd-agorda¼o"
+msgstr "KTalkd-agordaÄµo"
 
 #: soundpage.cpp:46
 msgid "&Announcement program"
@@ -54,7 +54,7 @@ msgstr "Sonor-&dosieron"
 
 #: soundpage.cpp:61
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Kromajn WAV-dosierojn vi povas permuse şovi sur la sonorliston."
+msgstr "Kromajn WAV-dosierojn vi povas permuse Åovi sur la sonorliston."
 
 #: soundpage.cpp:76
 msgid "&Test"
@@ -80,11 +80,11 @@ msgid ""
 msgstr ""
 "Pardonu, sed\n"
 "%s\n"
-"şajne ne estas WAV-dosiero."
+"Åajne ne estas WAV-dosiero."
 
 #: soundpage.cpp:167
 msgid "Improper File Extension"
-msgstr "Malgusta dosier-fina¼o"
+msgstr "Malgusta dosier-finaÄµo"
 
 #: soundpage.cpp:175
 #, c-format
@@ -107,11 +107,11 @@ msgstr "&Funkciigu la respondilon"
 
 #: answmachpage.cpp:44
 msgid "&Mail address"
-msgstr "&Retpoşta adreso"
+msgstr "&RetpoÅta adreso"
 
 #: answmachpage.cpp:51
 msgid "Mail sub&ject"
-msgstr "Retpoşta &temlinio"
+msgstr "RetpoÅta &temlinio"
 
 #: answmachpage.cpp:54
 #, c-format
@@ -120,7 +120,7 @@ msgstr "Uzu %s kiel vokantonomon"
 
 #: answmachpage.cpp:60
 msgid "Mail &first line"
-msgstr "Unua linio de retpoştat¼o"
+msgstr "Unua linio de retpoÅtatÄµo"
 
 #: answmachpage.cpp:64
 #, c-format
@@ -129,11 +129,11 @@ msgstr "Uzu unuan %s kiel vokantonomon, kaj duan %s por vokanto-komputilo"
 
 #: answmachpage.cpp:68
 msgid "&Receive a mail even if no message left"
-msgstr "&Ricevu retpoşton eæ se neniu mesaøo estas lasita"
+msgstr "&Ricevu retpoÅton eÄ‰ se neniu mesaÄo estas lasita"
 
 #: answmachpage.cpp:74
 msgid "&Banner displayed on answering machine startup :"
-msgstr "&Flago montrenda æe lanæo de la respondilo:"
+msgstr "&Flago montrenda Ä‰e lanÄ‰o de la respondilo:"
 
 #: answmachpage.cpp:83
 msgid ""
@@ -142,18 +142,18 @@ msgid ""
 "Just start typing and when you're done, exit normally."
 msgstr ""
 "La persono, kun kiu vi volas paroli, ne respondas.\n"
-"Bonvolu lasi mesaøon por sendado per retpoşto.\n"
+"Bonvolu lasi mesaÄon por sendado per retpoÅto.\n"
 "Simple ektajpu kaj finu normale post kiam vi estas preta."
 
 #: answmachpage.cpp:171 answmachpage.cpp:189
 #, c-format
 msgid "Message from %s"
-msgstr "Mesaøo de %s"
+msgstr "MesaÄo de %s"
 
 #: answmachpage.cpp:172 answmachpage.cpp:191
 #, c-format
 msgid "Message left in the answering machine, by %s@%s"
-msgstr "Mesaøo estas lasite en la respondilo, de %s@%s"
+msgstr "MesaÄo estas lasite en la respondilo, de %s@%s"
 
 #: forwmachpage.cpp:34
 msgid "Activate &forward"

@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Alonso Lara <jlaram@nexo.es>\n"
 "Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:178
@@ -20,7 +20,7 @@ msgstr "Lo siento, no se puede analizar su printcap."
 #: main.cpp:184
 msgid "Please email your printcap to Christoph.Neerfeld@home.ivm.de"
 msgstr ""
-"Por favor envÌe un email con su printcap a Christoph.Neerfeld@home.ivm.de"
+"Por favor env√≠e un email con su printcap a Christoph.Neerfeld@home.ivm.de"
 
 #: klpq.cpp:90
 msgid "Printer"
@@ -44,7 +44,7 @@ msgstr "Ordenar"
 
 #: klpq.cpp:126
 msgid "Owner"
-msgstr "DueÒo"
+msgstr "Due√±o"
 
 #: klpq.cpp:127
 msgid "Job"
@@ -52,7 +52,7 @@ msgstr "Trabajo"
 
 #: klpq.cpp:129
 msgid "Size"
-msgstr "TamaÒo"
+msgstr "Tama√±o"
 
 #: klpq.cpp:150 klpq.cpp:228
 msgid "Make Top"
@@ -64,7 +64,7 @@ msgstr "Auto"
 
 #: klpq.cpp:204
 msgid "&Auto update"
-msgstr "&Auto actualizaciÛn"
+msgstr "&Auto actualizaci√≥n"
 
 #: klpq.cpp:205
 msgid "&Spooler"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: klpq.cpp:213
 msgid "&Config"
-msgstr "&ConfiguraciÛn"
+msgstr "&Configuraci√≥n"
 
 #: klpq.cpp:404
 #, c-format
@@ -115,15 +115,15 @@ msgstr ""
 
 #: ConfAutoUpdate.cpp:10
 msgid "Configure Auto Update"
-msgstr "Configurar la AutoactualizaciÛn"
+msgstr "Configurar la Autoactualizaci√≥n"
 
 #: ConfAutoUpdateData.cpp:17
 msgid "Update frequency in seconds:"
-msgstr "Frecuencia de actualizaciÛn en segundos:"
+msgstr "Frecuencia de actualizaci√≥n en segundos:"
 
 #: klpqspooler.cpp:199 klpqspooler.cpp:269
 msgid "Can't find your lpc program !"
-msgstr "° No se pudo encontrar el programa lpc !"
+msgstr "¬° No se pudo encontrar el programa lpc !"
 
 #: klpqspooler.cpp:200 klpqspooler.cpp:270
 msgid ""
@@ -131,7 +131,7 @@ msgid ""
 "Please check the configuration under Config->Spooler."
 msgstr ""
 "Lo siento, no se puede encontrar el programa lpc.\n"
-"Por favor compruebe la configuraciÛn de Config->Spooler."
+"Por favor compruebe la configuraci√≥n de Config->Spooler."
 
 #: FirstStart.cpp:21 SpoolerConfig.cpp:21 SpoolerConfigData.cpp:151
 msgid "Select your spooling system"
@@ -143,9 +143,9 @@ msgid ""
 "So if you don't know which spooler is installed on your system, BSD is "
 "probably a good choice."
 msgstr ""
-"Por favor seleccione el sistema de spooling que usa. La mayorÌa usa el "
-"sistema BSD. AsÌ que si no sabe cual es el spooler instalado en su "
-"ordenador, BSD ser· la mejor opciÛn."
+"Por favor seleccione el sistema de spooling que usa. La mayor√≠a usa el "
+"sistema BSD. As√≠ que si no sabe cual es el spooler instalado en su "
+"ordenador, BSD ser√° la mejor opci√≥n."
 
 #: SpoolerConfigData.cpp:99
 msgid "Paths of spooling commands:"

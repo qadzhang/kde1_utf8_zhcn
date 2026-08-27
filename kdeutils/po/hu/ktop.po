@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-03-19 01:51+0100\n"
-"Content-Type: text/plain; charset=\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Date: 1997-12-07 12:23:22-0500\n"
 "From: root,,, <root@petit>\n"
 "Xgettext-Options: -C -ktranslate -kktr\n"
@@ -17,17 +17,17 @@ msgstr "88888 folyamat"
 
 #: ktop.cpp:67
 msgid "Memory: 888888 kB used, 888888 kB free"
-msgstr "MemÛria: 8888888 kb haszn·lva, 8888888 kb szabad"
+msgstr "Mem√≥ria: 8888888 kb haszn√°lva, 8888888 kb szabad"
 
 #: ktop.cpp:69
 msgid "Swap: 888888 kB used, 888888 kB free"
-msgstr "LapozÛ: 8888888 kb haszn·lva, 8888888 kb szabad"
+msgstr "Lapoz√≥: 8888888 kb haszn√°lva, 8888888 kb szabad"
 
 # ktop.cpp:81
 #: ktop.cpp:76
 #
 msgid "KDE Task Manager"
-msgstr "KDE Feladatkezelı"
+msgstr "KDE Feladatkezel√µ"
 
 # settings.cpp:88
 #: ktop.cpp:137
@@ -38,12 +38,12 @@ msgstr "%d folyamat"
 #: ktop.cpp:142
 #, c-format
 msgid "Memory: %d kB used, %d kB free"
-msgstr "MemÛria: %d kb haszn·lva, %d kb szabad"
+msgstr "Mem√≥ria: %d kb haszn√°lva, %d kb szabad"
 
 #: ktop.cpp:147
 #, c-format
 msgid "Swap: %d kB used, %d kB free"
-msgstr "LapozÛ: %d kb haszn·lva, %d kb szabad"
+msgstr "Lapoz√≥: %d kb haszn√°lva, %d kb szabad"
 
 #: MainMenu.cpp:51
 #, c-format
@@ -57,9 +57,9 @@ msgid ""
 "1998 : Nicolas Leclercq <nicknet@planete.net>\n"
 "1999 : Chris Schlaeger <cs@kde.org>\n"
 msgstr ""
-"KDE Feladatkezelı (KTop) %s verziÛ\n"
+"KDE Feladatkezel√µ (KTop) %s verzi√≥\n"
 "\n"
-"Szerzıi jogok:\n"
+"Szerz√µi jogok:\n"
 "1996 : A. Sanda <alex@darkstar.ping.at>\n"
 "1997 : Ralf Mueller <ralf@bj-ig.de>\n"
 "1997-98 : Bernd Johannes Wuebben <wuebben@kde.org>\n"
@@ -68,79 +68,79 @@ msgstr ""
 
 #: MainMenu.cpp:64
 msgid "Manual Refresh"
-msgstr "KÈzi frissÌtÈs"
+msgstr "K√©zi friss√≠t√©s"
 
 # widgets.cpp:98
 #: MainMenu.cpp:65
 #
 msgid "Slow Refresh"
-msgstr "Lass˙ frissÌtÈs"
+msgstr "Lass√∫ friss√≠t√©s"
 
 #: MainMenu.cpp:66
 msgid "Medium Refresh"
-msgstr "Kˆzepes frissÌtÈs"
+msgstr "K√∂zepes friss√≠t√©s"
 
 # widgets.cpp:98
 #: MainMenu.cpp:67
 #
 msgid "Fast Refresh"
-msgstr "Gyors frissÌtÈs"
+msgstr "Gyors friss√≠t√©s"
 
 # widgets.cpp:98
 #: MainMenu.cpp:79
 #
 msgid "&Refresh Rate"
-msgstr "F&rissÌtÈs"
+msgstr "F&riss√≠t√©s"
 
 # widgets.cpp:100
 #: MainMenu.cpp:80
 #
 msgid "&Process"
-msgstr "&FutÛ folyamatok"
+msgstr "&Fut√≥ folyamatok"
 
 #: ProcessMenu.cpp:44
 msgid "Renice Task..."
-msgstr "Feladat priorit·sa..."
+msgstr "Feladat priorit√°sa..."
 
 #: ProcessMenu.cpp:47
 msgid "send SIGINT\t(ctrl-c)"
-msgstr "SIGINT k¸ldÈse\t((ctrl-c)"
+msgstr "SIGINT k√ºld√©se\t((ctrl-c)"
 
 #: ProcessMenu.cpp:48
 msgid "send SIGQUIT\t(core)"
-msgstr "SIGQUIT k¸ldÈse\t(core)"
+msgstr "SIGQUIT k√ºld√©se\t(core)"
 
 #: ProcessMenu.cpp:49
 msgid "send SIGTERM\t(term.)"
-msgstr "SIGTERM k¸ldÈse\t(term.)"
+msgstr "SIGTERM k√ºld√©se\t(term.)"
 
 #: ProcessMenu.cpp:50
 msgid "send SIGKILL\t(term.)"
-msgstr "SIGKILL k¸ldÈse\t(term.)"
+msgstr "SIGKILL k√ºld√©se\t(term.)"
 
 #: ProcessMenu.cpp:52
 msgid "send SIGUSR1\t(user1)"
-msgstr "SIGUSR1 k¸ldÈse\t(user1)"
+msgstr "SIGUSR1 k√ºld√©se\t(user1)"
 
 #: ProcessMenu.cpp:53
 msgid "send SIGUSR2\t(user2)"
-msgstr "SIGUSR2 k¸ldÈse\t(user2)"
+msgstr "SIGUSR2 k√ºld√©se\t(user2)"
 
 # ktop.cpp:81
 #: ProcessMenu.cpp:74 ProcessMenu.cpp:86 ProcessMenu.cpp:150
 #: ProcessMenu.cpp:158 ProcessMenu.cpp:176
 #
 msgid "Task Manager"
-msgstr "Feladatkezelı"
+msgstr "Feladatkezel√µ"
 
 #: ProcessMenu.cpp:75
 msgid "You need to select a process first!"
-msgstr "Elıszˆr feladatot kell v·lasztani!"
+msgstr "El√µsz√∂r feladatot kell v√°lasztani!"
 
 #: ProcessMenu.cpp:85 ProcessMenu.cpp:149
 #, c-format
 msgid "The process %d is no longer persistent."
-msgstr "A(z) %d folyamat m·r nem Èl."
+msgstr "A(z) %d folyamat m√°r nem √©l."
 
 #: ProcessMenu.cpp:98
 msgid "SIGINT"
@@ -168,7 +168,7 @@ msgstr "SIGUSR2"
 
 #: ProcessMenu.cpp:116
 msgid "Unkown Signal"
-msgstr "Ismeretlen szign·l"
+msgstr "Ismeretlen szign√°l"
 
 #: ProcessMenu.cpp:122
 #, c-format
@@ -176,12 +176,12 @@ msgid ""
 "Send signal %s to process %d?\n"
 "(Process name: %s  Owner: %s)\n"
 msgstr ""
-"K¸ldjem a %s szign·lt a %d feladatnak?\n"
+"K√ºldjem a %s szign√°lt a %d feladatnak?\n"
 "(Feladat neve: %s Tulajdonos: %s)\n"
 
 #: ProcessMenu.cpp:126
 msgid "Abort"
-msgstr "MegszakÌt"
+msgstr "Megszak√≠t"
 
 #: ProcessMenu.cpp:159 ProcessMenu.cpp:177
 msgid ""
@@ -189,27 +189,27 @@ msgid ""
 "Specified process does not exist\n"
 "or permission denied."
 msgstr ""
-"⁄j priorit·s hiba...\n"
-"A megadott folyamat nem lÈtezik\n"
-"vagy hozz·fÈrÈs megtagadva."
+"√öj priorit√°s hiba...\n"
+"A megadott folyamat nem l√©tezik\n"
+"vagy hozz√°f√©r√©s megtagadva."
 
 # widgets.cpp:145 widgets.cpp:155
 #: TaskMan.cpp:80
 #
 msgid "Processes &List"
-msgstr "Folyamatok &list·ja"
+msgstr "Folyamatok &list√°ja"
 
 # widgets.cpp:142 widgets.cpp:156
 #: TaskMan.cpp:81
 #
 msgid "Performance &Meter"
-msgstr "TeljesÌt&mÈny"
+msgstr "Teljes√≠t&m√©ny"
 
 # widgets.cpp:100
 #: ProcListPage.cpp:42
 #
 msgid "Running Processes"
-msgstr "FutÛ folyamatok"
+msgstr "Fut√≥ folyamatok"
 
 #: ProcListPage.cpp:49
 msgid "Show Tree"
@@ -219,7 +219,7 @@ msgstr "Show Tree"
 #: ProcListPage.cpp:60
 #
 msgid "All processes"
-msgstr "÷sszes folymat"
+msgstr "√ñsszes folymat"
 
 #: ProcListPage.cpp:61
 msgid "System processes"
@@ -229,41 +229,41 @@ msgstr "Rendszer folyamatok"
 #: ProcListPage.cpp:62
 #
 msgid "User processes"
-msgstr "Felhaszn·lÛi folymatok"
+msgstr "Felhaszn√°l√≥i folymatok"
 
 # widgets.cpp:100
 #: ProcListPage.cpp:63
 #
 msgid "Own processes"
-msgstr "Saj·t folyamatok"
+msgstr "Saj√°t folyamatok"
 
 # widgets.cpp:98
 #: ProcListPage.cpp:79
 #
 msgid "Refresh Now"
-msgstr "FrissÌtÈs most"
+msgstr "Friss√≠t√©s most"
 
 # widgets.cpp:97
 #: ProcListPage.cpp:85
 msgid "Kill task"
-msgstr "Feladat kilˆvÈse"
+msgstr "Feladat kil√∂v√©se"
 
 #: ProcessList.cpp:227
 msgid "Remove Column"
-msgstr "Oszlop elt·volÌt·sa"
+msgstr "Oszlop elt√°vol√≠t√°sa"
 
 #: ProcessList.cpp:228
 msgid "Add Column"
-msgstr "Oszlop hozz·ad·sa"
+msgstr "Oszlop hozz√°ad√°sa"
 
 #: ProcessList.cpp:229
 msgid "Help on Column"
-msgstr "SegÌtsÈg az oszloprÛl"
+msgstr "Seg√≠ts√©g az oszlopr√≥l"
 
 # settings.cpp:84
 #: ProcessList.cpp:691 ProcessList.cpp:692
 msgid "Name"
-msgstr "NÈv"
+msgstr "N√©v"
 
 #: ProcessList.cpp:695 ProcessList.cpp:696
 msgid "PID"
@@ -271,7 +271,7 @@ msgstr "PID"
 
 #: ProcessList.cpp:699
 msgid "User ID"
-msgstr "Felhaszn·lÛ ID"
+msgstr "Felhaszn√°l√≥ ID"
 
 #: ProcessList.cpp:700
 msgid "CPU"
@@ -279,20 +279,20 @@ msgstr "CPU"
 
 #: ProcessList.cpp:701
 msgid "Time"
-msgstr "Idı"
+msgstr "Id√µ"
 
 #: ProcessList.cpp:702
 msgid "Nice"
-msgstr "Priori·s"
+msgstr "Priori√°s"
 
 #: ProcessList.cpp:703
 msgid "Status"
-msgstr "¡llapot"
+msgstr "√Ållapot"
 
 # widgets.cpp:134
 #: ProcessList.cpp:704
 msgid "Memory"
-msgstr "MemÛria"
+msgstr "Mem√≥ria"
 
 #: ProcessList.cpp:705
 msgid "Resident"
@@ -312,22 +312,22 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Nem nyithatÛ meg a '/proc'!\n"
-"A kernelbe bele kell fordÌtani a /proc\n"
-"f·jlrendszer t·mogat·st!"
+"Nem nyithat√≥ meg a '/proc'!\n"
+"A kernelbe bele kell ford√≠tani a /proc\n"
+"f√°jlrendszer t√°mogat√°st!"
 
 #: OSProcessList.cpp:266
 msgid "Cannot read status of processes\n"
-msgstr "Nem olvashatÛ a folyamatok ·llapota\n"
+msgstr "Nem olvashat√≥ a folyamatok √°llapota\n"
 
 #: OSProcessList.cpp:367
 msgid "Your OS is not supported yet.  Sorry"
-msgstr "A jelenlegi oper·ciÛs rendszer nem t·mogatott. Bocs."
+msgstr "A jelenlegi oper√°ci√≥s rendszer nem t√°mogatott. Bocs."
 
 #: OSProcess.cpp:123 OSProcess.cpp:154 OSProcess.cpp:171
 #, c-format
 msgid "Cannot open %s!\n"
-msgstr "%s  nem nyithatÛ meg!\n"
+msgstr "%s  nem nyithat√≥ meg!\n"
 
 #: OSProcess.cpp:183
 msgid "Run"
@@ -347,7 +347,7 @@ msgstr "Zombi"
 
 #: OSProcess.cpp:198
 msgid "Swap"
-msgstr "LapozÛ"
+msgstr "Lapoz√≥"
 
 #: OSProcess.cpp:201
 msgid "????"
@@ -356,28 +356,28 @@ msgstr "????"
 #: OSProcess.cpp:320
 #, c-format
 msgid "Could not set new nice level for process %d"
-msgstr "Nem ·llÌthatÛ be ˙j priorit·s a %d folyamatn·l"
+msgstr "Nem √°ll√≠that√≥ be √∫j priorit√°s a %d folyamatn√°l"
 
 #: OSProcess.cpp:334
 #, c-format
 msgid "Cound not send signal %d to process %d"
-msgstr "Nem tudok %d szign·lt k¸ldeni a %d folyamatnak"
+msgstr "Nem tudok %d szign√°lt k√ºldeni a %d folyamatnak"
 
 # widgets.cpp:113
 #: PerfMonPage.cpp:49
 #
 msgid "CPU Load History"
-msgstr "A CPU terhelÈs tˆrtÈnete"
+msgstr "A CPU terhel√©s t√∂rt√©nete"
 
 # widgets.cpp:113
 #: PerfMonPage.cpp:52
 #
 msgid "System Load History"
-msgstr "A rendszer terhelÈs tˆrtÈnete"
+msgstr "A rendszer terhel√©s t√∂rt√©nete"
 
 #: PerfMonPage.cpp:55 PerfMonPage.cpp:113
 msgid "User (%)"
-msgstr "Felhaszn·lÛi (%)"
+msgstr "Felhaszn√°l√≥i (%)"
 
 #: PerfMonPage.cpp:56 PerfMonPage.cpp:114
 msgid "Nice (%)"
@@ -391,7 +391,7 @@ msgstr "Rendszer (%)"
 #: PerfMonPage.cpp:64
 #
 msgid "Memory Usage History"
-msgstr "A memÛria haszn·lat tˆrtÈnete"
+msgstr "A mem√≥ria haszn√°lat t√∂rt√©nete"
 
 #: PerfMonPage.cpp:66
 msgid "Program (kB)"
@@ -405,17 +405,17 @@ msgstr "Puffer (kb)"
 #: PerfMonPage.cpp:68
 #
 msgid "Cache (kB)"
-msgstr "Gyorst·r (kb)"
+msgstr "Gyorst√°r (kb)"
 
 #: PerfMonPage.cpp:69
 msgid "Swap (kB)"
-msgstr "LapozÛ (kb)"
+msgstr "Lapoz√≥ (kb)"
 
 # widgets.cpp:113
 #: PerfMonPage.cpp:109
 #, c-format
 msgid "CPU%d Load History"
-msgstr "A %d.CPU terhelÈs tˆrtÈnete"
+msgstr "A %d.CPU terhel√©s t√∂rt√©nete"
 
 #: OSStatus.cpp:98
 msgid ""
@@ -423,9 +423,9 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Nem nyithatÛ meg a '/proc/stat' f·jl!\n"
-"A kernelbe bele kell fordÌtani a /proc\n"
-"f·jlrendszer t·mogat·st!"
+"Nem nyithat√≥ meg a '/proc/stat' f√°jl!\n"
+"A kernelbe bele kell ford√≠tani a /proc\n"
+"f√°jlrendszer t√°mogat√°st!"
 
 #: OSStatus.cpp:120 OSStatus.cpp:303 OSStatus.cpp:378
 msgid ""
@@ -433,13 +433,13 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Nem nyithatÛ meg a '/proc/meminfo' f·jl!\n"
-"A kernelbe bele kell fordÌtani a /proc\n"
-"f·jlrendszer t·mogat·st!"
+"Nem nyithat√≥ meg a '/proc/meminfo' f√°jl!\n"
+"A kernelbe bele kell ford√≠tani a /proc\n"
+"f√°jlrendszer t√°mogat√°st!"
 
 #: OSStatus.cpp:311
 msgid "Cannot read memory info file '/proc/meminfo'!\n"
-msgstr "Nem olvashatÛ a '/proc/meminfo' f·jl!\n"
+msgstr "Nem olvashat√≥ a '/proc/meminfo' f√°jl!\n"
 
 #: OSStatus.cpp:354
 #, c-format
@@ -448,27 +448,27 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
-"Nem ovashtÛ inform·ciÛ a %s sz·m·ra a '/proc/stat' f·jlbÛl!\n"
-"A kernelbe bele kell fordÌtani a /proc\n"
-"f·jlrendszer t·mogat·st!"
+"Nem ovasht√≥ inform√°ci√≥ a %s sz√°m√°ra a '/proc/stat' f√°jlb√≥l!\n"
+"A kernelbe bele kell ford√≠tani a /proc\n"
+"f√°jlrendszer t√°mogat√°st!"
 
 #: OSStatus.cpp:386
 msgid "Cannot read swap info from '/proc/meminfo'!\n"
-msgstr "Nem olvashatÛ a lapozÛ inform·ciÛ a '/proc/meminfo' f·jlbÛl\n"
+msgstr "Nem olvashat√≥ a lapoz√≥ inform√°ci√≥ a '/proc/meminfo' f√°jlb√≥l\n"
 
 #: OSStatus.cpp:575 OSStatus.cpp:588 OSStatus.cpp:615 OSStatus.cpp:624
 msgid ""
 "Your system is not currently supported.\n"
 "Sorry"
 msgstr ""
-"Az ÷n rendszere jelenleg nem t·mogatott.\n"
-"Sajn·lom"
+"Az √ñn rendszere jelenleg nem t√°mogatott.\n"
+"Sajn√°lom"
 
 # widgets.cpp:100
 #: ReniceDlg.cpp:32
 #
 msgid "Renice Process"
-msgstr "Folyamat priorit·sa"
+msgstr "Folyamat priorit√°sa"
 
 #: ReniceDlg.cpp:39
 #, c-format
@@ -480,12 +480,12 @@ msgid ""
 "\n"
 "Please enter the desired nice level:"
 msgstr ""
-"A %d folyamat priorit·s·nak megv·ltoztat·s·ra kÈsz¸l.\n"
-"Fontos tudni, hogy csak a Superuser (root) tudja csˆkkenteni\n"
-"egy folyamat priorit·s·t. A kisebb sz·m, nagyobb priorit·st\n"
+"A %d folyamat priorit√°s√°nak megv√°ltoztat√°s√°ra k√©sz√ºl.\n"
+"Fontos tudni, hogy csak a Superuser (root) tudja cs√∂kkenteni\n"
+"egy folyamat priorit√°s√°t. A kisebb sz√°m, nagyobb priorit√°st\n"
 "jelent.\n"
 "\n"
-"Adja meg a kÌv·nt priorit·st:"
+"Adja meg a k√≠v√°nt priorit√°st:"
 
 # widgets.cpp:145 widgets.cpp:155
 #, fuzzy
@@ -495,32 +495,32 @@ msgstr ""
 # widgets.cpp:142 widgets.cpp:156
 #, fuzzy
 #~ msgid "&Performance"
-#~ msgstr "TeljesÌtmÈny"
+#~ msgstr "Teljes√≠tm√©ny"
 
 # widgets.cpp:98
 #, fuzzy
 #~ msgid "Refresh rate: Medium"
-#~ msgstr "FrissÌtÈs"
+#~ msgstr "Friss√≠t√©s"
 
 # widgets.cpp:98
 #, fuzzy
 #~ msgid "Refresh rate: Fast"
-#~ msgstr "FrissÌtÈs"
+#~ msgstr "Friss√≠t√©s"
 
 # widgets.cpp:97
 #, fuzzy
 #~ msgid "Kill Task"
-#~ msgstr "Feladat kilˆvÈse"
+#~ msgstr "Feladat kil√∂v√©se"
 
 # settings.cpp:74
 #, fuzzy
 #~ msgid "Sort by ID"
-#~ msgstr "RendezÈsi mÛd"
+#~ msgstr "Rendez√©si m√≥d"
 
 # settings.cpp:74
 #, fuzzy
 #~ msgid "Sort by Name"
-#~ msgstr "RendezÈsi mÛd"
+#~ msgstr "Rendez√©si m√≥d"
 
 # settings.cpp:85
 #, fuzzy
@@ -529,17 +529,17 @@ msgstr ""
 
 # widgets.cpp:111
 #~ msgid "CPU load"
-#~ msgstr "CPU terhelÈs"
+#~ msgstr "CPU terhel√©s"
 
 # widgets.cpp:113
 #, fuzzy
 #~ msgid "Swap history"
-#~ msgstr "A CPU terhelÈs tˆrtÈnete"
+#~ msgstr "A CPU terhel√©s t√∂rt√©nete"
 
 # settings.cpp:83
 #, fuzzy
 #~ msgid "procID"
-#~ msgstr "Folyamat azonosÌtÛ"
+#~ msgstr "Folyamat azonos√≠t√≥"
 
 # widgets.cpp:145 widgets.cpp:155
 #, fuzzy
@@ -554,7 +554,7 @@ msgstr ""
 # ktop.cpp:92
 #, fuzzy
 #~ msgid "About..."
-#~ msgstr "NÈvjegy..."
+#~ msgstr "N√©vjegy..."
 
 # settings.cpp:90 settings.cpp:211
 #~ msgid "Ok"
@@ -562,19 +562,19 @@ msgstr ""
 
 # ktop.cpp:158
 #~ msgid "About Taskmanager"
-#~ msgstr "A Feledatkezelırıl"
+#~ msgstr "A Feledatkezel√µr√µl"
 
 # ktop.cpp:88
 #~ msgid "Quit"
-#~ msgstr "KilÈpÈs"
+#~ msgstr "Kil√©p√©s"
 
 # ktop.cpp:91 ktop.cpp:105
 #~ msgid "Help"
-#~ msgstr "S˙gÛ"
+#~ msgstr "S√∫g√≥"
 
 # ktop.cpp:96
 #~ msgid "Process viewer settings..."
-#~ msgstr "A folyamat nÈzegetı be·llÌt·sai"
+#~ msgstr "A folyamat n√©zeget√µ be√°ll√≠t√°sai"
 
 # ktop.cpp:102
 #~ msgid "File"
@@ -582,23 +582,23 @@ msgstr ""
 
 # ktop.cpp:103
 #~ msgid "Settings"
-#~ msgstr "Be·llÌt·sok"
+#~ msgstr "Be√°ll√≠t√°sok"
 
 # settings.cpp:67
 #~ msgid "Process viewer settings"
-#~ msgstr "A folyamat nÈzegetı be·llÌt·sai"
+#~ msgstr "A folyamat n√©zeget√µ be√°ll√≠t√°sai"
 
 # settings.cpp:69
 #~ msgid "Update interval"
-#~ msgstr "FrissÌtÈsi intervallum"
+#~ msgstr "Friss√≠t√©si intervallum"
 
 # settings.cpp:76
 #~ msgid "Slow"
-#~ msgstr "Lass˙"
+#~ msgstr "Lass√∫"
 
 # settings.cpp:77
 #~ msgid "Medium"
-#~ msgstr "Kˆzepes"
+#~ msgstr "K√∂zepes"
 
 # settings.cpp:78
 #~ msgid "High"
@@ -606,15 +606,15 @@ msgstr ""
 
 # settings.cpp:79
 #~ msgid "Custom"
-#~ msgstr "Be·llÌtott"
+#~ msgstr "Be√°ll√≠tott"
 
 # settings.cpp:86
 #~ msgid "Load (%CPU)"
-#~ msgstr "TerhelÈs (%CPU)"
+#~ msgstr "Terhel√©s (%CPU)"
 
 # settings.cpp:87
 #~ msgid "Misc settings"
-#~ msgstr "Vegyes be·llÌt·sok"
+#~ msgstr "Vegyes be√°ll√≠t√°sok"
 
 # settings.cpp:176
 #~ msgid "Error"
@@ -622,31 +622,31 @@ msgstr ""
 
 # settings.cpp:177
 #~ msgid "The update interval value mustbe greater than zero"
-#~ msgstr "A frissÌtÈsi intervallumnak null·n·l nagyobbnak kell lennie"
+#~ msgstr "A friss√≠t√©si intervallumnak null√°n√°l nagyobbnak kell lennie"
 
 # settings.cpp:184
 #~ msgid "Warning"
-#~ msgstr "FigyelmeztetÈs"
+#~ msgstr "Figyelmeztet√©s"
 
 # settings.cpp:185
 #~ msgid ""
 #~ "You have specified a very fast update ratio.\n"
 #~ "This may generate a noticeable load onyour system."
 #~ msgstr ""
-#~ "Nagyon gyors frissÌtÈsi ar·nyt hat·rozt·l meg.\n"
-#~ "Ez figyelemre mÈltÛ terhelÈst hozhat lÈtre a rendszereden."
+#~ "Nagyon gyors friss√≠t√©si ar√°nyt hat√°rozt√°l meg.\n"
+#~ "Ez figyelemre m√©lt√≥ terhel√©st hozhat l√©tre a rendszereden."
 
 # settings.cpp:209
 #~ msgid "Performance monitor settings"
-#~ msgstr "A teljesÌtmÈny figyelı be·llÌt·sai"
+#~ msgstr "A teljes√≠tm√©ny figyel√µ be√°ll√≠t√°sai"
 
 # widgets.cpp:95
 #~ msgid "Properties..."
-#~ msgstr "Tulajdons·gok..."
+#~ msgstr "Tulajdons√°gok..."
 
 # widgets.cpp:171
 #~ msgid "General"
-#~ msgstr "¡ltal·nos"
+#~ msgstr "√Åltal√°nos"
 
 # widgets.cpp:515
 #~ msgid "Sorry"
@@ -654,8 +654,8 @@ msgstr ""
 
 # widgets.cpp:516
 #~ msgid "Not yet implemented.\n"
-#~ msgstr "Nincs mÈg implement·lva.\n"
+#~ msgstr "Nincs m√©g implement√°lva.\n"
 
 # widgets.cpp:533
 #~ msgid "Not implemented yet"
-#~ msgstr "Nincs mÈg implement·lva"
+#~ msgstr "Nincs m√©g implement√°lva"

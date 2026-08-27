@@ -1,6 +1,6 @@
 # Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1998
+# JaÃ±-Mai Drapier <jdrapier@club-internet.fr>, 1998
 #
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Romuald Texier <texierr@worldnet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8 bit\n"
 
 #: board.cpp:65 dialogs.cpp:137
@@ -35,11 +35,11 @@ msgstr "Stokit Enkas evit c'hoari adarre"
 
 #: board.cpp:127
 msgid "Press to start game"
-msgstr "Stokit evit loc'hañ ar c'hoari"
+msgstr "Stokit evit loc'haÃ± ar c'hoari"
 
 #: board.cpp:371
 msgid "Highscores file not writable !"
-msgstr "Restr ar merkoù uhelañ n'eo ket skrivadus !"
+msgstr "Restr ar merkoÃ¹ uhelaÃ± n'eo ket skrivadus !"
 
 #: net.cpp:129
 msgid "Illegal port"
@@ -55,7 +55,7 @@ msgstr "Chomlec'h dianav"
 
 #: net.cpp:157
 msgid "Cannot create socket"
-msgstr "N'hell ket krouiñ a lugell"
+msgstr "N'hell ket krouiÃ± a lugell"
 
 #: net.cpp:196
 msgid "at"
@@ -63,7 +63,7 @@ msgstr "e"
 
 #: net.cpp:233
 msgid "Connect error"
-msgstr "Fazi kevreañ"
+msgstr "Fazi kevreaÃ±"
 
 #: net.cpp:243 net.cpp:299
 msgid "Server unreachable"
@@ -75,11 +75,11 @@ msgstr "Marv eo ar servijer"
 
 #: net.cpp:267
 msgid "Cancel from server"
-msgstr "Nullañ a-berzh ar servijer"
+msgstr "NullaÃ± a-berzh ar servijer"
 
 #: net.cpp:273 net.cpp:333
 msgid "Unknown data from server"
-msgstr "Roadoù dianav digant ar servijer"
+msgstr "RoadoÃ¹ dianav digant ar servijer"
 
 #: net.cpp:312
 msgid "Cannot send to server"
@@ -95,7 +95,7 @@ msgstr "Servijer aet da get"
 
 #: net.cpp:366
 msgid "Bind error"
-msgstr "Fazi ereañ"
+msgstr "Fazi ereaÃ±"
 
 #: net.cpp:371
 msgid "Listen error"
@@ -115,7 +115,7 @@ msgstr "Marv eo an arval"
 
 #: net.cpp:487
 msgid "Cancel from client"
-msgstr "Nullañ a-berzh an arval"
+msgstr "NullaÃ± a-berzh an arval"
 
 #: net.cpp:494
 msgid "Timeout"
@@ -131,7 +131,7 @@ msgstr "Arval aet da get"
 
 #: net.cpp:529
 msgid "Unknown data from client"
-msgstr "Roadoù dianav digant an arval"
+msgstr "RoadoÃ¹ dianav digant an arval"
 
 #: net.cpp:533
 msgid "End message from client"
@@ -143,7 +143,7 @@ msgstr "N'hellan ket kas d'an arval"
 
 #: dialogs.cpp:61
 msgid "High Scores"
-msgstr "Merkoù uhelañ"
+msgstr "MerkoÃ¹ uhelaÃ±"
 
 #: dialogs.cpp:84 dialogs.cpp:93
 msgid "Hall of Fame"
@@ -179,11 +179,11 @@ msgstr "Porzh :"
 
 #: dialogs.cpp:199
 msgid "Connect"
-msgstr "Kevreañ"
+msgstr "KevreaÃ±"
 
 #: dialogs.cpp:202
 msgid "Connecting ..."
-msgstr "O kevreañ ..."
+msgstr "O kevreaÃ± ..."
 
 #: dialogs.cpp:205
 msgid "Play !"
@@ -211,23 +211,23 @@ msgstr "C'hoari nevez"
 
 #: field.cpp:28
 msgid "Pause game"
-msgstr "Ehanañ ar c'hoari"
+msgstr "EhanaÃ± ar c'hoari"
 
 #: field.cpp:30
 msgid "High scores"
-msgstr "Merkoù uhelañ"
+msgstr "MerkoÃ¹ uhelaÃ±"
 
 #: field.cpp:31
 msgid "Move left"
-msgstr "Fiñval a-gleiz"
+msgstr "FiÃ±val a-gleiz"
 
 #: field.cpp:32
 msgid "Move right"
-msgstr "Fiñval a-zehoù"
+msgstr "FiÃ±val a-zehoÃ¹"
 
 #: field.cpp:33
 msgid "Drop down"
-msgstr "Leuskel en traoñ"
+msgstr "Leuskel en traoÃ±"
 
 #: field.cpp:34
 msgid "One line down"
@@ -235,11 +235,11 @@ msgstr "Ul linenn a-is"
 
 #: field.cpp:35
 msgid "Rotate left"
-msgstr "Treiñ a-gleiz"
+msgstr "TreiÃ± a-gleiz"
 
 #: field.cpp:36
 msgid "Rotate right"
-msgstr "Treiñ a-zehoù"
+msgstr "TreiÃ± a-zehoÃ¹"
 
 #: field.cpp:51
 msgid "Score"
@@ -247,7 +247,7 @@ msgstr "Merk"
 
 #: field.cpp:55
 msgid "Lines removed"
-msgstr "Linennoù lamet"
+msgstr "LinennoÃ¹ lamet"
 
 #: field.cpp:59
 msgid "Level"
@@ -259,11 +259,11 @@ msgstr "Teolenn a heul"
 
 #: field.cpp:185
 msgid "&Restart game"
-msgstr "&Adkregiñ ar c'hoari"
+msgstr "&AdkregiÃ± ar c'hoari"
 
 #: field.cpp:186
 msgid "&Pause game"
-msgstr "&Ehanañ ar c'hoari"
+msgstr "&EhanaÃ± ar c'hoari"
 
 #: field.cpp:187
 msgid "&Multiplayer game"
@@ -271,15 +271,15 @@ msgstr "C'hoari gant &meur a zen"
 
 #: field.cpp:189
 msgid "&High scores"
-msgstr "Merkoù &Uhelañ"
+msgstr "MerkoÃ¹ &UhelaÃ±"
 
 #: main.cpp:25 main.cpp:74
 msgid "Hide menu"
-msgstr "Skoachañ al lañser"
+msgstr "SkoachaÃ± al laÃ±ser"
 
 #: main.cpp:30
 msgid "&Keys"
-msgstr "&Stokelloù"
+msgstr "&StokelloÃ¹"
 
 #: main.cpp:35
 msgid "by"
@@ -287,4 +287,4 @@ msgstr "gant"
 
 #: main.cpp:71
 msgid "Show menu"
-msgstr "Diskouez al lañser"
+msgstr "Diskouez al laÃ±ser"

@@ -34,59 +34,59 @@ msgstr ""
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr "kÈpernyı #%d"
+msgstr "k√©perny≈ë #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  mÈret               : %dx%d kÈppont (%dx%d mm)\n"
+msgstr "  m√©ret               : %dx%d k√©ppont (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  felbont·s           : %dx%d pont per inch\n"
+msgstr "  felbont√°s           : %dx%d pont per inch\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  szÌnmÈlysÈg (%d)     : "
+msgstr "  sz√≠nm√©lys√©g (%d)     : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "megjelenÌtı neve      : %s"
+msgstr "megjelen√≠t≈ë neve      : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "verziÛsz·m            : %i.%i"
+msgstr "verzi√≥sz√°m            : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "gy·rtÛ                : %s"
+msgstr "gy√°rt√≥                : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "gy·rtÛ verziÛja       : %i"
+msgstr "gy√°rt√≥ verzi√≥ja       : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "alapÈrtelmezett kÈp.  : %i"
+msgstr "alap√©rtelmezett k√©p.  : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr "kÈpernyık sz·ma       : %i"
+msgstr "k√©perny≈ëk sz√°ma       : %i"
 
 #
 #: info.cpp:181
@@ -95,14 +95,14 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Nincs inform·ciÛ,\n"
+"Nincs inform√°ci√≥,\n"
 "vagy\n"
-"ez a rendszer mÈg nincs t·mogatva ;-("
+"ez a rendszer m√©g nincs t√°mogatva ;-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr "%s, ismeretlen sebessÈg"
+msgstr "%s, ismeretlen sebess√©g"
 
 #: info_fbsd.cpp:75
 #, c-format
@@ -115,36 +115,36 @@ msgstr "Nem lehet megnyitni az fstab-ot!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "Eszkˆz"
+msgstr "Eszk√∂z"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr "Mountol·si pont"
+msgstr "Mountol√°si pont"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "FR tÌpusa"
+msgstr "FR t√≠pusa"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr "Mountol·si kapcsolÛk"
+msgstr "Mountol√°si kapcsol√≥k"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr "ismeretlen CPU tÌpus"
+msgstr "ismeretlen CPU t√≠pus"
 
 #
 #: info_hpux.cpp:62
 msgid "unavailable"
-msgstr "nem elÈrhetı"
+msgstr "nem el√©rhet≈ë"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr "AktÌv processzor(ok) sz·ma= "
+msgstr "Akt√≠v processzor(ok) sz√°ma= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "…rtÈk"
+msgstr "√ârt√©k"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
@@ -152,15 +152,15 @@ msgstr "DMA-Csatorna"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "haszn·lÛ"
+msgstr "haszn√°l√≥"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "I/O-tartom·ny"
+msgstr "I/O-tartom√°ny"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "&MemÛria"
+msgstr "&Mem√≥ria"
 
 #: main.cpp:82
 msgid "&Processor"
@@ -168,11 +168,11 @@ msgstr "&Processzor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr "Me&gszakÌt·sok"
+msgstr "Me&gszak√≠t√°sok"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "DM&A-Csatorn·k"
+msgstr "DM&A-Csatorn√°k"
 
 #: main.cpp:91
 msgid "&IO-Ports"
@@ -188,7 +188,7 @@ msgstr "Hang&ok"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "Eszkˆzˆ&k"
+msgstr "Eszk√∂z√∂&k"
 
 #: main.cpp:103
 msgid "S&CSI"
@@ -196,7 +196,7 @@ msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr "P&articiÛk"
+msgstr "P&artici√≥k"
 
 #: main.cpp:109
 msgid "&X-Server"
@@ -208,37 +208,37 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-"haszn·lat: kcminfo [-init | "
+"haszn√°lat: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Rendszerinform·ciÛ"
+msgstr "Rendszerinform√°ci√≥"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "Teljes memÛria"
+msgstr "Teljes mem√≥ria"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "Szabad memÛria"
+msgstr "Szabad mem√≥ria"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Megosztott memÛria"
+msgstr "Megosztott mem√≥ria"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "Buffer memÛria"
+msgstr "Buffer mem√≥ria"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "Swap memÛria"
+msgstr "Swap mem√≥ria"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "Szabad swap memÛria"
+msgstr "Szabad swap mem√≥ria"
 
 #: memory.cpp:78
 #, c-format
@@ -249,10 +249,10 @@ msgstr "%10ld byte  = %8.2f MB"
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "nem elÈrhetı"
+msgstr "nem el√©rhet≈ë"
 
 #
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "nem elÈrhetı"
+msgstr "nem el√©rhet≈ë"

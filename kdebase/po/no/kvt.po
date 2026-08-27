@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.C:426
@@ -27,7 +27,7 @@ msgstr "Slettetasten vil sende en"
 
 #: main.C:444
 msgid "Cursor key set"
-msgstr "Regeler markørtastsending"
+msgstr "Regeler markÃ¸rtastsending"
 
 #: main.C:613
 msgid "&New Terminal"
@@ -43,7 +43,7 @@ msgstr "&Venstre"
 
 #: main.C:622
 msgid "&Right"
-msgstr "&Høyre"
+msgstr "&HÃ¸yre"
 
 #: main.C:627
 msgid "&Normal"
@@ -79,7 +79,7 @@ msgstr "&hvit/svart"
 
 #: main.C:646
 msgid "&green/black"
-msgstr "&grønn/svart"
+msgstr "&grÃ¸nn/svart"
 
 #: main.C:647
 msgid "black/light&yellow"
@@ -111,7 +111,7 @@ msgstr "&Rullefelt"
 
 #: main.C:671
 msgid "&Font size"
-msgstr "&Skrifttypestørrelse"
+msgstr "&SkrifttypestÃ¸rrelse"
 
 #: main.C:672
 msgid "&Color"
@@ -119,7 +119,7 @@ msgstr "&Farge"
 
 #: main.C:673
 msgid "&Size"
-msgstr "&Størrelse"
+msgstr "&StÃ¸rrelse"
 
 #: main.C:674
 msgid "Terminal..."
@@ -131,7 +131,7 @@ msgstr "Skrifttype..."
 
 #: main.C:676
 msgid "Enable &hotkeys"
-msgstr "Skru på &hurtigtaster"
+msgstr "Skru pÃ¥ &hurtigtaster"
 
 #: main.C:679
 msgid "Save &Options"
@@ -157,7 +157,7 @@ msgstr ""
 "(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Terminalemulering for KDE Desktop Environment\n"
-"basert på Robert Nations rxvt-2.08"
+"basert pÃ¥ Robert Nations rxvt-2.08"
 
 #: main.C:897 main.C:1036
 msgid "&Show"
@@ -181,7 +181,7 @@ msgid ""
 "when the keyboard is unsecured."
 msgstr ""
 "Nye fargeinnstillinger vil bli vist\n"
-"når tastaturet er usikret."
+"nÃ¥r tastaturet er usikret."
 
 #: main.C:1474
 msgid ""
@@ -194,7 +194,7 @@ msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
 "Terminal emulering for KDE Desktop Environment\n"
-"basert på Robert Nation's rxvt-2.08\n"
+"basert pÃ¥ Robert Nation's rxvt-2.08\n"
 "\n"
 
 #: main.C:1478
@@ -205,7 +205,7 @@ msgstr "Lovlige argumenter er:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <kommando> <arg> ...   kjør kommando med ars - må være siste argument\n"
+"-e <kommando> <arg> ...   kjÃ¸r kommando med ars - mÃ¥ vÃ¦re siste argument\n"
 
 #: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
@@ -217,7 +217,7 @@ msgstr "-vt_geometry <spes>       vt-vinduets geometry ved start\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-print-pipe <navn>        oppgi rør for vt100-skriver\n"
+msgstr "-print-pipe <navn>        oppgi rÃ¸r for vt100-skriver\n"
 
 #: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
@@ -234,16 +234,16 @@ msgstr "-vt_font <skrifttype>     vanlig skrifttype\n"
 #: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr ""
-"-no_font_hack             skru av koden som går utenom Qt-skrifttypefeilen\n"
+"-no_font_hack             skru av koden som gÃ¥r utenom Qt-skrifttypefeilen\n"
 
 #: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr "-vt_size <størrelse>      tiny, small, normal, large, huge\n"
+msgstr "-vt_size <stÃ¸rrelse>      tiny, small, normal, large, huge\n"
 
 #: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr ""
-"-linux                    sett opp kvt til å etterligne linux-konsolet\n"
+"-linux                    sett opp kvt til Ã¥ etterligne linux-konsolet\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
@@ -271,15 +271,15 @@ msgstr "-C                        Vis systemkonsollmeldinger\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <tekst>                navn på ikon eller ikon-vindu\n"
+msgstr "-n <tekst>                navn pÃ¥ ikon eller ikon-vindu\n"
 
 #: main.C:1496
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        kjør i 7-bitsmodus\n"
-"-8                        kjør i 8-bitsmodus\n"
+"-7                        kjÃ¸r i 7-bitsmodus\n"
+"-8                        kjÃ¸r i 8-bitsmodus\n"
 
 #: main.C:1498
 msgid ""
@@ -310,9 +310,9 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <tastsym>         bruk hurtigtast alt-tastsym for å rulle opp "
+"-pageup <tastsym>         bruk hurtigtast alt-tastsym for Ã¥ rulle opp "
 "bufferbuffer\n"
-"-pagedown <keysym>        bruk hurtigtast alt-tastsym for å rulle ned "
+"-pagedown <keysym>        bruk hurtigtast alt-tastsym for Ã¥ rulle ned "
 "buffer\n"
 
 #: main.C:1506

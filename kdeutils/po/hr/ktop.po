@@ -9,7 +9,7 @@ msgstr ""
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ktop.cpp:66
@@ -64,7 +64,7 @@ msgstr ""
 #: MainMenu.cpp:65
 #, fuzzy
 msgid "Slow Refresh"
-msgstr "Osvje¾i odmah"
+msgstr "OsvjeÅ¾i odmah"
 
 #: MainMenu.cpp:66
 msgid "Medium Refresh"
@@ -73,17 +73,17 @@ msgstr ""
 #: MainMenu.cpp:67
 #, fuzzy
 msgid "Fast Refresh"
-msgstr "Osvje¾i odmah"
+msgstr "OsvjeÅ¾i odmah"
 
 #: MainMenu.cpp:79
 #, fuzzy
 msgid "&Refresh Rate"
-msgstr "Osvje¾avanje: Sporo"
+msgstr "OsvjeÅ¾avanje: Sporo"
 
 #: MainMenu.cpp:80
 #, fuzzy
 msgid "&Process"
-msgstr "Tekuæi procesi"
+msgstr "TekuÄ‡i procesi"
 
 #: ProcessMenu.cpp:44
 msgid "Renice Task..."
@@ -91,27 +91,27 @@ msgstr ""
 
 #: ProcessMenu.cpp:47
 msgid "send SIGINT\t(ctrl-c)"
-msgstr "po¹alji SIGINT\t(ctrl-c)"
+msgstr "poÅ¡alji SIGINT\t(ctrl-c)"
 
 #: ProcessMenu.cpp:48
 msgid "send SIGQUIT\t(core)"
-msgstr "po¹alji SIGQUIT\t(core)"
+msgstr "poÅ¡alji SIGQUIT\t(core)"
 
 #: ProcessMenu.cpp:49
 msgid "send SIGTERM\t(term.)"
-msgstr "po¹alji SIGTERM\t(term.)"
+msgstr "poÅ¡alji SIGTERM\t(term.)"
 
 #: ProcessMenu.cpp:50
 msgid "send SIGKILL\t(term.)"
-msgstr "po¹alji SIGKILL\t(term.)"
+msgstr "poÅ¡alji SIGKILL\t(term.)"
 
 #: ProcessMenu.cpp:52
 msgid "send SIGUSR1\t(user1)"
-msgstr "po¹alji SIGUSR1\t(user1"
+msgstr "poÅ¡alji SIGUSR1\t(user1"
 
 #: ProcessMenu.cpp:53
 msgid "send SIGUSR2\t(user2)"
-msgstr "po¹alji SIGUSR2\t(user2)"
+msgstr "poÅ¡alji SIGUSR2\t(user2)"
 
 #: ProcessMenu.cpp:74 ProcessMenu.cpp:86 ProcessMenu.cpp:150
 #: ProcessMenu.cpp:158 ProcessMenu.cpp:176
@@ -180,11 +180,11 @@ msgstr "&Lista Procesa"
 
 #: TaskMan.cpp:81
 msgid "Performance &Meter"
-msgstr "&Uèinak"
+msgstr "&UÄinak"
 
 #: ProcListPage.cpp:42
 msgid "Running Processes"
-msgstr "Tekuæi procesi"
+msgstr "TekuÄ‡i procesi"
 
 #: ProcListPage.cpp:49
 msgid "Show Tree"
@@ -200,7 +200,7 @@ msgstr "Sistemski procesi"
 
 #: ProcListPage.cpp:62
 msgid "User processes"
-msgstr "Korisnièki procesi"
+msgstr "KorisniÄki procesi"
 
 #: ProcListPage.cpp:63
 msgid "Own processes"
@@ -208,7 +208,7 @@ msgstr "Vlastiti procesi"
 
 #: ProcListPage.cpp:79
 msgid "Refresh Now"
-msgstr "Osvje¾i odmah"
+msgstr "OsvjeÅ¾i odmah"
 
 #: ProcListPage.cpp:85
 msgid "Kill task"
@@ -236,7 +236,7 @@ msgstr "PID"
 
 #: ProcessList.cpp:699
 msgid "User ID"
-msgstr "Korisnièki ID"
+msgstr "KorisniÄki ID"
 
 #: ProcessList.cpp:700
 msgid "CPU"
@@ -327,17 +327,17 @@ msgstr ""
 #: PerfMonPage.cpp:49
 #, fuzzy
 msgid "CPU Load History"
-msgstr "Povijest optereæenja CPUa"
+msgstr "Povijest optereÄ‡enja CPUa"
 
 #: PerfMonPage.cpp:52
 #, fuzzy
 msgid "System Load History"
-msgstr "Povijest optereæenja CPUa"
+msgstr "Povijest optereÄ‡enja CPUa"
 
 #: PerfMonPage.cpp:55 PerfMonPage.cpp:113
 #, fuzzy
 msgid "User (%)"
-msgstr "Korisnièki ID"
+msgstr "KorisniÄki ID"
 
 #: PerfMonPage.cpp:56 PerfMonPage.cpp:114
 msgid "Nice (%)"
@@ -350,7 +350,7 @@ msgstr ""
 #: PerfMonPage.cpp:64
 #, fuzzy
 msgid "Memory Usage History"
-msgstr "Povijest iskori¹tenosti memorije"
+msgstr "Povijest iskoriÅ¡tenosti memorije"
 
 #: PerfMonPage.cpp:66
 msgid "Program (kB)"
@@ -371,7 +371,7 @@ msgstr ""
 #: PerfMonPage.cpp:109
 #, fuzzy, c-format
 msgid "CPU%d Load History"
-msgstr "Povijest optereæenja CPUa"
+msgstr "Povijest optereÄ‡enja CPUa"
 
 #: OSStatus.cpp:98
 msgid ""
@@ -412,7 +412,7 @@ msgstr ""
 #: ReniceDlg.cpp:32
 #, fuzzy
 msgid "Renice Process"
-msgstr "Tekuæi procesi"
+msgstr "TekuÄ‡i procesi"
 
 #: ReniceDlg.cpp:39
 #, c-format
@@ -426,25 +426,25 @@ msgid ""
 msgstr ""
 
 #~ msgid "StartUp Preferences..."
-#~ msgstr "Poèetna postava..."
+#~ msgstr "PoÄetna postava..."
 
 #~ msgid "KTop Preferences"
 #~ msgstr "Ktop postavke"
 
 #~ msgid "Start up page"
-#~ msgstr "Poèetna stranica"
+#~ msgstr "PoÄetna stranica"
 
 #~ msgid "Processes &Tree"
 #~ msgstr "S&tablo Procesa"
 
 #~ msgid "&Performance"
-#~ msgstr "&Uèinak"
+#~ msgstr "&UÄinak"
 
 #~ msgid "Refresh rate: Medium"
-#~ msgstr "Osvje¾avanje: Srednje"
+#~ msgstr "OsvjeÅ¾avanje: Srednje"
 
 #~ msgid "Refresh rate: Fast"
-#~ msgstr "Osvje¾avanje: Brzo"
+#~ msgstr "OsvjeÅ¾avanje: Brzo"
 
 #~ msgid "Change Root"
 #~ msgstr "Promijeni korijen"
@@ -462,7 +462,7 @@ msgstr ""
 #~ msgstr "Sortiraj po korisniku (UID)"
 
 #~ msgid "CPU load"
-#~ msgstr "CPU optereæenje"
+#~ msgstr "CPU optereÄ‡enje"
 
 #~ msgid "Swap history"
 #~ msgstr "Povijest zamjenske memorije"

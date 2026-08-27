@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: about.cpp:40
@@ -29,7 +29,7 @@ msgstr "Floppy Drive:"
 
 #: floppy.cpp:65
 msgid "Density:"
-msgstr "Densit‡:"
+msgstr "Densit√†:"
 
 #: floppy.cpp:74
 msgid "File System:"
@@ -86,7 +86,7 @@ msgid ""
 "Please install KFloppy properly."
 msgstr ""
 "Impossibile trovare kfdformat\n"
-"kfdformat Ë una parte della distribuzione di KFloppy.\n"
+"kfdformat √® una parte della distribuzione di KFloppy.\n"
 "Installa KFloppy correttamente, grazie."
 
 #: floppy.cpp:355
@@ -96,7 +96,7 @@ msgid ""
 "Please install KFloppy properly."
 msgstr ""
 "Impossibile trovare kmke2fs\n"
-"kmke2fs Ë una parte della distribuzione di KFloppy.\n"
+"kmke2fs √® una parte della distribuzione di KFloppy.\n"
 "Installa KFloppy correttamente, grazie."
 
 #: floppy.cpp:370
@@ -106,7 +106,7 @@ msgid ""
 "Please install KFloppy properly."
 msgstr ""
 "Impossibile trovare kmkdosfs\n"
-"kmkdosfs Ë una parte della distribuzione di KFloppy.\n"
+"kmkdosfs √® una parte della distribuzione di KFloppy.\n"
 "Installa KFloppy correttamente, grazie."
 
 #: floppy.cpp:430
@@ -157,9 +157,9 @@ msgid ""
 "Blocks marked bad: %d\n"
 "Raw Capacity: %d\n"
 msgstr ""
-"Il floppy Ë stato formattato con successo.\n"
+"Il floppy √® stato formattato con successo.\n"
 "Blocchi danneggiati: %d\n"
-"Capacit‡: %d\n"
+"Capacit√†: %d\n"
 
 #: floppy.cpp:780
 msgid "All files were sucessfully erased."
@@ -191,5 +191,5 @@ msgid ""
 "%s is mounted.\n"
 "Please unmount the floppy first."
 msgstr ""
-"%s Ë montato.\n"
+"%s √® montato.\n"
 "per favore smonta il floppy prima."

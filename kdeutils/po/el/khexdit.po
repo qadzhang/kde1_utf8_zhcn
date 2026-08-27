@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: hexdata.cpp:39
 #, c-format
 msgid "Error opening %s"
-msgstr "Αποτυχία κατά το άνοιγμα %s"
+msgstr "ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅ ΓªΓ΅Γ΄Γ Γ΄Γ― ΓΓ­Γ―Γ©Γ£Γ¬Γ΅ %s"
 
 #: hexwidget.cpp:66
 msgid "Save &As..."
@@ -26,12 +26,12 @@ msgstr ""
 #: hexwidget.cpp:77
 #, fuzzy
 msgid "&Toggle Toolbar"
-msgstr "Mπάρα εργαλειών"
+msgstr "MΓ°ΓΓ±Γ΅ Γ¥Γ±Γ£Γ΅Γ«Γ¥Γ©ΓΎΓ­"
 
 #: hexwidget.cpp:80
 #, fuzzy
 msgid "Hex Editor"
-msgstr "Περί του Hex Editor"
+msgstr "ΓΓ¥Γ±Γ Γ΄Γ―Γµ Hex Editor"
 
 #: hexwidget.cpp:82
 msgid ""
@@ -42,15 +42,15 @@ msgstr ""
 
 #: hexwidget.cpp:105
 msgid "New Window"
-msgstr "Νέο παράθυρο"
+msgstr "ΓΓΓ― Γ°Γ΅Γ±ΓΓ¨ΓµΓ±Γ―"
 
 #: hexwidget.cpp:109
 msgid "Save the file"
-msgstr "Αποθήκευση αρχείου"
+msgstr "ΓΓ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ"
 
 #: hexwidget.cpp:112 hexwidget.cpp:114 hexwidget.cpp:116 hexwidget.cpp:119
 msgid "Not implemented"
-msgstr "Όχι συμπληρωμένο"
+msgstr "ΒΌΓ·Γ© Γ³ΓµΓ¬Γ°Γ«Γ§Γ±ΓΉΓ¬ΓΓ­Γ―"
 
 #: hexwidget.cpp:150
 #, fuzzy
@@ -58,8 +58,8 @@ msgid ""
 "The current file has been modified.\n"
 "Do you want to save it?"
 msgstr ""
-"Το τρέχον αρχείο έχει αλλάξει.\n"
-"Θέλετε να το αποθηκέυσετε ?"
+"Γ”Γ― Γ΄Γ±ΓΓ·Γ―Γ­ Γ΅Γ±Γ·Γ¥ΓΓ― ΓΓ·Γ¥Γ© Γ΅Γ«Γ«ΓΓ®Γ¥Γ©.\n"
+"ΓΓΓ«Γ¥Γ΄Γ¥ Γ­Γ΅ Γ΄Γ― Γ΅Γ°Γ―Γ¨Γ§ΓªΓΓµΓ³Γ¥Γ΄Γ¥ ?"
 
 #: hexwidget.cpp:173
 #, fuzzy
@@ -67,8 +67,8 @@ msgid ""
 "The current file has been modified.\n"
 "Discard your changes?"
 msgstr ""
-"Το τρέχον αρχείο έχει αλλάξει.\n"
-"Θέλετε να το αποθηκέυσετε ?"
+"Γ”Γ― Γ΄Γ±ΓΓ·Γ―Γ­ Γ΅Γ±Γ·Γ¥ΓΓ― ΓΓ·Γ¥Γ© Γ΅Γ«Γ«ΓΓ®Γ¥Γ©.\n"
+"ΓΓΓ«Γ¥Γ΄Γ¥ Γ­Γ΅ Γ΄Γ― Γ΅Γ°Γ―Γ¨Γ§ΓªΓΓµΓ³Γ¥Γ΄Γ¥ ?"
 
 #: hexwidget.cpp:254
 msgid ""
@@ -78,30 +78,30 @@ msgid ""
 "Wait until this one is finished\n"
 "or stop the running one."
 msgstr ""
-"KHexdit ήδη περιμένει\n"
-"για τον τερματισμό μιας εργασίας internet\n"
+"KHexdit ΓΓ¤Γ§ Γ°Γ¥Γ±Γ©Γ¬ΓΓ­Γ¥Γ©\n"
+"Γ£Γ©Γ΅ Γ΄Γ―Γ­ Γ΄Γ¥Γ±Γ¬Γ΅Γ΄Γ©Γ³Γ¬ΓΌ Γ¬Γ©Γ΅Γ² Γ¥Γ±Γ£Γ΅Γ³ΓΓ΅Γ² internet\n"
 "\n"
-"Περιμένετε μέχρι αυτή να τερματιστεί\n"
-"ή σταματήστε την ήδη τρέχουσα."
+"ΓΓ¥Γ±Γ©Γ¬ΓΓ­Γ¥Γ΄Γ¥ Γ¬ΓΓ·Γ±Γ© Γ΅ΓµΓ΄Γ Γ­Γ΅ Γ΄Γ¥Γ±Γ¬Γ΅Γ΄Γ©Γ³Γ΄Γ¥Γ\n"
+"Γ Γ³Γ΄Γ΅Γ¬Γ΅Γ΄ΓΓ³Γ΄Γ¥ Γ΄Γ§Γ­ ΓΓ¤Γ§ Γ΄Γ±ΓΓ·Γ―ΓµΓ³Γ΅."
 
 #: hexwidget.cpp:262
 msgid "Could not start KFM"
-msgstr "Αδύνατη η εκκίνηση του KFM"
+msgstr "ΓΓ¤Γ½Γ­Γ΅Γ΄Γ§ Γ§ Γ¥ΓªΓªΓΓ­Γ§Γ³Γ§ Γ΄Γ―Γµ KFM"
 
 #~ msgid "&File"
-#~ msgstr "&Αρχείο"
+#~ msgstr "&ΓΓ±Γ·Γ¥ΓΓ―"
 
 #~ msgid "&View"
-#~ msgstr "&Προβολή"
+#~ msgstr "&ΓΓ±Γ―ΓΆΓ―Γ«Γ"
 
 #~ msgid "&Help"
-#~ msgstr "&Βοήθεια"
+#~ msgstr "&Γ‚Γ―ΓΓ¨Γ¥Γ©Γ΅"
 
 #~ msgid "File changed"
-#~ msgstr "Το αρχείο αλλάχτηκε"
+#~ msgstr "Γ”Γ― Γ΅Γ±Γ·Γ¥ΓΓ― Γ΅Γ«Γ«ΓΓ·Γ΄Γ§ΓªΓ¥"
 
 #~ msgid "Discard your changes?"
-#~ msgstr "Ακύρωση των αλλαγών"
+#~ msgstr "ΓΓªΓ½Γ±ΓΉΓ³Γ§ Γ΄ΓΉΓ­ Γ΅Γ«Γ«Γ΅Γ£ΓΎΓ­"
 
 #~ msgid "Ok"
-#~ msgstr "Eντάξει"
+#~ msgstr "EΓ­Γ΄ΓΓ®Γ¥Γ©"

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: info.cpp:50
@@ -69,7 +69,7 @@ msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "Αυτό το σύστημα δεν υποστηρίζεται ακόμα :-("
+msgstr "ΓΓµΓ΄ΓΌ Γ΄Γ― Γ³Γ½Γ³Γ΄Γ§Γ¬Γ΅ Γ¤Γ¥Γ­ ΓµΓ°Γ―Γ³Γ΄Γ§Γ±ΓΓ¦Γ¥Γ΄Γ΅Γ© Γ΅ΓªΓΌΓ¬Γ΅ :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -108,7 +108,7 @@ msgstr ""
 #: info_hpux.cpp:62
 #, fuzzy
 msgid "unavailable"
-msgstr "μη διαθέσιμο/η/ος"
+msgstr "Γ¬Γ§ Γ¤Γ©Γ΅Γ¨ΓΓ³Γ©Γ¬Γ―/Γ§/Γ―Γ²"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
@@ -132,11 +132,11 @@ msgstr ""
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "Μνήμη"
+msgstr "ΓΓ­ΓΓ¬Γ§"
 
 #: main.cpp:82
 msgid "&Processor"
-msgstr "Επεξεργαστής"
+msgstr "Γ…Γ°Γ¥Γ®Γ¥Γ±Γ£Γ΅Γ³Γ΄ΓΓ²"
 
 #: main.cpp:85
 msgid "&Interrupts"
@@ -183,31 +183,31 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Πληροφορίες Συστήματος"
+msgstr "ΓΓ«Γ§Γ±Γ―Γ¶Γ―Γ±ΓΓ¥Γ² Γ“ΓµΓ³Γ΄ΓΓ¬Γ΅Γ΄Γ―Γ²"
 
 #: memory.cpp:15
 msgid "Total memory"
-msgstr "Συνολική μνήμη"
+msgstr "Γ“ΓµΓ­Γ―Γ«Γ©ΓªΓ Γ¬Γ­ΓΓ¬Γ§"
 
 #: memory.cpp:25
 msgid "Free memory"
-msgstr "Ελεύθερη μνήμη"
+msgstr "Γ…Γ«Γ¥Γ½Γ¨Γ¥Γ±Γ§ Γ¬Γ­ΓΓ¬Γ§"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Κοινή μνήμη"
+msgstr "ΓΓ―Γ©Γ­Γ Γ¬Γ­ΓΓ¬Γ§"
 
 #: memory.cpp:41
 msgid "Buffer memory"
-msgstr "Προσωρινή μνήμη (buffer)"
+msgstr "ΓΓ±Γ―Γ³ΓΉΓ±Γ©Γ­Γ Γ¬Γ­ΓΓ¬Γ§ (buffer)"
 
 #: memory.cpp:49
 msgid "Swap memory"
-msgstr "Μνήμη δίσκου (swap)"
+msgstr "ΓΓ­ΓΓ¬Γ§ Γ¤ΓΓ³ΓªΓ―Γµ (swap)"
 
 #: memory.cpp:57
 msgid "Free swap memory"
-msgstr "Ελέυθερη μνήμη δίσκου (swap)"
+msgstr "Γ…Γ«ΓΓµΓ¨Γ¥Γ±Γ§ Γ¬Γ­ΓΓ¬Γ§ Γ¤ΓΓ³ΓªΓ―Γµ (swap)"
 
 #: memory.cpp:78
 #, c-format
@@ -218,13 +218,13 @@ msgstr "%10ld bytes  = %8.2f MB"
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 #, fuzzy
 msgid "Not available"
-msgstr "μη διαθέσιμο/η/ος"
+msgstr "Γ¬Γ§ Γ¤Γ©Γ΅Γ¨ΓΓ³Γ©Γ¬Γ―/Γ§/Γ―Γ²"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 #, fuzzy
 msgid "Not Available"
-msgstr "μη διαθέσιμο/η/ος"
+msgstr "Γ¬Γ§ Γ¤Γ©Γ΅Γ¨ΓΓ³Γ©Γ¬Γ―/Γ§/Γ―Γ²"
 
 #~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "Σύνταξη: kcminfo [-init | {processor,memory}]\n"
+#~ msgstr "Γ“Γ½Γ­Γ΄Γ΅Γ®Γ§: kcminfo [-init | {processor,memory}]\n"

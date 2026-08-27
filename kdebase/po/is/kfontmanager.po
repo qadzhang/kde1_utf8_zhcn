@@ -7,11 +7,11 @@ msgstr ""
 "PO-Revision-Date: 1998-10-20 00:20+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
-"Content-Type: charset=iso-8859-1\n"
+"Content-Type: charset=UTF-8\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDE-leturstjóri"
+msgstr "KDE-leturstjÃ³ri"
 
 #: main.cpp:71
 msgid "KDE Fonts"
@@ -23,11 +23,11 @@ msgstr "Leturflakkari "
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Hrár X11-leturlisti"
+msgstr "HrÃ¡r X11-leturlisti"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Tiltæk X11-letur"
+msgstr "TiltÃ¦k X11-letur"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
@@ -38,12 +38,12 @@ msgid ""
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
 msgstr ""
-"Öll dýrin í skóginum eiga að vera vinir\n"
-"Þýðingatörn 123"
+"Ã–ll dÃ½rin Ã­ skÃ³ginum eiga aÃ° vera vinir\n"
+"ÃžÃ½Ã°ingatÃ¶rn 123"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
-msgstr "Um kleturstjóra"
+msgstr "Um kleturstjÃ³ra"
 
 #: kfontmanager.cpp:112
 msgid ""
@@ -52,12 +52,12 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 msgstr ""
-"kleturstjóri, útgáfa 0.2\n"
-"Höfundarréttur 1997\n"
+"kleturstjÃ³ri, ÃºtgÃ¡fa 0.2\n"
+"HÃ¶fundarrÃ©ttur 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 "\n"
-"Þýðing: Logi <logir@hi.is>\n"
+"ÃžÃ½Ã°ing: Logi <logir@hi.is>\n"
 
 #: kfontmanager.cpp:215
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
-"Ekki tókst að búa til:\n"
+"Ekki tÃ³kst aÃ° bÃºa til:\n"
 " ~/.kde/share/config/kdefonts\n"
 
 #: kfontmanager.cpp:297
@@ -81,9 +81,9 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"Skráin ~/.kde/share/config/kdefonts er til,\n"
-"en þú hefur ekki skrifréttindi í hana.\n"
-"Því tókst ekki að vista leturlista KDE."
+"SkrÃ¡in ~/.kde/share/config/kdefonts er til,\n"
+"en Ã¾Ãº hefur ekki skrifrÃ©ttindi Ã­ hana.\n"
+"ÃžvÃ­ tÃ³kst ekki aÃ° vista leturlista KDE."
 
 # kfontlist.cpp:62  (I'll be damned if this should be here!)
 #: kfontlist.cpp:62
@@ -93,8 +93,8 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 msgstr ""
-"kleturstjóri, útgáfa 0.1\n"
-"Höfundarréttur 1997\n"
+"kleturstjÃ³ri, ÃºtgÃ¡fa 0.1\n"
+"HÃ¶fundarrÃ©ttur 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
@@ -104,7 +104,7 @@ msgstr "Veldu letur"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr "Umbeðið letur"
+msgstr "UmbeÃ°iÃ° letur"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
@@ -112,19 +112,19 @@ msgstr "Raunverulegt letur"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr "Leturgerð:"
+msgstr "LeturgerÃ°:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr "Stærð:"
+msgstr "StÃ¦rÃ°:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr "Vægi:"
+msgstr "VÃ¦gi:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr "Leturbrigði:"
+msgstr "LeturbrigÃ°i:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
@@ -132,11 +132,11 @@ msgstr "Stafasett"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr "Stærð"
+msgstr "StÃ¦rÃ°"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr "Vægi"
+msgstr "VÃ¦gi"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
@@ -144,31 +144,31 @@ msgstr "venjulegt"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr "feitletrað"
+msgstr "feitletraÃ°"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr "Leturbrigði"
+msgstr "LeturbrigÃ°i"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr "lóðletrað"
+msgstr "lÃ³Ã°letraÃ°"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr "skáletrað"
+msgstr "skÃ¡letraÃ°"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr "...sem þrjú sverð væru á lofti."
+msgstr "...sem Ã¾rjÃº sverÃ° vÃ¦ru Ã¡ lofti."
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr "Feitletrað"
+msgstr "FeitletraÃ°"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
 msgstr "Venjulegt"
 
 #~ msgid "The KDE Font Manager Example String"
-#~ msgstr "...og þótti sem þrjú sverð væru á lofti."
+#~ msgstr "...og Ã¾Ã³tti sem Ã¾rjÃº sverÃ° vÃ¦ru Ã¡ lofti."

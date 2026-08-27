@@ -13,24 +13,24 @@ msgstr ""
 "Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
 "Language-Team: Japanese <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:84
 msgid "&Appearance"
-msgstr "外観(&A)"
+msgstr "å¤è¦³(&A)"
 
 #: main.cpp:92
 msgid "&Background"
-msgstr "背景(&B)"
+msgstr "èæ¯(&B)"
 
 #: main.cpp:95
 msgid "&Users"
-msgstr "ユーザ(&U)"
+msgstr "ã¦ã¼ã¶(&U)"
 
 #: main.cpp:98
 msgid "&Sessions"
-msgstr "セッション(&S)"
+msgstr "ã»ãã·ã§ã³(&S)"
 
 #: main.cpp:103
 msgid ""
@@ -40,35 +40,35 @@ msgstr ""
 
 #: main.cpp:142
 msgid "KDM Configuration"
-msgstr "KDM設定"
+msgstr "KDMè¨­å®"
 
 #: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"すみません、でもあなたはKDM設定ファイルを\n"
-"読み書きする許可が与えられていません。"
+"ãã¿ã¾ãããã§ãããªãã¯KDMè¨­å®ãã¡ã¤ã«ã\n"
+"èª­ã¿æ¸ãããè¨±å¯ãä¸ãããã¦ãã¾ããã"
 
 #: main.cpp:154
 msgid "Missing privileges"
-msgstr "権利が失われています"
+msgstr "æ¨©å©ãå¤±ããã¦ãã¾ã"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "挨拶の文字列"
+msgstr "æ¨æ¶ã®æå­å"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
-msgstr "KDMロゴ:"
+msgstr "KDMã­ã´:"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
-msgstr "クリックするか画像をドロップしてください"
+msgstr "ã¯ãªãã¯ãããç»åããã­ãããã¦ãã ãã"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "GUIスタイル:"
+msgstr "GUIã¹ã¿ã¤ã«:"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
@@ -76,22 +76,22 @@ msgstr "Motif"
 
 #: kdm-appear.cpp:117
 msgid "Windows"
-msgstr "ウィンドウ"
+msgstr "ã¦ã£ã³ãã¦"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr "言語"
+msgstr "è¨èª"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr "言語:"
+msgstr "è¨èª:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"画像の読み込み中にエラーが発生しました:\n"
+"ç»åã®èª­ã¿è¾¼ã¿ä¸­ã«ã¨ã©ã¼ãçºçãã¾ãã:\n"
 ">"
 
 #: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
@@ -101,14 +101,14 @@ msgstr "<"
 #: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
 #: kdm-users.cpp:279
 msgid "ERROR"
-msgstr "エラー"
+msgstr "ã¨ã©ã¼"
 
 #: kdm-appear.cpp:186 kdm-users.cpp:194
 msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"画像の保存中にエラーが発生しました:\n"
+"ç»åã®ä¿å­ä¸­ã«ã¨ã©ã¼ãçºçãã¾ãã:\n"
 ">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
@@ -121,7 +121,7 @@ msgid ""
 "does not seem to be an image file"
 msgstr ""
 "\n"
-"は画像ファイルではないようです"
+"ã¯ç»åãã¡ã¤ã«ã§ã¯ãªãããã§ã"
 
 #: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
@@ -129,11 +129,11 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"これらの拡張師のファイルを使ってください。\n"
+"ãããã®æ¡å¼µå¸«ã®ãã¡ã¤ã«ãä½¿ã£ã¦ãã ããã\n"
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
-msgstr "不適切なファイル拡張子"
+msgstr "ä¸é©åãªãã¡ã¤ã«æ¡å¼µå­"
 
 #: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
@@ -141,188 +141,188 @@ msgid ""
 "It will not be saved..."
 msgstr ""
 "<\n"
-"保存されないでしょう..."
+"ä¿å­ãããªãã§ããã..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "フォントを選択"
+msgstr "ãã©ã³ããé¸æ"
 
 #: kdm-font.cpp:50
 msgid "Example"
-msgstr "例"
+msgstr "ä¾"
 
 #: kdm-font.cpp:52
 msgid "Change font..."
-msgstr "フォントを変更..."
+msgstr "ãã©ã³ããå¤æ´..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
-msgstr "挨拶"
+msgstr "æ¨æ¶"
 
 #: kdm-font.cpp:58
 msgid "Fail"
-msgstr "失敗"
+msgstr "å¤±æ"
 
 #: kdm-font.cpp:59
 msgid "Standard"
-msgstr "標準"
+msgstr "æ¨æº"
 
 #: kdm-font.cpp:157
 msgid "Greeting font"
-msgstr "挨拶用フォント"
+msgstr "æ¨æ¶ç¨ãã©ã³ã"
 
 #: kdm-font.cpp:161
 msgid "Fail font"
-msgstr "失敗時用フォント"
+msgstr "å¤±ææç¨ãã©ã³ã"
 
 #: kdm-font.cpp:165
 msgid "Standard font"
-msgstr "標準フォント"
+msgstr "æ¨æºãã©ã³ã"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr "プレビュー"
+msgstr "ãã¬ãã¥ã¼"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
-msgstr "色"
+msgstr "è²"
 
 #: kdm-bgnd.cpp:101
 msgid "Solid Color"
-msgstr "単色"
+msgstr "åè²"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr "水平方向に混ぜる"
+msgstr "æ°´å¹³æ¹åã«æ··ãã"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr "垂直方向に混ぜる"
+msgstr "åç´æ¹åã«æ··ãã"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
-msgstr "壁紙"
+msgstr "å£ç´"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr "なし"
+msgstr "ãªã"
 
 #: kdm-bgnd.cpp:176
 msgid "Tile"
-msgstr "タイル"
+msgstr "ã¿ã¤ã«"
 
 #: kdm-bgnd.cpp:181
 msgid "Center"
-msgstr "中央"
+msgstr "ä¸­å¤®"
 
 #: kdm-bgnd.cpp:186
 msgid "Scale"
-msgstr "スケール"
+msgstr "ã¹ã±ã¼ã«"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr "左上"
+msgstr "å·¦ä¸"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr "右上"
+msgstr "å³ä¸"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr "左下"
+msgstr "å·¦ä¸"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr "右下"
+msgstr "å³ä¸"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr "ファンシー"
+msgstr "ãã¡ã³ã·ã¼"
 
 #: kdm-users.cpp:48
 msgid "All users"
-msgstr "全てのユーザ"
+msgstr "å¨ã¦ã®ã¦ã¼ã¶"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "選択されたユーザ"
+msgstr "é¸æãããã¦ã¼ã¶"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "非表示ユーザ"
+msgstr "éè¡¨ç¤ºã¦ã¼ã¶"
 
 #: kdm-users.cpp:79
 msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
-"選択された\n"
-"ユーザだけを表示"
+"é¸æããã\n"
+"ã¦ã¼ã¶ã ããè¡¨ç¤º"
 
 #: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"非表示ユーザ以外の\n"
-" 全てのユーザを表示"
+"éè¡¨ç¤ºã¦ã¼ã¶ä»¥å¤ã®\n"
+" å¨ã¦ã®ã¦ã¼ã¶ãè¡¨ç¤º"
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "ユーザを表示"
+msgstr "ã¦ã¼ã¶ãè¡¨ç¤º"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
-msgstr "ユーザをソート"
+msgstr "ã¦ã¼ã¶ãã½ã¼ã"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
-msgstr "ユーザが選択されていません"
+msgstr "ã¦ã¼ã¶ãé¸æããã¦ãã¾ãã"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
-msgstr "この画像を標準画像としますか？"
+msgstr "ãã®ç»åãæ¨æºç»åã¨ãã¾ããï¼"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "シャットダウンを許可"
+msgstr "ã·ã£ãããã¦ã³ãè¨±å¯"
 
 #: kdm-sess.cpp:57
 msgid "All"
-msgstr "全て"
+msgstr "å¨ã¦"
 
 #: kdm-sess.cpp:58
 msgid "Root Only"
-msgstr "Rootだけ"
+msgstr "Rootã ã"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "コンソールだけ"
+msgstr "ã³ã³ã½ã¼ã«ã ã"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
-msgstr "コマンド"
+msgstr "ã³ãã³ã"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "シャットダウン"
+msgstr "ã·ã£ãããã¦ã³"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
-msgstr "再起動"
+msgstr "åèµ·å"
 
 #: kdm-sess.cpp:77
 msgid "Session types"
-msgstr "セッションタイプ"
+msgstr "ã»ãã·ã§ã³ã¿ã¤ã"
 
 #: kdm-sess.cpp:79
 msgid "New type"
-msgstr "新しいタイプ"
+msgstr "æ°ããã¿ã¤ã"
 
 #: kdm-sess.cpp:89
 msgid "Available types"
-msgstr "利用可能なタイプ"
+msgstr "å©ç¨å¯è½ãªã¿ã¤ã"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr "名前がない！"
+msgstr "ååããªãï¼"

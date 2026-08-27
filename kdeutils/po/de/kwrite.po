@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 
@@ -16,7 +16,7 @@ msgstr "Normal:"
 
 #: highlight.cpp:1725 kwdialog.cpp:495
 msgid "Selected:"
-msgstr "Ausgewählt:"
+msgstr "AusgewÃ¤hlt:"
 
 #: highlight.cpp:1732
 msgid "Bold"
@@ -28,7 +28,7 @@ msgstr "Familie:"
 
 #: highlight.cpp:1793
 msgid "Size:"
-msgstr "Größe:"
+msgstr "GrÃ¶ÃŸe:"
 
 #: highlight.cpp:1891
 msgid "Default Item Styles"
@@ -88,15 +88,15 @@ msgstr "Sie haben ein Verzeichnis angegeben."
 
 #: kwview.cpp:1148
 msgid "You do not have read permission to this file"
-msgstr "Sie haben kein Leserecht für die Datei."
+msgstr "Sie haben kein Leserecht fÃ¼r die Datei."
 
 #: kwview.cpp:1164 kwview.cpp:1194
 msgid "An Error occured while trying to open this Document"
-msgstr "Es gab einen Fehler beim Öffnen des Dokuments."
+msgstr "Es gab einen Fehler beim Ã–ffnen des Dokuments."
 
 #: kwview.cpp:1178
 msgid "You do not have write permission to this file"
-msgstr "Sie haben kein Schreibrecht für diese Datei."
+msgstr "Sie haben kein Schreibrecht fÃ¼r diese Datei."
 
 #: kwview.cpp:1231
 msgid "Loading..."
@@ -104,7 +104,7 @@ msgstr "Lade..."
 
 #: kwview.cpp:1239 kwview.cpp:1360
 msgid "Inserted"
-msgstr "Eingefügt"
+msgstr "EingefÃ¼gt"
 
 #: kwview.cpp:1244 kwview.cpp:1369
 msgid "Read"
@@ -117,7 +117,7 @@ msgid ""
 "Please wait until it has finished\n"
 "Alternatively stop the running one."
 msgstr ""
-"KWrite wartet bereits auf den Abschluß\n"
+"KWrite wartet bereits auf den AbschluÃŸ\n"
 "eines Internet Jobs. Bitte warten Sie,\n"
 "bis er abgeschlossen ist oder versuchen\n"
 "Sie, den laufenden Job zu stoppen."
@@ -143,7 +143,7 @@ msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Das aktuelle Dokument wurde geändert.\n"
+"Das aktuelle Dokument wurde geÃ¤ndert.\n"
 "Wollen Sie es speichern?"
 
 #: kwview.cpp:1419
@@ -152,11 +152,11 @@ msgid ""
 "Open a new document anyways?"
 msgstr ""
 "Konnte Dokument nicht sichern.\n"
-"Trotzdem ein neues Dokument öffnen?"
+"Trotzdem ein neues Dokument Ã¶ffnen?"
 
 #: kwview.cpp:1466
 msgid "No changes need to be saved"
-msgstr "Es gibt keine Änderungen zu sichern."
+msgstr "Es gibt keine Ã„nderungen zu sichern."
 
 #: kwview.cpp:1487
 msgid ""
@@ -164,7 +164,7 @@ msgid ""
 "Do you want to overwrite it?"
 msgstr ""
 "Ein Dokument mit diesem Namen existiert bereits.\n"
-"Möchten Sie es überschreiben?"
+"MÃ¶chten Sie es Ã¼berschreiben?"
 
 #: kwview.cpp:1690 kwview.cpp:1878
 msgid "End of document reached"
@@ -208,11 +208,11 @@ msgstr "&Ersetzen mit:"
 
 #: kwdialog.cpp:57
 msgid "&Case Sensitive"
-msgstr "&Groß-/Kleinschreibung"
+msgstr "&GroÃŸ-/Kleinschreibung"
 
 #: kwdialog.cpp:61
 msgid "&Whole Words Only"
-msgstr "Nur &ganze Wörter"
+msgstr "Nur &ganze WÃ¶rter"
 
 #: kwdialog.cpp:65
 msgid "&From Cursor"
@@ -220,11 +220,11 @@ msgstr "Ab &Cursorposition"
 
 #: kwdialog.cpp:74
 msgid "Find &Backwards"
-msgstr "&Rückwärts suchen"
+msgstr "&RÃ¼ckwÃ¤rts suchen"
 
 #: kwdialog.cpp:78
 msgid "&Selected Text"
-msgstr "&Ausgewählter Text"
+msgstr "&AusgewÃ¤hlter Text"
 
 #: kwdialog.cpp:91
 msgid "&Prompt On Replace"
@@ -256,11 +256,11 @@ msgstr "Optionen bearbeiten"
 
 #: kwdialog.cpp:295
 msgid "Auto &Indent"
-msgstr "Autom. ein&rücken"
+msgstr "Autom. ein&rÃ¼cken"
 
 #: kwdialog.cpp:297
 msgid "&Backspace Indent"
-msgstr "&Ausrückung"
+msgstr "&AusrÃ¼ckung"
 
 #: kwdialog.cpp:299
 msgid "&Word Wrap"
@@ -284,7 +284,7 @@ msgstr "&Automatische Klammern"
 
 #: kwdialog.cpp:321
 msgid "Select Options"
-msgstr "Optionen auswählen"
+msgstr "Optionen auswÃ¤hlen"
 
 #: kwdialog.cpp:322
 msgid "&Persistent Selections"
@@ -300,7 +300,7 @@ msgstr "&Vertikale Auswahl"
 
 #: kwdialog.cpp:328
 msgid "&Delete On Input"
-msgstr "Beim &Eingeben löschen"
+msgstr "Beim &Eingeben lÃ¶schen"
 
 #: kwdialog.cpp:330
 msgid "&Toggle Old"
@@ -316,7 +316,7 @@ msgstr "Tabulator-Breite"
 
 #: kwdialog.cpp:358
 msgid "Undo steps:"
-msgstr "Anzahl Rückgängig:"
+msgstr "Anzahl RÃ¼ckgÃ¤ngig:"
 
 #: kwdialog.cpp:479
 msgid "Background:"
@@ -332,7 +332,7 @@ msgstr "Gefunden:"
 
 #: kwdialog.cpp:511
 msgid "Selected + Found:"
-msgstr "Ausgewählt + Gefunden:"
+msgstr "AusgewÃ¤hlt + Gefunden:"
 
 #: toplevel.cpp:102
 msgid "Message"
@@ -343,8 +343,8 @@ msgid ""
 "This Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"Dieses Dokument wurde geändert.\n"
-"Möchten Sie es speichern?"
+"Dieses Dokument wurde geÃ¤ndert.\n"
+"MÃ¶chten Sie es speichern?"
 
 #: toplevel.cpp:166
 msgid "Ne&w..."
@@ -352,11 +352,11 @@ msgstr "&Neu..."
 
 #: toplevel.cpp:168
 msgid "&Insert..."
-msgstr "Datei &einfügen..."
+msgstr "Datei &einfÃ¼gen..."
 
 #: toplevel.cpp:169
 msgid "Open Recen&t"
-msgstr "&Letzte öffnen"
+msgstr "&Letzte Ã¶ffnen"
 
 #: toplevel.cpp:180
 msgid "New &Window"
@@ -384,7 +384,7 @@ msgstr "&Gehe zu Zeile..."
 
 #: toplevel.cpp:195
 msgid "U&ndo"
-msgstr "&Rückgängig"
+msgstr "&RÃ¼ckgÃ¤ngig"
 
 #: toplevel.cpp:196
 msgid "R&edo"
@@ -392,19 +392,19 @@ msgstr "Wieder&herstellen"
 
 #: toplevel.cpp:198
 msgid "&Indent"
-msgstr "E&inrücken"
+msgstr "E&inrÃ¼cken"
 
 #: toplevel.cpp:199
 msgid "Uninden&t"
-msgstr "Einrücken rück&gängig"
+msgstr "EinrÃ¼cken rÃ¼ck&gÃ¤ngig"
 
 #: toplevel.cpp:203
 msgid "&Select All"
-msgstr "&Alle auswählen"
+msgstr "&Alle auswÃ¤hlen"
 
 #: toplevel.cpp:204
 msgid "&Deselect All"
-msgstr "&Auswahl rückgängig"
+msgstr "&Auswahl rÃ¼ckgÃ¤ngig"
 
 #: toplevel.cpp:205
 msgid "In&vert Selection"
@@ -416,11 +416,11 @@ msgstr "&Lesezeichen setzen..."
 
 #: toplevel.cpp:211
 msgid "&Add Bookmark"
-msgstr "Lesezeichen &hinzufügen"
+msgstr "Lesezeichen &hinzufÃ¼gen"
 
 #: toplevel.cpp:212
 msgid "&Clear Bookmarks"
-msgstr "Lesezeichen &löschen"
+msgstr "Lesezeichen &lÃ¶schen"
 
 #: toplevel.cpp:224
 msgid "Set Highlight"
@@ -478,7 +478,7 @@ msgstr "Neues Dokument"
 
 #: toplevel.cpp:295
 msgid "Open Document"
-msgstr "Dokument öffnen"
+msgstr "Dokument Ã¶ffnen"
 
 #: toplevel.cpp:299
 msgid "Save Document"

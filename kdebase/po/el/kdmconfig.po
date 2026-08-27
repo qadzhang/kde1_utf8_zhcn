@@ -10,60 +10,60 @@ msgstr ""
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:84
 msgid "&Appearance"
-msgstr "Μορφή"
+msgstr "ΓΓ―Γ±Γ¶Γ"
 
 #: main.cpp:92
 msgid "&Background"
-msgstr "Φόντο"
+msgstr "Γ–ΓΌΓ­Γ΄Γ―"
 
 #: main.cpp:95
 msgid "&Users"
-msgstr "Χρήστες"
+msgstr "Γ—Γ±ΓΓ³Γ΄Γ¥Γ²"
 
 #: main.cpp:98
 msgid "&Sessions"
-msgstr "Συνδέσεις"
+msgstr "Γ“ΓµΓ­Γ¤ΓΓ³Γ¥Γ©Γ²"
 
 #: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
-"Σύνταξη: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+"Γ“Γ½Γ­Γ΄Γ΅Γ®Γ§: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
-msgstr "Ρυθμίσεις KDM"
+msgstr "Γ‘ΓµΓ¨Γ¬ΓΓ³Γ¥Γ©Γ² KDM"
 
 #: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr "Συγγνώμη, αλλά δεν έχετε πρόσβαση στο αρχείο ρυθμίσεων του KDM."
+msgstr "Γ“ΓµΓ£Γ£Γ­ΓΎΓ¬Γ§, Γ΅Γ«Γ«Γ Γ¤Γ¥Γ­ ΓΓ·Γ¥Γ΄Γ¥ Γ°Γ±ΓΌΓ³ΓΆΓ΅Γ³Γ§ Γ³Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ― Γ±ΓµΓ¨Γ¬ΓΓ³Γ¥ΓΉΓ­ Γ΄Γ―Γµ KDM."
 
 #: main.cpp:154
 msgid "Missing privileges"
-msgstr "Ελλιπή δικαιώματα πρόσβασης"
+msgstr "Γ…Γ«Γ«Γ©Γ°Γ Γ¤Γ©ΓªΓ΅Γ©ΓΎΓ¬Γ΅Γ΄Γ΅ Γ°Γ±ΓΌΓ³ΓΆΓ΅Γ³Γ§Γ²"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Χαιρετισμός:"
+msgstr "Γ—Γ΅Γ©Γ±Γ¥Γ΄Γ©Γ³Γ¬ΓΌΓ²:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
-msgstr "Σήμα του KDM:"
+msgstr "Γ“ΓΓ¬Γ΅ Γ΄Γ―Γµ KDM:"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
-msgstr "Κάντε κλικ ή τοποθετήστε μια εικόνα εδώ"
+msgstr "ΓΓΓ­Γ΄Γ¥ ΓªΓ«Γ©Γª Γ Γ΄Γ―Γ°Γ―Γ¨Γ¥Γ΄ΓΓ³Γ΄Γ¥ Γ¬Γ©Γ΅ Γ¥Γ©ΓªΓΌΓ­Γ΅ Γ¥Γ¤ΓΎ"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "Τύπος γραφικού περιβάλλοντος:"
+msgstr "Γ”Γ½Γ°Γ―Γ² Γ£Γ±Γ΅Γ¶Γ©ΓªΓ―Γ½ Γ°Γ¥Γ±Γ©ΓΆΓΓ«Γ«Γ―Γ­Γ΄Γ―Γ²:"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
@@ -86,7 +86,7 @@ msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Προκλήθηκε σφάλμα κατά την φόρτωση της εικόνας:\n"
+"ΓΓ±Γ―ΓªΓ«ΓΓ¨Γ§ΓªΓ¥ Γ³Γ¶ΓΓ«Γ¬Γ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ Γ¶ΓΌΓ±Γ΄ΓΉΓ³Γ§ Γ΄Γ§Γ² Γ¥Γ©ΓªΓΌΓ­Γ΅Γ²:\n"
 ">"
 
 #: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
@@ -96,19 +96,19 @@ msgstr "<"
 #: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
 #: kdm-users.cpp:279
 msgid "ERROR"
-msgstr "ΣΦΑΛΜΑ"
+msgstr "Γ“Γ–ΓΓ‹ΓΓ"
 
 #: kdm-appear.cpp:186 kdm-users.cpp:194
 msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Προκλήθηκε σφάλμα κατά την αποθήκευση της εικόνας:\n"
+"ΓΓ±Γ―ΓªΓ«ΓΓ¨Γ§ΓªΓ¥ Γ³Γ¶ΓΓ«Γ¬Γ΅ ΓªΓ΅Γ΄Γ Γ΄Γ§Γ­ Γ΅Γ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§ Γ΄Γ§Γ² Γ¥Γ©ΓªΓΌΓ­Γ΅Γ²:\n"
 ">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
-msgstr "Συγγνώμη, αλλά το αρχείο \n"
+msgstr "Γ“ΓµΓ£Γ£Γ­ΓΎΓ¬Γ§, Γ΅Γ«Γ«Γ Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ― \n"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
@@ -116,7 +116,7 @@ msgid ""
 "does not seem to be an image file"
 msgstr ""
 "\n"
-"δεν φαίνεται να είναι αρχείο εικόνας"
+"Γ¤Γ¥Γ­ Γ¶Γ΅ΓΓ­Γ¥Γ΄Γ΅Γ© Γ­Γ΅ Γ¥ΓΓ­Γ΅Γ© Γ΅Γ±Γ·Γ¥ΓΓ― Γ¥Γ©ΓªΓΌΓ­Γ΅Γ²"
 
 #: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
@@ -124,11 +124,11 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Παρακαλώ χρησιμοποιήστε αρχεία με τις παρακάτω επεκτάσεις\n"
+"ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ·Γ±Γ§Γ³Γ©Γ¬Γ―Γ°Γ―Γ©ΓΓ³Γ΄Γ¥ Γ΅Γ±Γ·Γ¥ΓΓ΅ Γ¬Γ¥ Γ΄Γ©Γ² Γ°Γ΅Γ±Γ΅ΓªΓΓ΄ΓΉ Γ¥Γ°Γ¥ΓªΓ΄ΓΓ³Γ¥Γ©Γ²\n"
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
-msgstr "Λανθασμένη επέκταση αρχείου"
+msgstr "Γ‹Γ΅Γ­Γ¨Γ΅Γ³Γ¬ΓΓ­Γ§ Γ¥Γ°ΓΓªΓ΄Γ΅Γ³Γ§ Γ΅Γ±Γ·Γ¥ΓΓ―Γµ"
 
 #: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
@@ -136,48 +136,48 @@ msgid ""
 "It will not be saved..."
 msgstr ""
 "<\n"
-"Δεν θα αποθηκευτεί..."
+"Γ„Γ¥Γ­ Γ¨Γ΅ Γ΅Γ°Γ―Γ¨Γ§ΓªΓ¥ΓµΓ΄Γ¥Γ..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "Επιλογή γραμματοσειρών"
+msgstr "Γ…Γ°Γ©Γ«Γ―Γ£Γ Γ£Γ±Γ΅Γ¬Γ¬Γ΅Γ΄Γ―Γ³Γ¥Γ©Γ±ΓΎΓ­"
 
 #: kdm-font.cpp:50
 #, fuzzy
 msgid "Example"
-msgstr "Παράδειγμα:"
+msgstr "ΓΓ΅Γ±ΓΓ¤Γ¥Γ©Γ£Γ¬Γ΅:"
 
 #: kdm-font.cpp:52
 #, fuzzy
 msgid "Change font..."
-msgstr "Αλλαγή γραμματοσειράς"
+msgstr "ΓΓ«Γ«Γ΅Γ£Γ Γ£Γ±Γ΅Γ¬Γ¬Γ΅Γ΄Γ―Γ³Γ¥Γ©Γ±ΓΓ²"
 
 #: kdm-font.cpp:57
 msgid "Greeting"
-msgstr "Χαιρετισμός"
+msgstr "Γ—Γ΅Γ©Γ±Γ¥Γ΄Γ©Γ³Γ¬ΓΌΓ²"
 
 #: kdm-font.cpp:58
 msgid "Fail"
-msgstr "Αποτυχία"
+msgstr "ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅"
 
 #: kdm-font.cpp:59
 msgid "Standard"
-msgstr "Κανονικό"
+msgstr "ΓΓ΅Γ­Γ―Γ­Γ©ΓªΓΌ"
 
 #: kdm-font.cpp:157
 #, fuzzy
 msgid "Greeting font"
-msgstr "Χαιρετισμός"
+msgstr "Γ—Γ΅Γ©Γ±Γ¥Γ΄Γ©Γ³Γ¬ΓΌΓ²"
 
 #: kdm-font.cpp:161
 #, fuzzy
 msgid "Fail font"
-msgstr "Αποτυχία"
+msgstr "ΓΓ°Γ―Γ΄ΓµΓ·ΓΓ΅"
 
 #: kdm-font.cpp:165
 #, fuzzy
 msgid "Standard font"
-msgstr "Κανονικό"
+msgstr "ΓΓ΅Γ­Γ―Γ­Γ©ΓªΓΌ"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
@@ -185,12 +185,12 @@ msgstr ""
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
-msgstr "Χρώμα"
+msgstr "Γ—Γ±ΓΎΓ¬Γ΅"
 
 #: kdm-bgnd.cpp:101
 #, fuzzy
 msgid "Solid Color"
-msgstr "Χρώμα"
+msgstr "Γ—Γ±ΓΎΓ¬Γ΅"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
@@ -202,26 +202,26 @@ msgstr ""
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
-msgstr "Ταπετσαρία"
+msgstr "Γ”Γ΅Γ°Γ¥Γ΄Γ³Γ΅Γ±ΓΓ΅"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr "σε κανέναν"
+msgstr "Γ³Γ¥ ΓªΓ΅Γ­ΓΓ­Γ΅Γ­"
 
 #: kdm-bgnd.cpp:176
 #, fuzzy
 msgid "Tile"
-msgstr "Σε παράταξη"
+msgstr "Γ“Γ¥ Γ°Γ΅Γ±ΓΓ΄Γ΅Γ®Γ§"
 
 #: kdm-bgnd.cpp:181
 #, fuzzy
 msgid "Center"
-msgstr "Κεντραρισμένο"
+msgstr "ΓΓ¥Γ­Γ΄Γ±Γ΅Γ±Γ©Γ³Γ¬ΓΓ­Γ―"
 
 #: kdm-bgnd.cpp:186
 #, fuzzy
 msgid "Scale"
-msgstr "Προσαρμογή μεγέθους"
+msgstr "ΓΓ±Γ―Γ³Γ΅Γ±Γ¬Γ―Γ£Γ Γ¬Γ¥Γ£ΓΓ¨Γ―ΓµΓ²"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
@@ -245,95 +245,95 @@ msgstr ""
 
 #: kdm-users.cpp:48
 msgid "All users"
-msgstr "Όλοι οι χρήστες"
+msgstr "ΒΌΓ«Γ―Γ© Γ―Γ© Γ·Γ±ΓΓ³Γ΄Γ¥Γ²"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "Επιλεγμένοι χρήστες"
+msgstr "Γ…Γ°Γ©Γ«Γ¥Γ£Γ¬ΓΓ­Γ―Γ© Γ·Γ±ΓΓ³Γ΄Γ¥Γ²"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "Αόρατοι χρήστες"
+msgstr "ΓΓΌΓ±Γ΅Γ΄Γ―Γ© Γ·Γ±ΓΓ³Γ΄Γ¥Γ²"
 
 #: kdm-users.cpp:79
 msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
-"Να εμφανιστουν μόνο\n"
-"οι επιλεγμένοι χρήστες"
+"ΓΓ΅ Γ¥Γ¬Γ¶Γ΅Γ­Γ©Γ³Γ΄Γ―ΓµΓ­ Γ¬ΓΌΓ­Γ―\n"
+"Γ―Γ© Γ¥Γ°Γ©Γ«Γ¥Γ£Γ¬ΓΓ­Γ―Γ© Γ·Γ±ΓΓ³Γ΄Γ¥Γ²"
 
 #: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Να εμφανιστούν όλοι οι χρήστες\n"
-" εκτός από τους αόρατους χρήστες"
+"ΓΓ΅ Γ¥Γ¬Γ¶Γ΅Γ­Γ©Γ³Γ΄Γ―Γ½Γ­ ΓΌΓ«Γ―Γ© Γ―Γ© Γ·Γ±ΓΓ³Γ΄Γ¥Γ²\n"
+" Γ¥ΓªΓ΄ΓΌΓ² Γ΅Γ°ΓΌ Γ΄Γ―ΓµΓ² Γ΅ΓΌΓ±Γ΅Γ΄Γ―ΓµΓ² Γ·Γ±ΓΓ³Γ΄Γ¥Γ²"
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "Εμφάνιση χρηστών"
+msgstr "Γ…Γ¬Γ¶ΓΓ­Γ©Γ³Γ§ Γ·Γ±Γ§Γ³Γ΄ΓΎΓ­"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
-msgstr "Ταξινόμηση χρηστών"
+msgstr "Γ”Γ΅Γ®Γ©Γ­ΓΌΓ¬Γ§Γ³Γ§ Γ·Γ±Γ§Γ³Γ΄ΓΎΓ­"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
-msgstr "Δεν έχει επιλεγεί χρήστης"
+msgstr "Γ„Γ¥Γ­ ΓΓ·Γ¥Γ© Γ¥Γ°Γ©Γ«Γ¥Γ£Γ¥Γ Γ·Γ±ΓΓ³Γ΄Γ§Γ²"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
-msgstr "Να σωθεί η εικόνα για εξ ορισμού χρήση;"
+msgstr "ΓΓ΅ Γ³ΓΉΓ¨Γ¥Γ Γ§ Γ¥Γ©ΓªΓΌΓ­Γ΅ Γ£Γ©Γ΅ Γ¥Γ® Γ―Γ±Γ©Γ³Γ¬Γ―Γ½ Γ·Γ±ΓΓ³Γ§;"
 
 #: kdm-sess.cpp:52
 #, fuzzy
 msgid "Allow to shutdown"
-msgstr "Κλείσιμο συστήματος επιτρέπεται:"
+msgstr "ΓΓ«Γ¥ΓΓ³Γ©Γ¬Γ― Γ³ΓµΓ³Γ΄ΓΓ¬Γ΅Γ΄Γ―Γ² Γ¥Γ°Γ©Γ΄Γ±ΓΓ°Γ¥Γ΄Γ΅Γ©:"
 
 #: kdm-sess.cpp:57
 msgid "All"
-msgstr "σε όλους"
+msgstr "Γ³Γ¥ ΓΌΓ«Γ―ΓµΓ²"
 
 #: kdm-sess.cpp:58
 msgid "Root Only"
-msgstr "μόνο στον root"
+msgstr "Γ¬ΓΌΓ­Γ― Γ³Γ΄Γ―Γ­ root"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "μόνο από κονσόλα"
+msgstr "Γ¬ΓΌΓ­Γ― Γ΅Γ°ΓΌ ΓªΓ―Γ­Γ³ΓΌΓ«Γ΅"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
-msgstr "Εντολές"
+msgstr "Γ…Γ­Γ΄Γ―Γ«ΓΓ²"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "Κλείσιμο"
+msgstr "ΓΓ«Γ¥ΓΓ³Γ©Γ¬Γ―"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
-msgstr "Επανεκκίνηση"
+msgstr "Γ…Γ°Γ΅Γ­Γ¥ΓªΓªΓΓ­Γ§Γ³Γ§"
 
 #: kdm-sess.cpp:77
 msgid "Session types"
-msgstr "Τύποι σύνδεσης"
+msgstr "Γ”Γ½Γ°Γ―Γ© Γ³Γ½Γ­Γ¤Γ¥Γ³Γ§Γ²"
 
 #: kdm-sess.cpp:79
 msgid "New type"
-msgstr "Νέος τύπος"
+msgstr "ΓΓΓ―Γ² Γ΄Γ½Γ°Γ―Γ²"
 
 #: kdm-sess.cpp:89
 msgid "Available types"
-msgstr "Διαθέσιμοι τύποι"
+msgstr "Γ„Γ©Γ΅Γ¨ΓΓ³Γ©Γ¬Γ―Γ© Γ΄Γ½Γ°Γ―Γ©"
 
 #: klangcombo.cpp:133
 msgid "without name!"
 msgstr ""
 
 #~ msgid "&Fonts"
-#~ msgstr "Γραμματοσειρές"
+#~ msgstr "ΓƒΓ±Γ΅Γ¬Γ¬Γ΅Γ΄Γ―Γ³Γ¥Γ©Γ±ΓΓ²"
 
 #~ msgid "Appearance"
-#~ msgstr "Μορφή"
+#~ msgstr "ΓΓ―Γ±Γ¶Γ"
