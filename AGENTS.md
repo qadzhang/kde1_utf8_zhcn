@@ -172,19 +172,19 @@ int qt_mb_text_width( const char *s, int len )
 - [x] 源码就位与版本考证（确认 KDE 1.1.2 为系列终版）
 - [x] 中文支持源码分析（结论固化于 README.md「中文支持」一节）
 - [x] 项目文档体系建立（AGENTS.md / README.md / CHANGELOG.md）
-- [ ] 依赖安装与全量编译跑通（英文桌面）
-- [ ] 路线乙补丁：Qt1 多字节渲染（qfont_x11 / qpainter 热点函数 + fontconfig/Xft 字体体系，与当今 KDE/XFCE 一致）
-- [ ] Qt1 剪贴板补丁：增加 UTF8_STRING selection target，使 KDE1 应用与现代应用（浏览器、现代 Qt/GTK）可双向复制粘贴中文
-- [ ] 全面 UTF-8 融合补丁：不止编辑部件——Qt 内核所有字节级文本处理（光标/选区/截断/字符计数/宽度测量/对齐）与各模块自绘文本及字符串处理路径（kfm、kpanel、kvt、各应用）全面按 UTF-8 字符边界接入，使 KDE 1 整体完美运行于 UTF-8 系统（见 §1 目标 7）
-- [ ] po 翻译文件转 UTF-8 并验证显示
-- [ ] XIM 输入通道验证
-- [ ] fcitx5 / fcitx 输入法稳定运行验证（经 XIM 通道接入，两代框架均须通过，见 §1 目标 2）
-- [ ] kvt 终端中文化：kvt 不经 Qt 渲染路径（基于 xvt 自绘），须单独实现 UTF-8 终端渲染；kfm/kdehelp 中的自绘文本路径一并确认被渲染补丁覆盖
-- [ ] 图形登录接入：注册 `/usr/share/xsessions/kde1.desktop` 会话入口并适配 startkde 在显示管理器环境下运行，lightdm 会话菜单可直接进入 KDE 1，不依赖手工 startx（见 §1 目标 6）
-- [ ] 事件音效接入现代音频栈：解决 `/dev/dsp`（OSS）在 Debian 12 上失效的问题（padsp/osspd 兼容层或原生补丁），提示音经 PipeWire/PulseAudio 正常发声（见 §1 目标 6）
-- [ ] kfm 浏览器内核升级：以 WebKit2GTK 为新内核——kfm 窗口内实现 XEmbed 容器（kfm 侧手写，约一两百行 C）挂载 WebKit 视图（GtkPlug 一侧现成），与 1999 原始渲染器构成新旧双内核可切换；CEF（Chromium）备选，Firefox/Gecko 已排除；实施时先做最小嵌入原型验证，再动 kfm 本体（见 §1 目标 3）
+- [x] 依赖安装与全量编译跑通（英文桌面）
+- [x] 路线乙补丁：Qt1 多字节渲染（qfont_x11 / qpainter 热点函数 + fontconfig/Xft 字体体系，与当今 KDE/XFCE 一致）
+- [x] Qt1 剪贴板补丁：增加 UTF8_STRING selection target，使 KDE1 应用与现代应用（浏览器、现代 Qt/GTK）可双向复制粘贴中文
+- [x] 全面 UTF-8 融合补丁：不止编辑部件——Qt 内核所有字节级文本处理（光标/选区/截断/字符计数/宽度测量/对齐）与各模块自绘文本及字符串处理路径（kfm、kpanel、kvt、各应用）全面按 UTF-8 字符边界接入，使 KDE 1 整体完美运行于 UTF-8 系统（见 §1 目标 7）
+- [x] po 翻译文件转 UTF-8 并验证显示
+- [x] XIM 输入通道验证
+- [x] fcitx5 / fcitx 输入法稳定运行验证（经 XIM 通道接入，两代框架均须通过，见 §1 目标 2）
+- [x] kvt 终端中文化：kvt 不经 Qt 渲染路径（基于 xvt 自绘），须单独实现 UTF-8 终端渲染；kfm/kdehelp 中的自绘文本路径一并确认被渲染补丁覆盖
+- [x] 图形登录接入：注册 `/usr/share/xsessions/kde1.desktop` 会话入口并适配 startkde 在显示管理器环境下运行，lightdm 会话菜单可直接进入 KDE 1，不依赖手工 startx（见 §1 目标 6）
+- [x] 事件音效接入现代音频栈：解决 `/dev/dsp`（OSS）在 Debian 12 上失效的问题（padsp/osspd 兼容层或原生补丁），提示音经 PipeWire/PulseAudio 正常发声（见 §1 目标 6）
+- [x] kfm 浏览器内核升级：以 WebKit2GTK 为新内核——kfm 窗口内实现 XEmbed 容器（kfm 侧手写，约一两百行 C）挂载 WebKit 视图（GtkPlug 一侧现成），与 1999 原始渲染器构成新旧双内核可切换；CEF（Chromium）备选，Firefox/Gecko 已排除；实施时先做最小嵌入原型验证，再动 kfm 本体（见 §1 目标 3）
 - [ ] 界面全面中文化：补齐菜单/帮助/提示翻译，覆盖率与英文对齐；译法须上网核实通行译法并与当今 KDE 6 的 zh_CN 官方术语一致（见 §1 目标 4）
-- [ ] Debian 打包：按模块拆分核心包与可选包，产出源码包与二进制 .deb 包并分目录存放（dist/src/ 与 dist/deb/）；.deb 开箱即用——含 xsessions 会话入口、startkde 环境包装脚本（PATH/LD_LIBRARY_PATH/KDEDIR 自动设置）、moc-qt1 入口、运行时依赖声明；apt install 即装、lightdm 即现、apt remove 干净移除（见 §1 目标 5）
+- [x] Debian 打包：按模块拆分核心包与可选包，产出源码包与二进制 .deb 包并分目录存放（dist/src/ 与 dist/deb/）；.deb 开箱即用——含 xsessions 会话入口、startkde 环境包装脚本（PATH/LD_LIBRARY_PATH/KDEDIR 自动设置）、moc-qt1 入口、运行时依赖声明；apt install 即装、lightdm 即现、apt remove 干净移除（见 §1 目标 5）
 
 **暂缓项（明确延后，不纳入当前验收）：**
 

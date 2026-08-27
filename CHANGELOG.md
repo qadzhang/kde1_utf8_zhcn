@@ -2,6 +2,10 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-28
+
+- Debian 打包完成并经装/删/重装全流程验证：kde1-core（qt1+kdelibs+kdebase，9.1MB）/ kde1-apps（四应用模块，3.6MB）/ kde1 元包（xsessions 会话入口 + startkde-kde1 环境包装：KDEDIR/PATH/LD 自动设置、fcitx5/fcitx 自动拉起、padsp 音效转发、/usr/bin/moc-qt1 入口）分存 dist/deb，sdeb 源码包（orig/debian/dsc）存 dist/src；apt remove 零残留验证通过，重装为最终交付态。deb 安装后的系统级会话经 lightdm 等价路径实机验证：桌面图标全中文（个人文件/回收站/模板/自动启动/打印机）、fcitx5 托盘自动拉起、Xft 抗锯齿渲染正常。kfm 双内核集成完成（View 菜单/Ctrl+Shift+W/KFM_WEBENGINE 三入口 + kde1-webview XEmbed 嵌入，最小原型已验证 WebKit 渲染现代 HTTPS 站点）。kvt 中文显示、剪贴板 UTF8_STRING 协议、qutf8 编辑精度（17 项单测）此前均已落地。剩余差距如实记录：界面英文与中文的完全对齐仍有源码未标记 i18n 的存量串与 krn/kppp 等 po 缺口；kfm 双内核与 lightdm 真机菜单级交互待用户重启会话后最终确认。
+
 ## 2026-08-27
 
 - XIM 输入通道打通：QKeyEvent 新增 text() 承载输入法整段 UTF-8 提交（XmbLookupString 缓冲 16→64 字节），QLineEdit/QMultiLineEdit 整串插入；fcitx5（拼音 nihao→「你好」）与 fcitx 4.2.9.9（zhongwen→「中文」）两代框架经 XIM 向 Qt1 程序提交中文均实测通过。
