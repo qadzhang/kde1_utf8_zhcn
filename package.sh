@@ -46,6 +46,10 @@ done
 # ── 2. 组装内容树（增量 install，秒级完成）
 rm -rf "$PKGTMP"
 mkdir -p "$PKGTMP/core" "$PKGTMP/apps" "$OUTDEB" "$OUTSRC"
+# 链接期需经 LD_LIBRARY_PATH 找到 staging 里的间接依赖库（与 build.sh 同因：
+# kjots1 等程序链接时，libkfile.so 的间接依赖 libkfm.so.2 由此解析）
+LD_LIBRARY_PATH="$STAGING/usr/kde1/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH
 echo "=== 组装 core 树（qt1 + kdelibs + kdebase）"
 for i in qt1 kdelibs kdebase; do
     ( cd "$i/build" && make install DESTDIR="$PKGTMP/core" > /dev/null 2>&1 )
@@ -54,21 +58,23 @@ echo "=== 组装 apps 树（四个应用模块）"
 for i in kdegames kdeutils kdenetwork kdetoys; do
     ( cd "$i/build" && make install DESTDIR="$PKGTMP/apps" > /dev/null 2>&1 )
 done
+# 1999 年个别脚本被 install 成 005（属主无读权，如 kfmsu2），统一修复属主读写位
+chmod -R u+rwX "$PKGTMP/core" "$PKGTMP/apps"
 
-# ── 控制文件公共生成函数
-mkctrl() {  # $1=包名 $2=依赖 $3=推荐 $4=描述
+# ── 控制文件公共生成函数：$1=内容树目录名 $2=包名 $3=依赖 $4=推荐 $5=描述
+mkctrl() {
     local d="$PKGTMP/$1/DEBIAN"
     mkdir -p "$d"
     cat > "$d/control" << EOF
-Package: $1
+Package: $2
 Version: ${VERSION}-${REL}
 Architecture: amd64
 Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
 Section: x11
 Priority: optional
-Depends: $2
-Recommends: $3
-Description: $4
+Depends: $3
+Recommends: $4
+Description: $5
  The classic KDE 1.1.2 desktop (1999), restored to run natively on
  Debian 12 with full Simplified Chinese (UTF-8) support: fontconfig/Xft
  rendering, fcitx5/fcitx input via XIM, UTF-8 clipboard interop, and a
@@ -78,7 +84,7 @@ EOF
 
 # ── 3. kde1-core
 echo "=== 打包 kde1-core"
-mkctrl kde1-core \
+mkctrl core kde1-core \
     "libx11-6, libxext6, libxmu6, libxpm4, libjpeg62-turbo, libpng16-16, zlib1g, libtiff6, libxft2, libfontconfig1, libfreetype6, libwebkit2gtk-4.1-0" \
     "fonts-noto-cjk" \
     "KDE 1.1.2 core desktop (Qt 1.44, kdelibs, kdebase) - restored"
@@ -86,7 +92,7 @@ dpkg-deb --root-owner-group -b "$PKGTMP/core" "$OUTDEB/kde1-core_${VERSION}-${RE
 
 # ── 4. kde1-apps
 echo "=== 打包 kde1-apps"
-mkctrl kde1-apps \
+mkctrl apps kde1-apps \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
     "KDE 1.1.2 applications (games, utils, network, toys) - restored"
