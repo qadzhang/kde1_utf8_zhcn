@@ -17,7 +17,7 @@ add_subdirectory(ro)
 add_subdirectory(sk)
 add_subdirectory(sl)
 add_subdirectory(sv)
-add_subdirectory(zh_CN.GB2312)
+add_subdirectory(zh_CN.UTF-8)
 
 install(FILES
     kmoon.pot

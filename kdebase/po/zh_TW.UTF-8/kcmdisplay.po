@@ -1,0 +1,599 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdisplay\n"
+"POT-Creation-Date: 1999-04-20 01:17+0200\n"
+"PO-Revision-Date: 1998-04-20 22:09+0800\n"
+"Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: backgnd.cpp:55
+msgid "Enter new desktop name"
+msgstr "輸入新的桌面名稱"
+
+#: backgnd.cpp:111 backgnd.cpp:164
+msgid "Desktop"
+msgstr "桌面"
+
+#: backgnd.cpp:186
+#, fuzzy
+msgid "&Rename ..."
+msgstr "重新命名[&R] ..."
+
+#: backgnd.cpp:197
+#, fuzzy
+msgid "&Common Background"
+msgstr "背景[&B]"
+
+#: backgnd.cpp:225 colorscm.cpp:82
+#, fuzzy
+msgid "Colors"
+msgstr "顏色"
+
+#: backgnd.cpp:252
+#, fuzzy
+msgid "&One Color"
+msgstr "第一種顏色[&O]"
+
+#: backgnd.cpp:269
+#, fuzzy
+msgid "&Two Color"
+msgstr "第二種顏色[&T]"
+
+#: backgnd.cpp:288
+#, fuzzy
+msgid "Set&up ..."
+msgstr "設定[&U]..."
+
+#: backgnd.cpp:297
+msgid "Wallpaper"
+msgstr "桌布"
+
+#: backgnd.cpp:328 backgnd.cpp:1213 backgnd.cpp:1378 backgnd.cpp:1917
+#, fuzzy
+msgid "No wallpaper"
+msgstr "沒有桌布"
+
+#: backgnd.cpp:361
+msgid "&Browse..."
+msgstr "瀏覽[&B]..."
+
+#: backgnd.cpp:369
+msgid "Arrangement:"
+msgstr ""
+
+#: backgnd.cpp:376
+#, fuzzy
+msgid "Tiled"
+msgstr "鋪排[&L]"
+
+#: backgnd.cpp:377
+msgid "Mirrored"
+msgstr ""
+
+#: backgnd.cpp:378
+#, fuzzy
+msgid "Center Tiled"
+msgstr "置於中央[&C]"
+
+#: backgnd.cpp:379
+#, fuzzy
+msgid "Centred"
+msgstr "置於中央[&C]"
+
+#: backgnd.cpp:380
+#, fuzzy
+msgid "Centred Brick"
+msgstr "置於中央[&C]"
+
+#: backgnd.cpp:381
+#, fuzzy
+msgid "Centred Warp"
+msgstr "置於中央[&C]"
+
+#: backgnd.cpp:382
+#, fuzzy
+msgid "Centred Maxpect"
+msgstr "置於中央[&C]"
+
+#: backgnd.cpp:383
+msgid "Symmetrical Tiled"
+msgstr ""
+
+#: backgnd.cpp:384
+msgid "Symmetrical Mirrored"
+msgstr ""
+
+#: backgnd.cpp:385
+#, fuzzy
+msgid "Scaled"
+msgstr "放大至全螢幕[&S]"
+
+#: backgnd.cpp:400
+msgid "Ra&ndom"
+msgstr ""
+
+#: backgnd.cpp:409
+#, fuzzy
+msgid "Setu&p..."
+msgstr "設定[&U]..."
+
+#: backgnd.cpp:419
+msgid "&Dock into the panel"
+msgstr ""
+
+#: backgnd.cpp:444
+msgid "Cache size (kB):"
+msgstr ""
+
+#: backgnd.cpp:1345
+#, fuzzy
+msgid "Desktop names"
+msgstr "桌面名稱"
+
+#: backgnd.cpp:1390
+#, fuzzy
+msgid "File error"
+msgstr "命名時發生錯誤"
+
+#: backgnd.cpp:1391
+msgid "Can't load image file"
+msgstr ""
+
+#: backgnd.cpp:1414 backgnd.cpp:1887
+msgid "Unsupported URL"
+msgstr ""
+
+#: backgnd.cpp:1415 backgnd.cpp:1888
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+
+#: backgnd.cpp:1447
+#, fuzzy
+msgid "Two color backgrounds"
+msgstr "雙色背景"
+
+#: backgnd.cpp:1484
+msgid "Blend colors from &top to bottom"
+msgstr "由上到下混合兩種顏色[&T]"
+
+#: backgnd.cpp:1490
+msgid "Blend colors from &right to left"
+msgstr "由右至左調和兩種顏色[&R]"
+
+#: backgnd.cpp:1496
+msgid "Use &pattern"
+msgstr "使用花樣[&P]"
+
+#: backgnd.cpp:1523
+msgid "Preview"
+msgstr "預覽"
+
+#: backgnd.cpp:1534
+msgid "Pattern &name"
+msgstr "花樣名稱[&N]"
+
+#: backgnd.cpp:1573
+msgid "Current"
+msgstr "目前"
+
+#: backgnd.cpp:1633
+#, fuzzy
+msgid "Filled"
+msgstr "填滿"
+
+#: backgnd.cpp:1636
+msgid "Fish net"
+msgstr "魚網"
+
+#: backgnd.cpp:1639
+msgid "Triangles"
+msgstr "三角"
+
+#: backgnd.cpp:1642
+msgid "Flowers"
+msgstr "花"
+
+#: backgnd.cpp:1645
+msgid "Rattan"
+msgstr "藤蔓"
+
+#: backgnd.cpp:1648
+msgid "Cobbled Pavement"
+msgstr "鵝卵石人行道"
+
+#: backgnd.cpp:1714
+msgid "Random mode setup"
+msgstr ""
+
+#: backgnd.cpp:1720
+msgid "Pick files from &directory"
+msgstr ""
+
+#: backgnd.cpp:1734
+#, fuzzy
+msgid "&Browse ..."
+msgstr "瀏覽[&B]..."
+
+#: backgnd.cpp:1755
+msgid "Timer Delay in seconds :"
+msgstr ""
+
+#: backgnd.cpp:1767
+#, fuzzy
+msgid "In &order"
+msgstr "忽略"
+
+#: backgnd.cpp:1784
+#, fuzzy
+msgid "Desktops :"
+msgstr "桌面"
+
+#: backgnd.cpp:1823
+#, fuzzy
+msgid "&Add"
+msgstr "新增[&A] ..."
+
+#: backgnd.cpp:1995
+#, fuzzy
+msgid "Directory error"
+msgstr "命名時發生錯誤"
+
+#: backgnd.cpp:1996
+msgid "Selected directory doesn't exists"
+msgstr ""
+
+#: colorscm.cpp:104
+msgid "Color Scheme"
+msgstr "色彩主題"
+
+#: colorscm.cpp:115
+#, fuzzy
+msgid "Current scheme"
+msgstr "色彩主題"
+
+#: colorscm.cpp:117
+#, fuzzy
+msgid "KDE default"
+msgstr "KDE 預設"
+
+#: colorscm.cpp:130
+msgid "&Add ..."
+msgstr "新增[&A] ..."
+
+#: colorscm.cpp:147
+msgid "&Save changes"
+msgstr "儲存變更[&S]"
+
+#: colorscm.cpp:161
+msgid "Widget color"
+msgstr "項目顏色"
+
+#: colorscm.cpp:168
+msgid "Inactive title bar"
+msgstr "無作用視窗的標題列"
+
+#: colorscm.cpp:169
+msgid "Inactive title text"
+msgstr "無作用視窗的標題列文字"
+
+#: colorscm.cpp:170
+#, fuzzy
+msgid "Inactive title blend"
+msgstr "無作用視窗的標題列"
+
+#: colorscm.cpp:171
+msgid "Active title bar"
+msgstr "作用中視窗的標題列"
+
+#: colorscm.cpp:172
+msgid "Active title text"
+msgstr "作用中視窗的標題列文字"
+
+#: colorscm.cpp:173
+#, fuzzy
+msgid "Active title blend"
+msgstr "作用中視窗的標題列"
+
+#: colorscm.cpp:174
+msgid "Background"
+msgstr "背景"
+
+#: colorscm.cpp:175
+msgid "Text"
+msgstr "文字"
+
+#: colorscm.cpp:176
+msgid "Select background"
+msgstr "選擇 背景"
+
+#: colorscm.cpp:177
+msgid "Select text"
+msgstr "選擇 文字"
+
+#: colorscm.cpp:178
+msgid "Window background"
+msgstr "視窗背景"
+
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+msgid "Window text"
+msgstr "視窗文字"
+
+#: colorscm.cpp:207
+msgid "Contrast"
+msgstr "對比"
+
+#: colorscm.cpp:223
+#, fuzzy
+msgid "&Low"
+msgstr "低"
+
+#: colorscm.cpp:231
+msgid "High"
+msgstr "高"
+
+#: colorscm.cpp:304
+msgid "Error removing"
+msgstr "移除時發生錯誤"
+
+#: colorscm.cpp:305
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+"這個色彩主題無法移除.\n"
+"可能是您並沒有權限去更改這個色彩主題."
+
+#: colorscm.cpp:362
+msgid "Naming error"
+msgstr "命名時發生錯誤"
+
+#: colorscm.cpp:363
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
+"請為這新的色彩主題選擇一個唯一的名稱.\n"
+"您目前輸入的名稱已經存在於色彩主題列表中."
+
+#: savescm.cpp:18
+#, fuzzy
+msgid "Add a color scheme"
+msgstr "加入一個色彩主題"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"為新的色彩主題輸入一個名稱\n"
+"以加入您個人列表中.\n"
+"\n"
+"這些預覽使用的色彩將會加入這個主題中."
+
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "忽略"
+
+#: scrnsave.cpp:48
+msgid "Save Screen"
+msgstr "啟動螢幕保護"
+
+#: scrnsave.cpp:49
+msgid "Lock Screen"
+msgstr "鎖住螢幕"
+
+#: scrnsave.cpp:112 scrnsave.cpp:181
+msgid "Screen Saver"
+msgstr "螢幕保護程式"
+
+#: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
+#, fuzzy
+msgid "No screensaver"
+msgstr "螢幕保護程式[&S]"
+
+#: scrnsave.cpp:209
+#, fuzzy
+msgid "&Setup ..."
+msgstr "設定[&S]..."
+
+#: scrnsave.cpp:217
+#, fuzzy
+msgid "&Test"
+msgstr "測試[&T]"
+
+#: scrnsave.cpp:230
+msgid "Settings"
+msgstr "設定"
+
+#: scrnsave.cpp:250
+msgid "&Wait for"
+msgstr "等待[&W]"
+
+#: scrnsave.cpp:260
+#, fuzzy
+msgid "min."
+msgstr "分"
+
+#: scrnsave.cpp:266
+#, fuzzy
+msgid "&Require password"
+msgstr "需要密碼"
+
+#: scrnsave.cpp:272
+msgid "&Accept root password to unlock"
+msgstr ""
+
+#: scrnsave.cpp:280
+msgid "Show &password as stars"
+msgstr ""
+
+#: scrnsave.cpp:288
+#, fuzzy
+msgid "Priority"
+msgstr "優先權:"
+
+#: scrnsave.cpp:301
+#, fuzzy
+msgid "&High"
+msgstr "高[&H]"
+
+#: scrnsave.cpp:310
+msgid "Low"
+msgstr "低"
+
+#: general.cpp:221
+msgid "Style"
+msgstr ""
+
+#: general.cpp:229
+msgid "&Draw widgets in the style of Windows 95"
+msgstr ""
+
+#: general.cpp:245
+msgid "&Menubar on top of the screen in the style of MacOS"
+msgstr ""
+
+#: general.cpp:259
+msgid "&Apply fonts and colors to non-KDE apps"
+msgstr ""
+
+#: general.cpp:529
+msgid "General font"
+msgstr "一般字型"
+
+#: general.cpp:534
+msgid "Fixed font"
+msgstr "固定字型"
+
+#: general.cpp:540
+#, fuzzy
+msgid "Window title font"
+msgstr "視窗標題列字型"
+
+#: general.cpp:545
+#, fuzzy
+msgid "Panel button font"
+msgstr "Panel 按鈕字型"
+
+#: general.cpp:550
+msgid "Panel clock font"
+msgstr "Panel 小時鐘字型"
+
+#: general.cpp:580
+#, fuzzy
+msgid "Sample text"
+msgstr "選擇 文字"
+
+#: general.cpp:588
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+msgstr ""
+
+#: main.cpp:64
+msgid "&Background"
+msgstr "背景[&B]"
+
+#: main.cpp:67
+msgid "&Screensaver"
+msgstr "螢幕保護程式[&S]"
+
+#: main.cpp:71
+msgid "&Colors"
+msgstr "顏色[&C]"
+
+#: main.cpp:77
+msgid "&Style"
+msgstr ""
+
+#: main.cpp:83
+#, fuzzy
+msgid ""
+"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+msgstr "用法: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+
+#: main.cpp:150
+msgid "Display settings"
+msgstr "顯示器設定"
+
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+msgid "Inactive window"
+msgstr "無作用視窗"
+
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+msgid "Active window"
+msgstr "作用中視窗"
+
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
+#, fuzzy
+msgid "Selected text"
+msgstr "選擇 文字"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr ""
+
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr ""
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr "粗體[&B]"
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr "斜體[&I]"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr ""
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr ""
+
+#: fontchooser.cpp:262
+msgid "default"
+msgstr "預設"
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr "任何"
+
+#, fuzzy
+#~ msgid "Fonts etc."
+#~ msgstr "字型"
+
+#, fuzzy
+#~ msgid "Desktop fonts"
+#~ msgstr "桌面字型"
+
+#, fuzzy
+#~ msgid "&Fonts etc."
+#~ msgstr "相關字型[&F]"
+
+#, fuzzy
+#~ msgid "One Des&ktop"
+#~ msgstr "桌面"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "遺除[&R]"
+
+#~ msgid "Default"
+#~ msgstr "預設"

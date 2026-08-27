@@ -21,7 +21,10 @@
 
 function (install_kdegmo)
     foreach (it ${ARGN})
-        get_filename_component(language ${it} NAME_WE)
+        # [KDE1 Revival 2026] 原 get_filename_component(NAME_WE) 会剥掉最长扩展，
+        # "zh_CN.UTF-8.gmo" 被误剥成 "zh_CN"；改为仅去掉 .gmo 后缀，
+        # 使 UTF-8 语言目录名（zh_CN.UTF-8）原样保留
+        string(REGEX REPLACE "\\.gmo$" "" language "${it}")
         set(infile "${CMAKE_CURRENT_SOURCE_DIR}/${language}.po")
         add_custom_command(
             OUTPUT ${language}.gmo

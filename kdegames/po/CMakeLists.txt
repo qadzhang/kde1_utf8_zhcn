@@ -26,8 +26,8 @@ add_subdirectory(ro)
 add_subdirectory(sk)
 add_subdirectory(sl)
 add_subdirectory(sv)
-add_subdirectory(zh_CN.GB2312)
-add_subdirectory(zh_TW.Big5)
+add_subdirectory(zh_CN.UTF-8)
+add_subdirectory(zh_TW.UTF-8)
 
 install(FILES
     kabalone.pot
