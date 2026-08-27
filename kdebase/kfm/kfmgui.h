@@ -188,6 +188,15 @@ public:
     bool isHtmlMode () { return bHtmlMode; }
         
 public slots:
+    // [KDE1 Revival 2026] kfm 双内核：View 菜单「用 WebKit 新内核浏览」开关。
+    // 开启后在 view 区域上叠 XEmbed socket 并 fork kde1-webview（WebKit2GTK），
+    // URL 统一经 webEngineNavigate 转发；再次选择即关闭回退 1999 原引擎。
+    void slotWebEngine();
+
+    // 新内核导航与状态查询（KfmView::openURL 分流用，见 kfmgui.cpp）
+    void webEngineNavigate( const char *url );
+    bool webEngineActive();
+
     /**
      * Menu "File->*"
      */
@@ -663,6 +672,12 @@ protected:
      * The widget that contains the HTML stuff and the ( optional ) scrollbars.
      */
     KfmView *view;
+    // [KDE1 Revival 2026] 新内核状态：子进程 pid / 写管道 fd / socket 窗口 /
+    // 开关标志（实现见 kfmgui.cpp slotWebEngine）
+    int  webEnginePid;
+    int  webEngineIn;
+    unsigned long webEngineSocket;
+    bool webEngineOn;
 
     /**
      * The Find text dialog

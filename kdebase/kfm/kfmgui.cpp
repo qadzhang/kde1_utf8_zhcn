@@ -5,12 +5,15 @@
 #include <sys/types.h>
 #include <pwd.h>
 #include <stddef.h>
+#include <sys/wait.h>				// [KDE1 Revival 2026] 双内核子进程回收
 
 #include <qpopmenu.h>
 #include <qcursor.h>
 #include <qpainter.h>
 #include <qapp.h>
 #include <qkeycode.h>
+// [KDE1 Revival 2026] XEmbed 原型（XCreateSimpleWindow 等）经 Qt 头内已含的
+// Xlib 声明直接使用，无需也不得在此显式 include X11/Xlib.h（宏序冲突）
 #include <qpushbt.h>
 #include <qdir.h>
 #include <qstrlist.h>
@@ -103,6 +106,11 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     showDot = false;
     visualSchnauzer = false;
     bViewHTML = true;
+    // [KDE1 Revival 2026] 新内核初始状态（见 kfmgui.h）
+    webEnginePid = -1;
+    webEngineIn = -1;
+    webEngineSocket = 0;
+    webEngineOn = false;
 
     showToolbar = true;
     toolbarPos = KToolBar::Top;
@@ -179,6 +187,11 @@ void KfmGui::initPanner()
     connect( panner, SIGNAL( positionChanged() ), this, SLOT( slotPannerChanged() ) );
 
     setView( panner );
+
+    // [KDE1 Revival 2026] 双内核自动激活：KFM_WEBENGINE=1 时启动即切 WebKit
+    // 新内核（500ms 后窗口就绪再切，避免构造期窗口尺寸未定）
+    if ( getenv( "KFM_WEBENGINE" ) )
+	QTimer::singleShot( 500, this, SLOT(slotWebEngine()) );
     panner->show();
 }
 
@@ -337,6 +350,14 @@ void KfmGui::initMenu()
 	     this, SLOT( slotSetCharset( int ) ) );
     mview->insertSeparator();
     mview->insertItem( klocale->translate("Document Encodin&g"), mcharset );
+
+    // [KDE1 Revival 2026] 双内核：View 菜单末尾追加（不影响 handleViewMenu
+    // 依赖的 idAt(0..17) 位置索引）——WebKit 新内核开关
+    mview->insertSeparator();
+    int webItemId = mview->insertItem(
+        klocale->translate("Browse with &WebKit Engine"), this,
+        SLOT(slotWebEngine()), CTRL+SHIFT+Key_W );
+    mview->setItemChecked( webItemId, false );
 
     
     mview->setItemChecked( mview->idAt( 0 ), showDot );
@@ -630,6 +651,95 @@ void KfmGui::updateView()
         treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
 }
 
+
+/*****************************************************************************
+  [KDE1 Revival 2026] kfm 双内核（路线乙目标 3）
+  ┌─ What : 「Browse with WebKit Engine」开关——开启时在 view 区域上叠
+  │         XEmbed socket 并 fork kde1-webview（WebKit2GTK 承载现代网页）；
+  │         关闭时结束子进程并还原 1999 原引擎视图
+  │  Why  : 原 KHTML 引擎只认 HTML 3.2，现代站点全部无法渲染；双内核共存
+  │         使 kfm 既能看现代网页又保留历史原貌（AGENTS.md §1 目标 3）
+  │  Who  : View 菜单触发；KfmView::openURL 检测 webEngineOn 后把 URL
+  │         经 webEngineNavigate 转发给子进程（stdin 管道）
+  │  When : 会话期内随时切换；kfm 退出时析构清理
+  │  How  : 伪代码：
+  │         开启：view->winId() 内按 view 几何创建 socket 子窗口 →
+  │               pipe + fork + exec kde1-webview(socket, 当前URL) → 显示
+  │         关闭：关闭管道（子进程 stdin EOF 自动退出）→ waitpid →
+  │               XDestroyWindow(socket) → view->repaint
+  *****************************************************************************/
+void KfmGui::slotWebEngine()
+{
+    if ( !webEngineOn ) {
+        // 开启：在 view 之上叠 XEmbed socket（与 view 同几何）
+        Window parent = view->winId();
+        XWindowAttributes wa;
+        if ( !XGetWindowAttributes( qt_xdisplay(), parent, &wa ) ) {
+            return;
+        }
+        fprintf(stderr, "[kde1-revival] socket=%lu 尺寸 %dx%d\n",
+                (unsigned long)webEngineSocket, wa.width, wa.height);
+        webEngineSocket = (unsigned long)XCreateSimpleWindow(
+            qt_xdisplay(), parent, 0, 0,
+            (unsigned)wa.width, (unsigned)wa.height, 0, 0, 0xffffff );
+        XMapWindow( qt_xdisplay(), (Window)webEngineSocket );
+        XFlush( qt_xdisplay() );
+
+        // fork 子进程：stdin 用管道，stdout/stderr 继承
+        int fds[2];
+        if ( pipe( fds ) != 0 )
+            return;
+        webEnginePid = fork();
+        if ( webEnginePid == 0 ) {
+            close( fds[1] );
+            dup2( fds[0], STDIN_FILENO );
+            char xidbuf[32], *args[4];
+            snprintf( xidbuf, sizeof(xidbuf), "%lu", webEngineSocket );
+            args[0] = (char*)"kde1-webview";
+            args[1] = xidbuf;
+            args[2] = (char *)view->getURL();		// 初始 URL
+            args[3] = 0;
+            execvp( "kde1-webview", args );
+            _exit(127);			// exec 失败
+        }
+        close( fds[0] );
+        webEngineIn = fds[1];
+        webEngineOn = true;
+        view->repaint();
+    } else {
+        // 关闭：管道 EOF 令子进程自行退出，随后清理 socket
+        if ( webEngineIn >= 0 ) { close( webEngineIn ); webEngineIn = -1; }
+        if ( webEnginePid > 0 ) {
+            int st;
+            waitpid( webEnginePid, &st, 0 );
+            webEnginePid = -1;
+        }
+        if ( webEngineSocket ) {
+            XDestroyWindow( qt_xdisplay(), (Window)webEngineSocket );
+            webEngineSocket = 0;
+        }
+        webEngineOn = false;
+        view->repaint();
+    }
+    // 同步菜单勾选态
+    mview->setItemChecked( mview->idAt( mview->count() - 1 ), webEngineOn );
+}
+
+// 新内核激活时由 KfmView::openURL 调用：URL 写入子进程 stdin
+void KfmGui::webEngineNavigate( const char *url )
+{
+    if ( !webEngineOn || webEngineIn < 0 || !url || !*url )
+        return;
+    char buf[2048];
+    int n = snprintf( buf, sizeof(buf), "URL %s\n", url );
+    if ( n > 0 )
+        write( webEngineIn, buf, (size_t)n );
+}
+
+bool KfmGui::webEngineActive()
+{
+    return webEngineOn;
+}
 
 //CT 16Dec1998 -- handle the View menu according with the type of view
 void KfmGui::handleViewMenu(bool _bHtmlMode) 
@@ -2149,6 +2259,20 @@ void KfmGui::setHasLocal (bool aintGotNoProps)
 
 KfmGui::~KfmGui()
 {
+    // [KDE1 Revival 2026] 双内核：退出前结束新内核子进程（复用关闭逻辑）
+    if ( webEngineOn ) {
+        if ( webEngineIn >= 0 ) { close( webEngineIn ); webEngineIn = -1; }
+        if ( webEnginePid > 0 ) {
+            int st;
+            waitpid( webEnginePid, &st, 0 );
+            webEnginePid = -1;
+        }
+        if ( webEngineSocket ) {
+            XDestroyWindow( qt_xdisplay(), (Window)webEngineSocket );
+            webEngineSocket = 0;
+        }
+        webEngineOn = false;
+    }
     if ( animatedLogoTimer )
     {
 	animatedLogoTimer->stop();

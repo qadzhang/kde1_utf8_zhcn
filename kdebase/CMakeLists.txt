@@ -86,6 +86,8 @@ endif()
 
 add_subdirectory(kcheckpass)
 add_subdirectory(kfm)
+# [KDE1 Revival 2026] kfm 新内核视图（WebKit2GTK）
+add_subdirectory(kfmweb)
 add_subdirectory(mimetypes)
 add_subdirectory(kdehelp)
 add_subdirectory(kfontmanager)

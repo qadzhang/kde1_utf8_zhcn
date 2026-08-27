@@ -909,6 +909,9 @@ void KfmView::checkLocalProperties (const char *_url)
 
 void KfmView::openURL( const char *_url, bool _refresh, int _xoffset, int _yoffset )
 {
+    // [KDE1 Revival 2026] 双内核分流：新内核激活时 URL 转发 WebKit 子进程，
+    // 不进入 1999 原引擎（见 KfmGui::slotWebEngine）
+    if ( gui && gui->webEngineActive() ) { gui->webEngineNavigate( _url ); return; }
     redirectTimer.stop();
     checkLocalProperties (_url);
     emit newURL( _url );
@@ -917,6 +920,7 @@ void KfmView::openURL( const char *_url, bool _refresh, int _xoffset, int _yoffs
 
 void KfmView::openURL( const char *_url )
 {
+    if ( gui && gui->webEngineActive() ) { gui->webEngineNavigate( _url ); return; }
     redirectTimer.stop();
 
     // dirty hack to get the restoring of frames working correctly
@@ -934,6 +938,7 @@ void KfmView::openURL( const char *_url )
 
 void KfmView::openURL( const char *_url, const char *_data )
 {
+    if ( gui && gui->webEngineActive() ) { gui->webEngineNavigate( _url ); return; }
     redirectTimer.stop();
 
     checkLocalProperties (_url);
