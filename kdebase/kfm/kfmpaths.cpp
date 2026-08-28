@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <kconfig.h>
+#include "xdgdirs.h"	/* [KDE1 Revival 2026] XDG 解析公共头（krootwm 共用）*/
 #include <qdir.h>
 #include <qfileinfo.h>
 #include <kapp.h>
@@ -53,7 +54,6 @@ void KFMPaths::initPaths()
      When : KFMPaths::initPaths 初始化时读取一次
      Where: ~/.config/user-dirs.dirs（XDG_USER_DIRS 标准，xdg-user-dirs 生成）
      How : 逐行找 KEY="$HOME/值" 形式，展开 $HOME；无配置/无该键时用 fallback */
-  QString xdg_home_dir( const char *key, const QString & fallback ); // 见文件尾
 
   // Desktop Path：默认取 XDG_DESKTOP_DIR（如 ~/桌面），回退 ~/Desktop
   *desktopPath = xdg_home_dir( "XDG_DESKTOP_DIR", QDir::homeDirPath() + "/Desktop" );
@@ -165,40 +165,3 @@ QString KFMPaths::CachePath()
   return *cachePath;
 }
 
-/* [KDE1 Revival 2026] XDG user-dirs.dirs 解析（说明见 initPaths 内注释）：
-   伪代码：读 $XDG_CONFIG_HOME/user-dirs.dirs（默认 ~/.config/）→
-   逐行匹配 KEY="$HOME/值" 或 KEY="/绝对/路径" → 展开 $HOME →
-   命中返回该目录；否则返回 fallback */
-QString xdg_home_dir( const char *key, const QString & fallback )
-{
-    const char *cfg = getenv( "XDG_CONFIG_HOME" );
-    QString path = cfg && *cfg ? QString(cfg) : QDir::homeDirPath() + "/.config";
-    path += "/user-dirs.dirs";
-    FILE *f = fopen( path, "r" );
-    if ( !f )
-        return fallback;
-    QString kwd = QString(key) + "=\"";
-    char line[512];
-    while ( fgets( line, sizeof(line), f ) ) {
-        char *p = strstr( line, kwd );
-        if ( !p )
-            continue;
-        p += strlen(key) + 2;   /* 不用 QString::length（Qt1 含终止 0）*/
-        char *q = strchr( p, '"' );
-        if ( !q )
-            continue;
-        *q = 0;
-        QString val( p );
-        fclose( f );
-        int vlen = strlen( (const char *)val );
-        if ( val.left(6) == "$HOME/" )
-            val = QDir::homeDirPath() + "/" + val.mid( 6, vlen-6 );
-        else if ( val.left(5) == "$HOME" )
-            val = QDir::homeDirPath() + val.mid( 5, vlen-5 );
-        if ( val.isEmpty() )
-            return fallback;
-        return val;
-    }
-    fclose( f );
-    return fallback;
-}

@@ -9,6 +9,7 @@
 
 #include <qdir.h>
 
+#include "../kfm/xdgdirs.h"	// [KDE1 Revival 2026] XDG 用户目录解析（与 kfm 共用）
 #include "krootwm.moc"
 #include "version.h"
 
@@ -163,14 +164,17 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 		       this, SLOT(kwmCommandReceived(QString)));
 
 
-    // Desktop Path
-    desktopPath = QDir::homeDirPath() + "/Desktop/";
+    // [KDE1 Revival 2026] Desktop/Templates 默认值改经 XDG user-dirs 解析
+    //（与 kfm/kfmpaths.cpp 共用同一实现 xdgdirs.h——此前 krootwm 自带 1999
+    //  默认值 ~/Desktop，与 kfm 侧修复脱节，右键「新建」菜单仍指旧目录）
+    // Desktop Path：默认取 XDG_DESKTOP_DIR（如 ~/桌面），回退 ~/Desktop
+    desktopPath = xdg_home_dir( "XDG_DESKTOP_DIR", QDir::homeDirPath() + "/Desktop/" );
     desktopPath = config.readEntry( "Desktop", desktopPath);
     if ( desktopPath.right(1) != "/")
 	desktopPath += "/";
 
-    // Templates Path
-    templatePath = desktopPath + "Templates/";
+    // Templates Path：默认取 XDG_TEMPLATES_DIR（如 ~/模板）
+    templatePath = xdg_home_dir( "XDG_TEMPLATES_DIR", desktopPath + "Templates/" );
     templatePath = config.readEntry( "Templates" , templatePath);
     if ( templatePath.right(1) != "/")
 	templatePath += "/";

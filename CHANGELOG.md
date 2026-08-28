@@ -2,6 +2,17 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-28（第二批：渲染通道根源修复）
+
+- 控件文字空白问题从根源修复（四个叠加缺陷，全部经视觉模型逐像素复验）：①绘制路径 pointSize 单位错误——qt_xft_font(QFont*) 把 QFont::pointSize() 的磅值当十分之一磅存入 QFontDef，经 /10 后 12pt 字体按 1pt 打开，文字缩成 1 像素墨点；②XftFontOpenName 单字体无按字形回退——实现字形回退链（主字体缺字形的码点自动切换 lang=zh-cn 中文字体与通用兜底字体，度量与绘制同一分段保证量宽=绘制，qmbxft_x11.cpp），Helvetica 等西文字体直接渲染混合中英文；③QFontMetrics 度量基于「实际加载的核心字体」XLFD 写回值（现代系统退化为 bitmap 兜底、字号漂移）——QFontMetrics 增设请求字体副本 xftReq（公共头 ABI 变更，全模块强制重编），spec() 三形态一律返回请求值与绘制路径同源；④height()/leading() 未接 Xft 分支——补齐（链上最大 ascent/descent），修复矩形对齐版 drawText 基线过低导致的中文下半截裁剪。
+- KCharsetConverter 在 UTF-8 locale 下强制 NoConversion 透传（kcharsetsdata.cpp 单点修复）：此前 KLocale::charset() 因 UTF-8 不在 1999 字符集注册表而退回 us-ascii，kpanel 桌面按钮/kfm 目录树等所有转换调用点的中文整体变 '?'，透传后一处修复全覆盖，桌面按钮正确显示「一/二/三/四」。
+- 1bpp 掩码位图文字通道（qpainter_x11.cpp）：XRender 无 1bpp visual，kpanel 按钮「文字画进 mask」路径回退核心字体导致中文被掩码裁空——新增临时 24bpp 中转绘制+亮度阈值转回+bitBlt 拷回（不重建目标位图防 XID 失效 BadDrawable），qmbxft 增加 qt_xft_draw_release 防短命 pixmap 的 XftDraw 悬垂。
+- 桌面图标标签现代化：kfmrc [KFM Root Icons] Style=0→1，标签从 1999 黑底白字块改为透明背景纯文字（视觉确认无黑框、无黑晕）。
+- XDG 解析收敛为公共头 xdgdirs.h（kfm/krootwm 共用），修复 krootwm 右键菜单仍指旧 ~/Desktop 的脱节；清空指向 /root 的 1999 桌面布局遗物 config/desktop。
+- startkde-kde1 音效预载修正：LD_PRELOAD 由错误的命令名 padsp 改为真实库路径 libpulsedsp.so。
+- 字体渲染微调对齐 XFCE（QT_XFT_ANTIALIAS/HINTING/HINTSTYLE/RGBA/DPI 五环境变量，默认 抗锯齿+轻度微调+RGB 次像素+96DPI）：DPI=120 实测字高精确放大 25%、关抗锯齿实测中间灰像素 401→0、三组参数中文均正常。
+- 渲染调试探针（QT_XFT_DEBUG/[qtxft]/[xdgdbg]）全部清理；全量重编+重打包重装 deb，最终会话五项验收（kfm 中文/图标标签/面板/无乱码/可交付）经视觉模型全部通过。遗留：kfm "Go" 菜单等 po 存量缺口归入「界面全面中文化」项。
+
 ## 2026-08-28
 
 - XDG 桌面图标问题根治（三层叠加因素）：①系统级 kfmrc 的 [Paths] 组在 KConfig 全局合并时覆盖代码默认值——源头移除该四行硬编码（用户级 kfmrc 仍可显式覆盖）；②解析函数两处 1999 年工具链陷阱（多字符常量 '="' 与 QString::length 含终止 0）修复；③补齐 initPaths 尾部的默认桌面图标逻辑（Home/Trash 从 applnk 拷入、生成指向 XDG 模板目录的 Templates 图标，幂等）。终验：全新会话桌面自动生成三个系统图标（房子/垃圾桶/文件夹）+用户文件图标完整、与 XFCE 共用 ~/桌面、~/Desktop 不再创建。

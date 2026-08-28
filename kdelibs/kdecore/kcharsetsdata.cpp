@@ -73,7 +73,7 @@ KCharsetConverterData::~KCharsetConverterData(){
 
 bool KCharsetConverterData::initialize(const KCharsetEntry * inputCharset
 				      ,const KCharsetEntry * outputCharset){
-					   
+
   convTable=0;
   convToUniDict=0;
   convFromUniDict=0;
@@ -81,14 +81,57 @@ bool KCharsetConverterData::initialize(const KCharsetEntry * inputCharset
   if (!input) {
     kchdebug("Couldn't set input charset to %s\n",inputCharset);
     return FALSE;
-  }  
+  }
   if (outputCharset==0) output=kcharsetsData->conversionHint(input);
   else output=outputCharset;
   if (!output) {
     kchdebug("Couldn't set output charset to %s\n",outputCharset);
     return FALSE;
   }
-  
+
+  /* ┌─ [KDE1 Revival 2026] UTF-8 环境透传（路线乙全面 UTF-8 融合的根源修复）
+     │  What : 进程 locale 为 UTF-8 时，任何字符集转换一律改为 NoConversion
+     │         （原文透传，output=input）
+     │  Why  : 1999 年的转换链是「locale 编码文本 → 核心字体字符集」——
+     │         UTF-8 locale 不在 KDE1 字符集注册表（KLocale::charset() 因此
+     │         退回 us-ascii），转换把中文按单字节映射成 '?'：kpanel 桌面
+     │         按钮、kfm 目录树等所有 KCharsetConverter 使用点全部中招。
+     │         路线乙之后渲染层（Xft/fontconfig）直接消费 UTF-8，转换环节
+     │         已无存在必要，透传即正确
+     │  Who  : kpanel 按钮 / kfm 树与视图 / kurllabel / ktablistbox /
+     │         kfiledialog 等全部 KCharsetConverter 调用方（一处修复全覆盖）
+     │  When : KCharsetConverter 构造时判定一次
+     │  Where: 本函数（转换器初始化的唯一入口）
+     │  How  : 伪代码：
+     │         1. 取 LC_ALL / LC_CTYPE / LANG（先到先得）
+     │         2. 值含 "utf-8"/"utf8"（不区分大小写）→ output=input
+     │            → 下方 input==output 分支自然落入 NoConversion
+     │         3. 结果缓存（static），避免每字符集查环境
+     └──────────────────────────────────────────────────────────────────┘ */
+  {
+      static int utf8_env = -1;
+      if ( utf8_env == -1 ) {
+	  const char *lv = getenv( "LC_ALL" );
+	  if ( !lv || !*lv ) lv = getenv( "LC_CTYPE" );
+	  if ( !lv || !*lv ) lv = getenv( "LANG" );
+	  utf8_env = 0;
+	  if ( lv ) {
+	      const char *p;
+	      for ( p = lv; *p; p++ )
+		  if ( ( p[0]=='u'||p[0]=='U' ) && ( p[1]=='t'||p[1]=='T' )
+		       && ( p[2]=='f'||p[2]=='F' ) ) {
+		      /* 形如 utf-8 / utf8（'-' 可选） */
+		      if ( p[3]=='-' || p[3]=='8' || p[3]=='\0' || p[3]=='@' || p[3]=='.' ) {
+			  utf8_env = 1;
+			  break;
+		      }
+		  }
+	  }
+      }
+      if ( utf8_env )
+	  output = input;
+  }
+
   setInputSettings();
   setOutputSettings();
 

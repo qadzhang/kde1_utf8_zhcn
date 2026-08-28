@@ -1,6 +1,7 @@
 # 构建产物与暂存区（clean.sh 可整体清理）
 staging/
-dist/
+dist/*
+!dist/staging-integration/
 */build/
 # 打包临时物
 *.deb

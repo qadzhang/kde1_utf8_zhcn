@@ -1,0 +1,45 @@
+#!/bin/sh
+#   Written with GLM-5.3 (Z.ai) for the KDE1 Revival Project
+#
+# ┌─ What : KDE 1 会话启动包装脚本——完成环境变量自设置后 exec 真正的
+# │         startkde（用户零手工配置，见 AGENTS.md §1 目标 6）
+# │  Why  : 显示管理器（lightdm）拉起会话时不经过 ~/.xinitrc，KDE1 运行
+# │         又必需 PATH/LD_LIBRARY_PATH/KDEDIR 三变量；fcitx5 输入法与
+# │         音效兼容层（padsp）也在此统一挂载
+# │  Who  : lightdm 等显示管理器经 xsessions 的 kde1.desktop 调用；
+# │         手工 startx 用户也可直接 exec 本脚本
+# │  When : 会话登录时一次
+# │  How  : 伪代码：
+# │         1. 设置 KDEDIR=@KDE1_PREFIX@、PATH、LD_LIBRARY_PATH
+# │         2. XIM：XMODIFIERS=@im=fcitx（fcitx5/fcitx 通用）；自动拉起
+# │            fcitx5 -d（若未运行且已安装）
+# │         3. 音效：OSS /dev/dsp 兼容——LD_PRELOAD 挂 padsp（已装则挂）
+# │            转发到 PipeWire/PulseAudio
+# │         4. exec startkde
+KDE1_PREFIX=@KDE1_PREFIX@
+export KDEDIR="$KDE1_PREFIX"
+export PATH="$KDE1_PREFIX/bin:$PATH"
+export LD_LIBRARY_PATH="$KDE1_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
+# 输入法：fcitx5 优先，fcitx 兜底（均未装则跳过）
+export XMODIFIERS=@im=fcitx
+if command -v fcitx5 >/dev/null 2>&1; then
+    fcitx5 -d >/dev/null 2>&1 &
+elif command -v fcitx >/dev/null 2>&1; then
+    fcitx -d >/dev/null 2>&1 &
+fi
+
+# 音效兼容：KDE1 走 /dev/dsp（OSS），Debian 12 无该设备；
+# libpulsedsp（padsp 命令背后的预载库）把 OSS 调用转发到
+# PipeWire/PulseAudio。注意 LD_PRELOAD 必须是库文件路径——
+# 写命令名 padsp 会被动态链接器当作库名解析失败并告警（无害但无效）
+PULSEDSP=""
+for _pd in /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsedsp.so \
+           /usr/lib/pulseaudio/libpulsedsp.so; do
+    [ -f "$_pd" ] && PULSEDSP="$_pd" && break
+done
+if [ -n "$PULSEDSP" ]; then
+    export LD_PRELOAD="${PULSEDSP}${LD_PRELOAD:+:$LD_PRELOAD}"
+fi
+
+exec "$KDE1_PREFIX/bin/startkde"
