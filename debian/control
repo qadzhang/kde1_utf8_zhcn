@@ -2,7 +2,7 @@ Source: kde1
 Section: x11
 Priority: optional
 Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
-Build-Depends: build-essential, cmake, git, pkg-config, byacc, flex,
+Build-Depends: build-essential, cmake, git, pkg-config,
  gettext, libx11-dev, libxext-dev, libxmu-dev, libxpm-dev, libjpeg-dev,
  libpng-dev, zlib1g-dev, libtiff-dev, libssl-dev, libglu1-mesa-dev,
  libxft-dev, libfontconfig1-dev, libfreetype-dev, libwebkit2gtk-4.1-dev

@@ -12,28 +12,30 @@
 2. **现代输入法稳定接入**：中文输入按现代输入法框架运行——**fcitx5 与 fcitx 两代框架都必须稳定、完美运行**（经 XIM 通道接入，缺一不可）。
 3. **浏览器内核跟进**：KDE 1 自带浏览器（kfm）的 HTML 内核过于古老，以 **WebKit2GTK 为新内核**（Debian 12 官方包，完整现代 CSS / JIT JS / HTTPS），与 1999 年原始渲染器构成**新旧双内核可切换**（新内核看现代网页，旧内核保持历史原貌）；CEF（Chromium）为备选路线；Firefox/Gecko 无维护中的嵌入接口，已排除。
 4. **全面中文化与英文对齐**：菜单、帮助、提示等**所有**界面内容全面中文化，覆盖率与英文原文对齐——不是"部分翻译"，而是与英文功能完全对等。**kvt 终端内的中文内容（文件名、命令输出等）显示正常；与系统现代应用（浏览器、现代 Qt/GTK 程序）之间可双向复制粘贴中文文本**。**翻译质量硬性要求**：禁止闭门自造译法——每条新增/修订翻译必须 ① 上网检索通行、准确的中文译法；② **对齐当今 KDE 6（Plasma 6 / KDE Gear）的 zh_CN 官方翻译术语**，保证用词与现代 KDE 一致（用户从 KDE 6 切换到本项目不应感到术语跳变）；③ 1999 年自带的 GB2312 旧翻译仅作参考底稿，其术语与现代 KDE 冲突时以现代术语为准。
-5. **Debian 软件包交付（唯一正式安装方式）**：正式安装**只经 deb 包**（dpkg / apt）——源码包（sdeb：.dsc + .orig.tar.* + .debian.tar.*）与二进制 .deb 包都要产出，且**分目录存放**（`dist/src/` 与 `dist/deb/`，不得混放）。**.deb 须开箱即用、零手工配置**，包内容至少含：① `/usr/kde1` 全树（各模块经 DESTDIR 暂存收编）；② `/usr/share/xsessions/kde1.desktop` 会话入口；③ **startkde 包装启动脚本**（内部完成 PATH / LD_LIBRARY_PATH / KDEDIR 环境设置后 exec 真正的 startkde——用户不需要写 `.xinitrc`、不需要 export 任何变量）；④ moc-qt1 命令入口；⑤ 运行时依赖声明（libxft / fontconfig / libwebkit2gtk、中文字体等）。安装后 lightdm 会话菜单即出现 KDE 1。**安装/卸载走 dpkg 标准生命周期**：`apt install` 安装、`apt remove` 干净移除、不留任何游离于包管理之外的文件；按模块合理拆分核心包与可选应用包（拆分方案实施时定）。`build.sh` 仅负责开发期构建与 `./staging` 暂存运行验证，**不得 sudo 直接安装到系统**。
+5. **Debian 软件包交付（唯一正式安装方式）**：正式安装**只经 deb 包**（dpkg / apt）——源码包（sdeb：.dsc + .orig.tar.* + .debian.tar.*）与二进制 .deb 包都要产出，且**分目录存放**（`dist/src/` 与 `dist/deb/`，不得混放）。**.deb 须开箱即用、零手工配置**，包内容至少含：① `/usr/kde1` 全树（各模块经 DESTDIR 暂存收编）；② `/usr/share/xsessions/kde1.desktop` 会话入口；③ **startkde 包装启动脚本**（内部完成 PATH / LD_LIBRARY_PATH / KDEDIR 环境设置后 exec 真正的 startkde——用户不需要写 `.xinitrc`、不需要 export 任何变量）；④ TQt3 运行库与工具（libtqt-mt、tqmoc 等）；⑤ 运行时依赖声明（libxft / fontconfig / libwebkit2gtk、中文字体等）。安装后 lightdm 会话菜单即出现 KDE 1。**安装/卸载走 dpkg 标准生命周期**：`apt install` 安装、`apt remove` 干净移除、不留任何游离于包管理之外的文件；按模块合理拆分核心包与可选应用包（拆分方案实施时定）。`build.sh` 仅负责开发期构建与 `./staging` 暂存运行验证，**不得 sudo 直接安装到系统**。
 6. **现代系统集成**：图形登录由**系统显示管理器管理**（本机为 lightdm，方式与 XFCE 等现代桌面一致）——KDE 1 会话出现在 lightdm 会话菜单、选择后直接进入桌面，**不依赖手工 `startx`**；桌面事件音效**接入现代音频栈**（PipeWire/PulseAudio），1999 年的 `/dev/dsp`（OSS）失效路径必须解决（padsp/osspd 兼容层或原生补丁），提示音正常发声；**XDG 用户目录兼容**——桌面/模板等用户目录与宿主现代桌面共用同一套（经 `~/.config/user-dirs.dirs`，中文系统即 `~/桌面`、`~/模板`），回收站对齐 freedesktop 标准（`~/.local/share/Trash`），不得另建 1999 年的 `~/Desktop` 体系。
 7. **打印接入 CUPS**：KDE1 的打印（Qt1 QPrinter 经 `lpr` 命令提交）必须正常接入现代 CUPS 打印体系——经 `cups-bsd` 兼容层（提供 `/usr/bin/lpr`）零代码打通，deb 依赖声明完整；实测打印任务能进入 CUPS 队列并产出。
 8. **全面 UTF-8 融合**：多字节感知**不止于编辑部件，而是所有模块全面的接入、融合**——Qt 内核与各 KDE 模块中一切按字节处理文本的路径（光标移动、退格/删除、选区、字符串截断/省略、字符计数与长度限制、宽度测量与对齐、表格/列表列宽、文件名与标题显示、查找替换等），在中文文本上**一律按 UTF-8 字符边界精确操作**：不切断字符、不产生错位、计数与宽度准确。验收口径：KDE 1 作为整体**完美运行于 UTF-8 系统**，用户在任何模块、任何文本交互处都感知不到"这是单字节时代的程序"（该目标 1999 年 CLE 补丁未达成，本项目必须达成）。
 
-路线乙的含义：宿主系统保持 UTF-8 不变；为 Qt 1.44 补上多字节文本渲染通道（`drawText` 走 Xft/XRender 渲染 UTF-8，字体管理与匹配完全交给 fontconfig——**与当今 KDE / XFCE 同一套字体管理与显示**：抗锯齿渲染、直接使用现代 TTF/OTF 中文字体，不安装任何古老点阵字体）；po 翻译文件转 UTF-8；打通 XIM 输入。目标效果：菜单、按钮、对话框正常显示中文，系统其余部分零改动。
+路线乙（2026-08 底座已换 TQt3）：宿主系统保持 UTF-8 不变；**GUI 底座为 TQt3 r14.1.6**（Trinity 维护的 Qt3 分支，GPLv2——彻底解决 Qt1 专有许可证不可修改分发的问题）。TQt3 原生 Unicode（TQString 内部 UTF-16）+ fontconfig/Xft 抗锯齿渲染 + 原生 XIM 支持，与当今 KDE/XFCE 同一套字体体系。KDE1 六模块经 `port/` 迁移脚手架（strangler fig 模式：编译期 -include 注入 Q→TQ 名字映射，逐模块显式 TQ 化后摘除）完成编译迁移；`TQTextCodec::setCodecForCStrings(UTF-8)` 全局开关统一字符串编码语义。po 翻译文件 UTF-8。目标效果：菜单、按钮、对话框正常显示中文，系统其余部分零改动。
 
 ## 2. 代码来历（详见 README.md「代码来历」）
 
-- 上游源头：KDE 团队 1999 年发布的 KDE 1.1.2 与 Troll Tech 的 Qt Free Edition 1.44。
-- 直接来源：GitHub `NishiOwO/kde1` 元仓库及其 `qt1` / `kde1-*` 系列仓库（历史源码 + 现代工具链适配）。
-- 本仓库于 2026-08 移除了原 git 历史与子模块结构，整合为普通目录树。
+- 上游源头：KDE 团队 1999 年发布的 KDE 1.1.2；GUI 底座为 TQt3（Trinity Desktop 对 Qt 3.3.8 的维护性分支，GPLv2）。
+- 直接来源：KDE1 源码来自 GitHub `NishiOwO/kde1` 元仓库；TQt3 来自 Trinity 官方 Gitea（地址与版本见 README「底座」节）。
+- 本仓库于 2026-08 移除原 git 历史与子模块结构整合为普通目录树；同年 8 月底完成 Qt1→TQt3 底座更换（历史已重写清除 qt1）。
 
 ## 3. 目录结构
 
 | 目录 | 内容 |
 |---|---|
-| `qt1/` | Qt Free Edition 1.44（Troll Tech 原始源码 + 现代构建修复） |
+| `tqt3/` | TQt3 r14.1.6 pristine 快照（Trinity 的 Qt3 分支，GPLv2；**绝不直接修改**，修改一律走 `tqt3-patches/`） |
+| `tqt3-patches/` | 对 tqt3 的补丁（构建时打入 `tqt3-build/`；当前 1 个：ntqvariant X11 Bool 宏冲突） |
+| `port/` | KDE1→TQt3 迁移脚手架（strangler fig 模式）：`q1compat.h`（Q→TQ 映射 + tq 函数族）、331 个转发头、两个生成器脚本；全部模块显式 TQ 化后整体拆除 |
 | `kdelibs/` | KDE 1.1.2 基础库（kdecore、kdeui 等） |
 | `kdebase/` | KDE 1.1.2 基础应用（kwm、kpanel、kfm、kvt、kdm 等） |
 | `kdegames/` `kdeutils/` `kdenetwork/` `kdetoys/` | 其余应用模块 |
-| `build.sh` | 一键构建脚本（按 qt1 → kdelibs → kdebase → 应用 顺序） |
+| `build.sh` | 一键构建脚本（按 tqt3 → kdelibs → kdebase → 应用 顺序） |
 | `clean.sh` | 清理脚本（删除各模块 `build/` 目录与 `staging/` 暂存区；模块清单必须与 `build.sh` 保持同步） |
 | `staging/` | 开发期安装暂存区（`build.sh` 以 DESTDIR 重定向 `make install` 所得，布局对应最终 `/usr/kde1`；由 `clean.sh` 清理） |
 | `dist/src/` | 打包产物：Debian 源码包 sdeb（`.dsc` / `.orig.tar.*` / `.debian.tar.*`，由打包脚本生成，分目录存放见 §1 目标 5） |
@@ -44,11 +46,11 @@
 ## 4. 构建与运行（Debian 12）
 
 ```bash
-# 依赖——构建必需（byacc/flex 为 Qt1 老工具链所需；libglu 为 qt1 OpenGL 扩展；
+# 依赖——构建必需（libglu 为 tqt3 OpenGL 扩展；
 # libssl 为 kdebase 所需；pkg-config 为各模块 CMake 探测所需；
 # libxft/libfontconfig/libfreetype 为路线乙 fontconfig+Xft 字体栈；
 # libwebkit2gtk 为 kfm 新内核）
-sudo apt install build-essential cmake git pkg-config byacc flex \
+sudo apt install build-essential cmake git pkg-config \
      libx11-dev libxext-dev libxmu-dev libxpm-dev libjpeg-dev libpng-dev \
      zlib1g-dev libtiff-dev libssl-dev libglu1-mesa-dev \
      libxft-dev libfontconfig1-dev libfreetype-dev libwebkit2gtk-4.1-dev
@@ -79,14 +81,14 @@ sudo apt install fonts-noto-cjk fcitx5 fcitx5-chinese-addons \
 
 - 所有**新增或完全改写**的源码文件、配置文件、脚本、文档一律以 **UTF-8（无 BOM）、LF 行尾**保存。
 - C/C++ 源码不需要 Python 式 `coding` 声明行：GCC 默认按 UTF-8 处理输入源码，无需任何等价物；不要往源文件里加编码声明注释。
-- **历史文件禁止转码**：`qt1/`、`kde*/` 原始源码为 ASCII/Latin-1，po 翻译文件为 GB2312/Big5——一律保持原始编码，禁止任何形式的批量转码重存（会产生无意义巨型 diff，且违反对历史代码的最小改动原则）。唯一例外：路线乙计划内的 po 文件 GB2312/Big5 → UTF-8 转换（见 §7 路线图），转换必须用 `iconv` 逐文件进行并校验无转换错误。
+- **历史文件禁止转码**：`kde*/` 原始源码为 ASCII/Latin-1（个别为 Latin-1 带高位字节），po 翻译文件转 UTF-8 已完成——一律保持现状编码，禁止任何形式的批量转码重存（会产生无意义巨型 diff，且违反对历史代码的最小改动原则）。`tqt3/` 为上游 pristine 快照，除 `tqt3-patches/` 补丁外禁止任何修改。
 - 所有**注释、提交说明（git commit message）、构建脚本输出信息、诊断日志文本**均**使用中文**。
 - 中文字符串字面量的边界：GUI 可见的中文字面串依赖路线乙渲染补丁生效后才能正确上屏——补丁落地前，新增代码中的中文只允许出现在**注释与 stderr 日志**里（现代终端按 UTF-8 显示 stderr，不受 Qt 1 渲染限制）。
 - 控制台输出中文时确保终端为 UTF-8：本机已生成 `zh_CN.utf8` locale，必要时运行前执行 `export LANG=zh_CN.UTF-8`。构建 27 年前的工具链组件（lex/yacc/老 configure）如遇 locale 相关报错，构建命令前缀 `LC_ALL=C`（仅限构建期，不影响运行期 UTF-8）。
 - 日志输出规范（本项目各层的"logging 模块"等价物，禁止用裸 printf 散落各处）：
-  - **Qt 层**（`qt1/` 内补丁）：`qt1/src/tools/qglobal.h` 提供全局 `debug()` / `warning()`（printf 风格，输出到 stderr）。示例：
+  - **Qt 层**：TQt3 自带 `tqDebug()` / `tqWarning()` / `tqFatal()`（printf 风格，stderr）。KDE1 代码中的裸 `debug()/warning()/fatal()` 调用已在迁移中显式化为 tq 前缀。示例：
     ```cpp
-    warning("fontconfig 匹配中文字体失败，回退单字节路径: %s", pattern);
+    tqWarning("KWM 通信失败: %s", cmd);
     ```
   - **KDE 应用层**：`kdelibs/kdecore/kdebug.h` 提供 `kdebug( level, area, fmt, ... )` 与 `KDEBUG*/KASSERT*` 宏。注意：KDE 1.1.2 **没有** `kdDebug`（那是 KDE 2 之后的接口），不要写错年代。
   - **脚本层**：`echo "..." >&2`，排查时可临时 `set -x`。
@@ -109,16 +111,16 @@ sudo apt install fonts-noto-cjk fcitx5 fcitx5-chinese-addons \
 
 **历史代码的原有英文注释保持原样**——不翻译、不改写、不删除；中文 5W1H 注释只加在**新增或实质改动的代码段**上。
 
-**C++ 合规示例**（贴合路线乙真实场景）：
+**C++ 合规示例**（贴合底座迁移真实场景）：
 
 ```cpp
-static XftFont *open_mb_font( const char *fallback_pattern )
-// ┌─ What : 经 fontconfig 打开支持 CJK 的 XftFont，供多字节渲染通道使用
-// │  Why  : Qt 1.44 原生只走 XSetFont + XDrawString 的单字节核心字体路径，画不出汉字，
-// │         也无抗锯齿；路线乙要求与当今 KDE/XFCE 同一套字体体系（fontconfig + Xft）
-// │  Who  : 由 QFontInternal 在首次需要多字节绘制时调用；QPainter 不直接接触
+static QString xdg_home_dir( const char *key, const QString & fallback )
+// ┌─ What : 解析 ~/.config/user-dirs.dirs，按 KEY 取现代桌面标准的用户目录路径
+// │  Why  : KDE1 体系里 kfm 与 krootwm 各有 1999 年的路径默认值（~/Desktop 等），
+// │         须收敛为唯一实现并优先读 XDG 约定（中文系统即 ~/桌面、~/模板）
+// │  Who  : kfmpaths.cpp（桌面/模板/回收站）、krootwm（右键菜单）共用
 // │  When : 每个 QFontInternal 生命周期内至多一次（结果缓存），程序退出时随 XftFont 关闭
-// │  Where: qt1/src/kernel/qfont_x11.cpp（本补丁新增函数）；字体由 fontconfig 在系统字体目录中匹配
+// │  Where: 任意 KDE1 迁移代码；示例为 tqt3-patches 补丁中的实际用法
 // │  How  : ① 以当前字族/字号组装 fontconfig 模式名 → ② XftFontOpenName 打开
 // │         → ③ 失败则改用 fallback_pattern 重试 → ④ 仍失败返回 0，调用方回退单字节路径
 {
@@ -164,7 +166,7 @@ int qt_mb_text_width( const char *s, int len )
 
 1. **禁止日志式记录**：任何 `.md` 文档（AGENTS.md、README.md 及未来新增文档）一律不得出现过程性/流水账内容（"今日完成了…"、"第 X 步…"、"已修复…"等）。所有修改历史只写入 `CHANGELOG.md`，其余文档永远只呈现当前最终状态。
 2. **CHANGELOG.md 条目格式**：`日期 + 一行摘要`，新的在最上；一次工作对应一条，不要逐文件罗列。
-3. **版权合规**：各源文件头部原有的 Troll Tech / KDE Team 版权声明与许可条款**不得删除、不得改写**（许可文件：`qt1/LICENSE`、各模块 `COPYING` / `COPYING.LIB`）。对源码的实质性修改，在文件头部原有声明**之后**追加标注，模板：
+3. **版权合规**：各源文件头部原有的 Troll Tech / KDE Team 版权声明与许可条款**不得删除、不得改写**（许可文件：`tqt3/LICENSE.GPL2`（TQt3 三选一许可证中我们选择 GPLv2 侧）、各模块 `COPYING` / `COPYING.LIB`、`tqt3-patches/` 补丁头）。对源码的实质性修改，在文件头部原有声明**之后**追加标注，模板：
 
    ```
    //   Modified for the KDE1 Revival Project, 2026
@@ -183,9 +185,9 @@ int qt_mb_text_width( const char *s, int len )
 - [x] 中文支持源码分析（结论固化于 README.md「中文支持」一节）
 - [x] 项目文档体系建立（AGENTS.md / README.md / CHANGELOG.md）
 - [x] 依赖安装与全量编译跑通（英文桌面）
-- [x] 路线乙补丁：Qt1 多字节渲染（qfont_x11 / qpainter 热点函数 + fontconfig/Xft 字体体系，与当今 KDE/XFCE 一致）
-- [x] Qt1 剪贴板补丁：增加 UTF8_STRING selection target，使 KDE1 应用与现代应用（浏览器、现代 Qt/GTK）可双向复制粘贴中文
-- [x] 全面 UTF-8 融合补丁：不止编辑部件——Qt 内核所有字节级文本处理（光标/选区/截断/字符计数/宽度测量/对齐）与各模块自绘文本及字符串处理路径（kfm、kpanel、kvt、各应用）全面按 UTF-8 字符边界接入，使 KDE 1 整体完美运行于 UTF-8 系统（见 §1 目标 8）
+- [x] **底座更换 Qt1→TQt3**（2026-08 完成）：TQt3 r14.1.6 GPLv2，port/ 脚手架迁移六模块，setCodecForCStrings 全局 UTF-8；渲染/剪贴板/XIM/字符边界由 TQt3 原生 Unicode 体系提供，原 Qt1 逐点补丁路线随之作废
+- [x] 剪贴板：TQt3 原生 UTF8_STRING 支持，与浏览器/现代 Qt/GTK 双向粘贴中文
+- [x] 全面 UTF-8 融合：TQString 内部 UTF-16 + 全局 codec 开关，字符边界天然正确（见 §1 目标 8）
 - [x] po 翻译文件转 UTF-8 并验证显示
 - [x] XIM 输入通道验证
 - [x] fcitx5 / fcitx 输入法稳定运行验证（经 XIM 通道接入，两代框架均须通过，见 §1 目标 2）
@@ -196,7 +198,7 @@ int qt_mb_text_width( const char *s, int len )
 - [ ] 界面全面中文化：补齐菜单/帮助/提示翻译，覆盖率与英文对齐；译法须上网核实通行译法并与当今 KDE 6 的 zh_CN 官方术语一致（见 §1 目标 4）
 - [x] 打印接入 CUPS：经 cups-bsd 兼容层打通 Qt1 的 lpr 打印路径，deb 依赖声明，实测打印任务进入 CUPS 队列（见 §1 目标 7）
 - [x] XDG 用户目录兼容：KFMPaths 默认值改为经 ~/.config/user-dirs.dirs 解析（桌面=~/桌面、模板=~/模板），Autostart 挪至 ~/.kde/share/autostart，回收站对齐 ~/.local/share/Trash/files；实测 KDE1 桌面与 XFCE 共用 ~/桌面 且不再创建 ~/Desktop（见 §1 目标 6）
-- [x] Debian 打包：按模块拆分核心包与可选包，产出源码包与二进制 .deb 包并分目录存放（dist/src/ 与 dist/deb/）；.deb 开箱即用——含 xsessions 会话入口、startkde 环境包装脚本（PATH/LD_LIBRARY_PATH/KDEDIR 自动设置）、moc-qt1 入口、运行时依赖声明；apt install 即装、lightdm 即现、apt remove 干净移除（见 §1 目标 5）
+- [x] Debian 打包：按模块拆分核心包与可选包，产出源码包与二进制 .deb 包并分目录存放（dist/src/ 与 dist/deb/）；.deb 开箱即用——含 xsessions 会话入口、startkde 环境包装脚本（PATH/LD_LIBRARY_PATH/KDEDIR 自动设置）、TQt3 运行库、运行时依赖声明；apt install 即装、lightdm 即现、apt remove 干净移除（见 §1 目标 5）
 
 **暂缓项（明确延后，不纳入当前验收）：**
 

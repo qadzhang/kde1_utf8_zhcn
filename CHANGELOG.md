@@ -2,6 +2,16 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-29（底座更换：Qt1 → TQt3）
+
+- **GUI 底座由 Qt Free Edition 1.44 更换为 TQt3 r14.1.6**（Trinity 维护的 Qt3 分支，GPLv2——解决 Qt1 专有许可证修改分发无授权的合规死结）。`tqt3/` 为 pristine 快照（commit 3a07835），源地址 `https://mirror.git.trinitydesktop.org/gitea/TDE/tqt3`；一切修改走 `tqt3-patches/`（当前 1 个：ntqvariant 的 X11 Bool 宏冲突），构建期打入 `tqt3-build/` 拷贝树。
+- **port/ 迁移脚手架**（strangler fig 模式）：`q1compat.h`（600+ 条 Q→TQ 类名映射 + tq 函数族 + QFont/QFontInfo 包装类 + X11 宏防冲突）经 `-include` 注入全部编译单元；331 个转发头（Qt1 短名/缩写名/改名头/attic 控件）；两个生成器脚本可重跑。逐模块显式 TQ 化后摘除，终态整体拆除。
+- **六模块全部完成 TQt3 编译迁移并归零**：kdelibs（42 轮轰炸）、kdebase（73 轮）、kdegames（12 轮）、kdeutils（16 轮）、kdenetwork（22 轮）、kdetoys（2 轮）；150 个程序装入 staging。
+- **UTF-8 全局策略落地**：`TQTextCodec::setCodecForCStrings(UTF-8)` + `setCodecForLocale(UTF-8)` 于 KApplication::init()——字符串编码语义一个全局决策统一（TQt3 的 ascii()/data() 输出同受此开关驱动，双向边界一致）。
+- **运行时崩溃根治三连**：kwm colormapFocus 悬空 else（gdb 定位）、kfm 桌面布局解析 strchr NULL 解引用、kfm SIGPIPE（Qt1 时代 QApplication 默认忽略、TQt3 不再代劳）。
+- **staging 实测**（Xvfb :96）：kwm+kfm+kpanel 三件套稳定运行；桌面图标（主文件夹/回收站/模板）中文正常；kfm 文件管理器窗口（中文菜单栏 文件(F)/编辑(E)/查看(V)/转到(G)/书签(B)/选项(O)/帮助(H)、状态栏「文件： 完成」）；kvt 终端（中文菜单 + bash 提示符）。遗留：kpanel pager 按钮字形缺失、Templates/模板双条目、主文件夹图标位图缺失——记录待后续打磨。
+- **qt1 彻底移除**：源码删除 + git filter-branch 历史重写（refs/objects 全清，`git rev-list --objects --all` 验证零 qt1 路径）+ 全部文档/脚本/打包配置同步更新（AGENTS/README/clean.sh/package.sh/debian/*）。
+
 ## 2026-08-28（第五批：kfm 转到菜单核验）
 
 - 核验 kfm「转到(G)」下拉菜单内容并完成术语统一：向上(U)/后退(B)/前进(F)/主文件夹(H) 四项全中文（Alt+方向键快捷键提示正常），分隔线下动态显示历史记录 URL；「主目录」→「主文件夹」对齐 KDE6/Dolphin 与桌面图标术语。Alt+G 助记键打开菜单视觉核验通过。

@@ -15,12 +15,12 @@
 # 伪代码：
 #   1. 准备：确认 7 模块均构建过（存在 build 标记）→ 否则提示先 ./build.sh
 #   2. 二进制内容树：
-#        core 树 = qt1+kdelibs+kdebase 以 DESTDIR 重新安装
+#        core 树 = tqt3+kdelibs+kdebase 以拷贝/DESTDIR 重新收编
 #        apps 树 = 四个应用模块以 DESTDIR 重新安装
 #   3. kde1-core：core 树 + 控制文件（Depends 声明运行库）→ dpkg-deb
 #   4. kde1-apps：apps 树 + 控制文件（Depends kde1-core）→ dpkg-deb
 #   5. kde1 元包（无内容物）：xsessions 会话入口 + /usr/bin/startkde-kde1
-#        环境包装脚本 + /usr/bin/moc-qt1 软链 + Depends 前两包
+#        环境包装脚本 + Depends 前两包
 #   6. 源码包 sdeb：git archive 导出干净源码为 orig.tar.xz（剔除 debian/
 #        构建产物）；debian.tar.xz 收编控制/规则；.dsc 描述文件
 #   7. 校验：dpkg-deb --info 各包；输出清单汇总
@@ -36,7 +36,7 @@ OUTSRC="$DIST/src"
 PKGTMP="$DIST/packagetmp"
 
 # ── 1. 前置检查：7 模块构建标记
-for i in qt1 kdelibs kdebase kdegames kdeutils kdenetwork kdetoys; do
+for i in kdelibs kdebase kdegames kdeutils kdenetwork kdetoys; do
     if [ ! -f "$i/build/built" ]; then
         echo "错误：模块 $i 尚未构建，请先执行 ./build.sh" >&2
         exit 1
@@ -50,9 +50,21 @@ mkdir -p "$PKGTMP/core" "$PKGTMP/apps" "$OUTDEB" "$OUTSRC"
 # kjots1 等程序链接时，libkfile.so 的间接依赖 libkfm.so.2 由此解析）
 LD_LIBRARY_PATH="$STAGING/usr/kde1/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 export LD_LIBRARY_PATH
-echo "=== 组装 core 树（qt1 + kdelibs + kdebase）"
-for i in qt1 kdelibs kdebase; do
-    ( cd "$i/build" && make install DESTDIR="$PKGTMP/core" > /dev/null 2>&1 )
+echo "=== 组装 core 树（tqt3 + kdelibs + kdebase）"
+# tqt3：从 tqt3-build/ 手动拷贝产物（What/Why：不用 make install——TQt3 qmake 会把
+# prefix 相对化进子 Makefile 与 INSTALL_ROOT 拼出坏路径；拷贝清单封闭可控）
+mkdir -p "$PKGTMP/core/usr/kde1/tqt3/bin" "$PKGTMP/core/usr/kde1/tqt3/lib" \
+         "$PKGTMP/core/usr/kde1/tqt3/include" "$PKGTMP/core/usr/kde1/tqt3/plugins" \
+         "$PKGTMP/core/usr/kde1/tqt3/mkspecs"
+cp tqt3-build/bin/tqmoc tqt3-build/bin/tqmake tqt3-build/bin/tqtfindtr tqt3-build/bin/tqtrename140 \
+   "$PKGTMP/core/usr/kde1/tqt3/bin/" 2>/dev/null || true
+find tqt3-build/include -maxdepth 1 -type l ! -xtype f -delete 2>/dev/null || true
+cp -P tqt3-build/lib/libtqt-mt.so* tqt3-build/lib/*.prl "$PKGTMP/core/usr/kde1/tqt3/lib/" 2>/dev/null || true
+cp -rL tqt3-build/include/* "$PKGTMP/core/usr/kde1/tqt3/include/"
+cp -r tqt3-build/plugins/imageformats "$PKGTMP/core/usr/kde1/tqt3/plugins/" 2>/dev/null || true
+cp -r tqt3-build/mkspecs/* "$PKGTMP/core/usr/kde1/tqt3/mkspecs/" 2>/dev/null || true
+for i in kdelibs kdebase; do
+    ( cd "$i/build" && LD_LIBRARY_PATH="$STAGING/usr/kde1/lib:$STAGING/usr/kde1/tqt3/lib" make install DESTDIR="$PKGTMP/core" > /dev/null 2>&1 )
 done
 echo "=== 组装 apps 树（四个应用模块）"
 for i in kdegames kdeutils kdenetwork kdetoys; do
@@ -106,9 +118,8 @@ sed "s|@KDE1_PREFIX@|/usr/kde1|g" "$DIST/staging-integration/startkde-kde1.in" \
     > "$META/usr/bin/startkde-kde1"
 chmod 755 "$META/usr/bin/startkde-kde1"
 cp "$DIST/staging-integration/kde1.desktop" "$META/usr/share/xsessions/"
-# moc-qt1 命令入口（绝对软链，dpkg 原生管理）
+# （TQt3 工具已随 tqt3 子树入包，无需额外软链）
 mkdir -p "$META/usr/kde1/bin"
-ln -sf /usr/kde1/bin/moc-qt1 "$META/usr/bin/moc-qt1"
 cat > "$META/DEBIAN/control" << EOF
 Package: kde1
 Version: ${VERSION}-${REL}

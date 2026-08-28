@@ -18,8 +18,11 @@
 # │         4. exec startkde
 KDE1_PREFIX=@KDE1_PREFIX@
 export KDEDIR="$KDE1_PREFIX"
+# TQt3 底座：运行库与插件路径（TQt3 的插件搜索路径含编译期烧入的前缀，
+# deb 安装后即命中 /usr/kde1/tqt3/plugins；无需 QT_PLUGIN_PATH）
 export PATH="$KDE1_PREFIX/bin:$PATH"
-export LD_LIBRARY_PATH="$KDE1_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export TQTDIR="$KDE1_PREFIX/tqt3"
+export LD_LIBRARY_PATH="$KDE1_PREFIX/lib:$KDE1_PREFIX/tqt3/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
 # 输入法：fcitx5 优先，fcitx 兜底（均未装则跳过）
 export XMODIFIERS=@im=fcitx
