@@ -4,6 +4,10 @@
 
 ## 2026-08-28
 
+- XDG 桌面图标问题根治（三层叠加因素）：①系统级 kfmrc 的 [Paths] 组在 KConfig 全局合并时覆盖代码默认值——源头移除该四行硬编码（用户级 kfmrc 仍可显式覆盖）；②解析函数两处 1999 年工具链陷阱（多字符常量 '="' 与 QString::length 含终止 0）修复；③补齐 initPaths 尾部的默认桌面图标逻辑（Home/Trash 从 applnk 拷入、生成指向 XDG 模板目录的 Templates 图标，幂等）。终验：全新会话桌面自动生成三个系统图标（房子/垃圾桶/文件夹）+用户文件图标完整、与 XFCE 共用 ~/桌面、~/Desktop 不再创建。
+
+## 2026-08-28
+
 - XDG 用户目录兼容落地并实机验证：KFMPaths 四项默认值改造——桌面/模板经 ~/.config/user-dirs.dirs 解析（中文系统即 ~/桌面、~/模板，kfm 配置显式设置仍优先）、Autostart 挪至 ~/.kde/share/autostart（不再污染桌面目录）、回收站对齐 freedesktop ~/.local/share/Trash/files（现代文件管理器可见 kfm 删除物）；实测 KDE1 桌面与 XFCE 完全共用 ~/桌面（原有文件+测试文件同屏显示）、不再创建 ~/Desktop。验收标准第 6 条扩充 XGD 表述，路线图记已完成项。
 
 ## 2026-08-28

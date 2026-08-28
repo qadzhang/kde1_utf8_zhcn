@@ -89,6 +89,47 @@ void KFMPaths::initPaths()
   
   cachePath->sprintf(_PATH_TMP"/kfm-cache-%i", (int)getuid() );
 
+  /* [KDE1 Revival 2026] 默认桌面图标补齐
+     What: 桌面缺 Home/Trash 时从安装树 applnk 拷入；并生成指向 XDG
+           模板目录的 Templates 图标（含中文显示名）
+     Why : 1999 年由发行版脚本一次性初始化，现代 deb 装到全新 XDG 桌面
+           （如 ~/桌面）不自带，桌面将只有文字没有图标
+     When : initPaths 是 kfm 启动必经早期路径（先于 main 中段 IPC 检测）
+     How : 幂等——存在即跳过；源路径经 KDEDIR 拼接；Trash 经 trash:/
+           协议指向 TrashPath 免改写 */
+  {
+      const char *def_icons[] = { "Home.kdelnk", "Trash.kdelnk", 0 };
+      const char *kdedir_env = getenv( "KDEDIR" );
+      QString iconsrc( kdedir_env && *kdedir_env ? kdedir_env : "/usr/kde1" );
+      iconsrc += "/share/applnk/";
+      for ( int di = 0; def_icons[di]; di++ ) {
+          QString dst = *desktopPath + def_icons[di];
+          if ( access( dst, F_OK ) != 0 ) {
+              QString cmd;
+              cmd.sprintf( "cp '%s%s' '%s'", iconsrc.data(),
+                           def_icons[di], dst.data() );
+              system( cmd.data() );
+          }
+      }
+      QString tpl = *desktopPath + "Templates.kdelnk";
+      if ( access( tpl, F_OK ) != 0 ) {
+          FILE *tf = fopen( tpl, "w" );
+          if ( tf ) {
+              fprintf( tf,
+                  "# KDE Config File\n"
+                  "[KDE Desktop Entry]\n"
+                  "Type=Application\n"
+                  "Exec=kfmclient1 folder %%u file:$HOME/模板\n"
+                  "Icon=folder.xpm\n"
+                  "MiniIcon=folder.xpm\n"
+                  "Terminal=0\n"
+                  "Name=Templates\n"
+                  "Name[zh_CN.UTF-8]=模板\n" );
+              fclose( tf );
+          }
+      }
+  }
+
   if (!QFileInfo(_PATH_TMP).isWritable())
   {
       QString s;
@@ -136,23 +177,24 @@ QString xdg_home_dir( const char *key, const QString & fallback )
     FILE *f = fopen( path, "r" );
     if ( !f )
         return fallback;
-    QString kwd = QString(key) + '="';
+    QString kwd = QString(key) + "=\"";
     char line[512];
     while ( fgets( line, sizeof(line), f ) ) {
         char *p = strstr( line, kwd );
         if ( !p )
             continue;
-        p += kwd.length();
+        p += strlen(key) + 2;   /* 不用 QString::length（Qt1 含终止 0）*/
         char *q = strchr( p, '"' );
         if ( !q )
             continue;
         *q = 0;
         QString val( p );
         fclose( f );
+        int vlen = strlen( (const char *)val );
         if ( val.left(6) == "$HOME/" )
-            val = QDir::homeDirPath() + "/" + val.mid( 6, val.length()-6 );
+            val = QDir::homeDirPath() + "/" + val.mid( 6, vlen-6 );
         else if ( val.left(5) == "$HOME" )
-            val = QDir::homeDirPath() + val.mid( 5, val.length()-5 );
+            val = QDir::homeDirPath() + val.mid( 5, vlen-5 );
         if ( val.isEmpty() )
             return fallback;
         return val;

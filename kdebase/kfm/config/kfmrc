@@ -1,9 +1,11 @@
 # KDE Config File
 [Paths]
-Trash=$HOME/Desktop/Trash/
-Desktop=$HOME/Desktop/
-Templates=$HOME/Desktop/Templates/
-Autostart=$HOME/Desktop/Autostart/  
+# [KDE1 Revival 2026] 用户目录不再在此硬编码（1999 年原值 Trash/Desktop/
+# Templates/Autostart=$HOME/Desktop/... 会在 KConfig 全局合并时覆盖代码层
+# 的 XDG 默认值）。缺省时 kfmpaths.cpp 按 ~/.config/user-dirs.dirs 解析
+# （桌面=XDG_DESKTOP_DIR、模板=XDG_TEMPLATES_DIR、回收站=freedesktop
+# ~/.local/share/Trash/files、Autostart=~/.kde/share/autostart）；
+# 用户仍可在 ~/.kde/share/config/kfmrc 的本组显式覆盖任意路径。
 [Icons]
 Batch=terminal.xpm
 Default=unknown.xpm
