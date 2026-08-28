@@ -124,7 +124,10 @@ void KFMPaths::initPaths()
                   "MiniIcon=folder.xpm\n"
                   "Terminal=0\n"
                   "Name=Templates\n"
-                  "Name[zh_CN.UTF-8]=模板\n" );
+                  /* 双键冗余：KConfig 语言键匹配 KLocale::language() 返回值，
+                     zh_CN.UTF-8 环境匹配前者，无编码后缀环境匹配后者 */
+                  "Name[zh_CN.UTF-8]=模板\n"
+                  "Name[zh_CN]=模板\n" );
               fclose( tf );
           }
       }

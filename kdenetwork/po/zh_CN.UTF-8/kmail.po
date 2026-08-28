@@ -66,11 +66,11 @@ msgstr "确认"
 
 #: kmmainwin.cpp:583
 msgid "KMail notification!"
-msgstr ""
+msgstr "KMail 通知！"
 
 #: kmmainwin.cpp:584
 msgid "Only messages in the outbox folder can be edited!"
-msgstr ""
+msgstr "只有发件箱中的邮件才能编辑！"
 
 #: kmmainwin.cpp:619
 msgid "Message as Plain Text"
@@ -210,7 +210,7 @@ msgstr "空的[&E]"
 
 #: kmfilterdlg.cpp:149 kmheaders.cpp:991 kmmainwin.cpp:1026
 msgid "New"
-msgstr ""
+msgstr "新建"
 
 #: kmheaders.cpp:992 kmmainwin.cpp:1027
 msgid "Unread"
@@ -238,7 +238,7 @@ msgstr "下一个[&N]"
 
 #: kmmainwin.cpp:1037
 msgid "Next unread"
-msgstr ""
+msgstr "下一个未读"
 
 #: kmmainwin.cpp:1039
 #, fuzzy
@@ -436,7 +436,7 @@ msgstr "帐号: (添加至少一个帐号!)"
 
 #: kmcomposewin.cpp:140 kmsettings.cpp:267
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: kmcomposewin.cpp:143 kmsettings.cpp:268
 msgid "Type"
@@ -565,11 +565,11 @@ msgstr "在退出时清空废纸篓"
 
 #: kmsettings.cpp:546
 msgid "Send Mail in outbox Folder on Check"
-msgstr ""
+msgstr "检查时发送发件箱中的邮件"
 
 #: kmsettings.cpp:561
 msgid "Misc"
-msgstr ""
+msgstr "杂项"
 
 #: kmsettings.cpp:568
 msgid "PGP"
@@ -589,7 +589,7 @@ msgstr "选择帐号"
 
 #: kmaccount.cpp:77 kmfilterdlg.cpp:472 kmsettings.cpp:676
 msgid "Unnamed"
-msgstr "Unnamed"
+msgstr "未命名"
 
 #: kmsettings.cpp:695
 msgid "Choose Sendmail Location"
@@ -626,7 +626,7 @@ msgstr "主机:"
 
 #: kmsettings.cpp:914
 msgid "Store POP password in config file"
-msgstr ""
+msgstr "在配置文件中存储 POP 密码"
 
 #: kmsettings.cpp:919
 msgid "Delete mail from server"
@@ -639,7 +639,7 @@ msgstr "从服务器上删除邮件"
 
 #: kmsettings.cpp:936
 msgid "Enable interval Mail checking"
-msgstr ""
+msgstr "启用定时邮件检查"
 
 #: kmsettings.cpp:946
 msgid "Store new mail in account:"
@@ -647,7 +647,7 @@ msgstr "把新邮件放在帐号:"
 
 #: kmsettings.cpp:960
 msgid "<none>"
-msgstr "<none>"
+msgstr "<无>"
 
 #: kmsettings.cpp:1009
 msgid "Choose Location"
@@ -680,7 +680,7 @@ msgstr "日期: "
 
 #: kmheaders.cpp:222
 msgid "Receiver"
-msgstr ""
+msgstr "收件人"
 
 #: kmheaders.cpp:225
 #, c-format
@@ -743,7 +743,7 @@ msgstr "KMail 编辑器"
 
 #: kmcomposewin.cpp:141
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: kmcomposewin.cpp:142
 msgid "Encoding"
@@ -894,7 +894,7 @@ msgstr "附文件"
 
 #: kmcomposewin.cpp:534
 msgid "Attach My &Public Key"
-msgstr ""
+msgstr "附上我的公钥(&P)"
 
 #: kmcomposewin.cpp:545
 msgid "&Save..."
@@ -967,11 +967,11 @@ msgstr "包含文件"
 
 #: kmcomposewin.cpp:1248
 msgid "my pgp key"
-msgstr ""
+msgstr "我的 pgp 密钥"
 
 #: kmcomposewin.cpp:1276
 msgid "pgp key"
-msgstr ""
+msgstr "pgp 密钥"
 
 #: kmcomposewin.cpp:1297 kmreaderwin.cpp:906
 msgid "View..."
@@ -1013,7 +1013,7 @@ msgstr "KMail: 拼写检查"
 
 #: kmcomposewin.cpp:2113
 msgid "Spellcheck - KMail"
-msgstr ""
+msgstr "拼写检查 - KMail"
 
 #: kmcomposewin.cpp:2139
 msgid ""
@@ -1032,7 +1032,7 @@ msgstr "建立索引文件: 完成 %d 个信件"
 
 #: kmfolder.cpp:477
 msgid "Writing index file"
-msgstr ""
+msgstr "正在写入索引文件"
 
 #: kmfolder.cpp:934
 #, fuzzy, c-format
@@ -1114,7 +1114,7 @@ msgstr "警告: 坏的签名"
 
 #: kmreaderwin.cpp:532
 msgid "unknown key ID"
-msgstr ""
+msgstr "未知密钥 ID"
 
 #: kmreaderwin.cpp:870
 msgid "Attachment: "
@@ -1151,7 +1151,7 @@ msgstr "致命错误"
 
 #: main.cpp:306
 msgid "KMail notification"
-msgstr ""
+msgstr "KMail 通知"
 
 #: main.cpp:307
 msgid ""
@@ -1178,7 +1178,7 @@ msgstr ""
 
 #: main.cpp:485
 msgid "Loading addressbook failed"
-msgstr ""
+msgstr "加载地址簿失败"
 
 #: main.cpp:588 main.cpp:729
 #, c-format
@@ -1205,15 +1205,15 @@ msgstr ""
 
 #: kmacctpop.cpp:100
 msgid "Please set Password and Username"
-msgstr ""
+msgstr "请设置密码和用户名"
 
 #: kmacctpop.cpp:135
 msgid "Incorrect Username"
-msgstr ""
+msgstr "用户名不正确"
 
 #: kmacctpop.cpp:148
 msgid "Incorrect Password"
-msgstr ""
+msgstr "密码不正确"
 
 #: kmacctpop.cpp:185
 msgid ""
@@ -1524,15 +1524,15 @@ msgstr ""
 
 #: kpgp.cpp:296
 msgid "Could not find the public keys for\n"
-msgstr ""
+msgstr "找不到以下人员的公钥：\n"
 
 #: kpgp.cpp:307
 msgid "These persons will not be able to\n"
-msgstr ""
+msgstr "这些收件人将无法\n"
 
 #: kpgp.cpp:309
 msgid "This person will not be able to\n"
-msgstr ""
+msgstr "该收件人将无法\n"
 
 #: kpgp.cpp:311
 #, fuzzy
@@ -1548,7 +1548,7 @@ msgstr ""
 
 #: kpgp.cpp:331
 msgid "Retry"
-msgstr ""
+msgstr "重试"
 
 #: kpgp.cpp:342
 msgid ""
@@ -1558,7 +1558,7 @@ msgstr ""
 
 #: kpgp.cpp:346
 msgid "Encrypt"
-msgstr ""
+msgstr "加密"
 
 #: kpgp.cpp:359
 msgid ""
@@ -1580,7 +1580,7 @@ msgstr "PGP 安全检查"
 
 #: kpgp.cpp:769
 msgid "Please select the public key to insert"
-msgstr ""
+msgstr "请选择要插入的公钥"
 
 #: kpgp.cpp:800
 #, fuzzy
@@ -1593,11 +1593,11 @@ msgstr "PGP 用户身份:"
 
 #: kpgp.cpp:838
 msgid "Store passphrase"
-msgstr ""
+msgstr "存储口令句"
 
 #: kpgp.cpp:844
 msgid "Always encrypt to self"
-msgstr ""
+msgstr "总是给自己加密"
 
 #: kpgpbase.cpp:322
 msgid "Bad pass Phrase; couldn't sign"
@@ -1605,7 +1605,7 @@ msgstr "错的 pass Phrase; 不能签名"
 
 #: kpgpbase.cpp:361
 msgid "error running pgp"
-msgstr ""
+msgstr "运行 pgp 出错"
 
 #: kpgpbase.cpp:378 kpgpbase.cpp:669
 msgid "Bad pass Phrase; couldn't decrypt"
@@ -1613,15 +1613,15 @@ msgstr "错的 pass Phrase; 不能解密"
 
 #: kpgpbase.cpp:389 kpgpbase.cpp:680
 msgid "Do not have the secret key for this message"
-msgstr ""
+msgstr "没有这封邮件的私钥"
 
 #: kpgpbase.cpp:417
 msgid "unknown key ID "
-msgstr ""
+msgstr "未知密钥 ID "
 
 #: kpgpbase.cpp:437
 msgid "??? (file ~/.pgp/pubring.pgp not found)"
-msgstr ""
+msgstr "???（找不到文件 ~/.pgp/pubring.pgp）"
 
 #: kpgpbase.cpp:592
 #, fuzzy
@@ -1764,7 +1764,7 @@ msgstr "KMail 错误"
 
 #: kmaddrbook.cpp:26
 msgid "Storing the addressbook failed!\n"
-msgstr ""
+msgstr "存储地址簿失败！\n"
 
 #: kmaddrbookdlg.cpp:20
 msgid "Addressbook"

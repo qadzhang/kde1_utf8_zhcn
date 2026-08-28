@@ -1442,6 +1442,29 @@ void KRootIcon::initFilename()
 
     QString n = decoded.data() + 5;
 
+    // ┌─ [KDE1 Revival 2026] .kdelnk 桌面图标的本地化显示名
+    // │  What : 对 .kdelnk 文件图标读取其 [KDE Desktop Entry] 的 Name
+    // │        （KConfig 自动按 KLocale::language() 匹配 Name[zh_CN.UTF-8]
+    // │        等语言键，回落无语言后缀的 Name，再回落文件名）
+    // │  Why  : 1999 年原逻辑只对「目录」图标读 .directory 的 Name，
+    // │        .kdelnk 文件图标一律显示文件名——全面中文化后
+    // │        Home/Trash/Templates 等系统图标的 Name[zh_CN] 无法生效
+    // │  When : 每个桌面图标构造时（initFilename）
+    // │  How  : 只读 KSimpleConfig 打开 .kdelnk → readEntry("Name", 文件名)
+    // └──────────────────────────────────────────────────────────────────┘
+    if ( n.right( 7 ) == ".kdelnk" )
+    {
+      QFile f( n );
+      if ( f.open( IO_ReadOnly ) )
+      {
+        f.close();
+        KSimpleConfig sc( n, true );	/* 只读，避免 KConfig 写回副作用 */
+        sc.setGroup( "KDE Desktop Entry" );
+        file = sc.readEntry( "Name", file );
+        return;
+      }
+    }
+
     QDir dir(n); // no static method available
     if (dir.exists()) // a directoy
     {	

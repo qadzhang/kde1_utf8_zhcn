@@ -2,6 +2,12 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-28（第三批：界面全面中文化推进）
+
+- po 存量缺口批量补译 321 条（msgfmt 全部校验通过，术语对齐现代 KDE：Go→转到、New→新建、Preferences→首选项、Portrait/Landscape→纵向/横向、Traceroute→路由跟踪、Freecell→空当接龙等；专有名词/版权行/数字/尺寸按惯例保留原文）：kfm 的 &Go、konsole 关于与返回码、kdm/klock/kbgndwm、kdegames 十件、kmail+krn 的邮件撰写全链（收件人/抄送/密送/附件/签名/PGP 系列）、kppp 拨号提示、ktop 任务管理器全套、kedit/knotes/kcalc/karm/ark/kljettool/kfinger/knu/ktalkd 等。已重编译 .mo 部署并随 deb 重装。
+- 桌面图标标签中文化：①kfm root.cpp 的 initFilename 新增 .kdelnk 显示名读取（1999 原逻辑只对目录图标读 .directory，.kdelnk 文件图标一律显示文件名，Name[zh_CN] 永远无法生效）——只读 KSimpleConfig 取 Name，语言键由 KConfig 按 KLocale::language() 自动匹配；②applnk 的 Home/Trash 追加 Name[zh_CN.UTF-8]/Name[zh_CN] 双键（主文件夹/回收站，Comment 一并补齐）；③kfmpaths 生成 Templates.kdelnk 同步双键（模板）。视觉终验：三个图标显示「主文件夹/回收站/模板」，白字透明无黑框；kfm 菜单「转到(G)」生效，全图无乱码。
+- 同批附带：XIM 输入通道补 XNFocusWindow+XSetICFocus（此前 IC 无焦点、fcitx5 从不接管——dbus 确认 Ctrl+Space 后 CurrentInputMethod 可切至 pinyin、按键 XFilterEvent 全部被拦截；候选窗不显示问题挂起待查，经用户指示暂停输入法工作并已恢复物理屏 fcitx5 实例）。
+
 ## 2026-08-28（第二批：渲染通道根源修复）
 
 - 控件文字空白问题从根源修复（四个叠加缺陷，全部经视觉模型逐像素复验）：①绘制路径 pointSize 单位错误——qt_xft_font(QFont*) 把 QFont::pointSize() 的磅值当十分之一磅存入 QFontDef，经 /10 后 12pt 字体按 1pt 打开，文字缩成 1 像素墨点；②XftFontOpenName 单字体无按字形回退——实现字形回退链（主字体缺字形的码点自动切换 lang=zh-cn 中文字体与通用兜底字体，度量与绘制同一分段保证量宽=绘制，qmbxft_x11.cpp），Helvetica 等西文字体直接渲染混合中英文；③QFontMetrics 度量基于「实际加载的核心字体」XLFD 写回值（现代系统退化为 bitmap 兜底、字号漂移）——QFontMetrics 增设请求字体副本 xftReq（公共头 ABI 变更，全模块强制重编），spec() 三形态一律返回请求值与绘制路径同源；④height()/leading() 未接 Xft 分支——补齐（链上最大 ascent/descent），修复矩形对齐版 drawText 基线过低导致的中文下半截裁剪。

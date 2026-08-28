@@ -21,7 +21,7 @@ msgstr "编辑..."
 
 #: accounts.cpp:68
 msgid "Allows you to modify the selected account"
-msgstr ""
+msgstr "允许您修改选中的账号"
 
 #: accounts.cpp:77
 msgid "New..."
@@ -188,7 +188,7 @@ msgstr "初始化调制解调器..."
 
 #: connect.cpp:270 connect.cpp:271
 msgid "Setting speaker volume..."
-msgstr ""
+msgstr "正在设置扬声器音量..."
 
 #: connect.cpp:289
 msgid "Dialing"
@@ -370,7 +370,7 @@ msgstr "连接名字:"
 
 #: edit.cpp:56
 msgid "Type in a unique name for this connection"
-msgstr ""
+msgstr "为此连接输入一个唯一的名称"
 
 #: edit.cpp:59
 msgid "Phone Number:"
@@ -874,7 +874,7 @@ msgstr ""
 
 #: general.cpp:364
 msgid "Use Lock File"
-msgstr ""
+msgstr "使用锁定文件"
 
 #: general.cpp:375
 msgid ""
@@ -985,27 +985,27 @@ msgstr ""
 
 #: general.cpp:634
 msgid "Throughput graph"
-msgstr ""
+msgstr "流量图"
 
 #: general.cpp:643
 msgid "Background color"
-msgstr ""
+msgstr "背景色"
 
 #: general.cpp:650
 msgid "Text color"
-msgstr ""
+msgstr "文本颜色"
 
 #: general.cpp:657
 msgid "Input bytes color"
-msgstr ""
+msgstr "接收字节颜色"
 
 #: general.cpp:664
 msgid "Output bytes color"
-msgstr ""
+msgstr "发送字节颜色"
 
 #: main.cpp:116
 msgid "Recent changes in kppp"
-msgstr ""
+msgstr "kppp 近期更改"
 
 #: main.cpp:129
 msgid ""
@@ -1023,7 +1023,7 @@ msgstr ""
 
 #: main.cpp:141
 msgid "Don't show this hint again"
-msgstr ""
+msgstr "不再显示此提示"
 
 #: main.cpp:160
 msgid ""
@@ -1053,7 +1053,7 @@ msgstr ""
 
 #: main.cpp:438
 msgid "Exit"
-msgstr ""
+msgstr "退出"
 
 #: main.cpp:501
 msgid "Connect to: "
@@ -1139,15 +1139,15 @@ msgstr "PPP"
 
 #: main.cpp:724
 msgid "Graph"
-msgstr ""
+msgstr "图表"
 
 #: main.cpp:871
 msgid "Timeout expired while waiting for the PPP interface to come up!"
-msgstr ""
+msgstr "等待 PPP 接口启动超时！"
 
 #: main.cpp:876
 msgid "The pppd daemon died unexpectedly!"
-msgstr ""
+msgstr "pppd 守护进程意外终止！"
 
 #: main.cpp:884
 #, fuzzy
@@ -1373,7 +1373,7 @@ msgstr "守护时间 (秒/50):"
 
 #: modemcmds.cpp:207
 msgid "Volume off/low/high"
-msgstr ""
+msgstr "音量 关/低/高"
 
 #: pppdargs.cpp:38
 msgid "Customize pppd Arguments"
@@ -1465,7 +1465,7 @@ msgstr "流出 vjunc"
 
 #: pppstatdlg.cpp:165
 msgid "vjerr"
-msgstr "vjerr"
+msgstr "vj 错误"
 
 #: pppstatdlg.cpp:166
 msgid "non-vj"
@@ -1563,7 +1563,7 @@ msgstr "可用的规则"
 
 #: acctselect.cpp:305
 msgid "(none)"
-msgstr ""
+msgstr "（无）"
 
 #: ruleset.cpp:544
 msgid "kppp: no rulefile specified\n"
@@ -1678,7 +1678,7 @@ msgstr ""
 
 #: loginterm.cpp:118
 msgid "Ca&ncel"
-msgstr ""
+msgstr "取消(&N)"
 
 #: loginterm.cpp:123
 #, fuzzy
@@ -1694,11 +1694,11 @@ msgstr ""
 
 #: ppplog.cpp:141
 msgid "You haven't started the PPP software on the peer system."
-msgstr ""
+msgstr "您尚未在对端系统上启动 PPP 软件。"
 
 #: ppplog.cpp:144
 msgid "Check that you supplied the correct username and password!"
-msgstr ""
+msgstr "请检查您提供的用户名和密码是否正确！"
 
 #: ppplog.cpp:147
 msgid ""
@@ -1752,19 +1752,19 @@ msgstr ""
 
 #: ppplog.cpp:232
 msgid "PPP log"
-msgstr ""
+msgstr "PPP 日志"
 
 #: ppplog.cpp:236
 msgid "kppp's diagnosis (just guessing):"
-msgstr ""
+msgstr "kppp 的诊断（仅作猜测）："
 
 #: ppplog.cpp:241
 msgid "Write to file"
-msgstr ""
+msgstr "写入文件"
 
 #: modemdb.cpp:46
 msgid "Select modem type..."
-msgstr ""
+msgstr "选择调制解调器类型..."
 
 #: modemdb.cpp:48
 msgid ""
@@ -1775,11 +1775,11 @@ msgstr ""
 
 #: modemdb.cpp:151 modemdb.cpp:153 modemdb.cpp:223 modemdb.cpp:238
 msgid "<Generic>"
-msgstr ""
+msgstr "<通用>"
 
 #: modemdb.cpp:218
 msgid "Hayes(tm) compatible modem"
-msgstr ""
+msgstr "Hayes(tm) 兼容调制解调器"
 
 #, fuzzy
 #~ msgid ""
