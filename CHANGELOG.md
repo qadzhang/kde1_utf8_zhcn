@@ -2,6 +2,15 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-28（第四批：中文边界情况大阅兵与排版引擎 UTF-8 化）
+
+- 边界测试大阅兵（混排/标点/全角/简繁/扩展B区四字节/韩日文/制表符/换行/半遮挡/反显/菜单，全部经视觉模型逐字核验）暴露并根治四类排版缺陷：
+  ①**qt_format_text 排版引擎 UTF-8 化**（qpainter.cpp，所有矩形文本排版的中枢）：原按单字节核心字体宽预算断行，UTF-8 中文宽度失真且断点只在空格——改为按 UTF-8 字符粒度（fm.width(p,nbc) Xft 真宽）、多字节余字节零宽 code 编码、**CJK 任意断行 + 英文按空格整词保护**（对齐现代排版）；断点采用**占位槽方案**（多字节字符 code 序列前插 MBPLACE 可牺牲占位，溢出断行时 BEGLINE 行标记覆盖占位而非字符），修复断行丢字；实现**简化避头尾禁则**（，。！？；：、）】》」』…%不得居行首，标准 UTF-8 码点解码判定）。
+  ②**裁剪 Region 悬垂**：矩形版 drawText 用过裁剪并 restore 后，基线版 Xft 分支把「空但 isEmpty() 误报非空」的 crgn 传给 XftDrawSetClip 导致后续文本全部被裁空（自绘第 2 行消失）——改为仅 testf(ClipOn) 且非空时传 Region。
+  ③**制表符 tofu**：C0 控制字符（\t 等）在 Xft 绘制层经缓冲替换为空格（度量与绘制同源替换），不再画 .notdef 方框。
+  ④**QListBox cellHeight 统一** +2（与 QListBoxText::height 一致，缓解视口初始偏移；首行仍有约半行偏移，属 QTableView 深层问题，对 ASCII 同样存在，非中文特有，记遗留）。
+- 验证结果：WordBreak 中文任意断行无丢字（400px 三段+QLabel 逐字核对）、英文词完整、混排/标点/全角/简繁/韩日均正常、扩展B区四字节缺字形显示方框不崩溃、半遮挡移回重绘完整、kfm 长文件名折行（apache-maven-3.9.9 三行）无丢字；排版引擎大改后桌面会话四项终验（kfm/图标/面板/无乱码）全过，重打包重装 deb。遗留：QTableView 首行视口偏移、QLabel 超长单行硬裁无省略号（Qt1 原生行为）。
+
 ## 2026-08-28（第三批：界面全面中文化推进）
 
 - po 存量缺口批量补译 321 条（msgfmt 全部校验通过，术语对齐现代 KDE：Go→转到、New→新建、Preferences→首选项、Portrait/Landscape→纵向/横向、Traceroute→路由跟踪、Freecell→空当接龙等；专有名词/版权行/数字/尺寸按惯例保留原文）：kfm 的 &Go、konsole 关于与返回码、kdm/klock/kbgndwm、kdegames 十件、kmail+krn 的邮件撰写全链（收件人/抄送/密送/附件/签名/PGP 系列）、kppp 拨号提示、ktop 任务管理器全套、kedit/knotes/kcalc/karm/ark/kljettool/kfinger/knu/ktalkd 等。已重编译 .mo 部署并随 deb 重装。
