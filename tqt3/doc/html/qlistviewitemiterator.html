@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/widgets/qlistview.cpp:7335 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQListViewItemIterator Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQListViewItemIterator Class Reference</h1>
+
+<p>The TQListViewItemIterator class provides an iterator for collections of TQListViewItems.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qlistview-h.html">ntqlistview.h</a>&gt;</tt>
+<p><a href="qlistviewitemiterator-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn>enum <a href="#IteratorFlag-enum"><b>IteratorFlag</b></a> { Visible = 0x00000001, Invisible = 0x00000002, Selected = 0x00000004, Unselected = 0x00000008, Selectable = 0x00000010, NotSelectable = 0x00000020, DragEnabled = 0x00000040, DragDisabled = 0x00000080, DropEnabled = 0x00000100, DropDisabled = 0x00000200, Expandable = 0x00000400, NotExpandable = 0x00000800, Checked = 0x00001000, NotChecked = 0x00002000 }</li>
+<li class=fn><a href="#TQListViewItemIterator"><b>TQListViewItemIterator</b></a> ()</li>
+<li class=fn><a href="#TQListViewItemIterator-2"><b>TQListViewItemIterator</b></a> ( TQListViewItem&nbsp;*&nbsp;item )</li>
+<li class=fn><a href="#TQListViewItemIterator-3"><b>TQListViewItemIterator</b></a> ( TQListViewItem&nbsp;*&nbsp;item, int&nbsp;iteratorFlags )</li>
+<li class=fn><a href="#TQListViewItemIterator-4"><b>TQListViewItemIterator</b></a> ( const&nbsp;TQListViewItemIterator&nbsp;&amp;&nbsp;it )</li>
+<li class=fn><a href="#TQListViewItemIterator-5"><b>TQListViewItemIterator</b></a> ( TQListView&nbsp;*&nbsp;lv )</li>
+<li class=fn><a href="#TQListViewItemIterator-6"><b>TQListViewItemIterator</b></a> ( TQListView&nbsp;*&nbsp;lv, int&nbsp;iteratorFlags )</li>
+<li class=fn>TQListViewItemIterator &amp; <a href="#operator-eq"><b>operator=</b></a> ( const&nbsp;TQListViewItemIterator&nbsp;&amp;&nbsp;it )</li>
+<li class=fn><a href="#~TQListViewItemIterator"><b>~TQListViewItemIterator</b></a> ()</li>
+<li class=fn>TQListViewItemIterator &amp; <a href="#operator++"><b>operator++</b></a> ()</li>
+<li class=fn>const TQListViewItemIterator <a href="#operator++-2"><b>operator++</b></a> ( int )</li>
+<li class=fn>TQListViewItemIterator &amp; <a href="#operator+-eq"><b>operator+=</b></a> ( int&nbsp;j )</li>
+<li class=fn>TQListViewItemIterator &amp; <a href="#operator--"><b>operator--</b></a> ()</li>
+<li class=fn>const TQListViewItemIterator <a href="#operator---2"><b>operator--</b></a> ( int )</li>
+<li class=fn>TQListViewItemIterator &amp; <a href="#operator--eq"><b>operator-=</b></a> ( int&nbsp;j )</li>
+<li class=fn>TQListViewItem * <a href="#operator*"><b>operator*</b></a> ()</li>
+<li class=fn>TQListViewItem * <a href="#current"><b>current</b></a> () const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQListViewItemIterator class provides an iterator for collections of TQListViewItems.
+<p> 
+<p> Construct an instance of a TQListViewItemIterator, with either a
+<a href="ntqlistview.html">TQListView</a>* or a <a href="qlistviewitem.html">TQListViewItem</a>* as argument, to operate on the tree
+of TQListViewItems, starting from the argument.
+<p> A TQListViewItemIterator iterates over all the items from its
+starting point. This means that it always makes the first child of
+the current item the new current item. If there is no child, the
+next sibling becomes the new current item; and if there is no next
+sibling, the next sibling of the parent becomes current.
+<p> The following example creates a list of all the items that have
+been selected by the user, storing pointers to the items in a
+TQPtrList:
+<pre>
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;TQListViewItem&gt; lst;
+    TQListViewItemIterator it( myListView );
+    while ( it.<a href="#current">current</a>() ) {
+        if ( it.<a href="#current">current</a>()-&gt;isSelected() )
+            lst.<a href="ntqptrlist.html#append">append</a>( it.<a href="#current">current</a>() );
+        ++it;
+    }
+    </pre>
+ 
+<p> An alternative approach is to use an <a href="#IteratorFlag-enum">IteratorFlag</a>:
+<pre>
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;TQListViewItem&gt; lst;
+    TQListViewItemIterator it( myListView, TQListViewItemIterator::<a href="#IteratorFlag-enum">Selected</a> );
+    while ( it.<a href="#current">current</a>() ) {
+        lst.<a href="ntqptrlist.html#append">append</a>( it.<a href="#current">current</a>() );
+        ++it;
+    }
+    </pre>
+ 
+<p> A TQListViewItemIterator provides a convenient and easy way to
+traverse a hierarchical <a href="ntqlistview.html">TQListView</a>.
+<p> Multiple TQListViewItemIterators can operate on the tree of
+TQListViewItems. A TQListView knows about all iterators operating on
+its TQListViewItems. So when a <a href="qlistviewitem.html">TQListViewItem</a> gets removed all
+iterators that point to this item are updated and point to the
+following item if possible, otherwise to a valid item before the
+current one or to 0. Note however that deleting the parent item of
+an item that an iterator points to is not safe.
+<p> <p>See also <a href="ntqlistview.html">TQListView</a>, <a href="qlistviewitem.html">TQListViewItem</a>, and <a href="advanced.html">Advanced Widgets</a>.
+
+<hr><h2>Member Type Documentation</h2>
+<h3 class=fn><a name="IteratorFlag-enum"></a>TQListViewItemIterator::IteratorFlag</h3>
+
+<p> These flags can be passed to a TQListViewItemIterator constructor
+(OR-ed together if more than one is used), so that the iterator
+will only iterate over items that match the given flags.
+<ul>
+<li><tt>TQListViewItemIterator::Visible</tt>
+<li><tt>TQListViewItemIterator::Invisible</tt>
+<li><tt>TQListViewItemIterator::Selected</tt>
+<li><tt>TQListViewItemIterator::Unselected</tt>
+<li><tt>TQListViewItemIterator::Selectable</tt>
+<li><tt>TQListViewItemIterator::NotSelectable</tt>
+<li><tt>TQListViewItemIterator::DragEnabled</tt>
+<li><tt>TQListViewItemIterator::DragDisabled</tt>
+<li><tt>TQListViewItemIterator::DropEnabled</tt>
+<li><tt>TQListViewItemIterator::DropDisabled</tt>
+<li><tt>TQListViewItemIterator::Expandable</tt>
+<li><tt>TQListViewItemIterator::NotExpandable</tt>
+<li><tt>TQListViewItemIterator::Checked</tt>
+<li><tt>TQListViewItemIterator::NotChecked</tt>
+</ul>
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQListViewItemIterator"></a>TQListViewItemIterator::TQListViewItemIterator ()
+</h3>
+Constructs an empty iterator.
+
+<h3 class=fn><a name="TQListViewItemIterator-2"></a>TQListViewItemIterator::TQListViewItemIterator ( <a href="qlistviewitem.html">TQListViewItem</a>&nbsp;*&nbsp;item )
+</h3>
+Constructs an iterator for the <a href="ntqlistview.html">TQListView</a> that contains the <em>item</em>. The current iterator item is set to point to the <em>item</em>.
+
+<h3 class=fn><a name="TQListViewItemIterator-3"></a>TQListViewItemIterator::TQListViewItemIterator ( <a href="qlistviewitem.html">TQListViewItem</a>&nbsp;*&nbsp;item, int&nbsp;iteratorFlags )
+</h3>
+Constructs an iterator for the <a href="ntqlistview.html">TQListView</a> that contains the <em>item</em>
+using the flags <em>iteratorFlags</em>. The current iterator item is set
+to point to <em>item</em> or the next matching item if <em>item</em> doesn't
+match the flags.
+<p> <p>See also <a href="#IteratorFlag-enum">TQListViewItemIterator::IteratorFlag</a>.
+
+<h3 class=fn><a name="TQListViewItemIterator-4"></a>TQListViewItemIterator::TQListViewItemIterator ( const&nbsp;<a href="qlistviewitemiterator.html">TQListViewItemIterator</a>&nbsp;&amp;&nbsp;it )
+</h3>
+Constructs an iterator for the same <a href="ntqlistview.html">TQListView</a> as <em>it</em>. The
+current iterator item is set to point on the current item of <em>it</em>.
+
+<h3 class=fn><a name="TQListViewItemIterator-5"></a>TQListViewItemIterator::TQListViewItemIterator ( <a href="ntqlistview.html">TQListView</a>&nbsp;*&nbsp;lv )
+</h3>
+Constructs an iterator for the <a href="ntqlistview.html">TQListView</a> <em>lv</em>. The current
+iterator item is set to point on the first child (<a href="qlistviewitem.html">TQListViewItem</a>)
+of <em>lv</em>.
+
+<h3 class=fn><a name="TQListViewItemIterator-6"></a>TQListViewItemIterator::TQListViewItemIterator ( <a href="ntqlistview.html">TQListView</a>&nbsp;*&nbsp;lv, int&nbsp;iteratorFlags )
+</h3>
+Constructs an iterator for the <a href="ntqlistview.html">TQListView</a> <em>lv</em> with the flags <em>iteratorFlags</em>. The current iterator item is set to point on the
+first child (<a href="qlistviewitem.html">TQListViewItem</a>) of <em>lv</em> that matches the flags.
+<p> <p>See also <a href="#IteratorFlag-enum">TQListViewItemIterator::IteratorFlag</a>.
+
+<h3 class=fn><a name="~TQListViewItemIterator"></a>TQListViewItemIterator::~TQListViewItemIterator ()
+</h3>
+Destroys the iterator.
+
+<h3 class=fn><a href="qlistviewitem.html">TQListViewItem</a>&nbsp;* <a name="current"></a>TQListViewItemIterator::current () const
+</h3>
+Returns iterator's current item.
+
+<p>Examples: <a href="addressbook-example.html#x597">addressbook/centralwidget.cpp</a>, <a href="checklists-example.html#x432">checklists/checklists.cpp</a>, and <a href="dirview-example.html#x1694">dirview/dirview.cpp</a>.
+<h3 class=fn><a href="qlistviewitem.html">TQListViewItem</a>&nbsp;* <a name="operator*"></a>TQListViewItemIterator::operator* ()
+</h3>
+Dereference operator. Returns a reference to the current item. The
+same as <a href="#current">current</a>().
+
+<h3 class=fn><a href="qlistviewitemiterator.html">TQListViewItemIterator</a>&nbsp;&amp; <a name="operator++"></a>TQListViewItemIterator::operator++ ()
+</h3>
+Prefix ++. Makes the next item the new current item and returns
+it. Returns 0 if the current item is the last item or the
+<a href="ntqlistview.html">TQListView</a> is 0.
+
+<h3 class=fn>const&nbsp;<a href="qlistviewitemiterator.html">TQListViewItemIterator</a> <a name="operator++-2"></a>TQListViewItemIterator::operator++ ( int )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Postfix ++. Makes the next item the new current item and returns
+the item that <em>was</em> the current item.
+
+<h3 class=fn><a href="qlistviewitemiterator.html">TQListViewItemIterator</a>&nbsp;&amp; <a name="operator+-eq"></a>TQListViewItemIterator::operator+= ( int&nbsp;j )
+</h3>
+Sets the current item to the item <em>j</em> positions after the current
+item. If that item is beyond the last item, the current item is
+set to 0. Returns the current item.
+
+<h3 class=fn><a href="qlistviewitemiterator.html">TQListViewItemIterator</a>&nbsp;&amp; <a name="operator--"></a>TQListViewItemIterator::operator-- ()
+</h3>
+Prefix --. Makes the previous item the new current item and
+returns it. Returns 0 if the current item is the first item or the
+<a href="ntqlistview.html">TQListView</a> is 0.
+
+<h3 class=fn>const&nbsp;<a href="qlistviewitemiterator.html">TQListViewItemIterator</a> <a name="operator---2"></a>TQListViewItemIterator::operator-- ( int )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Postfix --. Makes the previous item the new current item and
+returns the item that <em>was</em> the current item.
+
+<h3 class=fn><a href="qlistviewitemiterator.html">TQListViewItemIterator</a>&nbsp;&amp; <a name="operator--eq"></a>TQListViewItemIterator::operator-= ( int&nbsp;j )
+</h3>
+Sets the current item to the item <em>j</em> positions before the
+current item. If that item is before the first item, the current
+item is set to 0. Returns the current item.
+
+<h3 class=fn><a href="qlistviewitemiterator.html">TQListViewItemIterator</a>&nbsp;&amp; <a name="operator-eq"></a>TQListViewItemIterator::operator= ( const&nbsp;<a href="qlistviewitemiterator.html">TQListViewItemIterator</a>&nbsp;&amp;&nbsp;it )
+</h3>
+Assignment. Makes a copy of <em>it</em> and returns a reference to its
+iterator.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

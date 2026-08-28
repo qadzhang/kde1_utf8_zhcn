@@ -62,10 +62,10 @@ Board::Board( KAccel * parentkaccel, QWidget *p, const char *name )
     for (int i=0; i<NB_HS; i++) {
 	str1.sprintf("%s%i", HS_NAME_KEY, i);
 	if ( !kconf->hasKey(str1) )
-	    kconf->writeEntry(str1, i18n("Anonymous"));
+	    kconf->writeEntry((const char*)str1, (const char*)i18n("Anonymous"));
 	str2.sprintf("%s%i", HS_SCORE_KEY, i);    
 	if ( !kconf->hasKey(str2) )
-	    kconf->writeEntry(str2, 0);
+	    kconf->writeEntry((const char*)str2, 0);
     }
 
     /* show the midbutton with "start game" */

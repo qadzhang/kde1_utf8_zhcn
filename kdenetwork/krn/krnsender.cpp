@@ -22,7 +22,7 @@ void KRNSender::setNNTP(NNTP *_server)
 bool KRNSender::send(KMMessage *aMsg, short sendnow=-1)
 {
     readConfig();
-    debug ("KRNSender::send");
+    tqDebug("KRNSender::send");
     aMsg->cleanupHeader();
     //Create a better Message-ID
 
@@ -51,7 +51,7 @@ bool KRNSender::doSendNNTP (KMMessage *msg)
     QString t;
     srand((int)time(NULL));
     t.sprintf("<%d.%d@%s>",time(NULL),rand(),server->hostname.data());
-    debug ("posting with ID=%s",t.data());
+    tqDebug("posting with ID=%s",t.data());
     msg->setHeaderField("Message-ID",t.data());
     msgStr = msg->asString();
     if (server->isReadOnly())
@@ -62,28 +62,28 @@ bool KRNSender::doSendNNTP (KMMessage *msg)
         return false;
     }
     int errcode=server->Post();
-    debug ("post/errcode-->%d",errcode);
+    tqDebug("post/errcode-->%d",errcode);
     if (!errcode)
     {
-        warning ("The server closed the connection!");
+        tqWarning("The server closed the connection!");
         return false;
     }
     if (errcode!=340)
     {
-        warning("error posting, I said POST, and the server said:\n%s",
+        tqWarning("error posting, I said POST, and the server said:\n%s",
                  server->StatusResponse().data());
         return false;
     }
     errcode=server->SendData((const char *)msgStr);
-    debug ("senddata/errcode-->%d",errcode);
+    tqDebug("senddata/errcode-->%d",errcode);
     if (!errcode)
     {
-        warning ("The server closed the connection!");
+        tqWarning("The server closed the connection!");
         return false;
     }
     if (errcode>240)
     {
-        warning("error posting, I said DATA, and the server said:\n%s",
+        tqWarning("error posting, I said DATA, and the server said:\n%s",
                  server->StatusResponse().data());
         return false;
     }
@@ -93,29 +93,29 @@ bool KRNSender::doSendNNTP (KMMessage *msg)
 bool KRNSender::sendNow(KMMessage *aMsg)
 {
     bool success=false;
-    debug ("sending now!!!");
+    tqDebug("sending now!!!");
     if ((!aMsg->to().isEmpty()) ||
         (!aMsg->cc().isEmpty()) ||
         (!aMsg->bcc().isEmpty())) //It has an email recipient
     {
-        debug ("sending by SMTP");
+        tqDebug("sending by SMTP");
         KMSendSMTP *realSender = new KMSendSMTP(this);
         success=realSender->start();
         if (!success)
         {
-            warning ("failed to send by SMTP");
+            tqWarning("failed to send by SMTP");
             return success;
         }
         success=realSender->send(aMsg);
         if (!success)
         {
-            warning ("failed to send by SMTP");
+            tqWarning("failed to send by SMTP");
             return success;
         }
         success=realSender->finish();
         if (!success)
         {
-            warning ("failed to send by SMTP");
+            tqWarning("failed to send by SMTP");
             return success;
         }
         delete realSender;
@@ -129,19 +129,19 @@ bool KRNSender::sendNow(KMMessage *aMsg)
 
 bool KRNSender::queue(KMMessage *aMsg)
 {
-    debug ("queuing now!!!");
+    tqDebug("queuing now!!!");
     QFile f(outpath+aMsg->id());
     if (f.exists())
     {
-        warning ("There exists another message with this ID!\n That shouldn't happen!!!");
+        tqWarning("There exists another message with this ID!\n That shouldn't happen!!!");
         return FALSE;
     }
     if (!f.open (IO_WriteOnly))
     {
-        warning ("I can't open for writing, so I can't spool this thing");
+        tqWarning("I can't open for writing, so I can't spool this thing");
         return FALSE;
     }
-    debug ("Spooling the message");
+    tqDebug("Spooling the message");
     f.writeBlock(aMsg->asString(),strlen(aMsg->asString()));
     f.close();
     

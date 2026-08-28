@@ -136,7 +136,7 @@ HighScore::add(int board, int score,int colors) {
      name.setText(playername);
      name.selectAll();
      if (dlg.exec()) {
-	  add(board,score,colors,(char *)name.text());
+	  add(board,score,colors,name.text().ascii());
 	  repaint();
 	  show();
      }

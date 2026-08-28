@@ -96,8 +96,9 @@
 class KToolBar;
 class KToolBoxManager;
 
-#define Item QWidget
-
+//   Modified for the KDE1 Revival Project, 2026（TQt3 迁移手术）
+//   原 #define Item QWidget 污染 TQPtrCollection::Item（TQt3 容器头被后续
+//   include 时嵌套名被宏改写而炸）——宏删除，使用点直接展开
 enum itemType {
     ITEM_LINED = 0,
     ITEM_BUTTON = 1,
@@ -110,7 +111,7 @@ enum itemType {
 class KToolBarItem
 {
 public:
-  KToolBarItem (Item *_item, itemType _type, int _id,
+  KToolBarItem (QWidget *_item, itemType _type, int _id,
                 bool _myItem=true);
   ~KToolBarItem ();
     
@@ -131,13 +132,13 @@ public:
   int y() { return item->y(); };
   int winId () { return item->winId(); };
   
-  Item *getItem() { return item; };
+  QWidget *getItem() { return item; };
   
 private:
   int id;
   bool right;
   bool autoSized;
-  Item *item;
+  QWidget *item;
   itemType type;
   bool myItem;
 };

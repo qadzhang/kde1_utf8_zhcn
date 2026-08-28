@@ -7,14 +7,14 @@ set(KCALC_SRCS
 )
 
 set(KCALC_MOC
-    kcalc.moc configdlg.moc fontdlg.moc dlabel.moc
+    kcalc.h configdlg.h fontdlg.h dlabel.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KCALC_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KCALC_MOC})
 
 add_executable(kcalc1 ${KCALC_SRCS} ${MOC_FILES})
 target_link_libraries(kcalc1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

@@ -54,7 +54,6 @@ Properties::Properties( const char *_url ) : QObject()
     pageList.setAutoDelete( true );
   
     url = _url;
-    url.detach();
   
     kurl = new KURL( url );
     if ( kurl->isMalformed() )
@@ -99,7 +98,6 @@ void Properties::slotApply()
 	page->applyChanges();
 
     QString s = getURL();
-    s.detach();
 
     // Strip the filename
     if ( !KIOServer::isDir( s.data() ) )
@@ -242,14 +240,13 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     
     name = new QLineEdit( this );
     name->setMinimumSize(200, fontHeight);
-    name->setMaximumSize(QLayout::unlimited, fontHeight);
+    name->setMaximumSize(0x7fffffff  /* TQt3 迁移：QLayout::unlimited 已删 */, fontHeight);
     layout->addWidget(name, 0, AlignLeft);
     name->setText( filename );
     // Dont rename trash or root directory
     if ( isTrash || filename == "/" )
 	name->setEnabled( false );
     oldName = filename;
-    oldName.detach();
 
     l = new QLabel( klocale->translate("Full Name"), this );
     l->setFixedSize(l->sizeHint());
@@ -258,7 +255,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     QLabel *fname = new QLabel( this );
     fname->setText( path );
     fname->setMinimumSize(200, fontHeight);
-    fname->setMaximumSize(QLayout::unlimited, fontHeight);
+    fname->setMaximumSize(0x7fffffff  /* TQt3 迁移：QLayout::unlimited 已删 */, fontHeight);
     fname->setLineWidth(1);
     fname->setFrameStyle(QFrame::Box | QFrame::Raised);
     layout->addWidget(fname, 0, AlignLeft);
@@ -290,7 +287,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
         QLabel *lname = new QLabel( this );
         lname->setText( path );
         lname->setMinimumSize(200, fontHeight);
-        lname->setMaximumSize(QLayout::unlimited, fontHeight);
+        lname->setMaximumSize(0x7fffffff  /* TQt3 迁移：QLayout::unlimited 已删 */, fontHeight);
         lname->setLineWidth(1);
         lname->setFrameStyle(QFrame::Box | QFrame::Raised);
         layout->addWidget(lname, 0, AlignLeft);
@@ -362,7 +359,6 @@ void FilePropsPage::applyChanges()
     if ( strcmp( oldName.data(), n.data() ) != 0 )
     {
 	QString s = path.data();
-	s.detach();
 	if ( s.right(1) == "/") 
 	  // It's a directory, so strip the trailing slash first
 	  s.truncate( s.length() - 1);
@@ -424,7 +420,6 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
     if ( user != 0L )
     {
 	strOwner = user->pw_name;
-	strOwner.detach();
     }    
     if ( ge != 0L )
     {
@@ -650,12 +645,12 @@ void FilePermissionsPropsPage::applyChanges()
 	
 	if ( pw == 0L )
 	{
-	    warning(klocale->translate(" ERROR: No user %s"),owner->text() );
+	    tqWarning(klocale->translate(" ERROR: No user %s"),owner->text() );
 	    return;
 	}
 	if ( g == 0L )
 	{
-	    warning(klocale->translate(" ERROR: No group %s"),
+	    tqWarning(klocale->translate(" ERROR: No group %s"),
 		    grp->text(grp->currentItem()) ); // should never happen
 	    return;
 	}
@@ -906,8 +901,8 @@ void ExecPropsPage::applyChanges()
 // --- Sven's editable global settings changes start ---
     QDir lDir (kapp->localkdedir() + "/share/applnk/"); // I know it exists
 
-    //debug (path.data());
-    //debug (kapp->kde_appsdir().data());
+    //tqDebug( path.data());
+    //tqDebug( kapp->kde_appsdir().data());
 // --- Sven's editable global settings changes end ---
     if ( !f.open( IO_ReadWrite ) )
     {
@@ -931,7 +926,7 @@ void ExecPropsPage::applyChanges()
 	    if (!lDir.cd((path.left(i)))) // can cd to?
 	    {
 	      err = true;                 // no flag it...
-	      // debug ("Can't cd to  %s in %s", path.left(i).data(),
+	      // tqDebug( "Can't cd to  %s in %s", path.left(i).data(),
 	      //	 lDir.absPath().data());
 	      break;                      // and exit while
 	    }
@@ -950,7 +945,7 @@ void ExecPropsPage::applyChanges()
 	path.prepend("/"); // be sure to have /netscape.kdelnk
 	path.prepend(lDir.absPath());
 	f.setName(path);
-	//debug("path = %s", path.data());
+	//tqDebug("path = %s", path.data());
 
 	// we must not copy whole kdelnk to local dir
 	//  because it was done in ApplicationPropsPage
@@ -1165,7 +1160,7 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     iconBox->setIcon( iconStr );
 
     // Load all wallpapers in the combobox
-    tmp = kapp->kde_wallpaperdir().copy();
+    tmp = kapp->kde_wallpaperdir();
     QDir d2( tmp.data() );
     const QFileInfoList *list = d2.entryInfoList();  
     QFileInfoListIterator it2( *list );      // create list iterator
@@ -1264,7 +1259,6 @@ void DirPropsPage::applyChanges()
     // icon may have changed
 
     tmp = properties->getKURL()->url();
-    tmp.detach();
     
     if ( tmp.right(1) == "/" )
 	tmp = tmp.left( tmp.length() - 1 );
@@ -1299,7 +1293,7 @@ void DirPropsPage::showSettings( QString filename )
 
 void DirPropsPage::slotBrowse( )
 {
-    QString filename = KFileDialog::getOpenFileName( kapp->kde_wallpaperdir().copy() );
+    QString filename = KFileDialog::getOpenFileName( kapp->kde_wallpaperdir() );
     showSettings( filename );
     drawWallPaper( );
 }
@@ -1333,7 +1327,7 @@ void DirPropsPage::drawWallPaper()
 
     QString file;
     if (text[0]!='/') { // absolute path
-      file = kapp->kde_wallpaperdir().copy();
+      file = kapp->kde_wallpaperdir();
       file += "/";
       file += text;
     } else file = text;
@@ -1342,12 +1336,11 @@ void DirPropsPage::drawWallPaper()
     {
 	// debugT("Loading WallPaper '%s'\n",file.data());
 	wallFile = file.data();
-	wallFile.detach();	
 	wallPixmap.load( file.data() );
     }
     
     if ( wallPixmap.isNull() )
-	warning("Could not load wallpaper %s\n",file.data());
+	tqWarning("Could not load wallpaper %s\n",file.data());
     
     erase( imageX, imageY, imageW, imageH );
     QPainter painter;
@@ -1430,7 +1423,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 
     binaryPatternEdit->raise();
     binaryPatternEdit->setMinimumSize(210, fontHeight);
-    binaryPatternEdit->setMaximumSize(QLayout::unlimited, fontHeight);
+    binaryPatternEdit->setMaximumSize(0x7fffffff  /* TQt3 迁移：QLayout::unlimited 已删 */, fontHeight);
     binaryPatternEdit->setText( "" );
     binaryPatternEdit->setMaxLength( 512 );
 
@@ -1449,7 +1442,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 
     commentEdit->raise();
     commentEdit->setMinimumSize(210, fontHeight);
-    commentEdit->setMaximumSize(QLayout::unlimited, fontHeight);
+    commentEdit->setMaximumSize(0x7fffffff  /* TQt3 迁移：QLayout::unlimited 已删 */, fontHeight);
     commentEdit->setMaxLength( 256 );
     layout->addWidget(commentEdit, 0, AlignLeft);
 
@@ -1461,7 +1454,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     nameEdit->raise();
     nameEdit->setMaxLength( 256 );
     nameEdit->setMinimumSize(210, fontHeight);
-    nameEdit->setMaximumSize(QLayout::unlimited, fontHeight);
+    nameEdit->setMaximumSize(0x7fffffff  /* TQt3 迁移：QLayout::unlimited 已删 */, fontHeight);
     layout->addWidget(nameEdit, 0, AlignLeft);
 
     layoutH = new QBoxLayout(QBoxLayout::LeftToRight);
@@ -1610,8 +1603,8 @@ void ApplicationPropsPage::applyChanges()
 // --- Sven's editable global settings changes start ---
     QDir lDir (kapp->localkdedir() + "/share/applnk/"); // I know it exists
 
-    //debug (path.data());
-    //debug (kapp->kde_appsdir().data());
+    //tqDebug( path.data());
+    //tqDebug( kapp->kde_appsdir().data());
 // --- Sven's editable global settings changes end ---
 
     if ( !f.open( IO_ReadWrite ) )
@@ -1636,7 +1629,7 @@ void ApplicationPropsPage::applyChanges()
 	    if (!lDir.cd((path.left(i)))) // can cd to?
 	    {
 	      err = true;                 // no flag it...
-	      // debug ("Can't cd to  %s in %s", path.left(i).data(),
+	      // tqDebug( "Can't cd to  %s in %s", path.left(i).data(),
 	      //	 lDir.absPath().data());
 	      break;                      // and exit while
 	    }
@@ -1646,31 +1639,31 @@ void ApplicationPropsPage::applyChanges()
 	    {
 	      QFile tmp(kapp->kde_appsdir() +
 			"/" + path.left(i) + "/.directory");
-	      //debug ("---- looking for: %s", tmp.name());
+	      //tqDebug( "---- looking for: %s", tmp.name());
 	      if (tmp.open( IO_ReadOnly))
 	      {
-		//debug ("--- opened RO");
+		//tqDebug( "--- opened RO");
 		char *buff = new char[tmp.size()+10];
 		if (buff != 0)
 		{
 		  if (tmp.readBlock(buff, tmp.size()) != -1)
 		  {
 		    size_t tmpsize = tmp.size();
-		    //debug ("--- read");
+		    //tqDebug( "--- read");
 		    tmp.close();
 		    tmp.setName(lDir.absPath() + "/.directory");
-		    //debug ("---- copying to: %s", tmp.name());
+		    //tqDebug( "---- copying to: %s", tmp.name());
 		    if (tmp.open(IO_ReadWrite))
 		    {
-		      //debug ("--- opened RW");
+		      //tqDebug( "--- opened RW");
 		      if (tmp.writeBlock(buff, tmpsize) != -1)
 		      {
-			//debug ("--- wrote");
+			//tqDebug( "--- wrote");
 			tmp.close();
 		      }
 		      else
 		      {
-                        //debug ("--- removed");
+                        //tqDebug( "--- removed");
 			tmp.remove();
 		      }
 		    }                 // endif can open to write
@@ -1699,7 +1692,7 @@ void ApplicationPropsPage::applyChanges()
 	path.prepend("/"); // be sure to have /netscape.kdelnk
 	path.prepend(lDir.absPath());
 	f.setName(path);
-	//debug("path = %s", path.data());
+	//tqDebug("path = %s", path.data());
 	if ( f.open( IO_ReadWrite ) )
 	{
 	  // we must first copy whole kdelnk to local dir
@@ -1710,7 +1703,7 @@ void ApplicationPropsPage::applyChanges()
 	  char *buff = new char[s.size()+10];           // Done.
 	  if (buff != 0)
 	  {
-	    //debug ("********About to copy");
+	    //tqDebug( "********About to copy");
 	    if (s.readBlock(buff, s.size()) != -1 &&
 		f.writeBlock(buff, s.size()) != -1)
 	      ; // ok
@@ -1730,7 +1723,7 @@ void ApplicationPropsPage::applyChanges()
       }
       if (err)
       {
-	//debug ("************Cannot save");
+	//tqDebug( "************Cannot save");
 // --- Sven's editable global settings changes end ---
 
 	QMessageBox::warning( 0, klocale->translate("KFM Error"),
@@ -1908,13 +1901,13 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
 	    appBox->insertItem( currApp );
 	    applist.append( currApp );
             kdelnklist.append( it.current()->getKdelnkName());
-            //debug( "kdelnkname: %s\n",it.current()->getKdelnkName() );
+            //tqDebug( "kdelnkname: %s\n",it.current()->getKdelnkName() );
 	}
     }
     
     // Set the default app (DefaultApp=... is the kdelnk name)
     int index = kdelnklist.find( appStr );
-    //debug ("appStr = %s\n\n",appStr.data());
+    //tqDebug( "appStr = %s\n\n",appStr.data());
     if ( index == -1 )
 	index = 0;
     appBox->setCurrentItem( index );
@@ -1977,8 +1970,8 @@ void BindingPropsPage::applyChanges()
 // --- Sven's editable global settings changes start ---
     QDir lDir (kapp->localkdedir() + "/share/mimelnk/"); // I know it exists
 
-    //debug (path.data());
-    //debug (kapp->kde_mimedir().data());
+    //tqDebug( path.data());
+    //tqDebug( kapp->kde_mimedir().data());
 // --- Sven's editable global settings changes end ---
     
     if ( !f.open( IO_ReadWrite ) )
@@ -2003,7 +1996,7 @@ void BindingPropsPage::applyChanges()
 	    if (!lDir.cd((path.left(i)))) // can cd to?
 	    {
 	      err = true;                 // no flag it...
-	      // debug ("Can't cd to  %s in %s", path.left(i).data(),
+	      // tqDebug( "Can't cd to  %s in %s", path.left(i).data(),
 	      //	 lDir.absPath().data());
 	      break;                      // and exit while
 	    }
@@ -2013,31 +2006,31 @@ void BindingPropsPage::applyChanges()
 	    {
 	      QFile tmp(kapp->kde_mimedir() +
 			"/" + path.left(i) + "/.directory");
-	      //debug ("---- looking for: %s", tmp.name());
+	      //tqDebug( "---- looking for: %s", tmp.name());
 	      if (tmp.open( IO_ReadOnly))
 	      {
-		//debug ("--- opened RO");
+		//tqDebug( "--- opened RO");
 		char *buff = new char[tmp.size()+10];
 		if (buff != 0)
 		{
 		  if (tmp.readBlock(buff, tmp.size()) != -1)
 		  {
 		    size_t tmpsize = tmp.size();
-		    //debug ("--- read");
+		    //tqDebug( "--- read");
 		    tmp.close();
 		    tmp.setName(lDir.absPath() + "/.directory");
-		    //debug ("---- copying to: %s", tmp.name());
+		    //tqDebug( "---- copying to: %s", tmp.name());
 		    if (tmp.open(IO_ReadWrite))
 		    {
-		      //debug ("--- opened RW");
+		      //tqDebug( "--- opened RW");
 		      if (tmp.writeBlock(buff, tmpsize) != -1)
 		      {
-			//debug ("--- wrote");
+			//tqDebug( "--- wrote");
 			tmp.close();
 		      }
 		      else
 		      {
-                        //debug ("--- removed");
+                        //tqDebug( "--- removed");
 			tmp.remove();
 		      }
 		    }                 // endif can open to write
@@ -2065,7 +2058,7 @@ void BindingPropsPage::applyChanges()
 	path.prepend("/"); // be sure to have /jpeg.kdelnk
 	path.prepend(lDir.absPath());
 	f.setName(path);
-	//debug("path = %s", path.data());
+	//tqDebug("path = %s", path.data());
 	if ( f.open( IO_ReadWrite ) )
 	{
 	  // we must first copy whole kdelnk to local dir

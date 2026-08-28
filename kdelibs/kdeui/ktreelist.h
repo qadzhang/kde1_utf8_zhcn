@@ -171,7 +171,7 @@ public:
 	*/
   void setText(const char *t);
 
-  virtual QRect textBoundingRect(const QFontMetrics& fm) const;
+    virtual QRect textBoundingRect(const QFontMetrics& fm) const;
 
   virtual QRect itemBoundingRect(const QFontMetrics& fm) const;
 

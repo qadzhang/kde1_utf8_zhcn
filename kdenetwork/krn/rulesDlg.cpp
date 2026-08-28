@@ -240,7 +240,7 @@ void rulesDlg::deleteRule()
 
 void rulesDlg::addGlobal()
 {
-    debug ("adding global rule");
+    tqDebug("adding global rule");
     QString name=list2->text(list2->currentItem());
     globalList->insertItem(list2->text(list2->currentItem()));
     globalList->setCurrentItem(globalList->count());
@@ -249,7 +249,7 @@ void rulesDlg::addGlobal()
     ruleFile->readListEntry("GlobalRules",names);
     if (names.find(name.data())==-1)
     {
-        debug ("saving rule %s",name.data());
+        tqDebug("saving rule %s",name.data());
         names.append(name.data());
         ruleFile->writeEntry("GlobalRules",names);
     }

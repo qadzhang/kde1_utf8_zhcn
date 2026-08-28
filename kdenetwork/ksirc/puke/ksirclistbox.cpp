@@ -12,7 +12,6 @@ PObject *createWidget(CreateArgs &ca) /*FOLD00*/
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
     lb = new("KSircListBox") KSircListBox((QWidget *) ca.parent->widget());
-  else
     lb = new("KSircListBox") KSircListBox();
   plb->setWidget(lb);
   plb->setWidgetId(ca.pwI);
@@ -24,14 +23,14 @@ PObject *createWidget(CreateArgs &ca) /*FOLD00*/
 PKSircListBox::PKSircListBox(PObject *parent) /*FOLD00*/
   : PListBox(parent)
 {
-  //  debug("PListBox PListBox called");
-  lb = 0;
+  //  tqDebug("PListBox PListBox called");
+  lb = 0;  /* TQt3 迁移 */
   setWidget(lb);
 }
 
 PKSircListBox::~PKSircListBox() /*FOLD00*/
 {
-  //  debug("PListBox: in destructor");
+  //  tqDebug("PListBox: in destructor");
   /*
   delete widget();     // Delete the frame
   lb=0;          // Set it to 0
@@ -99,7 +98,7 @@ KSircListBox *PKSircListBox::widget() /*FOLD00*/
 
 bool PKSircListBox::checkWidget(){ /*FOLD00*/
   if(widget() == 0){
-    debug("PKSircListBox: No Widget set");
+    tqDebug("PKSircListBox: No Widget set");
     return FALSE;
   }
   return TRUE;

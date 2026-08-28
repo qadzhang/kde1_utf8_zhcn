@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/qaxscript.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>qaxscript.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>qaxscript.h</h1>
+
+<p>This is the verbatim text of the qaxscript.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/qaxscript.h   3.3.8   edited Jan 11 14:46 $
+**
+** Declaration of the TQAxScriptEngine, TQAxScript and TQAxScriptManager classes
+**
+** Copyright (C) 2002-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the Active TQt integration.
+**
+** Licensees holding valid TQt Enterprise Edition
+** licenses for Windows may use this file in accordance with the TQt Commercial
+** License Agreement provided with the Software.
+**
+** This file is not available for use under any other license without
+** express written permission from the copyright holder.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+** See http://www.trolltech.com/pricing.html or email sales@trolltech.com for
+**   information about TQt Commercial License Agreements.
+**
+** Contact info@trolltech.com if any conditions of this licensing are
+** not clear to you.
+**
+**********************************************************************/
+
+#ifndef TQAXSCRIPT_H
+#define TQAXSCRIPT_H
+
+#include &lt;qaxobject.h&gt;
+
+class TQAxBase;
+class TQAxScript;
+class TQAxScriptSite;
+class TQAxScriptEngine;
+class TQAxScriptManager;
+class TQAxScriptManagerPrivate;
+struct IActiveScript;
+
+class TQAxScriptEngine : public TQAxObject
+{
+public:
+    enum State {
+	Uninitialized = 0,
+	Initialized = 5,
+	Started = 1,
+	Connected = 2,
+	Disconnected = 3,
+	Closed = 4
+    };
+
+    TQAxScriptEngine(const TQString &amp;language, TQAxScript *script);
+    ~TQAxScriptEngine();
+
+    bool isValid() const;
+    bool hasIntrospection() const;
+
+    TQString scriptLanguage() const;
+
+    State state() const;
+    void setState(State st);
+
+    void addItem(const TQString &amp;name);
+
+    long queryInterface( const TQUuid &amp;, void** ) const;
+
+protected:
+    bool initialize(IUnknown** ptr);
+
+private:
+    TQAxScript *script_code;
+    IActiveScript *engine;
+
+    TQString script_language;
+};
+
+class TQAxScript : public TQObject
+{
+    TQ_OBJECT
+
+public:
+    enum FunctionFlags {
+	FunctionNames = 0,
+	FunctionSignatures	
+    };
+
+    TQAxScript(const TQString &amp;name, TQAxScriptManager *manager);
+    ~TQAxScript();
+
+    bool load(const TQString &amp;code, const TQString &amp;language = TQString::null);
+
+    TQStringList functions(FunctionFlags = FunctionNames) const;
+
+    TQString scriptCode() const;
+    TQString scriptName() const;
+    TQAxScriptEngine *scriptEngine() const;
+
+    TQVariant call(const TQString &amp;function, const TQVariant &amp;v1 = TQVariant(), 
+					   const TQVariant &amp;v2 = TQVariant(),
+					   const TQVariant &amp;v3 = TQVariant(),
+					   const TQVariant &amp;v4 = TQVariant(),
+					   const TQVariant &amp;v5 = TQVariant(),
+					   const TQVariant &amp;v6 = TQVariant(),
+					   const TQVariant &amp;v7 = TQVariant(),
+					   const TQVariant &amp;v8 = TQVariant());
+    TQVariant call(const TQString &amp;function, TQValueList&lt;TQVariant&gt; &amp;arguments);
+
+signals:
+    void entered();
+    void finished();
+    void finished(const TQVariant &amp;result);
+    void finished(int code, const TQString &amp;source,const TQString &amp;description, const TQString &amp;help);
+    void stateChanged(int state);
+    void error(int code, const TQString &amp;description, int sourcePosition, const TQString &amp;sourceText);
+
+private:
+    friend class TQAxScriptSite;
+    friend class TQAxScriptEngine;
+
+    void updateObjects();
+    TQAxBase *findObject(const TQString &amp;name);
+
+    TQString script_name;
+    TQString script_code;
+    TQAxScriptManager *script_manager;
+    TQAxScriptEngine *script_engine;
+    TQAxScriptSite *script_site;
+};
+
+class TQAxScriptManager : public TQObject
+{
+    TQ_OBJECT
+
+public:
+    TQAxScriptManager( TQObject *parent = 0, const char *name = 0 );
+    ~TQAxScriptManager();
+
+    void addObject(TQAxBase *object);
+    void addObject(TQObject *object);
+
+    TQStringList functions(TQAxScript::FunctionFlags = TQAxScript::FunctionNames) const;
+    TQStringList scriptNames() const;
+    TQAxScript *script(const TQString &amp;name) const;
+
+    TQAxScript* load(const TQString &amp;code, const TQString &amp;name, const TQString &amp;language);
+    TQAxScript* load(const TQString &amp;file, const TQString &amp;name);
+
+    TQVariant call(const TQString &amp;function, const TQVariant &amp;v1 = TQVariant(), 
+					   const TQVariant &amp;v2 = TQVariant(),
+					   const TQVariant &amp;v3 = TQVariant(),
+					   const TQVariant &amp;v4 = TQVariant(),
+					   const TQVariant &amp;v5 = TQVariant(),
+					   const TQVariant &amp;v6 = TQVariant(),
+					   const TQVariant &amp;v7 = TQVariant(),
+					   const TQVariant &amp;v8 = TQVariant());
+    TQVariant call(const TQString &amp;function, TQValueList&lt;TQVariant&gt; &amp;arguments);
+
+    static bool registerEngine(const TQString &amp;name, const TQString &amp;extension, const TQString &amp;code = TQString());
+    static TQString scriptFileFilter();
+
+signals:
+    void error(TQAxScript *script, int code, const TQString &amp;description, int sourcePosition, const TQString &amp;sourceText);
+
+private slots:
+    void objectDestroyed(TQObject *o);
+    void scriptError(int code, const TQString &amp;description, int sourcePosition, const TQString &amp;sourceText);
+
+private:
+    friend class TQAxScript;
+    TQAxScriptManagerPrivate *d;
+
+    void updateScript(TQAxScript*);
+    TQAxScript *scriptForFunction(const TQString &amp;function) const;
+};
+
+
+// TQAxScript inlines
+
+inline TQString TQAxScript::scriptCode() const
+{
+    return script_code;
+}
+
+inline TQString TQAxScript::scriptName() const
+{
+    return script_name;
+}
+
+inline TQAxScriptEngine *TQAxScript::scriptEngine() const
+{
+    return script_engine;
+}
+
+// TQAxScriptEngine inlines
+
+inline bool TQAxScriptEngine::isValid() const
+{
+    return engine != 0;
+}
+
+inline TQString TQAxScriptEngine::scriptLanguage() const
+{
+    return script_language;
+}
+
+// TQAxScriptManager inlines
+
+inline void TQAxScriptManager::addObject(TQObject *object)
+{
+    extern TQAxBase *qax_create_object_wrapper(TQObject*);
+    TQAxBase *wrapper = qax_create_object_wrapper(object);
+    addObject(wrapper);
+}
+
+#endif // TQAXSCRIPT_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

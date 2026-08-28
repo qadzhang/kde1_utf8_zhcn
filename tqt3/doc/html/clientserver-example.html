@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/network/clientserver/clientserver.doc:5 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>A small client-server example</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>A small client-server example</h1>
+
+ 
+<p> 
+<p> This example shows how two programs can communicate using sockets.
+<p> Two simple example programs are provided, a client program and a
+server program. Both use the <a href="ntqsocket.html">TQSocket</a> class, and the server also uses
+<a href="ntqserversocket.html">TQServerSocket</a> class.
+<p> The server listens on port number 4242 and accepts incoming connections.
+It sends back every line it receives from the client, prepended with
+the line number.
+<p> The client tries to connect to the server on the host specified on the
+command line or to localhost if no command line arguments are
+specified. You can send single lines to the server.
+<p> <hr>
+<p> Implementation server (server.cpp):
+<p> <pre>/****************************************************************************
+** $Id: qt/server.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qsocket-h.html">ntqsocket.h</a>&gt;
+#include &lt;<a href="qserversocket-h.html">ntqserversocket.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qvbox-h.html">ntqvbox.h</a>&gt;
+#include &lt;<a href="qtextview-h.html">ntqtextview.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qtextstream-h.html">ntqtextstream.h</a>&gt;
+
+#include &lt;stdlib.h&gt;
+
+
+/*
+  The ClientSocket class provides a socket that is connected with a client.
+  For every client that connects to the server, the server creates a new
+  instance of this class.
+*/
+class ClientSocket : public <a href="ntqsocket.html">TQSocket</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    ClientSocket( int sock, TQObject *parent=0, const char *name=0 ) :
+        <a href="ntqsocket.html">TQSocket</a>( parent, name )
+    {
+        line = 0;
+        connect( this, TQ_SIGNAL(readyRead()),
+                TQ_SLOT(readClient()) );
+        connect( this, TQ_SIGNAL(connectionClosed()),
+                TQ_SLOT(deleteLater()) );
+        setSocket( sock );
+    }
+
+    ~ClientSocket()
+    {
+    }
+
+signals:
+    void logText( const <a href="ntqstring.html">TQString</a>&amp; );
+
+private slots:
+    void readClient()
+    {
+        <a href="ntqtextstream.html">TQTextStream</a> ts( this );
+        while ( canReadLine() ) {
+<a name="x787"></a>            <a href="ntqstring.html">TQString</a> str = ts.<a href="ntqtextstream.html#readLine">readLine</a>();
+            emit logText( tr("Read: '%1'\n").arg(str) );
+
+            ts &lt;&lt; line &lt;&lt; ": " &lt;&lt; str &lt;&lt; endl;
+            emit logText( tr("Wrote: '%1: %2'\n").arg(line).arg(str) );
+
+            line++;
+        }
+    }
+
+private:
+    int line;
+};
+
+
+/*
+  The SimpleServer class handles new connections to the server. For every
+  client that connects, it creates a new ClientSocket -- that instance is now
+  responsible for the communication with that client.
+*/
+class SimpleServer : public <a href="ntqserversocket.html">TQServerSocket</a>
+{
+    TQ_OBJECT
+public:
+    SimpleServer( <a href="ntqobject.html">TQObject</a>* parent=0 ) :
+        <a href="ntqserversocket.html">TQServerSocket</a>( 4242, 1, parent )
+    {
+        if ( !ok() ) {
+            <a href="ntqapplication.html#qWarning">tqWarning</a>("Failed to bind to port 4242");
+            exit(1);
+        }
+    }
+
+    ~SimpleServer()
+    {
+    }
+
+    void newConnection( int socket )
+    {
+        ClientSocket *s = new ClientSocket( socket, this );
+        emit newConnect( s );
+    }
+
+signals:
+    void newConnect( ClientSocket* );
+};
+
+
+/*
+  The ServerInfo class provides a small GUI for the server. It also creates the
+  SimpleServer and as a result the server.
+*/
+class ServerInfo : public <a href="ntqvbox.html">TQVBox</a>
+{
+    TQ_OBJECT
+public:
+    ServerInfo()
+    {
+        SimpleServer *server = new SimpleServer( this );
+
+        <a href="ntqstring.html">TQString</a> itext = tr(
+                "This is a small server example.\n"
+                "Connect with the client now."
+                );
+        <a href="ntqlabel.html">TQLabel</a> *lb = new <a href="ntqlabel.html">TQLabel</a>( itext, this );
+<a name="x784"></a>        lb-&gt;<a href="ntqlabel.html#setAlignment">setAlignment</a>( AlignHCenter );
+        infoText = new <a href="ntqtextview.html">TQTextView</a>( this );
+        <a href="ntqpushbutton.html">TQPushButton</a> *quit = new <a href="ntqpushbutton.html">TQPushButton</a>( tr("Quit") , this );
+
+        connect( server, TQ_SIGNAL(newConnect(ClientSocket*)),
+                TQ_SLOT(newConnect(ClientSocket*)) );
+        connect( quit, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), tqApp,
+                TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+    }
+
+    ~ServerInfo()
+    {
+    }
+
+private slots:
+    void newConnect( ClientSocket *s )
+    {
+<a name="x786"></a>        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( tr("New connection\n") );
+        connect( s, TQ_SIGNAL(logText(const <a href="ntqstring.html">TQString</a>&amp;)),
+                infoText, TQ_SLOT(<a href="ntqtextedit.html#append">append</a>(const <a href="ntqstring.html">TQString</a>&amp;)) );
+<a name="x785"></a>        connect( s, TQ_SIGNAL(<a href="ntqsocket.html#connectionClosed">connectionClosed</a>()),
+                TQ_SLOT(connectionClosed()) );
+    }
+
+    void connectionClosed()
+    {
+        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( tr("Client closed connection\n") );
+    }
+
+private:
+    <a href="ntqtextview.html">TQTextView</a> *infoText;
+};
+
+
+int main( int argc, char** argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> app( argc, argv );
+    ServerInfo info;
+    app.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;info );
+    info.<a href="ntqwidget.html#show">show</a>();
+    return app.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+#include "server.moc"
+</pre>
+
+<p> <hr>
+<p> Implementation client (client.cpp):
+<p> <pre>/****************************************************************************
+** $Id: qt/client.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qsocket-h.html">ntqsocket.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qvbox-h.html">ntqvbox.h</a>&gt;
+#include &lt;<a href="qhbox-h.html">ntqhbox.h</a>&gt;
+#include &lt;<a href="qtextview-h.html">ntqtextview.h</a>&gt;
+#include &lt;<a href="qlineedit-h.html">ntqlineedit.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qtextstream-h.html">ntqtextstream.h</a>&gt;
+
+
+class Client : public <a href="ntqvbox.html">TQVBox</a>
+{
+    TQ_OBJECT
+public:
+    Client( const <a href="ntqstring.html">TQString</a> &amp;host, TQ_UINT16 port )
+    {
+        // GUI layout
+        infoText = new <a href="ntqtextview.html">TQTextView</a>( this );
+        <a href="ntqhbox.html">TQHBox</a> *hb = new <a href="ntqhbox.html">TQHBox</a>( this );
+        inputText = new <a href="ntqlineedit.html">TQLineEdit</a>( hb );
+        <a href="ntqpushbutton.html">TQPushButton</a> *send = new <a href="ntqpushbutton.html">TQPushButton</a>( tr("Send") , hb );
+        <a href="ntqpushbutton.html">TQPushButton</a> *close = new <a href="ntqpushbutton.html">TQPushButton</a>( tr("Close connection") , this );
+        <a href="ntqpushbutton.html">TQPushButton</a> *quit = new <a href="ntqpushbutton.html">TQPushButton</a>( tr("Quit") , this );
+
+<a name="x792"></a>        connect( send, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), TQ_SLOT(sendToServer()) );
+        connect( close, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), TQ_SLOT(closeConnection()) );
+        connect( quit, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+
+        // create the socket and connect various of its signals
+        socket = new <a href="ntqsocket.html">TQSocket</a>( this );
+<a name="x798"></a>        connect( socket, TQ_SIGNAL(<a href="ntqsocket.html#connected">connected</a>()),
+                TQ_SLOT(socketConnected()) );
+<a name="x799"></a>        connect( socket, TQ_SIGNAL(<a href="ntqsocket.html#connectionClosed">connectionClosed</a>()),
+                TQ_SLOT(socketConnectionClosed()) );
+<a name="x803"></a>        connect( socket, TQ_SIGNAL(<a href="ntqsocket.html#readyRead">readyRead</a>()),
+                TQ_SLOT(socketReadyRead()) );
+<a name="x801"></a>        connect( socket, TQ_SIGNAL(<a href="ntqsocket.html#error">error</a>(int)),
+                TQ_SLOT(socketError(int)) );
+
+        // connect to the server
+<a name="x805"></a>        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( tr("Trying to connect to the server\n") );
+<a name="x797"></a>        socket-&gt;<a href="ntqsocket.html#connectToHost">connectToHost</a>( host, port );
+    }
+
+    ~Client()
+    {
+    }
+
+private slots:
+    void closeConnection()
+    {
+<a name="x796"></a>        socket-&gt;<a href="ntqsocket.html#close">close</a>();
+<a name="x804"></a>        if ( socket-&gt;<a href="ntqsocket.html#state">state</a>() == TQSocket::Closing ) {
+            // We have a delayed close.
+<a name="x800"></a>            connect( socket, TQ_SIGNAL(<a href="ntqsocket.html#delayedCloseFinished">delayedCloseFinished</a>()),
+                    TQ_SLOT(socketClosed()) );
+        } else {
+            // The socket is closed.
+            socketClosed();
+        }
+    }
+
+    void sendToServer()
+    {
+        // write to the server
+        <a href="ntqtextstream.html">TQTextStream</a> os(socket);
+<a name="x794"></a>        os &lt;&lt; inputText-&gt;<a href="ntqlineedit.html#text">text</a>() &lt;&lt; "\n";
+<a name="x793"></a>        inputText-&gt;<a href="ntqlineedit.html#setText">setText</a>( "" );
+    }
+
+    void socketReadyRead()
+    {
+        // read from the server
+<a name="x795"></a>        while ( socket-&gt;<a href="ntqsocket.html#canReadLine">canReadLine</a>() ) {
+<a name="x802"></a>            infoText-&gt;<a href="ntqtextedit.html#append">append</a>( socket-&gt;<a href="ntqsocket.html#readLine">readLine</a>() );
+        }
+    }
+
+    void socketConnected()
+    {
+        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( tr("Connected to server\n") );
+    }
+
+    void socketConnectionClosed()
+    {
+        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( tr("Connection closed by the server\n") );
+    }
+
+    void socketClosed()
+    {
+        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( tr("Connection closed\n") );
+    }
+
+    void socketError( int e )
+    {
+        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( tr("Error number %1 occurred\n").arg(e) );
+    }
+
+private:
+    <a href="ntqsocket.html">TQSocket</a> *socket;
+    <a href="ntqtextview.html">TQTextView</a> *infoText;
+    <a href="ntqlineedit.html">TQLineEdit</a> *inputText;
+};
+
+
+int main( int argc, char** argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> app( argc, argv );
+    Client client( argc&lt;2 ? "localhost" : argv[1], 4242 );
+    app.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;client );
+    client.<a href="ntqwidget.html#show">show</a>();
+    return app.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+#include "client.moc"
+</pre>
+
+<p>See also <a href="network-examples.html">Network Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

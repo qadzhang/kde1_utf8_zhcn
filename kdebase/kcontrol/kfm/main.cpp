@@ -163,7 +163,7 @@ void KfmApplication::apply()
   { 
       // execute 'kfmclient1 configure'
       execl(kapp->kde_bindir()+"/kfmclient1","kfmclient1","configure",0);
-      warning("Error launching 'kfmclient1 configure' !");
+      tqWarning("Error launching 'kfmclient1 configure' !");
       exit(1);
   }
 }

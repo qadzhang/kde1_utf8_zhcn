@@ -26,6 +26,9 @@
  *   and Matthias Ettrich (ettrich@kde.org) on 1997
  */
 
+
+#ifndef K1GUARD_kdebase_kwmmodules_kpager_ktrianglebutton_h
+#define K1GUARD_kdebase_kwmmodules_kpager_ktrianglebutton_h
 #include <qbutton.h>
 
 class KTriangleButton : public QButton
@@ -68,3 +71,4 @@ protected:
     virtual void timerEvent(QTimerEvent *);
 
 };
+#endif /* K1GUARD_kdebase_kwmmodules_kpager_ktrianglebutton_h */

@@ -46,11 +46,11 @@ MenuNameDialogData::MenuNameDialogData
 
 	i_personal = new QLineEdit( this, "LineEdit_1" );
 	i_personal->setMinimumSize(fontMetrics().width("----------"), h);
-	i_personal->setMaximumSize(QLayout::unlimited, h);
+	i_personal->setMaximumSize(0x7fffffff  /* TQt3 迁移 */, h);
 
 	i_default = new QLineEdit( this, "LineEdit_2" );
 	i_default->setMinimumSize(fontMetrics().width("----------"), h);
-	i_default->setMaximumSize(QLayout::unlimited, h);
+	i_default->setMaximumSize(0x7fffffff  /* TQt3 迁移 */, h);
 
 	int w = (int)(1.8 * QMAX(fontMetrics().width(klocale->translate("OK")),
 			   fontMetrics().width(klocale->translate("Cancel"))));
@@ -105,3 +105,4 @@ MenuNameDialogData::MenuNameDialogData
 MenuNameDialogData::~MenuNameDialogData()
 {
 }
+

@@ -41,9 +41,9 @@ RuleSet::RuleSet() {
   _currency_symbol = "$";
   _currency_position = CURRENCY_RIGHT;
   _currency_digits = 2;
-  _minimum_costs = 0;
+  _minimum_costs = 0;  /* TQt3 迁移 */
   flat_init_costs = 0.0;
-  flat_init_duration = 0;
+  flat_init_duration = 0;  /* TQt3 迁移 */
   have_flat_init_costs = false;
 
   pcf = 0.0;
@@ -89,7 +89,7 @@ int RuleSet::dayNameToInt(const char *s) {
 int RuleSet::load(const char *filename) {
 
   flat_init_costs = 0.0;
-  flat_init_duration = 0;
+  flat_init_duration = 0;  /* TQt3 迁移 */
   have_flat_init_costs = false;
 
   QFile f(filename);
@@ -208,7 +208,7 @@ bool RuleSet::parseEntry(RULE &ret, QString s, int year) {
     bool ok = TRUE;
     QString val = s.mid(6, 1000);
     if(val.length() == 0)
-      off = 0;
+      off = 0;  /* TQt3 迁移 */
     else
       off = val.toInt(&ok);
 
@@ -301,7 +301,7 @@ bool RuleSet::parseTime(QTime &t1, QTime &t2, QString s) {
 }
 
 bool RuleSet::parseRate(double &costs, double &len, double &after, QString s) {
-  after = 0;
+  after = 0;  /* TQt3 迁移 */
   int fields = sscanf(s.data(), "%lf,%lf,%lf", &costs, &len, &after);
   return (fields == 2) || (fields == 3);
 }
@@ -498,7 +498,7 @@ double round(double d, int digits) {
 }
 
 QString RuleSet::currencySymbol() {
-  return _currency_symbol.copy();
+  return _currency_symbol;
 }
 
 QString RuleSet::currencyString(double f) {

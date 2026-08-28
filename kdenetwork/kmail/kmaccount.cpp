@@ -27,14 +27,13 @@
 //-----------------------------------------------------------------------------
 KMAccount::KMAccount(KMAcctMgr* aOwner, const char* aName)
 {
-  initMetaObject();
   assert(aOwner != NULL);
 
   mOwner  = aOwner;
   mName   = aName;
   mFolder = NULL;
   mTimer  = NULL;
-  mInterval = 0;
+  mInterval = 0;  /* TQt3 迁移 */
   mCheckingMail = FALSE;
 }
 
@@ -59,7 +58,7 @@ void KMAccount::setFolder(KMFolder* aFolder)
 {
   if(!aFolder) 
   {
-    debug("KMAccount::setFolder() : aFolder == NULL");
+    tqDebug("KMAccount::setFolder() : aFolder == NULL");
     mFolder = NULL;
     return;
   }
@@ -86,7 +85,7 @@ void KMAccount::readConfig(KConfig& config)
       mFolder = folder;
       mFolder->addAccount(this);
     }
-    else debug("Cannot find folder `%s' for account `%s'.", 
+    else tqDebug("Cannot find folder `%s' for account `%s'.", 
 	       (const char*)folderName, (const char*)mName);
   }
 }
@@ -153,7 +152,7 @@ bool KMAccount::processNewMsg(KMMessage* aMsg)
   {
     rc = mFolder->addMsg(aMsg);
     if (rc) perror("failed to add message");
-    if (rc) warning(i18n("Failed to add message:")+
+    if (rc) tqWarning(i18n("Failed to add message:")+
                     '\n' + QString(strerror(rc)));
     if (rc) return false;
     else return true;
@@ -168,7 +167,7 @@ void KMAccount::setCheckInterval(int aInterval)
 {
   if (aInterval <= 0)
   {
-    mInterval = 0;
+    mInterval = 0;  /* TQt3 迁移 */
     deinstallTimer();
   }
   else
@@ -199,7 +198,7 @@ void KMAccount::installTimer()
 //-----------------------------------------------------------------------------
 void KMAccount::deinstallTimer()
 {
-  //debug("Calling deinstallTimer()");
+  //tqDebug("Calling deinstallTimer()");
   if(mTimer) {
     mTimer->stop();
     disconnect(mTimer);

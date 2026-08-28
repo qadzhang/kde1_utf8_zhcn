@@ -52,11 +52,11 @@ set(KAB_MOC
 	kab.h kabapi.h searchresults.h
     )
 
-qt1_wrap_moc(MOC_FILES ${KAB_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KAB_MOC})
 
 add_library(kab SHARED ${KAB_SRCS} ${MOC_FILES})
 set_target_properties(kab PROPERTIES VERSION 2.0.0 SOVERSION 2)
-target_link_libraries(kab kdecore kdeui kfm kfile Qt::Qt1 ${X11_LIBRARIES})
+target_link_libraries(kab kdecore kdeui kfm kfile ${TQT3_LIBRARIES} ${X11_LIBRARIES})
 install(TARGETS kab LIBRARY DESTINATION ${KDE1_LIBRARIES})
 
 install(FILES

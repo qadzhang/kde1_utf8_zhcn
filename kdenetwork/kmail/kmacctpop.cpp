@@ -8,8 +8,8 @@
 #include <unistd.h>
 #include <signal.h>
 #include <mimelib/mimepp.h>
-#include <kmfolder.h>
-#include <kmmessage.h>
+#include "kmfolder.h"
+#include "kmmessage.h"
 #include <qtstream.h>
 #include <kconfig.h>
 #include <qlined.h>
@@ -29,7 +29,6 @@ using namespace std;
 KMAcctPop::KMAcctPop(KMAcctMgr* aOwner, const char* aAccountName):
   KMAcctPopInherited(aOwner, aAccountName)
 {
-  initMetaObject();
 
   mStorePasswd = FALSE;
   mLeaveOnServer = FALSE;
@@ -101,7 +100,6 @@ bool KMAcctPop::authenticate(DwPopClient& client)
     msg = i18n("Please set Password and Username");
 
   passwd = decryptStr(mPasswd);
-  passwd.detach();
 
   while (1)
   {
@@ -111,7 +109,7 @@ bool KMAcctPop::authenticate(DwPopClient& client)
 			       mLogin, passwd);
       if (!dlg->exec()) return FALSE;
       delete dlg;
-      msg = 0;
+      msg = 0;  /* TQt3 迁移 */
     }
 
     // Some POP servers close the connection upon failed
@@ -142,7 +140,6 @@ bool KMAcctPop::authenticate(DwPopClient& client)
 
     // Send password
     passwd = decryptStr(mPasswd);
-    passwd.detach();
     replyCode = client.Pass((const char*)passwd);
     if (replyCode == '-')
     {
@@ -184,7 +181,7 @@ bool KMAcctPop::doProcessNewMail(KMIOStatus *wid)
 
   if (mHost.isEmpty() || mPort<=0)
   {
-    warning(i18n("Please specify Host, Port  and\n"
+    tqWarning(i18n("Please specify Host, Port  and\n"
 		 "destination folder in the settings\n"
 		 "and try again."));
     return FALSE;
@@ -250,7 +247,7 @@ bool KMAcctPop::doProcessNewMail(KMIOStatus *wid)
 	    strnicmp(status,"OR",2)==0)
 	{
 	  doFetchMsg=FALSE;
-	  debug("message %d is old -- no need to download it", id);
+	  tqDebug("message %d is old -- no need to download it", id);
 	}
       }
     }
@@ -373,7 +370,7 @@ const QString KMAcctPop::encryptStr(const QString aStr) const
 {
   unsigned int i, val;
   unsigned int len = aStr.length();
-  QString result(len+1);
+  TQString result;  /* TQt3 迁移 */
 
   for (i=0; i<len; i++)
   {

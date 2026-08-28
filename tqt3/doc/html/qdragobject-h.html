@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqdragobject.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqdragobject.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqdragobject.h</h1>
+
+<p>This is the verbatim text of the ntqdragobject.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqdragobject.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQDragObject
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQDRAGOBJECT_H
+#define TQDRAGOBJECT_H
+
+class TQWidget;
+class TQTextDragPrivate;
+class TQDragObjectData;
+class TQStoredDragData;
+class TQImageDragData;
+
+#ifndef QT_H
+#include "ntqobject.h"
+#include "ntqimage.h"
+#include "ntqstrlist.h"
+#include "ntqcolor.h"
+#endif // QT_H
+
+#ifndef TQT_NO_MIME
+
+class TQ_EXPORT TQDragObject: public TQObject, public TQMimeSource {
+    TQ_OBJECT
+public:
+    TQDragObject( TQWidget * dragSource = 0, const char * name = 0 );
+    virtual ~TQDragObject();
+
+#ifndef TQT_NO_DRAGANDDROP
+    bool drag();
+    bool dragMove();
+    void dragCopy();
+    void dragLink();
+
+    virtual void setPixmap(TQPixmap);
+    virtual void setPixmap(TQPixmap, const TQPoint&amp; hotspot);
+    TQPixmap pixmap() const;
+    TQPoint pixmapHotSpot() const;
+#endif
+
+    TQWidget * source();
+    static TQWidget * target();
+
+    static void setTarget(TQWidget*);
+
+#ifndef TQT_NO_DRAGANDDROP
+    enum DragMode { DragDefault, DragCopy, DragMove, DragLink, DragCopyOrMove };
+
+protected:
+    virtual bool drag(DragMode);
+#endif
+
+private:
+    TQDragObjectData * d;
+#if defined(TQ_DISABLE_COPY) // Disabled copy constructor and operator=
+    TQDragObject( const TQDragObject &amp; );
+    TQDragObject &amp;operator=( const TQDragObject &amp; );
+#endif
+};
+
+class TQ_EXPORT TQStoredDrag: public TQDragObject {
+    TQ_OBJECT
+    TQStoredDragData * d;
+
+public:
+    TQStoredDrag( const char * mimeType,
+		 TQWidget * dragSource = 0, const char * name = 0 );
+    ~TQStoredDrag();
+
+    virtual void setEncodedData( const TQByteArray &amp; );
+
+    const char * format(int i) const;
+    virtual TQByteArray encodedData(const char*) const;
+
+private:
+#if defined(TQ_DISABLE_COPY) // Disabled copy constructor and operator=
+    TQStoredDrag( const TQStoredDrag &amp; );
+    TQStoredDrag &amp;operator=( const TQStoredDrag &amp; );
+#endif
+};
+
+class TQ_EXPORT TQTextDrag: public TQDragObject {
+    TQ_OBJECT
+    TQTextDragPrivate* d;
+public:
+    TQTextDrag( const TQString &amp;,
+	       TQWidget * dragSource = 0, const char * name = 0 );
+    TQTextDrag( TQWidget * dragSource = 0, const char * name = 0 );
+    ~TQTextDrag();
+
+    virtual void setText( const TQString &amp;);
+    virtual void setSubtype( const TQCString &amp;);
+
+    const char * format(int i) const;
+    virtual TQByteArray encodedData(const char*) const;
+
+    static bool canDecode( const TQMimeSource* e );
+    static bool decode( const TQMimeSource* e, TQString&amp; s );
+    static bool decode( const TQMimeSource* e, TQString&amp; s, TQCString&amp; subtype );
+
+private:
+#if defined(TQ_DISABLE_COPY) // Disabled copy constructor and operator=
+    TQTextDrag( const TQTextDrag &amp; );
+    TQTextDrag &amp;operator=( const TQTextDrag &amp; );
+#endif
+};
+
+class TQ_EXPORT TQImageDrag: public TQDragObject {
+    TQ_OBJECT
+    TQImage img;
+    TQStrList ofmts;
+    TQImageDragData* d;
+
+public:
+    TQImageDrag( TQImage image, TQWidget * dragSource = 0, const char * name = 0 );
+    TQImageDrag( TQWidget * dragSource = 0, const char * name = 0 );
+    ~TQImageDrag();
+
+    virtual void setImage( TQImage image );
+
+    const char * format(int i) const;
+    virtual TQByteArray encodedData(const char*) const;
+
+    static bool canDecode( const TQMimeSource* e );
+    static bool decode( const TQMimeSource* e, TQImage&amp; i );
+    static bool decode( const TQMimeSource* e, TQPixmap&amp; i );
+
+private:
+#if defined(TQ_DISABLE_COPY) // Disabled copy constructor and operator=
+    TQImageDrag( const TQImageDrag &amp; );
+    TQImageDrag &amp;operator=( const TQImageDrag &amp; );
+#endif
+};
+
+
+class TQ_EXPORT TQUriDrag: public TQStoredDrag {
+    TQ_OBJECT
+
+public:
+    TQUriDrag( TQStrList uris, TQWidget * dragSource = 0, const char * name = 0 );
+    TQUriDrag( TQWidget * dragSource = 0, const char * name = 0 );
+    ~TQUriDrag();
+
+    void setFilenames( const TQStringList &amp; fnames ) { setFileNames( fnames ); }
+    void setFileNames( const TQStringList &amp; fnames );
+    void setUnicodeUris( const TQStringList &amp; uuris );
+    virtual void setUris( TQStrList uris );
+
+    static TQString uriToLocalFile(const char*);
+    static TQCString localFileToUri(const TQString&amp;);
+    static TQString uriToUnicodeUri(const char*);
+    static TQCString unicodeUriToUri(const TQString&amp;);
+    static bool canDecode( const TQMimeSource* e );
+    static bool decode( const TQMimeSource* e, TQStrList&amp; i );
+    static bool decodeToUnicodeUris( const TQMimeSource* e, TQStringList&amp; i );
+    static bool decodeLocalFiles( const TQMimeSource* e, TQStringList&amp; i );
+
+private:
+#if defined(TQ_DISABLE_COPY) // Disabled copy constructor and operator=
+    TQUriDrag( const TQUriDrag &amp; );
+    TQUriDrag &amp;operator=( const TQUriDrag &amp; );
+#endif
+};
+
+class TQ_EXPORT TQColorDrag : public TQStoredDrag
+{
+    TQ_OBJECT
+    TQColor color;
+
+public:
+    TQColorDrag( const TQColor &amp;col, TQWidget *dragsource = 0, const char *name = 0 );
+    TQColorDrag( TQWidget * dragSource = 0, const char * name = 0 );
+    void setColor( const TQColor &amp;col );
+
+    static bool canDecode( TQMimeSource * );
+    static bool decode( TQMimeSource *, TQColor &amp;col );
+
+private:
+#if defined(TQ_DISABLE_COPY) // Disabled copy constructor and operator=
+    TQColorDrag( const TQColorDrag &amp; );
+    TQColorDrag &amp;operator=( const TQColorDrag &amp; );
+#endif
+};
+
+#ifndef TQT_NO_COMPAT
+typedef TQUriDrag TQUrlDrag;
+#endif
+
+#ifndef TQT_NO_DRAGANDDROP
+
+// TQDragManager is not part of the public API.  It is defined in a
+// header file simply so different .cpp files can implement different
+// member functions.
+//
+
+class TQ_EXPORT TQDragManager: public TQObject {
+    TQ_OBJECT
+
+private:
+    TQDragManager();
+    ~TQDragManager();
+    // only friend classes can use TQDragManager.
+    friend class TQDragObject;
+    friend class TQDragMoveEvent;
+    friend class TQDropEvent;
+    friend class TQApplication;
+
+    bool eventFilter( TQObject *, TQEvent * );
+    void timerEvent( TQTimerEvent* );
+
+    bool drag( TQDragObject *, TQDragObject::DragMode );
+
+    void cancel( bool deleteSource = true );
+    void move( const TQPoint &amp; );
+    void drop();
+    void updatePixmap();
+
+private:
+    TQDragObject * object;
+    void updateMode( ButtonState newstate );
+    void updateCursor();
+#if defined(TQ_WS_X11)
+    void createCursors();
+#endif
+
+    TQWidget * dragSource;
+    TQWidget * dropWidget;
+    bool beingCancelled;
+    bool restoreCursor;
+    bool willDrop;
+
+    TQPixmap *pm_cursor;
+    int n_cursor;
+#if defined(TQ_DISABLE_COPY) // Disabled copy constructor and operator=
+    TQDragManager( const TQDragManager &amp; );
+    TQDragManager &amp;operator=( const TQDragManager &amp; );
+#endif
+};
+
+#endif
+
+#endif // TQT_NO_MIME
+
+#endif // TQDRAGOBJECT_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

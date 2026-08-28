@@ -13,9 +13,6 @@ using namespace std;
 KMIOStatusWdg::KMIOStatusWdg(QWidget *parent, const char *name, 
 			     task type , QString host)
   :KMIOStatus(parent,name) {
-
-
-  initMetaObject();
   KWM::setDecoration(winId(), KWM::normalDecoration | KWM::noFocus);
   abortPressedBool = false;
 

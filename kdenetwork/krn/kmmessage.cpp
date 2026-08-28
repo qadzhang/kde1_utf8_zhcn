@@ -256,7 +256,7 @@ const QString KMMessage::asQuotedString(const QString aHeaderStr,
 					const QString aIndentStr,
 					bool aIncludeAttach) const
 {
-  QString headerStr(256);
+  TQString headerStr;  /* TQt3 迁移 */
   KMMessagePart msgPart;
   QRegExp reNL("\\n");
   QString nlIndentStr;
@@ -429,7 +429,7 @@ KMMessage* KMMessage::createReply(bool replyToAll)
   if (replyToAll || !loopToStr.isEmpty()) replyStr = sReplyAllStr;
   else replyStr = sReplyStr;
 
-  debug("msg-id: %s", headerField("Message-Id").data());
+  tqDebug("msg-id: %s", headerField("Message-Id").data());
   msg->setReferences(headerField("Message-Id"));
   msg->setBody(asQuotedString(replyStr, sIndentPrefixStr));
 
@@ -592,9 +592,8 @@ const QString KMMessage::dateShortStr(void) const
   if (!header.HasDate()) return "";
   unixTime = header.Date().AsUnixTime();
 
-  result.detach();
+  result
   result = ctime(&unixTime);
-  result.detach();
   if (result[result.length()-1]=='\n')
     result.truncate(result.length()-1);
 
@@ -792,7 +791,6 @@ const QString KMMessage::headerField(const QString aName) const
   else 
     result = decodeRFC1522String(header.FieldBody((const char*)aName).
                                  AsString().c_str());
-  result.detach();
   return result;
 }
 
@@ -1247,7 +1245,7 @@ void KMMessage::viewSource(const QString aCaption) const
   edt->show();
 
 #else //not ALLOW_GUI
-  debug("Message source: %s\n%s\n--- end of message ---", 
+  tqDebug("Message source: %s\n%s\n--- end of message ---", 
 	aCaption.isEmpty() ? "" : (const char*)aCaption, str);
 
 #endif
@@ -1309,7 +1307,7 @@ const QString KMMessage::emailAddrAsAnchor(const QString aEmail, bool stripped)
 
     if (ch == ',' || !pos[1])
     {
-      tmp = addr.copy();
+      tmp = addr;
       result += tmp.replace(QRegExp("\""),"");
       result += "\">";
       if (stripped) result += KMMessage::stripEmailAddr(aEmail);

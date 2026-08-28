@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/widgets/qtoolbar.cpp:210 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQToolBar Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQToolBar Class Reference</h1>
+
+<p>The TQToolBar class provides a movable panel containing
+widgets such as tool buttons.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qtoolbar-h.html">ntqtoolbar.h</a>&gt;</tt>
+<p>Inherits <a href="ntqdockwindow.html">TQDockWindow</a>.
+<p><a href="qtoolbar-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn>TQToolBar ( const&nbsp;TQString&nbsp;&amp;&nbsp;label, TQMainWindow *, ToolBarDock = DockTop, bool&nbsp;newLine = false, const&nbsp;char&nbsp;*&nbsp;name = 0 ) &nbsp;<em>(obsolete)</em></li>
+<li class=fn><a href="#TQToolBar-2"><b>TQToolBar</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;label, TQMainWindow&nbsp;*&nbsp;mainWindow, TQWidget&nbsp;*&nbsp;parent, bool&nbsp;newLine = false, const&nbsp;char&nbsp;*&nbsp;name = 0, WFlags&nbsp;f = 0 )</li>
+<li class=fn><a href="#TQToolBar-3"><b>TQToolBar</b></a> ( TQMainWindow&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn>void <a href="#addSeparator"><b>addSeparator</b></a> ()</li>
+<li class=fn>TQMainWindow * <a href="#mainWindow"><b>mainWindow</b></a> () const</li>
+<li class=fn>virtual void <a href="#setStretchableWidget"><b>setStretchableWidget</b></a> ( TQWidget&nbsp;*&nbsp;w )</li>
+<li class=fn>virtual void <a href="#setLabel"><b>setLabel</b></a> ( const TQString &amp; )</li>
+<li class=fn>TQString <a href="#label"><b>label</b></a> () const</li>
+<li class=fn>virtual void <a href="#clear"><b>clear</b></a> ()</li>
+</ul>
+<h2>Properties</h2>
+<ul>
+<li class=fn>TQString <a href="#label-prop"><b>label</b></a>&nbsp;- the toolbar's label</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQToolBar class provides a movable panel containing
+widgets such as tool buttons.
+<p> 
+
+<p> A toolbar is a panel that contains a set of controls, usually
+represented by small icons. It's purpose is to provide quick
+access to frequently used commands or options. Within a
+<a href="ntqmainwindow.html">TQMainWindow</a> the user can drag toolbars within and between the
+<a href="ntqdockarea.html">dock areas</a>. Toolbars can also be dragged
+out of any dock area to float freely as top-level windows.
+<p> TQToolBar is a specialization of <a href="ntqdockwindow.html">TQDockWindow</a>, and so provides all
+the functionality of a TQDockWindow.
+<p> To use TQToolBar you simply create a TQToolBar as a child of a
+TQMainWindow, create a number of <a href="ntqtoolbutton.html">TQToolButton</a> widgets (or other
+widgets) in left to right (or top to bottom) order and call
+<a href="#addSeparator">addSeparator</a>() when you want a separator. When a toolbar is
+floated the caption used is the label given in the constructor
+call. This can be changed with <a href="#setLabel">setLabel</a>().
+<p> 
+
+<pre>        TQToolBar * fileTools = new TQToolBar( this, "file operations" );
+        fileTools-&gt;<a href="#setLabel">setLabel</a>( "File Operations" );
+        fileOpenAction-&gt;<a href="ntqaction.html#addTo">addTo</a>( fileTools );
+        fileSaveAction-&gt;<a href="ntqaction.html#addTo">addTo</a>( fileTools );
+</pre>
+<p> This extract from the <a href="simple-application-example.html">application/application.cpp</a> example shows
+the creation of a new toolbar as a child of a <a href="ntqmainwindow.html">TQMainWindow</a> and
+adding two TQActions.
+<p> You may use most widgets within a toolbar, with TQToolButton and
+<a href="ntqcombobox.html">TQComboBox</a> being the most common.
+<p> If you create a new widget on an already visible TQToolBar, this
+widget will automatically become visible without needing a <a href="ntqwidget.html#show">show</a>()
+call. (This differs from every other TQt widget container. We
+recommend calling show() anyway since we hope to fix this anomaly
+in a future release.)
+<p> TQToolBars, like TQDockWindows, are located in <a href="ntqdockarea.html">TQDockArea</a>s or
+float as top-level windows. TQMainWindow provides four TQDockAreas
+(top, left, right and bottom). When you create a new toolbar (as
+in the example above) as a child of a TQMainWindow the toolbar will
+be added to the top dock area. You can move it to another dock
+area (or float it) by calling <a href="ntqmainwindow.html#moveDockWindow">TQMainWindow::moveDockWindow</a>(). TQDock
+areas lay out their windows in <a href="ntqdockarea.html#lines">Lines</a>.
+<p> If the main window is resized so that the area occupied by the
+toolbar is too small to show all its widgets a little arrow button
+(which looks like a right-pointing chevron, '&#187;') will appear
+at the right or bottom of the toolbar depending on its
+orientation. Clicking this button pops up a menu that shows the
+'overflowing' items. TQToolButtons are represented in the menu using
+their textLabel property, other <a href="ntqbutton.html">TQButton</a> subclasses are represented
+using their text property, and TQComboBoxes are represented as submenus,
+with the caption text being used in the submenu item.
+<p> Usually a toolbar will get precisely the space it needs. However,
+with <a href="ntqdockwindow.html#setHorizontalStretchable">setHorizontalStretchable</a>(), <a href="ntqdockwindow.html#setVerticalStretchable">setVerticalStretchable</a>() or
+<a href="#setStretchableWidget">setStretchableWidget</a>() you can tell the main window to expand the
+toolbar to fill all available space in the specified orientation.
+<p> The toolbar arranges its buttons either horizontally or vertically
+(see <a href="ntqdockwindow.html#orientation">orientation</a>() for details). Generally, <a href="ntqdockarea.html">TQDockArea</a> will set the
+orientation correctly for you, but you can set it yourself with
+<a href="ntqdockwindow.html#setOrientation">setOrientation</a>() and track any changes by connecting to the
+<a href="ntqdockwindow.html#orientationChanged">orientationChanged</a>() signal.
+<p> You can use the <a href="#clear">clear</a>() method to remove all items from a toolbar.
+<p> <center><img src="qdockwindow.png" alt="Toolbar (dock window)"></center> <blockquote><p align="center"><em> A floating TQToolbar (dock window)
+</em></p>
+</blockquote><p> <p>See also <a href="ntqtoolbutton.html">TQToolButton</a>, <a href="ntqmainwindow.html">TQMainWindow</a>, <a href="http://www.iarchitect.com/visual.htm">Parts of Isys on Visual Design</a>, <a href="guibooks.html#fowler">GUI Design Handbook: Tool Bar</a>, and <a href="application.html">Main Window and Related Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQToolBar"></a>TQToolBar::TQToolBar ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;label, <a href="ntqmainwindow.html">TQMainWindow</a>&nbsp;*, ToolBarDock = DockTop, bool&nbsp;newLine = false, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+
+<b>This function is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+<p> 
+<h3 class=fn><a name="TQToolBar-2"></a>TQToolBar::TQToolBar ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;label, <a href="ntqmainwindow.html">TQMainWindow</a>&nbsp;*&nbsp;mainWindow, <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;parent, bool&nbsp;newLine = false, const&nbsp;char&nbsp;*&nbsp;name = 0, WFlags&nbsp;f = 0 )
+</h3>
+Constructs an empty horizontal toolbar.
+<p> The toolbar is called <em>name</em> and is a child of <em>parent</em> and is
+managed by <em>mainWindow</em>. The <em>label</em> and <em>newLine</em> parameters
+are passed straight to <a href="ntqmainwindow.html#addDockWindow">TQMainWindow::addDockWindow</a>(). <em>name</em> and
+the widget flags <em>f</em> are passed on to the <a href="ntqdockwindow.html">TQDockWindow</a> constructor.
+<p> Use this constructor if you want to create torn-off (undocked,
+floating) toolbars or toolbars in the <a href="ntqstatusbar.html">status
+    bar</a>.
+
+<h3 class=fn><a name="TQToolBar-3"></a>TQToolBar::TQToolBar ( <a href="ntqmainwindow.html">TQMainWindow</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Constructs an empty toolbar called <em>name</em>, with parent <em>parent</em>,
+in its <em>parent</em>'s top dock area, without any label and without
+requiring a newline.
+
+<h3 class=fn>void <a name="addSeparator"></a>TQToolBar::addSeparator ()
+</h3>
+Adds a separator to the right/bottom of the toolbar.
+
+<p>Examples: <a href="canvas-chart-example.html#x2894">chart/chartform.cpp</a>, <a href="fileiconview-example.html#x895">fileiconview/mainwindow.cpp</a>, <a href="helpviewer-example.html#x1033">helpviewer/helpwindow.cpp</a>, <a href="qfd-example.html#x2010">qfd/fontdisplayer.cpp</a>, and <a href="scribble-example.html#x943">scribble/scribble.cpp</a>.
+<h3 class=fn>void <a name="clear"></a>TQToolBar::clear ()<tt> [virtual]</tt>
+</h3>
+Deletes all the toolbar's child widgets.
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="label"></a>TQToolBar::label () const
+</h3><p>Returns the toolbar's label.
+See the <a href="ntqtoolbar.html#label-prop">"label"</a> property for details.
+<h3 class=fn><a href="ntqmainwindow.html">TQMainWindow</a>&nbsp;* <a name="mainWindow"></a>TQToolBar::mainWindow () const
+</h3>
+Returns a pointer to the <a href="ntqmainwindow.html">TQMainWindow</a> which manages this toolbar.
+
+<h3 class=fn>void <a name="setLabel"></a>TQToolBar::setLabel ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp; )<tt> [virtual]</tt>
+</h3><p>Sets the toolbar's label.
+See the <a href="ntqtoolbar.html#label-prop">"label"</a> property for details.
+<h3 class=fn>void <a name="setStretchableWidget"></a>TQToolBar::setStretchableWidget ( <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;w )<tt> [virtual]</tt>
+</h3>
+Sets the widget <em>w</em> to be expanded if this toolbar is requested
+to stretch.
+<p> The request to stretch might occur because <a href="ntqmainwindow.html">TQMainWindow</a>
+right-justifies the dock area the toolbar is in, or because this
+toolbar's <a href="ntqdockwindow.html#isVerticalStretchable">isVerticalStretchable</a>() or <a href="ntqdockwindow.html#isHorizontalStretchable">isHorizontalStretchable</a>() is
+set to true.
+<p> If you call this function and the toolbar is not yet stretchable,
+setStretchable() is called.
+<p> <p>See also <a href="ntqmainwindow.html#rightJustification-prop">TQMainWindow::rightJustification</a>, <a href="ntqdockwindow.html#setVerticalStretchable">setVerticalStretchable</a>(), and <a href="ntqdockwindow.html#setHorizontalStretchable">setHorizontalStretchable</a>().
+
+<p>Examples: <a href="fileiconview-example.html#x896">fileiconview/mainwindow.cpp</a> and <a href="helpviewer-example.html#x1034">helpviewer/helpwindow.cpp</a>.
+<hr><h2>Property Documentation</h2>
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="label-prop"></a>label</h3>
+<p>This property holds the toolbar's label.
+<p>If the toolbar is floated the label becomes the toolbar window's
+caption. There is no default label text.
+
+<p>Set this property's value with <a href="#setLabel">setLabel</a>() and get this property's value with <a href="#label">label</a>().
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

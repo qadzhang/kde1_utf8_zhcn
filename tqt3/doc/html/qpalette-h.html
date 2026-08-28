@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqpalette.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqpalette.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqpalette.h</h1>
+
+<p>This is the verbatim text of the ntqpalette.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqpalette.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQColorGroup and TQPalette classes
+**
+** Created : 950323
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQPALETTE_H
+#define TQPALETTE_H
+
+#ifndef QT_H
+#include "ntqwindowdefs.h"
+#include "ntqcolor.h"
+#include "ntqshared.h"
+#include "ntqbrush.h" // TQColor-&gt;TQBrush conversion
+#endif // QT_H
+
+#ifndef TQT_NO_PALETTE
+
+class TQColorGroupPrivate;
+
+class TQ_EXPORT TQColorGroup
+{
+public:
+    TQColorGroup();
+    TQColorGroup( const TQColor &amp;foreground, const TQColor &amp;button,
+		 const TQColor &amp;light, const TQColor &amp;dark, const TQColor &amp;mid,
+		 const TQColor &amp;text, const TQColor &amp;base );
+    TQColorGroup( const TQBrush &amp;foreground, const TQBrush &amp;button,
+		 const TQBrush &amp;light, const TQBrush &amp;dark, const TQBrush &amp;mid,
+		 const TQBrush &amp;text, const TQBrush &amp;bright_text,
+		 const TQBrush &amp;base, const TQBrush &amp;background);
+    TQColorGroup( const TQColorGroup &amp; );
+
+   ~TQColorGroup();
+
+    TQColorGroup&amp; operator =(const TQColorGroup&amp;);
+
+    // Do not change the order, the serialization format depends on it
+    enum ColorRole { Foreground, Button, Light, Midlight, Dark, Mid,
+		     Text, BrightText, ButtonText, Base, Background, Shadow,
+		     Highlight, HighlightedText, Link, LinkVisited,
+		     NColorRoles };
+
+    const TQColor &amp;color( ColorRole ) const;
+    const TQBrush &amp;brush( ColorRole ) const;
+    void setColor( ColorRole, const TQColor &amp; );
+    void setBrush( ColorRole, const TQBrush &amp; );
+
+    const TQColor &amp;foreground()	const	{ return br[Foreground].color(); }
+    const TQColor &amp;button()	const	{ return br[Button].color(); }
+    const TQColor &amp;light()	const	{ return br[Light].color(); }
+    const TQColor &amp;dark()	const	{ return br[Dark].color(); }
+    const TQColor &amp;mid()		const	{ return br[Mid].color(); }
+    const TQColor &amp;text()	const	{ return br[Text].color(); }
+    const TQColor &amp;base()	const	{ return br[Base].color(); }
+    const TQColor &amp;background()	const	{ return br[Background].color(); }
+
+    const TQColor &amp;midlight()	const	{ return br[Midlight].color(); }
+    const TQColor &amp;brightText()	const	{ return br[BrightText].color(); }
+    const TQColor &amp;buttonText()	const	{ return br[ButtonText].color(); }
+    const TQColor &amp;shadow()	const	{ return br[Shadow].color(); }
+    const TQColor &amp;highlight()	const	{ return br[Highlight].color(); }
+    const TQColor &amp;highlightedText() const{return br[HighlightedText].color(); }
+    const TQColor &amp;link()        const   { return br[Link].color(); }
+    const TQColor &amp;linkVisited() const   { return br[LinkVisited].color(); }
+
+    bool	operator==( const TQColorGroup &amp;g ) const;
+    bool	operator!=( const TQColorGroup &amp;g ) const
+	{ return !(operator==(g)); }
+
+private:
+    TQBrush *br;
+    TQColorGroupPrivate * d;
+
+    friend class TQPalette;
+};
+
+
+class TQ_EXPORT TQPalette
+{
+public:
+    TQPalette();
+    TQPalette( const TQColor &amp;button );
+    TQPalette( const TQColor &amp;button, const TQColor &amp;background );
+    TQPalette( const TQColorGroup &amp;active, const TQColorGroup &amp;disabled,
+	      const TQColorGroup &amp;inactive );
+    TQPalette( const TQPalette &amp; );
+    ~TQPalette();
+    TQPalette &amp;operator=( const TQPalette &amp; );
+
+    enum ColorGroup { Disabled, Active, Inactive, NColorGroups, Normal=Active };
+
+    const TQColor &amp;color( ColorGroup, TQColorGroup::ColorRole ) const;
+    const TQBrush &amp;brush( ColorGroup, TQColorGroup::ColorRole ) const;
+    void setColor( ColorGroup, TQColorGroup::ColorRole, const TQColor &amp; );
+    void setBrush( ColorGroup, TQColorGroup::ColorRole, const TQBrush &amp; );
+
+    void setColor( TQColorGroup::ColorRole, const TQColor &amp; );
+    void setBrush( TQColorGroup::ColorRole, const TQBrush &amp; );
+
+    TQPalette	copy() const;
+
+    const TQColorGroup &amp;active() const { return data-&gt;active; }
+    const TQColorGroup &amp;disabled() const { return data-&gt;disabled; }
+    const TQColorGroup &amp;inactive() const { return data-&gt;inactive; }
+#ifndef TQT_NO_COMPAT
+    const TQColorGroup &amp;normal() const { return active(); }
+#endif
+
+    void	setActive( const TQColorGroup &amp; );
+    void	setDisabled( const TQColorGroup &amp; );
+    void	setInactive( const TQColorGroup &amp; );
+#ifndef TQT_NO_COMPAT
+    void	setNormal( const TQColorGroup &amp; cg ) { setActive(cg); }
+#endif
+
+    bool	operator==( const TQPalette &amp;p ) const;
+    bool	operator!=( const TQPalette &amp;p ) const
+              { return !(operator==(p)); }
+    bool	isCopyOf( const TQPalette &amp; );
+
+    int		serialNumber() const	{ return data-&gt;ser_no; }
+    
+    
+    static TQColorGroup::ColorRole foregroundRoleFromMode( TQt::BackgroundMode mode );
+    static TQColorGroup::ColorRole backgroundRoleFromMode( TQt::BackgroundMode mode);
+
+private:
+    void	detach();
+    const TQBrush &amp;directBrush( ColorGroup, TQColorGroup::ColorRole ) const;
+    void directSetBrush( ColorGroup, TQColorGroup::ColorRole, const TQBrush&amp; );
+
+    struct TQPalData : public TQShared {
+	TQColorGroup disabled;
+	TQColorGroup active;
+	int	    ser_no;
+	TQColorGroup inactive;
+    } *data;
+};
+
+
+/*****************************************************************************
+  TQColorGroup/TQPalette stream functions
+ *****************************************************************************/
+
+#ifndef TQT_NO_DATASTREAM
+TQ_EXPORT TQDataStream &amp;operator&lt;&lt;( TQDataStream &amp;, const TQColorGroup &amp; );
+TQ_EXPORT TQDataStream &amp;operator&gt;&gt;( TQDataStream &amp;, TQColorGroup &amp; );
+
+TQ_EXPORT TQDataStream &amp;operator&lt;&lt;( TQDataStream &amp;, const TQPalette &amp; );
+TQ_EXPORT TQDataStream &amp;operator&gt;&gt;( TQDataStream &amp;, TQPalette &amp; );
+#endif // TQT_NO_DATASTREAM
+
+#endif // TQT_NO_PALETTE
+#endif // TQPALETTE_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -388,7 +388,7 @@ testWindow::~testWindow ()
   if (menuBar)
   delete menuBar;
 
-  debug ("kwindowtest finished");
+  tqDebug("kwindowtest finished");
 }
 
 void testWindow::beFixed()
@@ -451,7 +451,7 @@ void testWindow::slotFrame()
 
      if (myFrame == 0)
       {
-        warning ("bad frame ID");
+        tqWarning("bad frame ID");
         return;
       }
 

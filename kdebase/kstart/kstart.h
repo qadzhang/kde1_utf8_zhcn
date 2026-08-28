@@ -5,6 +5,9 @@
  *
  */
 
+
+#ifndef K1GUARD_kdebase_kstart_kstart_h
+#define K1GUARD_kdebase_kstart_kstart_h
 #include <qapp.h>
 #include <qcursor.h>
 #include <qlist.h>
@@ -59,6 +62,4 @@ private:
   bool sticky;
   int decoration;
 };
-
-
-
+#endif /* K1GUARD_kdebase_kstart_kstart_h */

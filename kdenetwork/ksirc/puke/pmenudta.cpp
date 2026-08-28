@@ -7,7 +7,7 @@
  * This is an empty function such that if it get's called we don't explode
  */
 PObject *createWidget(CreateArgs &ca) {
-    warning("Create called for PMenuData, bad things are about to happend\n");
+    tqWarning("Create called for PMenuData, bad things are about to happend\n");
     return new("PObject") PObject();
 }
 

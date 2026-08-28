@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqtranslator.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqtranslator.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqtranslator.h</h1>
+
+<p>This is the verbatim text of the ntqtranslator.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqtranslator.h   3.3.8   edited Jan 11 14:46 $
+**
+** Definition of the translator class
+**
+** Created : 980906
+**
+** Copyright (C) 1998-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+
+#ifndef TQTRANSLATOR_H
+#define TQTRANSLATOR_H
+
+#ifndef QT_H
+#include "ntqobject.h"
+#include "ntqvaluelist.h"
+#endif // QT_H
+
+#ifndef TQT_NO_TRANSLATION
+
+class TQTranslatorPrivate;
+
+class TQ_EXPORT TQTranslatorMessage
+{
+public:
+    TQTranslatorMessage();
+    TQTranslatorMessage( const char * context,
+			const char * sourceText,
+			const char * comment,
+			const TQString&amp; translation = TQString::null );
+    TQTranslatorMessage( TQDataStream &amp; );
+    TQTranslatorMessage( const TQTranslatorMessage &amp; m );
+
+    TQTranslatorMessage &amp; operator=( const TQTranslatorMessage &amp; m );
+
+    uint hash() const { return h; }
+    const char *context() const { return cx; }
+    const char *sourceText() const { return st; }
+    const char *comment() const { return cm; }
+
+    void setTranslation( const TQString &amp; translation ) { tn = translation; }
+    TQString translation() const { return tn; }
+
+    enum Prefix { NoPrefix, Hash, HashContext, HashContextSourceText,
+		  HashContextSourceTextComment };
+    void write( TQDataStream &amp; s, bool strip = false,
+		Prefix prefix = HashContextSourceTextComment ) const;
+    Prefix commonPrefix( const TQTranslatorMessage&amp; ) const;
+
+    bool operator==( const TQTranslatorMessage&amp; m ) const;
+    bool operator!=( const TQTranslatorMessage&amp; m ) const
+    { return !operator==( m ); }
+    bool operator&lt;( const TQTranslatorMessage&amp; m ) const;
+    bool operator&lt;=( const TQTranslatorMessage&amp; m ) const
+    { return !m.operator&lt;( *this ); }
+    bool operator&gt;( const TQTranslatorMessage&amp; m ) const
+    { return m.operator&lt;( *this ); }
+    bool operator&gt;=( const TQTranslatorMessage&amp; m ) const
+    { return !operator&lt;( m ); }
+
+private:
+    uint h;
+    TQCString cx;
+    TQCString st;
+    TQCString cm;
+    TQString tn;
+
+    enum Tag { Tag_End = 1, Tag_SourceText16, Tag_Translation, Tag_Context16,
+	       Tag_Hash, Tag_SourceText, Tag_Context, Tag_Comment,
+	       Tag_Obsolete1 };
+};
+
+
+class TQ_EXPORT TQTranslator: public TQObject
+{
+    TQ_OBJECT
+public:
+    TQTranslator( TQObject * parent = 0, const char * name = 0 );
+    ~TQTranslator();
+
+#ifndef TQT_NO_COMPAT
+    TQString find( const char *context, const char *sourceText, const char * comment = 0 ) const {
+	return findMessage( context, sourceText, comment ).translation();
+    }
+#endif
+    virtual TQTranslatorMessage findMessage( const char *, const char *,
+					    const char * = 0 ) const;
+
+    bool load( const TQString &amp; filename,
+	       const TQString &amp; directory = TQString::null,
+	       const TQString &amp; search_delimiters = TQString::null,
+	       const TQString &amp; suffix = TQString::null );
+    bool load( const uchar *data, int len ) {
+	clear();
+	return do_load( data, len );
+    }
+
+    void clear();
+
+#ifndef TQT_NO_TRANSLATION_BUILDER
+    enum SaveMode { Everything, Stripped };
+
+    bool save( const TQString &amp; filename, SaveMode mode = Everything );
+
+    void insert( const TQTranslatorMessage&amp; );
+    void insert( const char *context, const char *sourceText, const TQString &amp;translation ) {
+	insert( TQTranslatorMessage(context, sourceText, "", translation) );
+    }
+    void remove( const TQTranslatorMessage&amp; );
+    void remove( const char *context, const char *sourceText ) {
+	remove( TQTranslatorMessage(context, sourceText, "") );
+    }
+    bool contains( const char *, const char *, const char * comment = 0 ) const;
+
+    void squeeze( SaveMode = Everything );
+    void unsqueeze();
+
+    TQValueList&lt;TQTranslatorMessage&gt; messages() const;
+#endif
+
+    bool isEmpty() const;
+
+private:
+#if defined(TQ_DISABLE_COPY)
+    TQTranslator( const TQTranslator &amp; );
+    TQTranslator &amp;operator=( const TQTranslator &amp; );
+#endif
+
+    bool do_load( const uchar *data, int len );
+
+    TQTranslatorPrivate * d;
+};
+
+#endif // TQT_NO_TRANSLATION
+
+#endif
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

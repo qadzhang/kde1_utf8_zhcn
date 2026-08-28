@@ -61,7 +61,7 @@ KSoundPageConfig::KSoundPageConfig( QWidget *parent, const char* name )
                "Additional WAV files can be dropped onto the sound list."
                ),this);  
 
-    QString path = KApplication::kde_sounddir().copy();
+    QString path = KApplication::kde_sounddir();
     QDir dir;
     dir.setPath(path);
     dir.setNameFilter("*.wav");
@@ -224,7 +224,7 @@ void KSoundPageConfig::playCurrentSound()
   if (soundno != -1) {
     sname = sound_list->text(soundno);
     if (sname[0] != '/') {
-      hlp = KApplication::kde_sounddir().copy();
+      hlp = KApplication::kde_sounddir();
       hlp += "/";  // Don't forget this -- Bernd
       hlp += sname;
       audio.play((char*)hlp.data());

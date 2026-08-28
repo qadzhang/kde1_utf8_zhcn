@@ -2,7 +2,7 @@
 
 PObject *createWidget(CreateArgs &ca)
 {
-  warning("Table View is abstract class, cannot create an object from it!!!");
+  tqWarning("Table View is abstract class, cannot create an object from it!!!");
   PTableView *pt = new("PTableView") PTableView(ca.parent);
   pt->setWidget(0);
   pt->setWidgetId(ca.pwI);
@@ -13,8 +13,8 @@ PObject *createWidget(CreateArgs &ca)
 PTableView::PTableView(PObject *parent)
   : PFrame(parent)
 {
-  //  debug("PTableView PTableView called");
-  tbl = 0;
+  //  tqDebug("PTableView PTableView called");
+  tbl = 0;  /* TQt3 迁移 */
   setWidget(tbl);
 }
 
@@ -33,7 +33,7 @@ void PTableView::messageHandler(int fd, PukeMessage *pm)
       /*
        case PUKE_LINED_SET_MAXLENGTH:
        if(widget() == 0){
-       debug("PTableView: No Widget set");
+       tqDebug("PTableView: No Widget set");
        return;
        }
        widget()->setMaxLength(pm->iArg);

@@ -74,7 +74,7 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 
   // setup icon
   QString pixdir = KApplication::kde_icondir();
-  pixmap = (pixdir + "/logo.xpm").data();
+  pixmap = TQPixmap( (pixdir + "/logo.xpm").ascii() );  /* TQt3 迁移 */
 
   KDNDDropZone *myDropZone = new KDNDDropZone(this, DndURL);
   connect( myDropZone, SIGNAL( dropAction( KDNDDropZone *) ),
@@ -127,17 +127,17 @@ void KBGndManager::desktopChange( int d )
 {
   if ( oneDesktopMode )
     {
-      //debug( "One desktop mode");
+      //tqDebug( "One desktop mode");
       return;
     }
 
   d = KWM::currentDesktop() - 1;
 
-  //debug( "Changing to desktop %d", d+1 );
+  //tqDebug( "Changing to desktop %d", d+1 );
 
   if ( desktops[current].getName() == desktops[d].getName() )
     {
-      //debug( "Desktops identical" );
+      //tqDebug( "Desktops identical" );
       current = d;
       return;
     }
@@ -156,7 +156,7 @@ void KBGndManager::commandReceived( QString com )
 {
   if ( com == "kbgwm_reconfigure" )
     {
-      //debug( "Got background reload event" );
+      //tqDebug( "Got background reload event" );
 
       QString oldName = desktops[current].getName();
 

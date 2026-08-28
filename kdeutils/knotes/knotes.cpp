@@ -27,6 +27,7 @@
 
 
 #include <time.h>
+#include <qdrawutil.h>  /* TQt3 迁移 */
 #include "knotes.h"
 #include <kiconloader.h>
 #include <kurl.h>
@@ -104,7 +105,7 @@ static int knotes_x_errhandler( Display *dpy, XErrorEvent *err )
     char errstr[256];
 
     XGetErrorText( dpy, err->error_code, errstr, 256 );
-    fatal( "X Error: %s\n  Major opcode:  %d", errstr, err->request_code );
+    tqFatal( "X Error: %s\n  Major opcode:  %d", errstr, err->request_code );
     return 0;
 }
 
@@ -126,7 +127,7 @@ KPostitMultilineEdit::KPostitMultilineEdit(QWidget *parent, const char *myname)
 void KPostitMultilineEdit::keyPressEvent(QKeyEvent *e){
 
   if (e->key() == Key_Tab)
-    insertChar('\t');
+    insert( TQString(QChar('\t')) );  /* TQt3 迁移 */
 
   if(e->key() == Key_Return || e->key() == Key_Enter){
 
@@ -209,7 +210,7 @@ void KPostitMultilineEdit::mynewLine(){
     newLine();
 
     for(uint i = 0; i < string.length();i++){
-      insertChar(string.data()[i]);
+      insert( TQString(QChar(string.data()[i])) );
     }
 
     // this doesn't work. in Qt 1.2:
@@ -232,7 +233,7 @@ QString KPostitMultilineEdit::prefixString(QString string){
   // It is assumed that string contains at least one non whitespace character
   // ie \n \r \t \v \f and space
 
-  int size = string.size();
+  int size = string.length();
   char* buffer = (char*) malloc(size + 1);
   strncpy (buffer, string.data(),size - 1);
   buffer[size] = '\0';
@@ -281,8 +282,7 @@ KPostit::KPostit(QWidget *parent, const char *myname,int  _number, QString pname
     hidden = false;
     number = _number; 	// index in popup. Not used anymore, but I'll leave it in
                         // the structure for now.
-    name = pname;
-    name.detach(); 	// name of postit and name on the popup
+    name = pname;    // name of postit and name on the popup
 
     kfm = 0L;
 
@@ -539,7 +539,7 @@ void KPostit::mail(){
   FILE* mailpipe;
 
   QString cmd;
-  cmd = postitdefaults.mailcommand.copy();
+  cmd = postitdefaults.mailcommand;
   cmd = cmd.sprintf(postitdefaults.mailcommand.data(),
 		    maildlg->getSubject().data(),maildlg->getRecipient().data());
 
@@ -609,7 +609,7 @@ void KPostit::setAlarm(){
 
   AlarmEntry* entry;
   entry = new AlarmEntry;
-  entry->name = name.copy();
+  entry->name = name;
   entry->dt = qdt;
 
   AlarmList.append(entry);
@@ -647,7 +647,7 @@ void KPostit::print(){
   FILE* printpipe;
 
   QString cmd;
-  cmd = postitdefaults.printcommand.copy();
+  cmd = postitdefaults.printcommand;
   cmd = cmd.sprintf(postitdefaults.printcommand.data(),name.data());
   //  printf("%s\n",cmd.data());
 
@@ -805,7 +805,7 @@ void KPostit::renameKPostit(){
     QString notesfile;
     QString newnotesfile;
     notesfile = KApplication::localkdedir() + "/share/apps/knotes/notes";
-    newnotesfile = notesfile.copy();
+    newnotesfile = notesfile;
     notesfile += name;
     newnotesfile += newName;
 
@@ -831,14 +831,13 @@ void KPostit::renameKPostit(){
 
       if (KPostit::AlarmList.current()->name == name){
         have_alarm = TRUE;
-	KPostit::AlarmList.current()->name = newName.copy();
+	KPostit::AlarmList.current()->name = newName;
       }
     }
     mytimer->start();
 
     PostitFilesList.inSort(newName);
     name = newName;
-    name.detach();
 
     if (have_alarm){
       label->setText(name + " (A)");
@@ -1320,9 +1319,7 @@ void KPostit::defaults()
   newdefstruct.autoindent = postitdefaults.autoindent;
   newdefstruct.font       = postitdefaults.font;
   newdefstruct.mailcommand = postitdefaults.mailcommand;
-  newdefstruct.mailcommand.detach();
   newdefstruct.printcommand = postitdefaults.printcommand;
-  newdefstruct.printcommand.detach();
 
 
   if(!tabdialog){
@@ -1393,8 +1390,8 @@ void KPostit::defaults()
     postitdefaults.frame3d    = newdefstruct.frame3d;
     postitdefaults.autoindent = newdefstruct.autoindent;
     postitdefaults.font       = newdefstruct.font;
-    postitdefaults.mailcommand = newdefstruct.mailcommand.copy();
-    postitdefaults.printcommand = newdefstruct.printcommand.copy();
+    postitdefaults.mailcommand = newdefstruct.mailcommand;
+    postitdefaults.printcommand = newdefstruct.printcommand;
 
   }
   else{
@@ -1409,7 +1406,7 @@ void KPostit::defaults()
 void KPostit::set_colors(){
 
 
-  QPalette mypalette = (edit->palette()).copy();
+  QPalette mypalette = (edit->palette());
 
   QColorGroup cgrp = mypalette.normal();
   QColorGroup ncgrp(forecolor,cgrp.background(),
@@ -1507,7 +1504,6 @@ void KPostit::insertNetFile( const char *_url)
 
   QString string;
   QString netFile = _url;
-  netFile.detach();
   KURL u( netFile.data() );
 
   if ( u.isMalformed() )
@@ -1656,8 +1652,10 @@ void findPostitFiles(){
   QDir d(filesdir);
   d.setSorting( QDir::Name );
 
-  const QStrList *list = d.entryList();
-  QStrListIterator it( *list );      // create list iterator
+  static TQStrList k1l; k1l.clear();  /* TQt3 迁移：值语义承接 */
+  { QStringList k1sl = d.entryList();
+    for (unsigned k1i=0;k1i<k1sl.count();++k1i) k1l.append(k1sl[k1i]); }
+  QStrListIterator it( k1l );      // create list iterator
   char *fi;                          // pointer for traversing
 
   while ( (fi=it.current()) ) {           // for each file...
@@ -1975,7 +1973,7 @@ void myPushButton::leaveEvent( QEvent * ){
 
 void myPushButton::paint(QPainter *painter){
   if ( isDown() || (isOn() && !flat)) {
-    if ( style() == WindowsStyle )
+    if ( style().inherits("TQWindowsStyle") )
       qDrawWinButton( painter, 0, 0, width(),
 		      height(), colorGroup(), TRUE );
     else
@@ -1983,7 +1981,7 @@ void myPushButton::paint(QPainter *painter){
 		       height(), colorGroup(), TRUE, 2, 0L );
   }
   else if (!flat ) {
-    if ( style() == WindowsStyle )
+    if ( style().inherits("TQWindowsStyle") )
       qDrawWinButton( painter, 0, 0, width(), height(),
 		      colorGroup(), FALSE );
     else {
@@ -1997,7 +1995,7 @@ void myPushButton::paint(QPainter *painter){
 
    int dx = ( width() - pixmap()->width() ) / 2;
   int dy = ( height() - pixmap()->height() ) / 2;
-  if ( isDown() && style() == WindowsStyle ) {
+  if ( isDown() && style().inherits("TQWindowsStyle") ) {
     dx++;
     dy++;
   }

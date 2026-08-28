@@ -13,24 +13,24 @@ set(Ksnake_SRCS
 )
 
 set(Ksnake_MOC
-    basket.moc
-    game.moc
-    keys.moc
-    lcdrange.moc
-    progress.moc
-    rattler.moc
-    score.moc
-    snake.moc
-    startroom.moc
-    trys.moc
-    view.moc
+    basket.h
+    game.h
+    keys.h
+    lcdrange.h
+    progress.h
+    rattler.h
+    score.h
+    snake.h
+    startroom.h
+    trys.h
+    view.h
     )
 
-QT1_WRAP_MOC(MOC_FILES ${Ksnake_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${Ksnake_MOC})
 
 add_executable(ksnake ${Ksnake_SRCS} ${MOC_FILES} ${QwSpriteField_SOURCES})
 target_link_libraries(ksnake
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

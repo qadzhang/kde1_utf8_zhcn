@@ -67,7 +67,7 @@ QString getDescrFromNum(unsigned short _num)
   }
  
   if (!file.open(IO_ReadOnly)) {
-    warning("Couldn't open %s", (const char *)filename);
+    tqWarning("Couldn't open %s", (const char *)filename);
     file.close();
     return "";
   }

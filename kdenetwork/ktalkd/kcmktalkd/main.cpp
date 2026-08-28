@@ -114,7 +114,7 @@ int main(int argc, char **argv)
     if (app.runGUI())	
         ret = app.exec();
     else
-        ret = 0;
+        ret = 0;  /* TQt3 迁移 */
 
     delete config;
     delete announceconfig;

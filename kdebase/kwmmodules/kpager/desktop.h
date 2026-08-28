@@ -22,6 +22,9 @@
  *
  */
 
+
+#ifndef K1GUARD_kdebase_kwmmodules_kpager_desktop_h
+#define K1GUARD_kdebase_kwmmodules_kpager_desktop_h
 #include <qwidget.h>
 #include <qdropsite.h>
 #include <qlist.h>
@@ -182,3 +185,4 @@ signals:
 
 };
     
+#endif /* K1GUARD_kdebase_kwmmodules_kpager_desktop_h */

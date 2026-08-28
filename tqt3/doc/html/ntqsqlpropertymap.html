@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/sql/qsqlpropertymap.cpp:53 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQSqlPropertyMap Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQSqlPropertyMap Class Reference<br><small>[<a href="sql.html">sql module</a>]</small></h1>
+
+<p>The TQSqlPropertyMap class is used to map widgets to SQL fields.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qsqlpropertymap-h.html">ntqsqlpropertymap.h</a>&gt;</tt>
+<p><a href="qsqlpropertymap-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQSqlPropertyMap"><b>TQSqlPropertyMap</b></a> ()</li>
+<li class=fn>virtual <a href="#~TQSqlPropertyMap"><b>~TQSqlPropertyMap</b></a> ()</li>
+<li class=fn>TQVariant <a href="#property"><b>property</b></a> ( TQWidget&nbsp;*&nbsp;widget )</li>
+<li class=fn>virtual void <a href="#setProperty"><b>setProperty</b></a> ( TQWidget&nbsp;*&nbsp;widget, const&nbsp;TQVariant&nbsp;&amp;&nbsp;value )</li>
+<li class=fn>void <a href="#insert"><b>insert</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;classname, const&nbsp;TQString&nbsp;&amp;&nbsp;property )</li>
+<li class=fn>void <a href="#remove"><b>remove</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;classname )</li>
+</ul>
+<h2>Static Public Members</h2>
+<ul>
+<li class=fn>TQSqlPropertyMap * <a href="#defaultMap"><b>defaultMap</b></a> ()</li>
+<li class=fn>void <a href="#installDefaultMap"><b>installDefaultMap</b></a> ( TQSqlPropertyMap&nbsp;*&nbsp;map )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQSqlPropertyMap class is used to map widgets to SQL fields.
+<p> 
+
+<p> The SQL module uses TQt <a href="properties.html">object
+    properties</a> to insert and extract values from editor
+widgets.
+<p> This class is used to map editors to SQL fields. This works by
+associating SQL editor class names to the properties used to
+insert and extract values to/from the editor.
+<p> For example, a <a href="ntqlineedit.html">TQLineEdit</a> can be used to edit text strings and
+other data types in TQDataTables or TQSqlForms. Several properties
+are defined in TQLineEdit, but only the <em>text</em> property is used to
+insert and extract text from a TQLineEdit. Both <a href="ntqdatatable.html">TQDataTable</a> and
+<a href="ntqsqlform.html">TQSqlForm</a> use the global TQSqlPropertyMap for inserting and
+extracting values to and from an editor widget. The global
+property map defines several common widgets and properties that
+are suitable for many applications. You can add and remove widget
+properties to suit your specific needs.
+<p> If you want to use custom editors with your TQDataTable or
+TQSqlForm, you must install your own TQSqlPropertyMap for that table
+or form. Example:
+<p> <pre>
+    TQSqlPropertyMap *myMap  = new TQSqlPropertyMap();
+    <a href="ntqsqlform.html">TQSqlForm</a>        *myForm = new <a href="ntqsqlform.html">TQSqlForm</a>( this );
+    MyEditor myEditor( this );
+
+    // Set the TQSqlForm's record buffer to the update buffer of
+    // a pre-existing TQSqlCursor called 'cur'.
+    myForm-&gt;<a href="ntqsqlform.html#setRecord">setRecord</a>( cur-&gt;primeUpdate() );
+
+    // Install the customized map
+    myMap-&gt;<a href="#insert">insert</a>( "MyEditor", "content" );
+    myForm-&gt;<a href="ntqsqlform.html#installPropertyMap">installPropertyMap</a>( myMap ); // myForm now owns myMap
+    ...
+    // Insert a field into the form that uses a myEditor to edit the
+    // field 'somefield'
+    myForm-&gt;<a href="ntqsqlform.html#insert">insert</a>( &amp;myEditor, "somefield" );
+
+    // Update myEditor with the value from the mapped database field
+    myForm-&gt;<a href="ntqsqlform.html#readFields">readFields</a>();
+    ...
+    // Let the user edit the form
+    ...
+    // Update the database fields with the values in the form
+    myForm-&gt;<a href="ntqsqlform.html#writeFields">writeFields</a>();
+    ...
+    </pre>
+ 
+<p> You can also replace the global TQSqlPropertyMap that is used by
+default. (Bear in mind that TQSqlPropertyMap takes ownership of the
+new default map.)
+<p> <pre>
+    TQSqlPropertyMap *myMap = new TQSqlPropertyMap;
+
+    myMap-&gt;<a href="#insert">insert</a>( "MyEditor", "content" );
+    TQSqlPropertyMap::<a href="#installDefaultMap">installDefaultMap</a>( myMap );
+    ...
+    </pre>
+ 
+<p> <p>See also <a href="ntqdatatable.html">TQDataTable</a>, <a href="ntqsqlform.html">TQSqlForm</a>, <a href="ntqsqleditorfactory.html">TQSqlEditorFactory</a>, and <a href="database.html">Database Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQSqlPropertyMap"></a>TQSqlPropertyMap::TQSqlPropertyMap ()
+</h3>
+<p> Constructs a TQSqlPropertyMap.
+<p> The default property mappings used by TQt widgets are:
+<center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#a2c511"> <th valign="top">Widgets <th valign="top">Property
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="ntqcheckbox.html">TQCheckBox</a>,
+<a href="ntqradiobutton.html">TQRadioButton</a>
+<td valign="top">checked
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="ntqcombobox.html">TQComboBox</a>,
+<a href="ntqlistbox.html">TQListBox</a>
+<td valign="top">currentItem
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="qdateedit.html">TQDateEdit</a>
+<td valign="top">date
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="ntqdatetimeedit.html">TQDateTimeEdit</a>
+<td valign="top">dateTime
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="ntqtextbrowser.html">TQTextBrowser</a>
+<td valign="top">source
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="ntqbutton.html">TQButton</a>,
+<a href="ntqdial.html">TQDial</a>,
+<a href="ntqlabel.html">TQLabel</a>,
+<a href="ntqlineedit.html">TQLineEdit</a>,
+<a href="ntqmultilineedit.html">TQMultiLineEdit</a>,
+<a href="ntqpushbutton.html">TQPushButton</a>,
+<a href="ntqtextedit.html">TQTextEdit</a>,
+<td valign="top">text
+<tr bgcolor="#f0f0f0"> <td valign="top"><a href="qtimeedit.html">TQTimeEdit</a>
+<td valign="top">time
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="ntqlcdnumber.html">TQLCDNumber</a>,
+<a href="ntqscrollbar.html">TQScrollBar</a>
+<a href="ntqslider.html">TQSlider</a>,
+<a href="ntqspinbox.html">TQSpinBox</a>
+<td valign="top">value
+</table></center>
+
+<h3 class=fn><a name="~TQSqlPropertyMap"></a>TQSqlPropertyMap::~TQSqlPropertyMap ()<tt> [virtual]</tt>
+</h3>
+Destroys the TQSqlPropertyMap.
+<p> Note that if the TQSqlPropertyMap is installed with
+installPropertyMap() the object it was installed into, e.g. the
+<a href="ntqsqlform.html">TQSqlForm</a>, takes ownership and will delete the TQSqlPropertyMap when
+necessary.
+
+<h3 class=fn><a href="ntqsqlpropertymap.html">TQSqlPropertyMap</a>&nbsp;* <a name="defaultMap"></a>TQSqlPropertyMap::defaultMap ()<tt> [static]</tt>
+</h3>
+Returns the application global TQSqlPropertyMap.
+
+<h3 class=fn>void <a name="insert"></a>TQSqlPropertyMap::insert ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;classname, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;property )
+</h3>
+Insert a new classname/property pair, which is used for custom SQL
+field editors. There <em>must</em> be a <tt>TQ_PROPERTY</tt> clause in the <em>classname</em> class declaration for the <em>property</em>.
+
+<p>Example: <a href="sql.html#x2239">sql/overview/custom1/main.cpp</a>.
+<h3 class=fn>void <a name="installDefaultMap"></a>TQSqlPropertyMap::installDefaultMap ( <a href="ntqsqlpropertymap.html">TQSqlPropertyMap</a>&nbsp;*&nbsp;map )<tt> [static]</tt>
+</h3>
+Replaces the global default property map with <em>map</em>. All
+<a href="ntqdatatable.html">TQDataTable</a> and <a href="ntqsqlform.html">TQSqlForm</a> instantiations will use this new map for
+inserting and extracting values to and from editors.
+<em>TQSqlPropertyMap takes ownership of &#92;a map, and destroys it when it is no longer needed.</em>
+
+<h3 class=fn><a href="ntqvariant.html">TQVariant</a> <a name="property"></a>TQSqlPropertyMap::property ( <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;widget )
+</h3>
+Returns the mapped property of <em>widget</em> as a <a href="ntqvariant.html">TQVariant</a>.
+
+<h3 class=fn>void <a name="remove"></a>TQSqlPropertyMap::remove ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;classname )
+</h3>
+Removes <em>classname</em> from the map.
+
+<h3 class=fn>void <a name="setProperty"></a>TQSqlPropertyMap::setProperty ( <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;widget, const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;value )<tt> [virtual]</tt>
+</h3>
+Sets the property of <em>widget</em> to <em>value</em>.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

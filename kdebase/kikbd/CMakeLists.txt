@@ -8,15 +8,15 @@ include_directories(
 set(KIKBD_SRCS kikbd.cpp keytrans.cpp keymap.cpp kikbdconf.cpp
     kobjconf.cpp kconfobjs.cpp)
 
-set(KIKBD_MOC kconfobjs.moc kobjconf.moc keymap.moc kikbd.moc kikbdconf.moc widgets.moc)
+set(KIKBD_MOC kconfobjs.h kobjconf.h keymap.h kikbd.h kikbdconf.h widgets.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KIKBD_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KIKBD_MOC})
 
 add_executable(kikbd ${KIKBD_SRCS} ${MOC_FILES})
 target_link_libraries(kikbd
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 
@@ -28,7 +28,7 @@ add_executable(kcmikbd ${KCMIKBD_SRCS} ${MOC_FILES})
 target_link_libraries(kcmikbd
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

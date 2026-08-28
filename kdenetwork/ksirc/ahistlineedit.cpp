@@ -50,7 +50,7 @@ extern global_config *kSircConfig;
 aHistLineEdit::aHistLineEdit(QWidget *parent, const char *name)
   : QLineEdit(parent, name)
 {
-  current = 0;
+  current = 0;  /* TQt3 迁移 */
   hist.append(""); // Set the current as blank
 }
 

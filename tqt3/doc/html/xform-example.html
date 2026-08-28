@@ -1,0 +1,559 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/xform/xform.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Transformed Graphics Demo</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Transformed Graphics Demo</h1>
+
+   
+<p> 
+This example lets the user rotate, shear and scale text and graphics
+arbitrarily.
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/xform.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+
+#include &lt;<a href="qdialog-h.html">ntqdialog.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qlineedit-h.html">ntqlineedit.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qcheckbox-h.html">ntqcheckbox.h</a>&gt;
+#include &lt;<a href="qradiobutton-h.html">ntqradiobutton.h</a>&gt;
+#include &lt;<a href="qbuttongroup-h.html">ntqbuttongroup.h</a>&gt;
+#include &lt;<a href="qlcdnumber-h.html">ntqlcdnumber.h</a>&gt;
+#include &lt;<a href="qslider-h.html">ntqslider.h</a>&gt;
+#include &lt;<a href="qmenubar-h.html">ntqmenubar.h</a>&gt;
+#include &lt;<a href="qfontdialog-h.html">ntqfontdialog.h</a>&gt;
+#include &lt;<a href="qlayout-h.html">ntqlayout.h</a>&gt;
+#include &lt;<a href="qvbox-h.html">ntqvbox.h</a>&gt;
+#include &lt;<a href="qwidgetstack-h.html">ntqwidgetstack.h</a>&gt;
+
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qpicture-h.html">ntqpicture.h</a>&gt;
+
+#include &lt;stdlib.h&gt;
+
+
+class ModeNames {
+public:
+    enum Mode { Text, Image, Picture };
+};
+
+
+class XFormControl : public <a href="ntqvbox.html">TQVBox</a>, public ModeNames
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    XFormControl( const <a href="ntqfont.html">TQFont</a> &amp;initialFont, TQWidget *parent=0, const char *name=0 );
+   ~XFormControl() {}
+
+    <a href="ntqwmatrix.html">TQWMatrix</a> matrix();
+
+signals:
+    void newMatrix( <a href="ntqwmatrix.html">TQWMatrix</a> );
+    void newText( const <a href="ntqstring.html">TQString</a>&amp; );
+    void newFont( const <a href="ntqfont.html">TQFont</a> &amp; );
+    void newMode( int );
+private slots:
+    void newMtx();
+    void newTxt(const <a href="ntqstring.html">TQString</a>&amp;);
+    void selectFont();
+    void fontSelected( const <a href="ntqfont.html">TQFont</a> &amp; );
+    void changeMode(int);
+    void timerEvent(TQTimerEvent*);
+private:
+    Mode mode;
+    <a href="ntqslider.html">TQSlider</a>      *rotS;                // Rotation angle scroll bar
+    <a href="ntqslider.html">TQSlider</a>      *shearS;              // Shear value scroll bar
+    <a href="ntqslider.html">TQSlider</a>      *magS;                // Magnification value scroll bar
+    <a href="ntqlcdnumber.html">TQLCDNumber</a>   *rotLCD;              // Rotation angle LCD display
+    <a href="ntqlcdnumber.html">TQLCDNumber</a>   *shearLCD;            // Shear value LCD display
+    <a href="ntqlcdnumber.html">TQLCDNumber</a>   *magLCD;              // Magnification value LCD display
+    <a href="ntqcheckbox.html">TQCheckBox</a>    *mirror;              // Checkbox for mirror image on/of
+    <a href="ntqwidgetstack.html">TQWidgetStack</a>* optionals;
+    <a href="ntqlineedit.html">TQLineEdit</a>    *textEd;              // Inp[ut field for xForm text
+    <a href="ntqpushbutton.html">TQPushButton</a>  *fpb;                 // Select font push button
+    <a href="ntqradiobutton.html">TQRadioButton</a> *rb_txt;              // Radio button for text
+    <a href="ntqradiobutton.html">TQRadioButton</a> *rb_img;              // Radio button for image
+    <a href="ntqradiobutton.html">TQRadioButton</a> *rb_pic;              // Radio button for picture
+    <a href="ntqfont.html">TQFont</a> currentFont;
+};
+
+/*
+  ShowXForm displays a text or a pixmap (TQPixmap) using a coordinate
+  <a href="ntqwmatrix.html#TransformationMode">transformation matrix</a> (TQWMatrix)
+*/
+
+class ShowXForm : public <a href="ntqwidget.html">TQWidget</a>, public ModeNames
+{
+    TQ_OBJECT
+public:
+    ShowXForm( const <a href="ntqfont.html">TQFont</a> &amp;f, TQWidget *parent=0, const char *name=0 );
+   ~ShowXForm() {}
+    void showIt();                      // (Re)displays text or pixmap
+
+    Mode mode() const { return m; }
+public slots:
+    void setText( const <a href="ntqstring.html">TQString</a>&amp; );
+    void setMatrix( <a href="ntqwmatrix.html">TQWMatrix</a> );
+    void setFont( const <a href="ntqfont.html">TQFont</a> &amp;f );
+    void setPixmap( <a href="ntqpixmap.html">TQPixmap</a> );
+    void setPicture( const <a href="ntqpicture.html">TQPicture</a>&amp; );
+    void setMode( int );
+private:
+    <a href="ntqsizepolicy.html">TQSizePolicy</a> sizePolicy() const;
+    <a href="ntqsize.html">TQSize</a> sizeHint() const;
+    void paintEvent( <a href="qpaintevent.html">TQPaintEvent</a> * );
+    void resizeEvent( <a href="qresizeevent.html">TQResizeEvent</a> * );
+    <a href="ntqwmatrix.html">TQWMatrix</a>  mtx;                      // coordinate transform matrix
+    <a href="ntqstring.html">TQString</a>   text;                     // text to be displayed
+    <a href="ntqpixmap.html">TQPixmap</a>   pix;                      // pixmap to be displayed
+    <a href="ntqpicture.html">TQPicture</a>  picture;                  // text to be displayed
+    <a href="ntqrect.html">TQRect</a>     eraseRect;                // covers last displayed text/pixmap
+    Mode      m;
+};
+
+<a name="f397"></a>XFormControl::XFormControl( const <a href="ntqfont.html">TQFont</a> &amp;initialFont,
+                            <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+        : <a href="ntqvbox.html">TQVBox</a>( parent, name )
+{
+    <a href="ntqhbox.html#setSpacing">setSpacing</a>(6);
+    <a href="ntqframe.html#setMargin">setMargin</a>(6);
+    currentFont = initialFont;
+    mode = Image;
+
+    rotLCD      = new <a href="ntqlcdnumber.html">TQLCDNumber</a>( 4, this, "rotateLCD" );
+    rotS        = new <a href="ntqslider.html">TQSlider</a>( TQSlider::Horizontal, this,
+                                  "rotateSlider" );
+    shearLCD    = new <a href="ntqlcdnumber.html">TQLCDNumber</a>( 5,this, "shearLCD" );
+    shearS      = new <a href="ntqslider.html">TQSlider</a>( TQSlider::Horizontal, this,
+                                  "shearSlider" );
+    mirror      = new <a href="ntqcheckbox.html">TQCheckBox</a>( this, "mirrorCheckBox" );
+    rb_txt = new <a href="ntqradiobutton.html">TQRadioButton</a>( this, "text" );
+    rb_img = new <a href="ntqradiobutton.html">TQRadioButton</a>( this, "image" );
+    rb_pic = new <a href="ntqradiobutton.html">TQRadioButton</a>( this, "picture" );
+    optionals = new <a href="ntqwidgetstack.html">TQWidgetStack</a>(this);
+    <a href="ntqvbox.html">TQVBox</a>* optionals_text = new <a href="ntqvbox.html">TQVBox</a>(optionals);
+<a name="x1228"></a>    optionals_text-&gt;<a href="ntqhbox.html#setSpacing">setSpacing</a>(6);
+    <a href="ntqvbox.html">TQVBox</a>* optionals_other = new <a href="ntqvbox.html">TQVBox</a>(optionals);
+    optionals_other-&gt;<a href="ntqhbox.html#setSpacing">setSpacing</a>(6);
+<a name="x1276"></a>    optionals-&gt;<a href="ntqwidgetstack.html#addWidget">addWidget</a>(optionals_text,0);
+    optionals-&gt;<a href="ntqwidgetstack.html#addWidget">addWidget</a>(optionals_other,1);
+    fpb         = new <a href="ntqpushbutton.html">TQPushButton</a>( optionals_text, "text" );
+    textEd      = new <a href="ntqlineedit.html">TQLineEdit</a>( optionals_text, "text" );
+    textEd-&gt;<a href="ntqwidget.html#setFocus">setFocus</a>();
+
+<a name="x1229"></a>    rotLCD-&gt;<a href="ntqlcdnumber.html#display">display</a>( "  0'" );
+
+<a name="x1250"></a>    rotS-&gt;<a href="ntqrangecontrol.html#setRange">setRange</a>( -180, 180 );
+<a name="x1261"></a>    rotS-&gt;<a href="ntqslider.html#setValue">setValue</a>( 0 );
+<a name="x1263"></a>    <a href="ntqobject.html#connect">connect</a>( rotS, TQ_SIGNAL(<a href="ntqslider.html#valueChanged">valueChanged</a>(int)), TQ_SLOT(newMtx()) );
+
+    shearLCD-&gt;<a href="ntqlcdnumber.html#display">display</a>( "0.00" );
+
+    shearS-&gt;<a href="ntqrangecontrol.html#setRange">setRange</a>( -25, 25 );
+    shearS-&gt;<a href="ntqslider.html#setValue">setValue</a>( 0 );
+    <a href="ntqobject.html#connect">connect</a>( shearS, TQ_SIGNAL(<a href="ntqslider.html#valueChanged">valueChanged</a>(int)), TQ_SLOT(newMtx()) );
+
+<a name="x1220"></a>    mirror-&gt;<a href="ntqbutton.html#setText">setText</a>( <a href="ntqobject.html#tr">tr</a>("Mirror") );
+    <a href="ntqobject.html#connect">connect</a>( mirror, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), TQ_SLOT(newMtx()) );
+
+    <a href="ntqbuttongroup.html">TQButtonGroup</a> *bg = new <a href="ntqbuttongroup.html">TQButtonGroup</a>(this);
+<a name="x1267"></a>    bg-&gt;<a href="ntqwidget.html#hide">hide</a>();
+<a name="x1222"></a>    bg-&gt;<a href="ntqbuttongroup.html#insert">insert</a>(rb_txt,0);
+    bg-&gt;<a href="ntqbuttongroup.html#insert">insert</a>(rb_img,1);
+    bg-&gt;<a href="ntqbuttongroup.html#insert">insert</a>(rb_pic,2);
+    rb_txt-&gt;<a href="ntqbutton.html#setText">setText</a>( <a href="ntqobject.html#tr">tr</a>("Text") );
+    rb_img-&gt;<a href="ntqbutton.html#setText">setText</a>( <a href="ntqobject.html#tr">tr</a>("Image") );
+<a name="x1249"></a>    rb_img-&gt;<a href="ntqradiobutton.html#setChecked">setChecked</a>(true);
+    rb_pic-&gt;<a href="ntqbutton.html#setText">setText</a>( <a href="ntqobject.html#tr">tr</a>("Picture") );
+<a name="x1221"></a>    <a href="ntqobject.html#connect">connect</a>( bg, TQ_SIGNAL(<a href="ntqbuttongroup.html#clicked">clicked</a>(int)), TQ_SLOT(changeMode(int)) );
+
+    fpb-&gt;<a href="ntqbutton.html#setText">setText</a>( <a href="ntqobject.html#tr">tr</a>("Select font...") );
+    <a href="ntqobject.html#connect">connect</a>( fpb, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), TQ_SLOT(selectFont()) );
+
+<a name="x1230"></a>    textEd-&gt;<a href="ntqlineedit.html#setText">setText</a>( "Troll" );
+<a name="x1231"></a>    <a href="ntqobject.html#connect">connect</a>( textEd, TQ_SIGNAL(<a href="ntqlineedit.html#textChanged">textChanged</a>(const <a href="ntqstring.html">TQString</a>&amp;)),
+                     TQ_SLOT(newTxt(const <a href="ntqstring.html">TQString</a>&amp;)) );
+
+    magLCD = new <a href="ntqlcdnumber.html">TQLCDNumber</a>( 4,optionals_other, "magLCD" );
+    magLCD-&gt;<a href="ntqlcdnumber.html#display">display</a>( "100" );
+    magS = new <a href="ntqslider.html">TQSlider</a>( TQSlider::Horizontal, optionals_other,
+                           "magnifySlider" );
+    magS-&gt;<a href="ntqrangecontrol.html#setRange">setRange</a>( 0, 800 );
+    <a href="ntqobject.html#connect">connect</a>( magS, TQ_SIGNAL(<a href="ntqslider.html#valueChanged">valueChanged</a>(int)), TQ_SLOT(newMtx()) );
+    magS-&gt;<a href="ntqslider.html#setValue">setValue</a>( 0 );
+    <a href="ntqobject.html#connect">connect</a>( magS, TQ_SIGNAL(<a href="ntqslider.html#valueChanged">valueChanged</a>(int)), magLCD, TQ_SLOT(<a href="ntqlcdnumber.html#display">display</a>(int)));
+
+<a name="x1266"></a>    optionals_text-&gt;<a href="ntqwidget.html#adjustSize">adjustSize</a>();
+    optionals_other-&gt;<a href="ntqwidget.html#adjustSize">adjustSize</a>();
+    changeMode(Image);
+
+    <a href="ntqobject.html#startTimer">startTimer</a>(20); // start an initial animation
+}
+
+<a name="x1232"></a>void XFormControl::<a href="ntqobject.html#timerEvent">timerEvent</a>(TQTimerEvent*)
+{
+<a name="x1262"></a>    int v = magS-&gt;<a href="ntqslider.html#value">value</a>();
+    v = (v+2)+v/10;
+    if ( v &gt;= 200 ) {
+        v = 200;
+        <a href="ntqobject.html#killTimers">killTimers</a>();
+    }
+    magS-&gt;<a href="ntqslider.html#setValue">setValue</a>(v);
+}
+
+
+
+/*
+    Called whenever the user has changed one of the matrix parameters
+    (i.e. rotate, shear or magnification)
+*/
+void <a name="f398"></a>XFormControl::newMtx()
+{
+    emit newMatrix( matrix() );
+}
+
+void <a name="f399"></a>XFormControl::newTxt(const <a href="ntqstring.html">TQString</a>&amp; s)
+{
+    emit newText(s);
+    changeMode(Text);
+}
+
+/*
+    Calculates the matrix appropriate for the current controls,
+    and updates the displays.
+*/
+TQWMatrix <a name="f400"></a>XFormControl::matrix()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m;
+    if (mode != Text) {
+        double magVal = 1.0*magS-&gt;<a href="ntqslider.html#value">value</a>()/100;
+<a name="x1281"></a>        m.<a href="ntqwmatrix.html#scale">scale</a>( magVal, magVal );
+    }
+    double shearVal = 1.0*shearS-&gt;<a href="ntqslider.html#value">value</a>()/25;
+<a name="x1282"></a>    m.<a href="ntqwmatrix.html#shear">shear</a>( shearVal, shearVal );
+<a name="x1280"></a>    m.<a href="ntqwmatrix.html#rotate">rotate</a>( rotS-&gt;<a href="ntqslider.html#value">value</a>() );
+<a name="x1223"></a>    if ( mirror-&gt;<a href="ntqcheckbox.html#isChecked">isChecked</a>() ) {
+        m.<a href="ntqwmatrix.html#scale">scale</a>( 1, -1 );
+        m.<a href="ntqwmatrix.html#rotate">rotate</a>( 180 );
+    }
+
+    <a href="ntqstring.html">TQString</a> tmp;
+<a name="x1265"></a>    tmp.<a href="ntqstring.html#sprintf">sprintf</a>( "%1.2f", shearVal  );
+    if ( shearVal &gt;= 0 )
+<a name="x1264"></a>        tmp.<a href="ntqstring.html#insert">insert</a>( 0, " " );
+    shearLCD-&gt;<a href="ntqlcdnumber.html#display">display</a>( tmp );
+
+    int rot = rotS-&gt;<a href="ntqslider.html#value">value</a>();
+    if ( rot &lt; 0 )
+        rot = rot + 360;
+    tmp.<a href="ntqstring.html#sprintf">sprintf</a>( "%3i'", rot );
+    rotLCD-&gt;<a href="ntqlcdnumber.html#display">display</a>( tmp );
+    return m;
+}
+
+
+void <a name="f401"></a>XFormControl::selectFont()
+{
+    bool ok;
+<a name="x1224"></a>    <a href="ntqfont.html">TQFont</a> f = TQFontDialog::<a href="ntqfontdialog.html#getFont">getFont</a>( &amp;ok, currentFont );
+    if ( ok ) {
+        currentFont = f;
+        fontSelected( f );
+    }
+}
+
+void <a name="f402"></a>XFormControl::fontSelected( const <a href="ntqfont.html">TQFont</a> &amp;font )
+{
+    emit newFont( font );
+    changeMode(Text);
+}
+
+/*
+    Sets the mode - Text, Image, or Picture.
+*/
+
+void <a name="f403"></a>XFormControl::changeMode(int m)
+{
+    mode = (Mode)m;
+
+    emit newMode( m );
+    newMtx();
+    if ( mode == Text ) {
+<a name="x1277"></a>        optionals-&gt;<a href="ntqwidgetstack.html#raiseWidget">raiseWidget</a>(0);
+        rb_txt-&gt;<a href="ntqradiobutton.html#setChecked">setChecked</a>(true);
+    } else {
+        optionals-&gt;<a href="ntqwidgetstack.html#raiseWidget">raiseWidget</a>(1);
+        if ( mode == Image )
+            rb_img-&gt;<a href="ntqradiobutton.html#setChecked">setChecked</a>(true);
+        else
+            rb_pic-&gt;<a href="ntqradiobutton.html#setChecked">setChecked</a>(true);
+    }
+<a name="x1217"></a>    tqApp-&gt;<a href="ntqapplication.html#flushX">flushX</a>();
+}
+
+<a name="f388"></a>ShowXForm::ShowXForm( const <a href="ntqfont.html">TQFont</a> &amp;initialFont,
+                      <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+        : <a href="ntqwidget.html">TQWidget</a>( parent, name, WResizeNoErase )
+{
+    <a href="ntqwidget.html#setFont">setFont</a>( initialFont );
+    <a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>( white );
+    m = Text;
+    eraseRect = TQRect( 0, 0, 0, 0 );
+}
+
+<a name="x1275"></a>TQSizePolicy ShowXForm::<a href="ntqwidget.html#sizePolicy">sizePolicy</a>() const
+{
+    return TQSizePolicy( TQSizePolicy::Expanding, TQSizePolicy::Expanding );
+}
+
+<a name="x1274"></a>TQSize ShowXForm::<a href="ntqwidget.html#sizeHint">sizeHint</a>() const
+{
+    return TQSize(400,400);
+}
+
+void ShowXForm::<a href="ntqwidget.html#paintEvent">paintEvent</a>( <a href="qpaintevent.html">TQPaintEvent</a> * )
+{
+    showIt();
+}
+
+<a name="x1269"></a>void ShowXForm::<a href="ntqwidget.html#resizeEvent">resizeEvent</a>( <a href="qresizeevent.html">TQResizeEvent</a> * )
+{
+    eraseRect = TQRect( <a href="ntqwidget.html#width">width</a>()/2, height()/2, 0, 0 );
+    <a href="ntqwidget.html#repaint">repaint</a>(<a href="ntqwidget.html#rect">rect</a>());
+}
+
+void <a name="f389"></a>ShowXForm::setText( const <a href="ntqstring.html">TQString</a>&amp; s )
+{
+    text = s;
+    showIt();
+}
+
+void <a name="f390"></a>ShowXForm::setMatrix( <a href="ntqwmatrix.html">TQWMatrix</a> w )
+{
+    mtx = w;
+    showIt();
+}
+
+<a name="x1272"></a>void ShowXForm::<a href="ntqwidget.html#setFont">setFont</a>( const <a href="ntqfont.html">TQFont</a> &amp;f )
+{
+    m = Text;
+    TQWidget::<a href="ntqwidget.html#setFont">setFont</a>( f );
+}
+
+void <a name="f391"></a>ShowXForm::setPixmap( <a href="ntqpixmap.html">TQPixmap</a> pm )
+{
+    pix  = pm;
+    m    = Image;
+    showIt();
+}
+
+void <a name="f392"></a>ShowXForm::setPicture( const <a href="ntqpicture.html">TQPicture</a>&amp; p )
+{
+    picture = p;
+    m = Picture;
+    showIt();
+}
+
+void <a name="f393"></a>ShowXForm::setMode( int mode )
+{
+    m = (Mode)mode;
+}
+
+void <a name="f394"></a>ShowXForm::showIt()
+{
+    <a href="ntqpainter.html">TQPainter</a> p;
+    <a href="ntqrect.html">TQRect</a> r;      // rectangle covering new text/pixmap in virtual coordinates
+    <a href="ntqwmatrix.html">TQWMatrix</a> um;  // copy user specified transform
+    int textYPos = 0; // distance from boundingRect y pos to baseline
+    int textXPos = 0; // distance from boundingRect x pos to text start
+    <a href="ntqrect.html">TQRect</a> br;
+    <a href="ntqfontmetrics.html">TQFontMetrics</a> fm( <a href="ntqwidget.html#fontMetrics">fontMetrics</a>() );   // get widget font metrics
+    switch ( mode() ) {
+      case Text:
+<a name="x1225"></a>        br = fm.<a href="ntqfontmetrics.html#boundingRect">boundingRect</a>( text );   // rectangle covering text
+        r  = br;
+        textYPos = -r.<a href="ntqrect.html#y">y</a>();
+        textXPos = -r.<a href="ntqrect.html#x">x</a>();
+<a name="x1258"></a><a name="x1254"></a><a name="x1251"></a>        br.<a href="ntqrect.html#moveTopLeft">moveTopLeft</a>( TQPoint( -br.<a href="ntqrect.html#width">width</a>()/2, -br.<a href="ntqrect.html#height">height</a>()/2 ) );
+        break;
+      case Image:
+<a name="x1248"></a><a name="x1246"></a>        r = TQRect(0, 0, pix.<a href="ntqpixmap.html#width">width</a>()+1, pix.<a href="ntqpixmap.html#height">height</a>()+1);
+        break;
+      case Picture:
+        // ### need TQPicture::boundingRect()
+        r = TQRect(0,0,1000,1000);
+        break;
+    }
+    r.<a href="ntqrect.html#moveTopLeft">moveTopLeft</a>( TQPoint(-r.<a href="ntqrect.html#width">width</a>()/2, -r.<a href="ntqrect.html#height">height</a>()/2) );
+<a name="x1253"></a>    r.<a href="ntqrect.html#moveBy">moveBy</a>( -1, -1 ); // add border for matrix round off
+<a name="x1255"></a>    r.<a href="ntqrect.html#setSize">setSize</a>( TQSize( r.<a href="ntqrect.html#width">width</a>() + 2,r.<a href="ntqrect.html#height">height</a>() + 2 ) );
+          // compute union of new and old rect
+          // the resulting rectangle will cover what is already displayed
+          // and have room for the new text/pixmap
+<a name="x1279"></a><a name="x1257"></a>    eraseRect = eraseRect.<a href="ntqrect.html#unite">unite</a>( mtx.<a href="ntqwmatrix.html#mapRect">mapRect</a>(r) );
+    int pw = TQMIN(eraseRect.<a href="ntqrect.html#width">width</a>(),width());
+    int ph = TQMIN(eraseRect.<a href="ntqrect.html#height">height</a>(),height());
+    <a href="ntqpixmap.html">TQPixmap</a> pm( pw, ph );               // off-screen drawing pixmap
+<a name="x1245"></a>    pm.<a href="ntqpixmap.html#fill">fill</a>( <a href="ntqwidget.html#backgroundColor">backgroundColor</a>() );
+
+<a name="x1233"></a>    p.<a href="ntqpainter.html#begin">begin</a>( &amp;pm );
+<a name="x1283"></a>    um.<a href="ntqwmatrix.html#translate">translate</a>( pw/2, ph/2 ); // 0,0 is center
+    um = mtx * um;
+<a name="x1242"></a>    p.<a href="ntqpainter.html#setWorldMatrix">setWorldMatrix</a>( um );
+    switch ( mode() ) {
+      case Text:
+<a name="x1240"></a>        p.<a href="ntqpainter.html#setFont">setFont</a>( <a href="ntqwidget.html#font">font</a>() );            // use widget font
+<a name="x1256"></a><a name="x1252"></a>        p.<a href="ntqpainter.html#drawText">drawText</a>( r.<a href="ntqrect.html#left">left</a>() + textXPos, r.<a href="ntqrect.html#top">top</a>() + textYPos, text );
+#if 0
+        p.<a href="ntqpainter.html#setPen">setPen</a>( red );
+        p.<a href="ntqpainter.html#drawRect">drawRect</a>( br );
+#endif
+        break;
+    case Image:
+<a name="x1235"></a>        p.<a href="ntqpainter.html#drawPixmap">drawPixmap</a>( -pix.<a href="ntqpixmap.html#width">width</a>()/2, -pix.<a href="ntqpixmap.html#height">height</a>()/2, pix );
+        break;
+      case Picture:
+        // ### need TQPicture::boundingRect()
+<a name="x1239"></a>        p.<a href="ntqpainter.html#scale">scale</a>(0.25,0.25);
+<a name="x1243"></a>        p.<a href="ntqpainter.html#translate">translate</a>(-230,-180);
+<a name="x1234"></a>        p.<a href="ntqpainter.html#drawPicture">drawPicture</a>( picture );
+    }
+<a name="x1238"></a>    p.<a href="ntqpainter.html#end">end</a>();
+
+    int xpos = <a href="ntqwidget.html#width">width</a>()/2  - pw/2;
+    int ypos = <a href="ntqwidget.html#height">height</a>()/2 - ph/2;
+    <a href="ntqimage.html#bitBlt">bitBlt</a>( this, xpos, ypos,                   // copy pixmap to widget
+            &amp;pm, 0, 0, -1, -1 );
+<a name="x1278"></a>    eraseRect =  mtx.<a href="ntqwmatrix.html#map">map</a>( r );
+}
+
+
+/*
+    Grand unifying widget, putting ShowXForm and XFormControl
+    together.
+*/
+
+class XFormCenter : public <a href="ntqhbox.html">TQHBox</a>, public ModeNames
+{
+    TQ_OBJECT
+public:
+    XFormCenter( <a href="ntqwidget.html">TQWidget</a> *parent=0, const char *name=0 );
+public slots:
+    void setFont( const <a href="ntqfont.html">TQFont</a> &amp;f ) { sx-&gt;<a href="ntqwidget.html#setFont">setFont</a>( f ); }
+    void newMode( int );
+private:
+    ShowXForm   *sx;
+    XFormControl *xc;
+};
+
+void <a name="f395"></a>XFormCenter::newMode( int m )
+{
+    static bool first_i = true;
+    static bool first_p = true;
+
+    if ( sx-&gt;mode() == m )
+        return;
+    if ( m == Image &amp;&amp; first_i ) {
+        first_i = false;
+        <a href="ntqpixmap.html">TQPixmap</a> pm;
+<a name="x1247"></a>        if ( pm.<a href="ntqpixmap.html#load">load</a>( "image.any" ) )
+            sx-&gt;setPixmap( pm );
+        return;
+    }
+    if ( m == Picture &amp;&amp; first_p ) {
+        first_p = false;
+        <a href="ntqpicture.html">TQPicture</a> p;
+<a name="x1244"></a>        if (p.<a href="ntqpicture.html#load">load</a>( "picture.any" ))
+            sx-&gt;setPicture( p );
+        return;
+    }
+    sx-&gt;setMode(m);
+}
+
+<a name="f396"></a>XFormCenter::XFormCenter( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+    : <a href="ntqhbox.html">TQHBox</a>( parent, name )
+{
+    <a href="ntqfont.html">TQFont</a> f( "Charter", 36, TQFont::Bold );
+
+    xc = new XFormControl( f, this );
+    sx = new ShowXForm( f, this );
+    <a href="ntqhbox.html#setStretchFactor">setStretchFactor</a>(sx,1);
+    xc-&gt;<a href="ntqframe.html#setFrameStyle">setFrameStyle</a>( TQFrame::Panel | TQFrame::Raised );
+<a name="x1227"></a>    xc-&gt;<a href="ntqframe.html#setLineWidth">setLineWidth</a>( 2 );
+    <a href="ntqobject.html#connect">connect</a>( xc, TQ_SIGNAL(newText(const <a href="ntqstring.html">TQString</a>&amp;)), sx,
+                 TQ_SLOT(setText(const <a href="ntqstring.html">TQString</a>&amp;)) );
+    <a href="ntqobject.html#connect">connect</a>( xc, TQ_SIGNAL(newMatrix(TQWMatrix)),
+             sx, TQ_SLOT(setMatrix(TQWMatrix)) );
+    <a href="ntqobject.html#connect">connect</a>( xc, TQ_SIGNAL(newFont(const <a href="ntqfont.html">TQFont</a>&amp;)), sx,
+                 TQ_SLOT(<a href="ntqwidget.html#setFont">setFont</a>(const <a href="ntqfont.html">TQFont</a>&amp;)) );
+    <a href="ntqobject.html#connect">connect</a>( xc, TQ_SIGNAL(newMode(int)), TQ_SLOT(newMode(int)) );
+    sx-&gt;setText( "Troll" );
+    newMode( Image );
+    sx-&gt;setMatrix(xc-&gt;matrix());
+}
+
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    XFormCenter *xfc = new XFormCenter;
+
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( xfc );
+    xfc-&gt;<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - XForm");
+    xfc-&gt;<a href="ntqwidget.html#show">show</a>();
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+#include "xform.moc"                  // include metadata generated by the <a href="moc.html#moc">moc</a>
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

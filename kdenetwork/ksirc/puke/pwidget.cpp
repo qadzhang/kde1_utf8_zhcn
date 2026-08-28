@@ -11,9 +11,9 @@
 PWidget::PWidget(PObject *)
   : PObject()
 {
-  //  debug("PWidget constructor called");
+  //  tqDebug("PWidget constructor called");
 
-  w = 0;
+  w = 0;  /* TQt3 迁移 */
   setWidget(0);
 
   eventList[0] = &PWidget::eventNone;
@@ -43,10 +43,10 @@ PWidget::PWidget(PObject *)
 
 PWidget::~PWidget()
 {
-  //  debug("PWidget: in destructor");
+  //  tqDebug("PWidget: in destructor");
   /*
   delete widget();
-  w = 0;
+  w = 0;  /* TQt3 迁移 */
   setWidget(0);
   */
 }
@@ -61,7 +61,6 @@ PObject *PWidget::createWidget(CreateArgs &ca)
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
       tw = new("QWidget") QWidget((QWidget *) ca.parent->widget());
-  else
     tw = new("QWidget") QWidget();
   pw->setWidget(tw);
   pw->setWidgetId(ca.pwI);
@@ -120,7 +119,7 @@ void PWidget::messageHandler(int fd, PukeMessage *pm)
       if(found != 2)
 	throw(errorCommandFailed(PUKE_INVALID,10));
       
-      //      debug("Moving to: %d => %d %d", pm->iArg, pos[0], pos[1]);
+      //      tqDebug("Moving to: %d => %d %d", pm->iArg, pos[0], pos[1]);
       widget()->move(x, y);
       pmRet.iCommand = PUKE_WIDGET_MOVE_ACK;
       pmRet.iWinId = pm->iWinId;      
@@ -248,7 +247,7 @@ void PWidget::messageHandler(int fd, PukeMessage *pm)
     }
     int *point_show = (int *) pm->cArg;
 
-    warning("Recreate: %d %d %d", point_show[0], point_show[1], point_show[3]);
+    tqWarning("Recreate: %d %d %d", point_show[0], point_show[1], point_show[3]);
     
     widget()->recreate(nparent, (WFlags) 0, QPoint(point_show[0], point_show[1]), point_show[3]);
 
@@ -278,14 +277,14 @@ void PWidget::setWidget(QObject *_w)
 
 QWidget *PWidget::widget()
 {
-  //  debug("PWidget widget called");
+  //  tqDebug("PWidget widget called");
   return w;
 }
 
 // PWidget specific
 bool PWidget::eventFilter(QObject *o, QEvent *e)
 {
-//  debug("PWidget(%d): Got event: %d", widget(), e->type());
+//  tqDebug("PWidget(%d): Got event: %d", widget(), e->type());
 //  fprintf(stderr, "Blah\n");
   if(e->type() < 20 && e->type() >= 0){
     (this->*(eventList[e->type()]))(o,e);
@@ -311,7 +310,7 @@ void PWidget::eventNone(QObject *, QEvent *e)
   PukeMessage pm;
   widgetId wI;
 
-  //  debug("PWidget: eventNone");
+  //  tqDebug("PWidget: eventNone");
   
   wI = widgetIden();
   pm.iCommand = - e->type() - 1020; // 1030 offset for events
@@ -398,7 +397,7 @@ void PWidget::eventFocus(QObject *, QEvent *e)
   PukeMessage pm;
   widgetId wI;
 
-  //  debug("PWidget: eventFocus");
+  //  tqDebug("PWidget: eventFocus");
 
   QFocusEvent *fe = Q_FOCUS_EVENT(e);
   

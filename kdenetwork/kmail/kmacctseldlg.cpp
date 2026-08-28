@@ -17,11 +17,9 @@ KMAcctSelDlg::KMAcctSelDlg(QWidget* parent, const char* name):
   QPushButton *cancel;
   QRadioButton *rbtn;
 
-  initMetaObject();
-
   setFixedSize(230,150);
   setCaption(name);
-  mSelBtn = 0;
+  mSelBtn = 0;  /* TQt3 迁移 */
 
   grp = new QButtonGroup(i18n("Account Type"), this);
   grp->resize(230, 110);

@@ -60,7 +60,7 @@ KpgpBase::message() const
   if(!output.isEmpty()) return output;
 
   // no, then return the original one
-  //debug("KpgpBase: No output!");
+  //tqDebug("KpgpBase: No output!");
   return input;
 }
 
@@ -189,12 +189,12 @@ KpgpBase::addUserId()
 void 
 KpgpBase::clear()
 {
-  input = 0;
-  output = 0;
-  info = 0;
-  errMsg = 0;
-  signature = 0;
-  signatureID = 0;
+  input = TQString();
+  output = TQString();
+  info = TQString();
+  errMsg = TQString();
+  signature = TQString();
+  signatureID = TQString();
   recipients.clear();
   status = OK;
 }
@@ -202,7 +202,7 @@ KpgpBase::clear()
 void 
 KpgpBase::clearOutput()
 {
-  output = 0;
+  output = TQString();
 }
 
 QString 
@@ -243,7 +243,7 @@ KpgpBase2::encsign(const QStrList *_recipients, const char *passphrase,
 
   if(_recipients != 0)
     if(_recipients->count() <= 0)
-      _recipients = 0;
+      _recipients = 0;  /* TQt3 迁移 */
 
   if(_recipients != 0 && passphrase != 0)
     cmd = "pgp +batchmode -seat ";
@@ -251,9 +251,8 @@ KpgpBase2::encsign(const QStrList *_recipients, const char *passphrase,
     cmd = "pgp +batchmode -eat";
   else if(passphrase != 0 )
     cmd = "pgp +batchmode -sat ";
-  else 
   {
-    debug("kpgpbase: Neither recipients nor passphrase specified.");
+    tqDebug("kpgpbase: Neither recipients nor passphrase specified.");
     return OK;
   }
 
@@ -314,7 +313,7 @@ KpgpBase2::encsign(const QStrList *_recipients, const char *passphrase,
   {
     if(info.find("Pass phrase is good") != -1)
     {
-      //debug("KpgpBase: Good Passphrase!");
+      //tqDebug("KpgpBase: Good Passphrase!");
       status |= SIGNED;
     }
     if( info.find("Bad pass phrase") != -1)
@@ -324,7 +323,7 @@ KpgpBase2::encsign(const QStrList *_recipients, const char *passphrase,
       status |= ERROR;
     }
   }
-  //debug("status = %d",status);
+  //tqDebug("status = %d",status);
   return status;
 }
 
@@ -344,7 +343,7 @@ KpgpBase2::decrypt(const char *passphrase)
   // this hack can solve parts of the problem
   if(info.find("ASCII armor corrupted.") != -1)
   {
-    debug("removing ASCII armor header");
+    tqDebug("removing ASCII armor header");
     int index1 = input.find("-----BEGIN PGP SIGNED MESSAGE-----");
     if(index1 != -1)
       index1 = input.find("-----BEGIN PGP SIGNATURE-----", index1);
@@ -369,14 +368,14 @@ KpgpBase2::decrypt(const char *passphrase)
 
   if(info.find("You do not have the secret key") != -1)
   {
-    //debug("kpgpbase: message is encrypted");
+    //tqDebug("kpgpbase: message is encrypted");
     status |= ENCRYPTED;
     if( info.find("Bad pass phrase") != -1)
     {
       if(passphrase != 0) 
       {
 	errMsg = i18n("Bad pass Phrase; couldn't decrypt");
-	debug("KpgpBase: passphrase is bad");
+	tqDebug("KpgpBase: passphrase is bad");
 	status |= BADPHRASE;
 	status |= ERROR;
       }
@@ -387,7 +386,7 @@ KpgpBase2::decrypt(const char *passphrase)
       status |= NO_SEC_KEY;
       status |= ERROR;
       errMsg = i18n("Do not have the secret key for this message");
-      debug("KpgpBase: no secret key for this message");
+      tqDebug("KpgpBase: no secret key for this message");
     }
     // check for persons
     index = info.find("can only be read by:");
@@ -408,7 +407,7 @@ KpgpBase2::decrypt(const char *passphrase)
   }
   if((index = info.find("File has signature")) != -1)
   {
-    //debug("KpgpBase: message is signed");
+    //tqDebug("KpgpBase: message is signed");
     status |= SIGNED;
     if( info.find("Key matching expected") != -1)
     {
@@ -444,7 +443,7 @@ KpgpBase2::decrypt(const char *passphrase)
       signatureID = "";
     }
   }
-  //debug("status = %d",status);
+  //tqDebug("status = %d",status);
   return status;
 }
 
@@ -483,7 +482,7 @@ KpgpBase2::pubKeys()
 	line = output.mid(index3+7,index2-index3-7);
 	line = line.lower();
       }
-      //debug("KpgpBase: found key for %s",(const char *)line);
+      //tqDebug("KpgpBase: found key for %s",(const char *)line);
       publicKeys.append(line);
     }
     index = index2;
@@ -547,7 +546,7 @@ KpgpBase5::encsign(const QStrList *_recipients, const char *passphrase,
   
   if(_recipients != 0)
     if(_recipients->isEmpty())
-      _recipients = 0;
+      _recipients = 0;  /* TQt3 迁移 */
 
   if(_recipients != 0 && passphrase != 0)
     cmd = "pgpe -ats -f +batchmode=1";
@@ -663,7 +662,7 @@ KpgpBase5::decrypt(const char *passphrase)
   index = info.find("Cannot decrypt message");
   if(index != -1)
   {
-    //debug("message is encrypted");
+    //tqDebug("message is encrypted");
     status |= ENCRYPTED;
 
     // ok. we have an encrypted message. Is the passphrase bad,
@@ -673,7 +672,7 @@ KpgpBase5::decrypt(const char *passphrase)
       if(passphrase != 0) 
       {
 	errMsg = i18n("Bad pass Phrase; couldn't decrypt");
-	debug("KpgpBase: passphrase is bad");
+	tqDebug("KpgpBase: passphrase is bad");
 	status |= BADPHRASE;
 	status |= ERROR;
       }
@@ -684,7 +683,7 @@ KpgpBase5::decrypt(const char *passphrase)
       status |= NO_SEC_KEY;
       status |= ERROR;
       errMsg = i18n("Do not have the secret key for this message");
-      debug("KpgpBase: no secret key for this message");
+      tqDebug("KpgpBase: no secret key for this message");
     }
     // check for persons
     index = info.find("can only be decrypted by:");
@@ -707,7 +706,7 @@ KpgpBase5::decrypt(const char *passphrase)
   index = info.find("Good signature");
   if(index != -1)
   {
-    //debug("good signature");
+    //tqDebug("good signature");
     status |= SIGNED;
     status |= GOODSIG;
  
@@ -724,7 +723,7 @@ KpgpBase5::decrypt(const char *passphrase)
   index = info.find("BAD signature");
   if(index != -1)
   {
-    //debug("BAD signature");
+    //tqDebug("BAD signature");
     status |= SIGNED;
     status |= ERROR;
 
@@ -750,7 +749,7 @@ KpgpBase5::decrypt(const char *passphrase)
     status |= GOODSIG;
   }
 
-  //debug("status = %d",status);
+  //tqDebug("status = %d",status);
   return status;
 }
 
@@ -780,13 +779,13 @@ KpgpBase5::pubKeys()
       }
       if(!line.isEmpty())
       {
-	//debug("KpgpBase: found key for %s.",(const char *)line);
+	//tqDebug("KpgpBase: found key for %s.",(const char *)line);
 	publicKeys.append(line);
       }
     }
     index = index2;
   }
-  //debug("finished reading keys");
+  //tqDebug("finished reading keys");
   return publicKeys;
 }     
 

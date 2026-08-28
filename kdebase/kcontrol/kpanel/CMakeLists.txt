@@ -7,13 +7,13 @@ main.cpp panel.cpp desktops.cpp options.cpp disknav.cpp
 )
 
 set(KPANEL_MOC
-panel.moc desktops.moc options.moc disknav.moc
+panel.h desktops.h options.h disknav.h
 )
-QT1_WRAP_MOC(MOC_FILES ${KPANEL_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KPANEL_MOC})
 
 add_executable(kcmkpanel ${KPANEL_SRCS} ${MOC_FILES})
 target_link_libraries(kcmkpanel
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

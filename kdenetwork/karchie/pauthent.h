@@ -7,7 +7,7 @@
  * gf xarchie v2.0 - Sync with archie v1.4.1.
  */
 
-#include <copyright.h>
+#include "copyright.h"
 
 #define PFSA_UNAUTHENTICATED		1
 

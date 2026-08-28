@@ -188,7 +188,7 @@ void KRowTable::paintCell( QPainter *p, int row, int col )
   if( current_row == row && ( current_col == col || current_col == -1 ) )
     {
       QColor fc;
-      if( style() == WindowsStyle )
+      if( style().inherits("TQWindowsStyle") )
 	fc = darkBlue;
       else
 	{
@@ -211,7 +211,7 @@ void KRowTable::paintCell( QPainter *p, int row, int col )
   
   if( current_row == row && ( current_col == col || current_col == -1 ) && hasFocus() )
     {
-      if( style() == WindowsStyle )
+      if( style().inherits("TQWindowsStyle") )
 	p->drawWinFocusRect( 1, 1, cellWidth( col )-2, cellHeight( row )-2 );
       else
 	{
@@ -261,7 +261,6 @@ void KRowTable::mousePressEvent( QMouseEvent *e )
     setCurrentRow( findRow( e->pos().y() ), findCol( e->pos().x() ) );
   else if( m_flags & SelectFixed )
     setCurrentRow( findRow( e->pos().y() ), current_col );
-  else
     setCurrentRow( findRow( e->pos().y() ), -1 );
   if( e->button() == RightButton )
     emit rightButtonClicked();

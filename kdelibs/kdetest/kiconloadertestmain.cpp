@@ -11,7 +11,7 @@
 
 MyMain::MyMain()
 {
-  initMetaObject();
+
   icon_sel = new KIconLoaderDialog;
   test = new QPushButton("test", this);
   test->setPixmap(KApplication::getKApplication()->getIconLoader()->loadIcon("exec.xpm"));
@@ -30,7 +30,7 @@ void MyMain::changePix()
   QPixmap pix = icon_sel->selectIcon( name, "*" );
   if( !pix.isNull() )
     {
-      debug("name = %s", (const char *) name );
+      tqDebug("name = %s", (const char *) name );
       test->setPixmap(pix);
     }
 }

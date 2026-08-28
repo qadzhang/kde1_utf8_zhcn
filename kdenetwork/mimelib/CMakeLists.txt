@@ -12,7 +12,7 @@ set(MIMELIB_SRCS
     )
 
 add_library(mimelib SHARED ${MIMELIB_SRCS})
-target_link_libraries(mimelib Qt::Qt1)
+target_link_libraries(mimelib ${TQT3_LIBRARIES})
 set_target_properties(mimelib PROPERTIES VERSION 1.0 SOVERSION 1)
 install(TARGETS mimelib LIBRARY DESTINATION ${KDE1_LIBDIR})
 

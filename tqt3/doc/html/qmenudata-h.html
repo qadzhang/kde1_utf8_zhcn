@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqmenudata.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqmenudata.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqmenudata.h</h1>
+
+<p>This is the verbatim text of the ntqmenudata.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqmenudata.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQMenuData class
+**
+** Created : 941128
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the widgets module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQMENUDATA_H
+#define TQMENUDATA_H
+
+#ifndef QT_H
+#include "ntqglobal.h"
+#include "ntqiconset.h" // conversion TQPixmap-&gt;TQIconset
+#include "ntqkeysequence.h"
+#include "ntqstring.h"
+#include "ntqsignal.h"
+#include "ntqfont.h"
+#endif // QT_H
+
+#ifndef TQT_NO_MENUDATA
+
+class TQPopupMenu;
+class TQMenuDataData;
+class TQObject;
+
+class TQCustomMenuItem;
+class TQMenuItemData;
+
+class TQ_EXPORT TQMenuItem			// internal menu item class
+{
+friend class TQMenuData;
+public:
+    TQMenuItem();
+   ~TQMenuItem();
+
+    int		id()		const	{ return ident; }
+    TQIconSet   *iconSet()	const	{ return iconset_data; }
+    TQString	text()		const	{ return text_data; }
+    TQString	whatsThis()	const	{ return whatsthis_data; }
+    TQPixmap    *pixmap()	const	{ return pixmap_data; }
+    TQPopupMenu *popup()		const	{ return popup_menu; }
+    TQWidget *widget()		const	{ return widget_item; }
+    TQCustomMenuItem *custom()	const;
+#ifndef TQT_NO_ACCEL
+    TQKeySequence key()		const	{ return accel_key; }
+#endif
+    TQSignal    *signal()	const	{ return signal_data; }
+    bool	isSeparator()	const	{ return is_separator; }
+    bool	isEnabled()	const	{ return is_enabled; }
+    bool	isChecked()	const	{ return is_checked; }
+    bool	isDirty()	const	{ return is_dirty; }
+    bool	isVisible()	const	{ return is_visible; }
+    bool	isEnabledAndVisible() const { return is_enabled &amp;&amp; is_visible; }
+
+    void	setText( const TQString &amp;text ) { text_data = text; }
+    void	setDirty( bool dirty )	       { is_dirty = dirty; }
+    void	setVisible( bool visible )	       { is_visible = visible; }
+    void	setWhatsThis( const TQString &amp;text ) { whatsthis_data = text; }
+
+private:
+    int		ident;				// item identifier
+    TQIconSet   *iconset_data;			// icons
+    TQString	text_data;			// item text
+    TQString	whatsthis_data;			// item Whats This help text
+    TQPixmap    *pixmap_data;			// item pixmap
+    TQPopupMenu *popup_menu;			// item popup menu
+    TQWidget    *widget_item;			// widget menu item
+#ifndef TQT_NO_ACCEL
+    TQKeySequence	accel_key;		// accelerator key (state|ascii)
+#endif
+    TQSignal    *signal_data;			// connection
+    uint	is_separator : 1;		// separator flag
+    uint	is_enabled   : 1;		// disabled flag
+    uint	is_checked   : 1;		// checked flag
+    uint	is_dirty     : 1;		// dirty (update) flag
+    uint	is_visible     : 1;		// visibility flag
+    TQMenuItemData* d;
+
+    TQMenuItemData* extra();
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQMenuItem( const TQMenuItem &amp; );
+    TQMenuItem &amp;operator=( const TQMenuItem &amp; );
+#endif
+};
+
+#include "ntqptrlist.h"
+typedef TQPtrList&lt;TQMenuItem&gt;	 TQMenuItemList;
+typedef TQPtrListIterator&lt;TQMenuItem&gt; TQMenuItemListIt;
+
+
+class TQ_EXPORT TQCustomMenuItem : public TQt
+{
+public:
+    TQCustomMenuItem();
+    virtual ~TQCustomMenuItem();
+    virtual bool fullSpan() const;
+    virtual bool isSeparator() const;
+    virtual void setFont( const TQFont&amp; font );
+    virtual void paint( TQPainter* p, const TQColorGroup&amp; cg, bool act,
+			bool enabled, int x, int y, int w, int h ) = 0;
+    virtual TQSize sizeHint() = 0;
+};
+
+
+class TQ_EXPORT TQMenuData			// menu data class
+{
+friend class TQMenuBar;
+friend class TQPopupMenu;
+public:
+    TQMenuData();
+    virtual ~TQMenuData();
+
+    uint	count() const;
+
+
+    int		insertItem( const TQString &amp;text,
+			    const TQObject *receiver, const char* member,
+			    const TQKeySequence&amp; accel = 0, int id = -1, int index = -1 );
+    int		insertItem( const TQIconSet&amp; icon,
+			    const TQString &amp;text,
+			    const TQObject *receiver, const char* member,
+			    const TQKeySequence&amp; accel = 0, int id = -1, int index = -1 );
+    int		insertItem( const TQPixmap &amp;pixmap,
+			    const TQObject *receiver, const char* member,
+			    const TQKeySequence&amp; accel = 0, int id = -1, int index = -1 );
+    int		insertItem( const TQIconSet&amp; icon,
+			    const TQPixmap &amp;pixmap,
+			    const TQObject *receiver, const char* member,
+			    const TQKeySequence&amp; accel = 0, int id = -1, int index = -1 );
+
+    int		insertItem( const TQString &amp;text, int id=-1, int index=-1 );
+    int		insertItem( const TQIconSet&amp; icon,
+			    const TQString &amp;text, int id=-1, int index=-1 );
+
+    int		insertItem( const TQString &amp;text, TQPopupMenu *popup,
+			    int id=-1, int index=-1 );
+    int		insertItem( const TQIconSet&amp; icon,
+			    const TQString &amp;text, TQPopupMenu *popup,
+			    int id=-1, int index=-1 );
+
+
+    int		insertItem( const TQPixmap &amp;pixmap, int id=-1, int index=-1 );
+    int		insertItem( const TQIconSet&amp; icon,
+			    const TQPixmap &amp;pixmap, int id=-1, int index=-1 );
+    int		insertItem( const TQPixmap &amp;pixmap, TQPopupMenu *popup,
+			    int id=-1, int index=-1 );
+    int		insertItem( const TQIconSet&amp; icon,
+			    const TQPixmap &amp;pixmap, TQPopupMenu *popup,
+			    int id=-1, int index=-1 );
+
+    int		insertItem( TQWidget* widget, int id=-1, int index=-1 );
+
+    int		insertItem( const TQIconSet&amp; icon, TQCustomMenuItem* custom, int id=-1, int index=-1 );
+    int		insertItem( TQCustomMenuItem* custom, int id=-1, int index=-1 );
+
+
+    int		insertSeparator( int index=-1 );
+
+    void	removeItem( int id );
+    void	removeItemAt( int index );
+    void	clear();
+
+#ifndef TQT_NO_ACCEL
+    TQKeySequence accel( int id )	const;
+    void	setAccel( const TQKeySequence&amp; key, int id );
+#endif
+
+    TQIconSet    *iconSet( int id )	const;
+    TQString text( int id )		const;
+    TQPixmap    *pixmap( int id )	const;
+
+    void setWhatsThis( int id, const TQString&amp; );
+    TQString whatsThis( int id ) const;
+
+
+    void	changeItem( int id, const TQString &amp;text );
+    void	changeItem( int id, const TQPixmap &amp;pixmap );
+    void	changeItem( int id, const TQIconSet &amp;icon, const TQString &amp;text );
+    void	changeItem( int id, const TQIconSet &amp;icon, const TQPixmap &amp;pixmap );
+
+    void	changeItem( const TQString &amp;text, int id ) { changeItem( id, text); } // obsolete
+    void	changeItem( const TQPixmap &amp;pixmap, int id ) { changeItem( id, pixmap ); } // obsolete
+    void	changeItem( const TQIconSet &amp;icon, const TQString &amp;text, int id ) {	// obsolete
+	changeItem( id, icon, text );
+    }
+
+    bool	isItemActive( int id ) const;
+
+    bool	isItemEnabled( int id ) const;
+    void	setItemEnabled( int id, bool enable );
+
+    bool	isItemChecked( int id ) const;
+    void	setItemChecked( int id, bool check );
+
+    bool	isItemVisible( int id ) const;
+    void	setItemVisible( int id, bool visible );
+
+    virtual void updateItem( int id );
+
+    int		indexOf( int id )	const;
+    int		idAt( int index )	const;
+    virtual void	setId( int index, int id );
+
+    bool	connectItem( int id,
+			     const TQObject *receiver, const char* member );
+    bool	disconnectItem( int id,
+				const TQObject *receiver, const char* member );
+
+    bool	setItemParameter( int id, int param );
+    int	itemParameter( int id ) const;
+
+    TQMenuItem  *findItem( int id )	const;
+    TQMenuItem  *findItem( int id, TQMenuData ** parent )	const;
+    TQMenuItem * findPopup( TQPopupMenu *, int *index = 0 );
+
+    virtual void activateItemAt( int index );
+
+protected:
+    int		   actItem;
+    TQMenuItemList *mitems;
+    TQMenuData	  *parentMenu;
+    uint	   isPopupMenu	: 1;
+    uint	   isMenuBar	: 1;
+    uint	   badSize	: 1;
+    uint	   mouseBtDn	: 1;
+    uint	avoid_circularity : 1;
+    uint	actItemDown : 1;
+    virtual void   menuContentsChanged();
+    virtual void   menuStateChanged();
+    virtual void   menuInsPopup( TQPopupMenu * );
+    virtual void   menuDelPopup( TQPopupMenu * );
+
+private:
+    int		insertAny( const TQString *, const TQPixmap *, TQPopupMenu *,
+			   const TQIconSet*, int, int, TQWidget* = 0, TQCustomMenuItem* = 0);
+    void	removePopup( TQPopupMenu * );
+    void	changeItemIconSet( int id, const TQIconSet &amp;icon );
+
+    TQMenuDataData *d;
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQMenuData( const TQMenuData &amp; );
+    TQMenuData &amp;operator=( const TQMenuData &amp; );
+#endif
+};
+
+
+#endif // TQT_NO_MENUDATA
+
+#endif // TQMENUDATA_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

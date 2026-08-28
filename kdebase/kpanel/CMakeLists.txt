@@ -7,16 +7,16 @@ include_directories(
 
 set(KPANEL_SRCS  kpanel.C props.C layout.C tools.C main.C events.C pmenu.C pfilemenu.C)
 
-set(KPANEL_MOC kpanel.moc pmenu.moc)
+set(KPANEL_MOC kpanel.h pmenu.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KPANEL_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KPANEL_MOC})
 
 add_executable(kpanel ${KPANEL_SRCS} ${MOC_FILES})
 target_link_libraries(kpanel
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFM}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

@@ -7,7 +7,7 @@
  *                KArchie is written for the KDE-Project                   *
  *                         http://www.kde.org                              *
  *                                                                         *
- *   Copyright (C) Oct 1997 J�rg Habenicht                                 *
+ *   Copyright (C) Oct 1997 J�rg Habenicht                                 *
  *                  E-Mail: j.habenicht@europemail.com                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -52,7 +52,7 @@ KAArchieSettings::KAArchieSettings(const char *title, QWidget *parent, const cha
   :QGroupBox( title, parent, name )
 {
 
-  //  debug( "set KAArchieSettings Combobox" );
+  //  tqDebug( "set KAArchieSettings Combobox" );
   hostbox = new QGroupBox( this, "hostbox" );
   hostbox->setFrameStyle( QFrame::NoFrame );
   hostname = new QComboBox( hostbox, "hostname" );
@@ -78,7 +78,7 @@ KAArchieSettings::KAArchieSettings(const char *title, QWidget *parent, const cha
   triesline = new KIntegerLine( triesbox, "triesline" );
   //  QString tmp("set KLineEdit height ");
   //  tmp.setNum( lineEditHeight );
-  //  debug( tmp );
+  //  tqDebug( tmp );
   //  triesline->setFixedHeight( triesline->height() );
   trieslabel = new QLabel( triesline, i18n("Maximal &retries"), triesbox, "trieslabel" );
   connect(triesline, SIGNAL(returnPressed()),
@@ -108,19 +108,19 @@ KAArchieSettings::KAArchieSettings(const char *title, QWidget *parent, const cha
 
 KAArchieSettings::~KAArchieSettings()
 {
-  //debug("delete hostlabel");
+  //tqDebug("delete hostlabel");
   delete hostnamelabel;
-  //debug("delete timeoutlabel");
+  //tqDebug("delete timeoutlabel");
   delete timeoutlabel;
-  //debug("delete trieslabel");
+  //tqDebug("delete trieslabel");
   delete trieslabel;
 
-  //debug("delete hostname");
+  //tqDebug("delete hostname");
   delete hostname;
   delete timeoutline;
   delete triesline;
 
-  //debug("delete hostbox");
+  //tqDebug("delete hostbox");
   //  delete mainbox;
   delete hostbox;
   delete timeoutbox;
@@ -130,14 +130,14 @@ KAArchieSettings::~KAArchieSettings()
 void 
 KAArchieSettings::slotResetSettings()
 {
-  //  debug( "KAArchieSettings reset settings request" );
+  //  tqDebug( "KAArchieSettings reset settings request" );
   readConfig();
 }
 
 void 
 KAArchieSettings::slotApplySettings()
 {
-  //  debug( "KAArchieSettings apply settings request" );
+  //  tqDebug( "KAArchieSettings apply settings request" );
   writeConfig();
 }
 
@@ -149,7 +149,7 @@ void KAArchieSettings::drawContents ( QPainter * )
   //const contheight= contentsRect().height();
   //  const int frameoffset = 10;
 
-  //debug( "KAArchieSettings draw event called" );
+  //tqDebug( "KAArchieSettings draw event called" );
   // finally resize & move the boxes
   //  hostbox->move( frameoffset, contheight/6 - hostbox->height()/2 );
   //  timeoutbox->move( frameoffset, contheight/2 - timeoutbox->height()/2 );
@@ -170,7 +170,7 @@ KAArchieSettings::doLayout()
 {
   const int labelwidgetdistance = 5; // for putting some distance between label <-> widget
   int labelwidth,
-    maxlabelwidth = 0;
+    maxlabelwidth = 0;  /* TQt3 迁移 */
   const QSize lineEditSize(LINE_EDIT_WIDTH, LINE_EDIT_HEIGHT);
 
   hostnamelabel->adjustSize();
@@ -218,7 +218,7 @@ KAArchieSettings::readConfig()
   uint currentHostId = config->readUnsignedNumEntry( "CurrentHostId", 0 );
 
   if ((uint)hostname->count() < currentHostId-1) {
-    currentHostId = 0;
+    currentHostId = 0;  /* TQt3 迁移 */
   }    
 
   hostname->setCurrentItem( currentHostId );
@@ -234,16 +234,16 @@ KAArchieSettings::writeConfig()
   KConfig *config = KApplication::getKApplication()->getConfig();
   KConfigGroupSaver saveGroup( config, "HostConfig" );
 
-  //  debug("write hostnum to %i",hostname->currentItem() );
+  //  tqDebug("write hostnum to %i",hostname->currentItem() );
   config->writeEntry( ConfigEntries::CurrentHostNumEntry,
 		      hostname->currentItem(), TRUE );
-  //  debug("write current host to %s",hostname->currentText() );
+  //  tqDebug("write current host to %s",hostname->currentText() );
   config->writeEntry( ConfigEntries::CurrentHostEntry,
 		      hostname->currentText(), TRUE );
-  //  debug("write timeout to %i",timeoutline->value() );
+  //  tqDebug("write timeout to %i",timeoutline->value() );
   config->writeEntry( "Timeout",
 		      timeoutline->value(), TRUE );
-  //  debug("write retries to %i",triesline->value() );
+  //  tqDebug("write retries to %i",triesline->value() );
   config->writeEntry( "Retries",
 		      triesline->value(), TRUE );
   config->sync();
@@ -319,14 +319,14 @@ KASearchSettings::~KASearchSettings()
 void 
 KASearchSettings::slotResetSettings()
 {
-  //  debug( "KASearchSettings reset settings request" );
+  //  tqDebug( "KASearchSettings reset settings request" );
   readConfig();
 }
 
 void 
 KASearchSettings::slotApplySettings()
 {
-  //  debug( "KASearchSettings apply settings request" );
+  //  tqDebug( "KASearchSettings apply settings request" );
   writeConfig();
 }
 
@@ -351,7 +351,7 @@ KASearchSettings::doLayout()
 {
   const int labelwidgetdistance = 5; // for putting some distance between label <-> widget
   int labelwidth; // for adjusting the label->Buddy()
-  maxlabelwidth = 0;
+  maxlabelwidth = 0;  /* TQt3 迁移 */
 
   const QSize lineEditSize(LINE_EDIT_WIDTH, LINE_EDIT_HEIGHT);
   maxhits->setFixedSize( lineEditSize );
@@ -521,7 +521,7 @@ KASettings::KASettings(QWidget *parent, const char *name, bool modal, WFlags f )
 {
   //  const int frameoffset = 10;
 
-  //  debug( "setup settingswidget" );
+  //  tqDebug( "setup settingswidget" );
   setCaption( i18n("KArchie Settings") );
   setMinimumSize( 440, 300 );
 
@@ -530,14 +530,14 @@ KASettings::KASettings(QWidget *parent, const char *name, bool modal, WFlags f )
   settingsFrame = new QFrame(this);
   settingsFrame->setFrameStyle( QFrame::WinPanel | QFrame::Raised );
   widgetLayout = new QBoxLayout( settingsFrame, QBoxLayout::Down, FRAME_OFFSET );
-  //  debug( "setup archiehost frame" );
+  //  tqDebug( "setup archiehost frame" );
   //  archiedialog = new QDialog(this, "archiehost" );
   //  archiebox = new QBoxLayout( archiedialog, QBoxLayout::Down, frameoffset );
   archiehost = new KAArchieSettings(i18n("Archie server settings"), settingsFrame, "archiehost");
   widgetLayout->addWidget( archiehost );
   //  archiehost->show();
 
-  //  debug( "setup searchterms frame" );
+  //  tqDebug( "setup searchterms frame" );
   //  searchdialog  = new QDialog(this, "searchterms" );
   //  searchbox = new QBoxLayout( searchdialog, QBoxLayout::Down, frameoffset );
   searchterms  = new KASearchSettings(i18n("Search init"), settingsFrame, "searchterms");
@@ -545,13 +545,13 @@ KASettings::KASettings(QWidget *parent, const char *name, bool modal, WFlags f )
 
   frameLayout->addWidget(settingsFrame, 1);
 
-  //  debug( "setup user frame" );
+  //  tqDebug( "setup user frame" );
   //  userdialog = new QDialog(this, "user" );
   //  userbox = new QBoxLayout( userdialog, QBoxLayout::Down, frameoffset );
   //  user = new KAUserSettings( "User settings", userdialog, "user" );
   //  userbox->addWidget( user );
 
-  //  debug( "adding tabs" );
+  //  tqDebug( "adding tabs" );
   //  addTab( archiedialog, "&Archie server" );
   //  addTab( searchdialog, "&Search" );
   //  addTab( userdialog, "local / &User" );
@@ -604,7 +604,7 @@ KASettings::KASettings(QWidget *parent, const char *name, bool modal, WFlags f )
   frameLayout->addWidget(buttonFrame);
   //  frameLayout->addSpacing(1);
 
-  //  debug( "connecting tabs" );
+  //  tqDebug( "connecting tabs" );
   //  connect(this , SIGNAL( applyButtonPressed() ),
   //	  archiehost, SLOT( slotApplySettings() ));
   //  connect(this , SIGNAL( applyButtonPressed() ),
@@ -619,34 +619,34 @@ KASettings::KASettings(QWidget *parent, const char *name, bool modal, WFlags f )
   //  connect(searchterms, SIGNAL(returnPressed()),
   //	  this, SLOT(slotReturnPressed()) );
 
-  //  debug( "setup ready" );
+  //  tqDebug( "setup ready" );
   //  QWidget *tmpwidget = qApp->focusWidget();
-  //  debug ("current keyboard focus: %s", tmpwidget?tmpwidget->name():"0");
+  //  tqDebug("current keyboard focus: %s", tmpwidget?tmpwidget->name():"0");
 }
 
 KASettings::~KASettings()
 {
-  //debug("delete b-layout");
+  //tqDebug("delete b-layout");
   delete buttonLayout;
-  //debug ("delete w-layout");
+  //tqDebug("delete w-layout");
   delete widgetLayout;
 
-  //debug("delete host-wg");
+  //tqDebug("delete host-wg");
   delete archiehost;
-  //debug("delete search-wg");
+  //tqDebug("delete search-wg");
   delete searchterms;
   //  delete user;
 
-  //debug("delete a-button");
+  //tqDebug("delete a-button");
   delete acceptButton;
-  //debug("delete r-button");
+  //tqDebug("delete r-button");
   delete restoreButton;
-  //debug("delete c-button");
+  //tqDebug("delete c-button");
   delete cancelButton;
 
-  //debug("delete b-frame");
+  //tqDebug("delete b-frame");
   delete buttonFrame;
-  //debug("delete s-frame");
+  //tqDebug("delete s-frame");
   delete settingsFrame;
   //  delete archiebox;
   //  delete searchbox;
@@ -655,7 +655,7 @@ KASettings::~KASettings()
   //  delete archiedialog;
   //  delete searchdialog;
   //  delete userdialog;
-  //debug("delete ready");
+  //tqDebug("delete ready");
 }
 
 /*void KASettings::slotDisplaySettings()
@@ -664,12 +664,12 @@ KASettings::~KASettings()
 
 /*void KASettings::okButton()
 {
-  debug( "KASettings okButton pressed" );
+  tqDebug( "KASettings okButton pressed" );
 }
 
 void KASettings::ResetButton()
 {
-  debug( "KASettings ResetButton pressed" );
+  tqDebug( "KASettings ResetButton pressed" );
 }*/
 
 void 

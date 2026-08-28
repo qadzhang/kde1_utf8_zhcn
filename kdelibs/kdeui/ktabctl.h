@@ -115,7 +115,7 @@ protected:
     QRect getChildRect() const;
 
     QTabBar * tabs;
-    QArrayT<QWidget *> pages;
+    QMemArray<QWidget *> pages;
     int bh;
     bool blBorder;
 };

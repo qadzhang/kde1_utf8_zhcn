@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/network/httpd/httpd.doc:5 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>A simple HTTP daemon</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>A simple HTTP daemon</h1>
+
+ 
+<p> 
+<p> This example shows how to use the <a href="ntqserversocket.html">TQServerSocket</a> class. It is a very
+simple implementation of a HTTP daemon that listens on port 8080 and
+sends back a simple HTML page back for every GET request it gets. After
+sending the page, it closes the connection.
+<p> <hr>
+<p> Implementation (httpd.cpp):
+<p> <pre>/****************************************************************************
+** $Id: qt/httpd.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+#include &lt;stdlib.h&gt;
+#include &lt;<a href="qsocket-h.html">ntqsocket.h</a>&gt;
+#include &lt;<a href="qregexp-h.html">ntqregexp.h</a>&gt;
+#include &lt;<a href="qserversocket-h.html">ntqserversocket.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+#include &lt;<a href="qtextstream-h.html">ntqtextstream.h</a>&gt;
+#include &lt;<a href="qvbox-h.html">ntqvbox.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qtextview-h.html">ntqtextview.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+
+// HttpDaemon is the the class that implements the simple HTTP server.
+class HttpDaemon : public <a href="ntqserversocket.html">TQServerSocket</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    HttpDaemon( <a href="ntqobject.html">TQObject</a>* parent=0 ) :
+        <a href="ntqserversocket.html">TQServerSocket</a>(8080,1,parent)
+    {
+        if ( !ok() ) {
+            <a href="ntqapplication.html#qWarning">tqWarning</a>("Failed to bind to port 8080");
+            exit( 1 );
+        }
+    }
+
+    void newConnection( int socket )
+    {
+        // When a new client connects, the server constructs a TQSocket and all
+        // communication with the client is done over this TQSocket. TQSocket
+        // works asynchronouslyl, this means that all the communication is done
+        // in the two slots readClient() and discardClient().
+        <a href="ntqsocket.html">TQSocket</a>* s = new <a href="ntqsocket.html">TQSocket</a>( this );
+<a name="x731"></a>        connect( s, TQ_SIGNAL(<a href="ntqsocket.html#readyRead">readyRead</a>()), this, TQ_SLOT(readClient()) );
+<a name="x729"></a>        connect( s, TQ_SIGNAL(<a href="ntqsocket.html#delayedCloseFinished">delayedCloseFinished</a>()), this, TQ_SLOT(discardClient()) );
+<a name="x732"></a>        s-&gt;<a href="ntqsocket.html#setSocket">setSocket</a>( socket );
+        emit newConnect();
+    }
+
+signals:
+    void newConnect();
+    void endConnect();
+    void wroteToClient();
+
+private slots:
+    void readClient()
+    {
+        // This slot is called when the client sent data to the server. The
+        // server looks if it was a get request and sends a very simple HTML
+        // document back.
+        <a href="ntqsocket.html">TQSocket</a>* socket = (TQSocket*)sender();
+<a name="x727"></a>        if ( socket-&gt;<a href="ntqsocket.html#canReadLine">canReadLine</a>() ) {
+<a name="x733"></a><a name="x730"></a>            <a href="ntqstringlist.html">TQStringList</a> tokens = TQStringList::<a href="ntqstringlist.html#split">split</a>( TQRegExp("[ \r\n][ \r\n]*"), socket-&gt;<a href="ntqsocket.html#readLine">readLine</a>() );
+            if ( tokens[0] == "GET" ) {
+                <a href="ntqtextstream.html">TQTextStream</a> os( socket );
+<a name="x735"></a>                os.<a href="ntqtextstream.html#setEncoding">setEncoding</a>( TQTextStream::UnicodeUTF8 );
+                os &lt;&lt; "HTTP/1.0 200 Ok\r\n"
+                    "Content-Type: text/html; charset=\"utf-8\"\r\n"
+                    "\r\n"
+                    "&lt;h1&gt;Nothing to see here&lt;/h1&gt;\n";
+<a name="x728"></a>                socket-&gt;<a href="ntqsocket.html#close">close</a>();
+                emit wroteToClient();
+            }
+        }
+    }
+    void discardClient()
+    {
+        <a href="ntqsocket.html">TQSocket</a>* socket = (TQSocket*)sender();
+        delete socket;
+        emit endConnect();
+    }
+};
+
+
+// HttpInfo provides a simple graphical user interface to the server and shows
+// the actions of the server.
+class HttpInfo : public <a href="ntqvbox.html">TQVBox</a>
+{
+    TQ_OBJECT
+public:
+    HttpInfo()
+    {
+        HttpDaemon *httpd = new HttpDaemon( this );
+
+        <a href="ntqstring.html">TQString</a> itext = TQString(
+                "This is a small httpd example.\n"
+                "You can connect with your\n"
+                "web browser to port %1"
+<a name="x726"></a>            ).arg( httpd-&gt;<a href="ntqserversocket.html#port">port</a>() );
+        <a href="ntqlabel.html">TQLabel</a> *lb = new <a href="ntqlabel.html">TQLabel</a>( itext, this );
+        lb-&gt;<a href="ntqlabel.html#setAlignment">setAlignment</a>( AlignHCenter );
+        infoText = new <a href="ntqtextview.html">TQTextView</a>( this );
+        <a href="ntqpushbutton.html">TQPushButton</a> *quit = new <a href="ntqpushbutton.html">TQPushButton</a>( "quit" , this );
+
+        connect( httpd, TQ_SIGNAL(newConnect()), TQ_SLOT(newConnect()) );
+        connect( httpd, TQ_SIGNAL(endConnect()), TQ_SLOT(endConnect()) );
+        connect( httpd, TQ_SIGNAL(wroteToClient()), TQ_SLOT(wroteToClient()) );
+<a name="x724"></a>        connect( quit, TQ_SIGNAL(<a href="ntqbutton.html#pressed">pressed</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+    }
+
+    ~HttpInfo()
+    {
+    }
+
+private slots:
+    void newConnect()
+    {
+<a name="x734"></a>        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( "New connection" );
+    }
+    void endConnect()
+    {
+        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( "Connection closed\n\n" );
+    }
+    void wroteToClient()
+    {
+        infoText-&gt;<a href="ntqtextedit.html#append">append</a>( "Wrote to client" );
+    }
+
+private:
+    <a href="ntqtextview.html">TQTextView</a> *infoText;
+};
+
+
+int main( int argc, char** argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> app( argc, argv );
+    HttpInfo info;
+    app.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;info );
+    info.<a href="ntqwidget.html#show">show</a>();
+    return app.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+#include "httpd.moc"
+</pre>
+
+<p>See also <a href="network-examples.html">Network Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

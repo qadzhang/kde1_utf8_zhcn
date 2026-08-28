@@ -55,9 +55,9 @@ class WindowEntry {
   WindowEntry(Window w, int m=0, int h=1, int c=0)
     :window(w), map(m), hotmap(h), classId(c){}
 };
-class WindowList: public QListT<WindowEntry> {
+class WindowList: public QPtrList<WindowEntry> {  // TQt3 迁移：QListT 模板本体名
  protected:
-  virtual int compareItems(GCI, GCI);
+  virtual int compareItems(TQPtrCollection::Item, TQPtrCollection::Item);  // TQt3 迁移：TQPtrCollection::Item 别名
  public:
   WindowList();
   ~WindowList(){}
@@ -76,9 +76,9 @@ class WindowClassEntry {
   WindowClassEntry(const char* s, short m=0, short h=1)
     :name(s), map(m), hotmap(h){}
 };
-class WindowClassList: public QListT<WindowClassEntry> {
+class WindowClassList: public QPtrList<WindowClassEntry> {  // TQt3 迁移
  protected:
-  virtual int compareItems(GCI, GCI);
+  virtual int compareItems(TQPtrCollection::Item, TQPtrCollection::Item);  // TQt3 迁移：TQPtrCollection::Item 别名
  public:
   WindowClassList();
   ~WindowClassList(){}

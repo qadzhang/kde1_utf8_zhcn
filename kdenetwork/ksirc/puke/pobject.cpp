@@ -5,7 +5,7 @@ PObject::PObject(QObject *pobject, const char *name) /*FOLD00*/
   : QObject(pobject, name)
 {
   // Connect slots as needed
-  obj = 0;
+  obj = 0;  /* TQt3 迁移 */
   setWidget(0);
   manualTerm = FALSE;
   deleteAble = TRUE;
@@ -15,7 +15,7 @@ PObject::~PObject() /*FOLD00*/
 {
   if(isDeleteAble())
     delete widget();
-  obj = 0;
+  obj = 0;  /* TQt3 迁移 */
   setWidget(0);
 }
 
@@ -67,7 +67,7 @@ void PObject::messageHandler(int fd, PukeMessage *pm) /*fold00*/
     delete this;
   }
   else {
-    warning("PObject: Unkown Command: %d", pm->iCommand);
+    tqWarning("PObject: Unkown Command: %d", pm->iCommand);
     pmRet.iCommand = PUKE_INVALID;
     pmRet.iWinId = pm->iWinId;
     pmRet.iArg = 0;
@@ -94,19 +94,19 @@ void PObject::setWidget(QObject *_o) /*FOLD00*/
 
 QObject *PObject::widget() /*FOLD00*/
 {
-  //  debug("PObject widget called");
+  //  tqDebug("PObject widget called");
   return obj;
 }
 
 void PObject::setWidgetId(widgetId *pwI) /*fold00*/
 {
   wI = *pwI;
-  //  debug("PObject: set widget id %d", wI.iWinId);
+  //  tqDebug("PObject: set widget id %d", wI.iWinId);
 }
 
 widgetId PObject::widgetIden() /*fold00*/
 {
-  //  debug("PObject: called widget id %d", wI.iWinId);
+  //  tqDebug("PObject: called widget id %d", wI.iWinId);
   return wI;
 }
 

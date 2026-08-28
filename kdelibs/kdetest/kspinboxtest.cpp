@@ -6,7 +6,7 @@
 #include <qlabel.h>
 
 #include <kspinbox.h>
-#include <kspinboxtest.h>
+#include "kspinboxtest.h"
 
 
 //////////////////////////// bool test ////////////////////////////////////

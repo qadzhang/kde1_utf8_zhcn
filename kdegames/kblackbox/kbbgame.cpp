@@ -123,20 +123,20 @@ KBBGame::KBBGame() : KTopLevelWidget()
   pix[0] = new QPixmap();
   *pix[0] = loader->loadIcon( pFNames[0] );
   if (!pix[0]->isNull()) {
-    debug( "Pixmap \"%s\" loaded.", pFNames[0] );
+    tqDebug( "Pixmap \"%s\" loaded.", pFNames[0] );
     for (i = 1; i < NROFTYPES; i++) {
       pix[i] = new QPixmap;
       *pix[i] = loader->loadIcon( pFNames[i] );
       if (!pix[i]->isNull()) {
-	debug( "Pixmap \"%s\" loaded.", pFNames[i] );
+	tqDebug( "Pixmap \"%s\" loaded.", pFNames[i] );
       } else {
 	pix[i] = pix[i-1];
 	pix[i]->detach();
-	debug( "Cannot find pixmap \"%s\". Using previous one.", pFNames[i] );
+	tqDebug( "Cannot find pixmap \"%s\". Using previous one.", pFNames[i] );
       }
     }
   } else {
-    debug( "Cannot find pixmap \"%s\". Pixmaps will not be loaded.",
+    tqDebug( "Cannot find pixmap \"%s\". Pixmaps will not be loaded.",
 	   pFNames[0] );
     delete pix[0];
     delete pix;
@@ -233,12 +233,12 @@ KBBGame::KBBGame() : KTopLevelWidget()
   gameResize();
   if (kConf->hasKey( "appsize" )) {
     s = kConf->readEntry( "appsize" );
-    debug("%s", (const char *) s);
+    tqDebug("%s", (const char *) s);
     pos = s.find( 'x' );
     s1 = s.right( s.length() - pos - 1 );
     s.truncate( pos - 1 );
-    //    debug("%s", (const char *) s);
-    //    debug("%s", (const char *) s1);
+    //    tqDebug("%s", (const char *) s);
+    //    tqDebug("%s", (const char *) s1);
     resize( s.toInt(), s1.toInt() );
   }
 
@@ -412,7 +412,7 @@ void KBBGame::about()
 
 void KBBGame::aboutQt()
 {
-  QMessageBox::aboutQt( 0, trans->translate("Qt information") );
+  /* TQt3 迁移：aboutQt 已删——改标准消息框 */ QMessageBox::information( 0, trans->translate("Qt information"), trans->translate("TQt3 runtime") );
 }
 
 void KBBGame::help()
@@ -488,14 +488,14 @@ void KBBGame::gameFinished()
       abortGame();
       s.sprintf( trans->translate("Your final score is: %d."), score );
       if (score <= (balls*3))
-	mb.setButtonText( trans->translate("Wow!") );
+	mb.setButtonText( 0, trans->translate("Wow!") );
       else
-	mb.setButtonText( trans->translate("Damned!") );
+	mb.setButtonText( 0, trans->translate("Damned!") );
     } else {
       s.sprintf( trans->translate(
                  "You should place %d balls!\nYou have placed %d."),
 		balls, ballsPlaced );
-      mb.setButtonText( trans->translate("D'accord") );
+      mb.setButtonText( 0, trans->translate("D'accord") );
     }
     mb.setText( s );
     mb.show();  
@@ -808,7 +808,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
       int endX, endY, result;
       result = traceRay( col, row, &endX, &endY );
       r->set( col, row, LFIREBBG );
-      //debug( "%d %d", endX, endY ); 
+      //tqDebug( "%d %d", endX, endY ); 
       if (col == 1) x = 0; else
       if (col == w) x = w + 1;
       else x = col;
@@ -844,7 +844,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
 	setScore( score+1 );
 	break;
       case WRONGSTART:
-	debug( "Wrong start?! It should't happen!!" );
+	tqDebug( "Wrong start?! It should't happen!!" );
 	break;
       }
       break;

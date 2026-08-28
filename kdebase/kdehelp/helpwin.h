@@ -73,7 +73,7 @@ public:
 		{	url = u; yOffset = y; }
 
     KPageInfo( const KPageInfo &i )
-        {   url = i.url.copy(); yOffset = i.yOffset; }
+        {   url = i.url; yOffset = i.yOffset; }
 
 	const QString getUrl() const
 		{	return url; }

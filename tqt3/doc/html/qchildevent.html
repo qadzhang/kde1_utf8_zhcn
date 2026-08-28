@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qevent.cpp:2143 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQChildEvent Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQChildEvent Class Reference</h1>
+
+<p>The TQChildEvent class contains event parameters for child object
+events.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qevent-h.html">ntqevent.h</a>&gt;</tt>
+<p>Inherits <a href="ntqevent.html">TQEvent</a>.
+<p><a href="qchildevent-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQChildEvent"><b>TQChildEvent</b></a> ( Type&nbsp;type, TQObject&nbsp;*&nbsp;child )</li>
+<li class=fn>TQObject * <a href="#child"><b>child</b></a> () const</li>
+<li class=fn>bool <a href="#inserted"><b>inserted</b></a> () const</li>
+<li class=fn>bool <a href="#removed"><b>removed</b></a> () const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQChildEvent class contains event parameters for child object
+events.
+<p> 
+<p> Child events are sent to objects when children are inserted or
+removed.
+<p> A <a href="ntqevent.html#Type-enum">ChildRemoved</a> event is sent immediately, but a <a href="ntqevent.html#Type-enum">ChildInserted</a> event is <em>posted</em> (with <a href="ntqapplication.html#postEvent">TQApplication::postEvent</a>()).
+<p> Note that if a child is removed immediately after it is inserted,
+the <a href="ntqevent.html#Type-enum">ChildInserted</a> event may be suppressed, but the <a href="ntqevent.html#Type-enum">ChildRemoved</a> event will always be sent. In this case there will be
+a <a href="ntqevent.html#Type-enum">ChildRemoved</a> event without a corresponding <a href="ntqevent.html#Type-enum">ChildInserted</a>
+event.
+<p> The handler for these events is <a href="ntqobject.html#childEvent">TQObject::childEvent</a>().
+<p>See also <a href="events.html">Event Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQChildEvent"></a>TQChildEvent::TQChildEvent ( <a href="ntqevent.html#Type-enum">Type</a>&nbsp;type, <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;child )
+</h3>
+
+<p> Constructs a child event object. The <em>child</em> is the object that
+is to be removed or inserted.
+<p> The <em>type</em> parameter must be either <a href="ntqevent.html#Type-enum">TQEvent::ChildInserted</a> or
+<a href="ntqevent.html#Type-enum">TQEvent::ChildRemoved</a>.
+
+<h3 class=fn><a href="ntqobject.html">TQObject</a>&nbsp;* <a name="child"></a>TQChildEvent::child () const
+</h3>
+
+<p> Returns the child widget that was inserted or removed.
+
+<h3 class=fn>bool <a name="inserted"></a>TQChildEvent::inserted () const
+</h3>
+
+<p> Returns true if the widget received a new child; otherwise returns
+false.
+
+<h3 class=fn>bool <a name="removed"></a>TQChildEvent::removed () const
+</h3>
+
+<p> Returns true if the object lost a child; otherwise returns false.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

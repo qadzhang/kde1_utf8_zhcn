@@ -306,7 +306,7 @@ StoneWidget::~StoneWidget() {
      setMouseTracking(false);
      killTimers();
      delete stones;
-     //   debug("~StoneWidget\n");
+     //   tqDebug("~StoneWidget\n");
 }
 
 void StoneWidget::paintEvent( QPaintEvent *e ) {

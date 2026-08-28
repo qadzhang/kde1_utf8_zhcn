@@ -30,10 +30,10 @@ KornButton::KornButton(QWidget *parent, KornSettings *settings)
 	if( settings->soundFile() != NULL )
 		_sound = new QString( settings->soundFile() );	
 	else
-		_sound = 0;
+		_sound = 0;  /* TQt3 迁移 */
 
 
-	_lastNum = 0;
+	_lastNum = 0;  /* TQt3 迁移 */
 	_reversed = false;
 	
 	QToolTip::add( this, settings->caption() );
@@ -63,14 +63,14 @@ KornButton::~KornButton()
 
 void KornButton::setNumber(int num)
 {
-//	debug("setNumber called with %d", num);
+//	tqDebug("setNumber called with %d", num);
 
 	if( num == _lastNum ) 
 		return;
 
 	if( (num && !_lastNum) || (!num && _lastNum) ) {
 		_reversed = ! _reversed;	
-//		debug("reversed now %d", _reversed);
+//		tqDebug("reversed now %d", _reversed);
 
 #if 0
 		if( _reversed ){
@@ -99,7 +99,7 @@ void KornButton::setNumber(int num)
 #if 0
 void KornButton::drawButton( QPainter *painter )
 {
-	debug("drawButton called");
+	tqDebug("drawButton called");
 }
 #endif
 
@@ -109,7 +109,7 @@ void KornButton::drawButton( QPainter *painter )
 
 	str->setNum(_lastNum);
 
-//	debug( "drawButtonLabel called (lastNum = %s)", str->data() );
+//	tqDebug( "drawButtonLabel called (lastNum = %s)", str->data() );
 
 	if( _reversed ){
 

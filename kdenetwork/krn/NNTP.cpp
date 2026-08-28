@@ -32,7 +32,7 @@
 #include <qregexp.h>
 #include <qdict.h>
 
-#include <kalarmtimer.h>
+#include "kalarmtimer.h"
 
 #include <gdbm.h>
 
@@ -91,11 +91,11 @@ void NNTP::PGetTextResponse()
         // Check for an error
 
         if (err) {
-            mReplyCode = 0;
+            mReplyCode = 0;  /* TQt3 迁移 */
             return;
         }
         if (!ptr) {
-            mReplyCode = 0;
+            mReplyCode = 0;  /* TQt3 迁移 */
             return;
         }
 
@@ -323,14 +323,14 @@ int NNTP::listXover(int from,int to,NewsGroup *n)
     DwString gi;
     reportCounters (true,false);
     setGroup(n->name);
-    debug ("first-->%d,last-->%d,from-->%d,to-->%d",first,last,from,to);
+    tqDebug("first-->%d,last-->%d,from-->%d,to-->%d",first,last,from,to);
     if (from <first)
         from=first;
     if (to > last)
         to=last;
     if (to<from)
     {
-        debug ("weird xover with to <from");
+        tqDebug("weird xover with to <from");
         to=from;
     }
 
@@ -338,7 +338,7 @@ int NNTP::listXover(int from,int to,NewsGroup *n)
     int toomany=conf->readNumEntry("TooMany");
     if ((to-from)>toomany)
     {
-        debug ("Way too many!");
+        tqDebug("Way too many!");
         if (!toomanydlg)
             toomanydlg=new TooManyDlg();
         toomanydlg->exec();
@@ -365,7 +365,7 @@ int NNTP::listXover(int from,int to,NewsGroup *n)
     // for debugging
     cout << "C: " << mSendBuffer << endl;
     
-    mReplyCode = 0;
+    mReplyCode = 0;  /* TQt3 迁移 */
     mStatusResponse = mTextResponse = "";
 
     int bufferLen = strlen(mSendBuffer);
@@ -455,7 +455,7 @@ int NNTP::listXover(int from,int to,NewsGroup *n)
                         }
                     }
                     if (!art.ID.data())
-                        debug ("broken article in listXover");
+                        tqDebug("broken article in listXover");
                     n->addArticle(art.ID);
                     counter++;
                     //Write the article ID to the newsgroup file
@@ -474,8 +474,8 @@ int NNTP::listXover(int from,int to,NewsGroup *n)
         }
         else
         {
-            warning ("Can't get XOVER data from your server");
-            warning ("Server said %s",StatusResponse().data());
+            tqWarning("Can't get XOVER data from your server");
+            tqWarning("Server said %s",StatusResponse().data());
         }
     }
     delete[] buffer;
@@ -611,7 +611,7 @@ QString *NNTP::article(const char *_id)
     p=p+id;
     if (isCached (id) == PART_ALL)//it exists and is fully cached
     {
-        debug ("has all, getting nothing");
+        tqDebug("has all, getting nothing");
         if (QFile::exists(p)) //old style cache
             data->setStr(kFileToString(p).data());
         else
@@ -625,7 +625,7 @@ QString *NNTP::article(const char *_id)
 
     else if (isCached (id)==PART_NONE) //get all of it, write it and return it
     {
-        debug ("has nothing, getting all");
+        tqDebug("has nothing, getting all");
         bool success=false;
         int status=Article (id);
 
@@ -635,12 +635,12 @@ QString *NNTP::article(const char *_id)
             return data;
         }
 
-        debug ("status-->%d",status);
+        tqDebug("status-->%d",status);
         if (status==220)
         {
             QString a(TextResponse().c_str());
             int limit=a.find("\r\n\r\n");
-            debug ("limit-->%d",limit);
+            tqDebug("limit-->%d",limit);
             kStringToFile(a.left(limit),p+".head",FALSE,FALSE,TRUE);
             kStringToFile(a.right(a.length()-limit-4),p+".body",FALSE,FALSE,TRUE);
             delete data;
@@ -672,7 +672,7 @@ QString *NNTP::article(const char *_id)
         {
             class Article artie(_id);
             artie.load();
-            debug ("desper->%s",artie.desperate.data());
+            tqDebug("desper->%s",artie.desperate.data());
             if (artie.desperate.isEmpty())
             {
                  success=false;
@@ -688,7 +688,7 @@ QString *NNTP::article(const char *_id)
                  {
                      QString g=artie.desperate.left(sep);
                      QString ind=artie.desperate.right(artie.desperate.length()-sep-1);
-                     debug ("q-->%s+++ind-->%s+++",g.data(),ind.data());
+                     tqDebug("q-->%s+++ind-->%s+++",g.data(),ind.data());
                      //if not in the right group and can't go to it
                      //we're screwed
                      if (GroupName!=g && (!setGroup(g)))
@@ -705,12 +705,12 @@ QString *NNTP::article(const char *_id)
                              return data;
                          }
 
-                         debug ("status-->%d",status);
+                         tqDebug("status-->%d",status);
                          if (status==220)
                          {
                              QString a(TextResponse().c_str());
                              int limit=a.find("\r\n\r\n");
-                             debug ("limit-->%d",limit);
+                             tqDebug("limit-->%d",limit);
                              kStringToFile(a.left(limit),p+".head",FALSE,FALSE,TRUE);
                              kStringToFile(a.right(a.length()-limit-4),p+".body",FALSE,FALSE,TRUE);
                              delete data;
@@ -726,14 +726,14 @@ QString *NNTP::article(const char *_id)
         }
         if (!success)
         {
-            warning ("error getting data\nserver said %s\n",StatusResponse().c_str());
+            tqWarning("error getting data\nserver said %s\n",StatusResponse().c_str());
             unlink (p.data());
         }
     }
 
     else if (isCached(id)==PART_HEAD)
     {
-        debug ("has head, getting body");
+        tqDebug("has head, getting body");
         data=body(id);
         delete data;
         data=article(id);
@@ -741,7 +741,7 @@ QString *NNTP::article(const char *_id)
 
     else if (isCached(id)==PART_BODY)
     {
-        debug ("has body, getting head");
+        tqDebug("has body, getting head");
         data=head(id);
         delete data;
     }
@@ -826,9 +826,9 @@ QString NNTP::saneID(const char *id)
 
 void NNTP::refresh()
 {
-    debug ("refreshing");
+    tqDebug("refreshing");
     qApp->processEvents();
-    debug ("refreshed");
+    tqDebug("refreshed");
 }
 
 bool NNTP::checkDisconnection()

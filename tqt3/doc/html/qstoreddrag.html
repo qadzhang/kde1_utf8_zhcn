@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qdragobject.cpp:1202 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQStoredDrag Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQStoredDrag Class Reference</h1>
+
+<p>The TQStoredDrag class provides a simple stored-value drag object for arbitrary MIME data.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qdragobject-h.html">ntqdragobject.h</a>&gt;</tt>
+<p>Inherits <a href="ntqdragobject.html">TQDragObject</a>.
+<p>Inherited by <a href="quridrag.html">TQUriDrag</a> and <a href="qcolordrag.html">TQColorDrag</a>.
+<p><a href="qstoreddrag-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQStoredDrag"><b>TQStoredDrag</b></a> ( const&nbsp;char&nbsp;*&nbsp;mimeType, TQWidget&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#~TQStoredDrag"><b>~TQStoredDrag</b></a> ()</li>
+<li class=fn>virtual void <a href="#setEncodedData"><b>setEncodedData</b></a> ( const&nbsp;TQByteArray&nbsp;&amp;&nbsp;encodedData )</li>
+<li class=fn>virtual TQByteArray <a href="#encodedData"><b>encodedData</b></a> ( const&nbsp;char&nbsp;*&nbsp;m ) const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQStoredDrag class provides a simple stored-value drag object for arbitrary MIME data.
+<p> 
+<p> When a block of data has only one representation, you can use a
+TQStoredDrag to hold it.
+<p> For more information about drag and drop, see the <a href="ntqdragobject.html">TQDragObject</a>
+class and the <a href="dnd.html">drag and drop documentation</a>.
+<p>See also <a href="draganddrop.html">Drag And Drop Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQStoredDrag"></a>TQStoredDrag::TQStoredDrag ( const&nbsp;char&nbsp;*&nbsp;mimeType, <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a TQStoredDrag. The <em>dragSource</em> and <em>name</em> are passed
+to the <a href="ntqdragobject.html">TQDragObject</a> constructor, and the format is set to <em>mimeType</em>.
+<p> The data will be unset. Use <a href="#setEncodedData">setEncodedData</a>() to set it.
+
+<h3 class=fn><a name="~TQStoredDrag"></a>TQStoredDrag::~TQStoredDrag ()
+</h3>
+Destroys the drag object and frees up all allocated resources.
+
+<h3 class=fn><a href="qbytearray.html">TQByteArray</a> <a name="encodedData"></a>TQStoredDrag::encodedData ( const&nbsp;char&nbsp;*&nbsp;m ) const<tt> [virtual]</tt>
+</h3>
+Returns the stored data. <em>m</em> contains the data's format.
+<p> <p>See also <a href="#setEncodedData">setEncodedData</a>().
+
+<p>Reimplemented from <a href="qmimesource.html#encodedData">TQMimeSource</a>.
+<h3 class=fn>void <a name="setEncodedData"></a>TQStoredDrag::setEncodedData ( const&nbsp;<a href="qbytearray.html">TQByteArray</a>&nbsp;&amp;&nbsp;encodedData )<tt> [virtual]</tt>
+</h3>
+Sets the encoded data of this drag object to <em>encodedData</em>. The
+encoded data is what's delivered to the drop sites. It must be in
+a strictly defined and portable format.
+<p> The drag object can't be dropped (by the user) until this function
+has been called.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

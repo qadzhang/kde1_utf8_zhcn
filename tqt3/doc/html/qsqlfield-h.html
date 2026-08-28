@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqsqlfield.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqsqlfield.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqsqlfield.h</h1>
+
+<p>This is the verbatim text of the ntqsqlfield.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+**
+** Definition of TQSqlField class
+**
+** Created : 2000-11-03
+**
+** Copyright (C) 2005-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the sql module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQSQLFIELD_H
+#define TQSQLFIELD_H
+
+#ifndef QT_H
+#include "ntqstring.h"
+#include "ntqvariant.h"
+#endif // QT_H
+
+#if !defined( TQT_MODULE_SQL ) || defined( QT_LICENSE_PROFESSIONAL )
+#define TQM_EXPORT_SQL
+#else
+#define TQM_EXPORT_SQL TQ_EXPORT
+#endif
+
+#ifndef TQT_NO_SQL
+
+class TQSqlFieldPrivate
+{
+public:
+    TQVariant::Type type;
+};
+
+class TQM_EXPORT_SQL TQSqlField
+{
+public:
+    TQSqlField( const TQString&amp; fieldName = TQString::null, TQVariant::Type type = TQVariant::Invalid );
+    TQSqlField( const TQSqlField&amp; other );
+    TQSqlField&amp; operator=( const TQSqlField&amp; other );
+    bool operator==(const TQSqlField&amp; other) const;
+    virtual ~TQSqlField();
+
+    virtual void	setValue( const TQVariant&amp; value );
+    virtual TQVariant	value() const;
+    virtual void	setName( const TQString&amp; name );
+    TQString		name() const;
+    virtual void	setNull();
+    bool		isNull() const;
+    virtual void	setReadOnly( bool readOnly );
+    bool		isReadOnly() const;
+    void		clear( bool nullify = true );
+    TQVariant::Type	type() const;
+
+private:
+    TQString       nm;
+    TQVariant      val;
+    uint          ro: 1;
+    uint          nul: 1;
+    TQSqlFieldPrivate* d;
+};
+
+inline TQVariant TQSqlField::value() const
+{ return val; }
+
+inline TQString TQSqlField::name() const
+{ return nm; }
+
+inline bool TQSqlField::isNull() const
+{ return nul; }
+
+inline bool TQSqlField::isReadOnly() const
+{ return ro; }
+
+inline TQVariant::Type TQSqlField::type() const
+{ return d-&gt;type; }
+
+
+/******************************************/
+/*******     TQSqlFieldInfo Class     ******/
+/******************************************/
+
+struct TQSqlFieldInfoPrivate;
+
+class TQM_EXPORT_SQL TQSqlFieldInfo
+{
+public:
+    TQSqlFieldInfo( const TQString&amp; name = TQString::null,
+		   TQVariant::Type typ = TQVariant::Invalid,
+		   int required = -1,
+		   int len = -1,
+		   int prec = -1,
+		   const TQVariant&amp; defValue = TQVariant(),
+		   int sqlType = 0,
+		   bool generated = true,
+		   bool trim = false,
+		   bool calculated = false );
+    TQSqlFieldInfo( const TQSqlFieldInfo &amp; other );
+    TQSqlFieldInfo( const TQSqlField &amp; other, bool generated = true );
+    virtual ~TQSqlFieldInfo();
+    TQSqlFieldInfo&amp; operator=( const TQSqlFieldInfo&amp; other );
+    bool operator==( const TQSqlFieldInfo&amp; f ) const;
+
+    TQSqlField		toField() const;
+    int			isRequired() const;
+    TQVariant::Type	type() const;
+    int			length() const;
+    int			precision() const;
+    TQVariant		defaultValue() const;
+    TQString		name() const;
+    int			typeID() const;
+    bool		isGenerated() const;
+    bool		isTrim() const;
+    bool		isCalculated() const;
+
+    virtual void	setTrim( bool trim );
+    virtual void	setGenerated( bool gen );
+    virtual void	setCalculated( bool calc );
+
+private:
+    TQSqlFieldInfoPrivate* d;
+};
+
+
+#endif	// TQT_NO_SQL
+#endif
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

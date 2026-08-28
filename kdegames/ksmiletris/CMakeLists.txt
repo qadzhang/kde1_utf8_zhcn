@@ -11,15 +11,15 @@ set(KSMILETRIS_SRCS
 )
 
 set(KSMILETRIS_MOC
-    gamewindow.moc gamewidget.moc screenwidget.moc mirrorwidget.moc
-    npiecewidget.moc scoredialog.moc newscoredialog.moc
+    gamewindow.h gamewidget.h screenwidget.h mirrorwidget.h
+    npiecewidget.h scoredialog.h newscoredialog.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KSMILETRIS_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KSMILETRIS_MOC})
 
 add_executable(ksmiletris ${KSMILETRIS_SRCS} ${MOC_FILES})
 target_link_libraries(ksmiletris
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

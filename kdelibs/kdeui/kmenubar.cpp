@@ -32,7 +32,7 @@
 #include <klocale.h>
 #include <kapp.h>
 #include <kwm.h>
-#include <ktoolboxmgr.h>
+#include "ktoolboxmgr.h"
 #include <kwm.h>
 
 #define CONTEXT_TOP 1
@@ -358,16 +358,16 @@ void KMenuBar::slotReadConfig ()
   if (_transparent != transparent)
     transparent= _transparent;
 
-  if (style() == MotifStyle)
+  if (style().inherits("TQMotifStyle"))
   {
-    menu->setStyle(style()); //Uh!
+    // TQt3 迁移：TQPopupMenu::setStyle(TQStyle&) 已删（风格全局统一）——调用移除
     menu->setMouseTracking(false);
     if (position != Floating || position == FloatingSystem)
       menu->setFrameStyle(Panel | Raised);
   }
   else
   {
-    menu->setStyle(style()); //Uh!
+    // TQt3 迁移：同上
     menu->setMouseTracking(true);
     if (position != Floating && position != FloatingSystem)
       menu->setFrameStyle(NoFrame);
@@ -586,7 +586,7 @@ bool KMenuBar::eventFilter(QObject *ob, QEvent *ev){
 
       if (standalone_menubar)
       {
-        if ( style() == WindowsStyle )
+        if ( style().inherits("TQWindowsStyle") )
           qDrawWinButton( &paint, 0, 0, handle->width(), handle->height(),
                           g, false );
         else
@@ -612,7 +612,7 @@ bool KMenuBar::eventFilter(QObject *ob, QEvent *ev){
       int h = handle->height();
       int w = handle->width();
 
-      if (style() == MotifStyle) //Motif style handle
+      if (style().inherits("TQMotifStyle")) //Motif style handle
       {
         if (position == Flat)
         {
@@ -757,7 +757,7 @@ void KMenuBar::setMenuBarPos(menuPosition mpos)
 	  setFrameStyle( NoFrame);
 	  if (mpos == FloatingSystem)
 	      {
-		  if (style() == MotifStyle)
+		  if (style().inherits("TQMotifStyle"))
 		      menu->setFrameStyle(Panel | Raised);
 		  else
 		      menu->setFrameStyle(WinPanel | Raised) ;
@@ -783,7 +783,7 @@ void KMenuBar::setMenuBarPos(menuPosition mpos)
 	}
 
         emit moved (mpos);
-//        if (style() == MotifStyle)
+//        if (style().inherits("TQMotifStyle"))
 //          menu->setMouseTracking(false);
 //        else
 //          menu->setMouseTracking(true);
@@ -814,7 +814,7 @@ void KMenuBar::setMenuBarPos(menuPosition mpos)
         recreate(Parent, oldWFlags, QPoint(oldX, oldY), TRUE);
         context->changeItem (klocale->translate("Float"), CONTEXT_FLOAT);
         emit moved (mpos);
-        if (style() == MotifStyle)
+        if (style().inherits("TQMotifStyle"))
         {
 //          menu->setMouseTracking(false);
           menu->setFrameStyle(Panel | Raised);

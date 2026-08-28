@@ -45,7 +45,7 @@ Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
 void Desktop::fillPixmap()
 {
     PagerWindow *win;
-    pixmap.resize(pixmap_size);
+    pixmap.truncate(pixmap_size);
     pixmap.fill(backgroundColor());
     QPainter p(&pixmap);
     p.setFont(font());

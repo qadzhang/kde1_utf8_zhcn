@@ -148,7 +148,6 @@ void KeyboardConfig::GetSettings( void )
       keyboardRepeat = kbd.global_auto_repeat;
   else if (key == "on")
     keyboardRepeat = AutoRepeatModeOn;
-  else
     keyboardRepeat = AutoRepeatModeOff;
 
   clickVolume = config->readNumEntry("ClickVolume",-1);

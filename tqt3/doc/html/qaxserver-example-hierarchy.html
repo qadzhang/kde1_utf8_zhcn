@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/extensions/activeqt/examples/hierarchy/hierarchy.doc:47 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQt Widget Hierarchy (in-process)</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQt Widget Hierarchy (in-process)</h1>
+
+ 
+
+The ActiveX control in this example is a <a href="ntqwidget.html">TQWidget</a>
+subclass with child widgets that are accessible as sub types.
+<p> 
+
+<pre>    class TQParentWidget : public <a href="ntqwidget.html">TQWidget</a>
+    {
+        <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+    public:
+        TQParentWidget( <a href="ntqwidget.html">TQWidget</a> *parent = 0, const char *name = 0, WFlags f = 0 );
+
+        <a href="ntqsize.html">TQSize</a> sizeHint() const;
+
+    public slots:
+        void createSubWidget( const <a href="ntqstring.html">TQString</a> &amp;name );
+
+        TQSubWidget *subWidget( const <a href="ntqstring.html">TQString</a> &amp;name );
+
+    private:
+        <a href="qvboxlayout.html">TQVBoxLayout</a> *vbox;
+    };
+</pre>The <tt>TQParentWidget</tt> class provides slots to create a widget
+with a name, and to return a pointer to a named widget.
+<p> 
+
+<pre>    TQParentWidget::TQParentWidget( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name, WFlags f )
+    : <a href="ntqwidget.html">TQWidget</a>( parent, name, f )
+    {
+        vbox = new <a href="qvboxlayout.html">TQVBoxLayout</a>( this );
+    <a name="x2649"></a>    vbox-&gt;<a href="ntqlayout.html#setAutoAdd">setAutoAdd</a>( true );
+    }
+</pre>The constructor of TQParentWidget creates a vertical box layout.
+New child widgets are automatically added to the layout.
+<p> <pre>    void TQParentWidget::createSubWidget( const <a href="ntqstring.html">TQString</a> &amp;name )
+    {
+        TQSubWidget *sw = new TQSubWidget( this, name );
+        sw-&gt;setLabel( name );
+        sw-&gt;<a href="ntqwidget.html#show">show</a>();
+    }
+</pre>The <tt>createSubWidget</tt> slot creates a new <tt>TQSubWidget</tt> with
+the name provided in the parameter, and sets the label to that
+name. The widget is also shown explicitly.
+<p> <pre>    TQSubWidget *TQParentWidget::subWidget( const <a href="ntqstring.html">TQString</a> &amp;name )
+    {
+        return (TQSubWidget*)<a href="ntqobject.html#child">child</a>( name, "TQSubWidget" );
+    }
+</pre>The <tt>subWidget</tt> slot uses the <a href="ntqobject.html#child">TQObject::child</a>() function and
+returns the first child of type <tt>TQSubWidget</tt> that has the requested
+name.
+<p> 
+
+<pre>    class TQSubWidget : public <a href="ntqwidget.html">TQWidget</a>
+    {
+        TQ_OBJECT
+        TQ_PROPERTY( TQString label READ label WRITE setLabel )
+    public:
+        TQSubWidget( <a href="ntqwidget.html">TQWidget</a> *parent = 0, const char *name = 0, WFlags f = 0 );
+
+        void setLabel( const <a href="ntqstring.html">TQString</a> &amp;text );
+        <a href="ntqstring.html">TQString</a> label() const;
+
+        <a href="ntqsize.html">TQSize</a> sizeHint() const;
+
+    protected:
+        void paintEvent( <a href="qpaintevent.html">TQPaintEvent</a> *e );
+
+    private:
+        <a href="ntqstring.html">TQString</a> lbl;
+    };
+</pre>The <tt>TQSubWidget</tt> class has a single string-property <tt>label</tt>,
+and implements the paintEvent to draw the label.
+<p> 
+
+<pre>    TQSubWidget::TQSubWidget( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name, WFlags f )
+    : <a href="ntqwidget.html">TQWidget</a>( parent, name, f )
+    {
+    }
+
+    void TQSubWidget::setLabel( const <a href="ntqstring.html">TQString</a> &amp;text )
+    {
+        lbl = text;
+        <a href="ntqobject.html#setName">setName</a>( text );
+        <a href="ntqwidget.html#update">update</a>();
+    }
+
+    TQString TQSubWidget::label() const
+    {
+        return lbl;
+    }
+
+    TQSize TQSubWidget::<a href="ntqwidget.html#sizeHint">sizeHint</a>() const
+    {
+        <a href="ntqfontmetrics.html">TQFontMetrics</a> fm( <a href="ntqwidget.html#font">font</a>() );
+        return TQSize( fm.<a href="ntqfontmetrics.html#width">width</a>(lbl), fm.<a href="ntqfontmetrics.html#height">height</a>() );
+    }
+
+    void TQSubWidget::<a href="ntqwidget.html#paintEvent">paintEvent</a>( <a href="qpaintevent.html">TQPaintEvent</a> * )
+    {
+        <a href="ntqpainter.html">TQPainter</a> painter(this);
+        painter.<a href="ntqpainter.html#setPen">setPen</a>( <a href="ntqwidget.html#colorGroup">colorGroup</a>().text() );
+        painter.<a href="ntqpainter.html#drawText">drawText</a>( <a href="ntqwidget.html#rect">rect</a>(), AlignCenter, lbl );
+    }
+</pre>The implementation of the TQSubWidget class is self-explanatory.
+<p> 
+
+<pre>    class ActiveTQtFactory : public <a href="qaxfactory.html">TQAxFactory</a>
+    {
+    public:
+        ActiveTQtFactory( const <a href="ntquuid.html">TQUuid</a> &amp;lib, const <a href="ntquuid.html">TQUuid</a> &amp;app )
+            : <a href="qaxfactory.html">TQAxFactory</a>( lib, app )
+        {}
+        <a href="ntqstringlist.html">TQStringList</a> featureList() const
+        {
+            <a href="ntqstringlist.html">TQStringList</a> list;
+            list &lt;&lt; "TQParentWidget";
+            list &lt;&lt; "TQSubWidget";
+            return list;
+        }
+</pre>The <tt>ActiveTQtFactory</tt> class implements a <a href="qaxfactory.html">TQAxFactory</a>. It returns
+the class names of all supported types, <tt>TQParentWidget</tt> and
+<tt>TQSubWidget</tt>, from the <tt>featureList()</tt> reimplementation.
+<p> <pre>        <a href="ntqwidget.html">TQWidget</a> *create( const <a href="ntqstring.html">TQString</a> &amp;key, TQWidget *parent, const char *name )
+        {
+            if ( key == "TQParentWidget" )
+                return new TQParentWidget( parent, name );
+
+            return 0;
+        }
+</pre>The factory can however only create objects of the <tt>TQParentWidget</tt>
+type directly - objects of subtypes can only be created through the
+interface of <tt>TQParentWidget</tt> objects.
+<p> <pre>        <a href="ntquuid.html">TQUuid</a> classID( const <a href="ntqstring.html">TQString</a> &amp;key ) const
+        {
+            if ( key == "TQParentWidget" )
+                return TQUuid( "{d574a747-8016-46db-a07c-b2b4854ee75c}" );
+            if ( key == "TQSubWidget" )
+                return TQUuid( "{850652f4-8f71-4f69-b745-bce241ccdc30}" );
+
+            return TQUuid();
+        }
+        <a href="ntquuid.html">TQUuid</a> interfaceID( const <a href="ntqstring.html">TQString</a> &amp;key ) const
+        {
+            if ( key == "TQParentWidget" )
+                return TQUuid( "{4a30719d-d9c2-4659-9d16-67378209f822}" );
+            if ( key == "TQSubWidget" )
+                return TQUuid( "{2d76cc2f-3488-417a-83d6-debff88b3c3f}" );
+
+            return TQUuid();
+        }
+        <a href="ntquuid.html">TQUuid</a> eventsID( const <a href="ntqstring.html">TQString</a> &amp;key ) const
+        {
+            if ( key == "TQParentWidget" )
+                return TQUuid( "{aac9f855-c3dc-4cae-b747-c77f4d509f4c}" );
+            if ( key == "TQSubWidget" )
+                return TQUuid( "{25fac47e-c723-4696-8c74-6185903bdf65}" );
+
+            return TQUuid();
+        }
+</pre>COM however requires the IDs for the interfaces of the sub types as
+well to be able to marshal calls correctly.
+<p> <pre>        <a href="ntqstring.html">TQString</a> exposeToSuperClass( const <a href="ntqstring.html">TQString</a> &amp;key ) const
+        {
+            if ( key == "TQSubWidget" )
+                return key;
+            return TQAxFactory::exposeToSuperClass(key);
+        }
+    };
+</pre>Objects of the <tt>TQSubWidget</tt> type should not expose the full 
+functionality of e.g. <a href="ntqwidget.html">TQWidget</a>. Only those properties and slots
+explicitly declared in the type are accessible.
+<p> <pre>    TQAXFACTORY_EXPORT( ActiveTQtFactory, "{9e626211-be62-4d18-9483-9419358fbb03}", "{75c276de-1df5-451f-a004-e4fa1a587df1}" )
+</pre>The factory is then exported using the <a href="qaxfactory.html#TQAXFACTORY_EXPORT">TQAXFACTORY_EXPORT</a>
+macro.
+<p> To build the example you must first build the <a href="qaxserver.html">TQAxServer</a> library. Then run qmake and your make tool in 
+<tt>examples/multiple</tt>.
+<p> <hr>
+<p> The <a href="qaxserver-demo-hierarchy.html">demonstration</a> requires your
+WebBrowser to support ActiveX controls, and scripting to be enabled.
+<p> 
+
+<pre>    &lt;script language=javascript&gt;
+    function createSubWidget( form )
+    {
+        ParentWidget.createSubWidget( form.nameEdit.value );
+    }
+
+    function renameSubWidget( form )
+    {
+        var SubWidget = ParentWidget.subWidget( form.nameEdit.value );
+        if ( !SubWidget ) {
+            alert( "No such widget " + form.nameEdit.value + "!" );
+            return;
+        }
+        SubWidget.label = form.labelEdit.value;
+        form.nameEdit.value = SubWidget.label;
+    }
+
+    function setFont( form )
+    {
+        ParentWidget.font = form.fontEdit.value;
+    }
+    &lt;/script&gt;
+
+    &lt;p&gt;
+    This widget can have many children!&lt;br&gt;
+    &lt;object ID="ParentWidget" CLASSID="CLSID:d574a747-8016-46db-a07c-b2b4854ee75c"
+    CODEBASE=http://www.trolltech.com/demos/hierarchy.cab&gt;
+    [Object not available! Did you forget to build and register the server?]
+    &lt;/object&gt;&lt;br&gt;
+    &lt;form&gt;
+    &lt;input type="edit" ID="nameEdit" value = "&lt;enter object name&gt;"&gt;
+    &lt;input type="button" value = "Create" onClick="createSubWidget(this.form)"&gt;
+    &lt;input type="edit" ID="labelEdit"&gt;
+    &lt;input type="button" value = "Rename" onClick="renameSubWidget(this.form)"&gt;
+    &lt;br&gt;
+    &lt;input type="edit" ID="fontEdit" value = "MS Sans Serif"&gt;
+    &lt;input type="button" value = "Set Font" onClick="setFont(this.form)"&gt;
+    &lt;/form&gt;
+</pre><p>See also <a href="qaxserver-examples.html">The TQAxServer Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -266,7 +266,6 @@ KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char *_te
   }
   else if ( strcmp( u.protocol(), "ftp" ) == 0 )
     icon = "ftp.xpm";
-  else
     icon = "www.xpm";
 
   QString tmp2;
@@ -281,7 +280,6 @@ KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char *_te
   }
   else if ( strcmp( u.protocol(), "ftp" ) == 0 )
     mini = "ftp.xpm";
-  else
     mini = "www.xpm";
   
   m_pPixmap = 0L;

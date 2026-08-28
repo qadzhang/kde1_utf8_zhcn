@@ -156,7 +156,7 @@ void KDir::setPath(const char *url)
     if (!tmp.isMalformed())
 	myLocation= tmp.url();
     else
-	warning("Malformed url %s\n", url);
+	tqWarning("Malformed url %s\n", url);
 
     root = (strcmp(myLocation.path(),"/") == 0);
     
@@ -319,7 +319,7 @@ bool KDir::match(const char *filter, const char *name)
     
     bool matched = false;
     while (g) {
-	if (QDir::match(g, name)) {
+	if (QDir::match(TQString(g), TQString(name))) {  // TQt3 迁移：TQString 显式构造消歧
 	    matched = true;
 	    break;
 	}

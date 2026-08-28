@@ -36,7 +36,7 @@ PPPData gpppdata;
 
 PPPData::PPPData() {
   //initialize variables
-  config = 0L;
+  config = 0;  /* TQt3 迁移 */
   highcount = -1;      // start out with no entries
   caccount = -1;       // set the current account index also
   cgroup = 0L;         // current group for config file
@@ -202,7 +202,6 @@ const char* PPPData::Password() {
 
 void PPPData::setPassword(const char* pw) {
   password = pw;
-  password.detach();
 }
 
 

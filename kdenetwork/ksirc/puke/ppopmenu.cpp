@@ -10,7 +10,6 @@ PObject *createWidget(CreateArgs &ca)
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
     qpm = new("QPopupMenu") QPopupMenu((QWidget *) ca.parent->widget());
-  else
     qpm = new("QPopupMenu") QPopupMenu();
   pm->setWidget(qpm);
   pm->setWidgetId(ca.pwI);
@@ -21,15 +20,15 @@ PObject *createWidget(CreateArgs &ca)
 PPopupMenu::PPopupMenu(PObject *parent)
   : PTableView(parent)
 {
-  //  debug("PLineEdit PLineEdit called");
-  menu = 0;
+  //  tqDebug("PLineEdit PLineEdit called");
+  menu = 0;  /* TQt3 迁移 */
   setWidget(menu);
   pmd = new("PMenuData") PMenuData(this);
 }
 
 PPopupMenu::~PPopupMenu()
 {
-  //  debug("PLineEdit: in destructor"); 
+  //  tqDebug("PLineEdit: in destructor"); 
 /*  delete widget();     // Delete the frame
   menu = 0;          // Set it to 0
   setWidget(menu); // Now set all widget() calls to 0.
@@ -44,7 +43,7 @@ void PPopupMenu::messageHandler(int fd, PukeMessage *pm)
     /*
   case PUKE_LINED_SET_MAXLENGTH:
     if(widget() == 0){
-      debug("PLineEdit: No Widget set");
+      tqDebug("PLineEdit: No Widget set");
       return;
     }
     widget()->setMaxLength(pm->iArg);
@@ -56,7 +55,7 @@ void PPopupMenu::messageHandler(int fd, PukeMessage *pm)
     */
   case PUKE_POPUPMENU_POPUP_CURRENT:
     if(widget() == 0){
-      debug("PPopupMenu: No Widget set");
+      tqDebug("PPopupMenu: No Widget set");
       return;
     }
     
@@ -95,7 +94,7 @@ QPopupMenu *PPopupMenu::widget()
 }
 
 void PPopupMenu::got_activated(int itemId){
-  warning("Item got activated: %d", itemId);
+  tqWarning("Item got activated: %d", itemId);
   
   widgetId wI;
   PukeMessage pmRet;

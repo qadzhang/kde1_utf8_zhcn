@@ -91,7 +91,7 @@ void KDMFontWidget::setupPage(QWidget *)
 
 void KDMFontWidget::applySettings()
 {
-  //debug("KDMFontWidget::applySettings()");
+  //tqDebug("KDMFontWidget::applySettings()");
   QString fn(CONFIGFILE);
   KSimpleConfig *c = new KSimpleConfig(fn);
 

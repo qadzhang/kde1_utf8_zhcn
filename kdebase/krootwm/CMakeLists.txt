@@ -4,16 +4,16 @@ include_directories(
 
 set(KROOTWM_SRCS krootwm.C)
 
-set(KROOTWM_MOC krootwm.moc)
+set(KROOTWM_MOC krootwm.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KROOTWM_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KROOTWM_MOC})
 
 add_executable(krootwm ${KROOTWM_SRCS} ${MOC_FILES})
 target_link_libraries(krootwm
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFM}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

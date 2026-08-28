@@ -110,7 +110,7 @@ KFileInfo::KFileInfo(const char *dir, const char *name)
 	
     } else {
 	// default
-	debug("the file does not exist %s%s",dir, name);
+	tqDebug("the file does not exist %s%s",dir, name);
 	myName.insert(0, "?");
 	mySize = 0;
 	myIsFile = false;
@@ -123,7 +123,7 @@ KFileInfo::KFileInfo(const char *dir, const char *name)
 
 // KFileInfo::~KFileInfo()
 // {
-//     debug("~KFileInfo");
+//     tqDebug("~KFileInfo");
 // }
 
 KFileInfo &KFileInfo::operator=(const KFileInfo &i)

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/extensions/activeqt/container/qaxobject.cpp:33 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQAxObject Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQAxObject Class Reference<br><small>[<a href="qaxcontainer.html">TQAxContainer module</a>]</small></h1>
+
+<p>The TQAxObject class provides a TQObject that wraps a COM object.
+<a href="#details">More...</a>
+<p>This class is part of the <b>TQt ActiveTQt Extension</b>.
+<p><tt>#include &lt;<a href="qaxobject-h.html">qaxobject.h</a>&gt;</tt>
+<p>Inherits <a href="ntqobject.html">TQObject</a> and <a href="qaxbase.html">TQAxBase</a>.
+<p>Inherited by <a href="qaxscriptengine.html">TQAxScriptEngine</a>.
+<p><a href="qaxobject-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQAxObject"><b>TQAxObject</b></a> ( TQObject&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#TQAxObject-2"><b>TQAxObject</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;c, TQObject&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#TQAxObject-3"><b>TQAxObject</b></a> ( IUnknown&nbsp;*&nbsp;iface, TQObject&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#~TQAxObject"><b>~TQAxObject</b></a> ()</li>
+</ul>
+<h2>Important Inherited Members</h2>
+<ul>
+<li class=fn>TQVariant <a href="#dynamicCall"><b>dynamicCall</b></a> ( const&nbsp;TQCString&nbsp;&amp;&nbsp;function, const&nbsp;TQVariant&nbsp;&amp;&nbsp;var1 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var2 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var3 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var4 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var5 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var6 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var7 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var8 = TQVariant ( ) )</li>
+<li class=fn>TQVariant <a href="#dynamicCall-2"><b>dynamicCall</b></a> ( const&nbsp;TQCString&nbsp;&amp;&nbsp;function, TQValueList&lt;TQVariant&gt;&nbsp;&amp;&nbsp;vars )</li>
+<li class=fn>TQAxObject * <a href="#querySubObject"><b>querySubObject</b></a> ( const&nbsp;TQCString&nbsp;&amp;&nbsp;name, const&nbsp;TQVariant&nbsp;&amp;&nbsp;var1 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var2 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var3 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var4 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var5 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var6 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var7 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var8 = TQVariant ( ) )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+<p> This class is defined in the <b>TQt <a href="activentqt.html#ActiveTQt">ActiveTQt</a> Extension</b>, which can be found in the <tt>qt/extensions</tt> directory. It is not included in the main TQt API.
+<p>
+
+The TQAxObject class provides a <a href="ntqobject.html">TQObject</a> that wraps a COM object.
+
+<p> 
+
+<p> A TQAxObject can be instantiated as an empty object, with the name
+of the COM object it should wrap, or with a pointer to the
+IUnknown that represents an existing COM object. If the COM object
+implements the IDispatch interface, the properties, methods and
+events of that object become available as TQt properties, slots and
+signals. The base class, <a href="qaxbase.html">TQAxBase</a>, provides an API to access the
+COM object directly through the IUnknown pointer.
+<p> TQAxObject is a TQObject and can be used as such, e.g. it can be
+organized in an object hierarchy, receive events and connect to
+signals and slots.
+<p> <b>Warning:</b>
+You can subclass TQAxObject, but you cannot use the <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a> macro
+in the subclass (the generated <a href="moc.html#moc">moc</a>-file will not compile), so you
+cannot add further signals, slots or properties. This limitation is 
+due to the metaobject information generated in runtime. 
+To work around this problem, aggregate the TQAxObject as a member of 
+the <a href="ntqobject.html">TQObject</a> subclass.
+<p> 
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQAxObject"></a>TQAxObject::TQAxObject ( <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Creates an empty COM object and propagates <em>parent</em> and <em>name</em>
+to the <a href="ntqobject.html">TQObject</a> constructor. To initialize the object, call <a href="qaxbase.html#setControl">setControl</a>.
+
+<h3 class=fn><a name="TQAxObject-2"></a>TQAxObject::TQAxObject ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;c, <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Creates a TQAxObject that wraps the COM object <em>c</em>. <em>parent</em> and
+<em>name</em> are propagated to the <a href="ntqwidget.html">TQWidget</a> contructor.
+<p> <p>See also <a href="qaxbase.html#control-prop">control</a>.
+
+<h3 class=fn><a name="TQAxObject-3"></a>TQAxObject::TQAxObject ( IUnknown&nbsp;*&nbsp;iface, <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Creates a TQAxObject that wraps the COM object referenced by <em>iface</em>. <em>parent</em> and <em>name</em> are propagated to the <a href="ntqobject.html">TQObject</a>
+contructor.
+
+<h3 class=fn><a name="~TQAxObject"></a>TQAxObject::~TQAxObject ()
+</h3>
+Releases the COM object and destroys the TQAxObject,
+cleaning up all allocated resources.
+
+<h3 class=fn><a href="ntqvariant.html">TQVariant</a> <a name="dynamicCall"></a>TQAxBase::dynamicCall ( const&nbsp;<a href="ntqcstring.html">TQCString</a>&nbsp;&amp;&nbsp;function, const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var1 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var2 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var3 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var4 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var5 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var6 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var7 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var8 = TQVariant ( ) )
+</h3>
+Calls the COM object's method <em>function</em>, passing the
+parameters <em>var1</em>, <em>var1</em>, <em>var2</em>, <em>var3</em>, <em>var4</em>, <em>var5</em>,
+<em>var6</em>, <em>var7</em> and <em>var8</em>, and returns the value returned by
+the method, or an invalid <a href="ntqvariant.html">TQVariant</a> if the method does not return
+a value or when the function call failed.
+<p> If <em>function</em> is a method of the object the string must be provided
+as the full prototype, for example as it would be written in a
+<a href="ntqobject.html#connect">TQObject::connect</a>() call.
+<pre>
+    activeX-&gt;dynamicCall( "Navigate(const <a href="ntqstring.html">TQString</a>&amp;)", "www.trolltech.com" );
+    </pre>
+ 
+<p> Alternatively a function can be called passing the parameters embedded
+in the string, e.g. above function can also be invoked using
+<pre>
+    activeX-&gt;dynamicCall("Navigate(\"www.trolltech.com\");
+    </pre>
+ 
+All parameters are passed as strings; it depends on the control whether
+they are interpreted correctly, and is slower than using the prototype
+with correctly typed parameters.
+<p> If <em>function</em> is a property the string has to be the name of the
+property. The property setter is called when <em>var1</em> is a valid TQVariant,
+otherwise the getter is called.
+<pre>
+    activeX-&gt;dynamicCall( "Value", 5 );
+    <a href="ntqstring.html">TQString</a> text = activeX-&gt;dynamicCall( "Text" ).toString();
+    </pre>
+ 
+Note that it is faster to get and set properties using
+<a href="ntqobject.html#property">TQObject::property</a>() and <a href="ntqobject.html#setProperty">TQObject::setProperty</a>().
+<p> It is only possible to call functions through <a href="qaxbase.html#dynamicCall">dynamicCall</a>() that
+have parameters or return values of datatypes supported by
+<a href="ntqvariant.html">TQVariant</a>. See the <a href="qaxbase.html">TQAxBase</a> class documentation for a list of
+supported and unsupported datatypes. If you want to call functions
+that have unsupported datatypes in the parameter list, use
+<a href="qaxbase.html#queryInterface">queryInterface</a>() to retrieve the appropriate COM interface, and
+use the function directly.
+<p> <pre>
+    IWebBrowser2 *webBrowser = 0;
+    activeX-&gt;queryInterface( IID_IWebBrowser2, (void**)&amp;webBrowser );
+    if ( webBrowser ) {
+        webBrowser-&gt;Navigate2( pvarURL );
+        webBrowser-&gt;Release();
+    }
+    </pre>
+ 
+<p> This is also more efficient.
+
+<p>Example: <a href="qaxcontainer-example-qutlook.html#x2720">qutlook/centralwidget.cpp</a>.
+<h3 class=fn><a href="ntqvariant.html">TQVariant</a> <a name="dynamicCall-2"></a>TQAxBase::dynamicCall ( const&nbsp;<a href="ntqcstring.html">TQCString</a>&nbsp;&amp;&nbsp;function, <a href="ntqvaluelist.html">TQValueList</a>&lt;TQVariant&gt;&nbsp;&amp;&nbsp;vars )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Calls the COM object's method <em>function</em>, passing the
+parameters in <em>vars</em>, and returns the value returned by
+the method. If the method does not return a value or when
+the function call failed this function returns an invalid
+<a href="ntqvariant.html">TQVariant</a> object.
+<p> The TQVariant objects in <em>vars</em> are updated when the method has
+out-parameters.
+
+<h3 class=fn><a href="qaxobject.html">TQAxObject</a>&nbsp;* <a name="querySubObject"></a>TQAxBase::querySubObject ( const&nbsp;<a href="ntqcstring.html">TQCString</a>&nbsp;&amp;&nbsp;name, const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var1 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var2 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var3 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var4 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var5 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var6 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var7 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var8 = TQVariant ( ) )
+</h3>
+Returns a pointer to a TQAxObject wrapping the COM object provided
+by the method or property <em>name</em>, passing passing the parameters
+<em>var1</em>, <em>var1</em>, <em>var2</em>, <em>var3</em>, <em>var4</em>, <em>var5</em>, <em>var6</em>,
+<em>var7</em> and <em>var8</em>.
+<p> If <em>name</em> is provided by a method the string must include the
+full function prototype.
+<p> If <em>name</em> is a property the string must be the name of the property,
+and <em>var1</em>, ... <em>var8</em> are ignored.
+<p> The returned TQAxObject is a child of this object (which is either of
+type TQAxObject or <a href="qaxwidget.html">TQAxWidget</a>), and is deleted when this object is
+deleted. It is however safe to delete the returned object yourself,
+and you should do so when you iterate over lists of subobjects.
+<p> COM enabled applications usually have an object model publishing
+certain elements of the application as dispatch interfaces. Use
+this method to navigate the hierarchy of the object model, e.g.
+<p> <pre>
+    <a href="qaxwidget.html">TQAxWidget</a> outlook( "Outlook.Application" );
+    TQAxObject *session = outlook.<a href="qaxbase.html#querySubObject">querySubObject</a>( "Session" );
+    if ( session ) {
+        TQAxObject *defFolder = session-&gt;<a href="qaxbase.html#querySubObject">querySubObject</a>(
+                                "GetDefaultFolder(OlDefaultFolders)",
+                                "olFolderContacts" );
+        //...
+    }
+    </pre>
+ 
+
+<p>Example: <a href="qaxcontainer-example-qutlook.html#x2721">qutlook/centralwidget.cpp</a>.
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

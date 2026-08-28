@@ -441,7 +441,6 @@ Card::~Card() {
 Card::Card( Values v, Suits s, QWidget *parent, int type, bool empt ) 
   : basicCard(v, s, parent, empt), cardType(type)
 {
-  initMetaObject();
   nextPtr=prevPtr=0;
 
   char name[3];

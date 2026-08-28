@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/tools/qmutex_unix.cpp:511 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQMutexLocker Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQMutexLocker Class Reference</h1>
+
+<p>The TQMutexLocker class simplifies locking and unlocking TQMutexes.
+<a href="#details">More...</a>
+<p>All the functions in this class are <a href="threads.html#threadsafe">thread-safe</a> when TQt is built with thread support.</p>
+<p><tt>#include &lt;<a href="qmutex-h.html">ntqmutex.h</a>&gt;</tt>
+<p><a href="qmutexlocker-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQMutexLocker"><b>TQMutexLocker</b></a> ( TQMutex&nbsp;*&nbsp;mutex )</li>
+<li class=fn><a href="#~TQMutexLocker"><b>~TQMutexLocker</b></a> ()</li>
+<li class=fn>TQMutex * <a href="#mutex"><b>mutex</b></a> () const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQMutexLocker class simplifies locking and unlocking TQMutexes.
+<p> 
+<p> 
+
+<p> The purpose of TQMutexLocker is to simplify <a href="ntqmutex.html">TQMutex</a> locking and
+unlocking. Locking and unlocking a TQMutex in complex functions and
+statements or in exception handling code is error prone and
+difficult to debug. TQMutexLocker should be used in such situations
+to ensure that the state of the mutex is well defined and always
+locked and unlocked properly.
+<p> TQMutexLocker should be created within a function where a TQMutex
+needs to be locked. The mutex is locked when TQMutexLocker is
+created, and unlocked when TQMutexLocker is destroyed.
+<p> For example, this complex function locks a TQMutex upon entering
+the function and unlocks the mutex at all the exit points:
+<p> <pre>
+    int complexFunction( int flag )
+    {
+        mutex.lock();
+
+        int return_value = 0;
+
+        switch ( flag ) {
+        case 0:
+        case 1:
+            {
+                mutex.unlock();
+                return moreComplexFunction( flag );
+            }
+
+        case 2:
+            {
+                int status = anotherFunction();
+                if ( status &lt; 0 ) {
+                    mutex.unlock();
+                    return -2;
+                }
+                return_value = status + flag;
+                break;
+            }
+
+        default:
+            {
+                if ( flag &gt; 10 ) {
+                    mutex.unlock();
+                    return -1;
+                }
+                break;
+            }
+        }
+
+        mutex.unlock();
+        return return_value;
+    }
+    </pre>
+ 
+<p> This example function will get more complicated as it is
+developed, which increases the likelihood that errors will occur.
+<p> Using TQMutexLocker greatly simplifies the code, and makes it more
+readable:
+<p> <pre>
+    int complexFunction( int flag )
+    {
+        TQMutexLocker locker( &amp;mutex );
+
+        int return_value = 0;
+
+        switch ( flag ) {
+        case 0:
+        case 1:
+            {
+                return moreComplexFunction( flag );
+            }
+
+        case 2:
+            {
+                int status = anotherFunction();
+                if ( status &lt; 0 )
+                    return -2;
+                return_value = status + flag;
+                break;
+            }
+
+        default:
+            {
+                if ( flag &gt; 10 )
+                    return -1;
+                break;
+            }
+        }
+
+        return return_value;
+    }
+    </pre>
+ 
+<p> Now, the mutex will always be unlocked when the TQMutexLocker
+object is destroyed (when the function returns since <tt>locker</tt> is
+an auto variable). Note that the mutex will be unlocked after
+the call to moreComplexFunction() in this example, avoiding
+possible bugs caused by unlocking the mutex too early, as in
+the first example.
+<p> The same principle applies to code that throws and catches
+exceptions. An exception that is not caught in the function that
+has locked the mutex has no way of unlocking the mutex before the
+exception is passed up the stack to the calling function.
+<p> TQMutexLocker also provides a <a href="#mutex">mutex</a>() member function that returns
+the mutex on which the TQMutexLocker is operating. This is useful
+for code that needs access to the mutex, such as
+<a href="ntqwaitcondition.html#wait">TQWaitCondition::wait</a>(). For example:
+<p> <pre>
+    class SignalWaiter
+    {
+    private:
+        TQMutexLocker locker;
+
+    public:
+        SignalWaiter( <a href="ntqmutex.html">TQMutex</a> *mutex )
+            : locker( mutex )
+        {
+        }
+
+        void waitForSignal()
+        {
+            ...
+            ...
+            ...
+
+            while ( ! signalled )
+                waitcondition.wait( locker.<a href="#mutex">mutex</a>() );
+
+            ...
+            ...
+            ...
+        }
+    };
+    </pre>
+ 
+<p> <p>See also <a href="ntqmutex.html">TQMutex</a>, <a href="ntqwaitcondition.html">TQWaitCondition</a>, <a href="environment.html">Environment Classes</a>, and <a href="thread.html">Threading</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQMutexLocker"></a>TQMutexLocker::TQMutexLocker ( <a href="ntqmutex.html">TQMutex</a>&nbsp;*&nbsp;mutex )
+</h3>
+
+<p> Constructs a TQMutexLocker and locks <em>mutex</em>. The mutex will be
+unlocked when the TQMutexLocker is destroyed. If <em>mutex</em> is zero,
+TQMutexLocker does nothing.
+<p> <p>See also <a href="ntqmutex.html#lock">TQMutex::lock</a>().
+
+<h3 class=fn><a name="~TQMutexLocker"></a>TQMutexLocker::~TQMutexLocker ()
+</h3>
+
+<p> Destroys the TQMutexLocker and unlocks the mutex which was locked
+in the constructor.
+<p> <p>See also <a href="#TQMutexLocker">TQMutexLocker::TQMutexLocker</a>() and <a href="ntqmutex.html#unlock">TQMutex::unlock</a>().
+
+<h3 class=fn><a href="ntqmutex.html">TQMutex</a>&nbsp;* <a name="mutex"></a>TQMutexLocker::mutex () const
+</h3>
+
+<p> Returns a pointer to the mutex which was locked in the
+constructor.
+<p> <p>See also <a href="#TQMutexLocker">TQMutexLocker::TQMutexLocker</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

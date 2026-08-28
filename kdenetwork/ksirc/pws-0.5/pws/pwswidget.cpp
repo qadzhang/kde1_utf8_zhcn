@@ -1,4 +1,4 @@
-#include <pwswidget.h>
+#include "pwswidget.h"
 #include <pwswidget.moc>
 
 #include <unistd.h>
@@ -21,10 +21,10 @@
 #include <kconfig.h>
 #include <kmsgbox.h>
 
-#include <typelayout.h>
-#include <pages.h>
-#include <kfileio.h>
-#include <addwizard.h>
+#include "typelayout.h"
+#include "pages.h"
+#include "kfileio.h"
+#include "addwizard.h"
 
 
 static KConfig *conf;
@@ -35,7 +35,7 @@ PWSWidget::PWSWidget(QWidget *parent, const char *name)
 	: QWidget(parent, name)
 {
 
-    debug("starting pwswidget");
+    tqDebug("starting pwswidget");
     increaser=0;
 
     conf = kapp->getConfig();
@@ -110,20 +110,20 @@ PWSWidget::PWSWidget(QWidget *parent, const char *name)
 
     save = FALSE;
 
-    debug("done pwswidget");
+    tqDebug("done pwswidget");
 }
 
 PWSWidget::~PWSWidget()
 {
     if(server != 0){
         delete server;
-        debug("Deleted old mathpod");
+        tqDebug("Deleted old mathpod");
     }
 }
 
 void PWSWidget::quit()
 {
-  debug ("forgetting everything");
+  tqDebug("forgetting everything");
   if(save == TRUE){
     switch(QMessageBox::information(this, "kSirc - PWS",
                                     "You did not save your changes\n"
@@ -151,7 +151,7 @@ void PWSWidget::quit()
 
 void PWSWidget::accept()
 {
-    debug ("accepted, saving configuration for pws");
+    tqDebug("accepted, saving configuration for pws");
     //dump all data to the KConfig
     ((GeneralPage *)pages.find("General"))->dumpData();
     bool needRoot=false;
@@ -166,7 +166,7 @@ void PWSWidget::accept()
             if (conf->readNumEntry("Port")<1024)
                 needRoot=true;
     }
-    debug ("now saving configuration for mathopd");
+    tqDebug("now saving configuration for mathopd");
 
     QString config;
     config+="DefaultName ";
@@ -352,19 +352,19 @@ void PWSWidget::addServer()
     AddServerWizard *wiz=new("AddServerWizard") AddServerWizard();
     int i=wiz->exec();
     qApp->processEvents();
-    debug ("done wizard-->%d",i);
+    tqDebug("done wizard-->%d",i);
     if (i==1) //pressed OK
     {
         conf->setGroup("Servers");
         QStrList names;
         conf->readListEntry("ServerNames",names);
-        debug ("name=%s",wiz->data.at(0));
+        tqDebug("name=%s",wiz->data.at(0));
         names.append (wiz->data.at(0));
         conf->writeEntry("ServerNames",names);
         conf->setGroup(wiz->data.at(0));
-        debug ("htmldir=%s",wiz->data.at(1));
+        tqDebug("htmldir=%s",wiz->data.at(1));
         conf->writeEntry("HTMLDir",wiz->data.at(1));
-        debug ("port=%d",atoi(wiz->data.at(2)));
+        tqDebug("port=%d",atoi(wiz->data.at(2)));
         conf->writeEntry("Port",atoi(wiz->data.at(2)));
         conf->sync();
     }
@@ -478,7 +478,7 @@ void PWSWidget::logWindow()
 
 
 void PWSWidget::resizeEvent(QResizeEvent *e){
-    debug("Got resize");
+    tqDebug("Got resize");
     QWidget *w = stack->visibleWidget();
     if(w != 0x0)
         w->resize(stack->size());
@@ -486,7 +486,7 @@ void PWSWidget::resizeEvent(QResizeEvent *e){
 }
 
 void PWSWidget::adjustStack(QWidget *w){
-    debug("Calling resize");
+    tqDebug("Calling resize");
     w->resize(stack->size());
 }
 

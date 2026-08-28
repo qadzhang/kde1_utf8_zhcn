@@ -27,8 +27,8 @@ KMMsgInfo::~KMMsgInfo()
 KMMsgInfo& KMMsgInfo::operator=(const KMMsgInfo& other)
 {
   KMMsgInfoInherited::assign(&other);
-  mSubject = other.mSubject.copy();
-  mFrom = other.mFrom.copy();
+  mSubject = other.mSubject;
+  mFrom = other.mFrom;
   return *this;
 }
 
@@ -37,8 +37,8 @@ KMMsgInfo& KMMsgInfo::operator=(const KMMsgInfo& other)
 KMMsgInfo& KMMsgInfo::operator=(const KMMessage& msg)
 {
   KMMsgInfoInherited::assign(&msg);
-  mSubject = msg.subject().copy();
-  mFrom = msg.from().copy();
+  mSubject = msg.subject();
+  mFrom = msg.from();
   return *this;
 }
 
@@ -48,8 +48,8 @@ void KMMsgInfo::init(const QString aSubject, const QString aFrom, time_t aDate,
 		     KMMsgStatus aStatus, const QString aXMark, 
 		     unsigned long aFolderOffset, unsigned long aMsgSize)
 {
-  mSubject = decodeRFC1522String(aSubject).copy();
-  mFrom    = decodeRFC1522String(aFrom).copy();
+  mSubject = decodeRFC1522String(aSubject);
+  mFrom    = decodeRFC1522String(aFrom);
   mDate    = aDate;
   mXMark   = aXMark;
   mStatus  = aStatus;
@@ -83,7 +83,7 @@ const QString KMMsgInfo::xmark(void) const
 //-----------------------------------------------------------------------------
 void KMMsgInfo::setSubject(const QString aSubject)
 {
-  mSubject = aSubject.copy();
+  mSubject = aSubject;
   mDirty = TRUE;  
 }
 
@@ -91,7 +91,7 @@ void KMMsgInfo::setSubject(const QString aSubject)
 //-----------------------------------------------------------------------------
 void KMMsgInfo::setFrom(const QString aFrom)
 {
-  mFrom = aFrom.copy();
+  mFrom = aFrom;
   mDirty = TRUE;  
 }
 
@@ -99,7 +99,7 @@ void KMMsgInfo::setFrom(const QString aFrom)
 //-----------------------------------------------------------------------------
 void KMMsgInfo::setXMark(const QString aXMark)
 {
-  mXMark = aXMark.copy();
+  mXMark = aXMark;
   mDirty = TRUE;  
 }
 

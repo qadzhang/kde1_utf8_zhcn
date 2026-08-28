@@ -329,7 +329,6 @@ init_balls (Display *dpy, Window window, kAttractionSaver *kas)
 	balls [i].pixel_index = -1;
       else if (glow_p)
 	balls [i].pixel_index = 0;
-      else
 	balls [i].pixel_index = random() % ncolors;
     }
 

@@ -35,7 +35,7 @@ int getRand(int nLower, int nUpper);
 CMainDlg::CMainDlg(QWidget *parent, const char *name)
        :QDialog(parent,name)
 {
-   initMetaObject();
+
    
    setCaption("KDatePicker Demonstration");
    setFixedSize(2*285,2*152);

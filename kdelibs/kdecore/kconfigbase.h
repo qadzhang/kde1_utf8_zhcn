@@ -82,7 +82,7 @@
 #include <qstrlist.h>
 
 // KDE includes
-#include <kconfigdata.h>
+#include "kconfigdata.h"
 
 /**
 * Abstract base class for KDE configuration entries
@@ -215,7 +215,7 @@ public:
 	*
 	* @return The current group
 	*/
-  const char* getGroup() const { debug( "KConfigBase::getGroup() is deprecated, use KConfigBase::group() instead" );
+  const char* getGroup() const { tqDebug( "KConfigBase::getGroup() is deprecated, use KConfigBase::group() instead" );
   return group(); }
 
   /**
@@ -408,6 +408,18 @@ public:
 	*   exist, a null string is returned.	
 */
   const char* writeEntry( const char* pKey, const char* pValue,
+						  bool bPersistent = true, bool bGlobal = false,
+						  bool bNLS = false );
+
+  //   Modified for the KDE1 Revival Project, 2026（TQt3 底座迁移）
+  //   What/Why：TQString 的 operator const char*（TQt3 保留）使 QString 实参
+  //   在 char* 版与 bool 版重载间产生歧义——显式 TQString 版提供精确匹配，
+  //   全库调用点（kdebase 等上百处）零改动消歧；行为与 char* 版一致（经
+  //   ascii() 通道，受 setCodecForCStrings 统一 UTF-8 语义）
+  const char* writeEntry( const char* pKey, const TQString& pValue,
+						  bool bPersistent = true, bool bGlobal = false,
+						  bool bNLS = false );
+  const char* writeEntry( const TQString& pKey, const TQString& pValue,
 						  bool bPersistent = true, bool bGlobal = false,
 						  bool bNLS = false );
 

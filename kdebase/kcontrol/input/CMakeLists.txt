@@ -1,6 +1,6 @@
 add_subdirectory(pics)
 include_directories(
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${KDE1_INCLUDE_DIR}
     )
 
@@ -9,13 +9,13 @@ main.cpp mouse.cpp keyboard.cpp kslidercontrol.cpp
 )
 
 set(INPUT_MOC
-mouse.moc keyboard.moc kslidercontrol.moc
+mouse.h keyboard.h kslidercontrol.h
 )
-QT1_WRAP_MOC(MOC_FILES ${INPUT_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${INPUT_MOC})
 
 add_executable(kcminput ${INPUT_SRCS} ${MOC_FILES})
 target_link_libraries(kcminput
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

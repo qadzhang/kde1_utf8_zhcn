@@ -9,13 +9,13 @@ theme.cpp installer.cpp main.cpp kwmcom.cpp options.cpp widgetcanvas.cpp about.c
 )
 
 set(THEMES_MOC
-theme.moc installer.moc colors.moc widgetcanvas.moc options.moc about.moc groupdetails.moc themecreator.moc
+theme.h installer.h colors.h widgetcanvas.h options.h about.h groupdetails.h themecreator.h
 )
-QT1_WRAP_MOC(MOC_FILES ${THEMES_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${THEMES_MOC})
 
 add_executable(kthememgr ${THEMES_SRCS} ${MOC_FILES})
 target_link_libraries(kthememgr
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

@@ -7,16 +7,16 @@ kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp xview.cpp
 	ipc.cpp protocol.cpp http.cpp file.cpp ftp.cpp manage.cpp icon.cpp
 	slave.cpp tar.cpp subprotocol.cpp cgi.cpp gzip.cpp ftp_proxy.cpp ../debug.cpp)
 
-set(KIOSLAVE_MOC kioslave_ipc.moc main.moc http.moc file.moc tar.moc ftp.moc protocol.moc subprotocol.moc cgi.moc gzip.moc icon.moc ftp_proxy.moc)
+set(KIOSLAVE_MOC kioslave_ipc.h main.h http.h file.h tar.h ftp.h protocol.h subprotocol.h cgi.h gzip.h icon.h ftp_proxy.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KIOSLAVE_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KIOSLAVE_MOC})
 
 add_executable(kioslave ${KIOSLAVE_SRCS} ${MOC_FILES})
 target_link_libraries(kioslave
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KIMGIO}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     OpenSSL::SSL
     )

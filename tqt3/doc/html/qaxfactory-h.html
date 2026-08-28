@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/qaxfactory.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>qaxfactory.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>qaxfactory.h</h1>
+
+<p>This is the verbatim text of the qaxfactory.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/qaxfactory.h   3.3.8   edited Jan 11 14:46 $
+**
+** Declaration of the TQAxFactory class
+**
+** Copyright (C) 2001-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the Active TQt integration.
+**
+** Licensees holding valid TQt Enterprise Edition
+** licenses for Windows may use this file in accordance with the TQt Commercial
+** License Agreement provided with the Software.
+**
+** This file is not available for use under any other license without
+** express written permission from the copyright holder.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+** See http://www.trolltech.com/pricing.html or email sales@trolltech.com for
+**   information about TQt Commercial License Agreements.
+**
+** Contact info@trolltech.com if any conditions of this licensing are
+** not clear to you.
+**
+**********************************************************************/
+
+#ifndef TQAXFACTORY_H
+#define TQAXFACTORY_H
+
+#include &lt;ntqdict.h&gt;
+#include &lt;ntquuid.h&gt;
+#include &lt;private/qcom_p.h&gt;
+#include &lt;ntqmetaobject.h&gt;
+
+// {22B230F6-8722-4051-ADCB-E7C9CE872EB3}
+#ifndef IID_QAxFactory
+#define IID_QAxFactory TQUuid( 0x22b230f6, 0x8722, 0x4051, 0xad, 0xcb, 0xe7, 0xc9, 0xce, 0x87, 0x2e, 0xb3 )
+#endif
+
+class TQWidget;
+class TQMetaObject;
+class TQSettings;
+struct IDispatch;
+
+struct TQAxFactoryInterface : public TQFeatureListInterface
+{
+public:
+#ifndef Q_QDOC
+    virtual TQWidget *create( const TQString &amp;key, TQWidget *parent = 0, const char *name = 0 ) = 0;
+    virtual TQObject *createObject( const TQString &amp;key, TQObject *parent = 0, const char *name = 0 ) = 0;
+    virtual TQMetaObject *metaObject( const TQString &amp;key ) const = 0;
+    virtual bool createObjectWrapper(TQObject *object, IDispatch **wrapper) = 0;
+
+    virtual TQUuid classID( const TQString &amp;key ) const = 0;
+    virtual TQUuid interfaceID( const TQString &amp;key ) const = 0;
+    virtual TQUuid eventsID( const TQString &amp;key ) const = 0;    
+    virtual TQUuid typeLibID() const = 0;
+    virtual TQUuid appID() const = 0;
+
+    virtual void registerClass( const TQString &amp;key, TQSettings * ) const = 0;
+    virtual void unregisterClass( const TQString &amp;key, TQSettings * ) const = 0;
+
+    virtual bool validateLicenseKey( const TQString &amp;key, const TQString &amp;licenseKey) const = 0;
+
+    virtual TQString exposeToSuperClass( const TQString &amp;key ) const = 0;
+    virtual bool stayTopLevel( const TQString &amp;key ) const = 0;
+    virtual bool hasStockEvents( const TQString &amp;key ) const = 0;
+    virtual bool isService() const = 0;
+#endif
+};
+
+extern TQAxFactoryInterface *qAxFactory();
+
+class TQAxFactory : public TQAxFactoryInterface
+{
+public:
+    TQAxFactory( const TQUuid &amp;, const TQUuid &amp;);
+    virtual ~TQAxFactory();
+    TQ_REFCOUNT;
+
+    TQRESULT queryInterface( const TQUuid &amp;iid, TQUnknownInterface **iface );
+
+#ifdef Q_QDOC
+    virtual TQStringList featureList() const = 0;
+#endif
+    virtual TQWidget *create( const TQString &amp;key, TQWidget *parent = 0, const char *name = 0 );
+    virtual TQObject *createObject( const TQString &amp;key, TQObject *parent = 0, const char *name = 0 );
+    virtual TQMetaObject *metaObject( const TQString &amp;key ) const;
+    virtual bool createObjectWrapper(TQObject *object, IDispatch **wrapper);
+
+    virtual TQUuid classID( const TQString &amp;key ) const;
+    virtual TQUuid interfaceID( const TQString &amp;key ) const;
+    virtual TQUuid eventsID( const TQString &amp;key ) const;
+
+    virtual TQUuid typeLibID() const;
+    virtual TQUuid appID() const;
+
+    virtual void registerClass( const TQString &amp;key, TQSettings * ) const;
+    virtual void unregisterClass( const TQString &amp;key, TQSettings * ) const;
+
+    virtual bool validateLicenseKey( const TQString &amp;key, const TQString &amp;licenseKey) const;
+
+    virtual TQString exposeToSuperClass( const TQString &amp;key ) const;
+    virtual bool stayTopLevel( const TQString &amp;key ) const;
+    virtual bool hasStockEvents( const TQString &amp;key ) const;
+    virtual bool isService() const;
+
+    enum ServerType {
+	SingleInstance,
+	MultipleInstances
+    };
+
+    static bool isServer();
+    static TQString serverDirPath();
+    static TQString serverFilePath();
+    static bool startServer(ServerType type = MultipleInstances);
+    static bool stopServer();
+
+private:
+    TQUuid typelib;
+    TQUuid app;
+};
+
+inline bool TQAxFactory::startServer(ServerType type)
+{
+    // implementation in qaxservermain.cpp
+    extern bool qax_startServer(ServerType);
+    return qax_startServer(type);
+}
+
+inline bool TQAxFactory::stopServer()
+{
+    // implementation in qaxservermain.cpp
+    extern bool qax_stopServer();
+    return qax_stopServer();
+}
+
+#define TQAXFACTORY_EXPORT( IMPL, TYPELIB, APPID )	\
+    TQUnknownInterface *ucm_instantiate()		\
+    {							\
+	IMPL *impl = new IMPL( TQUuid(TYPELIB), TQUuid(APPID) );	\
+	TQUnknownInterface* iface = 0; 			\
+	impl-&gt;queryInterface( IID_QUnknown, &amp;iface );	\
+	return iface;					\
+    }
+
+#define TQAXFACTORY_DEFAULT( Class, IIDClass, IIDInterface, IIDEvents, IIDTypeLib, IIDApp ) \
+    class TQAxDefaultFactory : public TQAxFactory \
+    { \
+    public: \
+	TQAxDefaultFactory( const TQUuid &amp;app, const TQUuid &amp;lib) \
+	: TQAxFactory( app, lib ) {} \
+	TQStringList featureList() const \
+	{ \
+	    TQStringList list; \
+	    list &lt;&lt; #Class; \
+	    return list; \
+	} \
+	TQMetaObject *metaObject( const TQString &amp;key ) const \
+	{ \
+	    if ( key == #Class ) \
+		return Class::staticMetaObject(); \
+	    return 0; \
+	} \
+	TQWidget *create( const TQString &amp;key, TQWidget *parent, const char *name ) \
+	{ \
+	    if ( key == #Class ) \
+		return new Class( parent, name ); \
+	    return 0; \
+	} \
+	TQUuid classID( const TQString &amp;key ) const \
+	{ \
+	    if ( key == #Class ) \
+		return TQUuid( IIDClass ); \
+	    return TQUuid(); \
+	} \
+	TQUuid interfaceID( const TQString &amp;key ) const \
+	{ \
+	    if ( key == #Class ) \
+		return TQUuid( IIDInterface ); \
+	    return TQUuid(); \
+	} \
+	TQUuid eventsID( const TQString &amp;key ) const \
+	{ \
+	    if ( key == #Class ) \
+		return TQUuid( IIDEvents ); \
+	    return TQUuid(); \
+	} \
+    }; \
+    TQAXFACTORY_EXPORT( TQAxDefaultFactory, IIDTypeLib, IIDApp ) \
+
+template&lt;class T&gt;
+class TQAxClass : public TQAxFactory
+{
+public:
+    TQAxClass(const TQString &amp;appId, const TQString &amp;libId)
+    : TQAxFactory(appId, libId)
+    {}
+
+    TQMetaObject *metaObject(const TQString &amp;key) const { return T::staticMetaObject(); }
+    TQStringList featureList() const { return TQString(T::staticMetaObject()-&gt;className()); }
+    TQWidget *create(const TQString &amp;key, TQWidget *parent, const char *name)
+    {
+	if (key != TQString(T::staticMetaObject()-&gt;className())) return 0;
+	if (!qstrcmp(T::staticMetaObject()-&gt;classInfo("Creatable", true), "no")) return 0;
+	return new T(parent, name);
+    }
+};
+
+#define TQAXFACTORY_BEGIN(IDTypeLib, IDApp) \
+    class TQAxFactoryList : public TQAxFactory \
+    { \
+	TQStringList factoryKeys; \
+	TQDict&lt;TQAxFactoryInterface&gt; factories; \
+    public: \
+	TQAxFactoryList() \
+	: TQAxFactory(IDApp, IDTypeLib) \
+	{ \
+	    factories.setAutoDelete(true); \
+	    TQAxFactoryInterface *factory = 0; \
+	    TQStringList keys; \
+	    TQStringList::Iterator it; \
+
+#define TQAXCLASS(Class) \
+	    factory = new TQAxClass&lt;Class&gt;(appID(), typeLibID()); \
+	    keys = factory-&gt;featureList(); \
+	    for (it = keys.begin(); it != keys.end(); ++it) { \
+		factoryKeys += *it; \
+		factories.insert(*it, factory); \
+	    }\
+
+#define TQAXFACTORY_END() \
+	} \
+	TQStringList featureList() const {  return factoryKeys; } \
+	TQWidget *create(const TQString &amp;key, TQWidget *parent, const char *name) { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    return f ? f-&gt;create(key, parent, name) : 0; \
+	} \
+	TQUuid classID(const TQString &amp;key) { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    return f ? f-&gt;classID(key) : TQUuid(); \
+	} \
+	TQUuid interfaceID(const TQString &amp;key) { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    return f ? f-&gt;interfaceID(key) : TQUuid(); \
+	} \
+	TQUuid eventsID(const TQString &amp;key) { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    return f ? f-&gt;eventsID(key) : TQUuid(); \
+	} \
+	void registerClass( const TQString &amp;key, TQSettings *s ) const { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    if (f) f-&gt;registerClass(key, s); \
+	} \
+	void unregisterClass( const TQString &amp;key, TQSettings *s ) const { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    if (f) f-&gt;unregisterClass(key, s); \
+	} \
+	TQString exposeToSuperClass( const TQString &amp;key ) const { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    return f ? f-&gt;exposeToSuperClass(key) : TQString(); \
+	} \
+	bool stayTopLevel( const TQString &amp;key ) const { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    return f ? f-&gt;stayTopLevel(key) : false; \
+	} \
+	bool hasStockEvents( const TQString &amp;key ) const { \
+	    TQAxFactoryInterface *f = factories[key]; \
+	    return f ? f-&gt;hasStockEvents(key) : false; \
+	} \
+    }; \
+    TQUnknownInterface *ucm_instantiate()		\
+    {							\
+	TQAxFactoryList *impl = new TQAxFactoryList();	\
+	TQUnknownInterface* iface = 0; 			\
+	impl-&gt;queryInterface( IID_QUnknown, &amp;iface );	\
+	return iface;					\
+    }
+
+
+#endif // TQAXFACTORY_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

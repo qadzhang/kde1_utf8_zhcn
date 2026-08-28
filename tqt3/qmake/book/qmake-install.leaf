@@ -1,0 +1,69 @@
+\chapter Installing qmake
+
+\section1 Installing qmake
+
+\e qmake is built by default when TQt is built.  
+
+This section explains how to build \e qmake manually. Skip ahead to
+\l{The 10 minute guide to using qmake}, if you already have \e qmake.
+
+\section2 Installing qmake manually
+
+Before building TQt manually the following environment variables must
+be set:
+
+\list
+\i QMAKESPEC \BR This must be set to the platform and compiler
+combination that you are using on your system.  \BR For example, if
+you are using Windows and Microsoft Visual Studio, you would set this
+environment variable to \e win32-msvc.  If you are using Solaris and
+g++, you would set this environment variable to \e solaris-g++.
+
+The following is a list of environment variables available to choose
+from when setting QMAKESPEC:
+
+aix-64
+aix-g++
+aix-xlc
+bsdi-g++
+freebsd-g++
+hurd-g++
+linux-cxx
+linux-g++
+linux-icc
+linux-kcc
+macx-g++
+macx-pbuilder
+netbsd-g++
+openbsd-g++
+openunix-cc
+qnx-g++
+solaris-64
+solaris-cc
+solaris-g++
+unixware-g
+unixware7-cc
+unixware7-g++
+win32-g++
+win32-msvc
+win32-watc
+
+The environment variable should be set to qws/envvar where envvar is
+one of the following:
+
+linux-arm-g++      linux-generic-g++  linux-mips-g++     linux-x86-g++
+linux-freebsd-g++  linux-ipaq-g++     linux-solaris-g++  qnx-rtp-g++
+
+\i TQTDIR \BR This must be set to where TQt is (or will be) installed.
+For example, \e {c:\\qt} and \e {\\local\\qt} 
+\endlist
+
+Once the environment variables are set go into the qmake directory, \e
+$TQTDIR/qmake, e.g. \e{C:\\qt\\qmake}. Now run \e make or \e nmake
+depending on your compiler.
+
+When the make has completed, \e qmake is ready for use.
+
+
+
+

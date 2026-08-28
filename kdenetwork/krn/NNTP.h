@@ -31,7 +31,7 @@
 #include <qobject.h>
 
 #include <ksock.h>
-#include <ktreeview.h>
+#include "ktreeview.h"
 #include <kconfig.h>
 #include <ksimpleconfig.h>
 

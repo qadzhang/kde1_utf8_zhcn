@@ -14,7 +14,7 @@ public:
 
     virtual ~IntValidator();
 
-    QValidator::State validate( QString &, int & );
+    TQValidator::State validate( TQString &, int & ) const;  /* TQt3 迁移：validate 为 const 纯虚 */
     
     virtual void setRange( int bottom, int top );
 

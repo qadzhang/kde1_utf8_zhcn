@@ -12,7 +12,7 @@
  */
 #ifndef PFS_H
 #define PFS_H
-#include <copyright.h>
+#include "copyright.h"
 
 #ifdef PCNFS
 #include <tklib.h>

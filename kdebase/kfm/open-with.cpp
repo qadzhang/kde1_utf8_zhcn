@@ -43,9 +43,9 @@ KApplicationTree::KApplicationTree( QWidget *parent ) : QWidget( parent )
   tree->setSmoothScrolling( true );
   setFocusProxy( tree );
   
-  QString personal = KApplication::localkdedir().copy();
+  QString personal = KApplication::localkdedir();
   personal += "/share/applnk";
-  QString global   = KApplication::kde_appsdir().copy();
+  QString global   = KApplication::kde_appsdir();
   
   parseKdelnkDir( QDir(personal), tree );
   parseKdelnkDir( QDir(global), tree );

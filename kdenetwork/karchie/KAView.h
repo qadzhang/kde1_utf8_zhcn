@@ -79,7 +79,7 @@ private:
   static const char searchHostPixName[];
 
 private slots:
-  void slotReturnPressed() { /*debug("KAViewSearchterm::slotReturnPressed");*/ emit sigTextSelected(); }
+  void slotReturnPressed() { /*tqDebug("KAViewSearchterm::slotReturnPressed");*/ emit sigTextSelected(); }
 
 };
 

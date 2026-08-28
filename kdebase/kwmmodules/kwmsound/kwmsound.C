@@ -133,7 +133,7 @@ KWmSound::KWmSound(KWMModuleApplication *modapp){
     }
   }
   if (tries==10) {
-    warning("kwmsound: Failed connecting the audio server.\n"
+    tqWarning("kwmsound: Failed connecting the audio server.\n"
            "Please check manually if you can start kaudioserver.");
     exit(1);
   }
@@ -221,7 +221,7 @@ void KWmSound::loadSetup(){
    
    } else if ('/' != helper[0]) {
      
-     tmp = KApplication::kde_sounddir().copy();
+     tmp = KApplication::kde_sounddir();
      tmp += "/";
      tmp += helper;
      helper = tmp;

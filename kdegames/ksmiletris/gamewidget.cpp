@@ -171,16 +171,16 @@ void GameWidget::loadSprites()
 void GameWidget::loadSprite(Sprite spr, const char *path)
 {
 	if (!sprites[spr].load(kapp->kde_datadir() + "/ksmiletris/data/" + path))
-		fatal("Cannot open data files.\nHave you correctly installed KSmiletris?");
+		tqFatal("Cannot open data files.\nHave you correctly installed KSmiletris?");
 }
 
 void GameWidget::loadMaskedSprite(Sprite spr, char *path1, const char *path2)
 {
 	QBitmap bmp;
 	if (!sprites[spr].load(kapp->kde_datadir() + "/ksmiletris/data/" + path1))
-		fatal("Cannot open data files.\nHave you correctly installed KSmiletris?");
+		tqFatal("Cannot open data files.\nHave you correctly installed KSmiletris?");
 	if (!bmp.load(kapp->kde_datadir() + "/ksmiletris/data/" + path2))
-		fatal("Cannot open data files.\nHave you correctly installed KSmiletris?");
+		tqFatal("Cannot open data files.\nHave you correctly installed KSmiletris?");
 	sprites[spr].setMask(bmp);
 }
 

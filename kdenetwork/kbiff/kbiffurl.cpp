@@ -33,7 +33,7 @@ void KBiffURL::encodeURLStrict(QString& _url)
 	{
 		static char *safe = "$-._!*(),"; /* RFC 1738 */
 
-		char t = _url[i];
+		char t = _url[i].latin1();  /* TQt3 迁移 */
 
 		if ( (( t >= 'A') && ( t <= 'Z')) ||
 				(( t >= 'a') && ( t <= 'z')) ||
@@ -41,17 +41,17 @@ void KBiffURL::encodeURLStrict(QString& _url)
 				(strchr(safe, t))
 			)
 		{
-			new_url[new_length++] = _url[i];
+			new_url[new_length++] = _url[i].latin1();
 		}
 		else
 		{
 			new_url[new_length++] = '%';
 
-			unsigned char c = ((unsigned char)_url[i]) / 16;
+			unsigned char c = ((unsigned char)_url[i].latin1()) / 16;  /* TQt3 迁移 */
 			c += (c > 9) ? ('A' - 10) : '0';
 			new_url[new_length++] = c;
 
-			c = ((unsigned char)_url[ i ]) % 16;
+			c = ((unsigned char)_url[i].latin1()) % 16;  /* TQt3 迁移 */
 			c += (c > 9) ? ('A' - 10) : '0';
 			new_url[new_length++] = c;
 		}

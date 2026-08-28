@@ -1,0 +1,26 @@
+.TH "msg2tqm" "1" "3.0.3" "Troll Tech AS, Norway." ""
+.SH "NAME"
+.LP 
+msg2tqm \- Converts translated .po files to a Qt\-specific binary format.
+.SH "SYNTAX"
+.LP 
+msg2tqm myapp_de.po myapp_de.qm
+.SH "DESCRIPTION"
+.LP 
+
+Converts translated .po files to a Qt\-specific binary
+format (".qm" TQt message files). The TQt message files
+are platform and locale independent, containing
+translations in Unicode and various hash tables to
+provide fast look\-up. 
+
+                msg2tqm myapp_de.po myapp_de.qm
+                msg2tqm myapp_fr.po myapp_fr.qm
+                msg2tqm myapp_ja.po myapp_ja.qm
+
+
+In your application, use QTranslator::load() to load
+translation files appropriate for the user's language.
+.SH "AUTHORS"
+.LP 
+TrollTech <http://www.trolltech.com/>

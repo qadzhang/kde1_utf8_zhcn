@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqasciicache.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqasciicache.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqasciicache.h</h1>
+
+<p>This is the verbatim text of the ntqasciicache.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqasciicache.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQAsciiCache template/macro class
+**
+** Created : 950209
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the tools module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQASCIICACHE_H
+#define TQASCIICACHE_H
+
+#ifndef QT_H
+#include "ntqgcache.h"
+#endif // QT_H
+
+
+template&lt;class type&gt; 
+class TQAsciiCache
+#ifdef Q_QDOC
+	: public TQPtrCollection
+#else
+	: public TQGCache
+#endif
+{
+public:
+    TQAsciiCache( const TQAsciiCache&lt;type&gt; &amp;c ) : TQGCache(c) {}
+    TQAsciiCache( int maxCost=100, int size=17, bool caseSensitive=true,
+		 bool copyKeys=true )
+	: TQGCache( maxCost, size, AsciiKey, caseSensitive, copyKeys ) {}
+   ~TQAsciiCache()			{ clear(); }
+    TQAsciiCache&lt;type&gt; &amp;operator=( const TQAsciiCache&lt;type&gt; &amp;c )
+			{ return (TQAsciiCache&lt;type&gt;&amp;)TQGCache::operator=(c); }
+    int	  maxCost()   const		{ return TQGCache::maxCost(); }
+    int	  totalCost() const		{ return TQGCache::totalCost(); }
+    void  setMaxCost( int m )		{ TQGCache::setMaxCost(m); }
+    uint  count()     const		{ return TQGCache::count(); }
+    uint  size()      const		{ return TQGCache::size(); }
+    bool  isEmpty()   const		{ return TQGCache::count() == 0; }
+    void  clear()			{ TQGCache::clear(); }
+    bool  insert( const char *k, const type *d, int c=1, int p=0 )
+			{ return TQGCache::insert_other(k,(Item)d,c,p);}
+    bool  remove( const char *k )
+			{ return TQGCache::remove_other(k); }
+    type *take( const char *k )
+			{ return (type *)TQGCache::take_other(k); }
+    type *find( const char *k, bool ref=true ) const
+			{ return (type *)TQGCache::find_other(k,ref);}
+    type *operator[]( const char *k ) const
+			{ return (type *)TQGCache::find_other(k);}
+    void  statistics() const	      { TQGCache::statistics(); }
+private:
+    void  deleteItem( Item d );
+};
+
+template&lt;&gt; inline void TQAsciiCache&lt;void&gt;::deleteItem( TQPtrCollection::Item )
+{
+}
+
+template&lt;class type&gt; inline void TQAsciiCache&lt;type&gt;::deleteItem( TQPtrCollection::Item d )
+{
+    if ( del_item ) delete (type *)d;
+}
+
+
+template&lt;class type&gt; 
+class TQAsciiCacheIterator : public TQGCacheIterator
+{
+public:
+    TQAsciiCacheIterator( const TQAsciiCache&lt;type&gt; &amp;c ):TQGCacheIterator((TQGCache &amp;)c) {}
+    TQAsciiCacheIterator( const TQAsciiCacheIterator&lt;type&gt; &amp;ci)
+				: TQGCacheIterator( (TQGCacheIterator &amp;)ci ) {}
+    TQAsciiCacheIterator&lt;type&gt; &amp;operator=(const TQAsciiCacheIterator&lt;type&gt;&amp;ci)
+	{ return ( TQAsciiCacheIterator&lt;type&gt;&amp;)TQGCacheIterator::operator=( ci ); }
+    uint  count()   const     { return TQGCacheIterator::count(); }
+    bool  isEmpty() const     { return TQGCacheIterator::count() == 0; }
+    bool  atFirst() const     { return TQGCacheIterator::atFirst(); }
+    bool  atLast()  const     { return TQGCacheIterator::atLast(); }
+    type *toFirst()	      { return (type *)TQGCacheIterator::toFirst(); }
+    type *toLast()	      { return (type *)TQGCacheIterator::toLast(); }
+    operator type *() const   { return (type *)TQGCacheIterator::get(); }
+    type *current()   const   { return (type *)TQGCacheIterator::get(); }
+    const char *currentKey() const { return TQGCacheIterator::getKeyAscii(); }
+    type *operator()()	      { return (type *)TQGCacheIterator::operator()();}
+    type *operator++()	      { return (type *)TQGCacheIterator::operator++(); }
+    type *operator+=(uint j)  { return (type *)TQGCacheIterator::operator+=(j);}
+    type *operator--()	      { return (type *)TQGCacheIterator::operator--(); }
+    type *operator-=(uint j)  { return (type *)TQGCacheIterator::operator-=(j);}
+};
+
+
+#endif // TQASCIICACHE_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

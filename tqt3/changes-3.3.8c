@@ -1,0 +1,15 @@
+Qt 3.3.8c is a bug-fix release. It maintains both forward and backward
+compatibility (source and binary) with TQt 3.3.b, TQt 3.3.7, TQt 3.3.6,
+Qt 3.3.5, 3.3.4, TQt 3.3.3, TQt 3.3.2, TQt 3.3.1 and TQt 3.3.0.
+
+****************************************************************************
+*                           General                                        *
+****************************************************************************
+
+General Improvements
+--------------------
+
+- Technical
+
+    * This version adds two new methods to QObject, childrenListObject() and objectTreesListObject()
+      No other changes were made

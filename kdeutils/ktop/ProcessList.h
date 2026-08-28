@@ -50,7 +50,7 @@ public:
 	ProcessLVI(QListView* lv) : QListViewItem(lv) { }
 	ProcessLVI(QListViewItem* lvi) : QListViewItem(lvi) { }
 
-	virtual const char* key(int column, bool) const;
+	TQString key(int column, bool) const;  /* TQt3 迁移：TQListViewItem::key 返回 TQString */
 } ;
 
 class QPopupMenu;

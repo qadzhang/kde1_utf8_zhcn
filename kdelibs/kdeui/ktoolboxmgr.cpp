@@ -27,7 +27,7 @@
 #include <config.h>
 #endif
 
-#include <ktoolboxmgr.h>
+#include "ktoolboxmgr.h"
 #include <kwm.h>
 
  // $Id: ktoolboxmgr.cpp,v 1.15 1999/01/18 10:57:12 kulow Exp $
@@ -150,7 +150,7 @@ void KToolBoxManager::doMove (bool hot_static, bool _dynamic, bool dontmove)
   Window wroot, wchild;
   int trash;
   
-  //debug("Doing move...");
+  //tqDebug("Doing move...");
 
   working=true;
   mode = Moving;
@@ -318,7 +318,7 @@ void KToolBoxManager::doResize (bool dontresize, bool _dynamic)
   Window wroot, wchild;
   int trash;
   
-  //debug("Doing resize...");
+  //tqDebug("Doing resize...");
 
   working=true;
   dynamic = _dynamic;

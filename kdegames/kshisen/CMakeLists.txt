@@ -4,13 +4,13 @@ include_directories (
 
 set(Kshisen_SRCS app.cpp board.cpp main.cpp)
 
-set(Kshisen_MOC app.moc board.moc)
+set(Kshisen_MOC app.h board.h)
 
-QT1_WRAP_MOC(MOC_FILES ${Kshisen_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${Kshisen_MOC})
 
 add_executable(kshisen1 ${Kshisen_SRCS} ${MOC_FILES})
 target_link_libraries(kshisen1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

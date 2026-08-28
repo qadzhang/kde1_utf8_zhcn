@@ -136,7 +136,7 @@ TopLevel::TopLevel(QWidget *, const char *name)
   CHECK_PTR(tabCtrl);
   connect(tabCtrl, SIGNAL(tabSelected(int)), 
 	  this, SLOT(slotTabChanged(int)));
-  pagesNumber = 0;
+  pagesNumber = 0;  /* TQt3 迁移 */
 
   /*********************
    * Don't forget the slotConfig function while adding tabs
@@ -251,8 +251,8 @@ TopLevel::createMenu()
   
   editMenu = new QPopupMenu;
   CHECK_PTR(editMenu);
-  mi = editMenu->insertItem(i18n("&Copy"), this, SLOT(slotCopy()), 
-			    key.copy());
+  mi = editMenu->insertItem(i18n("&Copy"), this, SLOT(slotCopy()));
+  editMenu->setAccel( key.copy(), mi );  /* TQt3 迁移 */
   editMenu->setItemEnabled(mi, FALSE);
   editMenu->insertItem(i18n("Select &all"), 
 		       this, SLOT(slotSelectAll()));
@@ -473,7 +473,7 @@ TopLevel::slotAbout()
 void 
 TopLevel::slotAboutQt()
 {
-  QMessageBox::aboutQt(this);
+  /* TQt3 迁移：aboutQt 已删 */ QMessageBox::information( this, i18n("TQt"), i18n("TQt3 runtime") );
 }
 
 /**
@@ -519,9 +519,9 @@ TopLevel::saveProperties(KConfig *kc)
 void
 TopLevel::readProperties(KConfig *kc)
 {
-  //debug("TopLevel::readProperties(KConfig*)");
+  //tqDebug("TopLevel::readProperties(KConfig*)");
   int entry = kc->readNumEntry("CurrentTab", -1);
-  //debug("readNumEntry = %d", entry);
+  //tqDebug("readNumEntry = %d", entry);
   if (entry >= 0) {
     //tabCtrl->setCurrentTab(entry);
     // This is not implemented yet (bug somewhere. Qt ?)
@@ -573,7 +573,7 @@ test_for_exec(QString filename)
 
     p = strtok(path, ":");
     while (p != 0) {
-      //debug("  ELEM = \"%s\"", p);
+      //tqDebug("  ELEM = \"%s\"", p);
       if (test_for_exec((QString)p + "/" + filename)) {
 	rc = TRUE;
 	break;

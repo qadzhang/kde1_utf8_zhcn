@@ -85,8 +85,8 @@
 
 
 
-#include <ktopwidget.h>
-#include <ktopwidget.h>
+#include "ktopwidget.h"
+#include "ktopwidget.h"
 
 // a static pointer (too bad we cannot have static objects in libraries)
 //QList<KTopLevelWidget>* KTopLevelWidget::memberList = 0L;

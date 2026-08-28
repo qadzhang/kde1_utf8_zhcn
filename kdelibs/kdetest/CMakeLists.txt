@@ -3,29 +3,29 @@ include_directories(
     ../kdeui
 )
 set(BASE_LIBS
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     X11::X11
     kdecore
     kdeui
 )
 
-QT1_WRAP_MOC(MOC_CHARSET kcharsetstest.h)
-QT1_WRAP_MOC(MOC_CONFIG kconfigtest.h)
-QT1_WRAP_MOC(MOC_CONTAINER kcontainertest.h)
-QT1_WRAP_MOC(MOC_DATEPICK kdatepicktestdlg.h)
-QT1_WRAP_MOC(MOC_ICONLOADER kiconloadertestmain.h)
-QT1_WRAP_MOC(MOC_LED kledtest.h)
-QT1_WRAP_MOC(MOC_LINE klinetest.h)
-QT1_WRAP_MOC(MOC_LOCALE klocaletest.h)
-QT1_WRAP_MOC(MOC_MSGBOX kmsgboxtest.h)
-QT1_WRAP_MOC(MOC_PANNER kpannertest.h)
-QT1_WRAP_MOC(MOC_PROCESS kprocesstest.h)
-QT1_WRAP_MOC(MOC_RULER krulertest.h)
-QT1_WRAP_MOC(MOC_SPINBOX kspinboxtest.h)
-QT1_WRAP_MOC(MOC_STATUSBAR kstatusbartest.h)
-QT1_WRAP_MOC(MOC_TABCTL ktabctltest.h)
-QT1_WRAP_MOC(MOC_TREELIST ktreelisttest.h)
-QT1_WRAP_MOC(MOC_WINDOW kwindowtest.h)
+TQT3_WRAP_CPP(MOC_CHARSET kcharsetstest.h)
+TQT3_WRAP_CPP(MOC_CONFIG kconfigtest.h)
+TQT3_WRAP_CPP(MOC_CONTAINER kcontainertest.h)
+TQT3_WRAP_CPP(MOC_DATEPICK kdatepicktestdlg.h)
+TQT3_WRAP_CPP(MOC_ICONLOADER kiconloadertestmain.h)
+TQT3_WRAP_CPP(MOC_LED kledtest.h)
+TQT3_WRAP_CPP(MOC_LINE klinetest.h)
+TQT3_WRAP_CPP(MOC_LOCALE klocaletest.h)
+TQT3_WRAP_CPP(MOC_MSGBOX kmsgboxtest.h)
+TQT3_WRAP_CPP(MOC_PANNER kpannertest.h)
+TQT3_WRAP_CPP(MOC_PROCESS kprocesstest.h)
+TQT3_WRAP_CPP(MOC_RULER krulertest.h)
+TQT3_WRAP_CPP(MOC_SPINBOX kspinboxtest.h)
+TQT3_WRAP_CPP(MOC_STATUSBAR kstatusbartest.h)
+TQT3_WRAP_CPP(MOC_TABCTL ktabctltest.h)
+TQT3_WRAP_CPP(MOC_TREELIST ktreelisttest.h)
+TQT3_WRAP_CPP(MOC_WINDOW kwindowtest.h)
 
 add_executable(kbuttonboxdemo kbuttonboxtest.cpp)
 add_executable(kcharsetsdemo kcharsetstest.cpp ${MOC_CHARSET})

@@ -21,7 +21,7 @@
 
 
 #include <kcontrol.h>
-#include "locale.h"
+#include "klocaleconfig.h" // TQt3 迁移：locale.h 劫持系统头名，改名
 
 
 class KLocaleApplication : public KControlApplication

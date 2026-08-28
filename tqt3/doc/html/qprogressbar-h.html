@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqprogressbar.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqprogressbar.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqprogressbar.h</h1>
+
+<p>This is the verbatim text of the ntqprogressbar.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqprogressbar.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQProgressBar class
+**
+** Created : 970520
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the widgets module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQPROGRESSBAR_H
+#define TQPROGRESSBAR_H
+
+#ifndef QT_H
+#include "ntqframe.h"
+#endif // QT_H
+
+#ifndef TQT_NO_PROGRESSBAR
+
+
+class TQProgressBarPrivate;
+
+
+class TQ_EXPORT TQProgressBar : public TQFrame
+{
+    TQ_OBJECT
+    TQ_PROPERTY( int totalSteps READ totalSteps WRITE setTotalSteps )
+    TQ_PROPERTY( int progress READ progress WRITE setProgress )
+    TQ_PROPERTY( TQString progressString READ progressString )
+    TQ_PROPERTY( bool centerIndicator READ centerIndicator WRITE setCenterIndicator )
+    TQ_PROPERTY( bool indicatorFollowsStyle READ indicatorFollowsStyle WRITE setIndicatorFollowsStyle )
+    TQ_PROPERTY( bool percentageVisible READ percentageVisible WRITE setPercentageVisible )
+
+public:
+    TQProgressBar( TQWidget* parent=0, const char* name=0, WFlags f=0 );
+    TQProgressBar( int totalSteps, TQWidget* parent=0, const char* name=0, WFlags f=0 );
+
+    int		totalSteps() const;
+    int		progress()   const;
+    const TQString &amp;progressString() const;
+
+    TQSize	sizeHint() const;
+    TQSize	minimumSizeHint() const;
+
+    void	setCenterIndicator( bool on );
+    bool	centerIndicator() const;
+
+    void        setIndicatorFollowsStyle( bool );
+    bool	indicatorFollowsStyle() const;
+
+    bool	percentageVisible() const;
+    void	setPercentageVisible( bool );
+
+    void	show();
+
+public slots:
+    void	reset();
+    virtual void setTotalSteps( int totalSteps );
+    virtual void setProgress( int progress );
+    void	setProgress( int progress, int totalSteps );
+
+protected:
+    void	drawContents( TQPainter * );
+    virtual bool setIndicator( TQString &amp; progress_str, int progress,
+			       int totalSteps );
+    void styleChange( TQStyle&amp; );
+
+private:
+    int		total_steps;
+    int		progress_val;
+    int		percentage;
+    TQString	progress_str;
+    bool        center_indicator    : 1;
+    bool        auto_indicator	    : 1;
+    bool	percentage_visible  : 1;
+    TQProgressBarPrivate * d;
+    void         initFrame();
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQProgressBar( const TQProgressBar &amp; );
+    TQProgressBar &amp;operator=( const TQProgressBar &amp; );
+#endif
+};
+
+
+inline int TQProgressBar::totalSteps() const
+{
+    return total_steps;
+}
+
+inline int TQProgressBar::progress() const
+{
+    return progress_val;
+}
+
+inline const TQString &amp;TQProgressBar::progressString() const
+{
+    return progress_str;
+}
+
+inline bool TQProgressBar::centerIndicator() const
+{
+    return center_indicator;
+}
+
+inline bool TQProgressBar::indicatorFollowsStyle() const
+{
+    return auto_indicator;
+}
+
+inline bool TQProgressBar::percentageVisible() const
+{
+    return percentage_visible;
+}
+
+#endif // TQT_NO_PROGRESSBAR
+
+#endif // TQPROGRESSBAR_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

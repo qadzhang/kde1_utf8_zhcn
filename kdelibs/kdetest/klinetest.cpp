@@ -22,7 +22,7 @@ Test::Test( QWidget *parent, const char *name )
 
   createFields();
  
-  qApp->setStyle( MotifStyle );
+  qApp->setStyle( "motif" );  // TQt3 迁移
   show();
 }
 

@@ -219,7 +219,7 @@ bool KProcess::start(RunMode runmode, Communication comm)
   arglist[n]= 0;
 
   if (!setupCommunication(comm))
-    debug("Could not setup Communication!");
+    tqDebug("Could not setup Communication!");
 
   runs = TRUE;
   pid = fork();
@@ -227,7 +227,7 @@ bool KProcess::start(RunMode runmode, Communication comm)
   if (0 == pid) {
 	// The child process
 	if(!commSetupDoneC())
-	  debug("Could not finish comm setup in child!");
+	  tqDebug("Could not finish comm setup in child!");
 
 	// Matthias
 	if (run_mode == DontCare)
@@ -254,7 +254,7 @@ bool KProcess::start(RunMode runmode, Communication comm)
   } else {
 	// the parent continues here
 	if (!commSetupDoneP())  // finish communication socket setup for the parent
-	  debug("Could not finish comm setup in parent!");
+	  tqDebug("Could not finish comm setup in parent!");
 
 	// Discard any data for stdin that might still be there
 	input_data = 0;
@@ -648,7 +648,7 @@ bool KShellProcess::start(RunMode runmode, Communication comm)
   if (0 == shell)
     shell = searchShell();
   if (0 == shell) {
-    debug("Could not find a valid shell\n");
+    tqDebug("Could not find a valid shell\n");
     return FALSE;
   }
 
@@ -672,7 +672,7 @@ bool KShellProcess::start(RunMode runmode, Communication comm)
   arglist[3] = 0;
 
   if (!setupCommunication(comm))
-    debug("Could not setup Communication!");
+    tqDebug("Could not setup Communication!");
 
   runs = TRUE;
   pid = fork();
@@ -681,7 +681,7 @@ bool KShellProcess::start(RunMode runmode, Communication comm)
 	// The child process
 
 	if(!commSetupDoneC())
-	  debug("Could not finish comm setup in child!");
+	  tqDebug("Could not finish comm setup in child!");
 
 	// Matthias
 	if (run_mode == DontCare)
@@ -708,7 +708,7 @@ bool KShellProcess::start(RunMode runmode, Communication comm)
 	// the parent continues here
 
 	if (!commSetupDoneP())  // finish communication socket setup for the parent
-	  debug("Could not finish comm setup in parent!");
+	  tqDebug("Could not finish comm setup in parent!");
 
 	// Discard any data for stdin that might still be there
 	input_data = 0;

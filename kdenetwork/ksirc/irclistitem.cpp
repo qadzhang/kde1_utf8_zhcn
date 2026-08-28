@@ -35,8 +35,8 @@ ircListItem::ircListItem(QString s, const QColor *c, QListBox *lb, QPixmap *p)
   CacheId = 1;
   
   rows = 1;
-  linewidth = 0;
-  totalheight = 0;
+  linewidth = 0;  /* TQt3 迁移 */
+  totalheight = 0;  /* TQt3 迁移 */
 
   revOne = revTwo = -1;
   forceClear = FALSE;
@@ -70,7 +70,7 @@ void ircListItem::paint(QPainter *p)
     setupPainterText();
     dbuffer = PaintCache->find(CacheId); // Updated by setupPainterText();
     if(dbuffer == 0x0){
-      warning("ircListItem::paint() Failed to get a paint pixmap!! Giving up");
+      tqWarning("ircListItem::paint() Failed to get a paint pixmap!! Giving up");
       need_update = TRUE;
     }
     else
@@ -106,7 +106,7 @@ void ircListItem::setupPainterText()
     // and use it for the rest of the function
     // since no other inserts are done
     if(PaintCache->insert(CacheId, dbuffer, 1) == false)
-      warning("Insert into cache failed");
+      tqWarning("Insert into cache failed");
     // Set the old height and width to 0 to get the pixmap sized
     old_height = old_width = 0;
   }
@@ -134,7 +134,6 @@ void ircListItem::setupPainterText()
 
   // Copy permenant contents into temp string so we can mangle it, but always get the orignal back
   itext = rtext;
-  itext.detach();
 
   // Insert selection markers if turned on
 
@@ -204,7 +203,7 @@ void ircListItem::setupPainterText()
 	  if(newi > lastp)
 	    i = newi+1;
 	  paint_text->append(itext.mid(lastp, i-lastp));
-	  ig = 0;
+	  ig = 0;  /* TQt3 迁移 */
 	  width = xPos;
 	  lastp = i;
         }
@@ -294,8 +293,8 @@ void ircListItem::setupPainterText()
   }
 
 //  if(revOne != -1 || revTwo != -1){
-//    debug("revOne: %d RevTwo: %d itext: %s", revOne, revTwo, itext.data());
-    //    debug("rtext: %s", rtext.data());
+//    tqDebug("revOne: %d RevTwo: %d itext: %s", revOne, revTwo, itext.data());
+    //    tqDebug("rtext: %s", rtext.data());
 //  }
 }
 
@@ -321,7 +320,7 @@ QString ircListItem::getRev(){
     if(revOne == -1 ||
        revTwo == -1)
       return QString();
-//    debug("getRev: revOne: %d RevTwo: %d", revOne, revTwo);
+//    tqDebug("getRev: revOne: %d RevTwo: %d", revOne, revTwo);
     QString seltext = rtext;
     if(revOne < revTwo)
       return seltext.mid(revOne, revTwo - revOne);

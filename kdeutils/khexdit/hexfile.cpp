@@ -324,7 +324,7 @@ void HexFile::paintCursor(QPainter *p)
     char hilight[3];
     int w = calcPosition(curx);
     calcCurrentByte(); // just to be sure
-    // debug("paintCursor %d %d %ld %x",w, cursorPosition, currentByte, hexdata[currentByte]);
+    // tqDebug("paintCursor %d %d %ld %x",w, cursorPosition, currentByte, hexdata[currentByte]);
     int offw = 0;
 
     if (UseBig)
@@ -378,7 +378,7 @@ void HexFile::changeSide() {
 
 void HexFile::calcCurrentByte() {
     currentByte = lineoffset + cury * 16 + curx;
-    // debug("calcCurrentByte %ld %d %d %ld",lineoffset, curx, cury, currentByte);
+    // tqDebug("calcCurrentByte %ld %d %d %ld",lineoffset, curx, cury, currentByte);
 }
 
 QPoint HexFile::translate(QPoint pos) {
@@ -556,7 +556,7 @@ QColor HexFile::colorPosition(int field) {
 }
 
 void HexFile::fillLine(QPainter *p, int line) {
-    // debug("fillLine %d",line);
+    // tqDebug("fillLine %d",line);
     int w=0, x, i;
     char txt[2]=" ";
     char number[8];
@@ -644,7 +644,7 @@ void HexFile::fillLine(QPainter *p, int line) {
 }
 
 void HexFile::fillPixmap() {
-    // debug("fillPixmap");
+    // tqDebug("fillPixmap");
     if (!datamap || datamap->isNull())
 	return;
     QPainter p(datamap);
@@ -663,7 +663,7 @@ void HexFile::paintEvent(QPaintEvent *p) {
 
     bool use_backmapping = false;
 
-    // debug("paintEvent %d %d %d %d",p->rect().left(), p->rect().top(), p->rect().width(), p->rect().height());
+    // tqDebug("paintEvent %d %d %d %d",p->rect().left(), p->rect().top(), p->rect().width(), p->rect().height());
 
     if (!datamap || datamap->isNull())
 	return;

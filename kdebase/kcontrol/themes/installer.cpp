@@ -124,7 +124,6 @@ static bool pathToThemeName(QString &name)
         name = name.left(name.length()-7);
     else if (name.right(4) == ".tgz")
         name = name.left(name.length()-4);
-    else
         return false;
     return true;
 }
@@ -200,7 +199,9 @@ void Installer::readThemesList(void)
 
   // Read global themes
 //  d.setPath(Theme::globalThemesDir());
-  entryList = (QStrList*)d.entryList();
+  entryList = new QStrList;  /* TQt3 迁移：值语义搬运 */
+  { QStringList k1sl = d.entryList();
+    for (unsigned k1i=0;k1i<k1sl.count();++k1i) entryList->append(k1sl[k1i]); }
   if (entryList) for(name=entryList->first(); name; name=entryList->next())
   {
     if (name[0]=='.') continue;
@@ -222,7 +223,9 @@ void Installer::readThemesList(void)
 
   // Read local themes
   d.setPath(Theme::themesDir());
-  entryList = (QStrList*)d.entryList();
+  entryList = new QStrList;  /* TQt3 迁移：值语义搬运 */
+  { QStringList k1sl = d.entryList();
+    for (unsigned k1i=0;k1i<k1sl.count();++k1i) entryList->append(k1sl[k1i]); }
   if (entryList) for(name=entryList->first(); name; name=entryList->next())
   {
     if (name[0]=='.') continue;
@@ -253,14 +256,14 @@ void Installer::readThemesList(void)
 //-----------------------------------------------------------------------------
 void Installer::loadSettings()
 {
-  debug("Installer::loadSettings() called");
+  tqDebug("Installer::loadSettings() called");
 }
 
 
 //-----------------------------------------------------------------------------
 void Installer::applySettings()
 {
-  debug("Installer::applySettings() called");
+  tqDebug("Installer::applySettings() called");
   if (!mTheme) return;
   mTheme->install();
 }
@@ -330,7 +333,7 @@ void Installer::slotRemove()
        finfo.setFile(themeFile);
        if (!finfo.exists())
        {
-           themeFile = 0;
+           themeFile = TQString();
            KMsgBox::message(this, kapp->name(), 
 	     i18n("The "),
 	     QMessageBox::Default | QMessageBox::Warning );
@@ -346,10 +349,10 @@ void Installer::slotRemove()
     if (rc || finfo.exists())
     {
       if (rc)
-        warning(i18n("Failed to remove theme:\n%s\n(%s)"), 
+        tqWarning(i18n("Failed to remove theme:\n%s\n(%s)"), 
                (const char*)themeFile, strerror(errno));
       else
-        warning(i18n("Failed to remove theme %s"), (const char*)themeFile);
+        tqWarning(i18n("Failed to remove theme %s"), (const char*)themeFile);
       return;
     }
   }
@@ -470,7 +473,7 @@ void Installer::slotAdd()
   else theme = fpath;
   if (!pathToThemeName(theme))
   {
-    warning(i18n("Wrong file.\n"
+    tqWarning(i18n("Wrong file.\n"
                  "The name of a theme file should end\n"
                  "either with '.tar.gz' or '.tgz'\n"));
     return;
@@ -482,7 +485,7 @@ void Installer::slotAdd()
   rc = system(cmd);
   if (rc)
   {
-    warning(i18n("Failed to copy theme %s\ninto themes directory %s"),
+    tqWarning(i18n("Failed to copy theme %s\ninto themes directory %s"),
 	    (const char*)fpath, (const char*)Theme::themesDir());
     return;
   }
@@ -511,7 +514,6 @@ void Installer::slotSaveAs()
   if (cur < 0) return;
 
   themeFile = mThemesList->text(cur);
-  themeFile.detach();
   if (themeFile.isEmpty()) return;
 
   isGlobal = (themeFile[themeFile.length()-1]==' ');
@@ -547,7 +549,6 @@ void Installer::slotSave()
   if (cur < 0) return;
 
   name = mThemesList->text(cur);
-  name.detach();
   if (name.isEmpty()) return;
 
   isGlobal = (name[name.length()-1]==' ');

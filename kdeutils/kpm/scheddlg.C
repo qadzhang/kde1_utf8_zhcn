@@ -1,7 +1,8 @@
+#include "kpm_locale.h"  /* TQt3 迁移：kpm 的 TRANS 本地化宏 */
 // scheddlg.C
 //
 // This program is free software. See the file COPYING for details.
-// Author: Mattias Engdeg�rd, 199
+// Author: Mattias Engdeg�rd, 199
 
 #include <sched.h>
 
@@ -19,27 +20,27 @@
 SchedDialog::SchedDialog(int policy, int prio)
          : QDialog(0, 0, TRUE)
 {
-    setCaption(i18n("Change scheduling"));
+    setCaption(TRANS("Change scheduling"));
 
     QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
 
     int max_x = 0;
     int y_pos = (int)(fontMetrics().lineSpacing() * 1.5);
-    bgrp = new ButtonGroup(i18n("Scheduling Policy"), this);
-    rb_other = new QRadioButton(i18n("SCHED_OTHER (time-sharing)"),
+    bgrp = new ButtonGroup(TRANS("Scheduling Policy"), this);
+    rb_other = new QRadioButton(TRANS("SCHED_OTHER (time-sharing)"),
 					      bgrp);
     rb_other->adjustSize();
     rb_other->move(10, y_pos);
     y_pos += rb_other->height();
     max_x = QMAX(max_x, rb_other->width());
 
-    rb_fifo = new QRadioButton(i18n("SCHED_FIFO (real-time)"), bgrp);
+    rb_fifo = new QRadioButton(TRANS("SCHED_FIFO (real-time)"), bgrp);
     rb_fifo->adjustSize();
     rb_fifo->move(10, y_pos);
     y_pos += rb_fifo->height();
     max_x = QMAX(max_x, rb_fifo->width());
 
-    rb_rr = new QRadioButton(i18n("SCHED_RR (real-time)"), bgrp);
+    rb_rr = new QRadioButton(TRANS("SCHED_RR (real-time)"), bgrp);
     rb_rr->adjustSize();
     rb_rr->move(10, y_pos);
     y_pos += rb_rr->height();
@@ -64,7 +65,7 @@ SchedDialog::SchedDialog(int policy, int prio)
 
     QHBoxLayout *l1 = new QHBoxLayout;
     tl->addLayout(l1);    
-    lbl = new QLabel(i18n("Priority (1-99):"), this);
+    lbl = new QLabel(TRANS("Priority (1-99):"), this);
     lbl->setMinimumSize(lbl->sizeHint());
     l1->addWidget(lbl);
 
@@ -72,7 +73,7 @@ SchedDialog::SchedDialog(int policy, int prio)
     lined->setFixedWidth(lined->sizeHint().width()/2);
     lined->setFixedHeight(lined->sizeHint().height());
     lined->setMaxLength(4);
-    QString s(4);
+    TQString s;  /* TQt3 迁移 */
     s.setNum(prio);
     lined->setText(s);
     l1->addWidget(lined);
@@ -86,10 +87,10 @@ SchedDialog::SchedDialog(int policy, int prio)
 
     KButtonBox *bbox = new KButtonBox(this);
     bbox->addStretch(1);
-    QPushButton *ok = bbox->addButton(i18n("OK"));
+    QPushButton *ok = bbox->addButton(TRANS("OK"));
     ok->setDefault(TRUE);
     connect(ok, SIGNAL(clicked()), SLOT(done_dialog()));
-    QPushButton *cancel = bbox->addButton(i18n("Cancel"));
+    QPushButton *cancel = bbox->addButton(TRANS("Cancel"));
     connect(cancel, SIGNAL(clicked()), SLOT(reject()));
     bbox->layout();
     tl->addSpacing(10);
@@ -104,15 +105,14 @@ void SchedDialog::done_dialog()
 	out_policy = SCHED_RR;
     else if(rb_fifo->isChecked())
 	out_policy = SCHED_FIFO;
-    else
 	out_policy = SCHED_OTHER;
     QString s(lined->text());
     bool ok;
     out_prio = s.toInt(&ok);
     if(out_policy != SCHED_OTHER && (!ok || out_prio < 1 || out_prio > 99)) {
-	MessageDialog::message(i18n("Invalid input"),
-			       i18n("The priority must be in the range 1..99"),
-			       i18n("Cancel"), MessageDialog::warningIcon());
+	MessageDialog::message(TRANS("Invalid input"),
+			       TRANS("The priority must be in the range 1..99"),
+			       TRANS("Cancel"), MessageDialog::warningIcon());
     } else
 	accept();
 }

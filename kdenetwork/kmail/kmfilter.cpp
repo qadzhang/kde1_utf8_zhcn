@@ -34,7 +34,7 @@ static int findInStrList(const char* strList[], const char* str)
   //assert(strList != NULL);
   if(!strList)
     {
-      debug("KMFilter::findInStrList() : strList == NULL\n");
+      tqDebug("KMFilter::findInStrList() : strList == NULL\n");
       return -1; // we return -1 here. Fake unsuccessfull search
     }
 
@@ -56,7 +56,7 @@ KMFilter::KMFilter(KConfig* config)
   if (config) readConfig(config);
   else
   {
-    mName = 0;
+    mName = TQString();  /* TQt3 迁移 */
     mOperator = OpIgnore;
     for (i=0; i<=FILTER_MAX_ACTIONS; i++)
       mAction[i] = NULL;
@@ -126,7 +126,7 @@ bool KMFilter::folderRemoved(KMFolder* aFolder, KMFolder* aNewFolder)
 //-----------------------------------------------------------------------------
 void KMFilter::setName(const QString aName)
 {
-  mName = aName.copy();
+  mName = aName;
 }
 
 
@@ -160,9 +160,9 @@ void KMFilter::readConfig(KConfig* config)
   QString fieldA, fieldB;
   QString contA, contB;
   int idx, i, j, num;
-  QString actName(64), argsName(64);
+  TQString actName, argsName;  /* TQt3 迁移 */
 
-  mName = config->readEntry("name").copy();
+  mName = config->readEntry("name");
 
   idx = findInStrList(funcConfigNames, config->readEntry("funcA"));
   funcA = (KMFilterRule::Function)(idx >= 0 ? idx : 0);
@@ -186,7 +186,7 @@ void KMFilter::readConfig(KConfig* config)
   if (num >= FILTER_MAX_ACTIONS)
   {
     num = FILTER_MAX_ACTIONS - 1;
-    warning("Too many filter actions in filter rule `%s'", (const char*)mName);
+    tqWarning("Too many filter actions in filter rule `%s'", (const char*)mName);
   }
 
   for (i=0, j=0; i<num; i++)
@@ -197,7 +197,7 @@ void KMFilter::readConfig(KConfig* config)
     mAction[j] = sActionDict->create(actName);
     if (!mAction[j])
     {
-      warning(i18n("Unknown filter action `%s'\n"
+      tqWarning(i18n("Unknown filter action `%s'\n"
 			     "in filter rule `%s'.\n"
 			     "Ignoring it."),
 	      (const char*)actName, (const char*)mName);
@@ -215,7 +215,7 @@ void KMFilter::readConfig(KConfig* config)
 //-----------------------------------------------------------------------------
 void KMFilter::writeConfig(KConfig* config)
 {
-  QString key(64);
+  TQString key;  /* TQt3 迁移 */
   int i;
 
   config->writeEntry("name", mName);
@@ -230,7 +230,7 @@ void KMFilter::writeConfig(KConfig* config)
   for (i=0; i<FILTER_MAX_ACTIONS && mAction[i]; i++)
   {
     key.sprintf("action-name-%d", i);
-    config->writeEntry(key, mAction[i]->name());
+    config->writeEntry((const char*)key, (const char*)mAction[i]->name());
     key.sprintf("action-args-%d", i);
     config->writeEntry(key, mAction[i]->argsAsString());
   }
@@ -285,9 +285,9 @@ KMFilterRule::KMFilterRule()
 void KMFilterRule::init(const QString aField, Function aFunction,
 			const QString aContents)
 {
-  mField    = aField.copy();
+  mField    = aField;
   mFunction = aFunction;
-  mContents = aContents.copy();
+  mContents = aContents;
 }
 
 
@@ -299,7 +299,7 @@ bool KMFilterRule::matches(const KMMessage* msg)
   assert(msg != NULL); // This assert seems to be important
 
   if( mField == "<message>" ) {
-    // there�s msg->asString(), but this way we can keep msg const (dnaber, 1999-05-27)
+    // there�s msg->asString(), but this way we can keep msg const (dnaber, 1999-05-27)
     msgContents = msg->headerAsString();
     msgContents += msg->bodyDecoded();
   } else if( mField == "<body>" ) {

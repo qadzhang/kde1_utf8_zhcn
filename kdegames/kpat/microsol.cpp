@@ -31,7 +31,6 @@
 MicroSolitaire::MicroSolitaire( QWidget* parent, const char* name)
   : dealer(parent,name)
 {
-  initMetaObject();
 
   const int Pile   = 1;
   const int Play   = 2;

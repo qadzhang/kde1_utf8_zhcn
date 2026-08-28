@@ -7,13 +7,13 @@ include_directories (
 
 set(KBLACKBOX_SRCS kbbgame.cpp kbbgfx.cpp main.cpp util.cpp)
 
-set(KBLACKBOX_MOC kbbgame.moc kbbgfx.moc)
+set(KBLACKBOX_MOC kbbgame.h kbbgfx.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KBLACKBOX_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KBLACKBOX_MOC})
 
 add_executable(kblackbox1 ${KBLACKBOX_SRCS} ${MOC_FILES})
 target_link_libraries(kblackbox1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

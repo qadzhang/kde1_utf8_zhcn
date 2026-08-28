@@ -113,7 +113,7 @@ int main( int argc, char *argv[] ){
       switch (c)
         {
         case 'h':
-          debug("usage: kljettool [ [-P printername] ]");
+          tqDebug("usage: kljettool [ [-P printername] ]");
           exit(1);
         case 'P':
           choice = (QString) optarg;
@@ -140,7 +140,7 @@ int main( int argc, char *argv[] ){
   QFile printcap("/etc/printcap");
   if( !printcap.open(IO_ReadOnly) )
     {
-      debug("Sorry -- can't open your /etc/printcap file.");
+      tqDebug("Sorry -- can't open your /etc/printcap file.");
       exit(1);
     }
    
@@ -155,7 +155,7 @@ int main( int argc, char *argv[] ){
       name = temp.left( temp.find(':') );
       if( name.isEmpty() ) 
 	continue;
-      //debug("name = %s", (const char *) name);
+      //tqDebug("name = %s", (const char *) name);
       if( name.contains('|') )
 	name = name.left( name.find('|') );
       name.stripWhiteSpace();
@@ -178,8 +178,8 @@ int main( int argc, char *argv[] ){
 
   if( empty_printcap )
     {
-      debug("Sorry -- unable to parse your /etc/printcap.");
-      debug("Please email your printcap to wuebben@math.cornell.edu");
+      tqDebug("Sorry -- unable to parse your /etc/printcap.");
+      tqDebug("Please email your printcap to wuebben@math.cornell.edu");
       exit(1);
     }
 

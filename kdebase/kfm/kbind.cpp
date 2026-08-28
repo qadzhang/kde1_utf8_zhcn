@@ -81,10 +81,8 @@ KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
     bApplicationPattern = false;
     
     mimeType = _mime_type;
-    mimeType.detach();
     
     pixmapName = _pixmap;
-    pixmapName.detach();
 
     pixmap = 0L;
 }
@@ -177,7 +175,7 @@ const char* KMimeType::getPixmapFileStatic( const char *_url, bool _mini )
 void KMimeType::initKMimeMagic()
 {
     // Magic file detection init
-    QString mimefile = kapp->kde_mimedir().copy();
+    QString mimefile = kapp->kde_mimedir();
     mimefile += "/magic";
     magic = new KMimeMagic( mimefile );
     magic->setFollowLinks( TRUE );
@@ -285,12 +283,12 @@ void KMimeType::init()
     types->setAutoDelete( true );
 
     // Read the application bindings in the local directories
-    QString path = kapp->localkdedir().copy();
+    QString path = kapp->localkdedir();
     path += "/share/mimelnk";
     initMimeTypes( path.data() );
     
     // Read the application bindings in the global directories
-    path = kapp->kde_mimedir().copy();
+    path = kapp->kde_mimedir();
     initMimeTypes( path.data() );
 
     // Otherwise we are not allowed to call 'errorMissingMimeType'
@@ -345,11 +343,11 @@ void KMimeType::init()
     }
     
     // Read the application bindings in the global directories
-    path = kapp->kde_appsdir().copy();
+    path = kapp->kde_appsdir();
     KMimeBind::initApplications( path.data() );
 
     // Read the application bindings in the local directories
-    path = kapp->localkdedir().copy();
+    path = kapp->localkdedir();
     path += "/share/applnk";
     KMimeBind::initApplications( path.data() );
 }
@@ -639,7 +637,6 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
 			if ( stricmp( start, "Default" ) != 0 )
 			{
 			    QString s( i18n( "Mount" ) );
-			    s.detach();
 			    s += " ";
 			    s += (const char*)start;
 			    _list.append( s.data() );   
@@ -655,7 +652,6 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
 		else
 		{
 		    QString s( i18n( "Unmount" ) );
-		    s.detach();
 		    _list.append( s.data() );
 		    _pixlist.append( emptyPixmap );
 		}
@@ -667,7 +663,6 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
 	    if ( !url.isNull() )
 	    {
 		tmp = url.data();
-		tmp.detach();
 		_url = tmp.data();
 		KURL u2( _url );
 		u = u2;
@@ -1110,7 +1105,7 @@ void KMimeBind::initApplications( const char * _path )
 		  // termOptions will store both values (being 0L if Terminal=="0").
 		  QString term = config.readEntry( "Terminal", "0" );
 		  QString termOptions = config.readEntry( "TerminalOptions" );
-		  if (term=="0") termOptions = 0L;
+		  if (term=="0") termOptions = TQString();
 		  
 		  // Define an icon for the program file perhaps ?
 		  if ( !app_icon.isEmpty() && !app_pattern.isEmpty() )
@@ -1138,18 +1133,18 @@ void KMimeBind::initApplications( const char * _path )
                       KMimeBind * existingBind = findByName(name.data());
                       if (existingBind)
                       {
-                          //debug("*** binding %s exists", existingBind->getName());
+                          //tqDebug("*** binding %s exists", existingBind->getName());
                           KMimeType *typ;
                           for ( typ = types->first(); typ != 0L; typ = types->next() )
                           {
-                              //debug("checking mimetype %s",typ->getMimeType());
+                              //tqDebug("checking mimetype %s",typ->getMimeType());
                               KMimeBind *_bind;
                               for ( _bind = typ->firstBinding(); _bind != 0L; )
                               {
-                                  //debug("  has binding %s",_bind->getName());
+                                  //tqDebug("  has binding %s",_bind->getName());
                                   if (!strcmp(_bind->getName(), name.data()))
                                   {
-                                      //debug("---> Removing %s from %s",_bind->getName(), typ->getMimeType());
+                                      //tqDebug("---> Removing %s from %s",_bind->getName(), typ->getMimeType());
                                       typ->remove( _bind );
                                       s_lstBindings->removeRef( _bind );
                                       delete _bind;
@@ -1228,8 +1223,8 @@ bool KMimeBind::runBinding( const char *_url )
     if ( u.isMalformed() )
 	return FALSE;
 
-    QString quote1 = KIOServer::shellQuote( u.path() ).copy();
-    QString quote2 = KIOServer::shellQuote( _url ).copy();
+    QString quote1 = KIOServer::shellQuote( u.path() );
+    QString quote2 = KIOServer::shellQuote( _url );
     
     QString f;
     QString ur;
@@ -1262,7 +1257,6 @@ bool KMimeBind::runBinding( const char *_url )
     }
     
     QString cmd = getCmd();
-    cmd.detach();
 
     bool b_local_app = false;
     if ( cmd.find( "%u" ) == -1 )
@@ -1321,10 +1315,9 @@ bool KMimeBind::runBinding( const char *_url )
 	KConfig *config = KApplication::getKApplication()->getConfig();
 	config->setGroup( "KFM Misc Defaults" );
 	QString termCmd = config->readEntry( "Terminal", DEFAULT_TERMINAL);
-	termCmd.detach();
 	if ( termCmd.isNull() )
 	{
-	    warning(i18n("ERROR: No Terminal Setting"));
+	    tqWarning(i18n("ERROR: No Terminal Setting"));
 	    return TRUE;
 	}
 	termCmd += " ";
@@ -1335,7 +1328,7 @@ bool KMimeBind::runBinding( const char *_url )
 	}
 	termCmd += "-e ";
 	termCmd += cmd.data();
-        cmd = termCmd.copy();
+        cmd = termCmd;
     }
 
     // The application accepts only local files ?
@@ -1343,12 +1336,12 @@ bool KMimeBind::runBinding( const char *_url )
     {
       QStrList list;
       list.append( _url );
-      // debug("openWithOldApplication(%s,...,%s)\n", cmd.data(),workdir.data());
+      // tqDebug("openWithOldApplication(%s,...,%s)\n", cmd.data(),workdir.data());
       openWithOldApplication( cmd, list, workdir.data() );      
       return TRUE;
     }
 
-    // debug("KDELnkMimeType::runAsApplication starts runCmd(%s,%s)\n",
+    // tqDebug("KDELnkMimeType::runAsApplication starts runCmd(%s,%s)\n",
 	// cmd.data(),workdir.data());
     runCmd( cmd.data(), workdir.data() );
     return TRUE;
@@ -1451,7 +1444,7 @@ void KMimeBind::runCmd( const char *_cmd, const char *_workdir )
 	if ( p2 )
 	{
 	    *p2++ = 0;
-	    QString tmp = KIOServer::shellUnquote( p ).copy();
+	    QString tmp = KIOServer::shellUnquote( p );
 	    args.append( tmp.data() );
 	    p = p2;
 	    while ( *p == ' ' ) p++;   
@@ -1460,7 +1453,7 @@ void KMimeBind::runCmd( const char *_cmd, const char *_workdir )
     // Append the rest
     if ( strlen( p ) > 0 )
     {
-	QString tmp = KIOServer::shellUnquote( p ).copy();
+	QString tmp = KIOServer::shellUnquote( p );
 	args.append( tmp );
     }
         
@@ -1606,7 +1599,7 @@ bool ExecutableMimeType::run( const char *_url )
     QString cmd;
     cmd << "\"" << KIOServer::shellQuote( u.path() ) << "\"";
 
-    // debug("ExecutableMimeType starts runCmd(%s)\n",cmd.data());
+    // tqDebug("ExecutableMimeType starts runCmd(%s)\n",cmd.data());
     KMimeBind::runCmd( cmd );
 
     return TRUE;
@@ -1654,7 +1647,7 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 	}
     }
     
-    // debug("runAsApplication starts runCmd(%s)\n",cmd.data());
+    // tqDebug("runAsApplication starts runCmd(%s)\n",cmd.data());
     KMimeBind::runCmd( cmd );
     // system( cmd.data() );
     return TRUE;
@@ -1840,7 +1833,6 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	exec.replace( i, 2, _url );
     while ( ( i = exec.find( "%c" ) ) != -1 )
     {
-	exec.detach();
 
 	if ( !name.isEmpty() ) 
 	    exec.replace( i, 2, name.data() );
@@ -1858,17 +1850,14 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	}
     }     
     if (!icon.isEmpty()) {
-      icon.detach();
       icon.prepend("-icon ");
     }
 
     while ( ( i = exec.find( "%i" ) ) != -1 ) {
-      exec.detach();
       exec.replace( i, 2, icon.data());
     }
 
     if (!miniicon.isEmpty()) {
-      miniicon.detach();
       miniicon.prepend("-miniicon ");
     } 
     while ( ( i = exec.find( "%m" ) ) != -1 )
@@ -1879,10 +1868,9 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	KConfig *config = KApplication::getKApplication()->getConfig();
 	config->setGroup( "KFM Misc Defaults" );
 	QString cmd = config->readEntry( "Terminal", DEFAULT_TERMINAL);
-	cmd.detach();
 	if ( cmd.isNull() )
 	{
-	    warning(i18n("ERROR: No Terminal Setting"));
+	    tqWarning(i18n("ERROR: No Terminal Setting"));
 	    delete config;
 	    return TRUE;
 	}
@@ -1894,14 +1882,14 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	}
 	cmd += "-e ";
 	cmd += exec.data();
-	// debug("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
+	// tqDebug("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
 	// 	cmd.data());
 	KMimeBind::runCmd( cmd );
     }
     else
     {
 	QString cmd = exec.data();
-	// debug("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
+	// tqDebug("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
 	// 	cmd.data());
 	KMimeBind::runCmd( cmd );
     }

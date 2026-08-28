@@ -315,7 +315,6 @@ void KFileSimpleView::keyPressEvent( QKeyEvent* e )
           if ( newCol == numCols()-1 && curRow > lastItem )
 	      newRow = lastItem;
 	  else if ( curCol == newCol ) newRow = lastItem;
-          else
 	      newRow = curRow;
         }
         break;
@@ -498,7 +497,7 @@ void KFileSimpleView::focusOutEvent ( QFocusEvent * )
 
 void KFileSimpleView::insertArray(uint item, uint pos)
 {
-    //  debug("insert %s %d", item->fileName(), pos);
+    //  tqDebug("insert %s %d", item->fileName(), pos);
     if (width_length == width_max) {
 	width_max *= 2;
 	uint *newArray = new uint[width_max];

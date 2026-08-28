@@ -62,7 +62,7 @@
 #include <pwd.h>
 
 #include <kapp.h>
-#include <kfontdialog.h>
+#include "kfontdialog.h"
 
 ///
 class KIntLineEdit : public QLineEdit

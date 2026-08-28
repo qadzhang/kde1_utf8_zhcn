@@ -233,24 +233,18 @@ void KfmGui::initMenu()
   
     mfile->clear();
     mfile->insertSeparator();
-    mfile->insertItem( klocale->translate("New &Window"), 
-		       this, SLOT(slotNewWindow()), stdAccel.openNew() );
+    { int k1id = mfile->insertItem( klocale->translate("New &Window"), this, SLOT(slotNewWindow()) ); mfile->setAccel( stdAccel.openNew(), k1id ); }  /* TQt3 迁移 */
     mfile->insertSeparator();
     mfile->insertItem( klocale->translate("&Run..."), 
 		       this, SLOT(slotRun()) );
-    mfile->insertItem( klocale->translate("Open &Terminal"), 
-		       this, SLOT(slotTerminal()), CTRL+Key_T );
+    { int k1id = mfile->insertItem( klocale->translate("Open &Terminal"), this, SLOT(slotTerminal()) ); mfile->setAccel( CTRL+Key_T, k1id ); }  /* TQt3 迁移 */
     mfile->insertSeparator();
-    mfile->insertItem( klocale->translate("&Open Location..."),
-		       this, SLOT(slotOpenLocation()), stdAccel.open() );
-    mfile->insertItem( klocale->translate("&Find"), 
-		       this, SLOT(slotToolFind()), stdAccel.find() );
+    { int k1id = mfile->insertItem( klocale->translate("&Open Location..."), this, SLOT(slotOpenLocation()) ); mfile->setAccel( stdAccel.open(), k1id ); }  /* TQt3 迁移 */
+    { int k1id = mfile->insertItem( klocale->translate("&Find"), this, SLOT(slotToolFind()) ); mfile->setAccel( stdAccel.find(), k1id ); }  /* TQt3 迁移 */
     mfile->insertSeparator();
-    mfile->insertItem( klocale->translate("&Print..."),
-		       this, SLOT(slotPrint()), stdAccel.print() );
+    { int k1id = mfile->insertItem( klocale->translate("&Print..."), this, SLOT(slotPrint()) ); mfile->setAccel( stdAccel.print(), k1id ); }  /* TQt3 迁移 */
     mfile->insertSeparator();        
-    mfile->insertItem( klocale->translate("&Close"),
-		       this, SLOT(slotClose()), stdAccel.close() );
+    { int k1id = mfile->insertItem( klocale->translate("&Close"), this, SLOT(slotClose()) ); mfile->setAccel( stdAccel.close(), k1id ); }  /* TQt3 迁移 */
 // This was meant for testing only. (hoelzer)
 //    file->insertItem( klocale->translate("&Quit..."),  
 //		      this, SLOT(slotQuit()), stdAccel.quit() );
@@ -260,12 +254,10 @@ void KfmGui::initMenu()
     /*CT QPopupMenu *  -- make it visible outside this method */
     edit = new QPopupMenu;
     CHECK_PTR( edit );
-    edit->insertItem( klocale->translate("&Copy"), this, 
-		      SLOT(slotCopy()), stdAccel.copy() );
+    edit->insertItem( klocale->translate("&Copy"), this, SLOT(slotCopy()) );  /* TQt3 迁移：整 accel 参删 */
     edit->insertItem( klocale->translate("&Paste"), this, 
 		      SLOT(slotPaste()), stdAccel.paste() );
-    edit->insertItem( klocale->translate("&Move to Trash"), 
-		      this, SLOT(slotTrash()), stdAccel.cut() );
+    { int k1id = edit->insertItem( klocale->translate("&Move to Trash"), this, SLOT(slotTrash()) ); edit->setAccel( stdAccel.cut(), k1id ); }  /* TQt3 迁移 */
     edit->insertItem( klocale->translate("&Delete"), this, 
 		      SLOT(slotDelete()), CTRL+Key_Delete);
     // This can't be Key_Delete only, it breaks deleting in LineEdits
@@ -936,7 +928,7 @@ void KfmGui::setToolbarURL( const char *_url )
 {
     KURL u(_url);
     u.setPassword(""); // hide password
-    QString url(u.url().copy());
+    QString url(u.url());
     toolbarURL->setLinedText( TOOLBAR_URL_ID, url.data() );
     //  update tree view Sep 5 rjakob
     if (u.isLocalFile())
@@ -991,26 +983,26 @@ void KfmGui::slotOpenURL( const char *_url )
 
 void KfmGui::slotEditSUMimeTypes()
 {
-    QString tmp = KApplication::kde_mimedir().copy();
+    QString tmp = KApplication::kde_mimedir();
     view->openURL( tmp );
 }
 
 void KfmGui::slotEditSUApplications()
 {
-    QString tmp = KApplication::kde_appsdir().copy();
+    QString tmp = KApplication::kde_appsdir();
     view->openURL( tmp );
 }
 
 void KfmGui::slotEditMimeTypes()
 {
-    QString tmp = KApplication::localkdedir().copy();
+    QString tmp = KApplication::localkdedir();
     tmp += "/share/mimelnk";
     view->openURL( tmp );
 }
 
 void KfmGui::slotEditApplications()
 {
-    QString tmp = KApplication::localkdedir().copy();
+    QString tmp = KApplication::localkdedir();
     tmp += "/share/applnk";
     view->openURL( tmp );
 }
@@ -1263,7 +1255,7 @@ void KfmGui::slotUpdateEditMenu ()
     edit->setItemEnabled ( edit->idAt (2), false );
     edit->setItemEnabled ( edit->idAt (3), false );
     
-    //debug(focusWidget()->className());
+    //tqDebug(focusWidget()->className());
     // If user has selected text in a web page,
     // or if a qlineedit has focus, enable only the Copy method.
     if ( !txt.isEmpty() || 
@@ -1312,14 +1304,10 @@ void KfmGui::slotUpdateHistoryMenu( )
     connect( mgo, SIGNAL(aboutToShow()), this, SLOT(slotUpdateHistoryMenu()) );
 
     // The go menu, with items in the same order as the toolbar.
-    mgo->insertItem( klocale->translate( "&Up" ),
-			this, SLOT( slotUp() ), ALT+Key_Up );
-    mgo->insertItem( klocale->translate( "&Back" ),
-			this, SLOT( slotBack() ), ALT+Key_Left );
-    mgo->insertItem( klocale->translate( "&Forward" ),
-			this, SLOT( slotForward() ), ALT+Key_Right );
-    mgo->insertItem( klocale->translate( "&Home" ),
-			this, SLOT( slotHome() ), ALT+Key_Home );
+    { int k1id = mgo->insertItem( klocale->translate( "&Up" ), this, SLOT(slotUp()) ); mgo->setAccel( ALT+Key_Up, k1id ); }  /* TQt3 迁移 */
+    { int k1id = mgo->insertItem( klocale->translate( "&Back" ), this, SLOT(slotBack()) ); mgo->setAccel( ALT+Key_Left, k1id ); }  /* TQt3 迁移 */
+    { int k1id = mgo->insertItem( klocale->translate( "&Forward" ), this, SLOT(slotForward()) ); mgo->setAccel( ALT+Key_Right, k1id ); }  /* TQt3 迁移 */
+    { int k1id = mgo->insertItem( klocale->translate( "&Home" ), this, SLOT(slotHome()) ); mgo->setAccel( ALT+Key_Home, k1id ); }  /* TQt3 迁移 */
     mgo->insertSeparator();
 
     connect( mgo, SIGNAL( activated( int ) ),
@@ -1331,7 +1319,7 @@ void KfmGui::slotUpdateHistoryMenu( )
     for (id = 0, s = hlist->last(); (id<10) && (s != 0L); id++, s = hlist->prev()) {
         KURL u(s);
         u.setPassword(""); // hide password
-        QString url(u.url().copy());
+        QString url(u.url());
         KURL::decodeURL(url); // we don't want encoded URLs in the menu
         mgo->insertItem ( stringSqueeze(url,100), id );
     }
@@ -1365,7 +1353,7 @@ void KfmGui::addBookmark( const char *_title, const char *_url )
 
 void KfmGui::slotEditBookmarks()
 {
-  QString p = kapp->localkdedir().copy();
+  QString p = kapp->localkdedir();
   p += "/share/apps/kfm/bookmarks";
 
   KfmGui *m = new KfmGui( 0L, 0L, p );
@@ -1387,14 +1375,14 @@ void KfmGui::slotBookmarkSelected( int _id )
       KURL u( bm->url() );
       if ( u.isMalformed() )
       {
-	warning(QString(klocale->translate("ERROR: Malformed URL"))+" : %s",u.path());
+	tqWarning(QString(klocale->translate("ERROR: Malformed URL"))+" : %s",u.path());
 	return;
       }
 	
       view->openURL( bm->url() );
     }
     // else
-    //  warning("Internal: Could not find bookmark id\n");
+    //  tqWarning("Internal: Could not find bookmark id\n");
     // Commented out, because this happens anytime one hits 'Edit bookmarks'
     // or 'Add bookmarks'. This is normal (menu is connected, and menu item
     // as well). David.
@@ -1528,7 +1516,7 @@ void KfmGui::slotQuit()
     pkfm->slotSave();
     pkfm->slotShutDown();
     
-    QString file = kapp->localkdedir().copy();
+    QString file = kapp->localkdedir();
     file += "/share/apps/kfm/pid";
     file += displayName();
     unlink( file.data() );
@@ -1567,7 +1555,6 @@ void KfmGui::slotTitle( const char *_title )
     // This title is *encoded* ! The fix should go to khtml[w], but it's frozen 
     // right now. David.
     title = _title; // keeps a copy of the title. Isn't used at all, AFAIK. David.
-    title.detach();
     KURL::decodeURL(title);
     setCaption( title.data() );
 }
@@ -1629,7 +1616,7 @@ void KfmGui::slotAnimatedLogoTimeout()
 
 void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
 {
-    //debug( "Adding waiting: %p, %d", _w, waitingWidgetList.count() );
+    //tqDebug( "Adding waiting: %p, %d", _w, waitingWidgetList.count() );
     if ( waitingWidgetList.findRef( _w ) != -1 )
 	return;
     waitingWidgetList.append( _w );
@@ -1655,7 +1642,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 	slotSetStatusBar( klocale->translate("Document: Done") );
     }
 
-    //debug( "Removed waiting: %p, %d", _w, waitingWidgetList.count() );
+    //tqDebug( "Removed waiting: %p, %d", _w, waitingWidgetList.count() );
 }
 
 void KfmGui::slotTextSelected( KHTMLView *v, bool s )
@@ -1689,7 +1676,7 @@ void KfmGui::slotConfigureFileManager()
    {
        // execute 'kcmkfm' with file manager options pages
       execl(kapp->kde_bindir()+"/kcmkfm","kcmkfm","font","color","misc",0);
-      warning("Error launching kcmkfm !");
+      tqWarning("Error launching kcmkfm !");
       exit(1); 
    }
 }
@@ -1700,7 +1687,7 @@ void KfmGui::slotConfigureBrowser()
    {
        // execute 'kcmkfm' with browser options pages
       execl(kapp->kde_bindir()+"/kcmkfm","kcmkfm","proxy","http","useragent","cookies",0);
-      warning("Error launching kcmkfm !");
+      tqWarning("Error launching kcmkfm !");
       exit(1); 
    }
 }
@@ -1920,7 +1907,6 @@ void KfmGui::readProperties( KConfig* config )
       viewModeLocal = TEXT_VIEW;
     else if (entry == "ShortView")
       viewModeLocal = SHORT_VIEW;
-    else
       viewModeLocal = viewMode;
     
     entry = config->readEntry("ShowDotFiles","unset");
@@ -1928,7 +1914,6 @@ void KfmGui::readProperties( KConfig* config )
       showDotLocal = true;
     else if (entry == "no")
       showDotLocal = false;
-    else
       showDotLocal = showDot;
     
     entry = config->readEntry("VisualSchnauzer", "unset");
@@ -1936,7 +1921,6 @@ void KfmGui::readProperties( KConfig* config )
       visualSchnauzerLocal = false;
     else if (entry == "On")
       visualSchnauzerLocal = true;
-    else
       visualSchnauzerLocal = visualSchnauzer;
     
     entry = config->readEntry("HTMLView", "unset");
@@ -1944,7 +1928,6 @@ void KfmGui::readProperties( KConfig* config )
       bViewHTMLLocal = true;
     else  if (entry == "no")
       bViewHTMLLocal = false;
-    else
       bViewHTMLLocal = bViewHTML;
     
     // Now set the changes!!
@@ -2302,7 +2285,7 @@ KfmGui::~KfmGui()
     if ( windowList->count() == 0 && !rooticons )
     {
 	// remove pid file
-	QString file = kapp->localkdedir().copy();
+	QString file = kapp->localkdedir();
 	file += "/share/apps/kfm/pid";
 	file += displayName();
 	unlink( file.data() );

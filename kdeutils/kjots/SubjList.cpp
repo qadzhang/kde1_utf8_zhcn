@@ -26,7 +26,6 @@
 
 SubjList::SubjList( QWidget*, const char* )
 {
-  initMetaObject();
 
   lb_subj = new QListBox(this);
   lb_subj->setFocus();

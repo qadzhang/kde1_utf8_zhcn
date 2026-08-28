@@ -58,7 +58,7 @@ void NetMon::processLine(char *bufline, int linelen)
       if ((strncmp(bufline,"No",2) == 0) || (linelen<=1))
       { // "No locked files"
           readingpart=finished;
-          //debug("finished");
+          //tqDebug("finished");
       }
       else
           if ((strncmp(bufline,"Pi", 2) !=0) // "Pid DenyMode ..."
@@ -85,7 +85,7 @@ void NetMon::slotReceivedData(KProcess *, char *buffer, int
         len = end-start;
         strncpy(s,start,len);
         s[len] = '\0';
-        //debug(s); debug("**");
+        //tqDebug(s); tqDebug("**");
         processLine(s,len); // process each line
         start=end+1;
     }
@@ -109,7 +109,7 @@ void NetMon::update()
             SIGNAL(receivedStdout(KProcess *, char *, int)),
             SLOT(slotReceivedData(KProcess *, char *, int)));
     *process << "smbstatus"; // the command line
-    //debug("update");
+    //tqDebug("update");
     if (!process->start(KProcess::Block,KProcess::Stdout)) // run smbstatus
         version->setText(i18n("Error launching smbstatus !"));
     else if (rownumber==0) // empty result

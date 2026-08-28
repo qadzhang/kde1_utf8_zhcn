@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/tutorial.doc:866 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>t8/main.cpp Example File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>t8/main.cpp Example File</h1>
+
+ 
+<pre>/****************************************************************
+**
+** TQt tutorial 8
+**
+****************************************************************/
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qlcdnumber-h.html">ntqlcdnumber.h</a>&gt;
+#include &lt;<a href="qfont-h.html">ntqfont.h</a>&gt;
+#include &lt;<a href="qlayout-h.html">ntqlayout.h</a>&gt;
+
+#include "lcdrange.h"
+#include "cannon.h"
+
+
+class MyWidget: public <a href="ntqwidget.html">TQWidget</a>
+{
+public:
+    MyWidget( <a href="ntqwidget.html">TQWidget</a> *parent=0, const char *name=0 );
+};
+
+
+<a name="f36"></a>MyWidget::MyWidget( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+        : <a href="ntqwidget.html">TQWidget</a>( parent, name )
+{
+    <a href="ntqpushbutton.html">TQPushButton</a> *quit = new <a href="ntqpushbutton.html">TQPushButton</a>( "Quit", this, "quit" );
+    quit-&gt;<a href="ntqwidget.html#setFont">setFont</a>( TQFont( "Times", 18, TQFont::Bold ) );
+
+    <a href="ntqobject.html#connect">connect</a>( quit, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+
+    LCDRange *angle = new LCDRange( this, "angle" );
+    angle-&gt;setRange( 5, 70 );
+
+    CannonField *cannonField
+        = new CannonField( this, "cannonField" );
+
+    <a href="ntqobject.html#connect">connect</a>( angle, TQ_SIGNAL(valueChanged(int)),
+             cannonField, TQ_SLOT(setAngle(int)) );
+    <a href="ntqobject.html#connect">connect</a>( cannonField, TQ_SIGNAL(angleChanged(int)),
+             angle, TQ_SLOT(setValue(int)) );
+
+    <a href="qgridlayout.html">TQGridLayout</a> *grid = new <a href="qgridlayout.html">TQGridLayout</a>( this, 2, 2, 10 );
+    //2x2, 10 pixel border
+
+    grid-&gt;<a href="qgridlayout.html#addWidget">addWidget</a>( quit, 0, 0 );
+    grid-&gt;<a href="qgridlayout.html#addWidget">addWidget</a>( angle, 1, 0, TQt::AlignTop );
+    grid-&gt;<a href="qgridlayout.html#addWidget">addWidget</a>( cannonField, 1, 1 );
+    grid-&gt;<a href="qgridlayout.html#setColStretch">setColStretch</a>( 1, 10 );
+
+    angle-&gt;setValue( 60 );
+    angle-&gt;<a href="ntqwidget.html#setFocus">setFocus</a>();
+}
+
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    MyWidget w;
+    w.<a href="ntqwidget.html#setGeometry">setGeometry</a>( 100, 100, 500, 355 );
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;w );
+    w.<a href="ntqwidget.html#show">show</a>();
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre><!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -16,10 +16,10 @@
 
 #include <qlist.h>
 
-#include <kbiffmonitor.h>
-#include <setupdlg.h>
+#include "kbiffmonitor.h"
+#include "setupdlg.h"
 
-#include <kbiffurl.h>
+#include "kbiffurl.h"
 #include <kapp.h>
 
 // mediatool.h is needed by kaudio.h
@@ -31,8 +31,8 @@ extern "C" {
 #include <qlabel.h>
 #include <qtimer.h>
 
-#include <notify.h>
-#include <status.h>
+#include "notify.h"
+#include "status.h"
 
 class KBiff : public QLabel
 {

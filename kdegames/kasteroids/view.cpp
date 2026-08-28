@@ -49,7 +49,7 @@
 #define PI_X_2         6.283185307
 
 KAsteroidsView::KAsteroidsView( QWidget *parent, const char *name )
-    : QWidget( parent, name ), field(SPRITES_PREFIX + IMG_BACKGROUND,WIDTH,HEIGHT),
+    : QWidget( parent, name ), field((const char*)(SPRITES_PREFIX + IMG_BACKGROUND).ascii(),WIDTH,HEIGHT)  /* TQt3 迁移 */,
       view(&field,this)
 {
     rocks.setAutoDelete( true );

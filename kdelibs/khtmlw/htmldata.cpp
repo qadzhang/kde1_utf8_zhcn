@@ -37,7 +37,7 @@ HTMLSettings::HTMLSettings()
 
     fixedFontFace = "courier";
 
-    linkColor     = blue;
+    linkColor     = k1c_blue;
     vLinkColor    = darkMagenta;
 
     bgColor       = lightGray;

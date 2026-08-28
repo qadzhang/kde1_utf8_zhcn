@@ -696,7 +696,7 @@ void Highlight::setItemDataList(ItemDataList &list, KConfig *config) {
     sprintf(s,"%d,%X,%X,%d,%d,%d,%1.95s,%d,%1.47s",
       p->defStyle,p->col.rgb(),p->selCol.rgb(),p->bold,p->italic,
       p->defFont,p->family.data(),p->size,p->charset.data());
-    config->writeEntry(p->name,s);
+    config->writeEntry((const char*)p->name,(const char*)s);
   }
 }
 
@@ -916,7 +916,7 @@ HtmlHighlight::~HtmlHighlight() {
 void HtmlHighlight::createItemData(ItemDataList &list) {
 
   list.append(new ItemData("Normal Text",dsNormal));
-  list.append(new ItemData("Char",dsChar,darkGreen,green,false,false));
+  list.append(new ItemData("Char",dsChar,darkGreen,k1c_green,false,false));
   list.append(new ItemData("Comment",dsComment));
   list.append(new ItemData("Tag Text",dsOthers,black,white,true,false));
   list.append(new ItemData("Tag",dsKeyword,darkMagenta,magenta,true,false));
@@ -1427,7 +1427,7 @@ int HlManager::wildcardFind(const char *fileName) {
 int HlManager::mimeFind(KWriteDoc *doc) 
 {
   // Magic file detection init (from kfm/kbind.cpp)    
-  QString mimefile = kapp->kde_mimedir().copy();    
+  QString mimefile = kapp->kde_mimedir();    
   mimefile += "/magic";    
   KMimeMagic magic(mimefile);    
   magic.setFollowLinks(true);      
@@ -1554,7 +1554,7 @@ void HlManager::getDefaults(ItemStyleList &list, ItemFont &font) {
   list.append(new ItemStyle(magenta,magenta,false,false)); //char
   list.append(new ItemStyle(red,red,false,false));         //string
   list.append(new ItemStyle(darkGray,gray,false,true));    //comment
-  list.append(new ItemStyle(darkGreen,green,false,false)); //others
+  list.append(new ItemStyle(darkGreen,k1c_green,false,false)); //others
 
   config = kapp->getConfig();
   config->setGroup("Default Item Styles");

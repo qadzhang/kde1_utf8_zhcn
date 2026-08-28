@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqslider.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqslider.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqslider.h</h1>
+
+<p>This is the verbatim text of the ntqslider.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqslider.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQSlider class
+**
+** Created : 961019
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the widgets module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQSLIDER_H
+#define TQSLIDER_H
+
+#ifndef QT_H
+#include "ntqwidget.h"
+#include "ntqrangecontrol.h"
+#endif // QT_H
+
+#ifndef TQT_NO_SLIDER
+
+struct TQSliderPrivate;
+
+class TQTimer;
+
+class TQ_EXPORT TQSlider : public TQWidget, public TQRangeControl
+{
+    TQ_OBJECT
+    TQ_ENUMS( TickSetting )
+    TQ_PROPERTY( int minValue READ minValue WRITE setMinValue )
+    TQ_PROPERTY( int maxValue READ maxValue WRITE setMaxValue )
+    TQ_PROPERTY( int lineStep READ lineStep WRITE setLineStep )
+    TQ_PROPERTY( int pageStep READ pageStep WRITE setPageStep )
+    TQ_PROPERTY( int value READ value WRITE setValue )
+    TQ_PROPERTY( bool tracking READ tracking WRITE setTracking )
+    TQ_PROPERTY( Orientation orientation READ orientation WRITE setOrientation )
+    TQ_PROPERTY( TickSetting tickmarks READ tickmarks WRITE setTickmarks )
+    TQ_PROPERTY( int tickInterval READ tickInterval WRITE setTickInterval )
+	
+public:
+    enum TickSetting { NoMarks = 0, Above = 1, Left = Above,
+		       Below = 2, Right = Below, Both = 3 };
+
+    TQSlider( TQWidget *parent, const char* name = 0 );
+    TQSlider( Orientation, TQWidget *parent, const char* name = 0 );
+    TQSlider( int minValue, int maxValue, int pageStep, int value, Orientation,
+	     TQWidget *parent, const char* name = 0 );
+    ~TQSlider();
+
+    virtual void	setOrientation( Orientation );
+    Orientation orientation() const;
+    virtual void	setTracking( bool enable );
+    bool	tracking() const;
+    virtual void 	setPalette( const TQPalette &amp; );
+
+    int sliderStart() const;
+    TQRect sliderRect() const;
+    TQSize sizeHint() const;
+    void setSizePolicy( TQSizePolicy sp );
+    void setSizePolicy( TQSizePolicy::SizeType hor, TQSizePolicy::SizeType ver, bool hfw = false );
+
+    TQSizePolicy sizePolicy() const;
+    TQSize minimumSizeHint() const;
+
+    virtual void setTickmarks( TickSetting );
+    TickSetting tickmarks() const { return ticks; }
+
+    virtual void setTickInterval( int );
+    int 	tickInterval() const { return tickInt; }
+
+    int	 minValue() const;
+    int	 maxValue() const;
+    void setMinValue( int );
+    void setMaxValue( int );
+    int	 lineStep() const;
+    int	 pageStep() const;
+    void setLineStep( int );
+    void setPageStep( int );
+    int  value() const;
+
+public slots:
+    virtual void	setValue( int );
+    void	addStep();
+    void	subtractStep();
+    void	addLine();
+    void	subtractLine();
+
+signals:
+    void	valueChanged( int value );
+    void	sliderPressed();
+    void	sliderMoved( int value );
+    void	sliderReleased();
+
+protected:
+    void	resizeEvent( TQResizeEvent * );
+    void	paintEvent( TQPaintEvent * );
+
+    void	keyPressEvent( TQKeyEvent * );
+    void	mousePressEvent( TQMouseEvent * );
+    void	mouseReleaseEvent( TQMouseEvent * );
+    void	mouseMoveEvent( TQMouseEvent * );
+#ifndef TQT_NO_WHEELEVENT
+    void	wheelEvent( TQWheelEvent * );
+#endif
+    void	focusInEvent( TQFocusEvent *e );
+    void	focusOutEvent( TQFocusEvent *e );
+
+    void	styleChange( TQStyle&amp; );
+
+    void	valueChange();
+    void	rangeChange();
+
+private slots:
+    void	repeatTimeout();
+
+private:
+    enum State { Idle, Dragging, TimingUp, TimingDown };
+
+    void	init();
+    int		positionFromValue( int ) const;
+    int		valueFromPosition( int ) const;
+    void	moveSlider( int );
+    void	reallyMoveSlider( int );
+    void	resetState();
+    int		available() const;
+    int		goodPart( const TQPoint&amp; ) const;
+    void	initTicks();
+
+    TQSliderPrivate *d;
+    TQTimer	*timer;
+    TQCOORD	sliderPos;
+    int		sliderVal;
+    TQCOORD	clickOffset;
+    State	state;
+    bool	track;
+    TQCOORD	tickOffset;
+    TickSetting	ticks;
+    int		tickInt;
+    Orientation orient;
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQSlider( const TQSlider &amp; );
+    TQSlider &amp;operator=( const TQSlider &amp; );
+#endif
+};
+
+inline bool TQSlider::tracking() const
+{
+    return track;
+}
+
+inline TQSlider::Orientation TQSlider::orientation() const
+{
+    return orient;
+}
+
+inline int TQSlider::sliderStart() const
+{
+    return sliderPos;
+}
+
+inline void TQSlider::setSizePolicy( TQSizePolicy::SizeType hor, TQSizePolicy::SizeType ver, bool hfw )
+{ 
+    TQWidget::setSizePolicy( hor, ver, hfw ); 
+}
+
+#endif // TQT_NO_SLIDER
+
+#endif // TQSLIDER_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

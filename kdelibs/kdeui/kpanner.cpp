@@ -76,7 +76,7 @@
 #include <qpainter.h>
 #include <qcursor.h>
 #include <qframe.h>
-#include <kpanner.h>
+#include "kpanner.h"
 #include "kpanner.h"
 
 KPanner::KPanner(QWidget *parent, const char *name, unsigned flags, int d)
@@ -89,7 +89,7 @@ KPanner::KPanner(QWidget *parent, const char *name, unsigned flags, int d)
      */
     cw0 = new QWidget(this, "_pchild0");
     cw1 = new QWidget(this, "_pchild1");
-    divider = new QFrame(this, "_pdivider", 0, TRUE);
+    divider = new QFrame(this, "_pdivider", 0);  // TQt3：QFrame 无第四参（allowLines），三参形态
     divider->setFrameStyle(QFrame::Panel | QFrame::Raised);
     divider->setLineWidth(1);
 

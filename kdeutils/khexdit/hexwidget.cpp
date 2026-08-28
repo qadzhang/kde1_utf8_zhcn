@@ -231,7 +231,6 @@ void HexWidget::openURL(const char *_url, KIND_OF_OPEN _mode)
 {
     /* This code is from KEDIT (torben's I guess) */
     netFile = _url;
-    netFile.detach();
     KURL u( netFile.data() );
     if ( u.isMalformed())   {
 	QMessageBox::warning (0, 

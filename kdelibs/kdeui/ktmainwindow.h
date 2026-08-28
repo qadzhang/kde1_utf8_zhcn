@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <qwidget.h>
 #include <qlist.h>
-#include <ktoolbar.h>
-#include <kmenubar.h>
-#include <kstatusbar.h>
+#include "ktoolbar.h"
+#include "kmenubar.h"
+#include "kstatusbar.h"
 #include <kconfig.h>
 
 /**

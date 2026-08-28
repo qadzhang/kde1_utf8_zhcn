@@ -97,13 +97,13 @@ ModalLabel::eventFilter (QObject *, QEvent *e) {
     case Event_MouseMove:
     case Event_KeyPress:
     case Event_KeyRelease:
-    case Event_Accel:
+    case TQEvent::Accel:
       //case Event_DragEnter:
     case Event_DragMove:
     case Event_DragLeave:
     case Event_Drop:
       //case Event_DragResponse:
-      //debug("Ate event");
+      //tqDebug("Ate event");
     return true;
     break;
   }

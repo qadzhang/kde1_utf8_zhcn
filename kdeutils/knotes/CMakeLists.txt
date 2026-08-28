@@ -19,21 +19,21 @@ set(knotes_SRCS
 )
 
 set(knotes_MOC
-    alarm.moc
-    configdlg.moc
-    docking.moc
-    fontdlg.moc
-    knotes.moc
-    mail.moc
-    renamedlg.moc
-    spin.moc
+    alarm.h
+    configdlg.h
+    docking.h
+    fontdlg.h
+    knotes.h
+    mail.h
+    renamedlg.h
+    spin.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${knotes_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${knotes_MOC})
 
 add_executable(knotes1 ${knotes_SRCS} ${MOC_FILES})
 target_link_libraries(knotes1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

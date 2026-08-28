@@ -16,7 +16,7 @@ SortedKProtocolDirEntry::~SortedKProtocolDirEntry()
 {
 }
 
-int SortedKProtocolDirEntry::compareItems( GCI i1, GCI i2)
+int SortedKProtocolDirEntry::compareItems( TQPtrCollection::Item i1, TQPtrCollection::Item i2)
 {
     KProtocolDirEntry *de1 = (KProtocolDirEntry *)i1;
     KProtocolDirEntry *de2 = (KProtocolDirEntry *)i2;
@@ -25,8 +25,8 @@ int SortedKProtocolDirEntry::compareItems( GCI i1, GCI i2)
 	if (de1->isdir != de2->isdir)
 	    return ((de1->isdir) ? -1 : 1);
     }
-    QString s1 = de1->name.copy();
-    QString s2 = de2->name.copy();
+    QString s1 = de1->name;
+    QString s2 = de2->name;
     // Removing trailing '/' for directories
     if (de1->isdir)  s1.truncate( s1.length() -1 );
     if (de2->isdir)  s2.truncate( s2.length() -1 );
@@ -273,7 +273,6 @@ int KProtocolFILE::OpenDir( KURL *url )
 	    uxbit = 'S';
 	else if ( (buff.st_mode & (S_IXUSR|S_ISUID)) == S_IXUSR )
 	    uxbit = 'x';
-	else
 	    uxbit = '-';
 	
 	if ( (buff.st_mode & (S_IXGRP|S_ISGID)) == (S_IXGRP|S_ISGID) )
@@ -282,7 +281,6 @@ int KProtocolFILE::OpenDir( KURL *url )
 	    gxbit = 'S';
 	else if ( (buff.st_mode & (S_IXGRP|S_ISGID)) == S_IXGRP )
 	    gxbit = 'x';
-	else
 	    gxbit = '-';
 	
 	if ( (buff.st_mode & (S_IXOTH|S_ISVTX)) == (S_IXOTH|S_ISVTX) )
@@ -291,7 +289,6 @@ int KProtocolFILE::OpenDir( KURL *url )
 	    oxbit = 'T';
 	else if ( (buff.st_mode & (S_IXOTH|S_ISVTX)) == S_IXOTH )
 	    oxbit = 'x';
-	else
 	    oxbit = '-';
     
 	buffer[1] = ((( buff.st_mode & S_IRUSR ) == S_IRUSR ) ? 'r' : '-' );
@@ -563,13 +560,13 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
 					// A regular expression
 					if ( name.left(1) == "/" )
 					{
-						re = name.data() + 1;
+						re = TQString((const char*)name.data() + 1);  /* TQt3 迁移 */
 						re.setWildcard( FALSE );
 					}
 					// a wildcard pattern
 					else
 					{
-						re = name.data();
+						re = TQString((const char*)name.data());  /* TQt3 迁移 */
 						re.setWildcard( TRUE );
 					}
 				}

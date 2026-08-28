@@ -20,8 +20,8 @@
 
 #include <qpainter.h>
 
-#include <ktopwidget.h>
-#include <kstatusbar.h>
+#include "ktopwidget.h"
+#include "kstatusbar.h"
 // $Id: kstatusbar.cpp,v 1.18.4.1 1999/05/29 18:55:01 denis Exp $
 // $Log: kstatusbar.cpp,v $
 // Revision 1.18.4.1  1999/05/29 18:55:01  denis
@@ -81,7 +81,7 @@ KStatusBarLabel::KStatusBarLabel( const char *text, int _id,
   resize( w, h );
     
   setText( text );
-  if ( style() == MotifStyle )
+  if ( style().inherits("TQMotifStyle") )
     setFrameStyle( QFrame::Panel | QFrame::Sunken );
   setAlignment( AlignLeft | AlignVCenter );
 }
@@ -262,12 +262,12 @@ void KStatusBar::removeItem (int id)
 
 void KStatusBar::replaceItem(int /* _id */, const char * /* _text */ )
 {
- debug ("Not yet implemented. Sorry.");
+ tqDebug( "Not yet implemented. Sorry.");
 }
 
 void KStatusBar::replaceItem(int /* _id */ , QWidget * /* _widget */)
 {
- debug ("Not yet implemented. Sorry.");
+ tqDebug( "Not yet implemented. Sorry.");
 }
 
 void KStatusBar::changeItem( const char *text, int id )

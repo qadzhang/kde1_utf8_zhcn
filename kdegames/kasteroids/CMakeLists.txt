@@ -10,16 +10,16 @@ include_directories (
 set(KASTEROIDS_SRCS  kfixedtopwidget.cpp main.cpp toplevel.cpp view.cpp)
 
 set(KASTEROIDS_MOC
-    kfixedtopwidget.moc
-    toplevel.moc
-    view.moc
+    kfixedtopwidget.h
+    toplevel.h
+    view.h
     )
 
-QT1_WRAP_MOC(MOC_FILES ${KASTEROIDS_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KASTEROIDS_MOC})
 
 add_executable(kasteroids ${KASTEROIDS_SRCS} ${MOC_FILES} ${QwSpriteField_SOURCES})
 target_link_libraries(kasteroids
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

@@ -38,7 +38,7 @@ Game::Game() :  KTopLevelWidget()
 {
     setCaption( kapp->getCaption() );
 
-    setIcon(klocale->translate("Snake Race"));
+    setIcon( TQPixmap( kapp->kde_icondir() + "/ksnake.xpm" ) );  /* TQt3 迁移：icon 名→pixmap */
 
     conf = kapp->getConfig();
     if(conf == NULL) {
@@ -282,7 +282,7 @@ void Game::backgroundColor()
 void Game::lookupBackgroundPixmaps()
 {
     QString pixDir;
-    pixDir.setStr(KApplication::kde_datadir().copy());
+    pixDir = (KApplication::kde_datadir());
     pixDir.append("/ksnake/backgrounds");
     QDir dir(pixDir, "*.xpm");
 

@@ -23,7 +23,7 @@
 #include "qstrlist.h"
 #include "qfontinfo.h"
 #include "qregexp.h"
-#include <kapp.h>
+#include "kapp.h"
 
 
 KCharsetsData *KCharsets::data=0;
@@ -37,7 +37,7 @@ uint KCharsets::count=0;
 KCharset::KCharset(){
   
    if (!data || !charsets){
-      fatal("KCharset constructor called when no KCharsets object created");
+      tqFatal("KCharset constructor called when no KCharsets object created");
       return;
    }   
    entry=0;
@@ -46,7 +46,7 @@ KCharset::KCharset(){
 KCharset::KCharset(const KCharsetEntry *e){
   
    if (!data || !charsets){
-      fatal("KCharset constructor called when no KCharsets object created");
+      tqFatal("KCharset constructor called when no KCharsets object created");
       return;
    }   
    entry=e;
@@ -55,7 +55,7 @@ KCharset::KCharset(const KCharsetEntry *e){
 KCharset::KCharset(const char *str){
 
    if (!data || !charsets){
-      fatal("KCharset constructor called when no KCharsets object created");
+      tqFatal("KCharset constructor called when no KCharsets object created");
       return;
    }   
    entry=data->charsetEntry(str);
@@ -64,7 +64,7 @@ KCharset::KCharset(const char *str){
 KCharset::KCharset(const QString s){
 
    if (!data || !charsets){
-      fatal("KCharset constructor called when no KCharsets object created");
+      tqFatal("KCharset constructor called when no KCharsets object created");
       return;
    }   
    entry=data->charsetEntry(s);
@@ -73,7 +73,7 @@ KCharset::KCharset(const QString s){
 KCharset::KCharset(QFont::CharSet qtCharset){
 
   if (!data || !charsets){
-      fatal("KCharset constructor called when no KCharsets object created");
+      tqFatal("KCharset constructor called when no KCharsets object created");
       return;
    }  
   entry=data->charsetEntry(qtCharset);
@@ -82,7 +82,7 @@ KCharset::KCharset(QFont::CharSet qtCharset){
 KCharset::KCharset( const KCharset& kc){
 
   if (!data || !charsets){
-     fatal("KCharset copy constructor called when no KCharsets object created (?)");
+     tqFatal("KCharset copy constructor called when no KCharsets object created (?)");
      return;
   }   
   entry=kc.entry;
@@ -157,7 +157,7 @@ bool KCharset::isRegistered()const{
 QFont::CharSet KCharset::qtCharset()const{
 
   if (!entry) {
-    warning("KCharset: Wrong charset!\n");
+    tqWarning("KCharset: Wrong charset!\n");
     return QFont::AnyCharSet;
   }  
   if (!stricmp(name(),"any")) return QFont::AnyCharSet;
@@ -168,7 +168,7 @@ QFont::CharSet KCharset::qtCharset()const{
 int KCharset::bits()const{
 
   if (!entry) {
-    warning("KCharset: Wrong charset!\n");
+    tqWarning("KCharset: Wrong charset!\n");
     return 8;
   }  
   if ( stricmp(name(),"unicode") == 0 ) return 16;
@@ -181,7 +181,7 @@ int KCharset::bits()const{
 
 QFont &KCharset::setQFont(QFont &fnt){
   if (!entry) {
-    warning("KCharset: Wrong charset!\n");
+    tqWarning("KCharset: Wrong charset!\n");
     return fnt;
   }  
   if ( (stricmp(charsets->name(fnt),name()) == 0)
@@ -319,7 +319,7 @@ KCharsetConverter::KCharsetConverter(KCharset inputCharset
 				    ,int flags){
 				    
   if (!inputCharset.ok()) {
-    warning("KCharsetConverter: NULL charset on input!\n");
+    tqWarning("KCharsetConverter: NULL charset on input!\n");
     inputCharset="us-ascii";    
   }  
   data=new KCharsetConverterData(inputCharset,flags);
@@ -329,11 +329,11 @@ KCharsetConverter::KCharsetConverter(KCharset inputCharset
 				    ,KCharset outputCharset
 				    ,int flags){
   if (!inputCharset.ok()) {
-    warning("KCharsetConverter: NULL charset on input!\n");
+    tqWarning("KCharsetConverter: NULL charset on input!\n");
     inputCharset="us-ascii";    
   }  
   if (!outputCharset.ok()) {
-    warning("KCharsetConverter: NULL charset on output!\n");
+    tqWarning("KCharsetConverter: NULL charset on output!\n");
     outputCharset="us-ascii";    
   }  
   data=new KCharsetConverterData(inputCharset,outputCharset,flags);
@@ -357,14 +357,12 @@ KCharsetConversionResult::KCharsetConversionResult(
                                         const KCharsetConversionResult& kccr){
   cCharset=kccr.cCharset;
   cText=kccr.cText;
-  cText.detach();
 }
 
 KCharsetConversionResult& KCharsetConversionResult::operator =(
                            const KCharsetConversionResult& kccr){
   cCharset=kccr.cCharset;
   cText=kccr.cText;
-  cText.detach();
   return *this;
 }
 
@@ -442,7 +440,7 @@ bool KCharsets::setDefault(KCharset ch){
      data->setDefaultCharset(ch.entry);
      return TRUE; 
   }   
-  warning("Wrong charset (%s)! Setting to default (us-ascii)", ch.name());
+  tqWarning("Wrong charset (%s)! Setting to default (us-ascii)", ch.name());
   const KCharsetEntry *ce=data->charsetEntry("us-ascii");
   data->setDefaultCharset(ce);
   return FALSE;  

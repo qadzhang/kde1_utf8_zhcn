@@ -67,7 +67,7 @@ KDynamicHandle KDynamicLibrary::loadLibrary(QString fileName, LoadOption opt)
 #if defined(HAVE_DLFCN_H) && defined(HAVE_SHLOAD)
     QFile libfile(fileName);
     if (!libfile.exists()) {
-	warning(i18n("No such file \"%s\"!"), 
+	tqWarning(i18n("No such file \"%s\"!"), 
 		 fileName.data());
     }
 #endif
@@ -83,7 +83,7 @@ KDynamicHandle KDynamicLibrary::loadLibrary(QString fileName, LoadOption opt)
        last_error = new("QString") QString();
 
     if(handle == NULL){
-      warning("Failed to open %s: %s", fileName.data(), dlerror());
+      tqWarning("Failed to open %s: %s", fileName.data(), dlerror());
       *last_error = dlerror();
     }
     else {
@@ -116,7 +116,7 @@ void *KDynamicLibrary::getSymbol(KDynamicHandle handle, QString symName)
        last_error = new("QString") QString();
 
     if(sym == NULL){
-      warning("Failed to find %s: %s", symName.data(), dlerror());
+      tqWarning("Failed to find %s: %s", symName.data(), dlerror());
       *last_error = dlerror();
     }
     else {

@@ -169,7 +169,7 @@ bool StringListSelectOneDialog::getSelection(int& index)
 bool StringListSelectOneDialog::getSelection(string& text)
 {
   // ############################################################################  
-  text=comboStrings->currentText();
+  text=comboStrings->currentText().ascii();  // TQt3 迁移
   return true;
   // ############################################################################  
 }

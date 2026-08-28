@@ -2,16 +2,19 @@ cmake_minimum_required (VERSION 3.0)
 
 project (kdebase)
 
+#   Modified for the KDE1 Revival Project, 2026（TQt3 迁移）
+#   注：源目录内与系统头同名的文件（kcontrol/locale/locale.h 会劫持
+#   <stdio.h> 链上的 <locale.h>）已改名为 klocaleconfig.h 规避
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 
 # additional cmake files
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-find_package(Qt1 REQUIRED)
+find_package(TQt3 REQUIRED)
 find_package(KDE1 REQUIRED)
 
-include(Qt1Macros)
+include(TQt3Macros)
 
 include(kde1-configure)
 
@@ -45,7 +48,7 @@ add_definitions( -DHAVE_CONFIG_H )
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wno-write-strings")
-    set(CMAKE_CXX_FLAGS  "${CMAKE_C_FLAGS} -Wno-write-strings")
+    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wno-write-strings")  # TQt3 迁移：基底用 CXX（保住 FindTQt3 的 -include 注入，勿用 C_FLAGS）
     set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fpermissive -std=c++98 -Wno-write-strings")
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
 endif()

@@ -382,7 +382,7 @@ void KFileInfoContents::setCurrentItem(const char *item,
 		return;
 	    }
     
-    warning("setCurrentItem: no match found.");
+    tqWarning("setCurrentItem: no match found.");
 }
 
 QString KFileInfoContents::findCompletion( const char *base, 
@@ -494,7 +494,7 @@ QString KFileInfoContents::findCompletion( const char *base,
 
 void KFileInfoContents::insertSortedItem(const KFileInfo *item, uint pos)
 {
-    //  debug("insert %s %d", item->fileName(), pos);
+    //  tqDebug("insert %s %d", item->fileName(), pos);
     if (sorted_length == sorted_max) {
 	sorted_max *= 2;
 	KFileInfo **newArray = new KFileInfo*[sorted_max];

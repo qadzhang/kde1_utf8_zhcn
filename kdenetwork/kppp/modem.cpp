@@ -45,14 +45,14 @@ Modem::Modem() :
   data_mode(false),
   modem_is_locked(false)
 {
-  sn = 0L;
+  sn = 0;  /* TQt3 迁移 */
   assert(modem==0);
   modem = this;
 }
 
 
 Modem::~Modem() {
-  modem = 0;
+  modem = 0;  /* TQt3 迁移 */
 }
 
 
@@ -275,7 +275,7 @@ void Modem::stopNotifier() {
     sn->setEnabled(false);
     disconnect(sn);
     delete sn;
-    sn = 0;
+    sn = 0;  /* TQt3 迁移 */
     Debug("QSocketNotifier stopped!");
   }
 }
@@ -463,7 +463,6 @@ QString Modem::parseModemSpeed(const QString &s) {
     result.sprintf("%d", rx);
   else if(rx == -1) // should not happen
     result.sprintf("%d", tx);
-  else
     result.sprintf("%d/%d", rx, tx);
 
   Debug("The parsed result is: %s\n", result.data());

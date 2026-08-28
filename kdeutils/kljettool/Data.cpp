@@ -19,26 +19,26 @@ Data::~Data(){
 
 Data Data::operator=(Data data){
 
-  Printer       =   data.Printer.copy();
-  Job_name 	=   data.Job_name.copy();
-  Density 	=   data.Density.copy();
-  Fontnumber 	=   data.Fontnumber.copy();
-  Format 	=   data.Format.copy();
-  Termination 	=   data.Termination.copy();
-  RET 		=   data.RET.copy();
-  Copies 	=   data.Copies.copy();
-  Powersave 	=   data.Powersave.copy();
-  Resolution 	=   data.Resolution.copy();
-  Language 	=   data.Language.copy();
-  Pageprotect 	=   data.Pageprotect.copy();
-  Ptsize 	=   data.Ptsize.copy();
-  Pitch 	=   data.Pitch.copy();
-  Economode 	=   data.Economode.copy();
-  Manualfeed 	=   data.Manualfeed.copy();
-  Orientation 	=   data.Orientation.copy();
-  Symset 	=   data.Symset.copy();
-  Autocont 	=   data.Autocont.copy();
-  Formlines 	=   data.Formlines.copy();
+  Printer       =   data.Printer;
+  Job_name 	=   data.Job_name;
+  Density 	=   data.Density;
+  Fontnumber 	=   data.Fontnumber;
+  Format 	=   data.Format;
+  Termination 	=   data.Termination;
+  RET 		=   data.RET;
+  Copies 	=   data.Copies;
+  Powersave 	=   data.Powersave;
+  Resolution 	=   data.Resolution;
+  Language 	=   data.Language;
+  Pageprotect 	=   data.Pageprotect;
+  Ptsize 	=   data.Ptsize;
+  Pitch 	=   data.Pitch;
+  Economode 	=   data.Economode;
+  Manualfeed 	=   data.Manualfeed;
+  Orientation 	=   data.Orientation;
+  Symset 	=   data.Symset;
+  Autocont 	=   data.Autocont;
+  Formlines 	=   data.Formlines;
 
 
 }
@@ -100,7 +100,6 @@ void Data::setPrinter(char *printer){
 
 
   Printer = printer;
-  Printer.detach();
 
 }
 

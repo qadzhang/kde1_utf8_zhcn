@@ -199,7 +199,6 @@ void FilterRuleEditor::lowerRule()
 
 QString FilterRuleEditor::convertSpecial(QString str)
 {
-  str.detach();
   str.replace(QRegExp("\\$"), "$$");
   return str;
 }

@@ -29,7 +29,7 @@
 #include <qwmatrix.h>
 #include <qkeycode.h>
 
-int KVItemList::compareItems( GCI i1, GCI i2)
+int KVItemList::compareItems( TQPtrCollection::Item i1, TQPtrCollection::Item i2)
 {
     KDMViewItem *lbi1 = (KDMViewItem *)i1;
     KDMViewItem *lbi2 = (KDMViewItem *)i2;
@@ -53,9 +53,8 @@ KDMViewItem::paint( QPainter* p, KDMView* v, enum State s)
      QColorGroup g = v->colorGroup();
      if( s == Selected) {
 	  QColor   fc;                             // fill color
-	  GUIStyle style = v->style();
-	  switch( style) {
-	  case WindowsStyle:
+	  // TQt3 迁移：switch(GUIStyle) 改继承式分支
+	  if ( v->style().inherits("TQWindowsStyle") ) {
 	       fc = darkBlue;                      // !!!hardcoded
 	       p->drawWinFocusRect( txtx - 3, pm.height(), 
 				    fm.width( text())+ 5,
@@ -66,8 +65,8 @@ KDMViewItem::paint( QPainter* p, KDMView* v, enum State s)
 				 fm.lineSpacing(), fc);
 		    p->setPen( g.base() );
 	       }
-	       break;
-	  default: /* Motif */
+	  }
+	  else {  /* Motif */
 	       fc = g.text();
 	       p->fillRect( txtx - 1, pm.height() + 2, 
 			    fm.width( text()) + 1, 
@@ -79,7 +78,6 @@ KDMViewItem::paint( QPainter* p, KDMView* v, enum State s)
 	       }
 	       p->setBackgroundColor( g.text() );
 	       p->setPen( g.base() );
-	       break;
 	  }
      } 
      p->drawText( txtx, pm.height()+fm.lineSpacing()-1, text());
@@ -108,13 +106,11 @@ KDMView::KDMView( QWidget* parent, const char* name, WFlags f)
 {
      setTableFlags( Tbl_autoScrollBars| Tbl_smoothScrolling | 
 		    Tbl_clipCellPainting );
-     switch ( style() ) {
-     case WindowsStyle:
-     case MotifStyle:
+     /* TQt3 迁移：switch(GUIStyle) 改继承式 */
+     if ( style().inherits("TQWindowsStyle") || style().inherits("TQMotifStyle") ) {
 	  setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
 	  setBackgroundColor( colorGroup().base() );
-	  break;
-     default:
+     } else {
 	  setFrameStyle( QFrame::Panel | QFrame::Plain );
 	  setLineWidth( 1 );
      }

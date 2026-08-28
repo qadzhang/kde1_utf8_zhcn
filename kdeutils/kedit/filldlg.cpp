@@ -105,7 +105,6 @@ struct fill_struct  FillDlg::getFillCol() {
   fillstr.fill_column_is_set = fill_column->isChecked();
   fillstr.backup_copies_is_set = backup_copies->isChecked();
   fillstr.mailcmd = mailcmd->text();
-  fillstr.mailcmd.detach();
   string = values->text();  
   fillstr.fill_column_value = string.toInt();
 

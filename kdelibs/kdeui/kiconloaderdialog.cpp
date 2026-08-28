@@ -74,8 +74,15 @@ void KIconLoaderCanvas::loadDir( QString dirname, QString filter )
     }
   if( d.exists() )
     {
-      file_list = *d.entryList( QDir::Files | QDir::Readable, QDir::Name );
-      QApplication::setOverrideCursor( waitCursor );
+      // TQt3 迁移：entryList 返回 QStringList（值语义），file_list 为
+      // QStrList——逐项搬运
+      file_list.clear();
+      {
+        QStringList sl = d.entryList( QDir::Files | QDir::Readable, QDir::Name );
+        for ( QStringList::Iterator it = sl.begin(); it != sl.end(); ++it )
+          file_list.append( *it );
+      }
+      QApplication::setOverrideCursor( TQt::waitCursor );
       curr_indx = 0;
       sel_id = 0;
       max_width  = 16;

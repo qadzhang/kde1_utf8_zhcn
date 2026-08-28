@@ -25,7 +25,6 @@
 Napoleon::Napoleon( QWidget* parent, const char* name)
   :dealer(parent,name)
 {
-  initMetaObject();
 
   const int Store   = 1;
   const int Store2  = 2;

@@ -117,7 +117,7 @@ int main (int argc, char **argv) {
             audio->play ((char *) (const char *) soundFile);             
         } else {
             delete audio;                  
-            audio = 0;
+            audio = 0;  /* TQt3 迁移 */
         }
       }
     }
@@ -126,7 +126,7 @@ int main (int argc, char **argv) {
     int result = dialog.exec ();
     if (result == 1) {
 	dialog.killTimers ();
-        debug ("Running talk client...");
+        tqDebug("Running talk client...");
 
 	                              // KDEBINDIR is set by ktalkd
         QString cmd0 = cfg->readEntry ("talkprg", "$KDEBINDIR/kvt -e talk");
@@ -136,7 +136,7 @@ int main (int argc, char **argv) {
         cmd += argv[1];
         cmd += "' &";
 
-        debug(cmd);
+        tqDebug(cmd);
 
         // Open /dev/null for stdin, stdout and stderr:
         int fd=open("/dev/null", O_RDWR);

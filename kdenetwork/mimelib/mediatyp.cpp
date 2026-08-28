@@ -380,7 +380,7 @@ void DwMediaType::Parse()
     DwTokenString tokenStr(mString);
     while (1) {
         // Get ';'
-        found = 0;
+        found = TQString();
         while (!found && tokenizer.Type() != eTkNull) {
             if (tokenizer.Type() == eTkTspecial
                 && tokenizer.Token()[0] == ';') {
@@ -404,7 +404,7 @@ void DwMediaType::Parse()
             ++tokenizer;
         }
         // Get '='
-        found = 0;
+        found = TQString();
         while (!found && tokenizer.Type() != eTkNull) {
             if (tokenizer.Type() == eTkTspecial
                 && tokenizer.Token()[0] == '=') {

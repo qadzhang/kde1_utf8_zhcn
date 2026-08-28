@@ -49,6 +49,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 
 
 //-----------------------------------------------------------------------------
@@ -56,7 +57,7 @@ Theme::Theme(): ThemeInherited(0), mInstFiles(true)
 {
   int len;
 
-  initMetaObject();
+
 
   instOverwrite = false;
 
@@ -112,7 +113,7 @@ void Theme::saveSettings(void)
 //-----------------------------------------------------------------------------
 void Theme::setDescription(const QString aDescription)
 {
-  mDescription = aDescription.copy();
+  mDescription = aDescription;
 }
 
 
@@ -161,7 +162,7 @@ void Theme::loadMappings()
       file.setName(kapp->kde_datadir() + "/" + kapp->appName() +
 		   "/theme.mappings");
       if (!file.exists())
-	fatal(i18n("Mappings file theme.mappings not found."));
+	tqFatal(i18n("Mappings file theme.mappings not found."));
     }
   }
 
@@ -179,7 +180,7 @@ void Theme::cleanupWorkDir(void)
   // cleanup work directory
   cmd.sprintf("rm -rf %s*", (const char*)workDir());
   rc = system(cmd);
-  if (rc) warning(i18n("Error during cleanup of work directory: rc=%d\n%s"),
+  if (rc) tqWarning(i18n("Error during cleanup of work directory: rc=%d\n%s"),
 		  rc, (const char*)cmd);
 }
 
@@ -191,13 +192,13 @@ bool Theme::load(const QString aPath, QString aName)
   QFileInfo finfo(aPath);
   int rc, num, i;
 
-  debug("Theme::load()");
+  tqDebug("Theme::load()");
 
   if (!finfo.exists()) return false;
 
   clear();
   cleanupWorkDir();
-  mName = aName.copy();
+  mName = aName;
 
   if (finfo.isDir())
   {
@@ -207,14 +208,14 @@ bool Theme::load(const QString aPath, QString aName)
     if (i >= 0) str = workDir() + aPath.mid(i, 1024);
     else str = workDir();
 
-    cmd.resize(80+aPath.length()+str.length());
+    // TQt3 迁移：QString 预分配 resize 已删（sprintf 自动扩展）
     cmd.sprintf("cp -r \"%s\" \"%s\"", (const char*)aPath,
 		(const char*)str);
-    debug(cmd);
+    tqDebug(cmd);
     rc = system(cmd);
     if (rc)
     {
-      warning(i18n("Failed to copy theme contents\nfrom %s\ninto %s"),
+      tqWarning(i18n("Failed to copy theme contents\nfrom %s\ninto %s"),
 	      (const char*)aPath, (const char*)str);
       return false;
     }
@@ -222,14 +223,14 @@ bool Theme::load(const QString aPath, QString aName)
   else
   {
     // The theme given is a tar package. Unpack theme package.
-    cmd.resize(80+workDir().length()+aPath.length());
+    // TQt3 迁移：同上
     cmd.sprintf("cd \"%s\"; gzip -c -d \"%s\" | tar xf -", 
 		(const char*)workDir(), (const char*)aPath);
-    debug(cmd);
+    tqDebug(cmd);
     rc = system(cmd);
     if (rc)
     {
-      warning(i18n("Failed to unpack %s with\n%s"), 
+      tqWarning(i18n("Failed to unpack %s with\n%s"), 
 	      (const char*)aPath,
 	      (const char*)cmd);
       return false;
@@ -238,9 +239,9 @@ bool Theme::load(const QString aPath, QString aName)
 
   // Let's see if the theme is stored in a subdirectory.
   QDir dir(workDir(), 0, QDir::Name, QDir::Files|QDir::Dirs);
-  for (i=0, mThemePath=0, num=0; dir[i]!=0; i++)
+  for (i=0, mThemePath = TQString(), num=0; i<(int)dir.count(); i++)  // TQt3 迁移
   {
-    if (dir[i][0]=='.') continue;
+    if (dir[i].latin1()[0]=='.') continue;
     finfo.setFile(workDir() + dir[i]);
     if (!finfo.isDir()) break;
     mThemePath = dir[i];
@@ -255,7 +256,7 @@ bool Theme::load(const QString aPath, QString aName)
   mThemercFile = dir[0];
   if (mThemercFile.isEmpty())
   {
-    warning(i18n("Theme contains no .themerc file"));
+    tqWarning(i18n("Theme contains no .themerc file"));
     return false;
   }
 
@@ -284,25 +285,25 @@ bool Theme::save(const QString aPath)
   if (stricmp(aPath.right(4), ".tgz") == 0 ||
       stricmp(aPath.right(7), ".tar.gz") == 0)
   {
-    cmd.resize(80+workDir().length()+aPath.length());
+    // TQt3 迁移：同上
     cmd.sprintf("cd \"%s\";tar cf - *|gzip -c >\"%s\"",
 		(const char*)workDir(), (const char*)aPath);
   }
   else
   {
-    cmd.resize(80+workDir().length()+aPath.length()+aPath.length());
+    cmd.truncate(80+workDir().length()+aPath.length()+aPath.length());
     cmd.sprintf("cd \"%s\"; rm -rf \"%s\"; cp -r * \"%s\"",
 		(const char*)workDir(), (const char*)aPath,
 		(const char*)aPath);
   }
 
-  debug(cmd);
+  tqDebug(cmd);
   rc = system(cmd);
   if (rc) {
-      debug("Failed to save theme to:");
-      debug(aPath);
-      debug("with command");
-      debug(cmd);
+      tqDebug("Failed to save theme to:");
+      tqDebug(aPath);
+      tqDebug("with command");
+      tqDebug(cmd);
   }
 
   return (rc==0);
@@ -344,7 +345,7 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   finfo.setFile(src);
   if (!finfo.exists())
   {
-//    debug("File %s is not in theme package.", (const char*)aSrc);
+//    tqDebug("File %s is not in theme package.", (const char*)aSrc);
     return false;
   }
 
@@ -368,14 +369,14 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   srcFile.setName(src);
   if (!srcFile.open(IO_ReadOnly))
   {
-    warning(i18n("Cannot open file %s for reading"), (const char*)src);
+    tqWarning(i18n("Cannot open file %s for reading"), (const char*)src);
     return false;
   }
 
   destFile.setName(dest);
   if (!destFile.open(IO_WriteOnly))
   {
-    warning(i18n("Cannot open file %s for writing"), (const char*)dest);
+    tqWarning(i18n("Cannot open file %s for writing"), (const char*)dest);
     return false;
   }
 
@@ -385,7 +386,7 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
     if (len <= 0) break;
     if (destFile.writeBlock(buf, len) != len)
     {
-      warning(i18n("Write error to %s:\n%s"), (const char*)dest,
+      tqWarning(i18n("Write error to %s:\n%s"), (const char*)dest,
 	      strerror(errno));
       return false;
     }
@@ -395,7 +396,7 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   destFile.close();
 
   addInstFile(dest);
-//  debug("Installed %s to %s %s", (const char*)src, (const char*)dest,
+//  tqDebug("Installed %s to %s %s", (const char*)src, (const char*)dest,
 //	backupMade ? "(backup of existing file)" : "");
 
   return true;
@@ -415,7 +416,7 @@ int Theme::installGroup(const char* aGroupName)
   int len, i, installed = 0;
   const char* missing = 0;
 
-//  debug("*** beginning with %s", aGroupName);
+//  tqDebug("*** beginning with %s", aGroupName);
   group = aGroupName;
   mConfig->setGroup(group);
   
@@ -425,24 +426,24 @@ int Theme::installGroup(const char* aGroupName)
   while (!group.isEmpty())
   {
     mMappings->setGroup(group);
-//    debug("Mappings group [%s]", (const char*)group);
+//    tqDebug("Mappings group [%s]", (const char*)group);
 
     // Read config settings
     value = mMappings->readEntry("ConfigFile");
     if (!value.isEmpty())
     {
-      cfgFile = value.copy();
+      cfgFile = value;
       if (cfgFile == "KDERC") cfgFile = QDir::homeDirPath() + "/.kderc";
       else if (cfgFile[0] != '/') cfgFile = mConfigDir + cfgFile;
     }
     value = mMappings->readEntry("ConfigGroup");
-    if (!value.isEmpty()) cfgGroup = value.copy();
+    if (!value.isEmpty()) cfgGroup = value;
     value = mMappings->readEntry("ConfigAppDir");
     if (!value.isEmpty())
     {
-      appDir = value.copy();
+      appDir = value;
       if (appDir[0] != '/') baseDir = kapp->localkdedir() + "/share/";
-      else baseDir = 0;
+      else baseDir = TQString();
 
       mkdirhier(appDir, baseDir);
       appDir = baseDir + appDir;
@@ -452,7 +453,7 @@ int Theme::installGroup(const char* aGroupName)
     }
     absPath = mMappings->readBoolEntry("ConfigAbsolutePaths", absPath);
     value = mMappings->readEntry("ConfigEmpty");
-    if (!value.isEmpty()) emptyValue = value.copy();
+    if (!value.isEmpty()) emptyValue = value;
     value = mMappings->readEntry("ConfigActivateCmd");
     if (!value.isEmpty() && mCmdList.find(value) < 0)
       mCmdList.append(value);
@@ -464,7 +465,7 @@ int Theme::installGroup(const char* aGroupName)
     if (cfgGroup.isEmpty()) missing = "ConfigGroup";
     if (missing)
     {
-      warning(i18n("Internal error in theme mappings\n"
+      tqWarning(i18n("Internal error in theme mappings\n"
 		   "(file theme.mappings) in group %s:\n\n"
 		   "Entry `%s' is missing or has no value."),
 	      (const char*)group, missing);
@@ -476,18 +477,18 @@ int Theme::installGroup(const char* aGroupName)
     {
       if (cfg)
       {
-//	debug("closing config file");
+//	tqDebug("closing config file");
 	cfg->sync();
 	delete cfg;
       }
-//      debug("opening config file %s", (const char*)cfgFile);
+//      tqDebug("opening config file %s", (const char*)cfgFile);
       cfg = new KSimpleConfig(cfgFile);
       oldCfgFile = cfgFile;
     }
 
     // Set group in config file
     cfg->setGroup(cfgGroup);
-//    debug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
+//    tqDebug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
 
     // Execute pre-install command (if given)
     if (!preInstCmd.isEmpty()) preInstallCmd(cfg, preInstCmd);
@@ -517,7 +518,7 @@ int Theme::installGroup(const char* aGroupName)
       else 
       {
 	cfgKey = value;
-	cfgValue = 0;
+	cfgValue = TQString();
       }
       if (cfgKey.isEmpty()) cfgKey = key;
 
@@ -525,9 +526,9 @@ int Theme::installGroup(const char* aGroupName)
       {
 	oldValue = cfg->readEntry(cfgKey);
 	if (!oldValue.isEmpty() && oldValue==emptyValue)
-	  oldValue = 0;
+	  oldValue = TQString();
       }
-      else oldValue = 0;
+      else oldValue = TQString();
 
       themeValue = mConfig->readEntry(key);
       if (cfgValue.isEmpty()) cfgValue = themeValue;
@@ -548,7 +549,7 @@ int Theme::installGroup(const char* aGroupName)
       else if (doInstall && absPath) cfgValue = appDir + cfgValue;
  
       // Set config entry
-//      debug("%s=%s", (const char*)cfgKey, (const char*)cfgValue);
+//      tqDebug("%s=%s", (const char*)cfgKey, (const char*)cfgValue);
       if (cfgKey != "-") {
           if (cfgValue.isEmpty()) {
               cfg->deleteEntry(cfgKey, false);
@@ -566,13 +567,13 @@ int Theme::installGroup(const char* aGroupName)
 
   if (cfg)
   {
-//    debug("closing config file");
+//    tqDebug("closing config file");
     cfg->sync();
     delete cfg;
   }
 
   writeInstFileList(aGroupName);
-//  debug("*** done with %s", aGroupName);
+//  tqDebug("*** done with %s", aGroupName);
   return installed;
 }
 
@@ -598,7 +599,7 @@ void Theme::preInstallCmd(KSimpleConfig* aCfg, const QString& aCmd)
   }
   else
   {
-    warning(i18n("Unknown pre-install command `%s' in\n"
+    tqWarning(i18n("Unknown pre-install command `%s' in\n"
 		 "theme.mappings file in group %s."), 
 	    (const char*)aCmd, (const char*)mMappings->group());
   }
@@ -627,7 +628,7 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
     } else if (aCfg->readEntry("TitlebarLook") == "pixmap") {
       value = "shadedHorizontal";
     } else {
-      value = 0;
+      value = TQString();
     }
     if (!value.isEmpty()) {
       aCfg->writeEntry("TitlebarLook", value);
@@ -669,7 +670,7 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
   }
   else
   {
-    warning(i18n("Unknown command `%s' in theme.mappings\n"
+    tqWarning(i18n("Unknown command `%s' in theme.mappings\n"
 		 "file in group %s."), (const char*)aCmd,
 	    (const char*)mMappings->group());
   }
@@ -688,8 +689,8 @@ void Theme::doCmdList(void)
 
   for (cmd=mCmdList.first(); !cmd.isNull(); cmd=mCmdList.next())
   {
-    debug("do command:");
-    debug((const char*)cmd);
+    tqDebug("do command:");
+    tqDebug((const char*)cmd);
     if (cmd.left(6) == "kwmcom")
     {
       cmd = cmd.mid(6,256).stripWhiteSpace();
@@ -740,7 +741,7 @@ bool Theme::backupFile(const QString fname) const
   cmd.sprintf("mv \"%s\" \"%s~\"", (const char*)fname,
 	      (const char*)fname);
   rc = system(cmd);
-  if (rc) warning(i18n("Cannot make backup copy of %s: mv returned %d"),
+  if (rc) tqWarning(i18n("Cannot make backup copy of %s: mv returned %d"),
 		  (const char*)fname, rc);
   return (rc==0);
 }
@@ -763,7 +764,7 @@ int Theme::installIcons(void)
   const char* groupNameExtra = "Extra Icons";
   bool wantRestart = false;
 
-//  debug("*** beginning with %s", groupName);
+//  tqDebug("*** beginning with %s", groupName);
 
   if (!instOverwrite)
   {
@@ -794,7 +795,7 @@ int Theme::installIcons(void)
     key = it->currentKey();
     if (stricmp(key.left(6),"Config")==0)
     {
-      warning(i18n("Icon key name %s can not be used"), (const char*)key);
+      tqWarning(i18n("Icon key name %s can not be used"), (const char*)key);
       continue;
     }
     value = entry->aValue;
@@ -812,20 +813,20 @@ int Theme::installIcons(void)
     }
 
     // test if there is a 1:1 mapping in the mappings file
-    destName = mMappings->readEntry(key,0);
-    destNameMini = 0;
+    destName = mMappings->readEntry(key, TQString());
+    destNameMini = TQString();
 
     // if not we have to search for the proper kdelnk file
     // and extract the icon name from there.
     if (destName.isEmpty())
     {
       fname = "/" + key + ".kdelnk";
-      for (fpath=0, path=pathList.first(); path; path=pathList.next())
+      for (fpath = TQString(), path=pathList.first(); path; path=pathList.next())  /* TQt3 迁移 */
       {
 	fpath = path + fname;
 	finfo.setFile(fpath);
 	if (finfo.exists()) break;
-	fpath = 0;
+	fpath = TQString();
       }
       if (!fpath.isEmpty())
       {
@@ -842,10 +843,10 @@ int Theme::installIcons(void)
       i = destName.find(':');
       if (i >= 0)
       {
-//	debug("mapping %s to...", (const char*)destName);
+//	tqDebug("mapping %s to...", (const char*)destName);
 	destNameMini = destName.mid(i+1, 1024);
 	destName = destName.left(i);
-//	debug("   %s  %s", (const char*)destName, (const char*)destNameMini);
+//	tqDebug("   %s  %s", (const char*)destName, (const char*)destNameMini);
       }
     }
 
@@ -856,7 +857,7 @@ int Theme::installIcons(void)
     if (destName.isEmpty())
     {
       if (icon.isEmpty()) continue;
-      warning(i18n("No proper kdelnk file found for %s.\n"
+      tqWarning(i18n("No proper kdelnk file found for %s.\n"
 		   "Installing icon(s) as %s"),
 	      (const char*)key, (const char*)icon);
       destName = icon;
@@ -920,7 +921,7 @@ int Theme::installIcons(void)
   }
 
   writeInstFileList(groupName);
-//  debug("*** done with %s (%d icons installed)", groupName, installed);
+//  tqDebug("*** done with %s (%d icons installed)", groupName, installed);
 
   mInstIcons += installed;
   return installed;
@@ -967,7 +968,7 @@ void Theme::uninstallFiles(const char* aGroupName)
   int processed = 0;
   QStrList fileList;
 
-//  debug("*** beginning uninstall of %s", aGroupName);
+//  tqDebug("*** beginning uninstall of %s", aGroupName);
 
   readInstFileList(aGroupName);
   for (fname=mInstFiles.first(); !fname.isEmpty(); fname=mInstFiles.next())
@@ -977,14 +978,14 @@ void Theme::uninstallFiles(const char* aGroupName)
 
     if (reverted) 
     {
-//      debug("uninstalled %s", (const char*)fname);
+//      tqDebug("uninstalled %s", (const char*)fname);
       processed++;
     }
   }
   mInstFiles.clear();
   writeInstFileList(aGroupName);
 
-//  debug("*** done uninstall of %s", aGroupName);
+//  tqDebug("*** done uninstall of %s", aGroupName);
 }
 
 void Theme::resync()
@@ -1002,7 +1003,7 @@ void Theme::resync()
 //-----------------------------------------------------------------------------
 void Theme::install(void)
 {
-  debug("Theme::install() started");
+  tqDebug("Theme::install() started");
 
   resync(); // Sync with the version on disk
 
@@ -1021,11 +1022,11 @@ void Theme::install(void)
   if (instColors) installGroup("Colors");
   if (instIcons) installIcons();
 
-  debug("*** executing command list");
+  tqDebug("*** executing command list");
 
   doCmdList();
 
-  debug("Theme::install() done");
+  tqDebug("Theme::install() done");
   saveSettings();
 }
 
@@ -1047,8 +1048,8 @@ KConfig* Theme::openConfig(const QString aAppName) const
   bool bSuccess;
   QString aGlobalAppConfigName = kapp->kde_configdir() + "/" + aAppName + "rc";
 
-  debug(aConfigName);
-  debug(aGlobalAppConfigName);
+  tqDebug(aConfigName);
+  tqDebug(aGlobalAppConfigName);
   QFile aConfigFile(aConfigName);
 
   // Open the application-specific config file. It will be created if
@@ -1113,7 +1114,7 @@ void Theme::readConfig(void)
     fname = mThemePath + mPreviewFile;
     if (!mPreview.load(fname))
     {
-      warning(i18n("Failed to load preview image %s"), (const char*)fname);
+      tqWarning(i18n("Failed to load preview image %s"), (const char*)fname);
       mPreview.resize(0,0);
     }
   }
@@ -1124,7 +1125,7 @@ void Theme::readConfig(void)
 //-----------------------------------------------------------------------------
 void Theme::writeConfig(void)
 {
-  debug("Theme::writeConfig() is broken");
+  tqDebug("Theme::writeConfig() is broken");
   return;
 
   mConfig->setGroup("General");
@@ -1151,7 +1152,7 @@ void Theme::writeConfig(void)
 void Theme::writeColorEntry(KConfigBase* cfg, const char* aKey, 
 			    const QColor& aColor)
 {
-  QString str(32);
+  TQString str;  // TQt3 迁移：容量构造已删
   str.sprintf("#%02x%02x%02x", aColor.red(), aColor.green(), aColor.blue());
   cfg->writeEntry(aKey, str);
 }
@@ -1191,7 +1192,6 @@ bool Theme::mkdirhier(const char* aDir, const char* aBaseDir)
 {
   QDir dir;
   QString dirStr = aDir;
-  dirStr.detach();
   const char* dirName;
   int oldMask = umask(077);
 
@@ -1206,7 +1206,7 @@ bool Theme::mkdirhier(const char* aDir, const char* aBaseDir)
     {
       if (!dir.mkdir(dirName))
       {
-	warning(i18n("Cannot create directory %s"), 
+	tqWarning(i18n("Cannot create directory %s"), 
 		(const char*)(dir.dirName() + dirName));
 	umask(oldMask);
 	return false;
@@ -1214,7 +1214,7 @@ bool Theme::mkdirhier(const char* aDir, const char* aBaseDir)
     }
     if (!dir.cd(dirName))
     {
-      warning(i18n("Cannot enter directory %s"),
+      tqWarning(i18n("Cannot enter directory %s"),
 	      (const char*)(dir.dirName() + dirName));
       umask(oldMask);
       return false;

@@ -55,7 +55,7 @@ static int CommentLength(const char *str)
             if (!quoteNext) {
                 ++level;
             }
-            quoteNext = 0;
+            quoteNext = TQString();
             break;
         case ')':
             if (!quoteNext) {
@@ -65,10 +65,10 @@ static int CommentLength(const char *str)
                     done = 1;
                 }
             }
-            quoteNext = 0;
+            quoteNext = TQString();
             break;
         default:
-            quoteNext = 0;
+            quoteNext = TQString();
         }
         if (done) {
             break;
@@ -139,7 +139,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
         day = n;
     }
     else {
-        isValid = 0;
+        isValid = TQString();
     }
     /*
      * Month.  Use case-insensitive string compare for added robustness
@@ -199,7 +199,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
         /* Jan */
         if ((str[pos+1] == 'a' || str[pos+1] == 'A')
             && (str[pos+2] == 'n' || str[pos+2] == 'N')) {
-            n = 0;
+            n = TQString();
             pos += 3;
             ch = str[pos];
         }
@@ -270,7 +270,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
         month = n;
     }
     else {
-        isValid = 0;
+        isValid = TQString();
     }
     /*
      * Year -- two or four digits (four preferred)
@@ -314,7 +314,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
         year = (n < 1900) ? n+1900 : n;
     }
     else {
-        isValid = 0;
+        isValid = TQString();
     }
     /* 
      * Hour -- two digits
@@ -346,7 +346,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
         hour = n;
     }
     else {
-        isValid = 0;
+        isValid = TQString();
     }
     /*
      * Minute -- two digits
@@ -388,7 +388,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
         minute = n;
     }
     else {
-        isValid = 0;
+        isValid = TQString();
     }
     /*
      * Second (optional) -- two digits
@@ -434,7 +434,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
             second = n;
         }
         else {
-            isValid = 0;
+            isValid = TQString();
         }
         /* -- scan for start of time zone */
         while (ch && !(ch == '+' || ch == '-' || isalpha(ch))) {
@@ -448,7 +448,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
         }
     }
     else /* if (ch != ':') */ {
-        second = 0;
+        second = TQString();
     }
     /*
      * Time zone
@@ -473,8 +473,8 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
             ch = str[pos];
         }
         /* -- convert next four digits */
-        numDigits = 0;
-        n = 0;
+        numDigits = TQString();
+        n = TQString();
         if ('0' <= ch && ch <= '9') {
             n = (ch - '0')*600;
             ++pos;
@@ -501,13 +501,13 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
             zone = sgn*n;
         }
         else {
-            isValid = 0;
+            isValid = TQString();
         }
         break;
     case 'U':
     case 'u':
         if (str[pos+1] == 'T' || str[pos+1] == 't') {
-            zone = 0;
+            zone = TQString();
         }
         else {
             /* Military time zone */
@@ -518,7 +518,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
     case 'g':
         if ((str[pos+1] == 'M' || str[pos+1] == 'm')
             && (str[pos+2] == 'T' || str[pos+2] == 't')) {
-            zone = 0;
+            zone = TQString();
         }
         else {
             /* Military time zone */
@@ -587,7 +587,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
         break;
     case 'Z':
         /* Military time zone */
-        zone = 0;
+        zone = TQString();
         break;
     default:
         /* Military time zone */
@@ -601,7 +601,7 @@ int ParseRfc822Date(const char *str, struct tm *tms, int *z)
             zone = ch - 'N' + 1;
         }
         else {
-            isValid = 0;
+            isValid = TQString();
         }
         break;
     }

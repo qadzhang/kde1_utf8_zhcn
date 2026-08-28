@@ -18,14 +18,14 @@ PObject *createWidget(CreateArgs &ca)
 PPushButton::PPushButton(PObject *parent)
   : PButton(parent)
 {
-  //  debug("PLineEdit PLineEdit called");
-  button = 0;
+  //  tqDebug("PLineEdit PLineEdit called");
+  button = 0;  /* TQt3 迁移 */
   setWidget(button);
 }
 
 PPushButton::~PPushButton()
 {
-  //  debug("PLineEdit: in destructor"); 
+  //  tqDebug("PLineEdit: in destructor"); 
 /*  delete widget();     // Delete the frame
   button=0;          // Set it to 0
   setWidget(button); // Now set all widget() calls to 0.

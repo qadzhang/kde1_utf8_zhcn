@@ -7,7 +7,7 @@
  *                KArchie is written for the KDE-Project                   *
  *                         http://www.kde.org                              *
  *                                                                         *
- *   Copyright (C) Oct 1997 J�rg Habenicht                                 *
+ *   Copyright (C) Oct 1997 J�rg Habenicht                                 *
  *                  E-Mail: j.habenicht@europemail.com                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -161,14 +161,14 @@ KAQuery::KAQuery( const char *host, const char *search, SearchMode::mode smode, 
     queryresult( 0 ),
     socketNotifier( 0 )
 {
-  verbose = 0;
+  verbose = 0;  /* TQt3 迁移 */
 }
 
 
 void 
 KAQuery::start()  // get the first "max_hits" results
 {
-  processed_matches = 0;
+  processed_matches = 0;  /* TQt3 迁移 */
   startover();
 }
 
@@ -199,14 +199,14 @@ KAQuery::startover() // get the next "max_hits" results
   // check the result
   errno2str();
   //sError = p_err_string;
-  //  debug( p_err_string );
+  //  tqDebug( p_err_string );
   nError = perrno;
   //  QString tmp;
-  //  debug( (const char*)tmp.setNum(nError) );
+  //  tqDebug( (const char*)tmp.setNum(nError) );
   //  sWarning = p_warn_string;
-  //  debug( p_warn_string );
+  //  tqDebug( p_warn_string );
   nWarning = pwarn;
-  //debug( tmp.setNum(nWarning) );
+  //tqDebug( tmp.setNum(nWarning) );
   return result;
   */
 }
@@ -362,7 +362,7 @@ KAQuery::doQuery()
   int (*sortfunc)(VLINK,VLINK);
   Query aquery = (Query)searchmode.getChar();
 
-  //  debug("KAQuery::doQuery\nHostname: %s\nSearchstring: %s\nMax Hits: %i\nQueryoffset: %i\nSearchmode: %c",cHostname, cSearch, max_hits, offset, aquery);
+  //  tqDebug("KAQuery::doQuery\nHostname: %s\nSearchstring: %s\nMax Hits: %i\nQueryoffset: %i\nSearchmode: %c",cHostname, cSearch, max_hits, offset, aquery);
   /*
   switch (searchmode) {
   case exactsubstring:
@@ -398,7 +398,7 @@ KAQuery::doQuery()
     vllfree(queryresult);
 
   if (bProcessQuery) {
-    debug(" another query running");
+    tqDebug(" another query running");
     emit sigWaitForQueryentry();
     while (bProcessQuery) sleep (1);
   }
@@ -418,7 +418,7 @@ KAQuery::doQuery()
     return TRUE;
   }
   // query has failed or has been aborted.
-  processed_matches = 0;
+  processed_matches = 0;  /* TQt3 迁移 */
   emit sigQueryResults(0);
   return FALSE;
 }
@@ -440,14 +440,14 @@ KAQuery::slotProcessQueryNow()
   // check the result
   errno2str();
   //sError = p_err_string;
-  //  debug( p_err_string );
+  //  tqDebug( p_err_string );
   nError = perrno;
   //  QString tmp;
-  //  debug( (const char*)tmp.setNum(nError) );
+  //  tqDebug( (const char*)tmp.setNum(nError) );
   //  sWarning = p_warn_string;
-  //  debug( p_warn_string );
+  //  tqDebug( p_warn_string );
   nWarning = pwarn;
-  //debug( tmp.setNum(nWarning) );
+  //tqDebug( tmp.setNum(nWarning) );
 
   emit sigQueryFinished();
   emit sigQueryStatus(i18n("Query finished"));
@@ -465,7 +465,7 @@ KAQuery::removeSocketNotifier()
 {
   if (socketNotifier) {
     delete socketNotifier;
-    socketNotifier = 0;
+    socketNotifier = 0;  /* TQt3 迁移 */
   }
 }
 

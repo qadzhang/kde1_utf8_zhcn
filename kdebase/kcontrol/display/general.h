@@ -25,6 +25,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 
 #include "display.h"
 #include "fontchooser.h"

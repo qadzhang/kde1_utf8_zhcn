@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqsqlrecord.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqsqlrecord.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqsqlrecord.h</h1>
+
+<p>This is the verbatim text of the ntqsqlrecord.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+**
+** Definition of TQSqlRecord class
+**
+** Created : 2000-11-03
+**
+** Copyright (C) 2005-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the sql module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQSQLRECORD_H
+#define TQSQLRECORD_H
+
+#ifndef QT_H
+#include "ntqstring.h"
+#include "ntqstringlist.h"
+#include "ntqvariant.h"
+#include "ntqsqlfield.h"
+#endif // QT_H
+
+#ifndef TQT_NO_SQL
+
+class TQSqlRecordPrivate;
+
+class TQSqlRecordShared : public TQShared
+{
+public:
+    TQSqlRecordShared( TQSqlRecordPrivate* sqlRecordPrivate )
+    : d( sqlRecordPrivate )
+    {}
+    virtual ~TQSqlRecordShared();
+    TQSqlRecordPrivate* d;
+};
+
+class TQ_EXPORT TQSqlRecord
+{
+public:
+    TQSqlRecord();
+    TQSqlRecord( const TQSqlRecord&amp; other );
+    TQSqlRecord&amp; operator=( const TQSqlRecord&amp; other );
+    virtual ~TQSqlRecord();
+    virtual TQVariant     value( int i ) const;
+    virtual TQVariant     value( const TQString&amp; name ) const;
+    virtual void         setValue( int i, const TQVariant&amp; val );
+    virtual void         setValue( const TQString&amp; name, const TQVariant&amp; val );
+    bool                 isGenerated( int i ) const;
+    bool                 isGenerated( const TQString&amp; name ) const;
+    virtual void         setGenerated( const TQString&amp; name, bool generated );
+    virtual void         setGenerated( int i, bool generated );
+    virtual void         setNull( int i );
+    virtual void         setNull( const TQString&amp; name );
+    bool                 isNull( int i ); // remove in 4.0
+    bool                 isNull( const TQString&amp; name ); // remove in 4.0
+    bool                 isNull( int i ) const;
+    bool                 isNull( const TQString&amp; name ) const;
+
+    int                  position( const TQString&amp; name ) const;
+    TQString              fieldName( int i ) const;
+    TQSqlField*           field( int i );
+    TQSqlField*           field( const TQString&amp; name );
+    const TQSqlField*     field( int i ) const;
+    const TQSqlField*     field( const TQString&amp; name ) const;
+
+    virtual void         append( const TQSqlField&amp; field );
+    virtual void         insert( int pos, const TQSqlField&amp; field );
+    virtual void         remove( int pos );
+
+    bool                 isEmpty() const;
+    bool                 contains( const TQString&amp; name ) const;
+    virtual void         clear();
+    virtual void         clearValues( bool nullify = false );
+    uint                 count() const;
+    virtual TQString      toString( const TQString&amp; prefix = TQString::null,
+				   const TQString&amp; sep = "," ) const;
+    virtual TQStringList  toStringList( const TQString&amp; prefix = TQString::null ) const;
+
+private:
+    TQString              createField( int i, const TQString&amp; prefix ) const;
+    void                 deref();
+    bool                 checkDetach();
+    TQSqlRecordShared*    sh;
+};
+
+/******************************************/
+/*******     TQSqlRecordInfo Class    ******/
+/******************************************/
+
+#if defined(Q_TEMPLATEDLL)
+// MOC_SKIP_BEGIN
+Q_TEMPLATE_EXTERN template class TQ_EXPORT TQValueList&lt;TQSqlFieldInfo&gt;;
+// MOC_SKIP_END
+#endif
+
+typedef TQValueList&lt;TQSqlFieldInfo&gt; TQSqlFieldInfoList;
+
+class TQ_EXPORT TQSqlRecordInfo: public TQSqlFieldInfoList
+{
+public:
+    TQSqlRecordInfo(): TQSqlFieldInfoList() {}
+    TQSqlRecordInfo( const TQSqlFieldInfoList&amp; other ): TQSqlFieldInfoList( other ) {}
+    TQSqlRecordInfo( const TQSqlRecord&amp; other );
+
+    size_type contains( const TQString&amp; fieldName ) const;
+    TQSqlFieldInfo find( const TQString&amp; fieldName ) const;
+    TQSqlRecord toRecord() const;
+
+};
+
+
+#endif	// TQT_NO_SQL
+#endif
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

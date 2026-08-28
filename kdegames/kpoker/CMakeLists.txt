@@ -6,13 +6,13 @@ include_directories (
 
 set(Kpoker_SRCS kpoker.cpp kpaint.cpp top.cpp main.cpp)
 
-set(Kpoker_MOC kpoker.moc kpaint.moc top.moc)
+set(Kpoker_MOC kpoker.h kpaint.h top.h)
 
-QT1_WRAP_MOC(MOC_FILES ${Kpoker_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${Kpoker_MOC})
 
 add_executable(kpoker ${Kpoker_SRCS} ${MOC_FILES} ${QwSpriteField_SOURCES})
 target_link_libraries(kpoker
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

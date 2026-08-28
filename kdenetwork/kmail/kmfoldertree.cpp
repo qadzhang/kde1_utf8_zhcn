@@ -27,8 +27,6 @@ KMFolderTree::KMFolderTree(QWidget *parent,const char *name) :
   static bool pixmapsLoaded = FALSE;
   int width;
 
-  initMetaObject();
-
   mUpdateTimer = NULL;
 
   mDropZone = new KDNDDropZone(this, DndRawData);
@@ -99,7 +97,7 @@ void KMFolderTree::updateUnreadAll()
 {
   KMFolderDir* fdir;
   KMFolder* folder;
-  //debug( "KMFolderTree::updateUnreadAll" );
+  //tqDebug( "KMFolderTree::updateUnreadAll" );
   bool upd = autoUpdate();
   setAutoUpdate(FALSE);
 
@@ -122,7 +120,7 @@ void KMFolderTree::reload(void)
   KMFolder* folder;
   QString str;
   KMFolder* cur;
-  //debug( "KMFolderTree::reload" );
+  //tqDebug( "KMFolderTree::reload" );
   bool upd = autoUpdate();
 
   setAutoUpdate(FALSE);
@@ -197,7 +195,7 @@ void KMFolderTree::delayedUpdate()
 void KMFolderTree::doFolderListChanged()
 {
   uint idx = currentItem();
-  //debug("doFolderListChanged()");
+  //tqDebug("doFolderListChanged()");
   reload();
   if (idx >= 0 && idx < count()) setCurrentItem(idx);
 }
@@ -277,7 +275,7 @@ void KMFolderTree::doFolderSelected(int index, int)
   {
     if (folder->isDir()) 
     {
-      debug("Folder `%s' is a directory -> ignoring it.",
+      tqDebug("Folder `%s' is a directory -> ignoring it.",
 	    (const char*)folder->name());
       emit folderSelected(NULL);
     }

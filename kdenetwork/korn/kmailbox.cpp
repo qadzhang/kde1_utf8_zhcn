@@ -39,10 +39,10 @@ KMailBox::KMailBox(const char *file, int pollTime, bool sflag)
 	_lastModified = new QDateTime;
 	_lastModified->setTime_t(0);
 
-	_lastSize = 0;
+	_lastSize = 0;  /* TQt3 迁移 */
 	_numMessages= 0;
 
-//	debug("starting with %u messages", _numMessages);
+//	tqDebug("starting with %u messages", _numMessages);
 
 	_timer = new QTimer(this);
 	connect( _timer, SIGNAL(timeout()), this, SLOT(reread()));
@@ -74,13 +74,13 @@ void KMailBox::setPollTime(int seconds)
 void KMailBox::reread()
 {
 	if( wasTouched() ){
-//	debug("reread: count start");
+//	tqDebug("reread: count start");
 		int ml = countMail();
-//		debug("reread: count end... %d", ml);
+//		tqDebug("reread: count end... %d", ml);
 		
 		if( ml != _numMessages ) {
 			_numMessages = ml;
-//			debug("reread: coo! changed to: %d", _numMessages);
+//			tqDebug("reread: coo! changed to: %d", _numMessages);
 			emit changed( _numMessages );
 		}
 	}
@@ -121,8 +121,8 @@ bool KMailBox::wasTouched()
 		_lastSize = _fileInfo->size();
 		*_lastModified = _fileInfo->lastModified();
 
-//		debug("new size: %u", _lastSize);
-//		debug("new time: %s", (const char *)_lastModified->toString());
+//		tqDebug("new size: %u", _lastSize);
+//		tqDebug("new time: %s", (const char *)_lastModified->toString());
 
 		return true;
 	}
@@ -141,13 +141,13 @@ int KMailBox::countMail()
 	long contentLength=0;
 
 	if( isLocked() ){
-//		debug("countMail: locked. returning.");
+//		tqDebug("countMail: locked. returning.");
 		delete[] buffer;
 		return _numMessages;
 	}
 
 	if(!mbox.open(IO_ReadOnly)) {
-		warning(i18n("countMail: file open error"));
+		tqWarning(i18n("countMail: file open error"));
 		emit fileError();
 		delete[]buffer;
 		return 0;
@@ -199,7 +199,7 @@ int KMailBox::countMail()
 
 		if(++msgCount >= 100 ) {
 			qApp->processEvents();
-			msgCount = 0;
+			msgCount = 0;  /* TQt3 迁移 */
 		}
 	}//while
 

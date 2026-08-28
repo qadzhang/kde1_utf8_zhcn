@@ -238,7 +238,7 @@ void KMMessage::fromString(const QString aStr, bool aSetStatus)
 
   // copy string and throw out obsolete control characters
   len = aStr.length();
-  result.resize(len+1);
+  result.truncate(len+1);  /* TQt3 迁移 */
   strPos = aStr.data();
   resultPos = (char*)result.data();
   if (strPos) for (; (ch=*strPos)!='\0'; strPos++)
@@ -288,7 +288,7 @@ const QString KMMessage::formatString(const QString aStr) const
 	str = stripEmailAddr(from());
 	for (i=0; str[i]>' '; i++)
 	  ;
-	for (; str[i] && str[i]<=' '; i++)
+	for (; str[i].latin1() && str[i].latin1()<=' '; i++)  /* TQt3 迁移 */
 	  ;
 	result += str[0];
 	if (str[i]>' ') result += str[i];
@@ -320,7 +320,7 @@ const QString KMMessage::asQuotedString(const QString aHeaderStr,
 					const QString aIndentStr,
 					bool aIncludeAttach) const
 {
-  QString headerStr(256);
+  TQString headerStr;  /* TQt3 迁移 */
   KMMessagePart msgPart;
   QRegExp reNL("\\n");
   QString nlIndentStr;
@@ -425,14 +425,14 @@ KMMessage* KMMessage::createReply(bool replyToAll)
     // now try to strip my own e-mail adress:
     QString f = msg->from();
     if((i = f.find("<")) != -1) // just keep <foo@bar.com>
-      f = f.right(f.size() - i);
+      f = f.right(f.length() - i);
     if((i = toStr.find(f)) != -1)
     {
       int pos1, pos2;
       pos1 = toStr.findRev(", ", i);
       if( pos1 == -1 ) pos1 = 0;
       pos2 = toStr.find(", ", i);
-      toStr = toStr.left(pos1) + toStr.right(toStr.size() - pos2 - 1); 
+      toStr = toStr.left(pos1) + toStr.right(toStr.length() - pos2 - 1); 
     }
     toStr.truncate(toStr.length()-2);
     // same for the cc field
@@ -443,7 +443,7 @@ KMMessage* KMMessage::createReply(bool replyToAll)
       pos1 = ccStr.findRev(", ", i);
       if( pos1 == -1 ) pos1 = 0;
       pos2 = ccStr.find(", ", i);
-      ccStr = ccStr.left(pos1) + ccStr.right(ccStr.size() - pos2 - 1); //Daniel
+      ccStr = ccStr.left(pos1) + ccStr.right(ccStr.length() - pos2 - 1); //Daniel
     }
     ccStr.truncate(ccStr.length()-2);
 
@@ -511,10 +511,10 @@ const QString KMMessage::getRefStr()
   int i, j;
 
   refStr = headerField("References").stripWhiteSpace ();
-  debug("References = %s", refStr.data());
+  tqDebug("References = %s", refStr.data());
   if (refStr.isEmpty())
   {
-    //debug ("New references: %s", headerField("Message-Id").data());
+    //tqDebug("New references: %s", headerField("Message-Id").data());
     return headerField("Message-Id");
   }
 
@@ -524,7 +524,7 @@ const QString KMMessage::getRefStr()
   if (!firstRef.isEmpty())
     retRefStr = firstRef + " ";
 
-  //debug ("firstRef = \"%s\"",  firstRef.data());
+  //tqDebug("firstRef = \"%s\"",  firstRef.data());
 
   i = refStr.findRev("<");
   j = refStr.findRev(">");
@@ -533,11 +533,11 @@ const QString KMMessage::getRefStr()
   if (!lastRef.isEmpty() && lastRef != firstRef)
     retRefStr += lastRef + " ";
 
-  //debug ("lastRef  = \"%s\"", lastRef.data());
+  //tqDebug("lastRef  = \"%s\"", lastRef.data());
 
   retRefStr += headerField("Message-Id");
 
-  //debug("New references = %s", retRefStr.data());
+  //tqDebug("New references = %s", retRefStr.data());
   return retRefStr;
 }
 
@@ -688,10 +688,8 @@ const QString KMMessage::dateShortStr(void) const
   if (!header.HasDate()) return "";
   unixTime = header.Date().AsUnixTime();
 
-  result.detach();
   result = ctime(&unixTime);
-  result.detach();
-  if (result[result.length()-1]=='\n')
+  if (result[result.length()-1].latin1()=='\n')  /* TQt3 迁移 */
     result.truncate(result.length()-1);
 
   return result;
@@ -900,7 +898,6 @@ const QString KMMessage::headerField(const QString aName) const
     result = "";
   else 
     result = decodeRFC1522String(field->FieldBody()->AsString().c_str());
-  result.detach();
   return result;
 }
 
@@ -1078,7 +1075,7 @@ const QString KMMessage::bodyDecoded(void) const
     dwstr = dwsrc;
     break;
   }
-  return QString(dwstr.c_str(), dwstr.size()+1);
+  return TQString::fromLatin1(dwstr.c_str(), dwstr.length()+1);  /* TQt3 迁移 */
 }
 
 
@@ -1355,7 +1352,7 @@ void KMMessage::viewSource(const QString aCaption) const
   edt->show();
 
 #else //not ALLOW_GUI
-  debug("Message source: %s\n%s\n--- end of message ---", 
+  tqDebug("Message source: %s\n%s\n--- end of message ---", 
 	aCaption.isEmpty() ? "" : (const char*)aCaption, str);
 
 #endif
@@ -1417,7 +1414,7 @@ const QString KMMessage::emailAddrAsAnchor(const QString aEmail, bool stripped)
 
     if (ch == ',' || !pos[1])
     {
-      tmp = addr.copy();
+      tmp = addr;
       result += tmp.replace(QRegExp("\""),"");
       result += "\">";
       if (stripped) result += KMMessage::stripEmailAddr(aEmail);

@@ -61,7 +61,7 @@ void KButton::paint( QPainter *painter )
 {
   if ( isDown() || isOn() )
     {
-      if ( style() == WindowsStyle )
+      if ( style().inherits("TQWindowsStyle") )
 	qDrawWinButton( painter, 0, 0, width(), 
 			height(), colorGroup(), TRUE );
       else
@@ -70,7 +70,7 @@ void KButton::paint( QPainter *painter )
     }
   else if ( raised )
     {
-      if ( style() == WindowsStyle )
+      if ( style().inherits("TQWindowsStyle") )
 	qDrawWinButton( painter, 0, 0, width(), height(), 
 			colorGroup(), FALSE );
       else
@@ -82,7 +82,7 @@ void KButton::paint( QPainter *painter )
     {
       int dx = ( width() - pixmap()->width() ) / 2;
       int dy = ( height() - pixmap()->height() ) / 2;
-      if ( isDown() && style() == WindowsStyle ) {
+      if ( isDown() && style().inherits("TQWindowsStyle") ) {
        ++dx;
        ++dy;
       }

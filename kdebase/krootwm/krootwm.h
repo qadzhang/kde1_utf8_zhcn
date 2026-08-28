@@ -7,6 +7,9 @@
  * to add the "New" menu
  */
 
+
+#ifndef K1GUARD_kdebase_krootwm_krootwm_h
+#define K1GUARD_kdebase_krootwm_krootwm_h
 #include <qapp.h>
 #include <qcursor.h>
 #include <qlist.h>
@@ -152,4 +155,4 @@ protected:
      */
     QLineEdit *edit;
 };
-
+#endif /* K1GUARD_kdebase_krootwm_krootwm_h */

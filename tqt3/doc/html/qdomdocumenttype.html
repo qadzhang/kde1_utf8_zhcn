@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/xml/qdom.cpp:3055 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQDomDocumentType Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQDomDocumentType Class Reference<br><small>[<a href="xml.html">XML module</a>]</small></h1>
+
+<p>The TQDomDocumentType class is the representation of the DTD
+in the document tree.
+<a href="#details">More...</a>
+<p>All the functions in this class are <a href="threads.html#reentrant">reentrant</a> when TQt is built with thread support.</p>
+<p><tt>#include &lt;<a href="qdom-h.html">ntqdom.h</a>&gt;</tt>
+<p>Inherits <a href="qdomnode.html">TQDomNode</a>.
+<p><a href="qdomdocumenttype-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQDomDocumentType"><b>TQDomDocumentType</b></a> ()</li>
+<li class=fn><a href="#TQDomDocumentType-2"><b>TQDomDocumentType</b></a> ( const&nbsp;TQDomDocumentType&nbsp;&amp;&nbsp;n )</li>
+<li class=fn>TQDomDocumentType &amp; <a href="#operator-eq"><b>operator=</b></a> ( const&nbsp;TQDomDocumentType&nbsp;&amp;&nbsp;n )</li>
+<li class=fn><a href="#~TQDomDocumentType"><b>~TQDomDocumentType</b></a> ()</li>
+<li class=fn>virtual TQString <a href="#name"><b>name</b></a> () const</li>
+<li class=fn>virtual TQDomNamedNodeMap <a href="#entities"><b>entities</b></a> () const</li>
+<li class=fn>virtual TQDomNamedNodeMap <a href="#notations"><b>notations</b></a> () const</li>
+<li class=fn>virtual TQString <a href="#publicId"><b>publicId</b></a> () const</li>
+<li class=fn>virtual TQString <a href="#systemId"><b>systemId</b></a> () const</li>
+<li class=fn>virtual TQString <a href="#internalSubset"><b>internalSubset</b></a> () const</li>
+<li class=fn>virtual TQDomNode::NodeType <a href="#nodeType"><b>nodeType</b></a> () const</li>
+<li class=fn>virtual bool <a href="#isDocumentType"><b>isDocumentType</b></a> () const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+
+The TQDomDocumentType class is the representation of the DTD
+in the document tree.
+
+<p> 
+
+<p> The TQDomDocumentType class allows read-only access to some of the
+data structures in the DTD: it can return a map of all <a href="#entities">entities</a>()
+and <a href="#notations">notations</a>(). In addition the function <a href="#name">name</a>() returns the name
+of the document type as specified in the &lt;!DOCTYPE name&gt;
+tag. This class also provides the <a href="#publicId">publicId</a>(), <a href="#systemId">systemId</a>() and
+<a href="#internalSubset">internalSubset</a>() functions.
+<p> <p>See also <a href="qdomdocument.html">TQDomDocument</a> and <a href="xml-tools.html">XML</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQDomDocumentType"></a>TQDomDocumentType::TQDomDocumentType ()
+</h3>
+Creates an empty TQDomDocumentType object.
+
+<h3 class=fn><a name="TQDomDocumentType-2"></a>TQDomDocumentType::TQDomDocumentType ( const&nbsp;<a href="qdomdocumenttype.html">TQDomDocumentType</a>&nbsp;&amp;&nbsp;n )
+</h3>
+Constructs a copy of <em>n</em>.
+<p> The data of the copy is shared (shallow copy): modifying one node
+will also change the other. If you want to make a <a href="shclass.html#deep-copy">deep copy</a>, use
+<a href="qdomnode.html#cloneNode">cloneNode</a>().
+
+<h3 class=fn><a name="~TQDomDocumentType"></a>TQDomDocumentType::~TQDomDocumentType ()
+</h3>
+Destroys the object and frees its resources.
+
+<h3 class=fn><a href="qdomnamednodemap.html">TQDomNamedNodeMap</a> <a name="entities"></a>TQDomDocumentType::entities () const<tt> [virtual]</tt>
+</h3>
+Returns a map of all entities described in the DTD.
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="internalSubset"></a>TQDomDocumentType::internalSubset () const<tt> [virtual]</tt>
+</h3>
+Returns the internal subset of the document type or <a href="ntqstring.html#TQString-null">TQString::null</a>
+if there is no internal subset.
+<p> <p>See also <a href="#publicId">publicId</a>() and <a href="#systemId">systemId</a>().
+
+<h3 class=fn>bool <a name="isDocumentType"></a>TQDomDocumentType::isDocumentType () const<tt> [virtual]</tt>
+</h3>
+This function overloads <a href="qdomnode.html#isDocumentType">TQDomNode::isDocumentType</a>().
+<p> <p>See also <a href="#nodeType">nodeType</a>() and <a href="qdomnode.html#toDocumentType">TQDomNode::toDocumentType</a>().
+
+<p>Reimplemented from <a href="qdomnode.html#isDocumentType">TQDomNode</a>.
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="name"></a>TQDomDocumentType::name () const<tt> [virtual]</tt>
+</h3>
+Returns the name of the document type as specified in the
+&lt;!DOCTYPE name&gt; tag.
+<p> <p>See also <a href="qdomnode.html#nodeName">nodeName</a>().
+
+<h3 class=fn><a href="qdomnode.html#NodeType-enum">TQDomNode::NodeType</a> <a name="nodeType"></a>TQDomDocumentType::nodeType () const<tt> [virtual]</tt>
+</h3>
+Returns <a href="qdomnode.html#NodeType-enum">DocumentTypeNode</a>.
+<p> <p>See also <a href="#isDocumentType">isDocumentType</a>() and <a href="qdomnode.html#toDocumentType">TQDomNode::toDocumentType</a>().
+
+<p>Reimplemented from <a href="qdomnode.html#nodeType">TQDomNode</a>.
+<h3 class=fn><a href="qdomnamednodemap.html">TQDomNamedNodeMap</a> <a name="notations"></a>TQDomDocumentType::notations () const<tt> [virtual]</tt>
+</h3>
+Returns a map of all notations described in the DTD.
+
+<h3 class=fn><a href="qdomdocumenttype.html">TQDomDocumentType</a>&nbsp;&amp; <a name="operator-eq"></a>TQDomDocumentType::operator= ( const&nbsp;<a href="qdomdocumenttype.html">TQDomDocumentType</a>&nbsp;&amp;&nbsp;n )
+</h3>
+Assigns <em>n</em> to this document type.
+<p> The data of the copy is shared (shallow copy): modifying one node
+will also change the other. If you want to make a <a href="shclass.html#deep-copy">deep copy</a>, use
+<a href="qdomnode.html#cloneNode">cloneNode</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="publicId"></a>TQDomDocumentType::publicId () const<tt> [virtual]</tt>
+</h3>
+Returns the public identifier of the external DTD subset or
+<a href="ntqstring.html#TQString-null">TQString::null</a> if there is no public identifier.
+<p> <p>See also <a href="#systemId">systemId</a>(), <a href="#internalSubset">internalSubset</a>(), and <a href="qdomimplementation.html#createDocumentType">TQDomImplementation::createDocumentType</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="systemId"></a>TQDomDocumentType::systemId () const<tt> [virtual]</tt>
+</h3>
+Returns the system identifier of the external DTD subset or
+<a href="ntqstring.html#TQString-null">TQString::null</a> if there is no system identifier.
+<p> <p>See also <a href="#publicId">publicId</a>(), <a href="#internalSubset">internalSubset</a>(), and <a href="qdomimplementation.html#createDocumentType">TQDomImplementation::createDocumentType</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

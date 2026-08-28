@@ -382,7 +382,7 @@ BoardWidget::BoardWidget( QWidget* parent )
         if( ! loadTileset( str ) )
 	{
             showMessage( i18n("Unable to open bitmap file !") );
-	    fatal( "Unable to open bitmap file !" );
+	    tqFatal( "Unable to open bitmap file !" );
 	}
     }
 
@@ -396,7 +396,7 @@ BoardWidget::BoardWidget( QWidget* parent )
         if( ! loadBackground( str ) )
 	{
             showMessage( i18n("Unable to open bitmap file !") );
-	    fatal( "Unable to open bitmap file !" );
+	    tqFatal( "Unable to open bitmap file !" );
 	}
     }
 

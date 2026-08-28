@@ -75,7 +75,7 @@ void KTriangleButton::paint( QPainter *painter )
 {
     if ( isDown() || isOn() )
     {
-        if ( style() == WindowsStyle )
+        if ( style().inherits("TQWindowsStyle") )
             qDrawWinButton( painter, 0, 0, width(), 
                             height(), colorGroup(), TRUE );
         else
@@ -84,7 +84,7 @@ void KTriangleButton::paint( QPainter *painter )
     }
     else if ( raised )
     {
-        if ( style() == WindowsStyle )
+        if ( style().inherits("TQWindowsStyle") )
             qDrawWinButton( painter, 0, 0, width(), height(), 
                             colorGroup(), FALSE );
         else
@@ -159,3 +159,5 @@ void KTriangleButton::timerEvent(QTimerEvent *)
     emit clickedQuickly();
     
 }
+
+#include "ktrianglebutton.moc"  /* TQt3 迁移：moc 实现并入编译单元 */

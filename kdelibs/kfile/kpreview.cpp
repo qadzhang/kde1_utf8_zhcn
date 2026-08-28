@@ -64,7 +64,6 @@ bool previewXVPicFile( const KFileInfo *i, const QString inFilename,
 {
     bool loaded = false;
     QString iconName(inFilename);
-    iconName.detach();
     int index = iconName.find( i->fileName() );
     iconName.insert(index,".xvpics/");
     QFile miniPic( iconName );
@@ -148,7 +147,7 @@ KPreview *KPreview::getKPreview(KDir *inDir, QWidget *parent, const char *name)
 KPreview *KPreview::getKPreview()
 {
     if ( _myKPreview == 0 )
-       debug("oops");
+       tqDebug("oops");
     return _myKPreview;
 }
 */
@@ -255,7 +254,7 @@ KPreview::KPreview( const KDir *inDir, QWidget *parent, const char *name)
 void KPreview::registerPreviewModule(const char * format, PreviewHandler readPreview,
                                      PreviewType inType)
 {   
-    //debug("registering preview module (%s)",format);
+    //tqDebug("registering preview module (%s)",format);
     if ( !myTextPreviewerStorage ) {
 	initHandlers();
     }

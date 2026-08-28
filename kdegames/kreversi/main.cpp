@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
   KApplication a(argc, argv, "kreversi");
 
   // locate the picture directory
-  PICDIR.setStr(KApplication::kde_datadir().copy());
+  PICDIR = KApplication::kde_datadir();
   PICDIR.append("/kreversi/pics/");
 
   App *app = new App;

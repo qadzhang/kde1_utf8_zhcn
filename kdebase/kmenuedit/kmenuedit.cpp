@@ -50,7 +50,7 @@ bool changes_to_save;
 KMenuEdit::KMenuEdit( const char *name )
   : KTopLevelWidget( name )
 {
-  initMetaObject();
+
   setCaption(KApplication::getKApplication()->getCaption());
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup("kmenuedit");
@@ -367,7 +367,7 @@ void KMenuEdit::save()
 void KMenuEdit::reloadFileTypes()
 {
   // kfm II method of mimetypes
-  QString dir_name = KApplication::kde_mimedir().copy();
+  QString dir_name = KApplication::kde_mimedir();
   QDir dir(dir_name);
   if( !dir.exists() )
     return;
@@ -401,7 +401,7 @@ void KMenuEdit::reloadFileTypes()
 	  KConfig kconfig(fi->absFilePath());
 	  kconfig.setGroup("KDE Desktop Entry");
 	  //kconfig.readEntry("WmCommand");
-	  //debug("type = %s", (const char *) kconfig.readEntry("MimeType") );
+	  //tqDebug("type = %s", (const char *) kconfig.readEntry("MimeType") );
 	  global_file_types->inSort( kconfig.readEntry("MimeType") );
 	  config.close();
 	  ++subd_it;

@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/widgets/qlistview.cpp:5987 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQCheckListItem Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQCheckListItem Class Reference</h1>
+
+<p>The TQCheckListItem class provides checkable list view items.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qlistview-h.html">ntqlistview.h</a>&gt;</tt>
+<p>Inherits <a href="qlistviewitem.html">TQListViewItem</a>.
+<p><a href="qchecklistitem-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn>enum <a href="#Type-enum"><b>Type</b></a> { RadioButton, CheckBox, Controller, RadioButtonController = Controller, CheckBoxController }</li>
+<li class=fn>enum <a href="#ToggleState-enum"><b>ToggleState</b></a> { Off, NoChange, On }</li>
+<li class=fn><a href="#TQCheckListItem"><b>TQCheckListItem</b></a> ( TQCheckListItem&nbsp;*&nbsp;parent, const&nbsp;TQString&nbsp;&amp;&nbsp;text, Type&nbsp;tt = RadioButtonController )</li>
+<li class=fn><a href="#TQCheckListItem-2"><b>TQCheckListItem</b></a> ( TQCheckListItem&nbsp;*&nbsp;parent, TQListViewItem&nbsp;*&nbsp;after, const&nbsp;TQString&nbsp;&amp;&nbsp;text, Type&nbsp;tt = RadioButtonController )</li>
+<li class=fn><a href="#TQCheckListItem-3"><b>TQCheckListItem</b></a> ( TQListViewItem&nbsp;*&nbsp;parent, const&nbsp;TQString&nbsp;&amp;&nbsp;text, Type&nbsp;tt = RadioButtonController )</li>
+<li class=fn><a href="#TQCheckListItem-4"><b>TQCheckListItem</b></a> ( TQListViewItem&nbsp;*&nbsp;parent, TQListViewItem&nbsp;*&nbsp;after, const&nbsp;TQString&nbsp;&amp;&nbsp;text, Type&nbsp;tt = RadioButtonController )</li>
+<li class=fn><a href="#TQCheckListItem-5"><b>TQCheckListItem</b></a> ( TQListView&nbsp;*&nbsp;parent, const&nbsp;TQString&nbsp;&amp;&nbsp;text, Type&nbsp;tt = RadioButtonController )</li>
+<li class=fn><a href="#TQCheckListItem-6"><b>TQCheckListItem</b></a> ( TQListView&nbsp;*&nbsp;parent, TQListViewItem&nbsp;*&nbsp;after, const&nbsp;TQString&nbsp;&amp;&nbsp;text, Type&nbsp;tt = RadioButtonController )</li>
+<li class=fn><a href="#TQCheckListItem-7"><b>TQCheckListItem</b></a> ( TQListViewItem&nbsp;*&nbsp;parent, const&nbsp;TQString&nbsp;&amp;&nbsp;text, const&nbsp;TQPixmap&nbsp;&amp;&nbsp;p )</li>
+<li class=fn><a href="#TQCheckListItem-8"><b>TQCheckListItem</b></a> ( TQListView&nbsp;*&nbsp;parent, const&nbsp;TQString&nbsp;&amp;&nbsp;text, const&nbsp;TQPixmap&nbsp;&amp;&nbsp;p )</li>
+<li class=fn><a href="#~TQCheckListItem"><b>~TQCheckListItem</b></a> ()</li>
+<li class=fn>virtual void <a href="#paintCell"><b>paintCell</b></a> ( TQPainter&nbsp;*&nbsp;p, const&nbsp;TQColorGroup&nbsp;&amp;&nbsp;cg, int&nbsp;column, int&nbsp;width, int&nbsp;align )</li>
+<li class=fn>virtual void <a href="#paintFocus"><b>paintFocus</b></a> ( TQPainter&nbsp;*&nbsp;p, const&nbsp;TQColorGroup&nbsp;&amp;&nbsp;cg, const&nbsp;TQRect&nbsp;&amp;&nbsp;r )</li>
+<li class=fn>virtual void <a href="#setOn"><b>setOn</b></a> ( bool&nbsp;b )</li>
+<li class=fn>bool <a href="#isOn"><b>isOn</b></a> () const</li>
+<li class=fn>Type <a href="#type"><b>type</b></a> () const</li>
+<li class=fn>TQString <a href="#text"><b>text</b></a> () const</li>
+<li class=fn>void <a href="#setTristate"><b>setTristate</b></a> ( bool&nbsp;b )</li>
+<li class=fn>bool <a href="#isTristate"><b>isTristate</b></a> () const</li>
+<li class=fn>ToggleState <a href="#state"><b>state</b></a> () const</li>
+<li class=fn>void <a href="#setState"><b>setState</b></a> ( ToggleState&nbsp;s )</li>
+<li class=fn>virtual int <a href="#rtti"><b>rtti</b></a> () const</li>
+</ul>
+<h2>Protected Members</h2>
+<ul>
+<li class=fn>virtual void <a href="#activate"><b>activate</b></a> ()</li>
+<li class=fn>void <a href="#turnOffChild"><b>turnOffChild</b></a> ()</li>
+<li class=fn>virtual void <a href="#stateChange"><b>stateChange</b></a> ( bool )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQCheckListItem class provides checkable list view items.
+<p> 
+<p> TQCheckListItems are used in <a href="ntqlistview.html">TQListView</a>s to provide
+<a href="qlistviewitem.html">TQListViewItem</a>s that are checkboxes, radio buttons or
+controllers.
+<p> Checkbox and controller check list items may be inserted at any
+level in a list view. Radio button check list items must be
+children of a controller check list item.
+<p> The item can be checked or unchecked with <a href="#setOn">setOn</a>(). Its type can be
+retrieved with <a href="#type">type</a>() and its text retrieved with <a href="#text">text</a>().
+<p> <center><img src="qlistviewitems.png" alt="List View Items"></center> 
+<p> <p>See also <a href="qlistviewitem.html">TQListViewItem</a>, <a href="ntqlistview.html">TQListView</a>, and <a href="advanced.html">Advanced Widgets</a>.
+
+<hr><h2>Member Type Documentation</h2>
+<h3 class=fn><a name="ToggleState-enum"></a>TQCheckListItem::ToggleState</h3>
+
+<p> This enum specifies a TQCheckListItem's toggle state.
+<ul>
+<li><tt>TQCheckListItem::Off</tt>
+<li><tt>TQCheckListItem::NoChange</tt>
+<li><tt>TQCheckListItem::On</tt>
+</ul>
+<h3 class=fn><a name="Type-enum"></a>TQCheckListItem::Type</h3>
+
+<p> This enum type specifies a TQCheckListItem's type:
+<ul>
+<li><tt>TQCheckListItem::RadioButton</tt>
+<li><tt>TQCheckListItem::CheckBox</tt>
+<li><tt>TQCheckListItem::Controller</tt> - <em>obsolete</em> (use <a href="#Type-enum">RadioButtonController</a> instead)
+<li><tt>TQCheckListItem::RadioButtonController</tt>
+<li><tt>TQCheckListItem::CheckBoxController</tt>
+</ul>
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQCheckListItem"></a>TQCheckListItem::TQCheckListItem ( <a href="qchecklistitem.html">TQCheckListItem</a>&nbsp;*&nbsp;parent, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="qchecklistitem.html#Type-enum">Type</a>&nbsp;tt = RadioButtonController )
+</h3>
+Constructs a checkable item with parent <em>parent</em>, text <em>text</em>
+and of type <em>tt</em>. Note that a <a href="#Type-enum">RadioButton</a> must be the child of a
+<a href="#Type-enum">RadioButtonController</a>, otherwise it will not toggle.
+
+<h3 class=fn><a name="TQCheckListItem-2"></a>TQCheckListItem::TQCheckListItem ( <a href="qchecklistitem.html">TQCheckListItem</a>&nbsp;*&nbsp;parent, <a href="qlistviewitem.html">TQListViewItem</a>&nbsp;*&nbsp;after, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="qchecklistitem.html#Type-enum">Type</a>&nbsp;tt = RadioButtonController )
+</h3>
+Constructs a checkable item with parent <em>parent</em>, which is after
+<em>after</em> in the parent's list of children, and with text <em>text</em>
+and of type <em>tt</em>. Note that a <a href="#Type-enum">RadioButton</a> must be the child of
+a <a href="#Type-enum">RadioButtonController</a>, otherwise it will not toggle.
+
+<h3 class=fn><a name="TQCheckListItem-3"></a>TQCheckListItem::TQCheckListItem ( <a href="qlistviewitem.html">TQListViewItem</a>&nbsp;*&nbsp;parent, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="qchecklistitem.html#Type-enum">Type</a>&nbsp;tt = RadioButtonController )
+</h3>
+Constructs a checkable item with parent <em>parent</em>, text <em>text</em>
+and of type <em>tt</em>. Note that this item must <em>not</em> be a <a href="#Type-enum">RadioButton</a>. Radio buttons must be children of a <a href="#Type-enum">RadioButtonController</a>.
+
+<h3 class=fn><a name="TQCheckListItem-4"></a>TQCheckListItem::TQCheckListItem ( <a href="qlistviewitem.html">TQListViewItem</a>&nbsp;*&nbsp;parent, <a href="qlistviewitem.html">TQListViewItem</a>&nbsp;*&nbsp;after, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="qchecklistitem.html#Type-enum">Type</a>&nbsp;tt = RadioButtonController )
+</h3>
+Constructs a checkable item with parent <em>parent</em>, which is after
+<em>after</em> in the parent's list of children, with text <em>text</em> and
+of type <em>tt</em>. Note that this item must <em>not</em> be a <a href="#Type-enum">RadioButton</a>. Radio buttons must be children of a <a href="#Type-enum">RadioButtonController</a>.
+
+<h3 class=fn><a name="TQCheckListItem-5"></a>TQCheckListItem::TQCheckListItem ( <a href="ntqlistview.html">TQListView</a>&nbsp;*&nbsp;parent, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="qchecklistitem.html#Type-enum">Type</a>&nbsp;tt = RadioButtonController )
+</h3>
+Constructs a checkable item with parent <em>parent</em>, text <em>text</em>
+and of type <em>tt</em>. Note that <em>tt</em> must <em>not</em> be <a href="#Type-enum">RadioButton</a>.
+Radio buttons must be children of a <a href="#Type-enum">RadioButtonController</a>.
+
+<h3 class=fn><a name="TQCheckListItem-6"></a>TQCheckListItem::TQCheckListItem ( <a href="ntqlistview.html">TQListView</a>&nbsp;*&nbsp;parent, <a href="qlistviewitem.html">TQListViewItem</a>&nbsp;*&nbsp;after, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="qchecklistitem.html#Type-enum">Type</a>&nbsp;tt = RadioButtonController )
+</h3>
+Constructs a checkable item with parent <em>parent</em>, which is after
+<em>after</em> in the parent's list of children, with text <em>text</em> and
+of type <em>tt</em>. Note that <em>tt</em> must <em>not</em> be <a href="#Type-enum">RadioButton</a>.
+Radio buttons must be children of a <a href="#Type-enum">RadioButtonController</a>.
+
+<h3 class=fn><a name="TQCheckListItem-7"></a>TQCheckListItem::TQCheckListItem ( <a href="qlistviewitem.html">TQListViewItem</a>&nbsp;*&nbsp;parent, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, const&nbsp;<a href="ntqpixmap.html">TQPixmap</a>&nbsp;&amp;&nbsp;p )
+</h3>
+Constructs a <a href="#Type-enum">RadioButtonController</a> item with parent <em>parent</em>,
+text <em>text</em> and pixmap <em>p</em>.
+
+<h3 class=fn><a name="TQCheckListItem-8"></a>TQCheckListItem::TQCheckListItem ( <a href="ntqlistview.html">TQListView</a>&nbsp;*&nbsp;parent, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, const&nbsp;<a href="ntqpixmap.html">TQPixmap</a>&nbsp;&amp;&nbsp;p )
+</h3>
+Constructs a <a href="#Type-enum">RadioButtonController</a> item with parent <em>parent</em>,
+text <em>text</em> and pixmap <em>p</em>.
+
+<h3 class=fn><a name="~TQCheckListItem"></a>TQCheckListItem::~TQCheckListItem ()
+</h3>
+Destroys the item, and all its children to any depth, freeing up
+all allocated resources.
+
+<h3 class=fn>void <a name="activate"></a>TQCheckListItem::activate ()<tt> [virtual protected]</tt>
+</h3>
+Toggle check box or set radio button to on.
+
+<p>Reimplemented from <a href="qlistviewitem.html#activate">TQListViewItem</a>.
+<h3 class=fn>bool <a name="isOn"></a>TQCheckListItem::isOn () const
+</h3>
+
+<p> Returns true if the item is toggled on; otherwise returns false.
+
+<h3 class=fn>bool <a name="isTristate"></a>TQCheckListItem::isTristate () const
+</h3>
+Returns true if the item is tristate; otherwise returns false.
+<p> <p>See also <a href="#setTristate">setTristate</a>().
+
+<h3 class=fn>void <a name="paintCell"></a>TQCheckListItem::paintCell ( <a href="ntqpainter.html">TQPainter</a>&nbsp;*&nbsp;p, const&nbsp;<a href="qcolorgroup.html">TQColorGroup</a>&nbsp;&amp;&nbsp;cg, int&nbsp;column, int&nbsp;width, int&nbsp;align )<tt> [virtual]</tt>
+</h3>
+Paints the item using the painter <em>p</em> and the color group <em>cg</em>.
+The item is in column <em>column</em>, has width <em>width</em> and has
+alignment <em>align</em>. (See TQt::AlignmentFlags for valid alignments.)
+
+<p>Reimplemented from <a href="qlistviewitem.html#paintCell">TQListViewItem</a>.
+<h3 class=fn>void <a name="paintFocus"></a>TQCheckListItem::paintFocus ( <a href="ntqpainter.html">TQPainter</a>&nbsp;*&nbsp;p, const&nbsp;<a href="qcolorgroup.html">TQColorGroup</a>&nbsp;&amp;&nbsp;cg, const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;r )<tt> [virtual]</tt>
+</h3>
+Draws the focus rectangle <em>r</em> using the color group <em>cg</em> on the
+painter <em>p</em>.
+
+<p>Reimplemented from <a href="qlistviewitem.html#paintFocus">TQListViewItem</a>.
+<h3 class=fn>int <a name="rtti"></a>TQCheckListItem::rtti () const<tt> [virtual]</tt>
+</h3>
+
+<p> Returns 1.
+<p> Make your derived classes return their own values for <a href="#rtti">rtti</a>(), and
+you can distinguish between list view items. You should use values
+greater than 1000, to allow for extensions to this class.
+
+<p>Reimplemented from <a href="qlistviewitem.html#rtti">TQListViewItem</a>.
+<h3 class=fn>void <a name="setOn"></a>TQCheckListItem::setOn ( bool&nbsp;b )<tt> [virtual]</tt>
+</h3>
+Sets the button on if <em>b</em> is true, otherwise sets it off.
+Maintains radio button exclusivity.
+
+<h3 class=fn>void <a name="setState"></a>TQCheckListItem::setState ( <a href="qchecklistitem.html#ToggleState-enum">ToggleState</a>&nbsp;s )
+</h3>
+Sets the toggle state of the checklistitem to <em>s</em>. <em>s</em> can be
+<a href="#ToggleState-enum">Off</a>, <a href="#ToggleState-enum">NoChange</a> or <a href="#ToggleState-enum">On</a>.
+<p> Tristate can only be enabled for <a href="#Type-enum">CheckBox</a> or <a href="#Type-enum">CheckBoxController</a>,
+therefore the <a href="#ToggleState-enum">NoChange</a> only applies to them.
+<p> Setting the state to <a href="#ToggleState-enum">On</a> or <a href="#ToggleState-enum">Off</a> on a <a href="#Type-enum">CheckBoxController</a>
+will recursivly set the states of its children to the same state.
+<p> Setting the state to <a href="#ToggleState-enum">NoChange</a> on a <a href="#Type-enum">CheckBoxController</a> will
+make it recursivly recall the previous stored state of its
+children. If there was no previous stored state the children are
+all set to <a href="#ToggleState-enum">On</a>.
+
+<h3 class=fn>void <a name="setTristate"></a>TQCheckListItem::setTristate ( bool&nbsp;b )
+</h3>
+Sets tristate to <em>b</em> if the <a href="#Type-enum">Type</a> is either a <a href="#Type-enum">CheckBoxController</a> or
+a <a href="#Type-enum">CheckBox</a>.
+<p> <tt>CheckBoxControllers</tt> are tristate by default.
+<p> <p>See also <a href="#state">state</a>() and <a href="#isTristate">isTristate</a>().
+
+<h3 class=fn><a href="qchecklistitem.html#ToggleState-enum">ToggleState</a> <a name="state"></a>TQCheckListItem::state () const
+</h3>
+Returns the state of the item.
+<p> <p>See also <a href="#ToggleState-enum">TQCheckListItem::ToggleState</a>.
+
+<h3 class=fn>void <a name="stateChange"></a>TQCheckListItem::stateChange ( bool )<tt> [virtual protected]</tt>
+</h3>
+This virtual function is called when the item changes its state.
+<a href="#ToggleState-enum">NoChange</a> (if tristate is enabled and the type is either <a href="#Type-enum">CheckBox</a> or <a href="#Type-enum">CheckBoxController</a>) reports the same as <a href="#ToggleState-enum">Off</a>, so
+use <a href="#state">state</a>() to determine if the state is actually <a href="#ToggleState-enum">Off</a> or <a href="#ToggleState-enum">NoChange</a>.
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="text"></a>TQCheckListItem::text () const
+</h3>
+
+<p> Returns the item's text.
+
+<h3 class=fn>void <a name="turnOffChild"></a>TQCheckListItem::turnOffChild ()<tt> [protected]</tt>
+</h3>
+If this is a <a href="#Type-enum">RadioButtonController</a> that has <a href="#Type-enum">RadioButton</a>
+children, turn off the child that is on.
+
+<h3 class=fn><a href="qchecklistitem.html#Type-enum">Type</a> <a name="type"></a>TQCheckListItem::type () const
+</h3>
+
+<p> Returns the type of this item.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -11,8 +11,6 @@ using namespace std;
 KMIOStatus::KMIOStatus(QWidget *parent, const char *name) 
   :QWidget(parent, name) {
 
-  initMetaObject();
-
 }
 
 void KMIOStatus::setHost(QString host) {

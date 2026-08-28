@@ -1,0 +1,446 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/qmag/qmag.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQMag</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQMag</h1>
+
+   
+<p> 
+This is a simple magnifier-type program.  It shows how one can do
+some quite low-level operations in a portable way using TQt.
+<p> Run it, click in the magnifier window, then click where you want to
+magnify or drag out a rectangle.  Two combo boxes let you select
+amplification and refresh frequency, a text label tells you the color
+of the pixel the cursor is on, and a button lets you save the
+magnified area as a .bmp file.
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/qmag.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qcombobox-h.html">ntqcombobox.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qimage-h.html">ntqimage.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qfiledialog-h.html">ntqfiledialog.h</a>&gt;
+#include &lt;<a href="qregexp-h.html">ntqregexp.h</a>&gt;
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qwmatrix-h.html">ntqwmatrix.h</a>&gt;
+
+
+class MagWidget : public <a href="ntqwidget.html">TQWidget</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    MagWidget( <a href="ntqwidget.html">TQWidget</a> *parent=0, const char *name=0 );
+
+public slots:
+    void        setZoom( int );
+    void        setRefresh( int );
+    void        save();
+    void        multiSave();
+
+protected:
+    void        paintEvent( <a href="qpaintevent.html">TQPaintEvent</a> * );
+    void        mousePressEvent( <a href="qmouseevent.html">TQMouseEvent</a> * );
+    void        mouseReleaseEvent( <a href="qmouseevent.html">TQMouseEvent</a> * );
+    void        mouseMoveEvent( <a href="qmouseevent.html">TQMouseEvent</a> * );
+    void        focusOutEvent( <a href="qfocusevent.html">TQFocusEvent</a> * );
+    void        timerEvent( <a href="qtimerevent.html">TQTimerEvent</a> * );
+    void        resizeEvent( <a href="qresizeevent.html">TQResizeEvent</a> * );
+
+private:
+    void        grabAround(TQPoint pos);
+    void        grab();
+
+    <a href="ntqcombobox.html">TQComboBox</a>   *zoom;
+    <a href="ntqcombobox.html">TQComboBox</a>   *refresh;
+    <a href="ntqpushbutton.html">TQPushButton</a> *saveButton;
+    <a href="ntqpushbutton.html">TQPushButton</a> *multiSaveButton;
+    <a href="ntqpushbutton.html">TQPushButton</a> *quitButton;
+    <a href="ntqpixmap.html">TQPixmap</a>     pm;             // pixmap, magnified
+    <a href="ntqpixmap.html">TQPixmap</a>     p;              // pixmap
+    <a href="ntqimage.html">TQImage</a>      image;          // image of pixmap (for RGB)
+    <a href="ntqlabel.html">TQLabel</a>      *rgb;
+    int         yoffset;        // pixels in addition to the actual picture
+    int         z;              // magnification factor
+    int         r;              // autorefresh rate (index into refreshrates)
+    bool        grabbing;       // true if qmag is currently grabbing
+    int         grabx, graby;
+    <a href="ntqstring.html">TQString</a>     multifn;        // filename for multisave
+};
+
+
+#ifdef COMPLEX_GUI
+static const char *zoomfactors[] = {
+    "100%", "200%", "300%", "400%", "500%",
+    "600%", "700%", "800%", "1600%", 0 };
+
+static const char *refreshrates[] = {
+    "No autorefresh", "50 per second", "4 per second", "3 per second", "2 per second",
+    "Every second", "Every two seconds", "Every three seconds",
+    "Every five seconds", "Every ten seconds", 0 };
+#endif
+
+static const int timer[] = {
+    0, 20, 250, 333, 500, 1000, 2000, 3000, 5000, 10000 };
+
+
+<a name="f484"></a>MagWidget::MagWidget( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+    : <a href="ntqwidget.html">TQWidget</a>( parent, name)
+{
+    z = 1;                      // default zoom (100%)
+    r = 0;                      // default refresh (none)
+
+#ifdef COMPLEX_GUI
+    int w=0, x=0, n;
+
+    zoom = new <a href="ntqcombobox.html">TQComboBox</a>( false, this );
+    <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>(zoom);
+<a name="x1773"></a>    zoom-&gt;<a href="ntqcombobox.html#insertStrList">insertStrList</a>( zoomfactors, 9 );
+<a name="x1772"></a>    <a href="ntqobject.html#connect">connect</a>( zoom, TQ_SIGNAL(<a href="ntqcombobox.html#activated">activated</a>(int)), TQ_SLOT(setZoom(int)) );
+
+    refresh = new <a href="ntqcombobox.html">TQComboBox</a>( false, this );
+    <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>(refresh);
+    refresh-&gt;<a href="ntqcombobox.html#insertStrList">insertStrList</a>( refreshrates, 9 );
+    <a href="ntqobject.html#connect">connect</a>( refresh, TQ_SIGNAL(<a href="ntqcombobox.html#activated">activated</a>(int)), TQ_SLOT(setRefresh(int)) );
+
+    for( n=0; n&lt;9; n++) {
+<a name="x1797"></a>        int w2 = zoom-&gt;<a href="ntqwidget.html#fontMetrics">fontMetrics</a>().width( zoomfactors[n] );
+        w = TQMAX(w2, w);
+    }
+<a name="x1807"></a>    zoom-&gt;<a href="ntqwidget.html#setGeometry">setGeometry</a>( 2, 2, w+30, 20 );
+
+    x = w+34;
+    w = 0;
+    for( n=0; n&lt;9; n++) {
+        int w2 = refresh-&gt;<a href="ntqwidget.html#fontMetrics">fontMetrics</a>().width( refreshrates[n] );
+        w = TQMAX(w2, w);
+    }
+    refresh-&gt;<a href="ntqwidget.html#setGeometry">setGeometry</a>( x, 2, w+30, 20 );
+
+    saveButton = new <a href="ntqpushbutton.html">TQPushButton</a>( this );
+    <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>(saveButton);
+    <a href="ntqobject.html#connect">connect</a>( saveButton, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), this, TQ_SLOT(save()) );
+<a name="x1771"></a>    saveButton-&gt;<a href="ntqbutton.html#setText">setText</a>( "Save" );
+<a name="x1788"></a>    saveButton-&gt;<a href="ntqwidget.html#setGeometry">setGeometry</a>( x+w+30+2, 2,
+                             10+saveButton-&gt;<a href="ntqwidget.html#fontMetrics">fontMetrics</a>().width("Save"), 20 );
+
+    multiSaveButton = new <a href="ntqpushbutton.html">TQPushButton</a>( this );
+<a name="x1790"></a>    multiSaveButton-&gt;<a href="ntqpushbutton.html#setToggleButton">setToggleButton</a>(true);
+    <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>(multiSaveButton);
+    <a href="ntqobject.html#connect">connect</a>( multiSaveButton, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), this, TQ_SLOT(multiSave()) );
+    multiSaveButton-&gt;<a href="ntqbutton.html#setText">setText</a>( "MultiSave" );
+<a name="x1798"></a>    multiSaveButton-&gt;<a href="ntqwidget.html#setGeometry">setGeometry</a>( saveButton-&gt;<a href="ntqwidget.html#geometry">geometry</a>().right() + 2, 2,
+                             10+multiSaveButton-&gt;<a href="ntqwidget.html#fontMetrics">fontMetrics</a>().width("MultiSave"), 20 );
+
+    quitButton = new <a href="ntqpushbutton.html">TQPushButton</a>( this );
+    <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>(quitButton);
+    <a href="ntqobject.html#connect">connect</a>( quitButton, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+    quitButton-&gt;<a href="ntqbutton.html#setText">setText</a>( "Quit" );
+    quitButton-&gt;<a href="ntqwidget.html#setGeometry">setGeometry</a>( multiSaveButton-&gt;<a href="ntqwidget.html#geometry">geometry</a>().right() + 2, 2,
+                             10+quitButton-&gt;<a href="ntqwidget.html#fontMetrics">fontMetrics</a>().width("Quit"), 20 );
+#else
+    zoom = 0;
+    multiSaveButton = 0;
+#endif
+
+    setRefresh(1);
+    setZoom(5);
+
+    rgb = new <a href="ntqlabel.html">TQLabel</a>( this );
+    <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( rgb );
+<a name="x1779"></a>    rgb-&gt;<a href="ntqlabel.html#setText">setText</a>( "" );
+    rgb-&gt;<a href="ntqlabel.html#setAlignment">setAlignment</a>( AlignVCenter );
+    rgb-&gt;<a href="ntqwidget.html#resize">resize</a>( <a href="ntqwidget.html#width">width</a>(), rgb-&gt;<a href="ntqwidget.html#fontMetrics">fontMetrics</a>().height() + 4 );
+
+#ifdef COMPLEX_GUI
+<a name="x1799"></a>    yoffset = zoom-&gt;<a href="ntqwidget.html#height">height</a>()    // top buttons
+        + 4                     // space around top buttons
+        + rgb-&gt;<a href="ntqwidget.html#height">height</a>();        // color-value text height
+<a name="x1804"></a>    <a href="ntqwidget.html#setMinimumSize">setMinimumSize</a>( quitButton-&gt;<a href="ntqwidget.html#pos">pos</a>().x(), yoffset+20 );
+    <a href="ntqwidget.html#resize">resize</a>( quitButton-&gt;<a href="ntqwidget.html#geometry">geometry</a>().topRight().x() + 2, yoffset+60 );
+#else
+    yoffset = 0;
+    <a href="ntqwidget.html#resize">resize</a>(350,350);
+#endif
+
+    grabx = graby = -1;
+    grabbing = false;
+
+    <a href="ntqwidget.html#setMouseTracking">setMouseTracking</a>( true );   // and do let me know what pixel I'm at, eh?
+
+<a name="x1765"></a>    grabAround( TQPoint(grabx=tqApp-&gt;<a href="ntqapplication.html#desktop">desktop</a>()-&gt;width()/2, graby=tqApp-&gt;<a href="ntqapplication.html#desktop">desktop</a>()-&gt;height()/2) );
+}
+
+
+void <a name="f485"></a>MagWidget::setZoom( int index )
+{
+    if (index == 8)
+        z = 16;
+    else
+        z = index+1;
+    grab();
+}
+
+
+void <a name="f486"></a>MagWidget::setRefresh( int index )
+{
+    r = index;
+    <a href="ntqobject.html#killTimers">killTimers</a>();
+    if (index &amp;&amp; !grabbing)
+        <a href="ntqobject.html#startTimer">startTimer</a>( timer[r] );
+}
+
+
+void <a name="f487"></a>MagWidget::save()
+{
+<a name="x1785"></a>    if ( !p.<a href="ntqpixmap.html#isNull">isNull</a>() ) {
+        <a href="ntqobject.html#killTimers">killTimers</a>();
+<a name="x1775"></a>        <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getSaveFileName">getSaveFileName</a>();
+<a name="x1792"></a>        if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+<a name="x1786"></a>            p.<a href="ntqpixmap.html#save">save</a>( fn, "BMP" );
+        if ( r )
+            <a href="ntqobject.html#startTimer">startTimer</a>( timer[r] );
+    }
+}
+
+void <a name="f488"></a>MagWidget::multiSave()
+{
+    if ( !p.<a href="ntqpixmap.html#isNull">isNull</a>() ) {
+        multifn = ""; // stops saving
+        multifn = TQFileDialog::<a href="ntqfiledialog.html#getSaveFileName">getSaveFileName</a>();
+        if ( multifn.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+<a name="x1789"></a>            multiSaveButton-&gt;<a href="ntqpushbutton.html#setOn">setOn</a>(false);
+        if ( !r )
+            p.<a href="ntqpixmap.html#save">save</a>( multifn, "BMP" );
+    } else {
+        multiSaveButton-&gt;<a href="ntqpushbutton.html#setOn">setOn</a>(false);
+    }
+}
+
+
+void <a name="f489"></a>MagWidget::grab()
+{
+    if ( !isVisible() )
+        return;                 // don't eat resources when iconified
+
+    if ( grabx &lt; 0 || graby &lt; 0 )
+        return;                 // don't grab until the user has said to
+
+    int x,y, w,h;
+
+    w = (<a href="ntqwidget.html#width">width</a>()+z-1)/z;
+    h = (<a href="ntqwidget.html#height">height</a>()+z-1-yoffset)/z;
+    if ( w&lt;1 || h&lt;1 )
+        return;                 // don't ask too much from the window system :)
+
+    x = grabx-w/2;              // find a suitable position to grab from
+    y = graby-h/2;
+    if ( x + w &gt; TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;width() )
+        x = TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;width()-w;
+    else if ( x &lt; 0 )
+        x = 0;
+    if ( y + h &gt; TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;height() )
+        y = TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;height()-h;
+    else if ( y &lt; 0 )
+        y = 0;
+
+<a name="x1784"></a>    p = TQPixmap::<a href="ntqpixmap.html#grabWindow">grabWindow</a>( TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;winId(),  x, y, w, h );
+<a name="x1783"></a>    image = p.<a href="ntqpixmap.html#convertToImage">convertToImage</a>();
+    <a href="ntqwmatrix.html">TQWMatrix</a> m;                 // after getting it, scale it
+<a name="x1809"></a>    m.<a href="ntqwmatrix.html#scale">scale</a>( (double)z, (double)z );
+<a name="x1787"></a>    pm = p.<a href="ntqpixmap.html#xForm">xForm</a>( m );
+
+<a name="x1770"></a>    if ( !multiSaveButton || !multiSaveButton-&gt;<a href="ntqbutton.html#isOn">isOn</a>() )
+        <a href="ntqwidget.html#repaint">repaint</a>( false );               // and finally repaint, flicker-free
+}
+
+
+<a name="x1803"></a>void MagWidget::<a href="ntqwidget.html#paintEvent">paintEvent</a>( <a href="qpaintevent.html">TQPaintEvent</a> * )
+{
+    if ( !pm.<a href="ntqpixmap.html#isNull">isNull</a>() ) {
+        <a href="ntqpainter.html">TQPainter</a> paint( this );
+<a name="x1782"></a>        paint.<a href="ntqpainter.html#drawPixmap">drawPixmap</a>( 0, zoom ? zoom-&gt;<a href="ntqwidget.html#height">height</a>()+4 : 0, pm,
+                              0,0, width(), height()-yoffset );
+    }
+}
+
+
+<a name="x1801"></a>void MagWidget::<a href="ntqwidget.html#mousePressEvent">mousePressEvent</a>( <a href="qmouseevent.html">TQMouseEvent</a> *e )
+{
+    if ( !grabbing ) {          // prepare to grab...
+        grabbing = true;
+        <a href="ntqobject.html#killTimers">killTimers</a>();
+        <a href="ntqwidget.html#grabMouse">grabMouse</a>( crossCursor );
+        grabx = -1;
+        graby = -1;
+    } else {                    // REALLY prepare to grab
+<a name="x1780"></a>        grabx = <a href="ntqwidget.html#mapToGlobal">mapToGlobal</a>(e-&gt;<a href="qmouseevent.html#pos">pos</a>()).x();
+        graby = <a href="ntqwidget.html#mapToGlobal">mapToGlobal</a>(e-&gt;<a href="qmouseevent.html#pos">pos</a>()).y();
+    }
+}
+
+
+
+<a name="x1802"></a>void MagWidget::<a href="ntqwidget.html#mouseReleaseEvent">mouseReleaseEvent</a>( <a href="qmouseevent.html">TQMouseEvent</a> * e )
+{
+    if ( grabbing &amp;&amp; grabx &gt;= 0 &amp;&amp; graby &gt;= 0 ) {
+        grabbing = false;
+        grabAround(e-&gt;<a href="qmouseevent.html#pos">pos</a>());
+        <a href="ntqwidget.html#releaseMouse">releaseMouse</a>();
+    }
+}
+
+void <a name="f490"></a>MagWidget::grabAround(TQPoint pos)
+{
+    int rx, ry;
+    rx = <a href="ntqwidget.html#mapToGlobal">mapToGlobal</a>(pos).x();
+    ry = <a href="ntqwidget.html#mapToGlobal">mapToGlobal</a>(pos).y();
+    int w = TQABS(rx-grabx);
+    int h = TQABS(ry-graby);
+    if ( w &gt; 10 &amp;&amp; h &gt; 10 ) {
+        int pz;
+        pz = 1;
+        while ( w*pz*h*pz &lt; width()*(<a href="ntqwidget.html#height">height</a>()-yoffset) &amp;&amp;
+                w*pz &lt; TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;width() &amp;&amp;
+                h*pz &lt; TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;height() )
+            pz++;
+        if ( (w*pz*h*pz - width()*(<a href="ntqwidget.html#height">height</a>()-yoffset)) &gt;
+             (<a href="ntqwidget.html#width">width</a>()*(<a href="ntqwidget.html#height">height</a>()-yoffset) - w*(pz-1)*h*(pz-1)) )
+            pz--;
+        if ( pz &lt; 1 )
+            pz = 1;
+        if ( pz &gt; 8 )
+            pz = 8;
+        if ( zoom )
+<a name="x1774"></a>            zoom-&gt;<a href="ntqcombobox.html#setCurrentItem">setCurrentItem</a>( pz-1 );
+
+        z = pz;
+        grabx = TQMIN(rx, grabx) + w/2;
+        graby = TQMIN(ry, graby) + h/2;
+        <a href="ntqwidget.html#resize">resize</a>( w*z, h*z+yoffset );
+    }
+    grab();
+    if ( r )
+        <a href="ntqobject.html#startTimer">startTimer</a>( timer[r] );
+}
+
+
+<a name="x1800"></a>void MagWidget::<a href="ntqwidget.html#mouseMoveEvent">mouseMoveEvent</a>( <a href="qmouseevent.html">TQMouseEvent</a> *e )
+{
+    if ( grabbing || pm.<a href="ntqpixmap.html#isNull">isNull</a>() ||
+         e-&gt;<a href="qmouseevent.html#pos">pos</a>().y() &gt; height() - (zoom ? zoom-&gt;<a href="ntqwidget.html#fontMetrics">fontMetrics</a>().height() - 4 : 0) ||
+         e-&gt;<a href="qmouseevent.html#pos">pos</a>().y() &lt; (zoom ? zoom-&gt;<a href="ntqwidget.html#height">height</a>()+4 : 4) ) {
+        rgb-&gt;<a href="ntqlabel.html#setText">setText</a>( "" );
+    } else {
+        int x,y;
+        x = e-&gt;<a href="qmouseevent.html#pos">pos</a>().x() / z;
+        y = (e-&gt;<a href="qmouseevent.html#pos">pos</a>().y() - ( zoom ? zoom-&gt;<a href="ntqwidget.html#height">height</a>() : 0 ) - 4) / z;
+        <a href="ntqstring.html">TQString</a> pixelinfo;
+<a name="x1777"></a>        if ( image.<a href="ntqimage.html#valid">valid</a>(x,y) )
+        {
+<a name="x1776"></a>            TQRgb px = image.<a href="ntqimage.html#pixel">pixel</a>(x,y);
+<a name="x1795"></a>            pixelinfo.<a href="ntqstring.html#sprintf">sprintf</a>(" %3d,%3d,%3d  #%02x%02x%02x",
+                <a href="ntqcolor.html#qRed">tqRed</a>(px), tqGreen(px), tqBlue(px),
+                <a href="ntqcolor.html#qRed">tqRed</a>(px), tqGreen(px), tqBlue(px));
+        }
+        <a href="ntqstring.html">TQString</a> label;
+        label.<a href="ntqstring.html#sprintf">sprintf</a>( "x=%d, y=%d %s",
+            x+grabx, y+graby, (const char*)pixelinfo );
+        rgb-&gt;<a href="ntqlabel.html#setText">setText</a>( label );
+    }
+}
+
+
+<a name="x1796"></a>void MagWidget::<a href="ntqwidget.html#focusOutEvent">focusOutEvent</a>( <a href="qfocusevent.html">TQFocusEvent</a> * )
+{
+    rgb-&gt;<a href="ntqlabel.html#setText">setText</a>( "" );
+}
+
+
+<a name="x1781"></a>void MagWidget::<a href="ntqobject.html#timerEvent">timerEvent</a>( <a href="qtimerevent.html">TQTimerEvent</a> * )
+{
+    grab();
+/*
+    if ( multiSaveButton-&gt;<a href="ntqbutton.html#isOn">isOn</a>() &amp;&amp; !multifn.<a href="ntqstring.html#isEmpty">isEmpty</a>() ) {
+        <a href="ntqregexp.html">TQRegExp</a> num("[0-9][0-9]*");
+        int start;
+        int len;
+<a name="x1791"></a>        if ((start=num.<a href="ntqregexp.html#match">match</a>(multifn,0,&amp;len))&gt;=0)
+<a name="x1794"></a>            multifn.<a href="ntqstring.html#replace">replace</a>(num,
+<a name="x1793"></a>                TQString().setNum(multifn.<a href="ntqstring.html#mid">mid</a>(start,len).toInt()+1)
+            );
+        p.<a href="ntqpixmap.html#save">save</a>( multifn, "BMP" );
+    }
+*/
+}
+
+
+<a name="x1806"></a>void MagWidget::<a href="ntqwidget.html#resizeEvent">resizeEvent</a>( <a href="qresizeevent.html">TQResizeEvent</a> * )
+{
+    rgb-&gt;<a href="ntqwidget.html#setGeometry">setGeometry</a>( 0, height() - rgb-&gt;<a href="ntqwidget.html#height">height</a>(), width(), rgb-&gt;<a href="ntqwidget.html#height">height</a>() );
+    grab();
+}
+
+
+#include "qmag.moc"
+
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+    MagWidget m;
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;m );
+    m.<a href="ntqwidget.html#show">show</a>();
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

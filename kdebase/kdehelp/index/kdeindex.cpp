@@ -82,7 +82,10 @@ int readEntries( const char *dirName, QList<Entry> &list )
 	if ( !fileDir.exists() )
 		return 0;
 
-	const QStrList *fileList = fileDir.entryList();
+	static TQStrList k1files; k1files.clear();  /* TQt3 迁移：值语义承接 */
+	{ QStringList k1sl = fileDir.entryList();
+	  for (unsigned k1i=0;k1i<k1sl.count();++k1i) k1files.append(k1sl[k1i]); }
+	const QStrList *fileList = &k1files;
 
 	QStrListIterator itFile( *fileList );
 
@@ -113,7 +116,10 @@ int processDir( const char *dirName, QTextStream &stream )
 	if ( !dirDir.exists() )
 		return 0;
 
-	const QStrList *dirList = dirDir.entryList();
+	static TQStrList k1dirs; k1dirs.clear();  /* TQt3 迁移：值语义承接 */
+	{ QStringList k1sl = dirDir.entryList();
+	  for (unsigned k1i=0;k1i<k1sl.count();++k1i) k1dirs.append(k1sl[k1i]); }
+	const QStrList *dirList = &k1dirs;
 
 	QStrListIterator itDir( *dirList );
 

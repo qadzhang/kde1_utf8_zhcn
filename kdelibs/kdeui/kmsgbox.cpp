@@ -113,7 +113,7 @@
 #include <qlayout.h>
 
 #include <kapp.h>
-#include <kbuttonbox.h>
+#include "kbuttonbox.h"
 
 #include "kmsgbox.h"
 #include "kmsgbox.h"

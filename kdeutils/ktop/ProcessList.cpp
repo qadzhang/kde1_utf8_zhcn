@@ -158,13 +158,13 @@ percentKey(const char* text)
 	return (key);
 }
 
-const char*
+TQString
 ProcessLVI::key(int column, bool dir) const
 {
 	if (TabCol[column].key)
-		return ((*TabCol[column].key)(text(column)));
+		return TQString( (*TabCol[column].key)(text(column).ascii()) );
 	else
-		return (text(column));
+		return text(column);
 }
 
 ProcessList::ProcessList(QWidget *parent, const char* name)

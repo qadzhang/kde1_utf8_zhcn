@@ -64,7 +64,7 @@
 
 KRuler::KRuler(direction dir, QWidget *parent, const char *name,
 	       WFlags f, bool allowLines)
-  : QFrame(parent,name,f,allowLines),
+  : QFrame(parent,name,f),  // TQt3 迁移：无 allowLines 尾参
     dir(dir),
     lmDist(INIT_LITTLE_MARK_DISTANCE),
     mmDist(INIT_MIDDLE_MARK_DISTANCE),
@@ -89,7 +89,7 @@ KRuler::KRuler(direction dir, QWidget *parent, const char *name,
 }
 
 KRuler::KRuler(direction dir, int widgetWidth, QWidget *parent, const char *name, WFlags f, bool allowLines)
-  : QFrame(parent,name,f,allowLines),
+  : QFrame(parent,name,f),  // TQt3 迁移：无 allowLines 尾参
     dir(dir),
     lmDist(INIT_LITTLE_MARK_DISTANCE),
     mmDist(INIT_MIDDLE_MARK_DISTANCE),
@@ -137,7 +137,7 @@ KRuler::setMaxValue(int value)
 
 void 
 KRuler::setRange(int min, int max)
-{// debug("set range from %i to %i", min, max);
+{// tqDebug("set range from %i to %i", min, max);
   if ((range.minValue() != min) || (range.maxValue() != max)) {
     range.setRange( min, max );
     update(contentsRect());
@@ -382,7 +382,7 @@ KRuler::setPixelPerMark(double rate)
 
 void
 KRuler::setOffset(int _offset)
-{// debug("set offset %i", _offset);
+{// tqDebug("set offset %i", _offset);
   if (offset != _offset) {
     offset = _offset;
     update(contentsRect());
@@ -569,7 +569,7 @@ KRuler::drawContents(QPainter *p)
 #ifdef PROFILING
   }
   int elapsed = time.elapsed();
-  debug("paint time %i",elapsed);
+  tqDebug("paint time %i",elapsed);
 #endif
   
 }

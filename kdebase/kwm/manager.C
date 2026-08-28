@@ -471,7 +471,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
       }
       switch (c->state) {
       case IconicState:
-	// if we are in iconic state we will only withdraw if it�s a
+	// if we are in iconic state we will only withdraw if it�s a
 	// true send_event request.
   	if (e->send_event) {
 	  withdraw(c);
@@ -1278,7 +1278,6 @@ void Manager::doPlacement(Client* c){
     smartPlacement(c);
   else if(options.Placement == CASCADE_PLACEMENT)
     cascadePlacement(c, False);
-  else
     randomPlacement(c);
 }
 
@@ -1770,7 +1769,7 @@ void Manager::manage(Window w, bool mapped){
     if (!t.isEmpty()){
       for (s = do_not_manage_titles.first(); s ;
 	   s = do_not_manage_titles.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(t) != -1){
 	  do_not_manage_titles.remove();
 	  sendToModules(module_win_add, 0, w);
@@ -2171,7 +2170,7 @@ void Manager::withdraw(Client* c){
   XEvent ev;
   if (XCheckTypedWindowEvent (qt_xdisplay(), c->window,
 			      DestroyNotify, &ev) ) {
-      debug("withdraw: have destroy in queue");
+      tqDebug("withdraw: have destroy in queue");
       destroyNotify(&ev.xdestroywindow);
       return;
   }
@@ -2230,7 +2229,7 @@ Client* Manager::current(){
   return (result && result->isActive()) ? result : (Client*)0;
 }
 
-// add a client into the manager�s client lists
+// add a client into the manager�s client lists
 void Manager::addClient(Client* c){
   clients.append(c);
   clients_sorted.append(c);
@@ -2286,7 +2285,7 @@ void Manager::activateClient(Client* c, bool set_revert){
   }
 }
 
-// remove a client from the manager�s client list
+// remove a client from the manager�s client list
 void Manager::removeClient(Client* c){
   if (c->trans)
     raiseSoundEvent("Window Trans Delete");
@@ -2381,7 +2380,7 @@ void Manager::raiseClient(Client* c){
   raiseElectricBorders();
 }
 
-// lower a client. Take care about modal dialogs and kfm�s root icons
+// lower a client. Take care about modal dialogs and kfm�s root icons
 void Manager::lowerClient(Client* c){
   QList <Client> tmp;
   clients_sorted.removeRef(c);
@@ -2462,7 +2461,7 @@ bool Manager::hasClient(Client* c)
 // user has chosen the brain dead classic focus follows mouse policy
 // and the mouse pointer has left the window. noFocus may give the
 // focus to a window which had the focus before, or put the focus to
-// a dummy window if there�s no window left on this desktop or the
+// a dummy window if there�s no window left on this desktop or the
 // user has chosen an archaic (=classic) desktop policy.
 void Manager::noFocus(){
   Client* c;
@@ -2648,7 +2647,7 @@ void Manager::updateMaximizedWindows()
 
 
 // Tells the XServer and the client itself to sync the X window with
-// the datas stored in kwm�s client object. If emit_changed is true,
+// the datas stored in kwm�s client object. If emit_changed is true,
 // then all kwm modules are informed about that change.
 void Manager::sendConfig(Client* c, bool emit_changed){
   XConfigureEvent ce;
@@ -2814,8 +2813,10 @@ void Manager::colormapFocus(Client *c){
     if (!found)
       installColormap(c->cmap);
   }
-  else if (c->trans && (cc = getClient(c->trans)) != 0 && cc->ncmapwins != 0)
+  else if (c->trans && (cc = getClient(c->trans)) != 0 && cc->ncmapwins != 0) {
     colormapFocus(cc);
+    installColormap(c->cmap);
+  }
   else
     installColormap(c->cmap);
 }
@@ -2907,7 +2908,7 @@ void Manager::setShape(Client* c){
 }
 
 // auxiliary functions to travers all clients according the focus
-// order. Usefull for kwm�s Alt-tab feature.
+// order. Usefull for kwm�s Alt-tab feature.
 Client* Manager::nextClient(Client* c){
   Client* result;
   if (!c)
@@ -2922,7 +2923,7 @@ Client* Manager::nextClient(Client* c){
 }
 
 // auxiliary functions to travers all clients according the focus
-// order. Usefull for kwm�s Alt-tab feature.
+// order. Usefull for kwm�s Alt-tab feature.
 Client* Manager::previousClient(Client* c){
   Client* result;
   if (!c)
@@ -3043,7 +3044,7 @@ void Manager::getMwmHints(Client  *c){
 	{
 	  // Motif defines a lot of more or less useful properties. We
 	  // are only interested in suppressing decorations. This is
-	  // important for StarOffice-3.1�s floating toolbars which
+	  // important for StarOffice-3.1�s floating toolbars which
 	  // would be shown within a strange floatwinshell otherwise.
 	  c->decoration = mwm_hints->decorations?KWM::normalDecoration:0;
 	  KWM::setDecoration(c->window, c->getDecoration());
@@ -3307,7 +3308,7 @@ void Manager::darkenScreen(){
 
 // do the X11R4 session management: send a SAVE_YOURSELF message to
 // everybody who wants to know it and wait for the answers. Also
-// handles KDE�s session management additions as well as pseudo
+// handles KDE�s session management additions as well as pseudo
 // session management with the help of a build in proxy.  After
 // finishing this functions the manager will emit a showLogout()
 // signal.
@@ -3422,7 +3423,7 @@ void Manager::processSaveYourself(){
     }
   }
 
-  // Finally do poor man�s session management with the help of kwm�s
+  // Finally do poor man�s session management with the help of kwm�s
   // session management proxy.  This is done after the ususal
   // saveYourself because some clients may have set XA_WM_COMMAND for
   // other windows, too
@@ -3937,7 +3938,7 @@ void Manager::removeDockWindow(Window w){
 // adds a top window
 void Manager::addTopWindow(Window w)
 {
-    //debug("add top window");
+    //tqDebug("add top window");
   bool already_there = False;
   Window* w2;
   for (w2=top_windows.first(); w2; w2=top_windows.next()){
@@ -3961,7 +3962,7 @@ void Manager::removeTopWindow(Window w)
   Window *tw;
   for (tw=top_windows.first(); tw; tw=top_windows.next()){
     if (*tw == w){
-	//debug("remove top window");
+	//tqDebug("remove top window");
       top_windows.remove();
       delete tw;
       break;
@@ -3979,7 +3980,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
   if (!c->label.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = no_decoration_titles.first(); s ; s = no_decoration_titles.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->label) != -1){
 	  c->decoration = KWM::noDecoration;
 	  break;
@@ -3988,7 +3989,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     }
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = tiny_decoration_titles.first(); s ; s = tiny_decoration_titles.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->label) != -1){
 	  c->decoration = KWM::tinyDecoration;
 	  break;
@@ -3997,7 +3998,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     }
     if (c->wantsFocus()){
       for (s = no_focus_titles.first(); s ; s = no_focus_titles.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->label) != -1){
 	  c->wants_focus = false;
 	  break;
@@ -4007,7 +4008,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     //CT 03Nov1998
     if(!c->isSticky()) {
       for (s = sticky_titles.first(); s; s = sticky_titles.next()) {
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->label) != -1) {
 	  c->sticky = true;
 	  KWM::setSticky(c->window, true);
@@ -4020,7 +4021,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
   if (!c->instance.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->instance) != -1){
 	  c->decoration = KWM::noDecoration;
 	  break;
@@ -4029,7 +4030,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     }
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->instance) != -1){
 	  c->decoration = KWM::tinyDecoration;
 	  break;
@@ -4038,7 +4039,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     }
     if (c->wantsFocus()){
       for (s = no_focus_classes.first(); s ; s = no_focus_classes.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->instance) != -1){
 	  c->wants_focus = false;
 	  break;
@@ -4048,7 +4049,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     //CT 03Nov1998
     if(!c->isSticky()) {
       for (s = sticky_classes.first(); s; s = sticky_classes.next()) {
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->instance) != -1) {
 	  c->sticky = true;
 	  KWM::setSticky(c->window, true);
@@ -4061,7 +4062,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
   if (!c->klass.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->klass) != -1){
 	  c->decoration = KWM::noDecoration;
 	  break;
@@ -4070,7 +4071,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     }
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->klass) != -1){
 	  c->decoration = KWM::tinyDecoration;
 	  break;
@@ -4079,7 +4080,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     }
     if (c->wantsFocus()){
       for (s = no_focus_classes.first(); s ; s = no_focus_classes.next()){
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->klass) != -1){
 	  c->wants_focus = false;
 	  break;
@@ -4089,7 +4090,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     //CT 03Nov1998
     if(!c->isSticky()) {
       for (s = sticky_classes.first(); s; s = sticky_classes.next()) {
-	r = s;
+	r = TQRegExp(s);  // TQt3 迁移：QRegExp 赋值需显式构造
 	if (r.match(c->klass) != -1) {
 	  c->sticky = true;
 	  KWM::setSticky(c->window, true);

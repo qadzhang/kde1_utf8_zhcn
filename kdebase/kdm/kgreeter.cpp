@@ -50,6 +50,8 @@
 #include <kimgio.h>
 
 // Make the C++ compiler shut the f... up:
+// TQt3 迁移：kdm 守护进程的全局 display 指针 d 显式声明（TQObject 有私有 d 后被遮蔽）
+extern "C" struct display *d;
 extern "C" {
 int Verify( struct display*, struct greet_info*, struct verify_info*);
 char** parseArgs( char**, const char*);
@@ -304,7 +306,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 #ifndef TEST_KDM
      if( kdmcfg->shutdownButton() != KDMConfig::KNone 
 	 && ( kdmcfg->shutdownButton() != KDMConfig::ConsoleOnly 
-	 || d->displayType.location == Local)) {
+	 || ::d->displayType.location == Local)) {
 	  shutdownButton = new QPushButton( klocale->translate("Shutdown..."),
 					    this);
 	  connect( shutdownButton, SIGNAL(clicked()), 
@@ -732,7 +734,7 @@ KGreeter::go_button_clicked()
      greet->name = qstrdup(loginEdit->text());
      greet->password = qstrdup(passwdEdit->text());
      
-     if (!Verify (d, greet, verify)){
+     if (!Verify ( ::d, greet, verify)){  /* TQt3 迁移 */
 	  failedLabel->show();
 	  goButton->setEnabled( false);
 	  loginEdit->setEnabled( false);
@@ -755,9 +757,9 @@ KGreeter::go_button_clicked()
 
      save_wm();
      //qApp->desktop()->setCursor( waitCursor);
-     qApp->setOverrideCursor( waitCursor);
+     qApp->setOverrideCursor( TQt::waitCursor );
      hide();
-     DeleteXloginResources( d, dpy);
+     DeleteXloginResources( ::d, qt_xdisplay());
      qApp->exit();
 }
 
@@ -802,7 +804,7 @@ int main(int argc, char **argv)
      
      kdmcfg = new KDMConfig();
 
-     app.setStyle( WindowsStyle);
+     app.setStyle( "windows" );
      app.setFont( *kdmcfg->normalFont());
 
      kgreeter = new KGreeter;
@@ -847,13 +849,13 @@ GreetUser(
      MyApp myapp( argc, argv );
      /*printf("LANG=%s, Domain=%s, appName=%s\n", getenv("LANG"), 
 	    klocale->language().data(), kapp->appName().data());*/
-     QApplication::setOverrideCursor( waitCursor );
+     QApplication::setOverrideCursor( TQt::waitCursor );
      kdmcfg = new KDMConfig( );
      
      myapp.setFont( *kdmcfg->normalFont());
-     myapp.setStyle( kdmcfg->style());
+     myapp.setStyle( kdmcfg->style() == TQt::MotifStyle ? "motif" : "windows" );  /* TQt3 迁移 */
 
-     *dpy = qt_xdisplay();
+     /* TQt3 迁移：原 *dpy 赋值改由下方 qt_xdisplay 直用 */
      
      RegisterCloseOnFork (ConnectionNumber (*dpy));
      SecureDisplay (d, *dpy);

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqsqlquery.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqsqlquery.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqsqlquery.h</h1>
+
+<p>This is the verbatim text of the ntqsqlquery.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+**
+** Definition of TQSqlQuery class
+**
+** Created : 2000-11-03
+**
+** Copyright (C) 2005-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the sql module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQSQLQUERY_H
+#define TQSQLQUERY_H
+
+#ifndef QT_H
+#include "ntqobject.h"
+#include "ntqstring.h"
+#include "ntqvariant.h"
+#include "ntqvaluelist.h"
+#include "ntqsqlerror.h"
+#include "ntqsqlfield.h"
+#include "ntqsql.h"
+#endif // QT_H
+
+#ifndef TQT_NO_SQL
+
+class TQSqlDriver;
+class TQSqlResult;
+class TQSqlDatabase;
+
+class TQ_EXPORT TQSqlResultShared : public TQObject, public TQShared
+{
+    TQ_OBJECT
+public:
+    TQSqlResultShared( TQSqlResult* result );
+    virtual ~TQSqlResultShared();
+    TQSqlResult* sqlResult;
+    TQString executedQuery;
+private slots:
+    void slotResultDestroyed();
+};
+
+class TQ_EXPORT TQSqlQuery
+{
+public:
+    TQSqlQuery( TQSqlResult * r );
+    TQSqlQuery( const TQString&amp; query = TQString::null, TQSqlDatabase* db = 0 );
+    explicit TQSqlQuery( TQSqlDatabase* db );
+    TQSqlQuery( const TQSqlQuery&amp; other );
+    TQSqlQuery&amp; operator=( const TQSqlQuery&amp; other );
+    virtual ~TQSqlQuery();
+
+    bool                isValid() const;
+    bool                isActive() const;
+    bool	        isNull( int field ) const;
+    int                 at() const;
+    TQString             lastQuery() const;
+    int                 numRowsAffected() const;
+    TQSqlError	        lastError() const;
+    bool                isSelect() const;
+    int                 size() const;
+    const TQSqlDriver*   driver() const;
+    const TQSqlResult*   result() const;
+    bool		isForwardOnly() const;
+    void		setForwardOnly( bool forward );
+
+    virtual bool	exec ( const TQString&amp; query );
+    virtual TQVariant    value( int i ) const;
+
+    virtual bool	seek( int i, bool relative = false );
+    virtual bool        next();
+    virtual bool        prev();
+    virtual bool        first();
+    virtual bool        last();
+
+    // prepared query support
+    bool		exec();
+    bool		prepare( const TQString&amp; query );
+    void		bindValue( const TQString&amp; placeholder, const TQVariant&amp; val );
+    void		bindValue( int pos, const TQVariant&amp; val );
+    void		addBindValue( const TQVariant&amp; val );
+    // remove these overloads in 4.0
+    void		bindValue( const TQString&amp; placeholder, const TQVariant&amp; val, TQSql::ParameterType type );
+    void		bindValue( int pos, const TQVariant&amp; val, TQSql::ParameterType type );
+    void		addBindValue( const TQVariant&amp; val, TQSql::ParameterType type );
+    TQVariant		boundValue( const TQString&amp; placeholder ) const;
+    TQVariant		boundValue( int pos ) const;
+    TQMap&lt;TQString, TQVariant&gt; boundValues() const;
+    TQString             executedQuery() const;
+    
+protected:
+    virtual void        beforeSeek();
+    virtual void        afterSeek();
+
+private:
+    void 		init( const TQString&amp; query, TQSqlDatabase* db );
+    void                deref();
+    bool                checkDetach();
+    TQSqlResultShared*   d;
+};
+
+
+#endif // TQT_NO_SQL
+#endif
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

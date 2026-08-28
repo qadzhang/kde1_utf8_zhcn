@@ -11,7 +11,6 @@ PObject *createWidget(CreateArgs &ca)
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
     le = new("QLabel") QLabel((QWidget *) ca.parent->widget());
-  else
     le = new("QLabel") QLabel();
   pw->setWidget(le);
   pw->setWidgetId(ca.pwI);
@@ -22,14 +21,14 @@ PObject *createWidget(CreateArgs &ca)
 PLabel::PLabel(PObject *parent)
   : PFrame(parent)
 {
-  //  debug("PLabel PLabel called");
-  label = 0;
+  //  tqDebug("PLabel PLabel called");
+  label = 0;  /* TQt3 迁移 */
   setWidget(label);
 }
 
 PLabel::~PLabel()
 {
-  //  debug("PLabel: in destructor");
+  //  tqDebug("PLabel: in destructor");
   /*
   delete widget();     // Delete the frame
   label=0;          // Set it to 0
@@ -108,7 +107,7 @@ QLabel *PLabel::widget()
 
 bool PLabel::checkWidget(){
   if(widget() == 0){
-    debug("PLabel: No Widget set");
+    tqDebug("PLabel: No Widget set");
     return FALSE;
   }
   return TRUE;

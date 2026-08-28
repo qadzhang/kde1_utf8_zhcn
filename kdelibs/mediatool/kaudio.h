@@ -29,7 +29,7 @@
 #include <qtimer.h>
 
 extern "C" {
-#include <mediatool.h>
+#include "mediatool.h"
 }
 
 /**

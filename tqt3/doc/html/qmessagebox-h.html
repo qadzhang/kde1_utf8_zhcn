@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqmessagebox.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqmessagebox.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqmessagebox.h</h1>
+
+<p>This is the verbatim text of the ntqmessagebox.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqmessagebox.h   3.3.8   edited Jan 11 14:37 $
+**
+** Definition of TQMessageBox class
+**
+** Created : 950503
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the dialogs module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQMESSAGEBOX_H
+#define TQMESSAGEBOX_H
+
+#ifndef QT_H
+#include "ntqdialog.h"
+#endif // QT_H
+
+#ifndef TQT_NO_MESSAGEBOX
+
+class  TQLabel;
+class  TQPushButton;
+struct TQMessageBoxData;
+
+class TQ_EXPORT TQMessageBox : public TQDialog
+{
+    TQ_OBJECT
+    TQ_ENUMS( Icon )
+    TQ_PROPERTY( TQString text READ text WRITE setText )
+    TQ_PROPERTY( Icon icon READ icon WRITE setIcon )
+    TQ_PROPERTY( TQPixmap iconPixmap READ iconPixmap WRITE setIconPixmap )
+    TQ_PROPERTY( TextFormat textFormat READ textFormat WRITE setTextFormat )
+
+public:
+    enum Icon { NoIcon = 0, Information = 1, Warning = 2, Critical = 3,
+		Question = 4 };
+
+    TQMessageBox( TQWidget* parent=0, const char* name=0 );
+    TQMessageBox( const TQString&amp; caption, const TQString &amp;text, Icon icon,
+		 int button0, int button1, int button2,
+		 TQWidget* parent=0, const char* name=0, bool modal=true,
+		 WFlags f=WStyle_DialogBorder  );
+    ~TQMessageBox();
+
+    enum { NoButton = 0, Ok = 1, Cancel = 2, Yes = 3, No = 4, Abort = 5,
+	   Retry = 6, Ignore = 7, YesAll = 8, NoAll = 9, ButtonMask = 0xff,
+	   Default = 0x100, Escape = 0x200, FlagMask = 0x300 };
+
+    static int information( TQWidget *parent, const TQString &amp;caption,
+			    const TQString&amp; text,
+			    int button0, int button1=0, int button2=0 );
+    static int information( TQWidget *parent, const TQString &amp;caption,
+			    const TQString&amp; text,
+			    const TQString&amp; button0Text = TQString::null,
+			    const TQString&amp; button1Text = TQString::null,
+			    const TQString&amp; button2Text = TQString::null,
+			    int defaultButtonNumber = 0,
+			    int escapeButtonNumber = -1 );
+
+    static int question( TQWidget *parent, const TQString &amp;caption,
+			 const TQString&amp; text,
+			 int button0, int button1=0, int button2=0 );
+    static int question( TQWidget *parent, const TQString &amp;caption,
+			 const TQString&amp; text,
+			 const TQString&amp; button0Text = TQString::null,
+			 const TQString&amp; button1Text = TQString::null,
+			 const TQString&amp; button2Text = TQString::null,
+			 int defaultButtonNumber = 0,
+			 int escapeButtonNumber = -1 );
+
+    static int warning( TQWidget *parent, const TQString &amp;caption,
+			const TQString&amp; text,
+			int button0, int button1, int button2=0 );
+    static int warning( TQWidget *parent, const TQString &amp;caption,
+			const TQString&amp; text,
+			const TQString&amp; button0Text = TQString::null,
+			const TQString&amp; button1Text = TQString::null,
+			const TQString&amp; button2Text = TQString::null,
+			int defaultButtonNumber = 0,
+			int escapeButtonNumber = -1 );
+
+    static int critical( TQWidget *parent, const TQString &amp;caption,
+			 const TQString&amp; text,
+			 int button0, int button1, int button2=0 );
+    static int critical( TQWidget *parent, const TQString &amp;caption,
+			 const TQString&amp; text,
+			 const TQString&amp; button0Text = TQString::null,
+			 const TQString&amp; button1Text = TQString::null,
+			 const TQString&amp; button2Text = TQString::null,
+			 int defaultButtonNumber = 0,
+			 int escapeButtonNumber = -1 );
+
+    static void about( TQWidget *parent, const TQString &amp;caption,
+		       const TQString&amp; text );
+
+    static void aboutTQt( TQWidget *parent,
+			 const TQString&amp; caption=TQString::null );
+
+/* OBSOLETE */
+    static int message( const TQString &amp;caption,
+			const TQString&amp; text,
+			const TQString&amp; buttonText=TQString::null,
+			TQWidget *parent=0, const char * =0 ) {
+	return TQMessageBox::information( parent, caption, text,
+				     buttonText.isEmpty()
+				     ? tr("OK") : buttonText ) == 0;
+    }
+
+/* OBSOLETE */
+    static bool query( const TQString &amp;caption,
+		       const TQString&amp; text,
+		       const TQString&amp; yesButtonText=TQString::null,
+		       const TQString&amp; noButtonText=TQString::null,
+		       TQWidget *parent=0, const char * = 0 ) {
+	return TQMessageBox::information( parent, caption, text,
+				     yesButtonText.isEmpty()
+				     ? tr("OK") : yesButtonText,
+				     noButtonText ) == 0;
+    }
+
+    TQString	text() const;
+    void	setText( const TQString &amp;);
+
+    Icon	icon() const;
+
+    void	setIcon( Icon );
+    void	setIcon( const TQPixmap &amp; );
+
+    const TQPixmap *iconPixmap() const;
+    void	setIconPixmap( const TQPixmap &amp; );
+
+    TQString	buttonText( int button ) const;
+    void	setButtonText( int button, const TQString &amp;);
+
+    void	adjustSize();
+
+/* OBSOLETE */
+    static TQPixmap standardIcon( Icon icon, GUIStyle );
+
+    static TQPixmap standardIcon( Icon icon );
+
+    TextFormat textFormat() const;
+    void	 setTextFormat( TextFormat );
+
+protected:
+    void	resizeEvent( TQResizeEvent * );
+    void	showEvent( TQShowEvent * );
+    void	closeEvent( TQCloseEvent * );
+    void	keyPressEvent( TQKeyEvent * );
+    void	styleChanged( TQStyle&amp; );
+
+private slots:
+    void	buttonClicked();
+
+private:
+    void	init( int, int, int );
+    int		indexOf( int ) const;
+    void	resizeButtons();
+    TQLabel     *label;
+    TQMessageBoxData *mbd;
+    void       *reserved1;
+    void       *reserved2;
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQMessageBox( const TQMessageBox &amp; );
+    TQMessageBox &amp;operator=( const TQMessageBox &amp; );
+#endif
+};
+
+/*
+*  Macro to be used at the beginning of main(), e.g.
+*
+*   #include &lt;ntqapplication.h&gt;
+*   #include &lt;ntqmessagebox.h&gt;
+*   int main( int argc, char**argv )
+*   {
+*     QT_REQUIRE_VERSION( argc, argv, "3.0.5" )
+*     ...
+*   }
+*/
+#define QT_REQUIRE_VERSION( argc, argv, str ) { TQString s=TQString::fromLatin1(str);\
+TQString sq=TQString::fromLatin1(tqVersion()); if ( (sq.section('.',0,0).toInt()&lt;&lt;16)+\
+(sq.section('.',1,1).toInt()&lt;&lt;8)+sq.section('.',2,2).toInt()&lt;(s.section('.',0,0).toInt()&lt;&lt;16)+\
+(s.section('.',1,1).toInt()&lt;&lt;8)+s.section('.',2,2).toInt() ){if ( !tqApp){ int c=0; new \
+TQApplication(argc,argv);} TQString s = TQApplication::tr("Executable '%1' requires TQt "\
+ "%2, found TQt %3.").arg(TQString::fromLatin1(tqAppName())).arg(TQString::fromLatin1(\
+str)).arg(TQString::fromLatin1(tqVersion()) ); TQMessageBox::critical( 0, TQApplication::tr(\
+"Incompatible TQt Library Error" ), s, TQMessageBox::Abort,0 ); tqFatal(s.ascii()); }}
+
+
+#endif // TQT_NO_MESSAGEBOX
+
+#endif // TQMESSAGEBOX_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

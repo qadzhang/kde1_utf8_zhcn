@@ -6,15 +6,15 @@ include_directories (
 
 set(KWORLDWATCH_SRCS  astro.c kinputline.cpp main.cpp sunclock.c toplevel.cpp world.cpp)
 
-set(KWORLDWATCH_MOC kinputline.moc toplevel.moc world.moc)
+set(KWORLDWATCH_MOC kinputline.h toplevel.h world.h)
 
-qt1_wrap_moc(MOC_FILES ${KWORLDWATCH_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KWORLDWATCH_MOC})
 
 add_executable(kworldwatch ${KWORLDWATCH_SRCS} ${MOC_FILES})
 target_link_libraries(kworldwatch
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
 )
 

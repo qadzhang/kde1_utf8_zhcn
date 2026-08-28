@@ -14,8 +14,8 @@ set (QwSpriteField_MOC
     QwSpriteField.h
     )
 
-QT1_WRAP_MOC(MOC_FILES ${QwSpriteField_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${QwSpriteField_MOC})
 
 add_library(QwSpriteField STATIC ${QwSpriteField_SOURCES} ${MOC_FILES})
-target_link_libraries(QwSpriteField Qt::Qt1)
+target_link_libraries(QwSpriteField ${TQT3_LIBRARIES})
 

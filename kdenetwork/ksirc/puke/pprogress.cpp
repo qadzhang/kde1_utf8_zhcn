@@ -18,13 +18,13 @@ PObject *createWidget(CreateArgs &ca) /*FOLD00*/
 PProgress::PProgress( PObject *parent) /*FOLD00*/
   : PWidget(parent)
 {
-  //  debug("PProgress PProgress called");
-  ksp = 0;
+  //  tqDebug("PProgress PProgress called");
+  ksp = 0;  /* TQt3 迁移 */
 }
 
 PProgress::~PProgress() /*FOLD00*/
 {
-  //  debug("PProgress: in destructor");
+  //  tqDebug("PProgress: in destructor");
   /*
   delete widget(); // Delete the frame
   ksp=0;      // Set it to 0
@@ -34,10 +34,10 @@ PProgress::~PProgress() /*FOLD00*/
 
 void PProgress::messageHandler(int fd, PukeMessage *pm) /*FOLD00*/
 {
-  //  debug("PProgress handler called");
+  //  tqDebug("PProgress handler called");
   PukeMessage pmRet;
   if(widget() == 0){
-    warning("Null widget");
+    tqWarning("Null widget");
     return;
   }
   switch(pm->iCommand){
@@ -49,7 +49,7 @@ void PProgress::messageHandler(int fd, PukeMessage *pm) /*FOLD00*/
 	throw(errorCommandFailed(PUKE_INVALID,13));
       if(start >= stop){
           stop = start+1;
-          start = 0;
+          start = 0;  /* TQt3 迁移 */
       }
       
       widget()->setRange(start, stop);
@@ -90,7 +90,7 @@ void PProgress::messageHandler(int fd, PukeMessage *pm) /*FOLD00*/
 }
 
 void PProgress::cancelPressed(){ /*FOLD00*/
-  debug("Cancel Pressed");
+  tqDebug("Cancel Pressed");
   PukeMessage pmRet;
   pmRet.iCommand = PUKE_KSPROGRESS_CANCEL_ACK;
   pmRet.iWinId = widgetIden().iWinId;
@@ -101,7 +101,7 @@ void PProgress::cancelPressed(){ /*FOLD00*/
 
 void PProgress::setWidget(QObject *_f) /*FOLD00*/
 {
-  //  debug("PProgress setWidget called");
+  //  tqDebug("PProgress setWidget called");
   if(_f != 0 && _f->inherits("KSProgress") == FALSE)
     throw(errorInvalidSet(_f, className()));
 
@@ -117,7 +117,7 @@ void PProgress::setWidget(QObject *_f) /*FOLD00*/
 
 KSProgress *PProgress::widget() /*fold00*/
 {
-  //  debug("PProgress widget called");
+  //  tqDebug("PProgress widget called");
   return ksp;
 }
 

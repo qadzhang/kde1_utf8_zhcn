@@ -384,3 +384,5 @@ void KBookmarkManager::write()
   write(myFilename);
 }
 
+
+#include "bookmark.moc"  /* TQt3 迁移：moc 实现并入编译单元 */

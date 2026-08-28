@@ -18,7 +18,7 @@
 //-----------------------------------------------------------------------------
 static void msgDialog(const char* msg, const char* arg=NULL)
 {
-  QString str(256);
+  TQString str;  /* TQt3 迁移 */
 
   if (arg) str.sprintf(msg, arg);
   else str = msg;
@@ -80,7 +80,7 @@ QString kFileToString(const char* aFileName, bool aEnsureNL, bool aVerbose)
     return 0;
   }
 
-  result.resize(len + (int)aEnsureNL + 1);
+  result.truncate(len + (int)aEnsureNL + 1);  /* TQt3 迁移 */
   readLen = file.readBlock(result.data(), len);
   if (aEnsureNL && result[len-1]!='\n')
   {
@@ -91,14 +91,14 @@ QString kFileToString(const char* aFileName, bool aEnsureNL, bool aVerbose)
 
   if (readLen < len)
   {
-    QString msg(256);
+    TQString msg;  /* TQt3 迁移 */
     msg.sprintf(i18n("Could only read %u bytes of %u."),
 		readLen, len);
     msgDialog(msg);
     return 0;
   }
 
-  //debug("kFileToString: %d bytes read", readLen);
+  //tqDebug("kFileToString: %d bytes read", readLen);
   return result;
 }
 
@@ -165,9 +165,9 @@ bool kStringToFile(const QString aBuffer, const char* aFileName,
     return FALSE;
   }
 
-  len = aBuffer.size() - 1;
+  len = aBuffer.length() - 1;  /* TQt3 迁移 */
   // This has to many arguments in format warning so I commented it out (sven)
-  //debug("kStringToFile: writing %d bytes", len, aBuffer.length());
+  //tqDebug("kStringToFile: writing %d bytes", len, aBuffer.length());
   writeLen = file.writeBlock(aBuffer.data(), len);
 
   if (writeLen < 0) 

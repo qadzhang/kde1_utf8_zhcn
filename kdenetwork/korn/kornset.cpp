@@ -56,7 +56,6 @@ KornSettings::KornSettings(KConfig *config, int defaultPoll)
 
 	if( _config->hasKey("sound") ) {
 		_soundFile = new QString(_config->readEntry("sound") );
-		_soundFile->detach();
 	}
 
 	_remember = _config->readNumEntry("rememberPos", 0);
@@ -142,8 +141,8 @@ void KornSettings::getToken()
 	const char *startPtr= _boxPtr;
 
 	if(!_boxPtr || !*_boxPtr){
-		_boxPtr = 0;
-		_thisBox->resize(0);
+		_boxPtr = 0;  /* TQt3 迁移 */
+		_thisBox->truncate(0);
 		return;
 	}
 	
@@ -151,8 +150,8 @@ void KornSettings::getToken()
 		_boxPtr++;
 	
 	if(_boxPtr == startPtr){
-		_thisBox->resize(0);
-		_boxPtr = 0;
+		_thisBox->truncate(0);
+		_boxPtr = 0;  /* TQt3 迁移 */
 		return;
 	}
 	
@@ -166,7 +165,7 @@ void KornSettings::getToken()
 	*_boxes = _boxes->stripWhiteSpace();
 
 	if( _boxes->isEmpty() )
-		_boxPtr = 0;
+		_boxPtr = 0;  /* TQt3 迁移 */
 	else
 		_boxPtr = _boxes->data();
 }

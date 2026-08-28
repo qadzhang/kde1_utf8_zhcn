@@ -66,7 +66,7 @@
     { QMessageBox ab; \
 	  ab.setCaption(i18n("Error")); \
       ab.setText(msg); \
-	  ab.setButtonText(i18n("Oops")); \
+	  ab.setButtonText( 0, i18n("Oops") ); \
 	  ab.show(); }
 
 /* used in network code */

@@ -31,7 +31,7 @@
 */
 
 
-#include <bwdatetime.h>
+#include "bwdatetime.h"
 #include <kapp.h>
 
 

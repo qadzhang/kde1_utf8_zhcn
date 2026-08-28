@@ -22,7 +22,7 @@ KMMessagePart::KMMessagePart() :
   mType("text"), mSubtype("plain"), mCte("7bit"), mContentDescription(),
   mContentDisposition(), mBody(), mName()
 {
-  mBodySize = 0;
+  mBodySize = 0;  /* TQt3 迁移 */
 }
 
 
@@ -49,7 +49,7 @@ void KMMessagePart::setBody(const QString aStr)
 {
   int encoding = contentTransferEncoding();
 
-  mBody = aStr.copy();
+  mBody = aStr;
 
   if (encoding!=DwMime::kCteQuotedPrintable &&
       encoding!=DwMime::kCteBase64)
@@ -91,7 +91,7 @@ void KMMessagePart::setBodyEncoded(const QString aStr)
     mBody = QString(dwResult.c_str(),dwResult.size());
     break;
   default:
-    debug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
+    tqDebug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
 	  (const char*)cteStr());
   case DwMime::kCte7bit:
   case DwMime::kCte8bit:
@@ -120,7 +120,6 @@ const QString KMMessagePart::bodyDecoded(void) const
     memcpy((void*)result.data(), (void*)dwResult.c_str(), len);
 #if 0
     result = dwResult.c_str();
-    result.detach();
 #endif
     break;
   case DwMime::kCteBase64:
@@ -131,7 +130,7 @@ const QString KMMessagePart::bodyDecoded(void) const
     memcpy((void*)result.data(), (void*)dwResult.c_str(), len);
     break;
   default:
-    debug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
+    tqDebug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
 	  (const char*)cteStr());
   case DwMime::kCte7bit:
   case DwMime::kCte8bit:
@@ -212,7 +211,7 @@ int KMMessagePart::type(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setTypeStr(const QString aStr)
 {
-  mType = aStr.copy();
+  mType = aStr;
 }
 
 
@@ -222,7 +221,6 @@ void KMMessagePart::setType(int aType)
   DwString dwType;
   DwTypeEnumToStr(aType, dwType);
   mType = dwType.c_str();
-  mType.detach();
 }
 
 
@@ -255,7 +253,6 @@ void KMMessagePart::setSubtype(int aSubtype)
   DwString dwSubtype;
   DwSubtypeEnumToStr(aSubtype, dwSubtype);
   mSubtype = dwSubtype.c_str();
-  mSubtype.detach();
 }
 
 
@@ -277,7 +274,7 @@ int KMMessagePart::contentTransferEncoding(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setContentTransferEncodingStr(const QString aStr)
 {
-  mCte = aStr.copy();
+  mCte = aStr;
 }
 
 
@@ -287,7 +284,6 @@ void KMMessagePart::setContentTransferEncoding(int aCte)
   DwString dwCte;
   DwCteEnumToStr(aCte, dwCte);
   mCte = dwCte.c_str();
-  mCte.detach();
 }
 
 
@@ -301,7 +297,7 @@ const QString KMMessagePart::contentDescription(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setContentDescription(const QString aStr)
 {
-  mContentDescription = aStr.copy();
+  mContentDescription = aStr;
 }
 
 
@@ -315,7 +311,7 @@ const QString KMMessagePart::contentDisposition(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setContentDisposition(const QString aStr)
 {
-  mContentDisposition = aStr.copy();
+  mContentDisposition = aStr;
 }
 
  
@@ -336,7 +332,7 @@ const QString KMMessagePart::name(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setName(const QString aStr)
 {
-  mName = aStr.copy();
+  mName = aStr;
 }
 #if defined CHARSETS
 //-----------------------------------------------------------------------------

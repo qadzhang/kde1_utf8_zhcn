@@ -6,15 +6,15 @@ set(KNU_SRCS CommandDlg.cpp FingerDlg.cpp HostDlg.cpp knu.cpp
     MtrDlg.cpp OptionsDlg.cpp PingDlg.cpp TracerouteDlg.cpp
 )
 
-set(KNU_MOC CommandDlg.moc FingerDlg.moc HostDlg.moc knu.moc
-    MtrDlg.moc OptionsDlg.moc PingDlg.moc TracerouteDlg.moc
+set(KNU_MOC CommandDlg.h FingerDlg.h HostDlg.h knu.h
+    MtrDlg.h OptionsDlg.h PingDlg.h TracerouteDlg.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KNU_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KNU_MOC})
 
 add_executable(knu ${KNU_SRCS} ${MOC_FILES})
 target_link_libraries(knu
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

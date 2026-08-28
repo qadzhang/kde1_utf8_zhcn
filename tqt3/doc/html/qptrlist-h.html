@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqptrlist.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqptrlist.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqptrlist.h</h1>
+
+<p>This is the verbatim text of the ntqptrlist.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqptrlist.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQPtrList template/macro class
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the tools module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQPTRLIST_H
+#define TQPTRLIST_H
+
+#ifndef QT_H
+#include "ntqglist.h"
+#endif // QT_H
+
+template&lt;class type&gt;
+class TQPtrListStdIterator : public TQGListStdIterator
+{
+public:
+    inline TQPtrListStdIterator( TQLNode* n ): TQGListStdIterator(n) {}
+    type *operator*() { return node ? (type *)node-&gt;getData() : 0; }
+    inline TQPtrListStdIterator&lt;type&gt; operator++()
+    { node = next(); return *this; }
+    inline TQPtrListStdIterator&lt;type&gt; operator++(int)
+    { TQLNode* n = node; node = next(); return TQPtrListStdIterator&lt;type&gt;( n ); }
+    inline bool operator==( const TQPtrListStdIterator&lt;type&gt;&amp; it ) const { return node == it.node; }
+    inline bool operator!=( const TQPtrListStdIterator&lt;type&gt;&amp; it ) const { return node != it.node; }
+};
+
+
+template&lt;class type&gt;
+class TQPtrList
+#ifdef Q_QDOC
+	: public TQPtrCollection
+#else
+	: public TQGList
+#endif
+{
+public:
+
+    TQPtrList()				{}
+    TQPtrList( const TQPtrList&lt;type&gt; &amp;l ) : TQGList(l) {}
+    ~TQPtrList()				{ clear(); }
+    TQPtrList&lt;type&gt; &amp;operator=(const TQPtrList&lt;type&gt; &amp;l)
+			{ return (TQPtrList&lt;type&gt;&amp;)TQGList::operator=(l); }
+    bool operator==( const TQPtrList&lt;type&gt; &amp;list ) const
+    { return TQGList::operator==( list ); }
+    bool operator!=( const TQPtrList&lt;type&gt; &amp;list ) const
+    { return !TQGList::operator==( list ); }
+    uint  count()   const		{ return TQGList::count(); }
+    bool  isEmpty() const		{ return TQGList::count() == 0; }
+    bool  insert( uint i, const type *d){ return TQGList::insertAt(i,(TQPtrCollection::Item)d); }
+    void  inSort( const type *d )	{ TQGList::inSort((TQPtrCollection::Item)d); }
+    void  prepend( const type *d )	{ TQGList::insertAt(0,(TQPtrCollection::Item)d); }
+    void  append( const type *d )	{ TQGList::append((TQPtrCollection::Item)d); }
+    bool  remove( uint i )		{ return TQGList::removeAt(i); }
+    bool  remove()			{ return TQGList::remove((TQPtrCollection::Item)0); }
+    bool  remove( const type *d )	{ return TQGList::remove((TQPtrCollection::Item)d); }
+    bool  removeRef( const type *d )	{ return TQGList::removeRef((TQPtrCollection::Item)d); }
+    void  removeNode( TQLNode *n )	{ TQGList::removeNode(n); }
+    bool  removeFirst()			{ return TQGList::removeFirst(); }
+    bool  removeLast()			{ return TQGList::removeLast(); }
+    type *take( uint i )		{ return (type *)TQGList::takeAt(i); }
+    type *take()			{ return (type *)TQGList::take(); }
+    type *takeNode( TQLNode *n )		{ return (type *)TQGList::takeNode(n); }
+    void  clear()			{ TQGList::clear(); }
+    void  sort()			{ TQGList::sort(); }
+    int	  find( const type *d )		{ return TQGList::find((TQPtrCollection::Item)d); }
+    int	  findNext( const type *d )	{ return TQGList::find((TQPtrCollection::Item)d,false); }
+    int	  findRef( const type *d )	{ return TQGList::findRef((TQPtrCollection::Item)d); }
+    int	  findNextRef( const type *d ){ return TQGList::findRef((TQPtrCollection::Item)d,false);}
+    uint  contains( const type *d ) const { return TQGList::contains((TQPtrCollection::Item)d); }
+    uint  containsRef( const type *d ) const
+					{ return TQGList::containsRef((TQPtrCollection::Item)d); }
+    bool replace( uint i, const type *d ) { return TQGList::replaceAt( i, (TQPtrCollection::Item)d ); }
+    type *operator[]( uint i )		{ return (type *)TQGList::at(i); }
+    type *at( uint i )			{ return (type *)TQGList::at(i); }
+    int	  at() const			{ return TQGList::at(); }
+    type *current()  const		{ return (type *)TQGList::get(); }
+    TQLNode *currentNode()  const	{ return TQGList::currentNode(); }
+    type *getFirst() const		{ return (type *)TQGList::cfirst(); }
+    type *getLast()  const		{ return (type *)TQGList::clast(); }
+    type *first()			{ return (type *)TQGList::first(); }
+    type *last()			{ return (type *)TQGList::last(); }
+    type *next()			{ return (type *)TQGList::next(); }
+    type *prev()			{ return (type *)TQGList::prev(); }
+    void  toVector( TQGVector *vec )const{ TQGList::toVector(vec); }
+
+
+    // standard iterators
+    typedef TQPtrListStdIterator&lt;type&gt; Iterator;
+    typedef TQPtrListStdIterator&lt;type&gt; ConstIterator;
+    inline Iterator begin() { return TQGList::begin(); }
+    inline ConstIterator begin() const { return TQGList::begin(); }
+    inline ConstIterator constBegin() const { return TQGList::begin(); }
+    inline Iterator end() { return TQGList::end(); }
+    inline ConstIterator end() const { return TQGList::end(); }
+    inline ConstIterator constEnd() const { return TQGList::end(); }
+    inline Iterator erase( Iterator it ) { return TQGList::erase( it ); }
+    // stl syntax compatibility
+    typedef Iterator iterator;
+    typedef ConstIterator const_iterator;
+
+
+#ifdef Q_QDOC
+protected:
+    virtual int compareItems( TQPtrCollection::Item, TQPtrCollection::Item );
+    virtual TQDataStream&amp; read( TQDataStream&amp;, TQPtrCollection::Item&amp; );
+    virtual TQDataStream&amp; write( TQDataStream&amp;, TQPtrCollection::Item ) const;
+#endif
+
+private:
+    void  deleteItem( Item d );
+};
+
+template&lt;&gt; inline void TQPtrList&lt;void&gt;::deleteItem( TQPtrCollection::Item )
+{
+}
+
+template&lt;class type&gt; inline void TQPtrList&lt;type&gt;::deleteItem( TQPtrCollection::Item d )
+{
+    if ( del_item ) delete (type *)d;
+}
+
+template&lt;class type&gt;
+class TQPtrListIterator : public TQGListIterator
+{
+public:
+    TQPtrListIterator(const TQPtrList&lt;type&gt; &amp;l) :TQGListIterator((TQGList &amp;)l) {}
+   ~TQPtrListIterator()	      {}
+    uint  count()   const     { return list-&gt;count(); }
+    bool  isEmpty() const     { return list-&gt;count() == 0; }
+    bool  atFirst() const     { return TQGListIterator::atFirst(); }
+    bool  atLast()  const     { return TQGListIterator::atLast(); }
+    type *toFirst()	      { return (type *)TQGListIterator::toFirst(); }
+    type *toLast()	      { return (type *)TQGListIterator::toLast(); }
+    operator type *() const   { return (type *)TQGListIterator::get(); }
+    type *operator*()         { return (type *)TQGListIterator::get(); }
+
+    // No good, since TQPtrList&lt;char&gt; (ie. TQStrList fails...
+    //
+    // MSVC++ gives warning
+    // Sunpro C++ 4.1 gives error
+    //    type *operator-&gt;()        { return (type *)TQGListIterator::get(); }
+
+    type *current()   const   { return (type *)TQGListIterator::get(); }
+    type *operator()()	      { return (type *)TQGListIterator::operator()();}
+    type *operator++()	      { return (type *)TQGListIterator::operator++(); }
+    type *operator+=(uint j)  { return (type *)TQGListIterator::operator+=(j);}
+    type *operator--()	      { return (type *)TQGListIterator::operator--(); }
+    type *operator-=(uint j)  { return (type *)TQGListIterator::operator-=(j);}
+    TQPtrListIterator&lt;type&gt;&amp; operator=(const TQPtrListIterator&lt;type&gt;&amp;it)
+			      { TQGListIterator::operator=(it); return *this; }
+};
+
+#define Q_DEFINED_QPTRLIST
+#include "ntqwinexport.h"
+
+#endif // TQPTRLIST_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

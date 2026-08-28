@@ -258,7 +258,7 @@ int main(int argc, char **argv)
 
 
       if (WBold == ASample->WBuffer)
-	std::cerr << "maudio: warning (please ignore)\n";
+	std::cerr << "maudio: tqWarning( please ignore)\n";
 
       ret = ADev->Write(ASample->WBuffer,BUFFSIZE);
       WBold = ASample->WBuffer;

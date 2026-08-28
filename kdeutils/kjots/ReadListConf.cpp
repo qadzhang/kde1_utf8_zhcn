@@ -29,14 +29,14 @@ int readListConf ( KConfig *conf, QString key, QStrList &list )
 {
   if( !conf->hasKey( key ) )
     { 
-      // debug("readListConf:: key does not exist");
+      // tqDebug("readListConf:: key does not exist");
       return 0;
     }
   QString str_list, value;
   str_list = conf->readEntry(key);
   if(str_list.isEmpty())
     {
-      // debug("readListConf:: list is empty"); 
+      // tqDebug("readListConf:: list is empty"); 
       return 0; 
     }
   list.clear();
@@ -65,7 +65,7 @@ void writeListConf ( KConfig *conf, QString key, QStrList &list )
 {
   if( list.isEmpty() )
     {
-      conf->writeEntry(key, "");      
+      conf->writeEntry((const char*)key, "");  /* TQt3 迁移 */      
       return;
     }
   QString str_list;
@@ -75,7 +75,7 @@ void writeListConf ( KConfig *conf, QString key, QStrList &list )
     {
       for( i = 0; i < (int) value.length(); i++ )
 	{
-	  switch( value[i] ) {
+	  switch( value[i].latin1() ) {  /* TQt3 迁移 */
 	  case ',':
 	    str_list += '\\';
 	    break;

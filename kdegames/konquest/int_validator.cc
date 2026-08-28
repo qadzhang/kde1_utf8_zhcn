@@ -23,23 +23,23 @@ QValidator( parent, name )
 
 IntValidator::~IntValidator() {}
 
-QValidator::State
-IntValidator::validate( QString &input, int & )
+TQValidator::State
+IntValidator::validate( TQString &input, int & ) const
 {
     if( input.isEmpty() ) {
-        return QValidator::Valid;
+        return TQValidator::Intermediate;  /* TQt3 迁移：Valid→Intermediate */
     } else {
         bool ok;
 
         int value = input.toInt( &ok );
 
         if( !ok )
-            return QValidator::Invalid;
+            return TQValidator::Invalid;
 
         if( value < v_bottom || value > v_top )
-            return QValidator::Valid;
+            return TQValidator::Intermediate;  /* TQt3 迁移：Valid→Intermediate */
 
-        return QValidator::Acceptable;
+        return TQValidator::Acceptable;
     }
 }
 

@@ -16,7 +16,6 @@ PObject *createWidget(CreateArgs &ca)
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
     qtd = new("QTabDialog") QTabDialog((QWidget *) ca.parent->widget());
-  else
     qtd = new("QTabDialog") QTabDialog();
   ptd->setWidget(qtd);
   ptd->setWidgetId(ca.pwI);
@@ -33,10 +32,10 @@ PTabDialog::PTabDialog(QObject *pobject)
 
 PTabDialog::~PTabDialog()
 {
-  //  debug("PObject: in destructor");
+  //  tqDebug("PObject: in destructor");
   /*
   delete widget();
-  tab = 0;
+  tab = 0;  /* TQt3 迁移 */
   setWidget(0);
   */
 }
@@ -47,7 +46,7 @@ void PTabDialog::messageHandler(int fd, PukeMessage *pm)
 
   if(pm->iCommand == PUKE_TABDIALOG_ADDTAB){
     if(!(pm->iTextSize > 0)){
-      warning("QTabDialog/addtab: incorrent cArg size, bailing out.  Needed: >0 got: %d\n", pm->iTextSize);
+      tqWarning("QTabDialog/addtab: incorrent cArg size, bailing out.  Needed: >0 got: %d\n", pm->iTextSize);
       pmRet.iCommand = PUKE_TABDIALOG_ADDTAB_ACK; // ack the add widget
       pmRet.iWinId = pm->iWinId;
       pmRet.iArg = 1;
@@ -59,7 +58,7 @@ void PTabDialog::messageHandler(int fd, PukeMessage *pm)
     wiWidget.fd = fd;
     wiWidget.iWinId = pm->iArg;
     PWidget *pw = controller()->id2pwidget(&wiWidget);
-    //    debug("Adding widget with stretch: %d and align: %d", (int) pm->cArg[0],
+    //    tqDebug("Adding widget with stretch: %d and align: %d", (int) pm->cArg[0],
     //	  (int) pm->cArg[1]);
     widget()->addTab(pw->widget(), pm->cArg);
 
@@ -89,7 +88,7 @@ void PTabDialog::setWidget(QObject *tb)
 
 QTabDialog *PTabDialog::widget()
 {
-  //  debug("PObject widget called");
+  //  tqDebug("PObject widget called");
   return tab;
 }
 

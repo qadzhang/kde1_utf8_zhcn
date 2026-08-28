@@ -150,7 +150,7 @@ PingDlg::buildCommandLine(QString args)
   if (s.isNull()) {
     return FALSE;
   } else {
-    //debug("getExecutable = %s", (const char *)s);
+    //tqDebug("getExecutable = %s", (const char *)s);
     childProcess.clearArguments();
     childProcess.setExecutable(s);
 
@@ -212,7 +212,7 @@ PingCfgDlg::makeWidget(QWidget *parent, bool makeLayouts)
 #define SET_ADJUSTED_FIXED_SIZE(_wdgt) \
                   _wdgt->setFixedSize(_wdgt->sizeHint())
 
-  //debug("PingCfgDlg::makeWidget");
+  //tqDebug("PingCfgDlg::makeWidget");
   (void)CommandCfgDlg::makeWidget(parent, FALSE);
 
   // Widgets
@@ -289,7 +289,7 @@ PingCfgDlg::makeWidget(QWidget *parent, bool makeLayouts)
 void
 PingCfgDlg::deleteConfigWidget()
 {
-  //  debug("PingCfgDlg::deleteCondigWidget");
+  //  tqDebug("PingCfgDlg::deleteCondigWidget");
   
   delete cfgLayoutTB;
   delete cfgLayoutGB;

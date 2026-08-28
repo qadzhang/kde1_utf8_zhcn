@@ -1,3 +1,6 @@
+
+#ifndef K1GUARD_kdebase_kwm_minicli_h
+#define K1GUARD_kdebase_kwm_minicli_h
 // minicli
 // Copyright (C) 1997 Matthias Ettrich
 //
@@ -9,7 +12,7 @@
 
 #include <qlined.h>
 #include <qlabel.h>
-#include <kURLcompletion.h>
+#include "kURLcompletion.h"
 
 void execute ( const char* );
 bool isExecutable ( const char* );
@@ -38,4 +41,4 @@ private:
 
   KURLCompletion kurlcompletion;
 };
-
+#endif /* K1GUARD_kdebase_kwm_minicli_h */

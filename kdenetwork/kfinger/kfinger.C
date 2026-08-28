@@ -168,7 +168,7 @@ config->setGroup("FoUser");
 	if(config->readNumEntry("Param")==2)sstr3.sprintf(config->readEntry("Out"),(const char*)sstr2,intvar);
 	if(config->readNumEntry("Param")==3)sstr3.sprintf(config->readEntry("Out"),intvar);
 	if(config->readNumEntry("Param")==4)sstr3.sprintf(config->readEntry("Out"),intvar,(const char*)sstr2);
-	user=sstr3.copy();
+	user=sstr3;
 
 config->setGroup("Talk");
      }  
@@ -178,7 +178,7 @@ if(config->readNumEntry("SelectUser")==2)
 
 	} 
 if(config->readNumEntry("SelectUser")==3) {
-     user=config->readEntry("UserName").copy();
+     user=config->readEntry("UserName");
        }
 
 
@@ -227,7 +227,7 @@ config->setGroup("FoServer");
 	if(config->readNumEntry("Param")==3)sstr3.sprintf(config->readEntry("Out"),intvar);
 	if(config->readNumEntry("Param")==4)sstr3.sprintf(config->readEntry("Out"),intvar,(const char *)sstr2);	
 
-	server=sstr3.copy();
+	server=sstr3;
 config->setGroup("Talk");
 
      }
@@ -236,7 +236,7 @@ if(config->readNumEntry("SelectServer")==2)
 	  server.sprintf("%s",ed2Combo->currentText() );
 	}
 if(config->readNumEntry("SelectServer")==3)    {
-      server=config->readEntry("ServerName").copy(); }
+      server=config->readEntry("ServerName"); }
 
 user+='@';
 user+=server;
@@ -337,7 +337,7 @@ if( (tencount==10)&&(autofinger ))
 void NetutilView::setup()
 {
  if(new Setup() == 0L)
-   warning("Could not start setup");
+   tqWarning("Could not start setup");
  loadSettings();
 }
 
@@ -484,9 +484,9 @@ QString sstr;
 	tmpLabel->setAlignment( AlignVCenter | AlignRight );
         
 	config->setGroup("Talk");
-	TCQLineEdit = new QLineEdit( w, "LineEdit_11" );
-	TCQLineEdit->setGeometry( 170, 180, 150, 30 );
-        TCQLineEdit->setText(config->readEntry("TalkCom"));    
+	lineEdit11 = new QLineEdit( w, "LineEdit_11" );
+	lineEdit11->setGeometry( 170, 180, 150, 30 );
+        lineEdit11->setText(config->readEntry("TalkCom"));    
 	
 	resize( 350, 300 );
         tab->addTab( w, klocale->translate("Misc") );
@@ -524,9 +524,9 @@ QString sstr;
 	SQLineEdit->setGeometry( 80, 125, 200, 20 );
 	SQLineEdit->setText(config->readEntry("UserName") );
 
-	TQLineEdit = new QLineEdit( w, "LineEdit_4" );
-	TQLineEdit->setGeometry( 250, 10, 50, 20 );
-	TQLineEdit->setText( config->readEntry("StartLine") );
+	lineEdit10 = new QLineEdit( w, "LineEdit_4" );
+	lineEdit10->setGeometry( 250, 10, 50, 20 );
+	lineEdit10->setText( config->readEntry("StartLine") );
 
 	tmpQLabel = new QLabel( w, "Label_1" );
 	tmpQLabel->setGeometry( 60, 10, 180, 20 );
@@ -601,13 +601,13 @@ show();
 void Setup::format()
 {
  if(new Format(0,0,"FoUser")==0)
-   warning("Could not open Format Dialog");
+   tqWarning("Could not open Format Dialog");
 }
 
 void Setup::format1()
 {
  if(new Format(0,0,"FoServer")==0)
-   warning("Could not open Format Dialog");
+   tqWarning("Could not open Format Dialog");
 }
 
 void Setup::quit()
@@ -640,8 +640,8 @@ config->writeEntry("NumFserver",tmpQListBox->count());
       }
 
 config->setGroup("Talk");
-config->writeEntry("TalkCom",TCQLineEdit->text());
-config->writeEntry("StartLine",TQLineEdit->text());
+config->writeEntry("TalkCom",lineEdit11->text());
+config->writeEntry("StartLine",lineEdit10->text());
 
 for(va=1;va<=3;va++){
    if(but[va]->isChecked())config->writeEntry("SelectUser",va); 

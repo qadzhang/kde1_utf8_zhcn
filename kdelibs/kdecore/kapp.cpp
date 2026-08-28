@@ -317,13 +317,14 @@
 
 #include <qdir.h> // must be at the front
 
-#include <kapp.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <kcharsets.h>
-#include <kdebug.h>
+#include "kapp.h"
+#include "kiconloader.h"
+#include "klocale.h"
+#include "kcharsets.h"
+#include "kdebug.h"
 #include "kwm.h"
-#include <kdebugdialog.h>
+#include "kclipboard.h"  // TQt3 迁移：x11EventFilter 直接转发 X11 selection 事件给 KClipboard
+#include "kdebugdialog.h"
 
 #include <unistd.h>
 #include <fcntl.h>
@@ -336,6 +337,11 @@
 #include <qtextstream.h>
 #include <qregexp.h>
 #include <qkeycode.h>
+#include <qtextcodec.h>
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   （TQt3 底座迁移：UTF-8 全局编码开关，落地见 KApplication::init()）
 #ifdef HAVE_SYS_STAT_H
 #include <sys/stat.h>
 #endif
@@ -405,6 +411,30 @@ int KApplication::xioErrhandler()
 
 void KApplication::init()
 {
+  // ┌─ What : 设置 TQt3 全局字符串编码为 UTF-8（char*→QString 隐转与
+  // │         QString::ascii()/data() 反向输出统一按 UTF-8 解释）
+  // │  Why  : KDE 1.1.2 源码的全部字符串字面量与文件/配置内容按 UTF-8
+  // │         处理（本项目路线乙：宿主系统 UTF-8 不变）；TQt3 的
+  // │         setCodecForCStrings 一个全局决策使绝大多数字符串边界
+  // │         一次性获得正确语义，替代 Qt1 路线逐点适配的方案。
+  // │         例外边界（system() 参数、环境变量、X11 属性、原始字节流、
+  // │         协议字节）不经过此通道，由 Qt1 路线勘定的语义地图逐点复审。
+  // │  Who  : KApplication 是全部 KDE1 应用的入口（kapp 宏），任何 Qt
+  // │         字符串操作发生前本函数已执行
+  // │  When : 两个 KApplication 构造函数共同调用的 init() 最前部——
+  // │         必须先于任何配置读取（配置内容即 UTF-8）
+  // │  Where: kdelibs/kdecore/kapp.cpp（本处）；codec 对象由 TQt3 管理
+  // │  How  : ① codecForName("UTF-8") 取全局 UTF-8 编码器（失败则 NULL，
+  // │         TQt3 回退 Latin1——zh 环境不会发生）→ ② setCodecForCStrings
+  // │         设入全局 → ③ setCodecForLocale 同步（影响 toLocal8Bit 族，
+  // │         与宿主 zh_CN.UTF-8 一致）
+  {
+    TQTextCodec *utf8 = TQTextCodec::codecForName( "UTF-8" );
+    if ( utf8 ) {
+      TQTextCodec::setCodecForCStrings( utf8 );
+      TQTextCodec::setCodecForLocale( utf8 );
+    }
+  }
   // this is important since we fork() to launch the help (Matthias)
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
   // set up the fance KDE xio error handler (Matthias)
@@ -898,6 +928,18 @@ KApplication::~KApplication()
 
 bool KApplication::x11EventFilter( XEvent *_event )
 {
+  //   Modified for the KDE1 Revival Project, 2026（TQt3 底座迁移）
+  //   What/Why：Qt1 内核把 X11 selection 事件包成 Event_Clipboard QCustomEvent
+  //   投给 KClipboard；TQt3 不再产生该事件，此处直接转发原始 XEvent。
+  //   Who/When：KClipboard::self() 是懒构造——仅在已存在实例时转发
+  //   （s_pSelf 判空），避免过滤器反向强制实例化剪贴板
+  if ( (_event->type == SelectionNotify
+        || _event->type == SelectionRequest
+        || _event->type == SelectionClear)
+       && KClipboard::s_pSelf ) {
+    KClipboard::s_pSelf->x11Event( _event );
+  }
+
   // You can get root drop events twice.
   // This is to avoid this.
   static int rootDropEventID = -1;
@@ -1102,33 +1144,17 @@ bool KApplication::x11EventFilter( XEvent *_event )
 }
 
 void KApplication::applyGUIStyle(GUIStyle newstyle) {
-  QApplication::setStyle( applicationStyle );
-
-  // get list of toplevels
-  QWidgetList *wl = QApplication::topLevelWidgets();
-  QWidgetListIt wl_it( *wl );
-
-  // foreach toplevel ...
-  while(wl_it.current()) {
-    QWidget *w = wl_it.current();
-
-    // set new style
-    w->setStyle(newstyle);
-    QObjectList *ol = w->queryList("QWidget", 0, 0, TRUE);
-    QObjectListIt ol_it( *ol );
-
-    // set style to child widgets
-    while ( ol_it.current() ) {
-      QWidget *child = (QWidget *)(ol_it.current());
-      child->setStyle(newstyle);
-      ++ol_it;
-    }
-    delete ol;
-    ++wl_it;
-  }
-
-  delete wl;
+  //   Modified for the KDE1 Revival Project, 2026（TQt3 底座迁移）
+  //   What/Why：Qt1 的 QApplication::setStyle(GUIStyle) 枚举版在 TQt3 已删，
+  //   改走风格工厂名（WindowsStyle→"windows"、MotifStyle→"motif"）；已建
+  //   toplevel 的 repolish 由 TQt3 自动完成——下方手工遍历设风格的原实现
+  //   （QWidget::setStyle(GUIStyle) 同样已删）随之移除。保留对
+  //   applicationStyle 的判断以维持历史行为（调用前由 readConfigGuiStyle
+  //   更新，见 readConfig 部）
+  QApplication::setStyle( applicationStyle == MotifStyle
+                          ? "motif" : "windows" );
 }
+
 
 QString KApplication::findFile( const char *file )
 {
@@ -1145,7 +1171,7 @@ QString KApplication::findFile( const char *file )
 	  ++it;
     }
 
-  fullPath.resize( 0 );
+  fullPath.truncate( 0 );
 
   return fullPath;
 }
@@ -1745,7 +1771,7 @@ bool checkAccess(const char *pathname, int mode)
   if ( pos == -1 )
     return false;   // No path in argument. This is evil, we won't allow this
 
-  dirName.resize(pos+1); // strip everything starting from the last '/'
+  dirName.truncate(pos+1); // strip everything starting from the last '/'
 
   accessOK = access( dirName, W_OK );
   // -?- Can I write to the accessed diretory

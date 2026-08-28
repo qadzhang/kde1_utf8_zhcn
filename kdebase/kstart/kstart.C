@@ -61,7 +61,7 @@ void KStart::initialized(){
 void KStart::windowAdd(Window w){
     if (window) {
 	QString t = KWM::title(w);
-	QRegExp r = window;
+	QRegExp r( window );  /* TQt3 迁移 */
 	if (r.match(t) != -1){
 	    applyStyle( w );
 	    ::exit(0);
@@ -82,7 +82,7 @@ void KStart::applyStyle(Window w) {
 	    KWM::moveToDesktop(w, desktop);
     }
     if (maximize) {
-	debug("do maximize");
+	tqDebug("do maximize");
 	KWM::doMaximize(w, true);
     }
     if (iconify)

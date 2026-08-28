@@ -36,7 +36,7 @@ AssertDialog::AssertDialog(QWidget* parent, const char* name)
   // -----
   connect(kapp, SIGNAL(appearanceChanged()), SLOT(initializeGeometry()));
   // -----
-  temp=(string)i18n("You have found a bug in ")+(string)kapp->appName()+".";
+  temp=std::string(i18n("You have found a bug in "))+(const char*)kapp->appName()+".";  // TQt3 迁移：appName 返回 QString
   labelHeadline->setText(temp.c_str());
   // pixmap.load("bug_3d.xpm");
   labelImage->setPixmap(pixmap);
@@ -137,8 +137,8 @@ void AssertDialog::setErrorText()
   // ###########################################################################
   string temp;
   // -----
-  temp=(string)i18n("The following condition failed:\n")
-    +(string)i18n("In file ")+file+(string)i18n(", line ")+line+(string)":\n"
+  temp=std::string(i18n("The following condition failed:\n"))
+    +std::string(i18n("In file "))+file+std::string(i18n(", line "))+line+(std::string)":\n"
     +condition;
   labelError->setText(temp.c_str());
   initializeGeometry();
@@ -199,10 +199,10 @@ void evaluate_assertion(bool condition, const char* file, int line,
       break;
     }
     case 2: { // send mail to author
-      subject=(string)"["+(string)kapp->appName()+(string)"]"
-	+(string)" assertion failed (file "+file
-	+(string)", line "+(string)buffer
-	+(string)"): "+cond_text;
+      subject=(std::string)"["+std::string(kapp->appName().ascii())+(std::string)"]"
+	+(std::string)" assertion failed (file "+file
+	+(std::string)", line "+(string)buffer
+	+(std::string)"): "+cond_text;
       if(!dialog.getMailAddress().empty())
 	{
 	  if(api->sendEmail(dialog.getMailAddress(), subject)

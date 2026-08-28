@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/installation.doc:51 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Installing TQt/X11</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Installing TQt/X11</h1>
+
+ 
+<p> You may need to be root, depending on the permissions of the directories
+where you choose to install TQt.
+<p> <ol type=1>
+<li>  Unpack the archive if you have not done so already:
+<p> <pre>
+    cd /usr/local
+    gunzip qt-x11-version.tar.gz    # uncompress the archive
+    tar xf qt-x11-version.tar       # unpack it
+</pre>
+ 
+<p> This creates the directory /usr/local/qt-<em>version</em> containing the
+files from the main archive.
+<p> Rename qt-<em>version</em> to qt (or make a symlink):
+<p> <pre>
+    mv qt-version qt
+</pre>
+ 
+<p> The rest of this file assumes that TQt is installed in <tt>/usr/local/qt</tt>.
+<p> <li>  Set some environment variables in the file <tt>.profile</tt> (or <tt>.login</tt>,
+depending on your shell) in your home directory. Create the
+file if it is not there already.
+<p> <ul>
+<li> TQTDIR -- the directory in which you're building TQt
+<li> PATH -- to locate the <a href="moc.html#moc">moc</a> program and other TQt tools
+<li> MANPATH -- to access the TQt man pages
+<li> LD_LIBRARY_PATH -- for the shared TQt library
+</ul>
+<p> This is done like this:
+<p> In <tt>.profile</tt> (if your shell is bash, ksh, zsh or sh), add the
+following lines:
+<p> <pre>
+    TQTDIR=/usr/local/qt
+    PATH=$TQTDIR/bin:$PATH
+    MANPATH=$TQTDIR/man:$MANPATH
+    LD_LIBRARY_PATH=$TQTDIR/lib:$LD_LIBRARY_PATH
+
+    export TQTDIR PATH MANPATH LD_LIBRARY_PATH
+</pre>
+ 
+<p> In <tt>.login</tt> (in case your shell is csh or tcsh), add the following lines:
+<p> <pre>
+    setenv TQTDIR /usr/local/qt
+    setenv PATH $TQTDIR/bin:$PATH
+    setenv MANPATH $TQTDIR/man:$MANPATH
+    setenv LD_LIBRARY_PATH $TQTDIR/lib:$LD_LIBRARY_PATH
+</pre>
+ 
+<p> After you have done this, you will need to login again, or
+re-source the profile before continuing, so that at least <tt>$TQTDIR</tt>
+is set.  The installation will give an error message and not
+proceed otherwise.
+<p> On AIX set LIBPATH instead of LD_LIBRARY_PATH.
+<p> Note that the SGI MIPSpro o32 and Sun WorkShop 5.0 targets are no
+longer supported as of TQt 3.3.
+<p> <li>  Install your license file as <tt>$HOME/.qt-license</tt>.
+For the free edition and evaluation version, you do not need a license
+file.
+<p> <li>  Compile the TQt library, and build the example programs,
+the tutorial and the tools (e.g. <a href="designer-manual.html">TQt
+    Designer</a>) as follows.
+<p> Type:
+<pre>
+    ./configure
+</pre>
+ 
+<p> This will configure the TQt library for your machine. Note that
+GIF support is turned off by default. Run <tt>./configure -help</tt>
+to get a list of configuration options. Read <tt>PLATFORMS</tt> for a
+list of supported platforms.
+<p> To create the library and compile all examples and the tutorial:
+<pre>
+    make
+</pre>
+ 
+If you have problems, see
+<a href="http://www.trolltech.com/platforms/">http://www.trolltech.com/platforms/</a>.
+<p> <li>  In very few cases you may need to run <tt>/sbin/ldconfig</tt> or something
+similar at this point if you are using shared libraries.
+<p> If you have problems running the example programs, e.g. messages like
+<pre>
+    can't load library 'libtqt.so.2'
+</pre>
+ 
+you probably need to put a reference to the qt library in a
+configuration file and run <tt>/sbin/ldconfig</tt> as root on your system.
+And don't forget to <tt>set</tt> LD_LIBRARY_PATH as explained in 2) above.
+<p> <li>  The online HTML documentation is installed in <tt>/usr/local/qt/doc/html/</tt>
+The main page is <tt>/usr/local/qt/doc/html/index.html</tt>.
+The man pages are installed in <tt>/usr/local/qt/doc/man/</tt>.
+The documentation is also accessible using <a href="assistant.html">TQt
+    Assistant</a>.
+</ol>
+<p> You're done.  TQt is now installed.
+<p> 
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

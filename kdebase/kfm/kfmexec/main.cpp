@@ -54,7 +54,7 @@ KFMExec::KFMExec( int argc, char **argv )
 
 		connect( kfm, SIGNAL( finished() ), this, SLOT( slotFinished() ) );
 	      
-		QString tmp = KApplication::localkdedir().copy();
+		QString tmp = KApplication::localkdedir();
 		tmp += "/share/apps/kfm/tmp/";
 		QString tmp2;
 		tmp2.sprintf("%s.%i.%i", u.filename(), getpid(), kfmCounter++ );

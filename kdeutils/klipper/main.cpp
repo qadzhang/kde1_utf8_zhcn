@@ -9,7 +9,7 @@
  ------------------------------------------------------------- */
 
 
-#include <mykapp.h>
+#include "mykapp.h"
 #include <ktopwidget.h>
 #include <kwm.h>
 

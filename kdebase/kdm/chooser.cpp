@@ -728,7 +728,6 @@ RegisterHostname ( char *name)
 	/* Per RFC 1123, check first for IP address in dotted-decimal form */
 	else if ((in_addr.sin_addr.s_addr = inet_addr(name)) != -1)
 	    in_addr.sin_family = AF_INET;
-	else
 	{
 	    hostent = gethostbyname (name);
 	    if (!hostent)
@@ -774,7 +773,6 @@ RegisterHostname (name)
 	/* Per RFC 1123, check first for IP address in dotted-decimal form */
 	else if ((in_addr.sin_addr.s_addr = inet_addr(name)) != -1)
 	    in_addr.sin_family = AF_INET;
-	else
 	{
 	    hostent = gethostbyname (name);
 	    if (!hostent)

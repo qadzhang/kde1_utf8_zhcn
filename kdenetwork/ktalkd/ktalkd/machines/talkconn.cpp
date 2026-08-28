@@ -503,7 +503,7 @@ int TalkConnection::connect()
 {
     message("Waiting to connect");
     do {
-        errno = 0;
+        errno = 0;  /* TQt3 迁移 */
         if (::connect(sockt, &lookup_addr, sizeof (struct sockaddr)) != -1)
             return 1;
     } while (errno == EINTR);

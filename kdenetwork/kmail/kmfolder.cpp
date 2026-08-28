@@ -60,8 +60,6 @@ KMFolder :: KMFolder(KMFolderDir* aParent, const char* aName) :
   //-- in case that the compiler has problems with the static version above:
   //msgSepLen = strlen(MSG_SEPERATOR_START);
 
-  initMetaObject();
-
   mStream         = NULL;
   mIndexStream    = NULL;
   mOpenCount      = 0;
@@ -73,7 +71,7 @@ KMFolder :: KMFolder(KMFolderDir* aParent, const char* aName) :
   mType           = "plain";
   mAcctList       = NULL;
   mDirty          = FALSE;
-  mWhoField       = 0;
+  mWhoField       = TQString();  /* TQt3 迁移 */
   unreadMsgs      = -1;
   needsCompact    = false;
 }
@@ -96,7 +94,7 @@ const QString KMFolder::location(void) const
 {
   QString sLocation;
 
-  sLocation = path().copy();
+  sLocation = path();
   if (!sLocation.isEmpty()) sLocation += '/';
   sLocation += name();
 
@@ -109,7 +107,7 @@ const QString KMFolder::indexLocation(void) const
 {
   QString sLocation;
 
-  sLocation = path().copy();
+  sLocation = path();
   if (!sLocation.isEmpty()) sLocation += '/';
   sLocation += '.';
   sLocation += name();
@@ -133,9 +131,9 @@ int KMFolder::open(void)
   mStream = fopen(location(), "r+"); // messages file
   if (!mStream) 
   {
-    debug("Cannot open folder `%s': %s", (const char*)location(), 
+    tqDebug("Cannot open folder `%s': %s", (const char*)location(), 
 	  strerror(errno));
-    mOpenCount = 0;
+    mOpenCount = 0;  /* TQt3 迁移 */
     return errno;
   }
 
@@ -154,16 +152,15 @@ int KMFolder::open(void)
     if (!mIndexStream) rc = createIndexFromContents();
     else readIndex();
   }
-  else
   {
-    //debug("No path specified for folder `" + name() +
+    //tqDebug("No path specified for folder `" + name() +
     //      "' -- Turning autoCreateIndex off");
     mAutoCreateIndex = FALSE;
     rc = createIndexFromContents();
   }
 
   if (!rc) lock();
-  mQuiet = 0;
+  mQuiet = 0;  /* TQt3 迁移 */
 
   return rc;
 }
@@ -196,13 +193,13 @@ int KMFolder::create(void)
   }
   else
   {
-    //debug("Folder `" + name() +
+    //tqDebug("Folder `" + name() +
     //      "' has no path specified -- turning autoCreateIndex off");
     mAutoCreateIndex = FALSE;
   }
 
   mOpenCount++;
-  mQuiet = 0;
+  mQuiet = 0;  /* TQt3 迁移 */
 
   rc = writeIndex();
   if (!rc) lock();
@@ -260,7 +257,7 @@ int KMFolder::lock(void)
 
   if (rc < 0)
   {
-    debug("Cannot lock folder `%s': %s (%d)", (const char*)location(),
+    tqDebug("Cannot lock folder `%s': %s (%d)", (const char*)location(),
 	  strerror(errno), errno);
     return errno;
   }
@@ -275,7 +272,7 @@ int KMFolder::lock(void)
 
     if (rc < 0) 
     {
-      debug("Cannot lock index of folder `%s': %s", (const char*)location(),
+      tqDebug("Cannot lock index of folder `%s': %s", (const char*)location(),
 	    strerror(errno));
       rc = errno;
 #if HAVE_FLOCK
@@ -344,7 +341,7 @@ int KMFolder::createIndexFromContents(void)
   bool atEof = FALSE;
   bool inHeader = TRUE;
   KMMsgInfo* mi;
-  QString msgStr(256);
+  TQString msgStr;  /* TQt3 迁移 */
   QRegExp regexp(MSG_SEPERATOR_REGEX);
   int i, num, numStatus, whoFieldLen;
   short needStatus;
@@ -369,7 +366,7 @@ int KMFolder::createIndexFromContents(void)
   whoFieldName = QString(whoField()) + ':'; //unused (sven)
   whoFieldLen = whoFieldName.length();      //unused (sven)
 
-  //debug("***whoField: %s (%d)",
+  //tqDebug("***whoField: %s (%d)",
   //      (const char*)whoFieldName, whoFieldLen);
 
   while (!atEof)
@@ -422,7 +419,7 @@ int KMFolder::createIndexFromContents(void)
     // Is this a long header line?
     if (inHeader && (line[0]=='\t' || line[0]==' '))
     {
-      i = 0;
+      i = 0;  /* TQt3 迁移 */
       while (line [i]=='\t' || line [i]==' ') i++;
       if (line [i] < ' ' && line [i]>0) inHeader = FALSE;
       else if (lastStr) *lastStr += line + i;
@@ -450,27 +447,27 @@ int KMFolder::createIndexFromContents(void)
       needStatus &= ~2;
     }
     else if (strncasecmp(line,"X-KMail-Mark:",13)==0 && isblank(line[13]))
-      xmarkStr = QString(line+14).copy();
+      xmarkStr = QString(line+14);
     else if (strncasecmp(line,"Date:",5)==0 && isblank(line[5]))
     {
-      dateStr = QString(line+6).copy();
+      dateStr = QString(line+6);
       lastStr = &dateStr;
     }
     else if (strncasecmp(line,"From:", 5)==0 &&
 	     isblank(line[5]))
     {
-      fromStr = QString(line+6).copy();
+      fromStr = QString(line+6);
       lastStr = &fromStr;
     }
     else if (strncasecmp(line,"To:", 3)==0 &&
 	     isblank(line[3]))
     {
-      toStr = QString(line+4).copy();
+      toStr = QString(line+4);
       lastStr = &toStr;
     }
     else if (strncasecmp(line,"Subject:",8)==0 && isblank(line[8]))
     {
-      subjStr = QString(line+9).copy();
+      subjStr = QString(line+9);
       lastStr = &subjStr;
     }
   }
@@ -531,7 +528,7 @@ bool KMFolder::readIndexHeader(void)
   fscanf(mIndexStream, "# KMail-Index V%d\n", &indexVersion);
   if (indexVersion < INDEX_VERSION)
   {
-    debug("Index file %s is out of date. Re-creating it.", 
+    tqDebug("Index file %s is out of date. Re-creating it.", 
 	  (const char*)indexLocation());
     createIndexFromContents();
     return FALSE;
@@ -610,7 +607,7 @@ void KMFolder::quiet(bool beQuiet)
     mQuiet--;
     if (mQuiet <= 0)
     {
-      mQuiet = 0;
+      mQuiet = 0;  /* TQt3 迁移 */
       emit changed();
     }
   }
@@ -630,7 +627,7 @@ void KMFolder::removeMsg(int idx)
   //assert(idx>=0);
   if(idx < 0)
     {
-      debug("KMFolder::removeMsg() : idx < 0\n");
+      tqDebug("KMFolder::removeMsg() : idx < 0\n");
       return;
     }
   mMsgList.take(idx);
@@ -696,7 +693,7 @@ KMMessage* KMFolder::readMsg(int idx)
   assert(mStream != NULL);
 
   msgSize = mi->msgSize();
-  msgText.resize(msgSize+2);
+  msgText.truncate(msgSize+2);  /* TQt3 迁移 */
 
   fseek(mStream, mi->folderOffset(), SEEK_SET);
   fread(msgText.data(), msgSize, 1, mStream);
@@ -731,7 +728,7 @@ int KMFolder::moveMsg(KMMessage* aMsg, int* aIndex_ret)
   rc = addMsg(aMsg, aIndex_ret);
   close();
 
-  // debug("KMFolder::moveMsg() rc=%i",rc);
+  // tqDebug("KMFolder::moveMsg() rc=%i",rc);
   return rc;
 }
 
@@ -751,7 +748,7 @@ int KMFolder::addMsg(KMMessage* aMsg, int* aIndex_ret)
   {
     opened = TRUE;
     rc = open();
-    debug("addMsg-open: %d", rc);
+    tqDebug("addMsg-open: %d", rc);
     if (rc) return rc;
   }
 
@@ -763,7 +760,7 @@ int KMFolder::addMsg(KMMessage* aMsg, int* aIndex_ret)
     {
       if (name() == "outbox") //special case for Edit message.
       {
-        // debug ("Editing message in outbox");
+        // tqDebug("Editing message in outbox");
         editing = true;
       }
       else
@@ -786,7 +783,7 @@ int KMFolder::addMsg(KMMessage* aMsg, int* aIndex_ret)
   assert(mStream != NULL);
   if (len <= 0)
   {
-    debug("Message added to folder `%s' contains no data. Ignoring it.",
+    tqDebug("Message added to folder `%s' contains no data. Ignoring it.",
 	  (const char*)name());
     if (opened) close();
     return 0;
@@ -844,8 +841,8 @@ int KMFolder::rename(const QString aName)
 
   assert(!aName.isEmpty());
 
-  oldLoc = location().copy();
-  oldIndexLoc = indexLocation().copy();
+  oldLoc = location();
+  oldIndexLoc = indexLocation();
 
   close(TRUE);
 
@@ -914,7 +911,7 @@ int KMFolder::expunge(void)
     mOpenCount = openCount;
   }
 
-  unreadMsgs = 0;
+  unreadMsgs = 0;  /* TQt3 迁移 */
   emit numUnreadMsgsChanged( this );
   if (!mQuiet) emit changed();
   return 0;
@@ -933,20 +930,19 @@ int KMFolder::compact(void)
 
   if (!needsCompact)
   {
-    //debug ("Not compacting %s; it's clean", name().data());
+    //tqDebug("Not compacting %s; it's clean", name().data());
     return 0;
   }
   
-  debug ("Compacting %s ", name().data());
+  tqDebug("Compacting %s ", name().data());
   
   tempName = "." + name();
-  tempName.detach();
   tempName += ".compacted";
   unlink(tempName);
   //tempFolder = parent()->createFolder(tempName); //sven: shouldn't be in list
   tempFolder = new KMFolder(parent(), tempName);   //sven: we create it
   if(tempFolder->create()) {
-    debug("KMFolder::compact() Creating tempFolder failed!\n");
+    tqDebug("KMFolder::compact() Creating tempFolder failed!\n");
     delete tempFolder;                             //sven: and we delete it
     return 0;
   }
@@ -1025,9 +1021,9 @@ int KMFolder::sync(void)
 //-----------------------------------------------------------------------------
 void KMFolder::sort(KMMsgList::SortField aField, bool aDesc)
 {
-  //debug("KMFolder::sort()");
+  //tqDebug("KMFolder::sort()");
   mMsgList.sort(aField, aDesc);
-  //debug("KMFolder::sort() after");
+  //tqDebug("KMFolder::sort() after");
   if (!mQuiet) emit changed();
   mDirty = TRUE;
 }
@@ -1108,7 +1104,7 @@ const char* KMFolder::whoField(void) const
 //-----------------------------------------------------------------------------
 void KMFolder::setWhoField(const QString& aWhoField)
 {
-  mWhoField = aWhoField.copy();
+  mWhoField = aWhoField;
 }
 
 

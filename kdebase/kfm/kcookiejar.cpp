@@ -720,7 +720,7 @@ KCookieAdvice KCookieJar::cookieAdvice(KCookiePtr cookiePtr)
         (cookiePtr->domain != domain) && 
         (cookiePtr->domain != cookiePtr->host))
     {
-        warning("WARNING: Host %s tries to set cookie for domain %s",
+        tqWarning("WARNING: Host %s tries to set cookie for domain %s",
               cookiePtr->host.data(), cookiePtr->domain.data());
         return KCookieReject;
     }
@@ -728,7 +728,7 @@ KCookieAdvice KCookieJar::cookieAdvice(KCookiePtr cookiePtr)
     if ((cookiePtr->name.find('\"') != -1) ||
         (cookiePtr->value.find('\"') != -1))
     {
-        warning("WARNING: Host %s tries to set a suspicious cookie for domain %s",
+        tqWarning("WARNING: Host %s tries to set a suspicious cookie for domain %s",
               cookiePtr->host.data(), cookiePtr->domain.data());
         return KCookieReject;
     }

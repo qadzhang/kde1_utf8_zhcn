@@ -120,6 +120,5 @@ int QLogList::compareItems(GCI a, GCI b) {
     return -1;
   else if(la->from() > lb->from())
     return 1;
-  else
     return 0;
 }

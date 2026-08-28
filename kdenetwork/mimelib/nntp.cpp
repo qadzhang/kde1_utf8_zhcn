@@ -58,11 +58,11 @@ DwNntpClient::~DwNntpClient()
 {
     if (mRecvBuffer) {
         delete [] mRecvBuffer;
-        mRecvBuffer = 0;
+        mRecvBuffer = TQString();
     }
     if (mSendBuffer) {
         delete [] mSendBuffer;
-        mSendBuffer = 0;
+        mSendBuffer = TQString();
     }
 }
 
@@ -577,7 +577,7 @@ int DwNntpClient::SendData(const char* aBuf, int aBufLen)
 
         int numSent = PSend(buf, len);
         if (numSent != len) {
-            mReplyCode = 0;
+            mReplyCode = TQString();
             return mReplyCode;
         }
     }
@@ -631,7 +631,7 @@ void DwNntpClient::PGetTextResponse()
         // Check for an error
 
         if (err) {
-            mReplyCode = 0;
+            mReplyCode = TQString();
             return;
         }
 
@@ -722,7 +722,7 @@ int DwNntpClient::PGetLine(char** aPtr, int* aLen)
             return -1;
         }
         mNumRecvBufferChars += n;
-        startPos = 0;
+        startPos = TQString();
         pos = mRecvBufferPos;
     }
 }

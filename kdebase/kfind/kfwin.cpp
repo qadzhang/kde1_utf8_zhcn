@@ -59,7 +59,7 @@ public:
   }
 
   virtual bool eventFilter(QObject *, QEvent *e) {
-    if(e->type() == Event_KeyPress || e->type() == Event_Accel) {
+    if(e->type() == Event_KeyPress || e->type() == TQEvent::Accel  /* TQt3 迁移 */) {
       QKeyEvent *k = (QKeyEvent *)e;
       if(k->key() == Key_PageUp ||
 	 k->key() == Key_PageDown) {
@@ -184,7 +184,7 @@ void KfindWindow::copySelection() {
   if(s.length() > 0) {
     QClipboard *cb = kapp->clipboard();
     cb->clear();
-    cb->setData("TEXT", s.data());
+    cb->setText( s.data() );  /* TQt3 迁移：setData(fmt,data)→setText */
   }
 }
 
@@ -498,9 +498,10 @@ void KfindWindow::execAddToArchive(KfArchiver *arch,QString archname)
     };
 
   if ( !archProcess.start(KProcess::DontCare) )
-    warning(i18n("Error while creating child process!"));
+    tqWarning(i18n("Error while creating child process!"));
 };
 
 int KfindWindow::numItems() { 
   return lbx->count(); 
 }
+

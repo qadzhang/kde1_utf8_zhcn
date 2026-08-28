@@ -4,13 +4,13 @@ include_directories(
 
 set(KBGNWM_SRCS main.cpp kbgndwm.cpp bg.cpp)
 
-set(KBGNWM_MOC kbgndwm.moc bg.moc)
+set(KBGNWM_MOC kbgndwm.h bg.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KBGNWM_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KBGNWM_MOC})
 
 add_executable(kbgndwm ${KBGNWM_SRCS} ${MOC_FILES})
 target_link_libraries(kbgndwm
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

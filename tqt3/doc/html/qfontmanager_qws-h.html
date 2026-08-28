@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/qfontmanager_qws.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>qfontmanager_qws.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>qfontmanager_qws.h</h1>
+
+<p>This is the verbatim text of the qfontmanager_qws.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/qfontmanager_qws.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of font rendering infrastructure for Embedded TQt
+**
+** Created : 940721
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** Licensees holding valid TQt Commercial licenses may use this file in
+** accordance with the TQt Commercial License Agreement provided with
+** the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQFONTMANAGER_QWS_H
+#define TQFONTMANAGER_QWS_H
+
+#ifndef QT_H
+#include "ntqfont.h"
+#include "ntqptrlist.h"
+#include &lt;private/qtextengine_p.h&gt;
+#endif // QT_H
+
+// These are stored in the shared memory segment in front of their
+// data, and indexed at the start of the segment
+
+// This needs to be a multiple of 64 bits
+
+class TQFontDef;
+
+class TQ_PACKED TQGlyphMetrics {
+
+public:
+    TQ_UINT8 linestep;
+    TQ_UINT8 width;
+    TQ_UINT8 height;
+    TQ_UINT8 flags;
+
+    TQ_INT8 bearingx;      // Difference from pen position to glyph's left bbox
+    TQ_UINT8 advance;       // Difference between pen positions
+    TQ_INT8 bearingy;      // Used for putting characters on baseline
+
+    TQ_INT8 reserved;      // Do not use
+
+    // Flags:
+    // RendererOwnsData - the renderer is responsible for glyph data
+    //                    memory deletion otherwise TQGlyphTree must
+    //                    delete [] the data when the glyph is deleted.
+    enum Flags { RendererOwnsData=0x01 };
+};
+
+class TQGlyph {
+public:
+    TQGlyph() { metrics=0; data=0; }
+    TQGlyph(TQGlyphMetrics* m, uchar* d) :
+	metrics(m), data(d) { }
+    ~TQGlyph() {}
+
+    TQGlyphMetrics* metrics;
+    uchar* data;
+};
+
+
+
+class TQFontFactory;
+class TQDiskFont;
+
+// This is a particular font instance at a particular resolution
+// e.g. Truetype Times, 10 point. There's only one of these though;
+// we want to share generated glyphs
+
+class TQRenderedFont {
+
+public:
+
+    // Normal font-type is monochrome; glyph data is a
+    //   bitmap, which doesn't use much memory
+
+    // Initialise for name A, renderer B, font type C, D glyphs
+
+    TQRenderedFont(TQDiskFont *,const TQFontDef&amp;);
+    virtual ~TQRenderedFont();
+
+    TQFontDef fontDef() const;
+
+    int refcount;
+
+    int ptsize;
+
+    bool italic;
+    unsigned int weight;
+
+    void ref() { refcount++; }
+    bool deref() { refcount--; return refcount==0; }
+
+    bool match(const TQFontDef &amp;);
+
+    TQDiskFont* diskfont;
+    int fascent,fdescent;
+    int fleftbearing,frightbearing;
+    int fmaxwidth;
+    int fleading;
+    int funderlinepos;
+    int funderlinewidth;
+    bool smooth;
+    int maxchar;
+
+    int ascent() { return fascent; }
+    int descent() { return fdescent; }
+    int width(int);
+    int width( const TQString&amp;, int =-1 );
+    int leftBearing(int);
+    int rightBearing(int);
+
+    // Calling any of these can trigger a full-font metrics check
+    // which can be expensive
+    int minLeftBearing();
+    int minRightBearing();
+    int maxWidth();
+
+    virtual bool inFont(glyph_t g) const=0;
+    virtual TQGlyph render(glyph_t g)=0;
+
+private:
+
+};
+
+// Keeps track of available renderers and which font is which
+
+class TQDiskFontPrivate {};
+
+class TQDiskFont {
+
+public:
+    TQDiskFont(TQFontFactory *f, const TQString&amp; n, bool i, int w, int s,
+	      const TQString &amp;fl, const TQString&amp; fi) :
+	factory(f), name(n), italic(i), weight(w), size(s), flags(fl), file(fi)
+    {
+	loaded=false;
+	p=0;
+    }
+
+    TQRenderedFont* load(const TQFontDef &amp;);
+
+    TQFontDef fontDef() const;
+
+    TQFontFactory *factory;
+    TQString name;
+    bool italic;
+    int weight;
+    int size;
+    TQString flags;
+    TQString file;
+    bool loaded;
+
+    TQDiskFontPrivate * p;
+};
+
+class TQCachePolicy {
+
+public:
+
+    virtual void cache(TQRenderedFont *)=0;
+    virtual void uncache(TQRenderedFont *)=0;
+
+};
+
+// Exposed here so the default policy can be reset
+
+class TQDefaultCachePolicy : public TQCachePolicy {
+
+public:
+
+    virtual void cache(TQRenderedFont *);
+    virtual void uncache(TQRenderedFont *);
+
+};
+
+class TQFontManager {
+
+public:
+
+    TQPtrList&lt;TQFontFactory&gt; factories;
+    TQPtrList&lt;TQRenderedFont&gt; cachedfonts;
+    TQPtrList&lt;TQDiskFont&gt; diskfonts;
+
+    TQFontManager();
+    ~TQFontManager();
+
+    // Font definition, type and color
+    TQDiskFont * get(const TQFontDef &amp;);
+
+    static int cmpFontDef(const TQFontDef &amp; goal, const TQFontDef &amp; choice);
+
+    static void initialize();
+    static void cleanup();
+
+    void setPolicy(TQCachePolicy *);
+
+    void cache(TQRenderedFont * f) { policy-&gt;cache(f); }
+    void uncache(TQRenderedFont * f) { policy-&gt;uncache(f); }
+    TQRenderedFont * getCached(const TQFontDef &amp;);
+
+private:
+
+    TQCachePolicy * policy;
+
+};
+
+class TQFontFactory {
+
+public:
+
+    TQFontFactory() {}
+    virtual ~TQFontFactory() {}
+
+    virtual TQRenderedFont * get(const TQFontDef &amp;,TQDiskFont *)=0;
+    virtual void load(TQDiskFont *) const=0;
+    virtual void unload(TQDiskFont *) {}
+    virtual TQString name()=0;
+};
+
+void tqt_init_fonts();
+
+extern TQFontManager * qt_fontmanager;
+
+#endif
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

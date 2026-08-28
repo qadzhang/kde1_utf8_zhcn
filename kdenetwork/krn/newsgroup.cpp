@@ -97,7 +97,7 @@ Article::~Article()
 
 void Article::lookupAltavista()
 {
-    QString buffer(2048);
+    TQString buffer;  /* TQt3 迁移 */
     QString urldata("http://ww2.altavista.digital.com/cgi-bin/news.cgi?id@");
     urldata+=ID.mid(1,ID.length()-2);
     KFM fm;
@@ -473,7 +473,7 @@ NewsGroup::~NewsGroup()
 
 void NewsGroup::clean()
 {
-    debug ("cleaning %s",name);
+    tqDebug("cleaning %s",name);
     getList();
     
     Article *iter;
@@ -548,7 +548,7 @@ void NewsGroup::getList(Artdlg *dialog)
     int oldindex=0;
     
     int artCount=buffer.contains('\n');
-    debug ("There are %d articles",artCount);
+    tqDebug("There are %d articles",artCount);
     buffer+="\n";
     while (1)
     {
@@ -612,7 +612,7 @@ void NewsGroup::getSubjects(NNTP *server)
     server->setGroup(name);
     if (server->last>lastArticle(server))
     {
-        debug ("xover from %d to %d",lastArticle(server)+1,server->last+5);
+        tqDebug("xover from %d to %d",lastArticle(server)+1,server->last+5);
         server->artList(lastArticle(server)+1,server->last,this);
         save();
     }
@@ -620,7 +620,7 @@ void NewsGroup::getSubjects(NNTP *server)
 
 void NewsGroup::getMessages(NNTP *server)
 {
-    debug ("getting articles in %s",name);
+    tqDebug("getting articles in %s",name);
     load();
     getSubjects(server);
     getList();
@@ -637,7 +637,7 @@ void NewsGroup::getMessages(NNTP *server)
 }
 void NewsGroup::catchup()
 {
-    debug ("catching up");
+    tqDebug("catching up");
     getList();
     int count=0;
     for (Article *art=artList.first();art!=0;art=artList.next())
@@ -712,7 +712,7 @@ void do_insert(Article *art)
             a->art=art;
             if (a->parent)
             {
-                debug ("ID-->%s",art->ID.data());
+                tqDebug("ID-->%s",art->ID.data());
                 //                ((node *)a->parent)->children.removeRef(a);
                 //                a->parent=0;
                 //                return;

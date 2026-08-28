@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/qfd/qfd.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Font Displayer</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Font Displayer</h1>
+
+   
+<p> 
+This example program displays all characters of a font.
+<p> <hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/fontdisplayer.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef FontDisplayer_H
+#define FontDisplayer_H
+
+#include &lt;<a href="qframe-h.html">ntqframe.h</a>&gt;
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+
+class TQSlider;
+
+class FontRowTable : public <a href="ntqframe.html">TQFrame</a> {
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    FontRowTable( <a href="ntqwidget.html">TQWidget</a>* parent=0, const char* name=0 );
+
+    <a href="ntqsize.html">TQSize</a> sizeHint() const;
+
+signals:
+    void fontInformation(const <a href="ntqstring.html">TQString</a>&amp;);
+
+public slots:
+    void setRow(int);
+    void chooseFont();
+
+
+protected:
+    <a href="ntqsize.html">TQSize</a> cellSize() const;
+    void paintEvent( <a href="qpaintevent.html">TQPaintEvent</a>* );
+private:
+    <a href="ntqfont.html">TQFont</a> tablefont;
+    int row;
+};
+
+class FontDisplayer : public <a href="ntqmainwindow.html">TQMainWindow</a> {
+    TQ_OBJECT
+public:
+    FontDisplayer( <a href="ntqwidget.html">TQWidget</a>* parent=0, const char* name=0 );
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/fontdisplayer.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "fontdisplayer.h"
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qslider-h.html">ntqslider.h</a>&gt;
+#include &lt;<a href="qspinbox-h.html">ntqspinbox.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qtoolbar-h.html">ntqtoolbar.h</a>&gt;
+#include &lt;<a href="qstatusbar-h.html">ntqstatusbar.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qfontdialog-h.html">ntqfontdialog.h</a>&gt;
+#include &lt;stdlib.h&gt;
+
+
+<a name="f531"></a>FontRowTable::FontRowTable( <a href="ntqwidget.html">TQWidget</a>* parent, const char* name ) :
+    <a href="ntqframe.html">TQFrame</a>(parent,name)
+{
+    <a href="ntqwidget.html#setBackgroundMode">setBackgroundMode</a>(PaletteBase);
+    <a href="ntqframe.html#setFrameStyle">setFrameStyle</a>(Panel|Sunken);
+    <a href="ntqframe.html#setMargin">setMargin</a>(8);
+    setRow(0);
+<a name="x1979"></a>    tablefont = TQApplication::<a href="ntqapplication.html#font">font</a>();
+}
+
+<a name="x1996"></a>TQSize FontRowTable::<a href="ntqwidget.html#sizeHint">sizeHint</a>() const
+{
+    return 24*cellSize()+TQSize(2,2)*(<a href="ntqframe.html#margin">margin</a>()+frameWidth());
+}
+
+TQSize <a name="f532"></a>FontRowTable::cellSize() const
+{
+    <a href="ntqfontmetrics.html">TQFontMetrics</a> fm = <a href="ntqwidget.html#fontMetrics">fontMetrics</a>();
+<a name="x1990"></a><a name="x1989"></a>    return TQSize( fm.<a href="ntqfontmetrics.html#maxWidth">maxWidth</a>(), fm.<a href="ntqfontmetrics.html#lineSpacing">lineSpacing</a>()+1 );
+}
+
+<a name="x1995"></a>void FontRowTable::<a href="ntqframe.html#paintEvent">paintEvent</a>( <a href="qpaintevent.html">TQPaintEvent</a>* e )
+{
+    TQFrame::<a href="ntqframe.html#paintEvent">paintEvent</a>(e);
+    <a href="ntqpainter.html">TQPainter</a> p(this);
+<a name="x2002"></a><a name="x1999"></a>    p.<a href="ntqpainter.html#setClipRegion">setClipRegion</a>(e-&gt;<a href="qpaintevent.html#region">region</a>());
+<a name="x2001"></a>    <a href="ntqrect.html">TQRect</a> r = e-&gt;<a href="qpaintevent.html#rect">rect</a>();
+    <a href="ntqfontmetrics.html">TQFontMetrics</a> fm = <a href="ntqwidget.html#fontMetrics">fontMetrics</a>();
+<a name="x1991"></a>    int ml = <a href="ntqframe.html#frameWidth">frameWidth</a>()+margin() + 1 + TQMAX(0,-fm.<a href="ntqfontmetrics.html#minLeftBearing">minLeftBearing</a>());
+    int mt = <a href="ntqframe.html#frameWidth">frameWidth</a>()+margin();
+    <a href="ntqsize.html">TQSize</a> cell((<a href="ntqwidget.html#width">width</a>()-15-ml)/16,(<a href="ntqwidget.html#height">height</a>()-15-mt)/16);
+
+<a name="x2008"></a><a name="x2007"></a>    if ( !cell.<a href="ntqsize.html#width">width</a>() || !cell.<a href="ntqsize.html#height">height</a>() )
+        return;
+
+    int mini = r.<a href="ntqrect.html#left">left</a>() / cell.<a href="ntqsize.html#width">width</a>();
+    int maxi = (r.<a href="ntqrect.html#right">right</a>()+cell.<a href="ntqsize.html#width">width</a>()-1) / cell.<a href="ntqsize.html#width">width</a>();
+    int minj = r.<a href="ntqrect.html#top">top</a>() / cell.<a href="ntqsize.html#height">height</a>();
+<a name="x2003"></a>    int maxj = (r.<a href="ntqrect.html#bottom">bottom</a>()+cell.<a href="ntqsize.html#height">height</a>()-1) / cell.<a href="ntqsize.html#height">height</a>();
+
+<a name="x1986"></a>    int h = fm.<a href="ntqfontmetrics.html#height">height</a>();
+
+    <a href="ntqcolor.html">TQColor</a> body(255,255,192);
+    <a href="ntqcolor.html">TQColor</a> negative(255,192,192);
+    <a href="ntqcolor.html">TQColor</a> positive(192,192,255);
+    <a href="ntqcolor.html">TQColor</a> rnegative(255,128,128);
+    <a href="ntqcolor.html">TQColor</a> rpositive(128,128,255);
+
+    for (int j = minj; j&lt;=maxj; j++) {
+        for (int i = mini; i&lt;=maxi; i++) {
+            if ( i &lt; 16 &amp;&amp; j &lt; 16 ) {
+                int x = i*cell.<a href="ntqsize.html#width">width</a>();
+                int y = j*cell.<a href="ntqsize.html#height">height</a>();
+
+                <a href="qchar.html">TQChar</a> ch = TQChar(j*16+i,row);
+
+<a name="x1987"></a>                if ( fm.<a href="ntqfontmetrics.html#inFont">inFont</a>(ch) ) {
+<a name="x1994"></a>                    int w = fm.<a href="ntqfontmetrics.html#width">width</a>(ch);
+<a name="x1988"></a>                    int l = fm.<a href="ntqfontmetrics.html#leftBearing">leftBearing</a>(ch);
+<a name="x1993"></a>                    int r = fm.<a href="ntqfontmetrics.html#rightBearing">rightBearing</a>(ch);
+
+                    x += ml;
+                    y += mt+h;
+
+<a name="x1998"></a>                    p.<a href="ntqpainter.html#fillRect">fillRect</a>(x,y,w,-h,body);
+                    if ( w ) {
+                        if ( l ) {
+                            p.<a href="ntqpainter.html#fillRect">fillRect</a>(x+(l&gt;0?0:l), y-h/2, abs(l),-h/2,
+                                       l &lt; 0 ? negative : positive);
+                        }
+                        if ( r ) {
+                            p.<a href="ntqpainter.html#fillRect">fillRect</a>(x+w-(r&gt;0?r:0),y+2, abs(r),-h/2,
+                                       r &lt; 0 ? rnegative : rpositive);
+                        }
+                    }
+                    <a href="ntqstring.html">TQString</a> s;
+                    s += ch;
+                    p.<a href="ntqpainter.html#setPen">setPen</a>(TQPen(TQt::black));
+                    p.<a href="ntqpainter.html#drawText">drawText</a>(x,y,s);
+                }
+            }
+        }
+    }
+}
+
+void <a name="f533"></a>FontRowTable::setRow(int r)
+{
+    row = r;
+
+    <a href="ntqfontmetrics.html">TQFontMetrics</a> fm = <a href="ntqwidget.html#fontMetrics">fontMetrics</a>();
+    <a href="ntqfontinfo.html">TQFontInfo</a> fi = <a href="ntqwidget.html#fontInfo">fontInfo</a>();
+    <a href="ntqstring.html">TQString</a> str = TQString("%1 %2pt%3%4 mLB=%5 mRB=%6 mW=%7")
+<a name="x1983"></a>                    .arg(fi.<a href="ntqfontinfo.html#family">family</a>())
+<a name="x1985"></a>                    .arg(fi.<a href="ntqfontinfo.html#pointSize">pointSize</a>())
+<a name="x1982"></a>                    .arg(fi.<a href="ntqfontinfo.html#bold">bold</a>() ? " bold" : "")
+<a name="x1984"></a>                    .arg(fi.<a href="ntqfontinfo.html#italic">italic</a>() ? " italic" : "")
+                    .arg(fm.<a href="ntqfontmetrics.html#minLeftBearing">minLeftBearing</a>())
+<a name="x1992"></a>                    .arg(fm.<a href="ntqfontmetrics.html#minRightBearing">minRightBearing</a>())
+                    .arg(fm.<a href="ntqfontmetrics.html#maxWidth">maxWidth</a>());
+
+    emit fontInformation(str);
+    <a href="ntqwidget.html#update">update</a>();
+}
+
+void <a name="f534"></a>FontRowTable::chooseFont()
+{
+    bool ok;
+    <a href="ntqfont.html">TQFont</a> oldfont = tablefont;
+<a name="x1981"></a>    tablefont = TQFontDialog::<a href="ntqfontdialog.html#getFont">getFont</a>(&amp;ok, oldfont, this);
+
+    if (ok)
+        <a href="ntqwidget.html#setFont">setFont</a>(tablefont);
+    else
+        tablefont = oldfont;
+}
+
+<a name="f530"></a>FontDisplayer::FontDisplayer( <a href="ntqwidget.html">TQWidget</a>* parent, const char* name ) :
+    <a href="ntqmainwindow.html">TQMainWindow</a>(parent,name)
+{
+    FontRowTable* table = new FontRowTable(this);
+    <a href="ntqtoolbar.html">TQToolBar</a>* controls = new <a href="ntqtoolbar.html">TQToolBar</a>(this);
+    (void) new <a href="ntqlabel.html">TQLabel</a>(<a href="ntqobject.html#tr">tr</a>("Row:"), controls);
+    <a href="ntqspinbox.html">TQSpinBox</a> *row = new <a href="ntqspinbox.html">TQSpinBox</a>(0,255,1,controls);
+<a name="x2010"></a>    controls-&gt;<a href="ntqtoolbar.html#addSeparator">addSeparator</a>();
+    <a href="ntqpushbutton.html">TQPushButton</a> *fontbutton = new <a href="ntqpushbutton.html">TQPushButton</a>(<a href="ntqobject.html#tr">tr</a>("Font..."), controls);
+
+<a name="x2009"></a>    <a href="ntqobject.html#connect">connect</a>(row,TQ_SIGNAL(<a href="ntqspinbox.html#valueChanged">valueChanged</a>(int)),table,TQ_SLOT(setRow(int)));
+    <a href="ntqobject.html#connect">connect</a>(fontbutton, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), table, TQ_SLOT(chooseFont()));
+    <a href="ntqobject.html#connect">connect</a>(table,TQ_SIGNAL(fontInformation(const <a href="ntqstring.html">TQString</a>&amp;)),
+            <a href="ntqmainwindow.html#statusBar">statusBar</a>(),TQ_SLOT(message(const <a href="ntqstring.html">TQString</a>&amp;)));
+    table-&gt;setRow(0);
+    <a href="ntqmainwindow.html#setCentralWidget">setCentralWidget</a>(table);
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/qfd.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "fontdisplayer.h"
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qslider-h.html">ntqslider.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qstatusbar-h.html">ntqstatusbar.h</a>&gt;
+
+
+
+int main(int argc, char** argv)
+{
+    <a href="ntqapplication.html">TQApplication</a> app(argc,argv);
+
+    FontDisplayer m;
+<a name="x2013"></a>    <a href="ntqsize.html">TQSize</a> sh = m.<a href="ntqmainwindow.html#centralWidget">centralWidget</a>()-&gt;sizeHint();
+<a name="x2017"></a>    m.<a href="ntqwidget.html#resize">resize</a>(sh.<a href="ntqsize.html#width">width</a>(),
+<a name="x2016"></a><a name="x2015"></a>             sh.<a href="ntqsize.html#height">height</a>()+3*m.<a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;height());
+    app.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>(&amp;m);
+    m.<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - TQFD");
+<a name="x2014"></a>    m.<a href="ntqwidget.html#show">show</a>();
+
+    return app.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

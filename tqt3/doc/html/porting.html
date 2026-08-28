@@ -1,0 +1,800 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/porting3.doc:36 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Porting to TQt 3.x</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Porting to TQt 3.x</h1>
+
+
+
+<p> This document describes porting applications from TQt 2.x to TQt 3.x. 
+<p> The TQt 3.x series is not binary compatible with the 2.x series. This
+means programs compiled for TQt 2.x must be recompiled to work with TQt
+3.x.  TQt 3.x is also not completely <em>source</em> compatible with 2.x,
+however all points of incompatibility cause compiler errors or
+run-time messages (rather than mysterious results).  TQt 3.x includes
+many additional features and discards obsolete functionality. Porting
+from TQt 2.x to TQt 3.x is straightforward, and once completed makes 
+the considerable additional power and flexibility of TQt 3.x available
+for use in your applications.
+<p> To port code from TQt 2.x to TQt 3.x:
+<p> <ol type=1>
+<p> <li> Briefly read the porting notes below to get an idea of what to expect.
+<li> Be sure your code compiles and runs well on all your target platforms
+with TQt 2.x.
+<li> Recompile with TQt 3.x.  For each error, search below for related
+identifiers (e.g. function names, class names). This document 
+mentions all relevant identifiers to help you get the information
+you need at the cost of being a little verbose.
+<li> If you get stuck, ask on the <a href="http://qt-interest.trolltech.com/">qt-interest</a> mailing list, or Trolltech Technical Support if
+you're a registered licensee.
+<p> </ol>
+<p> Table of contents:
+<p> <!-- toc -->
+<ul>
+<li><a href="#1"> Link Errors on Windows
+</a>
+<li><a href="#2"> Header file inclusion changes
+</a>
+<li><a href="#3"> Namespace
+</a>
+<li><a href="#4"> Removed Functions
+</a>
+<li><a href="#5"> Obsoleted Functions
+</a>
+<li><a href="#6"> Collection Class Renaming
+</a>
+<li><a href="#7"> TQButtonGroup
+</a>
+<li><a href="#8"> TQDate
+</a>
+<li><a href="#9"> TQFileDialog
+</a>
+<li><a href="#10"> TQFont
+</a>
+<li><a href="#11"> TQInputDialog
+</a>
+<li><a href="#12"> TQLayout and Other Abstract Layout Classes
+</a>
+<li><a href="#13"> TQListViewItem
+</a>
+<li><a href="#14"> TQMoveEvent
+</a>
+<li><a href="#15"> TQMultiLineEdit
+</a>
+<li><a href="#16"> TQPrinter
+</a>
+<li><a href="#17"> TQRegExp
+</a>
+<ul>
+<li><a href="#17-1"> New special characters
+</a>
+<li><a href="#17-2"> TQRegExp::operator=()
+</a>
+<li><a href="#17-3"> TQRegExp::match()
+</a>
+<li><a href="#17-4"> TQRegExp::find()
+</a>
+<li><a href="#17-5"> TQString::findRev() and TQString::contains()
+</a>
+<li><a href="#17-6"> TQString::replace()
+</a>
+</ul>
+<li><a href="#18"> TQSemiModal 
+</a>
+<li><a href="#19"> TQSortedList
+</a>
+<li><a href="#20"> TQTableView
+</a>
+<li><a href="#21"> TQToolButton
+</a>
+<li><a href="#22"> TQTextStream
+</a>
+<li><a href="#23"> TQTranslator
+</a>
+<li><a href="#24"> TQWidget
+</a>
+<li><a href="#25"> TQXml Classes
+</a>
+<ul>
+<li><a href="#25-1"> TQXmlInputSource
+</a>
+<li><a href="#25-2"> TQXmlLocator
+</a>
+</ul>
+<li><a href="#26"> Asynchronous I/O Classes
+</a>
+<li><a href="#27"> Transparent widgets
+</a>
+<li><a href="#28"> Bezier Curves
+</a>
+<li><a href="#29"> Locale-aware String Comparisons in TQIconView, TQListBox,
+TQListView and TQTable
+</a>
+</ul>
+<!-- endtoc -->
+
+<p> <a name="Linkerrors"></a>
+<h2> Link Errors on Windows
+</h2>
+<a name="1"></a><p> On Windows, originally in TQt 2.x, the default configuration of the TQt
+library is static. If you just use the default configuration you
+don't need to set certain preprocessor defines.  In TQt 3.0, the
+default configuration of the TQt library is to build it as a shared
+library, therefore the preprocessor define <tt>QT_DLL</tt> is needed.
+<p> If you use tmake with TQt 2.x, and now use qmake with TQt 3.x, then the
+cause of the problem is with the project file. In the project file,
+there is usually line that looks like:
+<p> <tt>CONFIG</tt> = ...
+<p> this should be changed to 
+<p> <tt>CONFIG</tt> += ...
+<p> so that qmake can look at the configuration that TQt was built with and
+set any relevant preprocessor defines in the makefile.
+<p> <a name="Headers"></a>
+<h2> Header file inclusion changes
+</h2>
+<a name="2"></a><p> TQt 3.x remove some unnecessary nested #include directives from
+header files. This speeds up compilation when you don't need those
+nested header files. But in some cases you will find you need to add
+an extra #include to your files.
+<p> For example, if you get a message about <a href="ntqstringlist.html">TQStringList</a> or its functions
+not being defined, then add <tt>#include &lt;ntqstringlist.h&gt;</tt> at
+the top of the file giving the error.
+<p> Header files that you might need to add #include directives for include:
+<ul>
+<li> <tt>&lt;ntqcursor.h&gt;</tt>
+<li> <tt>&lt;ntqpainter.h&gt;</tt>
+<li> <tt>&lt;ntqpen.h&gt;</tt>
+<li> <tt>&lt;ntqstringlist.h&gt;</tt>
+<li> <tt>&lt;ntqregexp.h&gt;</tt>
+<li> <tt>&lt;ntqstrlist.h&gt;</tt>
+<li> <tt>&lt;ntqstyle.h&gt;</tt>
+<li> <tt>&lt;ntqvaluelist.h&gt;</tt>
+</ul>
+<p> <h2> Namespace
+</h2>
+<a name="3"></a><p> TQt 3.x is namespace clean.  A few global identifiers that had been
+left in TQt 2.x have been discarded.
+<p> Enumeration <a href="ntqt.html#CursorShape-enum">TQt::CursorShape</a> and its values are now part of the
+special <a href="ntqt.html">TQt</a> class defined in ntqnamespace.h. If you get compilation
+errors about these being missing (unlikely, since most of your code will
+be in classes that inherit from the TQt namespace class), then apply
+the following changes:
+<p> <ul>
+<li> <tt>TQCursorShape</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::CursorShape</a>
+<li> <tt>ArrowCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::ArrowCursor</a>
+<li> <tt>UpArrowCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::UpArrowCursor</a>
+<li> <tt>CrossCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::CrossCursor</a>
+<li> <tt>WaitCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::WaitCursor</a>
+<li> <tt>IbeamCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::IbeamCursor</a>
+<li> <tt>SizeVerCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::SizeVerCursor</a>
+<li> <tt>SizeHorCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::SizeHorCursor</a>
+<li> <tt>SizeBDiagCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::SizeBDiagCursor</a>
+<li> <tt>SizeFDiagCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::SizeFDiagCursor</a>
+<li> <tt>SizeAllCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::SizeAllCursor</a>
+<li> <tt>BlankCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::BlankCursor</a>
+<li> <tt>SplitVCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::SplitVCursor</a>
+<li> <tt>SplitHCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::SplitHCursor</a>
+<li> <tt>PointingHandCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::PointingHandCursor</a>
+<li> <tt>BitmapCursor</tt> becomes <a href="ntqt.html#CursorShape-enum">TQt::BitmapCursor</a>
+</ul>
+<p> The names of some debugging macro variables have been changed.  We have
+tried not to break source compatibility as much as possible.  If you observe
+error messages on the UNIX console or the Windows debugging stream that were
+previously disabled, please check these macro variables:
+<p> <ul>
+<li> <tt>DEBUG</tt> becomes <tt>QT_DEBUG</tt>
+<li> <tt>NO_DEBUG</tt> becomes <tt>TQT_NO_DEBUG</tt>
+<li> <tt>NO_CHECK</tt> becomes <tt>TQT_NO_CHECK</tt>
+<li> <tt>CHECK_STATE</tt> becomes <tt>QT_CHECK_STATE</tt>
+<li> <tt>CHECK_RANGE</tt> becomes <tt>QT_CHECK_RANGE</tt>
+<li> <tt>CHECK_NULL</tt> becomes <tt>QT_CHECK_NULL</tt>
+<li> <tt>CHECK_MATH</tt> becomes <tt>QT_CHECK_MATH</tt>
+</ul>
+<p> The name of some debugging macro functions has been changed:
+<p> <ul>
+<li> <tt>ASSERT</tt> becomes <tt>Q_ASSERT</tt>
+</ul>
+<p> For the record, undocumented macro variables that are not part of the API
+have been changed:
+<p> <ul>
+<li> <tt>_OS_*_</tt> becomes <tt>Q_OS_*</tt>
+<li> <tt>_WS_*_</tt> becomes <tt>TQ_WS_*</tt>
+<li> <tt>_CC_*_</tt> becomes <tt>Q_CC_*</tt>
+</ul>
+<p> <h2> Removed Functions
+</h2>
+<a name="4"></a><p> All these functions have been removed in TQt 3.x:
+<ul>
+<li> TQFont::charSet()
+<li> TQFont::setCharSet()
+<li> TQMenuBar::setActItem()
+<li> TQMenuBar::setWindowsAltMode()
+<li> TQObject::initMetaObject()
+<li> TQPainter::drawQuadBezier()
+<li> TQPointArray::quadBezier()
+<li> TQRegExp::find()
+<li> TQSpinBox::downButton()
+<li> TQSpinBox::upButton()
+<li> TQString::basicDirection()
+<li> TQString::visual()
+<li> TQStyle::set...() functions
+<li> TQStyle::drawArrow()
+<li> TQWidget::setFontPropagation()
+<li> TQWidget::setPalettePropagation()
+</ul>
+<p> Also, to avoid conflicts with <tt>&lt;iostream&gt;</tt>, the following three
+global functions have been renamed:
+<ul>
+<li> setw() (renamed qSetW())
+<li> setfill() (renamed qSetFill())
+<li> setprecision() (renamed qSetPrecision())
+</ul>
+<p> <h2> Obsoleted Functions
+</h2>
+<a name="5"></a><p> The following functions have been obsoleted in TQt 3.0. The
+documentation of each of these functions should explain how to
+replace them in TQt 3.0.
+<p> <b>Warning:</b> It is best to consult <a href="http://doc.trolltech.com/3.0/">http://doc.trolltech.com/3.0/</a>
+rather than the documentation supplied with TQt to obtain the latest
+information regarding obsolete functions and how to replace them in
+new code.
+<p> <ul>
+<li> <a href="ntqaccel.html#keyToString">TQAccel::keyToString</a>( <a href="ntqkeysequence.html">TQKeySequence</a> k )
+<li> <a href="ntqaccel.html#stringToKey">TQAccel::stringToKey</a>( const <a href="ntqstring.html">TQString</a> &amp; s )
+<li> <a href="qactiongroup.html#insert">TQActionGroup::insert</a>( <a href="ntqaction.html">TQAction</a> *a )
+<li> <a href="ntqbutton.html#autoResize">TQButton::autoResize</a>() const
+<li> <a href="ntqbutton.html#setAutoResize">TQButton::setAutoResize</a>( bool )
+<li> <a href="qcanvasitem.html#active">TQCanvasItem::active</a>() const
+<li> <a href="qcanvasitem.html#enabled">TQCanvasItem::enabled</a>() const
+<li> <a href="qcanvasitem.html#selected">TQCanvasItem::selected</a>() const
+<li> <a href="qcanvasitem.html#visible">TQCanvasItem::visible</a>() const
+<li> <a href="qcanvaspixmaparray.html#TQCanvasPixmapArray">TQCanvasPixmapArray::TQCanvasPixmapArray</a>( <a href="ntqptrlist.html">TQPtrList</a>&lt;TQPixmap&gt; list, TQPtrList&lt;TQPoint&gt; hotspots )
+<li> <a href="qcanvaspixmaparray.html#operator!">TQCanvasPixmapArray::operator!</a>()
+<li> <a href="qcolorgroup.html#TQColorGroup">TQColorGroup::TQColorGroup</a>( const <a href="ntqcolor.html">TQColor</a> &amp; foreground, const TQColor &amp; background, const TQColor &amp; light, const TQColor &amp; dark, const TQColor &amp; mid, const TQColor &amp; text, const TQColor &amp; base )
+<li> <a href="ntqcombobox.html#autoResize">TQComboBox::autoResize</a>() const
+<li> <a href="ntqcombobox.html#setAutoResize">TQComboBox::setAutoResize</a>( bool )
+<li> <a href="qdate.html#dayName">TQDate::dayName</a>( int weekday )
+<li> <a href="qdate.html#monthName">TQDate::monthName</a>( int month )
+<li> <a href="ntqdir.html#encodedEntryList">TQDir::encodedEntryList</a>( const <a href="ntqstring.html">TQString</a> &amp; nameFilter, int filterSpec = DefaultFilter, int sortSpec = DefaultSort ) const
+<li> TQDir::encodedEntryList( int filterSpec = DefaultFilter, int sortSpec = DefaultSort ) const
+<li> <a href="ntqdockwindow.html#isHorizontalStretchable">TQDockWindow::isHorizontalStretchable</a>() const
+<li> <a href="ntqdockwindow.html#isVerticalStretchable">TQDockWindow::isVerticalStretchable</a>() const
+<li> <a href="ntqdockwindow.html#setHorizontalStretchable">TQDockWindow::setHorizontalStretchable</a>( bool b )
+<li> <a href="ntqdockwindow.html#setVerticalStretchable">TQDockWindow::setVerticalStretchable</a>( bool b )
+<li> <a href="ntqfont.html#defaultFont">TQFont::defaultFont</a>()
+<li> <a href="ntqfont.html#setDefaultFont">TQFont::setDefaultFont</a>( const <a href="ntqfont.html">TQFont</a> &amp; f )
+<li> <a href="ntqfont.html#setPixelSizeFloat">TQFont::setPixelSizeFloat</a>( float pixelSize )
+<li> <a href="ntqfontdatabase.html#bold">TQFontDatabase::bold</a>( const TQString &amp; family, const TQString &amp; style, const <a href="ntqstring.html">TQString</a> &amp; ) const
+<li> <a href="ntqfontdatabase.html#families">TQFontDatabase::families</a>( bool ) const
+<li> <a href="ntqfontdatabase.html#font">TQFontDatabase::font</a>( const TQString &amp; familyName, const TQString &amp; style, int pointSize, const TQString &amp; )
+<li> <a href="ntqfontdatabase.html#isBitmapScalable">TQFontDatabase::isBitmapScalable</a>( const TQString &amp; family, const TQString &amp; style, const TQString &amp; ) const
+<li> <a href="ntqfontdatabase.html#isFixedPitch">TQFontDatabase::isFixedPitch</a>( const TQString &amp; family, const TQString &amp; style, const TQString &amp; ) const
+<li> <a href="ntqfontdatabase.html#isScalable">TQFontDatabase::isScalable</a>( const TQString &amp; family, const TQString &amp; style, const TQString &amp; ) const
+<li> <a href="ntqfontdatabase.html#isSmoothlyScalable">TQFontDatabase::isSmoothlyScalable</a>( const TQString &amp; family, const TQString &amp; style, const TQString &amp; ) const
+<li> <a href="ntqfontdatabase.html#italic">TQFontDatabase::italic</a>( const <a href="ntqstring.html">TQString</a> &amp; family, const TQString &amp; style, const TQString &amp; ) const
+<li> <a href="ntqfontdatabase.html#pointSizes">TQFontDatabase::pointSizes</a>( const TQString &amp; family, const TQString &amp; style, const TQString &amp; )
+<li> <a href="ntqfontdatabase.html#smoothSizes">TQFontDatabase::smoothSizes</a>( const TQString &amp; family, const TQString &amp; style, const TQString &amp; )
+<li> <a href="ntqfontdatabase.html#styles">TQFontDatabase::styles</a>( const TQString &amp; family, const TQString &amp; ) const
+<li> <a href="ntqfontdatabase.html#weight">TQFontDatabase::weight</a>( const TQString &amp; family, const TQString &amp; style, const TQString &amp; ) const
+<li> <a href="ntqlabel.html#autoResize">TQLabel::autoResize</a>() const
+<li> <a href="ntqlabel.html#setAutoResize">TQLabel::setAutoResize</a>( bool enable )
+<li> <a href="ntqlineedit.html#cursorLeft">TQLineEdit::cursorLeft</a>( bool mark, int steps = 1 )
+<li> <a href="ntqlineedit.html#cursorRight">TQLineEdit::cursorRight</a>( bool mark, int steps = 1 )
+<li> <a href="ntqlineedit.html#hasMarkedText">TQLineEdit::hasMarkedText</a>() const
+<li> <a href="ntqlineedit.html#markedText">TQLineEdit::markedText</a>() const
+<li> <a href="ntqlineedit.html#repaintArea">TQLineEdit::repaintArea</a>( int, int )
+<li> <a href="ntqlistbox.html#cellHeight">TQListBox::cellHeight</a>( int i ) const
+<li> TQListBox::cellHeight() const
+<li> <a href="ntqlistbox.html#cellWidth">TQListBox::cellWidth</a>() const
+<li> <a href="ntqlistbox.html#findItem">TQListBox::findItem</a>( int yPos ) const
+<li> <a href="ntqlistbox.html#inSort">TQListBox::inSort</a>( const <a href="qlistboxitem.html">TQListBoxItem</a> *lbi )
+<li> TQListBox::inSort( const <a href="ntqstring.html">TQString</a> &amp; text )
+<li> <a href="ntqlistbox.html#itemYPos">TQListBox::itemYPos</a>( int index, int *yPos ) const
+<li> <a href="ntqlistbox.html#numCols">TQListBox::numCols</a>() const
+<li> <a href="ntqlistbox.html#totalHeight">TQListBox::totalHeight</a>() const
+<li> <a href="ntqlistbox.html#totalWidth">TQListBox::totalWidth</a>() const
+<li> <a href="qlistboxitem.html#current">TQListBoxItem::current</a>() const
+<li> <a href="qlistboxitem.html#selected">TQListBoxItem::selected</a>() const
+<li> <a href="ntqlistview.html#removeItem">TQListView::removeItem</a>( <a href="qlistviewitem.html">TQListViewItem</a> *item )
+<li> <a href="qlistviewitem.html#removeItem">TQListViewItem::removeItem</a>( TQListViewItem *item )
+<li> <a href="ntqmainwindow.html#addToolBar">TQMainWindow::addToolBar</a>( <a href="ntqdockwindow.html">TQDockWindow</a> *, Dock = DockTop, bool newLine = false )
+<li> TQMainWindow::addToolBar( TQDockWindow *, const TQString &amp; label, Dock = DockTop, bool newLine = false )
+<li> <a href="ntqmainwindow.html#lineUpToolBars">TQMainWindow::lineUpToolBars</a>( bool keepNewLines = false )
+<li> <a href="ntqmainwindow.html#moveToolBar">TQMainWindow::moveToolBar</a>( TQDockWindow *, Dock = DockTop )
+<li> TQMainWindow::moveToolBar( TQDockWindow *, Dock, bool nl, int index, int extraOffset = -1 )
+<li> <a href="ntqmainwindow.html#removeToolBar">TQMainWindow::removeToolBar</a>( TQDockWindow *)
+<li> <a href="ntqmainwindow.html#setToolBarsMovable">TQMainWindow::setToolBarsMovable</a>( bool )
+<li> <a href="ntqmainwindow.html#toolBarPositionChanged">TQMainWindow::toolBarPositionChanged</a>( <a href="ntqtoolbar.html">TQToolBar</a> *)
+<li> <a href="ntqmainwindow.html#toolBarsMovable">TQMainWindow::toolBarsMovable</a>() const
+<li> <a href="ntqmessagebox.html#message">TQMessageBox::message</a>( const <a href="ntqstring.html">TQString</a> &amp; caption, const TQString &amp; text, const TQString &amp; buttonText = <a href="ntqstring.html#TQString-null">TQString::null</a>, <a href="ntqwidget.html">TQWidget</a> *parent = 0, const char *= 0 )
+<li> <a href="ntqmessagebox.html#query">TQMessageBox::query</a>( const TQString &amp; caption, const TQString &amp; text, const TQString &amp; yesButtonText = TQString::null, const TQString &amp; noButtonText = TQString::null, TQWidget *parent = 0, const char *= 0 )
+<li> <a href="ntqmessagebox.html#standardIcon">TQMessageBox::standardIcon</a>( Icon icon, GUIStyle style )
+<li> <a href="ntqpalette.html#normal">TQPalette::normal</a>()
+<li> <a href="ntqregexp.html#match">TQRegExp::match</a>( const TQString &amp; str, int index = 0, int *len = 0, bool indexIsStart = true ) const
+<li> <a href="ntqscrollview.html#childIsVisible">TQScrollView::childIsVisible</a>( TQWidget *child )
+<li> <a href="ntqscrollview.html#showChild">TQScrollView::showChild</a>( TQWidget *child, bool show = true )
+<li> <a href="ntqsignal.html#block">TQSignal::block</a>( bool b )
+<li> <a href="ntqsignal.html#isBlocked">TQSignal::isBlocked</a>() const
+<li> <a href="ntqsignal.html#parameter">TQSignal::parameter</a>() const
+<li> <a href="ntqsignal.html#setParameter">TQSignal::setParameter</a>( int value )
+<li> <a href="ntqsimplerichtext.html#draw">TQSimpleRichText::draw</a>( <a href="ntqpainter.html">TQPainter</a> *p, int x, int y, const <a href="ntqregion.html">TQRegion</a> &amp; clipRegion, const <a href="qcolorgroup.html">TQColorGroup</a> &amp; cg, const <a href="ntqbrush.html">TQBrush</a> *paper = 0 ) const
+<li> <a href="ntqstring.html#ascii">TQString::ascii</a>() const
+<li> <a href="ntqstring.html#data">TQString::data</a>() const
+<li> <a href="ntqstring.html#setExpand">TQString::setExpand</a>( uint index, <a href="qchar.html">TQChar</a> c )
+<li> <a href="ntqstyle.html#defaultFrameWidth">TQStyle::defaultFrameWidth</a>() const
+<li> <a href="ntqstyle.html#scrollBarExtent">TQStyle::scrollBarExtent</a>() const
+<li> <a href="ntqstyle.html#tabbarMetrics">TQStyle::tabbarMetrics</a>( const <a href="ntqwidget.html">TQWidget</a> *t, int &amp; hf, int &amp; vf, int &amp; ov ) const
+<li> <a href="ntqtabdialog.html#isTabEnabled">TQTabDialog::isTabEnabled</a>( const char *name ) const
+<li> <a href="ntqtabdialog.html#selected">TQTabDialog::selected</a>( const <a href="ntqstring.html">TQString</a> &amp; )
+<li> TQTabDialog::selected( const TQString &amp; tabLabel )
+<li> <a href="ntqtabdialog.html#setTabEnabled">TQTabDialog::setTabEnabled</a>( const char *name, bool enable )
+<li> <a href="ntqtextstream.html#TQTextStream">TQTextStream::TQTextStream</a>( TQString &amp; str, int filemode )
+<li> <a href="ntqtoolbar.html#TQToolBar">TQToolBar::TQToolBar</a>( const TQString &amp; label, <a href="ntqmainwindow.html">TQMainWindow</a> *, ToolBarDock = DockTop, bool newLine = false, const char *name = 0 )
+<li> <a href="ntqtoolbutton.html#iconSet">TQToolButton::iconSet</a>( bool on ) const
+<li> <a href="ntqtoolbutton.html#offIconSet">TQToolButton::offIconSet</a>() const
+<li> <a href="ntqtoolbutton.html#onIconSet">TQToolButton::onIconSet</a>() const
+<li> <a href="ntqtoolbutton.html#setIconSet">TQToolButton::setIconSet</a>( const <a href="ntqiconset.html">TQIconSet</a> &amp; set, bool on )
+<li> <a href="ntqtoolbutton.html#setOffIconSet">TQToolButton::setOffIconSet</a>( const TQIconSet &amp; )
+<li> <a href="ntqtoolbutton.html#setOnIconSet">TQToolButton::setOnIconSet</a>( const TQIconSet &amp; )
+<li> <a href="ntqtooltip.html#enabled">TQToolTip::enabled</a>()
+<li> <a href="ntqtooltip.html#setEnabled">TQToolTip::setEnabled</a>( bool enable )
+<li> <a href="ntqtranslator.html#find">TQTranslator::find</a>( const char *context, const char *sourceText, const char *comment = 0 ) const
+<li> <a href="ntqtranslator.html#insert">TQTranslator::insert</a>( const char *context, const char *sourceText, const <a href="ntqstring.html">TQString</a> &amp; translation )
+<li> <a href="ntqtranslator.html#remove">TQTranslator::remove</a>( const char *context, const char *sourceText )
+<li> <a href="quridrag.html#setFilenames">TQUriDrag::setFilenames</a>( const <a href="ntqstringlist.html">TQStringList</a> &amp; fnames )
+<li> <a href="ntqwidget.html#backgroundColor">TQWidget::backgroundColor</a>() const
+<li> <a href="ntqwidget.html#backgroundPixmap">TQWidget::backgroundPixmap</a>() const
+<li> <a href="ntqwidget.html#iconify">TQWidget::iconify</a>()
+<li> <a href="ntqwidget.html#setBackgroundColor">TQWidget::setBackgroundColor</a>( const <a href="ntqcolor.html">TQColor</a> &amp; c )
+<li> <a href="ntqwidget.html#setBackgroundPixmap">TQWidget::setBackgroundPixmap</a>( const <a href="ntqpixmap.html">TQPixmap</a> &amp; pm )
+<li> <a href="ntqwidget.html#setFont">TQWidget::setFont</a>( const <a href="ntqfont.html">TQFont</a> &amp; f, bool )
+<li> <a href="ntqwidget.html#setPalette">TQWidget::setPalette</a>( const <a href="ntqpalette.html">TQPalette</a> &amp; p, bool )
+<li> <a href="ntqwizard.html#setFinish">TQWizard::setFinish</a>( <a href="ntqwidget.html">TQWidget</a> *, bool )
+<li> <a href="qxmlinputsource.html#TQXmlInputSource">TQXmlInputSource::TQXmlInputSource</a>( <a href="ntqfile.html">TQFile</a> &amp; file )
+<li> TQXmlInputSource::TQXmlInputSource( <a href="ntqtextstream.html">TQTextStream</a> &amp; stream )
+<li> <a href="qxmlreader.html#parse">TQXmlReader::parse</a>( const <a href="qxmlinputsource.html">TQXmlInputSource</a> &amp; input )
+</ul>
+<p> Additionally, these preprocessor directives have been removed:
+<p> <ul>
+<li> <tt>#define strlen tqstrlen</tt>
+<li> <tt>#define strcpy qstrcpy</tt>
+<li> <tt>#define strcmp qstrcmp</tt>
+<li> <tt>#define strncmp tqstrncmp</tt>
+<li> <tt>#define stricmp tqstricmp</tt>
+<li> <tt>#define strnicmp tqstrnicmp</tt>
+</ul>
+<p> See the changes-3.0.0 document for an explanation of why this had to be done.
+You might have been relying on the non-portable and unpredictable behavior
+resulting from these directives. We strongly recommend that you either make
+use of the safe qstr* variants directly or ensure that no 0 pointer is
+passed to the standard C functions in your code base.
+<p> <h2> Collection Class Renaming
+</h2>
+<a name="6"></a><p> The classes TQArray, TQCollection, TQList, TQListIterator, TQQueue, TQStack
+and TQVector have been renamed as per the following table. The original
+names are no longer avaialable.
+<p> <center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#a2c511"> <th valign="top">Old Name <th valign="top">New Name <th valign="top">New Header File
+<tr bgcolor="#f0f0f0"> <td valign="top">TQArray <td valign="top"><a href="ntqmemarray.html">TQMemArray</a> <td valign="top"><tt>&lt;ntqmemarray.h&gt;</tt>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQCollection <td valign="top"><a href="ntqptrcollection.html">TQPtrCollection</a> <td valign="top"><tt>&lt;ntqptrcollection.h&gt;</tt>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQList <td valign="top"><a href="ntqptrlist.html">TQPtrList</a> <td valign="top"><tt>&lt;ntqptrlist.h&gt;</tt>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQListIterator <td valign="top"><a href="qptrlistiterator.html">TQPtrListIterator</a> <td valign="top"><tt>&lt;ntqptrlist.h&gt;</tt>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQQueue <td valign="top"><a href="ntqptrqueue.html">TQPtrQueue</a> <td valign="top"><tt>&lt;ntqptrqueue.h&gt;</tt>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQStack <td valign="top"><a href="ntqptrstack.html">TQPtrStack</a> <td valign="top"><tt>&lt;ntqptrstack.h&gt;</tt>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQVector <td valign="top"><a href="ntqptrvector.html">TQPtrVector</a> <td valign="top"><tt>&lt;ntqptrvector.h&gt;</tt>
+</table></center>
+<p> <h2> <a href="ntqbuttongroup.html">TQButtonGroup</a>
+</h2>
+<a name="7"></a><p> In TQt 2.x, the function <a href="ntqbuttongroup.html#selected">TQButtonGroup::selected</a>() returns the selected
+<em>radio</em> button (<a href="ntqradiobutton.html">TQRadioButton</a>). In TQt 3.0, it returns the selected <em>toggle</em> button (<a href="ntqbutton.html#toggleButton-prop">TQButton::toggleButton</a>), a more general concept.
+This might affect programs that use TQButtonGroups that contain a
+mixture of radio buttons and non-radio (e.g. <a href="ntqcheckbox.html">TQCheckBox</a>) toggle buttons.
+<p> <h2> <a href="qdate.html">TQDate</a>
+</h2>
+<a name="8"></a><p> Two TQDate member functions that were virtual in TQt 2.0 are not virtual
+in TQt 3.0. This is only relevant if you subclassed TQDate and
+reimplemented these functions:
+<p> <ul>
+<li> <a href="ntqstring.html">TQString</a> <a href="qdate.html#monthName">TQDate::monthName</a>( int month ) const
+<li> TQString <a href="qdate.html#dayName">TQDate::dayName</a>( int weekday ) const
+</ul>
+<p> In addition to no longer being virtual, TQDate::monthName() and
+TQDate::dayName() have been renamed <a href="qdate.html#shortMonthName">TQDate::shortMonthName</a>() and
+<a href="qdate.html#shortDayName">TQDate::shortDayName</a>() and have been made static (as they should had
+been in the first place). The old names are still provided for source
+compatibility.
+<p> <h2> <a href="ntqfiledialog.html">TQFileDialog</a>
+</h2>
+<a name="9"></a><p> If the mode was not set explicitly, and the user entered a
+non-existent file, the dialog would accept this. In TQt 3.x, you must
+set the mode, e.g. setMode(TQFileDialog::AnyFile), to get the same
+behavior.
+<p> <h2> <a href="ntqfont.html">TQFont</a>
+</h2>
+<a name="10"></a><p> The internals of TQFont have changed significantly between TQt 2.2 and
+TQt 3.0, to give better Unicode support and to make developing
+internationalized applications easier. The original API has been
+preserved with minimal changes. The CharSet enum and its related
+functions have disappeared. This is because TQt now handles all charset
+related issues internally, and removes this burden from the developer.
+<p> If you used the CharSet enum or its related functions, e.g
+TQFont::charSet() or TQFont::setCharSet(), just remove them from your
+code. There are a few functions that took a TQFont::CharSet as a
+parameter; in these cases simply remove the charset from the
+parameter list.
+<p> <h2> <a href="ntqinputdialog.html">TQInputDialog</a>
+</h2>
+<a name="11"></a><p> The two static getText(...) methods in TQInputDialog have been merged. 
+The <tt>echo</tt> parameter is the third parameter and defaults to 
+TQLineEdit::Normal. 
+<p> If you used calls to <a href="ntqinputdialog.html#getText">TQInputDialog::getText</a>(...) that provided more 
+than the first two required parameters you will must add a value 
+for the <tt>echo</tt> parameter.
+<p> <h2> <a href="ntqlayout.html">TQLayout</a> and Other Abstract Layout Classes
+</h2>
+<a name="12"></a><p> The definitions of <a href="qglayoutiterator.html">TQGLayoutIterator</a>, <a href="ntqlayout.html">TQLayout</a>, <a href="qlayoutitem.html">TQLayoutItem</a>, <a href="qlayoutiterator.html">TQLayoutIterator</a>, <a href="qspaceritem.html">TQSpacerItem</a> and <a href="qwidgetitem.html">TQWidgetItem</a> have been moved from <tt>&lt;ntqabstractlayout.h&gt;</tt> to <tt>&lt;ntqlayout.h&gt;</tt>. The header <tt>&lt;ntqabstractlayout.h&gt;</tt> now includes <tt>&lt;ntqlayout.h&gt;</tt> for compatibility. It
+might be removed in a future version.
+<p> <h2> <a href="qlistviewitem.html">TQListViewItem</a>
+</h2>
+<a name="13"></a><p> The paintBranches() function in TQt 2.x had a GUIStyle parameter; this
+has been dropped for TQt 3.x since GUI style is handled by the new
+style engine (See <a href="ntqstyle.html">TQStyle</a>.)
+<p> <h2> <a href="qmoveevent.html">TQMoveEvent</a>
+</h2>
+<a name="14"></a><p> In TQt 2.x, the function <a href="qmoveevent.html#pos">TQMoveEvent::pos</a>() returned the position of the
+widget in its parent widget, including the window frame. In TQt 3.0,
+it returns the new position of the widget, excluding window frame for
+top level widgets.
+<p> <h2> TQMultiLineEdit
+</h2>
+<a name="15"></a><p> The TQMultiLineEdit was a simple editor widget in previous TQt versions.
+Since TQt 3.0 includes a new richtext engine, which also supports
+editing, TQMultiLineEdit is obsolete. For the sake of compatibility
+TQMultiLineEdit is still provided. It is now a subclass of <a href="ntqtextedit.html">TQTextEdit</a>
+which wraps the old TQMultiLineEdit so that it is mostly source
+compatible to keep old applications working.
+<p> For new applications and when maintaining existing applications we
+recommend that you use TQTextEdit instead of TQMultiLineEdit wherever
+possible.
+<p> Although most of the old TQMultiLineEdit API is still available, there
+is one important difference. The old TQMultiLineEdit operated in terms
+of lines, whereas TQTextEdit operates in terms of paragraphs. This is
+because lines change all the time during wordwrap, whereas paragraphs
+remain paragraphs. The consequence of this change is that functions
+which previously operated on lines, e.g. numLines(), textLine(), etc.,
+now work on paragraphs.
+<p> Also the function getString() has been removed since it
+published the internal data structure.
+<p> In most cases, applications that used TQMultiLineEdit will continue to
+work without problems. Applications that worked in terms of lines may
+require some porting.
+<p> The source code for the old 2.x version of TQMultiLineEdit can be found
+in <tt>$TQTDIR/src/attic/qtmultilineedit.h/cpp</tt>. Note that the class has
+been renamed to TQtMultiLineEdit to avoid name clashes. If you really
+need to keep compatibility with the old TQMultiLineEdit, simply include
+this class in your project and rename TQMultiLineEdit to
+TQtMultiLineEdit throughout.
+<p> <h2> <a href="ntqprinter.html">TQPrinter</a>
+</h2>
+<a name="16"></a><p> TQPrinter has undergone some changes, to make it more flexible and
+to ensure it has the same runtime behaviour on both Unix and Windows. In 2.x,
+TQPrinter behaved differently on Windows and Unix, when using view
+transformations on the <a href="ntqpainter.html">TQPainter</a>. This has changed now, and TQPrinter
+behaves consistently across all platforms. A compatibilty mode has been
+added that forces the old behaviour, to ease porting from TQt 2.x
+to TQt 3.x. This compatibilty mode can be enabled by passing the
+TQPrinter::Compatible flag to the TQPrinter constructor.
+<p> On X11, TQPrinter used to generate encapsulated postscript when
+fullPage() was true and only one page was printed. This does not
+happen by default anymore, providing a more consistent printing output.
+<p> <h2> <a href="ntqregexp.html">TQRegExp</a>
+</h2>
+<a name="17"></a><p> The <a href="ntqregexp.html">TQRegExp</a> class has been rewritten to support many of the features of Perl
+regular expressions.  Both the <a href="ntqregexp.html#regular-expression">regular expression</a> syntax and the TQRegExp
+interface have been modified.
+<p> Be also aware that <tt>&lt;ntqregexp.h&gt;</tt> is no longer included
+automatically when you include <tt>&lt;ntqstringlist.h&gt;</tt>. See
+<a href="#Headers">above</a> for details.
+<p> 
+<p> <h3> New special characters
+</h3>
+<a name="17-1"></a><p> There are five new special characters: <tt>(</tt>, <tt>)</tt>, <tt>{</tt>,
+<tt>|</tt> and <tt>}</tt> (parentheses, braces and pipe). When porting old
+regular expressions, you must add <tt>&#92;</tt> (backslash) in front of any
+of these (actually, <tt>&#92;&#92;</tt> in C++ strings), unless it is already
+there.
+<p> Example: Old code like
+<pre>
+    <a href="ntqregexp.html">TQRegExp</a> rx( "([0-9|]*\\)" );        // works in TQt 2.x
+</pre>
+ 
+should be converted into
+<pre>
+    <a href="ntqregexp.html">TQRegExp</a> rx( "\\([0-9\\|]*\\)" );      // works in TQt 2.x and 3.x
+</pre>
+ 
+(Within character classes, the backslash is not necessary in front of certain
+characters, e.g. <tt>|</tt>, but it doesn't hurt.)
+<p> Wildcard patterns need no conversion.  Here are two examples:
+<pre>
+    <a href="ntqregexp.html">TQRegExp</a> wild( "(*.*)" );
+    wild.<a href="ntqregexp.html#setWildcard">setWildcard</a>( true );
+</pre>
+ 
+<pre>
+    // true as third argument means wildcard
+    <a href="ntqregexp.html">TQRegExp</a> wild( "(*.*)", false, true );
+</pre>
+ 
+However, when they are used, make sure to use <a href="ntqregexp.html#exactMatch">TQRegExp::exactMatch</a>()
+rather than the obsolete <a href="ntqregexp.html#match">TQRegExp::match</a>(). TQRegExp::match(), like
+TQRegExp::find(), tries to find a match somewhere in the target
+string, while TQRegExp::exactMatch() tries to match the whole target
+string.
+<p> <h3> <a href="ntqregexp.html#operator-eq">TQRegExp::operator=</a>()
+</h3>
+<a name="17-2"></a><p> This function has been replaced by <a href="ntqregexp.html#setPattern">TQRegExp::setPattern</a>() in TQt 2.2.
+Old code such as
+<pre>
+    <a href="ntqregexp.html">TQRegExp</a> rx( "alpha" );
+    rx.<a href="ntqregexp.html#setCaseSensitive">setCaseSensitive</a>( false );
+    rx.<a href="ntqregexp.html#setWildcard">setWildcard</a>( true );
+    rx = "beta";
+</pre>
+ 
+still compiles with TQt 3, but produces a different result (the case sensitivity
+and wildcard options are forgotten). This way,
+<pre>
+    rx = "beta";
+</pre>
+ 
+is the same as
+<pre>
+    rx = TQRegExp( "beta" );
+</pre>
+ 
+which is what one expects.
+<p> <h3> TQRegExp::match()
+</h3>
+<a name="17-3"></a><p> The following function is now obsolete, as it has an unwieldy
+parameter list and was poorly named:
+<ul>
+<li> bool <a href="ntqregexp.html#match">TQRegExp::match</a>( const <a href="ntqstring.html">TQString</a> &amp; str, int index = 0,
+int * len = 0, bool indexIsStart = true ) const
+</ul>
+It will be removed in a future version of TQt. Its <a href="ntqregexp.html#match">documentation</a> explains how to replace it.
+<p> <h3> TQRegExp::find()
+</h3>
+<a name="17-4"></a><p> This function was removed, after a brief appearance in TQt 2.2.  Its
+name clashed with <a href="ntqstring.html#find">TQString::find</a>().  Use <a href="ntqregexp.html#search">TQRegExp::search</a>() or <a href="ntqstring.html#find">TQString::find</a>() instead.
+<p> <h3> <a href="ntqstring.html#findRev">TQString::findRev</a>() and <a href="ntqstring.html#contains">TQString::contains</a>()
+</h3>
+<a name="17-5"></a><p> <a href="ntqstring.html#findRev">TQString::findRev</a>()'s and <a href="ntqstring.html#contains">TQString::contains</a>()'s semantics have changed
+between 2.0 and 3.0 to be more consistent with the other overloads.
+<p> For example,
+<pre>
+    TQString( "" ).contains( TQRegExp("") )
+</pre>
+ 
+returns 1 in TQt 2.0; it returns 0 in TQt 3.0. Also, "^" now really means
+start of input, so
+<pre>
+    TQString( "Heisan Hoppsan" ).contains( TQRegExp("^.*$") )
+</pre>
+ 
+returns 1, not 13 or 14.
+<p> This change affect very few existing programs.
+<p> <h3> <a href="ntqstring.html#replace">TQString::replace</a>()
+</h3>
+<a name="17-6"></a><p> With TQt 1.0 and 2.0, a <a href="ntqstring.html">TQString</a> is converted implicitly into a <a href="ntqregexp.html">TQRegExp</a>
+as the first argument to TQString::replace():
+<pre>
+    <a href="ntqstring.html">TQString</a> text = fetch_it_from_somewhere();
+    text.<a href="ntqstring.html#replace">replace</a>( TQString("[A-Z]+"), "" );
+</pre>
+ 
+With TQt 3.0, the compiler gives an error. The solution is to use a
+TQRegExp cast:
+<pre>
+    text.replace( TQRegExp("[A-Z]+"), "" );
+</pre>
+ 
+This change makes it possible to introduce a
+TQString::replace(TQString, TQString) overload in a future version of TQt
+without breaking source compatibility.
+<p> <h2> TQSemiModal 
+</h2>
+<a name="18"></a><p> The TQSemiModal class is now obsolete. You should call show() on a
+modal dialog instead.
+<p> <h2> TQSortedList
+</h2>
+<a name="19"></a><p> The TQSortedList class is now obsolete. Consider using a <a href="ntqdict.html">TQDict</a>, a <a href="ntqmap.html">TQMap</a>
+or a plain <a href="ntqptrlist.html">TQPtrList</a> instead.
+<p> <h2> TQTableView
+</h2>
+<a name="20"></a><p> The TQTableView class has been obsoleted and is no longer a part of the
+TQt API. Either use the powerful <a href="ntqtable.html">TQTable</a> class or the simplistic
+<a href="ntqgridview.html">TQGridView</a> in any new code you create. If you really need the old table
+view for compatibility you can find it in <tt>$TQTDIR/src/attic/qttableview.{cpp,h}</tt>. Note that the class has been
+renamed from TQTableView to TQtTableView to avoid name clashes. To use
+it, simply include it in your project and rename TQTableView to
+TQtTableView throughout.
+<p> <h2> <a href="ntqtoolbutton.html">TQToolButton</a>
+</h2>
+<a name="21"></a><p> The <a href="ntqtoolbutton.html">TQToolButton</a> class used to distinguish between "on" and "off"
+icons. In 3.0, this mechanism was moved into the <a href="ntqiconset.html">TQIconSet</a> class
+(see <a href="ntqiconset.html#State-enum">TQIconSet::State</a>).
+<p> The old <a href="ntqtoolbutton.html#onIconSet-prop">TQToolButton::onIconSet</a> and <a href="ntqtoolbutton.html#offIconSet-prop">TQToolButton::offIconSet</a>
+properties are still provided so that old source will compile, but
+their semantics have changed: they are now synonyms for <a href="ntqtoolbutton.html#iconSet-prop">TQToolButton::iconSet</a>. If you used that distinction in TQt 2.x, you will
+need to adjust your code to use the <a href="ntqiconset.html">TQIconSet</a> On/Off mechanism.
+<p> Likewise, the <em>on</em> parameter of these two functions is now ignored:
+<p> <ul>
+<li> void TQToolButton::setIconSet ( const TQIconSet &amp; set, bool on )
+<li> TQIconSet TQToolButton::iconSet ( bool on ) const
+</ul>
+<p> These functions are only provided for ease of porting. New code
+should use the following instead:
+<p> <ul>
+<li> void <a href="ntqtoolbutton.html#setIconSet">TQToolButton::setIconSet</a>( const TQIconSet &amp; set )
+<li> TQIconSet <a href="ntqtoolbutton.html#iconSet">TQToolButton::iconSet</a>() const
+</ul>
+<p> Finally, this function is no longer virtual:
+<p> <ul>
+<li> void TQToolButton::setIconSet( const TQIconSet &amp; set, bool on )
+</ul>
+<p> If you have a class that inherits <a href="ntqtoolbutton.html">TQToolButton</a> and that reimplements
+TQToolButton::setIconSet(), you should make the signature of the
+reimplementation agree with the new <a href="ntqtoolbutton.html#setIconSet">TQToolButton::setIconSet</a>(),
+a virtual function.
+<p> <h2> <a href="ntqtextstream.html">TQTextStream</a>
+</h2>
+<a name="22"></a><p> The global TQTextStream manipulators setw(), setfill() and setprecison()
+were renamed to qSetW(), qSetFill() and qSetPrecision() to avoid conflicts
+with <tt>&lt;iostream.h&gt;</tt>. If you used them, you must rename the occurrences to
+the new names.
+<p> <h2> <a href="ntqtranslator.html">TQTranslator</a>
+</h2>
+<a name="23"></a><p> The <a href="ntqtranslator.html">TQTranslator</a> class was extended in TQt 2.2, and these extensions
+lead to a new interface.  This interface is used mainly by translation
+tools (for example, <a href="linguist-manual.html">TQt
+Linguist</a>).  For source compatibility, no member function was
+effectively removed.  The <a href="ntqtranslator.html">TQTranslator</a> documentation points out
+which functions are obsolete.
+<p> This function is no longer virtual:
+<p> <ul>
+<li> <a href="ntqstring.html">TQString</a> <a href="ntqtranslator.html#find">TQTranslator::find</a>( const char * context,
+const char * sourceText ) const
+</ul>
+<p> If you have a class that inherits TQTranslator and which reimplements
+TQTranslator::find(), you should reimplement <a href="ntqtranslator.html#findMessage">TQTranslator::findMessage</a>() instead.
+In fact, find() is now defined in terms of findMessage().  By doing the
+conversion, you will also gain support for translator comments and for any
+future extensions.
+<p> <h2> <a href="ntqwidget.html">TQWidget</a>
+</h2>
+<a name="24"></a><p> <a href="ntqwidget.html#backgroundColor">TQWidget::backgroundColor</a>(), <a href="ntqwidget.html#setBackgroundColor">TQWidget::setBackgroundColor</a>(),
+<a href="ntqwidget.html#backgroundPixmap">TQWidget::backgroundPixmap</a>() and <a href="ntqwidget.html#setBackgroundPixmap">TQWidget::setBackgroundPixmap</a>() have
+often been the source of much confusion in previous releases. TQt 3.0
+addresses this by obsoleting these functions and by replacing them
+with eight new functions: <a href="ntqwidget.html#eraseColor">TQWidget::eraseColor</a>(),
+<a href="ntqwidget.html#setEraseColor">TQWidget::setEraseColor</a>(), <a href="ntqwidget.html#erasePixmap">TQWidget::erasePixmap</a>(),
+<a href="ntqwidget.html#setErasePixmap">TQWidget::setErasePixmap</a>(), <a href="ntqwidget.html#paletteBackgroundColor">TQWidget::paletteBackgroundColor</a>(),
+<a href="ntqwidget.html#setPaletteBackgroundColor">TQWidget::setPaletteBackgroundColor</a>(),
+<a href="ntqwidget.html#paletteBackgroundPixmap">TQWidget::paletteBackgroundPixmap</a>() and
+<a href="ntqwidget.html#setPaletteBackgroundPixmap">TQWidget::setPaletteBackgroundPixmap</a>(). See their documentation for
+details.
+<p> <h2> TQXml Classes
+</h2>
+<a name="25"></a><p> <h3> <a href="qxmlinputsource.html">TQXmlInputSource</a>
+</h3>
+<a name="25-1"></a><p> The semantics of TQXmlInputSource has changed slightly. This change
+only affects code that parses the same data from the same input source
+multiple times. In such cases you must call
+<a href="qxmlinputsource.html#reset">TQXmlInputSource::reset</a>() before the second call to
+<a href="qxmlsimplereader.html#parse">TQXmlSimpleReader::parse</a>().
+<p> So code like
+<pre>
+    <a href="qxmlinputsource.html">TQXmlInputSource</a> source( &amp;xmlFile );
+    <a href="qxmlsimplereader.html">TQXmlSimpleReader</a> reader;
+    ...
+    reader.<a href="qxmlsimplereader.html#parse">parse</a>( source );
+    ...
+    reader.<a href="qxmlsimplereader.html#parse">parse</a>( source );
+</pre>
+ 
+must be changed to
+<pre>
+    <a href="qxmlinputsource.html">TQXmlInputSource</a> source( &amp;xmlFile );
+    <a href="qxmlsimplereader.html">TQXmlSimpleReader</a> reader;
+    ...
+    reader.<a href="qxmlsimplereader.html#parse">parse</a>( source );
+    ...
+    source.<a href="qxmlinputsource.html#reset">reset</a>();
+    reader.<a href="qxmlsimplereader.html#parse">parse</a>( source );
+</pre>
+ 
+<p> <h3> <a href="qxmllocator.html">TQXmlLocator</a>
+</h3>
+<a name="25-2"></a><p> Due to some internal changes, it was necessary to clean-up the semantics of
+TQXmlLocator: this class is now an abstract class. This shouldn't cause
+any problems, since programmers usually used the TQXmlLocator that was
+reported by <a href="qxmlcontenthandler.html#setDocumentLocator">TQXmlContentHandler::setDocumentLocator</a>(). If you used this
+class in some other way, you must adjust your code to use the
+TQXmlLocator that is reported by the
+TQXmlContentHandler::setDocumentLocator() function.
+<p> <h2> Asynchronous I/O Classes
+</h2>
+<a name="26"></a><p> TQASyncIO, TQDataSink, TQDataSource, TQIODeviceSource and TQDataPump were
+used internally in previous versions of TQt, but are not used anymore.
+They are now obsolete.
+<p> <h2> Transparent widgets
+</h2>
+<a name="27"></a><p> In TQt 2.x, the AutoMask property was used to obtain a
+transparent-looking widget. In general, this approach is slow and
+processor hungry. TQt 3.0 uses the BackgroundOrigin which provides
+vastly improved performance and more flexibility in most cases. The
+few classes for which the AutoMask property is still the best approach
+are <a href="ntqcheckbox.html">TQCheckBox</a>, <a href="ntqcombobox.html">TQComboBox</a>, <a href="ntqpushbutton.html">TQPushButton</a>, <a href="ntqradiobutton.html">TQRadioButton</a> and <a href="ntqtabwidget.html">TQTabWidget</a>.
+<p> <h2> Bezier Curves
+</h2>
+<a name="28"></a><p> The function names for Bezier curves in <a href="ntqpainter.html">TQPainter</a> and <a href="ntqpointarray.html">TQPointArray</a> have
+been corrected. They now properly reflect their cubic form instead of
+a quadratic one. If you have been using either
+TQPainter::drawQuadBezier() or TQPointArray::quadBezier() you must
+replace these calls with
+<ul>
+<li> void <a href="ntqpainter.html#drawCubicBezier">TQPainter::drawCubicBezier</a>( const TQPointArray &amp;, int index=0 ) and
+<li> TQPointArray <a href="ntqpointarray.html#cubicBezier">TQPointArray::cubicBezier</a>() const
+</ul>
+respectively. Neither the arguments nor the resulting curve have changed.
+<p> <h2> Locale-aware String Comparisons in <a href="ntqiconview.html">TQIconView</a>, <a href="ntqlistbox.html">TQListBox</a>,
+<a href="ntqlistview.html">TQListView</a> and <a href="ntqtable.html">TQTable</a>
+</h2>
+<a name="29"></a><p> In TQt 2.x, <a href="ntqstring.html">TQString</a> only provided string comparisons using the Unicode
+values of the characters of a string. This is efficient and reliable,
+but it is not the appropriate order for most languages. For example,
+French users expect '&eacute;' (e acute) to be treated essentially as
+'e' and not put after 'z'.
+<p> In TQt 3.0, <a href="ntqstring.html#localeAwareCompare">TQString::localeAwareCompare</a>() implements locale aware
+string comparisions on certain platforms. The classes <a href="ntqiconview.html">TQIconView</a>, <a href="ntqlistbox.html">TQListBox</a>, <a href="ntqlistview.html">TQListView</a> and <a href="ntqtable.html">TQTable</a> now use
+TQString::localeAwareCompare() instead of <a href="ntqstring.html#compare">TQString::compare</a>(). If you
+want to control the behaviour yourself you can always reimplement
+<a href="qiconviewitem.html#compare">TQIconViewItem::compare</a>(), <a href="ntqlistbox.html#text">TQListBox::text</a>(), <a href="qlistviewitem.html#compare">TQListViewItem::compare</a>()
+or <a href="qtableitem.html#key">TQTableItem::key</a>() as appropriate.
+<p> 
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

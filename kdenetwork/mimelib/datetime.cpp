@@ -288,7 +288,7 @@ void DwDateTime::Parse()
         str = new char [mString.length()+1];
     }
     else {
-        mustDelete = 0;
+        mustDelete = TQString();
         str = buffer;
     }
     strncpy(str, mString.data(), mString.length());
@@ -310,8 +310,8 @@ void DwDateTime::Parse()
         mMonth  = 1;
         mDay    = 1;
         mHour   = 0;
-        mMinute = 0;
-        mSecond = 0;
+        mMinute = TQString();
+        mSecond = TQString();
         mZone   = 0;
     }
     if (mustDelete) {

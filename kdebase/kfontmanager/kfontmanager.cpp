@@ -460,7 +460,7 @@ void KFontManager::setColors(){
      primary task of those label is to display the text clearly
      an visibly and not to look pretty ...*/
 
-  QPalette mypalette = (example_label->palette()).copy();
+  QPalette mypalette = (example_label->palette());
 
   QColorGroup cgrp = mypalette.normal();
   QColorGroup ncgrp(black,cgrp.background(),

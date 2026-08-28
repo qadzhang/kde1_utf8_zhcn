@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqwidgetfactory.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqwidgetfactory.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqwidgetfactory.h</h1>
+
+<p>This is the verbatim text of the ntqwidgetfactory.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/**********************************************************************
+** Copyright (C) 2005-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of TQt Designer.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** Licensees holding valid TQt Commercial licenses may use this file in
+** accordance with the TQt Commercial License Agreement provided with
+** the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQWIDGETFACTORY_H
+#define TQWIDGETFACTORY_H
+
+#ifndef QT_H
+#include &lt;ntqstring.h&gt;
+#include &lt;ntqptrlist.h&gt;
+#include &lt;ntqimage.h&gt;
+#include &lt;ntqpixmap.h&gt;
+#include &lt;ntqvaluelist.h&gt;
+#include &lt;ntqmap.h&gt;
+#include &lt;ntqaction.h&gt;
+#endif // QT_H
+
+class TQDomDocument;
+class TQDomElement;
+class TQLayout;
+class TQListView;
+class TQListViewItem;
+class TQMenuBar;
+class TQTable;
+class TQWidget;
+class TQWidgetFactoryPrivate;
+class UibStrTable;
+
+class TQWidgetFactory
+{
+public:
+    TQWidgetFactory();
+    virtual ~TQWidgetFactory();
+
+    static TQWidget *create( const TQString &amp;uiFile, TQObject *connector = 0, TQWidget *parent = 0, const char *name = 0 );
+    static TQWidget *create( TQIODevice *dev, TQObject *connector = 0, TQWidget *parent = 0, const char *name = 0 );
+    static void addWidgetFactory( TQWidgetFactory *factory );
+    static void loadImages( const TQString &amp;dir );
+
+    virtual TQWidget *createWidget( const TQString &amp;className, TQWidget *parent, const char *name ) const;
+    static TQStringList widgets();
+    static bool supportsWidget( const TQString &amp;widget );
+
+private:
+    enum LayoutType { HBox, VBox, Grid, NoLayout };
+    void loadImageCollection( const TQDomElement &amp;e );
+    void loadConnections( const TQDomElement &amp;e, TQObject *connector );
+    void loadTabOrder( const TQDomElement &amp;e );
+    TQWidget *createWidgetInternal( const TQDomElement &amp;e, TQWidget *parent, TQLayout* layout, const TQString &amp;classNameArg );
+    TQLayout *createLayout( TQWidget *widget, TQLayout*  layout, LayoutType type, bool isTQLayoutWidget = false );
+    LayoutType layoutType( TQLayout *l ) const;
+    void setProperty( TQObject* widget, const TQString &amp;prop, TQVariant value );
+    void setProperty( TQObject* widget, const TQString &amp;prop, const TQDomElement &amp;e );
+    void createSpacer( const TQDomElement &amp;e, TQLayout *layout );
+    TQImage loadFromCollection( const TQString &amp;name );
+    TQPixmap loadPixmap( const TQString &amp;name );
+    TQPixmap loadPixmap( const TQDomElement &amp;e );
+    TQColorGroup loadColorGroup( const TQDomElement &amp;e );
+    void createListViewColumn( TQListView *lv, const TQString&amp; txt,
+			       const TQPixmap&amp; pix, bool clickable,
+			       bool resizable );
+#ifndef TQT_NO_TABLE
+    void createTableColumnOrRow( TQTable *table, const TQString&amp; txt,
+				 const TQPixmap&amp; pix, const TQString&amp; field,
+				 bool isRow );
+#endif
+    void createColumn( const TQDomElement &amp;e, TQWidget *widget );
+    void loadItem( const TQDomElement &amp;e, TQPixmap &amp;pix, TQString &amp;txt, bool &amp;hasPixmap );
+    void createItem( const TQDomElement &amp;e, TQWidget *widget, TQListViewItem *i = 0 );
+    void loadChildAction( TQObject *parent, const TQDomElement &amp;e );
+    void loadActions( const TQDomElement &amp;e );
+    void loadToolBars( const TQDomElement &amp;e );
+    void loadMenuBar( const TQDomElement &amp;e );
+    void loadPopupMenu( TQPopupMenu *p, const TQDomElement &amp;e );
+    void loadFunctions( const TQDomElement &amp;e );
+    TQAction *findAction( const TQString &amp;name );
+    void loadExtraSource();
+    TQString translate( const char *sourceText, const char *comment = "" );
+    TQString translate( const TQString&amp; sourceText, const TQString&amp; comment = TQString::null );
+
+    void unpackUInt16( TQDataStream&amp; in, TQ_UINT16&amp; n );
+    void unpackUInt32( TQDataStream&amp; in, TQ_UINT32&amp; n );
+    void unpackByteArray( TQDataStream&amp; in, TQByteArray&amp; array );
+    void unpackCString( const UibStrTable&amp; strings, TQDataStream&amp; in,
+			TQCString&amp; cstr );
+    void unpackString( const UibStrTable&amp; strings, TQDataStream&amp; in,
+		       TQString&amp; str );
+    void unpackStringSplit( const UibStrTable&amp; strings, TQDataStream&amp; in,
+			    TQString&amp; str );
+    void unpackVariant( const UibStrTable&amp; strings, TQDataStream&amp; in,
+			TQVariant&amp; value );
+    void inputSpacer( const UibStrTable&amp; strings, TQDataStream&amp; in,
+		      TQLayout *parent );
+    void inputColumnOrRow( const UibStrTable&amp; strings, TQDataStream&amp; in,
+			   TQObject *parent, bool isRow );
+    void inputItem( const UibStrTable&amp; strings, TQDataStream&amp; in,
+		    TQObject *parent, TQListViewItem *parentItem = 0 );
+    void inputMenuItem( TQObject **objects, const UibStrTable&amp; strings,
+			TQDataStream&amp; in, TQMenuBar *menuBar );
+    TQObject *inputObject( TQObject **objects, int&amp; numObjects,
+			  const UibStrTable&amp; strings, TQDataStream&amp; in,
+			  TQWidget *ancestorWidget, TQObject *parent,
+			  TQCString className = "" );
+    TQWidget *createFromUiFile( TQDomDocument doc, TQObject *connector,
+			       TQWidget *parent, const char *name );
+    TQWidget *createFromUibFile( TQDataStream&amp; in, TQObject *connector,
+				TQWidget *parent, const char *name );
+
+private:
+    struct Image {
+	TQImage img;
+	TQString name;
+	bool operator==(  const Image &amp;i ) const {
+	    return ( i.name == name &amp;&amp;
+		     i.img == img );
+	}
+    };
+
+    struct Field
+    {
+	Field() {}
+	Field( const TQString &amp;s1, const TQPixmap &amp;p, const TQString &amp;s2 ) : name( s1 ), pix( p ), field( s2 ) {}
+	TQString name;
+	TQPixmap pix;
+	TQString field;
+    };
+
+    struct SqlWidgetConnection
+    {
+	SqlWidgetConnection() {}
+	SqlWidgetConnection( const TQString &amp;c, const TQString &amp;t )
+	    : conn( c ), table( t ), dbControls( new TQMap&lt;TQString, TQString&gt;() ) {}
+	TQString conn;
+	TQString table;
+	TQMap&lt;TQString, TQString&gt; *dbControls;
+    };
+
+    TQValueList&lt;Image&gt; images;
+    TQWidget *toplevel;
+    TQWidgetFactoryPrivate *d;
+    TQMap&lt;TQString, TQString&gt; *dbControls;
+    TQMap&lt;TQString, TQStringList&gt; dbTables;
+    TQMap&lt;TQWidget*, SqlWidgetConnection&gt; sqlWidgetConnections;
+    TQMap&lt;TQString, TQString&gt; buddies;
+    TQMap&lt;TQTable*, TQValueList&lt;Field&gt; &gt; fieldMaps;
+    TQPtrList&lt;TQAction&gt; actionList;
+    TQMap&lt;TQString, TQString&gt; languageSlots;
+    TQStringList noDatabaseWidgets;
+    bool usePixmapCollection;
+    int defMargin;
+    int defSpacing;
+    TQString code;
+    TQString uiFileVersion;
+};
+
+#endif
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

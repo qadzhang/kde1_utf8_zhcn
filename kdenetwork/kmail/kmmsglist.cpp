@@ -12,7 +12,7 @@ static bool sSortDescending;
 KMMsgList::KMMsgList(int initSize): KMMsgListInherited(initSize)
 {
   mHigh  = size();
-  mCount = 0;
+  mCount = 0;  /* TQt3 迁移 */
   clear(FALSE);
 }
 
@@ -38,7 +38,7 @@ void KMMsgList::clear(bool doDelete)
     if (msg && doDelete) delete msg;
   }
   mHigh  = 0;
-  mCount = 0;
+  mCount = 0;  /* TQt3 迁移 */
 }
 
 
@@ -188,7 +188,7 @@ void KMMsgList::rethinkHigh(void)
 //-----------------------------------------------------------------------------
 void KMMsgList::qsort(int left, int right, SortField aField, bool aDescending)
 {
-  // debug("KMmsgList::qsort()");
+  // tqDebug("KMmsgList::qsort()");
 
   if(right <= left)
     return;
@@ -221,7 +221,7 @@ void KMMsgList::qsort(int left, int right, SortField aField, bool aDescending)
   if(left < j) qsort(left, j, aField, aDescending);
   if(i < right) qsort(i, right, aField, aDescending);
 
-  // debug("KMsgList::qsort() leaving");
+  // tqDebug("KMsgList::qsort() leaving");
 }
 
 
@@ -240,7 +240,7 @@ void KMMsgList::sort(SortField aField, bool aDescending)
 #ifndef SLOW_SORT
   qsort(0, mHigh-1, aField, aDescending);
 #else /*SLOW_SORT*/
-  //debug("KMMsgList::sort()");
+  //tqDebug("KMMsgList::sort()");
 
   KMMsgBasePtr sortList[mHigh];
   int i;

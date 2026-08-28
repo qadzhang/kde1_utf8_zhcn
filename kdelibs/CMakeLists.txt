@@ -2,6 +2,9 @@ cmake_minimum_required (VERSION 3.0)
 
 project (kdelibs)
 
+#   Modified for the KDE1 Revival Project, 2026（TQt3 迁移）
+#   注：源目录内与系统头同名的文件（kcontrol/locale/locale.h 会劫持
+#   <stdio.h> 链上的 <locale.h>）已改名为 klocaleconfig.h 规避
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 
@@ -16,12 +19,12 @@ find_package(PNG REQUIRED)
 find_package(JPEG REQUIRED)
 find_package(TIFF REQUIRED)
 find_package(X11 REQUIRED)
-find_package(Qt1 REQUIRED)
+find_package(TQt3 REQUIRED)
 find_package(Gettext REQUIRED)
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
-include(Qt1Macros)
+include(TQt3Macros)
 include(KDE1Macros)
 
 set(KDE1_PREFIX "${CMAKE_INSTALL_PREFIX}")
@@ -88,9 +91,10 @@ endif()
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/KDE1InstallDirs.cmake
     cmake/FindKDE1.cmake
+    cmake/FindTQt3.cmake
     cmake/KDE1Macros.cmake
     cmake/KDE1Macros.cmake
-    cmake/Qt1Macros.cmake
+    cmake/TQt3Macros.cmake
     DESTINATION ${CMAKE_ROOT}/Modules)
 
 add_subdirectory(kdecore)

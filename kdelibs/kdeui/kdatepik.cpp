@@ -106,7 +106,7 @@ KDatePicker::KDatePicker(QWidget *parent, QDate dt, const char *name)
   Month[8]=i18n("September"); Month[9]=i18n("October"); 
   Month[10]=i18n("November"); Month[11]=i18n("December");
   // ^^^^^^^^^^^^^^^^^^^^^^^^
-  initMetaObject();
+
    
   QDate dNow = QDate::currentDate();
   QString sNow;
@@ -130,12 +130,10 @@ KDatePicker::KDatePicker(QWidget *parent, QDate dt, const char *name)
   m_down->setPixmap(down);
   // ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  switch(style()) {
-  case WindowsStyle:
-  case MotifStyle:
+  // TQt3 迁移：switch(GUIStyle) 改继承式风格判断
+  if ( style().inherits("TQWindowsStyle") || style().inherits("TQMotifStyle") ) {
     setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
-    break;
-  default:
+  } else {
     setFrameStyle(QFrame::Panel | QFrame::Plain);
     setLineWidth(1);
   }
@@ -291,7 +289,7 @@ QSize KDatePicker::sizeHint() const
       x=header.width();
     }
   y=header.height()+table.height()+footer.height();
-  debug("KDatePicker::sizeHint: "
+  tqDebug("KDatePicker::sizeHint: "
 	"recommending %ix%i pixels.\n", x, y);
   // -----
   return QSize(x, y);
@@ -304,7 +302,7 @@ void KDatePicker::setDate(QDate date)
       m_tbl->setDate(date);
       updateHeader(date);
     } else {
-      debug("KDatePicker::setDate: "
+      tqDebug("KDatePicker::setDate: "
 	    "date is invalid, not set.\n");
     }
 }

@@ -81,7 +81,6 @@ static int  loopcount;
 static void initlissie(Window win, lissiestruct * lissie);
 static void drawlissie(Window win, lissiestruct * lissie);
 
-void
 init_lissie(Window win)
 {
 	lissstruct *gp = &lisss[screen];

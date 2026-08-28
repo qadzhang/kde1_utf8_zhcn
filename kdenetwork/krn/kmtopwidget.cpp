@@ -25,7 +25,6 @@ int KMTopLevelWidget::sWindowCount = 0;
 KMTopLevelWidget::KMTopLevelWidget(const char* aName):
   KMTopLevelWidgetInherited(aName)
 {
-  initMetaObject();
   sWindowCount++;
 }
 

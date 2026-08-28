@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qbitmap.cpp:42 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQBitmap Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQBitmap Class Reference</h1>
+
+<p>The TQBitmap class provides monochrome (1-bit depth) pixmaps.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qbitmap-h.html">ntqbitmap.h</a>&gt;</tt>
+<p>Inherits <a href="ntqpixmap.html">TQPixmap</a>.
+<p><a href="qbitmap-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQBitmap"><b>TQBitmap</b></a> ()</li>
+<li class=fn><a href="#TQBitmap-2"><b>TQBitmap</b></a> ( int&nbsp;w, int&nbsp;h, bool&nbsp;clear = false, TQPixmap::Optimization&nbsp;optimization = TQPixmap::DefaultOptim )</li>
+<li class=fn><a href="#TQBitmap-3"><b>TQBitmap</b></a> ( const&nbsp;TQSize&nbsp;&amp;&nbsp;size, bool&nbsp;clear = false, TQPixmap::Optimization&nbsp;optimization = TQPixmap::DefaultOptim )</li>
+<li class=fn><a href="#TQBitmap-4"><b>TQBitmap</b></a> ( int&nbsp;w, int&nbsp;h, const&nbsp;uchar&nbsp;*&nbsp;bits, bool&nbsp;isXbitmap = false )</li>
+<li class=fn><a href="#TQBitmap-5"><b>TQBitmap</b></a> ( const&nbsp;TQSize&nbsp;&amp;&nbsp;size, const&nbsp;uchar&nbsp;*&nbsp;bits, bool&nbsp;isXbitmap = false )</li>
+<li class=fn><a href="#TQBitmap-6"><b>TQBitmap</b></a> ( const&nbsp;TQBitmap&nbsp;&amp;&nbsp;bitmap )</li>
+<li class=fn><a href="#TQBitmap-7"><b>TQBitmap</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;fileName, const&nbsp;char&nbsp;*&nbsp;format = 0 )</li>
+<li class=fn>TQBitmap &amp; <a href="#operator-eq"><b>operator=</b></a> ( const&nbsp;TQBitmap&nbsp;&amp;&nbsp;bitmap )</li>
+<li class=fn>TQBitmap &amp; <a href="#operator-eq-2"><b>operator=</b></a> ( const&nbsp;TQPixmap&nbsp;&amp;&nbsp;pixmap )</li>
+<li class=fn>TQBitmap &amp; <a href="#operator-eq-3"><b>operator=</b></a> ( const&nbsp;TQImage&nbsp;&amp;&nbsp;image )</li>
+<li class=fn>TQBitmap <a href="#xForm"><b>xForm</b></a> ( const&nbsp;TQWMatrix&nbsp;&amp;&nbsp;matrix ) const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQBitmap class provides monochrome (1-bit depth) pixmaps.
+<p> 
+
+
+<p> The TQBitmap class is a monochrome off-screen paint device used
+mainly for creating custom <a href="ntqcursor.html">TQCursor</a> and <a href="ntqbrush.html">TQBrush</a> objects, in
+<a href="ntqpixmap.html#setMask">TQPixmap::setMask</a>() and for <a href="ntqregion.html">TQRegion</a>.
+<p> A TQBitmap is a <a href="ntqpixmap.html">TQPixmap</a> with a <a href="ntqpixmap.html#depth">depth</a>
+of 1. If a pixmap with a depth greater than 1 is assigned to a
+bitmap, the bitmap will be dithered automatically. A TQBitmap is
+guaranteed to always have the depth 1, unless it is
+<a href="ntqpixmap.html#isNull">TQPixmap::isNull</a>() which has depth 0.
+<p> When drawing in a TQBitmap (or TQPixmap with depth 1), we recommend
+using the  <a href="ntqcolor.html">TQColor</a> objects <tt>TQt::color0</tt> and <tt>TQt::color1</tt>.
+Painting with <tt>color0</tt> sets the bitmap bits to 0, and painting
+with <tt>color1</tt> sets the bits to 1. For a bitmap, 0-bits indicate
+background (or transparent) and 1-bits indicate foreground (or
+opaque). Using the <tt>black</tt> and <tt>white</tt> TQColor objects make no
+sense because the <a href="ntqcolor.html#pixel">TQColor::pixel</a>() value is not necessarily 0 for
+black and 1 for white.
+<p> The TQBitmap can be transformed (translated, scaled, sheared or
+rotated) using <a href="#xForm">xForm</a>().
+<p> Just like the <a href="ntqpixmap.html">TQPixmap</a> class, TQBitmap is optimized by the use of
+<a href="shclass.html">implicit sharing</a>, so it is very
+efficient to pass TQBitmap objects as arguments.
+<p> <p>See also <a href="ntqpixmap.html">TQPixmap</a>, <a href="ntqpainter.html#drawPixmap">TQPainter::drawPixmap</a>(), <a href="ntqpaintdevice.html#bitBlt">bitBlt</a>(), <a href="shclass.html">Shared Classes</a>, <a href="graphics.html">Graphics Classes</a>, <a href="images.html">Image Processing Classes</a>, and <a href="shared.html">Implicitly and Explicitly Shared Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQBitmap"></a>TQBitmap::TQBitmap ()
+</h3>
+Constructs a null bitmap.
+<p> <p>See also <a href="ntqpixmap.html#isNull">TQPixmap::isNull</a>().
+
+<h3 class=fn><a name="TQBitmap-2"></a>TQBitmap::TQBitmap ( int&nbsp;w, int&nbsp;h, bool&nbsp;clear = false, <a href="ntqpixmap.html#Optimization-enum">TQPixmap::Optimization</a>&nbsp;optimization = TQPixmap::DefaultOptim )
+</h3>
+Constructs a bitmap with width <em>w</em> and height <em>h</em>.
+<p> The contents of the bitmap is uninitialized if <em>clear</em> is false;
+otherwise it is filled with pixel value 0 (the <a href="ntqcolor.html">TQColor</a> <tt>TQt::color0</tt>).
+<p> The optional <em>optimization</em> argument specifies the optimization
+setting for the bitmap. The default optimization should be used in
+most cases. Games and other pixmap-intensive applications may
+benefit from setting this argument; see <a href="ntqpixmap.html#Optimization-enum">TQPixmap::Optimization</a>.
+<p> <p>See also <a href="ntqpixmap.html#setOptimization">TQPixmap::setOptimization</a>() and <a href="ntqpixmap.html#setDefaultOptimization">TQPixmap::setDefaultOptimization</a>().
+
+<h3 class=fn><a name="TQBitmap-3"></a>TQBitmap::TQBitmap ( const&nbsp;<a href="ntqsize.html">TQSize</a>&nbsp;&amp;&nbsp;size, bool&nbsp;clear = false, <a href="ntqpixmap.html#Optimization-enum">TQPixmap::Optimization</a>&nbsp;optimization = TQPixmap::DefaultOptim )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Constructs a bitmap with the size <em>size</em>.
+<p> The contents of the bitmap is uninitialized if <em>clear</em> is false;
+otherwise it is filled with pixel value 0 (the <a href="ntqcolor.html">TQColor</a> <tt>TQt::color0</tt>).
+<p> The optional <em>optimization</em> argument specifies the optimization
+setting for the bitmap. The default optimization should be used in
+most cases. Games and other pixmap-intensive applications may
+benefit from setting this argument; see <a href="ntqpixmap.html#Optimization-enum">TQPixmap::Optimization</a>.
+
+<h3 class=fn><a name="TQBitmap-4"></a>TQBitmap::TQBitmap ( int&nbsp;w, int&nbsp;h, const&nbsp;uchar&nbsp;*&nbsp;bits, bool&nbsp;isXbitmap = false )
+</h3>
+Constructs a bitmap with width <em>w</em> and height <em>h</em> and sets the
+contents to <em>bits</em>.
+<p> The <em>isXbitmap</em> flag should be true if <em>bits</em> was generated by
+the X11 bitmap program. The X bitmap bit order is little endian.
+The <a href="ntqimage.html">TQImage</a> documentation discusses bit order of monochrome images.
+<p> Example (creates an arrow bitmap):
+<pre>
+        uchar arrow_bits[] = { 0x3f, 0x1f, 0x0f, 0x1f, 0x3b, 0x71, 0xe0, 0xc0 };
+        TQBitmap bm( 8, 8, arrow_bits, true );
+    </pre>
+ 
+
+<h3 class=fn><a name="TQBitmap-5"></a>TQBitmap::TQBitmap ( const&nbsp;<a href="ntqsize.html">TQSize</a>&nbsp;&amp;&nbsp;size, const&nbsp;uchar&nbsp;*&nbsp;bits, bool&nbsp;isXbitmap = false )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Constructs a bitmap with the size <em>size</em> and sets the contents to
+<em>bits</em>.
+<p> The <em>isXbitmap</em> flag should be true if <em>bits</em> was generated by
+the X11 bitmap program. The X bitmap bit order is little endian.
+The <a href="ntqimage.html">TQImage</a> documentation discusses bit order of monochrome images.
+
+<h3 class=fn><a name="TQBitmap-6"></a>TQBitmap::TQBitmap ( const&nbsp;<a href="ntqbitmap.html">TQBitmap</a>&nbsp;&amp;&nbsp;bitmap )
+</h3>
+Constructs a bitmap that is a copy of <em>bitmap</em>.
+
+<h3 class=fn><a name="TQBitmap-7"></a>TQBitmap::TQBitmap ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;fileName, const&nbsp;char&nbsp;*&nbsp;format = 0 )
+</h3>
+Constructs a bitmap from the file <em>fileName</em>. If the file does
+not exist or is of an unknown format, the bitmap becomes a null
+bitmap.
+<p> The parameters <em>fileName</em> and <em>format</em> are passed on to
+<a href="ntqpixmap.html#load">TQPixmap::load</a>(). Dithering will be performed if the file format
+uses more than 1 bit per pixel.
+<p> <p>See also <a href="ntqpixmap.html#isNull">TQPixmap::isNull</a>(), <a href="ntqpixmap.html#load">TQPixmap::load</a>(), <a href="ntqpixmap.html#loadFromData">TQPixmap::loadFromData</a>(), <a href="ntqpixmap.html#save">TQPixmap::save</a>(), and <a href="ntqpixmap.html#imageFormat">TQPixmap::imageFormat</a>().
+
+<h3 class=fn><a href="ntqbitmap.html">TQBitmap</a>&nbsp;&amp; <a name="operator-eq"></a>TQBitmap::operator= ( const&nbsp;<a href="ntqbitmap.html">TQBitmap</a>&nbsp;&amp;&nbsp;bitmap )
+</h3>
+Assigns the bitmap <em>bitmap</em> to this bitmap and returns a
+reference to this bitmap.
+
+<h3 class=fn><a href="ntqbitmap.html">TQBitmap</a>&nbsp;&amp; <a name="operator-eq-2"></a>TQBitmap::operator= ( const&nbsp;<a href="ntqpixmap.html">TQPixmap</a>&nbsp;&amp;&nbsp;pixmap )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Assigns the pixmap <em>pixmap</em> to this bitmap and returns a
+reference to this bitmap.
+<p> Dithering will be performed if the pixmap has a <a href="ntqpixmap.html#depth">TQPixmap::depth</a>()
+greater than 1.
+
+<h3 class=fn><a href="ntqbitmap.html">TQBitmap</a>&nbsp;&amp; <a name="operator-eq-3"></a>TQBitmap::operator= ( const&nbsp;<a href="ntqimage.html">TQImage</a>&nbsp;&amp;&nbsp;image )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Converts the image <em>image</em> to a bitmap and assigns the result to
+this bitmap. Returns a reference to the bitmap.
+<p> Dithering will be performed if the image has a <a href="ntqimage.html#depth">TQImage::depth</a>()
+greater than 1.
+
+<h3 class=fn><a href="ntqbitmap.html">TQBitmap</a> <a name="xForm"></a>TQBitmap::xForm ( const&nbsp;<a href="ntqwmatrix.html">TQWMatrix</a>&nbsp;&amp;&nbsp;matrix ) const
+</h3>
+Returns a transformed copy of this bitmap by using <em>matrix</em>.
+<p> This function does exactly the same as <a href="ntqpixmap.html#xForm">TQPixmap::xForm</a>(), except
+that it returns a TQBitmap instead of a <a href="ntqpixmap.html">TQPixmap</a>.
+<p> <p>See also <a href="ntqpixmap.html#xForm">TQPixmap::xForm</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

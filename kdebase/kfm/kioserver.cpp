@@ -47,39 +47,29 @@ KIODirectoryEntry::KIODirectoryEntry( const char *_name, bool _isDir, int _size,
 				      const char * _access, const char * _owner, const char *_group )
 {
     name = _name;
-    name.detach();
     bDir = _isDir;
     size = _size;
     creationDate = _creationDate;
-    creationDate.detach();
     int i;
     if ( ( i = creationDate.find( ' ' ) ) != -1 )
 	creationDate.replace( i, 1, "&nbsp;" );
     access = _access;
-    access.detach();
     owner = _owner;
-    owner.detach();
     group = _group;
-    group.detach();
 }
 
 KIODirectoryEntry::KIODirectoryEntry( KIODirectoryEntry & _entry )
 {
     name = _entry.getName();
-    name.detach();
     bDir = _entry.isDir();
     size = _entry.getSize();
     creationDate = _entry.getCreationDate();
-    creationDate.detach();
     int i;
     if ( ( i = creationDate.find( ' ' ) ) != -1 )
 	creationDate.replace( i, 1, "&nbsp;" );
     access = _entry.getAccess();
-    access.detach();
     owner = _entry.getOwner();
-    owner.detach();
     group = _entry.getGroup();
-    group.detach();
 }
 
 bool KIODirectoryEntry::mayRead( const char *_user )
@@ -159,7 +149,7 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 			  const char * _creationDate, const char * _access,
 			  const char * _owner, const char *_group )
 {
-    // debug("KIOServer::slotDirEntry(%s, %s, %d)", _url, _name, _isDir);
+    // tqDebug("KIOServer::slotDirEntry(%s, %s, %d)", _url, _name, _isDir);
     QString url = _url;
 
     KURL u( _url );
@@ -181,7 +171,7 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 	dir = new QList<KIODirectoryEntry>;
 	dir->setAutoDelete( true );
 	dirList.insert( url.data(), dir );
-	// debug("Inserted in dirList : url.data() = %s",url.data());
+	// tqDebug("Inserted in dirList : url.data() = %s",url.data());
     } else
       dir->setAutoDelete( true );
     
@@ -204,7 +194,6 @@ KIODirectoryEntry* KIOServer::getDirectoryEntry( const char *_url )
 {
     QString url = _url;
     // Delete a trailing '/'
-    url.detach();
     if ( url.right(1) == "/" )
       url.truncate( url.length() - 1 );
  
@@ -271,7 +260,7 @@ QString KIOServer::getDestNameForCopy( const char *_url )
 
 QString KIOServer::getDestNameForLink( const char *_url )
 {
-  //debug("KIOServer::getDestNameForLink(%s)",_url);
+  //tqDebug("KIOServer::getDestNameForLink(%s)",_url);
     QString name;
 
     KURL kurl( _url );
@@ -324,11 +313,9 @@ QString KIOServer::getDestNameForLink( const char *_url )
     else
     {
 	name = kurl.protocol();
-	name.detach();
 	name += ":";
 
 	QString tmp = kurl.path();
-	tmp.detach();
 	int i = 0;
 	while ( ( i = tmp.find( "/", i ) ) != -1 )
 	    tmp.replace( i++, 1, "%2F" );
@@ -337,7 +324,6 @@ QString KIOServer::getDestNameForLink( const char *_url )
     }
 #endif
 
-    name.detach();
     return name;
 }
 
@@ -497,9 +483,9 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
 
 /*
  * if( res == 0 )
- * 	warning( "Found \"%s\"", mnt.mnt_mountp );
+ * 	tqWarning( "Found \"%s\"", mnt.mnt_mountp );
  * else
- * 	warning( "Nothing found" );
+ * 	tqWarning( "Nothing found" );
  */
 
     if( res == 0 )
@@ -729,7 +715,7 @@ int KIOServer::isDir( const char *_url )
 	struct stat buff;
 	if ( stat( u.path(), &buff ) != 0 )
 	{
-	  warning("stat(%s) failed, probably file doesn't exist\n", u.path());
+	  tqWarning("stat(%s) failed, probably file doesn't exist\n", u.path());
 	  return 0;
 	}
 	
@@ -807,7 +793,7 @@ void KIOServer::runNewSlave()
     if ( fork() == 0 )
     {
         execlp( ipath.data(), "kioslave", idir.data(), 0 );
-	fatal( "ERROR: Could not start kioslave :(\n");
+	tqFatal( "ERROR: Could not start kioslave :(\n");
         exit( 1 );
     }
 }

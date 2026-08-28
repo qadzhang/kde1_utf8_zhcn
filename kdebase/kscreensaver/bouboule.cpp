@@ -295,7 +295,6 @@ initbouboule(Window win)
 		sp->max_star_size = NRAND(-size - MINSIZE + 1) + MINSIZE;
 	else if (size < MINSIZE)
 		sp->max_star_size = MINSIZE;
-	else
 		sp->max_star_size = size;
 
 	sp->NbStars = batchcount;
@@ -707,11 +706,11 @@ drawbouboule(Window win)
 		if (PARAM_INSTALLED)
 			XSetFunction(dsp, Scr[screen].gc, GXor);
 		// Used to be RED -- picked 4 at random
-		XSetForeground(dsp,Scr[screen].gc,red.pixel()); 
+		XSetForeground(dsp,Scr[screen].gc,k1c_red.pixel());  /* TQt3 迁移 */ 
 		XFillArcs(dsp, win,Scr[screen].gc, sp->xarc, sp->NbStars); 
 		// Used to be BLUE -- picked 5 at random
 //		XSetForeground(dsp,Scr[screen].gc,Scr[screen].pixels[5]); 
-		XSetForeground(dsp,Scr[screen].gc,blue.pixel()); 
+		XSetForeground(dsp,Scr[screen].gc,k1c_blue.pixel()); 
 		XFillArcs(dsp,win, Scr[screen].gc,sp->xarcleft, sp->NbStars);
 
   		if (PARAM_INSTALLED) 

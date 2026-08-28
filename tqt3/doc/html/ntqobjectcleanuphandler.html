@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qobjectcleanuphandler.cpp:39 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQObjectCleanupHandler Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQObjectCleanupHandler Class Reference</h1>
+
+<p>The TQObjectCleanupHandler class watches the lifetime of multiple TQObjects.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qobjectcleanuphandler-h.html">ntqobjectcleanuphandler.h</a>&gt;</tt>
+<p>Inherits <a href="ntqobject.html">TQObject</a>.
+<p><a href="qobjectcleanuphandler-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQObjectCleanupHandler"><b>TQObjectCleanupHandler</b></a> ()</li>
+<li class=fn><a href="#~TQObjectCleanupHandler"><b>~TQObjectCleanupHandler</b></a> ()</li>
+<li class=fn>TQObject * <a href="#add"><b>add</b></a> ( TQObject&nbsp;*&nbsp;object )</li>
+<li class=fn>void <a href="#remove"><b>remove</b></a> ( TQObject&nbsp;*&nbsp;object )</li>
+<li class=fn>bool <a href="#isEmpty"><b>isEmpty</b></a> () const</li>
+<li class=fn>void <a href="#clear"><b>clear</b></a> ()</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQObjectCleanupHandler class watches the lifetime of multiple TQObjects.
+<p> 
+<p> A TQObjectCleanupHandler is useful whenever you need to know when a
+number of <a href="ntqobject.html">TQObject</a>s that are owned by someone else have been
+deleted. This is important, for example, when referencing memory
+in an application that has been allocated in a shared library.
+<p> Example:
+<p> <pre>
+    class FactoryComponent : public FactoryInterface, public TQLibraryInterface
+    {
+    public:
+        ...
+
+        <a href="ntqobject.html">TQObject</a> *createObject();
+
+        bool init();
+        void cleanup();
+        bool canUnload() const;
+
+    private:
+        TQObjectCleanupHandler objects;
+    };
+
+    // allocate a new object, and add it to the cleanup handler
+    TQObject *FactoryComponent::createObject()
+    {
+        return objects.<a href="#add">add</a>( new <a href="ntqobject.html">TQObject</a>() );
+    }
+
+    // TQLibraryInterface implementation
+    bool FactoryComponent::init()
+    {
+        return true;
+    }
+
+    void FactoryComponent::cleanup()
+    {
+    }
+
+    // it is only safe to unload the library when all TQObject's have been destroyed
+    bool FactoryComponent::canUnload() const
+    {
+        return objects.<a href="#isEmpty">isEmpty</a>();
+    }
+    </pre>
+ 
+<p>See also <a href="objectmodel.html">Object Model</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQObjectCleanupHandler"></a>TQObjectCleanupHandler::TQObjectCleanupHandler ()
+</h3>
+Constructs an empty TQObjectCleanupHandler.
+
+<h3 class=fn><a name="~TQObjectCleanupHandler"></a>TQObjectCleanupHandler::~TQObjectCleanupHandler ()
+</h3>
+Destroys the cleanup handler. All objects in this cleanup handler
+will be deleted.
+
+<h3 class=fn><a href="ntqobject.html">TQObject</a>&nbsp;* <a name="add"></a>TQObjectCleanupHandler::add ( <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;object )
+</h3>
+Adds <em>object</em> to this cleanup handler and returns the pointer to
+the object.
+
+<h3 class=fn>void <a name="clear"></a>TQObjectCleanupHandler::clear ()
+</h3>
+Deletes all objects in this cleanup handler. The cleanup handler
+becomes empty.
+
+<h3 class=fn>bool <a name="isEmpty"></a>TQObjectCleanupHandler::isEmpty () const
+</h3>
+Returns true if this cleanup handler is empty or if all objects in
+this cleanup handler have been destroyed; otherwise return false.
+
+<h3 class=fn>void <a name="remove"></a>TQObjectCleanupHandler::remove ( <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;object )
+</h3>
+Removes the <em>object</em> from this cleanup handler. The object will
+not be destroyed.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

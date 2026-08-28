@@ -53,7 +53,6 @@ extern "C" {
 Klpq::Klpq(const char* name=0) 
   : KTopLevelWidget( name )
 {
-  initMetaObject();
 
   update_delay = 0;                             // means no auto update at all
   kfm = 0;
@@ -254,7 +253,6 @@ Klpq::Klpq(const char* name=0)
     spooler = new SpoolerPpr;
   else if ( temp == "LPRNG" )
     spooler = new SpoolerLprng;
-  else
     {
       spooler_dialog.exec();
       temp = spooler_dialog.getSpooler();
@@ -263,7 +261,6 @@ Klpq::Klpq(const char* name=0)
 	spooler = new SpoolerPpr;
       else if ( temp == "LPRNG" )
 	spooler = new SpoolerLprng;
-      else
 	spooler = new SpoolerBsd;
     }
   lpc = new KProcess;
@@ -340,7 +337,7 @@ void Klpq::setLastPrinterCurrent()
 
 void Klpq::update()
 {
-  //debug("lpq = %i / lpc = %i", lpq->isRunning(), lpc->isRunning() );
+  //tqDebug("lpq = %i / lpc = %i", lpq->isRunning(), lpc->isRunning() );
   if( !isEnabled() )
     return;
   lpq_in_buffer.resize(0);
@@ -545,7 +542,7 @@ void Klpq::recvLpq( KProcess *, char *buffer, int len )
 {
   if( !lpq_running )
     {
-      debug("lpq not running");
+      tqDebug("lpq not running");
       return;
     }
   int i;
@@ -562,7 +559,7 @@ void Klpq::recvLpc( KProcess *, char *buffer, int len )
   QString temp;
   switch(lpc_com) {
   case NotRunning:
-    debug("lpc not running");
+    tqDebug("lpc not running");
     return;
   case Status:
     spooler->parseStatus( buffer, len, c_queuing, c_printing );

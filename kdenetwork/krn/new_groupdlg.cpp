@@ -24,7 +24,7 @@
 
 #include <kapp.h>
 #include <kiconloader.h>
-#include <kfileio.h>
+#include "kfileio.h"
 
 #include "new_globals.h"
 

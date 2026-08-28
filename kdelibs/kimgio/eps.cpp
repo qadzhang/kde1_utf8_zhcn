@@ -132,5 +132,5 @@ void kimgio_epsf_read (QImageIO *image)
 void kimgio_epsf_write( QImageIO * )
 {
 	// TODO: implement this
-	warning( "kimgio_epsf_write: not yet implemented" );
+	tqWarning( "kimgio_epsf_write: not yet implemented" );
 }

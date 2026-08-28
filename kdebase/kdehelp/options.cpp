@@ -350,3 +350,4 @@ KHelpOptionsDialog::KHelpOptionsDialog( QWidget *parent, const char *name )
 		colorOptions, SLOT( slotApplyPressed() ) );
 }
 
+#include "options.moc"

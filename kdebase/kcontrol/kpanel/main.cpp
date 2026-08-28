@@ -48,7 +48,7 @@ private:
 };
 
 void sd(const QSize& r) {
-    debug("size %d %d",r.width(), r.height());
+    tqDebug("size %d %d",r.width(), r.height());
 }
 
 KKPanelApplication::KKPanelApplication(int &argc, char **argv,

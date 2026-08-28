@@ -111,7 +111,7 @@ void BusinessCard::paintEvent(QPaintEvent*)
   cy=height()-Grid;
   if(!current.URL.empty())
     {
-      temp=(string)"URL: "+current.URL;
+      temp=(std::string)"URL: "+current.URL;
       urlHome->setFont(font);
       urlHome->setText(temp.c_str());
       urlHome->move(Grid, cy+3-urlHome->height());
@@ -124,7 +124,7 @@ void BusinessCard::paintEvent(QPaintEvent*)
     }
   if(!current.emails.empty())
     {
-      temp=(string)"email: "+current.emails.front();
+      temp=(std::string)"email: "+current.emails.front();
       urlEmail->setFont(font);
       urlEmail->setText(temp.c_str());
       urlEmail->move(Grid, cy+3-urlEmail->height());
@@ -137,17 +137,17 @@ void BusinessCard::paintEvent(QPaintEvent*)
     }
   if(!current.telephone.empty())
     {
-      temp+=(string)"tel: "+current.telephone;
+      temp+=(std::string)"tel: "+current.telephone;
     }
   if(!current.fax.empty())
     {
       if(!temp.empty()) temp+=", ";
-      temp+=(string)"fax: "+current.fax;
+      temp+=(std::string)"fax: "+current.fax;
     }
   if(!current.modem.empty())
     {
       if(!temp.empty()) temp+=", ";
-      temp+=(string)"modem: "+current.modem;
+      temp+=(std::string)"modem: "+current.modem;
     }
   if(!temp.empty())
     {

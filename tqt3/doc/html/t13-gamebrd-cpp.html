@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/tutorial.doc:2029 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>t13/gamebrd.cpp Example File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>t13/gamebrd.cpp Example File</h1>
+
+ 
+<pre>/****************************************************************
+**
+** Implementation of GameBoard class, TQt tutorial 13
+**
+****************************************************************/
+
+#include "gamebrd.h"
+
+#include &lt;<a href="qfont-h.html">ntqfont.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qlcdnumber-h.html">ntqlcdnumber.h</a>&gt;
+#include &lt;<a href="qlayout-h.html">ntqlayout.h</a>&gt;
+
+#include "lcdrange.h"
+#include "cannon.h"
+
+<a name="f109"></a>GameBoard::GameBoard( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+        : <a href="ntqwidget.html">TQWidget</a>( parent, name )
+{
+    <a href="ntqpushbutton.html">TQPushButton</a> *quit = new <a href="ntqpushbutton.html">TQPushButton</a>( "&amp;Quit", this, "quit" );
+    quit-&gt;<a href="ntqwidget.html#setFont">setFont</a>( TQFont( "Times", 18, TQFont::Bold ) );
+
+    <a href="ntqobject.html#connect">connect</a>( quit, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+
+    LCDRange *angle  = new LCDRange( "ANGLE", this, "angle" );
+    angle-&gt;setRange( 5, 70 );
+
+    LCDRange *force  = new LCDRange( "FORCE", this, "force" );
+    force-&gt;setRange( 10, 50 );
+
+    cannonField = new CannonField( this, "cannonField" );
+
+    <a href="ntqobject.html#connect">connect</a>( angle, TQ_SIGNAL(valueChanged(int)),
+             cannonField, TQ_SLOT(setAngle(int)) );
+    <a href="ntqobject.html#connect">connect</a>( cannonField, TQ_SIGNAL(angleChanged(int)),
+             angle, TQ_SLOT(setValue(int)) );
+
+    <a href="ntqobject.html#connect">connect</a>( force, TQ_SIGNAL(valueChanged(int)),
+             cannonField, TQ_SLOT(setForce(int)) );
+    <a href="ntqobject.html#connect">connect</a>( cannonField, TQ_SIGNAL(forceChanged(int)),
+             force, TQ_SLOT(setValue(int)) );
+
+    <a href="ntqobject.html#connect">connect</a>( cannonField, TQ_SIGNAL(hit()),
+             this, TQ_SLOT(hit()) );
+    <a href="ntqobject.html#connect">connect</a>( cannonField, TQ_SIGNAL(missed()),
+             this, TQ_SLOT(missed()) );
+
+    <a href="ntqpushbutton.html">TQPushButton</a> *shoot = new <a href="ntqpushbutton.html">TQPushButton</a>( "&amp;Shoot", this, "shoot" );
+    shoot-&gt;<a href="ntqwidget.html#setFont">setFont</a>( TQFont( "Times", 18, TQFont::Bold ) );
+
+    <a href="ntqobject.html#connect">connect</a>( shoot, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), TQ_SLOT(fire()) );
+    <a href="ntqobject.html#connect">connect</a>( cannonField, TQ_SIGNAL(canShoot(bool)),
+             shoot, TQ_SLOT(<a href="ntqwidget.html#setEnabled">setEnabled</a>(bool)) );
+
+    TQPushButton *restart
+        = new <a href="ntqpushbutton.html">TQPushButton</a>( "&amp;New Game", this, "newgame" );
+    restart-&gt;setFont( TQFont( "Times", 18, TQFont::Bold ) );
+
+    <a href="ntqobject.html#connect">connect</a>( restart, TQ_SIGNAL(clicked()), this, TQ_SLOT(newGame()) );
+
+    hits = new <a href="ntqlcdnumber.html">TQLCDNumber</a>( 2, this, "hits" );
+    shotsLeft = new <a href="ntqlcdnumber.html">TQLCDNumber</a>( 2, this, "shotsleft" );
+    <a href="ntqlabel.html">TQLabel</a> *hitsL = new <a href="ntqlabel.html">TQLabel</a>( "HITS", this, "hitsLabel" );
+    TQLabel *shotsLeftL
+        = new <a href="ntqlabel.html">TQLabel</a>( "SHOTS LEFT", this, "shotsleftLabel" );
+
+    <a href="qgridlayout.html">TQGridLayout</a> *grid = new <a href="qgridlayout.html">TQGridLayout</a>( this, 2, 2, 10 );
+    grid-&gt;<a href="qgridlayout.html#addWidget">addWidget</a>( quit, 0, 0 );
+    grid-&gt;<a href="qgridlayout.html#addWidget">addWidget</a>( cannonField, 1, 1 );
+    grid-&gt;<a href="qgridlayout.html#setColStretch">setColStretch</a>( 1, 10 );
+
+    <a href="qvboxlayout.html">TQVBoxLayout</a> *leftBox = new <a href="qvboxlayout.html">TQVBoxLayout</a>;
+    grid-&gt;<a href="qgridlayout.html#addLayout">addLayout</a>( leftBox, 1, 0 );
+    leftBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( angle );
+    leftBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( force );
+
+    <a href="qhboxlayout.html">TQHBoxLayout</a> *topBox = new <a href="qhboxlayout.html">TQHBoxLayout</a>;
+    grid-&gt;<a href="qgridlayout.html#addLayout">addLayout</a>( topBox, 0, 1 );
+    topBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( shoot );
+    topBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( hits );
+    topBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( hitsL );
+    topBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( shotsLeft );
+    topBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( shotsLeftL );
+    topBox-&gt;<a href="qboxlayout.html#addStretch">addStretch</a>( 1 );
+    topBox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( restart );
+
+    angle-&gt;setValue( 60 );
+    force-&gt;setValue( 25 );
+    angle-&gt;<a href="ntqwidget.html#setFocus">setFocus</a>();
+
+    newGame();
+}
+
+
+void <a name="f110"></a>GameBoard::fire()
+{
+    if ( cannonField-&gt;gameOver() || cannonField-&gt;isShooting() )
+        return;
+    shotsLeft-&gt;<a href="ntqlcdnumber.html#display">display</a>( shotsLeft-&gt;<a href="ntqlcdnumber.html#intValue">intValue</a>() - 1 );
+    cannonField-&gt;shoot();
+}
+
+
+void <a name="f111"></a>GameBoard::hit()
+{
+    hits-&gt;<a href="ntqlcdnumber.html#display">display</a>( hits-&gt;<a href="ntqlcdnumber.html#intValue">intValue</a>() + 1 );
+    if ( shotsLeft-&gt;<a href="ntqlcdnumber.html#intValue">intValue</a>() == 0 )
+        cannonField-&gt;setGameOver();
+    else
+        cannonField-&gt;newTarget();
+}
+
+
+void <a name="f112"></a>GameBoard::missed()
+{
+    if ( shotsLeft-&gt;<a href="ntqlcdnumber.html#intValue">intValue</a>() == 0 )
+        cannonField-&gt;setGameOver();
+}
+
+
+void <a name="f113"></a>GameBoard::newGame()
+{
+    shotsLeft-&gt;<a href="ntqlcdnumber.html#display">display</a>( 15 );
+    hits-&gt;<a href="ntqlcdnumber.html#display">display</a>( 0 );
+    cannonField-&gt;restartGame();
+    cannonField-&gt;newTarget();
+}
+</pre><!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

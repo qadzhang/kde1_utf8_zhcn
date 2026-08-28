@@ -21,13 +21,13 @@ PObject *createWidget(CreateArgs &ca)
 PKFileDialog::PKFileDialog(PObject *parent)
   : PWidget(parent)
 {
-  kfbd = 0;
+  kfbd = 0;  /* TQt3 迁移 */
   setWidget(kfbd);
 }
 
 PKFileDialog::~PKFileDialog()
 {
-  //  debug("PLineEdit: in destructor");
+  //  tqDebug("PLineEdit: in destructor");
   /*
   delete widget();     // Delete the frame
   kfbd=0;          // Set it to 0
@@ -39,7 +39,7 @@ void PKFileDialog::messageHandler(int fd, PukeMessage *pm)
 {
   PukeMessage pmRet;
   if(widget() == 0){
-    debug("PKFileDialog: No Widget set");
+    tqDebug("PKFileDialog: No Widget set");
     return;
   }
   switch(pm->iCommand){

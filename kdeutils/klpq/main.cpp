@@ -59,8 +59,8 @@ int main( int argc, char **argv )
       switch (c)
         {
         case 'h':
-          debug("usage: klpq [ [-n] [-P printername] file ]");
-	  debug("-n: don't popup klpq; just send the file to spooler.");
+          tqDebug("usage: klpq [ [-n] [-P printername] file ]");
+	  tqDebug("-n: don't popup klpq; just send the file to spooler.");
           exit(1);
         case 'P':
           choice = (QString) optarg;
@@ -73,7 +73,7 @@ int main( int argc, char **argv )
 	case 'v':
 	  version = "Klpq v";
 	  version += (QString) KLPQ_VERSION;
-	  debug("%s Copyright 1997,98 Christoph Neerfeld.\n"
+	  tqDebug("%s Copyright 1997,98 Christoph Neerfeld.\n"
 "Christoph.Neerfeld@home.ivm.de or chris@kde.org", (const char *) version);
 	  exit(1);
           break;
@@ -146,7 +146,7 @@ int main( int argc, char **argv )
 	  name = temp.left( temp.find(':') );
 	  if( name.isEmpty() )
 	    continue;
-	  //debug("name = %s", (const char *) name);
+	  //tqDebug("name = %s", (const char *) name);
 	  if( name.contains('|') )
 	    name = name.left( name.find('|') );
 	  name = name.stripWhiteSpace();
@@ -175,13 +175,13 @@ int main( int argc, char **argv )
     }
   if( no_printcap )
     {
-      debug(klocale->translate("Sorry, can't open your printcap file."));
+      tqDebug(klocale->translate("Sorry, can't open your printcap file."));
       exit(1);
     }
   if( empty_printcap )
     {
-      debug(klocale->translate("Sorry, unable to parse your printcap."));
-      debug(klocale->translate("Please email your printcap to Christoph.Neerfeld@home.ivm.de"));
+      tqDebug(klocale->translate("Sorry, unable to parse your printcap."));
+      tqDebug(klocale->translate("Please email your printcap to Christoph.Neerfeld@home.ivm.de"));
       exit(1);
     }
 

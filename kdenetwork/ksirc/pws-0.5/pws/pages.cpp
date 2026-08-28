@@ -1,4 +1,4 @@
-#include <pages.h>
+#include "pages.h"
 #include "pages.moc"
 
 #include <qlined.h>
@@ -11,7 +11,7 @@
 #include <kfiledialog.h>
 #include <keditcl.h>
 
-#include <typelayout.h>
+#include "typelayout.h"
 
 static KConfig *conf;
 
@@ -254,12 +254,12 @@ ServerPage::ServerPage(QWidget *parent = 0, const char *name = 0)
 QString sanitize(QString dirname)
 {
     if (dirname.isEmpty())
-        return dirname.copy();
+        return dirname;
     if (dirname.left(1)!="/")
         dirname=QString("/")+dirname;
     if (dirname.right(1)!="/")
         dirname+="/";
-    return dirname.copy();
+    return dirname;
 }
 
 void ServerPage::dumpData()

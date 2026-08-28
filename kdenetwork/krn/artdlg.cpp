@@ -115,7 +115,7 @@ sortDlg *SortDlg=0;
 
 void decode()
 {
-    debug ("entered decode()");
+    tqDebug("entered decode()");
     KProcess *proc=new KProcess();
     *proc << "kdecode";
     for (char *art=artsToDecode.first();art!=0;art=artsToDecode.next())
@@ -278,12 +278,12 @@ Artdlg::Artdlg (NewsGroup *_group, NNTP* _server)
     
     if (conf->readNumEntry("VerticalSplit",false))
     {
-        debug ("vertical");
+        tqDebug("vertical");
         panner=new KPanner (this,"panner",KPanner::O_VERTICAL,33);
     }
     else
     {
-        debug ("horizontal");
+        tqDebug("horizontal");
         panner=new KPanner (this,"panner",KPanner::O_HORIZONTAL,33);
     }
     panner->setSeparator(50);
@@ -837,7 +837,7 @@ bool Artdlg::actions (int action,int index)
                 cmd.replace(QRegExp("//"),"/");
                 cmd+=IDList.at(index);
                 cmd+="\"";
-                debug ("print command: %s",cmd.data());
+                tqDebug("print command: %s",cmd.data());
                 QString s;
                 s.sprintf("Printing %s",IDList.at(index));
                 qApp->processEvents ();
@@ -993,7 +993,7 @@ bool Artdlg::actions (int action,int index)
             delete ts;
             KMMessage *m=mm->createReply(true);
             //            m->initHeader();
-            debug ("id1-->%s<--id2-->%s<--",
+            tqDebug("id1-->%s<--id2-->%s<--",
                    m->id().data(),
                    mm->id().data());
             QString refs=mm->references();
@@ -1209,7 +1209,7 @@ bool Artdlg::loadArt (QString id)
         goTo(i);
     }
     
-    debug ("ID=%s",id.data());
+    tqDebug("ID=%s",id.data());
     
     if (!server->isConnected())
     {
@@ -1228,10 +1228,10 @@ bool Artdlg::loadArt (QString id)
     s=server->article(id.data());
     if (s->isEmpty())
     {
-        debug ("entered get from web");
-        QString buffer(2048);
+        tqDebug("entered get from web");
+        TQString buffer;  /* TQt3 迁移 */
         QString urldata("http://ww2.altavista.digital.com/cgi-bin/news.cgi?id@");
-        debug ("id-->%s",id.data());
+        tqDebug("id-->%s",id.data());
         id=id.mid(1,id.length()-2);
         //    KURL::encodeURL(id);
         urldata+=id;
@@ -1253,7 +1253,7 @@ bool Artdlg::loadArt (QString id)
         KMMessage *m=new KMMessage();
         m->fromString(qstrdup(buffer));
         messwin->setMsg(m);
-        debug ("exited get from web");
+        tqDebug("exited get from web");
     }
     else
     {
@@ -1352,7 +1352,7 @@ void Artdlg::saveArt (QString id)
                         }
                         else
                         {
-                            warning ("Can't open file for writing");
+                            tqWarning("Can't open file for writing");
                         }
                         break;
                     }
@@ -1415,7 +1415,7 @@ void Artdlg::multiSaveArt (QString id)
                     }
                     else
                     {
-                        warning ("Can't open file for writing");
+                        tqWarning("Can't open file for writing");
                     }
                 }
                 else
@@ -1483,7 +1483,7 @@ void Artdlg::markArt (int index,int)
 
 void Artdlg::decArt (int index,int)
 {
-    debug ("decart->%d",index);
+    tqDebug("decart->%d",index);
     if (index<0) return;
     QString *s=0;
     Article art(IDList.at(index));
@@ -1662,7 +1662,7 @@ void Artdlg::openURL (const char *s)
     KURL url(s);
     if( url.isMalformed() )
     {
-        warning("Invalid URL clicked!");
+        tqWarning("Invalid URL clicked!");
         return;
     };
     if(strcmp(url.protocol(),"news")==0)
@@ -1692,7 +1692,7 @@ void Artdlg::openURL (const char *s)
     {
         QString address(url.path());
         KMMessage *m=new KMMessage();
-        QString buffer(2048);
+        TQString buffer;  /* TQt3 迁移 */
         buffer.sprintf ("To: %s\n\n\n",address.data());
         m->fromString (buffer);
         KMComposeWin *comp=new KMComposeWin(m);

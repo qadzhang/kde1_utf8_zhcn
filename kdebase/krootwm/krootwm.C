@@ -401,7 +401,7 @@ void KRootWm::updateNewMenu (void)
     QDir d( templatePath );
     const QFileInfoList *list = d.entryInfoList();
     if ( list == 0L )
-        warning(klocale->translate("ERROR: Template does not exist '%s'"), templatePath.data());
+        tqWarning(klocale->translate("ERROR: Template does not exist '%s'"), templatePath.data());
     else
     {
 	QFileInfoListIterator it( *list );      // create list iterator
@@ -817,7 +817,6 @@ void KRootWm::slotNewFile( int _id )
 
     QString p = templatesList.at( _id );
     QString tmp = p;
-    tmp.detach();
 
     if ( strcmp( tmp.data(), "Folder" ) != 0 ) {
       QString x = templatePath + p.data();
@@ -852,7 +851,6 @@ void KRootWm::slotNewFile( int _id )
 	if ( strcmp( p.data(), "Folder" ) == 0 )
 	{
 	    QString u = desktopPath.data();
-	    u.detach();
 	    if ( u.right( 1 ) != "/" )
 		u += "/";
 	    u += name.data();
@@ -917,7 +915,7 @@ void KRootWm::slotBookmarkSelected( int _id )
   QString* s = bookmarkDict[ _id ];
   if ( s == 0L )
   {
-    warning( "Bug in KRootWm Bookmark code. Tell weis@kde.org" );
+    tqWarning( "Bug in KRootWm Bookmark code. Tell weis@kde.org" );
     return;
   }
 

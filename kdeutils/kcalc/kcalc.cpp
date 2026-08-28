@@ -1795,7 +1795,7 @@ void QtCalculator::quitCalc(){
 void QtCalculator::set_colors(){
 
 
-  QPalette mypalette = (calc_display->palette()).copy();
+  QPalette mypalette = (calc_display->palette());
 
   QColorGroup cgrp = mypalette.normal();
   QColorGroup ncgrp(kcalcdefaults.forecolor,

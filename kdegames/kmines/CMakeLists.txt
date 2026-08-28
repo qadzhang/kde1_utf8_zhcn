@@ -9,14 +9,14 @@ set(KMINES_SRCS
 )
 
 set(KMINES_MOC
-    dialogs.moc field.moc status.moc main.moc
+    dialogs.h field.h status.h main.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KMINES_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KMINES_MOC})
 
 add_executable(kmines1 ${KMINES_SRCS} ${MOC_FILES})
 target_link_libraries(kmines1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

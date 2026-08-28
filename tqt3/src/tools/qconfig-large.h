@@ -1,0 +1,42 @@
+#ifndef QT_H
+#endif /* QT_H */
+#ifndef TQT_NO_CODECS
+#define TQT_NO_CODECS
+#endif
+#define TQT_NO_UNICODETABLES
+#define TQT_NO_IMAGEIO_BMP
+#define TQT_NO_IMAGEIO_PPM
+#define TQT_NO_ASYNC_IO
+#define TQT_NO_ASYNC_IMAGE_IO
+/* #define TQT_NO_FREETYPE */
+#define TQT_NO_BDF
+//#define TQT_NO_FONTDATABASE
+#define TQT_NO_TRANSLATION
+#define TQT_NO_DRAGANDDROP
+#define TQT_NO_CLIPBOARD
+#define TQT_NO_SOUND
+#define TQT_NO_PROPERTIES
+#define TQT_NO_DNS
+#define TQT_NO_NETWORKPROTOCOL
+#define TQT_NO_URL
+#define TQT_NO_COLORNAMES
+#define TQT_NO_TRANSFORMATIONS
+#define TQT_NO_PRINTER
+#define TQT_NO_PICTURE
+#define TQT_NO_ICONVIEW
+#define TQT_NO_DIAL
+#define TQT_NO_WORKSPACE
+#define TQT_NO_TABLE
+#define TQT_NO_ACTION
+#define TQT_NO_STYLE_MOTIF
+#define TQT_NO_STYLE_PLATINUM
+/* #define TQT_NO_FILEDIALOG */
+#define TQT_NO_FONTDIALOG
+#define TQT_NO_PRINTDIALOG
+/* #define TQT_NO_COLORDIALOG */
+#define TQT_NO_INPUTDIALOG
+/* #define TQT_NO_MESSAGEBOX */
+#define TQT_NO_PROGRESSDIALOG
+/* #define TQT_NO_TABDIALOG */
+#define TQT_NO_WIZARD
+#define TQT_NO_EFFECTS

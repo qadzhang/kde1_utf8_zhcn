@@ -41,21 +41,21 @@ struct KNoteBookProtected
 KNoteBook::KNoteBook(QWidget *parent, const char *name, bool modal, WFlags f)
  : KDialog(parent, name, modal, f)
 {
-  initMetaObject();
+
   init();
 }
 
 KNoteBook::~KNoteBook()
 {
-  //debug("KNoteBook - destructor");
+  //tqDebug("KNoteBook - destructor");
   delete pnote;
   delete sections;
-  //debug("KNoteBook - destructor done");
+  //tqDebug("KNoteBook - destructor done");
 }
 
 void KNoteBook::init()
 {
-  //debug("KNoteBook::init");
+  //tqDebug("KNoteBook::init");
   sections = new QList<KWizard>;
   sections->setAutoDelete(true);
   pnote = new KNoteBookProtected;
@@ -68,23 +68,23 @@ void KNoteBook::init()
   connect( pnote->tabbar, SIGNAL(selected(int)), SLOT( showSection(int)) );
   connect( pnote->tabbar, SIGNAL(scrolled(ArrowType)),
                    SLOT( tabScroll(ArrowType)) );
-  //debug("tabbar");
+  //tqDebug("tabbar");
   pnote->menu = new QPopupMenu();
   connect( pnote->menu, SIGNAL(highlighted(int)), SLOT( menuChoice(int)) );
   connect( pnote->menu, SIGNAL(activatedRedirect(int)), SLOT( menuChoiceRedirect(int)) );
 
-  //debug("init - done");
+  //tqDebug("init - done");
 }
 
 void KNoteBook::menuChoice(int c)
 {
-  //debug("Activated: %d", c);
+  //tqDebug("Activated: %d", c);
   pnote->currentmenu = c;
 }
 
 void KNoteBook::tabScroll( ArrowType )
 {
-  //debug("KNoteBook::tabScroll");
+  //tqDebug("KNoteBook::tabScroll");
   // fake a resize event to trigger child widget moves
   //QResizeEvent r( size(), size() );
   //resizeEvent( &r );
@@ -93,7 +93,7 @@ void KNoteBook::tabScroll( ArrowType )
 
 void KNoteBook::menuChoiceRedirect(int c)
 {
-  //debug("ActivatedRedirect: %d", c);
+  //tqDebug("ActivatedRedirect: %d", c);
   if(pnote->tabbar->isTabEnabled(pnote->currentmenu) && 
       sections->at(pnote->currentmenu)->isPageEnabled(c))
   {
@@ -104,13 +104,13 @@ void KNoteBook::menuChoiceRedirect(int c)
 
 int KNoteBook::addTab(QTab *tab, KWizardPage *p)
 {
-  //debug("addTab");
+  //tqDebug("addTab");
   int id = 0;
   KWizard *wiz = new KWizard(this, 0, false); // non-modal wizard
   wiz->setDirectionsReflectsPage(pnote->directionsreflectspage);
   wiz->setEnableArrowButtons(pnote->enablearrowbuttons);
   wiz->hide();
-  //debug("KWizard created");
+  //tqDebug("KWizard created");
   sections->append(wiz);
   if(!pnote->numtabs) // the first tab
   {
@@ -122,18 +122,18 @@ int KNoteBook::addTab(QTab *tab, KWizardPage *p)
   connect( wiz, SIGNAL(nomorepages(bool, bool)), SLOT(directionButton(bool, bool)) );
 
   //tab->id = pnote->numtabs;
-  //debug("Before adding to tabbar");
+  //tqDebug("Before adding to tabbar");
   id = pnote->tabbar->addTab(tab);
-  pnote->menu->insertItem(tab->label, wiz->getMenu(), id);
-  pnote->menu->setItemEnabled(id, tab->enabled);
-  //debug("After adding to tabbar");
+  pnote->menu->insertItem(tab->text(), wiz->getMenu(), id);  // TQt3 迁移：label 成员转 text()
+  pnote->menu->setItemEnabled(id, tab->isEnabled());  // TQt3 迁移
+  //tqDebug("After adding to tabbar");
 
   if(p)
     wiz->addPage(p);
 
   setSizes();
 
-  //debug("addTab - done");
+  //tqDebug("addTab - done");
 
   return id;
 }
@@ -142,7 +142,7 @@ int KNoteBook::addPage(KWizardPage *p)
 {
   if(!pnote->numtabs)
   {
-    debug(klocale->translate("Trying to add page when no KWizards are added!"));
+    tqDebug(klocale->translate("Trying to add page when no KWizards are added!"));
     return -1;
   }
   KWizard *wiz = sections->at(pnote->numtabs-1);
@@ -168,7 +168,7 @@ void KNoteBook::gotoTab(int t)
       if(pnote->tabbar->isTabEnabled(i))
         break;
     }
-  //debug("gototab: %d", i);
+  //tqDebug("gototab: %d", i);
   if(pnote->tabbar->isTabEnabled(i))
     pnote->tabbar->setCurrentTab(i);
 }
@@ -287,7 +287,7 @@ void KNoteBook::helpClicked()
 
 void KNoteBook::showSection(int s)
 {
-  //debug("showSection: %d", s);
+  //tqDebug("showSection: %d", s);
   pnote->current = s;
   pnote->currentwiz->hide();
   pnote->currentwiz = sections->at(s);
@@ -309,7 +309,7 @@ void KNoteBook::popupMenu(QPoint pos)
 
 QSize KNoteBook::childSize()
 {
-  //debug("Calculating sizes");
+  //tqDebug("Calculating sizes");
   QSize size(0,0);
   //int x = 0, y = 0;
   for(int i = 0; i < pnote->numtabs; i++)
@@ -321,7 +321,7 @@ QSize KNoteBook::childSize()
       size.setHeight(csize.height());
     if(size.width() < csize.width())
       size.setWidth(csize.width());
-    //debug("Child size: %d x %d", size.width(), size.height());
+    //tqDebug("Child size: %d x %d", size.width(), size.height());
   }
 
   return size;
@@ -400,7 +400,7 @@ int KNoteBook::numTabs()
 
 void KNoteBook::directionButton(bool changetab, bool forward)
 {
-  //debug("directionButton");
+  //tqDebug("directionButton");
   QButton *button, *arrow;
   QString str;
 
@@ -408,7 +408,7 @@ void KNoteBook::directionButton(bool changetab, bool forward)
   {
     if(forward)
     {
-      //debug("changing to tab: %d", current+1);
+      //tqDebug("changing to tab: %d", current+1);
       gotoTab(pnote->current+1);
       button = pnote->currentwiz->getPreviousButton();
       arrow = pnote->currentwiz->getLeftArrow();
@@ -420,14 +420,14 @@ void KNoteBook::directionButton(bool changetab, bool forward)
       }
       else
         button->setText(PREV);
-      //debug("Setting previous to: %s", str.data());
+      //tqDebug("Setting previous to: %s", str.data());
       button->show();
       if(pnote->enablearrowbuttons)
         arrow->show();
     }
     else
     {
-      //debug("changing to tab: %d", pnote->current-1);
+      //tqDebug("changing to tab: %d", pnote->current-1);
       gotoTab(pnote->current-1);
       pnote->currentwiz->gotoPage(pnote->currentwiz->numPages()-1);
       button = pnote->currentwiz->getNextButton();
@@ -440,7 +440,7 @@ void KNoteBook::directionButton(bool changetab, bool forward)
       }
       else
         button->setText(NEXT);
-      //debug("Setting next to: %s", str.data());
+      //tqDebug("Setting next to: %s", str.data());
       button->show();
       if(pnote->enablearrowbuttons)
         arrow->show();
@@ -448,7 +448,7 @@ void KNoteBook::directionButton(bool changetab, bool forward)
   }
   else
   {
-    //debug("dont change tab");
+    //tqDebug("dont change tab");
     if(forward)
     {
       button = pnote->currentwiz->getNextButton();
@@ -463,7 +463,7 @@ void KNoteBook::directionButton(bool changetab, bool forward)
       {
         str = sections->at(pnote->current+1)->getTitle(0);
         str += " >>";
-        //debug("Setting next to: %s", str.data());
+        //tqDebug("Setting next to: %s", str.data());
         button->setText(str.data());
         button->show();
         if(pnote->enablearrowbuttons)
@@ -484,7 +484,7 @@ void KNoteBook::directionButton(bool changetab, bool forward)
       {
         str = "<< ";
         str += sections->at(pnote->current-1)->getTitle(sections->at(pnote->current-1)->numPages()-1);
-        //debug("Setting previous to: %s", str.data());
+        //tqDebug("Setting previous to: %s", str.data());
         button->setText(str.data());
         button->show();
         if(pnote->enablearrowbuttons)
@@ -496,7 +496,7 @@ void KNoteBook::directionButton(bool changetab, bool forward)
 
 void KNoteBook::setSizes()
 {
-  //debug("setSizes");
+  //tqDebug("setSizes");
   QSize childsize = childSize();
 
   int extra = 16;
@@ -537,12 +537,12 @@ void KNoteBook::setSizes()
   int x = 16 + childsize.width();
   setMinimumSize(x, y);
   resize(x, y);
-  //debug("setSizes - done");
+  //tqDebug("setSizes - done");
 }
 
 void KNoteBook::resizeEvent(QResizeEvent *)
 {
-  //debug("KNote, resizing");
+  //tqDebug("KNote, resizing");
 
   pnote->tabbar->setGeometry( 2, 2, width()-3, pnote->tabbar->sizeHint().height());
 
@@ -585,12 +585,12 @@ void KNoteBook::resizeEvent(QResizeEvent *)
                              height()-(pnote->help->height()+2),
                              pnote->help->width(), pnote->help->height());
 
-  //debug("KNote, resize - done");
+  //tqDebug("KNote, resize - done");
 }
 
 void KNoteBook::paintEvent(QPaintEvent *)
 {
-  //debug("KNoteBook::paintEvent");
+  //tqDebug("KNoteBook::paintEvent");
   // Check to see if there are any buttons.
   QPushButton *tmp = 0L;
   int w = width(), h = height(), s = 2;

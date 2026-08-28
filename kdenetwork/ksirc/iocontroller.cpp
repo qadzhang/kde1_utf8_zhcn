@@ -190,7 +190,7 @@ void KSircIOController::stdout_read(KProcess *, char *_buffer, int buflen)
       // Ignore ssfe control messages with `
       // we left channel, don't open a window for a control message
       if(kSircConfig->AutoCreateWin == TRUE && line[0] != '`' && line[1] != '#'){
-//        debug("Creating window for: %s because of: %s", name.data(), line.data());
+//        tqDebug("Creating window for: %s because of: %s", name.data(), line.data());
 	ksircproc->new_toplevel(name);
       }
       else{
@@ -200,9 +200,9 @@ void KSircIOController::stdout_read(KProcess *, char *_buffer, int buflen)
       }
     }
     
-//    debug("Before: %s", line.data());
+//    tqDebug("Before: %s", line.data());
     ksircproc->TopList[name]->sirc_receive(line);
-//    debug("After: %s", line.data());
+//    tqDebug("After: %s", line.data());
     
     pos = pos2+1;
   } while((uint) pos < buffer.length());
@@ -227,7 +227,7 @@ void KSircIOController::stdin_write(QString s)
   if(proc_CTS == TRUE){
     int len = buffer.length();
     if(send_buf != 0x0){
-      warning("KProcess barfed in all clear signal again");
+      tqWarning("KProcess barfed in all clear signal again");
       delete[] send_buf;
     }
     send_buf = new("char[send_buf]") char[len];

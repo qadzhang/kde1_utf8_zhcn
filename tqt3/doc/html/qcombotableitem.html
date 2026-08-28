@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/table/qtable.cpp:1154 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQComboTableItem Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQComboTableItem Class Reference<br><small>[<a href="table.html">table module</a>]</small></h1>
+
+<p>The TQComboTableItem class provides a means of using
+comboboxes in TQTables.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qtable-h.html">ntqtable.h</a>&gt;</tt>
+<p>Inherits <a href="qtableitem.html">TQTableItem</a>.
+<p><a href="qcombotableitem-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQComboTableItem"><b>TQComboTableItem</b></a> ( TQTable&nbsp;*&nbsp;table, const&nbsp;TQStringList&nbsp;&amp;&nbsp;list, bool&nbsp;editable = false )</li>
+<li class=fn><a href="#~TQComboTableItem"><b>~TQComboTableItem</b></a> ()</li>
+<li class=fn>virtual void <a href="#setCurrentItem"><b>setCurrentItem</b></a> ( int&nbsp;i )</li>
+<li class=fn>virtual void <a href="#setCurrentItem-2"><b>setCurrentItem</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s )</li>
+<li class=fn>int <a href="#currentItem"><b>currentItem</b></a> () const</li>
+<li class=fn>TQString <a href="#currentText"><b>currentText</b></a> () const</li>
+<li class=fn>int <a href="#count"><b>count</b></a> () const</li>
+<li class=fn>TQString <a href="#text"><b>text</b></a> ( int&nbsp;i ) const</li>
+<li class=fn>virtual void <a href="#setEditable"><b>setEditable</b></a> ( bool&nbsp;b )</li>
+<li class=fn>bool <a href="#isEditable"><b>isEditable</b></a> () const</li>
+<li class=fn>virtual void <a href="#setStringList"><b>setStringList</b></a> ( const&nbsp;TQStringList&nbsp;&amp;&nbsp;l )</li>
+<li class=fn>virtual int <a href="#rtti"><b>rtti</b></a> () const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQComboTableItem class provides a means of using
+comboboxes in TQTables.
+
+<p> 
+
+<p> A TQComboTableItem is a table item which looks and behaves like a
+combobox. The advantage of using TQComboTableItems rather than real
+comboboxes is that a TQComboTableItem uses far less resources than
+real comboboxes in <a href="ntqtable.html">TQTable</a>s. When the cell has the focus it
+displays a real combobox which the user can interact with. When
+the cell does not have the focus the cell <em>looks</em> like a
+combobox. Only text items (i.e. no pixmaps) may be used in
+TQComboTableItems.
+<p> TQComboTableItem items have the edit type <a href="qtableitem.html#EditType-enum">WhenCurrent</a> (see
+<a href="qtableitem.html#EditType-enum">EditType</a>). The TQComboTableItem's list of items is provided by
+a <a href="ntqstringlist.html">TQStringList</a> passed to the constructor.
+<p> The list of items may be changed using <a href="#setStringList">setStringList</a>(). The
+current item can be set with <a href="#setCurrentItem">setCurrentItem</a>() and retrieved with
+<a href="#currentItem">currentItem</a>(). The text of the current item can be obtained with
+<a href="#currentText">currentText</a>(), and the text of a particular item can be retrieved
+with <a href="#text">text</a>().
+<p> If <a href="#isEditable">isEditable</a>() is true the TQComboTableItem will permit the user
+to either choose an existing list item, or create a new list item
+by entering their own text; otherwise the user may only choose one
+of the existing list items.
+<p> To populate a table cell with a TQComboTableItem use
+<a href="ntqtable.html#setItem">TQTable::setItem</a>().
+<p> TQComboTableItems may be deleted with <a href="ntqtable.html#clearCell">TQTable::clearCell</a>().
+<p> TQComboTableItems can be distinguished from <a href="qtableitem.html">TQTableItem</a>s and
+<a href="qchecktableitem.html">TQCheckTableItem</a>s using their Run Time Type Identification
+number (see <a href="#rtti">rtti</a>()).
+<p> <center><img src="qtableitems.png" alt="Table Items"></center> 
+<p> <p>See also <a href="qchecktableitem.html">TQCheckTableItem</a>, <a href="qtableitem.html">TQTableItem</a>, <a href="ntqcombobox.html">TQComboBox</a>, and <a href="advanced.html">Advanced Widgets</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQComboTableItem"></a>TQComboTableItem::TQComboTableItem ( <a href="ntqtable.html">TQTable</a>&nbsp;*&nbsp;table, const&nbsp;<a href="ntqstringlist.html">TQStringList</a>&nbsp;&amp;&nbsp;list, bool&nbsp;editable = false )
+</h3>
+Creates a combo table item for the table <em>table</em>. The combobox's
+list of items is passed in the <em>list</em> argument. If <em>editable</em> is
+true the user may type in new list items; if <em>editable</em> is false
+the user may only select from the list of items provided.
+<p> By default TQComboTableItems cannot be replaced by other table
+items since <a href="qtableitem.html#isReplaceable">isReplaceable</a>() returns false by default.
+<p> <p>See also <a href="ntqtable.html#clearCell">TQTable::clearCell</a>() and <a href="qtableitem.html#EditType-enum">EditType</a>.
+
+<h3 class=fn><a name="~TQComboTableItem"></a>TQComboTableItem::~TQComboTableItem ()
+</h3>
+TQComboTableItem destructor.
+
+<h3 class=fn>int <a name="count"></a>TQComboTableItem::count () const
+</h3>
+Returns the total number of list items in the combo table item.
+
+<h3 class=fn>int <a name="currentItem"></a>TQComboTableItem::currentItem () const
+</h3>
+Returns the index of the combo table item's current list item.
+<p> <p>See also <a href="#setCurrentItem">setCurrentItem</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="currentText"></a>TQComboTableItem::currentText () const
+</h3>
+Returns the text of the combo table item's current list item.
+<p> <p>See also <a href="#currentItem">currentItem</a>() and <a href="#text">text</a>().
+
+<h3 class=fn>bool <a name="isEditable"></a>TQComboTableItem::isEditable () const
+</h3>
+Returns true if the user can add their own list items to the
+combobox's list of items; otherwise returns false.
+<p> <p>See also <a href="#setEditable">setEditable</a>().
+
+<h3 class=fn>int <a name="rtti"></a>TQComboTableItem::rtti () const<tt> [virtual]</tt>
+</h3>
+
+<p> Returns 1.
+<p> Make your derived classes return their own values for <a href="#rtti">rtti</a>()to
+distinguish between different table item subclasses. You should
+use values greater than 1000, preferably a large random number, to
+allow for extensions to this class.
+<p> <p>See also <a href="qtableitem.html#rtti">TQTableItem::rtti</a>().
+
+<p>Reimplemented from <a href="qtableitem.html#rtti">TQTableItem</a>.
+<h3 class=fn>void <a name="setCurrentItem"></a>TQComboTableItem::setCurrentItem ( int&nbsp;i )<tt> [virtual]</tt>
+</h3>
+Sets the list item <em>i</em> to be the combo table item's current list
+item.
+<p> <p>See also <a href="#currentItem">currentItem</a>().
+
+<p>Example: <a href="small-table-example-example.html#x2797">table/small-table-demo/main.cpp</a>.
+<h3 class=fn>void <a name="setCurrentItem-2"></a>TQComboTableItem::setCurrentItem ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s )<tt> [virtual]</tt>
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Sets the list item whose text is <em>s</em> to be the combo table item's
+current list item. Does nothing if no list item has the text <em>s</em>.
+<p> <p>See also <a href="#currentItem">currentItem</a>().
+
+<h3 class=fn>void <a name="setEditable"></a>TQComboTableItem::setEditable ( bool&nbsp;b )<tt> [virtual]</tt>
+</h3>
+If <em>b</em> is true the combo table item can be edited, i.e. the user
+may enter a new text item themselves. If <em>b</em> is false the user may
+may only choose one of the existing items.
+<p> <p>See also <a href="#isEditable">isEditable</a>().
+
+<h3 class=fn>void <a name="setStringList"></a>TQComboTableItem::setStringList ( const&nbsp;<a href="ntqstringlist.html">TQStringList</a>&nbsp;&amp;&nbsp;l )<tt> [virtual]</tt>
+</h3>
+Sets the list items of this TQComboTableItem to the strings in the
+string list <em>l</em>.
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="text"></a>TQComboTableItem::text ( int&nbsp;i ) const
+</h3>
+Returns the text of the combo's list item at index <em>i</em>.
+<p> <p>See also <a href="#currentText">currentText</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

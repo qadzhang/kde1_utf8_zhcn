@@ -47,7 +47,7 @@ template<class T>
 T &Svec<T>::accessref(int index)
 {
     if(index < 0)
-	fatal("Svec: index out of range");
+	tqFatal("Svec: index out of range");
     while(index >= alloced) grow();
     if(index >= used) used = index + 1;
     return vect[index];
@@ -57,7 +57,7 @@ template<class T>
 T Svec<T>::access(int index) const
 {
     if(index < 0 || index >= used)
-	fatal("Svec: index out of range");
+	tqFatal("Svec: index out of range");
     return vect[index];
 }
 
@@ -65,7 +65,7 @@ template<class T>
 void Svec<T>::remove(int index)
 {
     if(index < 0 || index >= used)
-	fatal("Svec: index out of range");
+	tqFatal("Svec: index out of range");
     for(int j = index; j < used - 1; j++)
 	vect[j] = vect[j + 1];
     used--;

@@ -12,14 +12,14 @@ set(KFLOPPY_SRCS
 )
 
 set(KFLOPPY_MOC
-    about.moc floppy.moc
+    about.h floppy.h
 )
 
-QT1_WRAP_MOC(KFLOPPY_MOC_FILES ${KFLOPPY_MOC})
+TQT3_WRAP_CPP(KFLOPPY_MOC_FILES ${KFLOPPY_MOC})
 
 add_executable(kfloppy1 ${KFLOPPY_SRCS} ${KFLOPPY_MOC_FILES})
 target_link_libraries(kfloppy1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

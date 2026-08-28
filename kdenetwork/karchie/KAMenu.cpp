@@ -7,7 +7,7 @@
  *                KArchie is written for the KDE-Project                   *
  *                         http://www.kde.org                              *
  *                                                                         *
- *   Copyright (C) Oct 1997 Jörg Habenicht                                 *
+ *   Copyright (C) Oct 1997 Jï¿½rg Habenicht                                 *
  *                  E-Mail: j.habenicht@europemail.com                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -169,7 +169,7 @@ KAMenu::KAMenu( QWidget *parent, const char *name )
   aboutText += i18n("KArchie ver. ");
   aboutText += KARCHIE_VERSION;
   aboutText += i18n("\n\n"
-		    "by Jörg Habenicht <j.habenicht@europemail.com>\n\n"
+		    "by Jï¿½rg Habenicht <j.habenicht@europemail.com>\n\n"
 		    "based on the work of:\n"
 		    "  - archie prospero client by\n"
 		    "      Clifford Neuman and\n"
@@ -244,14 +244,14 @@ KAMenu::slotConfigChanged()
 
   KConfigGroupSaver *saveGroup = new KConfigGroupSaver(config, "SearchConfig");
   const QString searchInput = config->readEntry("Search", "=");
-  //  debug ("searchmode %c",((const char*)input)[0]);
+  //  tqDebug("searchmode %c",((const char*)input)[0]);
   SearchMode searchconfig(((const char*)searchInput)[0]);
   tmp_id = searchmode2menu(searchconfig.getMode());
   changeCheckMenu(searchmode, searchmode_id, tmp_id);
   searchmode_id = tmp_id;
 
   const int niceInput = config->readNumEntry("Nice", 0);
-  //  debug("nicelevel %i",niceInput);
+  //  tqDebug("nicelevel %i",niceInput);
   tmp_id = nicelevel2menu(NiceLevel::toLevel(niceInput));
   changeCheckMenu(nicelevel, nice_id, tmp_id);
   nice_id = tmp_id;
@@ -262,7 +262,7 @@ KAMenu::slotConfigChanged()
 
   uint currentHostId = config->readUnsignedNumEntry( "CurrentHostId", 0 );
   if (host->count() < currentHostId-1) {
-    currentHostId = 0;
+    currentHostId = 0;  /* TQt3 è¿ç§» */
   }    
   changeCheckMenu(host, host_id, currentHostId);
   host_id = currentHostId;
@@ -350,55 +350,55 @@ KAMenu::menu2nicelevel(int mode)
 void 
 KAMenu::slotFileOpen()
 {
-  debug( "File open selected" );
+  tqDebug( "File open selected" );
   emit sigFileOpen();
 }
 
 void 
 KAMenu::slotFileOpenDir()
 {
-  //  debug( "File open dir selected" );
+  //  tqDebug( "File open dir selected" );
   emit sigFileOpenDir();
 }
 
 void 
 KAMenu::slotFileGet()
 {
-  //  debug( "File get selected" );
+  //  tqDebug( "File get selected" );
   emit sigFileGet();
 }
 
 void 
 KAMenu::slotFileSave()
 {
-  //  debug( "File save selected" );
+  //  tqDebug( "File save selected" );
   emit sigFileStoreList();
 }
 
 void
 KAMenu::slotFileLoad()
 {
-  //  debug( "File load selected" );
+  //  tqDebug( "File load selected" );
   emit sigFileLoadList();
 }
 
 void 
 KAMenu::slotFileWrite()
 {
-  //  debug( "File write selected" );
+  //  tqDebug( "File write selected" );
   emit sigFileWriteList();
 }
 
 void 
 KAMenu::slotSettings(int menu)
 {
-  debug( "Settings selected %i",menu );
+  tqDebug( "Settings selected %i",menu );
 }
 
 void 
 KAMenu::slotSettingsHostname(int menu)
 {
-  //  debug( "Settings hostname selected %i",menu );
+  //  tqDebug( "Settings hostname selected %i",menu );
   changeCheckMenu(host, host_id, menu);
   host_id = menu;
   // Eintrag in der Config aendern
@@ -411,7 +411,7 @@ KAMenu::slotSettingsHostname(int menu)
 void 
 KAMenu::slotSettingsSearchmode(int mode)
 {
-  //  debug( "Settings seachtype selected %i", mode );
+  //  tqDebug( "Settings seachtype selected %i", mode );
   changeCheckMenu(searchmode, searchmode_id, mode);
   searchmode_id = mode;
   SearchMode currentmode(menu2searchmode(mode));
@@ -432,14 +432,14 @@ KAMenu::slotSettingsSearchmode(int mode)
 void 
 KAMenu::slotSettingsSorttype()
 {
-  debug( "Settings sorttype selected" );
+  tqDebug( "Settings sorttype selected" );
 }
 */
 
 void 
 KAMenu::slotSettingsNicelevel(int menuitem)
 {
-  //  debug( "Settings nicelevel selected %i", menuitem );
+  //  tqDebug( "Settings nicelevel selected %i", menuitem );
   changeCheckMenu(nicelevel, nice_id, menuitem);
   nice_id = menuitem;
   NiceLevel nicelevel(menu2nicelevel(menuitem));
@@ -455,7 +455,7 @@ KAMenu::slotSettingsNicelevel(int menuitem)
 void 
 KAMenu::slotSettingsShowFile()
 {
-  //  debug( "Settings showfile selected" );
+  //  tqDebug( "Settings showfile selected" );
   const bool itemChecked = !settings->isItemChecked(0);
   // toggle the showfilemenuitem
   settings->setItemChecked( 0, itemChecked);
@@ -472,14 +472,14 @@ KAMenu::slotSettingsShowFile()
 void 
 KAMenu::slotSettingsAll()
 {
-  //  debug( "Settings all selected" );
+  //  tqDebug( "Settings all selected" );
   emit sigSettingsAll();
 }
 
 void 
 KAMenu::slotSettingsSave()
 {
-  debug( "Settings save selected" );
+  tqDebug( "Settings save selected" );
 }
 
 void

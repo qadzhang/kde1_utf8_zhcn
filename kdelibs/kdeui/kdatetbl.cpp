@@ -44,7 +44,7 @@ KDateTable::KDateTable(QWidget *parent, QDate date,
   : QTableView(parent, name, f),
     fontsize(10)
 {
-  initMetaObject();
+
   // Mirko, March 17 1998: translate day names
   Days[0]=i18n("Sun"); Days[1]=i18n("Mon"); Days[2]=i18n("Tue"); 
   Days[3]=i18n("Wed"); Days[4]=i18n("Thu"); Days[5]=i18n("Fri"); 
@@ -122,7 +122,7 @@ void KDateTable::paintCell( QPainter *p, int row, int col )
 	{  // item is selected
 	  bSelected = TRUE;
 	  p->setBrush(darkBlue);
-	  p->setPen(red);
+	  p->setPen(k1c_red);
 	  p->drawEllipse(4,h/2-(w-8)/3,w-8,2*(w-8)/3); // think of better way
 	}
       QString day;
@@ -145,7 +145,7 @@ void KDateTable::paintCell( QPainter *p, int row, int col )
 	  }
       if (bSelected && hasFocus()) 
 	{
-	  if ( style() == WindowsStyle)
+	  if ( style().inherits("TQWindowsStyle"))
 	    {
 	      p->drawWinFocusRect(1, 1, w-2, h-2);
 	    } else {
@@ -284,7 +284,7 @@ QSize KDateTable::sizeHint() const
     }
   x=7*x+8*Spacing;
   y=7*fontMetrics().height()+7*Spacing;
-  debug("KDateTable::sizeHint: recommending %ix%i "
+  tqDebug("KDateTable::sizeHint: recommending %ix%i "
 	"pixels.\n", x, y);
   // the widget has 7 rows and 7 columns
   return QSize(x, y);
@@ -298,7 +298,7 @@ void KDateTable::setDate(QDate date)
       emit dateSelected(m_date);
       repaint(false);
     } else {
-      debug("KDateTable::setDate: "
+      tqDebug("KDateTable::setDate: "
 	    "date is invalid, not set.\n");
     }
 }

@@ -3,7 +3,7 @@
 #include <qapp.h>
 #include <X11/Xlib.h>
 #include <qbitmap.h>
-#include <main.h>  // ssApp
+#include "main.h"  // ssApp
 #include <kapp.h>  // for kde_bindir()
 #include <kcharsets.h>
 #include <kprocess.h>
@@ -33,7 +33,7 @@ static QString currentUser(void)
   QString fullname(current->pw_gecos);
   if (fullname.find(',') != -1)
     /* Remove everything from and including first comma */
-    fullname.resize(fullname.find(',')+1);
+    fullname.truncate(fullname.find(',')+1);  // TQt3 迁移
 
   QString username(current->pw_name);
 

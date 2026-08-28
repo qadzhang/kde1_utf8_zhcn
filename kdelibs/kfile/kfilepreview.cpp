@@ -93,7 +93,7 @@ void KFilePreview::clearView()
 
 void KFilePreview::highlightItem(unsigned int)
 {
-    warning("KCombiView::highlightItem: does nothing");
+    tqWarning("KCombiView::highlightItem: does nothing");
 }
 
 void KFilePreview::setCurrentItem(const char *item, const KFileInfo *i)
@@ -107,7 +107,7 @@ void KFilePreview::setCurrentItem(const char *item, const KFileInfo *i)
     }
     
     if (!i) {
-	warning("setCurrentItem: no match found.");
+	tqWarning("setCurrentItem: no match found.");
 	return; 
     }
 

@@ -27,15 +27,15 @@
 #undef TrueColor
 
 
-void myMessageOutput( QtMsgType type, const char *msg ) {
+void myMessageOutput( TQtMsgType type, const char *msg ) {
     switch ( type ) {
-    case QtDebugMsg:
+    case TQtDebugMsg:
 	fprintf( stderr, "Debug: %s\n", msg );
 	break;
-    case QtWarningMsg:
+    case TQtWarningMsg:
 	fprintf( stderr, "Warning: %s\n", msg );
 	break;
-    case QtFatalMsg:
+    case TQtFatalMsg:
 	fprintf( stderr, "Fatal: %s\n", msg );
 	abort();                        // dump core on purpose
     }

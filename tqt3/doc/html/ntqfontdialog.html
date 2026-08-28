@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/dialogs/qfontdialog.cpp:59 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQFontDialog Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQFontDialog Class Reference</h1>
+
+<p>The TQFontDialog class provides a dialog widget for selecting a font.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qfontdialog-h.html">ntqfontdialog.h</a>&gt;</tt>
+<p>Inherits <a href="ntqdialog.html">TQDialog</a>.
+<p><a href="qfontdialog-members.html">List of all member functions.</a>
+<h2>Static Public Members</h2>
+<ul>
+<li class=fn>TQFont <a href="#getFont"><b>getFont</b></a> ( bool&nbsp;*&nbsp;ok, const&nbsp;TQFont&nbsp;&amp;&nbsp;initial, TQWidget&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn>TQFont <a href="#getFont-2"><b>getFont</b></a> ( bool&nbsp;*&nbsp;ok, TQWidget&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+
+
+The TQFontDialog class provides a dialog widget for selecting a font.
+<p> The usual way to use this class is to call one of the static convenience
+functions, e.g. <a href="#getFont">getFont</a>().
+<p> Examples:
+<p> <pre>
+    bool ok;
+    <a href="ntqfont.html">TQFont</a> font = TQFontDialog::<a href="#getFont">getFont</a>(
+                    &amp;ok, TQFont( "Helvetica [Cronyx]", 10 ), this );
+    if ( ok ) {
+        // font is set to the font the user selected
+    } else {
+        // the user canceled the dialog; font is set to the initial
+        // value, in this case Helvetica [Cronyx], 10
+    }
+  </pre>
+ 
+<p> The dialog can also be used to set a widget's font directly:
+<pre>
+    myWidget.setFont( TQFontDialog::<a href="#getFont">getFont</a>( 0, myWidget.font() ) );
+  </pre>
+ 
+If the user clicks OK the font they chose will be used for myWidget,
+and if they click Cancel the original font is used.
+<p> <p>See also <a href="ntqfont.html">TQFont</a>, <a href="ntqfontinfo.html">TQFontInfo</a>, <a href="ntqfontmetrics.html">TQFontMetrics</a>, and <a href="dialogs.html">Dialog Classes</a>.
+
+<p> <img src=qfontdlg-w.png>
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a href="ntqfont.html">TQFont</a> <a name="getFont"></a>TQFontDialog::getFont ( bool&nbsp;*&nbsp;ok, const&nbsp;<a href="ntqfont.html">TQFont</a>&nbsp;&amp;&nbsp;initial, <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )<tt> [static]</tt>
+</h3>
+Executes a modal font dialog and returns a font.
+<p> If the user clicks OK, the selected font is returned. If the user
+clicks Cancel, the <em>initial</em> font is returned.
+<p> The dialog is called <em>name</em>, with the parent <em>parent</em>.
+<em>initial</em> is the initially selected font.
+If the <em>ok</em> parameter is not-null, <em>*</em><em>ok</em> is set to true if the
+user clicked OK, and set to false if the user clicked Cancel.
+<p> This static function is less flexible than the full TQFontDialog
+object, but is convenient and easy to use.
+<p> Examples:
+<pre>
+    bool ok;
+    <a href="ntqfont.html">TQFont</a> font = TQFontDialog::<a href="#getFont">getFont</a>( &amp;ok, TQFont( "Times", 12 ), this );
+    if ( ok ) {
+        // font is set to the font the user selected
+    } else {
+        // the user canceled the dialog; font is set to the initial
+        // value, in this case Times, 12.
+    }
+  </pre>
+ 
+<p> The dialog can also be used to set a widget's font directly:
+<pre>
+    myWidget.setFont( TQFontDialog::<a href="#getFont">getFont</a>( 0, myWidget.font() ) );
+  </pre>
+ 
+In this example, if the user clicks OK the font they chose will be
+used, and if they click Cancel the original font is used.
+
+<p>Examples: <a href="canvas-chart-example.html#x2881">chart/chartform.cpp</a>, <a href="tutorial2-09.html#x2638">chart/optionsform.cpp</a>, <a href="qfd-example.html#x1981">qfd/fontdisplayer.cpp</a>, <a href="qwerty-example.html#x368">qwerty/qwerty.cpp</a>, and <a href="xform-example.html#x1224">xform/xform.cpp</a>.
+<h3 class=fn><a href="ntqfont.html">TQFont</a> <a name="getFont-2"></a>TQFontDialog::getFont ( bool&nbsp;*&nbsp;ok, <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )<tt> [static]</tt>
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Executes a modal font dialog and returns a font.
+<p> If the user clicks OK, the selected font is returned. If the user
+clicks Cancel, the TQt default font is returned.
+<p> The dialog is called <em>name</em>, with parent <em>parent</em>.
+If the <em>ok</em> parameter is not-null, <em>*</em><em>ok</em> is set to true if the
+user clicked OK, and false if the user clicked Cancel.
+<p> This static function is less functional than the full TQFontDialog
+object, but is convenient and easy to use.
+<p> Example:
+<pre>
+    bool ok;
+    <a href="ntqfont.html">TQFont</a> font = TQFontDialog::<a href="#getFont">getFont</a>( &amp;ok, this );
+    if ( ok ) {
+        // font is set to the font the user selected
+    } else {
+        // the user canceled the dialog; font is set to the default
+        // application font, TQApplication::<a href="ntqwidget.html#font-prop">font</a>()
+    }
+  </pre>
+ 
+<p> 
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

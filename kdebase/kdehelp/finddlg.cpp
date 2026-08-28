@@ -81,7 +81,7 @@ KFindTextDialog::KFindTextDialog( QWidget *parent, const char *name )
 
 void KFindTextDialog::slotTextChanged( const char *t )
 {
-    rExp = t;
+    rExp = TQRegExp(t);  // TQt3 迁移
 }
 
 void KFindTextDialog::slotCase( bool c )
@@ -99,3 +99,4 @@ void KFindTextDialog::slotFind()
     emit find( rExp );
 }
 
+#include "finddlg.moc"

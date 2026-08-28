@@ -1,4 +1,4 @@
-#include <kdelnk.h>
+#include "kdelnk.h"
 #include "kdelnk.moc"
 
 KKdelnk::KKdelnk( const char* pFile )

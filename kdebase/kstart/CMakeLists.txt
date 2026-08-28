@@ -4,15 +4,15 @@ include_directories(
 
 set(KSTART_SRCS kstart.C)
 
-set(KSTART_MOC kstart.moc)
+set(KSTART_MOC kstart.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KSTART_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KSTART_MOC})
 
 add_executable(kstart ${KSTART_SRCS} ${MOC_FILES})
 target_link_libraries(kstart
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

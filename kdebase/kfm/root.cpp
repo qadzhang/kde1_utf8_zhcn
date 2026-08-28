@@ -53,7 +53,7 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
 	 labelColor = config->readColorEntry( "Foreground", &DEFAULT_ICON_FG );
 	 iconBgColor = config->readColorEntry( "Background", &DEFAULT_ICON_BG );
 
-	 if ( labelColor == iconBgColor ) debug("Icon colors identical");
+	 if ( labelColor == iconBgColor ) tqDebug("Icon colors identical");
 	 //CT
 
 	 config->setGroup( "KFM Misc Defaults" ); // Why in that group ? Used for KRootWidget only...
@@ -560,7 +560,7 @@ void KRootWidget::saveLayout()
 {
     KRootIcon *icon;
 
-    QString file = kapp->localkdedir().copy();
+    QString file = kapp->localkdedir();
     file += "/share/apps/kfm/desktop";
 
     FILE *f = fopen( file.data(), "w" );
@@ -766,7 +766,7 @@ void KRootWidget::update()
 
     if ( u.isMalformed() )
     {
-	warning(klocale->translate("Internal Error: desktopDir is malformed"));
+	tqWarning(klocale->translate("Internal Error: desktopDir is malformed"));
 	return;
     }
 
@@ -777,7 +777,7 @@ void KRootWidget::update()
 
     if ( dp == NULL )
     {
-	warning(klocale->translate("ERROR: Could not read desktop directory '%s'"), desktopDir.data());
+	tqWarning(klocale->translate("ERROR: Could not read desktop directory '%s'"), desktopDir.data());
 	exit(1);
     }
 
@@ -861,7 +861,7 @@ void KRootWidget::update()
      */
 
     // Find correct places for the icons
-    QString file = kapp->localkdedir().copy();
+    QString file = kapp->localkdedir();
     file += "/share/apps/kfm/desktop";
 
     FILE *f = fopen( file.data(), "r" );
@@ -877,10 +877,14 @@ void KRootWidget::update()
 	    {
 		const char *p = buffer;
 		char *p2 = (char*)strchr( p, ';' );
+		// TQt3 迁移防御：desktop 布局文件的最后一行可能无分号（fwrite 后 fgets
+		// 常带回结尾残行），1999 年原代码未判 NULL 直接 *p2++=0 必崩
+		if ( p2 == 0 ) break;
 		*p2++ = 0;
 		QString u = p;
 		p = p2;
 		p2 = (char*)strchr( p, ';' );
+		if ( p2 == 0 ) break;
 		*p2++ = 0;
 		int x = atoi( p );
 		p = p2;
@@ -989,7 +993,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
 	  popupMenu->popup( QPoint( dropFileX, dropFileY ) );
 	}
 	else
-	  warning(klocale->translate("ERROR: Can not accept drop"));
+	  tqWarning(klocale->translate("ERROR: Can not accept drop"));
 	return;
       }
     }
@@ -1009,7 +1013,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
 	id = popupMenu->insertItem( klocale->getAlias( ID_STRING_LINK ), this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
-        warning(klocale->translate("ERROR: Can not accept drop"));
+        tqWarning(klocale->translate("ERROR: Can not accept drop"));
 	return;
     }
 
@@ -1168,12 +1172,12 @@ void KRootWidget::slotPopupOpenWith()
 	KURL file = popupFiles.first();
 	if ( strcmp( file.protocol(), "file" ) == 0L )
 	{
-	    tmp = KIOServer::shellQuote( file.path() ).copy();
+	    tmp = KIOServer::shellQuote( file.path() );
 	    cmd += tmp.data();
 	}
 	else
 	{
-	    tmp = KIOServer::shellQuote( file.url().data() ).copy();
+	    tmp = KIOServer::shellQuote( file.url().data() );
 	    cmd += tmp.data();
 	}
 	cmd += "\" ";
@@ -1187,7 +1191,7 @@ void KRootWidget::slotPopupProperties()
 {
     if ( popupFiles.count() != 1 )
     {
-	warning(klocale->translate("ERROR: Can not open properties for multiple files") );
+	tqWarning(klocale->translate("ERROR: Can not open properties for multiple files") );
 	return;
     }
 
@@ -1325,7 +1329,6 @@ void KRootWidget::slotPopupEmptyTrash()
 	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L && strcmp( ep->d_name, ".directory" ) != 0L )
 	    {
 		QString trashFile( ep->d_name );
-		trashFile.detach();
 		trashFile.prepend (d);
 		KURL::encodeURL ( trashFile );    // make proper URL (Hen)
 		trashFile.prepend ("file:");
@@ -1378,7 +1381,6 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     popupMenu = new QPopupMenu();
 
     url = _url;
-    url.detach();
 
     KMimeType *typ = KMimeType::getMagicMimeType( url );
     pixmap = typ->getPixmap( url );
@@ -1416,7 +1418,6 @@ void KRootIcon::initToolTip()
     // Does not work due to a Qt bug.
     KMimeType *typ = KMimeType::getMagicMimeType( url.data() );
     QString com = typ->getComment( url.data() );
-    com.detach();
 
     if ( !com.isEmpty() )
 	QToolTip::add( this, com.data() );
@@ -1428,7 +1429,6 @@ void KRootIcon::initFilename()
     file = url.mid( url.findRev( "/" ) + 1, url.length() );
     if ( file.find( ".kdelnk" ) == ((int)file.length()) - 7 )
 	file = file.left( file.length() - 7 );
-    file.detach();
     KURL::decodeURL( file );
     // This changes "%2f" to "/"
     // Just for a nicer display
@@ -1780,11 +1780,11 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 	    // Multiple URLs ?
 	    if ( data.find( '\n' ) != -1 )
 	    {
-		QString tmp = kapp->kde_datadir().copy();
+		QString tmp = kapp->kde_datadir();
 		tmp += "/kfm/pics/kmultiple.xpm";
 		pixmap2.load( tmp );
 		if ( pixmap2.isNull() )
-		    warning("KFM: Could not find '%s'\n",tmp.data());
+		    tqWarning("KFM: Could not find '%s'\n",tmp.data());
 	    }
 
 	    // Proceed with the dragging operation only if the icon in which
@@ -1875,7 +1875,6 @@ void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPo
 printf("dropPopupMenu\n");
 
     dropDestination = _dest;
-    dropDestination.detach();
 
     dropZone = _zone;
 

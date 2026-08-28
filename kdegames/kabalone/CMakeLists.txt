@@ -7,13 +7,13 @@ include_directories (
 
 set(KABALONE_SRCS AbTop.cpp Board.cpp BoardWidget.cpp Move.cpp Spy.cpp kabalone.cpp)
 
-set(KABALONE_MOC AbTop.moc Board.moc BoardWidget.moc)
+set(KABALONE_MOC AbTop.h Board.h BoardWidget.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KABALONE_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KABALONE_MOC})
 
 add_executable(kabalone ${KABALONE_SRCS} ${MOC_FILES})
 target_link_libraries(kabalone
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

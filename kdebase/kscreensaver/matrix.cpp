@@ -189,7 +189,7 @@ init_matrix (Window win)
   //state->density = get_integer_resource ("density", "Integer");
   state->density = 75;
   /** Ici default == both 
-   ** {both,bottom,top}... Ça vaut la peine de le mettre dans le req?
+   ** {both,bottom,top}... ï¿½a vaut la peine de le mettre dans le req?
    insert = get_string_resource("insert", "Insert");
    if (insert && !strcmp(insert, "top"))
    {
@@ -256,7 +256,6 @@ insert_glyph (m_state *state, int glyph, int x, int y)
     ;
   else if (bottom_feeder_p)
     to->glow = 1 + (random() % 2);
-  else
     to->glow = 0;
 }
 

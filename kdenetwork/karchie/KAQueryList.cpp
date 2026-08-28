@@ -7,7 +7,7 @@
  *                KArchie is written for the KDE-Project                   *
  *                         http://www.kde.org                              *
  *                                                                         *
- *   Copyright (C) Oct 1997 Jörg Habenicht                                 *
+ *   Copyright (C) Oct 1997 Jï¿½rg Habenicht                                 *
  *                  E-Mail: j.habenicht@europemail.com                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -45,7 +45,7 @@ KADomainList::compareItems( GCI item1, GCI item2 )
   /* domains werden von hinten nach vorne sortiert im Namen */
   const char *host1 = (const char *)((KAQueryFile *)item1)->getHost();
   const char *host2 = (const char *)((KAQueryFile *)item2)->getHost();
-  //  debug("compare %s against %s", host1, host2);
+  //  tqDebug("compare %s against %s", host1, host2);
   // go to the end of the strings, pointing to '\0'
   char *index1 = (char *)host1 + strlen(host1);
   char *index2 = (char *)host2 + strlen(host2);
@@ -63,7 +63,7 @@ KADomainList::compareItems( GCI item1, GCI item2 )
     step1 = oldindex1 - index1;
     step2 = oldindex2 - index2;
     step = (step1<step2)?step1:step2;
-    //    debug("index1 %s, index2 %s, len1 %i, len2 %i, step %i", index1, index2, step1, step2, step);
+    //    tqDebug("index1 %s, index2 %s, len1 %i, len2 %i, step %i", index1, index2, step1, step2, step);
 
     /*
     // go reverse to the front and count the steps
@@ -80,19 +80,19 @@ KADomainList::compareItems( GCI item1, GCI item2 )
     ret = strnicmp(index1, index2, step);
     if (ret) {
       // both strings are NOT the same for 'step'-len
-      //      debug ("strings NOT same, return %i", ret);
+      //      tqDebug("strings NOT same, return %i", ret);
       return ret;
     }
     // both strings ARE the same for 'step'-len
 
     if (step1 < step2) {
-      //      debug ("strings ARE same, 1 smaller");
+      //      tqDebug("strings ARE same, 1 smaller");
       // index1 smaller than index2 -> index1 less than index2
       return -1;
     }  
     if (step2 < step1) {
       // index2 smaller than index1
-      //      debug ("strings ARE same, 2 smaller");
+      //      tqDebug("strings ARE same, 2 smaller");
       return 1;
     }
     // both strings are the same and the same length between '.' -- '.'
@@ -108,7 +108,7 @@ KADomainList::compareItems( GCI item1, GCI item2 )
   // ok, here we are:
   // both strings have bee the same for all parts of the url.
   // Then the urls have to be the same
-  //  debug ("strings are TOTALLY same");
+  //  tqDebug("strings are TOTALLY same");
   return 0;
 }
 

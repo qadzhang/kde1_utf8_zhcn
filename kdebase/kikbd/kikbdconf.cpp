@@ -302,14 +302,20 @@ QStrList KiKbdConfig::availableMaps(const char* subdir)
     {
       QDir dir(dirs.at(i));  
       if(!dir.exists()) continue;
-      QStrList entry = *dir.entryList("*.kimap",
+      // TQt3 迁移：entryList 返回 QStringList 值语义——逐项搬运到 QStrList
+      QStrList entry;
+      {
+        QStringList k1sl = dir.entryList("*.kimap",
 				     QDir::Files | QDir::Readable,
 				     QDir::Name | QDir::IgnoreCase);
+        for ( QStringList::Iterator k1it = k1sl.begin(); k1it != k1sl.end(); ++k1it )
+          entry.append( *k1it );
+      }
       unsigned j;for(j=0; j<entry.count(); j++)
 	{
 	  QString name = entry.at(j);
 	  if(*subdir) name = QString(subdir) + "/" + name;
-	  name.resize(name.find(".")+1);
+	  name.truncate(name.find(".")+1);
 	  if(list->find(name) == -1) list->inSort(name);
 	}
     }
@@ -516,7 +522,7 @@ const QPixmap KiKbdMapConfig::getIcon() const
 */
 void KiKbdMsgBox::error(const char* form, const char* s1, const char *s2)
 {
-  QString msg(128);
+  TQString msg;  /* TQt3 迁移：容量构造已删 */
   msg.sprintf(i18n(form), i18n(s1), i18n(s2));
   KMsgBox::message(0, i18n("International keyboard ERROR"), msg,
 		   KMsgBox::EXCLAMATION);
@@ -527,7 +533,7 @@ void KiKbdMsgBox::error(const char* form, const char* s1, const char *s2)
 */
 QString setMsg(const char* form, const char* s1, const char *s2)
 {
-  QString msg(128);
+  TQString msg;  /* TQt3 迁移：容量构造已删 */
   msg.sprintf(i18n(form), i18n(s1), i18n(s2));
   return msg;
 }

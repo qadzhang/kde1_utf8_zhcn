@@ -12,12 +12,12 @@ kmenuedit.cpp main.cpp pmenu.cpp
 	MenuNameDialog.cpp MenuNameDialogData.cpp )
 
 set(KMENUEDIT_MOC
-kmenuedit.moc pmenu.moc cpopmenu.moc confmenu.moc
-	button.moc IconPathDialog.moc IconPathDialogData.moc
-	DesktopPathDialog.moc DesktopPathDialogData.moc
-	entrydialog.moc	MenuNameDialog.moc MenuNameDialogData.moc)
+kmenuedit.h pmenu.h cpopmenu.h confmenu.h
+	button.h IconPathDialog.h IconPathDialogData.h
+	DesktopPathDialog.h DesktopPathDialogData.h
+	entrydialog.h	MenuNameDialog.h MenuNameDialogData.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KMENUEDIT_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KMENUEDIT_MOC})
 
 add_executable(kmenuedit1 ${KMENUEDIT_SRCS} ${MOC_FILES})
 target_link_libraries(kmenuedit1
@@ -25,7 +25,7 @@ target_link_libraries(kmenuedit1
     ${KDE1_KDEUI}
     ${KDE1_KFM}
     ${KDE1_KFILE}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

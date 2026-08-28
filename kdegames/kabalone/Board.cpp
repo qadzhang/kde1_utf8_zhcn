@@ -1229,14 +1229,14 @@ void Board::setState(QString& state)
 {
 	if (state.length() != 23) return;
 
-	color1Count = state[0] - 'A';
-	color2Count = state[1] - 'A';
-	color = (state[2] - 'A') / 3;
-	field[order[0]] = (state[2] - 'A') %3;
+	color1Count = state[0].latin1() - 'A';
+	color2Count = state[1].latin1() - 'A';
+	color = (state[2].latin1() - 'A') / 3;
+	field[order[0]] = (state[2].latin1() - 'A') %3;
 
 	int i = 1;
 	for(int j = 3; j<23; j++) {
-		int w = state[j] - '@';
+		int w = state[j].latin1() - '@';
 		field[order[i++]] = w/9;
 		field[order[i++]] = (w % 9)/3;
 		field[order[i++]] = w % 3;

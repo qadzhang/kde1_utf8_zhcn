@@ -65,7 +65,7 @@ PMenuItem::PMenuItem()
   : url_name(command_name), dev_name(command_name), mount_point(term_opt), fs_type(exec_path),
     dev_read_only(use_term), umount_pixmap_name(pattern), swallow_title(term_opt)
 {
-  initMetaObject();
+
   entry_type = empty; 
   sub_menu = NULL;
   cmenu = NULL;
@@ -79,10 +79,10 @@ PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n, PMenu *menu,
   : url_name(command_name), dev_name(command_name), mount_point(term_opt), fs_type(exec_path),
     dev_read_only(use_term), umount_pixmap_name(pattern), swallow_title(term_opt)
 {
-  initMetaObject();
+
   entry_type = e;
-  text_name = t.copy();
-  real_name = t.copy();
+  text_name = t;
+  real_name = t;
   command_name = c;
   pixmap_name = n;
   if( !pixmap_name.isEmpty() )
@@ -104,7 +104,7 @@ PMenuItem::PMenuItem( PMenuItem &item )
   : url_name(command_name), dev_name(command_name), mount_point(term_opt), fs_type(exec_path),
     dev_read_only(use_term), umount_pixmap_name(pattern), swallow_title(term_opt)
 {
-  initMetaObject();
+
   text_name       = item.text_name;
   real_name       = item.real_name;
   old_name        = item.old_name;
@@ -204,7 +204,7 @@ short PMenuItem::parse( QString &s, PMenu *menu)
   if ( pos < 0 )
     { pos = s.length(); }
   QString command = s.left( pos );
-//debug ( "com = '%s'", (const char *) command);
+//tqDebug(  "com = '%s'", (const char *) command);
   if ( command == "Menu" )
     {
       entry_type = submenu;
@@ -224,7 +224,6 @@ short PMenuItem::parse( QString &s, PMenu *menu)
     { entry_type = swallow_com; }
   else if ( command == "Net_Com" )
     { entry_type = net_com; }
-  else
     { 
       entry_type = empty;
       return -1; 
@@ -240,9 +239,9 @@ short PMenuItem::parse( QString &s, PMenu *menu)
   pixmap_name = s.mid( pos+1, npos-pos-1 );
   while( s[npos+1] == ' ' ) npos++;
   command_name = s.right( s.length()-npos-1 );
-//debug ( "text = '%s'", (const char *) text_name);
-//debug ( "pix = '%s'", (const char *) pixmap_name);
-//debug ( "unix = '%s'", (const char *) command_name);
+//tqDebug(  "text = '%s'", (const char *) text_name);
+//tqDebug(  "pix = '%s'", (const char *) pixmap_name);
+//tqDebug(  "unix = '%s'", (const char *) command_name);
   if( !pixmap_name.isEmpty() )
     {
       pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 16, 16);
@@ -253,7 +252,7 @@ short PMenuItem::parse( QString &s, PMenu *menu)
 short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
 {
   QString lang = KApplication::getKApplication()->getLocale()->language();
-  real_name = fi->fileName().copy();
+  real_name = fi->fileName();
   old_name = real_name;
   QString type_string = "";
   int pos = fi->fileName().find(".kdelnk");
@@ -506,7 +505,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
     pixmap = global_pix_loader->loadApplicationMiniIcon(big_pixmap_name, 16, 16);
   }
   if (pixmap.isNull() && getType() == unix_com){
-    QString tmp = real_name.copy();
+    QString tmp = real_name;
     int pos = tmp.find(".kdelnk");
     if( pos >= 0 )
       tmp = tmp.left(pos);
@@ -520,12 +519,12 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
   if (comment.isEmpty())
     comment = text_name;
   if (big_pixmap_name.isEmpty()){
-    QString tmp = real_name.copy();
+    QString tmp = real_name;
     int pos = tmp.find(".kdelnk");
     if( pos >= 0 )
       tmp = tmp.left(pos);
     tmp.append(".xpm");
-    big_pixmap_name = tmp.copy();
+    big_pixmap_name = tmp;
   }
   // end kpanel
 
@@ -537,7 +536,7 @@ void PMenuItem::writeConfig( QDir dir )
   if( read_only || entry_type == separator )
     return;
   QString file = dir.absPath();
-  dir_path = file.copy();
+  dir_path = file;
   file += ( (QString) "/" + real_name ); //+ ".kdelnk" );
   QFile config(file);
   if( !config.open(IO_ReadWrite) ) 
@@ -623,14 +622,14 @@ QPixmap PMenuItem::getBigPixmap()
 
 PMenu::PMenu()
 {
-  initMetaObject();
+
   menu_conf = NULL;
   list.setAutoDelete(TRUE);
 }
 
 PMenu::PMenu( PMenu &menu )
 {
-  initMetaObject();
+
   menu_conf = NULL;
   list.setAutoDelete(TRUE);
   PMenuItem *item, *new_item;
@@ -724,27 +723,27 @@ short PMenu::parse( QDataStream &s )
   PMenuItem *new_item;
   PMenu *new_menu;
   char c;
-  s >> c;
+  { TQ_INT8 q1c; s >> q1c; c = (char)q1c; }  // TQt3 迁移：>> 无 char& 版
   while ( c != '\n' )
     {
       buf += c; 
-      s >> c;
+      { TQ_INT8 q1c; s >> q1c; c = (char)q1c; }
     }
   buf.simplifyWhiteSpace();
-//  debug("%s", (const char *) buf);
+//  tqDebug("%s", (const char *) buf);
   if( buf != "Begin_Menu" )
     return -1;
   while( !s.eof() )
     { 
       buf = "";
-      s >> c;
+      { TQ_INT8 q1c; s >> q1c; c = (char)q1c; }
       while ( c != '\n' && !s.eof() )
 	{
 	  buf += c; 
-	  s >> c;
+	  { TQ_INT8 q1c; s >> q1c; c = (char)q1c; }
 	}
       buf.simplifyWhiteSpace();
-//debug ( "line = '%s'", (const char *) buf);
+//tqDebug(  "line = '%s'", (const char *) buf);
       if( buf == "End_Menu" )
 	break;
       if( (pos = buf.find(' ')) < 0)
@@ -918,7 +917,10 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
       return;
     }
   QString name;
-  const QStrList *temp_list = base_dir.entryList("*", QDir::Files);
+  static TQStrList k1tl; k1tl.clear();  /* TQt3 迁移：值语义承接 */
+  { QStringList k1sl = base_dir.entryList("*", QDir::Files);
+    for (unsigned k1i=0;k1i<k1sl.count();++k1i) k1tl.append(k1sl[k1i]); }
+  const QStrList *temp_list = &k1tl;
   QStrList file_list;
   file_list.setAutoDelete(TRUE);
   QStrListIterator temp_it( *temp_list );
@@ -927,7 +929,9 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
       file_list.append(name);
       ++temp_it;
     }
-  temp_list = base_dir.entryList("*", QDir::Dirs);
+  k1tl.clear();  /* TQt3 迁移：复用承接列表 */
+  { QStringList k1sl = base_dir.entryList("*", QDir::Dirs);
+    for (unsigned k1i=0;k1i<k1sl.count();++k1i) k1tl.append(k1sl[k1i]); }
   QStrList dir_list;
   dir_list.setAutoDelete(TRUE);
   temp_it.toFirst();
@@ -981,14 +985,14 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
     {
       if( isKdelnkFile(base_dir.absFilePath(name)) )
 	{
-	  //debug("will remove file: %s", (const char *) name );
+	  //tqDebug("will remove file: %s", (const char *) name );
 	  base_dir.remove(name);
 	}
     }
   // remove dirs not in pmenu
   for( name = dir_list.first(); name != 0; name = dir_list.next() )
     {
-      //debug("will remove dir: %s", (const char *) name );
+      //tqDebug("will remove dir: %s", (const char *) name );
       QDir sub_dir(base_dir);
       if(sub_dir.cd(name))
 	{
@@ -1121,7 +1125,7 @@ void PMenu::copyFiles( QString source, QString dest )
   in.close();
   if( len == -1 )
     { // abort and remove destination file
-      debug("KMenuedit: copy files not succeded.");
+      tqDebug("KMenuedit: copy files not succeded.");
       QFileInfo fi(dest);
       fi.dir().remove(dest);
     }
@@ -1142,11 +1146,11 @@ void PMenu::move(short item_id, short new_pos)
       list.insert( new_pos - 1, item);
     }
   //debug
-  //debug("but_id = %i / new_pos = %i", item_id, new_pos);
+  //tqDebug("but_id = %i / new_pos = %i", item_id, new_pos);
   //int i = 0;
   //for( item = list.first(); item != 0; item = list.next(), i++ )
   //  {
-  //    debug("PMenu:: name = %s / id = %i", (const char *) item->getText(), i);
+  //    tqDebug("PMenu:: name = %s / id = %i", (const char *) item->getText(), i);
   //  }
 }
 

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qiconset.cpp:850 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQIconFactory Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQIconFactory Class Reference</h1>
+
+<p>The TQIconFactory class is used to create pixmaps for a TQIconSet.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qiconset-h.html">ntqiconset.h</a>&gt;</tt>
+<p><a href="qiconfactory-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQIconFactory"><b>TQIconFactory</b></a> ()</li>
+<li class=fn>virtual <a href="#~TQIconFactory"><b>~TQIconFactory</b></a> ()</li>
+<li class=fn>virtual TQPixmap * <a href="#createPixmap"><b>createPixmap</b></a> ( const&nbsp;TQIconSet&nbsp;&amp;&nbsp;iconSet, TQIconSet::Size&nbsp;size, TQIconSet::Mode&nbsp;mode, TQIconSet::State&nbsp;state )</li>
+<li class=fn>void <a href="#setAutoDelete"><b>setAutoDelete</b></a> ( bool&nbsp;autoDelete )</li>
+<li class=fn>bool <a href="#autoDelete"><b>autoDelete</b></a> () const</li>
+</ul>
+<h2>Static Public Members</h2>
+<ul>
+<li class=fn>TQIconFactory * <a href="#defaultFactory"><b>defaultFactory</b></a> ()</li>
+<li class=fn>void <a href="#installDefaultFactory"><b>installDefaultFactory</b></a> ( TQIconFactory&nbsp;*&nbsp;factory )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+ 
+
+The TQIconFactory class is used to create pixmaps for a <a href="ntqiconset.html">TQIconSet</a>.
+<p> By reimplementing <a href="#createPixmap">createPixmap</a>(), you can override TQIconSet's
+default algorithm for computing pixmaps not supplied by the user.
+<p> Call <a href="#setAutoDelete">setAutoDelete</a>(true) if you want the factory to automatically
+delete itself when it is no longer needed by TQIconSet.
+<p> <p>See also <a href="ntqiconset.html">TQIconSet</a> and <a href="advanced.html">Advanced Widgets</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQIconFactory"></a>TQIconFactory::TQIconFactory ()
+</h3>
+Constructs an icon factory.
+
+<h3 class=fn><a name="~TQIconFactory"></a>TQIconFactory::~TQIconFactory ()<tt> [virtual]</tt>
+</h3>
+Destroys the object and frees any allocated resources.
+
+<h3 class=fn>bool <a name="autoDelete"></a>TQIconFactory::autoDelete () const
+</h3>
+
+<p> Returns true if auto-deletion is enabled; otherwise returns false.
+<p> <p>See also <a href="#setAutoDelete">setAutoDelete</a>().
+
+<h3 class=fn><a href="ntqpixmap.html">TQPixmap</a>&nbsp;* <a name="createPixmap"></a>TQIconFactory::createPixmap ( const&nbsp;<a href="ntqiconset.html">TQIconSet</a>&nbsp;&amp;&nbsp;iconSet, <a href="ntqiconset.html#Size-enum">TQIconSet::Size</a>&nbsp;size, <a href="ntqiconset.html#Mode-enum">TQIconSet::Mode</a>&nbsp;mode, <a href="ntqiconset.html#State-enum">TQIconSet::State</a>&nbsp;state )<tt> [virtual]</tt>
+</h3>
+Ceates a pixmap for <em>iconSet</em> with a certain <em>size</em>, <em>mode</em>, and
+<em>state</em>. Returns 0 if the default <a href="ntqiconset.html">TQIconSet</a> algorithm should be
+used to create a pixmap that wasn't supplied by the user.
+<p> It is the caller's responsibility to delete the returned pixmap.
+<p> The default implementation always returns 0.
+
+<h3 class=fn><a href="qiconfactory.html">TQIconFactory</a>&nbsp;* <a name="defaultFactory"></a>TQIconFactory::defaultFactory ()<tt> [static]</tt>
+</h3>
+Returns the default icon factory.
+<p> <p>See also <a href="#installDefaultFactory">installDefaultFactory</a>().
+
+<h3 class=fn>void <a name="installDefaultFactory"></a>TQIconFactory::installDefaultFactory ( <a href="qiconfactory.html">TQIconFactory</a>&nbsp;*&nbsp;factory )<tt> [static]</tt>
+</h3>
+Replaces the default icon factory with <em>factory</em>.
+
+<h3 class=fn>void <a name="setAutoDelete"></a>TQIconFactory::setAutoDelete ( bool&nbsp;autoDelete )
+</h3>
+
+<p> If <em>autoDelete</em> is true, sets the icon factory to automatically
+delete itself when it is no longer referenced by any <a href="ntqiconset.html">TQIconSet</a> and
+isn't the default factory. If <em>autoDelete</em> is false (the default)
+auto-deletion is disabled.
+<p> <p>See also <a href="#autoDelete">autoDelete</a>() and <a href="#defaultFactory">defaultFactory</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

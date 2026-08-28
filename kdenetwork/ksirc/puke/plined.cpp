@@ -18,14 +18,14 @@ PObject *createWidget(CreateArgs &ca)
 PLineEdit::PLineEdit(PObject *parent)
   : PWidget(parent)
 {
-  //  debug("PLineEdit PLineEdit called");
-  lineedit = 0;
+  //  tqDebug("PLineEdit PLineEdit called");
+  lineedit = 0;  /* TQt3 迁移 */
   setWidget(lineedit);
 }
 
 PLineEdit::~PLineEdit()
 {
-  //  debug("PLineEdit: in destructor");
+  //  tqDebug("PLineEdit: in destructor");
   /*
   delete widget();     // Delete the frame
   lineedit=0;          // Set it to 0
@@ -39,7 +39,7 @@ void PLineEdit::messageHandler(int fd, PukeMessage *pm)
   switch(pm->iCommand){
   case PUKE_LINED_SET_MAXLENGTH:
     if(widget() == 0){
-      debug("PLineEdit: No Widget set");
+      tqDebug("PLineEdit: No Widget set");
       return;
     }
     widget()->setMaxLength(pm->iArg);
@@ -51,7 +51,7 @@ void PLineEdit::messageHandler(int fd, PukeMessage *pm)
     break;
   case PUKE_LINED_SET_ECHOMODE:
     if(widget() == 0){
-      debug("PLineEdit: No Widget set");
+      tqDebug("PLineEdit: No Widget set");
       return;
     }
     widget()->setEchoMode((QLineEdit::EchoMode) pm->iArg);
@@ -63,10 +63,10 @@ void PLineEdit::messageHandler(int fd, PukeMessage *pm)
     break;
   case PUKE_LINED_SET_TEXT:
     if(widget() == 0){
-      debug("PLineEdit: No Widget set");
+      tqDebug("PLineEdit: No Widget set");
       return;
     }
-    debug("PukeLine Edit: Got: %s", pm->cArg);
+    tqDebug("PukeLine Edit: Got: %s", pm->cArg);
     widget()->setText(pm->cArg);
     pmRet.iCommand = - pm->iCommand;
     pmRet.iWinId = pm->iWinId;
@@ -79,7 +79,7 @@ void PLineEdit::messageHandler(int fd, PukeMessage *pm)
     break;
   case PUKE_LINED_GET_TEXT:
     if(widget() == 0){
-      debug("PLineEdit: No Widget set");
+      tqDebug("PLineEdit: No Widget set");
       return;
     }
     pmRet.iCommand = - pm->iCommand;

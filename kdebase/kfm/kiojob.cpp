@@ -37,7 +37,7 @@ QList<KIOJob> *KIOJob::jobList;
 QDict<QString> *KIOJob::passwordDict;
 
 /*#define done() \
-  {  debug("-------------------- %s, %d : calling done()",__FUNCTION__,__LINE__); this->done(); }
+  {  tqDebug("-------------------- %s, %d : calling done()",__FUNCTION__,__LINE__); this->done(); }
 */
 
 KIOJob::KIOJob( int _id )
@@ -90,14 +90,13 @@ void KIOJob::mkdir( const char *_url )
     KURL u( _url );
     if ( u.isMalformed() )
     {
-        warning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path());
+        tqWarning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path());
 	return;
     }
     
     action = KIOJob::JOB_MKDIR;
     
     mkdirURL = _url;
-    mkdirURL.detach();
     
     notifyList.append( u.directoryURL() );
 
@@ -137,7 +136,7 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
 {
     if ( _dev == 0L )
     {
-	warning(i18n("INTERNAL ERROR: You must at least specify the device for mounting") );
+	tqWarning(i18n("INTERNAL ERROR: You must at least specify the device for mounting") );
 	exit(1);
     }
     
@@ -145,11 +144,8 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
     
     mntReadOnly = _ro;
     mntFSType = _fstype;
-    mntFSType.detach();
     mntDev = _dev;
-    mntDev.detach();
     mntPoint = _point;
-    mntPoint.detach();
 
     // Find the mount point an notify us about the changes
     QString n = KIOServer::findDeviceMountPoint( _dev, _PATH_FSTAB );
@@ -168,7 +164,6 @@ void KIOJob::unmount( const char *_point )
     action = KIOJob::JOB_UNMOUNT;
     
     mntPoint = _point;
-    mntPoint.detach();
 
     QString n2 = "file:";
     n2 += _point;
@@ -192,7 +187,6 @@ void KIOJob::link( QStrList & _src_url_list, const char *_dest_dir_url )
 	KURL::encodeURL( s );
 
 	QString d = _dest_dir_url;
-	d.detach();
 	if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
 	    d += "/";
 	d += s.data();
@@ -228,10 +222,8 @@ void KIOJob::link()
 	KURL du( p2 );
 
 	QString supath( su.path() );  // source path
-	supath.detach();
 
 	QString dupath( du.path() );  // destination path
-	dupath.detach();
 	
 	// Which directories do we have to notify ?
 	if ( notifyList.find( du.directoryURL( false ) ) == -1 )
@@ -329,7 +321,6 @@ void KIOJob::link()
 				// Get the new destinations name
 				du = r->getNewName();
 				dupath = du.path();
-                                dupath.detach();
 				// Try again
 				if ( symlink( supath, dupath ) == -1 )
 				{
@@ -381,7 +372,6 @@ void KIOJob::link()
 			config.writeEntry( "Icon", "info.xpm" );
 		    else if ( strcmp( su.protocol(), "mailto" ) == 0 ) // sven:
 			config.writeEntry( "Icon", "kmail.xpm" );      // added mailto: support
-		    else
 			config.writeEntry( "Icon", KMimeType::getDefaultPixmap() );
 		    config.sync();
 		    if ( globalNotify )
@@ -389,7 +379,7 @@ void KIOJob::link()
 		    emit notify( id, p2 );
 		}
 		else
-		    warning(i18n(" ERROR: Could not write to %s"),p);
+		    tqWarning(i18n(" ERROR: Could not write to %s"),p);
 	    }
 	}
 	p2 = cmDestURLList.next();
@@ -434,7 +424,6 @@ void KIOJob::copy( QStrList & _src_url_list, const char *_dest_dir_url )
 	KURL::encodeURL( enc );
 	
 	QString d = _dest_dir_url;
-	d.detach();
 	if ( d.right(1) != "/" )
 	    d += "/";
 	d += enc;
@@ -554,10 +543,8 @@ void KIOJob::copy()
 	    struct stat buff;
 
 	    QString supath( su.path() );  // source path
-	    supath.detach();
 
 	    QString dupath( du.path() );  // destination path
-	    dupath.detach();
 
 	    lstat( supath.data(), &buff );
             if ( S_ISLNK( buff.st_mode ) )
@@ -600,7 +587,7 @@ void KIOJob::copy()
 		dp = opendir( supath );
 		if ( dp == NULL )
 		{
-		    warning(i18n("ERROR: Could not access directory '%s'"), p );
+		    tqWarning(i18n("ERROR: Could not access directory '%s'"), p );
 		    done();
 		    return;
 		}
@@ -611,18 +598,15 @@ void KIOJob::copy()
 		    {
 			// append directory-contents do 'todo'-list
 			QString fname = ep->d_name;
-			fname.detach();
 			KURL::encodeURL (fname);
 
 			QString s = p;
-			s.detach();
 			if ( s.length() > 0 && s.data()[ s.length() - 1 ] != '/' )
 			    s += "/";
 			s += fname;
 
 			
 			QString d = p2;
-			d.detach();
 			if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
 			    d += "/";
 			d += fname;
@@ -745,7 +729,6 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 	KURL::encodeURL( enc );
 	
 	QString d = _dest_dir_url;
-	d.detach();
 	if ( d.right(1) != "/" )
 	    d += "/";
 	d += enc;
@@ -812,10 +795,8 @@ void KIOJob::move()
 	
 
 	QString supath( su.path() );  // source path
-	supath.detach();
 
 	QString dupath( du.path() );  // destination path
-	dupath.detach();
 	
 	int i = 1;
 	// Moving on the local hard disk ?
@@ -965,17 +946,14 @@ void KIOJob::move()
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
 		      QString fname = ep->d_name;
-		      fname.detach();
 		      KURL::encodeURL (fname);
 
 		      QString s = p;
-		      s.detach();
 		      if ( s.right(1) != "/" )
 			s += "/";
 		      s += fname;
 		      
 		      QString d = p2;
-		      d.detach();
 		      if ( d.right(1) != "/" )
 			d += "/";
 		      d += fname;
@@ -1141,7 +1119,6 @@ void KIOJob::del()
 	if ( strcmp( su.protocol(), "file" ) == 0 )
 	{
 	    QString supath( su.path() );  // file to delete
-	    supath.detach();
 
 	    // Delete a trailing '/', for lstat
 	    if (( supath.length() > 1 ) && ( supath.right(1) == "/" ))
@@ -1170,7 +1147,7 @@ void KIOJob::del()
 		dp = opendir( supath );
 		if ( dp == NULL )
 		{
-		    warning(i18n("ERROR: Could not access directory '%s'"), p );
+		    tqWarning(i18n("ERROR: Could not access directory '%s'"), p );
 		    return;
 		}
 
@@ -1179,11 +1156,9 @@ void KIOJob::del()
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
 		        QString fname = ep->d_name;
-		        fname.detach();
 		        KURL::encodeURL (fname);
 
 			QString s = p;
-			s.detach();
 			if ( s.length() > 0 && s.data()[ s.length() - 1 ] != '/' )
 			    s += "/";
 			s += fname;
@@ -1286,7 +1261,7 @@ void KIOJob::msgResult2( QWidget * _win, int _button, const char *_src, const ch
 	    done();
 	break;
 	default: // Stephan: added default handler
-	    warning("Case not handled here");
+	    tqWarning("Case not handled here");
     }
 }
 
@@ -1579,12 +1554,12 @@ void KIOJob::start( int _pid )
 		{
 		    dlg = new QDialog( 0L );
 		    line1 = new QLabel( i18n("Making directory"), dlg );
-		    line2 = new QLabel( mkdirURL.data() );
+		    line2 = new QLabel( (const char*)mkdirURL.data(), 0 );  /* TQt3 迁移 */
 		}
 	    }
 	    break;	
 	 default:
-	     warning("Case not handled here");
+	     tqWarning("Case not handled here");
 	}
 
 	if ( dlg != 0L )
@@ -1896,7 +1871,7 @@ void KIOJob::slaveIsReady()
 	}
 	break;
     default: // Stephan: added default hander
-       warning("case not handled here");
+       tqWarning("case not handled here");
     }
 
     started = true;

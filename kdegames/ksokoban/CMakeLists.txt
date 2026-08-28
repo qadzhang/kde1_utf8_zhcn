@@ -92,9 +92,9 @@ set(ksokoban_SRCS
 )
 
 set(ksokoban_MOC
-    MainWindow.H
-    ModalLabel.H
-    PlayField.H
+    MainWindow.h
+    ModalLabel.h
+    PlayField.h
 )
 
 set(ksokoban_HTML
@@ -104,11 +104,11 @@ set(ksokoban_HTML
     data/index.html
     )
 
-QT1_WRAP_MOC(MOC_FILES ${ksokoban_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${ksokoban_MOC})
 
 add_executable(ksokoban ${ksokoban_SRCS} ${MOC_FILES})
 target_link_libraries(ksokoban
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

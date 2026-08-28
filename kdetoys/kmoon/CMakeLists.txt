@@ -6,15 +6,15 @@ include_directories (
 
 set(KMOON_SRCS  kmoon.cpp phases.cpp)
 
-set(KMOON_MOC kmoon.moc)
+set(KMOON_MOC kmoon.h)
 
-qt1_wrap_moc(MOC_FILES ${KMOON_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KMOON_MOC})
 
 add_executable(kmoon ${KMOON_SRCS} ${MOC_FILES})
 target_link_libraries(kmoon
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
 )
 

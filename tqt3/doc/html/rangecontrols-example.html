@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/rangecontrols/rangecontrols.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Range controls</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Range controls</h1>
+
+   
+<p> 
+This examples shows various types of range controls that
+are supported by TQt: dials, spin boxes and sliders.
+<p> <hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/rangecontrols.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef RANGECONTROLS_H
+#define RANGECONTROLS_H
+
+#include &lt;<a href="qvbox-h.html">ntqvbox.h</a>&gt;
+
+class TQCheckBox;
+
+class RangeControls : public <a href="ntqvbox.html">TQVBox</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+
+public:
+    RangeControls( <a href="ntqwidget.html">TQWidget</a> *parent = 0, const char *name = 0 );
+
+private:
+    <a href="ntqcheckbox.html">TQCheckBox</a> *notches, *wrapping;
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/rangecontrols.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "rangecontrols.h"
+
+#include &lt;<a href="qhbox-h.html">ntqhbox.h</a>&gt;
+#include &lt;<a href="qlcdnumber-h.html">ntqlcdnumber.h</a>&gt;
+#include &lt;<a href="qspinbox-h.html">ntqspinbox.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qstring-h.html">ntqstring.h</a>&gt;
+#include &lt;<a href="qslider-h.html">ntqslider.h</a>&gt;
+#include &lt;<a href="qcheckbox-h.html">ntqcheckbox.h</a>&gt;
+
+#include &lt;limits.h&gt;
+
+<a name="f436"></a>RangeControls::RangeControls( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+    : <a href="ntqvbox.html">TQVBox</a>( parent, name )
+{
+    <a href="ntqhbox.html">TQHBox</a> *row1 = new <a href="ntqhbox.html">TQHBox</a>( this );
+
+    <a href="ntqvbox.html">TQVBox</a> *cell2 = new <a href="ntqvbox.html">TQVBox</a>( row1 );
+<a name="x1382"></a>    cell2-&gt;<a href="ntqframe.html#setMargin">setMargin</a>( 10 );
+<a name="x1381"></a>    cell2-&gt;<a href="ntqframe.html#setFrameStyle">setFrameStyle</a>( TQFrame::WinPanel | TQFrame::Sunken );
+
+    (void)new <a href="ntqwidget.html">TQWidget</a>( cell2 );
+
+    <a href="ntqlabel.html">TQLabel</a> *label1 = new <a href="ntqlabel.html">TQLabel</a>( TQString( "Enter a value between\n%1 and %2:" ).arg( -INT_MAX ).arg( INT_MAX ), cell2 );
+<a name="x1391"></a><a name="x1383"></a>    label1-&gt;<a href="ntqwidget.html#setMaximumHeight">setMaximumHeight</a>( label1-&gt;<a href="ntqwidget.html#sizeHint">sizeHint</a>().height() );
+    <a href="ntqspinbox.html">TQSpinBox</a> *sb1 = new <a href="ntqspinbox.html">TQSpinBox</a>( -INT_MAX, INT_MAX, 1, cell2 );
+<a name="x1390"></a>    sb1-&gt;<a href="ntqspinbox.html#setValue">setValue</a>( 0 );
+
+    <a href="ntqlabel.html">TQLabel</a> *label2 = new <a href="ntqlabel.html">TQLabel</a>( "Enter a zoom value:", cell2 );
+    label2-&gt;<a href="ntqwidget.html#setMaximumHeight">setMaximumHeight</a>( label2-&gt;<a href="ntqwidget.html#sizeHint">sizeHint</a>().height() );
+    <a href="ntqspinbox.html">TQSpinBox</a> *sb2 = new <a href="ntqspinbox.html">TQSpinBox</a>( 0, 1000, 10, cell2 );
+<a name="x1389"></a>    sb2-&gt;<a href="ntqspinbox.html#setSuffix">setSuffix</a>( " %" );
+<a name="x1388"></a>    sb2-&gt;<a href="ntqspinbox.html#setSpecialValueText">setSpecialValueText</a>( "Automatic" );
+
+    <a href="ntqlabel.html">TQLabel</a> *label3 = new <a href="ntqlabel.html">TQLabel</a>( "Enter a price:", cell2 );
+    label3-&gt;<a href="ntqwidget.html#setMaximumHeight">setMaximumHeight</a>( label3-&gt;<a href="ntqwidget.html#sizeHint">sizeHint</a>().height() );
+    <a href="ntqspinbox.html">TQSpinBox</a> *sb3 = new <a href="ntqspinbox.html">TQSpinBox</a>( 0, INT_MAX, 1, cell2 );
+<a name="x1387"></a>    sb3-&gt;<a href="ntqspinbox.html#setPrefix">setPrefix</a>( "$" );
+    sb3-&gt;<a href="ntqspinbox.html#setValue">setValue</a>( 355 );
+
+    (void)new <a href="ntqwidget.html">TQWidget</a>( cell2 );
+
+    <a href="ntqhbox.html">TQHBox</a> *row2 = new <a href="ntqhbox.html">TQHBox</a>( this );
+
+    <a href="ntqvbox.html">TQVBox</a> *cell3 = new <a href="ntqvbox.html">TQVBox</a>( row2 );
+    cell3-&gt;<a href="ntqframe.html#setMargin">setMargin</a>( 10 );
+    cell3-&gt;<a href="ntqframe.html#setFrameStyle">setFrameStyle</a>( TQFrame::WinPanel | TQFrame::Sunken );
+    <a href="ntqslider.html">TQSlider</a> *hslider = new <a href="ntqslider.html">TQSlider</a>( 0, 64, 1, 33, TQt::Horizontal, cell3, "horizontal_s" );
+    <a href="ntqlcdnumber.html">TQLCDNumber</a> *lcd2 = new <a href="ntqlcdnumber.html">TQLCDNumber</a>( 2, cell3 );
+<a name="x1384"></a>    lcd2-&gt;<a href="ntqlcdnumber.html#display">display</a>( 33 );
+<a name="x1385"></a>    lcd2-&gt;<a href="ntqlcdnumber.html#setSegmentStyle">setSegmentStyle</a>( TQLCDNumber::Filled );
+<a name="x1386"></a>    <a href="ntqobject.html#connect">connect</a>( hslider, TQ_SIGNAL( <a href="ntqslider.html#valueChanged">valueChanged</a>( int ) ), lcd2, TQ_SLOT( <a href="ntqlcdnumber.html#display">display</a>( int ) ) );
+
+    <a href="ntqhbox.html">TQHBox</a> *cell4 = new <a href="ntqhbox.html">TQHBox</a>( row2 );
+    cell4-&gt;<a href="ntqframe.html#setFrameStyle">setFrameStyle</a>( TQFrame::WinPanel | TQFrame::Sunken );
+    cell4-&gt;<a href="ntqframe.html#setMargin">setMargin</a>( 10 );
+    <a href="ntqslider.html">TQSlider</a> *vslider = new <a href="ntqslider.html">TQSlider</a>( 0, 64, 1, 8, TQt::Vertical, cell4 );
+    <a href="ntqlcdnumber.html">TQLCDNumber</a> *lcd3 = new <a href="ntqlcdnumber.html">TQLCDNumber</a>( 3, cell4 );
+    lcd3-&gt;<a href="ntqlcdnumber.html#display">display</a>( 8 );
+    <a href="ntqobject.html#connect">connect</a>( vslider, TQ_SIGNAL( <a href="ntqslider.html#valueChanged">valueChanged</a>( int ) ), lcd3, TQ_SLOT( <a href="ntqlcdnumber.html#display">display</a>( int ) ) );
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "rangecontrols.h"
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    RangeControls rangecontrols;
+    rangecontrols.<a href="ntqwidget.html#resize">resize</a>( 500, 300 );
+    rangecontrols.<a href="ntqwidget.html#setCaption">setCaption</a>( "TQt Example - Range Control Widgets" );
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;rangecontrols );
+    rangecontrols.<a href="ntqwidget.html#show">show</a>();
+
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -110,7 +110,7 @@ KSircTopLevel::KSircTopLevel(KSircProcess *_proc, char *cname, const char * name
   LineBuffer = new("QStrListTopLevel") QStrList(TRUE);
   Buffer = FALSE;
 
-  have_focus = 0;
+  have_focus = 0;  /* TQt3 迁移 */
   ticker = 0; // Set the ticker to NULL while it doesn't exist.
   tab_pressed = 0; // Tab (nick completion not pressed yet)
   tab_start = -1;
@@ -155,7 +155,7 @@ KSircTopLevel::KSircTopLevel(KSircProcess *_proc, char *cname, const char * name
   kmenu->setFrameStyle(QFrame::NoFrame); // Turn off frame style.
   kmenu->setLineWidth(0);  
   kmenu->resize(width(), height() - 2);
-  if(style() == MotifStyle)
+  if(style().inherits("TQMotifStyle"))
     kmenu->recreate(menu_frame, 0, QPoint(0,-3));
   else
     kmenu->recreate(menu_frame, 0, QPoint(0,0));
@@ -381,7 +381,7 @@ KSircTopLevel::~KSircTopLevel() /*FOLD00*/
 
   if(ticker)
     delete ticker;
-  ticker = 0;
+  ticker = 0;  /* TQt3 迁移 */
   //  delete gm; // Deletes everthing bellow it I guess...
   //  delete gm2; 
   //  delete pan; // Should be deleted by gm2
@@ -459,7 +459,7 @@ void KSircTopLevel::TabNickCompletion()  /*FOLD00*/
   if (start == -1) {
     tab_nick = findNick(s.mid(0, end+1), tab_pressed);
     if(tab_nick.isNull() == TRUE){
-      tab_pressed = 0;
+      tab_pressed = 0;  /* TQt3 迁移 */
       tab_nick = findNick(s.mid(0, end+1), tab_pressed);
     }
     s.replace(0, end + 1, tab_nick);
@@ -467,7 +467,7 @@ void KSircTopLevel::TabNickCompletion()  /*FOLD00*/
   else {
     tab_nick = findNick(s.mid(start + 1, end - start), tab_pressed);
     if(tab_nick.isNull() == TRUE){
-      tab_pressed = 0;
+      tab_pressed = 0;  /* TQt3 迁移 */
       tab_nick = findNick(s.mid(start + 1, end - start), tab_pressed);
     }
     s.replace(start + 1, end - start, tab_nick);
@@ -617,7 +617,7 @@ void KSircTopLevel::sirc_write(QString str) /*FOLD00*/
    * Parse line forcommand we handle
    */
 
-  str.detach();
+  str
 
   if((strncmp(str, "/join ", 6) == 0) ||
      (strncmp(str, "/j ", 3) == 0) ||
@@ -664,7 +664,7 @@ void KSircTopLevel::sirc_write(QString str) /*FOLD00*/
   //
 
   if(channel_name[0] != '!'){
-    str.detach();
+    str
     if(str[0] != '/'){
       str.prepend(QString("/msg ") + channel_name + QString(" "));
     }
@@ -739,7 +739,7 @@ ircListItem *KSircTopLevel::parse_input(QString string) /*FOLD00*/
   catch(parseError &err){
     if(err.err.isEmpty() == FALSE){
       QString format = err.err + ": %s";
-      warning(format.data(), string.data());
+      tqWarning(format.data(), string.data());
     }
     if(err.str.isEmpty() == FALSE){
       return new("ircListItem") ircListItem(err.str, kSircConfig->colour_error, mainw, pix_madsmile);
@@ -747,7 +747,7 @@ ircListItem *KSircTopLevel::parse_input(QString string) /*FOLD00*/
     return NULL;
   }
   catch(estringOutOfBounds &err){
-      warning("esParsing failed on: %s", err.str.data());
+      tqWarning("esParsing failed on: %s", err.str.data());
       return NULL;
   }
   
@@ -869,7 +869,7 @@ void KSircTopLevel::resizeEvent(QResizeEvent *e) /*FOLD00*/
 
   mainw->setAutoUpdate(update);
 
-//  debug("Finished main window resize event");
+//  tqDebug("Finished main window resize event");
   // The ListBox will get an implicit size change
 
   // Delete QPopup menus
@@ -894,7 +894,7 @@ void KSircTopLevel::gotFocus() /*FOLD00*/
 void KSircTopLevel::lostFocus() /*fold00*/
 {
   if(have_focus == 1){
-    have_focus = 0;
+    have_focus = 0;  /* TQt3 迁移 */
     //    cerr << channel_name << " got focusIn Event\n";
   }
 
@@ -913,7 +913,7 @@ void KSircTopLevel::control_message(int command, QString str) /*FOLD00*/
           QString mname = name();
           int end = mname.find('_');
           if(end < 0){
-              warning("Change channel message was invalid: %s", str.data());
+              tqWarning("Change channel message was invalid: %s", str.data());
               break;
           }
           server = mname.mid(0, end);
@@ -930,7 +930,7 @@ void KSircTopLevel::control_message(int command, QString str) /*FOLD00*/
       f->setName(QString(QString(QObject::name()) + "_" + "kstIFrame"));
       ktool->getFrame(10)->setName(QString(QObject::name()) + "_ktoolframe");
       lagmeter->setName(QString(QObject::name()) + "_lagmeter");
-      have_focus = 0;
+      have_focus = 0;  /* TQt3 迁移 */
       this->setCaption(channel_name);
       mainw->scrollToBottom();
       emit currentWindow(this);
@@ -981,7 +981,6 @@ void KSircTopLevel::control_message(int command, QString str) /*FOLD00*/
   case SET_LAG:
     if(str.isNull() == FALSE){
       bool ok = TRUE;
-      str.detach();
       str.truncate(6);
       double lag = str.toDouble(&ok);
       if(ok == TRUE){
@@ -1045,7 +1044,7 @@ void KSircTopLevel::unHide() /*FOLD00*/
   kConfig->writeEntry("step", step);
   kConfig->sync();
   delete ticker;
-  ticker = 0;
+  ticker = 0;  /* TQt3 迁移 */
   displayMgr->newTopLevel(this, TRUE);
 //  this->setGeometry(myrect);
 //  this->recreate(0, getWFlags(), mypoint, TRUE);
@@ -1131,7 +1130,7 @@ void KSircTopLevel::pasteToWindow() /*fold00*/
 
 void KSircTopLevel::lineeNotTab() /*fold00*/
 {
-  tab_pressed = 0;
+  tab_pressed = 0;  /* TQt3 迁移 */
   disconnect(linee, SIGNAL(notTab()),
 	     this, SLOT(lineeNotTab()));
 
@@ -1149,7 +1148,7 @@ void KSircTopLevel::iamDestroyed() /*fold00*/
 #undef BLAH
 #ifdef BLAH
 void KSircTopLevel::timerEvent( QTimerEvent * ){ /*FOLD00*/
-//  debug("Tick:  current size: %d %d, real size: %d %d",
+//  tqDebug("Tick:  current size: %d %d, real size: %d %d",
 //	current_size.width(), current_size.height(),
 //	size().width(), size().height());
   XWindowAttributes xwa;
@@ -1157,7 +1156,7 @@ void KSircTopLevel::timerEvent( QTimerEvent * ){ /*FOLD00*/
   XGetWindowAttributes(qt_xdisplay(), this->winId(), &xwa);
   current_size.setWidth(xwa.width);
   current_size.setHeight(xwa.height);
-//  debug("Tick2: current size: %d %d, real size: %d %d",
+//  tqDebug("Tick2: current size: %d %d, real size: %d %d",
 //	current_size.width(), current_size.height(),
 //	size().width(), size().height());
   if(size() != current_size){

@@ -126,13 +126,13 @@ bool KDesktopsConfig::justSave() {
 }
 
 void KDesktopsConfig::saveSettings() {
-    debug("save");
+    tqDebug("save");
     justSave();
     config->sync();
 }
 
 void KDesktopsConfig::applySettings() {
-    debug("apply");
+    tqDebug("apply");
     saveSettings();
 }
 

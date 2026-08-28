@@ -1547,7 +1547,6 @@ int cInfo::findNext()
 	}
 	else if (tagTable.Get())
 		tagTable.Next();
-	else
 		return 1;
 
 	while (tagTable.Get())

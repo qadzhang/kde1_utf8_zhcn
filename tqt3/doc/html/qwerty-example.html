@@ -1,0 +1,509 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/qwerty/qwerty.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Simple editor that can load encodings</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Simple editor that can load encodings</h1>
+
+   
+<p> 
+<hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/qwerty.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef TQWERTY_H
+#define TQWERTY_H
+
+#include &lt;<a href="qwidget-h.html">ntqwidget.h</a>&gt;
+#include &lt;<a href="qmenubar-h.html">ntqmenubar.h</a>&gt;
+#include &lt;<a href="qmultilineedit-h.html">ntqmultilineedit.h</a>&gt;
+#include &lt;<a href="qprinter-h.html">ntqprinter.h</a>&gt;
+
+class Editor : public <a href="ntqwidget.html">TQWidget</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    Editor( <a href="ntqwidget.html">TQWidget</a> *parent=0, const char *name="qwerty" );
+   ~Editor();
+
+    void load( const <a href="ntqstring.html">TQString</a>&amp; fileName, int code=-1 );
+
+public slots:
+    void newDoc();
+    void load();
+    bool save();
+    void print();
+    void addEncoding();
+    void toUpper();
+    void toLower();
+    void font();
+protected:
+    void resizeEvent( <a href="qresizeevent.html">TQResizeEvent</a> * );
+    void closeEvent( <a href="qcloseevent.html">TQCloseEvent</a> * );
+
+private slots:
+    void saveAsEncoding( int );
+    void openAsEncoding( int );
+    void textChanged();
+
+private:
+    bool saveAs( const <a href="ntqstring.html">TQString</a>&amp; fileName, int code=-1 );
+    void rebuildCodecList();
+    <a href="ntqmenubar.html">TQMenuBar</a>       *m;
+    <a href="ntqmultilineedit.html">TQMultiLineEdit</a> *e;
+#ifndef TQT_NO_PRINTER
+    <a href="ntqprinter.html">TQPrinter</a>        printer;
+#endif
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>     *save_as;
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>     *open_as;
+    bool changed;
+};
+
+#endif // TQWERTY_H
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/qwerty.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "qwerty.h"
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qfile-h.html">ntqfile.h</a>&gt;
+#include &lt;<a href="qfiledialog-h.html">ntqfiledialog.h</a>&gt;
+#include &lt;<a href="qpopupmenu-h.html">ntqpopupmenu.h</a>&gt;
+#include &lt;<a href="qtextstream-h.html">ntqtextstream.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qpaintdevicemetrics-h.html">ntqpaintdevicemetrics.h</a>&gt;
+#include &lt;<a href="qptrlist-h.html">ntqptrlist.h</a>&gt;
+#include &lt;<a href="qfontdialog-h.html">ntqfontdialog.h</a>&gt;
+
+#include &lt;<a href="qtextcodec-h.html">ntqtextcodec.h</a>&gt;
+
+const bool no_writing = false;
+
+static TQPtrList&lt;TQTextCodec&gt; *codecList = 0;
+
+enum { Uni = 0, MBug = 1, Lat1 = 2, Local = 3, Guess = 4, Codec = 5 };
+
+
+<a name="f235"></a>Editor::Editor( <a href="ntqwidget.html">TQWidget</a> * parent , const char * name )
+    : <a href="ntqwidget.html">TQWidget</a>( parent, name, WDestructiveClose )
+{
+    m = new <a href="ntqmenubar.html">TQMenuBar</a>( this, "menu" );
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a> * file = new <a href="ntqpopupmenu.html">TQPopupMenu</a>();
+    <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( file );
+<a name="x371"></a>    m-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;File", file );
+
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;New",   this, TQ_SLOT(newDoc()),   ALT+Key_N );
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Open...",  this, TQ_SLOT(load()),     ALT+Key_O );
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Save...",  this, TQ_SLOT(save()),     ALT+Key_S );
+<a name="x372"></a>    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    open_as = new <a href="ntqpopupmenu.html">TQPopupMenu</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Open &amp;As",  open_as );
+    save_as = new <a href="ntqpopupmenu.html">TQPopupMenu</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Sa&amp;ve As",  save_as );
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Add &amp;Encoding", this, TQ_SLOT(addEncoding()) );
+#ifndef TQT_NO_PRINTER
+    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Print...", this, TQ_SLOT(print()),    ALT+Key_P );
+#endif
+    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Close", this, TQ_SLOT(<a href="ntqwidget.html#close">close</a>()),ALT+Key_W );
+<a name="x358"></a>    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Quit",  tqApp, TQ_SLOT(<a href="ntqapplication.html#closeAllWindows">closeAllWindows</a>()),     ALT+Key_Q );
+
+<a name="x386"></a>    <a href="ntqobject.html#connect">connect</a>( save_as, TQ_SIGNAL(<a href="ntqpopupmenu.html#activated">activated</a>(int)), this, TQ_SLOT(saveAsEncoding(int)) );
+    <a href="ntqobject.html#connect">connect</a>( open_as, TQ_SIGNAL(<a href="ntqpopupmenu.html#activated">activated</a>(int)), this, TQ_SLOT(openAsEncoding(int)) );
+    rebuildCodecList();
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a> * edit = new <a href="ntqpopupmenu.html">TQPopupMenu</a>();
+    <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( edit );
+    m-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Edit", edit );
+
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "To &amp;Uppercase",   this, TQ_SLOT(toUpper()),   ALT+Key_U );
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "To &amp;Lowercase",   this, TQ_SLOT(toLower()),   ALT+Key_L );
+#ifndef TQT_NO_FONTDIALOG
+    edit-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Select Font" ,   this, TQ_SLOT(<a href="ntqwidget.html#font">font</a>()),     ALT+Key_T );
+#endif
+    changed = false;
+    e = new <a href="ntqmultilineedit.html">TQMultiLineEdit</a>( this, "editor" );
+<a name="x400"></a>    <a href="ntqobject.html#connect">connect</a>( e, TQ_SIGNAL( <a href="ntqtextedit.html#textChanged">textChanged</a>() ), this, TQ_SLOT( textChanged() ) );
+
+    // We use Unifont - if you have it installed you'll see all
+    // Unicode character glyphs.
+    //
+    // Unifont only comes in one pixel size, so we cannot let
+    // it change pixel size as the display DPI changes.
+    //
+<a name="x367"></a>    <a href="ntqfont.html">TQFont</a> unifont("unifont",16,50); unifont.<a href="ntqfont.html#setPixelSize">setPixelSize</a>(16);
+<a name="x397"></a>    e-&gt;<a href="ntqwidget.html#setFont">setFont</a>( unifont );
+
+    e-&gt;<a href="ntqwidget.html#setFocus">setFocus</a>();
+}
+
+Editor::~Editor()
+{
+}
+
+<a name="x405"></a>void Editor::<a href="ntqwidget.html#font">font</a>()
+{
+#ifndef TQT_NO_FONTDIALOG
+    bool ok;
+<a name="x396"></a><a name="x368"></a>    <a href="ntqfont.html">TQFont</a> f = TQFontDialog::<a href="ntqfontdialog.html#getFont">getFont</a>( &amp;ok, e-&gt;<a href="ntqtextedit.html#font">font</a>() );
+    if ( ok ) {
+        e-&gt;<a href="ntqwidget.html#setFont">setFont</a>( f );
+    }
+#endif
+}
+
+
+
+void <a name="f236"></a>Editor::rebuildCodecList()
+{
+    delete codecList;
+    codecList = new <a href="ntqptrlist.html">TQPtrList</a>&lt;TQTextCodec&gt;;
+    <a href="ntqtextcodec.html">TQTextCodec</a> *codec;
+    int i;
+<a name="x392"></a>    for (i = 0; (codec = TQTextCodec::<a href="ntqtextcodec.html#codecForIndex">codecForIndex</a>(i)); i++)
+<a name="x387"></a>        codecList-&gt;<a href="ntqptrlist.html#append">append</a>( codec );
+<a name="x389"></a>    int n = codecList-&gt;<a href="ntqptrlist.html#count">count</a>();
+    for (int pm=0; pm&lt;2; pm++) {
+        <a href="ntqpopupmenu.html">TQPopupMenu</a>* menu = pm ? open_as : save_as;
+<a name="x370"></a>        menu-&gt;<a href="ntqmenudata.html#clear">clear</a>();
+        <a href="ntqstring.html">TQString</a> local = "Local (";
+<a name="x393"></a>        local += TQTextCodec::<a href="ntqtextcodec.html#codecForLocale">codecForLocale</a>()-&gt;name();
+        local += ")";
+        menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( local, Local );
+        menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Unicode", Uni );
+        menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Latin1", Lat1 );
+        menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Microsoft Unicode", MBug );
+        if ( pm )
+            menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "[guess]", Guess );
+        for ( i = 0; i &lt; n; i++ )
+<a name="x388"></a>            menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( codecList-&gt;<a href="ntqptrlist.html#at">at</a>(i)-&gt;name(), Codec + i );
+    }
+}
+
+void <a name="f237"></a>Editor::newDoc()
+{
+    Editor *ed = new Editor;
+    if ( tqApp-&gt;<a href="ntqapplication.html#desktop">desktop</a>()-&gt;size().width() &lt; 450
+         || tqApp-&gt;<a href="ntqapplication.html#desktop">desktop</a>()-&gt;size().height() &lt; 450 ) {
+<a name="x413"></a>        ed-&gt;<a href="ntqwidget.html#showMaximized">showMaximized</a>();
+    } else {
+        ed-&gt;<a href="ntqwidget.html#resize">resize</a>( 400, 400 );
+        ed-&gt;<a href="ntqwidget.html#show">show</a>();
+    }
+}
+
+
+void <a name="f238"></a>Editor::load()
+{
+#ifndef TQT_NO_FILEDIALOG
+<a name="x365"></a>    <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getOpenFileName">getOpenFileName</a>( <a href="ntqstring.html#TQString-null">TQString::null</a>, TQString::null, this );
+<a name="x390"></a>    if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+        load( fn, -1 );
+#endif
+}
+
+void Editor::load( const <a href="ntqstring.html">TQString</a>&amp; fileName, int code )
+{
+    <a href="ntqfile.html">TQFile</a> f( fileName );
+<a name="x363"></a>    if ( !f.<a href="ntqfile.html#open">open</a>( <a href="ntqfile.html#open">IO_ReadOnly</a> ) )
+        return;
+
+<a name="x376"></a>    e-&gt;<a href="ntqmultilineedit.html#setAutoUpdate">setAutoUpdate</a>( false );
+
+    <a href="ntqtextstream.html">TQTextStream</a> t(&amp;f);
+    if ( code &gt;= Codec )
+<a name="x402"></a>        t.<a href="ntqtextstream.html#setCodec">setCodec</a>( codecList-&gt;<a href="ntqptrlist.html#at">at</a>(code-Codec) );
+    else if ( code == Uni )
+<a name="x403"></a>        t.<a href="ntqtextstream.html#setEncoding">setEncoding</a>( TQTextStream::Unicode );
+    else if ( code == MBug )
+        t.<a href="ntqtextstream.html#setEncoding">setEncoding</a>( TQTextStream::UnicodeReverse );
+    else if ( code == Lat1 )
+        t.<a href="ntqtextstream.html#setEncoding">setEncoding</a>( TQTextStream::Latin1 );
+    else if ( code == Guess ) {
+        <a href="ntqfile.html">TQFile</a> f(fileName);
+        f.<a href="ntqfile.html#open">open</a>(IO_ReadOnly);
+        char buffer[256];
+        int l = 256;
+<a name="x364"></a>        l=f.<a href="ntqiodevice.html#readBlock">readBlock</a>(buffer,l);
+<a name="x391"></a>        <a href="ntqtextcodec.html">TQTextCodec</a>* codec = TQTextCodec::<a href="ntqtextcodec.html#codecForContent">codecForContent</a>(buffer, l);
+        if ( codec ) {
+<a name="x395"></a><a name="x373"></a>            TQMessageBox::<a href="ntqmessagebox.html#information">information</a>(this,"Encoding",TQString("Codec: ")+codec-&gt;<a href="ntqtextcodec.html#name">name</a>());
+            t.<a href="ntqtextstream.html#setCodec">setCodec</a>( codec );
+        }
+    }
+<a name="x401"></a><a name="x398"></a>    e-&gt;<a href="ntqtextedit.html#setText">setText</a>( t.<a href="ntqtextstream.html#read">read</a>() );
+<a name="x362"></a>    f.<a href="ntqfile.html#close">close</a>();
+
+    e-&gt;<a href="ntqmultilineedit.html#setAutoUpdate">setAutoUpdate</a>( true );
+<a name="x407"></a>    e-&gt;<a href="ntqwidget.html#repaint">repaint</a>();
+    <a href="ntqwidget.html#setCaption">setCaption</a>( fileName );
+
+    changed = false;
+}
+
+void <a name="f239"></a>Editor::openAsEncoding( int code )
+{
+#ifndef TQT_NO_FILEDIALOG
+    //storing filename (proper save) is left as an exercise...
+    <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getOpenFileName">getOpenFileName</a>( TQString::null, TQString::null, this );
+    if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+        (void) load( fn, code );
+#endif
+}
+
+bool <a name="f240"></a>Editor::save()
+{
+#ifndef TQT_NO_FILEDIALOG
+    //storing filename (proper save) is left as an exercise...
+<a name="x366"></a>    <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getSaveFileName">getSaveFileName</a>( TQString::null, TQString::null, this );
+    if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+        return saveAs( fn );
+    return false;
+#endif
+}
+
+void <a name="f241"></a>Editor::saveAsEncoding( int code )
+{
+#ifndef TQT_NO_FILEDIALOG
+    //storing filename (proper save) is left as an exercise...
+    <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getSaveFileName">getSaveFileName</a>( TQString::null, TQString::null, this );
+    if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+        (void) saveAs( fn, code );
+#endif
+}
+
+void <a name="f242"></a>Editor::addEncoding()
+{
+#ifndef TQT_NO_FILEDIALOG
+    <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getOpenFileName">getOpenFileName</a>( TQString::null, "*.map", this );
+    if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() ) {
+        <a href="ntqfile.html">TQFile</a> f(fn);
+        if (f.<a href="ntqfile.html#open">open</a>(IO_ReadOnly)) {
+<a name="x394"></a>            if (TQTextCodec::<a href="ntqtextcodec.html#loadCharmap">loadCharmap</a>(&amp;f)) {
+                rebuildCodecList();
+            } else {
+<a name="x374"></a>                TQMessageBox::<a href="ntqmessagebox.html#warning">warning</a>(0,"Charmap error",
+                    "The file did not contain a valid charmap.\n\n"
+                    "A charmap file should look like this:\n"
+                       "  &lt;code_set_name&gt; thename\n"
+                       "  &lt;escape_char&gt; /\n"
+                       "  % alias thealias\n"
+                       "  CHARMAP\n"
+                       "  &lt;tokenname&gt; /x12 &lt;U3456&gt;\n"
+                       "  &lt;tokenname&gt; /xAB/x12 &lt;U0023&gt;\n"
+                       "  ...\n"
+                       "  END CHARMAP\n"
+                );
+            }
+        }
+    }
+#endif
+}
+
+
+bool <a name="f243"></a>Editor::saveAs( const <a href="ntqstring.html">TQString</a>&amp; fileName, int code )
+{
+    <a href="ntqfile.html">TQFile</a> f( fileName );
+    if ( no_writing || !f.<a href="ntqfile.html#open">open</a>( <a href="ntqfile.html#open">IO_WriteOnly</a> ) ) {
+        TQMessageBox::<a href="ntqmessagebox.html#warning">warning</a>(this,"I/O Error",
+                    TQString("The file could not be opened.\n\n")
+                        +fileName);
+        return false;
+    }
+    <a href="ntqtextstream.html">TQTextStream</a> t(&amp;f);
+    if ( code &gt;= Codec )
+        t.<a href="ntqtextstream.html#setCodec">setCodec</a>( codecList-&gt;<a href="ntqptrlist.html#at">at</a>(code-Codec) );
+    else if ( code == Uni )
+        t.<a href="ntqtextstream.html#setEncoding">setEncoding</a>( TQTextStream::Unicode );
+    else if ( code == MBug )
+        t.<a href="ntqtextstream.html#setEncoding">setEncoding</a>( TQTextStream::UnicodeReverse );
+    else if ( code == Lat1 )
+        t.<a href="ntqtextstream.html#setEncoding">setEncoding</a>( TQTextStream::Latin1 );
+<a name="x399"></a>    t &lt;&lt; e-&gt;<a href="ntqtextedit.html#text">text</a>();
+    f.<a href="ntqfile.html#close">close</a>();
+    <a href="ntqwidget.html#setCaption">setCaption</a>( fileName );
+    changed = false;
+    return true;
+}
+
+void <a name="f244"></a>Editor::print()
+{
+#ifndef TQT_NO_PRINTER
+    if ( printer.setup(this) ) {                // opens printer dialog
+        printer.setFullPage(true);              // we'll set our own margins
+        <a href="ntqpainter.html">TQPainter</a> p;
+        p.<a href="ntqpainter.html#begin">begin</a>( &amp;printer );                    // paint on printer
+<a name="x385"></a>        p.<a href="ntqpainter.html#setFont">setFont</a>( e-&gt;<a href="ntqtextedit.html#font">font</a>() );
+<a name="x384"></a>        <a href="ntqfontmetrics.html">TQFontMetrics</a> fm = p.<a href="ntqpainter.html#fontMetrics">fontMetrics</a>();
+        <a href="ntqpaintdevicemetrics.html">TQPaintDeviceMetrics</a> metrics( &amp;printer ); // need width/height
+                                                 // of printer surface
+<a name="x379"></a>        const int MARGIN = metrics.<a href="ntqpaintdevicemetrics.html#logicalDpiX">logicalDpiX</a>() / 2; // half-inch margin
+        int yPos        = MARGIN;               // y position for each line
+
+<a name="x375"></a>        for( int i = 0 ; i &lt; e-&gt;<a href="ntqmultilineedit.html#numLines">numLines</a>() ; i++ ) {
+            if ( printer.aborted() )
+                break;
+<a name="x378"></a><a name="x369"></a>            if ( yPos + fm.<a href="ntqfontmetrics.html#lineSpacing">lineSpacing</a>() &gt; metrics.<a href="ntqpaintdevicemetrics.html#height">height</a>() - MARGIN ) {
+                // no more room on this page
+                if ( !printer.newPage() )          // start new page
+                    break;                           // some error
+                yPos = MARGIN;                   // back to top of page
+            }
+<a name="x380"></a>            p.<a href="ntqpainter.html#drawText">drawText</a>( MARGIN, yPos, metrics.<a href="ntqpaintdevicemetrics.html#width">width</a>() - 2*MARGIN,
+<a name="x377"></a>                        fm.<a href="ntqfontmetrics.html#lineSpacing">lineSpacing</a>(), ExpandTabs, e-&gt;<a href="ntqmultilineedit.html#textLine">textLine</a>( i ) );
+            yPos += fm.<a href="ntqfontmetrics.html#lineSpacing">lineSpacing</a>();
+        }
+        p.<a href="ntqpainter.html#end">end</a>();                                // send job to printer
+    }
+#endif
+}
+
+void Editor::<a href="ntqwidget.html#resizeEvent">resizeEvent</a>( <a href="qresizeevent.html">TQResizeEvent</a> * )
+{
+    if ( e &amp;&amp; m )
+        e-&gt;<a href="ntqwidget.html#setGeometry">setGeometry</a>( 0, m-&gt;<a href="ntqwidget.html#height">height</a>(), width(), height() - m-&gt;<a href="ntqwidget.html#height">height</a>() );
+}
+
+<a name="x404"></a>void Editor::<a href="ntqwidget.html#closeEvent">closeEvent</a>( <a href="qcloseevent.html">TQCloseEvent</a> *event )
+{
+<a name="x360"></a>    event-&gt;<a href="qcloseevent.html#accept">accept</a>();
+
+    if ( changed ) { // the text has been changed
+        switch ( TQMessageBox::<a href="ntqmessagebox.html#warning">warning</a>( this, "Qwerty",
+                                        "Save changes to Document?",
+                                        <a href="ntqobject.html#tr">tr</a>("&amp;Yes"),
+                                        <a href="ntqobject.html#tr">tr</a>("&amp;No"),
+                                        <a href="ntqobject.html#tr">tr</a>("Cancel"),
+                                        0, 2) ) {
+        case 0: // yes
+            if ( save() )
+                event-&gt;<a href="qcloseevent.html#accept">accept</a>();
+            else
+<a name="x361"></a>                event-&gt;<a href="qcloseevent.html#ignore">ignore</a>();
+            break;
+        case 1: // no
+            event-&gt;<a href="qcloseevent.html#accept">accept</a>();
+            break;
+        default: // cancel
+            event-&gt;<a href="qcloseevent.html#ignore">ignore</a>();
+            break;
+        }
+    }
+}
+
+void <a name="f245"></a>Editor::toUpper()
+{
+    e-&gt;<a href="ntqtextedit.html#setText">setText</a>(e-&gt;<a href="ntqtextedit.html#text">text</a>().upper());
+}
+
+void <a name="f246"></a>Editor::toLower()
+{
+    e-&gt;<a href="ntqtextedit.html#setText">setText</a>(e-&gt;<a href="ntqtextedit.html#text">text</a>().lower());
+}
+
+void <a name="f247"></a>Editor::textChanged()
+{
+    changed = true;
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include "qwerty.h"
+
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+
+<a name="x414"></a>    bool isSmall =  tqApp-&gt;<a href="ntqapplication.html#desktop">desktop</a>()-&gt;size().width() &lt; 450
+                  || tqApp-&gt;<a href="ntqapplication.html#desktop">desktop</a>()-&gt;size().height() &lt; 450;
+
+    int i;
+    for ( i= argc &lt;= 1 ? 0 : 1; i&lt;argc; i++ ) {
+        Editor *e = new Editor;
+        e-&gt;<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - TQWERTY");
+        if ( i &gt; 0 )
+            e-&gt;load( argv[i] );
+        if ( isSmall ) {
+<a name="x422"></a>            e-&gt;<a href="ntqwidget.html#showMaximized">showMaximized</a>();
+        } else {
+            e-&gt;<a href="ntqwidget.html#resize">resize</a>( 400, 400 );
+            e-&gt;<a href="ntqwidget.html#show">show</a>();
+        }
+    }
+<a name="x416"></a>    a.<a href="ntqobject.html#connect">connect</a>( &amp;a, TQ_SIGNAL(<a href="ntqapplication.html#lastWindowClosed">lastWindowClosed</a>()), &amp;a, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

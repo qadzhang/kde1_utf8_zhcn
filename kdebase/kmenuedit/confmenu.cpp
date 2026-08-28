@@ -81,7 +81,7 @@ MenuButton::MenuButton( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent
                           const char *name )
   : EditButton( parent, name )
 {
-  initMetaObject();
+
   pmenu_item = p_it;
   pmenu_parent = p_parent;
   setGreyed(pmenu_item->isReadOnly());
@@ -457,7 +457,7 @@ void MenuButton::moveEvent( QMoveEvent *)
       QPoint p2(width()-2, 6);
       p += p2;
       pmenu_item->getMenu()->moveConfig(p);
-//debug("name = %s", text() );
+//tqDebug("name = %s", text() );
     }
 }
 
@@ -465,7 +465,7 @@ void MenuButton::mousePressEvent( QMouseEvent *e)
 {
   if ( isDown() )
     {
-debug("is down");
+tqDebug("is down");
     return;
     }
   bool hit = hitButton( e->pos() );
@@ -554,7 +554,6 @@ void MenuButton::dndMouseReleaseEvent( QMouseEvent *e)
 	emit released(id); }
       else if( e->button() == MidButton )
 	emit Mreleased(id);
-      else
 	emit Rreleased(id);
     }
 }
@@ -622,7 +621,6 @@ void MenuButton::dndMouseMoveEvent( QMouseEvent *e )
 	    emit pressed(id);
 	  else if( e->button() == MidButton )
 	    emit Mpressed(id);
-	  else
 	    emit Rpressed(id);
 	}
     }
@@ -637,7 +635,6 @@ void MenuButton::dndMouseMoveEvent( QMouseEvent *e )
 	    emit released(id);
 	  else if( e->button() == MidButton )
 	    emit Mreleased(id);
-	  else
 	    emit Rreleased(id);
 	}
 	*/
@@ -690,7 +687,7 @@ void MenuButton::paint( QPainter *painter )
     raised = 0;
   if ( raised == 1 )
     {
-      if ( style() == WindowsStyle )
+      if ( style().inherits("TQWindowsStyle") )
         qDrawWinButton( painter, 0, 0, width(), height(),
                         g, FALSE );
       else
@@ -699,7 +696,7 @@ void MenuButton::paint( QPainter *painter )
     }
   else if ( raised == -1 )
     {
-      if ( style() == WindowsStyle )
+      if ( style().inherits("TQWindowsStyle") )
         qDrawWinButton( painter, 0, 0, width(),
                         height(), g, TRUE );
       else
@@ -722,9 +719,9 @@ void MenuButton::paint( QPainter *painter )
     }
   if( pmenu_item->getType() == submenu )
     {
-      qDrawArrow( painter, RightArrow, style(), submenu_open,
+      qDrawArrow( painter, RightArrow, WindowsStyle, submenu_open,
 		  width() - 10,  height()/2-4,
-		  8, 8, g );
+		  8, 8, g, true );  /* TQt3 迁移 */
     }
 }
 
@@ -734,7 +731,7 @@ void MenuButton::paint( QPainter *painter )
 
 ConfMenuItem::ConfMenuItem(MenuButton *but, PMenuItem *item)
 {
-  initMetaObject();
+
   button = but;
   pmenu_item = item;
 }
@@ -748,7 +745,7 @@ ConfigureMenu::ConfigureMenu( PMenu *m, QWidget *parent, const char *name )
   : QFrame( parent, name, WStyle_Customize | WStyle_NoBorder )
      //: QFrame( parent, name )
 {
-  initMetaObject();
+
   setFrameStyle( QFrame::Panel | QFrame::Raised );
   pmenu = m;
   but_list.setAutoDelete(TRUE);
@@ -886,7 +883,7 @@ void ConfigureMenu::buttonMoved( int but_id, QPoint p )
 	  break;
       h += item->button->height();
     }
-  //debug( "i = %i", i);
+  //tqDebug( "i = %i", i);
   int moved_b_height = but_list.at(but_id)->button->height();
   MenuButton *current = but_list.at(but_id)->button;
   if( but_id > i )
@@ -928,7 +925,7 @@ void ConfigureMenu::buttonMoved( int but_id, QPoint p )
   //debug
   //for( item = but_list.first(); item != 0; item = but_list.next() )
   //  {
-  //    debug("name = %s / id = %i", item->button->text(), item->button->getId());
+  //    tqDebug("name = %s / id = %i", item->button->text(), item->button->getId());
   //  }
 }
 
@@ -1017,7 +1014,7 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
   QStrListIterator it(zone->getURLList());
   for( ; it.current(); ++it )
     {
-      //debug("URL = %s", it.current());
+      //tqDebug("URL = %s", it.current());
       name = (QString) it.current();
       if( name.left(5) != "file:" )
 	continue;

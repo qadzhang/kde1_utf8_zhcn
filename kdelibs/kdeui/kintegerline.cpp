@@ -22,7 +22,7 @@
 **
 *****************************************************************************/
 
-#include <kintegerline.h>
+#include "kintegerline.h"
 #include <qkeycode.h>
 
 #include <stdlib.h>

@@ -118,15 +118,15 @@ void KfindTop::menuInit()
     _optionMenu = new QPopupMenu;
     _helpMenu   = new QPopupMenu;        
 
-    fileStart = _fileMenu->insertItem(i18n("&Start search"), _kfind,
-			      SLOT(startSearch()), stdAccel.find());
-    fileStop = _fileMenu->insertItem(i18n("S&top search"), _kfind,
-			      SLOT(stopSearch()), Key_Escape);    
+    fileStart = _fileMenu->insertItem(i18n("&Start search"), _kfind, SLOT(startSearch()));
+    _fileMenu->setAccel( stdAccel.find(), fileStart );  /* TQt3 迁移 */
+    fileStop = _fileMenu->insertItem(i18n("S&top search"), _kfind, SLOT(stopSearch()));
+    _fileMenu->setAccel( Key_Escape, fileStop );  /* TQt3 迁移 */
     _fileMenu->setItemEnabled(fileStop, FALSE);
     _fileMenu->insertSeparator();
 
-    openWithM  = _fileMenu->insertItem(i18n("&Open"),
-				       this,SIGNAL(open()), stdAccel.open());
+    openWithM  = _fileMenu->insertItem(i18n("&Open"), this, SIGNAL(open()));
+    _fileMenu->setAccel( stdAccel.open(), openWithM );  /* TQt3 迁移 */
     toArchM    = _fileMenu->insertItem(i18n("&Add to archive"),
 				       this,SIGNAL(addToArchive()));
     _fileMenu             ->insertSeparator();
@@ -138,8 +138,8 @@ void KfindTop::menuInit()
     openFldrM  = _fileMenu->insertItem(i18n("Open Containing &Folder"),
 				       this,SIGNAL(openFolder()));
     _fileMenu             ->insertSeparator();
-    saveSearchM= _fileMenu->insertItem(i18n("&Save Search"),
-				       this,SIGNAL(saveResults()),stdAccel.save());
+    saveSearchM= _fileMenu->insertItem(i18n("&Save Search"), this, SIGNAL(saveResults()));
+    _fileMenu->setAccel( stdAccel.save(), saveSearchM );  /* TQt3 迁移 */
     _fileMenu             ->insertSeparator();
     quitM      = _fileMenu->insertItem(i18n("&Quit"),qApp,
 				       SLOT(quit()),stdAccel.quit());
@@ -150,10 +150,9 @@ void KfindTop::menuInit()
     int undo =       _editMenu->insertItem(i18n("&Undo"),
 					   this, SIGNAL(undo()), stdAccel.undo() );
     _editMenu                 ->insertSeparator();
-    int cut  =       _editMenu->insertItem(i18n("&Cut"),
-					   this, SIGNAL(cut()), stdAccel.cut() );
-    editCopy =       _editMenu->insertItem(i18n("&Copy"),
-					   this, SLOT(copySelection()), stdAccel.copy() );
+    int cut  =       _editMenu->insertItem(i18n("&Cut"), this, SIGNAL(cut()));
+    _editMenu->setAccel( stdAccel.cut(), cut );  /* TQt3 迁移 */
+    editCopy =       _editMenu->insertItem(i18n("&Copy"), this, SLOT(copySelection()));  /* TQt3 迁移：整 accel 参已删 */
     _editMenu->insertSeparator();
     editSelectAll = _editMenu->insertItem(i18n("&Select All"),
 					   this,SIGNAL(selectAll()) );
@@ -176,7 +175,7 @@ void KfindTop::menuInit()
     //_optionMenu->insertItem("Configure key bindings",this,SIGNAL(keys()));
 
     QString tmp;
-    tmp.sprintf(i18n("KFind %s\nFrontend to find utility\nMiroslav Fl�dr <flidr@kky.zcu.cz>\n\nSpecial thanks to Stephan Kulow\n<coolo@kde.org>"),
+    tmp.sprintf(i18n("KFind %s\nFrontend to find utility\nMiroslav Fl�dr <flidr@kky.zcu.cz>\n\nSpecial thanks to Stephan Kulow\n<coolo@kde.org>"),
                 KFIND_VERSION);
     _helpMenu=kapp->getHelpMenu( true, tmp );    
 
@@ -289,7 +288,7 @@ void KfindTop::enableStatusBar(bool enable) // rewriten (sven)
    DON`T LOOK HERE FOR EXAMPLE! IT`S A FORNBIDDEN DANCE!
    instead please mail me: sven@lisa.exp.univie.ac.at
   */
-  //debug ("Wow, what an honour!");
+  //tqDebug( "Wow, what an honour!");
   if (enable) // we become full-free - win is hsown and set
   {
 
@@ -332,3 +331,4 @@ void KfindTop::copySelection() {
   if(_kfind)
     _kfind->copySelection();
 }
+

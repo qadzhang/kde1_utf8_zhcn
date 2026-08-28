@@ -45,8 +45,8 @@ public:
   virtual int encsign(const QStrList *, const char * = 0,
 		      bool = false) { return OK; };
   virtual int decrypt(const char * = 0) { return OK; };
-  virtual QStrList pubKeys() { return OK; };
-  virtual QString getAsciiPublicKey(QString _person) { return OK; };
+  virtual QStrList pubKeys() { return QStrList(); };  /* TQt3 迁移：原 return OK 为历史笔误 */
+  virtual QString getAsciiPublicKey(QString _person) { return TQString(); };  /* TQt3 迁移 */
   virtual int signKey(const char *, const char *) { return OK; };
 
   /** various functions to get the status of a message */

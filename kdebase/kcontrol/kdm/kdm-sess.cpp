@@ -220,7 +220,7 @@ void KDMSessionsWidget::slotSetAllowShutdown(int s)
 
 void KDMSessionsWidget::applySettings()
 {
-  //debug("KDMSessionsWidget::applySettings()");
+  //tqDebug("KDMSessionsWidget::applySettings()");
   QString fn(CONFIGFILE);
   KSimpleConfig *c = new KSimpleConfig(fn);
 
@@ -283,14 +283,13 @@ void KDMSessionsWidget::loadSettings()
     sdMode = Non;
   else if(str == "RootOnly")
     sdMode = RootOnly;
-  else
     sdMode = ConsoleOnly;
 
   str = c->readEntry( "SessionTypes");
   if(!str.isEmpty())
     semsplit( str, sessions);	  
   //for(uint i = 0; i < sessions.count(); i++)
-    //debug("session type: %s", sessions.at(i));
+    //tqDebug("session type: %s", sessions.at(i));
 
   delete c;
 }

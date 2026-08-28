@@ -34,8 +34,8 @@
 #define KDE_KTABBAR
 #endif
 
-#include <ktabbar.h>
-#include <kwizard.h>
+#include "ktabbar.h"
+#include "kwizard.h"
 
 struct KNoteBookProtected;
 

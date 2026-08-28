@@ -214,11 +214,11 @@
 #include "ktoolbar.h"
 #include "klined.h"
 #include "kcombo.h"
-#include <ktopwidget.h>
+#include "ktopwidget.h"
 #include <klocale.h>
 #include <kapp.h>
 #include <kwm.h>
-#include <ktoolboxmgr.h>
+#include "ktoolboxmgr.h"
 
 
 // Use enums instead of defines. We are C++ and NOT C !
@@ -238,7 +238,7 @@ enum {
 
 static bool toggleFlatOnRelease = false;
 
-KToolBarItem::KToolBarItem (Item *_item, itemType _type, int _id,
+KToolBarItem::KToolBarItem (QWidget *_item, itemType _type, int _id,
                             bool _myItem)
 {
   id = _id;
@@ -289,7 +289,7 @@ KToolBarButton::KToolBarButton( const QPixmap& pixmap, int _id,
   else
   {
     // How about jumping to text mode if no pixmap? (sven)
-    warning(klocale->translate("KToolBarButton: pixmap is empty, perhaps some missing file"));
+    tqWarning(klocale->translate("KToolBarButton: pixmap is empty, perhaps some missing file"));
     enabledPixmap.resize( item_size-4, item_size-4);
   }
   modeChange ();
@@ -341,7 +341,7 @@ void KToolBarButton::setPixmap( const QPixmap &pixmap )
   if ( ! pixmap.isNull() )
     enabledPixmap = pixmap;
   else {
-    warning(klocale->translate("KToolBarButton: pixmap is empty, perhaps some missing file"));
+    tqWarning(klocale->translate("KToolBarButton: pixmap is empty, perhaps some missing file"));
     enabledPixmap.resize(width()-4, height()-4);
   }
   QButton::setPixmap( enabledPixmap );
@@ -413,7 +413,7 @@ bool KToolBarButton::eventFilter (QObject *o, QEvent *ev)
   // From Kai-Uwe Sattler <kus@iti.CS.Uni-Magdeburg.De>
   if ((KToolBarButton *)o == this && ev->type () == Event_MouseButtonDblClick)
   {
-    //debug ("Doubleclick");
+    //tqDebug( "Doubleclick");
     emit doubleClicked (id);
     return true;
   }
@@ -431,7 +431,7 @@ bool KToolBarButton::eventFilter (QObject *o, QEvent *ev)
   {
     case Event_MouseButtonDblClick:
     case Event_MouseButtonPress:
-      //debug ("Got press | doubleclick");
+      //tqDebug( "Got press | doubleclick");
       // If I get this, it means that popup is visible
       {
       QRect r(geometry());
@@ -442,7 +442,7 @@ bool KToolBarButton::eventFilter (QObject *o, QEvent *ev)
       break;
     
     case Event_MouseButtonRelease:
-      //debug ("Got release");
+      //tqDebug( "Got release");
       if (!myPopup->geometry().contains(QCursor::pos())) // not in menu...
       {
         QRect r(geometry());
@@ -457,7 +457,7 @@ bool KToolBarButton::eventFilter (QObject *o, QEvent *ev)
       break;
 
     case Event_Hide:
-      //debug ("Got hide");
+      //tqDebug( "Got hide");
       on(false);
       return false;
       break;
@@ -472,7 +472,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
 
   if ( isDown() || isOn() )
   {
-    if ( style() == WindowsStyle )
+    if ( style().inherits("TQWindowsStyle") )
       qDrawWinButton(_painter, 0, 0, width(), height(), colorGroup(), true );
     else
       qDrawShadePanel(_painter, 0, 0, width(), height(), colorGroup(), true, 2, 0L );
@@ -480,7 +480,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
 
   else if ( raised )
   {
-    if ( style() == WindowsStyle )
+    if ( style().inherits("TQWindowsStyle") )
       qDrawWinButton( _painter, 0, 0, width(), height(), colorGroup(), false );
     else
       qDrawShadePanel( _painter, 0, 0, width(), height(), colorGroup(), false, 2, 0L );
@@ -495,7 +495,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
     {
       dx = ( width() - pixmap()->width() ) / 2;
       dy = ( height() - pixmap()->height() ) / 2;
-      if ( isDown() && style() == WindowsStyle )
+      if ( isDown() && style().inherits("TQWindowsStyle") )
       {
         ++dx;
         ++dy;
@@ -509,7 +509,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
     {
       dx = 1;
       dy = ( height() - pixmap()->height() ) / 2;
-      if ( isDown() && style() == WindowsStyle )
+      if ( isDown() && style().inherits("TQWindowsStyle") )
       {
         ++dx;
         ++dy;
@@ -527,7 +527,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
       else
         dx= 1;
       dy = 0;
-      if ( isDown() && style() == WindowsStyle )
+      if ( isDown() && style().inherits("TQWindowsStyle") )
       {
         ++dx;
         ++dy;
@@ -536,7 +536,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
       if (toolBarButton)
         _painter->setFont(buttonFont);
       if(raised)
-        _painter->setPen(blue);
+        _painter->setPen(k1c_blue);
       _painter->drawText(dx, dy, width()-dx, height(), tf, btext);
     }
   }
@@ -549,7 +549,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
         _painter->setPen(palette().disabled().dark());
       dx= 1;
       dy= 0;
-      if ( isDown() && style() == WindowsStyle )
+      if ( isDown() && style().inherits("TQWindowsStyle") )
       {
         ++dx;
         ++dy;
@@ -558,7 +558,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
       if (toolBarButton)
         _painter->setFont(buttonFont);
       if(raised)
-        _painter->setPen(blue);
+        _painter->setPen(k1c_blue);
       _painter->drawText(dx, dy, width()-dx, height(), tf, btext);
     }
   }
@@ -568,7 +568,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
     {
       dx = (width() - pixmap()->width()) / 2;
       dy = 1;
-      if ( isDown() && style() == WindowsStyle )
+      if ( isDown() && style().inherits("TQWindowsStyle") )
       {
         ++dx;
         ++dy;
@@ -584,7 +584,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
       dy= pixmap()->height();
       dx = 2;
       
-      if ( isDown() && style() == WindowsStyle )
+      if ( isDown() && style().inherits("TQWindowsStyle") )
       {
         ++dx;
         ++dy;
@@ -593,7 +593,7 @@ void KToolBarButton::drawButton( QPainter *_painter )
       if (toolBarButton)
         _painter->setFont(buttonFont);
       if(raised)
-        _painter->setPen(blue);
+        _painter->setPen(k1c_blue);
       _painter->drawText(0, 0, width(), height()-4, tf, btext);
     }
   }
@@ -638,7 +638,6 @@ void KToolBarButton::modeChange()
     buttonFont.setPointSize(10);
     buttonFont.setBold(false);
     buttonFont.setItalic(false);
-    buttonFont.setCharSet(font().charSet());
   
     fnt=buttonFont;
   }
@@ -721,7 +720,6 @@ void KToolBarButton::makeDisabledPixmap()
 
   // Prepare the disabledPixmap for drawing
   
-  disabledPixmap.detach(); // prevent flicker
   disabledPixmap.resize(enabledPixmap.width(), enabledPixmap.height());
   disabledPixmap.fill( g.background() );
   const QBitmap *mask = enabledPixmap.mask();
@@ -954,9 +952,9 @@ KToolBar::~KToolBar()
   
 //   if (position == Floating)
 //   {
-//     debug ("KToolBar destructor: about to recreate");
+//     tqDebug( "KToolBar destructor: about to recreate");
 //     recreate (Parent, oldWFlags, QPoint (oldX, oldY), false);
-//     debug ("KToolBar destructor: recreated");
+//     tqDebug( "KToolBar destructor: recreated");
 //   }
 
   // what is that?! toolbaritems are children of the toolbar, which
@@ -970,7 +968,7 @@ KToolBar::~KToolBar()
   if (!QApplication::closingDown())
     delete context;
   
-  //debug ("KToolBar destructor");
+  //tqDebug( "KToolBar destructor");
 }
 
 void KToolBar::setMaxHeight (int h)
@@ -995,7 +993,7 @@ void KToolBar::layoutHorizontal ()
   
   horizontal = true; // sven - 040198
 
-  //debug ("Ho, ho, hooo... Up-Date!!! (horizontal)");
+  //tqDebug( "Ho, ho, hooo... Up-Date!!! (horizontal)");
   
   if (position == Floating)
       if (haveAutoSized == false)
@@ -1098,7 +1096,7 @@ void KToolBar::layoutVertical ()
 
   horizontal=false; // sven - 040198
 
-  //debug ("Ho, ho, hooo... Up-Date!!! (vertical)");
+  //tqDebug( "Ho, ho, hooo... Up-Date!!! (vertical)");
  
   toolbarHeight = offset;
   toolbarWidth= item_size;
@@ -1311,12 +1309,12 @@ void KToolBar::paintEvent(QPaintEvent *)
     // Handle point
     if (horizontal)
     {
-      if (style() == MotifStyle)
+      if (style().inherits("TQMotifStyle"))
       {
         qDrawShadePanel( paint, 0, 0, 9, toolbarHeight,
                          g , false, 1, &b);
         paint->setPen( g.light() );
-        if (style() == MotifStyle)
+        if (style().inherits("TQMotifStyle"))
           paint->drawLine( 9, 0, 9, toolbarHeight);
         stipple_height = 3;
         while ( stipple_height < toolbarHeight-4 ) {
@@ -1361,13 +1359,13 @@ void KToolBar::paintEvent(QPaintEvent *)
     }
     else // vertical
     {
-      if (style() == MotifStyle)
+      if (style().inherits("TQMotifStyle"))
       {
         qDrawShadePanel( paint, 0, 0, toolbarWidth, 9,
                          g , false, 1, &b);
       
         paint->setPen( g.light() );
-        if (style() == MotifStyle)
+        if (style().inherits("TQMotifStyle"))
           paint->drawLine( 0, 9, toolbarWidth, 9);
         stipple_height = 3;
         while ( stipple_height < toolbarWidth-4 ) {
@@ -1418,7 +1416,7 @@ void KToolBar::paintEvent(QPaintEvent *)
   } //endif moving
 
   if (position != Floating)
-    if ( style() == MotifStyle )
+    if ( style().inherits("TQMotifStyle") )
       qDrawShadePanel(paint, 0, 0, width(), height(), g , false, 1);
     //else
       //qDrawShadeRect(paint, 0, 0, width(), height(), g , true, 1);
@@ -1600,7 +1598,7 @@ int KToolBar::insertSeparator( int index )
 
 int KToolBar::insertFrame (int _id, int _size, int _index)
 {
-  debug ("insertFrame is deprecated. use insertWidget");
+  tqDebug( "insertFrame is deprecated. use insertWidget");
   
   QFrame *frame;
   bool mine = false;
@@ -2312,7 +2310,7 @@ void KToolBar::mouseMoveEvent(QMouseEvent* mev)
         delete mgr;
         mgr=0;
         repaint (false);
-        //debug ("KToolBar: moving done");
+        //tqDebug( "KToolBar: moving done");
     }
   }
 }
@@ -2339,7 +2337,7 @@ void KToolBar::setFlat (bool flag)
   if (flag) //flat
   {
     lastPosition = position; // test float. I did and it works by miracle!?
-    //debug ("Flat");
+    //tqDebug( "Flat");
     position = Flat;
     horizontal = false;
     resize(30, 10);
@@ -2350,7 +2348,7 @@ void KToolBar::setFlat (bool flag)
   }
   else //unflat
   {
-    //debug ("Unflat");
+    //tqDebug( "Unflat");
     setBarPos(lastPosition);
     enableFloating(true);
     emit moved (position); // KTM will call this->updateRects

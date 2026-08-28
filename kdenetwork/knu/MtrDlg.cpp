@@ -74,7 +74,7 @@ MtrDlg::MtrDlg(QString commandName,
   commandTextArea->hide();	// Hide TextArea (not needed)
   lv = new QListView(commandBinOK, "qlistview");
   CHECK_PTR(lv);
-  if (style() == WindowsStyle) {
+  if (style().inherits("TQWindowsStyle")) {
     lv->setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
   } else {
     lv->setFrameStyle(QFrame::Panel | QFrame::Sunken);
@@ -98,7 +98,7 @@ MtrDlg::MtrDlg(QString commandName,
   lv->setSorting(0);
 
   memset(lines, 0, 256 * sizeof(void *));
-  numberOfLines = 0;
+  numberOfLines = 0;  /* TQt3 迁移 */
 
 #if 0
   /*
@@ -226,7 +226,7 @@ MtrDlg::buildCommandLine(QString args)
       delete lines[i];
       lines[i] = 0;
     }
-    numberOfLines = 0;
+    numberOfLines = 0;  /* TQt3 迁移 */
 
     return TRUE;
   }
@@ -250,9 +250,9 @@ MtrDlg::slotCmdStdout(KProcess *, char *buffer, int buflen)
   if (buflen <= 0) {
     receivedLine = new QString("--- nothing ---\n");
   } else {
-    receivedLine = new QString(buffer, buflen+1);
+    receivedLine = new TQString( TQString::fromLatin1(buffer, buflen) );  /* TQt3 迁移 */
   }
-  //  debug("stdout> %s", (char *)*receivedLine);
+  //  tqDebug("stdout> %s", (char *)*receivedLine);
 
   // Split incoming data by line
   //  p = malloc(receivedLine.length());
@@ -263,7 +263,7 @@ MtrDlg::slotCmdStdout(KProcess *, char *buffer, int buflen)
     while ((*q != '\n') && (*q != 0)) { q++; }
     if (*q == 0) {
       // This line is not complete.
-debug("This line is not complete.");
+tqDebug("This line is not complete.");
       // So, what do I do???
     }
     *q = 0;
@@ -272,16 +272,16 @@ debug("This line is not complete.");
 
     // Ok, now we have the current line in line.
     hop = atoi(line);
-    //debug("HOP = %d; numberOfLines=%d", hop, numberOfLines);
+    //tqDebug("HOP = %d; numberOfLines=%d", hop, numberOfLines);
     if (hop < 0) {
       // We have to remove this line
       if (-hop == numberOfLines) {
-debug("deleting a line");
+tqDebug("deleting a line");
 	delete lines[-hop-1];
 	lines[-hop-1] = 0;
 	numberOfLines--;
       } else {
-debug("deleting a line not at end");
+tqDebug("deleting a line not at end");
         // do not remove column #0 : it's the sort key. 
         lines[-hop-1]->setText(1, ""); 
         lines[-hop-1]->setText(2, ""); 
@@ -294,11 +294,11 @@ debug("deleting a line not at end");
     } else if (hop != 0) {
       if (numberOfLines < hop) {
 	// Add lines
-	//debug("adding line; numberOfLines=%d, hop=%d", numberOfLines, hop);
+	//tqDebug("adding line; numberOfLines=%d, hop=%d", numberOfLines, hop);
 	for (i=numberOfLines; i<hop; i++) {
 	  char s[10];
 
-	  //debug("- i=%d", i);
+	  //tqDebug("- i=%d", i);
 	  lines[i] = new QListViewItem(lv);
 	  CHECK_PTR(lines[i]);
 	  sprintf(s, "%03d", i+1);
@@ -309,7 +309,7 @@ debug("deleting a line not at end");
       }
  
       // Split the line to differents column
-      //debug("line = \"%s\"", line);
+      //tqDebug("line = \"%s\"", line);
       pp = strtok(line, " ");
       for (i=0; pp && *pp && i<8; i++) {
 	if (i == 0) {
@@ -340,7 +340,7 @@ debug("deleting a line not at end");
       lines[numberOfLines-1]->setText(0, s);
       lines[numberOfLines-1]->setText(1, line);
 
-      //      debug("it was not a correct line. error? = %s", line);
+      //      tqDebug("it was not a correct line. error? = %s", line);
     }
   } // while
   delete receivedLine;
@@ -376,5 +376,5 @@ MtrDlg::clearOutput()
     delete lines[i];
     lines[i] = 0;
   }
-  numberOfLines = 0;
+  numberOfLines = 0;  /* TQt3 迁移 */
 }

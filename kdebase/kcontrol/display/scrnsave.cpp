@@ -107,7 +107,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 
 	readSettings();
 	
-	//debug("KScreenSaver::KScreenSaver");
+	//tqDebug("KScreenSaver::KScreenSaver");
 
 	setName(  i18n("Screen Saver") );
 
@@ -369,7 +369,7 @@ void KScreenSaver::readSettings( int )
 //Antonio
 
 
-	saverLocation = config->readEntry( "Location", kapp->kde_bindir().copy() );
+	saverLocation = config->readEntry( "Location", kapp->kde_bindir() );
 
 	bUseSaver = config->readBoolEntry( "UseSaver", false );
 	if( bUseSaver ) {
@@ -467,7 +467,6 @@ void KScreenSaver::writeSettings()
 	config->writeEntry( "Lock", lock ? "yes" : "no" );
 	config->writeEntry( "allowRoot", allowRoot );
 
-	str.detach();
 	str.setNum( priority );
 	config->writeEntry( "Priority", str );
 
@@ -483,11 +482,17 @@ void KScreenSaver::writeSettings()
 
 void KScreenSaver::findSavers()
 {
+	// TQt3 迁移：entryList 值语义——静态列表承接（成员为 const 指针）
 	static QDir d( saverLocation );
-
+	static TQStrList k1savers;
 	d.setFilter( QDir::Executable | QDir::Files );
-
-	saverList = d.entryList( "*.kss1" );
+	k1savers.clear();
+	{
+		QStringList k1sl = d.entryList( "*.kss1" );
+		for ( unsigned k1i = 0; k1i < k1sl.count(); ++k1i )
+			k1savers.append( k1sl[k1i] );
+	}
+	saverList = &k1savers;
 }
 
 void KScreenSaver::getSaverNames()
@@ -623,7 +628,6 @@ void KScreenSaver::slotScreenSaver( int indx )
 {
 	if ( indx == 0 )
 	{
-		saverFile.detach();
 		saverFile.sprintf( i18n("No screensaver") );
 		setupBt->setEnabled( FALSE );
 		testBt->setEnabled( FALSE );

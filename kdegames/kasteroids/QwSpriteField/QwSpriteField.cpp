@@ -1498,7 +1498,7 @@ QwSpritePixmapSequence::QwSpritePixmapSequence(QList<QPixmap> list, QList<QPoint
     img(new QwSpritePixmap*[list.count()])
 {
     if (list.count() != hotspots.count())
-	warning("QwSpritePixmapSequence: lists have different lengths");
+	tqWarning("QwSpritePixmapSequence: lists have different lengths");
     list.first();
     hotspots.first();
     for (int i=0; i<framecount; i++) {

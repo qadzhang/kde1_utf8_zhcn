@@ -7,7 +7,7 @@
  *                KArchie is written for the KDE-Project                   *
  *                         http://www.kde.org                              *
  *                                                                         *
- *   Copyright (C) Oct 1997 J�rg Habenicht                                 *
+ *   Copyright (C) Oct 1997 J�rg Habenicht                                 *
  *                  E-Mail: j.habenicht@europemail.com                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -79,18 +79,18 @@ KArchie::KArchie(const char *name)
   QString defaulthost = "archie.sura.net" ;
   if ( archiehostlist.isEmpty() ) {
     archiehostlist.append( defaulthost );
-    currentHostId = 0;
+    currentHostId = 0;  /* TQt3 迁移 */
     //    archiehostlistnumber++;
   }
   else if (archiehostlist.count() < currentHostId) {
-    currentHostId = 0;
+    currentHostId = 0;  /* TQt3 迁移 */
   }    
   currenthost = archiehostlist.at(currentHostId);
   //  config->setGroup( ConfigEntries::HostConfigGroup );
   //  currenthost = config->readEntry( ConfigEntries::CurrentHostEntry,
   //				   ConfigEntries::CurrentHostDefault );
 
-  //    debug("setup menu");
+  //    tqDebug("setup menu");
   menu = new KAMenu( this, "mainmenu" );
   setMenu( menu );
   connect( menu, SIGNAL(sigSettingsAll()),
@@ -130,7 +130,7 @@ KArchie::KArchie(const char *name)
   menu->setFileWriteListEnable( FALSE );
   menu->setSortEnable( FALSE );
 
-  //    debug("setup statusbar");
+  //    tqDebug("setup statusbar");
   statbar = new KAStatusBar( this, "statusbar" );
   setStatusBar( statbar );
   statbar->slotChangeHost( currenthost );
@@ -140,7 +140,7 @@ KArchie::KArchie(const char *name)
   delete saveGroup;
   saveGroup = new KConfigGroupSaver( config, "WindowConfig" );
 
-  //  debug( "setup view" );
+  //  tqDebug( "setup view" );
   view = new KAView( this, "view" );
   setView( view );
   //  view->slotShowFileDiscriptor(config->readBoolEntry("FAttr", true));
@@ -187,13 +187,13 @@ KArchie::~KArchie()
 void 
 KArchie::slotChangeSettings()
 {
-  //  debug( "KArchie::slotChangeSettings request" );
+  //  tqDebug( "KArchie::slotChangeSettings request" );
   changeSettings();
 }
 
 void 
 KArchie::slotSearchFile()
-{ //debug("KArchie::slotSearchFile");
+{ //tqDebug("KArchie::slotSearchFile");
   slotQuerySearch('f'); }
 void 
 KArchie::slotSearchPath()
@@ -205,7 +205,7 @@ KArchie::slotSearchHost()
 void 
 KArchie::slotQuerySearch(char type)
 {
-  //  debug("KArchie::slotQuerySearch");
+  //  tqDebug("KArchie::slotQuerySearch");
   QStrList archiehostlist;
   KConfigGroupSaver *saveGroup = new KConfigGroupSaver( config, "HostConfig" );
 
@@ -215,11 +215,11 @@ KArchie::slotQuerySearch(char type)
   QString defaulthost = "archie.sura.net" ;
   if ( archiehostlist.isEmpty() ) {
     archiehostlist.append( defaulthost );
-    currentHostId = 0;
+    currentHostId = 0;  /* TQt3 迁移 */
     //    archiehostlistnumber++;
   }
   else if (archiehostlist.count() < currentHostId) {
-    currentHostId = 0;
+    currentHostId = 0;  /* TQt3 迁移 */
   }    
 
   QString host(archiehostlist.at(currentHostId));
@@ -237,7 +237,7 @@ KArchie::slotQuerySearch(char type)
 
   delete saveGroup;
 
-  //  debug( host );
+  //  tqDebug( host );
   QString search;
   switch (type) {
   case 'p': search = "path"; break;
@@ -245,7 +245,7 @@ KArchie::slotQuerySearch(char type)
   case 'f': // fall through
   default:  search = "file"; break;
   }
-  //  debug( search );
+  //  tqDebug( search );
 
   query = new KAQuery((const char *)host,
 		      view->getSearchterm().getText(),
@@ -288,10 +288,10 @@ KArchie::slotQuerySearch(char type)
       delete queryResult;
     }
     statbar->slotChangeStatus( "Success" );
-    debug("getfilelist");
+    tqDebug("getfilelist");
     queryResult = &(query->getFileList());
     statbar->slotChangeHits( queryResult->count() );
-    debug("displayfilelist");
+    tqDebug("displayfilelist");
     view->newFileList( *queryResult );
 
     bool listitemhighlighted = -1 != view->getList().currentItem();
@@ -302,7 +302,7 @@ KArchie::slotQuerySearch(char type)
   }
   else { // print status on SLine
     const char *cError = query->getError();
-    debug( cError );
+    tqDebug( cError );
     statbar->slotChangeStatus( cError );
     statbar->slotChangeHits( 0 );
 
@@ -316,8 +316,8 @@ KArchie::slotQuerySearch(char type)
   //  QString tmp;
   //  tmp.setNum( view->getList().currentItem() );
   //  tmp += " current list item";
-  //  debug( tmp );
-  debug("ready");
+  //  tqDebug( tmp );
+  tqDebug("ready");
   delete query;
   */
 }
@@ -332,7 +332,7 @@ KArchie::slotOpenFileSelected()
   }*/
   //  KProcess *process = new KProcess;
 
-  //  debug ("file open");
+  //  tqDebug("file open");
   KURL url("file:/usr/local/kde/bin/kfmclient1");
   openFile(url);
 }
@@ -340,7 +340,7 @@ KArchie::slotOpenFileSelected()
 void  
 KArchie::slotOpenDirSelected()
 {
-  //  debug ("dir open");
+  //  tqDebug("dir open");
   //  KURL url("file:/usr/local/kde/");
   //  openDir(url);
   const KAQueryFile *file = checkViewSelection();
@@ -395,12 +395,12 @@ KArchie::slotLoadfilelistSelected()
       int i, count; // = queryResult->count();
       QDataStream data(&file);
       data >> count;
-      //debug("loading %i items", count);
-      //debug("queryResult is %ld", (long)queryResult);
+      //tqDebug("loading %i items", count);
+      //tqDebug("queryResult is %ld", (long)queryResult);
       if ( queryResult ) {
-	//debug("enable autodelete querylist");
+	//tqDebug("enable autodelete querylist");
 	queryResult->setAutoDelete( TRUE );
-	//debug("deleting querylist");
+	//tqDebug("deleting querylist");
 	delete queryResult;
       }
       queryResult = new KAQueryList;
@@ -409,40 +409,40 @@ KArchie::slotLoadfilelistSelected()
 	//      qrfile = queryResult->at(i);
 	qrfile = new KAQueryFile;
 	data >> *qrfile;
-	//debug ("Item %s%s%s", (const char *)qrfile->getHost(), (const char *)qrfile->getPath(), (const char *)qrfile->getFile());
+	//tqDebug("Item %s%s%s", (const char *)qrfile->getHost(), (const char *)qrfile->getPath(), (const char *)qrfile->getFile());
 	queryResult->append(qrfile);
       }
       file.close();
-      //debug("put new filelist");
+      //tqDebug("put new filelist");
       view->newFileList(*queryResult);
-      //debug("setting menu:");
+      //tqDebug("setting menu:");
       if (view->getList().count() > 0) {
 	// list contains items
-	//debug("\tsetstore");
+	//tqDebug("\tsetstore");
 	menu->setFileStoreListEnable( TRUE );
-	//debug("\tsetwrite");
+	//tqDebug("\tsetwrite");
 	menu->setFileWriteListEnable( TRUE );
-	//debug("\tsetsort");
+	//tqDebug("\tsetsort");
 	menu->setSortEnable( TRUE );
 
 	if (-1 != view->getList().currentItem()) {
 	  // list has item selected/highlighted
-	  //debug("\tsetopen");
+	  //tqDebug("\tsetopen");
 	  menu->setFileOpenEnable( TRUE );
-	  //debug("\tsetopendir");
+	  //tqDebug("\tsetopendir");
 	  menu->setFileOpenDirEnable( TRUE );
-	  //debug("\tsetget");
+	  //tqDebug("\tsetget");
 	  menu->setFileGetEnable( TRUE );
 	}
       }
-      //debug ("loading ready");
+      //tqDebug("loading ready");
     }
     else {
       QString errstr = i18n("Couldn't open \n\"%s\"");
       QString tmp(loadfile.length() + errstr.length() + 1);
 
       tmp.sprintf((const char *)errstr, (const char *)loadfile);
-      warning("%s", (const char *)tmp);
+      tqWarning("%s", (const char *)tmp);
       KMsgBox::message( this, i18n("KArchie: bad file"), tmp,
 			KMsgBox::EXCLAMATION, i18n("OK") );
     }
@@ -484,7 +484,7 @@ KArchie::slotStorefilelistSelected()
       QString tmp(storefile.length() + errstr.length() + 1);
 
       tmp.sprintf((const char *)errstr, (const char *)storefile);
-      warning("%s", (const char *)tmp);
+      tqWarning("%s", (const char *)tmp);
       KMsgBox::message( this, i18n("KArchie: bad file"), tmp,
 			KMsgBox::EXCLAMATION, i18n("OK") );
     }
@@ -522,7 +522,7 @@ KArchie::slotSortListHostname()
 {
   // mache eine neue Liste aus der alten
   // und gib sie der Viewlist zur Darstellung.
-  // danach l�schen.
+  // danach l�schen.
 
   if (queryResult) {
     KAHostList *sortList = new KAHostList;
@@ -663,7 +663,7 @@ KArchie::openDir(const KURL &url)
   // Prozess erstellen
   KProcess p;
   // .. mit Daten fuettern
-  //  debug("starting process: %s %s %s", KFM_WINDOW, KFM_OPEN_URL, (const char*)url.url());
+  //  tqDebug("starting process: %s %s %s", KFM_WINDOW, KFM_OPEN_URL, (const char*)url.url());
   p << KFM_WINDOW << KFM_OPEN_URL << (const char*)url.url();
   // .. und durchstarten
   p.start(KProcess::DontCare, KProcess::NoCommunication);
@@ -791,10 +791,10 @@ KArchie::slotReturnQuery()
       delete queryResult;
     }
     statbar->slotChangeStatus( i18n("Success") );
-    //    debug("getfilelist");
+    //    tqDebug("getfilelist");
     queryResult = &(query->getFileList());
     statbar->slotChangeHits( queryResult->count() );
-    //    debug("displayfilelist");
+    //    tqDebug("displayfilelist");
     view->newFileList( *queryResult );
 
     if (view->getList().count() > 0) {
@@ -813,7 +813,7 @@ KArchie::slotReturnQuery()
   }
   else { // print status on SLine
     const char *cError = query->getError();
-    debug( cError );
+    tqDebug( cError );
     statbar->slotChangeStatus( cError );
     statbar->slotChangeHits( 0 );
 
@@ -827,11 +827,11 @@ KArchie::slotReturnQuery()
   //  QString tmp;
   //  tmp.setNum( view->getList().currentItem() );
   //  tmp += " current list item";
-  //  debug( tmp );
+  //  tqDebug( tmp );
 
-  //  debug("ready");
+  //  tqDebug("ready");
   delete query;
-  query = 0;
+  query = 0;  /* TQt3 迁移 */
 
 }
 
@@ -843,15 +843,15 @@ int main (int argc, char **argv)
   KArchie      *window;
 
   // set main application
-  //  debug("setup application");
+  //  tqDebug("setup application");
   archie = new KApplication(argc, argv,"karchie");
   //archie->setFont(QFont("Helvetica",12),true);
 
-  //  debug("setup window");
+  //  tqDebug("setup window");
   window = new KArchie("main");
 
   archie->setMainWidget( window );
   window->setCaption("KArchie");
-  //  debug("goto event loop");
+  //  tqDebug("goto event loop");
   return archie->exec();
 }

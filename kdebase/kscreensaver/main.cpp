@@ -449,7 +449,7 @@ int main( int argc, char *argv[] )
 #ifdef HAVE_NICE
 		    nice( atoi( argv[++i] ) );
 #else
-		    warning(glocale->translate(
+		    tqWarning(glocale->translate(
 					       "Option %s is not support on "
 					       "this plattform!"), 
 			    strings[arg_nice]);
@@ -462,7 +462,7 @@ int main( int argc, char *argv[] )
 		    usage( argv[0] );
 		    break;
 		default: // unknown
-		    debug("unknown parameter");
+		    tqDebug("unknown parameter");
 		    break;
 		}
 	    i++;
@@ -498,7 +498,7 @@ int main( int argc, char *argv[] )
     if (XGetWindowAttributes(qt_xdisplay(), RootWindow(qt_xdisplay(),
         qt_xscreen()), &attr) == 0)
     {
-        debug("Failed getting Root window size");
+        tqDebug("Failed getting Root window size");
     }
     else
     {

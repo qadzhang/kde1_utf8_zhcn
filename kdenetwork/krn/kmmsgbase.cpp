@@ -25,8 +25,8 @@ KMMsgBase::KMMsgBase(KMFolder* aParent)
 {
   mParent  = aParent;
   mDirty   = FALSE;
-  mMsgSize = 0;
-  mFolderOffset = 0;
+  mMsgSize = 0;  /* TQt3 迁移 */
+  mFolderOffset = 0;  /* TQt3 迁移 */
   mStatus  = KMMsgStatusNew;
   mDate    = 0;
 }
@@ -183,7 +183,7 @@ const QString KMMsgBase::dateStr(void) const
 const QString KMMsgBase::asIndexString(void) const
 {
   int i, len;
-  QString str(256);
+  TQString str;  /* TQt3 迁移 */
 
   // don't forget to change indexStringLength() below !!
   str.sprintf("%c %-.9lu %-.9lu %-.9lu %-3.3s %-100.100s %-100.100s",
@@ -389,7 +389,7 @@ const QString KMMsgBase::decodeRFC1522String(const QString aStr)
   bool valid;
   char encoding=0, c;
 
-  start = 0;
+  start = 0;  /* TQt3 迁移 */
   result = "";
   len = aStr.length();
 
@@ -445,7 +445,6 @@ const QString KMMsgBase::decodeRFC1522String(const QString aStr)
       {
         if (aStr [p2] == '_') result += ' ';
 	else if (aStr [p2] != '=' || p2+3 > end) result += aStr [p2];
-        else
 	{
            result += decodeQuotedPrintable(aStr.mid(p2,3).data());
            p2 += 2;
@@ -478,8 +477,8 @@ const QString KMMsgBase::decodeQuotedPrintableString(const QString aStr)
   int start, beg, mid, end;
   end = 0; // Remove compiler warning;
 
-  start = 0;
-  end = 0;
+  start = 0;  /* TQt3 迁移 */
+  end = 0;  /* TQt3 迁移 */
   result = "";
 
   while (1)

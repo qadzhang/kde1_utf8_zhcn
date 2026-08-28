@@ -3,15 +3,15 @@ include_directories (
 )
 
 set(METASOURCES
-    main.moc saver.moc polygon.moc banner.moc
-    blankscrn.moc rock.moc flame.moc lines.moc laser.moc
-    pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc
-    lissie.moc morph3d.moc blob.moc space.moc bouboule.moc
-    kgroupbox.moc science.moc pipes.moc attraction.moc
-    slidescreen.moc bsod.moc matrix.moc
+    main.h saver.h polygon.h banner.h
+    blankscrn.h rock.h flame.h lines.h laser.h
+    pyro.h hop.h forest.h swarm.h bat.h slip.h
+    lissie.h morph3d.h blob.h space.h bouboule.h
+    kgroupbox.h science.h pipes.h attraction.h
+    slidescreen.h bsod.h matrix.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${METASOURCES})
+TQT3_WRAP_CPP(MOC_FILES ${METASOURCES})
 
 set(BASE_SRCS
     main.cpp xautolock.cpp saver.cpp passwd.cpp xlock.cpp
@@ -69,7 +69,7 @@ add_executable(kbsod.kss1 ${kbsod_kss_SOURCES})
 add_executable(klock ${klock_SOURCES})
 
 set(BASE_LIBRARIES
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     X11::X11
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

@@ -354,8 +354,8 @@ void print_mesg(FILE * tf, NEW_CTL_MSG * request, const char *
 	
 	const char *remotename = gethostbyname(remotemach)->h_name;
 	
-	i = 0;
-	max_size = 0;
+	i = 0;  /* TQt3 迁移 */
+	max_size = 0;  /* TQt3 迁移 */
 	gettimeofday(&clock, &zone);
 	localclock = localtime( (const time_t *) &clock.tv_sec );
 	(void)snprintf(line_buf[i], N_CHARS, " ");

@@ -434,8 +434,8 @@ int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, const char *ho
    
 int revmatch(const char *host, const char *nplist)
 {
-    const char *hptr = host + qstrlen(host) - 1;
-    const char *nptr = nplist + qstrlen(nplist) - 1;
+    const char *hptr = host + tqstrlen(host) - 1;
+    const char *nptr = nplist + tqstrlen(nplist) - 1;
     const char *shptr = hptr;
     
     while( nptr >= nplist ) {
@@ -609,7 +609,7 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	  }
 	}
 	if (!found)
-	  agent_string = QString(DEFAULT_USERAGENT_STRING).copy();
+	  agent_string = QString(DEFAULT_USERAGENT_STRING);
 
 	command += "User-Agent: "+agent_string+"\r\n"; /* User agent */
 	

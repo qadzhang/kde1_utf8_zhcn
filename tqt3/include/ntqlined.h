@@ -1,0 +1,1 @@
+../src/compat/ntqlined.h

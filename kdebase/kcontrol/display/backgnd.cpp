@@ -94,7 +94,7 @@ KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
 KBackground::KBackground( QWidget *parent, int mode, int desktop )
   : KDisplayModule( parent, mode, desktop )
 {
-  //debug("KBackground::KBackground");
+  //tqDebug("KBackground::KBackground");
 
   KIconLoader iconLoader;
       
@@ -321,9 +321,14 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   grid->setColStretch(2,2);
   //CT
 
-  QString path = kapp->kde_wallpaperdir().copy();
+  QString path = kapp->kde_wallpaperdir();
   QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
-  const QStrList *list = d.entryList();
+  // TQt3 迁移：entryList 值语义——静态列表承接
+  static TQStrList k1list;
+  { k1list.clear();
+    QStringList k1sl = d.entryList();
+    for (unsigned k1i = 0; k1i < k1sl.count(); ++k1i) k1list.append( k1sl[k1i] ); }
+  const QStrList *list = &k1list;
 
   wpCombo = new QComboBox( false, group );
   wpCombo->insertItem( i18n("No wallpaper"), 0 );
@@ -614,11 +619,11 @@ void KBackground::writeSettings( int num )
 
   config.setGroup( group );
 	
-  QString col1Name(10);
+  TQString col1Name;  // TQt3 迁移：容量构造已删
   col1Name.sprintf("#%02x%02x%02x", currentItem.color1.red(), currentItem.color1.green(), currentItem.color1.blue());
   config.writeEntry( "Color1", col1Name );
 	
-  QString col2Name(10);
+  TQString col2Name;  // TQt3 迁移：容量构造已删
   col2Name.sprintf("#%02x%02x%02x", currentItem.color2.red(), currentItem.color2.green(), currentItem.color2.blue());
   config.writeEntry( "Color2", col2Name );
 
@@ -915,7 +920,7 @@ bool KBackground::loadWallpaper( const char *name, bool useContext )
 
   if ( name[0] != '/' )
     {
-      filename = kapp->kde_wallpaperdir().copy();
+      filename = kapp->kde_wallpaperdir();
       filename += "/";
       filename += name;
     }
@@ -1177,11 +1182,11 @@ void KBackground::slotBrowse()
   static bool firsttime = true;
 
   if (firsttime) { // the file selector remembers the last path
-    path = kapp->kde_wallpaperdir().copy();
+    path = kapp->kde_wallpaperdir();
 
     QDir dir( path );
     if ( !dir.exists() )
-      path = 0;
+      path = TQString();  // TQt3 迁移
 	    
     firsttime = false;
   }

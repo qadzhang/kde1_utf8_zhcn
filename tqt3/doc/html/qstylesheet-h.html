@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqstylesheet.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqstylesheet.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqstylesheet.h</h1>
+
+<p>This is the verbatim text of the ntqstylesheet.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqstylesheet.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of the TQStyleSheet class
+**
+** Created : 990101
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQSTYLESHEET_H
+#define TQSTYLESHEET_H
+
+#ifndef QT_H
+#include "ntqstring.h"
+#include "ntqvaluelist.h"
+#include "ntqptrvector.h"
+#include "ntqdict.h"
+#include "ntqobject.h"
+#endif // QT_H
+
+#ifndef TQT_NO_RICHTEXT
+
+class TQStyleSheet;
+class TQTextDocument;
+template&lt;class Key, class T&gt; class TQMap;
+class TQStyleSheetItemData;
+
+class TQ_EXPORT TQStyleSheetItem : public TQt
+{
+public:
+    TQStyleSheetItem( TQStyleSheet* parent, const TQString&amp; name );
+    TQStyleSheetItem( const TQStyleSheetItem &amp; );
+    ~TQStyleSheetItem();
+
+    TQStyleSheetItem&amp; operator=( const TQStyleSheetItem&amp; other );
+
+    TQString name() const;
+
+    TQStyleSheet* styleSheet();
+    const TQStyleSheet* styleSheet() const;
+
+    enum AdditionalStyleValues { Undefined  = - 1};
+
+    enum DisplayMode {
+	DisplayBlock,
+	DisplayInline,
+	DisplayListItem,
+	DisplayNone
+#ifndef Q_QDOC
+	, DisplayModeUndefined = -1
+#endif
+    };
+
+    DisplayMode displayMode() const;
+    void setDisplayMode(DisplayMode m);
+
+    int alignment() const;
+    void setAlignment( int f);
+
+    enum VerticalAlignment {
+	VAlignBaseline,
+	VAlignSub,
+	VAlignSuper
+    };
+
+    VerticalAlignment verticalAlignment() const;
+    void setVerticalAlignment( VerticalAlignment valign );
+
+    int fontWeight() const;
+    void setFontWeight(int w);
+
+    int logicalFontSize() const;
+    void setLogicalFontSize(int s);
+
+    int logicalFontSizeStep() const;
+    void setLogicalFontSizeStep( int s );
+
+    int fontSize() const;
+    void setFontSize(int s);
+
+    TQString fontFamily() const;
+    void setFontFamily( const TQString&amp; );
+
+    int numberOfColumns() const;
+    void setNumberOfColumns(int ncols);
+
+    TQColor color() const;
+    void setColor( const TQColor &amp;);
+
+    bool fontItalic() const;
+    void setFontItalic( bool );
+    bool definesFontItalic() const;
+
+    bool fontUnderline() const;
+    void setFontUnderline( bool );
+    bool definesFontUnderline() const;
+
+    bool fontStrikeOut() const;
+    void setFontStrikeOut( bool );
+    bool definesFontStrikeOut() const;
+
+    bool isAnchor() const;
+    void setAnchor(bool anc);
+
+    enum WhiteSpaceMode {
+	WhiteSpaceNormal,
+	WhiteSpacePre,
+	WhiteSpaceNoWrap
+#ifndef Q_QDOC
+	, WhiteSpaceModeUndefined = -1
+#endif
+    };
+    WhiteSpaceMode whiteSpaceMode() const;
+    void setWhiteSpaceMode(WhiteSpaceMode m);
+
+    enum Margin {
+	MarginLeft,
+	MarginRight,
+	MarginTop,
+	MarginBottom,
+	MarginFirstLine,
+	MarginAll,
+	MarginVertical,
+	MarginHorizontal
+#ifndef Q_QDOC
+	, MarginUndefined = -1
+#endif
+    };
+
+    int margin( Margin m) const;
+    void setMargin( Margin, int);
+
+    enum ListStyle {
+	ListDisc,
+	ListCircle,
+	ListSquare,
+	ListDecimal,
+	ListLowerAlpha,
+	ListUpperAlpha
+#ifndef Q_QDOC
+	, ListStyleUndefined = -1
+#endif
+    };
+
+    ListStyle listStyle() const;
+    void setListStyle( ListStyle );
+
+    TQString contexts() const;
+    void setContexts( const TQString&amp; );
+    bool allowedInContext( const TQStyleSheetItem* ) const;
+
+    bool selfNesting() const;
+    void setSelfNesting( bool );
+
+    void setLineSpacing( int ls );
+    int lineSpacing() const;
+
+private:
+    void init();
+    TQStyleSheetItemData* d;
+};
+
+
+#if defined(Q_TEMPLATEDLL)
+// MOC_SKIP_BEGIN
+Q_TEMPLATE_EXTERN template class TQ_EXPORT TQDict&lt;TQStyleSheetItem&gt;;
+Q_TEMPLATE_EXTERN template class TQ_EXPORT TQValueList&lt; TQPtrVector&lt;TQStyleSheetItem&gt; &gt;;
+Q_TEMPLATE_EXTERN template class TQ_EXPORT TQPtrVector&lt;TQStyleSheetItem&gt;;
+Q_TEMPLATE_EXTERN template class TQ_EXPORT TQValueList&lt;TQStyleSheetItem::ListStyle&gt;;
+// MOC_SKIP_END
+#endif
+
+#ifndef TQT_NO_TEXTCUSTOMITEM
+class TQTextCustomItem;
+#endif
+
+class TQ_EXPORT TQStyleSheet : public TQObject
+{
+    TQ_OBJECT
+public:
+    TQStyleSheet( TQObject *parent=0, const char *name=0 );
+    virtual ~TQStyleSheet();
+
+    static TQStyleSheet* defaultSheet();
+    static void setDefaultSheet( TQStyleSheet* );
+
+
+    TQStyleSheetItem* item( const TQString&amp; name);
+    const TQStyleSheetItem* item( const TQString&amp; name) const;
+
+    void insert( TQStyleSheetItem* item);
+
+#ifndef TQT_NO_TEXTCUSTOMITEM
+    virtual TQTextCustomItem* tag( const TQString&amp; name,
+				  const TQMap&lt;TQString, TQString&gt; &amp;attr,
+				  const TQString&amp; context,
+				  const TQMimeSourceFactory&amp; factory,
+				  bool emptyTag, TQTextDocument *doc ) const;
+#endif
+    static TQString escape( const TQString&amp; );
+    static TQString convertFromPlainText( const TQString&amp;,
+					 TQStyleSheetItem::WhiteSpaceMode mode = TQStyleSheetItem::WhiteSpacePre );
+    static bool mightBeRichText( const TQString&amp; );
+
+    virtual void scaleFont( TQFont&amp; font, int logicalSize ) const;
+
+    virtual void error( const TQString&amp; ) const;
+
+private:
+    void init();
+    TQDict&lt;TQStyleSheetItem&gt; styles;
+    TQStyleSheetItem* nullstyle;
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQStyleSheet( const TQStyleSheet &amp; );
+    TQStyleSheet &amp;operator=( const TQStyleSheet &amp; );
+#endif
+};
+
+#endif // TQT_NO_RICHTEXT
+
+#endif // TQSTYLESHEET_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

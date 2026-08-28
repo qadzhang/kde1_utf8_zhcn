@@ -343,7 +343,6 @@ void KHTMLWidget::cancelAllRequests()
 void KHTMLWidget::requestBackgroundImage( const char *_url )
 {
     bgPixmapURL = _url;
-    bgPixmapURL.detach();
     emit fileRequest( _url );
 }
 
@@ -439,7 +438,7 @@ void KHTMLWidget::slotFileLoaded( const char *_url, const char *_filename )
 	if ( strcmp( bgPixmapURL, _url ) == 0 )
 	{
 	    bgPixmap.load( _filename );
-	    bgPixmapURL = 0;
+	    bgPixmapURL = TQString();
             if (fixBackground(bgPixmap, settings->bgColor))
                 scheduleUpdate( true );
 	}
@@ -482,7 +481,7 @@ void KHTMLWidget::slotFileLoaded( const char *_url, const char *_filename )
 	if ( strcmp( bgPixmapURL, _url ) == 0 )
 	{
 	    bgPixmap.load( _filename );					
-	    bgPixmapURL = 0;
+	    bgPixmapURL = TQString();
 	    scheduleUpdate( true );
 	}
     }    
@@ -604,9 +603,7 @@ void KHTMLWidget::mousePressEvent( QMouseEvent *_mouse )
 		if ( _mouse->button() == LeftButton || _mouse->button() == MidButton )
 		{
 		    pressedURL = obj->getURL();
-		    pressedURL.detach();
 		    pressedTarget = obj->getTarget();
-		    pressedTarget.detach();
 		}
 		
 		// Does the parent want to process the event now ?
@@ -1570,11 +1567,11 @@ void KHTMLWidget::begin( const char *_url, int _x_offset, int _y_offset )
     emit scrollHorz( x_offset );
     emit scrollVert( y_offset );
 
-    bgPixmapURL = 0;
+    bgPixmapURL = TQString();
     
     stopParser();
     
-    reference = 0;
+    reference = TQString();
     
     if ( _url != 0 )
     {
@@ -1652,7 +1649,7 @@ void KHTMLWidget::selectFont( int _relative_font_size )
     if ( !currentFont() )
     {
 	fontsize = settings->fontBaseSize;
-	debug( "aarrrgh - no font" );
+	tqDebug( "aarrrgh - no font" );
     }
 
     if ( fontsize < 0 )
@@ -1682,7 +1679,7 @@ void KHTMLWidget::selectFont()
     else
     {
 	fontsize = settings->fontBaseSize;
-	debug( "aarrrgh - no font" );
+	tqDebug( "aarrrgh - no font" );
 	assert(0);
     }
 
@@ -1934,8 +1931,8 @@ void KHTMLWidget::parse()
     inTitle = false;
     bodyParsed = false;
 
-    target = 0;
-    url = 0;
+    target = TQString();
+    url = TQString();
 
     listStack.clear();
     glossaryStack.clear();
@@ -2038,7 +2035,7 @@ void KHTMLWidget::timerEvent( QTimerEvent * )
     {
     	if (gotoAnchor())
     	{
-    	    reference = 0;
+    	    reference = TQString();
     	}
     }
 
@@ -2667,7 +2664,7 @@ void KHTMLWidget::parseA( HTMLClueV *_clue, const char *str )
     {
 	closeAnchor();
 	QString tmpurl;
-	target = 0;
+	target = TQString();
 	bool visited = false;
 	const char *p;
 
@@ -5268,7 +5265,7 @@ bool KHTMLWidget::gotoAnchor( const char *_name )
     
     if (gotoAnchor())
     {
-       reference = 0;
+       reference = TQString();
        return TRUE;
     }
     return FALSE;
@@ -5551,14 +5548,14 @@ bool KHTMLWidget::setCharset(const char *name){
 		if (charsetConverter) delete charsetConverter;
 	        charsetConverter=0;
 		if (!charset.isAvailable()){
-			warning("Charset %s not available",name);
+			tqWarning("Charset %s not available",name);
 			return FALSE;
 		}
 		debugM("Initializing conversion from %s\n",charset.name());
 		charsetConverter=new KCharsetConverter(charset
 				,KCharsetConverter::AMP_SEQUENCES);
 		if (!charsetConverter->ok()){
-			warning("Couldn't initialize converter from %s",
+			tqWarning("Couldn't initialize converter from %s",
 			          name);
 			delete charsetConverter;
 			charsetConverter=0;
@@ -6527,7 +6524,7 @@ KHTMLWidget::restorePosition( int x, int y )
 
 SavedPage::SavedPage()
 {
-    frameName = 0;
+    frameName = TQString();
     scrolling = 2;
     frameborder = 0;
     marginwidth = 0;
@@ -6535,7 +6532,7 @@ SavedPage::SavedPage()
     allowresize = true;
     isFrame = false;
     isFrameSet = false;
-    url = 0;
+    url = TQString();
     xOffset = yOffset = 0;
     frameLayout = 0;
     frames = 0;

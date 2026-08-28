@@ -1,0 +1,1 @@
+../src/dialogs/ntqsemimodal.h

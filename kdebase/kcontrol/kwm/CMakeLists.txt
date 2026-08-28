@@ -13,17 +13,17 @@ set(KCMKWM_SRCS
 )
 
 set(KCMKWM_MOC
-    advanced.moc
-    desktop.moc
-    mouse.moc
-    titlebar.moc
-    windows.moc
+    advanced.h
+    desktop.h
+    mouse.h
+    titlebar.h
+    windows.h
 )
-QT1_WRAP_MOC(MOC_FILES ${KCMKWM_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KCMKWM_MOC})
 
 add_executable(kcmkwm ${KCMKWM_SRCS} ${MOC_FILES})
 target_link_libraries(kcmkwm
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     )

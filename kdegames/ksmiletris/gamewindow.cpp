@@ -233,24 +233,22 @@ void GameWindow::gameOver()
 
 				num.setNum(j);
 				s = "Pos" + num + "Level";
-				config->writeEntry(s, level);
+				config->writeEntry((const char*)s, (const char*)level);
 				s = "Pos" + num + "Score";
-				config->writeEntry(s, score);
+				config->writeEntry((const char*)s, (const char*)score);
 				s = "Pos" + num + "Name";
-				config->writeEntry(s, name);
+				config->writeEntry((const char*)s, (const char*)name);
 			}
 
-			num.detach();
 			num.setNum(i);
 			s = "Pos" + num + "Level";
-			level.detach();
 			level.setNum(game->num_level);
-			config->writeEntry(s, level);
+			config->writeEntry((const char*)s, (const char*)level);
 			s = "Pos" + num + "Score";
 			score.setNum(game->num_points);
-			config->writeEntry(s, score);
+			config->writeEntry((const char*)s, (const char*)score);
 			s = "Pos" + num + "Name";
-			config->writeEntry(s, d.name());
+			config->writeEntry((const char*)s, (const char*)d.name());
 
 			ScoreDialog h(this);
 			h.exec();

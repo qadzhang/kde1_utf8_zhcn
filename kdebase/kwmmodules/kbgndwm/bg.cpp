@@ -119,7 +119,11 @@ void KBackground::readSettings( int num, bool one, int onedesk )
       QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
       QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
 
-      QStrList *list = (QStrList *)d.entryList();
+      // TQt3 迁移：entryList 值语义——成员列表承接
+      k1entrylist.clear();
+      { QStringList k1sl = d.entryList();
+        for (unsigned k1i = 0; k1i < k1sl.count(); ++k1i) k1entrylist.append( k1sl[k1i] ); }
+      QStrList *list = &k1entrylist;
 
       count = list->count();
       if ( inorder ) {
@@ -234,7 +238,6 @@ void KBackground::readSettings( int num, bool one, int onedesk )
   if ( bUseWallpaper )
     wallpaper = config.readEntry( "Wallpaper", DEFAULT_WALLPAPER );
 
-  name.detach();
   name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),
 		wpMode, gfMode, orMode, color1.red(), color1.green(),
 		color1.blue(), color2.red(), color2.green(), color2.blue());
@@ -291,7 +294,7 @@ QPixmap *KBackground::loadWallpaper()
 
   if ( wallpaper[0] != '/' )
     {
-      filename = KApplication::kde_wallpaperdir().copy() + "/";
+      filename = KApplication::kde_wallpaperdir() + "/";
       filename += wallpaper;
     }
   else
@@ -317,7 +320,7 @@ void KBackground::apply()
   bgPixmap = QPixmapCache::find( name );
   if ( bgPixmap )
     {
-      //      debug( "Desktop background found in cache" );
+      //      tqDebug( "Desktop background found in cache" );
       qApp->desktop()->setBackgroundPixmap( *bgPixmap );
       setPixmapProperty( bgPixmap );
       bgPixmap = 0;
@@ -378,7 +381,7 @@ void KBackground::apply()
 		      pmDesktop.width(), h);
 	  } else {
 	    for (uint ph = 0; ph <= h; ph += pmDesktop.height()) {
-	      //	      debug("land %d",ph);
+	      //	      tqDebug("land %d",ph);
 	      bitBlt( bgPixmap, 0, ph, &pmDesktop, 0, 0,
 		      w, pmDesktop.height());
 	    }

@@ -5,7 +5,7 @@
  * <copyright.h>.
  */
 
-#include <copyright.h>
+#include "copyright.h"
 
 /* This file and perrmesg.c should be updated simultaneously. */
 

@@ -1,0 +1,1 @@
+../src/styles/ntqcommonstyle.h

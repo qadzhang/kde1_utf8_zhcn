@@ -33,8 +33,8 @@
 #include <qpushbutton.h>
 #include <qpainter.h>
 #include <qpen.h>
-#include <kdbtn.h>
-#include <kseparator.h>
+#include "kdbtn.h"
+#include "kseparator.h"
 
 /**
 * KDialog inherits QDialog. So far the only difference is that if the dialog is modeless

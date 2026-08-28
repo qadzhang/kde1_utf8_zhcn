@@ -8,9 +8,9 @@ set(KVT_SRCS command.c screen.c utmp.c
 	grkelot.c)
 
 add_definitions(-DREAL_RESOURCES)
-set(KVT_MOC main.moc)
+set(KVT_MOC main.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KVT_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KVT_MOC})
 
 add_executable(kvt ${KVT_SRCS} ${MOC_FILES})
 # [KDE1 Revival 2026] Xft/fontconfig（kvt UTF-8 渲染通道）
@@ -29,7 +29,7 @@ include_directories(${XFT_INCLUDE_DIRS})
 target_link_libraries(kvt
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${XFT_LIBRARIES}
     ${CURSES_LIBRARIES}

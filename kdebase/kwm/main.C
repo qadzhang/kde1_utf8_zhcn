@@ -36,6 +36,7 @@
 #include <errno.h>
 #include <X11/X.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
@@ -392,8 +393,6 @@ QRect &stringToRect(QString s, QRect *q){
   int w = 0;
   int h = 0;
 
-  s.detach(); // a copy for changing
-
   int a;
   a = s.find('+', 0);
   if (a>0){
@@ -453,7 +452,7 @@ static QPixmap stretchPixmap(QPixmap& src, bool stretchVert){
     p.end();
   }
 
-  debug("stretchPixmap %dx%d to %dx%d", w, h, w2, h2);
+  tqDebug("stretchPixmap %dx%d to %dx%d", w, h, w2, h2);
   return dest;
 }
 
@@ -762,7 +761,6 @@ BUTTON_FUNCTIONS getFunctionFromKey(const char* key_arg){
     return STICKY;
   else if( key == "Menu" )
     return MENU;
-  else
     return UNDEFINED;
 }
 
@@ -1224,7 +1222,7 @@ void MyApp::readConfiguration(){
     s[6] =  (char) ('A'+i);
     options.buttons[i] = getFunctionFromKey(config->readEntry(s));
     if (options.buttons[i] == UNDEFINED){
-      config->writeEntry(s,default_buttons[i]);
+      config->writeEntry((const char*)s, (const char*)default_buttons[i]);  /* TQt3 迁移 */
       options.buttons[i] = getFunctionFromKey(default_buttons[i]);
     }
   }
@@ -1898,7 +1896,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	      return TRUE;
 	  }
 	    /*
-	    debug("PropertyNotify... %s",
+	    tqDebug("PropertyNotify... %s",
 		XGetAtomName(qt_xdisplay(),ev->xproperty.atom));
 	    */
 	case ButtonPress:
@@ -1911,7 +1909,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 		events_count--;
 	    }
 	    events[events_count++] = *ev;
- 	    // debug("events: %d", events_count);
+ 	    // tqDebug("events: %d", events_count);
 	    return TRUE;
 	    break ;
 	}

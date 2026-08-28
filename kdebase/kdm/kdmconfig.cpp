@@ -130,7 +130,6 @@ KDMConfig::getConfig()
                _shutdownButton = RootOnly;
           else if( tmp == "ConsoleOnly")
                _shutdownButton = ConsoleOnly;
-          else
                _shutdownButton = KNone;
           _shutdown         = new QString( kc->readEntry(  "Shutdown"));
           if( _shutdown->isNull())
@@ -142,11 +141,11 @@ KDMConfig::getConfig()
           _shutdownButton   = KNone;
      if( kc->hasKey( "GUIStyle")) {
           if( kc->readEntry( "GUIStyle") == "Windows")
-               _style = WindowsStyle;
+               _style = TQt::WindowsStyle;
           else                        // Added this cause else users couldn't
-               _style = MotifStyle;   // explicitly ask for motif-style. Th.
+               _style = TQt::MotifStyle;   // explicitly ask for motif-style. Th.
      } else {
-          _style = MotifStyle;
+          _style = TQt::MotifStyle;
      }
 
      // Logo
@@ -197,7 +196,7 @@ KDMConfig::getConfig()
      if( dot != -1) hostname = longhostname.left( dot);
      else hostname = longhostname;
 
-     if( !normal_font.isEmpty()) { // Rettet til isEmpty. Strengen kan godt være 0-længde
+     if( !normal_font.isEmpty()) { // Rettet til isEmpty. Strengen kan godt vï¿½re 0-lï¿½ngde
                                    // selvom isNull() giver false.
           if(normal_font.contains(',')) {                           //Th.
             _normalFont = new QFont(kc->readFontEntry( "StdFont")); //Th.

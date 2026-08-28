@@ -1,10 +1,22 @@
+#   Modified for the KDE1 Revival Project, 2026
+#   Maintainer: <维护者姓名> <邮箱>
+#   Modifications written with GLM-5.3 (Z.ai)
+#   （TQt3 底座迁移：QTableView 控件源接自 port/ 脚手架——TQt3 r14.1.6 已删
+#     attic，实现搬运自 tqt3 r14.0.0，版权头保留于 port/src/qttableview.*）
+
 include_directories(
-    ${QT_INCLUDE_DIR}
+    ${TQT3_INCLUDE_DIRS}
     ${KDELIBS_SOURCE_DIR}/kdecore
     ${KDELIBS_SOURCE_DIR}/kfile
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../port/src
     )
 
+# port/src 是仓库级脚手架源目录（kdeui 承载其编译——KTreeList 等 KDE1 控件
+# 直接继承 TQtTableView，进 kdeui 库最自然；显式化迁移完成后随之移除）
+set(Q1SCAFFOLD_SRC "${CMAKE_CURRENT_SOURCE_DIR}/../../port/src")
+
 set(KDEUI_SRCS
+        ${Q1SCAFFOLD_SRC}/qttableview.cpp
         kledlamp.cpp kprogress.cpp kpanner.cpp kcolordlg.cpp
 		kselect.cpp kdatepik.cpp kdatetbl.cpp
 		kfontdialog.cpp kmsgbox.cpp kpopmenu.cpp ktabctl.cpp
@@ -28,13 +40,14 @@ set(KDEUI_MOC
 	kquickhelp.h krestrictedline.h kruler.h kselect.h
 	kslider.h kspinbox.h kstatusbar.h ktabbar.h ktabctl.h
 	ktablistbox.h ktmainwindow.h ktoolbar.h ktoolboxmgr.h
-	ktopwidget.h ktreelist.h kurllabel.h kwizard.h kwmmapp.h)
+	ktopwidget.h ktreelist.h kurllabel.h kwizard.h kwmmapp.h
+	${Q1SCAFFOLD_SRC}/qttableview.h)
 
-qt1_wrap_moc(MOC_FILES ${KDEUI_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KDEUI_MOC})
 
 add_library(kdeui SHARED ${KDEUI_SRCS} ${MOC_FILES})
 set_target_properties(kdeui PROPERTIES VERSION 2.0.0 SOVERSION 2)
-target_link_libraries(kdeui kdecore ${QT_LIBRARIES} ${X11_LIBRARIES})
+target_link_libraries(kdeui kdecore ${TQT3_LIBRARIES} ${X11_LIBRARIES})
 install(TARGETS kdeui LIBRARY DESTINATION ${KDE1_LIBRARIES})
 
 install(FILES

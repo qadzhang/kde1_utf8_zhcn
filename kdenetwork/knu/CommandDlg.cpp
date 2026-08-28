@@ -87,7 +87,7 @@ extern bool test_for_exec(QString);
  */ 
 QString removeAmpersand(const QString &s1)
 {
-  QString s2 = s1.copy();
+  QString s2 = s1;
   
   s2.replace(QRegExp("&"), "" );
   return(s2);
@@ -115,7 +115,7 @@ CommandDlg::CommandDlg(QString,
   commandArgs = new QLineEdit(commandBinOK, "lineedit_1" );
   //CB commandArgs = new QComboBox(TRUE, this, "combobox_1" );//CB
   //CB commandArgs->setInsertionPolicy(QComboBox::AtTop);//CB
-  commandArgs->setMaximumSize(QLayout::unlimited, widgetHeight);
+  commandArgs->setMaximumSize(0x7fffffff  /* TQt3 迁移 */, widgetHeight);
   connect(commandArgs, SIGNAL(returnPressed()), 
 	  this, SLOT(slotLauchCommand()));
   connect(commandArgs, SIGNAL(textChanged(const char*)), 
@@ -198,7 +198,7 @@ CommandDlg::resizeEvent(QResizeEvent *)
 void 
 CommandDlg::checkBinaryAndDisplayWidget()
 {
-  //debug("%s::checkBinaryAndDisplayWidget()", name());
+  //tqDebug("%s::checkBinaryAndDisplayWidget()", name());
   KConfig *kc = kapp->getConfig();
   kc->setGroup(configGroupName);
   if (::test_for_exec(kc->readEntry("path"))) {
@@ -291,7 +291,7 @@ CommandDlg::checkInput(QString *args)
 bool
 CommandDlg::buildCommandLine(QString)
 {
-  warning("CommandDlg::buildCommandLine must be derived");
+  tqWarning("CommandDlg::buildCommandLine must be derived");
   return FALSE;
 }
 
@@ -317,7 +317,7 @@ CommandDlg::slotLauchCommand()
 
     // Check the input
     if (!checkInput(&args)) {
-      //warning("input not valid");
+      //tqWarning("input not valid");
       commandArgs->selectAll();
       KApplication::beep();
       return;
@@ -342,7 +342,7 @@ CommandDlg::slotLauchCommand()
     //  Process creation
     if (!buildCommandLine(args)) {
       QString errorString;
-      debug("buildCommandLine = FALSE");
+      tqDebug("buildCommandLine = FALSE");
       // Same message in MtrDlg.cpp
       errorString.sprintf(i18n("\nYou have a problem in your\n" 
 			    "%s/%src\nconfiguration file.\n"
@@ -371,7 +371,7 @@ CommandDlg::slotLauchCommand()
 //    if (!childProcess.start(KProcess::NotifyOnExit, KProcess::AllOutput)) {
     if (!childProcess.start(KProcess::NotifyOnExit, KProcess::All)) {
       // Process not started
-      debug("Process not started");
+      tqDebug("Process not started");
       slotProcessDead(NULL);
       return;
     }
@@ -434,14 +434,14 @@ CommandDlg::slotCmdStdout(KProcess *, char *buffer, int buflen)
     receivedLine = new QString("--- nothing ---\n");
   } else {
     //buffer[buflen] = 0;		// mark eot
-    //debug("stdout> %s", buffer);
-    receivedLine = new QString(buffer, buflen+1);
+    //tqDebug("stdout> %s", buffer);
+    receivedLine = new TQString( TQString::fromLatin1(buffer, buflen) );  /* TQt3 迁移 */
   }
 
   // goto end of data
   line = QMAX(commandTextArea->numLines() - 1, 0);
-  p = (char*)commandTextArea->textLine(line);
-  col = 0;
+  p = (char*)commandTextArea->textLine(line).ascii();  /* TQt3 迁移 */
+  col = 0;  /* TQt3 迁移 */
   if (p != NULL) {
     col = strlen(p);
   }
@@ -515,7 +515,7 @@ CommandCfgDlg::makeWidget(QWidget *parent, bool makeLayouts)
   cfgBinNameLE = new QLineEdit(cfgBinGB);
   CHECK_PTR(cfgBinNameLE);
   cfgBinNameLE->setMinimumSize(widgetWidth, widgetHeight);
-  cfgBinNameLE->setMaximumSize(QLayout::unlimited, widgetHeight);
+  cfgBinNameLE->setMaximumSize(0x7fffffff  /* TQt3 迁移 */, widgetHeight);
   
   cfgBinNameLbl = new QLabel(cfgBinNameLE, i18n("Path&name:"), cfgBinGB);
   CHECK_PTR(cfgBinNameLbl);
@@ -524,7 +524,7 @@ CommandCfgDlg::makeWidget(QWidget *parent, bool makeLayouts)
   cfgBinArgLE = new QLineEdit(cfgBinGB);
   CHECK_PTR(cfgBinArgLE);
   cfgBinArgLE->setMinimumSize(widgetWidth, widgetHeight);
-  cfgBinArgLE->setMaximumSize(QLayout::unlimited, widgetHeight);
+  cfgBinArgLE->setMaximumSize(0x7fffffff  /* TQt3 迁移 */, widgetHeight);
   
   cfgBinArgLbl = new QLabel(cfgBinArgLE, i18n("Additional &arguments:"),
 			    cfgBinGB);
@@ -539,7 +539,7 @@ CommandCfgDlg::makeWidget(QWidget *parent, bool makeLayouts)
   /*
    * Have we to display a warning???
    */
-  cfgWarning = 0;
+  cfgWarning = 0;  /* TQt3 迁移 */
   if (kc->readNumEntry("enable", 1) == 0) {
     // We have to display a warning
     cfgWarning = new QFrame(cfgWidget);
@@ -547,8 +547,8 @@ CommandCfgDlg::makeWidget(QWidget *parent, bool makeLayouts)
 
     cfgWarningPm = new QLabel(cfgWarning);
     CHECK_PTR(cfgWarningPm);
-    cfgWarningPm->setPixmap(QMessageBox::standardIcon(QMessageBox::Warning, 
-						      style()));
+    /* TQt3 迁移：standardIcon 已删——用样式消息框图标 */
+    cfgWarningPm->setPixmap( TQApplication::style().stylePixmap( TQStyle::SP_MessageBoxWarning ) );
     SET_ADJUSTED_FIXED_SIZE(cfgWarningPm);
 
     cfgWarningLbl = new QLabel(i18n("This command had been disabled in "
@@ -613,7 +613,7 @@ CommandCfgDlg::deleteWidget()
   delete cfgLayoutTB;
   if (cfgWarning != 0) {
     delete cfgWarning;
-    cfgWarning = 0;
+    cfgWarning = 0;  /* TQt3 迁移 */
   }
   delete cfgBinNameLbl;
   delete cfgBinArgLbl;

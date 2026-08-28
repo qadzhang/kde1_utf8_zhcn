@@ -1,0 +1,576 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqxml.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqxml.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqxml.h</h1>
+
+<p>This is the verbatim text of the ntqxml.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqxml.h   3.3.8   edited Jan 11 14:39 $
+**
+** Definition of TQXmlSimpleReader and related classes.
+**
+** Created : 000518
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the xml module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQXML_H
+#define TQXML_H
+
+#ifndef QT_H
+#include "ntqtextstream.h"
+#include "ntqfile.h"
+#include "ntqstring.h"
+#include "ntqstringlist.h"
+#include "ntqvaluevector.h"
+#endif // QT_H
+
+#if !defined(TQT_MODULE_XML) || defined( QT_LICENSE_PROFESSIONAL ) || defined( QT_INTERNAL_XML )
+#define TQM_EXPORT_XML
+#else
+#define TQM_EXPORT_XML TQ_EXPORT
+#endif
+
+#ifndef TQT_NO_XML
+
+class TQXmlNamespaceSupport;
+class TQXmlAttributes;
+class TQXmlContentHandler;
+class TQXmlDefaultHandler;
+class TQXmlDTDHandler;
+class TQXmlEntityResolver;
+class TQXmlErrorHandler;
+class TQXmlLexicalHandler;
+class TQXmlDeclHandler;
+class TQXmlInputSource;
+class TQXmlLocator;
+class TQXmlNamespaceSupport;
+class TQXmlParseException;
+
+class TQXmlReader;
+class TQXmlSimpleReader;
+
+class TQXmlSimpleReaderPrivate;
+class TQXmlNamespaceSupportPrivate;
+class TQXmlAttributesPrivate;
+class TQXmlInputSourcePrivate;
+class TQXmlParseExceptionPrivate;
+class TQXmlLocatorPrivate;
+class TQXmlDefaultHandlerPrivate;
+
+
+//
+// SAX Namespace Support
+//
+
+class TQM_EXPORT_XML TQXmlNamespaceSupport
+{
+public:
+    TQXmlNamespaceSupport();
+    ~TQXmlNamespaceSupport();
+
+    void setPrefix( const TQString&amp;, const TQString&amp; );
+
+    TQString prefix( const TQString&amp; ) const;
+    TQString uri( const TQString&amp; ) const;
+    void splitName( const TQString&amp;, TQString&amp;, TQString&amp; ) const;
+    void processName( const TQString&amp;, bool, TQString&amp;, TQString&amp; ) const;
+    TQStringList prefixes() const;
+    TQStringList prefixes( const TQString&amp; ) const;
+
+    void pushContext();
+    void popContext();
+    void reset();
+
+private:
+    TQXmlNamespaceSupportPrivate *d;
+
+    friend class TQXmlSimpleReader;
+};
+
+
+//
+// SAX Attributes
+//
+
+class TQM_EXPORT_XML TQXmlAttributes
+{
+public:
+    TQXmlAttributes() {}
+    virtual ~TQXmlAttributes() {}
+
+    int index( const TQString&amp; qName ) const;
+    int index( const TQString&amp; uri, const TQString&amp; localPart ) const;
+    int length() const;
+    int count() const;
+    TQString localName( int index ) const;
+    TQString qName( int index ) const;
+    TQString uri( int index ) const;
+    TQString type( int index ) const;
+    TQString type( const TQString&amp; qName ) const;
+    TQString type( const TQString&amp; uri, const TQString&amp; localName ) const;
+    TQString value( int index ) const;
+    TQString value( const TQString&amp; qName ) const;
+    TQString value( const TQString&amp; uri, const TQString&amp; localName ) const;
+
+    void clear();
+    void append( const TQString &amp;qName, const TQString &amp;uri, const TQString &amp;localPart, const TQString &amp;value );
+
+private:
+    TQStringList qnameList;
+    TQStringList uriList;
+    TQStringList localnameList;
+    TQStringList valueList;
+
+    TQXmlAttributesPrivate *d;
+};
+
+//
+// SAX Input Source
+//
+
+class TQM_EXPORT_XML TQXmlInputSource
+{
+public:
+    TQXmlInputSource();
+    TQXmlInputSource( TQIODevice *dev );
+    TQXmlInputSource( TQFile&amp; file ); // obsolete
+    TQXmlInputSource( TQTextStream&amp; stream ); // obsolete
+    virtual ~TQXmlInputSource();
+
+    virtual void setData( const TQString&amp; dat );
+    virtual void setData( const TQByteArray&amp; dat );
+    virtual void fetchData();
+    virtual TQString data();
+    virtual TQChar next();
+    virtual void reset();
+
+    static const TQChar EndOfData;
+    static const TQChar EndOfDocument;
+
+protected:
+    virtual TQString fromRawData( const TQByteArray &amp;data, bool beginning = false );
+
+private:
+    void init();
+
+    TQIODevice *inputDevice;
+    TQTextStream *inputStream;
+
+    TQString str;
+    const TQChar *unicode;
+    int pos;
+    int length;
+    bool nextReturnedEndOfData;
+    TQTextDecoder *encMapper;
+
+    TQXmlInputSourcePrivate *d;
+};
+
+//
+// SAX Exception Classes
+//
+
+class TQM_EXPORT_XML TQXmlParseException
+{
+public:
+    TQXmlParseException( const TQString&amp; name="", int c=-1, int l=-1, const TQString&amp; p="", const TQString&amp; s="" )
+	: msg( name ), column( c ), line( l ), pub( p ), sys( s )
+    { }
+
+    int columnNumber() const;
+    int lineNumber() const;
+    TQString publicId() const;
+    TQString systemId() const;
+    TQString message() const;
+
+private:
+    TQString msg;
+    int column;
+    int line;
+    TQString pub;
+    TQString sys;
+
+    TQXmlParseExceptionPrivate *d;
+};
+
+
+//
+// XML Reader
+//
+
+class TQM_EXPORT_XML TQXmlReader
+{
+public:
+    virtual bool feature( const TQString&amp; name, bool *ok = 0 ) const = 0;
+    virtual void setFeature( const TQString&amp; name, bool value ) = 0;
+    virtual bool hasFeature( const TQString&amp; name ) const = 0;
+    virtual void* property( const TQString&amp; name, bool *ok = 0 ) const = 0;
+    virtual void setProperty( const TQString&amp; name, void* value ) = 0;
+    virtual bool hasProperty( const TQString&amp; name ) const = 0;
+    virtual void setEntityResolver( TQXmlEntityResolver* handler ) = 0;
+    virtual TQXmlEntityResolver* entityResolver() const = 0;
+    virtual void setDTDHandler( TQXmlDTDHandler* handler ) = 0;
+    virtual TQXmlDTDHandler* DTDHandler() const = 0;
+    virtual void setContentHandler( TQXmlContentHandler* handler ) = 0;
+    virtual TQXmlContentHandler* contentHandler() const = 0;
+    virtual void setErrorHandler( TQXmlErrorHandler* handler ) = 0;
+    virtual TQXmlErrorHandler* errorHandler() const = 0;
+    virtual void setLexicalHandler( TQXmlLexicalHandler* handler ) = 0;
+    virtual TQXmlLexicalHandler* lexicalHandler() const = 0;
+    virtual void setDeclHandler( TQXmlDeclHandler* handler ) = 0;
+    virtual TQXmlDeclHandler* declHandler() const = 0;
+    virtual bool parse( const TQXmlInputSource&amp; input ) = 0;
+    virtual bool parse( const TQXmlInputSource* input ) = 0;
+};
+
+class TQM_EXPORT_XML TQXmlSimpleReader : public TQXmlReader
+{
+public:
+    TQXmlSimpleReader();
+    virtual ~TQXmlSimpleReader();
+
+    bool feature( const TQString&amp; name, bool *ok = 0 ) const;
+    void setFeature( const TQString&amp; name, bool value );
+    bool hasFeature( const TQString&amp; name ) const;
+
+    void* property( const TQString&amp; name, bool *ok = 0 ) const;
+    void setProperty( const TQString&amp; name, void* value );
+    bool hasProperty( const TQString&amp; name ) const;
+
+    void setEntityResolver( TQXmlEntityResolver* handler );
+    TQXmlEntityResolver* entityResolver() const;
+    void setDTDHandler( TQXmlDTDHandler* handler );
+    TQXmlDTDHandler* DTDHandler() const;
+    void setContentHandler( TQXmlContentHandler* handler );
+    TQXmlContentHandler* contentHandler() const;
+    void setErrorHandler( TQXmlErrorHandler* handler );
+    TQXmlErrorHandler* errorHandler() const;
+    void setLexicalHandler( TQXmlLexicalHandler* handler );
+    TQXmlLexicalHandler* lexicalHandler() const;
+    void setDeclHandler( TQXmlDeclHandler* handler );
+    TQXmlDeclHandler* declHandler() const;
+
+    bool parse( const TQXmlInputSource&amp; input );
+    bool parse( const TQXmlInputSource* input );
+    virtual bool parse( const TQXmlInputSource* input, bool incremental );
+    virtual bool parseContinue();
+
+private:
+    // variables
+    TQXmlContentHandler *contentHnd;
+    TQXmlErrorHandler   *errorHnd;
+    TQXmlDTDHandler     *dtdHnd;
+    TQXmlEntityResolver *entityRes;
+    TQXmlLexicalHandler *lexicalHnd;
+    TQXmlDeclHandler    *declHnd;
+
+    TQXmlInputSource *inputSource;
+
+    TQChar c; // the character at reading position
+    int   lineNr; // number of line
+    int   columnNr; // position in line
+
+    int     nameArrayPos;
+    TQChar   nameArray[256]; // only used for names
+    TQString nameValue; // only used for names
+    int     refArrayPos;
+    TQChar   refArray[256]; // only used for references
+    TQString refValue; // only used for references
+    int     stringArrayPos;
+    TQChar   stringArray[256]; // used for any other strings that are parsed
+    TQString stringValue; // used for any other strings that are parsed
+
+    TQXmlSimpleReaderPrivate* d;
+
+    const TQString &amp;string();
+    void stringClear();
+    inline void stringAddC() { stringAddC(c); }
+    void stringAddC(const TQChar&amp;);
+    const TQString&amp; name();
+    void nameClear();
+    inline void nameAddC() { nameAddC(c); }
+    void nameAddC(const TQChar&amp;);
+    const TQString&amp; ref();
+    void refClear();
+    inline void refAddC() { refAddC(c); }
+    void refAddC(const TQChar&amp;);
+
+    // used by parseReference() and parsePEReference()
+    enum EntityRecognitionContext { InContent, InAttributeValue, InEntityValue, InDTD };
+
+    // private functions
+    bool eat_ws();
+    bool next_eat_ws();
+
+    void next();
+    bool atEnd();
+
+    void init( const TQXmlInputSource* i );
+    void initData();
+
+    bool entityExist( const TQString&amp; ) const;
+
+    bool parseBeginOrContinue( int state, bool incremental );
+
+    bool parseProlog();
+    bool parseElement();
+    bool processElementEmptyTag();
+    bool processElementETagBegin2();
+    bool processElementAttribute();
+    bool parseMisc();
+    bool parseContent();
+
+    bool parsePI();
+    bool parseDoctype();
+    bool parseComment();
+
+    bool parseName();
+    bool parseNmtoken();
+    bool parseAttribute();
+    bool parseReference();
+    bool processReference();
+
+    bool parseExternalID();
+    bool parsePEReference();
+    bool parseMarkupdecl();
+    bool parseAttlistDecl();
+    bool parseAttType();
+    bool parseAttValue();
+    bool parseElementDecl();
+    bool parseNotationDecl();
+    bool parseChoiceSeq();
+    bool parseEntityDecl();
+    bool parseEntityValue();
+
+    bool parseString();
+
+    bool insertXmlRef( const TQString&amp;, const TQString&amp;, bool );
+
+    bool reportEndEntities();
+    void reportParseError( const TQString&amp; error );
+
+    typedef bool (TQXmlSimpleReader::*ParseFunction) ();
+    void unexpectedEof( ParseFunction where, int state );
+    void parseFailed( ParseFunction where, int state );
+    void pushParseState( ParseFunction function, int state );
+
+    void setUndefEntityInAttrHack(bool b);
+
+    friend class TQXmlSimpleReaderPrivate;
+    friend class TQXmlSimpleReaderLocator;
+    friend class TQDomDocumentPrivate;
+};
+
+//
+// SAX Locator
+//
+
+class TQM_EXPORT_XML TQXmlLocator
+{
+public:
+    TQXmlLocator();
+    virtual ~TQXmlLocator();
+
+    virtual int columnNumber() = 0;
+    virtual int lineNumber() = 0;
+//    TQString getPublicId()
+//    TQString getSystemId()
+};
+
+//
+// SAX handler classes
+//
+
+class TQM_EXPORT_XML TQXmlContentHandler
+{
+public:
+    virtual void setDocumentLocator( TQXmlLocator* locator ) = 0;
+    virtual bool startDocument() = 0;
+    virtual bool endDocument() = 0;
+    virtual bool startPrefixMapping( const TQString&amp; prefix, const TQString&amp; uri ) = 0;
+    virtual bool endPrefixMapping( const TQString&amp; prefix ) = 0;
+    virtual bool startElement( const TQString&amp; namespaceURI, const TQString&amp; localName, const TQString&amp; qName, const TQXmlAttributes&amp; atts ) = 0;
+    virtual bool endElement( const TQString&amp; namespaceURI, const TQString&amp; localName, const TQString&amp; qName ) = 0;
+    virtual bool characters( const TQString&amp; ch ) = 0;
+    virtual bool ignorableWhitespace( const TQString&amp; ch ) = 0;
+    virtual bool processingInstruction( const TQString&amp; target, const TQString&amp; data ) = 0;
+    virtual bool skippedEntity( const TQString&amp; name ) = 0;
+    virtual TQString errorString() = 0;
+};
+
+class TQM_EXPORT_XML TQXmlErrorHandler
+{
+public:
+    virtual bool warning( const TQXmlParseException&amp; exception ) = 0;
+    virtual bool error( const TQXmlParseException&amp; exception ) = 0;
+    virtual bool fatalError( const TQXmlParseException&amp; exception ) = 0;
+    virtual TQString errorString() = 0;
+};
+
+class TQM_EXPORT_XML TQXmlDTDHandler
+{
+public:
+    virtual bool notationDecl( const TQString&amp; name, const TQString&amp; publicId, const TQString&amp; systemId ) = 0;
+    virtual bool unparsedEntityDecl( const TQString&amp; name, const TQString&amp; publicId, const TQString&amp; systemId, const TQString&amp; notationName ) = 0;
+    virtual TQString errorString() = 0;
+};
+
+class TQM_EXPORT_XML TQXmlEntityResolver
+{
+public:
+    virtual bool resolveEntity( const TQString&amp; publicId, const TQString&amp; systemId, TQXmlInputSource*&amp; ret ) = 0;
+    virtual TQString errorString() = 0;
+};
+
+class TQM_EXPORT_XML TQXmlLexicalHandler
+{
+public:
+    virtual bool startDTD( const TQString&amp; name, const TQString&amp; publicId, const TQString&amp; systemId ) = 0;
+    virtual bool endDTD() = 0;
+    virtual bool startEntity( const TQString&amp; name ) = 0;
+    virtual bool endEntity( const TQString&amp; name ) = 0;
+    virtual bool startCDATA() = 0;
+    virtual bool endCDATA() = 0;
+    virtual bool comment( const TQString&amp; ch ) = 0;
+    virtual TQString errorString() = 0;
+};
+
+class TQM_EXPORT_XML TQXmlDeclHandler
+{
+public:
+    virtual bool attributeDecl( const TQString&amp; eName, const TQString&amp; aName, const TQString&amp; type, const TQString&amp; valueDefault, const TQString&amp; value ) = 0;
+    virtual bool internalEntityDecl( const TQString&amp; name, const TQString&amp; value ) = 0;
+    virtual bool externalEntityDecl( const TQString&amp; name, const TQString&amp; publicId, const TQString&amp; systemId ) = 0;
+    virtual TQString errorString() = 0;
+};
+
+
+class TQM_EXPORT_XML TQXmlDefaultHandler : public TQXmlContentHandler, public TQXmlErrorHandler, public TQXmlDTDHandler, public TQXmlEntityResolver, public TQXmlLexicalHandler, public TQXmlDeclHandler
+{
+public:
+    TQXmlDefaultHandler() { }
+    virtual ~TQXmlDefaultHandler() { }
+
+    void setDocumentLocator( TQXmlLocator* locator );
+    bool startDocument();
+    bool endDocument();
+    bool startPrefixMapping( const TQString&amp; prefix, const TQString&amp; uri );
+    bool endPrefixMapping( const TQString&amp; prefix );
+    bool startElement( const TQString&amp; namespaceURI, const TQString&amp; localName, const TQString&amp; qName, const TQXmlAttributes&amp; atts );
+    bool endElement( const TQString&amp; namespaceURI, const TQString&amp; localName, const TQString&amp; qName );
+    bool characters( const TQString&amp; ch );
+    bool ignorableWhitespace( const TQString&amp; ch );
+    bool processingInstruction( const TQString&amp; target, const TQString&amp; data );
+    bool skippedEntity( const TQString&amp; name );
+
+    bool warning( const TQXmlParseException&amp; exception );
+    bool error( const TQXmlParseException&amp; exception );
+    bool fatalError( const TQXmlParseException&amp; exception );
+
+    bool notationDecl( const TQString&amp; name, const TQString&amp; publicId, const TQString&amp; systemId );
+    bool unparsedEntityDecl( const TQString&amp; name, const TQString&amp; publicId, const TQString&amp; systemId, const TQString&amp; notationName );
+
+    bool resolveEntity( const TQString&amp; publicId, const TQString&amp; systemId, TQXmlInputSource*&amp; ret );
+
+    bool startDTD( const TQString&amp; name, const TQString&amp; publicId, const TQString&amp; systemId );
+    bool endDTD();
+    bool startEntity( const TQString&amp; name );
+    bool endEntity( const TQString&amp; name );
+    bool startCDATA();
+    bool endCDATA();
+    bool comment( const TQString&amp; ch );
+
+    bool attributeDecl( const TQString&amp; eName, const TQString&amp; aName, const TQString&amp; type, const TQString&amp; valueDefault, const TQString&amp; value );
+    bool internalEntityDecl( const TQString&amp; name, const TQString&amp; value );
+    bool externalEntityDecl( const TQString&amp; name, const TQString&amp; publicId, const TQString&amp; systemId );
+
+    TQString errorString();
+
+private:
+    TQXmlDefaultHandlerPrivate *d;
+};
+
+
+//
+// inlines
+//
+
+inline bool TQXmlSimpleReader::atEnd()
+{ return (c.unicode()|0x0001) == 0xffff; }
+inline int TQXmlAttributes::count() const
+{ return length(); }
+
+
+#endif //TQT_NO_XML
+
+#endif
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

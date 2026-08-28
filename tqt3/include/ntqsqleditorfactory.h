@@ -1,0 +1,1 @@
+../src/sql/ntqsqleditorfactory.h

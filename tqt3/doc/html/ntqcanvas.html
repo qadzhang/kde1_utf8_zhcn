@@ -1,0 +1,588 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/canvas/qcanvas.cpp:435 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQCanvas Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQCanvas Class Reference<br><small>[<a href="canvas.html">canvas module</a>]</small></h1>
+
+<p>The TQCanvas class provides a 2D area that can contain TQCanvasItem objects.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qcanvas-h.html">ntqcanvas.h</a>&gt;</tt>
+<p>Inherits <a href="ntqobject.html">TQObject</a>.
+<p><a href="qcanvas-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQCanvas"><b>TQCanvas</b></a> ( TQObject&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#TQCanvas-2"><b>TQCanvas</b></a> ( int&nbsp;w, int&nbsp;h )</li>
+<li class=fn><a href="#TQCanvas-3"><b>TQCanvas</b></a> ( TQPixmap&nbsp;p, int&nbsp;h, int&nbsp;v, int&nbsp;tilewidth, int&nbsp;tileheight )</li>
+<li class=fn>virtual <a href="#~TQCanvas"><b>~TQCanvas</b></a> ()</li>
+<li class=fn>virtual void <a href="#setTiles"><b>setTiles</b></a> ( TQPixmap&nbsp;p, int&nbsp;h, int&nbsp;v, int&nbsp;tilewidth, int&nbsp;tileheight )</li>
+<li class=fn>virtual void <a href="#setBackgroundPixmap"><b>setBackgroundPixmap</b></a> ( const&nbsp;TQPixmap&nbsp;&amp;&nbsp;p )</li>
+<li class=fn>TQPixmap <a href="#backgroundPixmap"><b>backgroundPixmap</b></a> () const</li>
+<li class=fn>virtual void <a href="#setBackgroundColor"><b>setBackgroundColor</b></a> ( const&nbsp;TQColor&nbsp;&amp;&nbsp;c )</li>
+<li class=fn>TQColor <a href="#backgroundColor"><b>backgroundColor</b></a> () const</li>
+<li class=fn>virtual void <a href="#setTile"><b>setTile</b></a> ( int&nbsp;x, int&nbsp;y, int&nbsp;tilenum )</li>
+<li class=fn>int <a href="#tile"><b>tile</b></a> ( int&nbsp;x, int&nbsp;y ) const</li>
+<li class=fn>int <a href="#tilesHorizontally"><b>tilesHorizontally</b></a> () const</li>
+<li class=fn>int <a href="#tilesVertically"><b>tilesVertically</b></a> () const</li>
+<li class=fn>int <a href="#tileWidth"><b>tileWidth</b></a> () const</li>
+<li class=fn>int <a href="#tileHeight"><b>tileHeight</b></a> () const</li>
+<li class=fn>virtual void <a href="#resize"><b>resize</b></a> ( int&nbsp;w, int&nbsp;h )</li>
+<li class=fn>int <a href="#width"><b>width</b></a> () const</li>
+<li class=fn>int <a href="#height"><b>height</b></a> () const</li>
+<li class=fn>TQSize <a href="#size"><b>size</b></a> () const</li>
+<li class=fn>TQRect <a href="#rect"><b>rect</b></a> () const</li>
+<li class=fn>bool <a href="#onCanvas"><b>onCanvas</b></a> ( int&nbsp;x, int&nbsp;y ) const</li>
+<li class=fn>bool <a href="#onCanvas-2"><b>onCanvas</b></a> ( const&nbsp;TQPoint&nbsp;&amp;&nbsp;p ) const</li>
+<li class=fn>bool <a href="#validChunk"><b>validChunk</b></a> ( int&nbsp;x, int&nbsp;y ) const</li>
+<li class=fn>bool <a href="#validChunk-2"><b>validChunk</b></a> ( const&nbsp;TQPoint&nbsp;&amp;&nbsp;p ) const</li>
+<li class=fn>int <a href="#chunkSize"><b>chunkSize</b></a> () const</li>
+<li class=fn>virtual void <a href="#retune"><b>retune</b></a> ( int&nbsp;chunksze, int&nbsp;mxclusters = 100 )</li>
+<li class=fn>virtual void <a href="#setAllChanged"><b>setAllChanged</b></a> ()</li>
+<li class=fn>virtual void <a href="#setChanged"><b>setChanged</b></a> ( const&nbsp;TQRect&nbsp;&amp;&nbsp;area )</li>
+<li class=fn>virtual void <a href="#setUnchanged"><b>setUnchanged</b></a> ( const&nbsp;TQRect&nbsp;&amp;&nbsp;area )</li>
+<li class=fn>TQCanvasItemList <a href="#allItems"><b>allItems</b></a> ()</li>
+<li class=fn>TQCanvasItemList <a href="#collisions"><b>collisions</b></a> ( const&nbsp;TQPoint&nbsp;&amp;&nbsp;p ) const</li>
+<li class=fn>TQCanvasItemList <a href="#collisions-2"><b>collisions</b></a> ( const&nbsp;TQRect&nbsp;&amp;&nbsp;r ) const</li>
+<li class=fn>TQCanvasItemList <a href="#collisions-3"><b>collisions</b></a> ( const&nbsp;TQPointArray&nbsp;&amp;&nbsp;chunklist, const&nbsp;TQCanvasItem&nbsp;*&nbsp;item, bool&nbsp;exact ) const</li>
+<li class=fn>void <a href="#drawArea"><b>drawArea</b></a> ( const&nbsp;TQRect&nbsp;&amp;&nbsp;clip, TQPainter&nbsp;*&nbsp;painter, bool&nbsp;dbuf = false )</li>
+<li class=fn>virtual void <a href="#setAdvancePeriod"><b>setAdvancePeriod</b></a> ( int&nbsp;ms )</li>
+<li class=fn>virtual void <a href="#setUpdatePeriod"><b>setUpdatePeriod</b></a> ( int&nbsp;ms )</li>
+<li class=fn>virtual void <a href="#setDoubleBuffering"><b>setDoubleBuffering</b></a> ( bool&nbsp;y )</li>
+</ul>
+<h2>Public Slots</h2>
+<ul>
+<li class=fn>virtual void <a href="#advance"><b>advance</b></a> ()</li>
+<li class=fn>virtual void <a href="#update"><b>update</b></a> ()</li>
+</ul>
+<h2>Signals</h2>
+<ul>
+<li class=fn>void <a href="#resized"><b>resized</b></a> ()</li>
+</ul>
+<h2>Protected Members</h2>
+<ul>
+<li class=fn>virtual void <a href="#drawBackground"><b>drawBackground</b></a> ( TQPainter&nbsp;&amp;&nbsp;painter, const&nbsp;TQRect&nbsp;&amp;&nbsp;clip )</li>
+<li class=fn>virtual void <a href="#drawForeground"><b>drawForeground</b></a> ( TQPainter&nbsp;&amp;&nbsp;painter, const&nbsp;TQRect&nbsp;&amp;&nbsp;clip )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQCanvas class provides a 2D area that can contain <a href="qcanvasitem.html">TQCanvasItem</a> objects.
+
+<p> 
+
+
+
+
+<p> The TQCanvas class manages its 2D graphic area and all the canvas
+items the area contains. The canvas has no visual appearance of
+its own. Instead, it is displayed on screen using a <a href="qcanvasview.html">TQCanvasView</a>.
+Multiple TQCanvasView widgets may be associated with a canvas to
+provide multiple views of the same canvas.
+<p> The canvas is optimized for large numbers of items, particularly
+where only a small percentage of the items change at any
+one time. If the entire display changes very frequently, you should
+consider using your own custom <a href="ntqscrollview.html">TQScrollView</a> subclass.
+<p> TQt provides a rich
+set of canvas item classes, e.g. <a href="qcanvasellipse.html">TQCanvasEllipse</a>, <a href="qcanvasline.html">TQCanvasLine</a>,
+<a href="qcanvaspolygon.html">TQCanvasPolygon</a>, <a href="qcanvaspolygonalitem.html">TQCanvasPolygonalItem</a>, <a href="qcanvasrectangle.html">TQCanvasRectangle</a>, <a href="qcanvasspline.html">TQCanvasSpline</a>,
+<a href="qcanvassprite.html">TQCanvasSprite</a> and <a href="qcanvastext.html">TQCanvasText</a>. You can subclass to create your own
+canvas items; TQCanvasPolygonalItem is the most common base class used
+for this purpose.
+<p> Items appear on the canvas after their <a href="qcanvasitem.html#show">show()</a> function has been called (or <a href="qcanvasitem.html#setVisible">setVisible(true)</a>), and <em>after</em>
+<a href="#update">update</a>() has been called. The canvas only shows items that are
+<a href="qcanvasitem.html#setVisible">visible</a>, and then only if
+<a href="#update">update</a>() is called. (By default the canvas is white and so are
+canvas items, so if nothing appears try changing colors.)
+<p> If you created the canvas without passing a width and height to
+the constructor you must also call <a href="#resize">resize</a>().
+<p> Although a canvas may appear to be similar to a widget with child
+widgets, there are several notable differences:
+<p> <ul>
+<li> Canvas items are usually much faster to manipulate and redraw than
+child widgets, with the speed advantage becoming especially great when
+there are <em>many</em> canvas items and non-rectangular items. In most
+situations canvas items are also a lot more memory efficient than child
+widgets.
+<p> <li> It's easy to detect overlapping items (collision detection).
+<p> <li> The canvas can be larger than a widget. A million-by-million canvas
+is perfectly possible. At such a size a widget might be very
+inefficient, and some window systems might not support it at all,
+whereas TQCanvas scales well. Even with a billion pixels and a million
+items, finding a particular canvas item, detecting collisions, etc.,
+is still fast (though the memory consumption may be prohibitive
+at such extremes).
+<p> <li> Two or more <a href="qcanvasview.html">TQCanvasView</a> objects can view the same canvas.
+<p> <li> An arbitrary <a href="ntqwmatrix.html#TransformationMode">transformation matrix</a> can be set on each TQCanvasView
+which makes it easy to zoom, rotate or shear the viewed canvas.
+<p> <li> Widgets provide a lot more functionality, such as input (<a href="qkeyevent.html">TQKeyEvent</a>,
+<a href="qmouseevent.html">TQMouseEvent</a> etc.) and layout management (<a href="qgridlayout.html">TQGridLayout</a> etc.).
+<p> </ul>
+<p> A canvas consists of a background, a number of canvas items organized by
+x, y and z coordinates, and a foreground. A canvas item's z coordinate
+can be treated as a layer number -- canvas items with a higher z
+coordinate appear in front of canvas items with a lower z coordinate.
+<p> The background is white by default, but can be set to a different color
+using <a href="#setBackgroundColor">setBackgroundColor</a>(), or to a repeated pixmap using
+<a href="#setBackgroundPixmap">setBackgroundPixmap</a>() or to a mosaic of smaller pixmaps using
+<a href="#setTiles">setTiles</a>(). Individual tiles can be set with <a href="#setTile">setTile</a>(). There
+are corresponding get functions, e.g. <a href="#backgroundColor">backgroundColor</a>() and
+<a href="#backgroundPixmap">backgroundPixmap</a>().
+<p> Note that TQCanvas does not inherit from <a href="ntqwidget.html">TQWidget</a>, even though it has some
+functions which provide the same functionality as those in TQWidget. One
+of these is setBackgroundPixmap(); some others are <a href="#resize">resize</a>(), <a href="#size">size</a>(),
+<a href="#width">width</a>() and <a href="#height">height</a>(). <a href="qcanvasview.html">TQCanvasView</a> is the widget used to display a
+canvas on the screen.
+<p> Canvas items are added to a canvas by constructing them and passing the
+canvas to the canvas item's constructor. An item can be moved to a
+different canvas using <a href="qcanvasitem.html#setCanvas">TQCanvasItem::setCanvas</a>().
+<p> Canvas items are movable (and in the case of TQCanvasSprites, animated)
+objects that inherit <a href="qcanvasitem.html">TQCanvasItem</a>. Each canvas item has a position on the
+canvas (x, y coordinates) and a height (z coordinate), all of which are
+held as floating-point numbers. Moving canvas items also have x and y
+velocities. It's possible for a canvas item to be outside the canvas
+(for example <a href="qcanvasitem.html#x">TQCanvasItem::x</a>() is greater than width()). When a canvas
+item is off the canvas, <a href="#onCanvas">onCanvas</a>() returns false and the canvas
+disregards the item. (Canvas items off the canvas do not slow down any
+of the common operations on the canvas.)
+<p> Canvas items can be moved with <a href="qcanvasitem.html#move">TQCanvasItem::move</a>(). The <a href="#advance">advance</a>()
+function moves all <a href="qcanvasitem.html#animated">TQCanvasItem::animated</a>() canvas items and
+<a href="#setAdvancePeriod">setAdvancePeriod</a>() makes TQCanvas move them automatically on a periodic
+basis. In the context of the TQCanvas classes, to `animate' a canvas item
+is to set it in motion, i.e. using <a href="qcanvasitem.html#setVelocity">TQCanvasItem::setVelocity</a>(). Animation
+of a canvas item itself, i.e. items which change over time, is enabled
+by calling <a href="qcanvassprite.html#setFrameAnimation">TQCanvasSprite::setFrameAnimation</a>(), or more generally by
+subclassing and reimplementing <a href="qcanvasitem.html#advance">TQCanvasItem::advance</a>(). To detect collisions
+use one of the <a href="qcanvasitem.html#collisions">TQCanvasItem::collisions</a>() functions.
+<p> The changed parts of the canvas are redrawn (if they are visible in a
+canvas view) whenever <a href="#update">update</a>() is called. You can either call update()
+manually after having changed the contents of the canvas, or force
+periodic updates using <a href="#setUpdatePeriod">setUpdatePeriod</a>(). If you have moving objects on
+the canvas, you must call <a href="#advance">advance</a>() every time the objects should
+move one step further. Periodic calls to advance() can be forced using
+<a href="#setAdvancePeriod">setAdvancePeriod</a>(). The advance() function will call
+TQCanvasItem::advance() on every item that is <a href="qcanvasitem.html#animated">animated</a> and trigger an update of the
+affected areas afterwards. (A canvas item that is `animated' is simply
+a canvas item that is in motion.)
+<p> TQCanvas organizes its canvas items into <em>chunks</em>; these are areas on
+the canvas that are used to speed up most operations. Many operations
+start by eliminating most chunks (i.e. those which haven't changed)
+and then process only the canvas items that are in the few interesting
+(i.e. changed) chunks. A valid chunk, <a href="#validChunk">validChunk</a>(), is one which is on
+the canvas.
+<p> The chunk size is a key factor to TQCanvas's speed: if there are too many
+chunks, the speed benefit of grouping canvas items into chunks is
+reduced. If the chunks are too large, it takes too long to process each
+one. The TQCanvas constructor tries to pick a suitable size, but you
+can call <a href="#retune">retune</a>() to change it at any time. The <a href="#chunkSize">chunkSize</a>() function
+returns the current chunk size. The canvas items always make sure
+they're in the right chunks; all you need to make sure of is that
+the canvas uses the right chunk size. A good rule of thumb is that
+the size should be a bit smaller than the average canvas item
+size. If you have moving objects, the chunk size should be a bit
+smaller than the average size of the moving items.
+<p> The foreground is normally nothing, but if you reimplement
+<a href="#drawForeground">drawForeground</a>(), you can draw things in front of all the canvas
+items.
+<p> Areas can be set as changed with <a href="#setChanged">setChanged</a>() and set unchanged with
+<a href="#setUnchanged">setUnchanged</a>(). The entire canvas can be set as changed with
+<a href="#setAllChanged">setAllChanged</a>(). A list of all the items on the canvas is returned by
+<a href="#allItems">allItems</a>().
+<p> An area can be copied (painted) to a <a href="ntqpainter.html">TQPainter</a> with <a href="#drawArea">drawArea</a>().
+<p> If the canvas is resized it emits the <a href="#resized">resized</a>() signal.
+<p> The examples/canvas application and the 2D graphics page of the
+examples/demo application demonstrate many of TQCanvas's facilities.
+<p> <p>See also <a href="qcanvasview.html">TQCanvasView</a>, <a href="qcanvasitem.html">TQCanvasItem</a>, <a href="abstractwidgets.html">Abstract Widget Classes</a>, <a href="graphics.html">Graphics Classes</a>, and <a href="images.html">Image Processing Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQCanvas"></a>TQCanvas::TQCanvas ( <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Create a TQCanvas with no size. <em>parent</em> and <em>name</em> are passed to
+the <a href="ntqobject.html">TQObject</a> superclass.
+<p> <b>Warning:</b> You <em>must</em> call <a href="#resize">resize</a>() at some time after creation to
+be able to use the canvas.
+
+<h3 class=fn><a name="TQCanvas-2"></a>TQCanvas::TQCanvas ( int&nbsp;w, int&nbsp;h )
+</h3>
+Constructs a TQCanvas that is <em>w</em> pixels wide and <em>h</em> pixels high.
+
+<h3 class=fn><a name="TQCanvas-3"></a>TQCanvas::TQCanvas ( <a href="ntqpixmap.html">TQPixmap</a>&nbsp;p, int&nbsp;h, int&nbsp;v, int&nbsp;tilewidth, int&nbsp;tileheight )
+</h3>
+Constructs a TQCanvas which will be composed of <em>h</em> tiles
+horizontally and <em>v</em> tiles vertically. Each tile will be an image
+<em>tilewidth</em> by <em>tileheight</em> pixels taken from pixmap <em>p</em>.
+<p> The pixmap <em>p</em> is a list of tiles, arranged left to right, (and
+in the case of pixmaps that have multiple rows of tiles, top to
+bottom), with tile 0 in the top-left corner, tile 1 next to the
+right, and so on, e.g.
+<p> <center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#f0f0f0"> <td valign="top">0 <td valign="top">1 <td valign="top">2 <td valign="top">3
+<tr bgcolor="#d0d0d0"> <td valign="top">4 <td valign="top">5 <td valign="top">6 <td valign="top">7
+</table></center>
+<p> The TQCanvas is initially sized to show exactly the given number of
+tiles horizontally and vertically. If it is resized to be larger,
+the entire matrix of tiles will be repeated as often as necessary
+to cover the area. If it is smaller, tiles to the right and bottom
+will not be visible.
+<p> <p>See also <a href="#setTiles">setTiles</a>().
+
+<h3 class=fn><a name="~TQCanvas"></a>TQCanvas::~TQCanvas ()<tt> [virtual]</tt>
+</h3>
+Destroys the canvas and all the canvas's canvas items.
+
+<h3 class=fn>void <a name="advance"></a>TQCanvas::advance ()<tt> [virtual slot]</tt>
+</h3>
+Moves all <a href="qcanvasitem.html#animated">TQCanvasItem::animated</a>() canvas items on the canvas and
+refreshes all changes to all views of the canvas. (An `animated'
+item is an item that is in motion; see setVelocity().)
+<p> The advance takes place in two phases. In phase 0, the
+<a href="qcanvasitem.html#advance">TQCanvasItem::advance</a>() function of each TQCanvasItem::animated()
+canvas item is called with paramater 0. Then all these canvas
+items are called again, with parameter 1. In phase 0, the canvas
+items should not change position, merely examine other items on
+the canvas for which special processing is required, such as
+collisions between items. In phase 1, all canvas items should
+change positions, ignoring any other items on the canvas. This
+two-phase approach allows for considerations of "fairness",
+although no <a href="qcanvasitem.html">TQCanvasItem</a> subclasses supplied with TQt do anything
+interesting in phase 0.
+<p> The canvas can be configured to call this function periodically
+with <a href="#setAdvancePeriod">setAdvancePeriod</a>().
+<p> <p>See also <a href="#update">update</a>().
+
+<h3 class=fn><a href="qcanvasitemlist.html">TQCanvasItemList</a> <a name="allItems"></a>TQCanvas::allItems ()
+</h3>
+Returns a list of all the items in the canvas.
+
+<h3 class=fn><a href="ntqcolor.html">TQColor</a> <a name="backgroundColor"></a>TQCanvas::backgroundColor () const
+</h3>
+Returns the color set by <a href="#setBackgroundColor">setBackgroundColor</a>(). By default, this is
+white.
+<p> This function is not a reimplementation of
+<a href="ntqwidget.html#backgroundColor">TQWidget::backgroundColor</a>() (TQCanvas is not a subclass of <a href="ntqwidget.html">TQWidget</a>),
+but all TQCanvasViews that are viewing the canvas will set their
+backgrounds to this color.
+<p> <p>See also <a href="#setBackgroundColor">setBackgroundColor</a>() and <a href="#backgroundPixmap">backgroundPixmap</a>().
+
+<h3 class=fn><a href="ntqpixmap.html">TQPixmap</a> <a name="backgroundPixmap"></a>TQCanvas::backgroundPixmap () const
+</h3>
+Returns the pixmap set by <a href="#setBackgroundPixmap">setBackgroundPixmap</a>(). By default,
+this is a null pixmap.
+<p> <p>See also <a href="#setBackgroundPixmap">setBackgroundPixmap</a>() and <a href="#backgroundColor">backgroundColor</a>().
+
+<h3 class=fn>int <a name="chunkSize"></a>TQCanvas::chunkSize () const
+</h3>
+
+<p> Returns the chunk size of the canvas.
+<p> <p>See also <a href="#retune">retune</a>().
+
+<h3 class=fn><a href="qcanvasitemlist.html">TQCanvasItemList</a> <a name="collisions"></a>TQCanvas::collisions ( const&nbsp;<a href="ntqpoint.html">TQPoint</a>&nbsp;&amp;&nbsp;p ) const
+</h3>
+Returns a list of canvas items that collide with the point <em>p</em>.
+The list is ordered by z coordinates, from highest z coordinate
+(front-most item) to lowest z coordinate (rear-most item).
+
+<h3 class=fn><a href="qcanvasitemlist.html">TQCanvasItemList</a> <a name="collisions-2"></a>TQCanvas::collisions ( const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;r ) const
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Returns a list of items which collide with the rectangle <em>r</em>. The
+list is ordered by z coordinates, from highest z coordinate
+(front-most item) to lowest z coordinate (rear-most item).
+
+<h3 class=fn><a href="qcanvasitemlist.html">TQCanvasItemList</a> <a name="collisions-3"></a>TQCanvas::collisions ( const&nbsp;<a href="ntqpointarray.html">TQPointArray</a>&nbsp;&amp;&nbsp;chunklist, const&nbsp;<a href="qcanvasitem.html">TQCanvasItem</a>&nbsp;*&nbsp;item, bool&nbsp;exact ) const
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Returns a list of canvas items which intersect with the chunks
+listed in <em>chunklist</em>, excluding <em>item</em>. If <em>exact</em> is true,
+only those which actually <a href="qcanvasitem.html#collidesWith">collide with</a> <em>item</em> are returned; otherwise canvas items
+are included just for being in the chunks.
+<p> This is a utility function mainly used to implement the simpler
+<a href="qcanvasitem.html#collisions">TQCanvasItem::collisions</a>() function.
+
+<h3 class=fn>void <a name="drawArea"></a>TQCanvas::drawArea ( const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;clip, <a href="ntqpainter.html">TQPainter</a>&nbsp;*&nbsp;painter, bool&nbsp;dbuf = false )
+</h3>
+Paints all canvas items that are in the area <em>clip</em> to <em>painter</em>, using double-buffering if <em>dbuf</em> is true.
+<p> e.g. to print the canvas to a printer:
+<pre>
+    <a href="ntqprinter.html">TQPrinter</a> pr;
+    if ( pr.<a href="ntqprinter.html#setup">setup</a>() ) {
+        <a href="ntqpainter.html">TQPainter</a> p(&amp;pr);
+        canvas.drawArea( canvas.rect(), &amp;p );
+    }
+    </pre>
+ 
+
+<p>Example: <a href="canvas-example.html#x2908">canvas/canvas.cpp</a>.
+<h3 class=fn>void <a name="drawBackground"></a>TQCanvas::drawBackground ( <a href="ntqpainter.html">TQPainter</a>&nbsp;&amp;&nbsp;painter, const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;clip )<tt> [virtual protected]</tt>
+</h3>
+This virtual function is called for all updates of the canvas. It
+renders any background graphics using the painter <em>painter</em>, in
+the area <em>clip</em>. If the canvas has a background pixmap or a tiled
+background, that graphic is used, otherwise the canvas is cleared
+using the background color.
+<p> If the graphics for an area change, you must explicitly call
+<a href="#setChanged">setChanged</a>(const <a href="ntqrect.html">TQRect</a>&) for the result to be visible when
+<a href="#update">update</a>() is next called.
+<p> <p>See also <a href="#setBackgroundColor">setBackgroundColor</a>(), <a href="#setBackgroundPixmap">setBackgroundPixmap</a>(), and <a href="#setTiles">setTiles</a>().
+
+<h3 class=fn>void <a name="drawForeground"></a>TQCanvas::drawForeground ( <a href="ntqpainter.html">TQPainter</a>&nbsp;&amp;&nbsp;painter, const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;clip )<tt> [virtual protected]</tt>
+</h3>
+This virtual function is called for all updates of the canvas. It
+renders any foreground graphics using the painter <em>painter</em>, in
+the area <em>clip</em>.
+<p> If the graphics for an area change, you must explicitly call
+<a href="#setChanged">setChanged</a>(const <a href="ntqrect.html">TQRect</a>&) for the result to be visible when
+<a href="#update">update</a>() is next called.
+<p> The default is to draw nothing.
+
+<h3 class=fn>int <a name="height"></a>TQCanvas::height () const
+</h3>
+
+<p> Returns the height of the canvas, in pixels.
+
+<p>Example: <a href="canvas-example.html#x2909">canvas/canvas.cpp</a>.
+<h3 class=fn>bool <a name="onCanvas"></a>TQCanvas::onCanvas ( int&nbsp;x, int&nbsp;y ) const
+</h3>
+
+<p> Returns true if the pixel position (<em>x</em>, <em>y</em>) is on the canvas;
+otherwise returns false.
+<p> <p>See also <a href="#validChunk">validChunk</a>().
+
+<h3 class=fn>bool <a name="onCanvas-2"></a>TQCanvas::onCanvas ( const&nbsp;<a href="ntqpoint.html">TQPoint</a>&nbsp;&amp;&nbsp;p ) const
+</h3>
+
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Returns true if the pixel position <em>p</em> is on the canvas;
+otherwise returns false.
+<p> <p>See also <a href="#validChunk">validChunk</a>().
+
+<h3 class=fn><a href="ntqrect.html">TQRect</a> <a name="rect"></a>TQCanvas::rect () const
+</h3>
+
+<p> Returns a rectangle the size of the canvas.
+
+<h3 class=fn>void <a name="resize"></a>TQCanvas::resize ( int&nbsp;w, int&nbsp;h )<tt> [virtual]</tt>
+</h3>
+Changes the size of the canvas to have a width of <em>w</em> and a
+height of <em>h</em>. This is a slow operation.
+
+<p>Examples: <a href="canvas-example.html#x2910">canvas/canvas.cpp</a> and <a href="canvas-chart-example.html#x2876">chart/chartform.cpp</a>.
+<h3 class=fn>void <a name="resized"></a>TQCanvas::resized ()<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted whenever the canvas is resized. Each
+<a href="qcanvasview.html">TQCanvasView</a> connects to this signal to keep the scrollview's size
+correct.
+
+<h3 class=fn>void <a name="retune"></a>TQCanvas::retune ( int&nbsp;chunksze, int&nbsp;mxclusters = 100 )<tt> [virtual]</tt>
+</h3>
+Change the efficiency tuning parameters to <em>mxclusters</em> clusters,
+each of size <em>chunksze</em>. This is a slow operation if there are
+many objects on the canvas.
+<p> The canvas is divided into chunks which are rectangular areas <em>chunksze</em> wide by <em>chunksze</em> high. Use a chunk size which is about
+the average size of the canvas items. If you choose a chunk size
+which is too small it will increase the amount of calculation
+required when drawing since each change will affect many chunks.
+If you choose a chunk size which is too large the amount of
+drawing required will increase because for each change, a lot of
+drawing will be required since there will be many (unchanged)
+canvas items which are in the same chunk as the changed canvas
+items.
+<p> Internally, a canvas uses a low-resolution "chunk matrix" to keep
+track of all the items in the canvas. A 64x64 chunk matrix is the
+default for a 1024x1024 pixel canvas, where each chunk collects
+canvas items in a 16x16 pixel square. This default is also
+affected by <a href="#setTiles">setTiles</a>(). You can tune this default using this
+function. For example if you have a very large canvas and want to
+trade off speed for memory then you might set the chunk size to 32
+or 64.
+<p> The <em>mxclusters</em> argument is the number of rectangular groups of
+chunks that will be separately drawn. If the canvas has a large
+number of small, dispersed items, this should be about that
+number. Our testing suggests that a large number of clusters is
+almost always best.
+<p> 
+<h3 class=fn>void <a name="setAdvancePeriod"></a>TQCanvas::setAdvancePeriod ( int&nbsp;ms )<tt> [virtual]</tt>
+</h3>
+Sets the canvas to call <a href="#advance">advance</a>() every <em>ms</em> milliseconds. Any
+previous setting by <a href="#setAdvancePeriod">setAdvancePeriod</a>() or <a href="#setUpdatePeriod">setUpdatePeriod</a>() is
+overridden.
+<p> If <em>ms</em> is less than 0 advancing will be stopped.
+
+<p>Example: <a href="canvas-example.html#x2962">canvas/main.cpp</a>.
+<h3 class=fn>void <a name="setAllChanged"></a>TQCanvas::setAllChanged ()<tt> [virtual]</tt>
+</h3>
+Marks the whole canvas as changed.
+All views of the canvas will be entirely redrawn when
+<a href="#update">update</a>() is called next.
+
+<h3 class=fn>void <a name="setBackgroundColor"></a>TQCanvas::setBackgroundColor ( const&nbsp;<a href="ntqcolor.html">TQColor</a>&nbsp;&amp;&nbsp;c )<tt> [virtual]</tt>
+</h3>
+Sets the solid background to be the color <em>c</em>.
+<p> <p>See also <a href="#backgroundColor">backgroundColor</a>(), <a href="#setBackgroundPixmap">setBackgroundPixmap</a>(), and <a href="#setTiles">setTiles</a>().
+
+<h3 class=fn>void <a name="setBackgroundPixmap"></a>TQCanvas::setBackgroundPixmap ( const&nbsp;<a href="ntqpixmap.html">TQPixmap</a>&nbsp;&amp;&nbsp;p )<tt> [virtual]</tt>
+</h3>
+Sets the solid background to be the pixmap <em>p</em> repeated as
+necessary to cover the entire canvas.
+<p> <p>See also <a href="#backgroundPixmap">backgroundPixmap</a>(), <a href="#setBackgroundColor">setBackgroundColor</a>(), and <a href="#setTiles">setTiles</a>().
+
+<h3 class=fn>void <a name="setChanged"></a>TQCanvas::setChanged ( const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;area )<tt> [virtual]</tt>
+</h3>
+Marks <em>area</em> as changed. This <em>area</em> will be redrawn in all
+views that are showing it when <a href="#update">update</a>() is called next.
+
+<h3 class=fn>void <a name="setDoubleBuffering"></a>TQCanvas::setDoubleBuffering ( bool&nbsp;y )<tt> [virtual]</tt>
+</h3>
+If <em>y</em> is true (the default) double-buffering is switched on;
+otherwise double-buffering is switched off.
+<p> Turning off double-buffering causes the redrawn areas to flicker a
+little and also gives a (usually small) performance improvement.
+
+<p>Example: <a href="canvas-example.html#x2911">canvas/canvas.cpp</a>.
+<h3 class=fn>void <a name="setTile"></a>TQCanvas::setTile ( int&nbsp;x, int&nbsp;y, int&nbsp;tilenum )<tt> [virtual]</tt>
+</h3>
+Sets the tile at (<em>x</em>, <em>y</em>) to use tile number <em>tilenum</em>, which
+is an index into the tile pixmaps. The canvas will update
+appropriately when <a href="#update">update</a>() is next called.
+<p> The images are taken from the pixmap set by <a href="#setTiles">setTiles</a>() and are
+arranged left to right, (and in the case of pixmaps that have
+multiple rows of tiles, top to bottom), with tile 0 in the
+top-left corner, tile 1 next to the right, and so on, e.g.
+<p> <center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#f0f0f0"> <td valign="top">0 <td valign="top">1 <td valign="top">2 <td valign="top">3
+<tr bgcolor="#d0d0d0"> <td valign="top">4 <td valign="top">5 <td valign="top">6 <td valign="top">7
+</table></center>
+<p> <p>See also <a href="#tile">tile</a>() and <a href="#setTiles">setTiles</a>().
+
+<h3 class=fn>void <a name="setTiles"></a>TQCanvas::setTiles ( <a href="ntqpixmap.html">TQPixmap</a>&nbsp;p, int&nbsp;h, int&nbsp;v, int&nbsp;tilewidth, int&nbsp;tileheight )<tt> [virtual]</tt>
+</h3>
+Sets the TQCanvas to be composed of <em>h</em> tiles horizontally and <em>v</em> tiles vertically. Each tile will be an image <em>tilewidth</em> by <em>tileheight</em> pixels from pixmap <em>p</em>.
+<p> The pixmap <em>p</em> is a list of tiles, arranged left to right, (and
+in the case of pixmaps that have multiple rows of tiles, top to
+bottom), with tile 0 in the top-left corner, tile 1 next to the
+right, and so on, e.g.
+<p> <center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#f0f0f0"> <td valign="top">0 <td valign="top">1 <td valign="top">2 <td valign="top">3
+<tr bgcolor="#d0d0d0"> <td valign="top">4 <td valign="top">5 <td valign="top">6 <td valign="top">7
+</table></center>
+<p> If the canvas is larger than the matrix of tiles, the entire
+matrix is repeated as necessary to cover the whole canvas. If it
+is smaller, tiles to the right and bottom are not visible.
+<p> The width and height of <em>p</em> must be a multiple of <em>tilewidth</em>
+and <em>tileheight</em>. If they are not the function will do nothing.
+<p> If you want to unset any tiling set, then just pass in a null
+pixmap and 0 for <em>h</em>, <em>v</em>, <em>tilewidth</em>, and
+<em>tileheight</em>.
+
+<h3 class=fn>void <a name="setUnchanged"></a>TQCanvas::setUnchanged ( const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;area )<tt> [virtual]</tt>
+</h3>
+Marks <em>area</em> as <em>unchanged</em>. The area will <em>not</em> be redrawn in
+the views for the next <a href="#update">update</a>(), unless it is marked or changed
+again before the next call to update().
+
+<h3 class=fn>void <a name="setUpdatePeriod"></a>TQCanvas::setUpdatePeriod ( int&nbsp;ms )<tt> [virtual]</tt>
+</h3>
+Sets the canvas to call <a href="#update">update</a>() every <em>ms</em> milliseconds. Any
+previous setting by <a href="#setAdvancePeriod">setAdvancePeriod</a>() or <a href="#setUpdatePeriod">setUpdatePeriod</a>() is
+overridden.
+<p> If <em>ms</em> is less than 0 automatic updating will be stopped.
+
+<h3 class=fn><a href="ntqsize.html">TQSize</a> <a name="size"></a>TQCanvas::size () const
+</h3>
+
+<p> Returns the size of the canvas, in pixels.
+
+<h3 class=fn>int <a name="tile"></a>TQCanvas::tile ( int&nbsp;x, int&nbsp;y ) const
+</h3>
+
+<p> Returns the tile at position (<em>x</em>, <em>y</em>). Initially, all tiles
+are 0.
+<p> The parameters must be within range, i.e.
+0 &lt; <em>x</em> &lt; <a href="#tilesHorizontally">tilesHorizontally</a>() and
+0 &lt; <em>y</em> &lt; <a href="#tilesVertically">tilesVertically</a>().
+<p> <p>See also <a href="#setTile">setTile</a>().
+
+<h3 class=fn>int <a name="tileHeight"></a>TQCanvas::tileHeight () const
+</h3>
+
+<p> Returns the height of each tile.
+
+<h3 class=fn>int <a name="tileWidth"></a>TQCanvas::tileWidth () const
+</h3>
+
+<p> Returns the width of each tile.
+
+<h3 class=fn>int <a name="tilesHorizontally"></a>TQCanvas::tilesHorizontally () const
+</h3>
+
+<p> Returns the number of tiles horizontally.
+
+<h3 class=fn>int <a name="tilesVertically"></a>TQCanvas::tilesVertically () const
+</h3>
+
+<p> Returns the number of tiles vertically.
+
+<h3 class=fn>void <a name="update"></a>TQCanvas::update ()<tt> [virtual slot]</tt>
+</h3>
+Repaints changed areas in all views of the canvas.
+<p> <p>See also <a href="#advance">advance</a>().
+
+<h3 class=fn>bool <a name="validChunk"></a>TQCanvas::validChunk ( int&nbsp;x, int&nbsp;y ) const
+</h3>
+
+<p> Returns true if the chunk position (<em>x</em>, <em>y</em>) is on the canvas;
+otherwise returns false.
+<p> <p>See also <a href="#onCanvas">onCanvas</a>().
+
+<h3 class=fn>bool <a name="validChunk-2"></a>TQCanvas::validChunk ( const&nbsp;<a href="ntqpoint.html">TQPoint</a>&nbsp;&amp;&nbsp;p ) const
+</h3>
+
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Returns true if the chunk position <em>p</em> is on the canvas; otherwise
+returns false.
+<p> <p>See also <a href="#onCanvas">onCanvas</a>().
+
+<h3 class=fn>int <a name="width"></a>TQCanvas::width () const
+</h3>
+
+<p> Returns the width of the canvas, in pixels.
+
+<p>Example: <a href="canvas-example.html#x2912">canvas/canvas.cpp</a>.
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

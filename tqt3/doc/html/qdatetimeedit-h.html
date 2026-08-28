@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqdatetimeedit.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqdatetimeedit.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqdatetimeedit.h</h1>
+
+<p>This is the verbatim text of the ntqdatetimeedit.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqdatetimeedit.h   3.3.8   edited Jan 11 14:46 $
+**
+** Definition of date and time edit classes
+**
+** Created : 001103
+**
+** Copyright (C) 2005-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the widgets module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQDATETIMEEDIT_H
+#define TQDATETIMEEDIT_H
+
+#ifndef QT_H
+#include "ntqwidget.h"
+#include "ntqstring.h"
+#include "ntqdatetime.h"
+#endif // QT_H
+
+#ifndef TQT_NO_DATETIMEEDIT
+
+class TQ_EXPORT TQDateTimeEditBase : public TQWidget
+{
+    TQ_OBJECT
+public:
+    TQDateTimeEditBase( TQWidget* parent=0, const char* name=0 )
+	: TQWidget( parent, name ) {}
+    
+    virtual bool setFocusSection( int sec ) = 0;
+    virtual TQString sectionFormattedText( int sec ) = 0;
+    virtual void addNumber( int sec, int num ) = 0;
+    virtual void removeLastNumber( int sec ) = 0;
+
+public slots:
+    virtual void stepUp() = 0;
+    virtual void stepDown() = 0;
+
+private:
+#if defined(TQ_DISABLE_COPY) // Disabled copy constructor and operator=
+    TQDateTimeEditBase( const TQDateTimeEditBase &amp; );
+    TQDateTimeEditBase &amp;operator=( const TQDateTimeEditBase &amp; );
+#endif
+};
+
+class TQDateEditPrivate;
+
+class TQ_EXPORT TQDateEdit : public TQDateTimeEditBase
+{
+    TQ_OBJECT
+    TQ_ENUMS( Order )
+    TQ_PROPERTY( Order order READ order WRITE setOrder )
+    TQ_PROPERTY( TQDate date READ date WRITE setDate )
+    TQ_PROPERTY( bool autoAdvance READ autoAdvance WRITE setAutoAdvance )
+    TQ_PROPERTY( TQDate maxValue READ maxValue WRITE setMaxValue )
+    TQ_PROPERTY( TQDate minValue READ minValue WRITE setMinValue )
+
+public:
+    TQDateEdit( TQWidget* parent=0,  const char* name=0 );
+    TQDateEdit( const TQDate&amp; date, TQWidget* parent=0,  const char* name=0 );
+    ~TQDateEdit();
+
+    enum Order { DMY, MDY, YMD, YDM };
+
+    TQSize sizeHint() const;
+    TQSize minimumSizeHint() const;
+
+public slots:
+    virtual void setDate( const TQDate&amp; date );
+
+public:
+    TQDate date() const;
+    virtual void setOrder( Order order );
+    Order order() const;
+    virtual void setAutoAdvance( bool advance );
+    bool autoAdvance() const;
+
+    virtual void setMinValue( const TQDate&amp; d ) { setRange( d, maxValue() ); }
+    TQDate minValue() const;
+    virtual void setMaxValue( const TQDate&amp; d ) { setRange( minValue(), d ); }
+    TQDate maxValue() const;
+    virtual void setRange( const TQDate&amp; min, const TQDate&amp; max );
+    TQString separator() const;
+    virtual void setSeparator( const TQString&amp; s );
+
+    // Make removeFirstNumber() virtual in TQDateTimeEditBase in 4.0
+    void removeFirstNumber( int sec );
+
+signals:
+    void valueChanged( const TQDate&amp; date );
+
+protected:
+    bool event( TQEvent *e );
+    void timerEvent( TQTimerEvent * );
+    void resizeEvent( TQResizeEvent * );
+    void stepUp();
+    void stepDown();
+    TQString sectionFormattedText( int sec );
+    void addNumber( int sec, int num );
+    
+    void removeLastNumber( int sec );
+    bool setFocusSection( int s );
+
+    virtual void setYear( int year );
+    virtual void setMonth( int month );
+    virtual void setDay( int day );
+    virtual void fix();
+    virtual bool outOfRange( int y, int m, int d ) const;
+
+protected slots:
+    void updateButtons();    
+
+private:
+    void init();
+    int sectionOffsetEnd( int sec ) const;
+    int sectionLength( int sec ) const;
+    TQString sectionText( int sec ) const;
+    TQDateEditPrivate* d;
+
+#if defined(TQ_DISABLE_COPY)
+    TQDateEdit( const TQDateEdit &amp; );
+    TQDateEdit &amp;operator=( const TQDateEdit &amp; );
+#endif
+};
+
+class TQTimeEditPrivate;
+
+class TQ_EXPORT TQTimeEdit : public TQDateTimeEditBase
+{
+    TQ_OBJECT
+    TQ_SETS( Display )
+    TQ_PROPERTY( TQTime time READ time WRITE setTime )
+    TQ_PROPERTY( bool autoAdvance READ autoAdvance WRITE setAutoAdvance )
+    TQ_PROPERTY( TQTime maxValue READ maxValue WRITE setMaxValue )
+    TQ_PROPERTY( TQTime minValue READ minValue WRITE setMinValue )
+    TQ_PROPERTY( Display display READ display WRITE setDisplay )
+
+public:
+    enum Display {
+	Hours	= 0x01,
+	Minutes	= 0x02,
+	Seconds	= 0x04,
+	/*Reserved = 0x08,*/
+	AMPM	= 0x10
+    };
+
+    TQTimeEdit( TQWidget* parent=0,  const char* name=0 );
+    TQTimeEdit( const TQTime&amp; time, TQWidget* parent=0,  const char* name=0 );
+    ~TQTimeEdit();
+
+    TQSize sizeHint() const;
+    TQSize minimumSizeHint() const;
+
+public slots:
+    virtual void setTime( const TQTime&amp; time );
+
+public:
+    TQTime time() const;
+    virtual void setAutoAdvance( bool advance );
+    bool autoAdvance() const;
+
+    virtual void setMinValue( const TQTime&amp; d ) { setRange( d, maxValue() ); }
+    TQTime minValue() const;
+    virtual void setMaxValue( const TQTime&amp; d ) { setRange( minValue(), d ); }
+    TQTime maxValue() const;
+    virtual void setRange( const TQTime&amp; min, const TQTime&amp; max );
+    TQString separator() const;
+    virtual void setSeparator( const TQString&amp; s );
+
+    uint display() const;
+    void setDisplay( uint disp );
+
+    // Make removeFirstNumber() virtual in TQDateTimeEditBase in 4.0
+    void removeFirstNumber( int sec );
+
+signals:
+    void valueChanged( const TQTime&amp; time );
+
+protected:
+    bool event( TQEvent *e );
+    void timerEvent( TQTimerEvent *e );
+    void resizeEvent( TQResizeEvent * );
+    void stepUp();
+    void stepDown();
+    TQString sectionFormattedText( int sec );
+    void addNumber( int sec, int num );
+    void removeLastNumber( int sec );
+    bool setFocusSection( int s );
+    
+    virtual bool outOfRange( int h, int m, int s ) const;
+    virtual void setHour( int h );
+    virtual void setMinute( int m );
+    virtual void setSecond( int s );
+    
+protected slots:
+    void updateButtons();
+
+private:
+    void init();
+    TQString sectionText( int sec );
+    TQTimeEditPrivate* d;
+
+#if defined(TQ_DISABLE_COPY)
+    TQTimeEdit( const TQTimeEdit &amp; );
+    TQTimeEdit &amp;operator=( const TQTimeEdit &amp; );
+#endif
+};
+
+
+class TQDateTimeEditPrivate;
+
+class TQ_EXPORT TQDateTimeEdit : public TQWidget
+{
+    TQ_OBJECT
+    TQ_PROPERTY( TQDateTime dateTime READ dateTime WRITE setDateTime )
+
+public:
+    TQDateTimeEdit( TQWidget* parent=0, const char* name=0 );
+    TQDateTimeEdit( const TQDateTime&amp; datetime, TQWidget* parent=0,
+		   const char* name=0 );
+    ~TQDateTimeEdit();
+
+    TQSize sizeHint() const;
+    TQSize minimumSizeHint() const;
+
+public slots:
+    virtual void setDateTime( const TQDateTime &amp; dt );
+
+public:
+    TQDateTime dateTime() const;
+
+    TQDateEdit* dateEdit() { return de; }
+    TQTimeEdit* timeEdit() { return te; }
+
+    virtual void setAutoAdvance( bool advance );
+    bool autoAdvance() const;
+
+signals:
+    void valueChanged( const TQDateTime&amp; datetime );
+
+protected:
+    // ### make init() private in TQt 4.0
+    void init();
+    void resizeEvent( TQResizeEvent * );
+
+protected slots:
+    // ### make these two functions private in TQt 4.0,
+    //     and merge them into one with no parameter
+    void newValue( const TQDate&amp; d );
+    void newValue( const TQTime&amp; t );
+
+private:
+    TQDateEdit* de;
+    TQTimeEdit* te;
+    TQDateTimeEditPrivate* d;
+
+#if defined(TQ_DISABLE_COPY)
+    TQDateTimeEdit( const TQDateTimeEdit &amp; );
+    TQDateTimeEdit &amp;operator=( const TQDateTimeEdit &amp; );
+#endif
+};
+
+#endif
+#endif
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

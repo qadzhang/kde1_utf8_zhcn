@@ -35,10 +35,10 @@
 NiceLevel::mode
 NiceLevel::toLevel( int input )
 {
-  //debug("input ist %i",input);
+  //tqDebug("input ist %i",input);
   long tmp;
   tmp = NICELEVEL_COMPUTE_OFFSET * (int)NiceLevel::nicest / 100;
-  //debug("tmp ist %ld", tmp);
+  //tqDebug("tmp ist %ld", tmp);
   if (input > tmp)
     return NiceLevel::nicest;
   tmp = NICELEVEL_COMPUTE_OFFSET * (int)NiceLevel::extremlynice / 100;

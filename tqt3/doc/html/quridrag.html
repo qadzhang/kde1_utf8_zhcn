@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qdragobject.cpp:1278 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQUriDrag Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQUriDrag Class Reference</h1>
+
+<p>The TQUriDrag class provides a drag object for a list of URI references.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qdragobject-h.html">ntqdragobject.h</a>&gt;</tt>
+<p>Inherits <a href="qstoreddrag.html">TQStoredDrag</a>.
+<p><a href="quridrag-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQUriDrag"><b>TQUriDrag</b></a> ( TQStrList&nbsp;uris, TQWidget&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#TQUriDrag-2"><b>TQUriDrag</b></a> ( TQWidget&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#~TQUriDrag"><b>~TQUriDrag</b></a> ()</li>
+<li class=fn>void setFilenames ( const&nbsp;TQStringList&nbsp;&amp;&nbsp;fnames ) &nbsp;<em>(obsolete)</em></li>
+<li class=fn>void <a href="#setFileNames"><b>setFileNames</b></a> ( const&nbsp;TQStringList&nbsp;&amp;&nbsp;fnames )</li>
+<li class=fn>void <a href="#setUnicodeUris"><b>setUnicodeUris</b></a> ( const&nbsp;TQStringList&nbsp;&amp;&nbsp;uuris )</li>
+<li class=fn>virtual void <a href="#setUris"><b>setUris</b></a> ( TQStrList&nbsp;uris )</li>
+</ul>
+<h2>Static Public Members</h2>
+<ul>
+<li class=fn>TQString <a href="#uriToLocalFile"><b>uriToLocalFile</b></a> ( const&nbsp;char&nbsp;*&nbsp;uri )</li>
+<li class=fn>TQCString <a href="#localFileToUri"><b>localFileToUri</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;filename )</li>
+<li class=fn>TQString <a href="#uriToUnicodeUri"><b>uriToUnicodeUri</b></a> ( const&nbsp;char&nbsp;*&nbsp;uri )</li>
+<li class=fn>TQCString <a href="#unicodeUriToUri"><b>unicodeUriToUri</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;uuri )</li>
+<li class=fn>bool <a href="#canDecode"><b>canDecode</b></a> ( const&nbsp;TQMimeSource&nbsp;*&nbsp;e )</li>
+<li class=fn>bool <a href="#decode"><b>decode</b></a> ( const&nbsp;TQMimeSource&nbsp;*&nbsp;e, TQStrList&nbsp;&amp;&nbsp;l )</li>
+<li class=fn>bool <a href="#decodeToUnicodeUris"><b>decodeToUnicodeUris</b></a> ( const&nbsp;TQMimeSource&nbsp;*&nbsp;e, TQStringList&nbsp;&amp;&nbsp;l )</li>
+<li class=fn>bool <a href="#decodeLocalFiles"><b>decodeLocalFiles</b></a> ( const&nbsp;TQMimeSource&nbsp;*&nbsp;e, TQStringList&nbsp;&amp;&nbsp;l )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQUriDrag class provides a drag object for a list of URI references.
+<p> 
+<p> URIs are a useful way to refer to files that may be distributed
+across multiple machines. A URI will often refer to a file on a
+machine local to both the drag source and the drop target, so the
+URI can be equivalent to passing a file name but is more
+extensible.
+<p> Use URIs in Unicode form so that the user can comfortably edit and
+view them. For use in HTTP or other protocols, use the correctly
+escaped ASCII form.
+<p> You can convert a list of file names to file URIs using
+<a href="#setFileNames">setFileNames</a>(), or into human-readble form with <a href="#setUnicodeUris">setUnicodeUris</a>().
+<p> Static functions are provided to convert between filenames and
+URIs, e.g. <a href="#uriToLocalFile">uriToLocalFile</a>() and <a href="#localFileToUri">localFileToUri</a>(), and to and from
+human-readable form, e.g. <a href="#uriToUnicodeUri">uriToUnicodeUri</a>(), <a href="#unicodeUriToUri">unicodeUriToUri</a>().
+You can also decode URIs from a mimesource into a list with
+<a href="#decodeLocalFiles">decodeLocalFiles</a>() and <a href="#decodeToUnicodeUris">decodeToUnicodeUris</a>().
+<p>See also <a href="draganddrop.html">Drag And Drop Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQUriDrag"></a>TQUriDrag::TQUriDrag ( <a href="ntqstrlist.html">TQStrList</a>&nbsp;uris, <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs an object to drag the list of URIs in <em>uris</em>. The <em>dragSource</em> and <em>name</em> arguments are passed on to <a href="qstoreddrag.html">TQStoredDrag</a>.
+Note that URIs are always in escaped UTF8 encoding.
+
+<h3 class=fn><a name="TQUriDrag-2"></a>TQUriDrag::TQUriDrag ( <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs an object to drag. You must call <a href="#setUris">setUris</a>() before you
+start the <a href="ntqdragobject.html#drag">drag</a>(). Passes <em>dragSource</em> and <em>name</em> to the
+<a href="qstoreddrag.html">TQStoredDrag</a> constructor.
+
+<h3 class=fn><a name="~TQUriDrag"></a>TQUriDrag::~TQUriDrag ()
+</h3>
+Destroys the object.
+
+<h3 class=fn>bool <a name="canDecode"></a>TQUriDrag::canDecode ( const&nbsp;<a href="qmimesource.html">TQMimeSource</a>&nbsp;*&nbsp;e )<tt> [static]</tt>
+</h3>
+Returns true if <a href="#decode">decode</a>() would be able to decode <em>e</em>; otherwise
+returns false.
+
+<h3 class=fn>bool <a name="decode"></a>TQUriDrag::decode ( const&nbsp;<a href="qmimesource.html">TQMimeSource</a>&nbsp;*&nbsp;e, <a href="ntqstrlist.html">TQStrList</a>&nbsp;&amp;&nbsp;l )<tt> [static]</tt>
+</h3>
+Decodes URIs from <em>e</em>, placing the result in <em>l</em> (which is first
+cleared).
+<p> Returns true if <em>e</em> contained a valid list of URIs; otherwise
+returns false.
+
+<p>Example: <a href="dirview-example.html#x1707">dirview/dirview.cpp</a>.
+<h3 class=fn>bool <a name="decodeLocalFiles"></a>TQUriDrag::decodeLocalFiles ( const&nbsp;<a href="qmimesource.html">TQMimeSource</a>&nbsp;*&nbsp;e, <a href="ntqstringlist.html">TQStringList</a>&nbsp;&amp;&nbsp;l )<tt> [static]</tt>
+</h3>
+Decodes URIs from the mime source event <em>e</em>, converts them to
+local files if they refer to local files, and places them in <em>l</em>
+(which is first cleared).
+<p> Returns true if <em>contained</em> a valid list of URIs; otherwise
+returns false. The list will be empty if no URIs were local files.
+
+<p>Example: <a href="fileiconview-example.html#x873">fileiconview/qfileiconview.cpp</a>.
+<h3 class=fn>bool <a name="decodeToUnicodeUris"></a>TQUriDrag::decodeToUnicodeUris ( const&nbsp;<a href="qmimesource.html">TQMimeSource</a>&nbsp;*&nbsp;e, <a href="ntqstringlist.html">TQStringList</a>&nbsp;&amp;&nbsp;l )<tt> [static]</tt>
+</h3>
+Decodes URIs from the mime source event <em>e</em>, converts them to
+Unicode URIs (only useful for displaying to humans), placing them
+in <em>l</em> (which is first cleared).
+<p> Returns true if <em>contained</em> a valid list of URIs; otherwise
+returns false.
+
+<h3 class=fn><a href="ntqcstring.html">TQCString</a> <a name="localFileToUri"></a>TQUriDrag::localFileToUri ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;filename )<tt> [static]</tt>
+</h3>
+Returns the URI equivalent to the absolute local file <em>filename</em>.
+<p> <p>See also <a href="#uriToLocalFile">uriToLocalFile</a>().
+
+<h3 class=fn>void <a name="setFileNames"></a>TQUriDrag::setFileNames ( const&nbsp;<a href="ntqstringlist.html">TQStringList</a>&nbsp;&amp;&nbsp;fnames )
+</h3>
+Sets the URIs to be the local-file URIs equivalent to <em>fnames</em>.
+<p> <p>See also <a href="#localFileToUri">localFileToUri</a>() and <a href="#setUris">setUris</a>().
+
+<p>Example: <a href="dirview-example.html#x1708">dirview/dirview.cpp</a>.
+<h3 class=fn>void <a name="setFilenames"></a>TQUriDrag::setFilenames ( const&nbsp;<a href="ntqstringlist.html">TQStringList</a>&nbsp;&amp;&nbsp;fnames )
+</h3>
+
+<b>This function is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+<p> Use <a href="#setFileNames">setFileNames</a>() instead (notice the N).
+
+<h3 class=fn>void <a name="setUnicodeUris"></a>TQUriDrag::setUnicodeUris ( const&nbsp;<a href="ntqstringlist.html">TQStringList</a>&nbsp;&amp;&nbsp;uuris )
+</h3>
+Sets the URIs in <em>uuris</em> to be the Unicode URIs (only useful for
+displaying to humans).
+<p> <p>See also <a href="#localFileToUri">localFileToUri</a>() and <a href="#setUris">setUris</a>().
+
+<h3 class=fn>void <a name="setUris"></a>TQUriDrag::setUris ( <a href="ntqstrlist.html">TQStrList</a>&nbsp;uris )<tt> [virtual]</tt>
+</h3>
+Changes the list of <em>uris</em> to be dragged.
+<p> Note that URIs are always in escaped UTF8 encoding.
+
+<h3 class=fn><a href="ntqcstring.html">TQCString</a> <a name="unicodeUriToUri"></a>TQUriDrag::unicodeUriToUri ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;uuri )<tt> [static]</tt>
+</h3>
+Returns the URI equivalent of the Unicode URI given in <em>uuri</em>
+(only useful for displaying to humans).
+<p> <p>See also <a href="#uriToLocalFile">uriToLocalFile</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="uriToLocalFile"></a>TQUriDrag::uriToLocalFile ( const&nbsp;char&nbsp;*&nbsp;uri )<tt> [static]</tt>
+</h3>
+Returns the name of a local file equivalent to <em>uri</em> or a null
+string if <em>uri</em> is not a local file.
+<p> Note that URIs are always in escaped UTF8 encoding.
+<p> <p>See also <a href="#localFileToUri">localFileToUri</a>().
+
+<p>Example: <a href="dirview-example.html#x1709">dirview/dirview.cpp</a>.
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="uriToUnicodeUri"></a>TQUriDrag::uriToUnicodeUri ( const&nbsp;char&nbsp;*&nbsp;uri )<tt> [static]</tt>
+</h3>
+Returns the Unicode URI (only useful for displaying to humans)
+equivalent of <em>uri</em>.
+<p> Note that URIs are always in escaped UTF8 encoding.
+<p> <p>See also <a href="#localFileToUri">localFileToUri</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

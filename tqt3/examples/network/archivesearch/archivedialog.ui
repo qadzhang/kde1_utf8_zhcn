@@ -1,0 +1,137 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>ArchiveDialog</class>
+<widget class="TQDialog">
+    <property name="name">
+        <cstring>ArchiveDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>673</width>
+            <height>561</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>TQt-interest Archive Search Tool</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="TQLayoutWidget">
+            <property name="name">
+                <cstring>layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="TQLabel">
+                    <property name="name">
+                        <cstring>myTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Search phrase</string>
+                    </property>
+                </widget>
+                <widget class="TQLineEdit">
+                    <property name="name">
+                        <cstring>myLineEdit</cstring>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="TQSplitter">
+            <property name="name">
+                <cstring>splitter1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <widget class="TQListView">
+                <column>
+                    <property name="text">
+                        <string>Matching documents</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <property name="name">
+                    <cstring>myListView</cstring>
+                </property>
+            </widget>
+            <widget class="TQTextBrowser">
+                <property name="name">
+                    <cstring>myTextBrowser</cstring>
+                </property>
+            </widget>
+        </widget>
+        <widget class="TQLayoutWidget">
+            <property name="name">
+                <cstring>layout3</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>mySpacer</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>281</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="TQPushButton">
+                    <property name="name">
+                        <cstring>myPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Quit</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </vbox>
+</widget>
+<includes>
+    <include location="global" impldecl="in declaration">ntqhttp.h</include>
+    <include location="global" impldecl="in declaration">ntqurl.h</include>
+    <include location="global" impldecl="in declaration">ntqmessagebox.h</include>
+    <include location="global" impldecl="in declaration">ntqapplication.h</include>
+    <include location="global" impldecl="in declaration">ntqcursor.h</include>
+    <include location="global" impldecl="in declaration">ntqregexp.h</include>
+    <include location="local" impldecl="in implementation">archivedialog.ui.h</include>
+</includes>
+<variables>
+    <variable access="private">TQHttp articleSearcher;</variable>
+    <variable access="private">TQHttp articleFetcher;</variable>
+</variables>
+<slots>
+    <slot specifier="non virtual">fetch( TQListViewItem * it )</slot>
+    <slot specifier="non virtual">fetchDone( bool error )</slot>
+    <slot specifier="non virtual">search()</slot>
+    <slot specifier="non virtual">searchDone( bool error )</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

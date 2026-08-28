@@ -340,12 +340,12 @@ int AnswMachine::read_message(FILE * fd) // returns 1 if something has been ente
 		    else {
 			 if (pos == 79) {
 			      fwrite(line,pos,1,fd);
-			      pos = 0;
+			      pos = 0;  /* TQt3 迁移 */
 			 }
 			 line[pos++]=buff[i];
 			 if (buff[i]=='\n') {
 			      fwrite(line,pos,1,fd);
-			      pos = 0;
+			      pos = 0;  /* TQt3 迁移 */
 			 }
 		    }
 	       }

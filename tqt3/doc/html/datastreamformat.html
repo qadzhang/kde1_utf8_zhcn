@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/datastreamformat.doc:36 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Format of the TQDataStream Operators</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Format of the TQDataStream Operators</h1>
+
+
+
+<p> The <a href="ntqdatastream.html">TQDataStream</a> allows you to serialize some of the TQt data types.
+The table below lists the data types that <a href="ntqdatastream.html">TQDataStream</a> can serialize
+and how they are represented.
+<p> It is best to always cast integers to a TQt integer type when writing,
+and to read back into the same TQt integer type when reading.
+<p> <center><table cellpadding="4" cellspacing="2" border="0">
+<tr bgcolor="#f0f0f0"> <td valign="top">TQ_INT8
+<td valign="top"><ul>
+<li> signed byte
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQ_INT16
+<td valign="top"><ul>
+<li> signed 16 bit integer
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQ_INT32
+<td valign="top"><ul>
+<li> signed 32 bit integer
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQ_UINT8
+<td valign="top"><ul>
+<li> unsigned byte
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQ_UINT16
+<td valign="top"><ul>
+<li> unsigned 16 bit integer
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQ_UINT32
+<td valign="top"><ul>
+<li> unsigned 32 bit integer
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">float
+<td valign="top"><ul>
+<li> 32-bit floating point number using the standard IEEE-754 format
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">double
+<td valign="top"><ul>
+<li> 64-bit floating point number using the standard IEEE-754 format
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">char *
+<td valign="top"><ul>
+<li> The size of the string including the terminating 0 (TQ_UINT32)
+<li> The string bytes including the terminating 0
+</ul>
+The null string is represented as <tt>(TQ_UINT32) 0</tt>.
+<tr bgcolor="#d0d0d0"> <td valign="top">TQBitArray
+<td valign="top"><ul>
+<li> The array size (TQ_UINT32)
+<li> The array bits, i.e. (size + 7)/8 bytes
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQBrush
+<td valign="top"><ul>
+<li> The brush style (TQ_UINT8)
+<li> The brush color (<a href="ntqcolor.html">TQColor</a>)
+<li> If style is CustomPattern, the brush pixmap (<a href="ntqpixmap.html">TQPixmap</a>)
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQByteArray
+<td valign="top"><ul>
+<li> The array size (TQ_UINT32)
+<li> The array bytes, i.e. size bytes
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQCString
+<td valign="top"><ul>
+<li> The size of the string including the terminating 0 (TQ_UINT32)
+<li> The string bytes including the terminating 0
+</ul>
+The null string is represented as <tt>(TQ_UINT32) 0</tt>.
+<tr bgcolor="#d0d0d0"> <td valign="top"><a href="ntqcolor.html">TQColor</a>
+<td valign="top"><ul><li> RGB value serialized as a TQ_UINT32 </ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQColorGroup
+<td valign="top"><ul>
+<li> foreground (<a href="ntqbrush.html">TQBrush</a>)
+<li> button (TQBrush)
+<li> light (TQBrush)
+<li> midLight (TQBrush)
+<li> dark (TQBrush)
+<li> mid (TQBrush)
+<li> text (TQBrush)
+<li> brightText (TQBrush)
+<li> ButtonText (TQBrush)
+<li> base (TQBrush)
+<li> background (TQBrush)
+<li> shadow (TQBrush)
+<li> highlight (TQBrush)
+<li> highlightedText (TQBrush)
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQCursor
+<td valign="top"><ul>
+<li> Shape id (TQ_INT16)
+<li> If shape is BitmapCursor: The bitmap (<a href="ntqpixmap.html">TQPixmap</a>), mask (TQPixmap) and hot spot (<a href="ntqpoint.html">TQPoint</a>)
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQDate
+<td valign="top"><ul>
+<li> Julian day (TQ_UINT32)
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQDateTime
+<td valign="top"><ul>
+<li> Date (<a href="qdate.html">TQDate</a>)
+<li> Time (<a href="qtime.html">TQTime</a>)
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQFont
+<td valign="top"><ul>
+<li> The family (<a href="ntqcstring.html">TQCString</a>)
+<li> The point size (TQ_INT16)
+<li> The style hint (TQ_UINT8)
+<li> The char set (TQ_UINT8)
+<li> The weight (TQ_UINT8)
+<li> The font bits (TQ_UINT8)
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQImage
+<td valign="top"><ul>
+<li> If the image is null a "null image" marker is saved;
+otherwise the image is saved in PNG or BMP format (depending
+on the stream version). If you want control of the format,
+stream the image into a <a href="ntqbuffer.html">TQBuffer</a> (using <a href="qimageio.html">TQImageIO</a>) and stream
+that.
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQMap
+<td valign="top"><ul>
+<li> The number of items (TQ_UINT32)
+<li> For all items, the key and value
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQPalette
+<td valign="top"><ul>
+<li> active (<a href="qcolorgroup.html">TQColorGroup</a>)
+<li> disabled (TQColorGroup)
+<li> inactive (TQColorGroup)
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQPen
+<td valign="top"><ul>
+<li> The pen styles (TQ_UINT8)
+<li> The pen width (TQ_UINT8)
+<li> The pen color (<a href="ntqcolor.html">TQColor</a>)
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQPicture
+<td valign="top"><ul>
+<li> The size of the picture data (TQ_UINT32)
+<li> The raw bytes of picture data (char)
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQPixmap
+<td valign="top"><ul>
+<li> Save it as a PNG image.
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQPoint
+<td valign="top"><ul>
+<li> The x coordinate (TQ_INT32)
+<li> The y coordinate (TQ_INT32)
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQPointArray
+<td valign="top"><ul>
+<li> The array size (TQ_UINT32)
+<li> The array points (<a href="ntqpoint.html">TQPoint</a>)
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQRect
+<td valign="top"><ul>
+<li> left (TQ_INT32)
+<li> top (TQ_INT32)
+<li> right (TQ_INT32)
+<li> bottom (TQ_INT32)
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQRegion
+<td valign="top"><ul>
+<li> The size of the data, i.e. 8 + 16 * (number of rectangles) (TQ_UINT32)
+<li> TQRGN_RECTS (TQ_INT32)
+<li> The number of rectangles (TQ_UINT32)
+<li> The rectangles in sequential order (<a href="ntqrect.html">TQRect</a>)
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQSize
+<td valign="top"><ul>
+<li> width (TQ_INT32)
+<li> height (TQ_INT32)
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQString
+<td valign="top"><ul>
+<li> If the string is null: 0xffffffff (TQ_UINT32)<br>
+otherwise: The string length (TQ_UINT32) followed by the
+data in UTF-16
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQTime
+<td valign="top"><ul>
+<li> Milliseconds since midnight (TQ_UINT32)
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQValueList
+<td valign="top"><ul>
+<li> The number of list elements (TQ_UINT32)
+<li> All the elements in sequential order
+</ul>
+<tr bgcolor="#d0d0d0"> <td valign="top">TQVariant
+<td valign="top"><ul>
+<li> The type of the data (TQ_UINT32)
+<li> The data of the specified type
+</ul>
+<tr bgcolor="#f0f0f0"> <td valign="top">TQWMatrix
+<td valign="top"><ul>
+<li> m11 (double)
+<li> m12 (double)
+<li> m21 (double)
+<li> m22 (double)
+<li> dx (double)
+<li> dy (double)
+</ul>
+</table></center>
+<p> 
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

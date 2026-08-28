@@ -35,7 +35,7 @@ bool KGAccel::eventFilter(QObject *, QEvent *e) /*FOLD00*/
       if(ke->state() & AltButton)
 	key += ALT;
 
-      debug("Got: %d xlate to %d, we know it as: %p", ke->key(), key, accelDict->find(key));
+      tqDebug("Got: %d xlate to %d, we know it as: %p", ke->key(), key, accelDict->find(key));
 
       accelItem *ai;
       if((ai = accelDict->find(key))){
@@ -58,7 +58,7 @@ void KGAccel::insertAccel(int key, int id, KAPopupMenu *kp) /*FOLD00*/
   QIntDictIterator<accelItem> it(*accelDict);
   while(it.current()){
     if((it.current()->id() == id) && (it.current()->menu() == kp)){
-      debug("Remove: %ld", it.currentKey());
+      tqDebug("Remove: %ld", it.currentKey());
       it.current()->menu()->clearAccel(id);
       accelDict->remove(it.currentKey()); // Moves it ahead one
     }
@@ -84,7 +84,7 @@ void KGAccel::clearAccelForPopup(KAPopupMenu *kp)
     QIntDictIterator<accelItem> it(*accelDict);
     while(it.current()){
         if(it.current()->menu() == kp){
-            debug("Remove: %ld", it.currentKey());
+            tqDebug("Remove: %ld", it.currentKey());
             accelDict->remove(it.currentKey()); // Moves it ahead one
         }
         else
@@ -146,7 +146,7 @@ void KAPopupMenu::keyPressEvent(QKeyEvent *e) /*fold00*/
     if(spaces != -1)
       text_id.truncate(spaces); // and remove it
 
-    debug("Inserted: %d", accel_key);
+    tqDebug("Inserted: %d", accel_key);
     setAccel(0x0, current_item);
     KGA->insertAccel(accel_key, current_item, this);
     
@@ -207,9 +207,9 @@ void KAPopupMenu::activated(int id) /*FOLD00*/
   if(mi != 0x0 && mi->signal() != 0x0)
       mi->signal()->activate();
   else
-      warning("Could not activate slot!");
+      tqWarning("Could not activate slot!");
 
-  debug("Got id: %d and QMenuItem: %p", id, mi);
+  tqDebug("Got id: %d and QMenuItem: %p", id, mi);
 }
 
 void KAPopupMenu::clearAccel(int id) /*fold00*/

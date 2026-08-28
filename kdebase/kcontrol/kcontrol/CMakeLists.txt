@@ -7,13 +7,13 @@ add_subdirectory(pics)
 set(KCONTROL_SRCS
 configlist.cpp main.cpp toplevel.cpp kdelnk.cpp mainwidget.cpp kswallow.cpp
 )
-set(KCONTROL_MOC toplevel.moc kdelnk.moc mainwidget.moc configlist.moc kswallow.moc)
+set(KCONTROL_MOC toplevel.h kdelnk.h mainwidget.h configlist.h kswallow.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KCONTROL_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KCONTROL_MOC})
 
 add_executable(kcontrol ${KCONTROL_SRCS} ${MOC_FILES})
 target_link_libraries(kcontrol
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

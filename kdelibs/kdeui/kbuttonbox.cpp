@@ -100,7 +100,7 @@ void KButtonBox::layout() {
     QPushButton *b = item->button;
     if(b != 0) {
       if(!item->noexpand) {
-	if(b->style() == MotifStyle && b->isDefault()) {
+	if(b->style().inherits("TQMotifStyle") && b->isDefault()) {
 	  QSize s = bs;
 	  s.setWidth(bs.width() + extraMotifWidth);
 	  s.setHeight(bs.height() + extraMotifHeight);
@@ -141,7 +141,7 @@ void KButtonBox::placeButtons() {
       KButtonBoxItem *item = buttons.at(i);
       if(item->button != 0) {
 	QPushButton *b = item->button;
-	if(b->style() == MotifStyle && b->isDefault()) {
+	if(b->style().inherits("TQMotifStyle") && b->isDefault()) {
 	  b->move(x_pos + extraMotifWidth/2, 
 		  (height() - b->height()) / 2 + extraMotifHeight/2);
 	  if(_autoborder < extraMotifWidth/2)
@@ -171,7 +171,7 @@ void KButtonBox::placeButtons() {
       KButtonBoxItem *item = buttons.at(i);
       if(item->button != 0) {
 	QPushButton *b = item->button;
-	if(b->style() == MotifStyle && b->isDefault()) {
+	if(b->style().inherits("TQMotifStyle") && b->isDefault()) {
 	  b->move((width() - b->width()) / 2 + extraMotifWidth/2,
 		  y_pos + extraMotifHeight/2);
 	  if(_autoborder < extraMotifHeight/2)
@@ -229,7 +229,7 @@ QSize KButtonBox::sizeHint() const {
       KButtonBoxItem *item = that->buttons.at(i);
       QPushButton *b = item->button;
       if(b != 0) {
-	hasMotifDefault |= (style() == MotifStyle) && (b->isDefault());
+	hasMotifDefault |= (style().inherits("TQMotifStyle")) && (b->isDefault());
 
 	QSize s;
 	if(item->noexpand)
@@ -248,13 +248,13 @@ QSize KButtonBox::sizeHint() const {
     }
 
     if(orientation == HORIZONTAL) {
-      if(style() == MotifStyle && hasMotifDefault) 	
+      if(style().inherits("TQMotifStyle") && hasMotifDefault) 	
 	return QSize(dw + extraMotifWidth, 
 		     bs.height() + 2 * _border + extraMotifHeight);
       else
 	return QSize(dw, bs.height() + 2 * _border);
     } else {
-      if(style() == MotifStyle)
+      if(style().inherits("TQMotifStyle"))
 	return QSize(bs.width() + 2 * _border + extraMotifWidth, 
 		     dw + extraMotifHeight);
       else

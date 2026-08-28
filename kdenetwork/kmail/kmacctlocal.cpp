@@ -25,7 +25,6 @@
 KMAcctLocal::KMAcctLocal(KMAcctMgr* aOwner, const char* aAccountName):
   KMAcctLocalInherited(aOwner, aAccountName)
 {
-  initMetaObject();
 }
 
 
@@ -47,7 +46,6 @@ const char* KMAcctLocal::type(void) const
 void KMAcctLocal::init(void)
 {
   mLocation = _PATH_MAILDIR;
-  mLocation.detach();
   mLocation += "/";
   mLocation += getenv("USER");
 }
@@ -65,7 +63,7 @@ bool KMAcctLocal::processNewMail(KMIOStatus *statusWdg)
   
   if (mFolder==NULL) return FALSE;
 
-  debug("processNewMail: %s", (const char*)location());
+  tqDebug("processNewMail: %s", (const char*)location());
 
   statusWdg->prepareTransmission(location(), KMIOStatus::RETRIEVE);
   app->processEvents();
@@ -110,7 +108,7 @@ bool KMAcctLocal::processNewMail(KMIOStatus *statusWdg)
     rc = mailFolder.expunge();
   
     if (rc)
-      warning(i18n("Cannot remove mail from\nmailbox `%s':\n%s"),
+      tqWarning(i18n("Cannot remove mail from\nmailbox `%s':\n%s"),
               (const char*)mailFolder.location(), strerror(rc));
   }
   // else warning is written already

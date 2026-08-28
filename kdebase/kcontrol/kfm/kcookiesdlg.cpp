@@ -244,7 +244,6 @@ void KCookiesOptions::changePressed()
         advice = adviceToStr(KCookieAccept);
     else if (rb_domPolicyReject->isChecked())
         advice = adviceToStr(KCookieReject);
-    else
         advice = adviceToStr(KCookieAsk);
     
     QString configStr(domain);
@@ -391,7 +390,6 @@ void KCookiesOptions::saveSettings()
       advice = adviceToStr(KCookieAccept);
   else if (rb_gbPolicyReject->isChecked())
       advice = adviceToStr(KCookieReject);
-  else
       advice = adviceToStr(KCookieAsk);
   g_pConfig->writeEntry("CookieGlobalAdvice", advice);
   g_pConfig->writeEntry("CookieDomainAdvice", domainConfig);

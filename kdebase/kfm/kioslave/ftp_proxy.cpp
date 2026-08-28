@@ -167,11 +167,7 @@ int KProtocolProxyFTP::OpenProxy(KURL *_url, int mode, bool _reload)
 	    return(FAIL);
 	}
 
-	QString command(15              // for the constant characters
-                        + strlen(_url->user())
-                        + strlen(_url->host())
-                        + 20            // for the port number
-                        );
+	TQString command;  /* TQt3 迁移：容量构造已删 */
 
 	if(do_proxy)
 	{

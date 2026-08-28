@@ -12,10 +12,10 @@ PLayout::PLayout(QObject *pobject)
 
 PLayout::~PLayout()
 {
-  //  debug("PObject: in destructor");
+  //  tqDebug("PObject: in destructor");
   /*
   delete widget();
-  layout = 0;
+  layout = 0;  /* TQt3 迁移 */
   setWidget();
   */
 }
@@ -33,12 +33,12 @@ PObject *PLayout::createWidget(CreateArgs &ca)
   if((ca.parent != 0) &&
      (ca.parent->widget()->isWidgetType() == TRUE)){
     qbl = new("QBoxLayout") QBoxLayout((QWidget *) ca.parent->widget(), (QBoxLayout::Direction) direction, border);
-    //      debug("Creating layout with parent: %d", parent.iWinId);
+    //      tqDebug("Creating layout with parent: %d", parent.iWinId);
 
   }
   else{
     qbl = new("QBoxLayout") QBoxLayout((QBoxLayout::Direction) direction, border);
-    //      debug("Creating layout NO PARENT", parent.iWinId);
+    //      tqDebug("Creating layout NO PARENT", parent.iWinId);
   }
   pw->setWidget(qbl);
   pw->setWidgetId(ca.pwI);
@@ -50,11 +50,11 @@ void PLayout::messageHandler(int fd, PukeMessage *pm)
 {
   PukeMessage pmRet;
 
-//  debug("In PLayout: %d", pm->iCommand);
+//  tqDebug("In PLayout: %d", pm->iCommand);
   
   if(pm->iCommand == PUKE_LAYOUT_ADDWIDGET){
     if(pm->iTextSize != 2*sizeof(char)){
-      warning("PLayout/addwidget: incorrent cArg size, bailing out.  Needed: %u wanted: %d\n", sizeof(int), pm->iTextSize);
+      tqWarning("PLayout/addwidget: incorrent cArg size, bailing out.  Needed: %u wanted: %d\n", sizeof(int), pm->iTextSize);
       pmRet.iCommand = PUKE_LAYOUT_ADDWIDGET_ACK; // ack the add widget
       pmRet.iWinId = pm->iWinId;
       pmRet.iArg = 1;
@@ -66,7 +66,7 @@ void PLayout::messageHandler(int fd, PukeMessage *pm)
     wiWidget.fd = fd;
     wiWidget.iWinId = pm->iArg;
     PWidget *pw = controller()->id2pwidget(&wiWidget);
-    //    debug("Adding widget with stretch: %d and align: %d", (int) pm->cArg[0],
+    //    tqDebug("Adding widget with stretch: %d and align: %d", (int) pm->cArg[0],
     //	  (int) pm->cArg[1]);
     widget()->addWidget(pw->widget(), pm->cArg[0], pm->cArg[1]);
 
@@ -78,7 +78,7 @@ void PLayout::messageHandler(int fd, PukeMessage *pm)
   }
   else if(pm->iCommand == PUKE_LAYOUT_ADDLAYOUT){
     if(pm->iTextSize != sizeof(char)){
-      warning("PLayout: incorrent cArg size, bailing out.  Needed: %u wanted: %d\n", sizeof(int), pm->iTextSize);
+      tqWarning("PLayout: incorrent cArg size, bailing out.  Needed: %u wanted: %d\n", sizeof(int), pm->iTextSize);
       pmRet.iCommand = PUKE_LAYOUT_ADDLAYOUT_ACK; // ack the add widget
       pmRet.iWinId = pm->iWinId;
       pmRet.iArg = 1;
@@ -135,7 +135,7 @@ void PLayout::messageHandler(int fd, PukeMessage *pm)
 
 void PLayout::setWidget(QObject *_layout)
 {
-  //  debug("PObject setwidget called");
+  //  tqDebug("PObject setwidget called");
   if(_layout != 0 && _layout->inherits("QBoxLayout") == FALSE)
       throw(errorInvalidSet(_layout, className()));
 

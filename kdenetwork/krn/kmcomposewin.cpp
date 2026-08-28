@@ -119,7 +119,7 @@ KMComposeWin::KMComposeWin(KMMessage *aMsg) : KMComposeWinInherited(),
   mAtmListBox = NULL;
   mAtmList.setAutoDelete(TRUE);
   mAutoDeleteMsg = FALSE;
-  mPathAttach = 0;
+  mPathAttach = 0;  /* TQt3 迁移 */
   mEditor = NULL;
 
   mSpellCheckInProgress=FALSE;
@@ -185,7 +185,7 @@ KMComposeWin::KMComposeWin(KMMessage *aMsg) : KMComposeWinInherited(),
 //-----------------------------------------------------------------------------
 KMComposeWin::~KMComposeWin()
 {
-  debug("~KMComposeWin()");
+  tqDebug("~KMComposeWin()");
 
   writeConfig();
 
@@ -227,7 +227,7 @@ void KMComposeWin::readConfig(void)
   else
       mDefaultCharset=str;
       
-  debug("Default charset: %s", (const char*)mDefaultCharset);
+  tqDebug("Default charset: %s", (const char*)mDefaultCharset);
       
   str = config->readEntry("composer-charset", "");
   if (str.isNull() || str=="default" || !KCharset(str).isDisplayable())
@@ -235,7 +235,7 @@ void KMComposeWin::readConfig(void)
   else
       mDefComposeCharset=str;
       
-  debug("Default composer charset: %s", (const char*)mDefComposeCharset);
+  tqDebug("Default composer charset: %s", (const char*)mDefComposeCharset);
 #endif
 
   config->setGroup("Geometry");
@@ -251,7 +251,7 @@ void KMComposeWin::readConfig(void)
 void KMComposeWin::writeConfig(void)
 {
   KConfig *config = kapp->getConfig();
-  QString str(32);
+  TQString str;  /* TQt3 迁移 */
 
   config->setGroup("Composer");
   config->writeEntry("signature", mAutoSign?"auto":"manual");
@@ -339,7 +339,7 @@ void KMComposeWin::rethinkFields(void)
   mGrid->setRowStretch(mNumHeaders, 100);
 
   mEdtList.clear();
-  row = 0;
+  row = 0;  /* TQt3 迁移 */
   rethinkHeaderLine(showHeaders,HDR_FROM, row, i18n("&From:"),
 		    &mLblFrom, &mEdtFrom, &mBtnFrom);
   rethinkHeaderLine(showHeaders,HDR_REPLY_TO,row,i18n("&Reply to:"),
@@ -668,7 +668,7 @@ void KMComposeWin::setupEditor(void)
   foreColor.setNamedColor(mForeColor);
   backColor.setNamedColor(mBackColor);
 
-  QPalette myPalette = (mEditor->palette()).copy();
+  QPalette myPalette = (mEditor->palette());
   QColorGroup cgrp  = myPalette.normal();
   QColorGroup ncgrp(foreColor,cgrp.background(),
 		    cgrp.light(),cgrp.dark(), cgrp.mid(), foreColor,
@@ -709,7 +709,7 @@ void KMComposeWin::setMsg(KMMessage* newMsg, bool mayAutoSign)
   //assert(newMsg!=NULL);
   if(!newMsg)
     {
-      debug("KMComposeWin::setMsg() : newMsg == NULL!\n");
+      tqDebug("KMComposeWin::setMsg() : newMsg == NULL!\n");
       return;
     }
   mMsg = newMsg;
@@ -791,7 +791,7 @@ bool KMComposeWin::applyChanges(void)
   //assert(mMsg!=NULL);
   if(!mMsg)
   {
-    debug("KMComposeWin::applyChanges() : mMsg == NULL!\n");
+    tqDebug("KMComposeWin::applyChanges() : mMsg == NULL!\n");
     return FALSE;
   }
 
@@ -938,7 +938,7 @@ const QString KMComposeWin::pgpProcessedMsg(void)
   else
   { 
     // encrypting
-    _to = to().copy();
+    _to = to();
     if(!cc().isEmpty()) _to += "," + cc();
     if(!bcc().isEmpty()) _to += "," + bcc();
     lastindex = -1;
@@ -959,7 +959,7 @@ const QString KMComposeWin::pgpProcessedMsg(void)
   }
 
   // in case of an error we end up here
-  //warning(i18n("Error during PGP:") + QString("\n") + 
+  //tqWarning(i18n("Error during PGP:") + QString("\n") + 
   //	  pgp->lastErrorMsg());
 
   return 0;
@@ -1031,7 +1031,7 @@ void KMComposeWin::addAttach(const KMMessagePart* msgPart)
 const QString KMComposeWin::msgPartLbxString(const KMMessagePart* msgPart) const
 {
   unsigned int len;
-  QString lenStr(32);
+  TQString lenStr;  /* TQt3 迁移 */
 
   assert(msgPart != NULL);
 
@@ -1086,7 +1086,7 @@ void KMComposeWin::addrBookSelInto(KMLineEdit* aLineEdit)
   //assert(aLineEdit!=NULL);
   if(!aLineEdit)
     {
-      debug("KMComposeWin::addrBookSelInto() : aLineEdit == NULL\n");
+      tqDebug("KMComposeWin::addrBookSelInto() : aLineEdit == NULL\n");
       return;
     }
   if (dlg.exec()==QDialog::Rejected) return;
@@ -1182,7 +1182,7 @@ void KMComposeWin::slotAttachFile()
   fdlg.setCaption(i18n("Attach File"));
   if (!fdlg.exec()) return;
 
-  mPathAttach = fdlg.dirPath().copy();
+  mPathAttach = fdlg.dirPath();
 
   fileName = fdlg.selectedFile();
   if(fileName.isEmpty()) return;
@@ -1204,7 +1204,7 @@ void KMComposeWin::slotInsertFile()
   fdlg.setCaption(i18n("Include File"));
   if (!fdlg.exec()) return;
 
-  mPathAttach = fdlg.dirPath().copy();
+  mPathAttach = fdlg.dirPath();
 
   fileName = fdlg.selectedFile();
   if (fileName.isEmpty()) return;
@@ -1345,7 +1345,6 @@ void KMComposeWin::slotMenuViewActivated(int id)
     if (id > 0) mShowHeaders = mShowHeaders & ~id;
     else mShowHeaders = abs(mShowHeaders);
   }
-  else
   {
     // show header
     if (id > 0) mShowHeaders |= id;
@@ -1379,7 +1378,7 @@ void KMComposeWin::slotCut()
     ((QMultiLineEdit*)fw)->cut();
   else if (fw->inherits("KMLineEdit"))
     ((KMLineEdit*)fw)->cut();
-  else debug("wrong focus widget");
+  else tqDebug("wrong focus widget");
 }
 
 
@@ -1455,7 +1454,7 @@ void KMComposeWin::slotNewMailReader()
 //-----------------------------------------------------------------------------
 void KMComposeWin::slotToDo()
 {
-  warning(i18n("Sorry, but this feature\nis still missing"));
+  tqWarning(i18n("Sorry, but this feature\nis still missing"));
 }
 
 
@@ -1632,8 +1631,7 @@ void KMComposeWin::slotConfigureCharsets()
 void KMComposeWin::slotSetCharsets(const char *message,const char *composer,
                                    bool ascii,bool quote,bool def)
 {
-  // prevent warning
-  (void)message;
+  // prevent tqWarning(void)message;
   (void)composer;
   (void)ascii;
   (void)quote;
@@ -1678,7 +1676,7 @@ bool KMComposeWin::is8Bit(const QString str)
 //-----------------------------------------------------------------------------
 QString KMComposeWin::convertToLocal(const QString str)
 {
-  if (m7BitAscii && !is8Bit(str)) return str.copy();
+  if (m7BitAscii && !is8Bit(str)) return str;
   KCharset destCharset;
   KCharset srcCharset;
   if (mCharset=="")
@@ -1689,11 +1687,11 @@ QString KMComposeWin::convertToLocal(const QString str)
   srcCharset=mCharset; 
   if (mComposeCharset=="default") destCharset=klocale->charset();
   else destCharset=mComposeCharset;
-  if (srcCharset==destCharset) return str.copy();
+  if (srcCharset==destCharset) return str;
   int flags=mQuoteUnknownCharacters?KCharsetConverter::OUTPUT_AMP_SEQUENCES:0;
   KCharsetConverter conv(srcCharset,destCharset,flags);
   KCharsetConversionResult result=conv.convert(str);
-  return result.copy();			  
+  return result;			  
 }
 
 //-----------------------------------------------------------------------------
@@ -1703,7 +1701,7 @@ QString KMComposeWin::convertToSend(const QString str)
   if (m7BitAscii && !is8Bit(str))
   { 
     mCharset="us-ascii";
-    return str.copy();
+    return str;
   }
   if (mCharset=="")
   {
@@ -1717,11 +1715,11 @@ QString KMComposeWin::convertToSend(const QString str)
   if (mComposeCharset=="default") srcCharset=klocale->charset();
   else srcCharset=mComposeCharset;
   cout<<"srcCharset: "<<srcCharset<<"\n";
-  if (srcCharset==destCharset) return str.copy();
+  if (srcCharset==destCharset) return str;
   int flags=mQuoteUnknownCharacters?KCharsetConverter::INPUT_AMP_SEQUENCES:0;
   KCharsetConverter conv(srcCharset,destCharset,flags);
   KCharsetConversionResult result=conv.convert(str);
-  return result.copy();			  
+  return result;			  
 }
 
 //-----------------------------------------------------------------------------
@@ -1740,7 +1738,7 @@ void KMComposeWin::transcodeMessageTo(const QString charset)
   KCharsetConverter conv(srcCharset,destCharset,flags);
   KCharsetConversionResult result=conv.convert(inputStr);
   mComposeCharset=charset;
-  mEditor->setText(result.copy());			  
+  mEditor->setText(result);			  
 }
 
 
@@ -1976,7 +1974,6 @@ KMEdit::KMEdit(KApplication *a,QWidget *parent, KMComposeWin* composer,
 	       const char *name, const char *filename):
   KMEditInherited(a, parent, name, filename)
 {
-  initMetaObject();
   mComposer = composer;
   installEventFilter(this);
 
@@ -2041,7 +2038,7 @@ void KMEdit::slotSpellcheck2(KSpell*)
   }
   else
   {
-    warning(i18n("Error starting KSpell. Please make sure you have ISpell properly configured."));
+    tqWarning(i18n("Error starting KSpell. Please make sure you have ISpell properly configured."));
   }
 
 }

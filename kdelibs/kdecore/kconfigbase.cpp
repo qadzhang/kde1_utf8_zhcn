@@ -162,7 +162,7 @@
 // new KConfig
 //
 
-#include <kconfigbase.h>
+#include "kconfigbase.h"
 
 // Unix includes
 #include <stdlib.h>
@@ -379,7 +379,7 @@ const QString KConfigBase::readEntry( const char* pKey,
 	  
 	  // detach the QString if you are doing modifications!
 	  if (nDollarPos != -1)
-		  aValue.detach();
+
 	  
 	  while( nDollarPos != -1 && nDollarPos+1 < static_cast<int>(aValue.length()))
 		  {
@@ -391,7 +391,7 @@ const QString KConfigBase::readEntry( const char* pKey,
 					  do
 						  {
 							  nEndPos++;
-						  } while ( isalnum( (aValue)[nEndPos] ) || 
+						  } while ( isalnum( (aValue)[nEndPos].latin1() ) || 
 									nEndPos > aValue.length() );
 					  QString aVarName = aValue.mid( nDollarPos+1, 
 													 nEndPos-nDollarPos-1 );
@@ -806,6 +806,7 @@ const char* KConfigBase::writeEntry( const char* pKey, const char* pValue,
 									 bool bGlobal,
 									 bool bNLS )
 {
+
   if( !data()->bLocaleInitialized && kapp && kapp->localeConstructed() )
       {
 	  KConfigBase *that = (KConfigBase*)this;
@@ -867,6 +868,22 @@ const char* KConfigBase::writeEntry( const char* pKey, const char* pValue,
   return aValue;
 }
 
+/* TQt3 迁移：TQString 版消歧重载（见 kconfigbase.h 注释），转发 char* 版 */
+const char* KConfigBase::writeEntry( const char* pKey, const TQString& pValue,
+									 bool bPersistent, 
+									 bool bGlobal,
+									 bool bNLS )
+{
+  return writeEntry( pKey, (const char*)pValue, bPersistent, bGlobal, bNLS );
+}
+const char* KConfigBase::writeEntry( const TQString& pKey, const TQString& pValue,
+									 bool bPersistent, 
+									 bool bGlobal,
+									 bool bNLS )
+{
+  return writeEntry( (const char*)pKey, (const char*)pValue, bPersistent, bGlobal, bNLS );
+}
+
 
 void KConfigBase::writeEntry ( const char* pKey, QStrList &list, 
 							   char sep , bool bPersistent, 
@@ -891,7 +908,7 @@ void KConfigBase::writeEntry ( const char* pKey, QStrList &list,
     }
   if( str_list.right(1) == sep )
     str_list.truncate( str_list.length() -1 );
-  writeEntry( pKey, str_list, bPersistent, bGlobal, bNLS );
+  writeEntry( pKey, (const char*)str_list, bPersistent, bGlobal, bNLS );
 }
 
 
@@ -903,7 +920,7 @@ const char* KConfigBase::writeEntry( const char* pKey, int nValue,
 
   aValue.setNum( nValue );
 
-  return writeEntry( pKey, aValue, bPersistent, bGlobal, bNLS );
+  return writeEntry( pKey, (const char*)aValue, bPersistent, bGlobal, bNLS );
 }
 
 
@@ -915,7 +932,7 @@ const char* KConfigBase::writeEntry( const char* pKey, unsigned int nValue,
 
   aValue.setNum( nValue );
 
-  return writeEntry( pKey, aValue, bPersistent, bGlobal, bNLS );
+  return writeEntry( pKey, (const char*)aValue, bPersistent, bGlobal, bNLS );
 }
 
 
@@ -927,7 +944,7 @@ const char* KConfigBase::writeEntry( const char* pKey, long nValue,
 
   aValue.setNum( nValue );
 
-  return writeEntry( pKey, aValue, bPersistent, bGlobal, bNLS );
+  return writeEntry( pKey, (const char*)aValue, bPersistent, bGlobal, bNLS );
 }
 
 
@@ -939,7 +956,7 @@ const char* KConfigBase::writeEntry( const char* pKey, unsigned long nValue,
 
   aValue.setNum( nValue );
 
-  return writeEntry( pKey, aValue, bPersistent, bGlobal, bNLS );
+  return writeEntry( pKey, (const char*)aValue, bPersistent, bGlobal, bNLS );
 }
 
 
@@ -951,7 +968,7 @@ const char* KConfigBase::writeEntry( const char* pKey, double nValue,
 
   aValue.setNum( nValue, 'g', 15 );
 
-  return writeEntry( pKey, aValue, bPersistent, bGlobal, bNLS );
+  return writeEntry( pKey, (const char*)aValue, bPersistent, bGlobal, bNLS );
 }
 
 
@@ -967,7 +984,7 @@ const char* KConfigBase::writeEntry( const char* pKey, bool bValue,
   else 
 	aValue = "false";
 
-  return writeEntry( pKey, aValue, bPersistent, bGlobal, bNLS );
+  return writeEntry( pKey, (const char*)aValue, bPersistent, bGlobal, bNLS );
 }
 
 
@@ -998,7 +1015,7 @@ const char* KConfigBase::writeEntry( const char* pKey, const QFont& rFont,
 				  rFont.styleHint(), (const char *)aCharset,
 				  rFont.weight(), nFontBits );
 
-  return writeEntry( pKey, aValue, bPersistent, bGlobal, bNLS );
+  return writeEntry( pKey, (const char*)aValue, bPersistent, bGlobal, bNLS );
 }
 
 
@@ -1051,7 +1068,7 @@ void KConfigBase::writeEntry( const char* pKey, const QColor& rColor,
   QString aValue;
   aValue.sprintf( "%d,%d,%d", rColor.red(), rColor.green(), rColor.blue() );
 
-  writeEntry( pKey, aValue, bPersistent, bGlobal, bNLS );
+  writeEntry( pKey, (const char*)aValue, bPersistent, bGlobal, bNLS );
 }
 
 

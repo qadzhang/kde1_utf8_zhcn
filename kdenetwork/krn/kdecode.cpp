@@ -53,7 +53,7 @@ void KDecode::showWindow()
     switch(UUInitialize())
     {
     case UURET_NOMEM :
-        fatal("Could not allocate memory for article decoding");
+        tqFatal("Could not allocate memory for article decoding");
         break;
     default:
         break;
@@ -66,10 +66,10 @@ void KDecode::showWindow()
 
     UUSetOption (UUOPT_DESPERATE,1);
 
-    debug ("filecount-->%d",filenames.count());
+    tqDebug("filecount-->%d",filenames.count());
     for (char *iter=filenames.first();iter!=0;iter=filenames.next())
     {
-        debug ("iter");
+        tqDebug("iter");
         UULoadFile(iter,NULL,0);
     }
 
@@ -152,21 +152,21 @@ void KDecode::decode(int line,const char *destName)
                 KDEBUG (KDEBUG_INFO,3300,"decoding ok");
             break;
         case UURET_IOERR:
-            warning ("IO error while decoding");
-            warning(strerror(UUGetOption(UUOPT_ERRNO,NULL,NULL,0)));
+            tqWarning("IO error while decoding");
+            tqWarning(strerror(UUGetOption(UUOPT_ERRNO,NULL,NULL,0)));
             break;
         case UURET_NOMEM:
-            warning ("run out of memory");
+            tqWarning("run out of memory");
             break;
         case UURET_NODATA:
-            warning ("No data in file");
+            tqWarning("No data in file");
             break;
                                                                                                                                             
         case UURET_NOEND:
-            warning ("No end of file found");
+            tqWarning("No end of file found");
             break;
         case UURET_EXISTS:
-            warning ("File already exists");
+            tqWarning("File already exists");
             break;
         }
     }

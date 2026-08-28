@@ -137,7 +137,7 @@ QCheckBox* Options::newLine(const char* aGroupName, const char* aText,
 //-----------------------------------------------------------------------------
 void Options::loadSettings()
 {
-//  debug("Options::loadSettings() called");
+//  tqDebug("Options::loadSettings() called");
 }
 
 
@@ -165,7 +165,7 @@ void Options::applySettings()
 
 void Options::slotThemeChanged(Theme *theme)
 {
-//  debug("Options::slotThemeChanged() called");
+//  tqDebug("Options::slotThemeChanged() called");
   mTheme = theme;
   updateStatus();
 }
@@ -215,7 +215,7 @@ void Options::slotDetails()
 
   if (groupName.isEmpty())
   {
-    warning("Empty group name ?!");
+    tqWarning("Empty group name ?!");
     return;
   }
 

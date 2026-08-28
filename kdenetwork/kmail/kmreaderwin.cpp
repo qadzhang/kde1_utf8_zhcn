@@ -74,7 +74,6 @@ QString KMReaderWin::mAttachDir;
 KMReaderWin::KMReaderWin(QWidget *aParent, const char *aName, int aFlags)
   :KMReaderWinInherited(aParent, aName, aFlags)
 {
-  initMetaObject();
 
   mPicsDir = app->kde_datadir()+"/kmail/pics/";
   mAutoDelete = FALSE;
@@ -112,7 +111,7 @@ void KMReaderWin::makeAttachDir(void)
       ok=false; //failed create new or chmod exisiting kmail<pid>/
   }
 
-  if (!ok) warning(i18n("Failed to create temporary "
+  if (!ok) tqWarning(i18n("Failed to create temporary "
 			"attachment directory '%s': %s"), 
 		   (const char*)mAttachDir, strerror(errno));
 }
@@ -150,7 +149,7 @@ void KMReaderWin::readConfig(void)
   // --- sven's get them font sizes right! start ---
   int i, fntSize=0, diff;
   fntSize = kstrToFont(mBodyFont).pointSize();
-  //debug ("Fontsize: %d", fntSize);
+  //tqDebug("Fontsize: %d", fntSize);
 
   int fontsizes[7];
   mViewer->resetFontSizes();
@@ -160,9 +159,9 @@ void KMReaderWin::readConfig(void)
   {
     for (i=0;i<7; i++)
     {
-      //debug ("Old fontsize #%d: %d", i, fontsizes[i]);
+      //tqDebug("Old fontsize #%d: %d", i, fontsizes[i]);
       fontsizes[i]+=diff;
-      //debug ("New fontsize #%d: %d", i, fontsizes[i]);
+      //tqDebug("New fontsize #%d: %d", i, fontsizes[i]);
     }
   }
   mViewer->setFontSizes(fontsizes);
@@ -231,7 +230,7 @@ void KMReaderWin::initHtmlWidget(void)
 //-----------------------------------------------------------------------------
 void KMReaderWin::setBodyFont(const QString aFont)
 {
-  mBodyFont = aFont.copy();
+  mBodyFont = aFont;
   update();
 }
 
@@ -326,7 +325,7 @@ void KMReaderWin::parseMsg(KMMessage* aMsg)
     type = aMsg->typeStr();
     if (type.find("multipart/alternative") != -1 && numParts == 2)
     {
-      debug("Alternative message, type: %s",type.data());
+      tqDebug("Alternative message, type: %s",type.data());
       //Now: Only two attachments one of them is html
       for (i=0; i<2; i++)                   // count parts...
       {
@@ -354,9 +353,9 @@ void KMReaderWin::parseMsg(KMMessage* aMsg)
       type = msgPart.typeStr();
       subtype = msgPart.subtypeStr();
       contDisp = msgPart.contentDisposition();
-      debug("type: %s",type.data());
-      debug("subtye: %s",subtype.data());
-      debug("contDisp %s",contDisp.data());
+      tqDebug("type: %s",type.data());
+      tqDebug("subtye: %s",subtype.data());
+      tqDebug("contDisp %s",contDisp.data());
       
       if (i <= 0) asIcon = FALSE;
       else switch (mAttachmentStyle)
@@ -509,7 +508,7 @@ void KMReaderWin::writeMsgHeader(void)
     break;
 
   default:
-    warning("Unsupported header style %d", mHeaderStyle);
+    tqWarning("Unsupported header style %d", mHeaderStyle);
   }
   mViewer->write("<BR>\n");
 }
@@ -518,7 +517,7 @@ void KMReaderWin::writeMsgHeader(void)
 //-----------------------------------------------------------------------------
 void KMReaderWin::writeBodyStr(const QString aStr)
 {
-  QString line(256), sig, htmlStr = "";
+  TQString line, sig, htmlStr = "";  /* TQt3 迁移 */
   Kpgp* pgp = Kpgp::getKpgp();
   assert(pgp != NULL);
   assert(!aStr.isNull());
@@ -639,15 +638,15 @@ QString KMReaderWin::quotedHTML(char * pos)
 //-----------------------------------------------------------------------------
 void KMReaderWin::writePartIcon(KMMessagePart* aMsgPart, int aPartNum)
 {
-  QString iconName, href(255), label, comment, tmpStr, contDisp;
+  TQString iconName, href, label, comment, tmpStr, contDisp;  /* TQt3 迁移 */
   QString fileName;
 
   if(aMsgPart == NULL) {
-    debug("writePartIcon: aMsgPart == NULL\n");
+    tqDebug("writePartIcon: aMsgPart == NULL\n");
     return;
   }
 
-  debug("writePartIcon: PartNum: %i",aPartNum);
+  tqDebug("writePartIcon: PartNum: %i",aPartNum);
 
   comment = aMsgPart->contentDescription();
 
@@ -676,7 +675,7 @@ void KMReaderWin::writePartIcon(KMMessagePart* aMsgPart, int aPartNum)
       while ((c = fname.find('"', c)) >= 0)
 	fname.remove(c, 1);
 
-      c = 0;
+      c = 0;  /* TQt3 迁移 */
       while ((c = fname.find('\'', c)) >= 0)
 	fname.remove(c, 1);
     }
@@ -688,7 +687,7 @@ void KMReaderWin::writePartIcon(KMMessagePart* aMsgPart, int aPartNum)
   if (ok)
   {
     href.sprintf("file:%s", fname.data());
-    //debug ("Wrote attachment to %s", href.data());
+    //tqDebug("Wrote attachment to %s", href.data());
   }
   else
 //--- Sven's save attachments to /tmp end ---
@@ -850,7 +849,7 @@ int KMReaderWin::msgPartFromUrl(const char* aUrl)
     url = aUrl;
     int i = url.find('/', s);
     url = url.mid(s, i-s);
-    //debug ("Url num = %s", url.data());
+    //tqDebug("Url num = %s", url.data());
     return atoi(url.data());
   }
   return -1;
@@ -1053,7 +1052,7 @@ void KMReaderWin::slotAtmOpen()
   //tmpName = tempnam(NULL, NULL);
   //if (!tmpName)
   //{
-  //  warning(i18n("Could not create temporary file"));
+  //  tqWarning(i18n("Could not create temporary file"));
   //  return;
   //}
   //fileName = tmpName;
@@ -1062,11 +1061,11 @@ void KMReaderWin::slotAtmOpen()
   //fileName += pname;
 
   // remove quotes from the filename so that the shell does not get confused
-  c = 0;
+  c = 0;  /* TQt3 迁移 */
   while ((c = fileName.find('"', c)) >= 0)
     fileName.remove(c, 1);
 
-  c = 0;
+  c = 0;  /* TQt3 迁移 */
   while ((c = fileName.find('\'', c)) >= 0)
     fileName.remove(c, 1);
   
@@ -1075,7 +1074,7 @@ void KMReaderWin::slotAtmOpen()
   //str = msgPart.bodyDecoded();
   //old_umask = umask(077);
   //if (!kStringToFile(str, fileName, TRUE))
-  //  warning(i18n("Could not save temporary file %s"),
+  //  tqWarning(i18n("Could not save temporary file %s"),
   //	    (const char*)fileName);
   //umask(old_umask);
   //kbp->idle();
@@ -1105,7 +1104,7 @@ void KMReaderWin::slotAtmSave()
   kbp->busy();
   str = msgPart.bodyDecoded();
   if (!kStringToFile(str, fileName, TRUE))
-    warning(i18n("Could not save file"));
+    tqWarning(i18n("Could not save file"));
   kbp->idle();
 }
 
@@ -1116,7 +1115,7 @@ void KMReaderWin::slotAtmPrint()
   KMMessagePart msgPart;
   mMsg->bodyPart(mAtmCurrent, &msgPart);
 
-  warning("KMReaderWin::slotAtmPrint()\nis not implemented");
+  tqWarning("KMReaderWin::slotAtmPrint()\nis not implemented");
 }
 
 

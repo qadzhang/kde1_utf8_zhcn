@@ -56,11 +56,11 @@ DwPopClient::~DwPopClient()
 {
     if (mRecvBuffer) {
         delete [] mRecvBuffer;
-        mRecvBuffer = 0;
+        mRecvBuffer = TQString();
     }
     if (mSendBuffer) {
         delete [] mSendBuffer;
-        mSendBuffer = 0;
+        mSendBuffer = TQString();
     }
 }
 
@@ -398,7 +398,7 @@ void DwPopClient::PGetMultiLineResponse()
         // Check for an error
 
         if (err) {
-            mStatusCode = 0;
+            mStatusCode = TQString();
             return;
         }
 
@@ -489,7 +489,7 @@ int DwPopClient::PGetLine(char** aPtr, int* aLen)
             return -1;
         }
         mNumRecvBufferChars += n;
-        startPos = 0;
+        startPos = TQString();
         pos = mRecvBufferPos;
     }
 }

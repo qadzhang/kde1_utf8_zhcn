@@ -21,9 +21,9 @@
 #define __KTABBAR_H__
 
 #include <kapp.h>
-#include <kwizard.h>
+#include "kwizard.h"
 #include <qtabbar.h>
-#include <kdbtn.h>
+#include "kdbtn.h"
 
 struct KTabBarProtected;
 

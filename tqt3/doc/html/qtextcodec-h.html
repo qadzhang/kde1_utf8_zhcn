@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqtextcodec.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqtextcodec.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqtextcodec.h</h1>
+
+<p>This is the verbatim text of the ntqtextcodec.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqtextcodec.h   3.3.8   edited Jan 11 14:46 $
+**
+** Definition of TQTextCodec class
+**
+** Created : 981015
+**
+** Copyright (C) 1998-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the tools module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQTEXTCODEC_H
+#define TQTEXTCODEC_H
+
+#ifndef QT_H
+#include "ntqstring.h"
+#endif // QT_H
+
+#ifndef TQT_NO_TEXTCODEC
+
+class TQTextCodec;
+class TQIODevice;
+class TQFont;
+
+class TQ_EXPORT TQTextEncoder {
+public:
+    virtual ~TQTextEncoder();
+    virtual TQCString fromUnicode(const TQString&amp; uc, int&amp; lenInOut) = 0;
+};
+
+class TQ_EXPORT TQTextDecoder {
+public:
+    virtual ~TQTextDecoder();
+    virtual TQString toUnicode(const char* chars, int len) = 0;
+};
+
+class TQ_EXPORT TQTextCodec {
+public:
+    virtual ~TQTextCodec();
+
+#ifndef TQT_NO_CODECS
+    static TQTextCodec* loadCharmap(TQIODevice*);
+    static TQTextCodec* loadCharmapFile(TQString filename);
+#endif //TQT_NO_CODECS
+    static TQTextCodec* codecForMib(int mib);
+    static TQTextCodec* codecForName(const char* hint, int accuracy=0);
+    static TQTextCodec* codecForContent(const char* chars, int len);
+    static TQTextCodec* codecForIndex(int i);
+    static TQTextCodec* codecForLocale();
+    static void setCodecForLocale(TQTextCodec *c);
+
+    static TQTextCodec* codecForTr();
+    static void setCodecForTr(TQTextCodec *c);
+    static TQTextCodec* codecForCStrings();
+    static void setCodecForCStrings(TQTextCodec *c);
+
+    static void deleteAllCodecs();
+
+    static const char* locale();
+
+    virtual const char* name() const = 0;
+    virtual const char* mimeName() const;
+    virtual int mibEnum() const = 0;
+
+    virtual TQTextDecoder* makeDecoder() const;
+    virtual TQTextEncoder* makeEncoder() const;
+
+    virtual TQString toUnicode(const char* chars, int len) const;
+    virtual TQCString fromUnicode(const TQString&amp; uc, int&amp; lenInOut) const;
+
+    TQCString fromUnicode(const TQString&amp; uc) const;
+    TQString toUnicode(const TQByteArray&amp;, int len) const;
+    TQString toUnicode(const TQByteArray&amp;) const;
+    TQString toUnicode(const TQCString&amp;, int len) const;
+    TQString toUnicode(const TQCString&amp;) const;
+    TQString toUnicode(const char* chars) const;
+    virtual bool canEncode( TQChar ) const;
+    virtual bool canEncode( const TQString&amp; ) const;
+
+    virtual int heuristicContentMatch(const char* chars, int len) const = 0;
+    virtual int heuristicNameMatch(const char* hint) const;
+
+    virtual TQByteArray fromUnicode(const TQString&amp; uc, int from, int len) const;
+    virtual unsigned short characterFromUnicode(const TQString &amp;str, int pos) const;
+
+protected:
+    TQTextCodec();
+    static int simpleHeuristicNameMatch(const char* name, const char* hint);
+
+private:
+    friend class TQFont;
+    friend class TQFontEngineXLFD;
+    void fromUnicodeInternal( const TQChar *in, unsigned short *out,  int length );
+
+    static TQTextCodec *cftr;
+    static TQTextCodec *cfcs;
+};
+
+inline TQTextCodec* TQTextCodec::codecForTr() { return cftr; }
+inline void TQTextCodec::setCodecForTr(TQTextCodec *c) { cftr = c; }
+inline TQTextCodec* TQTextCodec::codecForCStrings() { return cfcs; }
+inline void TQTextCodec::setCodecForCStrings(TQTextCodec *c) { cfcs = c; }
+
+#endif // TQT_NO_TEXTCODEC
+#endif // TQTEXTCODEC_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

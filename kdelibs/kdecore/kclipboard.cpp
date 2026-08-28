@@ -13,8 +13,9 @@
 #include <string.h>
 
 // Here we depend on Qt not to change their implementation!!!
-extern Time qt_x_clipboardtime;                 // def. in qapp_x11.cpp   
-extern QObject *qt_clipboard;                   // defined in qapp_xyz.cpp
+// TQt3 迁移：qt_clipboard/qt_x_clipboardtime 是 Qt1 内部全局符号，TQt3 改由
+// TQApplication::clipboard() 静态访问器管理——原「顶替 Qt 剪贴板对象位」的
+// 注册逻辑删除（KClipboard 自行管理 X11 selection，两者并存互不顶替）
 
 KClipboard* KClipboard::s_pSelf = 0L;
 
@@ -34,14 +35,6 @@ KClipboard::KClipboard()
     assert( 0 );
   }
   
-  if ( qt_clipboard != 0L )
-  {    
-    std::cerr << "KClipboard::KClipboard There is already a clipboard registered\n" << std::endl;
-    assert( 0 );
-  }
-    
-  qt_clipboard = this;
-    
   m_bOwner = false;
   m_pOwner = 0L;
   m_bEmpty = true;    
@@ -160,7 +153,7 @@ void KClipboard::setOwner()
   Window win = owner->winId();
   Display *dpy = owner->x11Display();
     
-  XSetSelectionOwner( dpy, XA_PRIMARY, win, qt_x_clipboardtime );
+  XSetSelectionOwner( dpy, XA_PRIMARY, win, CurrentTime );
   if ( XGetSelectionOwner( dpy, XA_PRIMARY ) != win )
   {
     std::cerr <<  "KClipboard::setOwner: Cannot set X11 selection owner" << std::endl;
@@ -286,13 +279,16 @@ void KClipboard::fetchData()
   return;
 }
 
-bool KClipboard::event( QEvent *e )
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   （TQt3 底座迁移手术：Qt1 用 Q_CUSTOM_EVENT/Event_Clipboard 把 X11 selection
+//     事件包成 QCustomEvent 投递到本类 event()；TQt3 不再产生该自定义事件——
+//     改由 KApplication::x11EventFilter 直接把原始 XEvent 转发到本方法，
+//     内部逻辑（SelectionNotify/SelectionRequest/SelectionClear 处理）原样保留）
+bool KClipboard::x11Event( XEvent *xevent )
 {
-  if ( e->type() != Event_Clipboard )
-    return false;
-
   Display *display = qt_xdisplay();
-  XEvent *xevent = (XEvent *)Q_CUSTOM_EVENT(e)->data();
 
   switch ( xevent->type )
   {

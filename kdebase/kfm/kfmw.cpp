@@ -9,7 +9,7 @@
 #include <qstrlist.h>
 #include <kapp.h>
 #include <kconfig.h>
-#include <htmlcache.h>
+#include "htmlcache.h"
 
 #include <stdlib.h>
 #include <unistd.h> 
@@ -47,7 +47,7 @@ Kfm::Kfm()
     // We need this in KfmGui::KfmGui(), so moved it here. DF.
     QStrList* list = pIconLoader->getDirList();
     list->clear();
-    QString tmp = kapp->kde_icondir().copy();
+    QString tmp = kapp->kde_icondir();
     list->append( tmp.data() );
     tmp = KApplication::localkdedir();
     tmp += "/share/icons";
@@ -87,7 +87,6 @@ Kfm::Kfm()
 	if ( !flag && KfmGui::rooticons == true )
 	{
 	    QString home = "file:";
-	    home.detach();
 	    home += QDir::homeDirPath().data();
 	    KfmGui *m = new KfmGui( 0L, 0L, home.data() );
 	    m->show();
@@ -264,7 +263,7 @@ void Kfm::setUpDest (QString *url)
   {
     QString path = &(url->data())[5];
     QDir lDir;
-    // debug ("********SPECIAL CASE");
+    // tqDebug( "********SPECIAL CASE");
     if (path.find(kapp->kde_appsdir()) == 0) // kde_appsdir on start of path
     {
       path.remove(0, strlen(kapp->kde_appsdir())); //remove kde_appsdir
@@ -277,7 +276,7 @@ void Kfm::setUpDest (QString *url)
     }
     else
     {
-      debug ("HEEELP");
+      tqDebug( "HEEELP");
       return;
     }
 
@@ -293,7 +292,7 @@ void Kfm::setUpDest (QString *url)
 	if (!lDir.cd((path.left(i)))) // can cd to?
 	{
 	  err = true;                 // no flag it...
-	  // debug ("Can't cd to  %s in %s", path.left(i).data(),
+	  // tqDebug( "Can't cd to  %s in %s", path.left(i).data(),
 	  //	 lDir.absPath().data());
 	  break;                      // and exit while
 	}
@@ -303,31 +302,31 @@ void Kfm::setUpDest (QString *url)
 	{
 	  QFile tmp(kapp->kde_appsdir() +
 		    "/" + path.left(i) + "/.directory");
-	  //debug ("---- looking for: %s", tmp.name());
+	  //tqDebug( "---- looking for: %s", tmp.name());
 	  if (tmp.open( IO_ReadOnly))
 	  {
-	    //debug ("--- opened RO");
+	    //tqDebug( "--- opened RO");
 	    char *buff = new char[tmp.size()+10];
 	    if (buff != 0)
 	    {
 	      if (tmp.readBlock(buff, tmp.size()) != -1)
 	      {
 		size_t tmpsize = tmp.size();
-		//debug ("--- read");
+		//tqDebug( "--- read");
 		tmp.close();
 		tmp.setName(lDir.absPath() + "/.directory");
-		//debug ("---- copying to: %s", tmp.name());
+		//tqDebug( "---- copying to: %s", tmp.name());
 		if (tmp.open(IO_ReadWrite))
 		{
-		  //debug ("--- opened RW");
+		  //tqDebug( "--- opened RW");
 		  if (tmp.writeBlock(buff, tmpsize) != -1)
 		  {
-		    //debug ("--- wrote");
+		    //tqDebug( "--- wrote");
 		    tmp.close();
 		  }
 		  else
 		  {
-		    //debug ("--- removed");
+		    //tqDebug( "--- removed");
 		    tmp.remove();
 		  }
 		}                 // endif can open to write
@@ -348,7 +347,7 @@ void Kfm::setUpDest (QString *url)
     }
 
     // if it fails, kfmman will let us know
-    url->setStr(tryPath.data());
+    (*url) = tryPath.data();  /* TQt3 迁移 */
   }                            // end if special case
   //-------- Sven's write to pseudo global mime/app dirs end ---
 }
@@ -358,7 +357,7 @@ bool Kfm::saveHTMLHistory( const char *_filename )
   FILE *f = fopen( _filename, "w" );
   if ( f == 0L )
   {
-    warning( "Could not write to %s\n",_filename );
+    tqWarning( "Could not write to %s\n",_filename );
     return false;
   }
   

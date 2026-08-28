@@ -771,7 +771,7 @@ void KEdit::keyPressEvent ( QKeyEvent *e){
 	  if (e->key() == Key_Tab){
 	    if (isReadOnly())
 	      return;
-	    QMultiLineEdit::insertChar((char)'\t');
+	    QMultiLineEdit::insert( TQString(QChar('\t')) );
 	  }
 	  else{
 	    QMultiLineEdit::keyPressEvent(e);
@@ -879,7 +879,7 @@ void KEdit::keyPressEvent ( QKeyEvent *e){
     if (e->key() == Key_Tab){
       if (isReadOnly())
 	return;
-      QMultiLineEdit::insertChar((char)'\t');
+      QMultiLineEdit::insert( TQString(QChar('\t')) );
       emit CursorPositionChanged();
       return;
     }
@@ -918,7 +918,7 @@ void KEdit::keyPressEvent ( QKeyEvent *e){
   if (e->key() == Key_Tab){
     if (isReadOnly())
       return;
-    QMultiLineEdit::insertChar((char)'\t');
+    QMultiLineEdit::insert( TQString(QChar('\t')) );
     emit CursorPositionChanged();
     return;
   }
@@ -1021,7 +1021,7 @@ bool KEdit::format(QStrList& par){
 	  temp1 = temp1.mid(prefixString(temp1).length(),temp1.length());
 	}
 	temp2 = pstring.mid(last_ok +1,pstring.length()) + (QString) " " + temp1;
-	temp1 = temp2.copy();
+	temp1 = temp2;
 	if(autoIndentMode)
 	  temp1 = prefixString(pstring) + temp1;
 	par.remove(i+1);
@@ -1054,7 +1054,7 @@ bool KEdit::format(QStrList& par){
 	  temp1 = temp1.mid(prefixString(temp1).length(),temp1.length());
 	}
 	temp2 = pstring.mid(space_pos +1,pstring.length()) + (QString) " " + temp1;
-	temp1 = temp2.copy();
+	temp1 = temp2;
 	if(autoIndentMode)
 	  temp1 = prefixString(pstring) + temp1;
 	par.remove(i+1);
@@ -1200,7 +1200,7 @@ bool KEdit::format2(QStrList& par, int& upperbound){
 	  temp1 = temp1.mid(prefixString(temp1).length(),temp1.length());
 	}
 	temp2 = pstring.mid(last_ok +1,pstring.length()) + (QString) " " + temp1;
-	temp1 = temp2.copy();
+	temp1 = temp2;
 	if(autoIndentMode)
 	  temp1 = prefixString(pstring) + temp1;
 	par.remove(i+1);
@@ -1234,7 +1234,7 @@ bool KEdit::format2(QStrList& par, int& upperbound){
 	  temp1 = temp1.mid(prefixString(temp1).length(),temp1.length());
 	}
 	temp2 = pstring.mid(space_pos +1,pstring.length()) + (QString) " " + temp1;
-	temp1 = temp2.copy();
+	temp1 = temp2;
 	if(autoIndentMode)
 	  temp1 = prefixString(pstring) + temp1;
 	par.remove(i+1);
@@ -1487,7 +1487,7 @@ QString KEdit::prefixString(QString string){
 
   //  printf(":%s\n",string.data());
 
-  int size = string.size();
+  int size = string.length();  /* TQt3 迁移 */
   char* buffer = (char*) malloc(size + 1);
   strncpy (buffer, string.data(),size - 1);
   buffer[size] = '\0';
@@ -1511,11 +1511,11 @@ QString KEdit::prefixString(QString string){
 
 void KEdit::mousePressEvent (QMouseEvent* e){
   if ( e->button() == ScrollUpButton ) {
-      verticalScrollBar()->setValue(verticalScrollBar()->value() - cellHeight());
+      verticalScrollBar()->setValue(verticalScrollBar()->value() - fontMetrics().lineSpacing()  /* TQt3 迁移 */);
       return;
   }
   if ( e->button() == ScrollDownButton ) {
-      verticalScrollBar()->setValue(verticalScrollBar()->value() + cellHeight());
+      verticalScrollBar()->setValue(verticalScrollBar()->value() + fontMetrics().lineSpacing()  /* TQt3 迁移 */);
       return;
   }
 
@@ -1621,11 +1621,9 @@ void KEdit::saveasfile(char* name){
 
   QString filenamebackup;
   filenamebackup = filename;
-  filenamebackup.detach();
   filename = name;
   saveFile();
   filename = filenamebackup;
-  filename.detach();
 
 }
 
@@ -1683,7 +1681,6 @@ try_again:
   tmpfilename = filename;
 
   filename = tmpfilename2;
-  filename.detach();
 
   // we need this for saveFile();
   modified = TRUE;
@@ -1746,7 +1743,6 @@ int KEdit::doSave( const char *_name ){
     int result = saveFile();
 
     filename = temp;
-    filename.detach();
     return result;
 }
 

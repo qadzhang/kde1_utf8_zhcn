@@ -36,7 +36,7 @@ QImage kFSDither::dither( const QImage &iImage )
 {
 	if ( iImage.depth() <= 8 )
 	{
-		warning( "Only dithering of 24bpp images supported" );
+		tqWarning( "Only dithering of 24bpp images supported" );
 		return QImage();
 	}
 

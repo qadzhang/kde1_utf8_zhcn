@@ -1,0 +1,441 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqvariant.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqvariant.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqvariant.h</h1>
+
+<p>This is the verbatim text of the ntqvariant.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqvariant.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQVariant class
+**
+** Created : 990414
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQVARIANT_H
+#define TQVARIANT_H
+
+#ifndef QT_H
+#include "ntqstring.h"
+#endif // QT_H
+
+#ifndef TQT_NO_VARIANT
+class TQString;
+class TQCString;
+class TQFont;
+class TQPixmap;
+class TQBrush;
+class TQRect;
+class TQPoint;
+class TQImage;
+class TQSize;
+class TQColor;
+class TQPalette;
+class TQColorGroup;
+class TQIconSet;
+class TQDataStream;
+class TQPointArray;
+class TQRegion;
+class TQBitmap;
+class TQCursor;
+class TQStringList;
+class TQSizePolicy;
+class TQDate;
+class TQTime;
+class TQDateTime;
+class TQBitArray;
+class TQKeySequence;
+class TQPen;
+// Some headers rejected after TQVariant declaration for GCC 2.7.* compatibility
+class TQVariant;
+#ifndef TQT_NO_TEMPLATE_VARIANT
+template &lt;class T&gt; class TQValueList;
+template &lt;class T&gt; class TQValueListConstIterator;
+template &lt;class T&gt; class TQValueListNode;
+template &lt;class Key, class T&gt; class TQMap;
+template &lt;class Key, class T&gt; class TQMapConstIterator;
+#endif
+
+class TQ_EXPORT TQVariant
+{
+public:
+    enum Type {
+	Invalid,
+	Map,
+	List,
+	String,
+	StringList,
+	Font,
+	Pixmap,
+	Brush,
+	Rect,
+	Size,
+	Color,
+	Palette,
+	ColorGroup,
+	IconSet,
+	Point,
+	Image,
+	Int,
+	UInt,
+	Bool,
+	Double,
+	CString,
+	PointArray,
+	Region,
+	Bitmap,
+	Cursor,
+	SizePolicy,
+	Date,
+	Time,
+	DateTime,
+	ByteArray,
+	BitArray,
+	KeySequence,
+	Pen,
+	LongLong,
+	ULongLong
+    };
+
+    TQVariant();
+    ~TQVariant();
+    TQVariant( const TQVariant&amp; );
+#ifndef TQT_NO_DATASTREAM
+    TQVariant( TQDataStream&amp; s );
+#endif
+    TQVariant( const TQString&amp; );
+    TQVariant( const TQCString&amp; );
+    TQVariant( const char* );
+#ifndef TQT_NO_STRINGLIST
+    TQVariant( const TQStringList&amp; );
+#endif
+    TQVariant( const TQFont&amp; );
+    TQVariant( const TQPixmap&amp; );
+    TQVariant( const TQImage&amp; );
+    TQVariant( const TQBrush&amp; );
+    TQVariant( const TQPoint&amp; );
+    TQVariant( const TQRect&amp; );
+    TQVariant( const TQSize&amp; );
+    TQVariant( const TQColor&amp; );
+    TQVariant( const TQPalette&amp; );
+    TQVariant( const TQColorGroup&amp; );
+    TQVariant( const TQIconSet&amp; );
+    TQVariant( const TQPointArray&amp; );
+    TQVariant( const TQRegion&amp; );
+    TQVariant( const TQBitmap&amp; );
+    TQVariant( const TQCursor&amp; );
+    TQVariant( const TQDate&amp; );
+    TQVariant( const TQTime&amp; );
+    TQVariant( const TQDateTime&amp; );
+    TQVariant( const TQByteArray&amp; );
+    TQVariant( const TQBitArray&amp; );
+#ifndef TQT_NO_ACCEL
+    TQVariant( const TQKeySequence&amp; );
+#endif
+    TQVariant( const TQPen&amp; );
+#ifndef TQT_NO_TEMPLATE_VARIANT
+    TQVariant( const TQValueList&lt;TQVariant&gt;&amp; );
+    TQVariant( const TQMap&lt;TQString,TQVariant&gt;&amp; );
+#endif
+    TQVariant( int );
+    TQVariant( uint );
+    TQVariant( TQ_LLONG );
+    TQVariant( TQ_ULLONG );
+    // ### Problems on some compilers ?
+    TQVariant( bool, int );
+    TQVariant( double );
+    TQVariant( TQSizePolicy );
+
+    TQVariant&amp; operator= ( const TQVariant&amp; );
+    bool operator==( const TQVariant&amp; ) const;
+    bool operator!=( const TQVariant&amp; ) const;
+
+    Type type() const;
+    const char* typeName() const;
+
+    bool canCast( Type ) const;
+    bool cast( Type );
+
+    bool isValid() const;
+    bool isNull() const;
+
+    void clear();
+
+    const TQString toString() const;
+    const TQCString toCString() const;
+#ifndef TQT_NO_STRINGLIST
+    const TQStringList toStringList() const;
+#endif
+    const TQFont toFont() const;
+    const TQPixmap toPixmap() const;
+    const TQImage toImage() const;
+    const TQBrush toBrush() const;
+    const TQPoint toPoint() const;
+    const TQRect toRect() const;
+    const TQSize toSize() const;
+    const TQColor toColor() const;
+    const TQPalette toPalette() const;
+    const TQColorGroup toColorGroup() const;
+    const TQIconSet toIconSet() const;
+    const TQPointArray toPointArray() const;
+    const TQBitmap toBitmap() const;
+    const TQRegion toRegion() const;
+    const TQCursor toCursor() const;
+    const TQDate toDate() const;
+    const TQTime toTime() const;
+    const TQDateTime toDateTime() const;
+    const TQByteArray toByteArray() const;
+    const TQBitArray toBitArray() const;
+#ifndef TQT_NO_ACCEL
+    const TQKeySequence toKeySequence() const;
+#endif
+    const TQPen toPen() const;
+    int toInt( bool * ok=0 ) const;
+    uint toUInt( bool * ok=0 ) const;
+    TQ_LLONG toLongLong( bool * ok=0 ) const;
+    TQ_ULLONG toULongLong( bool * ok=0 ) const;
+    bool toBool() const;
+    double toDouble( bool * ok=0 ) const;
+#ifndef TQT_NO_TEMPLATE_VARIANT
+    const TQValueList&lt;TQVariant&gt; toList() const;
+    const TQMap&lt;TQString,TQVariant&gt; toMap() const;
+#endif
+    TQSizePolicy toSizePolicy() const;
+
+#ifndef TQT_NO_TEMPLATE_VARIANT
+    TQValueListConstIterator&lt;TQString&gt; stringListBegin() const;
+    TQValueListConstIterator&lt;TQString&gt; stringListEnd() const;
+    TQValueListConstIterator&lt;TQVariant&gt; listBegin() const;
+    TQValueListConstIterator&lt;TQVariant&gt; listEnd() const;
+    TQMapConstIterator&lt;TQString,TQVariant&gt; mapBegin() const;
+    TQMapConstIterator&lt;TQString,TQVariant&gt; mapEnd() const;
+    TQMapConstIterator&lt;TQString,TQVariant&gt; mapFind( const TQString&amp; ) const;
+#endif
+    TQString&amp; asString();
+    TQCString&amp; asCString();
+#ifndef TQT_NO_STRINGLIST
+    TQStringList&amp; asStringList();
+#endif
+    TQFont&amp; asFont();
+    TQPixmap&amp; asPixmap();
+    TQImage&amp; asImage();
+    TQBrush&amp; asBrush();
+    TQPoint&amp; asPoint();
+    TQRect&amp; asRect();
+    TQSize&amp; asSize();
+    TQColor&amp; asColor();
+    TQPalette&amp; asPalette();
+    TQColorGroup&amp; asColorGroup();
+    TQIconSet&amp; asIconSet();
+    TQPointArray&amp; asPointArray();
+    TQBitmap&amp; asBitmap();
+    TQRegion&amp; asRegion();
+    TQCursor&amp; asCursor();
+    TQDate&amp; asDate();
+    TQTime&amp; asTime();
+    TQDateTime&amp; asDateTime();
+    TQByteArray&amp; asByteArray();
+    TQBitArray&amp; asBitArray();
+#ifndef TQT_NO_ACCEL
+    TQKeySequence&amp; asKeySequence();
+#endif
+    TQPen&amp; asPen();
+    int&amp; asInt();
+    uint&amp; asUInt();
+    TQ_LLONG&amp; asLongLong();
+    TQ_ULLONG&amp; asULongLong();
+    bool&amp; asBool();
+    double&amp; asDouble();
+#ifndef TQT_NO_TEMPLATE_VARIANT
+    TQValueList&lt;TQVariant&gt;&amp; asList();
+    TQMap&lt;TQString,TQVariant&gt;&amp; asMap();
+#endif
+    TQSizePolicy&amp; asSizePolicy();
+
+#ifndef TQT_NO_DATASTREAM
+    void load( TQDataStream&amp; );
+    void save( TQDataStream&amp; ) const;
+#endif
+    static const char* typeToName( Type typ );
+    static Type nameToType( const char* name );
+
+private:
+    void detach();
+
+    class Private : public TQShared
+    {
+    public:
+	Private();
+	Private( Private* );
+	~Private();
+
+	void clear();
+
+	Type typ;
+	union
+	{
+	    uint u;
+	    int i;
+	    TQ_LLONG ll;
+	    TQ_ULLONG ull;
+	    bool b;
+	    double d;
+	    void *ptr;
+	} value;
+	uint is_null : 1; // ## 4.0 merge with typ
+    };
+
+    Private* d;
+
+public:
+    void* rawAccess( void* ptr = 0, Type typ = Invalid, bool deepCopy = false );
+};
+
+// down here for GCC 2.7.* compatibility
+#ifndef QT_H
+#include "ntqvaluelist.h"
+#include "ntqstringlist.h"
+#include "ntqmap.h"
+#endif // QT_H
+
+inline TQVariant::Type TQVariant::type() const
+{
+    return d-&gt;typ;
+}
+
+inline bool TQVariant::isValid() const
+{
+    return (d-&gt;typ != Invalid);
+}
+
+#ifndef TQT_NO_TEMPLATE_VARIANT
+inline TQValueListConstIterator&lt;TQString&gt; TQVariant::stringListBegin() const
+{
+    if ( d-&gt;typ != StringList )
+	return TQValueListConstIterator&lt;TQString&gt;();
+    return ((const TQStringList*)d-&gt;value.ptr)-&gt;begin();
+}
+
+inline TQValueListConstIterator&lt;TQString&gt; TQVariant::stringListEnd() const
+{
+    if ( d-&gt;typ != StringList )
+	return TQValueListConstIterator&lt;TQString&gt;();
+    return ((const TQStringList*)d-&gt;value.ptr)-&gt;end();
+}
+
+inline TQValueListConstIterator&lt;TQVariant&gt; TQVariant::listBegin() const
+{
+    if ( d-&gt;typ != List )
+	return TQValueListConstIterator&lt;TQVariant&gt;();
+    return ((const TQValueList&lt;TQVariant&gt;*)d-&gt;value.ptr)-&gt;begin();
+}
+
+inline TQValueListConstIterator&lt;TQVariant&gt; TQVariant::listEnd() const
+{
+    if ( d-&gt;typ != List )
+	return TQValueListConstIterator&lt;TQVariant&gt;();
+    return ((const TQValueList&lt;TQVariant&gt;*)d-&gt;value.ptr)-&gt;end();
+}
+
+inline TQMapConstIterator&lt;TQString,TQVariant&gt; TQVariant::mapBegin() const
+{
+    if ( d-&gt;typ != Map )
+	return TQMapConstIterator&lt;TQString,TQVariant&gt;();
+    return ((const TQMap&lt;TQString,TQVariant&gt;*)d-&gt;value.ptr)-&gt;begin();
+}
+
+inline TQMapConstIterator&lt;TQString,TQVariant&gt; TQVariant::mapEnd() const
+{
+    if ( d-&gt;typ != Map )
+	return TQMapConstIterator&lt;TQString,TQVariant&gt;();
+    return ((const TQMap&lt;TQString,TQVariant&gt;*)d-&gt;value.ptr)-&gt;end();
+}
+
+inline TQMapConstIterator&lt;TQString,TQVariant&gt; TQVariant::mapFind( const TQString&amp; key ) const
+{
+    if ( d-&gt;typ != Map )
+	return TQMapConstIterator&lt;TQString,TQVariant&gt;();
+    return ((const TQMap&lt;TQString,TQVariant&gt;*)d-&gt;value.ptr)-&gt;find( key );
+}
+#endif
+
+#ifndef TQT_NO_DATASTREAM
+TQ_EXPORT TQDataStream&amp; operator&gt;&gt; ( TQDataStream&amp; s, TQVariant&amp; p );
+TQ_EXPORT TQDataStream&amp; operator&lt;&lt; ( TQDataStream&amp; s, const TQVariant&amp; p );
+TQ_EXPORT TQDataStream&amp; operator&gt;&gt; ( TQDataStream&amp; s, TQVariant::Type&amp; p );
+TQ_EXPORT TQDataStream&amp; operator&lt;&lt; ( TQDataStream&amp; s, const TQVariant::Type p );
+#endif
+
+#endif //TQT_NO_VARIANT
+#endif // TQVARIANT_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

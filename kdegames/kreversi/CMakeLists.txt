@@ -8,14 +8,14 @@ set(Kreversi_SRCS
 )
 
 set(Kreversi_MOC
-app.moc board.moc about.moc
+app.h board.h about.h
     )
 
-QT1_WRAP_MOC(MOC_FILES ${Kreversi_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${Kreversi_MOC})
 
 add_executable(kreversi1 ${Kreversi_SRCS} ${MOC_FILES} ${QwSpriteField_SOURCES})
 target_link_libraries(kreversi1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

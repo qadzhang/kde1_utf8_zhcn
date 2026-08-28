@@ -149,7 +149,6 @@ cManSection::cManSection(const char *theName)
 			sdesc = klocale->translate("System Administration");
 		else if ( strncmp( theName, "n", 1 ) == 0 )
 			sdesc = klocale->translate("New");
-		else
 			sdesc = "";
 
 		config->writeEntry( ename, sdesc );
@@ -233,7 +232,7 @@ void cManSection::ReadSection()
 		dir = opendir(searchPath[i]);
 
 		if (dir == NULL)
-		  warning("%s: %s",searchPath[i], strerror(errno));
+		  tqWarning("%s: %s",searchPath[i], strerror(errno));
 
 		else {
 		while ((dirEntry = readdir(dir))) // check for matching cat and man dir
@@ -339,7 +338,6 @@ void cManSection::AddPage(const char *pageName)
 				curr = curr->next();
 			else if ( result == 0)
 				return;
-			else
 			{
 				page = new cPage( pageName );
 				tmp = curr->next();

@@ -1,0 +1,852 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/tools/qlocale.cpp:1921 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQLocale Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQLocale Class Reference</h1>
+
+<p>The TQLocale class converts between numbers and their
+string representations in various languages.
+<a href="#details">More...</a>
+<p>Almost all the functions in this class are <a href="threads.html#reentrant">reentrant</a> when TQt is built with thread support. The exception is <a href="#setDefault"><b>setDefault</b></a>().
+</p><p><tt>#include &lt;<a href="qlocale-h.html">ntqlocale.h</a>&gt;</tt>
+<p><a href="qlocale-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn>enum <a href="#Language-enum"><b>Language</b></a> { C = 1, Abkhazian = 2, Afan = 3, Afar = 4, Afrikaans = 5, Albanian = 6, Amharic = 7, Arabic = 8, Armenian = 9, Assamese = 10, Aymara = 11, Azerbaijani = 12, Bashkir = 13, Basque = 14, Bengali = 15, Bhutani = 16, Bihari = 17, Bislama = 18, Breton = 19, Bulgarian = 20, Burmese = 21, Byelorussian = 22, Cambodian = 23, Catalan = 24, Chinese = 25, Corsican = 26, Croatian = 27, Czech = 28, Danish = 29, Dutch = 30, English = 31, Esperanto = 32, Estonian = 33, Faroese = 34, FijiLanguage = 35, Finnish = 36, French = 37, Frisian = 38, Gaelic = 39, Galician = 40, Georgian = 41, German = 42, Greek = 43, Greenlandic = 44, Guarani = 45, Gujarati = 46, Hausa = 47, Hebrew = 48, Hindi = 49, Hungarian = 50, Icelandic = 51, Indonesian = 52, Interlingua = 53, Interlingue = 54, Inuktitut = 55, Inupiak = 56, Irish = 57, Italian = 58, Japanese = 59, Javanese = 60, Kannada = 61, Kashmiri = 62, Kazakh = 63, Kinyarwanda = 64, Kirghiz = 65, Korean = 66, Kurdish = 67, Kurundi = 68, Laothian = 69, Latin = 70, Latvian = 71, Lingala = 72, Lithuanian = 73, Macedonian = 74, Malagasy = 75, Malay = 76, Malayalam = 77, Maltese = 78, Maori = 79, Marathi = 80, Moldavian = 81, Mongolian = 82, NauruLanguage = 83, Nepali = 84, Norwegian = 85, Occitan = 86, Oriya = 87, Pashto = 88, Persian = 89, Polish = 90, Portuguese = 91, Punjabi = 92, Quechua = 93, RhaetoRomance = 94, Romanian = 95, Russian = 96, Samoan = 97, Sangho = 98, Sanskrit = 99, Serbian = 100, SerboCroatian = 101, Sesotho = 102, Setswana = 103, Shona = 104, Sindhi = 105, Singhalese = 106, Siswati = 107, Slovak = 108, Slovenian = 109, Somali = 110, Spanish = 111, Sundanese = 112, Swahili = 113, Swedish = 114, Tagalog = 115, Tajik = 116, Tamil = 117, Tatar = 118, Telugu = 119, Thai = 120, Tibetan = 121, Tigrinya = 122, TongaLanguage = 123, Tsonga = 124, Turkish = 125, Turkmen = 126, Twi = 127, Uigur = 128, Ukrainian = 129, Urdu = 130, Uzbek = 131, Vietnamese = 132, Volapuk = 133, Welsh = 134, Wolof = 135, Xhosa = 136, Yiddish = 137, Yoruba = 138, Zhuang = 139, Zulu = 140, LastLanguage = Zulu }</li>
+<li class=fn>enum <a href="#Country-enum"><b>Country</b></a> { AnyCountry = 0, Afghanistan = 1, Albania = 2, Algeria = 3, AmericanSamoa = 4, Andorra = 5, Angola = 6, Anguilla = 7, Antarctica = 8, AntiguaAndBarbuda = 9, Argentina = 10, Armenia = 11, Aruba = 12, Australia = 13, Austria = 14, Azerbaijan = 15, Bahamas = 16, Bahrain = 17, Bangladesh = 18, Barbados = 19, Belarus = 20, Belgium = 21, Belize = 22, Benin = 23, Bermuda = 24, Bhutan = 25, Bolivia = 26, BosniaAndHerzegowina = 27, Botswana = 28, BouvetIsland = 29, Brazil = 30, BritishIndianOceanTerritory = 31, BruneiDarussalam = 32, Bulgaria = 33, BurkinaFaso = 34, Burundi = 35, Cambodia = 36, Cameroon = 37, Canada = 38, CapeVerde = 39, CaymanIslands = 40, CentralAfricanRepublic = 41, Chad = 42, Chile = 43, China = 44, ChristmasIsland = 45, CocosIslands = 46, Colombia = 47, Comoros = 48, DemocraticRepublicOfCongo = 49, PeoplesRepublicOfCongo = 50, CookIslands = 51, CostaRica = 52, IvoryCoast = 53, Croatia = 54, Cuba = 55, Cyprus = 56, CzechRepublic = 57, Denmark = 58, Djibouti = 59, Dominica = 60, DominicanRepublic = 61, EastTimor = 62, Ecuador = 63, Egypt = 64, ElSalvador = 65, EquatorialGuinea = 66, Eritrea = 67, Estonia = 68, Ethiopia = 69, FalklandIslands = 70, FaroeIslands = 71, FijiCountry = 72, Finland = 73, France = 74, MetropolitanFrance = 75, FrenchGuiana = 76, FrenchPolynesia = 77, FrenchSouthernTerritories = 78, Gabon = 79, Gambia = 80, Georgia = 81, Germany = 82, Ghana = 83, Gibraltar = 84, Greece = 85, Greenland = 86, Grenada = 87, Guadeloupe = 88, Guam = 89, Guatemala = 90, Guinea = 91, GuineaBissau = 92, Guyana = 93, Haiti = 94, HeardAndMcDonaldIslands = 95, Honduras = 96, HongKong = 97, Hungary = 98, Iceland = 99, India = 100, Indonesia = 101, Iran = 102, Iraq = 103, Ireland = 104, Israel = 105, Italy = 106, Jamaica = 107, Japan = 108, Jordan = 109, Kazakhstan = 110, Kenya = 111, Kiribati = 112, DemocraticRepublicOfKorea = 113, RepublicOfKorea = 114, Kuwait = 115, Kyrgyzstan = 116, Lao = 117, Latvia = 118, Lebanon = 119, Lesotho = 120, Liberia = 121, LibyanArabJamahiriya = 122, Liechtenstein = 123, Lithuania = 124, Luxembourg = 125, Macau = 126, Macedonia = 127, Madagascar = 128, Malawi = 129, Malaysia = 130, Maldives = 131, Mali = 132, Malta = 133, MarshallIslands = 134, Martinique = 135, Mauritania = 136, Mauritius = 137, Mayotte = 138, Mexico = 139, Micronesia = 140, Moldova = 141, Monaco = 142, Mongolia = 143, Montserrat = 144, Morocco = 145, Mozambique = 146, Myanmar = 147, Namibia = 148, NauruCountry = 149, Nepal = 150, Netherlands = 151, NetherlandsAntilles = 152, NewCaledonia = 153, NewZealand = 154, Nicaragua = 155, Niger = 156, Nigeria = 157, Niue = 158, NorfolkIsland = 159, NorthernMarianaIslands = 160, Norway = 161, Oman = 162, Pakistan = 163, Palau = 164, PalestinianTerritory = 165, Panama = 166, PapuaNewGuinea = 167, Paraguay = 168, Peru = 169, Philippines = 170, Pitcairn = 171, Poland = 172, Portugal = 173, PuertoRico = 174, Qatar = 175, Reunion = 176, Romania = 177, RussianFederation = 178, Rwanda = 179, SaintKittsAndNevis = 180, StLucia = 181, StVincentAndTheGrenadines = 182, Samoa = 183, SanMarino = 184, SaoTomeAndPrincipe = 185, SaudiArabia = 186, Senegal = 187, Seychelles = 188, SierraLeone = 189, Singapore = 190, Slovakia = 191, Slovenia = 192, SolomonIslands = 193, Somalia = 194, SouthAfrica = 195, SouthGeorgiaAndTheSouthSandwichIslands = 196, Spain = 197, SriLanka = 198, StHelena = 199, StPierreAndMiquelon = 200, Sudan = 201, Suriname = 202, SvalbardAndJanMayenIslands = 203, Swaziland = 204, Sweden = 205, Switzerland = 206, SyrianArabRepublic = 207, Taiwan = 208, Tajikistan = 209, Tanzania = 210, Thailand = 211, Togo = 212, Tokelau = 213, TongaCountry = 214, TrinidadAndTobago = 215, Tunisia = 216, Turkey = 217, Turkmenistan = 218, TurksAndCaicosIslands = 219, Tuvalu = 220, Uganda = 221, Ukraine = 222, UnitedArabEmirates = 223, UnitedKingdom = 224, UnitedStates = 225, UnitedStatesMinorOutlyingIslands = 226, Uruguay = 227, Uzbekistan = 228, Vanuatu = 229, VaticanCityState = 230, Venezuela = 231, VietNam = 232, BritishVirginIslands = 233, USVirginIslands = 234, WallisAndFutunaIslands = 235, WesternSahara = 236, Yemen = 237, Yugoslavia = 238, Zambia = 239, Zimbabwe = 240, LastCountry = Zimbabwe }</li>
+<li class=fn><a href="#TQLocale"><b>TQLocale</b></a> ()</li>
+<li class=fn><a href="#TQLocale-2"><b>TQLocale</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;name )</li>
+<li class=fn><a href="#TQLocale-3"><b>TQLocale</b></a> ( Language&nbsp;language, Country&nbsp;country = AnyCountry )</li>
+<li class=fn><a href="#TQLocale-4"><b>TQLocale</b></a> ( const&nbsp;TQLocale&nbsp;&amp;&nbsp;other )</li>
+<li class=fn>TQLocale &amp; <a href="#operator-eq"><b>operator=</b></a> ( const&nbsp;TQLocale&nbsp;&amp;&nbsp;other )</li>
+<li class=fn>Language <a href="#language"><b>language</b></a> () const</li>
+<li class=fn>Country <a href="#country"><b>country</b></a> () const</li>
+<li class=fn>TQString <a href="#name"><b>name</b></a> () const</li>
+<li class=fn>short <a href="#toShort"><b>toShort</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>ushort <a href="#toUShort"><b>toUShort</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>int <a href="#toInt"><b>toInt</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>uint <a href="#toUInt"><b>toUInt</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>TQ_LONG <a href="#toLong"><b>toLong</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>TQ_ULONG <a href="#toULong"><b>toULong</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>TQ_LLONG <a href="#toLongLong"><b>toLongLong</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>TQ_ULLONG <a href="#toULongLong"><b>toULongLong</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>float <a href="#toFloat"><b>toFloat</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>double <a href="#toDouble"><b>toDouble</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const</li>
+<li class=fn>TQString <a href="#toString-2"><b>toString</b></a> ( short&nbsp;i ) const</li>
+<li class=fn>TQString <a href="#toString-3"><b>toString</b></a> ( ushort&nbsp;i ) const</li>
+<li class=fn>TQString <a href="#toString-4"><b>toString</b></a> ( int&nbsp;i ) const</li>
+<li class=fn>TQString <a href="#toString-5"><b>toString</b></a> ( uint&nbsp;i ) const</li>
+<li class=fn>TQString <a href="#toString-6"><b>toString</b></a> ( TQ_LONG&nbsp;i ) const</li>
+<li class=fn>TQString <a href="#toString-7"><b>toString</b></a> ( TQ_ULONG&nbsp;i ) const</li>
+<li class=fn>TQString <a href="#toString"><b>toString</b></a> ( TQ_LLONG&nbsp;i ) const</li>
+<li class=fn>TQString <a href="#toString-8"><b>toString</b></a> ( TQ_ULLONG&nbsp;i ) const</li>
+<li class=fn>TQString <a href="#toString-9"><b>toString</b></a> ( float&nbsp;i, char&nbsp;f = 'g', int&nbsp;prec = 6 ) const</li>
+<li class=fn>TQString <a href="#toString-a"><b>toString</b></a> ( double&nbsp;i, char&nbsp;f = 'g', int&nbsp;prec = 6 ) const</li>
+</ul>
+<h2>Static Public Members</h2>
+<ul>
+<li class=fn>TQString <a href="#languageToString"><b>languageToString</b></a> ( Language&nbsp;language )</li>
+<li class=fn>TQString <a href="#countryToString"><b>countryToString</b></a> ( Country&nbsp;country )</li>
+<li class=fn>void <a href="#setDefault"><b>setDefault</b></a> ( const&nbsp;TQLocale&nbsp;&amp;&nbsp;locale )</li>
+<li class=fn>TQLocale <a href="#c"><b>c</b></a> ()</li>
+<li class=fn>TQLocale <a href="#system"><b>system</b></a> ()</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQLocale class converts between numbers and their
+string representations in various languages.
+<p> 
+
+<p> It is initialized with a country/language pair in its constructor
+and offers number-to-string and string-to-number conversion
+functions simmilar to those in <a href="ntqstring.html">TQString</a>.
+<p> <pre>
+    TQLocale egyptian(TQLocale::<a href="#Language-enum">Arabic</a>, TQLocale::<a href="#Country-enum">Egypt</a>);
+    <a href="ntqstring.html">TQString</a> s1 = egyptian.<a href="#toString">toString</a>(1.571429E+07, 'e');
+    <a href="ntqstring.html">TQString</a> s2 = egyptian.<a href="#toString">toString</a>(10);
+
+    double d = egyptian.<a href="#toDouble">toDouble</a>(s1);
+    int s2 = egyptian.<a href="#toInt">toInt</a>(s2);
+    </pre>
+ 
+<p> TQLocale supports the concept of a default locale, which is
+determined from the system's locale settings at application
+startup. The default locale can be changed by calling the
+static member <a href="#setDefault">setDefault</a>(). The default locale has the
+following effects:
+<p> <ul>
+<li> If a TQLocale object is constructed with the default constructor,
+it will use the default locale's settings.
+<li> <a href="ntqstring.html#toDouble">TQString::toDouble</a>() interprets the string according to the default
+locale. If this fails, it falls back on the "C" locale.
+<li> <a href="ntqstring.html#arg">TQString::arg</a>() uses the default locale to format a number when
+its position specifier in the format string contains an 'L',
+e.g. "%L1".
+</ul>
+<p> <pre>
+    TQLocale::<a href="#setDefault">setDefault</a>(<a href="#TQLocale">TQLocale</a>(TQLocale::<a href="#Language-enum">Hebrew</a>, TQLocale::<a href="#Country-enum">Israel</a>));
+    TQLocale hebrew; // Constructs a default TQLocale
+    <a href="ntqstring.html">TQString</a> s1 = hebrew.<a href="#toString">toString</a>(15714.3, 'e');
+
+    bool ok;
+    double d;
+
+    TQLocale::<a href="#setDefault">setDefault</a>(TQLocale::<a href="#Language-enum">C</a>);
+    d = TQString( "1234,56" ).toDouble(&amp;ok); // ok == false
+    d = TQString( "1234.56" ).toDouble(&amp;ok); // ok == true, d == 1234.56
+
+    TQLocale::<a href="#setDefault">setDefault</a>(TQLocale::<a href="#Language-enum">German</a>);
+    d = TQString( "1234,56" ).toDouble(&amp;ok); // ok == true, d == 1234.56
+    d = TQString( "1234.56" ).toDouble(&amp;ok); // ok == true, d == 1234.56
+
+    TQLocale::<a href="#setDefault">setDefault</a>(<a href="#TQLocale">TQLocale</a>(TQLocale::<a href="#Language-enum">English</a>, TQLocale::<a href="#Country-enum">UnitedStates</a>));
+    str = TQString( "%1 %L2 %L3" )
+            .arg( 12345 )
+            .arg( 12345 )
+            .arg( 12345, 0, 16 );
+    // str == "12345 12,345 3039"
+    </pre>
+ 
+<p> When a language/country pair is specified in the constructor, one
+of three things can happen:
+<p> <ul>
+<li> If the language/country pair is found in the database, it is used.
+<li> If the language is found but the country is not, or if the country
+is <a href="#Country-enum">AnyCountry</a>, the language is used with the most
+appropriate available country (for example, Germany for German),
+<li> If neither the language nor the country are found, TQLocale
+defaults to the default locale (see <a href="#setDefault">setDefault</a>()).
+</ul>
+<p> The "C" locale is identical to English/UnitedStates.
+<p> Use <a href="#language">language</a>() and <a href="#country">country</a>() to determine the actual language and
+country values used.
+<p> An alternative method for constructing a TQLocale object is by
+specifying the locale name.
+<p> <pre>
+    TQLocale korean("ko");
+    TQLocale swiss("de_CH");
+    </pre>
+ 
+<p> This constructor converts the locale name to a language/country
+pair; it does not use the system locale database.
+<p> All the methods in TQLocale, with the exception of setDefault(),
+are reentrant.
+<p> <p>See also <a href="ntqstring.html#toDouble">TQString::toDouble</a>(), <a href="ntqstring.html#arg">TQString::arg</a>(), and <a href="text.html">Text Related Classes</a>.
+
+<p> The double-to-string and string-to-double conversion functions are
+covered by the following licenses:
+<p> 
+<p> Copyright (c) 1991 by AT&T.
+<p> Permission to use, copy, modify, and distribute this software for any
+purpose without fee is hereby granted, provided that this entire notice
+is included in all copies of any software which is or includes a copy
+or modification of this software and in all copies of the supporting
+documentation for such software.
+<p> THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR AT&T MAKES ANY
+REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
+OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+<p> This product includes software developed by the University of
+California, Berkeley and its contributors.
+
+<hr><h2>Member Type Documentation</h2>
+<h3 class=fn><a name="Country-enum"></a>TQLocale::Country</h3>
+
+<p> This enumerated type is used to specify a country.
+<ul>
+<li><tt>TQLocale::AnyCountry</tt>
+<li><tt>TQLocale::Afghanistan</tt>
+<li><tt>TQLocale::Albania</tt>
+<li><tt>TQLocale::Algeria</tt>
+<li><tt>TQLocale::AmericanSamoa</tt>
+<li><tt>TQLocale::Andorra</tt>
+<li><tt>TQLocale::Angola</tt>
+<li><tt>TQLocale::Anguilla</tt>
+<li><tt>TQLocale::Antarctica</tt>
+<li><tt>TQLocale::AntiguaAndBarbuda</tt>
+<li><tt>TQLocale::Argentina</tt>
+<li><tt>TQLocale::Armenia</tt>
+<li><tt>TQLocale::Aruba</tt>
+<li><tt>TQLocale::Australia</tt>
+<li><tt>TQLocale::Austria</tt>
+<li><tt>TQLocale::Azerbaijan</tt>
+<li><tt>TQLocale::Bahamas</tt>
+<li><tt>TQLocale::Bahrain</tt>
+<li><tt>TQLocale::Bangladesh</tt>
+<li><tt>TQLocale::Barbados</tt>
+<li><tt>TQLocale::Belarus</tt>
+<li><tt>TQLocale::Belgium</tt>
+<li><tt>TQLocale::Belize</tt>
+<li><tt>TQLocale::Benin</tt>
+<li><tt>TQLocale::Bermuda</tt>
+<li><tt>TQLocale::Bhutan</tt>
+<li><tt>TQLocale::Bolivia</tt>
+<li><tt>TQLocale::BosniaAndHerzegowina</tt>
+<li><tt>TQLocale::Botswana</tt>
+<li><tt>TQLocale::BouvetIsland</tt>
+<li><tt>TQLocale::Brazil</tt>
+<li><tt>TQLocale::BritishIndianOceanTerritory</tt>
+<li><tt>TQLocale::BruneiDarussalam</tt>
+<li><tt>TQLocale::Bulgaria</tt>
+<li><tt>TQLocale::BurkinaFaso</tt>
+<li><tt>TQLocale::Burundi</tt>
+<li><tt>TQLocale::Cambodia</tt>
+<li><tt>TQLocale::Cameroon</tt>
+<li><tt>TQLocale::Canada</tt>
+<li><tt>TQLocale::CapeVerde</tt>
+<li><tt>TQLocale::CaymanIslands</tt>
+<li><tt>TQLocale::CentralAfricanRepublic</tt>
+<li><tt>TQLocale::Chad</tt>
+<li><tt>TQLocale::Chile</tt>
+<li><tt>TQLocale::China</tt>
+<li><tt>TQLocale::ChristmasIsland</tt>
+<li><tt>TQLocale::CocosIslands</tt>
+<li><tt>TQLocale::Colombia</tt>
+<li><tt>TQLocale::Comoros</tt>
+<li><tt>TQLocale::DemocraticRepublicOfCongo</tt>
+<li><tt>TQLocale::PeoplesRepublicOfCongo</tt>
+<li><tt>TQLocale::CookIslands</tt>
+<li><tt>TQLocale::CostaRica</tt>
+<li><tt>TQLocale::IvoryCoast</tt>
+<li><tt>TQLocale::Croatia</tt>
+<li><tt>TQLocale::Cuba</tt>
+<li><tt>TQLocale::Cyprus</tt>
+<li><tt>TQLocale::CzechRepublic</tt>
+<li><tt>TQLocale::Denmark</tt>
+<li><tt>TQLocale::Djibouti</tt>
+<li><tt>TQLocale::Dominica</tt>
+<li><tt>TQLocale::DominicanRepublic</tt>
+<li><tt>TQLocale::EastTimor</tt>
+<li><tt>TQLocale::Ecuador</tt>
+<li><tt>TQLocale::Egypt</tt>
+<li><tt>TQLocale::ElSalvador</tt>
+<li><tt>TQLocale::EquatorialGuinea</tt>
+<li><tt>TQLocale::Eritrea</tt>
+<li><tt>TQLocale::Estonia</tt>
+<li><tt>TQLocale::Ethiopia</tt>
+<li><tt>TQLocale::FalklandIslands</tt>
+<li><tt>TQLocale::FaroeIslands</tt>
+<li><tt>TQLocale::FijiCountry</tt>
+<li><tt>TQLocale::Finland</tt>
+<li><tt>TQLocale::France</tt>
+<li><tt>TQLocale::MetropolitanFrance</tt>
+<li><tt>TQLocale::FrenchGuiana</tt>
+<li><tt>TQLocale::FrenchPolynesia</tt>
+<li><tt>TQLocale::FrenchSouthernTerritories</tt>
+<li><tt>TQLocale::Gabon</tt>
+<li><tt>TQLocale::Gambia</tt>
+<li><tt>TQLocale::Georgia</tt>
+<li><tt>TQLocale::Germany</tt>
+<li><tt>TQLocale::Ghana</tt>
+<li><tt>TQLocale::Gibraltar</tt>
+<li><tt>TQLocale::Greece</tt>
+<li><tt>TQLocale::Greenland</tt>
+<li><tt>TQLocale::Grenada</tt>
+<li><tt>TQLocale::Guadeloupe</tt>
+<li><tt>TQLocale::Guam</tt>
+<li><tt>TQLocale::Guatemala</tt>
+<li><tt>TQLocale::Guinea</tt>
+<li><tt>TQLocale::GuineaBissau</tt>
+<li><tt>TQLocale::Guyana</tt>
+<li><tt>TQLocale::Haiti</tt>
+<li><tt>TQLocale::HeardAndMcDonaldIslands</tt>
+<li><tt>TQLocale::Honduras</tt>
+<li><tt>TQLocale::HongKong</tt>
+<li><tt>TQLocale::Hungary</tt>
+<li><tt>TQLocale::Iceland</tt>
+<li><tt>TQLocale::India</tt>
+<li><tt>TQLocale::Indonesia</tt>
+<li><tt>TQLocale::Iran</tt>
+<li><tt>TQLocale::Iraq</tt>
+<li><tt>TQLocale::Ireland</tt>
+<li><tt>TQLocale::Israel</tt>
+<li><tt>TQLocale::Italy</tt>
+<li><tt>TQLocale::Jamaica</tt>
+<li><tt>TQLocale::Japan</tt>
+<li><tt>TQLocale::Jordan</tt>
+<li><tt>TQLocale::Kazakhstan</tt>
+<li><tt>TQLocale::Kenya</tt>
+<li><tt>TQLocale::Kiribati</tt>
+<li><tt>TQLocale::DemocraticRepublicOfKorea</tt>
+<li><tt>TQLocale::RepublicOfKorea</tt>
+<li><tt>TQLocale::Kuwait</tt>
+<li><tt>TQLocale::Kyrgyzstan</tt>
+<li><tt>TQLocale::Lao</tt>
+<li><tt>TQLocale::Latvia</tt>
+<li><tt>TQLocale::Lebanon</tt>
+<li><tt>TQLocale::Lesotho</tt>
+<li><tt>TQLocale::Liberia</tt>
+<li><tt>TQLocale::LibyanArabJamahiriya</tt>
+<li><tt>TQLocale::Liechtenstein</tt>
+<li><tt>TQLocale::Lithuania</tt>
+<li><tt>TQLocale::Luxembourg</tt>
+<li><tt>TQLocale::Macau</tt>
+<li><tt>TQLocale::Macedonia</tt>
+<li><tt>TQLocale::Madagascar</tt>
+<li><tt>TQLocale::Malawi</tt>
+<li><tt>TQLocale::Malaysia</tt>
+<li><tt>TQLocale::Maldives</tt>
+<li><tt>TQLocale::Mali</tt>
+<li><tt>TQLocale::Malta</tt>
+<li><tt>TQLocale::MarshallIslands</tt>
+<li><tt>TQLocale::Martinique</tt>
+<li><tt>TQLocale::Mauritania</tt>
+<li><tt>TQLocale::Mauritius</tt>
+<li><tt>TQLocale::Mayotte</tt>
+<li><tt>TQLocale::Mexico</tt>
+<li><tt>TQLocale::Micronesia</tt>
+<li><tt>TQLocale::Moldova</tt>
+<li><tt>TQLocale::Monaco</tt>
+<li><tt>TQLocale::Mongolia</tt>
+<li><tt>TQLocale::Montserrat</tt>
+<li><tt>TQLocale::Morocco</tt>
+<li><tt>TQLocale::Mozambique</tt>
+<li><tt>TQLocale::Myanmar</tt>
+<li><tt>TQLocale::Namibia</tt>
+<li><tt>TQLocale::NauruCountry</tt>
+<li><tt>TQLocale::Nepal</tt>
+<li><tt>TQLocale::Netherlands</tt>
+<li><tt>TQLocale::NetherlandsAntilles</tt>
+<li><tt>TQLocale::NewCaledonia</tt>
+<li><tt>TQLocale::NewZealand</tt>
+<li><tt>TQLocale::Nicaragua</tt>
+<li><tt>TQLocale::Niger</tt>
+<li><tt>TQLocale::Nigeria</tt>
+<li><tt>TQLocale::Niue</tt>
+<li><tt>TQLocale::NorfolkIsland</tt>
+<li><tt>TQLocale::NorthernMarianaIslands</tt>
+<li><tt>TQLocale::Norway</tt>
+<li><tt>TQLocale::Oman</tt>
+<li><tt>TQLocale::Pakistan</tt>
+<li><tt>TQLocale::Palau</tt>
+<li><tt>TQLocale::PalestinianTerritory</tt>
+<li><tt>TQLocale::Panama</tt>
+<li><tt>TQLocale::PapuaNewGuinea</tt>
+<li><tt>TQLocale::Paraguay</tt>
+<li><tt>TQLocale::Peru</tt>
+<li><tt>TQLocale::Philippines</tt>
+<li><tt>TQLocale::Pitcairn</tt>
+<li><tt>TQLocale::Poland</tt>
+<li><tt>TQLocale::Portugal</tt>
+<li><tt>TQLocale::PuertoRico</tt>
+<li><tt>TQLocale::Qatar</tt>
+<li><tt>TQLocale::Reunion</tt>
+<li><tt>TQLocale::Romania</tt>
+<li><tt>TQLocale::RussianFederation</tt>
+<li><tt>TQLocale::Rwanda</tt>
+<li><tt>TQLocale::SaintKittsAndNevis</tt>
+<li><tt>TQLocale::StLucia</tt>
+<li><tt>TQLocale::StVincentAndTheGrenadines</tt>
+<li><tt>TQLocale::Samoa</tt>
+<li><tt>TQLocale::SanMarino</tt>
+<li><tt>TQLocale::SaoTomeAndPrincipe</tt>
+<li><tt>TQLocale::SaudiArabia</tt>
+<li><tt>TQLocale::Senegal</tt>
+<li><tt>TQLocale::Seychelles</tt>
+<li><tt>TQLocale::SierraLeone</tt>
+<li><tt>TQLocale::Singapore</tt>
+<li><tt>TQLocale::Slovakia</tt>
+<li><tt>TQLocale::Slovenia</tt>
+<li><tt>TQLocale::SolomonIslands</tt>
+<li><tt>TQLocale::Somalia</tt>
+<li><tt>TQLocale::SouthAfrica</tt>
+<li><tt>TQLocale::SouthGeorgiaAndTheSouthSandwichIslands</tt>
+<li><tt>TQLocale::Spain</tt>
+<li><tt>TQLocale::SriLanka</tt>
+<li><tt>TQLocale::StHelena</tt>
+<li><tt>TQLocale::StPierreAndMiquelon</tt>
+<li><tt>TQLocale::Sudan</tt>
+<li><tt>TQLocale::Suriname</tt>
+<li><tt>TQLocale::SvalbardAndJanMayenIslands</tt>
+<li><tt>TQLocale::Swaziland</tt>
+<li><tt>TQLocale::Sweden</tt>
+<li><tt>TQLocale::Switzerland</tt>
+<li><tt>TQLocale::SyrianArabRepublic</tt>
+<li><tt>TQLocale::Taiwan</tt>
+<li><tt>TQLocale::Tajikistan</tt>
+<li><tt>TQLocale::Tanzania</tt>
+<li><tt>TQLocale::Thailand</tt>
+<li><tt>TQLocale::Togo</tt>
+<li><tt>TQLocale::Tokelau</tt>
+<li><tt>TQLocale::TongaCountry</tt>
+<li><tt>TQLocale::TrinidadAndTobago</tt>
+<li><tt>TQLocale::Tunisia</tt>
+<li><tt>TQLocale::Turkey</tt>
+<li><tt>TQLocale::Turkmenistan</tt>
+<li><tt>TQLocale::TurksAndCaicosIslands</tt>
+<li><tt>TQLocale::Tuvalu</tt>
+<li><tt>TQLocale::Uganda</tt>
+<li><tt>TQLocale::Ukraine</tt>
+<li><tt>TQLocale::UnitedArabEmirates</tt>
+<li><tt>TQLocale::UnitedKingdom</tt>
+<li><tt>TQLocale::UnitedStates</tt>
+<li><tt>TQLocale::UnitedStatesMinorOutlyingIslands</tt>
+<li><tt>TQLocale::Uruguay</tt>
+<li><tt>TQLocale::Uzbekistan</tt>
+<li><tt>TQLocale::Vanuatu</tt>
+<li><tt>TQLocale::VaticanCityState</tt>
+<li><tt>TQLocale::Venezuela</tt>
+<li><tt>TQLocale::VietNam</tt>
+<li><tt>TQLocale::BritishVirginIslands</tt>
+<li><tt>TQLocale::USVirginIslands</tt>
+<li><tt>TQLocale::WallisAndFutunaIslands</tt>
+<li><tt>TQLocale::WesternSahara</tt>
+<li><tt>TQLocale::Yemen</tt>
+<li><tt>TQLocale::Yugoslavia</tt>
+<li><tt>TQLocale::Zambia</tt>
+<li><tt>TQLocale::Zimbabwe</tt>
+</ul>
+<h3 class=fn><a name="Language-enum"></a>TQLocale::Language</h3>
+
+<p> This enumerated type is used to specify a language.
+<ul>
+<li><tt>TQLocale::C</tt> - Identical to English/UnitedStates
+<li><tt>TQLocale::Abkhazian</tt>
+<li><tt>TQLocale::Afan</tt>
+<li><tt>TQLocale::Afar</tt>
+<li><tt>TQLocale::Afrikaans</tt>
+<li><tt>TQLocale::Albanian</tt>
+<li><tt>TQLocale::Amharic</tt>
+<li><tt>TQLocale::Arabic</tt>
+<li><tt>TQLocale::Armenian</tt>
+<li><tt>TQLocale::Assamese</tt>
+<li><tt>TQLocale::Aymara</tt>
+<li><tt>TQLocale::Azerbaijani</tt>
+<li><tt>TQLocale::Bashkir</tt>
+<li><tt>TQLocale::Basque</tt>
+<li><tt>TQLocale::Bengali</tt>
+<li><tt>TQLocale::Bhutani</tt>
+<li><tt>TQLocale::Bihari</tt>
+<li><tt>TQLocale::Bislama</tt>
+<li><tt>TQLocale::Breton</tt>
+<li><tt>TQLocale::Bulgarian</tt>
+<li><tt>TQLocale::Burmese</tt>
+<li><tt>TQLocale::Byelorussian</tt>
+<li><tt>TQLocale::Cambodian</tt>
+<li><tt>TQLocale::Catalan</tt>
+<li><tt>TQLocale::Chinese</tt>
+<li><tt>TQLocale::Corsican</tt>
+<li><tt>TQLocale::Croatian</tt>
+<li><tt>TQLocale::Czech</tt>
+<li><tt>TQLocale::Danish</tt>
+<li><tt>TQLocale::Dutch</tt>
+<li><tt>TQLocale::English</tt>
+<li><tt>TQLocale::Esperanto</tt>
+<li><tt>TQLocale::Estonian</tt>
+<li><tt>TQLocale::Faroese</tt>
+<li><tt>TQLocale::FijiLanguage</tt>
+<li><tt>TQLocale::Finnish</tt>
+<li><tt>TQLocale::French</tt>
+<li><tt>TQLocale::Frisian</tt>
+<li><tt>TQLocale::Gaelic</tt>
+<li><tt>TQLocale::Galician</tt>
+<li><tt>TQLocale::Georgian</tt>
+<li><tt>TQLocale::German</tt>
+<li><tt>TQLocale::Greek</tt>
+<li><tt>TQLocale::Greenlandic</tt>
+<li><tt>TQLocale::Guarani</tt>
+<li><tt>TQLocale::Gujarati</tt>
+<li><tt>TQLocale::Hausa</tt>
+<li><tt>TQLocale::Hebrew</tt>
+<li><tt>TQLocale::Hindi</tt>
+<li><tt>TQLocale::Hungarian</tt>
+<li><tt>TQLocale::Icelandic</tt>
+<li><tt>TQLocale::Indonesian</tt>
+<li><tt>TQLocale::Interlingua</tt>
+<li><tt>TQLocale::Interlingue</tt>
+<li><tt>TQLocale::Inuktitut</tt>
+<li><tt>TQLocale::Inupiak</tt>
+<li><tt>TQLocale::Irish</tt>
+<li><tt>TQLocale::Italian</tt>
+<li><tt>TQLocale::Japanese</tt>
+<li><tt>TQLocale::Javanese</tt>
+<li><tt>TQLocale::Kannada</tt>
+<li><tt>TQLocale::Kashmiri</tt>
+<li><tt>TQLocale::Kazakh</tt>
+<li><tt>TQLocale::Kinyarwanda</tt>
+<li><tt>TQLocale::Kirghiz</tt>
+<li><tt>TQLocale::Korean</tt>
+<li><tt>TQLocale::Kurdish</tt>
+<li><tt>TQLocale::Kurundi</tt>
+<li><tt>TQLocale::Laothian</tt>
+<li><tt>TQLocale::Latin</tt>
+<li><tt>TQLocale::Latvian</tt>
+<li><tt>TQLocale::Lingala</tt>
+<li><tt>TQLocale::Lithuanian</tt>
+<li><tt>TQLocale::Macedonian</tt>
+<li><tt>TQLocale::Malagasy</tt>
+<li><tt>TQLocale::Malay</tt>
+<li><tt>TQLocale::Malayalam</tt>
+<li><tt>TQLocale::Maltese</tt>
+<li><tt>TQLocale::Maori</tt>
+<li><tt>TQLocale::Marathi</tt>
+<li><tt>TQLocale::Moldavian</tt>
+<li><tt>TQLocale::Mongolian</tt>
+<li><tt>TQLocale::NauruLanguage</tt>
+<li><tt>TQLocale::Nepali</tt>
+<li><tt>TQLocale::Norwegian</tt>
+<li><tt>TQLocale::Occitan</tt>
+<li><tt>TQLocale::Oriya</tt>
+<li><tt>TQLocale::Pashto</tt>
+<li><tt>TQLocale::Persian</tt>
+<li><tt>TQLocale::Polish</tt>
+<li><tt>TQLocale::Portuguese</tt>
+<li><tt>TQLocale::Punjabi</tt>
+<li><tt>TQLocale::Quechua</tt>
+<li><tt>TQLocale::RhaetoRomance</tt>
+<li><tt>TQLocale::Romanian</tt>
+<li><tt>TQLocale::Russian</tt>
+<li><tt>TQLocale::Samoan</tt>
+<li><tt>TQLocale::Sangho</tt>
+<li><tt>TQLocale::Sanskrit</tt>
+<li><tt>TQLocale::Serbian</tt>
+<li><tt>TQLocale::SerboCroatian</tt>
+<li><tt>TQLocale::Sesotho</tt>
+<li><tt>TQLocale::Setswana</tt>
+<li><tt>TQLocale::Shona</tt>
+<li><tt>TQLocale::Sindhi</tt>
+<li><tt>TQLocale::Singhalese</tt>
+<li><tt>TQLocale::Siswati</tt>
+<li><tt>TQLocale::Slovak</tt>
+<li><tt>TQLocale::Slovenian</tt>
+<li><tt>TQLocale::Somali</tt>
+<li><tt>TQLocale::Spanish</tt>
+<li><tt>TQLocale::Sundanese</tt>
+<li><tt>TQLocale::Swahili</tt>
+<li><tt>TQLocale::Swedish</tt>
+<li><tt>TQLocale::Tagalog</tt>
+<li><tt>TQLocale::Tajik</tt>
+<li><tt>TQLocale::Tamil</tt>
+<li><tt>TQLocale::Tatar</tt>
+<li><tt>TQLocale::Telugu</tt>
+<li><tt>TQLocale::Thai</tt>
+<li><tt>TQLocale::Tibetan</tt>
+<li><tt>TQLocale::Tigrinya</tt>
+<li><tt>TQLocale::TongaLanguage</tt>
+<li><tt>TQLocale::Tsonga</tt>
+<li><tt>TQLocale::Turkish</tt>
+<li><tt>TQLocale::Turkmen</tt>
+<li><tt>TQLocale::Twi</tt>
+<li><tt>TQLocale::Uigur</tt>
+<li><tt>TQLocale::Ukrainian</tt>
+<li><tt>TQLocale::Urdu</tt>
+<li><tt>TQLocale::Uzbek</tt>
+<li><tt>TQLocale::Vietnamese</tt>
+<li><tt>TQLocale::Volapuk</tt>
+<li><tt>TQLocale::Welsh</tt>
+<li><tt>TQLocale::Wolof</tt>
+<li><tt>TQLocale::Xhosa</tt>
+<li><tt>TQLocale::Yiddish</tt>
+<li><tt>TQLocale::Yoruba</tt>
+<li><tt>TQLocale::Zhuang</tt>
+<li><tt>TQLocale::Zulu</tt>
+</ul>
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQLocale"></a>TQLocale::TQLocale ()
+</h3>
+Constructs a TQLocale object initialized with the default locale.
+<p> <p>See also <a href="#setDefault">setDefault</a>().
+
+<h3 class=fn><a name="TQLocale-2"></a>TQLocale::TQLocale ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;name )
+</h3>
+Constructs a TQLocale object with the specified <em>name</em>,
+which has the format
+"language[_country][.codeset][@modifier]" or "C", where:
+<p> <ul>
+<li> language is a lowercase, two-letter, ISO 639 language code,
+<li> territory is an uppercase, two-letter, ISO 3166 country code,
+<li> and codeset and modifier are ignored.
+</ul>
+<p> If the string violates the locale format, or language is not
+a valid ISO 369 code, the "C" locale is used instead. If country
+is not present, or is not a valid ISO 3166 code, the most
+appropriate country is chosen for the specified language.
+<p> The language and country codes are converted to their respective
+<a href="#Language-enum">Language</a> and <a href="#Country-enum">Country</a> enums. After this conversion is
+performed the constructor behaves exactly like TQLocale(Country,
+Language).
+<p> This constructor is much slower than TQLocale(Country, Language).
+<p> <p>See also <a href="#name">name</a>().
+
+<h3 class=fn><a name="TQLocale-3"></a>TQLocale::TQLocale ( <a href="ntqlocale.html#Language-enum">Language</a>&nbsp;language, <a href="ntqlocale.html#Country-enum">Country</a>&nbsp;country = AnyCountry )
+</h3>
+Constructs a TQLocale object with the specified <em>language</em> and <em>country</em>.
+<p> <ul>
+<li> If the language/country pair is found in the database, it is used.
+<li> If the language is found but the country is not, or if the country
+is <a href="#Country-enum">AnyCountry</a>, the language is used with the most
+appropriate available country (for example, Germany for German),
+<li> If neither the language nor the country are found, TQLocale
+defaults to the default locale (see <a href="#setDefault">setDefault</a>()).
+</ul>
+<p> The language and country that are actually used can be queried
+using <a href="#language">language</a>() and <a href="#country">country</a>().
+<p> <p>See also <a href="#setDefault">setDefault</a>(), <a href="#language">language</a>(), and <a href="#country">country</a>().
+
+<h3 class=fn><a name="TQLocale-4"></a>TQLocale::TQLocale ( const&nbsp;<a href="ntqlocale.html">TQLocale</a>&nbsp;&amp;&nbsp;other )
+</h3>
+Constructs a TQLocale object as a copy of <em>other</em>.
+
+<h3 class=fn><a href="ntqlocale.html">TQLocale</a> <a name="c"></a>TQLocale::c ()<tt> [static]</tt>
+</h3>
+
+<p> Returns a TQLocale object initialized to the "C" locale.
+<p> <p>See also <a href="#system">system</a>().
+
+<h3 class=fn><a href="ntqlocale.html#Country-enum">Country</a> <a name="country"></a>TQLocale::country () const
+</h3>
+Returns the country of this locale.
+<p> <p>See also <a href="#TQLocale">TQLocale</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="countryToString"></a>TQLocale::countryToString ( <a href="ntqlocale.html#Country-enum">Country</a>&nbsp;country )<tt> [static]</tt>
+</h3>
+Returns a <a href="ntqstring.html">TQString</a> containing the name of <em>country</em>.
+
+<h3 class=fn><a href="ntqlocale.html#Language-enum">Language</a> <a name="language"></a>TQLocale::language () const
+</h3>
+Returns the language of this locale.
+<p> <p>See also <a href="#TQLocale">TQLocale</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="languageToString"></a>TQLocale::languageToString ( <a href="ntqlocale.html#Language-enum">Language</a>&nbsp;language )<tt> [static]</tt>
+</h3>
+Returns a <a href="ntqstring.html">TQString</a> containing the name of <em>language</em>.
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="name"></a>TQLocale::name () const
+</h3>
+Returns the language and country of this locale as a
+string of the form "language_country", where
+language is a lowercase, two-letter ISO 639 language code,
+and country is an uppercase, two-letter ISO 3166 country code.
+<p> <p>See also <a href="#TQLocale">TQLocale</a>().
+
+<h3 class=fn><a href="ntqlocale.html">TQLocale</a>&nbsp;&amp; <a name="operator-eq"></a>TQLocale::operator= ( const&nbsp;<a href="ntqlocale.html">TQLocale</a>&nbsp;&amp;&nbsp;other )
+</h3>
+Assigns <em>other</em> to this TQLocale object and returns a reference
+to this TQLocale object.
+
+<h3 class=fn>void <a name="setDefault"></a>TQLocale::setDefault ( const&nbsp;<a href="ntqlocale.html">TQLocale</a>&nbsp;&amp;&nbsp;locale )<tt> [static]</tt>
+</h3><p><b>Warning:</b> This function is <i>not</i> <a href="threads.html#reentrant">reentrant</a>.</p>
+
+
+<p> Sets the global default locale to <em>locale</em>. These
+values are used when a TQLocale object is constructed with
+no arguments. If this function is not called, the system's
+locale is used.
+<p> <b>Warning:</b> In a multithreaded application, the default locale
+should be set at application startup, before any non-GUI threads
+are created.
+<p> <p>See also <a href="#system">system</a>() and <a href="#c">c</a>().
+
+<h3 class=fn><a href="ntqlocale.html">TQLocale</a> <a name="system"></a>TQLocale::system ()<tt> [static]</tt>
+</h3>
+Returns a TQLocale object initialized to the system locale.
+
+<h3 class=fn>double <a name="toDouble"></a>TQLocale::toDouble ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the double represented by the localized string <em>s</em>, or
+0.0 if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> Unlike <a href="ntqstring.html#toDouble">TQString::toDouble</a>(), this function does not fall back to
+the "C" locale if the string cannot be interpreted in this
+locale.
+<p> <pre>
+        bool ok;
+        double d;
+
+        TQLocale c(TQLocale::<a href="#Language-enum">C</a>);
+        d = c.<a href="#toDouble">toDouble</a>( "1234.56", &amp;ok );  // ok == true, d == 1234.56
+        d = c.<a href="#toDouble">toDouble</a>( "1,234.56", &amp;ok ); // ok == true, d == 1234.56
+        d = c.<a href="#toDouble">toDouble</a>( "1234,56", &amp;ok );  // ok == false
+
+        TQLocale german(TQLocale::<a href="#Language-enum">German</a>);
+        d = german.<a href="#toDouble">toDouble</a>( "1234,56", &amp;ok );  // ok == true, d == 1234.56
+        d = german.<a href="#toDouble">toDouble</a>( "1.234,56", &amp;ok ); // ok == true, d == 1234.56
+        d = german.<a href="#toDouble">toDouble</a>( "1234.56", &amp;ok );  // ok == false
+
+        d = german.<a href="#toDouble">toDouble</a>( "1.234", &amp;ok );    // ok == true, d == 1234.0
+    </pre>
+ 
+<p> Notice that the last conversion returns 1234.0, because '.' is the
+thousands group separator in the German locale.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>() and <a href="ntqstring.html#toDouble">TQString::toDouble</a>().
+
+<h3 class=fn>float <a name="toFloat"></a>TQLocale::toFloat ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the float represented by the localized string <em>s</em>, or 0.0
+if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<h3 class=fn>int <a name="toInt"></a>TQLocale::toInt ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the int represented by the localized string <em>s</em>, or 0 if
+the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting *ok to false and
+success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<h3 class=fn>TQ_LONG <a name="toLong"></a>TQLocale::toLong ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the long int represented by the localized string <em>s</em>, or
+0 if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<h3 class=fn>TQ_LLONG <a name="toLongLong"></a>TQLocale::toLongLong ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the long long int represented by the localized string <em>s</em>, or 0 if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<h3 class=fn>short <a name="toShort"></a>TQLocale::toShort ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the short int represented by the localized string <em>s</em>, or
+0 if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString"></a>TQLocale::toString ( TQ_LLONG&nbsp;i ) const
+</h3>
+Returns a localized string representation of <em>i</em>.
+<p> <p>See also <a href="#toLongLong">toLongLong</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-2"></a>TQLocale::toString ( short&nbsp;i ) const
+</h3>
+
+<p> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <p>See also <a href="#toShort">toShort</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-3"></a>TQLocale::toString ( ushort&nbsp;i ) const
+</h3>
+
+<p> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <p>See also <a href="#toUShort">toUShort</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-4"></a>TQLocale::toString ( int&nbsp;i ) const
+</h3>
+
+<p> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <p>See also <a href="#toInt">toInt</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-5"></a>TQLocale::toString ( uint&nbsp;i ) const
+</h3>
+
+<p> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <p>See also <a href="#toUInt">toUInt</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-6"></a>TQLocale::toString ( TQ_LONG&nbsp;i ) const
+</h3>
+
+<p> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <p>See also <a href="#toLong">toLong</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-7"></a>TQLocale::toString ( TQ_ULONG&nbsp;i ) const
+</h3>
+
+<p> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <p>See also <a href="#toULong">toULong</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-8"></a>TQLocale::toString ( TQ_ULLONG&nbsp;i ) const
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <p>See also <a href="#toULongLong">toULongLong</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-9"></a>TQLocale::toString ( float&nbsp;i, char&nbsp;f = 'g', int&nbsp;prec = 6 ) const
+</h3>
+
+<p> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <em>f</em> and <em>prec</em> have the same meaning as in <a href="ntqstring.html#number">TQString::number</a>(double, char, int).
+<p> <p>See also <a href="#toDouble">toDouble</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="toString-a"></a>TQLocale::toString ( double&nbsp;i, char&nbsp;f = 'g', int&nbsp;prec = 6 ) const
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <em>f</em> and <em>prec</em> have the same meaning as in <a href="ntqstring.html#number">TQString::number</a>(double, char, int).
+<p> <p>See also <a href="#toDouble">toDouble</a>().
+
+<h3 class=fn>uint <a name="toUInt"></a>TQLocale::toUInt ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the unsigned int represented by the localized string <em>s</em>,
+or 0 if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<h3 class=fn>TQ_ULONG <a name="toULong"></a>TQLocale::toULong ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the unsigned long int represented by the localized string
+<em>s</em>, or 0 if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<h3 class=fn>TQ_ULLONG <a name="toULongLong"></a>TQLocale::toULongLong ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the unsigned long long int represented by the localized
+string <em>s</em>, or 0 if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<h3 class=fn>ushort <a name="toUShort"></a>TQLocale::toUShort ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;s, bool&nbsp;*&nbsp;ok = 0 ) const
+</h3>
+Returns the unsigned short int represented by the localized string
+<em>s</em>, or 0 if the conversion failed.
+<p> If <em>ok</em> is not 0, reports failure by setting
+*ok to false and success by setting *ok to true.
+<p> This function ignores leading and trailing whitespace.
+<p> <p>See also <a href="#toString">toString</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -10,16 +10,16 @@ set(KTOP_SRCS ktop.cpp MainMenu.cpp ProcessMenu.cpp TaskMan.cpp ProcListPage.cpp
     OSStatus.cpp ReniceDlg.cpp
 )
 
-set(KTOP_MOC ktop.moc MainMenu.moc ProcessMenu.moc TaskMan.moc ProcListPage.moc
-    ProcessList.moc PerfMonPage.moc FancyPlotter.moc MultiMeter.moc
-    SignalPlotter.moc ReniceDlg.moc
+set(KTOP_MOC ktop.h MainMenu.h ProcessMenu.h TaskMan.h ProcListPage.h
+    ProcessList.h PerfMonPage.h FancyPlotter.h MultiMeter.h
+    SignalPlotter.h ReniceDlg.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KTOP_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KTOP_MOC})
 
 add_executable(ktop ${KTOP_SRCS} ${MOC_FILES})
 target_link_libraries(ktop
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

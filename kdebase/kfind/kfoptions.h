@@ -4,7 +4,7 @@
  *
  **********************************************************************/
 
-#ifndef KFWITGETS_H
+#ifndef KFWIDGETS_H  /* TQt3 迁移：guard 名笔误修正 */
 #define KFWIDGETS_H
 
 #include <klocale.h>

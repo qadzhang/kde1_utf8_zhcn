@@ -41,7 +41,7 @@ KIconLoaderDialog *global_pix_sel2;
 
 int main( int argc, char **argv )
 {
-  //debug ( "[kmenuedit] started-------------------------" );
+  //tqDebug(  "[kmenuedit] started-------------------------" );
 
   KApplication a( argc, argv, "kmenuedit" );
 
@@ -54,7 +54,7 @@ int main( int argc, char **argv )
       if( config->hasKey("Path") )
 	  temp1 = config->readEntry("Path");
       else
-	  temp1 = KApplication::kde_appsdir().copy();
+	  temp1 = KApplication::kde_appsdir();
       if( config->hasKey("PersonalPath") )
 	temp2 = config->readEntry("PersonalPath");
       else
@@ -119,7 +119,7 @@ int main( int argc, char **argv )
   a.setMainWidget( (QWidget *) &edit );
   a.setRootDropZone( new KDNDDropZone( (QWidget *) &edit, DndNotDnd ) );
   edit.show();
-  edit.resize(edit.size());
+  edit.resize(edit.size());  /* TQt3 迁移 */
   return a.exec();
 }
 

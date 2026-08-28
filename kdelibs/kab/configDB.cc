@@ -418,7 +418,7 @@ ConfigDB::IsLocked(const string& file)
 {
   register bool GUARD; GUARD=true;
   // ########################################################
-  string lockfile=file+(string)".lock";
+  string lockfile=file+(std::string)".lock";
   int pid=-1;
   // -----
   if(access(lockfile.c_str(), F_OK)==0)

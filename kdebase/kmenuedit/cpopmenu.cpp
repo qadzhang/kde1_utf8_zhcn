@@ -37,7 +37,7 @@
 CPopupMenu::CPopupMenu( QWidget *parent, const char *name )
     : QPopupMenu( parent, name )
 {
-    initMetaObject();
+
     setMouseTracking(TRUE);
 }
 
@@ -47,7 +47,7 @@ int CPopupMenu::getRightHeight()
   int h = 0;
   for( i = 0; i < j; i++)
     {
-      h += cellHeight(i);
+      h += itemHeight(i);  /* TQt3 迁移 */
     }
   return h+4;
 }
@@ -59,8 +59,9 @@ int CPopupMenu::getRightWidth()
   int w = 0;
   for( i = 0; i < j; i++)
     {
-      if( w < cellWidth(i) )
-	w = cellWidth(i);
+      /* TQt3 迁移：QPopupMenu 的 cellWidth 体系已删——用字体度量近似 */
+      { TQString k1txt = text(i); 
+        int k1w = fontMetrics().width( k1txt ) + 20; if( w < k1w ) w = k1w; }
     }
   return w+4;
 }

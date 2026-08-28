@@ -7,14 +7,14 @@
 #include "kurllabel.h"
 
 #include <qtooltip.h>
-#include <kcursor.h>
+#include "kcursor.h"
 
 #include <kapp.h>
 #include <kcharsets.h>
 
 KURLLabel::KURLLabel(QWidget *parent, const char* name, WFlags f)
 	: QLabel(parent, name, f),
-	  m_textAlign(Bottom),
+	  m_textAlign(KURL_Bottom),  // TQt3 迁移：Bottom 并入 AlignmentFlags
 	  m_url(0),
 	  m_tipText(0),
 	  m_float(false),

@@ -146,7 +146,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
 
 	    QString dummy = tmp.left(comparelength);
 
-            if ( !qstrncmp(tmp,tmp2,comparelength) && dummy == tmp2 ) {
+            if ( !tqstrncmp(tmp,tmp2,comparelength) && dummy == tmp2 ) {
 	        kfmitem->setOpen(true);
     	        updateTree(false);
 	        found=true;
@@ -163,7 +163,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
         }
         if (found) continue;
         if (comparelength==1) {
-	    debug("should never happen!\n");
+	    tqDebug("should never happen!\n");
 	    break;
 	    }
         comparelength--;
@@ -173,7 +173,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
         if (comparelength<=0) comparelength=1;
         if (++loops>128) break;     // race condition ?
         }
-    debug("\"%s\" not opened\n",tmp.data());
+    tqDebug("\"%s\" not opened\n",tmp.data());
 
     finderWin->setAutoUpdate( true );
 }
@@ -292,7 +292,7 @@ void KFMDirTree::update()
                     }
                 } 
                 else
-                  debug("kfmtree.cpp: should never happen!!!");
+                  tqDebug("kfmtree.cpp: should never happen!!!");
 	    }
             if( curSelectedURL == kfmitem->getURL() && 
                 curSelectedLevel == kfmitem->getLevel() )
@@ -343,7 +343,6 @@ void KFMDirTree::openDropMenu( const char *_dest, QStrList &_urls, const QPoint 
   // -----------------  Copied code ends (Dawit A.) ---------------------//
 
     dropDestination = _dest;
-    dropDestination.detach();
     dropSource.copy( _urls );
     
     popupMenu->clear();
@@ -488,7 +487,6 @@ void KFMDirTree::slotPopupEmptyTrashBin()
 	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L && strcmp( ep->d_name, ".directory" ) != 0L )
 	    {
 		QString trashFile( ep->d_name );
-		trashFile.detach();
 		trashFile.prepend (d);
 		KURL::encodeURL ( trashFile );   // make proper URL (Hen)
 		trashFile.prepend ("file:");
@@ -625,7 +623,6 @@ KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isf
 	name = klocale->translate( "Desktop" );    
     else if ( strcmp( u.path(), "/" ) == 0 )
 	name = klocale->translate( "Root" );
-    else
 	name = u.filename();
 
     // Find the correct icon
@@ -757,7 +754,7 @@ void KFMDirTreeItem::setOpen( bool _open )
     dp = opendir( u.path() );
     if ( dp == 0L )
     {
-	warning( "Could not enter directory %s", url.data() );
+	tqWarning( "Could not enter directory %s", url.data() );
 	return;
     }
     
@@ -784,7 +781,7 @@ void KFMDirTreeItem::setOpen( bool _open )
 	if (fname.right(1) != "/") fname += "/";
 	fname += s;
 	 
-	if (stat( fname, &buff )) { warning("Could not stat %s",fname.data()); }
+	if (stat( fname, &buff )) { tqWarning("Could not stat %s",fname.data()); }
         else {
           // For symlinks, follow them to stat the real file or directory
           if ( S_ISLNK( buff.st_mode ) ) { lstat( fname, &buff ); }

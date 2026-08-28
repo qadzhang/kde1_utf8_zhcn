@@ -73,7 +73,7 @@ ModemTransfer::ModemTransfer(QWidget *parent, const char *name)
   l1->addStretch(1);
   l1->addWidget(cancel);
 
-  step = 0;
+  step = 0;  /* TQt3 迁移 */
 
   ////////////////////////////////////////////////
 
@@ -213,7 +213,7 @@ void ModemTransfer::readtty() {
                                                  // space
 
   if(step <= NUM_OF_ATI)
-    ati_query_strings[step-1] = readbuffer.copy();
+    ati_query_strings[step-1] = readbuffer;
 
   readbuffer = "";
 }
@@ -279,7 +279,7 @@ ModemInfo::ModemInfo(QWidget *parent, const char* name)
   ok->setFocus();
 
   // Motif default buttons + Qt layout do not work tight together
-  if(ok->style() == MotifStyle) {
+  if(ok->style().inherits("TQMotifStyle")) {
     ok->setFixedWidth(ok->sizeHint().width() + 10);
     ok->setFixedHeight(ok->sizeHint().height() + 10);
     tl->addSpacing(8);

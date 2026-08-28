@@ -173,14 +173,14 @@ AddressWidget::AddressWidget(QWidget* parent,  const char* name, bool readonly_)
   // -----
   keys->get("Background", bgFilename);
   CHECK(keys->get("Background", bgFilename));
-  path=KApplication::getKApplication()->kde_datadir();
-  path+=(string)"/kab/pics/"+bgFilename;
+  path=KApplication::getKApplication()->kde_datadir().ascii();
+  path+=(std::string)"/kab/pics/"+bgFilename;
   LG(GUARD, "AddressWidget constructor: loading widget background "
      "from file \n             \"%s\".\n", path.c_str());
   card->setBackground(path.c_str());
   // -----
-  path=KApplication::getKApplication()->kde_datadir();
-  path+=(string)"/kab/pics/"+dlgBackground;
+  path=KApplication::getKApplication()->kde_datadir().ascii();
+  path+=(std::string)"/kab/pics/"+dlgBackground;
   LG(GUARD, "AddressWidget constructor: loading dialog background "
      "from file \n             \"%s\".\n", path.c_str());
   pixmap.load(path.c_str());
@@ -1285,7 +1285,7 @@ bool AddressWidget::print(QPrinter& printer, const list<string>& fields,
 {
   register bool GUARD; GUARD=true;
   REQUIRE(fields.size()!=0);
-  debug(i18n("Attention: printing is still experimental!"));
+  tqDebug((const char*)i18n("Attention: printing is still experimental!"));
   // ############################################################################
   LG(GUARD, "AddressWidget::print: %i fields to be printed.\n", fields.size());
   string path;
@@ -1488,7 +1488,7 @@ bool AddressWidget::print(QPrinter& printer, const list<string>& fields,
       cy=headlineHeight;
       for(;;) 
 	{
-	  path=EntrySection+(string)"/"+(string)(*entry).second;
+	  path=EntrySection+(std::string)"/"+(string)(*entry).second;
 	  get(path, keys);
 	  CHECK(get(path, keys));
 	  cy+=Spacing;
@@ -1787,11 +1787,11 @@ void AddressWidget::exportHTML()
   const string background=card->getBackground();;
   const string title=i18n("KDE addressbook overview");
   string header=
-    (string)"<html>\n<head>\n"
-    +(string)"<title>"+(string)title+(string)"</title>\n"
-    +(string)"</head>\n"
-    +(string)"<body background=\""+background+(string)"\">\n"
-    +(string)"<h1>"+title+(string)"</h1>";
+    (std::string)"<html>\n<head>\n"
+    +(std::string)"<title>"+(string)title+(std::string)"</title>\n"
+    +(std::string)"</head>\n"
+    +(std::string)"<body background=\""+background+(std::string)"\">\n"
+    +(std::string)"<h1>"+title+(std::string)"</h1>";
   string footer="</body>\n</html>";
   string logo;
   string kdelabel;
@@ -1818,7 +1818,7 @@ void AddressWidget::exportHTML()
       return;
     }
   // ----- create the table:
-  body+=(string)"<"+alignment+(string)">"+(string)"<table border>\n";
+  body+=(std::string)"<"+alignment+(std::string)">"+(std::string)"<table border>\n";
   //       select what fields to add to the table:
   // fields.erase(fields.begin(), fields.end());
   for(i=0; i<NoOfFields; i++)
@@ -1874,7 +1874,7 @@ void AddressWidget::exportHTML()
 	      temp="(unknown field name)";
 	    }
 	}
-      body+=(string)"<th>"+temp+"\n";
+      body+=(std::string)"<th>"+temp+"\n";
     }
   body+="</tr>\n";
   //       create table, linewise:
@@ -1894,7 +1894,7 @@ void AddressWidget::exportHTML()
 	      CHECK(getEntry((*pos).second, dummy));
 	      if(dummy.birthday.isValid())
 		{
-		  temp=dummy.birthday.toString();
+		  temp=dummy.birthday.toString().ascii();
 		} else {
 		  temp="";
 		}
@@ -1902,7 +1902,7 @@ void AddressWidget::exportHTML()
 	      //       displays this better (hint from Thomas 
 	      //       Stinner <thomas@roedgen.pop-siegen.de>
 	      if(temp.empty()) temp="&nbsp;";
-	      body+=(string)"<td>"+temp+"\n";
+	      body+=(std::string)"<td>"+temp+"\n";
 	      continue;
 	    }
 	  if(*fieldPos=="name-email-link")
@@ -1916,10 +1916,10 @@ void AddressWidget::exportHTML()
 	      literalName((*pos).second, name);
 	      if(mail.empty())
 		{
-		  body+=(string)"<td>"+name+(string)"\n";
+		  body+=(std::string)"<td>"+name+(std::string)"\n";
 		} else {
-		  body+=(string)"<td> <a href=mailto:\""+
-		    mail+(string)"\">"+name+(string)"</a>\n";
+		  body+=(std::string)"<td> <a href=mailto:\""+
+		    mail+(std::string)"\">"+name+(std::string)"</a>\n";
 		}
 	      continue;
 	    }
@@ -1929,9 +1929,9 @@ void AddressWidget::exportHTML()
 	      // -----
 	      if(emailAddress((*pos).second, mail, false))
 	        {
-	          body+=(string)"<td>"+mail+(string)"\n";
+	          body+=(std::string)"<td>"+mail+(std::string)"\n";
 	        } else {
-	          body+=(string)"<td>"+"&nbsp"+(string)"\n";
+	          body+=(std::string)"<td>"+"&nbsp"+(std::string)"\n";
 		}
 	      continue;
 	    }
@@ -1942,12 +1942,12 @@ void AddressWidget::exportHTML()
 	      temp="";
 	    }
 	  if(temp.empty()) temp="&nbsp;";
-	  body+=(string)"<td>"+temp+"\n";
+	  body+=(std::string)"<td>"+temp+"\n";
 	}
       body+="</tr>\n";
     }
   body+="</table>\n"
-    +(string)"</"+alignment+(string)">";
+    +(std::string)"</"+alignment+(std::string)">";
   // ----- get a filename:
   if(!getHomeDirectory(home))
     {
@@ -1960,7 +1960,7 @@ void AddressWidget::exportHTML()
   dummy=KFileDialog::getSaveFileName(home.c_str(), "*html", this);
   if(!dummy.isEmpty())
     {
-      file=dummy;
+      file=dummy.ascii();  // TQt3 迁移：QString→std::string 边界
       LG(GUARD, "AddressWidget::exportHTML: filename is %s.\n", file.c_str());
     } else {
       emit(setStatus(i18n("Cancelled.")));

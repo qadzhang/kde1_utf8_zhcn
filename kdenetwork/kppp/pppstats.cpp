@@ -161,7 +161,7 @@ int if_is_up() {
     if(ioctl(s, SIOCGIFFLAGS, &ifr)<0){
     	perror("Couldn't find interface ppp0");
 	::close(s);
-	s = 0;
+	s = 0;  /* TQt3 迁移 */
 	return 0;
     }
 
@@ -170,9 +170,9 @@ int if_is_up() {
 	Debug("Interface is up\n");
     } 
     else{
-      is_up = 0;
+      is_up = 0;  /* TQt3 迁移 */
       ::close(s);
-      s = 0;
+      s = 0;  /* TQt3 迁移 */
       Debug("Interface is down\n");
     }
     
@@ -186,16 +186,16 @@ bool init_stats(){
   unit = 0; // carefull here this is the zero of ppp0
 
 
-  ibytes = 0;
-  ipackets = 0;
-  compressedin = 0;
-  uncompressedin = 0;
-  errorin = 0;
-  obytes = 0;
-  opackets = 0;
-  compressed = 0;
-  packetsunc = 0;
-  packetsoutunc = 0;
+  ibytes = 0;  /* TQt3 迁移 */
+  ipackets = 0;  /* TQt3 迁移 */
+  compressedin = 0;  /* TQt3 迁移 */
+  uncompressedin = 0;  /* TQt3 迁移 */
+  errorin = 0;  /* TQt3 迁移 */
+  obytes = 0;  /* TQt3 迁移 */
+  opackets = 0;  /* TQt3 迁移 */
+  compressed = 0;  /* TQt3 迁移 */
+  packetsunc = 0;  /* TQt3 迁移 */
+  packetsoutunc = 0;  /* TQt3 迁移 */
 
   have_local_address = false;
   tmp_address = "";
@@ -312,7 +312,7 @@ bool get_ppp_cstats(    struct ppp_comp_stats *csp){
 	    fprintf(stderr, "pppstats: no kernel compression support\n");
 	    if (cflag)
 		return false;
-	    rflag = 0;
+	    rflag = 0;  /* TQt3 迁移 */
 	} else {
 	    perror("ioctl(SIOCGPPPCSTATS)");
 	    return false;
@@ -356,7 +356,7 @@ bool get_ppp_cstats(    struct ppp_comp_stats *csp){
 	    fprintf(stderr, "pppstats: no kernel compression support\n");
 	    if (cflag)
 	      return false;
-	    rflag = 0;
+	    rflag = 0;  /* TQt3 迁移 */
 	} else {
 	    perror("pppstats: Couldn't get compression statistics");
 	    return false;

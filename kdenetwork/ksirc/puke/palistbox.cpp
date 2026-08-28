@@ -10,7 +10,6 @@ PObject *createWidget(CreateArgs &ca) /*FOLD00*/
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
     lb = new("aListBox") aListBox((QWidget *) ca.parent->widget());
-  else
     lb = new("aListBox") aListBox();
   plb->setWidget(lb);
   plb->setWidgetId(ca.pwI);
@@ -21,14 +20,14 @@ PObject *createWidget(CreateArgs &ca) /*FOLD00*/
 PAListBox::PAListBox(PObject *parent) /*FOLD00*/
   : PListBox(parent)
 {
-  //  debug("PListBox PListBox called");
-  lb = 0;
+  //  tqDebug("PListBox PListBox called");
+  lb = 0;  /* TQt3 迁移 */
   setWidget(lb);
 }
 
 PAListBox::~PAListBox() /*FOLD00*/
 {
-  //  debug("PListBox: in destructor"); 
+  //  tqDebug("PListBox: in destructor"); 
   /*
   delete widget();     // Delete the frame
   lb=0;          // Set it to 0
@@ -143,7 +142,7 @@ aListBox *PAListBox::widget() /*FOLD00*/
 
 bool PAListBox::checkWidget(){ /*FOLD00*/
   if(widget() == 0){
-    debug("PAListBox: No Widget set");
+    tqDebug("PAListBox: No Widget set");
     return FALSE;
   }
   return TRUE;

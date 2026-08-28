@@ -61,7 +61,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     setMouseTracking(true);
 
-    orientation = horizontal;
+    orientation = (TQt::Orientation)horizontal;  // TQt3 迁移：KDE 枚举到 TQt 枚举显式转
     position = bottom_right;
 
     currentDesktop = KWM::currentDesktop();
@@ -119,22 +119,22 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     QString a = config->readEntry("Position");
 
     if ( a == "left"){
-      orientation = vertical;
+      orientation = (TQt::Orientation)vertical;  /* TQt3 迁移 */
       position = top_left;
     }
     else if ( a == "right"){
       // no longer valid! Do left instead
-      orientation = vertical;
+      orientation = (TQt::Orientation)vertical;  /* TQt3 迁移 */
       //position = top_left;
       position = bottom_right;
 
     }
     else if ( a == "top"){
-      orientation = horizontal;
+      orientation = (TQt::Orientation)horizontal;  // TQt3 迁移：KDE 枚举到 TQt 枚举显式转
       position = top_left;
     }
     else if ( a == "bottom"){
-      orientation = horizontal;
+      orientation = (TQt::Orientation)horizontal;  // TQt3 迁移：KDE 枚举到 TQt 枚举显式转
       position = bottom_right;
     }
 	
@@ -411,7 +411,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 		     QColor(96,96,96), black, black,
 		     black, QColor(255,255,220) );
       info_label->setPalette( QPalette( g, g, g ) );
-      if ( QApplication::style() == MotifStyle )
+      if ( QApplication::style().inherits("TQMotifStyle") )
 	info_label->setFrameStyle( QFrame::Plain | QFrame::Box );
       else
 	info_label->setFrameStyle( QFrame::Raised | QFrame::Panel );
@@ -748,7 +748,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       QPainter paint;
       QPainter paint2;
       pm.resize(9, (orientation == horizontal)?panel_button->height():panel_button->width());
-      bm.resize(pm.width(), pm.height());
+      bm.resize(pm.width(), pm.height());  /* TQt3 迁移 */
       bm.fill(color0);
       pm.setMask(bm);
       paint.begin(&pm);
@@ -960,7 +960,7 @@ void kPanel::button_pressed(){
 	  }
 	  else if (entries[i].pmi){
 	  KFM* kfm = new KFM;
-	  QString a = entries[i].pmi->getFullPathName().copy();
+	  QString a = entries[i].pmi->getFullPathName();
 	  a.prepend("file:");
 	  if (entries[i].pmi->getType() == submenu)
 	    a.append("/.directory");
@@ -1166,11 +1166,11 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	   pConfig.setGroup("KDE Desktop Entry");
 	   QString aString;
 	   if (pConfig.hasKey("SwallowTitle")){
-	     entries[nbuttons-1].swallow = QString(pConfig.readEntry("SwallowTitle")).copy();
+	     entries[nbuttons-1].swallow = QString(pConfig.readEntry("SwallowTitle"));
 	     if (!entries[nbuttons-1].swallow.isEmpty() &&
 		 pConfig.hasKey("SwallowExec")){
 	       KWM::doNotManage(entries[nbuttons-1].swallow);
-	       aString = QString(pConfig.readEntry("SwallowExec")).copy();
+	       aString = QString(pConfig.readEntry("SwallowExec"));
 	       if (!initing)
 		 swallowApplication(aString.data());
 	       else
@@ -1180,7 +1180,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	   if (pConfig.hasKey("PanelIdentity")){
 	     entries[nbuttons-1].icon[0] = new QPixmap();
 	     *(entries[nbuttons-1].icon[0]) = *entries[nbuttons-1].button->pixmap();
-	     entries[nbuttons-1].identity = QString(pConfig.readEntry("PanelIdentity")).copy();
+	     entries[nbuttons-1].identity = QString(pConfig.readEntry("PanelIdentity"));
 	     if (pConfig.hasKey("Icon2")){
 	       entries[nbuttons-1].icon[1] = new QPixmap();
 	       *(entries[nbuttons-1].icon[1]) = load_pixmap(pConfig.readEntry("Icon2"));
@@ -1711,7 +1711,6 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 		     sx = 0;
 		 else if (taskbar_position == bottom)
 			  ;
-		 else
 		     sx = 0;
 	     }
 	     else { // position == bottom_right
@@ -1719,7 +1718,6 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 		     ;
 		 else if (taskbar_position == bottom)
 		     sx = 0;
-		 else
 		     sx = 0;
 	     }
 	 }
@@ -1729,7 +1727,6 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 		     sx = 0;
 		 else if (taskbar_position == bottom)
 			  ;
-		 else
 		     sx = 0;
 	     }
 	     else { // position == bottom_right
@@ -1737,7 +1734,6 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 		     { sw = 0; sx = 0; }
 		 else if (taskbar_position == bottom)
 		     ;
-		 else
 		     sx = 0;
 	     }
 	 }
@@ -1999,3 +1995,4 @@ void kPanel::slotUpdateClock() {
   }
 
 }
+

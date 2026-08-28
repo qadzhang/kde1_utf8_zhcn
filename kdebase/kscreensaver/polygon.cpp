@@ -261,7 +261,7 @@ kPolygonSaver::kPolygonSaver( Drawable drawable ) : kScreenSaver( drawable )
 
 	srandom((int)time((time_t *)0L));
 
-	directions.resize( numVertices );
+	directions.truncate( numVertices );
 	colorContext = QColor::enterAllocContext();
 
 	blank();
@@ -287,7 +287,7 @@ void kPolygonSaver::setPolygon( int len, int ver )
 	numLines = len;
 	numVertices = ver;
 
-	directions.resize( numVertices );
+	directions.truncate( numVertices );
 	polygons.clear();
 	initialisePolygons();
 	blank();

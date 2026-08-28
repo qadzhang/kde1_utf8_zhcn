@@ -40,6 +40,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3: Xos index macro breaks TQListBox::index */
 
 #include "fontchooser.h"
 #include "kresourceman.h"
@@ -361,7 +362,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	macStyle = false;//CT
 	iconStyle = 0L;
 
-	//debug("KGeneral::KGeneral");
+	//tqDebug("KGeneral::KGeneral");
 	
 	// if we are just initialising we don't need to create setup widget
 	if ( mode == Init )
@@ -665,7 +666,7 @@ KFonts::KFonts( QWidget *parent, int mode, int desktop )
 	int i;
 	changed = false;
 
-	//debug("KFonts::KFonts");
+	//tqDebug("KFonts::KFonts");
 	
 	// if we are just initialising we don't need to create setup widget
 	if ( mode == Init )

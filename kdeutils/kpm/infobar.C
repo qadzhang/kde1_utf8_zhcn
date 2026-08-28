@@ -1,7 +1,7 @@
 // infobar.C
 //
 // This program is free software. See the file COPYING for details.
-// Author: Mattias Engdeg�rd, 1997
+// Author: Mattias Engdeg�rd, 1997
 
 #include <stdio.h>
 #include <qframe.h>
@@ -116,7 +116,7 @@ void Infobar::mem_string(int kbytes, char *buf)
 // refresh status bar; if step_load is true, add a point to the load graph
 void Infobar::refresh(bool step_load)
 {
-    QString s(64);
+    TQString s;  /* TQt3 迁移 */
 
     if(step_load)
 	load_graph->add_point();

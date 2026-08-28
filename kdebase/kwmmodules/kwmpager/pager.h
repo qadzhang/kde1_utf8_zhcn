@@ -23,7 +23,7 @@
 
 #include <kapp.h>
 #include <kwmmapp.h>
-#include <desktop.h>
+#include "desktop.h"
 #include <qframe.h>
 #include <config.h>
 

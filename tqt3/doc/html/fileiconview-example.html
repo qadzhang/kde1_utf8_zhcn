@@ -1,0 +1,1394 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/fileiconview/fileiconview.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Simple Filemanager</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Simple Filemanager</h1>
+
+   
+<p> 
+This example implements a simple and not fully functional file manager using
+a widget derived from <a href="ntqiconview.html">TQIconView</a> to display the current directory.
+To display the directory tree the
+widget written in the <a href="dirview-example.html">dirview</a> example is
+used.
+<p> <hr>
+<p> Header file of the file icon view:
+<p> <pre>/****************************************************************************
+** $Id: qt/qfileiconview.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef TQTFILEICONVIEW_H
+#define TQTFILEICONVIEW_H
+
+
+#include &lt;<a href="qiconset-h.html">ntqiconset.h</a>&gt;
+#include &lt;<a href="qstring-h.html">ntqstring.h</a>&gt;
+#include &lt;<a href="qfileinfo-h.html">ntqfileinfo.h</a>&gt;
+#include &lt;<a href="qdir-h.html">ntqdir.h</a>&gt;
+#include &lt;<a href="qtimer-h.html">ntqtimer.h</a>&gt;
+#include &lt;<a href="qiconview-h.html">ntqiconview.h</a>&gt;
+
+class TQtFileIconView;
+class TQDragObject;
+class TQResizeEvent;
+
+/*****************************************************************************
+ *
+ * Class TQtFileIconDrag
+ *
+ *****************************************************************************/
+
+class TQtFileIconDrag : public <a href="qicondrag.html">TQIconDrag</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+
+public:
+    TQtFileIconDrag( <a href="ntqwidget.html">TQWidget</a> * dragSource, const char* name = 0 );
+
+    const char* format( int i ) const;
+    <a href="qbytearray.html">TQByteArray</a> encodedData( const char* mime ) const;
+    static bool canDecode( <a href="qmimesource.html">TQMimeSource</a>* e );
+    void append( const <a href="qicondragitem.html">TQIconDragItem</a> &amp;item, const <a href="ntqrect.html">TQRect</a> &amp;pr, const <a href="ntqrect.html">TQRect</a> &amp;tr, const <a href="ntqstring.html">TQString</a> &amp;url );
+
+private:
+    <a href="ntqstringlist.html">TQStringList</a> urls;
+
+};
+
+/*****************************************************************************
+ *
+ * Class TQtFileIconView
+ *
+ *****************************************************************************/
+class TQtFileIconViewItem;
+class TQtFileIconView : public <a href="ntqiconview.html">TQIconView</a>
+{
+    TQ_OBJECT
+
+public:
+    TQtFileIconView( const <a href="ntqstring.html">TQString</a> &amp;dir, TQWidget *parent = 0, const char *name = 0 );
+
+    enum ViewMode { Large, Small };
+
+    void setViewMode( ViewMode m );
+    ViewMode viewMode() const { return vm; }
+    void setOpenItem( TQtFileIconViewItem *i ) {
+        openItem = i;
+    }
+
+public slots:
+    void setDirectory( const <a href="ntqstring.html">TQString</a> &amp;dir );
+    void setDirectory( const <a href="ntqdir.html">TQDir</a> &amp;dir );
+    void newDirectory();
+    <a href="ntqdir.html">TQDir</a> currentDir();
+
+signals:
+    void directoryChanged( const <a href="ntqstring.html">TQString</a> &amp; );
+    void startReadDir( int dirs );
+    void readNextDir();
+    void readDirDone();
+    void enableUp();
+    void disableUp();
+    void enableMkdir();
+    void disableMkdir();
+
+protected slots:
+    void itemDoubleClicked( <a href="qiconviewitem.html">TQIconViewItem</a> *i );
+    void slotDropped( <a href="qdropevent.html">TQDropEvent</a> *e, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt; &amp; );
+
+    void viewLarge();
+    void viewSmall();
+    void viewBottom();
+    void viewRight();
+    void flowEast();
+    void flowSouth();
+    void itemTextTruncate();
+    void itemTextWordWrap();
+    void sortAscending();
+    void sortDescending();
+    void arrangeItemsInGrid() {
+<a name="x807"></a>        TQIconView::<a href="ntqiconview.html#arrangeItemsInGrid">arrangeItemsInGrid</a>( true );
+    }
+
+    void slotRightPressed( <a href="qiconviewitem.html">TQIconViewItem</a> *item );
+    void openFolder();
+
+protected:
+    void readDir( const <a href="ntqdir.html">TQDir</a> &amp;dir );
+    virtual TQDragObject *dragObject();
+
+    virtual void keyPressEvent( <a href="qkeyevent.html">TQKeyEvent</a> *e );
+
+    <a href="ntqdir.html">TQDir</a> viewDir;
+    int newFolderNum;
+    <a href="ntqsize.html">TQSize</a> sz;
+    <a href="ntqpixmap.html">TQPixmap</a> pix;
+    ViewMode vm;
+    TQtFileIconViewItem *openItem;
+
+};
+
+/*****************************************************************************
+ *
+ * Class TQtFileIconViewItem
+ *
+ *****************************************************************************/
+
+class TQtFileIconViewItem : public <a href="qiconviewitem.html">TQIconViewItem</a>
+{
+    friend class TQtFileIconView;
+
+public:
+    enum ItemType {
+        File = 0,
+        Dir,
+        Link
+    };
+
+    TQtFileIconViewItem( TQtFileIconView *parent, TQFileInfo *fi );
+
+    virtual ~TQtFileIconViewItem();
+
+    ItemType type() const
+    { return itemType; }
+    <a href="ntqstring.html">TQString</a> filename() const { return itemFileName; }
+
+    virtual bool acceptDrop( const <a href="qmimesource.html">TQMimeSource</a> *e ) const;
+
+    virtual void setText( const <a href="ntqstring.html">TQString</a> &amp;text );
+    virtual TQPixmap *pixmap() const;
+
+    virtual void dragEntered();
+    virtual void dragLeft();
+
+    void viewModeChanged( TQtFileIconView::ViewMode m );
+    void paintItem( <a href="ntqpainter.html">TQPainter</a> *p, const <a href="qcolorgroup.html">TQColorGroup</a> &amp;cg );
+
+protected:
+    virtual void dropped( <a href="qdropevent.html">TQDropEvent</a> *e, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt; &amp; );
+
+    <a href="ntqstring.html">TQString</a> itemFileName;
+    <a href="ntqfileinfo.html">TQFileInfo</a> *itemFileInfo;
+    ItemType itemType;
+    bool checkSetText;
+    <a href="ntqtimer.html">TQTimer</a> timer;
+    TQtFileIconView::ViewMode vm;
+
+};
+
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation of the file icon view:
+<p> <pre>/****************************************************************************
+** $Id: qt/qfileiconview.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "qfileiconview.h"
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qstringlist-h.html">ntqstringlist.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qmime-h.html">ntqmime.h</a>&gt;
+#include &lt;<a href="qstrlist-h.html">ntqstrlist.h</a>&gt;
+#include &lt;<a href="qdragobject-h.html">ntqdragobject.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qevent-h.html">ntqevent.h</a>&gt;
+#include &lt;<a href="qpopupmenu-h.html">ntqpopupmenu.h</a>&gt;
+#include &lt;<a href="qcursor-h.html">ntqcursor.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qwmatrix-h.html">ntqwmatrix.h</a>&gt;
+
+#include &lt;stdlib.h&gt;
+
+static const char * file_icon[]={
+    "32 32 17 1",
+    "# c #000000",
+    "a c #ffffff",
+    "j c #808080",
+    "n c #a0a0a4",
+    "g c #c0c0c0",
+    "m c #004000",
+    "o c #000000",
+    "l c #004040",
+    "k c #404000",
+    "i c #c0c000",
+    "h c #ffff00",
+    "b c #ffffc0",
+    "e c #ff8000",
+    "f c #c05800",
+    "c c #ffa858",
+    "d c #ffdca8",
+    ". c None",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    ".............#....###...........",
+    "...###......#a##.#aba##.........",
+    "..#cdb#....#aaaa#aaaaaa##.......",
+    "..#ecdb#..#aaaa#aaaaaaaba##.....",
+    "..#fecdb##aaaa#aaaaaaaaaaab##...",
+    "...#fecdb#aaa#aaaaaaabaabaaaa##.",
+    "....#fecdb#a#baaaaa#baaaaaabaaa#",
+    ".....#fecdb#aaaaab#a##baaaaaaa#.",
+    ".....##fecdb#bbba#aaaa##baaab#..",
+    "....#bb#fecdb#ba#aaaaaaa##aa#...",
+    "...#bbbb#fecdb##aaabaaaaaa##....",
+    "..#bbbb#b#fecdb#aaaaaaabaaaa##..",
+    ".#bbbb#bbb#fecdg#aaaaaaaaaaaba#.",
+    "#hhbb#bbbbb#fegg#iiaaaaaaaaaaaa#",
+    "#jhhhklibbbk#ggj#aaiiaaaaaaaaa#j",
+    ".#mjhhhkmikab####aaabiiaaaaaa#j.",
+    "...##jhhhmaaibbaaiibaaaiiaab#n..",
+    ".....##j#baaaiiabaaiibaabaa#n...",
+    "......##baibaabiibaaaiiabb#j....",
+    "......#bbbbiiaabbiiaaaaabon.....",
+    ".....#bbbbbbbiiabbaiiaab#n......",
+    ".....#jbbbbbbbbiibaabba#n.......",
+    "......##jbbbbbbbbiiaabmj........",
+    "........##jbbbbbbbbbb#j.........",
+    "..........##nbbbbbbbmj..........",
+    "............##jbbbb#j...........",
+    "..............#mjj#n............",
+    "................##n............."};
+
+static const char * folder_icon[]={
+    "32 32 11 1",
+    "# c #000000",
+    "b c #c0c000",
+    "d c #585858",
+    "a c #ffff00",
+    "i c #400000",
+    "h c #a0a0a4",
+    "e c #000000",
+    "c c #ffffff",
+    "f c #303030",
+    "g c #c0c0c0",
+    ". c None",
+    "...###..........................",
+    "...#aa##........................",
+    ".###baaa##......................",
+    ".#cde#baaa##....................",
+    ".#cccdeebaaa##..##f.............",
+    ".#cccccdeebaaa##aaa##...........",
+    ".#cccccccdeebaaaaaaaa##.........",
+    ".#cccccccccdeebababaaa#.........",
+    ".#cccccgcgghhebbbbbbbaa#........",
+    ".#ccccccgcgggdebbbbbbba#........",
+    ".#cccgcgcgcgghdeebiebbba#.......",
+    ".#ccccgcggggggghdeddeeba#.......",
+    ".#cgcgcgcggggggggghghdebb#......",
+    ".#ccgcggggggggghghghghd#b#......",
+    ".#cgcgcggggggggghghghhd#b#......",
+    ".#gcggggggggghghghhhhhd#b#......",
+    ".#cgcggggggggghghghhhhd#b#......",
+    ".#ggggggggghghghhhhhhhdib#......",
+    ".#gggggggggghghghhhhhhd#b#......",
+    ".#hhggggghghghhhhhhhhhd#b#......",
+    ".#ddhhgggghghghhhhhhhhd#b#......",
+    "..##ddhhghghhhhhhhhhhhdeb#......",
+    "....##ddhhhghhhhhhhhhhd#b#......",
+    "......##ddhhhhhhhhhhhhd#b#......",
+    "........##ddhhhhhhhhhhd#b#......",
+    "..........##ddhhhhhhhhd#b#......",
+    "............##ddhhhhhhd#b###....",
+    "..............##ddhhhhd#b#####..",
+    "................##ddhhd#b######.",
+    "..................##dddeb#####..",
+    "....................##d#b###....",
+    "......................####......"};
+
+
+static const char * link_icon[]={
+    "32 32 12 1",
+    "# c #000000",
+    "h c #a0a0a4",
+    "b c #c00000",
+    "d c #585858",
+    "i c #400000",
+    "c c #ffffff",
+    "e c #000000",
+    "g c #c0c0c0",
+    "a c #ff0000",
+    "f c #303030",
+    "n c white",
+    ". c None",
+    "...###..........................",
+    "...#aa##........................",
+    ".###baaa##......................",
+    ".#cde#baaa##....................",
+    ".#cccdeebaaa##..##f.............",
+    ".#cccccdeebaaa##aaa##...........",
+    ".#cccccccdeebaaaaaaaa##.........",
+    ".#cccccccccdeebababaaa#.........",
+    ".#cccccgcgghhebbbbbbbaa#........",
+    ".#ccccccgcgggdebbbbbbba#........",
+    ".#cccgcgcgcgghdeebiebbba#.......",
+    ".#ccccgcggggggghdeddeeba#.......",
+    ".#cgcgcgcggggggggghghdebb#......",
+    ".#ccgcggggggggghghghghd#b#......",
+    ".#cgcgcggggggggghghghhd#b#......",
+    ".#gcggggggggghghghhhhhd#b#......",
+    ".#cgcggggggggghghghhhhd#b#......",
+    ".#ggggggggghghghhhhhhhdib#......",
+    ".#gggggggggghghghhhhhhd#b#......",
+    ".#hhggggghghghhhhhhhhhd#b#......",
+    ".#ddhhgggghghghhhhhhhhd#b#......",
+    "..##ddhhghghhhhhhhhhhhdeb#......",
+    "############hhhhhhhhhhd#b#......",
+    "#nnnnnnnnnn#hhhhhhhhhhd#b#......",
+    "#nnnnnnnnnn#hhhhhhhhhhd#b#......",
+    "#nn#nn#nnnn#ddhhhhhhhhd#b#......",
+    "#nn##n##nnn###ddhhhhhhd#b###....",
+    "#nnn#####nn#..##ddhhhhd#b#####..",
+    "#nnnnn##nnn#....##ddhhd#b######.",
+    "#nnnnn#nnnn#......##dddeb#####..",
+    "#nnnnnnnnnn#........##d#b###....",
+    "############..........####......"};
+
+static const char * folder_locked_icon[]={
+    "32 32 12 1",
+    "# c #000000",
+    "g c #808080",
+    "h c #c0c0c0",
+    "f c #c05800",
+    "c c #ffffff",
+    "d c #585858",
+    "b c #ffa858",
+    "a c #ffdca8",
+    "e c #000000",
+    "i c #a0a0a4",
+    "j c #c0c0c0",
+    ". c None",
+    "...###..........................",
+    "...#aa##........................",
+    ".###baaa##......................",
+    ".#cde#baaa##....................",
+    ".#cccdeeba#######...............",
+    ".#cccccde##fffff##..............",
+    ".#cccccc##fffgggg#..............",
+    ".#ccccccc#ffg####a##............",
+    ".#ccccchc#ffg#eebbaa##..........",
+    ".#ccccccc#ffg#ddeebbba##........",
+    ".#ccchccc#ffg#ihddeebbba##......",
+    ".#cccccaa#ffg#ihhhddeeba##......",
+    ".#chchhbbaafg#ihhhihidebb#......",
+    ".#cchccbbbbaa#ihhihihid#b#......",
+    ".#chchhbb#bbbaaiihihiid#b#......",
+    ".#hchhcbb#fbbbafhiiiiid#b#......",
+    ".#chchhbb#ffgbbfihiiiid#b#......",
+    ".#hhhhhbb#ffg#bfiiiiiid#b#......",
+    ".#hhhhhbbaffg#bfiiiiiid#b#......",
+    ".#iihhhjbbaab#bfiiiiiid#b#......",
+    ".#ddiihhh#bbbabfiiiiiid#b#......",
+    "..##ddiih#ffbbbfiiiiiid#b#......",
+    "....##ddi#ffg#biiiiiiid#b#......",
+    "......##d#ffg#iiiiiiiid#b#......",
+    "........##ffg#iiiiiiiid#b#......",
+    ".........#ffg#iiiiiiiid#b#......",
+    ".........#ffg#ddiiiiiid#b###....",
+    ".........##fg###ddiiiid#b#####..",
+    "...........####.##ddiid#b######.",
+    "..................##dddeb#####..",
+    "....................##d#b###....",
+    "......................####......"};
+
+static TQPixmap *iconFolderLockedLarge = 0;
+static TQPixmap *iconFolderLarge = 0;
+static TQPixmap *iconFileLarge = 0;
+static TQPixmap *iconLinkLarge = 0;
+static TQPixmap *iconFolderLockedSmall = 0;
+static TQPixmap *iconFolderSmall = 0;
+static TQPixmap *iconFileSmall = 0;
+static TQPixmap *iconLinkSmall = 0;
+
+static void cleanup()
+{
+    delete iconFolderLockedLarge;
+    iconFolderLockedLarge = 0;
+    delete iconFolderLarge;
+    iconFolderLarge = 0;
+    delete iconFileLarge;
+    iconFileLarge = 0;
+    delete iconLinkLarge;
+    iconLinkLarge = 0;
+    delete iconFolderLockedSmall;
+    iconFolderLockedSmall = 0;
+    delete iconFolderSmall;
+    iconFolderSmall = 0;
+    delete iconFileSmall;
+    iconFileSmall = 0;
+    delete iconLinkSmall;
+    iconLinkSmall = 0;
+}
+
+/*****************************************************************************
+ *
+ * Class TQtFileIconDrag
+ *
+ *****************************************************************************/
+
+<a name="f301"></a>TQtFileIconDrag::TQtFileIconDrag( <a href="ntqwidget.html">TQWidget</a> * dragSource, const char* name )
+    : <a href="qicondrag.html">TQIconDrag</a>( dragSource, name )
+{
+}
+
+<a name="x832"></a>const char* TQtFileIconDrag::<a href="qmimesource.html#format">format</a>( int i ) const
+{
+    if ( i == 0 )
+        return "application/x-qiconlist";
+    else if ( i == 1 )
+        return "text/uri-list";
+    else
+        return 0;
+}
+
+<a name="x831"></a>TQByteArray TQtFileIconDrag::<a href="qicondrag.html#encodedData">encodedData</a>( const char* mime ) const
+{
+    <a href="qbytearray.html">TQByteArray</a> a;
+    if ( TQString( mime ) == "application/x-qiconlist" ) {
+        a = TQIconDrag::<a href="qicondrag.html#encodedData">encodedData</a>( mime );
+    } else if ( TQString( mime ) == "text/uri-list" ) {
+        <a href="ntqstring.html">TQString</a> s = urls.join( "\r\n" );
+<a name="x870"></a><a name="x856"></a>        a.<a href="ntqmemarray.html#resize">resize</a>( s.<a href="ntqstring.html#length">length</a>() );
+<a name="x869"></a><a name="x855"></a>        memcpy( a.<a href="ntqmemarray.html#data">data</a>(), s.<a href="ntqstring.html#latin1">latin1</a>(), s.<a href="ntqstring.html#length">length</a>() );
+    }
+    return a;
+}
+
+<a name="x830"></a>bool TQtFileIconDrag::<a href="qicondrag.html#canDecode">canDecode</a>( <a href="qmimesource.html">TQMimeSource</a>* e )
+{
+<a name="x819"></a>    return e-&gt;<a href="qdropevent.html#provides">provides</a>( "application/x-qiconlist" ) ||
+        e-&gt;<a href="qdropevent.html#provides">provides</a>( "text/uri-list" );
+}
+
+<a name="x829"></a>void TQtFileIconDrag::<a href="qicondrag.html#append">append</a>( const <a href="qicondragitem.html">TQIconDragItem</a> &amp;item, const <a href="ntqrect.html">TQRect</a> &amp;pr,
+                             const <a href="ntqrect.html">TQRect</a> &amp;tr, const <a href="ntqstring.html">TQString</a> &amp;url )
+{
+    TQIconDrag::<a href="qicondrag.html#append">append</a>( item, pr, tr );
+    <a href="ntqstring.html">TQString</a> ourUrl = url;
+#ifdef TQ_WS_WIN
+    if (ourUrl.<a href="ntqstring.html#length">length</a>() &gt; 2 &amp;&amp; ourUrl[1] != ':') {
+        <a href="ntqdir.html">TQDir</a> dir(ourUrl);
+<a name="x810"></a>        ourUrl = dir.<a href="ntqdir.html#absPath">absPath</a>();
+    }
+#endif
+    urls &lt;&lt; TQUriDrag::<a href="quridrag.html#localFileToUri">localFileToUri</a>(ourUrl);
+}
+
+/*****************************************************************************
+ *
+ * Class TQtFileIconViewItem
+ *
+ *****************************************************************************/
+
+<a name="f322"></a>TQtFileIconViewItem::TQtFileIconViewItem( TQtFileIconView *parent, TQFileInfo *fi )
+<a name="x824"></a><a name="x823"></a>    : <a href="qiconviewitem.html">TQIconViewItem</a>( parent, fi-&gt;<a href="ntqfileinfo.html#fileName">fileName</a>() ), itemFileName( fi-&gt;<a href="ntqfileinfo.html#filePath">filePath</a>() ),
+      itemFileInfo( fi ), checkSetText( false )
+{
+    vm = TQtFileIconView::Large;
+
+<a name="x825"></a>    if ( itemFileInfo-&gt;<a href="ntqfileinfo.html#isDir">isDir</a>() )
+        itemType = Dir;
+<a name="x826"></a>    else if ( itemFileInfo-&gt;<a href="ntqfileinfo.html#isFile">isFile</a>() )
+        itemType = File;
+<a name="x827"></a>    if ( itemFileInfo-&gt;<a href="ntqfileinfo.html#isSymLink">isSymLink</a>() )
+        itemType = Link;
+
+    viewModeChanged( ( (TQtFileIconView*)<a href="qiconviewitem.html#iconView">iconView</a>() )-&gt;viewMode() );
+
+    if ( itemFileInfo-&gt;<a href="ntqfileinfo.html#fileName">fileName</a>() == "." ||
+         itemFileInfo-&gt;<a href="ntqfileinfo.html#fileName">fileName</a>() == ".." )
+        <a href="qiconviewitem.html#setRenameEnabled">setRenameEnabled</a>( false );
+
+    checkSetText = true;
+
+    TQObject::<a href="ntqobject.html#connect">connect</a>( &amp;timer, TQ_SIGNAL( timeout() ),
+                      <a href="qiconviewitem.html#iconView">iconView</a>(), TQ_SLOT( openFolder() ) );
+}
+
+<a name="x842"></a>void TQtFileIconViewItem::<a href="qiconviewitem.html#paintItem">paintItem</a>( <a href="ntqpainter.html">TQPainter</a> *p, const <a href="qcolorgroup.html">TQColorGroup</a> &amp;cg )
+{
+    if ( itemFileInfo-&gt;<a href="ntqfileinfo.html#isSymLink">isSymLink</a>() ) {
+<a name="x861"></a>        <a href="ntqfont.html">TQFont</a> f( p-&gt;<a href="ntqpainter.html#font">font</a>() );
+<a name="x828"></a>        f.<a href="ntqfont.html#setItalic">setItalic</a>( true );
+        p-&gt;<a href="ntqpainter.html#setFont">setFont</a>( f );
+    }
+
+    TQIconViewItem::<a href="qiconviewitem.html#paintItem">paintItem</a>( p, cg );
+}
+
+void <a name="f323"></a>TQtFileIconViewItem::viewModeChanged( TQtFileIconView::ViewMode m )
+{
+    vm = m;
+    <a href="qiconviewitem.html#setDropEnabled">setDropEnabled</a>( itemType == Dir &amp;&amp; TQDir( itemFileName ).isReadable() );
+    <a href="qiconviewitem.html#calcRect">calcRect</a>();
+}
+
+<a name="x843"></a>TQPixmap *TQtFileIconViewItem::<a href="qiconviewitem.html#pixmap">pixmap</a>() const
+{
+    switch ( itemType ) {
+    case Dir:
+        {
+            if ( !TQDir( itemFileName ).isReadable() ) {
+                if ( vm == TQtFileIconView::Small )
+                    return iconFolderLockedSmall;
+                else
+                    return iconFolderLockedLarge;
+            } else {
+                if ( vm == TQtFileIconView::Small )
+                    return iconFolderSmall;
+                else
+                    return iconFolderLarge;
+            }
+        }
+    case Link:
+        {
+            if ( vm == TQtFileIconView::Small )
+                return iconLinkSmall;
+            else
+                return iconLinkLarge;
+        }
+    default:
+        {
+            if ( vm == TQtFileIconView::Small )
+                return iconFileSmall;
+            else
+                return iconFileLarge;
+        }
+    }
+}
+
+TQtFileIconViewItem::~TQtFileIconViewItem()
+{
+    delete itemFileInfo;
+}
+
+<a name="x850"></a>void TQtFileIconViewItem::<a href="qiconviewitem.html#setText">setText</a>( const <a href="ntqstring.html">TQString</a> &amp;text )
+{
+    if ( checkSetText ) {
+        if ( text == "." || text == "." || text.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+            return;
+<a name="x821"></a>        <a href="ntqdir.html">TQDir</a> dir( itemFileInfo-&gt;<a href="ntqfileinfo.html#dir">dir</a>() );
+<a name="x814"></a>        if ( dir.<a href="ntqdir.html#rename">rename</a>( itemFileInfo-&gt;<a href="ntqfileinfo.html#fileName">fileName</a>(), text ) ) {
+<a name="x822"></a>            itemFileName = itemFileInfo-&gt;<a href="ntqfileinfo.html#dirPath">dirPath</a>( true ) + "/" + text;
+            delete itemFileInfo;
+            itemFileInfo = new <a href="ntqfileinfo.html">TQFileInfo</a>( itemFileName );
+            TQIconViewItem::<a href="qiconviewitem.html#setText">setText</a>( text );
+        }
+    } else {
+        TQIconViewItem::<a href="qiconviewitem.html#setText">setText</a>( text );
+    }
+}
+
+<a name="x836"></a>bool TQtFileIconViewItem::<a href="qiconviewitem.html#acceptDrop">acceptDrop</a>( const <a href="qmimesource.html">TQMimeSource</a> *e ) const
+{
+    if ( type() == Dir &amp;&amp; e-&gt;<a href="qdropevent.html#provides">provides</a>( "text/uri-list" ) &amp;&amp;
+         dropEnabled() )
+        return true;
+
+    return false;
+}
+
+<a name="x839"></a>void TQtFileIconViewItem::<a href="qiconviewitem.html#dropped">dropped</a>( <a href="qdropevent.html">TQDropEvent</a> *e, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt; &amp; )
+{
+    timer.stop();
+
+    if ( !TQUriDrag::canDecode( e ) ) {
+<a name="x818"></a>        e-&gt;<a href="qdropevent.html#ignore">ignore</a>();
+        return;
+    }
+
+    <a href="ntqstringlist.html">TQStringList</a> lst;
+<a name="x873"></a>    TQUriDrag::<a href="quridrag.html#decodeLocalFiles">decodeLocalFiles</a>( e, lst );
+
+    <a href="ntqstring.html">TQString</a> str;
+<a name="x817"></a>    if ( e-&gt;<a href="qdropevent.html#action">action</a>() == TQDropEvent::Copy )
+        str = "Copy\n\n";
+    else
+        str = "Move\n\n";
+<a name="x874"></a>    for ( uint i = 0; i &lt; lst.<a href="ntqvaluelist.html#count">count</a>(); ++i )
+        str += TQString( "   %1\n" ).arg( lst[i] );
+    str += TQString( "\n"
+        "To\n\n"
+        "       %1" ).arg( filename() );
+
+<a name="x859"></a>    TQMessageBox::<a href="ntqmessagebox.html#information">information</a>( iconView(), e-&gt;<a href="qdropevent.html#action">action</a>() == TQDropEvent::Copy ? "Copy" : "Move" , str, "Not Implemented" );
+    if ( e-&gt;<a href="qdropevent.html#action">action</a>() == TQDropEvent::Move )
+        TQMessageBox::<a href="ntqmessagebox.html#information">information</a>( iconView(), "Remove" , str, "Not Implemented" );
+<a name="x816"></a>    e-&gt;<a href="qdropevent.html#acceptAction">acceptAction</a>();
+}
+
+<a name="x837"></a>void TQtFileIconViewItem::<a href="qiconviewitem.html#dragEntered">dragEntered</a>()
+{
+    if ( type() != Dir ||
+         type() == Dir &amp;&amp; !TQDir( itemFileName ).isReadable() )
+        return;
+
+    ( (TQtFileIconView*)iconView() )-&gt;setOpenItem( this );
+    timer.start( 1500 );
+}
+
+<a name="x838"></a>void TQtFileIconViewItem::<a href="qiconviewitem.html#dragLeft">dragLeft</a>()
+{
+    if ( type() != Dir ||
+         type() == Dir &amp;&amp; !TQDir( itemFileName ).isReadable() )
+        return;
+
+    timer.stop();
+}
+
+/*****************************************************************************
+ *
+ * Class TQtFileIconView
+ *
+ *****************************************************************************/
+
+<a name="f302"></a>TQtFileIconView::TQtFileIconView( const <a href="ntqstring.html">TQString</a> &amp;dir, TQWidget *parent, const char *name )
+    : <a href="ntqiconview.html">TQIconView</a>( parent, name ), viewDir( dir ), newFolderNum( 0 )
+{
+    if ( !iconFolderLockedLarge ) {
+        <a href="ntqapplication.html#qAddPostRoutine">tqAddPostRoutine</a>( cleanup );
+        <a href="ntqwmatrix.html">TQWMatrix</a> m;
+<a name="x876"></a>        m.<a href="ntqwmatrix.html#scale">scale</a>( 0.6, 0.6 );
+        <a href="ntqpixmap.html">TQPixmap</a> iconpix( folder_locked_icon );
+        iconFolderLockedLarge = new <a href="ntqpixmap.html">TQPixmap</a>( folder_locked_icon );
+<a name="x863"></a>        iconpix = iconpix.<a href="ntqpixmap.html#xForm">xForm</a>( m );
+        iconFolderLockedSmall = new <a href="ntqpixmap.html">TQPixmap</a>( iconpix );
+        iconpix = TQPixmap( folder_icon );
+        iconFolderLarge = new <a href="ntqpixmap.html">TQPixmap</a>( folder_icon );
+        iconpix = iconpix.<a href="ntqpixmap.html#xForm">xForm</a>( m );
+        iconFolderSmall = new <a href="ntqpixmap.html">TQPixmap</a>( iconpix );
+        iconpix = TQPixmap( file_icon );
+        iconFileLarge = new <a href="ntqpixmap.html">TQPixmap</a>( file_icon );
+        iconpix = iconpix.<a href="ntqpixmap.html#xForm">xForm</a>( m );
+        iconFileSmall = new <a href="ntqpixmap.html">TQPixmap</a>( iconpix );
+        iconpix = TQPixmap( link_icon );
+        iconLinkLarge = new <a href="ntqpixmap.html">TQPixmap</a>( link_icon );
+        iconpix = iconpix.<a href="ntqpixmap.html#xForm">xForm</a>( m );
+        iconLinkSmall = new <a href="ntqpixmap.html">TQPixmap</a>( iconpix );
+    }
+
+    vm = Large;
+
+    <a href="ntqiconview.html#setGridX">setGridX</a>( 75 );
+    <a href="ntqiconview.html#setResizeMode">setResizeMode</a>( Adjust );
+    <a href="ntqiconview.html#setWordWrapIconText">setWordWrapIconText</a>( false );
+
+    <a href="ntqobject.html#connect">connect</a>( this, TQ_SIGNAL( <a href="ntqiconview.html#doubleClicked">doubleClicked</a>( <a href="qiconviewitem.html">TQIconViewItem</a> * ) ),
+             this, TQ_SLOT( itemDoubleClicked( <a href="qiconviewitem.html">TQIconViewItem</a> * ) ) );
+    <a href="ntqobject.html#connect">connect</a>( this, TQ_SIGNAL( <a href="ntqiconview.html#returnPressed">returnPressed</a>( <a href="qiconviewitem.html">TQIconViewItem</a> * ) ),
+             this, TQ_SLOT( itemDoubleClicked( <a href="qiconviewitem.html">TQIconViewItem</a> * ) ) );
+    <a href="ntqobject.html#connect">connect</a>( this, TQ_SIGNAL( <a href="ntqiconview.html#dropped">dropped</a>( <a href="qdropevent.html">TQDropEvent</a> *, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt; &amp; ) ),
+             this, TQ_SLOT( slotDropped( <a href="qdropevent.html">TQDropEvent</a> *, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt; &amp; ) ) );
+    <a href="ntqobject.html#connect">connect</a>( this, TQ_SIGNAL( <a href="ntqiconview.html#contextMenuRequested">contextMenuRequested</a>( <a href="qiconviewitem.html">TQIconViewItem</a> *, const <a href="ntqpoint.html">TQPoint</a> &amp; ) ),
+             this, TQ_SLOT( slotRightPressed( <a href="qiconviewitem.html">TQIconViewItem</a> * ) ) );
+
+    <a href="ntqscrollview.html#setHScrollBarMode">setHScrollBarMode</a>( AlwaysOff );
+    <a href="ntqscrollview.html#setVScrollBarMode">setVScrollBarMode</a>( Auto );
+
+    <a href="ntqiconview.html#setAutoArrange">setAutoArrange</a>( true );
+    <a href="ntqiconview.html#setSorting">setSorting</a>( true );
+    openItem = 0;
+}
+
+void <a name="f303"></a>TQtFileIconView::openFolder()
+{
+    if ( !openItem )
+        return;
+    if ( openItem-&gt;type() != TQtFileIconViewItem::Dir ||
+         openItem-&gt;type() == TQtFileIconViewItem::Dir &amp;&amp;
+         !TQDir( openItem-&gt;itemFileName ).isReadable() )
+        return;
+
+    openItem-&gt;timer.stop();
+    setDirectory( openItem-&gt;itemFileName );
+}
+
+void <a name="f304"></a>TQtFileIconView::setDirectory( const <a href="ntqstring.html">TQString</a> &amp;dir )
+{
+    viewDir = TQDir( dir );
+    readDir( viewDir );
+}
+
+void TQtFileIconView::setDirectory( const <a href="ntqdir.html">TQDir</a> &amp;dir )
+{
+    viewDir = dir;
+    readDir( viewDir );
+}
+
+void <a name="f305"></a>TQtFileIconView::newDirectory()
+{
+    <a href="ntqiconview.html#setAutoArrange">setAutoArrange</a>( false );
+    <a href="ntqiconview.html#selectAll">selectAll</a>( false );
+    if ( viewDir.mkdir( TQString( "New Folder %1" ).arg( ++newFolderNum ) ) ) {
+        <a href="ntqfileinfo.html">TQFileInfo</a> *fi = new <a href="ntqfileinfo.html">TQFileInfo</a>( viewDir, TQString( "New Folder %1" ).arg( newFolderNum ) );
+        TQtFileIconViewItem *item = new TQtFileIconViewItem( this, new <a href="ntqfileinfo.html">TQFileInfo</a>( *fi ) );
+<a name="x847"></a>        item-&gt;<a href="qiconviewitem.html#setKey">setKey</a>( TQString( "000000%1" ).arg( fi-&gt;<a href="ntqfileinfo.html#fileName">fileName</a>() ) );
+        delete fi;
+        <a href="ntqscrollview.html#repaintContents">repaintContents</a>( <a href="ntqscrollview.html#contentsX">contentsX</a>(), contentsY(), contentsWidth(), contentsHeight(), false );
+        <a href="ntqiconview.html#ensureItemVisible">ensureItemVisible</a>( item );
+<a name="x849"></a>        item-&gt;<a href="qiconviewitem.html#setSelected">setSelected</a>( true, true );
+        <a href="ntqiconview.html#setCurrentItem">setCurrentItem</a>( item );
+        <a href="ntqiconview.html#repaintItem">repaintItem</a>( item );
+<a name="x808"></a>        tqApp-&gt;<a href="ntqapplication.html#processEvents">processEvents</a>();
+<a name="x845"></a>        item-&gt;<a href="qiconviewitem.html#rename">rename</a>();
+    }
+    <a href="ntqiconview.html#setAutoArrange">setAutoArrange</a>( true );
+}
+
+TQDir <a name="f306"></a>TQtFileIconView::currentDir()
+{
+    return viewDir;
+}
+
+static bool isRoot( const <a href="ntqstring.html">TQString</a> &amp;s )
+{
+#if defined(Q_OS_UNIX)
+    if ( s == "/" )
+        return true;
+#elif defined(Q_OS_WIN32)
+    <a href="ntqstring.html">TQString</a> p = s;
+    if ( p.<a href="ntqstring.html#length">length</a>() == 3 &amp;&amp;
+<a name="x871"></a>         p.<a href="ntqstring.html#right">right</a>( 2 ) == ":/" )
+        return true;
+    if ( p[ 0 ] == '/' &amp;&amp; p[ 1 ] == '/' ) {
+<a name="x867"></a>        int slashes = p.<a href="ntqstring.html#contains">contains</a>( '/' );
+        if ( slashes &lt;= 3 )
+            return true;
+        if ( slashes == 4 &amp;&amp; p[ (int)p.<a href="ntqstring.html#length">length</a>() - 1 ] == '/' )
+            return true;
+    }
+#endif
+
+    return false;
+}
+
+void <a name="f307"></a>TQtFileIconView::readDir( const <a href="ntqdir.html">TQDir</a> &amp;dir )
+{
+<a name="x813"></a>    if ( !dir.<a href="ntqdir.html#isReadable">isReadable</a>() )
+        return;
+
+    if ( isRoot( dir.<a href="ntqdir.html#absPath">absPath</a>() ) )
+        emit disableUp();
+    else
+        emit enableUp();
+
+    <a href="ntqiconview.html#clear">clear</a>();
+
+    emit directoryChanged( dir.<a href="ntqdir.html#absPath">absPath</a>() );
+
+<a name="x812"></a>    const TQFileInfoList *filist = dir.<a href="ntqdir.html#entryInfoList">entryInfoList</a>( TQDir::DefaultFilter, TQDir::DirsFirst | TQDir::Name );
+
+    emit startReadDir( filist-&gt;count() );
+
+    TQFileInfoListIterator it( *filist );
+    <a href="ntqfileinfo.html">TQFileInfo</a> *fi;
+    bool allowRename = false, allowRenameSet = false;
+    while ( ( fi = it.current() ) != 0 ) {
+        ++it;
+        if ( fi &amp;&amp; fi-&gt;<a href="ntqfileinfo.html#fileName">fileName</a>() == ".." &amp;&amp; ( fi-&gt;<a href="ntqfileinfo.html#dirPath">dirPath</a>() == "/" || fi-&gt;<a href="ntqfileinfo.html#dirPath">dirPath</a>().isEmpty() ) )
+            continue;
+        emit readNextDir();
+        TQtFileIconViewItem *item = new TQtFileIconViewItem( this, new <a href="ntqfileinfo.html">TQFileInfo</a>( *fi ) );
+        if ( fi-&gt;<a href="ntqfileinfo.html#isDir">isDir</a>() )
+            item-&gt;<a href="qiconviewitem.html#setKey">setKey</a>( TQString( "000000%1" ).arg( fi-&gt;<a href="ntqfileinfo.html#fileName">fileName</a>() ) );
+        else
+            item-&gt;<a href="qiconviewitem.html#setKey">setKey</a>( fi-&gt;<a href="ntqfileinfo.html#fileName">fileName</a>() );
+        if ( !allowRenameSet ) {
+<a name="x820"></a>            if ( !TQFileInfo( fi-&gt;<a href="ntqfileinfo.html#absFilePath">absFilePath</a>() ).isWritable() ||
+<a name="x851"></a>                 item-&gt;<a href="qiconviewitem.html#text">text</a>() == "." || item-&gt;<a href="qiconviewitem.html#text">text</a>() == ".." )
+                allowRename = false;
+            else
+                allowRename = true;
+            if ( item-&gt;<a href="qiconviewitem.html#text">text</a>() == "." || item-&gt;<a href="qiconviewitem.html#text">text</a>() == ".." )
+                allowRenameSet = false;
+            else
+                allowRenameSet = true;
+        }
+<a name="x848"></a>        item-&gt;<a href="qiconviewitem.html#setRenameEnabled">setRenameEnabled</a>( allowRename );
+    }
+
+    if ( !TQFileInfo( dir.<a href="ntqdir.html#absPath">absPath</a>() ).isWritable() )
+        emit disableMkdir();
+    else
+        emit enableMkdir();
+
+    emit readDirDone();
+}
+
+void <a name="f308"></a>TQtFileIconView::itemDoubleClicked( <a href="qiconviewitem.html">TQIconViewItem</a> *i )
+{
+    TQtFileIconViewItem *item = ( TQtFileIconViewItem* )i;
+
+    if ( item-&gt;type() == TQtFileIconViewItem::Dir ) {
+        viewDir = TQDir( item-&gt;filename() );
+        readDir( viewDir );
+    } else if ( item-&gt;type() == TQtFileIconViewItem::Link &amp;&amp;
+                TQFileInfo( TQFileInfo( item-&gt;filename() ).readLink() ).isDir() ) {
+        viewDir = TQDir( TQFileInfo( item-&gt;filename() ).readLink() );
+        readDir( viewDir );
+    }
+}
+
+<a name="x834"></a>TQDragObject *TQtFileIconView::<a href="ntqiconview.html#dragObject">dragObject</a>()
+{
+    if ( !currentItem() )
+        return 0;
+
+<a name="x809"></a>    <a href="ntqpoint.html">TQPoint</a> orig = <a href="ntqscrollview.html#viewportToContents">viewportToContents</a>( <a href="ntqscrollview.html#viewport">viewport</a>()-&gt;mapFromGlobal( TQCursor::<a href="ntqcursor.html#pos">pos</a>() ) );
+    TQtFileIconDrag *drag = new TQtFileIconDrag( <a href="ntqscrollview.html#viewport">viewport</a>() );
+<a name="x815"></a>    drag-&gt;<a href="ntqdragobject.html#setPixmap">setPixmap</a>( *currentItem()-&gt;pixmap(),
+                     TQPoint( <a href="ntqiconview.html#currentItem">currentItem</a>()-&gt;pixmapRect().width() / 2, currentItem()-&gt;pixmapRect().height() / 2 ) );
+    for ( TQtFileIconViewItem *item = (TQtFileIconViewItem*)<a href="ntqiconview.html#firstItem">firstItem</a>(); item;
+<a name="x841"></a>          item = (TQtFileIconViewItem*)item-&gt;<a href="qiconviewitem.html#nextItem">nextItem</a>() ) {
+<a name="x840"></a>        if ( item-&gt;<a href="qiconviewitem.html#isSelected">isSelected</a>() ) {
+            <a href="qicondragitem.html">TQIconDragItem</a> id;
+<a name="x833"></a>            id.<a href="qicondragitem.html#setData">setData</a>( TQCString( item-&gt;filename() ) );
+            drag-&gt;<a href="qicondrag.html#append">append</a>( id,
+<a name="x864"></a><a name="x844"></a>                          TQRect( item-&gt;<a href="qiconviewitem.html#pixmapRect">pixmapRect</a>( false ).x() - orig.<a href="ntqpoint.html#x">x</a>(),
+<a name="x865"></a>                                 item-&gt;<a href="qiconviewitem.html#pixmapRect">pixmapRect</a>( false ).y() - orig.<a href="ntqpoint.html#y">y</a>(),
+                                 item-&gt;<a href="qiconviewitem.html#pixmapRect">pixmapRect</a>().width(), item-&gt;<a href="qiconviewitem.html#pixmapRect">pixmapRect</a>().height() ),
+<a name="x852"></a>                          TQRect( item-&gt;<a href="qiconviewitem.html#textRect">textRect</a>( false ).x() - orig.<a href="ntqpoint.html#x">x</a>(),
+                                 item-&gt;<a href="qiconviewitem.html#textRect">textRect</a>( false ).y() - orig.<a href="ntqpoint.html#y">y</a>(),
+                                 item-&gt;<a href="qiconviewitem.html#textRect">textRect</a>().width(), item-&gt;<a href="qiconviewitem.html#textRect">textRect</a>().height() ),
+                          TQString( item-&gt;filename() ) );
+        }
+    }
+
+    return drag;
+}
+
+<a name="x835"></a>void TQtFileIconView::<a href="ntqwidget.html#keyPressEvent">keyPressEvent</a>( <a href="qkeyevent.html">TQKeyEvent</a> *e )
+{
+<a name="x853"></a>    if ( e-&gt;<a href="qkeyevent.html#key">key</a>() == Key_N &amp;&amp;
+<a name="x854"></a>         ( e-&gt;<a href="qkeyevent.html#state">state</a>() &amp; ControlButton ) )
+        newDirectory();
+    else
+        TQIconView::<a href="ntqwidget.html#keyPressEvent">keyPressEvent</a>( e );
+}
+
+void <a name="f309"></a>TQtFileIconView::slotDropped( <a href="qdropevent.html">TQDropEvent</a> *e, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt; &amp; )
+{
+    if ( openItem )
+        openItem-&gt;timer.stop();
+    if ( !TQUriDrag::canDecode( e ) ) {
+        e-&gt;<a href="qdropevent.html#ignore">ignore</a>();
+        return;
+    }
+
+    <a href="ntqstringlist.html">TQStringList</a> lst;
+    TQUriDrag::<a href="quridrag.html#decodeLocalFiles">decodeLocalFiles</a>( e, lst );
+
+    <a href="ntqstring.html">TQString</a> str;
+    if ( e-&gt;<a href="qdropevent.html#action">action</a>() == TQDropEvent::Copy )
+        str = "Copy\n\n";
+    else
+        str = "Move\n\n";
+    for ( uint i = 0; i &lt; lst.<a href="ntqvaluelist.html#count">count</a>(); ++i )
+<a name="x811"></a>        str += TQString( "   %1\n" ).arg( TQDir::<a href="ntqdir.html#convertSeparators">convertSeparators</a>(lst[i]) );
+    str += TQString( "\n"
+        "To\n\n"
+        "       %1" ).arg( viewDir.absPath() );
+
+    TQMessageBox::<a href="ntqmessagebox.html#information">information</a>( this, e-&gt;<a href="qdropevent.html#action">action</a>() == TQDropEvent::Copy ? "Copy" : "Move" , str, "Not Implemented" );
+    if ( e-&gt;<a href="qdropevent.html#action">action</a>() == TQDropEvent::Move )
+<a name="x872"></a>        TQMessageBox::<a href="ntqmessagebox.html#information">information</a>( this, "Remove" , TQDir::convertSeparators(lst.<a href="ntqstringlist.html#join">join</a>("\n")), "Not Implemented" );
+    e-&gt;<a href="qdropevent.html#acceptAction">acceptAction</a>();
+    openItem = 0;
+}
+
+void <a name="f310"></a>TQtFileIconView::viewLarge()
+{
+    setViewMode( Large );
+}
+
+void <a name="f311"></a>TQtFileIconView::viewSmall()
+{
+    setViewMode( Small );
+}
+
+void <a name="f312"></a>TQtFileIconView::viewBottom()
+{
+    <a href="ntqiconview.html#setItemTextPos">setItemTextPos</a>( Bottom );
+}
+
+void <a name="f313"></a>TQtFileIconView::viewRight()
+{
+    <a href="ntqiconview.html#setItemTextPos">setItemTextPos</a>( Right );
+}
+
+void <a name="f314"></a>TQtFileIconView::flowEast()
+{
+    <a href="ntqscrollview.html#setHScrollBarMode">setHScrollBarMode</a>( AlwaysOff );
+    <a href="ntqscrollview.html#setVScrollBarMode">setVScrollBarMode</a>( Auto );
+    <a href="ntqiconview.html#setArrangement">setArrangement</a>( LeftToRight );
+}
+
+void <a name="f315"></a>TQtFileIconView::flowSouth()
+{
+    <a href="ntqscrollview.html#setVScrollBarMode">setVScrollBarMode</a>( AlwaysOff );
+    <a href="ntqscrollview.html#setHScrollBarMode">setHScrollBarMode</a>( Auto );
+    <a href="ntqiconview.html#setArrangement">setArrangement</a>( TopToBottom );
+}
+
+void <a name="f316"></a>TQtFileIconView::sortAscending()
+{
+    <a href="ntqiconview.html#sort">sort</a>( true );
+}
+
+void <a name="f317"></a>TQtFileIconView::sortDescending()
+{
+    <a href="ntqiconview.html#sort">sort</a>( false );
+}
+
+void <a name="f318"></a>TQtFileIconView::itemTextTruncate()
+{
+    <a href="ntqiconview.html#setWordWrapIconText">setWordWrapIconText</a>( false );
+}
+
+void <a name="f319"></a>TQtFileIconView::itemTextWordWrap()
+{
+    <a href="ntqiconview.html#setWordWrapIconText">setWordWrapIconText</a>( true );
+}
+
+void <a name="f320"></a>TQtFileIconView::slotRightPressed( <a href="qiconviewitem.html">TQIconViewItem</a> *item )
+{
+    if ( !item ) { // right pressed on viewport
+        <a href="ntqpopupmenu.html">TQPopupMenu</a> menu( this );
+
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Large view", this, TQ_SLOT( viewLarge() ) );
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Small view", this, TQ_SLOT( viewSmall() ) );
+        menu.<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Text at the &amp;bottom", this, TQ_SLOT( viewBottom() ) );
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Text at the &amp;right", this, TQ_SLOT( viewRight() ) );
+        menu.<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Arrange l&amp;eft to right", this, TQ_SLOT( flowEast() ) );
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Arrange t&amp;op to bottom", this, TQ_SLOT( flowSouth() ) );
+        menu.<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Truncate item text", this, TQ_SLOT( itemTextTruncate() ) );
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Wordwrap item text", this, TQ_SLOT( itemTextWordWrap() ) );
+        menu.<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Arrange items in &amp;grid", this, TQ_SLOT( <a href="ntqiconview.html#arrangeItemsInGrid">arrangeItemsInGrid</a>() ) );
+        menu.<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Sort &amp;ascending", this, TQ_SLOT( sortAscending() ) );
+        menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Sort &amp;descending", this, TQ_SLOT( sortDescending() ) );
+
+<a name="x875"></a>        menu.<a href="ntqwidget.html#setMouseTracking">setMouseTracking</a>( true );
+<a name="x866"></a>        menu.<a href="ntqpopupmenu.html#exec">exec</a>( TQCursor::<a href="ntqcursor.html#pos">pos</a>() );
+    } else { // on item
+        <a href="ntqpopupmenu.html">TQPopupMenu</a> menu( this );
+
+        int RENAME_ITEM = menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Rename Item" );
+        int REMOVE_ITEM = menu.<a href="ntqmenudata.html#insertItem">insertItem</a>( "Remove Item" );
+
+        menu.<a href="ntqwidget.html#setMouseTracking">setMouseTracking</a>( true );
+        int id = menu.<a href="ntqpopupmenu.html#exec">exec</a>( TQCursor::<a href="ntqcursor.html#pos">pos</a>() );
+
+        if ( id == -1 )
+            return;
+
+<a name="x846"></a>        if ( id == RENAME_ITEM &amp;&amp; item-&gt;<a href="qiconviewitem.html#renameEnabled">renameEnabled</a>() ) {
+            item-&gt;<a href="qiconviewitem.html#rename">rename</a>();
+        } else if ( id == REMOVE_ITEM ) {
+            delete item;
+            TQMessageBox::<a href="ntqmessagebox.html#information">information</a>( this, "Not implemented!", "Deleting files not implemented yet,\n"
+                                      "The item has only been removed from the view! " );
+        }
+    }
+}
+
+void <a name="f321"></a>TQtFileIconView::setViewMode( ViewMode m )
+{
+    if ( m == vm )
+        return;
+
+    vm = m;
+    TQtFileIconViewItem *item = (TQtFileIconViewItem*)<a href="ntqiconview.html#firstItem">firstItem</a>();
+    for ( ; item; item = (TQtFileIconViewItem*)item-&gt;<a href="qiconviewitem.html#nextItem">nextItem</a>() )
+        item-&gt;viewModeChanged( vm );
+
+    <a href="ntqiconview.html#arrangeItemsInGrid">arrangeItemsInGrid</a>();
+}
+</pre>
+
+<p> <hr>
+<p> Header file of the main window:
+<p> <pre>/****************************************************************************
+** $Id: qt/mainwindow.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef MAINWIN_H
+#define MAINWIN_H
+
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+
+class TQtFileIconView;
+class DirectoryView;
+class TQProgressBar;
+class TQLabel;
+class TQComboBox;
+class TQToolButton;
+
+class FileMainWindow : public <a href="ntqmainwindow.html">TQMainWindow</a>
+{
+    TQ_OBJECT
+
+public:
+    FileMainWindow();
+
+    TQtFileIconView *fileView() { return fileview; }
+    DirectoryView *dirList() { return dirlist; }
+
+    void show();
+
+protected:
+    void setup();
+    void setPathCombo();
+
+    TQtFileIconView *fileview;
+    DirectoryView *dirlist;
+    <a href="ntqprogressbar.html">TQProgressBar</a> *progress;
+    <a href="ntqlabel.html">TQLabel</a> *label;
+    <a href="ntqcombobox.html">TQComboBox</a> *pathCombo;
+    <a href="ntqtoolbutton.html">TQToolButton</a> *upButton, *mkdirButton;
+
+protected slots:
+    void directoryChanged( const <a href="ntqstring.html">TQString</a> &amp; );
+    void slotStartReadDir( int dirs );
+    void slotReadNextDir();
+    void slotReadDirDone();
+    void cdUp();
+    void newFolder();
+    void changePath( const <a href="ntqstring.html">TQString</a> &amp;path );
+    void enableUp();
+    void disableUp();
+    void enableMkdir();
+    void disableMkdir();
+
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation of the main window:
+<p> <pre>/****************************************************************************
+** $Id: qt/mainwindow.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "mainwindow.h"
+#include "qfileiconview.h"
+#include "../dirview/dirview.h"
+
+#include &lt;<a href="qsplitter-h.html">ntqsplitter.h</a>&gt;
+#include &lt;<a href="qprogressbar-h.html">ntqprogressbar.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qstatusbar-h.html">ntqstatusbar.h</a>&gt;
+#include &lt;<a href="qtoolbar-h.html">ntqtoolbar.h</a>&gt;
+#include &lt;<a href="qcombobox-h.html">ntqcombobox.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qtoolbutton-h.html">ntqtoolbutton.h</a>&gt;
+#include &lt;<a href="qdir-h.html">ntqdir.h</a>&gt;
+#include &lt;<a href="qfileinfo-h.html">ntqfileinfo.h</a>&gt;
+
+static const char* cdtoparent_xpm[]={
+    "15 13 3 1",
+    ". c None",
+    "* c #000000",
+    "a c #ffff99",
+    "..*****........",
+    ".*aaaaa*.......",
+    "***************",
+    "*aaaaaaaaaaaaa*",
+    "*aaaa*aaaaaaaa*",
+    "*aaa***aaaaaaa*",
+    "*aa*****aaaaaa*",
+    "*aaaa*aaaaaaaa*",
+    "*aaaa*aaaaaaaa*",
+    "*aaaa******aaa*",
+    "*aaaaaaaaaaaaa*",
+    "*aaaaaaaaaaaaa*",
+    "***************"};
+
+static const char* newfolder_xpm[] = {
+    "15 14 4 1",
+    "   c None",
+    ".  c #000000",
+    "+  c #FFFF00",
+    "@  c #FFFFFF",
+    "          .    ",
+    "               ",
+    "          .    ",
+    "       .     . ",
+    "  ....  . . .  ",
+    " .+@+@.  . .   ",
+    "..........  . .",
+    ".@+@+@+@+@..   ",
+    ".+@+@+@+@+. .  ",
+    ".@+@+@+@+@.  . ",
+    ".+@+@+@+@+.    ",
+    ".@+@+@+@+@.    ",
+    ".+@+@+@+@+.    ",
+    "...........    "};
+
+<a name="f324"></a>FileMainWindow::FileMainWindow()
+    : <a href="ntqmainwindow.html">TQMainWindow</a>()
+{
+    setup();
+}
+
+void FileMainWindow::<a href="ntqwidget.html#show">show</a>()
+{
+    TQMainWindow::<a href="ntqwidget.html#show">show</a>();
+}
+
+void <a name="f325"></a>FileMainWindow::setup()
+{
+    <a href="ntqsplitter.html">TQSplitter</a> *splitter = new <a href="ntqsplitter.html">TQSplitter</a>( this );
+
+    dirlist = new DirectoryView( splitter, "dirlist", true );
+<a name="x886"></a>    dirlist-&gt;<a href="ntqlistview.html#addColumn">addColumn</a>( "Name" );
+    dirlist-&gt;<a href="ntqlistview.html#addColumn">addColumn</a>( "Type" );
+    Directory *root = new Directory( dirlist, "/" );
+<a name="x887"></a>    root-&gt;<a href="qlistviewitem.html#setOpen">setOpen</a>( true );
+<a name="x894"></a>    splitter-&gt;<a href="ntqsplitter.html#setResizeMode">setResizeMode</a>( dirlist, TQSplitter::KeepSize );
+
+    fileview = new TQtFileIconView( "/", splitter );
+<a name="x884"></a>    fileview-&gt;<a href="ntqiconview.html#setSelectionMode">setSelectionMode</a>( TQIconView::Extended );
+
+    <a href="ntqmainwindow.html#setCentralWidget">setCentralWidget</a>( splitter );
+
+    <a href="ntqtoolbar.html">TQToolBar</a> *toolbar = new <a href="ntqtoolbar.html">TQToolBar</a>( this, "toolbar" );
+    <a href="ntqmainwindow.html#setRightJustification">setRightJustification</a>( true );
+
+    (void)new <a href="ntqlabel.html">TQLabel</a>( <a href="ntqobject.html#tr">tr</a>( " Path: " ), toolbar );
+
+    pathCombo = new <a href="ntqcombobox.html">TQComboBox</a>( true, toolbar );
+<a name="x880"></a>    pathCombo-&gt;<a href="ntqcombobox.html#setAutoCompletion">setAutoCompletion</a>( true );
+<a name="x896"></a>    toolbar-&gt;<a href="ntqtoolbar.html#setStretchableWidget">setStretchableWidget</a>( pathCombo );
+<a name="x877"></a>    <a href="ntqobject.html#connect">connect</a>( pathCombo, TQ_SIGNAL( <a href="ntqcombobox.html#activated">activated</a>( const <a href="ntqstring.html">TQString</a> &amp; ) ),
+             this, TQ_SLOT ( changePath( const <a href="ntqstring.html">TQString</a> &amp; ) ) );
+
+<a name="x895"></a>    toolbar-&gt;<a href="ntqtoolbar.html#addSeparator">addSeparator</a>();
+
+    <a href="ntqpixmap.html">TQPixmap</a> pix;
+
+    pix = TQPixmap( cdtoparent_xpm );
+    upButton = new <a href="ntqtoolbutton.html">TQToolButton</a>( pix, "One directory up", <a href="ntqstring.html#TQString-null">TQString::null</a>,
+                                this, TQ_SLOT( cdUp() ), toolbar, "cd up" );
+
+    pix = TQPixmap( newfolder_xpm );
+    mkdirButton = new <a href="ntqtoolbutton.html">TQToolButton</a>( pix, "New Folder", TQString::null,
+                                   this, TQ_SLOT( newFolder() ), toolbar, "new folder" );
+
+    <a href="ntqobject.html#connect">connect</a>( dirlist, TQ_SIGNAL( folderSelected( const <a href="ntqstring.html">TQString</a> &amp; ) ),
+             fileview, TQ_SLOT ( setDirectory( const <a href="ntqstring.html">TQString</a> &amp; ) ) );
+    <a href="ntqobject.html#connect">connect</a>( fileview, TQ_SIGNAL( directoryChanged( const <a href="ntqstring.html">TQString</a> &amp; ) ),
+             this, TQ_SLOT( directoryChanged( const <a href="ntqstring.html">TQString</a> &amp; ) ) );
+    <a href="ntqobject.html#connect">connect</a>( fileview, TQ_SIGNAL( startReadDir( int ) ),
+             this, TQ_SLOT( slotStartReadDir( int ) ) );
+    <a href="ntqobject.html#connect">connect</a>( fileview, TQ_SIGNAL( readNextDir() ),
+             this, TQ_SLOT( slotReadNextDir() ) );
+    <a href="ntqobject.html#connect">connect</a>( fileview, TQ_SIGNAL( readDirDone() ),
+             this, TQ_SLOT( slotReadDirDone() ) );
+
+    <a href="ntqmainwindow.html#setDockEnabled">setDockEnabled</a>( DockLeft, false );
+    <a href="ntqmainwindow.html#setDockEnabled">setDockEnabled</a>( DockRight, false );
+
+    label = new <a href="ntqlabel.html">TQLabel</a>( <a href="ntqmainwindow.html#statusBar">statusBar</a>() );
+    <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;addWidget( label, 2, true );
+    progress = new <a href="ntqprogressbar.html">TQProgressBar</a>( <a href="ntqmainwindow.html#statusBar">statusBar</a>() );
+    <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;addWidget( progress, 1, true );
+
+    <a href="ntqobject.html#connect">connect</a>( fileview, TQ_SIGNAL( enableUp() ),
+             this, TQ_SLOT( enableUp() ) );
+    <a href="ntqobject.html#connect">connect</a>( fileview, TQ_SIGNAL( disableUp() ),
+             this, TQ_SLOT( disableUp() ) );
+    <a href="ntqobject.html#connect">connect</a>( fileview, TQ_SIGNAL( enableMkdir() ),
+             this, TQ_SLOT( enableMkdir() ) );
+    <a href="ntqobject.html#connect">connect</a>( fileview, TQ_SIGNAL( disableMkdir() ),
+             this, TQ_SLOT( disableMkdir() ) );
+}
+
+void <a name="f326"></a>FileMainWindow::setPathCombo()
+{
+    <a href="ntqstring.html">TQString</a> dir = <a href="ntqwidget.html#caption">caption</a>();
+    int i = 0;
+    bool found = false;
+<a name="x878"></a>    for ( i = 0; i &lt; pathCombo-&gt;<a href="ntqcombobox.html#count">count</a>(); ++i ) {
+<a name="x882"></a>        if ( pathCombo-&gt;<a href="ntqcombobox.html#text">text</a>( i ) == dir) {
+            found = true;
+            break;
+        }
+    }
+
+    if ( found )
+<a name="x881"></a>        pathCombo-&gt;<a href="ntqcombobox.html#setCurrentItem">setCurrentItem</a>( i );
+    else {
+<a name="x879"></a>        pathCombo-&gt;<a href="ntqcombobox.html#insertItem">insertItem</a>( dir );
+        pathCombo-&gt;<a href="ntqcombobox.html#setCurrentItem">setCurrentItem</a>( pathCombo-&gt;<a href="ntqcombobox.html#count">count</a>() - 1 );
+    }
+
+}
+
+void <a name="f327"></a>FileMainWindow::directoryChanged( const <a href="ntqstring.html">TQString</a> &amp;dir )
+{
+    <a href="ntqwidget.html#setCaption">setCaption</a>( dir );
+    setPathCombo();
+}
+
+void <a name="f328"></a>FileMainWindow::slotStartReadDir( int dirs )
+{
+    label-&gt;<a href="ntqlabel.html#setText">setText</a>( <a href="ntqobject.html#tr">tr</a>( " Reading Directory..." ) );
+<a name="x890"></a>    progress-&gt;<a href="ntqprogressbar.html#reset">reset</a>();
+<a name="x892"></a>    progress-&gt;<a href="ntqprogressbar.html#setTotalSteps">setTotalSteps</a>( dirs );
+}
+
+void <a name="f329"></a>FileMainWindow::slotReadNextDir()
+{
+<a name="x889"></a>    int p = progress-&gt;<a href="ntqprogressbar.html#progress">progress</a>();
+<a name="x891"></a>    progress-&gt;<a href="ntqprogressbar.html#setProgress">setProgress</a>( ++p );
+}
+
+void <a name="f330"></a>FileMainWindow::slotReadDirDone()
+{
+    label-&gt;<a href="ntqlabel.html#setText">setText</a>( <a href="ntqobject.html#tr">tr</a>( " Reading Directory Done." ) );
+<a name="x893"></a>    progress-&gt;<a href="ntqprogressbar.html#setProgress">setProgress</a>( progress-&gt;<a href="ntqprogressbar.html#totalSteps">totalSteps</a>() );
+}
+
+void <a name="f331"></a>FileMainWindow::cdUp()
+{
+    <a href="ntqdir.html">TQDir</a> dir = fileview-&gt;currentDir();
+<a name="x883"></a>    dir.<a href="ntqdir.html#cd">cd</a>( ".." );
+    fileview-&gt;setDirectory( dir );
+}
+
+void <a name="f332"></a>FileMainWindow::newFolder()
+{
+    fileview-&gt;newDirectory();
+}
+
+void <a name="f333"></a>FileMainWindow::changePath( const <a href="ntqstring.html">TQString</a> &amp;path )
+{
+    if ( TQFileInfo( path ).exists() )
+        fileview-&gt;setDirectory( path );
+    else
+        setPathCombo();
+}
+
+void <a name="f334"></a>FileMainWindow::enableUp()
+{
+<a name="x897"></a>    upButton-&gt;<a href="ntqwidget.html#setEnabled">setEnabled</a>( true );
+}
+
+void <a name="f335"></a>FileMainWindow::disableUp()
+{
+    upButton-&gt;<a href="ntqwidget.html#setEnabled">setEnabled</a>( false );
+}
+
+void <a name="f336"></a>FileMainWindow::enableMkdir()
+{
+    mkdirButton-&gt;<a href="ntqwidget.html#setEnabled">setEnabled</a>( true );
+}
+
+void <a name="f337"></a>FileMainWindow::disableMkdir()
+{
+    mkdirButton-&gt;<a href="ntqwidget.html#setEnabled">setEnabled</a>( false );
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "mainwindow.h"
+#include "qfileiconview.h"
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    FileMainWindow mw;
+    mw.<a href="ntqwidget.html#resize">resize</a>( 680, 480 );
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;mw );
+    mw.fileView()-&gt;setDirectory( "/" );
+<a name="x900"></a>    mw.<a href="ntqwidget.html#show">show</a>();
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqpainter.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqpainter.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqpainter.h</h1>
+
+<p>This is the verbatim text of the ntqpainter.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqpainter.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQPainter class
+**
+** Created : 940112
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQPAINTER_H
+#define TQPAINTER_H
+
+
+#ifndef QT_H
+#include "ntqcolor.h"
+#include "ntqfontmetrics.h"
+#include "ntqfontinfo.h"
+#include "ntqregion.h"
+#include "ntqpen.h"
+#include "ntqbrush.h"
+#include "ntqpointarray.h"
+#include "ntqwmatrix.h"
+#endif // QT_H
+
+class TQGfx;
+class TQTextCodec;
+class TQTextParag;
+class TQPaintDevice;
+class TQTextItem;
+#if defined( TQ_WS_MAC )
+class TQMacSavedPortInfo;
+#endif
+class TQPainterPrivate;
+
+#if defined(TQ_WS_QWS)
+class TQScreen;
+#endif
+
+class TQ_EXPORT TQPainter : public TQt
+{
+public:
+    enum CoordinateMode { CoordDevice, CoordPainter };
+
+    TQPainter();
+    TQPainter( const TQPaintDevice *, bool unclipped = false );
+    TQPainter( const TQPaintDevice *, const TQWidget *, bool unclipped = false );
+   ~TQPainter();
+
+    bool	begin( const TQPaintDevice *, bool unclipped = false );
+    bool	begin( const TQPaintDevice *, const TQWidget *, bool unclipped = false );
+    bool	end();
+    TQPaintDevice *device() const;
+
+#ifdef TQ_WS_QWS
+    TQGfx * internalGfx();
+#ifdef QT_QWS_EXPERIMENTAL_SCREENPAINTER
+    bool begin(TQScreen *screen);
+#endif
+#endif
+
+    static void redirect( TQPaintDevice *pdev, TQPaintDevice *replacement );
+    static TQPaintDevice *redirect( TQPaintDevice *pdev );
+
+    bool	isActive() const;
+
+    void	flush( const TQRegion &amp;region, CoordinateMode cm = CoordDevice );
+    void	flush();
+    void	save();
+    void	restore();
+
+  // Drawing tools
+
+    TQFontMetrics fontMetrics()	const;
+    TQFontInfo	 fontInfo()	const;
+
+    const TQFont &amp;font()		const;
+    void	setFont( const TQFont &amp; );
+    const TQPen &amp;pen()		const;
+    void	setPen( const TQPen &amp; );
+    void	setPen( PenStyle );
+    void	setPen( const TQColor &amp; );
+    const TQBrush &amp;brush()	const;
+    void	setBrush( const TQBrush &amp; );
+    void	setBrush( BrushStyle );
+    void	setBrush( const TQColor &amp; );
+    TQPoint	pos() const;
+
+  // Drawing attributes/modes
+
+    const TQColor &amp;backgroundColor() const;
+    void	setBackgroundColor( const TQColor &amp; );
+    BGMode	backgroundMode() const;
+    void	setBackgroundMode( BGMode );
+    RasterOp	rasterOp()	const;
+    void	setRasterOp( RasterOp );
+    const TQPoint &amp;brushOrigin() const;
+    void	setBrushOrigin( int x, int y );
+    void	setBrushOrigin( const TQPoint &amp; );
+
+  // Scaling and transformations
+
+//    PaintUnit unit()	       const;		// get set painter unit
+//    void	setUnit( PaintUnit );		// NOT IMPLEMENTED!!!
+
+    bool	hasViewXForm() const;
+    bool	hasWorldXForm() const;
+
+#ifndef TQT_NO_TRANSFORMATIONS
+    void	setViewXForm( bool );		// set xform on/off
+    TQRect	window()       const;		// get window
+    void	setWindow( const TQRect &amp; );	// set window
+    void	setWindow( int x, int y, int w, int h );
+    TQRect	viewport()   const;		// get viewport
+    void	setViewport( const TQRect &amp; );	// set viewport
+    void	setViewport( int x, int y, int w, int h );
+
+    void	setWorldXForm( bool );		// set world xform on/off
+    const TQWMatrix &amp;worldMatrix() const;	// get/set world xform matrix
+    void	setWorldMatrix( const TQWMatrix &amp;, bool combine=false );
+
+    void	saveWorldMatrix();
+    void	restoreWorldMatrix();
+
+    void	scale( double sx, double sy );
+    void	shear( double sh, double sv );
+    void	rotate( double a );
+#endif
+    void	translate( double dx, double dy );
+    void	resetXForm();
+    double	translationX() const;
+    double	translationY() const;
+
+    TQPoint	xForm( const TQPoint &amp; ) const;	// map virtual -&gt; device
+    TQRect	xForm( const TQRect &amp; )	const;
+    TQPointArray xForm( const TQPointArray &amp; ) const;
+    TQPointArray xForm( const TQPointArray &amp;, int index, int npoints ) const;
+    TQPoint	xFormDev( const TQPoint &amp; ) const; // map device -&gt; virtual
+    TQRect	xFormDev( const TQRect &amp; )  const;
+    TQPointArray xFormDev( const TQPointArray &amp; ) const;
+    TQPointArray xFormDev( const TQPointArray &amp;, int index, int npoints ) const;
+
+  // Clipping
+
+    void	setClipping( bool );		// set clipping on/off
+    bool	hasClipping() const;
+    TQRegion clipRegion( CoordinateMode = CoordDevice ) const;
+    void	setClipRect( const TQRect &amp;, CoordinateMode = CoordDevice );	// set clip rectangle
+    void	setClipRect( int x, int y, int w, int h, CoordinateMode = CoordDevice );
+    void	setClipRegion( const TQRegion &amp;, CoordinateMode = CoordDevice );// set clip region
+
+  // Graphics drawing functions
+
+    void	drawPoint( int x, int y );
+    void	drawPoint( const TQPoint &amp; );
+    void	drawPoints( const TQPointArray&amp; a,
+			    int index=0, int npoints=-1 );
+    void	moveTo( int x, int y );
+    void	moveTo( const TQPoint &amp; );
+    void	lineTo( int x, int y );
+    void	lineTo( const TQPoint &amp; );
+    void	drawLine( int x1, int y1, int x2, int y2 );
+    void	drawLine( const TQPoint &amp;, const TQPoint &amp; );
+    void	drawRect( int x, int y, int w, int h );
+    void	drawRect( const TQRect &amp; );
+    void	drawWinFocusRect( int x, int y, int w, int h );
+    void	drawWinFocusRect( int x, int y, int w, int h,
+				  const TQColor &amp;bgColor );
+    void	drawWinFocusRect( const TQRect &amp; );
+    void	drawWinFocusRect( const TQRect &amp;,
+				  const TQColor &amp;bgColor );
+    void	drawRoundRect( int x, int y, int w, int h, int = 25, int = 25 );
+    void	drawRoundRect( const TQRect &amp;, int = 25, int = 25 );
+    void	drawEllipse( int x, int y, int w, int h );
+    void	drawEllipse( const TQRect &amp; );
+    void	drawArc( int x, int y, int w, int h, int a, int alen );
+    void	drawArc( const TQRect &amp;, int a, int alen );
+    void	drawPie( int x, int y, int w, int h, int a, int alen );
+    void	drawPie( const TQRect &amp;, int a, int alen );
+    void	drawChord( int x, int y, int w, int h, int a, int alen );
+    void	drawChord( const TQRect &amp;, int a, int alen );
+    void	drawLineSegments( const TQPointArray &amp;,
+				  int index=0, int nlines=-1 );
+    void	drawPolyline( const TQPointArray &amp;,
+			      int index=0, int npoints=-1 );
+    void	drawPolygon( const TQPointArray &amp;, bool winding=false,
+			     int index=0, int npoints=-1 );
+    void	drawConvexPolygon( const TQPointArray &amp;,
+			     int index=0, int npoints=-1 );
+#ifndef TQT_NO_BEZIER
+    void	drawCubicBezier( const TQPointArray &amp;, int index=0 );
+#endif
+    void	drawPixmap( int x, int y, const TQPixmap &amp;,
+			    int sx=0, int sy=0, int sw=-1, int sh=-1 );
+    void	drawPixmap( const TQPoint &amp;, const TQPixmap &amp;,
+			    const TQRect &amp;sr );
+    void	drawPixmap( const TQPoint &amp;, const TQPixmap &amp; );
+    void	drawPixmap( const TQRect &amp;, const TQPixmap &amp; );
+    void	drawImage( int x, int y, const TQImage &amp;,
+			   int sx = 0, int sy = 0, int sw = -1, int sh = -1,
+			   int conversionFlags = 0 );
+    void	drawImage( const TQPoint &amp;, const TQImage &amp;,
+			   const TQRect &amp;sr, int conversionFlags = 0 );
+    void	drawImage( const TQPoint &amp;, const TQImage &amp;,
+			   int conversion_flags = 0 );
+    void	drawImage( const TQRect &amp;, const TQImage &amp; );
+    void	drawTiledPixmap( int x, int y, int w, int h, const TQPixmap &amp;,
+				 int sx=0, int sy=0 );
+    void	drawTiledPixmap( const TQRect &amp;, const TQPixmap &amp;,
+				 const TQPoint &amp; );
+    void	drawTiledPixmap( const TQRect &amp;, const TQPixmap &amp; );
+#ifndef TQT_NO_PICTURE
+    void	drawPicture( const TQPicture &amp; );
+    void	drawPicture( int x, int y, const TQPicture &amp; );
+    void	drawPicture( const TQPoint &amp;, const TQPicture &amp; );
+#endif
+
+    void	fillRect( int x, int y, int w, int h, const TQBrush &amp; );
+    void	fillRect( const TQRect &amp;, const TQBrush &amp; );
+    void	eraseRect( int x, int y, int w, int h );
+    void	eraseRect( const TQRect &amp; );
+
+  // Text drawing functions
+
+    enum TextDirection {
+	Auto,
+	RTL,
+	LTR
+    };
+
+    void	drawText( int x, int y, const TQString &amp;, int len = -1, TextDirection dir = Auto );
+    void	drawText( const TQPoint &amp;, const TQString &amp;, int len = -1, TextDirection dir = Auto );
+
+    void     drawText( int x, int y, const TQString &amp;, int pos, int len, TextDirection dir = Auto );
+    void     drawText( const TQPoint &amp;p, const TQString &amp;, int pos, int len, TextDirection dir = Auto );
+
+    void	drawText( int x, int y, int w, int h, int flags,
+			  const TQString&amp;, int len = -1, TQRect *br=0,
+			  TQTextParag **intern=0 );
+    void	drawText( const TQRect &amp;, int flags,
+			  const TQString&amp;, int len = -1, TQRect *br=0,
+			  TQTextParag **intern=0 );
+
+    void drawTextItem( int x, int y, const TQTextItem &amp;ti, int textflags = 0 );
+    void drawTextItem( const TQPoint&amp; p, const TQTextItem &amp;ti, int textflags = 0 );
+
+    TQRect	boundingRect( int x, int y, int w, int h, int flags,
+			      const TQString&amp;, int len = -1, TQTextParag **intern=0 );
+    TQRect	boundingRect( const TQRect &amp;, int flags,
+			      const TQString&amp;, int len = -1, TQTextParag **intern=0 );
+
+    int		tabStops() const;
+    void	setTabStops( int );
+    int	       *tabArray() const;
+    void	setTabArray( int * );
+
+    // Other functions
+
+#if defined(TQ_WS_WIN)
+    HDC		handle() const;
+#elif defined(TQ_WS_X11) || defined(TQ_WS_MAC)
+    HANDLE	handle() const;
+#endif
+
+
+    static void initialize();
+    static void cleanup();
+
+private:
+    void	init();
+    void        destroy();
+    void	updateFont();
+    void	updatePen();
+    void	updateBrush();
+#ifndef TQT_NO_TRANSFORMATIONS
+    void	updateXForm();
+    void	updateInvXForm();
+#endif
+    void	map( int, int, int *rx, int *ry ) const;
+    void	map( int, int, int, int, int *, int *, int *, int * ) const;
+    void	mapInv( int, int, int *, int * ) const;
+    void	mapInv( int, int, int, int, int *, int *, int *, int * ) const;
+    void	drawPolyInternal( const TQPointArray &amp;, bool close=true );
+    void	drawWinFocusRect( int x, int y, int w, int h, bool xorPaint,
+				  const TQColor &amp;penColor );
+
+    enum { IsActive=0x01, ExtDev=0x02, IsStartingUp=0x04, NoCache=0x08,
+	   VxF=0x10, WxF=0x20, ClipOn=0x40, SafePolygon=0x80, MonoDev=0x100,
+	   DirtyFont=0x200, DirtyPen=0x400, DirtyBrush=0x800,
+	   RGBColor=0x1000, FontMet=0x2000, FontInf=0x4000, CtorBegin=0x8000,
+           UsePrivateCx = 0x10000, VolatileDC = 0x20000, TQt2Compat = 0x40000 };
+    uint	flags;
+    bool	testf( uint b ) const { return (flags&amp;b)!=0; }
+    void	setf( uint b )	{ flags |= b; }
+    void	setf( uint b, bool v );
+    void	clearf( uint b )	{ flags &amp;= (uint)(~b); }
+    void	fix_neg_rect( int *x, int *y, int *w, int *h );
+
+    TQPainterPrivate *d;
+    TQPaintDevice *pdev;
+    TQColor	bg_col;
+    uchar	bg_mode;
+    uchar	rop;
+    uchar	pu;
+    TQPoint	bro;
+    TQFont	cfont;
+    TQFont *pfont; 	// font used for metrics (might be different for printers)
+    TQPen	cpen;
+    TQBrush	cbrush;
+    TQRegion	crgn;
+    int		tabstops;
+    int	       *tabarray;
+    int		tabarraylen;
+    bool	block_ext;	// for temporary blocking of external devices
+
+    // Transformations
+#ifndef TQT_NO_TRANSFORMATIONS
+    TQCOORD	wx, wy, ww, wh;
+    TQCOORD	vx, vy, vw, vh;
+    TQWMatrix	wxmat;
+
+    // Cached composition (and inverse) of transformations
+    TQWMatrix	xmat;
+    TQWMatrix	ixmat;
+
+
+
+    double	m11() const { return xmat.m11(); }
+    double      m12() const { return xmat.m12(); }
+    double      m21() const { return xmat.m21(); }
+    double      m22() const { return xmat.m22(); }
+    double      dx() const { return xmat.dx(); }
+    double      dy() const { return xmat.dy(); }
+    double	im11() const { return ixmat.m11(); }
+    double      im12() const { return ixmat.m12(); }
+    double      im21() const { return ixmat.m21(); }
+    double      im22() const { return ixmat.m22(); }
+    double      idx() const { return ixmat.dx(); }
+    double      idy() const { return ixmat.dy(); }
+
+    int		txop;
+    bool	txinv;
+
+#else
+    // even without transformations we still have translations
+    int		xlatex;
+    int		xlatey;
+#endif
+
+    void       *penRef;				// pen cache ref
+    void       *brushRef;			// brush cache ref
+    void       *ps_stack;
+    void       *wm_stack;
+    void	killPStack();
+
+protected:
+#ifdef Q_OS_TEMP
+    TQPoint	internalCurrentPos;
+    uint	old_pix;			// ### All win platforms in 4.0
+#endif
+#if defined(TQ_WS_WIN)
+    friend class TQFontEngineWin;
+    friend class TQFontEngineBox;
+    QT_WIN_PAINTER_MEMBERS
+#elif defined(TQ_WS_X11)
+    friend class TQFontEngineXLFD;
+    friend class TQFontEngineXft;
+    friend class TQFontEngineBox;
+    Display    *dpy;				// current display
+    int		scrn;				// current screen
+    TQt::HANDLE	hd;				// handle to drawable
+    TQt::HANDLE  rendhd;				// handle to Xft draw
+    GC		gc;				// graphics context (standard)
+    GC		gc_brush;			// graphics contect for brush
+    TQPoint	curPt;				// current point
+    uint	clip_serial;			// clipping serial number
+#elif defined(TQ_WS_MAC)
+    TQt::HANDLE	hd;				// handle to drawable
+    void initPaintDevice(bool force=false, TQPoint *off=NULL, TQRegion *rgn=NULL);
+    friend const TQRegion &amp;tqt_mac_update_painter(TQPainter *, bool);
+    friend class TQFontEngineMac;
+    friend class TQMacPainter;
+#elif defined(TQ_WS_QWS)
+    friend class TQFontEngine;
+    TQGfx * gfx;
+    friend void qwsUpdateActivePainters();
+#endif
+    friend class TQFontMetrics;
+    friend class TQFontInfo;
+    friend class TQTextLayout;
+    friend void qt_format_text( const TQFont &amp;, const TQRect &amp;r,
+		     int tf, const TQString&amp; str, int len, TQRect *brect,
+		     int tabstops, int* tabarray, int tabarraylen,
+		     TQTextParag **internal, TQPainter* painter );
+    friend void qt_draw_background( TQPainter *p, int x, int y, int w,  int h );
+    friend void qt_draw_transformed_rect( TQPainter *p,  int x, int y, int w,  int h, bool fill );
+    friend class TQPrinter;
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQPainter( const TQPainter &amp; );
+    TQPainter &amp;operator=( const TQPainter &amp; );
+#endif
+
+    enum TransformationCodes {
+	TxNone      = 0,		// transformation codes
+	TxTranslate = 1,		// copy in qpainter_*.cpp
+	TxScale     = 2,
+	TxRotShear  = 3
+    };
+};
+
+
+/*****************************************************************************
+  TQPainter member functions
+ *****************************************************************************/
+
+inline TQPaintDevice *TQPainter::device() const
+{
+    return pdev;
+}
+
+inline bool TQPainter::isActive() const
+{
+    return testf(IsActive);
+}
+
+inline const TQFont &amp;TQPainter::font() const
+{
+    return cfont;
+}
+
+inline const TQPen &amp;TQPainter::pen() const
+{
+    return cpen;
+}
+
+inline const TQBrush &amp;TQPainter::brush() const
+{
+    return cbrush;
+}
+
+/*
+inline PaintUnit TQPainter::unit() const
+{
+    return (PaintUnit)pu;
+}
+*/
+
+inline const TQColor &amp;TQPainter::backgroundColor() const
+{
+    return bg_col;
+}
+
+inline TQt::BGMode TQPainter::backgroundMode() const
+{
+    return (BGMode)bg_mode;
+}
+
+inline TQt::RasterOp TQPainter::rasterOp() const
+{
+    return (RasterOp)rop;
+}
+
+inline const TQPoint &amp;TQPainter::brushOrigin() const
+{
+    return bro;
+}
+
+inline bool TQPainter::hasViewXForm() const
+{
+#ifndef TQT_NO_TRANSFORMATIONS
+    return testf(VxF);
+#else
+    return xlatex || xlatey;
+#endif
+}
+
+inline bool TQPainter::hasWorldXForm() const
+{
+#ifndef TQT_NO_TRANSFORMATIONS
+    return testf(WxF);
+#else
+    return xlatex || xlatey;
+#endif
+}
+
+inline double TQPainter::translationX() const
+{
+#ifndef TQT_NO_TRANSFORMATIONS
+    return worldMatrix().dx();
+#else
+    return xlatex;
+#endif
+}
+
+inline double TQPainter::translationY() const
+{
+#ifndef TQT_NO_TRANSFORMATIONS
+    return worldMatrix().dy();
+#else
+    return xlatey;
+#endif
+}
+
+
+inline bool TQPainter::hasClipping() const
+{
+    return testf(ClipOn);
+}
+
+inline int TQPainter::tabStops() const
+{
+    return tabstops;
+}
+
+inline int *TQPainter::tabArray() const
+{
+    return tabarray;
+}
+
+#if defined(TQ_WS_WIN)
+inline HDC TQPainter::handle() const
+{
+    return hdc;
+}
+#elif defined(TQ_WS_X11) || defined(TQ_WS_MAC)
+inline TQt::HANDLE TQPainter::handle() const
+{
+    return hd;
+}
+#endif
+
+inline void TQPainter::setBrushOrigin( const TQPoint &amp;p )
+{
+    setBrushOrigin( p.x(), p.y() );
+}
+
+#ifndef TQT_NO_TRANSFORMATIONS
+inline void TQPainter::setWindow( const TQRect &amp;r )
+{
+    setWindow( r.x(), r.y(), r.width(), r.height() );
+}
+
+inline void TQPainter::setViewport( const TQRect &amp;r )
+{
+    setViewport( r.x(), r.y(), r.width(), r.height() );
+}
+#endif
+
+inline void TQPainter::setClipRect( int x, int y, int w, int h, CoordinateMode m )
+{
+    setClipRect( TQRect(x,y,w,h), m );
+}
+
+inline void TQPainter::drawPoint( const TQPoint &amp;p )
+{
+    drawPoint( p.x(), p.y() );
+}
+
+inline void TQPainter::moveTo( const TQPoint &amp;p )
+{
+    moveTo( p.x(), p.y() );
+}
+
+inline void TQPainter::lineTo( const TQPoint &amp;p )
+{
+    lineTo( p.x(), p.y() );
+}
+
+inline void TQPainter::drawLine( const TQPoint &amp;p1, const TQPoint &amp;p2 )
+{
+    drawLine( p1.x(), p1.y(), p2.x(), p2.y() );
+}
+
+inline void TQPainter::drawRect( const TQRect &amp;r )
+{
+    drawRect( r.x(), r.y(), r.width(), r.height() );
+}
+
+inline void TQPainter::drawWinFocusRect( const TQRect &amp;r )
+{
+    drawWinFocusRect( r.x(), r.y(), r.width(), r.height() );
+}
+
+inline void TQPainter::drawWinFocusRect( const TQRect &amp;r,const TQColor &amp;penColor )
+{
+    drawWinFocusRect( r.x(), r.y(), r.width(), r.height(), penColor );
+}
+
+inline void TQPainter::drawRoundRect( const TQRect &amp;r, int xRnd, int yRnd )
+{
+    drawRoundRect( r.x(), r.y(), r.width(), r.height(), xRnd, yRnd );
+}
+
+inline void TQPainter::drawEllipse( const TQRect &amp;r )
+{
+    drawEllipse( r.x(), r.y(), r.width(), r.height() );
+}
+
+inline void TQPainter::drawArc( const TQRect &amp;r, int a, int alen )
+{
+    drawArc( r.x(), r.y(), r.width(), r.height(), a, alen );
+}
+
+inline void TQPainter::drawPie( const TQRect &amp;r, int a, int alen )
+{
+    drawPie( r.x(), r.y(), r.width(), r.height(), a, alen );
+}
+
+inline void TQPainter::drawChord( const TQRect &amp;r, int a, int alen )
+{
+    drawChord( r.x(), r.y(), r.width(), r.height(), a, alen );
+}
+
+inline void TQPainter::drawPixmap( const TQPoint &amp;p, const TQPixmap &amp;pm,
+				  const TQRect &amp;sr )
+{
+    drawPixmap( p.x(), p.y(), pm, sr.x(), sr.y(), sr.width(), sr.height() );
+}
+
+inline void TQPainter::drawImage( const TQPoint &amp;p, const TQImage &amp;pm,
+                                 const TQRect &amp;sr, int conversionFlags )
+{
+    drawImage( p.x(), p.y(), pm,
+	       sr.x(), sr.y(), sr.width(), sr.height(), conversionFlags );
+}
+
+inline void TQPainter::drawTiledPixmap( const TQRect &amp;r, const TQPixmap &amp;pm,
+				       const TQPoint &amp;sp )
+{
+    drawTiledPixmap( r.x(), r.y(), r.width(), r.height(), pm, sp.x(), sp.y() );
+}
+
+inline void TQPainter::drawTiledPixmap( const TQRect &amp;r, const TQPixmap &amp;pm )
+{
+    drawTiledPixmap( r.x(), r.y(), r.width(), r.height(), pm, 0, 0 );
+}
+
+inline void TQPainter::fillRect( const TQRect &amp;r, const TQBrush &amp;brush )
+{
+    fillRect( r.x(), r.y(), r.width(), r.height(), brush );
+}
+
+inline void TQPainter::eraseRect( int x, int y, int w, int h )
+{
+    fillRect( x, y, w, h, backgroundColor() );
+}
+
+inline void TQPainter::eraseRect( const TQRect &amp;r )
+{
+    fillRect( r.x(), r.y(), r.width(), r.height(), backgroundColor() );
+}
+
+inline void TQPainter::drawText( const TQPoint &amp;p, const TQString &amp;s, int len, TextDirection dir )
+{
+    drawText( p.x(), p.y(), s, 0, len, dir );
+}
+
+inline void TQPainter::drawText( const TQPoint &amp;p, const TQString &amp;s, int pos, int len, TextDirection dir )
+{
+    drawText( p.x(), p.y(), s, pos, len, dir );
+}
+
+inline void TQPainter::drawText( int x, int y, int w, int h, int tf,
+				const TQString&amp; str, int len, TQRect *br, TQTextParag **i )
+{
+    TQRect r(x, y, w, h);
+    drawText( r, tf, str, len, br, i );
+}
+
+inline void TQPainter::drawTextItem( const TQPoint&amp; p, const TQTextItem &amp;ti, int textflags )
+{
+    drawTextItem( p.x(), p.y(), ti, textflags );
+}
+
+inline TQRect TQPainter::boundingRect( int x, int y, int w, int h, int tf,
+				     const TQString&amp; str, int len, TQTextParag **i )
+{
+    TQRect r(x, y, w, h);
+    return boundingRect( r, tf, str, len, i );
+}
+
+#if defined(TQ_WS_QWS)
+inline TQGfx * TQPainter::internalGfx()
+{
+    return gfx;
+}
+#endif
+
+#endif // TQPAINTER_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

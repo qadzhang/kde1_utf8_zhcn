@@ -98,7 +98,7 @@ AccountingSelector::AccountingSelector(QWidget *parent, bool _isnewaccount, cons
   l12->addWidget(use_vol);
 
   // load the pmfolder pixmap from KDEdir
-  QString fname = KApplication::kde_datadir().copy();
+  QString fname = KApplication::kde_datadir();
   fname += "/kppp/pics/folder.xpm";
   pmfolder.load(fname.data());
 
@@ -110,7 +110,7 @@ AccountingSelector::AccountingSelector(QWidget *parent, bool _isnewaccount, cons
   }
 
   // load the pmfolder pixmap from KDEdir
-  fname = KApplication::kde_datadir().copy();
+  fname = KApplication::kde_datadir();
   fname += "/kppp/pics/phone.xpm";
   pmfile.load(fname.data());
 
@@ -279,7 +279,7 @@ void AccountingSelector::setupTreeWidget() {
   insertDir(QDir(s.data()), i);
 
   // look in $KDEDIR/lib/kppp/Accounting
-  s = KApplication::kde_datadir().copy();
+  s = KApplication::kde_datadir();
   s += "/kppp/Rules/";
   insertDir(QDir(s.data()), i);
 

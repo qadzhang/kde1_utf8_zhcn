@@ -33,7 +33,7 @@
 
 #include <qbitmap.h>
 #include <qtimer.h>
-#include <spin.h>
+#include "spin.h"
 
 #include "up.xbm"
 #include "down.xbm"
@@ -128,7 +128,6 @@ value(int the_value) {
       _value = _min;
    else if (the_value > _max)
       _value = _max;
-   else
       _value = the_value; 
 
    setText();

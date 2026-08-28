@@ -6,7 +6,7 @@ set(KFMCLINET_SRCS kfmclient.cpp ../debug.cpp)
 
 add_executable(kfmclient1 ${KFMCLINET_SRCS} ${MOC_FILES})
 target_link_libraries(kfmclient1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

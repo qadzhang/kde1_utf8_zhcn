@@ -139,8 +139,8 @@ private:
     QRadioButton* but[7];
     QLineEdit* SQLineEdit;
     QLineEdit* UQLineEdit;
-    QLineEdit* TQLineEdit;
-    QLineEdit* TCQLineEdit;
+    QLineEdit* lineEdit10;  /* TQt3 迁移：原名 TQLineEdit 与 TQ 类名冲突 */
+    QLineEdit* lineEdit11;  /* TQt3 迁移：TCQLineEdit 改名 */
 
 private slots:
     void        value(int);

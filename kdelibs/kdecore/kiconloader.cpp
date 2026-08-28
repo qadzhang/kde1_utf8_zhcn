@@ -88,9 +88,9 @@
 
 #include "kiconloader.h"
 
-#include <kpixmap.h>
-#include <klocale.h>
-#include <kapp.h>
+#include "kpixmap.h"
+#include "klocale.h"
+#include "kapp.h"
 
 void KIconLoader::initPath()
 {
@@ -104,7 +104,7 @@ void KIconLoader::initPath()
   KConfig config; // read .kderc
   config.setGroup("KDE");
   QString setting = config.readEntry( key + "IconStyle", "Normal" );
-  //debug("App is %s - setting is %s", kapp->name(), setting.data());
+  //tqDebug("App is %s - setting is %s", kapp->name(), setting.data());
   // DF
   
   // order is important! -- Bernd
@@ -195,7 +195,7 @@ QPixmap KIconLoader::loadIcon ( const QString &name, int w, int h ){
        verted to a KDEBUG solution, that is more silent? Don't know.
 
   if (result.isNull())
-    warning(klocale->translate("ERROR: couldn't find icon: %s"), (const char *) name);
+    tqWarning(klocale->translate("ERROR: couldn't find icon: %s"), (const char *) name);
 
 */
 
@@ -225,7 +225,7 @@ QPixmap KIconLoader::loadMiniIcon ( const QString &name, int w, int h ){
 /* 
    Stephan: See above
    if (result.isNull())
-    warning(klocale->translate("ERROR: couldn't find mini icon: %s"), 
+    tqWarning(klocale->translate("ERROR: couldn't find mini icon: %s"), 
     (const char *) name);
 
 */
@@ -285,7 +285,6 @@ QString KIconLoader::getIconPath( const QString &name, bool always_valid)
       while ( it.current() ){
 	
 	full_path = it.current();
-	full_path.detach();
 	full_path += '/';
 	full_path += name;
 	finfo.setFile( full_path );

@@ -44,7 +44,7 @@ class PLineEdit : public QLineEdit
   Q_OBJECT
 public:
   PLineEdit(QWidget* parent=0, const char* name=0)
-    : QLineEdit(parent, name) { initMetaObject(); }
+    : QLineEdit(parent, name) {}  /* TQt3 迁移：initMetaObject 已删 */
   ~PLineEdit() {}
 protected:
   virtual void focusOutEvent (QFocusEvent* e) 

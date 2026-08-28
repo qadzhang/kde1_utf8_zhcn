@@ -56,7 +56,6 @@ void Mod3::show()
 Mod3::Mod3( QWidget* parent, const char* name)
 	: dealer(parent,name), rb(i18n("Redeal"), this) 
 {
-	initMetaObject();
 
 	deck = new Deck (-666, -666, this, 2);
 

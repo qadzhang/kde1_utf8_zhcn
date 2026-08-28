@@ -71,7 +71,6 @@ extern KIconLoader *global_pix_loader;
 AskFileName::AskFileName(QWidget* parent, const char* name)
   : QDialog(parent, name, TRUE)
 {
-  initMetaObject();
   resize(300, 80);
   QLabel *l_name = new QLabel( klocale->translate("Book name:"), this );
   i_name = new QLineEdit( this );
@@ -96,7 +95,6 @@ AskFileName::AskFileName(QWidget* parent, const char* name)
 MyMultiEdit::MyMultiEdit (QWidget* parent, const char* name)
   : QMultiLineEdit(parent, name)
 {
-  initMetaObject();
   web_menu = new CPopupMenu;
   web_menu->insertItem(klocale->translate("Open URL"), this, SLOT(openUrl()) );
 }
@@ -105,7 +103,7 @@ void MyMultiEdit::keyPressEvent( QKeyEvent *e )
 {
   if( e->key() == Key_Tab )
     {
-      insertChar('\t');
+      insert( TQString(QChar('\t')) );  /* TQt3 迁移 */
       return;
     }
   QMultiLineEdit::keyPressEvent(e);
@@ -141,7 +139,6 @@ void MyMultiEdit::openUrl()
       if( marked.left(7) == "http://" )
 	{
 	  command = exec_http;
-	  command.detach();
 	  if( (pos = exec_http.find("%u")) == -1 )
 	    {
 	      command += " " + marked + " &";
@@ -153,12 +150,11 @@ void MyMultiEdit::openUrl()
 	      command += " &";
 	    }
 	  system((const char *) command);
-	  //debug("exec: %s", (const char *) command );
+	  //tqDebug("exec: %s", (const char *) command );
 	}
       else if( marked.left(6) == "ftp://" )
 	{
 	  command = exec_ftp;
-	  command.detach();
 	  if( (pos = exec_ftp.find("%u")) == -1 )
 	    {
 	      command += " " + marked + " &";
@@ -170,7 +166,7 @@ void MyMultiEdit::openUrl()
 	      command += " &";
 	    }
 	  system((const char *) command);
-	  //debug("exec: %s", (const char *) command );
+	  //tqDebug("exec: %s", (const char *) command );
 	}
     }
 }
@@ -182,7 +178,6 @@ void MyMultiEdit::openUrl()
 MyButtonGroup::MyButtonGroup (QWidget* parent, const char* name)
   : QButtonGroup(parent, name)
 {
-  initMetaObject();
 }
 
 void MyButtonGroup::resizeEvent( QResizeEvent * )
@@ -545,7 +540,6 @@ int KJotsMain::writeFile( QString name )
       st << entry->subject;
       st << "\n";
       buf = entry->text;
-      buf.detach();
       pos = 0;
       while( (pos = buf.find( '\\', pos )) != -1 )
 	{
@@ -583,7 +577,7 @@ void KJotsMain::openFolder(int id)
   if( readFile(current_folder_name) < 0)
     {
       folderOpen = FALSE;
-      debug("Kjots: Unable to open folder");
+      tqDebug("Kjots: Unable to open folder");
       return;
     }
   current = 0;
@@ -986,7 +980,7 @@ void KJotsMain::configureKeys( )
 
 void KJotsMain::copySelection( )
 {
-  me_text->copyText();
-  le_subject->setText(QApplication::clipboard()->text());
+  me_text->copy();  /* TQt3 迁移：copyText→copy */
+  le_subject->setText(TQApplication::clipboard()->text());
 }
 #include "KJotsMain.moc"

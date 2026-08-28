@@ -80,13 +80,13 @@ KKeyConfig::KKeyConfig( QWidget *parent, const char *name )
 	 }      
 
 
-	//debug("inserted keys");
+	//tqDebug("inserted keys");
 	
 	keys->setConfigGlobal( true );
 	keys->setConfigGroup( KeySet );
 	keys->readSettings();
 	
-	//debug("read settings");
+	//tqDebug("read settings");
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
 	
@@ -165,19 +165,19 @@ KKeyConfig::KKeyConfig( QWidget *parent, const char *name )
 	
 	dict = keys->keyDict();
 	
-	//debug("got key dict");
+	//tqDebug("got key dict");
 	
         kc =  new KKeyChooser( &dict, this, check_against_std_keys );
 	connect( kc, SIGNAL( keyChange() ), this, SLOT( slotChanged() ) );
 
         	
 	
-        //if ( KeyType == "global" ) debug("Make key chooser global" );
-        //if ( KeyType == "standard" ) debug("Make key chooser standard" );
+        //if ( KeyType == "global" ) tqDebug("Make key chooser global" );
+        //if ( KeyType == "standard" ) tqDebug("Make key chooser standard" );
 	
 	readScheme();
 
-	//debug("read scheme done");
+	//tqDebug("read scheme done");
 
 	
 	topLayout->addWidget( kc, 10 );
@@ -187,7 +187,7 @@ KKeyConfig::KKeyConfig( QWidget *parent, const char *name )
 }
 
 KKeyConfig::~KKeyConfig (){
-  //debug("KKeyConfig destructor");
+  //tqDebug("KKeyConfig destructor");
   delete keys;
 }
 
@@ -276,7 +276,7 @@ void KKeyConfig::readScheme( int index )
 		  keyCode = new int;
 		  *keyCode = stringToKey( gIt->current()->aValue );
 		  globalDict->insert( gIt->currentKey(), keyCode);
-		  //debug( " %s, %d", gIt->currentKey(), *keyCode );
+		  //tqDebug( " %s, %d", gIt->currentKey(), *keyCode );
 		  ++(*gIt);
 		}
 	}
@@ -286,7 +286,7 @@ void KKeyConfig::readScheme( int index )
 	  if ( globalDict->find( kc->aIt->currentKey() ) ) {
 	    kc->aIt->current()->aConfigKeyCode = *globalDict->find( kc->aIt->currentKey() );
 	    kc->aIt->current()->aCurrentKeyCode = kc->aIt->current()->aConfigKeyCode;
-	    //debug("Change: %s", kc->aIt->currentKey() );
+	    //tqDebug("Change: %s", kc->aIt->currentKey() );
 	  }
 	  ++ ( *kc->aIt );
 	}
@@ -364,7 +364,7 @@ void KKeyConfig::slotAdd()
 	QDir d( kksPath.data() );
 	if ( !d.exists() )
 		if ( !d.mkdir( kksPath.data() ) ) {
-			warning("KKeyConfig: Could not make directory to store user info.");
+			tqWarning("KKeyConfig: Could not make directory to store user info.");
 			return;
 		}
 	
@@ -374,7 +374,7 @@ void KKeyConfig::slotAdd()
 	d.setPath( kksPath.data() );
 	if ( !d.exists() )
 		if ( !d.mkdir( kksPath.data() ) ) {
-			warning("KKeyConfig: Could not make directory to store user info.");
+			tqWarning("KKeyConfig: Could not make directory to store user info.");
 			return;
 		}
 	
@@ -418,7 +418,7 @@ void KKeyConfig::readSchemeNames( )
    // Always a current and a default scheme 
    nSysSchemes = 2;
 	
-	QString kksPath = kapp->kde_datadir().copy();
+	QString kksPath = kapp->kde_datadir();
 	kksPath += "/kcmkeys/";
         kksPath += KeyType ;	
 
@@ -496,12 +496,12 @@ void KKeyConfig::loadSettings()
 
 void KKeyConfig::applySettings()
 {
-	//debug("apply settings");
-	//debug("No. of items in dict %d", dict.count() );
+	//tqDebug("apply settings");
+	//tqDebug("No. of items in dict %d", dict.count() );
 	keys->setKeyDict( dict );
-	//debug("set key dict");
+	//tqDebug("set key dict");
 	keys->writeSettings();
-	//debug("done");
+	//tqDebug("done");
 }
 void KKeyConfig::defaultSettings()
 {

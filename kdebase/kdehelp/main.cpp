@@ -87,7 +87,7 @@ void Timer::timerEvent( QTimerEvent * )
 
 void errorHandler( int type, char *msg )
 {
-	QApplication::setOverrideCursor( arrowCursor );
+	QApplication::setOverrideCursor( TQt::arrowCursor );
 
 	QMessageBox::message( klocale->translate("Error"), 
 			      msg, 
@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
 	if ( initDoc.isEmpty() )
 	{
 		initDoc = "file:";
-		initDoc += kapp->kde_htmldir().copy();
+		initDoc += kapp->kde_htmldir();
 		initDoc += "/default/kdehelp/main.html";
 	}
 

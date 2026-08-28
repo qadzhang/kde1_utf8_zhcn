@@ -24,7 +24,7 @@ class QString;
 class KBiffUidlList : public QList<QString>
 {
 protected:
-	int compareItems(GCI s1, GCI s2)
+	int compareItems(TQPtrCollection::Item s1, TQPtrCollection::Item s2)
 	{
 		QString *str1, *str2;
 		str1 = (QString *)s1;

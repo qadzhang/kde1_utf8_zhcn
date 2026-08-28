@@ -11,6 +11,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 
 #include <stdio.h>
 #include <sys/types.h>
@@ -43,8 +44,8 @@ void KListBoxItem_Desktop::paint(QPainter *p) {
   p->restore();
 }
 
-const char *KListBoxItem_Desktop::text() const {
-  return _text.data();
+TQString KListBoxItem_Desktop::text() const {
+  return _text;
 }
 
 int KListBoxItem_Desktop::height(const QListBox *lb) const {
@@ -78,8 +79,8 @@ void KListBoxItem_Program::paint(QPainter *p) {
   p->restore();
 }
 
-const char *KListBoxItem_Program::text() const {
-  return _text.data();
+TQString KListBoxItem_Program::text() const {
+  return _text;
 }
 
 int KListBoxItem_Program::height(const QListBox *lb) const {

@@ -245,7 +245,7 @@ int main( int argc, char ** argv )
 	QStrList *userNames = 0;
 	QFileInfoListIterator *userIt = 0;
 		
-	QString adPath = kapp->kde_datadir().copy();
+	QString adPath = kapp->kde_datadir();
 	adPath += "/kdisplay/app-defaults";
 	QDir dSys;
 	dSys.setPath( adPath );
@@ -267,11 +267,13 @@ int main( int argc, char ** argv )
 		dUser.setSorting( QDir::Name );
 		dUser.setNameFilter("*.ad");
 		userList = new QFileInfoList( *dUser.entryInfoList() );
-		userNames = new QStrList( *dUser.entryList() );
+		userNames = new QStrList;  // TQt3 迁移：值语义搬运
+{ QStringList k1sl = dUser.entryList();
+  for (unsigned k1i=0;k1i<k1sl.count();++k1i) userNames->append(k1sl[k1i]); }
 	}
 
 	if ( !sysList && !userList ) {
-		debug("No app-defaults files on system");
+		tqDebug("No app-defaults files on system");
 		exit(0);
 	}
 	
@@ -290,16 +292,16 @@ int main( int argc, char ** argv )
 	if ( tmp.open( IO_WriteOnly ) ) {
 			tmp.writeBlock( preproc.data(), preproc.length() );
 	} else {
-		debug("Couldn't open temp file");
+		tqDebug("Couldn't open temp file");
 		exit(0);
 	}
 	
 	
-//	debug("Creating file %s", tmpFile.data() );
+//	tqDebug("Creating file %s", tmpFile.data() );
 
 	QFileInfo *fi;
 	if ( sysList  ) {
-		//debug("Found system list");
+		//tqDebug("Found system list");
 	
 		while ( ( fi = sysIt->current() ) ) {
 			int result = -1;
@@ -307,10 +309,10 @@ int main( int argc, char ** argv )
 				result = userNames->find( fi->fileName() );
 		
 			if ( result != -1 ) {
-				//debug("System ad's overridden by user ads.");
+				//tqDebug("System ad's overridden by user ads.");
 			} else {
 				
-				//debug("Concatenate %s",  fi->filePath() );
+				//tqDebug("Concatenate %s",  fi->filePath() );
 
 				QFile f( fi->filePath() );
 
@@ -325,16 +327,16 @@ int main( int argc, char ** argv )
     				f.close();
 				}
 				tmp.writeBlock( propString.data(), propString.length() );
-				propString.resize(0);
+				propString.truncate(0);
 			}
 			++*sysIt;
 		}
 	}
 	
 	if ( userList ) {
-		//debug("Found user list");
+		//tqDebug("Found user list");
 		while ( ( fi = userIt->current() ) ) {
-			//debug("Concatenate %s",  fi->filePath() );
+			//tqDebug("Concatenate %s",  fi->filePath() );
 
 			QFile f( fi->filePath() );
 
@@ -349,7 +351,7 @@ int main( int argc, char ** argv )
     			f.close();
 			}
 			tmp.writeBlock( propString.data(), propString.length() );
-			propString.resize(0);
+			propString.truncate(0);
 			++*userIt;
 		}
 	}
@@ -369,7 +371,7 @@ int main( int argc, char ** argv )
             f.close();
           }
           tmp.writeBlock( propString.data(), propString.length() );
-          propString.resize(0);
+          propString.truncate(0);
         }
         
 	tmp.close();

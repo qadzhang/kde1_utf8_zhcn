@@ -145,7 +145,7 @@ void KFM::init()
 	    return;
 	}
 	
-	if (!silent) warning("ERROR: KFM is not running");
+	if (!silent) tqWarning("ERROR: KFM is not running");
 	return;
     }
     
@@ -156,7 +156,7 @@ void KFM::init()
     int pid = atoi( buffer );
     if ( pid <= 0 )
     {
-	if (!silent) warning("ERROR: Invalid PID");
+	if (!silent) tqWarning("ERROR: Invalid PID");
 	fclose( f );
 	return;
     }
@@ -176,7 +176,7 @@ void KFM::init()
 	    return;
 	}
 
-	if (!silent) warning("ERROR: KFM crashed");
+	if (!silent) tqWarning("ERROR: KFM crashed");
 	fclose( f );
 	return;
     }
@@ -188,7 +188,7 @@ void KFM::init()
     char * slot = strdup( buffer );
     if ( slot == (void *) 0 )
     {
-	if (!silent) warning("ERROR: Invalid Slot");
+	if (!silent) tqWarning("ERROR: Invalid Slot");
 	return;
     }
     
@@ -335,10 +335,10 @@ void KFM::moveClient( const char *_src, const char *_dest )
 
 void KFM::selectRootIcons( int _x, int _y, int _w, int _h, bool _add )
 {
-    //warning( "KFM call: selectRootIcons");
+    //tqWarning( "KFM call: selectRootIcons");
     if ( !test() )
 	return;
-    //warning( "KFM doing call");
+    //tqWarning( "KFM doing call");
     
     ipc->selectRootIcons( _x, _y, _w, _h, _add );
 }
@@ -357,7 +357,7 @@ bool KFM::test()
 {
     if ( ( ipc == 0L || !ipc->isConnected() ) && allowRestart )
     {
-	warning( "*********** KFM crashed **************" );
+	tqWarning( "*********** KFM crashed **************" );
 	if ( ipc )
 	    delete ipc;
 	
@@ -365,13 +365,13 @@ bool KFM::test()
 	flag = 0;
 	ok = FALSE;
 
-	warning( "KFM recovery" );
+	tqWarning( "KFM recovery" );
 	init();
-	warning( "KFM recovery done" );
+	tqWarning( "KFM recovery done" );
     }
 
     if ( ipc == 0L )
-	warning( "KFM NOT READY");
+	tqWarning( "KFM NOT READY");
     
     return ( ipc==0L?false:true );
 }

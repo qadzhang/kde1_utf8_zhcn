@@ -66,7 +66,7 @@ void ExpireStatusDlg::doExpire()
         
         if(stat(filename, &st))
         {
-            debug("couldn't stat %s", filename);
+            tqDebug("couldn't stat %s", filename);
         } else {
             if(st.st_atime<threshold)
             {
@@ -131,7 +131,7 @@ void ExpireStatusDlg::doExpire()
                 if (threshold>lastAccess)
                 {
                     gdbm_delete(artdb,key);
-                    debug ("expire 1");
+                    tqDebug("expire 1");
                     free (key.dptr);
                 }
             }
@@ -140,7 +140,7 @@ void ExpireStatusDlg::doExpire()
                 if (threshold2>lastAccess)
                 {
                     gdbm_delete(artdb,key);
-                    debug ("expire 1");
+                    tqDebug("expire 1");
                     free (key.dptr);
                 }
             }

@@ -35,7 +35,6 @@ const int weight[14] = {0,1,2,3,4,5,6,7,8,9,10,10,10};
 Ten::Ten( QWidget* parent, const char* name)
   : dealer(parent,name),timer(this)
 {
-  initMetaObject();
 
   pb = new QPushButton(i18n("Full Auto"), this );
   pb->setToggleButton( TRUE );

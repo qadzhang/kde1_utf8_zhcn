@@ -29,7 +29,7 @@ PWSServer::PWSServer(QString script, QString logDir)
         web->start(10000, FALSE); // 10 seconds it more than enough waste
     }
     else {
-        warning("Could not open WebLog");
+        tqWarning("Could not open WebLog");
         perror("Failed");
     }
     
@@ -42,7 +42,7 @@ PWSServer::PWSServer(QString script, QString logDir)
         error->start(10000, FALSE); // 10 seconds, like since who really cares
     }
     else{
-        warning("Could not open ErrorLog");
+        tqWarning("Could not open ErrorLog");
         perror("Failed");
     }
 
@@ -61,7 +61,7 @@ PWSServer::PWSServer(QString script, QString logDir)
 
     int config = open(script, O_RDONLY);
     if(config <= 0){
-        warning("Couldn't open: %s", script.data());
+        tqWarning("Couldn't open: %s", script.data());
         perror("Failed");
         return;
     }
@@ -81,7 +81,7 @@ PWSServer::PWSServer(QString script, QString logDir)
 
 PWSServer::~PWSServer()
 {
-    debug("Sending kill");
+    tqDebug("Sending kill");
     server->kill();
     disconnect(server, 0, this, 0);
     // I don't delete the server controller since it only gets created once and ends once and It's segfaulting and I'm not sure why

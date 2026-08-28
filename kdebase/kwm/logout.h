@@ -1,3 +1,6 @@
+
+#ifndef K1GUARD_kdebase_kwm_logout_h
+#define K1GUARD_kdebase_kwm_logout_h
 // klogout 
 // Copyright (C) 1997 Matthias Ettrich
 
@@ -59,3 +62,4 @@ private:
   void SetPointerGrab(QPoint);
   Client* reactive;
 };
+#endif /* K1GUARD_kdebase_kwm_logout_h */

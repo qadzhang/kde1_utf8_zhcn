@@ -26,8 +26,8 @@
 #include <stdarg.h>
 #include <qfontinfo.h>
 #include <qintdict.h>
-#include <kapp.h>
-#include <ksimpleconfig.h>
+#include "kapp.h"
+#include "ksimpleconfig.h"
 #include <qregexp.h>
 #include <qstrlist.h>
 #include <X11/Xlib.h>
@@ -48,7 +48,7 @@ KCharsetConverterData::KCharsetConverterData(const KCharsetEntry * inputCharset
   tempResult=new KCharsetConversionResult();
   inAmps=( (flags&KCharsetConverter::INPUT_AMP_SEQUENCES)!=0 );
   outAmps=( (flags&KCharsetConverter::OUTPUT_AMP_SEQUENCES)!=0 );
-  if ( kcharsetsData == 0 ) fatal("KCharsets not initialized!");
+  if ( kcharsetsData == 0 ) tqFatal("KCharsets not initialized!");
   isOK=initialize(inputCharset,outputCharset);
   kchdebug("done");				   
 }
@@ -60,7 +60,7 @@ KCharsetConverterData::KCharsetConverterData(const KCharsetEntry * inputCharset
   tempResult=new KCharsetConversionResult();
   inAmps=( (flags&KCharsetConverter::INPUT_AMP_SEQUENCES)!=0 );
   outAmps=( (flags&KCharsetConverter::OUTPUT_AMP_SEQUENCES)!=0 );
-  if ( kcharsetsData == 0 ) fatal("KCharsets not initialized!");
+  if ( kcharsetsData == 0 ) tqFatal("KCharsets not initialized!");
   isOK=initialize(inputCharset,0);
   kchdebug("done");
 }
@@ -174,7 +174,7 @@ void KCharsetConverterData::setInputSettings(){
   const char *name=input->name;
   
 //  if ( ! stricmp(name,"unicode-1-1-utf-7") ){
-//    warning("Sorry, UTF-7 encoding is not supported yet\n");
+//    tqWarning("Sorry, UTF-7 encoding is not supported yet\n");
 //    inputEnc=UTF7;
 //    inBits=0;
 //    unicodeIn=TRUE;
@@ -207,7 +207,7 @@ void KCharsetConverterData::setOutputSettings(){
   const char *name=output->name;
   
 //  if ( ! stricmp(name,"unicode-1-1-utf-7") ){
-//    warning("Sorry, UTF-7 encoding is not supported yet\n");
+//    tqWarning("Sorry, UTF-7 encoding is not supported yet\n");
 //    outputEnc=UTF7;
 //    outBits=0;
 //    unicodeOut=TRUE;
@@ -219,7 +219,7 @@ void KCharsetConverterData::setOutputSettings(){
     unicodeOut=TRUE;
   }  
   else if ( ! stricmp(name,"unicode-1-1") ){
-    warning("Sorry, Unicode probably doesn't work (except UTF-8)\n");
+    tqWarning("Sorry, Unicode probably doesn't work (except UTF-8)\n");
     outputEnc=none;
     outBits=16;
     unicodeOut=TRUE;
@@ -276,7 +276,7 @@ bool KCharsetConverterData::decodeUTF8(const char*str,unsigned int &code
     extrachars=5;
   }  
   else {
-    warning("Invalid UTF-8 sequence %2x%2x...!",(int)chr,(int)str[1]);
+    tqWarning("Invalid UTF-8 sequence %2x%2x...!",(int)chr,(int)str[1]);
     return FALSE;
   }  
 
@@ -310,7 +310,7 @@ bool KCharsetConverterData::encodeUTF8(unsigned int code,QString &result){
   int left=24;
   while(code>range){
     if (range>=0x40000000){
-      warning("Unicode value too big!");
+      tqWarning("Unicode value too big!");
       return FALSE;
     }
     mask2=(mask2>>1)&0x80;
@@ -469,7 +469,6 @@ const char * KCharsetConverterData::convert(const char * str
 	else result.cText+="?";
       }  
       else result.cText+="?";
-    else
       if (outBits==16){
         result.cText+=(char)(chr>>8);
 	result.cText+=(char)(chr&255);
@@ -601,7 +600,7 @@ void KCharsetsData::scanDirectory(const char *path){
   while( (fi=it.current()) ){
     QString name=fi->fileName();
     if (name.right(3) == ".gz") {
-        name = name.left(name.size() - 3);
+        name = name.left(name.length() - 3);
     }
     QString alias=name.copy();
     int comma=alias.find(',');

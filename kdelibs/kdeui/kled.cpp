@@ -67,7 +67,7 @@ KLed::paintEvent(QPaintEvent *)
   }
 #ifdef PAINT_BENCH
   int ready = t.elapsed();
-  debug("elapsed: %d msec. for %d rounds", ready, rounds);
+  tqDebug("elapsed: %d msec. for %d rounds", ready, rounds);
 #endif
 }
 

@@ -26,7 +26,7 @@
 #include <qaccel.h>
 #include <qpopupmenu.h>
 
-#include <kconfig.h>
+#include "kconfig.h"
 
 #include "kckey.h"
 

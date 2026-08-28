@@ -47,7 +47,7 @@ Pager::Pager(KWMModuleApplication *a, char *name) : QWidget(NULL,  "kwmpager")
     desktop_font = new QFont();
     Desktop *desk;
 
-    desktops.resize(count);
+    desktops.truncate(count);
     for (int i = 0; i < count; i++) {
         desk = new Desktop(a, i + 1, this);
         desktops[i] = desk;
@@ -222,7 +222,7 @@ void Pager::changeNumber(int)
 	delete desktops[i];
 
     uint count = KWM::numberOfDesktops();
-    desktops.resize(count);
+    desktops.truncate(count);
     for (i = 0; i < count; i++) {
 	desktops[i] = new Desktop(kwmmapp, i + 1, this);
 	desktops[i]->show();
@@ -256,7 +256,7 @@ void Pager::closeEvent( QCloseEvent *)
 
 void Pager::addWindow(Window w)
 { 
-    // debug("add %lx",w);
+    // tqDebug("add %lx",w);
     PagerWindow *win = new PagerWindow;
     win->id = w;
     
@@ -269,7 +269,7 @@ void Pager::addWindow(Window w)
 
 void Pager::removeWindow(Window w)
 {
-    // debug("remove %lx",w);
+    // tqDebug("remove %lx",w);
     PagerWindow *win;
     for (win = stickys.first(); win && win->id != w; win = stickys.next())
 	continue;
@@ -287,7 +287,7 @@ void Pager::removeWindow(Window w)
 void Pager::windowChange(Window w)
 {
     Desktop *current = desktops.at(KWM::desktop(w) - 1);
-    // debug("change %lx",w);
+    // tqDebug("change %lx",w);
     PagerWindow *win;
     for (win = stickys.first(); win && win->id != w; win = stickys.next())
 	continue;
@@ -312,19 +312,19 @@ void Pager::windowChange(Window w)
 
 void Pager::raiseWindow(Window w)
 {
-    // debug("raise %lx",w);
+    // tqDebug("raise %lx",w);
     desktops.at(KWM::desktop(w) - 1)->raiseWindow(w);
 }
 
 void Pager::lowerWindow(Window w)
 {
-    // debug("lower %lx",w);
+    // tqDebug("lower %lx",w);
     desktops.at(KWM::desktop(w) - 1)->lowerWindow(w);
 }
 
 void Pager::windowActivate(Window w)
 {
-    // debug("activate %lx",w);
+    // tqDebug("activate %lx",w);
 
     static Desktop *desktopWithActiveWindow = 0L;
  

@@ -84,7 +84,7 @@ filterRuleList *KSMBaseRules::defaultRules()
     if(strlen(kConfig->readEntry("Nick", "")) > 0){
       const char *nick = kConfig->readEntry("Nick", "");
       if(strlen(nick) > 99){
-        debug("Nick too long");
+        tqDebug("Nick too long");
       }
       sprintf(match_us,
               "(?i)<\\S+>.*%s.*", nick);

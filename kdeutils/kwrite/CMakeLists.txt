@@ -7,14 +7,14 @@ set(KWRITE_SRCS
 )
 
 set(KWRITE_MOC
-    highlight.moc kmimemagic.moc kwdialog.moc kwdoc.moc kwview.moc toplevel.moc
+    highlight.h kmimemagic.h kwdialog.h kwdoc.h kwview.h toplevel.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KWRITE_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KWRITE_MOC})
 
 add_executable(kwrite1 ${KWRITE_SRCS} ${MOC_FILES})
 target_link_libraries(kwrite1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

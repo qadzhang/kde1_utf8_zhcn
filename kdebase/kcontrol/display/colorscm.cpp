@@ -41,6 +41,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 
 #include "kcolordlg.h"
 
@@ -72,7 +73,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	if ( mode == Init )
 		return;
 	
-	//debug("KColorScheme::KColorScheme");
+	//tqDebug("KColorScheme::KColorScheme");
 	
 	kde_display = x11Display();
 	KDEChangePalette = XInternAtom( kde_display, "KDEChangePalette", False);
@@ -381,7 +382,7 @@ void KColorScheme::slotAdd()
 	QDir d( kcsPath.data() );
 	if ( !d.exists() )
 		if ( !d.mkdir( kcsPath.data() ) ) {
-			warning("KColorScheme: Could not make directory to store user info.");
+			tqWarning("KColorScheme: Could not make directory to store user info.");
 			return;
 		}
 		
@@ -390,7 +391,7 @@ void KColorScheme::slotAdd()
 	d.setPath( kcsPath.data() );
 	if ( !d.exists() )
 		if ( !d.mkdir( kcsPath.data() ) ) {
-			warning("KColorScheme: Could not make directory to store user info.");
+			tqWarning("KColorScheme: Could not make directory to store user info.");
 			return;
 		}
 	

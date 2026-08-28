@@ -7,13 +7,13 @@ main.cpp htmlopts.cpp miscopts.cpp  kproxydlg.cpp khttpoptdlg.cpp useragentdlg.c
 )
 
 set(KFM_MOC
-htmlopts.moc miscopts.moc  kproxydlg.moc khttpoptdlg.moc useragentdlg.moc kcookiesdlg.moc rootopts.moc
+htmlopts.h miscopts.h  kproxydlg.h khttpoptdlg.h useragentdlg.h kcookiesdlg.h rootopts.h
 )
-QT1_WRAP_MOC(MOC_FILES ${KFM_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KFM_MOC})
 
 add_executable(kcmkfm ${KFM_SRCS} ${MOC_FILES})
 target_link_libraries(kcmkfm
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

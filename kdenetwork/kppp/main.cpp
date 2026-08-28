@@ -184,7 +184,7 @@ extern "C" {
       unlockdevice();*/
   
     XGetErrorText( dpy, err->error_code, errstr, 256 );
-    fatal( "X Error: %s\n  Major opcode:  %d", errstr, err->request_code );
+    tqFatal( "X Error: %s\n  Major opcode:  %d", errstr, err->request_code );
     return 0;
   }
 
@@ -200,7 +200,7 @@ extern "C" {
       Modem::modem->unlockdevice();
       return 0;
     } else{
-      fatal( "%s: Fatal IO error: client killed", "kppp" );
+      tqFatal( "%s: Fatal IO error: client killed", "kppp" );
       return 0;
     }
   }
@@ -335,7 +335,7 @@ int main( int argc, char **argv ) {
   gpppdata.open();
 
   int c;
-  opterr = 0;
+  opterr = 0;  /* TQt3 迁移 */
   while ((c = getopt(argc, argv, "c:khvr:qT")) != EOF) {
     switch (c)
       {
@@ -475,7 +475,7 @@ KPPPWidget::KPPPWidget( QWidget *parent, const char *name )
   : QWidget(parent, name),
     acct(0)
 {
-  tabWindow = 0;
+  tabWindow = 0;  /* TQt3 迁移 */
 
   // before doing anything else, run a few tests
 
@@ -1157,7 +1157,7 @@ void KPPPWidget::rulesetLoadError() {
 
 void KPPPWidget::startAccounting() {
   // volume accounting
-  totalbytes = 0;
+  totalbytes = 0;  /* TQt3 迁移 */
 
   // load the ruleset
   if(!gpppdata.AcctEnabled())
@@ -1198,7 +1198,7 @@ void KPPPWidget::stopAccounting() {
   if(acct != 0) {
     acct->slotStop();
     delete acct;
-    acct = 0;
+    acct = 0;  /* TQt3 迁移 */
   }
 }
 

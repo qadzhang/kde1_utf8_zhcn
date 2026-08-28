@@ -21,7 +21,7 @@ public:
 	Polygon( int numVert )
 		{	vertices.resize( numVert + 1 ); }
 	Polygon( Polygon &p )
-		{	vertices = p.vertices.copy(); }
+		{	vertices = p.vertices; }
 
 	QArray<XPoint> vertices;
 };

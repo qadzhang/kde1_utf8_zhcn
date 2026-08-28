@@ -48,7 +48,7 @@ Keys::Keys( QWidget *parent, const char *name)
     labels[3]->setGeometry(265, 92, 100, 20 );
 
 
-    QString pixDir(KApplication::kde_datadir().copy());
+    QString pixDir(KApplication::kde_datadir());
     pixDir.append("/ksnake/pics/");
 
     QPushButton *up = new QPushButton(this);

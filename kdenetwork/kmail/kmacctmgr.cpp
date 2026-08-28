@@ -50,7 +50,7 @@ void KMAcctMgr::setBasePath(const char* aBasePath)
   }
   else mBasePath = aBasePath;
 
-  mBasePath.detach();
+
   
 }
 
@@ -60,7 +60,7 @@ void KMAcctMgr::writeConfig(bool withSync)
 {
   KConfig* config = app->getConfig();
   KMAccount* acct;
-  QString groupName(256);
+  TQString groupName;  /* TQt3 迁移 */
   int i;
 
   config->setGroup("General");
@@ -81,7 +81,7 @@ void KMAcctMgr::readConfig(void)
 {
   KConfig* config = app->getConfig();
   KMAccount* acct;
-  QString groupName(256), acctType, acctName;
+  TQString groupName, acctType, acctName;  /* TQt3 迁移 */
   int i, num;
 
   mAcctList.clear();
@@ -105,7 +105,7 @@ void KMAcctMgr::readConfig(void)
 //-----------------------------------------------------------------------------
 bool KMAcctMgr::singleCheckMail(KMAccount *account)
 {
-  debug ("checking mail, server busy");
+  tqDebug("checking mail, server busy");
   serverReady(false);
   bool hasNewMail = FALSE;
   //kbp->busy();
@@ -114,11 +114,11 @@ bool KMAcctMgr::singleCheckMail(KMAccount *account)
 
   if (account->folder() == 0)
   {
-    QString tmp(1024); //Unsafe
+    TQString tmp;  /* TQt3 迁移 */ //Unsafe
     tmp.sprintf(i18n("Account %s has no mailbox defined!\n"
  	        "Mail checking aborted\n"
 	        "Check your account settings!"), account->name().data());
-    warning(tmp.data());
+    tqWarning(tmp.data());
   }
   else if (account->processNewMail(wid))
   {
@@ -129,7 +129,7 @@ bool KMAcctMgr::singleCheckMail(KMAccount *account)
   filterMgr->cleanup();
   kbp->idle();
 
-  debug ("checked mail, server ready"); // sven
+  tqDebug("checked mail, server ready"); // sven
   serverReady(true);                    // sven warning this might be recursive
   // if message "check" is pending. No harm I think.
   return hasNewMail;
@@ -206,13 +206,13 @@ bool KMAcctMgr::checkMail(void)
 
   if (mAcctList.isEmpty())
   {
-    warning(i18n("You need to add an account in the network\n"
+    tqWarning(i18n("You need to add an account in the network\n"
 		 "section of the settings in order to\n"
 		 "receive mail."));
     return FALSE;
   }
 
-  debug ("checking mail, server busy");
+  tqDebug("checking mail, server busy");
   serverReady(false);
   KMIOStatusWdg *wid = new KMIOStatusWdg(0L,0L,KMIOStatus::RETRIEVE);
   wid->show();
@@ -221,11 +221,11 @@ bool KMAcctMgr::checkMail(void)
   {
     if (cur->folder() == 0)
     {
-      QString tmp(1024); // Unsafe
+      TQString tmp;  /* TQt3 迁移 */ // Unsafe
       tmp.sprintf(i18n("Account %s has no mailbox defined!\n"
                        "Mail checking aborted\n"
                        "Check your account settings!"), cur->name().data());
-      warning(tmp.data());
+      tqWarning(tmp.data());
       break;
     }
     else   if (cur->processNewMail(wid))
@@ -236,7 +236,7 @@ bool KMAcctMgr::checkMail(void)
   }
   delete wid;
   filterMgr->cleanup();
-  debug ("checked mail, server ready");
+  tqDebug("checked mail, server ready");
   serverReady(true);
   return hasNewMail;
 }
@@ -263,12 +263,12 @@ bool KMAcctMgr::intCheckMail(int item) {
 
   if (mAcctList.isEmpty())
   {
-    warning(i18n("You need to add an account in the network\n"
+    tqWarning(i18n("You need to add an account in the network\n"
 		 "section of the settings in order to\n"
 		 "receive mail."));
     return FALSE;
   }
-  debug ("checking mail, server busy");
+  tqDebug("checking mail, server busy");
   serverReady(false);
   
   KMIOStatusWdg *wid = new KMIOStatusWdg(0L,0L,KMIOStatus::RETRIEVE);
@@ -283,11 +283,11 @@ bool KMAcctMgr::intCheckMail(int item) {
 
   if (cur->folder() == 0)
   {
-    QString tmp(1024); // Unsafe
+    TQString tmp;  /* TQt3 迁移 */ // Unsafe
     tmp.sprintf(i18n("Account %s has no mailbox defined!\n"
                      "Mail checking aborted\n"
                      "Check your account settings!"), cur->name().data());
-    warning(tmp.data());
+    tqWarning(tmp.data());
   }
   else if (cur->processNewMail(wid))
   {
@@ -296,7 +296,7 @@ bool KMAcctMgr::intCheckMail(int item) {
   }
 
   delete wid;
-  debug ("checked mail, server ready");
+  tqDebug("checked mail, server ready");
   serverReady(true);
   return hasNewMail;
 

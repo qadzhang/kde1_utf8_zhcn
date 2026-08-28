@@ -19,7 +19,7 @@
 #ifndef _KROOTPROP_H_
 #define _KROOTPROP_H_
 
-#include <kapp.h>
+#include "kapp.h"
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>

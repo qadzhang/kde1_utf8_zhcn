@@ -15,13 +15,11 @@ KMAddrBookSelDlg::KMAddrBookSelDlg(KMAddrBook* aAddrBook, const char* aCap):
   mBtnCancel(i18n("Cancel"),this)
 {
   const char* addr;
-
-  initMetaObject();
   setCaption(aCap ? aCap : i18n("Addressbook"));
 
   assert(aAddrBook != NULL);
   mAddrBook = aAddrBook;
-  mAddress  = 0;
+  mAddress  = TQString();
 
   mBtnOk.adjustSize();
   mBtnOk.setMinimumSize(mBtnOk.size());
@@ -61,7 +59,7 @@ void KMAddrBookSelDlg::slotOk()
   int idx = mListBox.currentItem();
 
   if (idx>=0) mAddress = mListBox.text(idx);
-  else mAddress = 0;
+  else mAddress = TQString();
 
   accept();
 }
@@ -70,7 +68,7 @@ void KMAddrBookSelDlg::slotOk()
 //-----------------------------------------------------------------------------
 void KMAddrBookSelDlg::slotCancel()
 {
-  mAddress = 0;
+  mAddress = TQString();
   reject();
 }
 
@@ -90,8 +88,6 @@ KMAddrBookEditDlg::KMAddrBookEditDlg(KMAddrBook* aAddrBook, const char* aCap):
   mBtnRemove(i18n("Remove"),this)
 {
   const char* addr;
-
-  initMetaObject();
   setCaption(aCap ? aCap : i18n("Addressbook Manager"));
 
   assert(aAddrBook != NULL);

@@ -136,7 +136,7 @@ void inline DwBinhexEncodeCtx::PutChar(int aChar)
 {
     if (mLineLength == 64) {
         mBuffer.append(DW_EOL);
-        mLineLength = 0;
+        mLineLength = TQString();
     }
     mBuffer.append((size_t) 1, (char) aChar);
     ++mLineLength;
@@ -335,8 +335,8 @@ int DwBinhexDecodeCtx::GetChar()
         mScratch[0] = 0;
         mScratch[1] = 0;
         mScratch[2] = 0;
-        mScratchCount = 0;
-        mScratchPos = 0;
+        mScratchCount = TQString();
+        mScratchPos = TQString();
         switch (k) {
         case 4:
             mScratch[2] |= (DwUint8) (cc[3] & 0x3f);

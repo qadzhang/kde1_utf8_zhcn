@@ -236,7 +236,7 @@ void open_ksirc::clickConnect()
   conf->setGroup("ServerList");
   conf->readListEntry("RecentServers", recent);
   int found = recent.find(str);
-//  debug("Str: %s", str.data());
+//  tqDebug("Str: %s", str.data());
   if(found == -1){
     recent.insert(0, str);
     conf->writeEntry("RecentServers", recent);

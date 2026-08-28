@@ -168,17 +168,17 @@ void ConnectWidget::preinit() {
 void ConnectWidget::init() {
   gpppdata.setpppdError(0);
   inittimer->stop();
-  vmain = 0;
+  vmain = 0;  /* TQt3 迁移 */
   expecting = false;
   pausing = false;
-  scriptindex = 0;
+  scriptindex = 0;  /* TQt3 迁移 */
   myreadbuffer = "";
   scanning = false;
   scanvar = "";
   firstrunID = true;
   firstrunPW = true;
-  totalbytes = 0;
-  dialnumber = 0;
+  totalbytes = 0;  /* TQt3 迁移 */
+  dialnumber = 0;  /* TQt3 迁移 */
 
   p_kppp->con_speed = "";
 
@@ -296,7 +296,7 @@ void ConnectWidget::timerEvent(QTimerEvent *) {
       QString pn = gpppdata.modemDialStr();
       pn += plist.at(dialnumber);
       if(++dialnumber >= plist.count())
-        dialnumber = 0;
+        dialnumber = 0;  /* TQt3 迁移 */
       writeline(pn);
       
       setExpect(gpppdata.modemConnectResp());
@@ -337,7 +337,7 @@ void ConnectWidget::timerEvent(QTimerEvent *) {
       }
 
       Modem::modem->setDataMode(false); 
-      vmain = 0;
+      vmain = 0;  /* TQt3 迁移 */
       return;
     }
 
@@ -720,7 +720,7 @@ void ConnectWidget::timerEvent(QTimerEvent *) {
       if(gpppdata.authMethod() == AUTH_TERMINAL) {
 	if (termwindow) {
 	  delete termwindow;
-	  termwindow = 0L;
+	  termwindow = 0;  /* TQt3 迁移 */
 	  this->show();
 	} else {
 	  termwindow = new LoginTerm(0L, 0L);
@@ -882,7 +882,7 @@ void ConnectWidget::cancelbutton() {
 
   if (termwindow) {
     delete termwindow;
-    termwindow = 0L;
+    termwindow = 0;  /* TQt3 迁移 */
     this->show();
   }
 

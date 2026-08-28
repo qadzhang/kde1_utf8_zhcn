@@ -30,8 +30,8 @@
 #include <ksimpleconfig.h>
 #include <kmsgbox.h>
 
-#include "locale.h"
-#include "locale.moc"
+#include "klocaleconfig.h" // TQt3 迁移：locale.h 劫持系统头名，改名
+#include "klocaleconfig.moc"  /* TQt3 迁移：随头改名 */
 #include <qlayout.h>
 
 KLocaleConfig::KLocaleConfig(QWidget *parent, const char *name)

@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qabstractlayout.cpp:56 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQLayoutItem Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQLayoutItem Class Reference</h1>
+
+<p>The TQLayoutItem class provides an abstract item that a
+TQLayout manipulates.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qlayout-h.html">ntqlayout.h</a>&gt;</tt>
+<p>Inherited by <a href="ntqlayout.html">TQLayout</a>, <a href="qspaceritem.html">TQSpacerItem</a>, and <a href="qwidgetitem.html">TQWidgetItem</a>.
+<p><a href="qlayoutitem-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQLayoutItem"><b>TQLayoutItem</b></a> ( int&nbsp;alignment = 0 )</li>
+<li class=fn>virtual <a href="#~TQLayoutItem"><b>~TQLayoutItem</b></a> ()</li>
+<li class=fn>virtual TQSize <a href="#sizeHint"><b>sizeHint</b></a> () const = 0</li>
+<li class=fn>virtual TQSize <a href="#minimumSize"><b>minimumSize</b></a> () const = 0</li>
+<li class=fn>virtual TQSize <a href="#maximumSize"><b>maximumSize</b></a> () const = 0</li>
+<li class=fn>virtual TQSizePolicy::ExpandData <a href="#expanding"><b>expanding</b></a> () const = 0</li>
+<li class=fn>virtual void <a href="#setGeometry"><b>setGeometry</b></a> ( const&nbsp;TQRect&nbsp;&amp;&nbsp;r ) = 0</li>
+<li class=fn>virtual TQRect <a href="#geometry"><b>geometry</b></a> () const = 0</li>
+<li class=fn>virtual bool <a href="#isEmpty"><b>isEmpty</b></a> () const = 0</li>
+<li class=fn>virtual bool <a href="#hasHeightForWidth"><b>hasHeightForWidth</b></a> () const</li>
+<li class=fn>virtual int <a href="#heightForWidth"><b>heightForWidth</b></a> ( int&nbsp;w ) const</li>
+<li class=fn>virtual void <a href="#invalidate"><b>invalidate</b></a> ()</li>
+<li class=fn>virtual TQWidget * <a href="#widget"><b>widget</b></a> ()</li>
+<li class=fn>virtual TQLayoutIterator <a href="#iterator"><b>iterator</b></a> ()</li>
+<li class=fn>virtual TQLayout * <a href="#layout"><b>layout</b></a> ()</li>
+<li class=fn>virtual TQSpacerItem * <a href="#spacerItem"><b>spacerItem</b></a> ()</li>
+<li class=fn>int <a href="#alignment"><b>alignment</b></a> () const</li>
+<li class=fn>virtual void <a href="#setAlignment"><b>setAlignment</b></a> ( int&nbsp;a )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+
+
+The TQLayoutItem class provides an abstract item that a
+<a href="ntqlayout.html">TQLayout</a> manipulates.
+<p> This is used by custom layouts.
+<p> Pure virtual functions are provided to return information about
+the layout, including, <a href="#sizeHint">sizeHint</a>(), <a href="#minimumSize">minimumSize</a>(), <a href="#maximumSize">maximumSize</a>()
+and <a href="#expanding">expanding</a>().
+<p> The layout's geometry can be set and retrieved with <a href="#setGeometry">setGeometry</a>()
+and <a href="#geometry">geometry</a>(), and its alignment with <a href="#setAlignment">setAlignment</a>() and
+<a href="#alignment">alignment</a>().
+<p> <a href="#isEmpty">isEmpty</a>() returns whether the layout is empty. <a href="#iterator">iterator</a>() returns
+an iterator for the layout's children. If the concrete item is a
+<a href="ntqwidget.html">TQWidget</a>, it can be retrieved using <a href="#widget">widget</a>(). Similarly for
+<a href="#layout">layout</a>() and <a href="#spacerItem">spacerItem</a>().
+<p> <p>See also <a href="ntqlayout.html">TQLayout</a>, <a href="appearance.html">Widget Appearance and Style</a>, and <a href="geomanagement.html">Layout Management</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQLayoutItem"></a>TQLayoutItem::TQLayoutItem ( int&nbsp;alignment = 0 )
+</h3>
+
+<p> Constructs a layout item with an <em>alignment</em> that is a bitwise OR
+of the <a href="ntqt.html#AlignmentFlags-enum">TQt::AlignmentFlags</a>. Not all subclasses support
+alignment.
+
+<h3 class=fn><a name="~TQLayoutItem"></a>TQLayoutItem::~TQLayoutItem ()<tt> [virtual]</tt>
+</h3>
+Destroys the TQLayoutItem.
+
+<h3 class=fn>int <a name="alignment"></a>TQLayoutItem::alignment () const
+</h3>
+
+<p> Returns the alignment of this item.
+
+<h3 class=fn><a href="ntqsizepolicy.html#ExpandData-enum">TQSizePolicy::ExpandData</a> <a name="expanding"></a>TQLayoutItem::expanding () const<tt> [pure virtual]</tt>
+</h3>
+
+<p> Implemented in subclasses to return the direction(s) this item
+"wants" to expand in (if any).
+
+<p>Reimplemented in <a href="ntqlayout.html#expanding">TQLayout</a>, <a href="qspaceritem.html#expanding">TQSpacerItem</a>, and <a href="qwidgetitem.html#expanding">TQWidgetItem</a>.
+<h3 class=fn><a href="ntqrect.html">TQRect</a> <a name="geometry"></a>TQLayoutItem::geometry () const<tt> [pure virtual]</tt>
+</h3>
+
+<p> Returns the rectangle covered by this layout item.
+
+<p>Example: <a href="customlayout-example.html#x1495">customlayout/border.cpp</a>.
+<h3 class=fn>bool <a name="hasHeightForWidth"></a>TQLayoutItem::hasHeightForWidth () const<tt> [virtual]</tt>
+</h3>
+Returns true if this layout's preferred height depends on its
+width; otherwise returns false. The default implementation returns
+false.
+<p> Reimplement this function in layout managers that support height
+for width.
+<p> <p>See also <a href="#heightForWidth">heightForWidth</a>() and <a href="ntqwidget.html#heightForWidth">TQWidget::heightForWidth</a>().
+
+<p>Examples: <a href="customlayout-example.html#x1496">customlayout/border.cpp</a> and <a href="customlayout-example.html#x1472">customlayout/flow.cpp</a>.
+<p>Reimplemented in <a href="qgridlayout.html#hasHeightForWidth">TQGridLayout</a> and <a href="qboxlayout.html#hasHeightForWidth">TQBoxLayout</a>.
+<h3 class=fn>int <a name="heightForWidth"></a>TQLayoutItem::heightForWidth ( int&nbsp;w ) const<tt> [virtual]</tt>
+</h3>
+Returns the preferred height for this layout item, given the width
+<em>w</em>.
+<p> The default implementation returns -1, indicating that the
+preferred height is independent of the width of the item. Using
+the function <a href="#hasHeightForWidth">hasHeightForWidth</a>() will typically be much faster
+than calling this function and testing for -1.
+<p> Reimplement this function in layout managers that support height
+for width. A typical implementation will look like this:
+<pre>
+        int MyLayout::heightForWidth( int w ) const
+        {
+            if ( cache_dirty || cached_width != w ) {
+                // not all C++ compilers support "mutable"
+                MyLayout *that = (MyLayout*)this;
+                int h = calculateHeightForWidth( w );
+                that-&gt;cached_hfw = h;
+                return h;
+            }
+            return cached_hfw;
+        }
+    </pre>
+ 
+<p> Caching is strongly recommended; without it layout will take
+exponential time.
+<p> <p>See also <a href="#hasHeightForWidth">hasHeightForWidth</a>().
+
+<p>Example: <a href="customlayout-example.html#x1473">customlayout/flow.cpp</a>.
+<p>Reimplemented in <a href="qgridlayout.html#heightForWidth">TQGridLayout</a> and <a href="qboxlayout.html#heightForWidth">TQBoxLayout</a>.
+<h3 class=fn>void <a name="invalidate"></a>TQLayoutItem::invalidate ()<tt> [virtual]</tt>
+</h3>
+Invalidates any cached information in this layout item.
+
+<p>Reimplemented in <a href="ntqlayout.html#invalidate">TQLayout</a>.
+<h3 class=fn>bool <a name="isEmpty"></a>TQLayoutItem::isEmpty () const<tt> [pure virtual]</tt>
+</h3>
+
+<p> Implemented in subclasses to return whether this item is empty,
+i.e. whether it contains any widgets.
+
+<p>Reimplemented in <a href="ntqlayout.html#isEmpty">TQLayout</a>, <a href="qspaceritem.html#isEmpty">TQSpacerItem</a>, and <a href="qwidgetitem.html#isEmpty">TQWidgetItem</a>.
+<h3 class=fn><a href="qlayoutiterator.html">TQLayoutIterator</a> <a name="iterator"></a>TQLayoutItem::iterator ()<tt> [virtual]</tt>
+</h3>
+Returns an iterator over this item's TQLayoutItem children. The
+default implementation returns an empty iterator.
+<p> Reimplement this function in subclasses that can have children.
+
+<p>Reimplemented in <a href="ntqlayout.html#iterator">TQLayout</a>.
+<h3 class=fn><a href="ntqlayout.html">TQLayout</a>&nbsp;* <a name="layout"></a>TQLayoutItem::layout ()<tt> [virtual]</tt>
+</h3>
+If this item is a <a href="ntqlayout.html">TQLayout</a>, it is returned as a TQLayout; otherwise
+0 is returned. This function provides type-safe casting.
+
+<h3 class=fn><a href="ntqsize.html">TQSize</a> <a name="maximumSize"></a>TQLayoutItem::maximumSize () const<tt> [pure virtual]</tt>
+</h3>
+
+<p> Implemented in subclasses to return the maximum size of this item.
+
+<p>Reimplemented in <a href="ntqlayout.html#maximumSize">TQLayout</a>, <a href="qspaceritem.html#maximumSize">TQSpacerItem</a>, and <a href="qwidgetitem.html#maximumSize">TQWidgetItem</a>.
+<h3 class=fn><a href="ntqsize.html">TQSize</a> <a name="minimumSize"></a>TQLayoutItem::minimumSize () const<tt> [pure virtual]</tt>
+</h3>
+
+<p> Implemented in subclasses to return the minimum size of this item.
+
+<p>Examples: <a href="customlayout-example.html#x1497">customlayout/border.cpp</a>, <a href="customlayout-example.html#x1515">customlayout/card.cpp</a>, and <a href="customlayout-example.html#x1474">customlayout/flow.cpp</a>.
+<p>Reimplemented in <a href="ntqlayout.html#minimumSize">TQLayout</a>, <a href="qspaceritem.html#minimumSize">TQSpacerItem</a>, and <a href="qwidgetitem.html#minimumSize">TQWidgetItem</a>.
+<h3 class=fn>void <a name="setAlignment"></a>TQLayoutItem::setAlignment ( int&nbsp;a )<tt> [virtual]</tt>
+</h3>
+Sets the alignment of this item to <em>a</em>, which is a bitwise OR of
+the <a href="ntqt.html#AlignmentFlags-enum">TQt::AlignmentFlags</a>. Not all subclasses support alignment.
+
+<p>Example: <a href="tutorial2-09.html#x2644">chart/optionsform.cpp</a>.
+<h3 class=fn>void <a name="setGeometry"></a>TQLayoutItem::setGeometry ( const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;r )<tt> [pure virtual]</tt>
+</h3>
+
+<p> Implemented in subclasses to set this item's geometry to <em>r</em>.
+
+<p>Examples: <a href="customlayout-example.html#x1498">customlayout/border.cpp</a>, <a href="customlayout-example.html#x1516">customlayout/card.cpp</a>, and <a href="customlayout-example.html#x1475">customlayout/flow.cpp</a>.
+<p>Reimplemented in <a href="ntqlayout.html#setGeometry">TQLayout</a>, <a href="qspaceritem.html#setGeometry">TQSpacerItem</a>, and <a href="qwidgetitem.html#setGeometry">TQWidgetItem</a>.
+<h3 class=fn><a href="ntqsize.html">TQSize</a> <a name="sizeHint"></a>TQLayoutItem::sizeHint () const<tt> [pure virtual]</tt>
+</h3>
+
+<p> Implemented in subclasses to return the preferred size of this item.
+
+<p>Examples: <a href="customlayout-example.html#x1499">customlayout/border.cpp</a>, <a href="customlayout-example.html#x1517">customlayout/card.cpp</a>, and <a href="customlayout-example.html#x1476">customlayout/flow.cpp</a>.
+<p>Reimplemented in <a href="qspaceritem.html#sizeHint">TQSpacerItem</a>, <a href="qwidgetitem.html#sizeHint">TQWidgetItem</a>, <a href="qgridlayout.html#sizeHint">TQGridLayout</a>, and <a href="qboxlayout.html#sizeHint">TQBoxLayout</a>.
+<h3 class=fn><a href="qspaceritem.html">TQSpacerItem</a>&nbsp;* <a name="spacerItem"></a>TQLayoutItem::spacerItem ()<tt> [virtual]</tt>
+</h3>
+If this item is a <a href="qspaceritem.html">TQSpacerItem</a>, it is returned as a TQSpacerItem;
+otherwise 0 is returned. This function provides type-safe casting.
+
+<h3 class=fn><a href="ntqwidget.html">TQWidget</a>&nbsp;* <a name="widget"></a>TQLayoutItem::widget ()<tt> [virtual]</tt>
+</h3>
+If this item is a <a href="ntqwidget.html">TQWidget</a>, it is returned as a TQWidget; otherwise
+0 is returned. This function provides type-safe casting.
+
+<p>Reimplemented in <a href="qwidgetitem.html#widget">TQWidgetItem</a>.
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -22,7 +22,7 @@
 
 class SortedKProtocolDirEntry : public QList<KProtocolDirEntry>
 {
-    int compareItems( GCI i1, GCI i2 );
+    int compareItems( TQPtrCollection::Item i1, TQPtrCollection::Item i2 );
 public:
     ~SortedKProtocolDirEntry();
     int sortMode;

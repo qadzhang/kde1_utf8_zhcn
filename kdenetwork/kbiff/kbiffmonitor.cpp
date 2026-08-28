@@ -23,7 +23,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
-#include <kbiffurl.h>
+#include "kbiffurl.h"
 
 #include <qapp.h>
 #include <qstring.h>
@@ -75,17 +75,17 @@ TRACEINIT("KBiffMonitor::~KBiffMonitor()");
 	if (imap)
 	{
 		delete imap;
-		imap = 0;
+		imap = 0;  /* TQt3 迁移 */
 	}
 	if (pop)
 	{
 		delete pop;
-		pop = 0;
+		pop = 0;  /* TQt3 迁移 */
 	}
 	if (nntp)
 	{
 		delete nntp;
-		nntp = 0;
+		nntp = 0;  /* TQt3 迁移 */
 	}
 }
 
@@ -145,17 +145,17 @@ TRACEINIT("KBiffMonitor::setMailbox()");
 	if (imap)
 	{
 		delete imap;
-		imap = 0;
+		imap = 0;  /* TQt3 迁移 */
 	}
 	if (pop)
 	{
 		delete pop;
-		pop = 0;
+		pop = 0;  /* TQt3 迁移 */
 	}
 	if (nntp)
 	{
 		delete nntp;
-		nntp = 0;
+		nntp = 0;  /* TQt3 迁移 */
 	}
 
 	protocol = url.protocol();
@@ -343,7 +343,7 @@ TRACEINIT("KBiffMonitor::checkMbox()");
 	// handle the NoMail case
 	if ((mbox.size() == 0) || (oldCount == 0))
 	{
-		newCount = 0;
+		newCount = 0;  /* TQt3 迁移 */
 		determineState(NoMail);
 		return;
 	}
@@ -454,7 +454,7 @@ TRACEINIT("KBiffMonitor::checkImap()");
 	// what state are we in?
 	if (imap->numberOfMessages() == 0)
 	{
-		newCount = 0;
+		newCount = 0;  /* TQt3 迁移 */
 		determineState(NoMail);
 	}
 	else
@@ -583,7 +583,7 @@ TRACEF("Checking '%s' vs '%s'", c_buffer, (const char*)mailbox);
 		// order
 		bool range = false;
 		int last = 1;
-		newCount = 0;
+		newCount = 0;  /* TQt3 迁移 */
 		char *buffer = c_buffer;
 
 		// skip over the mailbox name
@@ -692,7 +692,7 @@ TRACEINIT("KBiffMonitor::checkMHdir()");
 					int last = 0;
 
 					// initialize the number of new messages
-					newCount = 0;
+					newCount = 0;  /* TQt3 迁移 */
 
 					// jump to the correct position and iterate through the
 					// rest of the buffer
@@ -747,7 +747,9 @@ TRACEINIT("KBiffMonitor::checkMHdir()");
 		// OK. No new messages listed in .mh_sequences. Check if 
 		//  there are any old ones.
 		//mbox.setFilter(QDir::Files);
-		QStrList mails = *mbox.entryList(QDir::Files);
+		QStrList mails;  /* TQt3 迁移：值语义搬运 */
+		{ QStringList k1sl = mbox.entryList(QDir::Files);
+		  for (unsigned k1i=0;k1i<k1sl.count();++k1i) mails.append(k1sl[k1i]); }
 
 		for (const char * str = mails.first(); str; str = mails.next())
 		{
@@ -999,7 +1001,7 @@ int KBiffMonitor::mboxMessages()
 	bool msg_read        = false;
 	long content_length  = 0;
 
-	oldCount = 0;
+	oldCount = 0;  /* TQt3 迁移 */
 
 	if (mbox.open(IO_ReadOnly) == false)
 		return 0;
@@ -1090,7 +1092,7 @@ int KBiffMonitor::mboxMessages()
 		if(++msg_count >= 100 )
 		{
 			qApp->processEvents();
-			msg_count = 0;
+			msg_count = 0;  /* TQt3 迁移 */
 		}
 	}//while
 
@@ -1317,7 +1319,7 @@ TRACEINIT("KBiffSocket::writeLine()");
 		return -1;
 
 TRACEF("CLIENT> %s", (const char*)line);
-	if ((bytes = ::write(socketFD, line, line.size()-1)) <= 0)
+	if ((bytes = ::write(socketFD, line, line.length()-1)) <= 0)  /* TQt3 迁移 */
 		close();
 
 	return bytes;
@@ -1618,7 +1620,7 @@ static bool real_from(const char *buffer)
 	skip_token(buffer);
 
 	/* <weekday> */
-	found = 0;
+	found = 0;  /* TQt3 迁移 */
 	for (i = 0; day_name[i] != NULL; i++)
 		found = found || (strnicmp(day_name[i], buffer, 3) == 0);
 
@@ -1628,7 +1630,7 @@ static bool real_from(const char *buffer)
 	skip_token(buffer);
 
 	/* <month> */
-	found = 0;
+	found = 0;  /* TQt3 迁移 */
 	for (i = 0; month_name[i] != NULL; i++)
 		found = found || (strnicmp(month_name[i], buffer, 3) == 0);
 	if (!found)

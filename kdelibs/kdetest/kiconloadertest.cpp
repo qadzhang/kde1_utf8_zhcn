@@ -34,7 +34,7 @@
 
 int main( int argc, char **argv )
 {
-debug ( "[kiconloader demo] started-------------------------" );
+tqDebug( "[kiconloader demo] started-------------------------" );
 
   KApplication a( argc, argv, "kiconloaderdemo" );
 
@@ -47,7 +47,7 @@ debug ( "[kiconloader demo] started-------------------------" );
        temp += "/lib/pics:";
        temp += (QString) getenv("KDEDIR");
        temp += "/lib/pics/toolbar";
-       config->writeEntry("IconPath", temp);
+       config->writeEntry("IconPath", (const char*)temp);
      }
   MyMain demo;
   a.setMainWidget( (QWidget *) &demo );

@@ -68,7 +68,7 @@ JSCode* JSEnvironment::parse( const char *_script )
 
 int JSEnvironment::exec( JSCode *_code, JSInstanceScope *_scope )
 {
-    output.setStr( "" );
+    output = "";  // TQt3 迁移：setStr 已删，赋值语义等价
     
     if ( _scope == 0L )
 	_scope = jsWindowObject->getScope();

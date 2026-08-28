@@ -222,7 +222,7 @@ bool ppp_available(void)
  
   if (ok && ((ifr.ifr_hwaddr.sa_family & ~0xFF) != ARPHRD_PPP))
     {
-      ok = 0;
+      ok = 0;  /* TQt3 迁移 */
     }
  
   if (!ok)
@@ -243,7 +243,7 @@ bool ppp_available(void)
 	ifr.ifr_data = abBuffer;
 	size = ioctl (s, SIOCGPPPVER, (caddr_t) &ifr);
 	if (size < 0) {
-	    ok = 0;
+	    ok = 0;  /* TQt3 迁移 */
 	} else {
 	    decode_version(abBuffer,
 			   &driver_version,
@@ -261,7 +261,7 @@ bool ppp_available(void)
 	    /* The version numbers must match */
 	    if (driver_version != my_version)
 	    {
-		ok = 0;
+		ok = 0;  /* TQt3 迁移 */
 	    }
 
 	    // no need to check this number
@@ -372,7 +372,7 @@ int runTests() {
     if(!access) {
       QMessageBox::warning(0,
 		 i18n("Error"),
-		 i18n("You�re not allowed to dial out with "
+		 i18n("You�re not allowed to dial out with "
 				    "kppp.\nContact your system administrator."
 				    ));
       shutDown(1);

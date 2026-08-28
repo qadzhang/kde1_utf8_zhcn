@@ -47,7 +47,7 @@ void KDMConfigWidget::resizeEvent(QResizeEvent *re)
             s.width(), s.height()-tabbar->height());
   }
   else
-    debug("Resize: NO WIDGET!!!");
+    tqDebug("Resize: NO WIDGET!!!");
   KConfigWidget::resizeEvent(re);
 }
 */
@@ -90,7 +90,7 @@ void KDMAppearanceWidget::setupPage(QWidget *pw)
       if(!p.load(logopath.data()))
       {
         logobutton->setIcon("kdelogo.xpm");
-        //debug("Error loading %s", logopath.data());
+        //tqDebug("Error loading %s", logopath.data());
       }
       else
       {
@@ -267,7 +267,7 @@ void KDMAppearanceWidget::slotSetGUI( int g )
 
 void KDMAppearanceWidget::applySettings()
 {
-  //debug("KDMAppearanceWidget::applySettings()");
+  //tqDebug("KDMAppearanceWidget::applySettings()");
   QString fn(CONFIGFILE);
   KSimpleConfig *c = new KSimpleConfig(fn);
 

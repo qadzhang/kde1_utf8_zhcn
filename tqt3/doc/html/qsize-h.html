@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqsize.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqsize.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqsize.h</h1>
+
+<p>This is the verbatim text of the ntqsize.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqsize.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQSize class
+**
+** Created : 931028
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQSIZE_H
+#define TQSIZE_H
+
+#ifndef QT_H
+#include "ntqpoint.h" // ### change to ntqwindowdefs.h?
+#endif // QT_H
+
+class TQ_EXPORT TQSize
+// ### Make TQSize inherit TQt in TQt 4.0
+{
+public:
+    // ### Move this enum to ntqnamespace.h in TQt 4.0
+    enum ScaleMode {
+	ScaleFree,
+	ScaleMin,
+	ScaleMax
+    };
+
+    TQSize();
+    TQSize( int w, int h );
+
+    bool isNull() const;
+    bool isEmpty() const;
+    bool isValid() const;
+
+    int width() const;
+    int height() const;
+    void setWidth( int w );
+    void setHeight( int h );
+    void transpose();
+
+    void scale( int w, int h, ScaleMode mode );
+    void scale( const TQSize &amp;s, ScaleMode mode );
+
+    TQSize expandedTo( const TQSize &amp; ) const;
+    TQSize boundedTo( const TQSize &amp; ) const;
+
+    TQCOORD &amp;rwidth();
+    TQCOORD &amp;rheight();
+
+    TQSize &amp;operator+=( const TQSize &amp; );
+    TQSize &amp;operator-=( const TQSize &amp; );
+    TQSize &amp;operator*=( int c );
+    TQSize &amp;operator*=( double c );
+    TQSize &amp;operator/=( int c );
+    TQSize &amp;operator/=( double c );
+
+    friend inline bool operator==( const TQSize &amp;, const TQSize &amp; );
+    friend inline bool operator!=( const TQSize &amp;, const TQSize &amp; );
+    friend inline const TQSize operator+( const TQSize &amp;, const TQSize &amp; );
+    friend inline const TQSize operator-( const TQSize &amp;, const TQSize &amp; );
+    friend inline const TQSize operator*( const TQSize &amp;, int );
+    friend inline const TQSize operator*( int, const TQSize &amp; );
+    friend inline const TQSize operator*( const TQSize &amp;, double );
+    friend inline const TQSize operator*( double, const TQSize &amp; );
+    friend inline const TQSize operator/( const TQSize &amp;, int );
+    friend inline const TQSize operator/( const TQSize &amp;, double );
+
+private:
+    static void warningDivByZero();
+
+    TQCOORD wd;
+    TQCOORD ht;
+};
+
+
+/*****************************************************************************
+  TQSize stream functions
+ *****************************************************************************/
+
+TQ_EXPORT TQDataStream &amp;operator&lt;&lt;( TQDataStream &amp;, const TQSize &amp; );
+TQ_EXPORT TQDataStream &amp;operator&gt;&gt;( TQDataStream &amp;, TQSize &amp; );
+
+
+/*****************************************************************************
+  TQSize inline functions
+ *****************************************************************************/
+
+inline TQSize::TQSize()
+{ wd = ht = -1; }
+
+inline TQSize::TQSize( int w, int h )
+{ wd=(TQCOORD)w; ht=(TQCOORD)h; }
+
+inline bool TQSize::isNull() const
+{ return wd==0 &amp;&amp; ht==0; }
+
+inline bool TQSize::isEmpty() const
+{ return wd&lt;1 || ht&lt;1; }
+
+inline bool TQSize::isValid() const
+{ return wd&gt;=0 &amp;&amp; ht&gt;=0; }
+
+inline int TQSize::width() const
+{ return wd; }
+
+inline int TQSize::height() const
+{ return ht; }
+
+inline void TQSize::setWidth( int w )
+{ wd=(TQCOORD)w; }
+
+inline void TQSize::setHeight( int h )
+{ ht=(TQCOORD)h; }
+
+inline TQCOORD &amp;TQSize::rwidth()
+{ return wd; }
+
+inline TQCOORD &amp;TQSize::rheight()
+{ return ht; }
+
+inline TQSize &amp;TQSize::operator+=( const TQSize &amp;s )
+{ wd+=s.wd; ht+=s.ht; return *this; }
+
+inline TQSize &amp;TQSize::operator-=( const TQSize &amp;s )
+{ wd-=s.wd; ht-=s.ht; return *this; }
+
+inline TQSize &amp;TQSize::operator*=( int c )
+{ wd*=(TQCOORD)c; ht*=(TQCOORD)c; return *this; }
+
+inline TQSize &amp;TQSize::operator*=( double c )
+{ wd=(TQCOORD)(wd*c); ht=(TQCOORD)(ht*c); return *this; }
+
+inline bool operator==( const TQSize &amp;s1, const TQSize &amp;s2 )
+{ return s1.wd == s2.wd &amp;&amp; s1.ht == s2.ht; }
+
+inline bool operator!=( const TQSize &amp;s1, const TQSize &amp;s2 )
+{ return s1.wd != s2.wd || s1.ht != s2.ht; }
+
+inline const TQSize operator+( const TQSize &amp; s1, const TQSize &amp; s2 )
+{ return TQSize(s1.wd+s2.wd, s1.ht+s2.ht); }
+
+inline const TQSize operator-( const TQSize &amp;s1, const TQSize &amp;s2 )
+{ return TQSize(s1.wd-s2.wd, s1.ht-s2.ht); }
+
+inline const TQSize operator*( const TQSize &amp;s, int c )
+{ return TQSize(s.wd*c, s.ht*c); }
+
+inline const TQSize operator*( int c, const TQSize &amp;s )
+{  return TQSize(s.wd*c, s.ht*c); }
+
+inline const TQSize operator*( const TQSize &amp;s, double c )
+{ return TQSize((TQCOORD)(s.wd*c), (TQCOORD)(s.ht*c)); }
+
+inline const TQSize operator*( double c, const TQSize &amp;s )
+{ return TQSize((TQCOORD)(s.wd*c), (TQCOORD)(s.ht*c)); }
+
+inline TQSize &amp;TQSize::operator/=( int c )
+{
+#if defined(QT_CHECK_MATH)
+    if ( c == 0 )
+	warningDivByZero();
+#endif
+    wd/=(TQCOORD)c; ht/=(TQCOORD)c;
+    return *this;
+}
+
+inline TQSize &amp;TQSize::operator/=( double c )
+{
+#if defined(QT_CHECK_MATH)
+    if ( c == 0.0 )
+	warningDivByZero();
+#endif
+    wd=(TQCOORD)(wd/c); ht=(TQCOORD)(ht/c);
+    return *this;
+}
+
+inline const TQSize operator/( const TQSize &amp;s, int c )
+{
+#if defined(QT_CHECK_MATH)
+    if ( c == 0 )
+	TQSize::warningDivByZero();
+#endif
+    return TQSize(s.wd/c, s.ht/c);
+}
+
+inline const TQSize operator/( const TQSize &amp;s, double c )
+{
+#if defined(QT_CHECK_MATH)
+    if ( c == 0.0 )
+	TQSize::warningDivByZero();
+#endif
+    return TQSize((TQCOORD)(s.wd/c), (TQCOORD)(s.ht/c));
+}
+
+inline TQSize TQSize::expandedTo( const TQSize &amp; otherSize ) const
+{
+    return TQSize( TQMAX(wd,otherSize.wd), TQMAX(ht,otherSize.ht) );
+}
+
+inline TQSize TQSize::boundedTo( const TQSize &amp; otherSize ) const
+{
+    return TQSize( TQMIN(wd,otherSize.wd), TQMIN(ht,otherSize.ht) );
+}
+
+
+#endif // TQSIZE_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

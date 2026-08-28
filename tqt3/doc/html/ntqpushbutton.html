@@ -1,0 +1,470 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/widgets/qpushbutton.cpp:55 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQPushButton Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQPushButton Class Reference</h1>
+
+<p>The TQPushButton widget provides a command button.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;</tt>
+<p>Inherits <a href="ntqbutton.html">TQButton</a>.
+<p><a href="qpushbutton-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQPushButton"><b>TQPushButton</b></a> ( TQWidget&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#TQPushButton-2"><b>TQPushButton</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;text, TQWidget&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#TQPushButton-3"><b>TQPushButton</b></a> ( const&nbsp;TQIconSet&nbsp;&amp;&nbsp;icon, const&nbsp;TQString&nbsp;&amp;&nbsp;text, TQWidget&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#~TQPushButton"><b>~TQPushButton</b></a> ()</li>
+<li class=fn>void <a href="#setToggleButton"><b>setToggleButton</b></a> ( bool )</li>
+<li class=fn>bool <a href="#autoDefault"><b>autoDefault</b></a> () const</li>
+<li class=fn>virtual void <a href="#setAutoDefault"><b>setAutoDefault</b></a> ( bool&nbsp;autoDef )</li>
+<li class=fn>bool <a href="#isDefault"><b>isDefault</b></a> () const</li>
+<li class=fn>virtual void <a href="#setDefault"><b>setDefault</b></a> ( bool&nbsp;def )</li>
+<li class=fn>virtual void setIsMenuButton ( bool&nbsp;enable ) &nbsp;<em>(obsolete)</em></li>
+<li class=fn>bool isMenuButton () const &nbsp;<em>(obsolete)</em></li>
+<li class=fn>void <a href="#setPopup"><b>setPopup</b></a> ( TQPopupMenu&nbsp;*&nbsp;popup )</li>
+<li class=fn>TQPopupMenu * <a href="#popup"><b>popup</b></a> () const</li>
+<li class=fn>void <a href="#setIconSet"><b>setIconSet</b></a> ( const TQIconSet &amp; )</li>
+<li class=fn>TQIconSet * <a href="#iconSet"><b>iconSet</b></a> () const</li>
+<li class=fn>void <a href="#setFlat"><b>setFlat</b></a> ( bool )</li>
+<li class=fn>bool <a href="#isFlat"><b>isFlat</b></a> () const</li>
+</ul>
+<h2>Public Slots</h2>
+<ul>
+<li class=fn>virtual void <a href="#setOn"><b>setOn</b></a> ( bool )</li>
+</ul>
+<h2>Important Inherited Members</h2>
+<ul>
+<li class=fn>TQString <a href="#text"><b>text</b></a> () const</li>
+<li class=fn>virtual void <a href="#setText"><b>setText</b></a> ( const TQString &amp; )</li>
+<li class=fn>const TQPixmap * <a href="#pixmap"><b>pixmap</b></a> () const</li>
+<li class=fn>virtual void <a href="#setPixmap"><b>setPixmap</b></a> ( const TQPixmap &amp; )</li>
+<li class=fn>TQKeySequence <a href="#accel"><b>accel</b></a> () const</li>
+<li class=fn>virtual void <a href="#setAccel"><b>setAccel</b></a> ( const TQKeySequence &amp; )</li>
+<li class=fn>bool <a href="#isToggleButton"><b>isToggleButton</b></a> () const</li>
+<li class=fn>virtual void <a href="#setDown"><b>setDown</b></a> ( bool )</li>
+<li class=fn>bool <a href="#isDown"><b>isDown</b></a> () const</li>
+<li class=fn>bool <a href="#isOn"><b>isOn</b></a> () const</li>
+<li class=fn>ToggleState <a href="#state"><b>state</b></a> () const</li>
+<li class=fn>bool <a href="#autoRepeat"><b>autoRepeat</b></a> () const</li>
+<li class=fn>virtual void <a href="#setAutoRepeat"><b>setAutoRepeat</b></a> ( bool )</li>
+<li class=fn>bool <a href="#isExclusiveToggle"><b>isExclusiveToggle</b></a> () const</li>
+<li class=fn>TQButtonGroup * <a href="#group"><b>group</b></a> () const</li>
+<li class=fn>void <a href="#toggle"><b>toggle</b></a> ()</li>
+<li class=fn>void <a href="#pressed"><b>pressed</b></a> ()</li>
+<li class=fn>void <a href="#released"><b>released</b></a> ()</li>
+<li class=fn>void <a href="#clicked"><b>clicked</b></a> ()</li>
+<li class=fn>void <a href="#toggled"><b>toggled</b></a> ( bool&nbsp;on )</li>
+<li class=fn>void <a href="#stateChanged"><b>stateChanged</b></a> ( int&nbsp;state )</li>
+</ul>
+<h2>Properties</h2>
+<ul>
+<li class=fn>bool <a href="#autoDefault-prop"><b>autoDefault</b></a>&nbsp;- whether the push button is the auto default button</li>
+<li class=fn>bool <a href="#autoMask-prop"><b>autoMask</b></a>&nbsp;- whether the button is automatically masked &nbsp;<em>(read only)</em></li>
+<li class=fn>bool <a href="#default-prop"><b>default</b></a>&nbsp;- whether the push button is the default button</li>
+<li class=fn>bool <a href="#flat-prop"><b>flat</b></a>&nbsp;- whether the border is disabled</li>
+<li class=fn>TQIconSet <a href="#iconSet-prop"><b>iconSet</b></a>&nbsp;- the icon set on the push button</li>
+<li class=fn>bool menuButton&nbsp;- whether the push button has a menu button on it &nbsp;<em>(read only)</em> &nbsp;<em>(obsolete)</em></li>
+<li class=fn>bool <a href="#on-prop"><b>on</b></a>&nbsp;- whether the push button is toggled</li>
+<li class=fn>bool <a href="#toggleButton-prop"><b>toggleButton</b></a>&nbsp;- whether the button is a toggle button</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQPushButton widget provides a command button.
+<p> 
+
+<p> The push button, or command button, is perhaps the most commonly
+used widget in any graphical user interface. Push (click) a button
+to command the computer to perform some action, or to answer a
+question. Typical buttons are OK, Apply, Cancel, Close, Yes, No
+and Help.
+<p> A command button is rectangular and typically displays a text
+label describing its action. An underlined character in the label
+(signified by preceding it with an ampersand in the text)
+indicates an accelerator key, e.g.
+<pre>
+        TQPushButton *pb = new TQPushButton( "&amp;Download", this );
+    </pre>
+ 
+In this example the accelerator is <em>Alt+D</em>, and the label text
+will be displayed as <b><u>D</u>ownload</b>.
+<p> Push buttons can display a textual label or a pixmap, and
+optionally a small icon. These can be set using the constructors
+and changed later using <a href="ntqbutton.html#setText">setText</a>(), <a href="ntqbutton.html#setPixmap">setPixmap</a>() and <a href="#setIconSet">setIconSet</a>().
+If the button is disabled the appearance of the text or pixmap and
+iconset will be manipulated with respect to the GUI style to make
+the button look "disabled".
+<p> A push button emits the signal <a href="ntqbutton.html#clicked">clicked</a>() when it is activated by
+the mouse, the Spacebar or by a keyboard accelerator. Connect to
+this signal to perform the button's action. Push buttons also
+provide less commonly used signals, for example, <a href="ntqbutton.html#pressed">pressed</a>() and
+<a href="ntqbutton.html#released">released</a>().
+<p> Command buttons in dialogs are by default auto-default buttons,
+i.e. they become the default push button automatically when they
+receive the keyboard input focus. A default button is a push
+button that is activated when the user presses the Enter or Return
+key in a dialog. You can change this with <a href="#setAutoDefault">setAutoDefault</a>(). Note
+that auto-default buttons reserve a little extra space which is
+necessary to draw a default-button indicator. If you do not want
+this space around your buttons, call setAutoDefault(false).
+<p> Being so central, the button widget has grown to accommodate a
+great many variations in the past decade. The Microsoft style
+guide now shows about ten different states of Windows push buttons
+and the text implies that there are dozens more when all the
+combinations of features are taken into consideration.
+<p> The most important modes or states are:
+<ul>
+<li> Available or not (grayed out, disabled).
+<li> Standard push button, toggling push button or menu button.
+<li> On or off (only for toggling push buttons).
+<li> Default or normal. The default button in a dialog can generally
+be "clicked" using the Enter or Return key.
+<li> Auto-repeat or not.
+<li> Pressed down or not.
+</ul>
+<p> As a general rule, use a push button when the application or
+dialog window performs an action when the user clicks on it (such
+as Apply, Cancel, Close and Help) <em>and</em> when the widget is
+supposed to have a wide, rectangular shape with a text label.
+Small, typically square buttons that change the state of the
+window rather than performing an action (such as the buttons in
+the top-right corner of the <a href="ntqfiledialog.html">TQFileDialog</a>) are not command buttons,
+but tool buttons. TQt provides a special class (<a href="ntqtoolbutton.html">TQToolButton</a>) for
+these buttons.
+<p> If you need toggle behavior (see <a href="#setToggleButton">setToggleButton</a>()) or a button
+that auto-repeats the activation signal when being pushed down
+like the arrows in a scroll bar (see <a href="ntqbutton.html#setAutoRepeat">setAutoRepeat</a>()), a command
+button is probably not what you want. When in doubt, use a tool
+button.
+<p> A variation of a command button is a menu button. These provide
+not just one command, but several, since when they are clicked
+they pop up a menu of options. Use the method <a href="#setPopup">setPopup</a>() to
+associate a popup menu with a push button.
+<p> Other classes of buttons are option buttons (see <a href="ntqradiobutton.html">TQRadioButton</a>) and
+check boxes (see <a href="ntqcheckbox.html">TQCheckBox</a>).
+<p> <img src="qpushbt-m.png"> <img src="qpushbt-w.png">
+<p> In TQt, the <a href="ntqbutton.html">TQButton</a> abstract base class provides most of the modes
+and other API, and TQPushButton provides GUI logic. See TQButton for
+more information about the API.
+<p> 
+<p> <p>See also <a href="ntqtoolbutton.html">TQToolButton</a>, <a href="ntqradiobutton.html">TQRadioButton</a>, <a href="ntqcheckbox.html">TQCheckBox</a>, <a href="guibooks.html#fowler">GUI Design Handbook: Push Button</a>, and <a href="basic.html">Basic Widgets</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQPushButton"></a>TQPushButton::TQPushButton ( <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a push button with no text.
+<p> The <em>parent</em> and <em>name</em> arguments are sent on to the <a href="ntqwidget.html">TQWidget</a>
+constructor.
+
+<h3 class=fn><a name="TQPushButton-2"></a>TQPushButton::TQPushButton ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a push button called <em>name</em> with the parent <em>parent</em>
+and the text <em>text</em>.
+
+<h3 class=fn><a name="TQPushButton-3"></a>TQPushButton::TQPushButton ( const&nbsp;<a href="ntqiconset.html">TQIconSet</a>&nbsp;&amp;&nbsp;icon, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a push button with an <em>icon</em> and a <em>text</em>.
+<p> Note that you can also pass a <a href="ntqpixmap.html">TQPixmap</a> object as an icon (thanks to
+the implicit type conversion provided by C++).
+<p> The <em>parent</em> and <em>name</em> arguments are sent to the <a href="ntqwidget.html">TQWidget</a>
+constructor.
+
+<h3 class=fn><a name="~TQPushButton"></a>TQPushButton::~TQPushButton ()
+</h3>
+Destroys the push button.
+
+<h3 class=fn><a href="ntqkeysequence.html">TQKeySequence</a> <a name="accel"></a>TQButton::accel () const
+</h3><p>Returns the accelerator associated with the button.
+See the <a href="ntqbutton.html#accel-prop">"accel"</a> property for details.
+<h3 class=fn>bool <a name="autoDefault"></a>TQPushButton::autoDefault () const
+</h3><p>Returns true if the push button is the auto default button; otherwise returns false.
+See the <a href="ntqpushbutton.html#autoDefault-prop">"autoDefault"</a> property for details.
+<h3 class=fn>bool <a name="autoRepeat"></a>TQButton::autoRepeat () const
+</h3><p>Returns true if autoRepeat is enabled; otherwise returns false.
+See the <a href="ntqbutton.html#autoRepeat-prop">"autoRepeat"</a> property for details.
+<h3 class=fn>void <a name="clicked"></a>TQButton::clicked ()<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted when the button is activated (i.e. first
+pressed down and then released when the mouse cursor is inside the
+button), when the accelerator key is typed or when <a href="ntqbutton.html#animateClick">animateClick</a>()
+is called. This signal is <em>not</em> emitted if you call <a href="ntqbutton.html#setDown">setDown</a>().
+<p> The <a href="ntqbuttongroup.html#clicked">TQButtonGroup::clicked</a>() signal does the same job, if you want
+to connect several buttons to the same slot.
+<p> <b>Warning:</b> Don't launch a model dialog in response to this signal
+for a button that has <a href="ntqbutton.html#autoRepeat-prop">autoRepeat</a> turned on.
+<p> <p>See also <a href="ntqbutton.html#pressed">pressed</a>(), <a href="ntqbutton.html#released">released</a>(), <a href="ntqbutton.html#toggled">toggled</a>(), <a href="ntqbutton.html#autoRepeat-prop">autoRepeat</a>, and <a href="ntqbutton.html#down-prop">down</a>.
+
+<p>Examples: <a href="tutorial2-08.html#x2596">chart/setdataform.cpp</a>, <a href="listbox-example.html#x1426">listbox/listbox.cpp</a>, <a href="clientserver-example.html#x792">network/clientserver/client/client.cpp</a>, <a href="progressbar-example.html#x962">progressbar/progressbar.cpp</a>, <a href="richtext-example.html#x462">richtext/richtext.cpp</a>, <a href="tutorial1-02.html#x2290">t2/main.cpp</a>, and <a href="tutorial1-04.html#x2306">t4/main.cpp</a>.
+<h3 class=fn><a href="ntqbuttongroup.html">TQButtonGroup</a>&nbsp;* <a name="group"></a>TQButton::group () const
+</h3>
+Returns the group that this button belongs to.
+<p> If the button is not a member of any <a href="ntqbuttongroup.html">TQButtonGroup</a>, this function
+returns 0.
+<p> <p>See also <a href="ntqbuttongroup.html">TQButtonGroup</a>.
+
+<h3 class=fn><a href="ntqiconset.html">TQIconSet</a>&nbsp;* <a name="iconSet"></a>TQPushButton::iconSet () const
+</h3><p>Returns the icon set on the push button.
+See the <a href="ntqpushbutton.html#iconSet-prop">"iconSet"</a> property for details.
+<h3 class=fn>bool <a name="isDefault"></a>TQPushButton::isDefault () const
+</h3><p>Returns true if the push button is the default button; otherwise returns false.
+See the <a href="ntqpushbutton.html#default-prop">"default"</a> property for details.
+<h3 class=fn>bool <a name="isDown"></a>TQButton::isDown () const
+</h3><p>Returns true if the button is pressed; otherwise returns false.
+See the <a href="ntqbutton.html#down-prop">"down"</a> property for details.
+<h3 class=fn>bool <a name="isExclusiveToggle"></a>TQButton::isExclusiveToggle () const
+</h3><p>Returns true if the button is an exclusive toggle; otherwise returns false.
+See the <a href="ntqbutton.html#exclusiveToggle-prop">"exclusiveToggle"</a> property for details.
+<h3 class=fn>bool <a name="isFlat"></a>TQPushButton::isFlat () const
+</h3><p>Returns true if the border is disabled; otherwise returns false.
+See the <a href="ntqpushbutton.html#flat-prop">"flat"</a> property for details.
+<h3 class=fn>bool <a name="isMenuButton"></a>TQPushButton::isMenuButton () const
+</h3><p>Returns true if the push button has a menu button on it; otherwise returns false.
+See the <a href="ntqpushbutton.html#menuButton-prop">"menuButton"</a> property for details.
+<h3 class=fn>bool <a name="isOn"></a>TQButton::isOn () const
+</h3><p>Returns true if the button is toggled; otherwise returns false.
+See the <a href="ntqbutton.html#on-prop">"on"</a> property for details.
+<h3 class=fn>bool <a name="isToggleButton"></a>TQButton::isToggleButton () const
+</h3><p>Returns true if the button is a toggle button; otherwise returns false.
+See the <a href="ntqbutton.html#toggleButton-prop">"toggleButton"</a> property for details.
+<h3 class=fn>const&nbsp;<a href="ntqpixmap.html">TQPixmap</a>&nbsp;* <a name="pixmap"></a>TQButton::pixmap () const
+</h3><p>Returns the pixmap shown on the button.
+See the <a href="ntqbutton.html#pixmap-prop">"pixmap"</a> property for details.
+<h3 class=fn><a href="ntqpopupmenu.html">TQPopupMenu</a>&nbsp;* <a name="popup"></a>TQPushButton::popup () const
+</h3>
+Returns the button's associated popup menu or 0 if no popup menu
+has been set.
+<p> <p>See also <a href="#setPopup">setPopup</a>().
+
+<h3 class=fn>void <a name="pressed"></a>TQButton::pressed ()<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted when the button is pressed down.
+<p> <p>See also <a href="ntqbutton.html#released">released</a>() and <a href="ntqbutton.html#clicked">clicked</a>().
+
+<p>Examples: <a href="httpd-example.html#x724">network/httpd/httpd.cpp</a> and <a href="popup-example.html#x1606">popup/popup.cpp</a>.
+<h3 class=fn>void <a name="released"></a>TQButton::released ()<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted when the button is released.
+<p> <p>See also <a href="ntqbutton.html#pressed">pressed</a>(), <a href="ntqbutton.html#clicked">clicked</a>(), and <a href="ntqbutton.html#toggled">toggled</a>().
+
+<h3 class=fn>void <a name="setAccel"></a>TQButton::setAccel ( const&nbsp;<a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp; )<tt> [virtual]</tt>
+</h3><p>Sets the accelerator associated with the button.
+See the <a href="ntqbutton.html#accel-prop">"accel"</a> property for details.
+<h3 class=fn>void <a name="setAutoDefault"></a>TQPushButton::setAutoDefault ( bool&nbsp;autoDef )<tt> [virtual]</tt>
+</h3><p>Sets whether the push button is the auto default button to <em>autoDef</em>.
+See the <a href="ntqpushbutton.html#autoDefault-prop">"autoDefault"</a> property for details.
+<h3 class=fn>void <a name="setAutoRepeat"></a>TQButton::setAutoRepeat ( bool )<tt> [virtual]</tt>
+</h3><p>Sets whether autoRepeat is enabled.
+See the <a href="ntqbutton.html#autoRepeat-prop">"autoRepeat"</a> property for details.
+<h3 class=fn>void <a name="setDefault"></a>TQPushButton::setDefault ( bool&nbsp;def )<tt> [virtual]</tt>
+</h3><p>Sets whether the push button is the default button to <em>def</em>.
+See the <a href="ntqpushbutton.html#default-prop">"default"</a> property for details.
+<h3 class=fn>void <a name="setDown"></a>TQButton::setDown ( bool )<tt> [virtual]</tt>
+</h3><p>Sets whether the button is pressed.
+See the <a href="ntqbutton.html#down-prop">"down"</a> property for details.
+<h3 class=fn>void <a name="setFlat"></a>TQPushButton::setFlat ( bool )
+</h3><p>Sets whether the border is disabled.
+See the <a href="ntqpushbutton.html#flat-prop">"flat"</a> property for details.
+<h3 class=fn>void <a name="setIconSet"></a>TQPushButton::setIconSet ( const&nbsp;<a href="ntqiconset.html">TQIconSet</a>&nbsp;&amp; )
+</h3><p>Sets the icon set on the push button.
+See the <a href="ntqpushbutton.html#iconSet-prop">"iconSet"</a> property for details.
+<h3 class=fn>void <a name="setIsMenuButton"></a>TQPushButton::setIsMenuButton ( bool&nbsp;enable )<tt> [virtual]</tt>
+</h3>
+<b>This function is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+<p> 
+
+<h3 class=fn>void <a name="setOn"></a>TQPushButton::setOn ( bool )<tt> [virtual slot]</tt>
+</h3><p>Sets whether the push button is toggled.
+See the <a href="ntqpushbutton.html#on-prop">"on"</a> property for details.
+<h3 class=fn>void <a name="setPixmap"></a>TQButton::setPixmap ( const&nbsp;<a href="ntqpixmap.html">TQPixmap</a>&nbsp;&amp; )<tt> [virtual]</tt>
+</h3><p>Sets the pixmap shown on the button.
+See the <a href="ntqbutton.html#pixmap-prop">"pixmap"</a> property for details.
+<h3 class=fn>void <a name="setPopup"></a>TQPushButton::setPopup ( <a href="ntqpopupmenu.html">TQPopupMenu</a>&nbsp;*&nbsp;popup )
+</h3>
+Associates the popup menu <em>popup</em> with this push button. This
+turns the button into a menu button.
+<p> Ownership of the popup menu is <em>not</em> transferred to the push
+button.
+<p> <p>See also <a href="#popup">popup</a>().
+
+<p>Examples: <a href="buttongroups-example.html#x557">buttongroups/buttongroups.cpp</a> and <a href="qdir-example.html#x1836">qdir/qdir.cpp</a>.
+<h3 class=fn>void <a name="setText"></a>TQButton::setText ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp; )<tt> [virtual]</tt>
+</h3><p>Sets the text shown on the button.
+See the <a href="ntqbutton.html#text-prop">"text"</a> property for details.
+<h3 class=fn>void <a name="setToggleButton"></a>TQPushButton::setToggleButton ( bool )
+</h3><p>Sets whether the button is a toggle button.
+See the <a href="ntqpushbutton.html#toggleButton-prop">"toggleButton"</a> property for details.
+<h3 class=fn><a href="ntqbutton.html#ToggleState-enum">ToggleState</a> <a name="state"></a>TQButton::state () const
+</h3><p>Returns the state of the toggle button.
+See the <a href="ntqbutton.html#toggleState-prop">"toggleState"</a> property for details.
+<h3 class=fn>void <a name="stateChanged"></a>TQButton::stateChanged ( int&nbsp;state )<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted whenever a toggle button changes state. <em>state</em> is <a href="ntqbutton.html#ToggleState-enum">On</a> if the button is on, <a href="ntqbutton.html#ToggleState-enum">NoChange</a> if it is in the
+<a href="ntqcheckbox.html#setTristate">"no change" state</a> or <a href="ntqbutton.html#ToggleState-enum">Off</a>
+if the button is off.
+<p> This may be the result of a user action, <a href="ntqbutton.html#toggle">toggle</a>() slot activation,
+<a href="ntqbutton.html#setState">setState</a>(), or because <a href="#setOn">setOn</a>() was called.
+<p> <p>See also <a href="ntqbutton.html#clicked">clicked</a>() and <a href="ntqbutton.html#ToggleState-enum">TQButton::ToggleState</a>.
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="text"></a>TQButton::text () const
+</h3><p>Returns the text shown on the button.
+See the <a href="ntqbutton.html#text-prop">"text"</a> property for details.
+<h3 class=fn>void <a name="toggle"></a>TQButton::toggle ()<tt> [slot]</tt>
+</h3>
+Toggles the state of a toggle button.
+<p> <p>See also <a href="#on-prop">on</a>, <a href="#on-prop">on</a>, <a href="ntqbutton.html#toggled">toggled</a>(), and <a href="#toggleButton-prop">toggleButton</a>.
+
+<h3 class=fn>void <a name="toggled"></a>TQButton::toggled ( bool&nbsp;on )<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted whenever a toggle button changes status. <em>on</em> is true if the button is on, or false if the button is off.
+<p> This may be the result of a user action, <a href="ntqbutton.html#toggle">toggle</a>() slot activation,
+or because <a href="#setOn">setOn</a>() was called.
+<p> <p>See also <a href="ntqbutton.html#clicked">clicked</a>().
+
+<p>Example: <a href="listbox-example.html#x1427">listbox/listbox.cpp</a>.
+<hr><h2>Property Documentation</h2>
+<h3 class=fn><a href="ntqkeysequence.html">TQKeySequence</a> <a name="accel-prop"></a>accel</h3>
+<p>This property holds the accelerator associated with the button.
+<p>This property is 0 if there is no accelerator set. If you set this
+property to 0 then any current accelerator is removed.
+
+<p>Set this property's value with <a href="#setAccel">setAccel</a>() and get this property's value with <a href="#accel">accel</a>().
+<h3 class=fn>bool <a name="autoDefault-prop"></a>autoDefault</h3>
+<p>This property holds whether the push button is the auto default button.
+<p>If this property is set to true then the push button is the auto
+default button in a dialog.
+<p> In some GUI styles a default button is drawn with an extra frame
+around it, up to 3 pixels or more. TQt automatically keeps this
+space free around auto-default buttons, i.e. auto-default buttons
+may have a slightly larger size hint.
+<p> This property's default is true for buttons that have a <a href="ntqdialog.html">TQDialog</a>
+parent; otherwise it defaults to false.
+<p> See the <a href="#default-prop">default</a> property for details of how <a href="#default-prop">default</a> and
+auto-default interact.
+
+<p>Set this property's value with <a href="#setAutoDefault">setAutoDefault</a>() and get this property's value with <a href="#autoDefault">autoDefault</a>().
+<h3 class=fn>bool <a name="autoMask-prop"></a>autoMask</h3>
+<p>This property holds whether the button is automatically masked.
+<p><p><p>See also <a href="ntqwidget.html#autoMask-prop">TQWidget::autoMask</a>.
+
+<h3 class=fn>bool <a name="autoRepeat-prop"></a>autoRepeat</h3>
+<p>This property holds whether autoRepeat is enabled.
+<p>If autoRepeat is enabled then the <a href="ntqbutton.html#clicked">clicked</a>() signal is emitted at
+regular intervals if the button is down. This property has no
+effect on toggle buttons. autoRepeat is off by default.
+
+<p>Set this property's value with <a href="#setAutoRepeat">setAutoRepeat</a>() and get this property's value with <a href="#autoRepeat">autoRepeat</a>().
+<h3 class=fn>bool <a name="default-prop"></a>default</h3>
+<p>This property holds whether the push button is the default button.
+<p>If this property is set to true then the push button will be
+pressed if the user presses the Enter (or Return) key in a dialog.
+<p> Regardless of focus, if the user presses Enter: If there is a
+default button the default button is pressed; otherwise, if
+there are one or more <a href="#autoDefault-prop">autoDefault</a> buttons the first <a href="#autoDefault-prop">autoDefault</a>
+button that is next in the tab order is pressed. If there are no
+default or <a href="#autoDefault-prop">autoDefault</a> buttons only pressing Space on a button
+with focus, mouse clicking, or using an accelerator will press a
+button.
+<p> In a dialog, only one push button at a time can be the default
+button. This button is then displayed with an additional frame
+(depending on the GUI style).
+<p> The default button behavior is provided only in dialogs. Buttons
+can always be clicked from the keyboard by pressing Enter (or
+Return) or the Spacebar when the button has focus.
+<p> This property's default is false.
+
+<p>Set this property's value with <a href="#setDefault">setDefault</a>() and get this property's value with <a href="#isDefault">isDefault</a>().
+<h3 class=fn>bool <a name="flat-prop"></a>flat</h3>
+<p>This property holds whether the border is disabled.
+<p>This property's default is false.
+
+<p>Set this property's value with <a href="#setFlat">setFlat</a>() and get this property's value with <a href="#isFlat">isFlat</a>().
+<h3 class=fn><a href="ntqiconset.html">TQIconSet</a> <a name="iconSet-prop"></a>iconSet</h3>
+<p>This property holds the icon set on the push button.
+<p>This property will return 0 if the push button has no iconset.
+
+<p>Set this property's value with <a href="#setIconSet">setIconSet</a>() and get this property's value with <a href="#iconSet">iconSet</a>().
+<h3 class=fn>bool <a name="menuButton-prop"></a>menuButton</h3> <p>This property holds whether the push button has a menu button on it.
+<p><b>This property is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+<p> If this property is set to true, then a down arrow is drawn on the push
+button to indicate that a menu will pop up if the user clicks on the
+arrow.
+
+<p>Get this property's value with <a href="#isMenuButton">isMenuButton</a>().
+<h3 class=fn>bool <a name="on-prop"></a>on</h3>
+<p>This property holds whether the push button is toggled.
+<p>This property should only be set for toggle push buttons. The
+default value is false.
+<p> <p>See also <a href="#on-prop">on</a>, <a href="ntqbutton.html#toggle">toggle</a>(), <a href="ntqbutton.html#toggled">toggled</a>(), and <a href="#toggleButton-prop">toggleButton</a>.
+
+<p>Set this property's value with <a href="#setOn">setOn</a>().
+<h3 class=fn><a href="ntqpixmap.html">TQPixmap</a> <a name="pixmap-prop"></a>pixmap</h3>
+<p>This property holds the pixmap shown on the button.
+<p>If the pixmap is monochrome (i.e. it is a <a href="ntqbitmap.html">TQBitmap</a> or its <a href="ntqpixmap.html#depth">depth</a> is 1) and it does not have a mask,
+this property will set the pixmap to be its own mask. The purpose
+of this is to draw transparent bitmaps which are important for
+toggle buttons, for example.
+<p> <a href="ntqbutton.html#pixmap">pixmap</a>() returns 0 if no pixmap was set.
+
+<p>Set this property's value with <a href="#setPixmap">setPixmap</a>() and get this property's value with <a href="#pixmap">pixmap</a>().
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="text-prop"></a>text</h3>
+<p>This property holds the text shown on the button.
+<p>This property will return a <a href="ntqstring.html#TQString-null">TQString::null</a> if the button has no
+text. If the text has an ampersand (&amp;) in it, then an
+accelerator is automatically created for it using the character
+that follows the '&amp;' as the accelerator key. Any previous
+accelerator will be overwritten, or cleared if no accelerator is
+defined by the text.
+<p> There is no default text.
+
+<p>Set this property's value with <a href="#setText">setText</a>() and get this property's value with <a href="#text">text</a>().
+<h3 class=fn>bool <a name="toggleButton-prop"></a>toggleButton</h3>
+<p>This property holds whether the button is a toggle button.
+<p>Toggle buttons have an on/off state similar to <a href="ntqcheckbox.html">check boxes.</a> A push button is initially not a toggle
+button.
+<p> <p>See also <a href="#on-prop">on</a>, <a href="ntqbutton.html#toggle">toggle</a>(), <a href="#toggleButton-prop">toggleButton</a>, and <a href="ntqbutton.html#toggled">toggled</a>().
+
+<p>Set this property's value with <a href="#setToggleButton">setToggleButton</a>().
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

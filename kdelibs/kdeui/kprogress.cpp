@@ -172,15 +172,12 @@ void KProgress::styleChange(GUIStyle)
 
 void KProgress::adjustStyle()
 {
-	switch (style()) {
-		case WindowsStyle:
-			setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
-			break;
-		case MotifStyle:
-		default:
-			setFrameStyle(QFrame::Panel | QFrame::Sunken);
-			setLineWidth( 2 );
-			break;
+	// TQt3 迁移：switch(GUIStyle) 改继承式风格判断
+	if ( style().inherits("TQWindowsStyle") ) {
+		setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
+	} else {
+		setFrameStyle(QFrame::Panel | QFrame::Sunken);
+		setLineWidth( 2 );
 	}
 	update();
 }

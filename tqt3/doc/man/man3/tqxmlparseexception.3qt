@@ -1,0 +1,80 @@
+'\" t
+.TH QXmlParseException 3qt "2 February 2007" "Trolltech AS" \" -*- nroff -*-
+.\" Copyright 1992-2007 Trolltech ASA.  All rights reserved.  See the
+.\" license file included in the distribution for a complete license
+.\" statement.
+.\"
+.ad l
+.nh
+.SH NAME
+QXmlParseException \- Used to report errors with the QXmlErrorHandler interface
+.SH SYNOPSIS
+All the functions in this class are reentrant when TQt is built with thread support.</p>
+.PP
+\fC#include <ntqxml.h>\fR
+.PP
+.SS "Public Members"
+.in +1c
+.ti -1c
+.BI "\fBQXmlParseException\fR ( const TQString & name = """", int c = -1, int l = -1, const TQString & p = """", const TQString & s = """" )"
+.br
+.ti -1c
+.BI "int \fBcolumnNumber\fR () const"
+.br
+.ti -1c
+.BI "int \fBlineNumber\fR () const"
+.br
+.ti -1c
+.BI "TQString \fBpublicId\fR () const"
+.br
+.ti -1c
+.BI "TQString \fBsystemId\fR () const"
+.br
+.ti -1c
+.BI "TQString \fBmessage\fR () const"
+.br
+.in -1c
+.SH DESCRIPTION
+The QXmlParseException class is used to report errors with the QXmlErrorHandler interface.
+.PP
+The XML subsystem constructs an instance of this class when it detects an error. You can retrieve the place where the error occurred using systemId(), publicId(), lineNumber() and columnNumber(), along with the error message().
+.PP
+See also QXmlErrorHandler, QXmlReader, and XML.
+.SH MEMBER FUNCTION DOCUMENTATION
+.SH "QXmlParseException::QXmlParseException ( const TQString & name = "", int c = -1, int l = -1, const TQString & p = "", const TQString & s = "" )"
+Constructs a parse exception with the error string \fIname\fR for column \fIc\fR and line \fIl\fR for the public identifier \fIp\fR and the system identifier \fIs\fR.
+.SH "int QXmlParseException::columnNumber () const"
+Returns the column number where the error occurred.
+.SH "int QXmlParseException::lineNumber () const"
+Returns the line number where the error occurred.
+.SH "TQString QXmlParseException::message () const"
+Returns the error message.
+.SH "TQString QXmlParseException::publicId () const"
+Returns the public identifier where the error occurred.
+.SH "TQString QXmlParseException::systemId () const"
+Returns the system identifier where the error occurred.
+
+.SH "SEE ALSO"
+.BR http://doc.trolltech.com/qxmlparseexception.html
+.BR http://www.trolltech.com/faq/tech.html
+.SH COPYRIGHT
+Copyright 1992-2007 Trolltech ASA, http://www.trolltech.com.  See the
+license file included in the distribution for a complete license
+statement.
+.SH AUTHOR
+Generated automatically from the source code.
+.SH BUGS
+If you find a bug in Qt, please report it as described in
+.BR http://doc.trolltech.com/bughowto.html .
+Good bug reports help us to help you. Thank you.
+.P
+The definitive TQt documentation is provided in HTML format; it is
+located at $TQTDIR/doc/html and can be read using TQt Assistant or with
+a web browser. This man page is provided as a convenience for those
+users who prefer man pages, although this format is not officially
+supported by Trolltech. 
+.P
+If you find errors in this manual page, please report them to
+.BR qt-bugs@trolltech.com .
+Please include the name of the manual page (tqxmlparseexception.3qt) and the Qt
+version (3.3.8).

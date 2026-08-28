@@ -198,7 +198,6 @@ void MouseConfig::GetSettings( void )
 	h = RIGHT_HANDED;
       else if ( (int)map[0] == 2 && (int)map[1] == 1 )
 	h = LEFT_HANDED;
-      else
 	{
 	  /* custom button setup: disable button remapping */
 	  if (GUI)
@@ -214,7 +213,6 @@ void MouseConfig::GetSettings( void )
 	h = RIGHT_HANDED;
       else if ( (int)map[0] == 3 && (int)map[2] == 1 )
 	h = LEFT_HANDED;
-      else
 	{
 	  /* custom button setup: disable button remapping */
 	  if (GUI)

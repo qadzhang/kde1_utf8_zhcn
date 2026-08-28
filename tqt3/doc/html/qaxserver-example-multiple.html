@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/extensions/activeqt/examples/multiple/multiple.doc:44 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Two simple TQt widgets (in-process)</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Two simple TQt widgets (in-process)</h1>
+
+ 
+
+The ActiveX controls in this example are simple <a href="ntqwidget.html">TQWidget</a>
+subclasses reimplementing the paintEvent() method. The classes use
+the TQ_CLASSINFO macro to 
+<p> The example demonstrates the use of the TQ_CLASSINFO macro to set 
+<a href="activentqt.html#ActiveTQt">ActiveTQt</a>-specific attributes for <a href="ntqobject.html">TQObject</a> sub classes, and the use of
+the <a href="qaxfactory.html#TQAXFACTORY_BEGIN">TQAXFACTORY_BEGIN</a>, <a href="qaxfactory.html#TQAXCLASS">TQAXCLASS</a> and <a href="qaxfactory.html#TQAXFACTORY_END">TQAXFACTORY_END</a> macros.
+<p> 
+
+<pre>    class TQAxWidget1 : public <a href="ntqwidget.html">TQWidget</a>
+    {
+        <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+        TQ_CLASSINFO("ClassID", "{1D9928BD-4453-4bdd-903D-E525ED17FDE5}")
+        TQ_CLASSINFO("InterfaceID", "{99F6860E-2C5A-42ec-87F2-43396F4BE389}")
+        TQ_CLASSINFO("EventsID", "{0A3E9F27-E4F1-45bb-9E47-63099BCCD0E3}")
+</pre>The class declaration includes the TQ_OBJECT macro to activate TQt's <a href="metaobjects.html#meta-object">meta object</a> system, and sets COM identifiers for the class using the 
+TQ_CLASSINFO macro.
+<pre>        TQ_PROPERTY( TQColor fillColor READ fillColor WRITE setFillColor )
+    public:
+        TQAxWidget1( <a href="ntqwidget.html">TQWidget</a> *parent = 0, const char *name = 0, WFlags f = 0 )
+            : <a href="ntqwidget.html">TQWidget</a>( parent, name, f ), fill_color( red )
+        {
+        }
+
+        <a href="ntqcolor.html">TQColor</a> fillColor() const
+        {
+            return fill_color;
+        }
+        void setFillColor( const <a href="ntqcolor.html">TQColor</a> &amp;fc )
+        {
+            fill_color = fc;
+            repaint();
+        }
+
+    protected:
+        void paintEvent( <a href="qpaintevent.html">TQPaintEvent</a> *e )
+        {
+            <a href="ntqpainter.html">TQPainter</a> paint( this );
+            <a href="ntqrect.html">TQRect</a> r = rect();
+    <a name="x2544"></a>        r.<a href="ntqrect.html#addCoords">addCoords</a>( 10, 10, -10, -10 );
+    <a name="x2543"></a>        paint.<a href="ntqpainter.html#fillRect">fillRect</a>( r, fill_color );
+        }
+
+    private:
+        <a href="ntqcolor.html">TQColor</a> fill_color;
+    };
+</pre>The control draws a filled rectangle. The fill color is exposed as a 
+property using the TQ_PROPERTY macro.
+<p> 
+
+<pre>    class TQAxWidget2 : public <a href="ntqwidget.html">TQWidget</a>
+    {
+        TQ_OBJECT
+        TQ_CLASSINFO("ClassID", "{58139D56-6BE9-4b17-937D-1B1EDEDD5B71}")
+        TQ_CLASSINFO("InterfaceID", "{B66280AB-08CC-4dcc-924F-58E6D7975B7D}")
+        TQ_CLASSINFO("EventsID", "{D72BACBA-03C4-4480-B4BB-DE4FE3AA14A0}")
+        TQ_CLASSINFO("ToSuperClass", "TQAxWidget2")
+        TQ_CLASSINFO("StockEvents", "yes")
+</pre>The declaration of the second control class uses the TQ_CLASSINFO macro
+to set the COM identifiers as well as additional COM attributes for the
+class. Objects of that class will not expose the <a href="ntqwidget.html">TQWidget</a> API, and provide
+the ActiveX stock events (ie. Click, KeyDown etc.).
+<pre>        TQ_PROPERTY( int lineWidth READ lineWidth WRITE setLineWidth )
+    public:
+        TQAxWidget2( <a href="ntqwidget.html">TQWidget</a> *parent = 0, const char *name = 0, WFlags f = 0 )
+            : <a href="ntqwidget.html">TQWidget</a>( parent, name, f ), line_width( 1 )
+        {
+        }
+
+        int lineWidth() const
+        {
+            return line_width;
+        }
+        void setLineWidth( int lw )
+        {
+            line_width = lw;
+            repaint();
+        }
+
+    protected:
+        void paintEvent( <a href="qpaintevent.html">TQPaintEvent</a> *e )
+        {
+            <a href="ntqpainter.html">TQPainter</a> paint( this );
+    <a name="x2546"></a>        <a href="ntqpen.html">TQPen</a> pen = paint.<a href="ntqpainter.html#pen">pen</a>();
+    <a name="x2548"></a>        pen.<a href="ntqpen.html#setWidth">setWidth</a>( line_width );
+    <a name="x2547"></a>        paint.<a href="ntqpainter.html#setPen">setPen</a>( pen );
+
+            <a href="ntqrect.html">TQRect</a> r = rect();
+    <a name="x2549"></a>        r.<a href="ntqrect.html#addCoords">addCoords</a>( 10, 10, -10, -10 );
+    <a name="x2545"></a>        paint.<a href="ntqpainter.html#drawEllipse">drawEllipse</a>( r );
+        }
+
+    private:
+        int line_width;
+    };
+</pre>The control draws a circle. The line width is exposed as a property
+using the TQ_PROPERTY macro.
+<p> The controls are exposed by the implementation of <a href="qaxfactory.html">TQAxFactory</a> as provided
+by the TQAXFACTORY_BEGIN and TQAXFACTORY_END macros.
+
+
+<pre>    #include &lt;<a href="qaxfactory-h.html">qaxfactory.h</a>&gt;
+
+    #include "ax1.h"
+    #include "ax2.h"
+
+    TQAXFACTORY_BEGIN("{98DE28B6-6CD3-4e08-B9FA-3D1DB43F1D2F}", "{05828915-AD1C-47ab-AB96-D6AD1E25F0E2}")
+</pre>The factory is initialied using the TQAXFACTORY_BEGIN macro, providing 
+the IDs for the application and the type library.
+<pre>        TQAXCLASS(TQAxWidget1)
+        TQAXCLASS(TQAxWidget2)
+</pre>The classes exposed are listed using the TQAXCLASS macro.
+<pre>    TQAXFACTORY_END()
+</pre>Finally the factory declaration is closed using the TQAXFACTORY_END
+macro.
+<p> To build the example you must first build the <a href="qaxserver.html">TQAxServer</a> library. Then run qmake and your make tool in 
+<tt>examples/multiple</tt>.
+<p> <hr>
+<p> The <a href="qaxserver-demo-multiple.html">demonstration</a> requires your
+WebBrowser to support ActiveX controls, and scripting to be enabled.
+<p> 
+
+<pre>    &lt;script language=javascript&gt;
+    function setColor( form )
+    {
+        Ax1.fillColor = form.colorEdit.value;
+    }
+
+    function setWidth( form )
+    {
+        Ax2.lineWidth = form.widthEdit.value;
+    }
+    &lt;/script&gt;
+
+    &lt;p&gt;
+    This is one TQWidget subclass:&lt;br&gt;
+    &lt;object ID="Ax1" CLASSID="CLSID:1D9928BD-4453-4bdd-903D-E525ED17FDE5"
+    CODEBASE=http://www.trolltech.com/demos/multipleax.cab&gt;
+    [Object not available! Did you forget to build and register the server?]
+    &lt;/object&gt;&lt;br&gt;
+    &lt;form&gt;
+    Fill Color: &lt;input type="edit" ID="colorEdit" value = "red"&gt;
+    &lt;input type="button" value = "Set" onClick="setColor(this.form)"&gt;
+    &lt;input type="button" value = "Hide" onClick="Ax1.hide()"&gt;
+    &lt;input type="button" value = "Show" onClick="Ax1.show()"&gt;
+    &lt;/form&gt;
+
+    &lt;p&gt;
+    This is another TQWidget subclass:&lt;br&gt;
+    &lt;object ID="Ax2" CLASSID="CLSID:58139D56-6BE9-4b17-937D-1B1EDEDD5B71"
+    CODEBASE=http://www.trolltech.com/demos/multipleax.cab&gt;
+    [Object not available! Did you forget to build and register the server?]
+    &lt;/object&gt;&lt;br&gt;
+    &lt;form&gt;
+    Line width: &lt;input type="edit" ID="widthEdit" value = "1"&gt;
+    &lt;input type="button" value = "Set" onClick="setWidth(this.form)"&gt;
+    &lt;/form&gt;
+</pre><p>See also <a href="qaxserver-examples.html">The TQAxServer Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

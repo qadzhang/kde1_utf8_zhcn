@@ -41,7 +41,6 @@ bool previewTestFile( const KFileInfo *i, const QString inFilename,
 {
     bool loaded = false;
     QString iconName(inFilename);
-    iconName.detach();
     int index = iconName.find( i->fileName() );
     iconName.insert(index,".xvpics/");
     QFile miniPic( iconName );
@@ -61,7 +60,7 @@ int main(int argc, char **argv)
     QString name1;
     
     if (argc != 2) {
-	warning("usage: %s {dirs, filter, preselect, normal, preview}", argv[0]);
+	tqWarning("usage: %s {dirs, filter, preselect, normal, preview}", argv[0]);
 	exit(0);
     }
     

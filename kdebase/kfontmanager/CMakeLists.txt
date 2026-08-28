@@ -4,14 +4,14 @@ include_directories(
 
 set(KFONTMANAGER_SRCS
     main.cpp kfontmanager.cpp kfontlist.cpp kfontexplorer.cpp)
-set(KFONTMANAGER_MOC kfontmanager.moc kfontlist.moc kfontexplorer.moc)
+set(KFONTMANAGER_MOC kfontmanager.h kfontlist.h kfontexplorer.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KFONTMANAGER_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KFONTMANAGER_MOC})
 
 add_executable(kfontmanager ${KFONTMANAGER_SRCS} ${MOC_FILES})
 target_link_libraries(kfontmanager
     ${KDE1_KDECORE}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     m
     )

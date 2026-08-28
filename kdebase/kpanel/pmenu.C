@@ -77,7 +77,7 @@ bool isKdelnkFile(const char* filename){
 
 PMenuItem::PMenuItem()
 {
-  initMetaObject();
+
   entry_type = empty;
   sub_menu = 0;
   cmenu = 0;
@@ -90,7 +90,7 @@ PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n,
 		      PMenu *menu, QObject *receiver, char *member,
 		      QPopupMenu *cm, bool /* ro */, QString d, QString co )
 {
-  initMetaObject();
+
   entry_type = e;
   text_name = t;
   command_name = c;
@@ -108,7 +108,7 @@ PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n,
   cmenu = (myPopupMenu *) cm;
   recv = receiver;
   memb = member;
-  dir_path = d.copy();
+  dir_path = d;
   comment = co;
   // PI: no useless comments!
   //if (comment.isEmpty())
@@ -118,7 +118,7 @@ PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n,
 
 PMenuItem::PMenuItem( PMenuItem &item )
 {
-  initMetaObject();
+
   text_name       = item.text_name;
   pixmap_name     = item.pixmap_name;
   big_pixmap_name = item.big_pixmap_name;
@@ -164,7 +164,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
   if (ready_for_event_loop)
     KApplication::getKApplication()->processEvents();
 
-  real_name = fi->fileName().copy();
+  real_name = fi->fileName();
   int pos = fi->fileName().find(".kdelnk");
   if( pos >= 0 )
     text_name = fi->fileName().left(pos);
@@ -210,7 +210,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
     pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(big_pixmap_name, 16, 16);
   }
   if (pixmap.isNull() && getType() == unix_com){
-    QString tmp = real_name.copy();
+    QString tmp = real_name;
     int pos = tmp.find(".kdelnk");
     if( pos >= 0 )
       tmp = tmp.left(pos);
@@ -225,12 +225,12 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
   //if (comment.isEmpty())
   //  comment = text_name;
   if (big_pixmap_name.isEmpty()){
-    QString tmp = real_name.copy();
+    QString tmp = real_name;
     int pos = tmp.find(".kdelnk");
     if( pos >= 0 )
       tmp = tmp.left(pos);
     tmp.append(".xpm");
-    big_pixmap_name = tmp.copy();
+    big_pixmap_name = tmp;
   }
 
   return 0;
@@ -297,7 +297,7 @@ QString PMenuItem::getSaveName()
 bool PMenuItem::writeConfig( QDir dir )
 {
   QString file = dir.absPath();
-  dir_path = file.copy();
+  dir_path = file;
   file += ( (QString) "/" + real_name );
   QFile config(file);
   if( !config.open(IO_ReadWrite) )
@@ -319,7 +319,7 @@ bool PMenuItem::writeConfig( QDir dir )
 
 PMenu::PMenu()
 {
-  initMetaObject();
+
   list.setAutoDelete(true);
   cmenu = 0;
   altSort = false;
@@ -328,7 +328,7 @@ PMenu::PMenu()
 
 PMenu::PMenu( PMenu &menu )
 {
-  initMetaObject();
+
   cmenu = 0;
   list.setAutoDelete(true);
   PMenuItem *item, *new_item;
@@ -713,7 +713,7 @@ PMenuItem * PMenu::searchItem(QString name)
   static PMenu* hack = 0;
   if (!hack)
     hack = this;
-  //debug("searchName = %s", (const char *) name );
+  //tqDebug("searchName = %s", (const char *) name );
   name = name.stripWhiteSpace();
   if( name.left(9) == "$PERSONAL" )
     {

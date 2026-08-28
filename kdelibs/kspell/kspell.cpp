@@ -263,7 +263,7 @@ KSpell::cleanFputsWord (const char *s, bool appendCR)
   {
     //we need some puctuation for ornaments
     if (qs.at(i)!='\'' && qs.at(i)!='\"')
-      if (ispunct (qs.at(i)) || isspace (qs.at(i)))
+      if (ispunct(qs.at(i).latin1()) || isspace(qs.at(i).latin1()))
 	  qs.remove(i,1);
   }
   
@@ -281,7 +281,7 @@ KSpell::cleanFputs (const char *s, bool appendCR)
       for (unsigned int i=0;i<l;i++,j++)
 	{
 	  if (//qs.at(i-1)=='\n' && 
-	      ispunct (qs.at(i)) &&
+	      ispunct(qs.at(i).latin1()) &&
 	      qs.at(i)!='\'' && qs.at(i)!='\"')
 	    qs.replace (i,1," ");
 	  

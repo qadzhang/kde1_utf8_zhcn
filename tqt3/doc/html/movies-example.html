@@ -1,0 +1,344 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/movies/movies.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Movies or the Story of the Animated GIF file</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Movies or the Story of the Animated GIF file</h1>
+
+   
+<p> 
+The Movies example displays MNG and animated GIF files using the <a href="ntqmovie.html">TQMovie</a> and
+<a href="ntqlabel.html">TQLabel</a> classes.
+<p> The movies will only read an animated GIF if GIF reading was enabled when TQt was built.
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qfiledialog-h.html">ntqfiledialog.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qmovie-h.html">ntqmovie.h</a>&gt;
+#include &lt;<a href="qvbox-h.html">ntqvbox.h</a>&gt;
+
+
+class MovieScreen : public <a href="ntqframe.html">TQFrame</a> {
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+    <a href="ntqmovie.html">TQMovie</a> movie;
+    <a href="ntqstring.html">TQString</a> filename;
+    <a href="ntqsize.html">TQSize</a> sh;
+
+public:
+    MovieScreen(const char* fname, TQMovie m, TQWidget* p=0, const char* name=0, WFlags f=0) :
+        <a href="ntqframe.html">TQFrame</a>(p, name, f),
+        sh(100,100)
+    {
+        setCaption(fname);
+        filename = fname;
+        movie = m;
+
+        // Set a frame around the movie.
+        setFrameStyle(TQFrame::WinPanel|TQFrame::Sunken);
+
+        // No background needed, since we draw on the whole widget.
+<a name="x523"></a>        movie.<a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>(backgroundColor());
+        setBackgroundMode(NoBackground);
+
+        // Get the movie to tell use when interesting things happen.
+<a name="x500"></a>        movie.<a href="ntqmovie.html#connectUpdate">connectUpdate</a>(this, TQ_SLOT(movieUpdated(const <a href="ntqrect.html">TQRect</a>&amp;)));
+<a name="x498"></a>        movie.<a href="ntqmovie.html#connectResize">connectResize</a>(this, TQ_SLOT(movieResized(const <a href="ntqsize.html">TQSize</a>&amp;)));
+<a name="x499"></a>        movie.<a href="ntqmovie.html#connectStatus">connectStatus</a>(this, TQ_SLOT(movieStatus(int)));
+
+        setSizePolicy(TQSizePolicy(TQSizePolicy::Expanding,TQSizePolicy::Expanding));
+    }
+
+    <a href="ntqsize.html">TQSize</a> sizeHint() const
+    {
+        return sh;
+    }
+
+protected:
+
+    // Draw the contents of the TQFrame - the movie and on-screen-display
+    void drawContents(TQPainter* p)
+    {
+        // Get the current movie frame.
+<a name="x502"></a>        <a href="ntqpixmap.html">TQPixmap</a> pm = movie.<a href="ntqmovie.html#framePixmap">framePixmap</a>();
+
+        // Get the area we have to draw in.
+        <a href="ntqrect.html">TQRect</a> r = contentsRect();
+
+<a name="x511"></a>        if ( !pm.<a href="ntqpixmap.html#isNull">isNull</a>() ) {
+            // Only rescale is we need to - it can take CPU!
+<a name="x516"></a><a name="x512"></a>            if ( r.<a href="ntqrect.html#size">size</a>() != pm.<a href="ntqpixmap.html#size">size</a>() ) {
+                <a href="ntqwmatrix.html">TQWMatrix</a> m;
+<a name="x524"></a><a name="x517"></a><a name="x513"></a>                m.<a href="ntqwmatrix.html#scale">scale</a>((double)r.<a href="ntqrect.html#width">width</a>()/pm.<a href="ntqpixmap.html#width">width</a>(),
+<a name="x515"></a><a name="x510"></a>                        (double)r.<a href="ntqrect.html#height">height</a>()/pm.<a href="ntqpixmap.html#height">height</a>());
+<a name="x514"></a>                pm = pm.<a href="ntqpixmap.html#xForm">xForm</a>(m);
+            }
+
+            // Draw the [possibly scaled] frame.  movieUpdated() below calls
+            // repaint with only the changed area, so clipping will ensure we
+            // only do the minimum amount of rendering.
+            //
+<a name="x519"></a><a name="x518"></a>            p-&gt;drawPixmap(r.<a href="ntqrect.html#x">x</a>(), r.<a href="ntqrect.html#y">y</a>(), pm);
+        }
+
+
+        // The on-screen display
+
+        const char* message = 0;
+
+<a name="x504"></a>        if (movie.<a href="ntqmovie.html#paused">paused</a>()) {
+            message = "PAUSED";
+<a name="x501"></a>        } else if (movie.<a href="ntqmovie.html#finished">finished</a>()) {
+            message = "THE END";
+<a name="x507"></a>        } else if (movie.<a href="ntqmovie.html#steps">steps</a>() &gt; 0) {
+            message = "FF &gt;&gt;";
+        }
+
+        if (message) {
+            // Find a good font size...
+            p-&gt;setFont(TQFont("Helvetica", 24));
+
+            <a href="ntqfontmetrics.html">TQFontMetrics</a> fm = p-&gt;fontMetrics();
+<a name="x496"></a>            if ( fm.<a href="ntqfontmetrics.html#width">width</a>(message) &gt; r.<a href="ntqrect.html#width">width</a>()-10 )
+                p-&gt;setFont(TQFont("Helvetica", 18));
+
+            fm = p-&gt;fontMetrics();
+            if ( fm.<a href="ntqfontmetrics.html#width">width</a>(message) &gt; r.<a href="ntqrect.html#width">width</a>()-10 )
+                p-&gt;setFont(TQFont("Helvetica", 14));
+
+            fm = p-&gt;fontMetrics();
+            if ( fm.<a href="ntqfontmetrics.html#width">width</a>(message) &gt; r.<a href="ntqrect.html#width">width</a>()-10 )
+                p-&gt;setFont(TQFont("Helvetica", 12));
+
+            fm = p-&gt;fontMetrics();
+            if ( fm.<a href="ntqfontmetrics.html#width">width</a>(message) &gt; r.<a href="ntqrect.html#width">width</a>()-10 )
+                p-&gt;setFont(TQFont("Helvetica", 10));
+
+            // "Shadow" effect.
+            p-&gt;setPen(black);
+            p-&gt;drawText(1, 1, width()-1, height()-1, AlignCenter, message);
+            p-&gt;setPen(white);
+            p-&gt;drawText(0, 0, width()-1, height()-1, AlignCenter, message);
+        }
+    }
+
+public slots:
+    void restart()
+    {
+<a name="x505"></a>        movie.<a href="ntqmovie.html#restart">restart</a>();
+        repaint();
+    }
+
+    void togglePause()
+    {
+        if ( movie.<a href="ntqmovie.html#paused">paused</a>() )
+<a name="x508"></a>            movie.<a href="ntqmovie.html#unpause">unpause</a>();
+        else
+<a name="x503"></a>            movie.<a href="ntqmovie.html#pause">pause</a>();
+        repaint();
+    }
+
+    void step()
+    {
+<a name="x506"></a>        movie.<a href="ntqmovie.html#step">step</a>();
+        repaint();
+    }
+
+    void step10()
+    {
+        movie.<a href="ntqmovie.html#step">step</a>(10);
+        repaint();
+    }
+
+private slots:
+    void movieUpdated(const <a href="ntqrect.html">TQRect</a>&amp; area)
+    {
+        if (!isVisible())
+            show();
+
+        // The given area of the movie has changed.
+
+        <a href="ntqrect.html">TQRect</a> r = contentsRect();
+
+        if ( r.<a href="ntqrect.html#size">size</a>() != movie.<a href="ntqmovie.html#framePixmap">framePixmap</a>().size() ) {
+            // Need to scale - redraw whole frame.
+            repaint( r );
+        } else {
+            // Only redraw the changed area of the frame
+            repaint( area.<a href="ntqrect.html#x">x</a>()+r.<a href="ntqrect.html#x">x</a>(), area.<a href="ntqrect.html#y">y</a>()+r.<a href="ntqrect.html#x">x</a>(),
+                     area.<a href="ntqrect.html#width">width</a>(), area.<a href="ntqrect.html#height">height</a>() );
+        }
+    }
+
+    void movieResized(const <a href="ntqsize.html">TQSize</a>&amp; size)
+    {
+        // The movie changed size, probably from its initial zero size.
+
+        int fw = frameWidth();
+<a name="x521"></a><a name="x520"></a>        sh = TQSize( size.<a href="ntqsize.html#width">width</a>() + fw*2, size.<a href="ntqsize.html#height">height</a>() + fw*2 );
+        <a href="ntqwidget.html#updateGeometry">updateGeometry</a>();
+        if ( <a href="ntqwidget.html#parentWidget">parentWidget</a>() &amp;&amp; parentWidget()-&gt;isHidden() )
+            <a href="ntqwidget.html#parentWidget">parentWidget</a>()-&gt;show();
+    }
+
+    void movieStatus(int status)
+    {
+        // The movie has sent us a status message.
+
+        if (status &lt; 0) {
+            <a href="ntqstring.html">TQString</a> msg;
+            msg.<a href="ntqstring.html#sprintf">sprintf</a>("Could not play movie \"%s\"", (const char*)filename);
+            TQMessageBox::<a href="ntqmessagebox.html#warning">warning</a>(this, "movies", msg);
+            <a href="ntqwidget.html#parentWidget">parentWidget</a>()-&gt;close();
+        } else if (status == TQMovie::Paused || status == TQMovie::EndOfMovie) {
+            <a href="ntqwidget.html#repaint">repaint</a>(); // Ensure status text is displayed
+        }
+    }
+};
+
+class MoviePlayer : public <a href="ntqvbox.html">TQVBox</a> {
+    MovieScreen* movie;
+public:
+    MoviePlayer(const char* fname, TQMovie m, TQWidget* p=0, const char* name=0, WFlags f=0) :
+        <a href="ntqvbox.html">TQVBox</a>(p,name,f)
+    {
+        movie = new MovieScreen(fname, m, this);
+        <a href="ntqhbox.html">TQHBox</a>* hb = new <a href="ntqhbox.html">TQHBox</a>(this);
+        <a href="ntqpushbutton.html">TQPushButton</a>* btn;
+        btn = new <a href="ntqpushbutton.html">TQPushButton</a>("&lt;&lt;", hb);
+        <a href="ntqobject.html#connect">connect</a>(btn, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), movie, TQ_SLOT(<a href="ntqmovie.html#restart">restart</a>()));
+        btn = new <a href="ntqpushbutton.html">TQPushButton</a>("||", hb);
+        <a href="ntqobject.html#connect">connect</a>(btn, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), movie, TQ_SLOT(togglePause()));
+        btn = new <a href="ntqpushbutton.html">TQPushButton</a>("&gt;|", hb);
+        <a href="ntqobject.html#connect">connect</a>(btn, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), movie, TQ_SLOT(<a href="ntqmovie.html#step">step</a>()));
+        btn = new <a href="ntqpushbutton.html">TQPushButton</a>("&gt;&gt;|", hb);
+        <a href="ntqobject.html#connect">connect</a>(btn, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), movie, TQ_SLOT(step10()));
+    }
+};
+
+
+// A TQFileDialog that chooses movies.
+//
+class MovieStarter: public <a href="ntqfiledialog.html">TQFileDialog</a> {
+    TQ_OBJECT
+public:
+    MovieStarter(const char *dir);
+
+public slots:
+    void startMovie(const <a href="ntqstring.html">TQString</a>&amp; filename);
+    // TQDialog's method - normally closes the file dialog.
+    // We want it left open, and we want Cancel to quit everything.
+    void done( int r );
+};
+
+
+<a name="f258"></a>MovieStarter::MovieStarter(const char *dir)
+    : <a href="ntqfiledialog.html">TQFileDialog</a>(dir, "*.gif *.mng")
+{
+    //behave as in getOpenFilename
+    <a href="ntqfiledialog.html#setMode">setMode</a>( ExistingFile );
+    // When a file is selected, show it as a movie.
+    <a href="ntqobject.html#connect">connect</a>(this, TQ_SIGNAL(<a href="ntqfiledialog.html#fileSelected">fileSelected</a>(const <a href="ntqstring.html">TQString</a>&amp;)),
+            this, TQ_SLOT(startMovie(const <a href="ntqstring.html">TQString</a>&amp;)));
+}
+
+
+void <a name="f259"></a>MovieStarter::startMovie(const <a href="ntqstring.html">TQString</a>&amp; filename)
+{
+    if ( filename ) // Start a new movie - have it delete when closed.
+        (new MoviePlayer( filename, TQMovie(filename), 0, 0,
+                               WDestructiveClose))-&gt;show();
+}
+
+<a name="x495"></a>void MovieStarter::<a href="ntqdialog.html#done">done</a>( int r )
+{
+    if (r != Accepted)
+        tqApp-&gt;<a href="ntqapplication.html#quit">quit</a>(); // end on Cancel
+    <a href="ntqdialog.html#setResult">setResult</a>( r );
+
+    // And don't hide.
+}
+
+
+int main(int argc, char **argv)
+{
+    <a href="ntqapplication.html">TQApplication</a> a(argc, argv);
+
+    if (argc &gt; 1) {
+        // Commandline mode - show movies given on the command line
+        //
+        bool gui=true;
+        for (int arg=1; arg&lt;argc; arg++) {
+            if ( TQString(argv[arg]) == "-i" )
+                gui = !gui;
+            else if ( gui )
+                (void)new MoviePlayer(argv[arg], TQMovie(argv[arg]), 0, 0,
+                                      TQt::WDestructiveClose);
+            else
+                (void)new MovieScreen(argv[arg], TQMovie(argv[arg]), 0, 0,
+                                      TQt::WDestructiveClose);
+        }
+        TQObject::<a href="ntqobject.html#connect">connect</a>(tqApp, TQ_SIGNAL(<a href="ntqapplication.html#lastWindowClosed">lastWindowClosed</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()));
+    } else {
+        // "GUI" mode - open a chooser for movies
+        //
+        MovieStarter* fd = new MovieStarter(".");
+<a name="x494"></a>        fd-&gt;<a href="ntqdialog.html#show">show</a>();
+    }
+
+    // Go!
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+#include "main.moc"
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -10,11 +10,11 @@ set(KPAGER_MOC
 desktop.h kpager.h kpagerclient.h ktrianglebutton.h version.h windowdrag.h
 )
 
-QT1_WRAP_CPP(MOC_FILES ${KPAGER_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KPAGER_MOC})
 
 add_executable(kpager ${KPAGER_SRCS} ${MOC_FILES})
 target_link_libraries(kpager
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

@@ -64,7 +64,7 @@
 #define KICONLOADER_H
 
 #ifndef _KCONFIG_H
-#include <kconfig.h>
+#include "kconfig.h"
 #endif
 
 #include <qapplication.h>

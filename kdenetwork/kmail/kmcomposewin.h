@@ -257,8 +257,13 @@ protected:
   virtual const QString bcc(void) const { return mEdtBcc.text(); }
   virtual const QString from(void) const { return mEdtFrom.text(); }
   virtual const QString replyTo(void) const { return mEdtReplyTo.text(); }
+#ifdef KRN
   virtual const QString newsgroups(void) const { return mEdtNewsgroups.text(); }
   virtual const QString followupTo(void) const { return mEdtFollowupTo.text(); }
+#else
+  virtual const QString newsgroups(void) const { return TQString(); }  /* TQt3 迁移：KRN 外空实现 */
+  virtual const QString followupTo(void) const { return TQString(); }
+#endif
 
   /** Ask for confirmation if the message was changed.
     Save settings upon close. */
@@ -312,8 +317,10 @@ protected:
   QPushButton mBtnTo, mBtnCc, mBtnBcc, mBtnFrom, mBtnReplyTo;
   bool mSpellCheckInProgress;
   /* start Added for KRN */
+#ifdef KRN
   KMLineEdit mEdtNewsgroups, mEdtFollowupTo;
   QLabel     mLblNewsgroups, mLblFollowupTo;
+#endif
   /* end Added for KRN */
   
   QPopupMenu *mMnuView, *mMnuOptions;

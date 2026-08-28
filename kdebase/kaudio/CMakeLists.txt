@@ -9,15 +9,15 @@ include_directories(
 
 set(KAUDIO_SRCS kaudioserver.cpp)
 set(MAUDIO_SRCS io_oss.cpp maudio.cpp sample.cpp)
-set(KAUDIO_MOC democlient.moc kplayaudio.moc)
+set(KAUDIO_MOC democlient.h kplayaudio.h)
 set(KPLAYAUDIO_SRCS kplayaudio.cpp)
 
-QT1_WRAP_MOC(MOC_FILES kplayaudio.moc)
-QT1_WRAP_MOC(DEMO_MOC_FILES democlient.moc)
+TQT3_WRAP_CPP(MOC_FILES kplayaudio.h)
+TQT3_WRAP_CPP(DEMO_MOC_FILES democlient.h)
 
 add_executable(maudio ${MAUDIO_SRCS})
 target_link_libraries(maudio
-    ${QT_LIBRARIES}
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_MEDIATOOL}
@@ -26,7 +26,7 @@ target_link_libraries(maudio
 
 add_executable(kaudioserver ${KAUDIO_SRCS})
 target_link_libraries(kaudioserver
-    ${QT_LIBRARIES}
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_MEDIATOOL}
@@ -45,7 +45,7 @@ target_link_libraries(kplayaudio
     ${KDE1_KFILE}
     ${KDE1_KFM}
     ${KDE1_MEDIATOOL}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

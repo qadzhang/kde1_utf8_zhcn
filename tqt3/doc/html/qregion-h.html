@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqregion.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqregion.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqregion.h</h1>
+
+<p>This is the verbatim text of the ntqregion.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqregion.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQRegion class
+**
+** Created : 940514
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQREGION_H
+#define TQREGION_H
+
+#ifndef QT_H
+#include "ntqshared.h"
+#include "ntqrect.h"
+#endif // QT_H
+
+#ifdef TQ_WS_X11
+struct TQRegionPrivate;
+#endif
+
+class TQ_EXPORT TQRegion
+{
+public:
+    enum RegionType { Rectangle, Ellipse };
+
+    TQRegion();
+    TQRegion( int x, int y, int w, int h, RegionType = Rectangle );
+    TQRegion( const TQRect &amp;, RegionType = Rectangle );
+    TQRegion( const TQPointArray &amp;, bool winding=false );
+    TQRegion( const TQRegion &amp; );
+    TQRegion( const TQBitmap &amp; );
+   ~TQRegion();
+    TQRegion &amp;operator=( const TQRegion &amp; );
+
+    bool    isNull()   const;
+    bool    isEmpty()  const;
+
+    bool    contains( const TQPoint &amp;p ) const;
+    bool    contains( const TQRect &amp;r )	const;
+
+    void    translate( int dx, int dy );
+
+    TQRegion unite( const TQRegion &amp; )	const;
+    TQRegion intersect( const TQRegion &amp;) const;
+    TQRegion subtract( const TQRegion &amp; ) const;
+    TQRegion eor( const TQRegion &amp; )	const;
+
+    TQRect   boundingRect() const;
+    TQMemArray&lt;TQRect&gt; rects() const;
+    void setRects( const TQRect *, int );
+
+    const TQRegion operator|( const TQRegion &amp; ) const;
+    const TQRegion operator+( const TQRegion &amp; ) const;
+    const TQRegion operator&amp;( const TQRegion &amp; ) const;
+    const TQRegion operator-( const TQRegion &amp; ) const;
+    const TQRegion operator^( const TQRegion &amp; ) const;
+    TQRegion&amp; operator|=( const TQRegion &amp; );
+    TQRegion&amp; operator+=( const TQRegion &amp; );
+    TQRegion&amp; operator&amp;=( const TQRegion &amp; );
+    TQRegion&amp; operator-=( const TQRegion &amp; );
+    TQRegion&amp; operator^=( const TQRegion &amp; );
+
+    bool    operator==( const TQRegion &amp; )  const;
+    bool    operator!=( const TQRegion &amp;r ) const
+			{ return !(operator==(r)); }
+
+#if defined(TQ_WS_WIN)
+    HRGN    handle() const { return data-&gt;rgn; }
+#elif defined(TQ_WS_X11)
+    Region handle() const { if(!data-&gt;rgn) updateX11Region(); return data-&gt;rgn; }
+#elif defined(TQ_WS_MAC)
+    RgnHandle handle(bool require_rgn=false) const;
+#elif defined(TQ_WS_QWS)
+    // TQGfx_QWS needs this for region drawing
+    void * handle() const { return data-&gt;rgn; }
+#endif
+
+#ifndef TQT_NO_DATASTREAM
+    friend TQ_EXPORT TQDataStream &amp;operator&lt;&lt;( TQDataStream &amp;, const TQRegion &amp; );
+    friend TQ_EXPORT TQDataStream &amp;operator&gt;&gt;( TQDataStream &amp;, TQRegion &amp; );
+#endif
+private:
+    TQRegion( bool );
+    TQRegion copy() const;
+    void    detach();
+#if defined(TQ_WS_WIN)
+    TQRegion winCombine( const TQRegion &amp;, int ) const;
+#endif
+#if defined(TQ_WS_X11)
+    void updateX11Region() const;
+    void *clipRectangles( int &amp;num ) const;
+    friend void *qt_getClipRects( const TQRegion &amp;, int &amp; );
+#endif
+    void    exec( const TQByteArray &amp;, int ver = 0 );
+    struct TQRegionData : public TQShared {
+#if defined(TQ_WS_WIN)
+	HRGN   rgn;
+#elif defined(TQ_WS_X11)
+	Region rgn;
+	void *xrectangles;
+	TQRegionPrivate *region;
+#elif defined(TQ_WS_MAC)
+	uint is_rect:1;
+	TQRect rect;
+	RgnHandle rgn;
+#elif defined(TQ_WS_QWS)
+	void * rgn;
+#endif
+	bool   is_null;
+    } *data;
+#if defined(TQ_WS_MAC)
+    friend struct tqt_mac_rgn_data_cache;
+    friend TQRegionData *tqt_mac_get_rgn_data();
+    friend void tqt_mac_free_rgn_data(TQRegionData *);
+    void rectifyRegion();
+#elif defined(TQ_WS_WIN)
+    friend class TQETWidget;
+#endif
+
+};
+
+
+#define TQRGN_SETRECT		1		// region stream commands
+#define TQRGN_SETELLIPSE		2		//  (these are internal)
+#define TQRGN_SETPTARRAY_ALT	3
+#define TQRGN_SETPTARRAY_WIND	4
+#define TQRGN_TRANSLATE		5
+#define TQRGN_OR			6
+#define TQRGN_AND		7
+#define TQRGN_SUB		8
+#define TQRGN_XOR		9
+#define TQRGN_RECTS	       10
+
+
+/*****************************************************************************
+  TQRegion stream functions
+ *****************************************************************************/
+
+#ifndef TQT_NO_DATASTREAM
+TQ_EXPORT TQDataStream &amp;operator&lt;&lt;( TQDataStream &amp;, const TQRegion &amp; );
+TQ_EXPORT TQDataStream &amp;operator&gt;&gt;( TQDataStream &amp;, TQRegion &amp; );
+#endif
+
+
+#endif // TQREGION_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

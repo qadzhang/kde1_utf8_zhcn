@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/canvas/qcanvas.cpp:2800 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQCanvasPixmap Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQCanvasPixmap Class Reference<br><small>[<a href="canvas.html">canvas module</a>]</small></h1>
+
+<p>The TQCanvasPixmap class provides pixmaps for TQCanvasSprites.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qcanvas-h.html">ntqcanvas.h</a>&gt;</tt>
+<p>Inherits <a href="ntqpixmap.html">TQPixmap</a>.
+<p><a href="qcanvaspixmap-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQCanvasPixmap"><b>TQCanvasPixmap</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;datafilename )</li>
+<li class=fn><a href="#TQCanvasPixmap-2"><b>TQCanvasPixmap</b></a> ( const&nbsp;TQImage&nbsp;&amp;&nbsp;image )</li>
+<li class=fn><a href="#TQCanvasPixmap-3"><b>TQCanvasPixmap</b></a> ( const&nbsp;TQPixmap&nbsp;&amp;&nbsp;pm, const&nbsp;TQPoint&nbsp;&amp;&nbsp;offset )</li>
+<li class=fn><a href="#~TQCanvasPixmap"><b>~TQCanvasPixmap</b></a> ()</li>
+<li class=fn>int <a href="#offsetX"><b>offsetX</b></a> () const</li>
+<li class=fn>int <a href="#offsetY"><b>offsetY</b></a> () const</li>
+<li class=fn>void <a href="#setOffset"><b>setOffset</b></a> ( int&nbsp;x, int&nbsp;y )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQCanvasPixmap class provides pixmaps for TQCanvasSprites.
+
+<p> 
+
+
+<p> If you want to show a single pixmap on a <a href="ntqcanvas.html">TQCanvas</a> use a
+<a href="qcanvassprite.html">TQCanvasSprite</a> with just one pixmap.
+<p> When pixmaps are inserted into a <a href="qcanvaspixmaparray.html">TQCanvasPixmapArray</a> they are held
+as TQCanvasPixmaps. <a href="qcanvassprite.html">TQCanvasSprite</a>s are used to show pixmaps on
+<a href="ntqcanvas.html">TQCanvas</a>es and hold their pixmaps in a TQCanvasPixmapArray. If
+you retrieve a frame (pixmap) from a TQCanvasSprite it will be
+returned as a TQCanvasPixmap.
+<p> The pixmap is a <a href="ntqpixmap.html">TQPixmap</a> and can only be set in the constructor.
+There are three different constructors, one taking a TQPixmap, one
+a <a href="ntqimage.html">TQImage</a> and one a file name that refers to a file in any
+supported file format (see <a href="qimageio.html">TQImageIO</a>).
+<p> TQCanvasPixmap can have a hotspot which is defined in terms of an (x,
+y) offset. When you create a TQCanvasPixmap from a PNG file or from
+a TQImage that has a <a href="ntqimage.html#offset">TQImage::offset</a>(), the offset() is initialized
+appropriately, otherwise the constructor leaves it at (0, 0). You
+can set it later using <a href="#setOffset">setOffset</a>(). When the TQCanvasPixmap is used
+in a <a href="qcanvassprite.html">TQCanvasSprite</a>, the offset position is the point at
+<a href="qcanvasitem.html#x">TQCanvasItem::x</a>() and <a href="qcanvasitem.html#y">TQCanvasItem::y</a>(), not the top-left corner of
+the pixmap.
+<p> Note that for TQCanvasPixmap objects created by a TQCanvasSprite, the
+position of each TQCanvasPixmap object is set so that the hotspot
+stays in the same position.
+<p> <p>See also <a href="qcanvaspixmaparray.html">TQCanvasPixmapArray</a>, <a href="qcanvasitem.html">TQCanvasItem</a>, <a href="qcanvassprite.html">TQCanvasSprite</a>, <a href="graphics.html">Graphics Classes</a>, and <a href="images.html">Image Processing Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQCanvasPixmap"></a>TQCanvasPixmap::TQCanvasPixmap ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;datafilename )
+</h3>
+Constructs a TQCanvasPixmap that uses the image stored in <em>datafilename</em>.
+
+<h3 class=fn><a name="TQCanvasPixmap-2"></a>TQCanvasPixmap::TQCanvasPixmap ( const&nbsp;<a href="ntqimage.html">TQImage</a>&nbsp;&amp;&nbsp;image )
+</h3>
+Constructs a TQCanvasPixmap from the image <em>image</em>.
+
+<h3 class=fn><a name="TQCanvasPixmap-3"></a>TQCanvasPixmap::TQCanvasPixmap ( const&nbsp;<a href="ntqpixmap.html">TQPixmap</a>&nbsp;&amp;&nbsp;pm, const&nbsp;<a href="ntqpoint.html">TQPoint</a>&nbsp;&amp;&nbsp;offset )
+</h3>
+Constructs a TQCanvasPixmap from the pixmap <em>pm</em> using the offset
+<em>offset</em>.
+
+<h3 class=fn><a name="~TQCanvasPixmap"></a>TQCanvasPixmap::~TQCanvasPixmap ()
+</h3>
+Destroys the pixmap.
+
+<h3 class=fn>int <a name="offsetX"></a>TQCanvasPixmap::offsetX () const
+</h3>
+
+<p> Returns the x-offset of the pixmap's hotspot.
+<p> <p>See also <a href="#setOffset">setOffset</a>().
+
+<h3 class=fn>int <a name="offsetY"></a>TQCanvasPixmap::offsetY () const
+</h3>
+
+<p> Returns the y-offset of the pixmap's hotspot.
+<p> <p>See also <a href="#setOffset">setOffset</a>().
+
+<h3 class=fn>void <a name="setOffset"></a>TQCanvasPixmap::setOffset ( int&nbsp;x, int&nbsp;y )
+</h3>
+
+<p> Sets the offset of the pixmap's hotspot to (<em>x</em>, <em>y</em>).
+<p> <b>Warning:</b> Do not call this function if any TQCanvasSprites are
+currently showing this pixmap.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

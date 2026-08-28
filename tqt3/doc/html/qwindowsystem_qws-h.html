@@ -1,0 +1,621 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/qwindowsystem_qws.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>qwindowsystem_qws.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>qwindowsystem_qws.h</h1>
+
+<p>This is the verbatim text of the qwindowsystem_qws.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/qwindowsystem_qws.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQt/FB central server classes
+**
+** Created : 991025
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** Licensees holding valid TQt Commercial licenses may use this file in
+** accordance with the TQt Commercial License Agreement provided with
+** the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQWINDOWSYSTEM_QWS_H
+#define TQWINDOWSYSTEM_QWS_H
+
+#ifndef QT_H
+#include "qwssocket_qws.h"
+#include "ntqmap.h"
+#include "ntqdatetime.h"
+#include "ntqptrlist.h"
+#include "ntqimage.h"
+
+#include "qwsproperty_qws.h"
+#include "qwscommand_qws.h"
+#include "qwsevent_qws.h"
+#endif // QT_H
+
+#include "qkbd_qws.h"
+
+struct SWCursorData;
+class TQWSCursor;
+class TQWSClient;
+class TQWSRegionManager;
+class TQGfx;
+class TQWSServerData;
+
+class TQWSInternalWindowInfo
+{
+
+public:
+
+    int winid;
+    unsigned int clientid;
+    TQString name;   // Corresponds to TQObject name of top-level widget
+
+};
+
+struct TQWSWindowData;
+
+class TQWSScreenSaver
+{
+public:
+    virtual ~TQWSScreenSaver();
+    virtual void restore()=0;
+    virtual bool save(int level)=0;
+};
+
+class TQWSWindow
+{
+    friend class TQWSServer;
+public:
+    TQWSWindow(int i, TQWSClient* client);
+    ~TQWSWindow();
+
+    int winId() const { return id; }
+    const TQString &amp;name() const { return rgnName; }
+    const TQString &amp;caption() const { return rgnCaption; }
+    TQWSClient* client() const { return c; }
+    TQRegion requested() const { return requested_region; }
+    TQRegion allocation() const { return allocated_region; }
+    bool isVisible() const { return !requested_region.isEmpty(); }
+    bool isPartiallyObscured() const { return requested_region!=allocated_region; }
+    bool isFullyObscured() const { return allocated_region.isEmpty(); }
+
+    void raise();
+    void lower();
+    void show();
+    void hide();
+    void setActiveWindow();
+
+private:
+    bool hidden() const { return requested_region.isEmpty(); }
+    bool forClient(const TQWSClient* cl) const { return cl==c; }
+
+    void setName( const TQString &amp;n );
+    void setCaption( const TQString &amp;c );
+
+    void addAllocation( TQWSRegionManager *, const TQRegion &amp; );
+    void removeAllocation( TQWSRegionManager *, const TQRegion &amp; );
+
+    int  allocationIndex() const { return alloc_region_idx; }
+    void setAllocationIndex( int i ) { alloc_region_idx = i; modified = true; }
+    void updateAllocation();
+
+    void setNeedAck( bool n ) { needAck = n; }
+
+    void focus(bool get);
+    int focusPriority() const { return last_focus_time; }
+    void operation( TQWSWindowOperationEvent::Operation o );
+    void shuttingDown() { last_focus_time=0; }
+
+private:
+    int id;
+    TQString rgnName;
+    TQString rgnCaption;
+    int alloc_region_idx;
+    bool modified;
+    bool needAck;
+    bool onTop;
+    TQWSClient* c;
+    TQRegion requested_region;
+    TQRegion allocated_region;
+    TQRegion exposed;
+    int last_focus_time;
+    TQWSWindowData *d;
+};
+
+#ifndef TQT_NO_SOUND
+class TQWSSoundServer;
+#ifdef QT_USE_OLD_QWS_SOUND
+class TQWSSoundServerData;
+
+class TQWSSoundServer : public TQObject {
+    TQ_OBJECT
+public:
+    TQWSSoundServer(TQObject* parent);
+    ~TQWSSoundServer();
+    void playFile(const TQString&amp; filename);
+private slots:
+    void feedDevice(int fd);
+private:
+    TQWSSoundServerData* d;
+};
+#endif
+#endif
+
+
+
+
+
+
+
+/*********************************************************************
+ *
+ * Class: TQWSServer
+ *
+ *********************************************************************/
+
+class TQWSMouseHandler;
+struct TQWSCommandStruct;
+
+#ifndef TQT_NO_QWS_MULTIPROCESS
+class TQWSServer : public TQWSServerSocket
+#else
+class TQWSServer : public TQObject
+#endif
+{
+    friend class TQCopChannel;
+    friend class TQWSMouseHandler;
+    friend class TQWSWindow;
+    friend class TQWSDisplay;
+    friend class TQWSInputMethod;
+    TQ_OBJECT
+
+public:
+    TQWSServer( int flags = 0, TQObject *parent=0, const char *name=0 );
+    ~TQWSServer();
+    enum ServerFlags { DisableKeyboard = 0x01,
+		       DisableMouse = 0x02 };
+
+
+    enum GUIMode { NoGui = false, NormalGUI = true, Server };
+
+    static void sendKeyEvent(int unicode, int keycode, int modifiers, bool isPress,
+			     bool autoRepeat);
+    static void processKeyEvent(int unicode, int keycode, int modifiers, bool isPress,
+				bool autoRepeat);
+
+#ifndef TQT_NO_QWS_IM
+    enum IMState { IMStart, IMCompose, IMEnd };
+
+    void sendIMEvent( IMState state, const TQString&amp; txt, int cpos, int selLen );
+#endif
+
+#ifndef TQT_NO_QWS_KEYBOARD    
+    typedef struct KeyMap {
+	int  key_code;
+	ushort unicode;
+	ushort shift_unicode;
+	ushort ctrl_unicode;
+    };
+
+    typedef struct KeyOverride {
+	ushort scan_code;
+	KeyMap map;
+    };
+
+    static const KeyMap *keyMap();
+
+    static void setOverrideKeys( const KeyOverride* );
+
+    class KeyboardFilter
+    {
+    public:
+	virtual bool filter(int unicode, int keycode, int modifiers, 
+			    bool isPress, bool autoRepeat)=0;
+    };
+
+    static void setKeyboardFilter( KeyboardFilter *f );
+#endif    
+#ifndef TQT_NO_QWS_IM
+    static void setCurrentInputMethod( TQWSInputMethod *im );
+    static void resetInputMethod();
+    static void setMicroFocus( int x, int y );
+#endif
+
+    static void setDefaultMouse( const char * );
+    static void setDefaultKeyboard( const char * );
+    static void setMaxWindowRect(const TQRect&amp;);
+    static void sendMouseEvent(const TQPoint&amp; pos, int state);
+
+    static void setDesktopBackground( const TQImage &amp;img );
+    static void setDesktopBackground( const TQColor &amp; );
+    static TQWSMouseHandler *mouseHandler();
+    static void setMouseHandler(TQWSMouseHandler*);
+#ifndef TQT_NO_QWS_KEYBOARD
+    static TQWSKeyboardHandler* keyboardHandler();
+    static void setKeyboardHandler(TQWSKeyboardHandler* kh);
+#endif
+    TQWSWindow *windowAt( const TQPoint&amp; pos );
+
+    // For debugging only at this time
+    const TQPtrList&lt;TQWSWindow&gt; &amp;clientWindows() { return windows; }
+
+    void openMouse();
+    void closeMouse();
+#ifndef TQT_NO_QWS_KEYBOARD
+    void openKeyboard();
+    void closeKeyboard();
+#endif
+
+    static void setScreenSaver(TQWSScreenSaver*);
+    static void setScreenSaverIntervals(int* ms);
+    static void setScreenSaverInterval(int);
+    static bool screenSaverActive();
+    static void screenSaverActivate(bool);
+
+    // the following are internal.
+    void refresh();
+    void refresh(TQRegion &amp;);
+
+    void enablePainting(bool);
+    static void processEventQueue();
+    static TQPtrList&lt;TQWSInternalWindowInfo&gt; * windowList();
+
+    void sendPropertyNotifyEvent( int property, int state );
+#ifndef TQT_NO_QWS_PROPERTIES
+    TQWSPropertyManager *manager() {
+	return &amp;propertyManager;
+    }
+#endif
+    
+    static TQPoint mousePosition;
+
+    static void startup( int flags );
+    static void closedown();
+
+    static void beginDisplayReconfigure();
+    static void endDisplayReconfigure();
+
+#ifndef TQT_NO_QWS_CURSOR
+    static void setCursorVisible( bool );
+    static bool isCursorVisible();
+#endif
+
+    enum WindowEvent { Create=0x0001, Destroy=0x0002, Hide=0x0004, Show=0x0008,
+		       Raise=0x0010, Lower=0x0020, Geometry=0x0040, Active = 0x0080,
+		       Name=0x0100 };
+
+signals:
+    void windowEvent( TQWSWindow *w, TQWSServer::WindowEvent e );
+
+#ifndef TQT_NO_COP
+    void newChannel( const TQString&amp; channel);
+    void removedChannel(const TQString&amp; channel);
+
+#endif    
+private:
+#ifndef TQT_NO_COP
+    static void sendTQCopEvent( TQWSClient *c, const TQCString &amp;ch,
+			       const TQCString &amp;msg, const TQByteArray &amp;data,
+			       bool response = false );
+#endif
+    void move_region( const TQWSRegionMoveCommand * );
+    void set_altitude( const TQWSChangeAltitudeCommand * );
+    void request_focus( const TQWSRequestFocusCommand * );
+    void request_region( int, TQRegion );
+    void destroy_region( const TQWSRegionDestroyCommand * );
+    void name_region( const TQWSRegionNameCommand * );
+    void set_identity( const TQWSIdentifyCommand * );
+#ifndef TQT_NO_QWS_IM
+    void set_micro_focus( const TQWSSetMicroFocusCommand * );
+    void reset_im( const TQWSResetIMCommand * );
+    static void sendKeyEventUnfiltered(int unicode, int keycode, 
+				       int modifiers, bool isPress,
+				       bool autoRepeat);
+
+#endif
+    static void emergency_cleanup();
+
+    static TQColor *bgColor;
+    static TQImage *bgImage;
+
+    void sendMaxWindowRectEvents();
+#ifndef TQT_NO_QWS_MULTIPROCESS
+    void newConnection( int socket );
+#endif
+    void invokeIdentify( const TQWSIdentifyCommand *cmd, TQWSClient *client );
+    void invokeCreate( TQWSCreateCommand *cmd, TQWSClient *client );
+    void invokeRegionName( const TQWSRegionNameCommand *cmd, TQWSClient *client );
+    void invokeRegion( TQWSRegionCommand *cmd, TQWSClient *client );
+    void invokeRegionMove( const TQWSRegionMoveCommand *cmd, TQWSClient *client );
+    void invokeRegionDestroy( const TQWSRegionDestroyCommand *cmd, TQWSClient *client );
+    void invokeSetAltitude( const TQWSChangeAltitudeCommand *cmd, TQWSClient *client );
+#ifndef TQT_NO_QWS_PROPERTIES
+    void invokeAddProperty( TQWSAddPropertyCommand *cmd );
+    void invokeSetProperty( TQWSSetPropertyCommand *cmd );
+    void invokeRemoveProperty( TQWSRemovePropertyCommand *cmd );
+    void invokeGetProperty( TQWSGetPropertyCommand *cmd, TQWSClient *client );
+#endif //TQT_NO_QWS_PROPERTIES
+    void invokeSetSelectionOwner( TQWSSetSelectionOwnerCommand *cmd );
+    void invokeConvertSelection( TQWSConvertSelectionCommand *cmd );
+    void invokeSetFocus( const TQWSRequestFocusCommand *cmd, TQWSClient *client );
+
+    void initIO();
+    void setFocus( TQWSWindow*, bool gain );
+#ifndef TQT_NO_QWS_CURSOR
+    void invokeDefineCursor( TQWSDefineCursorCommand *cmd, TQWSClient *client );
+    void invokeSelectCursor( TQWSSelectCursorCommand *cmd, TQWSClient *client );
+#endif
+    void invokeGrabMouse( TQWSGrabMouseCommand *cmd, TQWSClient *client );
+    void invokeGrabKeyboard( TQWSGrabKeyboardCommand *cmd, TQWSClient *client );
+#ifndef TQT_NO_SOUND
+    void invokePlaySound( TQWSPlaySoundCommand *cmd, TQWSClient *client );
+#endif
+#ifndef TQT_NO_COP
+    void invokeRegisterChannel( TQWSQCopRegisterChannelCommand *cmd,
+				TQWSClient *client );
+    void invokeTQCopSend( TQWSQCopSendCommand *cmd, TQWSClient *client );
+#endif
+    void invokeRepaintRegion( TQWSRepaintRegionCommand *cmd, 
+			      TQWSClient *client );
+#ifndef TQT_NO_QWS_IM
+        void invokeSetMicroFocus( const TQWSSetMicroFocusCommand *cmd,
+                                TQWSClient *client );
+        void invokeResetIM( const TQWSResetIMCommand *cmd,
+                                TQWSClient *client );
+#endif
+
+    TQWSMouseHandler* newMouseHandler(const TQString&amp; spec);
+    void openDisplay();
+    void closeDisplay();
+
+    void showCursor();
+    void hideCursor();
+    void initializeCursor();
+    void paintServerRegion();
+    void paintBackground( const TQRegion &amp; );
+    void clearRegion( const TQRegion &amp;r, const TQColor &amp;c );
+    void refreshBackground();
+    void resetGfx();
+
+private slots:
+#ifndef TQT_NO_QWS_MULTIPROCESS
+    void clientClosed();
+    void doClient();
+    void deleteWindowsLater();
+#endif
+
+    void screenSaverWake();
+    void screenSaverSleep();
+    void screenSaverTimeout();
+
+private:
+    void disconnectClient( TQWSClient * );
+    void screenSave(int level);
+    void doClient( TQWSClient * );
+    typedef TQMapIterator&lt;int,TQWSClient*&gt; ClientIterator;
+    typedef TQMap&lt;int,TQWSClient*&gt; ClientMap;
+    void releaseMouse(TQWSWindow* w);
+    void releaseKeyboard(TQWSWindow* w);
+    void updateClientCursorPos();
+
+    uchar* sharedram;
+    int ramlen;
+
+    TQGfx *gfx;
+
+    ClientMap client;
+#ifndef TQT_NO_QWS_PROPERTIES
+    TQWSPropertyManager propertyManager;
+#endif
+    struct SelectionOwner {
+	int windowid;
+	struct Time {
+	    void set( int h, int m, int s, int s2 ) {
+		hour = h; minute = m; sec = s; ms = s2;
+	    }
+	    int hour, minute, sec, ms;
+	} time;
+    } selectionOwner;
+    TQTime timer;
+    TQWSServerData* d;
+    int* screensaverinterval;
+
+    TQWSWindow *focusw;
+    TQWSWindow *mouseGrabber;
+    bool mouseGrabbing;
+    int swidth, sheight, sdepth;
+#ifndef TQT_NO_QWS_CURSOR
+    bool haveviscurs;
+    TQWSCursor *cursor;	    // cursor currently shown
+    TQWSCursor *nextCursor;  // cursor to show once grabbing is off
+#endif
+    TQRegion screenRegion;   // the entire display region
+    TQRegion serverRegion;
+    TQRegion dirtyBackground;
+    bool disablePainting;
+    TQPtrList&lt;TQWSMouseHandler&gt; mousehandlers;
+#ifndef TQT_NO_QWS_KEYBOARD
+    TQPtrList&lt;TQWSKeyboardHandler&gt; keyboardhandlers;
+#endif
+
+    TQPtrList&lt;TQWSCommandStruct&gt; commandQueue;
+    TQWSRegionManager *rgnMan;
+
+    // Window management
+    TQPtrList&lt;TQWSWindow&gt; windows; // first=topmost
+    TQWSWindow* newWindow(int id, TQWSClient* client);
+    TQWSWindow* findWindow(int windowid, TQWSClient* client);
+    void moveWindowRegion(TQWSWindow*, int dx, int dy );
+    TQRegion setWindowRegion(TQWSWindow*, TQRegion r );
+    void raiseWindow( TQWSWindow *, int = 0);
+    void lowerWindow( TQWSWindow *, int = -1);
+    void exposeRegion( TQRegion , int index = 0 );
+    void notifyModified( TQWSWindow *active = 0 );
+    void syncRegions( TQWSWindow *active = 0 );
+
+    void setCursor(TQWSCursor *curs);
+
+    // multimedia
+#ifndef TQT_NO_SOUND
+    TQWSSoundServer *soundserver;
+#endif
+#ifndef TQT_NO_COP
+    TQMap&lt;TQString, TQPtrList&lt;TQWSClient&gt; &gt; channels;
+#endif
+#ifndef TQT_NO_QWS_IM
+    bool microF;
+    int microX;
+    int microY;
+#endif
+};
+
+extern TQWSServer *qwsServer; //there can be only one
+
+
+#ifndef TQT_NO_QWS_IM
+    class TQWSInputMethod
+    {
+    public:
+	TQWSInputMethod();
+	virtual ~TQWSInputMethod();
+	virtual bool filter(int unicode, int keycode, int modifiers, 
+			    bool isPress, bool autoRepeat)=0;
+	virtual void reset();
+	virtual void setMicroFocus( int x, int y );
+	virtual void setFont( const TQFont&amp; );
+    protected:
+	void sendIMEvent( TQWSServer::IMState, const TQString&amp; txt, int cpos, int selLen = 0 );
+	//void sendKeyEvent( int unicode, int keycode, int modifiers, 
+	//		    bool isPress, bool autoRepeat);
+    };
+
+inline void TQWSInputMethod::sendIMEvent( TQWSServer::IMState state, const TQString &amp;txt, int cpos, int selLen )
+{
+    qwsServer-&gt;sendIMEvent( state, txt, cpos, selLen );
+
+}
+
+
+#endif
+
+
+
+
+/*********************************************************************
+ *
+ * Class: TQWSClient
+ *
+ *********************************************************************/
+
+struct TQWSMouseEvent;
+
+typedef TQMap&lt;int, TQWSCursor*&gt; TQWSCursorMap;
+
+class TQWSClient : public TQObject
+{
+    TQ_OBJECT
+public:
+    TQWSClient( TQObject* parent, int socket, int id );
+    ~TQWSClient();
+
+    int socket() const;
+
+    void setIdentity(const TQString&amp;);
+    TQString identity() const { return id; }
+
+    void sendEvent( TQWSEvent* event );
+    void sendConnectedEvent( const char *display_spec );
+    void sendMaxWindowRectEvent();
+    void sendRegionModifyEvent( int winid, TQRegion exposed, bool ack );
+    void sendFocusEvent( int winid, bool get );
+    void sendPropertyNotifyEvent( int property, int state );
+    void sendPropertyReplyEvent( int property, int len, char *data );
+    void sendSelectionClearEvent( int windowid );
+    void sendSelectionRequestEvent( TQWSConvertSelectionCommand *cmd, int windowid );
+    TQWSCommand* readMoreCommand();
+
+    int clientId() const { return cid; }
+
+    TQWSCursorMap cursors;	// cursors defined by this client
+signals:
+    void connectionClosed();
+    void readyRead();
+private slots:
+    void closeHandler();
+    void errorHandler( int );
+private:
+    int s; // XXX csocket-&gt;d-&gt;socket-&gt;socket() is this value
+#ifndef TQT_NO_QWS_MULTIPROCESS
+    TQWSSocket *csocket;
+#endif
+    TQWSCommand* command;
+    uint isClosed : 1;
+    TQString id;
+    int cid;
+};
+
+#endif // TQWINDOWSYSTEM_QWS_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

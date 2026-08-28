@@ -50,7 +50,7 @@
 #include <config.h>
 #endif
 
-#include <kconfigbase.h>
+#include "kconfigbase.h"
 
 /** 
 * KDE Configuration entries

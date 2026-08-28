@@ -81,7 +81,7 @@ About::About(QWidget *parent) : QDialog(parent, "About kreversi", TRUE) {
 
   QPushButton *b_ok = new QPushButton(locale->translate("Close"), this);
   b_ok->setDefault(TRUE);
-  if(style() == MotifStyle) 
+  if(style().inherits("TQMotifStyle")) 
     b_ok->setFixedSize(b_ok->sizeHint().width() + 10, // for 
 		       b_ok->sizeHint().height() + 10);
   else

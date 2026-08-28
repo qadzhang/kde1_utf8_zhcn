@@ -51,6 +51,7 @@ from the X Consortium.
 */
 
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 #include <X11/Xfuncs.h>
 #include <X11/Xmd.h>
 #include <X11/Xauth.h>

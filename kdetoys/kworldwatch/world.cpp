@@ -279,7 +279,7 @@ void AboutBox::paintEvent(QPaintEvent *)
   p.setFont(QFont("Courier", 14, QFont::Bold));
   p.setBackgroundMode(TransparentMode);
   p.drawText(0,0,width(),3*height()/4, AlignCenter, 
-    klocale->translate("The KDE World Wide Watch\n\nwritten by Matthias H�lzer\n(hoelzer@physik.uni-wuerzburg.de)"));
+    klocale->translate("The KDE World Wide Watch\n\nwritten by Matthias H�lzer\n(hoelzer@physik.uni-wuerzburg.de)"));
 }
 
 
@@ -513,7 +513,7 @@ void World::updateMap()
     }
   else
     {
-      cleanMap.setMask(NULL);
+      cleanMap.setMask( (const TQBitmap&)TQBitmap() );  /* TQt3 迁移：setMask(NULL)→空位图 */
       map = cleanMap;
     }
 

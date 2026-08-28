@@ -1,0 +1,1 @@
+../src/widgets/ntqgroupbox.h

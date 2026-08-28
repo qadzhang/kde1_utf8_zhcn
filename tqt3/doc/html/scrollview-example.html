@@ -1,0 +1,493 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/scrollview/scrollview.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Scrollview</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Scrollview</h1>
+
+   
+<p> 
+This example shows how to use TQt's scrollview. This is a widget
+optimized for very large contents. 
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/scrollview.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qscrollview-h.html">ntqscrollview.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qmenubar-h.html">ntqmenubar.h</a>&gt;
+#include &lt;<a href="qpopupmenu-h.html">ntqpopupmenu.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qlayout-h.html">ntqlayout.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qmultilineedit-h.html">ntqmultilineedit.h</a>&gt;
+#include &lt;<a href="qsizegrip-h.html">ntqsizegrip.h</a>&gt;
+#include &lt;stdlib.h&gt;
+
+
+static const int style_id       = 0x1000;
+static const int lw_id          = 0x2000;
+static const int mlw_id         = 0x4000;
+static const int mw_id          = 0x8000;
+static const int max_lw         = 16;
+static const int max_mlw        = 5;
+static const int max_mw         = 10;
+
+
+class BigShrinker : public <a href="ntqframe.html">TQFrame</a> {
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    BigShrinker(TQWidget* parent) :
+        <a href="ntqframe.html">TQFrame</a>(parent)
+    {
+        setFrameStyle(TQFrame::Box|TQFrame::Sunken);
+        int h=35;
+        int b=0;
+        for (int y=0; y&lt;2000-h; y+=h+10) {
+            if (y == 0) {
+                <a href="ntqbutton.html">TQButton</a>* q=new <a href="ntqpushbutton.html">TQPushButton</a>("Quit", this);
+                connect(q, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()));
+            } else {
+                <a href="ntqstring.html">TQString</a> str;
+                if ( b &gt; 0 ) {
+<a name="x656"></a>                    str.<a href="ntqstring.html#sprintf">sprintf</a>("Button %d", b++);
+                } else {
+                    str = "I'm shrinking!";
+                    ++b;
+                }
+                (new <a href="ntqpushbutton.html">TQPushButton</a>(str, this))-&gt;move(y/2,y);
+            }
+        }
+        resize(1000,2000);
+
+        startTimer(250);
+    }
+
+    void timerEvent(TQTimerEvent*)
+    {
+        int w=width();
+        int h=height();
+        if ( w &gt; 50 ) w -= 1;
+        if ( h &gt; 50 ) h -= 2;
+        resize(w,h);
+    }
+
+    void mouseReleaseEvent(TQMouseEvent* e)
+    {
+        emit clicked(e-&gt;x(), e-&gt;y());
+    }
+
+signals:
+    void clicked(int,int);
+};
+
+class BigMatrix : public <a href="ntqscrollview.html">TQScrollView</a> {
+    <a href="ntqmultilineedit.html">TQMultiLineEdit</a> *dragging;
+public:
+    BigMatrix(TQWidget* parent) :
+        <a href="ntqscrollview.html">TQScrollView</a>(parent,"matrix", WStaticContents),
+        bg("bg.ppm")
+    {
+<a name="x640"></a>        bg.<a href="ntqpixmap.html#load">load</a>("bg.ppm");
+        resizeContents(400000,300000);
+
+        dragging = 0;
+    }
+
+    void viewportMousePressEvent(TQMouseEvent* e)
+    {
+        int x, y;
+        viewportToContents( e-&gt;x(),  e-&gt;y(), x, y );
+        dragging = new <a href="ntqmultilineedit.html">TQMultiLineEdit</a>(viewport(),"Another");
+<a name="x657"></a>        dragging-&gt;<a href="ntqtextedit.html#setText">setText</a>("Thanks!");
+<a name="x650"></a>        dragging-&gt;<a href="ntqwidget.html#resize">resize</a>(100,100);
+        addChild(dragging, x, y);
+        showChild(dragging);
+    }
+
+    void viewportMouseReleaseEvent(TQMouseEvent*)
+    {
+        dragging = 0;
+    }
+
+    void viewportMouseMoveEvent(TQMouseEvent* e)
+    {
+        if ( dragging ) {
+            int mx, my;
+            viewportToContents( e-&gt;x(),  e-&gt;y(), mx, my );
+            int cx = childX(dragging);
+            int cy = childY(dragging);
+            int w = mx - cx + 1;
+            int h = my - cy + 1;
+            <a href="ntqstring.html">TQString</a> msg;
+            msg.<a href="ntqstring.html#sprintf">sprintf</a>("at (%d,%d) %d by %d",cx,cy,w,h);
+            dragging-&gt;<a href="ntqtextedit.html#setText">setText</a>(msg);
+            dragging-&gt;<a href="ntqwidget.html#resize">resize</a>(w,h);
+        }
+    }
+
+protected:
+    void drawContents(TQPainter* p, int cx, int cy, int cw, int ch)
+    {
+        // The Background
+<a name="x639"></a>        if ( !bg.<a href="ntqpixmap.html#isNull">isNull</a>() ) {
+<a name="x638"></a>            int rowheight=bg.<a href="ntqpixmap.html#height">height</a>();
+            int toprow=cy/rowheight;
+            int bottomrow=(cy+ch+rowheight-1)/rowheight;
+<a name="x641"></a>            int colwidth=bg.<a href="ntqpixmap.html#width">width</a>();
+            int leftcol=cx/colwidth;
+            int rightcol=(cx+cw+colwidth-1)/colwidth;
+            for (int r=toprow; r&lt;=bottomrow; r++) {
+                int py=r*rowheight;
+                for (int c=leftcol; c&lt;=rightcol; c++) {
+                    int px=c*colwidth;
+                    p-&gt;drawPixmap(px, py, bg);
+                }
+            }
+        } else {
+            p-&gt;fillRect(cx, cy, cw, ch, TQColor(240,222,208));
+        }
+
+        // The Numbers
+        {
+            <a href="ntqfontmetrics.html">TQFontMetrics</a> fm=p-&gt;fontMetrics();
+<a name="x620"></a>            int rowheight=fm.<a href="ntqfontmetrics.html#lineSpacing">lineSpacing</a>();
+            int toprow=cy/rowheight;
+            int bottomrow=(cy+ch+rowheight-1)/rowheight;
+<a name="x621"></a>            int colwidth=fm.<a href="ntqfontmetrics.html#width">width</a>("00000,000000 ")+3;
+            int leftcol=cx/colwidth;
+            int rightcol=(cx+cw+colwidth-1)/colwidth;
+            <a href="ntqstring.html">TQString</a> str;
+            for (int r=toprow; r&lt;=bottomrow; r++) {
+                int py=r*rowheight;
+                for (int c=leftcol; c&lt;=rightcol; c++) {
+                    int px=c*colwidth;
+                    str.<a href="ntqstring.html#sprintf">sprintf</a>("%d,%d",c,r);
+<a name="x619"></a>                    p-&gt;drawText(px+3, py+fm.<a href="ntqfontmetrics.html#ascent">ascent</a>(), str);
+                }
+            }
+
+            // The Big Hint
+            if (leftcol&lt;10 &amp;&amp; toprow&lt;5) {
+                p-&gt;setFont(TQFont("Charter",30));
+                p-&gt;setPen(red);
+                <a href="ntqstring.html">TQString</a> text;
+                text.<a href="ntqstring.html#sprintf">sprintf</a>("HINT:  Look at %d,%d",215000/colwidth,115000/rowheight);
+                p-&gt;drawText(100,50,text);
+            }
+        }
+
+        // The Big X
+        {
+            if (cx+cw&gt;200000 &amp;&amp; cy+ch&gt;100000 &amp;&amp; cx&lt;230000 &amp;&amp; cy&lt;130000) {
+                // Note that some X server cannot even handle co-ordinates
+                // beyond about 4000, so you might not see this.
+                p-&gt;drawLine(200000,100000,229999,129999);
+                p-&gt;drawLine(229999,100000,200000,129999);
+
+                // X marks the spot!
+                p-&gt;setFont(TQFont("Charter",100));
+                p-&gt;setPen(blue);
+                p-&gt;drawText(215000-500,115000-100,1000,200,AlignCenter,"YOU WIN!!!!!");
+            }
+        }
+    }
+
+private:
+    <a href="ntqpixmap.html">TQPixmap</a> bg;
+};
+
+class ScrollViewExample : public <a href="ntqwidget.html">TQWidget</a> {
+    TQ_OBJECT
+
+public:
+    ScrollViewExample(int technique, TQWidget* parent=0, const char* name=0) :
+        <a href="ntqwidget.html">TQWidget</a>(parent,name)
+    {
+        <a href="ntqmenubar.html">TQMenuBar</a>* menubar = new <a href="ntqmenubar.html">TQMenuBar</a>(this);
+        <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( menubar );
+
+        <a href="ntqpopupmenu.html">TQPopupMenu</a>* file = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menubar );
+        <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( file );
+<a name="x634"></a>        menubar-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;File", file );
+        file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Quit", tqApp,  TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+
+        vp_options = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menubar );
+        <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( vp_options );
+<a name="x644"></a>        vp_options-&gt;<a href="ntqpopupmenu.html#setCheckable">setCheckable</a>( true );
+        menubar-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;ScrollView", vp_options );
+<a name="x642"></a>        connect( vp_options, TQ_SIGNAL(<a href="ntqpopupmenu.html#activated">activated</a>(int)),
+            this, TQ_SLOT(doVPMenuItem(int)) );
+
+        vauto_id = vp_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Vertical Auto" );
+        vaoff_id = vp_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Vertical AlwaysOff" );
+        vaon_id = vp_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Vertical AlwaysOn" );
+<a name="x635"></a>        vp_options-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        hauto_id = vp_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Horizontal Auto" );
+        haoff_id = vp_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Horizontal AlwaysOff" );
+        haon_id = vp_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Horizontal AlwaysOn" );
+        vp_options-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        corn_id = vp_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "cornerWidget" );
+
+        if (technique == 1) {
+            vp = new <a href="ntqscrollview.html">TQScrollView</a>(this);
+<a name="x655"></a>            BigShrinker *bs = new BigShrinker(0);//(vp-&gt;<a href="ntqscrollview.html#viewport">viewport</a>());
+<a name="x645"></a>            vp-&gt;<a href="ntqscrollview.html#addChild">addChild</a>(bs);
+<a name="x659"></a>            bs-&gt;<a href="ntqwidget.html#setAcceptDrops">setAcceptDrops</a>(true);
+            TQObject::<a href="ntqobject.html#connect">connect</a>(bs, TQ_SIGNAL(clicked(int,int)),
+<a name="x646"></a>                            vp, TQ_SLOT(<a href="ntqscrollview.html#center">center</a>(int,int)));
+        } else {
+            vp = new BigMatrix(this);
+            if ( technique == 3 )
+<a name="x648"></a>                vp-&gt;<a href="ntqscrollview.html#enableClipper">enableClipper</a>(true);
+            srand(1);
+            for (int i=0; i&lt;30; i++) {
+                <a href="ntqmultilineedit.html">TQMultiLineEdit</a> *l = new <a href="ntqmultilineedit.html">TQMultiLineEdit</a>(vp-&gt;<a href="ntqscrollview.html#viewport">viewport</a>(),"First");
+                l-&gt;<a href="ntqtextedit.html#setText">setText</a>("Drag out more of these.");
+                l-&gt;<a href="ntqwidget.html#resize">resize</a>(100,100);
+                vp-&gt;<a href="ntqscrollview.html#addChild">addChild</a>(l, rand()%800, rand()%10000);
+            }
+            vp-&gt;<a href="ntqscrollview.html#viewport">viewport</a>()-&gt;setBackgroundMode(NoBackground);
+        }
+
+        f_options = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menubar );
+        <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( f_options );
+        f_options-&gt;<a href="ntqpopupmenu.html#setCheckable">setCheckable</a>( true );
+        menubar-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "F&amp;rame", f_options );
+        connect( f_options, TQ_SIGNAL(<a href="ntqpopupmenu.html#activated">activated</a>(int)),
+            this, TQ_SLOT(doFMenuItem(int)) );
+
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "No Frame", style_id );
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Box", style_id|TQFrame::Box );
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Panel", style_id|TQFrame::Panel );
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "WinPanel", style_id|TQFrame::WinPanel );
+        f_options-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Plain", style_id|TQFrame::Plain );
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Raised", style_id|TQFrame::Raised );
+<a name="x633"></a>        f_laststyle = f_options-&gt;<a href="ntqmenudata.html#indexOf">indexOf</a>(
+            f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Sunken", style_id|TQFrame::Sunken ));
+        f_options-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+        lw_options = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menubar );
+        <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( lw_options );
+        lw_options-&gt;<a href="ntqpopupmenu.html#setCheckable">setCheckable</a>( true );
+        for (int lw = 1; lw &lt;= max_lw; lw++) {
+            <a href="ntqstring.html">TQString</a> str;
+            str.<a href="ntqstring.html#sprintf">sprintf</a>("%d Pixels", lw);
+            lw_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( str, lw_id | lw );
+        }
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Line Width", lw_options );
+        connect( lw_options, TQ_SIGNAL(<a href="ntqpopupmenu.html#activated">activated</a>(int)),
+            this, TQ_SLOT(doFMenuItem(int)) );
+        mlw_options = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menubar );
+        <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( mlw_options );
+        mlw_options-&gt;<a href="ntqpopupmenu.html#setCheckable">setCheckable</a>( true );
+        for (int mlw = 0; mlw &lt;= max_mlw; mlw++) {
+            <a href="ntqstring.html">TQString</a> str;
+            str.<a href="ntqstring.html#sprintf">sprintf</a>("%d Pixels", mlw);
+            mlw_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( str, mlw_id | mlw );
+        }
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Midline Width", mlw_options );
+        connect( mlw_options, TQ_SIGNAL(<a href="ntqpopupmenu.html#activated">activated</a>(int)),
+            this, TQ_SLOT(doFMenuItem(int)) );
+        mw_options = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menubar );
+        <a href="ntqapplication.html#TQ_CHECK_PTR">TQ_CHECK_PTR</a>( mw_options );
+        mw_options-&gt;<a href="ntqpopupmenu.html#setCheckable">setCheckable</a>( true );
+        for (int mw = 0; mw &lt;= max_mw; mw++) {
+            <a href="ntqstring.html">TQString</a> str;
+            str.<a href="ntqstring.html#sprintf">sprintf</a>("%d Pixels", mw);
+            mw_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( str, mw_id | mw );
+        }
+        f_options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Margin Width", mw_options );
+        connect( mw_options, TQ_SIGNAL(<a href="ntqpopupmenu.html#activated">activated</a>(int)),
+            this, TQ_SLOT(doFMenuItem(int)) );
+
+        setVPMenuItems();
+        setFMenuItems();
+
+        <a href="qvboxlayout.html">TQVBoxLayout</a>* vbox = new <a href="qvboxlayout.html">TQVBoxLayout</a>(this);
+<a name="x631"></a>        vbox-&gt;<a href="ntqlayout.html#setMenuBar">setMenuBar</a>(menubar);
+<a name="x632"></a>        menubar-&gt;<a href="ntqmenubar.html#setSeparator">setSeparator</a>(TQMenuBar::InWindowsStyle);
+        vbox-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>(vp);
+<a name="x630"></a>        vbox-&gt;<a href="ntqlayout.html#activate">activate</a>();
+
+        corner = new <a href="ntqsizegrip.html">TQSizeGrip</a>(this);
+<a name="x658"></a>        corner-&gt;<a href="ntqwidget.html#hide">hide</a>();
+    }
+
+private slots:
+    void doVPMenuItem(int id)
+    {
+        if (id == vauto_id ) {
+<a name="x653"></a>            vp-&gt;<a href="ntqscrollview.html#setVScrollBarMode">setVScrollBarMode</a>(TQScrollView::Auto);
+        } else if (id == vaoff_id) {
+            vp-&gt;<a href="ntqscrollview.html#setVScrollBarMode">setVScrollBarMode</a>(TQScrollView::AlwaysOff);
+        } else if (id == vaon_id) {
+            vp-&gt;<a href="ntqscrollview.html#setVScrollBarMode">setVScrollBarMode</a>(TQScrollView::AlwaysOn);
+        } else if (id == hauto_id) {
+<a name="x652"></a>            vp-&gt;<a href="ntqscrollview.html#setHScrollBarMode">setHScrollBarMode</a>(TQScrollView::Auto);
+        } else if (id == haoff_id) {
+            vp-&gt;<a href="ntqscrollview.html#setHScrollBarMode">setHScrollBarMode</a>(TQScrollView::AlwaysOff);
+        } else if (id == haon_id) {
+            vp-&gt;<a href="ntqscrollview.html#setHScrollBarMode">setHScrollBarMode</a>(TQScrollView::AlwaysOn);
+        } else if (id == corn_id) {
+<a name="x647"></a>            bool corn = !vp-&gt;<a href="ntqscrollview.html#cornerWidget">cornerWidget</a>();
+<a name="x651"></a>            vp-&gt;<a href="ntqscrollview.html#setCornerWidget">setCornerWidget</a>(corn ? corner : 0);
+        } else {
+            return; // Not for us to process.
+        }
+        setVPMenuItems();
+    }
+
+    void setVPMenuItems()
+    {
+<a name="x654"></a>        TQScrollView::ScrollBarMode vm = vp-&gt;<a href="ntqscrollview.html#vScrollBarMode">vScrollBarMode</a>();
+<a name="x636"></a>        vp_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( vauto_id, vm == TQScrollView::Auto );
+        vp_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( vaoff_id, vm == TQScrollView::AlwaysOff );
+        vp_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( vaon_id, vm == TQScrollView::AlwaysOn );
+
+<a name="x649"></a>        TQScrollView::ScrollBarMode hm = vp-&gt;<a href="ntqscrollview.html#hScrollBarMode">hScrollBarMode</a>();
+        vp_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( hauto_id, hm == TQScrollView::Auto );
+        vp_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( haoff_id, hm == TQScrollView::AlwaysOff );
+        vp_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( haon_id, hm == TQScrollView::AlwaysOn );
+
+        vp_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( corn_id, !!vp-&gt;<a href="ntqscrollview.html#cornerWidget">cornerWidget</a>() );
+    }
+
+    void doFMenuItem(int id)
+    {
+        if (id &amp; style_id) {
+            int sty;
+
+            if (id == style_id) {
+                sty = 0;
+            } else if (id &amp; TQFrame::MShape) {
+<a name="x622"></a>                sty = vp-&gt;<a href="ntqframe.html#frameStyle">frameStyle</a>()&amp;TQFrame::MShadow;
+                sty = (sty ? sty : <a href="ntqframe.html">TQFrame</a>::Plain) | (id&amp;TQFrame::MShape);
+            } else {
+                sty = vp-&gt;<a href="ntqframe.html#frameStyle">frameStyle</a>()&amp;TQFrame::MShape;
+                sty = (sty ? sty : <a href="ntqframe.html">TQFrame</a>::Box) | (id&amp;TQFrame::MShadow);
+            }
+<a name="x626"></a>            vp-&gt;<a href="ntqframe.html#setFrameStyle">setFrameStyle</a>(sty);
+        } else if (id &amp; lw_id) {
+<a name="x627"></a>            vp-&gt;<a href="ntqframe.html#setLineWidth">setLineWidth</a>(id&amp;~lw_id);
+        } else if (id &amp; mlw_id) {
+<a name="x629"></a>            vp-&gt;<a href="ntqframe.html#setMidLineWidth">setMidLineWidth</a>(id&amp;~mlw_id);
+        } else {
+<a name="x628"></a>            vp-&gt;<a href="ntqframe.html#setMargin">setMargin</a>(id&amp;~mw_id);
+        }
+
+<a name="x662"></a>        vp-&gt;<a href="ntqwidget.html#update">update</a>();
+        setFMenuItems();
+    }
+
+    void setFMenuItems()
+    {
+        int sty = vp-&gt;<a href="ntqframe.html#frameStyle">frameStyle</a>();
+
+        f_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( style_id, !sty );
+
+        for (int i=1; i &lt;= f_laststyle; i++) {
+<a name="x643"></a>            int id = f_options-&gt;<a href="ntqpopupmenu.html#idAt">idAt</a>(i);
+            if (id &amp; TQFrame::MShape)
+                f_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( id,
+                    ((id&amp;TQFrame::MShape) == (sty&amp;TQFrame::MShape)) );
+            else
+                f_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( id,
+                    ((id&amp;TQFrame::MShadow) == (sty&amp;TQFrame::MShadow)) );
+        }
+
+        for (int lw=1; lw&lt;=max_lw; lw++)
+<a name="x623"></a>            lw_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( lw_id|lw, vp-&gt;<a href="ntqframe.html#lineWidth">lineWidth</a>() == lw );
+
+        for (int mlw=0; mlw&lt;=max_mlw; mlw++)
+<a name="x625"></a>            mlw_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( mlw_id|mlw, vp-&gt;<a href="ntqframe.html#midLineWidth">midLineWidth</a>() == mlw );
+
+        for (int mw=0; mw&lt;=max_mw; mw++)
+<a name="x624"></a>            mw_options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>( mw_id|mw, vp-&gt;<a href="ntqframe.html#margin">margin</a>() == mw );
+    }
+
+private:
+    <a href="ntqscrollview.html">TQScrollView</a>* vp;
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* vp_options;
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* f_options;
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* lw_options;
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* mlw_options;
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* mw_options;
+    <a href="ntqsizegrip.html">TQSizeGrip</a>* corner;
+
+    int vauto_id, vaoff_id, vaon_id,
+        hauto_id, haoff_id, haon_id,
+        corn_id;
+
+    int f_laststyle;
+};
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    ScrollViewExample ve1(1,0,"ve1");
+    ScrollViewExample ve2(2,0,"ve2");
+    ScrollViewExample ve3(3,0,"ve3");
+    ve1.<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Scrollviews");
+    ve1.<a href="ntqwidget.html#show">show</a>();
+    ve2.<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Scrollviews");
+    ve2.<a href="ntqwidget.html#show">show</a>();
+    ve3.<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Scrollviews");
+    ve3.<a href="ntqwidget.html#show">show</a>();
+
+    TQObject::<a href="ntqobject.html#connect">connect</a>(tqApp, TQ_SIGNAL(<a href="ntqapplication.html#lastWindowClosed">lastWindowClosed</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()));
+
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+#include "scrollview.moc"
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -129,11 +129,11 @@ void KHelpMain::createMenu()
     KStdAccel stdAccel;
 	fileMenu = new QPopupMenu;
 	CHECK_PTR( fileMenu );
-	fileMenu->insertItem( klocale->translate("&New Help Window"), this,
-                        SLOT( slotCloneWindow() ), stdAccel.openNew() );
+	{ int k1id = fileMenu->insertItem( klocale->translate("&New Help Window"), this, SLOT(slotCloneWindow()) );
+	  fileMenu->setAccel( stdAccel.openNew(), k1id ); }  /* TQt3 迁移 */
 	fileMenu->insertSeparator();
-	fileMenu->insertItem( klocale->translate("&Open File..."), helpwin,
-                        SLOT(slotOpenFile()), stdAccel.open() );
+	{ int k1id = fileMenu->insertItem( klocale->translate("&Open File..."), helpwin, SLOT(slotOpenFile()) );
+	  fileMenu->setAccel( stdAccel.open(), k1id ); }  /* TQt3 迁移 */
 //	fileMenu->insertItem( klocale->translate("Open UR&L..."), helpwin,
 //                        SLOT(slotOpenURL()) );
 	fileMenu->insertItem( klocale->translate("&Reload"), helpwin,
@@ -142,22 +142,22 @@ void KHelpMain::createMenu()
 	fileMenu->insertItem( klocale->translate("&Search"), helpwin,
                         SLOT(slotSearch()) );
 	fileMenu->insertSeparator();
-	fileMenu->insertItem( klocale->translate("&Print..."), helpwin,
-                        SLOT(slotPrint()), stdAccel.print() );
+	{ int k1id = fileMenu->insertItem( klocale->translate("&Print..."), helpwin, SLOT(slotPrint()) );
+	  fileMenu->setAccel( stdAccel.print(), k1id ); }  /* TQt3 迁移 */
 	fileMenu->insertSeparator();
-	idClose = fileMenu->insertItem(klocale->translate("&Close"),this,
-                        SLOT(slotClose()), stdAccel.close()); // CC :!!!!!
-	fileMenu->insertItem( klocale->translate("&Quit"), this,
-                        SLOT(slotQuit()), stdAccel.quit() );
+	idClose = fileMenu->insertItem(klocale->translate("&Close"), this, SLOT(slotClose()));
+	fileMenu->setAccel( stdAccel.close(), idClose ); // CC :!!!!! /* TQt3 迁移 */
+	{ int k1id = fileMenu->insertItem( klocale->translate("&Quit"), this, SLOT(slotQuit()) );
+	  fileMenu->setAccel( stdAccel.quit(), k1id ); }  /* TQt3 迁移 */
 
 	editMenu = new QPopupMenu;
 	CHECK_PTR( editMenu );
-	idCopy = editMenu->insertItem(klocale->translate("&Copy"), helpwin,
-                        SLOT(slotCopy()), stdAccel.copy() );
-	editMenu->insertItem(klocale->translate("&Find..."), helpwin,
-                        SLOT(slotFind()), stdAccel.find() );
-	editMenu->insertItem(klocale->translate("Find &next"), helpwin,
-                        SLOT(slotFindNext()), Key_F3 );
+	idCopy = editMenu->insertItem(klocale->translate("&Copy"), helpwin, SLOT(slotCopy()));
+	editMenu->setAccel( stdAccel.copy(), idCopy );  /* TQt3 迁移 */
+	{ int k1id = editMenu->insertItem(klocale->translate("&Find..."), helpwin, SLOT(slotFind()) );
+	  editMenu->setAccel( stdAccel.find(), k1id ); }  /* TQt3 迁移 */
+	{ int k1id = editMenu->insertItem(klocale->translate("Find &next"), helpwin, SLOT(slotFindNext()) );
+	  editMenu->setAccel( Key_F3, k1id ); }  /* TQt3 迁移 */
 
 	gotoMenu = new QPopupMenu;
 	CHECK_PTR( gotoMenu );
@@ -340,7 +340,6 @@ void KHelpMain::readConfig()
 		toolbar->setBarPos(KToolBar::Right);
 	else if ("Floating" == o)
 		toolbar->setBarPos(KToolBar::Floating);
-	else
 		toolbar->setBarPos(KToolBar::Top);
 
 	o = config->readEntry( "ShowStatusBar" );
@@ -368,7 +367,6 @@ void KHelpMain::readConfig()
 		location->setBarPos(KToolBar::Right);
 	else if ("Floating" == o)
 		location->setBarPos(KToolBar::Floating);
-	else
 		location->setBarPos(KToolBar::Top);
 }
 
@@ -675,7 +673,7 @@ void KHelpMain::slotOptionsSave()
 		  config->writeEntry( "ToolBarPos", "Floating");
 		  break;
 		default:
-		  warning("KHelpMain::slotOptionsSave: illegal default in case reached\n");
+		  tqWarning("KHelpMain::slotOptionsSave: illegal default in case reached\n");
 		  break;
 	}
 
@@ -697,7 +695,7 @@ void KHelpMain::slotOptionsSave()
 		  config->writeEntry( "LocationBarPos", "Floating");
 		  break;
 		default:
-		  warning("KHelpMain::slotOptionsSave: illegal default in case reached\n");
+		  tqWarning("KHelpMain::slotOptionsSave: illegal default in case reached\n");
 		  break;
 	}
 
@@ -729,3 +727,4 @@ void KHelpMain::slotLocationEntered()
 {
   helpwin->openURL(location->getLinedText(QLINEDIT_ITEM), LeftButton);
 }
+#include "mainwidget.moc"

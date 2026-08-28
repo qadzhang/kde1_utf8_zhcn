@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/tools/assistant/lib/qassistantclient.cpp:55 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQAssistantClient Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQAssistantClient Class Reference</h1>
+
+<p>The TQAssistantClient class provides a means of using TQt
+Assistant as an application's help tool.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qassistantclient-h.html">ntqassistantclient.h</a>&gt;</tt>
+<p>Inherits <a href="ntqobject.html">TQObject</a>.
+<p><a href="qassistantclient-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQAssistantClient"><b>TQAssistantClient</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;path, TQObject&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#~TQAssistantClient"><b>~TQAssistantClient</b></a> ()</li>
+<li class=fn>bool <a href="#isOpen"><b>isOpen</b></a> () const</li>
+<li class=fn>void <a href="#setArguments"><b>setArguments</b></a> ( const&nbsp;TQStringList&nbsp;&amp;&nbsp;args )</li>
+</ul>
+<h2>Public Slots</h2>
+<ul>
+<li class=fn>virtual void <a href="#openAssistant"><b>openAssistant</b></a> ()</li>
+<li class=fn>virtual void <a href="#closeAssistant"><b>closeAssistant</b></a> ()</li>
+<li class=fn>virtual void <a href="#showPage"><b>showPage</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;page )</li>
+</ul>
+<h2>Signals</h2>
+<ul>
+<li class=fn>void <a href="#assistantOpened"><b>assistantOpened</b></a> ()</li>
+<li class=fn>void <a href="#assistantClosed"><b>assistantClosed</b></a> ()</li>
+<li class=fn>void <a href="#error"><b>error</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;msg )</li>
+</ul>
+<h2>Properties</h2>
+<ul>
+<li class=fn>bool <a href="#open-prop"><b>open</b></a>&nbsp;- whether TQt Assistant is open &nbsp;<em>(read only)</em></li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQAssistantClient class provides a means of using TQt
+Assistant as an application's help tool.
+<p> Using TQt Assistant is simple: Create a TQAssistantClient instance,
+then call <a href="#showPage">showPage</a>() as often as necessary to show your help
+pages. When you call showPage(), TQt Assistant will be launched if
+it isn't already running.
+<p> The TQAssistantClient instance can open (<a href="#openAssistant">openAssistant</a>()) or close
+(<a href="#closeAssistant">closeAssistant</a>()) TQt Assistant whenever required. If TQt Assistant
+is open, <a href="#isOpen">isOpen</a>() returns true.
+<p> One TQAssistantClient instance interacts with one TQt Assistant
+instance, so every time you call openAssistant(), showPage() or
+closeAssistant() they are applied to the particular TQt Assistant
+instance associated with the TQAssistantClient.
+<p> When you call openAssistant() the <a href="#assistantOpened">assistantOpened</a>() signal is
+emitted. Similarly when closeAssistant() is called,
+<a href="#assistantClosed">assistantClosed</a>() is emitted. In either case, if an error occurs,
+<a href="#error">error</a>() is emitted.
+<p> This class is not included in the TQt library itself. To use it you
+must link against <tt>libtqassistantclient.a</tt> (Unix) or <tt>qassistantclient.lib</tt> (Windows), which is built into <tt>INSTALL/lib</tt>
+if you built the TQt tools (<tt>INSTALL</tt> is the directory where TQt is
+installed). If you use qmake, then you can simply add the following
+line to your pro file:
+<p> <pre>
+        LIBS += -ltqassistantclient
+    </pre>
+ 
+<p> See also "Adding Documentation to TQt Assistant" in the <a href="assistant.html">TQt Assistant manual</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQAssistantClient"></a>TQAssistantClient::TQAssistantClient ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;path, <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs an assistant client object. The <em>path</em> specifies the
+path to the TQt Assistant executable. If <em>path</em> is an empty
+string the system path (<tt>%PATH%</tt> or <tt>$PATH</tt>) is used.
+<p> The assistant client object is a child of <em>parent</em> and is called
+<em>name</em>.
+
+<h3 class=fn><a name="~TQAssistantClient"></a>TQAssistantClient::~TQAssistantClient ()
+</h3>
+Destroys the assistant client object and frees up all allocated
+resources.
+
+<h3 class=fn>void <a name="assistantClosed"></a>TQAssistantClient::assistantClosed ()<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted when the connection to TQt Assistant is
+closed. This happens when the user exits TQt Assistant, or when an
+error in the server or client occurs, or if <a href="#closeAssistant">closeAssistant</a>() is
+called.
+
+<h3 class=fn>void <a name="assistantOpened"></a>TQAssistantClient::assistantOpened ()<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted when TQt Assistant is open and the
+client-server communication is set up.
+
+<h3 class=fn>void <a name="closeAssistant"></a>TQAssistantClient::closeAssistant ()<tt> [virtual slot]</tt>
+</h3>
+Use this function to close TQt Assistant.
+<p> <p>See also <a href="#assistantClosed">assistantClosed</a>().
+
+<h3 class=fn>void <a name="error"></a>TQAssistantClient::error ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;msg )<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted if TQt Assistant cannot be started or if an
+error occurs during the initialization of the connection between
+TQt Assistant and the calling application. The <em>msg</em> provides an
+explanation of the error.
+
+<h3 class=fn>bool <a name="isOpen"></a>TQAssistantClient::isOpen () const
+</h3><p>Returns true if TQt Assistant is open; otherwise returns false.
+See the <a href="ntqassistantclient.html#open-prop">"open"</a> property for details.
+<h3 class=fn>void <a name="openAssistant"></a>TQAssistantClient::openAssistant ()<tt> [virtual slot]</tt>
+</h3>
+This function opens TQt Assistant and sets up the client-server
+communiction between the application and TQt Assistant. If it is
+already open, this function does nothing. If an error occurs,
+<a href="#error">error</a>() is emitted.
+<p> <p>See also <a href="#assistantOpened">assistantOpened</a>().
+
+<h3 class=fn>void <a name="setArguments"></a>TQAssistantClient::setArguments ( const&nbsp;<a href="ntqstringlist.html">TQStringList</a>&nbsp;&amp;&nbsp;args )
+</h3>
+Sets the command line arguments used when TQt Assistant is
+started to <em>args</em>.
+
+<h3 class=fn>void <a name="showPage"></a>TQAssistantClient::showPage ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;page )<tt> [virtual slot]</tt>
+</h3>
+Call this function to make TQt Assistant show a particular <em>page</em>.
+The <em>page</em> is a filename (e.g. <tt>myhelpfile.html</tt>). See "Adding
+Documentation to TQt Assistant" in the <a href="assistant.html">TQt
+    Assistant manual</a> for further information.
+<p> If TQt Assistant hasn't been <a href="#openAssistant">opened</a>
+yet, this function will do nothing. You can use <a href="#isOpen">isOpen</a>() to
+determine whether TQt Assistant is up and running, or you can
+connect to the asssistantOpened() signal.
+<p> <p>See also <a href="#open-prop">open</a> and <a href="#assistantOpened">assistantOpened</a>().
+
+<p>Example: <a href="helpsystem-example.html#x2686">helpsystem/mainwindow.cpp</a>.
+<hr><h2>Property Documentation</h2>
+<h3 class=fn>bool <a name="open-prop"></a>open</h3>
+<p>This property holds whether TQt Assistant is open.
+<p>
+<p>Get this property's value with <a href="#isOpen">isOpen</a>().
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

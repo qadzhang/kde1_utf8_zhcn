@@ -282,7 +282,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 	int refPos = fullURL.findRev( '#' );
 	if ( refPos < 0 )
 	{
-	    ref.resize( 0 );
+	    ref.truncate( 0 );
 	    refPos = fullURL.length();
 	}
 	else
@@ -387,7 +387,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 	{
 		busy = true;
 
-		currentURL = fullURL.copy();
+		currentURL = fullURL;
 		if ( ref.length() > 0 )
 		{
 			currentURL += '#';
@@ -431,7 +431,7 @@ int KHelpWindow::openFile( const QString &location )
 		fileName += location.data() + 1;
 	}
 	else
-		fileName = location.copy();
+		fileName = location;
 
 	switch ( detectFileType( fileName ) )
 	{
@@ -440,7 +440,7 @@ int KHelpWindow::openFile( const QString &location )
 			break;
 
 		case InfoFile:
-			currentInfo = fileName.copy();
+			currentInfo = fileName;
 			if ( ( rv = info->ReadLocation( "(" + fileName + ")" ) ) == 0 )
 				formatInfo();
 			break;
@@ -460,7 +460,7 @@ int KHelpWindow::openFile( const QString &location )
 			{
 				QMessageBox mb;
 				mb.setText( klocale->translate("Cannot open: ") + fileName );
-				mb.setButtonText( klocale->translate("Oops!") );
+				mb.setButtonText( 0, klocale->translate("Oops!") );  // TQt3 迁移：需按钮号
 				mb.show();
 			}
 			break;
@@ -469,7 +469,7 @@ int KHelpWindow::openFile( const QString &location )
 			{
 				QMessageBox mb;
 				mb.setText( klocale->translate("Unknown format: ") + fileName );
-				mb.setButtonText( klocale->translate("Oops!") );
+				mb.setButtonText( 0, klocale->translate("Oops!") );  // TQt3 迁移：需按钮号
 				mb.show();
 			}
 	}
@@ -1015,7 +1015,7 @@ bool KHelpWindow::canCurrentlyDo(AllowedActions action)
 	case GoTop:       return format->TopNode() != NULL;
 	case Stop:        return busy;
 	default: 
-	      warning("KHelpWindow::canCurrentlyDo: missing case in \"switch\" statement\n");
+	      tqWarning("KHelpWindow::canCurrentlyDo: missing case in \"switch\" statement\n");
 	      return FALSE;
 	}
 	return FALSE; // just to make the compiler happy...
@@ -1626,3 +1626,4 @@ void KHelpWindow::slotDocumentDone()
 
 //-----------------------------------------------------------------------------
 
+#include "helpwin.moc"

@@ -445,7 +445,7 @@ void KTypeLayout::setAlign (char *ID,int align)
     TLObj *o=findObject(ID);
     if (!o)
     {
-        warning ("Aligning unexisting object %s",ID);
+        tqWarning("Aligning unexisting object %s",ID);
         return;
     }
 
@@ -473,7 +473,7 @@ void KTypeLayout::setSpawn (char *ID,int vSpawn,int hSpawn)
     TLObj *o=findObject(ID);
     if (!o)
     {
-        warning ("Setting spawn of unexisting object %s",ID);
+        tqWarning("Setting spawn of unexisting object %s",ID);
         return;
     }
     o->width=vSpawn;

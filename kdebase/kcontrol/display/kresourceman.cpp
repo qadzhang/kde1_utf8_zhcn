@@ -49,7 +49,7 @@ KResourceMan::KResourceMan()
 		// Parse through the property string stripping out key value pairs
 		// and putting them in the dictionary
 		
-		//debug(s);
+		//tqDebug(s);
 		QString keypair;
 		int i=0;
 		QString key;
@@ -74,7 +74,7 @@ KResourceMan::KResourceMan()
 			if( i != -1 ) {
 				key = keypair.left( i ).simplifyWhiteSpace();
 				value = keypair.right( keypair.length() - i - 1 ).simplifyWhiteSpace();
-				//debug("%s -> %s", key.data(), value.data() );
+				//tqDebug("%s -> %s", key.data(), value.data() );
 				propDict->insert( key.data(), new QString( value.data() ) );
 			}
 		}

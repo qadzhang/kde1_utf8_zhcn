@@ -15,8 +15,6 @@ KMAddrBookSelDlg::KMAddrBookSelDlg(KMAddrBook* aAddrBook, const char* aCap):
   mBtnCancel(i18n("Cancel"),this)
 {
   const char* addr;
-
-  initMetaObject();
   setCaption(aCap ? aCap : i18n("Addressbook"));
 
   assert(aAddrBook != NULL);
@@ -70,7 +68,7 @@ void KMAddrBookSelDlg::slotOk()
 //-----------------------------------------------------------------------------
 void KMAddrBookSelDlg::slotCancel()
 {
-  mAddress = 0;
+  mAddress = 0;  /* TQt3 迁移 */
   reject();
 }
 
@@ -90,8 +88,6 @@ KMAddrBookEditDlg::KMAddrBookEditDlg(KMAddrBook* aAddrBook, const char* aCap):
   mBtnRemove(i18n("Remove"),this)
 {
   const char* addr;
-
-  initMetaObject();
   setCaption(aCap ? aCap : i18n("Addressbook Manager"));
 
   assert(aAddrBook != NULL);

@@ -10,7 +10,7 @@
 
 
 #include "toplevel.h"
-#include <mykapp.h>
+#include "mykapp.h"
 #include <kwm.h>
 #include <cstdlib>
 #include <qcursor.h>
@@ -138,7 +138,7 @@ void TopLevel::newClipData()
 {
     QString clipData = kapp->clipboard()->text();
     if(clipData != QSlast){
-        QSlast = clipData.copy();
+        QSlast = clipData;
         if(clipData.isEmpty() || clipData.stripWhiteSpace().isEmpty()){ // If the string is null bug out
             return;
         }
@@ -149,7 +149,6 @@ void TopLevel::newClipData()
 		pQPMmenu->removeItemAt(2);
 	    }
 	}
-        data->detach();
         while(pQPMmenu->count() > 12){
             int id = pQPMmenu->idAt(2);
             pQIDclipData->remove(id);
@@ -181,7 +180,7 @@ void TopLevel::clickedMenu(int id)
     }
   
     else
-        warning("Unable to find item: %d", id);
+        tqWarning("Unable to find item: %d", id);
     pQTcheck->start(1000);
 }
 

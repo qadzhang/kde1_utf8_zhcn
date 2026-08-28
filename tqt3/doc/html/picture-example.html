@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/picture/picture.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Picture</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Picture</h1>
+
+   
+<p> 
+This example shows how to make a picture, store it to a file, and read it as
+a set of drawing commands.
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/picture.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qpicture-h.html">ntqpicture.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qwidget-h.html">ntqwidget.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qfile-h.html">ntqfile.h</a>&gt;
+#include &lt;ctype.h&gt;
+
+
+void paintCar( <a href="ntqpainter.html">TQPainter</a> *p )                    // paint a car
+{
+    <a href="ntqpointarray.html">TQPointArray</a> a;
+    <a href="ntqbrush.html">TQBrush</a> brush( TQt::yellow, TQt::SolidPattern );
+<a name="x120"></a>    p-&gt;<a href="ntqpainter.html#setBrush">setBrush</a>( brush );                       // use solid, yellow brush
+
+<a name="x125"></a>    a.setPoints( 5, 50,50, 350,50, 450,120, 450,250, 50,250 );
+<a name="x115"></a>    p-&gt;<a href="ntqpainter.html#drawPolygon">drawPolygon</a>( a );                        // draw car body
+
+    <a href="ntqfont.html">TQFont</a> f( "courier", 12, TQFont::Bold );
+<a name="x121"></a>    p-&gt;<a href="ntqpainter.html#setFont">setFont</a>( f );
+
+    <a href="ntqcolor.html">TQColor</a> windowColor( 120, 120, 255 );        // a light blue color
+<a name="x108"></a>    brush.<a href="ntqbrush.html#setColor">setColor</a>( windowColor );              // set this brush color
+    p-&gt;<a href="ntqpainter.html#setBrush">setBrush</a>( brush );                       // set brush
+<a name="x116"></a>    p-&gt;<a href="ntqpainter.html#drawRect">drawRect</a>( 80, 80, 250, 70 );             // car window
+<a name="x117"></a>    p-&gt;<a href="ntqpainter.html#drawText">drawText</a>( 180, 80, 150, 70, TQt::AlignCenter, "--  TQt  --\nTrolltech AS" );
+
+    <a href="ntqpixmap.html">TQPixmap</a> pixmap;
+<a name="x124"></a>    if ( pixmap.<a href="ntqpixmap.html#load">load</a>("flag.bmp") )              // load and draw image
+<a name="x114"></a>        p-&gt;<a href="ntqpainter.html#drawPixmap">drawPixmap</a>( 100, 85, pixmap );
+
+<a name="x119"></a>    p-&gt;<a href="ntqpainter.html#setBackgroundMode">setBackgroundMode</a>( TQt::OpaqueMode );     // set opaque mode
+    p-&gt;<a href="ntqpainter.html#setBrush">setBrush</a>( TQt::DiagCrossPattern );        // black diagonal cross pattern
+<a name="x112"></a>    p-&gt;<a href="ntqpainter.html#drawEllipse">drawEllipse</a>( 90, 210, 80, 80 );          // back wheel
+    p-&gt;<a href="ntqpainter.html#setBrush">setBrush</a>( TQt::CrossPattern );            // black cross fill pattern
+    p-&gt;<a href="ntqpainter.html#drawEllipse">drawEllipse</a>( 310, 210, 80, 80 );         // front wheel
+}
+
+
+class PictureDisplay : public <a href="ntqwidget.html">TQWidget</a>           // picture display widget
+{
+public:
+    PictureDisplay( const char *fileName );
+   ~PictureDisplay();
+protected:
+    void        paintEvent( <a href="qpaintevent.html">TQPaintEvent</a> * );
+    void        keyPressEvent( <a href="qkeyevent.html">TQKeyEvent</a> * );
+private:
+    <a href="ntqpicture.html">TQPicture</a>   *pict;
+    <a href="ntqstring.html">TQString</a>     name;
+};
+
+<a name="f207"></a>PictureDisplay::PictureDisplay( const char *fileName )
+{
+    pict = new <a href="ntqpicture.html">TQPicture</a>;
+    name = fileName;
+<a name="x122"></a>    if ( !pict-&gt;<a href="ntqpicture.html#load">load</a>(fileName) ) {              // cannot load picture
+        delete pict;
+        pict = 0;
+        name.<a href="ntqstring.html#sprintf">sprintf</a>( "Not able to load picture: %s", fileName );
+    }
+}
+
+PictureDisplay::~PictureDisplay()
+{
+    delete pict;
+}
+
+void PictureDisplay::<a href="ntqwidget.html#paintEvent">paintEvent</a>( <a href="qpaintevent.html">TQPaintEvent</a> * )
+{
+    <a href="ntqpainter.html">TQPainter</a> paint( this );                     // paint widget
+    if ( pict )
+<a name="x113"></a>        paint.<a href="ntqpainter.html#drawPicture">drawPicture</a>( *pict );             // draw picture
+    else
+        paint.<a href="ntqpainter.html#drawText">drawText</a>( <a href="ntqwidget.html#rect">rect</a>(), AlignCenter, name );
+}
+
+<a name="x127"></a>void PictureDisplay::<a href="ntqwidget.html#keyPressEvent">keyPressEvent</a>( <a href="qkeyevent.html">TQKeyEvent</a> *k )
+{
+<a name="x109"></a>    switch ( tolower(k-&gt;<a href="qkeyevent.html#ascii">ascii</a>()) ) {
+        case 'r':                               // reload
+            pict-&gt;<a href="ntqpicture.html#load">load</a>( name );
+            <a href="ntqwidget.html#update">update</a>();
+            break;
+        case 'q':                               // quit
+<a name="x106"></a>            TQApplication::<a href="ntqapplication.html#exit">exit</a>();
+            break;
+    }
+}
+
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );               // TQApplication required!
+
+    const char *fileName = "car.pic";           // default picture file name
+
+    if ( argc == 2 )                            // use argument as file name
+        fileName = argv[1];
+
+    if ( !TQFile::exists(fileName) ) {
+        <a href="ntqpicture.html">TQPicture</a> pict;                          // our picture
+        <a href="ntqpainter.html">TQPainter</a> paint;                         // our painter
+
+<a name="x111"></a>        paint.<a href="ntqpainter.html#begin">begin</a>( &amp;pict );                   // begin painting onto picture
+        paintCar( &amp;paint );                     // paint!
+<a name="x118"></a>        paint.<a href="ntqpainter.html#end">end</a>();                            // painting done
+
+<a name="x123"></a>        pict.<a href="ntqpicture.html#save">save</a>( fileName );                  // save picture
+<a name="x110"></a>        TQMessageBox::<a href="ntqmessagebox.html#information">information</a>(0, "TQt Example - Picture", "Saved.  Run me again!");
+        return 0;
+    } else {
+        PictureDisplay test( fileName );        // create picture display
+        a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;test);                // set main widget
+        test.<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Picture");
+        test.<a href="ntqwidget.html#show">show</a>();                            // show it
+
+        return a.<a href="ntqapplication.html#exec">exec</a>();                        // start event loop
+    }
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

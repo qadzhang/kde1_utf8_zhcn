@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/tutorial.doc:668 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>t7/main.cpp Example File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>t7/main.cpp Example File</h1>
+
+ 
+<pre>/****************************************************************
+**
+** TQt tutorial 7
+**
+****************************************************************/
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qlcdnumber-h.html">ntqlcdnumber.h</a>&gt;
+#include &lt;<a href="qfont-h.html">ntqfont.h</a>&gt;
+#include &lt;<a href="qvbox-h.html">ntqvbox.h</a>&gt;
+#include &lt;<a href="qgrid-h.html">ntqgrid.h</a>&gt;
+
+#include "lcdrange.h"
+
+
+class MyWidget : public <a href="ntqvbox.html">TQVBox</a>
+{
+public:
+    MyWidget( <a href="ntqwidget.html">TQWidget</a> *parent=0, const char *name=0 );
+};
+
+
+<a name="f29"></a>MyWidget::MyWidget( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+        : <a href="ntqvbox.html">TQVBox</a>( parent, name )
+{
+    <a href="ntqpushbutton.html">TQPushButton</a> *quit = new <a href="ntqpushbutton.html">TQPushButton</a>( "Quit", this, "quit" );
+    quit-&gt;<a href="ntqwidget.html#setFont">setFont</a>( TQFont( "Times", 18, TQFont::Bold ) );
+
+    <a href="ntqobject.html#connect">connect</a>( quit, TQ_SIGNAL(<a href="ntqbutton.html#clicked">clicked</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+
+    <a href="ntqgrid.html">TQGrid</a> *grid = new <a href="ntqgrid.html">TQGrid</a>( 4, this );
+
+    LCDRange *previous = 0;
+    for( int r = 0 ; r &lt; 4 ; r++ ) {
+        for( int c = 0 ; c &lt; 4 ; c++ ) {
+            LCDRange* lr = new LCDRange( grid );
+            if ( previous )
+                <a href="ntqobject.html#connect">connect</a>( lr, TQ_SIGNAL(valueChanged(int)),
+                         previous, TQ_SLOT(setValue(int)) );
+            previous = lr;
+        }
+    }
+}
+
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    MyWidget w;
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;w );
+    w.<a href="ntqwidget.html#show">show</a>();
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre><!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

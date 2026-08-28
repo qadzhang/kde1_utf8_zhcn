@@ -10,7 +10,6 @@ PObject *createWidget(CreateArgs &ca) /*FOLD00*/
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
     lb = new("QListBox") QListBox((QWidget *) ca.parent->widget());
-  else
     lb = new("QListBox") QListBox();
   plb->setWidget(lb);
   plb->setWidgetId(ca.pwI);
@@ -21,14 +20,14 @@ PObject *createWidget(CreateArgs &ca) /*FOLD00*/
 PListBox::PListBox(PObject *parent) /*FOLD00*/
   : PTableView(parent)
 {
-  //  debug("PListBox PListBox called");
-  lb = 0;
+  //  tqDebug("PListBox PListBox called");
+  lb = 0;  /* TQt3 迁移 */
   setWidget(lb);
 }
 
 PListBox::~PListBox() /*FOLD00*/
 {
-  //  debug("PListBox: in destructor");
+  //  tqDebug("PListBox: in destructor");
   /*
   delete widget();     // Delete the frame
   lb=0;          // Set it to 0
@@ -171,7 +170,7 @@ QListBox *PListBox::widget() /*FOLD00*/
 void PListBox::highlighted(int index) { /*FOLD00*/
   PukeMessage pmRet;
 
-  debug("Got highlight");
+  tqDebug("Got highlight");
   pmRet.iCommand = PUKE_LISTBOX_HIGHLIGHTED_ACK;
   pmRet.iWinId = widgetIden().iWinId;
   pmRet.iArg = index;
@@ -189,7 +188,7 @@ void PListBox::highlighted(int index) { /*FOLD00*/
 void PListBox::selected(int index) { /*FOLD00*/
   PukeMessage pmRet;
 
-  debug("Got selected");
+  tqDebug("Got selected");
   pmRet.iCommand = PUKE_LISTBOX_SELECTED_ACK;
   pmRet.iWinId = widgetIden().iWinId;
   pmRet.iArg = index;
@@ -206,7 +205,7 @@ void PListBox::selected(int index) { /*FOLD00*/
 
 bool PListBox::checkWidget(){ /*FOLD00*/
   if(widget() == 0){
-    debug("PListBox: No Widget set");
+    tqDebug("PListBox: No Widget set");
     return FALSE;
   }
   return TRUE;

@@ -14,11 +14,11 @@ set(KHEXDIT_MOC
     hexwidget.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KHEXDIT_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KHEXDIT_MOC})
 
 add_executable(khexdit ${KHEXDIT_SRCS} ${MOC_FILES})
 target_link_libraries(khexdit
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

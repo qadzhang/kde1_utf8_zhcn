@@ -4,7 +4,7 @@ include_directories(
 
 add_executable(krdb1 krdb.cpp)
 target_link_libraries(krdb1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

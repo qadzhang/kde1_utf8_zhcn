@@ -25,7 +25,7 @@ IconPathDialogData::IconPathDialogData
 	:
 	Inherited( parent, name, TRUE )
 {
-  initMetaObject();
+
 	QLabel* tmpQLabel;
 	tmpQLabel = new QLabel( this, "Label_1" );
 	tmpQLabel->setGeometry( 16, 16, 224, 24 );
@@ -71,3 +71,4 @@ IconPathDialogData::IconPathDialogData
 IconPathDialogData::~IconPathDialogData()
 {
 }
+

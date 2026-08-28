@@ -28,7 +28,7 @@
 #define KDE_VERSION_MINOR 1
 #define KDE_VERSION_RELEASE 5
 
-#include <kconfig.h>
+#include "kconfig.h"
 
 #ifndef klocale
 #define klocale KApplication::getKApplication()->getLocale()
@@ -46,10 +46,10 @@ class KIconLoader;
 class KCharsets;
 
 //#ifndef _KLOCALE_H
-#include <klocale.h>
+#include "klocale.h"
 //#endif
 
-#include <drag.h>
+#include "drag.h"
 
 #include <qapplication.h>
 #include <qfile.h>

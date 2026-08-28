@@ -6,13 +6,13 @@ set(KORN_SRCS kmailbox.cpp kornbutt.cpp korn.cpp kornopt.cpp kornset.cpp
     main.cpp optdata.cpp real_from.cpp
 )
 
-set(KORN_MOC kmailbox.moc kornbutt.moc korn.moc kornopt.moc optdata.moc)
+set(KORN_MOC kmailbox.h kornbutt.h korn.h kornopt.h optdata.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KORN_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KORN_MOC})
 
 add_executable(korn ${KORN_SRCS} ${MOC_FILES})
 target_link_libraries(korn
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

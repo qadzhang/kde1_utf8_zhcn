@@ -43,12 +43,12 @@ void aListBox::inSort ( nickListItem *lbi) /*fold00*/
   bool found;
   insert = searchFor(lbi->text(), found, lbi->op());
   if(found == TRUE){
-    debug("%s is already in nick list!", lbi->text());
+    tqDebug("%s is already in nick list!", lbi->text());
     return;
   }
   insertItem(lbi, insert);
 //  for(uint index = 0; index < count(); index++){
-//    debug("%d is %s", index, text(index));
+//    tqDebug("%d is %s", index, text(index));
 //  }
 
 }
@@ -84,13 +84,13 @@ int aListBox::searchFor(QString nick, bool &found, bool top) /*fold00*/
   // If there's nothing in the list, don't try and search it, etc
   
   if(count() == 0){
-    insert = 0;
+    insert = 0;  /* TQt3 迁移 */
   }
   else{
     int sep = findSep();
     if(sep >= 0){
       if(top == TRUE){
-        min = 0;
+        min = 0;  /* TQt3 迁移 */
         max = (sep >= 1) ? sep - 1 : 0;
       }
       else{
@@ -108,7 +108,7 @@ int aListBox::searchFor(QString nick, bool &found, bool top) /*fold00*/
     uint loop = 0;           // Most loops should be log_2 count(), but...
     do {
       if(current == last_current){
-//        debug("Insert looping on %s", nick.data());
+//        tqDebug("Insert looping on %s", nick.data());
         //      current++;
         break; // we're looping, so stop
       }
@@ -120,12 +120,12 @@ int aListBox::searchFor(QString nick, bool &found, bool top) /*fold00*/
       if(compare < 0){
         min = current;
 	insert = current + 1;
-//	debug("1 < 0: %s is greater then: %s, min: %d max: %d current: %d", nick.data(), text(current), min, max, current);
+//	tqDebug("1 < 0: %s is greater then: %s, min: %d max: %d current: %d", nick.data(), text(current), min, max, current);
       }
       else if(compare > 0){
         max = current;
  	insert = current;
-//	debug("1 > 0: %s is less then: %s, min: %d max: %d current: %d", nick.data(), text(current), min, max, current);
+//	tqDebug("1 > 0: %s is less then: %s, min: %d max: %d current: %d", nick.data(), text(current), min, max, current);
       }
       else {// We got a match?
 	insert = current;
@@ -142,7 +142,7 @@ int aListBox::searchFor(QString nick, bool &found, bool top) /*fold00*/
       if(compare < 0){
 	min = current;
 	insert = real_max + 1;
-//	debug("End check got one!");
+//	tqDebug("End check got one!");
       }
       else if (compare == 0){// We got a match
 	insert = real_max + 1;
@@ -159,15 +159,15 @@ int aListBox::searchFor(QString nick, bool &found, bool top) /*fold00*/
 
     if(loop == count())
     {
-//        debug("Loop inifitly on: %s", nick.data());
+//        tqDebug("Loop inifitly on: %s", nick.data());
     }
 
     if(found == TRUE){
-//      debug("Found %s", nick.data());
+//      tqDebug("Found %s", nick.data());
       return min; // We found one, so return the number found
     }
   }
-//  debug("%s is at %d", nick.data(), insert);
+//  tqDebug("%s is at %d", nick.data(), insert);
   return insert;
        
 }
@@ -196,7 +196,7 @@ int aListBox::findNick(QString str) /*fold00*/
   index = searchFor(str, found, FALSE);
   if(found == TRUE)
     return index;
-//  debug("Did not find: %s", str.data());
+//  tqDebug("Did not find: %s", str.data());
   return -1;
 }
 

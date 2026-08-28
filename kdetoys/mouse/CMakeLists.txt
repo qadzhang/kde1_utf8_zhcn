@@ -4,15 +4,15 @@ include_directories (
 
 set(KODO_SRCS  gridbag.cpp kimgnum.cpp kodo.cpp)
 
-set(KODO_MOC gridbag.moc kimgnum.moc kodo.moc)
+set(KODO_MOC gridbag.h kimgnum.h kodo.h)
 
-qt1_wrap_moc(MOC_FILES ${KODO_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KODO_MOC})
 
 add_executable(kodo ${KODO_SRCS} ${MOC_FILES})
 target_link_libraries(kodo
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
 )
 

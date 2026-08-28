@@ -8,14 +8,14 @@ set(Ksirtet_SRCS
 )
 
 set(Ksirtet_MOC
-    spiece.moc board.moc dialogs.moc field.moc main.moc
+    spiece.h board.h dialogs.h field.h main.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${Ksirtet_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${Ksirtet_MOC})
 
 add_executable(ksirtet ${Ksirtet_SRCS} ${MOC_FILES} ${QwSpriteField_SOURCES})
 target_link_libraries(ksirtet
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

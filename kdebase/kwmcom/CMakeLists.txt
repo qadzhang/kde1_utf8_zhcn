@@ -4,12 +4,12 @@ include_directories(
 
 set(KWMCCOM_SRCS kwmcom.C)
 
-QT1_WRAP_MOC(MOC_FILES ${KWMCCOM_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KWMCCOM_MOC})
 
 add_executable(kwmcom ${KWMCCOM_SRCS} ${MOC_FILES})
 target_link_libraries(kwmcom
     ${KDE1_KDECORE}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

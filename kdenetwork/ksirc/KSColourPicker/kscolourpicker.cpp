@@ -69,7 +69,7 @@ kscolourpicker::kscolourpicker
     pb->setGeometry( 5+(20*XOffset), 5+YOffset, 20, 20 );
 
     if ( i == KSPainter::maxcolour ) {
-      XOffset = 0;
+      XOffset = 0;  /* TQt3 迁移 */
       YOffset = 20;
     } else {
       XOffset++;

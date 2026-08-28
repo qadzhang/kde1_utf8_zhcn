@@ -54,7 +54,7 @@ void
 Kpgp::init()
 {
   havePassPhrase = FALSE;
-  passphrase = 0;
+  passphrase = 0;  /* TQt3 迁移 */
 
   // do we have a pgp executable
   checkForPGP();
@@ -163,7 +163,7 @@ Kpgp::setMessage(const QString mess)
 
     return TRUE;
   }
-  //  debug("Kpgp: message does not contain PGP parts");
+  //  tqDebug("Kpgp: message does not contain PGP parts");
   return FALSE;
 }
 
@@ -217,7 +217,7 @@ Kpgp::cleanupPass(void)
   if(!storePass)
   {
     passphrase.replace(QRegExp(".")," ");
-    passphrase = 0;
+    passphrase = 0;  /* TQt3 迁移 */
     havePassPhrase = false;
   }
 }
@@ -238,7 +238,7 @@ Kpgp::decrypt(void)
 
   if((retval & KpgpBase::BADPHRASE))
   {
-    //debug("Kpgp: bad passphrase");
+    //tqDebug("Kpgp: bad passphrase");
     havePassPhrase = false;
   }
 
@@ -533,7 +533,7 @@ Kpgp::setPassPhrase(const QString aPass)
   {
     if (!passphrase.isEmpty())
       passphrase.replace(QRegExp(".")," ");
-    passphrase = 0;
+    passphrase = 0;  /* TQt3 迁移 */
     havePassPhrase = FALSE;
   }
 }
@@ -543,7 +543,7 @@ Kpgp::changePassPhrase(const QString /*oldPass*/,
 		       const QString /*newPass*/)
 {
   //FIXME...
-  warning(i18n("Sorry, but this feature\nis still missing"));
+  tqWarning(i18n("Sorry, but this feature\nis still missing"));
   return FALSE;
 }
 
@@ -553,10 +553,10 @@ Kpgp::clear(bool erasePassPhrase)
   if(erasePassPhrase && havePassPhrase && !passphrase.isEmpty())
   {
     passphrase.replace(QRegExp(".")," ");
-    passphrase = 0;
+    passphrase = 0;  /* TQt3 迁移 */
   }
-  front = 0;
-  back = 0;
+  front = 0;  /* TQt3 迁移 */
+  back = 0;  /* TQt3 迁移 */
 }
 
 const QString 
@@ -633,7 +633,7 @@ Kpgp::checkForPGP(void)
     {
       havePgp=TRUE;
       havePGP5=TRUE;
-      debug("Kpgp: found pgp5.0");
+      tqDebug("Kpgp: found pgp5.0");
       return TRUE;
     }
     ++it;
@@ -649,13 +649,13 @@ Kpgp::checkForPGP(void)
        {
 	    havePgp=TRUE;
 	    havePGP5=FALSE;
-	    debug("Kpgp: found pgp2.6.x");
+	    tqDebug("Kpgp: found pgp2.6.x");
 	    return TRUE;
        }
        ++it;
   }
   
-  debug("Kpgp: no pgp found");
+  tqDebug("Kpgp: no pgp found");
   return FALSE;
 }
 
@@ -743,7 +743,7 @@ KpgpPass::getPassphrase(QWidget *parent)
 {
   KpgpPass kpgppass(parent, i18n("PGP Security Check"));
   kpgppass.exec();
-  return kpgppass.getPhrase().copy();
+  return kpgppass.getPhrase();
 }
 
 QString

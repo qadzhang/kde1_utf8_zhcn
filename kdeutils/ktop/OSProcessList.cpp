@@ -481,7 +481,7 @@ inline int cmp(double a, double b)
 }
 
 int
-OSProcessList::compareItems(GCI it1, GCI it2)
+OSProcessList::compareItems(TQPtrCollection::Item it1, TQPtrCollection::Item it2)
 {
 	OSProcess* item1 = (OSProcess*) it1;
 	OSProcess* item2 = (OSProcess*) it2;

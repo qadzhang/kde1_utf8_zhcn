@@ -38,7 +38,7 @@ int TaskBroker::readFromFile( const char *fname )
 	QFile *file = new QFile( fname );
 
 	if( file == 0 ) {
-		warning( "out of memory creating file object");
+		tqWarning( "out of memory creating file object");
 		return 0;
 	}
 
@@ -56,7 +56,7 @@ int TaskBroker::readFromFile( const char *fname )
 
 	if( line == 0 ) {
 		delete file;
-		warning("out of memory creating string.");
+		tqWarning("out of memory creating string.");
 		return 0;
 	}
 

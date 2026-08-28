@@ -4,7 +4,7 @@
 #include <qstring.h>
 #include <qlist.h>
 
-#include <messageReceiver.h>
+#include "messageReceiver.h"
 
 class KSMBaseRules : public KSircMessageReceiver
 {

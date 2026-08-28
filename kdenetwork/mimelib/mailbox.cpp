@@ -199,7 +199,7 @@ void DwMailbox::Parse()
                 state = eAtSeen;
                 break;
             case '<':
-                isSimpleAddress = 0;
+                isSimpleAddress = TQString();
                 mLocalPart = emptyString;
                 state = eLtSeen;
                 break;
@@ -212,7 +212,7 @@ void DwMailbox::Parse()
         case eTkQuotedString:
             if (isFirstPhraseNull) {
                 firstPhrase = tokenizer.Token();
-                isFirstPhraseNull = 0;
+                isFirstPhraseNull = TQString();
             }
             else {
                 firstPhrase += space;
@@ -367,7 +367,7 @@ void DwMailbox::Parse()
         mIsValid = 1;
     }
     else {
-        mIsValid = 0;
+        mIsValid = TQString();
     }
 
     // Remove CR or LF from local-part or full name
@@ -382,7 +382,7 @@ void DwMailbox::Assemble()
     if (!mIsModified) return;
     mIsValid = 1;
     if (mLocalPart.length() == 0 || mDomain.length() == 0) {
-        mIsValid = 0;
+        mIsValid = TQString();
         mString = "";
         return;
     }

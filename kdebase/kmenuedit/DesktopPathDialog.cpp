@@ -15,7 +15,7 @@ DesktopPathDialog::DesktopPathDialog( QString path, QString ppath,
 				      QWidget* parent, const char* name )
 	: DesktopPathDialogData( parent, name )
 {
-  initMetaObject();
+
   le_path->setText(path);
   le_path->setFocus();
   le_ppath->setText(ppath);

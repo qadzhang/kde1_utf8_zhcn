@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqdns.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqdns.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqdns.h</h1>
+
+<p>This is the verbatim text of the ntqdns.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqdns.h   3.3.8   edited Jan 11 14:46 $
+**
+** Definition of TQDns class.
+**
+** Created : 991122
+**
+** Copyright (C) 1999-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the network module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQDNS_H
+#define TQDNS_H
+
+#ifndef QT_H
+#include "ntqobject.h"
+#include "ntqhostaddress.h"
+#include "ntqsocketnotifier.h"
+#include "ntqstringlist.h"
+#endif // QT_H
+
+#if !defined( TQT_MODULE_NETWORK ) || defined( QT_LICENSE_PROFESSIONAL ) || defined( QT_INTERNAL_NETWORK )
+#define TQM_EXPORT_DNS
+#else
+#define TQM_EXPORT_DNS TQ_EXPORT
+#endif
+
+#ifndef TQT_NO_DNS
+
+//#define Q_DNS_SYNCHRONOUS
+
+class TQDnsPrivate;
+
+class TQM_EXPORT_DNS TQDns: public TQObject {
+    TQ_OBJECT
+public:
+    enum RecordType {
+	None,
+	A, Aaaa,
+	Mx, Srv,
+	Cname,
+	Ptr,
+	Txt
+    };
+
+    TQDns();
+    TQDns( const TQString &amp; label, RecordType rr = A );
+    TQDns( const TQHostAddress &amp; address, RecordType rr = Ptr );
+    virtual ~TQDns();
+
+    // to set/change the query
+    virtual void setLabel( const TQString &amp; label );
+    virtual void setLabel( const TQHostAddress &amp; address );
+    TQString label() const { return l; }
+
+    virtual void setRecordType( RecordType rr = A );
+    RecordType recordType() const { return t; }
+
+    // whether something is happening behind the scenes
+    bool isWorking() const;
+
+    // to query for replies
+    TQValueList&lt;TQHostAddress&gt; addresses() const;
+
+    class TQM_EXPORT_DNS MailServer {
+    public:
+	MailServer( const TQString &amp; n=TQString::null, TQ_UINT16 p=0 )
+	    :name(n), priority(p) {}
+	TQString name;
+	TQ_UINT16 priority;
+    };
+    TQValueList&lt;MailServer&gt; mailServers() const;
+
+    class TQM_EXPORT_DNS Server {
+    public:
+	Server(const TQString &amp; n=TQString::null, TQ_UINT16 p=0, TQ_UINT16 w=0, TQ_UINT16 po=0 )
+	    : name(n), priority(p), weight(w), port(po) {}
+	TQString name;
+	TQ_UINT16 priority;
+	TQ_UINT16 weight;
+	TQ_UINT16 port;
+    };
+    TQValueList&lt;Server&gt; servers() const;
+
+    TQStringList hostNames() const;
+
+    TQStringList texts() const;
+
+    TQString canonicalName() const; // ### real-world but uncommon: TQStringList
+
+    TQStringList qualifiedNames() const { return n; }
+
+#if defined(Q_DNS_SYNCHRONOUS)
+protected:
+    void connectNotify( const char *signal );
+#endif
+
+signals:
+    void resultsReady();
+
+private slots:
+    void startQuery();
+
+private:
+    static void doResInit();
+    void setStartQueryTimer();
+    static TQString toInAddrArpaDomain( const TQHostAddress &amp;address );
+#if defined(Q_DNS_SYNCHRONOUS)
+    void doSynchronousLookup();
+#endif
+
+    TQString l;
+    TQStringList n;
+    RecordType t;
+    TQDnsPrivate * d;
+
+    friend class TQDnsAnswer;
+    friend class TQDnsManager;
+};
+
+
+// TQDnsSocket are sockets that are used for DNS lookup
+
+class TQDnsSocket: public TQObject {
+    TQ_OBJECT
+    // note: Private not public.  This class contains NO public API.
+protected:
+    TQDnsSocket( TQObject *, const char * );
+    virtual ~TQDnsSocket();
+
+private slots:
+    virtual void cleanCache();
+    virtual void retransmit();
+    virtual void answer();
+};
+
+#endif // TQT_NO_DNS
+
+#endif // TQDNS_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -420,7 +420,7 @@ LOOP_EXIT_4:
     if (ascPos + 3 <= ascLen && 
         strncmp(&ascBuf[ascPos], "end", 3) == 0) {
 
-        retVal = 0;
+        retVal = TQString();
     }
     return retVal;
 }

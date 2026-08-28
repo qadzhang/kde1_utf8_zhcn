@@ -30,7 +30,6 @@
 Idiot::Idiot( QWidget* parent, const char* name)
   : dealer(parent,name)
 {
-  initMetaObject();
 
   for ( int Play   = 1; Play <= 4; Play++) {
     Card::setAddFlags(Play, Card::addSpread );

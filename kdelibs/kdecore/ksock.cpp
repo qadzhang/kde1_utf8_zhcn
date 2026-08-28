@@ -281,7 +281,7 @@ bool KSocket::init_sockaddr( const char *hostname, unsigned short int port )
   
   if ( !hostinfo )
     {
-	  warning("Unknown host %s.\n",hostname);
+	  tqWarning("Unknown host %s.\n",hostname);
 	  return false;	
     }
   server_name.sin_addr = *(struct in_addr*) hostinfo->h_addr;    
@@ -295,13 +295,13 @@ bool KSocket::init_sockaddr( const char *hostname, unsigned short int port )
 bool KSocket::connect( const char *_path )
 {
   if ( domain != PF_UNIX )
-    fatal( "Connecting a PF_INET socket to a PF_UNIX domain socket\n");
+    tqFatal( "Connecting a PF_INET socket to a PF_UNIX domain socket\n");
   
   unix_addr.sun_family = AF_UNIX;
   int l = strlen( _path );
   if ( l > UNIX_PATH_MAX - 1 )
   {      
-    warning( "Too long PF_UNIX domain name '%s'\n",_path);
+    tqWarning( "Too long PF_UNIX domain name '%s'\n",_path);
     return false;
   }  
   strcpy( unix_addr.sun_path, _path );
@@ -327,7 +327,7 @@ bool KSocket::connect( const char *_path )
 bool KSocket::connect( const char *_host, unsigned short int _port )
 {
   if ( domain != PF_INET )
-    fatal( "Connecting a PF_UNIX domain socket to a PF_INET domain socket\n");
+    tqFatal( "Connecting a PF_UNIX domain socket to a PF_INET domain socket\n");
 
   sock = ::socket(PF_INET,SOCK_STREAM,0);
   if (sock < 0)
@@ -387,7 +387,7 @@ bool KSocket::connect( const char *_host, unsigned short int _port )
       qApp->processEvents();
       qApp->flushX();
   }
-  warning("Timeout connecting socket...\n");
+  tqWarning("Timeout connecting socket...\n");
   ::close( sock );
   sock = -1;
   return false;
@@ -423,7 +423,7 @@ KServerSocket::KServerSocket( const char *_path ) :
   
   if ( !init ( _path ) )
   {
-    // fatal("Error constructing PF_UNIX domain server socket\n");
+    // tqFatal("Error constructing PF_UNIX domain server socket\n");
     return;
   }
     
@@ -438,7 +438,7 @@ KServerSocket::KServerSocket( int _port ) :
 
   if ( !init ( _port ) )
   {
-    // fatal("Error constructing\n");
+    // tqFatal("Error constructing\n");
     return;
   }
     
@@ -454,14 +454,14 @@ bool KServerSocket::init( const char *_path )
   int l = strlen( _path );
   if ( l > UNIX_PATH_MAX - 1 )
   {      
-    warning( "Too long PF_UNIX domain name '%s'\n",_path);
+    tqWarning( "Too long PF_UNIX domain name '%s'\n",_path);
     return false;
   }  
     
   sock = ::socket( PF_UNIX, SOCK_STREAM, 0 );
   if (sock < 0)
   {
-    warning( "Could not create socket\n");
+    tqWarning( "Could not create socket\n");
     return false;
   }
 
@@ -473,7 +473,7 @@ bool KServerSocket::init( const char *_path )
     
   if ( bind( sock, (struct sockaddr*) &name,sizeof( name ) ) < 0 )
   {
-    warning("Could not bind to socket\n");
+    tqWarning("Could not bind to socket\n");
     ::close( sock );
     sock = -1;
     return false;
@@ -481,7 +481,7 @@ bool KServerSocket::init( const char *_path )
   
   if ( chmod( _path, 0600) < 0 )
   {
-    warning("Could not setupt premissions for server socket\n");
+    tqWarning("Could not setupt premissions for server socket\n");
     ::close( sock );
     sock = -1;
     return false;
@@ -489,7 +489,7 @@ bool KServerSocket::init( const char *_path )
                
   if ( listen( sock, SOMAXCONN ) < 0 )
   {
-    warning("Error listening on socket\n");
+    tqWarning("Error listening on socket\n");
     ::close( sock );
     sock = -1;
     return false;
@@ -506,7 +506,7 @@ bool KServerSocket::init( unsigned short int _port )
   sock = ::socket( PF_INET, SOCK_STREAM, 0 );
   if (sock < 0)
   {
-    warning( "Could not create socket\n");
+    tqWarning( "Could not create socket\n");
     return false;
   }
 
@@ -518,7 +518,7 @@ bool KServerSocket::init( unsigned short int _port )
     
   if ( bind( sock, (struct sockaddr*) &name,sizeof( name ) ) < 0 )
     {
-	  warning("Could not bind to socket\n");
+	  tqWarning("Could not bind to socket\n");
 	  ::close( sock );
 	  sock = -1;
 	  return false;
@@ -526,7 +526,7 @@ bool KServerSocket::init( unsigned short int _port )
     
   if ( listen( sock, SOMAXCONN ) < 0 )
     {
-	  warning("Error listening on socket\n");
+	  tqWarning("Error listening on socket\n");
 	  ::close( sock );
 	  sock = -1;
 	  return false;
@@ -566,7 +566,7 @@ void KServerSocket::slotAccept( int )
     
     if ((new_sock = accept (sock, (struct sockaddr *) &clientname, &size)) < 0)
     {
-      warning("Error accepting\n");
+      tqWarning("Error accepting\n");
       return;
     }
 
@@ -581,7 +581,7 @@ void KServerSocket::slotAccept( int )
     
     if ((new_sock = accept (sock, (struct sockaddr *) &clientname, &size)) < 0)
     {
-      warning("Error accepting\n");
+      tqWarning("Error accepting\n");
       return;
     }
 

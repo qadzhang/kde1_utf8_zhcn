@@ -1199,7 +1199,6 @@ int KTitlebarAppearance::getTitlebar()
     return TITLEBAR_SHADED_HORIZ;
   else if (pixmap->isChecked())
       return TITLEBAR_PIXMAP;
-  else
       return TITLEBAR_PLAIN;
 }
 
@@ -1311,7 +1310,6 @@ void KTitlebarAppearance::SaveSettings( void )
     config->writeEntry(KWM_TITLEBARLOOK, "shadedHorizontal");
   else if (t == TITLEBAR_PIXMAP)
       config->writeEntry(KWM_TITLEBARLOOK, "pixmap");
-  else
       config->writeEntry(KWM_TITLEBARLOOK, "plain");
 
   /*CT 18Oct1998 - these are no more needed
@@ -1447,7 +1445,6 @@ void KTitlebarAppearance::GetSettings( void )
     setTitlebar(TITLEBAR_SHADED_HORIZ);
   else if( key == "pixmap")
     setTitlebar(TITLEBAR_PIXMAP);
-  else
     setTitlebar(TITLEBAR_PLAIN);
 
   sPixmapActive = "activetitlebar.xpm";

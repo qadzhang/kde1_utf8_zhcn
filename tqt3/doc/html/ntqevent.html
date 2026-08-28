@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qevent.cpp:43 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQEvent Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQEvent Class Reference</h1>
+
+<p>The TQEvent class is the base class of all
+event classes. Event objects contain event parameters.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qevent-h.html">ntqevent.h</a>&gt;</tt>
+<p>Inherits <a href="ntqt.html">TQt</a>.
+<p>Inherited by <a href="qtimerevent.html">TQTimerEvent</a>, <a href="qmouseevent.html">TQMouseEvent</a>, <a href="qwheelevent.html">TQWheelEvent</a>, <a href="qtabletevent.html">TQTabletEvent</a>, <a href="qkeyevent.html">TQKeyEvent</a>, <a href="qfocusevent.html">TQFocusEvent</a>, <a href="qpaintevent.html">TQPaintEvent</a>, <a href="qmoveevent.html">TQMoveEvent</a>, <a href="qresizeevent.html">TQResizeEvent</a>, <a href="qcloseevent.html">TQCloseEvent</a>, <a href="qicondragevent.html">TQIconDragEvent</a>, <a href="qshowevent.html">TQShowEvent</a>, <a href="qhideevent.html">TQHideEvent</a>, <a href="qcontextmenuevent.html">TQContextMenuEvent</a>, <a href="qimevent.html">TQIMEvent</a>, <a href="qdropevent.html">TQDropEvent</a>, <a href="qdragleaveevent.html">TQDragLeaveEvent</a>, <a href="qchildevent.html">TQChildEvent</a>, and <a href="qcustomevent.html">TQCustomEvent</a>.
+<p><a href="qevent-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn>enum <a href="#Type-enum"><b>Type</b></a> { None = 0, Timer = 1, MouseButtonPress = 2, MouseButtonRelease = 3, MouseButtonDblClick = 4, MouseMove = 5, KeyPress = 6, KeyRelease = 7, FocusIn = 8, FocusOut = 9, Enter = 10, Leave = 11, Paint = 12, Move = 13, Resize = 14, Create = 15, Destroy = 16, Show = 17, Hide = 18, Close = 19, Quit = 20, Reparent = 21, ShowMinimized = 22, ShowNormal = 23, WindowActivate = 24, WindowDeactivate = 25, ShowToParent = 26, HideToParent = 27, ShowMaximized = 28, ShowFullScreen = 29, Accel = 30, Wheel = 31, AccelAvailable = 32, CaptionChange = 33, IconChange = 34, ParentFontChange = 35, ApplicationFontChange = 36, ParentPaletteChange = 37, ApplicationPaletteChange = 38, PaletteChange = 39, Clipboard = 40, Speech = 42, SockAct = 50, AccelOverride = 51, DeferredDelete = 52, DragEnter = 60, DragMove = 61, DragLeave = 62, Drop = 63, DragResponse = 64, ChildInserted = 70, ChildRemoved = 71, LayoutHint = 72, ShowWindowRequest = 73, WindowBlocked = 74, WindowUnblocked = 75, ActivateControl = 80, DeactivateControl = 81, ContextMenu = 82, IMStart = 83, IMCompose = 84, IMEnd = 85, Accessibility = 86, TabletMove = 87, LocaleChange = 88, LanguageChange = 89, LayoutDirectionChange = 90, Style = 91, TabletPress = 92, TabletRelease = 93, OkRequest = 94, HelpRequest = 95, WindowStateChange = 96, IconDrag = 97, User = 1000, MaxUser = 65535 }</li>
+<li class=fn><a href="#TQEvent"><b>TQEvent</b></a> ( Type&nbsp;type )</li>
+<li class=fn>virtual <a href="#~TQEvent"><b>~TQEvent</b></a> ()</li>
+<li class=fn>Type <a href="#type"><b>type</b></a> () const</li>
+<li class=fn>bool <a href="#spontaneous"><b>spontaneous</b></a> () const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQEvent class is the base class of all
+event classes. Event objects contain event parameters.
+<p> 
+
+<p> TQt's main event loop (<a href="ntqapplication.html#exec">TQApplication::exec</a>()) fetches native window
+system events from the event queue, translates them into TQEvents
+and sends the translated events to TQObjects.
+<p> In general, events come from the underlying window system
+(<a href="#spontaneous">spontaneous</a>() returns true) but it is also possible to manually
+send events using <a href="ntqapplication.html#sendEvent">TQApplication::sendEvent</a>() and
+<a href="ntqapplication.html#postEvent">TQApplication::postEvent</a>() (spontaneous() returns false).
+<p> TQObjects receive events by having their <a href="ntqobject.html#event">TQObject::event</a>() function
+called. The function can be reimplemented in subclasses to
+customize event handling and add additional event types;
+<a href="ntqwidget.html#event">TQWidget::event</a>() is a notable example. By default, events are
+dispatched to event handlers like <a href="ntqobject.html#timerEvent">TQObject::timerEvent</a>() and
+<a href="ntqwidget.html#mouseMoveEvent">TQWidget::mouseMoveEvent</a>(). <a href="ntqobject.html#installEventFilter">TQObject::installEventFilter</a>() allows an
+object to intercept events destined for another object.
+<p> The basic TQEvent contains only an event type parameter.
+Subclasses of TQEvent contain additional parameters that describe
+the particular event.
+<p> <p>See also <a href="ntqobject.html#event">TQObject::event</a>(), <a href="ntqobject.html#installEventFilter">TQObject::installEventFilter</a>(), <a href="ntqwidget.html#event">TQWidget::event</a>(), <a href="ntqapplication.html#sendEvent">TQApplication::sendEvent</a>(), <a href="ntqapplication.html#postEvent">TQApplication::postEvent</a>(), <a href="ntqapplication.html#processEvents">TQApplication::processEvents</a>(), <a href="environment.html">Environment Classes</a>, and <a href="events.html">Event Classes</a>.
+
+<hr><h2>Member Type Documentation</h2>
+<h3 class=fn><a name="Type-enum"></a>TQEvent::Type</h3>
+
+<p> This enum type defines the valid event types in TQt. The event
+types and the specialized classes for each type are these:
+<ul>
+<li><tt>TQEvent::None</tt> - Not an event.
+<li><tt>TQEvent::Accessibility</tt> - Accessibility information is requested
+<li><tt>TQEvent::Timer</tt> - Regular timer events, <a href="qtimerevent.html">TQTimerEvent</a>.
+<li><tt>TQEvent::MouseButtonPress</tt> - Mouse press, <a href="qmouseevent.html">TQMouseEvent</a>.
+<li><tt>TQEvent::MouseButtonRelease</tt> - Mouse release, <a href="qmouseevent.html">TQMouseEvent</a>.
+<li><tt>TQEvent::MouseButtonDblClick</tt> - Mouse press again, <a href="qmouseevent.html">TQMouseEvent</a>.
+<li><tt>TQEvent::MouseMove</tt> - Mouse move, <a href="qmouseevent.html">TQMouseEvent</a>.
+<li><tt>TQEvent::KeyPress</tt> - Key press (including Shift, for example), <a href="qkeyevent.html">TQKeyEvent</a>.
+<li><tt>TQEvent::KeyRelease</tt> - Key release, <a href="qkeyevent.html">TQKeyEvent</a>.
+<li><tt>TQEvent::IMStart</tt> - The start of input method composition, <a href="qimevent.html">TQIMEvent</a>.
+<li><tt>TQEvent::IMCompose</tt> - Input method composition is taking place, <a href="qimevent.html">TQIMEvent</a>.
+<li><tt>TQEvent::IMEnd</tt> - The end of input method composition, <a href="qimevent.html">TQIMEvent</a>.
+<li><tt>TQEvent::FocusIn</tt> - Widget gains <a href="focus.html#keyboard-focus">keyboard focus</a>, <a href="qfocusevent.html">TQFocusEvent</a>.
+<li><tt>TQEvent::FocusOut</tt> - Widget loses keyboard focus, <a href="qfocusevent.html">TQFocusEvent</a>.
+<li><tt>TQEvent::Enter</tt> - Mouse enters widget's boundaries.
+<li><tt>TQEvent::Leave</tt> - Mouse leaves widget's boundaries.
+<li><tt>TQEvent::Paint</tt> - Screen update necessary, <a href="qpaintevent.html">TQPaintEvent</a>.
+<li><tt>TQEvent::Move</tt> - Widget's position changed, <a href="qmoveevent.html">TQMoveEvent</a>.
+<li><tt>TQEvent::Resize</tt> - Widget's size changed, <a href="qresizeevent.html">TQResizeEvent</a>.
+<li><tt>TQEvent::Show</tt> - Widget was shown on screen, <a href="qshowevent.html">TQShowEvent</a>.
+<li><tt>TQEvent::Hide</tt> - Widget was hidden, <a href="qhideevent.html">TQHideEvent</a>.
+<li><tt>TQEvent::ShowToParent</tt> - A child widget has been shown.
+<li><tt>TQEvent::HideToParent</tt> - A child widget has been hidden.
+<li><tt>TQEvent::Close</tt> - Widget was closed (permanently), <a href="qcloseevent.html">TQCloseEvent</a>.
+<li><tt>TQEvent::ShowNormal</tt> - Widget should be shown normally (obsolete).
+<li><tt>TQEvent::ShowMaximized</tt> - Widget should be shown maximized (obsolete).
+<li><tt>TQEvent::ShowMinimized</tt> - Widget should be shown minimized (obsolete).
+<li><tt>TQEvent::ShowFullScreen</tt> - Widget should be shown full-screen (obsolete).
+<li><tt>TQEvent::ShowWindowRequest</tt> - Widget's window should be shown (obsolete).
+<li><tt>TQEvent::DeferredDelete</tt> - The object will be deleted after it has
+cleaned up.
+<li><tt>TQEvent::Accel</tt> - Key press in child for shortcut key handling, <a href="qkeyevent.html">TQKeyEvent</a>.
+<li><tt>TQEvent::Wheel</tt> - Mouse wheel rolled, <a href="qwheelevent.html">TQWheelEvent</a>.
+<li><tt>TQEvent::ContextMenu</tt> - Context popup menu, <a href="qcontextmenuevent.html">TQContextMenuEvent</a>
+<li><tt>TQEvent::AccelOverride</tt> - Key press in child, for overriding shortcut key handling, <a href="qkeyevent.html">TQKeyEvent</a>.
+<li><tt>TQEvent::AccelAvailable</tt> - internal.
+<li><tt>TQEvent::WindowActivate</tt> - Window was activated.
+<li><tt>TQEvent::WindowDeactivate</tt> - Window was deactivated.
+<li><tt>TQEvent::CaptionChange</tt> - Widget's caption changed.
+<li><tt>TQEvent::IconChange</tt> - Widget's icon changed.
+<li><tt>TQEvent::ParentFontChange</tt> - Font of the parent widget changed.
+<li><tt>TQEvent::ApplicationFontChange</tt> - Default application font changed.
+<li><tt>TQEvent::PaletteChange</tt> - Palette of the widget changed.
+<li><tt>TQEvent::ParentPaletteChange</tt> - Palette of the parent widget changed.
+<li><tt>TQEvent::ApplicationPaletteChange</tt> - Default application palette changed.
+<li><tt>TQEvent::Clipboard</tt> - Clipboard contents have changed.
+<li><tt>TQEvent::SockAct</tt> - Socket activated, used to implement <a href="ntqsocketnotifier.html">TQSocketNotifier</a>.
+<li><tt>TQEvent::DragEnter</tt> - A drag-and-drop enters widget, <a href="qdragenterevent.html">TQDragEnterEvent</a>.
+<li><tt>TQEvent::DragMove</tt> - A drag-and-drop is in progress, <a href="qdragmoveevent.html">TQDragMoveEvent</a>.
+<li><tt>TQEvent::DragLeave</tt> - A drag-and-drop leaves widget, <a href="qdragleaveevent.html">TQDragLeaveEvent</a>.
+<li><tt>TQEvent::Drop</tt> - A drag-and-drop is completed, <a href="qdropevent.html">TQDropEvent</a>.
+<li><tt>TQEvent::DragResponse</tt> - Internal event used by TQt on some platforms.
+<li><tt>TQEvent::ChildInserted</tt> - Object gets a child, <a href="qchildevent.html">TQChildEvent</a>.
+<li><tt>TQEvent::ChildRemoved</tt> - Object loses a child, <a href="qchildevent.html">TQChildEvent</a>.
+<li><tt>TQEvent::LayoutHint</tt> - Widget child has changed layout properties.
+<li><tt>TQEvent::ActivateControl</tt> - Internal event used by TQt on some platforms.
+<li><tt>TQEvent::DeactivateControl</tt> - Internal event used by TQt on some platforms.
+<li><tt>TQEvent::LanguageChange</tt> - The application translation changed, <a href="ntqtranslator.html">TQTranslator</a>
+<li><tt>TQEvent::LayoutDirectionChange</tt> - The direction of layouts changed
+<li><tt>TQEvent::LocaleChange</tt> - The system locale changed
+<li><tt>TQEvent::Quit</tt> - Reserved.
+<li><tt>TQEvent::Create</tt> - Reserved.
+<li><tt>TQEvent::Destroy</tt> - Reserved.
+<li><tt>TQEvent::Reparent</tt> - Reserved.
+<li><tt>TQEvent::Speech</tt> - Reserved for speech input.
+<li><tt>TQEvent::TabletMove</tt> - A Wacom Tablet Move Event.
+<li><tt>TQEvent::Style</tt> - Internal use only
+<li><tt>TQEvent::TabletPress</tt> - A Wacom Tablet Press Event
+<li><tt>TQEvent::TabletRelease</tt> - A Wacom Tablet Release Event
+<li><tt>TQEvent::OkRequest</tt> - Internal event used by TQt on some platforms.
+<li><tt>TQEvent::HelpRequest</tt> - Internal event used by TQt on some platforms.
+<li><tt>TQEvent::IconDrag</tt> - Internal event used by TQt on some platforms when proxy icon is dragged.
+<li><tt>TQEvent::WindowStateChange</tt> - The window's state, i.e. minimized,
+maximized or full-screen, has changed. See <a href="ntqwidget.html#windowState">TQWidget::windowState</a>().
+<li><tt>TQEvent::WindowBlocked</tt> - The window is modally blocked
+<li><tt>TQEvent::WindowUnblocked</tt> - The window leaves modal blocking
+<li><tt>TQEvent::User</tt> - User defined event.
+<li><tt>TQEvent::MaxUser</tt> - Last user event id.
+</ul><p> User events should have values between User and MaxUser inclusive.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQEvent"></a>TQEvent::TQEvent ( <a href="ntqevent.html#Type-enum">Type</a>&nbsp;type )
+</h3>
+
+<p> Contructs an event object of type <em>type</em>.
+
+<h3 class=fn><a name="~TQEvent"></a>TQEvent::~TQEvent ()<tt> [virtual]</tt>
+</h3>
+Destroys the event. If it was <a href="ntqapplication.html#postEvent">posted</a>,
+it will be removed from the list of events to be posted.
+
+<h3 class=fn>bool <a name="spontaneous"></a>TQEvent::spontaneous () const
+</h3>
+
+<p> Returns true if the event originated outside the application, i.e.
+it is a system event; otherwise returns false.
+
+<h3 class=fn><a href="ntqevent.html#Type-enum">Type</a> <a name="type"></a>TQEvent::type () const
+</h3>
+
+<p> Returns the event type.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

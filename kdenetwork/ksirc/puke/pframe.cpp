@@ -19,13 +19,13 @@ PObject *createWidget(CreateArgs &ca)
 PFrame::PFrame( PObject *parent)
   : PWidget(parent)
 {
-  //  debug("PFrame PFrame called");
-  frame = 0;
+  //  tqDebug("PFrame PFrame called");
+  frame = 0;  /* TQt3 迁移 */
 }
 
 PFrame::~PFrame()
 {
-  //  debug("PFrame: in destructor");
+  //  tqDebug("PFrame: in destructor");
   /*
   delete frame; // Delete the frame
   frame=0;      // Set it to 0
@@ -35,7 +35,7 @@ PFrame::~PFrame()
 
 void PFrame::messageHandler(int fd, PukeMessage *pm)
 {
-  //  debug("PFrame handler called");
+  //  tqDebug("PFrame handler called");
   PukeMessage pmRet;
   switch(pm->iCommand){
   case PUKE_QFRAME_SET_FRAME:
@@ -71,7 +71,7 @@ void PFrame::setWidget(QObject *w)
 
 QFrame *PFrame::widget()
 {
-  //  debug("PFrame widget called");
+  //  tqDebug("PFrame widget called");
   return frame;
 }
 

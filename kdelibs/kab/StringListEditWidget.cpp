@@ -173,7 +173,7 @@ void StringListEditWidget::upPressed()
     } else {
       if(index!=0)
 	{
-	  text=lbStrings->text(index);
+	  text= lbStrings->text(index).ascii();
 	  lbStrings->removeItem(index);
 	  lbStrings->insertItem(text.c_str(), index-1);
 	  lbStrings->setCurrentItem(index-1);
@@ -201,7 +201,7 @@ void StringListEditWidget::downPressed()
     } else {
       if((unsigned)index+1!=lbStrings->count())
 	{
-	  text=lbStrings->text(index);
+	  text= lbStrings->text(index).ascii();
 	  lbStrings->removeItem(index);
 	  lbStrings->insertItem(text.c_str(), index+1);
 	  lbStrings->setCurrentItem(index+1);

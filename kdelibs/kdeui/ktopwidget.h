@@ -1,7 +1,7 @@
 #ifndef _KTOPWIDGET_H
 #define _KTOPWIDGET_H
 
-#include <ktmainwindow.h>
+#include "ktmainwindow.h"
 
 /**
  * This was top level widget. It inherits KTMainWindow completely now.

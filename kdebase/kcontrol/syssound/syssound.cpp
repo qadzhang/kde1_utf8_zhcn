@@ -183,12 +183,14 @@ KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
 
   soundlist->insertItem(klocale->translate("(none)"));
 
-  path = KApplication::kde_sounddir().copy();
+  path = KApplication::kde_sounddir();
   dir.setPath(path);
   dir.setNameFilter("*.wav");
   dir.setSorting(QDir::Name);
   dir.setFilter(QDir::Readable | QDir::Files);
-  list = dir.entryList();
+  // TQt3 迁移：值语义搬运
+  { QStringList k1sl = dir.entryList();
+    for (unsigned k1i=0;k1i<k1sl.count();++k1i) (*list).append(k1sl[k1i]); }
 
   soundlist->insertStrList(list);
   
@@ -333,7 +335,7 @@ void KSoundWidget::eventSelected(int index){
     // CC: at first, get the name of the sound file we want to select
     sname = soundnames.at(index-1);
     CHECK_PTR(sname); // CC: should never happen anyways...
-      debug("event %d wants sound %s", index, sname->data());
+      tqDebug("event %d wants sound %s", index, sname->data());
 
     i = 1;
     listlen = soundlist->count();
@@ -422,7 +424,7 @@ void KSoundWidget::playCurrentSound()
   if (soundno > 0) {
     sname = soundlist->text(soundno);
     if (sname[0] != '/') {
-      hlp = KApplication::kde_sounddir().copy(); 
+      hlp = KApplication::kde_sounddir(); 
       hlp += "/";  // Don't forget this -- Bernd
       hlp += sname;
       audio.play((char*)hlp.data());

@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/extensions/activeqt/container/qaxscript.cpp:593 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQAxScript Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQAxScript Class Reference<br><small>[<a href="qaxcontainer.html">TQAxContainer module</a>]</small></h1>
+
+<p>The TQAxScript class provides a wrapper around script code.
+<a href="#details">More...</a>
+<p>This class is part of the <b>TQt ActiveTQt Extension</b>.
+<p><tt>#include &lt;<a href="qaxscript-h.html">qaxscript.h</a>&gt;</tt>
+<p>Inherits <a href="ntqobject.html">TQObject</a>.
+<p><a href="qaxscript-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn>enum <a href="#FunctionFlags-enum"><b>FunctionFlags</b></a> { FunctionNames = 0, FunctionSignatures }</li>
+<li class=fn><a href="#TQAxScript"><b>TQAxScript</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;name, TQAxScriptManager&nbsp;*&nbsp;manager )</li>
+<li class=fn><a href="#~TQAxScript"><b>~TQAxScript</b></a> ()</li>
+<li class=fn>bool <a href="#load"><b>load</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;code, const&nbsp;TQString&nbsp;&amp;&nbsp;language = TQString::null )</li>
+<li class=fn>TQStringList <a href="#functions"><b>functions</b></a> ( FunctionFlags&nbsp;flags = FunctionNames ) const</li>
+<li class=fn>TQString <a href="#scriptCode"><b>scriptCode</b></a> () const</li>
+<li class=fn>TQString <a href="#scriptName"><b>scriptName</b></a> () const</li>
+<li class=fn>TQAxScriptEngine * <a href="#scriptEngine"><b>scriptEngine</b></a> () const</li>
+<li class=fn>TQVariant <a href="#call"><b>call</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;function, const&nbsp;TQVariant&nbsp;&amp;&nbsp;var1 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var2 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var3 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var4 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var5 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var6 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var7 = TQVariant ( ), const&nbsp;TQVariant&nbsp;&amp;&nbsp;var8 = TQVariant ( ) )</li>
+<li class=fn>TQVariant <a href="#call-2"><b>call</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;function, TQValueList&lt;TQVariant&gt;&nbsp;&amp;&nbsp;arguments )</li>
+</ul>
+<h2>Signals</h2>
+<ul>
+<li class=fn>void <a href="#entered"><b>entered</b></a> ()</li>
+<li class=fn>void <a href="#finished"><b>finished</b></a> ()</li>
+<li class=fn>void <a href="#finished-2"><b>finished</b></a> ( const&nbsp;TQVariant&nbsp;&amp;&nbsp;result )</li>
+<li class=fn>void <a href="#finished-3"><b>finished</b></a> ( int&nbsp;code, const&nbsp;TQString&nbsp;&amp;&nbsp;source, const&nbsp;TQString&nbsp;&amp;&nbsp;description, const&nbsp;TQString&nbsp;&amp;&nbsp;help )</li>
+<li class=fn>void <a href="#stateChanged"><b>stateChanged</b></a> ( int&nbsp;state )</li>
+<li class=fn>void <a href="#error"><b>error</b></a> ( int&nbsp;code, const&nbsp;TQString&nbsp;&amp;&nbsp;description, int&nbsp;sourcePosition, const&nbsp;TQString&nbsp;&amp;&nbsp;sourceText )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+<p> This class is defined in the <b>TQt <a href="activentqt.html#ActiveTQt">ActiveTQt</a> Extension</b>, which can be found in the <tt>qt/extensions</tt> directory. It is not included in the main TQt API.
+<p>
+
+The TQAxScript class provides a wrapper around script code.
+
+
+<p> Every instance of the TQAxScript class represents a piece of
+scripting code in a particular scripting language. The code is
+loaded into the script engine using <a href="#load">load</a>(). Functions declared
+in the code can be called using <a href="#call">call</a>(). 
+<p> The script provides <a href="#scriptEngine">scriptEngine</a>() provides feedback to the 
+application through signals. The most important signal is the 
+<a href="#error">error</a>() signal. Direct access to the <a href="qaxscriptengine.html">TQAxScriptEngine</a> is provided
+through the scriptEngine() function.
+<p> <b>Warning:</b> This class is not available with the bcc5.5 and MingW
+compilers.
+
+<hr><h2>Member Type Documentation</h2>
+<h3 class=fn><a name="FunctionFlags-enum"></a>TQAxScript::FunctionFlags</h3>
+
+<p> This FunctionFlags enum describes formatting for function introspection.
+<ul>
+<li><tt>TQAxScript::FunctionNames</tt> - Only function names are returned.
+<li><tt>TQAxScript::FunctionSignatures</tt> - Returns the functions with signatures.
+</ul>
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQAxScript"></a>TQAxScript::TQAxScript ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;name, <a href="qaxscriptmanager.html">TQAxScriptManager</a>&nbsp;*&nbsp;manager )
+</h3>
+Constructs a TQAxScript object called <em>name</em> and registers
+it with the <a href="qaxscriptmanager.html">TQAxScriptManager</a> <em>manager</em>. This is usually done by the
+TQAxScriptManager class when <a href="qaxscriptmanager.html#load">loading a 
+    script</a>.
+<p> A script should always have a name. A manager is necessary to allow
+the script code to reference objects in the application. The <em>manager</em>
+takes ownership of the object.
+
+<h3 class=fn><a name="~TQAxScript"></a>TQAxScript::~TQAxScript ()
+</h3>
+Destroys the object, releasing all allocated resources.
+
+<h3 class=fn><a href="ntqvariant.html">TQVariant</a> <a name="call"></a>TQAxScript::call ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;function, const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var1 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var2 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var3 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var4 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var5 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var6 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var7 = TQVariant ( ), const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;var8 = TQVariant ( ) )
+</h3>
+Calls <em>function</em>, passing the parameters <em>var1</em>, <em>var1</em>, 
+<em>var2</em>, <em>var3</em>, <em>var4</em>, <em>var5</em>, <em>var6</em>, <em>var7</em> and <em>var8</em>
+as arguments and returns the value returned by the function, or an 
+invalid <a href="ntqvariant.html">TQVariant</a> if the function does not return a value or when 
+the function call failed.
+<p> See <a href="qaxscriptmanager.html#call">TQAxScriptManager::call</a>() for more information about how to call
+script functions.
+
+<h3 class=fn><a href="ntqvariant.html">TQVariant</a> <a name="call-2"></a>TQAxScript::call ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;function, <a href="ntqvaluelist.html">TQValueList</a>&lt;TQVariant&gt;&nbsp;&amp;&nbsp;arguments )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Calls <em>function</em> passing <em>arguments</em> as parameters, and returns
+the result. Returns when the script's execution has finished.
+<p> See <a href="qaxscriptmanager.html#call">TQAxScriptManager::call</a>() for more information about how to call
+script functions.
+
+<h3 class=fn>void <a name="entered"></a>TQAxScript::entered ()<tt> [signal]</tt>
+</h3> 
+<p> This signal is emitted when a script engine has started executing code.
+
+<h3 class=fn>void <a name="error"></a>TQAxScript::error ( int&nbsp;code, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;description, int&nbsp;sourcePosition, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;sourceText )<tt> [signal]</tt>
+</h3>
+
+<p> This signal is emitted when an execution error occured while
+running a script.
+<p> <em>code</em>, <em>description</em>, <em>sourcePosition</em> and <em>sourceText</em>
+contain information about the execution error.
+
+<h3 class=fn>void <a name="finished"></a>TQAxScript::finished ()<tt> [signal]</tt>
+</h3> 
+<p> This signal is emitted when a script engine has finished executing code.
+
+<h3 class=fn>void <a name="finished-2"></a>TQAxScript::finished ( const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;result )<tt> [signal]</tt>
+</h3> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <em>result</em> contains the script's result. This will be an invalid
+<a href="ntqvariant.html">TQVariant</a> if the script has no return value.
+
+<h3 class=fn>void <a name="finished-3"></a>TQAxScript::finished ( int&nbsp;code, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;source, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;description, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;help )<tt> [signal]</tt>
+</h3> This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> <em>code</em>, <em>source</em>, <em>description</em> and <em>help</em> contain exception information
+when the script terminated.
+
+<h3 class=fn><a href="ntqstringlist.html">TQStringList</a> <a name="functions"></a>TQAxScript::functions ( <a href="qaxscript.html#FunctionFlags-enum">FunctionFlags</a>&nbsp;flags = FunctionNames ) const
+</h3>
+Returns a list of all the functions in this script if the respective
+script engine supports introspection; otherwise returns an empty list.
+The functions are either provided with full prototypes or only as 
+names, depending on the value of <em>flags</em>.
+<p> <p>See also <a href="qaxscriptengine.html#hasIntrospection">TQAxScriptEngine::hasIntrospection</a>().
+
+<h3 class=fn>bool <a name="load"></a>TQAxScript::load ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;code, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;language = TQString::null )
+</h3>
+Loads the script source <em>code</em> written in language <em>language</em>
+into the script engine. Returns true if <em>code</em> was successfully
+entered into the script engine; otherwise returns false.
+<p> If <em>language</em> is empty (the default) it will be determined 
+heuristically. If <em>code</em> contains the string <tt>End Sub</tt> it will 
+be interpreted as VBScript, otherwise as JScript. Additional 
+scripting languages can be registered using 
+TQAxScript::registerEngine().
+<p> This function can only be called once for each TQAxScript object,
+which is done automatically when using <a href="qaxscriptmanager.html#load">TQAxScriptManager::load</a>().
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="scriptCode"></a>TQAxScript::scriptCode () const
+</h3> 
+Returns the script's code, or the null-string if no
+code has been loaded yet.
+<p> <p>See also <a href="#load">load</a>().
+
+<h3 class=fn><a href="qaxscriptengine.html">TQAxScriptEngine</a>&nbsp;* <a name="scriptEngine"></a>TQAxScript::scriptEngine () const
+</h3> 
+Returns a pointer to the script engine.
+<p> You can use the object returned to connect signals to the 
+script functions, or to access the script engine directly.
+
+<h3 class=fn><a href="ntqstring.html">TQString</a> <a name="scriptName"></a>TQAxScript::scriptName () const
+</h3> 
+Returns the name of the script.
+
+<h3 class=fn>void <a name="stateChanged"></a>TQAxScript::stateChanged ( int&nbsp;state )<tt> [signal]</tt>
+</h3> 
+<p> This signal is emitted when a script engine changes state.
+<em>state</em> can be any value in the TQAxScriptEngineState enumeration.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

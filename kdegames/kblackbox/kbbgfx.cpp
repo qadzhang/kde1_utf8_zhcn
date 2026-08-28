@@ -163,7 +163,7 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
   int type;
   QPixmap pm;
 
-  //  debug( "%d", p->viewport().width() );
+  //  tqDebug( "%d", p->viewport().width() );
 
   switch (type = graphicBoard->get( col, row )) {
   case MARK1BBG: pm = *pixScaled[MARK1BBG]; break;
@@ -176,7 +176,7 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
   case WBALLBBG: pm = *pixScaled[WBALLBBG]; break;
   default: pm = *pixScaled[OUTERBBG];
   }
-  //  debug( "%d %d", pm.width(), w );
+  //  tqDebug( "%d %d", pm.width(), w );
   p->drawPixmap( 0, 0, pm );
   //  bitBlt( this, col * w, row * h, &pm );
 
@@ -293,7 +293,7 @@ void KBBGraphic::paintEvent( QPaintEvent* )
   int i, j;
   QPainter paint( drawBuffer );
 
-  //  debug( "%d", drawBuffer->width() );
+  //  tqDebug( "%d", drawBuffer->width() );
   for (i = 0; i < numRows; i++) {
     for (j = 0; j < numCols; j++) {
       paint.setViewport( j * cellW, i * cellH, width(), height() );
@@ -313,7 +313,7 @@ void KBBGraphic::resizeEvent( QResizeEvent* e )
   int h = QWidget::height();
   int wNew, hNew;
 
-  //  debug("%d %d %d %d", w, h, minW, minH );
+  //  tqDebug("%d %d %d %d", w, h, minW, minH );
   if (w > minW) {
     wNew = w / numC();
   } else {
@@ -350,7 +350,7 @@ void KBBGraphic::mousePressEvent( QMouseEvent* e )
     QPoint pos = e->pos();		// extract pointer position
     curRow = pos.y() / cellH;
     curCol = pos.x() / cellW;
-    //debug("%d %d %d ", e->state(), LeftButton, e->state()&LeftButton);
+    //tqDebug("%d %d %d ", e->state(), LeftButton, e->state()&LeftButton);
     updateElement( oldCol, oldRow );
     emit inputAt( curCol, curRow, e->button() ); 
   }
@@ -368,7 +368,7 @@ void KBBGraphic::mouseMoveEvent( QMouseEvent* e ) {
     QPoint pos = e->pos();                 // extract pointer position
     int movRow = pos.y() / cellH;
     int movCol = pos.x() / cellW;
-    // debug("%d %d", movRow,curRow);
+    // tqDebug("%d %d", movRow,curRow);
     if ( (curRow != movRow) 			// if current cell has moved,
 	|| (curCol != movCol) ) {
       curRow = movRow;

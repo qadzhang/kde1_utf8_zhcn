@@ -161,7 +161,7 @@ Kodometer::Kodometer(QWidget* parent,const char* name)
 
 
     QString libDir;
-    libDir.setStr(KApplication::kde_datadir().copy());
+    libDir = KApplication::kde_datadir();  /* TQt3 迁移 */
     libDir.append("/kodo/");
 
     

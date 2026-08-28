@@ -27,8 +27,6 @@ KMFolderSelDlg::KMFolderSelDlg(const char* caption):
   KMFolderDir* fdir = &folderMgr->dir();
   KMFolder* cur;
 
-  initMetaObject();
-
   setCaption(i18n("Select folder"));
 
   mListBox = new QListBox(this);

@@ -27,8 +27,8 @@ class kstInside;
 #include <kfm.h>
 #include <ksimpleconfig.h>
 #include <knewpanner.h>
-#include <KMDIMgr.h>
-#include <kpopupmenu.h>
+#include "KMDIMgr.h"
+#include "kpopupmenu.h"
 
 //#include "ahtmlview.h"
 #include "irclistitem.h"

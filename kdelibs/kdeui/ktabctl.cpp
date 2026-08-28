@@ -354,8 +354,8 @@ void KTabCtl::showTab(int i)
 void KTabCtl::addTab(QWidget *w, const char *name)
 {
     QTab *t = new QTab();
-    t->label = name;
-    t->enabled = TRUE;
+    t->setText( name );  // TQt3 迁移：label/enabled 成员转访问器
+    t->setEnabled( TRUE );
     int id = tabs->addTab(t);   /* add the tab itself to the tabbar */
     if (id == (int)pages.size()) {
 	pages.resize(id + 1);

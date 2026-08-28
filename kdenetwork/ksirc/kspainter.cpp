@@ -151,14 +151,14 @@ QString KSPainter::stripColourCodes(QString col, QList<int> *xlate){
   if(col.isNull() || col.isEmpty()) // Sanity check
     return noCol;
 
-  col.detach();
+  col
   col.replace(QRegExp("~s"), "");
 
   if(xlate != 0x0){
     xlate->clear();
     xlate->setAutoDelete(TRUE);
   }
-//  debug("Processing: %s", col.data());
+//  tqDebug("Processing: %s", col.data());
   for(uint i = 0; i < col.length() ;){
     if(((col[i] == '~') || (col[i] == 0x03)) && ((col[i+1] >= '0') && (col[i+1] <= '9'))){
       i += 2; // Step over the ~ and the first number
@@ -203,7 +203,7 @@ QString KSPainter::stripColourCodes(QString col, QList<int> *xlate){
     }
   }
 //  cerr << endl;
-//debug("NoCol: %s", noCol.data());
+//tqDebug("NoCol: %s", noCol.data());
   return noCol;
   
 }

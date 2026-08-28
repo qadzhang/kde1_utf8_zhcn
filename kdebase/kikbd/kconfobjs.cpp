@@ -98,7 +98,7 @@ void KConfigNumberedKeysObject::writeObject(KObjectConfig* config)
   unsigned i;for(i=0; i<=list.count(); i++) {
     QString num;
     QString key = keybase + num.setNum(i);
-    config->getConfig()->writeEntry(key, i>=list.count()?"":list.at(i));
+    config->getConfig()->writeEntry((const char*)key, (const char*)(i>=list.count()?"":list.at(i)));  /* TQt3 迁移 */
   }
 }
 

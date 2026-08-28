@@ -7,7 +7,7 @@
  *                KArchie is written for the KDE-Project                   *
  *                         http://www.kde.org                              *
  *                                                                         *
- *   Copyright (C) Oct 1997 J�rg Habenicht                                 *
+ *   Copyright (C) Oct 1997 J�rg Habenicht                                 *
  *                  E-Mail: j.habenicht@europemail.com                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -174,7 +174,7 @@ KAViewList::displayFileList( KAQueryList &fileList )
   QString tmp;
   //  tmp.setNum( fileList.count() );
   //  tmp += " insert file in viewlist";
-  //  debug( tmp );
+  //  tqDebug( tmp );
   int i, count = fileList.count();
   for ( i=0; i<count; i++ ) {
     //    fprintf(stderr,"[%i] ", fileList.at());
@@ -205,7 +205,7 @@ KAViewList::mousePressEvent(QMouseEvent *e)
    * else give to parent class.
    */
 /*
-debug("Mouse event occured");
+tqDebug("Mouse event occured");
   if (RightButton == e->button()) {
     QPoint p (e->pos());
     // get the row under the mousepointer and highlight it
@@ -223,7 +223,7 @@ KAViewList::slotPopupMenu(int row, int col)
 {
   /* show popup menu like file->menu
    */
-  //  debug("popup listmenu");
+  //  tqDebug("popup listmenu");
   //highlight the current row
   setCurrentItem (row);
   // get the position of the row
@@ -238,21 +238,21 @@ KAViewList::slotPopupMenu(int row, int col)
 void 
 KAViewList::slotFileOpen()
 {
-  //  debug ("fileopen sel");
+  //  tqDebug("fileopen sel");
   emit sigOpenFileSelected();
 }
 
 void 
 KAViewList::slotFileOpenDir()
 {
-  //  debug("fileopendir sel");
+  //  tqDebug("fileopendir sel");
   emit sigOpenDirSelected();
 }
 
 void 
 KAViewList::slotFileGet()
 {
-  //  debug("fileget sel");
+  //  tqDebug("fileget sel");
   emit sigGetFileSelected();
 }
 
@@ -377,11 +377,11 @@ KAViewFiletype::~KAViewFiletype()
 void 
 KAViewFiletype::displayQueryFile( const KAQueryFile &rFile )
 {
-  //  debug(rFile.getHost());
+  //  tqDebug(rFile.getHost());
   host->setText( rFile.getHost() );
-  //  debug(rFile.getPath());
+  //  tqDebug(rFile.getPath());
   path->setText( rFile.getPath() );
-  //  debug(rFile.getFile());
+  //  tqDebug(rFile.getFile());
   filename->setText( rFile.getFile() );
   filesize->setNum( rFile.getSize() );
   filemode->setText( rFile.getMode() );
@@ -495,7 +495,7 @@ KAView::newFileList( KAQueryList &fileList )
     if ( width > maxwidth )
       maxwidth = width;
   }
-  //debug("filetype is %ld", (long)filetype);
+  //tqDebug("filetype is %ld", (long)filetype);
   if (filetype)
     filetype->setFileDateWidth( maxwidth );
   list->displayFileList( fileList );
@@ -527,7 +527,7 @@ KAView::slotShowFileDiscriptor( bool showit )
     // erase filetypeview
     if ( filetype != 0 ){
       delete filetype;
-      filetype = 0;
+      filetype = 0;  /* TQt3 迁移 */
     }
     // erase the boxlayout
     if (box)

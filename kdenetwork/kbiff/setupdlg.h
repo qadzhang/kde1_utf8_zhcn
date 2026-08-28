@@ -31,7 +31,7 @@ class QPushButton;
 class QComboBox;
 
 #include <kiconloaderdialog.h>
-#include <kbiffurl.h>
+#include "kbiffurl.h"
 
 struct KBiffMailbox
 {

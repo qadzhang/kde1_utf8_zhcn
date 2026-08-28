@@ -3,9 +3,10 @@
 // qps -- Qt-based visual process status monitor
 //
 // This program is free software. See the file COPYING for details.
-// Author: Mattias Engdeg�rd, 1997
+// Author: Mattias Engdeg�rd, 1997
 
 #include <stdlib.h>
+#include "kpm_locale.h"  /* TQt3 迁移：TRANS 宏 */
 #include <stdio.h>
 #include <math.h>
 #include <sys/types.h>
@@ -193,10 +194,10 @@ Qps::Qps(QWidget *parent, const char *name)
   QString s;
   s.sprintf("kpm %sk%s", QPS_VERSION, KPM_VERSION);
   s += TRANS(" - A Visual Process Manager (KDE Version)\n\n"
-	     "� 1997 Mattias Engdeg�rd (f91-men@nada.kth.se)\n"
-	     "� 1998 Mario Weilguni (mweilguni@kde.org)\n\n"
+	     "� 1997 Mattias Engdeg�rd (f91-men@nada.kth.se)\n"
+	     "� 1998 Mario Weilguni (mweilguni@kde.org)\n\n"
 	     "kpm is the KDE version of qps, written by Matthias\n"
-	     "Engdeg�rd. The port to KDE was done by Mario\n"
+	     "Engdeg�rd. The port to KDE was done by Mario\n"
 	     "Weilguni. If you are interested on the original\n"
 	     "qps, you can find it at the following location:\n"
 	     "    ftp://sunsite.unc.edu/pub/linux/system/status\n\n"
@@ -618,7 +619,7 @@ void Qps::open_details(int row)
 	      this, SLOT(details_closed(Details *)));
     } else {
       if(errno == EACCES) {
-	QString s(100);
+	TQString s;  /* TQt3 迁移 */
 	s.sprintf(TRANS("You do not have permission to view the\n"
 		  "open sockets of process %d (%s).\n"
 		  "Only the owner of the process and the\n"
@@ -691,7 +692,7 @@ void Qps::menu_help_field() {
 
 void Qps::menu_update()
 {
-  QString txt(10);
+  TQString txt;  /* TQt3 迁移 */
   for(;;) {
     if(update_period % 1000 == 0)
       txt.sprintf("%d s", update_period / 1000);
@@ -866,7 +867,7 @@ void Qps::menu_renice()
     Procinfo *p = procview->procs[i];
     if(p->selected) {
       if(setpriority(PRIO_PROCESS, p->pid, new_nice) < 0) {
-	QString s(100);
+	TQString s;  /* TQt3 迁移 */
 	switch(errno) {
 	case EPERM:
 	  // this shouldn't happen, but (e)uid could be changed...
@@ -933,7 +934,7 @@ void Qps::menu_sched()
       struct sched_param sp;
       sp.sched_priority = sd.out_prio;
       if(sched_setscheduler(p->pid, sd.out_policy, &sp) < 0) {
-	QString s(100);
+	TQString s;  /* TQt3 迁移 */
 	if(errno == EPERM) {
 	  s.sprintf(TRANS("You do not have permission to change the\n"
 		    "scheduling and/or priority of"
@@ -978,7 +979,7 @@ void Qps::sendsig(Procinfo *p, int sig)
   if(kill(p->pid, sig) < 0) {
     // if the process is gone, do nothing - no need to alert the user
     if(errno == EPERM) {
-      QString str(100);
+      TQString str;  /* TQt3 迁移 */
       str.sprintf(TRANS("You do not have permission to send a signal to"
 		  " process %d (%s).\n"
 		  "Only the super-user and the owner of the process"

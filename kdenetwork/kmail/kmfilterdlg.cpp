@@ -34,7 +34,6 @@ static QStrList sFilterOpList, sFilterFuncList, sFilterFieldList,
 KMFaComboBox::KMFaComboBox(QWidget* p, const char* n):
   KMFaComboBoxInherited(false, p, n)
 {
-  initMetaObject();
   connect(this, SIGNAL(activated(int)), SLOT(slotSelected(int)));
 }
 
@@ -54,8 +53,6 @@ KMFilterDlg::KMFilterDlg(QWidget* parent, const char* name):
   int h, w, i;
   QSize sz;
   updown_move_semaphore = 1;
-  
-  initMetaObject();
 
   grid  = new QGridLayout(this, 4, 2, 4, 4);
   mFilter = NULL;
@@ -247,7 +244,7 @@ void KMFilterDlg::showFilter(KMFilter* aFilter)
   if (i < 0)
   {
     mRuleFieldA->changeItem(aFilter->ruleA().field(),0);
-    i = 0;
+    i = 0;  /* TQt3 迁移 */
   }
   else mRuleFieldA->changeItem(" ",0);
   mRuleFieldA->setCurrentItem(i);
@@ -258,7 +255,7 @@ void KMFilterDlg::showFilter(KMFilter* aFilter)
   if (i < 0)
   {
     mRuleFieldB->changeItem(aFilter->ruleB().field(),0);
-    i = 0;
+    i = 0;  /* TQt3 迁移 */
   }
   else mRuleFieldB->changeItem(" ",0);
   mRuleFieldB->setCurrentItem(i);
@@ -329,7 +326,7 @@ void KMFilterDlg::applyFilterChanges(void)
 //-----------------------------------------------------------------------------
 bool KMFilterDlg::testOpts(const QWidget* w) const
 {
-  if (!w) debug("KMFilterDlg: no widget given");
+  if (!w) tqDebug("KMFilterDlg: no widget given");
   return (w!=NULL);
 }
 
@@ -404,7 +401,7 @@ void KMFilterDlg::slotActionTypeSelected(KMFaComboBox* cbx, int idx)
   mFilter->setAction(i, action);
   if (!action || idx < 0) 
   {
-    debug("no action selected");
+    tqDebug("no action selected");
     return;
   }
 
@@ -437,7 +434,7 @@ void KMFilterDlg::slotFilterSelected(int idx)
   else
   {
     clear();
-    mFilter = 0;
+    mFilter = 0;  /* TQt3 迁移 */
   }
 }
 
@@ -450,7 +447,7 @@ void KMFilterDlg::slotBtnUp()
   
   if (idx < 1) return;
 
-  updown_move_semaphore = 0;
+  updown_move_semaphore = 0;  /* TQt3 迁移 */
 
   filter = filterMgr->take(idx);
   assert(filter != NULL);
@@ -473,7 +470,7 @@ void KMFilterDlg::slotBtnDown()
 
   if (idx < 0 || idx >= (int)mFilterList->count()-1) return;
 
-  updown_move_semaphore = 0;
+  updown_move_semaphore = 0;  /* TQt3 迁移 */
 
   filter = filterMgr->take(idx);
   assert(filter != NULL);
@@ -513,8 +510,8 @@ void KMFilterDlg::slotBtnDelete()
   int idx = mFilterList->currentItem();
   if (idx < 0) return;
 
-  mFilter = 0;
-  //debug ("I zeroed filter, cross my heart!");
+  mFilter = 0;  /* TQt3 迁移 */
+  //tqDebug("I zeroed filter, cross my heart!");
 
   mFilterList->removeItem(idx);
   filterMgr->remove(idx); //this is one true autoDelete

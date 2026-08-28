@@ -19,15 +19,15 @@ backgnd.cpp display.cpp
 )
 
 set(DISPLAY_MOC
-backgnd.moc display.moc colorscm.moc savescm.moc
-		scrnsave.moc general.moc widgetcanvas.moc fontchooser.moc
-		kresourceman.moc
+backgnd.h display.h colorscm.h savescm.h
+		scrnsave.h general.h widgetcanvas.h fontchooser.h
+		kresourceman.h
 )
-QT1_WRAP_MOC(MOC_FILES ${DISPLAY_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${DISPLAY_MOC})
 
 add_executable(kcmdisplay ${DISPLAY_SRCS} ${MOC_FILES})
 target_link_libraries(kcmdisplay
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

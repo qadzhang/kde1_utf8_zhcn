@@ -208,12 +208,12 @@ void HTMLFrameSet::resizeEvent( QResizeEvent* )
 	    }
 	}
     }
-    debug("Done Set");
+    tqDebug("Done Set");
 }
 
 int HTMLFrameSet::calcSize( const char *_str, int *size, int _max )
 {	
-    debug("Calculating size");
+    tqDebug("Calculating size");
   
     int value[1024];
     int mode[1024];
@@ -250,9 +250,9 @@ int HTMLFrameSet::calcSize( const char *_str, int *size, int _max )
 	}
     }
 
-    debug("*************** CALC SIZE elements = %i ******************",i);
+    tqDebug("*************** CALC SIZE elements = %i ******************",i);
     
-    debug("max. width=%i   max. height=%i",width(),height() );
+    tqDebug("max. width=%i   max. height=%i",width(),height() );
 
     bool joker = FALSE;
     

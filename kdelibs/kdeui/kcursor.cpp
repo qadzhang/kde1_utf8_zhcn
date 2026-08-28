@@ -4,7 +4,7 @@
  *
  * Copyright (C) 1998 Kurt Granroth <granroth@kde.org>
  */
-#include <kcursor.h>
+#include "kcursor.h"
 
 #include <kapp.h>
 #include <qbitmap.h>
@@ -19,7 +19,7 @@ QCursor KCursor::handCursor()
 
 	if (hand_cursor == 0)
 	{
-		if (KApplication::style() == WindowsStyle)
+		if (KApplication::style().inherits("TQWindowsStyle"))
 		{
 			unsigned char HAND_BITS[] = {
 				0x80, 0x01, 0x00, 0x40, 0x02, 0x00, 0x40, 0x02, 0x00, 0x40, 0x02,
@@ -65,66 +65,66 @@ QCursor KCursor::handCursor()
  */
 QCursor KCursor::arrowCursor()
 {
-	return ::arrowCursor;
+	return TQt::arrowCursor;
 }
 
 
 QCursor KCursor::upArrowCursor()
 {
-	return ::upArrowCursor;
+	return TQt::upArrowCursor;
 }
 
 
 QCursor KCursor::crossCursor()
 {
-	return ::crossCursor;
+	return TQt::crossCursor;
 }
 
 
 QCursor KCursor::waitCursor()
 {
-	return ::waitCursor;
+	return TQt::waitCursor;
 }
 
 
 QCursor KCursor::ibeamCursor()
 {
-	return ::ibeamCursor;
+	return TQt::ibeamCursor;
 }
 
 
 QCursor KCursor::sizeVerCursor()
 {
-	return ::sizeVerCursor;
+	return TQt::sizeVerCursor;
 }
 
 
 QCursor KCursor::sizeHorCursor()
 {
-	return ::sizeHorCursor;
+	return TQt::sizeHorCursor;
 }
 
 
 QCursor KCursor::sizeBDiagCursor()
 {
-	return ::sizeBDiagCursor;
+	return TQt::sizeBDiagCursor;
 }
 
 
 QCursor KCursor::sizeFDiagCursor()
 {
-	return ::sizeFDiagCursor;
+	return TQt::sizeFDiagCursor;
 }
 
 
 QCursor KCursor::sizeAllCursor()
 {
-	return ::sizeAllCursor;
+	return TQt::sizeAllCursor;
 }
 
 
 QCursor KCursor::blankCursor()
 {
-	return ::blankCursor;
+	return TQt::blankCursor;
 }
 

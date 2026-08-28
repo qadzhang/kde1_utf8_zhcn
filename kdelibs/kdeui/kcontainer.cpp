@@ -22,7 +22,7 @@
 KContainerLayout::KContainerLayout(QWidget * parent, const char * name, 
 			int orientation, bool homogeneos,
 			int spacing, WFlags f, bool allowLines)
-    : QFrame(parent,name,f,allowLines)
+    : QFrame(parent,name,f)  // TQt3 迁移：QFrame 无 allowLines 尾参
 {
     _spacing = spacing;
     _homogeneos = homogeneos;
@@ -137,7 +137,7 @@ void KContainerLayout::repositionWidgets()
 		x += (each_width+_spacing);
 	    }
 	    // ... from the end
-	    warning("homo");
+	    tqWarning("homo");
 	    x = size().width() - _endOffset;
 	    for ( item=_endWidgets.first(); item != 0; item=_endWidgets.next() )
 	    {
@@ -177,7 +177,7 @@ void KContainerLayout::repositionWidgets()
 		x += (w+_spacing);
 	    }
 	    // ... from end
-	    warning("non-homo");
+	    tqWarning("non-homo");
 	    x = size().width() - _endOffset;
 	    for ( item=_endWidgets.first(); item != 0; item=_endWidgets.next() )
 	    {
@@ -375,10 +375,10 @@ void KContainerLayout::calculateSizeHint()
     }
     if (parent()!=0L && !parent()->inherits("KContainerLayout") && parent()->inherits("QWidget"))
     {
-	warning("setting minimum size for parent widget (%i,%i)",_sizeHint.width(),_sizeHint.height());
+	tqWarning("setting minimum size for parent widget (%i,%i)",_sizeHint.width(),_sizeHint.height());
 	((QWidget*)parent())->setMinimumSize(_sizeHint);
     }
-    warning("minimum size (%i,%i)",_sizeHint.width(),_sizeHint.height());
+    tqWarning("minimum size (%i,%i)",_sizeHint.width(),_sizeHint.height());
     setMinimumSize(_sizeHint);
 }
 

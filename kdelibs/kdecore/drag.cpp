@@ -184,7 +184,7 @@ void KDNDDropZone::parseURLList()
 	return;
 
     QString s = dndData;
-    s.detach();
+
     int i;
     
     while ( ( i = s.find( "\n" ) ) != -1 )

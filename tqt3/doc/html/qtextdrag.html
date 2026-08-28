@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qdragobject.cpp:676 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQTextDrag Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQTextDrag Class Reference</h1>
+
+<p>The TQTextDrag class is a drag and drop object for
+transferring plain and Unicode text.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qdragobject-h.html">ntqdragobject.h</a>&gt;</tt>
+<p>Inherits <a href="ntqdragobject.html">TQDragObject</a>.
+<p><a href="qtextdrag-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQTextDrag"><b>TQTextDrag</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;text, TQWidget&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#TQTextDrag-2"><b>TQTextDrag</b></a> ( TQWidget&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#~TQTextDrag"><b>~TQTextDrag</b></a> ()</li>
+<li class=fn>virtual void <a href="#setText"><b>setText</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;text )</li>
+<li class=fn>virtual void <a href="#setSubtype"><b>setSubtype</b></a> ( const&nbsp;TQCString&nbsp;&amp;&nbsp;st )</li>
+</ul>
+<h2>Static Public Members</h2>
+<ul>
+<li class=fn>bool <a href="#canDecode"><b>canDecode</b></a> ( const&nbsp;TQMimeSource&nbsp;*&nbsp;e )</li>
+<li class=fn>bool <a href="#decode"><b>decode</b></a> ( const&nbsp;TQMimeSource&nbsp;*&nbsp;e, TQString&nbsp;&amp;&nbsp;str )</li>
+<li class=fn>bool <a href="#decode-2"><b>decode</b></a> ( const&nbsp;TQMimeSource&nbsp;*&nbsp;e, TQString&nbsp;&amp;&nbsp;str, TQCString&nbsp;&amp;&nbsp;subtype )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+<p> The TQTextDrag class is a drag and drop object for
+transferring plain and Unicode text.
+<p> 
+<p> Plain text is passed in a <a href="ntqstring.html">TQString</a> which may contain multiple lines
+(i.e. may contain newline characters). The drag target will receive
+the newlines according to the runtime environment, e.g. LF on Unix,
+and CRLF on Windows.
+<p> TQt provides no built-in mechanism for delivering only a single-line.
+<p> For more information about drag and drop, see the <a href="ntqdragobject.html">TQDragObject</a> class
+and the <a href="dnd.html">drag and drop documentation</a>.
+<p>See also <a href="draganddrop.html">Drag And Drop Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQTextDrag"></a>TQTextDrag::TQTextDrag ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text, <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a text drag object and sets its data to <em>text</em>. <em>dragSource</em> must be the drag source; <em>name</em> is the object name.
+
+<h3 class=fn><a name="TQTextDrag-2"></a>TQTextDrag::TQTextDrag ( <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;dragSource = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a default text drag object. <em>dragSource</em> must be the
+drag source; <em>name</em> is the object name.
+
+<h3 class=fn><a name="~TQTextDrag"></a>TQTextDrag::~TQTextDrag ()
+</h3>
+Destroys the text drag object and frees up all allocated
+resources.
+
+<h3 class=fn>bool <a name="canDecode"></a>TQTextDrag::canDecode ( const&nbsp;<a href="qmimesource.html">TQMimeSource</a>&nbsp;*&nbsp;e )<tt> [static]</tt>
+</h3>
+Returns true if the information in <em>e</em> can be decoded into a
+<a href="ntqstring.html">TQString</a>; otherwise returns false.
+<p> <p>See also <a href="#decode">decode</a>().
+
+<p>Example: <a href="simple_dd-example.html#x2827">iconview/simple_dd/main.cpp</a>.
+<h3 class=fn>bool <a name="decode"></a>TQTextDrag::decode ( const&nbsp;<a href="qmimesource.html">TQMimeSource</a>&nbsp;*&nbsp;e, <a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;str )<tt> [static]</tt>
+</h3>
+Attempts to decode the dropped information in <em>e</em> into <em>str</em>.
+Returns true if successful; otherwise returns false.
+<p> <p>See also <a href="#canDecode">canDecode</a>().
+
+<p>Example: <a href="simple_dd-example.html#x2828">iconview/simple_dd/main.cpp</a>.
+<h3 class=fn>bool <a name="decode-2"></a>TQTextDrag::decode ( const&nbsp;<a href="qmimesource.html">TQMimeSource</a>&nbsp;*&nbsp;e, <a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;str, <a href="ntqcstring.html">TQCString</a>&nbsp;&amp;&nbsp;subtype )<tt> [static]</tt>
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> Attempts to decode the dropped information in <em>e</em> into <em>str</em>.
+Returns true if successful; otherwise returns false. If <em>subtype</em>
+is null, any text subtype is accepted; otherwise only the
+specified <em>subtype</em> is accepted.
+<p> <p>See also <a href="#canDecode">canDecode</a>().
+
+<h3 class=fn>void <a name="setSubtype"></a>TQTextDrag::setSubtype ( const&nbsp;<a href="ntqcstring.html">TQCString</a>&nbsp;&amp;&nbsp;st )<tt> [virtual]</tt>
+</h3>
+Sets the MIME subtype of the text being dragged to <em>st</em>. The
+default subtype is "plain", so the default MIME type of the text
+is "text/plain". You might use this to declare that the text is
+"text/html" by calling <a href="#setSubtype">setSubtype</a>("html").
+
+<h3 class=fn>void <a name="setText"></a>TQTextDrag::setText ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;text )<tt> [virtual]</tt>
+</h3>
+Sets the text to be dragged to <em>text</em>. You will need to call this
+if you did not pass the text during construction.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

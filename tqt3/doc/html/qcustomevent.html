@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qevent.cpp:2197 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQCustomEvent Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQCustomEvent Class Reference</h1>
+
+<p>The TQCustomEvent class provides support for custom events.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qevent-h.html">ntqevent.h</a>&gt;</tt>
+<p>Inherits <a href="ntqevent.html">TQEvent</a>.
+<p><a href="qcustomevent-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQCustomEvent"><b>TQCustomEvent</b></a> ( int&nbsp;type )</li>
+<li class=fn><a href="#TQCustomEvent-2"><b>TQCustomEvent</b></a> ( Type&nbsp;type, void&nbsp;*&nbsp;data )</li>
+<li class=fn>void * <a href="#data"><b>data</b></a> () const</li>
+<li class=fn>void <a href="#setData"><b>setData</b></a> ( void&nbsp;*&nbsp;data )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQCustomEvent class provides support for custom events.
+<p> 
+<p> TQCustomEvent is a generic event class for user-defined events.
+User defined events can be sent to widgets or other <a href="ntqobject.html">TQObject</a>
+instances using <a href="ntqapplication.html#postEvent">TQApplication::postEvent</a>() or
+<a href="ntqapplication.html#sendEvent">TQApplication::sendEvent</a>(). Subclasses of TQObject can easily
+receive custom events by implementing the <a href="ntqobject.html#customEvent">TQObject::customEvent</a>()
+event handler function.
+<p> TQCustomEvent objects should be created with a type ID that
+uniquely identifies the event type. To avoid clashes with the
+TQt-defined events types, the value should be at least as large as
+the value of the "User" entry in the TQEvent::Type enum.
+<p> TQCustomEvent contains a generic void* data member that may be used
+for transferring event-specific data to the receiver. Note that
+since events are normally delivered asynchronously, the data
+pointer, if used, must remain valid until the event has been
+received and processed.
+<p> TQCustomEvent can be used as-is for simple user-defined event
+types, but normally you will want to make a subclass of it for
+your event types. In a subclass, you can add data members that are
+suitable for your event type.
+<p> Example:
+<pre>
+    class ColorChangeEvent : public TQCustomEvent
+    {
+    public:
+        ColorChangeEvent( <a href="ntqcolor.html">TQColor</a> color )
+            : TQCustomEvent( 65432 ), c( color ) {}
+        <a href="ntqcolor.html">TQColor</a> color() const { return c; }
+    private:
+        <a href="ntqcolor.html">TQColor</a> c;
+    };
+
+    // To send an event of this custom event type:
+
+    ColorChangeEvent* ce = new ColorChangeEvent( blue );
+    TQApplication::<a href="ntqapplication.html#postEvent">postEvent</a>( receiver, ce );  // TQt will delete it when done
+
+    // To receive an event of this custom event type:
+
+    void MyWidget::customEvent( TQCustomEvent * e )
+    {
+        if ( e-&gt;<a href="ntqevent.html#type">type</a>() == 65432 ) {  // It must be a ColorChangeEvent
+            ColorChangeEvent* ce = (ColorChangeEvent*)e;
+            newColor = ce-&gt;color();
+        }
+    }
+    </pre>
+ 
+<p> <p>See also <a href="ntqobject.html#customEvent">TQWidget::customEvent</a>(), <a href="ntqapplication.html#notify">TQApplication::notify</a>(), and <a href="events.html">Event Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQCustomEvent"></a>TQCustomEvent::TQCustomEvent ( int&nbsp;type )
+</h3>
+Constructs a custom event object with event type <em>type</em>. The
+value of <em>type</em> must be at least as large as TQEvent::User. The
+data pointer is set to 0.
+
+<h3 class=fn><a name="TQCustomEvent-2"></a>TQCustomEvent::TQCustomEvent ( <a href="ntqevent.html#Type-enum">Type</a>&nbsp;type, void&nbsp;*&nbsp;data )
+</h3>
+
+<p> Constructs a custom event object with the event type <em>type</em> and a
+pointer to <em>data</em>. (Note that any int value may safely be cast to
+TQEvent::Type).
+
+<h3 class=fn>void * <a name="data"></a>TQCustomEvent::data () const
+</h3>
+
+<p> Returns a pointer to the generic event data.
+<p> <p>See also <a href="#setData">setData</a>().
+
+<h3 class=fn>void <a name="setData"></a>TQCustomEvent::setData ( void&nbsp;*&nbsp;data )
+</h3>
+
+<p> Sets the generic data pointer to <em>data</em>.
+<p> <p>See also <a href="#data">data</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

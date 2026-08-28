@@ -19,21 +19,21 @@ set(KMAIL_SRCS
 )
 
 set(KMAIL_MOC
-    charsetsDlg.moc kalarmtimer.moc kbusyptr.moc kmaccount.moc
-    kmacctmgr.moc kmacctpop.moc kmacctseldlg.moc kmaddrbookdlg.moc
-    kmcomposewin.moc kmfilteraction.moc kmfilterdlg.moc kmfolderdia.moc
-    kmfolderdir.moc kmfolder.moc kmfoldermgr.moc kmfoldernode.moc
-    kmfolderseldlg.moc kmfoldertree.moc kmheaders.moc kmiostatusdlg.moc
-    kmmainwin.moc kmmsgbase.moc kmmsgpartdlg.moc kmnewiostatus.moc
-    kmnewiostatuswdg.moc kmreaderwin.moc kmsender.moc kmsettings.moc
-    kmtopwidget.moc kpgp.moc
+    charsetsDlg.h kalarmtimer.h kbusyptr.h kmaccount.h
+    kmacctmgr.h kmacctpop.h kmacctseldlg.h kmaddrbookdlg.h
+    kmcomposewin.h kmfilteraction.h kmfilterdlg.h kmfolderdia.h
+    kmfolderdir.h kmfolder.h kmfoldermgr.h kmfoldernode.h
+    kmfolderseldlg.h kmfoldertree.h kmheaders.h kmiostatusdlg.h
+    kmmainwin.h kmmsgbase.h kmmsgpartdlg.h kmnewiostatus.h
+    kmnewiostatuswdg.h kmreaderwin.h kmsender.h kmsettings.h
+    kmtopwidget.h kpgp.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KMAIL_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KMAIL_MOC})
 
 add_executable(kmail1 ${KMAIL_SRCS} ${MOC_FILES})
 target_link_libraries(kmail1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

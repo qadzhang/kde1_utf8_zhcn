@@ -515,7 +515,6 @@ void KWindowConfig::SaveSettings( void )
     config->writeEntry(KWM_FOCUS,"ClassicSloppyFocus");
   else if (v == CLASSIC_FOCUS_FOLLOWS_MOUSE)
     config->writeEntry(KWM_FOCUS,"ClassicFocusFollowMouse");
-  else
     config->writeEntry(KWM_FOCUS,"FocusFollowMouse");
 
   //CT - 17Jun1998

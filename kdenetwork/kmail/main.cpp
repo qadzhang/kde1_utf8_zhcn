@@ -26,7 +26,7 @@
 #include <kmsgbox.h>
 #include <kapp.h>
 #include <kstdaccel.h>
-#include <kmidentity.h>
+#include "kmidentity.h"
 #include <dirent.h>
 #include <sys/stat.h>
 #include <kdebug.h>
@@ -74,7 +74,7 @@ bool checkingMail = FALSE;
 const char* aboutText =
     "KMail [" KMAIL_VERSION "] by\n\n"
     "Stefan Taferner <taferner@kde.org>,\n"
-    "Markus Wübben <markus.wuebben@kde.org>\n\n"
+    "Markus Wï¿½bben <markus.wuebben@kde.org>\n\n"
     "based on the work of:\n"
     "Lynx <lynx@topaz.hknet.com>,\n"
     "Stephan Meyer <Stephan.Meyer@pobox.com>,\n"
@@ -84,7 +84,7 @@ const char* aboutText =
 
 static msg_handler oldMsgHandler = NULL;
 
-static void kmailMsgHandler(QtMsgType aType, const char* aMsg);
+static void kmailMsgHandler(TQtMsgType aType, const char* aMsg);
 static void signalHandler(int sigId);
 static void testDir(const char *_name);
 static void transferMail(void);
@@ -99,19 +99,18 @@ static void writePid(bool ready);
 
 //-----------------------------------------------------------------------------
 // Message handler
-static void kmailMsgHandler(QtMsgType aType, const char* aMsg)
+static void kmailMsgHandler(TQtMsgType aType, const char* aMsg)
 {
   QString appName = app->appName();
   QString msg = aMsg;
-  msg.detach();
 
   switch (aType)
   {
-  case QtDebugMsg:
+  case TQtDebugMsg:
     kdebug(KDEBUG_INFO, 0, msg);
     break;
 
-  case QtWarningMsg:
+  case TQtWarningMsg:
     fprintf(stderr, "%s: %s\n", (const char*)app->appName(), msg.data());
     if (strncmp(aMsg,"KCharset:",9) != 0 &&
 	strncmp(aMsg,"QGManager:",10) != 0 &&
@@ -126,7 +125,7 @@ static void kmailMsgHandler(QtMsgType aType, const char* aMsg)
     else kdebug(KDEBUG_INFO, 0, msg);
     break;
 
-  case QtFatalMsg:
+  case TQtFatalMsg:
     fprintf(stderr, appName+" "+i18n("fatal error")+": %s\n", msg.data());
     KMsgBox::message(NULL, appName+" "+i18n("fatal error"),
 		     aMsg, KMsgBox::STOP);
@@ -161,7 +160,7 @@ static void checkMessage()
   sprintf (lf, "%s.kmail%d.msg", _PATH_TMP, getuid());
   if (access(lf, F_OK) != 0)
   {
-    //debug ("No message for me");
+    //tqDebug("No message for me");
     return;
   }
   QString cmd;
@@ -536,7 +535,7 @@ static void cleanup(void)
   qInstallMsgHandler(oldMsgHandler);
   app->getConfig()->sync();
   //--- Sven's save attachments to /tmp start ---
-  //debug ("cleaned");
+  //tqDebug("cleaned");
   QString cmd;
   // This is a dir with attachments and it is not critical if they are
   // left behind.
@@ -608,7 +607,7 @@ static void processArgs(int argc, char *argv[])
           checkNewMail = TRUE;
       else if (argv[i][0]=='-')
       {
-          warning(i18n("Unknown command line option: %s"), argv[i]);
+          tqWarning(i18n("Unknown command line option: %s"), argv[i]);
           // unknown parameter
       }
       else
@@ -663,7 +662,7 @@ static void processArgs(int argc, char *argv[])
       checkNewMail = TRUE;
     else if (argv[i][0]=='-')
     {
-      warning(i18n("Unknown command line option: %s"), argv[i]);
+      tqWarning(i18n("Unknown command line option: %s"), argv[i]);
       // unknown parameter
     }
     else
@@ -717,11 +716,11 @@ main(int argc, char *argv[])
       // Check if pid is 0 - this would kill everything
       if (pId == 0)
       {
-        debug ("\nAccording to %s.kmail%d.lck there is existing kmail", _PATH_TMP,
+        tqDebug("\nAccording to %s.kmail%d.lck there is existing kmail", _PATH_TMP,
                getuid());
-        debug ("process with pid 0, which is wrong. Please close running kmail");
-        debug ("(if any), and delete this file like this:\n rm -f %s.kmail*", _PATH_TMP);
-        debug ("Then restart kmail");
+        tqDebug("process with pid 0, which is wrong. Please close running kmail");
+        tqDebug("(if any), and delete this file like this:\n rm -f %s.kmail*", _PATH_TMP);
+        tqDebug("Then restart kmail");
         exit (0);
       }
       sprintf (lf, "%s.kmail%d.msg", _PATH_TMP, getuid());
@@ -761,7 +760,7 @@ main(int argc, char *argv[])
           checkNewMail = TRUE;
         else if (argv[i][0]=='-')
         {
-          warning(i18n("Unknown command line option: %s"), argv[i]);
+          tqWarning(i18n("Unknown command line option: %s"), argv[i]);
           // unknown parameter
         }
         else
@@ -791,12 +790,12 @@ main(int argc, char *argv[])
       {
         if (kill(0-pId, 0) != 0)      // try if it lives at all
         {
-          debug ("Server died whyle busy");
+          tqDebug("Server died whyle busy");
           writePid(true);             // he died and left his pid uncleaned
         }
         else
         {
-          //debug ("Server is busy - message pending");
+          //tqDebug("Server is busy - message pending");
           exit (0);                   // ok he lives but is busy
         }
       }
@@ -804,17 +803,17 @@ main(int argc, char *argv[])
       {
         if (kill (pId, SIGUSR1) != 0) // Dead?
         {
-          debug ("Server died whyle ready");
+          tqDebug("Server died whyle ready");
           writePid(true);             // then we are server
         }
         else
         {
-          //debug ("Server is ready - message sent");
+          //tqDebug("Server is ready - message sent");
           exit (0);
         }
       }
     }
-    //debug ("We are starting normaly");
+    //tqDebug("We are starting normaly");
     sprintf(lf, "%s.kmail%d.msg", _PATH_TMP, getuid());
     unlink(lf); // clear old mesage
   }

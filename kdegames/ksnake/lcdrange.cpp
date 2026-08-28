@@ -58,7 +58,7 @@ void LCDRange::setValue( int value )
 void LCDRange::setRange( int minVal, int maxVal )
 {
     if ( minVal < 0 || maxVal > 99 || minVal > maxVal ) {
-	warning( klocale->translate("LCDRange::setRange(%d,%d)\n"
+	tqWarning( klocale->translate("LCDRange::setRange(%d,%d)\n"
 		 "\tRange must be 0..99\n"
 		 "\tand minVal must not be greater than maxVal"),
 		 minVal, maxVal );

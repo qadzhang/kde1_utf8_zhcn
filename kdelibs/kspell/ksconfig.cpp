@@ -358,14 +358,17 @@ void KSpellConfig::fillInDialog (void)
       QDir thedir (dir.filePath(),"*.aff");
       kdebug(KDEBUG_INFO, 750, "KSpellConfig%s\n",thedir.path());
 
-      kdebug(KDEBUG_INFO, 750, "entryList().count()=%d", thedir.entryList()->count());
+      kdebug(KDEBUG_INFO, 750, "entryList().count()=%d", (int)thedir.entryList().count());  // TQt3 迁移：值语义
 
-      for (unsigned i=0;i<thedir.entryList()->count();i++)
+      // TQt3 迁移：entryList() 值语义、QDir 无 [] 下标——局部列表承接
+      {
+      QStringList k1files = thedir.entryList();
+      for (unsigned i=0;i<k1files.count();i++)
 	{
 	  QString fname, lname, hname;
 
-	  kdebug (KDEBUG_INFO, 750, "%s/%d %s", __FILE__, __LINE__, (const char *)thedir [i]);
-	  fname = (const char *)thedir [i];
+	  kdebug (KDEBUG_INFO, 750, "%s/%d %s", __FILE__, __LINE__, (const char*)k1files[i]);
+	  fname = (const char*)k1files[i];
 
 	  if (interpret (fname, lname, hname))
 	    { // This one is the KDE default language
@@ -390,6 +393,7 @@ void KSpellConfig::fillInDialog (void)
 	      dictcombo->insertItem (hname.data());
 	    }
 	}
+      }  // TQt3 迁移：k1files 块作用域闭合
 
       
     }

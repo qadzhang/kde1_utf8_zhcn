@@ -71,7 +71,7 @@ QString timet2qstring(time_t t) {
 //
 // The base class for the accounting system provides a base set of usefull
 // and common functions, but does not do any accounting by itself. The 
-// accounting is accomplished withing it�s derived classes
+// accounting is accomplished withing it�s derived classes
 //
 /////////////////////////////////////////////////////////////////////////////
 AccountingBase::AccountingBase(QObject *parent) :
@@ -202,7 +202,7 @@ QString AccountingBase::getAccountingFile(const char* accountname) {
     return d;
 
   // load from KDE directory if file is found there
-  d = KApplication::kde_datadir().copy();
+  d = KApplication::kde_datadir();
   d += "/kppp/Rules/";
   d += accountname;
   if(access(d.data(), R_OK) == 0)
@@ -307,8 +307,8 @@ void Accounting::slotStop() {
     killTimer(acct_timer_id);
     if(update_timer_id != 0)
       killTimer(update_timer_id);
-    acct_timer_id = 0;
-    update_timer_id = 0;
+    acct_timer_id = 0;  /* TQt3 迁移 */
+    update_timer_id = 0;  /* TQt3 迁移 */
 
     QString s;
     s.sprintf(":%s:%0.4e:%0.4e:%u:%u\n",
@@ -462,7 +462,7 @@ void ExecutableAccounting::slotStop() {
   if(proc != 0) {
     proc->kill();
     delete proc;
-    proc = 0;
+    proc = 0;  /* TQt3 迁移 */
 
     QString s;
     s.sprintf(":%s:%0.4e:%0.4e:%u:%u\n",

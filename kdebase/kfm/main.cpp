@@ -27,6 +27,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 
 #include <sys/types.h>
 #include <dirent.h>
@@ -67,7 +68,7 @@ void testDir3( const char *_name )
 void testDir2( const char *_name )
 {
     DIR *dp;
-    QString c = kapp->localkdedir().copy();
+    QString c = kapp->localkdedir();
     c += _name;
     dp = opendir( c.data() );
     if ( dp == NULL )
@@ -150,7 +151,7 @@ int main( int argc, char ** argv )
     system( c );
 
     FILE *f2;
-    c = kapp->localkdedir().copy();
+    c = kapp->localkdedir();
     c += "/share/apps/kfm/desktop";
     f2 = fopen( c.data(), "rb" );
     if ( f2 == 0L )
@@ -166,7 +167,7 @@ int main( int argc, char ** argv )
     KFM::setSilent(true);
     KFM * other_kfm = new KFM();
     if (other_kfm->isOK() && other_kfm->isKFMRunning()) {
-      warning("KFM is already running");
+      tqWarning("KFM is already running");
       exit(1);
     }
     delete other_kfm;
@@ -211,6 +212,9 @@ int main( int argc, char ** argv )
     }   
 
     signal(SIGCHLD,sig_handler);
+    // TQt3 迁移：Qt1 时代 QApplication 构造默认忽略 SIGPIPE，TQt3 不再代劳——
+    // kioslave 写已关闭管道时触发 SIGPIPE 致 kfm 主进程整体崩溃，显式忽略之
+    signal(SIGPIPE, SIG_IGN);
     
     // Test for directories
     testDir( KFMPaths::DesktopPath(), TRUE );
@@ -260,7 +264,7 @@ int main( int argc, char ** argv )
     
     KFMServer ipc;
     
-    QString file = kapp->localkdedir().copy();
+    QString file = kapp->localkdedir();
     file += "/share/apps/kfm/pid";
     file += displayName();
     
@@ -321,7 +325,6 @@ int main( int argc, char ** argv )
     if ( KfmGui::rooticons == false )
     {
 	QString home = "file:";
-	home.detach();
 	home += QDir::homeDirPath().data();
 	KfmGui *m = new KfmGui( 0L, 0L, home.data() );
 	m->show();

@@ -1,0 +1,513 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/listviews/listviews.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Listviews</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Listviews</h1>
+
+   
+<p> 
+This examples shows how to work with listviews (hierarchical and multi-column).
+It also shows how to subclass listview items for special reasons. It looks
+and works like the main window of a mail client.
+<p> <hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/listviews.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef LISTVIEWS_H
+#define LISTVIEWS_H
+
+#include &lt;<a href="qsplitter-h.html">ntqsplitter.h</a>&gt;
+#include &lt;<a href="qstring-h.html">ntqstring.h</a>&gt;
+#include &lt;<a href="qobject-h.html">ntqobject.h</a>&gt;
+#include &lt;<a href="qdatetime-h.html">ntqdatetime.h</a>&gt;
+#include &lt;<a href="qptrlist-h.html">ntqptrlist.h</a>&gt;
+#include &lt;<a href="qlistview-h.html">ntqlistview.h</a>&gt;
+
+class TQListView;
+class TQLabel;
+class TQPainter;
+class TQColorGroup;
+class TQObjectList;
+class TQPopupMenu;
+
+// -----------------------------------------------------------------
+
+class MessageHeader
+{
+public:
+    MessageHeader( const <a href="ntqstring.html">TQString</a> &amp;_sender, const <a href="ntqstring.html">TQString</a> &amp;_subject, const <a href="ntqdatetime.html">TQDateTime</a> &amp;_datetime )
+        : msender( _sender ), msubject( _subject ), mdatetime( _datetime )
+    {}
+
+    MessageHeader( const MessageHeader &amp;mh );
+    MessageHeader &amp;operator=( const MessageHeader &amp;mh );
+
+    <a href="ntqstring.html">TQString</a> sender() { return msender; }
+    <a href="ntqstring.html">TQString</a> subject() { return msubject; }
+    <a href="ntqdatetime.html">TQDateTime</a> datetime() { return mdatetime; }
+
+protected:
+    <a href="ntqstring.html">TQString</a> msender, msubject;
+    <a href="ntqdatetime.html">TQDateTime</a> mdatetime;
+
+};
+
+// -----------------------------------------------------------------
+
+class Message
+{
+public:
+    enum State { Read = 0,
+                 Unread};
+
+    Message( const MessageHeader &amp;mh, const <a href="ntqstring.html">TQString</a> &amp;_body )
+        : mheader( mh ), mbody( _body ), mstate( Unread )
+    {}
+
+    Message( const Message &amp;m )
+        : mheader( m.mheader ), mbody( m.mbody ), mstate( m.mstate )
+    {}
+
+    MessageHeader header() { return mheader; }
+    <a href="ntqstring.html">TQString</a> body() { return mbody; }
+
+    void setState( const State &amp;s ) { mstate = s; }
+    State state() { return mstate; }
+
+protected:
+    MessageHeader mheader;
+    <a href="ntqstring.html">TQString</a> mbody;
+    State mstate;
+
+};
+
+// -----------------------------------------------------------------
+
+class Folder : public <a href="ntqobject.html">TQObject</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+
+public:
+    Folder( Folder *parent, const <a href="ntqstring.html">TQString</a> &amp;name );
+    ~Folder()
+    {}
+
+    void addMessage( Message *m )
+<a name="x131"></a>    { lstMessages.<a href="ntqptrlist.html#append">append</a>( m ); }
+
+    <a href="ntqstring.html">TQString</a> folderName() { return fName; }
+
+<a name="x132"></a>    Message *firstMessage() { return lstMessages.<a href="ntqptrlist.html#first">first</a>(); }
+<a name="x133"></a>    Message *nextMessage() { return lstMessages.<a href="ntqptrlist.html#next">next</a>(); }
+
+protected:
+    <a href="ntqstring.html">TQString</a> fName;
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;Message&gt; lstMessages;
+
+};
+
+// -----------------------------------------------------------------
+
+class FolderListItem : public <a href="qlistviewitem.html">TQListViewItem</a>
+{
+public:
+    FolderListItem( <a href="ntqlistview.html">TQListView</a> *parent, Folder *f );
+    FolderListItem( FolderListItem *parent, Folder *f );
+
+    void insertSubFolders( const <a href="ntqobjectlist.html">TQObjectList</a> *lst );
+
+    Folder *folder() { return myFolder; }
+
+protected:
+    Folder *myFolder;
+
+};
+
+// -----------------------------------------------------------------
+
+class MessageListItem : public <a href="qlistviewitem.html">TQListViewItem</a>
+{
+public:
+    MessageListItem( <a href="ntqlistview.html">TQListView</a> *parent, Message *m );
+
+    virtual void paintCell( <a href="ntqpainter.html">TQPainter</a> *p, const <a href="qcolorgroup.html">TQColorGroup</a> &amp;cg,
+                            int column, int width, int alignment );
+
+    Message *message() { return myMessage; }
+
+protected:
+    Message *myMessage;
+
+};
+
+// -----------------------------------------------------------------
+
+class ListViews : public <a href="ntqsplitter.html">TQSplitter</a>
+{
+    TQ_OBJECT
+
+public:
+    ListViews( <a href="ntqwidget.html">TQWidget</a> *parent = 0, const char *name = 0 );
+    ~ListViews()
+    {}
+
+protected:
+    void initFolders();
+    void initFolder( Folder *folder, unsigned int &amp;count );
+    void setupFolders();
+
+    <a href="ntqlistview.html">TQListView</a> *messages, *folders;
+    <a href="ntqlabel.html">TQLabel</a> *message;
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* menu;
+
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;Folder&gt; lstFolders;
+
+protected slots:
+    void slotFolderChanged( <a href="qlistviewitem.html">TQListViewItem</a>* );
+    void slotMessageChanged();
+    void slotRMB( <a href="qlistviewitem.html">TQListViewItem</a>*, const <a href="ntqpoint.html">TQPoint</a> &amp;, int );
+
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/listviews.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "listviews.h"
+
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qpalette-h.html">ntqpalette.h</a>&gt;
+#include &lt;<a href="qobjectlist-h.html">ntqobjectlist.h</a>&gt;
+#include &lt;<a href="qpopupmenu-h.html">ntqpopupmenu.h</a>&gt;
+#include &lt;<a href="qheader-h.html">ntqheader.h</a>&gt;
+#include &lt;<a href="qregexp-h.html">ntqregexp.h</a>&gt;
+
+// -----------------------------------------------------------------
+
+MessageHeader::MessageHeader( const MessageHeader &amp;mh )
+{
+    msender = mh.msender;
+    msubject = mh.msubject;
+    mdatetime = mh.mdatetime;
+}
+
+MessageHeader &amp;MessageHeader::operator=( const MessageHeader &amp;mh )
+{
+    msender = mh.msender;
+    msubject = mh.msubject;
+    mdatetime = mh.mdatetime;
+
+    return *this;
+}
+
+// -----------------------------------------------------------------
+
+<a name="f208"></a>Folder::Folder( Folder *parent, const <a href="ntqstring.html">TQString</a> &amp;name )
+    : <a href="ntqobject.html">TQObject</a>( parent, name ), fName( name )
+{
+    lstMessages.setAutoDelete( true );
+}
+
+// -----------------------------------------------------------------
+
+<a name="f209"></a>FolderListItem::FolderListItem( <a href="ntqlistview.html">TQListView</a> *parent, Folder *f )
+    : <a href="qlistviewitem.html">TQListViewItem</a>( parent )
+{
+    myFolder = f;
+    <a href="qlistviewitem.html#setText">setText</a>( 0, f-&gt;folderName() );
+
+    if ( myFolder-&gt;children() )
+        insertSubFolders( myFolder-&gt;children() );
+}
+
+FolderListItem::FolderListItem( FolderListItem *parent, Folder *f )
+    : <a href="qlistviewitem.html">TQListViewItem</a>( parent )
+{
+    myFolder = f;
+
+    <a href="qlistviewitem.html#setText">setText</a>( 0, f-&gt;folderName() );
+
+    if ( myFolder-&gt;children() )
+        insertSubFolders( myFolder-&gt;children() );
+}
+
+void <a name="f210"></a>FolderListItem::insertSubFolders( const <a href="ntqobjectlist.html">TQObjectList</a> *lst )
+{
+    Folder *f;
+    for ( f = ( Folder* )( ( <a href="ntqobjectlist.html">TQObjectList</a>* )lst )-&gt;first(); f; f = ( Folder* )( ( <a href="ntqobjectlist.html">TQObjectList</a>* )lst )-&gt;next() )
+        (void)new FolderListItem( this, f );
+}
+
+// -----------------------------------------------------------------
+
+<a name="f218"></a>MessageListItem::MessageListItem( <a href="ntqlistview.html">TQListView</a> *parent, Message *m )
+    : <a href="qlistviewitem.html">TQListViewItem</a>( parent )
+{
+    myMessage = m;
+    <a href="qlistviewitem.html#setText">setText</a>( 0, myMessage-&gt;header().sender() );
+    <a href="qlistviewitem.html#setText">setText</a>( 1, myMessage-&gt;header().subject() );
+    <a href="qlistviewitem.html#setText">setText</a>( 2, myMessage-&gt;header().datetime().toString() );
+}
+
+<a name="x157"></a>void MessageListItem::<a href="qlistviewitem.html#paintCell">paintCell</a>( <a href="ntqpainter.html">TQPainter</a> *p, const <a href="qcolorgroup.html">TQColorGroup</a> &amp;cg,
+                                 int column, int width, int alignment )
+{
+    <a href="qcolorgroup.html">TQColorGroup</a> _cg( cg );
+<a name="x135"></a>    <a href="ntqcolor.html">TQColor</a> c = _cg.<a href="qcolorgroup.html#text">text</a>();
+
+    if ( myMessage-&gt;state() == Message::Unread )
+<a name="x134"></a>        _cg.<a href="qcolorgroup.html#setColor">setColor</a>( TQColorGroup::Text, TQt::red );
+
+    TQListViewItem::<a href="qlistviewitem.html#paintCell">paintCell</a>( p, _cg, column, width, alignment );
+
+    _cg.<a href="qcolorgroup.html#setColor">setColor</a>( TQColorGroup::Text, c );
+}
+
+// -----------------------------------------------------------------
+
+<a name="f211"></a>ListViews::ListViews( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+    : <a href="ntqsplitter.html">TQSplitter</a>( TQt::Horizontal, parent, name )
+{
+    lstFolders.setAutoDelete( true );
+
+    folders = new <a href="ntqlistview.html">TQListView</a>( this );
+<a name="x147"></a>    folders-&gt;<a href="ntqlistview.html#header">header</a>()-&gt;setClickEnabled( false );
+<a name="x141"></a>    folders-&gt;<a href="ntqlistview.html#addColumn">addColumn</a>( "Folder" );
+
+    initFolders();
+    setupFolders();
+
+<a name="x152"></a>    folders-&gt;<a href="ntqlistview.html#setRootIsDecorated">setRootIsDecorated</a>( true );
+    <a href="ntqsplitter.html#setResizeMode">setResizeMode</a>( folders, TQSplitter::KeepSize );
+
+    <a href="ntqsplitter.html">TQSplitter</a> *vsplitter = new <a href="ntqsplitter.html">TQSplitter</a>( TQt::Vertical, this );
+
+    messages = new <a href="ntqlistview.html">TQListView</a>( vsplitter );
+    messages-&gt;<a href="ntqlistview.html#addColumn">addColumn</a>( "Sender" );
+    messages-&gt;<a href="ntqlistview.html#addColumn">addColumn</a>( "Subject" );
+    messages-&gt;<a href="ntqlistview.html#addColumn">addColumn</a>( "Date" );
+<a name="x150"></a>    messages-&gt;<a href="ntqlistview.html#setColumnAlignment">setColumnAlignment</a>( 1, TQt::AlignRight );
+<a name="x149"></a>    messages-&gt;<a href="ntqlistview.html#setAllColumnsShowFocus">setAllColumnsShowFocus</a>( true );
+<a name="x155"></a>    messages-&gt;<a href="ntqlistview.html#setShowSortIndicator">setShowSortIndicator</a>( true );
+    menu = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( messages );
+    for( int i = 1; i &lt;= 10; i++ )
+        menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( TQString( "Context Item %1" ).arg( i ) );
+<a name="x143"></a>    <a href="ntqobject.html#connect">connect</a>(messages, TQ_SIGNAL( <a href="ntqlistview.html#contextMenuRequested">contextMenuRequested</a>( <a href="qlistviewitem.html">TQListViewItem</a> *, const <a href="ntqpoint.html">TQPoint</a>&amp; , int ) ),
+            this, TQ_SLOT( slotRMB( <a href="qlistviewitem.html">TQListViewItem</a> *, const <a href="ntqpoint.html">TQPoint</a> &amp;, int ) ) );
+<a name="x161"></a>    vsplitter-&gt;<a href="ntqsplitter.html#setResizeMode">setResizeMode</a>( messages, TQSplitter::KeepSize );
+
+    message = new <a href="ntqlabel.html">TQLabel</a>( vsplitter );
+    message-&gt;<a href="ntqlabel.html#setAlignment">setAlignment</a>( TQt::AlignTop );
+<a name="x163"></a>    message-&gt;<a href="ntqwidget.html#setBackgroundMode">setBackgroundMode</a>( PaletteBase );
+
+<a name="x148"></a>    <a href="ntqobject.html#connect">connect</a>( folders, TQ_SIGNAL( <a href="ntqlistview.html#selectionChanged">selectionChanged</a>( <a href="qlistviewitem.html">TQListViewItem</a>* ) ),
+             this, TQ_SLOT( slotFolderChanged( <a href="qlistviewitem.html">TQListViewItem</a>* ) ) );
+    <a href="ntqobject.html#connect">connect</a>( messages, TQ_SIGNAL( <a href="ntqlistview.html#selectionChanged">selectionChanged</a>() ),
+             this, TQ_SLOT( slotMessageChanged() ) );
+<a name="x144"></a>    <a href="ntqobject.html#connect">connect</a>( messages, TQ_SIGNAL( <a href="ntqlistview.html#currentChanged">currentChanged</a>( <a href="qlistviewitem.html">TQListViewItem</a> * ) ),
+             this, TQ_SLOT( slotMessageChanged() ) );
+
+<a name="x154"></a>    messages-&gt;<a href="ntqlistview.html#setSelectionMode">setSelectionMode</a>( TQListView::Extended );
+    // some preparations
+<a name="x146"></a>    folders-&gt;<a href="ntqlistview.html#firstChild">firstChild</a>()-&gt;setOpen( true );
+    folders-&gt;<a href="ntqlistview.html#firstChild">firstChild</a>()-&gt;firstChild()-&gt;setOpen( true );
+<a name="x151"></a>    folders-&gt;<a href="ntqlistview.html#setCurrentItem">setCurrentItem</a>( folders-&gt;<a href="ntqlistview.html#firstChild">firstChild</a>()-&gt;firstChild()-&gt;firstChild() );
+<a name="x153"></a>    folders-&gt;<a href="ntqlistview.html#setSelected">setSelected</a>( folders-&gt;<a href="ntqlistview.html#firstChild">firstChild</a>()-&gt;firstChild()-&gt;firstChild(), true );
+
+    messages-&gt;<a href="ntqlistview.html#setSelected">setSelected</a>( messages-&gt;<a href="ntqlistview.html#firstChild">firstChild</a>(), true );
+    messages-&gt;<a href="ntqlistview.html#setCurrentItem">setCurrentItem</a>( messages-&gt;<a href="ntqlistview.html#firstChild">firstChild</a>() );
+    message-&gt;<a href="ntqframe.html#setMargin">setMargin</a>( 5 );
+
+    <a href="ntqvaluelist.html">TQValueList</a>&lt;int&gt; lst;
+<a name="x160"></a>    lst.<a href="ntqptrlist.html#append">append</a>( 170 );
+    <a href="ntqsplitter.html#setSizes">setSizes</a>( lst );
+}
+
+void <a name="f212"></a>ListViews::initFolders()
+{
+    unsigned int mcount = 1;
+
+    for ( unsigned int i = 1; i &lt; 20; i++ ) {
+        <a href="ntqstring.html">TQString</a> str;
+        str = TQString( "Folder %1" ).arg( i );
+        Folder *f = new Folder( 0, str );
+        for ( unsigned int j = 1; j &lt; 5; j++ ) {
+            <a href="ntqstring.html">TQString</a> str2;
+            str2 = TQString( "Sub Folder %1" ).arg( j );
+            Folder *f2 = new Folder( f, str2 );
+            for ( unsigned int k = 1; k &lt; 3; k++ ) {
+                <a href="ntqstring.html">TQString</a> str3;
+                str3 = TQString( "Sub Sub Folder %1" ).arg( k );
+                Folder *f3 = new Folder( f2, str3 );
+                initFolder( f3, mcount );
+            }
+        }
+        lstFolders.append( f );
+    }
+}
+
+void <a name="f213"></a>ListViews::initFolder( Folder *folder, unsigned int &amp;count )
+{
+    for ( unsigned int i = 0; i &lt; 15; i++, count++ ) {
+        <a href="ntqstring.html">TQString</a> str;
+        str = TQString( "Message %1  " ).arg( count );
+<a name="x137"></a>        <a href="ntqdatetime.html">TQDateTime</a> dt = TQDateTime::<a href="ntqdatetime.html#currentDateTime">currentDateTime</a>();
+<a name="x136"></a>        dt = dt.<a href="ntqdatetime.html#addSecs">addSecs</a>( 60 * count );
+        MessageHeader mh( "Trolltech &lt;info@trolltech.com&gt;  ", str, dt );
+
+        <a href="ntqstring.html">TQString</a> body;
+        body = TQString( "This is the message number %1 of this application, \n"
+                        "which shows how to use TQListViews, TQListViewItems, \n"
+                        "TQSplitters and so on. The code should show how easy\n"
+                        "this can be done in TQt." ).arg( count );
+        Message *msg = new Message( mh, body );
+        folder-&gt;addMessage( msg );
+    }
+}
+
+void <a name="f214"></a>ListViews::setupFolders()
+{
+<a name="x142"></a>    folders-&gt;<a href="ntqlistview.html#clear">clear</a>();
+
+    for ( Folder* f = lstFolders.first(); f; f = lstFolders.next() )
+        (void)new FolderListItem( folders, f );
+}
+
+void <a name="f215"></a>ListViews::slotRMB( <a href="qlistviewitem.html">TQListViewItem</a>* Item, const <a href="ntqpoint.html">TQPoint</a> &amp; point, int )
+{
+    if( Item )
+<a name="x159"></a>        menu-&gt;<a href="ntqpopupmenu.html#popup">popup</a>( point );
+}
+
+
+void <a name="f216"></a>ListViews::slotFolderChanged( <a href="qlistviewitem.html">TQListViewItem</a> *i )
+{
+    if ( !i )
+        return;
+    messages-&gt;<a href="ntqlistview.html#clear">clear</a>();
+<a name="x140"></a>    message-&gt;<a href="ntqlabel.html#setText">setText</a>( "" );
+
+    FolderListItem *item = ( FolderListItem* )i;
+
+    for ( Message* msg = item-&gt;folder()-&gt;firstMessage(); msg;
+          msg = item-&gt;folder()-&gt;nextMessage() )
+        (void)new MessageListItem( messages, msg );
+}
+
+void <a name="f217"></a>ListViews::slotMessageChanged()
+{
+<a name="x145"></a>    <a href="qlistviewitem.html">TQListViewItem</a> *i = messages-&gt;<a href="ntqlistview.html#currentItem">currentItem</a>();
+    if ( !i )
+        return;
+
+<a name="x156"></a>    if ( !i-&gt;<a href="qlistviewitem.html#isSelected">isSelected</a>() ) {
+        message-&gt;<a href="ntqlabel.html#setText">setText</a>( "" );
+        return;
+    }
+
+    MessageListItem *item = ( MessageListItem* )i;
+    Message *msg = item-&gt;message();
+
+    <a href="ntqstring.html">TQString</a> text;
+    <a href="ntqstring.html">TQString</a> tmp = msg-&gt;header().sender();
+<a name="x162"></a>    tmp = tmp.<a href="ntqstring.html#replace">replace</a>( "&lt;", "&amp;lt;" );
+    tmp = tmp.<a href="ntqstring.html#replace">replace</a>( "&gt;", "&amp;gt;" );
+    text = TQString( "&lt;b&gt;&lt;i&gt;From:&lt;/i&gt;&lt;/b&gt; &lt;a href=\"mailto:info@trolltech.com\"&gt;%1&lt;/a&gt;&lt;br&gt;"
+                    "&lt;b&gt;&lt;i&gt;Subject:&lt;/i&gt;&lt;/b&gt; &lt;big&gt;&lt;big&gt;&lt;b&gt;%2&lt;/b&gt;&lt;/big&gt;&lt;/big&gt;&lt;br&gt;"
+                    "&lt;b&gt;&lt;i&gt;Date:&lt;/i&gt;&lt;/b&gt; %3&lt;br&gt;&lt;br&gt;"
+                    "%4" ).
+           arg( tmp ).arg( msg-&gt;header().subject() ).
+           arg( msg-&gt;header().datetime().toString() ).arg( msg-&gt;body() );
+
+    message-&gt;<a href="ntqlabel.html#setText">setText</a>( text );
+
+    msg-&gt;setState( Message::Read );
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "listviews.h"
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    ListViews listViews;
+<a name="x166"></a>    listViews.<a href="ntqwidget.html#resize">resize</a>( 640, 480 );
+<a name="x167"></a>    listViews.<a href="ntqwidget.html#setCaption">setCaption</a>( "TQt Example - Listview" );
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;listViews );
+    listViews.<a href="ntqwidget.html#show">show</a>();
+
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -32,7 +32,7 @@ void kimgio_png_read( QImageIO *io )
 	int passes = 0;
 
 	if( fp == 0 ) {
-		debug( "Couldn't open %s for reading.", io->fileName() );
+		tqDebug( "Couldn't open %s for reading.", io->fileName() );
 		return;
 	}
 
@@ -87,7 +87,7 @@ void kimgio_png_read( QImageIO *io )
 	}
 
 	if( ! (png_get_color_type(png_ptr, png_info) & PNG_COLOR_MASK_ALPHA) ) {
-		debug( "using filler" );
+		tqDebug( "using filler" );
 		png_set_filler( png_ptr, 0, PNG_FILLER_BEFORE );
 	}
 
@@ -96,18 +96,18 @@ void kimgio_png_read( QImageIO *io )
 	png_read_update_info( png_ptr, png_info );
 
 	if ( png_get_color_type(png_ptr, png_info) != PNG_COLOR_TYPE_RGB_ALPHA ) {
-		debug( "Colortype %d is not rgb/alpha",
+		tqDebug( "Colortype %d is not rgb/alpha",
 			png_get_color_type(png_ptr, png_info) );
 	}
 
 	if( png_get_bit_depth(png_ptr, png_info) != 8 ) {
-		debug( "Depth %d is not 8", png_get_bit_depth(png_ptr, png_info) );
+		tqDebug( "Depth %d is not 8", png_get_bit_depth(png_ptr, png_info) );
 	}
 
 	// create image
 	if ( !image.create( png_get_image_width(png_ptr, png_info), png_get_image_height(png_ptr, png_info), 32 ) ) {
 		// out of memory
-		warning( "Out of memory creating QImage." );
+		tqWarning( "Out of memory creating QImage." );
 		png_destroy_read_struct( &png_ptr, &png_info, &png_end );
 		fclose( fp );
 		return;
@@ -121,7 +121,7 @@ void kimgio_png_read( QImageIO *io )
 	}
 
 	if ( png_get_color_type(png_ptr, png_info) == PNG_COLOR_TYPE_RGB_ALPHA ) {
-		debug( "Colortype %d is rgb/alpha",
+		tqDebug( "Colortype %d is rgb/alpha",
 			png_get_color_type(png_ptr, png_info) );
 		image.setAlphaBuffer(true);
 	}
@@ -163,19 +163,19 @@ void kimgio_png_write( QImageIO *iio )
 	int numcolors = image.numColors();
 	int depth = image.depth() == 1 ? 1 : 8;
 
-	//debug("Size:\t%d X %d\n\tColors:\t%d\n\tDepth:\t%d",
+	//tqDebug("Size:\t%d X %d\n\tColors:\t%d\n\tDepth:\t%d",
 	//	w, h, numcolors, image.depth());
 
 	if(numcolors > 0) {
-		//debug("PALETTE");
+		//tqDebug("PALETTE");
 		colortype = PNG_COLOR_TYPE_PALETTE;
 	}
 	else if(image.hasAlphaBuffer()) {
-		//debug("RGB_ALPHA");
+		//tqDebug("RGB_ALPHA");
 		colortype = PNG_COLOR_TYPE_RGB_ALPHA;
 	}
 	else {
-		//debug("RGB");
+		//tqDebug("RGB");
 		colortype = PNG_COLOR_TYPE_RGB;
 	}
 
@@ -349,7 +349,7 @@ void kimgio_png_write( QImageIO *iio )
 void kimgio_png_write( QImageIO *iio )
 {
         // TODO: implement this
-        warning("kimgio_png_write: not yet implemented for old PNG libraries");
+        tqWarning("kimgio_png_write: not yet implemented for old PNG libraries");
 }
 
 #endif

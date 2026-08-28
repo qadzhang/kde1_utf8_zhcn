@@ -106,7 +106,7 @@ void MyTimer::timerEvent( QTimerEvent * ){
 
 	// if this particular kpostit note widget is not alive yet, create it.
 	t = new KPostit (NULL,NULL,0,
-			 entry->name.copy());
+			 entry->name);
 	t->setCaption(QString(klocale->translate("Note: ")) + entry->name);
 	t->label->setText(entry->name);
 	t->show ();

@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qkeysequence.cpp:56 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQKeySequence Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQKeySequence Class Reference</h1>
+
+<p>The TQKeySequence class encapsulates a key sequence as used
+by accelerators.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qkeysequence-h.html">ntqkeysequence.h</a>&gt;</tt>
+<p>Inherits <a href="ntqt.html">TQt</a>.
+<p><a href="qkeysequence-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQKeySequence"><b>TQKeySequence</b></a> ()</li>
+<li class=fn><a href="#TQKeySequence-2"><b>TQKeySequence</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;key )</li>
+<li class=fn><a href="#TQKeySequence-3"><b>TQKeySequence</b></a> ( int&nbsp;key )</li>
+<li class=fn><a href="#TQKeySequence-4"><b>TQKeySequence</b></a> ( int&nbsp;k1, int&nbsp;k2, int&nbsp;k3 = 0, int&nbsp;k4 = 0 )</li>
+<li class=fn><a href="#TQKeySequence-5"><b>TQKeySequence</b></a> ( const&nbsp;TQKeySequence&nbsp;&amp;&nbsp;keysequence )</li>
+<li class=fn><a href="#~TQKeySequence"><b>~TQKeySequence</b></a> ()</li>
+<li class=fn>uint <a href="#count"><b>count</b></a> () const</li>
+<li class=fn>bool <a href="#isEmpty"><b>isEmpty</b></a> () const</li>
+<li class=fn>TQt::SequenceMatch <a href="#matches"><b>matches</b></a> ( const&nbsp;TQKeySequence&nbsp;&amp;&nbsp;seq ) const</li>
+<li class=fn><a href="#operator-TQString"><b>operator TQString</b></a> () const</li>
+<li class=fn>operator int () const &nbsp;<em>(obsolete)</em></li>
+<li class=fn>int <a href="#operator[]"><b>operator[]</b></a> ( uint&nbsp;index ) const</li>
+<li class=fn>TQKeySequence &amp; <a href="#operator-eq"><b>operator=</b></a> ( const&nbsp;TQKeySequence&nbsp;&amp;&nbsp;keysequence )</li>
+<li class=fn>bool <a href="#operator-eq-eq"><b>operator==</b></a> ( const&nbsp;TQKeySequence&nbsp;&amp;&nbsp;keysequence ) const</li>
+<li class=fn>bool <a href="#operator!-eq"><b>operator!=</b></a> ( const&nbsp;TQKeySequence&nbsp;&amp;&nbsp;keysequence ) const</li>
+</ul>
+<h2>Related Functions</h2>
+<ul>
+<li class=fn>TQDataStream &amp; <a href="#operator-lt-lt"><b>operator&lt;&lt;</b></a> ( TQDataStream&nbsp;&amp;&nbsp;s, const&nbsp;TQKeySequence&nbsp;&amp;&nbsp;keysequence )</li>
+<li class=fn>TQDataStream &amp; <a href="#operator-gt-gt"><b>operator&gt;&gt;</b></a> ( TQDataStream&nbsp;&amp;&nbsp;s, TQKeySequence&nbsp;&amp;&nbsp;keysequence )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQKeySequence class encapsulates a key sequence as used
+by accelerators.
+<p> 
+<p> A key sequence consists of up to four keyboard codes, each
+optionally combined with modifiers, e.g. <a href="ntqt.html#Modifier-enum">SHIFT</a>, <a href="ntqt.html#Modifier-enum">CTRL</a>, <a href="ntqt.html#Modifier-enum">ALT</a>, <a href="ntqt.html#Modifier-enum">META</a>, or <a href="ntqt.html#Modifier-enum">UNICODE_ACCEL</a>. For example, <tt>CTRL + Key_P</tt>
+might be a sequence used as a shortcut for printing a document.
+The key codes are listed in <a href="qnamespace-h.html">ntqnamespace.h</a>. As an alternative,
+use <a href="ntqt.html#Modifier-enum">UNICODE_ACCEL</a> with the unicode code point of the character.
+For example, <tt>UNICODE_ACCEL + 'A'</tt> gives the same key sequence
+as <a href="ntqt.html#Key-enum">Key_A</a>.
+<p> Key sequences can be constructed either from an integer key code,
+or from a human readable translatable string such as
+"Ctrl+X,Alt+Space". A key sequence can be cast to a <a href="ntqstring.html">TQString</a> to
+obtain a human readable translated version of the sequence.
+Translations are done in the "TQAccel" context.
+<p> <p>See also <a href="ntqaccel.html">TQAccel</a> and <a href="misc.html">Miscellaneous Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQKeySequence"></a>TQKeySequence::TQKeySequence ()
+</h3>
+Constructs an empty key sequence.
+
+<h3 class=fn><a name="TQKeySequence-2"></a>TQKeySequence::TQKeySequence ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;key )
+</h3>
+Creates a key sequence from the string <em>key</em>. For example
+"Ctrl+O" gives CTRL+UNICODE_ACCEL+'O'. The strings "Ctrl",
+"Shift", "Alt" and "Meta" are recognized, as well as their
+translated equivalents in the "TQAccel" context (using
+<a href="ntqobject.html#tr">TQObject::tr</a>()).
+<p> Multiple key codes (up to four) may be entered by separating them
+with commas, e.g. "Alt+X,Ctrl+S,Q".
+<p> This contructor is typically used with <a href="ntqobject.html#tr">tr</a>(), so that accelerator keys can be replaced in
+translations:
+<p> <pre>
+        <a href="ntqpopupmenu.html">TQPopupMenu</a> *file = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( this );
+        file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( tr("&amp;Open..."), this, TQ_SLOT(open()),
+                          <a href="#TQKeySequence">TQKeySequence</a>( tr("Ctrl+O", "File|Open") ) );
+    </pre>
+ 
+<p> Note the <tt>"File|Open"</tt> translator comment. It is by no means
+necessary, but it provides some context for the human translator.
+
+<h3 class=fn><a name="TQKeySequence-3"></a>TQKeySequence::TQKeySequence ( int&nbsp;key )
+</h3>
+Constructs a key sequence that has a single <em>key</em>.
+<p> The key codes are listed in <a href="qnamespace-h.html">ntqnamespace.h</a> and can be
+combined with modifiers, e.g. with <a href="ntqt.html#Modifier-enum">SHIFT</a>, <a href="ntqt.html#Modifier-enum">CTRL</a>, <a href="ntqt.html#Modifier-enum">ALT</a>, <a href="ntqt.html#Modifier-enum">META</a> or <a href="ntqt.html#Modifier-enum">UNICODE_ACCEL</a>.
+
+<h3 class=fn><a name="TQKeySequence-4"></a>TQKeySequence::TQKeySequence ( int&nbsp;k1, int&nbsp;k2, int&nbsp;k3 = 0, int&nbsp;k4 = 0 )
+</h3>
+Constructs a key sequence with up to 4 keys <em>k1</em>, <em>k2</em>,
+<em>k3</em> and <em>k4</em>.
+<p> The key codes are listed in <a href="qnamespace-h.html">ntqnamespace.h</a> and can be
+combined with modifiers, e.g. with <a href="ntqt.html#Modifier-enum">SHIFT</a>, <a href="ntqt.html#Modifier-enum">CTRL</a>, <a href="ntqt.html#Modifier-enum">ALT</a>, <a href="ntqt.html#Modifier-enum">META</a> or <a href="ntqt.html#Modifier-enum">UNICODE_ACCEL</a>.
+
+<h3 class=fn><a name="TQKeySequence-5"></a>TQKeySequence::TQKeySequence ( const&nbsp;<a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp;&nbsp;keysequence )
+</h3>
+Copy constructor. Makes a copy of <em>keysequence</em>.
+
+<h3 class=fn><a name="~TQKeySequence"></a>TQKeySequence::~TQKeySequence ()
+</h3>
+Destroys the key sequence.
+
+<h3 class=fn>uint <a name="count"></a>TQKeySequence::count () const
+</h3>
+Returns the number of keys in the key sequence.
+The maximum is 4.
+
+<h3 class=fn>bool <a name="isEmpty"></a>TQKeySequence::isEmpty () const
+</h3>
+Returns true if the key sequence is empty; otherwise returns
+false.
+
+<h3 class=fn><a href="ntqt.html#SequenceMatch-enum">TQt::SequenceMatch</a> <a name="matches"></a>TQKeySequence::matches ( const&nbsp;<a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp;&nbsp;seq ) const
+</h3>
+Matches the sequence with <em>seq</em>. Returns <a href="ntqt.html#SequenceMatch-enum">TQt::Identical</a> if
+successful, <a href="ntqt.html#SequenceMatch-enum">TQt::PartialMatch</a> for matching but incomplete <em>seq</em>,
+and <a href="ntqt.html#SequenceMatch-enum">TQt::NoMatch</a> if the sequences have nothing in common.
+Returns <a href="ntqt.html#SequenceMatch-enum">TQt::NoMatch</a> if <em>seq</em> is shorter.
+
+<h3 class=fn><a name="operator-TQString"></a>TQKeySequence::operator TQString () const
+</h3>
+Creates an accelerator string for the key sequence.
+For instance CTRL+Key_O gives "Ctrl+O". If the key sequence has
+multiple key codes they are returned comma-separated, e.g.
+"Alt+X, Ctrl+Y, Z". The strings, "Ctrl", "Shift", etc. are
+translated (using <a href="ntqobject.html#tr">TQObject::tr</a>()) in the "TQAccel" scope. If the key
+sequence has no keys, <a href="ntqstring.html#TQString-null">TQString::null</a> is returned.
+<p> On Mac OS X, the string returned resembles the sequence that is shown in
+the menubar.
+
+<h3 class=fn><a name="operator-int"></a>TQKeySequence::operator int () const
+</h3>
+<b>This function is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+<p> For backward compatibility: returns the first keycode
+as integer. If the key sequence is empty, 0 is returned.
+
+<h3 class=fn>bool <a name="operator!-eq"></a>TQKeySequence::operator!= ( const&nbsp;<a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp;&nbsp;keysequence ) const
+</h3>
+Returns true if <em>keysequence</em> is not equal to this key sequence;
+otherwise returns false.
+
+<h3 class=fn><a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp; <a name="operator-eq"></a>TQKeySequence::operator= ( const&nbsp;<a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp;&nbsp;keysequence )
+</h3>
+Assignment operator. Assigns <em>keysequence</em> to this
+object.
+
+<h3 class=fn>bool <a name="operator-eq-eq"></a>TQKeySequence::operator== ( const&nbsp;<a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp;&nbsp;keysequence ) const
+</h3>
+Returns true if <em>keysequence</em> is equal to this key
+sequence; otherwise returns false.
+
+<h3 class=fn>int <a name="operator[]"></a>TQKeySequence::operator[] ( uint&nbsp;index ) const
+</h3>
+Returns a reference to the element at position <em>index</em> in the key
+sequence. This can only be used to read an element.
+
+<hr><h2>Related Functions</h2>
+<h3 class=fn><a href="ntqdatastream.html">TQDataStream</a>&nbsp;&amp; <a name="operator-lt-lt"></a>operator&lt;&lt; ( <a href="ntqdatastream.html">TQDataStream</a>&nbsp;&amp;&nbsp;s, const&nbsp;<a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp;&nbsp;keysequence )
+</h3>
+
+<p> Writes the key sequence <em>keysequence</em> to the stream <em>s</em>.
+<p> <p>See also <a href="datastreamformat.html">Format of the TQDataStream operators</a>.
+
+<h3 class=fn><a href="ntqdatastream.html">TQDataStream</a>&nbsp;&amp; <a name="operator-gt-gt"></a>operator&gt;&gt; ( <a href="ntqdatastream.html">TQDataStream</a>&nbsp;&amp;&nbsp;s, <a href="ntqkeysequence.html">TQKeySequence</a>&nbsp;&amp;&nbsp;keysequence )
+</h3>
+
+<p> Reads a key sequence from the stream <em>s</em> into the key sequence <em>keysequence</em>.
+<p> <p>See also <a href="datastreamformat.html">Format of the TQDataStream operators</a>.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

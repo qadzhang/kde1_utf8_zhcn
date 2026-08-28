@@ -22,7 +22,7 @@ KMMessagePart::KMMessagePart() :
   mType("text"), mSubtype("plain"), mCte("7bit"), mContentDescription(),
   mContentDisposition(), mBody(), mName()
 {
-  mBodySize = 0;
+  mBodySize = 0;  /* TQt3 迁移 */
 }
 
 
@@ -38,7 +38,7 @@ int KMMessagePart::size(void) const
   if (mBodySize < 0)
   {
     ((KMMessagePart*)this)->mBodySize = 
-      bodyDecoded().size() - 1;
+      bodyDecoded().length() - 1;
   }
   return mBodySize;
 }
@@ -49,12 +49,12 @@ void KMMessagePart::setBody(const QString aStr)
 {
   int encoding = contentTransferEncoding();
 
-  mBody = aStr.copy();
+  mBody = aStr;
 
   if (encoding!=DwMime::kCteQuotedPrintable &&
       encoding!=DwMime::kCteBase64)
   {
-    mBodySize = mBody.size() - 1;
+    mBodySize = mBody.length() - 1;
   }
   else mBodySize = -1;
 }
@@ -67,31 +67,31 @@ void KMMessagePart::setBodyEncoded(const QString aStr)
   int encoding = contentTransferEncoding();
   int len;
 
-  mBodySize = aStr.size() - 1;
+  mBodySize = aStr.length() - 1;
 
   switch (encoding)
   {
   case DwMime::kCteQuotedPrintable:
-    dwSrc = DwString(aStr.data(), aStr.size()-1);
+    dwSrc = DwString(aStr.data(), aStr.length()-1);
     DwEncodeQuotedPrintable(dwSrc, dwResult);
-    len = dwResult.size();
+    len = dwResult.length();
     mBody.truncate(len);
     memcpy(mBody.data(), dwResult.c_str(), len+1);
     break;
   case DwMime::kCteBase64:
-    dwSrc = DwString(aStr.data(), aStr.size()-1);
+    dwSrc = DwString(aStr.data(), aStr.length()-1);
     DwEncodeBase64(dwSrc, dwResult);
-    len = dwResult.size();
+    len = dwResult.length();
     mBody.truncate(len);
     memcpy(mBody.data(), dwResult.c_str(), len+1);
     break;
-    len = aStr.size()-1;
+    len = aStr.length()-1;
     dwSrc = DwString(aStr.data(), len);
     DwEncodeBase64(dwSrc, dwResult);
-    mBody = QString(dwResult.c_str(),dwResult.size());
+    mBody = TQString::fromLatin1(dwResult.c_str(), dwResult.length());  /* TQt3 迁移 */
     break;
   default:
-    debug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
+    tqDebug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
 	  (const char*)cteStr());
   case DwMime::kCte7bit:
   case DwMime::kCte8bit:
@@ -113,31 +113,30 @@ const QString KMMessagePart::bodyDecoded(void) const
   switch (encoding)
   {
   case DwMime::kCteQuotedPrintable:
-    dwSrc = DwString(mBody.data(), mBody.size());
+    dwSrc = DwString(mBody.data(), mBody.length());
     DwDecodeQuotedPrintable(dwSrc, dwResult);
-    len = dwResult.size() + 1;
-    result.resize(len);
+    len = dwResult.length() + 1;
+    result.truncate(len);
     memcpy((void*)result.data(), (void*)dwResult.c_str(), len);
 #if 0
     result = dwResult.c_str();
-    result.detach();
 #endif
     break;
   case DwMime::kCteBase64:
-    dwSrc = DwString(mBody.data(), mBody.size());
+    dwSrc = DwString(mBody.data(), mBody.length());
     DwDecodeBase64(dwSrc, dwResult);
-    len = dwResult.size() + 1;
-    result.resize(len);
+    len = dwResult.length() + 1;
+    result.truncate(len);
     memcpy((void*)result.data(), (void*)dwResult.c_str(), len);
     break;
   default:
-    debug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
+    tqDebug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
 	  (const char*)cteStr());
   case DwMime::kCte7bit:
   case DwMime::kCte8bit:
   case DwMime::kCteBinary:
     len = mBody.length();
-    result.resize(len+1);
+    result.truncate(len+1);
     memcpy((void*)result.data(), (void*)mBody.data(), len);
     result[len] = '\0';
     break;
@@ -163,7 +162,7 @@ void KMMessagePart::magicSetType(bool aAutoDecode)
   if (aAutoDecode) bod = bodyDecoded();
   else bod = mBody;
 
-  mimetype = sMagic->findBufferType(bod, bod.size()-1)->getContent();
+  mimetype = sMagic->findBufferType(bod, bod.length()-1)->getContent();
   sep = mimetype.find('/');
   mType = mimetype.left(sep);
   mSubtype = mimetype.mid(sep+1, 64);
@@ -202,7 +201,7 @@ const QString KMMessagePart::iconName(void) const
         fqn = dir.path();
         fqn += "/";
         fqn += dir[i];
-        //debug ("try: %s", fqn.data());
+        //tqDebug("try: %s", fqn.data());
         KSimpleConfig conf(fqn.data(), true);
         conf.setGroup("KDE Desktop Entry");
         if (conf.readEntry ("MimeType") == mime)
@@ -238,7 +237,7 @@ int KMMessagePart::type(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setTypeStr(const QString aStr)
 {
-  mType = aStr.copy();
+  mType = aStr;
 }
 
 
@@ -248,7 +247,6 @@ void KMMessagePart::setType(int aType)
   DwString dwType;
   DwTypeEnumToStr(aType, dwType);
   mType = dwType.c_str();
-  mType.detach();
 }
 
 
@@ -281,7 +279,6 @@ void KMMessagePart::setSubtype(int aSubtype)
   DwString dwSubtype;
   DwSubtypeEnumToStr(aSubtype, dwSubtype);
   mSubtype = dwSubtype.c_str();
-  mSubtype.detach();
 }
 
 
@@ -303,7 +300,7 @@ int KMMessagePart::contentTransferEncoding(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setContentTransferEncodingStr(const QString aStr)
 {
-  mCte = aStr.copy();
+  mCte = aStr;
 }
 
 
@@ -313,7 +310,6 @@ void KMMessagePart::setContentTransferEncoding(int aCte)
   DwString dwCte;
   DwCteEnumToStr(aCte, dwCte);
   mCte = dwCte.c_str();
-  mCte.detach();
 }
 
 
@@ -327,7 +323,7 @@ const QString KMMessagePart::contentDescription(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setContentDescription(const QString aStr)
 {
-  mContentDescription = aStr.copy();
+  mContentDescription = aStr;
 }
 
 
@@ -360,7 +356,7 @@ const QString KMMessagePart::contentDisposition(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setContentDisposition(const QString aStr)
 {
-  mContentDisposition = aStr.copy();
+  mContentDisposition = aStr;
 }
 
  
@@ -381,7 +377,7 @@ const QString KMMessagePart::name(void) const
 //-----------------------------------------------------------------------------
 void KMMessagePart::setName(const QString aStr)
 {
-  mName = aStr.copy();
+  mName = aStr;
 }
 #if defined CHARSETS
 //-----------------------------------------------------------------------------

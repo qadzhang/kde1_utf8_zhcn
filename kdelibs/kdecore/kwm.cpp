@@ -726,12 +726,12 @@ QPixmap KWM::miniIcon(Window w, int width, int height){
     if (w > 0 && h > 0){
       QPixmap pm(w, h, depth);
       XCopyArea(qt_xdisplay(), p, pm.handle(),
-		qt_xget_temp_gc(depth==1),
+		tqt_xget_temp_gc(tqt_xscreen(), depth==1),
 		0, 0, w, h, 0, 0);
       if (p_mask != None){
 	QBitmap bm(w, h);
 	XCopyArea(qt_xdisplay(), p_mask, bm.handle(),
-		  qt_xget_temp_gc(TRUE),
+		  tqt_xget_temp_gc(tqt_xscreen(), TRUE),
 		  0, 0, w, h, 0, 0);
 	pm.setMask(bm);
       }
@@ -794,12 +794,12 @@ QPixmap KWM::icon(Window w, int width, int height){
     if (w > 0 && h > 0){
       QPixmap pm(w, h, depth);
       XCopyArea(qt_xdisplay(), p, pm.handle(),
-		qt_xget_temp_gc(depth==1),
+		tqt_xget_temp_gc(tqt_xscreen(), depth==1),
 		0, 0, w, h, 0, 0);
       if (p_mask != None){
 	QBitmap bm(w, h);
 	XCopyArea(qt_xdisplay(), p_mask, bm.handle(),
-		  qt_xget_temp_gc(TRUE),
+		  tqt_xget_temp_gc(tqt_xscreen(), TRUE),
 		  0, 0, w, h, 0, 0);
 	pm.setMask(bm);
       }

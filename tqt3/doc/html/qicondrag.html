@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/iconview/qiconview.cpp:585 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQIconDrag Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQIconDrag Class Reference<br><small>[<a href="iconview.html">iconview module</a>]</small></h1>
+
+<p>The TQIconDrag class supports drag and drop operations
+within a TQIconView.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qiconview-h.html">ntqiconview.h</a>&gt;</tt>
+<p>Inherits <a href="ntqdragobject.html">TQDragObject</a>.
+<p><a href="qicondrag-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQIconDrag"><b>TQIconDrag</b></a> ( TQWidget&nbsp;*&nbsp;dragSource, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn>virtual <a href="#~TQIconDrag"><b>~TQIconDrag</b></a> ()</li>
+<li class=fn>void <a href="#append"><b>append</b></a> ( const&nbsp;TQIconDragItem&nbsp;&amp;&nbsp;i, const&nbsp;TQRect&nbsp;&amp;&nbsp;pr, const&nbsp;TQRect&nbsp;&amp;&nbsp;tr )</li>
+<li class=fn>virtual TQByteArray <a href="#encodedData"><b>encodedData</b></a> ( const&nbsp;char&nbsp;*&nbsp;mime ) const</li>
+</ul>
+<h2>Static Public Members</h2>
+<ul>
+<li class=fn>bool <a href="#canDecode"><b>canDecode</b></a> ( TQMimeSource&nbsp;*&nbsp;e )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+<p> The TQIconDrag class supports drag and drop operations
+within a <a href="ntqiconview.html">TQIconView</a>.
+<p> 
+
+<p> A TQIconDrag object is used to maintain information about the
+positions of dragged items and the data associated with the
+dragged items. TQIconViews are able to use this information to
+paint the dragged items in the correct positions. Internally
+TQIconDrag stores the data associated with drag items in
+<a href="qicondragitem.html">TQIconDragItem</a> objects.
+<p> If you want to use the extended drag-and-drop functionality of
+TQIconView, create a TQIconDrag object in a reimplementation of
+<a href="ntqiconview.html#dragObject">TQIconView::dragObject</a>(). Then create a TQIconDragItem for each item
+which should be dragged, set the data it represents with
+<a href="qicondragitem.html#setData">TQIconDragItem::setData</a>(), and add each TQIconDragItem to the drag
+object using <a href="#append">append</a>().
+<p> The data in TQIconDragItems is stored in a <a href="qbytearray.html">TQByteArray</a> and is
+mime-typed (see <a href="qmimesource.html">TQMimeSource</a> and the
+<a href="http://doc.trolltech.com/dnd.html">Drag and Drop</a>
+overview). If you want to use your own mime-types derive a class
+from TQIconDrag and reimplement <a href="qmimesource.html#format">format</a>(), <a href="#encodedData">encodedData</a>() and
+<a href="#canDecode">canDecode</a>().
+<p> The fileiconview example program demonstrates the use of the
+TQIconDrag class including subclassing and reimplementing
+dragObject(), format(), encodedData() and canDecode(). See the files
+<tt>qt/examples/fileiconview/qfileiconview.h</tt> and
+<tt>qt/examples/fileiconview/qfileiconview.cpp</tt>.
+<p> <p>See also <a href="qmimesource.html#format">TQMimeSource::format</a>() and <a href="draganddrop.html">Drag And Drop Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQIconDrag"></a>TQIconDrag::TQIconDrag ( <a href="ntqwidget.html">TQWidget</a>&nbsp;*&nbsp;dragSource, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a drag object called <em>name</em>, which is a child of <em>dragSource</em>.
+<p> Note that the drag object will be deleted when <em>dragSource</em> is deleted.
+
+<h3 class=fn><a name="~TQIconDrag"></a>TQIconDrag::~TQIconDrag ()<tt> [virtual]</tt>
+</h3>
+Destructor.
+
+<h3 class=fn>void <a name="append"></a>TQIconDrag::append ( const&nbsp;<a href="qicondragitem.html">TQIconDragItem</a>&nbsp;&amp;&nbsp;i, const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;pr, const&nbsp;<a href="ntqrect.html">TQRect</a>&nbsp;&amp;&nbsp;tr )
+</h3>
+Append the <a href="qicondragitem.html">TQIconDragItem</a>, <em>i</em>, to the TQIconDrag object's list of
+items. You must also supply the geometry of the pixmap, <em>pr</em>, and
+the textual caption, <em>tr</em>.
+<p> <p>See also <a href="qicondragitem.html">TQIconDragItem</a>.
+
+<p>Example: <a href="fileiconview-example.html#x829">fileiconview/qfileiconview.cpp</a>.
+<h3 class=fn>bool <a name="canDecode"></a>TQIconDrag::canDecode ( <a href="qmimesource.html">TQMimeSource</a>&nbsp;*&nbsp;e )<tt> [static]</tt>
+</h3>
+Returns true if <em>e</em> can be decoded by the TQIconDrag, otherwise
+return false.
+
+<p>Example: <a href="fileiconview-example.html#x830">fileiconview/qfileiconview.cpp</a>.
+<h3 class=fn><a href="qbytearray.html">TQByteArray</a> <a name="encodedData"></a>TQIconDrag::encodedData ( const&nbsp;char&nbsp;*&nbsp;mime ) const<tt> [virtual]</tt>
+</h3>
+Returns the encoded data of the drag object if <em>mime</em> is
+application/x-qiconlist.
+
+<p>Example: <a href="fileiconview-example.html#x831">fileiconview/qfileiconview.cpp</a>.
+<p>Reimplemented from <a href="qmimesource.html#encodedData">TQMimeSource</a>.
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

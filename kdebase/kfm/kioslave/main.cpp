@@ -105,7 +105,7 @@ KIOSlave::KIOSlave( char * _path )
 
 KIOSlave::~KIOSlave()
 {
-debug("delete ~KIOSlave");
+tqDebug("delete ~KIOSlave");
     delete ipc;
 }
 
@@ -299,7 +299,6 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
 	sprintf( buffer, "mount %s 2>"_PATH_TMP"/mnt%i",_dev, t );
     else if ( _ro )
 	sprintf( buffer, "mount -rt %s %s %s 2>"_PATH_TMP"/mnt%i",_fstype, _dev, _point, t );
-    else
 	sprintf( buffer, "mount -t %s %s %s 2>"_PATH_TMP"/mnt%i",_fstype, _dev, _point, t );
 		
     retvalue = system( buffer );

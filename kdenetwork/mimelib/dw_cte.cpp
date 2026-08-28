@@ -425,7 +425,7 @@ static int encode_base64(const char* aIn, size_t aInLen, char* aOut,
 			if (*cp) {
 				out[outPos++] = *cp;
 			}
-			lineLen = 0;
+			lineLen = TQString();
         }
     }
     /* Encode the remaining one or two characters. */
@@ -658,14 +658,14 @@ static int encode_qp(const char* aIn, size_t aInLen, char* aOut,
 #if defined(DW_EOL_LF)
         else if (ch == '\n') {
             aOut[outPos++] = '\n';
-            lineLen = 0;
+            lineLen = TQString();
         }
 #elif defined(DW_EOL_CRLF)
         else if (inPos < aInLen && ch == '\r' && aIn[inPos] == '\n') {
             ++inPos;
             aOut[outPos++] = '\r';
             aOut[outPos++] = '\n';
-            lineLen = 0;
+            lineLen = TQString();
         }
 #endif
         /* Non-printable char */
@@ -683,7 +683,7 @@ static int encode_qp(const char* aIn, size_t aInLen, char* aOut,
         if (lineLen >= MAXLINE-3 && inPos < aInLen && aIn[inPos] != '\n') {
             aOut[outPos++] = '=';
             aOut[outPos++] = '\n';
-            lineLen = 0;
+            lineLen = TQString();
         }
 #elif defined(DW_EOL_CRLF)
         if (lineLen >= MAXLINE-3 && !(inPos < aInLen-1 && 
@@ -692,7 +692,7 @@ static int encode_qp(const char* aIn, size_t aInLen, char* aOut,
             aOut[outPos++] = '=';
             aOut[outPos++] = '\r';
             aOut[outPos++] = '\n';
-            lineLen = 0;
+            lineLen = TQString();
         }
 #endif
     }
@@ -727,8 +727,8 @@ static int decode_qp(const char* aIn, size_t aInLen, char* aOut,
     }
     while (inPos < aInLen) {
         /* Get line */
-        lineLen = 0;
-        isEolFound = 0;
+        lineLen = TQString();
+        isEolFound = TQString();
         while (!isEolFound && lineLen < aInLen - inPos) {
             ch = aIn[inPos+lineLen];
             ++lineLen;
@@ -748,7 +748,7 @@ static int decode_qp(const char* aIn, size_t aInLen, char* aOut,
         }
         charsEnd = inPos + numChars;
         /* Decode line */
-        softLineBrk = 0;
+        softLineBrk = TQString();
         while (inPos < charsEnd) {
             ch = aIn[inPos++] & 0x7F;
             if (ch != '=') {
@@ -770,7 +770,6 @@ static int decode_qp(const char* aIn, size_t aInLen, char* aOut,
                         c1 = c1 - 'A' + 10;
                     else if ('a' <= c1 && c1 <= 'f')
                         c1 = c1 - 'a' + 10;
-                    else
                         isError = 1;
                     c2 = aIn[inPos++] & 0x7F;
                     if ('0' <= c2 && c2 <= '9')
@@ -779,7 +778,6 @@ static int decode_qp(const char* aIn, size_t aInLen, char* aOut,
                         c2 = c2 - 'A' + 10;
                     else if ('a' <= c2 && c2 <= 'f')
                         c2 = c2 - 'a' + 10;
-                    else
                         isError = 1;
                     aOut[outPos++] = (char) ((c1 << 4) + c2);
                 }
@@ -866,13 +864,13 @@ static size_t calc_qp_buff_size(const char* aIn, size_t aInLen)
 #if defined(DW_EOL_LF)
         else if (ch == '\n') {
             ++outLen;
-            lineLen = 0;
+            lineLen = TQString();
         }
 #elif defined(DW_EOL_CRLF)
         else if (inPos < aInLen && ch == '\r' && aIn[inPos] == '\n') {
             ++inPos;
             outLen += 2;
-            lineLen = 0;
+            lineLen = TQString();
         }
 #endif
         /* Non-printable char */
@@ -887,14 +885,14 @@ static size_t calc_qp_buff_size(const char* aIn, size_t aInLen)
 #if defined(DW_EOL_LF)
         if (lineLen >= MAXLINE-3 && inPos < aInLen && aIn[inPos] != '\n') {
             outLen += 2;
-            lineLen = 0;
+            lineLen = TQString();
         }
 #elif defined(DW_EOL_CRLF)
         if (lineLen >= MAXLINE-3 && !(inPos < aInLen-1 && 
 			aIn[inPos] == '\r' && aIn[inPos+1] == '\n')) {
 
             outLen += 3;
-            lineLen = 0;
+            lineLen = TQString();
         }
 #endif
     }

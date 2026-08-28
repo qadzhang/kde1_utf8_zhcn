@@ -371,7 +371,7 @@ int KProtocolFTP::ftpPasv(void)
     /* Let's PASsiVe*/
     if (!(ftpSendCmd("PASV",'2')))
     {
-	       if (ftplib_debug>1) debug("server does not support PASV.");
+	       if (ftplib_debug>1) tqDebug("server does not support PASV.");
 	       close(sDatal);
 	       return ftpPort(); // use old method if PASV not supported
     }

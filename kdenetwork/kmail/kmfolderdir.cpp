@@ -17,7 +17,6 @@
 KMFolderRootDir::KMFolderRootDir(const char* path):
   KMFolderDir(NULL, path)
 {
-  initMetaObject();
 
   setPath(path);
 }
@@ -36,7 +35,6 @@ KMFolderRootDir::~KMFolderRootDir()
 void KMFolderRootDir::setPath(const char* aPath)
 {
   mPath = aPath;
-  mPath.detach();
 }
 
 
@@ -53,7 +51,6 @@ const QString& KMFolderRootDir::path(void) const
 KMFolderDir::KMFolderDir(KMFolderDir* parent, const char* name):
   KMFolderNode(parent,name), KMFolderNodeList()
 {
-  initMetaObject();
 
   setAutoDelete(TRUE);
 
@@ -84,7 +81,7 @@ KMFolder* KMFolderDir::createFolder(const char* aFolderName, bool aSysFldr)
   rc = fld->create();
   if (rc)
   {
-    warning(i18n("Error while creating folder `%s':\n%s"),
+    tqWarning(i18n("Error while creating folder `%s':\n%s"),
 	    aFolderName, strerror(rc));
     delete fld;
     return NULL;
@@ -138,13 +135,13 @@ bool KMFolderDir::reload(void)
   
   if (!dir.cd(fldPath, TRUE))
   {
-    warning("Cannot enter directory '" + fldPath + "'.\n");
+    tqWarning("Cannot enter directory '" + fldPath + "'.\n");
     return FALSE;
   }
 
   if (!(fiList=(QFileInfoList*)dir.entryInfoList()))
   {
-    warning("Directory '" + fldPath + "' is unreadable.\n");
+    tqWarning("Directory '" + fldPath + "' is unreadable.\n");
     return FALSE;
   }
 
@@ -158,7 +155,7 @@ bool KMFolderDir::reload(void)
     else if (fileInfo->isDir()) // a directory
     {
       // Ignore subfolders - they do not work anyway
-      debug ("Subfolder ignored");
+      tqDebug("Subfolder ignored");
       continue;
       //folderDir = new KMFolderDir(this, fname);
       //append(folderDir);

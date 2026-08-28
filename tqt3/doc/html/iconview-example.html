@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/iconview/iconview.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Iconview</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Iconview</h1>
+
+   
+<p> 
+This example implements a flexible icon view which can store
+lots of icon items. It supports Drag&Drop, different selection modes,
+view modes, rubberband selection, etc.
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qiconview-h.html">ntqiconview.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qdragobject-h.html">ntqdragobject.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qiconset-h.html">ntqiconset.h</a>&gt;
+
+#include &lt;<a href="qmime-h.html">ntqmime.h</a>&gt;
+#include &lt;stdio.h&gt;
+
+class ListenDND : public <a href="ntqobject.html">TQObject</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+
+public:
+    ListenDND( <a href="ntqwidget.html">TQWidget</a> *w )
+        : view( w )
+    {}
+
+public slots:
+    void dropped( <a href="qdropevent.html">TQDropEvent</a> *mime ) {
+        <a href="ntqapplication.html#qDebug">tqDebug</a>( "Dropped Mimesource %p into the view %p", mime, view );
+        <a href="ntqapplication.html#qDebug">tqDebug</a>( "  Formats:" );
+        int i = 0;
+<a name="x1454"></a>        const char *str = mime-&gt;<a href="qdropevent.html#format">format</a>( i );
+        <a href="ntqapplication.html#qDebug">tqDebug</a>( "    %s", str );
+        while ( str ) {
+            <a href="ntqapplication.html#qDebug">tqDebug</a>( "    %s", str );
+            str = mime-&gt;<a href="qdropevent.html#format">format</a>( ++i );
+        }
+    };
+    void moved() {
+        <a href="ntqapplication.html#qDebug">tqDebug</a>( "All selected items were moved to another widget" );
+    }
+
+protected:
+    <a href="ntqwidget.html">TQWidget</a> *view;
+
+};
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    <a href="ntqiconview.html">TQIconView</a> qiconview;
+<a name="x1457"></a>    qiconview.<a href="ntqiconview.html#setSelectionMode">setSelectionMode</a>( TQIconView::Extended );
+
+    for ( unsigned int i = 0; i &lt; 3000; i++ ) {
+        <a href="qiconviewitem.html">TQIconViewItem</a> *item = new <a href="qiconviewitem.html">TQIconViewItem</a>( &amp;qiconview, TQString( "Item %1" ).arg( i + 1 ) );
+<a name="x1459"></a>        item-&gt;<a href="qiconviewitem.html#setRenameEnabled">setRenameEnabled</a>( true );
+    }
+
+    qiconview.<a href="ntqwidget.html#setCaption">setCaption</a>( "TQt Example - Iconview" );
+
+    ListenDND listen_dnd( &amp;qiconview );
+<a name="x1460"></a><a name="x1455"></a>    TQObject::<a href="ntqobject.html#connect">connect</a>( &amp;qiconview, TQ_SIGNAL( <a href="ntqiconview.html#dropped">dropped</a>( <a href="qdropevent.html">TQDropEvent</a> *, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt; &amp; ) ),
+                      &amp;listen_dnd, TQ_SLOT( dropped( <a href="qdropevent.html">TQDropEvent</a> * ) ) );
+<a name="x1456"></a>    TQObject::<a href="ntqobject.html#connect">connect</a>( &amp;qiconview, TQ_SIGNAL( <a href="ntqiconview.html#moved">moved</a>() ), &amp;listen_dnd, TQ_SLOT( moved() ) );
+
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;qiconview );
+<a name="x1462"></a>    qiconview.<a href="ntqwidget.html#show">show</a>();
+<a name="x1461"></a><a name="x1458"></a>    qiconview.<a href="ntqwidget.html#resize">resize</a>( qiconview.<a href="ntqwidget.html#sizeHint">sizeHint</a>() );
+
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+#include "main.moc"
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

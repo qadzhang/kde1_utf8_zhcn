@@ -1,3 +1,6 @@
+
+#ifndef K1GUARD_kdebase_kwm_taskmgr_h
+#define K1GUARD_kdebase_kwm_taskmgr_h
 // ktask 
 // Copyright (C) 1997 Matthias Ettrich
 
@@ -24,7 +27,7 @@ public:
   virtual int height(const QListBox *) const;
   virtual int width(const QListBox *) const;
 
-  virtual const char *text() const;
+  TQString text() const;  // TQt3 迁移：基类签名 TQString，覆盖返回类型对齐
 
 private:
   QString _text;
@@ -37,7 +40,7 @@ public:
   virtual int height(const QListBox *) const;
   virtual int width(const QListBox *) const;
 
-  virtual const char *text() const;
+  TQString text() const;  // TQt3 迁移：基类签名 TQString，覆盖返回类型对齐
 
 private:
   QString _text;
@@ -75,3 +78,4 @@ private:
   void SetPointerGrab(QPoint);
   Client* reactive;
 };
+#endif /* K1GUARD_kdebase_kwm_taskmgr_h */

@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <qdir.h>
 
-#include <pws.h>
+#include "pws.h"
 #include <pws.moc>
 
 void testDir( const char *_name );

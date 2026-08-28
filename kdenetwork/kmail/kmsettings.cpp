@@ -49,7 +49,6 @@
 KMSettings::KMSettings(QWidget *parent, const char *name) :
   QTabDialog(parent, name, TRUE)
 {
-  initMetaObject();
 
   setCaption(i18n("Settings"));
 //  resize(500,600);
@@ -71,7 +70,7 @@ KMSettings::KMSettings(QWidget *parent, const char *name) :
 //-----------------------------------------------------------------------------
 KMSettings::~KMSettings()
 {
-  debug("~KMSettings");
+  tqDebug("~KMSettings");
   accountList->clear();
 }
 
@@ -517,7 +516,7 @@ void KMSettings::createTabComposer(QWidget *parent)
   allow8Bit->setChecked(!i);
   quotedPrintable->setChecked(i);
 
-  //---------- ére we gø
+  //---------- ï¿½re we gï¿½
   box->addStretch(10);
   box->activate();
  
@@ -683,7 +682,7 @@ void KMSettings::addAccount()
     acctType = "pop";
     break;
   default:
-    fatal("KMSettings: unsupported account type selected");
+    tqFatal("KMSettings: unsupported account type selected");
   }
 
   acct = acctMgr->create(acctType, i18n("Unnamed"));
@@ -874,8 +873,6 @@ KMAccountSettings::KMAccountSettings(QWidget *parent, const char *name,
   KMFolderDir* fdir = (KMFolderDir*)&folderMgr->dir();
   int i;
 
-  initMetaObject();
-
   assert(aAcct != NULL);
 
   mAcct=aAcct;
@@ -944,7 +941,7 @@ KMAccountSettings::KMAccountSettings(QWidget *parent, const char *name,
   }
   else 
   {
-    warning("KMAccountSettings: unsupported account type");
+    tqWarning("KMAccountSettings: unsupported account type");
     return;
   }
 
@@ -1024,7 +1021,7 @@ void KMAccountSettings::chooseLocation()
   fdlg.setCaption(i18n("Choose Location"));
 
   if (fdlg.exec()) mEdtLocation->setText(fdlg.selectedFile());
-  sSelLocation = fdlg.selectedFile().copy();
+  sSelLocation = fdlg.selectedFile();
 }
 
 //-----------------------------------------------------------------------------

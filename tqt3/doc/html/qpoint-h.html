@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqpoint.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqpoint.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqpoint.h</h1>
+
+<p>This is the verbatim text of the ntqpoint.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqpoint.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQPoint class
+**
+** Created : 931028
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the kernel module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQPOINT_H
+#define TQPOINT_H
+
+#ifndef QT_H
+#include "ntqwindowdefs.h"
+#endif // QT_H
+
+
+class TQ_EXPORT TQPoint
+{
+public:
+    TQPoint();
+    TQPoint( int xpos, int ypos );
+
+    bool   isNull()	const;
+
+    int	   x()		const;
+    int	   y()		const;
+    void   setX( int x );
+    void   setY( int y );
+
+    int manhattanLength() const;
+
+    TQCOORD &amp;rx();
+    TQCOORD &amp;ry();
+
+    TQPoint &amp;operator+=( const TQPoint &amp;p );
+    TQPoint &amp;operator-=( const TQPoint &amp;p );
+    TQPoint &amp;operator*=( int c );
+    TQPoint &amp;operator*=( double c );
+    TQPoint &amp;operator/=( int c );
+    TQPoint &amp;operator/=( double c );
+
+    friend inline bool	 operator==( const TQPoint &amp;, const TQPoint &amp; );
+    friend inline bool	 operator!=( const TQPoint &amp;, const TQPoint &amp; );
+    friend inline const TQPoint operator+( const TQPoint &amp;, const TQPoint &amp; );
+    friend inline const TQPoint operator-( const TQPoint &amp;, const TQPoint &amp; );
+    friend inline const TQPoint operator*( const TQPoint &amp;, int );
+    friend inline const TQPoint operator*( int, const TQPoint &amp; );
+    friend inline const TQPoint operator*( const TQPoint &amp;, double );
+    friend inline const TQPoint operator*( double, const TQPoint &amp; );
+    friend inline const TQPoint operator-( const TQPoint &amp; );
+    friend inline const TQPoint operator/( const TQPoint &amp;, int );
+    friend inline const TQPoint operator/( const TQPoint &amp;, double );
+
+private:
+    static void warningDivByZero();
+
+#if defined(Q_OS_MAC)
+    TQCOORD yp;
+    TQCOORD xp;
+#else
+    TQCOORD xp;
+    TQCOORD yp;
+#endif
+};
+
+
+/*****************************************************************************
+  TQPoint stream functions
+ *****************************************************************************/
+#ifndef TQT_NO_DATASTREAM
+TQ_EXPORT TQDataStream &amp;operator&lt;&lt;( TQDataStream &amp;, const TQPoint &amp; );
+TQ_EXPORT TQDataStream &amp;operator&gt;&gt;( TQDataStream &amp;, TQPoint &amp; );
+#endif
+
+/*****************************************************************************
+  TQPoint inline functions
+ *****************************************************************************/
+
+inline TQPoint::TQPoint()
+{ xp=0; yp=0; }
+
+inline TQPoint::TQPoint( int xpos, int ypos )
+{ xp=(TQCOORD)xpos; yp=(TQCOORD)ypos; }
+
+inline bool TQPoint::isNull() const
+{ return xp == 0 &amp;&amp; yp == 0; }
+
+inline int TQPoint::x() const
+{ return xp; }
+
+inline int TQPoint::y() const
+{ return yp; }
+
+inline void TQPoint::setX( int x )
+{ xp = (TQCOORD)x; }
+
+inline void TQPoint::setY( int y )
+{ yp = (TQCOORD)y; }
+
+inline TQCOORD &amp;TQPoint::rx()
+{ return xp; }
+
+inline TQCOORD &amp;TQPoint::ry()
+{ return yp; }
+
+inline TQPoint &amp;TQPoint::operator+=( const TQPoint &amp;p )
+{ xp+=p.xp; yp+=p.yp; return *this; }
+
+inline TQPoint &amp;TQPoint::operator-=( const TQPoint &amp;p )
+{ xp-=p.xp; yp-=p.yp; return *this; }
+
+inline TQPoint &amp;TQPoint::operator*=( int c )
+{ xp*=(TQCOORD)c; yp*=(TQCOORD)c; return *this; }
+
+inline TQPoint &amp;TQPoint::operator*=( double c )
+{ xp=(TQCOORD)(xp*c); yp=(TQCOORD)(yp*c); return *this; }
+
+inline bool operator==( const TQPoint &amp;p1, const TQPoint &amp;p2 )
+{ return p1.xp == p2.xp &amp;&amp; p1.yp == p2.yp; }
+
+inline bool operator!=( const TQPoint &amp;p1, const TQPoint &amp;p2 )
+{ return p1.xp != p2.xp || p1.yp != p2.yp; }
+
+inline const TQPoint operator+( const TQPoint &amp;p1, const TQPoint &amp;p2 )
+{ return TQPoint(p1.xp+p2.xp, p1.yp+p2.yp); }
+
+inline const TQPoint operator-( const TQPoint &amp;p1, const TQPoint &amp;p2 )
+{ return TQPoint(p1.xp-p2.xp, p1.yp-p2.yp); }
+
+inline const TQPoint operator*( const TQPoint &amp;p, int c )
+{ return TQPoint(p.xp*c, p.yp*c); }
+
+inline const TQPoint operator*( int c, const TQPoint &amp;p )
+{ return TQPoint(p.xp*c, p.yp*c); }
+
+inline const TQPoint operator*( const TQPoint &amp;p, double c )
+{ return TQPoint((TQCOORD)(p.xp*c), (TQCOORD)(p.yp*c)); }
+
+inline const TQPoint operator*( double c, const TQPoint &amp;p )
+{ return TQPoint((TQCOORD)(p.xp*c), (TQCOORD)(p.yp*c)); }
+
+inline const TQPoint operator-( const TQPoint &amp;p )
+{ return TQPoint(-p.xp, -p.yp); }
+
+inline TQPoint &amp;TQPoint::operator/=( int c )
+{
+#if defined(QT_CHECK_MATH)
+    if ( c == 0 )
+	warningDivByZero();
+#endif
+    xp/=(TQCOORD)c;
+    yp/=(TQCOORD)c;
+    return *this;
+}
+
+inline TQPoint &amp;TQPoint::operator/=( double c )
+{
+#if defined(QT_CHECK_MATH)
+    if ( c == 0.0 )
+	warningDivByZero();
+#endif
+    xp=(TQCOORD)(xp/c);
+    yp=(TQCOORD)(yp/c);
+    return *this;
+}
+
+inline const TQPoint operator/( const TQPoint &amp;p, int c )
+{
+#if defined(QT_CHECK_MATH)
+    if ( c == 0 )
+	TQPoint::warningDivByZero();
+#endif
+    return TQPoint(p.xp/c, p.yp/c);
+}
+
+inline const TQPoint operator/( const TQPoint &amp;p, double c )
+{
+#if defined(QT_CHECK_MATH)
+    if ( c == 0.0 )
+	TQPoint::warningDivByZero();
+#endif
+    return TQPoint((TQCOORD)(p.xp/c), (TQCOORD)(p.yp/c));
+}
+
+#define Q_DEFINED_QPOINT
+#include "ntqwinexport.h"
+#endif // TQPOINT_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

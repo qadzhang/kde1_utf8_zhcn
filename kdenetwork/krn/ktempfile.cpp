@@ -48,7 +48,7 @@ int KTempFile::create(QString prefix, QString suffix)
     QFileInfo* i=new QFileInfo(*f);
     files.append(f);
     infos.append(i);
-    debug("n files: %d",files.count());
+    tqDebug("n files: %d",files.count());
     return files.count()-1;
 }
 

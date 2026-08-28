@@ -10,14 +10,14 @@ set(KBIFF_SRCS
 )
 
 set(KBIFF_MOC
-    kbiffmonitor.moc setupdlg.moc kbiff.moc notify.moc status.moc
+    kbiffmonitor.h setupdlg.h kbiff.h notify.h status.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${KBIFF_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KBIFF_MOC})
 
 add_executable(kbiff ${KBIFF_SRCS} ${MOC_FILES})
 target_link_libraries(kbiff
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

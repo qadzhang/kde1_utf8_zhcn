@@ -33,7 +33,6 @@
 KMFolderMgr::KMFolderMgr(const char* aBasePath):
   KMFolderMgrInherited(), mDir()
 {
-  initMetaObject();
   assert(aBasePath != NULL);
   setBasePath(aBasePath);
 }
@@ -78,14 +77,13 @@ void KMFolderMgr::setBasePath(const char* aBasePath)
     mBasePath = "";
     mBasePath.append(aBasePath);
   }
-  mBasePath.detach();
 
   dir.setPath(mBasePath);
   if (!dir.exists())
   {
     KMFolder fld(&mDir);
 
-    warning("Directory\n"+mBasePath+"\ndoes not exist.\n\n"
+    tqWarning("Directory\n"+mBasePath+"\ndoes not exist.\n\n"
 	    "KMail will create it now.");
     // dir.mkdir(mBasePath, TRUE);
     mkdir(mBasePath.data(), 0700);
@@ -147,10 +145,10 @@ KMFolder* KMFolderMgr::findOrCreate(const char* aFolderName)
 
   if (!folder)
   {
-    warning(i18n("Creating missing folder\n`%s'"), aFolderName);
+    tqWarning(i18n("Creating missing folder\n`%s'"), aFolderName);
 
     folder = createFolder(aFolderName, TRUE);
-    if (!folder) fatal(i18n("Cannot create folder `%s'\nin %s"),
+    if (!folder) tqFatal(i18n("Cannot create folder `%s'\nin %s"),
 		       aFolderName, (const char*)mBasePath);
   }
   return folder;

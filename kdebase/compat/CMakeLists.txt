@@ -16,7 +16,7 @@ if(TARGET PkgConfig::libsystemd)
     set_property(TARGET kde1-screenlockinvoker PROPERTY CXX_STANDARD 14)
 
     target_link_libraries(kde1-screenlockinvoker PRIVATE
-        Qt::Qt1
+        ${TQT3_LIBRARIES}
         X11::X11
         X11::Xss
         ${KDE1_KDECORE}

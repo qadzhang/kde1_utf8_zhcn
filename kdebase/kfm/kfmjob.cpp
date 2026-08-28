@@ -33,7 +33,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
     KURL u( _url );
     if ( u.isMalformed() )
     {
-        warning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path());
+        tqWarning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path());
 	return false;
     }
 
@@ -172,7 +172,7 @@ void KFMJob::slotRedirection( const char *_url )
         // This allows to store the "/index.html" in 'url'
         // without changing the url stored here and in kfmman. David.
         url = _url;
-        post_data = 0;
+        post_data = TQString();
         openFileOrDir(false);
     }
 }

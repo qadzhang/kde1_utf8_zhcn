@@ -88,7 +88,7 @@ DwProtocolClient::~DwProtocolClient()
     }
     if (mServerName) {
         delete [] mServerName;
-        mServerName = 0;
+        mServerName = TQString();
     }
 }
 
@@ -114,7 +114,7 @@ int DwProtocolClient::Open(const char* aServer, DwUint16 aPort)
     }
     if (mServerName) {
         delete [] mServerName;
-        mServerName = 0;
+        mServerName = TQString();
     }
     mServerName = new char[strlen(aServer)+1];
     strcpy(mServerName, aServer);
@@ -321,7 +321,7 @@ int DwProtocolClient::PReceive(char* aBuf, int aBufSize)
     if (numFds == -1) {
         int err = errno;
         HandleError(err, kselect);
-        numReceived = 0;
+        numReceived = TQString();
     }
 
     // Read the input, if available
@@ -332,7 +332,7 @@ int DwProtocolClient::PReceive(char* aBuf, int aBufSize)
             // error!
             int err = errno;
             HandleError(err, krecv);
-            numReceived = 0;
+            numReceived = TQString();
         }
         else /* if (ret != -1) */ {
             numReceived = ret;
@@ -345,7 +345,7 @@ int DwProtocolClient::PReceive(char* aBuf, int aBufSize)
         DBG_PROTO_STMT(cout << "Receive timed out" << endl;)
         int err = ETIMEDOUT;
         HandleError(err, kselect);
-        numReceived = 0;
+        numReceived = TQString();
     }
 
     return numReceived;

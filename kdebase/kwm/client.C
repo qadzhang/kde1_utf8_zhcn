@@ -84,7 +84,7 @@ void myPushButton::leaveEvent( QEvent * ){
 
 void myPushButton::paint(QPainter *painter){
   if ( isDown() || (isOn() && !flat)) {
-    if ( style() == WindowsStyle )
+    if ( style().inherits("TQWindowsStyle") )
       qDrawWinButton( painter, 0, 0, width(),
 		      height(), colorGroup(), true );
     else
@@ -92,7 +92,7 @@ void myPushButton::paint(QPainter *painter){
 		       height(), colorGroup(), true, 2, 0L );
   }
   else if (!flat ) {
-    if ( style() == WindowsStyle )
+    if ( style().inherits("TQWindowsStyle") )
       qDrawWinButton( painter, 0, 0, width(), height(),
 		      colorGroup(), false );
     else {
@@ -106,7 +106,7 @@ void myPushButton::paint(QPainter *painter){
   if ( pixmap() ) {
     int dx = ( width() - pixmap()->width() ) / 2;
     int dy = ( height() - pixmap()->height() ) / 2;
-    if ( isDown() && style() == WindowsStyle ) {
+    if ( isDown() && style().inherits("TQWindowsStyle") ) {
       dx++;
       dy++;
     }
@@ -837,7 +837,6 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
       set_x_cursor(top_side_cursor);
     else if (ev->pos().y() >= height() - BORDER)
       set_x_cursor(bottom_side_cursor);
-    else
       set_x_cursor(normal_cursor);
 
     return;
@@ -1357,7 +1356,6 @@ void Client::setLabel(){
     rawlabel = "???";
   if (rawlabel.left(1) == "("){
     // (...) means iconified. MUST be unique!
-    rawlabel.detach();
     rawlabel.prepend("\"");
     rawlabel.append("\"");
   }
@@ -1774,7 +1772,7 @@ void Client::createGimmick(){
     delete gimmick;
   gimmick = 0;
   if (options.GimmickMode){
-    gimmick = new QLabel;
+    gimmick = new QLabel( 0, 0 );  /* TQt3 ?? */
     gimmick->resize(options.gimmickPixmap->size());
     gimmick->setPixmap(*(options.gimmickPixmap));
     if (options.gimmickPixmap->mask()){

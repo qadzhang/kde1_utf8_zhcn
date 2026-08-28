@@ -40,6 +40,7 @@
 
 #include <X11/Xlib.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 #include <X11/Xresource.h>
 #include <X11/Xutil.h>
 

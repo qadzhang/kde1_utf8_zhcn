@@ -7,13 +7,13 @@ set(SAMPLE_SRCS
 )
 
 set(SAMPLE_MOC
-    bell.moc kslidercontrol.moc
+    bell.h kslidercontrol.h
 )
-QT1_WRAP_MOC(MOC_FILES ${SAMPLE_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${SAMPLE_MOC})
 
 add_executable(kcmbell ${SAMPLE_SRCS} ${MOC_FILES})
 target_link_libraries(kcmbell
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

@@ -30,22 +30,22 @@
 KDirectionButton::KDirectionButton(QWidget *parent, const char *name)
  : QButton(parent, name)
 {
-  initMetaObject();
+
   direct = RightArrow;
 }
 
 KDirectionButton::KDirectionButton(ArrowType d, QWidget *parent, const char *name)
  : QButton(parent, name)
 {
-  initMetaObject();
+
   direct = d;
 }
 
 KDirectionButton::~KDirectionButton()
 {
-  //debug("KTabButton - destructor");
+  //tqDebug("KTabButton - destructor");
 
-  //debug("KTabBar - destructor done");
+  //tqDebug("KTabBar - destructor done");
 }
 
 void KDirectionButton::drawButton( QPainter *p)
@@ -244,7 +244,7 @@ void KDirectionButton::drawButton( QPainter *p)
 
     default:
 #if defined(CHECK_RANGE)
-      warning( "KDirectionButton: Requested Arrow style not supported" );
+      tqWarning( "KDirectionButton: Requested Arrow style not supported" );
 #endif
       break;
   }
@@ -253,13 +253,13 @@ void KDirectionButton::drawButton( QPainter *p)
 KTabButton::KTabButton(QWidget *parent, const char *name)
  : KDirectionButton(parent, name)
 {
-  initMetaObject();
+
 }
 
 KTabButton::KTabButton(ArrowType d, QWidget *parent, const char *name)
  : KDirectionButton(d, parent, name)
 {
-  initMetaObject();
+
 }
 
 void KTabButton::drawButton( QPainter *p)

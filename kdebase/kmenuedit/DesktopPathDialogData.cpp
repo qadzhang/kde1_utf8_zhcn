@@ -90,3 +90,4 @@ DesktopPathDialogData::DesktopPathDialogData
 DesktopPathDialogData::~DesktopPathDialogData()
 {
 }
+

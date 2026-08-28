@@ -6,7 +6,6 @@
 ConfAutoUpdate::ConfAutoUpdate(	QWidget* parent, const char* name )
   : QDialog( parent, name, TRUE ), ConfAutoUpdateData( this )
 {
-  initMetaObject();
   setCaption( klocale->translate("Configure Auto Update") );
   s_freq->setSteps(1,20);
   s_freq->setRange(0, 180 );

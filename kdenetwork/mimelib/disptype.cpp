@@ -239,7 +239,7 @@ void DwDispositionType::Parse()
     DwTokenString tokenStr(mString);
     while (1) {
         // Get ';'
-        found = 0;
+        found = TQString();
         while (!found && tokenizer.Type() != eTkNull) {
             if (tokenizer.Type() == eTkTspecial
                 && tokenizer.Token()[0] == ';') {
@@ -263,7 +263,7 @@ void DwDispositionType::Parse()
             ++tokenizer;
         }
         // Get '='
-        found = 0;
+        found = TQString();
         while (!found && tokenizer.Type() != eTkNull) {
             if (tokenizer.Type() == eTkTspecial
                 && tokenizer.Token()[0] == '=') {

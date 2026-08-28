@@ -541,7 +541,6 @@ bool PFileMenu::addFile(QFileInfo* fi, bool useDefaultPath)
     item = newDirBrowserItem(fi, useDefaultPath);
   else if (isKdelnkFile(fi->fileName()))
     item = newLinkItem(fi, useDefaultPath);
-  else
     item = newFileItem(fi, useDefaultPath);
 
   this->add(item);

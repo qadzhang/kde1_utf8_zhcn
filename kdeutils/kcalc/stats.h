@@ -68,7 +68,7 @@ public:
   MyList() : QList<CALCAMNT>() {};
   
 protected:
-  int compareItems(GCI item1,GCI item2);
+  int compareItems(TQPtrCollection::Item item1,TQPtrCollection::Item item2);
 };
 
 

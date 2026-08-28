@@ -1,0 +1,48 @@
+-------
+INSTALL
+-------
+
+Those man pages are not yet installed by 'make install'.
+They have to be installed in $MANPATH/man1 and in $MANPATH/man3.
+(See INSTALL in the top directory).
+
+Example:
+If qt3 has been installed in /usr/local and if MANPATH is
+/usr/local/share/man, they can be installed with the following commands:
+    install -m 644 man1/* /usr/local/share/man/man1
+    install -m 644 man3/* /usr/local/share/man/man3
+Change the commands to suit your needs.
+
+----
+TODO
+----
+
+* installation with qmake.
+* optional man pages compression with qmake
+
+-------
+ORIGINS
+-------
+
+Trolltech-Nokia original sources
+    (http://get.qt.nokia.com/qt/source/qt-x11-free-3.3.8b.tar.gz)
+  man1/tqlrelease.1
+  man1/tqlupdate.1
+  man1/tqmoc.1
+  man1/tquic.1
+  man3/*
+
+Debian distribution
+    (http://ftp.de.debian.org/debian/pool/main/q/qt-x11-free/)
+        qt-x11-free_3.3.8b-11.*
+        qt-x11-free_3.3.8b.orig.tar.gz
+  man1/tqtcreatecw.1
+  man1/tqdesigner.1
+  man1/tqtfindtr.1
+  man1/tqlinguist.1
+  man1/maketqpf.1
+  man1/tqtmergetr.1
+  man1/msg2tqm.1
+  man1/tqembed.1
+  man1/tqtconfig.1
+  man1/tqvfb.1

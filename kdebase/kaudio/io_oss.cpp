@@ -245,7 +245,7 @@ bool AudioDev::reset()
   if (opened)
     {
 #ifdef DEBUG
-      cerr << "RESET!\n";
+      std::cerr << "RESET!\n";
 #endif
 
 #ifdef OSS_AUDIO
@@ -266,7 +266,7 @@ bool AudioDev::sync()
   if (opened)
     {
 #ifdef DEBUG
-      cerr << "SYNC!\n";
+      std::cerr << "SYNC!\n";
 #endif
 #ifdef OSS_AUDIO
       return( ioctl(audiodev, SNDCTL_DSP_SYNC, 0) );
@@ -342,8 +342,8 @@ int AudioDev::emitSilence()
       bytesLeft -= BUFFSIZE;
       // Emit silence, if there may be sound underrun
 #ifdef DEBUG
-      cerr  << "FreeFrags =" << ABI.fragments << '\n';
-      cerr  << "Bytes left=" << bytesLeft << '\n';
+      std::cerr  << "FreeFrags =" << ABI.fragments << '\n';
+      std::cerr  << "Bytes left=" << bytesLeft << '\n';
 #endif
       if (bit_p_spl == 8)
 	emittedBytes += write(audiodev, silence8, BUFFSIZE );

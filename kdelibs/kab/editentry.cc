@@ -312,9 +312,9 @@ void EditEntryDialog::okPressed()
   CHECK(Size==sizeof(ledits)/sizeof(ledits[0]));
   for(count=0; count<Size; count++)
     {
-      *entries[count]=ledits[count]->text();
+      *entries[count]=ledits[count]->text().ascii();
     }
-  entry.comment=mleComment->text();
+  entry.comment=mleComment->text().ascii();
   entry.birthday=dlBirthDay->getDate();
   emit(accept());
   // ############################################################################

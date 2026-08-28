@@ -26,7 +26,7 @@ void objFinder::insert(QObject *obj, const char *key = 0){ /*FOLD00*/
   QString name;
 
   if(obj == 0x0){
-    warning("objFinder: Passed Null Object");
+    tqWarning("objFinder: Passed Null Object");
     return;
   }
   
@@ -146,7 +146,7 @@ void objFinder::objDest(){ /*fold00*/
   if(sender() == 0x0){
     return;
   }
-  debug("Destroyed: %s", sender()->name());
+  tqDebug("Destroyed: %s", sender()->name());
   QDictIterator<QObject> it(*objList);
   while(it.current()){
     if(it.current() == sender()){

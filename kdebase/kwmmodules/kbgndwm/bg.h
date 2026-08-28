@@ -23,6 +23,8 @@ class KBackground : public QObject
 public:
   KBackground();
   ~KBackground();
+  // TQt3 迁移：QDir::entryList 值语义——旧指针用法改由成员列表承接
+  QStrList k1entrylist;
 
   void apply();
   // cancel an apply which has not yet been completed

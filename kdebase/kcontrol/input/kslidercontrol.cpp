@@ -131,7 +131,6 @@ void KSliderControl::resizeEvent ( QResizeEvent * )
     lx = 0;
   else if (label_align == AlignRight)
     lx = left_frac - main_label->width() - h_spacing/2;
-  else
     lx = ( left_frac - main_label->width() )/2;
   int ly = ( h - main_label->height() )/2;
   main_label->move(lx, ly);

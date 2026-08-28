@@ -27,7 +27,7 @@ int HexData::save(const char *filename) {
 uchar HexData::byteAt(unsigned long i) const {
     if (i < data_size)
 	return hexdata[i]; 
-    warning("HexData: index out of range");
+    tqWarning("HexData: index out of range");
     return 0;
 }
 
@@ -48,7 +48,7 @@ int HexData::load(const char *Filename) {
 	int ret =  file.readBlock(reinterpret_cast<char*>(hexdata),
 				  file.size());
 	if (ret < 0) {
-	    warning("loading failed");
+	    tqWarning("loading failed");
 	    data_size = 0;
 	    delete [] hexdata;
 	    hexdata = 0;

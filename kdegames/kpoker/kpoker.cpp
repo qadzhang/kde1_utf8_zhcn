@@ -680,11 +680,11 @@ void kpok::paintEvent( QPaintEvent *)
    p.setFont( wonFont );
    p.setPen( QColor(0,0,0) );
    
-   while ( t[i] ) {
+   while ( t[i].latin1() ) {
       int i16 = (fCount+i) & 15;
       
-      p.drawText( x, y-sin_tbl[i16]*h/800, &t[i], 1 );
-      x += fm.width( t[i] );
+      p.drawText( x, y-sin_tbl[i16]*h/800, TQString(QChar(t[i].latin1())) );  /* TQt3 迁移 */
+      x += fm.width( TQString(QChar(t[i].latin1())) );
       i++;
    }
    p.end();

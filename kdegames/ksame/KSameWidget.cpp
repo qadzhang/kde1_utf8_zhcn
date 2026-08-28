@@ -125,7 +125,7 @@ KSameWidget::sizeChanged() {
 }     
 
 KSameWidget::~KSameWidget() {
-     //  debug("~KSameWidget\n"); 
+     //  tqDebug("~KSameWidget\n"); 
 }
 #define MAX(a,b) ((a)>(b)?(a):(b))
 void KSameWidget::m_new() {
@@ -178,10 +178,10 @@ void KSameWidget::m_new() {
 	  
 }
 void KSameWidget::m_load() {
-     debug(i18n("menu load not supported")); 
+     tqDebug(i18n("menu load not supported")); 
 }
 void KSameWidget::m_save() {
-     debug(i18n("menu save not supported"));
+     tqDebug(i18n("menu save not supported"));
 }
 void KSameWidget::m_showhs() {
      if (highscore->isVisible())
@@ -196,7 +196,7 @@ void KSameWidget::m_quit() {
 }
 
 void KSameWidget::m_colors( int id) {
-     debug(i18n("menu colors not supported"));
+     tqDebug(i18n("menu colors not supported"));
      int colors=id;
      char p[30];
      colors=stone->colors();
@@ -217,7 +217,7 @@ void KSameWidget::set_board(int no) {
      status->changeItem(p,2);        
 }
 void KSameWidget::gameover() {
-     debug(i18n("GameOver"));
+     tqDebug(i18n("GameOver"));
      highscore->add(stone->board(),stone->score(),stone->colors());
 }
 void KSameWidget::set_marked(int m) {

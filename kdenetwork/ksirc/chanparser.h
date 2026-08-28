@@ -14,7 +14,7 @@ class parseSucc;
 class parseError;
 
 #include <qstring.h>
-#include <toplevel.h>
+#include "toplevel.h"
 
 /*
  * Parsing is ok, this is the string to display

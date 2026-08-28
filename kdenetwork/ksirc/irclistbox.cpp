@@ -248,7 +248,7 @@ void KSircListBox::mouseReleaseEvent(QMouseEvent *me){ /*FOLD00*/
       row = erow;
       it = (ircListItem *) item(erow);
       if(it == 0x0){
-	warning("Row out of range: %d", row);
+	tqWarning("Row out of range: %d", row);
 	return;
       }
     }
@@ -256,7 +256,7 @@ void KSircListBox::mouseReleaseEvent(QMouseEvent *me){ /*FOLD00*/
       erow = row;
     }
     if(erow == srow){
-      debug("Selected: %s", KSPainter::stripColourCodes(it->getRev()).data());
+      tqDebug("Selected: %s", KSPainter::stripColourCodes(it->getRev()).data());
       kApp->clipboard()->setText(KSPainter::stripColourCodes(it->getRev()));
       updateItem(row, TRUE);
     }
@@ -275,7 +275,7 @@ void KSircListBox::mouseReleaseEvent(QMouseEvent *me){ /*FOLD00*/
       for(int crow = trow; crow <= brow; crow ++){
 	ircListItem *cit = (ircListItem *) item(crow);
 	if(cit == 0x0){
-	  warning("Row out of range: %d", crow);
+	  tqWarning("Row out of range: %d", crow);
 	  return;
 	}
 	selected.append(KSPainter::stripColourCodes(cit->getRev()));
@@ -283,7 +283,7 @@ void KSircListBox::mouseReleaseEvent(QMouseEvent *me){ /*FOLD00*/
       }
       selected.truncate(selected.length()-1); // Remove the last \n
       kApp->clipboard()->setText(selected);
-      debug("selected: %s", selected.data());
+      tqDebug("selected: %s", selected.data());
     }
     waitForClear = TRUE;
     connect(kApp->clipboard(), SIGNAL(dataChanged()),
@@ -307,7 +307,7 @@ void KSircListBox::clearSelection() { /*FOLD00*/
     updateItem(i, TRUE);
   }
   min = 1; // Turns off repeated clears
-  max = 0;
+  max = 0;  /* TQt3 迁移 */
   waitForClear = FALSE;
 //  cerr << "Got clear\n";
 }
@@ -350,7 +350,7 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
       for(int crow = srow + 1; crow < row; crow++){
 	ircListItem *cit = (ircListItem *) item(crow);
 	if(cit == 0x0){
-	  warning("Row out of range: %d", crow);
+	  tqWarning("Row out of range: %d", crow);
 	  return;
 	}
 	cit->setRevOne(0);
@@ -370,7 +370,7 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
       for(int crow = srow - 1; crow > row; crow--){
 	ircListItem *cit = (ircListItem *) item(crow);
 	if(cit == 0x0){
-	  warning("Row out of range: %d", crow);
+	  tqWarning("Row out of range: %d", crow);
 	  return;
 	}
 	cit->setRevOne(0);
@@ -388,7 +388,7 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
       for(int crow = lrow; crow > trow; crow --){
 	ircListItem *cit = (ircListItem *) item(crow);
 	if(cit == 0x0){
-	  warning("Row out of range: %d", crow);
+	  tqWarning("Row out of range: %d", crow);
 	  return;
 	}
 	cit->setRevOne(-1);
@@ -402,7 +402,7 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
       for(int crow = lrow; crow < brow; crow++){
 	ircListItem *cit = (ircListItem *) item(crow);
 	if(cit == 0x0){
-	  warning("Row out of range: %d", crow);
+	  tqWarning("Row out of range: %d", crow);
 	  return;
 	}
 	cit->setRevOne(-1);
@@ -431,12 +431,12 @@ bool KSircListBox::xlateToText(int x, int y, /*FOLD00*/
   // Bring the cursor positions to within sane ranges
   // If it's beyond the top scroll up and same if it's too far down
   if(x < 0)
-    x = 0;
+    x = 0;  /* TQt3 迁移 */
   else if(x > width())
     x = width();
   if(y < 0){
     mouseSelScrollUp();
-    y = 0;
+    y = 0;  /* TQt3 迁移 */
   }
   else if(y > height()){
     mouseSelScrollDown();
@@ -482,7 +482,7 @@ bool KSircListBox::xlateToText(int x, int y, /*FOLD00*/
 
   ircListItem *it = (ircListItem *) item(row);
   if(it == 0x0){
-    warning("Row out of range: %d", row);
+    tqWarning("Row out of range: %d", row);
     return FALSE;
   }
 
@@ -498,7 +498,7 @@ bool KSircListBox::xlateToText(int x, int y, /*FOLD00*/
   
   sline = KSPainter::stripColourCodes(it->paintText()->at(line), &c2noc);
   if(sline.isNull()){
-    warning("No such line: %d", line);
+    tqWarning("No such line: %d", line);
     return FALSE;
   }
 
@@ -573,7 +573,7 @@ void KSircListBox::paintEvent(QPaintEvent *e){
     }
     else{
       //      skip = skip > 10 ? 0 : skip+1;
-      skip = 0;
+      skip = 0;  /* TQt3 迁移 */
     }
     QListBox::paintEvent(e);
   }

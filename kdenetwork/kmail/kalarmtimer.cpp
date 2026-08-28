@@ -46,9 +46,8 @@ static char* time2str(struct timeval& tv)
 //-----------------------------------------------------------------------------
 KAlarmTimer :: KAlarmTimer(): QObject()
 {
-  initMetaObject();
   tid  = 0;
-  msec = 0;
+  msec = 0;  /* TQt3 迁移 */
 }
 
 

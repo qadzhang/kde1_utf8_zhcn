@@ -118,7 +118,7 @@
 #include <qradiobutton.h>
 #include <qscrollbar.h>
 #include <qtooltip.h>
-#include <kbuttonbox.h>
+#include "kbuttonbox.h"
 
 #include <qstring.h>
 #include <qfont.h>

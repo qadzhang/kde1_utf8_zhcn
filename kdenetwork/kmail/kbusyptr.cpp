@@ -14,7 +14,7 @@ KBusyPtr :: KBusyPtr ()
   app = KApplication::getKApplication();
 
   busyLevel  = 0;
-  numCursors = 0;
+  numCursors = 0;  /* TQt3 迁移 */
   frameDelay = 500;
   cursorList = NULL;
   bitmapList = NULL;
@@ -42,13 +42,12 @@ void KBusyPtr :: busy (void)
 {
   if (busyLevel <= 0)
   {
-    currentCursor = 0;
+    currentCursor = 0;  /* TQt3 迁移 */
     if (!cursorList)
     {
       if (animated) app->setOverrideCursor(waitCursor);
       else app->setOverrideCursor(KCursor::waitCursor());
     }
-    else
     {
       app->setOverrideCursor(cursorList[currentCursor]);
       if (animated) start(frameDelay);
@@ -114,7 +113,7 @@ bool KBusyPtr :: loadBitmap (QBitmap& bm, const QString& filename)
   }
   else 
   {
-    f = app->kde_datadir().copy();
+    f = app->kde_datadir();
     f += "/kmail/pics/";
     f += filename;
   }
@@ -131,7 +130,7 @@ void KBusyPtr :: loadCursor (const char* cursorName,const char* maskName)
   QBitmap map, mask;
   QBitmap cmap(16,16), cmask(16,16);
 
-  numCursors = 0;
+  numCursors = 0;  /* TQt3 迁移 */
 
   if (!loadBitmap(map,cursorName)) return;
   if (!loadBitmap(mask,maskName)) return;

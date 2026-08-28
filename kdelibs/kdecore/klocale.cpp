@@ -53,9 +53,9 @@ char *k_bindtextdomain (const char *__domainname,
 
 
 #include "klocale.h"
-#include <kapp.h>
-#include <kconfig.h>
-#include <kcharsets.h>
+#include "kapp.h"
+#include "kconfig.h"
+#include "kcharsets.h"
 
 #if !HAVE_LC_MESSAGES
 /* This value determines the behaviour of the gettext() and dgettext()
@@ -349,8 +349,6 @@ QStrList KLocale::languageList()const{
     QStrList list;
 // temporary copy of language list
     QString str=langs;
-    str.detach();
-    
     while(!str.isEmpty()){
       int f = str.find(':');
       if (f >= 0) {

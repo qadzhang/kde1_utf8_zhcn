@@ -414,7 +414,7 @@ int main(int argc, char** argv)
 	    iterations=atoi(argv[++arg]);
 	    timeit = TRUE;
 	} else {
-	    warning("Bad param %s", argv[arg]);
+	    tqWarning("Bad param %s", argv[arg]);
 	}
     }
 
@@ -479,7 +479,7 @@ int main(int argc, char** argv)
     t.start();
     app.exec();
     if ( timeit )
-	debug("%dms",t.elapsed());
+	tqDebug("%dms",t.elapsed());
     return 0;
 }
 

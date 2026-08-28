@@ -4,13 +4,13 @@ include_directories(
 
 set(KWMSOUND_SRCS kwmsound.C)
 
-set(KWMSOUND_MOC kwmsound.moc)
+set(KWMSOUND_MOC kwmsound.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KWMSOUND_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KWMSOUND_MOC})
 
 add_executable(kwmsound ${KWMSOUND_SRCS} ${MOC_FILES})
 target_link_libraries(kwmsound
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

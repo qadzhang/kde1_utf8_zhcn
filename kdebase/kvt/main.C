@@ -203,7 +203,7 @@ void kvt_set_selection(char* s){
 }
 
 char* kvt_get_selection(){
-  return (char*) QApplication::clipboard()->text();
+  return strdup( TQApplication::clipboard()->text().ascii() );  /* TQt3 迁移：text() 返回 QString */
 }
 
 int kvt_find_font(const char *name, int ptsz, char *ret)
@@ -215,7 +215,7 @@ int kvt_find_font(const char *name, int ptsz, char *ret)
 	 */
 	QString data;
 
-	fontNames = XListFonts(QPaintDevice::x__Display(), (char*)name,
+	fontNames = XListFonts(qt_xdisplay(), (char*)name,
 		1024, &count);
 // printf("Query for [%s] size %d returned %d fonts\n", name, ptsz, count);
 	score = 99999; ptscore = 0;
@@ -723,7 +723,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
       menubar->hide();
 
     frame = new QFrame( this );
-	if( style() == WindowsStyle )
+	if( style().inherits("TQWindowsStyle") )
       frame ->setFrameStyle( QFrame::WinPanel | QFrame::Sunken);
 	else
 	  frame ->setFrameStyle( QFrame::Panel | QFrame::Sunken);
@@ -742,7 +742,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     keyboard_secured = FALSE;
 
-    setAcceptFocus( TRUE );
+    setFocusPolicy( TQWidget::StrongFocus );  /* TQt3 迁移 */
 
     KApplication::getKApplication()->setTopWidget(this);
     KApplication::getKApplication()->enableSessionManagement();
@@ -791,7 +791,7 @@ void kVt::toggleHotkeys() {
 }
 
 void kVt::styleChange( GUIStyle ) {
-  if( style() == WindowsStyle )
+  if( style().inherits("TQWindowsStyle") )
     frame ->setFrameStyle( QFrame::WinPanel | QFrame::Sunken);
   else
     frame ->setFrameStyle( QFrame::Panel | QFrame::Sunken);
@@ -1083,7 +1083,7 @@ void kVt::dimen_menu_activated( int item){
 //   if ( item == kvt_dimen)
 //     return;
   kvt_dimen = item;
-  //debug( "Resizing to %i, %i", kvt_dimens[item].x, kvt_dimens[item].y );
+  //tqDebug( "Resizing to %i, %i", kvt_dimens[item].x, kvt_dimens[item].y );
   // Hmm. I don't know why y needs -1, and x doesn't. But it works,
   // stty -a reports the correct size with -1, and not without.
   // If you DO know, mail me: l.widdershoven@fz-juelich.de

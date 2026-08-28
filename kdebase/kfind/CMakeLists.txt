@@ -9,10 +9,10 @@ set(KFIND_SRCS
     kfsave.cpp kftypes.cpp kfoptions.cpp kfwin.cpp kfind.cpp
     main.cpp moc.cpp)
 
-set(KFIND_MOC kfdird.moc kfwin.moc kfindtop.moc
-    kftabdlg.moc kfoptions.moc kfind.moc)
+set(KFIND_MOC kfdird.h kfwin.h kfindtop.h
+    kftabdlg.h kfoptions.h kfind.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KFIND_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KFIND_MOC})
 
 add_executable(kfind1 ${KFIND_SRCS} ${MOC_FILES})
 target_link_libraries(kfind1
@@ -20,7 +20,7 @@ target_link_libraries(kfind1
     ${KDE1_KDEUI}
     ${KDE1_KFM}
     ${KDE1_KFILE}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

@@ -32,7 +32,7 @@ set(KFM_MOC
 	open-with.h finddlg.h kcookiewin.h popup.h)
 
 
-QT1_WRAP_HEADER(MOC_FILES ${KFM_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KFM_MOC})
 
 add_executable(kfm ${KFM_SRCS} ${MOC_FILES})
 target_link_libraries(kfm
@@ -43,7 +43,7 @@ target_link_libraries(kfm
     ${KDE1_KFM}
     ${KDE1_KIMGIO}
     ${KDE1_KFILE}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

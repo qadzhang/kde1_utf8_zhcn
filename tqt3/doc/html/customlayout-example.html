@@ -1,0 +1,851 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/customlayout/customlayout.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Customized Layoutmanager</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Customized Layoutmanager</h1>
+
+ 
+<p> 
+This examples demonstrates how to write customized layout (geometry) managers
+like card layouts, border layout and flow layouts.
+<p> See also: <a href="layout.html">Documentation of Geometry Management</a>.
+<p> <hr>
+<p> Header file of the flow layout:
+<p> <pre>/****************************************************************************
+** $Id: qt/flow.h   3.3.8   edited Jan 11 14:46 $
+**
+** Definition of simple flow layout for custom layout example
+**
+** Created : 979899
+**
+** Copyright (C) 1997-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef FLOW_H
+#define FLOW_H
+
+#include &lt;<a href="qlayout-h.html">ntqlayout.h</a>&gt;
+#include &lt;<a href="qptrlist-h.html">ntqptrlist.h</a>&gt;
+
+class SimpleFlow : public <a href="ntqlayout.html">TQLayout</a>
+{
+public:
+    SimpleFlow( <a href="ntqwidget.html">TQWidget</a> *parent, int border=0, int space=-1,
+                const char *name=0 )
+        : <a href="ntqlayout.html">TQLayout</a>( parent, border, space, name ),
+        cached_width(0) {}
+    SimpleFlow( <a href="ntqlayout.html">TQLayout</a>* parent, int space=-1, const char *name=0 )
+        : <a href="ntqlayout.html">TQLayout</a>( parent, space, name ),
+        cached_width(0) {}
+    SimpleFlow( int space=-1, const char *name=0 )
+        : <a href="ntqlayout.html">TQLayout</a>( space, name ),
+        cached_width(0) {}
+
+    ~SimpleFlow();
+
+    void addItem( <a href="qlayoutitem.html">TQLayoutItem</a> *item);
+    bool hasHeightForWidth() const;
+    int heightForWidth( int ) const;
+    <a href="ntqsize.html">TQSize</a> sizeHint() const;
+    <a href="ntqsize.html">TQSize</a> minimumSize() const;
+    <a href="qlayoutiterator.html">TQLayoutIterator</a> iterator();
+    TQSizePolicy::ExpandData expanding() const;
+
+protected:
+    void setGeometry( const <a href="ntqrect.html">TQRect</a>&amp; );
+
+private:
+    int doLayout( const <a href="ntqrect.html">TQRect</a>&amp;, bool testonly = false );
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;TQLayoutItem&gt; list;
+    int cached_width;
+    int cached_hfw;
+
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation of the flow layout:
+<p> <pre>/****************************************************************************
+** $Id: qt/flow.cpp   3.3.8   edited Jan 11 14:46 $
+**
+** Implementing your own layout: flow example
+**
+** Copyright (C) 1996-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "flow.h"
+
+class SimpleFlowIterator :public <a href="qglayoutiterator.html">TQGLayoutIterator</a>
+{
+public:
+    SimpleFlowIterator( <a href="ntqptrlist.html">TQPtrList</a>&lt;TQLayoutItem&gt; *l ) :idx(0), list(l)  {}
+    uint count() const;
+    <a href="qlayoutitem.html">TQLayoutItem</a> *current();
+    <a href="qlayoutitem.html">TQLayoutItem</a> *next();
+    <a href="qlayoutitem.html">TQLayoutItem</a> *takeCurrent();
+
+private:
+    int idx;
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;TQLayoutItem&gt; *list;
+
+};
+
+uint <a name="f452"></a>SimpleFlowIterator::count() const
+{
+<a name="x1479"></a>    return list-&gt;<a href="ntqptrlist.html#count">count</a>();
+}
+
+<a name="x1464"></a>TQLayoutItem *SimpleFlowIterator::<a href="qglayoutiterator.html#current">current</a>()
+{
+<a name="x1478"></a>    return idx &lt; int(count()) ? list-&gt;<a href="ntqptrlist.html#at">at</a>(idx) : 0;
+}
+
+<a name="x1465"></a>TQLayoutItem *SimpleFlowIterator::<a href="qglayoutiterator.html#next">next</a>()
+{
+    idx++; return current();
+}
+
+<a name="x1466"></a>TQLayoutItem *SimpleFlowIterator::<a href="qglayoutiterator.html#takeCurrent">takeCurrent</a>()
+{
+<a name="x1480"></a>    return idx &lt; int(count()) ? list-&gt;<a href="ntqptrlist.html#take">take</a>( idx ) : 0;
+}
+
+SimpleFlow::~SimpleFlow()
+{
+    <a href="ntqlayout.html#deleteAllItems">deleteAllItems</a>();
+}
+
+
+<a name="x1473"></a>int SimpleFlow::<a href="qlayoutitem.html#heightForWidth">heightForWidth</a>( int w ) const
+{
+    if ( cached_width != w ) {
+        //Not all C++ compilers support "mutable" yet:
+        SimpleFlow * mthis = (SimpleFlow*)this;
+        int h = mthis-&gt;doLayout( TQRect(0,0,w,0), true );
+        mthis-&gt;cached_hfw = h;
+        mthis-&gt;cached_width = w;
+        return h;
+    }
+    return cached_hfw;
+}
+
+<a name="x1467"></a>void SimpleFlow::<a href="ntqlayout.html#addItem">addItem</a>( <a href="qlayoutitem.html">TQLayoutItem</a> *item)
+{
+<a name="x1477"></a>    list.<a href="ntqptrlist.html#append">append</a>( item );
+}
+
+<a name="x1472"></a>bool SimpleFlow::<a href="qlayoutitem.html#hasHeightForWidth">hasHeightForWidth</a>() const
+{
+    return true;
+}
+
+<a name="x1476"></a>TQSize SimpleFlow::<a href="qlayoutitem.html#sizeHint">sizeHint</a>() const
+{
+    return minimumSize();
+}
+
+<a name="x1468"></a>TQSizePolicy::ExpandData SimpleFlow::<a href="ntqlayout.html#expanding">expanding</a>() const
+{
+    return TQSizePolicy::NoDirection;
+}
+
+<a name="x1469"></a>TQLayoutIterator SimpleFlow::<a href="ntqlayout.html#iterator">iterator</a>()
+{
+    return TQLayoutIterator( new SimpleFlowIterator( &amp;list ) );
+}
+
+<a name="x1471"></a>void SimpleFlow::<a href="ntqlayout.html#setGeometry">setGeometry</a>( const <a href="ntqrect.html">TQRect</a> &amp;r )
+{
+    TQLayout::<a href="ntqlayout.html#setGeometry">setGeometry</a>( r );
+    doLayout( r );
+}
+
+int <a name="f451"></a>SimpleFlow::doLayout( const <a href="ntqrect.html">TQRect</a> &amp;r, bool testonly )
+{
+    int x = r.<a href="ntqrect.html#x">x</a>();
+    int y = r.<a href="ntqrect.html#y">y</a>();
+    int h = 0;          //height of this line so far.
+    <a href="qptrlistiterator.html">TQPtrListIterator</a>&lt;TQLayoutItem&gt; it(list);
+    <a href="qlayoutitem.html">TQLayoutItem</a> *o;
+<a name="x1481"></a>    while ( (o=it.<a href="qptrlistiterator.html#current">current</a>()) != 0 ) {
+        ++it;
+        int nextX = x + o-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().width() + spacing();
+<a name="x1482"></a>        if ( nextX - spacing() &gt; r.<a href="ntqrect.html#right">right</a>() &amp;&amp; h &gt; 0 ) {
+            x = r.<a href="ntqrect.html#x">x</a>();
+            y = y + h + spacing();
+            nextX = x + o-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().width() + spacing();
+            h = 0;
+        }
+        if ( !testonly )
+<a name="x1475"></a>            o-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>( TQRect( TQPoint( x, y ), o-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>() ) );
+        x = nextX;
+        h = TQMAX( h,  o-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().height() );
+    }
+    return y + h - r.<a href="ntqrect.html#y">y</a>();
+}
+
+<a name="x1470"></a>TQSize SimpleFlow::<a href="ntqlayout.html#minimumSize">minimumSize</a>() const
+{
+    <a href="ntqsize.html">TQSize</a> s(0,0);
+    <a href="qptrlistiterator.html">TQPtrListIterator</a>&lt;TQLayoutItem&gt; it(list);
+    <a href="qlayoutitem.html">TQLayoutItem</a> *o;
+    while ( (o=it.<a href="qptrlistiterator.html#current">current</a>()) != 0 ) {
+        ++it;
+<a name="x1485"></a><a name="x1474"></a>        s = s.<a href="ntqsize.html#expandedTo">expandedTo</a>( o-&gt;<a href="qlayoutitem.html#minimumSize">minimumSize</a>() );
+    }
+    return s;
+}
+</pre>
+
+<p> <hr>
+<p> Header file of the border layout:
+<p> <pre>/****************************************************************************
+** $Id: qt/border.h   3.3.8   edited Jan 11 14:46 $
+**
+** Definition of simple flow layout for custom layout example
+**
+** Created : 979899
+**
+** Copyright (C) 1997-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef BORDER_H
+#define BORDER_H
+
+#include &lt;<a href="qlayout-h.html">ntqlayout.h</a>&gt;
+#include &lt;<a href="qptrlist-h.html">ntqptrlist.h</a>&gt;
+
+class BorderWidgetItem : public <a href="qwidgetitem.html">TQWidgetItem</a>
+{
+public:
+    BorderWidgetItem( <a href="ntqwidget.html">TQWidget</a> *w )
+        : <a href="qwidgetitem.html">TQWidgetItem</a>( w )
+    {}
+
+    void setGeometry( const <a href="ntqrect.html">TQRect</a> &amp;r )
+    { widget()-&gt;setGeometry( r ); }
+
+};
+
+class BorderLayout : public <a href="ntqlayout.html">TQLayout</a>
+{
+public:
+    enum Position {
+        West = 0,
+        North,
+        South,
+        East,
+        Center
+    };
+
+    struct BorderLayoutStruct
+    {
+        BorderLayoutStruct( <a href="qlayoutitem.html">TQLayoutItem</a> *i, Position p ) {
+            item = i;
+            pos = p;
+        }
+
+        <a href="qlayoutitem.html">TQLayoutItem</a> *item;
+        Position pos;
+    };
+
+    enum SizeType {
+        Minimum = 0,
+        SizeHint
+    };
+
+    BorderLayout( <a href="ntqwidget.html">TQWidget</a> *parent, int border = 0, int autoBorder = -1,
+                  const char *name = 0 )
+        : <a href="ntqlayout.html">TQLayout</a>( parent, border, autoBorder, name ), cached( 0, 0 ), mcached( 0, 0 ),
+          sizeDirty( true ), msizeDirty( true )
+    {}
+
+    BorderLayout( <a href="ntqlayout.html">TQLayout</a>* parent, int autoBorder = -1, const char *name = 0 )
+        : <a href="ntqlayout.html">TQLayout</a>( parent, autoBorder, name  ), cached( 0, 0 ), mcached( 0, 0 ),
+          sizeDirty( true ), msizeDirty( true )
+    {}
+
+    BorderLayout( int autoBorder = -1, const char *name = 0 )
+        : <a href="ntqlayout.html">TQLayout</a>( autoBorder, name ), cached( 0, 0 ), mcached( 0, 0 ),
+          sizeDirty( true ), msizeDirty( true )
+    {}
+
+    ~BorderLayout();
+
+    void addItem( <a href="qlayoutitem.html">TQLayoutItem</a> *item );
+
+    void addWidget( <a href="ntqwidget.html">TQWidget</a> *widget, Position pos );
+    void add( <a href="qlayoutitem.html">TQLayoutItem</a> *item, Position pos );
+
+    bool hasHeightForWidth() const;
+
+    <a href="ntqsize.html">TQSize</a> sizeHint() const;
+    <a href="ntqsize.html">TQSize</a> minimumSize() const;
+
+    <a href="qlayoutiterator.html">TQLayoutIterator</a> iterator();
+
+    TQSizePolicy::ExpandData expanding() const;
+
+protected:
+    void setGeometry( const <a href="ntqrect.html">TQRect</a> &amp;rect );
+
+private:
+    void doLayout( const <a href="ntqrect.html">TQRect</a> &amp;rect, bool testonly = false );
+    void calcSize( SizeType st );
+
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;BorderLayoutStruct&gt; list;
+    <a href="ntqsize.html">TQSize</a> cached, mcached;
+    bool sizeDirty, msizeDirty;
+
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation of the border layout:
+<p> <pre>/****************************************************************************
+** $Id: qt/border.cpp   3.3.8   edited Jan 11 14:46 $
+**
+** Implementing your own layout: flow example
+**
+** Copyright (C) 1996-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "border.h"
+
+class BorderLayoutIterator : public <a href="qglayoutiterator.html">TQGLayoutIterator</a>
+{
+public:
+    BorderLayoutIterator( const <a href="ntqptrlist.html">TQPtrList</a>&lt;BorderLayout::BorderLayoutStruct&gt; *l )
+        : idx( 0 ) , list( (TQPtrList&lt;BorderLayout::BorderLayoutStruct&gt;*)l )
+    {}
+
+    uint count() const;
+    <a href="qlayoutitem.html">TQLayoutItem</a> *current();
+    BorderLayout::BorderLayoutStruct *currentStruct();
+    void toFirst();
+    <a href="qlayoutitem.html">TQLayoutItem</a> *next();
+    <a href="qlayoutitem.html">TQLayoutItem</a> *takeCurrent();
+    BorderLayoutIterator &amp;operator++();
+
+private:
+    int idx;
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;BorderLayout::BorderLayoutStruct&gt; *list;
+
+};
+
+uint <a name="f456"></a>BorderLayoutIterator::count() const
+{
+<a name="x1502"></a>    return list-&gt;<a href="ntqptrlist.html#count">count</a>();
+}
+
+<a name="x1486"></a>TQLayoutItem *BorderLayoutIterator::<a href="qglayoutiterator.html#current">current</a>()
+{
+<a name="x1501"></a>    return idx &lt; (int)count() ? list-&gt;<a href="ntqptrlist.html#at">at</a>( idx )-&gt;item : 0;
+}
+
+BorderLayout::BorderLayoutStruct *<a name="f457"></a>BorderLayoutIterator::currentStruct()
+{
+    return idx &lt; (int)count() ? list-&gt;<a href="ntqptrlist.html#at">at</a>( idx ) : 0;
+}
+
+void <a name="f458"></a>BorderLayoutIterator::toFirst()
+{
+    idx = 0;
+}
+
+<a name="x1487"></a>TQLayoutItem *BorderLayoutIterator::<a href="qglayoutiterator.html#next">next</a>()
+{
+    idx++;
+    return current();
+}
+
+<a name="x1488"></a>TQLayoutItem *BorderLayoutIterator::<a href="qglayoutiterator.html#takeCurrent">takeCurrent</a>()
+{
+    BorderLayout::BorderLayoutStruct *b
+<a name="x1503"></a>        = idx &lt; int( list-&gt;<a href="ntqptrlist.html#count">count</a>() ) ? list-&gt;<a href="ntqptrlist.html#take">take</a>(  idx  ) : 0;
+    <a href="qlayoutitem.html">TQLayoutItem</a> *item =  b ? b-&gt;item : 0;
+    delete b;
+    return item;
+}
+
+BorderLayoutIterator &amp;BorderLayoutIterator::operator++()
+{
+    next();
+    return *this;
+}
+
+BorderLayout::~BorderLayout()
+{
+    <a href="ntqlayout.html#deleteAllItems">deleteAllItems</a>();
+}
+
+
+<a name="x1490"></a>void BorderLayout::<a href="ntqlayout.html#addItem">addItem</a>( <a href="qlayoutitem.html">TQLayoutItem</a> *item )
+{
+    <a href="ntqlayout.html#add">add</a>( item, West );
+}
+
+void <a name="f453"></a>BorderLayout::addWidget( <a href="ntqwidget.html">TQWidget</a> *widget, Position pos )
+{
+    <a href="ntqlayout.html#add">add</a>( new BorderWidgetItem( widget ), pos );
+}
+
+<a name="x1489"></a>void BorderLayout::<a href="ntqlayout.html#add">add</a>( <a href="qlayoutitem.html">TQLayoutItem</a> *item, Position pos )
+{
+<a name="x1500"></a>    list.<a href="ntqptrlist.html#append">append</a>( new BorderLayoutStruct( item, pos ) );
+    sizeDirty = true; msizeDirty = true;
+    calcSize( SizeHint ); calcSize( Minimum );
+}
+
+<a name="x1496"></a>bool BorderLayout::<a href="qlayoutitem.html#hasHeightForWidth">hasHeightForWidth</a>() const
+{
+    return false;
+}
+
+<a name="x1499"></a>TQSize BorderLayout::<a href="qlayoutitem.html#sizeHint">sizeHint</a>() const
+{
+    return cached;
+}
+
+<a name="x1493"></a>TQSize BorderLayout::<a href="ntqlayout.html#minimumSize">minimumSize</a>() const
+{
+    return cached;
+}
+
+<a name="x1491"></a>TQSizePolicy::ExpandData BorderLayout::<a href="ntqlayout.html#expanding">expanding</a>() const
+
+{
+    return TQSizePolicy::BothDirections;
+}
+
+<a name="x1492"></a>TQLayoutIterator BorderLayout::<a href="ntqlayout.html#iterator">iterator</a>()
+{
+    return TQLayoutIterator( new BorderLayoutIterator( &amp;list ) );
+}
+
+<a name="x1494"></a>void BorderLayout::<a href="ntqlayout.html#setGeometry">setGeometry</a>( const <a href="ntqrect.html">TQRect</a> &amp;rct )
+{
+    TQLayout::<a href="ntqlayout.html#setGeometry">setGeometry</a>( rct );
+    doLayout( rct );
+}
+
+void <a name="f454"></a>BorderLayout::doLayout( const <a href="ntqrect.html">TQRect</a> &amp;rct, bool /*testonly*/ )
+{
+    int ew = 0, ww = 0, nh = 0, sh = 0;
+    int h = 0;
+
+    BorderLayoutIterator it( &amp;list );
+    BorderLayoutStruct *o;
+    BorderLayoutStruct *center = 0;
+    while ( ( o = it.currentStruct() ) != 0 ) {
+        ++it;
+
+        if ( o-&gt;pos == North ) {
+<a name="x1506"></a><a name="x1505"></a><a name="x1498"></a>            o-&gt;item-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>( TQRect( rct.<a href="ntqrect.html#x">x</a>(), nh, rct.<a href="ntqrect.html#width">width</a>(), o-&gt;item-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().height() ) );
+<a name="x1495"></a>            nh += o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().height() + spacing();
+        }
+        if ( o-&gt;pos == South ) {
+            o-&gt;item-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>( TQRect( o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().x(), o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().y(),
+                                         rct.<a href="ntqrect.html#width">width</a>(), o-&gt;item-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().height() ) );
+            sh += o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().height() + spacing();
+            o-&gt;item-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>( TQRect( rct.<a href="ntqrect.html#x">x</a>(), rct.<a href="ntqrect.html#y">y</a>() + rct.<a href="ntqrect.html#height">height</a>() - sh + spacing(),
+                                         o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().width(), o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().height() ) );
+        }
+        if ( o-&gt;pos == Center )
+            center = o;
+    }
+
+    h = rct.<a href="ntqrect.html#height">height</a>() - nh - sh;
+
+    it.toFirst();
+    while ( ( o = it.currentStruct() ) != 0 ) {
+        ++it;
+
+        if ( o-&gt;pos == West ) {
+            o-&gt;item-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>( TQRect( rct.<a href="ntqrect.html#x">x</a>() + ww, nh, o-&gt;item-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().width(), h ) );
+            ww += o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().width() + spacing();
+        }
+        if ( o-&gt;pos == East ) {
+            o-&gt;item-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>( TQRect( o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().x(), o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().y(),
+                                         o-&gt;item-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().width(), h ) );
+            ew += o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().width() + spacing();
+            o-&gt;item-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>( TQRect( rct.<a href="ntqrect.html#x">x</a>() + rct.<a href="ntqrect.html#width">width</a>() - ew + spacing(), nh,
+                                         o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().width(), o-&gt;item-&gt;<a href="qlayoutitem.html#geometry">geometry</a>().height() ) );
+        }
+    }
+
+    if ( center )
+        center-&gt;item-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>( TQRect( ww, nh, rct.<a href="ntqrect.html#width">width</a>() - ew - ww, h ) );
+}
+
+void <a name="f455"></a>BorderLayout::calcSize( SizeType st )
+{
+    if ( ( st == Minimum &amp;&amp; !msizeDirty ) ||
+         ( st == SizeHint &amp;&amp; !sizeDirty ) )
+        return;
+
+    int w = 0, h = 0;
+
+    BorderLayoutIterator it( &amp;list );
+    BorderLayoutStruct *o;
+    while ( ( o = it.currentStruct() ) != 0 ) {
+        ++it;
+        if ( o-&gt;pos == North ||
+             o-&gt;pos == South ) {
+            if ( st == Minimum )
+<a name="x1497"></a>                h += o-&gt;item-&gt;<a href="qlayoutitem.html#minimumSize">minimumSize</a>().height();
+            else
+                h += o-&gt;item-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().height();
+        }
+        else if ( o-&gt;pos == West ||
+                  o-&gt;pos == East ) {
+            if ( st == Minimum )
+                w += o-&gt;item-&gt;<a href="qlayoutitem.html#minimumSize">minimumSize</a>().width();
+            else
+                w += o-&gt;item-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().width();
+        } else {
+            if ( st == Minimum ) {
+                h += o-&gt;item-&gt;<a href="qlayoutitem.html#minimumSize">minimumSize</a>().height();
+                w += o-&gt;item-&gt;<a href="qlayoutitem.html#minimumSize">minimumSize</a>().width();
+            }
+            else {
+                h += o-&gt;item-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().height();
+                w += o-&gt;item-&gt;<a href="qlayoutitem.html#sizeHint">sizeHint</a>().width();
+            }
+        }
+    }
+
+    if ( st == Minimum ) {
+        msizeDirty = false;
+        mcached = TQSize( w, h );
+    } else {
+        sizeDirty = false;
+        cached = TQSize( w, h );
+    }
+
+    return;
+}
+</pre>
+
+<p> <hr>
+<p> Header file of the card layout:
+<p> <pre>/****************************************************************************
+** $Id: qt/card.h   3.3.8   edited Jan 11 14:46 $
+**
+** Definition of simple flow layout for custom layout example
+**
+** Created : 979899
+**
+** Copyright (C) 1997-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef CARD_H
+#define CARD_H
+
+#include &lt;<a href="qlayout-h.html">ntqlayout.h</a>&gt;
+#include &lt;<a href="qptrlist-h.html">ntqptrlist.h</a>&gt;
+
+class CardLayout : public <a href="ntqlayout.html">TQLayout</a>
+{
+public:
+    CardLayout( <a href="ntqwidget.html">TQWidget</a> *parent, int dist )
+        : <a href="ntqlayout.html">TQLayout</a>( parent, 0, dist ) {}
+    CardLayout( <a href="ntqlayout.html">TQLayout</a>* parent, int dist)
+        : <a href="ntqlayout.html">TQLayout</a>( parent, dist ) {}
+    CardLayout( int dist )
+        : <a href="ntqlayout.html">TQLayout</a>( dist ) {}
+    ~CardLayout();
+
+    void addItem( <a href="qlayoutitem.html">TQLayoutItem</a> *item );
+    <a href="ntqsize.html">TQSize</a> sizeHint() const;
+    <a href="ntqsize.html">TQSize</a> minimumSize() const;
+    <a href="qlayoutiterator.html">TQLayoutIterator</a> iterator();
+    void setGeometry( const <a href="ntqrect.html">TQRect</a> &amp;rect );
+
+private:
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;TQLayoutItem&gt; list;
+
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation of the card layout:
+<p> <pre>/****************************************************************************
+** $Id: qt/card.cpp   3.3.8   edited Jan 11 14:46 $
+**
+** Implementing your own layout: flow example
+**
+** Copyright (C) 1996-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "card.h"
+
+class CardLayoutIterator :public <a href="qglayoutiterator.html">TQGLayoutIterator</a>
+{
+public:
+    CardLayoutIterator( <a href="ntqptrlist.html">TQPtrList</a>&lt;TQLayoutItem&gt; *l )
+        : idx( 0 ), list( l )  {}
+
+    <a href="qlayoutitem.html">TQLayoutItem</a> *current();
+    <a href="qlayoutitem.html">TQLayoutItem</a> *next();
+    <a href="qlayoutitem.html">TQLayoutItem</a> *takeCurrent();
+
+private:
+    int idx;
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;TQLayoutItem&gt; *list;
+};
+
+<a name="x1508"></a>TQLayoutItem *CardLayoutIterator::<a href="qglayoutiterator.html#current">current</a>()
+{
+<a name="x1520"></a><a name="x1519"></a>    return idx &lt; int( list-&gt;<a href="ntqptrlist.html#count">count</a>() ) ? list-&gt;<a href="ntqptrlist.html#at">at</a>( idx ) : 0;
+}
+
+<a name="x1509"></a>TQLayoutItem *CardLayoutIterator::<a href="qglayoutiterator.html#next">next</a>()
+{
+    idx++; return current();
+}
+
+<a name="x1510"></a>TQLayoutItem *CardLayoutIterator::<a href="qglayoutiterator.html#takeCurrent">takeCurrent</a>()
+{
+<a name="x1521"></a>    return idx &lt; int( list-&gt;<a href="ntqptrlist.html#count">count</a>() ) ?list-&gt;<a href="ntqptrlist.html#take">take</a>( idx ) : 0;
+}
+
+
+
+<a name="x1512"></a>TQLayoutIterator CardLayout::<a href="ntqlayout.html#iterator">iterator</a>()
+{
+    return TQLayoutIterator(  new CardLayoutIterator( &amp;list )  );
+}
+
+CardLayout::~CardLayout()
+{
+    <a href="ntqlayout.html#deleteAllItems">deleteAllItems</a>();
+}
+
+<a name="x1511"></a>void CardLayout::<a href="ntqlayout.html#addItem">addItem</a>(  <a href="qlayoutitem.html">TQLayoutItem</a> *item  )
+{
+<a name="x1518"></a>    list.<a href="ntqptrlist.html#append">append</a>( item );
+}
+
+<a name="x1514"></a>void CardLayout::<a href="ntqlayout.html#setGeometry">setGeometry</a>( const <a href="ntqrect.html">TQRect</a> &amp;rct )
+{
+    TQLayout::<a href="ntqlayout.html#setGeometry">setGeometry</a>( rct );
+
+    <a href="qptrlistiterator.html">TQPtrListIterator</a>&lt;TQLayoutItem&gt; it( list );
+<a name="x1522"></a>    if ( it.<a href="qptrlistiterator.html#count">count</a>() == 0 )
+        return;
+
+    <a href="qlayoutitem.html">TQLayoutItem</a> *o;
+
+    int i = 0;
+
+    int w = rct.<a href="ntqrect.html#width">width</a>() - ( list.<a href="ntqptrlist.html#count">count</a>() - 1 ) * spacing();
+    int h = rct.<a href="ntqrect.html#height">height</a>() - ( list.<a href="ntqptrlist.html#count">count</a>() - 1 ) * spacing();
+
+<a name="x1523"></a>    while ( ( o=it.<a href="qptrlistiterator.html#current">current</a>() ) != 0 ) {
+        ++it;
+        <a href="ntqrect.html">TQRect</a> geom( rct.<a href="ntqrect.html#x">x</a>() + i * spacing(), rct.<a href="ntqrect.html#y">y</a>() + i * spacing(),
+                    w, h  );
+<a name="x1516"></a>        o-&gt;<a href="qlayoutitem.html#setGeometry">setGeometry</a>(  geom  );
+        ++i;
+    }
+}
+
+<a name="x1517"></a>TQSize CardLayout::<a href="qlayoutitem.html#sizeHint">sizeHint</a>() const
+{
+    <a href="ntqsize.html">TQSize</a> s(0,0);
+    int n = list.<a href="ntqptrlist.html#count">count</a>();
+    if ( n &gt; 0 )
+        s = TQSize(100,70); //start with a nice default size
+    <a href="qptrlistiterator.html">TQPtrListIterator</a>&lt;TQLayoutItem&gt; it(list);
+    <a href="qlayoutitem.html">TQLayoutItem</a> *o;
+    while ( (o=it.<a href="qptrlistiterator.html#current">current</a>()) != 0 ) {
+        ++it;
+<a name="x1528"></a><a name="x1515"></a>        s = s.<a href="ntqsize.html#expandedTo">expandedTo</a>( o-&gt;<a href="qlayoutitem.html#minimumSize">minimumSize</a>() );
+    }
+    return s + n*TQSize(<a href="ntqlayout.html#spacing">spacing</a>(),spacing());
+}
+
+<a name="x1513"></a>TQSize CardLayout::<a href="ntqlayout.html#minimumSize">minimumSize</a>() const
+{
+    <a href="ntqsize.html">TQSize</a> s(0,0);
+    int n = list.<a href="ntqptrlist.html#count">count</a>();
+    <a href="qptrlistiterator.html">TQPtrListIterator</a>&lt;TQLayoutItem&gt; it(list);
+    <a href="qlayoutitem.html">TQLayoutItem</a> *o;
+    while ( (o=it.<a href="qptrlistiterator.html#current">current</a>()) != 0 ) {
+        ++it;
+        s = s.<a href="ntqsize.html#expandedTo">expandedTo</a>( o-&gt;<a href="qlayoutitem.html#minimumSize">minimumSize</a>() );
+    }
+    return s + n*TQSize(<a href="ntqlayout.html#spacing">spacing</a>(),spacing());
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:46 $
+**
+** Main for custom layout example
+**
+** Copyright (C) 1996-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "flow.h"
+#include "border.h"
+#include "card.h"
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qcolor-h.html">ntqcolor.h</a>&gt;
+#include &lt;<a href="qgroupbox-h.html">ntqgroupbox.h</a>&gt;
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qmultilineedit-h.html">ntqmultilineedit.h</a>&gt;
+#include &lt;<a href="qcolor-h.html">ntqcolor.h</a>&gt;
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+
+    <a href="ntqwidget.html">TQWidget</a> *f = new <a href="ntqwidget.html">TQWidget</a>;
+    <a href="qboxlayout.html">TQBoxLayout</a> *gm = new <a href="qvboxlayout.html">TQVBoxLayout</a>( f, 5 );
+
+    SimpleFlow *b1 = new SimpleFlow( gm );
+
+<a name="x1536"></a>    b1-&gt;<a href="ntqlayout.html#add">add</a>( new <a href="ntqpushbutton.html">TQPushButton</a>( "Short", f ) );
+    b1-&gt;<a href="ntqlayout.html#add">add</a>( new <a href="ntqpushbutton.html">TQPushButton</a>( "Longer", f ) );
+    b1-&gt;<a href="ntqlayout.html#add">add</a>( new <a href="ntqpushbutton.html">TQPushButton</a>( "Different text", f ) );
+    b1-&gt;<a href="ntqlayout.html#add">add</a>( new <a href="ntqpushbutton.html">TQPushButton</a>( "More text", f ) );
+    b1-&gt;<a href="ntqlayout.html#add">add</a>( new <a href="ntqpushbutton.html">TQPushButton</a>( "Even longer button text", f ) );
+    <a href="ntqpushbutton.html">TQPushButton</a>* qb = new <a href="ntqpushbutton.html">TQPushButton</a>( "Quit", f );
+    a.<a href="ntqobject.html#connect">connect</a>( qb, TQ_SIGNAL( <a href="ntqbutton.html#clicked">clicked</a>() ), TQ_SLOT( quit() ) );
+    b1-&gt;<a href="ntqlayout.html#add">add</a>( qb );
+
+    <a href="ntqwidget.html">TQWidget</a> *wid = new <a href="ntqwidget.html">TQWidget</a>( f );
+
+    BorderLayout *large = new BorderLayout( wid );
+<a name="x1537"></a>    large-&gt;<a href="ntqlayout.html#setSpacing">setSpacing</a>( 5 );
+    large-&gt;addWidget( new <a href="ntqpushbutton.html">TQPushButton</a>( "North", wid ), BorderLayout::North );
+    large-&gt;addWidget( new <a href="ntqpushbutton.html">TQPushButton</a>( "West", wid ), BorderLayout::West );
+    <a href="ntqmultilineedit.html">TQMultiLineEdit</a>* m = new <a href="ntqmultilineedit.html">TQMultiLineEdit</a>( wid );
+    m-&gt;<a href="ntqtextedit.html#setText">setText</a>( "Central\nWidget" );
+    large-&gt;addWidget( m, BorderLayout::Center );
+    <a href="ntqwidget.html">TQWidget</a> *east1 = new <a href="ntqpushbutton.html">TQPushButton</a>( "East", wid );
+    large-&gt;addWidget( east1, BorderLayout::East );
+    <a href="ntqwidget.html">TQWidget</a> *east2 = new <a href="ntqpushbutton.html">TQPushButton</a>( "East 2", wid );
+    large-&gt;addWidget( east2 , BorderLayout::East );
+    large-&gt;addWidget( new <a href="ntqpushbutton.html">TQPushButton</a>( "South", wid ), BorderLayout::South );
+    //Left-to-right tab order looks better:
+<a name="x1542"></a>    <a href="ntqwidget.html">TQWidget</a>::<a href="ntqwidget.html#setTabOrder">setTabOrder</a>( east2, east1 );
+    gm-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( wid );
+
+
+    wid = new <a href="ntqwidget.html">TQWidget</a>( f );
+    CardLayout *card = new CardLayout( wid, 10 );
+
+    <a href="ntqwidget.html">TQWidget</a> *crd = new <a href="ntqwidget.html">TQWidget</a>( wid );
+<a name="x1540"></a>    crd-&gt;<a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>( TQt::red );
+    card-&gt;<a href="ntqlayout.html#add">add</a>( crd );
+    crd = new <a href="ntqwidget.html">TQWidget</a>( wid );
+    crd-&gt;<a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>( TQt::green );
+    card-&gt;<a href="ntqlayout.html#add">add</a>( crd );
+    crd = new <a href="ntqwidget.html">TQWidget</a>( wid );
+    crd-&gt;<a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>( TQt::blue );
+    card-&gt;<a href="ntqlayout.html#add">add</a>( crd );
+    crd = new <a href="ntqwidget.html">TQWidget</a>( wid );
+    crd-&gt;<a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>( TQt::white );
+    card-&gt;<a href="ntqlayout.html#add">add</a>( crd );
+    crd = new <a href="ntqwidget.html">TQWidget</a>( wid );
+    crd-&gt;<a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>( TQt::black );
+    card-&gt;<a href="ntqlayout.html#add">add</a>( crd );
+    crd = new <a href="ntqwidget.html">TQWidget</a>( wid );
+    crd-&gt;<a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>( TQt::yellow );
+    card-&gt;<a href="ntqlayout.html#add">add</a>( crd );
+
+    gm-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( wid );
+
+    <a href="ntqlabel.html">TQLabel</a>* s = new <a href="ntqlabel.html">TQLabel</a>( f );
+    s-&gt;<a href="ntqlabel.html#setText">setText</a>( "outermost box" );
+    s-&gt;<a href="ntqframe.html#setFrameStyle">setFrameStyle</a>( TQFrame::Panel | TQFrame::Sunken );
+    s-&gt;<a href="ntqlabel.html#setAlignment">setAlignment</a>( TQt::AlignVCenter | TQt::AlignHCenter );
+    gm-&gt;<a href="qboxlayout.html#addWidget">addWidget</a>( s );
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( f );
+    f-&gt;<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Custom Layout");
+    f-&gt;<a href="ntqwidget.html#show">show</a>();
+
+    int result = a.<a href="ntqapplication.html#exec">exec</a>();
+    delete f;
+    return result;
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

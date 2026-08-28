@@ -49,7 +49,7 @@ AddServerWizard::AddServerWizard()
     title="Server Name";
     p = new("KWizardPage") KWizardPage;
     p->w = wp;
-    p->title = title.copy();
+    p->title = title;
     p->enabled = true;
     addPage(p);
 
@@ -57,7 +57,7 @@ AddServerWizard::AddServerWizard()
     title="Server's Public Directory";
     p = new("KWizardPage") KWizardPage;
     p->w = pdp;
-    p->title = title.copy();
+    p->title = title;
     p->enabled = true;
     addPage(p);
 
@@ -65,7 +65,7 @@ AddServerWizard::AddServerWizard()
     title="Server's Port Number";
     p = new("KWizardPage") KWizardPage;
     p->w = pp;
-    p->title = title.copy();
+    p->title = title;
     p->enabled = true;
     addPage(p);
 
@@ -73,7 +73,7 @@ AddServerWizard::AddServerWizard()
     title="Finish";
     p = new("KWizardPage") KWizardPage;
     p->w = ep;
-    p->title = title.copy();
+    p->title = title;
     p->enabled = true;
     addPage(p);
 
@@ -86,8 +86,8 @@ AddServerWizard::~AddServerWizard()
 
 void AddServerWizard::pageEntered(unsigned int pageNum)
 {
-    debug ("Entered Page %d",pageNum);
-    debug ("From Page %d",lastPage);
+    tqDebug("Entered Page %d",pageNum);
+    tqDebug("From Page %d",lastPage);
     if (lastPage<pageNum) //going forward
         //if last page not well filled
         if (!(((WizardPage *)(pages->at(lastPage)->w))->validate()))
@@ -97,7 +97,7 @@ void AddServerWizard::pageEntered(unsigned int pageNum)
         }
     
     //everything is fine
-    debug (((WizardPage *)(pages->at(lastPage)->w))->data());
+    tqDebug(((WizardPage *)(pages->at(lastPage)->w))->data());
     data.append (((WizardPage *)(pages->at(lastPage)->w))->data());
     lastPage=pageNum; //advance
     if (pageNum==(pages->count()-1))//last page
@@ -155,7 +155,7 @@ ServerNamePage::~ServerNamePage()
 
 bool ServerNamePage::validate()
 {
-    debug ("validate");
+    tqDebug("validate");
     QString nam=name->text();
     
     conf->setGroup("Servers");
@@ -163,7 +163,7 @@ bool ServerNamePage::validate()
     conf->readListEntry("ServerNames",names);
     if (nam.isEmpty())
     {
-        debug ("empty name");
+        tqDebug("empty name");
         KMsgBox::message(0,"PWS: Error","Nothing is not a name.\n"
                                "Please choose one");
         qApp->processEvents();
@@ -171,12 +171,12 @@ bool ServerNamePage::validate()
     }
     else if ( (names.find(nam.data())==-1) && (nam!="General") )
     {
-        debug ("true");
+        tqDebug("true");
         return true;
     }
     else
     {
-        debug ("repeated name");
+        tqDebug("repeated name");
         KMsgBox::message(0,"PWS: Error","That server name already exists.\n"
                         "Please choose a new one");
         return false;
@@ -230,7 +230,7 @@ PublicDirPage::~PublicDirPage()
 
 bool PublicDirPage::validate()
 {
-    debug ("validate");
+    tqDebug("validate");
     QString nam=name->text();
 
     if (!QFile::exists(name->text()))

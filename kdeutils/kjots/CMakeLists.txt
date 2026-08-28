@@ -14,17 +14,17 @@ set(kjots_SRCS
 )
 
 set(kjots_MOC
-    confdialog.moc
-    cpopmenu.moc
-    KJotsMain.moc
-    SubjList.moc
+    confdialog.h
+    cpopmenu.h
+    KJotsMain.h
+    SubjList.h
 )
 
-QT1_WRAP_MOC(MOC_FILES ${kjots_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${kjots_MOC})
 
 add_executable(kjots1 ${kjots_SRCS} ${MOC_FILES})
 target_link_libraries(kjots1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

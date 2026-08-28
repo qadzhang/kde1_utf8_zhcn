@@ -38,7 +38,7 @@ KMHeaders::KMHeaders(KMMainWin *aOwner, QWidget *parent,
   getMsgIndex = -1;
   mSortCol = KMMsgList::sfDate;
   mSortDescending = FALSE;
-  mTopItem = 0;
+  mTopItem = 0;  /* TQt3 迁移 */
 
   setColumn(0, i18n("F"), 18, KTabListBox::PixmapColumn);
   setColumn(1, i18n("Sender"), 200, KTabListBox::TextColumn);
@@ -268,7 +268,7 @@ void KMHeaders::msgRemoved(int id)
 //-----------------------------------------------------------------------------
 QString KMHeaders::msgAsLbxString(KMMsgBase* aMsg) const
 {
-  QString result(256);
+  TQString result;  /* TQt3 迁移 */
   KMMsgStatus flag;
   QString fromStr, subjStr;
 
@@ -972,9 +972,9 @@ void KMHeaders::setPalette(const QPalette& p)
 {
   QColor c = kapp->windowColor;
 
-  debug("KMHeaders::setPalette(): %d %d %d", c.red(), c.green(), c.blue());
+  tqDebug("KMHeaders::setPalette(): %d %d %d", c.red(), c.green(), c.blue());
 
-  KMHeadersInherited::setPalette(*kapp->palette());
+  KMHeadersInherited::setPalette( kapp->palette() );  /* TQt3 迁移 */
   lbox.setPalette(p);
   lbox.setBackgroundColor(c);
   lbox.repaint(TRUE);

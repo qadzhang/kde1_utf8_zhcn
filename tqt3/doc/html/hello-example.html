@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/hello/hello.doc:5 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Hello, World</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Hello, World</h1>
+
+   
+<p> 
+This example brings up the words "Hello, World" moving up and down,
+and in different colors.
+<p> <hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/hello.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef HELLO_H
+#define HELLO_H
+
+#include &lt;<a href="qwidget-h.html">ntqwidget.h</a>&gt;
+
+
+class Hello : public <a href="ntqwidget.html">TQWidget</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    Hello( const char *text, TQWidget *parent=0, const char *name=0 );
+signals:
+    void clicked();
+protected:
+    void mouseReleaseEvent( <a href="qmouseevent.html">TQMouseEvent</a> * );
+    void paintEvent( <a href="qpaintevent.html">TQPaintEvent</a> * );
+private slots:
+    void animate();
+private:
+    <a href="ntqstring.html">TQString</a> t;
+    int     b;
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/hello.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "hello.h"
+#include &lt;<a href="qpushbutton-h.html">ntqpushbutton.h</a>&gt;
+#include &lt;<a href="qtimer-h.html">ntqtimer.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+
+
+/*
+  Constructs a Hello widget. Starts a 40 ms animation timer.
+*/
+
+<a name="f473"></a>Hello::Hello( const char *text, TQWidget *parent, const char *name )
+    : <a href="ntqwidget.html">TQWidget</a>(parent,name), t(text), b(0)
+{
+    <a href="ntqtimer.html">TQTimer</a> *timer = new <a href="ntqtimer.html">TQTimer</a>(this);
+<a name="x1640"></a>    <a href="ntqobject.html#connect">connect</a>( timer, TQ_SIGNAL(<a href="ntqtimer.html#timeout">timeout</a>()), TQ_SLOT(animate()) );
+<a name="x1639"></a>    timer-&gt;<a href="ntqtimer.html#start">start</a>( 40 );
+
+    <a href="ntqwidget.html#resize">resize</a>( 260, 130 );
+}
+
+
+/*
+  This private slot is called each time the timer fires.
+*/
+
+void <a name="f474"></a>Hello::animate()
+{
+    b = (b + 1) &amp; 15;
+    <a href="ntqwidget.html#repaint">repaint</a>( false );
+}
+
+
+/*
+  Handles mouse button release events for the Hello widget.
+
+  We emit the clicked() signal when the mouse is released inside
+  the widget.
+*/
+
+<a name="x1641"></a>void Hello::<a href="ntqwidget.html#mouseReleaseEvent">mouseReleaseEvent</a>( <a href="qmouseevent.html">TQMouseEvent</a> *e )
+{
+    if ( <a href="ntqwidget.html#rect">rect</a>().contains( e-&gt;<a href="qmouseevent.html#pos">pos</a>() ) )
+        emit clicked();
+}
+
+
+/*
+  Handles paint events for the Hello widget.
+
+  Flicker-free update. The text is first drawn in the pixmap and the
+  pixmap is then blt'ed to the screen.
+*/
+
+void Hello::<a href="ntqwidget.html#paintEvent">paintEvent</a>( <a href="qpaintevent.html">TQPaintEvent</a> * )
+{
+    static int sin_tbl[16] = {
+        0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
+
+    if ( t.isEmpty() )
+        return;
+
+    // 1: Compute some sizes, positions etc.
+    <a href="ntqfontmetrics.html">TQFontMetrics</a> fm = <a href="ntqwidget.html#fontMetrics">fontMetrics</a>();
+<a name="x1631"></a>    int w = fm.<a href="ntqfontmetrics.html#width">width</a>(t) + 20;
+<a name="x1630"></a>    int h = fm.<a href="ntqfontmetrics.html#height">height</a>() * 2;
+    int pmx = <a href="ntqwidget.html#width">width</a>()/2 - w/2;
+    int pmy = <a href="ntqwidget.html#height">height</a>()/2 - h/2;
+
+    // 2: Create the pixmap and fill it with the widget's background
+    <a href="ntqpixmap.html">TQPixmap</a> pm( w, h );
+<a name="x1638"></a>    pm.<a href="ntqpixmap.html#fill">fill</a>( this, pmx, pmy );
+
+    // 3: Paint the pixmap. Cool wave effect
+    <a href="ntqpainter.html">TQPainter</a> p;
+    int x = 10;
+<a name="x1629"></a>    int y = h/2 + fm.<a href="ntqfontmetrics.html#descent">descent</a>();
+    int i = 0;
+<a name="x1633"></a>    p.<a href="ntqpainter.html#begin">begin</a>( &amp;pm );
+<a name="x1636"></a>    p.<a href="ntqpainter.html#setFont">setFont</a>( <a href="ntqwidget.html#font">font</a>() );
+    while ( !t[i].isNull() ) {
+        int i16 = (b+i) &amp; 15;
+        p.<a href="ntqpainter.html#setPen">setPen</a>( TQColor((15-i16)*16,255,255,TQColor::Hsv) );
+        p.<a href="ntqpainter.html#drawText">drawText</a>( x, y-sin_tbl[i16]*h/800, t.mid(i,1), 1 );
+        x += fm.<a href="ntqfontmetrics.html#width">width</a>( t[i] );
+        i++;
+    }
+<a name="x1635"></a>    p.<a href="ntqpainter.html#end">end</a>();
+
+    // 4: Copy the pixmap to the Hello widget
+    <a href="ntqimage.html#bitBlt">bitBlt</a>( this, pmx, pmy, &amp;pm );
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "hello.h"
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+
+
+/*
+  The program starts here. It parses the command line and builds a message
+  string to be displayed by the Hello widget.
+*/
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> a(argc,argv);
+    <a href="ntqstring.html">TQString</a> s;
+    for ( int i=1; i&lt;argc; i++ ) {
+        s += argv[i];
+        if ( i&lt;argc-1 )
+            s += " ";
+    }
+    if ( s.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+        s = "Hello, World";
+    Hello h( s );
+#ifndef TQT_NO_WIDGET_TOPEXTRA   // for TQt/Embedded minimal build
+    h.<a href="ntqwidget.html#setCaption">setCaption</a>( "TQt says hello" );
+#endif
+    TQObject::<a href="ntqobject.html#connect">connect</a>( &amp;h, TQ_SIGNAL(clicked()), &amp;a, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+<a name="x1650"></a>    h.<a href="ntqwidget.html#setFont">setFont</a>( TQFont("times",32,TQFont::Bold) );         // default font
+<a name="x1648"></a>    h.<a href="ntqwidget.html#setBackgroundColor">setBackgroundColor</a>( TQt::white );                  // default bg color
+    a.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( &amp;h );
+    h.<a href="ntqwidget.html#show">show</a>();
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

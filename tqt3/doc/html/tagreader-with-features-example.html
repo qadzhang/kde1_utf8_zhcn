@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/xml/tagreader-with-features/tagreader.doc:5 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Demonstration of SAX2 features</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Demonstration of SAX2 features</h1>
+
+ 
+<p> 
+<p> This example presents a small <a href="xml.html#sax2">SAX2</a>
+reader that outputs the qualified names and the
+respective namespace URIs of all elements and attributes in an
+XML file. Additionally the tree structure of the document is displayed.
+<p> In three listviews the program shows the different output of the reader
+depending on how the SAX2 <a href="xml.html#sax2Namespaces">features</a>
+<em>http://xml.org/sax/features/namespaces</em> and
+<em>http://xml.org/sax/features/namespace-prefixes</em> are set.
+<p> This example is thoroughly explained in a 
+<a href="xml-sax-features-walkthrough.html">walkthrough.</a>
+<p> <hr>
+<p> Header file:
+<p> <pre>/*
+$Id: qt/structureparser.h   3.3.8   edited May 27 2003 $
+*/
+
+#ifndef STRUCTUREPARSER_H
+#define STRUCTUREPARSER_H
+
+#include &lt;<a href="qxml-h.html">ntqxml.h</a>&gt;
+#include &lt;<a href="qptrstack-h.html">ntqptrstack.h</a>&gt;
+
+class TQListView;
+class TQListViewItem;
+class TQString;
+
+class StructureParser: public <a href="qxmldefaulthandler.html">TQXmlDefaultHandler</a>
+{
+public:
+    StructureParser( <a href="ntqlistview.html">TQListView</a> * );
+    bool startElement( const <a href="ntqstring.html">TQString</a>&amp;, const <a href="ntqstring.html">TQString</a>&amp;, const <a href="ntqstring.html">TQString</a>&amp; ,
+                       const <a href="qxmlattributes.html">TQXmlAttributes</a>&amp; );
+    bool endElement( const <a href="ntqstring.html">TQString</a>&amp;, const <a href="ntqstring.html">TQString</a>&amp;, const <a href="ntqstring.html">TQString</a>&amp; );
+
+    void setListView( <a href="ntqlistview.html">TQListView</a> * );
+
+private:
+    <a href="ntqptrstack.html">TQPtrStack</a>&lt;TQListViewItem&gt; stack;
+    <a href="ntqlistview.html">TQListView</a> * table;
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/*
+$Id: qt/structureparser.cpp   3.3.8   edited May 27 2003 $
+*/
+
+#include "structureparser.h"
+
+#include &lt;<a href="qstring-h.html">ntqstring.h</a>&gt;
+#include &lt;<a href="qlistview-h.html">ntqlistview.h</a>&gt;
+
+<a name="f528"></a>StructureParser::StructureParser( <a href="ntqlistview.html">TQListView</a> * t )
+                : <a href="qxmldefaulthandler.html">TQXmlDefaultHandler</a>()
+{
+    setListView( t );
+}
+
+void <a name="f529"></a>StructureParser::setListView( <a href="ntqlistview.html">TQListView</a> * t )
+{
+    table = t;
+    table-&gt;setSorting( -1 );
+    table-&gt;addColumn( "Qualified name" );
+    table-&gt;addColumn( "Namespace" );
+}
+
+<a name="x1971"></a>bool StructureParser::<a href="qxmlcontenthandler.html#startElement">startElement</a>( const <a href="ntqstring.html">TQString</a>&amp; namespaceURI,
+                                    const <a href="ntqstring.html">TQString</a>&amp; ,
+                                    const <a href="ntqstring.html">TQString</a>&amp; qName,
+                                    const <a href="qxmlattributes.html">TQXmlAttributes</a>&amp; attributes)
+{
+    <a href="qlistviewitem.html">TQListViewItem</a> * element;
+
+    if ( ! stack.isEmpty() ){
+        <a href="qlistviewitem.html">TQListViewItem</a> *lastChild = stack.top()-&gt;firstChild();
+        if ( lastChild ) {
+<a name="x1965"></a>            while ( lastChild-&gt;<a href="qlistviewitem.html#nextSibling">nextSibling</a>() )
+                lastChild = lastChild-&gt;<a href="qlistviewitem.html#nextSibling">nextSibling</a>();
+        }
+        element = new <a href="qlistviewitem.html">TQListViewItem</a>( stack.top(), lastChild, qName, namespaceURI );
+    } else {
+        element = new <a href="qlistviewitem.html">TQListViewItem</a>( table, qName, namespaceURI );
+    }
+    stack.push( element );
+<a name="x1966"></a>    element-&gt;<a href="qlistviewitem.html#setOpen">setOpen</a>( true );
+
+<a name="x1967"></a>    if ( attributes.<a href="qxmlattributes.html#length">length</a>() &gt; 0 ) {
+        for ( int i = 0 ; i &lt; attributes.<a href="qxmlattributes.html#length">length</a>(); i++ ) {
+<a name="x1969"></a><a name="x1968"></a>            new <a href="qlistviewitem.html">TQListViewItem</a>( element, attributes.<a href="qxmlattributes.html#qName">qName</a>(i), attributes.<a href="qxmlattributes.html#uri">uri</a>(i) );
+        }
+    }
+    return true;
+}
+
+<a name="x1970"></a>bool StructureParser::<a href="qxmlcontenthandler.html#endElement">endElement</a>( const <a href="ntqstring.html">TQString</a>&amp;, const <a href="ntqstring.html">TQString</a>&amp;,
+                                  const <a href="ntqstring.html">TQString</a>&amp; )
+{
+    stack.pop();
+    return true;
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/tagreader.cpp   3.3.8   edited Jan 11 14:46 $
+**
+** Copyright (C) 2005-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "structureparser.h"
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qfile-h.html">ntqfile.h</a>&gt;
+#include &lt;<a href="qxml-h.html">ntqxml.h</a>&gt;
+#include &lt;<a href="qlistview-h.html">ntqlistview.h</a>&gt;
+#include &lt;<a href="qgrid-h.html">ntqgrid.h</a>&gt;
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+
+int main( int argc, char **argv )
+{
+    <a href="ntqapplication.html">TQApplication</a> app( argc, argv );
+
+    <a href="ntqfile.html">TQFile</a> xmlFile( argc == 2 ? argv[1] : "fnord.xml" );
+    <a href="qxmlinputsource.html">TQXmlInputSource</a> source( &amp;xmlFile );
+
+    <a href="qxmlsimplereader.html">TQXmlSimpleReader</a> reader;
+
+    <a href="ntqgrid.html">TQGrid</a> * container = new <a href="ntqgrid.html">TQGrid</a>( 3 );
+
+    <a href="ntqlistview.html">TQListView</a> * nameSpace = new <a href="ntqlistview.html">TQListView</a>( container, "table_namespace" );
+    StructureParser * handler = new StructureParser( nameSpace );
+<a name="x1977"></a>    reader.<a href="qxmlreader.html#setContentHandler">setContentHandler</a>( handler );
+<a name="x1976"></a>    reader.<a href="qxmlsimplereader.html#parse">parse</a>( source );
+
+    <a href="ntqlistview.html">TQListView</a> * namespacePrefix = new <a href="ntqlistview.html">TQListView</a>( container,
+                                                 "table_namespace_prefix" );
+    handler-&gt;setListView( namespacePrefix );
+<a name="x1978"></a>    reader.<a href="qxmlsimplereader.html#setFeature">setFeature</a>( "http://xml.org/sax/features/namespace-prefixes",
+                       true );
+<a name="x1975"></a>    source.<a href="qxmlinputsource.html#reset">reset</a>();
+    reader.<a href="qxmlsimplereader.html#parse">parse</a>( source );
+
+    <a href="ntqlistview.html">TQListView</a> * prefix = new <a href="ntqlistview.html">TQListView</a>( container, "table_prefix");
+    handler-&gt;setListView( prefix );
+    reader.<a href="qxmlsimplereader.html#setFeature">setFeature</a>( "http://xml.org/sax/features/namespaces", false );
+    source.<a href="qxmlinputsource.html#reset">reset</a>();
+    reader.<a href="qxmlsimplereader.html#parse">parse</a>( source );
+
+    // namespace label
+    (void) new <a href="ntqlabel.html">TQLabel</a>(
+             "Default:\n"
+             "http://xml.org/sax/features/namespaces: true\n"
+             "http://xml.org/sax/features/namespace-prefixes: false\n",
+             container );
+
+    // namespace prefix label
+    (void) new <a href="ntqlabel.html">TQLabel</a>(
+             "\n"
+             "http://xml.org/sax/features/namespaces: true\n"
+             "http://xml.org/sax/features/namespace-prefixes: true\n",
+             container );
+
+    // prefix label
+    (void) new <a href="ntqlabel.html">TQLabel</a>(
+             "\n"
+             "http://xml.org/sax/features/namespaces: false\n"
+             "http://xml.org/sax/features/namespace-prefixes: true\n",
+             container );
+
+
+    app.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( container );
+    container-&gt;<a href="ntqwidget.html#show">show</a>();
+    return app.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="xml-examples.html">TQt XML Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

@@ -47,7 +47,7 @@ KSPrefs::KSPrefs(QWidget * parent, const char * name)
 
 KSPrefs::~KSPrefs(){
   delete pTab;
-  pTab = 0;
+  pTab = 0;  /* TQt3 迁移 */
 }
 
 void KSPrefs::resizeEvent ( QResizeEvent * )

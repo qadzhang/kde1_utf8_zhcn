@@ -20,14 +20,14 @@ PObject *createWidget(CreateArgs &ca)
 PButton::PButton(PObject *parent)
   : PWidget(parent)
 {
-  //  debug("PLineEdit PLineEdit called");
-  button = 0;
+  //  tqDebug("PLineEdit PLineEdit called");
+  button = 0;  /* TQt3 迁移 */
   setWidget(0);
 }
 
 PButton::~PButton()
 {
-  //  debug("PLineEdit: in destructor");
+  //  tqDebug("PLineEdit: in destructor");
   /*
   delete widget();     // Delete the frame
   button=0;          // Set it to 0
@@ -142,7 +142,7 @@ void PButton::buttonToggled(bool)
 bool PButton::checkWidget()
 {
   if(widget() == 0){
-    debug("PButton: No Widget set");
+    tqDebug("PButton: No Widget set");
     return FALSE;
   }
   return TRUE;

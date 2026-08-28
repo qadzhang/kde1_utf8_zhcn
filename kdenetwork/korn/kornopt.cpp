@@ -23,7 +23,7 @@ KornOptions::KornOptions ( QWidget* parent, const char* name)
 {
 	setCaption( i18n("korn options") );
 
-	_list = 0;
+	_list = 0;  /* TQt3 迁移 */
 	_highlighted = false;
 
 	if( boxList->count() != 0) {
@@ -54,7 +54,7 @@ void KornOptions::boxHighlight(int item)
 	box = _list->at( item );
 
 	if( box != 0 ) {
-		QString str(5);
+		TQString str;  /* TQt3 迁移 */
 
 		boxName->setText( box->name );
 		boxCaption->setText( box->caption);

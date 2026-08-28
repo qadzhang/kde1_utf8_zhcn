@@ -41,9 +41,9 @@
 
 #include <kcolordlg.h>
 #include "knotes.h"
-#include <bwdatetime.h>
+#include "bwdatetime.h"
 
-#include <spin.h>
+#include "spin.h"
 
 class AlarmDlg : public QDialog
 {

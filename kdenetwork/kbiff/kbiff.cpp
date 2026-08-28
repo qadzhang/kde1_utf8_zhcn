@@ -158,7 +158,7 @@ TRACEINIT("KBiff::mousePressEvent()");
 	{
 		status->hide();
 		delete status;
-		status = 0;
+		status = 0;  /* TQt3 迁移 */
 	}
 
 	// also, ditch the timer
@@ -166,7 +166,7 @@ TRACEINIT("KBiff::mousePressEvent()");
 	{
 		statusTimer->stop();
 		delete statusTimer;
-		statusTimer = 0;
+		statusTimer = 0;  /* TQt3 迁移 */
 	}
 
 	// check if this is a right click
@@ -217,7 +217,7 @@ TRACEINIT("KBiff::leaveEvent()");
 	{
 		statusTimer->stop();
 		delete statusTimer;
-		statusTimer = 0;
+		statusTimer = 0;  /* TQt3 迁移 */
 	}
 
 	// get rid of the status box if it is activated
@@ -225,7 +225,7 @@ TRACEINIT("KBiff::leaveEvent()");
 	{
 		status->hide();
 		delete status;
-		status = 0;
+		status = 0;  /* TQt3 迁移 */
 	}
 }
 
@@ -242,7 +242,7 @@ TRACEINIT("KBiff::popupStatus()");
 	{
 		statusTimer->stop();
 		delete statusTimer;
-		statusTimer = 0;
+		statusTimer = 0;  /* TQt3 迁移 */
 	}
 
 	if (statusChanged)
@@ -374,7 +374,6 @@ TRACEINIT("KBiff::displayPixmap()");
 		pixmap_name = oldMailIcon;
 	else if (has_noconn)
 		pixmap_name = noConnIcon;
-	else
 		pixmap_name = noMailIcon;
 
 	mini_pixmap_name = "mini-" + pixmap_name;

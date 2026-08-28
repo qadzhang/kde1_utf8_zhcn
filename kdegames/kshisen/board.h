@@ -45,7 +45,7 @@
 #include <qpixmap.h>
 #include <qdatetm.h>
 #include <time.h>
-#include <debug.h>
+#include "debug.h"
 
 typedef struct History {
   int x, y;

@@ -423,7 +423,7 @@ void KFileBaseDialog::checkPath(const char *_txt, bool takeFiles) // SLOT
 	ASSERT(position >= 0); // we already inserted the current dir in case
 	QString filename = text.mid(position + 1, text.length());
 	if (filename != selection)
-	    selection = 0;
+	    selection = TQString();
     }
 
     KURL u = text.data(); // I have to take care of entered URLs
@@ -437,7 +437,7 @@ void KFileBaseDialog::checkPath(const char *_txt, bool takeFiles) // SLOT
 	else {
 	    if (takeFiles)
 		if (acceptOnlyExisting && !i.isFile())
-		    warning("you entered an invalid URL");
+		    tqWarning("you entered an invalid URL");
 		else
 		    filenameEntered = true;
 	}
@@ -479,7 +479,7 @@ QString KFileBaseDialog::dirPath()
 void KFileBaseDialog::setDir(const char *_pathstr, bool clearforward)
 {
     debugC("setDir %s %ld", _pathstr, time(0));
-    filename_ = 0;
+    filename_ = TQString();
     QString pathstr = _pathstr;
 
     if (pathstr.length() == 0 || pathstr.right(1)[0] != '/')
@@ -852,7 +852,7 @@ void KFileBaseDialog::toolbarCallback(int i) // SLOT
 	conf.exec();
 	fileList->widget()->hide();
 	delete boxLayout; // this removes all child layouts too
-	boxLayout = 0;
+	boxLayout = 0;  // 指针置空（此前批量替换误改）
 
 	// recreate this widget
 	delete fileList;
@@ -864,7 +864,7 @@ void KFileBaseDialog::toolbarCallback(int i) // SLOT
 	break;
     }
     default:
-	warning("KFileDialog: Unknown toolbar button  (id number %d) pressed\n", i);
+	tqWarning("KFileDialog: Unknown toolbar button  (id number %d) pressed\n", i);
     }
     c->setGroup(oldgroup);
 }
@@ -1057,7 +1057,7 @@ void KFileBaseDialog::fileActivated(KFileInfo *item)
 void KFileBaseDialog::fileHighlighted(KFileInfo *item)
 {
     // remove the predefined selection
-    selection = 0;
+    selection = TQString();
 
     const char *highlighted = item->fileName();
 
@@ -1121,7 +1121,7 @@ void KFileBaseDialog::setSelection(const char *name)
     debugC("setSelection %s", name);
 
     if (!name) {
-	selection = 0;
+	selection = TQString();
 	return;
     }
 
@@ -1129,7 +1129,7 @@ void KFileBaseDialog::setSelection(const char *name)
     if (u.isMalformed()) // perhaps we have a relative path!?
 	u = dir->url() + name;
     if (u.isMalformed()) { // if it still is
-	warning("%s is not a correct argument for setSelection!", name);
+	tqWarning("%s is not a correct argument for setSelection!", name);
 	return;
     }
 
@@ -1168,7 +1168,7 @@ void KFileBaseDialog::completion() // SLOT
 
     // if someone uses completion, he doesn't like the current
     // selection
-    selection = 0;
+    selection = TQString();
 
     QString text = locationEdit->currentText();
     if ( KURL(text).isMalformed() )
@@ -1187,7 +1187,7 @@ void KFileBaseDialog::completion() // SLOT
 		filename_ = base + complete;
 	    }
 	} else {
-	    // warning("no complete");
+	    // tqWarning("no complete");
 	}
     } else {    // we changed into a parent directory -> go there first
 	int l = text.length() - 1;
@@ -1236,7 +1236,7 @@ QString KFileDialog::getOpenFileURL(const char *url, const char *filter,
     if (dlg->exec() == QDialog::Accepted)
 	retval = dlg->selectedFileURL();
     else
-	retval = 0;
+	retval = TQString();
 
     delete dlg;
     if (!retval.isNull())
@@ -1270,7 +1270,7 @@ QString KFileBaseDialog::getDirectory(const char *url,
     if (dlg->exec() == QDialog::Accepted)
 	retval = dlg->selectedFile();
     else
-	retval= 0;
+	retval = TQString();
 
     delete dlg;
     if (!retval.isNull())
@@ -1324,7 +1324,7 @@ QStrList KFileDialog::getSaveFileURLList(const char *, const char *,
  */
 void KFileBaseDialog::setMultiSelection(bool)
 {
-    warning("WARNING: Multi Select is not supported yet");
+    tqWarning("WARNING: Multi Select is not supported yet");
     // fileList->setMultiSelection(isMulti);
 }
 
@@ -1430,7 +1430,7 @@ QString KFilePreviewDialog::getOpenFileURL(const char *url, const char *filter,
     if (dlg->exec() == QDialog::Accepted)
 	retval = dlg->selectedFileURL();
     else
-	retval= 0;
+	retval = TQString();
 
     delete dlg;
     if (!retval.isNull())

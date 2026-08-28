@@ -37,9 +37,9 @@
 #include <klocale.h>
 #include <kapp.h>
 
-#include <kbuttonbox.h>
+#include "kbuttonbox.h"
 #include <qlayout.h>
-#include <kseparator.h>
+#include "kseparator.h"
 
 #define HSV_X 305
 #define RGB_X 385
@@ -57,23 +57,23 @@ void createStandardPalette()
 
     int i = 0;
 
-    standardPalette[i++] = red;
-    standardPalette[i++] = green;
-    standardPalette[i++] = blue;
-    standardPalette[i++] = cyan;
-    standardPalette[i++] = magenta;
-    standardPalette[i++] = yellow;
-    standardPalette[i++] = darkRed;
-    standardPalette[i++] = darkGreen;
-    standardPalette[i++] = darkBlue;
-    standardPalette[i++] = darkCyan;
-    standardPalette[i++] = darkMagenta;
-    standardPalette[i++] = darkYellow;
-    standardPalette[i++] = white;
-    standardPalette[i++] = lightGray;
-    standardPalette[i++] = gray;
-    standardPalette[i++] = darkGray;
-    standardPalette[i++] = black;
+    standardPalette[i++] = TQColor(255,0,0);
+    standardPalette[i++] = TQColor(0,255,0);
+    standardPalette[i++] = TQColor(0,0,255);
+    standardPalette[i++] = TQColor(0,255,255);
+    standardPalette[i++] = TQColor(255,0,255);
+    standardPalette[i++] = TQColor(255,255,0);
+    standardPalette[i++] = TQColor(128,0,0);
+    standardPalette[i++] = TQColor(0,128,0);
+    standardPalette[i++] = TQColor(0,0,128);
+    standardPalette[i++] = TQColor(0,128,128);
+    standardPalette[i++] = TQColor(128,0,128);
+    standardPalette[i++] = TQColor(128,128,0);
+    standardPalette[i++] = TQColor(255,255,255);
+    standardPalette[i++] = TQColor(192,192,192);
+    standardPalette[i++] = TQColor(160,160,164);
+    standardPalette[i++] = TQColor(128,128,128);
+    standardPalette[i++] = TQColor(0,0,0);
 }
 
 KHSSelector::KHSSelector( QWidget *parent )
@@ -128,7 +128,6 @@ KValueSelector::KValueSelector( QWidget *parent )
 	: KSelector( KSelector::Vertical, parent )
 {
 	setRange( 0, 255 );
-	pixmap.optimize( TRUE );
 }
 
 void KValueSelector::resizeEvent( QResizeEvent * )
@@ -300,9 +299,9 @@ KColorDialog::KColorDialog( QWidget *parent, const char *name, bool modal )
 	sysColorCells = new KColorCells( this, 3, 6 );
 	sysColorCells->setMinimumSize(90, 60);
 	sysColorCells->setGeometry( 15, 35, 180, 60 );
-	sysColorCells->setColor( 0, red );
-	sysColorCells->setColor( 1, green );
-	sysColorCells->setColor( 2, blue );
+	sysColorCells->setColor( 0, k1c_red );
+	sysColorCells->setColor( 1, k1c_green );
+	sysColorCells->setColor( 2, k1c_blue );
 	sysColorCells->setColor( 3, cyan );
 	sysColorCells->setColor( 4, magenta );
 	sysColorCells->setColor( 5, yellow );
@@ -790,7 +789,6 @@ void KColorCombo::slotActivated( int index )
 			painter.end();
 
 			changeItem( pixmap, 0 );
-			pixmap.detach();
 		}
 
 		color = customColor;
@@ -842,8 +840,7 @@ void KColorCombo::addColors()
 	painter.end();
 
 	insertItem( pixmap );
-	pixmap.detach();
-	
+
 	for ( i = 0; i < STANDARD_PAL_SIZE; i++ )
 	{
 		painter.begin( &pixmap );
@@ -852,7 +849,6 @@ void KColorCombo::addColors()
 		painter.end();
 
 		insertItem( pixmap );
-		pixmap.detach();
 
 		if ( standardPalette[i] == color )
 			setCurrentItem( i + 1 );

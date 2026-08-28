@@ -84,7 +84,6 @@ bool GetInfo_ReadfromFile( KTabListBox *lBox, char *Name, char splitchar  )
 		}
 		else ++p;
 	     }
-	 else
 	 {
 		while (*p)
 		{

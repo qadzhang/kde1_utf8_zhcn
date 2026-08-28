@@ -5,7 +5,7 @@
  * <copyright.h>.
  */
 
-#include <copyright.h>
+#include "copyright.h"
 
 /* 
  * pcompat.h - Definitions for compatability library

@@ -56,7 +56,7 @@ bool realfrom(const char *buffer)
 	skip_token(buffer);
 
 	/* <weekday> */
-	found = 0;
+	found = 0;  /* TQt3 迁移 */
 	for (i = 0; day_name[i] != NULL; i++)
 		found = found || (strnicmp(day_name[i], buffer, 3) == 0);
 
@@ -66,7 +66,7 @@ bool realfrom(const char *buffer)
 	skip_token(buffer);
 
 	/* <month> */
-	found = 0;
+	found = 0;  /* TQt3 迁移 */
 	for (i = 0; month_name[i] != NULL; i++)
 		found = found || (strnicmp(month_name[i], buffer, 3) == 0);
 	if (!found)

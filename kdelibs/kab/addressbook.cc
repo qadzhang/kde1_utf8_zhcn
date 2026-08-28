@@ -85,8 +85,8 @@ AddressBook::AddressBook(bool readonly_)
       LG(GUARD, "AddressBook constructor: done.\n");
     }
   LG(GUARD, "AddressBook constructor: checking user directory.\n");
-  dir=KApplication::localkdedir();
-  dir+=(string)"/share/apps/kab/";
+  dir=KApplication::localkdedir().ascii();
+  dir+=(std::string)"/share/apps/kab/";
   if(access(dir.c_str(), F_OK)!=0)
     {
       cerr << i18n
@@ -663,7 +663,7 @@ bool AddressBook::add(const Entry& entry, string& key)
     }
   // ----- find new name for the new entry:
   string name=nextAvailEntryKey();
-  string path=(string)EntrySection+(string)"/"+name;
+  string path=(string)EntrySection+(std::string)"/"+name;
   if(!createSection(path))
     { //       this may not happen:
      cerr << i18n("Unable to add a new entry with available key.") << endl;
@@ -957,7 +957,7 @@ string AddressBook::getName(const string& key)
   string result;
   Entry entry;
   Section* section;
-  const string path=EntrySection+(string)"/"+key;
+  const string path=EntrySection+(std::string)"/"+key;
   // -----
   LG(GUARD, "AddressBook::getName: searching for section \"%s\" (key is %s).\n", 
      path.c_str(), key.c_str());
@@ -987,7 +987,7 @@ string AddressBook::getName(const string& key)
 	{
 	  if(!entry.telephone.empty())
 	    {
-	      result=(string)"("+entry.telephone+(string)")";
+	      result=(std::string)"("+entry.telephone+(std::string)")";
 	    } else {
 	      // complain if all this is still empty:
 	      result=i18n("entry without name");
@@ -1274,10 +1274,10 @@ bool AddressBook::literalName(const string& key, string& text, bool reverse,
       // -----
       pos=entry.firstname.find_first_not_of(WhiteSpaces);
       firstname=pos==string::npos 
-	? (string)"" : entry.firstname.substr(pos, 1)+(string)".";
+	? (std::string)"" : entry.firstname.substr(pos, 1)+(std::string)".";
       pos=entry.namePrefix.find_first_not_of(WhiteSpaces);
       addname=pos==string::npos 
-	? (string)"" : entry.additionalName.substr(pos, 1)+(string)".";
+	? (std::string)"" : entry.additionalName.substr(pos, 1)+(std::string)".";
       nameprefix=entry.namePrefix;
     } else {
       firstname=entry.firstname;

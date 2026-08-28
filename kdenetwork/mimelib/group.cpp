@@ -155,7 +155,7 @@ void DwGroup::Parse()
         case eTkQuotedString:
         case eTkAtom:
             if (isGroupNameNull) {
-                isGroupNameNull = 0;
+                isGroupNameNull = TQString();
             }
             else {
                 mGroupName += " ";
@@ -188,7 +188,7 @@ void DwGroup::Parse()
         mIsValid = 1;
     }
     else {
-        mIsValid = 0;
+        mIsValid = TQString();
     }
 }
 
@@ -197,7 +197,7 @@ void DwGroup::Assemble()
 {
     if (!mIsModified) return;
     if (mGroupName.length() == 0) {
-        mIsValid = 0;
+        mIsValid = TQString();
         mString = "";
         return;
     }

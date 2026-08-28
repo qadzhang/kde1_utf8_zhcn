@@ -317,7 +317,7 @@ void kLinesSetup::slotOkPressed(){
 	sspeed.setNum( speed );
 	config->writeEntry( "Speed", sspeed );
 
-        QString colName0(10), colName1(10), colName2(10);
+        TQString colName0, colName1, colName2;  /* TQt3 迁移：容量构造已删 */
         colName0.sprintf("#%02x%02x%02x", colstart.red(),
 		         colstart.green(), colstart.blue() );
         config->writeEntry( "StartColor", colName0 );

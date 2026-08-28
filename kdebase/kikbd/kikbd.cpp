@@ -1137,7 +1137,7 @@ WindowList::WindowList()
 {
   setAutoDelete(TRUE);
 }
-int WindowList::compareItems(GCI item1, GCI item2)
+int WindowList::compareItems(TQPtrCollection::Item item1, TQPtrCollection::Item item2)
 {
   return ((WindowEntry*)item1)->window - ((WindowEntry*)item2)->window;
 }
@@ -1148,7 +1148,7 @@ WindowClassList::WindowClassList()
 {
   setAutoDelete(TRUE);
 }
-int WindowClassList::compareItems(GCI item1, GCI item2)
+int WindowClassList::compareItems(TQPtrCollection::Item item1, TQPtrCollection::Item item2)
 {
   return strcmp(((WindowClassEntry*)item1)->name,
 		((WindowClassEntry*)item2)->name);
@@ -1158,13 +1158,13 @@ int WindowClassList::compareItems(GCI item1, GCI item2)
 //=========================================================
 //   Main Program
 //=========================================================
-void msgHandler(QtMsgType type, const char* msg)
+void msgHandler(TQtMsgType type, const char* msg)
 {
   switch(type) {
-  case QtWarningMsg:
-  case QtDebugMsg:
+  case TQtWarningMsg:
+  case TQtDebugMsg:
     break;
-  case QtFatalMsg:
+  case TQtFatalMsg:
     cerr << msg << endl;
     exit(0);
   }

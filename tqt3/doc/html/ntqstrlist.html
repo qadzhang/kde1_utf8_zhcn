@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/qptrlist.doc:1044 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQStrList Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQStrList Class Reference</h1>
+
+<p>The TQStrList class provides a doubly-linked list of char*.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qstrlist-h.html">ntqstrlist.h</a>&gt;</tt>
+<p>Inherits <a href="ntqptrlist.html">TQPtrList</a>&lt;char&gt;.
+<p>Inherited by <a href="qstrilist.html">TQStrIList</a>.
+<p><a href="qstrlist-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQStrList"><b>TQStrList</b></a> ( bool&nbsp;deepCopies = true )</li>
+<li class=fn><a href="#TQStrList-2"><b>TQStrList</b></a> ( const&nbsp;TQStrList&nbsp;&amp;&nbsp;list )</li>
+<li class=fn><a href="#~TQStrList"><b>~TQStrList</b></a> ()</li>
+<li class=fn>TQStrList &amp; <a href="#operator-eq"><b>operator=</b></a> ( const&nbsp;TQStrList&nbsp;&amp;&nbsp;list )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQStrList class provides a doubly-linked list of char*.
+<p> 
+
+
+<p> If you want a string list of <a href="ntqstring.html">TQString</a>s use <a href="ntqstringlist.html">TQStringList</a>.
+<p> This class is a <a href="ntqptrlist.html">TQPtrList</a>&lt;char&gt; instance (a list of char*).
+<p> TQStrList can make deep or shallow copies of the strings that are
+inserted.
+<p> A <a href="shclass.html#deep-copy">deep copy</a> means that memory is allocated for the string and then
+the string data is copied into that memory. A <a href="shclass.html#shallow-copy">shallow copy</a> is just
+a copy of the pointer value and not of the string data itself.
+<p> The disadvantage of shallow copies is that because a pointer can
+be deleted only once, the program must put all strings in a
+central place and know when it is safe to delete them (i.e. when
+the strings are no longer referenced by other parts of the
+program). This can make the program more complex. The advantage of
+shallow copies is that they consume far less memory than deep
+copies. It is also much faster to copy a pointer (typically 4 or 8
+bytes) than to copy string data.
+<p> A TQStrList that operates on deep copies will, by default, turn on
+auto-deletion (see <a href="ntqptrcollection.html#setAutoDelete">setAutoDelete</a>()). Thus, by default TQStrList
+will deallocate any string copies it allocates.
+<p> The virtual <a href="ntqptrlist.html#compareItems">compareItems</a>() function is reimplemented and does a
+case-sensitive string comparison. The <a href="ntqptrlist.html#inSort">inSort</a>() function will
+insert strings in sorted order. In general it is fastest to insert
+the strings as they come and <a href="ntqptrlist.html#sort">sort</a>() at the end; inSort() is useful
+when you just have to add a few extra strings to an already sorted
+list.
+<p> The <a href="qstrlistiterator.html">TQStrListIterator</a> class is an iterator for TQStrList.
+<p>See also <a href="collection.html">Collection Classes</a>, <a href="text.html">Text Related Classes</a>, and <a href="tools.html">Non-GUI Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQStrList"></a>TQStrList::TQStrList ( bool&nbsp;deepCopies = true )
+</h3>
+
+<p> Constructs an empty list of strings. Will make deep copies of all
+inserted strings if <em>deepCopies</em> is true, or use shallow copies
+if <em>deepCopies</em> is false.
+
+<h3 class=fn><a name="TQStrList-2"></a>TQStrList::TQStrList ( const&nbsp;<a href="ntqstrlist.html">TQStrList</a>&nbsp;&amp;&nbsp;list )
+</h3>
+
+<p> Constructs a copy of <em>list</em>.
+<p> If <em>list</em> has deep copies, this list will also get deep copies.
+Only the pointers are copied (shallow copy) if the other list does
+not use deep copies.
+
+<h3 class=fn><a name="~TQStrList"></a>TQStrList::~TQStrList ()
+</h3>
+
+<p> Destroys the list. All strings are removed.
+
+<h3 class=fn><a href="ntqstrlist.html">TQStrList</a>&nbsp;&amp; <a name="operator-eq"></a>TQStrList::operator= ( const&nbsp;<a href="ntqstrlist.html">TQStrList</a>&nbsp;&amp;&nbsp;list )
+</h3>
+
+<p> Assigns <em>list</em> to this list and returns a reference to this list.
+<p> If <em>list</em> has deep copies, this list will also get deep copies.
+Only the pointers are copied (shallow copy) if the other list does
+not use deep copies.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

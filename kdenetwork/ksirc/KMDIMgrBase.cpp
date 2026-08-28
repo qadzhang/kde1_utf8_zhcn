@@ -456,7 +456,7 @@ void KMDITitleLabel::paintState(bool only_label, bool colors_have_changed,
   }
 
   if (!titlestring_too_large)
-    titlestring_offset = 0;
+    titlestring_offset = 0;  /* TQt3 迁移 */
   p.setClipRect(r);
   p.setClipping(True);
   p.drawText(r.x()+(options.TitleAnimation?titlestring_offset:0),
@@ -616,11 +616,11 @@ void KMDITitle::setEnabled(bool f)
 KMDIWindow::KMDIWindow ( QWidget* p, const char* name, int flag,
                        const char* icon) : QWidget(p, name)
 {
-    view = 0L;
+    view = 0;  /* TQt3 迁移 */
 
     this->flag = flag;
     moveMode   = false;
-    resizeMode = 0;
+    resizeMode = 0;  /* TQt3 迁移 */
     eraseResizeRect = false;
 
     frame = new("QFrame") QFrame(this);
@@ -1054,7 +1054,7 @@ void KMDIWindow::mouseReleaseEvent (QMouseEvent *)
      drawRect(anchorRect, FANCY_RECT);
      setGeometry(anchorRect);
   }
-  resizeMode = 0;
+  resizeMode = 0;  /* TQt3 迁移 */
   moveMode   = 0;
   setCursor(arrowCursor);
 
@@ -1160,10 +1160,10 @@ KMDIMgrBase::KMDIMgrBase ( QWidget* p, const char *name)
     maximizePic = "maximize.xpm";
     closePic    = "close.xpm";
 
-    selectedWnd = 0L;
+    selectedWnd = 0;  /* TQt3 迁移 */
     windowList  = new("QList<KMDIWindow>") QList<KMDIWindow>;
     windowList->setAutoDelete(false);
-    numWindows = 0;
+    numWindows = 0;  /* TQt3 迁移 */
 
     kapp->getConfig()->setGroup("KMDIMgrBase");
     QString geometry=
@@ -1317,7 +1317,7 @@ void KMDIMgrBase::addWindow(KMDIWindow *w, int flag)
 void KMDIMgrBase::removeWindow ( KMDIWindow *win )
 {
     if (win == selectedWnd)
-        selectedWnd = 0L;
+        selectedWnd = 0;  /* TQt3 迁移 */
     
     int i = windowList->find(win);
     if ( i > -1){
@@ -1326,7 +1326,7 @@ void KMDIMgrBase::removeWindow ( KMDIWindow *win )
         emit windowRemoved(win);
     }
     else
-        warning("KMDIMgrBase::RemoveWindow: window not found.");
+        tqWarning("KMDIMgrBase::RemoveWindow: window not found.");
 
     KMDIWindow *w=windowList->first();
     if(w){

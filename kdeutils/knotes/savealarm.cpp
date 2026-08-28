@@ -33,7 +33,7 @@
 bool savealarms(){
 
   QString alarmfile;
-  alarmfile = KApplication::localkdedir().copy();
+  alarmfile = KApplication::localkdedir();
   alarmfile += "/share/apps/knotes/xyalarms/knotesalarms";
 
   QFile file(alarmfile.data());
@@ -68,7 +68,7 @@ bool readalarms(){
 
   QString alarmfile;
 
-  alarmfile = KApplication::localkdedir().copy();
+  alarmfile = KApplication::localkdedir();
   alarmfile += "/share/apps/knotes/xyalarms/knotesalarms";
 
   QFile file(alarmfile.data());

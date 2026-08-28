@@ -83,7 +83,7 @@ int LogInfo::error() {
 }
 
 void LogInfo::parse(QString s) {
-  errorfield = 0;
+  errorfield = 0;  /* TQt3 迁移 */
   char *c = (char *)malloc(s.length() + 1), *csep;
   strcpy(c, s.data());
 
@@ -107,11 +107,11 @@ void LogInfo::parse(QString s) {
       break;
 
     case 1:
-      _conname = token.copy();
+      _conname = token;
       break;
 
     case 2:
-      _currency = token.copy();
+      _currency = token;
       break;
 
     case 3:
@@ -142,7 +142,7 @@ void LogInfo::parse(QString s) {
   free(c);
 
   if(i == 8)
-    errorfield = 0;
+    errorfield = 0;  /* TQt3 迁移 */
   else
     errorfield = i+1;
 }

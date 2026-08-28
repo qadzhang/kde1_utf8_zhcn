@@ -97,7 +97,7 @@ int init_user_config(char * l_name)
           ktalkdcfg -> setGroup("ktalkd");
           message("User config file ok");
       } else {
-          ktalkdcfg = 0L;
+          ktalkdcfg = 0;  /* TQt3 迁移 */
           message("No user config file %s !",(const char*)cfgFileName);
       }
       return ((ktkanncfg != 0L) || (ktalkdcfg != 0L));
@@ -149,8 +149,8 @@ void end_user_config()
 {
   if (ktalkdcfg) delete ktalkdcfg;
   if (ktkanncfg) delete ktkanncfg;
-  ktalkdcfg = 0L;
-  ktkanncfg = 0L;
+  ktalkdcfg = 0;  /* TQt3 迁移 */
+  ktkanncfg = 0;  /* TQt3 迁移 */
 }
 
 // System configuration file

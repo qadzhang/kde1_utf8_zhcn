@@ -46,7 +46,6 @@ void KMIdentity::readConfig(void)
     if (pw)
     {
       mFullName = pw->pw_gecos;
-      mFullName.detach();
       i = mFullName.find(',');
       if (i>0) mFullName.truncate(i);
     }
@@ -61,7 +60,6 @@ void KMIdentity::readConfig(void)
     {
       gethostname(str, 79);
       mEmailAddr = QString(pw->pw_name) + "@" + str;
-      mEmailAddr.detach();
     }
   }
 
@@ -97,21 +95,21 @@ bool KMIdentity::mailingAllowed(void) const
 //-----------------------------------------------------------------------------
 void KMIdentity::setFullName(const QString str)
 {
-  mFullName = str.copy();
+  mFullName = str;
 }
 
 
 //-----------------------------------------------------------------------------
 void KMIdentity::setOrganization(const QString str)
 {
-  mOrganization = str.copy();
+  mOrganization = str;
 }
 
 
 //-----------------------------------------------------------------------------
 void KMIdentity::setEmailAddr(const QString str)
 {
-  mEmailAddr = str.copy();
+  mEmailAddr = str;
 }
 
 
@@ -120,8 +118,8 @@ const QString KMIdentity::fullEmailAddr(void) const
 {
   QString result;
 
-  if (mFullName.isEmpty()) result = mEmailAddr.copy();
-  else result = mFullName.copy() + " <" + mEmailAddr + ">";
+  if (mFullName.isEmpty()) result = mEmailAddr;
+  else result = mFullName + " <" + mEmailAddr + ">";
 
   return result;
 }
@@ -129,14 +127,14 @@ const QString KMIdentity::fullEmailAddr(void) const
 //-----------------------------------------------------------------------------
 void KMIdentity::setReplyToAddr(const QString str)
 {
-  mReplyToAddr = str.copy();
+  mReplyToAddr = str;
 }
 
 
 //-----------------------------------------------------------------------------
 void KMIdentity::setSignatureFile(const QString str)
 {
-  mSignatureFile = str.copy();
+  mSignatureFile = str;
 }
 
 
@@ -159,7 +157,7 @@ const QString KMIdentity::signature(void) const
 
     if (errno)
     {
-      warning(i18n("Failed to execute signature script\n%s\n%s"),
+      tqWarning(i18n("Failed to execute signature script\n%s\n%s"),
 	      sigcmd.data(), strerror(errno));
       return 0;
     }

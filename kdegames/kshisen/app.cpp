@@ -47,7 +47,7 @@
 #include <kseparator.h>
 #include <qlayout.h>
 #include <qmsgbox.h>
-#include <debug.h>
+#include "debug.h"
 #include <math.h>
 
 #define ID_FQUIT	101
@@ -456,7 +456,7 @@ QString App::getPlayerName() {
 
   QPushButton *b = new QPushButton(i18n("OK"), dlg);
   b->setDefault(TRUE);
-  if(style() == MotifStyle)
+  if(style().inherits("TQMotifStyle"))
     b->setFixedSize(b->sizeHint().width() + 10,
 		    b->sizeHint().height() +10);
   else
@@ -712,7 +712,7 @@ void App::showHighscore(int focusitem)  {
     }
     
   QPushButton *b = new QPushButton(locale->translate("Close"), dlg);
-  if(style() == MotifStyle)
+  if(style().inherits("TQMotifStyle"))
     b->setFixedSize(b->sizeHint().width() + 10,
 		    b->sizeHint().height() + 10);
   else

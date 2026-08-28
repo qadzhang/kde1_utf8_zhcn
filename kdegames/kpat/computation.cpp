@@ -91,8 +91,7 @@ Computation::Computation( QWidget *parent, const char *name )
    p13(310, 150, this, Store),
    p14(410, 150, this, Store)
 
-{ 
-  initMetaObject(); 
+{  
 
   QComboBox *cb = new QComboBox( this, "comboBox" );
   cb->insertItem( i18n("Easy 4") );

@@ -84,7 +84,7 @@ KMMainWin::KMMainWin(QWidget *, char *name) :
 //-----------------------------------------------------------------------------
 KMMainWin::~KMMainWin()
 {
-  //debug("~KMMainWin()");
+  //tqDebug("~KMMainWin()");
 
   writeConfig();
 
@@ -162,7 +162,7 @@ void KMMainWin::readConfig(void)
 //-----------------------------------------------------------------------------
 void KMMainWin::writeConfig(void)
 {
-  QString s(32);
+  TQString s;  /* TQt3 迁移 */
   KConfig *config = app->getConfig();
   QRect r = geometry();
 
@@ -381,7 +381,7 @@ void KMMainWin::slotAddrBook()
 //-----------------------------------------------------------------------------
 void KMMainWin::slotUnimplemented()
 {
-  warning(i18n("Sorry, but this feature\nis still missing"));
+  tqWarning(i18n("Sorry, but this feature\nis still missing"));
 }
 
 
@@ -448,7 +448,7 @@ void KMMainWin::slotCheckOneAccount(int item)
   rc = acctMgr->intCheckMail(item);
   kbp->idle();
   
-  if (!rc) warning(i18n("No new mail available"));
+  if (!rc) tqWarning(i18n("No new mail available"));
   if(mSendOnCheck)
     slotSendQueued();
 
@@ -487,7 +487,7 @@ void KMMainWin::slotModifyFolder()
 //-----------------------------------------------------------------------------
 void KMMainWin::slotEmptyFolder()
 {
-  QString str(256);
+  TQString str;  /* TQt3 迁移 */
   KMMessage* msg;
 
   if (!mFolder) return;
@@ -520,14 +520,14 @@ void KMMainWin::slotEmptyFolder()
 //-----------------------------------------------------------------------------
 void KMMainWin::slotRemoveFolder()
 {
-  QString str(256);
+  TQString str;  /* TQt3 迁移 */
   QDir dir;
 
   if (!mFolder) return;
-  //debug("TYPE: %s", (const char*)mFolder->type());
+  //tqDebug("TYPE: %s", (const char*)mFolder->type());
   if (mFolder->isSystemFolder() || strcmp(mFolder->type(),"plain")!=0)
   {
-    warning(i18n("Cannot remove a\nsystem folder."));
+    tqWarning(i18n("Cannot remove a\nsystem folder."));
     return;
   }
 
@@ -729,10 +729,10 @@ void KMMainWin::slotSetHeaderStyle(int id)
 //-----------------------------------------------------------------------------
 void KMMainWin::folderSelected(KMFolder* aFolder)
 {
-  //debug ("Entering folderSelected\n");
+  //tqDebug("Entering folderSelected\n");
   if(!aFolder)
     {
-      debug("KMMainWin::folderSelected(): aFolder == NULL");
+      tqDebug("KMMainWin::folderSelected(): aFolder == NULL");
       return;
     }
 
@@ -944,7 +944,6 @@ void KMMainWin::slotMsgPopup(const char* aUrl, const QPoint& aPoint)
   QPopupMenu* menu = new QPopupMenu;
 
   mUrlCurrent = aUrl;
-  mUrlCurrent.detach();
 
   if (aUrl)
   {

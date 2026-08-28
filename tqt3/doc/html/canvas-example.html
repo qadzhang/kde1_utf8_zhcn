@@ -1,0 +1,941 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/canvas/canvas.doc:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Canvas Example</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Canvas Example</h1>
+
+   
+<p> 
+This example shows a <a href="ntqcanvas.html">TQCanvas</a> and some <a href="qcanvasitem.html">TQCanvasItem</a>s in action.
+You can do a lot more with TQCanvas than we show here, but the
+example provides a taste of what can be done.
+<p> <hr>
+<p> Header file:
+<p> <pre>#ifndef EXAMPLE_H
+#define EXAMPLE_H
+
+#include &lt;<a href="qpopupmenu-h.html">ntqpopupmenu.h</a>&gt;
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+#include &lt;<a href="qintdict-h.html">ntqintdict.h</a>&gt;
+#include &lt;<a href="qcanvas-h.html">ntqcanvas.h</a>&gt;
+
+class BouncyLogo : public <a href="qcanvassprite.html">TQCanvasSprite</a> {
+    void initPos();
+    void initSpeed();
+public:
+    BouncyLogo(TQCanvas*);
+    void advance(int);
+    int rtti() const;
+};
+
+
+class FigureEditor : public <a href="qcanvasview.html">TQCanvasView</a> {
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+
+public:
+    FigureEditor(TQCanvas&amp;, TQWidget* parent=0, const char* name=0, WFlags f=0);
+    void clear();
+
+protected:
+    void contentsMousePressEvent(TQMouseEvent*);
+    void contentsMouseMoveEvent(TQMouseEvent*);
+
+signals:
+    void status(const <a href="ntqstring.html">TQString</a>&amp;);
+
+private:
+    <a href="qcanvasitem.html">TQCanvasItem</a>* moving;
+    <a href="ntqpoint.html">TQPoint</a> moving_start;
+};
+
+class Main : public <a href="ntqmainwindow.html">TQMainWindow</a> {
+    TQ_OBJECT
+
+public:
+    Main(TQCanvas&amp;, TQWidget* parent=0, const char* name=0, WFlags f=0);
+    ~Main();
+
+public slots:
+    void help();
+
+private slots:
+    void aboutTQt();
+    void newView();
+    void clear();
+    void init();
+
+    void addSprite();
+    void addCircle();
+    void addHexagon();
+    void addPolygon();
+    void addSpline();
+    void addText();
+    void addLine();
+    void addRectangle();
+    void addMesh();
+    void addLogo();
+    void addButterfly();
+
+    void enlarge();
+    void shrink();
+    void rotateClockwise();
+    void rotateCounterClockwise();
+    void zoomIn();
+    void zoomOut();
+    void mirror();
+    void moveL();
+    void moveR();
+    void moveU();
+    void moveD();
+
+    void print();
+
+    void toggleDoubleBuffer();
+
+private:
+    <a href="ntqcanvas.html">TQCanvas</a>&amp; canvas;
+    FigureEditor *editor;
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* options;
+    <a href="ntqprinter.html">TQPrinter</a>* printer;
+    int dbf_id;
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>#include &lt;<a href="qdatetime-h.html">ntqdatetime.h</a>&gt;
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+#include &lt;<a href="qstatusbar-h.html">ntqstatusbar.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qmenubar-h.html">ntqmenubar.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qprinter-h.html">ntqprinter.h</a>&gt;
+#include &lt;<a href="qlabel-h.html">ntqlabel.h</a>&gt;
+#include &lt;<a href="qimage-h.html">ntqimage.h</a>&gt;
+#include &lt;<a href="qprogressdialog-h.html">ntqprogressdialog.h</a>&gt;
+#include "canvas.h"
+
+#include &lt;stdlib.h&gt;
+
+// We use a global variable to save memory - all the brushes and pens in
+// the mesh are shared.
+static TQBrush *tb = 0;
+static TQPen *tp = 0;
+
+class EdgeItem;
+class NodeItem;
+
+class EdgeItem: public <a href="qcanvasline.html">TQCanvasLine</a>
+{
+public:
+    EdgeItem( NodeItem*, NodeItem*, TQCanvas *canvas );
+    void setFromPoint( int x, int y ) ;
+    void setToPoint( int x, int y );
+    static int count() { return c; }
+    void moveBy(double dx, double dy);
+private:
+    static int c;
+};
+
+static const int imageRTTI = 984376;
+
+
+class ImageItem: public <a href="qcanvasrectangle.html">TQCanvasRectangle</a>
+{
+public:
+    ImageItem( <a href="ntqimage.html">TQImage</a> img, TQCanvas *canvas );
+    int rtti () const { return imageRTTI; }
+    bool hit( const <a href="ntqpoint.html">TQPoint</a>&amp;) const;
+protected:
+    void drawShape( <a href="ntqpainter.html">TQPainter</a> &amp; );
+private:
+    <a href="ntqimage.html">TQImage</a> image;
+    <a href="ntqpixmap.html">TQPixmap</a> pixmap;
+};
+
+
+<a name="f623"></a>ImageItem::ImageItem( <a href="ntqimage.html">TQImage</a> img, TQCanvas *canvas )
+    : <a href="qcanvasrectangle.html">TQCanvasRectangle</a>( canvas ), image(img)
+{
+<a name="x2935"></a><a name="x2932"></a>    <a href="qcanvasrectangle.html#setSize">setSize</a>( image.<a href="ntqimage.html#width">width</a>(), image.<a href="ntqimage.html#height">height</a>() );
+
+#if !defined(TQ_WS_QWS)
+<a name="x2943"></a>    pixmap.<a href="ntqpixmap.html#convertFromImage">convertFromImage</a>(image, OrderedAlphaDither);
+#endif
+}
+
+
+<a name="x2925"></a>void ImageItem::<a href="qcanvasrectangle.html#drawShape">drawShape</a>( <a href="ntqpainter.html">TQPainter</a> &amp;p )
+{
+// On TQt/Embedded, we can paint a TQImage as fast as a TQPixmap,
+// but on other platforms, we need to use a TQPixmap.
+#if defined(TQ_WS_QWS)
+<a name="x2941"></a>    p.<a href="ntqpainter.html#drawImage">drawImage</a>( int(<a href="qcanvasitem.html#x">x</a>()), int(<a href="qcanvasitem.html#y">y</a>()), image, 0, 0, -1, -1, OrderedAlphaDither );
+#else
+    p.<a href="ntqpainter.html#drawPixmap">drawPixmap</a>( int(<a href="qcanvasitem.html#x">x</a>()), int(<a href="qcanvasitem.html#y">y</a>()), pixmap );
+#endif
+}
+
+bool <a name="f624"></a>ImageItem::hit( const <a href="ntqpoint.html">TQPoint</a> &amp;p ) const
+{
+<a name="x2944"></a>    int ix = p.<a href="ntqpoint.html#x">x</a>()-int(<a href="qcanvasitem.html#x">x</a>());
+<a name="x2945"></a>    int iy = p.<a href="ntqpoint.html#y">y</a>()-int(<a href="qcanvasitem.html#y">y</a>());
+<a name="x2934"></a>    if ( !image.<a href="ntqimage.html#valid">valid</a>( ix , iy ) )
+        return false;
+<a name="x2933"></a>    TQRgb pixel = image.<a href="ntqimage.html#pixel">pixel</a>( ix, iy );
+    return tqAlpha( pixel ) != 0;
+}
+
+class NodeItem: public <a href="qcanvasellipse.html">TQCanvasEllipse</a>
+{
+public:
+    NodeItem( <a href="ntqcanvas.html">TQCanvas</a> *canvas );
+    ~NodeItem() {}
+
+    void addInEdge( EdgeItem *edge ) { inList.<a href="ntqptrlist.html#append">append</a>( edge ); }
+    void addOutEdge( EdgeItem *edge ) { outList.<a href="ntqptrlist.html#append">append</a>( edge ); }
+
+    void moveBy(double dx, double dy);
+
+    //    TQPoint center() { return boundingRect().center(); }
+private:
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;EdgeItem&gt; inList;
+    <a href="ntqptrlist.html">TQPtrList</a>&lt;EdgeItem&gt; outList;
+};
+
+
+int EdgeItem::c = 0;
+
+
+<a name="x2916"></a>void EdgeItem::<a href="qcanvasitem.html#moveBy">moveBy</a>(double, double)
+{
+    //nothing
+}
+
+<a name="f618"></a>EdgeItem::EdgeItem( NodeItem *from, NodeItem *to, TQCanvas *canvas )
+    : <a href="qcanvasline.html">TQCanvasLine</a>( canvas )
+{
+    c++;
+    setPen( *tp );
+    setBrush( *tb );
+    from-&gt;addOutEdge( this );
+    to-&gt;addInEdge( this );
+<a name="x2921"></a><a name="x2920"></a>    setPoints( int(from-&gt;<a href="qcanvasitem.html#x">x</a>()), int(from-&gt;<a href="qcanvasitem.html#y">y</a>()), int(to-&gt;x()), int(to-&gt;y()) );
+    setZ( 127 );
+}
+
+void <a name="f619"></a>EdgeItem::setFromPoint( int x, int y )
+{
+    setPoints( x,y, endPoint().x(), endPoint().y() );
+}
+
+void <a name="f620"></a>EdgeItem::setToPoint( int x, int y )
+{
+    setPoints( startPoint().x(), startPoint().y(), x, y );
+}
+
+
+
+void NodeItem::<a href="qcanvasitem.html#moveBy">moveBy</a>(double dx, double dy)
+{
+    TQCanvasEllipse::<a href="qcanvasitem.html#moveBy">moveBy</a>( dx, dy );
+
+    <a href="qptrlistiterator.html">TQPtrListIterator</a>&lt;EdgeItem&gt; it1( inList );
+    EdgeItem *edge;
+<a name="x2949"></a>    while (( edge = it1.<a href="qptrlistiterator.html#current">current</a>() )) {
+        ++it1;
+        edge-&gt;setToPoint( int(<a href="ntqwidget.html#x">x</a>()), int(<a href="qcanvasitem.html#y">y</a>()) );
+    }
+    <a href="qptrlistiterator.html">TQPtrListIterator</a>&lt;EdgeItem&gt; it2( outList );
+    while (( edge = it2.<a href="qptrlistiterator.html#current">current</a>() )) {
+        ++it2;
+        edge-&gt;setFromPoint( int(<a href="qcanvasitem.html#x">x</a>()), int(<a href="qcanvasitem.html#y">y</a>()) );
+    }
+}
+
+<a name="f655"></a>NodeItem::NodeItem( <a href="ntqcanvas.html">TQCanvas</a> *canvas )
+    : <a href="qcanvasellipse.html">TQCanvasEllipse</a>( 6, 6, canvas )
+{
+    setPen( *tp );
+    setBrush( *tb );
+    <a href="qcanvasitem.html#setZ">setZ</a>( 128 );
+}
+
+<a name="f621"></a>FigureEditor::FigureEditor(
+        <a href="ntqcanvas.html">TQCanvas</a>&amp; c, TQWidget* parent,
+        const char* name, WFlags f) :
+    <a href="qcanvasview.html">TQCanvasView</a>(&amp;c,parent,name,f)
+{
+}
+
+<a name="x2951"></a>void FigureEditor::<a href="ntqscrollview.html#contentsMousePressEvent">contentsMousePressEvent</a>(TQMouseEvent* e)
+{
+    <a href="ntqpoint.html">TQPoint</a> p = inverseWorldMatrix().map(e-&gt;pos());
+    <a href="qcanvasitemlist.html">TQCanvasItemList</a> l=<a href="qcanvasitem.html#canvas">canvas</a>()-&gt;collisions(p);
+<a name="x2953"></a><a name="x2952"></a>    for (TQCanvasItemList::Iterator it=l.<a href="ntqvaluelist.html#begin">begin</a>(); it!=l.<a href="ntqvaluelist.html#end">end</a>(); ++it) {
+        if ( (*it)-&gt;rtti() == imageRTTI ) {
+            ImageItem *item= (ImageItem*)(*it);
+            if ( !item-&gt;hit( p ) )
+                 continue;
+        }
+        moving = *it;
+        moving_start = p;
+        return;
+    }
+    moving = 0;
+}
+
+void <a name="f622"></a>FigureEditor::clear()
+{
+    <a href="qcanvasitemlist.html">TQCanvasItemList</a> list = <a href="qcanvasitem.html#canvas">canvas</a>()-&gt;allItems();
+    TQCanvasItemList::Iterator it = list.<a href="ntqvaluelist.html#begin">begin</a>();
+    for (; it != list.<a href="ntqvaluelist.html#end">end</a>(); ++it) {
+        if ( *it )
+            delete *it;
+    }
+}
+
+<a name="x2950"></a>void FigureEditor::<a href="ntqscrollview.html#contentsMouseMoveEvent">contentsMouseMoveEvent</a>(TQMouseEvent* e)
+{
+    if ( moving ) {
+        <a href="ntqpoint.html">TQPoint</a> p = inverseWorldMatrix().map(e-&gt;pos());
+        moving-&gt;moveBy(p.<a href="ntqpoint.html#x">x</a>() - moving_start.x(),
+                       p.<a href="ntqpoint.html#y">y</a>() - moving_start.y());
+        moving_start = p;
+        <a href="qcanvasitem.html#canvas">canvas</a>()-&gt;update();
+    }
+}
+
+
+
+<a name="f615"></a>BouncyLogo::BouncyLogo(TQCanvas* canvas) :
+    <a href="qcanvassprite.html">TQCanvasSprite</a>(0,canvas)
+{
+    static TQCanvasPixmapArray logo("qt-trans.xpm");
+    <a href="qcanvassprite.html#setSequence">setSequence</a>(&amp;logo);
+    <a href="qcanvasitem.html#setAnimated">setAnimated</a>(true);
+    initPos();
+}
+
+
+const int logo_rtti = 1234;
+
+<a name="x2928"></a>int BouncyLogo::<a href="qcanvassprite.html#rtti">rtti</a>() const
+{
+    return logo_rtti;
+}
+
+void <a name="f616"></a>BouncyLogo::initPos()
+{
+    initSpeed();
+    int trial=1000;
+    do {
+        <a href="qcanvassprite.html#move">move</a>(rand()%canvas()-&gt;width(),rand()%canvas()-&gt;height());
+        advance(0);
+    } while (trial-- &amp;&amp; xVelocity()==0.0 &amp;&amp; yVelocity()==0.0);
+}
+
+void <a name="f617"></a>BouncyLogo::initSpeed()
+{
+    const double speed = 4.0;
+    double d = (double)(rand()%1024) / 1024.0;
+    setVelocity( d*speed*2-speed, (1-d)*speed*2-speed );
+}
+
+<a name="x2927"></a>void BouncyLogo::<a href="qcanvassprite.html#advance">advance</a>(int stage)
+{
+    switch ( stage ) {
+      case 0: {
+        double vx = xVelocity();
+        double vy = yVelocity();
+
+        if ( vx == 0.0 &amp;&amp; vy == 0.0 ) {
+            // stopped last turn
+            initSpeed();
+            vx = xVelocity();
+            vy = yVelocity();
+        }
+
+        double nx = <a href="ntqwidget.html#x">x</a>() + vx;
+        double ny = <a href="ntqwidget.html#y">y</a>() + vy;
+
+        if ( nx &lt; 0 || nx &gt;= canvas()-&gt;width() )
+            vx = -vx;
+        if ( ny &lt; 0 || ny &gt;= canvas()-&gt;height() )
+            vy = -vy;
+
+        for (int bounce=0; bounce&lt;4; bounce++) {
+            <a href="qcanvasitemlist.html">TQCanvasItemList</a> l=collisions(false);
+            for (TQCanvasItemList::Iterator it=l.<a href="ntqvaluelist.html#begin">begin</a>(); it!=l.<a href="ntqvaluelist.html#end">end</a>(); ++it) {
+                <a href="qcanvasitem.html">TQCanvasItem</a> *hit = *it;
+<a name="x2917"></a><a name="x2914"></a>                if ( hit-&gt;<a href="qcanvasitem.html#rtti">rtti</a>()==logo_rtti &amp;&amp; hit-&gt;<a href="qcanvasitem.html#collidesWith">collidesWith</a>(this) ) {
+                    switch ( bounce ) {
+                      case 0:
+                        vx = -vx;
+                        break;
+                      case 1:
+                        vy = -vy;
+                        vx = -vx;
+                        break;
+                      case 2:
+                        vx = -vx;
+                        break;
+                      case 3:
+                        // Stop for this turn
+                        vx = 0;
+                        vy = 0;
+                        break;
+                    }
+                    setVelocity(vx,vy);
+                    break;
+                }
+            }
+        }
+
+        if ( <a href="ntqwidget.html#x">x</a>()+vx &lt; 0 || x()+vx &gt;= canvas()-&gt;width() )
+            vx = 0;
+        if ( <a href="ntqwidget.html#y">y</a>()+vy &lt; 0 || y()+vy &gt;= canvas()-&gt;height() )
+            vy = 0;
+
+        setVelocity(vx,vy);
+      } break;
+      case 1:
+<a name="x2913"></a>        <a href="qcanvasitem.html">TQCanvasItem</a>::<a href="qcanvasitem.html#advance">advance</a>(stage);
+        break;
+    }
+}
+
+static uint mainCount = 0;
+static TQImage *butterflyimg;
+static TQImage *logoimg;
+
+<a name="f625"></a>Main::Main(TQCanvas&amp; c, TQWidget* parent, const char* name, WFlags f) :
+    <a href="ntqmainwindow.html">TQMainWindow</a>(parent,name,f),
+    canvas(c)
+{
+    editor = new FigureEditor(canvas,this);
+    <a href="ntqmenubar.html">TQMenuBar</a>* menu = <a href="ntqmainwindow.html#menuBar">menuBar</a>();
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* file = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menu );
+<a name="x2936"></a>    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Fill canvas", this, TQ_SLOT(init()), CTRL+Key_F);
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Erase canvas", this, TQ_SLOT(clear()), CTRL+Key_E);
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;New view", this, TQ_SLOT(newView()), CTRL+Key_N);
+    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Print...", this, TQ_SLOT(print()), CTRL+Key_P);
+    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("E&amp;xit", tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()), CTRL+Key_Q);
+    menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;File", file);
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* edit = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menu );
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add &amp;Circle", this, TQ_SLOT(addCircle()), ALT+Key_C);
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add &amp;Hexagon", this, TQ_SLOT(addHexagon()), ALT+Key_H);
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add &amp;Polygon", this, TQ_SLOT(addPolygon()), ALT+Key_P);
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add Spl&amp;ine", this, TQ_SLOT(addSpline()), ALT+Key_I);
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add &amp;Text", this, TQ_SLOT(addText()), ALT+Key_T);
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add &amp;Line", this, TQ_SLOT(addLine()), ALT+Key_L);
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add &amp;Rectangle", this, TQ_SLOT(addRectangle()), ALT+Key_R);
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add &amp;Sprite", this, TQ_SLOT(addSprite()), ALT+Key_S);
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Create &amp;Mesh", this, TQ_SLOT(addMesh()), ALT+Key_M );
+    edit-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Add &amp;Alpha-blended image", this, TQ_SLOT(addButterfly()), ALT+Key_A);
+    menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Edit", edit);
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* view = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menu );
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Enlarge", this, TQ_SLOT(enlarge()), SHIFT+CTRL+Key_Plus);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Shr&amp;ink", this, TQ_SLOT(shrink()), SHIFT+CTRL+Key_Minus);
+    view-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Rotate clockwise", this, TQ_SLOT(rotateClockwise()), CTRL+Key_PageDown);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Rotate &amp;counterclockwise", this, TQ_SLOT(rotateCounterClockwise()), CTRL+Key_PageUp);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Zoom in", this, TQ_SLOT(zoomIn()), CTRL+Key_Plus);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Zoom &amp;out", this, TQ_SLOT(zoomOut()), CTRL+Key_Minus);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Translate left", this, TQ_SLOT(moveL()), CTRL+Key_Left);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Translate right", this, TQ_SLOT(moveR()), CTRL+Key_Right);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Translate up", this, TQ_SLOT(moveU()), CTRL+Key_Up);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Translate down", this, TQ_SLOT(moveD()), CTRL+Key_Down);
+    view-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Mirror", this, TQ_SLOT(mirror()), CTRL+Key_Home);
+    menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;View", view);
+
+    options = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menu );
+    dbf_id = options-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Double buffer", this, TQ_SLOT(toggleDoubleBuffer()));
+<a name="x2939"></a>    options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>(dbf_id, true);
+    menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Options",options);
+
+    menu-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* help = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( menu );
+    help-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;About", this, TQ_SLOT(help()), Key_F1);
+    help-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>(dbf_id, true);
+    menu-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("&amp;Help",help);
+
+    <a href="ntqmainwindow.html#statusBar">statusBar</a>();
+
+    <a href="ntqmainwindow.html#setCentralWidget">setCentralWidget</a>(editor);
+
+    printer = 0;
+
+    init();
+}
+
+void <a name="f626"></a>Main::init()
+{
+    clear();
+
+    static int r=24;
+    srand(++r);
+
+    mainCount++;
+    butterflyimg = 0;
+    logoimg = 0;
+
+    int i;
+<a name="x2912"></a>    for ( i=0; i&lt;canvas.<a href="ntqcanvas.html#width">width</a>() / 56; i++) {
+        addButterfly();
+    }
+    for ( i=0; i&lt;canvas.<a href="ntqcanvas.html#width">width</a>() / 85; i++) {
+        addHexagon();
+    }
+    for ( i=0; i&lt;canvas.<a href="ntqcanvas.html#width">width</a>() / 128; i++) {
+        addLogo();
+    }
+}
+
+Main::~Main()
+{
+    delete printer;
+    if ( !--mainCount ) {
+        delete[] butterflyimg;
+        butterflyimg = 0;
+        delete[] logoimg;
+        logoimg = 0;
+    }
+}
+
+void <a name="f627"></a>Main::newView()
+{
+    // Open a new view... have it delete when closed.
+    Main *m = new Main(canvas, 0, 0, WDestructiveClose);
+    tqApp-&gt;<a href="ntqapplication.html#setMainWidget">setMainWidget</a>(m);
+    m-&gt;<a href="ntqwidget.html#show">show</a>();
+    tqApp-&gt;<a href="ntqapplication.html#setMainWidget">setMainWidget</a>(0);
+}
+
+void <a name="f628"></a>Main::clear()
+{
+    editor-&gt;clear();
+}
+
+void <a name="f629"></a>Main::help()
+{
+    static TQMessageBox* about = new <a href="ntqmessagebox.html">TQMessageBox</a>( "TQt Canvas Example",
+            "&lt;h3&gt;The TQCanvas classes example&lt;/h3&gt;"
+            "&lt;ul&gt;"
+                "&lt;li&gt; Press ALT-S for some sprites."
+                "&lt;li&gt; Press ALT-C for some circles."
+                "&lt;li&gt; Press ALT-L for some lines."
+                "&lt;li&gt; Drag the objects around."
+                "&lt;li&gt; Read the code!"
+            "&lt;/ul&gt;", TQMessageBox::Information, 1, 0, 0, this, 0, false );
+    about-&gt;setButtonText( 1, "Dismiss" );
+    about-&gt;show();
+}
+
+void <a name="f630"></a>Main::aboutTQt()
+{
+    TQMessageBox::<a href="ntqmessagebox.html#aboutTQt">aboutTQt</a>( this, "TQt Canvas Example" );
+}
+
+void <a name="f631"></a>Main::toggleDoubleBuffer()
+{
+<a name="x2938"></a>    bool s = !options-&gt;<a href="ntqmenudata.html#isItemChecked">isItemChecked</a>(dbf_id);
+    options-&gt;<a href="ntqmenudata.html#setItemChecked">setItemChecked</a>(dbf_id,s);
+<a name="x2911"></a>    canvas.<a href="ntqcanvas.html#setDoubleBuffering">setDoubleBuffering</a>(s);
+}
+
+void <a name="f632"></a>Main::enlarge()
+{
+<a name="x2910"></a><a name="x2909"></a>    canvas.<a href="ntqcanvas.html#resize">resize</a>(canvas.<a href="ntqcanvas.html#width">width</a>()*4/3, canvas.<a href="ntqcanvas.html#height">height</a>()*4/3);
+}
+
+void <a name="f633"></a>Main::shrink()
+{
+    canvas.<a href="ntqcanvas.html#resize">resize</a>(canvas.<a href="ntqcanvas.html#width">width</a>()*3/4, canvas.<a href="ntqcanvas.html#height">height</a>()*3/4);
+}
+
+void <a name="f634"></a>Main::rotateClockwise()
+{
+<a name="x2931"></a>    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+<a name="x2955"></a>    m.<a href="ntqwmatrix.html#rotate">rotate</a>( 22.5 );
+<a name="x2930"></a>    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f635"></a>Main::rotateCounterClockwise()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+    m.<a href="ntqwmatrix.html#rotate">rotate</a>( -22.5 );
+    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f636"></a>Main::zoomIn()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+<a name="x2956"></a>    m.<a href="ntqwmatrix.html#scale">scale</a>( 2.0, 2.0 );
+    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f637"></a>Main::zoomOut()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+    m.<a href="ntqwmatrix.html#scale">scale</a>( 0.5, 0.5 );
+    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f638"></a>Main::mirror()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+    m.<a href="ntqwmatrix.html#scale">scale</a>( -1, 1 );
+    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f639"></a>Main::moveL()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+<a name="x2957"></a>    m.<a href="ntqwmatrix.html#translate">translate</a>( -16, 0 );
+    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f640"></a>Main::moveR()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+    m.<a href="ntqwmatrix.html#translate">translate</a>( +16, 0 );
+    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f641"></a>Main::moveU()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+    m.<a href="ntqwmatrix.html#translate">translate</a>( 0, -16 );
+    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f642"></a>Main::moveD()
+{
+    <a href="ntqwmatrix.html">TQWMatrix</a> m = editor-&gt;<a href="qcanvasview.html#worldMatrix">worldMatrix</a>();
+    m.<a href="ntqwmatrix.html#translate">translate</a>( 0, +16 );
+    editor-&gt;<a href="qcanvasview.html#setWorldMatrix">setWorldMatrix</a>( m );
+}
+
+void <a name="f643"></a>Main::print()
+{
+    if ( !printer ) printer = new <a href="ntqprinter.html">TQPrinter</a>;
+    if ( printer-&gt;setup(this) ) {
+        <a href="ntqpainter.html">TQPainter</a> pp(printer);
+<a name="x2908"></a>        canvas.<a href="ntqcanvas.html#drawArea">drawArea</a>(TQRect(0,0,canvas.<a href="ntqcanvas.html#width">width</a>(),canvas.<a href="ntqcanvas.html#height">height</a>()),&amp;pp,false);
+    }
+}
+
+
+void <a name="f644"></a>Main::addSprite()
+{
+    <a href="qcanvasitem.html">TQCanvasItem</a>* i = new BouncyLogo(&amp;canvas);
+<a name="x2918"></a>    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256);
+<a name="x2919"></a>    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+TQString butterfly_fn;
+TQString logo_fn;
+
+
+void <a name="f645"></a>Main::addButterfly()
+{
+    if ( butterfly_fn.isEmpty() )
+        return;
+    if ( !butterflyimg ) {
+        butterflyimg = new <a href="ntqimage.html">TQImage</a>[4];
+        butterflyimg[0].load( butterfly_fn );
+        butterflyimg[1] = butterflyimg[0].smoothScale( int(butterflyimg[0].width()*0.75),
+                int(butterflyimg[0].height()*0.75) );
+        butterflyimg[2] = butterflyimg[0].smoothScale( int(butterflyimg[0].width()*0.5),
+                int(butterflyimg[0].height()*0.5) );
+        butterflyimg[3] = butterflyimg[0].smoothScale( int(butterflyimg[0].width()*0.25),
+                int(butterflyimg[0].height()*0.25) );
+    }
+    <a href="qcanvaspolygonalitem.html">TQCanvasPolygonalItem</a>* i = new ImageItem(butterflyimg[rand()%4],&amp;canvas);
+<a name="x2915"></a>    i-&gt;<a href="qcanvasitem.html#move">move</a>(rand()%(canvas.<a href="ntqcanvas.html#width">width</a>()-butterflyimg-&gt;<a href="ntqimage.html#width">width</a>()),
+            rand()%(canvas.<a href="ntqcanvas.html#height">height</a>()-butterflyimg-&gt;<a href="ntqimage.html#height">height</a>()));
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256+250);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+void <a name="f646"></a>Main::addLogo()
+{
+    if ( logo_fn.isEmpty() )
+        return;
+    if ( !logoimg ) {
+        logoimg = new <a href="ntqimage.html">TQImage</a>[4];
+        logoimg[0].load( logo_fn );
+        logoimg[1] = logoimg[0].smoothScale( int(logoimg[0].width()*0.75),
+                int(logoimg[0].height()*0.75) );
+        logoimg[2] = logoimg[0].smoothScale( int(logoimg[0].width()*0.5),
+                int(logoimg[0].height()*0.5) );
+        logoimg[3] = logoimg[0].smoothScale( int(logoimg[0].width()*0.25),
+                int(logoimg[0].height()*0.25) );
+    }
+    <a href="qcanvaspolygonalitem.html">TQCanvasPolygonalItem</a>* i = new ImageItem(logoimg[rand()%4],&amp;canvas);
+    i-&gt;<a href="qcanvasitem.html#move">move</a>(rand()%(canvas.<a href="ntqcanvas.html#width">width</a>()-logoimg-&gt;<a href="ntqimage.html#width">width</a>()),
+            rand()%(canvas.<a href="ntqcanvas.html#height">height</a>()-logoimg-&gt;<a href="ntqimage.html#width">width</a>()));
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256+256);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+
+
+void <a name="f647"></a>Main::addCircle()
+{
+    <a href="qcanvaspolygonalitem.html">TQCanvasPolygonalItem</a>* i = new <a href="qcanvasellipse.html">TQCanvasEllipse</a>(50,50,&amp;canvas);
+<a name="x2923"></a>    i-&gt;<a href="qcanvaspolygonalitem.html#setBrush">setBrush</a>( TQColor(rand()%32*8,rand()%32*8,rand()%32*8) );
+    i-&gt;<a href="qcanvasitem.html#move">move</a>(rand()%canvas.<a href="ntqcanvas.html#width">width</a>(),rand()%canvas.<a href="ntqcanvas.html#height">height</a>());
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+void <a name="f648"></a>Main::addHexagon()
+{
+    <a href="qcanvaspolygon.html">TQCanvasPolygon</a>* i = new <a href="qcanvaspolygon.html">TQCanvasPolygon</a>(&amp;canvas);
+    const int size = canvas.<a href="ntqcanvas.html#width">width</a>() / 25;
+    <a href="ntqpointarray.html">TQPointArray</a> pa(6);
+    pa[0] = TQPoint(2*size,0);
+    pa[1] = TQPoint(size,-size*173/100);
+    pa[2] = TQPoint(-size,-size*173/100);
+    pa[3] = TQPoint(-2*size,0);
+    pa[4] = TQPoint(-size,size*173/100);
+    pa[5] = TQPoint(size,size*173/100);
+<a name="x2922"></a>    i-&gt;<a href="qcanvasline.html#setPoints">setPoints</a>(pa);
+    i-&gt;<a href="qcanvaspolygonalitem.html#setBrush">setBrush</a>( TQColor(rand()%32*8,rand()%32*8,rand()%32*8) );
+    i-&gt;<a href="qcanvasitem.html#move">move</a>(rand()%canvas.<a href="ntqcanvas.html#width">width</a>(),rand()%canvas.<a href="ntqcanvas.html#height">height</a>());
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+void <a name="f649"></a>Main::addPolygon()
+{
+    <a href="qcanvaspolygon.html">TQCanvasPolygon</a>* i = new <a href="qcanvaspolygon.html">TQCanvasPolygon</a>(&amp;canvas);
+    const int size = canvas.<a href="ntqcanvas.html#width">width</a>()/2;
+    <a href="ntqpointarray.html">TQPointArray</a> pa(6);
+    pa[0] = TQPoint(0,0);
+    pa[1] = TQPoint(size,size/5);
+    pa[2] = TQPoint(size*4/5,size);
+    pa[3] = TQPoint(size/6,size*5/4);
+    pa[4] = TQPoint(size*3/4,size*3/4);
+    pa[5] = TQPoint(size*3/4,size/4);
+    i-&gt;<a href="qcanvasline.html#setPoints">setPoints</a>(pa);
+    i-&gt;<a href="qcanvaspolygonalitem.html#setBrush">setBrush</a>( TQColor(rand()%32*8,rand()%32*8,rand()%32*8) );
+    i-&gt;<a href="qcanvasitem.html#move">move</a>(rand()%canvas.<a href="ntqcanvas.html#width">width</a>(),rand()%canvas.<a href="ntqcanvas.html#height">height</a>());
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+void <a name="f650"></a>Main::addSpline()
+{
+    <a href="qcanvasspline.html">TQCanvasSpline</a>* i = new <a href="qcanvasspline.html">TQCanvasSpline</a>(&amp;canvas);
+    const int size = canvas.<a href="ntqcanvas.html#width">width</a>()/6;
+    <a href="ntqpointarray.html">TQPointArray</a> pa(12);
+    pa[0] = TQPoint(0,0);
+    pa[1] = TQPoint(size/2,0);
+    pa[2] = TQPoint(size,size/2);
+    pa[3] = TQPoint(size,size);
+    pa[4] = TQPoint(size,size*3/2);
+    pa[5] = TQPoint(size/2,size*2);
+    pa[6] = TQPoint(0,size*2);
+    pa[7] = TQPoint(-size/2,size*2);
+    pa[8] = TQPoint(size/4,size*3/2);
+    pa[9] = TQPoint(0,size);
+    pa[10]= TQPoint(-size/4,size/2);
+    pa[11]= TQPoint(-size/2,0);
+<a name="x2926"></a>    i-&gt;<a href="qcanvasspline.html#setControlPoints">setControlPoints</a>(pa);
+    i-&gt;<a href="qcanvaspolygonalitem.html#setBrush">setBrush</a>( TQColor(rand()%32*8,rand()%32*8,rand()%32*8) );
+    i-&gt;<a href="qcanvasitem.html#move">move</a>(rand()%canvas.<a href="ntqcanvas.html#width">width</a>(),rand()%canvas.<a href="ntqcanvas.html#height">height</a>());
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+void <a name="f651"></a>Main::addText()
+{
+    <a href="qcanvastext.html">TQCanvasText</a>* i = new <a href="qcanvastext.html">TQCanvasText</a>(&amp;canvas);
+<a name="x2929"></a>    i-&gt;<a href="qcanvastext.html#setText">setText</a>("TQCanvasText");
+    i-&gt;<a href="qcanvasitem.html#move">move</a>(rand()%canvas.<a href="ntqcanvas.html#width">width</a>(),rand()%canvas.<a href="ntqcanvas.html#height">height</a>());
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+void <a name="f652"></a>Main::addLine()
+{
+    <a href="qcanvasline.html">TQCanvasLine</a>* i = new <a href="qcanvasline.html">TQCanvasLine</a>(&amp;canvas);
+    i-&gt;<a href="qcanvasline.html#setPoints">setPoints</a>( rand()%canvas.<a href="ntqcanvas.html#width">width</a>(), rand()%canvas.<a href="ntqcanvas.html#height">height</a>(),
+                  rand()%canvas.<a href="ntqcanvas.html#width">width</a>(), rand()%canvas.<a href="ntqcanvas.html#height">height</a>() );
+<a name="x2924"></a>    i-&gt;<a href="qcanvaspolygonalitem.html#setPen">setPen</a>( TQPen(TQColor(rand()%32*8,rand()%32*8,rand()%32*8), 6) );
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(rand()%256);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+
+void <a name="f653"></a>Main::addMesh()
+{
+    int x0 = 0;
+    int y0 = 0;
+
+    if ( !tb ) tb = new <a href="ntqbrush.html">TQBrush</a>( TQt::red );
+    if ( !tp ) tp = new <a href="ntqpen.html">TQPen</a>( TQt::black );
+
+    int nodecount = 0;
+
+    int w = canvas.<a href="ntqcanvas.html#width">width</a>();
+    int h = canvas.<a href="ntqcanvas.html#height">height</a>();
+
+    const int dist = 30;
+    int rows = h / dist;
+    int cols = w / dist;
+
+#ifndef TQT_NO_PROGRESSDIALOG
+    <a href="ntqprogressdialog.html">TQProgressDialog</a> progress( "Creating mesh...", "Abort", rows,
+                              this, "progress", true );
+#endif
+
+    <a href="ntqmemarray.html">TQMemArray</a>&lt;NodeItem*&gt; lastRow(cols);
+    for ( int j = 0; j &lt; rows; j++ ) {
+        int n = j%2 ? cols-1 : cols;
+        NodeItem *prev = 0;
+        for ( int i = 0; i &lt; n; i++ ) {
+            NodeItem *el = new NodeItem( &amp;canvas );
+            nodecount++;
+            int r = rand();
+            int xrand = r %20;
+            int yrand = (r/20) %20;
+            el-&gt;<a href="qcanvasitem.html#move">move</a>( xrand + x0 + i*dist + (j%2 ? dist/2 : 0 ),
+                      yrand + y0 + j*dist );
+
+            if ( j &gt; 0 ) {
+                if ( i &lt; cols-1 )
+                    (new EdgeItem( lastRow[i], el, &amp;canvas ))-&gt;show();
+                if ( j%2 )
+                    (new EdgeItem( lastRow[i+1], el, &amp;canvas ))-&gt;show();
+                else if ( i &gt; 0 )
+                    (new EdgeItem( lastRow[i-1], el, &amp;canvas ))-&gt;show();
+            }
+            if ( prev ) {
+                (new EdgeItem( prev, el, &amp;canvas ))-&gt;show();
+            }
+            if ( i &gt; 0 ) lastRow[i-1] = prev;
+            prev = el;
+            el-&gt;<a href="qcanvasitem.html#show">show</a>();
+        }
+        lastRow[n-1]=prev;
+#ifndef TQT_NO_PROGRESSDIALOG
+<a name="x2946"></a>        progress.<a href="ntqprogressdialog.html#setProgress">setProgress</a>( j );
+<a name="x2947"></a>        if ( progress.<a href="ntqprogressdialog.html#wasCancelled">wasCancelled</a>() )
+            break;
+#endif
+    }
+#ifndef TQT_NO_PROGRESSDIALOG
+    progress.<a href="ntqprogressdialog.html#setProgress">setProgress</a>( rows );
+#endif
+    // tqDebug( "%d nodes, %d edges", nodecount, EdgeItem::count() );
+}
+
+void <a name="f654"></a>Main::addRectangle()
+{
+    <a href="qcanvaspolygonalitem.html">TQCanvasPolygonalItem</a> *i = new <a href="qcanvasrectangle.html">TQCanvasRectangle</a>( rand()%canvas.<a href="ntqcanvas.html#width">width</a>(),rand()%canvas.<a href="ntqcanvas.html#height">height</a>(),
+                            canvas.<a href="ntqcanvas.html#width">width</a>()/5,canvas.<a href="ntqcanvas.html#width">width</a>()/5,&amp;canvas);
+    int z = rand()%256;
+    i-&gt;<a href="qcanvaspolygonalitem.html#setBrush">setBrush</a>( TQColor(z,z,z) );
+    i-&gt;<a href="qcanvaspolygonalitem.html#setPen">setPen</a>( TQPen(TQColor(rand()%32*8,rand()%32*8,rand()%32*8), 6) );
+    i-&gt;<a href="qcanvasitem.html#setZ">setZ</a>(z);
+    i-&gt;<a href="qcanvasitem.html#show">show</a>();
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>#include &lt;<a href="qstatusbar-h.html">ntqstatusbar.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qmenubar-h.html">ntqmenubar.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qimage-h.html">ntqimage.h</a>&gt;
+
+#include "canvas.h"
+
+#include &lt;stdlib.h&gt;
+
+extern TQString butterfly_fn;
+extern TQString logo_fn;
+
+int main(int argc, char** argv)
+{
+    <a href="ntqapplication.html">TQApplication</a> app(argc,argv);
+
+    if ( argc &gt; 1 )
+        butterfly_fn = argv[1];
+    else
+        butterfly_fn = "butterfly.png";
+
+    if ( argc &gt; 2 )
+        logo_fn = argv[2];
+    else
+        logo_fn = "qtlogo.png";
+
+    <a href="ntqcanvas.html">TQCanvas</a> canvas(800,600);
+<a name="x2962"></a>    canvas.<a href="ntqcanvas.html#setAdvancePeriod">setAdvancePeriod</a>(30);
+    Main m(canvas);
+<a name="x2969"></a>    m.<a href="ntqwidget.html#resize">resize</a>(m.<a href="ntqwidget.html#sizeHint">sizeHint</a>());
+    m.<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Canvas");
+<a name="x2970"></a><a name="x2958"></a>    if ( TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;width() &gt; m.<a href="ntqwidget.html#width">width</a>() + 10
+<a name="x2964"></a>        &amp;&amp; TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;height() &gt; m.<a href="ntqwidget.html#height">height</a>() +30 )
+        m.<a href="ntqwidget.html#show">show</a>();
+    else
+<a name="x2968"></a>        m.<a href="ntqwidget.html#showMaximized">showMaximized</a>();
+
+    TQObject::<a href="ntqobject.html#connect">connect</a>( tqApp, TQ_SIGNAL(<a href="ntqapplication.html#lastWindowClosed">lastWindowClosed</a>()), tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+
+    return app.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

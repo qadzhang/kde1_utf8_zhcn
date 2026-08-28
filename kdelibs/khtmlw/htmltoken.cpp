@@ -379,7 +379,7 @@ void HTMLTokenizer::write( const char *str )
 	              res = (const char*)(charsets->convertTag(searchBuffer+1, len));
 	              if (len <= 0)
 	              {
-		    	res = 0;
+		    	res = TQString();
 	              }
 	           }
 	        }

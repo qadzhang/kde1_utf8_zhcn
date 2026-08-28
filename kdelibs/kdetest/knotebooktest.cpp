@@ -40,9 +40,8 @@ int main(int argc, char **argv)
   for(int i = 1; i < 11; i++)
   {
     QTab *tab = new QTab;
-    tab->label.setNum(i);
-    tab->label += ". tab";
-    tab->enabled = true;
+    tab->setText( TQString().setNum(i) + ". tab" );  // TQt3 迁移：label/enabled 转访问器
+    tab->setEnabled( true );
     nb->addTab( tab );
     for(int j = 1; j <= i; j++)
     {

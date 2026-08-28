@@ -1,0 +1,577 @@
+/****************************************************************************
+**
+** Definition of TQValueVector class
+**
+** Copyright (C) 1992-2008 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the tools module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General
+** Public License versions 2.0 or 3.0 as published by the Free
+** Software Foundation and appearing in the files LICENSE.GPL2
+** and LICENSE.GPL3 included in the packaging of this file.
+** Alternatively you may (at your option) use any later version
+** of the GNU General Public License if such license has been
+** publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQVALUEVECTOR_H
+#define TQVALUEVECTOR_H
+
+#include <cstddef>
+
+#ifndef QT_H
+#include "ntqtl.h"
+#include "ntqshared.h"
+#include "ntqdatastream.h"
+#endif // QT_H
+
+#ifndef TQT_NO_STL
+#include <vector>
+#endif
+
+template <class T>
+class TQValueVectorPrivate : public TQShared
+{
+public:
+    typedef T value_type;
+    typedef T* pointer;
+
+    TQValueVectorPrivate()
+	: start( 0 ), finish( 0 ), end( 0 )
+    {
+    }
+
+    TQValueVectorPrivate( const TQValueVectorPrivate<T>& x );
+    TQValueVectorPrivate( size_t size );
+
+    void derefAndDelete() // work-around for hp-cc
+    {
+	if ( deref() )
+	    delete this;
+    }
+
+#if defined(Q_TEMPLATEDLL)
+    // Workaround MS bug in memory de/allocation in DLL vs. EXE
+    virtual
+#endif
+    ~TQValueVectorPrivate()
+    {
+	delete[] start;
+    }
+
+    size_t size() const
+    {
+	return finish - start;
+    }
+
+    bool empty() const
+    {
+	return start == finish;
+    }
+
+    size_t capacity() const
+    {
+	return end - start;
+    }
+
+    void insert( pointer pos, const T& x );
+    void insert( pointer pos, size_t n, const T& x );
+    void reserve( size_t n );
+
+    void clear()
+    {
+	delete[] start;
+	start = 0;
+	finish = 0;
+	end = 0;
+    }
+
+
+    pointer start;
+    pointer finish;
+    pointer end;
+
+private:
+    pointer growAndCopy( size_t n, pointer s, pointer f );
+
+    TQValueVectorPrivate<T>& operator=( const TQValueVectorPrivate<T>& x );
+
+};
+
+template <class T>
+TQValueVectorPrivate<T>::TQValueVectorPrivate( const TQValueVectorPrivate<T>& x )
+    : TQShared()
+{
+    size_t i = x.size();
+    if ( i > 0 ) {
+	start = new T[ i ];
+	finish = start + i;
+	end = start + i;
+#if defined(__xlC__) && __xlC__ < 0x400 // xlC 3.6 confused by const
+	tqCopy( (pointer)x.start, (pointer)x.finish, start );
+#else
+	tqCopy( x.start, x.finish, start );
+#endif
+    } else {
+	start = 0;
+	finish = 0;
+	end = 0;
+    }
+}
+
+template <class T>
+TQValueVectorPrivate<T>::TQValueVectorPrivate( size_t size )
+{
+    if ( size > 0 ) {
+	start = new T[size];
+	finish = start + size;
+	end = start + size;
+    } else {
+	start = 0;
+	finish = 0;
+	end = 0;
+    }
+}
+
+template <class T>
+void TQValueVectorPrivate<T>::insert( pointer pos, const T& x )
+{
+    const size_t lastSize = size();
+    const size_t n = lastSize !=0 ? 2*lastSize : 1;
+    const size_t offset = pos - start;
+    pointer newStart = new T[n];
+    pointer newFinish = newStart + offset;
+    tqCopy( start, pos, newStart );
+    *newFinish = x;
+    tqCopy( pos, finish, ++newFinish );
+    delete[] start;
+    start = newStart;
+    finish = newStart + lastSize + 1;
+    end = newStart + n;
+}
+
+template <class T>
+void TQValueVectorPrivate<T>::insert( pointer pos, size_t n, const T& x )
+{
+    if ( size_t( end - finish ) >= n ) {
+	// enough room
+	const size_t elems_after = finish - pos;
+	pointer old_finish = finish;
+	if ( elems_after > n ) {
+	    tqCopy( finish - n, finish, finish );
+	    finish += n;
+	    tqCopyBackward( pos, old_finish - n, old_finish );
+	    tqFill( pos, pos + n, x );
+	} else {
+	    pointer filler = finish;
+	    size_t i = n - elems_after;
+	    for ( ; i > 0; --i, ++filler )
+		*filler = x;
+	    finish += n - elems_after;
+	    tqCopy( pos, old_finish, finish );
+	    finish += elems_after;
+	    tqFill( pos, old_finish, x );
+	}
+    } else {
+	// not enough room
+	const size_t lastSize = size();
+	const size_t len = lastSize + TQMAX( lastSize, n );
+	pointer newStart = new T[len];
+	pointer newFinish = tqCopy( start, pos, newStart );
+	// fill up inserted space
+	size_t i = n;
+	for ( ; i > 0; --i, ++newFinish )
+	    *newFinish = x;
+	newFinish = tqCopy( pos, finish, newFinish );
+	delete[] start;
+	start = newStart;
+	finish = newFinish;
+	end = newStart + len;
+    }
+}
+
+template <class T>
+void TQValueVectorPrivate<T>::reserve( size_t n )
+{
+    const size_t lastSize = size();
+    pointer tmp = growAndCopy( n, start, finish );
+    start = tmp;
+    finish = tmp + lastSize;
+    end = start + n;
+}
+
+template <class T>
+TQ_TYPENAME TQValueVectorPrivate<T>::pointer TQValueVectorPrivate<T>::growAndCopy( size_t n, pointer s, pointer f )
+{
+    pointer newStart = new T[n];
+    tqCopy( s, f, newStart );
+    delete[] start;
+    return newStart;
+}
+
+template <class T> class TQDeepCopy;
+
+template <class T>
+class TQValueVector
+{
+public:
+    typedef T value_type;
+    typedef value_type* pointer;
+    typedef const value_type* const_pointer;
+    typedef value_type* iterator;
+    typedef const value_type* const_iterator;
+    typedef value_type& reference;
+    typedef const value_type& const_reference;
+    typedef size_t size_type;
+#ifndef TQT_NO_STL
+    typedef ptrdiff_t difference_type;
+#else
+    typedef int difference_type;
+#endif
+
+    TQValueVector()
+    {
+	sh = new TQValueVectorPrivate<T>;
+    }
+
+    TQValueVector( const TQValueVector<T>& v )
+    {
+	sh = v.sh;
+	sh->ref();
+    }
+
+    TQValueVector( size_type n, const T& val = T() );
+
+#ifndef TQT_NO_STL
+    TQValueVector( std::vector<T>& v ) // ### remove in 4.0
+    {
+	sh = new TQValueVectorPrivate<T>( v.size() );
+	tqCopy( v.begin(), v.end(), begin() );
+    }
+
+    TQValueVector( const std::vector<T>& v )
+    {
+	sh = new TQValueVectorPrivate<T>( v.size() );
+	tqCopy( v.begin(), v.end(), begin() );
+    }
+#endif
+
+    ~TQValueVector()
+    {
+	sh->derefAndDelete();
+    }
+
+    TQValueVector<T>& operator= ( const TQValueVector<T>& v )
+    {
+	v.sh->ref();
+	sh->derefAndDelete();
+	sh = v.sh;
+	return *this;
+    }
+
+#ifndef TQT_NO_STL
+    TQValueVector<T>& operator= ( const std::vector<T>& v )
+    {
+	clear();
+	resize( v.size() );
+	tqCopy( v.begin(), v.end(), begin() );
+	return *this;
+    }
+#endif
+
+    size_type size() const { return sh->size(); }
+
+    bool empty() const { return sh->empty(); }
+
+    size_type capacity() const
+    {
+	return size_type( sh->capacity() );
+    }
+
+    iterator begin()
+    {
+	detach();
+	return sh->start;
+    }
+
+    const_iterator begin() const
+    {
+	return sh->start;
+    }
+
+    const_iterator constBegin() const
+    {
+	return sh->start;
+    }
+
+    iterator end()
+    {
+	detach();
+	return sh->finish;
+    }
+
+    const_iterator end() const
+    {
+	return sh->finish;
+    }
+
+    const_iterator constEnd() const
+    {
+	return sh->finish;
+    }
+
+    reference at( size_type i, bool* ok = 0 )
+    {
+	detach();
+	if ( ok )
+	    *ok = ( i < size() );
+	return *( begin() + i );
+    }
+
+    const_reference at( size_type i, bool* ok = 0 ) const
+    {
+	if ( ok )
+	    *ok = ( i < size() );
+	return *( begin() + i );
+    }
+
+    reference operator[]( size_type i )
+    {
+	detach();
+	return *( begin() + i );
+    }
+
+    const_reference operator[]( size_type i ) const
+    {
+	return *( begin() + i );
+    }
+
+    reference front()
+    {
+	Q_ASSERT( !empty() );
+	detach();
+	return *begin();
+    }
+
+    const_reference front() const
+    {
+	Q_ASSERT( !empty() );
+	return *begin();
+    }
+
+    reference back()
+    {
+	Q_ASSERT( !empty() );
+	detach();
+	return *( end() - 1 );
+    }
+
+    const_reference back() const
+    {
+	Q_ASSERT( !empty() );
+	return *( end() - 1 );
+    }
+
+    void push_back( const T& x )
+    {
+	detach();
+	if ( sh->finish == sh->end ) {
+	    sh->reserve( size()+size()/2+1 );
+	}
+	*sh->finish = x;
+	++sh->finish;
+    }
+
+    void pop_back()
+    {
+	detach();
+	if ( empty() )
+	    return;
+	--sh->finish;
+    }
+
+    iterator insert( iterator pos, const T& x );
+    iterator insert( iterator pos, size_type n, const T& x );
+
+    void reserve( size_type n )
+    {
+	if ( capacity() < n ) {
+	    detach();
+	    sh->reserve( n );
+	}
+    }
+
+    void resize( size_type n, const T& val = T() )
+    {
+	if ( n < size() )
+	    erase( begin() + n, end() );
+	else
+	    insert( end(), n - size(), val );
+    }
+
+    void clear()
+    {
+	detach();
+	sh->clear();
+    }
+
+    iterator erase( iterator pos )
+    {
+	detach();
+	if ( pos + 1 != end() )
+	    tqCopy( pos + 1, sh->finish, pos );
+	--sh->finish;
+	return pos;
+    }
+
+    iterator erase( iterator first, iterator last )
+    {
+	detach();
+	tqCopy( last, sh->finish, first );
+	sh->finish = sh->finish - ( last - first );
+	return first;
+    }
+
+    // ### remove in TQt 4.0
+    bool operator==( const TQValueVector<T>& x )
+    {
+	return size()==x.size() ? tqEqual( constBegin(), constEnd(), x.begin()) : false;
+    }
+
+    bool operator==( const TQValueVector<T>& x ) const
+    {
+	return size()==x.size() ? tqEqual( begin(), end(), x.begin() ) : false;
+    }
+
+    typedef T ValueType;
+    typedef ValueType *Iterator;
+    typedef const ValueType *ConstIterator;
+
+    size_type count() const { return size(); }
+    bool isEmpty() const { return empty(); }
+
+    reference first() { return front(); }
+    const_reference first() const { return front(); }
+    reference last() { return back(); }
+    const_reference last() const { return back(); }
+    void append( const T& x ) { push_back( x ); }
+
+protected:
+    void detach()
+    {
+	if ( sh->count > 1 ) { detachInternal(); }
+    }
+    void detachInternal();
+    TQValueVectorPrivate<T>* sh;
+
+private:
+    friend class TQDeepCopy< TQValueVector<T> >;
+};
+
+template <class T>
+TQValueVector<T>::TQValueVector( size_type n, const T& val )
+{
+    sh = new TQValueVectorPrivate<T>( n );
+    tqFill( begin(), end(), val );
+}
+
+template <class T>
+void TQValueVector<T>::detachInternal()
+{
+    sh->deref();
+    sh = new TQValueVectorPrivate<T>( *sh );
+}
+
+template <class T>
+TQ_TYPENAME TQValueVector<T>::iterator TQValueVector<T>::insert( iterator pos, const T& x )
+{
+    size_type offset = pos - sh->start;
+    detach();
+    if ( pos == end() ) {
+	if ( sh->finish == sh->end )
+	    push_back( x );
+	else {
+	    *sh->finish = x;
+	    ++sh->finish;
+	}
+    } else {
+	if ( sh->finish == sh->end ) {
+	    sh->insert( pos, x );
+	} else {
+	    *sh->finish = *(sh->finish - 1);
+	    ++sh->finish;
+	    tqCopyBackward( pos, sh->finish - 2, sh->finish - 1 );
+	    *pos = x;
+	}
+    }
+    return begin() + offset;
+}
+
+template <class T>
+TQ_TYPENAME TQValueVector<T>::iterator TQValueVector<T>::insert( iterator pos, size_type n, const T& x )
+{
+    if ( n != 0 ) {
+	size_type offset = pos - sh->start;
+	detach();
+	pos = begin() + offset;
+	sh->insert( pos, n, x );
+    }
+    return pos;
+}
+
+
+#ifndef TQT_NO_DATASTREAM
+template<class T>
+TQDataStream& operator>>( TQDataStream& s, TQValueVector<T>& v )
+{
+    v.clear();
+    TQ_UINT32 c;
+    s >> c;
+    v.resize( c );
+    for( TQ_UINT32 i = 0; i < c; ++i )
+    {
+	T t;
+	s >> t;
+	v[i] = t;
+    }
+    return s;
+}
+
+template<class T>
+TQDataStream& operator<<( TQDataStream& s, const TQValueVector<T>& v )
+{
+    s << (TQ_UINT32)v.size();
+    // ### use typename TQValueVector<T>::const_iterator once all supported
+    // ### compilers know about the 'typename' keyword.
+    const T* it = v.begin();
+    for( ; it != v.end(); ++it )
+	s << *it;
+    return s;
+}
+#endif // TQT_NO_DATASTREAM
+
+#define Q_DEFINED_QVALUEVECTOR
+#include "ntqwinexport.h"
+#endif // TQVALUEVECTOR_H

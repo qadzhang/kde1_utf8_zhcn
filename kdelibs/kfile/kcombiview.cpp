@@ -55,7 +55,7 @@ KCombiView::KCombiView(  FileView dirs,  FileView files,
 	dirList = getDirList();
 	break;
     default:
-	fatal("this view for dirs not support");
+	tqFatal("this view for dirs not support");
     }
 
     switch (files) {
@@ -132,7 +132,7 @@ void KCombiView::clearView()
 
 void KCombiView::highlightItem(unsigned int)
 {
-    warning("KCombiView::highlightItem: does nothing");
+    tqWarning("KCombiView::highlightItem: does nothing");
 }
 
 void KCombiView::setCurrentItem(const char *item, const KFileInfo *i)
@@ -146,7 +146,7 @@ void KCombiView::setCurrentItem(const char *item, const KFileInfo *i)
     }
     
     if (!i) {
-	warning("setCurrentItem: no match found.");
+	tqWarning("setCurrentItem: no match found.");
 	return; 
     }
 

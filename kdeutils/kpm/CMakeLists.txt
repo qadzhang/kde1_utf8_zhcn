@@ -28,15 +28,15 @@ set(kpm_SRCS
 )
 
 set(kpm_MOC
-    details.moc
-    dialogs.moc
-    fieldsel.moc
-    htable.moc
-    infobar.moc
-    prefs.moc
-    pstable.moc
-    qps.moc
-    scheddlg.moc
+    details.h
+    dialogs.h
+    fieldsel.h
+    htable.h
+    infobar.h
+    prefs.h
+    pstable.h
+    qps.h
+    scheddlg.h
 )
 
 set(kpm_DOC
@@ -48,20 +48,20 @@ set(kpm_DOC
     docs/en/logotp3.gif
 )
 
-QT1_WRAP_MOC(MOC_FILES ${kpm_MOC})
-QT1_WRAP_MOC(DOCKED_MOC_FILES docked.moc)
+TQT3_WRAP_CPP(MOC_FILES ${kpm_MOC})
+TQT3_WRAP_CPP(DOCKED_MOC_FILES docked.h)
 
 add_executable(kpmdocked ${kpmdocked_SRCS} ${DOCKED_MOC_FILES})
 
 add_executable(kpm ${kpm_SRCS} ${MOC_FILES})
 target_link_libraries(kpm
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
 )
 target_link_libraries(kpmdocked
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

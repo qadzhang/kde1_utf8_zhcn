@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/tools/qbuffer.cpp:41 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQBuffer Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQBuffer Class Reference</h1>
+
+<p>The TQBuffer class is an I/O device that operates on a TQByteArray.
+<a href="#details">More...</a>
+<p>All the functions in this class are <a href="threads.html#reentrant">reentrant</a> when TQt is built with thread support.</p>
+<p><tt>#include &lt;<a href="qbuffer-h.html">ntqbuffer.h</a>&gt;</tt>
+<p>Inherits <a href="ntqiodevice.html">TQIODevice</a>.
+<p><a href="qbuffer-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQBuffer"><b>TQBuffer</b></a> ()</li>
+<li class=fn><a href="#TQBuffer-2"><b>TQBuffer</b></a> ( TQByteArray&nbsp;buf )</li>
+<li class=fn><a href="#~TQBuffer"><b>~TQBuffer</b></a> ()</li>
+<li class=fn>TQByteArray <a href="#buffer"><b>buffer</b></a> () const</li>
+<li class=fn>bool <a href="#setBuffer"><b>setBuffer</b></a> ( TQByteArray&nbsp;buf )</li>
+<li class=fn>virtual TQ_LONG <a href="#writeBlock"><b>writeBlock</b></a> ( const&nbsp;char&nbsp;*&nbsp;p, TQ_ULONG&nbsp;len )</li>
+<li class=fn>TQ_LONG <a href="#writeBlock-2"><b>writeBlock</b></a> ( const&nbsp;TQByteArray&nbsp;&amp;&nbsp;data )</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+
+The TQBuffer class is an I/O device that operates on a <a href="qbytearray.html">TQByteArray</a>.
+<p> 
+
+<p> TQBuffer is used to read and write to a memory buffer. It is
+normally used with a <a href="ntqtextstream.html">TQTextStream</a> or a <a href="ntqdatastream.html">TQDataStream</a>. TQBuffer has an
+associated TQByteArray which holds the buffer data. The <a href="ntqiodevice.html#size">size</a>() of
+the buffer is automatically adjusted as data is written.
+<p> The constructor <tt>TQBuffer(TQByteArray)</tt> creates a TQBuffer using an
+existing byte array. The byte array can also be set with
+<a href="#setBuffer">setBuffer</a>(). Writing to the TQBuffer will modify the original byte
+array because TQByteArray is <a href="shclass.html">explicitly
+    shared.</a>
+<p> Use <a href="ntqiodevice.html#open">open</a>() to open the buffer before use and to set the mode
+(read-only, write-only, etc.). <a href="ntqiodevice.html#close">close</a>() closes the buffer. The
+buffer must be closed before reopening or calling setBuffer().
+<p> A common way to use TQBuffer is through <a href="ntqdatastream.html">TQDataStream</a> or <a href="ntqtextstream.html">TQTextStream</a>, which have constructors that take a TQBuffer
+parameter. For convenience, there are also TQDataStream and
+<a href="ntqtextstream.html">TQTextStream</a> constructors that take a <a href="qbytearray.html">TQByteArray</a> parameter. These
+constructors create and open an internal TQBuffer.
+<p> Note that TQTextStream can also operate on a <a href="ntqstring.html">TQString</a> (a Unicode
+string); a TQBuffer cannot.
+<p> You can also use TQBuffer directly through the standard <a href="ntqiodevice.html">TQIODevice</a>
+functions <a href="ntqiodevice.html#readBlock">readBlock</a>(), <a href="#writeBlock">writeBlock</a>() <a href="ntqiodevice.html#readLine">readLine</a>(), <a href="ntqiodevice.html#at">at</a>(), <a href="ntqiodevice.html#getch">getch</a>(),
+<a href="ntqiodevice.html#putch">putch</a>() and <a href="ntqiodevice.html#ungetch">ungetch</a>().
+<p> <p>See also <a href="ntqfile.html">TQFile</a>, <a href="ntqdatastream.html">TQDataStream</a>, <a href="ntqtextstream.html">TQTextStream</a>, <a href="qbytearray.html">TQByteArray</a>, <a href="shclass.html">Shared Classes</a>, <a href="collection.html">Collection Classes</a>, and <a href="io.html">Input/Output and Networking</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQBuffer"></a>TQBuffer::TQBuffer ()
+</h3>
+Constructs an empty buffer.
+
+<h3 class=fn><a name="TQBuffer-2"></a>TQBuffer::TQBuffer ( <a href="qbytearray.html">TQByteArray</a>&nbsp;buf )
+</h3>
+Constructs a buffer that operates on <em>buf</em>.
+<p> If you open the buffer in write mode (<a href="ntqfile.html#open"><a href="ntqfile.html#open">IO_WriteOnly</a></a> or
+<a href="ntqfile.html#open">IO_ReadWrite</a>) and write something into the buffer, <em>buf</em>
+will be modified.
+<p> Example:
+<pre>
+    <a href="ntqcstring.html">TQCString</a> str = "abc";
+    TQBuffer b( str );
+    b.<a href="ntqiodevice.html#open">open</a>( IO_WriteOnly );
+    b.<a href="ntqiodevice.html#at">at</a>( 3 ); // position at the 4th character (the terminating \0)
+    b.<a href="#writeBlock">writeBlock</a>( "def", 4 ); // write "def" including the terminating \0
+    b.<a href="ntqiodevice.html#close">close</a>();
+    // Now, str == "abcdef" with a terminating \0
+    </pre>
+ 
+<p> <p>See also <a href="#setBuffer">setBuffer</a>().
+
+<h3 class=fn><a name="~TQBuffer"></a>TQBuffer::~TQBuffer ()
+</h3>
+Destroys the buffer.
+
+<h3 class=fn><a href="qbytearray.html">TQByteArray</a> <a name="buffer"></a>TQBuffer::buffer () const
+</h3>
+
+<p> Returns this buffer's byte array.
+<p> <p>See also <a href="#setBuffer">setBuffer</a>().
+
+<h3 class=fn>bool <a name="setBuffer"></a>TQBuffer::setBuffer ( <a href="qbytearray.html">TQByteArray</a>&nbsp;buf )
+</h3>
+Replaces the buffer's contents with <em>buf</em> and returns true.
+<p> Does nothing (and returns false) if <a href="ntqiodevice.html#isOpen">isOpen</a>() is true.
+<p> Note that if you open the buffer in write mode (<a href="ntqfile.html#open"><a href="ntqfile.html#open">IO_WriteOnly</a></a> or
+<a href="ntqfile.html#open">IO_ReadWrite</a>) and write something into the buffer, <em>buf</em> is also
+modified because <a href="qbytearray.html">TQByteArray</a> is an <a href="shclass.html#explicitly-shared">explicitly shared</a> class.
+<p> <p>See also <a href="#buffer">buffer</a>(), <a href="ntqiodevice.html#open">open</a>(), and <a href="ntqiodevice.html#close">close</a>().
+
+<h3 class=fn>TQ_LONG <a name="writeBlock"></a>TQBuffer::writeBlock ( const&nbsp;char&nbsp;*&nbsp;p, TQ_ULONG&nbsp;len )<tt> [virtual]</tt>
+</h3>
+Writes <em>len</em> bytes from <em>p</em> into the buffer at the current
+index position, overwriting any characters there and extending the
+buffer if necessary. Returns the number of bytes actually written.
+<p> Returns -1 if an error occurred.
+<p> <p>See also <a href="ntqiodevice.html#readBlock">readBlock</a>().
+
+<p>Reimplemented from <a href="ntqiodevice.html#writeBlock">TQIODevice</a>.
+<h3 class=fn>TQ_LONG <a name="writeBlock-2"></a>TQBuffer::writeBlock ( const&nbsp;<a href="qbytearray.html">TQByteArray</a>&nbsp;&amp;&nbsp;data )
+</h3>
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function.
+<p> This convenience function is the same as calling
+<tt>writeBlock( data.data(), data.size() )</tt> with <em>data</em>.
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

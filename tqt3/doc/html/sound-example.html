@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/sound/sound.doc:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Sound Example</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Sound Example</h1>
+
+   
+<p> 
+This example shows how easy it is to play sounds, e.g. .WAV files,
+if your machine is set up to play audio.
+<p> <hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/sound.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+#ifndef PLAY_H
+#define PLAY_H
+
+#include "ntqsound.h"
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+
+class SoundPlayer : public <a href="ntqmainwindow.html">TQMainWindow</a> {
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    SoundPlayer();
+
+public slots:
+    void doPlay1();
+    void doPlay2();
+    void doPlay3();
+    void doPlay4();
+    void doPlay34();
+    void doPlay1234();
+
+private:
+    <a href="ntqsound.html">TQSound</a> bucket3;
+    <a href="ntqsound.html">TQSound</a> bucket4;
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/sound.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+//
+// Very simple example of TQSound::play(filename)
+//
+// 99% of this program is just boilerplate TQt code to put up a nice
+// window so you think something special is happening.
+//
+
+#include "sound.h"
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qmenubar-h.html">ntqmenubar.h</a>&gt;
+
+<a name="f581"></a>SoundPlayer::SoundPlayer() :
+    <a href="ntqmainwindow.html">TQMainWindow</a>(),
+    bucket3("sounds/3.wav"),
+    bucket4("sounds/4.wav")
+{
+    if (!TQSound::isAvailable()) {
+        // Bail out.  Programs in which sound is not critical
+        // could just silently (hehe) ignore the lack of a server.
+        //
+<a name="x2812"></a>        TQMessageBox::<a href="ntqmessagebox.html#warning">warning</a>(this,"No Sound",
+                "&lt;p&gt;&lt;b&gt;Sorry, you are not running the Network Audio System.&lt;/b&gt;"
+                "&lt;p&gt;If you have the `au' command, run it in the background before this program. "
+                "The latest release of the Network Audio System can be obtained from:"
+                "&lt;pre&gt;\n"
+                " &amp;nbsp;\n"
+                "   ftp.ncd.com:/pub/ncd/technology/src/nas\n"
+                "   ftp.x.org:/contrib/audio/nas\n"
+                "&lt;/pre&gt;"
+                "&lt;p&gt;Release 1.2 of NAS is also included with the X11R6"
+                "contrib distribution."
+                "&lt;p&gt;After installing NAS, you will then need to reconfigure TQt with NAS sound support");
+    }
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a> *file = new <a href="ntqpopupmenu.html">TQPopupMenu</a>;
+<a name="x2810"></a>    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Play &amp;1",  this, TQ_SLOT(doPlay1()), CTRL+Key_1);
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Play &amp;2",  this, TQ_SLOT(doPlay2()), CTRL+Key_2);
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Play from bucket &amp;3",  this, TQ_SLOT(doPlay3()), CTRL+Key_3);
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Play from bucket &amp;4",  this, TQ_SLOT(doPlay4()), CTRL+Key_4);
+<a name="x2811"></a>    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Play 3 and 4 together",  this, TQ_SLOT(doPlay34()));
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("Play all together",  this, TQ_SLOT(doPlay1234()));
+    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>("E&amp;xit",  tqApp, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()));
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertItem("&amp;File", file);
+}
+
+void <a name="f582"></a>SoundPlayer::doPlay1()
+{
+<a name="x2813"></a>    TQSound::<a href="ntqsound.html#play">play</a>("sounds/1.wav");
+}
+
+void <a name="f583"></a>SoundPlayer::doPlay2()
+{
+    TQSound::<a href="ntqsound.html#play">play</a>("sounds/2.wav");
+}
+
+void <a name="f584"></a>SoundPlayer::doPlay3()
+{
+    bucket3.play();
+}
+
+void <a name="f585"></a>SoundPlayer::doPlay4()
+{
+    bucket4.play();
+}
+
+void <a name="f586"></a>SoundPlayer::doPlay34()
+{
+    // Some sound platforms will only play one sound at a time
+    bucket3.play();
+    bucket4.play();
+}
+
+void <a name="f587"></a>SoundPlayer::doPlay1234()
+{
+    // Some sound platforms will only play one sound at a time
+    TQSound::<a href="ntqsound.html#play">play</a>("sounds/1.wav");
+    TQSound::<a href="ntqsound.html#play">play</a>("sounds/2.wav");
+    bucket3.play();
+    bucket4.play();
+}
+
+int main(int argc, char** argv)
+{
+    <a href="ntqapplication.html">TQApplication</a> app(argc,argv);
+    SoundPlayer sp;
+    app.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>(&amp;sp);
+    sp.<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Sounds");
+    sp.<a href="ntqwidget.html#show">show</a>();
+    return app.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+</pre>
+
+<p> <p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

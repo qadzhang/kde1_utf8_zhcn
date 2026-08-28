@@ -88,11 +88,11 @@ QPixmap mapLine(KiKbdMapConfig* map) {
   pp.end();
 
   // mask
-  bm.fill(color0);
+  bm.fill(TQt::color0);
   pb.begin(&bm);
-  pb.setPen(color1);
-  pb.fillRect(0, 0, 24, 16, color1);
-  pb.fillRect(1, 1, width-1, 14, color1);
+  pb.setPen(TQt::color1);
+  pb.fillRect(0, 0, 24, 16, TQt::color1);
+  pb.fillRect(1, 1, width-1, 14, TQt::color1);
   pb.end();
   
   return pm.setMask(bm), pm;

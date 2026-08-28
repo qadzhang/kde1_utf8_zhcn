@@ -53,7 +53,7 @@ void DisplayMgrMDI::removeTopLevel(QWidget *w){
     km->hide();
   }
   else
-  warning("Could not find widget in removeTopLevel");
+  tqWarning("Could not find widget in removeTopLevel");
 }
 
 void DisplayMgrMDI::show(QWidget *w){
@@ -69,7 +69,7 @@ void DisplayMgrMDI::show(QWidget *w){
   if(km != 0)
     km->show();
   else
-  warning("Could not find widget in show");
+  tqWarning("Could not find widget in show");
 
 }
 
@@ -88,7 +88,7 @@ void DisplayMgrMDI::raise(QWidget *w){
     km->slotRestore();
   }
   else
-  warning("Could not find widget in raise");
+  tqWarning("Could not find widget in raise");
 
 }
 
@@ -106,7 +106,7 @@ void DisplayMgrMDI::setCaption(QWidget *w, const char *cap){
   if(km != 0)
     km->setCaption(cap);
   else
-  warning("Could not find widget in setCaption");
+  tqWarning("Could not find widget in setCaption");
 
 }
 #include "displayMgrMDI.moc"

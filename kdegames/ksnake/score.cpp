@@ -20,7 +20,7 @@ Score::Score( QWidget *parent, const char *name )
     :QObject( parent, name )
 {
     QString libDir;
-    libDir.setStr(KApplication::kde_datadir().copy());
+    libDir = (KApplication::kde_datadir());
     libDir.append("/ksnake/");
     file.setName( libDir + "highScores");
     playerName = getenv("LOGNAME");

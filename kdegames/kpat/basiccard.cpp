@@ -174,7 +174,6 @@ basicCard::~basicCard() {
 basicCard::basicCard( Values v, Suits s,  QWidget *parent, bool empt)
   : QLabel( parent, 0 ), suit(s), value(v), empty_flag(empt), direction(0)
 {
-  initMetaObject();
 
   if (!maps) {
     maps = new cardMaps; //   The pictures...

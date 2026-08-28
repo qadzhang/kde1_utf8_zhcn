@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/kernel/qsignal.cpp:42 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQSignal Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQSignal Class Reference</h1>
+
+<p>The TQSignal class can be used to send signals for classes
+that don't inherit TQObject.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qsignal-h.html">ntqsignal.h</a>&gt;</tt>
+<p>Inherits <a href="ntqobject.html">TQObject</a>.
+<p><a href="qsignal-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQSignal"><b>TQSignal</b></a> ( TQObject&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#~TQSignal"><b>~TQSignal</b></a> ()</li>
+<li class=fn>bool <a href="#connect"><b>connect</b></a> ( const&nbsp;TQObject&nbsp;*&nbsp;receiver, const&nbsp;char&nbsp;*&nbsp;member )</li>
+<li class=fn>bool <a href="#disconnect"><b>disconnect</b></a> ( const&nbsp;TQObject&nbsp;*&nbsp;receiver, const&nbsp;char&nbsp;*&nbsp;member = 0 )</li>
+<li class=fn>void <a href="#activate"><b>activate</b></a> ()</li>
+<li class=fn>bool isBlocked () const &nbsp;<em>(obsolete)</em></li>
+<li class=fn>void block ( bool&nbsp;b ) &nbsp;<em>(obsolete)</em></li>
+<li class=fn>void setParameter ( int&nbsp;value ) &nbsp;<em>(obsolete)</em></li>
+<li class=fn>int parameter () const &nbsp;<em>(obsolete)</em></li>
+<li class=fn>void <a href="#setValue"><b>setValue</b></a> ( const&nbsp;TQVariant&nbsp;&amp;&nbsp;value )</li>
+<li class=fn>TQVariant <a href="#value"><b>value</b></a> () const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQSignal class can be used to send signals for classes
+that don't inherit <a href="ntqobject.html">TQObject</a>.
+<p> 
+
+<p> If you want to send signals from a class that does not inherit
+TQObject, you can create an internal TQSignal object to emit the
+signal. You must also provide a function that connects the signal
+to an outside object slot.  This is how we have implemented
+signals in the <a href="ntqmenudata.html">TQMenuData</a> class, which is not a TQObject.
+<p> In general, we recommend inheriting TQObject instead. TQObject
+provides much more functionality.
+<p> You can set a single <a href="ntqvariant.html">TQVariant</a> parameter for the signal with
+<a href="#setValue">setValue</a>().
+<p> Note that TQObject is a <em>private</em> base class of TQSignal, i.e. you
+cannot call any TQObject member functions from a TQSignal object.
+<p> Example:
+<pre>
+        #include &lt;<a href="qsignal-h.html">ntqsignal.h</a>&gt;
+
+        class MyClass
+        {
+        public:
+            MyClass();
+            ~MyClass();
+
+            void doSomething();
+
+            void connect( <a href="ntqobject.html">TQObject</a> *receiver, const char *member );
+
+        private:
+            TQSignal *sig;
+        };
+
+        MyClass::MyClass()
+        {
+            sig = new TQSignal;
+        }
+
+        MyClass::~MyClass()
+        {
+            delete sig;
+        }
+
+        void MyClass::doSomething()
+        {
+            // ... does something
+            sig-&gt;<a href="#activate">activate</a>(); // emits the signal
+        }
+
+        void MyClass::connect( <a href="ntqobject.html">TQObject</a> *receiver, const char *member )
+        {
+            sig-&gt;<a href="#connect">connect</a>( receiver, member );
+        }
+    </pre>
+ 
+<p>See also <a href="io.html">Input/Output and Networking</a> and <a href="misc.html">Miscellaneous Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQSignal"></a>TQSignal::TQSignal ( <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;parent = 0, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a signal object called <em>name</em>, with the parent object
+<em>parent</em>. These arguments are passed directly to <a href="ntqobject.html">TQObject</a>.
+
+<h3 class=fn><a name="~TQSignal"></a>TQSignal::~TQSignal ()
+</h3>
+Destroys the signal. All connections are removed, as is the case
+with all TQObjects.
+
+<h3 class=fn>void <a name="activate"></a>TQSignal::activate ()
+</h3>
+
+<p> Emits the signal. If the platform supports <a href="ntqvariant.html">TQVariant</a> and a
+parameter has been set with <a href="#setValue">setValue</a>(), this value is passed in
+the signal.
+
+<h3 class=fn>void <a name="block"></a>TQSignal::block ( bool&nbsp;b )
+</h3>
+
+<b>This function is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+<p> Blocks the signal if <em>b</em> is true, or unblocks the signal if <em>b</em> is false.
+<p> An activated signal disappears into hyperspace if it is blocked.
+<p> <p>See also <a href="#isBlocked">isBlocked</a>(), <a href="#activate">activate</a>(), and <a href="ntqobject.html#blockSignals">TQObject::blockSignals</a>().
+
+<h3 class=fn>bool <a name="connect"></a>TQSignal::connect ( const&nbsp;<a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;receiver, const&nbsp;char&nbsp;*&nbsp;member )
+</h3>
+Connects the signal to <em>member</em> in object <em>receiver</em>.
+<p> <p>See also <a href="#disconnect">disconnect</a>() and <a href="ntqobject.html#connect">TQObject::connect</a>().
+
+<h3 class=fn>bool <a name="disconnect"></a>TQSignal::disconnect ( const&nbsp;<a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;receiver, const&nbsp;char&nbsp;*&nbsp;member = 0 )
+</h3>
+Disonnects the signal from <em>member</em> in object <em>receiver</em>.
+<p> <p>See also <a href="#connect">connect</a>() and <a href="ntqobject.html#disconnect">TQObject::disconnect</a>().
+
+<h3 class=fn>bool <a name="isBlocked"></a>TQSignal::isBlocked () const
+</h3>
+
+<b>This function is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+<p> Returns true if the signal is blocked, or false if it is not blocked.
+<p> The signal is not blocked by default.
+<p> <p>See also <a href="#block">block</a>() and <a href="ntqobject.html#signalsBlocked">TQObject::signalsBlocked</a>().
+
+<h3 class=fn>int <a name="parameter"></a>TQSignal::parameter () const
+</h3> <b>This function is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+
+<h3 class=fn>void <a name="setParameter"></a>TQSignal::setParameter ( int&nbsp;value )
+</h3> <b>This function is obsolete.</b> It is provided to keep old source working. We strongly advise against using it in new code.
+
+<h3 class=fn>void <a name="setValue"></a>TQSignal::setValue ( const&nbsp;<a href="ntqvariant.html">TQVariant</a>&nbsp;&amp;&nbsp;value )
+</h3>
+Sets the signal's parameter to <em>value</em>
+
+<h3 class=fn><a href="ntqvariant.html">TQVariant</a> <a name="value"></a>TQSignal::value () const
+</h3>
+Returns the signal's parameter
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

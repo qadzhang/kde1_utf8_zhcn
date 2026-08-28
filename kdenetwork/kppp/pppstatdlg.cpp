@@ -238,7 +238,7 @@ void PPPStatsDlg::take_stats() {
   ips_set = false;
   bin_last = ibytes;
   bout_last = obytes;  
-  ringIdx = 0;
+  ringIdx = 0;  /* TQt3 迁移 */
   for(int i = 0; i < MAX_GRAPH_WIDTH; i++) {
     bin[i] = -1;
     bout[i] = -1;

@@ -1,0 +1,2027 @@
+2004-09-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* changes.immodule
+	  - Describe a bugfix
+	
+2004-09-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/inputmethod/qinputcontextinterface_p.h
+	  - Update UUID of QInputContextFactory in accordance with API change
+	    of QInputContext to avoid loading old invalid plugins
+	
+2004-09-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* README.immodule
+	  - Add 'About this release' section
+	  - Update version information
+	  - Update to follow the change of configure options
+	  - Modify some English expressions
+	
+	* changes.immodule
+	  - Move release information to README.immodule
+	  - Add differences from previous release
+	  - Add description about incremental change indication
+	
+	* ChangeLog.immodule
+	  - Update
+	
+2004-09-09  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qapplication.cpp
+	  - (removePostedEvents):
+	    * Fix infinite loop condition
+	    * delete receiver->postedEvents if the list has been empty
+	
+2004-09-09  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit backports some code fragments from Qt4 branch to make
+	  input method plugins source compatible with Qt4.
+	
+	* src/kernel/qinputcontext.cpp
+	  - (QInputContext): Add 'parent' arg
+	
+	* src/kernel/ntqinputcontext.h
+	  - Exclude ntqptrlist.h when compile with Qt4
+	  - (struct QInputContextMenu): Exclude member variables when compile
+	    with Qt4
+	  - (QInputContext): Add 'parent' arg
+	  - (addActionsTo): New function for Qt4
+	
+2004-09-08  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit renames input method module from 'input' to 'inputmehod'
+	  because the name 'input' is too generic to indicate its function
+	
+	* configure
+	  - Replace configuration options '-im' and '-im-ext' with
+	    '-inputmethod' and '-inputmethod-ext' to be consistent with the
+	    name of input method module subdirectory 'inputmethod'
+	  - Rename the module name 'input' with 'inputmethod'
+	
+	* src/qt.pro
+	  - Rename the module name 'input' with 'inputmethod'
+	  - Rename some variable names inaccordance with the renaming of the
+	    module
+	  - Replace 'qt_input.pri' with 'qt_inputmethod.pri' in accordance
+	    with the renaming of the file
+	
+	* src/inputmethod/qt_input.pri
+	  - Rename to qt_inputmethod.pri
+	* src/inputmethod/qt_input.pri
+	  - Renamed from qt_input.pri
+	  - Replace module names
+	  - Rename some variable names inaccordance with the renaming of the
+	    module
+	
+2004-09-08  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* Rename input module subdirectory from "input" to "inputmethod"
+	
+2004-09-08  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit contains following issues
+	  - An API change. Return type of QInputContext::identifierName and
+	    QInputContext::language has been changed from QCString which is
+	    deprecated in Qt4 to QString to make plugins source compatible
+	    with Qt4.
+	  - Other backports from Qt4 branch
+	  - Fix event receiving order inversion between QKeyEvent and
+	    QIMEvent. The code is implemented based on Cougar's and
+	    Kazuki's. Thank you the efforts. See following discussion for
+	    further information.
+	    http://freedesktop.org/pipermail/immodule-qt/2004-September/000447.html
+	    http://freedesktop.org/pipermail/immodule-qt/2004-September/000497.html
+	
+	* src/kernel/ntqinputcontext.h
+	  - (identifierName, language): Change return type from QCString to QString
+	  - (addMenusTo): Make TQt3 specific
+	* src/kernel/qinputcontext.cpp
+	  - (identifierName):
+	    * Change return type from QCString to QString
+	    * Modify the function description comment
+	  - (language): Change return type from QCString to QString
+	
+	* src/kernel/qwidget.cpp
+	  - (clearFocus): Enclose immodule specific code by #if
+	    defined(Q_WS_X11)
+	
+	* src/kernel/ntqapplication.h
+	  - Add 'class QIMEvent' declaration
+	  - (removePostedEvents): New overriding function
+	* src/kernel/qapplication_x11.cpp
+	  - Remove redundant 'class QInputContext' declaration
+	  - (postIMEvent): Fix the event receiving order inversion problem
+	  - (x11_apply_settings): Replace QString::find() which is deprecated
+	    in Qt4 with QString::startsWith()
+	  - (postEvent): Fix invalid QIMEvent compression that ignores IMStart
+	    boundary
+	  - (removePostedEvents): Original version of the function. Replace
+	    the implementation with 2-args version. The behavior is not
+	    changed
+	  - (removePostedEvents): New overriding function. This function only
+	    removes events that has specified event type. The implementation
+	    is copied from original version of the function and modified to
+	    accept event_type. This function is required by postIMEvent()
+	  - (setActiveWindow): Enclose immodule specific code by #if
+	    defined(Q_WS_X11)
+	
+	* src/input/qinputcontextinterface_p.h
+	  - Modify a coding style to follow Trolltech's one for TQt3
+	
+	* src/input/ntqinputcontextplugin.h
+	  - Fix typos in comment
+	* src/input/qinputcontextplugin.cpp
+	  - (keys, QInputContextPlugin, ~QInputContextPlugin): Modify the
+	    function description comment
+	
+	* src/input/ntqinputcontextfactory.h
+	  - Remove #include "ntqinputcontext.h" to reduce compilation dependency
+	  - Add 'class QWidget' declaration
+	  - Remove inappropriate #ifndef TQT_NO_STRINGLIST. QStringList is now
+	    required feature for immodule. See also changes of ntqfeatures.h
+	* src/input/qinputcontextfactory.cpp
+	  - Add #include "ntqinputcontext.h"
+	  - Remove unnecessary #include "ntqpopupmenu.h"
+	  - Remove inappropriate #ifndef TQT_NO_STRINGLIST. QStringList is now
+	    required feature for immodule. See also changes of ntqfeatures.h
+	
+	* src/tools/ntqfeatures.h
+	  - Define TQT_NO_IM if TQT_NO_STRINGLIST is defined
+	  - Define TQT_NO_IM_EXTENSIONS if TQT_NO_IM or TQT_NO_STRINGLIST is
+	    defined
+	
+	* plugins/src/inputmethods/inputmethods.pro
+	  - Rename conditional configuration symbol from "im" to "inputmethod"
+	    inaccordance with chanege of configure script
+	
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.h
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.cpp
+	* plugins/src/inputmethods/imsw-multi/qmultiinputcontext.h
+	  - (identifierName, language): Change return type from QCString to
+	    QString
+	
+	* plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp
+	  - (identifierName, language): Change return type from QCString to
+	    QString
+	  - (createImSelPopup): Replace QString::find() which is deprecated in
+	    Qt4 with QString::startsWith()
+	
+	* plugins/src/inputmethods/imsw-none/qnoneinputcontextplugin.cpp
+	  - (create): Replace QString::find() which is deprecated in Qt4 with
+	    QString::startsWith()
+	
+	* plugins/src/inputmethods/xim/qximinputcontext.h
+	  - (language): Change return type from QCString to QString
+	  - (identifierName):
+	    * Change return type from QCString to QString
+	    * Move inline implementation to qximinputcontext_x11.cpp
+	* plugins/src/inputmethods/xim/qximinputcontext_x11.cpp
+	  - (language): Change return type from QCString to QString
+	  - (identifierName):
+	    * Change return type from QCString to QString
+	    * Move implementation from qximinputcontext.h
+	  - (language): Replace QString::find() which is deprecated in Qt4 with
+	    QString::startsWith()
+	
+2004-08-19  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qinputcontextfactory.cpp
+	  - (keys): Modify the function description comment
+	
+2004-08-18  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qinputcontextfactory.cpp
+	  - (create_manager): Fix plugin directory from "/input" to "/inputmethods"
+	
+2004-08-18  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (KeyTbl): Add translations for Japanese and Korean alias keys
+	
+2004-08-18  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit disables default IM configuration feature using qtrc and
+	  qtconfig in BC mode. See following discussion for further
+	  information.
+	  http://freedesktop.org/pipermail/immodule-qt/2004-August/000416.html
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (x11_apply_settings): 
+	    * Move immodule handling into #ifndef TQT_NO_IM rather than TQT_NO_XIM
+	    * Move qtrc handling into #ifndef TQT_NO_IM_EXTENSIONS
+	
+	* src/inputmethods/imsw-multi/qmultiinputcontext.cpp
+	  - (QMultiInputContext): Move qtrc handling into #ifndef
+	    TQT_NO_IM_EXTENSIONS
+	
+	* tools/qtconfig/mainwindow.cpp
+	  - (MainWindow): Move qtrc handling into #ifndef TQT_NO_IM_EXTENSIONS
+	
+	* src/kernel/qt_x11.pri
+	  - Remove unnecessary configuration
+	
+2004-08-18  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	Merge differences between qt-x11-free-3.3.2 and qt-x11-free-3.3.3
+	
+2004-08-18  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/imsw-multi/imsw-multi.pro
+	* plugins/src/inputmethods/simple/simple.pro
+	* plugins/src/inputmethods/imsw-none/imsw-none.pro
+	* plugins/src/inputmethods/xim/xim.pro
+	  - Remove inappropriate 'thread' from CONFIG. Thanks to Takumi
+	    Asaki for reporting
+	
+2004-08-18  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* tools/qtconfig/mainwindow.cpp
+	  - (MainWindow): Modify a comment
+	  - (fileSave): Fix inappropriate /qt/DefaultInputMethodSwitcher
+	    overwriting. Thanks Takumi Asaki for the reporting
+	
+2004-08-17  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/imsw-multi/imsw-multi.pro
+	* plugins/src/inputmethods/simple/simple.pro
+	* plugins/src/inputmethods/imsw-none/imsw-none.pro
+	* plugins/src/inputmethods/xim/xim.pro
+	  - Change plugin directory from $TQTDIR/plugins/input/ to
+	    $TQTDIR/plugins/inputmethods/
+	* changes.immodule
+	  - Add a description for the change of plugin directory
+	
+2004-08-17  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/ntqnamespace.h
+	  - (Qt::Key) Add a comment about Korean-specific keyboard
+	    support based on the information from Choe Hwanjin. Thanks
+	    for the information. See following discussion for further
+	    information
+	    http://freedesktop.org/pipermail/immodule-qt/2004-August/000402.html
+	  - (Qt::Key) Comment out some Korean-specific keys that has an
+	    equivalent generic key
+	
+2004-08-14  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This is preparation for qt-x11-immodule-unified-qt3.3.2-20040814
+	
+	* ChangeLog.immodule
+	  - Update
+	
+2004-08-14  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* changes.immodule
+	  - Add and modify some descriptions
+	
+	* configure
+	  - Rewrite some codes to avoid patch rejection against Qt
+	    3.3.3. Logically equivalent.
+	* src/widgets/qtextedit.cpp
+	  - Rewrite some codes to avoid patch rejection against Qt
+	    3.3.3. Logically equivalent.
+	* src/widgets/qlineedit.cpp
+	  - Rewrite some codes to avoid patch rejection against Qt
+	    3.3.3. Logically equivalent.
+	
+2004-08-13  LiuCougar  <liucougar@gmail.com>
+	
+	cleanup: get rid of some warnings
+2004-08-12  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* changes.immodule
+	  - New file. This file has been written for both users and
+	    developers to inform important changes
+	
+2004-08-12  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This is preparation for qt-x11-immodule-unified-qt3.3.2-20040812
+	
+	* ChangeLog.immodule
+	  - Update
+	
+2004-08-12  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qwidget_x11.cpp
+	  - (changeInputContext, createInputContext): Fix qic location
+	  - (destroyInputContext): Add safety check
+	
+2004-08-12  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* configure
+	  - Fix incomplete qconfig configuratoin about TQT_NO_IM and
+	    TQT_NO_IM_EXTENSIONS
+	
+	* src/kernel/qwidget_x11.cpp
+	  - (changeInputContext, createInputContext, destroyInputContext): Fix
+	    invalid pointer reference
+	
+2004-08-12  LiuCougar  <liucougar@gmail.com>
+	
+	fixed a compile issue in my gentoo box (gcc 3.3.3, glibc 2.3.3
+2004-08-12  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* configure
+	  - Fix option consistency handling between '-im' and '-im-ext'
+	
+	* README.immodule
+	  - Fix a typo
+	
+2004-08-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* README.immodule
+	  - Modify a little
+	
+2004-08-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* README.immodule
+	  - New file. Some explanation has been described
+	
+	* ChangeLog.immodule
+	  - New file
+	
+2004-08-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/xim/qximinputcontext_x11.cpp
+	  - (language): Remove QLocale dependency to be compiled on TQt 3.2.x
+	    or earlier
+	
+2004-08-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit merges 'Binary Compatible branch' into the trunk to
+	  reduce maintenance cost. Now binary compatibility is
+	  configurable. Binary incompatible features are surrounded by
+	  #ifndef TQT_NO_IM_EXTENSIONS
+	
+	* configure
+	  - Add '-im' option to enable immodule feature (default yes).
+	  - Add '-im-ext' option to enable more immodule extensions (default
+	    no). Specify this option 'no' to keep binary compatibility with
+	    standard TQt3
+	
+	* src/kernel/qt_x11.pri
+	  - Add conditional TQT_NO_IM and TQT_NO_IM_EXTENSIONS definition in
+	    accordance with '-im' and '-im-ext' options
+	
+	* src/kernel/ntqwidget.h
+	  - (icHolderWidget): New function for TQT_NO_IM_EXTENSIONS
+	  - (ic): Add #ifndef TQT_NO_IM_EXTENSIONS for binary incompatible
+	    variable
+	  - (xic): Add #ifdef TQT_NO_IM_EXTENSIONS for binary compatible
+	    variable
+	* src/kernel/qwidget_x11.cpp
+	  - (create): Add #ifndef TQT_NO_IM_EXTENSIONS
+	  - (destroy): Make some codes TQT_NO_IM_EXTENSIONS independent
+	  - (createTLSysExtra): Add a code fragment for TQT_NO_IM_EXTENSIONS
+	  - (deleteTLSysExtra): Modify a comment
+	  - (getInputContext, changeInputContext, createInputContext,
+	    destroyInputContext): Merge code fragments for TQT_NO_IM_EXTENSIONS
+	  - (deleteExtra): Merge a comment for TQT_NO_IM_EXTENSIONS
+	
+	* src/kernel/ntqapplication.h
+	  - (locateICHolderWidget, icHolderWidgets, create_xim, close_xim):
+	    New functions for TQT_NO_IM_EXTENSIONS
+	* src/kernel/qapplication_x11.cpp
+	  - (create_im, close_im): Add #ifndef TQT_NO_IM_EXTENSIONS
+	  - (create_xim, close_xim): Merge functions for TQT_NO_IM_EXTENSIONS
+	  - (tqt_init_internal, tqt_cleanup): Merge code fragments for
+	    TQT_NO_IM_EXTENSIONS
+	
+	* plugins/src/inputmethods/inputmethods.pro
+	  - Make plugin compilations configurable with '-im' option
+	
+2004-08-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/xim/qximinputcontext.h
+	  - Replace QXIMINPUTCONTEXT_P_H with QXIMINPUTCONTEXT_H
+	
+	* src/widgets/qlineedit.cpp
+	  - (QLineEditPrivate::updateMicroFocusHint): Modify the comment a
+	    little
+	
+2004-08-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit is participating with recent 'keyword static of C++'
+	  discussion.  See
+	  http://freedesktop.org/pipermail/immodule-qt/2004-August/000344.html
+	  for further information
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (QETWidget::translateKeyEventInternal): Prevent interwidget key
+	    state transition about RTL extensions. This code had been written
+	    by Daisuke Kameda in qt-x11-immodule-all-qt3.3.1-20040316.diff
+	
+	* src/widgets/qlineedit.cpp
+	  - (QLineEditPrivate::updateMicroFocusHint): Add a comment that
+	    explains that old rect variable is intentionally static
+	
+2004-08-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit turns the argument of QInputContext::filterEvent() into
+	  const. See
+	  http://freedesktop.org/pipermail/immodule-qt/2004-August/000335.html
+	  for further information
+	
+	* src/kernel/ntqinputcontext.h
+	  - (filterEvent): Follow the API change
+	* src/kernel/qinputcontext.cpp
+	  - (filterEvent): Follow the API change
+	
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.h
+	  - (filterEvent): Follow the API change
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.cpp
+	  - (filterEvent): Follow the API change
+	* plugins/src/inputmethods/imsw-multi/qmultiinputcontext.h
+	  - (filterEvent): Follow the API change
+	* plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp
+	  - (filterEvent): Follow the API change
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/simple/xcompose2q.rb
+	  - Update to accept Compose flie of X.org's X11R6.7.0
+	  - Accept 'XCOMM' as comment sign to accept raw source file
+	  - Accept both " " and "\"" as valid RHS
+	* plugins/src/inputmethods/simple/composetable.cpp
+	  - Update Compose table from XFree86 4.3.0 to X.org's X11R6.7.0
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit replaces the invalid header words 'This file is
+	  part of the kernel module' of following files with 'This file
+	  is part of the input method module'
+	
+	* plugins/src/inputmethods/imsw-multi/qmultiinputcontextplugin.cpp
+	* plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp
+	* plugins/src/inputmethods/imsw-multi/qmultiinputcontextplugin.h
+	* plugins/src/inputmethods/imsw-multi/qmultiinputcontext.h
+	* plugins/src/inputmethods/simple/qsimpleinputcontextplugin.cpp
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.cpp
+	* plugins/src/inputmethods/simple/qsimpleinputcontextplugin.h
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.h
+	* plugins/src/inputmethods/simple/composetable.cpp
+	* plugins/src/inputmethods/imsw-none/qnoneinputcontextplugin.cpp
+	* plugins/src/inputmethods/imsw-none/qnoneinputcontextplugin.h
+	* plugins/src/inputmethods/xim/qximinputcontextplugin.cpp
+	* plugins/src/inputmethods/xim/qximinputcontextplugin.h
+	* plugins/src/inputmethods/xim/qximinputcontext.h
+	* plugins/src/inputmethods/xim/qximinputcontext_x11.cpp
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/simple/xcompose2q.rb
+	  - Fix broken translation entries for most ASCII characters
+	* plugins/src/inputmethods/simple/composetable.cpp
+	  - Translate again with fixed xcompose2q.rb. This fixes many
+	    translation entries involving ascii character such as
+	    "<Multi_key> <space> <minus>"
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/simple/xcompose2q.rb
+	  - New file. This script is used for translating X's Compose
+	    table into QSimpleInputContext's table
+	  - Some bugs included
+	  - Although I had released previous versions of this script
+	    under GPL, I have released this version under another
+	    license. See header
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.h
+	  - Follow Trolltech's coding style for TQt3
+	  - Remove unnecessary headers
+	  - (UNITIZE): Moved from qsimpleinputcontext.cpp. QT_ prefix is not
+	    required since a macro does not pollute symbol space
+	  - (struct _ComposeTableElement): Rename to QComposeTableElement
+	  - (struct QComposeTableElement): Renamed from _ComposeTableElement
+	  - (struct _ComposeTable): Rename to QComposeTable
+	  - (struct QComposeTable): Renamed from _ComposeTable
+	  - (isPreeditRelocationEnabled): Remove unnecessary overloading
+	    function
+	  - (isPreeditPreservationEnabled): Remove unnecessary function
+	  - (checkComposeTable): Follow the renaming of the types of args
+	  - (defaultComposeTable): New static member variable
+	
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.cpp
+	  - Separate composing table definition to composetable.cpp
+	  - Remove unnecessary headers
+	  - Replace 'true' and 'false' with 'TRUE' and 'FALSE' to follow
+	    Trolltech's coding style for TQt3
+	  - Replace _ComposeTableElement with QComposeTableElement to follow
+	    the renaming
+	  - Replace ComposeTable with QComposeTable to follow the renaming
+	  - (UNITIZE): Move to qsimpleinputcontext.h
+	  - (defaultTable): Move to composetable.cpp
+	  - (qtComposeTable): Move to composetable.cpp as defaultComposeTable
+	  - (filterEvent):
+	    * Clean up
+	    * Add a comment about key compression
+	    * replace qtComposeTable with defaultComposeTable to follow the
+	      renaming
+	  - (unsetFocus): Remove unnecessary isPreeditPreservationEnabled()
+	    check
+	  - (identifierName): Remove 'FIXME' comment
+	  - (isPreeditRelocationEnabled): Remove unnecessary overloading
+	    function
+	  - (isPreeditPreservationEnabled): Remove unnecessary function
+	
+	* plugins/src/inputmethods/simple/composetable.cpp
+	  - New file. This file has been separated from
+	    qsimpleinputcontext.cpp to achieve following issues
+	    * increase table maintenance ability
+	    * ease editing code part of QSimpleInputContext
+	    * ease development log tracking
+	    * ease copyright tracking
+	    * enclose UTF-8 comments into this file only
+	  - Add original header from Compose file of XFree86 4.3.0
+	  - (defaultTable) Moved from qsimpleinputcontext.cpp
+	  - (defaultComposeTable): New variable definition
+	
+	* plugins/src/inputmethods/simple/simple.pro
+	  - Add composetable.cpp to SOURCES
+	
+	* plugins/src/inputmethods/simple/qsimpleinputcontextplugin.cpp
+	  - (displayName, description): Modify the descriptions appropriately
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/xim/qximinputcontext_x11.cpp
+	  - Replace #include "qximinputcontext_p.h" with
+	    "qximinputcontext.h". XIM plugin is now working properly
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit changes the XIM input method into plugin. A little
+	  modification is still required to work. See next commit information
+	
+	* src/input/qinputcontextfactory.cpp
+	  - Remove XIM dependency
+	  - (create, keys): Remove XIM dependent codes
+	
+	* src/input/qt_input.pri
+	  - Remove QXIMInputContext entries
+	* src/input/qximinputcontext_p.h
+	  - Moved to plugins/src/inputmethods/xim/qximinputcontext.h
+	* src/input/qximinputcontext_x11.cpp
+	  - Moved to plugins/src/inputmethods/xim/qximinputcontext_x11.cpp
+	
+	* plugins/src/inputmethods/inputmethods.pro
+	  - Add xim to SUBDIRS
+	* plugins/src/inputmethods/xim
+	  - New directory
+	* plugins/src/inputmethods/xim/xim.pro
+	  - New file
+	* plugins/src/inputmethods/xim/qximinputcontextplugin.h
+	  - New file
+	  - (class QXIMInputContextPlugin): New class
+	  - (QXIMInputContextPlugin, ~QXIMInputContextPlugin, keys, create,
+	    languages, displayName, description): New function
+	* plugins/src/inputmethods/xim/qximinputcontextplugin.cpp
+	  - New file
+	* plugins/src/inputmethods/xim/qximinputcontext.h
+	  - Moved from src/input/qximinputcontext_p.h. No code changes have
+	    been applied. A little modification is required to work. See next
+	    commit information
+	* plugins/src/inputmethods/xim/qximinputcontext_x11.cpp
+	  - Moved from src/input/qximinputcontext_x11.cpp. No code changes have
+	    been applied
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qximinputcontext_p.h
+	  - (QXIMInputContext): Remove the arg 'widget' to conform to standard
+	    QInputContext API
+	* src/input/qximinputcontext_x11.cpp
+	  - (QXIMInputContext): Remove the arg 'widget' to conform to standard
+	    QInputContext API
+	  - (setHolderWidget): Add QInputContext::setHolderWidget() to fix
+	    inproper overriding
+	* src/input/qinputcontextfactory.cpp
+	  - (create): Remove the arg from QXIMInputContext()
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qximinputcontext_p.h
+	  - (setHolderWidget): New override function
+	* src/input/qximinputcontext_x11.cpp
+	  - (QXIMInputContext): Split most part of the initialization code
+	    into setHolderWidget() to allow null widget. This is required to
+	    make imsw-none working properly
+	  - (setHolderWidget): New function
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (x11_apply_settings): Restrict defaultIM to be an IM-switcher. An
+	    IM-switcher has a 'imsw-' prefix
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit adds imsw-none IM-switcher plugin according to
+	  following discussion with Takumi Asaki. Thanks for the opinion.
+	  http://freedesktop.org/pipermail/immodule-qt/2004-August/000320.html
+	
+	* plugins/src/inputmethods/inputmethods.pro
+	  - Add imsw-none to SUBDIRS
+	* plugins/src/inputmethods/imsw-none/imsw-none.pro
+	  - New file
+	* plugins/src/inputmethods/imsw-none/qnoneinputcontextplugin.h
+	  - New file
+	  - (class QNoneInputContextPlugin): New class
+	* plugins/src/inputmethods/imsw-none/qnoneinputcontextplugin.cpp
+	  - New file
+	  - (QNoneInputContextPlugin, ~QNoneInputContextPlugin, keys,
+	    languages, displayName, description): New function
+	  - (create): New function. Read key from TQT_IM_MODULE or
+	    /qt/DefaultInputMethod of qtrc and creates input context with the
+	    key
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* Rename input method plugin names to accord with other plugin names
+	
+	* plugins/src/inputmethods/imsw-multi/imsw-multi.pro
+	  - Rename plugin name to qimsw-multi from qmultiinputcontextplugin
+	* plugins/src/inputmethods/simple/simple.pro
+	  - Rename plugin name to qsimple from qsimpleinputcontextplugin
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/imsw-multi/multi.pro
+	  - Move to imsw-multi.pro
+	* plugins/src/inputmethods/imsw-multi/imsw-multi.pro
+	  - Move from multi.pro
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* plugins/src/inputmethods/multi
+	  - Move to imsw-multi
+	* plugins/src/inputmethods/imsw-multi
+	  - Move from multi
+	* plugins/src/inputmethods/inputmethods.pro
+	  - Replace 'multi' with 'imsw-multi' in SUBDIRS
+	
+2004-08-10  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.cpp
+	  - add full dead/multi key entries
+	  - fix some bugs
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit changes pluggable popup menu API in accordance with
+	  following discussion with Lars Knoll. Thanks for the advice.
+	  http://freedesktop.org/pipermail/immodule-qt/2004-August/000300.html
+	
+	* src/kernel/qinputcontext.cpp
+	  - (actions): New function
+	  - (exportMenusInto): Remove to rename to addMenusTo()
+	  - (addMenusTo):
+	    * New function. Renamed from exportMenusInto()
+	    * Follow introduction of enum QInputContextMenu::Action
+	    * Add an explanation for this utility function to the function
+	      description
+	
+	* src/kernel/ntqinputcontext.h
+	  - (QInputContextMenu::Action): New enum
+	  - (menus): Restrict to use with TQt3 only
+	  - (qt4menus): Remove to replace with actions()
+	  - (actions): New function for Qt4
+	
+	* src/widgets/qtextedit.cpp
+	  - (createPopupMenu): Replace exportMenusInto() with addMenusTo()
+	* src/widgets/qlineedit.cpp
+	  - (createPopupMenu): Replace exportMenusInto() with addMenusTo()
+	
+2004-08-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit changes the two input methods into plugin
+	
+	* src/input/qt_input.pri
+	  - Remove QSimpleInputContext and QMultiInputContext entries
+	* src/input/qmultiinputcontext.h
+	  - Moved to plugins/src/inputmethods/multi/qmultiinputcontext.h
+	* src/input/qmultiinputcontext.cpp
+	  - Moved to plugins/src/inputmethods/multi/qmultiinputcontext.cpp
+	* src/input/qsimpleinputcontext.h
+	  - Moved to plugins/src/inputmethods/simple/qsimpleinputcontext.h
+	* src/input/qsimpleinputcontext.cpp
+	  - Moved to plugins/src/inputmethods/simple/qsimpleinputcontext.cpp
+	
+	* plugins/src/src.pro
+	  - Add 'inputmethods' to SUBDIRS. The directory name 'inputmethods'
+	    is intended to be compatible with Qt/Embedded. Install directory
+	    name is still kept as 'input' for backward compatibility
+	* plugins/src/inputmethods/inputmethods.pro
+	  - New file
+	
+	* plugins/src/inputmethods/multi/multi.pro
+	  - New file
+	* plugins/src/inputmethods/multi/qmultiinputcontextplugin.h
+	  - New file
+	* plugins/src/inputmethods/multi/qmultiinputcontextplugin.cpp
+	  - New file
+	* plugins/src/inputmethods/multi/qmultiinputcontext.h
+	  - Moved from src/input/qmultiinputcontext.h. No code changes have
+	    been applied
+	* plugins/src/inputmethods/multi/qmultiinputcontext.cpp
+	  - Moved from src/input/qmultiinputcontext.cpp. No code changes have
+	    been applied
+	
+	* plugins/src/inputmethods/simple/simple.pro
+	  - New file
+	* plugins/src/inputmethods/simple/qsimpleinputcontextplugin.h
+	  - New file
+	* plugins/src/inputmethods/simple/qsimpleinputcontextplugin.cpp
+	  - New file
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.h
+	  - Moved from src/input/qsimpleinputcontext.h. No code changes have
+	    been applied
+	* plugins/src/inputmethods/simple/qsimpleinputcontext.cpp
+	  - Moved from src/input/qsimpleinputcontext.cpp. No code changes have
+	    been applied
+	
+	* src/input/qinputcontextfactory.cpp
+	  - (create): Remove dedicated instantiation handling for
+	    QSimpleInputContext and QMultiInputContext
+	
+	* tools/qtconfig/mainwindow.h
+	  - (inputMethodIdentifiers): New member variable
+	* tools/qtconfig/mainwindow.cpp
+	  - (MainWindow):
+	    * Replace identifier name of input methods with displaynames
+	    * Add filtering out process for IM-switchers that has "imsw-"
+	      prefix
+	    * Disable sorting for input method names
+	    * Modify some comments
+	    * Simplify setCurrentItem() handling for inputMethodCombo widget
+	    * Add recorded input method name to the display name of unknown
+	      input method
+	    * Save recorded input method name even if unknown input method
+	  - (fileSave):
+	    * Save /qt/DefaultInputMethodSwitcher with default value
+	      "imsw-multi"
+	    * Save identifier name of the input method rather than display name
+	
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContext): Update the class description comment
+	
+	* src/input/qinputcontextplugin.cpp
+	  - (class QInputContextPlugin): Update the class description comment
+	  - (keys): Update the function description comment
+	  - (languages, displayName, description): Add the function
+	    description comment
+	
+	
+2004-08-05  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit adds generic pluggable popup menu feature. See
+	  http://freedesktop.org/pipermail/immodule-qt/2004-August/000266.html
+	  for further information. The implementation may be altered in
+	  accordance with discussion in the list.
+	
+	* src/kernel/ntqinputcontext.h
+	  - (struct QInputContextMenu): New struct
+	  - (qt4menus): New function. Just a placeholder for now
+	  - (menus): New function
+	  - (exportMenusInto): New function
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContext): Add 'Text widget implementor's guide'
+	    section to the class description comment
+	  - (menus): New function
+	  - (exportMenusInto): New function
+	
+	* src/input/qmultiinputcontext.h
+	  - (qt4menus): New function. Just a placeholder for now
+	  - (menus): New function
+	* src/input/qmultiinputcontext.cpp
+	  - (menus):
+	    * New function to follow new API. The function merges slave menus
+	      and QMultiInputContext's own 'Select Input Method' menu
+	    * The functionality is ported from QLineEdit::createPopupMenu()
+	    * An accelerator has been added as 'Select Input &Method'
+	
+	* src/widgets/qtextedit.cpp
+	  - Remove QMultiInputContext dependency
+	  - (createPopupMenu): Replace QMultiInputContext dependent submenu
+	    handling with the pluggable popup menu
+	* src/widgets/qlineedit.cpp
+	  - Remove QMultiInputContext dependency
+	  - (createPopupMenu): Replace QMultiInputContext dependent submenu
+	    handling with the pluggable popup menu
+	
+	* src/kernel/ntqwidget.h
+	  - Remove #include "ntqinputcontext.h" to reduce compile time when we
+	    hacked ntqinputcontext.h
+	
+2004-08-04  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* src/input/qmultiinputcontext.cpp
+	  - use QInputContextFactory::description and set whatsthis help
+	
+2004-08-03  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit adds QInputContextFactory::description() feature
+	
+	* src/input/qinputcontextinterface_p.h
+	  - Update the UUID because the interface has been changed
+	  - (description): New function
+	
+	* src/input/ntqinputcontextplugin.h
+	  - (description): New function
+	
+	* src/input/ntqinputcontextfactory.h
+	  - (description): New function
+	  - (QInputContextPluginPrivate::description): New function
+	* src/input/qinputcontextfactory.cpp
+	  - (description): New function
+	  - (displayName): Replace fallback value with empty string instead of
+	    null
+	
+2004-08-03  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit alters the configuration convention about
+	  IM-switcher. See
+	  http://freedesktop.org/pipermail/immodule-qt/2004-August/000232.html
+	  for further information. The implementation may be altered in
+	  accordance with discussion in the list.
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (defaultIM): Replace "xim" with "imsw-multi"
+	  - (x11_apply_settings):
+	    * Replace the environment variable name TQT_IM_MODULE with
+	      TQT_IM_SWITCHER
+	    * Replace the qtrc variable name /qt/DefaultInputMethod with
+	      /qt/DefaultInputMethodSwitcher
+	    * Replace "xim" with "imsw-multi" for default plugin
+	
+	* src/input/qmultiinputcontext.h
+	  - (lastCreatedIMKey): Remove to rename to currentIMKey
+	  - (currentIMKey): New member variable. Renamed from lastCreatedIMKey
+	    because the semantics of the variable has been changed by
+	    introduction of TQT_IM_SWITCHER
+	
+	* src/input/qmultiinputcontext.cpp
+	  - Replace lastCreatedIMKey with currentIMKey
+	  - (QMultiInputContext): Add default input method specification
+	    feature using TQT_IM_MODULE and /qt/DefaultInputMethod
+	  - (createImSelPopup):
+	    * Add IM-switcher plugin elimination feature using "imsw-" prefix
+	    * Add dispName.isNull() checking
+	    * Apply some rewriting without altering logic for human readability
+	
+	* src/input/qinputcontextfactory.cpp
+	  - (create): Replace the identifier name "multi" with "imsw-multi"
+	
+2004-08-03  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* This commit implements table searching suite
+	
+	- QKeyEvent::text() is restricted to only one character,
+	  so qsimpleic use QChar::unicode() value in case keys are
+	  pressed otherwise composing keys are pressed.
+	
+	- Composing Table is temporally deleted for testing.
+	  Need to prepare proper entries.
+	  Now qsimpleic can deal with capital letter more cleaner way
+	
+	* Next, I introduce X's composing parser to qsimpleic
+	
+2004-08-02  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (x11_apply_settings): Merge the comment about defaultIM
+	    overwritten by r52 from r45
+	
+2004-07-31  LiuCougar  <liucougar@gmail.com>
+	
+	new environment variable TQT_IM_MODULE to overwrite the default inputmethod plugin
+2004-07-31  LiuCougar  <liucougar@gmail.com>
+	
+	"deleteLater" is safer then "delete" QObject directly
+2004-07-30  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/ntqnamespace.h
+	  - (Qt::Key):
+	    * Replace dead key values with new one to avoid keycode conflict
+	    * Add a comment about the latin 1 keycodes
+	    * Add some comments about the offset for keycode from X keycode
+	* src/kernel/qevent.cpp
+	  - (key): Add a comment about latin 1 keycodes to the function
+	    description.
+	
+	* src/kernel/qapplication_x11.cpp
+	  - Define define XK_XKB_KEYS to include dead key definitions from
+	    keysymdef.h
+	   - Remove XK_dead_ keys definition
+	
+2004-07-29  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* Change to use displayName() in IM-Switch Popupmenu
+	
+	* src/input/qmultiinputcontext.h
+	  - (keyDict): new variable
+	* src/input/qmultiinputcontext.cpp
+	  - (createImSelPopup): use displanName() on popup and store key in keyDict
+	  - (changeInputMethodWithMenuId): find key from using keyDict
+	
+	* Problem *
+	  - if key=="XIM", displayName(key) is QString::null
+	* Wish *
+	  - add "virtual QString description( const QString &key ) = 0;" for showing the description of IM on PopupMenu as a whatsthis help
+	
+2004-07-28  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qinputcontextinterface_p.h
+	  - Update the UUID because the interface has been changed
+	  - (languages): New function
+	  - (displayName): New function
+	
+	* src/input/ntqinputcontextplugin.h
+	  - (languages): New function
+	  - (displayName): New function
+	* src/input/qinputcontextplugin.cpp
+	  - (QInputContextPluginPrivate::languages): New function
+	  - (QInputContextPluginPrivate::displayName): New function
+	
+	* src/input/ntqinputcontextfactory.h
+	  - (languages): New function
+	  - (displayName): New function
+	* src/input/qinputcontextfactory.cpp
+	  - (languages): New function
+	  - (displayName): New function
+	
+2004-07-27  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/ntqinputcontext.h
+	  - (deletionRequested): New signal. Added for fatal error handling
+	* src/kernel/qinputcontext.cpp
+	  - (deletionRequested): Add the function description comment
+	* src/kernel/ntqwidget.h
+	  - (destroyInputContext): Change ordinary function to slot to receive
+	    the signal QInputContext::deletionRequested()
+	* src/kernel/qwidget_x11.cpp
+	  - (changeInputContext, createInputContext):
+	    * Connect deletionRequested() signal of qic to destroyInputContext()
+	    * Follow renaming of QApplication::imEventReceived() to postIMEvent()
+	  - (destroyInputContext): Modify the function description comment
+	
+	* src/input/qximinputcontext_p.h
+	  - (close): New function
+	* src/input/qximinputcontext_x11.cpp
+	  - (close_xim):
+	    * Remove invalid QApplication::close_im() invocation
+	    * Add proper finalization using deletionRequested() signal
+	  - (close): New function
+	
+	* src/kernel/ntqapplication.h
+	  - (imEventReceived): Remove this inappropriate name to rename to
+	    postIMEvent()
+	  - (postIMEvent): New slot. Renamed from imEventReceived()
+	* src/kernel/qapplication_x11.cpp
+	  - (imEventReceived): Remove this inappropriate name to rename to
+	    postIMEvent()
+	  - (postIMEvent): New slot. Renamed from imEventReceived()
+	  - (close_im): Remove unused commented out code. The code had already
+	    been moved to qximinputcontext.cpp
+	
+	* src/input/qmultiinputcontext.h
+	  - (destroyInputContext): New slot
+	  - (imEventReceived): Remove this inappropriate name to rename to
+	    postIMEvent()
+	  - (postIMEvent): New slot. Renamed from imEventReceived()
+	* src/input/qmultiinputcontext.cpp
+	  - (TQT_NO_IM_QMULTIINPUTCONTEXT_IMINDEX): New macro. Defined as default
+	  - (filterEvent): Insert #ifdef TQT_NO_IM_QMULTIINPUTCONTEXT_IMINDEX
+	  - (destroyInputContext): New slot. Processes deletionRequested from slave
+	  - (imEventReceived): Remove this inappropriate name to rename to
+	    postIMEvent()
+	  - (postIMEvent): New slot. Renamed from imEventReceived()
+	  - (slave):
+	    * Add proper instanciation code for popup menu mode
+	    * Insert #ifdef TQT_NO_IM_QMULTIINPUTCONTEXT_IMINDEX
+	  - (changeInputMethod(int)):
+	    * Add error handling for no available input methods
+	    * Insert #ifdef TQT_NO_IM_QMULTIINPUTCONTEXT_IMINDEX
+	  - (changeInputMethod(QString)):
+	    * Add error handling for no available input methods
+	    * Add default selection for null key
+	    * Connect deletionRequested() signal
+	    * Fix debug message
+	* src/widgets/qtextedit.cpp
+	  - (createPopupMenu):
+	    * Add NULL check for input context
+	    * Replace the label "SelectInputMethod" with "Select Input Method"
+	* src/widgets/qlineedit.cpp
+	  - (createPopupMenu):
+	    * Add NULL check for input context
+	    * Replace the label "SelectInputMethod" with "Select Input Method"
+	
+2004-07-27  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qwidget_x11.cpp
+	  - (changeInputContext):
+	    * Remove unnecessary createInputContext()
+	    * Reorder the code fragments to reduce temporal memory consumption
+	
+2004-07-27  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit is a comment and variable name update. No actual code is
+	  modified.
+	
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContext): Modify the class description comment
+	  - (filterEvent): Mark the argument as /* const */ to make it const
+	    in future
+	  - (reset): Add a requirement to the function description comment for
+	    reimplementation
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (locateICHolderWidget, icHolderWidgets, changeAllInputContext):
+	    Modify the function description comment
+	
+	* src/kernel/qwidget_x11.cpp
+	  - (changeInputContext):
+	    * Rename 'name' with 'identifierName' to eliminate the ambiguity
+	    * Modify the function description comment
+	    * Modify a comment
+	    * Follow Trolltech's coding style
+	  - (createInputContext):
+	    * Modify the function description comment
+	    * Modify a comment
+	  - (resetInputContext): Modify the function description comment
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (defaultIM): Modify the comment
+	  - (changeAllInputContext):
+	    * Rename 'name' with 'identifierName' to eliminate the ambiguity
+	    * Follow Trolltech's coding style
+	  - (defaultInputMethod): Modify the function description comment
+	  - (x11_apply_settings): Modify a comment
+	
+	* src/input/qinputcontextplugin.cpp
+	  - (class QInputContextPlugin): Modify the class description comment
+	  - (create): Modify the function description comment
+	
+	* src/input/qinputcontextfactory.cpp
+	  - (create): Modify the function description comment
+	
+2004-07-24  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qinputcontext.cpp
+	  - Add #if defined(Q_WS_X11) around X11 platform specific
+	    functions. these functions cannot be moved to
+	    qinputcontext_x11.cpp at now since the QInputContextPrivate is
+	    defined in qinputcontext.cpp. This will be fixed in porting to
+	    Qt4.
+	  - (filterEvent): Add the function description comment according
+	    with the Simplified API (filtering precedence, key compression)
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (locateICHolderWidget, icHolderWidgets, changeAllInputContext):
+	    Modify the function description comment
+	
+2004-07-24  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit is a comment update. No code is modified.
+	
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContext): Add the class description comment according
+	    with the Simplified API (preedit relocation is done, not entirely
+	    completed yet)
+	
+2004-07-24  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit contains the fixes in response to Lars Knoll's
+	  advice. Thanks for the advice.
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (x11_apply_settings): Remove trUtf8() from "xim" to specify the
+	    default input method
+	
+	* src/kernel/qapplication_x11.cpp, src/input/qximinputcontext_x11.cpp
+	  - (ximServer, xim_preferred_style, composingKeycode, input_mapper):
+	    Add qt_ prefix to avoid symbol space pollution
+	  - (qt_ximServer, qt_xim_preferred_style, qt_ximComposingKeycode,
+	    qt_input_mapper): Renamed from above one
+	
+2004-07-24  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit is a comment update. No code is modified.
+	
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContext): Modify several expressions
+	
+2004-07-23  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit is a comment update. No code is modified.
+	
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContext): Add the class description comment according
+	    with the Simplified API (preedit preservation is done, not
+	    entirely completed yet)
+	  - (QInputContext, focusWidget, setFocusWidget, isComposing,
+	    setFocus, unsetFocus): Modify a typo in the function description
+	    comment
+	
+2004-07-23  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qsimpleinputcontext.cpp
+	  - Modify the file header description
+	* src/input/qmultiinputcontext.cpp
+	  - Modify the file header description
+	* src/input/qsimpleinputcontext.h
+	  - Modify the file header description
+	* src/input/qmultiinputcontext.h
+	  - Modify the file header description
+	
+2004-07-23  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qsimpleinputcontext.h
+	  - Add a copyright and license header
+	
+	* src/input/qsimpleinputcontext.cpp
+	  - Add a copyright and license header
+	
+2004-07-23  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit is a comment update. No code is modified.
+	
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContext): Add the class description comment according
+	    with the Simplified API (not completed yet)
+	  - (QInputContext): Modify a expression in the function description
+	    comment
+	  - (sendIMEventInternal, font): Modify a typo in the function
+	    description comment
+	
+2004-07-23  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* src/input/qsimpleinputcontext.cpp
+	  - OOps. fix typo.
+	
+2004-07-23  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* src/input/qsimpleinputcontext.cpp
+	  - follow TQt coding rule
+	  - more valid capitalize case 
+	
+2004-07-23  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* src/input/qinputcontextfactory.cpp
+	  - enable QSimpleInputContext by specifying in qtrc "DefaultInputMethod=simple"
+	
+2004-07-23  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* This commit add simple table based InputContext for dead/multi key support
+	
+	* src/input/qsimpleinputcontext.h, src/input/qsimpleinputcontext.cpp
+	  - simple table based InputContext
+	
+2004-07-22  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* kernel/qapplication_x11.cpp, kernel/ntqnamespace.h
+	  - add dead key entries
+	
+2004-07-22  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit is a comment update. No code is modified.
+	
+	* src/kernel/qinputcontext.cpp
+	  - (holderWidget, setHolderWidget, focusWidget, setFocusWidget,
+	    releaseComposingWidget, isPreeditRelocationEnabled, isComposing,
+	    sendIMEventInternal, sendIMEvent): Add the function description comment
+	    according with the Simplified API
+	  - (QInputContext, setFocus, unsetFocus): Update the function
+	    description comment according with the Simplified API
+	  - (~QInputContext, imEventGenerated): Add the function description
+	    comment
+	  - (reset, identifierName, language, filterEvent): Update the
+	    function description comment
+	  - (setMicroFocus, mouseHandler, reset, identifierName, language):
+	    Modify a expression in the function description comment
+	
+	* src/kernel/qwidget_x11.cpp
+	  - (icHolderWidget, resetInputContext, focusInputContext,
+	    unfocusInputContext, sendMouseEventToInputContext): Update the
+	    function description comment
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (imEventReceived): Update the function description comment
+	
+2004-07-21  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* src/input/qmultiinputcontext.h
+	  - (createImSelPopup): new function
+	  - (changeInputMethodWithMenuId): new slot
+	  - (changeInputMethod(QString)): new function
+	  - (popup): new variable
+	  - (lastCreatedIMKey): new variable
+	
+	* src/input/qmultiinputcontext.cpp
+	  - add #ifndef TQT_NO_IM
+	  - (createImSelPopup): create QPopupMenu object which can switch IM.
+	    Currently selected IM is marked as checked.
+	
+	* src/input/ntqinputcontextfactory.h
+	  - remove "class QPopupMenu"
+	
+	* src/widget/qtextedit.cpp
+	  - add im-switch popup to the menu which is shown when widget is right-clicked.
+	
+	* src/widget/qlineedit.cpp
+	  - add im-switch popup to the menu which is shown when widget is right-clicked.
+	
+2004-07-21  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qinputcontext.cpp
+	  - (filterEvent, setMicroFocus, mouseHandler): Update the function
+	    description comment according with the Simplified API
+	  - (reset, identifierName, language): Update the function description
+	    comment
+	
+2004-07-20  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qmultiinputcontext.cpp
+	  - (changeInputMethod): Fix invalid imIndex circulation. Thanks
+	    to Kazuki for reporting
+	
+2004-07-20  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit enables a flexible signal connection
+	  configuration. Default behavior is based on Cougar's
+	  suggestion. Thanks.
+	
+	* src/input/qmultiinputcontext.h
+	  - (beIndirectlyConnected): New instance variable
+	
+	* src/input/qmultiinputcontext.cpp
+	  - (QMultiInputContext): Add beIndirectlyConnected to initializer list
+	  - (imEventReceived): Add a function description comment
+	  - (changeInputMethod): Connect imEventGenerated signal of slave
+	    according with beIndirectlyConnected. The default behavior is
+	    changed as directly connected to imEventGenerated signal of this
+	
+2004-07-20  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qwidget_x11.cpp
+	  - (setMicroFocusHint): Update the comment about XIM handling
+	  - (focusInputContextunfocusInputContext,
+	    sendMouseEventToInputContext): Add the function description comment
+	
+	* src/kernel/qinputcontext_x11.cpp
+	  - (x11FilterEvent): Update the function description comment
+	    according with the Simplified API
+	
+2004-07-20  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qmultiinputcontext.cpp
+	  - (changeInputMethod): Fix the conversion to const char * from
+	    identifierName()
+	
+2004-07-20  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/input/qximinputcontext_p.h
+	  - (identifierName): Replace the result "XIM" with "xim" to be
+	    consistent with corresponding immodule of GTK+
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (defaultIM, x11_apply_settings): Replace "XIM" with "xim"
+	
+	* src/input/qinputcontextfactory.cpp
+	  - (create, keys): Replace "XIM" with "xim"
+	
+	* tools/qtconfig/mainwindow.cpp
+	  - (MainWindow): Replace "XIM" with "xim"
+	
+2004-07-20  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit enables QInputContext proxying, and provide an
+	  experimental immodule-switcher QMultiInputContext as its
+	  examples. The changes is following.
+	
+	  1. Use signal to deliver QIMEvent instead of explicit
+	     postEvent(). This enables QIMEvent proxying and better platform
+	     abstraction. Corresponding slot is created as
+	     QApplication::imEventReceived().
+	
+	  2. Move some methods of QInputContext to public from protected or
+	     private. This enables that proxy-IM can access slave methods.
+	
+	  3. Make some methods of QInputContext virtual. This enables
+	     overriding the methods as proxy
+	
+	  4. Rename QInputContext::name() to identifierName() to avoid
+	     conflicting with QObject::name()
+	
+	  This patch does not break binary compatibility from vanilla TQt3.
+	  But it costs immodule developer small modification.
+	
+	* src/kernel/ntqinputcontext.h
+	  - (class QInputContext): Inherit QObject and add TQ_OBJECT macro
+	  - (name): Remove to rename to identifierName() to avoid conflicting
+	    with QObject::name()
+	  - (identifierName): New function. Renamed from name()
+	  - (isComposing, isPreeditRelocationEnabled): Move to public from
+	    protected to allow proxying
+	  - (setFocusWidget,setHolderWidget, releaseComposingWidget): Move to
+	    public from private to allow proxying
+	  - (focusWidget, holderWidget):
+	    * Make public from protected
+	    * Make virtual to allow overriding the method as proxy
+	  - (imEventGenerated): New signal
+	
+	* src/kernel/qinputcontext.cpp
+	  - (QInputContext): Add QObject() to initializer list
+	  - (sendIMEventInternal): Replace QApplication::postEvent with signal
+	    emitting according to the change
+	  - (name): Remove to rename to identifierName() to avoid conflicting
+	    with QObject::name()
+	  - (identifierName):
+	    * New function. Renamed from name()
+	    * Return type has changed to QCString from QString to avoid using
+	      of i18n string and confusing this with display name for endusers
+	
+	* src/kernel/qwidget_x11.cpp
+	  - (changeInputContext): Add QObject::connect() to follow the change
+	    of IMEvent flow
+	  - (createInputContext): Add QObject::connect() to follow the change
+	    of IMEvent flow
+	
+	* src/kernel/ntqapplication.h
+	  - (imEventReceived): New slot
+	* src/kernel/qapplication_x11.cpp
+	  - (imEventReceived): New slot to relay QIMEvent to event queue using
+	    postEvent()
+	
+	* src/input/qmultiinputcontext.h
+	  - New file. Copyright and licensing information is temporarily
+	    adapted to our cirmumstances
+	  - (QMultiInputContext): New class
+	  - (QMultiInputContext): New function
+	  - (~QMultiInputContext): New function
+	  - (identifierName): New function
+	  - (language): New function
+	  - (x11FilterEvent): New function. Added based on Cougar's
+	    advice. Thanks
+	  - (filterEvent): New function
+	  - (reset): New function
+	  - (setFocus): New function
+	  - (unsetFocus): New function
+	  - (setMicroFocus): New function
+	  - (mouseHandler): New function
+	  - (font): New function
+	  - (isComposing): New function
+	  - (isPreeditRelocationEnabled): New function
+	  - (focusWidget): New function
+	  - (holderWidget): New function
+	  - (setFocusWidget): New function
+	  - (setHolderWidget): New function
+	  - (releaseComposingWidget): New function
+	  - (slave): New function
+	  - (slave): New function (const QInputContext *slave() const)
+	  - (changeInputMethod): New function
+	  - (imEventReceived): New slot
+	* src/input/qmultiinputcontext.cpp
+	  - New file. Copyright and licensing information is temporarily
+	    adapted to our cirmumstances
+	  - (QMultiInputContext): New function
+	  - (~QMultiInputContext): New function
+	  - (identifierName): New function
+	  - (language): New function
+	  - (x11FilterEvent): New function. Added based on Cougar's
+	    advice. Thanks
+	  - (filterEvent): New function. Filters Control+Alt+Key_Down and
+	    Control+Alt+Key_Up as IM selection keys as temporary
+	    implementation. We should show popup menu
+	  - (reset): New function
+	  - (setFocus): New function
+	  - (unsetFocus): New function
+	  - (setMicroFocus): New function
+	  - (mouseHandler): New function
+	  - (font): New function
+	  - (isComposing): New function
+	  - (isPreeditRelocationEnabled): New function
+	  - (focusWidget): New function
+	  - (holderWidget): New function
+	  - (setFocusWidget): New function
+	  - (setHolderWidget): New function
+	  - (releaseComposingWidget): New function
+	  - (slave): New function
+	  - (slave): New function (const QInputContext *slave() const)
+	  - (changeInputMethod): New function
+	  - (imEventReceived): New slot
+	* src/input/qinputcontextfactory.cpp
+	  - (create): Add QMultiInputContext instanciation. Use the name
+	    "multi" to specify it
+	* src/input/ntqinputcontextfactory.h
+	  - Add #include "ntqinputcontext.h" to avoid compilation error
+	
+	* src/input/qximinputcontext_p.h
+	  - (class QXIMInputContext): Add TQ_OBJECT macro to follow the API change
+	  - (name): Remove to follow the API change
+	  - (identifierName):
+	    * New function. Renamed from name()
+	    * Return type has changed to QCString from QString to follow the
+	      API change
+	  - (isPreeditRelocationEnabled): Move to public from protected to
+	    follow the API change
+	  - (isComposing): Remove unnecessary access permission breaker
+	    because QInputContext::isComposing() have made public
+	* src/input/qximinputcontext_x11.cpp
+	  - (isComposing): Remove unnecessary access permission breaker
+	    because QInputContext::isComposing() have made public
+	
+	* src/input/qt_input.pri
+	  - Add qmultiinputcontext.h and multiinputcontext.cpp
+	
+2004-07-18  LiuCougar  <liucougar@gmail.com>
+	
+	use virtual insert version to make subclasses work as expected (merged from bc-branch r19)
+2004-07-16  Kazuki Ohta  <mover@hct.zaq.ne.jp>
+	
+	* src/input/ntqinputcontextfactory.h: not the definition of QInputContextPlugin
+	
+2004-07-13  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/qapplication_x11.cpp
+	  - (x11ProcessEvent): Add comment for key event filtering considerations
+	  - (QETWidget::translateKeyEvent): Add comment for key compression
+	    considerations
+	
+2004-07-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* src/kernel/ntqwidget.h
+	  - (sendMouseEventToInputContext): Move into #if defined(Q_WS_X11)
+	    because it is not implemented in other platforms
+	
+2004-07-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* This commit fixes a mismerge with my Simplified API patches
+	
+	* src/kernel/qwidget_x11.cpp
+	  - (destroyInputContext): Replace the code with original Simplified
+	    API patch. See the comment to recognize the original intention
+	  - (focusInputContext): Fix a condition to call qic->setFocus() as
+	    originally written. See added comment to recognize the original
+	    intention
+	
+	* src/kernel/ntqwidget.h
+	  - (changeInputContext): Move into #if defined(Q_WS_X11) as
+	    originally written because it is not implemented in other
+	    platforms
+	
+	* src/input/qximinputcontext_p.h
+	  - (mouseHandler): Fix a typo as originally written
+	
+	* src/input/qximinputcontext_x11.cpp
+	  - Fix a comment location to express original intention
+	
+2004-07-08  LiuCougar  <liucougar@gmail.com>
+	
+	replace sendEvent with postEvent in qinputcontext to improve the process performance of IMCompose events
+2004-07-08  YamaKen  <yamaken@bp.iij4u.or.jp>
+	
+	* Insert the comment 'UPDATED COMMENT REQUIRED' into some places for future
+	  modifications
+	* Modify some comments
+	* Replace 'InputMethod' in some comments with 'input method'
+	* Replace 'InputContext' in some comments with 'input context'
+	
+	* src/kernel/ntqinputcontext.h
+	  - Move description of QInputContext to qinputcontext.cpp
+	* src/kernel/qinputcontext.cpp
+	  - Move description of QInputContext from ntqinputcontext.h
+	
+2004-07-07  Daisuke Kameda  <kaminmat@cc.rim.or.jp>
+	
+	Adding the function which realize mapping arbitrary input context and widget:
+	QApplication::locateICHolderWidget()
+	QApplication::icHolderWidgets()
+	QWidget::icHolderWidget()
+	QWidget::getInputContext()
+	
+	Adding the function which changes input method:
+	QApplication::changeAllInputContext()
+	QWidget::changeInputContext()
+	QApplication::defaultInputMethod()
+	
+	change QApplication::create_xim() to QApplication::create_im()
+	change QApplication::close_xim() to QApplication::close_im()
+	
+	
+2004-07-06  Daisuke Kameda  <kaminmat@cc.rim.or.jp>
+	
+	"QLineEdit should only setMicroFocus if the cursorRect has changed" by cougar
+	
+2004-07-06  Daisuke Kameda  <kaminmat@cc.rim.or.jp>
+	
+	Re-Creating immodule for Qt/X11 trunk
+
+2004-06-22  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/ntqinputcontext.h
+	  - (sendIMEvent): Private version of sendIMEvent(). Remove to
+	    rename to sendIMEventInternal
+	  - (sendIMEventInternal): Rename from sendIMEvent and accept
+	    discrete variables rather than QEvent *e to be adaptable
+	    to Qt/Embedded
+	* src/kernel/qinputcontext.cpp
+	  - (sendIMEvent): Protected version of sendIMEvent(). Move
+	    QEvent construction to sendIMEventInternal()
+	  - (sendIMEvent): Private version of sendIMEvent(). Remove to
+	    rename to sendIMEventInternal
+	  - (sendIMEventInternal):
+	    * Rename from sendIMEvent
+	    * accept discrete variables rather than QEvent *e to be
+	      adaptable to Qt/Embedded
+	    * Add placeholder for Qt/Embedded
+	  - (setFocusWidget): Follow specification change of sendIMEvent()
+
+2004-06-20  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/ntqevent.h
+	  - (class QIMError): Remove to rename to QIMErrorEvent
+	  - (class QIMErrorEvent): Rename from QIMError
+	  - (QIMErrorEvent::isDeleteIC): Remove to rename to isDeletionRequest
+	  - (QIMErrorEvent::isDeletionRequest): Rename from isDelete
+
+	* src/kernel/ntqwidget.h
+	  - (imErrorEvent): Follow renaming of QIMError
+	* src/kernel/qwidget.cpp
+	  - (imErrorEvent): Follow renaming of QIMError and
+	    QIMError::isDeleteIC()
+	  - (event): Follow renaming of QIMError
+
+	* src/kernel/ntqinputcontext.h
+	  - (ownerWidget): Remove to rename to holderWidget
+	  - (holderWidget): Rename from ownerWidget
+	  - (setOwnerWidget): Remove to rename to setHolderWidget
+	  - (setHolderWidget): Rename from setOwnerWidget
+	  - (releaseComposingWidget): New function.
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContextPrivate): Rename ownerWidget to holderWidget
+	  - (ownerWidget): Remove to rename to holderWidget
+	  - (holderWidget): Rename from ownerWidget
+	  - (setOwnerWidget): Remove to rename to setHolderWidget
+	  - (setHolderWidget): Rename from setOwnerWidget
+	  - (sendIMError): Follow renaming of QIMError and
+	    QIMError::isDeleteIC()
+	  - (releaseComposingWidget): New function.
+
+	* src/input/qinputcontextfactory.cpp
+	  - (create): Follow renaming of QInputContext::setOwnerWidget()
+
+	* src/kernel/qwidget_x11.cpp
+	  - (destroy): Add qic->releaseComposingWidget() to reset
+	    preserved composing information involving this widget
+
+2004-06-15  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/qwidget_x11.cpp
+	  - (setMicroFocusHint): Replace relative coordinate with
+	    global one for qic->setMicroFocus(). This is required to
+	    share particular IM plugin code with Qt/Embedded
+
+	* src/widgets/qlineedit.cpp
+	  - (sendMouseEventToInputContext): Add button event sending
+	    when clicking on out of preedit
+
+	* src/widgets/qtextedit.cpp
+	  - (sendMouseEventToInputContext): Add button event sending
+	    when clicking on out of preedit
+
+	* src/input/qximinputcontext_p.h
+	  - (isComposing): New function
+	  - (composing, cpos, sellen): Remove to follow API change
+	  - (isPreeditRelocationEnabled): New overriding function to
+	    follow API change
+	  - (isPreeditPreservationEnabled): New function
+
+	* src/input/qximinputcontext_x11.cpp
+	  - (xic_start_callback, xic_draw_callback, xic_done_callback,
+	    x11FilterEvent, reset): Replace qic->composing with
+	    qic->isComposing() to use automatic compose state tracking
+	    of QInputContext
+	  - (QXIMInputContext): Remove composing, cpos, sellen from
+	    initializer list
+	  - (sendIMEvent): Remove remembering of cpos, sellen
+	  - (reset): Replace IMEnd event sending with
+	    QInputContext::reset()
+	  - (resetClientState): Remove cpos, sellen, composing
+	  - (isComposing): Exported interface for xic callbacks to
+	    access protected QInputContext::isComposing()
+	  - (setMicroFocus): Follow API change that replaces relative
+	    coordinate with global one
+	  - (mouseHandler): Add approprate reset on clicking
+	  - (setFocus, unsetFocus): Remove preedit preservation and
+	    relocation to follow API change. They are moved to
+	    QInputContext as generarization
+	  - (isPreeditRelocationEnabled): New function to follow API
+	    change.
+	  - (isPreeditPreservationEnabled): New function. This
+	    indicates that whether preedit state should be preserved
+	    or not when focusing out the widget
+
+2004-06-14  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/ntqinputcontext.h
+	  - (setFocus): Remove hasPreservedPreedit arg
+	  - (unsetFocus): Remove preservePreedit arg
+	  - (isPreeditRelocationEnabled): New function
+	  - (isComposing): New function
+
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContextPrivate): Reorganize variables for
+	    preedit relocation
+	  - (QInputContextPrivate::resetComposingState): New function
+	  - (QInputContextPrivate::updateComposingState): New function
+	  - (setFocusWidget): Add preedit relocation support. Preedit
+	    state is relocated to another text widget when the shared
+	    context has focused on the another text widget. This
+	    feature is mainly used by Japanese input methods
+	  - (isPreeditRelocationEnabled): New function. Preedit
+	    relocation is enabled only if this function returned TRUE.
+	  - (isComposing): New function. Returns current composing
+	    state as result of automatic compose state tracking
+	    through sendIMEvent(). The function is for used by
+	    subclass of QInputContext to know preedit state of the
+	    widget. Although QWidget and QInputContextFactory can
+	    access to the function as friend, they must not use the
+	    function to know composing state of contexts. Keep less
+	    relationship to simplify input method development
+	  - (sendIMEvent): New 1-arg overloaded function. The function
+	    encupsulates platform-dependent IMEvent sending. Only
+	    Q_WS_X11 is supported for now. Q_WS_QWS should be supported
+	  - (sendIMEvent):
+	    * 4-args version of the overloaded function
+	    * Isolate platform-dependent event sending process to
+	      separated function
+	    * Add preedit relocation support
+	    * Add compose state tracking support
+	  - (unsetFocus): Add reset() for simple ephemeral input
+	    contexts
+	  - (mouseHandler): Add reset() when clicking for simple
+	    ephemeral input contexts
+	  - (reset): Add preedit finalization code. Overriding
+	    function should call this function to ensure proper
+	    preedit state
+
+2004-06-11  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/qlineedit.cpp
+	  - (QLineEditPrivate::xToPosInternal, QLineEditPrivate::xToPos):
+	    Fix loose placement to tail when clicking beyond the string
+
+2004-06-10  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/ntqinputcontext.h
+	  - Remove several pointers to QWidget to share concrete IM
+	    implementation code with Qt/Embedded. The IM model of
+	    Qt/Embedded requires that widgets and input contexts are
+	    existing in another process
+	  - (QInputContext): Remove the QWidget * arg
+	  - (focusWidget, ownerWidget):
+	    * Move to protected and unrecommended
+	    * Move the inline function definition to qinputcontext.cpp
+	  - (filterEvent): Remove unnecessary keywidget
+	  - (setFocus):
+	    * Remove newFocusWidget arg
+	    * Add hasPreservedPreedit arg
+	  - (unsetFocus): Add preservePreedit arg
+	  - (sendIMError): New function to hide ownerWidget from
+	    derived QInputContext
+	  - (composingWidget, setComposingWidget): New function to support
+	    preedit relocation of shared context on focus transition
+	  - (setFocusWidget, setOwnerWidget): New function to
+	    implement internal functionality on Qt/X11 platform
+	  - (d): New variable to hide ABI change
+	  - (QInputContext, operator=): New function to disable copy
+	    constructor and operator=
+
+	* src/kernel/qinputcontext.cpp
+	  - (class QInputContextPrivate): New class to hide ABI change
+	  - (QInputContext):
+	    * Follow API change
+	    * Follow introducing QInputContextPrivate
+	  - (~QInputContext): Follow introducing QInputContextPrivate
+	  - (ownerWidget):
+	    * Move from ntqinputcontext.h
+	    * Follow introducing QInputContextPrivate
+	  - (setOwnerWidget): New function to complement removal of
+	    the arg of QInputContext constructor
+	  - (composingWidget, setComposingWidget): New function. These
+	    functions are participating with preedit relocation of shared
+	    context on focus transition
+	  - (focusWidget):
+	    * Move from ntqinputcontext.h
+	    * Follow introducing QInputContextPrivate
+	    * Follow introducing composingWidget
+	  - (setFocusWidget): New function to complement removal of
+	    the QWidget * arg of setFocus()
+	  - (filterEvent): Follow API change of removal of keywidget
+	  - (sendIMEvent): Add #ifdef to isolate Qt/X11 dependent code
+	  - (sendIMError): New function to hide ownerWidget() from
+	    derived QInputContext. This is required to share particular
+	    IM plugin code with Qt/Embedded
+	  - (setFocus, unsetFocus): Follow API change
+
+	* src/input/qinputcontextfactory.cpp
+	  - (create): Add ownerWidget initialization for new context
+
+	* src/kernel/qwidget.cpp
+	  - (setFocus): Remove unnecessary shared input context
+	    checking
+
+	* src/kernel/qwidget_x11.cpp
+	  - (setActiveWindow): Replace duplicated code with
+	    focusInputContext()
+	  - (getInputContext): Return input context only if
+	    isInputMethodEnabled() widget, otherwise returns 0. This
+	    is required for proper focus transition handling
+	  - (unfocusInputContext): Follow API change of
+	    QInputContext::unsetFocus()
+
+	* src/kernel/qapplication.cpp
+	  - (setActiveWindow): Follow change of QWidget::unfocusInputContext()
+
+	* src/kernel/qapplication_x11.cpp
+	  - (x11ProcessEvent): Follow API change of
+	    QInputContext::filterEvent()
+
+	* src/input/qximinputcontext_p.h
+	  - (setFocus, unsetFocus): Follow API Change
+	  - (hasFocus): New function
+	  - (close): New function
+
+	* src/input/qximinputcontext.cpp
+	  - Remove unrecommended focusWidget() and ownerWidget()
+	  - (ximWidgetList): Remove to replace with ximContextList
+	  - (ximContextList): New variable
+	  - (xic_draw_callback): Replace focusWidget() with hasFocus()
+	    to follow API Change
+	  - (QXIMInputContext):
+	    * Follow API change
+	    * Follow replacing to ximContextList
+	  - (~QXIMInputContext):
+	    * Follow replacing to ximContextList
+	    * Remove unnecessary QInputContext::unsetFocus()
+	  - (close_xim):
+	    * Follow replacing to ximContextList
+	    * Follow API change 
+	  - (close, hasFocus): New function. Exported interface for
+	    xic_draw_callback to access protected features
+	  - (setFocus, unsetFocus): Follow API change
+
+2004-06-09  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/qwidget.cpp
+
+	  - (hide): Remove unfocusInputContext(). This caused
+	    excessive invalid QInputContext::unsetFocus().
+	    QWidget::deactivateWidgetCleanup() handles
+	    unfocusInputContext() appropriately via
+	    tqApp->setActiveWindow( 0 ).
+
+2004-06-08  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/qrichtext_p.h
+	  - (QTextCursor::place): New 5-args overloaded function
+	  - (QTextCursor::place): 3-args version of the function is
+	    reimplemented as inline function using new 5-args one.
+	* src/kernel/qrichtext.cpp
+	  - (QTextCursor::place): Remove 3-args version of the function
+	  - (QTextCursor::place): New 5-args overloaded function. This
+	    is copied from 3-args one and added new args loosePlacing
+	    and matchBetweenCharacters
+
+	* src/widgets/qtextedit.cpp
+	  - (sendMouseEventToInputContext): Send mouse event when only
+	    mouse cursor is placed within preedit area. This is
+	    accomplished by new 5-args QTextCursor::place()
+	  - (contentsContextMenuEvent): Disable context menu when in
+	    IM composing state
+	  - (drawContents): Add updateMicroFocusHint() to follow
+	    dragging of active window by the showed candidate window
+	  - (contentsMouseMoveEvent): Fix cursor vanishing on IM
+	    composing state
+
+	* src/kernel/qlineedit.cpp
+	  - (sendMouseEventToInputContext): Exclude character at
+	    preedit[preeditLength] from being handled as preedit
+	  - (contextMenuEvent): Disable context menu when in IM
+	    composing state
+	  - (focusInEvent): Fix invalid MicroFocusHint position which
+	    caused that candidate window is always showed at end of
+	    the preedit when active window is show() back
+
+2004-06-07  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/qwidget_x11.cpp
+	  - (reparentSys): Fix an invalid assumption about input
+	    context location involving destroyInputContext()
+	  - (deleteTLSysExtra): Remove destroyInputContext() because
+	    the input context is not a extra data and should be
+	    destroyed in QWidget::destroy()
+	  - (destroyInputContext): Remove icHolderWidget() because
+	    this function is called to destroy the input context that
+	    belongs to the widget itself
+	  - (destroy): Replace 'this->ic' with 'ic'
+	  - (create): Replace 'this->ic' with 'ic'
+
+	* src/kernel/qwidget.cpp
+	  - (hide): Add unfocusInputContext()
+
+	* src/kernel/qapplication.cpp
+	  - (setActiveWindow): Add unfocusInputContext()
+
+	* src/kernel/qlineedit.cpp
+	  - (QLineEditPrivate::xToPosInternal): New function. Copied
+	      from xToPos and Remove the safety limiter.
+	  - (QLineEditPrivate::xToPos): Reimprement using xToPosInternal
+	  - (sendMouseEventToInputContext):
+	    * Fix position boundary as matching with character
+	      boundary rather than center of character
+	    * Send mouse event when only mouse cursor is placed within
+	      preedit area. This is accomplished by replacing xToPos()
+	      with xToPosInternal()
+
+2004-06-04  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/ntqinputcontext.h
+	  - (font): New function. Returns the font of focusWidget()
+	* src/kernel/qinputcontext.cpp
+	  - (font): New function
+
+	* src/kernel/qwidget_x11.cpp
+	  - (setActiveWindow, focusInputContext): Avoid calling
+	     qic->setFocus() if the target is identical widget
+	  - (setMicroFocusHint, setActiveWindow, createInputContext,
+	     destroyInputContext, resetInputContext,
+	     focusInputContext): Remove obsolete comment around qic
+	     retrieving
+
+	* src/input/qximinputcontext_x11.cpp
+	  - (language): Return Chinese languages appropriately (such
+	     as "zh_CN")
+
+2004-06-03  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/kernel/ntqinputcontext.h
+	- (getOwnerWidget): Remove to rename to ownerWidget
+	- (ownerWidget): New function. Rename from getOwnerWidget to
+	  be consistent with the name focusWidget
+	- (focusWidget): New function. Add to make IM-related
+	  communication with focusWidget easy. The name is imported
+	  from QApplication::focusWidget to be supposed same role
+	- (language): Change return type to QCString from const char *
+	- (filterEvent): Change args. Passes QEvent *event rather than
+	  preexpanded key event values. This is intended to pass other
+	  IM-related events in future. The IM-related events are
+	  supposed as QWheelEvent, QTabletEvent and so on
+	- (setFocusHint): Remove to be appropriate name
+	- (setMicroFocus):
+	  * Rename from setFocusHint to be appropriate name. This
+	    function instructs 'MicroFocus' rect within a widget that
+	    is different to normal focus for widgets, so the name
+	    'setFocus' is invalid. And 'Hint' is a concept for the
+	    manager of this class and loses the meaning when passed to
+	    this class. The passed values are not a hint but have
+	    well-defined actual effect, so the name 'Hint' is
+	    invalid. Finally, Qt/Embedded 2.3.7 has a samely named
+	    method in QWSInputMethod
+	  * Remove the arg 'widget' to consistent with the new
+	    focusWidget() method
+	- (mouseHandler): New function. The method interface is
+	  imported from QWSInputMethod::mouseHandler() of Qt/Embedded
+	  2.3.7 and extended for desktop system
+	- (sendIMEvent): New function. Conventional function to send
+	  QIMEvent to appropriate widget using focusWidget(). IM
+	  developers can send IMEvents without tracking focuswidget by
+	  themself
+	- (ownerWidget): Remove to Rename to _ownerWidget
+	- (_ownerWidget): New variable. Renamed from ownerWidget to
+	  avoid name conflict with ownerWidget()
+	- (_focusWidget): New variable.
+	* src/kernel/qinputcontext.cpp
+	  - (QInputContext): Follow API change
+	  - (~QInputContext): Clean up
+	  - (filterEvent): Follow API change
+	  - (sendIMEvent): New function.
+	  - (setFocusHint): Remove to follow new API
+	  - (setMicroFocus): copied from setFocusHint and reimplement to
+	    follow new API
+	  - (mouseHandler): New function
+	  - (language): Follow API change
+
+	* src/kernel/ntqwidget.h
+	  - (sendMouseEventToInputContext): New function
+	  - (unfocusInputContext): New function
+
+	* src/kernel/qwidget.cpp
+	  - (setFocus): Invoke unfocusInputContext() with previous
+	    focus widget to delegate reset responsibility to input
+	    context instead of resetInputContext() directly. See also
+	    comment for further information
+	  - (clearFocus): Add unfocusInputContext();
+	  - (event): Delegate reset responsibility to input context
+	    instead of resetInputContext() directly. See also comment
+	    for further information
+
+	* src/kernel/qwidget_x11.cpp
+	  - (setMicroFocusHint): Modify to follow API change
+	  - (setActiveWindow): Modify to follow API change
+	  - (focusInputContext): Modify to follow API change
+	  - (unfocusInputContext): New function
+	  - (sendMouseEventToInputContext): New function
+
+	* src/kernel/qapplication_x11.cpp
+	  - (class QETWidget): Change translateKeyEventInternal definition
+	  - (x11ProcessEvent): Change QInputContext::filterEvent()
+	    invocation to follow API change
+	  - (translateKeyEventInternal):
+	    * Add new arg statefulTranslation to enable duplicate call
+	    within single event loop. This is required to support both
+	    QInputContext::filterEvent() and RTL extensions
+	    * Restore accidencially omitted qt_mode_switch_remove_mask
+	    handling
+
+	* src/input/qximinputcontext_p.h
+	  - (class QXIMInputContext): Follow API change of QInputContext
+	  - (language): Change return type to follow new API
+	  - (setFocus): Change arg to follow new API
+	  - (setFocusHint): Remove to follow new API
+	  - (setMicroFocus): New method to follow new API
+	  - (mouseHandler): New method to follow new API
+	  - (sendIMEvent): New method (reimp)
+	  - (focusWidget): Remove to follow new API
+	  - (cpos): New variable
+	  - (sellen): New variable
+	* src/input/qximinputcontext_x11.cpp
+	  - (qt_compose_emptied): Remove as result of optimization. It
+	    has become unnecessary now
+	  - (xic_start_callback): Add IMStart event sending as
+	    result of optimization
+	  - (xic_draw_callback): Optimize state management for IMEvent
+	    sending, and simplify using sendIMEvent()
+	  - (xic_done_callback): Simplify using sendIMEvent()
+	  - (QXIMInputContext):
+	    * Follow class definition change
+	    * Follow API change
+	  - (~QXIMInputContext): Modify to follow API change
+	  - (x11FilterEvent): Optimize state management for IMEvent
+	    sending, and simplify using sendIMEvent()
+	  - (sendIMEvent): New function. Implement to remember last
+	    IMEvent information
+	  - (reset): Simplify using sendIMEvent()
+	  - (resetClientState): Follow class definition change
+	  - (setFocusHint): Remove to follow new API
+	  - (setMicroFocus): copied from setFocusHint and modified to
+	    follow new API
+	  - (mouseHandler): New function. Implemented to reset the
+	    context on MouseButtonPress except for Japanese IM. See
+	    also comment for further information
+	  - (setFocus): Reimplement to follow new API. Automatically
+	    handles appropriate IMEvent sending on focus transition
+	  - (unsetFocus): Reimplement to follow new API. Implemented to
+	    reset the context on FocusOut except for Japanese IM. See
+	    also comment for further information
+
+	* src/widgets/ntqlineedit.h
+	  - (sendMouseEventToInputContext): New function
+	* src/widgets/qlineedit.cpp
+	  - (QLineEditPrivate::composeMode): New function
+	  - (QLineEditPrivate::hasIMSelection): New function
+	  - (QLineEditPrivate::preeditLength): New function
+	  - (QLineEditPrivate::imSelectionLength): New function
+	  - (mousePressEvent, mouseMoveEvent, mouseReleaseEvent,
+	     mouseDoubleClickEvent): Support QInputContext::mouseHandler()
+	  - (sendMouseEventToInputContext): New function. Retrieve the
+	    position and call QWidget::sendMouseEventToInputContext()
+	  - (drawContents): Follow API change
+
+	* src/widgets/ntqtextedit.h
+	  - (sendMouseEventToInputContext): New function
+	* src/widgets/qtextedit.cpp
+	  - (QTextEditPrivate::composeMode): New function
+	  - (sendMouseEventToInputContext): New function. Retrieve the
+	    position and call QWidget::sendMouseEventToInputContext()
+	  - (imComposeEvent, imEndEvent): Clean up with composeMode()
+	  - (contentsMousePressEvent, contentsMouseMoveEvent,
+	     contentsMouseReleaseEvent, contentsMouseDoubleClickEvent):
+	    Support QInputContext::mouseHandler()
+
+2004-06-01  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* src/input/qximinputcontext_x11.cpp (x11FilterEvent): Fix
+	  commit problem except for on-the-spot style
+
+2004-05-31  YamaKen  <yamaken@bp.iij4u.or.jp>
+
+	* First 'Simplified API' patch. A lot of changes to be described
+
+2004-03-16  Daisuke Kameda  <kaminmat@cc.rim.or.jp>
+
+	* A lot of changes to be described before this date. Almost
+	  of code are written by Daisuke Kameda

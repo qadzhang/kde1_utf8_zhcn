@@ -56,7 +56,7 @@ public:
      QString*        restart()         { return _restart;}
      QString*        logo()            { return _logo;}
      KVItemList*     users()           { return _users;}
-     GUIStyle        style()           { return _style;}
+     TQt::GUIStyle    style()           { return _style;}  // TQt3 迁移
 	// None is defined as a macro somewhere in an X header. GRRRR.
      enum { KNone, All, RootOnly, ConsoleOnly };
 private:
@@ -74,7 +74,7 @@ private:
      QString*       _restart;
      QString*       _logo;
      KVItemList*    _users;
-     GUIStyle       _style;
+     TQt::GUIStyle       _style;
 };
 
 #endif /* KDMCONFIG_H */

@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqbutton.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqbutton.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqbutton.h</h1>
+
+<p>This is the verbatim text of the ntqbutton.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqbutton.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQButton widget class
+**
+** Created : 940206
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the widgets module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQBUTTON_H
+#define TQBUTTON_H
+
+#ifndef QT_H
+#include "ntqwidget.h"
+#include "ntqkeysequence.h"
+#endif // QT_H
+
+#ifndef TQT_NO_BUTTON
+
+
+class TQButtonGroup;
+class TQToolBar;
+class TQButtonData;
+
+class TQ_EXPORT TQButton : public TQWidget
+{
+    TQ_OBJECT
+    TQ_ENUMS( ToggleType ToggleState )
+    TQ_PROPERTY( TQString text READ text WRITE setText )
+    TQ_PROPERTY( TQPixmap pixmap READ pixmap WRITE setPixmap )
+    TQ_PROPERTY( TQKeySequence accel READ accel WRITE setAccel )
+    TQ_PROPERTY( bool toggleButton READ isToggleButton )
+    TQ_PROPERTY( ToggleType toggleType READ toggleType )
+    TQ_PROPERTY( bool down READ isDown WRITE setDown DESIGNABLE false  )
+    TQ_PROPERTY( bool on READ isOn )
+    TQ_PROPERTY( ToggleState toggleState READ state )
+    TQ_PROPERTY( bool autoResize READ autoResize WRITE setAutoResize DESIGNABLE false )
+    TQ_PROPERTY( bool autoRepeat READ autoRepeat WRITE setAutoRepeat )
+    TQ_PROPERTY( bool exclusiveToggle READ isExclusiveToggle )
+
+public:
+    TQButton( TQWidget* parent=0, const char* name=0, WFlags f=0 );
+    ~TQButton();
+
+    TQString text() const;
+    virtual void setText( const TQString &amp;);
+    const TQPixmap *pixmap() const;
+    virtual void setPixmap( const TQPixmap &amp; );
+
+#ifndef TQT_NO_ACCEL
+    TQKeySequence		accel()	const;
+    virtual void	setAccel( const TQKeySequence&amp; );
+#endif
+
+    bool	isToggleButton() const;
+
+    enum ToggleType { SingleShot, Toggle, Tristate };
+    ToggleType	toggleType() const;
+
+    virtual void setDown( bool );
+    bool	isDown() const;
+
+    bool	isOn() const;
+
+    enum ToggleState { Off, NoChange, On };
+    ToggleState	state() const;
+
+#ifndef TQT_NO_COMPAT
+    bool	autoResize() const;
+    void	setAutoResize( bool );
+#endif
+
+    bool	autoRepeat() const;
+    virtual void setAutoRepeat( bool );
+    bool	isExclusiveToggle() const;
+
+    TQButtonGroup *group() const;
+
+public slots:
+    void	animateClick();
+    void	toggle();
+
+signals:
+    void	pressed();
+    void	released();
+    void	clicked();
+    void	toggled( bool );
+    void	stateChanged( int );
+
+protected:
+    void	setToggleButton( bool );
+    virtual void	setToggleType( ToggleType );
+    void	setOn( bool );
+    virtual void	setState( ToggleState );
+
+    virtual bool hitButton( const TQPoint &amp;pos ) const;
+    virtual void drawButton( TQPainter * );
+    virtual void drawButtonLabel( TQPainter * );
+
+    void	keyPressEvent( TQKeyEvent *);
+    void	keyReleaseEvent( TQKeyEvent *);
+    void	mousePressEvent( TQMouseEvent * );
+    void	mouseReleaseEvent( TQMouseEvent * );
+    void	mouseMoveEvent( TQMouseEvent * );
+    void	paintEvent( TQPaintEvent * );
+    void	focusInEvent( TQFocusEvent * );
+    void	focusOutEvent( TQFocusEvent * );
+
+    void	enabledChange( bool );
+
+private slots:
+    void	animateTimeout();
+    void	autoRepeatTimeout();
+    void	emulateClick();
+
+private:
+    TQString	btext;
+    TQPixmap    *bpixmap;
+    uint	toggleTyp	: 2;
+    uint	buttonDown	: 1;
+    uint	stat		: 2;
+    uint	mlbDown		: 1;
+    uint	autoresize	: 1;
+    uint	animation	: 1;
+    uint	repeat		: 1;
+    TQButtonData *d;
+
+    friend class TQButtonGroup;
+    friend class TQToolBar;
+    void          ensureData();
+    virtual void setGroup( TQButtonGroup* );
+    TQTimer	 *timer();
+    void	nextState();
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQButton( const TQButton &amp; );
+    TQButton &amp;operator=( const TQButton &amp; );
+#endif
+};
+
+
+inline TQString TQButton::text() const
+{
+    return btext;
+}
+
+inline const TQPixmap *TQButton::pixmap() const
+{
+    return bpixmap;
+}
+
+inline bool TQButton::isToggleButton() const
+{
+    return toggleTyp != SingleShot;
+}
+
+inline  bool TQButton::isDown() const
+{
+    return buttonDown;
+}
+
+inline bool TQButton::isOn() const
+{
+    return stat != Off;
+}
+
+#ifndef TQT_NO_COMPAT
+inline bool TQButton::autoResize() const
+{
+    return autoresize;
+}
+#endif
+
+inline bool TQButton::autoRepeat() const
+{
+    return repeat;
+}
+
+inline TQButton::ToggleState TQButton::state() const
+{
+    return ToggleState(stat);
+}
+
+inline void TQButton::setToggleButton( bool b )
+{
+    setToggleType( b ? Toggle : SingleShot );
+}
+
+inline void TQButton::setOn( bool y )
+{
+    setState( y ? On : Off );
+}
+
+inline TQButton::ToggleType TQButton::toggleType() const
+{
+    return ToggleType(toggleTyp);
+}
+
+
+#endif // TQT_NO_BUTTON
+
+#endif // TQBUTTON_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

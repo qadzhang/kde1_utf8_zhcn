@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/application/application.doc:5 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>A Complete Application Window</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>A Complete Application Window</h1>
+
+ 
+<p> 
+<p> This example program looks like a complete modern application.  It
+has a menu bar, it has a tool bar, it has a status bar and works
+like a simple text editor.
+<p> There is a <a href="simple-application.html">walkthrough</a> of
+this example.
+<p> <hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/application.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef APPLICATION_H
+#define APPLICATION_H
+
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+
+class TQTextEdit;
+
+class ApplicationWindow: public <a href="ntqmainwindow.html">TQMainWindow</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+
+public:
+    ApplicationWindow();
+    ~ApplicationWindow();
+
+protected:
+    void closeEvent( <a href="qcloseevent.html">TQCloseEvent</a>* );
+
+private slots:
+    void newDoc();
+    void choose();
+    void load( const <a href="ntqstring.html">TQString</a> &amp;fileName );
+    void save();
+    void saveAs();
+    void print();
+
+    void about();
+    void aboutTQt();
+
+private:
+    <a href="ntqprinter.html">TQPrinter</a> *printer;
+    <a href="ntqtextedit.html">TQTextEdit</a> *e;
+    <a href="ntqstring.html">TQString</a> filename;
+};
+
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/application.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "application.h"
+
+#include &lt;<a href="qimage-h.html">ntqimage.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qtoolbar-h.html">ntqtoolbar.h</a>&gt;
+#include &lt;<a href="qtoolbutton-h.html">ntqtoolbutton.h</a>&gt;
+#include &lt;<a href="qpopupmenu-h.html">ntqpopupmenu.h</a>&gt;
+#include &lt;<a href="qmenubar-h.html">ntqmenubar.h</a>&gt;
+#include &lt;<a href="qtextedit-h.html">ntqtextedit.h</a>&gt;
+#include &lt;<a href="qfile-h.html">ntqfile.h</a>&gt;
+#include &lt;<a href="qfiledialog-h.html">ntqfiledialog.h</a>&gt;
+#include &lt;<a href="qstatusbar-h.html">ntqstatusbar.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qprinter-h.html">ntqprinter.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qaccel-h.html">ntqaccel.h</a>&gt;
+#include &lt;<a href="qtextstream-h.html">ntqtextstream.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qpaintdevicemetrics-h.html">ntqpaintdevicemetrics.h</a>&gt;
+#include &lt;<a href="qwhatsthis-h.html">ntqwhatsthis.h</a>&gt;
+#include &lt;<a href="qsimplerichtext-h.html">ntqsimplerichtext.h</a>&gt;
+
+#include "filesave.xpm"
+#include "fileopen.xpm"
+#include "fileprint.xpm"
+
+<a name="f459"></a>ApplicationWindow::ApplicationWindow()
+    : <a href="ntqmainwindow.html">TQMainWindow</a>( 0, "example application main window", WDestructiveClose | WGroupLeader )
+{
+    printer = new <a href="ntqprinter.html">TQPrinter</a>( TQPrinter::HighResolution );
+    <a href="ntqpixmap.html">TQPixmap</a> openIcon, saveIcon, printIcon;
+
+    <a href="ntqtoolbar.html">TQToolBar</a> * fileTools = new <a href="ntqtoolbar.html">TQToolBar</a>( this, "file operations" );
+<a name="x1590"></a>    fileTools-&gt;<a href="ntqtoolbar.html#setLabel">setLabel</a>( "File Operations" );
+
+    openIcon = TQPixmap( fileopen );
+    TQToolButton * fileOpen
+        = new <a href="ntqtoolbutton.html">TQToolButton</a>( openIcon, "Open File", <a href="ntqstring.html#TQString-null">TQString::null</a>,
+                           this, TQ_SLOT(choose()), fileTools, "open file" );
+
+    saveIcon = TQPixmap( filesave );
+    TQToolButton * fileSave
+        = new <a href="ntqtoolbutton.html">TQToolButton</a>( saveIcon, "Save File", TQString::null,
+                           this, TQ_SLOT(save()), fileTools, "save file" );
+
+    printIcon = TQPixmap( fileprint );
+    TQToolButton * filePrint
+        = new <a href="ntqtoolbutton.html">TQToolButton</a>( printIcon, "Print File", TQString::null,
+                           this, TQ_SLOT(print()), fileTools, "print file" );
+
+
+    (void)TQWhatsThis::whatsThisButton( fileTools );
+
+    const char * fileOpenText = "&lt;p&gt;&lt;img source=\"fileopen\"&gt; "
+                 "Click this button to open a &lt;em&gt;new file&lt;/em&gt;.&lt;br&gt;"
+                 "You can also select the &lt;b&gt;Open&lt;/b&gt; command "
+                 "from the &lt;b&gt;File&lt;/b&gt; menu.&lt;/p&gt;";
+
+<a name="x1591"></a>    TQWhatsThis::<a href="ntqwhatsthis.html#add">add</a>( fileOpen, fileOpenText );
+
+<a name="x1558"></a>    TQMimeSourceFactory::<a href="qmimesourcefactory.html#defaultFactory">defaultFactory</a>()-&gt;setPixmap( "document-open", openIcon );
+
+    const char * fileSaveText = "&lt;p&gt;Click this button to save the file you "
+                 "are editing. You will be prompted for a file name.\n"
+                 "You can also select the &lt;b&gt;Save&lt;/b&gt; command "
+                 "from the &lt;b&gt;File&lt;/b&gt; menu.&lt;/p&gt;";
+
+    TQWhatsThis::<a href="ntqwhatsthis.html#add">add</a>( fileSave, fileSaveText );
+
+    const char * filePrintText = "Click this button to print the file you "
+                 "are editing.\n"
+                 "You can also select the Print command "
+                 "from the File menu.";
+
+    TQWhatsThis::<a href="ntqwhatsthis.html#add">add</a>( filePrint, filePrintText );
+
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a> * file = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( this );
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertItem( "&amp;File", file );
+
+
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;New", this, TQ_SLOT(newDoc()), CTRL+Key_N );
+
+    int id;
+    id = file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( openIcon, "&amp;Open...",
+                           this, TQ_SLOT(choose()), CTRL+Key_O );
+<a name="x1554"></a>    file-&gt;<a href="ntqmenudata.html#setWhatsThis">setWhatsThis</a>( id, fileOpenText );
+
+    id = file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( saveIcon, "&amp;Save",
+                           this, TQ_SLOT(save()), CTRL+Key_S );
+    file-&gt;<a href="ntqmenudata.html#setWhatsThis">setWhatsThis</a>( id, fileSaveText );
+
+    id = file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "Save &amp;As...", this, TQ_SLOT(saveAs()) );
+    file-&gt;<a href="ntqmenudata.html#setWhatsThis">setWhatsThis</a>( id, fileSaveText );
+
+    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+
+    id = file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( printIcon, "&amp;Print...",
+                           this, TQ_SLOT(print()), CTRL+Key_P );
+    file-&gt;<a href="ntqmenudata.html#setWhatsThis">setWhatsThis</a>( id, filePrintText );
+
+    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Close", this, TQ_SLOT(<a href="ntqwidget.html#close">close</a>()), CTRL+Key_W );
+
+<a name="x1544"></a>    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;Quit", tqApp, TQ_SLOT( <a href="ntqapplication.html#closeAllWindows">closeAllWindows</a>() ), CTRL+Key_Q );
+
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertSeparator();
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a> * help = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( this );
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertItem( "&amp;Help", help );
+
+    help-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "&amp;About", this, TQ_SLOT(about()), Key_F1 );
+    help-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "About &amp;TQt", this, TQ_SLOT(aboutTQt()) );
+    help-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    help-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( "What's &amp;This", this, TQ_SLOT(<a href="ntqmainwindow.html#whatsThis">whatsThis</a>()), SHIFT+Key_F1 );
+
+    e = new <a href="ntqtextedit.html">TQTextEdit</a>( this, "editor" );
+    e-&gt;<a href="ntqwidget.html#setFocus">setFocus</a>();
+    <a href="ntqmainwindow.html#setCentralWidget">setCentralWidget</a>( e );
+    <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( "Ready", 2000 );
+
+    <a href="ntqwidget.html#resize">resize</a>( 450, 600 );
+}
+
+
+ApplicationWindow::~ApplicationWindow()
+{
+    delete printer;
+}
+
+
+
+void <a name="f460"></a>ApplicationWindow::newDoc()
+{
+    ApplicationWindow *ed = new ApplicationWindow;
+    ed-&gt;<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Application");
+    ed-&gt;<a href="ntqwidget.html#show">show</a>();
+}
+
+void <a name="f461"></a>ApplicationWindow::choose()
+{
+<a name="x1549"></a>    <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getOpenFileName">getOpenFileName</a>( TQString::null, TQString::null,
+                                               this);
+    if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+        load( fn );
+    else
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( "Loading aborted", 2000 );
+}
+
+
+void <a name="f462"></a>ApplicationWindow::load( const <a href="ntqstring.html">TQString</a> &amp;fileName )
+{
+    <a href="ntqfile.html">TQFile</a> f( fileName );
+<a name="x1548"></a>    if ( !f.<a href="ntqfile.html#open">open</a>( <a href="ntqfile.html#open">IO_ReadOnly</a> ) )
+        return;
+
+    <a href="ntqtextstream.html">TQTextStream</a> ts( &amp;f );
+<a name="x1589"></a><a name="x1586"></a>    e-&gt;<a href="ntqtextedit.html#setText">setText</a>( ts.<a href="ntqtextstream.html#read">read</a>() );
+<a name="x1585"></a>    e-&gt;<a href="ntqtextedit.html#setModified">setModified</a>( false );
+    <a href="ntqwidget.html#setCaption">setCaption</a>( fileName );
+    <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( "Loaded document " + fileName, 2000 );
+}
+
+
+void <a name="f463"></a>ApplicationWindow::save()
+{
+    if ( filename.isEmpty() ) {
+        saveAs();
+        return;
+    }
+
+<a name="x1588"></a>    <a href="ntqstring.html">TQString</a> text = e-&gt;<a href="ntqtextedit.html#text">text</a>();
+    <a href="ntqfile.html">TQFile</a> f( filename );
+    if ( !f.<a href="ntqfile.html#open">open</a>( <a href="ntqfile.html#open">IO_WriteOnly</a> ) ) {
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString("Could not write to %1").arg(filename),
+                              2000 );
+        return;
+    }
+
+    <a href="ntqtextstream.html">TQTextStream</a> t( &amp;f );
+    t &lt;&lt; text;
+    f.<a href="ntqfile.html#close">close</a>();
+
+    e-&gt;<a href="ntqtextedit.html#setModified">setModified</a>( false );
+
+    <a href="ntqwidget.html#setCaption">setCaption</a>( filename );
+
+    <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString( "File %1 saved" ).arg( filename ), 2000 );
+}
+
+
+void <a name="f464"></a>ApplicationWindow::saveAs()
+{
+<a name="x1550"></a>    <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getSaveFileName">getSaveFileName</a>( TQString::null, TQString::null,
+                                               this );
+    if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() ) {
+        filename = fn;
+        save();
+    } else {
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( "Saving aborted", 2000 );
+    }
+}
+
+
+void <a name="f465"></a>ApplicationWindow::print()
+{
+<a name="x1568"></a>    printer-&gt;<a href="ntqprinter.html#setFullPage">setFullPage</a>( true );
+<a name="x1569"></a>    if ( printer-&gt;<a href="ntqprinter.html#setup">setup</a>(this) ) {               // printer dialog
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( "Printing..." );
+        <a href="ntqpainter.html">TQPainter</a> p;
+        if( !p.<a href="ntqpainter.html#begin">begin</a>( printer ) ) {               // paint on printer
+            <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( "Printing aborted", 2000 );
+            return;
+        }
+
+<a name="x1563"></a>        <a href="ntqpaintdevicemetrics.html">TQPaintDeviceMetrics</a> metrics( p.<a href="ntqpainter.html#device">device</a>() );
+<a name="x1560"></a>        int dpiy = metrics.<a href="ntqpaintdevicemetrics.html#logicalDpiY">logicalDpiY</a>();
+        int margin = (int) ( (2/2.54)*dpiy ); // 2 cm margins
+<a name="x1561"></a><a name="x1559"></a>        <a href="ntqrect.html">TQRect</a> view( margin, margin, metrics.<a href="ntqpaintdevicemetrics.html#width">width</a>() - 2*margin, metrics.<a href="ntqpaintdevicemetrics.html#height">height</a>() - 2*margin );
+<a name="x1581"></a>        <a href="ntqsimplerichtext.html">TQSimpleRichText</a> richText( TQStyleSheet::<a href="ntqstylesheet.html#convertFromPlainText">convertFromPlainText</a>(e-&gt;<a href="ntqtextedit.html#text">text</a>()),
+                                  TQFont(),
+<a name="x1582"></a>                                  e-&gt;<a href="ntqtextedit.html#context">context</a>(),
+<a name="x1587"></a>                                  e-&gt;<a href="ntqtextedit.html#styleSheet">styleSheet</a>(),
+<a name="x1584"></a>                                  e-&gt;<a href="ntqtextedit.html#mimeSourceFactory">mimeSourceFactory</a>(),
+                                  view.<a href="ntqrect.html#height">height</a>() );
+<a name="x1578"></a>        richText.<a href="ntqsimplerichtext.html#setWidth">setWidth</a>( &amp;p, view.<a href="ntqrect.html#width">width</a>() );
+        int page = 1;
+        do {
+<a name="x1576"></a>            richText.<a href="ntqsimplerichtext.html#draw">draw</a>( &amp;p, margin, margin, view, colorGroup() );
+<a name="x1572"></a>            view.<a href="ntqrect.html#moveBy">moveBy</a>( 0, view.<a href="ntqrect.html#height">height</a>() );
+<a name="x1566"></a>            p.<a href="ntqpainter.html#translate">translate</a>( 0 , -view.<a href="ntqrect.html#height">height</a>() );
+<a name="x1580"></a><a name="x1573"></a><a name="x1565"></a>            p.<a href="ntqpainter.html#drawText">drawText</a>( view.<a href="ntqrect.html#right">right</a>() - p.<a href="ntqpainter.html#fontMetrics">fontMetrics</a>().width( TQString::<a href="ntqstring.html#number">number</a>( page ) ),
+<a name="x1570"></a>                        view.<a href="ntqrect.html#bottom">bottom</a>() + p.<a href="ntqpainter.html#fontMetrics">fontMetrics</a>().ascent() + 5, TQString::number( page ) );
+<a name="x1577"></a>            if ( view.<a href="ntqrect.html#top">top</a>() - margin &gt;= richText.<a href="ntqsimplerichtext.html#height">height</a>() )
+                break;
+<a name="x1567"></a>            printer-&gt;<a href="ntqprinter.html#newPage">newPage</a>();
+            page++;
+        } while (true);
+
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( "Printing completed", 2000 );
+    } else {
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( "Printing aborted", 2000 );
+    }
+}
+
+<a name="x1592"></a>void ApplicationWindow::<a href="ntqwidget.html#closeEvent">closeEvent</a>( <a href="qcloseevent.html">TQCloseEvent</a>* ce )
+{
+<a name="x1583"></a>    if ( !e-&gt;<a href="ntqtextedit.html#isModified">isModified</a>() ) {
+<a name="x1545"></a>        ce-&gt;<a href="qcloseevent.html#accept">accept</a>();
+        return;
+    }
+
+<a name="x1557"></a>    switch( TQMessageBox::<a href="ntqmessagebox.html#information">information</a>( this, "TQt Application Example",
+                                      "Do you want to save the changes"
+                                      " to the document?",
+                                      "Yes", "No", "Cancel",
+                                      0, 1 ) ) {
+    case 0:
+        save();
+        ce-&gt;<a href="qcloseevent.html#accept">accept</a>();
+        break;
+    case 1:
+        ce-&gt;<a href="qcloseevent.html#accept">accept</a>();
+        break;
+    case 2:
+    default: // just for sanity
+<a name="x1546"></a>        ce-&gt;<a href="qcloseevent.html#ignore">ignore</a>();
+        break;
+    }
+}
+
+
+void <a name="f466"></a>ApplicationWindow::about()
+{
+<a name="x1555"></a>    TQMessageBox::<a href="ntqmessagebox.html#about">about</a>( this, "TQt Application Example",
+                        "This example demonstrates simple use of "
+                        "TQMainWindow,\nTQMenuBar and TQToolBar.");
+}
+
+
+void <a name="f467"></a>ApplicationWindow::aboutTQt()
+{
+<a name="x1556"></a>    TQMessageBox::<a href="ntqmessagebox.html#aboutTQt">aboutTQt</a>( this, "TQt Application Example" );
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include "application.h"
+
+int main( int argc, char ** argv ) {
+    <a href="ntqapplication.html">TQApplication</a> a( argc, argv );
+    ApplicationWindow *mw = new ApplicationWindow();
+    mw-&gt;<a href="ntqwidget.html#setCaption">setCaption</a>( "TQt Example - Application" );
+<a name="x1598"></a>    mw-&gt;<a href="ntqwidget.html#show">show</a>();
+<a name="x1599"></a>    a.<a href="ntqobject.html#connect">connect</a>( &amp;a, TQ_SIGNAL(<a href="ntqapplication.html#lastWindowClosed">lastWindowClosed</a>()), &amp;a, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

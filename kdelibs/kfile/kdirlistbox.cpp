@@ -172,7 +172,7 @@ void KDirListBox::keyPressEvent( QKeyEvent *e )
       break;
   case Key_Home:
       highlightItem( 0 );
-      setTopCell( 0 );		  // somehow highlightItem() does NOT scroll!?
+      setTopItem( 0 );  // TQt3 迁移：QListBox 的 setTopCell→setTopItem
       break;
   case Key_End:
       index = QListBox::count() -1;

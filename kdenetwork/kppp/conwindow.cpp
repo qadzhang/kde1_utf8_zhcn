@@ -34,10 +34,10 @@ ConWindow::ConWindow(QWidget *parent, const char *name,QWidget *mainwidget)
   : QWidget(parent, name,0 )
 {
   main = mainwidget;
-  minutes = 0;
-  seconds = 0;
-  hours = 0;
-  days = 0;
+  minutes = 0;  /* TQt3 迁移 */
+  seconds = 0;  /* TQt3 迁移 */
+  hours = 0;  /* TQt3 迁移 */
+  days = 0;  /* TQt3 迁移 */
 
   info1 = new QLabel(this,"infolabel1");
   info1->setText(i18n("Connected at:"));
@@ -73,7 +73,7 @@ ConWindow::ConWindow(QWidget *parent, const char *name,QWidget *mainwidget)
 
   clocktimer = new QTimer(this);
   connect(clocktimer, SIGNAL(timeout()), SLOT(timeclick()));
-  tl1 = 0;
+  tl1 = 0;  /* TQt3 迁移 */
 }
 
 ConWindow::~ConWindow() {
@@ -210,9 +210,9 @@ void ConWindow::dock() {
 
 
 void ConWindow::startClock() {
-  minutes = 0;
-  seconds = 0;
-  hours = 0;
+  minutes = 0;  /* TQt3 迁移 */
+  seconds = 0;  /* TQt3 迁移 */
+  hours = 0;  /* TQt3 迁移 */
   QString title ;
 
   title = gpppdata.accname();
@@ -246,7 +246,6 @@ void ConWindow::timeclick() {
       s.sprintf("%d Byte", totalbytes);
     else if(totalbytes < 1024*1024)
       s.sprintf("%0.1f KB", ((float)totalbytes)/1024);
-    else
       s.sprintf("%0.1f MB", ((float)totalbytes)/(1024*1024));
 
     volinfo->setText(s.data());
@@ -256,17 +255,17 @@ void ConWindow::timeclick() {
 
   if(seconds >= 60 ) {
     minutes ++;
-    seconds = 0;
+    seconds = 0;  /* TQt3 迁移 */
   }
 
   if (minutes >= 60){
-    minutes = 0;
+    minutes = 0;  /* TQt3 迁移 */
     hours ++;
   }
 
   if( hours >= 24){
     days ++;
-    hours = 0;
+    hours = 0;  /* TQt3 迁移 */
   }
 
   time_string = "";

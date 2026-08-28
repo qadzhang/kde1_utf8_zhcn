@@ -4,13 +4,13 @@ include_directories(
 
 set(KFMWARN_SRCS main.cpp)
 
-QT1_WRAP_MOC(MOC_FILES main.moc)
+TQT3_WRAP_CPP(MOC_FILES main.h)
 
 add_executable(kfmexec ${KFMWARN_SRCS} ${MOC_FILES})
 target_link_libraries(kfmexec
     ${KDE1_KDECORE}
     ${KDE1_KFM}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     )
 

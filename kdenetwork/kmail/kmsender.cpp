@@ -52,7 +52,6 @@ extern KMIdentity *identity;
 //-----------------------------------------------------------------------------
 KMSender::KMSender()
 {
-  initMetaObject();
   mSendDlg = NULL;
   mSendProc = NULL;
   mSendProcStarted = FALSE;
@@ -60,7 +59,7 @@ KMSender::KMSender()
   mCurrentMsg = NULL;
   readConfig();
   quitOnDone = false;
-  label = new QLabel;
+  label = new QLabel( 0, 0 );  /* TQt3 迁移 */
   //label->setAutoResize(true);
   label->setCaption("KMail");
   label->setIcon(kapp->getMiniIcon());
@@ -121,13 +120,13 @@ bool KMSender::settingsOk(void) const
 {
   if (mMethod!=smSMTP && mMethod!=smMail)
   {
-    warning(i18n("Please specify a send\nmethod in the settings\n"
+    tqWarning(i18n("Please specify a send\nmethod in the settings\n"
 			   "and try again."));
     return FALSE;
   }
   if (!identity->mailingAllowed())
   {
-    warning(i18n("Please set the required fields in the\n"
+    tqWarning(i18n("Please set the required fields in the\n"
 			   "identity settings:\n"
 			   "user-name and email-address"));
     return FALSE;
@@ -145,14 +144,14 @@ bool KMSender::send(KMMessage* aMsg, short sendNow)
   //assert(aMsg != NULL);
   if(!aMsg)
     {
-      debug("KMSender::send() : aMsg == NULL\n");
+      tqDebug("KMSender::send() : aMsg == NULL\n");
       return false;
     }
   if (!settingsOk()) return FALSE;
 
   if (!aMsg->to() || aMsg->to()[0]=='\0')
   {
-    warning(i18n("You must specify a receiver"));
+    tqWarning(i18n("You must specify a receiver"));
     return FALSE;
   }
 
@@ -163,7 +162,7 @@ bool KMSender::send(KMMessage* aMsg, short sendNow)
   rc = outboxFolder->addMsg(aMsg);
   if (rc)
   {
-    warning(i18n("Cannot add message to outbox folder"));
+    tqWarning(i18n("Cannot add message to outbox folder"));
     return FALSE;
   }
 
@@ -194,7 +193,7 @@ bool KMSender::sendQueued(void)
 
   if (mSendInProgress)
   {
-    warning(i18n("Sending still in progress"));
+    tqWarning(i18n("Sending still in progress"));
     return FALSE;
   }
 
@@ -305,7 +304,7 @@ void KMSender::cleanup(void)
   label->hide();
   if (quitOnDone)
   {
-    debug ("Done sending messages.");
+    tqDebug("Done sending messages.");
     kapp->quit();
   }
 #endif
@@ -335,7 +334,7 @@ void KMSender::slotIdle()
     msg = i18n("Sending failed:");
     msg += '\n';
     msg += mSendProc->message();
-    warning(msg);
+    tqWarning(msg);
     cleanup();
   }
 }
@@ -387,7 +386,6 @@ void KMSender::setSmtpPort(int aSmtpPort)
 //=============================================================================
 KMSendProc::KMSendProc(KMSender* aSender): QObject()
 {
-  initMetaObject();
   mSender = aSender;
   preSendInit();
 }
@@ -397,7 +395,7 @@ void KMSendProc::preSendInit(void)
 {
   mSending = FALSE;
   mSendOk = FALSE;
-  mMsg = 0;
+  mMsg = TQString();
 }
 
 //-----------------------------------------------------------------------------
@@ -507,7 +505,6 @@ bool KMSendProc::addRecipients(const QStrList& aRecipientList)
 KMSendSendmail::KMSendSendmail(KMSender* aSender):
   KMSendSendmailInherited(aSender)
 {
-  initMetaObject();
   mMailerProc = NULL;
 }
 
@@ -522,7 +519,7 @@ bool KMSendSendmail::start(void)
 {
   if (mSender->mailer().isEmpty())
   {
-    warning(i18n("Please specify a mailer program\n"
+    tqWarning(i18n("Please specify a mailer program\n"
 			   "in the settings."));
     return FALSE;
   }
@@ -571,7 +568,7 @@ bool KMSendSendmail::send(KMMessage* aMsg)
 
   if (!mMailerProc->start(KProcess::NotifyOnExit,KProcess::All))
   {
-    warning(i18n("Failed to execute mailer program %s"),
+    tqWarning(i18n("Failed to execute mailer program %s"),
 	    (const char*)mSender->mailer());
     return FALSE;
   }
@@ -622,7 +619,7 @@ void KMSendSendmail::sendmailExited(KProcess *proc)
 {
   assert(proc!=NULL);
   mSendOk = (proc->normalExit() && proc->exitStatus()==0);
-  mMsgStr = 0;
+  mMsgStr = TQString();
   emit idle();
 }
 
@@ -642,7 +639,7 @@ KMSendSMTP::KMSendSMTP(KMSender* aSender):
   KMSendSMTPInherited(aSender)
 {
   mClient = NULL;
-  mOldHandler = 0;
+  mOldHandler = 0;  /* TQt3 迁移 */
 }
 
 //-----------------------------------------------------------------------------
@@ -666,11 +663,11 @@ bool KMSendSMTP::start(void)
 //WABA: sprintf KILLS everytime! Don't use it! (Bug #1676)
     const char *response = mClient->Response().c_str();
     const char *host = mSender->smtpHost();
-    QString str(256+strlen(host)+strlen(response));
+    TQString str;  /* TQt3 迁移 */
     str.sprintf(i18n("Cannot open SMTP connection to\n"
 			       "host %s for sending:\n%s"), 
 		host, response);
-    warning((const char*)str);
+    tqWarning((const char*)str);
     return FALSE;
   }
   app->processEvents(1000);
@@ -695,7 +692,7 @@ bool KMSendSMTP::finish(void)
   }
 
   if (mClient->Close() != 0)
-    warning(i18n("Cannot close SMTP connection."));
+    tqWarning(i18n("Cannot close SMTP connection."));
 
   signal(SIGALRM, mOldHandler);
   delete mClient;
@@ -788,7 +785,7 @@ bool KMSendSMTP::smtpFailed(const char* inCommand,
   if (!errorStr)
       errorStr = "(nothing)";
 //WABA: sprintf KILLS everytime! Don't use it! (Bug #1676)
-  QString str(256+strlen(inCommand)+strlen(errorStr));
+  TQString str;  /* TQt3 迁移 */
   str.sprintf(i18n("a SMTP error occured.\n"
 			     "Command: %s\n"
 			     "Response: %s\n" 
@@ -804,7 +801,7 @@ bool KMSendSMTP::smtpFailed(const char* inCommand,
 void KMSendSMTP::smtpInCmd(const char* inCommand)
 {
 //WABA: sprintf KILLS everytime! Don't use it! (Bug #1676)
-  QString str(80+strlen(inCommand));
+  TQString str;  /* TQt3 迁移 */
   str.sprintf(i18n("Sending SMTP command: %s"), inCommand);
   statusMsg((const char *)str);
 }
@@ -816,7 +813,7 @@ void KMSendSMTP::smtpDebug(const char* inCommand)
 #ifdef SMTP_DEBUG_OUTPUT
   const char* errorStr = mClient->Response().c_str();
   int replyCode = mClient->ReplyCode();
-  debug("SMTP '%s': rc=%d, msg='%s'", inCommand, replyCode, errorStr);
+  tqDebug("SMTP '%s': rc=%d, msg='%s'", inCommand, replyCode, errorStr);
 #endif
 }
 

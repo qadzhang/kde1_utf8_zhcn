@@ -1,7 +1,7 @@
 // details.C
 //
 // This program is free software. See the file COPYING for details.
-// Author: Mattias Engdeg�rd, 1997
+// Author: Mattias Engdeg�rd, 1997
 
 #ifndef __FreeBSD__
 #include <features.h>
@@ -72,7 +72,7 @@ Details::Details(QWidget *parent, Procinfo *pi, Qps *qps)
 {
     setAppearance(Qps::old_style_tables ? macOS7 : macOS8);
     setNumCols(SOCKFIELDS);
-    QString cap(80);
+    TQString cap;  /* TQt3 迁移 */
     cap.sprintf("Sockets used by process %d (%s)",
 		procinfo->pid, (const char*)procinfo->comm);
     setCaption(cap);
@@ -115,9 +115,9 @@ QString Details::text(int row, int col)
 	refresh_sockets();
     int inode = (*procinfo->sock_inodes)[row];
     Sockinfo *si = Procinfo::socks[inode];
-    if(!si) fatal("sockinfo = 0!\n");
+    if(!si) tqFatal("sockinfo = 0!\n");
 
-    QString s(20);
+    TQString s;  /* TQt3 迁移 */
     switch(col) {
     case PROTO:
         s = (si->proto == Sockinfo::TCP) ? "tcp" : "udp";

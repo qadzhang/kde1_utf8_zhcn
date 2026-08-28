@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqvalidator.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqvalidator.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqvalidator.h</h1>
+
+<p>This is the verbatim text of the ntqvalidator.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqvalidator.h   3.3.8   edited Jan 11 14:39 $
+**
+** Definition of validator classes
+**
+** Created : 970610
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the widgets module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQVALIDATOR_H
+#define TQVALIDATOR_H
+
+#ifndef QT_H
+#include "ntqobject.h"
+#include "ntqstring.h" // char*-&gt;TQString conversion
+#include "ntqregexp.h" // TQString-&gt;TQRegExp conversion
+#endif // QT_H
+
+#ifndef TQT_NO_VALIDATOR
+
+
+class TQ_EXPORT TQValidator : public TQObject
+{
+    TQ_OBJECT
+public:
+    TQValidator( TQObject * parent, const char *name = 0 );
+    ~TQValidator();
+
+    enum State { Invalid, Intermediate, Valid=Intermediate, Acceptable };
+
+    virtual State validate( TQString &amp;, int &amp; ) const = 0;
+    virtual void fixup( TQString &amp; ) const;
+
+private:
+#if defined(TQ_DISABLE_COPY)
+    TQValidator( const TQValidator &amp; );
+    TQValidator&amp; operator=( const TQValidator &amp; );
+#endif
+};
+
+
+class TQ_EXPORT TQIntValidator : public TQValidator
+{
+    TQ_OBJECT
+    TQ_PROPERTY( int bottom READ bottom WRITE setBottom )
+    TQ_PROPERTY( int top READ top WRITE setTop )
+
+public:
+    TQIntValidator( TQObject * parent, const char *name = 0 );
+    TQIntValidator( int bottom, int top,
+		   TQObject * parent, const char *name = 0 );
+    ~TQIntValidator();
+
+    TQValidator::State validate( TQString &amp;, int &amp; ) const;
+
+    void setBottom( int );
+    void setTop( int );
+    virtual void setRange( int bottom, int top );
+
+    int bottom() const { return b; }
+    int top() const { return t; }
+
+private:
+#if defined(TQ_DISABLE_COPY)
+    TQIntValidator( const TQIntValidator &amp; );
+    TQIntValidator&amp; operator=( const TQIntValidator &amp; );
+#endif
+
+    int b, t;
+};
+
+#ifndef TQT_NO_REGEXP
+
+class TQ_EXPORT TQDoubleValidator : public TQValidator
+{
+    TQ_OBJECT
+    TQ_PROPERTY( double bottom READ bottom WRITE setBottom )
+    TQ_PROPERTY( double top READ top WRITE setTop )
+    TQ_PROPERTY( int decimals READ decimals WRITE setDecimals )
+
+public:
+    TQDoubleValidator( TQObject * parent, const char *name = 0 );
+    TQDoubleValidator( double bottom, double top, int decimals,
+		      TQObject * parent, const char *name = 0 );
+    ~TQDoubleValidator();
+
+    TQValidator::State validate( TQString &amp;, int &amp; ) const;
+
+    virtual void setRange( double bottom, double top, int decimals = 0 );
+    void setBottom( double );
+    void setTop( double );
+    void setDecimals( int );
+
+    double bottom() const { return b; }
+    double top() const { return t; }
+    int decimals() const { return d; }
+
+private:
+#if defined(TQ_DISABLE_COPY)
+    TQDoubleValidator( const TQDoubleValidator &amp; );
+    TQDoubleValidator&amp; operator=( const TQDoubleValidator &amp; );
+#endif
+
+    double b, t;
+    int d;
+};
+
+
+class TQ_EXPORT TQRegExpValidator : public TQValidator
+{
+    TQ_OBJECT
+    // TQ_PROPERTY( TQRegExp regExp READ regExp WRITE setRegExp )
+
+public:
+    TQRegExpValidator( TQObject *parent, const char *name = 0 );
+    TQRegExpValidator( const TQRegExp&amp; rx, TQObject *parent,
+		      const char *name = 0 );
+    ~TQRegExpValidator();
+
+    virtual TQValidator::State validate( TQString&amp; input, int&amp; pos ) const;
+
+    void setRegExp( const TQRegExp&amp; rx );
+    const TQRegExp&amp; regExp() const { return r; }
+
+private:
+#if defined(TQ_DISABLE_COPY)
+    TQRegExpValidator( const TQRegExpValidator&amp; );
+    TQRegExpValidator&amp; operator=( const TQRegExpValidator&amp; );
+#endif
+
+    TQRegExp r;
+};
+#endif // TQT_NO_REGEXP
+
+
+#endif // TQT_NO_VALIDATOR
+
+#endif // TQVALIDATOR_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

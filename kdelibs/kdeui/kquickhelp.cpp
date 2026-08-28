@@ -421,7 +421,7 @@ QString KQuickHelpWindow::token() {
   bool  backslash = false;
 
   while(tokIndex < (int)txt.length()) {
-    char c = txt[tokIndex++];
+    char c = txt[tokIndex++].latin1();  // TQt3 迁移：TQCharRef 需显式取字节
 
     if(backslash) {
       backslash = false;
@@ -582,7 +582,7 @@ void KQuickHelpWindow::paint(QPainter *p, int &w, int &h) {
 	  link = t.mid(idx+1, t.length()-idx-2);
 	  savedColor = txtColor;
 	  wasUnderline = (txtFlags & F_UNDERLINE) != 0;
-	  txtColor = blue;
+	  txtColor = k1c_blue;
 	  txtFlags |= F_UNDERLINE;
 	}
 	break;

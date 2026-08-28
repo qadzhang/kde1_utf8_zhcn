@@ -85,7 +85,7 @@ FingerDlg::FingerDlg(QString commandName,
   fingerCb2 = new QComboBox(TRUE, frame1, "cb_1");
   fingerCb2->setMinimumSize(3*fontMetrics().width("----------"), 
 			    2*fontMetrics().height());
-  fingerCb2->setMaximumSize(QLayout::unlimited, 2*fontMetrics().height());
+  fingerCb2->setMaximumSize(0x7fffffff  /* TQt3 迁移 */, 2*fontMetrics().height());
 
   fingerCb2->insertItem("localhost");
 
@@ -146,7 +146,7 @@ FingerDlg::buildCommandLine(QString args)
     return FALSE;
   } else {
     QString as;
-    //debug("getExecutable = %s", (const char *)s);
+    //tqDebug("getExecutable = %s", (const char *)s);
     childProcess.clearArguments();
     childProcess.setExecutable(s);
 

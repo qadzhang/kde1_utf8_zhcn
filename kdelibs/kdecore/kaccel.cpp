@@ -26,8 +26,8 @@
 #include <qdrawutil.h>
 #include <qmessagebox.h>
 
-#include <kapp.h>
-#include <kdebug.h>
+#include "kapp.h"
+#include "kdebug.h"
 
 #include "kaccel.h"
 
@@ -63,7 +63,7 @@ void KAccel::connectItem( const char * action,
 		QString str;
 		str.sprintf( "KAccel : Cannot connect action %s ", action );
 		str.append( "which is not in the object dictionary" );
-		warning(str);
+		tqWarning(str);
 		return;
 	}
 	
@@ -162,7 +162,7 @@ bool KAccel::insertItem( const char* descr, const char * action, uint keyCode,
 	pEntry->bConfigurable = configurable;
 	pEntry->aAccelId = 0;
 	pEntry->receiver = 0;
-	pEntry->member = 0;
+	pEntry->member = TQString();
 	pEntry->descr = descr;
 	
 	return TRUE;
@@ -388,7 +388,7 @@ void KAccel::setItemEnabled( const char * action, bool activate )
 		str.sprintf(
 			"KAccel : cannont enable action %s"\
 			"which is not in the object dictionary", action );
-		warning( str );
+		tqWarning( str );
 		return;
 	}
 
@@ -548,12 +548,12 @@ void KAccel::writeSettings(KConfig* config)
 	while ( aKeyIt.current() ) {
 		if ( aKeyIt.current()->bConfigurable ) {
 			if ( bGlobal )
-				pConfig->writeEntry( aKeyIt.currentKey(),
-					keyToString( aKeyIt.current()->aCurrentKeyCode),
+				pConfig->writeEntry( (const char*)aKeyIt.currentKey(),
+					(const char*)keyToString( aKeyIt.current()->aCurrentKeyCode),
 					true, true );
 			 else
-				pConfig->writeEntry( aKeyIt.currentKey(),
-					keyToString( aKeyIt.current()->aCurrentKeyCode ));
+				pConfig->writeEntry( (const char*)aKeyIt.currentKey(),
+					(const char*)keyToString( aKeyIt.current()->aCurrentKeyCode ));
 		}
 		++aKeyIt;
 	}

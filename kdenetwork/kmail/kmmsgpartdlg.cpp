@@ -142,7 +142,7 @@ KMMsgPartDlg::~KMMsgPartDlg()
 void KMMsgPartDlg::setMsgPart(KMMessagePart* aMsgPart)
 {
   unsigned int len, idx;
-  QString lenStr(32), iconName, enc;
+  TQString lenStr, iconName, enc;  /* TQt3 迁移 */
 
   mMsgPart = aMsgPart;
   assert(mMsgPart!=NULL);

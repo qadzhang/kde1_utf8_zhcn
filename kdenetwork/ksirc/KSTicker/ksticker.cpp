@@ -44,11 +44,11 @@ KSTicker::KSTicker(QWidget * parent, const char * name, WFlags f)  /*FOLD00*/
   pic->fill(backgroundColor());
 
   tickStep = 2;
-  cOffset = 0;
+  cOffset = 0;  /* TQt3 迁移 */
 
   tickRate = 30;
 
-  currentChar = 0;
+  currentChar = 0;  /* TQt3 迁移 */
   chars = this->width() / onechar;
   StrInfo.setAutoDelete( TRUE );
 
@@ -156,7 +156,7 @@ void KSTicker::timerEvent(QTimerEvent *e) /*FOLD00*/
   if((uint)currentChar >= display.length()){
     if(bScrollConstantly == TRUE){
       display = ring.data();
-      currentChar = 0;
+      currentChar = 0;  /* TQt3 迁移 */
     }
     else{
       stopTicker();
@@ -255,7 +255,7 @@ void KSTicker::timerEvent(QTimerEvent *e) /*FOLD00*/
 	    bg = defbg;
 	  }
 	  else
-	    step = 0;
+	    step = 0;  /* TQt3 迁移 */
 	}
       }
       currentChar += step;

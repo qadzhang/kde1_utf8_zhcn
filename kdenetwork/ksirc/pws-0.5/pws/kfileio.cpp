@@ -18,7 +18,7 @@
 //-----------------------------------------------------------------------------
 static void msgDialog(const char* msg, const char* arg=NULL)
 {
-  QString str(256);
+  TQString str;  /* TQt3 迁移 */
 
   if (arg) str.sprintf(msg, arg);
   else str = msg;
@@ -91,14 +91,14 @@ QString kFileToString(const char* aFileName, bool aEnsureNL, bool aVerbose)
 
   if (readLen < len)
   {
-    QString msg(256);
+    TQString msg;  /* TQt3 迁移 */
     msg.sprintf(i18n("Could only read %u bytes of %u."),
 		readLen, len);
     msgDialog(msg);
     return 0;
   }
 
-  debug("kFileToString: %d bytes read", readLen);
+  tqDebug("kFileToString: %d bytes read", readLen);
   return result;
 }
 
@@ -119,7 +119,7 @@ bool kStringToFile(const QString aBuffer, const char* aFileName,
   {
     if (aAskIfExists)
     {
-      QString str(256);
+      TQString str;  /* TQt3 迁移 */
       str.sprintf(i18n(
 		  "File %s exists.\nDo you want to replace it ?"),
 		  aFileName);
@@ -166,7 +166,7 @@ bool kStringToFile(const QString aBuffer, const char* aFileName,
   }
 
   len = aBuffer.size() - 1;
-  debug("kStringToFile: writing %d bytes", len);
+  tqDebug("kStringToFile: writing %d bytes", len);
   writeLen = file.writeBlock(aBuffer.data(), len);
 
   if (writeLen < 0) 
@@ -176,7 +176,7 @@ bool kStringToFile(const QString aBuffer, const char* aFileName,
   }
   else if (writeLen < len)
   {
-    QString msg(256);
+    TQString msg;  /* TQt3 迁移 */
     msg.sprintf(i18n("Could only write %d bytes of %d."),
 		writeLen, len);
     msgDialog(msg);

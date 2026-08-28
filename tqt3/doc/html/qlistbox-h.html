@@ -1,0 +1,480 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqlistbox.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqlistbox.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqlistbox.h</h1>
+
+<p>This is the verbatim text of the ntqlistbox.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/**********************************************************************
+** $Id: qt/ntqlistbox.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQListBox widget class
+**
+** Created : 941121
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the widgets module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQLISTBOX_H
+#define TQLISTBOX_H
+
+#ifndef QT_H
+#include "ntqscrollview.h"
+#include "ntqpixmap.h"
+#endif // QT_H
+
+#ifndef TQT_NO_LISTBOX
+
+
+class TQListBoxPrivate;
+class TQListBoxItem;
+class TQString;
+class TQStrList;
+class TQStringList;
+
+
+class TQ_EXPORT TQListBox : public TQScrollView
+{
+    friend class TQListBoxItem;
+    friend class TQListBoxPrivate;
+
+    TQ_OBJECT
+    TQ_ENUMS( SelectionMode LayoutMode )
+    TQ_PROPERTY( uint count READ count )
+    TQ_PROPERTY( int numItemsVisible READ numItemsVisible )
+    TQ_PROPERTY( int currentItem READ currentItem WRITE setCurrentItem )
+    TQ_PROPERTY( TQString currentText READ currentText )
+    TQ_PROPERTY( int topItem READ topItem WRITE setTopItem DESIGNABLE false )
+    TQ_PROPERTY( SelectionMode selectionMode READ selectionMode WRITE setSelectionMode )
+    TQ_PROPERTY( bool multiSelection READ isMultiSelection WRITE setMultiSelection DESIGNABLE false )
+    TQ_PROPERTY( LayoutMode columnMode READ columnMode WRITE setColumnMode )
+    TQ_PROPERTY( LayoutMode rowMode READ rowMode WRITE setRowMode )
+    TQ_PROPERTY( int numColumns READ numColumns )
+    TQ_PROPERTY( int numRows READ numRows )
+    TQ_PROPERTY( bool variableWidth READ variableWidth WRITE setVariableWidth )
+    TQ_PROPERTY( bool variableHeight READ variableHeight WRITE setVariableHeight )
+
+public:
+    TQListBox( TQWidget* parent=0, const char* name=0, WFlags f=0  );
+    ~TQListBox();
+
+    virtual void setFont( const TQFont &amp; );
+
+    uint count() const;
+
+    void insertStringList( const TQStringList&amp;, int index=-1 );
+    void insertStrList( const TQStrList *, int index=-1 );
+    void insertStrList( const TQStrList &amp;, int index=-1 );
+    void insertStrList( const char **,
+			int numStrings=-1, int index=-1 );
+
+    void insertItem( const TQListBoxItem *, int index=-1 );
+    void insertItem( const TQListBoxItem *, const TQListBoxItem *after );
+    void insertItem( const TQString &amp;text, int index=-1 );
+    void insertItem( const TQPixmap &amp;pixmap, int index=-1 );
+    void insertItem( const TQPixmap &amp;pixmap, const TQString &amp;text, int index=-1 );
+
+    void removeItem( int index );
+
+    TQString text( int index )	const;
+    const TQPixmap *pixmap( int index )	const;
+
+    void changeItem( const TQListBoxItem *, int index );
+    void changeItem( const TQString &amp;text, int index );
+    void changeItem( const TQPixmap &amp;pixmap, int index );
+    void changeItem( const TQPixmap &amp;pixmap, const TQString &amp;text, int index );
+
+    void takeItem( const TQListBoxItem * );
+
+    int numItemsVisible() const;
+
+    int currentItem() const;
+    TQString currentText() const { return text(currentItem()); }
+    virtual void setCurrentItem( int index );
+    virtual void setCurrentItem( TQListBoxItem * );
+    void centerCurrentItem() { ensureCurrentVisible(); }
+    int topItem() const;
+    virtual void setTopItem( int index );
+    virtual void setBottomItem( int index );
+
+    long maxItemWidth() const;
+
+    enum SelectionMode { Single, Multi, Extended, NoSelection };
+    virtual void setSelectionMode( SelectionMode );
+    SelectionMode selectionMode() const;
+
+    void setMultiSelection( bool multi );
+    bool isMultiSelection() const;
+
+    virtual void setSelected( TQListBoxItem *, bool );
+    void setSelected( int, bool );
+    bool isSelected( int ) const;
+    bool isSelected( const TQListBoxItem * ) const;
+    TQListBoxItem* selectedItem() const;
+
+    TQSize sizeHint() const;
+    TQSize	minimumSizeHint() const;
+
+    TQListBoxItem *item( int index ) const;
+    int index( const TQListBoxItem * ) const;
+    TQListBoxItem *findItem( const TQString &amp;text, ComparisonFlags compare = BeginsWith ) const;
+
+    void triggerUpdate( bool doLayout );
+
+    bool itemVisible( int index );
+    bool itemVisible( const TQListBoxItem * );
+
+    enum LayoutMode { FixedNumber,
+		      FitToWidth, FitToHeight = FitToWidth,
+		      Variable };
+    virtual void setColumnMode( LayoutMode );
+    virtual void setColumnMode( int );
+    virtual void setRowMode( LayoutMode );
+    virtual void setRowMode( int );
+
+    LayoutMode columnMode() const;
+    LayoutMode rowMode() const;
+
+    int numColumns() const;
+    int numRows() const;
+
+    bool variableWidth() const;
+    virtual void setVariableWidth( bool );
+
+    bool variableHeight() const;
+    virtual void setVariableHeight( bool );
+
+    void viewportPaintEvent( TQPaintEvent * );
+
+#ifndef TQT_NO_COMPAT
+    bool dragSelect() const { return true; }
+    void setDragSelect( bool ) {}
+    bool autoScroll() const { return true; }
+    void setAutoScroll( bool ) {}
+    bool autoScrollBar() const { return vScrollBarMode() == Auto; }
+    void setAutoScrollBar( bool enable ) { setVScrollBarMode( enable ? Auto : AlwaysOff ); }
+    bool scrollBar() const { return vScrollBarMode() != AlwaysOff; }
+    void setScrollBar( bool enable ) { setVScrollBarMode( enable ? AlwaysOn : AlwaysOff ); }
+    bool autoBottomScrollBar() const { return hScrollBarMode() == Auto; }
+    void setAutoBottomScrollBar( bool enable ) { setHScrollBarMode( enable ? Auto : AlwaysOff ); }
+    bool bottomScrollBar() const { return hScrollBarMode() != AlwaysOff; }
+    void setBottomScrollBar( bool enable ) { setHScrollBarMode( enable ? AlwaysOn : AlwaysOff ); }
+    bool smoothScrolling() const { return false; }
+    void setSmoothScrolling( bool ) {}
+    bool autoUpdate() const { return true; }
+    void setAutoUpdate( bool ) {}
+    void setFixedVisibleLines( int lines ) { setRowMode( lines ); }
+    int inSort( const TQListBoxItem * );
+    int inSort( const TQString&amp; text );
+    int cellHeight( int i ) const { return itemHeight(i); }
+    int cellHeight() const { return itemHeight(); }
+    int cellWidth() const { return maxItemWidth(); }
+    int cellWidth(int i) const { Q_ASSERT(i==0); Q_UNUSED(i) return maxItemWidth(); }
+    int	numCols() const { return numColumns(); }
+#endif
+
+    int itemHeight( int index = 0 ) const;
+    TQListBoxItem * itemAt( const TQPoint &amp; ) const;
+
+    TQRect itemRect( TQListBoxItem *item ) const;
+
+    TQListBoxItem *firstItem() const;
+
+    void sort( bool ascending = true );
+
+public slots:
+    void clear();
+    virtual void ensureCurrentVisible();
+    virtual void clearSelection();
+    virtual void selectAll( bool select );
+    virtual void invertSelection();
+
+signals:
+    void highlighted( int index );
+    void selected( int index );
+    void highlighted( const TQString &amp;);
+    void selected( const TQString &amp;);
+    void highlighted( TQListBoxItem * );
+    void selected( TQListBoxItem * );
+
+    void selectionChanged();
+    void selectionChanged( TQListBoxItem * );
+    void currentChanged( TQListBoxItem * );
+    void clicked( TQListBoxItem * );
+    void clicked( TQListBoxItem *, const TQPoint &amp; );
+    void pressed( TQListBoxItem * );
+    void pressed( TQListBoxItem *, const TQPoint &amp; );
+
+    void doubleClicked( TQListBoxItem * );
+    void returnPressed( TQListBoxItem * );
+    void rightButtonClicked( TQListBoxItem *, const TQPoint &amp; );
+    void rightButtonPressed( TQListBoxItem *, const TQPoint &amp; );
+    void mouseButtonPressed( int, TQListBoxItem*, const TQPoint&amp; );
+    void mouseButtonClicked( int, TQListBoxItem*, const TQPoint&amp; );
+
+    void contextMenuRequested( TQListBoxItem *, const TQPoint &amp; );
+
+    void onItem( TQListBoxItem *item );
+    void onViewport();
+
+protected:
+    void mousePressEvent( TQMouseEvent * );
+    void mouseReleaseEvent( TQMouseEvent * );
+    void mouseDoubleClickEvent( TQMouseEvent * );
+    void mouseMoveEvent( TQMouseEvent * );
+    void contentsContextMenuEvent( TQContextMenuEvent * );
+
+    void keyPressEvent( TQKeyEvent *e );
+    void focusInEvent( TQFocusEvent *e );
+    void focusOutEvent( TQFocusEvent *e );
+    void resizeEvent( TQResizeEvent * );
+    void showEvent( TQShowEvent * );
+
+    bool eventFilter( TQObject *o, TQEvent *e );
+
+    void updateItem( int index );
+    void updateItem( TQListBoxItem * );
+
+#ifndef TQT_NO_COMPAT
+    void updateCellWidth() { }
+    int totalWidth() const { return contentsWidth(); }
+    int totalHeight() const { return contentsHeight(); }
+#endif
+
+    virtual void paintCell( TQPainter *, int row, int col );
+
+    void toggleCurrentItem();
+    bool isRubberSelecting() const;
+
+    void doLayout() const;
+
+    void windowActivationChange( bool );
+
+#ifndef TQT_NO_COMPAT
+    bool itemYPos( int index, int *yPos ) const;
+    int findItem( int yPos ) const { return index(itemAt(TQPoint(0,yPos)) ); }
+#endif
+
+protected slots:
+    void clearInputString();
+
+private slots:
+    void refreshSlot();
+    void doAutoScroll();
+    void adjustItems();
+
+private:
+    void mousePressEventEx( TQMouseEvent * );
+    void tryGeometry( int, int ) const;
+    int currentRow() const;
+    int currentColumn() const;
+    void updateSelection();
+    void repaintSelection();
+    void drawRubber();
+    void doRubberSelection( const TQRect &amp;old, const TQRect &amp;rubber );
+    void handleItemChange( TQListBoxItem *old, bool shift, bool control );
+    void selectRange( TQListBoxItem *from, TQListBoxItem *to, bool invert, bool includeFirst, bool clearSel = false );
+
+    void emitChangedSignal( bool );
+
+    int columnAt( int ) const;
+    int rowAt( int ) const;
+
+    TQListBoxPrivate * d;
+
+    static TQListBox * changedListBox;
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQListBox( const TQListBox &amp; );
+    TQListBox &amp;operator=( const TQListBox &amp; );
+#endif
+};
+
+
+class TQ_EXPORT TQListBoxItem
+{
+public:
+    TQListBoxItem( TQListBox* listbox = 0 );
+    TQListBoxItem( TQListBox* listbox, TQListBoxItem *after );
+    virtual ~TQListBoxItem();
+
+    virtual TQString text() const;
+    virtual const TQPixmap *pixmap() const;
+
+    virtual int	 height( const TQListBox * ) const;
+    virtual int	 width( const TQListBox * )  const;
+
+    bool isSelected() const { return s; }
+    bool isCurrent() const;
+
+#ifndef TQT_NO_COMPAT
+    bool selected() const { return isSelected(); }
+    bool current() const { return isCurrent(); }
+#endif
+
+    TQListBox *listBox() const;
+
+    void setSelectable( bool b );
+    bool isSelectable() const;
+
+    TQListBoxItem *next() const;
+    TQListBoxItem *prev() const;
+
+    virtual int rtti() const;
+    static int RTTI;
+
+protected:
+    virtual void paint( TQPainter * ) = 0;
+    virtual void setText( const TQString &amp;text ) { txt = text; }
+    void setCustomHighlighting( bool );
+
+private:
+    TQString txt;
+    uint s:1;
+    uint dirty:1;
+    uint custom_highlight : 1;
+    int x, y;
+    TQListBoxItem * p, * n;
+    TQListBox* lbox;
+    friend class TQListBox;
+    friend class TQListBoxPrivate;
+    friend class TQComboBox;
+    friend class TQComboBoxPopupItem;
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQListBoxItem( const TQListBoxItem &amp; );
+    TQListBoxItem &amp;operator=( const TQListBoxItem &amp; );
+#endif
+};
+
+
+class TQ_EXPORT TQListBoxText : public TQListBoxItem
+{
+public:
+    TQListBoxText( TQListBox* listbox, const TQString &amp; text=TQString::null );
+    TQListBoxText( const TQString &amp; text=TQString::null );
+    TQListBoxText( TQListBox* listbox, const TQString &amp; text, TQListBoxItem *after );
+   ~TQListBoxText();
+
+    int	 height( const TQListBox * ) const;
+    int	 width( const TQListBox * )  const;
+
+    int rtti() const;
+    static int RTTI;
+
+protected:
+    void  paint( TQPainter * );
+
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQListBoxText( const TQListBoxText &amp; );
+    TQListBoxText &amp;operator=( const TQListBoxText &amp; );
+#endif
+};
+
+
+class TQ_EXPORT TQListBoxPixmap : public TQListBoxItem
+{
+public:
+    TQListBoxPixmap( TQListBox* listbox, const TQPixmap &amp; );
+    TQListBoxPixmap( const TQPixmap &amp; );
+    TQListBoxPixmap( TQListBox* listbox, const TQPixmap &amp; pix, TQListBoxItem *after );
+    TQListBoxPixmap( TQListBox* listbox, const TQPixmap &amp;, const TQString&amp; );
+    TQListBoxPixmap( const TQPixmap &amp;, const TQString&amp; );
+    TQListBoxPixmap( TQListBox* listbox, const TQPixmap &amp; pix, const TQString&amp;, TQListBoxItem *after );
+   ~TQListBoxPixmap();
+
+    const TQPixmap *pixmap() const { return &amp;pm; }
+
+    int	 height( const TQListBox * ) const;
+    int	 width( const TQListBox * )  const;
+
+    int rtti() const;
+    static int RTTI;
+
+protected:
+    void paint( TQPainter * );
+
+private:
+    TQPixmap pm;
+private:	// Disabled copy constructor and operator=
+#if defined(TQ_DISABLE_COPY)
+    TQListBoxPixmap( const TQListBoxPixmap &amp; );
+    TQListBoxPixmap &amp;operator=( const TQListBoxPixmap &amp; );
+#endif
+};
+
+
+#endif // TQT_NO_LISTBOX
+
+#endif // TQLISTBOX_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

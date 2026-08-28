@@ -1,5 +1,5 @@
 include_directories(
-    ${QT_INCLUDE_DIR}
+    ${TQT3_INCLUDE_DIRS}
     ${KDELIBS_SOURCE_DIR}/kdecore
     ${KDELIBS_SOURCE_DIR}/kdeui
     ${KDELIBS_SOURCE_DIR}/jscript
@@ -17,11 +17,11 @@ set(KHTMLW_MOC
 	htmlobj.h htmlview.h
     )
 
-qt1_wrap_moc(MOC_FILES ${KHTMLW_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KHTMLW_MOC})
 
 add_library(khtmlw SHARED ${KHTMLW_SRCS} ${MOC_FILES})
 set_target_properties(khtmlw PROPERTIES VERSION 2.0.0 SOVERSION 2)
-target_link_libraries(khtmlw kdecore kdeui jscript kimgio ${QT_LIBRARIES} ${X11_LIBRARIES})
+target_link_libraries(khtmlw kdecore kdeui jscript kimgio ${TQT3_LIBRARIES} ${X11_LIBRARIES})
 install(TARGETS khtmlw LIBRARY DESTINATION ${KDE1_LIBRARIES})
 
 install(FILES jscript.h html.h htmlobj.h htmlfont.h htmlform.h

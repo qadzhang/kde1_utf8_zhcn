@@ -43,7 +43,7 @@
 #include <kapp.h>
 #include <ktabctl.h>
 #include <ksimpleconfig.h>
-#include <kbiffurl.h>
+#include "kbiffurl.h"
 #include <kfm.h>
 #include <kprocess.h>
 #include <kurllabel.h>
@@ -1225,7 +1225,7 @@ void KBiffMailboxTab::readConfig(const char* profile)
 {
 TRACEINIT("KBiffMailboxTab::readConfig()");
 	// initialize some variables that need initing
-	oldItem = 0;
+	oldItem = 0;  /* TQt3 迁移 */
 
 	// open the config file
 	KSimpleConfig *config = new KSimpleConfig(CONFIG_FILE, true);
@@ -1346,7 +1346,6 @@ TRACEINIT("KBiffMailboxTab::setMailbox()");
 		protocolSelected(6);
 	else if (prot == "nntp")
 		protocolSelected(7);
-	else
 		return;
 
 	if (editMailbox->isEnabled())
@@ -1536,7 +1535,7 @@ TRACEINIT("KBiffMailboxTab::protocolSelected()");
 		case 2: // maildir
 		case 5: // mh
 		case 6: // file
-			port = 0;
+			port = 0;  /* TQt3 迁移 */
 			buttonBrowse->setEnabled(true);
 			editMailbox->setEnabled(true);
 			editServer->setEnabled(false);
@@ -1572,7 +1571,7 @@ TRACEINIT("KBiffMailboxTab::protocolSelected()");
 			checkStorePassword->setEnabled(true);
 			break;
 		default: // blank
-			port = 0;
+			port = 0;  /* TQt3 迁移 */
 			editMailbox->setEnabled(false);
 			buttonBrowse->setEnabled(false);
 			editServer->setEnabled(false);
@@ -1671,7 +1670,7 @@ TRACEINIT("KBiffAboutTab::KBiffAboutTab()");
 	logo->setFont(QFont("helvetica", 24, QFont::Bold));
 	logo->setURL("http://www.pobox.com/~kurt_granroth/kbiff");
 	logo->setText(i18n("KBiff"));
-	logo->setTextAlignment(Right);
+	logo->setAlignment( TQt::AlignRight );  /* TQt3 迁移 */
 	logo->setUnderline(false);
 	logo->setGlow(false);
 	logo->setFloat(true);

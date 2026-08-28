@@ -35,7 +35,7 @@ QString* KFMClient::password = 0L;
 KFMServer::KFMServer() : KfmIpcServer()
 {
     // Create the password file if it does not exist
-    QString fn = kapp->localkdedir().copy();
+    QString fn = kapp->localkdedir();
     fn += "/share/apps/kfm/magic";
     FILE *f = fopen( fn.data(), "rb" );
     if ( f == 0L )
@@ -153,7 +153,6 @@ void KFMServer::slotRefreshDesktop()
 void KFMServer::slotMoveClients( const char *_src_urls, const char *_dest_url )
 {
     QString s = _src_urls;
-    s.detach();
     QStrList urlList;
     
     QString dest = _dest_url;
@@ -180,7 +179,6 @@ void KFMServer::slotMoveClients( const char *_src_urls, const char *_dest_url )
 void KFMServer::slotCopyClients( const char *_src_urls, const char *_dest_url )
 {
     QString s = _src_urls;
-    s.detach();
     QStrList urlList;
     
     QString dest = _dest_url;
@@ -356,7 +354,7 @@ void KFMClient::slotAuth( const char *_password )
     
     if ( KFMClient::password->isNull() )
     {
-	QString fn = kapp->localkdedir().copy();
+	QString fn = kapp->localkdedir();
 	fn += "/share/apps/kfm/magic";
 	FILE *f = fopen( fn.data(), "rb" );
 	if ( f == 0L )
@@ -410,7 +408,6 @@ void KFMClient::slotAuth( const char *_password )
 void KFMClient::slotCopy( const char *_src_urls, const char * _dest_url )
 {
     QString s = _src_urls;
-    s.detach();
     QStrList urlList;
     
     QString dest = _dest_url;
@@ -438,7 +435,6 @@ void KFMClient::slotCopy( const char *_src_urls, const char * _dest_url )
 void KFMClient::slotMove( const char *_src_urls, const char *_dest_url )
 {
     QString s = _src_urls;
-    s.detach();
     QStrList urlList;
     
     QString dest = _dest_url;

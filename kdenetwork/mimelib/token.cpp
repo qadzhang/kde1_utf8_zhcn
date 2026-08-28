@@ -111,7 +111,7 @@ void DwTokenizer::ParseQuotedString()
         ++pos;
         if (pos >= mString.length()) {
             // Ran out of string
-            mTokenLength = 0;
+            mTokenLength = TQString();
             mToken = "";
             mNextStart = pos;
             mTkType = eTkError;
@@ -122,7 +122,7 @@ void DwTokenizer::ParseQuotedString()
             ++pos;
             if (pos >= mString.length()) {
                 // Ran out of string
-                mTokenLength = 0;
+                mTokenLength = TQString();
                 mToken = "";
                 mNextStart = pos;
                 mTkType = eTkError;
@@ -149,7 +149,7 @@ void DwTokenizer::ParseComment()
         ++pos;
         if (pos >= mString.length()) {
             // Ran out of string
-            mTokenLength = 0;
+            mTokenLength = TQString();
             mToken = "";
             mNextStart = pos;
             mTkType = eTkError;
@@ -160,7 +160,7 @@ void DwTokenizer::ParseComment()
             ++pos;
             if (pos >= mString.length()) {
                 // Ran out of string
-                mTokenLength = 0;
+                mTokenLength = TQString();
                 mToken = "";
                 mNextStart = pos;
                 mTkType = eTkError;
@@ -192,7 +192,7 @@ void DwTokenizer::ParseDomainLiteral()
         ++pos;
         if (pos >= mString.length()) {
             // Ran out of string
-            mTokenLength = 0;
+            mTokenLength = TQString();
             mToken = "";
             mNextStart = pos;
             mTkType = eTkError;
@@ -203,7 +203,7 @@ void DwTokenizer::ParseDomainLiteral()
             ++pos;
             if (pos >= mString.length()) {
                 // Ran out of string
-                mTokenLength = 0;
+                mTokenLength = TQString();
                 mToken = "";
                 mNextStart = pos;
                 mTkType = eTkError;
@@ -505,7 +505,7 @@ void DwTokenString::SetFirst(const DwTokenizer& aTkzr)
     case eTkError:
     case eTkNull:
         mTokensStart  = aTkzr.mTokenStart;
-        mTokensLength = 0;
+        mTokensLength = TQString();
         break;
     case eTkComment:
     case eTkDomainLiteral:

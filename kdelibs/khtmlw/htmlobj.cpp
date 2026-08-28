@@ -300,7 +300,8 @@ void HTMLHSpace::print( QPainter *_painter, int _tx, int _ty )
     	
     _painter->setFont( *font );
     
-    if ( isSelected() && _painter->device()->devType() != PDT_PRINTER )
+    // TQt3 迁移：devType()/PDT_PRINTER 已删，改 isExtDev()（外部设备=打印机等）
+    if ( isSelected() && !_painter->device()->isExtDev() )
     {
 	_painter->fillRect( x + _tx, y - ascent + _ty,
 		width, ascent + descent, kapp->selectColor );
@@ -535,7 +536,8 @@ void HTMLText::print( QPainter *_painter, int _tx, int _ty )
     _painter->setPen( font->textColor() );
     _painter->setFont( *font );
     
-    if ( isSelected() && _painter->device()->devType() != PDT_PRINTER )
+    // TQt3 迁移：devType()/PDT_PRINTER 已删，改 isExtDev()（外部设备=打印机等）
+    if ( isSelected() && !_painter->device()->isExtDev() )
     {
 	_painter->drawText( x + _tx, y + _ty, text, selStart );
 	int fillStart = _painter->fontMetrics().width( text, selStart );
@@ -1052,7 +1054,7 @@ void HTMLTextSlave::print( QPainter *_painter, int _tx, int _ty )
     _painter->setPen( font->textColor() );
     _painter->setFont( *font );
     
-    if ( owner->isSelected() && _painter->device()->devType() != PDT_PRINTER )
+    if ( owner->isSelected() && !_painter->device()->isExtDev() )  // TQt3 迁移：PDT_PRINTER→isExtDev
     {
     	if (isSelected())
     	{
@@ -1262,7 +1264,7 @@ QPixmap* HTMLImage::findImage( const char *_filename )
 	// yet been initialized. Better be careful.
 	if( !pCache )
 	{
-		pCache = new QDict<HTMLCachedImage>( 503, true, false );
+		pCache = new QDict<HTMLCachedImage>( 503 );  // TQt3 迁移：默认参数即旧行为
 		return 0l;
 	}
 
@@ -1280,7 +1282,7 @@ void HTMLImage::cacheImage( const char *_filename )
 	// Since this method is static, it is possible that pCache has not
 	// yet been initialized. Better be careful.
 	if( !pCache )
-		pCache = new QDict<HTMLCachedImage>( 503, true, false );
+		pCache = new QDict<HTMLCachedImage>( 503 );  // TQt3 迁移：默认参数即旧行为
 
 	pCache->insert( _filename, new HTMLCachedImage( _filename ) );
 }
@@ -1291,7 +1293,7 @@ HTMLImage::HTMLImage( KHTMLWidget *widget, const char *_filename,
     : QObject(), HTMLObject()
 {
     if ( pCache == 0 )
-	pCache = new QDict<HTMLCachedImage>( 503, true, false );;
+	pCache = new QDict<HTMLCachedImage>( 503 );  // TQt3 迁移：默认参数即旧行为;
 
     pixmap = 0;
     movieCache = 0;
@@ -1338,7 +1340,7 @@ HTMLImage::HTMLImage( KHTMLWidget *widget, const char *_filename,
     KURL kurl( _filename );
     if ( kurl.isMalformed() )
     {
-      warning("Malformed URL '%s'\n", _filename );
+      tqWarning("Malformed URL '%s'\n", _filename );
       return;
     }
 	
@@ -1522,7 +1524,7 @@ void HTMLImage::fileLoaded( const char *_filename )
     }
     else
     {
-      warning( "Could not load %s\n", _filename );
+      tqWarning( "Could not load %s\n", _filename );
       perror( "" );
     }
     
@@ -1874,7 +1876,7 @@ bool HTMLMap::fileLoaded( const char* _url, QBuffer& _buffer )
 {
   if ( !_buffer.open( IO_ReadOnly ) )
   {
-    warning("Could not open buffer for reading a map\n" );
+    tqWarning("Could not open buffer for reading a map\n" );
     return false;
   }
   
@@ -1891,7 +1893,7 @@ void HTMLMap::fileLoaded( const char *_filename )
   QFile file( _filename );
   if ( !file.open( IO_ReadOnly ) )
   {
-    warning("Could not open %s for reading a map\n", _filename );
+    tqWarning("Could not open %s for reading a map\n", _filename );
     return;
   }
 
@@ -2034,7 +2036,6 @@ HTMLImageMap::HTMLImageMap( KHTMLWidget *widget, const char *_filename,
 {
     type = ClientSide;
     serverurl = _url;
-    serverurl.detach();
 }
 
 HTMLObject* HTMLImageMap::checkPoint( int _x, int _y )

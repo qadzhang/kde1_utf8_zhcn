@@ -54,7 +54,7 @@ TopWidget::TopWidget() : KTopLevelWidget("") {
     connect(mb, SIGNAL(activated(int)),
 	    this, SLOT(menuCallback(int)));
   } else {
-    mb = 0;
+    mb = 0;  /* TQt3 迁移 */
     td->setOkButton(i18n("Close"));
     td->setCancelButton(0);
     connect(td, SIGNAL(applyButtonPressed()),

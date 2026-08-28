@@ -9,15 +9,15 @@ set(KONQUEST_SRCS Konquest.cc gameboard.cc gamecore.cc int_validator.cc
     mainwin.cc map_widget.cc minimap.cc newgamedlg.cc planet_info.cc
     gameenddlg.cc  scoredlg.cc)
 
-set(KONQUEST_MOC gameboard.moc gamecore.moc int_validator.moc mainwin.moc
-    map_widget.moc minimap.moc newgamedlg.moc planet_info.moc scoredlg.moc
-    gameenddlg.moc)
+set(KONQUEST_MOC gameboard.h gamecore.h int_validator.h mainwin.h
+    map_widget.h minimap.h newgamedlg.h planet_info.h scoredlg.h
+    gameenddlg.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KONQUEST_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KONQUEST_MOC})
 
 add_executable(konquest1 ${KONQUEST_SRCS} ${MOC_FILES})
 target_link_libraries(konquest1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

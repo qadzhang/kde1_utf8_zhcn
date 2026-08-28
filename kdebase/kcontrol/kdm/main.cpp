@@ -118,7 +118,7 @@ void KDMConfigApplication::init()
 
 void KDMConfigApplication::apply()
 {
-  //debug("KDMConfigApplication::apply()");
+  //tqDebug("KDMConfigApplication::apply()");
   QApplication::setOverrideCursor( waitCursor );
 
   if (appearance)

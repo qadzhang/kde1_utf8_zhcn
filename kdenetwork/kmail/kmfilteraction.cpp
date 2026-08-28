@@ -109,7 +109,7 @@ bool KMFilterActionMove::process(KMMessage* msg, bool&stop)
   if (mDest->moveMsg(msg) == 0) return false; // ok, added
   else
   {
-    debug ("KMfilteraction - couldn't move msg");
+    tqDebug("KMfilteraction - couldn't move msg");
     return true; // error: couldn't add
   }
     
@@ -189,7 +189,7 @@ bool KMFilterActionForward::process(KMMessage* aMsg, bool&stop)
   msg->setTo(mTo);
   if (!msgSender->send(msg))
   {
-    debug("KMFilterActionForward: could not forward message (sending failed)");
+    tqDebug("KMFilterActionForward: could not forward message (sending failed)");
     return true; // error: couldn't send
   }
   return FALSE;
@@ -458,7 +458,6 @@ KMGFilterDlg::KMGFilterDlg(QWidget* parent, const char* name, bool modal,
 			   WFlags f):
   KMGFilterDlgInherited(parent, name, modal, f)
 {
-  initMetaObject();
 }
 
 //-----------------------------------------------------------------------------

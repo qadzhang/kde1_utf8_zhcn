@@ -32,7 +32,7 @@
 #include <qdict.h>
 #include <qlist.h>
 #include <qintdict.h>
-#include <kcharsets.h>
+#include "kcharsets.h"
 
 /**
 * Charset internal structure.

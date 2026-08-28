@@ -175,7 +175,7 @@ void KDMUsersWidget::setupPage(QWidget *)
 
 void KDMUsersWidget::slotUserPixChanged(const char*)
 {
-  debug("KDMUsersWidget::slotUserPixChanged()");
+  tqDebug("KDMUsersWidget::slotUserPixChanged()");
   QString msg, user(userlabel->text());
   if(user.isEmpty())
   {
@@ -262,7 +262,7 @@ void KDMUsersWidget::slotPixDropped(KDNDDropZone *zone)
         userbutton->adjustSize();
         userpixurl += user;
         userpixurl += filename.right( filename.length()-(last_dot_idx) );
-        //debug("destination: %s", userpixurl.data());
+        //tqDebug("destination: %s", userpixurl.data());
         // Let KFM copy the file. NB: network transparent
         KFM *kfm = new KFM();
         if(istmp)
@@ -368,12 +368,12 @@ void KDMUsersWidget::slotUserSelected(int)
     userlabel->setText(lb->text(lb->currentItem()));
   }
   else
-    debug("Not a QListBox");
+    tqDebug("Not a QListBox");
 }
 
 void KDMUsersWidget::applySettings()
 {
-  //debug("KDMUsersWidget::applySettings()");
+  //tqDebug("KDMUsersWidget::applySettings()");
   QString fn(CONFIGFILE);
   KSimpleConfig *c = new KSimpleConfig(fn);
 
@@ -423,7 +423,7 @@ void KDMUsersWidget::loadSettings()
   {
     semsplit( str, users);
     //for(uint i = 0; i < users.count(); i++)
-      //debug("user: %s", users.at(i));
+      //tqDebug("user: %s", users.at(i));
     showallusers = false;
   }
   else
@@ -432,7 +432,7 @@ void KDMUsersWidget::loadSettings()
   if(!str.isEmpty())
     semsplit( str, no_users);	  
   //for(uint i = 0; i < no_users.count(); i++)
-    //debug("nouser: %s", no_users.at(i));
+    //tqDebug("nouser: %s", no_users.at(i));
 
   struct passwd *ps;
 #define CHECK_STRING( x) (x != 0 && x[0] != 0)

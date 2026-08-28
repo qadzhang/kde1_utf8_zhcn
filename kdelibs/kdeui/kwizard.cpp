@@ -50,9 +50,9 @@ struct KWizProtected
 KDialog::KDialog(QWidget *parent, const char *name, bool modal, WFlags f)
   : QDialog(parent, name, modal, f)
 {
-  //debug("KDialog creation");
+  //tqDebug("KDialog creation");
 
-  initMetaObject();
+
   setFocusPolicy(QWidget::StrongFocus);
 
 }
@@ -72,7 +72,7 @@ void KDialog::keyPressEvent(QKeyEvent *e)
           QDialog::keyPressEvent(e);
         else
         {
-          //debug("KDialog - Eating keyevent");
+          //tqDebug("KDialog - Eating keyevent");
   	  e->ignore();
         }
       }
@@ -92,9 +92,9 @@ KWizard::KWizard(QWidget *parent, const char *name, bool modal, WFlags f)
   : KDialog(parent, name, modal, f)
 //  : QWidget(parent, name, modal ? (f | WType_Modal) : f)
 {
-  //debug("KWizard creation");
+  //tqDebug("KWizard creation");
 
-  initMetaObject();
+
 
   pwiz = new KWizProtected;
   pages = new QList<KWizardPage>;
@@ -140,18 +140,18 @@ KWizard::KWizard(QWidget *parent, const char *name, bool modal, WFlags f)
 
   installEventFilter(this);
 
-  //debug("KWizard created");
+  //tqDebug("KWizard created");
 }
 
 // Destructor
 KWizard::~KWizard()
 {
-  //debug("KWizard - destructor");
+  //tqDebug("KWizard - destructor");
   //if (menu) delete menu;
   //menu = 0L;
   delete pwiz;
   delete pages;
-  //debug("KWizard - destructor done");
+  //tqDebug("KWizard - destructor done");
 }
 
 void KWizard::setCancelButton()
@@ -268,7 +268,7 @@ KDirectionButton *KWizard::getRightArrow()
 
 QSize KWizard::pageSize()
 {
-  //debug("Calculating sizes");
+  //tqDebug("Calculating sizes");
   QSize size(0,0);
   //int x = 0, y = 0;
   for(int i = 0; i < pwiz->numpages; i++)
@@ -278,7 +278,7 @@ QSize KWizard::pageSize()
       size.setHeight(csize.height());
     if(size.width() < csize.width())
       size.setWidth(csize.width());
-    //debug("Page size: %d x %d", size.width(), size.height());
+    //tqDebug("Page size: %d x %d", size.width(), size.height());
   }
 
   return size;
@@ -286,15 +286,15 @@ QSize KWizard::pageSize()
 
 void KWizard::setSizes()
 {
-  //debug("setSizes");
+  //tqDebug("setSizes");
   QFont titlefont;
   //titlefont.setPointSize(titlefont.pointSize()*2);
   titlefont.setWeight(QFont::Bold);
   pwiz->title->setFont(titlefont);
   pwiz->title->adjustSize();
 
-  //debug("Title points: %d", titlefont.pointSize());
-  //debug("Title height: %d", title->height());
+  //tqDebug("Title points: %d", titlefont.pointSize());
+  //tqDebug("Title height: %d", title->height());
 
   pwiz->pagina->adjustSize();
 
@@ -336,7 +336,7 @@ void KWizard::setSizes()
 void KWizard::resizeEvent(QResizeEvent *)
 {
   //QSize pagesize = pageSize();
-  //debug("KWizard, resizeEvent()");
+  //tqDebug("KWizard, resizeEvent()");
 
   int subtr = 4;
   if(pwiz->ok && pwiz->ok->isVisible())
@@ -349,7 +349,7 @@ void KWizard::resizeEvent(QResizeEvent *)
     subtr = pwiz->help->height() + 10;
 
   //main->setGeometry(2, 2, width()-4, height()-(subtr));
-  //debug("main");
+  //tqDebug("main");
   //pagina->adjustSize();
 
   pwiz->title->setGeometry(7, 7,
@@ -376,12 +376,12 @@ void KWizard::resizeEvent(QResizeEvent *)
   else
     pwiz->pagina->hide();
 
-  //debug("header - pagina: %d", pagina->width());
+  //tqDebug("header - pagina: %d", pagina->width());
   pwiz->sep1->setGeometry(7,
                           pwiz->title->height()+10,
                           width()-14,
                           2);
-  //debug("sep1");
+  //tqDebug("sep1");
 
   if(pwiz->currentwidget)
   {
@@ -391,8 +391,8 @@ void KWizard::resizeEvent(QResizeEvent *)
     pwiz->currentwidget->setGeometry( 7, offs, width()-14,
            height()-( pwiz->next->height() + 40 + subtr + hack));
   }
-  else debug("No currentwidget!");
-  //debug("currentwidget");
+  else tqDebug("No currentwidget!");
+  //tqDebug("currentwidget");
   if(pwiz->directionsreflectspage)
   {
     QString str;
@@ -417,7 +417,7 @@ void KWizard::resizeEvent(QResizeEvent *)
 
   pwiz->sep2->setGeometry(7, height()-(pwiz->next->height()+14+subtr),
                     width()-14, 2);
-  //debug("sep2");
+  //tqDebug("sep2");
   pwiz->next->adjustSize();
   pwiz->previous->adjustSize();
   pwiz->next->move(width()-(pwiz->next->width()+7),
@@ -446,7 +446,7 @@ void KWizard::resizeEvent(QResizeEvent *)
                             height()-(pwiz->help->height()+2),
                             pwiz->help->width(), pwiz->cancel->height());
 
-  //debug("KWizard, resizeEvent done");
+  //tqDebug("KWizard, resizeEvent done");
 }
 
 void KWizard::paintEvent(QPaintEvent *)
@@ -488,9 +488,9 @@ int KWizard::addPage(KWizardPage *p)
   CHECK_PTR(p->w);
 
   p->w->recreate(this, 0, QPoint(0, 0));
-  //debug("recreated");
+  //tqDebug("recreated");
   p->w->hide();
-  //debug("hidden");
+  //tqDebug("hidden");
   if(pwiz->numpages == 0)
   {
     pwiz->current = 0;
@@ -506,7 +506,7 @@ int KWizard::addPage(KWizardPage *p)
   pwiz->numpages++;
   pwiz->menu->insertItem(p->title.data(), p->id);
   pwiz->menu->setItemEnabled(p->id, p->enabled);
-  //debug("inserted menuitem");
+  //tqDebug("inserted menuitem");
   pages->append(p);
   //titles.append(strtitle);
 
@@ -526,16 +526,16 @@ int KWizard::addPage(KWizardPage *p)
     }
   }
 
-  //debug("enabled buttons");
+  //tqDebug("enabled buttons");
   QString strpagina;
   strpagina.sprintf(klocale->translate("Page %d of %d"), pwiz->current+1, pwiz->numpages);
   if(pwiz->numpages > 1)
     pwiz->pagina->setText(strpagina.data());
   else
     pwiz->pagina->setText("");
-  //debug("pagina");
+  //tqDebug("pagina");
   setSizes();
-  //debug("Add page, done");
+  //tqDebug("Add page, done");
 
   return (p->id);
 }
@@ -632,12 +632,12 @@ int KWizard::numPages()
 
 void KWizard::gotoPage(int p)
 {
-  //debug("gotopage: %d", p);
+  //tqDebug("gotopage: %d", p);
 
   if(p >= pwiz->numpages) // || p == pwiz->current)
     return;
 
-  //debug("Changing to page %d", p);
+  //tqDebug("Changing to page %d", p);
 
   if(p < (pwiz->numpages-1))
   {
@@ -720,7 +720,7 @@ bool KWizard::eventFilter( QObject *obj, QEvent *e )
     QMouseEvent *m = (QMouseEvent*)e;
     if(pwiz->title->rect().contains( m->pos()) && m->button() == RightButton)
     {
-      //debug("KWizard::eventFilter() - inside");
+      //tqDebug("KWizard::eventFilter() - inside");
       emit popup(mapToGlobal(m->pos()));
       if(!pwiz->enablepopupmenu)
         return false;
@@ -734,13 +734,13 @@ bool KWizard::eventFilter( QObject *obj, QEvent *e )
     QKeyEvent *k = (QKeyEvent*)e;
     if(k->key() == Key_PageUp)
     {
-      //debug("Received keyevent PageUp");
+      //tqDebug("Received keyevent PageUp");
       previousPage();
       return true;
     }
     else if(k->key() == Key_PageDown)
     {
-      //debug("Received keyevent PageDown");
+      //tqDebug("Received keyevent PageDown");
       nextPage();
       return true;
     }

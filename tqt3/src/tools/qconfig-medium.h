@@ -1,0 +1,108 @@
+#ifndef QT_H
+#endif /* QT_H */
+#ifndef TQT_NO_TEXTCODEC /* moc? */
+#define TQT_NO_TEXTCODEC
+#endif
+#define TQT_NO_UNICODETABLES
+#define TQT_NO_IMAGEIO_BMP
+#define TQT_NO_IMAGEIO_PPM
+/* #define TQT_NO_IMAGEIO_PNG */
+#define TQT_NO_ASYNC_IO
+#define TQT_NO_ASYNC_IMAGE_IO
+/* #define TQT_NO_FREETYPE */
+#define TQT_NO_BDF
+//#define TQT_NO_FONTDATABASE
+#define TQT_NO_TRANSLATION
+#define TQT_NO_DRAGANDDROP
+#define TQT_NO_CLIPBOARD
+#define TQT_NO_SOUND
+#define TQT_NO_PROPERTIES
+#define TQT_NO_DNS
+#define TQT_NO_NETWORKPROTOCOL
+#define TQT_NO_COLORNAMES
+#define TQT_NO_TRANSFORMATIONS
+#define TQT_NO_PRINTER
+#define TQT_NO_PICTURE
+#define TQT_NO_ICONVIEW
+#define TQT_NO_DIAL
+#define TQT_NO_WORKSPACE
+#define TQT_NO_TABLE
+#define TQT_NO_ACTION
+#define TQT_NO_STYLE_MOTIF
+#define TQT_NO_STYLE_PLATINUM
+/* #define TQT_NO_FILEDIALOG */
+#define TQT_NO_FONTDIALOG
+#define TQT_NO_PRINTDIALOG
+/* #define TQT_NO_COLORDIALOG */
+#define TQT_NO_INPUTDIALOG
+/* #define TQT_NO_MESSAGEBOX */
+#define TQT_NO_PROGRESSDIALOG
+/* #define TQT_NO_TABDIALOG */
+#define TQT_NO_WIZARD
+#define TQT_NO_EFFECTS
+
+
+#define TQT_NO_MIME
+/* #define TQT_NO_NETWORK //??? means single-process only */
+
+
+#define TQT_NO_IMAGE_TRUECOLOR
+/* #define TQT_NO_IMAGE_SMOOTHSCALE  //needed for iconset --> pushbutton */
+#define TQT_NO_IMAGE_TEXT
+#define TQT_NO_DIR
+
+/* #define TQT_NO_TEXTSTREAM */
+#define TQT_NO_DATASTREAM
+#define TQT_NO_QWS_SAVEFONTS
+
+#define TQT_NO_SESSIONMANAGER
+
+
+/* #define TQT_NO_DIALOG */
+
+#define TQT_NO_SEMIMODAL
+
+#define TQT_NO_EFFECTS
+#define TQT_NO_COP
+
+#define TQT_NO_QWS_PROPERTIES
+
+/* #define TQT_NO_RANGECONTROL */
+/* #define TQT_NO_SPLITTER */
+#define TQT_NO_STATUSBAR
+#define TQT_NO_TABBAR
+#define TQT_NO_TOOLBAR
+#define TQT_NO_TOOLTIP
+/* #define TQT_NO_VALIDATOR */
+#define TQT_NO_WHATSTHIS
+#define TQT_NO_WIDGETSTACK
+#define TQT_NO_ACCEL
+#define TQT_NO_SIZEGRIP
+#define TQT_NO_HEADER
+#define TQT_NO_WORKSPACE
+#define TQT_NO_LCDNUMBER
+#define TQT_NO_STYLE_MOTIF
+#define TQT_NO_STYLE_PLATINUM
+#define TQT_NO_PROGRESSBAR
+
+#define TQT_NO_ICONVIEW
+#define TQT_NO_DIAL
+
+#define TQT_NO_TABLE
+
+/* #define TQT_NO_FILEDIALOG */
+#define TQT_NO_FONTDIALOG
+#define TQT_NO_PRINTDIALOG
+#define TQT_NO_COLORDIALOG
+#define TQT_NO_INPUTDIALOG
+/* #define TQT_NO_MESSAGEBOX */
+#define TQT_NO_PROGRESSDIALOG
+/* #define TQT_NO_TABDIALOG */
+#define TQT_NO_WIZARD
+#define TQT_NO_EFFECTS
+
+/* #define TQT_NO_QWS_HYDRO_WM_STYLE */
+#define TQT_NO_QWS_BEOS_WM_STYLE
+#define TQT_NO_QWS_KDE2_WM_STYLE
+#define TQT_NO_QWS_KDE_WM_STYLE
+/* #define TQT_NO_QWS_WINDOWS_WM_STYLE */

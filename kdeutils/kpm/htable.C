@@ -1,7 +1,7 @@
 // htable.C
 //
 // This program is free software. See the file COPYING for details.
-// Author: Mattias Engdegård, 1997
+// Author: Mattias Engdegï¿½rd, 1997
 
 // TODO:
 // * interface to add/remove columns and to repaint everything in table/head
@@ -221,7 +221,7 @@ void TableBody::paintCell(QPainter *p, int row, int col)
 	p->setPen(colorGroup().base());
 
 	//p->setBackgroundColor(yellow);
-	if(style() == WindowsStyle)
+	if(style().inherits("TQWindowsStyle"))
 	  p->setBackgroundColor(kapp->winStyleHighlightColor());
 	else
 	  p->setBackgroundColor(colorGroup().text());

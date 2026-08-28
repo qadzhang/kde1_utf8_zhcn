@@ -25,7 +25,6 @@ static void formatBytes(int bytes, QString &result) {
     result.setNum(bytes);
   else if(bytes < 1024*1024)
     result.sprintf(i18n("%0.1f KB"), (float)bytes / 1024.0);
-  else
     result.sprintf(i18n("%0.1f MB"), (float)bytes / 1024.0 / 1024.0);
 }
 
@@ -34,14 +33,13 @@ static void formatDuration(int seconds, QString &result) {
     result.sprintf(i18n("%d s"), seconds);
   else if(seconds < 3600)
     result.sprintf(i18n("%dm %ds"), seconds/60, seconds%60);
-  else
     result.sprintf(i18n("%dh %dm %ds"), seconds/3600, (seconds % 3600)/60, seconds%60);
 }
 
 MonthlyWidget::MonthlyWidget(QWidget *parent) :
   QWidget(parent)
 {
-  tl = 0;
+  tl = 0;  /* TQt3 迁移 */
 
   lb = new KTabListBox(this);
   lb->setMinimumWidth(320);
@@ -122,7 +120,7 @@ void MonthlyWidget::plotMonth() {
   lb->setColumn(8, TITLE("Bytes", "888888888"));
 
   // search the entries for this month
-  QString s(2048);
+  TQString s;  /* TQt3 迁移 */
   int lastday = -1;
   QString lastConn = "-";
 
@@ -205,7 +203,7 @@ void MonthlyWidget::plotMonth() {
   }
 
   if(count) {
-    QString s(1024);
+    TQString s;  /* TQt3 迁移 */
     QString _bin, _bout, _b;
     
     if(bin < 0)

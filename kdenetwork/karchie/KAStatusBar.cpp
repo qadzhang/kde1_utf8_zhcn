@@ -127,7 +127,7 @@ KAStatusBar::slotChangeTries( int tries )
 void 
 KAStatusBar::slotConfigChanged()
 {
-  debug("KAStatusBar::slotConfigChanged");
+  tqDebug("KAStatusBar::slotConfigChanged");
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup( ConfigEntries::HostConfigGroup );
   slotChangeHost( config->readEntry( ConfigEntries::CurrentHostEntry,

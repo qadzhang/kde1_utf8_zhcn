@@ -453,7 +453,6 @@ void TopLevel::readProperties(KConfig* config){
 
 	if(ok){
 	  QString file = fn;
-	  file.detach();
 	  eframe->loadFile(file,KEdit::OPEN_READWRITE);
 	  eframe->setModified();
 	  eframe->setFileName(filename.data());
@@ -472,7 +471,7 @@ void TopLevel::readProperties(KConfig* config){
 
 void TopLevel::copy(){
 
-  eframe->copyText();
+  eframe->copy();  /* TQt3 迁移 */
 
 }
 
@@ -923,7 +922,7 @@ void TopLevel::mail(){
   FILE* mailpipe;
 
   QString cmd;
-  /*  cmd = mailcmd.copy();*/
+  /*  cmd = mailcmd;*/
   cmd = cmd.sprintf(mailcmd.data(),
 		    maildlg->getSubject().data(),maildlg->getRecipient().data());
 
@@ -1152,7 +1151,7 @@ void TopLevel::fill_column_slot(){
   fillstr.word_wrap_is_set    = word_wrap_is_set;
   fillstr.backup_copies_is_set= backup_copies_is_set;
   fillstr.fill_column_value   = fill_column_value;
-  fillstr.mailcmd 	      = mailcmd.copy();
+  fillstr.mailcmd 	      = mailcmd;
 
   dlg->setWidgets(fillstr);
 
@@ -1254,7 +1253,6 @@ void TopLevel::print(){
 
     pi = printing->getCommand();
 
-    pi.command.detach();
   if(strcmp(eframe->getName(), i18n("Untitled"))== 0){
 
       // we go through all of this so that we can print an "Untitled" document
@@ -1299,7 +1297,6 @@ void TopLevel::print(){
       }	
       else{
 	command = pi.command;
-	command.detach();
       }
 
       com.sprintf("%s %s ; rm %s &",command.data(),
@@ -1341,7 +1338,6 @@ void TopLevel::print(){
       }	
       else{
 	command = pi.command;
-	command.detach();
       }
 
       if(!pi.selection){ // print the whole file
@@ -1399,7 +1395,6 @@ void TopLevel::saveNetFile( const char *_url )
 {
 
     netFile = _url;
-    netFile.detach();
     KURL u( netFile.data() );
     if ( u.isMalformed() )
     {
@@ -1467,7 +1462,6 @@ void TopLevel::openNetFile( const char *_url, int _mode )
 
   QString string;
   netFile = _url;
-  netFile.detach();
   KURL *u = new KURL( netFile.data() );
   if ( u->isMalformed() )
     {
@@ -1656,7 +1650,7 @@ void TopLevel::set_background_color(){
 void TopLevel::set_colors(){
 
 
-  QPalette mypalette = (eframe->palette()).copy();
+  QPalette mypalette = (eframe->palette());
 
   QColorGroup cgrp = mypalette.normal();
   QColorGroup ncgrp(forecolor,cgrp.background(),
@@ -1931,7 +1925,6 @@ void TopLevel::writeSettings(){
 		string.sprintf("Right");
 	else if ( toolbar->barPos() == KToolBar::Bottom )
 		string.sprintf("Bottom");
-	else
 		string.sprintf("Top");
 
 	config->writeEntry( "Toolbar position", string );

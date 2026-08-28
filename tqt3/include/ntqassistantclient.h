@@ -1,0 +1,1 @@
+../tools/assistant/lib/ntqassistantclient.h

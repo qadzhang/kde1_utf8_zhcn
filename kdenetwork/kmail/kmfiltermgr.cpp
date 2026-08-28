@@ -31,7 +31,7 @@ void KMFilterMgr::readConfig(void)
 {
   KConfig* config = kapp->getConfig();
   int i, numFilters;
-  QString grpName(64);
+  TQString grpName;  /* TQt3 迁移 */
   KMFilter* filter;
 
   clear();
@@ -53,7 +53,7 @@ void KMFilterMgr::readConfig(void)
 void KMFilterMgr::writeConfig(bool withSync)
 {
   KConfig* config = kapp->getConfig();
-  QString grpName(64);
+  TQString grpName;  /* TQt3 迁移 */
   KMFilter* filter;
   int i;
 
@@ -81,7 +81,7 @@ bool KMFilterMgr::process(KMMessage* msg)
   for (filter=first(); !stopIt && filter; filter=next())
   {
     if (!filter->matches(msg)) continue;
-    // debug("KMFilterMgr: filter %s matches message %s", filter->name().data(),
+    // tqDebug("KMFilterMgr: filter %s matches message %s", filter->name().data(),
     //	  msg->subject().data());
     if (!filter->execActions(msg, stopIt)) stillOwner = FALSE;
   }
@@ -162,6 +162,6 @@ void KMFilterMgr::dump(void)
 
   for (i=0, filter=first(); filter; filter=next(), i++)
   {
-    debug(filter->asString());
+    tqDebug(filter->asString());
   }
 }

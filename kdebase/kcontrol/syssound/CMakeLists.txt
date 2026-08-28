@@ -7,7 +7,7 @@ set(SYSSOUND_SRCS
 )
 
 set(SYSSOUND_MOC
-    syssound.moc
+    syssound.h
 )
 
 set(SOUNDFILES
@@ -24,11 +24,11 @@ set(SOUNDFILES
     sounds/KDE_Window_Shade_Up.wav
 )
 
-QT1_WRAP_MOC(MOC_FILES ${SYSSOUND_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${SYSSOUND_MOC})
 
 add_executable(kcmsyssound ${SYSSOUND_SRCS} ${MOC_FILES})
 target_link_libraries(kcmsyssound
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

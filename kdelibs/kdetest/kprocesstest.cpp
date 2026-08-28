@@ -110,7 +110,7 @@ int main(int argc, char *argv[])
 		  &dummy, SLOT(outputDone(KProcess *)));
 
  p4.start(KProcess::NotifyOnExit, KProcess::All);
- debug("after p4.start");
+ tqDebug("after p4.start");
  p4.writeStdin(txt, strlen(txt)); 
 
  printf("Entering man Qt event loop -- press <CTRL><C> to abort\n");

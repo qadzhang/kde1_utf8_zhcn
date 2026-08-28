@@ -9,13 +9,12 @@
 GroupDetails::GroupDetails(const char* aGroupName):
   GroupDetailsInherited(NULL, 0, true)
 {
-  initMetaObject();
+
 
   QBoxLayout *topLayout = new QVBoxLayout(this, 5);
   QBoxLayout *buttonLayout = new QHBoxLayout();
 
   mGroupName = aGroupName;
-  mGroupName.detach();
   tlBox = new KTabListBox(this, "tlBox",2);
   tlBox->setColumn(0,"key", 150);
   tlBox->setColumn(1,"value", 140);

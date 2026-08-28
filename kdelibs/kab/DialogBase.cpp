@@ -153,7 +153,7 @@ void DialogBase::resizeEvent(QResizeEvent*)
   // -----
   if(width()<sizeHint().width() || height()<sizeHint().height())
      {
-       debug("DialogBase::resizeEvent: "
+       tqDebug("DialogBase::resizeEvent: "
 	     "warning - size is smaller than size hint, sloppy WM?");
      }
   int count, x, y, frameMainHeight, cx, cy;

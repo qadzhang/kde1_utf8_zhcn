@@ -61,7 +61,7 @@
 // create an extra KLocale instance here.
 extern KLocale *glocale;
 
-#include <space.h>
+#include "space.h"
 #include <math.h>
 #include <X11/Intrinsic.h>
 #include <GL/gl.h>

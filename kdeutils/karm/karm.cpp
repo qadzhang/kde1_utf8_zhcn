@@ -213,7 +213,7 @@ void Karm::newTask()
 void Karm::createNewTask( bool retVal )
 {
 	if( _addDlg == 0 ) {
-               warning(i18n( "Karm::createNewTask called and there's no dialog!" ) );
+               tqWarning(i18n( "Karm::createNewTask called and there's no dialog!" ) );
 		return;
 	}
 
@@ -253,7 +253,7 @@ void Karm::editTask()
 void Karm::updateExistingTask( bool retVal )
 {
 	if( _editDlg == 0 ) {
-               warning(i18n( "Karm::updateExistingTask called and there's no dlg!" ) );
+               tqWarning(i18n( "Karm::updateExistingTask called and there's no dlg!" ) );
 		return;
 	}
 

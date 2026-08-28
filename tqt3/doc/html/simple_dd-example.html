@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/iconview/simple_dd/simple_dd.doc:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Drag and Drop (Simple)</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Drag and Drop (Simple)</h1>
+
+   
+<p> 
+This provides a very simple example of TQt's drag and drop
+functionality.
+<p> For a more complete example see the <a href="dragdrop-example.html">Drag and Drop example</a>.
+<p> <hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qcursor-h.html">ntqcursor.h</a>&gt;
+#include &lt;<a href="qsplitter-h.html">ntqsplitter.h</a>&gt;
+#include &lt;<a href="qlistbox-h.html">ntqlistbox.h</a>&gt;
+#include &lt;<a href="qiconview-h.html">ntqiconview.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+
+class TQDragEnterEvent;
+class TQDragDropEvent;
+
+
+class DDListBox : public <a href="ntqlistbox.html">TQListBox</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    DDListBox( <a href="ntqwidget.html">TQWidget</a> * parent = 0, const char * name = 0, WFlags f = 0 );
+    // Low-level drag and drop
+    void dragEnterEvent( <a href="qdragenterevent.html">TQDragEnterEvent</a> *evt );
+    void dropEvent( <a href="qdropevent.html">TQDropEvent</a> *evt );
+    void mousePressEvent( <a href="qmouseevent.html">TQMouseEvent</a> *evt );
+    void mouseMoveEvent( <a href="qmouseevent.html">TQMouseEvent</a> * );
+private:
+    int dragging;
+};
+
+
+class DDIconViewItem : public <a href="qiconviewitem.html">TQIconViewItem</a>
+{
+public:
+    DDIconViewItem( <a href="ntqiconview.html">TQIconView</a> *parent, const <a href="ntqstring.html">TQString</a>&amp; text, const <a href="ntqpixmap.html">TQPixmap</a>&amp; icon ) :
+        <a href="qiconviewitem.html">TQIconViewItem</a>( parent, text, icon ) {}
+    DDIconViewItem( <a href="ntqiconview.html">TQIconView</a> *parent, const <a href="ntqstring.html">TQString</a> &amp;text ) :
+        <a href="qiconviewitem.html">TQIconViewItem</a>( parent, text ) {}
+    // High-level drag and drop
+    bool acceptDrop( const <a href="qmimesource.html">TQMimeSource</a> *mime ) const;
+    void dropped( <a href="qdropevent.html">TQDropEvent</a> *evt, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt;&amp; );
+};
+
+
+class DDIconView : public <a href="ntqiconview.html">TQIconView</a>
+{
+    TQ_OBJECT
+public:
+    DDIconView( <a href="ntqwidget.html">TQWidget</a> * parent = 0, const char * name = 0, WFlags f = 0 ) :
+        <a href="ntqiconview.html">TQIconView</a>( parent, name, f ) {}
+    // High-level drag and drop
+    <a href="ntqdragobject.html">TQDragObject</a> *dragObject();
+public slots:
+    void slotNewItem( <a href="qdropevent.html">TQDropEvent</a> *evt, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt;&amp; list );
+};
+
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "main.h"
+
+const char* red_icon[]={
+"16 16 2 1",
+"r c red",
+". c None",
+"................",
+"................",
+"..rrrrrrrrrrrr..",
+"..rrrrrrrrrrrr..",
+"..rrrrrrrrrrrr..",
+"..rrr......rrr..",
+"..rrr......rrr..",
+"..rrr......rrr..",
+"..rrr......rrr..",
+"..rrr......rrr..",
+"..rrr......rrr..",
+"..rrrrrrrrrrrr..",
+"..rrrrrrrrrrrr..",
+"..rrrrrrrrrrrr..",
+"................",
+"................"};
+
+const char* blue_icon[]={
+"16 16 2 1",
+"b c blue",
+". c None",
+"................",
+"................",
+"..bbbbbbbbbbbb..",
+"..bbbbbbbbbbbb..",
+"..bbbbbbbbbbbb..",
+"..bbb......bbb..",
+"..bbb......bbb..",
+"..bbb......bbb..",
+"..bbb......bbb..",
+"..bbb......bbb..",
+"..bbb......bbb..",
+"..bbbbbbbbbbbb..",
+"..bbbbbbbbbbbb..",
+"..bbbbbbbbbbbb..",
+"................",
+"................"};
+
+const char* green_icon[]={
+"16 16 2 1",
+"g c green",
+". c None",
+"................",
+"................",
+"..gggggggggggg..",
+"..gggggggggggg..",
+"..gggggggggggg..",
+"..ggg......ggg..",
+"..ggg......ggg..",
+"..ggg......ggg..",
+"..ggg......ggg..",
+"..ggg......ggg..",
+"..ggg......ggg..",
+"..gggggggggggg..",
+"..gggggggggggg..",
+"..gggggggggggg..",
+"................",
+"................"};
+
+
+// ListBox -- low level drag and drop
+
+<a name="f589"></a>DDListBox::DDListBox( <a href="ntqwidget.html">TQWidget</a> * parent, const char * name, WFlags f ) :
+    <a href="ntqlistbox.html">TQListBox</a>( parent, name, f )
+{
+    <a href="ntqwidget.html#setAcceptDrops">setAcceptDrops</a>( true );
+    dragging = false;
+}
+
+
+<a name="x2829"></a>void DDListBox::<a href="ntqwidget.html#dragEnterEvent">dragEnterEvent</a>( <a href="qdragenterevent.html">TQDragEnterEvent</a> *evt )
+{
+<a name="x2827"></a>    if ( TQTextDrag::<a href="qtextdrag.html#canDecode">canDecode</a>( evt ) )
+<a name="x2819"></a>        evt-&gt;<a href="qdragmoveevent.html#accept">accept</a>();
+}
+
+
+<a name="x2830"></a>void DDListBox::<a href="ntqwidget.html#dropEvent">dropEvent</a>( <a href="qdropevent.html">TQDropEvent</a> *evt )
+{
+    <a href="ntqstring.html">TQString</a> text;
+
+<a name="x2828"></a>    if ( TQTextDrag::<a href="qtextdrag.html#decode">decode</a>( evt, text ) )
+        <a href="ntqlistbox.html#insertItem">insertItem</a>( text );
+}
+
+
+<a name="x2832"></a>void DDListBox::<a href="ntqwidget.html#mousePressEvent">mousePressEvent</a>( <a href="qmouseevent.html">TQMouseEvent</a> *evt )
+{
+    TQListBox::<a href="ntqwidget.html#mousePressEvent">mousePressEvent</a>( evt );
+    dragging = true;
+}
+
+
+<a name="x2831"></a>void DDListBox::<a href="ntqwidget.html#mouseMoveEvent">mouseMoveEvent</a>( <a href="qmouseevent.html">TQMouseEvent</a> * )
+{
+    if ( dragging ) {
+        <a href="ntqdragobject.html">TQDragObject</a> *d = new <a href="qtextdrag.html">TQTextDrag</a>( currentText(), this );
+<a name="x2818"></a>        d-&gt;<a href="ntqdragobject.html#dragCopy">dragCopy</a>(); // do NOT delete d.
+        dragging = false;
+    }
+}
+
+
+// IconViewIcon -- high level drag and drop
+
+
+<a name="x2822"></a>bool DDIconViewItem::<a href="qiconviewitem.html#acceptDrop">acceptDrop</a>( const <a href="qmimesource.html">TQMimeSource</a> *mime ) const
+{
+<a name="x2825"></a>    if ( mime-&gt;<a href="qmimesource.html#provides">provides</a>( "text/plain" ) )
+        return true;
+    return false;
+}
+
+
+<a name="x2823"></a>void DDIconViewItem::<a href="qiconviewitem.html#dropped">dropped</a>( <a href="qdropevent.html">TQDropEvent</a> *evt, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt;&amp; )
+{
+    <a href="ntqstring.html">TQString</a> label;
+
+    if ( TQTextDrag::<a href="qtextdrag.html#decode">decode</a>( evt, label ) )
+        setText( label );
+}
+
+
+// IconView -- high level drag and drop
+
+<a name="x2820"></a>TQDragObject *DDIconView::<a href="ntqiconview.html#dragObject">dragObject</a>()
+{
+  return new <a href="qtextdrag.html">TQTextDrag</a>( <a href="ntqiconview.html#currentItem">currentItem</a>()-&gt;text(), this );
+}
+
+void <a name="f588"></a>DDIconView::slotNewItem( <a href="qdropevent.html">TQDropEvent</a> *evt, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt;&amp; )
+{
+    <a href="ntqstring.html">TQString</a> label;
+
+    if ( TQTextDrag::<a href="qtextdrag.html#decode">decode</a>( evt, label ) ) {
+        DDIconViewItem *item = new DDIconViewItem( this, label );
+<a name="x2824"></a>        item-&gt;<a href="qiconviewitem.html#setRenameEnabled">setRenameEnabled</a>( true );
+    }
+}
+
+
+
+int main( int argc, char *argv[] )
+{
+    <a href="ntqapplication.html">TQApplication</a> app( argc, argv );
+
+    // Create and show the widgets
+    <a href="ntqsplitter.html">TQSplitter</a> *split = new <a href="ntqsplitter.html">TQSplitter</a>();
+    DDIconView *iv   = new DDIconView( split );
+    (void)             new DDListBox( split );
+    app.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( split );
+    split-&gt;<a href="ntqwidget.html#resize">resize</a>( 600, 400 );
+    split-&gt;<a href="ntqwidget.html#show">show</a>();
+
+    // Set up the connection so that we can drop items into the icon view
+    TQObject::<a href="ntqobject.html#connect">connect</a>(
+<a name="x2821"></a>        iv, TQ_SIGNAL(<a href="ntqiconview.html#dropped">dropped</a>(TQDropEvent*, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt;&amp;)),
+        iv, TQ_SLOT(slotNewItem(TQDropEvent*, const <a href="ntqvaluelist.html">TQValueList</a>&lt;TQIconDragItem&gt;&amp;)));
+
+    // Populate the TQIconView with icons
+    DDIconViewItem *item;
+    item = new DDIconViewItem( iv, "Red",   TQPixmap( red_icon ) );
+    item-&gt;<a href="qiconviewitem.html#setRenameEnabled">setRenameEnabled</a>( true );
+    item = new DDIconViewItem( iv, "Green", TQPixmap( green_icon ) );
+    item-&gt;<a href="qiconviewitem.html#setRenameEnabled">setRenameEnabled</a>( true );
+    item = new DDIconViewItem( iv, "Blue",  TQPixmap( blue_icon ) );
+    item-&gt;<a href="qiconviewitem.html#setRenameEnabled">setRenameEnabled</a>( true );
+
+    return app.<a href="ntqapplication.html#exec">exec</a>();
+}
+
+
+</pre>
+
+<p> <p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

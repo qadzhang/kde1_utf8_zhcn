@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/ntqbitarray.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ntqbitarray.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>ntqbitarray.h</h1>
+
+<p>This is the verbatim text of the ntqbitarray.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/ntqbitarray.h   3.3.8   edited Jan 11 14:38 $
+**
+** Definition of TQBitArray class
+**
+** Created : 940118
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the tools module of the TQt GUI Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file. Alternatively you may (at your option) use any
+** later version of the GNU General Public License if such license has
+** been publicly approved by Trolltech ASA (or its successors, if any)
+** and the KDE Free TQt Foundation.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/.
+** If you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** This file may be used under the terms of the Q Public License as
+** defined by Trolltech ASA and appearing in the file LICENSE.TQPL
+** included in the packaging of this file.  Licensees holding valid TQt
+** Commercial licenses may use this file in accordance with the TQt
+** Commercial License Agreement provided with the Software.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not granted
+** herein.
+**
+**********************************************************************/
+
+#ifndef TQBITARRAY_H
+#define TQBITARRAY_H
+
+#ifndef QT_H
+#include "ntqstring.h"
+#endif // QT_H
+
+
+/*****************************************************************************
+  TQBitVal class; a context class for TQBitArray::operator[]
+ *****************************************************************************/
+
+class TQBitArray;
+
+class TQ_EXPORT TQBitVal
+{
+private:
+    TQBitArray *array;
+    uint    index;
+public:
+    TQBitVal( TQBitArray *a, uint i ) : array(a), index(i) {}
+    operator int();
+    TQBitVal &amp;operator=( const TQBitVal &amp;v );
+    TQBitVal &amp;operator=( bool v );
+};
+
+
+/*****************************************************************************
+  TQBitArray class
+ *****************************************************************************/
+
+class TQ_EXPORT TQBitArray : public TQByteArray
+{
+public:
+    TQBitArray();
+    TQBitArray( uint size );
+    TQBitArray( const TQBitArray &amp;a ) : TQByteArray( a ) {}
+
+    TQBitArray &amp;operator=( const TQBitArray &amp; );
+
+    uint    size() const;
+    bool    resize( uint size );
+
+    bool    fill( bool v, int size = -1 );
+
+    void    detach();
+    TQBitArray copy() const;
+
+    bool    testBit( uint index ) const;
+    void    setBit( uint index );
+    void    setBit( uint index, bool value );
+    void    clearBit( uint index );
+    bool    toggleBit( uint index );
+
+    bool    at( uint index ) const;
+    TQBitVal operator[]( int index );
+    bool operator[]( int index ) const;
+
+    TQBitArray &amp;operator&amp;=( const TQBitArray &amp; );
+    TQBitArray &amp;operator|=( const TQBitArray &amp; );
+    TQBitArray &amp;operator^=( const TQBitArray &amp; );
+    TQBitArray  operator~() const;
+
+protected:
+    struct bitarr_data : public TQGArray::array_data {
+	uint   nbits;
+    };
+    array_data *newData()		    { return new bitarr_data; }
+    void	deleteData( array_data *d ) { delete (bitarr_data*)d; }
+private:
+    void    pad0();
+};
+
+
+inline TQBitArray &amp;TQBitArray::operator=( const TQBitArray &amp;a )
+{ return (TQBitArray&amp;)assign( a ); }
+
+inline uint TQBitArray::size() const
+{ return ((bitarr_data*)sharedBlock())-&gt;nbits; }
+
+inline void TQBitArray::setBit( uint index, bool value )
+{ if ( value ) setBit(index); else clearBit(index); }
+
+inline bool TQBitArray::at( uint index ) const
+{ return testBit(index); }
+
+inline TQBitVal TQBitArray::operator[]( int index )
+{ return TQBitVal( (TQBitArray*)this, index ); }
+
+inline bool TQBitArray::operator[]( int index ) const
+{ return testBit( index ); }
+
+
+/*****************************************************************************
+  Misc. TQBitArray operator functions
+ *****************************************************************************/
+
+TQ_EXPORT TQBitArray operator&amp;( const TQBitArray &amp;, const TQBitArray &amp; );
+TQ_EXPORT TQBitArray operator|( const TQBitArray &amp;, const TQBitArray &amp; );
+TQ_EXPORT TQBitArray operator^( const TQBitArray &amp;, const TQBitArray &amp; );
+
+
+inline TQBitVal::operator int()
+{
+    return array-&gt;testBit( index );
+}
+
+inline TQBitVal &amp;TQBitVal::operator=( const TQBitVal &amp;v )
+{
+    array-&gt;setBit( index, v.array-&gt;testBit(v.index) );
+    return *this;
+}
+
+inline TQBitVal &amp;TQBitVal::operator=( bool v )
+{
+    array-&gt;setBit( index, v );
+    return *this;
+}
+
+
+/*****************************************************************************
+  TQBitArray stream functions
+ *****************************************************************************/
+#ifndef TQT_NO_DATASTREAM
+TQ_EXPORT TQDataStream &amp;operator&lt;&lt;( TQDataStream &amp;, const TQBitArray &amp; );
+TQ_EXPORT TQDataStream &amp;operator&gt;&gt;( TQDataStream &amp;, TQBitArray &amp; );
+#endif
+
+#endif // TQBITARRAY_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

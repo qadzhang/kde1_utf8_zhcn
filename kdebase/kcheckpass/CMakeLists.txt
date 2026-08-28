@@ -12,7 +12,7 @@ endif()
 # checkpass_etcpasswd.c checkpass_shadow.c checkpass_osfc2passwd.c
 
 add_executable(kcheckpass1 ${KCHECKPASS_SRCS})
-target_link_libraries(kcheckpass1 crypt Qt::Qt1)
+target_link_libraries(kcheckpass1 crypt ${TQT3_LIBRARIES})
 
 if (PAM_FOUND)
     target_link_libraries(kcheckpass1 ${PAM_LIBRARIES})

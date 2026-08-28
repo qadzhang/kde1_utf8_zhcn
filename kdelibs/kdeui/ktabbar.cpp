@@ -37,15 +37,15 @@ struct KTabBarProtected
 KTabBar::KTabBar(QWidget *parent, const char *name)
  : QWidget(parent, name)
 {
-  initMetaObject();
+
   init();
 }
 
 KTabBar::~KTabBar()
 {
-  //debug("KTabBar - destructor");
+  //tqDebug("KTabBar - destructor");
 
-  //debug("KTabBar - destructor done");
+  //tqDebug("KTabBar - destructor done");
 }
 
 void KTabBar::init()
@@ -64,7 +64,7 @@ void KTabBar::init()
 
   connect( ptab->qtab, SIGNAL(selected(int)), SLOT( emitSelected(int)) );
 
-  //debug("init - done");
+  //tqDebug("init - done");
 }
 
 QTabBar *KTabBar::getQTab()
@@ -155,8 +155,8 @@ void KTabBar::setSizes()
   ptab->tw_start = 0;
   int r = 0;
 
-  //debug("width: %d - t_width: %d", width(), ptab->t_width);
-  //debug("tpos %d", ptab->tpos);
+  //tqDebug("width: %d - t_width: %d", width(), ptab->t_width);
+  //tqDebug("tpos %d", ptab->tpos);
 
   if(width() >= ptab->t_width)
     ptab->tpos = 0;
@@ -164,7 +164,7 @@ void KTabBar::setSizes()
   {
     if(ptab->tpos < 0)
     {
-      //debug("leftscroll");
+      //tqDebug("leftscroll");
       ptab->leftscroll = true;
       ptab->tw_start = ptab->tw_height;
       ptab->tw_width -= ptab->tw_start;
@@ -173,20 +173,20 @@ void KTabBar::setSizes()
 
     if(width() < (ptab->t_width + ptab->tpos + ptab->tw_start))
     {
-      //debug("rightscroll");
+      //tqDebug("rightscroll");
       ptab->rightscroll = true;
       ptab->tw_width -= ptab->tw_height;
     }
   }
   if(ptab->tw_width > (ptab->t_width+ptab->tpos))
     ptab->tw_width = ptab->t_width + ptab->tpos;
-  //debug("tw_width %d", tw_width);
-  //debug("\n");
+  //tqDebug("tw_width %d", tw_width);
+  //tqDebug("\n");
 }
 
 void KTabBar::resizeEvent(QResizeEvent *)
 {
-  //debug("KTabBar, resizing");
+  //tqDebug("KTabBar, resizing");
 
   setSizes();
 
@@ -211,33 +211,33 @@ void KTabBar::resizeEvent(QResizeEvent *)
                            ptab->tw_width, ptab->tw_height);
   ptab->qtab->setGeometry( ptab->tpos, 0,
                            ptab->qtab->sizeHint().width(), ptab->tw_height);
-  //debug("KTabBar\ntabw: %dx%d\nqtab: %dx%d", tw_width, tw_height,
+  //tqDebug("KTabBar\ntabw: %dx%d\nqtab: %dx%d", tw_width, tw_height,
   //                          qtab->sizeHint().width(), tw_height);
 
   QPaintEvent pe(geometry());
   paintEvent( &pe );
 
-  //debug("KTabBar, resize - done");
+  //tqDebug("KTabBar, resize - done");
 }
 
 void KTabBar::paintEvent(QPaintEvent *)
 {
-  //debug("KTabBar - painting");
+  //tqDebug("KTabBar - painting");
 
   int end = width()-1;
   int start = ptab->tw_width + ptab->tpos;
-  //debug("width: %d - start: %d", width(), start);
+  //tqDebug("width: %d - start: %d", width(), start);
 
   if(ptab->leftscroll)  // if we need a left button we start the tabs at tw_height
     start = ptab->tw_height; // ( tw_height == left->width() )
   //start = 0;
   if(ptab->rightscroll)
     end -= ptab->tw_height;
-  //debug("width: %d", width());
-  //debug("tw_width: %d", tw_width);
-  //debug("tw_start: %d", tw_start);
-  //debug("2*tw_height + tw_width: %d", (2*tw_height)+tw_width);
-  //debug("start: %d - end: %d", start, end);
+  //tqDebug("width: %d", width());
+  //tqDebug("tw_width: %d", tw_width);
+  //tqDebug("tw_start: %d", tw_start);
+  //tqDebug("2*tw_height + tw_width: %d", (2*tw_height)+tw_width);
+  //tqDebug("start: %d - end: %d", start, end);
 
   QPainter p;
   // start painting widget
@@ -253,6 +253,6 @@ void KTabBar::paintEvent(QPaintEvent *)
 
   //qtab->repaint();
 
-  //debug("KTabBar - painting done");
+  //tqDebug("KTabBar - painting done");
 }
 #include "ktabbar.moc"

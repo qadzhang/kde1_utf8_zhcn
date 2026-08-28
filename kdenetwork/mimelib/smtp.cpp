@@ -63,11 +63,11 @@ DwSmtpClient::~DwSmtpClient()
 {
     if (mRecvBuffer) {
         delete [] mRecvBuffer;
-        mRecvBuffer = 0;
+        mRecvBuffer = TQString();
     }
     if (mSendBuffer) {
         delete [] mSendBuffer;
-        mSendBuffer = 0;
+        mSendBuffer = TQString();
     }
 }
 
@@ -422,7 +422,7 @@ int DwSmtpClient::SendData(const char* aBuf, int aBufLen)
 
         int numSent = PSend(buf, len);
         if (numSent != len) {
-            mReplyCode = 0;
+            mReplyCode = TQString();
             return mReplyCode;
         }
     }
@@ -530,7 +530,7 @@ int DwSmtpClient::PGetLine(char** aPtr, int* aLen)
             return -1;
         }
         mNumRecvBufferChars += n;
-        startPos = 0;
+        startPos = TQString();
         pos = mRecvBufferPos;
     }
 }

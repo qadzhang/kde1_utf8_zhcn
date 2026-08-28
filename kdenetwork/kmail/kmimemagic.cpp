@@ -27,9 +27,9 @@
  */
 #define MIME_MAGIC_DEBUG  0
 #if MIME_MAGIC_DEBUG
-#define debug(fmt, args...)  debugT(fmt "\n" , ## args)
+#define tqDebug(fmt, args...)  debugT(fmt "\n" , ## args)
 #else
-#define debug(fmt, args...)
+#define tqDebug(fmt, args...)
 #endif
 
 #define DECLINED 999
@@ -402,7 +402,7 @@ void  error( const char *msg, ... )
     tmp += "\n";
     vfprintf( stderr, tmp.data() , ap );
     va_end( ap );
-    accuracy = 0;
+    accuracy = 0;  /* TQt3 迁移 */
 }
 
 #if (MIME_MAGIC_DEBUG > 1)
@@ -412,13 +412,13 @@ test_table()
 	struct magic *m;
 	struct magic *prevm = NULL;
 
-	debug("%s: started", __FUNCTION__);
+	tqDebug("%s: started", __FUNCTION__);
 	for (m = conf->magic; m; m = m->next) {
 		if (isprint((((unsigned long) m) >> 24) & 255) &&
 		    isprint((((unsigned long) m) >> 16) & 255) &&
 		    isprint((((unsigned long) m) >> 8) & 255) &&
 		    isprint(((unsigned long) m) & 255)) {
-			debug("%s: POINTER CLOBBERED! "
+			tqDebug("%s: POINTER CLOBBERED! "
 			      "m=\"%c%c%c%c\" line=%d", __FUNCTION__,
 			      (((unsigned long) m) >> 24) & 255,
 			      (((unsigned long) m) >> 16) & 255,
@@ -445,7 +445,7 @@ parse_line(char *line, int *rule, int lineno)
 		line[strlen(line) - 1] = '\0';
 	}
 	/* skip leading whitespace */
-	ws_offset = 0;
+	ws_offset = 0;  /* TQt3 迁移 */
 	while (line[ws_offset] && isspace(line[ws_offset])) {
 		ws_offset++;
 	}
@@ -496,13 +496,13 @@ apprentice()
 	fclose(f);
 
 #if (MIME_MAGIC_DEBUG > 1)
-	debug("%s: conf=%p file=%s m=%s m->next=%s last=%s",
+	tqDebug("%s: conf=%p file=%s m=%s m->next=%s last=%s",
 	      __FUNCTION__, conf,
 	      conf->magicfile ? conf->magicfile : "NULL",
 	      conf->magic ? "set" : "NULL",
 	      (conf->magic && conf->magic->next) ? "set" : "NULL",
 	      conf->last ? "set" : "NULL");
-	debug("%s: read %d lines, %d rules, %d errors",
+	tqDebug("%s: read %d lines, %d rules, %d errors",
 	      __FUNCTION__, lineno, rule, errs);
 
 	test_table();
@@ -541,12 +541,12 @@ buff_apprentice(char *buff)
 	} while (len > 0);
 
 #if (MIME_MAGIC_DEBUG > 1)
-	debug("%s: conf=%p m=%s m->next=%s last=%s",
+	tqDebug("%s: conf=%p m=%s m->next=%s last=%s",
 	      __FUNCTION__, conf,
 	      conf->magic ? "set" : "NULL",
 	      (conf->magic && conf->magic->next) ? "set" : "NULL",
 	      conf->last ? "set" : "NULL");
-	debug("%s: read %d lines, %d rules, %d errors",
+	tqDebug("%s: read %d lines, %d rules, %d errors",
 	      __FUNCTION__, lineno, rule, errs);
 
 	test_table();
@@ -792,7 +792,7 @@ parse(char *l, int lineno)
 		/* NULLBODY */ ;
 
 #if (MIME_MAGIC_DEBUG > 1)
-	debug("%s: line=%d m=%p next=%p cont=%d desc=%s",
+	tqDebug("%s: line=%d m=%p next=%p cont=%d desc=%s",
 	      __FUNCTION__, lineno, m, m->next, m->cont_level,
 	      m->desc ? m->desc : "NULL");
 #endif                          /* MIME_MAGIC_DEBUG */
@@ -1067,13 +1067,13 @@ mcheck(union VALUETYPE *p, struct magic *m)
 			break;
 
 		case STRING:
-			l = 0;
+			l = 0;  /* TQt3 迁移 */
 			/*
 			 * What we want here is: v = strncmp(m->value.s, p->s,
 			 * m->vallen); but ignoring any nulls.  bcmp doesn't give
 			 * -/+/0 and isn't universally available anyway.
 			 */
-			v = 0;
+			v = 0;  /* TQt3 迁移 */
 			{
 				register unsigned char *a = (unsigned char *) m->value.s;
 				register unsigned char *b = (unsigned char *) p->s;
@@ -1090,11 +1090,11 @@ mcheck(union VALUETYPE *p, struct magic *m)
 			return 0;	/* NOTREACHED */
 	}
 #if 0
-	debug("Before signextend %08x", v);
+	tqDebug("Before signextend %08x", v);
 #endif
 	v = signextend(m, v) & m->mask;
 #if 0
-	debug("After signextend %08x", v);
+	tqDebug("After signextend %08x", v);
 #endif
 
 	switch (m->reln) {
@@ -1133,7 +1133,7 @@ mcheck(union VALUETYPE *p, struct magic *m)
 			break;
 
 		default:
-			matched = 0;
+			matched = 0;  /* TQt3 迁移 */
 			error("%s: can't happen: invalid relation %d.",
 			      __FUNCTION__, m->reln);
 			break;  /* NOTREACHED */
@@ -1181,7 +1181,7 @@ KMimeMagic::finishResult()
 	encoding_pos = encoding_len = 0;
 	/* loop through the characters in the result */
 	for (cur_pos = 0; cur_pos < (int)resultBuf.length(); cur_pos++) {
-		if (isspace(resultBuf.at(cur_pos))) {
+		if (isspace(resultBuf.at(cur_pos).latin1())) {
 			/* process whitespace actions for each state */
 			if (state == rsl_leading_space) {
 				/* eat whitespace in this state */
@@ -1345,7 +1345,7 @@ KMimeMagic::tryit(unsigned char *buf, int nb)
 	 * abandon hope, all ye who remain here
 	 */
 	resultBuf += MIME_BINARY_UNKNOWN;
-	accuracy = 0;
+	accuracy = 0;  /* TQt3 迁移 */
 }
 
 int
@@ -1508,7 +1508,7 @@ KMimeMagic::match(unsigned char *s, int nbytes)
 	struct magic *m;
 
 #if (MIME_MAGIC_DEBUG > 1)
-	debug("%s: conf=%p file=%s m=%s m->next=%s last=%s",
+	tqDebug("%s: conf=%p file=%s m=%s m->next=%s last=%s",
 	      __FUNCTION__, conf,
 	      conf->magicfile ? conf->magicfile : "NULL",
 	      conf->magic ? "set" : "NULL",
@@ -1519,7 +1519,7 @@ KMimeMagic::match(unsigned char *s, int nbytes)
 		    isprint((((unsigned long) m) >> 16) & 255) &&
 		    isprint((((unsigned long) m) >> 8) & 255) &&
 		    isprint(((unsigned long) m) & 255)) {
-			debug("%s: POINTER CLOBBERED! "
+			tqDebug("%s: POINTER CLOBBERED! "
 			      "m=\"%c%c%c%c\"", __FUNCTION__,
 			      (((unsigned long) m) >> 24) & 255,
 			      (((unsigned long) m) >> 16) & 255,
@@ -1533,7 +1533,7 @@ KMimeMagic::match(unsigned char *s, int nbytes)
 	for (m = conf->magic; m; m = m->next) {
 #if (MIME_MAGIC_DEBUG > 1)
 		rule_counter++;
-		debug("%s: line=%d desc=%s", __FUNCTION__,
+		tqDebug("%s: line=%d desc=%s", __FUNCTION__,
 		      m->lineno, m->desc);
 #endif
 
@@ -1552,7 +1552,7 @@ KMimeMagic::match(unsigned char *s, int nbytes)
 			while (m_cont && (m_cont->cont_level != 0)) {
 #if (MIME_MAGIC_DEBUG > 1)
 				rule_counter++;
-				debug("%s: line=%d mc=%p mc->next=%p "
+				tqDebug("%s: line=%d mc=%p mc->next=%p "
 				      "cont=%d desc=%s",
 				      __FUNCTION__, m_cont->lineno, m_cont,
 				      m_cont->next, m_cont->cont_level,
@@ -1570,7 +1570,7 @@ KMimeMagic::match(unsigned char *s, int nbytes)
 		/* if we get here, the main entry rule was a match */
 		/* this will be the last run through the loop */
 #if (MIME_MAGIC_DEBUG > 1)
-		debug("%s: rule matched, line=%d type=%d %s",
+		tqDebug("%s: rule matched, line=%d type=%d %s",
 		      __FUNCTION__, m->lineno, m->type,
 		      (m->type == STRING) ? m->value.s : "");
 #endif
@@ -1593,7 +1593,7 @@ KMimeMagic::match(unsigned char *s, int nbytes)
 		m = m->next;
 		while (m && (m->cont_level != 0)) {
 #if (MIME_MAGIC_DEBUG > 1)
-			debug("%s: line=%d cont=%d type=%d %s",
+			tqDebug("%s: line=%d cont=%d type=%d %s",
 			      __FUNCTION__, m->lineno, m->cont_level, m->type,
 			      (m->type == STRING) ? m->value.s : "");
 #endif
@@ -1619,7 +1619,7 @@ KMimeMagic::match(unsigned char *s, int nbytes)
 					    && (m->desc[0] != '\0')
 					    ) {
 						resultBuf += " ";
-						need_separator = 0;
+						need_separator = 0;  /* TQt3 迁移 */
 					}
 					mprint(&p, m);
 					if (m->desc[0])
@@ -1636,12 +1636,12 @@ KMimeMagic::match(unsigned char *s, int nbytes)
 			m = m->next;
 		}
 #if (MIME_MAGIC_DEBUG > 1)
-		debug("%s: matched after %d rules", __FUNCTION__, rule_counter);
+		tqDebug("%s: matched after %d rules", __FUNCTION__, rule_counter);
 #endif
 		return 1;       /* all through */
 	}
 #if (MIME_MAGIC_DEBUG > 1)
-	debug("%s: failed after %d rules", __FUNCTION__, rule_counter);
+	tqDebug("%s: failed after %d rules", __FUNCTION__, rule_counter);
 #endif
 	return 0;               /* no match at all */
 }
@@ -1749,13 +1749,13 @@ KMimeMagic::ascmagic(unsigned char *buf, int nbytes)
  * Try a little harder on C/C++/Java.
  */
 	memset(&typecount, 0, sizeof(typecount));
-	typeset = 0;
-	jonly = 0;
-	conly = 0;
-	jconly = 0;
-	cppcomm = 0;
-	ccomm = 0;
-	tokencount = 0;
+	typeset = 0;  /* TQt3 迁移 */
+	jonly = 0;  /* TQt3 迁移 */
+	conly = 0;  /* TQt3 迁移 */
+	jconly = 0;  /* TQt3 迁移 */
+	cppcomm = 0;  /* TQt3 迁移 */
+	ccomm = 0;  /* TQt3 迁移 */
+	tokencount = 0;  /* TQt3 迁移 */
 	// first collect all possible types and count matches
 	while ((token = strtok((char *) s, " \t\n\r\f,;")) != NULL) {
 		s = NULL;       /* make strtok() keep on tokin' */
@@ -1907,7 +1907,7 @@ is_tar(unsigned char *buf, int nbytes)
 
 	recsum = from_oct(8, header->header.chksum);
 
-	sum = 0;
+	sum = 0;  /* TQt3 迁移 */
 	p = header->charptr;
 	for (i = sizeof(union record); --i >= 0;) {
 		/*
@@ -1947,7 +1947,7 @@ from_oct(int digs, char *where)
 		if (--digs <= 0)
 			return -1;	/* All blank field */
 	}
-	value = 0;
+	value = 0;  /* TQt3 迁移 */
 	while (digs > 0 && isodigit(*where)) {	/* Scan til nonoctal */
 		value = (value << 3) | (*where++ - '0');
 		--digs;
@@ -1981,12 +1981,12 @@ KMimeMagic::revision_suffix(const char * fn)
 	QString newfn = QString(fn);
 
 #if (MIME_MAGIC_DEBUG > 2)
-	debug("%s: checking %s", __FUNCTION__, fn);
+	tqDebug("%s: checking %s", __FUNCTION__, fn);
 #endif
 	/* check for recognized revision suffix */
 	suffix_pos = newfn.findRev(QRegExp("@[0-9]*$"));
 #if (MIME_MAGIC_DEBUG > 2)
-	debug("%s: suffix_pos=%d", __FUNCTION__, suffix_pos);
+	tqDebug("%s: suffix_pos=%d", __FUNCTION__, suffix_pos);
 #endif
 	if (suffix_pos == -1)
 		return NULL;
@@ -2090,7 +2090,7 @@ KMimeMagic::findBufferType(const char * buffer, int nbytes)
 {
 	unsigned char buf[HOWMANY + 1];	/* one extra for terminating '\0' */
 
-	resultBuf.resize(0);
+	resultBuf.truncate(0);  /* TQt3 迁移 */
 	if (magicResult) {
 		magicResult->setContent(QString(0));
 		magicResult->setEncoding(QString(0));
@@ -2146,7 +2146,7 @@ KMimeMagic::findBufferFileType( const char * buffer, int nbytes,
 const KMimeMagicResult *
 KMimeMagic::findFileType(const char *fn)
 {
-        resultBuf.resize(0);
+        resultBuf.truncate(0);
         if (magicResult) {
                 magicResult->setContent(QString(0));
                 magicResult->setEncoding(QString(0));

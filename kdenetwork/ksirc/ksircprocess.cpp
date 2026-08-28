@@ -236,7 +236,7 @@ KSircProcess::KSircProcess( char *_server, QObject * parent, const char * name )
   command += "\n";
   iocontrol->stdin_write(command);
 
-  debug("Done ksircprocess");
+  tqDebug("Done ksircprocess");
 
 }
 
@@ -270,7 +270,7 @@ KSircProcess::~KSircProcess() /*FOLD00*/
 }
 
 bool KSircProcess::eventFilter ( QObject *obj, QEvent *e ){ /*FOLD00*/
-    debug("Got event %d", e->type());
+    tqDebug("Got event %d", e->type());
     return TRUE;
 }
 void KSircProcess::new_toplevel(QString str) /*FOLD00*/
@@ -279,7 +279,7 @@ void KSircProcess::new_toplevel(QString str) /*FOLD00*/
   static int number_open = 0;
   static bool flood_dlg = FALSE;
 
-  debug("Creating toplevel for: -%s-", str.data());
+  tqDebug("Creating toplevel for: -%s-", str.data());
 
   if(running_window == FALSE){ // If we're not fully running, reusing
 			       // !default window for next chan.
@@ -308,7 +308,7 @@ void KSircProcess::new_toplevel(QString str) /*FOLD00*/
 	    emit ProcMessage(QString(server), ProcCommand::turnOffAutoCreate, QString());
 	  }
 	  last_window_open = current_time;
-	  number_open = 0;
+	  number_open = 0;  /* TQt3 迁移 */
 	}
 	else{
 	  number_open++;
@@ -324,7 +324,7 @@ void KSircProcess::new_toplevel(QString str) /*FOLD00*/
     // TopList is a list of KSircReceivers so we still need wm.
 //    KSircMessageReceiver *faker = new("KSircMessageReceiver") KSircMessageReceiver(this);
     //    TopList.insert(str, faker); // Insert place holder since the constructor for kSircTopLevel may parse the event queue which will cause us to try and create trhe window several times!!!
-    debug("Calling new toplevel for: -%s-", str.data());
+    tqDebug("Calling new toplevel for: -%s-", str.data());
     KSircTopLevel *wm = new("KSircTopLevel") KSircTopLevel(this, str.data(), QString(server) +"_" + str);
     //    insertChild(wm); // Keep ineheratence going so we can find children
     installEventFilter(wm);
@@ -353,7 +353,7 @@ void KSircProcess::new_toplevel(QString str) /*FOLD00*/
     displayMgr->show(wm);
   }
   else{
-    debug("Window %s already exists", str.data());
+    tqDebug("Window %s already exists", str.data());
   }
 }
 
@@ -441,7 +441,7 @@ void KSircProcess::close_toplevel(KSircTopLevel *wm, char *name) /*FOLD00*/
 
 void KSircProcess::clean_toplevel(KSircTopLevel *clean){ /*FOLD00*/
   if(clean == 0x0){
-    warning("Passed null to cleaner!!");
+    tqWarning("Passed null to cleaner!!");
     return;
   }
   bool cont = FALSE;

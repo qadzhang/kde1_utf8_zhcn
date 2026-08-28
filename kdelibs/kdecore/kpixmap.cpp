@@ -24,8 +24,8 @@
 #include <qbitmap.h>
 #include <qcolor.h>
 
-#include <kapp.h>
-#include <dither.h>
+#include "kapp.h"
+#include "dither.h"
 
 #include "kpixmap.h"
 
@@ -40,7 +40,7 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
 	//printf("kconvert_32_to_8\n");
 	
     if ( !dst->create(src->width(), src->height(), 8, 256) ) {
-		warning("KPixmap: destination image not valid\n");
+		tqWarning("KPixmap: destination image not valid\n");
 		return FALSE;
 	}
 
@@ -374,7 +374,7 @@ bool KPixmap::convertFromImage( const QImage &img, int conversion_flags  )
 {
 	if ( img.isNull() ) {
 #if defined(CHECK_NULL)
-	warning( "KPixmap::convertFromImage: Cannot convert a null image" );
+	tqWarning( "KPixmap::convertFromImage: Cannot convert a null image" );
 #endif
 	return FALSE;
     }

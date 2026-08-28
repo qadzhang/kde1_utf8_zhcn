@@ -33,7 +33,7 @@
 #include <qdrawutil.h>
 #include <qmessagebox.h>
 
-#include <kapp.h>
+#include "kapp.h"
 
 // NOTE ABOUT CONFIGURATION CHANGES
 // Test if keys enabled because these keys have made X server grabs
@@ -77,7 +77,7 @@ void KGlobalAccel::connectItem( const char * action,
 		str.sprintf(
 			"KGlobalAccel : Cannot connect action %s"\
 			"which is not in the object dictionary", action );
-		warning( str );
+		tqWarning( str );
 		return;
 	}
 	
@@ -141,7 +141,7 @@ bool grabFailed;
 
 static int XGrabErrorHandler( Display *, XErrorEvent *e ) {
 	if ( e->error_code != BadAccess ) {
-		warning( "grabKey: got X error %d instead of BadAccess", e->type );
+		tqWarning( "grabKey: got X error %d instead of BadAccess", e->type );
 	}
 	grabFailed = true;
 	return 0;
@@ -194,7 +194,7 @@ bool KGlobalAccel::grabKey( uint keysym, uint mod ) {
 	
 	if (grabFailed) {
 		// FIXME: ungrab all successfull grabs!
-		//warning("Global grab failed!");
+		//tqWarning("Global grab failed!");
    		return false;
 	}
 	return true;
@@ -217,7 +217,7 @@ bool KGlobalAccel::insertItem(  const char* descr, const char * action, uint key
 	pEntry->bEnabled = false;
 	pEntry->aAccelId = 0;
 	pEntry->receiver = 0;
-	pEntry->member = 0;
+	pEntry->member = TQString();
 	pEntry->descr = descr;
 
 	return TRUE;
@@ -340,7 +340,7 @@ void KGlobalAccel::setItemEnabled( const char * action, bool activate )
 		str.sprintf(
 			"KGlobalAccel : cannont enable action %s"\
 			"which is not in the object dictionary", action );
-		warning( str );
+		tqWarning( str );
 		return;
 	}
 
@@ -460,7 +460,7 @@ bool KGlobalAccel::ungrabKey( uint keysym, uint mod ) {
 	XSetErrorHandler(savedErrorHandler);
 	if (grabFailed) {
 		// FIXME: ungrab all successfull grabs!
-		//warning("Global grab failed!");
+		//tqWarning("Global grab failed!");
    		return false;
 	}
 	return true;
@@ -478,8 +478,8 @@ void KGlobalAccel::writeSettings()
 	aKeyIt.toFirst();
 	while ( aKeyIt.current() ) {
 	  if ( aKeyIt.current()->bConfigurable ){
-		  pConfig->writeEntry( aKeyIt.currentKey(),
-				       keyToString( aKeyIt.current()->aCurrentKeyCode),
+		  pConfig->writeEntry( (const char*)aKeyIt.currentKey(),
+				       (const char*)keyToString( aKeyIt.current()->aCurrentKeyCode),
 				       true, true);
 	  }
 		++aKeyIt;

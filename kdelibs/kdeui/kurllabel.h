@@ -47,12 +47,13 @@
 #include <qpainter.h>
 #include <qbitmap.h>
 
+// TQt3 迁移：成员加 KURL 前缀，避免与 TQt 命名空间同名枚举（Bottom=Dock 等）冲突
 typedef enum
 {
-	Bottom,
-	Left,
-	Top,
-	Right
+	KURL_Bottom,
+	KURL_Left,
+	KURL_Top,
+	KURL_Right
 } TextAlignment;
 
 /**

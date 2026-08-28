@@ -87,7 +87,7 @@ KfindTabDialog::KfindTabDialog( QWidget *parent, const char *name, const char *s
     int wTmpNamed = (namedL->sizeHint()).width();
     int wTmpLook  = (lookinL->sizeHint()).width();
     int wTmp = (wTmpNamed > wTmpLook) ? wTmpNamed:wTmpLook;
-    if ((nameBox->style())==WindowsStyle)
+    if (nameBox->style().inherits("TQWindowsStyle"))
       {
         namedL   ->setFixedSize(wTmp+10,25);
         lookinL  ->setFixedSize(wTmp+10,25);
@@ -348,14 +348,14 @@ void KfindTabDialog::resizeEvent( QResizeEvent *ev )
     //Page One of KfTAbDialog
     namedL ->move(10,20);
 
-    if ((nameBox->style())==WindowsStyle)
+    if (nameBox->style().inherits("TQWindowsStyle"))
         lookinL->move(10,55);
       else
         lookinL->move(10,60);
 
     wTmp = 10+namedL->width();
 
-    if ((nameBox->style())==WindowsStyle)
+    if (nameBox->style().inherits("TQWindowsStyle"))
         nameBox->setGeometry(wTmp,namedL->y(),w-20-wTmp,25);
       else
         nameBox->setGeometry(wTmp,namedL->y(),w-20-wTmp,30);
@@ -738,3 +738,4 @@ void KfindTabDialog::endSearch() {
     g->w->setEnabled(g->enabled);
   loadHistory();
 }
+

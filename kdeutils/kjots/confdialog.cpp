@@ -35,7 +35,6 @@
 
 ConfDialog::ConfDialog ()
 {
-  initMetaObject();
   setCaption(klocale->translate("Configure KJots"));
   tabbar = new KTabCtl(this);
   tabbar->setGeometry(10,10, 300, 200);

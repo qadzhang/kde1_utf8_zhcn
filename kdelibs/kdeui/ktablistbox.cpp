@@ -115,7 +115,7 @@ KTabListBoxItem& KTabListBoxItem::operator=(const KTabListBoxItem& from)
 //-----------------------------------------------------------------------------
 KTabListBoxColumn::KTabListBoxColumn(KTabListBox* pa, int w): QObject()
 {
-  initMetaObject();
+
   iwidth = w;
   idefwidth = w;
   colType = KTabListBox::TextColumn;
@@ -243,7 +243,7 @@ void KTabListBoxColumn::paintCell(QPainter* paint, int row,
           pix = parent->dict().find(pixName);
           if (!pix)
           {
-            debug("KTabListBox "+QString(name())+
+            tqDebug("KTabListBox "+QString(name())+
           	":\nno pixmap for\n`"+pixName+"' registered.");
           }
           if (!pix->isNull()) paint->drawPixmap(x, 0, *pix);
@@ -371,7 +371,7 @@ KTabListBox::KTabListBox(QWidget *parent, const char *name, int columns,
   QString f;
   QColorGroup g = colorGroup();
 
-  initMetaObject();
+
 
   f = kapp->kde_datadir().copy();
   f += "/khtmlw/pics/khtmlw_dnd.xpm";
@@ -728,7 +728,6 @@ bool KTabListBox::recursiveSort(int level,int n,
     if(pc[level+1] && recursiveSort(level+1,n,pc,iCol))
        return true;
     else return false;
-  else
     if(  (result<0 && pc[level]->orderMode()==Ascending) ||
          (result>0 && pc[level]->orderMode()==Descending) )
       return true;
@@ -868,7 +867,7 @@ const QString& KTabListBox::text(int row, int col) const
 
   if (!item)
   {
-    str = 0L;
+    str = TQString();
     return str;
   }
   if (col >= 0) return item->text(col);
@@ -952,8 +951,6 @@ void KTabListBox::changeItem(const char* aStr, int row)
   if (row < 0 || row >= numRows()) return;
 
   str = aStr;
-  str.detach();
-
   sepStr[0] = sepChar;
   sepStr[1] = '\0';
 
@@ -1304,7 +1301,7 @@ void KTabListBox::paintEvent(QPaintEvent*)
   }
   paint.resetXForm();
   paint.setClipping (false);
-  if ( style() == MotifStyle )
+  if ( style().inherits("TQMotifStyle") )
     qDrawShadePanel(&paint, 0, 0, width(), height(),
                     KTabListBoxInherited::colorGroup(), false, 1);
   else
@@ -1374,7 +1371,7 @@ void KTabListBox::mouseMoveEvent(QMouseEvent* e)
     {
       mResizeCol = FALSE;
       mMouseCol = -1;
-      setCursor(arrowCursor);
+      setCursor(TQt::arrowCursor);
     }
   }
 }
@@ -1570,7 +1567,7 @@ KTabListBoxTable::KTabListBoxTable(KTabListBox *parent):
 {
   QFontMetrics fm = fontMetrics();
 
-  initMetaObject();
+
 
   dragging = FALSE;
 
@@ -1582,14 +1579,12 @@ KTabListBoxTable::KTabListBoxTable(KTabListBox *parent):
   setTableFlags(Tbl_autoVScrollBar|Tbl_autoHScrollBar|Tbl_smoothVScrolling|
 		 Tbl_clipCellPainting);
 
-  switch(style())
-  {
-  case MotifStyle:
-  case WindowsStyle:
+  //   Modified for the KDE1 Revival Project, 2026（TQt3 迁移：switch(GUIStyle)
+  //   改继承式风格判断——TQt3 的 style() 返回 TQStyle 引用不可作 switch 量）
+  if ( style().inherits("TQMotifStyle") || style().inherits("TQWindowsStyle") ) {
     setBackgroundColor(colorGroup().base());
     setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
-    break;
-  default:
+  } else {
     setLineWidth(1);
     setFrameStyle(QFrame::Panel|QFrame::Plain);
   }
@@ -1598,7 +1593,7 @@ KTabListBoxTable::KTabListBoxTable(KTabListBox *parent):
   setCellHeight(fm.lineSpacing() + 1);
   setNumRows(0);
 
-  setCursor(arrowCursor);
+  setCursor(TQt::arrowCursor);
   setMouseTracking(FALSE);
 
   setFocusPolicy(NoFocus);

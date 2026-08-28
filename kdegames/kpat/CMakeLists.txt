@@ -10,16 +10,16 @@ set(KPAT_SRCS main.cpp patience.cpp rnd.cpp cardmaps.cpp
     basiccard.cpp card.cpp napoleon.cpp idiot.cpp
     microsol.cpp pwidget.cpp freecell.cpp mod3.cpp)
 
-set(KPAT_MOC patience.moc computation.moc klondike.moc
-    grandf.moc basiccard.moc card.moc mod3.moc
-    ten.moc napoleon.moc idiot.moc freecell.moc
-    microsol.moc pwidget.moc cardmaps.moc)
+set(KPAT_MOC patience.h computation.h klondike.h
+    grandf.h basiccard.h card.h mod3.h
+    ten.h napoleon.h idiot.h freecell.h
+    microsol.h pwidget.h cardmaps.h)
 
-QT1_WRAP_MOC(MOC_FILES ${KPAT_MOC})
+TQT3_WRAP_CPP(MOC_FILES ${KPAT_MOC})
 
 add_executable(kpat1 ${KPAT_SRCS} ${MOC_FILES})
 target_link_libraries(kpat1
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}

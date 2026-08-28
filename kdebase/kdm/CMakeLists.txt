@@ -33,7 +33,7 @@ set(kdmlib_SRC
     xdmcp.c
     )
 
-qt1_wrap_moc(MOC_SRCS
+TQT3_WRAP_CPP(MOC_SRCS
         kdmshutdown.h
         kdmview.h
         kfdialog.h
@@ -58,7 +58,7 @@ add_executable(kdmdesktop
 
 if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
 target_link_libraries(kdm
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     X11::X11
     X11::Xdmcp
     X11::Xau
@@ -71,7 +71,7 @@ target_link_libraries(kdm
     )
 elseif (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
 target_link_libraries(kdm
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     X11::X11
     X11::Xdmcp
     X11::Xau
@@ -84,7 +84,7 @@ target_link_libraries(kdm
     )
 else()
 target_link_libraries(kdm
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     X11::X11
     X11::Xdmcp
     X11::Xau
@@ -99,7 +99,7 @@ endif()
 
 target_link_libraries(kdmdesktop
     X11::X11
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KIMGIO}
     )

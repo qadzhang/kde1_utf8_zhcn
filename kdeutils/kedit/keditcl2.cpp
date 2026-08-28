@@ -562,7 +562,7 @@ int KEdit::doReplace(QString s_pattern, bool case_sensitive,
 	
 	if(replace_all){ // automatic
 
-	  stringnew = string.copy();
+	  stringnew = string;
 	  stringnew.replace(pos,length,replacement);
 
 	  removeLine(line_counter);
@@ -628,7 +628,7 @@ int KEdit::doReplace(QString s_pattern, bool case_sensitive,
 
 	if(replace_all){ // automatic
 
-	  stringnew = string.copy();
+	  stringnew = string;
 	  stringnew.replace(pos,length,replacement);
 
 	  removeLine(line_counter);

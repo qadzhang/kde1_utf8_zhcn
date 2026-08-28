@@ -4,7 +4,7 @@
 #include <mimelib/mimepp.h>
 #include <qregexp.h>
 #ifndef KRN
-#include <kmfolder.h>
+#include "kmfolder.h"
 #endif
 
 #include <ctype.h>
@@ -25,8 +25,8 @@ KMMsgBase::KMMsgBase(KMFolder* aParent)
 {
   mParent  = aParent;
   mDirty   = FALSE;
-  mMsgSize = 0;
-  mFolderOffset = 0;
+  mMsgSize = 0;  /* TQt3 迁移 */
+  mFolderOffset = 0;  /* TQt3 迁移 */
   mStatus  = KMMsgStatusNew;
   mDate    = 0;
 }
@@ -185,7 +185,7 @@ const QString KMMsgBase::dateStr(void) const
 const QString KMMsgBase::asIndexString(void) const
 {
   int i, len;
-  QString str(356); // Sven is blind.
+  TQString str;  /* TQt3 迁移 */ // Sven is blind.
 
   // don't forget to change indexStringLength() below !!
   str.sprintf("%c %-.9lu %-.9lu %-.9lu %-3.3s %-100.100s %-100.100s %-100.100s",
@@ -359,7 +359,7 @@ const QString KMMsgBase::decodeRFC1522String(const QString aStr)
     {
       ch = *pos;
       *pos = '\0';
-      str = QString(mid, (int)(mid - pos - 1));
+      str = TQString::fromLatin1(mid, (int)(mid - pos - 1));  /* TQt3 迁移 */
       if (encoding == 'Q')
       {
 	// decode quoted printable text
@@ -373,8 +373,8 @@ const QString KMMsgBase::decodeRFC1522String(const QString aStr)
 	str = decodeBase64(str);
       }
       *pos = ch;
-      for (i=0; str[i]; i++)
-	*dest++ = str[i];
+      for (i=0; str[i].latin1(); i++)  /* TQt3 迁移 */
+	*dest++ = str[i].latin1();  /* TQt3 迁移 */
 
       pos = end -1;
     }
@@ -400,8 +400,8 @@ const QString KMMsgBase::decodeQuotedPrintableString(const QString aStr)
   int start, beg, mid, end;
   end = 0; // Remove compiler warning;
 
-  start = 0;
-  end = 0;
+  start = 0;  /* TQt3 迁移 */
+  end = 0;  /* TQt3 迁移 */
   result = "";
 
   while (1)
@@ -482,7 +482,7 @@ const QString KMMsgBase::decodeBase64(const QString aStr)
 //-----------------------------------------------------------------------------
 const QString KMMsgBase::encodeBase64(const QString aStr)
 {
-  DwString dwsrc(aStr.data(), aStr.size()-1);
+  DwString dwsrc(aStr.data(), aStr.length()-1);
   DwString dwdest;
   QString result;
 

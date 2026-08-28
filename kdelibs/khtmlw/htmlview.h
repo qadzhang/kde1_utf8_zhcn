@@ -29,7 +29,7 @@
 
 #include <qscrollbar.h>
 #include <qlist.h>
-#include <html.h>
+#include "html.h"
 #include <drag.h>
 
 /**

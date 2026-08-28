@@ -59,7 +59,7 @@ void testDir( const char *_name )
 
 int main( int argc, char **argv )
 {
-  //debug ( "[kjots] started-------------------------" );
+  //tqDebug( "[kjots] started-------------------------" );
 
   KApplication a( argc, argv, "kjots" );
 

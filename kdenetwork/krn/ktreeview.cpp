@@ -22,7 +22,7 @@
  * USA.
  */
 
-#include <ktreeview.h>
+#include "ktreeview.h"
 #include "ktreeview.moc"
 #include <qapp.h>			/* used for QApplication::closingDown() */
 #include <qkeycode.h>			/* used for keyboard interface */
@@ -507,7 +507,7 @@ void KTreeViewItem::setText(const QString& t)
 // counts the child items and stores the result in numChildren
 void KTreeViewItem::synchNumChildren()
 {
-    numChildren = 0;
+    numChildren = 0;  /* TQt3 迁移 */
     KTreeViewItem* item = getChild();
     while (item != 0) {
 	numChildren++;
@@ -570,7 +570,6 @@ KTreeView::KTreeView(QWidget *parent,
 	visibleItems(0),
 	rubberband_mode(false)
 {
-    initMetaObject();
     setCellHeight(0);
     setCellWidth(0);
     setNumRows(0);
@@ -1976,7 +1975,7 @@ void KTreeView::takeItem(KTreeViewItem* item)
 	    // move current item to parent
 	    cur = item->getParent();
 	    if (cur == treeRoot)
-		cur = 0;
+		cur = 0;  /* TQt3 迁移 */
 	}
     }
     KTreeViewItem* parentItem = item->getParent();

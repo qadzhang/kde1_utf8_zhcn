@@ -16,7 +16,7 @@ KProtocolTAR::KProtocolTAR()
 
 KProtocolTAR::~KProtocolTAR()
 {
-    // debug("KProtocolTAR::~KProtocolTAR()");
+    // tqDebug("KProtocolTAR::~KProtocolTAR()");
     dirlist.clear();
 }
 
@@ -41,7 +41,7 @@ int KProtocolTAR::isGzip()
 
 int KProtocolTAR::AttachTAR( const char *_command )
 {
-    // debug("KProtocolTAR::AttachTAR(command=%s)",_command);
+    // tqDebug("KProtocolTAR::AttachTAR(command=%s)",_command);
     InitParent();
 
     int bGzip = isGzip();
@@ -66,7 +66,7 @@ int KProtocolTAR::AttachTAR( const char *_command )
 
 int KProtocolTAR::Open( KURL *url, int mode )
 {
-    // debug("KProtocolTAR::Open(url=%s)",url->url().data());
+    // tqDebug("KProtocolTAR::Open(url=%s)",url->url().data());
     if( mode & READ )
     {
 	const char *path = url->path();
@@ -128,7 +128,7 @@ long KProtocolTAR::Read( void *_buffer, long _len )
       if( iomask & KSlave::OUT || !moredata )
       {
 	count = read (Slave.out, (char*)_buffer + pos, _len-pos);
-	//debug ("read %d bytes", count);
+	//tqDebug( "read %d bytes", count);
 	if (count == -1)
 	{
 	  if (errno == EAGAIN)
@@ -139,7 +139,7 @@ long KProtocolTAR::Read( void *_buffer, long _len )
 	
 	if (count == 0)
 	{
-	  //debug ("EOF");
+	  //tqDebug( "EOF");
 	  bEOF = true;
 	  return pos;
 	}
@@ -196,7 +196,7 @@ int KProtocolTAR::makeRelative(QString & tmp)
             // this happens when trying manually to add a trailing '/' to a 
             // file name in the tar file. A bug in the tar program,
             // actually. David.
-            debug("ERROR ! dirpath=%s not contained in tmp=%s",dirpath.data(),tmp.data());
+            tqDebug("ERROR ! dirpath=%s not contained in tmp=%s",dirpath.data(),tmp.data());
             return FAIL; // Error to be set by caller.
         }
     }
@@ -208,7 +208,7 @@ int KProtocolTAR::makeRelative(QString & tmp)
 
 int KProtocolTAR::OpenDir(KURL *url)
 {
-    //debug("KProtocolTAR::OpenDir(%s)",url->url().data());
+    //tqDebug("KProtocolTAR::OpenDir(%s)",url->url().data());
     dirpath = url->path();
 
     // extracting /xxx from a tarfile containing the file xxx won't work
@@ -224,7 +224,7 @@ int KProtocolTAR::OpenDir(KURL *url)
     int rc = AttachTAR( Command.data() );
     if (rc == FAIL) return FAIL;
     dirfile = fdopen( Slave.out, "r" );
-    // debug ("Tar: opendir for %s", dirpath.data());
+    // tqDebug( "Tar: opendir for %s", dirpath.data());
     dirlist.clear();
 
     char buffer[1024];
@@ -277,12 +277,12 @@ int KProtocolTAR::OpenDir(KURL *url)
 	  {
 	    if (tmp[i+1] != '\0') // yes there is something
             {
-              // debug("there is something : %s, tmp1=%s",tmp.data(),tmp1.data());
+              // tqDebug("there is something : %s, tmp1=%s",tmp.data(),tmp1.data());
               // hack to add missing parent directories if necessary.
 	      tmp.truncate(i);
 	      if (isDirStored(tmp.data()))
                   continue;           // Ignore it
-	      debug("emulating dir %s",tmp.data());
+	      tqDebug("emulating dir %s",tmp.data());
               // otherwise, create wrong information about a directory and 
               // add it to dirlist, which is done below.
               strcpy(p_access, "d?????????");
@@ -302,7 +302,7 @@ int KProtocolTAR::OpenDir(KURL *url)
 	  {
 	    if (p_access[0] != 'd')
 	    {
-	      debug ("bad, you tried to openDir a file");
+	      tqDebug( "bad, you tried to openDir a file");
 	      CloseDir();
 	      return FAIL;
 	    }
@@ -321,7 +321,7 @@ int KProtocolTAR::OpenDir(KURL *url)
 	      de->name += "/";
 	    de->date = p_date;
 	    dirlist.append(de);
-	    // debug ("Tar: openDir: %s", de->name.data());
+	    // tqDebug( "Tar: openDir: %s", de->name.data());
 	  }
 	} else if (readstr) { fprintf(stderr,"!! Couldn't parse %s",buffer); }
       }
@@ -335,7 +335,7 @@ int KProtocolTAR::OpenDir(KURL *url)
 
 int KProtocolTAR::CloseDir()
 {
-  //debug ("Tar: dir closed %s",  dirpath.data());
+  //tqDebug( "Tar: dir closed %s",  dirpath.data());
   if( dirfile )
   {
     fclose( dirfile );
@@ -350,9 +350,9 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 {
   KProtocolDirEntry *de = dirlist.current();
 //  if (de)
-  //  debug ("Tar: ReadDir: %s", de->name.data());
+  //  tqDebug( "Tar: ReadDir: %s", de->name.data());
 //  else
-  //  debug ("Tar: ReadDir: NULL");
+  //  tqDebug( "Tar: ReadDir: NULL");
   dirlist.next();
   return de;
 }
@@ -363,7 +363,7 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
     
 int KProtocolTAR::MkDir(KURL * url)
 {
-    debug("Tar: Mkdir: %s",url->path());
+    tqDebug("Tar: Mkdir: %s",url->path());
 
     int bGzip = isGzip();
     if (bGzip == FAIL) return FAIL;
@@ -384,7 +384,7 @@ int KProtocolTAR::MkDir(KURL * url)
     else
         cmd.sprintf( cmdTempl, "", parentURL.data(), path );
 
-    debug(cmd);
+    tqDebug(cmd);
     return SUCCESS;
 }*/
 
@@ -454,7 +454,7 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 			    if( de.isdir )
 				de.name += "/";
 			    de.date = p_date;
-			    debug ("Tar: readDir: %s", de.name.data());
+			    tqDebug( "Tar: readDir: %s", de.name.data());
 			    return( &de );
 			}
 			else if ( p_access[0] == 'd' )
@@ -472,7 +472,7 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 				de.name	        = p_relname;
 				de.name += "/";
 				de.date = p_date;
-				debug ("Tar: readDir: %s", de.name.data());
+				tqDebug( "Tar: readDir: %s", de.name.data());
 				return( &de );
 			    }
 			}
@@ -481,14 +481,14 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 	    // when URL doesn't pass QC, give it to cachemanager (to be written)
 	}
     } while( readstr );
-    debug ("Tar: readDir: NULL");
+    tqDebug( "Tar: readDir: NULL");
     return NULL;
 }
 
 
 int KProtocolTAR::CloseDir()
 {
-  debug ("Tar: dir closed %s",  dirpathmem);
+  tqDebug( "Tar: dir closed %s",  dirpathmem);
     if( dirfile )
     {
 	free( dirpathmem );

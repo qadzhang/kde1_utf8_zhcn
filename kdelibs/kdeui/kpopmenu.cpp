@@ -39,23 +39,10 @@ void KPopupMenu::initialize(const char *title)
     insertSeparator();
 }
    
-void KPopupMenu::paintCell(QPainter *p, int row, int col)
-{
-    if (row != 0)
-        QPopupMenu::paintCell(p, row, col);
-    else if ( ( (row == 0) && (col == 1) && (isCheckable()) ) || 
-		( (row == 0) && (col == 0) && (!isCheckable()) ) ) {
-        int cellh = cellHeight(0);
-        int cellw = cellWidth(0);
-        QColorGroup cg = this->colorGroup();
-        
-        p->setPen(cg.light());
-		p->drawText(6, 3, cellw, cellh-4, 
-			DontClip|AlignVCenter|ShowPrefix|SingleLine, text(0));
-        p->setPen(cg.text());
-		p->drawText(5, 2, cellw, cellh-4, 
-			DontClip|AlignVCenter|ShowPrefix|SingleLine, text(0));
-    }
-}
+//   Modified for the KDE1 Revival Project, 2026（TQt3 底座迁移）
+//   原 paintCell 覆盖（Qt1 QPopupMenu 的表格绘制路径）绘制菜单首项标题；
+//   TQt3 的 TQPopupMenu 无 paintCell/cellHeight/cellWidth 概念，标题绘制
+//   改用 TQPopupMenu 内建 insertTitle() 项——此处覆盖实现移除，标题功能
+//   由内建标题项承接（调用方插入标题时经 insertTitle 路径）
     
 #include "kpopmenu.moc"

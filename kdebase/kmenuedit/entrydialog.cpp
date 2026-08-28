@@ -45,7 +45,7 @@ extern QStrList *global_file_types;
 EntryDialog::EntryDialog (QWidget* parent, const char* name)
   :QDialog( 0, name, FALSE, WStyle_Customize | WStyle_NormalBorder )
 {
-  initMetaObject();
+
 
   int widg_height;
 

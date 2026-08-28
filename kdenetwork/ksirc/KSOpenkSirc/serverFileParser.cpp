@@ -40,13 +40,13 @@ int serverFileParser::readDatafile( const char *fileName )
       if ( str[loc] == ':' || loc == str.length()) {
         switch(pos) {
           case 0: // service
-            group = buf.copy();
+            group = buf;
             break;
           case 1: // server name
-            servername = buf.copy();
+            servername = buf;
             break;
           case 2: // server address
-            serveraddress = buf.copy();
+            serveraddress = buf;
             break;
           case 3: // port listing
             for ( uint portloc = 0; portloc <= buf.length(); portloc++ ) {
@@ -60,7 +60,7 @@ int serverFileParser::readDatafile( const char *fileName )
             }
             break;
           default: // script
-            script = buf.copy();
+            script = buf;
         }
         pos++;
         buf.truncate( 0 );

@@ -302,7 +302,7 @@ bool StringListSelectAndReorderSet::selectItem(int index)
       return false;
     }
   // -----
-  text=lbPossible->text(index);
+  text=lbPossible->text(index).ascii();  // TQt3 迁移
   lbPossible->removeItem(index);
   advance(pos, index);
   temp=*pos;
@@ -331,7 +331,7 @@ bool StringListSelectAndReorderSet::unselectItem(int index)
       return false;
     }  
   // -----
-  text=lbSelected->text(index);
+  text=lbSelected->text(index).ascii();  // TQt3 迁移
   lbSelected->removeItem(index);
   advance(pos, index);
   temp=*pos;
@@ -419,7 +419,7 @@ void StringListSelectAndReorderSet::up()
       return;
     }
   // ----- get text from list box
-  text=lbSelected->text(index);
+  text=lbSelected->text(index).ascii();  // TQt3 迁移
   // ----- move position in list box:
   lbSelected->removeItem(index);
   lbSelected->insertItem(text.c_str(), index-1);
@@ -460,7 +460,7 @@ void StringListSelectAndReorderSet::down()
       return;
     }
   // ----- get description from list box:
-  text=lbSelected->text(index);
+  text=lbSelected->text(index).ascii();  // TQt3 迁移
   // ----- move position in list box:
   lbSelected->removeItem(index);
   lbSelected->insertItem(text.c_str(), index+1);

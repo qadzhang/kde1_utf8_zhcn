@@ -54,7 +54,7 @@ public:
   aListBox(QWidget *parent = 0, const char *name = 0) : QListBox(parent,name)
     {
       clear();
-      p_scroll = palette().copy();
+      p_scroll = palette();
     }
 
   virtual ~aListBox();

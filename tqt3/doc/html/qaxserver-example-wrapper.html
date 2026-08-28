@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/extensions/activeqt/examples/wrapper/wrapper.doc:57 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Standard TQt widgets as ActiveX controls (in-process)</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Standard TQt widgets as ActiveX controls (in-process)</h1>
+
+ 
+
+The ActiveX controls in this example are the standard button
+classes <a href="ntqpushbutton.html">TQPushButton</a>, <a href="ntqcheckbox.html">TQCheckBox</a> and <a href="ntqradiobutton.html">TQRadioButton</a> as provided by 
+TQt.
+<p> It demonstrates how to export existing <a href="ntqwidget.html">TQWidget</a> classes as ActiveX
+controls, and the use of <a href="qaxfactory.html">TQAxFactory</a> together with the <a href="qaxfactory.html#TQAXFACTORY_EXPORT">TQAXFACTORY_EXPORT</a>
+macro.
+<p> 
+
+<pre>    class ActiveTQtFactory : public <a href="qaxfactory.html">TQAxFactory</a>
+    {
+    public:
+        ActiveTQtFactory( const <a href="ntquuid.html">TQUuid</a> &amp;lib, const <a href="ntquuid.html">TQUuid</a> &amp;app )
+            : <a href="qaxfactory.html">TQAxFactory</a>( lib, app )
+        {}
+        <a href="ntqstringlist.html">TQStringList</a> featureList() const
+        {
+            <a href="ntqstringlist.html">TQStringList</a> list;
+            list &lt;&lt; "TQButton";
+            list &lt;&lt; "TQCheckBox";
+            list &lt;&lt; "TQRadioButton";
+            list &lt;&lt; "TQPushButton";
+            list &lt;&lt; "TQToolButton";
+            return list;
+        }
+        <a href="ntqwidget.html">TQWidget</a> *create( const <a href="ntqstring.html">TQString</a> &amp;key, TQWidget *parent, const char *name )
+        {
+            if ( key == "TQButton" )
+                return new <a href="ntqbutton.html">TQButton</a>( parent, name );
+            if ( key == "TQCheckBox" )
+                return new <a href="ntqcheckbox.html">TQCheckBox</a>( parent, name );
+            if ( key == "TQRadioButton" )
+                return new <a href="ntqradiobutton.html">TQRadioButton</a>( parent, name );
+            if ( key == "TQPushButton" )
+                return new <a href="ntqpushbutton.html">TQPushButton</a>( parent, name );
+            if ( key == "TQToolButton" ) {
+                <a href="ntqtoolbutton.html">TQToolButton</a> *tb = new <a href="ntqtoolbutton.html">TQToolButton</a>( parent, name );
+    <a name="x2518"></a>            tb-&gt;<a href="ntqbutton.html#setPixmap">setPixmap</a>( TQPixmap(fileopen) );
+                return tb;
+            }
+
+            return 0;
+        }
+        <a href="ntqmetaobject.html">TQMetaObject</a> *metaObject( const <a href="ntqstring.html">TQString</a> &amp;key ) const
+        {
+            if ( key == "TQButton" )
+                return TQButton::staticMetaObject();
+            if ( key == "TQCheckBox" )
+                return TQCheckBox::staticMetaObject();
+            if ( key == "TQRadioButton" )
+                return TQRadioButton::staticMetaObject();
+            if ( key == "TQPushButton" )
+                return TQPushButton::staticMetaObject();
+            if ( key == "TQToolButton" )
+                return TQToolButton::staticMetaObject();
+
+            return 0;
+        }
+        <a href="ntquuid.html">TQUuid</a> classID( const <a href="ntqstring.html">TQString</a> &amp;key ) const
+        {
+            if ( key == "TQButton" )
+                return "{23F5012A-7333-43D3-BCA8-836AABC61B4A}";
+            if ( key == "TQCheckBox" )
+                return "{6E795DE9-872D-43CF-A831-496EF9D86C68}";
+            if ( key == "TQRadioButton" )
+                return "{AFCF78C8-446C-409A-93B3-BA2959039189}";
+            if ( key == "TQPushButton" )
+                return "{2B262458-A4B6-468B-B7D4-CF5FEE0A7092}";
+            if ( key == "TQToolButton" )
+                return "{7c0ffe7a-60c3-4666-bde2-5cf2b54390a1}";
+
+            return TQUuid();
+        }
+        <a href="ntquuid.html">TQUuid</a> interfaceID( const <a href="ntqstring.html">TQString</a> &amp;key ) const
+        {
+            if ( key == "TQButton" )
+                return "{6DA689FB-928F-423C-8632-678C3D3606DB}";
+            if ( key == "TQCheckBox" )
+                return "{4FD39DD7-2DE0-43C1-A8C2-27C51A052810}";
+            if ( key == "TQRadioButton" )
+                return "{7CC8AE30-206C-48A3-A009-B0A088026C2F}";
+            if ( key == "TQPushButton" )
+                return "{06831CC9-59B6-436A-9578-6D53E5AD03D3}";
+            if ( key == "TQToolButton" )
+                return "{6726080f-d63d-4950-a366-9bf33e5cdf84}";
+
+            return TQUuid();
+        }
+        <a href="ntquuid.html">TQUuid</a> eventsID( const <a href="ntqstring.html">TQString</a> &amp;key ) const
+        {
+            if ( key == "TQButton" )
+                return "{73A5D03F-8ADE-4D84-9AE0-A93B4F85A130}";
+            if ( key == "TQCheckBox" )
+                return "{FDB6FFBE-56A3-4E90-8F4D-198488418B3A}";
+            if ( key == "TQRadioButton" )
+                return "{73EE4860-684C-4A66-BF63-9B9EFFA0CBE5}";
+            if ( key == "TQPushButton" )
+                return "{3CC3F17F-EA59-4B58-BBD3-842D467131DD}";
+            if ( key == "TQToolButton" )
+                return "{f4d421fd-4ead-4fd9-8a25-440766939639}";
+
+            return TQUuid();
+        }
+    };
+</pre>The factory implementation returns the list of supported controls,
+creates controls on request and provides information about the unique
+IDs of the COM classes and interfaces for each control.
+<p> <pre>    TQAXFACTORY_EXPORT( ActiveTQtFactory, "{3B756301-0075-4E40-8BE8-5A81DE2426B7}", "{AB068077-4924-406a-BBAF-42D91C8727DD}" )
+</pre>The factory is exported using the TQAXFACTORY_EXPORT macro.
+<p> To build the example you must first build the <a href="qaxserver.html">TQAxServer</a> library. Then run qmake and your make tool in 
+<tt>examples/wrapper</tt>.
+<p> <hr>
+<p> The <a href="qaxserver-demo-wrapper.html">demonstration</a> requires your
+WebBrowser to support ActiveX controls, and scripting to be enabled.
+<p> 
+
+<pre>    &lt;SCRIPT LANGUAGE=VBScript&gt;
+    Sub ToolButton_Clicked()
+        RadioButton.text = InputBox( "Enter something", "Wrapper Demo" )
+    End Sub
+
+    Sub PushButton_clicked()
+        MsgBox( "Thank you!" )
+    End Sub
+
+    Sub CheckBox_toggled( state )
+        if state = 0 then
+            CheckBox.text = "Check me!"
+        else
+            CheckBox.text = "Uncheck me!"
+        end if
+    End Sub
+    &lt;/SCRIPT&gt;
+    &lt;p&gt;
+    A TQPushButton:&lt;br&gt;
+    &lt;object ID="PushButton" CLASSID="CLSID:2B262458-A4B6-468B-B7D4-CF5FEE0A7092"
+    CODEBASE=http://www.trolltech.com/demos/wrapperax.cab&gt;
+        &lt;PARAM NAME="text" VALUE="Click me!"&gt;
+    [Object not available! Did you forget to build and register the server?]
+    &lt;/object&gt;&lt;br&gt;
+
+    &lt;p&gt;
+    A TQCheckBox:&lt;br&gt;
+    &lt;object ID="CheckBox" CLASSID="CLSID:6E795de9-872d-43cf-a831-496ef9d86c68"
+    CODEBASE=http://www.trolltech.com/demos/wrapperax.cab&gt;
+        &lt;PARAM NAME="text" VALUE="Check me!"&gt;
+    [Object not available! Did you forget to build and register the server?]
+    &lt;/object&gt;&lt;br&gt;
+
+    &lt;p&gt;
+    A TQToolButton:&lt;br&gt;
+    &lt;object ID="ToolButton" CLASSID="CLSID:7c0ffe7a-60c3-4666-bde2-5cf2b54390a1"
+    CODEBASE=http://www.trolltech.com/demos/wrapperax.cab&gt;
+    [Object not available! Did you forget to build and register the server?]
+    &lt;/object&gt;&lt;br&gt;
+
+    &lt;p&gt;
+    A TQRadioButton:&lt;br&gt;
+    &lt;object ID="RadioButton" CLASSID="CLSID:afcf78c8-446c-409a-93b3-ba2959039189"
+    CODEBASE=http://www.trolltech.com/demos/wrapperax.cab&gt;
+        &lt;PARAM NAME="text" VALUE="Tune me!"&gt;
+    [Object not available! Did you forget to build and register the server?]
+    &lt;/object&gt;&lt;br&gt;
+</pre><p>See also <a href="qaxserver-examples.html">The TQAxServer Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

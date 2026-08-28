@@ -27,9 +27,7 @@ bool HTMLCache::bSaveCacheEnabled = true;
 HTMLCacheJob::HTMLCacheJob( const char *_url, const char *_dest ) : KIOJob()
 {
     url = _url;
-    url.detach();
     dest = _dest;
-    dest.detach();
     
     connect( this, SIGNAL( finished( int ) ), this, SLOT( slotJobFinished( int ) ) );
     connect( this, SIGNAL( error( int, const char* ) ), this, SLOT( slotError( int, const char* ) ) );
@@ -46,9 +44,9 @@ HTMLCacheJob::~HTMLCacheJob()
 
 void HTMLCacheJob::slotJobFinished( int )
 {
-    //debug("%p HTMLCacheJob::slotJobFinished begin",this);
+    //tqDebug("%p HTMLCacheJob::slotJobFinished begin",this);
     emit finished( this );
-    //debug("%p HTMLCacheJob::slotJobFinished end",this);
+    //tqDebug("%p HTMLCacheJob::slotJobFinished end",this);
 }
 
 void HTMLCacheJob::slotError( int _kioerror, const char* _text )
@@ -68,7 +66,7 @@ HTMLCache::HTMLCache()
 
 void HTMLCache::slotURLRequest( const char *_url )
 {
-    //debug("HTMLCache::slotURLRequest('%s')",_url);
+    //tqDebug("HTMLCache::slotURLRequest('%s')",_url);
     // Is the URL already cached ?
     QString *s = 0L;
     if ( bCacheEnabled ) 
@@ -108,7 +106,7 @@ void HTMLCache::slotURLRequest( const char *_url )
 	     this, SLOT( slotError( HTMLCacheJob*, int, const char* ) ) );
     staticJobList->append( job );
     instanceJobList.append( job );
-    //debug("%p added to instanceJobList",job);
+    //tqDebug("%p added to instanceJobList",job);
     job->copy();
 }
 
@@ -135,14 +133,14 @@ void HTMLCache::slotCancelURLRequest( const char *_url )
 
 void HTMLCache::slotError( HTMLCacheJob *_job, int, const char * )
 {
-    //debug("%p HTMLCache::slotError",_job);
+    //tqDebug("%p HTMLCache::slotError",_job);
     disconnect( _job, 0, this, 0 );
     slotJobFinished( _job );
 }
 
 void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
 {
-    //debug("%p HTMLCache::slotJobFinished",_job);
+    //tqDebug("%p HTMLCache::slotJobFinished",_job);
 
     // Remove "file:" but not using KURL, it will change /tmp//... into /tmp/...
     QString * s = new QString ( _job->getDestURL() + 5 );
@@ -151,7 +149,7 @@ void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
     struct stat buff; 
     if ( lstat( s->data(), &buff ) == 0 && buff.st_size > 0)
     {
-        //debug("HTMLCACHE::slotJobFinished : inserting %s",s->data());
+        //tqDebug("HTMLCACHE::slotJobFinished : inserting %s",s->data());
         urlDict->replace( _job->getSrcURL(), s );
     }
     else 
@@ -167,7 +165,7 @@ void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
     // Remove the job from the list
     staticJobList->removeRef( _job );
     instanceJobList.removeRef( _job );
-    //debug("%p removed from instanceJobList",_job);
+    //tqDebug("%p removed from instanceJobList",_job);
 
     // Is there another URL waiting for a job ?
     if ( !todoURLList.isEmpty() )
@@ -208,13 +206,13 @@ void HTMLCache::slotCheckinURL( const char* _url, const char *_data )
     FILE *f = fopen( tmp.data(), "wb" );
     if ( f == 0 )
     {
-	warning( "Could not write to cache\n");
+	tqWarning( "Could not write to cache\n");
 	return;
     }
     
     fwrite( _data, 1, strlen( _data ), f );
     fclose( f );
-    //debug("HTMLCACHE::slotCheckinURL : inserting %s",tmp.data());
+    //tqDebug("HTMLCACHE::slotCheckinURL : inserting %s",tmp.data());
     urlDict->replace( _url, new QString( tmp.data() ) );
 }
 
@@ -229,7 +227,7 @@ const char* HTMLCache::isCached( const char *_url )
 
 HTMLCache::~HTMLCache()
 {
-    //debug("HTMLCache::~HTMLCache()");
+    //tqDebug("HTMLCache::~HTMLCache()");
     // stop(); // called by kfmview destructor before "delete htmlCache".
     instanceList->removeRef( this );
 }
@@ -244,18 +242,18 @@ void HTMLCache::quit()
 
 void HTMLCache::stop()
 {
-    //debug("HTMLCache::stop() : instanceJobList.count()=%d",instanceJobList.count());
+    //tqDebug("HTMLCache::stop() : instanceJobList.count()=%d",instanceJobList.count());
     HTMLCacheJob *job;
     for ( job = instanceJobList.first(); job != 0L; job = instanceJobList.next() )
     {
 	staticJobList->removeRef( job );	
         disconnect(job, 0, this, 0); // we don't want slotJobFinished to be called !
 	job->cancel();
-        //debug("%p, from instanceJobList, cancelled",job);
+        //tqDebug("%p, from instanceJobList, cancelled",job);
     }
     
     instanceJobList.clear();
-    //debug("instanceJobList empty");
+    //tqDebug("instanceJobList empty");
 }
 
 void HTMLCache::save()
@@ -266,7 +264,7 @@ void HTMLCache::save()
     FILE *f = fopen( p, "w" );
     if ( f == 0L )
     {
-	warning("Could not write '%s'\n", p.data() );
+	tqWarning("Could not write '%s'\n", p.data() );
 	return;
     }
     
@@ -296,7 +294,7 @@ void HTMLCache::save()
     f = fopen( p, "w" );
     if ( f == 0L )
     {
-      warning("Could not write '%s'\n", p.data() );
+      tqWarning("Could not write '%s'\n", p.data() );
       return;
     }
 
@@ -336,7 +334,7 @@ void HTMLCache::load()
 	  // Does file really exist ?
 	  struct stat buff;
 	  if ( lstat( s->data(), &buff ) == 0 ) {
-            //debug("HTMLCACHE : inserting %s",s->data());
+            //tqDebug("HTMLCACHE : inserting %s",s->data());
 	    urlDict->replace( url, s );
           } 
           else 
@@ -351,7 +349,7 @@ void HTMLCache::load()
   }
   else
   {
-    warning("Could not read '%s'\n", path.data() );
+    tqWarning("Could not read '%s'\n", path.data() );
   }
 
   // Delete files which are not in the dict
@@ -362,7 +360,7 @@ void HTMLCache::load()
   dp = opendir( KFMPaths::CachePath() );
   if ( dp == 0L )
   {
-    warning("Could not scan %s", KFMPaths::CachePath().data() );
+    tqWarning("Could not scan %s", KFMPaths::CachePath().data() );
     return;
   }
 
@@ -391,7 +389,7 @@ void HTMLCache::load()
 
       if ( !found )
       {
-        //debug("HTMLCACHE : deleting %s",name.data());
+        //tqDebug("HTMLCACHE : deleting %s",name.data());
 	unlink( name.data() );
       }
     }

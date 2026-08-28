@@ -28,7 +28,7 @@
 #include <qradiobutton.h>
 
 #include <kapp.h>
-#include <kbuttonbox.h>
+#include "kbuttonbox.h"
 
 #include "kkeydialog.h"
 #include "kkeydialog.h"
@@ -95,7 +95,7 @@ KSplitList::KSplitList( QWidget *parent , const char *name )
 	: QListBox( parent, name )
 {
 	setFocusPolicy( QWidget::StrongFocus );
-	if( style() == MotifStyle )
+	if( style().inherits("TQMotifStyle") )
 		setFrameStyle( QFrame::Panel | QFrame::Sunken );
 	else
 		setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
@@ -112,7 +112,7 @@ void KSplitList::resizeEvent( QResizeEvent *e )
 
 void KSplitList::styleChange( GUIStyle )
 {
-	if( style() == MotifStyle )
+	if( style().inherits("TQMotifStyle") )
 		setFrameStyle( QFrame::Panel | QFrame::Sunken );
 	else
 		setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
@@ -519,7 +519,7 @@ void KKeyChooser::updateAction( int index )
 
 void KKeyChooser::readGlobalKeys()
 {
-	//debug("KKeyChooser::readGlobalKeys()");
+	//tqDebug("KKeyChooser::readGlobalKeys()");
 	
 	globalDict->clear();
 	
@@ -551,7 +551,7 @@ void KKeyChooser::readGlobalKeys()
 
 void KKeyChooser::readStdKeys()
 {
-	//debug("KKeyChooser::readStdKeys()");
+	//tqDebug("KKeyChooser::readStdKeys()");
 	
 	stdDict->clear();
 	
@@ -1001,7 +1001,7 @@ void KKeyChooser::editKey()
 
 void KKeyChooser::editEnd()
 {
-	debug("Called editEnd() which relies on eKey widget");
+	tqDebug("Called editEnd() which relies on eKey widget");
 	
 	//uint kCode = stringToKey(eKey->text());
 	uint kCode = 0;
@@ -1023,7 +1023,7 @@ bool KKeyChooser::isKeyPresent()
 	
 	gIt.toFirst();
 	while ( gIt.current() ) {
-		//debug("current %s:%d code %d", gIt.currentKey(), *gIt.current(), pEntry->aConfigKeyCode);
+		//tqDebug("current %s:%d code %d", gIt.currentKey(), *gIt.current(), pEntry->aConfigKeyCode);
 		if ( (unsigned int)(*gIt.current()) == pEntry->aConfigKeyCode && *gIt.current() != 0 ) {
 			QString actionName( gIt.currentKey() );
 			actionName.stripWhiteSpace();
@@ -1050,7 +1050,7 @@ bool KKeyChooser::isKeyPresent()
 
 	sIt.toFirst();
 	while ( sIt.current() ) {
-		//debug("current %s:%d code %d", sIt.currentKey(), *sIt.current(), pEntry->aConfigKeyCode);
+		//tqDebug("current %s:%d code %d", sIt.currentKey(), *sIt.current(), pEntry->aConfigKeyCode);
 		if ( (unsigned int)(*sIt.current()) == pEntry->aConfigKeyCode && *sIt.current() != 0 ) {
 			QString actionName( sIt.currentKey() );
 			actionName.stripWhiteSpace();

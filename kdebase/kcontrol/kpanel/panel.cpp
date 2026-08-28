@@ -44,8 +44,8 @@ protected:
     }
 
 public:
-    MyHelpFrame(QWidget *parent=0, const char *name=0, WFlags f=0, bool allowLines=true) :
-	QFrame (parent, name, f, allowLines) {};
+    MyHelpFrame(QWidget *parent=0, const char *name=0, WFlags f=0, bool =true) :
+	QFrame (parent, name, f) {};  /* TQt3 迁移：QFrame 无 allowLines 尾参 */
     void setWidget(QWidget *_w) { widget = _w; }
 
 };

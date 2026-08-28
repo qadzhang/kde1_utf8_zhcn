@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/widgets/qvalidator.cpp:517 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQRegExpValidator Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQRegExpValidator Class Reference</h1>
+
+<p>The TQRegExpValidator class is used to check a string
+against a regular expression.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qvalidator-h.html">ntqvalidator.h</a>&gt;</tt>
+<p>Inherits <a href="ntqvalidator.html">TQValidator</a>.
+<p><a href="qregexpvalidator-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQRegExpValidator"><b>TQRegExpValidator</b></a> ( TQObject&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#TQRegExpValidator-2"><b>TQRegExpValidator</b></a> ( const&nbsp;TQRegExp&nbsp;&amp;&nbsp;rx, TQObject&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )</li>
+<li class=fn><a href="#~TQRegExpValidator"><b>~TQRegExpValidator</b></a> ()</li>
+<li class=fn>virtual TQValidator::State <a href="#validate"><b>validate</b></a> ( TQString&nbsp;&amp;&nbsp;input, int&nbsp;&amp;&nbsp;pos ) const</li>
+<li class=fn>void <a href="#setRegExp"><b>setRegExp</b></a> ( const&nbsp;TQRegExp&nbsp;&amp;&nbsp;rx )</li>
+<li class=fn>const TQRegExp &amp; <a href="#regExp"><b>regExp</b></a> () const</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQRegExpValidator class is used to check a string
+against a <a href="ntqregexp.html#regular-expression">regular expression</a>.
+<p> 
+<p> TQRegExpValidator contains a regular expression, "regexp", used to
+determine whether an input string is <a href="ntqvalidator.html#State-enum">Acceptable</a>, <a href="ntqvalidator.html#State-enum">Intermediate</a> or <a href="ntqvalidator.html#State-enum">Invalid</a>.
+<p> The regexp is treated as if it begins with the start of string
+assertion, <b>^</b>, and ends with the end of string assertion
+<b>$</b> so the match is against the entire input string, or from
+the given position if a start position greater than zero is given.
+<p> For a brief introduction to TQt's regexp engine see <a href="ntqregexp.html">TQRegExp</a>.
+<p> Example of use:
+<pre>
+    // regexp: optional '-' followed by between 1 and 3 digits
+    <a href="ntqregexp.html">TQRegExp</a> rx( "-?\\d{1,3}" );
+    <a href="ntqvalidator.html">TQValidator</a>* validator = new TQRegExpValidator( rx, this );
+
+    <a href="ntqlineedit.html">TQLineEdit</a>* edit = new <a href="ntqlineedit.html">TQLineEdit</a>( this );
+    edit-&gt;<a href="ntqlineedit.html#setValidator">setValidator</a>( validator );
+    </pre>
+ 
+<p> Below we present some examples of validators. In practice they would
+normally be associated with a widget as in the example above.
+<p> <pre>
+    // integers 1 to 9999
+    <a href="ntqregexp.html">TQRegExp</a> rx( "[1-9]\\d{0,3}" );
+    // the validator treats the regexp as "^[1-9]\\d{0,3}$"
+    TQRegExpValidator v( rx, 0 );
+    <a href="ntqstring.html">TQString</a> s;
+    int pos = 0;
+
+    s = "0";     v.<a href="#validate">validate</a>( s, pos );    // returns Invalid
+    s = "12345"; v.<a href="#validate">validate</a>( s, pos );    // returns Invalid
+    s = "1";     v.<a href="#validate">validate</a>( s, pos );    // returns Acceptable
+
+    rx.<a href="ntqregexp.html#setPattern">setPattern</a>( "\\S+" );            // one or more non-whitespace characters
+    v.<a href="#setRegExp">setRegExp</a>( rx );
+    s = "myfile.txt";  v.<a href="#validate">validate</a>( s, pos ); // Returns Acceptable
+    s = "my file.txt"; v.<a href="#validate">validate</a>( s, pos ); // Returns Invalid
+
+    // A, B or C followed by exactly five digits followed by W, X, Y or Z
+    rx.<a href="ntqregexp.html#setPattern">setPattern</a>( "[A-C]\\d{5}[W-Z]" );
+    v.<a href="#setRegExp">setRegExp</a>( rx );
+    s = "a12345Z"; v.<a href="#validate">validate</a>( s, pos );        // Returns Invalid
+    s = "A12345Z"; v.<a href="#validate">validate</a>( s, pos );        // Returns Acceptable
+    s = "B12";     v.<a href="#validate">validate</a>( s, pos );        // Returns Intermediate
+
+    // match most 'readme' files
+    rx.<a href="ntqregexp.html#setPattern">setPattern</a>( "read\\S?me(\.(txt|asc|1st))?" );
+    rx.<a href="ntqregexp.html#setCaseSensitive">setCaseSensitive</a>( false );
+    v.<a href="#setRegExp">setRegExp</a>( rx );
+    s = "readme";      v.<a href="#validate">validate</a>( s, pos ); // Returns Acceptable
+    s = "README.1ST";  v.<a href="#validate">validate</a>( s, pos ); // Returns Acceptable
+    s = "read me.txt"; v.<a href="#validate">validate</a>( s, pos ); // Returns Invalid
+    s = "readm";       v.<a href="#validate">validate</a>( s, pos ); // Returns Intermediate
+    </pre>
+ 
+<p> <p>See also <a href="ntqregexp.html">TQRegExp</a>, <a href="qintvalidator.html">TQIntValidator</a>, <a href="qdoublevalidator.html">TQDoubleValidator</a>, and <a href="misc.html">Miscellaneous Classes</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQRegExpValidator"></a>TQRegExpValidator::TQRegExpValidator ( <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a validator that accepts any string (including an empty
+one) as valid. The object's parent is <em>parent</em> and its name is <em>name</em>.
+
+<h3 class=fn><a name="TQRegExpValidator-2"></a>TQRegExpValidator::TQRegExpValidator ( const&nbsp;<a href="ntqregexp.html">TQRegExp</a>&nbsp;&amp;&nbsp;rx, <a href="ntqobject.html">TQObject</a>&nbsp;*&nbsp;parent, const&nbsp;char&nbsp;*&nbsp;name = 0 )
+</h3>
+Constructs a validator which accepts all strings that match the
+<a href="ntqregexp.html#regular-expression">regular expression</a> <em>rx</em>. The object's parent is <em>parent</em> and its
+name is <em>name</em>.
+<p> The match is made against the entire string, e.g. if the regexp is
+<b>[A-Fa-f0-9]+</b> it will be treated as <b>^[A-Fa-f0-9]+$</b>.
+
+<h3 class=fn><a name="~TQRegExpValidator"></a>TQRegExpValidator::~TQRegExpValidator ()
+</h3>
+Destroys the validator, freeing any resources allocated.
+
+<h3 class=fn>const&nbsp;<a href="ntqregexp.html">TQRegExp</a>&nbsp;&amp; <a name="regExp"></a>TQRegExpValidator::regExp () const
+</h3>
+
+<p> Returns the <a href="ntqregexp.html#regular-expression">regular expression</a> used for validation.
+<p> <p>See also <a href="#setRegExp">setRegExp</a>().
+
+<h3 class=fn>void <a name="setRegExp"></a>TQRegExpValidator::setRegExp ( const&nbsp;<a href="ntqregexp.html">TQRegExp</a>&nbsp;&amp;&nbsp;rx )
+</h3>
+Sets the <a href="ntqregexp.html#regular-expression">regular expression</a> used for validation to <em>rx</em>.
+<p> <p>See also <a href="#regExp">regExp</a>().
+
+<h3 class=fn><a href="ntqvalidator.html#State-enum">TQValidator::State</a> <a name="validate"></a>TQRegExpValidator::validate ( <a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;input, int&nbsp;&amp;&nbsp;pos ) const<tt> [virtual]</tt>
+</h3>
+Returns <a href="ntqvalidator.html#State-enum">Acceptable</a> if <em>input</em> is matched by the <a href="ntqregexp.html#regular-expression">regular expression</a> for this validator, <a href="ntqvalidator.html#State-enum">Intermediate</a> if it has matched
+partially (i.e. could be a valid match if additional valid
+characters are added), and <a href="ntqvalidator.html#State-enum">Invalid</a> if <em>input</em> is not matched.
+<p> The <em>pos</em> parameter is set to the length of the <em>input</em> parameter.
+<p> For example, if the regular expression is <b>&#92;w&#92;d&#92;d</b> (that
+is, word-character, digit, digit) then "A57" is <a href="ntqvalidator.html#State-enum">Acceptable</a>,
+"E5" is <a href="ntqvalidator.html#State-enum">Intermediate</a> and "+9" is <a href="ntqvalidator.html#State-enum">Invalid</a>.
+<p> <p>See also <a href="ntqregexp.html#match">TQRegExp::match</a>() and <a href="ntqregexp.html#search">TQRegExp::search</a>().
+
+<p>Reimplemented from <a href="ntqvalidator.html#validate">TQValidator</a>.
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

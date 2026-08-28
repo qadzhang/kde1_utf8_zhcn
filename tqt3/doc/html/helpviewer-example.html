@@ -1,0 +1,481 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/helpviewer/helpviewer.doc:4 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Simple HTML Help Browser</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>Simple HTML Help Browser</h1>
+
+   
+<p> 
+This example implements a simple HTML help browser using
+TQt's richtext capabilities.
+<p> <hr>
+<p> Header file:
+<p> <pre>/****************************************************************************
+** $Id: qt/helpwindow.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef HELPWINDOW_H
+#define HELPWINDOW_H
+
+#include &lt;<a href="qmainwindow-h.html">ntqmainwindow.h</a>&gt;
+#include &lt;<a href="qtextbrowser-h.html">ntqtextbrowser.h</a>&gt;
+#include &lt;<a href="qstringlist-h.html">ntqstringlist.h</a>&gt;
+#include &lt;<a href="qmap-h.html">ntqmap.h</a>&gt;
+#include &lt;<a href="qdir-h.html">ntqdir.h</a>&gt;
+
+class TQComboBox;
+class TQPopupMenu;
+
+class HelpWindow : public <a href="ntqmainwindow.html">TQMainWindow</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+public:
+    HelpWindow( const <a href="ntqstring.html">TQString</a>&amp; home_,  const <a href="ntqstring.html">TQString</a>&amp; path, TQWidget* parent = 0, const char *name=0 );
+    ~HelpWindow();
+
+private slots:
+    void setBackwardAvailable( bool );
+    void setForwardAvailable( bool );
+
+    void sourceChanged( const <a href="ntqstring.html">TQString</a>&amp; );
+    void about();
+    void aboutTQt();
+    void openFile();
+    void newWindow();
+    void print();
+
+    void pathSelected( const <a href="ntqstring.html">TQString</a> &amp; );
+    void histChosen( int );
+    void bookmChosen( int );
+    void addBookmark();
+
+private:
+    void readHistory();
+    void readBookmarks();
+
+    <a href="ntqtextbrowser.html">TQTextBrowser</a>* browser;
+    <a href="ntqcombobox.html">TQComboBox</a> *pathCombo;
+    int backwardId, forwardId;
+    <a href="ntqstringlist.html">TQStringList</a> history, bookmarks;
+    <a href="ntqmap.html">TQMap</a>&lt;int, TQString&gt; mHistory, mBookmarks;
+    <a href="ntqpopupmenu.html">TQPopupMenu</a> *hist, *bookm;
+
+};
+
+
+
+
+
+#endif
+
+</pre>
+
+<p> <hr>
+<p> Implementation:
+<p> <pre>/****************************************************************************
+** $Id: qt/helpwindow.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "helpwindow.h"
+#include &lt;<a href="qstatusbar-h.html">ntqstatusbar.h</a>&gt;
+#include &lt;<a href="qpixmap-h.html">ntqpixmap.h</a>&gt;
+#include &lt;<a href="qpopupmenu-h.html">ntqpopupmenu.h</a>&gt;
+#include &lt;<a href="qmenubar-h.html">ntqmenubar.h</a>&gt;
+#include &lt;<a href="qtoolbar-h.html">ntqtoolbar.h</a>&gt;
+#include &lt;<a href="qtoolbutton-h.html">ntqtoolbutton.h</a>&gt;
+#include &lt;<a href="qiconset-h.html">ntqiconset.h</a>&gt;
+#include &lt;<a href="qfile-h.html">ntqfile.h</a>&gt;
+#include &lt;<a href="qtextstream-h.html">ntqtextstream.h</a>&gt;
+#include &lt;<a href="qstylesheet-h.html">ntqstylesheet.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qfiledialog-h.html">ntqfiledialog.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qcombobox-h.html">ntqcombobox.h</a>&gt;
+#include &lt;<a href="qevent-h.html">ntqevent.h</a>&gt;
+#include &lt;<a href="qlineedit-h.html">ntqlineedit.h</a>&gt;
+#include &lt;<a href="qobjectlist-h.html">ntqobjectlist.h</a>&gt;
+#include &lt;<a href="qfileinfo-h.html">ntqfileinfo.h</a>&gt;
+#include &lt;<a href="qfile-h.html">ntqfile.h</a>&gt;
+#include &lt;<a href="qdatastream-h.html">ntqdatastream.h</a>&gt;
+#include &lt;<a href="qprinter-h.html">ntqprinter.h</a>&gt;
+#include &lt;<a href="qsimplerichtext-h.html">ntqsimplerichtext.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qpaintdevicemetrics-h.html">ntqpaintdevicemetrics.h</a>&gt;
+
+#include &lt;ctype.h&gt;
+
+<a name="f350"></a>HelpWindow::HelpWindow( const <a href="ntqstring.html">TQString</a>&amp; home_, const <a href="ntqstring.html">TQString</a>&amp; _path,
+                        <a href="ntqwidget.html">TQWidget</a>* parent, const char *name )
+    : <a href="ntqmainwindow.html">TQMainWindow</a>( parent, name, WDestructiveClose ),
+      pathCombo( 0 )
+{
+    readHistory();
+    readBookmarks();
+
+    browser = new <a href="ntqtextbrowser.html">TQTextBrowser</a>( this );
+
+<a name="x1030"></a>    browser-&gt;<a href="ntqtextedit.html#mimeSourceFactory">mimeSourceFactory</a>()-&gt;setFilePath( _path );
+    browser-&gt;<a href="ntqframe.html#setFrameStyle">setFrameStyle</a>( TQFrame::Panel | TQFrame::Sunken );
+<a name="x1027"></a>    <a href="ntqobject.html#connect">connect</a>( browser, TQ_SIGNAL( <a href="ntqtextbrowser.html#sourceChanged">sourceChanged</a>(const <a href="ntqstring.html">TQString</a>&amp; ) ),
+             this, TQ_SLOT( sourceChanged( const <a href="ntqstring.html">TQString</a>&amp;) ) );
+
+    <a href="ntqmainwindow.html#setCentralWidget">setCentralWidget</a>( browser );
+
+    if ( !home_.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+<a name="x1025"></a>        browser-&gt;<a href="ntqtextbrowser.html#setSource">setSource</a>( home_ );
+
+<a name="x1023"></a>    <a href="ntqobject.html#connect">connect</a>( browser, TQ_SIGNAL( <a href="ntqtextbrowser.html#highlighted">highlighted</a>( const <a href="ntqstring.html">TQString</a>&amp;) ),
+             <a href="ntqmainwindow.html#statusBar">statusBar</a>(), TQ_SLOT( message( const <a href="ntqstring.html">TQString</a>&amp;)) );
+
+    <a href="ntqwidget.html#resize">resize</a>( 640,700 );
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* file = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( this );
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqobject.html#tr">tr</a>("&amp;New Window"), this, TQ_SLOT( newWindow() ), CTRL+Key_N );
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqobject.html#tr">tr</a>("&amp;Open File"), this, TQ_SLOT( openFile() ), CTRL+Key_O );
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqobject.html#tr">tr</a>("&amp;Print"), this, TQ_SLOT( print() ), CTRL+Key_P );
+    file-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqobject.html#tr">tr</a>("&amp;Close"), this, TQ_SLOT( <a href="ntqwidget.html#close">close</a>() ), CTRL+Key_Q );
+<a name="x980"></a>    file-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqobject.html#tr">tr</a>("E&amp;xit"), tqApp, TQ_SLOT( <a href="ntqapplication.html#closeAllWindows">closeAllWindows</a>() ), CTRL+Key_X );
+
+    // The same three icons are used twice each.
+    <a href="ntqiconset.html">TQIconSet</a> icon_back( TQPixmap("back.xpm") );
+    <a href="ntqiconset.html">TQIconSet</a> icon_forward( TQPixmap("forward.xpm") );
+    <a href="ntqiconset.html">TQIconSet</a> icon_home( TQPixmap("home.xpm") );
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* go = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( this );
+    backwardId = go-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( icon_back,
+<a name="x1019"></a>                                 <a href="ntqobject.html#tr">tr</a>("&amp;Backward"), browser, TQ_SLOT( <a href="ntqtextbrowser.html#backward">backward</a>() ),
+                                 CTRL+Key_Left );
+    forwardId = go-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( icon_forward,
+<a name="x1021"></a>                                <a href="ntqobject.html#tr">tr</a>("&amp;Forward"), browser, TQ_SLOT( <a href="ntqtextbrowser.html#forward">forward</a>() ),
+                                CTRL+Key_Right );
+<a name="x1024"></a>    go-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( icon_home, tr("&amp;Home"), browser, TQ_SLOT( <a href="ntqtextbrowser.html#home">home</a>() ) );
+
+    <a href="ntqpopupmenu.html">TQPopupMenu</a>* help = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( this );
+    help-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqobject.html#tr">tr</a>("&amp;About"), this, TQ_SLOT( about() ) );
+    help-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqobject.html#tr">tr</a>("About &amp;TQt"), this, TQ_SLOT( aboutTQt() ) );
+
+    hist = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( this );
+    TQStringList::Iterator it = history.begin();
+    for ( ; it != history.end(); ++it )
+        mHistory[ hist-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( *it ) ] = *it;
+<a name="x1004"></a>    <a href="ntqobject.html#connect">connect</a>( hist, TQ_SIGNAL( <a href="ntqpopupmenu.html#activated">activated</a>( int ) ),
+             this, TQ_SLOT( histChosen( int ) ) );
+
+    bookm = new <a href="ntqpopupmenu.html">TQPopupMenu</a>( this );
+    bookm-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqobject.html#tr">tr</a>( "Add Bookmark" ), this, TQ_SLOT( addBookmark() ) );
+    bookm-&gt;<a href="ntqmenudata.html#insertSeparator">insertSeparator</a>();
+
+    TQStringList::Iterator it2 = bookmarks.begin();
+    for ( ; it2 != bookmarks.end(); ++it2 )
+        mBookmarks[ bookm-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( *it2 ) ] = *it2;
+    <a href="ntqobject.html#connect">connect</a>( bookm, TQ_SIGNAL( <a href="ntqpopupmenu.html#activated">activated</a>( int ) ),
+             this, TQ_SLOT( bookmChosen( int ) ) );
+
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertItem( <a href="ntqobject.html#tr">tr</a>("&amp;File"), file );
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertItem( <a href="ntqobject.html#tr">tr</a>("&amp;Go"), go );
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertItem( <a href="ntqobject.html#tr">tr</a>( "History" ), hist );
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertItem( <a href="ntqobject.html#tr">tr</a>( "Bookmarks" ), bookm );
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertSeparator();
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;insertItem( <a href="ntqobject.html#tr">tr</a>("&amp;Help"), help );
+
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;setItemEnabled( forwardId, false);
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;setItemEnabled( backwardId, false);
+<a name="x1020"></a>    <a href="ntqobject.html#connect">connect</a>( browser, TQ_SIGNAL( <a href="ntqtextbrowser.html#backwardAvailable">backwardAvailable</a>( bool ) ),
+             this, TQ_SLOT( setBackwardAvailable( bool ) ) );
+<a name="x1022"></a>    <a href="ntqobject.html#connect">connect</a>( browser, TQ_SIGNAL( <a href="ntqtextbrowser.html#forwardAvailable">forwardAvailable</a>( bool ) ),
+             this, TQ_SLOT( setForwardAvailable( bool ) ) );
+
+
+    <a href="ntqtoolbar.html">TQToolBar</a>* toolbar = new <a href="ntqtoolbar.html">TQToolBar</a>( this );
+    <a href="ntqmainwindow.html#addToolBar">addToolBar</a>( toolbar, "Toolbar");
+    <a href="ntqtoolbutton.html">TQToolButton</a>* button;
+
+    button = new <a href="ntqtoolbutton.html">TQToolButton</a>( icon_back, tr("Backward"), "", browser, TQ_SLOT(<a href="ntqtextbrowser.html#backward">backward</a>()), toolbar );
+<a name="x1035"></a>    <a href="ntqobject.html#connect">connect</a>( browser, TQ_SIGNAL( <a href="ntqtextbrowser.html#backwardAvailable">backwardAvailable</a>(bool) ), button, TQ_SLOT( <a href="ntqwidget.html#setEnabled">setEnabled</a>(bool) ) );
+    button-&gt;<a href="ntqwidget.html#setEnabled">setEnabled</a>( false );
+    button = new <a href="ntqtoolbutton.html">TQToolButton</a>( icon_forward, tr("Forward"), "", browser, TQ_SLOT(<a href="ntqtextbrowser.html#forward">forward</a>()), toolbar );
+    <a href="ntqobject.html#connect">connect</a>( browser, TQ_SIGNAL( <a href="ntqtextbrowser.html#forwardAvailable">forwardAvailable</a>(bool) ), button, TQ_SLOT( <a href="ntqwidget.html#setEnabled">setEnabled</a>(bool) ) );
+    button-&gt;<a href="ntqwidget.html#setEnabled">setEnabled</a>( false );
+    button = new <a href="ntqtoolbutton.html">TQToolButton</a>( icon_home, tr("Home"), "", browser, TQ_SLOT(<a href="ntqtextbrowser.html#home">home</a>()), toolbar );
+
+<a name="x1033"></a>    toolbar-&gt;<a href="ntqtoolbar.html#addSeparator">addSeparator</a>();
+
+    pathCombo = new <a href="ntqcombobox.html">TQComboBox</a>( true, toolbar );
+<a name="x981"></a>    <a href="ntqobject.html#connect">connect</a>( pathCombo, TQ_SIGNAL( <a href="ntqcombobox.html#activated">activated</a>( const <a href="ntqstring.html">TQString</a> &amp; ) ),
+             this, TQ_SLOT( pathSelected( const <a href="ntqstring.html">TQString</a> &amp; ) ) );
+<a name="x1034"></a>    toolbar-&gt;<a href="ntqtoolbar.html#setStretchableWidget">setStretchableWidget</a>( pathCombo );
+    <a href="ntqmainwindow.html#setRightJustification">setRightJustification</a>( true );
+    <a href="ntqmainwindow.html#setDockEnabled">setDockEnabled</a>( DockLeft, false );
+    <a href="ntqmainwindow.html#setDockEnabled">setDockEnabled</a>( DockRight, false );
+
+<a name="x983"></a>    pathCombo-&gt;<a href="ntqcombobox.html#insertItem">insertItem</a>( home_ );
+    browser-&gt;<a href="ntqwidget.html#setFocus">setFocus</a>();
+
+}
+
+
+void <a name="f351"></a>HelpWindow::setBackwardAvailable( bool b)
+{
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;setItemEnabled( backwardId, b);
+}
+
+void <a name="f352"></a>HelpWindow::setForwardAvailable( bool b)
+{
+    <a href="ntqmainwindow.html#menuBar">menuBar</a>()-&gt;setItemEnabled( forwardId, b);
+}
+
+
+void <a name="f353"></a>HelpWindow::sourceChanged( const <a href="ntqstring.html">TQString</a>&amp; url )
+{
+<a name="x1029"></a>    if ( browser-&gt;<a href="ntqtextedit.html#documentTitle">documentTitle</a>().isNull() )
+        <a href="ntqwidget.html#setCaption">setCaption</a>( "TQt Example - Helpviewer - " + url );
+    else
+        <a href="ntqwidget.html#setCaption">setCaption</a>( "TQt Example - Helpviewer - " + browser-&gt;<a href="ntqtextedit.html#documentTitle">documentTitle</a>() ) ;
+
+    if ( !url.<a href="ntqstring.html#isEmpty">isEmpty</a>() &amp;&amp; pathCombo ) {
+        bool exists = false;
+        int i;
+<a name="x982"></a>        for ( i = 0; i &lt; pathCombo-&gt;<a href="ntqcombobox.html#count">count</a>(); ++i ) {
+<a name="x985"></a>            if ( pathCombo-&gt;<a href="ntqcombobox.html#text">text</a>( i ) == url ) {
+                exists = true;
+                break;
+            }
+        }
+        if ( !exists ) {
+            pathCombo-&gt;<a href="ntqcombobox.html#insertItem">insertItem</a>( url, 0 );
+<a name="x984"></a>            pathCombo-&gt;<a href="ntqcombobox.html#setCurrentItem">setCurrentItem</a>( 0 );
+            mHistory[ hist-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( url ) ] = url;
+        } else
+            pathCombo-&gt;<a href="ntqcombobox.html#setCurrentItem">setCurrentItem</a>( i );
+    }
+}
+
+HelpWindow::~HelpWindow()
+{
+    history =  mHistory.values();
+
+<a name="x986"></a>    <a href="ntqfile.html">TQFile</a> f( TQDir::<a href="ntqdir.html#currentDirPath">currentDirPath</a>() + "/.history" );
+<a name="x989"></a>    f.<a href="ntqfile.html#open">open</a>( <a href="ntqfile.html#open">IO_WriteOnly</a> );
+    <a href="ntqdatastream.html">TQDataStream</a> s( &amp;f );
+    s &lt;&lt; history;
+<a name="x987"></a>    f.<a href="ntqfile.html#close">close</a>();
+
+    bookmarks = mBookmarks.values();
+
+    <a href="ntqfile.html">TQFile</a> f2( TQDir::<a href="ntqdir.html#currentDirPath">currentDirPath</a>() + "/.bookmarks" );
+    f2.<a href="ntqfile.html#open">open</a>( IO_WriteOnly );
+    <a href="ntqdatastream.html">TQDataStream</a> s2( &amp;f2 );
+    s2 &lt;&lt; bookmarks;
+    f2.<a href="ntqfile.html#close">close</a>();
+}
+
+void <a name="f354"></a>HelpWindow::about()
+{
+<a name="x994"></a>    TQMessageBox::<a href="ntqmessagebox.html#about">about</a>( this, "HelpViewer Example",
+                        "&lt;p&gt;This example implements a simple HTML help viewer "
+                        "using TQt's rich text capabilities&lt;/p&gt;"
+                        "&lt;p&gt;It's just about 400 lines of C++ code, so don't expect too much :-)&lt;/p&gt;"
+                        );
+}
+
+
+void <a name="f355"></a>HelpWindow::aboutTQt()
+{
+<a name="x995"></a>    TQMessageBox::<a href="ntqmessagebox.html#aboutTQt">aboutTQt</a>( this, "TQBrowser" );
+}
+
+void <a name="f356"></a>HelpWindow::openFile()
+{
+#ifndef TQT_NO_FILEDIALOG
+    <a href="ntqstring.html">TQString</a> fn = TQFileDialog::<a href="ntqfiledialog.html#getOpenFileName">getOpenFileName</a>( <a href="ntqstring.html#TQString-null">TQString::null</a>, TQString::null, this );
+    if ( !fn.<a href="ntqstring.html#isEmpty">isEmpty</a>() )
+        browser-&gt;<a href="ntqtextbrowser.html#setSource">setSource</a>( fn );
+#endif
+}
+
+void <a name="f357"></a>HelpWindow::newWindow()
+{
+<a name="x1026"></a>    ( new HelpWindow(browser-&gt;<a href="ntqtextbrowser.html#source">source</a>(), "qbrowser") )-&gt;show();
+}
+
+void <a name="f358"></a>HelpWindow::print()
+{
+#ifndef TQT_NO_PRINTER
+    <a href="ntqprinter.html">TQPrinter</a> printer( TQPrinter::HighResolution );
+<a name="x1006"></a>    printer.<a href="ntqprinter.html#setFullPage">setFullPage</a>(true);
+<a name="x1007"></a>    if ( printer.<a href="ntqprinter.html#setup">setup</a>( this ) ) {
+        <a href="ntqpainter.html">TQPainter</a> p( &amp;printer );
+<a name="x1002"></a>        if( !p.<a href="ntqpainter.html#isActive">isActive</a>() ) // starting printing failed
+            return;
+<a name="x999"></a>        <a href="ntqpaintdevicemetrics.html">TQPaintDeviceMetrics</a> metrics(p.<a href="ntqpainter.html#device">device</a>());
+<a name="x997"></a>        int dpiy = metrics.<a href="ntqpaintdevicemetrics.html#logicalDpiY">logicalDpiY</a>();
+        int margin = (int) ( (2/2.54)*dpiy ); // 2 cm margins
+<a name="x998"></a><a name="x996"></a>        <a href="ntqrect.html">TQRect</a> view( margin, margin, metrics.<a href="ntqpaintdevicemetrics.html#width">width</a>() - 2*margin, metrics.<a href="ntqpaintdevicemetrics.html#height">height</a>() - 2*margin );
+<a name="x1032"></a>        <a href="ntqsimplerichtext.html">TQSimpleRichText</a> richText( browser-&gt;<a href="ntqtextedit.html#text">text</a>(),
+                                  TQFont(),
+<a name="x1028"></a>                                  browser-&gt;<a href="ntqtextedit.html#context">context</a>(),
+<a name="x1031"></a>                                  browser-&gt;<a href="ntqtextedit.html#styleSheet">styleSheet</a>(),
+                                  browser-&gt;<a href="ntqtextedit.html#mimeSourceFactory">mimeSourceFactory</a>(),
+                                  view.<a href="ntqrect.html#height">height</a>() );
+<a name="x1016"></a>        richText.<a href="ntqsimplerichtext.html#setWidth">setWidth</a>( &amp;p, view.<a href="ntqrect.html#width">width</a>() );
+        int page = 1;
+        do {
+<a name="x1014"></a>            richText.<a href="ntqsimplerichtext.html#draw">draw</a>( &amp;p, margin, margin, view, colorGroup() );
+<a name="x1010"></a>            view.<a href="ntqrect.html#moveBy">moveBy</a>( 0, view.<a href="ntqrect.html#height">height</a>() );
+            p.<a href="ntqpainter.html#translate">translate</a>( 0 , -view.<a href="ntqrect.html#height">height</a>() );
+<a name="x1018"></a><a name="x1001"></a>            p.<a href="ntqpainter.html#drawText">drawText</a>( view.<a href="ntqrect.html#right">right</a>() - p.<a href="ntqpainter.html#fontMetrics">fontMetrics</a>().width( TQString::<a href="ntqstring.html#number">number</a>(page) ),
+<a name="x1008"></a>                        view.<a href="ntqrect.html#bottom">bottom</a>() + p.<a href="ntqpainter.html#fontMetrics">fontMetrics</a>().ascent() + 5, TQString::number(page) );
+<a name="x1015"></a>            if ( view.<a href="ntqrect.html#top">top</a>() - margin &gt;= richText.<a href="ntqsimplerichtext.html#height">height</a>() )
+                break;
+<a name="x1005"></a>            printer.<a href="ntqprinter.html#newPage">newPage</a>();
+            page++;
+        } while (true);
+    }
+#endif
+}
+
+void <a name="f359"></a>HelpWindow::pathSelected( const <a href="ntqstring.html">TQString</a> &amp;_path )
+{
+    browser-&gt;<a href="ntqtextbrowser.html#setSource">setSource</a>( _path );
+    if ( mHistory.values().contains(_path) )
+        mHistory[ hist-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( _path ) ] = _path;
+}
+
+void <a name="f360"></a>HelpWindow::readHistory()
+{
+<a name="x988"></a>    if ( TQFile::<a href="ntqfile.html#exists">exists</a>( TQDir::<a href="ntqdir.html#currentDirPath">currentDirPath</a>() + "/.history" ) ) {
+        <a href="ntqfile.html">TQFile</a> f( TQDir::<a href="ntqdir.html#currentDirPath">currentDirPath</a>() + "/.history" );
+        f.<a href="ntqfile.html#open">open</a>( <a href="ntqfile.html#open">IO_ReadOnly</a> );
+        <a href="ntqdatastream.html">TQDataStream</a> s( &amp;f );
+        s &gt;&gt; history;
+        f.<a href="ntqfile.html#close">close</a>();
+        while ( history.count() &gt; 20 )
+            history.remove( history.begin() );
+    }
+}
+
+void <a name="f361"></a>HelpWindow::readBookmarks()
+{
+    if ( TQFile::<a href="ntqfile.html#exists">exists</a>( TQDir::<a href="ntqdir.html#currentDirPath">currentDirPath</a>() + "/.bookmarks" ) ) {
+        <a href="ntqfile.html">TQFile</a> f( TQDir::<a href="ntqdir.html#currentDirPath">currentDirPath</a>() + "/.bookmarks" );
+        f.<a href="ntqfile.html#open">open</a>( IO_ReadOnly );
+        <a href="ntqdatastream.html">TQDataStream</a> s( &amp;f );
+        s &gt;&gt; bookmarks;
+        f.<a href="ntqfile.html#close">close</a>();
+    }
+}
+
+void <a name="f362"></a>HelpWindow::histChosen( int i )
+{
+    if ( mHistory.contains( i ) )
+        browser-&gt;<a href="ntqtextbrowser.html#setSource">setSource</a>( mHistory[ i ] );
+}
+
+void <a name="f363"></a>HelpWindow::bookmChosen( int i )
+{
+    if ( mBookmarks.contains( i ) )
+        browser-&gt;<a href="ntqtextbrowser.html#setSource">setSource</a>( mBookmarks[ i ] );
+}
+
+void <a name="f364"></a>HelpWindow::addBookmark()
+{
+    mBookmarks[ bookm-&gt;<a href="ntqmenudata.html#insertItem">insertItem</a>( <a href="ntqwidget.html#caption">caption</a>() ) ] = browser-&gt;<a href="ntqtextedit.html#context">context</a>();
+}
+</pre>
+
+<p> <hr>
+<p> Main:
+<p> <pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "helpwindow.h"
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qdir-h.html">ntqdir.h</a>&gt;
+#include &lt;stdlib.h&gt;
+
+
+int main( int argc, char ** argv )
+{
+<a name="x1041"></a>    TQApplication::<a href="ntqapplication.html#setColorSpec">setColorSpec</a>( TQApplication::ManyColor );
+    <a href="ntqapplication.html">TQApplication</a> a(argc, argv);
+
+    <a href="ntqstring.html">TQString</a> home;
+    if (argc &gt; 1) {
+        home = argv[1];
+    } else {
+        // Use a hard coded path. It is only an example.
+        home = TQDir( "../../doc/html/index.html" ).absPath();
+    }
+
+    HelpWindow *help = new HelpWindow(home, ".", 0, "help viewer");
+    help-&gt;<a href="ntqwidget.html#setCaption">setCaption</a>("TQt Example - Helpviewer");
+<a name="x1037"></a>    if ( TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;width() &gt; 400
+         &amp;&amp; TQApplication::<a href="ntqapplication.html#desktop">desktop</a>()-&gt;height() &gt; 500 )
+        help-&gt;<a href="ntqwidget.html#show">show</a>();
+    else
+<a name="x1045"></a>        help-&gt;<a href="ntqwidget.html#showMaximized">showMaximized</a>();
+
+<a name="x1039"></a>    TQObject::<a href="ntqobject.html#connect">connect</a>( &amp;a, TQ_SIGNAL(<a href="ntqapplication.html#lastWindowClosed">lastWindowClosed</a>()),
+                      &amp;a, TQ_SLOT(<a href="ntqapplication.html#quit">quit</a>()) );
+
+    return a.<a href="ntqapplication.html#exec">exec</a>();
+}
+</pre>
+
+<p>See also <a href="examples.html">Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

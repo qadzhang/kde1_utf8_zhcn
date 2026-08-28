@@ -59,12 +59,12 @@ void KColorButton::slotClicked()
 
 void KColorButton::drawButtonLabel( QPainter *painter )
 {
-	int w = ( style() == WindowsStyle ) ? 11 : 10;
+	int w = ( style().inherits("TQWindowsStyle") ) ? 11 : 10;
 	
 	QColor lnCol = colorGroup().text();
 	QColor fillCol = isEnabled() ? col : backgroundColor();
 
-	if ( style() == WindowsStyle && isDown() )
+	if ( style().inherits("TQWindowsStyle") && isDown() )
 	{
 		qDrawPlainRect( painter, w/2+1, w/2+1, width()-w, height()-w,
 		    lnCol, 1, 0 );

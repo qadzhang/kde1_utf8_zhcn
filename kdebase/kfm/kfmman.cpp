@@ -77,14 +77,14 @@ KFMManager::KFMManager( KfmView *_v )
     if ( !link_overlay )
     {
 	link_overlay = new QString;
-	*link_overlay = kapp->kde_icondir().copy();
+	*link_overlay = kapp->kde_icondir();
 	*link_overlay += "/link.xpm";
 	HTMLImage::cacheImage( link_overlay->data() );
     }
     if ( !ro_overlay )
     {
 	ro_overlay = new QString;
-	*ro_overlay = kapp->kde_icondir().copy();
+	*ro_overlay = kapp->kde_icondir();
 	*ro_overlay += "/readonly.xpm";
 	HTMLImage::cacheImage( ro_overlay->data() );
     }
@@ -252,7 +252,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     KURL u( _url );
     if ( u.isMalformed() )
     {
-        warning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path()); 
+        tqWarning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path()); 
 	return false;
     }
 
@@ -345,7 +345,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	    return true;
 	}
 	else
-	    warning("ERROR: Could not read file in cache\n");
+	    tqWarning("ERROR: Could not read file in cache\n");
     }
 
     // A link to the web in form of a *.kdelnk file ?
@@ -437,7 +437,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // in user's directory. In that case, pretend nothing happened
 
     QString tryPath = tryURL;
-    //debug ("DIROVERLAY: OK, url to test is %s", tryPath.data());
+    //tqDebug( "DIROVERLAY: OK, url to test is %s", tryPath.data());
     
     if (tryPath.contains(GLOBALMIME))
     {
@@ -471,7 +471,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // We must check here are we root; In that case whole storry is off
     if (view->getGUI()->sumode)
     {
-      //debug ("I'm a rooooooot!!!!!!!!!!");
+      //tqDebug( "I'm a rooooooot!!!!!!!!!!");
       bindingDir = false;
       pass2 = false;
     }
@@ -482,7 +482,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
       const char *f = tryPath.data();
       if (access(&f[5], F_OK) == 0)
       {
-	//debug ("DIROVERLAY: OK, %s exists!", tryPath.data());
+	//tqDebug( "DIROVERLAY: OK, %s exists!", tryPath.data());
 	tryURL = tryPath;
 	if (dupList == 0) // create dupList
 	{
@@ -494,7 +494,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
       }
       else
       {
-	//debug ("DIROVERLAY: OK, %s doesn't exist!", tryPath.data());
+	//tqDebug( "DIROVERLAY: OK, %s doesn't exist!", tryPath.data());
 	bindingDir = false;
         pass2 = false;
       }
@@ -579,7 +579,7 @@ void KFMManager::writeBodyTag()
 	    bg_image = "file:";
 	    if (tmp2.left(1)!="/") // relative path
             {
-              bg_image += kapp->kde_wallpaperdir().copy();
+              bg_image += kapp->kde_wallpaperdir();
               bg_image += "/";
             }
 	    bg_image += tmp2.data();
@@ -626,7 +626,7 @@ void KFMManager::writeBodyTag()
                   bg_image = "";
                   if (tmp.left(1)!="/") // relative path
                   {
-		    bg_image = kapp->kde_wallpaperdir().copy();
+		    bg_image = kapp->kde_wallpaperdir();
 		    bg_image += "/";
                   }
                   bg_image += tmp.data();
@@ -793,15 +793,14 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     //-------- Sven's overlayed mime/app dirs end ---
     
     /* QString decoded = s->getName();
-    decoded.detach();
+    decoded
     KURL::decodeURL( decoded );   // decoded to pass to writeWrapped()
 
     QString filename( url );        // filename, Filename, useable to find file on Disk (Hen)
-    filename.detach();
     filename += s->getName();
 
     QString encodedURL ( url );  
-    encodedURL.detach();            // encodedURL, URL,  encoded for <a href ..> (Hen)
+    encodedURL            // encodedURL, URL,  encoded for <a href ..> (Hen)
     encodedURL += s->getName(); */
 
     QString n( s->getName() );
@@ -829,7 +828,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	encodedURL.remove(5, strlen(LOCALMIME)); // 5 is for "file:"
 	encodedURL.insert(5, GLOBALMIME);
         filename = encodedURL;
-	//debug ("encodedURL = %s", encodedURL.data());
+	//tqDebug( "encodedURL = %s", encodedURL.data());
       }
 
       else if (encodedURL.contains(LOCALAPPS))
@@ -1311,13 +1310,13 @@ void KFMManager::slotFinished()
       //set up dir to read. We just read local dir: prepare for global:
       QString tryURL(job->getURL()); //deep copy, is that right?
 
-      // debug ("DIROVERLAY:pass 2, old url = %s", tryURL.data());
+      // tqDebug( "DIROVERLAY:pass 2, old url = %s", tryURL.data());
       
       if (tryURL.contains(LOCALMIME))
       {
 	tryURL.remove(5, strlen(LOCALMIME)); // 5 is for "file:"
 	tryURL.insert(5, GLOBALMIME);
-        // debug ("DIROVERLAY:pass 2, new url = %s", tryURL.data());
+        // tqDebug( "DIROVERLAY:pass 2, new url = %s", tryURL.data());
       }
 
       else if (tryURL.contains(LOCALAPPS))
@@ -1617,7 +1616,6 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPoint *_p, bool _nestedURLs )
 {
     dropDestination = _dest;
-    dropDestination.detach();
     
     dropZone = _zone;
     
@@ -1670,7 +1668,7 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
 	  popupMenu->popup(*_p);
 	}
 	else
-	  warning(klocale->translate("ERROR: Can not accept drop"));
+	  tqWarning(klocale->translate("ERROR: Can not accept drop"));
 	return;
       }
     }

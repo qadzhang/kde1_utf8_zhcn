@@ -73,7 +73,6 @@ DesktopConfig::DesktopConfig()
        cmode = Horizontal;
      else if(strmode == "Vertical")
        cmode = Vertical;
-     else
        cmode = Plain;
 
      if( kc->hasKey( "BackGroundPicture")) {
@@ -97,7 +96,6 @@ DesktopConfig::DesktopConfig()
 	    bgmode = BottomRight;
           else if(strmode == "Fancy")
 	    bgmode = Fancy;
-          else
             bgmode = Tile;
 
 	  if(bgpic.isEmpty() || bgmode == None)

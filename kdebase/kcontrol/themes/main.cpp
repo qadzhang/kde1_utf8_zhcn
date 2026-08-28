@@ -61,7 +61,7 @@ private:
 KThemesApplication::KThemesApplication(int &argc, char **argv, const char *name)
   : KControlApplication(argc, argv, name)
 {
-  initMetaObject();
+
 
   if (!(Theme::mkdirhier(Theme::workDir()))) exit(1);
   if (!(Theme::mkdirhier(Theme::themesDir()))) exit(1);
@@ -87,7 +87,7 @@ KThemesApplication::KThemesApplication(int &argc, char **argv, const char *name)
 //-----------------------------------------------------------------------------
 void KThemesApplication::init()
 {
-  //debug(i18n("No init necessary"));
+  //tqDebug(i18n("No init necessary"));
 }
 
 
@@ -109,19 +109,18 @@ void KThemesApplication::apply()
 
 //=============================================================================
 // Message handler
-static void msgHandler(QtMsgType aType, const char* aMsg)
+static void msgHandler(TQtMsgType aType, const char* aMsg)
 {
   QString appName = kapp->appName();
   QString msg = aMsg;
-  msg.detach();
 
   switch (aType)
   {
-  case QtDebugMsg:
+  case TQtDebugMsg:
     kdebug(KDEBUG_INFO, 0, msg);
     break;
 
-  case QtWarningMsg:
+  case TQtWarningMsg:
     fprintf(stderr, "%s: %s\n", (const char*)appName, msg.data());
     if (strncmp(aMsg,"KCharset:",9) != 0 &&
 	strncmp(aMsg,"QGManager:",10) != 0 &&
@@ -135,7 +134,7 @@ static void msgHandler(QtMsgType aType, const char* aMsg)
     else kdebug(KDEBUG_INFO, 0, msg);
     break;
 
-  case QtFatalMsg:
+  case TQtFatalMsg:
     fprintf(stderr, appName+" "+i18n("fatal error")+": %s\n", msg.data());
     KMsgBox::message(NULL, appName+" "+i18n("fatal error"),
 		     aMsg, KMsgBox::STOP);

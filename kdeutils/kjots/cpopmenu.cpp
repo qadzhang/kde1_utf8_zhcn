@@ -30,7 +30,6 @@
 CPopupMenu::CPopupMenu( QWidget *parent, const char *name )
     : QPopupMenu( parent, name )
 {
-    initMetaObject();
     setMouseTracking(TRUE);
 }
 

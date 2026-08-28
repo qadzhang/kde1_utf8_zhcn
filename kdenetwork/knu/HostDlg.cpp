@@ -160,7 +160,7 @@ HostDlg::HostDlg(QString commandName,
 #if 0
   kc->setGroup(configGroupName);
   if (firstTimeLauching) {
-    debug("=> firstTimeLauching <=");
+    tqDebug("=> firstTimeLauching <=");
     kc->writeEntry("binaryType", "host");
     if (!commandFound) {
       if (::test_for_exec("nslookup")) {
@@ -254,12 +254,12 @@ HostDlg::buildCommandLine(QString args)
     start = regexp->match(s, 0, &len);
     ASSERT(start>0);
     queryType = s.mid(start+1, len-2); // to remove ()
-    //debug ("queryType=%s", (const char *)queryType);
+    //tqDebug("queryType=%s", (const char *)queryType);
     delete regexp;
     if (!strcmp(queryType, "A")) {
       // - if q=A and the args is an IP address, then q=PTR
       if (args.contains(QRegExp("^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$")) > 0) {
-	//debug("This is an IP address");
+	//tqDebug("This is an IP address");
 	queryType = "PTR";
 	hostCb1->setCurrentItem(1);
       }
@@ -267,7 +267,7 @@ HostDlg::buildCommandLine(QString args)
       // - if q=PTR and the args is an name, then q=A
       if (args.contains(QRegExp("^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$")) > 0) {
       } else {
-	//debug("This is _not_ an IP address");
+	//tqDebug("This is _not_ an IP address");
 	queryType = "A";
 	hostCb1->setCurrentItem(0);
       }
@@ -318,7 +318,7 @@ HostCfgDlg::makeWidget(QWidget *parent, bool makeLayouts)
 #define SET_ADJUSTED_FIXED_SIZE(_wdgt) \
                   _wdgt->setFixedSize(_wdgt->sizeHint())
 
-  //debug("HostCfgDlg::makeWidget");
+  //tqDebug("HostCfgDlg::makeWidget");
   (void)CommandCfgDlg::makeWidget(parent, FALSE);
 
   // Widgets
@@ -392,7 +392,7 @@ HostCfgDlg::makeWidget(QWidget *parent, bool makeLayouts)
 void
 HostCfgDlg::deleteConfigWidget()
 {
-  //  debug("HostCfgDlg::deleteCondigWidget");
+  //  tqDebug("HostCfgDlg::deleteCondigWidget");
   
   delete cfgLayoutTB;
   delete cfgLayoutGB;

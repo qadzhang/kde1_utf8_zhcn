@@ -104,7 +104,7 @@ class cardPos: public Card {
 public:
   cardPos( int x, int y,  QWidget *parent=0, int type=0 )
     : Card( Empty, Empty, parent, type, TRUE )
-  {     initMetaObject();  move(x,y); }
+  {     move(x,y); }  /* TQt3 迁移：initMetaObject 删 */
 
   virtual ~cardPos() {};
 };

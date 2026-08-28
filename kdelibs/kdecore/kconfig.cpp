@@ -102,7 +102,7 @@
 // new KConfig
 //
 
-#include <kconfig.h>
+#include "kconfig.h"
 #include <qfileinfo.h>
 #include <stdlib.h>
 

@@ -70,7 +70,7 @@ bool FingerProtocol::connection(  const char * host,int port)
        sockNotif->setEnabled(TRUE);
       return true;
       }
-//warning("Connecting...");  
+//tqWarning("Connecting...");  
   fd_set rd, wr;
   struct timeval timeout;
   int retval=0, n;
@@ -88,9 +88,9 @@ bool FingerProtocol::connection(  const char * host,int port)
       getrlimit(RLIMIT_NOFILE, &rlp); 
       retval=select(rlp.rlim_cur, (fd_set *)&rd, (fd_set *)&wr, (fd_set *)0,
                    (struct timeval *)&timeout);
-//      warning("retval %i, val %i",retval,val);
+//      tqWarning("retval %i, val %i",retval,val);
       if(retval){
-//	warning("connected");    
+//	tqWarning("connected");    
            sockNotif = new QSocketNotifier(sock,QSocketNotifier::Read,this);
            QObject::connect(sockNotif, SIGNAL(activated(int )),this,SLOT(readBuff(int ))); 
            sockNotif->setEnabled(TRUE);
@@ -110,7 +110,7 @@ if(n==0)
 
 void FingerProtocol::readBuff( int     ) 
 {
-  warning("read buff" );
+  tqWarning("read buff" );
   sockNotif->setEnabled(FALSE);
   char c,n;
   int mn = recv( sock,   s    , 1, MSG_PEEK );
@@ -139,7 +139,7 @@ int FingerProtocol::writeString(QString st)
 
     char    val=0; 
     getsockopt(sock,SOL_SOCKET,SO_ERROR,(void*)&val,&len );                   
-    //warning("error %d ",val);
+    //tqWarning("error %d ",val);
     if(val==0)  
 	write(sock,st,strlen(st));
     return val;  

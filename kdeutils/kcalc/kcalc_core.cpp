@@ -146,7 +146,6 @@ int precedence[14] = { 0, 1, 2, 3, 4, 4, 5, 5, 6, 6, 6, 7, 7, 6 };
 				  ExecMultiplyP, 
 				  ExecDivideP, ExecDivideP,
 				  ExecPowerP, ExecPwrRootP, 
-				  ExecDivideP
     };	
 
 
@@ -656,7 +655,6 @@ void QtCalculator::EnterSquare()
 	} 
 	else if (DISPLAY_AMOUNT < 0)
 	display_error = 1;
-	else
 		DISPLAY_AMOUNT = SQRT(DISPLAY_AMOUNT);	
 	refresh_display = 1;
 	inverse = FALSE;

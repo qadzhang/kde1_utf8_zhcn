@@ -135,12 +135,12 @@ servercontroller::servercontroller /*FOLD00*/
       connect(km, SIGNAL(minimized(KMDIWindow *)),
               this, SLOT(MDIMinimized(KMDIWindow *)));
     else
-        warning("Failed to retreive Window, do not minimize the server controller!!");
+        tqWarning("Failed to retreive Window, do not minimize the server controller!!");
 
     displayMgr = displayMgrMDI;
   }
   else{
-      warning("Game mode Indeterminate, defaulting to SDI");
+      tqWarning("Game mode Indeterminate, defaulting to SDI");
       goto SDI;
   }
     
@@ -216,7 +216,7 @@ servercontroller::servercontroller /*FOLD00*/
   MenuBar->insertItem(i18n("&Help"), help);
   
   ConnectionTree->setExpandLevel(2);
-  open_toplevels = 0;
+  open_toplevels = 0;  /* TQt3 迁移 */
   
   KIconLoader *kicl = kApp->getIconLoader();
   QStrList *strlist = kicl->getDirList();
@@ -318,7 +318,7 @@ void servercontroller::new_ksircprocess(QString str) /*FOLD00*/
 
   connections->setItemEnabled(join_id, TRUE);
 
-  debug("Done new_ksircprocess");
+  tqDebug("Done new_ksircprocess");
 }
 
 void servercontroller::new_channel() /*fold00*/
@@ -623,7 +623,7 @@ void servercontroller::readProperties(KConfig *ksc) /*FOLD00*/
   while(kei->current()){
     QStrList channels;
     int number;
-    debug("%s", kei->currentKey());
+    tqDebug("%s", kei->currentKey());
     new_ksircprocess(kei->currentKey()); // sets up proc_list
     cerr << kei->currentKey() << endl;
     number = ksc->readListEntry(kei->currentKey(), channels);
@@ -670,21 +670,21 @@ void servercontroller::WindowSelected(int index){
     return;
 
   QString txt = QString(parent_server->getText()) + "_" + child->getText() + "_toplevel";
-  debug("Searching on: %s", txt.data());
+  tqDebug("Searching on: %s", txt.data());
   KSircTopLevel *obj = (KSircTopLevel *) objFinder::find(txt, "KSircTopLevel");
-  debug("Found: %p", obj);
+  tqDebug("Found: %p", obj);
   if(obj == 0x0){
     txt = QString(parent_server->getText()) + "_!" + child->getText() + "_toplevel";
-    debug("Searching on: %s", txt.data());
+    tqDebug("Searching on: %s", txt.data());
     obj = (KSircTopLevel *) objFinder::find(txt, "KSircTopLevel");
-    debug("Found: %p", obj);
+    tqDebug("Found: %p", obj);
   }
     
   if(obj != 0x0){
     displayMgr->raise(obj);
   }
   else {
-    warning("Did not find widget ptr to raise it");
+    tqWarning("Did not find widget ptr to raise it");
   }
 }
 

@@ -129,9 +129,11 @@ void KDMBackgroundWidget::setupPage(QWidget *)
 
       rGroup = new QGroupBox( klocale->translate("Wallpaper"), this );
 
-      QString path = kapp->kde_wallpaperdir().copy();
+      QString path = kapp->kde_wallpaperdir();
       QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
-      QStrList list = *d.entryList();
+      QStrList list;  // TQt3 迁移：值语义搬运
+      { QStringList k1sl = d.entryList();
+        for (unsigned k1i=0;k1i<k1sl.count();++k1i) list.append(k1sl[k1i]); }
       if(!wallpaper.isEmpty())
         list.append( wallpaper.data() );
 
@@ -268,8 +270,8 @@ void KDMBackgroundWidget::slotQDrop( QDropEvent *e )
   {
     monitor->setAllowDrop(false);
     s = list.first(); // we only want the first
-    //debug("slotQDropEvent - %s", s.data());
-    s = QUrlDrag::urlToLocalFile(s.data()); // a hack. should be improved
+    //tqDebug("slotQDropEvent - %s", s.data());
+    s = TQUriDrag::uriToLocalFile(s.data());  // TQt3 迁移：urlToLocalFile→uriToLocalFile
     if(!s.isEmpty())
       loadWallpaper(s.data());
   } 
@@ -278,13 +280,13 @@ void KDMBackgroundWidget::slotQDrop( QDropEvent *e )
 
 void KDMBackgroundWidget::slotQDragLeave( QDragLeaveEvent* )
 {
-  //debug("Got QDragLeaveEvent!");
+  //tqDebug("Got QDragLeaveEvent!");
   monitor->setAllowDrop(false);
 }
 
 void KDMBackgroundWidget::slotQDragEnter( QDragEnterEvent *e )
 {
-  //debug("Got QDragEnterEvent!");
+  //tqDebug("Got QDragEnterEvent!");
 #if QT_VERSION > 140
   if( QUrlDrag::canDecode( e ) )
   {
@@ -312,11 +314,11 @@ void KDMBackgroundWidget::slotBrowse()
 {
 	QString path;
 
-	path = kapp->kde_wallpaperdir().copy();
+	path = kapp->kde_wallpaperdir();
 
 	QDir dir( path );
 	if ( !dir.exists() )
-		path = NULL;
+		path = TQString();  // TQt3 迁移
 
 	QString filename = KFileDialog::getOpenFileName( path );
 	slotWallpaper( filename );
@@ -333,7 +335,7 @@ void KDMBackgroundWidget::setMonitor()
 
   if ( !wallpaper.isEmpty() )
   {
-    //debug("slotSelectColor - setting wallpaper");
+    //tqDebug("slotSelectColor - setting wallpaper");
     float sx = (float)monitor->width() / QApplication::desktop()->width();
     float sy = (float)monitor->height() / QApplication::desktop()->height();
 
@@ -407,7 +409,7 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
 
   if ( name[0] != '/' )
   {
-    filename = kapp->kde_wallpaperdir().copy();
+    filename = kapp->kde_wallpaperdir();
     filename += "/";
     filename += name;
   }
@@ -492,7 +494,7 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
   }
   else
   {
-    debug("KDMBackgroundWidget::loadWallpaper(): failed loading %s", filename.data());
+    tqDebug("KDMBackgroundWidget::loadWallpaper(): failed loading %s", filename.data());
     wallpaper = "";
   }
 
@@ -562,7 +564,7 @@ void KDMBackgroundWidget::showSettings()
 
 void KDMBackgroundWidget::applySettings()
 {
-  //debug("KDMBackgroundWidget::applySettings()"); 
+  //tqDebug("KDMBackgroundWidget::applySettings()"); 
   QString fn(CONFIGFILE);
   KSimpleConfig *c = new KSimpleConfig(fn);
 
@@ -665,7 +667,6 @@ void KDMBackgroundWidget::loadSettings()
     colorMode = Horizontal;
   else if(strmode == "Vertical")
     colorMode = Vertical;
-  else
     colorMode = Plain;
 
 
@@ -688,7 +689,6 @@ void KDMBackgroundWidget::loadSettings()
     wpMode = BottomRight;
   else if(strmode == "Fancy")
     wpMode = Fancy;
-  else
     wpMode = Tile;
 
   delete c;

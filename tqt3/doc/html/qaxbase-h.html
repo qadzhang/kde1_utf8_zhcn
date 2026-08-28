@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/include/qaxbase.h:1 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>qaxbase.h Include File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>qaxbase.h</h1>
+
+<p>This is the verbatim text of the qaxbase.h include file. It is provided only for illustration; the copyright remains with Trolltech.
+<hr>
+<pre>
+/****************************************************************************
+** $Id: qt/qaxbase.h   3.3.8   edited Jan 11 14:46 $
+**
+** Declaration of the TQAxBase class
+**
+** Copyright (C) 2001-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of the Active TQt integration.
+**
+** Licensees holding valid TQt Enterprise Edition
+** licenses for Windows may use this file in accordance with the TQt Commercial
+** License Agreement provided with the Software.
+**
+** This file is not available for use under any other license without
+** express written permission from the copyright holder.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+** See http://www.trolltech.com/pricing.html or email sales@trolltech.com for
+**   information about TQt Commercial License Agreements.
+**
+** Contact info@trolltech.com if any conditions of this licensing are
+** not clear to you.
+**
+**********************************************************************/
+
+#ifndef UNICODE
+#define UNICODE
+#endif
+
+#ifndef TQAXBASE_H
+#define TQAXBASE_H
+
+#include &lt;ntqvariant.h&gt;
+#include &lt;ntqobject.h&gt;
+
+struct IUnknown;
+struct TQUuid;
+class TQAxEventSink;
+class TQAxObject;
+class TQAxBasePrivate;
+
+class TQAxBase
+{
+#ifdef Q_QDOC
+#error "The Symbol Q_QDOC is reserved for documentation purposes."
+    TQ_PROPERTY( TQString control READ control WRITE setControl )
+#endif
+public:
+#ifndef Q_QDOC
+    typedef TQMap&lt;TQCString, TQVariant&gt; PropertyBag;
+#endif
+
+    TQAxBase( IUnknown *iface = 0 );
+    virtual ~TQAxBase();
+
+    TQString control() const;
+
+    long queryInterface( const TQUuid &amp;, void** ) const;
+
+    TQVariant dynamicCall( const TQCString&amp;, const TQVariant &amp;v1 = TQVariant(), 
+					   const TQVariant &amp;v2 = TQVariant(),
+					   const TQVariant &amp;v3 = TQVariant(),
+					   const TQVariant &amp;v4 = TQVariant(),
+					   const TQVariant &amp;v5 = TQVariant(),
+					   const TQVariant &amp;v6 = TQVariant(),
+					   const TQVariant &amp;v7 = TQVariant(),
+					   const TQVariant &amp;v8 = TQVariant() );
+    TQVariant dynamicCall( const TQCString&amp;, TQValueList&lt;TQVariant&gt; &amp;vars );
+    TQAxObject *querySubObject( const TQCString &amp;name, const TQVariant &amp;v1 = TQVariant(),
+					    const TQVariant &amp;v2 = TQVariant(),
+					    const TQVariant &amp;v3 = TQVariant(),
+					    const TQVariant &amp;v4 = TQVariant(),
+					    const TQVariant &amp;v5 = TQVariant(),
+					    const TQVariant &amp;v6 = TQVariant(),
+					    const TQVariant &amp;v7 = TQVariant(),
+					    const TQVariant &amp;v8 = TQVariant() );
+
+    virtual TQMetaObject *metaObject() const;
+    virtual bool tqt_invoke( int, TQUObject* );
+    virtual bool tqt_property( int, int, TQVariant* );
+    virtual bool tqt_emit( int, TQUObject* ) = 0;
+    virtual const char *className() const = 0;
+    virtual TQObject *qObject() = 0;
+
+    PropertyBag propertyBag() const;
+    void setPropertyBag( const PropertyBag&amp; );
+
+    TQString generateDocumentation();
+
+    virtual bool propertyWritable( const char* ) const;
+    virtual void setPropertyWritable( const char*, bool );
+
+    bool isNull() const;
+
+    TQVariant asVariant() const;
+
+#ifdef Q_QDOC
+#error "The Symbol Q_QDOC is reserved for documentation purposes."
+    enum PropertyBag {};
+signals:
+    void signal(const TQString&amp;,int,void*);
+    void propertyChanged(const TQString&amp;);
+    void exception(int,const TQString&amp;,const TQString&amp;,const TQString&amp;);
+#endif
+
+public:
+    virtual void clear();
+    bool setControl( const TQString&amp; );
+
+    void disableMetaObject();
+    void disableClassInfo();
+    void disableEventSink();
+
+protected:
+    virtual bool initialize( IUnknown** ptr );
+    bool initializeRemote(IUnknown** ptr);
+    bool initializeLicensed(IUnknown** ptr);
+    bool initializeActive(IUnknown** ptr);
+
+private:
+    bool initializeLicensedHelper(void *factory, const TQString &amp;key, IUnknown **ptr);
+    TQAxBasePrivate *d;
+
+    static TQMetaObject *staticMetaObject() { return 0; }
+    virtual TQMetaObject *parentMetaObject() const = 0;
+    bool internalInvoke( const TQCString &amp;name, void *out, TQVariant var[], TQCString &amp;type );
+
+    TQString ctrl;
+};
+
+inline TQString TQAxBase::generateDocumentation()
+{
+    extern TQString qax_generateDocumentation(TQAxBase *, TQAxBasePrivate *);
+    return qax_generateDocumentation(this, d);
+}
+
+#ifndef TQT_NO_DATASTREAM
+inline TQDataStream &amp;operator &gt;&gt;( TQDataStream &amp;s, TQAxBase &amp;c )
+{
+    TQAxBase::PropertyBag bag;
+    c.qObject()-&gt;blockSignals( true );
+    TQString control;
+    s &gt;&gt; control;
+    c.setControl( control );
+    s &gt;&gt; bag;
+    c.setPropertyBag( bag );
+    c.qObject()-&gt;blockSignals( false );
+
+    return s;
+}
+
+inline TQDataStream &amp;operator &lt;&lt;( TQDataStream &amp;s, const TQAxBase &amp;c )
+{
+    TQAxBase::PropertyBag bag = c.propertyBag();
+    s &lt;&lt; c.control();
+    s &lt;&lt; bag;
+
+    return s;
+}
+#endif // TQT_NO_DATASTREAM
+
+#endif // TQAXBASE_H
+</pre>
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

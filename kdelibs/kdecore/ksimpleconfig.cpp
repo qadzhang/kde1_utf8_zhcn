@@ -65,7 +65,7 @@
 // new KConfig
 //
 
-#include <ksimpleconfig.h>
+#include "ksimpleconfig.h"
 
 #include <qfileinfo.h>
 

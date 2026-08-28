@@ -45,7 +45,6 @@ const long Deck::n = 52;
 CardTable::CardTable( QWidget *parent, const char *name ) 
   :QWidget(parent, name)
 {
-  initMetaObject();
 
   setBackgroundColor(darkGreen);
   setMouseTracking(TRUE);
@@ -76,9 +75,7 @@ Deck::Deck( int x, int y, CardTable* parent, int m )
   : cardPos(x, y, parent, DeckType), f(parent), mult (m)
 { 
   deck = new Card * [mult*n];
-  CHECK_PTR (deck);
-
-  initMetaObject(); 
+  CHECK_PTR (deck); 
   makedeck(); 
   shuffle(); 
   addToDeck(); 
@@ -153,7 +150,6 @@ void Deck::unlinkAll() {
 dealer::dealer( QWidget *parent , const char *name )
   :CardTable(parent, name)
 {
-  initMetaObject();
 }
 
 dealer::~dealer() {

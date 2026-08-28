@@ -273,8 +273,8 @@ DwString::DwString(const DwString& aStr, size_t aPos, size_t aLen)
     }
     else /* if (len == 0) */ {
         mRep = new_rep_reference(sEmptyRep);
-        mStart = 0;
-        mLength = 0;
+        mStart = TQString();
+        mLength = TQString();
     }
 }
 
@@ -419,7 +419,7 @@ void DwString::reserve(size_t aSize)
         if (rep != 0) {
             delete_rep_safely(mRep);
             mRep = rep;
-            mStart = 0;
+            mStart = TQString();
         }
         else {
              mem_free(newBuf);
@@ -1146,15 +1146,15 @@ void DwString::_copy()
             if (rep != 0) {
                 delete_rep_safely(mRep);
                 mRep = rep;
-                mStart = 0;
+                mStart = TQString();
             }
             else /* if (rep == 0) */ {
                 mem_free(newBuf);
-                mLength = 0;
+                mLength = TQString();
             }
         }
         else /* if (newBuf == 0) */ {
-            mLength = 0;
+            mLength = TQString();
         }
     }
 }
@@ -1177,8 +1177,8 @@ void DwString::_replace(size_t aPos1, size_t aLen1, const char* aBuf, size_t aLe
         if (mRep != sEmptyRep) {
             delete_rep_safely(mRep);
             mRep = new_rep_reference(sEmptyRep);
-            mStart = 0;
-            mLength = 0;
+            mStart = TQString();
+            mLength = TQString();
         }
     }
     // Is buffer shared?  Is buffer too small?
@@ -1200,7 +1200,7 @@ void DwString::_replace(size_t aPos1, size_t aLen1, const char* aBuf, size_t aLe
             if (rep != 0) {
                 delete_rep_safely(mRep);
                 mRep = rep;
-                mStart = 0;
+                mStart = TQString();
                 mLength = newLen;
             }
         }
@@ -1246,7 +1246,7 @@ void DwString::_replace(size_t aPos1, size_t aLen1, const char* aBuf, size_t aLe
         for (i=0; i < pos1; ++i) *to++ = *from++;
         from = aBuf;
         for (i=0; i < len2; ++i) *to++ = *from++;
-        mStart = 0;
+        mStart = TQString();
         mLength = newLen;
     }
 }
@@ -1268,8 +1268,8 @@ void DwString::_replace(size_t aPos1, size_t aLen1, size_t aLen2, char aChar)
         if (mRep != sEmptyRep) {
             delete_rep_safely(mRep);
             mRep = new_rep_reference(sEmptyRep);
-            mStart = 0;
-            mLength = 0;
+            mStart = TQString();
+            mLength = TQString();
         }
     }
     // Is buffer shared?  Is buffer too small?
@@ -1290,7 +1290,7 @@ void DwString::_replace(size_t aPos1, size_t aLen1, size_t aLen2, char aChar)
             if (rep != 0) {
                 delete_rep_safely(mRep);
                 mRep = rep;
-                mStart = 0;
+                mStart = TQString();
                 mLength = newLen;
             }
         }
@@ -1332,7 +1332,7 @@ void DwString::_replace(size_t aPos1, size_t aLen1, size_t aLen2, char aChar)
         from = mRep->mBuffer + mStart;
         for (i=0; i < pos1; ++i) *to++ = *from++;
         for (i=0; i < len2; ++i) *to++ = aChar;
-        mStart = 0;
+        mStart = TQString();
         mLength = newLen;
     }
 }

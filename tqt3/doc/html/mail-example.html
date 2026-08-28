@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/examples/network/mail/mail.doc:5 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>A simple mail client</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>A simple mail client</h1>
+
+ 
+<p> 
+<p> This example shows how to use the <a href="ntqsocket.html">TQSocket</a> class. The client can only be
+used to send mails. The interesting part is the implementation of the
+SMTP protocol.
+<p> <hr>
+<p> Header file (smtp.h):
+<p> <pre>/****************************************************************************
+** $Id: qt/smtp.h   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#ifndef SMTP_H
+#define SMTP_H
+
+#include &lt;<a href="qobject-h.html">ntqobject.h</a>&gt;
+#include &lt;<a href="qstring-h.html">ntqstring.h</a>&gt;
+
+class TQSocket;
+class TQTextStream;
+class TQDns;
+
+class Smtp : public <a href="ntqobject.html">TQObject</a>
+{
+    <a href="metaobjects.html#TQ_OBJECT">TQ_OBJECT</a>
+
+public:
+    Smtp( const <a href="ntqstring.html">TQString</a> &amp;from, const <a href="ntqstring.html">TQString</a> &amp;to,
+          const <a href="ntqstring.html">TQString</a> &amp;subject, const <a href="ntqstring.html">TQString</a> &amp;body );
+    ~Smtp();
+
+signals:
+    void status( const <a href="ntqstring.html">TQString</a> &amp; );
+
+private slots:
+    void dnsLookupHelper();
+    void readyRead();
+    void connected();
+
+private:
+    enum State {
+        Init,
+        Mail,
+        Rcpt,
+        Data,
+        Body,
+        Quit,
+        Close
+    };
+
+    <a href="ntqstring.html">TQString</a> message;
+    <a href="ntqstring.html">TQString</a> from;
+    <a href="ntqstring.html">TQString</a> rcpt;
+    <a href="ntqsocket.html">TQSocket</a> *socket;
+    <a href="ntqtextstream.html">TQTextStream</a> * t;
+    int state;
+    <a href="ntqstring.html">TQString</a> response;
+    <a href="ntqdns.html">TQDns</a> * mxLookup;
+};
+
+#endif
+</pre>
+
+<p> <hr>
+<p> Implementation (smtp.cpp):
+<p> <pre>/****************************************************************************
+** $Id: qt/smtp.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "smtp.h"
+
+#include &lt;<a href="qtextstream-h.html">ntqtextstream.h</a>&gt;
+#include &lt;<a href="qsocket-h.html">ntqsocket.h</a>&gt;
+#include &lt;<a href="qdns-h.html">ntqdns.h</a>&gt;
+#include &lt;<a href="qtimer-h.html">ntqtimer.h</a>&gt;
+#include &lt;<a href="qapplication-h.html">ntqapplication.h</a>&gt;
+#include &lt;<a href="qmessagebox-h.html">ntqmessagebox.h</a>&gt;
+#include &lt;<a href="qregexp-h.html">ntqregexp.h</a>&gt;
+
+
+<a name="f297"></a>Smtp::Smtp( const <a href="ntqstring.html">TQString</a> &amp;from, const <a href="ntqstring.html">TQString</a> &amp;to,
+            const <a href="ntqstring.html">TQString</a> &amp;subject,
+            const <a href="ntqstring.html">TQString</a> &amp;body )
+{
+    socket = new <a href="ntqsocket.html">TQSocket</a>( this );
+<a name="x714"></a>    <a href="ntqobject.html#connect">connect</a> ( socket, TQ_SIGNAL( <a href="ntqsocket.html#readyRead">readyRead</a>() ),
+              this, TQ_SLOT( readyRead() ) );
+<a name="x711"></a>    <a href="ntqobject.html#connect">connect</a> ( socket, TQ_SIGNAL( <a href="ntqsocket.html#connected">connected</a>() ),
+              this, TQ_SLOT( connected() ) );
+
+<a name="x717"></a><a name="x715"></a>    mxLookup = new <a href="ntqdns.html">TQDns</a>( to.<a href="ntqstring.html#mid">mid</a>( to.<a href="ntqstring.html#find">find</a>( '@' )+1 ), TQDns::Mx );
+<a name="x707"></a>    <a href="ntqobject.html#connect">connect</a>( mxLookup, TQ_SIGNAL(<a href="ntqdns.html#resultsReady">resultsReady</a>()),
+             this, TQ_SLOT(dnsLookupHelper()) );
+
+<a name="x716"></a>    message = TQString::<a href="ntqstring.html#fromLatin1">fromLatin1</a>( "From: " ) + from +
+              TQString::<a href="ntqstring.html#fromLatin1">fromLatin1</a>( "\nTo: " ) + to +
+              TQString::<a href="ntqstring.html#fromLatin1">fromLatin1</a>( "\nSubject: " ) + subject +
+              TQString::<a href="ntqstring.html#fromLatin1">fromLatin1</a>( "\n\n" ) + body + "\n";
+    message.replace( TQString::<a href="ntqstring.html#fromLatin1">fromLatin1</a>( "\n" ),
+                     TQString::<a href="ntqstring.html#fromLatin1">fromLatin1</a>( "\r\n" ) );
+    message.replace( TQString::<a href="ntqstring.html#fromLatin1">fromLatin1</a>( "\r\n.\r\n" ),
+                     TQString::<a href="ntqstring.html#fromLatin1">fromLatin1</a>( "\r\n..\r\n" ) );
+
+    this-&gt;from = from;
+    rcpt = to;
+
+    state = Init;
+}
+
+
+Smtp::~Smtp()
+{
+    delete t;
+    delete socket;
+}
+
+
+void <a name="f298"></a>Smtp::dnsLookupHelper()
+{
+<a name="x706"></a>    <a href="ntqvaluelist.html">TQValueList</a>&lt;TQDns::MailServer&gt; s = mxLookup-&gt;<a href="ntqdns.html#mailServers">mailServers</a>();
+<a name="x720"></a>    if ( s.<a href="ntqvaluelist.html#isEmpty">isEmpty</a>() ) {
+<a name="x705"></a>        if ( !mxLookup-&gt;<a href="ntqdns.html#isWorking">isWorking</a>() )
+            emit status( <a href="ntqobject.html#tr">tr</a>( "Error in MX record lookup" ) );
+        return;
+    }
+
+<a name="x719"></a>    emit status( <a href="ntqobject.html#tr">tr</a>( "Connecting to %1" ).arg( s.<a href="ntqvaluelist.html#first">first</a>().name ) );
+
+<a name="x710"></a>    socket-&gt;<a href="ntqsocket.html#connectToHost">connectToHost</a>( s.<a href="ntqvaluelist.html#first">first</a>().name, 25 );
+    t = new <a href="ntqtextstream.html">TQTextStream</a>( socket );
+}
+
+
+void <a name="f299"></a>Smtp::connected()
+{
+<a name="x712"></a>    emit status( <a href="ntqobject.html#tr">tr</a>( "Connected to %1" ).arg( socket-&gt;<a href="ntqsocket.html#peerName">peerName</a>() ) );
+}
+
+void <a name="f300"></a>Smtp::readyRead()
+{
+    // SMTP is line-oriented
+<a name="x709"></a>    if ( !socket-&gt;<a href="ntqsocket.html#canReadLine">canReadLine</a>() )
+        return;
+
+    <a href="ntqstring.html">TQString</a> responseLine;
+    do {
+<a name="x713"></a>        responseLine = socket-&gt;<a href="ntqsocket.html#readLine">readLine</a>();
+        response += responseLine;
+    } while( socket-&gt;<a href="ntqsocket.html#canReadLine">canReadLine</a>() &amp;&amp; responseLine[3] != ' ' );
+<a name="x718"></a>    responseLine.<a href="ntqstring.html#truncate">truncate</a>( 3 );
+
+    if ( state == Init &amp;&amp; responseLine[0] == '2' ) {
+        // banner was okay, let's go on
+        *t &lt;&lt; "HELO there\r\n";
+        state = Mail;
+    } else if ( state == Mail &amp;&amp; responseLine[0] == '2' ) {
+        // HELO response was okay (well, it has to be)
+        *t &lt;&lt; "MAIL FROM: &lt;" &lt;&lt; from &lt;&lt; "&gt;\r\n";
+        state = Rcpt;
+    } else if ( state == Rcpt &amp;&amp; responseLine[0] == '2' ) {
+        *t &lt;&lt; "RCPT TO: &lt;" &lt;&lt; rcpt &lt;&lt; "&gt;\r\n";
+        state = Data;
+    } else if ( state == Data &amp;&amp; responseLine[0] == '2' ) {
+        *t &lt;&lt; "DATA\r\n";
+        state = Body;
+    } else if ( state == Body &amp;&amp; responseLine[0] == '3' ) {
+        *t &lt;&lt; message &lt;&lt; ".\r\n";
+        state = Quit;
+    } else if ( state == Quit &amp;&amp; responseLine[0] == '2' ) {
+        *t &lt;&lt; "QUIT\r\n";
+        // here, we just close.
+        state = Close;
+        emit status( <a href="ntqobject.html#tr">tr</a>( "Message sent" ) );
+    } else if ( state == Close ) {
+        <a href="ntqobject.html#deleteLater">deleteLater</a>();
+        return;
+    } else {
+        // something broke.
+<a name="x708"></a><a name="x704"></a>        TQMessageBox::<a href="ntqmessagebox.html#warning">warning</a>( tqApp-&gt;<a href="ntqapplication.html#activeWindow">activeWindow</a>(),
+                              <a href="ntqobject.html#tr">tr</a>( "TQt Mail Example" ),
+                              <a href="ntqobject.html#tr">tr</a>( "Unexpected reply from SMTP server:\n\n" ) +
+                              response );
+        state = Close;
+    }
+
+    response = "";
+}
+</pre>
+
+<p>See also <a href="network-examples.html">Network Examples</a>.
+
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

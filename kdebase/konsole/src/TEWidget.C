@@ -755,26 +755,32 @@ bool TEWidget::eventFilter( QObject *, QEvent *e )
     actSel=0; // Key stroke implies a screen update, so TEWidget won't
               // know where the current selection is.
  
-    switch (ke->state() | (ke->key() << 8))
-    {
-      case ShiftButton|(Key_PageUp   << 8) : 
+    /* TQt3 迁移：Key_* 枚举为大值（Qt1 小码 <<8 的组键法在 32 位截断撞值）——
+       改按键与修饰分离判定 */
+    if ( ke->state() & ShiftButton ) {
+      switch (ke->key())
+      {
+      case Key_PageUp :
            scrollbar->setValue(scrollbar->value()-lines/2);
            break;
-      case ShiftButton|(Key_PageDown << 8) :
+      case Key_PageDown :
            scrollbar->setValue(scrollbar->value()+lines/2);
            break;
-      case ShiftButton|(Key_Up       << 8) : 
+      case Key_Up :
            scrollbar->setValue(scrollbar->value()-1);
            break;
-      case ShiftButton|(Key_Down     << 8) :
+      case Key_Down :
            scrollbar->setValue(scrollbar->value()+1);
            break;
-      case ShiftButton|(Key_Insert   << 8) :
+      case Key_Insert :
            emitSelection();
            break;
       default :
            emit keyPressedSignal(ke); // expose
            break;
+      }
+    } else {
+      emit keyPressedSignal(ke);
     }
     return TRUE; // accept event
   } 

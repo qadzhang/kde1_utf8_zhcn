@@ -219,7 +219,7 @@ void KAstTopLevel::readSettings()
 void KAstTopLevel::playSound( const char *snd )
 {
     kas->stop();
-    QString filename = kapp->kde_datadir().copy();
+    QString filename = kapp->kde_datadir();
     filename += "/kasteroids/";
     filename += soundDict[ snd ];
     kas->play( filename );

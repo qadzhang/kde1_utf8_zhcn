@@ -142,7 +142,7 @@ void Opener::mainLoop() {
 	if(flags == O_WRONLY|O_TRUNC|O_CREAT)
 	  mode = 0644;
 	else
-	  mode = 0;
+	  mode = 0;  /* TQt3 迁移 */
 
 	device = deviceByIndex(request.lock.deviceNum);
 	MY_ASSERT(strlen(LOCK_DIR)+strlen(device) < MaxPathLen);
@@ -505,7 +505,7 @@ void Opener::parseargs(char* buf, char** args) {
 
   while(nargs < MaxArgs-1 && *buf != '\0') {
     
-    quotes = 0;
+    quotes = 0;  /* TQt3 迁移 */
     
     // Strip whitespace. Use nulls, so that the previous argument is
     // terminated automatically.
@@ -588,7 +588,7 @@ const char* pppdPath() {
         return PPPDPATH;
     }
     delete PPPDPATH;
-    PPPDPATH = 0L;
+    PPPDPATH = 0;  /* TQt3 迁移 */
   }
   return PPPDPATH;
 }

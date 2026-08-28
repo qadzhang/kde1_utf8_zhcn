@@ -24,7 +24,7 @@ int main( int argc, char **argv )
   KBBGame v;
   
   a.setMainWidget( &v );
-  debug( "Thank you for running KBlackBox, version %s.", KBVERSION );
+  tqDebug( "Thank you for running KBlackBox, version %s.", KBVERSION );
   v.show();
   return a.exec();
 }

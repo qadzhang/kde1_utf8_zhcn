@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/sql.doc:54 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>sql/overview/table4/main.cpp Example File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>sql/overview/table4/main.cpp Example File</h1>
+
+ 
+<pre>/****************************************************************************
+** $Id: qt/main.cpp   3.3.8   edited Jan 11 14:37 $
+**
+** Copyright (C) 1992-2007 Trolltech ASA.  All rights reserved.
+**
+** This file is part of an example program for TQt.  This example
+** program may be used, distributed and modified without limitation.
+**
+*****************************************************************************/
+
+#include "main.h"
+
+
+<a name="f12"></a>StatusPicker::StatusPicker( <a href="ntqwidget.html">TQWidget</a> *parent, const char *name )
+    : <a href="ntqcombobox.html">TQComboBox</a>( parent, name )
+{
+    <a href="ntqsqlcursor.html">TQSqlCursor</a> cur( "status" );
+    cur.<a href="ntqsqlcursor.html#select">select</a>( cur.<a href="ntqsqlcursor.html#index">index</a>( "name" ) );
+
+    int i = 0;
+    while ( cur.<a href="ntqsqlquery.html#next">next</a>() ) {
+        <a href="ntqcombobox.html#insertItem">insertItem</a>( cur.<a href="ntqsqlquery.html#value">value</a>( "name" ).toString(), i );
+        index2id[i] = cur.<a href="ntqsqlquery.html#value">value</a>( "id" ).toInt();
+        i++;
+    }
+}
+
+
+int <a name="f13"></a>StatusPicker::statusId() const
+{
+    return index2id[ currentItem() ];
+}
+
+
+void <a name="f14"></a>StatusPicker::setStatusId( int statusid )
+{
+    TQMap&lt;int,int&gt;::Iterator it;
+    for ( it = index2id.begin(); it != index2id.end(); ++it ) {
+        if ( it.data() == statusid ) {
+            setCurrentItem( it.key() );
+            break;
+        }
+    }
+}
+
+
+void CustomTable::<a href="ntqdatatable.html#paintField">paintField</a>( <a href="ntqpainter.html">TQPainter</a> * p, const <a href="ntqsqlfield.html">TQSqlField</a>* field,
+                              const <a href="ntqrect.html">TQRect</a> &amp; cr, bool b)
+{
+    if ( !field )
+        return;
+    if ( field-&gt;<a href="ntqsqlfield.html#name">name</a>() == "statusid" ) {
+        <a href="ntqsqlquery.html">TQSqlQuery</a> query( "SELECT name FROM status WHERE id=" +
+                     field-&gt;<a href="ntqsqlfield.html#value">value</a>().toString() );
+        <a href="ntqstring.html">TQString</a> text;
+        if ( query.<a href="ntqsqlquery.html#next">next</a>() ) {
+            text = query.<a href="ntqsqlquery.html#value">value</a>( 0 ).toString();
+        }
+        p-&gt;<a href="ntqpainter.html#drawText">drawText</a>( 2,2, cr.<a href="ntqrect.html#width">width</a>()-4, cr.<a href="ntqrect.html#height">height</a>()-4, fieldAlignment( field ), text );
+    }
+    else {
+        TQDataTable::<a href="ntqdatatable.html#paintField">paintField</a>( p, field, cr, b) ;
+    }
+}
+
+
+TQWidget *CustomSqlEditorFactory::<a href="ntqsqleditorfactory.html#createEditor">createEditor</a>(
+    <a href="ntqwidget.html">TQWidget</a> *parent, const <a href="ntqsqlfield.html">TQSqlField</a> *field )
+{
+    if ( field-&gt;<a href="ntqsqlfield.html#name">name</a>() == "statusid" ) {
+        <a href="ntqwidget.html">TQWidget</a> *editor = new StatusPicker( parent );
+        return editor;
+    }
+
+    return TQSqlEditorFactory::createEditor( parent, field );
+}
+
+
+int main( int argc, char *argv[] )
+{
+    <a href="ntqapplication.html">TQApplication</a> app( argc, argv );
+
+    if ( createConnections() ) {
+        <a href="ntqsqlcursor.html">TQSqlCursor</a> staffCursor( "staff" );
+
+        CustomTable             *staffTable     = new CustomTable( &amp;staffCursor );
+        <a href="ntqsqlpropertymap.html">TQSqlPropertyMap</a>         *propMap        = new <a href="ntqsqlpropertymap.html">TQSqlPropertyMap</a>();
+        CustomSqlEditorFactory  *editorFactory  = new CustomSqlEditorFactory();
+        propMap-&gt;<a href="ntqsqlpropertymap.html#insert">insert</a>( "StatusPicker", "statusid" );
+        staffTable-&gt;<a href="ntqdatatable.html#installPropertyMap">installPropertyMap</a>( propMap );
+        staffTable-&gt;<a href="ntqdatatable.html#installEditorFactory">installEditorFactory</a>( editorFactory );
+
+        app.<a href="ntqapplication.html#setMainWidget">setMainWidget</a>( staffTable );
+
+        staffTable-&gt;<a href="ntqdatatable.html#addColumn">addColumn</a>( "forename", "Forename" );
+        staffTable-&gt;<a href="ntqdatatable.html#addColumn">addColumn</a>( "surname",  "Surname" );
+        staffTable-&gt;<a href="ntqdatatable.html#addColumn">addColumn</a>( "salary",   "Annual Salary" );
+        staffTable-&gt;<a href="ntqdatatable.html#addColumn">addColumn</a>( "statusid", "Status" );
+
+        <a href="ntqstringlist.html">TQStringList</a> order = TQStringList() &lt;&lt; "surname" &lt;&lt; "forename";
+        staffTable-&gt;<a href="ntqdatatable.html#setSort">setSort</a>( order );
+
+        staffTable-&gt;<a href="ntqdatatable.html#refresh">refresh</a>();
+        staffTable-&gt;<a href="ntqwidget.html#show">show</a>();
+
+        return app.<a href="ntqapplication.html#exec">exec</a>();
+    }
+
+    return 1;
+}
+</pre><!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

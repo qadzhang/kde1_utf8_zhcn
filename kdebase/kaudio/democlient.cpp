@@ -62,7 +62,7 @@ void DemoClient::loadClicked()
   QString fname = KFileDialog::getOpenFileName( 0, "*.wav", this );
   if ( !fname.isEmpty() ) {
     // the user selected a valid existing file
-    WAVname = fname.copy();
+    WAVname = fname;
     fname += " selected";
     statbar->changeItem(fname ,2);
     replayPossible=false;

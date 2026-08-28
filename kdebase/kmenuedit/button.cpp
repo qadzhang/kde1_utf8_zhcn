@@ -31,6 +31,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
+#undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 //#include <X11/extensions/shape.h>
 
 #include <kapp.h>
@@ -51,7 +52,7 @@ extern PMenuItem *global_drop_buffer;
 EditButton::EditButton( QWidget *parent , const char *name )
   : QButton ( parent, name )
 {
-  initMetaObject();
+
   raised = 0;
   connect( this, SIGNAL( pressed() ), this, SLOT( slotPressed () ) );
   connect( this, SIGNAL( released() ), this, SLOT( slotReleased () ) );
@@ -79,7 +80,6 @@ QSize EditButton::sizeHint()
 void EditButton::setText( const char *t )
 {
   btext = t;
-  btext.detach();
   if( bpixmap.isNull() )
     {
       QButton::setText(btext);
@@ -197,10 +197,10 @@ void EditButton::mouseReleaseEvent( QMouseEvent * _mouse )
   QPoint p3 = mapToGlobal(p2);
   if( win != findRootWindow(p3) )
     {
-      //debug("dropping on another window");
+      //tqDebug("dropping on another window");
       QString data;
       if( !global_drop_buffer )
-	debug("KMenuedit::Program error. global_drop_buffer is not initialised!");
+	tqDebug("KMenuedit::Program error. global_drop_buffer is not initialised!");
       data += global_drop_buffer->getDirPath() + '/';
       data += global_drop_buffer->getName();
       QFileInfo fi(data);

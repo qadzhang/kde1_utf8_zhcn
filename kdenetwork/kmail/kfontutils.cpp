@@ -55,7 +55,7 @@ const char* kfontToStr(const QFont& aFont)
   if (charset == QFont::AnyCharSet)
   {
     charsetStr = "*";
-    enc = 0;
+    enc = 0;  /* TQt3 迁移 */
   }
   else 
   {

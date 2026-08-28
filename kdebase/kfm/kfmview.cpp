@@ -154,7 +154,7 @@ KfmView::~KfmView()
     // Save HTTP Cookies
     if (cookiejar)
     {
-      QString cookieFile = kapp->localkdedir().copy();
+      QString cookieFile = kapp->localkdedir();
       cookieFile += "/share/apps/kfm/cookies";
       cookiejar->saveCookies( cookieFile.data() );
     }
@@ -415,7 +415,6 @@ void KfmView::slotFilesChanged( const char *_url )
 	u1 += "/";
     
     QString u2 = manager->getURL().data();
-    u2.detach();
     if ( u2.right( 1 ) != "/" )
 	u2 += "/";
 
@@ -636,7 +635,7 @@ void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point, bool _curren
 	// Popup menu generated this Event! (Dawit A.)
 	popupMenuEvent = true;
     // Show the popup Menu for the given URLs
-	debug ( "popup state enabled" );
+	tqDebug(  "popup state enabled" );
     manager->openPopupMenu( _urls, _point, _current_dir );
 }
 
@@ -671,7 +670,6 @@ void KfmView::slotOpenWith()
     if (u.isLocalFile())
     {
         QString udir(u.directory());
-        udir.detach();
         KURL::decodeURL(udir); // I hate KURL, you never know when it's encoded ... David.
         openWithOldApplication( l.getText(), popupFiles, udir ); 
     }
@@ -688,7 +686,7 @@ void KfmView::slotProperties()
 	}
     if ( popupFiles.count() != 1 )
     {
-	warning(klocale->translate("ERROR: Can not open properties for multiple files"));
+	tqWarning(klocale->translate("ERROR: Can not open properties for multiple files"));
 	return;
     }
 
@@ -733,7 +731,7 @@ void KfmView::slotSaveLocalProperties()
       QString s1, s2, kurl;
       s1 = _url;
       if (s1.right( 1 ) == "/")
-	s1.resize(s1.length());
+	s1.truncate(s1.length());
       
       for (KRootIcon *i = IconList.first(); i; i = IconList.next())
       {
@@ -741,13 +739,13 @@ void KfmView::slotSaveLocalProperties()
 	  KURL::decodeURL(kurl); // Decode kdelnk filename
           if (kurl.contains(".kdelnk"))
           {
-              debug ("Got a kdelnk: %s", &(kurl.data())[5]);
+              tqDebug( "Got a kdelnk: %s", &(kurl.data())[5]);
               KSimpleConfig cfg(&(kurl.data())[5], true); //RO, #inline, so it's fast
 	      cfg.setGroup("KDE Desktop Entry");
 	      
 	      s2 = cfg.readEntry("URL").data();
 	      if (s2.right( 1 ) == "/")
-		s2.resize(s2.length());
+		s2.truncate(s2.length());
 
               if (s1 == s2)
 	      {
@@ -798,7 +796,6 @@ void KfmView::slotEmptyTrashBin()
 	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L && strcmp( ep->d_name, ".directory" ) != 0L )
 	    {
 	      QString trashFile( ep->d_name );
-	      trashFile.detach();
 	      trashFile.prepend (d);
 	      KURL::encodeURL ( trashFile );   // make proper URL (Hen)
 	      trashFile.prepend ("file:");
@@ -1155,7 +1152,6 @@ void KfmView::slotOnURL( const char *_url )
         QString com;
         QString surl =  _url;
         // Delete a trailing '/', for KURL::filename() and for lstat
-        surl.detach();
         if ( surl.right(1) == "/" )
             surl.truncate( surl.length() - 1 );
                    
@@ -1180,9 +1176,8 @@ void KfmView::slotOnURL( const char *_url )
         lstat( decodedPath, &lbuff );
         QString text;
 	QString text2;
-	text = decodedName.copy(); // copy to change it
+	text = decodedName; // copy to change it
 	text2 = text;
-	text2.detach();
 	
         if ( url.isLocalFile() )
         {
@@ -1450,7 +1445,6 @@ bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
 	    getKHTMLWidget()->autoScrollY( AUTOSCROLL_DELAY, AUTOSCROLL_STEP );
 	else if ( _mouse->pos().y() < 0 )
 	    getKHTMLWidget()->autoScrollY( AUTOSCROLL_DELAY, -AUTOSCROLL_STEP );
-	else
 	    getKHTMLWidget()->stopAutoScrollY();
 
 	if ( !getKHTMLWidget()->isAutoScrollingY() )
@@ -1596,7 +1590,7 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
     else
     {
 	// pixmap.load( KMimeType::getPixmapFileStatic( l.first() ) );
-	QString dir = kapp->kde_datadir().copy();
+	QString dir = kapp->kde_datadir();
 	dir += "/kfm/pics/kmultiple.xpm";
 	pixmap.load( dir );
 	// TODO  Nice icon for multiple files

@@ -43,7 +43,7 @@ void myPopupMenu::mousePressEvent ( QMouseEvent *e )
 /////////////////////////////////////////////////////////////////////////////
 int myPopupMenu::entryHeight()
 {
-  return cellHeight(0);
+  return itemHeight(0);  // TQt3 迁移：QPopupMenu 的 cellHeight→itemHeight
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -136,7 +136,7 @@ void myPushButton::paint(QPainter *painter){
   drawButtonLabel(painter);
 
   if (draw_down ) {
-    if ( style() == WindowsStyle )
+    if ( style().inherits("TQWindowsStyle") )
       qDrawWinButton( painter, 0, 0, width(),
 		      height(), colorGroup(), true );
     else
@@ -144,7 +144,7 @@ void myPushButton::paint(QPainter *painter){
 	  	       height(), colorGroup(), true, 2, 0L );
   }
   else if (!flat || never_flat) {
-    if ( style() == WindowsStyle )
+    if ( style().inherits("TQWindowsStyle") )
       qDrawWinButton( painter, 0, 0, width(), height(),
 		      colorGroup(), false );
     else {
@@ -161,7 +161,7 @@ void myPushButton::drawButtonLabel(QPainter *painter){
   if ( pixmap() ) {
     int dx = ( width() - pixmap()->width() ) / 2;
     int dy = ( height() - pixmap()->height() ) / 2;
-    if ( draw_down && style() == WindowsStyle ) {
+    if ( draw_down && style().inherits("TQWindowsStyle") ) {
       dx++;
       dy++;
     }
@@ -179,7 +179,7 @@ void myPushButton::mousePressEvent( QMouseEvent *e){
     most_recent_pressed = this;
     last_button = e->button();
     setDown( true );
-    if (style() == WindowsStyle && swallowed_window != None)
+    if (style().inherits("TQWindowsStyle") && swallowed_window != None)
       XMoveWindow(qt_xdisplay(), swallowed_window, 4, 4);
     repaint( false );
     emit pressed();
@@ -193,7 +193,7 @@ void myPushButton::mouseReleaseEvent( QMouseEvent *e){
     return;
   }
   bool hit = hitButton( e->pos() );
-  if (style() == WindowsStyle && swallowed_window != None)
+  if (style().inherits("TQWindowsStyle") && swallowed_window != None)
     XMoveWindow(qt_xdisplay(), swallowed_window, 3, 3);
   setDown( false );
   if ( hit ){
@@ -227,7 +227,7 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
   if ( hit ) {
     if ( !isDown() ) {
       setDown(true);
-      if (style() == WindowsStyle && swallowed_window != None)
+      if (style().inherits("TQWindowsStyle") && swallowed_window != None)
 	XMoveWindow(qt_xdisplay(), swallowed_window, 4, 4);
       repaint(false);
       emit pressed();
@@ -235,7 +235,7 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
   } else {
     if ( isDown() ) {
       setDown(false);
-      if (style() == WindowsStyle && swallowed_window != None)
+      if (style().inherits("TQWindowsStyle") && swallowed_window != None)
 	XMoveWindow(qt_xdisplay(), swallowed_window, 3, 3);
       repaint();
       emit released();
@@ -299,7 +299,7 @@ void myTaskButton::setText(const char* arg){
 
 void myTaskButton::drawButtonLabel( QPainter *painter ){
   if (this == active){
-    if (QApplication::style() == WindowsStyle)
+    if (QApplication::style().inherits("TQWindowsStyle"))
       painter->fillRect(rect(), QBrush( white, Dense4Pattern ));
     else
       painter->fillRect(rect(), QBrush( colorGroup().mid(), Dense4Pattern ));
@@ -308,7 +308,7 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
   if ( pixmap() ) {
     int dx = ( 32 - pixmap()->width() ) / 2;
     int dy = ( height() - pixmap()->height() ) / 2;
-    if ( draw_down && style() == WindowsStyle ) {
+    if ( draw_down && style().inherits("TQWindowsStyle") ) {
       dx++;
       dy++;
     }
@@ -326,14 +326,13 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
     painter->setFont(conversion.font(origFont));
 
     if (painter->fontMetrics().width(s2) > width()-32){
-      s2.detach();
       while (s2.length()>0 &&
 	     painter->fontMetrics().width(s2) > width()-32-painter->fontMetrics().width("...")){
-	s2.resize(s2.length()-1);
+	s2.truncate(s2.length()-1);  // TQt3 迁移
       }
       s2.append("...");
     }
-    if ( draw_down && style() == WindowsStyle )
+    if ( draw_down && style().inherits("TQWindowsStyle") )
       painter->drawText( 33, 1, width()-31, height()+1, AlignLeft|AlignVCenter, s2);
     else
       painter->drawText( 32, 0, width()-32, height(), AlignLeft|AlignVCenter, s2);
@@ -563,29 +562,29 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
   if (orientation == horizontal){
     if (position == top_left){
       qDrawArrow( &p, DownArrow, WindowsStyle, false,
-		  box_width-6, box_height-5, 0, 0, colgrp);
+		  box_width-6, box_height-5, 0, 0, colgrp, true )  /* TQt3 迁移：补 enabled 尾参 */;
       qDrawArrow( &p2, DownArrow, WindowsStyle, false,
- 		  box_width-6, box_height-5, 0, 0, colgrp2);
+ 		  box_width-6, box_height-5, 0, 0, colgrp2, true )  /* TQt3 迁移：补 enabled 尾参 */;
     }
     else{
       qDrawArrow( &p, UpArrow, WindowsStyle, false,
-		  box_width-6, 4, 0, 0, colgrp);
+		  box_width-6, 4, 0, 0, colgrp, true )  /* TQt3 迁移：补 enabled 尾参 */;
       qDrawArrow( &p2, UpArrow, WindowsStyle, false,
-		  box_width-6, 4, 0, 0, colgrp2);
+		  box_width-6, 4, 0, 0, colgrp2, true )  /* TQt3 迁移：补 enabled 尾参 */;
     }
   }
   else{ // position == vertical
     if (position == top_left){
       qDrawArrow( &p, RightArrow, WindowsStyle, false,
-		  box_width-5, box_height-6, 0, 0, colgrp);
+		  box_width-5, box_height-6, 0, 0, colgrp, true )  /* TQt3 迁移：补 enabled */;
       qDrawArrow( &p2, RightArrow, WindowsStyle, false,
- 		  box_width-5, box_height-6, 0, 0, colgrp2);
+ 		  box_width-5, box_height-6, 0, 0, colgrp2, true );  /* TQt3 迁移 */
     }
     else{
       qDrawArrow( &p, LeftArrow, WindowsStyle, false,
-		  5, box_height-6, 0, 0, colgrp);
+		  5, box_height-6, 0, 0, colgrp, true );  /* TQt3 迁移 */
       qDrawArrow( &p2, LeftArrow, WindowsStyle, false,
-		  5, box_height-6, 0, 0, colgrp2);
+		  5, box_height-6, 0, 0, colgrp2, true );  /* TQt3 迁移 */
     }
   }
   p.end();
@@ -608,11 +607,11 @@ void kPanel::arrow_on_pixmap(QPixmap* pm, ArrowType rt){
   qDrawArrow( &paint, rt, WindowsStyle, false,
 	      pm->width()/2, pm->height()/2,
 	      0, 0,
-	      colgrp);
+	      colgrp, true );  /* TQt3 迁移 */
   qDrawArrow( &paint2, rt, WindowsStyle, false,
 	      pm->width()/2, pm->height()/2,
 	      0, 0,
-	      colgrp2);
+	      colgrp2, true );  /* TQt3 迁移 */
   paint.end();
   paint2.end();
 }
@@ -673,7 +672,6 @@ void kPanel::set_label_date(){
   }
   else if( clockAmPm )
     strftime(timeline,256,"%I:%M%p",loctime);
-  else
     strftime(timeline,256,"%H:%M",loctime);
 
   strftime(dateline,256,i18n("\n%b %d"),loctime);
@@ -684,7 +682,6 @@ void kPanel::set_label_date(){
     label_date->setText(QString(dayline)+QString(timeline)+QString(dateline));
   else if (label_date->fontMetrics().lineSpacing() * 2 <= label_date->height())
     label_date->setText(QString(timeline)+QString(dateline));
-  else
     label_date->setText(timeline);
 
   if ( !mBackTexture.isNull() )
@@ -793,7 +790,7 @@ void kPanel::showToolTip(QString s){
 
 void kPanel::addButton(PMenuItem* pmi)
 {
-  QString s = pmi->getSaveName().copy();
+  QString s = pmi->getSaveName();
   s.remove(0,1);
   PMenuItem* pmi2 = pmenu->searchItem(s);
 

@@ -1,7 +1,7 @@
 // proc.C
 //
 // This program is free software. See the file COPYING for details.
-// Author: Mattias Engdeg�rd, 1997
+// Author: Mattias Engdeg�rd, 1997
 
 #include <stdio.h>
 #include <sys/types.h>
@@ -323,7 +323,7 @@ Cat_int::Cat_int(char *heading, char *explain, int w, int Procinfo::*member)
 
 QString Cat_int::string(Procinfo *p)
 {
-    QString s(10);
+    TQString s;  /* TQt3 迁移 */
     s.setNum(p->*int_member);	
     return s;
 }
@@ -341,7 +341,7 @@ Cat_uint::Cat_uint(char *heading, char *explain, int w,
 
 QString Cat_uint::string(Procinfo *p)
 {
-    QString s(10);
+    TQString s;  /* TQt3 迁移 */
     s.setNum(p->*uint_member);	
     return s;
 }
@@ -359,7 +359,7 @@ Cat_hex::Cat_hex(char *heading, char *explain, int w,
 
 QString Cat_hex::string(Procinfo *p)
 {
-    QString s(11);
+    TQString s;  /* TQt3 迁移 */
     s.sprintf("%8x", p->*uint_member);
     return s;
 }
@@ -370,7 +370,7 @@ Cat_swap::Cat_swap(char *heading, char *explain)
 
 QString Cat_swap::string(Procinfo *p)
 {
-    QString s(10);
+    TQString s;  /* TQt3 迁移 */
     s.setNum(p->size - p->resident);
     return s;
 }
@@ -400,7 +400,6 @@ QString Cat_user::string(Procinfo *p)
 	return Uidstr::name(p->uid);
     else {
 	QString s = Uidstr::name(p->uid);
-	s.detach();
 	s.append(p->euid == 0 ? "*" : "+");
 	return s;
     }
@@ -422,8 +421,9 @@ Cat_cmdline::Cat_cmdline(char *heading, char *explain)
 QString Cat_cmdline::string(Procinfo *p)
 {
     if(p->cmdline.isEmpty()) {
-	QString s(p->comm.length() + 2);
-	s[0] = '('; s[1] = '\0';
+	/* TQt3 迁移：容量构造已删 */
+	TQString s;
+	s[0] = '(';
 	s.append(p->comm);
 	s.append(")");
 	return s;
@@ -432,7 +432,6 @@ QString Cat_cmdline::string(Procinfo *p)
 	    return p->cmdline;
 	else {
 	    QString s(p->cmdline);
-	    s.detach();
 	    int i = s.find(' ');
 	    if(i < 0)
 		i = s.length();
@@ -493,7 +492,7 @@ Cat_rtprio::Cat_rtprio(char *heading, char *explain)
 
 QString Cat_rtprio::string(Procinfo *p)
 {
-    QString s(5);
+    TQString s;  /* TQt3 迁移 */
     s.setNum(p->get_rtprio());
     return s;
 }
@@ -510,7 +509,7 @@ Cat_time::Cat_time(char *heading, char *explain)
 
 QString Cat_time::string(Procinfo *p)
 {
-    QString s(8);
+    TQString s;  /* TQt3 迁移 */
     int t = (p->utime + p->stime) / CLOCKS_PER_SEC;
     if(t >= 100 * 60) {
 	if(t >= 100 * 3600) {
@@ -573,7 +572,7 @@ Cat_percent::Cat_percent(char *heading, char *explain, int w,
 
 QString Cat_percent::string(Procinfo *p)
 {
-    QString s(8);
+    TQString s;  /* TQt3 迁移 */
     s.sprintf("%01.2f", (double)(p->*float_member));
     return s;
 }

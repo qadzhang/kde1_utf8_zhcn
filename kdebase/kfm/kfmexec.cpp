@@ -41,7 +41,7 @@ KFMExec::KFMExec()
     bDone = FALSE;
     dlg = 0L;
     
-    dirURL = 0L;
+    dirURL = TQString();  /* TQt3 迁移 */
 
     // We use the job to determine
     // a) the mimetype of the URL or

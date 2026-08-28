@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/doc/tutorial2.doc:11 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>chart/chartform_files.cpp Example File</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>chart/chartform_files.cpp Example File</h1>
+
+ 
+<pre>#include "canvasview.h"
+#include "chartform.h"
+
+#include &lt;<a href="qfile-h.html">ntqfile.h</a>&gt;
+#include &lt;<a href="qfiledialog-h.html">ntqfiledialog.h</a>&gt;
+#include &lt;<a href="qpainter-h.html">ntqpainter.h</a>&gt;
+#include &lt;<a href="qprinter-h.html">ntqprinter.h</a>&gt;
+#include &lt;<a href="qstatusbar-h.html">ntqstatusbar.h</a>&gt;
+
+
+void <a name="f172"></a>ChartForm::load( const <a href="ntqstring.html">TQString</a>&amp; filename )
+{
+    <a href="ntqfile.html">TQFile</a> file( filename );
+    if ( !file.<a href="ntqfile.html#open">open</a>( IO_ReadOnly ) ) {
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString( "Failed to load \'%1\'" ).
+                                arg( filename ), 2000 );
+        return;
+    }
+
+    init(); // Make sure we have colours
+    m_filename = filename;
+    <a href="ntqtextstream.html">TQTextStream</a> ts( &amp;file );
+    Element element;
+    int errors = 0;
+    int i = 0;
+    while ( !ts.<a href="ntqtextstream.html#eof">eof</a>() ) {
+        ts &gt;&gt; element;
+        if ( element.isValid() )
+            m_elements[i++] = element;
+        else
+            errors++;
+        if ( i == MAX_ELEMENTS ) {
+            <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message(
+                TQString( "Read maximum number of elements (%1)"
+                         " discarding others" ).arg( i ), 2000 );
+            break;
+        }
+    }
+
+    file.<a href="ntqfile.html#close">close</a>();
+
+    <a href="ntqstring.html">TQString</a> bad = "";
+    if ( errors ) {
+        bad = TQString( "; skipped " ) + TQString::number( errors ) + " bad record";
+        if ( errors &gt; 1 )
+            bad += "s";
+    }
+    <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString( "Read %1 values from \'%2\'%3" ).
+                          arg( i ).arg( filename ).arg( bad ), 3000 );
+
+    <a href="ntqwidget.html#setCaption">setCaption</a>( TQString( "Chart -- %1" ).arg( filename ) );
+    updateRecentFiles( filename );
+
+    drawElements();
+    m_changed = false;
+}
+
+
+void <a name="f173"></a>ChartForm::fileSave()
+{
+    if ( m_filename.isEmpty() ) {
+        fileSaveAs();
+        return;
+    }
+
+    <a href="ntqfile.html">TQFile</a> file( m_filename );
+    if ( !file.<a href="ntqfile.html#open">open</a>( IO_WriteOnly ) ) {
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString( "Failed to save \'%1\'" ).
+                                arg( m_filename ), 2000 );
+        return;
+    }
+    <a href="ntqtextstream.html">TQTextStream</a> ts( &amp;file );
+    for ( int i = 0; i &lt; MAX_ELEMENTS; ++i )
+        if ( m_elements[i].isValid() )
+            ts &lt;&lt; m_elements[i];
+
+    file.<a href="ntqfile.html#close">close</a>();
+
+    <a href="ntqwidget.html#setCaption">setCaption</a>( TQString( "Chart -- %1" ).arg( m_filename ) );
+    <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString( "Saved \'%1\'" ).arg( m_filename ), 2000 );
+    m_changed = false;
+}
+
+
+void <a name="f174"></a>ChartForm::fileSaveAsPixmap()
+{
+    <a href="ntqstring.html">TQString</a> filename = TQFileDialog::<a href="ntqfiledialog.html#getSaveFileName">getSaveFileName</a>(
+                            TQString::null, "Images (*.png *.xpm *.jpg)",
+                            this, "file save as bitmap",
+                            "Chart -- File Save As Bitmap" );
+    if ( TQPixmap::<a href="ntqpixmap.html#grabWidget">grabWidget</a>( m_canvasView ).
+            save( filename,
+                  filename.<a href="ntqstring.html#mid">mid</a>( filename.<a href="ntqstring.html#findRev">findRev</a>( '.' ) + 1 ).upper() ) )
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString( "Wrote \'%1\'" ).arg( filename ), 2000 );
+    else
+        <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString( "Failed to write \'%1\'" ).
+                                arg( filename ), 2000 );
+}
+
+void <a name="f175"></a>ChartForm::filePrint()
+{
+    if ( !m_printer )
+        m_printer = new <a href="ntqprinter.html">TQPrinter</a>;
+    if ( m_printer-&gt;<a href="ntqprinter.html#setup">setup</a>() ) {
+        <a href="ntqpainter.html">TQPainter</a> painter( m_printer );
+        m_canvas-&gt;drawArea( TQRect( 0, 0, m_canvas-&gt;width(), m_canvas-&gt;height() ),
+                            &amp;painter, false );
+        if ( !m_printer-&gt;<a href="ntqprinter.html#outputFileName">outputFileName</a>().isEmpty() )
+            <a href="ntqmainwindow.html#statusBar">statusBar</a>()-&gt;message( TQString( "Printed \'%1\'" ).
+                                  arg( m_printer-&gt;<a href="ntqprinter.html#outputFileName">outputFileName</a>() ), 2000 );
+    }
+}
+
+</pre><!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

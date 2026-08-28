@@ -375,7 +375,6 @@ void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
     if (wp->id==hilitwin) painter->fillRect(tmp,QColor(255,255,255));
     else
         if ((wp->active)&&(desktopActived)) painter->fillRect(tmp,QColor(255,255,0));
-        else 
             painter->fillRect(tmp,QColor(200,200,200));
     
     // The next line causes oclock to behave very strange, I better don't call KWM::getDecoration
@@ -890,7 +889,10 @@ void Desktop::readBackgroundSettings(void)
        QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
        QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
 
-       QStrList *list = (QStrList *)d.entryList();
+       static TQStrList k1list; k1list.clear();  /* TQt3 迁移：值语义承接 */
+       { QStringList k1sl = d.entryList();
+         for (unsigned k1i=0;k1i<k1sl.count();++k1i) k1list.append(k1sl[k1i]); }
+       QStrList *list = &k1list;
        color1 = QColor(black);
        gfMode=Flat;
        orMode=Portrait;
@@ -953,7 +955,7 @@ void Desktop::loadWallpaperBackground(QString wallpaper)
     
     if ( wallpaper[0] != '/' )
     {
-        filename = KApplication::kde_wallpaperdir().copy() + "/";
+        filename = KApplication::kde_wallpaperdir() + "/";
         filename += wallpaper;
     }
     else
@@ -1412,3 +1414,5 @@ bool Desktop::showName=true;
 QPixmap *Desktop::commonbigBackgroundPixmap=0L;
 int Desktop::commonbackPixmapWidth=0;
 int Desktop::commonbackPixmapHeight=0;
+
+#include "desktop.moc"  /* TQt3 迁移：moc 实现并入编译单元 */

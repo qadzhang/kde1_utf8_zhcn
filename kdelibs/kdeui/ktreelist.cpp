@@ -22,7 +22,7 @@ Cambridge, MA 02139, USA.
 -------------------------------------------------------------------
 */
 
-#include <ktreelist.h>
+#include "ktreelist.h"
 #include "ktreelist.h"
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -337,7 +337,7 @@ void KTreeListItem::paint(QPainter *p, const QColorGroup& cg, bool highlighted)
 	  int textY = cellHeight - ((cellHeight - p->fontMetrics().ascent() - 
 			  p->fontMetrics().leading()) / 2);
 	  if(highlighted) {
-	     if(QApplication::style() == WindowsStyle) {
+	     if(QApplication::style().inherits("TQWindowsStyle")) {
 		      p->setPen(white);
 		      p->setBackgroundColor(QApplication::winStyleHighlightColor());
 		  }
@@ -444,34 +444,26 @@ void KTreeListItem::setText(const char *t)
 // so I made my own
 QRect KTreeListItem::textBoundingRect(const QFontMetrics& fm) const
 {
-  // To avoid killing performance, assume that the supported charset of the
-  // font doesn't change (usually holds true).
-  static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
-  const KCharsetConversionResult conversion = converter->convert(text);
-  const QFontMetrics properFM(conversion.font(fm.font()));
+  // TQt3 迁移：charset 转换层已透传消亡，原 fm 与 fm 等价——直接用 fm
 
-  int cellHeight = itemHeight(properFM);
+  int cellHeight = itemHeight(fm);
   int rectX = 3 + indent + branch * indent + pixmap.width() + 3;
-  int rectY = (cellHeight - properFM.ascent() - properFM.leading()) / 2 + 2;
-  int rectW = properFM.width(conversion) + 1;
-  int rectH = properFM.ascent() + properFM.leading();
+  int rectY = (cellHeight - fm.ascent() - fm.leading()) / 2 + 2;
+  int rectW = fm.width(text) + 1;
+  int rectH = fm.ascent() + fm.leading();
   return QRect(rectX, rectY, rectW, rectH);
 }
 
 QRect KTreeListItem::itemBoundingRect(const QFontMetrics& fm) const
 {
-  // To avoid killing performance, assume that the supported charset of the
-  // font doesn't change (usually holds true).
-  static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
-  const KCharsetConversionResult conversion = converter->convert(text);
-  const QFontMetrics properFM(conversion.font(fm.font()));
+  // TQt3 迁移：charset 转换层已透传消亡，原 fm 与 fm 等价——直接用 fm
 
   int rectX = indent + branch * indent + 2;
   int rectY = 4;
-  int rectW = properFM.width(conversion) + pixmap.width() + 6;
+  int rectW = fm.width(text) + pixmap.width() + 6;
 
-  int rectH = ((pixmap.height() > properFM.lineSpacing()) ? pixmap.height() :
-              properFM.lineSpacing()) + 2;
+  int rectH = ((pixmap.height() > fm.lineSpacing()) ? pixmap.height() :
+              fm.lineSpacing()) + 2;
   return QRect(rectX, rectY, rectW, rectH);
 }
 
@@ -485,12 +477,10 @@ int KTreeListItem::width(const KTreeList *theOwner) const
 // or -1 if item is empty -- SHOULD NEVER BE -1!
 int KTreeListItem::itemHeight(const QFontMetrics& fm) const
 {
-  static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
-  const KCharsetConversionResult conversion = converter->convert(text);
-  const QFontMetrics properFM(conversion.font(fm.font()));
+  // TQt3 迁移：charset 转换层已透传消亡，原 fm 与 fm 等价——直接用 fm
 
   int maxHeight = pixmap.height();
-  int textHeight = properFM.ascent() + properFM.leading();
+  int textHeight = fm.ascent() + fm.leading();
     maxHeight = textHeight > maxHeight ? textHeight : maxHeight;
   return maxHeight == 0 ? -1 : maxHeight + 8;
 }
@@ -505,7 +495,7 @@ int KTreeListItem::itemWidth(const QFontMetrics& fm) const
   const KCharsetConversionResult conversion = converter->convert(text);
 
   int maxWidth = pixmap.width();
-  maxWidth += (4 + QFontMetrics(conversion.font(fm.font())).width(conversion));
+  maxWidth += (4 + fm.width(text));
   return maxWidth == 0 ? -1 : indent + maxWidth + 
     indent * branch + 6;
 }
@@ -536,24 +526,22 @@ KTreeList::KTreeList(QWidget *parent,
   showText(TRUE),
   rubberband_mode(false) 
 {
-  initMetaObject();
+
   setCellHeight(0);
   setCellWidth(0);
   setNumRows(0);
   setNumCols(1);
   setTableFlags(Tbl_autoScrollBars | Tbl_clipCellPainting | Tbl_snapToVGrid);
   clearTableFlags(Tbl_scrollLastVCell | Tbl_scrollLastHCell | Tbl_snapToVGrid);
-  switch(style()) {
-    case WindowsStyle:
-    case MotifStyle:
-      setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
-      setBackgroundColor(colorGroup().base());
-      break;
-    default:
-      setFrameStyle(QFrame::Panel | QFrame::Plain);
-      setLineWidth(1);
+  // TQt3 迁移：switch(GUIStyle) 改继承式风格判断
+  if ( style().inherits("TQWindowsStyle") || style().inherits("TQMotifStyle") ) {
+    setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
+    setBackgroundColor(colorGroup().base());
+  } else {
+    setFrameStyle(QFrame::Panel | QFrame::Plain);
+    setLineWidth(1);
   }
-  setAcceptFocus(TRUE);
+  setFocusPolicy(TQWidget::StrongFocus); // TQt3 迁移：setAcceptFocus 并入 setFocusPolicy
   treeRoot = new KTreeListItem;
   treeRoot->setBranch(-1);
   treeRoot->setExpanded(TRUE);
@@ -1822,7 +1810,7 @@ void KTreeList::paintHighlight(QPainter *p,
   p->save(); // save state of painter
   QColorGroup cg = colorGroup();
   QColor fc;
-  if(style() == WindowsStyle) 
+  if(style().inherits("TQWindowsStyle")) 
     fc = QApplication::winStyleHighlightColor();
   else
     fc = cg.text();
@@ -1833,7 +1821,7 @@ void KTreeList::paintHighlight(QPainter *p,
   if(hasFocus()) { 
 // As far as I can tell, Qt doesn't make much of a distinction between 
 // Windows and Motif style in this particular case.
-//    if(style() == WindowsStyle) {  // draw Windows style highlight
+//    if(style().inherits("TQWindowsStyle")) {  // draw Windows style highlight
 //      textRect.setCoords(l - 1, t - 1, r + 1, b + 1);
 //      p->setPen(QPen(yellow, 0, DotLine));
 //      p->setBackgroundColor(fc);

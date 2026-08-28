@@ -42,7 +42,7 @@ Korn::Korn(QWidget *parent, KornSettings *settings, WFlags f)
 	KornButton *button;
 	QBoxLayout::Direction dir= QBoxLayout::TopToBottom;
 
-	_optionsDialog = 0;
+	_optionsDialog = 0;  /* TQt3 迁移 */
 	_noConfig = false;
 
 	// popup menu
@@ -262,7 +262,7 @@ void Korn::dialogClosed(int ret )
 
 		if( ret == 2 ) {
 			delete _optionsDialog;
-			_optionsDialog = 0;
+			_optionsDialog = 0;  /* TQt3 迁移 */
 			qApp->quit();
 			return;
 		}
@@ -288,7 +288,7 @@ void Korn::dialogClosed(int ret )
 	delete list;
 	delete _optionsDialog;
 
-	_optionsDialog = 0;
+	_optionsDialog = 0;  /* TQt3 迁移 */
 }
 
 void Korn::cloneBoxList(QList<KornBox> *dest, QList<KornBox> *src)

@@ -118,7 +118,7 @@ void Sysload::mousePressEvent(QMouseEvent *e) {
   } else if(e->button() == MidButton) {
     QPoint p;
     p = mapToGlobal(e->pos());
-    QString s(2048);
+    TQString s;  /* TQt3 迁移 */
     s.sprintf("<+><bold>Load average</b><-><br><i+>Last minute: %0.2f"
 	      "<br>Last 5 minutes: %0.2f<br>Last 15 minutes: %0.2f<i->"
 	      "<br><br><+><b>CPU load:</b> %0.0f%%<->",

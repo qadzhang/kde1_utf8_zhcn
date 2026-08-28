@@ -64,7 +64,7 @@
 #endif
 
 #ifndef _KCONFIG_H
-#include <kconfig.h>
+#include "kconfig.h"
 #endif
 
 #include <qpalette.h>

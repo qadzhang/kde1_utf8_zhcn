@@ -8,7 +8,7 @@ add_executable(kfmwarn ${KFMWARN_SRCS})
 target_link_libraries(kfmwarn
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
-    Qt::Qt1
+    ${TQT3_LIBRARIES}
     )
 
 install(TARGETS kfmwarn RUNTIME DESTINATION ${KDE1_BINDIR})

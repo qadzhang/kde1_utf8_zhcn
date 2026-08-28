@@ -14,7 +14,7 @@
 IconPathDialog::IconPathDialog(	QString text, QWidget* parent, const char* name )
 	: IconPathDialogData( parent, name )
 {
-  initMetaObject();
+
   le_icon_path->setText(text);
   le_icon_path->setFocus();
   connect( b_ok, SIGNAL(pressed()), this, SLOT(accept()) );

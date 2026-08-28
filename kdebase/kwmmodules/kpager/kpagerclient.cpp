@@ -714,3 +714,5 @@ const char *KPagerClient::getDesktopName(int i)
     if (i>numberofDesktops) return 0L;
     return desktop[i]->name();
 }
+
+#include "kpagerclient.moc"  /* TQt3 迁移：moc 实现并入编译单元 */

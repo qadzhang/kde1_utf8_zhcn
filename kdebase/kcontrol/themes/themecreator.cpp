@@ -54,7 +54,7 @@ bool ThemeCreator::create(const QString aThemeName)
 {
   if (aThemeName.isEmpty()) return false;
 
-  debug("Theme::create() started");
+  tqDebug("Theme::create() started");
 
   clear();
   cleanupWorkDir();
@@ -63,13 +63,13 @@ bool ThemeCreator::create(const QString aThemeName)
   mThemePath = workDir() + aThemeName + '/';
   if (mkdir(mThemePath, 0755))
   {
-    warning(i18n("Failed to create directory %s: %s"),
+    tqWarning(i18n("Failed to create directory %s: %s"),
 	    (const char*)mThemePath, strerror(errno));
     return false;
   }
 
   mThemercFile = aThemeName + ".themerc";
-  mPreviewFile = 0;
+  mPreviewFile = TQString();  /* TQt3 迁移 */
   mPreview.resize(0,0);
 
   if (mConfig)
@@ -89,7 +89,7 @@ bool ThemeCreator::create(const QString aThemeName)
 //-----------------------------------------------------------------------------
 bool ThemeCreator::extract(void)
 {
-  debug("Theme::extract() started");
+  tqDebug("Theme::extract() started");
 
   loadMappings();
 
@@ -103,7 +103,7 @@ bool ThemeCreator::extract(void)
   if (instColors) extractGroup("Colors");
   if (instIcons) extractIcons();
 
-  debug("Theme::extract() done");
+  tqDebug("Theme::extract() done");
 
   mConfig->sync();
   saveSettings();
@@ -124,38 +124,38 @@ int ThemeCreator::extractGroup(const char* aGroupName)
   int len, i, extracted = 0;
   const char* missing = 0;
 
-  debug("*** beginning with %s", aGroupName);
+  tqDebug("*** beginning with %s", aGroupName);
   group = aGroupName;
   mConfig->setGroup(group);
 
   while (!group.isEmpty())
   {
     mMappings->setGroup(group);
-    debug("Mappings group [%s]", (const char*)group);
+    tqDebug("Mappings group [%s]", (const char*)group);
 
     // Read config settings
     value = mMappings->readEntry("ConfigFile");
     if (!value.isEmpty())
     {
-      cfgFile = value.copy();
+      cfgFile = value;
       if (cfgFile == "KDERC") cfgFile = QDir::homeDirPath() + "/.kderc";
       else if (cfgFile[0] != '/') cfgFile = mConfigDir + cfgFile;
     }
     value = mMappings->readEntry("ConfigGroup");
-    if (!value.isEmpty()) cfgGroup = value.copy();
+    if (!value.isEmpty()) cfgGroup = value;
     value = mMappings->readEntry("ConfigAppDir");
     if (!value.isEmpty())
     {
-      appDir = value.copy();
+      appDir = value;
       if (appDir[0] != '/') baseDir = kapp->localkdedir() + "/share/";
-      else baseDir = 0;
+      else baseDir = TQString();
       appDir = baseDir + appDir;
       len = appDir.length();
       if (len > 0 && appDir[len-1]!='/') appDir += '/';
     }
     absPath = mMappings->readBoolEntry("ConfigAbsolutePaths", absPath);
     value = mMappings->readEntry("ConfigEmpty");
-    if (!value.isEmpty()) emptyValue = value.copy();
+    if (!value.isEmpty()) emptyValue = value;
     value = mMappings->readEntry("ConfigActivateCmd");
     if (!value.isEmpty() && mCmdList.find(value) < 0)
       mCmdList.append(value);
@@ -167,7 +167,7 @@ int ThemeCreator::extractGroup(const char* aGroupName)
     if (cfgGroup.isEmpty()) missing = "ConfigGroup";
     if (missing)
     {
-      warning(i18n("Internal error in theme mappings\n"
+      tqWarning(i18n("Internal error in theme mappings\n"
 		   "(file theme.mappings) in group %s:\n\n"
 		   "Entry `%s' is missing or has no value."),
 	      (const char*)group, missing);
@@ -179,18 +179,18 @@ int ThemeCreator::extractGroup(const char* aGroupName)
     {
       if (cfg)
       {
-	debug("closing config file");
+	tqDebug("closing config file");
 	cfg->sync();
 	delete cfg;
       }
-      debug("opening config file %s", (const char*)cfgFile);
+      tqDebug("opening config file %s", (const char*)cfgFile);
       cfg = new KSimpleConfig(cfgFile);
       oldCfgFile = cfgFile;
     }
 
     // Set group in config file
     cfg->setGroup(cfgGroup);
-    debug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
+    tqDebug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
     // Process all mapping entries for the group
     it = mMappings->entryIterator(group);
     if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
@@ -216,7 +216,7 @@ int ThemeCreator::extractGroup(const char* aGroupName)
       else 
       {
 	cfgKey = mapValue;
-	cfgValue = 0;
+	cfgValue = TQString();
       }
       if (cfgKey.isEmpty()) cfgKey = key;
       value = cfg->readEntry(cfgKey);
@@ -240,7 +240,7 @@ int ThemeCreator::extractGroup(const char* aGroupName)
 
       // Set config entry
       if (value == emptyValue) value = "";
-      debug("%s=%s", (const char*)key, (const char*)value);
+      tqDebug("%s=%s", (const char*)key, (const char*)value);
       if (value.isEmpty()) {
          mConfig->deleteEntry(key, false);
       } else {
@@ -254,12 +254,12 @@ int ThemeCreator::extractGroup(const char* aGroupName)
 
   if (cfg)
   {
-    debug("closing config file");
+    tqDebug("closing config file");
     cfg->sync();
     delete cfg;
   }
 
-  debug("*** done with %s", aGroupName);
+  tqDebug("*** done with %s", aGroupName);
   return extracted;
 }
 
@@ -293,7 +293,7 @@ void ThemeCreator::extractCmd(KSimpleConfig* aCfg, const QString& aCmd,
     if (stricmp(value,"right")==0 || stricmp(value,"left")==0)
     {
       value = mConfig->readEntry("background");
-      debug("rotating %s", (const char*)value);
+      tqDebug("rotating %s", (const char*)value);
       rotateImage(mThemePath + value, 90);
     }
   }
@@ -313,7 +313,7 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
 
   if (!finfo.exists() || !finfo.isFile())
   {
-    debug("File %s does not exist or is no file.", (const char*)aFileName);
+    tqDebug("File %s does not exist or is no file.", (const char*)aFileName);
     return 0;
   }
 
@@ -328,9 +328,9 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
       ext = fname.mid(i, 255);
       fname = fname.left(i);
     }
-    else ext = 0;
-    for (j=i-1, num=0; j>=0 && fname[j]>='0' && fname[j]<='9'; j--)
-      num = num*10 + (int)(fname[j] - '0');
+    else ext = TQString();
+    for (j=i-1, num=0; j>=0 && fname[j].latin1()>='0' && fname[j].latin1()<='9'; j--)
+      num = num*10 + (int)(fname[j].latin1() - '0');  /* TQt3 迁移 */
     j++;
     num++;
     fname[j] = '\0';
@@ -338,20 +338,20 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
     fname = str;
   }
 
-  debug("Extracting %s to %s", (const char*)aFileName,
+  tqDebug("Extracting %s to %s", (const char*)aFileName,
 	(const char*)(mThemePath + fname));
 
   srcFile.setName(aFileName);
   if (!srcFile.open(IO_ReadOnly))
   {
-    warning(i18n("Cannot open file %s for reading"), (const char*)aFileName);
+    tqWarning(i18n("Cannot open file %s for reading"), (const char*)aFileName);
     return 0;
   }
 
   destFile.setName(mThemePath + fname);
   if (!destFile.open(IO_WriteOnly))
   {
-    warning(i18n("Cannot open file %s for writing"), 
+    tqWarning(i18n("Cannot open file %s for writing"), 
 	    (const char*)(mThemePath + fname));
     return 0;
   }
@@ -362,7 +362,7 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
     if (len <= 0) break;
     if (destFile.writeBlock(buf, len) != len)
     {
-      warning(i18n("Write error to %s:\n%s"), 
+      tqWarning(i18n("Write error to %s:\n%s"), 
 	      (const char*)(mThemePath + fname), strerror(errno));
       return 0;
     }

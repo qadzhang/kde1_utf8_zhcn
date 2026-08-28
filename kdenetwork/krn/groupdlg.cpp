@@ -326,7 +326,7 @@ void Groupdlg::openGroup (QString name)
     }
     else
     {
-        debug ("weird, the group ain't in the groupDict!");
+        tqDebug("weird, the group ain't in the groupDict!");
     }
 }
 
@@ -804,7 +804,7 @@ bool Groupdlg::actions (int action,NewsGroup *group)
 
 bool Groupdlg::loadSubscribed()
 {
-    debug ("loading subscribed");
+    tqDebug("loading subscribed");
     QString ac;
     ac=krnpath+"subscribed";
     QFile f(ac.data ());
@@ -830,7 +830,7 @@ bool Groupdlg::loadSubscribed()
     }
     else
     {
-        warning("Can't open subscribed file for reading!");
+        tqWarning("Can't open subscribed file for reading!");
         return false;
     }
 }
@@ -970,7 +970,7 @@ void Groupdlg::findGroup()
                 KTreeViewItem *it=list->itemAt(p);
                 if (!it)
                 {
-                    debug ("no fscking item!!!!");
+                    tqDebug("no fscking item!!!!");
                     break;
                 }
                 if (!it->isExpanded())
@@ -992,20 +992,20 @@ void Groupdlg::findGroup()
 
 bool Groupdlg::postQueued()
 {
-    debug ("entered postqueued");
+    tqDebug("entered postqueued");
     bool success=false;
     if (needsConnect())
     {
-        debug ("outpath--%s",outpath.data());
-        debug ("have connected");
+        tqDebug("outpath--%s",outpath.data());
+        tqDebug("have connected");
         QDir d(outpath.data());
         d.setFilter(QDir::Files);
         QStrList *files=new QStrList (*d.entryList("*"));
 
-        debug ("%d files waiting",files->count());
+        tqDebug("%d files waiting",files->count());
         for (char *fname=files->first();fname!=0;fname=files->next())
         {
-            debug ("Sending %s",fname);
+            tqDebug("Sending %s",fname);
             updateCounter(QString("Sending ")+fname);
             if (!msgSender->sendQueued(fname))
             {
@@ -1137,7 +1137,7 @@ void Groupdlg::updateCounter(const char *s)
 
 void Groupdlg::lostConnection()
 {
-    debug ("lost connection!");
+    tqDebug("lost connection!");
     offline();
     qApp->setOverrideCursor (arrowCursor);
     int i=KMsgBox::yesNo(0,"KRN - Error",

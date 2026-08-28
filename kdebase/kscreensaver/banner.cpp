@@ -16,7 +16,7 @@
 #include <qmsgbox.h>
 #include <kapp.h>
 
-#include <kgroupbox.h>
+#include "kgroupbox.h"
 #include <qlayout.h>
 #include <kbuttonbox.h>
 #include "helpers.h"
@@ -347,7 +347,7 @@ void KBannerSetup::slotOkPressed()
 	fsize.setNum( fontSize );
 	config->writeEntry( "FontSize", fsize );
 
-	QString colName(10);
+	TQString colName;  // TQt3 迁移：容量构造已删
 	colName.sprintf( "#%02x%02x%02x", fontColor.red(), fontColor.green(),
 		fontColor.blue() );
 	config->writeEntry( "FontColor", colName );

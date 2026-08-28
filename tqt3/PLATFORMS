@@ -1,0 +1,36 @@
+Before you build the TQt library and example programs, you must run the
+"configure" script to set the platform information and other build
+settings.  You can use the -platform option to specify the operating
+system and compiler you are using.
+
+Supported platforms and compilers:
+
+aix-g++
+aix-xlc
+aix-xlc-64
+freebsd-g++
+freebsd-icc
+linux-ecc-64
+linux-g++
+linux-g++-64
+linux-icc
+macx-g++
+macx-pbuilder
+solaris-cc
+solaris-cc-64
+solaris-g++
+solaris-g++-64
+win32-g++
+win32-icc
+win32-msvc
+win32-msvc.net
+
+Example:
+
+  ./configure -platform linux-g++-64 -shared -debug
+
+Customization:
+
+  You can create your own custom configuration by adding new files
+  to the mkspecs directory.  Use existing similar configurations
+  as a starting point.

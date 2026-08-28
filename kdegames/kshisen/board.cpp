@@ -47,7 +47,7 @@
 #include <sys/times.h>
 #include <qbitarry.h>
 #include <kmsgbox.h>
-#include <debug.h>
+#include "debug.h"
 
 #ifdef DEBUGGING
 #include <unistd.h>

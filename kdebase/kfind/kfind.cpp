@@ -211,3 +211,4 @@ QSize Kfind::sizeHint()
 
 
 
+

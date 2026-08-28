@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/opengl/qgl.cpp:2250 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQt OpenGL 3D Graphics</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQt OpenGL 3D Graphics</h1>
+
+
+<p> 
+<p> 
+<p> <h2> Introduction
+</h2>
+<a name="1"></a><p> OpenGL is a standard API for rendering 3D graphics.
+<p> OpenGL only deals with 3D rendering and provides little or no support
+for GUI programming issues. The user interface for an
+OpenGL<sup>*</sup> application must be created with another toolkit,
+such as <a href="motif-extension.html#Motif">Motif</a> on the X platform, Microsoft Foundation Classes (MFC)
+under Windows, or TQt on <em>both</em> platforms.
+<p> The TQt OpenGL module makes it easy to use OpenGL in TQt applications.
+It provides an OpenGL widget class that can be used just like any
+other TQt widget, except that it opens an OpenGL display buffer where
+you can use the OpenGL API to render the contents.
+<p> The TQt OpenGL module is implemented as a platform-independent TQt/C++
+wrapper around the platform-dependent GLX, WGL, or AGL C APIs. The
+functionality provided is very similar to Mark Kilgard's GLUT library,
+but with much more non-OpenGL-specific GUI functionality, i.e. the
+whole TQt API.
+<p> <h2> Installation
+</h2>
+<a name="2"></a><p> When you install TQt for X11, the configure script will autodetect if
+OpenGL headers and libraries are installed on your system, and if so,
+it will include the TQt OpenGL module in the TQt library. (If your
+OpenGL headers or libraries are placed in a non-standard directory,
+you may need to change the QMAKE_INCDIR_OPENGL and/or
+QMAKE_LIBDIR_OPENGL in the config file for your system). Some
+configurations require threading to be enabled for OpenGL, so if
+OpenGL is not detected, try <tt>configure -thread</tt>.
+<p> When you install TQt for Windows, the TQt OpenGL module is always
+included.
+<p> The TQt OpenGL module is not licensed for use with the TQt Professional
+Edition. Consider upgrading to the TQt Enterprise Edition if you
+require OpenGL support.
+<p> Note about using Mesa on X11: Mesa versions earlier than 3.1 would use
+the name "MesaGL" and "MesaGLU" for the libraries, instead of "GL" and
+"GLU". If you want to use a pre-3.1 version of Mesa, you must change
+the Makefiles to use these library names instead. The easiest way to
+do this is to edit the QMAKE_LIBS_OPENGL line in the config file you
+are using, changing "-lGL -lGLU" to "-lMesaGL -lMesaGLU"; then run
+"configure" again.
+<p> <h2> The <a href="ntqgl.html">TQGL</a> Classes
+</h2>
+<a name="3"></a><p> The OpenGL support classes in TQt are:
+<ul>
+<li> <a href="qglwidget.html">TQGLWidget</a>: An easy-to-use TQt
+widget for rendering OpenGL scenes.
+<li> <a href="qglcontext.html">TQGLContext</a>: Encapsulates an OpenGL rendering context.
+<li> <a href="qglformat.html">TQGLFormat</a>: Specifies the
+display format of a rendering context.
+<li> <a href="ntqglcolormap.html">TQGLColormap</a>: Handles indexed
+colormaps in GL-index mode.
+</ul>
+<p> Many applications only need the high-level <a href="qglwidget.html">TQGLWidget</a> class. The other
+TQGL classes provide advanced features. X11 users might like to read
+the notes on <a href="opengl-x11-overlays.html">overlays</a>.
+<p> See also the <a href="opengl-examples.html">OpenGL examples</a>.
+<p> The TQGL documentation assumes that you are familiar with OpenGL
+programming. If you're new to the subject a good starting point is
+<a href="http://www.opengl.org/">http://www.opengl.org/</a>.
+<p> <sup>*</sup> OpenGL is a trademark of Silicon Graphics, Inc. in the
+United States and other countries.
+<p> 
+<!-- eof -->
+<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

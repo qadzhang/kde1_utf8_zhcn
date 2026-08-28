@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- /home/espenr/tmp/qt-3.3.8-espenr-2499/qt-x11-free-3.3.8/src/embedded/qkbddriverplugin_qws.cpp:40 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TQKbdDriverPlugin Class</title>
+<style type="text/css"><!--
+fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+body { background: #ffffff; color: black; }
+--></style>
+</head>
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr bgcolor="#E5E5E5">
+<td valign=center>
+ <a href="index.html">
+<font color="#004faf">Home</font></a>
+ | <a href="classes.html">
+<font color="#004faf">All&nbsp;Classes</font></a>
+ | <a href="mainclasses.html">
+<font color="#004faf">Main&nbsp;Classes</font></a>
+ | <a href="annotated.html">
+<font color="#004faf">Annotated</font></a>
+ | <a href="groups.html">
+<font color="#004faf">Grouped&nbsp;Classes</font></a>
+ | <a href="functions.html">
+<font color="#004faf">Functions</font></a>
+</td>
+<td align="right" valign="center"><img src="logo32.png" align="right" width="64" height="32" border="0"></td></tr></table><h1 align=center>TQKbdDriverPlugin Class Reference</h1>
+
+<p>The TQKbdDriverPlugin class provides an abstract base for
+TQt/Embedded keyboard driver plugins.
+<a href="#details">More...</a>
+<p><tt>#include &lt;<a href="qkbddriverplugin_qws-h.html">qkbddriverplugin_qws.h</a>&gt;</tt>
+<p><a href="qkbddriverplugin-members.html">List of all member functions.</a>
+<h2>Public Members</h2>
+<ul>
+<li class=fn><a href="#TQKbdDriverPlugin"><b>TQKbdDriverPlugin</b></a> ()</li>
+<li class=fn><a href="#~TQKbdDriverPlugin"><b>~TQKbdDriverPlugin</b></a> ()</li>
+<li class=fn>virtual TQStringList <a href="#keys"><b>keys</b></a> () const = 0</li>
+<li class=fn>virtual TQWSKeyboardHandler * <a href="#create"><b>create</b></a> ( const&nbsp;TQString&nbsp;&amp;&nbsp;driver, const&nbsp;TQString&nbsp;&amp;&nbsp;device ) = 0</li>
+</ul>
+<hr><a name="details"></a><h2>Detailed Description</h2>
+
+
+The TQKbdDriverPlugin class provides an abstract base for
+TQt/Embedded keyboard driver plugins.
+<p> 
+<p> The keyboard driver plugin is a simple plugin interface that makes
+it easy to create custom keyboard drivers.
+<p> Writing a keyboard driver plugin is achieved by subclassing this
+base class, reimplementing the pure virtual functions <a href="#keys">keys</a>() and
+<a href="#create">create</a>(), and exporting the class with the <tt>TQ_EXPORT_PLUGIN</tt>
+macro. See the <a href="plugins-howto.html">Plugins
+    documentation</a> for details.
+<p> This class is only available in TQt/Embedded.
+<p>See also <a href="plugins.html">Plugins</a>.
+
+<hr><h2>Member Function Documentation</h2>
+<h3 class=fn><a name="TQKbdDriverPlugin"></a>TQKbdDriverPlugin::TQKbdDriverPlugin ()
+</h3>
+Constructs a keyboard driver plugin. This is invoked automatically
+by the <tt>TQ_EXPORT_PLUGIN</tt> macro.
+
+<h3 class=fn><a name="~TQKbdDriverPlugin"></a>TQKbdDriverPlugin::~TQKbdDriverPlugin ()
+</h3>
+Destroys the keyboard driver plugin.
+<p> You never have to call this explicitly. TQt destroys a plugin
+automatically when it is no longer used.
+
+<h3 class=fn><a href="qwskeyboardhandler.html">TQWSKeyboardHandler</a>&nbsp;* <a name="create"></a>TQKbdDriverPlugin::create ( const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;driver, const&nbsp;<a href="ntqstring.html">TQString</a>&nbsp;&amp;&nbsp;device )<tt> [pure virtual]</tt>
+</h3>
+
+<p> Creates a driver matching the type specified by <em>driver</em> and <em>device</em>.
+<p> <p>See also <a href="#keys">keys</a>().
+
+<h3 class=fn><a href="ntqstringlist.html">TQStringList</a> <a name="keys"></a>TQKbdDriverPlugin::keys () const<tt> [pure virtual]</tt>
+</h3>
+
+<p> Returns the list of keyboard drivers this plugin supports.
+<p> <p>See also <a href="#create">create</a>().
+
+<!-- eof -->
+<hr><p>
+This file is part of the <a href="index.html">TQt toolkit</a>.
+Copyright &copy; 1995-2007
+<a href="http://www.trolltech.com/">Trolltech</a>. All Rights Reserved.<p><address><hr><div align=center>
+<table width=100% cellspacing=0 border=0><tr>
+<td>Copyright &copy; 2007
+<a href="troll.html">Trolltech</a><td align=center><a href="trademarks.html">Trademarks</a>
+<td align=right><div align=right>TQt 3.3.8</div>
+</table></div></address></body>
+</html>

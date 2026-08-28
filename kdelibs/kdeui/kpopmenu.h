@@ -55,7 +55,8 @@ public:
     const char *title() const;
     
 private:
-    void paintCell(QPainter *, int, int);
+    // TQt3 迁移：原 paintCell 覆盖（Qt1 表格绘制）移除，标题经内建
+  // insertTitle() 承接（见 kpopmenu.cpp 注释）
     void initialize(const char *);
 
 };         

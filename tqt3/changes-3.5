@@ -1,0 +1,48 @@
+Qt 3.5 is a new feature release. It is not backwards compatible with any
+prior TQt3 version due to changes in the QStyle API.
+
+****************************************************************************
+*                           General                                        *
+****************************************************************************
+
+General Improvements
+--------------------
+
+- Technical
+
+    * Modify TQStyle API to work without requiring direct access to Qt-specific objects
+      See "TQStyle API Change" section below
+
+TQStyle API Change
+---------------------
+
+The following style function definitions have changed:
+
+drawPrimitive
+drawControl
+drawControlMask
+subRect
+drawComplexControl
+drawComplexControlMask
+querySubControlMetrics
+querySubControl
+pixelMetric
+sizeFromContents
+styleHint
+stylePixmap
+visualRect
+drawTDEStylePrimitive
+polish
+unPolish
+
+The following new functions have been added:
+applicationPolish
+applicationUnPolish
+installObjectEventHandler
+removeObjectEventHandler
+objectEventHandler
+widgetActionRequest
+
+Additionally, SH_UnderlineAccelerator has been extended with a new style hint, SH_HideUnderlineAcceleratorWhenAltUp
+
+Porting an existing style to the new API is relatively straightforward; simply update the function definitions in the existing style with the new definition prototypes and cast the passed pointer to TQWidget or TQObject where appropriate.
