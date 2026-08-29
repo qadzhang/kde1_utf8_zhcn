@@ -112,3 +112,4 @@ void StringListSelectAndReorderSetData::up()
 void StringListSelectAndReorderSetData::down()
 {
 }
+

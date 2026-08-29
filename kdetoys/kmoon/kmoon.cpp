@@ -172,7 +172,7 @@ void MoonWidget::renderGraphic()
     pixmap.convertFromImage(im, AvoidDither);
 
     QToolTip::remove(this);
-    tooltip.sprintf(i18n("Moon is %d days old."), counter + 1);
+    tooltip = kde_sprintf(i18n("Moon is %d days old."), counter + 1);
     QToolTip::add(this, tooltip);
 }
 

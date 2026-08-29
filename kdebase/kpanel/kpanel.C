@@ -3,6 +3,12 @@
 // Copyright (C) 1996,97 Matthias Ettrich
 //
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] 试验过 taskbar_frame 登记 KWM_DOCKWINDOW 求贴边，因主窗口
+//   整体消失已回退；面板贴边（kwm 智能摆位抬高一个自身高度）问题已定位待续
+
 #include "kpanel.h"
 #include <qapp.h>
 #include <qmsgbox.h>
@@ -398,7 +404,10 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect(desktopbar, SIGNAL(clicked(int)), SLOT(desktop_change(int)));
 
     taskbar_frame = new myFrame(autoHideTaskbar, autoHideTaskbarDelay, 0, 0,
-			   WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+				   WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+
+    // [KDE1 Revival 2026] 曾试验登记 KWM_DOCKWINDOW（setDockWindow）求贴边，
+    // 与主面板同批回退——dock 化后任务栏整体消失，机理待查（见 main.C 标注）。
 
     connect(taskbar_frame, SIGNAL(showMe()), SLOT(showTaskbar()));
     connect(taskbar_frame, SIGNAL(hideMe()), SLOT(hideTaskbar()));
@@ -1272,6 +1281,11 @@ void kPanel::launchSwallowedApplications(){
 
 
 void kPanel::show(){
+  // [KDE1 Revival 2026] 面板贴边说明：曾试验在映射前把工作区临时还原
+  // 全屏（每个窗口映射前各重置一次），因 showEvent 触发的 doGeometry
+  // 会在毫秒间收回区域、纯靠时序竞态不可靠而放弃——最终修复在 kwm 侧
+  // （manage() 对「屏内且贴住任一屏幕边缘」的窗口豁免钳制，见
+  // manager.C「边缘贴边窗口豁免钳制」注释），本函数保持 1999 原样。
   if (!panelCurrentlyHidden) {
      QFrame::show();
     }

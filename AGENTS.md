@@ -30,13 +30,14 @@
 | 目录 | 内容 |
 |---|---|
 | `tqt3/` | TQt3 r14.1.6 pristine 快照（Trinity 的 Qt3 分支，GPLv2；**绝不直接修改**，修改一律走 `tqt3-patches/`） |
-| `tqt3-patches/` | 对 tqt3 的补丁（构建时打入 `tqt3-build/`；当前 1 个：ntqvariant X11 Bool 宏冲突） |
+| `tqt3-patches/` | 对 tqt3 的补丁（构建时打入 `tqt3-build/`；当前 1 个：qstring 的 TQString==const char* 遵循 codecForCStrings 语义，修复 UTF-8 中文比较） |
 | `port/` | KDE1→TQt3 迁移脚手架（strangler fig 模式）：`q1compat.h`（Q→TQ 映射 + tq 函数族）、331 个转发头、两个生成器脚本；全部模块显式 TQ 化后整体拆除 |
 | `kdelibs/` | KDE 1.1.2 基础库（kdecore、kdeui 等） |
 | `kdebase/` | KDE 1.1.2 基础应用（kwm、kpanel、kfm、kvt、kdm 等） |
 | `kdegames/` `kdeutils/` `kdenetwork/` `kdetoys/` | 其余应用模块 |
 | `build.sh` | 一键构建脚本（按 tqt3 → kdelibs → kdebase → 应用 顺序） |
 | `clean.sh` | 清理脚本（删除各模块 `build/` 目录与 `staging/` 暂存区；模块清单必须与 `build.sh` 保持同步） |
+| `sandbox.sh` | 开发期后台桌面沙箱（Xvfb `:99` + fcitx5 私有总线 + x11vnc 仅 127.0.0.1:5901），Remmina 连入即可体验 staging 版桌面，不扰宿主会话与 lightdm |
 | `staging/` | 开发期安装暂存区（`build.sh` 以 DESTDIR 重定向 `make install` 所得，布局对应最终 `/usr/kde1`；由 `clean.sh` 清理） |
 | `dist/src/` | 打包产物：Debian 源码包 sdeb（`.dsc` / `.orig.tar.*` / `.debian.tar.*`，由打包脚本生成，分目录存放见 §1 目标 5） |
 | `dist/deb/` | 打包产物：二进制 `.deb` 包（由打包脚本生成） |
@@ -67,9 +68,14 @@ sudo apt install fonts-noto-cjk fcitx5 fcitx5-chinese-addons \
 
 # 开发期运行（直接从暂存区起，无需安装）：
 #   export PATH=<仓库>/staging/usr/kde1/bin:$PATH
-#   export LD_LIBRARY_PATH=<仓库>/staging/usr/kde1/lib
+#   export LD_LIBRARY_PATH=<仓库>/staging/usr/kde1/lib:<仓库>/staging/usr/kde1/tqt3/lib
 #   export KDEDIR=<仓库>/staging/usr/kde1
 #   （~/.xinitrc 末行 exec startkde，控制台 startx）
+
+# 后台桌面沙箱（不注销宿主会话即可体验/验证；Remmina 等客户端 VNC 连 127.0.0.1:5901）：
+./sandbox.sh start     # 起沙箱（Xvfb :99 + fcitx5 + x11vnc + 音效转发）
+./sandbox.sh status    # 查看各组件状态
+./sandbox.sh stop      # 停止并按 PID 定点清理
 #
 # 正式安装：只使用 dist/deb/ 下的 deb 包（dpkg -i / apt install），
 # 安装后在 lightdm 会话菜单选择 KDE 1 登录。

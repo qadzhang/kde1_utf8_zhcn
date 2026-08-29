@@ -222,7 +222,7 @@ void KMahjonggWidget::setupMenuBar()
     view->insertItem( locale->translate("&Statusbar"),   ID_VIEW_STATUSBAR );
 
     QString about;
-    about.sprintf(locale->translate("Mahjongg %s\n\nby Mathias Mueller (in5y158@public.uni-hamburg.de)"), KMAHJONGG_VERSION);
+    about = kde_sprintf(locale->translate("Mahjongg %s\n\nby Mathias Mueller (in5y158@public.uni-hamburg.de)"), KMAHJONGG_VERSION);
     QPopupMenu *help = kapp->getHelpMenu(true, about);
  
     pMenuBar = new KMenuBar( this );

@@ -99,6 +99,10 @@ public:
   long      decoration;
   bool wants_focus;
   bool is_menubar;
+  /* [KDE1 Revival 2026] 客户程序是否在映射前自行声明了 KWM_WIN_DECORATION
+   * 属性（区分于 kwm/libkde 读属性时写回的默认值）——getMwmHints 据此
+   * 决定 KDE 原生提示是否优先于 Motif 提示（详见 manager.C 该函数注释） */
+  bool kwm_decoration_client_set;
 
   // returns the clean decoration hint. Can be KWM::noDecoration,
   // KWM::tinyDecoration or KWM::normalDecoration

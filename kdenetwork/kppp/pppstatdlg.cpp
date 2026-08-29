@@ -86,7 +86,7 @@ PPPStatsDlg::PPPStatsDlg(QWidget *parent, const char *name, QWidget *)
   QString tmp;
 
 #define PMERROR(pm) \
-  { tmp.sprintf(i18n("Could not load %s !"), pm); \
+  { tmp = kde_sprintf(i18n("Could not load %s !"), pm); \
   QMessageBox::warning(this, i18n("Error"), tmp); \
   }
 
@@ -282,7 +282,7 @@ void PPPStatsDlg::paintGraph() {
   p.setFont(QFont("fixed", 8));
   QRect r;
   QString s;
-  s.sprintf(i18n("%d kb/s"), max/1024);
+  s = kde_sprintf(i18n("%d kb/s"), max/1024);
   p.drawText(0, 0, pm.width(), 2*8, AlignRight|AlignVCenter, s.data(), -1, &r);
   p.drawLine(0, 8, r.left() - 8, 8);
 

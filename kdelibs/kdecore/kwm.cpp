@@ -153,9 +153,15 @@ static void sendClientMessage(Window w, Atom a, long x){
 
 
 static void setQStringProperty(Window w, Atom a, const QString &str){
+  //   Modified for the KDE1 Revival Project, 2026（TQt3 迁移）
+  //   What/Why：X11 属性按字节计数——Qt1 的 length() 恰为字节数，TQt3 的
+  //   length() 是字符数（一个汉字 1 字符 3 字节），沿用 length()+1 会把
+  //   UTF-8 序列拦腰截断（kpanel 桌面名「一」变残缺方块即此因）。
+  //   data() 受 setCodecForCStrings(UTF-8) 驱动输出 UTF-8 字节，长度须按字节计。
+  const char *bytes = str.data();
   XChangeProperty(qt_xdisplay(), w, a, XA_STRING, 8,
-		  PropModeReplace, (unsigned char *)(str.data()),
-		  str.length()+1);
+		  PropModeReplace, (unsigned char *)bytes,
+		  strlen(bytes)+1);
 }
 
 QString KWM::getProperties(Window w){

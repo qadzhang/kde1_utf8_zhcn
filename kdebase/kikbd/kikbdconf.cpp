@@ -523,7 +523,7 @@ const QPixmap KiKbdMapConfig::getIcon() const
 void KiKbdMsgBox::error(const char* form, const char* s1, const char *s2)
 {
   TQString msg;  /* TQt3 迁移：容量构造已删 */
-  msg.sprintf(i18n(form), i18n(s1), i18n(s2));
+  msg = kde_sprintf(i18n(form), i18n(s1), i18n(s2));
   KMsgBox::message(0, i18n("International keyboard ERROR"), msg,
 		   KMsgBox::EXCLAMATION);
   ::exit(1);
@@ -534,7 +534,7 @@ void KiKbdMsgBox::error(const char* form, const char* s1, const char *s2)
 QString setMsg(const char* form, const char* s1, const char *s2)
 {
   TQString msg;  /* TQt3 迁移：容量构造已删 */
-  msg.sprintf(i18n(form), i18n(s1), i18n(s2));
+  msg = kde_sprintf(i18n(form), i18n(s1), i18n(s2));
   return msg;
 }
 void KiKbdMsgBox::warning(const char* form, const char* s1, 

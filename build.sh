@@ -33,7 +33,8 @@
 #   3. 并发度：取 /proc/cpuinfo 中 processor 行数；取不到（容器等）回退 4
 #   4. TQt3 构建（tqt3/ 快照零修改，章程红线）：
 #        a. 若 tqt3-build/ 不存在：拷贝 tqt3/ → tqt3-build/，按文件名序打入
-#           tqt3-patches/*.patch（当前为空——r14.1.6 在 Debian 12 零补丁可编）
+#           tqt3-patches/*.patch（当前 1 个：qstring 的 UTF-8 比较修复，
+#           见 tqt3-patches/README.md）
 #        b. 无 configured 标记则 configure（thread/xft/xrender/system 三方库/
 #           -L 多架构库路径；prefix 用最终真实路径使插件路径烧入正确值）
 #        c. 无 built 标记则 make -jN

@@ -66,7 +66,7 @@ About::About (QWidget * aParent, const char *aName, bool aInit)
   lbl->setMinimumSize(lbl->sizeHint());
   box->addWidget(lbl);
 
-  str.sprintf(i18n("Version %s\n\n"
+  str = kde_sprintf(i18n("Version %s\n\n"
 		   "Copyright (C) 1998 by\n%s\n\n"
 		   "Gnu Public License (GPL)"),
 	           KTHEME_VERSION, 
@@ -108,19 +108,19 @@ void About::slotThemeChanged(Theme *theme)
     value = theme->name();
     if (value.isEmpty()) value = i18n("Unknown");
   }
-  str.sprintf(i18n("%s Theme"), (const char*)value);
+  str = kde_sprintf(i18n("%s Theme"), (const char*)value);
   lblTheme->setText(str);
 
   // Version
   value = theme->version();
   if (value.isEmpty()) str = "";
-  else str.sprintf(i18n("Version %s"), (const char*)value);
+  else str = kde_sprintf(i18n("Version %s"), (const char*)value);
   lblVersion->setText(str);
 
   // Author and email address
   value = theme->author();
   if (value.isEmpty()) value = i18n("Unknown");
-  str.sprintf(i18n("by %s"), (const char*)value);
+  str = kde_sprintf(i18n("by %s"), (const char*)value);
 
   value = theme->email();
   if (!value.isEmpty())

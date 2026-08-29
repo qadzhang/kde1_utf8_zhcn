@@ -946,14 +946,14 @@ void KFileBaseDialog::mkdir()
 	    /* Stephan: I don't understand, what this is meant for:
 	    QString tmp;
 	    if ( !dirnameList->contains( ed->text() )) {
-		tmp.sprintf(i18n("check permissions of directory < %s >"),
+		tmp = kde_sprintf(i18n("check permissions of directory < %s >"),
 			    dir->url().data());
 		QMessageBox::message(i18n("Error: could not create directory"),
 				     tmp,
 				     i18n("Dismiss"),
 				     this, "mkdirerrormsg");
 	    } else {
-		tmp.sprintf(i18n("directory < %s > already exists!"),
+		tmp = kde_sprintf(i18n("directory < %s > already exists!"),
 			    dir->url().data());
 		QMessageBox::message(i18n("Error: directory already exists"),
 				     tmp,
@@ -1341,7 +1341,7 @@ void KFileBaseDialog::updateStatusLine()
     else
 	lFileText = i18n("files");
 
-    lStatusText.sprintf(i18n("%d %s and %d %s"),
+    lStatusText = kde_sprintf(i18n("%d %s and %d %s"),
 			fileList->numDirs(), lDirText.data(),
 			fileList->numFiles(), lFileText.data());
     myStatusLine->setText(lStatusText);
@@ -1353,7 +1353,7 @@ void KDirDialog::updateStatusLine()
     if ( fileList->numDirs() == 1 )
         lDirText = i18n("one directory");
     else
-	lDirText.sprintf(i18n("%d directories"), fileList->numDirs());
+	lDirText = kde_sprintf(i18n("%d directories"), fileList->numDirs());
 
     myStatusLine->setText(lDirText);
 }

@@ -709,7 +709,7 @@ void Theme::doCmdList(void)
     else if (strncmp(cmd, "restart", 7) == 0)
     {
       appName = cmd.mid(7,256).stripWhiteSpace();
-      str.sprintf(i18n("Restart %s to activate the new settings?"),
+      str = kde_sprintf(i18n("Restart %s to activate the new settings?"),
 		  (const char*)appName);
       rc = KMsgBox::yesNo(NULL,i18n("Restart Application"), str,
 			  KMsgBox::QUESTION|KMsgBox::DB_FIRST,

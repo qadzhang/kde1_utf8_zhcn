@@ -143,7 +143,7 @@ int KMFolder::open(void)
     {
       QString str;
       mIndexStream = NULL;
-      str.sprintf(i18n("Folder `%s' changed. Recreating index."), 
+      str = kde_sprintf(i18n("Folder `%s' changed. Recreating index."), 
 		  (const char*)name());
       emit statusMsg(str);
     }
@@ -385,7 +385,7 @@ int KMFolder::createIndexFromContents(void)
       {
 	if (numStatus <= 0)
 	{
-	  msgStr.sprintf(i18n("Creating index file: %d messages done"), num);
+	  msgStr = kde_sprintf(i18n("Creating index file: %d messages done"), num);
 	  emit statusMsg(msgStr);
 	  numStatus = 10;
 	}
@@ -955,7 +955,7 @@ int KMFolder::compact(void)
   {
     if (numStatus <= 0)
     {
-      msgStr.sprintf(i18n("Compacting folder: %d messages done"), num);
+      msgStr = kde_sprintf(i18n("Compacting folder: %d messages done"), num);
       emit statusMsg(msgStr);
       numStatus = 10;
     }

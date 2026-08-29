@@ -1393,13 +1393,25 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     // connect( drop_zone, SIGNAL( dropLeave( KDNDDropZone *) ), this, SLOT( slotDropLeaveEvent( KDNDDropZone *) ) );
 
 
+    // Matthias
+    // keep root icons lowered
+    // ┌─ [KDE1 Revival 2026] 装饰属性写入时机与取值的迁移修正
+    // │  What : 把 KWM 装饰属性（desktopIcon|noFocus）的写入移到 show() 之前
+    // │  Why  : ①时机——Qt1 的 show() 是惰性 map（真正映射发生在事件循环），
+    // │        原"show() 后写属性"实际执行成"先写属性后 map"，kwm manage()
+    // │        总能读到 desktopIcon；TQt3 的 show() 同步映射，写入被 MapRequest
+    // │        反超，kwm 读到默认值 normalDecoration → 图标窗口被当普通窗口
+    // │        通知给任务栏（kpanel 列出 "kfm <2>…<9>" 假条目）。
+    // │        ②取值——补 noFocus 位：kwm 对含 noFocus 的窗口置
+    // │        hidden_for_modules 并主动向模块发 WIN_REMOVE（manager.C 装饰
+    // │        变更路径；kwm.h 文档明示 kpager 即此用法）。活体实验验证：
+    // │        写 1280 后任务栏条目应声消失，纯 1024 则不消失。
+    // │  How  : winId() 触发窗口创建（不映射）→ 属性就位 → show()
+    KWM::setDecoration(winId(), KWM::desktopIcon | KWM::noFocus);
+
     setGeometry( _x - pixmapXOffset, _y, width, height );
     show();
     lower();
-
-    // Matthias
-    // keep root icons lowered
-    KWM::setDecoration(winId(), KWM::desktopIcon);
 
     connect( kapp, SIGNAL( kdisplayFontChanged() ), this, SLOT( slotFontChanged() ) );
 

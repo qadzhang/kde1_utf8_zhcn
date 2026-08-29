@@ -24,16 +24,16 @@ static void formatBytes(int bytes, QString &result) {
   if(bytes < 1024)
     result.setNum(bytes);
   else if(bytes < 1024*1024)
-    result.sprintf(i18n("%0.1f KB"), (float)bytes / 1024.0);
-    result.sprintf(i18n("%0.1f MB"), (float)bytes / 1024.0 / 1024.0);
+    result = kde_sprintf(i18n("%0.1f KB"), (float)bytes / 1024.0);
+    result = kde_sprintf(i18n("%0.1f MB"), (float)bytes / 1024.0 / 1024.0);
 }
 
 static void formatDuration(int seconds, QString &result) {
   if(seconds < 60)
-    result.sprintf(i18n("%d s"), seconds);
+    result = kde_sprintf(i18n("%d s"), seconds);
   else if(seconds < 3600)
-    result.sprintf(i18n("%dm %ds"), seconds/60, seconds%60);
-    result.sprintf(i18n("%dh %dm %ds"), seconds/3600, (seconds % 3600)/60, seconds%60);
+    result = kde_sprintf(i18n("%dm %ds"), seconds/60, seconds%60);
+    result = kde_sprintf(i18n("%dh %dm %ds"), seconds/3600, (seconds % 3600)/60, seconds%60);
 }
 
 MonthlyWidget::MonthlyWidget(QWidget *parent) :
@@ -226,7 +226,7 @@ void MonthlyWidget::plotMonth() {
 		   s_duration);
 
 
-    s.sprintf(i18n("%d connections\t%s\t%s\t%s\t%s\t%6.2f\t%s\t%s\t%s"),
+    s = kde_sprintf(i18n("%d connections\t%s\t%s\t%s\t%s\t%6.2f\t%s\t%s\t%s"),
 	      count,
 	      " ",
 	      " ",

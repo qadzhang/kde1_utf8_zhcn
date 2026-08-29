@@ -367,7 +367,7 @@ OSStatus::readCpuInfo(const char* cpu, int* u, int* s, int* n, int* i)
                             &irq, &softirq, &steal, &guest, &guest_nice) != 11)
 		{
 			error = true;
-			errMessage.sprintf(i18n("Cannot read info for %s from file "
+			errMessage = kde_sprintf(i18n("Cannot read info for %s from file "
 									"\'/proc/stat\'!\n"
 									"The kernel needs to be compiled with "
 									"support\n"

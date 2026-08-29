@@ -531,7 +531,7 @@ void KMMainWin::slotRemoveFolder()
     return;
   }
 
-  str.sprintf(i18n("Are you sure you want to remove the folder\n"
+  str = kde_sprintf(i18n("Are you sure you want to remove the folder\n"
 			     "\"%s\", discarding it's contents ?"),
 			     (const char*)mFolder->label());
   if ((KMsgBox::yesNo(this,i18n("Confirmation"),str, KMsgBox::DB_SECOND))==1)

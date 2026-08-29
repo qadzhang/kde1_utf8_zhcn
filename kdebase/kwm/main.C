@@ -319,9 +319,11 @@ void showWarning(const char* text, bool with_button = true){
 static void setStringProperty(const char* atomname, const char* value){
   Atom a = XInternAtom(qt_xdisplay(), atomname, False);
   QString str = value;
+  // TQt3 迁移：X11 属性长度按字节计（length() 是字符数，截断 UTF-8）
+  const char *bytes = str.data();
   XChangeProperty(qt_xdisplay(), qt_xrootwin(), a, XA_STRING, 8,
-		  PropModeReplace, (unsigned char *)(str.data()),
-		  str.length()+1);
+		  PropModeReplace, (unsigned char *)bytes,
+		  strlen(bytes)+1);
 }
 
 

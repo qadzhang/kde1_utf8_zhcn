@@ -1,0 +1,45 @@
+# KDE1 Revival Project 补丁 002
+# 主题：TQString == const char* 遵循 codecForCStrings 语义（UTF-8 比较修复）
+#
+# ┌─ What : operator==(const TQString&, const char*) 在设置了 C 字符串 codec
+# │        （本项目全局 setCodecForCStrings(UTF-8)）时先经 codec 解码再比较
+# │  Why  : TQt3 原实现逐字节比较（UTF-16 码位 vs (uchar) 单字节），中文等
+# │        非 ASCII 内容经 UTF-8 解码进 TQString 后与原始字节流永不相等——
+# │        kfm 的 KIOJob::slotDirEntry 按 URL 字符串匹配路由目录条目，中文
+# │        目录的条目全部静默失配（实证：打印完全相同却比较不等），文件窗口
+# │        内容区空白。这是全局性缺陷：KDE1 代码所有 "TQString == char*" 点
+# │        在中文下均受影响（验收标准第 8 条 UTF-8 融合范畴）。
+# │  Who  : 一切经 -include q1compat.h 迁移编译的 KDE1 模块；不设 codec 的
+# │        原生 TQt3 程序行为不变（走原字节路径）
+# │  When : 进程调用 TQTextCodec::setCodecForCStrings() 之后（本项目由
+# │        KApplication::init() 最前置位）
+# │  Where: tqt3/src/tools/qstring.cpp operator== 实现体
+# │  How  : 见补丁内注释——codec 存在则 fromAscii 解码后 TQString==TQString；
+# │        ASCII 内容两种路径等价，行为零变化
+#
+# 操作：build.sh 在建立 tqt3-build/ 时按文件名序自动打入本补丁；
+#       已有构建树可 (cd tqt3-build && patch -p1 --forward < 本文件) 增量重编。
+
+--- a/src/tools/qstring.cpp
++++ b/src/tools/qstring.cpp
+@@ -6824,6 +6824,20 @@
+     if ( !s2 )
+ 	return s1.isNull();
+ 
++#ifndef TQT_NO_TEXTCODEC
++    //   Modified for the KDE1 Revival Project, 2026
++    //   Maintainer: <维护者姓名> <邮箱>
++    //   Modifications written with GLM-5.3 (Z.ai)
++    //   [2026-08-29] codecForCStrings 语义一致性修复：原实现逐字节 (uchar)*s2
++    //   比较——非 ASCII 的 UTF-8 字符串经 codec 解码进 TQString 后，与其原始
++    //   字节流永不相等（UTF-16 码位 vs 单字节），且不受 setCodecForCStrings
++    //   影响。KDE1 大量 "TQString == const char*" 比较（kfm 目录条目按 URL
++    //   匹配路由等）在中文下因此全部静默失配。修复：设置了 C 字符串 codec 时
++    //   先经 codec 解码再比较（fromAscii 内部即 codecForCStrings()->toUnicode）；
++    //   未设置 codec 时保持 TQt3 原生字节语义不变。
++    if ( TQTextCodec::codecForCStrings() )
++	return s1 == TQString::fromAscii( s2 );
++#endif
+     int len = s1.length();
+     const TQChar *uc = s1.unicode();
+     while ( len ) {

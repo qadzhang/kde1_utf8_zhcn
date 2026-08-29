@@ -204,7 +204,7 @@ Klpq::Klpq(const char* name=0)
   conf_menu->insertItem(klocale->translate("&Spooler"), this, SLOT(configureSpooler()) );
 
   QString about;
-  about.sprintf(i18n("Klpq %s\n(C) by Christoph Neerfeld\nchris@kde.org"),
+  about = kde_sprintf(i18n("Klpq %s\n(C) by Christoph Neerfeld\nchris@kde.org"),
 		KLPQ_VERSION);
   QPopupMenu *help = KApplication::getKApplication()->getHelpMenu(FALSE, about );
 

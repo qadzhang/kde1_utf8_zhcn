@@ -77,3 +77,4 @@ StringListSelectOneDialogData::StringListSelectOneDialogData
 StringListSelectOneDialogData::~StringListSelectOneDialogData()
 {
 }
+

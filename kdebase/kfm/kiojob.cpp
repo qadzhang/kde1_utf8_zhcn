@@ -106,7 +106,7 @@ void KIOJob::mkdir( const char *_url )
 void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
 {
     KURL u( _url );
-    
+
     action = KIOJob::JOB_LIST;
     
     bHTML = _bHTML;
@@ -1839,7 +1839,7 @@ void KIOJob::slaveIsReady()
 	    }
 
 	    connect( slave, SIGNAL( dirEntry( const char *, const char *, bool, int, const char *,
-					      const char *, const char *, const char * ) ), 
+					      const char *, const char *, const char * ) ),
 		     this, SLOT( slotDirEntry( const char *, const char *, bool, int, const char *,
 				       const char *, const char *, const char * ) ) );
 	    
@@ -1889,8 +1889,6 @@ void KIOJob::slotDirEntry( const char *_url, const char *_name, bool _isDir, int
 
 	emit newDirEntry( id, &e );
     }
-    /* else
-	printf("Does not fit '%s' '%s'\n",lstURL.data(),_url); */
 }
 
 

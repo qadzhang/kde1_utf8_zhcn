@@ -75,7 +75,7 @@ QString format(unsigned long value)
   QString  text;
   double   mb = value / 1048576.0;
   
-  text.sprintf(i18n("%10ld bytes  = %8.2f MB"), value, mb);
+  text = kde_sprintf(i18n("%10ld bytes  = %8.2f MB"), value, mb);
   return text;
 }
 

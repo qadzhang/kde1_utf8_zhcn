@@ -223,7 +223,7 @@ void KMHeaders::setFolder (KMFolder *aFolder)
       colList[1]->setName(i18n("Receiver"));
     else colList[1]->setName(i18n("Sender"));
 
-    str.sprintf(i18n("%d Messages, %d unread."),
+    str = kde_sprintf(i18n("%d Messages, %d unread."),
 		mFolder->count(), mFolder->countUnread());
     if (mFolder->isReadOnly()) str += i18n("Folder is read-only.");
     mOwner->statusMsg(str);
@@ -357,9 +357,9 @@ void KMHeaders::headerClicked(int column)
   else if (mSortCol==(int)KMMsgList::sfFrom) sortStr = i18n("sender");
   else if (mSortCol==(int)KMMsgList::sfStatus) sortStr = i18n("status");
 
-  if (mSortDescending) msg.sprintf(i18n("Sorting messages descending by %s"),
+  if (mSortDescending) msg = kde_sprintf(i18n("Sorting messages descending by %s"),
 				   sortStr);
-  else msg.sprintf(i18n("Sorting messages ascending by %s"), sortStr);
+  else msg = kde_sprintf(i18n("Sorting messages ascending by %s"), sortStr);
   mOwner->statusMsg(msg);
 
   sort();

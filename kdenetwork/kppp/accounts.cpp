@@ -298,7 +298,7 @@ void AccountWidget::copyaccount() {
 void AccountWidget::deleteaccount() {
 
   QString s;
-  s.sprintf(i18n("Are you sure you want to delete\n" 
+  s = kde_sprintf(i18n("Are you sure you want to delete\n" 
 			       "the account \"%s\"?"),
 	    accountlist_l->text(accountlist_l->currentItem()));
 

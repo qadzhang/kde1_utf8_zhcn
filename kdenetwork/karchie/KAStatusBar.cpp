@@ -78,7 +78,7 @@ void
 KAStatusBar::slotChangeStatus( const char *status  )
 {
   QString tmp;
-  tmp.sprintf(i18n("Status: %s"), status );
+  tmp = kde_sprintf(i18n("Status: %s"), status );
   changeItem( tmp, statusId );
   //  repaint();
   updateRects();
@@ -88,7 +88,7 @@ void
 KAStatusBar::slotChangeHost( const char *host )
 {
   QString tmp;
-  tmp.sprintf(i18n("Hosts: %s"), host);
+  tmp = kde_sprintf(i18n("Hosts: %s"), host);
   changeItem( tmp, hostId );
   //  repaint();
   updateRects();
@@ -98,7 +98,7 @@ void
 KAStatusBar::slotChangeHits( const int hits )
 {
   QString tmp;
-  tmp.sprintf(i18n("%d hits"), hits);
+  tmp = kde_sprintf(i18n("%d hits"), hits);
   changeItem( tmp, hitsId );
   //  repaint();
   updateRects();
@@ -108,7 +108,7 @@ void
 KAStatusBar::slotChangeProgress( const int progress )
 {
   QString tmp;
-  tmp.sprintf(i18n("Progress: %d"), progress);
+  tmp = kde_sprintf(i18n("Progress: %d"), progress);
   changeItem( tmp , progressId );
   //  repaint();
   updateRects();
@@ -118,7 +118,7 @@ void
 KAStatusBar::slotChangeTries( int tries )
 {
   QString tmp;
-  tmp.sprintf(i18n("%d try."), tries);
+  tmp = kde_sprintf(i18n("%d try."), tries);
   changeItem( tmp, triesId );
   //  repaint();  
   updateRects();

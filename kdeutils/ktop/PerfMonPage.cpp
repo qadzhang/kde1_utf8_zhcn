@@ -108,7 +108,7 @@ PerfMonPage::PerfMonPage(QWidget* parent = 0, const char* name = 0)
 			QString name;
 			name.sprintf("cpu%d_meter", c);
 			QString label;
-			label.sprintf(i18n("CPU%d Load History"), c);
+			label = kde_sprintf(i18n("CPU%d Load History"), c);
 
 			FancyPlotter* p = new FancyPlotter(this, name, label, 0, 100);
 			p->setLowPass(TRUE);

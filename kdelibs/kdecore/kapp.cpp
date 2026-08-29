@@ -1,6 +1,13 @@
 /* This file is part of the KDE libraries
     Copyright (C) 1997 Matthias Kalle Dalheimer (kalle@kde.org)
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] kde_appsdir() 运行期优先 $KDEDIR：修复沙箱/deb 双环境共用
+//   二进制时 K 菜单读到烧录前缀旧 applnk、本地化菜单名全部失效的问题
+//   （详见函数内注释）
+
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
     License as published by the Free Software Foundation; either
@@ -1488,146 +1495,135 @@ QString KApplication::kdedir()
 
 /* maybe we could read it out of a config file, but
    this can be added later */
+
+// ┌─ [KDE1 Revival 2026] 资源目录运行期解析（共享助手）
+// │  What : 全部 kde_*dir() 统一经此函数解析——优先环境变量 KDEDIR
+// │        拼接 <KDEDIR>/<烧录后缀>，未设置时回落编译期烧录路径
+// │  Why  : 构建带 --prefix 时 KDE_*DIR 宏烧成绝对路径，$KDEDIR 被
+// │        无视——沙箱（staging 树）与 deb 安装（/usr/kde1）共用同一份
+// │        二进制时会读错资源树。已实测中招：appsdir（K 菜单读到旧
+// │        applnk，本地化菜单名全部失效）、localedir（mo 翻译读到旧
+// │        树，新旧混杂导致"大量未翻译"）。KDEDIR 由 sandbox.sh 与
+// │        deb 的 startkde-kde1 包装统一导出；正式环境 KDEDIR 与
+// │        烧录前缀同值，行为与 1999 年原版完全一致。
+// │  How  : 烧录值形如 "/usr/kde1/share/xxx"——剥去烧录前缀得后缀，
+// │        拼到 $KDEDIR 后；烧录值为 1999 风格 "KDEDIR/..." 时保持
+// │        原有 kdedir() 展开语义
+// └──────────────────────────────────────────────────────────────────┘
+static QString kde_runtime_resource_dir(const char* burned)
+{
+    const char* env = getenv("KDEDIR");
+    if (burned && !strncmp(burned, "KDEDIR", 6))
+	return QString(env && *env ? env : KDEDIR) + QString(burned + 6);
+    if (env && *env) {
+	static const char burned_prefix[] = "/usr/kde1";
+	if (!strncmp(burned, burned_prefix, sizeof(burned_prefix)-1))
+	    return QString(env) + QString(burned + sizeof(burned_prefix)-1);
+    }
+    return QString(burned);
+}
+
 const QString& KApplication::kde_htmldir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_HTMLDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_HTMLDIR);
   return dir;
 }
 
 const QString& KApplication::kde_appsdir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_APPSDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_APPSDIR);
   return dir;
 }
 
 const QString& KApplication::kde_icondir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_ICONDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_ICONDIR);
   return dir;
 }
 
 const QString& KApplication::kde_datadir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_DATADIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_DATADIR);
   return dir;
 }
 
 const QString& KApplication::kde_localedir()
 {
   static QString dir;
-  if (dir.isNull()) {
-	dir = KDE_LOCALE;
-	if (!strncmp(dir.data(), "KDEDIR", 6))
-	    dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_LOCALE);
   return dir;
 }
 
 const QString& KApplication::kde_cgidir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_CGIDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_CGIDIR);
   return dir;
 }
 
 const QString& KApplication::kde_sounddir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_SOUNDDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_SOUNDDIR);
   return dir;
 }
 
 const QString& KApplication::kde_toolbardir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_TOOLBARDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_TOOLBARDIR);
   return dir;
 }
 
 const QString& KApplication::kde_wallpaperdir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_WALLPAPERDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_WALLPAPERDIR);
   return dir;
 }
 
 const QString& KApplication::kde_bindir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_BINDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_BINDIR);
   return dir;
 }
 
 const QString& KApplication::kde_partsdir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_PARTSDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_PARTSDIR);
   return dir;
 }
 
 const QString& KApplication::kde_configdir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_CONFIGDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_CONFIGDIR);
   return dir;
 }
 
 const QString& KApplication::kde_mimedir()
 {
   static QString dir;
-  if (dir.isNull()) {
-      dir = KDE_MIMEDIR;
-      if (!strncmp(dir.data(), "KDEDIR", 6))
-	  dir = kdedir() + dir.right(dir.length() - 6);
-  }
+  if (dir.isNull())
+      dir = kde_runtime_resource_dir(KDE_MIMEDIR);
   return dir;
 }
 

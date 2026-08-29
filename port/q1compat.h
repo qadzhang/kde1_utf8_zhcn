@@ -423,4 +423,116 @@ typedef TQPtrListIterator<TQFileInfo> QFileInfoListIterator;
 #define QT_VERSION      TQT_VERSION
 #define QT_VERSION_STR  TQT_VERSION_STR
 
+/* ── 7. kde_sprintf：翻译格式串的 UTF-8 安全 printf ──────────────────
+ * ┌─ What : 与 TQString::sprintf 同语义的 printf 风格格式化，但其
+ * │        格式串与 %s 参数按 UTF-8 解码（返回 UTF-16 TQString）
+ * │  Why  : TQString::sprintf 扫描 format 用 const char* 逐字节
+ * │        Latin1 升位——KDE1 的调用形态 sprintf(locale->translate(FMT),…)
+ * │        中 FMT 是 mo 里的 UTF-8 译文，其中文被拆成逐字节假字符
+ * │        （实测"您"→3 个 .notdef 方框，"电脑"→6 个）。%s 参数链路
+ * │        （fromUtf8）本就正确，坏的只是 format 明文段。
+ * │        TQt3 二进制不可重编（内含源码已失传的 8-28 渲染修复），
+ * │        故在脚手架层提供本函数，调用点批量改写。
+ * │  Who  : 被 port 改写器批量替换的 sprintf(translate/i18n( 调用点；
+ * │        本头文件经 -include 注入全部编译单元，随取随用
+ * │  How  : ① format 经 fromUtf8 正确解码为 UTF-16；② 明文段直入结果；
+ * │        ③ '%' 字段解析 flags/width/precision/length_mod 后按转换符
+ * │        分派——s 走 fromUtf8（%ls 逐 wchar 收敛到 BMP），d/i/u/x/X/o
+ * │        按 length_mod 取参后组 ASCII 小格式串交 vsnprintf，f/F/e/E/
+ * │        g/G 取 double 同法，c 按 int 提升直转；%% 与不完整转义按明文。
+ * │        整数统一提升到 long long 再打印，避免 va_arg 类型失配。
+ * │  When : 编译期替换、运行期每次调用即格式化
+ */
+#ifndef Q1COMPAT_NO_KDE_SPRINTF
+#include <stdio.h>
+#include <stdarg.h>
+inline TQString kde_sprintf(const char* kdeFmt, ...)
+{
+    va_list ap;
+    va_start(ap, kdeFmt);
+    TQString result;
+    const TQString fmt = TQString::fromUtf8(kdeFmt);
+    /* 边界用 length() 显式界定（Why：实测 staging 库的 fromUtf8 结果
+     * unicode() 数组未保证 NUL 终止——isNull() 判终止会越界扫进相邻
+     * 堆块（实测扫出 locale 路径串"-8/LC_MESSAGES/kde.mo"），尾部
+     * 拼出 12 个假字符。length() 是唯一可靠边界。） */
+    const TQChar* c = fmt.unicode();
+    const TQChar* end = c + fmt.length();
+    while (c < end) {
+	if (*c != '%') { result += *c++; continue; }
+	const TQChar* esc = c;
+	++c;
+	if (c >= end) { result += '%'; break; }
+	if (*c == '%') { result += '%'; ++c; continue; }
+
+	/* 重建 ASCII 子格式串头：flags + width + .precision + length */
+	TQString head = "%";
+	while (c < end && (*c == '#' || *c == '0' || *c == '-' || *c == ' ' ||
+	       *c == '+' || *c == '\'')) { head += *c; ++c; }
+	if (c >= end) { while (esc != c) result += *esc++; break; }
+	if (*c == '*') { head += TQString::number(va_arg(ap, int)); ++c; }
+	else while (c < end && c->isDigit()) { head += *c; ++c; }
+	if (c < end && *c == '.') {
+	    head += '.'; ++c;
+	    if (*c == '*') { head += TQString::number(va_arg(ap, int)); ++c; }
+	    else while (c < end && c->isDigit()) { head += *c; ++c; }
+	}
+	if (c >= end) { while (esc != c) result += *esc++; break; }
+	bool isL = false, isLL = false;
+	for (;;) {
+	    if (c < end && *c == 'l') { if (isL) isLL = true; isL = true; ++c; }
+	    else if (c < end && *c == 'h') { ++c; }
+	    else break;
+	}
+	if (c >= end) { while (esc != c) result += *esc++; break; }
+	const char conv = c->latin1();
+	++c;
+
+	switch (conv) {
+	case 's': {
+	    if (isL) {                     /* %ls：宽字符收敛到 BMP */
+		const wchar_t* w = va_arg(ap, const wchar_t*);
+		while (w && *w) { result += TQChar((ushort)*w); ++w; }
+	    } else {
+		result += TQString::fromUtf8(va_arg(ap, const char*));
+	    }
+	    break;
+	}
+	case 'c':
+	    result += TQChar((ushort)va_arg(ap, int));   /* 整数提升，无需长度符 */
+	    break;
+	case 'd': case 'i': case 'u': case 'o': case 'x': case 'X': {
+	    /* 整数族：按 length_mod 取参（va_arg 类型必须与实参匹配），
+	     * 统一提升为 long long 后用带 ll 的子格式串打印 */
+	    long long v;
+	    if (isLL)      v = va_arg(ap, long long);
+	    else if (isL)  v = va_arg(ap, long);
+	    else           v = va_arg(ap, int);
+	    TQString sub = head;
+	    if (!isLL) sub += "ll";
+	    sub += conv;
+	    char buf[128];
+	    snprintf(buf, sizeof buf, sub.latin1(), v);
+	    result += TQString::fromLatin1(buf);
+	    break;
+	}
+	case 'f': case 'F': case 'e': case 'E': case 'g': case 'G': {
+	    double v = va_arg(ap, double);
+	    TQString sub = head;
+	    sub += conv;
+	    char buf[256];
+	    snprintf(buf, sizeof buf, sub.latin1(), v);
+	    result += TQString::fromLatin1(buf);
+	    break;
+	}
+	default:                          /* 未知转换符：整段按明文回填 */
+	    { const TQChar* p = esc; while (p != c) result += *p++; }
+	    break;
+	}
+    }
+    va_end(ap);
+    return result;
+}
+#endif /* Q1COMPAT_NO_KDE_SPRINTF */
+
 #endif /* Q1COMPAT_H */

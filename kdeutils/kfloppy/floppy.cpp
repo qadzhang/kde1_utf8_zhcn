@@ -294,7 +294,7 @@ bool FloppyData::findDevice()
   if( access(device.data(),W_OK) < 0){
 
     QString str;
-    str.sprintf(i18n(
+    str = kde_sprintf(i18n(
 	      "Cannot access %s\nMake sure that the device exists and that\n"
 	      "you have write permission to it."),device.data());
     QMessageBox::critical(this,
@@ -596,7 +596,7 @@ void FloppyData::errslot(){
   }
 
   QString str;
-  str.sprintf(i18n("Cannot format: "\
+  str = kde_sprintf(i18n("Cannot format: "\
 	      "%s\n"\
 	      "%s"),device.data(),errstring.data());
 
@@ -642,7 +642,7 @@ printf("NEWLINE:%s\n",mystring.data());
     if(findKeyWord(mystring,"BBF ")){
       int bblock = atoi(mystring.left(8).data());
       QString mstr;
-      mstr.sprintf(i18n("Block %d is bad. Continuing ..."),bblock);
+      mstr = kde_sprintf(i18n("Block %d is bad. Continuing ..."),bblock);
       frame->setText(mstr.data());
     }
 
@@ -725,7 +725,7 @@ void FloppyData::fserrslot(){
   reset();
 
   QString str;
-  str.sprintf(i18n("Cannot create a filesystem on: %s\n%s")
+  str = kde_sprintf(i18n("Cannot create a filesystem on: %s\n%s")
 	      ,device.data(),fserrstring.data());
 
   QMessageBox::warning(this,
@@ -782,7 +782,7 @@ void FloppyData::cf2done(){
   else{
 
     QString str;
-    str.sprintf(i18n("All files were sucessfully erased."));
+    str = kde_sprintf(i18n("All files were sucessfully erased."));
 
     QMessageBox::information(this,
 			     i18n("KFloppy"),

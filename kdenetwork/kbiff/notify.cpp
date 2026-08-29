@@ -55,12 +55,12 @@ TRACEF("%d new messages in %s", num_new, mailbx.data());
 	mailbox_layout->addWidget(congrats);
 
 	QString msg;
-	msg.sprintf(i18n("New Messages: %d"), num_new);
+	msg = kde_sprintf(i18n("New Messages: %d"), num_new);
 	msgLabel = new QLabel(msg, this);
 	msgLabel->setMinimumSize(msgLabel->sizeHint());
 	mailbox_layout->addWidget(msgLabel);
 
-	msg.sprintf(i18n("Mailbox: %s"), mailbx.data());
+	msg = kde_sprintf(i18n("Mailbox: %s"), mailbx.data());
 	QLabel *which_one = new QLabel(msg, this);
 	which_one->setMinimumSize(which_one->sizeHint());
 	mailbox_layout->addWidget(which_one);
@@ -100,7 +100,7 @@ KBiffNotify::~KBiffNotify()
 void KBiffNotify::setNew(const int num_new)
 {
 	QString msg;
-	msg.sprintf(i18n("New Messages: %d"), num_new);
+	msg = kde_sprintf(i18n("New Messages: %d"), num_new);
 	msgLabel->setText(msg);
 	messages = num_new;
 }

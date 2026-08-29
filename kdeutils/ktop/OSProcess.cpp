@@ -122,7 +122,7 @@ OSProcess::read(const void* info)
 	if((fd = fopen(buf, "r")) == 0)
 	{
 		error = true;
-		errMessage.sprintf(i18n("Cannot open %s!\n"), buf.data());
+		errMessage = kde_sprintf(i18n("Cannot open %s!\n"), buf.data());
 		return (false);
 	}
 
@@ -149,7 +149,7 @@ OSProcess::read(const void* info)
 	if ((fd = fopen(buf, "r")) == 0)
 	{
 		error = true;
-		errMessage.sprintf(i18n("Cannot open %s!\n"), buf.data());
+		errMessage = kde_sprintf(i18n("Cannot open %s!\n"), buf.data());
 		return (false);
 	}
 
@@ -203,7 +203,7 @@ OSProcess::read(const void* info)
 	if ((fd = fopen(buf, "r")) == 0)
 	{
 		error = true;
-		errMessage.sprintf(i18n("Cannot open %s!\n"), buf.data());
+		errMessage = kde_sprintf(i18n("Cannot open %s!\n"), buf.data());
 		return (false);
 	}
 	char cbuf[1024];
@@ -355,7 +355,7 @@ OSProcess::setNiceLevel(int newNiceLevel)
 	if (setpriority(PRIO_PROCESS, pid, newNiceLevel) == -1)
 	{
 		error = true;
-		errMessage.sprintf(i18n("Could not set new nice level for process %d"),
+		errMessage = kde_sprintf(i18n("Could not set new nice level for process %d"),
 						   pid);
 		return (false);
 	}
@@ -369,7 +369,7 @@ OSProcess::sendSignal(int sig)
 	if (kill(pid, sig))
 	{
 		error = true;
-		errMessage.sprintf(i18n("Cound not send signal %d to process %d"),
+		errMessage = kde_sprintf(i18n("Cound not send signal %d to process %d"),
 						   sig, pid);
 		return (false);
 	}

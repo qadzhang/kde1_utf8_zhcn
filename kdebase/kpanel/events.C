@@ -3,6 +3,14 @@
 // Copyright (C) 1996,97 Matthias Ettrich
 //
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] windowAdd() 过滤两类伪窗口：①kfm 为各虚拟桌面创建的
+//   桌面管理窗口（KWM 装饰标记 desktopIcon）；②kpanel 自身的面板与
+//   任务栏窗口——此前它们被任务栏当普通程序列出，任务栏充斥
+//   "kfm <N>/kpanel <N>" 噪音条目（详见函数内注释）
+
 #include "kpanel.h"
 #include <qapp.h>
 #include <qmsgbox.h>
@@ -154,6 +162,26 @@ void kPanel::dialogWindowAdd(Window w) {
     ignore_this_dialog = w;
 }
 void kPanel::windowAdd(Window w){
+
+    // ┌─ [KDE1 Revival 2026] 任务栏伪窗口过滤
+    // │  What : 不把以下窗口加入任务栏——①kpanel 自身的面板窗口与
+    // │        任务栏窗口；②kfm 为每个虚拟桌面创建的桌面管理窗口
+    // │        （全屏无边框、装饰标记 KWM::desktopIcon）
+    // │  Why  : 桌面图标由 kfm 的每桌面窗口承载，kpanel 自己也有两个
+    // │        顶层窗口——它们并非用户打开的程序，列进任务栏后用户
+    // │        看到 "kfm <2>…<9>/kpanel <2>" 一堆无法操作的条目
+    // │        （沙箱实测仅开 3 个程序任务栏却有 10+ 项）
+    // │  How  : ①与自身 winId()/任务栏窗口 id 比对；②查 KWM_WIN_
+    // │        DECORATION 原子等于 desktopIcon（kfm root.cpp 建桌面
+    // │        窗口时即打此标记）。getDecoration 对未标记窗口会写回
+    // │        normalDecoration 默认值，不影响已管理窗口的装饰
+    if (w == winId() || (taskbar_frame && w == taskbar_frame->winId()))
+	return;
+    /* ② kfm 桌面图标窗口：kfm 侧已在 show() 前写 desktopIcon|noFocus 装饰
+     *    属性，kwm 据此主动对模块隐藏（hidden_for_modules）——此处按
+     *    desktopIcon 位再拦一道，纯防御（活体实验：kwm 机制已足够） */
+    if (KWM::getDecoration(w) & KWM::desktopIcon)
+	return;
 
     if (w == ignore_this_dialog ) {
 	ignore_this_dialog = None;

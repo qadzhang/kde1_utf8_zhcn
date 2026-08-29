@@ -3,6 +3,12 @@
 // Copyright (C) 1996,97 Matthias Ettrich
 //
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] myTaskButton::drawButtonLabel 绕开 KCharsetConverter：
+//   变换字体在矩形绘制路径丢字形回退致任务栏中文方块（详见函数内注释）
+
 #include <stdio.h>
 #include <unistd.h>
 #include <time.h>
@@ -318,12 +324,20 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
   if (!s.isNull()){
     const QFont origFont = painter->font();
 
-    // To avoid killing performance, assume that the supported charset of the
-    // font doesn't change (usually holds true).
-    static KCharsetConverter *converter = new KCharsetConverter(klocale->charset());
-    const KCharsetConversionResult conversion = converter->convert(s);
-    QString s2 = (const char*)conversion;
-    painter->setFont(conversion.font(origFont));
+    // ┌─ [KDE1 Revival 2026] 任务栏中文方块修复：绕开 KCharsetConverter
+    // │  What : 按钮文字直接用原字体与原字符串绘制，不再经
+    // │        KCharsetConverter 的 convert()/font() 变换
+    // │  Why  : 转换器的 font() 会按 1999 字符集语义变换字体族——变换
+    // │        后的字体在矩形 drawText 排版路径上丢掉 Xft 字形回退，
+    // │        中文整字变方块（实测"文本编辑器"→5 个□，ASCII 正常；
+    // │        K 菜单项走原字体的同一矩形绘制路径，中文完好）。
+    // │        UTF-8 全局策略下（kcharsetsdata 已改 NoConversion
+    // │        透传），本转换对本字符串本就是恒等变换，仅字体被
+    // │        错误改写，绕开即恢复。
+    // │  How  ：s2 = s 原样；省略宽度截断循环的字体切换（截断按
+    // │        TQString 字符边界，UTF-8 安全）
+    // └──────────────────────────────────────────────────────────────────┘
+    QString s2 = s;
 
     if (painter->fontMetrics().width(s2) > width()-32){
       while (s2.length()>0 &&

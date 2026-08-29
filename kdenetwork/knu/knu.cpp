@@ -275,7 +275,7 @@ TopLevel::createMenu()
 		       this, SLOT(slotHelp()), key.help());
   helpMenu->insertSeparator();
   QString str;
-  str.sprintf(i18n("&About %s"), KNU_APPNAME);
+  str = kde_sprintf(i18n("&About %s"), KNU_APPNAME);
   helpMenu->insertItem(str, this, SLOT(slotAbout()), SHIFT+Key_F1);
   helpMenu->insertItem(i18n("About &Qt"), this, SLOT(slotAboutQt()));
   
@@ -460,7 +460,7 @@ void
 TopLevel::slotAbout()
 {
   QString about;
-  about.sprintf(i18n("Knu\nVersion %s\n\nBertrand Leconte\n<B.Leconte@mail.dotcom.fr>\n"), KNU_VERSION);
+  about = kde_sprintf(i18n("Knu\nVersion %s\n\nBertrand Leconte\n<B.Leconte@mail.dotcom.fr>\n"), KNU_VERSION);
 
   QMessageBox::about( this, i18n("About..."),
 		      about);

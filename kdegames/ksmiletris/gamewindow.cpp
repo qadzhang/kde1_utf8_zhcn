@@ -69,7 +69,7 @@ GameWindow::GameWindow(QWidget *, const char *name)
 	soundsID = options_popup->insertItem(i18n("&Sounds"), this, SLOT(menu_sounds()));
 
 	QString about;
-	about.sprintf(i18n(
+	about = kde_sprintf(i18n(
 			 "KSmiletris %s\n\n"
 			 "by Sandro Sigala <ssigala@globalnet.it>\n\n"
 			 "Feedbacks are welcome!\n"), VERSION);

@@ -5,6 +5,13 @@
  *
  */
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] sweepdrag()/killSelect() 移除 XGrabServer：修复 VNC/XTEST
+//   注入输入被 server grab 冻结、与 XMaskEvent 死等事件形成双向死锁的问题
+//   （详见函数内注释）
+
 #include <stdio.h>
 
 #include "main.h"
@@ -286,7 +293,12 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
     options.FocusPolicy = CLICK_TO_FOCUS;
 
     if (transparent){
-      XGrabServer(qt_xdisplay());
+      // [KDE1 Revival 2026] 原此处 XGrabServer 在透明拖动时冻结整个 X
+      // server 防重绘；但 VNC/XTEST 注入的 ButtonRelease 属客户端请求，
+      // 会被 server grab 冻在队列里，而下方 XMaskEvent 死等该 Release
+      // 才肯 XUngrabServer——双向死锁（机理详见 krootwm.C
+      // select_rectangle 注释；现代 WM 的拖动路径均不做 server grab）。
+      // 已移除，事件通路仅依赖指针 grab。
       drawbound(c, only_moving);
     }
 
@@ -356,7 +368,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
     if (transparent){
       drawbound(c, only_moving);
       manager->sendConfig(c);
-      XUngrabServer(qt_xdisplay());
+      // [KDE1 Revival 2026] 配对的 XUngrabServer 已随上方 XGrabServer 一并移除
     }
 
     if (c->isMaximized()){
@@ -436,7 +448,11 @@ void killSelect(){
     int escape_pressed = 0;
     int button_1_released = 0;
 
-    XGrabServer(qt_xdisplay());
+    // [KDE1 Revival 2026] 原此处 XGrabServer 与循环后 XUngrabServer 配对；
+    // 杀窗口模式下 XMaskEvent 死等 ButtonRelease/KeyPress，而 VNC/XTEST
+    // 注入的这些事件属客户端请求、会被 server grab 冻在队列——双向死锁
+    // （机理详见 krootwm.C select_rectangle 注释）。已移除 grab；
+    // 键鼠事件通路由 do_grab 阶段的指针/键盘 grab 保证。
 
     while (!return_pressed &&
 	   ! escape_pressed &&
@@ -468,8 +484,7 @@ void killSelect(){
     if (return_pressed){
       manager->killWindowAtPosition(QCursor::pos().x(), QCursor::pos().y());
     }
-
-    XUngrabServer(qt_xdisplay());
+    // [KDE1 Revival 2026] 配对的 XUngrabServer 已随循环前 XGrabServer 一并移除
 
 }
 

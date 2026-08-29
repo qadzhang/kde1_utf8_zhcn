@@ -45,7 +45,7 @@ DockWidget::DockWidget(const char *name): QWidget(0, name, 0) {
 
 
   if (!picsmall_pixmap.load(pixdir + "knotes.xpm")){
-    tmp.sprintf(i18n("Could not load %s !"), "knotes.xpm");
+    tmp = kde_sprintf(i18n("Could not load %s !"), "knotes.xpm");
     QMessageBox::warning(this, i18n("Error"), tmp);
   }
 

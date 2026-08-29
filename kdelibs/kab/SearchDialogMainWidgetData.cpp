@@ -67,3 +67,4 @@ SearchDialogMainWidgetData::SearchDialogMainWidgetData
 SearchDialogMainWidgetData::~SearchDialogMainWidgetData()
 {
 }
+

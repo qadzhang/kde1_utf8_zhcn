@@ -776,7 +776,7 @@ void KIOServer::getSlave( KIOJob *_job )
 	runNewSlave();
 	return;
     }
-    
+
     KIOSlaveIPC *slave = freeSlaves.first();
     freeSlaves.removeRef( slave );
     _job->doIt( slave );

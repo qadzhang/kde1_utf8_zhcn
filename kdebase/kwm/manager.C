@@ -5,6 +5,12 @@
  *
  */
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] 试验过 dock 分支补 XMapWindow 放行映射，因 kbgndwm/kikbd
+//   的隐身模块窗口被误照亮已回退；dock 分支保持原样（详见分支内注释）
+
 
 #include "manager.moc"
 #include "main.h"
@@ -1743,6 +1749,9 @@ void Manager::manage(Window w, bool mapped){
 
   if (KWM::isDockWindow(w)){
     addDockWindow(w);
+    // [KDE1 Revival 2026] 此处不可 XMapWindow 放行：dock 原子不只面板用，
+    // kbgndwm/kikbd 的模块通信窗口也靠它保持隐身（实测放行后桌面左上角
+    // 出现游离窗口）。面板/任务栏的贴边问题另行处理（见 kpanel.C 标注）。
     return;
   }
 
@@ -1841,7 +1850,29 @@ void Manager::manage(Window w, bool mapped){
 
   // get KDE specific decoration hint
   {
-      long dec = KWM::getDecoration(c->window);
+      /* [KDE1 Revival 2026] 改用裸 XGetWindowProperty 读装饰属性并记录
+       * "客户程序是否自行声明"：原调用的客户端库 KWM::getDecoration 在
+       * 属性缺失时会写回默认值 1（normalDecoration）——导致 manage 后
+       * 一切窗口都"带有"该属性，无法区分客户声明与 kwm 写回；写回的
+       * 默认值还会覆盖 TQt3 程序（WStyle_Customize）的 Motif 无边框
+       * 提示，kpanel 面板因此被画上标题栏（可点关闭，实测回归）。
+       * 此处不写回，仅读；缺失时按 1999 语义取默认 normalDecoration。 */
+      long dec = KWM::normalDecoration;
+      c->kwm_decoration_client_set = false;
+      {
+	  static Atom kwm_deco_atom = None;
+	  if (kwm_deco_atom == None)
+	      kwm_deco_atom = XInternAtom(qt_xdisplay(),
+					  "KWM_WIN_DECORATION", False);
+	  Atom t; unsigned long n, b; int fmt; unsigned char* d = 0;
+	  if (XGetWindowProperty(qt_xdisplay(), c->window, kwm_deco_atom,
+				 0L, 1L, False, kwm_deco_atom,
+				 &t, &fmt, &n, &b, &d) == Success && n > 0 && d) {
+	      dec = (long)(*(unsigned int*)d);	/* 0 亦是合法声明（noDecoration） */
+	      c->kwm_decoration_client_set = true;
+	      XFree((char*)d);
+	  }
+      }
       c->decoration = dec & 255;
       c->is_menubar = (dec & KWM::standaloneMenuBar) != 0;
       has_standalone_menubars |= c->is_menubar;
@@ -1962,12 +1993,35 @@ void Manager::manage(Window w, bool mapped){
       ){
 
       QRect maxRect = KWM::getWindowRegion(currentDesktop());
+      // ┌─ [KDE1 Revival 2026] 边缘贴边窗口豁免钳制
+      // │  What : 完全位于屏幕内、且精确贴住任一屏幕边缘的窗口，跳过
+      // │        「钳入工作区」的摆位修正
+      // │  Why  : 工作区（KWM_WINDOW_REGION）由 kpanel 预留、不含面板
+      // │        自身——面板窗口映射时会被当普通窗口钳进工作区，
+      // │        恰好向内偏离一个自身高度（实测顶部 0→34、底部
+      // │        915→870，与排除区 0+34+1280x881 精确吻合）。钳制的
+      // │        本意是保证窗口可见，而贴边窗口本就全屏内完全可见，
+      // │        无需也不应被推离边缘。Qt1 时代的时序使面板映射先于
+      // │        区域收紧故无此问题；TQt3 同步映射撞上收紧的区域。
+      // │  How  : 几何完全在屏内 且 四边之一与屏幕边缘重合 → 豁免。
+      // │        普通应用极少整边贴屏；即便贴屏，尊重其位置也是对的。
+      // └──────────────────────────────────────────────────────────────────┘
+      QRect scrGeo = QApplication::desktop()->geometry();
+      bool edgeDocked =
+	  (c->geometry.x() >= scrGeo.x() && c->geometry.y() >= scrGeo.y()
+	   && c->geometry.right() <= scrGeo.right()
+	   && c->geometry.bottom() <= scrGeo.bottom()
+	   && (c->geometry.x() == scrGeo.x()
+	       || c->geometry.y() == scrGeo.y()
+	       || c->geometry.right() == scrGeo.right()
+	       || c->geometry.bottom() == scrGeo.bottom()));
       if (myapp->systemMenuBar && !c->isMenuBar()) {
 	  maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
       }
 
-      if (c->geometry.x() < maxRect.x() || c->geometry.right() > maxRect.right()
-	  || c->geometry.y() < maxRect.y() || c->geometry.bottom() > maxRect.bottom() ) {
+      if (!edgeDocked
+	  && (c->geometry.x() < maxRect.x() || c->geometry.right() > maxRect.right()
+	      || c->geometry.y() < maxRect.y() || c->geometry.bottom() > maxRect.bottom() ) ){
 	  
 	  // the settings are bogus, move the window to fit in the visible area
 	  if ( c->geometry.x() < maxRect.x() )
@@ -3034,6 +3088,25 @@ void Manager::getMwmHints(Client  *c){
   Atom actual_type;
   unsigned long nitems, bytesafter;
   PropMotifWmHints *mwm_hints;
+
+  // ┌─ [KDE1 Revival 2026] KDE 原生装饰提示优先于 Motif 提示
+  // │  What : 客户程序映射前自行声明了 KWM_WIN_DECORATION 属性时，
+  // │        跳过 MWM 解读与回写
+  // │  Why  : TQt3 对 WStyle_Customize 窗口一律写 _MOTIF_WM_HINTS 且
+  // │        decorations=0；原逻辑据此把 KWM_WIN_DECORATION 回写成 0
+  // │        （getMwmHints 尾部 setDecoration），该回写又触发
+  // │        kwm_win_decoration 属性监听（wants_focus 重算为 true）→
+  // │        hidden_for_modules 被撤销并向模块重发 WIN_ADD——kfm 桌面
+  // │        图标（desktopIcon|noFocus=1280）因此被推进任务栏成为
+  // │        "kfm <N>" 假条目。KDE 程序的 KWM 提示是更强的意图声明，
+  // │        应优先；非 KDE 程序（如 StarOffice 工具条）无 KWM 属性，
+  // │        MWM 路径行为不变（kpanel 的无边框提示继续走 MWM 生效）。
+  // │  How  : 判据用 manage() 时记录的 kwm_decoration_client_set
+  // │        （manage 已改裸读不写回；若按"属性存在"判断会把 kwm 自己
+  // │        写回的默认值误当客户声明——实测导致 kpanel 被画上标题栏）
+  // └──────────────────────────────────────────────────────────────────
+  if (c->kwm_decoration_client_set)
+    return;
 
   if(XGetWindowProperty (qt_xdisplay(), c->window, _motif_wm_hints, 0L, 20L,
 			 False,_motif_wm_hints, &actual_type,

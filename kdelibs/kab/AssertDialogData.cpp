@@ -91,3 +91,4 @@ AssertDialogData::~AssertDialogData()
 void AssertDialogData::setAction(int)
 {
 }
+

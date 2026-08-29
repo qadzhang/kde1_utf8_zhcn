@@ -41,3 +41,5 @@ void MyMain::insertPath()
   delete icon_sel;
   icon_sel = new KIconLoaderDialog();
 }
+
+#include "kiconloadertestmain.moc"  /* TQt3 迁移：moc 实现并入编译单元 */

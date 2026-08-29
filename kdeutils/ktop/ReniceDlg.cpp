@@ -36,7 +36,7 @@ ReniceDlg::ReniceDlg(QWidget* parent, const char* name, int currentPPrio,
 	vLay = new QVBoxLayout(this, 20, -1, "ReniceLayout");
 
 	QString msg;
-	msg.sprintf(i18n("You are about the change the scheduling priority of\n"
+	msg = kde_sprintf(i18n("You are about the change the scheduling priority of\n"
 					 "process %d. Be aware that only the Superuser (root)\n"
 					 "can decrease the nice level of a process. The smaller\n"
 					 "the number is the higher is the priority.\n\n"

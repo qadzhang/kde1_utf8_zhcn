@@ -7,6 +7,13 @@
  *
  */
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] select_rectangle() 去除 XGrabServer：修复现代输入注入
+//   （VNC/XTEST/xdotool）下 ButtonRelease 请求被 server grab 冻结、
+//   与 XMaskEvent 死等 Release 形成双向死锁的问题（详见函数内注释）
+
 #include <qdir.h>
 
 #include "../kfm/xdgdirs.h"	// [KDE1 Revival 2026] XDG 用户目录解析（与 kfm 共用）
@@ -693,7 +700,21 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
 			    ButtonPressMask | ButtonReleaseMask |
 			    PointerMotionMask ,
 			    arrowCursor.handle(), 0);
-  XGrabServer(qt_xdisplay());
+  // ┌─ What : 桌面橡皮筋框选的锁死修复——此处不再 XGrabServer
+  // │  Why  : 原代码在此冻结整个 X server 以防框选期间他处重绘。1999 年
+  // │        真鼠标的释放事件由内核输入直通、不受 server grab 影响；
+  // │        但现代输入注入（x11vnc/VNC 的 XTEST、xdotool）产生的
+  // │        ButtonRelease 属于客户端请求，会被 server grab 冻在服务器
+  // │        队列里，而下方 XMaskEvent 死等该 Release 才肯执行
+  // │        XUngrabServer——双向死锁，且指针 grab 悬挂后吞掉后续全部
+  // │        点击（沙箱 VNC 实测：桌面空白处单击数次即整机"失效"，
+  // │        gdb 栈停在本函数的 XMaskEvent，kwm/kpanel/kfm 全部无恙）。
+  // │  How  : 指针 grab（XChangeActivePointerGrab）本身已保证 release
+  // │        与 motion 事件送达本进程，server grab 仅是"框选期间他处
+  // │        不重绘"的化妆性效果——删除之，输入注入路径即完全畅通。
+  // │  When : 每次桌面空白处左键按下（LeftButton 默认进入框选）即本路径
+  // │  Where: KRootWm::select_rectangle()，krootwm 唯一的 server grab 点
+  // │        （已全库核查，kdebase 内无其他 XGrabServer 依赖客户端请求处）
 
   draw_selection_rectangle(x, y, dx, dy);
 
@@ -744,7 +765,7 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   draw_selection_rectangle(x, y, dx, dy);
   XFlush(qt_xdisplay());
 
-  XUngrabServer(qt_xdisplay());
+  // 修复同步：上方已不再 XGrabServer，此处 XUngrabServer 一并移除
   XAllowEvents(qt_xdisplay(), AsyncPointer, CurrentTime);
   XSync(qt_xdisplay(), False);
 

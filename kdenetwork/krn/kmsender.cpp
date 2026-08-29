@@ -588,7 +588,7 @@ bool KMSendSMTP::start(void)
   if(!mClient->IsOpen()) // Check if connection succeded
   {
     TQString str;  /* TQt3 迁移 */
-    str.sprintf(i18n("Cannot open SMTP connection to\n"
+    str = kde_sprintf(i18n("Cannot open SMTP connection to\n"
 			       "host %s for sending:\n%s"), 
 		(const char*)mSender->smtpHost(),
 		(const char*)mClient->Response().c_str());
@@ -703,7 +703,7 @@ bool KMSendSMTP::smtpFailed(const char* inCommand,
   if (replyCode==0 && (!errorStr || !*errorStr))
     errorStr = i18n("network error");
 
-  str.sprintf(i18n("a SMTP error occured.\n"
+  str = kde_sprintf(i18n("a SMTP error occured.\n"
 			     "Command: %s\n"
 			     "Response: %s\n" 
 			     "Return code: %d"),

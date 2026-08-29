@@ -242,7 +242,7 @@ void Korn::help()
 void Korn::about()
 {
 	QString str;
-	str.sprintf(i18n("Korn %s -- Sirtaj Singh Kang\n" 
+	str = kde_sprintf(i18n("Korn %s -- Sirtaj Singh Kang\n" 
 					"taj@kde.org, 1997\n\n"
 					"The K Desktop Environment"),
 					VERSION);

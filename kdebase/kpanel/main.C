@@ -3,6 +3,12 @@
 // Copyright (C) 1996,97 Matthias Ettrich
 //
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] 试验过 show() 前登记 KWM_DOCKWINDOW 求贴边，因主窗口整体
+//   消失已回退；面板贴边问题已定位待续（详见 show() 处标注）
+
 #include "kpanel.h"
 #include <qapp.h>
 #include <kwmmapp.h>
@@ -194,6 +200,10 @@ int main( int argc, char ** argv ){
 
   // connect to kwm as docking module
   myapp.connectToKWM(true);
+  // [KDE1 Revival 2026] 曾试验 show() 前登记 KWM_DOCKWINDOW 以求 kwm 免管理、
+  // 面板贴边——但主窗口随之整体消失（TQt3 顶层窗口生命周期与 dock 免管理
+  // 的交互未摸清），已回退。面板贴边问题待续（现状：kwm 智能摆位致面板
+  // 高于底缘约一个自身高度，功能无碍）。
   the_panel->launchSwallowedApplications();
   the_panel->show();
   the_panel->raise();

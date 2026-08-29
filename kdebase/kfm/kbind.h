@@ -1,6 +1,12 @@
 #ifndef KBIND_H
 #define KBIND_H
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] pixmapCache 由 QPixmapCache 改为自有 QDict<QPixmap>：
+//   修复 TQt3 全局像素图缓存超限自动回收导致的桌面图标点击 SEGV（详见成员注释）
+
 class KMimeType;
 class KMimeBind;
 
@@ -8,7 +14,7 @@ class KMimeBind;
 #include <qlist.h>
 #include <qstrlist.h>
 #include <qfile.h>
-#include <qpmcache.h>
+#include <qdict.h>
 
 #include <kurl.h>
 #include <kapp.h>
@@ -469,7 +475,21 @@ public:
 
     static const char* getDefaultPixmap() { return "unknown.xpm"; }
 
-    static QPixmapCache* pixmapCache;
+    // ┌─ What : MIME 图标像素图缓存（键 = 图标文件路径）
+    // │  Why  : 原为 QPixmapCache——Qt1 时代是实例级私有缓存；TQt3 的
+    // │        TQPixmapCache 是全进程静态全局缓存，且容量超限（默认
+    // │        1024KB）时会自动删除旧像素图（qpixmapcache.cpp 超限收缩
+    // │        setMaxCost(totalCost()*3/4) 路径）。而 KRootIcon/KMimeBind/
+    // │        kfmtree 等处直接持有缓存内对象的裸指针（root.h「Dont
+    // │        delete this pixmap」契约），对象被缓存回收后，点击图标
+    // │        触发 KRootIcon::init() 里 pixmap->width() 即 SEGV
+    // │        （沙箱实测：点击桌面图标 kfm 必崩）。
+    // │        改为自有 QDict：autoDelete 打开保证进程退出时统一释放，
+    // │        运行期无任何清理路径——指针永久有效，语义回归 Qt1 私有缓存。
+    // │  Who  : KMimeType::getPixmap / KDELnkMimeType::getPixmap /
+    // │        KMimeBind::getPixmap 的唯一缓存后端
+    // │  When : InitStatic() 首次调用时创建，进程退出时随静态析构释放
+    static QDict<QPixmap>* pixmapCache;
    
     /**
      * Initializes the mime type detection module.

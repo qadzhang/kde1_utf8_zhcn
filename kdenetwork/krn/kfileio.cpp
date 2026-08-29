@@ -92,7 +92,7 @@ QString kFileToString(const char* aFileName, bool aEnsureNL, bool aVerbose)
   if (readLen < len)
   {
     TQString msg;  /* TQt3 迁移 */
-    msg.sprintf(i18n("Could only read %u bytes of %u."),
+    msg = kde_sprintf(i18n("Could only read %u bytes of %u."),
 		readLen, len);
     msgDialog(msg);
     return 0;
@@ -120,7 +120,7 @@ bool kStringToFile(const QString aBuffer, const char* aFileName,
     if (aAskIfExists)
     {
       TQString str;  /* TQt3 迁移 */
-      str.sprintf(i18n(
+      str = kde_sprintf(i18n(
 		  "File %s exists.\nDo you want to replace it ?"),
 		  aFileName);
       rc = QMessageBox::information(NULL, i18n("Information"),
@@ -177,7 +177,7 @@ bool kStringToFile(const QString aBuffer, const char* aFileName,
   else if (writeLen < len)
   {
     TQString msg;  /* TQt3 迁移 */
-    msg.sprintf(i18n("Could only write %d bytes of %d."),
+    msg = kde_sprintf(i18n("Could only write %d bytes of %d."),
 		writeLen, len);
     msgDialog(msg);
     return FALSE;

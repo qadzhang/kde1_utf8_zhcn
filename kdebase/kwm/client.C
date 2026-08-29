@@ -1374,9 +1374,14 @@ void Client::setLabel(){
   if (oldlabel != label){
     if (isVisible())
 	paintState( TRUE );
+    // [KDE1 Revival 2026, TQt3 port] X11 properties count BYTES: TQt3's
+    // length() counts CHARACTERS, so Chinese UTF-8 labels got cut mid-
+    // sequence here (kpanel taskbar tab showed a tofu tail). Same bug
+    // family as setQStringProperty in kwm.cpp. Written with GLM-5.3 (Z.ai).
+    const char *labelBytes = label.data();
     XChangeProperty(qt_xdisplay(), window, a, XA_STRING, 8,
-		    PropModeReplace, (unsigned char *)(label.data()),
-		    label.length()+1);
+		    PropModeReplace, (unsigned char *)labelBytes,
+		    strlen(labelBytes)+1);
 
   }
 

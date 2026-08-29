@@ -217,6 +217,10 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 {
     jobURL = "";
 
+    // [KDE1 Revival 2026] 每次新的打开请求清零零条目重试标记
+    // （slotFinished 的自动重试用它防死循环，详见该函数注释）
+    retryEmptyUsed = false;
+
     nextXOffset = _xoffset;
     nextYOffset = _yoffset;
     if (_reload && (_xoffset==0) && (_yoffset==0)) {
@@ -545,6 +549,21 @@ void KFMManager::slotError( int, const char * )
     }
     //-------- Sven's overlayed mime/app dirs end ---
     bFinished = TRUE;
+
+    // ┌─ [KDE1 Revival 2026] 错误页：杜绝静默白屏
+    // │  What : 出错时向视图写一个最小的错误提示页（原实现直接留白，
+    // │        连 begin 都不调——用户只见白屏，无从得知发生了什么）
+    // │  How  : view->begin/write/end 走正常渲染管线；retryEmptyUsed
+    // │        同步置位，避免 slotFinished 后续再触发零条目重试
+    // └──────────────────────────────────────────────────────────┘
+    retryEmptyUsed = true;
+    view->begin( url );
+    QString page;
+    page << "<html><body bgcolor=\"#ffffff\"><br><center><b>"
+         << klocale->translate( "Could not load" ) << "</b><br><br>"
+         << url << "</center></body></html>";
+    view->write( page );
+    view->end();
 
     // Stop the spinning gear
     view->getGUI()->slotRemoveWaitingWidget( view );
@@ -1385,6 +1404,43 @@ void KFMManager::slotFinished()
 	return;
     }
     
+    /* ┌─ [KDE1 Revival 2026] 零条目自动重试（白屏兜底）
+    // │  What : listing「正常结束」但一条目录项都没收到时，若目标本地
+    // │        目录确有内容，自动重发一次 openURL
+    // │  Why  : kioslave 池按 FIFO 分发 + KIOJob::slotDirEntry 逐字节
+    // │        URL 匹配路由——同 URL 并发多窗口（双击桌面图标连开）时
+    // │        条目可能整体喂给先绑定的 job，其余 job 零条目零错误地
+    // │        "完成"，writeBeginning/writeEnd 写出空壳页面 → 内容区
+    // │        白屏（gdb 实证：白窗 clue 树 0 子节点、渲染管线健康、
+    // │        晚些时候单发请求 100% 渲染成功）。
+    // │  How  : opendir 实数目录项 >0 才重试；retryEmptyUsed 防死循环
+    // │        （openURL 入口清零）；_refresh=true 强制重走 listing
+    // └──────────────────────────────────────────────────────────────┘ */
+    if ( files.count() == 0 && !bHTML && !retryEmptyUsed )
+    {
+	KURL u( url );
+	if ( !u.isMalformed() && !u.hasSubProtocol()
+	     && strcmp( u.protocol(), "file" ) == 0 )
+	{
+	    DIR *dp = opendir( u.path() );
+	    if ( dp )
+	    {
+		int n = 0;
+		struct dirent *de;
+		while ( (de = readdir( dp )) != 0 )
+		    if ( strcmp( de->d_name, "." ) && strcmp( de->d_name, ".." ) )
+			n++;
+		closedir( dp );
+		if ( n > 0 )
+		{
+		    retryEmptyUsed = true;
+		    openURL( url, true, 0, 0 );
+		    return;
+		}
+	    }
+	}
+    }
+
     if ( files.count() == 0 )
 	writeBeginning();
 

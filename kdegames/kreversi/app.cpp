@@ -601,15 +601,15 @@ void App::slotScore() {
 
   b->getScore(black, white);
   if(b->humanIs() == Score::BLACK) {
-    s1.sprintf(locale->translate("You (%s): %d"), 
+    s1 = kde_sprintf(locale->translate("You (%s): %d"),
 	       locale->translate("blue"), black);
-    s2.sprintf(locale->translate("Computer (%s): %d"), 
+    s2 = kde_sprintf(locale->translate("Computer (%s): %d"),
 	       locale->translate("red"), white);
   } else {
-    s2.sprintf(locale->translate("You (%s): %d"), 
-	       locale->translate("red"), white);
-    s1.sprintf(locale->translate("Computer (%s): %d"), 
-	       locale->translate("blue"), black);
+    s2 = kde_sprintf(locale->translate("You (%s): %d"),
+		       locale->translate("red"), white);
+    s1 = kde_sprintf(locale->translate("Computer (%s): %d"),
+		       locale->translate("blue"), black);
   }
 
   sb->changeItem((char *)(const char *)s1, SB_SCOREH);
@@ -663,7 +663,7 @@ void App::slotGameEnded(int color) {
   
   if(color == Score::NOBODY) {
     playSound("drawn.wav");
-    s.sprintf(locale->translate("Game is drawn!\n\nYou     : %d\nComputer: %d"), winner, loser);
+    s = kde_sprintf(locale->translate("Game is drawn!\n\nYou     : %d\nComputer: %d"), winner, loser);
     KMsgBox::message(this, locale->translate("Game ended"), (const char *)s);
   } else if(b->humanIs() == color) {
     // calculate score
@@ -674,7 +674,7 @@ void App::slotGameEnded(int color) {
                  100.0;
 
     playSound("won.wav");
-    s.sprintf(locale->translate("Congratulations, you have won!\n\nYou     : %d\nComputer: %d\nYour rating %4.1f%%"), 
+    s = kde_sprintf(locale->translate("Congratulations, you have won!\n\nYou     : %d\nComputer: %d\nYour rating %4.1f%%"), 
 	      winner, loser, score);
     KMsgBox::message(this, locale->translate("Game ended"), (const char *)s);
 
@@ -694,7 +694,7 @@ void App::slotGameEnded(int color) {
     }
   } else {
     playSound("lost.wav");
-    s.sprintf(locale->translate("You have lost the game!\n\nYou     : %d\nComputer: %d"), 
+    s = kde_sprintf(locale->translate("You have lost the game!\n\nYou     : %d\nComputer: %d"), 
 	      loser, winner);
     KMsgBox::message(this, locale->translate("Game ended"), (const char *)s);
   }

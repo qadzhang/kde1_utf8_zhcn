@@ -50,7 +50,7 @@ DockWidget::DockWidget(const char *name)
   QString tmp;
 
 #define PMERROR(pm) \
-  tmp.sprintf(i18n("Could not load %s !"), pm); \
+  tmp = kde_sprintf(i18n("Could not load %s !"), pm); \
   QMessageBox::warning(this, i18n("Error"), tmp);
 
   // load pixmaps

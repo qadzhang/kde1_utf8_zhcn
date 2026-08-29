@@ -153,7 +153,7 @@ bool Data::eject(){
   
   if(printpipe == NULL){
     QString str;
-    str.sprintf(i18n("Unable to print with:\n %s"),cmd.data());
+    str = kde_sprintf(i18n("Unable to print with:\n %s"),cmd.data());
     QMessageBox::message(i18n("Sorry"),str.data(),i18n("OK"));
     return FALSE;
   }
@@ -189,7 +189,7 @@ bool Data::reset(){
   
   if(printpipe == NULL){
     QString str;
-    str.sprintf(i18n("Unable to print with:\n %s"),cmd.data());
+    str = kde_sprintf(i18n("Unable to print with:\n %s"),cmd.data());
     QMessageBox::message(i18n("Sorry"),str.data(),i18n("OK"));
     return FALSE;
   }

@@ -2,6 +2,58 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-29（第七批：中文目录导航根治——双缺陷叠加 + tqt3 补丁 001 裁决）
+
+- **kfm 中文目录导航根治（用户报告"点击中文目录报服务器上没有这个目录"的完整闭环）**：经 KURL 回环单测、strace 系统调用实证、五层打点（IPC parse/parse_dirEntry/slotDirEntry/manager/newSlave-getSlave）与 gdb 断点，定性为两个叠加缺陷，分别修复并双路终验通过（原始中文 URL 与百分号编码 URL 均正确进入目录列出内容，视觉模型核验）：
+  ① **KURL::decodeURL UTF-8 字节流化**（kdelibs/kdecore/kurl.cpp）：原实现逐 QChar 取 latin1()，TQt3 的 TQString 为 UTF-16，中文字符 latin1() 返回 0（NUL），解码产物在第一个中文处截断——KURL("file:/a/公共").path() 只剩 "/a/"（实测），kioslave 因此拿到断头路径。改为对 utf8() 字节流做 %XX 解码后 fromUtf8 还原，顺带修正两个 1999 边界缺陷（孤立 '%' 越界读、'%' 后非十六进制编出假字节，现原样保留）。
+  ② **tqt3-patches/002：TQString == const char* 遵循 codecForCStrings**（src/tools/qstring.cpp operator==）：TQt3 原实现逐字节比较（UTF-16 码位 vs (uchar) 单字节），中文经 UTF-8 解码进 TQString 后与其原始字节流永不相等且不受 setCodecForCStrings 影响——kfm 的 KIOJob::slotDirEntry 按 URL 字符串匹配路由目录条目，slave 上报与 lstURL **打印完全相同却比较不等**（实证），条目全部静默失配、窗口内容区空白。补丁使设置了 C 字符串 codec 时先经 codec 解码再比较（fromAscii 内部即 codecForCStrings()->toUnicode），未设 codec 的原生 TQt3 程序走原字节路径行为不变；单测四例（中文等/不等/ASCII/char* 左侧）全过。此为全局性 UTF-8 融合缺陷（验收标准第 8 条范畴），KDE1 代码所有 "TQString == char*" 比较点一并受益。
+  - **排查方法教训登记**：中途"slot 未被调用"是误判——不匹配分支的调试输出误用 printf（stdout 重定向到文件时全缓冲），输出憋在缓冲区；stderr（无缓冲）才是打点正确通道。gdb 断点曾证明 slot 实际被调用而日志无输出，两相矛盾才暴露此节。
+- **kwm Client::setLabel 的 KWM_WIN_TITLE 字节截断修复（kpanel 任务栏标签 tofu）**：kwm 把窗口名写回 KWM_WIN_TITLE 供模块读取时用 `label.length()+1` 当字节数（同族第三处）——中文 URL 拦腰截断（"公共"→"公"+孤立字节，任务栏标签末尾方框）。gdb 条件断点（XChangeProperty 且 atom==KWM_WIN_TITLE）抓到写入栈为 Client::setLabel，改 `strlen(bytes)+1` 后实测属性完整（公共+斜杠齐整），全量重启终验任务栏标签显示完整 URL。排查附带确认：该属性仅在窗口创建/改名时一次性写入，之后不再刷新。
+- **tqt3-patches/001（ntqvariant Bool 宏）删除**：该补丁在枚举后 `#define Bool int` 恢复 X11 宏——宏泄漏后污染 TQt3 自身源码（qvariant.cpp 的 `case Bool:`、`TQVariant::Bool` 全部语法错误），实际从未通过编译验证（时间线考证：staging 库建于补丁打入之前，staging 头文件一直 pristine，六模块全部编译通过——证明 TQt3 构建根本不需要它；C++ 作用域规则下类内枚举器 Bool 与全局 typedef 本就不冲突）。tqt3-build/ 内残留已还原 pristine，全量增量重编通过。
+- **libtqt-mt 全量增量重编**（pristine + 002）：qstring.o 重编译并重链接主库，装载 staging；kdelibs（kurl.cpp）与 kdebase kfm 同步重编装载。临时调试打点全部清理（§5.2.3）。
+- **文档同步**：AGENTS.md §3 补丁条目、build.sh 注释、tqt3-patches/README.md 由"ntqvariant/空"更新为"当前 1 个：002 qstring UTF-8 比较修复"。
+- **遗留登记**：TQString 的 operator</ucstrcmp 系字节比较同样语义存疑（排序场景未见实锤，待审计）；kfm 每窗口约 10 个 X 窗口泄漏（QPopupMenu 构造即建窗/书签子菜单泄漏，上批已记）；`const char*` 信号签名连接失败（KLined::textChanged/setText 等）全库清扫仍待做。
+
+## 2026-08-29（第六批：kfm 目录白屏根治——数据侧三连修）
+
+- **kfm 文件窗口内容区白屏根治（经子代理 gdb 深查定性）**：白屏非渲染缺陷——渲染管线经断点/重绘实证完全健康，根因在数据侧：同 URL 并发多窗口（双击桌面图标连开）时 kioslave 池 FIFO 分发 + KIOJob::slotDirEntry 逐字节 URL 匹配路由，条目整体喂给先绑定的 job，其余 job 零条目零错误"完成"，KFMManager::slotFinished 对零条目写空壳页（writeBeginning+writeEnd）→ 白屏（实证 9 窗 8 白 1 满）。修复三连：① slotFinished 零条目自动重试——opendir 实数确认目标本地目录非空才重发一次 openURL(_refresh)，retryEmptyUsed 防死循环；② slotError 改写最小错误页（原实现静默留白，无从得知出错）；③ KURL::encodeURL UTF-8 化——原逐 QChar 取 latin1()，TQt3 UTF-16 下中文字符得 0 编出 %00%00（实测"下载/"→ file:.../%00%00/），改为对 utf8() 字节流百分号编码（实测"公共"→ %E5%85%AC%E5%85%B1 正确）。
+- **实测**：双击桌面图标并发连开两窗全部完整渲染；回收站窗口（freedesktop 路径）正常；诊断过程 kfm 曾被子代理的实验性 gdb inferior call 触发 SIGSEGV 退出（旧空窗口状态已损坏的旁证），按原方式拉起恢复。
+- **遗留登记**：中文目录点击导航仍报"服务器上没有这个目录"——编码侧已正确（%E5%85%AC%...），断点在 kioslave 侧对编码 URL 的解码/访问更深处，待下批排查；kioslave 池竞争的治本方案（本地目录进程内枚举，KFMJob::openDir 直出）已在诊断报告中评估，留作备选。
+
+## 2026-08-29（第五批：任务栏中文方块 + 控制中心翻译/可用性三连修）
+
+- **任务栏按钮中文方块根治**：myTaskButton::drawButtonLabel 经 KCharsetConverter 变换字体族后绘制——变换字体在矩形 drawText 排版路径丢字形回退，"文本编辑器"渲染成 5 个方块（ASCII 正常、K 菜单同路径的原字体中文完好）。修复：绕开转换器直接用原字体与原字符串（UTF-8 全局策略下该转换本为恒等变换，仅字体被错误改写）。
+- **资源目录运行期解析全面铺开（kapp.cpp 13 个 kde_*dir() 统一改造）**：烧录前缀问题的第二处实锤——kde_localedir() 返回编译期烧录的 /usr/kde1/share/locale/kde1，mo 翻译全部读自机器上旧 deb 的树（旧树有条目的显示中文、没有的显示英文，"大量未翻译"的根因）。新增共享助手 kde_runtime_resource_dir()：优先 $KDEDIR 拼接（剥烧录前缀取后缀），未设置回落烧录值（1999 的 KDEDIR 字面量语义保留）；htmldir/appsdir/icondir/datadir/localedir/cgidir/sounddir/toolbardir/wallpaperdir/bindir/partsdir/configdir/mimedir 全部接入。实测控制中心背景模块界面全面中文（一色背景/壁纸/颜色/预览）。
+- **控制中心"点不动"实测已愈**：kcm 模块经 KProcess 启动 + kwm doNotManage 标题豁免 + windowAdd 信号吞入的三段链路在修复后的 kwm（MWM 尊重修复的连带收益）下端到端正常——双击树项模块嵌入显示，无悬空窗口；用户此前遇到的失败与悬空 skcm 窗口系上一轮坏 kwm 所致，本轮会话复测通过。kdelnk 菜单名（本轮前批已译）在树中正常显示中文。
+
+## 2026-08-29（第四批：面板贴边根治 + 标题栏回归修复）
+
+- **面板/任务栏贴屏幕边缘根治（P4 收官）**：kwm 映射期把面板窗口当普通窗口"钳入"工作区——而工作区正是面板自己预留的排除区（0+34+1280x881），顶部任务栏被推到 (0,34)、底部面板被钳到 (0,870)，各向内偏离恰好一个自身高度（kwm 调试打印实测与排除区数值精确吻合）。修复：kwm manage() 的钳制分支增加"边缘贴边窗口豁免"——完全位于屏内且四边之一与屏幕边缘重合的窗口（面板形态）不做钳制（钳制本意是保证可见，贴边窗口本就全可见）。曾试验 kpanel 侧"映射前临时还原全屏工作区"，因 showEvent 触发的 doGeometry 在毫秒间收回区域、纯时序竞态不可靠而放弃（试验记录在 kpanel.C show() 注释）。
+- **上一批 kwm 修复的标题栏回归修正**：上批 getMwmHints 按"KWM_WIN_DECORATION 属性存在即跳过 Motif 解读"的判据有误——kwm/libkde 读该属性时对缺失窗口会写回默认值 1，manage 后所有窗口都"带有"属性，kpanel 的 Motif 无边框提示被无视 → 上下面板被画上可点击关闭的标题栏。修正为 manage() 改用裸 XGetWindowProperty 读取（不写回）并记录"客户程序是否自行声明"（Client 新增 kwm_decoration_client_set 成员），getMwmHints 仅对客户声明的窗口豁免——kfm 桌面图标（1280 声明）保持隐藏，kpanel（无声明）继续走 Motif 无边框路径，两者各得其所。
+- 终验：顶部任务栏 1280x34+0+0、底部面板 1280x45+0+915（精确贴底），均无边框；任务栏仅真实程序条目；桌面图标正常；临时调试输出全部清理。
+
+## 2026-08-29（第三批：任务栏 kfm 假条目根治——回到 kwm 原生机制）
+
+- **任务栏 "kfm <2>…<9>" 假条目根治（经子代理独立复核修正根因）**：桌面图标窗（KRootIcon）的 KWM 装饰属性 desktopIcon|noFocus 在 manage 时被 kwm 自己覆盖——TQt3 对 WStyle_Customize 窗口一律写 _MOTIF_WM_HINTS(decorations=0)，kwm 的 getMwmHints 据此把 KWM_WIN_DECORATION 回写成 0，回写又触发属性监听链（wants_focus 重算为 true、hidden_for_modules 撤销、WIN_ADD 重发），图标窗被主动推进任务栏。修复双管齐下：①kfm 的 KRootIcon 改为 show() 前写 desktopIcon|noFocus（Qt1 惰性 show 顺序在 TQt3 下失效的时序补偿）；②kwm getMwmHints 增加优先级判定——窗口已带 KWM_WIN_DECORATION 属性时跳过 MWM 解读与回写（KDE 原生提示优先；无 KWM 属性的非 KDE 程序如 StarOffice 行为不变）。活体实验定位：manage 后补写 1280 条目即消失（无覆盖），构造期写入则被覆盖，证明覆盖链在 manage 期。终验：图标窗属性稳定 0x500，任务栏仅剩真实程序，桌面图标显示/点击无回归；kpanel 侧黑名单已撤，仅留自身窗口与 desktopIcon 位双道防御。
+- **字符集假设排查（未成立）**：kwm 标题读取路径（getTextProperty/Xmb）经 git diff 零迁移改动、中文标题全程正常、"kfm" 默认窗口名系 TQt3 XStoreName(tqAppName) 行为——任务栏假条目与字符集无关。
+- **遗留登记（X 资源卫生，非任务栏问题）**：TQt3 的 QPopupMenu 构造期即建 X 窗（override-redirect 未映射 popup，不进任务栏）+ kfmgui 书签子菜单/析构菜单泄漏 + kapp 通信窗泄漏——每个 kfm 窗口生命周期净漏约 10 个 X 窗口（32 个 640x384 幽灵窗的来源），待后续窗口生命周期清理。
+
+## 2026-08-29（第二批：K 菜单全面汉化 + 翻译格式串乱码根治）
+
+- **K 菜单 applnk 树 167 项全面汉化**：菜单项文字取自 applnk 的 .kdelnk/.directory 的 Name 字段而非 .mo，此前 321 条 po 补译覆盖不到——K 菜单分类与全部应用项因此大面积英文。以运维脚本对 staging 与源码树同步插入 `Name[zh_CN.UTF-8]`/`Name[zh_CN]` 双键（8-28 已验证的策略），译名对齐 KDE6 zh_CN 官方术语（扫雷/黑白棋/空当接龙/四川省/仓库番/便笺/剪贴板/世界时钟/软盘格式化等），KDE6 无对应物者用通行译法（弹珠棋/星际征服/笑脸俄罗斯方块等）。实测 K 菜单两级全中文。
+- **kde_appsdir 运行期解析修复（kapp.cpp）**：applnk/locale 等资源目录用编译期烧录的 KDE_APPSDIR 绝对路径，$KDEDIR 环境变量被无视——沙箱（staging 树）与 deb 安装共用二进制时菜单读到烧录前缀下的旧文件（沙箱实测 40 余项菜单读自 /usr/kde1 旧文件）。kde_appsdir 改为优先 `$KDEDIR`（未设置回落烧录前缀，正式 deb 环境行为不变）。
+- **翻译格式串乱码根治（kde_sprintf，153 处调用点）**：KDE1 遍布 `sprintf(locale->translate(FMT), …)` 形态——TQString::sprintf 扫描 format 用 const char* 逐字节 Latin1 升位，mo 译文的中文被拆成逐字节假字符（"您"→3 个方框、"电脑"→6 个，kreversi 状态栏/kcalc 组框实测）。在 port/q1compat.h 新增 `kde_sprintf`：format 经 fromUtf8 正确解码、%s 走 fromUtf8、数值字段按 length_mod 取参组 ASCII 子格式串交 vsnprintf；调用点批量改写 153 处（56 文件）。修复过程中发现并修掉初版实现的越界缺陷（fromUtf8 结果的 unicode() 数组未保证 NUL 终止，isNull() 判终止扫进相邻堆块拼出假字符——改用 length() 显式界定）。
+- **遗留补充**：kedit 状态栏 "Line/Col" 无中文译文（kedit.mo 缺条目，翻译补齐范畴）；knotes 启动时 mini/knotes.xpm 图标缺失弹错误框（图标资源补齐范畴）；konsole/other/secure.patch 为文档性补丁不参与构建。
+
+## 2026-08-29（沙箱体验周：三连崩溃/死锁根治 + XIM 插件补装）
+
+- **新增 `sandbox.sh`**：Xvfb `:99` + fcitx5（私有会话 DBus，与宿主输入法总线隔离）+ x11vnc（仅 127.0.0.1:5901）+ libpulsedsp 音效转发，一键起停的后台桌面沙箱，Remmina 连入即可体验 staging 版 KDE1 而不扰宿主会话；会话环境与 deb 包装模板 startkde-kde1.in 逐字对齐（补 `TQTDIR` 与 `tqt3/lib` 库路径；音效直接预载 libpulsedsp——Debian 12 的 padsp 命令自带预载路径模板损坏）。AGENTS.md §3/§4 同步。
+- **XIM 输入法插件补装（打包回归修复）**：8 月 28 日编译好的 TQt3 输入法插件（libqxim 等四件）一直躺在 `tqt3-build/plugins/inputmethods/` 未被安装——build.sh 的 TQt3 安装清单只拷了 imageformats。补装后 fcitx5 经 XIM 在 TQt3 应用（kedit 实测）恢复激活，`:99` 根窗口 `XIM_SERVERS=@server=fcitx` 注册正常；build.sh 安装清单同步加入 inputmethods。
+- **kfm 点击桌面图标必崩（SEGV）根治**：Qt1 的 `QPixmapCache` 是实例级私有缓存，TQt3 的 `TQPixmapCache` 是全进程静态全局缓存且超 1MB 自动回收像素图，而 KRootIcon 等直接持有缓存内裸指针，被回收后点击图标触发 `KRootIcon::init()` 的 `pixmap->width()` 即段错误。改为 kfm 自有 `QDict<QPixmap>`（autoDelete 仅随进程退出生效，运行期永不清理，语义回归 Qt1 私有缓存）。
+- **krootwm/kwm 五处 XGrabServer 死锁根治**：桌面空白处左键框选（select_rectangle）、透明拖动、杀窗口模式与注销/任务表/警告三个模态对话框，均为 XGrabServer 冻结全 server 后 XMaskEvent 死等按键释放——1999 年真鼠标的释放走设备直通无事，VNC/XTEST 注入的释放属客户端请求会被 server grab 冻在队列，形成双向死锁，且指针 grab 悬挂后吞掉后续全部点击（"点几下就失效"的真凶）。全部移除 server grab（指针/键盘 grab 保证事件通路，模态性不变）；kwm 其余瞬时竞争保护型 grab 经甄别保留。
+- **面板/任务栏贴边定位未遂**：实测确认面板自身 setGeometry 的贴底计算正确，是 kwm 智能摆位把面板框架抬高约一个自身高度；试验 dock 化（KWM_DOCKWINDOW 原子 + manage 分支 XMapWindow 放行）出现"主窗口整体消失 + kbgndwm 隐身模块窗口被误照亮"两个副作用，已整体回退，机理与现状标注在 kpanel.C/main.C/manager.C，待后续以正确途径（kwm 识别面板窗口特征或 kpanel 走 module 协议申报几何）解决。
+- **遗留清单（本轮新登记）**：kfm 目录视图内容区空白（文件列表不渲染）；桌面出现 `.directory` 隐藏文件图标（kfm 根桌面未滤点文件）；`const char*` 信号签名在 TQt3 下连接失败（KLined::textChanged/setText、TQLabel::setText 等，Reversi 状态栏等处静默失效）需全库清扫；kwm 拉屏保走烧录绝对路径 `/usr/kde1/bin`（本机旧 Qt1 残留 deb 的二进制，符号不匹配必崩）。
+
 ## 2026-08-29（底座更换：Qt1 → TQt3）
 
 - **GUI 底座由 Qt Free Edition 1.44 更换为 TQt3 r14.1.6**（Trinity 维护的 Qt3 分支，GPLv2——解决 Qt1 专有许可证修改分发无授权的合规死结）。`tqt3/` 为 pristine 快照（commit 3a07835），源地址 `https://mirror.git.trinitydesktop.org/gitea/TDE/tqt3`；一切修改走 `tqt3-patches/`（当前 1 个：ntqvariant 的 X11 Bool 宏冲突），构建期打入 `tqt3-build/` 拷贝树。

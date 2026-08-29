@@ -1539,7 +1539,7 @@ void QtCalculator::configclicked(){
   label2->setGeometry(20,150,280,100);
 
   QString labelstring;
-  labelstring.sprintf(i18n("KCalc %s\n"
+  labelstring = kde_sprintf(i18n("KCalc %s\n"
 			   "Bernd Johannes Wuebben\n"
 			   "wuebben@math.cornell.edu\n"
 			   "wuebben@kde.org\n"

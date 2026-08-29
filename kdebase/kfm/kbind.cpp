@@ -2,6 +2,12 @@
  * "$Id"
  */
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] pixmapCache 由 QPixmapCache 改为自有 QDict<QPixmap>：
+//   修复 TQt3 全局像素图缓存超限自动回收导致的桌面图标点击 SEGV（详见 kbind.h 成员注释）
+
 #include <qdir.h>
 
 #include <sys/types.h>
@@ -33,7 +39,8 @@
 
 #include "config.h"
 
-QPixmapCache* KMimeType::pixmapCache = 0L;
+// 类型与 kbind.h 中 pixmapCache 成员同步改为 QDict（原因详见该成员注释）
+QDict<QPixmap>* KMimeType::pixmapCache = 0L;
 
 KMimeMagic* KMimeType::magic = 0L;
 
@@ -67,7 +74,12 @@ void KMimeType::InitStatic()
     if ( emptyPixmap == 0L )
 	emptyPixmap = new QPixmap();
     if ( pixmapCache == 0L )
-	pixmapCache = new QPixmapCache;
+    {
+	// 自有字典缓存：运行期永不清理以保证 getPixmap 返回的指针全程有效，
+	// autoDelete 仅在进程退出、静态对象析构时生效（详见 kbind.h 成员注释）
+	pixmapCache = new QDict<QPixmap>;
+	pixmapCache->setAutoDelete( TRUE );
+    }
 }    
 
 /***************************************************************

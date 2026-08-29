@@ -47,18 +47,18 @@ void XServer_fill_screen_info( KTabListBox *lBox, Display *dpy, int scr )
 	    ((double) DisplayHeightMM(dpy,scr)));
 
     lBox->insertItem("");
-    str.sprintf(i18n("screen #%d"),(int)scr);
+    str = kde_sprintf(i18n("screen #%d"),(int)scr);
     lBox->insertItem(str);
-    str.sprintf(i18n("  dimensions          : %dx%d pixels (%dx%d mm)\n"),
+    str = kde_sprintf(i18n("  dimensions          : %dx%d pixels (%dx%d mm)\n"),
 	    DisplayWidth (dpy, scr), DisplayHeight (dpy, scr),
 	    DisplayWidthMM(dpy, scr), DisplayHeightMM (dpy, scr));
     lBox->insertItem(str);
-    str.sprintf(i18n("  resolution          : %dx%d dots per inch\n"), 
+    str = kde_sprintf(i18n("  resolution          : %dx%d dots per inch\n"), 
 		    (int) (xres + 0.5), (int) (yres + 0.5));
     lBox->insertItem(str);
     depths = XListDepths (dpy, scr, &ndepths);
     if (!depths) ndepths = 0;
-    str.sprintf(i18n("  depths (%d)          : "), ndepths);
+    str = kde_sprintf(i18n("  depths (%d)          : "), ndepths);
     for (i = 0; i < ndepths; i++) 
     {	str2.sprintf("%d", depths[i]);
 	str = str+str2;
@@ -82,17 +82,17 @@ bool GetInfo_XServer_Generic( KTabListBox *lBox )
     dpy = XOpenDisplay(NULL);
     if (!dpy)  return FALSE;
 
-    str.sprintf(i18n("name of display       : %s"),DisplayString(dpy));
+    str = kde_sprintf(i18n("name of display       : %s"),DisplayString(dpy));
     lBox->insertItem(str);
-    str.sprintf(i18n("version number        : %i.%i"),(int)ProtocolVersion(dpy),(int)ProtocolRevision(dpy));
+    str = kde_sprintf(i18n("version number        : %i.%i"),(int)ProtocolVersion(dpy),(int)ProtocolRevision(dpy));
     lBox->insertItem(str);
-    str.sprintf(i18n("vendor string         : %s"), ServerVendor(dpy));
+    str = kde_sprintf(i18n("vendor string         : %s"), ServerVendor(dpy));
     lBox->insertItem(str);
-    str.sprintf(i18n("vendor release number : %i"),(int)VendorRelease(dpy));
+    str = kde_sprintf(i18n("vendor release number : %i"),(int)VendorRelease(dpy));
     lBox->insertItem(str);
-    str.sprintf(i18n("default screen number : %i"),(int)DefaultScreen(dpy));
+    str = kde_sprintf(i18n("default screen number : %i"),(int)DefaultScreen(dpy));
     lBox->insertItem(str);
-    str.sprintf(i18n("number of screens     : %i"),(int)ScreenCount(dpy));
+    str = kde_sprintf(i18n("number of screens     : %i"),(int)ScreenCount(dpy));
 
     for (i = 0; i < ScreenCount (dpy); i++)
 	XServer_fill_screen_info (lBox,dpy, i);

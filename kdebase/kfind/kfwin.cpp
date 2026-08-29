@@ -109,14 +109,14 @@ void KfindWindow::doneSearch() {
   killTimers();
   
   QString str;
-  str.sprintf(i18n("%d file(s) found"), (int)lbx->count());
+  str = kde_sprintf(i18n("%d file(s) found"), (int)lbx->count());
   emit statusChanged(str);
 }
 
 void KfindWindow::timerEvent(QTimerEvent *) {
   if(lbx->count() > 0) {
     QString str;
-    str.sprintf(i18n("%d file(s) found"), (int)lbx->count());
+    str = kde_sprintf(i18n("%d file(s) found"), (int)lbx->count());
     emit statusChanged(str);
   }
 }
@@ -299,7 +299,7 @@ void KfindWindow::deleteFiles()
   {
     QString tmp;
 
-    tmp.sprintf(i18n("Do you really want to delete file:\n%s"),
+    tmp = kde_sprintf(i18n("Do you really want to delete file:\n%s"),
                 lbx->text(lbx->currentItem()));
     if(KMsgBox::yesNo(parentWidget(),i18n("Delete File"),
                       tmp, KMsgBox::QUESTION | KMsgBox::DB_SECOND) == 1)

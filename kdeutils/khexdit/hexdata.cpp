@@ -36,7 +36,7 @@ int HexData::load(const char *Filename) {
     QFile file(fileString);
     if (!file.open(IO_ReadOnly | IO_Raw)) {
 	QString txt;
-	txt.sprintf(i18n("Error opening %s"),fileString.data());
+	txt = kde_sprintf(i18n("Error opening %s"),fileString.data());
 	QMessageBox::message(i18n("Error"),txt,
 			     i18n("Close"));
 	return -1;

@@ -344,7 +344,7 @@ CommandDlg::slotLauchCommand()
       QString errorString;
       tqDebug("buildCommandLine = FALSE");
       // Same message in MtrDlg.cpp
-      errorString.sprintf(i18n("\nYou have a problem in your\n" 
+      errorString = kde_sprintf(i18n("\nYou have a problem in your\n" 
 			    "%s/%src\nconfiguration file.\n"
 			    "In the [%s] group,\nI can't "
 			    "find a valid \"path=\" entry.\n\n"

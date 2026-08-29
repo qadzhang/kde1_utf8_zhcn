@@ -284,7 +284,7 @@ GameBoard::turn( void )
             travelTime.setNum( turnNumber + (int)dist );
 
             QString msg;
-            msg.sprintf(i18n("The distance from Planet %s to Planet %s is %s light years.\n"
+            msg = kde_sprintf(i18n("The distance from Planet %s to Planet %s is %s light years.\n"
                               "A ship leaving this turn will arrive on turn %s"),
                               sourcePlanet->getName().data(), destPlanet->getName().data(),
                               distString.data(), travelTime.data());
@@ -423,7 +423,7 @@ GameBoard::scanForSurvivors( void )
         if( !plr->isInPlay() ) {
             // Player has bitten the dust
             QString msg;
-            msg.sprintf(i18n("The once mighty empire of %s has fallen in ruins."),
+            msg = kde_sprintf(i18n("The once mighty empire of %s has fallen in ruins."),
                         plr->getName().data());
             KMsgBox::message( this, i18n("An Empire has fallen..."),
                               msg, KMsgBox::INFORMATION );
@@ -435,7 +435,7 @@ GameBoard::scanForSurvivors( void )
         if( plr->isInPlay() ) {
             // Player has bitten the dust
             QString msg;
-            msg.sprintf(i18n("The fallen empire of %s has staggered back to life."),
+            msg = kde_sprintf(i18n("The fallen empire of %s has staggered back to life."),
 			plr->getName().data());
             KMsgBox::message( this, i18n("Up from the ashes..."),
                               msg, KMsgBox::INFORMATION );
@@ -457,7 +457,7 @@ GameBoard::doFleetArrival( AttackFleet *arrivingFleet )
         arrivingFleet->destination->getFleet().absorb(arrivingFleet);
 
         QString msg;
-        msg.sprintf(i18n("Reinforcements have arrived for planet %s"),
+        msg = kde_sprintf(i18n("Reinforcements have arrived for planet %s"),
                     arrivingFleet->destination->getName().data());
         KMsgBox::message(this, i18n("Fleet Arrival"),
                          msg, KMsgBox::INFORMATION );
@@ -502,7 +502,7 @@ GameBoard::doFleetArrival( AttackFleet *arrivingFleet )
         if( planetHolds ) {
             prizePlanet.getPlayer()->statEnemyFleetsDestroyed(1);
             QString msg;
-            msg.sprintf(i18n("Planet %s has held against an attack from %s"),
+            msg = kde_sprintf(i18n("Planet %s has held against an attack from %s"),
                         prizePlanet.getName().data(), attacker.owner->getName().data());
             KMsgBox::message(this, i18n("Planet Holds"),
                              msg, KMsgBox::INFORMATION );
@@ -512,7 +512,7 @@ GameBoard::doFleetArrival( AttackFleet *arrivingFleet )
             arrivingFleet->destination->conquer( arrivingFleet );
 
             QString msg;
-            msg.sprintf(i18n("Planet %s has fallen to %s"),
+            msg = kde_sprintf(i18n("Planet %s has fallen to %s"),
                         prizePlanet.getName().data(), attacker.owner->getName().data());
             KMsgBox::message(this, i18n("Planet Conquered"),
                              msg, KMsgBox::INFORMATION );

@@ -416,7 +416,7 @@ void KBiffSetup::slotRenameProfile()
 	QString title;
 	QString old_profile = comboProfile->currentText();
 	
-	title.sprintf(i18n("Rename Profile: %s"), (const char*)old_profile);
+	title = kde_sprintf(i18n("Rename Profile: %s"), (const char*)old_profile);
 	dlg.setCaption(title);
 	// popup the name chooser
 	if (dlg.exec())
@@ -456,8 +456,8 @@ void KBiffSetup::slotDeleteProfile()
 	QString title, msg;
 	QString profile = comboProfile->currentText();
 	
-	title.sprintf(i18n("Delete Profile: %s"), (const char*)profile);
-	msg.sprintf(i18n("Are you sure you wish to delete this profile?\n"),
+	title = kde_sprintf(i18n("Delete Profile: %s"), (const char*)profile);
+	msg = kde_sprintf(i18n("Are you sure you wish to delete this profile?\n"),
 	             (const char*)profile);
 	
 	switch (QMessageBox::warning(this, title, msg,
@@ -1691,7 +1691,7 @@ TRACEINIT("KBiffAboutTab::KBiffAboutTab()");
 	QLabel *version = new QLabel(this);
 	version->setFont(QFont("helvetica", 12));
 	QString ver_str;
-	ver_str.sprintf(i18n("Version %s\n\nCopyright (C) 1999\nKurt Granroth"), "2.3.10a");
+	ver_str = kde_sprintf(i18n("Version %s\n\nCopyright (C) 1999\nKurt Granroth"), "2.3.10a");
 	version->setText(ver_str);
 	version->setAutoResize(true);
 	version->move(x, y);

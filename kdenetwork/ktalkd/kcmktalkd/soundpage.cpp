@@ -161,7 +161,7 @@ void KSoundPageConfig::soundDropped(KDNDDropZone *zone){
     } else { // Now check for the ending ".wav"
 
       if (stricmp(".WAV",url.right(4))) {
-         msg.sprintf(i18n("Sorry, but \n%s\ndoes not seem "\
+         msg = kde_sprintf(i18n("Sorry, but \n%s\ndoes not seem "\
                             "to be a WAV--file."), url.data());
 
         QMessageBox::warning(this, klocale->translate("Improper File Extension"), msg);
@@ -172,7 +172,7 @@ void KSoundPageConfig::soundDropped(KDNDDropZone *zone){
 
         if (!addToSound_List(url)) {
           // did not add file because it is already in the list
-          msg.sprintf(i18n("The file\n"
+          msg = kde_sprintf(i18n("The file\n"
                               "%s\n"
                               "is already in the list"), url.data());
 

@@ -301,7 +301,7 @@ void TopLevel::setupMenuBar(){
   menubar->insertSeparator(-1);
 
   QString about;
-  about.sprintf(i18n("KEdit %s\n\n"
+  about = kde_sprintf(i18n("KEdit %s\n\n"
                      "Copyright 1997-98\n"
                      "Bernd Johannes Wuebben\n"
                      "wuebben@kde.org"),
@@ -876,7 +876,7 @@ void TopLevel::file_save(){
       if ( result == KEdit::KEDIT_OK ){
 	  setFileCaption();
 	  QString string;
-	  string.sprintf(i18n("Wrote: %s"),eframe->getName().data());
+	  string = kde_sprintf(i18n("Wrote: %s"),eframe->getName().data());
 	  setGeneralStatusField(string);
       }
   }
@@ -901,7 +901,7 @@ void TopLevel::file_save_as(){
   if (eframe->saveAs()== KEdit::KEDIT_OK){
     setFileCaption();
     QString string;
-    string.sprintf(i18n("Saved as: %s"),eframe->getName().data());
+    string = kde_sprintf(i18n("Saved as: %s"),eframe->getName().data());
     setGeneralStatusField(string);
   }
 }
@@ -934,7 +934,7 @@ void TopLevel::mail(){
 
   if(mailpipe == NULL){
     QString str;
-    str.sprintf(i18n("Could not pipe the contents"\
+    str = kde_sprintf(i18n("Could not pipe the contents"\
 				 "of this Document into:\n %s"),cmd.data());
 
     QMessageBox::warning(
@@ -1126,7 +1126,7 @@ void TopLevel::statusbar_slot(){
 
   QString linenumber;
 
-  linenumber.sprintf(i18n("Line: %d Col: %d"),
+  linenumber = kde_sprintf(i18n("Line: %d Col: %d"),
 		     eframe->currentLine() + 1,
 		     eframe->currentColumn() +1
 		     );
@@ -1305,10 +1305,10 @@ void TopLevel::print(){
       system(com.data());
       QString string;
       if(pi.selection)
-	string.sprintf(i18n("Printing: %s Untitled (Selection)")
+	string = kde_sprintf(i18n("Printing: %s Untitled (Selection)")
 		       , command.data());
       else
-	string.sprintf(i18n("Printing: %s Untitled")
+	string = kde_sprintf(i18n("Printing: %s Untitled")
 		       , command.data());
       setGeneralStatusField(string);
 
@@ -1345,7 +1345,7 @@ void TopLevel::print(){
 	com.sprintf("%s '%s' &",command.data(), eframe->getName().data());
 	system(com.data());
 	QString string;	
-	string.sprintf(i18n("Printing: %s"),com.data());
+	string = kde_sprintf(i18n("Printing: %s"),com.data());
 	setGeneralStatusField(string);
 
       }
@@ -1355,7 +1355,7 @@ void TopLevel::print(){
 		  tmpname.data(),tmpname.data());
 	system(com.data());
 	QString string;	
-	string.sprintf(i18n("Printing: %s %s (Selection)"),
+	string = kde_sprintf(i18n("Printing: %s %s (Selection)"),
 		       command.data(), eframe->getName().data());
 	setGeneralStatusField(string);
 
@@ -1477,7 +1477,7 @@ void TopLevel::openNetFile( const char *_url, int _mode )
 	}
         if (u->isMalformed()){
 	  QString string;
-	  string.sprintf(i18n( "Malformed URL\n%s"),netFile.data());
+	  string = kde_sprintf(i18n( "Malformed URL\n%s"),netFile.data());
 
   	  QMessageBox::warning(this,
 			       i18n("Sorry"),
@@ -1497,7 +1497,7 @@ void TopLevel::openNetFile( const char *_url, int _mode )
 	QString decoded( u->path() );
 	KURL::decodeURL( decoded );
 	QString string;
-	string.sprintf(i18n("Loading '%s'"),decoded.data() );
+	string = kde_sprintf(i18n("Loading '%s'"),decoded.data() );
 	setGeneralStatusField(string);
 	eframe->loadFile( decoded, _mode );
 	add_recent_file( decoded );
@@ -1553,7 +1553,7 @@ void TopLevel::openNetFile( const char *_url, int _mode )
 void TopLevel::slotKFMFinished()
 {
   QString string;
-  string.sprintf(i18n("Finished '%s'"),tmpFile.data());
+  string = kde_sprintf(i18n("Finished '%s'"),tmpFile.data());
   setGeneralStatusField(string);
 
     if ( kfmAction == TopLevel::GET )
@@ -2024,7 +2024,7 @@ int main (int argc, char **argv)
 		if(!file.open( IO_ReadWrite)){
 
 		  QString string;
-		  string.sprintf(i18n("Can not create:\n%s"),f.data());
+		  string = kde_sprintf(i18n("Can not create:\n%s"),f.data());
 		  QMessageBox::warning(0,
 			     i18n("Sorry"),
 			     string.data(),

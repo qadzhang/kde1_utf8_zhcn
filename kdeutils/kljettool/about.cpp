@@ -49,7 +49,7 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KLJetTool", TRUE) {
   l->setGeometry(145,40,100,30);
 
   QString s;
-  s.sprintf(i18n("Version %s"
+  s = kde_sprintf(i18n("Version %s"
   "\n\nCopyright (c) 1997\nBernd Johannes Wuebben\n"
   "wuebben@kde.org"), KLJETVERSION);
 

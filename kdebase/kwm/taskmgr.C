@@ -1,6 +1,14 @@
 // ktask
 // Copyright (C) 1997 Matthias Ettrich
 
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//   [2026-08-29] do_grabbing() 移除 XGrabServer：server grab 会冻住
+//   VNC/XTEST 注入的点击/按键请求，用户经 x11vnc 根本无法操作本对话框。
+//   模态性由 XGrabKeyboard + grabMouse 保证。机理详见 krootwm.C
+//   select_rectangle 注释。（下方 XUngrabServer 因此成为无操作，保留作防御。）
+
 #include "taskmgr.moc"
 #include <kapp.h>
 #include <qwidget.h>
@@ -242,7 +250,8 @@ bool Ktask::do_grabbing(){
   reactive = manager->current();
   if (reactive)
     reactive->setactive(False);
-  XGrabServer(qt_xdisplay());
+  // [KDE1 Revival 2026] 原 XGrabServer 已移除——server grab 冻结 VNC/XTEST
+  // 注入输入致对话框无法操作（机理详见文件头标注）
   do_not_draw = true;
   show();
   XSetInputFocus (qt_xdisplay(), winId(), RevertToParent, CurrentTime);

@@ -167,7 +167,7 @@ void PPPL_AnalyseLog(QStrList &list, QStrList &result) {
     if(p) {
       p += strlen(rmsg);
       if(strlen(p)) {
-        msg.sprintf(i18n("Notice that the remote system has sent the following"
+        msg = kde_sprintf(i18n("Notice that the remote system has sent the following"
                          " message:\n\"%s\"\nThis may give you a hint why the"
                          " the connection has failed."), p);
         result.append(msg.data());

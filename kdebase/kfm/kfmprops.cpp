@@ -386,7 +386,7 @@ void FilePropsPage::applyChanges()
         if( ret == 0 )
 	  if ( rename( path, s ) != 0 ) {
             QString tmp;
-            tmp.sprintf(i18n("Could not rename the file or directory\n%s\n"), strerror(errno));
+            tmp = kde_sprintf(i18n("Could not rename the file or directory\n%s\n"), strerror(errno));
             QMessageBox::warning( this, klocale->translate( "KFM Error" ), tmp );
           }
 	properties->emitPropertiesChanged( n );

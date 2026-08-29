@@ -134,18 +134,18 @@ TopLevel::timerEvent(QTimerEvent*)
 {
 	QString s;
 
-	s.sprintf(i18n("%d Processes"), osStatus.getNoProcesses());
+	s = kde_sprintf(i18n("%d Processes"), osStatus.getNoProcesses());
 	statusbar->changeItem(s, 0);
 
 	int dum, mUsed, mFree;
 	osStatus.getMemoryInfo(dum, mFree, mUsed, dum, dum);
-	s.sprintf(i18n("Memory: %d kB used, %d kB free"), mUsed, mFree);
+	s = kde_sprintf(i18n("Memory: %d kB used, %d kB free"), mUsed, mFree);
 	statusbar->changeItem(s, 1);
 
 	int sTotal, sFree;
 	osStatus.getSwapInfo(sTotal, sFree);
         if (sTotal) {
-            s.sprintf(i18n("Swap: %d kB used, %d kB free"), sTotal - sFree, sFree);
+            s = kde_sprintf(i18n("Swap: %d kB used, %d kB free"), sTotal - sFree, sFree);
             statusbar->changeItem(s, 2);
         } else {
             statusbar->changeItem("", 2);

@@ -664,7 +664,7 @@ bool KMSendSMTP::start(void)
     const char *response = mClient->Response().c_str();
     const char *host = mSender->smtpHost();
     TQString str;  /* TQt3 迁移 */
-    str.sprintf(i18n("Cannot open SMTP connection to\n"
+    str = kde_sprintf(i18n("Cannot open SMTP connection to\n"
 			       "host %s for sending:\n%s"), 
 		host, response);
     tqWarning((const char*)str);
@@ -786,7 +786,7 @@ bool KMSendSMTP::smtpFailed(const char* inCommand,
       errorStr = "(nothing)";
 //WABA: sprintf KILLS everytime! Don't use it! (Bug #1676)
   TQString str;  /* TQt3 迁移 */
-  str.sprintf(i18n("a SMTP error occured.\n"
+  str = kde_sprintf(i18n("a SMTP error occured.\n"
 			     "Command: %s\n"
 			     "Response: %s\n" 
 			     "Return code: %d"),
@@ -802,7 +802,7 @@ void KMSendSMTP::smtpInCmd(const char* inCommand)
 {
 //WABA: sprintf KILLS everytime! Don't use it! (Bug #1676)
   TQString str;  /* TQt3 迁移 */
-  str.sprintf(i18n("Sending SMTP command: %s"), inCommand);
+  str = kde_sprintf(i18n("Sending SMTP command: %s"), inCommand);
   statusMsg((const char *)str);
 }
 

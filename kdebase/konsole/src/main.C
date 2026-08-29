@@ -526,7 +526,7 @@ void TEDemo::setFont(int fontno)
   if ( !f.exactMatch() )
   {
     QString msg;
-    msg.sprintf(i18n("Font `%s' not found.\nCheck README.linux.console for help."), fonts[fontno]);
+    msg = kde_sprintf(i18n("Font `%s' not found.\nCheck README.linux.console for help."), fonts[fontno]);
     KMsgBox::message
     ( this,
       i18n("Error"), msg,
@@ -646,8 +646,8 @@ void TEDemo::about()
 {
   TQString title, msg;  /* TQt3 迁移 */
 
-  title.sprintf(i18n("About %s"), PACKAGE);
-  msg.sprintf(i18n(
+  title = kde_sprintf(i18n("About %s"), PACKAGE);
+  msg = kde_sprintf(i18n(
     "%s version %s - an X terminal\n"
     "\n"
     "Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
@@ -778,7 +778,7 @@ void TEDemo::doneSession(TESession* s, int status)
     QString str;
     //FIXME: "Title" is not a precise locator for the message.
     //       The command would be better.
-    str.sprintf(i18n("`%s' terminated abnormally."), s->Title());
+    str = kde_sprintf(i18n("`%s' terminated abnormally."), s->Title());
     if (WIFEXITED((status)))
     {char rcs[100]; sprintf(rcs,"%d.\n",WEXITSTATUS((status)));
       str = str + i18n("\nReturn code = ") + rcs;

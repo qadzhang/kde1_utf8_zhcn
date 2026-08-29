@@ -320,7 +320,7 @@ bool KMAcctPop::popError(const QString aStage, DwPopClient& aClient) const
   }
 
   QString tmp;
-  tmp.sprintf(i18n("Account: %s\nIn %s:\n%s"), name().data(), 
+  tmp = kde_sprintf(i18n("Account: %s\nIn %s:\n%s"), name().data(), 
 	      aStage.data(),msg.data());
   KMsgBox::message(0, caption, tmp);
   //kbp->busy();

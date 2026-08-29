@@ -195,6 +195,10 @@ protected:
      */
     bool bFinished;
     bool bHistoryStackLock;
+    /* [KDE1 Revival 2026] 零条目重试已用标记：slotFinished 发现本地目录
+     * listing 零条目时自动重发一次 openURL（防 kioslave 池竞争饿死导致
+     * 白屏），此标记防死循环（每次 openURL 清零，详见 kfmman.cpp） */
+    bool retryEmptyUsed;
 
     /**
      * The view this manager has to manage. 

@@ -75,3 +75,4 @@ DialogBaseData::~DialogBaseData()
 void DialogBaseData::applyPressed()
 {
 }
+
