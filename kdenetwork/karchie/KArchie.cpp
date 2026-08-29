@@ -49,7 +49,8 @@
 
 #include <qdstream.h> 
 
-#include <fstream.h>
+#include <fstream>
+using std::endl;  /* TQt3 迁移:老 C++ 头改标准头 */
 
 #define KFM_WINDOW "kfmclient1"
 #define KFM_OPEN_URL "openURL"
@@ -439,8 +440,7 @@ KArchie::slotLoadfilelistSelected()
     }
     else {
       QString errstr = i18n("Couldn't open \n\"%s\"");
-      QString tmp(loadfile.length() + errstr.length() + 1);
-
+      QString tmp;  /* TQt3 迁移:Qt1 的 QString(size) 预分配构造已删,sprintf 自行扩容 */
       tmp.sprintf((const char *)errstr, (const char *)loadfile);
       tqWarning("%s", (const char *)tmp);
       KMsgBox::message( this, i18n("KArchie: bad file"), tmp,
@@ -481,8 +481,7 @@ KArchie::slotStorefilelistSelected()
     }
     else {
       QString errstr = i18n("Couldn't open \n\"%s\"");
-      QString tmp(storefile.length() + errstr.length() + 1);
-
+      QString tmp;  /* TQt3 迁移:同上 */
       tmp.sprintf((const char *)errstr, (const char *)storefile);
       tqWarning("%s", (const char *)tmp);
       KMsgBox::message( this, i18n("KArchie: bad file"), tmp,
@@ -504,14 +503,14 @@ KArchie::slotWritefilelistSelected()
 
     // datei oeffnen die Liste abspeichern
     KAQueryFile *qrfile;
-    ofstream file(savefile);
+    std::ofstream file(savefile);  /* TQt3 迁移:标准头无全局 ofstream */
     int i, count = queryResult->count();
 
     for ( i=0; i<count; i++ ) {
       //    fprintf(stderr,"[%i] ", queryResult->at());
       qrfile = queryResult->at(i);
       file << qrfile->getHost() << qrfile->getPath()
-	   << qrfile->getFile() << endl;
+	   << qrfile->getFile() << std::endl;
     }
     file.close();
   }  

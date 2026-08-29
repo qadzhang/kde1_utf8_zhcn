@@ -137,7 +137,7 @@ protected:
 protected:
 	QCheckBox *cbStyle, *cbRes;
 	QCheckBox *cbMac;//CT
-	Bool changed;
+	bool changed;
 	
 	bool useRM;
 	bool macStyle;//CT
@@ -182,11 +182,11 @@ protected:
 	QListBox *lbFonts;
 	bool useRM;
 	
-	Bool changed;
+	bool changed;
 	
 	QList <FontUseItem> fontUseList;
 	
-	Bool defaultCharset;
+	bool defaultCharset;
 	Window root;
 	int screen;
 };

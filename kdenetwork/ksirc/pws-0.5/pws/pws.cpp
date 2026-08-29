@@ -6,7 +6,6 @@
 #include <qdir.h>
 
 #include "pws.h"
-#include <pws.moc>
 
 void testDir( const char *_name );
 
@@ -51,26 +50,26 @@ void PWS::invokeHelp()
 
 void PWS::show(){
     if(createdUI == FALSE){
-        QPopupMenu *file_menu = new("QPopupMenu") QPopupMenu();
+        QPopupMenu *file_menu = new  QPopupMenu();
         file_menu->insertItem(i18n("E&xit"), kapp, SLOT(quit()));
 
-        QPopupMenu *help_menu = new("QPopupMenu") QPopupMenu();
+        QPopupMenu *help_menu = new  QPopupMenu();
         help_menu->insertItem(i18n("&Help"), this, SLOT(invokeHelp()));
 
-        //	menuBar = new("KMenuBar") KMenuBar(this, "menubar");
+        //	menuBar = new  KMenuBar(this, "menubar");
         //	menuBar->insertItem(i18n("&File"), file_menu);
         //	menuBar->insertItem(i18n("&Help"), help_menu);
 
         //	setMenu(menuBar);
 
-        //	toolBar = new("KToolBar") KToolBar(this);
+        //	toolBar = new  KToolBar(this);
         //	addToolBar(toolBar);
 
-        //	statusBar = new("KStatusBar") KStatusBar(this);
+        //	statusBar = new  KStatusBar(this);
         //	setStatusBar(statusBar);
 
         //        resize(600,440);
-        view = new("PWSWidget") PWSWidget(this);
+        view = new  PWSWidget(this);
         setView(view);
 
         connect(view, SIGNAL(quitPressed(QObject *)),
@@ -90,3 +89,5 @@ void PWS::closeView(QObject *obj){
    createdUI = FALSE;
    */
 }
+
+#include "pws.moc" /* TQt3 迁移:AUTOMOC 时代未写显式 moc include,补齐(编译单元内提供 vtable) */

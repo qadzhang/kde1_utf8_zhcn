@@ -3,7 +3,7 @@
 PObject *createWidget(CreateArgs &ca)
 {
   tqWarning("Table View is abstract class, cannot create an object from it!!!");
-  PTableView *pt = new("PTableView") PTableView(ca.parent);
+  PTableView *pt = new  PTableView(ca.parent);
   pt->setWidget(0);
   pt->setWidgetId(ca.pwI);
   return pt;

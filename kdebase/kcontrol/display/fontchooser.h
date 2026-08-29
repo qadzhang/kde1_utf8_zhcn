@@ -110,7 +110,7 @@ protected:
 	QLabel *charset_label;
 	QStrList fontList;
 	QStrList fixedList;
-	Bool defaultCharset;
+	bool defaultCharset;
 };
 
 #endif

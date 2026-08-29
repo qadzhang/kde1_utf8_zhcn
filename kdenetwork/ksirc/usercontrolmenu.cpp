@@ -1,7 +1,7 @@
 #include "usercontrolmenu.h"
 
 #include <qregexp.h>
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:老 C++ 头改标准头 */
 
 extern KConfig *kConfig;
 
@@ -40,53 +40,53 @@ QList<UserControlMenu> *UserControlMenu::parseKConfig()
     // We found nothing, so let's use some defaults.
 
     UserMenu.setAutoDelete(TRUE);
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Refresh Nicks", 
+    UserMenu.append(new  UserControlMenu("Refresh Nicks", 
 					 "refresh",
 					 0, UserControlMenu::Text));
-    UserMenu.append(new("UserControlMenu)") UserControlMenu);
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Follow", 
+    UserMenu.append(new  UserControlMenu);
+    UserMenu.append(new  UserControlMenu("Follow", 
 					 "follow $$dest_nick",
 					 0, UserControlMenu::Text));
-    UserMenu.append(new("UserControlMenu") UserControlMenu("unFollow", 
+    UserMenu.append(new  UserControlMenu("unFollow", 
 					 "unfollow $$dest_nick",
 					 0, UserControlMenu::Text));
-    UserMenu.append(new("UserControlMenu)") UserControlMenu); // Defaults to a seperator
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Whois", 
+    UserMenu.append(new  UserControlMenu); // Defaults to a seperator
+    UserMenu.append(new  UserControlMenu("Whois", 
 					 "/whois $$dest_nick $$dest_nick",
 					 0, UserControlMenu::Text));
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Ping", 
+    UserMenu.append(new  UserControlMenu("Ping", 
 					 "/ping $$dest_nick",
 					 0, UserControlMenu::Text));
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Version", 
+    UserMenu.append(new  UserControlMenu("Version", 
 					 "/ctcp $$dest_nick VERSION",
 					 0, UserControlMenu::Text));
-    UserMenu.append(new("UserControlMenu)") UserControlMenu); // Defaults to a seperator
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Abuse", 
+    UserMenu.append(new  UserControlMenu); // Defaults to a seperator
+    UserMenu.append(new  UserControlMenu("Abuse", 
 					 "/me slaps $$dest_nick around with a small 50lb Unix Manual",
 					 0, UserControlMenu::Text));
-    UserMenu.append(new("UserControlMenu)") UserControlMenu); // Defaults to a seperator
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Kick",
+    UserMenu.append(new  UserControlMenu); // Defaults to a seperator
+    UserMenu.append(new  UserControlMenu("Kick",
 					 "/kick $$dest_nick",
 					 0,
 					 UserControlMenu::Text,
 					 TRUE));
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Ban",
+    UserMenu.append(new  UserControlMenu("Ban",
 					 "/ban $$dest_nick",
 					 0,
 					 UserControlMenu::Text,
 					 TRUE));
-    UserMenu.append(new("UserControlMenu") UserControlMenu("UnBan",
+    UserMenu.append(new  UserControlMenu("UnBan",
 					 "/unban $$dest_nick",
 					 0,
 					 UserControlMenu::Text,
 					 TRUE));
-    UserMenu.append(new("UserControlMenu") UserControlMenu());
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Op",
+    UserMenu.append(new  UserControlMenu());
+    UserMenu.append(new  UserControlMenu("Op",
 					 "/op $$dest_nick",
 					 0,
 					 UserControlMenu::Text,
 					 TRUE));
-    UserMenu.append(new("UserControlMenu") UserControlMenu("Deop",
+    UserMenu.append(new  UserControlMenu("Deop",
 					 "/deop $$dest_nick",
 					 0,
 					 UserControlMenu::Text,
@@ -100,7 +100,7 @@ QList<UserControlMenu> *UserControlMenu::parseKConfig()
       key = "MenuType-" + cindex;
       type = kConfig->readNumEntry(key);
       if(type == UserControlMenu::Seperator)
-	UserMenu.append(new("UserControlMenu") UserControlMenu());
+	UserMenu.append(new  UserControlMenu());
       else if(type == UserControlMenu::Text){
 	key = "MenuTitle-" + cindex;
 	title = kConfig->readEntry(key);
@@ -112,7 +112,7 @@ QList<UserControlMenu> *UserControlMenu::parseKConfig()
 	key = "MenuOpOnly-" + cindex;
 	oponly = kConfig->readNumEntry(key); 
 	
-	UserMenu.append(new("UserControlMenu") UserControlMenu(title.data(), action.data(), accel, type, (bool) oponly));
+	UserMenu.append(new  UserControlMenu(title.data(), action.data(), accel, type, (bool) oponly));
       }
     }
   }
@@ -144,9 +144,9 @@ void UserControlMenu::writeKConfig()
     // Do nothing for a seperator since it defaults accross
     if(type == UserControlMenu::Text){
       key = "MenuTitle-" + cindex;
-      kConfig->writeEntry(key, ucm->title);
+      kConfig->writeEntry(key, TQString(ucm->title));  /* TQt3 迁移 */
       key = "MenuAction-" + cindex;
-      kConfig->writeEntry(key, ucm->action);
+      kConfig->writeEntry(key, TQString(ucm->action));  /* TQt3 迁移 */
       key = "MenuAccel-" + cindex;
       kConfig->writeEntry(key, (int) ucm->accel);
       key = "MenuOpOnly-" + cindex;

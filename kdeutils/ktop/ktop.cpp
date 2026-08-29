@@ -113,6 +113,10 @@ TopLevel::TopLevel(QWidget *parent, const char *name, int sfolder)
 
 	// show the dialog box
     show();
+    /* TQt3 migration: KTMainWindow::show no longer cascades to the view,
+       and the QTabDialog type bit on TaskMan defeats recursive showing;
+       show it explicitly */
+    taskman->show();
 
 	// switch to the selected startup page
     taskman->raiseStartUpPage();

@@ -269,7 +269,9 @@ void Opener::mainLoop() {
 //
 int Opener::sendFD(int fd, struct ResponseHeader *response) {
 
-  struct { struct cmsghdr cmsg; int fd; } control;
+  /* TQt3 迁移(2026):现代 glibc 的 cmsghdr 尾部是弹性数组成员,匿名
+   * struct 中其后不得再有数据成员;改 union 布局,fd 一律经 CMSG_DATA 取 */
+  union { struct cmsghdr cmsg; char _buf[CMSG_SPACE(sizeof(int))]; } control;
   struct msghdr	msg;
   struct iovec iov;
   size_t cmsglen;

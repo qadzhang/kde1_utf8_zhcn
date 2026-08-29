@@ -25,7 +25,7 @@
 
    Signals:
      made_toplevel(server, window)
-       made a new("toplevel") toplevel window for the "server" we are connected to
+       made a new  toplevel window for the "server" we are connected to
        with "window" as the title.
 
      dalete_toplevel(server, window)
@@ -39,7 +39,7 @@
 
    public slots:
      new_toplevel(window):
-       create a new("window") window with name window.  This MAY only change the
+       create a new  window with name window.  This MAY only change the
        name of an existing window that's now idle.
 
      close_topevel(KsircTopLevel*, window):
@@ -56,8 +56,8 @@
 
  Implementation:
 
-   Bassic process is to create a new("KSircProcess") KSircProcess and it takes care of
-   the rest.  It emits signals for each new("window") window and everytime a
+   Bassic process is to create a new  KSircProcess and it takes care of
+   the rest.  It emits signals for each new  window and everytime a
    window is delete so you can update external display (like
    servercontroller uses).
 
@@ -107,7 +107,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <iostream.h>
+#include <iostream>
+using std::endl;
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 
 extern KApplication *kApp;
 extern KConfig *kConfig;
@@ -152,7 +154,7 @@ KSircProcess::KSircProcess( char *_server, QObject * parent, const char * name )
   // Setup the proc now, so iocontroller can use it.  It's latter
   // though. started bellow though.
 
-  proc = new("KProcess") KProcess();
+  proc = new  KProcess();
   proc->setName(QString(name) + "_kprocess");
   objFinder::insert(proc);
 //  insertChild(proc);
@@ -162,7 +164,7 @@ KSircProcess::KSircProcess( char *_server, QObject * parent, const char * name )
 
   // Finally start the iocontroller.
 
-  iocontrol = new("KSircIOController") KSircIOController(proc, this);
+  iocontrol = new  KSircIOController(proc, this);
   iocontrol->setName(QString(name) + "_iocontrol");
 
   // Create toplevel before iocontroller so it has somewhere to write stuff.
@@ -176,24 +178,24 @@ KSircProcess::KSircProcess( char *_server, QObject * parent, const char * name )
 
   // Write default commands, and open default windows.
 
-  TopList.insert("!all", new("KSircIOBroadcast") KSircIOBroadcast(this));
-  TopList.insert("!discard", new("KSircIODiscard") KSircIODiscard(this));
-  KSircIODCC *dcc = new("KSircIODCC") KSircIODCC(this);
+  TopList.insert("!all", new  KSircIOBroadcast(this));
+  TopList.insert("!discard", new  KSircIODiscard(this));
+  KSircIODCC *dcc = new  KSircIODCC(this);
   connect(dcc, SIGNAL(outputLine(QString)),
 	  iocontrol, SLOT(stdin_write(QString)));
   TopList.insert("!dcc", dcc);
-  KSircIOLAG *lag = new("KSircIOLAG") KSircIOLAG(this);
+  KSircIOLAG *lag = new  KSircIOLAG(this);
   connect(lag, SIGNAL(outputLine(QString)),
 	  iocontrol, SLOT(stdin_write(QString)));
   TopList.insert("!lag", lag);
-  KSircIONotify *notify = new("KSircIONotify") KSircIONotify(this);
+  KSircIONotify *notify = new  KSircIONotify(this);
   connect(notify, SIGNAL(notify_online(QString)),
 	  this, SLOT(notify_forw_online(QString)));
   connect(notify, SIGNAL(notify_offline(QString)),
 	  this, SLOT(notify_forw_offline(QString)));
   TopList.insert("!notify", notify);
 
-  TopList.insert("!base_rules", new("KSMBaseRules") KSMBaseRules(this));
+  TopList.insert("!base_rules", new  KSMBaseRules(this));
 
   // Now that all windows are up, start sirc.
 
@@ -320,12 +322,12 @@ void KSircProcess::new_toplevel(QString str) /*FOLD00*/
       }
     }
 
-    // Create a new("toplevel,") toplevel, and add it to the toplist.  
+    // Create a new  toplevel, and add it to the toplist.  
     // TopList is a list of KSircReceivers so we still need wm.
-//    KSircMessageReceiver *faker = new("KSircMessageReceiver") KSircMessageReceiver(this);
+//    KSircMessageReceiver *faker = new  KSircMessageReceiver(this);
     //    TopList.insert(str, faker); // Insert place holder since the constructor for kSircTopLevel may parse the event queue which will cause us to try and create trhe window several times!!!
     tqDebug("Calling new toplevel for: -%s-", str.data());
-    KSircTopLevel *wm = new("KSircTopLevel") KSircTopLevel(this, str.data(), QString(server) +"_" + str);
+    KSircTopLevel *wm = new  KSircTopLevel(this, str.data(), QString(server) +"_" + str);
     //    insertChild(wm); // Keep ineheratence going so we can find children
     installEventFilter(wm);
     TopList.insert(str, wm);
@@ -398,7 +400,7 @@ void KSircProcess::close_toplevel(KSircTopLevel *wm, char *name) /*FOLD00*/
 
   //
   // Ok, now if we just deleted the default we have a problem, we need
-  // a new("default.") default.  BUT don't make the default "!all" or !message.
+  // a new  default.  BUT don't make the default "!all" or !message.
   // So let's go grab a default, and make sure it's not "!" control
   // object.
   //
@@ -406,10 +408,10 @@ void KSircProcess::close_toplevel(KSircTopLevel *wm, char *name) /*FOLD00*/
   if(is_default == TRUE){
     QDictIterator<KSircMessageReceiver> it(TopList);
     it.toFirst();
-    char *key = (char*) it.currentKey();
+    TQString keyStr = it.currentKey(); const char *key = keyStr.latin1();  /* TQt3 迁移:currentKey 已返回 TQString */
     if(key[0] == '!')
       for(;(key[0] == '!') && it.current(); ++it)
-	key = (char*) it.currentKey();
+	keyStr = it.currentKey(); key = keyStr.latin1();  /* TQt3 迁移 */
 
     if(it.current())
       TopList.replace("!default", it.current());

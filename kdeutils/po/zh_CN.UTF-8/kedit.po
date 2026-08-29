@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
@@ -30,9 +31,8 @@ msgid "Select All"
 msgstr "全部选中"
 
 #: kedit.cpp:157
-#, fuzzy
 msgid "Font..."
-msgstr "寻找...[&F]"
+msgstr "字体..."
 
 #: kedit.cpp:201
 msgid "Ne&w..."
@@ -91,14 +91,12 @@ msgid "&Goto Line..."
 msgstr "跳至行数...[&G]"
 
 #: kedit.cpp:277
-#, fuzzy
 msgid "&Font..."
-msgstr "字体[&F]"
+msgstr "字体(&F)..."
 
 #: kedit.cpp:279
-#, fuzzy
 msgid "&Colors"
-msgstr "颜色"
+msgstr "颜色(&C)"
 
 #: kedit.cpp:284
 msgid "KEdit &Options..."
@@ -129,6 +127,11 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@kde.org"
 msgstr ""
+"KEdit %s\n"
+"\n"
+"版权所有 1997-98\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@kde.org"
 
 #: kedit.cpp:332
 msgid "New Document"
@@ -150,8 +153,7 @@ msgstr "打印文件"
 msgid "Mail Document"
 msgstr "邮寄文件"
 
-#: kedit.cpp:493 kedit.cpp:581 kedit.cpp:1533 keditcl2.cpp:721
-#: keditcl2.cpp:857
+#: kedit.cpp:493 kedit.cpp:581 kedit.cpp:1533 keditcl2.cpp:721 keditcl2.cpp:857
 msgid "Done"
 msgstr "完成"
 
@@ -359,9 +361,8 @@ msgstr ""
 "%s"
 
 #: kedit.cpp:2073
-#, fuzzy
 msgid "Spellchecker Options"
-msgstr "保存选项"
+msgstr "拼写检查器选项"
 
 #: keditcl1.cpp:150
 msgid "The specified File does not exist"
@@ -388,66 +389,64 @@ msgid "Warning:"
 msgstr "警告："
 
 #: keditcl1.cpp:419 keditcl1.cpp:503
-#, fuzzy
 msgid ""
 "The current Document has been modified.\n"
 "Would you like to save it?"
 msgstr ""
-"当前的文件被修改过.\n"
-"要保存吗?"
+"当前文档已被修改。\n"
+"要保存吗？"
 
 #: keditcl1.cpp:440
-#, fuzzy
 msgid ""
 "Could not save the document.\n"
 "Open a new document anyways?"
 msgstr ""
-"不能保存此文件.\n"
-"直接打印?"
+"无法保存文档。\n"
+"仍要打开新文档吗？"
 
 #: keditcl1.cpp:523
-#, fuzzy
 msgid ""
 "Could not save the document.\n"
 "Create a new document anyways?"
 msgstr ""
-"不能保存此文件.\n"
-"直接打印?"
+"无法保存文档。\n"
+"仍要新建文档吗？"
 
 #: keditcl1.cpp:1570
-#, fuzzy
 msgid "Could not save the document\n"
-msgstr ""
-"不能保存此文件.\n"
-"直接打印?"
+msgstr "无法保存文档\n"
 
 #: keditcl1.cpp:1652
 msgid ""
 "A Document with this Name exists already\n"
 "Do you want to overwrite it ?"
 msgstr ""
+"同名文档已存在\n"
+"要覆盖它吗？"
 
 #: keditcl1.cpp:1710
 msgid "You do not have write permission to this file.\n"
 msgstr "您没有此文件的写入权限。\n"
 
-#: keditcl2.cpp:112 keditcl2.cpp:129 keditcl2.cpp:369 keditcl2.cpp:386
-#: keditcl2.cpp:688 keditcl2.cpp:714 keditcl2.cpp:838
-#, fuzzy
+#: keditcl2.cpp:112 keditcl2.cpp:129 keditcl2.cpp:369 keditcl2.cpp:386 keditcl2.cpp:688 keditcl2.cpp:714 keditcl2.cpp:838
 msgid "Find"
-msgstr "寻找...[&F]"
+msgstr "查找"
 
 #: keditcl2.cpp:113 keditcl2.cpp:370 keditcl2.cpp:463
 msgid ""
 "End of document reached.\n"
 "Continue from the beginning?"
 msgstr ""
+"已到文档末尾。\n"
+"从头继续查找吗？"
 
 #: keditcl2.cpp:130 keditcl2.cpp:387 keditcl2.cpp:433 keditcl2.cpp:480
 msgid ""
 "Beginning of document reached.\n"
 "Continue from the end?"
 msgstr ""
+"已到文档开头。\n"
+"从末尾继续查找吗？"
 
 #: keditcl2.cpp:702 keditcl2.cpp:822
 msgid "Case Sensitive"
@@ -458,24 +457,20 @@ msgid "Find Backwards"
 msgstr "向后查找"
 
 #: keditcl2.cpp:797
-#, fuzzy
 msgid "Find:"
-msgstr "寻找...[&F]"
+msgstr "查找:"
 
 #: keditcl2.cpp:809
-#, fuzzy
 msgid "Replace with:"
-msgstr "替换[&R]"
+msgstr "替换为:"
 
 #: keditcl2.cpp:851
-#, fuzzy
 msgid "Replace All"
-msgstr "替换[&R]"
+msgstr "全部替换"
 
 #: keditcl2.cpp:932
-#, fuzzy
 msgid "Goto Line"
-msgstr "跳至行数...[&G]"
+msgstr "转到行"
 
 #: keditcl2.cpp:937
 msgid "Go"
@@ -502,9 +497,8 @@ msgid "Set Fill-Column at:"
 msgstr "设置填充列为 :"
 
 #: filldlg.cpp:57
-#, fuzzy
 msgid "Word Wrap"
-msgstr "字回绕"
+msgstr "自动换行"
 
 #: filldlg.cpp:63
 msgid "Backup Copies"
@@ -524,9 +518,8 @@ msgstr "邮寄文件至:"
 
 #: mail.cpp:55
 msgid "Subject:"
-msgstr "标题:"
+msgstr "主题:"
 
-#
 #: mail.cpp:57
 msgid "Mail"
 msgstr "邮件"

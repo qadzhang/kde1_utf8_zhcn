@@ -4,7 +4,7 @@
 
 PObject *createWidget(CreateArgs &ca)
 {
-  PObjFinder *pw = new("PObjFinder") PObjFinder(ca.parent);
+  PObjFinder *pw = new  PObjFinder(ca.parent);
   pw->setWidget(0x0);
   pw->setWidgetId(ca.pwI);
   pw->setPukeController(ca.pc);
@@ -81,3 +81,5 @@ void PObjFinder::newObject(QObject *name){
   emit outputMessage(widgetIden().fd, &pmRet);
   delete pmRet.cArg;
 }
+
+#include "pobjfinder.moc" /* TQt3 迁移:AUTOMOC 时代未写显式 moc include,补齐(编译单元内提供 vtable) */

@@ -21,12 +21,12 @@ PObject::~PObject() /*FOLD00*/
 
 PObject *PObject::createWidget(CreateArgs &ca) /*fold00*/
 {
-  PObject *pw = new("PObject") PObject(ca.parent);
+  PObject *pw = new  PObject(ca.parent);
   QObject *o;
   if(ca.parent != 0)
-    o = new("QObject") QObject(ca.parent->widget());
+    o = new  QObject(ca.parent->widget());
   else
-    o = new("QObject") QObject();
+    o = new  QObject();
   pw->setWidget(o);
   pw->setWidgetId(ca.pwI);
   pw->setPukeController(ca.pc);

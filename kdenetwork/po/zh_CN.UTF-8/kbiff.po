@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kbiff\n"
+"PO-Revision-Date: 2026-08-30 00:00+0800\n"
+"Last-Translator: KDE1 Revival Project\n"
+"Language-Team: zh_CN <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"charset: UTF-8\n"
+"encoding: 8bit\n"
+
+#: kbiff.cpp:628
+msgid "&UnDock"
+msgstr "脱离面板(&U)"
+
+#: kbiff.cpp:630
+msgid "&Dock"
+msgstr "嵌入面板(&D)"
+
+#: kbiff.cpp:631
+msgid "&Setup..."
+msgstr "设置(&S)..."
+
+#: kbiff.cpp:633
+msgid "&Help..."
+msgstr "帮助(&H)..."
+
+#: kbiff.cpp:637
+msgid "&Check Mail Now"
+msgstr "立即检查邮件(&C)"
+
+#: kbiff.cpp:639
+msgid "&Read Mail Now"
+msgstr "立即阅读邮件(&R)"
+
+#: kbiff.cpp:645
+msgid "&Stop"
+msgstr "停止(&S)"
+
+#: kbiff.cpp:651
+msgid "&Start"
+msgstr "启动(&S)"
+
+#: kbiff.cpp:656
+msgid "E&xit"
+msgstr "退出(&X)"
+
+#: notify.cpp:33 notify.cpp:50
+msgid "You have new mail!"
+msgstr "您有新邮件!"
+
+#: notify.cpp:58 notify.cpp:103
+#, c-format
+msgid "New Messages: %d"
+msgstr "新邮件数: %d"
+
+#: notify.cpp:63
+#, c-format
+msgid "Mailbox: %s"
+msgstr "邮箱: %s"
+
+#: notify.cpp:68 setupdlg.cpp:168 setupdlg.cpp:991 setupdlg.cpp:1756
+msgid "OK"
+msgstr "确定"
+
+#: notify.cpp:72
+msgid "Mailer"
+msgstr "邮件程序"
+
+#: setupdlg.cpp:83
+msgid "KBiff Setup"
+msgstr "KBiff 设置"
+
+#: setupdlg.cpp:86
+msgid "Profile:"
+msgstr "配置方案:"
+
+#: setupdlg.cpp:102
+msgid "&New..."
+msgstr "新建(&N)..."
+
+#: setupdlg.cpp:109
+msgid "&Rename..."
+msgstr "重命名(&R)..."
+
+#: setupdlg.cpp:117
+msgid "&Delete"
+msgstr "删除(&D)"
+
+#: setupdlg.cpp:143
+msgid "General"
+msgstr "常规"
+
+#: setupdlg.cpp:144
+msgid "New Mail"
+msgstr "新邮件"
+
+#: setupdlg.cpp:145 status.cpp:33
+msgid "Mailbox"
+msgstr "邮箱"
+
+#: setupdlg.cpp:146
+msgid "About"
+msgstr "关于"
+
+#: setupdlg.cpp:160
+msgid "Help"
+msgstr "帮助"
+
+#: setupdlg.cpp:175 setupdlg.cpp:997 setupdlg.cpp:1763
+msgid "Cancel"
+msgstr "取消"
+
+#: setupdlg.cpp:387
+msgid "New Profile"
+msgstr "新建配置方案"
+
+#: setupdlg.cpp:419
+#, c-format
+msgid "Rename Profile: %s"
+msgstr "重命名配置方案: %s"
+
+#: setupdlg.cpp:459
+#, c-format
+msgid "Delete Profile: %s"
+msgstr "删除配置方案: %s"
+
+#: setupdlg.cpp:460
+msgid "Are you sure you wish to delete this profile?\n"
+msgstr "您确定要删除这个配置方案吗?\n"
+
+#: setupdlg.cpp:520
+msgid "Poll (sec):"
+msgstr "轮询间隔(秒):"
+
+#: setupdlg.cpp:525
+msgid "Mail client:"
+msgstr "邮件客户程序:"
+
+#: setupdlg.cpp:538
+msgid "Dock in panel"
+msgstr "嵌入面板"
+
+#: setupdlg.cpp:543
+msgid "Use session management"
+msgstr "使用会话管理"
+
+#: setupdlg.cpp:548
+msgid "Icons:"
+msgstr "图标:"
+
+#: setupdlg.cpp:566
+msgid "No Mail:"
+msgstr "无邮件:"
+
+#: setupdlg.cpp:575
+msgid "Old Mail"
+msgstr "旧邮件"
+
+#: setupdlg.cpp:585
+msgid "New Mail:"
+msgstr "新邮件:"
+
+#: setupdlg.cpp:595
+msgid "No Conn.:"
+msgstr "无连接:"
+
+#: setupdlg.cpp:752
+msgid "Run Command"
+msgstr "运行命令"
+
+#: setupdlg.cpp:759 setupdlg.cpp:779 setupdlg.cpp:1174
+msgid "Browse"
+msgstr "浏览"
+
+#: setupdlg.cpp:765
+msgid "Play Sound"
+msgstr "播放声音"
+
+#: setupdlg.cpp:785
+msgid "System Beep"
+msgstr "系统响铃"
+
+#: setupdlg.cpp:790
+msgid "Notify"
+msgstr "通知"
+
+#: setupdlg.cpp:794
+msgid "Floating Status"
+msgstr "浮动状态"
+
+#: setupdlg.cpp:944
+msgid "Advanced Options"
+msgstr "高级选项"
+
+#: setupdlg.cpp:948
+msgid "Mailbox URL:"
+msgstr "邮箱 URL:"
+
+#: setupdlg.cpp:952
+msgid "Port:"
+msgstr "端口:"
+
+#: setupdlg.cpp:956
+msgid "PREAUTH"
+msgstr "预认证"
+
+#: setupdlg.cpp:963
+msgid "Keep Alive"
+msgstr "保持连接"
+
+#: setupdlg.cpp:970
+msgid "Asynchronous"
+msgstr "异步"
+
+#: setupdlg.cpp:1119 setupdlg.cpp:1148
+msgid "Mailbox:"
+msgstr "邮箱:"
+
+#: setupdlg.cpp:1132 setupdlg.cpp:1471
+msgid "New Mailbox"
+msgstr "新建邮箱"
+
+#: setupdlg.cpp:1139
+msgid "Delete Mailbox"
+msgstr "删除邮箱"
+
+#: setupdlg.cpp:1145
+msgid "Protocol:"
+msgstr "协议:"
+
+#: setupdlg.cpp:1151
+msgid "Server:"
+msgstr "服务器:"
+
+#: setupdlg.cpp:1154
+msgid "User:"
+msgstr "用户:"
+
+#: setupdlg.cpp:1157
+msgid "Password:"
+msgstr "密码:"
+
+#: setupdlg.cpp:1191
+msgid "Store password"
+msgstr "记住密码"
+
+#: setupdlg.cpp:1194
+msgid "Advanced"
+msgstr "高级"
+
+#: setupdlg.cpp:1275
+msgid "Default"
+msgstr "默认"
+
+#: setupdlg.cpp:1672
+msgid "KBiff"
+msgstr "KBiff"
+
+#: setupdlg.cpp:1694
+#, c-format
+msgid ""
+"Version %s\n"
+"\n"
+"Copyright (C) 1999\n"
+"Kurt Granroth"
+msgstr ""
+"版本 %s\n"
+"\n"
+"版权所有 (C) 1999\n"
+"Kurt Granroth"
+
+#: setupdlg.cpp:1743
+msgid "New Name:"
+msgstr "新名称:"
+
+#: setupdlg.cpp:1769
+msgid "New Name"
+msgstr "新名称"
+
+#: status.cpp:34
+msgid "New"
+msgstr "新建"

@@ -14,6 +14,7 @@
 *******************************************************************/
 
 #include "alistbox.h"
+#include <qtableview.h>  /* TQt3 迁移:TQtTableView(port 脚手架)声明 */
 #include "linelistitem.h"
 #include "config.h"
 #include <qscrbar.h>
@@ -55,7 +56,7 @@ void aListBox::inSort ( nickListItem *lbi) /*fold00*/
 
 void aListBox::inSort ( const char * text, bool top)  /*fold00*/
 {
-  nickListItem *nli = new("nickListItem") nickListItem();
+  nickListItem *nli = new  nickListItem();
   nli->setText(text);
   if(top == TRUE)
     nli->setOp(TRUE);
@@ -182,8 +183,8 @@ bool aListBox::isTop(int index) /*fold00*/
 void aListBox:: setPalette ( const QPalette &p ) /*fold00*/
 {
   QListBox::setPalette(p);
-  ((QScrollBar*) QTableView::verticalScrollBar())->setPalette(p_scroll);
-  ((QScrollBar*) QTableView::horizontalScrollBar())->setPalette(p_scroll);
+  ((QScrollBar*) verticalScrollBar())->setPalette(p_scroll);  /* TQt3 迁移:去掉错误的类限定 */
+  ((QScrollBar*) horizontalScrollBar())->setPalette(p_scroll);  /* TQt3 迁移 */
 }
 
 int aListBox::findNick(QString str) /*fold00*/
@@ -282,9 +283,11 @@ int nickListItem::width(const QListBox *lb ) const /*fold00*/
 				 ) + 6;
 }
 
-const char* nickListItem::text() const /*fold00*/
+TQString nickListItem::text() const /*fold00*/
 {
-  return string;
+  /* TQt3 迁移:基类 TQListBoxItem::text() 返回 TQString;内部 string 为
+   * char* 存量,经全局 UTF-8 codec 转换返回 */
+  return TQString::fromUtf8(string ? string : "");
 }
 
 const QPixmap* nickListItem::pixmap() const /*fold00*/

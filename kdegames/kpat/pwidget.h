@@ -65,6 +65,10 @@ private:
   void help();
   void helpRules();
   void about();
+
+protected:
+  virtual void showEvent( QShowEvent* );  /* TQt3 迁移:dealer 映射兜底 */
+public:
   void setDefaultType();
   int  getDefaultType();
   void actionNewGame(int);

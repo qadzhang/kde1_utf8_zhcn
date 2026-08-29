@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
@@ -10,9 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ktop.cpp:66
-#, fuzzy
 msgid "88888 Processes"
-msgstr "包括所有进程"
+msgstr "88888 个进程"
 
 #: ktop.cpp:67
 msgid "Memory: 888888 kB used, 888888 kB free"
@@ -23,14 +23,13 @@ msgid "Swap: 888888 kB used, 888888 kB free"
 msgstr "交换空间：已用 888888 kB，空闲 888888 kB"
 
 #: ktop.cpp:76
-#, fuzzy
 msgid "KDE Task Manager"
 msgstr "KDE 任务管理器"
 
 #: ktop.cpp:137
-#, fuzzy, c-format
+#, c-format
 msgid "%d Processes"
-msgstr "包括所有进程"
+msgstr "%d 个进程"
 
 #: ktop.cpp:142
 #, c-format
@@ -54,34 +53,38 @@ msgid ""
 "1998 : Nicolas Leclercq <nicknet@planete.net>\n"
 "1999 : Chris Schlaeger <cs@kde.org>\n"
 msgstr ""
+"KDE 任务管理器 (KTop) 版本 %s\n"
+"\n"
+"版权:\n"
+"1996 : A. Sanda <alex@darkstar.ping.at>\n"
+"1997 : Ralf Mueller <ralf@bj-ig.de>\n"
+"1997-98 : Bernd Johannes Wuebben <wuebben@kde.org>\n"
+"1998 : Nicolas Leclercq <nicknet@planete.net>\n"
+"1999 : Chris Schlaeger <cs@kde.org>\n"
 
 #: MainMenu.cpp:64
 msgid "Manual Refresh"
 msgstr "手动刷新"
 
 #: MainMenu.cpp:65
-#, fuzzy
 msgid "Slow Refresh"
-msgstr "刷新"
+msgstr "慢速刷新"
 
 #: MainMenu.cpp:66
 msgid "Medium Refresh"
 msgstr "中速刷新"
 
 #: MainMenu.cpp:67
-#, fuzzy
 msgid "Fast Refresh"
-msgstr "刷新"
+msgstr "快速刷新"
 
 #: MainMenu.cpp:79
-#, fuzzy
 msgid "&Refresh Rate"
-msgstr "刷新"
+msgstr "刷新间隔(&R)"
 
 #: MainMenu.cpp:80
-#, fuzzy
 msgid "&Process"
-msgstr "运行的进程"
+msgstr "进程(&P)"
 
 #: ProcessMenu.cpp:44
 msgid "Renice Task..."
@@ -111,11 +114,9 @@ msgstr "发送 SIGUSR1\t(用户1)"
 msgid "send SIGUSR2\t(user2)"
 msgstr "发送 SIGUSR2\t(用户2)"
 
-#: ProcessMenu.cpp:74 ProcessMenu.cpp:86 ProcessMenu.cpp:150
-#: ProcessMenu.cpp:158 ProcessMenu.cpp:176
-#, fuzzy
+#: ProcessMenu.cpp:74 ProcessMenu.cpp:86 ProcessMenu.cpp:150 ProcessMenu.cpp:158 ProcessMenu.cpp:176
 msgid "Task Manager"
-msgstr "KDE 任务管理器"
+msgstr "任务管理器"
 
 #: ProcessMenu.cpp:75
 msgid "You need to select a process first!"
@@ -128,27 +129,27 @@ msgstr "进程 %d 已不存在。"
 
 #: ProcessMenu.cpp:98
 msgid "SIGINT"
-msgstr ""
+msgstr "SIGINT"
 
 #: ProcessMenu.cpp:101
 msgid "SIGQUIT"
-msgstr ""
+msgstr "SIGQUIT"
 
 #: ProcessMenu.cpp:104
 msgid "SIGTERM"
-msgstr ""
+msgstr "SIGTERM"
 
 #: ProcessMenu.cpp:107
 msgid "SIGKILL"
-msgstr ""
+msgstr "SIGKILL"
 
 #: ProcessMenu.cpp:110
 msgid "SIGUSR1"
-msgstr ""
+msgstr "SIGUSR1"
 
 #: ProcessMenu.cpp:113
 msgid "SIGUSR2"
-msgstr ""
+msgstr "SIGUSR2"
 
 #: ProcessMenu.cpp:116
 msgid "Unkown Signal"
@@ -160,6 +161,8 @@ msgid ""
 "Send signal %s to process %d?\n"
 "(Process name: %s  Owner: %s)\n"
 msgstr ""
+"发送信号 %s 给进程 %d？\n"
+"(进程名: %s  属主: %s)\n"
 
 #: ProcessMenu.cpp:126
 msgid "Abort"
@@ -171,49 +174,45 @@ msgid ""
 "Specified process does not exist\n"
 "or permission denied."
 msgstr ""
+"调整 Nice 值出错...\n"
+"指定进程不存在\n"
+"或权限不足。"
 
 #: TaskMan.cpp:80
-#, fuzzy
 msgid "Processes &List"
-msgstr "进程"
+msgstr "进程列表(&L)"
 
 #: TaskMan.cpp:81
-#, fuzzy
 msgid "Performance &Meter"
-msgstr "性能"
+msgstr "性能监视(&M)"
 
 #: ProcListPage.cpp:42
-#, fuzzy
 msgid "Running Processes"
-msgstr "运行的进程"
+msgstr "运行中的进程"
 
 #: ProcListPage.cpp:49
 msgid "Show Tree"
 msgstr "显示树"
 
 #: ProcListPage.cpp:60
-#, fuzzy
 msgid "All processes"
-msgstr "包括所有进程"
+msgstr "全部进程"
 
 #: ProcListPage.cpp:61
 msgid "System processes"
 msgstr "系统进程"
 
 #: ProcListPage.cpp:62
-#, fuzzy
 msgid "User processes"
-msgstr "包括所有进程"
+msgstr "用户进程"
 
 #: ProcListPage.cpp:63
-#, fuzzy
 msgid "Own processes"
-msgstr "运行的进程"
+msgstr "本人进程"
 
 #: ProcListPage.cpp:79
-#, fuzzy
 msgid "Refresh Now"
-msgstr "刷新"
+msgstr "立即刷新"
 
 #: ProcListPage.cpp:85
 msgid "Kill task"
@@ -237,7 +236,7 @@ msgstr "名称"
 
 #: ProcessList.cpp:695 ProcessList.cpp:696
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: ProcessList.cpp:699
 msgid "User ID"
@@ -245,19 +244,19 @@ msgstr "用户 ID"
 
 #: ProcessList.cpp:700
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #: ProcessList.cpp:701
 msgid "Time"
-msgstr ""
+msgstr "时间"
 
 #: ProcessList.cpp:702
 msgid "Nice"
-msgstr ""
+msgstr "Nice 值"
 
 #: ProcessList.cpp:703
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #: ProcessList.cpp:704
 msgid "Memory"
@@ -281,6 +280,9 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
+"无法打开目录 /proc！\n"
+"内核编译时必须启用\n"
+"/proc 文件系统支持！"
 
 #: OSProcessList.cpp:266
 msgid "Cannot read status of processes\n"
@@ -317,7 +319,7 @@ msgstr "交换"
 
 #: OSProcess.cpp:201
 msgid "????"
-msgstr ""
+msgstr "????"
 
 #: OSProcess.cpp:320
 #, c-format
@@ -330,14 +332,12 @@ msgid "Cound not send signal %d to process %d"
 msgstr "无法发送信号 %d 到进程 %d"
 
 #: PerfMonPage.cpp:49
-#, fuzzy
 msgid "CPU Load History"
-msgstr "CPU 负载历史记录"
+msgstr "CPU 负载历史"
 
 #: PerfMonPage.cpp:52
-#, fuzzy
 msgid "System Load History"
-msgstr "CPU 负载历史记录"
+msgstr "系统负载历史"
 
 #: PerfMonPage.cpp:55 PerfMonPage.cpp:113
 msgid "User (%)"
@@ -352,9 +352,8 @@ msgid "System (%)"
 msgstr "系统 (%)"
 
 #: PerfMonPage.cpp:64
-#, fuzzy
 msgid "Memory Usage History"
-msgstr "存储器使用历史记录"
+msgstr "内存占用历史"
 
 #: PerfMonPage.cpp:66
 msgid "Program (kB)"
@@ -365,18 +364,17 @@ msgid "Buffer (kB)"
 msgstr "缓冲 (kB)"
 
 #: PerfMonPage.cpp:68
-#, fuzzy
 msgid "Cache (kB)"
-msgstr "取消"
+msgstr "缓存 (kB)"
 
 #: PerfMonPage.cpp:69
 msgid "Swap (kB)"
 msgstr "交换 (kB)"
 
 #: PerfMonPage.cpp:109
-#, fuzzy, c-format
+#, c-format
 msgid "CPU%d Load History"
-msgstr "CPU 负载历史记录"
+msgstr "CPU%d 负载历史"
 
 #: OSStatus.cpp:98
 msgid ""
@@ -384,6 +382,9 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
+"无法打开文件 /proc/stat！\n"
+"内核编译时必须启用\n"
+"/proc 文件系统支持！"
 
 #: OSStatus.cpp:120 OSStatus.cpp:303 OSStatus.cpp:378
 msgid ""
@@ -391,6 +392,9 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
+"无法打开文件 /proc/meminfo！\n"
+"内核编译时必须启用\n"
+"/proc 文件系统支持！"
 
 #: OSStatus.cpp:311
 msgid "Cannot read memory info file '/proc/meminfo'!\n"
@@ -403,6 +407,9 @@ msgid ""
 "The kernel needs to be compiled with support\n"
 "for /proc filesystem enabled!"
 msgstr ""
+"无法从文件 /proc/stat 读取 %s 的信息！\n"
+"内核编译时必须启用\n"
+"/proc 文件系统支持！"
 
 #: OSStatus.cpp:386
 msgid "Cannot read swap info from '/proc/meminfo'!\n"
@@ -413,11 +420,12 @@ msgid ""
 "Your system is not currently supported.\n"
 "Sorry"
 msgstr ""
+"暂不支持您的系统。\n"
+"抱歉"
 
 #: ReniceDlg.cpp:32
-#, fuzzy
 msgid "Renice Process"
-msgstr "运行的进程"
+msgstr "调整进程 Nice 值"
 
 #: ReniceDlg.cpp:39
 #, c-format
@@ -429,6 +437,10 @@ msgid ""
 "\n"
 "Please enter the desired nice level:"
 msgstr ""
+"您将调整进程 %d 的调度优先级。注意只有超级用户\n"
+"(root) 才能调低进程的 Nice 值。数值越小优先级越高。\n"
+"\n"
+"请输入目标 Nice 值: "
 
 #, fuzzy
 #~ msgid "Processes &Tree"
@@ -527,7 +539,6 @@ msgstr ""
 #~ msgid "Load (%CPU)"
 #~ msgstr "负载 (%CPU)"
 
-#
 #~ msgid "Misc settings"
 #~ msgstr "其它设定"
 

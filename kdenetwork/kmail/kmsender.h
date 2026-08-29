@@ -93,6 +93,8 @@ signals:
 
 protected slots:
   virtual void slotIdle();
+  /* [KDE1 Revival 2026] TQt3 无 setText(const char*) 槽，经此转发为 TQString */
+  virtual void slotStatusMsgToLabel(const char* msg);
 
 protected:
   /** handle sending of messages */
@@ -122,6 +124,7 @@ private:
   KMMessage * mCurrentMsg;
   bool quitOnDone;
   QLabel *label;
+  QLabel *statusLabel;  /* [KDE1 Revival 2026] setText 转发槽的目标标签 */
 };
 
 

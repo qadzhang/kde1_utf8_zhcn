@@ -233,12 +233,16 @@ void KMMessage::fromString(const QString aStr, bool aSetStatus)
   mMsg = new DwMessage;
 
   // copy string and throw out obsolete control characters
+  /* TQt3 迁移:原实现直接把 QString 当字节缓冲(且 result 未声明,拷贝损坏);
+   * 改 TQCString 字节缓冲,逐字符经 latin1() 取码 */
   len = aStr.length();
-  result.resize(len +1);
+  TQCString result(len + 2);
   for (i=0,j=0; i<len; i++)
   {
-    if (aStr[i]>=' ' || aStr[i]=='\t' || aStr[i]=='\n' || aStr[i]<='\0')
-      result[j++] = aStr[i];
+    TQChar ch = aStr.at(i);
+    char c = (ch.latin1() != -1 ? ch.latin1() : '?');
+    if (c>=' ' || c=='\t' || c=='\n' || c=='\0')
+      result[j++] = c;
   }
   result[j++] = '\0'; // terminate zero for casting
   mMsg->FromString((const char*)result);
@@ -394,14 +398,14 @@ KMMessage* KMMessage::createReply(bool replyToAll)
     // now try to strip my own e-mail adress:
     QString f = msg->from();
     if((i = f.find("<")) != -1) // just keep <foo@bar.com>
-      f = f.right(f.size() - i);
+      f = f.right(f.length() - i);  /* TQt3 迁移:size → length */
     if((i = toStr.find(f)) != -1)
     {
       int pos1, pos2;
       pos1 = toStr.findRev(", ", i);
       if( pos1 == -1 ) pos1 = 0;
       pos2 = toStr.find(", ", i);
-      toStr = toStr.left(pos1) + toStr.right(toStr.size() - pos2 - 1); 
+      toStr = toStr.left(pos1) + toStr.right(toStr.length() - pos2 - 1);  /* TQt3 迁移:size → length */
     }
     toStr.truncate(toStr.length()-2);
     // same for the cc field
@@ -412,7 +416,7 @@ KMMessage* KMMessage::createReply(bool replyToAll)
       pos1 = ccStr.findRev(", ", i);
       if( pos1 == -1 ) pos1 = 0;
       pos2 = ccStr.find(", ", i);
-      ccStr = ccStr.left(pos1) + toStr.right(toStr.size() - pos2 - 1);
+      ccStr = ccStr.left(pos1) + toStr.right(toStr.length() - pos2 - 1);  /* TQt3 迁移 */
     }
     ccStr.truncate(ccStr.length()-2);
     msg->setCc(ccStr);
@@ -592,7 +596,8 @@ const QString KMMessage::dateShortStr(void) const
   if (!header.HasDate()) return "";
   unixTime = header.Date().AsUnixTime();
 
-  result
+  /* TQt3 迁移:原 result 悬空声明(拷贝损坏),补声明 */
+  TQString result;
   result = ctime(&unixTime);
   if (result[result.length()-1]=='\n')
     result.truncate(result.length()-1);
@@ -968,7 +973,7 @@ const QString KMMessage::bodyDecoded(void) const
     dwstr = dwsrc;
     break;
   }
-  return QString(dwstr.c_str(), dwstr.size()+1);
+  return QString::fromLatin1(dwstr.c_str(), dwstr.size()+1);  /* TQt3 迁移:私有构造 */
 }
 
 

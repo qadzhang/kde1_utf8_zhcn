@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
@@ -49,7 +50,6 @@ msgstr "邮寄 Note ..."
 msgid "Print Note"
 msgstr "打印 Note"
 
-#
 #: knotes.cpp:326
 msgid "Save Notes"
 msgstr "保存 Notes"
@@ -86,8 +86,7 @@ msgstr "插入日期"
 msgid "Operations"
 msgstr "操作"
 
-#: knotes.cpp:445 knotes.cpp:449 knotes.cpp:618 knotes.cpp:845 knotes.cpp:849
-#: timer.cpp:87 timer.cpp:110
+#: knotes.cpp:445 knotes.cpp:449 knotes.cpp:618 knotes.cpp:845 knotes.cpp:849 timer.cpp:87 timer.cpp:110
 msgid "Note: "
 msgstr "注："
 
@@ -155,10 +154,18 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
+"KNotes %s\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+"wuebben@kde.org\n"
+"版权所有 (C) 1997\n"
+"\n"
+"贡献者:\n"
+"Matthias Ettrich <ettrich@kde.org>\n"
 
 #: configdlg.cpp:46 knotes.cpp:1375
 msgid "Defaults"
-msgstr "默认"
+msgstr "默认值"
 
 #: knotes.cpp:1376
 msgid "More ..."
@@ -241,7 +248,7 @@ msgstr "设定默认字体"
 
 #: fontdlg.cpp:54
 msgid "Family:"
-msgstr "字族："
+msgstr "字族:"
 
 #: fontdlg.cpp:64
 msgid "Point Size:"
@@ -249,12 +256,11 @@ msgstr "点的大小:"
 
 #: fontdlg.cpp:75
 msgid "Style:"
-msgstr "样式："
+msgstr "样式:"
 
 #: fontdlg.cpp:87
-#, fuzzy
 msgid "Weight:"
-msgstr "高度:"
+msgstr "字重:"
 
 #: fontdlg.cpp:93 fontdlg.cpp:117 fontdlg.cpp:150
 msgid "Bold"
@@ -262,16 +268,15 @@ msgstr "粗体"
 
 #: fontdlg.cpp:95 fontdlg.cpp:119 fontdlg.cpp:152
 msgid "Normal"
-msgstr "标准"
+msgstr "普通"
 
-#
 #: mail.cpp:40
 msgid "Mail Note to:"
 msgstr "邮寄 Note 给:"
 
 #: mail.cpp:49
 msgid "Subject:"
-msgstr "标题:"
+msgstr "主题:"
 
 #: mail.cpp:51
 msgid "Mail"
@@ -355,13 +360,10 @@ msgstr ""
 "请选另一个不同的名字"
 
 #: docking.cpp:48
-#, fuzzy, c-format
+#, c-format
 msgid "Could not load %s !"
-msgstr ""
-"无法载入:\n"
-" %s"
+msgstr "无法载入 %s !"
 
-#
 #: docking.cpp:68
 msgid "Change Defaults"
 msgstr "改变默认值"
@@ -370,7 +372,6 @@ msgstr "改变默认值"
 msgid "Exit Knotes"
 msgstr "退出"
 
-#
 #: docking.cpp:92
 msgid "New Knote"
 msgstr "新的 Note"

@@ -44,24 +44,23 @@ PWidget::PWidget(PObject *)
 PWidget::~PWidget()
 {
   //  tqDebug("PWidget: in destructor");
-  /*
+  /* TQt3 迁移:原嵌套注释因内层星斜杠提前闭合而碎裂,重整为单一注释块
   delete widget();
-  w = 0;  /* TQt3 迁移 */
-  setWidget(0);
-  */
+  w = 0;
+  setWidget(0); */
 }
 
 PObject *PWidget::createWidget(CreateArgs &ca)
 {
-  PWidget *pw = new("PWidget") PWidget();
+  PWidget *pw = new  PWidget();
   QWidget *tw;
   if(ca.fetchedObj != 0 && ca.fetchedObj->inherits("QWidget") == TRUE){
     tw = (QWidget *) ca.fetchedObj;
     pw->setDeleteAble(FALSE);
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
-      tw = new("QWidget") QWidget((QWidget *) ca.parent->widget());
-    tw = new("QWidget") QWidget();
+      tw = new  QWidget((QWidget *) ca.parent->widget());
+    tw = new  QWidget();
   pw->setWidget(tw);
   pw->setWidgetId(ca.pwI);
   pw->setPukeController(ca.pc);

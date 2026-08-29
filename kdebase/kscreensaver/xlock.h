@@ -35,6 +35,25 @@
  */
 
 #include <qapp.h> // hack for qt-1.2
+/* 护罩式预解析含 Bool/Status 枚举的 TQt3 头（What/Why/How）：
+ * Why : ntqvariant.h（enum Type 含 Bool）与 ntqmovie.h（enum Status）必须
+ *       在 X11 的 #define Bool/Status int 之外解析，否则枚举被宏击穿；
+ *       而 xlock 生态（xlock.h 尾部 extern Bool 全家声明、xs_*.c 签名）
+ *       依赖宏存活——两头都要保。
+ * How : 进入本头时宏状态不定（使用方可能已 include X11，如 blob.cpp）：
+ *       ① 先无条件摘除宏 → ② 预解析两个 TQt3 头 → ③ 恢复宏定义，
+ *       使离开本头时 ntqvariant/ntqmovie 已安全解析且 Bool/Status 宏必定
+ *       存活。后续 X11 头（下方）与 xlock 声明因此都安全。 */
+#undef Bool
+#undef Status
+#include <ntqvariant.h>
+#include <ntqmovie.h>
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>

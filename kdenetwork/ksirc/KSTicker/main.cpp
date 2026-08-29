@@ -40,7 +40,7 @@ void StdInTicker::readsocket(int socket)
 {
   char buf[1024];
   int bytes = read(socket, buf, 1024);
-  QString str(buf, bytes);
+  QString str = QString::fromUtf8(buf, bytes);  /* TQt3 migration: private ctor */
   str.replace(QRegExp("\n"), " // ");
   mergeString(str);
 }

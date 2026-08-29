@@ -404,7 +404,7 @@ void KMReaderWin::writeMsgHeader(void)
 //-----------------------------------------------------------------------------
 void KMReaderWin::writeBodyStr(const QString aStr)
 {
-  QString line(256), sig, htmlStr = "";
+  QString line, sig, htmlStr = "";  /* TQt3 迁移:QString(size) 预分配已删 */
   Kpgp* pgp = Kpgp::getKpgp();
   assert(pgp != NULL);
   assert(!aStr.isNull());
@@ -523,7 +523,7 @@ QString KMReaderWin::quotedHTML(char * pos)
 //-----------------------------------------------------------------------------
 void KMReaderWin::writePartIcon(KMMessagePart* aMsgPart, int aPartNum)
 {
-  QString iconName, href(255), label, comment;
+  QString iconName, href, label, comment;  /* TQt3 迁移:同上 */
 
   if(aMsgPart == NULL) {
     tqDebug("writePartIcon: aMsgPart == NULL\n");

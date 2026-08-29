@@ -1,5 +1,7 @@
 #include "irclistbox.h"
-#include <iostream.h>
+#include <qtableview.h>  /* TQt3 迁移:TQtTableView(port 脚手架)声明 */
+#include <iostream>
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 
 #include <qevent.h>
 #include <qregexp.h>
@@ -19,7 +21,7 @@ KSircListBox::KSircListBox(QWidget * parent, const char * name, WFlags f) : QLis
   setAutoScrollBar(FALSE);
   setAutoBottomScrollBar(FALSE);
   thDirty = TRUE;
-  vertScroll = new("QScrollBar") QScrollBar(this, "VertScrollBar");
+  vertScroll = new  QScrollBar(this, "VertScrollBar");
   vertScroll->setOrientation(QScrollBar::Vertical);
   vertScroll->resize(16, this->height());
   vertScroll->move(this->width() - vertScroll->width(), 0);
@@ -56,12 +58,12 @@ bool KSircListBox::scrollToBottom(bool force) /*FOLD00*/
   int th = totalHeight();
   if(th > height()){
     if(ScrollToBottom == TRUE)
-      setYOffset(th - height() + fudge);
+      setContentsPos(0, th - height() + fudge);  /* TQt3 迁移 */
     updateScrollBars();
   }
   else{
     if(ScrollToBottom == TRUE)
-      setYOffset(0);
+      setContentsPos(0, 0);  /* TQt3 迁移 */
     vertScroll->setRange(0, 0);
     repaint(FALSE);
   }
@@ -78,7 +80,7 @@ void KSircListBox::updateScrollBars() /*FOLD00*/
   int theight = totalHeight();
   if(wheight < theight){
     vertScroll->setRange(0, (theight - wheight));
-    vertScroll->setValue(yOffset());
+    vertScroll->setValue(contentsY());  /* TQt3 迁移:yOffset → contentsY */
   }
   else{
     vertScroll->setRange(0, 0);
@@ -109,7 +111,7 @@ void KSircListBox::setTopItem(int index) /*FOLD00*/
 
 void KSircListBox::scrollTo(int index) /*fold00*/
 {
-   setYOffset(index + fudge);
+   setContentsPos(0, index + fudge);  /* TQt3 迁移:setYOffset → setContentsPos */
    if((index + 100) > (totalHeight() - height()))
      ScrollToBottom = TRUE;
    else
@@ -119,7 +121,7 @@ void KSircListBox::scrollTo(int index) /*fold00*/
 
 void KSircListBox::pageUp() /*FOLD00*/
 {
-  setYOffset(QMAX(0, yOffset()-height()));
+  setContentsPos(0, QMAX(0, contentsY()-height()));  /* TQt3 迁移:同上 */
   updateScrollBars();
   ScrollToBottom = FALSE;
   
@@ -127,20 +129,20 @@ void KSircListBox::pageUp() /*FOLD00*/
 
 void KSircListBox::pageDown() /*FOLD00*/
 {
-  setYOffset(imin(totalHeight()-height()+fudge, yOffset()+height()));
+  setContentsPos(0, imin(totalHeight()-height()+fudge, contentsY()+height()));  /* TQt3 迁移 */
   updateScrollBars();
 }
 
 void KSircListBox::lineUp() /*FOLD00*/
 {
-  setYOffset(QMAX(0, yOffset()-itemHeight(topItem())));
+  setContentsPos(0, QMAX(0, contentsY()-itemHeight(topItem())));  /* TQt3 迁移 */
   updateScrollBars();
   ScrollToBottom = FALSE;
 }
 
 void KSircListBox::lineDown() /*FOLD00*/
 {
-  setYOffset(imin(totalHeight()-height()+fudge, yOffset()+itemHeight(topItem())));
+  setContentsPos(0, imin(totalHeight()-height()+fudge, contentsY()+itemHeight(topItem())));  /* TQt3 迁移 */
   updateScrollBars();
 }
 
@@ -209,8 +211,9 @@ void KSircListBox::clear() /*fold00*/
 
 void KSircListBox::updateTableSize() /*fold00*/
 {
+  /* TQt3 迁移:Qt1 的 QListBox 继承 QTableView(此处上调基类);TQListBox 已无
+   * 该祖先,仅保留脏标记,尺寸由 TQScrollView 的布局路径自然重算 */
   thDirty = TRUE;
-  QTableView::updateTableSize();
 }
 
 void KSircListBox::mousePressEvent(QMouseEvent *me){ /*FOLD00*/
@@ -258,7 +261,7 @@ void KSircListBox::mouseReleaseEvent(QMouseEvent *me){ /*FOLD00*/
     if(erow == srow){
       tqDebug("Selected: %s", KSPainter::stripColourCodes(it->getRev()).data());
       kApp->clipboard()->setText(KSPainter::stripColourCodes(it->getRev()));
-      updateItem(row, TRUE);
+      viewport()->repaint(itemRect(item(row)));  /* TQt3 迁移:updateItem(int) 已删,重绘该行 */
     }
     else {
       int trow, brow; // Top row, Bottom row
@@ -304,7 +307,7 @@ void KSircListBox::clearSelection() { /*FOLD00*/
     it->setRevOne(-1);
     it->setRevTwo(-1);
     it->updateSize();
-    updateItem(i, TRUE);
+    viewport()->repaint(itemRect(item(i)));  /* TQt3 迁移 */
   }
   min = 1; // Turns off repeated clears
   max = 0;  /* TQt3 迁移 */
@@ -341,12 +344,12 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
     if(row == srow){
       it->setRevTwo(rchar);
       it->updateSize();
-      updateItem(row, FALSE);
+      viewport()->repaint(itemRect(item(row)));  /* TQt3 迁移 */
     }
     else if(row > srow){
       sit->setRevTwo(strlen(sit->text()));
       sit->updateSize();
-      updateItem(srow, FALSE);
+      viewport()->repaint(itemRect(item(srow)));  /* TQt3 迁移 */
       for(int crow = srow + 1; crow < row; crow++){
 	ircListItem *cit = (ircListItem *) item(crow);
 	if(cit == 0x0){
@@ -356,17 +359,17 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
 	cit->setRevOne(0);
 	cit->setRevTwo(strlen(cit->text()));
 	cit->updateSize();
-	updateItem(crow, FALSE);
+	viewport()->repaint(itemRect(item(crow)));  /* TQt3 迁移 */
       }
       it->setRevOne(0);
       it->setRevTwo(rchar);
       it->updateSize();
-      updateItem(row, FALSE);
+      viewport()->repaint(itemRect(item(row)));  /* TQt3 迁移 */
     }
     else if(row < srow){
       sit->setRevTwo(0);
       sit->updateSize();
-      updateItem(srow, FALSE);
+      viewport()->repaint(itemRect(item(srow)));  /* TQt3 迁移 */
       for(int crow = srow - 1; crow > row; crow--){
 	ircListItem *cit = (ircListItem *) item(crow);
 	if(cit == 0x0){
@@ -376,12 +379,12 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
 	cit->setRevOne(0);
 	cit->setRevTwo(strlen(cit->text()));
 	cit->updateSize();
-	updateItem(crow, FALSE);
+	viewport()->repaint(itemRect(item(crow)));  /* TQt3 迁移 */
       }
       it->setRevOne(rchar);
       it->setRevTwo(strlen(it->text()));
       it->updateSize();
-      updateItem(row, FALSE);
+      viewport()->repaint(itemRect(item(row)));  /* TQt3 迁移 */
     }
     if(lrow > row && lrow > srow){
       int trow = row > srow ? row : srow;
@@ -394,7 +397,7 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
 	cit->setRevOne(-1);
 	cit->setRevTwo(-1);
 	cit->updateSize();
-	updateItem(crow, FALSE);
+	viewport()->repaint(itemRect(item(crow)));  /* TQt3 迁移 */
       }
     }
     else if(lrow < row && lrow < srow){
@@ -408,7 +411,7 @@ void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
 	cit->setRevOne(-1);
 	cit->setRevTwo(-1);
 	cit->updateSize();
-	updateItem(crow, FALSE);
+	viewport()->repaint(itemRect(item(crow)));  /* TQt3 迁移 */
       }
     }
     if(row > max)
@@ -460,7 +463,7 @@ bool KSircListBox::xlateToText(int x, int y, /*FOLD00*/
 
   // yOffset return the top pixel and ttotal holds the pixels upto to the top item.  The diffrence between the two is the offset of the top item
   
-  int yoff = y + (yOffset() - ttotal);
+  int yoff = y + (contentsY() - ttotal);  /* TQt3 迁移:yOffset → contentsY */
   if(item(top) == 0x0)
     return FALSE;
   for(row = top; yoff > item(row)->height(this); row++) {

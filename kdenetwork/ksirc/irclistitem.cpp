@@ -1,5 +1,8 @@
 #include "irclistitem.h"
-#include "iostream.h"
+#include <iostream>  /* TQt3 迁移 */
+using std::cout;
+using std::cerr;
+using std::endl;
 
 #include <stdlib.h>
 
@@ -18,7 +21,7 @@ ircListItem::ircListItem(QString s, const QColor *c, QListBox *lb, QPixmap *p)
 {
 
   if(PaintCache == 0x0){
-    PaintCache = new("QCache<QPixmap>") QIntCache<QPixmap>;
+    PaintCache = new  QIntCache<QPixmap>;
     PaintCache->setMaxCost(300);
     PaintCache->setAutoDelete(TRUE);
   }
@@ -41,9 +44,9 @@ ircListItem::ircListItem(QString s, const QColor *c, QListBox *lb, QPixmap *p)
   revOne = revTwo = -1;
   forceClear = FALSE;
 
-  paint_text = new("QStrListIrcListItem") QStrList();
+  paint_text = new  QStrList();
 
-//  dbuffer = new("QPixmap") QPixmap();
+//  dbuffer = new  QPixmap();
   need_update = TRUE;
 
   old_height = old_width = 0;
@@ -100,7 +103,7 @@ void ircListItem::setupPainterText()
 {
   QPixmap *dbuffer = PaintCache->find(CacheId);
   if(dbuffer == 0x0){
-    dbuffer = new("QPixmap") QPixmap();
+    dbuffer = new  QPixmap();
     CacheId = dbuffer->serialNumber();
     // Should be safe to insert here
     // and use it for the rest of the function

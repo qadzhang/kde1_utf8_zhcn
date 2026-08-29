@@ -451,7 +451,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
     if (c && c->window == e->window && c->winId() == e->event) {
       XGrabServer(qt_xdisplay());
       XEvent ev;
-      Bool reparented;
+      bool reparented;
       XSync(qt_xdisplay(), False);
       reparented = XCheckTypedWindowEvent (qt_xdisplay(), c->winId(),
                                            ReparentNotify, &ev);

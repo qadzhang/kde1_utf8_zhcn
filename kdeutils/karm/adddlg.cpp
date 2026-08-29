@@ -38,3 +38,5 @@ void KarmAddDlg::setTask( const char *name, long time )
 
 	_taskTime->setText( timeStr.setNum( time ) );
 }
+
+#include "adddlg.moc" /* TQt3 迁移:AUTOMOC 时代源码不写 moc 并入,补显式 include(编译单元内提供 vtable) */

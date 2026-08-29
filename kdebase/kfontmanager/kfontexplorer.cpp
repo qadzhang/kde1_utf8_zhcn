@@ -79,7 +79,18 @@
 #include <qfile.h>
 #include <qtstream.h> 
 #include <qapp.h>
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/Xlib.h>
+/* X11/Xlib.h 的 #define Bool int / #define Status int 会击穿后续 TQt3 头
+ *（ntqvariant.h 的 enum Type 含 Bool）——本文件未以宏形式使用二者，
+ * 在此摘除；Xlib 的函数声明已于上方解析完毕，不受影响。 */
+#undef Bool
+#undef Status
 
 #include <klocale.h>
 #include <kapp.h>

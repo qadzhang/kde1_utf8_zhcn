@@ -9,7 +9,20 @@
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
 #undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
+/* shape.h 的函数声明以宏形式的 Bool 作参数/返回类型（extern Bool
+ * XShapeQueryExtension(...) 等）。若使用链中 kwm.h 已把 Bool 摘除，
+ * 须先恢复宏再解析 shape.h；无论进入本头时宏状态如何，离开时一律
+ * 为已摘除状态（护罩：恢复-解析-再摘），保证后续 TQt3 头安全、
+ * 本头解析亦安全。 */
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/extensions/shape.h>
+#undef Bool
+#undef Status
 
 #include "kbind.h"
 #include "html.h"

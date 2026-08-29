@@ -3,15 +3,17 @@
 #include <qwidcoll.h>
 #include <stdlib.h>
 #include <time.h>
-#include <iostream.h>
+#include <iostream>
+using std::endl;
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 
 
-QDict<QObject> *objFinder::objList = new("QDict<QObject>") QDict<QObject>;
+QDict<QObject> *objFinder::objList = new  QDict<QObject>;
 
 /*
  * So we can connect to the slots, etc
  */
-objFinder *objFind = new("objFinder") objFinder();
+objFinder *objFind = new  objFinder();
 
 objFinder::objFinder() /*fold00*/
   : QObject()

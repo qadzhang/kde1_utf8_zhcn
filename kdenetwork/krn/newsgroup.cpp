@@ -146,20 +146,20 @@ void Article::formHeader(QString *s)
 // Builds a nice header to put in the header list, which properly
 // Reflects the internal state of the message
 {
-    s->setStr(" ");
+    *s = " ";  /* TQt3 迁移:setStr → 赋值 */
     QString ss;
     
     if (isread)
     {
-        ss.setStr("{R}");
+        ss = "{R}";
     }
     else
     {
-        ss.setStr("{N}");
+        ss = "{N}";
     }
     if (!isAvailable())
     {
-        ss.setStr("{T}");
+        ss = "{T}";
     }
     if (isMarked())
     {
@@ -1001,7 +1001,7 @@ GroupList::GroupList()
 GroupList::~GroupList()
 {
 }
-int GroupList::compareItems(GCI item1,GCI item2)
+int GroupList::compareItems(TQPtrCollection::Item item1,TQPtrCollection::Item item2)  /* TQt3 迁移:GCI → Item */
 {
     return strcmp(((NewsGroup *)item1)->name,((NewsGroup *)item2)->name);
 }

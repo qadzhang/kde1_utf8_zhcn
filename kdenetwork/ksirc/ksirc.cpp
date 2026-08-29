@@ -6,7 +6,7 @@
 
  Main start file that defines 3 global vars, etc
 
- Does nothing to special, start create new("KApplcaiton") KApplcaiton (incorrectly,
+ Does nothing to special, start create new  KApplcaiton (incorrectly,
  btw, should use the code Kalle posted so it can be session managment
  restarted, etc) loads colours then fires off the main widget.  On
  exit it calls a sync so the kConfig get written.  (Is this a bug?)
@@ -22,7 +22,8 @@
 #include "servercontroller.h"
 #include "welcomeWin.h"
 
-#include <iostream.h>
+#include <iostream>
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 #include <time.h>
 #include <unistd.h>
 
@@ -34,7 +35,9 @@
 
 #include "config.h"
 #include "version.h"
-#include "cdate.h"
+/* TQt3 迁移:cdate.h 为当年构建系统生成的编译日期头(定义 COMPILE_DATE),
+ * 改用编译器内建宏等价 */
+#define COMPILE_DATE __DATE__
 
 KApplication *kApp;
 KConfig *kConfig;
@@ -45,50 +48,36 @@ global_config *kSircConfig;
 int main( int argc, char ** argv )
 {
   // Start the KDE application
-  kApp = new("KApplication") KApplication( argc, argv, QString("ksirc") );
+  kApp = new  KApplication( argc, argv, QString("ksirc") );
 
   kConfig = kApp->getConfig();
 
+  /* TQt3 迁移(2026):原版对无版本号的开发版实施 8 周过期自杀(1999 年的
+   * Alpha 调试机制),2026 年重建必然触发;KDE1 Revival 为历史保存项目,
+   * 该时限已无意义,整体禁用(ksirc.po 中两条过期文案随之不再上屏) */
+#if 0
   QString ver = KSIRC_VERSION;
-  if(ver.contains(".") == 0){
-    // This is a development version
-    // 4 week timeout, warn after 2
-    int ntime = time(NULL);
-    if(ntime - COMPILE_DATE > 4838400){
-      // To Old
-      QMessageBox::critical(0, "kSirc",
-			    QString(i18n("kSirc Alpha releases have an 8 week\n"
-                                         "expiry date.\n\n"
-                                         "kSirc-ALPHA HAS EXPIRED!!\n"
-                                         "Please upgrade or use a beta release")));
-      exit(1);
-    }
-    else if(ntime - COMPILE_DATE > 2419200){
-      QMessageBox::warning(0, "kSirc",
-			   QString(i18n("kSirc Alpha release have an 8 week\n"
-                                        "expiry date.\n\n"
-                                        "THIS VERSION WILL EXPIRE IN UNDER 4 WEEKS")));
-    }
-  }
+  if(ver.contains(".") == 0){ /* ... expired-check disabled ... */ }
+#endif
 
 
   // Get config, and setup internal structure.
 
-  kSircConfig = new("global_config") global_config;
+  kSircConfig = new  global_config;
 
   kConfig->setGroup("Colours");
-  kSircConfig->colour_text = new("QColor") QColor(kConfig->readColorEntry("text", &black));
-  kSircConfig->colour_info = new("QColor") QColor(kConfig->readColorEntry("info", &blue));
-  kSircConfig->colour_chan = new("QColor") QColor(kConfig->readColorEntry("chan", &green));
-  kSircConfig->colour_error = new("QColor") QColor(kConfig->readColorEntry("error", &red));
+  kSircConfig->colour_text = new  QColor(kConfig->readColorEntry("text", &k1c_black));
+  kSircConfig->colour_info = new  QColor(kConfig->readColorEntry("info", &k1c_blue));
+  kSircConfig->colour_chan = new  QColor(kConfig->readColorEntry("chan", &k1c_green));
+  kSircConfig->colour_error = new  QColor(kConfig->readColorEntry("error", &k1c_red));
   if(kSircConfig->colour_text == 0x0)
-      kSircConfig->colour_text = new("QColor") QColor("black");
+      kSircConfig->colour_text = new  QColor("black");
   if(kSircConfig->colour_info == 0x0)
-      kSircConfig->colour_info = new("QColor") QColor("blue");
+      kSircConfig->colour_info = new  QColor("blue");
   if(kSircConfig->colour_chan == 0x0)
-      kSircConfig->colour_chan = new("QColor") QColor("green");
+      kSircConfig->colour_chan = new  QColor("green");
   if(kSircConfig->colour_error == 0x0)
-      kSircConfig->colour_error = new("QColor") QColor("red");
+      kSircConfig->colour_error = new  QColor("red");
   
 
   kSircConfig->colour_background = 0;
@@ -105,7 +94,7 @@ int main( int argc, char ** argv )
   putenv(ld_path.data());
 
   kConfig->setGroup("GlobalOptions");
-  kSircConfig->defaultfont = kConfig->readFontEntry("MainFont", new("QFont") QFont("fixed"));
+  kSircConfig->defaultfont = kConfig->readFontEntry("MainFont", new  QFont("fixed"));
   kConfig->setGroup("General");
   kSircConfig->DisplayMode = kConfig->readNumEntry("DisplayMode", 0);
   kSircConfig->WindowLength = kConfig->readNumEntry("WindowLength", 200);
@@ -122,7 +111,7 @@ int main( int argc, char ** argv )
 
   if(kApp->isRestored()){
     int n = 1;
-    servercontroller *sc = new("servercontroller") servercontroller(0, "servercontroller");
+    servercontroller *sc = new  servercontroller(0, "servercontroller");
     CHECK_PTR(sc);
     kApp->setMainWidget(sc);
     while (servercontroller::canBeRestored(n)) {
@@ -131,7 +120,7 @@ int main( int argc, char ** argv )
     }
   }
   else{
-    servercontroller *control = new("servercontroller") servercontroller(0, "servercontroller");
+    servercontroller *control = new  servercontroller(0, "servercontroller");
     control->show();
     kApp->setMainWidget(control);
   }

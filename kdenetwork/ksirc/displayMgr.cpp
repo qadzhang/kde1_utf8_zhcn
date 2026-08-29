@@ -36,4 +36,4 @@ void DisplayMgr::setCaption(QWidget *w, const char *)
   tqWarning("Display Manger: setCaption called");
 }
 
-#include "displayMgr.moc"
+/* TQt3 迁移:displayMgr 无 Q_OBJECT,原 AUTOMOC 残迹 include 已删 */

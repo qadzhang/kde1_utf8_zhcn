@@ -43,6 +43,9 @@ Kfind::Kfind( QWidget *parent, const char *name, const char *searchPath )
 
     //create tabdialog
     tabDialog = new KfindTabDialog(this,"dialog",searchPath);
+    /* [KDE1 Revival 2026] TQt3 下子部件默认随父窗口显示，但经过 reparent
+     *  重嵌入的 tabDialog 保险起见显式 show（Qt1 语义下这里从不缺失）。 */
+    tabDialog->show();
 
     //prepare window for find results
     win = new KfindWindow(this,"window");

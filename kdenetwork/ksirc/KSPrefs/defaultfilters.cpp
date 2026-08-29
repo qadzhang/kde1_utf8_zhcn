@@ -63,7 +63,7 @@ DefaultFilters::DefaultFilters
 
   if(kSircConfig->colour_background == 0){
      kConfig->setGroup("Colours");
-     kSircConfig->colour_background = new("QColor") QColor(kConfig->readColorEntry("Background", new("QColor") QColor(colorGroup().mid())));
+     kSircConfig->colour_background = new  QColor(kConfig->readColorEntry("Background", new  QColor(colorGroup().mid())));
   }
 
   SLE_SampleColourNick->setFocusPolicy(QWidget::NoFocus);
@@ -153,3 +153,4 @@ void DefaultFilters::slot_apply()
   kConfig->sync();
 }
 
+#include "defaultfilters.moc" /* TQt3 迁移:AUTOMOC 时代未写显式 moc include,补齐(编译单元内提供 vtable) */

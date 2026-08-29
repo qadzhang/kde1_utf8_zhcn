@@ -140,7 +140,10 @@ void KBusyPtr :: loadCursor (const char* cursorName,const char* maskName)
 
   if (bitmapList) delete[] bitmapList;
   QSize size(16,16);
-  bitmapList = new QBitmap[numCursors](size);
+  /* TQt3 迁移:数组 new 的括号初始化(.Qt1 扩展)已废;逐元素设置尺寸 */
+  bitmapList = new QBitmap[numCursors];
+  for (int idx = 0; idx < numCursors; idx++)
+      bitmapList[idx].resize(size);
   if (cursorList) delete[] cursorList;
   cursorList = new QCursor[numCursors];
 

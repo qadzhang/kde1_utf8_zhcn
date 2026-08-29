@@ -63,8 +63,13 @@ KMSender::KMSender()
   //label->setAutoResize(true);
   label->setCaption("KMail");
   label->setIcon(kapp->getMiniIcon());
+  /* [KDE1 Revival 2026] TQt3 的 TQLabel::setText 只有 const TQString& 形参，
+   *  Qt1 时代的 setText(const char*) 槽已不存在——原连接在启动时报
+   *  "No such slot" 并弹出调试警告框。改走 I18N_NOOP 兼容路径：
+   *  statusMsg(const char*) 先经本地槽转 TQString 再喂 setText。 */
+  statusLabel = label;
   connect (this, SIGNAL(statusMsg(const char *)),
-           label, SLOT(setText(const char*)));
+           this, SLOT(slotStatusMsgToLabel(const char *)));
 }
 
 
@@ -318,6 +323,13 @@ void KMSender::quitWhenFinished()
 }
 
 //-----------------------------------------------------------------------------
+/* [KDE1 Revival 2026] TQt3 下 TQLabel 无 setText(const char*) 槽：
+ *  状态文本在此转成 TQString 再喂给标签，功能与 Qt1 直连等价 */
+void KMSender::slotStatusMsgToLabel(const char* msg)
+{
+  if (statusLabel) statusLabel->setText(QString(msg));
+}
+
 void KMSender::slotIdle()
 {
   assert(mSendProc != NULL);

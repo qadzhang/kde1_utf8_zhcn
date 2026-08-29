@@ -119,7 +119,11 @@ KMenuEdit::KMenuEdit( const char *name )
   scrolly->setSteps( 8, f_mask->height() );
 
   top2bottom = new QGridLayout( f_main, 2, 2, 2 );
-  top2bottom->addWidget( f_mask, 0, 0, AlignCenter );
+  /* [KDE1 Revival 2026] f_mask 不能带 AlignCenter：TQt3 网格布局的 AlignCenter
+   *  让部件按自身 sizeHint 出现，而 QFrame 的 sizeHint 无效——f_mask 被压成
+   *  1x1，其下 1280x960 的 f_move（菜单树画布）整个被裁剪，主体一片空白。
+   *  去掉对齐位后 f_mask 填满 (0,0) 格（行/列 stretch 均为 1），恢复滚动画布。 */
+  top2bottom->addWidget( f_mask, 0, 0 );
   top2bottom->setRowStretch( 0, 1 );
   top2bottom->setColStretch( 0, 1 );
   top2bottom->addWidget( scrolly, 0, 1, AlignCenter );

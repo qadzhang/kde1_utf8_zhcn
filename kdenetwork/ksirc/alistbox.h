@@ -19,7 +19,7 @@ class nickListItem : public QListBoxItem
 
   int height ( const QListBox * ) const;
   int width ( const QListBox * ) const;
-  const char* text () const;
+  TQString text () const;  /* TQt3 迁移:基类 text() 已改返回 TQString */
   const QPixmap* pixmap () const;
   
   bool op();

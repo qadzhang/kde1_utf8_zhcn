@@ -265,7 +265,7 @@ TLObj *KTypeLayout::addCheckBox(const char *ID,const char *text,bool value)
 
     g->show();
     g->setMinimumWidth(l->fontMetrics().width(text)+20);
-    g->setMinimumHeight(l->fontMetrics().height()>?12);
+    g->setMinimumHeight(l->fontMetrics().height()>12?l->fontMetrics().height():12);  /* TQt3 迁移:GCC 老 >? 运算符已删 */
     TLObj *o=addWidget(ID,g);
     o->align=AlignLeft|AlignVCenter;
     return o;
@@ -290,7 +290,7 @@ TLObj *KTypeLayout::addRadioButton(const char *ID,const char *GroupID,
 
     g->show();
     g->setMinimumWidth(l->fontMetrics().width(text)+20);
-    g->setMinimumHeight(l->fontMetrics().height() >? 12);
+    g->setMinimumHeight(l->fontMetrics().height() > 12 ? l->fontMetrics().height() : 12);  /* TQt3 迁移:GCC 老 >? 已删 */
     TLObj *o=addWidget(ID,g);
     o->align=AlignLeft|AlignVCenter;
     return o;

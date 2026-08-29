@@ -15,6 +15,12 @@ static int ctrl;
 struct floppy_struct param;
 
 #define FLOPPY_MAJOR 2
+/* TQt3 migration: glibc provides major() (lowercase) in sys/sysmacros.h;
+   the old UPPERCASE MAJOR macro is gone - alias it */
+#include <sys/sysmacros.h>
+#ifndef MAJOR
+#define MAJOR(dev) major(dev)
+#endif
 #define SECTOR_SIZE 512
 #define PERROR(msg) { perror(msg);fflush(stderr); exit(1); }
 

@@ -142,7 +142,7 @@ KMMsgPartDlg::~KMMsgPartDlg()
 void KMMsgPartDlg::setMsgPart(KMMessagePart* aMsgPart)
 {
   unsigned int len, idx;
-  QString lenStr(32), iconName, enc;
+  QString lenStr, iconName, enc;  /* TQt3 迁移:Qt1 的 QString(size) 预分配已删 */
 
   mMsgPart = aMsgPart;
   assert(mMsgPart!=NULL);

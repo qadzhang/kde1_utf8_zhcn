@@ -183,9 +183,14 @@ pWidget::pWidget(QWidget *, const char *)
   }
 
   m->show();
+  /* TQt3 迁移:dealer 声明纯虚 show()(各玩法子类只显示牌、不调基类),
+   * 虚派发使容器本体永不映射(X 窗口 IsUnMapped,牌桌全空);
+   * 先显式调 TQWidget::show() 映射容器,再走虚派发显示牌 */
+  dill->TQWidget::show();
   dill->show();
   tb->show();  
   setView(dill);
+
   setMenu(m);
   addToolBar(tb);
   updateRects();
@@ -298,6 +303,7 @@ void pWidget::actionNewGame(int id) {
   }
 
   dill->setFixedSize(dill->sizeHint());
+  dill->TQWidget::show();  /* TQt3 迁移:同上,显式映射容器本体 */
   dill->show();
   setView(dill);
   updateRects();
@@ -370,3 +376,11 @@ void pWidget::slotMenubarChanged() {
 }
 
 #include "pwidget.moc"
+
+/* TQt3 迁移:主窗显示后再确认 dealer 已映射——dealer 的纯虚 show() 遮蔽链
+ * 使常规路径下其 X 窗口停留 IsUnMapped,此兜底在顶层 ShowEvent 后强制 show */
+void pWidget::showEvent( QShowEvent* )
+{
+  if (dill)
+    dill->TQWidget::show();
+}

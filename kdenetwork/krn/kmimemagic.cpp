@@ -1185,7 +1185,7 @@ KMimeMagic::finishResult()
 	encoding_pos = encoding_len = 0;
 	/* loop through the characters in the result */
 	for (cur_pos = 0; cur_pos < (int)resultBuf.length(); cur_pos++) {
-		if (isspace(resultBuf.at(cur_pos))) {
+		if (isspace((unsigned char)resultBuf.at(cur_pos).latin1())) {  /* TQt3 迁移:at 返回 TQCharRef */
 			/* process whitespace actions for each state */
 			if (state == rsl_leading_space) {
 				/* eat whitespace in this state */
@@ -2094,9 +2094,9 @@ KMimeMagic::findBufferType(const char * buffer, int nbytes)
 {
 	unsigned char buf[HOWMANY + 1];	/* one extra for terminating '\0' */
 
-	resultBuf.resize(0);
+	resultBuf.truncate(0);  /* TQt3 迁移:resize → truncate */
 	if (magicResult) {
-		magicResult->setContent(QString(0));
+		magicResult->setContent(TQString::null);  /* TQt3 迁移:QString(0) 已删 */
 		magicResult->setEncoding(QString(0));
 	} else
 	  magicResult = new KMimeMagicResult();
@@ -2150,7 +2150,7 @@ KMimeMagic::findBufferFileType( const char * buffer, int nbytes,
 const KMimeMagicResult *
 KMimeMagic::findFileType(const char *fn)
 {
-        resultBuf.resize(0);
+        resultBuf.truncate(0);  /* TQt3 迁移:resize → truncate */
         if (magicResult) {
                 magicResult->setContent(QString(0));
                 magicResult->setEncoding(QString(0));

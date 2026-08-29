@@ -5,29 +5,28 @@
  $$Id$$
 
  Main Server Controller.  Displays server connection window, and makes 
- new("server") server connection on demand.
+ new  server connection on demand.
 
  Signals: NONE
 
  Slots: 
 
-   new_connection(): Creates popup asking for new("connection
-") connection
+   new_connection(): Creates popup asking for new  connection
 
    new_ksircporcess(QString): 
       Args:
-         QString: new("server") server name or IP to connect to.
+         QString: new  server name or IP to connect to.
       Action:
-	 Creates a new("sirc") sirc process and window !default connected to the 
+	 Creates a new  sirc process and window !default connected to the 
 	 server.  Does nothing if a server connection already exists.
    
    add_toplevel(QString parent, QString child):
       Args:
-	   parent: the server name that the new("channel") channel is being joined on
-	   child: the new("channel") channel name
+	   parent: the server name that the new  channel is being joined on
+	   child: the new  channel name
       Action:
          Adds "child" to the list of joined channles in the main 
-	 window.  Always call this on new("window") window creation!
+	 window.  Always call this on new  window creation!
 
    delete_toplevel(QString parent, QString child):
       Args:
@@ -39,11 +38,11 @@
 	 the child is Empty the whole tree is removed since it is assumed 
          the parent has disconnected and is closing.
 
-   new_channel:  Creates popup asking for new("channel") channel name
+   new_channel:  Creates popup asking for new  channel name
 
    new_toplevel(QString str): 
       Args:
-         str: name of the new("channel") channel to be created
+         str: name of the new  channel to be created
       Action:
          Sends a signal to the currently selected server in the tree
          list and join the requested channel.  Does nothing if nothing
@@ -53,9 +52,9 @@
       Args:
          parent: parent server connection
          old: the old name for the window
-         new: the new("name") name for the window
+         new: the new  name for the window
       Action:
-          Changes the old window name to the new("window") window name in the tree
+          Changes the old window name to the new  window name in the tree
           list box.  Call for all name change!
  
  *********************************************************************/
@@ -71,7 +70,9 @@
 #include "version.h"
 #include "KSPrefs/ksprefs.h"
 #include "kpopupmenu.h"
-#include <iostream.h>
+#include <iostream>
+using std::endl;
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 
 #include "objFinder.h"
 
@@ -114,18 +115,18 @@ servercontroller::servercontroller /*FOLD00*/
 {
 
 
-  MenuBar = new("KMenuBar") KMenuBar(this, QString(name) + "_menu");
+  MenuBar = new  KMenuBar(this, QString(name) + "_menu");
   setMenu(MenuBar);
 
   if(kSircConfig->DisplayMode == 0){
   SDI:
-    displayMgr = new("DisplayMgrSDI") DisplayMgrSDI();
-    sci = new("scInside") scInside(this, QString(name) + "_mainview");
+    displayMgr = new  DisplayMgrSDI();
+    sci = new  scInside(this, QString(name) + "_mainview");
     setView(sci, TRUE);
   }
   else if(kSircConfig->DisplayMode == 1){
-    DisplayMgrMDI *displayMgrMDI = new("DisplayMgrMDI") DisplayMgrMDI(this);
-    sci = new("scInside") scInside(this, QString(name) + "_mainview");
+    DisplayMgrMDI *displayMgrMDI = new  DisplayMgrMDI(this);
+    sci = new  scInside(this, QString(name) + "_mainview");
     displayMgrMDI->newTopLevel(sci, TRUE);
     
     displayMgrMDI->setCaption(sci, "Server Controller");
@@ -155,14 +156,14 @@ servercontroller::servercontroller /*FOLD00*/
 
   setFrameBorderWidth(5);
 
-  KAPopupMenu *file = new("KAPopupMenu") KAPopupMenu(0, QString(name) + "_menu_file");
+  KAPopupMenu *file = new  KAPopupMenu(0, QString(name) + "_menu_file");
   //  insertChild(file);
   file->insertItem(i18n("&Dock"), this, SLOT(toggleDocking()));
   file->insertSeparator();
   file->insertItem(i18n("&Quit"), this, SLOT(endksirc()), ALT + Key_F4);
   MenuBar->insertItem(i18n("&File"), file);
   
-  connections = new("KAPopupMenu") KAPopupMenu(0, QString(name) + "_menu_connections");
+  connections = new  KAPopupMenu(0, QString(name) + "_menu_connections");
 //  insertChild(connections);
 
   server_id = connections->insertItem(i18n("New Server..."), this, SLOT(new_connection()), CTRL + Key_N );
@@ -181,7 +182,7 @@ servercontroller::servercontroller /*FOLD00*/
   kSircConfig->DisplayTopic = kConfig->readNumEntry("DisplayTopic", TRUE);
   
   kConfig->setGroup("GlobalOptions");
-  options = new("KAPopupMenu") KAPopupMenu(0, QString(name) + "_menu_options");
+  options = new  KAPopupMenu(0, QString(name) + "_menu_options");
   //insertChild(options);
   options->setCheckable(TRUE);
 
@@ -200,7 +201,7 @@ servercontroller::servercontroller /*FOLD00*/
   MenuBar->insertItem(i18n("&Options"), options);
   
   
-  KAPopupMenu *help = new("KAPopupMenu") KAPopupMenu(0, QString(name) + "_menu_help");
+  KAPopupMenu *help = new  KAPopupMenu(0, QString(name) + "_menu_help");
   //insertChild(help);
   //  help->insertItem("Help...",
   //		   this, SLOT(help_general()));
@@ -221,13 +222,13 @@ servercontroller::servercontroller /*FOLD00*/
   KIconLoader *kicl = kApp->getIconLoader();
   QStrList *strlist = kicl->getDirList();
   kicl->insertDirectory(strlist->count(), kapp->kde_datadir() + "/ksirc/icons"); 
-  pic_server = new("QPixmap") QPixmap(kicl->loadIcon("server.xpm"));
-  pic_channel = new("QPixmap") QPixmap(kicl->loadIcon("channel.xpm"));
-  pic_gf = new("QPixmap") QPixmap(kicl->loadIcon("ksirc_a.xpm"));
-  pic_run = new("QPixmap") QPixmap(kicl->loadIcon("mini-run.gif"));
-  pic_ppl = new("QPixmap") QPixmap(kicl->loadIcon("channels.xpm"));
-  pic_icon = new("QPixmap") QPixmap(kicl->loadIcon("ksirc_b.xpm"));
-  pic_dock = new("QPixmap") QPixmap(kicl->loadIcon("ksirc_dock.xpm"));
+  pic_server = new  QPixmap(kicl->loadIcon("server.xpm"));
+  pic_channel = new  QPixmap(kicl->loadIcon("channel.xpm"));
+  pic_gf = new  QPixmap(kicl->loadIcon("ksirc_a.xpm"));
+  pic_run = new  QPixmap(kicl->loadIcon("mini-run.gif"));
+  pic_ppl = new  QPixmap(kicl->loadIcon("channels.xpm"));
+  pic_icon = new  QPixmap(kicl->loadIcon("ksirc_b.xpm"));
+  pic_dock = new  QPixmap(kicl->loadIcon("ksirc_dock.xpm"));
 
   setCaption( i18n("Server Control") );
   setIcon(*pic_icon);
@@ -243,7 +244,7 @@ servercontroller::servercontroller /*FOLD00*/
   pfile.sprintf("/.ksirc.socket.%d", getpid());
   kSircConfig->pukeSocket += pfile;
   
-  PukeC = new("PukeController") PukeController(kSircConfig->pukeSocket, this, "pukecontroller");
+  PukeC = new  PukeController(kSircConfig->pukeSocket, this, "pukecontroller");
   if(PukeC->running == TRUE){
     cerr << "Puke running\n";
     connect(PukeC, SIGNAL(PukeMessages(QString, int, QString)),
@@ -256,8 +257,8 @@ servercontroller::servercontroller /*FOLD00*/
   }
 
   docked = FALSE;
-  dockWidget = new("dockServerController") dockServerController(this, "servercontroller_dock");
-  PWSTopLevel = new("PWS") PWS(0x0, "PWSTopLevel");
+  dockWidget = new  dockServerController(this, "servercontroller_dock");
+  PWSTopLevel = new  PWS(0x0, "PWSTopLevel");
   PWSTopLevel->startServer();
 }
 
@@ -276,7 +277,7 @@ servercontroller::~servercontroller() /*FOLD00*/
 
 void servercontroller::new_connection() /*fold00*/
 {
-  open_ksirc w;                                   // Create new("ksirc") ksirc popup
+  open_ksirc w;                                   // Create new  ksirc popup
   connect(&w, SIGNAL(open_ksircprocess(QString)), // connected ok to process
           this, SLOT(new_ksircprocess(QString))); // start
   w.exec();                                       // show the sucker!
@@ -293,7 +294,7 @@ void servercontroller::new_ksircprocess(QString str) /*FOLD00*/
   QString channels(i18n("Channels")), online(i18n("Online"));
   KPath path;
   path.push(&str);
-  // Insert new("base") base
+  // Insert new  base
   ConnectionTree->insertItem(str.data(), pic_server, -1, FALSE);
   ConnectionTree->addChildItem(online.data(), pic_gf, &path);
   ConnectionTree->addChildItem(channels.data(), pic_ppl, &path);
@@ -303,7 +304,7 @@ void servercontroller::new_ksircprocess(QString str) /*FOLD00*/
   // do the dirty work here.
   ProcMessage(str, ProcCommand::addTopLevel, QString("no_channel"));
   
-  KSircProcess *proc = new("KSircProcess") KSircProcess(str.data(), 0, QString(name()) + "_" + str + "_ksp"); // Create proc
+  KSircProcess *proc = new  KSircProcess(str.data(), 0, QString(name()) + "_" + str + "_ksp"); // Create proc
   //this->insertChild(proc);                           // Add it to out inheritance tree so we can retreive child widgets from it.
   objFinder::insert(proc);
   proc_list.insert(str.data(), proc);                      // Add proc to hash
@@ -323,7 +324,7 @@ void servercontroller::new_ksircprocess(QString str) /*FOLD00*/
 
 void servercontroller::new_channel() /*fold00*/
 {
-  open_top w;                                   // Create new("channel") channel popup
+  open_top w;                                   // Create new  channel popup
   connect(&w, SIGNAL(open_toplevel(QString)),   // Connect ok to right slot
 	  this, SLOT(new_toplevel(QString)));
   w.exec();                                     // Show me baby!
@@ -360,7 +361,7 @@ void servercontroller::ToggleAutoCreate() /*fold00*/
 
 void servercontroller::colour_prefs() /*fold00*/
 {
-  KSircColour *kc = new("KSircColour") KSircColour();
+  KSircColour *kc = new  KSircColour();
   connect(kc, SIGNAL(update()),
 	  this, SLOT(configChange()));
   kc->show();
@@ -368,7 +369,7 @@ void servercontroller::colour_prefs() /*fold00*/
 
 void servercontroller::general_prefs() /*fold00*/
 {
-  KSPrefs *kp = new("KSPrefs") KSPrefs();
+  KSPrefs *kp = new  KSPrefs();
   connect(kp, SIGNAL(update()),
           this, SLOT(configChange()));
   kp->resize(550, 450);
@@ -377,7 +378,7 @@ void servercontroller::general_prefs() /*fold00*/
 
 void servercontroller::filter_rule_editor() /*fold00*/
 {
-  FilterRuleEditor *fe = new("FilterRuleEditor") FilterRuleEditor();
+  FilterRuleEditor *fe = new  FilterRuleEditor();
   connect(fe, SIGNAL(destroyed()), 
 	  this, SLOT(slot_filters_update()));
   fe->show();
@@ -385,7 +386,7 @@ void servercontroller::filter_rule_editor() /*fold00*/
 
 void servercontroller::font_prefs() /*fold00*/
 {
-  KFontDialog *kfd = new("KFontDialog") KFontDialog();
+  KFontDialog *kfd = new  KFontDialog();
   kfd->setFont(kSircConfig->defaultfont);
   connect(kfd, SIGNAL(fontSelected(const QFont &)),
 	  this, SLOT(font_update(const QFont &)));
@@ -425,7 +426,7 @@ void servercontroller::configChange() /*fold00*/
 
 void servercontroller::about_ksirc() /*FOLD00*/
 {
-  QString caption = PACKAGE;
+  QString caption = "ksirc";  /* TQt3 迁移:PACKAGE 宏为当年 autogen 定义 */
   caption += "-";
   caption += KSIRC_VERSION;
   caption += "\n\n(c) Copyright 1997,1998, Andrew Stanley-Jones (asj@ksirc.org)\n\nkSirc Irc Client";
@@ -463,22 +464,22 @@ void servercontroller::ProcMessage(QString server, int command, QString args) /*
     // duplicates.
     // Args == nick comming on/offline.
   case ProcCommand::nickOffline:
-    // Add new("channel,") channel, first add the parent to the path
+    // Add new  channel, first add the parent to the path
     path.push(&server);
     path.push(&online);
     path.push(&args);
-    // add a new("child") child item with parent as it's parent
+    // add a new  child item with parent as it's parent
     ConnectionTree->removeItem(&path); // Remove the item    
     break;
   case ProcCommand::nickOnline:
-    // Add new("channel,") channel, first add the parent to the path
+    // Add new  channel, first add the parent to the path
     path.push(&server);
     path.push(&online);
     path.push(&args);
     // Remove old one if it's there
     ConnectionTree->removeItem(&path); // Remove the item    
     path.pop();
-    // add a new("child") child item with parent as it's parent
+    // add a new  child item with parent as it's parent
     ConnectionTree->addChildItem(args.data(), pic_run, &path);
     if (kSircConfig->BeepNotify) {
       KApplication::beep();
@@ -486,19 +487,19 @@ void servercontroller::ProcMessage(QString server, int command, QString args) /*
     break;
     /**
       *  Args:
-      *	   parent: the server name that the new("channel") channel is being joined on
-      *    child: the new("channel") channel name
+      *	   parent: the server name that the new  channel is being joined on
+      *    child: the new  channel name
       *  Action:
       *    Adds "child" to the list of joined channles in the main 
-      *    window.  Always call this on new("window") window creation!
+      *    window.  Always call this on new  window creation!
       */
   case ProcCommand::addTopLevel:
-    // Add new("channel,") channel, first add the parent to the path
+    // Add new  channel, first add the parent to the path
     path.push(&server);
     path.push(&channels);
     if(args[0] == '!')
       args.remove(0, 1); // If the first char is !, it's control, remove it
-    // add a new("child") child item with parent as it's parent
+    // add a new  child item with parent as it's parent
     ConnectionTree->addChildItem(args.data(), pic_channel, &path);
     //cerr << "Added child for: " << parent << "->" << child << endl;
     open_toplevels++;
@@ -530,9 +531,9 @@ void servercontroller::ProcMessage(QString server, int command, QString args) /*
       *  Args:
       *    parent: parent server connection
       *    old: the old name for the window
-      *    new: the new("name") name for the window
+      *    new: the new  name for the window
       *  Action:
-      *    Changes the old window name to the new("window") window name in the tree
+      *    Changes the old window name to the new  window name in the tree
       *    list box.  Call for all name change!
       */
   case ProcCommand::changeChannel:
@@ -555,7 +556,7 @@ void servercontroller::ProcMessage(QString server, int command, QString args) /*
       ConnectionTree->removeItem(&path);
       // Only create with the parent in the path
       path.pop();
-      // Add new("child.") child.  Delete/creates wrecks the "random" sort order though.
+      // Add new  child.  Delete/creates wrecks the "random" sort order though.
       ConnectionTree->addChildItem(new_s, pic_channel, &path);
       delete[] new_s;
       delete[] old_s;
@@ -690,9 +691,9 @@ void servercontroller::WindowSelected(int index){
 
 scInside::scInside ( QWidget * parent, const char * name, WFlags /*fold00*/
 		     f, bool allowLines )
-  : QFrame(parent, name, f, allowLines)
+  : QFrame(parent, name, f)  /* TQt3 迁移:第 4 参 bool 已删 */
 {
-  ASConn = new("QLabel") QLabel(i18n("Active Server Connections"), this, "servercontroller_label");
+  ASConn = new  QLabel(i18n("Active Server Connections"), this, "servercontroller_label");
   QColorGroup cg = QColorGroup(colorGroup().foreground(), 
 			       colorGroup().background(),
                                colorGroup().light(), 
@@ -705,7 +706,7 @@ scInside::scInside ( QWidget * parent, const char * name, WFlags /*fold00*/
   asfont.setBold(TRUE);
   ASConn->setFont(asfont);
 
-  ConnectionTree = new("KTreeList") KTreeList(this, "connectiontree");
+  ConnectionTree = new  KTreeList(this, "connectiontree");
 }
 
 scInside::~scInside() /*fold00*/
@@ -729,7 +730,7 @@ dockServerController::dockServerController(servercontroller *_sc, const char *_n
 {
   sc = _sc;
 
-  pop = new("QPopupMenu") QPopupMenu;
+  pop = new  QPopupMenu;
   pop->setName("dockServerController_menu_pop");
 
   pop->insertItem(i18n("&Quit"), kApp, SLOT(quit()));

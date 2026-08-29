@@ -1,13 +1,12 @@
+#
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-03-05 01:58+0100\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Date: 1998-03-06 23:13:09-0500\n"
-"From: Bernd Johannes Wuebben,201 Lincoln Hall,,256-1036, "
-"<root@petit.cornell.edu>\n"
+"Files: configdlg.cpp dlabel.cpp fontdlg.cpp kcalc.cpp kcalc_core.cpp stats.cpp\n"
+"From: Bernd Johannes Wuebben,201 Lincoln Hall,,256-1036, <root@petit.cornell.edu>\n"
 "Xgettext-Options: -C -ki18n -x../../kdelibs/po/kde.pot\n"
-"Files: configdlg.cpp dlabel.cpp fontdlg.cpp kcalc.cpp kcalc_core.cpp "
-"stats.cpp\n"
 
 #: kcalc.cpp:99
 msgid "KCalc Setup/Help"
@@ -36,25 +35,25 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
+"KCalc %s\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+"wuebben@kde.org\n"
+"版权所有 (C) 1996-98\n"
+"\n"
+"\n"
 
 #: kcalc.cpp:1551
 msgid "Base type: long double\n"
 msgstr "底数类型: 长双精度\n"
 
 #: kcalc.cpp:1553
-msgid ""
-"Due to broken glibc's everywhere, I had to reduce KCalc's precision from "
-"'long double' to 'double'. Owners of systems with a working libc should "
-"recompile KCalc with 'long double' precision enabled. See the README for "
-"details."
-msgstr ""
-"因为坏掉的 glibc 到处都是, 我不得不把 KCalc 的精度从 '长双精度' 降到'双精度' "
-". 系统中有好用的 libc 的属主应该把 '长双精度' 打开 , 重编译KCalc . 看 README "
-"获得详细情况."
+msgid "Due to broken glibc's everywhere, I had to reduce KCalc's precision from 'long double' to 'double'. Owners of systems with a working libc should recompile KCalc with 'long double' precision enabled. See the README for details."
+msgstr "因为坏掉的 glibc 到处都是, 我不得不把 KCalc 的精度从 '长双精度' 降到'双精度' . 系统中有好用的 libc 的属主应该把 '长双精度' 打开 , 重编译KCalc . 看 README 获得详细情况."
 
 #: configdlg.cpp:56 kcalc.cpp:1592
 msgid "Defaults"
-msgstr "默认"
+msgstr "默认值"
 
 #: kcalc.cpp:1593
 msgid "Display Font"
@@ -66,6 +65,8 @@ msgid ""
 "KCalc %s\n"
 "Copyright 1997 Bernd Johannes Wuebben <wuebben@kde.org>\n"
 msgstr ""
+"KCalc %s\n"
+"版权所有 1997 Bernd Johannes Wuebben <wuebben@kde.org>\n"
 
 #: kcalc_core.cpp:1115
 msgid "Last stat item erased"
@@ -129,7 +130,7 @@ msgstr "设定默认字体"
 
 #: fontdlg.cpp:53
 msgid "Family:"
-msgstr ""
+msgstr "字族:"
 
 #: fontdlg.cpp:63
 msgid "Point Size:"
@@ -137,19 +138,19 @@ msgstr "点大小:"
 
 #: fontdlg.cpp:76
 msgid "Style:"
-msgstr ""
+msgstr "样式:"
 
 #: fontdlg.cpp:91
 msgid "Weight:"
-msgstr ""
+msgstr "字重:"
 
 #: fontdlg.cpp:101 fontdlg.cpp:134
 msgid "Bold"
-msgstr ""
+msgstr "粗体"
 
 #: fontdlg.cpp:103 fontdlg.cpp:136
 msgid "Normal"
-msgstr ""
+msgstr "普通"
 
 #~ msgid "Base type: double\n"
 #~ msgstr "Kantatyyppi: double\n"

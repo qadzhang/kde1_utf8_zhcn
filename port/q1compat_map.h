@@ -761,6 +761,9 @@
 
 /* Qt1→Qt3 语义改名映射（Qt1 名 → TQt3 实际类） */
 #define QList TQPtrList
+/* Qt1 的类型安全模板容器后缀 T(Krn 生态用):与上面同语义的模板形态 */
+#define QListT TQPtrList
+#define QDictT TQDict
 #define QListIterator TQPtrListIterator
 #define QArray TQMemArray
 #define QArrayIterator TQMemArrayIterator

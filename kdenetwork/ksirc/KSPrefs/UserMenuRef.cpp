@@ -31,7 +31,7 @@
      required line edits and combo menus etc when a highligh changes.
 
    insertMenu():
-     read the the line edits and insert a new("menu") menu into the current
+     read the the line edits and insert a new  menu into the current
      list box location.
 
    deleteMenu():
@@ -125,7 +125,7 @@ void UserMenuRef::insertMenu()
 
   if(MenuType->currentItem() == UserControlMenu::Text){
     user_menu->insert(newitem,
-		      new("UserControlMenu") UserControlMenu(qstrdup(MenuName->text()),
+		      new  UserControlMenu(qstrdup(MenuName->text()),
 					  qstrdup(MenuCommand->text()),
 					  -1,
 					  (int) UserControlMenu::Text,
@@ -133,7 +133,7 @@ void UserMenuRef::insertMenu()
   }
   else if(MenuType->currentItem() == UserControlMenu::Seperator){
     user_menu->insert(newitem,
-			  new("UserControlMenu)") UserControlMenu);
+			  new  UserControlMenu);
   }
       
   updateMainListBox();
@@ -205,7 +205,7 @@ void UserMenuRef::modifyMenu()
 
   if(MenuType->currentItem() == UserControlMenu::Text){
     user_menu->insert(newitem,
-		      new("UserControlMenu") UserControlMenu(qstrdup(MenuName->text()),
+		      new  UserControlMenu(qstrdup(MenuName->text()),
 					  qstrdup(MenuCommand->text()),
 					  -1,
 					  (int) UserControlMenu::Text,
@@ -213,9 +213,11 @@ void UserMenuRef::modifyMenu()
   }
   else if(MenuType->currentItem() == UserControlMenu::Seperator){
     user_menu->insert(newitem,
-			  new("UserControlMenu)") UserControlMenu);
+			  new  UserControlMenu);
   }
       
   updateMainListBox();
   MainListBox->setCurrentItem(newitem);
 }
+
+#include "UserMenuRef.moc" /* TQt3 迁移:AUTOMOC 时代未写显式 moc include,补齐(编译单元内提供 vtable) */

@@ -67,7 +67,9 @@
 
 #include "iocontroller.h"
 #include "toplevel.h"
-#include <iostream.h>
+#include <iostream>
+using std::endl;
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 #include "ksircprocess.h"
 #include "control_message.h"
 #include "config.h"
@@ -132,7 +134,7 @@ void KSircIOController::stdout_read(KProcess *, char *_buffer, int buflen)
 
     Variables: 
        _buffer original buffer, holds just, icky thing, NOT NULL terminated!
-       buf: new("clean") clean just the right size buf that is null terminated.
+       buf: new  clean just the right size buf that is null terminated.
        pos, pos2, pos3 used to cut the string up into peices, etc.
        name: destination window.
        line: line to ship out.
@@ -151,7 +153,7 @@ void KSircIOController::stdout_read(KProcess *, char *_buffer, int buflen)
   int pos,pos2,pos3;
   QString name, line;
   
-  QString buffer(_buffer, buflen+1);
+  QString buffer = QString::fromUtf8(_buffer, buflen);  /* TQt3 迁移:私有构造 */
 
   name = "!default";
 
@@ -230,7 +232,7 @@ void KSircIOController::stdin_write(QString s)
       tqWarning("KProcess barfed in all clear signal again");
       delete[] send_buf;
     }
-    send_buf = new("char[send_buf]") char[len];
+    send_buf = new  char[len];
     strncpy(send_buf, buffer, len);
     if(proc->writeStdin(send_buf, len) == FALSE){
       //      cerr << "Failed to write but CTS HIGH! Setting low!: " << s << endl;

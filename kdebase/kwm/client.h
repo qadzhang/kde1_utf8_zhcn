@@ -22,7 +22,19 @@
 
 #include <X11/X.h>
 #include <X11/Xlib.h>
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/Xutil.h>
+/* X11 å¤´çš„ #define Bool int / #define Status int ä¼šå‡»ç©¿ä½¿ç”¨æ–¹åç»­æ‰é¦–æ¬¡
+ * æ‹‰å…¥çš„ TQt3 å¤´ï¼ˆntqvariant.h/ntqmovie.hï¼‰ã€‚kwm æºç çš„ Bool å…¨å±€å£°æ˜å·²
+ * å…¨éƒ¨ bool åŒ–ã€ä¸å†ä¾èµ–å®ï¼Œåœ¨æ­¤æ‘˜é™¤ä»¥ä¿æŠ¤åç»­ TQt3 å¤´ï¼›X11 å‡½æ•°å£°æ˜
+ * å·²äºä¸Šæ–¹è§£æå®Œæ¯•ã€‚ */
+#undef Bool
+#undef Status
 
 
 // the possible operations from the window operations popup menu
@@ -66,7 +78,7 @@ protected:
 class Client;
 
 
-// the Client class encapsulates a window decoration. There´s one
+// the Client class encapsulates a window decoration. Thereç£— one
 // instance of Client for each managed window.
 class Client : public QWidget {
 
@@ -99,9 +111,9 @@ public:
   long      decoration;
   bool wants_focus;
   bool is_menubar;
-  /* [KDE1 Revival 2026] ¿Í»§³ÌĞòÊÇ·ñÔÚÓ³ÉäÇ°×ÔĞĞÉùÃ÷ÁË KWM_WIN_DECORATION
-   * ÊôĞÔ£¨Çø·ÖÓÚ kwm/libkde ¶ÁÊôĞÔÊ±Ğ´»ØµÄÄ¬ÈÏÖµ£©¡ª¡ªgetMwmHints ¾İ´Ë
-   * ¾ö¶¨ KDE Ô­ÉúÌáÊ¾ÊÇ·ñÓÅÏÈÓÚ Motif ÌáÊ¾£¨Ïê¼û manager.C ¸Ãº¯Êı×¢ÊÍ£© */
+  /* [KDE1 Revival 2026] å®¢æˆ·ç¨‹åºæ˜¯å¦åœ¨æ˜ å°„å‰è‡ªè¡Œå£°æ˜äº† KWM_WIN_DECORATION
+   * å±æ€§ï¼ˆåŒºåˆ†äº kwm/libkde è¯»å±æ€§æ—¶å†™å›çš„é»˜è®¤å€¼ï¼‰â€”â€”getMwmHints æ®æ­¤
+   * å†³å®š KDE åŸç”Ÿæç¤ºæ˜¯å¦ä¼˜å…ˆäº Motif æç¤ºï¼ˆè¯¦è§ manager.C è¯¥å‡½æ•°æ³¨é‡Šï¼‰ */
   bool kwm_decoration_client_set;
 
   // returns the clean decoration hint. Can be KWM::noDecoration,
@@ -350,7 +362,7 @@ public:
    void menuReleased();
 
 protected:
-  // Some of Qt´s syntactic events with which we will have to deal
+  // Some of Qtç£— syntactic events with which we will have to deal
   void mousePressEvent( QMouseEvent * );
   void mouseReleaseEvent( QMouseEvent * );
   void mouseDoubleClickEvent( QMouseEvent * );

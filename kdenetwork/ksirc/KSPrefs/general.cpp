@@ -68,7 +68,7 @@ general::~general()
 
 void general::slot_openBrowser()
 {
-  KFileDialog *FileDialog = new("KFileDialog") KFileDialog( ".", "*.gif");
+  KFileDialog *FileDialog = new  KFileDialog( ".", "*.gif");
   connect(FileDialog, SIGNAL(fileSelected(const char*)),
 	  this, SLOT(slot_setBackgroundFile(const char*)));
   FileDialog->show();
@@ -109,3 +109,5 @@ void general::slot_apply()
   kConfig->writeEntry("WindowLength", kSircConfig->WindowLength);
   kConfig->sync();
 }
+
+#include "general.moc" /* TQt3 迁移:AUTOMOC 时代未写显式 moc include,补齐(编译单元内提供 vtable) */

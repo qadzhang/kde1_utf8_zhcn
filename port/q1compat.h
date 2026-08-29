@@ -408,6 +408,20 @@ typedef TQPtrListIterator<TQFileInfo> QFileInfoListIterator;
 #define SHIFT TQt::SHIFT
 #define ALT   TQt::ALT
 
+/* ── Qt1 事件对象转换宏(ksirc/puke 生态使用)───────────────────────────
+ * What : Q_TIMER_EVENT(e) 等把 TQEvent* 强转为具体事件类型
+ * Why  : Qt1 的 qobject.h 提供这族 cast 宏,TQt3 未保留;ksirc 的 puke
+ *       子系统(pwidget.cpp)按 Qt1 习惯大量使用,逐点改写不如整族映射
+ * When : 任何使用这些宏的 TU 编译期(全局注入点)
+ * How  : 展开为 C 风格强转,语义与 Qt1 原宏一字不差
+ * ────────────────────────────────────────────────────────────────────*/
+#define Q_TIMER_EVENT(x)  ((TQTimerEvent*)(x))
+#define Q_MOUSE_EVENT(x)  ((TQMouseEvent*)(x))
+#define Q_KEY_EVENT(x)    ((TQKeyEvent*)(x))
+#define Q_FOCUS_EVENT(x)  ((TQFocusEvent*)(x))
+#define Q_MOVE_EVENT(x)   ((TQMoveEvent*)(x))
+#define Q_RESIZE_EVENT(x) ((TQResizeEvent*)(x))
+
 /* ── 5. moc 关键字宏映射（编译器侧；moc 侧由构建管线 sed） ──────────
  * When : tqmoc 自带词法器不展开 #define，故 moc 输入前由 CMake 的
  *        wrap 阶段把 Q_OBJECT 等替换为 TQ_OBJECT；此宏只服务编译器

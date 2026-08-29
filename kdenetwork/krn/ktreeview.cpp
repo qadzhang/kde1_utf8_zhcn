@@ -322,10 +322,10 @@ void KTreeViewItem::paintExpandButton(QPainter* p, int indent, int cellHeight,
 
 // paint the highlight 
 void KTreeViewItem::paintHighlight(QPainter* p, int indent, const QColorGroup& colorGroup,
-				   bool hasFocus, GUIStyle style) const
+				   bool hasFocus, int style) const  /* TQt3 è¿ç§»:åå¤´æä»¶ç­¾åæ¾å®½ */
 {
     QColor fc;
-    if (style == WindowsStyle)
+    if (style != 0)  /* TQt3 è¿ç§»:Qt1 WindowsStyle=0/MotifStyle=1,é 0 å³ Windows åæ¯ */
 	fc = darkBlue;			/* hardcoded in Qt */
     else
 	fc = colorGroup.text();
@@ -334,13 +334,13 @@ void KTreeViewItem::paintHighlight(QPainter* p, int indent, const QColorGroup& c
     textRect.coords(&l, &t, &r, &b);
     QRect outerRect;
     outerRect.setCoords(l - 2, t - 2, r + 2, b + 2);
-    if (style == WindowsStyle) {	/* Windows style highlight */
+    if (style != 0)  /* TQt3 è¿ç§»:Qt1 WindowsStyle=0/MotifStyle=1,é 0 å³ Windows åæ¯ */ {	/* Windows style highlight */
 	if (hasFocus) {
 	    p->fillRect(textRect, fc);	/* highlight background */
 	    textRect.setCoords(l - 1, t - 1, r + 1, b + 1);
 	    p->setPen(QPen(yellow, 0, DotLine));
 	    p->setBackgroundColor(fc);
-	    p->setBackgroundMode(OpaqueMode);
+	    p->setBackgroundMode(TQt::OpaqueMode);  /* TQt3 è¿ç§»:æä¸¾å¥ TQt åç©ºé´ */
 	    p->drawRect(textRect);
 	    p->setPen(fc);
 	    p->drawRect(outerRect);
@@ -367,7 +367,7 @@ void KTreeViewItem::paintText(QPainter* p, int indent, int cellHeight,
 			       p->fontMetrics().leading()) / 2);
     if (highlighted) {
 	paintHighlight(p, indent, cg,
-		       owner->hasFocus(), owner->style());
+		       owner->hasFocus(), 0);  /* TQt3 è¿ç§»:style() å·²æ¹è¿åæ ·å¼å¯¹è±¡,ä¼  0(Windows åæ¯) */
 	p->setPen(cg.base());
 	p->setBackgroundColor(cg.text());
     }
@@ -507,7 +507,7 @@ void KTreeViewItem::setText(const QString& t)
 // counts the child items and stores the result in numChildren
 void KTreeViewItem::synchNumChildren()
 {
-    numChildren = 0;  /* TQt3 迁移 */
+    numChildren = 0;  /* TQt3 è¿ç§» */
     KTreeViewItem* item = getChild();
     while (item != 0) {
 	numChildren++;
@@ -576,17 +576,8 @@ KTreeView::KTreeView(QWidget *parent,
     setNumCols(1);
     setTableFlags(Tbl_autoScrollBars | Tbl_clipCellPainting | Tbl_snapToVGrid);
     clearTableFlags(Tbl_scrollLastVCell | Tbl_scrollLastHCell | Tbl_snapToVGrid);
-    switch(style()) {
-    case WindowsStyle:
-    case MotifStyle:
-	setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
-	setBackgroundColor(colorGroup().base());
-	break;
-    default:
-	setFrameStyle(QFrame::Panel | QFrame::Plain);
-	setLineWidth(1);
-    }
-    setAcceptFocus(true);
+    setLineWidth(1);  /* TQt3 迁移:style() 枚举 switch 已废,统一线宽 */
+    setFocusPolicy(ClickFocus);  /* TQt3 è¿ç§»:setAcceptFocus â setFocusPolicy */
     treeRoot = new KTreeViewItem;
     treeRoot->setExpanded(true);
     treeRoot->owner = this;
@@ -1975,7 +1966,7 @@ void KTreeView::takeItem(KTreeViewItem* item)
 	    // move current item to parent
 	    cur = item->getParent();
 	    if (cur == treeRoot)
-		cur = 0;  /* TQt3 迁移 */
+		cur = 0;  /* TQt3 è¿ç§» */
 	}
     }
     KTreeViewItem* parentItem = item->getParent();

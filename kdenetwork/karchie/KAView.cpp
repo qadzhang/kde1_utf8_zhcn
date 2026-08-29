@@ -257,7 +257,7 @@ KAViewList::slotFileGet()
 }
 
 KAViewFiletype::KAViewFiletype(QWidget *parent, const char *name, WFlags f, bool allowLines)
-  :QFrame( parent, name, f, allowLines ),
+  :QFrame( parent, name, f ),  /* TQt3 migration: 4th bool arg removed */
    filedatewidth(160)
 {
   int height; // used for computing the position of the labels and heigth over all
@@ -448,6 +448,11 @@ KAViewFiletype::drawContents( QPainter * )
 KAView::KAView(QWidget *parent, const char *name, bool modal, WFlags f)
   : QDialog( parent, name, modal, f )
 {
+  /* TQt3 迁移(2026):box/filetype/fList 三个指针成员原依赖 BSS 零值,
+   * 显式置空防野指针(构造早期即调 slotShowFileDiscriptor 触碰 box) */
+  box = 0;
+  filetype = 0;
+  fList = 0;
 
   // setup searchterm line editor
   searchterm = new KAViewSearchterm( this, "viewsearchterm" );

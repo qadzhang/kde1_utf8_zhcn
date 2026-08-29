@@ -1,7 +1,10 @@
 /* (c)1997 Robert Palmbos
    See main.cc for license details */
 #include <kurl.h>
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:iostream.h 已废弃,改标准头 */
+using std::cout;
+using std::cerr;
+using std::endl;
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>

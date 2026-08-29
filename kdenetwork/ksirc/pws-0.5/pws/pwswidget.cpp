@@ -1,5 +1,5 @@
 #include "pwswidget.h"
-#include <pwswidget.moc>
+/* dup moc removed: pwswidget.moc */ /* TQt3 迁移:去掉重复 moc include */
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -42,15 +42,15 @@ PWSWidget::PWSWidget(QWidget *parent, const char *name)
     
     //Put widgets all around the place
     
-    QVBoxLayout *VLay=new("QVBoxLayout") QVBoxLayout(this,5, -1, "VLay");
-    QHBoxLayout *HLay1=new("QHBoxLayout") QHBoxLayout(5, "HLay1");
-    QHBoxLayout *HLay2=new("QHBoxLayout") QHBoxLayout(5, "HLay2");
-    QHBoxLayout *HLay3=new("QHBoxLayout") QHBoxLayout(5, "HLay3");
+    QVBoxLayout *VLay=new  QVBoxLayout(this,5, -1, "VLay");
+    QHBoxLayout *HLay1=new  QHBoxLayout(5, "HLay1");
+    QHBoxLayout *HLay2=new  QHBoxLayout(5, "HLay2");
+    QHBoxLayout *HLay3=new  QHBoxLayout(5, "HLay3");
     VLay->addLayout(HLay1,1);
     VLay->addLayout(HLay2,0);
     VLay->addLayout(HLay3,0);
 
-    list=new("PWSListView") PWSListView(this, "pws_listview"); // Do this before the resize
+    list=new  PWSListView(this, "pws_listview"); // Do this before the resize
 //    list->setMinimumSize(QSize(100,200));
 
     // Now some pretty icons in the listview
@@ -61,7 +61,7 @@ PWSWidget::PWSWidget(QWidget *parent, const char *name)
     QObject::connect (list,SIGNAL(selectionChanged(QListViewItem*)),
                       this,SLOT(flipPage(QListViewItem *)));
 
-    stack=new("QWidgetStack") QWidgetStack(this);
+    stack=new  QWidgetStack(this);
 //    stack->setMinimumSize(QSize(300,200));
     stack->raiseWidget(1);
     connect(stack, SIGNAL(aboutToShow(QWidget *)),
@@ -78,17 +78,17 @@ PWSWidget::PWSWidget(QWidget *parent, const char *name)
     HLay1->addWidget(list,5);
     HLay1->addWidget(stack,10);
     
-    QPushButton *b1=new("QPushButton") QPushButton(i18n("Save Configuration"),this, "b1");
+    QPushButton *b1=new  QPushButton(i18n("Save Configuration"),this, "b1");
     QObject::connect (b1,SIGNAL(clicked()),SLOT(accept()));
-    QPushButton *b2=new("QPushButton") QPushButton(i18n("(Re)Start Server"),this, "b2");
+    QPushButton *b2=new  QPushButton(i18n("(Re)Start Server"),this, "b2");
     QObject::connect (b2,SIGNAL(clicked()),SLOT(slotRestart()));
-    QPushButton *b5=new("QPushButton") QPushButton(i18n("Log Window"),this, "b5");
+    QPushButton *b5=new  QPushButton(i18n("Log Window"),this, "b5");
     QObject::connect (b5,SIGNAL(clicked()),SLOT(logWindow()));
-    QPushButton *b6=new("QPushButton") QPushButton(i18n("Delete Server"),this, "b6");
+    QPushButton *b6=new  QPushButton(i18n("Delete Server"),this, "b6");
     QObject::connect (b6,SIGNAL(clicked()),SLOT(deleteServer()));
-    QPushButton *b3=new("QPushButton") QPushButton(i18n("Add Server"),this, "b3");
+    QPushButton *b3=new  QPushButton(i18n("Add Server"),this, "b3");
     QObject::connect (b3,SIGNAL(clicked()),SLOT(addServer()));
-    QPushButton *b4=new("QPushButton") QPushButton(i18n("Quit"),this, "b4");
+    QPushButton *b4=new  QPushButton(i18n("Quit"),this, "b4");
     QObject::connect (b4,SIGNAL(clicked()),SLOT(quit()));
 
     b1->setFixedSize(b1->sizeHint());
@@ -311,7 +311,7 @@ void PWSWidget::restart()
     
     if(server != 0)
         delete server;
-    server = new("PWSServer") PWSServer(KApplication::localkdedir()+"/share/apps/pws/server-config", logdir);
+    server = new  PWSServer(KApplication::localkdedir()+"/share/apps/pws/server-config", logdir);
     
 //    system(command.data());
 }
@@ -349,7 +349,7 @@ void PWSWidget::slotRestart(){
 void PWSWidget::addServer()
 {
 
-    AddServerWizard *wiz=new("AddServerWizard") AddServerWizard();
+    AddServerWizard *wiz=new  AddServerWizard();
     int i=wiz->exec();
     qApp->processEvents();
     tqDebug("done wizard-->%d",i);
@@ -426,12 +426,12 @@ void PWSWidget::loadServers()
 void PWSWidget::createGeneralPage()
 {
     //list stuff
-    QListViewItem *item=new("QListViewItem") QListViewItem(list);
+    QListViewItem *item=new  QListViewItem(list);
     item->setPixmap(0,Icon("pws_general.xpm"));
     item->setText(1,"General");
 
     //stack stuff
-    GeneralPage *w=new("GeneralPage") GeneralPage(stack);
+    GeneralPage *w=new  GeneralPage(stack);
     //w->show();
     stack->addWidget(w,increaser);
     increaser++;
@@ -448,13 +448,13 @@ void PWSWidget::createServerPage(const char *name)
     }
     
     //list stuff
-    QListViewItem *item=new("QListViewItem") QListViewItem(list);
+    QListViewItem *item=new  QListViewItem(list);
     item->setPixmap(0,Icon("pws_www.xpm"));
     item->setText(1,name);
     list->setSorting(0,false);
 
     //stack stuff
-    ServerPage *w=new("ServerPage") ServerPage(stack,name);
+    ServerPage *w=new  ServerPage(stack,name);
     w->resize(stack->size());
     stack->addWidget(w,increaser);
     stack->raiseWidget(w);
@@ -495,3 +495,4 @@ void PWSListView::resizeEvent(QResizeEvent *e){
         this->setColumnWidth(1, this->width()-19);
 }
 
+#include "pwswidget.moc" /* TQt3 迁移:AUTOMOC 时代未写显式 moc include,补齐(编译单元内提供 vtable) */

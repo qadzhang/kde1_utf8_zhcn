@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ksmiletris\n"
+"PO-Revision-Date: 2026-08-30 00:00+0800\n"
+"Last-Translator: KDE1 Revival Project\n"
+"Language-Team: zh_CN <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"charset: UTF-8\n"
+"encoding: 8bit\n"
+
+#: gamewindow.cpp:49
+msgid "Smiletris"
+msgstr "笑脸方块"
+
+#: gamewindow.cpp:52
+msgid "&New Game"
+msgstr "新游戏(&N)"
+
+#: gamewindow.cpp:53
+msgid "&Pause"
+msgstr "暂停(&P)"
+
+#: gamewindow.cpp:54
+msgid "&End Game"
+msgstr "结束游戏(&E)"
+
+#: gamewindow.cpp:56
+msgid "&High Scores..."
+msgstr "高分榜(&H)..."
+
+#: gamewindow.cpp:58
+msgid "&Quit"
+msgstr "退出(&Q)"
+
+#: gamewindow.cpp:61
+msgid "&Smiles"
+msgstr "笑脸(&S)"
+
+#: gamewindow.cpp:62
+msgid "S&ymbols"
+msgstr "符号(&Y)"
+
+#: gamewindow.cpp:64
+msgid "&Icons"
+msgstr "图标(&I)"
+
+#: gamewindow.cpp:67
+msgid "&Pieces"
+msgstr "方块(&P)"
+
+#: gamewindow.cpp:69
+msgid "&Sounds"
+msgstr "音效(&S)"
+
+#: gamewindow.cpp:73
+#, c-format
+msgid ""
+"KSmiletris %s\n"
+"\n"
+"by Sandro Sigala <ssigala@globalnet.it>\n"
+"\n"
+"Feedbacks are welcome!\n"
+msgstr ""
+"KSmiletris %s\n"
+"\n"
+"作者 Sandro Sigala <ssigala@globalnet.it>\n"
+"\n"
+"欢迎反馈!\n"
+
+#: gamewindow.cpp:79
+msgid "&File"
+msgstr "文件(&F)"
+
+#: gamewindow.cpp:80
+msgid "&Options"
+msgstr "选项(&O)"
+
+#: gamewindow.cpp:82
+msgid "&Help"
+msgstr "帮助(&H)"
+
+#: gamewindow.cpp:88
+msgid "Level: 99"
+msgstr "等级: 99"
+
+#: gamewindow.cpp:89
+msgid "Score: 999999"
+msgstr "得分: 999999"
+
+#: newscoredialog.cpp:36
+msgid "New High Score"
+msgstr "新高分"
+
+#: newscoredialog.cpp:39 scoredialog.cpp:79
+msgid "OK"
+msgstr "确定"
+
+#: newscoredialog.cpp:43
+msgid "Cancel"
+msgstr "取消"
+
+#: newscoredialog.cpp:47
+msgid "Enter name"
+msgstr "输入姓名"
+
+#: scoredialog.cpp:35
+msgid "High Scores"
+msgstr "高分榜"
+
+#: scoredialog.cpp:42
+msgid "Level"
+msgstr "等级"
+
+#: scoredialog.cpp:45
+msgid "Score"
+msgstr "得分"
+
+#: scoredialog.cpp:48
+msgid "Name"
+msgstr "姓名"
+
+#: scoredialog.cpp:61
+msgid "Noname"
+msgstr "无名氏"

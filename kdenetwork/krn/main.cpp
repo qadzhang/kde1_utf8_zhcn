@@ -141,11 +141,11 @@ int main( int argc, char **argv )
 
 
     artinfopath=krnpath+"/artinfo.db";
-    artdb=gdbm_open(artinfopath.data(),0,GDBM_WRCREAT | GDBM_FAST,448,0);
+    artdb=gdbm_open(artinfopath.data(),0,GDBM_WRCREAT  /* GDBM_FAST 已并入新版默认行为 */,448,0);
     artinfopath=krnpath+"/refs.db";
-    refsdb=gdbm_open(artinfopath.data(),0,GDBM_WRCREAT | GDBM_FAST,448,0);
+    refsdb=gdbm_open(artinfopath.data(),0,GDBM_WRCREAT  /* GDBM_FAST 已并入新版默认行为 */,448,0);
     artinfopath=krnpath+"/scores.db";
-    scoredb=gdbm_open(artinfopath.data(),0,GDBM_WRCREAT | GDBM_FAST,448,0);
+    scoredb=gdbm_open(artinfopath.data(),0,GDBM_WRCREAT  /* GDBM_FAST 已并入新版默认行为 */,448,0);
 
     if ((!artdb) || (!refsdb) || (!scoredb)) //the gdbm open failed!
     {

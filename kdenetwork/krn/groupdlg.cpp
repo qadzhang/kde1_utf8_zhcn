@@ -1000,7 +1000,13 @@ bool Groupdlg::postQueued()
         tqDebug("have connected");
         QDir d(outpath.data());
         d.setFilter(QDir::Files);
-        QStrList *files=new QStrList (*d.entryList("*"));
+        /* TQt3 迁移:QStrList(QStringList) 拷贝构造已删,逐项复制 */
+        QStrList *files = new QStrList();
+        {
+            QStringList el = d.entryList("*");
+            for (QStringList::Iterator it = el.begin(); it != el.end(); ++it)
+                files->append((*it).latin1());
+        }
 
         tqDebug("%d files waiting",files->count());
         for (char *fname=files->first();fname!=0;fname=files->next())

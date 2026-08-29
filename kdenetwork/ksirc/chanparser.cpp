@@ -3,7 +3,9 @@
 #include "alistbox.h"
 #include "control_message.h"
 #include <qmsgbox.h>
-#include <iostream.h>
+#include <iostream>
+using std::endl;
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 #include <stdio.h>
 #include "ssfeprompt.h"
 #include <string.h>
@@ -25,36 +27,34 @@ ChannelParser::ChannelParser(KSircTopLevel *_top) /*fold00*/
 
   if(parserTable.isEmpty() == TRUE){
     parserTable.setAutoDelete(TRUE);
-    parserTable.insert("`l`", new("parseFunc") parseFunc(&ChannelParser::parseSSFEClear));
-    parserTable.insert("`s`", new("parseFunc") parseFunc(&ChannelParser::parseSSFEStatus));
-    parserTable.insert("`i`", new("parseFunc") parseFunc(&ChannelParser::parseSSFEInit));
-    parserTable.insert("`t`", new("parseFunc") parseFunc(&ChannelParser::parseSSFEMsg));
-    parserTable.insert("`o`", new("parseFunc") parseFunc(&ChannelParser::parseSSFEOut));
-    parserTable.insert("`p`", new("parseFunc") parseFunc(&ChannelParser::parseSSFEPrompt));
-    parserTable.insert("`P`", new("parseFunc") parseFunc(&ChannelParser::parseSSFEPrompt));
-    parserTable.insert("`R`", new("parseFunc") parseFunc(&ChannelParser::parseSSFEReconnect));
+    parserTable.insert("`l`", new  parseFunc(&ChannelParser::parseSSFEClear));
+    parserTable.insert("`s`", new  parseFunc(&ChannelParser::parseSSFEStatus));
+    parserTable.insert("`i`", new  parseFunc(&ChannelParser::parseSSFEInit));
+    parserTable.insert("`t`", new  parseFunc(&ChannelParser::parseSSFEMsg));
+    parserTable.insert("`o`", new  parseFunc(&ChannelParser::parseSSFEOut));
+    parserTable.insert("`p`", new  parseFunc(&ChannelParser::parseSSFEPrompt));
+    parserTable.insert("`P`", new  parseFunc(&ChannelParser::parseSSFEPrompt));
+    parserTable.insert("`R`", new  parseFunc(&ChannelParser::parseSSFEReconnect));
     // The rest are *** info message
-    parserTable.insert("***", new("parseFunc") parseFunc(&ChannelParser::parseINFOInfo));
-    parserTable.insert("*E*", new("parseFunc") parseFunc(&ChannelParser::parseINFOError));
-    parserTable.insert("*!*", new("parseFunc") parseFunc(&ChannelParser::parseINFONicks)); // Normal
-    parserTable.insert("*C*", new("parseFunc") parseFunc(&ChannelParser::parseINFONicks)); // 1st line
-    parserTable.insert("*c*", new("parseFunc") parseFunc(&ChannelParser::parseINFONicks)); // Last line
-    parserTable.insert("*#*", new("parseFunc") parseFunc(&ChannelParser::parseINFONicks)); // Non enhanced
-    parserTable.insert("*>*", new("parseFunc") parseFunc(&ChannelParser::parseINFOJoin));
-    parserTable.insert("*<*", new("parseFunc") parseFunc(&ChannelParser::parseINFOPart));
-    parserTable.insert("*N*", new("parseFunc") parseFunc(&ChannelParser::parseINFOChangeNick));
-    parserTable.insert("*+*", new("parseFunc") parseFunc(&ChannelParser::parseINFOMode));
-    parserTable.insert("*T*", new("parseFunc") parseFunc(&ChannelParser::parseINFOTopic));
+    parserTable.insert("***", new  parseFunc(&ChannelParser::parseINFOInfo));
+    parserTable.insert("*E*", new  parseFunc(&ChannelParser::parseINFOError));
+    parserTable.insert("*!*", new  parseFunc(&ChannelParser::parseINFONicks)); // Normal
+    parserTable.insert("*C*", new  parseFunc(&ChannelParser::parseINFONicks)); // 1st line
+    parserTable.insert("*c*", new  parseFunc(&ChannelParser::parseINFONicks)); // Last line
+    parserTable.insert("*#*", new  parseFunc(&ChannelParser::parseINFONicks)); // Non enhanced
+    parserTable.insert("*>*", new  parseFunc(&ChannelParser::parseINFOJoin));
+    parserTable.insert("*<*", new  parseFunc(&ChannelParser::parseINFOPart));
+    parserTable.insert("*N*", new  parseFunc(&ChannelParser::parseINFOChangeNick));
+    parserTable.insert("*+*", new  parseFunc(&ChannelParser::parseINFOMode));
+    parserTable.insert("*T*", new  parseFunc(&ChannelParser::parseINFOTopic));
     // End of info message
-    parserTable.insert("*  ", new("parseFunc") parseFunc(&ChannelParser::parseCTCPAction));
+    parserTable.insert("*  ", new  parseFunc(&ChannelParser::parseCTCPAction));
   }
 
 }
 
 void ChannelParser::parse(QString string) /*fold00*/
 {
-  string // for older Qts
-
   parseFunc *pf;
   if(string.length() < 3){
     throw(parseError(string, QString("Dumb string, too short")));
@@ -70,8 +70,8 @@ void ChannelParser::parse(QString string) /*fold00*/
    * messges into a 3 character code, `#ssfe#\S becomes `\S`
    */
   if(string[0] == '`'){
-    if(strncmp("`#ssfe#", string, 7) == 0){
-      char s[] = { string[7], 0 };
+    if(strncmp("`#ssfe#", string.latin1(), 7) == 0){  /* TQt3 迁移 */
+      char s[] = { (char)string[7].latin1(), 0 };  /* TQt3 迁移 */
       uint space;
       for(space = 6; (string[space] != ' '); space ++){
         if(space >= string.length()){
@@ -93,7 +93,7 @@ void ChannelParser::parse(QString string) /*fold00*/
   
   pf = parserTable[string.mid(0, 3)];
   if(pf != 0x0){
-//    tqDebug("new("hanlder") hanlder handling: %s", string.data());
+//    tqDebug("new  hanlder handling: %s", string.data());
     (this->*(pf->parser))(string);
   }
 
@@ -117,10 +117,12 @@ void ChannelParser::parseSSFEClear(QString string) /*fold00*/
 void ChannelParser::parseSSFEStatus(QString string) /*fold00*/
 {
   string.remove(0, 4); // strip off the first 4 characters
-  char *status;
+  /* TQt3 迁移:原 &string[8] 直接取内部字符指针;改经 latin1 字节串,
+   * 以具名局部保住生命周期供 sscanf 使用 */
+  TQString statusStr = string.mid(8);
+  const char *status = statusStr.latin1();
   if(string.length() < 8)
     throw(parseError("", "Unable to parse status string"));
-  status = &string[8];
   char nick[101], modes[101], chan[101], chanmode[101];
   int found = sscanf(status, "%100s (%100[^)]) on %100s (%100[^)])", nick, modes, chan, chanmode); // Channel modes and user modes
   if(found != 4){
@@ -179,7 +181,6 @@ void ChannelParser::parseSSFEStatus(QString string) /*fold00*/
       top->ticker->setIconText(status_line);
     }
     top->caption = status_line;           // Make copy so we're not
-    top->caption
     // constantly changing the title bar
   }
   throw(parseSucc(QString(""))); // Null string, don't display anything
@@ -246,7 +247,7 @@ void ChannelParser::parseSSFEPrompt(QString string) /*fold00*/
     prompt_active = TRUE;
     // If we use this, then it blows up
     // if we haven't popped up on the remote display yet.
-    sp = new("ssfePrompt") ssfePrompt(prompt, 0);
+    sp = new  ssfePrompt(prompt, 0);
     sp->setCaption(caption);
     if(string[1] == 'P')
       sp->setPassword(TRUE);
@@ -292,7 +293,6 @@ void ChannelParser::parseINFONicks(QString in_string) /*fold00*/
   EString string = in_string;
   char *nick, *place_holder;
 
-  string
 
   int start, count;
   char channel_name[101];
@@ -320,7 +320,7 @@ void ChannelParser::parseINFONicks(QString in_string) /*fold00*/
   
   // Get the channel name portion of the string
   // Search for the first space, since : can be embeded into channel names.
-  count = sscanf(string, "*!* Users on %100[^ ]", channel_name);
+  count = sscanf(string.latin1(), "*!* Users on %100[^ ]", channel_name);  /* TQt3 迁移 */
   if(count < 1){
     throw(parseError(string, QString("Could not find channel name")));
   }
@@ -347,11 +347,11 @@ void ChannelParser::parseINFONicks(QString in_string) /*fold00*/
       throw(parseError(string, QString("Could not find start of nicks")));
   }
   
-  place_holder = &string[start]+2;
+  place_holder = (char*)string.mid(start + 2).latin1();  /* TQt3 迁移:原裸指针算术 */
   nick = strtok(place_holder, " ");
   
   while(nick != 0x0){                     // While there's nick to go...
-    nickListItem *irc = new("nickListItem") nickListItem();
+    nickListItem *irc = new  nickListItem();
 
     bool done = FALSE;
 
@@ -388,7 +388,6 @@ void ChannelParser::parseINFONicks(QString in_string) /*fold00*/
 void ChannelParser::parseINFOJoin(QString string) /*fold00*/
 {
   char nick[101], channel[101];
-  string
   string.remove(0, 4);                   // strip *>* to save a few compares
   if(sscanf(string, "You have joined channel %100s", channel) > 0){
     QString chan = QString(channel).lower();
@@ -413,7 +412,6 @@ void ChannelParser::parseINFOPart(QString string) /*fold00*/
 {
   char nick[101], channel[101];
  
-  string
   string.remove(0, 4);                // clear junk
 
   // Multiple type of parts, a signoff or a /part
@@ -437,7 +435,7 @@ void ChannelParser::parseINFOPart(QString string) /*fold00*/
     else if(sscanf(string, "You have left channel %100s", channel)){
 
       if(strcasecmp(top->channel_name, channel) == 0){
-	QApplication::postEvent(top, new("QCloseEvent") QCloseEvent()); // WE'RE DEAD
+	QApplication::postEvent(top, new  QCloseEvent()); // WE'RE DEAD
 	throw(parseSucc(QString("")));
       }
     }
@@ -474,7 +472,7 @@ void ChannelParser::parseINFOPart(QString string) /*fold00*/
                                           }
                                         break;
                                         case 1:
-                                          QApplication::postEvent(top, new("QCloseEvent") QCloseEvent()); // WE'RE DEAD
+                                          QApplication::postEvent(top, new  QCloseEvent()); // WE'RE DEAD
                                           break;
         }
         top->KickWinOpen = false;
@@ -516,7 +514,6 @@ void ChannelParser::parseINFOPart(QString string) /*fold00*/
 void ChannelParser::parseINFOChangeNick(QString string) /*fold00*/
 {
   char old_nick[101], new_nick[101];
-  string
   string.remove(0, 4); // Remove the leading *N* and space
   int found = sscanf(string, "%100s is now known as %100s", old_nick, new_nick);
   if(found < 0){
@@ -540,13 +537,13 @@ void ChannelParser::parseINFOChangeNick(QString string) /*fold00*/
     top->nicks->setAutoUpdate(FALSE);
     top->nicks->removeItem(found);        // remove old nick
     if(isOp == TRUE){
-      nickListItem *irc  = new("nickListItem") nickListItem();
+      nickListItem *irc  = new  nickListItem();
       irc->setText(new_nick);
       irc->setOp(TRUE);
       top->nicks->inSort(irc);
     }
     else{
-      top->nicks->inSort(new_nick);     // add new("nick") nick in sorted poss
+      top->nicks->inSort(new_nick);     // add new  nick in sorted poss
       // can't use changeItem since it
       // doesn't maintain sort order
     }
@@ -571,7 +568,6 @@ void ChannelParser::parseINFOMode(QString string) /*fold00*/
   // we should handle it in any special way.
 
   // Strip off leading sirc info
-  string
   string.remove(0, 4);
 
 
@@ -675,11 +671,11 @@ void ChannelParser::parseINFOMode(QString string) /*fold00*/
       int offset = top->nicks->findNick(arg.at(i));
       if(offset >= 0){
         top->nicks->setAutoUpdate(FALSE);
-        nickListItem *irc = new("nickListItem") nickListItem();
+        nickListItem *irc = new  nickListItem();
         *irc = *top->nicks->item(offset);
         top->nicks->removeItem(offset);           // remove old nick
         irc->setOp(op);
-        // add new("nick") nick in sorted pass,with colour
+        // add new  nick in sorted pass,with colour
         top->nicks->inSort(irc);
         top->nicks->setAutoUpdate(TRUE);
         top->nicks->repaint(TRUE);
@@ -703,11 +699,11 @@ void ChannelParser::parseINFOMode(QString string) /*fold00*/
       int offset = top->nicks->findNick(arg.at(i));
       if(offset >= 0){
         top->nicks->setAutoUpdate(FALSE);
-        nickListItem *irc = new("nickListItem") nickListItem();
+        nickListItem *irc = new  nickListItem();
         *irc = *top->nicks->item(offset);
         top->nicks->removeItem(offset);           // remove old nick
         irc->setVoice(voice) ;
-        // add new("nick") nick in sorted pass,with colour
+        // add new  nick in sorted pass,with colour
         top->nicks->inSort(irc);
         top->nicks->setAutoUpdate(TRUE);
         top->nicks->repaint();
@@ -734,7 +730,6 @@ void ChannelParser::parseCTCPAction(QString string) /*fold00*/
 void ChannelParser::parseINFOTopic(QString string) /*fold00*/
 {
   char channel[101];
-  string
   string.remove(0, 4); // Remove the leading *T* and space
   // *T* Topic for #kde: Don't use koffice! You will get into deep emotional problems!
   int found = sscanf(string, "Topic for %100[^:]: ", channel);

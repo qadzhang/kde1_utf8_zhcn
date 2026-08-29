@@ -161,7 +161,19 @@
 #include <qfile.h>
 #include <qtextstream.h> 
 #include <qapplication.h>
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/Xlib.h>
+/* X11/Xlib.h 的 #define Bool int / #define Status int 会击穿后续才首次
+ * 拉入的 TQt3 头（ntqvariant.h 的 enum Type 含 Bool、ntqmovie.h 的
+ * enum Status）。本文件未以宏形式使用二者，在此摘除；Xlib 的函数
+ * 声明已于上方解析完毕，X11 调用不受影响。 */
+#undef Bool
+#undef Status
 
 #include <klocale.h>
 #include <kcharsets.h>

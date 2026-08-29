@@ -127,7 +127,7 @@ bool ABTLWidget::constructMenu()
   about->insertSeparator();
   about->insertItem(i18n("About Addressbook"), this, 
 		    SLOT(about()), CTRL+Key_A);
-  about->insertItem(i18n("About &Qt"), this, SLOT(aboutQt()));
+  about->insertItem(i18n("About &Qt"), this, SLOT(aboutTQt()));
   about->insertItem(i18n("About &KDE"), 
 		    KApplication::getKApplication(), 
 		    SLOT(aboutKDE()));
@@ -184,10 +184,10 @@ void ABTLWidget::createConnections()
   // ############################################################################
 }
 
-void ABTLWidget::aboutQt()
+void ABTLWidget::aboutTQt()
 {
   // ############################################################################
-  QMessageBox::aboutQt(this, i18n("About Qt"));
+  QMessageBox::aboutTQt(this, i18n("About Qt"));
   // ############################################################################
 }
 

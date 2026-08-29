@@ -54,7 +54,7 @@ void
 Kpgp::init()
 {
   havePassPhrase = FALSE;
-  passphrase = 0;  /* TQt3 迁移 */
+  passphrase = TQString::null;
 
   // do we have a pgp executable
   checkForPGP();
@@ -159,7 +159,7 @@ Kpgp::setMessage(const QString mess)
     front = mess.left(index);
     index = mess.find("-----END PGP",index);
     index = mess.find("\n",index+1);
-    back  = mess.right(mess.size() - index - 1);
+    back  = mess.right(mess.length() - index - 1);  /* TQt3 迁移 */
 
     return TRUE;
   }
@@ -217,7 +217,7 @@ Kpgp::cleanupPass(void)
   if(!storePass)
   {
     passphrase.replace(QRegExp(".")," ");
-    passphrase = 0;  /* TQt3 迁移 */
+    passphrase = TQString::null;  /* TQt3 迁移 */
     havePassPhrase = false;
   }
 }
@@ -423,7 +423,7 @@ Kpgp::keys(void)
 bool 
 Kpgp::havePublicKey(QString _person)
 {
-  if(!havePgp) return true;
+  if(!havePgp) return TQString::null;  /* TQt3 迁移:函数返回 QString,原 return true 系 Qt1 隐式 */
 
   // do the checking case insensitive
   QString str;
@@ -451,7 +451,7 @@ QString
 Kpgp::getPublicKey(QString _person)
 {
   // just to avoid some error messages
-  if(!havePgp) return true;
+  if(!havePgp) return TQString::null;  /* TQt3 迁移:函数返回 QString,原 return true 系 Qt1 隐式 */
 
   // do the search case insensitive, but return the correct key.
   QString adress,str;
@@ -533,7 +533,7 @@ Kpgp::setPassPhrase(const QString aPass)
   {
     if (!passphrase.isEmpty())
       passphrase.replace(QRegExp(".")," ");
-    passphrase = 0;  /* TQt3 迁移 */
+    passphrase = TQString::null;  /* TQt3 迁移 */
     havePassPhrase = FALSE;
   }
 }
@@ -553,10 +553,10 @@ Kpgp::clear(bool erasePassPhrase)
   if(erasePassPhrase && havePassPhrase && !passphrase.isEmpty())
   {
     passphrase.replace(QRegExp(".")," ");
-    passphrase = 0;  /* TQt3 迁移 */
+    passphrase = TQString::null;  /* TQt3 迁移 */
   }
-  front = 0;  /* TQt3 迁移 */
-  back = 0;  /* TQt3 迁移 */
+  front = TQString::null;
+  back = TQString::null;
 }
 
 const QString 
@@ -619,8 +619,8 @@ Kpgp::checkForPGP(void)
     pSearchPaths.append(path.mid(lastindex+1,index-lastindex-1));
     lastindex = index;
   }
-  if(lastindex != (int)path.size() - 2)
-    pSearchPaths.append( path.mid(lastindex+1,path.size()-lastindex-1) );
+  if(lastindex != (int)path.length() - 2)  /* TQt3 迁移 */
+    pSearchPaths.append( path.mid(lastindex+1,path.length()-lastindex-1) );  /* TQt3 迁移 */
 
   QStrListIterator it(pSearchPaths);
 

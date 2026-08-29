@@ -3,15 +3,15 @@
 
 PObject *createWidget(CreateArgs &ca)
 {
-  PLabel *pw = new("PLabel") PLabel(ca.parent);
+  PLabel *pw = new  PLabel(ca.parent);
   QLabel *le;
   if(ca.fetchedObj != 0 && ca.fetchedObj->inherits("QLabel") == TRUE){
     le = (QLabel *) ca.fetchedObj;
     pw->setDeleteAble(FALSE);
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
-    le = new("QLabel") QLabel((QWidget *) ca.parent->widget());
-    le = new("QLabel") QLabel();
+    le = new  QLabel((QWidget *) ca.parent->widget());
+    le = new  QLabel();
   pw->setWidget(le);
   pw->setWidgetId(ca.pwI);
   return pw;

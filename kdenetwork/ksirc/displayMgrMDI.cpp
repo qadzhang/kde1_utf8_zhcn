@@ -9,7 +9,7 @@
 DisplayMgrMDI::DisplayMgrMDI(KTopLevelWidget *ktw)
   : DisplayMgr()
 {
-  mgr = new("KMDIMgrBase") KMDIMgrBase(ktw, "MDI Manager");
+  mgr = new  KMDIMgrBase(ktw, "MDI Manager");
   mgr->setFrameStyle(QFrame::WinPanel|QFrame::Sunken);
   ktw->setView(mgr, TRUE);
   
@@ -109,4 +109,4 @@ void DisplayMgrMDI::setCaption(QWidget *w, const char *cap){
   tqWarning("Could not find widget in setCaption");
 
 }
-#include "displayMgrMDI.moc"
+/* TQt3 迁移:displayMgrMDI.moc 无 Q_OBJECT,残迹 include 已删 */

@@ -1,0 +1,27 @@
+# tqt3-patches/003-enable-builtin-gif.patch
+# ┌─ What : 启用 TQt3 内置 GIF 解码器（QT_BUILTIN_GIF_READER 0 → 1）
+# │  Why  : Trinity r14.1.6 的 configure -qt-gif 只影响配置摘要、并不落任何宏——
+# │        内置 GIF 读入的唯一开关是 ntqgif.h 里的这个宏（默认 0，Unisys 专利
+# │        时代遗留；专利 2003-2004 年已到期）。KDE1 大量素材是 GIF：ksame 的
+# │        石子图、kworldwatch 的世界地图（空图直接 abort 拒绝启动）、kodo 的
+# │        指南图、kscreensaver 的科学图等——不解码则这些应用要么空白要么崩溃。
+# │  Who  : src/kernel/ntqgif.h 一处即生效（include/ntqgif.h 是指向它的符号
+# │        链接，安装期由 build.sh cp -rL 解引用为实体）。
+# │  When : 由 build.sh 在建立 tqt3-build/ 时按文件名序打入。
+# │  How  : 纯宏翻转，无代码逻辑改动；qasyncimageio.cpp 按 #if 展开内置
+# │        QGIFFormat 并自注册；GPL 许可侧不变。
+# └─ Written with GLM-5.3 (Z.ai) for the KDE1 Revival Project, 2026
+--- a/src/kernel/ntqgif.h
++++ b/src/kernel/ntqgif.h
+@@ -52,8 +52,10 @@
+ #include "ntqglobal.h"
+ #endif // QT_H
+ 
++/* [KDE1 Revival 2026] 启用内置 GIF 读取：KDE1 素材大量使用 GIF，
++   TQt3 默认关闭会使 ksame/kworldwatch 等拿到空 pixmap（详见补丁头）。 */
+ #ifndef QT_BUILTIN_GIF_READER
+-#define QT_BUILTIN_GIF_READER 0
++#define QT_BUILTIN_GIF_READER 1
+ #endif
+ 
+ bool qt_builtin_gif_reader();

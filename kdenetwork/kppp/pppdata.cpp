@@ -39,7 +39,7 @@ PPPData::PPPData() {
   config = 0;  /* TQt3 迁移 */
   highcount = -1;      // start out with no entries
   caccount = -1;       // set the current account index also
-  cgroup = 0L;         // current group for config file
+  cgroup = TQString::null;  /* TQt3 migration: =0L overload removed */ // current group for config file
 
   suidprocessid = -1;  // process ID of setuid child 
   pppdisrunning = false;
@@ -689,7 +689,7 @@ bool PPPData::deleteAccount() {
   it = config->entryIterator(cgroup);
   while (it->current() != 0L) {
     key = it->currentKey();
-    config->writeEntry(key, "");
+    config->writeEntry(key, TQString(""));  /* TQt3 migration: overload ambiguity */
     ++(*it);
   }
   delete it;
@@ -715,7 +715,7 @@ bool PPPData::deleteAccount() {
   config->setGroup(cgroup);
   while (it->current() != 0L) {
     key = it->currentKey();
-    config->writeEntry(key, "");
+    config->writeEntry(key, TQString(""));  /* TQt3 migration: overload ambiguity */
     ++(*it);
   }
   delete it;
@@ -1110,11 +1110,11 @@ void PPPData::graphingOptions(bool &enable,
     enable = config->readBoolEntry(GENABLED, true);
     c = white;
     bg = config->readColorEntry(GCOLOR_BG, &c);
-    c = black;
+    c = black;  /* q1compat 的 k1c_ 色宏链负责映射 */
     text = config->readColorEntry(GCOLOR_TEXT, &c);
-    c = blue;
+    c = k1c_blue;  /* q1compat 约定 */
     in = config->readColorEntry(GCOLOR_IN, &c);
-    c = red;
+    c = k1c_red;
     out = config->readColorEntry(GCOLOR_OUT, &c);
   }
 }

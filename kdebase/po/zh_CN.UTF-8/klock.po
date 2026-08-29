@@ -1,11 +1,12 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"Content-Type: charset=UTF-8\n"
 "POT-Creation-Date: 1999-04-18 01:18+0200\n"
 "PO-Revision-Date: 1999-03-31 21:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Content-Type: charset=UTF-8\n"
 "Translator: Wang Jian <larkw@263.net>\n"
 
 #: attraction.cpp:718
@@ -76,7 +77,7 @@ msgstr "设置kbanner"
 
 #: banner.cpp:103
 msgid "Family:"
-msgstr "族:"
+msgstr "字族:"
 
 #: banner.cpp:122 science.cpp:1049
 msgid "Size:"
@@ -90,10 +91,7 @@ msgstr "颜色:"
 msgid "Bold"
 msgstr "粗体"
 
-#: banner.cpp:179 bat.cpp:557 bouboule.cpp:1026 flame.cpp:417 forest.cpp:298
-#: hop.cpp:331 laser.cpp:413 lines.cpp:163 lissie.cpp:347 morph3d.cpp:1029
-#: polygon.cpp:130 rock.cpp:569 science.cpp:1082 slip.cpp:386 space.cpp:595
-#: swarm.cpp:349
+#: banner.cpp:179 bat.cpp:557 bouboule.cpp:1026 flame.cpp:417 forest.cpp:298 hop.cpp:331 laser.cpp:413 lines.cpp:163 lissie.cpp:347 morph3d.cpp:1029 polygon.cpp:130 rock.cpp:569 science.cpp:1082 slip.cpp:386 space.cpp:595 swarm.cpp:349
 msgid "Speed:"
 msgstr "速度:"
 
@@ -227,7 +225,6 @@ msgstr "设置KBouboule"
 msgid "Number of points:"
 msgstr "点数:"
 
-#
 #: bouboule.cpp:1054
 msgid "Point size:"
 msgstr "点大小:"
@@ -240,7 +237,6 @@ msgstr "颜色改变的频率"
 msgid "3D mode"
 msgstr "3D方式"
 
-#
 #: bouboule.cpp:1231
 msgid "About Bouboule"
 msgstr "关于Bouboule"
@@ -517,6 +513,23 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
+"  -corners xxxx     光标停在屏幕角落时执行的动作:\n"
+"                     x = i  无动作（忽略）\n"
+"                     x = s  保存屏幕\n"
+"                     x = l  锁定屏幕\n"
+"                    顺序: 左上、右上、左下、右下\n"
+"  -delay num        进入屏幕保护前的空闲时间\n"
+"                     （默认 10 分钟）\n"
+"  -desc             将屏幕保护程序的说明输出到标准输出\n"
+"  -install          安装屏幕保护程序\n"
+"  -lock             停止屏幕保护需要密码\n"
+"  -allow-root       接受 root 密码解锁\n"
+"  -nice num         以指定 nice 值运行\n"
+"\n"
+"  -preview wid      在指定 X 窗口中运行\n"
+"  -inroot           在根窗口中运行\n"
+"  -setup            设置屏幕保护程序\n"
+"  -test             立即启动屏幕保护程序\n"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
@@ -574,6 +587,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPipes\n"
+"版权所有 (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:93
 msgid "Setup kpolygon"
@@ -675,7 +691,6 @@ msgstr "失败"
 msgid "Whirl"
 msgstr "回旋"
 
-#
 #: science.cpp:68
 msgid "Sphere"
 msgstr "球体"
@@ -708,7 +723,6 @@ msgstr "透镜 ..."
 msgid "grabbing screen..."
 msgstr "截取屏幕..."
 
-#
 #: science.cpp:988
 msgid "Setup Science"
 msgstr "设置Science"
@@ -741,7 +755,6 @@ msgstr "Science版本"
 msgid "written by"
 msgstr "written by"
 
-#
 #: science.cpp:1319
 msgid "About Science"
 msgstr "关于Science"
@@ -750,12 +763,10 @@ msgstr "关于Science"
 msgid "SlideScreen"
 msgstr "滑动屏幕"
 
-#
 #: slidescreen.cpp:496
 msgid "Setup KSlideScreen"
 msgstr "设置KSlideScreen"
 
-#
 #: slidescreen.cpp:589
 msgid "About SlideScreen"
 msgstr "关于SlideScreen"
@@ -770,6 +781,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
+"SlideScreen 1.1 版\n"
+"\n"
+"版权所有 (c) 1992-1997 Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"移植到 kscreensaver:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl>，1998 年 10 月"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -805,7 +823,6 @@ msgstr ""
 msgid "Space (GL)"
 msgstr "空间(GL)"
 
-#
 #: space.cpp:589
 msgid "Setup KSpace"
 msgstr "设置KSpace"
@@ -814,7 +831,6 @@ msgstr "设置KSpace"
 msgid "Warp Interval:"
 msgstr "Warp间隔:"
 
-#
 #: space.cpp:693
 msgid "About KSpace"
 msgstr "关于KSpace"
@@ -859,7 +875,6 @@ msgstr ""
 "\n"
 "由 Emanuel Pirker 移植到 kscreensave."
 
-#
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"
 #~ "\n"

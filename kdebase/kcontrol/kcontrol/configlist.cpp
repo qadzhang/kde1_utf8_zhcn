@@ -25,6 +25,7 @@
 #endif
 
 #include <stdlib.h>
+#include <unistd.h>
 
 #include <qobject.h>
 #include <qdir.h>
@@ -173,6 +174,18 @@ bool KModuleListEntry::execute(QWidget *parent)
 	  params = executable.right(executable.length()-pos-1);
 	  executable.truncate(pos);
 	}
+
+      // [KDE1 Revival 2026] 裸名解析到 KDEDIR/bin：KProcess 用 execvp 沿 PATH
+      // 搜索，模块二进制（kcmdisplay 等）装在 /usr/kde1/bin——若调用环境
+      // PATH 未含该目录（非 startkde 包装环境启动 kcontrol），execve 全部
+      // ENOENT，控制中心点任何模块都无反应（实测 strace 定位）。KDEDIR
+      // 指向安装树时直接拼绝对路径，PATH 命中时行为不变。
+      {
+        const char *kdedir = getenv( "KDEDIR" );
+        if ( kdedir && kdedir[0] && executable.find('/') == -1
+             && access( ( QString(kdedir) + "/bin/" + executable ).data(), X_OK ) == 0 )
+          executable.prepend( QString(kdedir) + "/bin/" );
+      }
 
       // set executable
       process->setExecutable(executable);

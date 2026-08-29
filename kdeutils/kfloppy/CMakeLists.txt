@@ -48,11 +48,17 @@ install(FILES
 
 ######################### Next target ########################
 
-#set(KMKDOSFS_SRCS kmkdosfs.c)
-#add_executable(kmkdosfs ${KMKDOSFS_SRCS})
+# kfloppy 运行期依赖的三个辅助程序(floppy.cpp 探测 kde_bindir 下可执行):
+# kfdformat(格式化内核)/kmkdosfs(DOS 文件系统)——kmke2fs 无源码(外部 e2fsprogs)
+set(KMKDOSFS_SRCS kmkdosfs.c)
+add_executable(kmkdosfs ${KMKDOSFS_SRCS})
+install(TARGETS kmkdosfs RUNTIME DESTINATION ${KDE1_BINDIR})
+
+set(KFDFORMAT_SRCS kfdformat.c)
+add_executable(kfdformat ${KFDFORMAT_SRCS})
+install(TARGETS kfdformat RUNTIME DESTINATION ${KDE1_BINDIR})
 
 ######################## Next target ########################
 
-#set(KFDFORMAT_SRCS kfdformat.c)
-#add_executable(kfdformat ${KFDFORMAT_SRCS})
+
 

@@ -30,8 +30,19 @@
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <X11/Xutil.h>
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/Xos.h>
 #undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
+/* X11 头的 #define Bool int / #define Status int 会击穿下方才拉入的
+ * TQt3 头（ntqvariant.h 的 enum Type 含 Bool）。本文件未以宏形式使用
+ * 二者，在此摘除；X11 函数声明已于上方解析完毕。 */
+#undef Bool
+#undef Status
 //#include <X11/extensions/shape.h>
 
 #include <kapp.h>

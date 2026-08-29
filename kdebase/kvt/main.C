@@ -30,7 +30,19 @@
 #include <locale.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/Xutil.h>
+/* X11 头的 #define Bool int / #define Status int 会击穿下方 KDE/TQt3 头链
+ * （ntqvariant.h 的 enum Type 含 Bool）。本文件的 Bool 全局声明已在
+ * TQt3 迁移中改为 bool，不再依赖宏；在此摘除宏以保护后续 TQt3 头，
+ * X11 函数声明已于上方解析完毕。 */
+#undef Bool
+#undef Status
 
 // KDE includes
 #include <kconfig.h>
@@ -356,7 +368,7 @@ static MyApp* myapp = 0;
 bool MyApp::x11EventFilter( XEvent * ev){
 //   printf("Qt: got one event %d for window %d\n", ev->type, ev->xany.window);
 
-  static Bool motion_allowed = FALSE ;
+  static bool motion_allowed = FALSE ;
 
   if (KApplication::x11EventFilter(ev))
     return TRUE;

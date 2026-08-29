@@ -17,7 +17,18 @@
 #include <stdio.h>
 #include <sys/time.h>
 #include <X11/X.h>
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/Xlib.h>
+/* X11 头的 #define Bool int / #define Status int 会击穿下方才拉入的
+ * TQt3 头（ntqvariant.h 的 enum Type 含 Bool）。本头未以宏形式使用二者，
+ * 在此摘除；X11 函数声明已于上方解析完毕。 */
+#undef Bool
+#undef Status
 #include <qwidget.h>
 #include <qpopmenu.h>
 #include <qstrlist.h>

@@ -2,11 +2,11 @@
 
 #include "ptabdialog.h"
 #include "commands.h"
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:老 C++ 头改标准头 */
 
 PObject *createWidget(CreateArgs &ca)
 {
-  PTabDialog *ptd = new("PTabDialog") PTabDialog(ca.parent);
+  PTabDialog *ptd = new  PTabDialog(ca.parent);
   QTabDialog *qtd;
   // Retreive the border and direction information out of the
   // carg string
@@ -15,8 +15,8 @@ PObject *createWidget(CreateArgs &ca)
     ptd->setDeleteAble(FALSE);
   }
   else if(ca.parent != 0 && ca.parent->widget()->isWidgetType() == TRUE)
-    qtd = new("QTabDialog") QTabDialog((QWidget *) ca.parent->widget());
-    qtd = new("QTabDialog") QTabDialog();
+    qtd = new  QTabDialog((QWidget *) ca.parent->widget());
+    qtd = new  QTabDialog();
   ptd->setWidget(qtd);
   ptd->setWidgetId(ca.pwI);
   ptd->setPukeController(ca.pc);

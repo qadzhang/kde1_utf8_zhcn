@@ -89,8 +89,8 @@ private:
   QPopupMenu *m_help;
   QWidget *rxvt;
   // weird flags
-  Bool setting_to_vt_window;
-  Bool keyboard_secured;
+  bool setting_to_vt_window;
+  bool keyboard_secured;
   bool enableHotkeys;
   
   // options
@@ -100,8 +100,8 @@ private:
 
   QString fg_string;
   QString bg_string;
-  Bool menubar_visible;
-  Bool scrollbar_visible;
+  bool menubar_visible;
+  bool scrollbar_visible;
   KvtScrollbar kvt_scrollbar;
   KvtSize kvt_size;
   KDNDDropZone    *dropZone;

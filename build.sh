@@ -117,11 +117,14 @@ cd tqt3-build || { echo "错误：进入 tqt3-build/ 失败" >&2; exit 1; }
 export TQTDIR="$PWD"
 if [ ! -e configured ]; then
 	# 配置要点：-thread 必需（TQt3 多线程版库）；-xft/-xrender 是现代字体渲染通道；
+	# -qt-gif 必需——TQt3 默认关闭 GIF 解码（历史专利遗留），而 KDE1 大量素材是
+	# GIF（ksame 石子图/kworldwatch 世界地图/kodo 指南图等），不解码则这些应用
+	# 拿到空 pixmap（ksame 牌面全灰、kworldwatch 直接 abort）；GIF 专利早已过期；
 	# -system-* 用 Debian 系统库；-L 补多架构库路径（configure 只认传统路径）；
 	# -no-nis 规避 SunRPC 头缺失（现代 glibc 已移除）；prefix 用最终真实路径
 	# 使 TQT_INSTALL_PLUGINS 等烧入值与 deb 安装后一致
 	( echo yes; sleep 2; echo yes ) | ./configure -thread \
-		-prefix "$prefix/tqt3" -fast -xft -xrender \
+		-prefix "$prefix/tqt3" -fast -xft -xrender -qt-gif \
 		-no-xcursor -no-xrandr -no-nis -no-imgfmt-mng \
 		-system-zlib -system-libpng -system-libjpeg \
 		-L/usr/lib/x86_64-linux-gnu -I/usr/include \

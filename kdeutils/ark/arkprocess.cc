@@ -54,7 +54,7 @@ bool ArkProcess::startPipe(Communication comm, FILE** stream)
    arglist[n]= NULL;
  
    if (!setupCommunication(comm))
-     debug("Could not setup Communication!");
+     tqDebug("Could not setup Communication!");
  
    runs = TRUE; // Isn't needed two much
    pid = fork();
@@ -63,16 +63,16 @@ bool ArkProcess::startPipe(Communication comm, FILE** stream)
      // The child process
  
      if(!commSetupDoneC())
-	 debug("Could not finish comm setup in child!");
+	 tqDebug("Could not finish comm setup in child!");
  
      // Matthias
      // if (run_mode == DontCare) // Of course!
      setpgid(0,0);
      
      for(int argiterator = 0; arglist[argiterator] != NULL; argiterator++)
-     	debug(" Execvp's %dth arg is %s", argiterator, arglist[argiterator]);
+     	tqDebug(" Execvp's %dth arg is %s", argiterator, arglist[argiterator]);
      execvp(arglist[0], arglist);
-     debug("Execvp hasn't succeed\n");
+     tqDebug("Execvp hasn't succeed\n");
      exit(-1);
  
    } else if (-1 == pid) {
@@ -85,7 +85,7 @@ bool ArkProcess::startPipe(Communication comm, FILE** stream)
      // the parent continues here
  
      if (!commSetupDonePPipe())  // finish communication socket setup for the parent
-	 debug("Could not finish comm setup in parent!");
+	 tqDebug("Could not finish comm setup in parent!");
  
      if (comm == Stdin)
 	     *stream = fdopen(in[1], "w");
@@ -158,7 +158,7 @@ int ArkProcess::commSetupDonePPipe()
 
 //    if (communication & Stdout)
 //    {
-//    	debug("I'm gonna make stdout non-blocked");
+//    	tqDebug("I'm gonna make stdout non-blocked");
 // 		ok &= (-1 != fcntl(out[0], F_SETFL, FNDELAY));
 //    }
 //    if (communication & Stderr)

@@ -368,7 +368,7 @@ void KMSendProc::preSendInit(void)
 {
   mSending = FALSE;
   mSendOk = FALSE;
-  mMsg = 0;  /* TQt3 迁移 */
+  mMsg = TQString::null;
 }
 
 //-----------------------------------------------------------------------------
@@ -546,7 +546,7 @@ void KMSendSendmail::sendmailExited(KProcess *proc)
 {
   assert(proc!=NULL);
   mSendOk = (proc->normalExit() && proc->exitStatus()==0);
-  mMsgStr = 0;  /* TQt3 迁移 */
+  mMsgStr = TQString::null;
   emit idle();
 }
 

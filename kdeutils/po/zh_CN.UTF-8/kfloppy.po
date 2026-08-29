@@ -1,20 +1,18 @@
+#
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-03-13 01:55+0100\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Date: 1998-03-06 22:13:59-0500\n"
-"From: Bernd Johannes Wuebben,201 Lincoln Hall,,256-1036, "
-"<root@petit.cornell.edu>\n"
-"Xgettext-Options: -C -ki18n -x../../kdelibs/po/kde.pot\n"
 "Files: about.cpp floppy.cpp main.cpp\n"
+"From: Bernd Johannes Wuebben,201 Lincoln Hall,,256-1036, <root@petit.cornell.edu>\n"
+"Xgettext-Options: -C -ki18n -x../../kdelibs/po/kde.pot\n"
 
 #: about.cpp:40
 msgid "About KDE Floppy Formatter"
 msgstr "关于 KDE 软盘格式化程序"
 
-#: about.cpp:49 floppy.cpp:295 floppy.cpp:342 floppy.cpp:358 floppy.cpp:374
-#: floppy.cpp:481 floppy.cpp:584 floppy.cpp:598 floppy.cpp:713 floppy.cpp:727
-#: floppy.cpp:774 floppy.cpp:783 floppy.cpp:890 floppy.cpp:911 floppy.cpp:935
+#: about.cpp:49 floppy.cpp:295 floppy.cpp:342 floppy.cpp:358 floppy.cpp:374 floppy.cpp:481 floppy.cpp:584 floppy.cpp:598 floppy.cpp:713 floppy.cpp:727 floppy.cpp:774 floppy.cpp:783 floppy.cpp:890 floppy.cpp:911 floppy.cpp:935
 msgid "KFloppy"
 msgstr "KFloppy"
 
@@ -51,16 +49,14 @@ msgid "Create Label:"
 msgstr "建立标签:"
 
 #: floppy.cpp:148
-#, fuzzy
 msgid "KDE Floppy"
-msgstr "KDE FLoppy"
+msgstr "KDE 软盘"
 
 #: floppy.cpp:162
 msgid "KDE Floppy Formatter"
 msgstr "KDE 软盘格式化程序"
 
-#: floppy.cpp:168 floppy.cpp:222 floppy.cpp:240 floppy.cpp:255 floppy.cpp:273
-#: floppy.cpp:1016
+#: floppy.cpp:168 floppy.cpp:222 floppy.cpp:240 floppy.cpp:255 floppy.cpp:273 floppy.cpp:1016
 msgid "HD"
 msgstr "硬盘"
 
@@ -110,7 +106,7 @@ msgstr ""
 
 #: floppy.cpp:430
 msgid "Abort"
-msgstr "退出"
+msgstr "中止"
 
 #: floppy.cpp:478
 msgid "Cannot start a new program: fork() failed."

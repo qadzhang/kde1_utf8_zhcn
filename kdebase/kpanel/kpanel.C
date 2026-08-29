@@ -1322,7 +1322,7 @@ void kPanel::showPanel()
 extern bool in_animation;
 
 void kPanel::hidePanelLeft(){
-  Bool old = panelHidden[currentDesktop];
+  bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = True;
   panelHiddenLeft[currentDesktop] = True;
@@ -1417,7 +1417,7 @@ void kPanel::hidePanelLeft(){
 }
 
 void kPanel::hidePanelRight(){
-  Bool old = panelHidden[currentDesktop];
+  bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = True;
   panelHiddenLeft[currentDesktop] = False;
@@ -1513,7 +1513,7 @@ void kPanel::hidePanelRight(){
 }
 
 void kPanel::showPanelFromLeft( bool smooth){
-  Bool old = panelHidden[currentDesktop];
+  bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = False;
   if (in_animation)
@@ -1572,7 +1572,7 @@ void kPanel::showPanelFromLeft( bool smooth){
 }
 
 void kPanel::showPanelFromRight(bool smooth){
-  Bool old = panelHidden[currentDesktop];
+  bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = False;
   if (in_animation)

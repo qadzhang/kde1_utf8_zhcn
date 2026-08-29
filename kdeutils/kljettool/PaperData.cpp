@@ -151,7 +151,6 @@ void PaperData::FormatSelected(const char* format)
     return;
 
   data->Format = format;
-  data->Format
 
 }
 void PaperData::ProtraitCheckBoxClicked()
@@ -161,7 +160,6 @@ void PaperData::ProtraitCheckBoxClicked()
 
   if(PortraitCheckBox->isChecked()){
     data->Orientation = "Portrait";
-    data->Orientation
   }
 }
 
@@ -174,7 +172,6 @@ void PaperData::LandscapeCheckBoxClicked()
 
   if(LandscapeCheckBox->isChecked()){
     data->Orientation = "Landscape";
-    data->Orientation
   }
 
 }
@@ -185,11 +182,9 @@ void PaperData::ManaulFeedCheckBoxClicked()
 
   if(ManualFeedCheckBox->isChecked()){
     data->Manualfeed = "on";
-    data->Manualfeed
   }
   else{
     data->Manualfeed = "off";
-    data->Manualfeed
   }
 }
 
@@ -200,11 +195,9 @@ void PaperData::AutoContinueCheckBoxClicked()
 
   if(AutoContinueCheckBox->isChecked()){
     data->Autocont = "on";
-    data->Autocont
   }
   else{
     data->Autocont = "off";
-    data->Autocont
   }
 }
 
@@ -215,7 +208,6 @@ void PaperData::copiesChanged(const char *ncopies){
     return;
   
   data->Copies = ncopies;
-  data->Copies
   
 
 }
@@ -226,7 +218,6 @@ void PaperData::linesChanged(const char *nlines){
     return;
   
   data->Formlines = nlines;
-  data->Formlines
   
 
 }

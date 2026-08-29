@@ -2,6 +2,15 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-30（第八批:全应用运行与中文翻译大排查——10 个被注释应用接入 + 13 个新 po + 六个渲染/启动缺陷根治）
+
+- **全应用清点与接入**：清点发现 kdeutils/kdenetwork 有 **10 个应用当年迁移 CMake 时被注释未构建**——ark、kab、karm、klpq、kljettool、karchie、kppp、krn、ksirc（含 7 静态子库+libpuke.so+pws）、ksticker。逐个补写/翻译 CMakeLists（含 KRN 宏、gdbm 兼容头、系统旧库路径隔离——/usr/kde1/lib 残留 Qt1 时代同名库导致链接错库，全部改为仓库 staging 优先并 unset 缓存），并修复约 80 处 Qt1→TQt3 编译错误（iostream.h 族、QString 字节缓冲、setStr/resize、GCI/Bool/Status 宏、带名 new、>? 运算符、CMSGSHDR 弹性成员、C99 inline、QListView updateItem、QTabDialog 重载二义、moc include 补齐等）。ktalkd（talk 守护进程，现代系统无 talk/inetd 生态、非 GUI）保持不接入。
+- **13 个应用补齐 zh_CN 翻译（约 680 条）**：kworldwatch/kpm/karchie/kab/kjots/ksokoban/ksmiletris/klipper/kwrite/kbiff/korn/ksirc/konquest——译法上网核实并对齐 KDE6 术语（kill→结束进程、语法高亮、区分大小写、仅整词等，参考 KDE UserBase/apps.kde.org zh-cn 官方页面）。**发现并修复 kdeutils 的 po 子树从未接入 CMake**（上层 add_subdirectory(po) 被注释）——ark/kcalc/kedit 等十余应用翻译自始未随构建安装；现 staging 共 73 个 zh_CN mo 落盘。
+- **X11 宏污染连锁根治**：上个会话给 q1compat.h 加的「全局预 include X11」使 Xlib 的 CursorShape/None 等宏击穿全库 TQt3 枚举（ntqnamespace/ntqevent 首轮即炸），已回退；改为定点修复 15 处——kdelibs 三头（kwm/krootprop/ktoolboxmgr）与 kdebase 各 TU 采用「恢复-解析-再摘」护罩（Xutil.h 声明依赖宏形式的 Bool/Status，须在摘宏前解析；shape.h 声明同理），kpanel/kvt/kwm 的 Bool 全局声明 bool 化。教训记入：批量脚本写文件一律临时文件+原子替换（本轮三次编码异常截断源文件，均由 git 恢复）。
+- **六个应用运行缺陷逐一视觉定位并根治（gdb+X 窗口树实证）**：① ksirc 启动即退——irclistbox 的 updateTableSize 去掉基类限定后自递归栈溢出，且 TQListBox 已无 QTableView 祖先（改仅置脏标记）；② karchie 启动即退——KAView 三指针成员依赖 BSS 零值，构造早期触碰野指针（显式置空）；③ kmail1 段错误——kmsettings 两处 stricmp(readEntry()) 把 TQString 对象指针当 C 串（改 TQString==）；④ kpat 牌桌全空——dealer 纯虚 show() 遮蔽容器映射、X 窗口 IsUnMapped（pWidget::showEvent 兜底 + 显式 TQWidget::show）；⑤ ktop 列表全空——TaskMan（QTabDialog）同对话框类型位问题 + KTMainWindow::show 不再级联（reparent 重嵌入 + 显式 show）；⑥ kshisen 全英文——KApplication 未传 catalog 名而 CMake 可执行名带 1 后缀找不到 kshisen.mo（补传名）；另 kfloppy 缺辅助程序 kfdformat/kmkdosfs（CMake 启用+修 MAJOR/cdiv 兼容）、knotes 缺 mini 图标+KWM 空 QRect 把便笺压成 1x1（补装+防御）。kfind 的 reparent 修复经重装后验证生效（上批修改从未编译进 staging）。
+- **全量视觉回归终验（50+ 应用，视觉模型多轮看图）**：分四批并行截图审计 + 失败项修复后逐个复核——最终全部通过：窗口正常、菜单按钮中文、无乱码方块（ksticker 中文跑马灯、kpat 纸牌、ktop 进程表列名、kworldwatch 昼夜地图+中文日期等均实证上屏）；kljettool 在无 /etc/printcap 的环境按设计退出（环境性，非缺陷）；knotes 为托盘驻留形态。kasteroids HUD（Score/Fuel）等少量游戏内文案与帮助正文英文属「界面全面中文化」路线图后续项。
+- **deb 重打包**：全部改动经 package.sh 重新产出 dist/deb 与 dist/src（kde1-core/kde1-apps/kde1 元包 + sdeb）。
+
 ## 2026-08-29（第七批：中文目录导航根治——双缺陷叠加 + tqt3 补丁 001 裁决）
 
 - **kfm 中文目录导航根治（用户报告"点击中文目录报服务器上没有这个目录"的完整闭环）**：经 KURL 回环单测、strace 系统调用实证、五层打点（IPC parse/parse_dirEntry/slotDirEntry/manager/newSlave-getSlave）与 gdb 断点，定性为两个叠加缺陷，分别修复并双路终验通过（原始中文 URL 与百分号编码 URL 均正确进入目录列出内容，视觉模型核验）：

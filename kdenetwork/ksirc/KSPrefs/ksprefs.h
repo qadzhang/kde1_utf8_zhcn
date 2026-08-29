@@ -1,3 +1,6 @@
+#ifndef KSPREFS_H
+#define KSPREFS_H
+/* TQt3 migration: missing include guard caused redefinitions */
 #include <qwidget.h>
 #include <qobject.h>
 #include <qdialog.h>
@@ -48,3 +51,5 @@ private:
   DefaultFilters *pFilters;
   
 };
+
+#endif /* KSPREFS_H */

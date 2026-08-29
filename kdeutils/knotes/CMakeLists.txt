@@ -42,6 +42,9 @@ target_link_libraries(knotes1
 
 install(TARGETS knotes1 RUNTIME DESTINATION ${KDE1_BINDIR})
 install_icon(knotes.xpm "${KDE1_ICONDIR}")
+# 停靠程序从 kde_icondir()/mini/knotes.xpm 载入小图标(docking.cpp:43),
+# mini 图标须随装(改名去 mini- 前缀),否则启动即弹“无法载入 knotes.xpm”并退出
+install(FILES mini-knotes.xpm DESTINATION ${KDE1_ICONDIR}/mini RENAME knotes.xpm)
 install_icon(knoteslogo.xpm "${KDE1_DATADIR}/knotes")
 install(FILES knotes.kdelnk DESTINATION ${KDE1_APPSDIR}/Utilities)
 

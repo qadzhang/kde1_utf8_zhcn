@@ -12,7 +12,7 @@
 #include <kconfig.h>
 #include <qmsgbox.h> 
 #include <qregexp.h>
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:老 C++ 头改标准头 */
 
 #define Inherited FilterRuleEditorData
 
@@ -80,13 +80,13 @@ void FilterRuleEditor::OkPressed()
     kConfig->setGroup("FilterRules");
     QString key;
     key.sprintf("name-%d", number);
-    kConfig->writeEntry(key, name);
+    kConfig->writeEntry(key, TQString(name));  /* TQt3 迁移:消重载二义 */
     key.sprintf("search-%d", number);
-    kConfig->writeEntry(key, search);
+    kConfig->writeEntry(key, TQString(search));  /* TQt3 迁移:消重载二义 */
     key.sprintf("from-%d", number);
-    kConfig->writeEntry(key, from);
+    kConfig->writeEntry(key, TQString(from));  /* TQt3 迁移:消重载二义 */
     key.sprintf("to-%d", number);
-    kConfig->writeEntry(key, to);
+    kConfig->writeEntry(key, TQString(to));  /* TQt3 迁移:消重载二义 */
     //    kConfig->sync();
     updateListBox(after);
   }
@@ -117,19 +117,19 @@ void FilterRuleEditor::moveRule(int from, int to)
   src.sprintf("name-%d", from);
   dest.sprintf("name-%d", to);
   kConfig->writeEntry(dest, convertSpecial(kConfig->readEntry(src)));
-  kConfig->writeEntry(src, "", FALSE);
+  kConfig->writeEntry(src, TQString(""), FALSE);  /* TQt3 迁移:消重载二义 */
   src.sprintf("search-%d", from);
   dest.sprintf("search-%d", to);
   kConfig->writeEntry(dest, convertSpecial(kConfig->readEntry(src)));
-  kConfig->writeEntry(src, "", FALSE);
+  kConfig->writeEntry(src, TQString(""), FALSE);  /* TQt3 迁移:消重载二义 */
   src.sprintf("from-%d", from);
   dest.sprintf("from-%d", to);
   kConfig->writeEntry(dest, convertSpecial(kConfig->readEntry(src)));
-  kConfig->writeEntry(src, "", FALSE);
+  kConfig->writeEntry(src, TQString(""), FALSE);  /* TQt3 迁移:消重载二义 */
   src.sprintf("to-%d", from);
   dest.sprintf("to-%d", to);
   kConfig->writeEntry(dest, convertSpecial(kConfig->readEntry(src)));
-  kConfig->writeEntry(src, "", FALSE);
+  kConfig->writeEntry(src, TQString(""), FALSE);  /* TQt3 迁移:消重载二义 */
 }
 
 void FilterRuleEditor::deleteRule()

@@ -175,12 +175,12 @@ void ArkWidget::saveProperties( KConfig *kc ) {
 	QString loc_key( "CurrentLocation" );
 	
 	if( arch != 0 )
-		kc->writeEntry( loc_key, arch->getName() );
+		kc->writeEntry( loc_key, TQString(arch->getName()) );  /* TQt3 迁移:消 writeEntry 重载二义 */
 	else
 		if( listing != 0 )
-			kc->writeEntry( loc_key, "Favorites" );
+			kc->writeEntry( loc_key, TQString("Favorites") );  /* TQt3 迁移:消重载二义 */
 		else
-			kc->writeEntry( loc_key, "None" );
+			kc->writeEntry( loc_key, TQString("None") );  /* TQt3 迁移:消重载二义 */
 	
 	// I would prefer to just delete all the widgets, but kwm gets confused
 	// if ark quits in the middle of session management
@@ -482,7 +482,7 @@ void ArkWidget::about()
 void ArkWidget::aboutQt()
 {
 	QMessageBox aboutmsg;
-	aboutmsg.aboutQt(this);
+	aboutmsg.aboutTQt(this);  /* TQt3 迁移:aboutQt→aboutTQt */
 }
 
 void ArkWidget::help()

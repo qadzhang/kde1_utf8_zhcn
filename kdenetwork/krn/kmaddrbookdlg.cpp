@@ -19,7 +19,7 @@ KMAddrBookSelDlg::KMAddrBookSelDlg(KMAddrBook* aAddrBook, const char* aCap):
 
   assert(aAddrBook != NULL);
   mAddrBook = aAddrBook;
-  mAddress  = 0;
+  mAddress = TQString::null;  /* TQt3 迁移 */
 
   mBtnOk.adjustSize();
   mBtnOk.setMinimumSize(mBtnOk.size());
@@ -59,7 +59,7 @@ void KMAddrBookSelDlg::slotOk()
   int idx = mListBox.currentItem();
 
   if (idx>=0) mAddress = mListBox.text(idx);
-  else mAddress = 0;
+  else mAddress = TQString::null;  /* TQt3 迁移 */
 
   accept();
 }
@@ -68,7 +68,7 @@ void KMAddrBookSelDlg::slotOk()
 //-----------------------------------------------------------------------------
 void KMAddrBookSelDlg::slotCancel()
 {
-  mAddress = 0;  /* TQt3 迁移 */
+  mAddress = TQString::null;
   reject();
 }
 

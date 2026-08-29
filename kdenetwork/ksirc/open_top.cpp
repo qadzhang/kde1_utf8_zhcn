@@ -8,7 +8,8 @@
  *********************************************************************/
 
 #include "open_top.h"
-#include <iostream.h>
+#include <iostream>
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 
 
 #define Inherited open_topData

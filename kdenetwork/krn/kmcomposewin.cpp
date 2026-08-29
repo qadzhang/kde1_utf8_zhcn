@@ -2,6 +2,10 @@
 // Author: Markus Wuebben <markus.wuebben@kde.org>
 // This code is published under the GPL.
 
+#include <iostream>  /* TQt3 迁移:Qt1 头不再传递 iostream,显式引入 */
+using std::cout;
+using std::cerr;
+using std::endl;
 #include <qprinter.h>
 #include "kmcomposewin.h"
 #include "kmmessage.h"
@@ -94,7 +98,7 @@ WindowList* windowList=new WindowList;
 #define HDR_STANDARD (HDR_SUBJECT|HDR_TO|HDR_CC)
 #endif
 
-QString KMComposeWin::mPathAttach = 0;
+QString KMComposeWin::mPathAttach = TQString::null;  /* TQt3 迁移:=0 重载已删 */
 
 //-----------------------------------------------------------------------------
 KMComposeWin::KMComposeWin(KMMessage *aMsg) : KMComposeWinInherited(),
@@ -119,7 +123,7 @@ KMComposeWin::KMComposeWin(KMMessage *aMsg) : KMComposeWinInherited(),
   mAtmListBox = NULL;
   mAtmList.setAutoDelete(TRUE);
   mAutoDeleteMsg = FALSE;
-  mPathAttach = 0;  /* TQt3 迁移 */
+  mPathAttach = TQString::null;  /* TQt3 迁移:=0 重载已删 */
   mEditor = NULL;
 
   mSpellCheckInProgress=FALSE;
@@ -1917,7 +1921,7 @@ void KMLineEdit::slotCompletion()
   
   for (const char *a=adb.first(); a; a=adb.next())
   {
-    t.setStr(a);
+    t = a;  /* TQt3 迁移:setStr → 赋值 */
     if (t.contains(regexp))
     {
       pop.insertItem(a);

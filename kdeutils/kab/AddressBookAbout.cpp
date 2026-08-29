@@ -25,7 +25,7 @@ AddressBookAbout::AddressBookAbout(QWidget* parent, const char* name)
   setCaption(i18n("About addressbook"));
   QPixmap pixmap;
   string path;
-  path=KApplication::getKApplication()->kde_datadir();
+  path=(string)KApplication::getKApplication()->kde_datadir().local8Bit().data();  /* TQt3 迁移:TQString 无 std::string 转换,经 local8Bit 桥接 */
   path+=(string)"/kab/pics/"+AddressBookLogo;
   // this needs the installed JPEG reader:
   if(!pixmap.load(path.c_str()))

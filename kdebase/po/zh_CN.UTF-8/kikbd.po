@@ -1,11 +1,12 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-04-13 01:26+0200\n"
-"Content-Type: charset=UTF-8\n"
 "PO-Revision-Date: 1999-04-05 15:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Content-Type: charset=UTF-8\n"
 "Translator: Wang Jian <larkw@263.net>\n"
 
 #: kikbd.cpp:124
@@ -337,9 +338,7 @@ msgid "Use &hot list"
 msgstr "使用常用列表(&H)"
 
 #: widgets.cpp:155
-msgid ""
-"Use only default and last active keyboard maps when switch key sequence is "
-"used"
+msgid "Use only default and last active keyboard maps when switch key sequence is used"
 msgstr "当使用切换键序列时只使用默认的和上次使用的键盘映射"
 
 #: widgets.cpp:224
@@ -403,9 +402,7 @@ msgid "&Emulate Caps Lock"
 msgstr "模拟大写锁定(&E)"
 
 #: widgets.cpp:476
-msgid ""
-"Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
-"languages"
+msgid "Emulate XServer Caps Lock. Needed for correct keyboard operation in some languages"
 msgstr "模拟X服务器大写锁定.某些语言需要此选项才能正确工作"
 
 #: widgets.cpp:482
@@ -413,9 +410,8 @@ msgid "&World Menu"
 msgstr "世界菜单(&W)"
 
 #: widgets.cpp:483
-#, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "在任何窗口中按下选中的切换键后显示菜单"
+msgstr "按住所选切换键即可在任意窗口中呼出键盘菜单"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -438,13 +434,11 @@ msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "标准行为.键盘映射在所有窗口中起作用"
 
 #: widgets.cpp:509
-msgid ""
-"Extended behavior. Keyboard map state is saved for each window independently"
+msgid "Extended behavior. Keyboard map state is saved for each window independently"
 msgstr "扩展行为.为每个独立的窗口保存键盘映射状态"
 
 #: widgets.cpp:513
-msgid ""
-"Special behavior. Keyboard state is saved for each window class independently"
+msgid "Special behavior. Keyboard state is saved for each window class independently"
 msgstr "特殊行为.为每个独立的窗口类保存键盘映射的状态"
 
 #: widgets.cpp:561

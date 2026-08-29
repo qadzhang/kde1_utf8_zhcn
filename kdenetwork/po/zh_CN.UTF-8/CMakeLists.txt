@@ -5,6 +5,10 @@ knu.po
 kppp.po
 krn.po
 ktalkd.po
+karchie.po
+kbiff.po
+korn.po
+ksirc.po
 )
 
 install_gmo(${GMOFILES})

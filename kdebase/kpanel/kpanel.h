@@ -487,12 +487,12 @@ private:
 
   int currentDesktop;
 
-  Bool panelHidden[8+1];
-  Bool panelHiddenLeft[8+1];
-  Bool panelCurrentlyHidden;
-  Bool panelCurrentlyLeft;
-  Bool miniPanelHidden;
-  Bool doGeometry_called[8+1];
+  bool panelHidden[8+1];
+  bool panelHiddenLeft[8+1];
+  bool panelCurrentlyHidden;
+  bool panelCurrentlyLeft;
+  bool miniPanelHidden;
+  bool doGeometry_called[8+1];
 
   QFrame *miniPanelFrame;
   QButtonGroup *miniPanel;

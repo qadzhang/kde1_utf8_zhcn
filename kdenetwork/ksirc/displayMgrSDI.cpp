@@ -34,4 +34,4 @@ void DisplayMgrSDI::setCaption(QWidget *w, const char *cap){
   w->setCaption(cap);
 }
 
-#include "displayMgrSDI.moc"
+/* TQt3 迁移:displayMgrSDI.moc 无 Q_OBJECT,残迹 include 已删 */

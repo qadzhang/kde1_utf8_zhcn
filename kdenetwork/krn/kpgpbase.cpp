@@ -182,12 +182,12 @@ KpgpBase::addUserId()
 void 
 KpgpBase::clear()
 {
-  input = 0;  /* TQt3 迁移 */
-  output = 0;  /* TQt3 迁移 */
-  info = 0;  /* TQt3 迁移 */
-  errMsg = 0;  /* TQt3 迁移 */
-  signature = 0;  /* TQt3 迁移 */
-  signatureID = 0;  /* TQt3 迁移 */
+  input = TQString::null;
+  output = TQString::null;
+  info = TQString::null;
+  errMsg = TQString::null;
+  signature = TQString::null;
+  signatureID = TQString::null;
   recipients.clear();
   status = OK;
 }
@@ -195,7 +195,7 @@ KpgpBase::clear()
 void 
 KpgpBase::clearOutput()
 {
-  output = 0;  /* TQt3 迁移 */
+  output = TQString::null;
 }
 
 QString 
@@ -236,7 +236,7 @@ KpgpBase2::encsign(const QStrList *_recipients, const char *passphrase,
 
   if(_recipients != 0)
     if(_recipients->count() <= 0)
-      _recipients = 0;  /* TQt3 迁移 */
+      _recipients = 0;  /* 指针清空(TQt3 迁移注释误标,还原) */
 
   if(_recipients != 0 && passphrase != 0)
     cmd = "pgp +batchmode -seat ";
@@ -539,7 +539,7 @@ KpgpBase5::encsign(const QStrList *_recipients, const char *passphrase,
   
   if(_recipients != 0)
     if(_recipients->isEmpty())
-      _recipients = 0;  /* TQt3 迁移 */
+      _recipients = 0;  /* 指针清空 */
 
   if(_recipients != 0 && passphrase != 0)
     cmd = "pgpe -ats -f +batchmode=1";

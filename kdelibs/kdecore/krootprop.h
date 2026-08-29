@@ -23,6 +23,19 @@
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
+/* Xutil.h 的声明依赖宏形式的 Status，须在摘宏前解析（同 kwm.h 的处理） */
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
+#include <X11/Xutil.h>
+/* X11 头的 #define Bool int / #define Status int 会击穿下方才拉入的
+ * TQt3 头（ntqvariant.h 的 enum Type 含 Bool、ntqmovie.h 的 enum Status）。
+ * 本头未以宏形式使用二者，在此摘除；X11 函数声明已解析完毕。 */
+#undef Bool
+#undef Status
 
 #include <qdict.h>
 

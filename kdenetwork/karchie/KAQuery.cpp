@@ -83,11 +83,15 @@ extern "C" {
     */
 
     /* extern variables defined for archiequery */
+    /* TQt3 迁移:perrno.h 以 extern "C" 声明这批 prospero 全局量(C 内核共享),
+     * 定义必须同为 C linkage,否则链接符号不一致 */
+    extern "C" {
     int pwarn;
     char p_warn_string[P_ERR_STRING_SZ];
     int perrno;
     char p_err_string[P_ERR_STRING_SZ];
     int pfs_debug;
+    }
     int verbose; /* verbose level: 1 verbose, 0 non-verbose */
 
     /* from dirsend.c */
@@ -273,7 +277,7 @@ KAQuery::getFileList() const
     QString path(tmplink->filename);
     int slash_index = path.findRev('/');
     QString filename( path.right( path.length() - slash_index -1 ));
-    path.resize( slash_index +2 );
+    path.truncate( slash_index +2 );  /* TQt3 迁移:TQString 无 resize,截断用 truncate */
     file = new KAQueryFile( host, path, filename, size, modes, date, time );
     filelist->append( file );
     tmplink = tmplink->next;

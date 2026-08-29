@@ -12,16 +12,16 @@ const QColor KSPainter::num2colour[KSPainter::maxcolour] = { white,
 							     black,
 							     darkBlue,
 							     darkGreen,
-							     red,
-							     brown,
+							     k1c_red,  /* q1compat:红/绿/蓝须显式 k1c_ */
+							     TQColor(165,42,42),  /* brown:Qt1 色名 */
 							     darkMagenta,
-							     orange,
+							     TQColor(255,165,0),  /* orange:Qt1 色名 */
 							     yellow,
-							     green,
+							     k1c_green,
 							     darkCyan,
 							     cyan,
-							     blue,
-							     pink,
+							     k1c_blue,
+							     TQColor(255,192,203),  /* pink:Qt1 色名 */
 							     gray,
 							     lightGray };
 
@@ -93,7 +93,7 @@ void KSPainter::colourDrawText(QPainter *p, int startx, int starty,
 	    }
 	    if(bcolour < maxcolour ){
 	      p->setBackgroundColor(num2colour[bcolour]);
-	      p->setBackgroundMode(OpaqueMode);
+	      p->setBackgroundMode(TQt::OpaqueMode);
 	    }
 
 	  }
@@ -102,7 +102,7 @@ void KSPainter::colourDrawText(QPainter *p, int startx, int starty,
       else if(str[i] == 0x03){
 	i++;
 	p->setPen(qpDefPen);
-	p->setBackgroundMode(TransparentMode);
+	p->setBackgroundMode(TQt::TransparentMode);
       }
       else if((str[i] == '~') && ((str[i+1] >= 0x61) || (str[i+1] <= 0x7a))){
 	QFont fnt = p->font();
@@ -110,11 +110,11 @@ void KSPainter::colourDrawText(QPainter *p, int startx, int starty,
 	switch(str[i+1]){
 	case 'c':
 	  p->setPen(qpDefPen);
-	  p->setBackgroundMode(TransparentMode);
+	  p->setBackgroundMode(TQt::TransparentMode);
 	  break;
 	case 'C':
 	  p->setPen(qpDefPen);
-	  p->setBackgroundMode(TransparentMode);
+	  p->setBackgroundMode(TQt::TransparentMode);
 	  fnt.setBold(FALSE);
 	  fnt.setItalic(FALSE);
 	  fnt.setUnderline(FALSE);
@@ -123,11 +123,11 @@ void KSPainter::colourDrawText(QPainter *p, int startx, int starty,
         case 'r':
           if(ReverseText == TRUE) {
             ReverseText = FALSE;
-            p->setBackgroundMode(TransparentMode);
+            p->setBackgroundMode(TQt::TransparentMode);
           }
           else {
             ReverseText = TRUE;
-            p->setBackgroundMode(OpaqueMode);
+            p->setBackgroundMode(TQt::OpaqueMode);
           }
           temppen = p->pen().color();
           p->setPen( p->backgroundColor() );

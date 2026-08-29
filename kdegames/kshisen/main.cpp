@@ -42,7 +42,7 @@
 QString PICDIR;
 
 int main(int argc, char **argv) {
-  KApplication a(argc, argv);
+  KApplication a(argc, argv, "kshisen");  /* TQt3 迁移:CMake 可执行名带 1 后缀,catalog 名须显式传,否则找不到 kshisen.mo */
 
   PICDIR = a.kde_datadir() + "/kshisen/pics/";
 

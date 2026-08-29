@@ -323,7 +323,7 @@ void ConnectWidget::timerEvent(QTimerEvent *) {
       emit debugPutChar('\n');
       Modem::modem->hangup();
 
-      if(gpppdata.busyWait() > 0) {
+      if(atoi(gpppdata.busyWait()) > 0) {  /* TQt3 迁移:Qt1 的指针与 0 有序比较已不合法,经 atoi 取值 */
 	QString bm = i18n("Line Busy. Waiting: ");
 	bm += gpppdata.busyWait();
 	bm += i18n(" seconds");

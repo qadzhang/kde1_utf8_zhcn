@@ -352,12 +352,12 @@ const QString KMMsgBase::decodeRFC1522String(const QString aStr)
     {
       ch = *pos;
       *pos = '\0';
-      str = QString(mid, (int)(mid - pos - 1));
+      str = TQCString(mid, (int)(mid - pos - 1) + 1);  /* TQt3 迁移:私有构造,经 TQCString */
       if (encoding == 'Q')
       {
 	// decode quoted printable text
 	for (i=str.length()-1; i>=0; i--)
-	  if (str[i]=='_') str[i]=' ';
+	  if (str[i]=='_') str[i]=' ';  /* TQt3 迁移:TQCharRef 可读写字符 */
 	str = decodeQuotedPrintable(str);
       }
       else
@@ -366,8 +366,12 @@ const QString KMMsgBase::decodeRFC1522String(const QString aStr)
 	str = decodeBase64(str);
       }
       *pos = ch;
-      for (i=0; str[i]; i++)
-	*dest++ = str[i];
+      /* TQt3 迁移:原逐字节回写依赖 QString 的 char 下标;改经 latin1 字节串 */
+      {
+        TQCString out = str.latin1();
+        for (unsigned int k = 0; k < out.length(); k++)
+          *dest++ = out[k];
+      }
 
       pos = end -1;
     }
@@ -556,7 +560,7 @@ const QString KMMsgBase::decodeBase64(const QString aStr)
 //-----------------------------------------------------------------------------
 const QString KMMsgBase::encodeBase64(const QString aStr)
 {
-  DwString dwsrc(aStr.data(), aStr.size()-1);
+  DwString dwsrc(aStr.latin1(), aStr.length()-1);  /* TQt3 迁移 */
   DwString dwdest;
   QString result;
 

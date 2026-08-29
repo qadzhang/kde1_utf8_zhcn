@@ -49,7 +49,7 @@ class KAHostList : public KAQueryList
    * um die Liste nach Hostnamen zu sortieren.
    */
 protected:
-  virtual int compareItems( GCI item1, GCI item2 );
+  virtual int compareItems( TQPtrCollection::Item item1, TQPtrCollection::Item item2 /* TQt3 migration: GCI -> Item */ );
 
 };
 
@@ -59,7 +59,7 @@ class KADomainList : public KAQueryList
    * um die Liste nach Domains zu sortieren.
    */
 protected:
-  virtual int compareItems( GCI item1, GCI item2 );
+  virtual int compareItems( TQPtrCollection::Item item1, TQPtrCollection::Item item2 /* TQt3 migration: GCI -> Item */ );
 
 };
 
@@ -69,7 +69,7 @@ class KASizeList : public KAQueryList
    * um die Liste nach Dateigroesse zu sortieren.
    */
 protected:
-  virtual int compareItems( GCI item1, GCI item2 );
+  virtual int compareItems( TQPtrCollection::Item item1, TQPtrCollection::Item item2 /* TQt3 migration: GCI -> Item */ );
   
 };
 
@@ -79,7 +79,7 @@ class KADateList : public KAQueryList
    * um die Liste nach Dateidatum zu sortieren.
    */
 protected:
-  virtual int compareItems( GCI item1, GCI item2 );
+  virtual int compareItems( TQPtrCollection::Item item1, TQPtrCollection::Item item2 /* TQt3 migration: GCI -> Item */ );
   
 };
 

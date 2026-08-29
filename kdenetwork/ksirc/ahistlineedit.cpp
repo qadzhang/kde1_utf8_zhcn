@@ -43,7 +43,7 @@
 #include "ahistlineedit.h"
 #include "KSColourPicker/kscolourpicker.h"
 #include "config.h"
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:老 C++ 头改标准头 */
 
 extern global_config *kSircConfig;
 
@@ -150,7 +150,7 @@ void aHistLineEdit::keyPressEvent ( QKeyEvent *e )
 
 void aHistLineEdit::ColourPickerPopUp()
 {
-  kscolourpicker *kscp = new("kscolourpicker") kscolourpicker();
+  kscolourpicker *kscp = new  kscolourpicker();
   connect(kscp, SIGNAL(picked( QString )), 
           this, SLOT(slot_insert( QString )));
   kscp->show();

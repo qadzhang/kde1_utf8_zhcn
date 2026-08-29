@@ -20,7 +20,7 @@
 #include <qkeycode.h>
 
 // #include <qapplication.h>
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:老 C++ 头改标准头 */
 #include <kapp.h>
 
 QList<Server> Groups;
@@ -74,8 +74,8 @@ open_ksirc::open_ksirc
     if(p == 0x0)
       p = "6667";
     QList<port> rp;
-    rp.inSort(new("port") port(p));
-    Groups.insert(0, new("Server") Server(QString("Recent"), name, rp,
+    rp.inSort(new  port(p));
+    Groups.insert(0, new  Server(QString("Recent"), name, rp,
 				QString("Recent Server"), ""));
   }
 
@@ -130,7 +130,7 @@ void open_ksirc::insertGroupList()
 
 void open_ksirc::insertServerList( const char * group )
 {
-  QListBox *newListBox = new("QListBox") QListBox();
+  QListBox *newListBox = new  QListBox();
   Server *serv;
 
   for ( serv=Groups.first(); serv != 0; serv=Groups.next() ) {
@@ -150,7 +150,7 @@ void open_ksirc::insertServerList( const char * group )
 
 void open_ksirc::setServer( const char * serveraddress )
 {
-  QListBox *newListBox  = new("QListBox") QListBox();
+  QListBox *newListBox  = new  QListBox();
   Server *serv;
   QList<port> portlist; 
   port *p;
@@ -262,7 +262,7 @@ void open_ksirc::clickCancel()
 
 void open_ksirc::clickEdit()
 {
-  // TODO open new("server") server editor
+  // TODO open new  server editor
   QMessageBox::information(this, "kSirc - Open Server",
                            "Feature not implemented",
                            "&Ok", "", "", 0, 0);

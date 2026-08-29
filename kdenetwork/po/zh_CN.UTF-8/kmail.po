@@ -8,16 +8,16 @@ msgstr ""
 "POT-Creation-Date: 1999-04-26 03:29+0200\n"
 "PO-Revision-Date: 1998-06-12 08:40 MET DST\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: zh_CN (gb2312 )\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: kmcomposewin.cpp:1516 kmmainwin.cpp:377 kpgp.cpp:546
 msgid ""
 "Sorry, but this feature\n"
 "is still missing"
 msgstr ""
-"抱歉 , 这个特色还没有\n"
-"实现"
+"抱歉，此功能\n"
+"尚未实现"
 
 #: kmmainwin.cpp:386
 msgid "New Folder"
@@ -241,28 +241,24 @@ msgid "Next unread"
 msgstr "下一个未读"
 
 #: kmmainwin.cpp:1039
-#, fuzzy
 msgid "&Previous"
-msgstr "上一个[&P]"
+msgstr "上一个(&P)"
 
 #: kmmainwin.cpp:1041
-#, fuzzy
 msgid "Previous unread"
-msgstr "上一个[&P]"
+msgstr "上一封未读"
 
 #: kmmainwin.cpp:1051
-#, fuzzy
 msgid "Edi&t..."
-msgstr "打印..."
+msgstr "编辑(&T)..."
 
 #: kmmainwin.cpp:1054
 msgid "&Set Status"
 msgstr "设置状态[&S]"
 
 #: kmmainwin.cpp:1056
-#, fuzzy
 msgid "Mar&k all"
-msgstr "标记所有"
+msgstr "全部标记(&K)"
 
 #: kmmainwin.cpp:1065
 msgid "Send again..."
@@ -326,7 +322,7 @@ msgstr "把信件存入文件"
 
 #: kmcomposewin.cpp:585 kmmainwin.cpp:1131
 msgid "Print message"
-msgstr "打印信件"
+msgstr "打印邮件"
 
 #: kmmainwin.cpp:1138
 msgid "Get new mail"
@@ -356,11 +352,9 @@ msgstr "打开地址簿..."
 msgid "Initializing..."
 msgstr "初始化..."
 
-#: kmfolderdia.cpp:39 kmmsgpartdlg.cpp:62 kmsettings.cpp:175
-#: kmsettings.cpp:883
-#, fuzzy
+#: kmfolderdia.cpp:39 kmmsgpartdlg.cpp:62 kmsettings.cpp:175 kmsettings.cpp:883
 msgid "Name:"
-msgstr "登录名:"
+msgstr "名称:"
 
 #: kmcomposewin.cpp:1524 kmfolderdia.cpp:45 kmfolderdia.cpp:132
 msgid "unnamed"
@@ -467,9 +461,8 @@ msgid "Message List Font:"
 msgstr "信件列表字体:"
 
 #: kmsettings.cpp:357
-#, fuzzy
 msgid "Long folder list"
-msgstr "长信头[&L]"
+msgstr "长文件夹列表"
 
 #: kmsettings.cpp:386
 msgid "Phrases"
@@ -509,7 +502,7 @@ msgstr "在 %D, %F 写了:"
 
 #: kmmessage.cpp:1385 kmsettings.cpp:428
 msgid "Forwarded Message"
-msgstr "转发的信件"
+msgstr "转发的邮件"
 
 #: kmsettings.cpp:439
 msgid "Automatically append signature"
@@ -573,7 +566,7 @@ msgstr "杂项"
 
 #: kmsettings.cpp:568
 msgid "PGP"
-msgstr ""
+msgstr "PGP"
 
 #: kmsettings.cpp:591
 msgid "Message Body Font"
@@ -600,9 +593,8 @@ msgid "Choose Signature File"
 msgstr "选择签名文件"
 
 #: kmsettings.cpp:875
-#, fuzzy
 msgid "Type:"
-msgstr "类型"
+msgstr "类型:"
 
 #: kmsettings.cpp:888
 msgid "Local Account"
@@ -633,9 +625,8 @@ msgid "Delete mail from server"
 msgstr "从服务器上删除邮件"
 
 #: kmsettings.cpp:924
-#, fuzzy
 msgid "Retrieve all mail from server"
-msgstr "从服务器上删除邮件"
+msgstr "从服务器取回全部邮件"
 
 #: kmsettings.cpp:936
 msgid "Enable interval Mail checking"
@@ -674,9 +665,8 @@ msgid "Subject"
 msgstr "标题"
 
 #: kmheaders.cpp:45
-#, fuzzy
 msgid "Date"
-msgstr "日期: "
+msgstr "日期"
 
 #: kmheaders.cpp:222
 msgid "Receiver"
@@ -771,23 +761,23 @@ msgstr "分别抄送[&B]:"
 
 #: kmcomposewin.cpp:355
 msgid "&Subject:"
-msgstr "标题[&S]:"
+msgstr "主题(&S):"
 
 #: kmcomposewin.cpp:358
 msgid "&Newsgroups:"
-msgstr "新闻组[&N]:"
+msgstr "新闻组(&N):"
 
 #: kmcomposewin.cpp:360
 msgid "&Followup-To:"
-msgstr "继续讨论[&F]:"
+msgstr "回帖目标(&F):"
 
 #: kmcomposewin.cpp:432
 msgid "&Send"
-msgstr "发出[&S]"
+msgstr "发送(&S)"
 
 #: kmcomposewin.cpp:435
 msgid "S&end later"
-msgstr "稍后发出[&E]"
+msgstr "稍后发送(&E)"
 
 #: kmcomposewin.cpp:437
 msgid "S&end now"
@@ -803,7 +793,7 @@ msgstr "新打开编辑器[&N]..."
 
 #: kmcomposewin.cpp:471 kmcomposewin.cpp:705 kmcomposewin.cpp:1923
 msgid "Mark all"
-msgstr "标记所有"
+msgstr "全部标记"
 
 #: kmcomposewin.cpp:474 kmcomposewin.cpp:707
 msgid "Find..."
@@ -814,9 +804,8 @@ msgid "Replace..."
 msgstr "替换..."
 
 #: kmcomposewin.cpp:479
-#, fuzzy
 msgid "&Spellcheck..."
-msgstr "KMail: 拼写检查"
+msgstr "拼写检查(&S)..."
 
 #: kmcomposewin.cpp:486
 msgid "&Urgent"
@@ -831,9 +820,8 @@ msgid "&Confirm read"
 msgstr "确认阅读[&C]"
 
 #: kmcomposewin.cpp:493
-#, fuzzy
 msgid "&Spellchecker..."
-msgstr "KMail: 拼写检查"
+msgstr "拼写检查器(&S)..."
 
 #: kmcomposewin.cpp:496
 msgid "&Charsets..."
@@ -865,15 +853,15 @@ msgstr "分别抄送[&B]"
 
 #: kmcomposewin.cpp:516
 msgid "&Subject"
-msgstr "标题[&S]"
+msgstr "主题(&S)"
 
 #: kmcomposewin.cpp:518
 msgid "&Newsgroups"
-msgstr "新闻组[&N]"
+msgstr "新闻组(&N)"
 
 #: kmcomposewin.cpp:519
 msgid "&Followup-To"
-msgstr "继续讨论[&F]"
+msgstr "回帖目标(&F)"
 
 #: kmcomposewin.cpp:525
 msgid "Append S&ignature"
@@ -888,9 +876,8 @@ msgid "&Attach..."
 msgstr "附件[&A]..."
 
 #: kmcomposewin.cpp:532
-#, fuzzy
 msgid "Attach &Public Key"
-msgstr "附文件"
+msgstr "附加公钥(&P)"
 
 #: kmcomposewin.cpp:534
 msgid "Attach My &Public Key"
@@ -909,9 +896,8 @@ msgid "&Attach"
 msgstr "附件[&A]"
 
 #: kmcomposewin.cpp:568
-#, fuzzy
 msgid "Send message"
-msgstr "放出信件:"
+msgstr "发送邮件"
 
 #: kmcomposewin.cpp:594
 msgid "Cut selection"
@@ -927,15 +913,15 @@ msgstr "粘贴剪贴板内容"
 
 #: kmcomposewin.cpp:605
 msgid "Attach file"
-msgstr "附文件"
+msgstr "附加文件"
 
 #: kmcomposewin.cpp:616
 msgid "sign message"
-msgstr "签名信件"
+msgstr "签名邮件"
 
 #: kmcomposewin.cpp:621
 msgid "encrypt message"
-msgstr "加密信件"
+msgstr "加密邮件"
 
 #: kmcomposewin.cpp:638 kmcomposewin.cpp:654
 msgid "Column"
@@ -954,12 +940,12 @@ msgid ""
 "Close and discard\n"
 "edited message?"
 msgstr ""
-"关闭并丢弃编辑的\n"
-"信件 ?"
+"关闭并丢弃\n"
+"正在编辑的邮件？"
 
 #: kmcomposewin.cpp:1194
 msgid "Attach File"
-msgstr "附上文件"
+msgstr "附加文件"
 
 #: kmcomposewin.cpp:1216
 msgid "Include File"
@@ -983,7 +969,7 @@ msgstr "保存..."
 
 #: kmcomposewin.cpp:1299 kmreaderwin.cpp:909
 msgid "Properties..."
-msgstr "特性..."
+msgstr "属性..."
 
 #: kmcomposewin.cpp:1303
 msgid "Attach..."
@@ -991,7 +977,7 @@ msgstr "附件..."
 
 #: kmcomposewin.cpp:1345 kmreaderwin.cpp:978 kmreaderwin.cpp:995
 msgid "View Attachment: "
-msgstr "观看附件:"
+msgstr "查看附件: "
 
 #: kmcomposewin.cpp:1539
 msgid "To:"
@@ -999,26 +985,23 @@ msgstr "至:"
 
 #: kmcomposewin.cpp:1543
 msgid "Subject:"
-msgstr "标题:"
+msgstr "主题:"
 
 #: kmcomposewin.cpp:1546
-#, fuzzy
 msgid "Date:"
-msgstr "日期: "
+msgstr "日期:"
 
 #: kmcomposewin.cpp:1670
-#, fuzzy
 msgid "Spellcheck complete."
-msgstr "KMail: 拼写检查"
+msgstr "拼写检查完成。"
 
 #: kmcomposewin.cpp:2113
 msgid "Spellcheck - KMail"
 msgstr "拼写检查 - KMail"
 
 #: kmcomposewin.cpp:2139
-msgid ""
-"Error starting KSpell. Please make sure you have ISpell properly configured."
-msgstr "启动KSpell是发生错误. 请确定你正确地配置了 ISpell."
+msgid "Error starting KSpell. Please make sure you have ISpell properly configured."
+msgstr "启动 KSpell 出错。请确认 ISpell 已正确配置。"
 
 #: kmfolder.cpp:147
 #, c-format
@@ -1035,9 +1018,9 @@ msgid "Writing index file"
 msgstr "正在写入索引文件"
 
 #: kmfolder.cpp:934
-#, fuzzy, c-format
+#, c-format
 msgid "Compacting folder: %d messages done"
-msgstr "建立索引文件: 完成 %d 个信件"
+msgstr "正在压缩文件夹: 已完成 %d 封"
 
 #: kmmsgpartdlg.cpp:41
 msgid "Message Part Properties"
@@ -1057,14 +1040,13 @@ msgstr "无 (8位)"
 
 #: kmmsgpartdlg.cpp:90
 msgid "base 64"
-msgstr "Base 64"
+msgstr "base 64"
 
 #: kmmsgpartdlg.cpp:91
 msgid "quoted printable"
 msgstr "quoted printable"
 
-#: kmreaderwin.cpp:402 kmreaderwin.cpp:415 kmreaderwin.cpp:434
-#: kmreaderwin.cpp:455
+#: kmreaderwin.cpp:402 kmreaderwin.cpp:415 kmreaderwin.cpp:434 kmreaderwin.cpp:455
 msgid "Cc: "
 msgstr "抄送: "
 
@@ -1090,7 +1072,7 @@ msgstr "分别抄送: "
 
 #: kmreaderwin.cpp:461
 msgid "Reply to: "
-msgstr "回复到: "
+msgstr "回复: "
 
 #: kmreaderwin.cpp:468
 msgid "Groups: "
@@ -1122,7 +1104,7 @@ msgstr "附件: "
 
 #: kmreaderwin.cpp:1084
 msgid "Could not save file"
-msgstr "不能保存文件"
+msgstr "无法保存文件"
 
 #: kmacctmgr.cpp:116 kmacctmgr.cpp:223 kmacctmgr.cpp:285
 #, c-format
@@ -1131,6 +1113,9 @@ msgid ""
 "Mail checking aborted\n"
 "Check your account settings!"
 msgstr ""
+"账户 %s 未定义邮箱！\n"
+"邮件检查已中止\n"
+"请检查您的账户设置！"
 
 #: kmacctmgr.cpp:207 kmacctmgr.cpp:264
 msgid ""
@@ -1158,6 +1143,8 @@ msgid ""
 "$HOME is not set!\n"
 "KMail cannot start without it.\n"
 msgstr ""
+"未设置 $HOME！\n"
+"没有它 KMail 无法启动。\n"
 
 #: main.cpp:373
 msgid ""
@@ -1186,11 +1173,8 @@ msgid "Unknown command line option: %s"
 msgstr "未知的命令行选项: %s"
 
 #: kmacctlocal.cpp:77
-#, fuzzy
 msgid "Cannot open file:"
-msgstr ""
-"不能打开文件:\n"
-"%s"
+msgstr "无法打开文件:"
 
 #: kmacctlocal.cpp:113
 #, c-format
@@ -1284,8 +1268,9 @@ msgid ""
 "method in the settings\n"
 "and try again."
 msgstr ""
-"请在设置中指定一个发送\n"
-"方法,然后重试."
+"请在设置中指定\n"
+"发送方式\n"
+"后重试。"
 
 #: kmsender.cpp:130
 msgid ""
@@ -1293,8 +1278,8 @@ msgid ""
 "identity settings:\n"
 "user-name and email-address"
 msgstr ""
-"请在身份设置中设定必需的域:\n"
-"用户名和电子邮件地址"
+"请在身份设置中填写必填项:\n"
+"用户名与电子邮件地址"
 
 #: kmsender.cpp:155
 msgid "You must specify a receiver"
@@ -1314,11 +1299,11 @@ msgstr "Inicializuji odes韑醤í..."
 
 #: kmsender.cpp:275
 msgid "Sending message: "
-msgstr "正在发信: "
+msgstr "正在发送邮件: "
 
 #: kmsender.cpp:303
 msgid "Done sending messages."
-msgstr "发信完成."
+msgstr "发送完毕。"
 
 #: kmsender.cpp:335
 msgid "Sending failed:"
@@ -1328,7 +1313,9 @@ msgstr "发信失败:"
 msgid ""
 "Please specify a mailer program\n"
 "in the settings."
-msgstr "请在设置中指定一个邮件发送程序."
+msgstr ""
+"请在设置中指定\n"
+"邮件发送程序。"
 
 #: kmsender.cpp:574
 #, c-format
@@ -1346,8 +1333,8 @@ msgid ""
 "host %s for sending:\n"
 "%s"
 msgstr ""
-"不能和主机 %s 建立\n"
-"SMTP 连接进行发信:\n"
+"无法建立到主机 %s 的 SMTP\n"
+"连接以发送:\n"
 "%s"
 
 #: kmsender.cpp:696
@@ -1356,7 +1343,7 @@ msgstr "不能关闭 SMTP 连接."
 
 #: kmsender.cpp:748
 msgid "transmitting message"
-msgstr "传送信件"
+msgstr "正在传输邮件"
 
 #: kmsender.cpp:785
 msgid "network error"
@@ -1370,10 +1357,10 @@ msgid ""
 "Response: %s\n"
 "Return code: %d"
 msgstr ""
-"发生 SMTP 错误 .\n"
+"发生 SMTP 错误。\n"
 "命令: %s\n"
-"应答: %s\n"
-"返回代码: %d"
+"响应: %s\n"
+"返回码: %d"
 
 #: kmsender.cpp:802
 #, c-format
@@ -1407,7 +1394,7 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
-"无法执行签名脚本\n"
+"执行签名脚本失败\n"
 "%s\n"
 "%s"
 
@@ -1495,25 +1482,24 @@ msgid ""
 "Couldn't find PGP executable.\n"
 "Please check your PATH is set correctly."
 msgstr ""
-"不能找到 PGP 执行程序.\n"
-"请检查你的 PATH 是否设得正确."
+"找不到 PGP 可执行文件。\n"
+"请检查 PATH 设置是否正确。"
 
 #: kpgp.cpp:193
 msgid ""
 "Could not find PGP executable.\n"
 "Please check your PATH is set correctly."
 msgstr ""
-"不能找到 PGP 执行程序.\n"
-"请检查你的 PATH 是否设得正确."
+"找不到 PGP 可执行文件。\n"
+"请检查 PATH 设置是否正确。"
 
 #: kpgp.cpp:207
 msgid "The pass phrase is missing."
 msgstr "没有找到 pass phrase."
 
 #: kpgp.cpp:286 kpgp.cpp:312 kpgp.cpp:325 kpgp.cpp:344 kpgp.cpp:361
-#, fuzzy
 msgid "PGP Warning"
-msgstr "警告"
+msgstr "PGP 警告"
 
 #: kpgp.cpp:287
 msgid ""
@@ -1521,6 +1507,8 @@ msgid ""
 "recipients of this mail.\n"
 "Message will not be encrypted."
 msgstr ""
+"找不到此邮件收件人的公钥。\n"
+"邮件将不加密。"
 
 #: kpgp.cpp:296
 msgid "Could not find the public keys for\n"
@@ -1535,9 +1523,8 @@ msgid "This person will not be able to\n"
 msgstr "该收件人将无法\n"
 
 #: kpgp.cpp:311
-#, fuzzy
 msgid "decrypt the message."
-msgstr "加密信件"
+msgstr "解密邮件。"
 
 #: kpgp.cpp:326
 msgid ""
@@ -1545,6 +1532,9 @@ msgid ""
 "Do you wan't to try again, continue and\n"
 "leave the message unsigned, or cancel sending the message?"
 msgstr ""
+"您输入的口令无效。\n"
+"要重试、继续发送但不签名，\n"
+"还是取消发送？"
 
 #: kpgp.cpp:331
 msgid "Retry"
@@ -1555,6 +1545,8 @@ msgid ""
 "Do you wan't to encrypt anyway, leave the\n"
 "message as is, or cancel the message?"
 msgstr ""
+"仍要加密、保持原样，\n"
+"还是取消这封邮件？"
 
 #: kpgp.cpp:346
 msgid "Encrypt"
@@ -1565,14 +1557,16 @@ msgid ""
 "Do you wan't to leave the message as is,\n"
 "or cancel the message?"
 msgstr ""
+"保持邮件原样，\n"
+"还是取消这封邮件？"
 
 #: kpgp.cpp:717
 msgid ""
 "Please enter your\n"
 "PGP passphrase"
 msgstr ""
-"请输入你的 PGP\n"
-"passphrase"
+"请输入您的\n"
+"PGP 口令"
 
 #: kpgp.cpp:744
 msgid "PGP Security Check"
@@ -1583,9 +1577,8 @@ msgid "Please select the public key to insert"
 msgstr "请选择要插入的公钥"
 
 #: kpgp.cpp:800
-#, fuzzy
 msgid "Select key"
-msgstr "选择邮件夹"
+msgstr "选择密钥"
 
 #: kpgp.cpp:827
 msgid "PGP User Identity:"
@@ -1624,25 +1617,25 @@ msgid "??? (file ~/.pgp/pubring.pgp not found)"
 msgstr "???（找不到文件 ~/.pgp/pubring.pgp）"
 
 #: kpgpbase.cpp:592
-#, fuzzy
 msgid "The passphrase you entered is invalid."
-msgstr "没有找到 pass phrase."
+msgstr "您输入的口令无效。"
 
 #: kpgpbase.cpp:618
 msgid ""
 "The key(s) you wan't to encrypt your message\n"
 "to are not trusted. No encryption done."
-msgstr ""
+msgstr "用于加密的密钥不受信任。未做加密。"
 
 #: kpgpbase.cpp:621
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The following key(s) are not trusted:\n"
 "%s\n"
 "They will not be able to decrypt the message"
 msgstr ""
-"%s 的公开密钥没有找到.\n"
-"收信人将无法解密信件."
+"以下密钥不受信任:\n"
+"%s\n"
+"它们将无法解密此邮件"
 
 #: kfileio.cpp:26 kmaddrbook.cpp:162
 msgid "File I/O Error"
@@ -1654,7 +1647,7 @@ msgid ""
 "The specified file does not exist:\n"
 "%s"
 msgstr ""
-"指定的文件不存在:\n"
+"指定文件不存在:\n"
 "%s"
 
 #: kfileio.cpp:54
@@ -1663,7 +1656,7 @@ msgid ""
 "This is a directory and not a file:\n"
 "%s"
 msgstr ""
-"这是一个目录 , 不是一个文件:\n"
+"这是目录而不是文件:\n"
 "%s"
 
 #: kfileio.cpp:61
@@ -1672,7 +1665,7 @@ msgid ""
 "You do not have read permissions to the file:\n"
 "%s"
 msgstr ""
-"你没有权限读文件:\n"
+"您没有此文件的读取权限:\n"
 "%s"
 
 #: kfileio.cpp:72 kmaddrbook.cpp:152
@@ -1681,7 +1674,7 @@ msgid ""
 "Could not read file:\n"
 "%s"
 msgstr ""
-"不能读文件:\n"
+"无法读取文件:\n"
 "%s"
 
 #: kfileio.cpp:75 kmaddrbook.cpp:155
@@ -1690,7 +1683,7 @@ msgid ""
 "Could not open file:\n"
 "%s"
 msgstr ""
-"不能打开文件:\n"
+"无法打开文件:\n"
 "%s"
 
 #: kfileio.cpp:78
@@ -1699,7 +1692,7 @@ msgid ""
 "Error while reading file:\n"
 "%s"
 msgstr ""
-"读文件时发生错误:\n"
+"读取文件时出错:\n"
 "%s"
 
 #: kfileio.cpp:95
@@ -1713,8 +1706,8 @@ msgid ""
 "File %s exists.\n"
 "Do you want to replace it ?"
 msgstr ""
-"文件 %s 已经存在.\n"
-"你要替换它吗 ?"
+"文件 %s 已存在。\n"
+"要替换它吗？"
 
 #: kfileio.cpp:144
 #, c-format
@@ -1722,8 +1715,8 @@ msgid ""
 "Failed to make a backup copy of %s.\n"
 "Continue anyway ?"
 msgstr ""
-"不能建立 %s 的复制备份.\n"
-"要继续吗 ?"
+"无法备份 %s。\n"
+"仍要继续吗？"
 
 #: kfileio.cpp:156 kfileio.cpp:175
 #, c-format
@@ -1731,7 +1724,7 @@ msgid ""
 "Could not write to file:\n"
 "%s"
 msgstr ""
-"不能写入文件:\n"
+"无法写入文件:\n"
 "%s"
 
 #: kfileio.cpp:159
@@ -1740,7 +1733,7 @@ msgid ""
 "Could not open file for writing:\n"
 "%s"
 msgstr ""
-"不能打开文件写:\n"
+"无法打开文件进行写入:\n"
 "%s"
 
 #: kfileio.cpp:163 kmaddrbook.cpp:158
@@ -1749,7 +1742,7 @@ msgid ""
 "Error while writing file:\n"
 "%s"
 msgstr ""
-"写入文件时发生错误:\n"
+"写入文件时出错:\n"
 "%s"
 
 #: kfileio.cpp:181
@@ -1758,7 +1751,6 @@ msgid "Could only write %d bytes of %d."
 msgstr "只能写 %d 字节(共 %d 字节)."
 
 #: kmaddrbook.cpp:25
-#, fuzzy
 msgid "KMail Error"
 msgstr "KMail 错误"
 
@@ -1775,18 +1767,16 @@ msgid "Addressbook Manager"
 msgstr "地址簿管理器"
 
 #: kmaddrbookdlg.cpp:179
-#, fuzzy
 msgid "Storing addressbook failed"
-msgstr "添加到地址簿中"
+msgstr "保存通讯录失败"
 
 #: kmiostatusdlg.cpp:32
 msgid "&Abort"
 msgstr "退出[&A]"
 
 #: kmnewiostatuswdg.cpp:26
-#, fuzzy
 msgid "Abort"
-msgstr "退出[&A]"
+msgstr "中止"
 
 #: kmnewiostatuswdg.cpp:43
 msgid "Sending messages to "

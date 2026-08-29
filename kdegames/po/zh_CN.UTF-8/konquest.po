@@ -1,0 +1,304 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: konquest\n"
+"PO-Revision-Date: 2026-08-30 00:00+0800\n"
+"Last-Translator: KDE1 Revival Project\n"
+"Language-Team: zh_CN <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"charset: UTF-8\n"
+"encoding: 8bit\n"
+
+#: gameboard.cc:55
+msgid "End Turn"
+msgstr "结束回合"
+
+#: gameboard.cc:203
+msgid ": Select source planet..."
+msgstr ": 请选择出发星球..."
+
+#: gameboard.cc:221
+msgid ": Select destination planet..."
+msgstr ": 请选择目标星球..."
+
+#: gameboard.cc:243
+msgid ": How many ships?"
+msgstr ": 派遣多少艘飞船?"
+
+#: gameboard.cc:267
+msgid "Ruler: Select starting planet."
+msgstr "标尺: 请选择起始星球。"
+
+#: gameboard.cc:287
+#, c-format
+msgid ""
+"The distance from Planet %s to Planet %s is %s light years.\n"
+"A ship leaving this turn will arrive on turn %s"
+msgstr ""
+"星球 %s 到星球 %s 的距离为 %s 光年。\n"
+"本回合出发的飞船将于第 %s 回合抵达"
+
+#: gameboard.cc:291
+msgid "Distance"
+msgstr "距离"
+
+#: gameboard.cc:296
+msgid "Ruler: Select ending planet."
+msgstr "标尺: 请选择终点星球。"
+
+#: gameboard.cc:311
+#, c-format
+msgid "Turn #: %2d of %2d"
+msgstr "回合#: 第 %2d 回合,共 %2d 回合"
+
+#: gameboard.cc:426
+#, c-format
+msgid "The once mighty empire of %s has fallen in ruins."
+msgstr "曾经强盛的 %s 帝国已经覆灭。"
+
+#: gameboard.cc:428
+msgid "An Empire has fallen..."
+msgstr "一个帝国覆灭了..."
+
+#: gameboard.cc:438
+#, c-format
+msgid "The fallen empire of %s has staggered back to life."
+msgstr "覆灭的 %s 帝国又摇摇欲坠地复活了。"
+
+#: gameboard.cc:440
+msgid "Up from the ashes..."
+msgstr "从灰烬中重生..."
+
+#: gameboard.cc:460
+#, c-format
+msgid "Reinforcements have arrived for planet %s"
+msgstr "星球 %s 的增援已到达"
+
+#: gameboard.cc:462
+msgid "Fleet Arrival"
+msgstr "舰队抵达"
+
+#: gameboard.cc:505
+#, c-format
+msgid "Planet %s has held against an attack from %s"
+msgstr "星球 %s 顶住了来自 %s 的进攻"
+
+#: gameboard.cc:507
+msgid "Planet Holds"
+msgstr "星球守住了"
+
+#: gameboard.cc:515
+#, c-format
+msgid "Planet %s has fallen to %s"
+msgstr "星球 %s 已落入 %s 之手"
+
+#: gameboard.cc:517
+msgid "Planet Conquered"
+msgstr "星球被征服"
+
+#: gameboard.cc:579 mainwin.cc:82
+msgid "End Game"
+msgstr "结束游戏"
+
+#: gameboard.cc:580
+msgid "Do you wish to retire this game?"
+msgstr "您要退出这局游戏吗?"
+
+#: gameboard.cc:581 gameenddlg.cc:20
+msgid "Yes"
+msgstr "是"
+
+#: gameboard.cc:581
+msgid "Cancel"
+msgstr "取消"
+
+#: gameboard.cc:586
+msgid "Final Standings"
+msgstr "最终排名"
+
+#: gameboard.cc:758
+msgid "Error"
+msgstr "错误"
+
+#: gameboard.cc:758
+msgid "Not enough ships to send."
+msgstr "没有足够的飞船可派遣。"
+
+#: gameenddlg.cc:14
+msgid ""
+"This is the last turn.\n"
+"Do you wish to add more turns?"
+msgstr ""
+"这是最后一个回合。\n"
+"要增加更多回合吗?"
+
+#: gameenddlg.cc:24
+msgid "No"
+msgstr "否"
+
+#: gameenddlg.cc:64
+#, c-format
+msgid "Add %d turns"
+msgstr "增加 %d 个回合"
+
+#: mainwin.cc:23
+msgid "GNU-Lactic Conquest"
+msgstr "银河征服"
+
+#: mainwin.cc:42
+msgid "&New Game"
+msgstr "新游戏(&N)"
+
+#: mainwin.cc:44
+msgid "&Quit"
+msgstr "退出(&Q)"
+
+#: mainwin.cc:47
+#, c-format
+msgid ""
+"Version %s\n"
+"Copyright (c) 1998 by\n"
+"The Gnu-Lactic Conquest Project\n"
+"\n"
+"KDE version by Russ Steffen <rsteffen@ia.net>\n"
+"See http://www.ia.net/~rsteffen/konquest.html for more info"
+msgstr ""
+"版本 %s\n"
+"版权所有 (c) 1998\n"
+"The Gnu-Lactic Conquest Project\n"
+"\n"
+"KDE 版本由 Russ Steffen <rsteffen@ia.net> 移植\n"
+"详情见 http://www.ia.net/~rsteffen/konquest.html"
+
+#: mainwin.cc:55
+msgid "&Game"
+msgstr "游戏(&G)"
+
+#: mainwin.cc:57
+msgid "&Help"
+msgstr "帮助(&H)"
+
+#: mainwin.cc:78
+msgid "New Game"
+msgstr "新游戏"
+
+#: mainwin.cc:88
+msgid "Measure Distance"
+msgstr "测量距离"
+
+#: mainwin.cc:92
+msgid "Show Standings"
+msgstr "显示排名"
+
+#: newgamedlg.cc:31
+msgid "Preview Map"
+msgstr "预览地图"
+
+#: newgamedlg.cc:35
+msgid "&Reject Map"
+msgstr "拒绝地图(&R)"
+
+#: newgamedlg.cc:41
+msgid "&Player List"
+msgstr "玩家列表(&P)"
+
+#: newgamedlg.cc:48
+msgid "&Add"
+msgstr "添加(&A)"
+
+#: newgamedlg.cc:51
+msgid "&Delete"
+msgstr "删除(&D)"
+
+#: newgamedlg.cc:54
+msgid "&Clear"
+msgstr "清除(&C)"
+
+#: newgamedlg.cc:70
+msgid "&Start Game"
+msgstr "开始游戏(&S)"
+
+#: newgamedlg.cc:74
+msgid "&Cancel"
+msgstr "取消(&C)"
+
+#: newgamedlg.cc:162
+#, c-format
+msgid "Number of Neutral Planets: %2d"
+msgstr "中立星球数: %2d"
+
+#: newgamedlg.cc:174
+#, c-format
+msgid "Number of turns: %2d"
+msgstr "回合数: %2d"
+
+#: planet_info.cc:81 planet_info.cc:116 planet_info.cc:131
+msgid "Planet Name : "
+msgstr "星球名称: "
+
+#: planet_info.cc:84 planet_info.cc:134
+msgid "Owner : "
+msgstr "所有者: "
+
+#: planet_info.cc:87
+msgid "Ships : "
+msgstr "飞船: "
+
+#: planet_info.cc:90
+msgid "Production : "
+msgstr "产量: "
+
+#: planet_info.cc:93
+msgid "Kill Percent : "
+msgstr "杀伤率: "
+
+#: planet_info.cc:137
+#, c-format
+msgid "Ships : %d"
+msgstr "飞船: %d"
+
+#: planet_info.cc:140
+#, c-format
+msgid "Production : %d"
+msgstr "产量: %d"
+
+#: planet_info.cc:143
+#, c-format
+msgid "Kill Percent : %.3f"
+msgstr "杀伤率: %.3f"
+
+#: scoredlg.cc:18
+msgid "Player"
+msgstr "玩家"
+
+#: scoredlg.cc:19
+msgid "Ships Built"
+msgstr "建造的飞船"
+
+#: scoredlg.cc:20
+msgid "Planets Conquered"
+msgstr "征服的星球"
+
+#: scoredlg.cc:21
+msgid "Fleets Launched"
+msgstr "出击的舰队"
+
+#: scoredlg.cc:22
+msgid "Fleets Destroyed"
+msgstr "被歼的舰队"
+
+#: scoredlg.cc:23
+msgid "Ships Destroyed"
+msgstr "被歼的飞船"
+
+#: scoredlg.cc:25
+msgid "OK"
+msgstr "确定"

@@ -127,3 +127,5 @@ void ServerChannel::channels_sle_update(const char *)
   else
     B_AddChannels->setEnabled(FALSE);
 }
+
+#include "serverchannel.moc" /* TQt3 迁移:AUTOMOC 时代未写显式 moc include,补齐(编译单元内提供 vtable) */

@@ -1,41 +1,38 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1999-04-15 03:01+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: kfinger.C:30
-#, fuzzy
 msgid "F&inger Now"
-msgstr "现在 finger"
+msgstr "立即查询(&I)"
 
 #: kfinger.C:31
-#, fuzzy
 msgid "&Talk..."
-msgstr "交谈..."
+msgstr "交谈(&T)..."
 
 #: kfinger.C:35
 msgid "Setup"
 msgstr "设置"
 
 #: kfinger.C:36
-#, fuzzy
 msgid "&Save Options"
-msgstr "选项[&O]"
+msgstr "保存选项(&S)"
 
 #: kfinger.C:38
-#, fuzzy
 msgid ""
 "kfinger 0.8.1\n"
 "\n"
 "(c) Andrea Rizzi (rizzi@kde.org)"
 msgstr ""
-"Kfinger 0.3.2\n"
-"(c) Andrea Rizzi\n"
-"bilibao@ouverture.it"
+"kfinger 0.8.1\n"
+"\n"
+"(c) Andrea Rizzi (rizzi@kde.org)"
 
 #: kfinger.C:47
 msgid "KDE finger utility"
@@ -78,18 +75,17 @@ msgstr "连接被 %s 拒绝"
 #: kfinger.C:296
 #, c-format
 msgid "Finger  %s@%s   --   %s"
-msgstr ""
+msgstr "Finger %s@%s -- %s"
 
 #: kfinger.C:317
-#, fuzzy
 msgid ""
 "Kfinger 0.8.1\n"
 "(c) by Andrea Rizzi\n"
 "rizzi@kde.org"
 msgstr ""
-"Kfinger 0.3.2\n"
+"Kfinger 0.8.1\n"
 "(c) Andrea Rizzi\n"
-"bilibao@ouverture.it"
+"rizzi@kde.org"
 
 #: kfinger.C:363
 msgid "Kfinger Setup"
@@ -107,7 +103,6 @@ msgstr "服务器名"
 msgid "Server list"
 msgstr "服务器列表"
 
-#
 #: kfinger.C:441
 msgid "User Name"
 msgstr "用户名"
@@ -121,17 +116,17 @@ msgid "Timed finger"
 msgstr "定时 finger"
 
 #: kfinger.C:477 kfinger.C:664
-#, fuzzy, c-format
+#, c-format
 msgid "Finger wait: %d\""
-msgstr "Finger 等待: %d"
+msgstr "Finger 等待: %d\""
 
 #: kfinger.C:482
 msgid "Talk Command "
-msgstr ""
+msgstr "Talk 命令 "
 
 #: kfinger.C:492
 msgid "Misc"
-msgstr ""
+msgstr "杂项"
 
 #: kfinger.C:497 kfinger.C:509
 msgid "Finger Output"

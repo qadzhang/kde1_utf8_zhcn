@@ -91,7 +91,7 @@ extern int MAX(int, int);
 
 App::App() : KTopLevelWidget() {
   locale = kapp->getLocale();
-  setCaption(locale->translate("Shisen-Sho"));
+  setCaption(i18n("Shisen-Sho"));
   readHighscore();
 
   cheat = FALSE;
@@ -99,20 +99,20 @@ App::App() : KTopLevelWidget() {
   // create menu
   mb = new KMenuBar(this);
   QPopupMenu *fm = new QPopupMenu;
-  fm->insertItem(locale->translate("&Quit"), ID_FQUIT);
+  fm->insertItem(i18n("&Quit"), ID_FQUIT);
 
   QPopupMenu *gm = new QPopupMenu;
-  gm->insertItem(locale->translate("&Undo"), ID_GUNDO);
-  gm->insertItem(locale->translate("&Redo"), ID_GREDO);
+  gm->insertItem(i18n("&Undo"), ID_GUNDO);
+  gm->insertItem(i18n("&Redo"), ID_GREDO);
   gm->insertSeparator();
-  gm->insertItem(locale->translate("Get &hint"), ID_GHINT);
+  gm->insertItem(i18n("Get &hint"), ID_GHINT);
   gm->insertSeparator();
-  gm->insertItem(locale->translate("&New game"), ID_GNEW);
-  gm->insertItem(locale->translate("Res&tart game"), ID_GRESTART);
+  gm->insertItem(i18n("&New game"), ID_GNEW);
+  gm->insertItem(i18n("Res&tart game"), ID_GRESTART);
   gm->insertSeparator();
-  gm->insertItem(locale->translate("Is game solvable?"), ID_GISSOLVE);
+  gm->insertItem(i18n("Is game solvable?"), ID_GISSOLVE);
   gm->insertSeparator();
-  gm->insertItem(locale->translate("&Hall of Fame"), ID_GHOF);
+  gm->insertItem(i18n("&Hall of Fame"), ID_GHOF);
 #ifdef DEBUGGING
   gm->insertSeparator();
   gm->insertItem("&Finish", ID_GFINISH);
@@ -122,23 +122,23 @@ App::App() : KTopLevelWidget() {
   om->setCheckable(TRUE);
   QPopupMenu *om_s = new QPopupMenu;
   om_s->setCheckable(TRUE);
-  om_s->insertItem(locale->translate("14x6"), ID_OSIZE1);
-  om_s->insertItem(locale->translate("18x8"), ID_OSIZE2);
-  om_s->insertItem(locale->translate("24x12"), ID_OSIZE3);
-  om_s->insertItem(locale->translate("26x14"), ID_OSIZE4);
-  om_s->insertItem(locale->translate("30x16"), ID_OSIZE5);
-  //om_s->insertItem(locale->translate("Custom size..."), ID_OSIZECUSTOM);
+  om_s->insertItem(i18n("14x6"), ID_OSIZE1);
+  om_s->insertItem(i18n("18x8"), ID_OSIZE2);
+  om_s->insertItem(i18n("24x12"), ID_OSIZE3);
+  om_s->insertItem(i18n("26x14"), ID_OSIZE4);
+  om_s->insertItem(i18n("30x16"), ID_OSIZE5);
+  //om_s->insertItem(i18n("Custom size..."), ID_OSIZECUSTOM);
   QPopupMenu *om_sp = new QPopupMenu;
   om_sp->setCheckable(TRUE);
-  om_sp->insertItem(locale->translate("Very fast"), ID_OSPEED1);
-  om_sp->insertItem(locale->translate("Fast"), ID_OSPEED2);
-  om_sp->insertItem(locale->translate("Medium"), ID_OSPEED3);
-  om_sp->insertItem(locale->translate("Slow"), ID_OSPEED4);
-  om_sp->insertItem(locale->translate("Very slow"), ID_OSPEED5);
+  om_sp->insertItem(i18n("Very fast"), ID_OSPEED1);
+  om_sp->insertItem(i18n("Fast"), ID_OSPEED2);
+  om_sp->insertItem(i18n("Medium"), ID_OSPEED3);
+  om_sp->insertItem(i18n("Slow"), ID_OSPEED4);
+  om_sp->insertItem(i18n("Very slow"), ID_OSPEED5);
   QPopupMenu *om_l = new QPopupMenu;
-  om_l->insertItem(locale->translate("Easy"), ID_OLVL1);
-  om_l->insertItem(locale->translate("Medium"), ID_OLVL2);
-  om_l->insertItem(locale->translate("Hard"), ID_OLVL3);
+  om_l->insertItem(i18n("Easy"), ID_OLVL1);
+  om_l->insertItem(i18n("Medium"), ID_OLVL2);
+  om_l->insertItem(i18n("Hard"), ID_OLVL3);
 
   QPopupMenu *help = kapp->getHelpMenu(true, QString(i18n("Shisen-Sho"))
                                          + " " + KSHISEN_VERSION
@@ -146,15 +146,15 @@ App::App() : KTopLevelWidget() {
                                          + " (mweilguni@sime.com)");    
 
 
-  mb->insertItem(locale->translate("&File"), fm);
-  mb->insertItem(locale->translate("&Game"), gm);
-  om->insertItem(locale->translate("Si&ze"), om_s);
-  om->insertItem(locale->translate("S&peed"), om_sp);
-  om->insertItem(locale->translate("&Level"), om_l);
-  om->insertItem(locale->translate("Disallow unsolvable games"), ID_OSOLVABLE);
-  mb->insertItem(locale->translate("&Options"), om);
+  mb->insertItem(i18n("&File"), fm);
+  mb->insertItem(i18n("&Game"), gm);
+  om->insertItem(i18n("Si&ze"), om_s);
+  om->insertItem(i18n("S&peed"), om_sp);
+  om->insertItem(i18n("&Level"), om_l);
+  om->insertItem(i18n("Disallow unsolvable games"), ID_OSOLVABLE);
+  mb->insertItem(i18n("&Options"), om);
   mb->insertSeparator();
-  mb->insertItem(locale->translate("&Help"), help);
+  mb->insertItem(i18n("&Help"), help);
 
   mb->setAccel(CTRL+Key_Q, ID_FQUIT);
   mb->setAccel(CTRL+Key_Z, ID_GUNDO);
@@ -172,8 +172,8 @@ App::App() : KTopLevelWidget() {
   b->show();
 
   sb = new KStatusBar(this);
-  sb->insertItem(locale->translate("Your time: XX:XX:XX"), 1);
-  sb->insertItem(locale->translate("Cheat mode"), 2);
+  sb->insertItem(i18n("Your time: XX:XX:XX"), 1);
+  sb->insertItem(i18n("Cheat mode"), 2);
   sb->show();
   setStatusBar(sb);
   sb->changeItem("", 2);
@@ -183,13 +183,13 @@ App::App() : KTopLevelWidget() {
 	  this, SLOT(menuCallback(int)));
   KIconLoader *il = kapp->getIconLoader();
   tb->insertButton(il->loadIcon("exit.xpm"), 
-		   ID_FQUIT, TRUE, locale->translate("Quit"));
+		   ID_FQUIT, TRUE, i18n("Quit"));
   tb->insertButton(il->loadIcon("back.xpm"), 
-		   ID_GUNDO, TRUE, locale->translate("Undo"));
+		   ID_GUNDO, TRUE, i18n("Undo"));
   tb->insertButton(il->loadIcon("forward.xpm"), 
-		   ID_GREDO, TRUE, locale->translate("Redo"));
+		   ID_GREDO, TRUE, i18n("Redo"));
   tb->insertButton(il->loadIcon("help.xpm"), 
-		   ID_HHELP, TRUE, locale->translate("Help"));
+		   ID_HHELP, TRUE, i18n("Help"));
   tb->show();
   addToolBar(tb);
   updateRects();
@@ -260,17 +260,17 @@ void App::menuCallback(int id) {
 
   case ID_GISSOLVE:
     if(b->solvable())
-      KMsgBox::message(this, locale->translate("Information"),
-		       locale->translate("This game is solveable"));
+      KMsgBox::message(this, i18n("Information"),
+		       i18n("This game is solveable"));
     else
-      KMsgBox::message(this, locale->translate("Information"),
-		       locale->translate("This game is NOT solveable"));
+      KMsgBox::message(this, i18n("Information"),
+		       i18n("This game is NOT solveable"));
     break;
 
   case ID_GHINT:
     b->getHint();
     cheat = TRUE;
-    sb->changeItem(locale->translate("Cheat mode"), 2);
+    sb->changeItem(i18n("Cheat mode"), 2);
     break;
 
   case ID_GHOF:
@@ -295,7 +295,7 @@ void App::menuCallback(int id) {
     if(b->canUndo()) {
       b->undo();
       cheat = TRUE;
-      sb->changeItem(locale->translate("Cheat mode"), 2);
+      sb->changeItem(i18n("Cheat mode"), 2);
     }
     break;
 
@@ -386,8 +386,8 @@ void App::sizeChanged() {
 
 void App::slotEndOfGame() {
   if(b->tilesLeft() > 0)
-    KMsgBox::message(this, locale->translate("End of game"),
-		     locale->translate("No more moves possible!"));
+    KMsgBox::message(this, i18n("End of game"),
+		     i18n("No more moves possible!"));
   else {
     // create highscore entry
     HighScore hs;
@@ -413,12 +413,12 @@ void App::slotEndOfGame() {
     } else {
       QString s;
       s.sprintf(
-		locale->translate("Congratulations! You made it in %02d:%02d:%02d"),
+		i18n("Congratulations! You made it in %02d:%02d:%02d"),
 		b->getTimeForGame()/3600,
 		(b->getTimeForGame() / 60)  % 60,
 		b->getTimeForGame() % 60);
       
-      KMsgBox::message(this, locale->translate("End of game"), s.data());
+      KMsgBox::message(this, i18n("End of game"), s.data());
     }
   }
 
@@ -430,7 +430,7 @@ void App::slotEndOfGame() {
 void App::updateScore() {
   QString s;
   s.sprintf(
-	    locale->translate("Your time: %02d:%02d:%02d"),
+	    i18n("Your time: %02d:%02d:%02d"),
 	    b->getTimeForGame()/3600,
 	    (b->getTimeForGame() / 60)  % 60,
 	    b->getTimeForGame() % 60);
@@ -441,10 +441,10 @@ void App::updateScore() {
 QString App::getPlayerName() {
   QDialog *dlg = new QDialog(this, "Hall Of Fame", TRUE);
 
-  QLabel  *l1  = new QLabel(locale->translate("You've made in into the \"Hall Of Fame\".Type in\nyour name so mankind will always remember\nyour cool rating."), dlg);
+  QLabel  *l1  = new QLabel(i18n("You've made in into the \"Hall Of Fame\".Type in\nyour name so mankind will always remember\nyour cool rating."), dlg);
   l1->setFixedSize(l1->sizeHint());
 
-  QLabel *l2 = new QLabel(locale->translate("Your name:"), dlg);
+  QLabel *l2 = new QLabel(i18n("Your name:"), dlg);
   l2->setFixedSize(l2->sizeHint());
 
   QLineEdit *e = new QLineEdit(dlg);
@@ -605,12 +605,12 @@ void App::writeHighscore() {
 
 void App::showHighscore(int focusitem)  {
   // this may look a little bit confusing...
-  QDialog *dlg = new QDialog(0, locale->translate("Hall Of Fame"), TRUE);
-  dlg->setCaption(locale->translate("Shisen-Sho: Hall Of Fame"));
+  QDialog *dlg = new QDialog(0, i18n("Hall Of Fame"), TRUE);
+  dlg->setCaption(i18n("Shisen-Sho: Hall Of Fame"));
 
   QVBoxLayout *tl = new QVBoxLayout(dlg, 10);
   
-  QLabel *l = new QLabel(locale->translate("Hall Of Fame"), dlg);
+  QLabel *l = new QLabel(i18n("Hall Of Fame"), dlg);
   QFont f = font();
   f.setPointSize(24);
   f.setBold(TRUE);
@@ -631,23 +631,23 @@ void App::showHighscore(int focusitem)  {
   // add titles
   f = font();
   f.setBold(TRUE);
-  l = new QLabel(locale->translate("Rank"), dlg);
+  l = new QLabel(i18n("Rank"), dlg);
   l->setFont(f);
   l->setMinimumSize(l->sizeHint());
   table->addWidget(l, 0, 0);
-  l = new QLabel(locale->translate("Name"), dlg);
+  l = new QLabel(i18n("Name"), dlg);
   l->setFont(f);
   l->setMinimumSize(l->sizeHint());
   table->addWidget(l, 0, 1);
-  l = new QLabel(locale->translate("Time"), dlg);
+  l = new QLabel(i18n("Time"), dlg);
   l->setFont(f);
   l->setMinimumSize(l->sizeHint());
   table->addWidget(l, 0, 2);
-  l = new QLabel(locale->translate("Size"), dlg);
+  l = new QLabel(i18n("Size"), dlg);
   l->setFont(f);
   l->setMinimumSize(l->sizeHint());
   table->addWidget(l, 0, 3);
-  l = new QLabel(locale->translate("Score"), dlg);
+  l = new QLabel(i18n("Score"), dlg);
   l->setFont(f);
   l->setMinimumSize(l->sizeHint());
   table->addWidget(l, 0, 4);
@@ -711,7 +711,7 @@ void App::showHighscore(int focusitem)  {
       table->addWidget(e[i][j], i+2, j, AlignCenter);	
     }
     
-  QPushButton *b = new QPushButton(locale->translate("Close"), dlg);
+  QPushButton *b = new QPushButton(i18n("Close"), dlg);
   if(style().inherits("TQMotifStyle"))
     b->setFixedSize(b->sizeHint().width() + 10,
 		    b->sizeHint().height() + 10);

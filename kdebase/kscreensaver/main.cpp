@@ -19,6 +19,12 @@
 #include <sys/wait.h>
 #include <kprocess.h>
 #include <qapp.h>
+/* 预解析含 Bool/Status 枚举的 TQt3 头（What/Why）：必须在下方 X11 头的
+ * #define Bool int / #define Status int 生效前完成解析，否则枚举被宏击穿
+ * （ntqvariant.h 的 enum Type 含 Bool、ntqmovie.h 的 enum Status）。预解析
+ * 后 X11 宏即可自由存活，xlock 生态大量依赖的 extern Bool 声明不受影响。 */
+#include <ntqvariant.h>
+#include <ntqmovie.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/keysym.h>

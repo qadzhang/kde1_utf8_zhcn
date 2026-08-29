@@ -15,6 +15,11 @@
 
 #include <qapp.h>
 #include <qwindefs.h>
+/* 预解析含 Bool/Status 枚举的 TQt3 头：必须在下方 X11 头的
+ * #define Bool int / #define Status int 生效前完成解析，否则枚举被宏击穿
+ * （ntqvariant.h 的 enum Type 含 Bool、ntqmovie.h 的 enum Status）。 */
+#include <ntqvariant.h>
+#include <ntqmovie.h>
 #include <X11/Xlib.h>
 #include <stdlib.h>
 

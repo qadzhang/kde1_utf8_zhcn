@@ -98,7 +98,7 @@
 
 /* Compute ceil(a/b) */
 
-inline int
+static inline int  /* TQt3 migration: C99 inline no longer exports symbol */
 cdiv (int a, int b)
 {
   return (a + b + 1) / b;

@@ -22,7 +22,7 @@ public:
 
   virtual void show(){
     QComboBox::show();
-    QLineEdit *ce = CHILD(this, QLineEdit, "combo edit");
+    QLineEdit *ce = (QLineEdit*)child("combo edit", "QLineEdit");  /* TQt3 migration: CHILD macro gone, use child() */
     if(ce)
       ce->selectAll();
   }

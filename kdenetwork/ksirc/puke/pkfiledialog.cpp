@@ -4,14 +4,14 @@
 
 PObject *createWidget(CreateArgs &ca)
 {
-  PKFileDialog *pw = new("PKFileDialog") PKFileDialog(ca.parent);
+  PKFileDialog *pw = new  PKFileDialog(ca.parent);
   KFileDialog *kfbd;
   if(ca.fetchedObj != 0 && ca.fetchedObj->inherits("KFileDialog") == TRUE){
     kfbd = (KFileDialog *) ca.fetchedObj;
     pw->setDeleteAble(FALSE);
   }
   else // Never takes a parent in Puke
-    kfbd = new("KFileDialog") KFileDialog("/", 0x0, 0x0, "PukeKFileDialog", TRUE, TRUE);
+    kfbd = new  KFileDialog("/", 0x0, 0x0, "PukeKFileDialog", TRUE, TRUE);
   pw->setWidget(kfbd);
   pw->setWidgetId(ca.pwI);
   return pw;
@@ -105,4 +105,3 @@ KFileDialog *PKFileDialog::widget()
   return kfbd;
 }
 
-#include <pkfiledialog.moc>

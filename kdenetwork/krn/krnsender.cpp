@@ -19,7 +19,7 @@ void KRNSender::setNNTP(NNTP *_server)
     setMethod(smSMTP);
 }
 
-bool KRNSender::send(KMMessage *aMsg, short sendnow=-1)
+bool KRNSender::send(KMMessage *aMsg, short sendnow)  /* TQt3 迁移:默认参数只在声明处 */
 {
     readConfig();
     tqDebug("KRNSender::send");

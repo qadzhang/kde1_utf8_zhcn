@@ -340,7 +340,7 @@ void Klpq::update()
   //tqDebug("lpq = %i / lpc = %i", lpq->isRunning(), lpc->isRunning() );
   if( !isEnabled() )
     return;
-  lpq_in_buffer.resize(0);
+  lpq_in_buffer.truncate(0);  /* TQt3 迁移:TQString 无 resize,清空用 truncate */
   lpq->clearArguments();
 
   spooler->updateCommand( lpq, cb_printer->text( cb_printer->currentItem() ) );

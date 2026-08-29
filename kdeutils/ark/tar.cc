@@ -3,7 +3,10 @@
 #include <kurl.h>
 // Unsorted in qdir.h is used, but in some of the headers
 // below it's defined, too. So I brought kurl.h to the top.
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:iostream.h 已废弃,改标准头 */
+using std::cout;
+using std::cerr;
+using std::endl;
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>

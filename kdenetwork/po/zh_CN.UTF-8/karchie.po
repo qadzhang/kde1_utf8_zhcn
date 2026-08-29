@@ -1,0 +1,639 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: karchie\n"
+"PO-Revision-Date: 2026-08-30 00:00+0800\n"
+"Last-Translator: KDE1 Revival Project\n"
+"Language-Team: zh_CN <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"charset: UTF-8\n"
+"encoding: 8bit\n"
+
+#: KAMenu.cpp:75
+msgid "O&pen in editor"
+msgstr "在编辑器中打开(&P)"
+
+#: KAMenu.cpp:76 KAView.cpp:154
+msgid "&Open Dir"
+msgstr "打开目录(&O)"
+
+#: KAMenu.cpp:77 KAView.cpp:155
+msgid "&Download..."
+msgstr "下载(&D)..."
+
+#: KAMenu.cpp:80
+msgid "&Load List..."
+msgstr "载入列表(&L)..."
+
+#: KAMenu.cpp:81
+msgid "&Save List..."
+msgstr "保存列表(&S)..."
+
+#: KAMenu.cpp:82
+msgid "Expor&t List..."
+msgstr "导出列表(&T)..."
+
+#: KAMenu.cpp:84
+msgid "&Exit"
+msgstr "退出(&E)"
+
+#: KAMenu.cpp:100
+msgid "&Exact"
+msgstr "精确匹配(&E)"
+
+#: KAMenu.cpp:101
+msgid "&Substring"
+msgstr "子串(&S)"
+
+#: KAMenu.cpp:102
+msgid "Substring &case insensitive"
+msgstr "子串,不区分大小写(&C)"
+
+#: KAMenu.cpp:103
+msgid "&Regular expression"
+msgstr "正则表达式(&R)"
+
+#: KAMenu.cpp:104 KASettings.cpp:422
+msgid "Exact, then substring"
+msgstr "先精确,再子串"
+
+#: KAMenu.cpp:105
+msgid "Exact, then substring case ins."
+msgstr "先精确,再不区分大小写子串"
+
+#: KAMenu.cpp:106 KASettings.cpp:424
+msgid "Exact, then regular expression"
+msgstr "先精确,再正则表达式"
+
+#: KAMenu.cpp:114
+msgid "n&ormal"
+msgstr "普通(&O)"
+
+#: KAMenu.cpp:115
+msgid "&nice"
+msgstr "友好(&N)"
+
+#: KAMenu.cpp:116
+msgid "&very nice"
+msgstr "很友好(&V)"
+
+#: KAMenu.cpp:117
+msgid "&even more nice"
+msgstr "非常友好(&E)"
+
+#: KAMenu.cpp:118
+msgid "n&icest"
+msgstr "最友好(&I)"
+
+#: KAMenu.cpp:125
+msgid "Show &File discription"
+msgstr "显示文件说明(&F)"
+
+#: KAMenu.cpp:128
+msgid "Archie&server"
+msgstr "Archie 服务器(&S)"
+
+#: KAMenu.cpp:129
+msgid "Search&mode"
+msgstr "搜索模式(&M)"
+
+#: KAMenu.cpp:130
+msgid "&Nicelevel"
+msgstr "友好级别(&N)"
+
+#: KAMenu.cpp:132
+msgid "&All..."
+msgstr "全部(&A)..."
+
+#: KAMenu.cpp:139
+msgid "for &Filename"
+msgstr "按文件名(&F)"
+
+#: KAMenu.cpp:140
+msgid "for &Path/Location"
+msgstr "按路径/位置(&P)"
+
+#: KAMenu.cpp:141
+msgid "for &Hostname"
+msgstr "按主机名(&H)"
+
+#: KAMenu.cpp:143
+msgid "&STOP"
+msgstr "停止(&S)"
+
+#: KAMenu.cpp:160
+msgid "by &Hostname"
+msgstr "按主机名(&H)"
+
+#: KAMenu.cpp:161
+msgid "by &Domain"
+msgstr "按域(&D)"
+
+#: KAMenu.cpp:162
+msgid "by D&ate"
+msgstr "按日期(&A)"
+
+#: KAMenu.cpp:163
+msgid "by &Filesize"
+msgstr "按文件大小(&F)"
+
+#: KAMenu.cpp:169
+msgid "KArchie ver. "
+msgstr "KArchie 版本 "
+
+#: KAMenu.cpp:171
+msgid ""
+"\n"
+"\n"
+"by Jï¿½rg Habenicht <j.habenicht@europemail.com>\n"
+"\n"
+"based on the work of:\n"
+"  - archie prospero client by\n"
+"      Clifford Neuman and\n"
+"      Brendan Kehoe (brendan@cygnus.com)\n"
+"  - and xarchie by\n"
+"      George Ferguson (ferguson@cs.rochester.edu)\n"
+"(See README files and copyright.h).\n"
+"My own code is based on the GPL"
+msgstr ""
+"\n"
+"\n"
+"by Jï¿½rg Habenicht <j.habenicht@europemail.com>\n"
+"\n"
+"based on the work of:\n"
+"  - archie prospero client by\n"
+"      Clifford Neuman and\n"
+"      Brendan Kehoe (brendan@cygnus.com)\n"
+"  - and xarchie by\n"
+"      George Ferguson (ferguson@cs.rochester.edu)\n"
+"(See README files and copyright.h).\n"
+"My own code is based on the GPL"
+
+#: KAMenu.cpp:183
+msgid "&File"
+msgstr "文件(&F)"
+
+#: KAMenu.cpp:184
+msgid "&Settings"
+msgstr "设置(&S)"
+
+#: KAMenu.cpp:185
+msgid "&Query"
+msgstr "查询(&Q)"
+
+#: KAMenu.cpp:186
+msgid "S&ort"
+msgstr "排序(&O)"
+
+#: KAMenu.cpp:188
+msgid "&Help"
+msgstr "帮助(&H)"
+
+#: KAQuery.cpp:180
+msgid "Query setup"
+msgstr "查询设置"
+
+#: KAQuery.cpp:289
+msgid "Query aborted"
+msgstr "查询已中止"
+
+#: KAQuery.cpp:296 KArchie.cpp:793
+msgid "Success"
+msgstr "成功"
+
+#: KAQuery.cpp:297
+msgid "Port unknown"
+msgstr "端口未知"
+
+#: KAQuery.cpp:298
+msgid "Can't open local UDP port"
+msgstr "无法打开本地 UDP 端口"
+
+#: KAQuery.cpp:299
+msgid "Can't resolve hostname"
+msgstr "无法解析主机名"
+
+#: KAQuery.cpp:300
+msgid "Didn't send entire message"
+msgstr "消息未完整发送"
+
+#: KAQuery.cpp:301
+msgid "Timed out"
+msgstr "超时"
+
+#: KAQuery.cpp:302
+msgid "Recvfrom failed"
+msgstr "recvfrom 失败"
+
+#: KAQuery.cpp:303
+msgid "Reply: sendto failed"
+msgstr "应答: sendto 失败"
+
+#: KAQuery.cpp:304
+msgid "Link exists with same name"
+msgstr "同名链接已存在"
+
+#: KAQuery.cpp:306
+msgid "Link already exists"
+msgstr "链接已存在"
+
+#: KAQuery.cpp:307
+msgid "Replacing existing link"
+msgstr "替换现有链接"
+
+#: KAQuery.cpp:308
+msgid "Prv entry not in dir->ulinks"
+msgstr "私有条目不在 dir->ulinks 中"
+
+#: KAQuery.cpp:309
+msgid "Temporary not found"
+msgstr "未找到临时文件"
+
+#: KAQuery.cpp:310
+msgid "Namespace not closed w/ object::"
+msgstr "命名空间未随 object:: 关闭"
+
+#: KAQuery.cpp:311
+msgid "No alias for namespace NS#:"
+msgstr "命名空间 NS# 无别名:"
+
+#: KAQuery.cpp:312
+msgid "Specified namespace not found"
+msgstr "找不到指定的命名空间"
+
+#: KAQuery.cpp:313
+msgid "File access method not supported"
+msgstr "不支持该文件访问方法"
+
+#: KAQuery.cpp:314
+msgid "Delete cached copy on close"
+msgstr "关闭时删除缓存副本"
+
+#: KAQuery.cpp:315
+msgid "Unable to retrieve file"
+msgstr "无法取回文件"
+
+#: KAQuery.cpp:317
+msgid "Directory already exists"
+msgstr "目录已存在"
+
+#: KAQuery.cpp:319 KAQuery.cpp:337
+msgid "Link with name already exists"
+msgstr "同名链接已存在"
+
+#: KAQuery.cpp:320
+msgid "Not a virtual system"
+msgstr "不是虚拟系统"
+
+#: KAQuery.cpp:321
+msgid "Can't find directory"
+msgstr "找不到目录"
+
+#: KAQuery.cpp:322
+msgid "Not a directory name"
+msgstr "不是目录名"
+
+#: KAQuery.cpp:323
+msgid "Object not found"
+msgstr "未找到对象"
+
+#: KAQuery.cpp:324
+msgid "Object has moved"
+msgstr "对象已移动"
+
+#: KAQuery.cpp:325
+msgid "File not found"
+msgstr "未找到文件"
+
+#: KAQuery.cpp:326
+msgid "Directory in path not found"
+msgstr "路径中的目录未找到"
+
+#: KAQuery.cpp:327
+msgid "Symbolic links nested too deep"
+msgstr "符号链接嵌套过深"
+
+#: KAQuery.cpp:328
+msgid "Can't read environment"
+msgstr "无法读取环境"
+
+#: KAQuery.cpp:329
+msgid "Can't traverse an external file"
+msgstr "无法遍历外部文件"
+
+#: KAQuery.cpp:330
+msgid "Exceeded max forward depth"
+msgstr "超出最大转发深度"
+
+#: KAQuery.cpp:331
+msgid "Authentication required"
+msgstr "需要身份验证"
+
+#: KAQuery.cpp:332
+msgid "Not authorized"
+msgstr "未授权"
+
+#: KAQuery.cpp:333
+msgid "Not found"
+msgstr "未找到"
+
+#: KAQuery.cpp:334
+msgid "Bad version number"
+msgstr "错误的版本号"
+
+#: KAQuery.cpp:335
+msgid "Not a directory"
+msgstr "不是目录"
+
+#: KAQuery.cpp:336
+msgid "Identical link already exists"
+msgstr "相同链接已存在"
+
+#: KAQuery.cpp:338
+msgid "Command not implemented on server"
+msgstr "服务器未实现该命令"
+
+#: KAQuery.cpp:339
+msgid "Bad format for response"
+msgstr "应答格式错误"
+
+#: KAQuery.cpp:340
+msgid "Protocol error"
+msgstr "协议错误"
+
+#: KAQuery.cpp:341
+msgid "Unspecified server failure"
+msgstr "未指定的服务器故障"
+
+#: KAQuery.cpp:343
+msgid "Generic Failure"
+msgstr "一般性失败"
+
+#: KAQuery.cpp:347
+msgid "No warning"
+msgstr "无警告"
+
+#: KAQuery.cpp:348
+msgid "You are using an old version of this program"
+msgstr "您正在使用此程序的旧版本"
+
+#: KAQuery.cpp:349
+msgid "From server: "
+msgstr "来自服务器: "
+
+#: KAQuery.cpp:351
+msgid "Unrecognized line in response from server"
+msgstr "服务器应答中有无法识别的行"
+
+#: KAQuery.cpp:409
+msgid "Query running"
+msgstr "查询进行中"
+
+#: KAQuery.cpp:453
+msgid "Query finished"
+msgstr "查询已完成"
+
+#: KASettings.cpp:59
+msgid "&Host"
+msgstr "主机(&H)"
+
+#: KASettings.cpp:72
+msgid "&Timeout (seconds)"
+msgstr "超时(秒)(&T)"
+
+#: KASettings.cpp:83
+msgid "Maximal &retries"
+msgstr "最大重试次数(&R)"
+
+#: KASettings.cpp:284
+msgid "&Nice Level"
+msgstr "友好级别(&N)"
+
+#: KASettings.cpp:291
+msgid "max. &Hits"
+msgstr "最大命中数(&H)"
+
+#: KASettings.cpp:418
+msgid "Exact"
+msgstr "精确匹配"
+
+#: KASettings.cpp:419
+msgid "Substring"
+msgstr "子串"
+
+#: KASettings.cpp:420
+msgid "Substring case insensitive"
+msgstr "子串,不区分大小写"
+
+#: KASettings.cpp:421
+msgid "Regular expression"
+msgstr "正则表达式"
+
+#: KASettings.cpp:423
+msgid "Exact, then substring case insensitive"
+msgstr "先精确,再不区分大小写子串"
+
+#: KASettings.cpp:427
+msgid "Normal"
+msgstr "普通"
+
+#: KASettings.cpp:428
+msgid "Nice"
+msgstr "友好"
+
+#: KASettings.cpp:429
+msgid "Very nice"
+msgstr "很友好"
+
+#: KASettings.cpp:430
+msgid "Even more nice"
+msgstr "非常友好"
+
+#: KASettings.cpp:431
+msgid "Nicest"
+msgstr "最友好"
+
+#: KASettings.cpp:525
+msgid "KArchie Settings"
+msgstr "KArchie 设置"
+
+#: KASettings.cpp:536
+msgid "Archie server settings"
+msgstr "Archie 服务器设置"
+
+#: KASettings.cpp:543
+msgid "Search init"
+msgstr "搜索初始化"
+
+#: KASettings.cpp:563
+msgid "Cancel"
+msgstr "取消"
+
+#: KASettings.cpp:567
+msgid "Reset"
+msgstr "重置"
+
+#: KASettings.cpp:573 KArchie.cpp:447 KArchie.cpp:489 KArchie.cpp:726
+#: KArchie.cpp:747 KArchie.cpp:770
+msgid "OK"
+msgstr "确定"
+
+#: KAStatusBar.cpp:50
+msgid "    0 hits"
+msgstr "    0 个结果"
+
+#: KAStatusBar.cpp:51
+msgid "    0. try"
+msgstr "    第 0 次尝试"
+
+#: KAStatusBar.cpp:52
+msgid "Host: none                               "
+msgstr "主机: 无                                   "
+
+#: KAStatusBar.cpp:53
+msgid "Status: ready                        "
+msgstr "状态: 就绪                            "
+
+#: KAStatusBar.cpp:81
+#, c-format
+msgid "Status: %s"
+msgstr "状态: %s"
+
+#: KAStatusBar.cpp:91
+#, c-format
+msgid "Hosts: %s"
+msgstr "主机: %s"
+
+#: KAStatusBar.cpp:101
+#, c-format
+msgid "%d hits"
+msgstr "%d 个结果"
+
+#: KAStatusBar.cpp:111
+#, c-format
+msgid "Progress: %d"
+msgstr "进度: %d"
+
+#: KAStatusBar.cpp:121
+#, c-format
+msgid "%d try."
+msgstr "第 %d 次尝试。"
+
+#: KAView.cpp:66
+msgid "Searchstring, press <ENTER> to start search"
+msgstr "搜索串,按 <回车> 开始搜索"
+
+#: KAView.cpp:68
+msgid "Search &Term"
+msgstr "搜索词(&T)"
+
+#: KAView.cpp:134
+msgid "Host"
+msgstr "主机"
+
+#: KAView.cpp:135
+msgid "Path"
+msgstr "路径"
+
+#: KAView.cpp:136
+msgid "File"
+msgstr "文件"
+
+#: KAView.cpp:268
+msgid "Host:"
+msgstr "主机:"
+
+#: KAView.cpp:270
+msgid "Path:"
+msgstr "路径:"
+
+#: KAView.cpp:272
+msgid "File:"
+msgstr "文件:"
+
+#: KAView.cpp:274
+msgid "Size:"
+msgstr "大小:"
+
+#: KAView.cpp:276
+msgid "Mode:"
+msgstr "模式:"
+
+#: KAView.cpp:278
+msgid "Date:"
+msgstr "日期:"
+
+#: KArchie.cpp:441 KArchie.cpp:483
+#, c-format
+msgid ""
+"Couldn't open \n"
+"\"%s\""
+msgstr ""
+"无法打开\n"
+"\"%s\""
+
+#: KArchie.cpp:446 KArchie.cpp:488
+msgid "KArchie: bad file"
+msgstr "KArchie: 文件损坏"
+
+#: KArchie.cpp:720
+msgid "Malformed url"
+msgstr "URL 格式错误"
+
+#: KArchie.cpp:724
+msgid "Maybe bad list entry, please select an other file"
+msgstr "列表条目可能损坏,请选择其它文件"
+
+#: KArchie.cpp:725
+msgid "KArchie: bad URL"
+msgstr "KArchie: URL 无效"
+
+#: KArchie.cpp:744
+msgid "KArchie: Wrong fileselection"
+msgstr "KArchie: 文件选择错误"
+
+#: KArchie.cpp:745
+msgid "The selected file is not writeable"
+msgstr "所选文件不可写"
+
+#: KArchie.cpp:752
+msgid "KArchie: Overwrite file ?"
+msgstr "KArchie: 覆盖文件吗?"
+
+#: KArchie.cpp:753
+msgid ""
+"The selected file is not write protected\n"
+"Should it be overwritten ?"
+msgstr ""
+"所选文件没有写保护\n"
+"要覆盖它吗?"
+
+#: KArchie.cpp:756
+msgid "No"
+msgstr "否"
+
+#: KArchie.cpp:756
+msgid "Yes"
+msgstr "是"
+
+#: KArchie.cpp:766
+msgid "KArchie: bad selection"
+msgstr "KArchie: 无效选择"
+
+#: KArchie.cpp:767
+msgid ""
+"No file selected !\n"
+"Please select a file in the list of queryresults\n"
+"or do a query."
+msgstr ""
+"未选择文件!\n"
+"请在查询结果列表中选择一个文件,\n"
+"或先进行查询。"

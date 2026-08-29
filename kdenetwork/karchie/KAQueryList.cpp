@@ -33,13 +33,13 @@
 #define min(x1,x2) ((x1<x2)?x1:x2)
 
 int
-KAHostList::compareItems( GCI item1, GCI item2 )
+KAHostList::compareItems( TQPtrCollection::Item item1, TQPtrCollection::Item item2 /* TQt3 迁移:Qt1 GCI → Item */ )
 {
   return strcmp(((KAQueryFile *)item1)->getHost(), ((KAQueryFile *)item2)->getHost());
 }
 
 int
-KADomainList::compareItems( GCI item1, GCI item2 )
+KADomainList::compareItems( TQPtrCollection::Item item1, TQPtrCollection::Item item2 /* TQt3 迁移:Qt1 GCI → Item */ )
 {
   uint step = 0, step1, step2, ret;
   /* domains werden von hinten nach vorne sortiert im Namen */
@@ -113,13 +113,13 @@ KADomainList::compareItems( GCI item1, GCI item2 )
 }
 
 int
-KASizeList::compareItems( GCI item1, GCI item2 )
+KASizeList::compareItems( TQPtrCollection::Item item1, TQPtrCollection::Item item2 /* TQt3 迁移:Qt1 GCI → Item */ )
 {
   return ((KAQueryFile *)item1)->getSize() - ((KAQueryFile *)item2)->getSize();
 }
 
 int
-KADateList::compareItems( GCI item1, GCI item2 )
+KADateList::compareItems( TQPtrCollection::Item item1, TQPtrCollection::Item item2 /* TQt3 迁移:Qt1 GCI → Item */ )
 {
   if ( ((KAQueryFile *)item1)->getDateTime() < ((KAQueryFile *)item2)->getDateTime() )
     return 1;

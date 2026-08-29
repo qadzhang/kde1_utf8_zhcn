@@ -13,16 +13,15 @@ PLayout::PLayout(QObject *pobject)
 PLayout::~PLayout()
 {
   //  tqDebug("PObject: in destructor");
-  /*
+  /* TQt3 迁移:原嵌套注释因内层星斜杠提前闭合而碎裂,重整为单一注释块
   delete widget();
-  layout = 0;  /* TQt3 迁移 */
-  setWidget();
-  */
+  layout = 0;
+  setWidget(); */
 }
 
 PObject *PLayout::createWidget(CreateArgs &ca)
 {
-  PLayout *pw = new("PLayout") PLayout(ca.parent);
+  PLayout *pw = new  PLayout(ca.parent);
   QBoxLayout *qbl;
   int direction, border, iType, iParent;
   // Retreive the border and direction information out of the
@@ -32,12 +31,12 @@ PObject *PLayout::createWidget(CreateArgs &ca)
   
   if((ca.parent != 0) &&
      (ca.parent->widget()->isWidgetType() == TRUE)){
-    qbl = new("QBoxLayout") QBoxLayout((QWidget *) ca.parent->widget(), (QBoxLayout::Direction) direction, border);
+    qbl = new  QBoxLayout((QWidget *) ca.parent->widget(), (QBoxLayout::Direction) direction, border);
     //      tqDebug("Creating layout with parent: %d", parent.iWinId);
 
   }
   else{
-    qbl = new("QBoxLayout") QBoxLayout((QBoxLayout::Direction) direction, border);
+    qbl = new  QBoxLayout((QBoxLayout::Direction) direction, border);
     //      tqDebug("Creating layout NO PARENT", parent.iWinId);
   }
   pw->setWidget(qbl);

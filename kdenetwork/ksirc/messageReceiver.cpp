@@ -27,5 +27,5 @@ bool KSircMessageReceiver::getBroadcast()
 
 filterRuleList *KSircMessageReceiver::defaultRules()
 {
-  return new("filterRuleList") filterRuleList();
+  return new  filterRuleList();
 }

@@ -41,7 +41,18 @@
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
 #include <X11/keysym.h>
+/* shape.h 的声明以宏形式的 Bool/Status 作类型；kwm.h（上方已 include）
+ * 为保护 TQt3 枚举摘除了这两个宏，须先恢复再解析 shape.h，随后再摘
+ * （护罩），使本编译单元后续的 TQt3 头依然安全。 */
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/extensions/shape.h>
+#undef Bool
+#undef Status
 #include <X11/cursorfont.h>
 
 #define INT8 _X11INT8

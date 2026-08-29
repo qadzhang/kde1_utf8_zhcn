@@ -1,11 +1,12 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-10-01 13:21+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: app.cpp:218 app.cpp:553
 msgid ""
@@ -17,7 +18,7 @@ msgstr ""
 
 #: app.cpp:245
 msgid "&New game"
-msgstr "开始新游戏[&N]"
+msgstr "新游戏(&N)"
 
 #: app.cpp:246
 msgid "&Load game"
@@ -37,7 +38,7 @@ msgstr "停止思考[&S]"
 
 #: app.cpp:255
 msgid "&Continue"
-msgstr "继续[&C]"
+msgstr "继续(&C)"
 
 #: app.cpp:257
 msgid "&Undo move"
@@ -308,9 +309,8 @@ msgid "Rank"
 msgstr "排名"
 
 #: app.cpp:885
-#, fuzzy
 msgid "Name"
-msgstr "开始新游戏[&N]"
+msgstr "名称"
 
 #: app.cpp:889
 msgid "Color"

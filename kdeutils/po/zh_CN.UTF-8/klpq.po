@@ -80,23 +80,29 @@ msgid ""
 "(C) by Christoph Neerfeld\n"
 "chris@kde.org"
 msgstr ""
+"Klpq %s\n"
+"(C) Christoph Neerfeld\n"
+"chris@kde.org"
 
 #: klpq.cpp:213
 msgid "&Config"
 msgstr "配置[&C]"
 
 #: klpq.cpp:404
-#, fuzzy, c-format
+#, c-format
 msgid "Do you really want to remove job No %d"
-msgstr "你想要删除任务 "
+msgstr "真的要删除第 %d 号打印任务吗"
 
 #: klpq.cpp:424
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Do you really want to move job No\n"
 "%d\n"
 "on top of queue"
-msgstr "你想要删除任务\n"
+msgstr ""
+"真的要把第\n"
+"%d\n"
+"号任务移到队列最前吗"
 
 #: klpq.cpp:572 klpq.cpp:578 klpq.cpp:593
 msgid "Permission denied"
@@ -135,10 +141,7 @@ msgid "Select your spooling system"
 msgstr "选择你的假脱机系统"
 
 #: FirstStartData.cpp:42
-msgid ""
-"Please select the spooling system you use. Most systems use the BSD spooler. "
-"So if you don't know which spooler is installed on your system, BSD is "
-"probably a good choice."
+msgid "Please select the spooling system you use. Most systems use the BSD spooler. So if you don't know which spooler is installed on your system, BSD is probably a good choice."
 msgstr ""
 "请选择你使用的假脱机系统. 大多数的系统使用 BSD 假脱机程序.\n"
 "所以如果你不知道在你的系统中安装的是什么假脱机程序 ,\n"

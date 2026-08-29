@@ -14,7 +14,7 @@
 #include <qvector.h>
 #include <qpushbutton.h>
 
-typedef QVector<QPushButton> PushButtons;
+typedef TQPtrVector<QPushButton> PushButtons;  /* TQt3 migration: QVector not mapped in q1compat */
 
 class kscolourpicker : public kscolourpickerData
 {

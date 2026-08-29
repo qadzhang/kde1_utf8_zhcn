@@ -1,11 +1,12 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1999-03-05 01:33+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: kbbgame.cpp:75 kbbgame.cpp:116
 msgid "&Help"
@@ -32,11 +33,9 @@ msgid "&Give up"
 msgstr "放弃[&G]"
 
 #: kbbgame.cpp:88
-#, fuzzy
 msgid "&Done"
-msgstr "完成"
+msgstr "完成(&D)"
 
-#
 #: kbbgame.cpp:90
 msgid "&Resize"
 msgstr "改变大小[&R]"
@@ -66,28 +65,24 @@ msgid "&Options"
 msgstr "选项[&O]"
 
 #: kbbgame.cpp:172
-#, fuzzy
 msgid "Quit"
-msgstr "离开[&Q]"
+msgstr "退出"
 
 #: kbbgame.cpp:174
-#, fuzzy
 msgid "New"
-msgstr "新建[&N]"
+msgstr "新建"
 
 #: kbbgame.cpp:176
-#, fuzzy
 msgid "Give up"
-msgstr "放弃[&G]"
+msgstr "放弃"
 
 #: kbbgame.cpp:178
 msgid "Done"
 msgstr "完成"
 
 #: kbbgame.cpp:181
-#, fuzzy
 msgid "Help"
-msgstr "帮助[&H]"
+msgstr "帮助"
 
 #: kbbgame.cpp:408
 msgid "About"
@@ -158,23 +153,20 @@ msgid "Yes"
 msgstr "是"
 
 #: kbbgame.cpp:577
-#, fuzzy
 msgid "No"
 msgstr "否"
 
 #: kbbgame.cpp:580
-#, fuzzy
 msgid "Size"
-msgstr "大小[&S]"
+msgstr "大小"
 
 #: kbbgame.cpp:583
 msgid "Placed"
 msgstr "放置"
 
 #: kbbgame.cpp:596
-#, fuzzy
 msgid "Score"
-msgstr " 得分 %4d"
+msgstr "分数"
 
 #: kbbgame.cpp:611 kbbgame.cpp:640
 msgid "This will be the end of the current game!"

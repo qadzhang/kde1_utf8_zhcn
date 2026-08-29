@@ -384,7 +384,7 @@ QString KAPopupMenu::keyToString(int key) /*fold00*/
     return string;
   }
   else{
-    string += "<" + QString(key) + "?" + ">";
+    string += "<" + TQString::number(key) + "?" + ">";  /* TQt3 迁移:整型键转字符串 */
     return string;
   }
 }

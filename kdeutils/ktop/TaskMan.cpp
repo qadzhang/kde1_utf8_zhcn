@@ -48,6 +48,11 @@
 TaskMan::TaskMan(QWidget* parent, const char* name, int sfolder)
 	: QTabDialog(parent, name, FALSE, 0)
 {
+	/* [KDE1 Revival 2026] 同 kfind 的 KfindTabDialog:TQt3 的 TQDialog 构造
+	 * 强制 WType_Dialog,使其按顶层对话框而非内嵌视图存在,主体随之空白;
+	 * reparent(f=0) 清类型位并按普通子部件重建原生窗口、重新嵌入。 */
+	reparent( parentWidget(), 0, QPoint( 0, 0 ), FALSE );
+
 	pages[0] = pages[1] = NULL;
 
     // Delete the OK button, it is created by default by the constructor.

@@ -29,7 +29,18 @@
 
 #include <X11/X.h>
 #include <X11/Xlib.h>
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/Xutil.h>
+/* X11 头的 #define Bool int / #define Status int 会击穿使用方后续才首次
+ * 拉入的 TQt3 头（ntqvariant.h 的 enum Type 含 Bool）。本头未以宏形式
+ * 使用二者，在此摘除；X11 函数声明已解析完毕。 */
+#undef Bool
+#undef Status
 
  // $Id: ktoolboxmgr.h,v 1.7 1998/11/06 15:45:44 radej Exp $
  // $Log: ktoolboxmgr.h,v $

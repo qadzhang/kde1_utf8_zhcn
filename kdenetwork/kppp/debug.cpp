@@ -32,7 +32,8 @@ myMultiEdit::myMultiEdit(QWidget *parent, const char *name)
 }
 
 void myMultiEdit::insertChar(unsigned char c) {
-  QMultiLineEdit::insertChar( c);
+  /* TQt3 迁移:TQMultiLineEdit 已删 insertChar;insert(QString) 等价追写单字符 */
+  TQMultiLineEdit::insert(TQChar(c));
 }
 
 

@@ -19,6 +19,11 @@
 
 #define		P_ERR_STRING_SZ 100	 /* Size of error string	    */
 
+/* TQt3 migration (2026): wrap in extern "C" for C++ TUs sharing these
+   prospero globals with the C kernel (aquery.c etc.) */
+#ifdef __cplusplus
+extern "C" {
+#endif
 extern int	perrno;
 extern char	p_err_string[];
 extern char	*p_err_text[];
@@ -26,6 +31,9 @@ extern char	*p_err_text[];
 extern int	pwarn;
 extern char	p_warn_string[];
 extern char	*p_warn_text[];
+#ifdef __cplusplus
+}
+#endif
 
 /* Error codes returned or found in verrno */
 

@@ -11,6 +11,9 @@ set(GMOFILES zh_CN.UTF-8
     kshisen.po
     ksirtet.po
     ksnake.po
+    konquest.po
+    ksmiletris.po
+    ksokoban.po
 )
 
 install_gmo(${GMOFILES})

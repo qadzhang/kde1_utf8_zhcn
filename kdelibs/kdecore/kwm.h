@@ -27,6 +27,22 @@
 #include <qapplication.h>
 #include <qpixmap.h>
 #include <X11/Xlib.h>
+/* X11/Xutil.h 的函数声明以宏形式的 Bool/Status 作返回类型（如
+ * extern Status XStringListToTextProperty(...)），必须在摘宏前完成解析，
+ * 故先于 undef 引入；否则本头摘宏后，使用方再首次 include Xutil.h 时
+ * 其声明会因 Status 既非宏亦非 typedef 而失败（kwm.cpp 实测）。 */
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
+#include <X11/Xutil.h>
+/* X11 头的 #define Bool int / #define Status int 会击穿本头与使用方
+ * 后续才首次拉入的 TQt3 头（ntqvariant.h 的 enum Type 含 Bool）。本头未以
+ * 宏形式使用二者，在此摘除；Xlib/Xutil 函数声明已解析完毕，不受影响。 */
+#undef Bool
+#undef Status
 
 #ifdef raise
 #undef raise

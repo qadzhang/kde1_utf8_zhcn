@@ -1,0 +1,669 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kwrite\n"
+"PO-Revision-Date: 2026-08-30 00:00+0800\n"
+"Last-Translator: KDE1 Revival Project\n"
+"Language-Team: zh_CN <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"charset: UTF-8\n"
+"encoding: 8bit\n"
+
+#: highlight.cpp:1715
+msgid "Normal:"
+msgstr "常规:"
+
+#: highlight.cpp:1725 kwdialog.cpp:495
+msgid "Selected:"
+msgstr "选中:"
+
+#: highlight.cpp:1732
+msgid "Bold"
+msgstr "粗体"
+
+#: highlight.cpp:1737
+msgid "Italic"
+msgstr "斜体"
+
+#: highlight.cpp:1783
+msgid "Family:"
+msgstr "字族:"
+
+#: highlight.cpp:1793
+msgid "Size:"
+msgstr "大小:"
+
+#: highlight.cpp:1808
+msgid "Charset:"
+msgstr "字符集:"
+
+#: highlight.cpp:1891
+msgid "Default Item Styles"
+msgstr "默认项目样式"
+
+#: highlight.cpp:1895 highlight.cpp:1966
+msgid "Item:"
+msgstr "项目:"
+
+#: highlight.cpp:1913
+msgid "Default Font"
+msgstr "默认字体"
+
+#: highlight.cpp:1922 highlight.cpp:2012 kwdialog.cpp:112 kwdialog.cpp:261
+#: kwdialog.cpp:370 kwdialog.cpp:521
+msgid "&OK"
+msgstr "确定(&O)"
+
+#: highlight.cpp:1928 highlight.cpp:2018
+msgid "&Cancel"
+msgstr "取消(&C)"
+
+#: highlight.cpp:1950
+msgid "Config Select"
+msgstr "配置选择"
+
+#: highlight.cpp:1954
+msgid "Highlight:"
+msgstr "高亮:"
+
+#: highlight.cpp:1973
+msgid "Highlight Auto Select"
+msgstr "自动选择高亮"
+
+#: highlight.cpp:1977
+msgid "File Extensions:"
+msgstr "文件扩展名:"
+
+#: highlight.cpp:1984
+msgid "Mime Types:"
+msgstr "MIME 类型:"
+
+#: highlight.cpp:1991
+msgid "Item Style"
+msgstr "项目样式"
+
+#: highlight.cpp:1994 highlight.cpp:2003
+msgid "Default"
+msgstr "默认"
+
+#: highlight.cpp:2000
+msgid "Item Font"
+msgstr "项目字体"
+
+#: kwdialog.cpp:31
+msgid "&Text To Find:"
+msgstr "查找内容(&T):"
+
+#: kwdialog.cpp:43
+msgid "&Replace With:"
+msgstr "替换为(&R):"
+
+#: kwdialog.cpp:50
+msgid "Options"
+msgstr "选项"
+
+#: kwdialog.cpp:57
+msgid "&Case Sensitive"
+msgstr "区分大小写(&C)"
+
+#: kwdialog.cpp:61
+msgid "&Whole Words Only"
+msgstr "仅整词(&W)"
+
+#: kwdialog.cpp:65
+msgid "&From Cursor"
+msgstr "从光标处开始(&F)"
+
+#: kwdialog.cpp:74
+msgid "Find &Backwards"
+msgstr "反向查找(&B)"
+
+#: kwdialog.cpp:78
+msgid "&Selected Text"
+msgstr "所选文本(&S)"
+
+#: kwdialog.cpp:91
+msgid "&Prompt On Replace"
+msgstr "替换前询问(&P)"
+
+#: kwdialog.cpp:118 kwdialog.cpp:267 kwdialog.cpp:375 kwdialog.cpp:527
+#: kwrite.cpp:1411 kwrite_view.cpp:1411 kwview.cpp:1425 toplevel.cpp:106
+msgid "Cancel"
+msgstr "取消"
+
+#: kwdialog.cpp:167
+msgid "Replace this occurence?"
+msgstr "替换此处?"
+
+#: kwdialog.cpp:174
+msgid "&Yes"
+msgstr "是(&Y)"
+
+#: kwdialog.cpp:182
+msgid "&No"
+msgstr "否(&N)"
+
+#: kwdialog.cpp:188
+msgid "&All"
+msgstr "全部(&A)"
+
+#: kwdialog.cpp:194 toplevel.cpp:174
+msgid "&Close"
+msgstr "关闭(&C)"
+
+#: kwdialog.cpp:251
+msgid "&Goto Line:"
+msgstr "转到行(&G):"
+
+#: kwdialog.cpp:294
+msgid "Edit Options"
+msgstr "编辑选项"
+
+#: kwdialog.cpp:295
+msgid "Auto &Indent"
+msgstr "自动缩进(&I)"
+
+#: kwdialog.cpp:297
+msgid "&Backspace Indent"
+msgstr "退格键减少缩进(&B)"
+
+#: kwdialog.cpp:299
+msgid "&Word Wrap"
+msgstr "自动换行(&W)"
+
+#: kwdialog.cpp:301
+msgid "Replace &Tabs"
+msgstr "替换制表符(&T)"
+
+#: kwdialog.cpp:303
+msgid "Remove Trailing &Spaces"
+msgstr "去除行尾空格(&S)"
+
+#: kwdialog.cpp:305
+msgid "Wrap &Cursor"
+msgstr "光标回绕(&C)"
+
+#: kwdialog.cpp:307
+msgid "&Auto Brackets"
+msgstr "自动补全括号(&A)"
+
+#: kwdialog.cpp:321
+msgid "Select Options"
+msgstr "选择选项"
+
+#: kwdialog.cpp:322
+msgid "&Persistent Selections"
+msgstr "持久选区(&P)"
+
+#: kwdialog.cpp:324
+msgid "&Multiple Selections"
+msgstr "多重选择(&M)"
+
+#: kwdialog.cpp:326 toplevel.cpp:233
+msgid "&Vertical Selections"
+msgstr "垂直选择(&V)"
+
+#: kwdialog.cpp:328
+msgid "&Delete On Input"
+msgstr "输入时删除(&D)"
+
+#: kwdialog.cpp:330
+msgid "&Toggle Old"
+msgstr "切换旧位置(&T)"
+
+#: kwdialog.cpp:345
+msgid "Wrap Words At:"
+msgstr "换行宽度:"
+
+#: kwdialog.cpp:351
+msgid "Tab Width:"
+msgstr "制表符宽度:"
+
+#: kwdialog.cpp:358
+msgid "Undo steps:"
+msgstr "撤销步数:"
+
+#: kwdialog.cpp:479
+msgid "Background:"
+msgstr "背景:"
+
+#: kwdialog.cpp:487
+msgid "Text Background:"
+msgstr "文本背景:"
+
+#: kwdialog.cpp:503
+msgid "Found:"
+msgstr "找到:"
+
+#: kwdialog.cpp:511
+msgid "Selected + Found:"
+msgstr "选中 + 找到:"
+
+#: kwrite.cpp:1069 kwrite_view.cpp:1069 kwview.cpp:1083
+msgid "Vertical Selections On"
+msgstr "垂直选择开"
+
+#: kwrite.cpp:1069 kwrite_view.cpp:1069 kwview.cpp:1083
+msgid "Vertical Selections Off"
+msgstr "垂直选择关"
+
+#: kwrite.cpp:1127 kwrite.cpp:1137 kwrite.cpp:1147 kwrite.cpp:1163
+#: kwrite.cpp:1177 kwrite.cpp:1193 kwrite.cpp:1220 kwrite.cpp:1252
+#: kwrite.cpp:1266 kwrite.cpp:1310 kwrite.cpp:1331 kwrite.cpp:1418
+#: kwrite_view.cpp:1127 kwrite_view.cpp:1137 kwrite_view.cpp:1147
+#: kwrite_view.cpp:1163 kwrite_view.cpp:1177 kwrite_view.cpp:1193
+#: kwrite_view.cpp:1220 kwrite_view.cpp:1252 kwrite_view.cpp:1266
+#: kwrite_view.cpp:1310 kwrite_view.cpp:1331 kwrite_view.cpp:1418
+#: kwview.cpp:1141 kwview.cpp:1151 kwview.cpp:1161 kwview.cpp:1177
+#: kwview.cpp:1191 kwview.cpp:1207 kwview.cpp:1234 kwview.cpp:1266
+#: kwview.cpp:1280 kwview.cpp:1324 kwview.cpp:1345 kwview.cpp:1432
+msgid "Sorry"
+msgstr "抱歉"
+
+#: kwrite.cpp:1128 kwrite_view.cpp:1128 kwview.cpp:1142
+msgid "The specified File does not exist"
+msgstr "指定的文件不存在"
+
+#: kwrite.cpp:1129 kwrite.cpp:1139 kwrite.cpp:1149 kwrite.cpp:1165
+#: kwrite.cpp:1179 kwrite.cpp:1195 kwrite.cpp:1222 kwrite.cpp:1255
+#: kwrite.cpp:1268 kwrite.cpp:1313 kwrite.cpp:1333 kwrite.cpp:1716
+#: kwrite.cpp:1867 kwrite_view.cpp:1129 kwrite_view.cpp:1139
+#: kwrite_view.cpp:1149 kwrite_view.cpp:1165 kwrite_view.cpp:1179
+#: kwrite_view.cpp:1195 kwrite_view.cpp:1222 kwrite_view.cpp:1255
+#: kwrite_view.cpp:1268 kwrite_view.cpp:1313 kwrite_view.cpp:1333
+#: kwrite_view.cpp:1716 kwrite_view.cpp:1867 kwview.cpp:1143 kwview.cpp:1153
+#: kwview.cpp:1163 kwview.cpp:1179 kwview.cpp:1193 kwview.cpp:1209
+#: kwview.cpp:1236 kwview.cpp:1269 kwview.cpp:1282 kwview.cpp:1327
+#: kwview.cpp:1347 kwview.cpp:1730 kwview.cpp:1881
+msgid "OK"
+msgstr "确定"
+
+#: kwrite.cpp:1138 kwrite_view.cpp:1138 kwview.cpp:1152
+msgid "You have specified a directory"
+msgstr "您指定的是一个目录"
+
+#: kwrite.cpp:1148 kwrite_view.cpp:1148 kwview.cpp:1162
+msgid "You do not have read permission to this file"
+msgstr "您没有此文件的读取权限"
+
+#: kwrite.cpp:1164 kwrite.cpp:1194 kwrite_view.cpp:1164 kwrite_view.cpp:1194
+#: kwview.cpp:1178 kwview.cpp:1208
+msgid "An Error occured while trying to open this Document"
+msgstr "打开此文档时出错"
+
+#: kwrite.cpp:1178 kwrite_view.cpp:1178 kwview.cpp:1192
+msgid "You do not have write permission to this file"
+msgstr "您没有此文件的写入权限"
+
+#: kwrite.cpp:1218 kwrite_view.cpp:1218 kwview.cpp:1232
+msgid "Malformed URL"
+msgstr "URL 格式错误"
+
+#: kwrite.cpp:1231 kwrite_view.cpp:1231 kwview.cpp:1245
+msgid "Loading..."
+msgstr "正在载入..."
+
+#: kwrite.cpp:1239 kwrite.cpp:1360 kwrite_view.cpp:1239 kwrite_view.cpp:1360
+#: kwview.cpp:1253 kwview.cpp:1374
+msgid "Inserted"
+msgstr "已插入"
+
+#: kwrite.cpp:1244 kwrite.cpp:1369 kwrite_view.cpp:1244 kwrite_view.cpp:1369
+#: kwview.cpp:1258 kwview.cpp:1383
+msgid "Read"
+msgstr "已读取"
+
+#: kwrite.cpp:1253 kwrite.cpp:1311 kwrite_view.cpp:1253 kwrite_view.cpp:1311
+#: kwview.cpp:1267 kwview.cpp:1325
+msgid ""
+"KWrite is already waiting\n"
+"for an internet job to finish\n"
+"Please wait until it has finished\n"
+"Alternatively stop the running one."
+msgstr ""
+"KWrite 已在等待\n"
+"一个网络任务完成\n"
+"请等它结束,\n"
+"或者中止正在运行的任务。"
+
+#: kwrite.cpp:1261 kwrite.cpp:1319 kwrite_view.cpp:1261 kwrite_view.cpp:1319
+#: kwview.cpp:1275 kwview.cpp:1333
+msgid "Waiting for KFM..."
+msgstr "正在等待 KFM..."
+
+#: kwrite.cpp:1267 kwrite.cpp:1332 kwrite_view.cpp:1267 kwrite_view.cpp:1332
+#: kwview.cpp:1281 kwview.cpp:1346
+msgid "Could not start or find KFM"
+msgstr "无法启动或找到 KFM"
+
+#: kwrite.cpp:1294 kwrite_view.cpp:1294 kwview.cpp:1308
+msgid "Saving..."
+msgstr "正在保存..."
+
+#: kwrite.cpp:1302 kwrite.cpp:1379 kwrite_view.cpp:1302 kwrite_view.cpp:1379
+#: kwview.cpp:1316 kwview.cpp:1393
+msgid "Wrote"
+msgstr "已写入"
+
+#: kwrite.cpp:1407 kwrite.cpp:1486 kwrite_view.cpp:1407 kwrite_view.cpp:1486
+#: kwview.cpp:1421 kwview.cpp:1500
+msgid "Warning"
+msgstr "警告"
+
+#: kwrite.cpp:1408 kwrite_view.cpp:1408 kwview.cpp:1422
+msgid ""
+"The current Document has been modified.\n"
+"Would you like to save it?"
+msgstr ""
+"当前文档已修改。\n"
+"要保存它吗?"
+
+#: kwrite.cpp:1409 kwrite.cpp:1420 kwrite.cpp:1488 kwrite.cpp:1695
+#: kwrite.cpp:1706 kwrite.cpp:1883 kwrite.cpp:1895 kwrite_view.cpp:1409
+#: kwrite_view.cpp:1420 kwrite_view.cpp:1488 kwrite_view.cpp:1695
+#: kwrite_view.cpp:1706 kwrite_view.cpp:1883 kwrite_view.cpp:1895
+#: kwview.cpp:1423 kwview.cpp:1434 kwview.cpp:1502 kwview.cpp:1709
+#: kwview.cpp:1720 kwview.cpp:1897 kwview.cpp:1909 toplevel.cpp:104
+msgid "Yes"
+msgstr "是"
+
+#: kwrite.cpp:1410 kwrite.cpp:1421 kwrite.cpp:1489 kwrite.cpp:1696
+#: kwrite.cpp:1707 kwrite.cpp:1884 kwrite.cpp:1896 kwrite_view.cpp:1410
+#: kwrite_view.cpp:1421 kwrite_view.cpp:1489 kwrite_view.cpp:1696
+#: kwrite_view.cpp:1707 kwrite_view.cpp:1884 kwrite_view.cpp:1896
+#: kwview.cpp:1424 kwview.cpp:1435 kwview.cpp:1503 kwview.cpp:1710
+#: kwview.cpp:1721 kwview.cpp:1898 kwview.cpp:1910 toplevel.cpp:105
+msgid "No"
+msgstr "否"
+
+#: kwrite.cpp:1419 kwrite_view.cpp:1419 kwview.cpp:1433
+msgid ""
+"Could not save the document.\n"
+"Open a new document anyways?"
+msgstr ""
+"无法保存文档。\n"
+"仍然打开新文档吗?"
+
+#: kwrite.cpp:1466 kwrite_view.cpp:1466 kwview.cpp:1480
+msgid "No changes need to be saved"
+msgstr "没有需要保存的更改"
+
+#: kwrite.cpp:1487 kwrite_view.cpp:1487 kwview.cpp:1501
+msgid ""
+"A Document with this Name already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"同名文档已存在。\n"
+"要覆盖它吗?"
+
+#: kwrite.cpp:1690 kwrite.cpp:1878 kwrite_view.cpp:1690 kwrite_view.cpp:1878
+#: kwview.cpp:1704 kwview.cpp:1892
+msgid "End of document reached"
+msgstr "已到达文档末尾"
+
+#: kwrite.cpp:1691 kwrite.cpp:1879 kwrite_view.cpp:1691 kwrite_view.cpp:1879
+#: kwview.cpp:1705 kwview.cpp:1893
+msgid "Continue from the beginning"
+msgstr "从开头继续"
+
+#: kwrite.cpp:1693 kwrite.cpp:1704 kwrite.cpp:1714 kwrite_view.cpp:1693
+#: kwrite_view.cpp:1704 kwrite_view.cpp:1714 kwview.cpp:1707 kwview.cpp:1718
+#: kwview.cpp:1728
+msgid "Find"
+msgstr "查找"
+
+#: kwrite.cpp:1701 kwrite.cpp:1890 kwrite_view.cpp:1701 kwrite_view.cpp:1890
+#: kwview.cpp:1715 kwview.cpp:1904
+msgid "Beginning of document reached"
+msgstr "已到达文档开头"
+
+#: kwrite.cpp:1702 kwrite.cpp:1891 kwrite_view.cpp:1702 kwrite_view.cpp:1891
+#: kwview.cpp:1716 kwview.cpp:1905
+msgid "Continue from the end"
+msgstr "从结尾继续"
+
+#: kwrite.cpp:1715 kwrite_view.cpp:1715 kwview.cpp:1729
+msgid "Search string not found!"
+msgstr "找不到搜索串!"
+
+#: kwrite.cpp:1863 kwrite.cpp:1877 kwrite.cpp:1889 kwrite_view.cpp:1863
+#: kwrite_view.cpp:1877 kwrite_view.cpp:1889 kwview.cpp:1877 kwview.cpp:1891
+#: kwview.cpp:1903
+msgid "replace(s) made"
+msgstr "处替换已完成"
+
+#: kwrite.cpp:1865 kwrite.cpp:1881 kwrite.cpp:1893 kwrite_view.cpp:1865
+#: kwrite_view.cpp:1881 kwrite_view.cpp:1893 kwview.cpp:1879 kwview.cpp:1895
+#: kwview.cpp:1907
+msgid "Replace"
+msgstr "替换"
+
+#: kwrite.cpp:2004 kwrite_view.cpp:2004 kwview.cpp:2018 toplevel.cpp:477
+msgid "Line"
+msgstr "行"
+
+#: toplevel.cpp:102
+msgid "Message"
+msgstr "消息"
+
+#: toplevel.cpp:103
+msgid ""
+"This Document has been modified.\n"
+"Would you like to save it?"
+msgstr ""
+"此文档已修改。\n"
+"要保存它吗?"
+
+#: toplevel.cpp:166
+msgid "Ne&w..."
+msgstr "新建(&W)..."
+
+#: toplevel.cpp:167 toplevel.cpp:260
+msgid "&Open..."
+msgstr "打开(&O)..."
+
+#: toplevel.cpp:168
+msgid "&Insert..."
+msgstr "插入(&I)..."
+
+#: toplevel.cpp:169
+msgid "Open Recen&t"
+msgstr "打开最近的文件(&T)"
+
+#: toplevel.cpp:172 toplevel.cpp:261
+msgid "&Save"
+msgstr "保存(&S)"
+
+#: toplevel.cpp:173 toplevel.cpp:262
+msgid "S&ave as..."
+msgstr "另存为(&A)..."
+
+#: toplevel.cpp:180
+msgid "New &Window"
+msgstr "新建窗口(&W)"
+
+#: toplevel.cpp:181
+msgid "New &View"
+msgstr "新建视图(&V)"
+
+#: toplevel.cpp:186 toplevel.cpp:264
+msgid "C&ut"
+msgstr "剪切(&U)"
+
+#: toplevel.cpp:187 toplevel.cpp:265
+msgid "&Copy"
+msgstr "复制(&C)"
+
+#: toplevel.cpp:188 toplevel.cpp:266
+msgid "&Paste"
+msgstr "粘贴(&P)"
+
+#: toplevel.cpp:190
+msgid "&Find..."
+msgstr "查找(&F)..."
+
+#: toplevel.cpp:191
+msgid "&Replace..."
+msgstr "替换(&R)..."
+
+#: toplevel.cpp:192
+msgid "Find &Again"
+msgstr "再次查找(&A)"
+
+#: toplevel.cpp:193
+msgid "&Goto Line..."
+msgstr "转到行(&G)..."
+
+#: toplevel.cpp:195
+msgid "U&ndo"
+msgstr "撤销(&N)"
+
+#: toplevel.cpp:196
+msgid "R&edo"
+msgstr "重做(&E)"
+
+#: toplevel.cpp:198
+msgid "&Indent"
+msgstr "增加缩进(&I)"
+
+#: toplevel.cpp:199
+msgid "Uninden&t"
+msgstr "减少缩进(&T)"
+
+#: toplevel.cpp:203
+msgid "&Select All"
+msgstr "全选(&S)"
+
+#: toplevel.cpp:204
+msgid "&Deselect All"
+msgstr "取消全选(&D)"
+
+#: toplevel.cpp:205
+msgid "In&vert Selection"
+msgstr "反选(&V)"
+
+#: toplevel.cpp:210
+msgid "&Set Bookmark..."
+msgstr "设置书签(&S)..."
+
+#: toplevel.cpp:211
+msgid "&Add Bookmark"
+msgstr "添加书签(&A)"
+
+#: toplevel.cpp:212
+msgid "&Clear Bookmarks"
+msgstr "清除书签(&C)"
+
+#: toplevel.cpp:224
+msgid "Set Highlight"
+msgstr "设置高亮"
+
+#: toplevel.cpp:226
+msgid "&Defaults..."
+msgstr "默认值(&D)..."
+
+#: toplevel.cpp:227
+msgid "&Highlight..."
+msgstr "高亮(&H)..."
+
+#: toplevel.cpp:230
+msgid "&Options..."
+msgstr "选项(&O)..."
+
+#: toplevel.cpp:231
+msgid "&Colors..."
+msgstr "颜色(&C)..."
+
+#: toplevel.cpp:234
+msgid "Show &Toolbar"
+msgstr "显示工具栏(&T)"
+
+#: toplevel.cpp:235
+msgid "Show &Statusbar"
+msgstr "显示状态栏(&S)"
+
+#: toplevel.cpp:236
+msgid "Save Config"
+msgstr "保存配置"
+
+#: toplevel.cpp:249
+msgid ""
+"KWrite 0.98\n"
+"\n"
+"Copyright 1998\n"
+"Jochen Wilhelmy\n"
+"digisnap@cs.tu-berlin.de"
+msgstr ""
+"KWrite 0.98\n"
+"\n"
+"版权所有 1998\n"
+"Jochen Wilhelmy\n"
+"digisnap@cs.tu-berlin.de"
+
+#: toplevel.cpp:270
+msgid "&File"
+msgstr "文件(&F)"
+
+#: toplevel.cpp:271
+msgid "&Edit"
+msgstr "编辑(&E)"
+
+#: toplevel.cpp:272
+msgid "&Bookmarks"
+msgstr "书签(&B)"
+
+#: toplevel.cpp:273
+msgid "&Options"
+msgstr "选项(&O)"
+
+#: toplevel.cpp:275
+msgid "&Help"
+msgstr "帮助(&H)"
+
+#: toplevel.cpp:291
+msgid "New Document"
+msgstr "新建文档"
+
+#: toplevel.cpp:295
+msgid "Open Document"
+msgstr "打开文档"
+
+#: toplevel.cpp:299
+msgid "Save Document"
+msgstr "保存文档"
+
+#: toplevel.cpp:305
+msgid "Cut"
+msgstr "剪切"
+
+#: toplevel.cpp:309
+msgid "Copy"
+msgstr "复制"
+
+#: toplevel.cpp:313
+msgid "Paste"
+msgstr "粘贴"
+
+#: toplevel.cpp:319
+msgid "Undo"
+msgstr "撤销"
+
+#: toplevel.cpp:323
+msgid "Redo"
+msgstr "重做"
+
+#: toplevel.cpp:340
+msgid "Help"
+msgstr "帮助"
+
+#: toplevel.cpp:478
+msgid "Col"
+msgstr "列"

@@ -12,7 +12,7 @@
 
 #include "KSCutDialog.h"
 #include <qevent.h>
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:老 C++ 头改标准头 */
 
 #define Inherited KSCutDialogData
 
@@ -57,7 +57,7 @@ void KSCutDialog::terminate()
 
 void KSCutDialog::copy()
 {
-  IrcMLE->copyText();
+  IrcMLE->copy();  /* TQt3 migration: copyText was Qt1-only, copy() equivalent */
 }
 
 #include "KSCutDialog.moc"

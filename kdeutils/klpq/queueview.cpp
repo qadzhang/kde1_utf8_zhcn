@@ -27,11 +27,11 @@
 
 MyRow::MyRow(QString ra, QString ow, int jo, QString fi, QString si)
 {
-  rank.setStr(ra);
-  owner.setStr(ow);
+  rank = ra;  /* TQt3 迁移:QString::setStr 已删,直接赋值 */
+  owner = ow;  /* TQt3 迁移:QString::setStr 已删,直接赋值 */
   job = jo;
-  files.setStr(fi);
-  size.setStr(si);
+  files = fi;  /* TQt3 迁移:QString::setStr 已删,直接赋值 */
+  size = si;  /* TQt3 迁移:QString::setStr 已删,直接赋值 */
 }
 
 void MyRow::paint( QPainter *p, int col, int width )

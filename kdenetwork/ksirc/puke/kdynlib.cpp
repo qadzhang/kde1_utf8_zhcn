@@ -21,10 +21,10 @@
 
 // $Id$
 
-#include <iostream.h>
+#include <iostream>  /* TQt3 迁移:老 C++ 头改标准头 */
 
 #ifdef HAVE_CONFIG_H
-#include "../../config.h"
+#include <config.h>  /* TQt3 migration: build-tree relative path replaced */
 #endif
 
 #include "kdynlib.h"
@@ -80,7 +80,7 @@ KDynamicHandle KDynamicLibrary::loadLibrary(QString fileName, LoadOption opt)
                     RTLD_GLOBAL | ((opt == ResolveLazy) ? RTLD_LAZY : RTLD_NOW));
 
     if (last_error == 0)
-       last_error = new("QString") QString();
+       last_error = new  QString();
 
     if(handle == NULL){
       tqWarning("Failed to open %s: %s", fileName.data(), dlerror());
@@ -113,7 +113,7 @@ void *KDynamicLibrary::getSymbol(KDynamicHandle handle, QString symName)
     void *sym = dlsym(handle, symName.data());
      
     if (!last_error)
-       last_error = new("QString") QString();
+       last_error = new  QString();
 
     if(sym == NULL){
       tqWarning("Failed to find %s: %s", symName.data(), dlerror());

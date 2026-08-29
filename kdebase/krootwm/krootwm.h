@@ -21,6 +21,19 @@
 #include <sys/time.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>
+/* X11 头的 #define Bool int / #define Status int 会击穿下方才拉入的
+ * TQt3 头（ntqvariant.h 的 enum Type 含 Bool）。Xutil.h 的声明同样以
+ * 宏形式的二者作类型，须在摘宏前一并解析；随后摘除（护罩），本头与
+ * 使用方后续的 TQt3 头均安全。 */
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
+#include <X11/Xutil.h>
+#undef Bool
+#undef Status
 #include <qwidget.h>
 #include <qpopmenu.h>
 #include <qstrlist.h>

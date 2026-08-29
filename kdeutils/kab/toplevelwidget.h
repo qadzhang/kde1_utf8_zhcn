@@ -50,7 +50,7 @@ public:
   ABTLWidget(const char* name=0);
 public slots:
   void setNumber(int number, int count);
-  void aboutQt();
+  void aboutTQt();  /* TQt3 迁移:随 TQMessageBox::aboutTQt 改名 */
   void about();
   // ----- next both used to set and erase statusbar:
   void setStatus(const char*);

@@ -16,6 +16,10 @@
 //                                                                          //
 //////////////////////////////////////////////////////////////////////////////
 
+#include <iostream>  /* TQt3 迁移:Qt1 头不再传递 iostream,显式引入 */
+using std::cout;
+using std::cerr;
+using std::endl;
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -345,7 +349,7 @@ int NNTP::listXover(int from,int to,NewsGroup *n)
 
         if (toomanydlg->frombottom)
         {
-            from=(n->lastArticle(this)>?first);
+            from=(n->lastArticle(this)>first?n->lastArticle(this):first);  /* TQt3 迁移:GCC 老 >? 运算符已删 */
             to=from+toomanydlg->howmany;
         }
         else
@@ -613,10 +617,10 @@ QString *NNTP::article(const char *_id)
     {
         tqDebug("has all, getting nothing");
         if (QFile::exists(p)) //old style cache
-            data->setStr(kFileToString(p).data());
+            (*data) = kFileToString(p);  /* TQt3 迁移:setStr → 赋值,免去 .data() 往返 */
         else
         {
-            data->setStr(kFileToString(p+".head"));
+            (*data) = kFileToString(p+".head");  /* TQt3 迁移 */
             data->append("\n\n");
             data->append(kFileToString(p+".body"));
         }

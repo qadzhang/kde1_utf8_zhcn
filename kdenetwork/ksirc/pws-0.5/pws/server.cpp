@@ -13,7 +13,7 @@
 PWSServer::PWSServer(QString script, QString logDir)
     : QObject()
 {
-    log = new("KSircListBox") KSircListBox();
+    log = new  KSircListBox();
     log->setCaption("Web Server Event Log");
     log->resize(400,100);
 
@@ -23,7 +23,7 @@ PWSServer::PWSServer(QString script, QString logDir)
     fdWeb = open(logDir+"/WebLog", O_CREAT|O_RDONLY|O_NONBLOCK, S_IRUSR|S_IWUSR);
     if(fdWeb > 0){
         lseek(fdWeb, 0, SEEK_END);
-        web = new("QTimer") QTimer(this, "web_timer");
+        web = new  QTimer(this, "web_timer");
         connect(web, SIGNAL(timeout()),
                 this, SLOT(webLogData()));
         web->start(10000, FALSE); // 10 seconds it more than enough waste
@@ -36,7 +36,7 @@ PWSServer::PWSServer(QString script, QString logDir)
     fdError = open(logDir+"/ErrorLog", O_CREAT|O_RDONLY|O_NONBLOCK, S_IRUSR|S_IWUSR);
     if(fdError > 0){
         lseek(fdError, 0, SEEK_END);
-        error = new("QTimer") QTimer(this, "error_timer");
+        error = new  QTimer(this, "error_timer");
         connect(error, SIGNAL(timeout()),
                 this, SLOT(errorLogData()));
         error->start(10000, FALSE); // 10 seconds, like since who really cares
@@ -47,7 +47,7 @@ PWSServer::PWSServer(QString script, QString logDir)
     }
 
 
-    server = new("KProcess") KProcess();
+    server = new  KProcess();
     /* Setup and create the acutal mathopd process */
     connect(server, SIGNAL(processExited(KProcess *)),
             this, SLOT(serverDied(KProcess *)));
@@ -69,7 +69,7 @@ PWSServer::PWSServer(QString script, QString logDir)
     if(fstat(config, &finfo) == 0){
         char *buf;
         buf = (char *) mmap(0x0, finfo.st_size, PROT_READ, MAP_PRIVATE, config, 0x0);
-        if(buf < 0){
+        if(buf == MAP_FAILED){  /* TQt3 migration: pointer-integer ordered compare was rejected */
             perror("MMAP of config file failed");
             return;
         }
@@ -103,13 +103,13 @@ void PWSServer::showLogWindow(bool show)
 
 void PWSServer::stdoutData(KProcess *proc, char *buf, int len)
 {
-    QString str(buf, len);
+    QString str = QString::fromUtf8(buf, len);  /* TQt3 migration: private ctor */
     logit(str);
 }
 
 void PWSServer::stderrData(KProcess *proc, char *buf, int len)
 {
-    QString str(buf, len);
+    QString str = QString::fromUtf8(buf, len);  /* TQt3 migration: private ctor */
     str.prepend("~4");
     logit(str);
     showLogWindow(TRUE);
@@ -166,6 +166,6 @@ void PWSServer::errorLogData()
 
 void PWSServer::logit(QString txt)
 {
-    log->insertItem(new("ircListItem") ircListItem(txt, &black, log, 0));
+    log->insertItem(new  ircListItem(txt, &black, log, 0));
     log->scrollToBottom(TRUE);
 }

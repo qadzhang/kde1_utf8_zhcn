@@ -256,8 +256,9 @@ void MyTerm::keyPressEvent(QKeyEvent *k) {
 }
 
 
-void MyTerm::insertChar(unsigned char c) {  
-  QMultiLineEdit::insertChar(c);
+void MyTerm::insertChar(unsigned char c) {
+  /* TQt3 migration: TQMultiLineEdit removed insertChar; insert(TQChar) equivalent */
+  QMultiLineEdit::insert(TQChar(c));
 }
 
 

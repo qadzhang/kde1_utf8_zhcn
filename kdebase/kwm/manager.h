@@ -30,7 +30,20 @@
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
 #include <X11/Xatom.h>
+/* shape.h 的声明以宏形式的 Bool/Status 作类型（extern Bool
+ * XShapeQueryExtension(...)、extern Status XShapeQueryVersion(...)）。
+ * 本头的使用链中 kwm.h 可能在先（已为保护 TQt3 枚举摘除二宏），故套
+ * 恢复-解析-再摘护罩：进入时若无宏则恢复，解析 shape.h 后一律摘除，
+ * 保证本头与使用方后续的 TQt3 头都安全。 */
+#ifndef Bool
+#define Bool int
+#endif
+#ifndef Status
+#define Status int
+#endif
 #include <X11/extensions/shape.h>
+#undef Bool
+#undef Status
 
 #include <config.h>
 
@@ -123,16 +136,16 @@ public:
   // if no client has the focus.
   Client* current();
 
-  // add a client into the manager�s client lists
+  // add a client into the manager磗 client lists
   void addClient(Client* c);
   // activate a client: Take care about visibility, floating submenus
   // and focus.
   void activateClient(Client* c, bool set_revert = true);
-  // remove a client from the manager�s client list
+  // remove a client from the manager磗 client list
   void removeClient(Client* c);
   // raise a client. Take care about modal dialogs
   void raiseClient(Client* c);
-  // lower a client. Take care about modal dialogs and kfm�s root icons
+  // lower a client. Take care about modal dialogs and kfm磗 root icons
   void lowerClient(Client* c);
   // close a client. clients with WM_DELETE_WINDOW protocol set
   // (=Pdeletewindow) are closed via wm_delete_window ClientMessage.
@@ -150,7 +163,7 @@ public:
   // user has chosen the brain dead classic focus follows mouse policy
   // and the mouse pointer has left the window. noFocus may give the
   // focus to a window which had the focus before, or put the focus to
-  // a dummy window if there�s no window left on this desktop or the
+  // a dummy window if there磗 no window left on this desktop or the
   // user has chosen an archaic (=classic) desktop policy.
   void noFocus();
   // used by noFocus to put the X11 focus to a dummy window
@@ -181,7 +194,7 @@ public:
   int number_of_desktops;
 
   // Tells the XServer and the client itself to sync the X window with
-  // the datas stored in kwm�s client object. If emit_changed is true,
+  // the datas stored in kwm磗 client object. If emit_changed is true,
   // then all kwm modules are informed about that change.
   void sendConfig(Client* c, bool emit_changed = TRUE);
 
@@ -208,7 +221,7 @@ public:
 
 
   // auxiliary functions to travers all clients according the focus
-  // order. Usefull for kwm�s Alt-tab feature.
+  // order. Usefull for kwm磗 Alt-tab feature.
   Client* nextClient(Client* c);
   Client* previousClient(Client* c);
 
@@ -236,7 +249,7 @@ public:
   void darkenScreen();
   // do the X11R4 session management: send a SAVE_YOURSELF message to
   // everybody who wants to know it and wait for the answers. Also
-  // handles KDE�s session management additions as well as pseudo
+  // handles KDE磗 session management additions as well as pseudo
   // session management with the help of a build in proxy.  After
   // finishing this functions the manager will emit a showLogout()
   // signal.

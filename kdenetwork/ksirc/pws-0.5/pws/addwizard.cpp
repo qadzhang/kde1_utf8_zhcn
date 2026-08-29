@@ -45,33 +45,33 @@ AddServerWizard::AddServerWizard()
     QString title;
     KWizardPage *p;
 
-    wp=new("ServerNamePage") ServerNamePage(this);
+    wp=new  ServerNamePage(this);
     title="Server Name";
-    p = new("KWizardPage") KWizardPage;
+    p = new  KWizardPage;
     p->w = wp;
     p->title = title;
     p->enabled = true;
     addPage(p);
 
-    pdp=new("PublicDirPage") PublicDirPage(this);
+    pdp=new  PublicDirPage(this);
     title="Server's Public Directory";
-    p = new("KWizardPage") KWizardPage;
+    p = new  KWizardPage;
     p->w = pdp;
     p->title = title;
     p->enabled = true;
     addPage(p);
 
-    pp=new("PortPage") PortPage(this);
+    pp=new  PortPage(this);
     title="Server's Port Number";
-    p = new("KWizardPage") KWizardPage;
+    p = new  KWizardPage;
     p->w = pp;
     p->title = title;
     p->enabled = true;
     addPage(p);
 
-    ep=new("EndPage") EndPage(this);
+    ep=new  EndPage(this);
     title="Finish";
-    p = new("KWizardPage") KWizardPage;
+    p = new  KWizardPage;
     p->w = ep;
     p->title = title;
     p->enabled = true;
@@ -125,24 +125,24 @@ QString WizardPage::data()
 ServerNamePage::ServerNamePage(QWidget *parent)
 :WizardPage (parent)
 {
-    QVBoxLayout *vl=new("QVBoxLayout") QVBoxLayout (this,10);
-    QLabel *l=new("QLabel") QLabel(this);
+    QVBoxLayout *vl=new  QVBoxLayout (this,10);
+    QLabel *l=new  QLabel(this);
     l->setText(i18n("Enter a name for this server.\n"
                "This name is used to identify\n"
                "this configuration."));
     l->setMinimumSize(l->sizeHint());
     vl->addWidget(l,10);
 
-    l=new("QLabel") QLabel(this);
+    l=new  QLabel(this);
     l->setText (i18n("Name:"));
     vl->addWidget(l,10);
 
-    name=new("QLineEdit") QLineEdit(this);
+    name=new  QLineEdit(this);
     name->setText(i18n("MyServer"));
     name->setFixedHeight(name->sizeHint().height());
     vl->addWidget(name,0);
 
-    l=new("QLabel") QLabel(this);
+    l=new  QLabel(this);
     l->setText ("");
     vl->addWidget(l,10);
     
@@ -191,29 +191,29 @@ QString ServerNamePage::data()
 PublicDirPage::PublicDirPage(QWidget *parent)
 :WizardPage (parent)
 {
-    QVBoxLayout *vl=new("QVBoxLayout") QVBoxLayout (this,10);
-    QHBoxLayout *hl=new("QHBoxLayout") QHBoxLayout ();
-    QLabel *l=new("QLabel") QLabel(this);
+    QVBoxLayout *vl=new  QVBoxLayout (this,10);
+    QHBoxLayout *hl=new  QHBoxLayout ();
+    QLabel *l=new  QLabel(this);
     l->setText(i18n("Enter the name of the directory where\n"
                "the web pages are located.\n"));
     l->setMinimumSize(l->sizeHint());
     vl->addWidget(l,10);
 
-    l=new("QLabel") QLabel(this);
+    l=new  QLabel(this);
     l->setText (i18n("Directory:"));
     vl->addWidget(l,10);
 
-    name=new("QLineEdit") QLineEdit(this);
+    name=new  QLineEdit(this);
     name->setFixedHeight(name->sizeHint().height());
     name->setText(QDir::homeDirPath()+"/html");
-    QPushButton *examine=new("QPushButton") QPushButton("...",this);
+    QPushButton *examine=new  QPushButton("...",this);
     examine->setFixedSize(examine->sizeHint());
     
     vl->addLayout (hl,0);
     hl->addWidget(name,10);
     hl->addWidget(examine,0);
     
-    l=new("QLabel") QLabel(this);
+    l=new  QLabel(this);
     l->setText ("");
     vl->addWidget(l,10);
     
@@ -263,8 +263,8 @@ QString PublicDirPage::data()
 PortPage::PortPage(QWidget *parent)
 :WizardPage (parent)
 {
-    QVBoxLayout *vl=new("QVBoxLayout") QVBoxLayout (this,10);
-    QLabel *l=new("QLabel") QLabel(this);
+    QVBoxLayout *vl=new  QVBoxLayout (this,10);
+    QLabel *l=new  QLabel(this);
     l->setText(i18n("Enter a port for this server.\n"
                "The port is part of the URL for the server\n"
                "for example, in http://my.server.org:800\n"
@@ -276,11 +276,11 @@ PortPage::PortPage(QWidget *parent)
     l->setMinimumSize(l->sizeHint());
     vl->addWidget(l,10);
 
-    l=new("QLabel") QLabel(this);
+    l=new  QLabel(this);
     l->setText (i18n("Port Number:"));
     vl->addWidget(l,10);
 
-    port=new("KIntLineEdit") KIntLineEdit(this);
+    port=new  KIntLineEdit(this);
     if (geteuid()==0)
         port->setText("80");
     else
@@ -288,7 +288,7 @@ PortPage::PortPage(QWidget *parent)
     port->setFixedHeight(port->sizeHint().height());
     vl->addWidget(port,0);
 
-    l=new("QLabel") QLabel(this);
+    l=new  QLabel(this);
     l->setText ("");
     vl->addWidget(l,10);
     
@@ -312,8 +312,8 @@ QString PortPage::data()
 EndPage::EndPage(QWidget *parent)
 :WizardPage (parent)
 {
-    QVBoxLayout *vl=new("QVBoxLayout") QVBoxLayout (this,10);
-    QLabel *l=new("QLabel") QLabel(this);
+    QVBoxLayout *vl=new  QVBoxLayout (this,10);
+    QLabel *l=new  QLabel(this);
     l->setText(i18n("You have finished configuring\n"
                "the web server.\n"
                "Press OK to save it, Cancel to\n"

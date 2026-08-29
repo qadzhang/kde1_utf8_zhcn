@@ -47,7 +47,7 @@ LoginMultiLineEdit::~LoginMultiLineEdit() {
 
 
 void LoginMultiLineEdit::insertChar(unsigned char c) {
-  QMultiLineEdit::insertChar(c);
+  QMultiLineEdit::insert(TQChar(c));  /* TQt3 migration: insertChar removed */
   p_kppp->debugwindow->addChar(c);
 }
 

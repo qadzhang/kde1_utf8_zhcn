@@ -80,14 +80,17 @@ QString kFileToString(const char* aFileName, bool aEnsureNL, bool aVerbose)
     return 0;
   }
 
-  result.resize(len + (int)aEnsureNL + 1);
-  readLen = file.readBlock(result.data(), len);
-  if (aEnsureNL && result[len-1]!='\n')
+  /* TQt3 迁移:Qt1 的 QString 字节缓冲用法已死;改 TQCString 读原始字节,
+   * 返回时经全局 UTF-8 codec(setCodecForCStrings)构造 TQString */
+  TQCString buf(len + (int)aEnsureNL + 1);
+  readLen = file.readBlock(buf.data(), len);
+  if (aEnsureNL && buf[(int)len-1]!='\n')
   {
-    result[len++] = '\n';
+    buf[(int)len++] = '\n';
     readLen++;
   }
-  result[len] = '\0';
+  buf[(int)len] = '\0';
+  result = TQString(buf);
 
   if (readLen < len)
   {
@@ -165,9 +168,11 @@ bool kStringToFile(const QString aBuffer, const char* aFileName,
     return FALSE;
   }
 
-  len = aBuffer.size() - 1;
+  /* TQt3 迁移:经 utf8() 取字节串(含 NUL 的 size 语义与 Qt1 size() 一致) */
+  TQCString out = aBuffer.utf8();
+  len = out.size() - 1;
   tqDebug("kStringToFile: writing %d bytes", len);
-  writeLen = file.writeBlock(aBuffer.data(), len);
+  writeLen = file.writeBlock(out.data(), len);
 
   if (writeLen < 0) 
   {

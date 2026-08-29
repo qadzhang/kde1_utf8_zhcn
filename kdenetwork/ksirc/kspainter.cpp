@@ -1,6 +1,8 @@
 #include "kspainter.h"
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
+using std::endl;
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 
 #include <qregexp.h>
 #include <qapp.h>
@@ -16,16 +18,16 @@ const QColor KSPainter::num2colour[KSPainter::maxcolour] = { white,
 							     black,
 							     darkBlue,
 							     darkGreen,
-							     red,
-							     brown,
+							     k1c_red,  /* q1compat 约定 */
+							     TQColor(165,42,42),  /* brown */
 							     darkMagenta,
-							     orange,
+							     TQColor(255,165,0),  /* orange */
 							     yellow,
-							     green,
+							     k1c_green,
 							     darkCyan,
 							     cyan,
-							     blue,
-							     pink,
+							     k1c_blue,
+							     TQColor(255,192,203),  /* pink */
 							     gray,
 							     lightGray };
 
@@ -151,8 +153,7 @@ QString KSPainter::stripColourCodes(QString col, QList<int> *xlate){
   if(col.isNull() || col.isEmpty()) // Sanity check
     return noCol;
 
-  col
-  col.replace(QRegExp("~s"), "");
+  col.replace(QRegExp("~s"), "");  /* TQt3 迁移:上方悬空 col 残迹已删 */
 
   if(xlate != 0x0){
     xlate->clear();
@@ -172,7 +173,7 @@ QString KSPainter::stripColourCodes(QString col, QList<int> *xlate){
       }
     }
     else if((col[i] == '~') && ((col[i+1] >= 'a') || (col[i+1] <= 'z'))){ // a->z for vairous control codes
-      switch(col[i+1]){
+      switch(col[i+1].latin1()){  /* TQt3 迁移:TQCharRef 取码值 */
       case 'b':
       case 'u':
       case 'r':
@@ -187,7 +188,7 @@ QString KSPainter::stripColourCodes(QString col, QList<int> *xlate){
 	//        i++; // Move to next character
 	noCol += col.mid(i, 1);
 	if(xlate != 0x0)
-	  xlate->append(new("int") int(i));
+	  xlate->append(new  int(i));
 	i+=2; // Move ahead to next character
 	break;
       }
@@ -197,7 +198,7 @@ QString KSPainter::stripColourCodes(QString col, QList<int> *xlate){
       //      cerr << i << "-" << col.mid(i, 1) << " ";
       noCol += col.mid(i, 1);
       if(xlate != 0x0)
-        xlate->append(new("int") int(i));
+        xlate->append(new  int(i));
 
       i++; // Move ahead to next character
     }
@@ -219,7 +220,7 @@ PainterState::PainterState(QPainter *p){
   bSelect = FALSE;
   bReverse = FALSE;
 
-  p->setBackgroundMode(OpaqueMode);
+  p->setBackgroundMode(TQt::OpaqueMode);
   
 }
 

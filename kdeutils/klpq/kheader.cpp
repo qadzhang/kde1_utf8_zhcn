@@ -1,6 +1,10 @@
 #include "kheader.moc"
 #include "qpainter.h"
 #include "qdrawutl.h"
+/* TQt3 迁移:Qt1 的全局枚举 GUIStyle(MotifStyle/WindowsStyle)随 TQt3 消失,
+ * 本文件按其取值语义补本地常量;风格判定按当代默认(非 Motif)走原
+ * qDrawWinPanel 分支,面板绘制外观与 KDE1 默认观感一致 */
+enum { MotifStyle = 0, WindowsStyle = 1 };
 
 //=======================================================================
 // KHeaderItem internal class
@@ -290,7 +294,7 @@ void KHeader::paintEvent( QPaintEvent * ) // pev )
 	int pos = m_offset;
 	for( int i=0 ; i < (int) labels.size(); i++ )
 	{
-		labels[i]->paint( &paint, &g, style(), pos, width(), height(), i==m_selected);
+		labels[i]->paint( &paint, &g, WindowsStyle, pos, width(), height(), i==m_selected);  /* TQt3 迁移:QWidget::style() 已改为返回样式对象,此处传枚举常量 */
 		pos += labels[i]->size();
 	}
 

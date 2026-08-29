@@ -24,7 +24,7 @@
 
 #define	       MAXPKT	        1024   /* Max size of response from server  */
 #define	       SEQ_SIZE		32     /* Max size of sequence text in resp */ 
-#define	       MAX_DIR_LINESIZE 160+KDEMAXPATHLEN /* Max linesize in directory */
+#define	       MAX_DIR_LINESIZE 160+4096  /* was KDEMAXPATHLEN (kdecore macro gone in TQt3 port) */ /* Max linesize in directory */
 
 #define	       MAX_FWD_DEPTH    20     /* Max fwd pointers to follow        */
 

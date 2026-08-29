@@ -61,6 +61,12 @@ void appendGUIItem(QWidget *w) {
 KfindTabDialog::KfindTabDialog( QWidget *parent, const char *name, const char *searchPath )
     : QTabDialog( parent, name )
   {
+    /* [KDE1 Revival 2026] 本类在 Kfind 里被当作内嵌视图（非独立对话框）使用。
+     *  TQt3 的 QDialog 基类构造强制打上 WType_Dialog，create() 又因此把它
+     *  升级成带 WM 装饰的顶层 X 窗口——Kfind 主体随之全白。这里用
+     *  reparent(f=0) 清掉类型位并按普通子部件重建原生窗口，重新嵌入。 */
+    reparent( parentWidget(), 0, QPoint( 0, 0 ), FALSE );
+
     _searchPath = searchPath;
     
     //Page One of KfTAbDialog

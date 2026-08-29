@@ -777,8 +777,12 @@ void KPostit::findKPostit(int i){
       if( PostitList.current()->hidden == true){
 	PostitList.current()->hidden = false;
 	if(propertystring != (QString) "")
-	    PostitList.current()->setGeometry(KWM::setProperties(PostitList.current()->winId(),
-			     PostitList.current()->propertystring));
+	  { /* TQt3 迁移:空 QRect 防御,同 knotes.cpp:984 处 */
+	    TQRect kr2 = KWM::setProperties(PostitList.current()->winId(),
+			     PostitList.current()->propertystring);
+	    if (!kr2.isNull() && kr2.width() > 1 && kr2.height() > 1)
+	      PostitList.current()->setGeometry(kr2);
+	  }
 
       }
       PostitList.current()->show();
@@ -981,7 +985,12 @@ bool KPostit::loadnotes(){
   QString geom = t.readLine();
   propertystring = geom;
 
-  setGeometry(KWM::setProperties(winId(), geom));
+  { /* TQt3 迁移:首次运行无 KWM 属性时 setProperties 返回空 QRect,
+       会把便笺压成 1x1;空结果跳过,保留构造时的默认尺寸 */
+    TQRect kr = KWM::setProperties(winId(), geom);
+    if (!kr.isNull() && kr.width() > 1 && kr.height() > 1)
+      setGeometry(kr);
+  }
 
   // get the backcolor
 

@@ -502,10 +502,10 @@ void KMSettings::createTabComposer(QWidget *parent)
 
   // set values
   config->setGroup("Composer");
-  autoAppSignFile->setChecked(stricmp(config->readEntry("signature"),"auto")==0);
+  autoAppSignFile->setChecked(config->readEntry("signature") == "auto");  /* TQt3 迁移:readEntry 已返回 TQString,原 stricmp(裸指针)段错误 */
   wordWrap->setChecked(config->readNumEntry("word-wrap",1));
   wrapColumnEdit->setText(config->readEntry("break-at","80"));
-  monospFont->setChecked(stricmp(config->readEntry("font","variable"),"fixed")==0);
+  monospFont->setChecked(config->readEntry("font","variable") == "fixed");  /* TQt3 迁移:同上 */
   pgpAutoSign->setChecked(config->readNumEntry("pgp-auto-sign",0));
 
   i = msgSender->sendImmediate();

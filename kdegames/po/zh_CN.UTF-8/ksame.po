@@ -8,8 +8,8 @@ msgstr ""
 "POT-Creation-Date: 1999-04-16 02:03+0200\n"
 "PO-Revision-Date: 1998-06-14 20:34+0200\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: KSameWidget.cpp:50
 msgid "&New"
@@ -20,14 +20,12 @@ msgid "&Open"
 msgstr "打开(&O)"
 
 #: KSameWidget.cpp:57
-#, fuzzy
 msgid "S&how Highscore"
-msgstr "显示高分榜"
+msgstr "显示最高分(&H)"
 
 #: KSameWidget.cpp:76
-#, fuzzy
 msgid "&Random Board"
-msgstr "随机棋局"
+msgstr "随机棋盘(&R)"
 
 #: KSameWidget.cpp:82
 msgid "About SameGame"
@@ -92,9 +90,8 @@ msgid "SameGame - Quit"
 msgstr "SameGame - 退出"
 
 #: KSameWidget.cpp:193
-#, fuzzy
 msgid "Do you really want to quit?"
-msgstr "你真的要退出吗?"
+msgstr "真的要退出吗？"
 
 #: KSameWidget.cpp:199
 msgid "menu colors not supported"
@@ -125,9 +122,8 @@ msgid "Score: %06i"
 msgstr "分数: %06i"
 
 #: HighScore.cpp:108
-#, fuzzy
 msgid "Name"
-msgstr "游戏"
+msgstr "名称"
 
 #: HighScore.cpp:110
 msgid "Please &enter your name:"

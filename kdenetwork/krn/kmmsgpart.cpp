@@ -38,7 +38,7 @@ int KMMessagePart::size(void) const
   if (mBodySize < 0)
   {
     ((KMMessagePart*)this)->mBodySize = 
-      bodyDecoded().size() - 1;
+      bodyDecoded().length() - 1;  /* TQt3 迁移 */
   }
   return mBodySize;
 }
@@ -54,7 +54,7 @@ void KMMessagePart::setBody(const QString aStr)
   if (encoding!=DwMime::kCteQuotedPrintable &&
       encoding!=DwMime::kCteBase64)
   {
-    mBodySize = mBody.size() - 1;
+    mBodySize = mBody.length() - 1;  /* TQt3 迁移 */
   }
   else mBodySize = -1;
 }
@@ -67,28 +67,28 @@ void KMMessagePart::setBodyEncoded(const QString aStr)
   int encoding = contentTransferEncoding();
   int len;
 
-  mBodySize = aStr.size() - 1;
+  mBodySize = aStr.length() - 1;  /* TQt3 迁移 */
 
   switch (encoding)
   {
   case DwMime::kCteQuotedPrintable:
-    dwSrc = DwString(aStr.data(), aStr.size()-1);
+    dwSrc = DwString(aStr.latin1(), aStr.length()-1);  /* TQt3 迁移 */
     DwEncodeQuotedPrintable(dwSrc, dwResult);
     len = dwResult.size();
     mBody.truncate(len);
     memcpy(mBody.data(), dwResult.c_str(), len+1);
     break;
   case DwMime::kCteBase64:
-    dwSrc = DwString(aStr.data(), aStr.size()-1);
+    dwSrc = DwString(aStr.latin1(), aStr.length()-1);  /* TQt3 迁移 */
     DwEncodeBase64(dwSrc, dwResult);
     len = dwResult.size();
     mBody.truncate(len);
     memcpy(mBody.data(), dwResult.c_str(), len+1);
     break;
-    len = aStr.size()-1;
+    len = aStr.length()-1;  /* TQt3 迁移 */
     dwSrc = DwString(aStr.data(), len);
     DwEncodeBase64(dwSrc, dwResult);
-    mBody = QString(dwResult.c_str(),dwResult.size());
+    mBody = QString::fromLatin1(dwResult.c_str(), dwResult.size());  /* TQt3 迁移 */
     break;
   default:
     tqDebug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
@@ -113,21 +113,21 @@ const QString KMMessagePart::bodyDecoded(void) const
   switch (encoding)
   {
   case DwMime::kCteQuotedPrintable:
-    dwSrc = DwString(mBody.data(), mBody.size());
+    dwSrc = DwString(mBody.latin1(), mBody.length());  /* TQt3 迁移:QString 字节访问 */
     DwDecodeQuotedPrintable(dwSrc, dwResult);
     len = dwResult.size() + 1;
-    result.resize(len);
-    memcpy((void*)result.data(), (void*)dwResult.c_str(), len);
+    /* TQt3 迁移:Qt1 的 QString 字节缓冲(resize/data)已死;经 latin1 字节串桥接 */
+    result = TQString(TQCString(dwResult.c_str(), len));
 #if 0
     result = dwResult.c_str();
 #endif
     break;
   case DwMime::kCteBase64:
-    dwSrc = DwString(mBody.data(), mBody.size());
+    dwSrc = DwString(mBody.latin1(), mBody.length());  /* TQt3 迁移:QString 字节访问 */
     DwDecodeBase64(dwSrc, dwResult);
     len = dwResult.size() + 1;
-    result.resize(len);
-    memcpy((void*)result.data(), (void*)dwResult.c_str(), len);
+    /* TQt3 迁移:Qt1 的 QString 字节缓冲(resize/data)已死;经 latin1 字节串桥接 */
+    result = TQString(TQCString(dwResult.c_str(), len));
     break;
   default:
     tqDebug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
@@ -159,7 +159,7 @@ void KMMessagePart::magicSetType(bool aAutoDecode)
   if (aAutoDecode) bod = bodyDecoded();
   else bod = mBody;
 
-  mimetype = sMagic->findBufferType(bod, bod.size()-1)->getContent();
+  mimetype = sMagic->findBufferType(bod.latin1(), bod.length()-1)->getContent();  /* TQt3 迁移 */
   sep = mimetype.find('/');
   mType = mimetype.left(sep);
   mSubtype = mimetype.mid(sep+1, 64);

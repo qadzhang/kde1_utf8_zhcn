@@ -9,7 +9,9 @@
 
 #include "ioLAG.h"
 #include "control_message.h"
-#include <iostream.h>
+#include <iostream>
+using std::endl;
+using std::cerr;  /* TQt3 迁移:老 C++ 头改标准头 */
 
 KSircIOLAG::KSircIOLAG(KSircProcess *_proc)
   : QObject(),

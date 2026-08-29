@@ -79,7 +79,7 @@ void Spooler::parseUpdate( MyRowTable *lb_list, QListBox *lb_status, QString lpq
   unsigned char c;
   for( j = 0; j < lpq_in_buffer.length(); j++ )
     {
-      c = lpq_in_buffer[j];
+      c = lpq_in_buffer[j].latin1();  /* TQt3 迁移:TQString[] 返回 TQCharRef,经 latin1() 取字节 */
       if ( c != '\n' )
 	temp += c;
       else
@@ -285,7 +285,7 @@ void SpoolerLprng::parseUpdate( MyRowTable *lb_list, QListBox *lb_status, QStrin
   unsigned char c;
   for( j = 0; j < lpq_in_buffer.length(); j++ )
     {
-      c = lpq_in_buffer[j];
+      c = lpq_in_buffer[j].latin1();  /* TQt3 迁移:TQString[] 返回 TQCharRef,经 latin1() 取字节 */
       if ( c != '\n' )
 	temp += c;
       else

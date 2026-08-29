@@ -8,8 +8,8 @@ msgstr ""
 "POT-Creation-Date: 1999-01-23 02:09+0100\n"
 "PO-Revision-Date: 1998-06-12 08:33 MET DST\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 #: knu.cpp:150 knu.cpp:309
 msgid "&Ping"
@@ -23,7 +23,6 @@ msgstr "路由跟踪(&T)"
 msgid "Host &resolution"
 msgstr "域名解析[&R]"
 
-#
 #: knu.cpp:181
 msgid "F&inger"
 msgstr "Finger(&I)"
@@ -85,6 +84,10 @@ msgid ""
 "\n"
 "Bertrand"
 msgstr ""
+"Knu\n"
+"版本 %s\n"
+"\n"
+"Bertrand"
 
 #: knu.cpp:469
 msgid "About..."
@@ -92,7 +95,7 @@ msgstr "关于..."
 
 #: knu.cpp:602
 msgid "Network utilities"
-msgstr ""
+msgstr "网络实用工具"
 
 #: CommandDlg.cpp:131
 msgid "H&ost:"
@@ -163,35 +166,35 @@ msgstr " - 配置"
 
 #: MtrDlg.cpp:87
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: MtrDlg.cpp:88
 msgid "Hostname"
-msgstr ""
+msgstr "主机名"
 
 #: MtrDlg.cpp:89
 msgid "Loss"
-msgstr ""
+msgstr "丢包率"
 
 #: MtrDlg.cpp:91
 msgid "Rcv"
-msgstr ""
+msgstr "收包"
 
 #: MtrDlg.cpp:93
 msgid "Snt"
-msgstr ""
+msgstr "发包"
 
 #: MtrDlg.cpp:95
 msgid "Best"
-msgstr ""
+msgstr "最佳"
 
 #: MtrDlg.cpp:97
 msgid "Avg"
-msgstr ""
+msgstr "平均"
 
 #: MtrDlg.cpp:99
 msgid "Worst"
-msgstr ""
+msgstr "最差"
 
 #: MtrDlg.cpp:142 PingDlg.cpp:100 TracerouteDlg.cpp:98
 msgid "Make host &name resolution"
@@ -253,6 +256,5 @@ msgstr "服务器[&V]:"
 msgid "&User:"
 msgstr "用户[&U]:"
 
-#
 #~ msgid "&Matt's traceroute"
 #~ msgstr "&Matt 的 traceroute"

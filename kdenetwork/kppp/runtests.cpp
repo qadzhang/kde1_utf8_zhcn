@@ -352,7 +352,7 @@ int runTests() {
       char buf[2048]; // safe
       while(f != NULL && !feof(f)) {
 	if(fgets(buf, sizeof(buf), f) != NULL) {
-	  QString s(buf, sizeof(buf));
+	  QString s = QString::fromUtf8(buf);  /* TQt3 migration: private ctor */
 
 	  s = s.stripWhiteSpace();
 	  if(s[0] == '#' || s.length() == 0)

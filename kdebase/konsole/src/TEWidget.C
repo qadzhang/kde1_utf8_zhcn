@@ -862,6 +862,14 @@ void TEWidget::clearImage()
 
 void TEWidget::calcGeometry()
 {
+  /* [KDE1 Revival 2026] TQt3 构造期 setFont 不再触发 fontChange 回调，
+   *  font_w/font_h 会停留在构造默认值 1——整屏文字被压成一像素字、
+   *  窗口尺寸计算随之全错（实测 fontChange 从未到达）。
+   *  这里在每次几何计算前主动重取字体度量兜底（resize 频率低，代价可忽略）。
+   *  Who: resizeEvent→propagateSize→calcGeometry 为全部必经路径。 */
+  font_h = fontMetrics().height();
+  font_w = fontMetrics().maxWidth();
+  font_a = fontMetrics().ascent();
   scrollbar->resize(SCRWIDTH, contentsRect().height());
   switch(scrollLoc)
   {

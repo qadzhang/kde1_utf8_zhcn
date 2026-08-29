@@ -50,7 +50,7 @@ public:
   virtual bool modified(void) const { return mModified; }
 
 protected:
-  virtual int compareItems(GCI item1, GCI item2);
+  virtual int compareItems(TQPtrCollection::Item item1, TQPtrCollection::Item item2);  /* TQt3 migration: GCI -> Item */
 
   /** Displays a detailed message box and returns 'status' */
   virtual int KMAddrBook::fileError(int status) const;

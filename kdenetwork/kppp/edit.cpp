@@ -1029,7 +1029,7 @@ void ScriptWidget::insertButton() {
 
 void ScriptWidget::removeButton() {
  int stlc = stl->currentItem();
- if(stl >= 0) {
+ if(stlc >= 0) {  /* TQt3 迁移:原代码此处误写 stl(指针)与 0 比较,Qt1 容忍,Qt3 报错;实义为 stlc */
    sl->removeItem(stlc);
    stl->removeItem(stlc);
    adjustScrollBar();

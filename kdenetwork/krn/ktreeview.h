@@ -256,9 +256,11 @@ protected:
     /**
      * paints the highlighted text
      */
+    /* TQt3 迁移:Qt1 全局枚举 GUIStyle 已消亡,签名按取值语义放宽为 int
+     * (调用方传枚举常量,实现端仅作比较) */
     virtual void paintHighlight(QPainter* p, int indent,
 			const QColorGroup& cg, bool hasFocus,
-			GUIStyle style) const;
+			int style) const;
 
     /**
      * paints the item's text
