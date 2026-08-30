@@ -23,6 +23,11 @@ Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
 Description: KDE 1.2.0 games (kdegames) - restored
 
+Package: kde1-graphics
+Architecture: amd64
+Depends: kde1-core (= ${binary:Version})
+Description: KDE 1.2.0 graphics applications (kdegraphics) - restored
+
 Package: kde1-utils
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
@@ -41,7 +46,8 @@ Description: KDE 1.2.0 toys (kdetoys) - restored
 Package: kde1
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
-Recommends: kde1-games (= ${binary:Version}), kde1-utils (= ${binary:Version}),
+Recommends: kde1-games (= ${binary:Version}), kde1-graphics (= ${binary:Version}),
+ kde1-utils (= ${binary:Version}),
  kde1-network (= ${binary:Version}), kde1-toys (= ${binary:Version}),
  fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
 Description: KDE 1.2.0 Revival - session integration metapackage

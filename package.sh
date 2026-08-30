@@ -36,7 +36,7 @@ OUTSRC="$DIST/src"
 PKGTMP="$DIST/packagetmp"
 
 # ── 1. 前置检查：7 模块构建标记
-for i in kdelibs kdebase kdegames kdeutils kdenetwork kdetoys; do
+for i in kdelibs kdebase kdegames kdegraphics kdeutils kdenetwork kdetoys; do
     if [ ! -f "$i/build/built" ]; then
         echo "错误：模块 $i 尚未构建，请先执行 ./build.sh" >&2
         exit 1
@@ -52,7 +52,7 @@ done
 #   kde1-toys        —— kdetoys（可选）
 #   kde1             —— 元包（会话集成；依赖 core，Recommends 四个可选包）
 rm -rf "$PKGTMP"
-mkdir -p "$PKGTMP/core" "$PKGTMP/games" "$PKGTMP/utils" "$PKGTMP/network" "$PKGTMP/toys" \
+mkdir -p "$PKGTMP/core" "$PKGTMP/games" "$PKGTMP/graphics" "$PKGTMP/utils" "$PKGTMP/network" "$PKGTMP/toys" \
          "$OUTDEB" "$OUTSRC"
 # 链接期需经 LD_LIBRARY_PATH 找到 staging 里的间接依赖库（与 build.sh 同因：
 # kjots1 等程序链接时，libkfile.so 的间接依赖 libkfm.so.2 由此解析）
@@ -76,11 +76,12 @@ for i in kdelibs kdebase; do
 done
 echo "=== 组装四个可选应用包树（games/utils/network/toys 各归各包）"
 ( cd kdegames/build  && make install DESTDIR="$PKGTMP/games"   > /dev/null 2>&1 )
+( cd kdegraphics/build && make install DESTDIR="$PKGTMP/graphics" > /dev/null 2>&1 )
 ( cd kdeutils/build  && make install DESTDIR="$PKGTMP/utils"   > /dev/null 2>&1 )
 ( cd kdenetwork/build && make install DESTDIR="$PKGTMP/network" > /dev/null 2>&1 )
 ( cd kdetoys/build   && make install DESTDIR="$PKGTMP/toys"    > /dev/null 2>&1 )
 # 1999 年个别脚本被 install 成 005（属主无读权，如 kfmsu2），统一修复属主读写位
-chmod -R u+rwX "$PKGTMP/core" "$PKGTMP/games" "$PKGTMP/utils" "$PKGTMP/network" "$PKGTMP/toys"
+chmod -R u+rwX "$PKGTMP/core" "$PKGTMP/games" "$PKGTMP/graphics" "$PKGTMP/utils" "$PKGTMP/network" "$PKGTMP/toys"
 
 # ── 控制文件公共生成函数：$1=内容树目录名 $2=包名 $3=依赖 $4=推荐 $5=描述
 mkctrl() {
@@ -119,6 +120,12 @@ mkctrl games kde1-games \
     "KDE 1.2.0 games (kdegames) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/games" "$OUTDEB/kde1-games_${VERSION}-${REL}_amd64.deb"
 
+mkctrl graphics kde1-graphics \
+    "kde1-core (= ${VERSION}-${REL})" \
+    "" \
+    "KDE 1.2.0 graphics applications (kdegraphics) - restored"
+dpkg-deb --root-owner-group -b "$PKGTMP/graphics" "$OUTDEB/kde1-graphics_${VERSION}-${REL}_amd64.deb"
+
 mkctrl utils kde1-utils \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
@@ -155,7 +162,7 @@ Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
 Section: x11
 Priority: optional
 Depends: kde1-core (= ${VERSION}-${REL})
-Recommends: kde1-games (= ${VERSION}-${REL}), kde1-utils (= ${VERSION}-${REL}), kde1-network (= ${VERSION}-${REL}), kde1-toys (= ${VERSION}-${REL}), fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
+Recommends: kde1-games (= ${VERSION}-${REL}), kde1-graphics (= ${VERSION}-${REL}), kde1-utils (= ${VERSION}-${REL}), kde1-network (= ${VERSION}-${REL}), kde1-toys (= ${VERSION}-${REL}), fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
 Description: KDE 1.2.0 Revival - session integration metapackage
  Installs the lightdm session entry (KDE 1.2.0 Revival) and the
  startkde-kde1 wrapper which sets KDEDIR/PATH/LD_LIBRARY_PATH, starts
@@ -179,7 +186,7 @@ tar -cJf "$OUTSRC/kde1_${VERSION}-${REL}.debian.tar.xz" -C "$DEBSRC" "kde1_${VER
 cat > "$OUTSRC/kde1_${VERSION}-${REL}.dsc" << EOF
 Format: 3.0 (native)
 Source: kde1
-Binary: kde1, kde1-core, kde1-games, kde1-utils, kde1-network, kde1-toys
+Binary: kde1, kde1-core, kde1-games, kde1-graphics, kde1-utils, kde1-network, kde1-toys
 Version: ${VERSION}-${REL}
 Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
 Architecture: amd64

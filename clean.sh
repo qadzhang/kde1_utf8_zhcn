@@ -14,13 +14,13 @@
 #
 # 伪代码：
 #   1. 删除 tqt3-build/（build.sh 从 tqt3/ pristine 拷出的构建树，含补丁与标记）
-#   2. 模块清单 = kdelibs kdebase kdegames kdeutils kdenetwork kdetoys
+#   2. 模块清单 = kdelibs kdebase kdegames kdegraphics kdeutils kdenetwork kdetoys
 #      （与 build.sh 主循环的清单逐项一致，任何一侧增删模块必须同步另一侧）
 #   3. 逐个删除 <模块>/build
 #   4. 删除根下 staging/（build.sh 的 DESTDIR 暂存区）
 
 rm -rf tqt3-build
-for i in kdelibs kdebase kdegames kdeutils kdenetwork kdetoys; do
+for i in kdelibs kdebase kdegames kdegraphics kdeutils kdenetwork kdetoys; do
 	rm -rf "$i/build"
 done
 rm -rf staging

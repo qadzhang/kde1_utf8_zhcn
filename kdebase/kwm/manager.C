@@ -350,8 +350,15 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     bool stacking = e->value_mask & CWStackMode;
     int stack_mode = e->detail;
 
-    e->value_mask |= ~CWStackMode;
-    e->value_mask |= ~CWSibling;
+    //   Modified for the KDE1 Revival Project, 2026
+    //   [2026-08-30] 堆叠位屏蔽手误修复：原 |=(~CWStackMode) 把 value_mask
+    //   其余全部位置 1（含 CWSibling/CWStackMode），XConfigureWindow 以无效
+    //   sibling/stack_mode 请求必然 BadMatch——整条重配置（尺寸/位置/堆叠）
+    //   报废，实机日志反复刷 X_ConfigureWindow BadMatch，窗口层序错乱（新窗
+    //   不置顶、激活窗不上浮）。本意是屏蔽客户请求的堆叠意图（kwm 统一管理
+    //   层序），应为 &=(~位)。
+    e->value_mask &= ~CWStackMode;
+    e->value_mask &= ~CWSibling;
 
 
     e->value_mask |= CWBorderWidth;

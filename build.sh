@@ -170,7 +170,7 @@ cd ..
 # ── 主构建循环：6 个模块严格按依赖顺序；configured/built/installed 三个标记文件
 #    实现断点续跑（已成功的步骤直接跳过）；install 经 DESTDIR 重定向到暂存区，全程无提权；
 #    模块清单与 clean.sh 保持同步
-for i in kdelibs kdebase kdegames kdeutils kdenetwork kdetoys; do
+for i in kdelibs kdebase kdegames kdegraphics kdeutils kdenetwork kdetoys; do
 	echo "=== 开始处理模块：$i"
 	mkdir -p $i/build
 	cd $i/build

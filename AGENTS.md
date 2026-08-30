@@ -12,7 +12,7 @@
 2. **现代输入法稳定接入**：中文输入按现代输入法框架运行——**fcitx5 与 fcitx 两代框架都必须稳定、完美运行**（经 XIM 通道接入，缺一不可）。
 3. **浏览器内核跟进**：KDE 1 自带浏览器（kfm）的 HTML 内核过于古老，以 **WebKit2GTK 为新内核**（Debian 12 官方包，完整现代 CSS / JIT JS / HTTPS），与 1999 年原始渲染器构成**新旧双内核可切换**（新内核看现代网页，旧内核保持历史原貌）；CEF（Chromium）为备选路线；Firefox/Gecko 无维护中的嵌入接口，已排除。
 4. **全面中文化与英文对齐**：菜单、帮助、提示等**所有**界面内容全面中文化，覆盖率与英文原文对齐——不是"部分翻译"，而是与英文功能完全对等。**kvt 终端内的中文内容（文件名、命令输出等）显示正常；与系统现代应用（浏览器、现代 Qt/GTK 程序）之间可双向复制粘贴中文文本**。**翻译质量硬性要求**：禁止闭门自造译法——每条新增/修订翻译必须 ① 上网检索通行、准确的中文译法；② **对齐当今 KDE 6（Plasma 6 / KDE Gear）的 zh_CN 官方翻译术语**，保证用词与现代 KDE 一致（用户从 KDE 6 切换到本项目不应感到术语跳变）；③ 1999 年自带的 GB2312 旧翻译仅作参考底稿，其术语与现代 KDE 冲突时以现代术语为准。
-5. **Debian 软件包交付（唯一正式安装方式）**：正式安装**只经 deb 包**（dpkg / apt）——源码包（sdeb：.dsc + .orig.tar.* + .debian.tar.*）与二进制 .deb 包都要产出，且**分目录存放**（`dist/src/` 与 `dist/deb/`，不得混放）。**.deb 须开箱即用、零手工配置**，包内容至少含：① `/usr/kde1` 全树（各模块经 DESTDIR 暂存收编）；② `/usr/share/xsessions/kde1.desktop` 会话入口；③ **startkde 包装启动脚本**（内部完成 PATH / LD_LIBRARY_PATH / KDEDIR 环境设置后 exec 真正的 startkde——用户不需要写 `.xinitrc`、不需要 export 任何变量）；④ TQt3 运行库与工具（libtqt-mt、tqmoc 等）；⑤ 运行时依赖声明（libxft / fontconfig / libwebkit2gtk、中文字体等）。安装后 lightdm 会话菜单即出现 KDE 1。**安装/卸载走 dpkg 标准生命周期**：`apt install` 安装、`apt remove` 干净移除、不留任何游离于包管理之外的文件；按模块拆分：`kde1-core`（tqt3+kdelibs+kdebase，桌面必需）、`kde1-games`/`kde1-utils`/`kde1-network`/`kde1-toys` 四个可选应用包、`kde1` 元包（会话入口 + startkde 包装，Recommends 各可选包但可单独不装）。`build.sh` 仅负责开发期构建与 `./staging` 暂存运行验证，**不得 sudo 直接安装到系统**。
+5. **Debian 软件包交付（唯一正式安装方式）**：正式安装**只经 deb 包**（dpkg / apt）——源码包（sdeb：.dsc + .orig.tar.* + .debian.tar.*）与二进制 .deb 包都要产出，且**分目录存放**（`dist/src/` 与 `dist/deb/`，不得混放）。**.deb 须开箱即用、零手工配置**，包内容至少含：① `/usr/kde1` 全树（各模块经 DESTDIR 暂存收编）；② `/usr/share/xsessions/kde1.desktop` 会话入口；③ **startkde 包装启动脚本**（内部完成 PATH / LD_LIBRARY_PATH / KDEDIR 环境设置后 exec 真正的 startkde——用户不需要写 `.xinitrc`、不需要 export 任何变量）；④ TQt3 运行库与工具（libtqt-mt、tqmoc 等）；⑤ 运行时依赖声明（libxft / fontconfig / libwebkit2gtk、中文字体等）。安装后 lightdm 会话菜单即出现 KDE 1。**安装/卸载走 dpkg 标准生命周期**：`apt install` 安装、`apt remove` 干净移除、不留任何游离于包管理之外的文件；按模块拆分：`kde1-core`（tqt3+kdelibs+kdebase，桌面必需）、`kde1-games`/`kde1-graphics`/`kde1-utils`/`kde1-network`/`kde1-toys` 五个可选应用包、`kde1` 元包（会话入口 + startkde 包装，Recommends 各可选包但可单独不装）。`build.sh` 仅负责开发期构建与 `./staging` 暂存运行验证，**不得 sudo 直接安装到系统**。
 6. **现代系统集成**：图形登录由**系统显示管理器管理**（本机为 lightdm，方式与 XFCE 等现代桌面一致）——KDE 1 会话出现在 lightdm 会话菜单、选择后直接进入桌面，**不依赖手工 `startx`**；桌面事件音效**接入现代音频栈**（PipeWire/PulseAudio），1999 年的 `/dev/dsp`（OSS）失效路径必须解决（padsp/osspd 兼容层或原生补丁），提示音正常发声；**XDG 用户目录兼容**——桌面/模板等用户目录与宿主现代桌面共用同一套（经 `~/.config/user-dirs.dirs`，中文系统即 `~/桌面`、`~/模板`），回收站对齐 freedesktop 标准（`~/.local/share/Trash`），不得另建 1999 年的 `~/Desktop` 体系。
 7. **打印接入 CUPS**：KDE1 的打印（Qt1 QPrinter 经 `lpr` 命令提交）必须正常接入现代 CUPS 打印体系——经 `cups-bsd` 兼容层（提供 `/usr/bin/lpr`）零代码打通，deb 依赖声明完整；实测打印任务能进入 CUPS 队列并产出。
 8. **全面 UTF-8 融合**：多字节感知**不止于编辑部件，而是所有模块全面的接入、融合**——Qt 内核与各 KDE 模块中一切按字节处理文本的路径（光标移动、退格/删除、选区、字符串截断/省略、字符计数与长度限制、宽度测量与对齐、表格/列表列宽、文件名与标题显示、查找替换等），在中文文本上**一律按 UTF-8 字符边界精确操作**：不切断字符、不产生错位、计数与宽度准确。验收口径：KDE 1 作为整体**完美运行于 UTF-8 系统**，用户在任何模块、任何文本交互处都感知不到"这是单字节时代的程序"（该目标 1999 年 CLE 补丁未达成，本项目必须达成）。
@@ -34,8 +34,8 @@
 | `port/` | KDE1→TQt3 迁移脚手架（strangler fig 模式）：`q1compat.h`（Q→TQ 映射 + tq 函数族）、331 个转发头、两个生成器脚本；全部模块显式 TQ 化后整体拆除 |
 | `kdelibs/` | KDE 1.1.2 基础库（kdecore、kdeui 等） |
 | `kdebase/` | KDE 1.1.2 基础应用（kwm、kpanel、kfm、kvt、kdm 等） |
-| `kdegames/` `kdeutils/` `kdenetwork/` `kdetoys/` | 其余应用模块 |
-| `build.sh` | 一键构建脚本（按 tqt3 → kdelibs → kdebase → 应用 顺序） |
+| `kdegames/` `kdegraphics/` `kdeutils/` `kdenetwork/` `kdetoys/` | 其余应用模块（kdegraphics 为 2026-08 新纳入：ksnapshot/kview/kpaint/kiconedit/kfract/kdvi/kfax/kghostview） |
+| `build.sh` | 一键构建脚本（按 tqt3 → kdelibs → kdebase → 各应用模块 顺序） |
 | `clean.sh` | 清理脚本（删除各模块 `build/` 目录与 `staging/` 暂存区；模块清单必须与 `build.sh` 保持同步） |
 | `sandbox.sh` | 开发期后台桌面沙箱（Xvfb `:99` + fcitx5 私有总线 + x11vnc 仅 127.0.0.1:5901），Remmina 连入即可体验 staging 版桌面，不扰宿主会话与 lightdm |
 | `staging/` | 开发期安装暂存区（`build.sh` 以 DESTDIR 重定向 `make install` 所得，布局对应最终 `/usr/kde1`；由 `clean.sh` 清理） |
@@ -183,6 +183,7 @@ int qt_mb_text_width( const char *s, int len )
 4. **新增文件的作者归属**：由 GLM-5.3 编写的新增文件，在文件头注明 `Written with GLM-5.3 (Z.ai) for the KDE1 Revival Project`。
 5. **语言与编码**：文档用简体中文；代码的编码与注释规范详见 §5（新增代码用中文注释，历史代码注释保持原样）。
 6. **路线图推进**：完成一项即在 §7"路线图"把 `[ ]` 改为 `[x]`，并在 CHANGELOG.md 记一条，不在其他任何地方留痕。
+7. **外部库一律用现代现行版本与现行 API（强制）**：凡项目代码依赖系统第三方库之处（图像编解码 libpng/libjpeg/libtiff/giflib、音频、X11 扩展等），一律使用 Debian 12 所载现代版本的**现行 API** 直接实现，**禁止**为 1999 年老接口写兼容 shim/宏桥/内嵌库副本。历史代码因旧库产生的缺陷（如 1999 年 PNG 读取不含 gamma/ICC 处理导致色彩错误）一律以现代库能力重写修正——应用二十余年积累的编解码成果，而非迁就 1999 年的调用方式。随源码携带的旧版库副本（如 kfax/libtiffax）同规则逐步淘汰为系统库。
 7. **内容同步更新**：同一事实在多处出现时（模块清单、构建顺序、安装前缀、版本号、约定口径、代码与其注释/文档的对应关系等），修改任何一处必须**同步更新其余各处**——代码与文档不一致、章程与实际做法脱节，均视为本次修改未完成。发现存量不一致时，随当前工作一并修正并记入 CHANGELOG.md。
 
 ## 7. 路线图（当前状态）

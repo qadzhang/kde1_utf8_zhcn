@@ -91,6 +91,7 @@ endif()
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/KDE1InstallDirs.cmake
     cmake/FindKDE1.cmake
+    cmake/FindKPathsea.cmake
     cmake/FindTQt3.cmake
     cmake/KDE1Macros.cmake
     cmake/KDE1Macros.cmake

@@ -306,6 +306,15 @@ static const TQColor k1c_darkGray(64,64,64);
 
 /* ── 4i. Qt1 全局杂项宏/枚举 ─────────────────────────────────────── */
 typedef int QCOORD;  // Qt1 坐标类型（TQt3 已并入 int）
+// [KDE1 Revival 2026] Qt1 整数类型别名（TQt3 冠 T 前缀；kdegraphics 等
+// 新纳入模块的 1999 源码大量使用 Q_UINT8/Q_UINT16/Q_UINT32/Q_INT 族）
+typedef unsigned char   Q_UINT8;
+typedef unsigned short  Q_UINT16;
+typedef unsigned int    Q_UINT32;
+typedef signed char     Q_INT8;
+typedef short           Q_INT16;
+typedef int             Q_INT32;
+#define RGB_MASK TQT_RGB_MASK  // TQColor 的 RGB 掩码常量
 /* ── 4j. Qt1 全局对齐/文本标志枚举（AlignLeft 等 → TQt 命名空间） ── */
 #define AlignLeft      TQt::AlignLeft
 #define AlignRight     TQt::AlignRight

@@ -79,7 +79,7 @@ sudo apt install fonts-noto-cjk fcitx5 fcitx5-chinese-addons \
 ./build.sh --prefix=/usr/kde1
 ```
 
-构建顺序：tqt3 → kdelibs → kdebase → kdegames / kdeutils / kdenetwork / kdetoys（脚本自动完成）。`build.sh` 只做编译，并把安装结果经 DESTDIR 重定向到仓库内 `./staging` 暂存区——零提权、不写入任何系统目录；需要干净重建时，先执行 `./clean.sh` 清理各模块构建产物（`build/` 目录）与暂存区，再重新运行 `./build.sh`。
+构建顺序：tqt3 → kdelibs → kdebase → kdegames / kdegraphics / kdeutils / kdenetwork / kdetoys（脚本自动完成）。`build.sh` 只做编译，并把安装结果经 DESTDIR 重定向到仓库内 `./staging` 暂存区——零提权、不写入任何系统目录；需要干净重建时，先执行 `./clean.sh` 清理各模块构建产物（`build/` 目录）与暂存区，再重新运行 `./build.sh`。
 
 开发期运行（不安装，直接从暂存区起；`~/.xinitrc` 末行 `exec startkde` 后执行 `startx`）：
 
