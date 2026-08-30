@@ -138,7 +138,9 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   QGroupBox *group;
   QRadioButton *rb;
 	
-  QGridLayout *topLayout = new QGridLayout( this, 8, 6, 5 );
+  // [KDE1 Revival 2026] 显式行/列间距：TQt3 下 spacing 走默认趋零，
+  // 「颜色」组框标题与上方「桌面」组底边重叠（标题被裁半截）
+  QGridLayout *topLayout = new QGridLayout( this, 8, 6, 5, 8 );
 
   //  topLayout->addRowSpacing(3,5);
 
@@ -475,8 +477,10 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   cacheLCD->setFrameStyle( QFrame::NoFrame );
   cacheLCD->adjustSize();
   //CT 30Nov1998
-  cacheLCD->setMinimumHeight(2/3*cacheLCD->height());
-  cacheLCD->setMinimumWidth(cacheLCD->width()-20);
+  // [KDE1 Revival 2026] 2/3==0 整除bug；宽度不再人为削减 20px
+  //（TQt3 的 QLCDNumber 在过窄区域里段位错位成撕裂状）
+  cacheLCD->setMinimumHeight(cacheLCD->height()*2/3);
+  cacheLCD->setMinimumWidth(cacheLCD->width());
   //CT
   cacheLCD->display( cacheSize );
   topLayout->addMultiCellWidget( cacheLCD, 4, 6, 4, 4 );

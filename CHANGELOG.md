@@ -2,6 +2,12 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-30（第二批：控制中心模块拉起 + 背景布局/壁纸三问题闭环）
+
+- **kcontrol 树选模块拉不起（控制中心里点任何设置项无反应）根治**：configlist.cpp 的 execute() 用 KProcess 裸名 execvp 沿 PATH 搜索 kcmdisplay 等模块二进制——非 startkde 包装环境 PATH 不含 /usr/kde1/bin，execve 全部 ENOENT（strace 实证逐路径失败）。修复：KDEDIR 存在且裸名可在 $KDEDIR/bin 命中时直接拼绝对路径，PATH 正常环境行为不变。终验：树选「背景」→ 模块进程拉起 → KWM 吞窗 → 完整背景设置页嵌入控制中心。附带确认 KTreeList 键盘语义（+/− 展开折叠、Return 选中执行，1999 年原生无 Right/Left 分支）。
+- **背景设置页布局两处修复（kcmdisplay backgnd.cpp）**：① topLayout 网格构造补显式 spacing 8——TQt3 下默认行距趋零，「颜色」组框标题与上方「桌面」组底边重叠（标题被裁半截）；② 缓存大小 LCD 的 setMinimumHeight(2/3*h) 是 C 整数除法（2/3==0），高度被压零致「1024」段位撕裂，改 h*2/3 并撤掉人为削 20px 宽度。
+- **图片壁纸全链路复测通过**（用户报「壁纸打不开/无法切图片壁纸」的闭环）：独立与 kcontrol 嵌入双路实测——壁纸下拉 140 张正常列出 → 选 abnormal_fluid.jpg 预览即变 → 「应用」写 desktop0rc（UseWallpaper=true/Wallpaper=abnormal_fluid.jpg）→ kbgndwm 收 kbgwm_reconfigure 重载 → 桌面整屏上墙；UI 无重置。此链路的 activated(const char*) 信号失效根因已由上一批修复（int 索引槽），本批实测确认。测试配置已还原，调试打点全部清理。
+
 ## 2026-08-30（kfontmanager 空列表修复：0 字节 kdefonts 误判"已安装"）
 
 - 早前测试点"应用"生成的 **0 字节 ~/.kde/share/config/kdefonts** 使 loadKDEInstalledFonts() 误判"已有自定义字体列表"——fontconfig 枚举整块被门槛跳过，"可用的X11字体"只剩 X 核心字体、"KDE可用的字体"全空。两处修复：① fontconfig 枚举无条件执行（kdefonts 仅决定"KDE可用"列是否自动填充）；② 文件读到 0 个有效条目时返回 false（空文件视为无自定义列表）。已删测试副产物空文件，双列表实测填满。
