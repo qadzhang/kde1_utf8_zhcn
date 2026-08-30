@@ -2,6 +2,12 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-31（第三批：git 历史重写——tqt3-build 路径从全部历史清除）
+
+- **历史重写（filter-branch index-filter）**：上一批只把 tqt3-build 移出了索引，6697 条路径仍存在于 2026-08 底座迁移以来的历史提交中；本批对全部历史重写剔除该路径——历史中 `git log -- tqt3-build` 命中归零，重写后 HEAD 树与重写前逐字节一致（工作区零变化）。全部 commit hash 已变（含上一批两次提交），若已有远端需 force push。
+- **陈旧 stash 清理**：删除 2026-08"重写作者身份前的临时暂存"stash（kcharsetsdata/krootwm 等 Qt1 时期改动，已被 TQt3 路线取代）；diff 导出留档于仓库外 `kde1-old-stash-20260831.patch`。重写前完整历史备份 bundle 同在仓库外。
+- 说明：tqt3-build 文件内容与 tqt3/ 快照共享同一批对象（delta 存储），本次清理的是历史路径与语义污染（clone/翻历史不再见构建目录），仓库体积基本持平。
+
 ## 2026-08-31（第二批：git 仓库卫生整理——tqt3-build 误入库清除 + 忽略规则误伤修复）
 
 - **tqt3-build/ 移出版本库**：该目录是 tqt3 快照的构建副本（build.sh 生成、clean.sh 清理），因 tqt3 上游 .gitignore 只挡了 Makefile/bin 等，6696 个源码副本文件曾被误跟踪；git rm --cached 清出索引并在根 .gitignore 显式声明 tqt3-build/——随之 git archive 导出的源码包不再携带冗余副本。
