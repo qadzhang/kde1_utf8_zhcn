@@ -3,22 +3,22 @@ include_directories(
     )
 
 set(SAMBA_SRCS
-    main.cpp bell.cpp kslidercontrol.cpp
-)
+    main.cpp ksmbstatus.cpp
+    )
 
 set(SAMBA_MOC
-    bell.h kslidercontrol.h
-)
+    ksmbstatus.h
+    )
 TQT3_WRAP_CPP(MOC_FILES ${SAMBA_MOC})
 
-add_executable(kcmbell ${SAMBA_SRCS} ${MOC_FILES})
-target_link_libraries(kcmbell
+add_executable(kcmsamba ${SAMBA_SRCS} ${MOC_FILES})
+target_link_libraries(kcmsamba
     ${TQT3_LIBRARIES}
     ${X11_LIBRARIES}
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     )
 
-install(TARGETS kcmbell RUNTIME DESTINATION ${KDE1_BINDIR})
+install(TARGETS kcmsamba RUNTIME DESTINATION ${KDE1_BINDIR})
 
 install_icon(samba "")

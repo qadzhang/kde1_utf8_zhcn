@@ -530,8 +530,8 @@ void kPanel::embedTrayClient(Window client){
   Window *dw0 = new Window;
   *dw0 = client;
   kwmmapp->dock_windows.append(dw0);
-  /* [KDE1 Revival 2026] 幂等守卫
-  /* 嵌入记录进 dock 清单（右键退出/布局共用） */
+  /* [KDE1 Revival 2026] 嵌入记录进 dock 清单（右键退出/布局共用；
+     上方 kwmmapp 老协议清单已登记，两清单在 dockWindowRemove 成对摘除） */
   Window *dw = new Window;
   *dw = client;
   dock_windows.append(dw);

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment=An applet for taking snapshots of the desktop
+Comment[zh_CN]=æ¡Œé¢æˆªå›¾å·¥å…·
 Comment[ca]=Un programa per fer fotos de l'escriptori
 Comment[cs]=Nástroj pro vytváøení snímkù pracovní plochy
 Comment[da]=Et lille program der tager øjebliksbilleder af arbejdspladsen
@@ -23,6 +24,7 @@ Comment[sl]=Programèek za izdelavo posnetkov namizja
 Comment[sv]=Ett program för att ta skärmdumpar av skrivbordet
 BinaryPattern=
 Name=Snapshot
+Name[zh_CN]=å±å¹•æˆªå›¾
 Name[ca]=Instantània
 Name[da]=Øjebliksbillede
 Name[de]=KSnapshot
@@ -40,7 +42,7 @@ Name[ro]=Instantanee
 Name[ru]=óÎÉÍÏË
 Name[sv]=Skärmdump
 MimeType=
-Exec=ksnapshot
+Exec=ksnapshot1
 TerminalOptions=
 Icon=ksnapshot.xpm
 Path=

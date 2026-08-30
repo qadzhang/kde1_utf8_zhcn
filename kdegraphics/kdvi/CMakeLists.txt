@@ -32,3 +32,8 @@ target_link_libraries(kdvi1
 
 install(TARGETS kdvi1 RUNTIME DESTINATION ${KDE1_BINDIR})
 install(FILES kdvi.kdelnk DESTINATION ${KDE1_APPSDIR}/Graphics)
+# [KDE1 Revival 2026] 图标位于 pix/ 子目录，install_icon 宏只扫当前目录——
+# 显式安装三个尺寸变体（菜单/指示栏/大图标），kdelnk 的 Icon=kdvi.xpm 才有着落
+install(FILES pix/kdvi.xpm DESTINATION ${KDE1_ICONDIR})
+install(FILES pix/mini-kdvi.xpm DESTINATION ${KDE1_MINIDIR} RENAME kdvi.xpm)
+install(FILES pix/large-kdvi.xpm DESTINATION ${KDE1_ICONDIR}/large/ RENAME kdvi.xpm)

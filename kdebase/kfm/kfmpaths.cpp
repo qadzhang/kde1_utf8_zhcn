@@ -105,9 +105,13 @@ void KFMPaths::initPaths()
       for ( int di = 0; def_icons[di]; di++ ) {
           QString dst = *desktopPath + def_icons[di];
           if ( access( dst, F_OK ) != 0 ) {
-              QString cmd;
-              cmd.sprintf( "cp '%s%s' '%s'", iconsrc.data(),
-                           def_icons[di], dst.data() );
+              /* [KDE1 Revival 2026] 原 cmd.sprintf("%s%s%s") 弃用：
+               * TQt3 的 QString::sprintf 不遵循 codecForCStrings——
+               * desktopPath 为中文 XDG 目录（~/桌面）时 UTF-8 字节被按
+               * latin-1 拼装，cp 拿到乱码路径静默失败、桌面图标缺失。
+               * 改 QString 拼接（全程 UTF-16，data() 输出 UTF-8）。 */
+              QString cmd = QString( "cp '" ) + iconsrc + def_icons[di]
+                          + QString( "' '" ) + dst + QString( "'" );
               system( cmd.data() );
           }
       }

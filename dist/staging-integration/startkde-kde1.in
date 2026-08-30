@@ -25,17 +25,22 @@ export TQTDIR="$KDE1_PREFIX/tqt3"
 export LD_LIBRARY_PATH="$KDE1_PREFIX/lib:$KDE1_PREFIX/tqt3/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
 # 输入法：fcitx5 优先，fcitx 兜底（均未装则跳过）。
-# [KDE1 Revival 2026] 延迟启动：fcitx5 的指示栏图标经 XEmbed/SNI 停靠
-# 申请需在 kpanel 的托盘 manager（_NET_SYSTEM_TRAY selection）上线后
-# 才能命中——直接随脚本启动会早于 kpanel 而错失（fcitx5 不重试）。
+# [KDE1 Revival 2026] 延迟启动 + 替换陈旧实例：
+# ① 延迟——fcitx5 的指示栏图标经 XEmbed/SNI 停靠申请需在 kpanel 的
+#   托盘 manager（_NET_SYSTEM_TRAY selection）上线后才能命中，直接随
+#   脚本启动会早于 kpanel 而错失（fcitx5 不重试）；
+# ② 替换——上次会话注销后 fcitx5 -d 守护化成为孤儿进程仍存活，其托盘
+#   窗挂在已死的旧 kpanel 里永不重新停靠（新实例探测到旧实例会直接
+#   退出）→ 本次会话无输入法图标。用 fcitx5 自带的 -r/--replace 机制
+#   （经其 IPC 优雅替换，属 fcitx5 官方设计用法，非修改现代软件）。
 # 后台子壳等 kpanel 就绪再拉起；XMODIFIERS 已先导出不受影响。
 export XMODIFIERS=@im=fcitx
 (
     sleep 4
     if command -v fcitx5 >/dev/null 2>&1; then
-        fcitx5 -d >/dev/null 2>&1 &
+        fcitx5 -r -d >/dev/null 2>&1 &
     elif command -v fcitx >/dev/null 2>&1; then
-        fcitx -d >/dev/null 2>&1 &
+        fcitx -r -d >/dev/null 2>&1 &
     fi
 ) &
 

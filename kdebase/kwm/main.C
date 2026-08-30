@@ -1372,8 +1372,13 @@ void MyApp::restoreSession(bool indeed){
     QString command;
     QStrList* com = new QStrList;
     config->readListEntry("tasks", *com);
+    // [KDE1 Revival 2026] 恢复侧兜底过滤：存量 kwmrc 的 tasks= 里可能已有
+    // 1999 年缺陷写入的 kpanel 等核心组件（startkde 每次登录都会拉起，
+    // 重放即得重复实例——上部任务栏幽灵窗口）。isDesktopCoreCommand
+    // 定义于 manager.C，与保存侧共用同一份名单。
     for (command = com->first(); !command.isNull(); command = com->next())
-      execute(command.data());
+      if (!isDesktopCoreCommand(command.data()))
+	execute(command.data());
     delete com;
   }
 

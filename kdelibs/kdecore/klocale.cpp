@@ -25,6 +25,7 @@
 // Let application use them
 #ifdef HAVE_LOCALE_H 
 #include <locale.h>
+#include <string.h> /* [KDE1 Revival 2026] strncpy——改名二进制翻译目录回退用 */
 #endif
 
 #include <stdlib.h>
@@ -341,6 +342,31 @@ KLocale::KLocale( const char *catalogue )
     numeric_enabled=false;
 
     insertCatalogue( catalogue );
+    /* ┌─ [KDE1 Revival 2026] 改名二进制的翻译目录回退
+    * │  What : appName 以 "1" 结尾（本复活版打包改名 kdvi→kdvi1 等 28 个
+    * │         应用，避免与现代 KDE 冲突）时，追加无后缀原名作为回退目录
+    * │  Why  : catalog 名派生自 argv[0]，改名后 gettext 找 kdvi1.mo 而
+    * │         翻译文件随上游目录名安装为 kdvi.mo——不回退则全部英文
+    * │  Who  : 一切改名应用的 KApplication 启动路径（KLocale 构造）
+    * │  When : KLocale 构造（每个应用进程一次），在 append(catalogue) 之后
+    * │  Where: kdelibs/kdecore/klocale.cpp
+    * │  How  : 伪代码——
+    * │          1. catalog 名长度 > 1 且末字符为 '1' → 取去尾子串 base
+    * │          2. base 非空且尚未在目录清单中 → insertCatalogue(base)
+    * │             （经同一函数保证 bindtextdomain 生效）
+    * └────── */
+    {
+        int clen = 0;
+        while (catalogue[clen] != '\0') clen++;
+        if (clen > 1 && catalogue[clen-1] == '1') {
+            char *base = new char[clen];
+            strncpy(base, catalogue, clen - 1);
+            base[clen - 1] = '\0';
+            if (catalogues->find(base) == -1)
+                insertCatalogue(base);
+            delete[] base;
+        }
+    }
     insertCatalogue( SYSTEM_MESSAGES );
     if (chset.isEmpty() || !KCharset(chset).ok()) chset="us-ascii";
 }

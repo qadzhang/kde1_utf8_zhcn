@@ -108,7 +108,7 @@ notetiff(char *name)
 
     if ((tf = fopen(name, "r")) == NULL) {
         QString mesg;
-	mesg.sprintf(i18n("Unable to open:\n%s\n"),name);
+	mesg = QString(i18n("Unable to open:\n%s\n")).replace(QString("%s"), QString(name));
 	kfaxerror("Sorry",mesg.data());
 	return 0;
     }
@@ -145,7 +145,7 @@ notetiff(char *name)
 
 	if (fseek(tf, IFDoff, SEEK_SET) < 0) {
 	realbad:
-	  str.sprintf("             Invalid tiff file:         \n%s\n",name);
+	  str = QString("             Invalid tiff file:         \n%s\n").replace(QString("%s"), QString(name));
 	  kfaxerror("Sorry",str.data());
 	bad:
 	    if (strips)
@@ -411,7 +411,7 @@ getstrip(struct pagenode *pn, int strip)
 	pn->length = pn->strips[strip].size;
     }
     else {
-      str.sprintf("Trying to expand too many strips\n%s\n",pn->pathname);
+      str = QString("Trying to expand too many strips\n%s\n").replace(QString("%s"), QString(pn->pathname));
       kfaxerror("Warning",str.data());
       return NULL;
     }
@@ -455,7 +455,7 @@ getstrip(struct pagenode *pn, int strip)
 	pn->height = G3count(pn, pn->expander == g32expand);
     if (pn->height == 0) {
 
-      str.sprintf("No fax found in file:\n%s\n",pn->pathname);
+      str = QString("No fax found in file:\n%s\n").replace(QString("%s"), QString(pn->pathname));
       kfaxerror("Sorry",str.data());
       errno = 0;
       badfile(pn);

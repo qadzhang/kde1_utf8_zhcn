@@ -1,7 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Type=Application
-Exec=kview %u
+Exec=kview1 %u
 Icon=kview.xpm
 MiniIcon=kview.xpm
 TerminalOptions=
@@ -10,6 +10,7 @@ Terminal=0
 BinaryPattern=kview;
 DocPath=kview/kview.html
 Comment=KDE Image Viewer
+Comment[zh_CN]=KDE å›¾ç‰‡æŸ¥çœ‹å™¨
 Comment[ca]=Visualitzador d'imatges KDE
 Comment[cs]=Prohlí¾eè obrázkù pro KDE
 Comment[da]=KDE billedfremviser
@@ -34,6 +35,7 @@ Comment[sv]=KDE:s bildvisare
 Commnet[cs]=Prohlí¾eè obrázkù pro KDE
 MimeType=image/gif;image/x-xpm;image/x-xbm;image/jpeg;
 Name=Image Viewer
+Name[zh_CN]=å›¾ç‰‡æŸ¥çœ‹å™¨
 Name[ca]=Visualitzador d'imatges
 Name[cs]=Prohlí¾eè obrázkù
 Name[da]=Billedfremviser

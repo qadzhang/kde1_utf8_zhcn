@@ -1,11 +1,164 @@
 msgid ""
-msgstr ""
-"Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-04-12 02:16+0200\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
-"Language-Team: zh_CN ( gb2312 )\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Help page"
+msgstr "帮助页面"
+
+msgid "&Add Fax..."
+msgstr "添加传真(&A)..."
+
+msgid "&Close Fax"
+msgstr "关闭传真(&C)"
+
+msgid "&Next Page"
+msgstr "下一页(&N)"
+
+msgid "&Prev Page"
+msgstr "上一页(&P)"
+
+msgid "&First Page"
+msgstr "第一页(&F)"
+
+msgid "&Last Page"
+msgstr "最后一页(&L)"
+
+msgid "&Rotate Page"
+msgstr "旋转页面(&R)"
+
+msgid "&Mirror Page"
+msgstr "镜像页面(&M)"
+
+msgid "&Flip Page"
+msgstr "翻转页面(&F)"
+
+msgid "&Fax Options..."
+msgstr "传真选项(&F)..."
+
+msgid "w: 00000 h: 00000"
+msgstr "宽：00000 高：00000"
+
+msgid "Res: XXXXX"
+msgstr "分辨率：XXXXX"
+
+msgid "Type: XXXXXXX"
+msgstr "类型：XXXXXXX"
+
+msgid "P:XXXofXXX"
+msgstr "页：XXX/XXX"
+
+msgid "You need to open a Fax first"
+msgstr "您需要先打开一份传真"
+
+msgid "Not yet implemented"
+msgstr "尚未实现"
+
+msgid "     There is no document active      "
+msgstr "      没有活动文档      "
+
+msgid "Can't print to \"%s\"\\n"
+msgstr "无法打印到“%s”\\n"
+
+msgid "Couldn't create %s\\n"
+msgstr "无法创建 %s\\n"
+
+msgid "Saved"
+msgstr "已保存"
+
+msgid "Could not communicate with KFM"
+msgstr "无法与 KFM 通信"
+
+msgid "Done"
+msgstr "完成"
+
+msgid "You need to open a fax page first."
+msgstr "您需要先打开一个传真页面。"
+
+msgid "P.%d of %d"
+msgstr "第 %d 页，共 %d 页"
+
+msgid "W: %d H: %d"
+msgstr "宽：%d 高：%d"
+
+msgid "Res: %s"
+msgstr "分辨率：%s"
+
+msgid "Fine"
+msgstr "精细"
+
+msgid "Normal"
+msgstr "标准"
+
+msgid "Type: Tiff "
+msgstr "类型：Tiff "
+
+msgid "Type: Raw "
+msgstr "类型：Raw "
+
+msgid "KFax Print Dialog"
+msgstr "KFax 打印对话框"
+
+msgid "Print as Postscript to Printer"
+msgstr "以 PostScript 打印到打印机"
+
+msgid "Print as Postscript to File:"
+msgstr "以 PostScript 打印到文件："
+
+msgid "Page Size:"
+msgstr "页面大小："
+
+msgid "Scale fax to page size"
+msgstr "缩放传真至页面大小"
+
+msgid "Add Printer Margins (measured in cm):"
+msgstr "添加打印机边距（以厘米计）："
+
+msgid "Horizontal:"
+msgstr "水平："
+
+msgid "Vertical:"
+msgstr "垂直："
+
+msgid "Select Filename"
+msgstr "选择文件名"
+
+msgid "You must enter a file name if you wish to print to a file."
+msgstr "要打印到文件，您必须输入文件名。"
+
+msgid "KFax Options Dialog"
+msgstr "KFax 选项对话框"
+
+msgid "Display Options:"
+msgstr "显示选项："
+
+msgid "Landscape"
+msgstr "横向"
+
+msgid "Upside Down"
+msgstr "上下颠倒"
+
+msgid "Invert"
+msgstr "反转"
+
+msgid "Raw Fax Resolution:"
+msgstr "原始传真分辨率："
+
+msgid "Auto"
+msgstr "自动"
+
+msgid "Raw Fax Data are:"
+msgstr "原始传真数据为："
+
+msgid "LS-Bit first"
+msgstr "低位在前"
+
+msgid "Raw Facsimili are:"
+msgstr "原始传真为："
+
+msgid "Raw Fax width:"
+msgstr "原始传真宽度："
+
+msgid "height:"
+msgstr "高度："
 
 #: kfax.cpp:233 kfax.cpp:827
 msgid "Show &Tool Bar"
@@ -34,18 +187,10 @@ msgid ""
 "wuebben@kde.org"
 msgstr ""
 
-#: kfax.cpp:402
-msgid "Help page"
-msgstr ""
-
 #: kfax.cpp:404
 #, fuzzy
 msgid "&Open Fax..."
 msgstr "打开 &URL"
-
-#: kfax.cpp:405
-msgid "&Add Fax..."
-msgstr ""
 
 #: kfax.cpp:408
 msgid "Open &URL..."
@@ -55,38 +200,6 @@ msgstr "打开 &URL"
 msgid "Save to U&RL..."
 msgstr "保存到 U&RL"
 
-#: kfax.cpp:410
-msgid "&Close Fax"
-msgstr ""
-
-#: kfax.cpp:417
-msgid "&Next Page"
-msgstr ""
-
-#: kfax.cpp:418
-msgid "&Prev Page"
-msgstr ""
-
-#: kfax.cpp:419
-msgid "&First Page"
-msgstr ""
-
-#: kfax.cpp:420
-msgid "&Last Page"
-msgstr ""
-
-#: kfax.cpp:422
-msgid "&Rotate Page"
-msgstr ""
-
-#: kfax.cpp:423
-msgid "&Mirror Page"
-msgstr ""
-
-#: kfax.cpp:424
-msgid "&Flip Page"
-msgstr ""
-
 #: kfax.cpp:426
 msgid "Zoom &in"
 msgstr "放大[&I]"
@@ -94,10 +207,6 @@ msgstr "放大[&I]"
 #: kfax.cpp:427
 msgid "Zoom &out"
 msgstr "缩小[&O]"
-
-#: kfax.cpp:432
-msgid "&Fax Options..."
-msgstr ""
 
 #: kfax.cpp:434
 msgid "&Tool Bar"
@@ -141,41 +250,13 @@ msgstr "打印文件"
 msgid "Go to page ..."
 msgstr "跳至...页"
 
-#: kfax.cpp:554
-msgid "w: 00000 h: 00000"
-msgstr ""
-
-#: kfax.cpp:555
-msgid "Res: XXXXX"
-msgstr ""
-
-#: kfax.cpp:556
-msgid "Type: XXXXXXX"
-msgstr ""
-
-#: kfax.cpp:557
-msgid "P:XXXofXXX"
-msgstr ""
-
 #: kfax.cpp:582
 msgid "Open Location:"
 msgstr "打开位置:"
 
-#: kfax.cpp:598
-msgid "You need to open a Fax first"
-msgstr ""
-
 #: kfax.cpp:604
 msgid "Save to Location:"
 msgstr "保存到位置:"
-
-#: kfax.cpp:811
-msgid "Not yet implemented"
-msgstr ""
-
-#: kfax.cpp:861
-msgid "     There is no document active      "
-msgstr ""
 
 #: kfax.cpp:995
 #, c-format
@@ -208,10 +289,6 @@ msgid ""
 "Couldn't save file!"
 msgstr ""
 
-#: kfax.cpp:1132
-msgid "Saved"
-msgstr ""
-
 #: kfax.cpp:1139 kfax.cpp:1201
 msgid ""
 "KFax is already waiting\n"
@@ -219,18 +296,10 @@ msgid ""
 "Please wait until has finished\n"
 msgstr ""
 
-#: kfax.cpp:1150 kfax.cpp:1214
-msgid "Could not communicate with KFM"
-msgstr ""
-
 #: kfax.cpp:1191
 #, c-format
 msgid "Loading '%s'"
 msgstr "正在载入'%s'"
-
-#: kfax.cpp:1194
-msgid "Done"
-msgstr ""
 
 #: kfax.cpp:1208
 msgid "Calling KFM"
@@ -248,41 +317,6 @@ msgstr "连接上"
 msgid "Waiting..."
 msgstr "等待中..."
 
-#: kfax.cpp:2077
-msgid "You need to open a fax page first."
-msgstr ""
-
-#: kfax.cpp:2400
-#, c-format
-msgid "P.%d of %d"
-msgstr ""
-
-#: kfax.cpp:2411
-#, c-format
-msgid "W: %d H: %d"
-msgstr ""
-
-#: kfax.cpp:2416
-#, c-format
-msgid "Res: %s"
-msgstr ""
-
-#: kfax.cpp:2416 options.cpp:119
-msgid "Fine"
-msgstr ""
-
-#: kfax.cpp:2416 options.cpp:124
-msgid "Normal"
-msgstr ""
-
-#: kfax.cpp:2424
-msgid "Type: Tiff "
-msgstr ""
-
-#: kfax.cpp:2427
-msgid "Type: Raw "
-msgstr ""
-
 #: kfax.cpp:2738
 msgid ""
 "A file with this name already exists\n"
@@ -297,106 +331,18 @@ msgid ""
 "%s\n"
 msgstr ""
 
-#: print.cpp:51
-msgid "KFax Print Dialog"
-msgstr ""
-
-#: print.cpp:57
-msgid "Print as Postscript to Printer"
-msgstr ""
-
 #: print.cpp:62
 msgid "Print Command:"
 msgstr "打印命令:"
-
-#: print.cpp:71
-msgid "Print as Postscript to File:"
-msgstr ""
 
 #: print.cpp:77
 msgid "Browse"
 msgstr "浏览"
 
-#: print.cpp:86
-msgid "Page Size:"
-msgstr ""
-
-#: print.cpp:105
-msgid "Scale fax to page size"
-msgstr ""
-
-#: print.cpp:111
-msgid "Add Printer Margins (measured in cm):"
-msgstr ""
-
-#: print.cpp:119
-msgid "Horizontal:"
-msgstr ""
-
-#: print.cpp:128
-msgid "Vertical:"
-msgstr ""
-
-#: print.cpp:258
-msgid "Select Filename"
-msgstr ""
-
-#: print.cpp:280
-msgid "You must enter a file name if you wish to print to a file."
-msgstr ""
-
 #: print.cpp:290
 msgid ""
 "You must enter a print command such as \"lpr\"\n"
 " if you wish to print to a printer."
-msgstr ""
-
-#: options.cpp:56
-msgid "KFax Options Dialog"
-msgstr ""
-
-#: options.cpp:74
-msgid "Display Options:"
-msgstr ""
-
-#: options.cpp:80
-msgid "Landscape"
-msgstr ""
-
-#: options.cpp:85
-msgid "Upside Down"
-msgstr ""
-
-#: options.cpp:90
-msgid "Invert"
-msgstr ""
-
-#: options.cpp:109
-msgid "Raw Fax Resolution:"
-msgstr ""
-
-#: options.cpp:114 options.cpp:222
-msgid "Auto"
-msgstr ""
-
-#: options.cpp:144
-msgid "Raw Fax Data are:"
-msgstr ""
-
-#: options.cpp:150
-msgid "LS-Bit first"
-msgstr ""
-
-#: options.cpp:168
-msgid "Raw Facsimili are:"
-msgstr ""
-
-#: options.cpp:202
-msgid "Raw Fax width:"
-msgstr ""
-
-#: options.cpp:212
-msgid "height:"
 msgstr ""
 
 #~ msgid "&About..."

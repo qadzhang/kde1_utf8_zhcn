@@ -16,3 +16,5 @@ target_link_libraries(kfract1
 
 install(TARGETS kfract1 RUNTIME DESTINATION ${KDE1_BINDIR})
 install(FILES kfract.kdelnk DESTINATION ${KDE1_APPSDIR}/Graphics)
+# [KDE1 Revival 2026] 三尺寸图标变体与 kdelnk 的 Icon= 引用配套
+install_icon(kfract.xpm "")

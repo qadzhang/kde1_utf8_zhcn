@@ -457,8 +457,8 @@ void KSnapShot::saveSlot()
 			 
   if (!(snapshot_.save(filename_, format_))) {
     tqWarning("KSnapshot was unable to save the snapshot");
-    text.sprintf(i18n("KSnapshot was unable to save the image to\n%s."),
-		 filename_.data());
+    text = QString(i18n("KSnapshot was unable to save the image to\n%s."))
+		 .replace(QString("%s"), QString(filename_.data()));
     QMessageBox::warning(this, caption, text, buttonLabel);
   }
 }

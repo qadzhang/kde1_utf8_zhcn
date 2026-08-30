@@ -1,9 +1,10 @@
 # KDE Config File
 [KDE Desktop Entry]
-Exec=kpaint %u -caption "%c" %i %m
+Exec=kpaint1 %u -caption "%c" %i %m
 Icon=kpaint.xpm
 DocPath=kpaint/index.html
 Comment=A Simple Paint Program
+Comment[zh_CN]=简单绘图程序
 Comment[ca]=Un senzill programa pintor
 Comment[cs]=Jednoduch� kresl�c� program
 Comment[da]=Et simpelt maleprogram
@@ -28,6 +29,7 @@ Comment[sv]=Ett enkelt ritprogram
 Terminal=0
 Type=Application
 Name=Paint
+Name[zh_CN]=绘图
 Name[ca]=Pinta
 Name[cs]=Kreslen�
 Name[da]=Mal

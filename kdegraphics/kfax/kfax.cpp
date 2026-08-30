@@ -1188,7 +1188,7 @@ void TopLevel::openNetFile( const char * _url)
     if ( strcmp( u.protocol(), "file" ) == 0 )
     {
       QString string;
-      string.sprintf(i18n("Loading '%s'"),u.path() );
+      string = QString(i18n("Loading '%s'")).replace(QString("%s"), QString(u.path()));
       setGeneralStatusField(string);
       openadd( u.path());
       setGeneralStatusField(i18n("Done"));

@@ -1,43 +1,230 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-31 01:52+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: ENCODING\n"
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
-#: viewer.cpp:95
 msgid "no image loaded"
-msgstr ""
+msgstr "未加载图像"
 
-#: viewer.cpp:103 viewer.cpp:599
 msgid "Ready"
-msgstr ""
+msgstr "就绪"
 
-#: viewer.cpp:181
 msgid "Net saving not yet implemented"
-msgstr ""
+msgstr "网络保存尚未实现"
 
-#: viewer.cpp:189
-#, c-format
 msgid "%s: written"
-msgstr ""
+msgstr "%s：已写入"
 
-#: viewer.cpp:227
 msgid "Enter Zoom factor (100 = 1x):"
-msgstr ""
+msgstr "输入缩放系数（100 = 1 倍）："
 
-#: viewer.cpp:231
 msgid "Illegal zoom factor"
-msgstr ""
+msgstr "非法的缩放系数"
+
+msgid "About KView"
+msgstr "关于 KView"
+
+msgid "&List..."
+msgstr "列表(&L)..."
+
+msgid "&Previous"
+msgstr "上一个(&P)"
+
+msgid "&Next"
+msgstr "下一个(&N)"
+
+msgid "&Slideshow On/Off"
+msgstr "幻灯片放映开/关(&S)"
+
+msgid "&Zoom"
+msgstr "缩放(&Z)"
+
+msgid "&Transform"
+msgstr "变换(&T)"
+
+msgid "To &Desktop"
+msgstr "设为桌面背景(&D)"
+
+msgid "F&ilter"
+msgstr "过滤器(&I)"
+
+msgid "&Images"
+msgstr "图像(&I)"
+
+msgid "&Save As..."
+msgstr "另存为(&S)..."
+
+msgid "&Close Window"
+msgstr "关闭窗口(&C)"
+
+msgid "&Full Screen"
+msgstr "全屏幕(&F)"
+
+msgid "&Crop"
+msgstr "裁剪(&C)"
+
+msgid "&Reset"
+msgstr "重置(&R)"
+
+msgid "&Preferences..."
+msgstr "首选项(&P)..."
+
+msgid "&Zoom..."
+msgstr "缩放(&Z)..."
+
+msgid "Zoom &in 10%"
+msgstr "放大 10%(&I)"
+
+msgid "Zoom &out 10%"
+msgstr "缩小 10%(&O)"
+
+msgid "&Double size"
+msgstr "两倍大小(&D)"
+
+msgid "&Half size"
+msgstr "一半大小(&H)"
+
+msgid "&Max size"
+msgstr "最大大小(&M)"
+
+msgid "Max/&aspect"
+msgstr "最大/保持纵横比(&A)"
+
+msgid "Rotate &clockwise"
+msgstr "顺时针旋转(&C)"
+
+msgid "Rotate &anti-clockwise"
+msgstr "逆时针旋转(&A)"
+
+msgid "Flip &vertical"
+msgstr "垂直翻转(&V)"
+
+msgid "Flip &horizontal"
+msgstr "水平翻转(&H)"
+
+msgid "Desktop &Tile"
+msgstr "桌面平铺(&T)"
+
+msgid "Desktop &Max"
+msgstr "桌面最大化(&M)"
+
+msgid "Desktop Max&pect"
+msgstr "桌面最大化并保持纵横比(&P)"
+
+msgid "&How do I..."
+msgstr "操作指南(&H)..."
+
+msgid "&What is a..."
+msgstr "这是什么(&W)..."
+
+msgid "&About KView..."
+msgstr "关于 KView(&A)..."
+
+msgid "Existing transfer not yet complete."
+msgstr "现有传输尚未完成。"
+
+msgid "Couldn't get temporary transfer name."
+msgstr "无法获取临时传输文件名。"
+
+msgid "Transfer error: "
+msgstr "传输错误："
+
+msgid "Loading..."
+msgstr "正在加载..."
+
+msgid "Couldn't load %s"
+msgstr "无法加载 %s"
+
+msgid "Printing..."
+msgstr "正在打印..."
+
+msgid "Enter brightness factor (%):"
+msgstr "输入亮度系数（%）:"
+
+msgid "Brightness factor must be positive"
+msgstr "亮度系数必须为正数"
+
+msgid "Changing brightness..."
+msgstr "正在改变亮度..."
+
+msgid "Intensity:Brightness"
+msgstr "强度：亮度"
+
+msgid "Converting to Greyscale..."
+msgstr "正在转换为灰度..."
+
+msgid "Greyscale"
+msgstr "灰度"
+
+msgid "Smoothing..."
+msgstr "正在平滑处理..."
+
+msgid "Smooth"
+msgstr "平滑"
+
+msgid "Enter gamma value ( >0 ):"
+msgstr "输入伽马值（>0）："
+
+msgid "Bad Gamma value"
+msgstr "错误的伽马值"
+
+msgid "Gamma-correcting..."
+msgstr "正在伽马校正..."
+
+msgid "Intensity:Gamma Correct..."
+msgstr "强度：伽马校正..."
+
+msgid "External.."
+msgstr "外部.."
+
+msgid "Prev"
+msgstr "上一个"
+
+msgid "Shu&ffle"
+msgstr "乱序(&F)"
+
+msgid "Next"
+msgstr "下一个"
+
+msgid "Start slide"
+msgstr "开始放映"
+
+msgid "Image List"
+msgstr "图像列表"
+
+msgid "Stop &slide"
+msgstr "停止放映(&S)"
+
+msgid "Start &slide"
+msgstr "开始放映(&S)"
+
+msgid "kView Preferences"
+msgstr "kView 首选项"
+
+msgid "&Apply"
+msgstr "应用(&A)"
+
+msgid "On Load"
+msgstr "加载时"
+
+msgid "Resize Window"
+msgstr "调整窗口大小"
+
+msgid "Resize Image"
+msgstr "调整图像大小"
+
+msgid "No Resize"
+msgstr "不调整"
+
+msgid "Slideshow"
+msgstr "幻灯片放映"
+
+msgid "Loop"
+msgstr "循环"
+
+msgid "Slide interval (sec)"
+msgstr "放映间隔（秒）"
+
+msgid "&Keys"
+msgstr "按键(&K)"
 
 #: viewer.cpp:282
 #, c-format
@@ -45,283 +232,4 @@ msgid ""
 "KView -- Graphics viewer. %s\n"
 "\n"
 "Sirtaj S. Kang (taj@kde.org)\n"
-msgstr ""
-
-#: viewer.cpp:285
-msgid "About KView"
-msgstr ""
-
-#: viewer.cpp:310 viewer.cpp:412
-msgid "&List..."
-msgstr ""
-
-#: viewer.cpp:312 viewer.cpp:416
-msgid "&Previous"
-msgstr ""
-
-#: viewer.cpp:314 viewer.cpp:418
-msgid "&Next"
-msgstr ""
-
-#: viewer.cpp:316 viewer.cpp:421
-msgid "&Slideshow On/Off"
-msgstr ""
-
-#: viewer.cpp:324
-msgid "&Zoom"
-msgstr ""
-
-#: viewer.cpp:325
-msgid "&Transform"
-msgstr ""
-
-#: viewer.cpp:326
-msgid "To &Desktop"
-msgstr ""
-
-#: viewer.cpp:328
-msgid "F&ilter"
-msgstr ""
-
-#: viewer.cpp:332
-msgid "&Images"
-msgstr ""
-
-#: viewer.cpp:352
-msgid "&Save As..."
-msgstr ""
-
-#: viewer.cpp:356
-msgid "&Close Window"
-msgstr ""
-
-#: viewer.cpp:362
-msgid "&Full Screen"
-msgstr ""
-
-#: viewer.cpp:365
-msgid "&Crop"
-msgstr ""
-
-#: viewer.cpp:367
-msgid "&Reset"
-msgstr ""
-
-#: viewer.cpp:369
-msgid "&Preferences..."
-msgstr ""
-
-#: viewer.cpp:375
-msgid "&Zoom..."
-msgstr ""
-
-#: viewer.cpp:376
-#, c-format
-msgid "Zoom &in 10%"
-msgstr ""
-
-#: viewer.cpp:378
-#, c-format
-msgid "Zoom &out 10%"
-msgstr ""
-
-#: viewer.cpp:380
-msgid "&Double size"
-msgstr ""
-
-#: viewer.cpp:382
-msgid "&Half size"
-msgstr ""
-
-#: viewer.cpp:384
-msgid "&Max size"
-msgstr ""
-
-#: viewer.cpp:386
-msgid "Max/&aspect"
-msgstr ""
-
-#: viewer.cpp:392
-msgid "Rotate &clockwise"
-msgstr ""
-
-#: viewer.cpp:394
-msgid "Rotate &anti-clockwise"
-msgstr ""
-
-#: viewer.cpp:396
-msgid "Flip &vertical"
-msgstr ""
-
-#: viewer.cpp:398
-msgid "Flip &horizontal"
-msgstr ""
-
-#: viewer.cpp:404
-msgid "Desktop &Tile"
-msgstr ""
-
-#: viewer.cpp:405
-msgid "Desktop &Max"
-msgstr ""
-
-#: viewer.cpp:407
-msgid "Desktop Max&pect"
-msgstr ""
-
-#: viewer.cpp:426
-msgid "&How do I..."
-msgstr ""
-
-#: viewer.cpp:427
-msgid "&What is a..."
-msgstr ""
-
-#: viewer.cpp:429
-msgid "&About KView..."
-msgstr ""
-
-#: viewer.cpp:471 viewer.cpp:478
-msgid "Existing transfer not yet complete."
-msgstr ""
-
-#: viewer.cpp:493
-msgid "Couldn't get temporary transfer name."
-msgstr ""
-
-#: viewer.cpp:532
-msgid "Transfer error: "
-msgstr ""
-
-#: viewer.cpp:618
-msgid "Loading..."
-msgstr ""
-
-#: viewer.cpp:632
-#, c-format
-msgid "Couldn't load %s"
-msgstr ""
-
-#: viewer.cpp:852
-msgid "Printing..."
-msgstr ""
-
-#: colour.cpp:32
-msgid "Enter brightness factor (%):"
-msgstr ""
-
-#: colour.cpp:37
-msgid "Brightness factor must be positive"
-msgstr ""
-
-#: colour.cpp:44
-msgid "Changing brightness..."
-msgstr ""
-
-#: colour.cpp:58
-msgid "Intensity:Brightness"
-msgstr ""
-
-#: colour.cpp:100
-msgid "Converting to Greyscale..."
-msgstr ""
-
-#: colour.cpp:129
-msgid "Greyscale"
-msgstr ""
-
-#: colour.cpp:147
-msgid "Smoothing..."
-msgstr ""
-
-#: colour.cpp:213
-msgid "Smooth"
-msgstr ""
-
-#: colour.cpp:234
-msgid "Enter gamma value ( >0 ):"
-msgstr ""
-
-#: colour.cpp:237
-msgid "Bad Gamma value"
-msgstr ""
-
-#: colour.cpp:243
-msgid "Gamma-correcting..."
-msgstr ""
-
-#: colour.cpp:296
-msgid "Intensity:Gamma Correct..."
-msgstr ""
-
-#: colour.cpp:310
-msgid "External.."
-msgstr ""
-
-#: ilistdlg.cpp:56
-msgid "Prev"
-msgstr ""
-
-#: ilistdlg.cpp:60
-msgid "Shu&ffle"
-msgstr ""
-
-#: ilistdlg.cpp:65
-msgid "Next"
-msgstr ""
-
-#: ilistdlg.cpp:69
-msgid "Start slide"
-msgstr ""
-
-#: ilistdlg.cpp:85
-msgid "Image List"
-msgstr ""
-
-#: ilistdlg.cpp:259
-msgid "Stop &slide"
-msgstr ""
-
-#: ilistdlg.cpp:267
-msgid "Start &slide"
-msgstr ""
-
-#: prefdlg.cpp:32
-msgid "kView Preferences"
-msgstr ""
-
-#: prefdlg.cpp:36
-msgid "&Apply"
-msgstr ""
-
-#: prefdlg.cpp:51
-msgid "On Load"
-msgstr ""
-
-#: prefdlg.cpp:58
-msgid "Resize Window"
-msgstr ""
-
-#: prefdlg.cpp:61
-msgid "Resize Image"
-msgstr ""
-
-#: prefdlg.cpp:64
-msgid "No Resize"
-msgstr ""
-
-#: prefdlg.cpp:69
-msgid "Slideshow"
-msgstr ""
-
-#: prefdlg.cpp:72
-msgid "Loop"
-msgstr ""
-
-#: prefdlg.cpp:76
-msgid "Slide interval (sec)"
-msgstr ""
-
-#: prefdlg.cpp:84
-msgid "&Keys"
 msgstr ""

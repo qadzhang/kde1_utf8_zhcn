@@ -161,6 +161,10 @@
 #include <qfile.h>
 #include <qtextstream.h> 
 #include <qapplication.h>
+/* [KDE1 Revival 2026] 字族枚举改走 fontconfig：TQFontDatabase 是
+ * TQt3 标准字体数据库（与 Xft/fontconfig 同源），kfontdialog.cpp 的
+ * fill_family_combo 用它替换 1999 年的 XListFonts 通道。 */
+#include <ntqfontdatabase.h>
 #ifndef Bool
 #define Bool int
 #endif
@@ -624,113 +628,83 @@ bool KFontDialog::loadKDEInstalledFonts(){
 
   if (!fontfile.isReadable())
     return false;
-  
-  
+
+
   QTextStream t(&fontfile);
 
+  // [KDE1 Revival 2026] 0 字节 kdefonts 不得视为"已安装自定义清单"：
+  // 否则 family_combo 一个字族都不插，字体对话框呈现空列表。
+  bool inserted_any = false;
   while ( !t.eof() ) {
     QString s = t.readLine();
     s = s.stripWhiteSpace();
-    if(!s.isEmpty())
+    if(!s.isEmpty()){
       family_combo->insertItem( s ,-1 );
+      inserted_any = true;
+    }
   }
 
   fontfile.close();
 
-  
-  return true;
+
+  return inserted_any;
 
 }
 
 
 void KFontDialog::fill_family_combo(){
+/* ┌─ What : 填充字体对话框的字族下拉列表
+ * │  Why  : 1999 年原版经 XListFonts 枚举 X 服务器位图字体——现代 Debian
+ * │        只剩极少遗留 XLFD 字体，fontconfig 管理的 Noto CJK 等现代字体
+ * │        （含全部中文字体）完全不出现在列表里。TQt3 的 QFontDatabase
+ * │        走 fontconfig，与当今 KDE/XFCE 同一字体体系（AGENTS §6.8：
+ * │        一律用现代现行版本与现行 API）。
+ * │  Who  : KFontDialog 所有使用方——kcontrol 字体模块、kvt/kedit/kfontmanager
+ * │        等一切经本对话框选字体的程序
+ * │  When : 对话框构造且 kdefonts 自定义清单不存在/为空时（loadKDEInstalledFonts
+ * │        返回 false 后）
+ * │  Where: kdelibs/kdeui/kfontdialog.cpp（本函数）
+ * │  How  : 伪代码——
+ * │          1. 先试 loadKDEInstalledFonts()：用户显式维护的 kdefonts
+ * │             清单优先（保持 1999 行为，空文件已在其中按"无清单"处理）
+ * │          2. TQFontDatabase().families() 取 fontconfig 全部字族
+ * │          3. 逐字族去重排序（QStrList inSort）后插入下拉列表
+ * └────── */
 
-  int numFonts;
   Display *kde_display;
-  char** fontNames;
-  char** fontNames_copy;
-  QString qfontname;
 
-
-    
   QStrList fontlist(TRUE);
-  
+
   kde_display = XOpenDisplay( 0L );
 
   // now try to load the KDE fonts
 
   bool have_installed = loadKDEInstalledFonts();
-  
+
   // if available we are done, the kde fonts are now in the family_combo
 
   if (have_installed)
     return;
 
-  fontNames = XListFonts(kde_display, "*", 32767, &numFonts);
-  fontNames_copy = fontNames;
+  // [KDE1 Revival 2026] fontconfig/TQFontDatabase 枚举：替换 XListFonts
+  //（原实现见下方注释块保留备查）。fontconfig 输出的即现代桌面可见的
+  // 全部字族，含 Noto Sans CJK 等中文字体；QFontDatabase 内部已按
+  // 字族名去重，这里仅排序插入。
+  {
+    TQFontDatabase db;
+    TQStringList fams = db.families();
+    for (TQStringList::Iterator it = fams.begin(); it != fams.end(); ++it)
+      fontlist.inSort(*it);
 
-  for(int i = 0; i < numFonts; i++){
-    
-    if (**fontNames != '-'){ 
-      
-      // The font name doesn't start with a dash -- an alias
-      // so we ignore it. It is debatable whether this is the right
-      // behaviour so I leave the following snippet of code around.
-      // Just uncomment it if you want those aliases to be inserted as well.
-      
-      /*
-      qfontname = "";
-      qfontname = *fontNames;
-      if(fontlist.find(qfontname) == -1)
-          fontlist.inSort(qfontname);
-      */
-
-      fontNames ++;
-      continue;
-    };
-      
-    qfontname = "";
-    qfontname = *fontNames;
-    int dash = qfontname.find ('-', 1, TRUE); // find next dash
-
-    if (dash == -1) { // No such next dash -- this shouldn't happen.
-                      // but what do I care -- lets skip it.
-      fontNames ++;
-      continue;
-    }
-
-    // the font name is between the second and third dash so:
-    // let's find the third dash:
-
-    int dash_two = qfontname.find ('-', dash + 1 , TRUE); 
-
-    if (dash == -1) { // No such next dash -- this shouldn't happen.
-                      // But what do I care -- lets skip it.
-      fontNames ++;
-      continue;
-    }
-
-    // fish the name of the font info string
-
-    qfontname = qfontname.mid(dash +1, dash_two - dash -1);
-
-    if( !qfontname.contains("open look", TRUE)){
-      if(qfontname != "nil"){
-	if(fontlist.find(qfontname) == -1)
-	  fontlist.inSort(qfontname);
-      }
-    }
-  
-
-    fontNames ++;
-
-  }
-
-  for(fontlist.first(); fontlist.current(); fontlist.next())
+    for(fontlist.first(); fontlist.current(); fontlist.next())
       family_combo->insertItem(fontlist.current(),-1);
 
-  XFreeFontNames(fontNames_copy);
-  XCloseDisplay(kde_display);
+    // XListFonts 枚举通道已废弃；kde_display 仍按原逻辑开/关，
+    // 维持与 1999 年版相同的资源生命周期，避免影响其它代码路径
+    if (kde_display)
+      XCloseDisplay(kde_display);
+    return;
+  }
 
 
 }

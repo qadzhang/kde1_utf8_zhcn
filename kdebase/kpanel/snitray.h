@@ -35,6 +35,9 @@ struct SNIClient {
     Window   win;         // kpanel 自建的 24x24 内容窗（dock_area 子窗）
     Pixmap   pix;         // 内容后备位图
     GC       gc;
+    // [KDE1 Revival 2026] 本 item 的 IconPixmap Get 调用序号——dbus 侧
+    // 在 send 时分配，reply 以之路由回对应 item（多 item 并发取图不串线）
+    dbus_uint32_t iconSerial;
 };
 
 class SNITray : public QObject
@@ -56,7 +59,6 @@ signals:
 public slots:
     void slotDispatch();
 private:
-    unsigned long pendingIconCall;
     bool registerWatcher();
     void handleItemRegister(const char *service, const char *path);
     void handleItemUnregister(const char *service);

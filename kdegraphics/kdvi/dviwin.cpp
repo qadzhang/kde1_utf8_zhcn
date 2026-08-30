@@ -416,6 +416,14 @@ extern	time_t dvi_time;
 
 //------ this function calls the dvi interpreter ----------
 
+/* [KDE1 Revival 2026] dvi_name 深拷贝存储：原实现直接把 dvi_name 指向
+ * QString filename 的内部缓冲（filename.data()）——filename 后续被赋值
+ * 即 detach，C 侧（dvi_init.c）持有的旧指针悬空。QCString 静态存储
+ * 内容稳定，重新打开文档时整体重写；dvi_name 命名冲突由 setFile 置 0
+ * 的既有语义接管（C 侧自行 malloc 的 ".dvi" 后缀名仍按 1999 语义
+ * 由其自管）。 */
+static QCString dvi_name_store;
+
 void dviWindow::drawDVI()
 {
 	psp_interrupt();
@@ -424,7 +432,8 @@ void dviWindow::drawDVI()
 	if (!dvi_name)
 	{			//  dvi file not initialized yet
 		QApplication::setOverrideCursor( waitCursor );
-		dvi_name = filename.data();
+		dvi_name_store = filename.utf8();
+		dvi_name = dvi_name_store.data();
 
 		dvi_file = NULL;
 		if (setjmp(dvi_env))

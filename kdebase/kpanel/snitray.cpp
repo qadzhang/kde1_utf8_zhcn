@@ -50,8 +50,15 @@ SNITray::SNITray(QWidget *da, QObject *parent)
 
 SNITray::~SNITray()
 {
-    if (conn)
+    // [KDE1 Revival 2026] 析构顺序：先摘事件源（notifier/filter）再放连接，
+    // 避免总线末梢消息回调进入半析构对象
+    delete notifier;
+    notifier = 0;
+    if (conn) {
+        dbus_connection_remove_filter(conn, messageFilter, this);
         dbus_connection_unref(conn);
+        conn = 0;
+    }
 }
 
 bool SNITray::init()
@@ -92,6 +99,20 @@ bool SNITray::init()
 
     /* 对象路径 /StatusNotifierWatcher 的方法由 messageFilter 的
        method_call 分支处理（Register/Unregister/Get） */
+
+    /* [KDE1 Revival 2026] 按 SNI 规范主动宣告 host 上线：先于 kpanel 启动、
+       正在等待 host 出现的 item（如 fcitx5）据此触发注册重试；同时
+       dbus_bus_request_name 本身引发的 NameOwnerChanged 也会被监听
+       watcher 总线名的 item 捕获——双通道保证晚启动的 host 不漏单 */
+    {
+        DBusMessage *sig = dbus_message_new_signal(
+            "/StatusNotifierWatcher", "org.kde.StatusNotifierWatcher",
+            "StatusNotifierHostRegistered");
+        if (sig) {
+            dbus_connection_send(conn, sig, 0);
+            dbus_message_unref(sig);
+        }
+    }
 
     dbus_connection_flush(conn);
     fprintf(stderr, "kpanel SNI: watcher online\n");
@@ -189,9 +210,20 @@ DBusHandlerResult SNITray::messageFilter(DBusConnection *c, DBusMessage *m,
         }
     }
 
-    /* item 的 Pixmaps 属性应答 → 渲染 */
-    if (dbus_message_get_type(m) == DBUS_MESSAGE_TYPE_METHOD_RETURN &&
-        self->pendingIconCall == dbus_message_get_reply_serial(m)) {
+    /* item 的 Pixmaps 属性应答 → 渲染。
+     * [KDE1 Revival 2026] reply 路由修复：以 reply_serial 匹配各 item
+     * 的 iconSerial（send 时由 libdbus 分配、记在 SNIClient 上）——
+     * 原实现用单个全局 pendingIconCall 且在 send 之前取 serial（恒为
+     * 0），reply 永不命中；多 item 时又固定渲染到第一个 client。 */
+    if (dbus_message_get_type(m) == DBUS_MESSAGE_TYPE_METHOD_RETURN) {
+        dbus_uint32_t rserial = dbus_message_get_reply_serial(m);
+        SNIClient *target = 0;
+        for (SNIClient *cl = self->clients.first(); cl && !target;
+             cl = self->clients.next())
+            if (cl->iconSerial != 0 && cl->iconSerial == rserial)
+                target = cl;
+        if (!target)
+            return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
         /* 解析 v=a(iiay)：宽 高 array-of-bytes(ARGB) */
         DBusMessageIter it, vit, arr, st;
         dbus_message_iter_init(m, &it);
@@ -211,12 +243,18 @@ DBusHandlerResult SNITray::messageFilter(DBusConnection *c, DBusMessage *m,
         dbus_message_iter_get_basic(&st, &ih);
         dbus_message_iter_next(&st);
         if (dbus_message_iter_get_arg_type(&st) != DBUS_TYPE_ARRAY ||
-            iw <= 0 || ih <= 0 || iw > 256 || ih > 256)
+            iw <= 0 || ih <= 0 || iw > 256 || ih > 256) {
+            target->iconSerial = 0;
             return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
+        }
         DBusMessageIter bytes;
         dbus_message_iter_recurse(&st, &bytes);
         int need = iw * ih * 4;
         unsigned char *buf = (unsigned char *) malloc(need);
+        if (!buf) {
+            target->iconSerial = 0;
+            return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
+        }
         memset(buf, 0, need);
         int got = 0;
         while (dbus_message_iter_get_arg_type(&bytes) == DBUS_TYPE_BYTE &&
@@ -226,12 +264,8 @@ DBusHandlerResult SNITray::messageFilter(DBusConnection *c, DBusMessage *m,
             buf[got++] = b;
             dbus_message_iter_next(&bytes);
         }
-        /* 找到对应 item 并绘制 */
-        for (SNIClient *cl = self->clients.first(); cl; cl = self->clients.next())
-            if (dbus_message_get_reply_serial(m)) { /* 单 item 场景简化 */
-                self->renderIcon(cl, buf, iw, ih);
-                break;
-            }
+        target->iconSerial = 0;
+        self->renderIcon(target, buf, iw, ih);
         free(buf);
         return DBUS_HANDLER_RESULT_HANDLED;
     }
@@ -277,7 +311,10 @@ void SNITray::handleItemRegister(const char *service, const char *path)
     clients.append(c);
     emit clientsChanged();
 
-    /* 异步读 IconPixmap 属性 */
+    /* 异步读 IconPixmap 属性。
+     * [KDE1 Revival 2026] serial 必须经 dbus_connection_send 的出参取得——
+     * send 之前 dbus_message_get_serial() 恒为 0（序号由总线侧分配），
+     * 原实现把 0 记进全局字段导致 reply 永不匹配。 */
     DBusMessage *m = dbus_message_new_method_call(
         service, path, "org.freedesktop.DBus.Properties", "Get");
     if (m) {
@@ -287,8 +324,9 @@ void SNITray::handleItemRegister(const char *service, const char *path)
         dbus_message_iter_init_append(m, &it);
         dbus_message_iter_append_basic(&it, DBUS_TYPE_STRING, &iface);
         dbus_message_iter_append_basic(&it, DBUS_TYPE_STRING, &prop);
-        pendingIconCall = dbus_message_get_serial(m);
-        dbus_connection_send(conn, m, 0);
+        dbus_uint32_t serial = 0;
+        dbus_connection_send(conn, m, &serial);
+        c->iconSerial = serial;
         dbus_message_unref(m);
         dbus_connection_flush(conn);
     }
@@ -338,6 +376,12 @@ void SNITray::renderIcon(SNIClient *c, const unsigned char *argb,
                               ZPixmap, 0, 0, 24, 24, 32, 0);
     if (xi) {
         char *xdata = (char *) malloc(xi->bytes_per_line * 24);
+        if (!xdata) {
+            xi->data = 0;
+            XDestroyImage(xi);
+            XFreePixmap(d, newpix);
+            return;
+        }
         xi->data = xdata;
         for (int y = 0; y < 24; y++) {
             unsigned int *dst = (unsigned int *) (xdata + y * xi->bytes_per_line);

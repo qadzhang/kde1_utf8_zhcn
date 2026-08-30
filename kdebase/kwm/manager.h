@@ -47,6 +47,12 @@
 
 #include <config.h>
 
+// [KDE1 Revival 2026] 会话命令是否属于桌面核心组件（kpanel/kfm/…）。
+// 保存侧（Manager::getSessionCommands）与恢复侧（MyApp::restoreSession）
+// 共用：核心组件由 startkde 统一拉起，禁止经会话重放产生重复实例。
+// 实现见 manager.C。
+bool isDesktopCoreCommand(const char *cmd);
+
 class Manager : public QObject {
 Q_OBJECT
 public:

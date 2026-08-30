@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment=TeX DVI File Viewer
+Comment[zh_CN]=TeX DVI æ–‡ä»¶æŸ¥çœ‹å™¨
 Comment[ca]=Visualitzador de fitxers DVI TeX
 Comment[cs]=Prohlí¾eè Device Independent (DVI) souborù
 Comment[da]=TeX DVI-fil fremviser
@@ -24,6 +25,7 @@ Comment[sl]=Ogled datotek DVI (TeX)
 Comment[sv]=Visare för TeX DVI-dokument
 BinaryPattern=kdvi;
 Name=DVI Viewer
+Name[zh_CN]=DVI æŸ¥çœ‹å™¨
 Name[ca]=Visualitzador DVI
 Name[cs]=Prohlí¾eè DVI souborù
 Name[da]=DVI-fremviser
@@ -46,7 +48,7 @@ Name[sk]=Prehliadaè DVI
 Name[sl]=Pregledovalnik DVI
 Name[sv]=DVI-visare
 MimeType=application/x-dvi;
-Exec=kdvi %f -caption "%c" %i %m
+Exec=kdvi1 %f -caption "%c" %i %m
 TerminalOptions=
 Icon=kdvi.xpm
 MiniIcon=kdvi.xpm

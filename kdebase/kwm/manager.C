@@ -3537,6 +3537,49 @@ void Manager::processSaveYourself(){
   XAllowEvents(qt_xdisplay(), ReplayKeyboard, CurrentTime);
 }
 
+// ┌─ What : 判断一条会话恢复命令是否属于 KDE1 桌面核心组件
+// │        （kwm/kpanel/kfm/krootwm/kbgndwm/kwmsound/kaudioserver/kcontrol）
+// │  Why  : 这些组件由 startkde 在每次登录时统一拉起；1999 年原版 kwm 的
+// │        会话代理在保存/恢复时从不填充 proxyignore 清单，注销时把它们写进
+// │        kwmrc [Session] tasks= ，下次登录又被重放一遍——产生重复 kpanel
+// │        （1999 年即存在的缺陷：任务栏出现幽灵窗口/托盘管理器被抢注）。
+// │  Who  : Manager::getSessionCommands()（保存侧）与 MyApp::restoreSession()
+// │        （恢复侧，兜底滤掉存量脏配置）共同调用
+// │  When : 会话保存（注销/SM saveYourself）与会话恢复（kwm 启动）两条路径
+// │  Where: kdebase/kwm/manager.C（本函数）；命令串形如 "kpanel -caption x"
+// │  How  : 伪代码——
+// │          1. 取命令串首词（跳过前导空白，到首个空白/结尾）
+// │          2. 去掉可能的路径前缀（*/bin/kpanel → kpanel）
+// │          3. 与核心组件名单逐一比对，命中返回 true
+// static bool isDesktopCoreCommand(const char* cmd)
+static bool isDesktopCoreCommand(const char *cmd)
+{
+    // 伪代码：
+    //   1. 空命令 → false
+    //   2. 提取首词 word（首个空白符之前的部分）
+    //   3. word 取 basename（最后一个 '/' 之后）
+    //   4. 名单精确比对：kwm/kpanel/kfm/krootwm/kbgndwm/kwmsound/
+    //      kaudioserver/kcontrol（startkde 固定拉起的全部组件）
+    if (!cmd || !*cmd)
+        return false;
+    const char *p = cmd;
+    while (*p == ' ' || *p == '\t') p++;
+    const char *end = p;
+    while (*end && *end != ' ' && *end != '\t') end++;
+    const char *slash = p;
+    for (const char *q = p; q < end; q++)
+        if (*q == '/') slash = q + 1;
+    static const char *core[] = {
+        "kwm", "kpanel", "kfm", "krootwm", "kbgndwm",
+        "kwmsound", "kaudioserver", "kcontrol", 0
+    };
+    size_t len = end - slash;
+    for (int i = 0; core[i]; i++)
+        if (strlen(core[i]) == len && strncmp(slash, core[i], len) == 0)
+            return true;
+    return false;
+}
+
 // commands from clients which can do session management
 QStrList* Manager::getSessionCommands(){
   QString thismachine;
@@ -3555,7 +3598,10 @@ QStrList* Manager::getSessionCommands(){
   QString command;
   QString machine;
   for (c = clients.first(); c; c = clients.next()){
-    if (!c->command.isEmpty() && !proxy_ignore->contains(c->command)){
+    // [KDE1 Revival 2026] 桌面核心组件（kpanel/kfm/…）不入会话清单：
+    // startkde 每次登录都会拉起它们，重放只会得到重复实例（见上方 5W1H）
+    if (!c->command.isEmpty() && !proxy_ignore->contains(c->command)
+        && !isDesktopCoreCommand(c->command)){
       // create a machine dependend command
       command = c->command.data();
       if (!c->machine.isEmpty()){

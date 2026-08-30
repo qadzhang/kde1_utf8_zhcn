@@ -17,177 +17,177 @@ msgstr ""
 #: utils.cpp:65
 #, c-format
 msgid "copyFile - There was an error opening destination file: %s"
-msgstr ""
+msgstr "copyFile - 打开目标文件时出错：%s"
 
 #: utils.cpp:72
 #, c-format
 msgid "copyFile - There was an error reading source file: %s"
-msgstr ""
+msgstr "copyFile - 读取源文件时出错：%s"
 
 #: utils.cpp:80
 #, c-format
 msgid "copyFile - There was an error writing to destination file: %s"
-msgstr ""
+msgstr "copyFile - 写入目标文件时出错：%s"
 
 #: utils.cpp:93
 #, c-format
 msgid "copyFile - There was an error opening source file: %s"
-msgstr ""
+msgstr "copyFile - 打开源文件时出错：%s"
 
 #: utils.cpp:105
 #, c-format
 msgid "removeFile - There was an error removing the file: %s"
-msgstr ""
+msgstr "removeFile - 删除文件时出错：%s"
 
 #: kiconedit.cpp:239 kiconeditslots.cpp:62 kiconeditslots.cpp:121
 msgid ""
 "The current file has been modified.\n"
 "Do you want to save it?"
-msgstr ""
+msgstr "当前文件已修改。\n是否保存？"
 
 #: kiconedit.cpp:373
 msgid "Select All"
-msgstr ""
+msgstr "全部选择"
 
 #: kiconedit.cpp:391
 msgid "New &Window"
-msgstr ""
+msgstr "新建窗口(&W)"
 
 #: kiconedit.cpp:396
 msgid "&New..."
-msgstr ""
+msgstr "新建(&N)..."
 
 #: kiconedit.cpp:402
 msgid "Open recent"
-msgstr ""
+msgstr "打开最近的文件"
 
 #: kiconedit.cpp:423
 msgid "&Exit"
-msgstr ""
+msgstr "退出(&X)"
 
 #: kiconedit.cpp:431
 msgid "Cu&t"
-msgstr ""
+msgstr "剪切(&T)"
 
 #: kiconedit.cpp:440
 msgid "Paste as &new"
-msgstr ""
+msgstr "粘贴为新图像(&N)"
 
 #: kiconedit.cpp:443
 msgid "Clea&r"
-msgstr ""
+msgstr "清除(&R)"
 
 #: kiconedit.cpp:447
 msgid "Select &all"
-msgstr ""
+msgstr "全部选择(&A)"
 
 #: kiconedit.cpp:454
 msgid "1:1"
-msgstr ""
+msgstr "1:1"
 
 #: kiconedit.cpp:455
 msgid "1:5"
-msgstr ""
+msgstr "1:5"
 
 #: kiconedit.cpp:456
 msgid "1:10"
-msgstr ""
+msgstr "1:10"
 
 #: kiconedit.cpp:461
 msgid "Zoom &in"
-msgstr ""
+msgstr "放大(&I)"
 
 #: kiconedit.cpp:462
 msgid "Zoom &out"
-msgstr ""
+msgstr "缩小(&O)"
 
 #: kiconedit.cpp:463
 msgid "Zoom factor"
-msgstr ""
+msgstr "缩放比例"
 
 #: kiconedit.cpp:470
 msgid "&Resize"
-msgstr ""
+msgstr "调整大小(&R)"
 
 #: kiconedit.cpp:472
 msgid "&GrayScale"
-msgstr ""
+msgstr "灰度(&G)"
 
 #: kiconedit.cpp:477
 msgid "&Icon"
-msgstr ""
+msgstr "图标(&I)"
 
 #: kiconedit.cpp:481
 msgid "Freehand"
-msgstr ""
+msgstr "自由曲线"
 
 #: kiconedit.cpp:482
 msgid "Rectangle"
-msgstr ""
+msgstr "矩形"
 
 #: kiconedit.cpp:483
 msgid "Filled rectangle"
-msgstr ""
+msgstr "填充矩形"
 
 #: kiconedit.cpp:484
 msgid "Circle"
-msgstr ""
+msgstr "圆形"
 
 #: kiconedit.cpp:485
 msgid "Filled circle"
-msgstr ""
+msgstr "填充圆形"
 
 #: kiconedit.cpp:486
 msgid "Ellipse"
-msgstr ""
+msgstr "椭圆"
 
 #: kiconedit.cpp:487
 msgid "Filled ellipse"
-msgstr ""
+msgstr "填充椭圆"
 
 #: kiconedit.cpp:488 kiconedit.cpp:687
 msgid "Spray"
-msgstr ""
+msgstr "喷涂"
 
 #: kiconedit.cpp:489 kiconedit.cpp:689
 msgid "Flood fill"
-msgstr ""
+msgstr "填充颜色"
 
 #: kiconedit.cpp:490
 msgid "Line"
-msgstr ""
+msgstr "直线"
 
 #: kiconedit.cpp:491
 msgid "Eraser (Transparent)"
-msgstr ""
+msgstr "橡皮擦(透明)"
 
 #: kiconedit.cpp:494
 msgid "&Tools"
-msgstr ""
+msgstr "工具(&T)"
 
 #: kiconedit.cpp:498
 msgid "&Configure"
-msgstr ""
+msgstr "配置(&C)"
 
 #: kiconedit.cpp:500
 msgid "Toggle &Grid"
-msgstr ""
+msgstr "网格(&G)"
 
 #: kiconedit.cpp:503
 msgid "Toggle &toolbar"
-msgstr ""
+msgstr "工具栏(&T)"
 
 #: kiconedit.cpp:506
 msgid "Toggle &drawing tools"
-msgstr ""
+msgstr "绘图工具(&D)"
 
 #: kiconedit.cpp:509
 msgid "Toggle &statusbar"
-msgstr ""
+msgstr "状态栏(&S)"
 
 #: kiconedit.cpp:513
 msgid "&Save options"
-msgstr ""
+msgstr "保存选项(&S)"
 
 #: kiconedit.cpp:520
 msgid ""
@@ -200,102 +200,110 @@ msgid ""
 "tanghus@kde.org\n"
 "http://w1.1358.telia.com/~u135800018"
 msgstr ""
+"KDE 图标编辑器\n"
+"\n"
+"一款使用 KDE 图标调色板\n"
+"创建图标的图形绘制程序\n"
+"\n"
+"版权所有 1998 Thomas Tanghus\n"
+"tanghus@kde.org\n"
+"http://w1.1358.telia.com/~u135800018"
 
 #: kiconedit.cpp:570
 msgid "What is ...?"
-msgstr ""
+msgstr "这是什么？"
 
 #: kiconedit.cpp:579
 msgid "Drag source"
-msgstr ""
+msgstr "拖动源"
 
 #: kiconedit.cpp:584
 msgid "New File"
-msgstr ""
+msgstr "新建文件"
 
 #: kiconedit.cpp:588
 msgid "Save the file"
-msgstr ""
+msgstr "保存文件"
 
 #: kiconedit.cpp:591
 msgid "Print icon"
-msgstr ""
+msgstr "打印图标"
 
 #: kiconedit.cpp:606
 msgid "Select area"
-msgstr ""
+msgstr "选择区域"
 
 #: kiconedit.cpp:612
 msgid "Resize"
-msgstr ""
+msgstr "调整大小"
 
 #: kiconedit.cpp:615
 msgid "GrayScale"
-msgstr ""
+msgstr "灰度"
 
 #: kiconedit.cpp:622
 msgid "Zoom out"
-msgstr ""
+msgstr "缩小"
 
 #: kiconedit.cpp:625
 msgid "Zoom in"
-msgstr ""
+msgstr "放大"
 
 #: kiconedit.cpp:629
 msgid "Toggle grid"
-msgstr ""
+msgstr "网格"
 
 #: kiconedit.cpp:640
 msgid "New Window"
-msgstr ""
+msgstr "新建窗口"
 
 #: kiconedit.cpp:668
 msgid "Find pixel"
-msgstr ""
+msgstr "取色"
 
 #: kiconedit.cpp:670
 msgid "Draw freehand"
-msgstr ""
+msgstr "自由曲线"
 
 #: kiconedit.cpp:673
 msgid "Draw line"
-msgstr ""
+msgstr "直线"
 
 #: kiconedit.cpp:675
 msgid "Draw rectangle"
-msgstr ""
+msgstr "矩形"
 
 #: kiconedit.cpp:677
 msgid "Draw filled rectangle"
-msgstr ""
+msgstr "填充矩形"
 
 #: kiconedit.cpp:679
 msgid "Draw circle"
-msgstr ""
+msgstr "圆形"
 
 #: kiconedit.cpp:681
 msgid "Draw filled circle"
-msgstr ""
+msgstr "填充圆形"
 
 #: kiconedit.cpp:683
 msgid "Draw ellipse"
-msgstr ""
+msgstr "椭圆"
 
 #: kiconedit.cpp:685
 msgid "Draw filled ellipse"
-msgstr ""
+msgstr "填充椭圆"
 
 #: kiconedit.cpp:692
 msgid "Erase"
-msgstr ""
+msgstr "橡皮擦"
 
 #: kiconedit.cpp:715
 msgid "System Colors"
-msgstr ""
+msgstr "系统颜色"
 
 #: kiconedit.cpp:745
 msgid "Custom Colors"
-msgstr ""
+msgstr "自定义颜色"
 
 #: kiconedit.cpp:786
 msgid ""
@@ -306,6 +314,11 @@ msgid ""
 "(Tip: Hold the magnify button down for a few seconds to zoom to a predefined "
 "scale"
 msgstr ""
+"图标绘制网格\n"
+"\n"
+"图标网格是用来绘制图标的区域。\n"
+"可以使用工具栏上的放大镜按钮放大或缩小视图。\n"
+"（提示：按住放大按钮数秒可缩放到预设比例）"
 
 #: kiconedit.cpp:791
 msgid ""
@@ -313,6 +326,9 @@ msgid ""
 "\n"
 "This is a visual represantation of the current cursor position"
 msgstr ""
+"标尺\n"
+"\n"
+"这是当前光标位置的直观显示。"
 
 #: kiconedit.cpp:795
 msgid ""
@@ -327,6 +343,15 @@ msgid ""
 "\t- Number of colors\n"
 "\t- Application messages"
 msgstr ""
+"状态栏\n"
+"\n"
+"状态栏用于显示当前图标的状态信息。可显示的字段包括：\n"
+"\n"
+"\t- 光标位置\n"
+"\t- 大小\n"
+"\t- 缩放比例\n"
+"\t- 颜色数\n"
+"\t- 应用程序消息"
 
 #: kiconedit.cpp:804
 msgid ""
@@ -334,6 +359,9 @@ msgid ""
 "\n"
 "This is a 1:1 preview of the current icon"
 msgstr ""
+"预览\n"
+"\n"
+"这是当前图标的 1:1 预览"
 
 #: kiconedit.cpp:807
 msgid ""
@@ -341,6 +369,9 @@ msgid ""
 "\n"
 "Here you can select colors from the KDE Icon Palette."
 msgstr ""
+"系统颜色\n"
+"\n"
+"您可以从此处选择 KDE 图标调色板中的颜色。"
 
 #: kiconedit.cpp:810
 msgid ""
@@ -349,6 +380,10 @@ msgid ""
 "Here you can build a palette of custom colors.\n"
 "Just double-click on a box to edit the color"
 msgstr ""
+"自定义颜色\n"
+"\n"
+"您可以在这里建立自定义颜色的面板。\n"
+"双击色块即可编辑颜色"
 
 #: kiconedit.cpp:816
 msgid ""
@@ -356,6 +391,9 @@ msgid ""
 "\n"
 "Create a new icon either from a template or by specifying the size"
 msgstr ""
+"新建\n"
+"\n"
+"从模板创建新图标，或自行指定尺寸创建"
 
 #: kiconedit.cpp:819
 msgid ""
@@ -363,6 +401,9 @@ msgid ""
 "\n"
 "Open an existing icon"
 msgstr ""
+"打开\n"
+"\n"
+"打开已有的图标"
 
 #: kiconedit.cpp:822
 msgid ""
@@ -370,6 +411,9 @@ msgid ""
 "\n"
 "Save the current icon"
 msgstr ""
+"保存\n"
+"\n"
+"保存当前图标"
 
 #: kiconedit.cpp:825
 msgid ""
@@ -378,6 +422,9 @@ msgid ""
 "Opens a print dialog to let you print the current icon. (Doesn't realy work "
 "as expected"
 msgstr ""
+"打印\n"
+"\n"
+"打开打印对话框以打印当前图标。（功能尚未完善，实际效果可能与预期不符）"
 
 #: kiconedit.cpp:829
 msgid ""
@@ -387,6 +434,11 @@ msgid ""
 "\n"
 "(Tip: You can make both rectangular and circular selections)"
 msgstr ""
+"剪切\n"
+"\n"
+"将当前选区从图标中剪切\n"
+"\n"
+"（提示：可使用矩形或圆形选区）"
 
 #: kiconedit.cpp:833
 msgid ""
@@ -396,6 +448,11 @@ msgid ""
 "\n"
 "(Tip: You can make both rectangular and circular selections)"
 msgstr ""
+"复制\n"
+"\n"
+"将当前选区从图标中复制\n"
+"\n"
+"（提示：可使用矩形或圆形选区）"
 
 #: kiconedit.cpp:837
 msgid ""
@@ -409,6 +466,13 @@ msgid ""
 "(Tip: Select \"Paste transparent pixels\" in the configuration dialog if you "
 "also want to paste transparent)"
 msgstr ""
+"粘贴\n"
+"\n"
+"将剪贴板的内容粘贴到当前图标。\n"
+"\n"
+"如果剪贴板内容大于当前图标，可粘贴到新窗口。\n"
+"\n"
+"（提示：若希望粘贴透明像素，可在配置对话框中勾选“粘贴透明像素”）"
 
 #: kiconedit.cpp:844
 msgid ""
@@ -418,6 +482,11 @@ msgid ""
 "\n"
 "(Tip: You can make both rectangular and circular selections)"
 msgstr ""
+"选择\n"
+"\n"
+"使用鼠标选择图标的某区域。\n"
+"\n"
+"（提示：可使用矩形或圆形选区）"
 
 #: kiconedit.cpp:848
 msgid ""
@@ -425,6 +494,9 @@ msgid ""
 "\n"
 "Smoothly resizes the icon while trying to preserve the contents"
 msgstr ""
+"调整大小\n"
+"\n"
+"平滑地调整图标大小，并尽量保留原图内容"
 
 #: kiconedit.cpp:851
 msgid ""
@@ -433,6 +505,10 @@ msgid ""
 "Gray scale the current icon.\n"
 "(Warning: The result is likely to contain colors not in the icon palette"
 msgstr ""
+"灰度\n"
+"\n"
+"将当前图标转为灰度。\n"
+"（警告：转换结果可能含有图标调色板以外的颜色）"
 
 #: kiconedit.cpp:855
 msgid ""
@@ -442,6 +518,11 @@ msgid ""
 "\n"
 "(Tip: Hold the button down for a few seconds to zoom to a predefined scale"
 msgstr ""
+"缩小\n"
+"\n"
+"缩小一级。\n"
+"\n"
+"（提示：按住按钮数秒可缩放到预设比例）"
 
 #: kiconedit.cpp:859
 msgid ""
@@ -451,6 +532,11 @@ msgid ""
 "\n"
 "(Tip: Hold the button down for a few seconds to zoom to a predefined scale"
 msgstr ""
+"放大\n"
+"\n"
+"放大一级。\n"
+"\n"
+"（提示：按住按钮数秒可缩放到预设比例）"
 
 #: kiconedit.cpp:863
 msgid ""
@@ -458,6 +544,9 @@ msgid ""
 "\n"
 "Toggles the grid in the icon edit grid on/off"
 msgstr ""
+"网格\n"
+"\n"
+"在图标编辑网格上显示或隐藏网格线"
 
 #: kiconedit.cpp:866
 msgid ""
@@ -465,6 +554,9 @@ msgid ""
 "\n"
 "Opens a new Icon Editor window."
 msgstr ""
+"新建窗口\n"
+"\n"
+"打开一个新的图标编辑器窗口。"
 
 #: kiconedit.cpp:869
 msgid ""
@@ -472,6 +564,9 @@ msgid ""
 "\n"
 "Well since you're reading this I guess you found out ;-)"
 msgstr ""
+"这是什么？\n"
+"\n"
+"既然您在读这段说明，您已经知道答案了 ;-)"
 
 #: kiconedit.cpp:872
 msgid ""
@@ -483,6 +578,11 @@ msgid ""
 "(Note: The drag source uses the QT XDND protocol which is not yet standard "
 "in KDE)"
 msgstr ""
+"拖动源\n"
+"\n"
+"点击此按钮可拖出当前图标的副本，并放到支持拖放的窗口中，例如另一个图标编辑器。\n"
+"\n"
+"（注意：拖动源使用 Qt XDND 协议，该协议在 KDE 中尚未成为标准）"
 
 #: kiconedit.cpp:880
 msgid ""
@@ -490,6 +590,9 @@ msgid ""
 "\n"
 "Draw non-linear lines"
 msgstr ""
+"自由曲线\n"
+"\n"
+"绘制任意曲线"
 
 #: kiconedit.cpp:883
 msgid ""
@@ -497,6 +600,9 @@ msgid ""
 "\n"
 "Fill adjoining pixels with the same color with the current color"
 msgstr ""
+"填充颜色\n"
+"\n"
+"用当前颜色填充相邻的同色像素"
 
 #: kiconedit.cpp:886
 msgid ""
@@ -504,6 +610,9 @@ msgid ""
 "\n"
 "Draw a rectangle"
 msgstr ""
+"矩形\n"
+"\n"
+"绘制矩形"
 
 #: kiconedit.cpp:889
 msgid ""
@@ -511,6 +620,9 @@ msgid ""
 "\n"
 "Draw a filled rectangle"
 msgstr ""
+"填充矩形\n"
+"\n"
+"绘制填充矩形"
 
 #: kiconedit.cpp:892
 msgid ""
@@ -518,6 +630,9 @@ msgid ""
 "\n"
 "Draw a circle"
 msgstr ""
+"圆形\n"
+"\n"
+"绘制圆形"
 
 #: kiconedit.cpp:895
 msgid ""
@@ -525,6 +640,9 @@ msgid ""
 "\n"
 "Draw a filled circle"
 msgstr ""
+"填充圆形\n"
+"\n"
+"绘制填充圆形"
 
 #: kiconedit.cpp:898
 msgid ""
@@ -532,6 +650,9 @@ msgid ""
 "\n"
 "Draw an ellipse"
 msgstr ""
+"椭圆\n"
+"\n"
+"绘制椭圆"
 
 #: kiconedit.cpp:901
 msgid ""
@@ -539,6 +660,9 @@ msgid ""
 "\n"
 "Draw a filled ellipse"
 msgstr ""
+"填充椭圆\n"
+"\n"
+"绘制填充椭圆"
 
 #: kiconedit.cpp:904
 msgid ""
@@ -546,6 +670,9 @@ msgid ""
 "\n"
 "Draw a straight line vertically, horizontically or in 45 dgr. angles"
 msgstr ""
+"直线\n"
+"\n"
+"绘制水平、垂直或 45 度角的直线"
 
 #: kiconedit.cpp:907
 msgid ""
@@ -553,6 +680,9 @@ msgid ""
 "\n"
 "Draw scattered pixels in the current color"
 msgstr ""
+"喷涂\n"
+"\n"
+"在当前颜色下绘制随机散布的像素"
 
 #: kiconedit.cpp:910
 msgid ""
@@ -560,6 +690,9 @@ msgid ""
 "\n"
 "The color of the pixel clicked on will be the current drawcolor"
 msgstr ""
+"取色\n"
+"\n"
+"将点击的像素颜色设为当前绘制色"
 
 #: kiconedit.cpp:913
 msgid ""
@@ -570,161 +703,178 @@ msgid ""
 "(Tip: If you want to draw transparent with a different tool then first click "
 "on \"Erase\" then on the tool you want to use)"
 msgstr ""
+"橡皮擦\n"
+"\n"
+"擦除像素，将像素设为透明。\n"
+"\n"
+"（提示：若希望以透明方式使用其他工具，请先点“橡皮擦”，再选择要使用的工具）"
 
 #: kicongrid.cpp:66
 msgid "width"
-msgstr ""
+msgstr "宽度"
 
 #: kicongrid.cpp:71
 msgid "height"
-msgstr ""
+msgstr "高度"
 
 #: kicongrid.cpp:684
 msgid "There was an error loading a blank image.\n"
-msgstr ""
+msgstr "加载空白图像时出错。\n"
 
 #: kicongrid.cpp:830
 msgid "All selected"
-msgstr ""
+msgstr "已全选"
 
 #: kicongrid.cpp:841
 msgid "Cleared"
-msgstr ""
+msgstr "已清除"
 
 #: kicongrid.cpp:883
 msgid "Selected area cutted"
-msgstr ""
+msgstr "选区已剪切"
 
 #: kicongrid.cpp:886
 msgid "Selected area copied"
-msgstr ""
+msgstr "选区已复制"
 
 #: kicongrid.cpp:964
 msgid ""
 "There was an copying:\n"
 "to the clipboard!"
-msgstr ""
+msgstr "复制时出错：\n到剪贴板！"
 
 #: kicongrid.cpp:985
 msgid ""
 "The clipboard image is larger than the current image!\n"
 "Paste as new image?"
 msgstr ""
+"剪贴板中的图像大于当前图像！\n"
+"是否粘贴为新图像？"
 
 #: kicongrid.cpp:998
 msgid "Pasting"
-msgstr ""
+msgstr "正在粘贴"
 
 #: kicongrid.cpp:1030 kicongrid.cpp:1057
 msgid "Done pasting"
-msgstr ""
+msgstr "粘贴完成"
 
 #: kicongrid.cpp:1035 kicongrid.cpp:1061
 msgid "Invalid pixmap data in clipboard!\n"
-msgstr ""
+msgstr "剪贴板中的图像数据无效！\n"
 
 #: kiconcombiview.cpp:81
 msgid "Folders:"
-msgstr ""
+msgstr "文件夹："
 
 #: kiconcombiview.cpp:82
 msgid "Contents:"
-msgstr ""
+msgstr "内容："
 
 #: kicondetaillist.cpp:50
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: kicondetaillist.cpp:52
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: kicondetaillist.cpp:55
 msgid "Permissions"
-msgstr ""
+msgstr "权限"
 
 #: kicondetaillist.cpp:57
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: kicondetaillist.cpp:60
 msgid "Owner"
-msgstr ""
+msgstr "所有者"
 
 #: kicondetaillist.cpp:62
 msgid "Group"
-msgstr ""
+msgstr "组"
 
 #: kicon.cpp:48
 msgid "There was an error removing temporary backup file:\n"
-msgstr ""
+msgstr "删除临时备份文件时出错：\n"
 
 #: kicon.cpp:74 kicon.cpp:258 kicon.cpp:342 kicon.cpp:445
 msgid ""
 "We've got a KFM job running.\n"
 "Please wait."
 msgstr ""
+"当前有 KFM 任务正在运行。\n"
+"请稍候。"
 
 #: kicon.cpp:97
 msgid "The URL:\n"
-msgstr ""
+msgstr "URL：\n"
 
 #: kicon.cpp:99
 msgid ""
 "\n"
 "seems to be malformed.\n"
 msgstr ""
+"\n"
+"格式似乎不合法。\n"
 
 #: kicon.cpp:100 kicon.cpp:146 kicon.cpp:169 kicon.cpp:181 kicon.cpp:194
 #: kicon.cpp:207 kicon.cpp:218 kicon.cpp:399 kicon.cpp:432
 msgid "ERROR"
-msgstr ""
+msgstr "错误"
 
 #: kicon.cpp:116
 msgid "The KDE Icon Editor has found a recover file for:\n"
-msgstr ""
+msgstr "KDE 图标编辑器找到以下恢复文件：\n"
 
 #: kicon.cpp:118 kicon.cpp:285
 msgid ""
 "\n"
 "Do you want to open this?"
 msgstr ""
+"\n"
+"是否打开该文件？"
 
 #: kicon.cpp:143
 msgid "The file:\n"
-msgstr ""
+msgstr "文件：\n"
 
 #: kicon.cpp:145
 msgid ""
 "\n"
 "doesn't exist or isn't readable.\n"
 msgstr ""
+"\n"
+"不存在或不可读。\n"
 
 #: kicon.cpp:160
 msgid ""
 "The Icon Editor is already downloading a non-local file.\n"
 "Please wait.\n"
 msgstr ""
+"图标编辑器正在下载一个非本地文件。\n"
+"请稍候。\n"
 
 #: kicon.cpp:170
 msgid "Couldn't initiate KFM!"
-msgstr ""
+msgstr "无法启动 KFM！"
 
 #: kicon.cpp:178
 msgid "There was a KFM error creating a backup for:\n"
-msgstr ""
+msgstr "KFM 为以下对象创建备份时出错：\n"
 
 #: kicon.cpp:191 kicon.cpp:396
 msgid "There was an error creating a backup for:\n"
-msgstr ""
+msgstr "为以下对象创建备份时出错：\n"
 
 #: kicon.cpp:204
 msgid "KIcon: There was a error locking:\n"
-msgstr ""
+msgstr "KIcon：锁定时出错：\n"
 
 #: kicon.cpp:215 kicon.cpp:291
 msgid "KIcon: There was a QT error loading:\n"
-msgstr ""
+msgstr "KIcon：Qt 加载时出错：\n"
 
 #: kicon.cpp:261
 msgid ""
@@ -733,206 +883,211 @@ msgid ""
 "*.gif|GIF files (*.gif)\n"
 "*jpg|JPEG files (*.jpg)\n"
 msgstr ""
+"*|所有文件 (*)\n"
+"*.xpm|XPM 文件 (*.xpm)\n"
+"*.gif|GIF 文件 (*.gif)\n"
+"*.jpg|JPEG 文件 (*.jpg)\n"
 
 #: kicon.cpp:283
 msgid "The KDE Icon Editor has found a recover\n"
-msgstr ""
+msgstr "KDE 图标编辑器找到一份恢复\n"
 
 #: kicon.cpp:284
 msgid "file for an unsaved icon."
-msgstr ""
+msgstr "文件，属于一个尚未保存的图标。"
 
 #: kicon.cpp:409
 msgid "Couldn't initiate KFM"
-msgstr ""
+msgstr "无法启动 KFM"
 
 #: kicon.cpp:422
 msgid "Done saving"
-msgstr ""
+msgstr "保存完成"
 
 #: kicon.cpp:429
 msgid "There was an error saving:\n"
-msgstr ""
+msgstr "保存出错：\n"
 
 #: kresize.cpp:29
 msgid "Size:"
-msgstr ""
+msgstr "尺寸："
 
 #: kresize.cpp:64
 msgid "Select size:"
-msgstr ""
+msgstr "选择尺寸："
 
 #: knew.cpp:34
 msgid "Standard file"
-msgstr ""
+msgstr "标准文件"
 
 #: knew.cpp:39
 msgid "Source file"
-msgstr ""
+msgstr "源文件"
 
 #: knew.cpp:44
 msgid "Compressed file"
-msgstr ""
+msgstr "压缩文件"
 
 #: knew.cpp:49
 msgid "Standard folder"
-msgstr ""
+msgstr "标准文件夹"
 
 #: knew.cpp:54
 msgid "Standard package"
-msgstr ""
+msgstr "标准包"
 
 #: knew.cpp:59
 msgid "Mini folder"
-msgstr ""
+msgstr "小型文件夹"
 
 #: knew.cpp:64
 msgid "Mini package"
-msgstr ""
+msgstr "小型包"
 
 #: knew.cpp:156 knew.cpp:258 knew.cpp:308
 msgid "Create from scratch"
-msgstr ""
+msgstr "从头创建"
 
 #: knew.cpp:158 knew.cpp:313
 msgid "Create from template"
-msgstr ""
+msgstr "从模板创建"
 
 #: kiconconfig.cpp:120 knew.cpp:194
 msgid "Templates:"
-msgstr ""
+msgstr "模板："
 
 #: knew.cpp:252
 msgid "Select icontype"
-msgstr ""
+msgstr "选择图标类型"
 
 #: knew.cpp:263
 msgid "Create new icon"
-msgstr ""
+msgstr "创建新图标"
 
 #: debug.cpp:20
 msgid "Fatal!"
-msgstr ""
+msgstr "致命错误！"
 
 #: kiconeditslots.cpp:403
 msgid "Sorry - not implemented."
-msgstr ""
+msgstr "抱歉 - 尚未实现。"
 
 #: kiconeditslots.cpp:471 kiconeditslots.cpp:478
 #, c-format
 msgid "Colors: %u"
-msgstr ""
+msgstr "颜色数：%u"
 
 #: kiconconfig.cpp:30
 msgid "Template"
-msgstr ""
+msgstr "模板"
 
 #: kiconconfig.cpp:31
 msgid "Description:"
-msgstr ""
+msgstr "说明："
 
 #: kiconconfig.cpp:33
 msgid "Path:"
-msgstr ""
+msgstr "路径："
 
 #: kiconconfig.cpp:63
 msgid "&Browse..."
-msgstr ""
+msgstr "浏览(&B)..."
 
 #: kiconconfig.cpp:136
 msgid "&Add"
-msgstr ""
+msgstr "添加(&A)"
 
 #: kiconconfig.cpp:248
 msgid "Color or pixmap"
-msgstr ""
+msgstr "颜色或图像"
 
 #: kiconconfig.cpp:256
 msgid "Colored background"
-msgstr ""
+msgstr "纯色背景"
 
 #: kiconconfig.cpp:261
 msgid "Pixmap background"
-msgstr ""
+msgstr "图像背景"
 
 #: kiconconfig.cpp:276
 msgid "&Color..."
-msgstr ""
+msgstr "颜色(&C)..."
 
 #: kiconconfig.cpp:279
 msgid "&Pixmap..."
-msgstr ""
+msgstr "图像(&P)..."
 
 #: kiconconfig.cpp:287
 msgid "&Built-in"
-msgstr ""
+msgstr "内置(&B)"
 
 #: kiconconfig.cpp:291
 msgid "Example"
-msgstr ""
+msgstr "示例"
 
 #: kiconconfig.cpp:399
 msgid "Main Toolbar"
-msgstr ""
+msgstr "主工具栏"
 
 #: kiconconfig.cpp:402
 msgid "Drawing tools"
-msgstr ""
+msgstr "绘图工具"
 
 #: kiconconfig.cpp:406
 msgid ""
 "Note: Other settings of the toolbars can be reached\n"
 "from the toolbar \"handle\" or from the \"Options\" menu"
 msgstr ""
+"提示：工具栏的其他设置可通过工具栏的“握柄”，或“选项”菜单访问。"
 
 #: kiconconfig.cpp:425 kiconconfig.cpp:438
 msgid "Show Icon"
-msgstr ""
+msgstr "仅显示图标"
 
 #: kiconconfig.cpp:430 kiconconfig.cpp:443
 msgid "Show Icon and Text"
-msgstr ""
+msgstr "显示图标和文本"
 
 #: kiconconfig.cpp:434 kiconconfig.cpp:447
 msgid "Show Text"
-msgstr ""
+msgstr "仅显示文本"
 
 #: kiconconfig.cpp:505
 msgid "Paste mode"
-msgstr ""
+msgstr "粘贴模式"
 
 #: kiconconfig.cpp:507
 msgid "Paste transparent pixels"
-msgstr ""
+msgstr "粘贴透明像素"
 
 #: kiconconfig.cpp:511
 msgid "Show rulers"
-msgstr ""
+msgstr "显示标尺"
 
 #: kiconconfig.cpp:593
 msgid "Keys"
-msgstr ""
+msgstr "快捷键"
 
 #: kiconconfig.cpp:598
 msgid "Configure keys"
-msgstr ""
+msgstr "配置快捷键"
 
 #: kiconconfig.cpp:605
 msgid "Templates"
-msgstr ""
+msgstr "模板"
 
 #: kiconconfig.cpp:610
 msgid "Configure Icon templates"
-msgstr ""
+msgstr "配置图标模板"
 
 #: kiconconfig.cpp:622
 msgid "Configure background"
-msgstr ""
+msgstr "配置背景"
 
 #: kiconconfig.cpp:630
 msgid "Toolbars"
-msgstr ""
+msgstr "工具栏"
 
 #: kiconconfig.cpp:642
 msgid "Icon grid"
-msgstr ""
+msgstr "图标网格"
