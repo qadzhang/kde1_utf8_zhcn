@@ -27,7 +27,7 @@
 set -e
 
 ROOT="$PWD"
-VERSION="1.1.2"
+VERSION="1.2.0"
 REL="1"
 STAGING="$ROOT/staging"
 DIST="$ROOT/dist"
@@ -99,7 +99,7 @@ echo "=== 打包 kde1-core"
 mkctrl core kde1-core \
     "libx11-6, libxext6, libxmu6, libxpm4, libjpeg62-turbo, libpng16-16, zlib1g, libtiff6, libxft2, libfontconfig1, libfreetype6, libwebkit2gtk-4.1-0" \
     "fonts-noto-cjk" \
-    "KDE 1.1.2 core desktop (Qt 1.44, kdelibs, kdebase) - restored"
+    "KDE 1.2.0 core desktop (TQt3, kdelibs, kdebase) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/core" "$OUTDEB/kde1-core_${VERSION}-${REL}_amd64.deb"
 
 # ── 4. kde1-apps
@@ -107,7 +107,7 @@ echo "=== 打包 kde1-apps"
 mkctrl apps kde1-apps \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
-    "KDE 1.1.2 applications (games, utils, network, toys) - restored"
+    "KDE 1.2.0 applications (games, utils, network, toys) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/apps" "$OUTDEB/kde1-apps_${VERSION}-${REL}_amd64.deb"
 
 # ── 5. kde1 元包：会话集成（零手工配置，见 AGENTS.md §1 目标 5/6）
@@ -129,8 +129,8 @@ Section: x11
 Priority: optional
 Depends: kde1-core (= ${VERSION}-${REL}), kde1-apps (= ${VERSION}-${REL})
 Recommends: fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
-Description: KDE 1.1.2 Revival - session integration metapackage
- Installs the lightdm session entry (KDE 1.1.2 Revival) and the
+Description: KDE 1.2.0 Revival - session integration metapackage
+ Installs the lightdm session entry (KDE 1.2.0 Revival) and the
  startkde-kde1 wrapper which sets KDEDIR/PATH/LD_LIBRARY_PATH, starts
  fcitx5/fcitx for XIM input, and preloads padsp so 1999-era OSS sounds
  route to PipeWire/PulseAudio. Zero manual configuration.

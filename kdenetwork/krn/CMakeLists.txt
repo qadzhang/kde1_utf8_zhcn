@@ -10,6 +10,7 @@
 include_directories(
     ${KDE1_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/../kmail  # krn 借用 kmail 的 km* 头(KMFolder 仅作指针形参)
+    ${CMAKE_CURRENT_SOURCE_DIR}/../mimelib/  # mimelib/smtp.h 等协议头（与 kmail 同款写法）
 )
 
 add_definitions(-Dlinux -DKRN)  # Makefile.am 的 KRN 宏:krn 版 km* 代码的分支开关(aboutText/KMMainWin 绕过等)
