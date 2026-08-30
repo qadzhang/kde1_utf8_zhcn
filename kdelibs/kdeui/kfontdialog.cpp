@@ -277,8 +277,9 @@ KFontDialog::KFontDialog( QWidget *parent, const char *name,
   box1layout->addWidget(family_combo, 1, 2);
   family_combo->setInsertionPolicy(QComboBox::NoInsertion);
   
-  connect( family_combo, SIGNAL(activated(const char *)),
-	  SLOT(family_chosen_slot(const char *)) );
+  /* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å·ï¼æ§½æ¹æç´¢å¼åææ¬ */
+	  connect( family_combo, SIGNAL(activated(int)),
+	  SLOT(family_chosen_slot(int)) );
   
   if (fontlist != 0L){
     if(fontlist->count() !=0){
@@ -326,8 +327,8 @@ KFontDialog::KFontDialog( QWidget *parent, const char *name,
   
   //  size_combo->setInsertionPolicy(QComboBox::NoInsertion);
   
-  connect( size_combo, SIGNAL(activated(const char *)),
-	  SLOT(size_chosen_slot(const char *)) );
+  connect( size_combo, SIGNAL(activated(int)),
+	  SLOT(size_chosen_slot(int)) );
   MINSIZE(size_combo);
   
   
@@ -338,8 +339,8 @@ KFontDialog::KFontDialog( QWidget *parent, const char *name,
   weight_combo->insertItem( klocale->translate("bold") );
   
   weight_combo->setInsertionPolicy(QComboBox::NoInsertion);
-  connect( weight_combo, SIGNAL(activated(const char *)),
-	  SLOT(weight_chosen_slot(const char *)) );
+  connect( weight_combo, SIGNAL(activated(int)),
+	  SLOT(weight_chosen_slot(int)) );
   // QToolTip::add( weight_combo, "Select Font Weight" );
   
   MINSIZE(weight_combo);
@@ -352,8 +353,8 @@ KFontDialog::KFontDialog( QWidget *parent, const char *name,
   style_combo->insertItem( klocale->translate("italic") );
   
   style_combo->setInsertionPolicy(QComboBox::NoInsertion);
-  connect( style_combo, SIGNAL(activated(const char *)),
-	  SLOT(style_chosen_slot(const char *)) );
+  connect( style_combo, SIGNAL(activated(int)),
+	  SLOT(style_chosen_slot(int)) );
   MINSIZE(style_combo);
   
   
@@ -361,8 +362,8 @@ KFontDialog::KFontDialog( QWidget *parent, const char *name,
   box1layout->addWidget(charset_combo, 3, 2);
   
   charset_combo->setInsertionPolicy(QComboBox::NoInsertion);
-  connect( charset_combo, SIGNAL(activated(const char *)),
-	  SLOT(charset_chosen_slot(const char *)) );
+  connect( charset_combo, SIGNAL(activated(int)),
+	  SLOT(charset_chosen_slot(int)) );
   MINSIZE(charset_combo);
   
   
@@ -423,9 +424,9 @@ KFontDialog::KFontDialog( QWidget *parent, const char *name,
 }
 
 
-void KFontDialog::charset_chosen_slot(const char *chset){
+void KFontDialog::charset_chosen_slot(int index){
 
-  KCharset(chset).setQFont(selFont);
+  KCharset(charset_combo->text(index)).setQFont(selFont);
   emit fontSelected(selFont);
 }
 
@@ -464,9 +465,9 @@ void KFontDialog::setFont( const QFont& aFont){
 }  
 
 
-void KFontDialog::family_chosen_slot(const char* family){
+void KFontDialog::family_chosen_slot(int index){
 
-  selFont.setFamily(family);
+  selFont.setFamily(family_combo->text(index));
  
   // Re-create displayable charsets list
   KCharsets *charsets=KApplication::getKApplication()->getCharsets();
@@ -480,18 +481,18 @@ void KFontDialog::family_chosen_slot(const char* family){
   emit fontSelected(selFont);
 }
 
-void KFontDialog::size_chosen_slot(const char* size){
+void KFontDialog::size_chosen_slot(int index){
   
-  QString size_string = size;
+  QString size_string = size_combo->text(index);
 
   selFont.setPointSize(size_string.toInt());
   //display_example();
   emit fontSelected(selFont);
 }
 
-void KFontDialog::weight_chosen_slot(const char* weight){
+void KFontDialog::weight_chosen_slot(int index){
 
-  QString weight_string = weight;
+  QString weight_string = weight_combo->text(index);
 
   if ( weight_string == QString(klocale->translate("normal")))
     selFont.setBold(false);
@@ -501,10 +502,10 @@ void KFontDialog::weight_chosen_slot(const char* weight){
   emit fontSelected(selFont);
 }
 
-void KFontDialog::style_chosen_slot(const char* style){
+void KFontDialog::style_chosen_slot(int index){
 
 
-  QString style_string = style;
+  QString style_string = style_combo->text(index);
 
   if ( style_string == QString(klocale->translate("roman")))
     selFont.setItalic(false);

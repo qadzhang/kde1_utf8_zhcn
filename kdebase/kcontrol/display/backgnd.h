@@ -146,7 +146,7 @@ protected:
   int savePatterns();
    
 protected slots:
-  void selected(const char *item);
+  void selected( int index );
   virtual void done ( int r );
   void slotMode( int );
     
@@ -257,6 +257,9 @@ protected slots:
   void slotSelectColor2( const QColor &col );
   void slotBrowse();
   void slotWallpaper( const char * );
+  // [KDE1 Revival 2026] TQt3 适配槽：TQComboBox 无 activated(const char*) 信号，
+  // 只有 activated(int) / activated(const TQString&)；此槽按索引取文本后转发到 const char* 版本
+  void slotWallpaper( int );
   void slotWallpaperMode( int );
   void slotColorMode( int );
   void slotStyleMode( int );

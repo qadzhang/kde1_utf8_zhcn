@@ -2,6 +2,24 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-30（全项目 BUG 排查：八个缺陷根治 + 14 处 Qt1 信号静默失效修复 + 30 余应用跑测审计）
+
+- **BUG1 konsole 中文显示（根修）**：VT 默认字体经 fontconfig 按候选序选 CJK 等宽家族（Noto Sans Mono CJK SC 等，konsoleDefaultVTFont）；drawAttrStr 改显式 UTF-8 解码整段绘制（TQString::fromUtf8，规避 char* 隐式转换的字符数截断语义）；font_w 度量改 width('M')（CJK 等宽字体 maxWidth 是全角宽，会使列数减半）。
+- **BUG2 kcontrol 树展开不刷新（port 兼容层根修）**：port/src/qttableview 的 setAutoUpdate 原实现联动 setUpdatesEnabled()（置 WState_BlockUpdates），KDE1"setAutoUpdate(FALSE);…;repaint();setAutoUpdate(TRUE)"防闪烁模式的手动 repaint 被静默吞掉——改为纯标志位（Qt1 语义），KTreeList 展开即时刷新，全部 81 处 QTableView 派生控件受益。
+- **BUG4 窗口边框/边角拖拉缩放失效**：kwm client.C mouseMoveEvent 光标选择链的 else 在 TQt3 迁移重排时丢失，无条件 set_x_cursor(normal) 覆盖四边/四角光标，mousePressEvent 的 do_resize 恒 0——恢复 else 即愈（实测 frame 708→865 精确跟手）。
+- **BUG5 字体选择与 Debian 环境不符**：konsole 字体菜单动态化（TQFontDatabase 家族按实测等宽过滤——TQt3 X11 下 QFontInfo::fixedPitch 恒 0 不可用，改 i/M/W 三字符 advance 相等判定；中文字体自然入列）+ "选择字体..."（KFontDialog）；kfontmanager 字体枚举 fontconfig 化（XListFonts 回退保底）；家族名取 utf8()（latin1 会把 CJK 名变 NULL 致 strcmp 崩溃），utf8() 的 TQCString 临时对象必须保生命周期。
+- **BUG6 最大化溢出桌面**：kwm adjustSize 的 PResizeInc 对齐以 geometry_restore 为锚，最大化时 (restore-dx) 为负、整除向零截断致宽度反向膨胀——改 ICCCM 标准锚点（PBaseSize/0）向零取整对齐（实测 kvt 最大化精确铺满工作区）。
+- **BUG7 kcmlocale 选简体中文后翻译全丢**：kcmlocale 语言表 zh_CN.GB2312/zh_TW.Big5 更新为 UTF-8 标签；KLocale 语言列表规范化（"C"/空项沉底——kcmlocale 写出的 "C:C:zh_CN.GB2312" 首位 C 使语言循环提前终止）；KLocale 增加 charset 无关最终回退（语言+国家匹配的 zh_CN.UTF-8 目录命中，charset 取目录实际值）。选英文/选简体中文均正常。
+- **14 处 Qt1 信号静默失效修复**：TQComboBox 仅 activated(int)（const char* 版不存在），TQListBox 仅 highlighted(int)——KFontDialog×5、KFontChooser×2、kdehelp 字体选项×2、syssound、slidescreen（死 connect 移除，1999 年即未实现）、KFileDialog 位置栏、KFileFilter、kikbd 切换键、backgnd 图案列表、banner 字体、attraction 模式，全部改 activated/highlighted(int)+槽内按索引取文本（局部 combo 经 sender() 取发信对象）。
+- **kmail 启动告警弹窗根治**：TQt3 tqWarning 统一加 "[时间戳] " 前缀使 kmail 消息处理器白名单前缀匹配失效；且 Qt 内部告警逐个追补不可持续——Qt 告警一律 stderr+kdebug，不再弹模态框（TQtFatalMsg 路径不变，应用主动 KMsgBox 不受影响）。
+- **全应用跑测审计**：zh_CN 沙箱逐应用启动截图——kdebase（kfm/kpanel/kwm/kvt/konsole/kcontrol/kdehelp/kfind/kfontmanager/kmenuedit/kappfinder/krootwm/kikbd）与 kdegames 13 款、kdeutils 8 款、kdenetwork 6 款、kdetoys 3 款全部运行正常；kcontrol 树展开即时刷新、窗口拖拉缩放/最大化恢复正常。翻译补齐：konsole.po 新词条（选择字体）、kfontmanager.po 文案同步、桌面图标中文名（主文件夹/回收站/模板，applnk 源与用户桌面副本双端）。
+- **仓库卫生**：删除 port/ 下误存为源码的 404 HTML 残页（src_qttableview.*，真实现位于 port/src/qttableview.*，无引用）；删除 qt1/ 构建残留；README/build.sh/tqt3-patches README 的补丁数口径同步（1→2）。
+
+## 2026-08-30（版本提升 1.2.0 + README 实拍图 + 全线小版本号提升）
+
+- **版本号提升（与 1999 原版区分）**：KDE 主版本 kapp.h 的 KDE_VERSION_STRING/MAJOR/MINOR/RELEASE 统一改为 "1.2.0"/1/2/0（原上游宏 RELEASE=5 与字符串 "1.1.2" 本就不一致，一并修正）；五个模块级 VERSION 提升（kdebase 1.1.2→1.2.0，kdegames/kdeutils/kdenetwork/kdetoys 1.1.2.1→1.2.0.1，源码 config.h.in/common/config.h 与 build 树生成物同步）；实质修复/接入组件的独立版本宏提升——kwm 0.14→0.15（patchlevel 保留）、kreversi 1.0.1→1.1.0、konquest 0.99.1→1.0.0、kmahjongg 0.4.1→0.5.0、kfloppy 1.1.2→1.2.0、karm 0.5→0.6、kljettool 1.1→1.2、karchie 1.1.2→1.2.0。规则统一：次版本 +1、修订位归零、四段版本保留包后缀。全库六模块重编装载。
+- **README 加桌面实拍图**：仓库根新增 t0_main.png（staging 桌面 1280x960 实拍），README 标题下以相对路径引用，git 渲染直接显示。
+
 ## 2026-08-30（第八批:全应用运行与中文翻译大排查——10 个被注释应用接入 + 13 个新 po + 六个渲染/启动缺陷根治）
 
 - **全应用清点与接入**：清点发现 kdeutils/kdenetwork 有 **10 个应用当年迁移 CMake 时被注释未构建**——ark、kab、karm、klpq、kljettool、karchie、kppp、krn、ksirc（含 7 静态子库+libpuke.so+pws）、ksticker。逐个补写/翻译 CMakeLists（含 KRN 宏、gdbm 兼容头、系统旧库路径隔离——/usr/kde1/lib 残留 Qt1 时代同名库导致链接错库，全部改为仓库 staging 优先并 unset 缓存），并修复约 80 处 Qt1→TQt3 编译错误（iostream.h 族、QString 字节缓冲、setStr/resize、GCI/Bool/Status 宏、带名 new、>? 运算符、CMSGSHDR 弹性成员、C99 inline、QListView updateItem、QTabDialog 重载二义、moc include 补齐等）。ktalkd（talk 守护进程，现代系统无 talk/inetd 生态、非 GUI）保持不接入。

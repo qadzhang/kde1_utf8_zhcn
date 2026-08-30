@@ -75,7 +75,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "qfile.h"
-#include <qstrlist.h> 
+#include <qstrlist.h>
+#include <qfontdatabase.h> // [KDE1 Revival 2026] fontconfig 字体枚举（BUG5） 
 #include <qfile.h>
 #include <qtstream.h> 
 #include <qapp.h>
@@ -222,8 +223,8 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,
 
   family_combo->setGeometry(6*XOFFSET + LABLE_LENGTH
 			    ,8*YOFFSET - COMBO_ADJUST -5 ,4* LABLE_LENGTH,COMBO_BOX_HEIGHT);
-  connect( family_combo, SIGNAL(activated(const char *)),
-	   SLOT(family_chosen_slot(const char *)) );
+  connect( family_combo, SIGNAL(activated(int)),
+	   SLOT(family_chosen_slot(int)) );
   //   QToolTip::add( family_combo, "Select Font Family" );
 
   if (fontlist != 0L){
@@ -288,8 +289,8 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,
   size_combo->setGeometry(10*XOFFSET + 6*LABLE_LENGTH
 			    ,8*YOFFSET - COMBO_ADJUST -5
 			  ,2*LABLE_LENGTH + 20,COMBO_BOX_HEIGHT);
-  connect( size_combo, SIGNAL(activated(const char *)),
-	   SLOT(size_chosen_slot(const char *)) );
+  connect( size_combo, SIGNAL(activated(int)),
+	   SLOT(size_chosen_slot(int)) );
   //  QToolTip::add( size_combo, "Select Font Size in Points" );
 
 
@@ -300,8 +301,8 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,
 			    ,19*YOFFSET - COMBO_ADJUST -20
 			    ,4*LABLE_LENGTH,COMBO_BOX_HEIGHT);
   weight_combo->setInsertionPolicy(QComboBox::NoInsertion);
-  connect( weight_combo, SIGNAL(activated(const char *)),
-	   SLOT(weight_chosen_slot(const char *)) );
+  connect( weight_combo, SIGNAL(activated(int)),
+	   SLOT(weight_chosen_slot(int)) );
   // QToolTip::add( weight_combo, "Select Font Weight" );
 
   style_combo = new QComboBox( TRUE, this, klocale->translate("Style") );
@@ -311,8 +312,8 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,
 			    ,19*YOFFSET- COMBO_ADJUST - 20
 			   ,2*LABLE_LENGTH + 20,COMBO_BOX_HEIGHT);
   style_combo->setInsertionPolicy(QComboBox::NoInsertion);
-  connect( style_combo, SIGNAL(activated(const char *)),
-	   SLOT(style_chosen_slot(const char *)) );
+  connect( style_combo, SIGNAL(activated(int)),
+	   SLOT(style_chosen_slot(int)) );
   //QToolTip::add( style_combo, "Select Font Style" );
   
   /*
@@ -382,25 +383,27 @@ void KFontExplorer::setFont( const QFont& aFont){
 }  
 
 
-void KFontExplorer::family_chosen_slot(const char* family){
+/* [KDE1 Revival 2026] TQComboBox ä» activated(int) ä¿¡å·ï¼const QString&
+   çä¸å­å¨ï¼ï¼æ§½æ¹æç´¢å¼åå½åææ¬ */
+void KFontExplorer::family_chosen_slot(int index){
 
-  selFont.setFamily(family);
+  selFont.setFamily(family_combo->text(index));
   //display_example();
   emit fontSelected(selFont);
 }
 
-void KFontExplorer::size_chosen_slot(const char* size){
+void KFontExplorer::size_chosen_slot(int index){
   
-  QString size_string = size;
+  QString size_string = size_combo->text(index);
 
   selFont.setPointSize(size_string.toInt());
   //display_example();
   emit fontSelected(selFont);
 }
 
-void KFontExplorer::weight_chosen_slot(const char* weight){
+void KFontExplorer::weight_chosen_slot(int index){
 
-  QString weight_string = weight;
+  QString weight_string = weight_combo->text(index);
 
   if ( weight_string == QString(klocale->translate("normal")))
     selFont.setBold(false);
@@ -410,10 +413,9 @@ void KFontExplorer::weight_chosen_slot(const char* weight){
   emit fontSelected(selFont);
 }
 
-void KFontExplorer::style_chosen_slot(const char* style){
+void KFontExplorer::style_chosen_slot(int index){
 
-
-  QString style_string = style;
+  QString style_string = style_combo->text(index);
 
   if ( style_string == QString(klocale->translate("roman")))
     selFont.setItalic(false);
@@ -575,7 +577,27 @@ void KFontExplorer::fill_family_combo(){
   if (have_installed)
     return;
 
+  /* [KDE1 Revival 2026] 字体浏览页家族列表 fontconfig 化（BUG5）：
+     优先 TQFontDatabase（fontconfig，含中文字体），空则回退下方
+     XListFonts 的 XLFD 枚举路径。 */
+  {
+    QFontDatabase fdb;
+    QStringList fams = fdb.families(false);
+    for (QStringList::Iterator it = fams.begin(); it != fams.end(); ++it) {
+      qfontname = *it;
+      if (fontlist.find(qfontname) == -1)
+        fontlist.inSort(qfontname);
+    }
+  }
+
+  if (fontlist.isEmpty())
   fontNames = XListFonts(kde_display, "*", 32767, &numFonts);
+  else
+  {
+    for(fontlist.first(); fontlist.current(); fontlist.next())
+      family_combo->insertItem(fontlist.current(),-1);
+    return;
+  }
   fontNames_copy = fontNames;
 
   for(int i = 0; i < numFonts; i++){

@@ -874,8 +874,9 @@ kAttractionSetup::kAttractionSetup( QWidget *parent, const char *name )
 	min_width(combo);
 	fixed_height(combo);
 	tl11->addWidget(combo, 0, 1);
-	connect( combo, SIGNAL( activated( const char * ) ),
-			SLOT( slotMode( const char * ) ) );
+	/* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å·ï¼æ§½æ¹æç´¢å¼åææ¬ */
+	connect( combo, SIGNAL( activated( int ) ),
+			SLOT( slotMode( int ) ) );
 
 	QCheckBox *cb = new QCheckBox( glocale->translate("Glow"), this );
 	min_size(cb);
@@ -955,8 +956,9 @@ void kAttractionSetup::slotGlow( bool c )
  * Set the mode.
  * Modes come in localized form, so look up "i18n_modes" table.
  */
-void kAttractionSetup::slotMode( const char * m)
+void kAttractionSetup::slotMode( int index)
 {
+	const char * m = ((TQComboBox *)sender())->text(index);
 	mode= m;
 	// check all localized mode names:
 	for( int i= 0; i < N_MODES; i++ )

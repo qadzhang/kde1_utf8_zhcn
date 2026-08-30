@@ -72,7 +72,7 @@ protected:
 private slots:
 	void slotNumber( int );
 	void slotGlow( bool );
-	void slotMode( const char * );
+	void slotMode( int index );
 	void slotOkPressed();
 	void slotAbout();
 

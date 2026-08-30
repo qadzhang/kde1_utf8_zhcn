@@ -83,9 +83,9 @@ signals:
 	void fontChanged( QFont font );
 
 protected slots:
-	void slotSelectFont( const char *fname );
+	void slotSelectFont( int index );
 	void slotFontSize( );
-	void slotCharset( const char * );
+	void slotCharset( int index );
 	void slotFontBold( bool );
 	void slotFontItalic( bool );
 

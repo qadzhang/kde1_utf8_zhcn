@@ -11,7 +11,7 @@ include_directories(
     ${KDE1_INCLUDE_DIR}
 )
 
-add_definitions(-Dlinux -DKARCHIE -DKARCHIE_VERSION="1.1.2")  # Makefile.am 的 AM_CPPFLAGS 等价物
+add_definitions(-Dlinux -DKARCHIE -DKARCHIE_VERSION="1.2.0")  # Makefile.am 的 AM_CPPFLAGS 等价物
 
 set(karchie_SRCS
     KArchie.cpp

@@ -23,10 +23,13 @@
 #define _KAPP_H
 
 // Version macros. Never put this further down.
-#define KDE_VERSION_STRING "1.1.2"
+//   Modified for the KDE1 Revival Project, 2026
+//   [2026-08-30] 版本提升 1.1.2 → 1.2.0（本项目复活版版本号；
+//   原上游宏 RELEASE=5 与字符串 "1.1.2" 本就不一致，一并统一）
+#define KDE_VERSION_STRING "1.2.0"
 #define KDE_VERSION_MAJOR 1
-#define KDE_VERSION_MINOR 1
-#define KDE_VERSION_RELEASE 5
+#define KDE_VERSION_MINOR 2
+#define KDE_VERSION_RELEASE 0
 
 #include "kconfig.h"
 

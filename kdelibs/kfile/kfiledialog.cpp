@@ -204,8 +204,9 @@ void KFileBaseDialog::init()
 				  locationEdit->height());
     locationEdit->setFixedHeight(locationLabel->height());
 
-    connect(locationEdit, SIGNAL(activated(const char*)),
-	    SLOT(locationChanged(const char*)));
+    /* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å· */
+    connect(locationEdit, SIGNAL(activated(int)),
+	    SLOT(locationChanged(int)));
 
 
     // Add the filter
@@ -397,10 +398,11 @@ void KFileBaseDialog::setHiddenToggle(bool b) // SLOT
     pathChanged();
 }
 
-void KFileBaseDialog::locationChanged(const char *_txt)
+void KFileBaseDialog::locationChanged(int index)
 {
-    bool highlighted = strcmp(_txt, locationEdit->text(0));
-    checkPath(_txt, highlighted);
+    QString txt = locationEdit->text(index);
+    bool highlighted = strcmp(txt, locationEdit->text(0));
+    checkPath(txt, highlighted);
 }
 
 void KFileBaseDialog::checkPath(const char *_txt, bool takeFiles) // SLOT

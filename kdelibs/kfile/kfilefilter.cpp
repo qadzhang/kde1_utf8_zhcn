@@ -7,7 +7,8 @@ KFileFilter::KFileFilter( QWidget *parent, const char *name)
     : QComboBox(true, parent, name), filters(0)
 {
     setInsertionPolicy(NoInsertion);
-    connect(this, SIGNAL(activated(const char*)), SLOT(changed(const char*)));
+    /* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å· */
+    connect(this, SIGNAL(activated(int)), SLOT(changed(int)));
 }
 
 KFileFilter::~KFileFilter()
@@ -15,7 +16,7 @@ KFileFilter::~KFileFilter()
     delete filters;
 }
 
-void KFileFilter::changed( const char * )
+void KFileFilter::changed( int )
 {
     emit filterChanged();
 }

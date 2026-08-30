@@ -101,7 +101,7 @@ class KiKbdGeneralWidget: public QWidget {
   KiKbdGeneralWidget(QWidget*);
  public slots:
   void advanced();
-  void newSwitch(const char*p=0L);
+  void newSwitch();
   void listChanged() {newSwitch();}
  signals:
   void activateAltSwitch(bool);

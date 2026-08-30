@@ -133,6 +133,81 @@ static bool getQStringProperty(Window w, Atom a, QString &str){
   return TRUE;
 }
 
+// ┌─ What : 按现代 X11 文本属性语义读取窗口标题（_NET_WM_NAME / XA_WM_NAME），
+// │         返回正确解码的 TQString
+// │  Why  : TQt3 在 UTF-8 locale 下经 XmbSetWMProperties 写入的 XA_WM_NAME 是
+// │         COMPOUND_TEXT 类型（中文经 ISO-2022 转义成 GB2312 分段）；而历史
+// │         getQStringProperty 以 req_type=XA_STRING 读取——libX11 对含转义序列
+// │         的 COMPOUND_TEXT 做 STRING 类型转换失败，返回 0 字节，中文标题全数
+// │         读成空串（kcontrol 吞窗按标题比对因此永不命中，中文模块全部吞不进）。
+// │         TQt3 同时必写 _NET_WM_NAME(UTF8_STRING)——纯 UTF-8 字节、无转义，
+// │         优先读它即可在中文环境无损拿到标题（EWMH 标准路径）。
+// │  Who  : KWM::title() / KWM::titleWithState()（kcontrol 吞窗比对、kpanel
+// │         任务栏标签、kfm 窗口列表等一切 KWM::title 调用方）
+// │  When : 每次 KWM::title(titleWithState) 被调用且 KWM_WIN_TITLE 自有属性不存在时
+// │  Where: kdelibs/kdecore/kwm.cpp（本文件）；属性来源为各 TQt3 应用的 setCaption
+// │  How  : ① 先读 _NET_WM_NAME（UTF8_STRING 原样字节，按 codecForCStrings=UTF-8
+// │         解码）→ ② 失败再走 XGetTextProperty 读 XA_WM_NAME：XA_STRING 直接取
+// │         原始字节；COMPOUND_TEXT 等其它类型经 XmbTextPropertyToTextList 解
+// │         （zh_CN.UTF-8 locale 下可解 GB2312 转义段）；Xmb 仍失败则按原始
+// │         字节兜底（保 ASCII 场景不回归）
+// 伪代码：
+//   读 _NET_WM_NAME（AnyPropertyType 收取）:
+//       拿到 ≥1 字节 → str = 原始字节（UTF-8 解码）→ 返回 TRUE
+//   读 XA_WM_NAME (XGetTextProperty):
+//       失败或空值 → 返回 FALSE
+//       类型是 XA_STRING → str = 原始字节 → TRUE
+//       否则（COMPOUND_TEXT 等）:
+//           XmbTextPropertyToTextList 成功且有文本 → str = 转换结果 → TRUE
+//           否则 → str = 原始字节（尽力而为）→ TRUE
+static bool getWMTitleProperty(Window w, QString &str){
+  // --- 路径①：_NET_WM_NAME（TQt3 必写，UTF8_STRING 纯 UTF-8 字节）---
+  static Atom net_wm_name = 0;
+  if (!net_wm_name)
+    net_wm_name = XInternAtom(qt_xdisplay(), "_NET_WM_NAME", False);
+  {
+    // 以 AnyPropertyType 收取（req_type=XA_STRING 会触发 libX11 的串类型
+    // 转换，非 ASCII 内容转换失败返回 0 字节——正是被根治的老缺陷）
+    unsigned char *p = 0;
+    Atom real = 0; int fmt = 0; unsigned long n = 0, extra = 0;
+    if (XGetWindowProperty(qt_xdisplay(), w, net_wm_name, 0L, 100L, False,
+                           AnyPropertyType, &real, &fmt, &n, &extra, &p) == Success
+        && p && n > 0
+        && (real == XA_STRING || real == XInternAtom(qt_xdisplay(), "UTF8_STRING", False))){
+      str = (char*) p;                  // 8 位串原样字节，UTF-8 解码
+      XFree((char *) p);
+      kwm_error = FALSE;
+      return TRUE;
+    }
+    if (p)
+      XFree((char *) p);
+  }
+  // --- 路径②：XA_WM_NAME（XGetTextProperty 感知类型解码）---
+  XTextProperty tp;
+  if (!XGetTextProperty(qt_xdisplay(), w, &tp, XA_WM_NAME) || tp.value == 0)
+    { kwm_error = TRUE; return FALSE; }
+  bool got = false;
+  if (tp.encoding == XA_STRING){
+    str = (const char*) tp.value;      // codecForCStrings=UTF-8 解码原始字节
+    got = true;
+  } else {
+    char **list = 0; int count = 0;
+    if (XmbTextPropertyToTextList(qt_xdisplay(), &tp, &list, &count) >= 0
+        && count > 0 && list && list[0]){
+      str = (const char*) list[0];     // Xmb 已转为当前 locale（UTF-8）字节
+      got = true;
+    } else {
+      str = (const char*) tp.value;    // 兜底：原始字节（ASCII 场景等价）
+      got = true;
+    }
+    if (list)
+      XFreeStringList(list);
+  }
+  XFree((char *) tp.value);
+  kwm_error = !got;
+  return got;
+}
+
 static void sendClientMessage(Window w, Atom a, long x){
   XEvent ev;
   long mask;
@@ -669,13 +744,18 @@ void KWM::sendKWMCommand(const QString &command){
 		      False, mask, &ev);
 }
 
+// [KDE1 Revival 2026] 标题读取链重构：KWM_WIN_TITLE（KWM 自有属性，语义不变）
+// → getWMTitleProperty（_NET_WM_NAME / XA_WM_NAME 文本属性感知解码）。
+// 历史实现直接 getQStringProperty(XA_WM_NAME)：req_type=XA_STRING 对 TQt3 写入的
+// COMPOUND_TEXT 中文标题转换失败得 0 字节 → 中文标题读成空串 → kcontrol 吞窗
+// 比对永不吃中。详见 getWMTitleProperty 头注释。
 QString KWM::title(Window w){
   static Atom a = 0;
   if (!a)
     a = XInternAtom(qt_xdisplay(), "KWM_WIN_TITLE", False);
   QString result;
   if (!getQStringProperty(w, a, result)){
-    getQStringProperty(w, XA_WM_NAME, result);
+    getWMTitleProperty(w, result);
   }
   return result;
 }
@@ -686,7 +766,7 @@ QString KWM::titleWithState(Window w){
     a = XInternAtom(qt_xdisplay(), "KWM_WIN_TITLE", False);
   QString result;
   if (!getQStringProperty(w, a, result)){
-    getQStringProperty(w, XA_WM_NAME, result);
+    getWMTitleProperty(w, result);
   }
   if (isIconified(w)){
     result.prepend("(");

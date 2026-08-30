@@ -837,6 +837,11 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
       set_x_cursor(top_side_cursor);
     else if (ev->pos().y() >= height() - BORDER)
       set_x_cursor(bottom_side_cursor);
+    // [KDE1 Revival 2026] 恢复上游 KDE 1.1.2 此处丢失的 else：TQt3 迁移提交
+    // 重排本段时把 "else set_x_cursor(normal_cursor);" 的 else 挤掉，形成无条件
+    // 覆盖——任何位置的光标都被改回普通箭头，current_cursor 永不等于四边/四角
+    // 光标，mousePressEvent 的 do_resize 恒为 0，窗口边框/边角拖拉缩放全失效。
+    else
       set_x_cursor(normal_cursor);
 
     return;
@@ -2381,10 +2386,21 @@ void Client::adjustSize(){
 
 
   if (size.flags & PResizeInc) {
-    dx = geometry_restore.width() -
-      ((geometry_restore.width()-dx)/size.width_inc)*size.width_inc;
-    dy = geometry_restore.height() -
-      ((geometry_restore.height()-dy)/size.height_inc)*size.height_inc;
+    // [KDE1 Revival 2026] 修复 BUG6（最大化溢出桌面）：
+    //   What : 按 ICCCM 对尺寸增量网格对齐 dx/dy。
+    //   Why  : 历史公式以 geometry_restore 为锚点（dx = restore.width() -
+    //          ((restore.width()-dx)/inc)*inc），隐含假设 dx ≤ restore 宽度
+    //          （仅缩小对齐）。最大化时 dx > restore 宽度，(restore-dx) 为负，
+    //          C++ 整数除法向零截断，锚点公式反向膨胀——终端类声明 PResizeInc
+    //          的窗口（kvt/konsole）最大化后超出桌面一大块。
+    //   How  : 改以 ICCCM 标准锚点 PBaseSize（未声明则 0）做向零取整对齐，
+    //          放大缩小统一正确；inc 非正时跳过（防除零，等价不对齐）。
+    int base_w = (size.flags & PBaseSize) ? size.base_width : 0;
+    int base_h = (size.flags & PBaseSize) ? size.base_height : 0;
+    if (size.width_inc > 0 && dx > base_w)
+      dx = base_w + ((dx - base_w) / size.width_inc) * size.width_inc;
+    if (size.height_inc > 0 && dy > base_h)
+      dy = base_h + ((dy - base_h) / size.height_inc) * size.height_inc;
   }
 
   switch(getDecoration()){

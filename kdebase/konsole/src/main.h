@@ -22,6 +22,7 @@
 //#include <ktopwidget.h>
 #include <ksimpleconfig.h>
 #include <qstrlist.h>
+#include <qstringlist.h> // [KDE1 Revival 2026] 动态等宽字族表
 
 #include "TEShell.h"
 #include "TEWidget.h"
@@ -85,6 +86,9 @@ private:
   void setSchema(const char* path);
   void setSchema(const ColorSchema* s);
   void setFont(int fontno);
+  // [KDE1 Revival 2026] 自定义 VT 字体应用与勾选同步（BUG5 字体菜单动态化），
+  // fam 为空串表示来自 KFontDialog 的任意选择（按 family() 记录）
+  void applyVTFont(const QFont &f, const QString &fam);
 
   void addSessionCommand(const char* path);
   void loadSessionCommands();
@@ -118,6 +122,12 @@ private:
   QString     dropText;
   QSize       defaultSize;
   int         curr_schema; // current schema no
+
+  // [KDE1 Revival 2026] BUG5：动态等宽字族表（TQFontDatabase 实测存在且
+  // fixedPitch 的家族，含中文字体）与当前生效字族名；n_font=-1 表示
+  // "自定义字族"状态（非历史 8 槽位）。旧配置的数字槽位仍可读取回退。
+  QStringList vtFamilies;
+  QString     vtCurrentFamily;
 
   QStrList args;
 

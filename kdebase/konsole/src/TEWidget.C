@@ -48,6 +48,7 @@
 #include <qpainter.h>
 #include <qkeycode.h>
 #include <qclipbrd.h>
+#include <qfontdatabase.h> // [KDE1 Revival 2026] 默认 VT 字体存在性探测（BUG1）
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,6 +56,35 @@
 #include <ctype.h>
 
 #include <assert.h>
+
+/* [KDE1 Revival 2026] 终端默认 VT 字体选择（BUG1 根修的一半）
+ * ┌─ What : 按候选序选第一个已安装的 CJK 等宽字族作为终端默认字体
+ * │  Why  : 历史默认 QFont("fixed") 经 fontconfig 解析到 DejaVu Sans Mono，
+ * │         该字体无 CJK 字形；TQt3 画文本时不做跨字体字形回退（Qt4 才有），
+ * │         中文一律成豆腐块。终端又必须等宽——Debian 环境里同时满足
+ * │         "等宽 + 含 CJK" 的就是 Noto/WenQuanYi 系等宽字族。
+ * │  Who  : TEWidget 构造调用；用户之后可经字体菜单（main.C 动态菜单）
+ * │         覆盖并持久化，本函数只管"开箱即中文"。
+ * │  When : 每个 TEWidget 构造期一次。
+ * │  Where: konsole/src/TEWidget.C；候选即 AGENTS.md 依赖清单所含字体包。
+ * │  How  : ① QFontDatabase 枚举 fontconfig 实测家族表 → ② 按候选序
+ * │         （Noto Sans Mono CJK SC → 文泉驿等宽系 → NSimSun → DejaVu）
+ * │         逐个 contains() 探测 → ③ 命中即返回该字族 QFont；
+ * │         ④ 全部落空回退 QFont("fixed")（fontconfig 兜底，行为同旧版）。
+ */
+static QFont konsoleDefaultVTFont()
+{
+  static const char* cands[] = {
+    "Noto Sans Mono CJK SC", "Noto Sans Mono CJK JP",
+    "WenQuanYi Zen Hei Mono", "WenQuanYi Micro Hei Mono",
+    "NSimSun", "DejaVu Sans Mono" };
+  QFontDatabase fdb;
+  QStringList fams = fdb.families(FALSE);
+  for (unsigned i = 0; i < sizeof(cands)/sizeof(cands[0]); i++)
+    if (fams.contains(QString::fromUtf8(cands[i])))
+      return QFont(QString::fromUtf8(cands[i]));
+  return QFont("fixed");
+}
 
 #include "TEWidget.moc"
 #include <kapp.h>
@@ -170,7 +200,8 @@ TEWidget::TEWidget(QWidget *parent, const char *name) : QFrame(parent,name)
   word_selection_mode = FALSE;
 
   setMouseMarks(TRUE);
-  setVTFont( QFont("fixed") );
+  // [KDE1 Revival 2026] 默认字体改经 konsoleDefaultVTFont()（BUG1，见上注释）
+  setVTFont( konsoleDefaultVTFont() );
   
   setColorTable(base_color_table); // init color table
 
@@ -209,15 +240,20 @@ void TEWidget::drawAttrStr(QPainter &paint, QRect rect,
   }
   if (!(blinking && (attr.r & RE_BLINK)))
   {
-    paint.setPen(color_table[attr.f].color); 
-    paint.drawText(rect.x(),rect.y()+font_a, str,len);
+    paint.setPen(color_table[attr.f].color);
+    // [KDE1 Revival 2026] 历史句 drawText(x, y, str, len) 传 char*：TQt3 无
+    // char* 重载，隐式构造的 TQString 的 len 参数是"字符数"截断语义——把
+    // 字节数传进去在多字节段上行为未定义。改为显式按 UTF-8 解码整段字节
+    // （语义与全局 codecForCStrings=UTF-8 一致）后整串绘制；UTF-8 段由
+    // setImage/paintEvent 的 run 聚合保证完整（逐字节格模型，见 kvt 同源设计）。
+    paint.drawText(rect.x(),rect.y()+font_a, QString::fromUtf8(str,len));
     if ((attr.r & RE_UNDERLINE) || color_table[attr.f].bold)
     {
       paint.setClipRect(rect);
       if (color_table[attr.f].bold)
       {
         paint.setBackgroundMode( TransparentMode );
-        paint.drawText(rect.x()+1,rect.y()+font_a, str,len);
+        paint.drawText(rect.x()+1,rect.y()+font_a, QString::fromUtf8(str,len));
       }
       if (attr.r & RE_UNDERLINE)
         paint.drawLine(rect.left(), rect.y()+font_a+1,
@@ -808,8 +844,12 @@ bool TEWidget::eventFilter( QObject *, QEvent *e )
 
 void TEWidget::fontChange(const QFont &)
 {
+  // [KDE1 Revival 2026] font_w 改用 'M' 实宽而非 maxWidth()：CJK 等宽字体
+  // （如 Noto Sans Mono CJK）的 maxWidth 是全角宽（≈2×拉丁宽），若作格宽
+  // 会使列数减半、拉丁字形与格子间出现大空洞。终端格子按拉丁 advance 定宽，
+  // 中文字形自然横跨两格（与 kvt 逐字节格模型一致）。
   font_h = fontMetrics().height();
-  font_w = fontMetrics().maxWidth();
+  font_w = fontMetrics().width('M');
   font_a = fontMetrics().ascent();
   propagateSize();
   update();
@@ -866,9 +906,11 @@ void TEWidget::calcGeometry()
    *  font_w/font_h 会停留在构造默认值 1——整屏文字被压成一像素字、
    *  窗口尺寸计算随之全错（实测 fontChange 从未到达）。
    *  这里在每次几何计算前主动重取字体度量兜底（resize 频率低，代价可忽略）。
-   *  Who: resizeEvent→propagateSize→calcGeometry 为全部必经路径。 */
+   *  Who: resizeEvent→propagateSize→calcGeometry 为全部必经路径。
+   *  font_w 用 'M' 实宽而非 maxWidth()：CJK 等宽字体的 maxWidth 是全角宽，
+   *  会使列数减半（理由同 fontChange 内注释）。 */
   font_h = fontMetrics().height();
-  font_w = fontMetrics().maxWidth();
+  font_w = fontMetrics().width('M');
   font_a = fontMetrics().ascent();
   scrollbar->resize(SCRWIDTH, contentsRect().height());
   switch(scrollLoc)

@@ -104,6 +104,18 @@ static void kmailMsgHandler(TQtMsgType aType, const char* aMsg)
   QString appName = app->appName();
   QString msg = aMsg;
 
+  // [KDE1 Revival 2026] TQt3 的 tqWarning 会在消息前统一加
+  // "[yyyy/MM/dd hh:mm:ss.zzz] " 时间戳前缀，下方白名单的
+  // strncmp 前缀匹配必须跳过它，否则永不命中（实测即此）。
+  const char *pfx = aMsg;
+  if (*pfx == '[') {
+    const char *e = strchr(pfx, ']');
+    if (e) {
+      pfx = e + 1;
+      if (*pfx == ' ') pfx++;
+    }
+  }
+
   switch (aType)
   {
   case TQtDebugMsg:
@@ -111,18 +123,15 @@ static void kmailMsgHandler(TQtMsgType aType, const char* aMsg)
     break;
 
   case TQtWarningMsg:
+    // [KDE1 Revival 2026] 根治：Qt 内部告警一律不再弹模态框。
+    // Why : 原白名单模式治标不治本（TQLayout: 之后又冒出
+    //       TQFile::readBlock 告警），且 TQt3 告警带时间戳前缀使
+    //       前缀匹配失效；启动即弹模态框严重伤害体验。
+    //       Qt 内部告警对用户无操作价值，统一走 stderr
+    //       与 kdebug 文件；真正需要用户处理的错误仍由
+    //       应用代码直接调 KMsgBox，TQtFatalMsg 路径不变。
     fprintf(stderr, "%s: %s\n", (const char*)app->appName(), msg.data());
-    if (strncmp(aMsg,"KCharset:",9) != 0 &&
-	strncmp(aMsg,"QGManager:",10) != 0 &&
-	strncmp(aMsg,"QPainter:",9) != 0 &&
-	strncmp(aMsg,"Could not load", 14) != 0 &&
-	strncmp(aMsg,"QPixmap:",8) != 0 &&
-	strncmp(aMsg,"ASSERT:", 7 ) != 0 )
-    {
-      KMsgBox::message(NULL, appName+" "+i18n("warning"), msg.data(),
-		       KMsgBox::EXCLAMATION);
-    }
-    else kdebug(KDEBUG_INFO, 0, msg);
+    kdebug(KDEBUG_WARN, 0, msg);
     break;
 
   case TQtFatalMsg:

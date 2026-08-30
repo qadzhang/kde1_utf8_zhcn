@@ -256,8 +256,9 @@ KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
   readConfig();
 
   connect(eventlist, SIGNAL(highlighted(int)), this, SLOT(eventSelected(int)));
-  connect(soundlist, SIGNAL(highlighted(const char*)), 
-	  this, SLOT(soundSelected(const char*)));
+  /* [KDE1 Revival 2026] TQListBox ä» highlighted(int) ä¿¡å·ï¼æ§½æ¹æç´¢å¼åææ¬ */
+  connect(soundlist, SIGNAL(highlighted(int)), 
+	  this, SLOT(soundSelected(int)));
   connect(btn_test, SIGNAL(clicked()), this, SLOT(playCurrentSound()));
 
   connect(audiodrop, SIGNAL(dropAction(KDNDDropZone*)), 
@@ -360,13 +361,14 @@ void KSoundWidget::eventSelected(int index){
 
 }
 
-void KSoundWidget::soundSelected(const char *filename) 
+/* [KDE1 Revival 2026] TQListBox ä» highlighted(int) ä¿¡å·ï¼æ§½æ¹æç´¢å¼åææ¬ */
+void KSoundWidget::soundSelected(int index) 
 {
   QString *snd;
 
   if (selected_event > 0) {
     snd = soundnames.at(selected_event-1);
-    *snd= filename;
+    *snd= soundlist->text(index);
   }
 }
 

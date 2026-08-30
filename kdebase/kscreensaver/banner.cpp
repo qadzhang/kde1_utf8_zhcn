@@ -116,8 +116,9 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	min_width(combo);
 	fixed_height(combo);
 	gl->addWidget(combo, 0, 1);
-	connect( combo, SIGNAL( activated( const char * ) ),
-			SLOT( slotFamily( const char * ) ) );
+	/* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å·ï¼æ§½æ¹æç´¢å¼åææ¬ */
+	connect( combo, SIGNAL( activated( int ) ),
+			SLOT( slotFamily( int ) ) );
 
 	label = new QLabel( glocale->translate("Size:"), group->inner() );
 	min_size(label);
@@ -274,9 +275,11 @@ void KBannerSetup::readSettings()
 		italic = FALSE;
 }
 
-void KBannerSetup::slotFamily( const char *fam )
+void KBannerSetup::slotFamily( int index )
 {
-	fontFamily = fam;
+	// [KDE1 Revival 2026] combo ä¸ºæé å±é¨åéï¼ç» sender() ååä¿¡å¯¹è±¡
+	TQComboBox *box = (TQComboBox *)sender();
+	fontFamily = box->text( index );
 	if ( saver )
 		saver->setFont( fontFamily, fontSize, fontColor, bold, italic );
 }

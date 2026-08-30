@@ -169,9 +169,26 @@ void KLocaleConfig::applySettings()
   KSimpleConfig config(QDir::homeDirPath()+"/.kderc");
   QString value;
 
-  value.sprintf("%s:%s:%s", tags.at(combo1->currentItem()),
-                            tags.at(combo2->currentItem()),
-                            tags.at(combo3->currentItem()));
+  /* [KDE1 Revival 2026] BUG7：写出的语言列表把 "C"/空项沉到末尾。
+   * Why  : 历史实现按三个下拉框的原始次序拼接（如 "C:C:zh_CN.GB2312"），
+   *         而 KLocale 构造遇到第一个 "C" 即终止语言查找——用户所选语言
+   *         被排在前面的 "C" 挡住，翻译整体丢失。
+   * How  : 三个 tag 先收集非 C 非空项（保持框序），C/空项追加到末尾。 */
+  {
+    const char *sel[3] = { tags.at(combo1->currentItem()),
+                           tags.at(combo2->currentItem()),
+                           tags.at(combo3->currentItem()) };
+    QString real, tail;
+    for (int i = 0; i < 3; i++) {
+      QString t(sel[i] ? sel[i] : "");
+      if (!t.isEmpty() && t != "C")
+        real += (real.isEmpty() ? "" : ":") + t;
+      else
+        tail += (tail.isEmpty() ? "" : ":") + t;
+    }
+    value = real.isEmpty() ? (tail.isEmpty() ? "C" : tail)
+                           : real + (tail.isEmpty() ? "" : ":" + tail);
+  }
 
   config.setGroup("Locale");
   config.writeEntry("Language", value);  

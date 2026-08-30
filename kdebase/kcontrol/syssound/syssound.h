@@ -59,7 +59,7 @@ public:
 private slots:
 
 	void eventSelected(int index);
-        void soundSelected(const char *filename);
+        void soundSelected(int index);
 	void saveConfiguration();
 	void playCurrentSound();
 

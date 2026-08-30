@@ -73,7 +73,7 @@ protected:
     virtual void setTableFlags( uint f );
     void	clearTableFlags( uint f = ~0 );
 
-    bool	autoUpdate()	 const;
+    bool	autoUpdate()	 const;   // [KDE1 Revival 2026] 读纯标志位（Qt1 语义）
     virtual void setAutoUpdate( bool );
 
     void	updateCell( int row, int column, bool erase=TRUE );
@@ -152,6 +152,7 @@ private:
     short	xCellDelta, yCellDelta;
     short	cellH, cellW;
 
+    bool	tblAutoUpdate		: 1; // [KDE1 Revival 2026] Qt1 语义的自动重绘标志
     uint	eraseInPaint		: 1;
     uint	verSliding		: 1;
     uint	verSnappingOff		: 1;
@@ -233,8 +234,10 @@ inline bool TQtTableView::testTableFlags( uint f ) const
 inline TQRect TQtTableView::cellUpdateRect() const
 { return cellUpdateR; }
 
+/* [KDE1 Revival 2026] autoUpdate 改读独立标志位（原实现读
+   isUpdatesEnabled()，见 setAutoUpdate 处注释——BUG2 根因） */
 inline bool TQtTableView::autoUpdate() const
-{ return isUpdatesEnabled(); }
+{ return tblAutoUpdate; }
 
 inline void TQtTableView::repaint( bool erase )
 { repaint( 0, 0, width(), height(), erase ); }

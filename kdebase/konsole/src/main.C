@@ -62,6 +62,8 @@
 #include <qpainter.h>
 
 #include <kimgio.h>
+#include <qfontdatabase.h> // [KDE1 Revival 2026] BUG5 动态字体菜单
+#include <qfontinfo.h>     // [KDE1 Revival 2026] fixedPitch 过滤
 
 #include <qintdict.h>
 #include <qptrdict.h>
@@ -299,20 +301,56 @@ void TEDemo::makeMenu()
 
   m_font = new QPopupMenu;
   m_font->setCheckable(TRUE);
-  m_font->insertItem( i18n("&Normal"), 0);
+  /* [KDE1 Revival 2026] 字体菜单动态化（BUG5）
+   * ┌─ What : 菜单不再硬编码 1999 年 X 核心位图字体名（6x13/linux8x8 等，
+   * │         Debian 12 上大多不存在、且全部无中文字形），改为枚举
+   * │         fontconfig 实测安装且等宽（fixedPitch）的字族——与 Debian
+   * │         环境相符，Noto Sans Mono CJK 等中文字体自然入列。
+   * │  Why  : 历史列表在当代系统上近乎全空且永远无法显示中文；等宽过滤
+   * │         保证选中即用（终端格子模型不破）。
+   * │  Who  : 本菜单构建与 font_menu_activated(int) 分发；vtFamilies /
+   * │         vtCurrentFamily 持久化到 konsole 配置。
+   * │  When : makeMenu 构建期一次；点击期分发。
+   * │  How  : ① QFontDatabase::families() 全表 → ② 逐族 QFontInfo()
+   * │         .fixedPitch() 过滤，条目 id=1001+i 同步入 vtFamilies →
+   * │         ③ 空表（极端环境）回退历史 8 槽位原始条目 → ④ 尾部追加
+   * │         "选择字体..."(id=1000) 走 KFontDialog 任选。
+   */
+  {
+    QFontDatabase fdb;
+    QStringList fams = fdb.families(FALSE);
+    for (QStringList::Iterator it = fams.begin(); it != fams.end(); ++it)
+    {
+      // 等宽判定（Why: TQt3 X11 下 QFontInfo::fixedPitch() 对 fontconfig
+      // 字体恒返回 0，不可用——实测字形宽度：等宽字体 i/M/W 三字符 advance
+      // 相等，比例字体显著不等。附 2026-08-30 沙箱实测：
+      //   DejaVu Sans Mono 10/10/10、Noto Sans Mono CJK SC 8/8/8（等宽✓）
+      //   Noto Sans CJK SC 5/13/14、DejaVu Sans 4/14/16（比例✗）
+      QFont probe(*it);
+      QFontMetrics pm(probe);
+      int wM = pm.width('M');
+      if (wM > 0 && pm.width('i') == wM && pm.width('W') == wM)
+      {
+        vtFamilies.append(*it);
+        m_font->insertItem(*it, 1001 + vtFamilies.count() - 1);
+      }
+    }
+    if (vtFamilies.isEmpty())
+    {
+      // 回退路径：无任何等宽家族时保留历史槽位（行为同旧版，含错误弹窗）
+      m_font->insertItem( i18n("&Normal"), 0);
+      m_font->insertSeparator();
+      m_font->insertItem( i18n("&Small"),  2);
+      m_font->insertItem( i18n("&Medium"), 3);
+      m_font->insertItem( i18n("&Large"),  4);
+      m_font->insertItem( i18n("&Huge"),   5);
+      m_font->insertSeparator();
+      m_font->insertItem( i18n("&Linux"),  6);
+      m_font->insertItem( i18n("Linux (small)"),7);
+    }
+  }
   m_font->insertSeparator();
-//m_font->insertItem( i18n("&Tiny"),   1);
-  m_font->insertItem( i18n("&Small"),  2);
-  m_font->insertItem( i18n("&Medium"), 3);
-  m_font->insertItem( i18n("&Large"),  4);
-  m_font->insertItem( i18n("&Huge"),   5);
-  m_font->insertSeparator();
-  m_font->insertItem( i18n("&Linux"),  6);
-  m_font->insertItem( i18n("Linux (small)"),7);
-#ifdef ANY_FONT
-  m_font->insertSeparator();
-  m_font->insertItem( i18n("&More ..."), 1000); // for other fonts
-#endif
+  m_font->insertItem( i18n("&Choose font ..."), 1000); // 任选字体（KFontDialog）
   connect(m_font, SIGNAL(activated(int)), SLOT(font_menu_activated(int)));
 
   m_scrollbar = new QPopupMenu;
@@ -389,7 +427,9 @@ void TEDemo::saveProperties(KConfig* config)
   config->writeEntry("menubar visible",b_menuvis);
   config->writeEntry("has frame",b_framevis);
   config->writeEntry("BS hack",b_bshack);
-  config->writeEntry("font",n_font);
+  config->writeEntry("font",n_font < 0 ? 3 : n_font);
+  // [KDE1 Revival 2026] 自定义 VT 字族持久化（BUG5）；旧数字条目保留以兼容
+  config->writeEntry("vtfont",vtCurrentFamily);
   config->writeEntry("schema",s_schema);
   config->writeEntry("scrollbar",n_scroll);
   if (args.count() > 0) config->writeEntry("konsolearguments", args);
@@ -433,7 +473,19 @@ void TEDemo::readProperties(KConfig* config)
   // Options that should be applied to all sessions /////////////
   // (1) set menu items and TEDemo members
   setBsHack(config->readBoolEntry("BS hack",TRUE));
-  setFont(QMIN(config->readUnsignedNumEntry("font",3),7)); // sets n_font and menu item
+  // [KDE1 Revival 2026] 优先读自定义字族（BUG5）：存在且已安装则应用并置
+  // n_font=-1（自定义态，activateSession→setFont(-1) 回流时重应用同族）；
+  // 否则按历史槽位号走旧路径（QMIN 截断防越界）
+  {
+    QString fam = config->readEntry("vtfont","");
+    if (!fam.isEmpty() && QFontDatabase().families(FALSE).contains(fam))
+    {
+      applyVTFont(QFont(fam), fam);
+      n_font = -1;
+    }
+    else
+      setFont(QMIN(config->readUnsignedNumEntry("font",3),7)); // sets n_font and menu item
+  }
   setSchema(config->readEntry("schema",""));
   // (2) apply to sessions (currently only the 1st one)
   TESession* s = no2session.find(1);
@@ -502,9 +554,26 @@ void TEDemo::scrollbar_menu_activated(int item)
   te->setScrollbarLocation(item);
 }
 
+/* [KDE1 Revival 2026] 字体菜单分发（BUG5）：
+ *   id=1000        → KFontDialog 任选（应用所选 QFont）
+ *   id=1001+i      → 动态等宽字族表第 i 项
+ *   其余（0..7）   → 历史位图槽位（仅极端回退场景存在）
+ */
 void TEDemo::font_menu_activated(int item)
 {
   assert(se);
+  if (item == 1000)
+  {
+    QFont f;
+    if (KFontDialog::getFont(f) == QDialog::Accepted)
+      applyVTFont(f, f.family());
+    return;
+  }
+  if (item >= 1001 && (unsigned)(item - 1001) < vtFamilies.count())
+  {
+    applyVTFont(QFont(vtFamilies[item - 1001]), vtFamilies[item - 1001]);
+    return;
+  }
   se->setFontNo(item);
   activateSession((int)session2no.find(se)); // for attribute change
   // setFont(item) is probably enough
@@ -521,6 +590,31 @@ void TEDemo::schema_menu_activated(int item)
 
 void TEDemo::setFont(int fontno)
 {
+  // [KDE1 Revival 2026] fontno<0（自定义字族态，n_font==-1 经
+  // activateSession→setFont(s->fontNo()) 回流）：重新应用当前字族即可，
+  // 不落历史位图字体表（Debian 上不存在，setRawMode 解析必失败）。
+  if (fontno < 0)
+  {
+    if (!vtCurrentFamily.isEmpty())
+      applyVTFont(QFont(vtCurrentFamily), vtCurrentFamily);
+    m_font->setItemChecked(n_font, TRUE); // 保持自定义项勾选
+    return;
+  }
+  // [KDE1 Revival 2026] 动态字体菜单模式下，历史位图槽位仅作档位记档、
+  // 不再 setVTFont：这些 1999 年 X 核心位图字体名（6x13/7x13 等）在 Debian
+  // 不存在，setRawMode 经 fontconfig "最邻近"回退成 DejaVu Sans Mono——
+  // 把构造期选定的 CJK 等宽默认字体（konsoleDefaultVTFont）顶掉，中文
+  // 全成豆腐（实测首启即中招：readProperties 默认 font=3 直达此处）。
+  if (!vtFamilies.isEmpty())
+  {
+    n_font = fontno;
+    if (!vtCurrentFamily.isEmpty())
+    {
+      for (unsigned i = 0; i < vtFamilies.count(); i++)
+        m_font->setItemChecked(1001 + i, vtFamilies[i] == vtCurrentFamily);
+    }
+    return;
+  }
   QFont f( fonts[fontno] );
   f.setRawMode( TRUE );
   if ( !f.exactMatch() )
@@ -539,6 +633,28 @@ void TEDemo::setFont(int fontno)
   m_font->setItemChecked(n_font,FALSE);
   m_font->setItemChecked(fontno, TRUE);
   n_font = fontno;
+}
+
+/* [KDE1 Revival 2026] 应用自定义 VT 字体（BUG5）
+ * ┌─ What : setVTFont + 菜单勾选同步 + 当前字族名记录，并同步 session 槽位号
+ * │  Why  : 动态字族菜单/KFontDialog 两条入口共用同一套"生效+界面态"逻辑；
+ * │         TQt3 下 setVTFont 触发 fontChange → 自动重算 font_w/h 并
+ * │         propagateSize，无需手工重排。
+ * │  Who  : font_menu_activated（id 1000/1001+i）与 readOptions 调用。
+ * │  When : 用户选择字体或恢复配置时。
+ * │  How  : ① te->setVTFont(f) → ② vtCurrentFamily=fam → ③ 若会话存在则
+ * │         se->setFontNo(-1) 置自定义态（activateSession 回流不丢字体）
+ * │         → ④ 清历史槽位勾选，按 fam 勾对应动态项。
+ */
+void TEDemo::applyVTFont(const QFont &f, const QString &fam)
+{
+  te->setVTFont(f);
+  vtCurrentFamily = fam;
+  if (se) se->setFontNo(-1);
+  if (n_font >= 0)
+    m_font->setItemChecked(n_font, FALSE);
+  for (unsigned i = 0; i < vtFamilies.count(); i++)
+    m_font->setItemChecked(1001 + i, vtFamilies[i] == fam);
 }
 
 void TEDemo::setMenuVisible(bool visible)
@@ -655,7 +771,7 @@ void TEDemo::about()
     "This program is free software under the\n"
     "terms of the Artistic License and comes\n"
     "WITHOUT ANY WARRANTY.\n"
-    "See `LICENSE.readme� for details."), PACKAGE, VERSION);
+    "See `LICENSE.readme´ for details."), PACKAGE, VERSION);
   KMsgBox::message( 0, title, msg );
 }
 

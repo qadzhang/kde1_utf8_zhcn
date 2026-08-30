@@ -200,10 +200,44 @@ KLocale::KLocale( const char *catalogue )
 	    languages = g_lang;
 	else
 	    languages = "C";
-    } else 
+    } else
 	languages = languages + ":C";
 
+    /* [KDE1 Revival 2026] BUG7：语言列表规范化——把 "C" 与空项沉到末尾。
+     * Why  : kcmlocale 写出的列表形如 "C:C:zh_CN.GB2312"（三个下拉框若用户
+     *        只改了后面一个，前面都是 C），而下方循环遇到第一个 "C" 即终止，
+     *        用户所选语言永远轮不到——界面翻译整体丢失。
+     * How  : 稳定拆分列表，非 C 非空项按原顺序在前，C/空项收拢到末尾，
+     *        再拼回。空列表保持 "C" 不变。 */
+    {
+	QString items[16];
+	int n = 0, total = 0;
+	QString rest = languages;
+	while (!rest.isEmpty() && total < 16) {
+	    int f = rest.find(':');
+	    if (f > 0) {
+		items[total++] = rest.left(f);
+		rest = rest.right(rest.length() - f - 1);
+	    } else {
+		items[total++] = rest;
+		rest = "";
+	    }
+	}
+	QString real, tail;
+	for (int i = 0; i < total; i++) {
+	    if (items[i].isEmpty() || items[i] == "C")
+		tail += (tail.isEmpty() ? "" : ":") + items[i];
+	    else
+		real += (real.isEmpty() ? "" : ":") + items[i];
+	}
+	if (!real.isEmpty())
+	    languages = real + (tail.isEmpty() ? "" : ":" + tail);
+    }
+
     QString directory = KApplication::kde_localedir();
+    // [KDE1 Revival 2026] BUG7 回退命中标志与命中目录的实际 charset
+    bool fallbackHit = false;
+    QString fallbackCharset;
     QString ln,ct,chrset;
    
     // save languages list requested by user
@@ -232,18 +266,52 @@ KLocale::KLocale( const char *catalogue )
 	for(i=0; i<3; i++) {
 	  QDir d(directory + "/" + lng[i] + "/LC_MESSAGES");
 	  if (d.exists(QString(catalogue) + ".mo") &&
-	      d.exists(QString(SYSTEM_MESSAGES) + ".mo")) 
+	      d.exists(QString(SYSTEM_MESSAGES) + ".mo"))
 	      {
 		  lang = lng[i];
 		  break;
 	      }
         }
-	
-	if (i != 3)
+
+	/* [KDE1 Revival 2026] BUG7：charset 无关的最终回退。
+	 * Why  : kcmlocale 的语言表历史值为 zh_CN.GB2312/zh_TW.Big5（1999 年
+	 *        编码标签），而本项目 mo 只安装在 zh_CN.UTF-8/zh_TW.UTF-8——
+	 *        上述 3 级精确回退全部落空，用户在控制中心选择"简体中文"后
+	 *        翻译整体丢失。语言+国家一致仅 charset 不同（GB2312/Big5 在
+	 *        本项目全部以 UTF-8 交付）时应当命中。
+	 * How  : 枚举 locale 根目录下以 ln+"_"+ct 为前缀的子目录（如
+	 *        zh_CN.UTF-8），其 LC_MESSAGES 同时含 catalogue.mo 与
+	 *        SYSTEM_MESSAGES.mo 即命中；命中的实际 charset 记入
+	 *        fallbackCharset（见循环后 chset 收敛——避免用户旧配置的
+	 *        GB2312 把 charset 拉回旧编码）。
+	 */
+	if (i == 3) {
+	  QDir localeRoot(directory);
+	  QString want = ln + "_" + ct;
+	  QStringList subdirs = localeRoot.entryList(QDir::Dirs);
+	  for (QStringList::Iterator it = subdirs.begin();
+	       it != subdirs.end(); ++it) {
+	    if (!(*it).startsWith(want) || (*it).find('.') < 0)
+	      continue;
+	    QDir d(directory + "/" + (*it) + "/LC_MESSAGES");
+	    if (d.exists(QString(catalogue) + ".mo") &&
+		d.exists(QString(SYSTEM_MESSAGES) + ".mo"))
+	      {
+		  lang = (*it);
+		  int dot = lang.find('.');
+		  if (dot >= 0)
+		    fallbackCharset = lang.mid(dot + 1);
+		  fallbackHit = true;
+		  break;
+	      }
+	  }
+	}
+
+	if (i != 3 || fallbackHit)
 	    break;
     }
-    
-    chset=chrset;
+
+    chset = fallbackCharset.isEmpty() ? chrset : fallbackCharset;
 #ifdef HAVE_SETLOCALE
     lc_numeric=setlocale(LC_NUMERIC,0);
     setlocale(LC_NUMERIC,"C");          // by default disable LC_NUMERIC

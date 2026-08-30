@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,et,fi,fr,he,hr,hu,is,it,ja,ko,mk,nl,no,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,zh_CN.GB2312,zh_TW.Big5
+Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,et,fi,fr,he,hr,hu,is,it,ja,ko,mk,nl,no,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,zh_CN.UTF-8,zh_TW.UTF-8
 
 [br]
 Name=Breton
@@ -601,8 +601,9 @@ Name[sk]=Slovenskı
 Name[sl]=slova¹èina
 Name[sv]=Slovakiska
 
-[zh_TW.Big5]
+[zh_TW.UTF-8]
 Name=Chinese
+Name[zh_TW.UTF-8]=ç¹é«”ä¸­æ–‡
 Name[ca]=Xinès
 Name[cs]=Èínskı
 Name[da]=Kinesisk
@@ -626,8 +627,10 @@ Name[sk]=Èínsky
 Name[sl]=kitaj¹èina
 Name[sv]=Kinesiska
 
-[zh_CN.GB2312]
+[zh_CN.UTF-8]
 Name=Simplified Chinese
+Name[zh_CN.UTF-8]=ç®€ä½“ä¸­æ–‡
+Name[zh_CN]=ç®€ä½“ä¸­æ–‡
 Name[ca]=Xinès simplificat
 Name[cs]=Zjednodu¹enı èínskı
 Name[da]=Forsimplet kinesisk

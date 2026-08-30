@@ -193,12 +193,12 @@ signals:
 
 private slots:
 
-      void 	family_chosen_slot(const char* );
-      void      size_chosen_slot(const char* );
-      void      weight_chosen_slot(const char*);
-      void      style_chosen_slot(const char*);
+      void family_chosen_slot(int index);
+      void size_chosen_slot(int index);
+      void weight_chosen_slot(int index);
+      void style_chosen_slot(int index);
       void      display_example(const QFont &font);
-      void      charset_chosen_slot(const char *);
+      void charset_chosen_slot(int index);
       void      setColors();
 private:
 

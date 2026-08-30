@@ -1682,14 +1682,14 @@ void KTreeList::mousePressEvent(QMouseEvent *e)
   QPoint cellCoord(mouseCoord.x() - cellX, mouseCoord.y() - cellY);
   
   // hit test item
- 
+
   if(item->boundingRect(fontMetrics()).contains(cellCoord)){
     setCurrentItem(itemClicked);
     emit singleSelected(itemClicked);    // ettrich
   }
 
   // hit test expand button
-  
+
   else if(item->hasChild()) {
     if(item->expandButtonClicked(cellCoord)) {
       expandOrCollapse(item);

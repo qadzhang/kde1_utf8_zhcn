@@ -369,7 +369,7 @@ void srandom(unsigned int seed);
 #define PACKAGE "kdelibs"
 
 /* Version number of package */
-#define VERSION "1.1.2.1"
+#define VERSION "1.2.0.1"
 
 /* Missing in our config.h, this means we are on Linux */
 #define FD_SET_IN_SYS_TYPES_H 1

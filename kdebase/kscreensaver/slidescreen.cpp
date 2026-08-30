@@ -539,8 +539,9 @@ kSlideScreenSetup::kSlideScreenSetup( QWidget *parent, const char *name )
 	min_width(combo);
 	fixed_height(combo);
 	tl11->addWidget(combo, 0, 1);
-	connect( combo, SIGNAL( activated( const char * ) ),
-			SLOT( slotMode( const char * ) ) );
+	/* [KDE1 Revival 2026] 原 connect SLOT(slotMode(const char*)) 所指的槽
+	   从 1999 年起就未实现（运行期 "No such slot" 告警），mode
+	   选择与保存链路本未接通；移除死 connect，行为与历史版本一致。 */
 
 	QCheckBox *cb = new QCheckBox( glocale->translate("Glow"), this );
 	min_size(cb);

@@ -161,6 +161,7 @@ TQtTableView::TQtTableView( TQWidget *parent, const char *name, WFlags f )
     horSnappingOff	 = FALSE;
     coveringCornerSquare = FALSE;
     inSbUpdate		 = FALSE;
+    tblAutoUpdate	 = TRUE; // [KDE1 Revival 2026] 与 Qt1 一致：默认开自动重绘
 }
 
 /*
@@ -930,11 +931,23 @@ void TQtTableView::clearTableFlags( uint f )
   \sa autoUpdate(), repaint()
 */
 
+/* [KDE1 Revival 2026] BUG2 根修：
+ * ┌─ What : setAutoUpdate 回归 Qt1 语义——只置"setter 自动重绘"标志位，
+ * │         不再联动 TQt3 的 setUpdatesEnabled()。
+ * │  Why  : 原实现把它接到 setUpdatesEnabled()（置 WState_BlockUpdates）。
+ * │         KDE1 代码的标准防闪烁模式是
+ * │             setAutoUpdate(FALSE); …变更…; repaint(); setAutoUpdate(TRUE);
+ * │         其中手动 repaint() 走本类重载（首行检查 WState_BlockUpdates），
+ * │         在 FALSE 期间被静默吞掉——KTreeList::expandOrCollapse 树展开后
+ * │         不重绘（kcontrol 树"点开不刷新，拖滑块才出现"）即此机制。
+ * │         Qt1 里该模式的手动 repaint 从不受 autoUpdate 影响。
+ * │  How  : 仅写 tblAutoUpdate 标志；enable 时保留滚动条同步动作。
+ * │         各 setter 内部 "if (autoUpdate() && isVisible()) repaint()"
+ * │         的既有检查语义不变（读标志位）。
+ */
 void TQtTableView::setAutoUpdate( bool enable )
 {
-    if ( isUpdatesEnabled() == enable )
-	return;
-    setUpdatesEnabled( enable );
+    tblAutoUpdate = enable;
     if ( enable ) {
 	showOrHideScrollBars();
 	updateScrollBars();

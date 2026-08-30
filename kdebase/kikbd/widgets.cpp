@@ -418,7 +418,8 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
 		  createWidget(&kikbdConfig->getSwitchRef(), group, 0L,
 			       gettext("Key(s) for switching between "
 				       "keyboard maps")));
-  connect(wid, SIGNAL(activated(const char*)),  SLOT(newSwitch(const char*)));
+  /* [KDE1 Revival 2026] TQComboBox 仅有 activated(int)；槽本不用参数 */
+  connect(wid, SIGNAL(activated(int)),  SLOT(newSwitch()));
 
   hbox->addWidget(wid=kikbdConfig->
 		  createWidget(&kikbdConfig->getAltSwitchRef(), group, 0L,
@@ -447,7 +448,7 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   connect(kikbdConfig->find(&kikbdConfig->getMaps()), SIGNAL(dataChanged()),
 	  SLOT(listChanged()));
 }
-void KiKbdGeneralWidget::newSwitch(const char*)
+void KiKbdGeneralWidget::newSwitch()
 {
   emit activateAltSwitch((!kikbdConfig->oneKeySwitch())
 			 && kikbdConfig->hasAltKeys());

@@ -62,7 +62,7 @@ protected:
 	void readSettings();
 
 private slots:
-	void slotFamily( const char * );
+	void slotFamily( int index );
 	void slotSize( int );
 	void slotColor();
 	void slotBold( bool );

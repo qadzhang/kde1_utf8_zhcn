@@ -61,8 +61,10 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 		if ( !strcmp( stdName, sit.current() ) )
 			cb->setCurrentItem( i );
 	}
-	connect( cb, SIGNAL( activated( const char * ) ),
-		SLOT( slotStandardFont( const char * ) ) );
+	/* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å·ï¼æ§½æ¹
+	   æç´¢å¼ç» sender() åå½åææ¬ï¼ä¸åï¼ */
+	connect( cb, SIGNAL( activated( int ) ),
+		SLOT( slotStandardFont( int ) ) );
 
 	label = new QLabel( klocale->translate( "Fixed Font"), this );
 	label->setGeometry( 15, 130, 100, 20 );
@@ -78,8 +80,8 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 		if ( !strcmp( fixedName, fit.current() ) )
 			cb->setCurrentItem( i );
 	}
-	connect( cb, SIGNAL( activated( const char * ) ),
-		SLOT( slotFixedFont( const char * ) ) );
+	connect( cb, SIGNAL( activated( int ) ),
+		SLOT( slotFixedFont( int ) ) );
 
 	connect( bg, SIGNAL( clicked( int ) ), SLOT( slotFontSize( int ) ) );
 }
@@ -183,14 +185,17 @@ void KFontOptions::slotFontSize( int i )
 	fSize = i+3;
 }
 
-void KFontOptions::slotStandardFont( const char *n )
+void KFontOptions::slotStandardFont( int index )
 {
-	stdName = n;
+	// [KDE1 Revival 2026] ç» sender() ååä¿¡ comboï¼ä¸¤ä¸ª combo åä¸ºå±é¨åéï¼
+	TQComboBox *box = (TQComboBox *)sender();
+	stdName = box->text(index);
 }
 
-void KFontOptions::slotFixedFont( const char *n )
+void KFontOptions::slotFixedFont( int index )
 {
-	fixedName = n;
+	TQComboBox *box = (TQComboBox *)sender();
+	fixedName = box->text(index);
 }
 
 //-----------------------------------------------------------------------------

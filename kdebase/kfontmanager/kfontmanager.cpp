@@ -26,7 +26,9 @@
     */
  
 
-#include <qstrlist.h> 
+#include <qstrlist.h>
+#include <qfontdatabase.h>
+#include <qcstring.h> // [KDE1 Revival 2026] fontconfig 字体枚举（BUG5） 
 #include <qfile.h>
 #include <qtstream.h> 
 #include <qtabdlg.h>
@@ -57,7 +59,7 @@ KFontManager::KFontManager (QWidget * parent, const char *name)
 {
 
 
-  availableLabel = new QLabel(i18n("Available X11 Fonts"), this,"availlabel");
+  availableLabel = new QLabel(i18n("Available Fonts"), this,"availlabel");
 
   availableFontsList = new QListBox(this,"avalableFonts");
   
@@ -323,92 +325,103 @@ bool KFontManager::writeKDEInstalledFonts(){
 
 void KFontManager::queryFonts(){
 
-  int numFonts;
-  Display *kde_display;
-  char** fontNames;
-  char** fontNames_copy;
-  QString qfontname;
-
+  /* [KDE1 Revival 2026] 字体枚举 fontconfig 化（BUG5）：
+   * Why : 原实现 XListFonts("*") 枚举 X 核心字体（XLFD），Debian 12 上
+   *       只有少量 URW/杂项位图字体、无任何 CJK 字体——列表与系统实际
+   *       可用字体严重不符。TQFontDatabase 经 fontconfig 枚举，与 konsole
+   *       字体菜单同源，Noto/文泉驿等中文字体自然入列。
+   * How : ① 家目录 kdefonts 自定义列表仍优先（loadKDEInstalledFonts 语义
+   *       不变）；② 否则 TQFontDatabase::families() 填充两个列表；③ 数据
+   *       库为空时回退历史 XListFonts 路径。家族名取 utf8()——隐式
+   *       const char*（latin1）会把 CJK 名变成 NULL/问号且 strcmp 崩溃；
+   *       utf8() 返回 TQCString 临时对象，必须保生命周期。两路结果的
+   *       列表回填统一放在回退块之外。 */
   QStrList fontlist(TRUE);
   QStrList installedfontlist(TRUE);
-  
-  kde_display = XOpenDisplay( NULL );
 
   bool have_installed = loadKDEInstalledFonts();
 
-  fontNames = XListFonts(kde_display, "*", 32767, &numFonts);
-  fontNames_copy = fontNames;
+  if (!have_installed) {
+    QFontDatabase fdb;
+    QStringList fams = fdb.families(false);
+    for (QStringList::Iterator it = fams.begin(); it != fams.end(); ++it) {
+      TQCString fnHolder = (*it).utf8();
+      const char *fn = fnHolder;
+      if (!fn || !*fn) continue;
+      if (fontlist.find(fn) == -1)
+        fontlist.inSort(fn);
+      if (installedfontlist.find(fn) == -1)
+        installedfontlist.inSort(fn);
+    }
+  }
 
-  availableFontsList->setAutoUpdate(FALSE);
-  selectedFontsList->setAutoUpdate(FALSE);
+  if (fontlist.isEmpty())
+  {
+    int numFonts;
+    Display *kde_display;
+    char** fontNames;
+    char** fontNames_copy;
+    QString qfontname;
 
-  for( int k = 0; k < numFonts; k++){
-    
-    if (**fontNames != '-'){ // font name doesn't start with a dash -- an alias
-      
-      /*
+    kde_display = XOpenDisplay( NULL );
+
+    fontNames = XListFonts(kde_display, "*", 32767, &numFonts);
+    fontNames_copy = fontNames;
+
+    for( int k = 0; k < numFonts; k++){
+
+      if (**fontNames != '-'){ // font name doesn't start with a dash -- an alias
+        fontNames ++;
+        continue;
+      };
 
       qfontname = "";
       qfontname = *fontNames;
-      if(fontlist.find(qfontname) == -1)
-          fontlist.inSort(qfontname);
-
-      */
-
-      fontNames ++;
-      continue;
-    };
-      
-    qfontname = "";
-    qfontname = *fontNames;
-    int dash = qfontname.find ('-', 1, TRUE); // find next dash
-
-    if (dash == -1) { // No such next dash -- this shouldn't happen.
-                      // let's skip it.
-      fontNames ++;
-      continue;
-    }
-
-    // the font family name is between the second and third dash therefore
-    // let's find the third dash:
-
-    int dash_two = qfontname.find ('-', dash + 1 , TRUE); 
-
-    if (dash == -1) { // No such next dash -- this shouldn't happen.
-                      // let's skip it.
-      fontNames ++;
-      continue;
-    }
-
-    // fish the font family name out of the font info string
-
-    qfontname = qfontname.mid(dash +1, dash_two - dash -1);
-
-    if(fontlist.find(qfontname) == -1)
-      fontlist.inSort(qfontname);
-
-    if(!have_installed){
-
-      // we don't have a kdefontlist file yet -- prepare a default list 
-      // of installed fonts
-      
-      if( !qfontname.contains("open look", TRUE)){
-	if(qfontname != "nil"){
-	  if(installedfontlist.find(qfontname) == -1)
-	    installedfontlist.inSort(qfontname);
-	}
+      int dash = qfontname.find ('-', 1, TRUE); // find next dash
+      if (dash == -1) { // No such next dash -- this shouldn't happen.
+        fontNames ++;
+        continue;
       }
+
+      // the font family name is between the second and third dash therefore
+      // let's find the third dash:
+      int dash_two = qfontname.find ('-', dash + 1 , TRUE);
+      if (dash_two == -1) { // No such next dash -- this shouldn't happen.
+        fontNames ++;
+        continue;
+      }
+
+      // fish the font family name out of the font info string
+      qfontname = qfontname.mid(dash +1, dash_two - dash -1);
+
+      if(fontlist.find(qfontname) == -1)
+        fontlist.inSort(qfontname);
+
+      if(!have_installed){
+        // we don't have a kdefontlist file yet -- prepare a default list
+        // of installed fonts
+        if( !qfontname.contains("open look", TRUE)){
+          if(qfontname != "nil"){
+            if(installedfontlist.find(qfontname) == -1)
+              installedfontlist.inSort(qfontname);
+          }
+        }
+      }
+
+      fontNames ++;
     }
 
-    fontNames ++;
-
+    XFreeFontNames(fontNames_copy);
+    XCloseDisplay(kde_display);
   }
+
+  availableFontsList->setAutoUpdate(FALSE);
+  selectedFontsList->setAutoUpdate(FALSE);
 
   for(fontlist.first(); fontlist.current(); fontlist.next())
    availableFontsList->insertItem(fontlist.current());
 
   if(!have_installed){
-    
     for(installedfontlist.first(); installedfontlist.current(); installedfontlist.next())
       selectedFontsList->insertItem(installedfontlist.current());
   }
@@ -417,10 +430,6 @@ void KFontManager::queryFonts(){
   availableFontsList->update();
   selectedFontsList->setAutoUpdate(TRUE);
   selectedFontsList->update();
-
-  XFreeFontNames(fontNames_copy);
-  XCloseDisplay(kde_display);
-
 
 }
 

@@ -356,8 +356,12 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   wpCombo->setFixedHeight(wpCombo->height());
   //CT  wpCombo->setMinimumWidth(wpCombo->width());
 
-  connect( wpCombo, SIGNAL( activated( const char * ) ),
-	   SLOT( slotWallpaper( const char * )  )  );
+  // [KDE1 Revival 2026] TQt3 迁移：Qt1 的 activated(const char*) 信号在 TQComboBox 已不存在，
+  // connect 会静默失败导致选壁纸完全无效（运行日志可见 "No such signal" 告警）。
+  // 改接 activated(int)，由 slotWallpaper(int) 适配槽取文本转发；原 const char* 槽
+  // 保留供 slotBrowse/slotWallpaperMode 等内部调用路径继续使用。
+  connect( wpCombo, SIGNAL( activated( int ) ),
+	   SLOT( slotWallpaper( int )  )  );
 		
   /*CT 30Nov1998
   QBoxLayout *pushLayout = new QHBoxLayout( 5 ); 
@@ -1226,6 +1230,16 @@ void KBackground::slotWallpaper( const char *filename )
     }
 }
 
+// [KDE1 Revival 2026] TQt3 适配槽（伪代码）：
+//   1. 由下拉框当前索引取条目文本（QString）
+//   2. 经 UTF-8 转成字节串，转发给历史的 slotWallpaper(const char*)
+//      —— 临时 TQCString 在本表达式结束前存活，槽内 strcmp/深拷贝均安全
+void KBackground::slotWallpaper( int index )
+{
+  if ( index >= 0 && index < wpCombo->count() )
+    slotWallpaper( wpCombo->text( index ).utf8() );
+}
+
 void KBackground::slotWallpaperMode( int m )
 {
   currentItem.wpMode = m + 1;
@@ -1520,8 +1534,9 @@ KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *orient,
   grid->addWidget( lName, 0, 2 );
 	
   listBox = new QListBox( this );
-  connect(listBox, SIGNAL(highlighted(const char*)), 
-	  SLOT(selected(const char*)));
+  /* [KDE1 Revival 2026] TQListBox ä» highlighted(int) ä¿¡å·ï¼æ§½æ¹æç´¢å¼åææ¬ */
+  connect(listBox, SIGNAL(highlighted(int)), 
+	  SLOT(selected(int)));
     
   grid->addWidget( listBox, 1, 1);
 	
@@ -1648,8 +1663,10 @@ int KBPatternDlg::savePatterns() {
   return 6;
 }
 
-void KBPatternDlg::selected( const char *selected )
+void KBPatternDlg::selected( int index )
 {
+  // [KDE1 Revival 2026] æç´¢å¼åéä¸­é¡¹ææ¬ï¼æ¯å¯¹é»è¾ä¸å
+  const char *selected = listBox->text(index);
   for ( PatternEntry *item=list.first(); item != 0; item=list.next() )
     if (*item == selected) {
 		

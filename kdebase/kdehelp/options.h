@@ -26,8 +26,8 @@ public:
 public slots:
 	void	slotApplyPressed();
 	void	slotFontSize( int );
-	void	slotStandardFont( const char *n );
-	void	slotFixedFont( const char *n );
+	void	slotStandardFont( int index );
+	void	slotFixedFont( int index );
 
 signals:
 	void	fontSize( int );

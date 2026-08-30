@@ -1,5 +1,7 @@
 # KDE 1.1.2 Revival — 在 Debian 12 上复活 1999 年的桌面，并让它显示中文
 
+![KDE 1 桌面（staging 实拍）](t0_main.png)
+
 把 KDE 1 系列的最终版本 **KDE 1.1.2**（1999 年 9 月 13 日发布）在 2026 年的 Debian 12 (bookworm) 上跑起来；在此基础上实施**路线乙（UTF-8 现代化补丁）**，使这个 27 年前的桌面在现代系统上流畅、稳定地运行完整的简体中文（zh-CN）环境。
 
 **总体目标（验收标准，详见 `AGENTS.md` §1）：**
@@ -77,7 +79,7 @@ sudo apt install fonts-noto-cjk fcitx5 fcitx5-chinese-addons \
 ./build.sh --prefix=/usr/kde1
 ```
 
-构建顺序：qt1 → kdelibs → kdebase → kdegames / kdeutils / kdenetwork / kdetoys（脚本自动完成）。`build.sh` 只做编译，并把安装结果经 DESTDIR 重定向到仓库内 `./staging` 暂存区——零提权、不写入任何系统目录；需要干净重建时，先执行 `./clean.sh` 清理各模块构建产物（`build/` 目录）与暂存区，再重新运行 `./build.sh`。
+构建顺序：tqt3 → kdelibs → kdebase → kdegames / kdeutils / kdenetwork / kdetoys（脚本自动完成）。`build.sh` 只做编译，并把安装结果经 DESTDIR 重定向到仓库内 `./staging` 暂存区——零提权、不写入任何系统目录；需要干净重建时，先执行 `./clean.sh` 清理各模块构建产物（`build/` 目录）与暂存区，再重新运行 `./build.sh`。
 
 开发期运行（不安装，直接从暂存区起；`~/.xinitrc` 末行 `exec startkde` 后执行 `startx`）：
 
