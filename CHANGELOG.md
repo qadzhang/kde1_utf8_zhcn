@@ -2,6 +2,10 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-30（kfontmanager 空列表修复：0 字节 kdefonts 误判"已安装"）
+
+- 早前测试点"应用"生成的 **0 字节 ~/.kde/share/config/kdefonts** 使 loadKDEInstalledFonts() 误判"已有自定义字体列表"——fontconfig 枚举整块被门槛跳过，"可用的X11字体"只剩 X 核心字体、"KDE可用的字体"全空。两处修复：① fontconfig 枚举无条件执行（kdefonts 仅决定"KDE可用"列是否自动填充）；② 文件读到 0 个有效条目时返回 false（空文件视为无自定义列表）。已删测试副产物空文件，双列表实测填满。
+
 ## 2026-08-30（全项目 BUG 排查：八个缺陷根治 + 14 处 Qt1 信号静默失效修复 + 30 余应用跑测审计）
 
 - **BUG1 konsole 中文显示（根修）**：VT 默认字体经 fontconfig 按候选序选 CJK 等宽家族（Noto Sans Mono CJK SC 等，konsoleDefaultVTFont）；drawAttrStr 改显式 UTF-8 解码整段绘制（TQString::fromUtf8，规避 char* 隐式转换的字符数截断语义）；font_w 度量改 width('M')（CJK 等宽字体 maxWidth 是全角宽，会使列数减半）。

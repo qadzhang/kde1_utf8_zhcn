@@ -275,7 +275,16 @@ bool KFontManager::loadKDEInstalledFonts(){
 
   selectedFontsList->setAutoUpdate(TRUE);
    selectedFontsList->update();
-  
+
+  /* [KDE1 Revival 2026] 空文件（或全空行）视为
+     “无自定义列表”：0 字节 kdefonts 会使
+     exists() 为真而误判“已安装”，把 fontconfig
+     全集整个挡掉（实测即此）。未读到
+     有效条目时返回 false，让 fontconfig 路径
+     正常填充两个列表。 */
+  if (selectedFontsList->count() == 0)
+    return false;
+
   return true;
 
 }
@@ -341,7 +350,12 @@ void KFontManager::queryFonts(){
 
   bool have_installed = loadKDEInstalledFonts();
 
-  if (!have_installed) {
+  /* [KDE1 Revival 2026] fontconfig 枚举无条件执行：kdefonts
+     自定义列表存在（have_installed）时只影响
+     "KDE 可用字体"列是否自动填充，不能把
+     系统实际字体整个挡掉（实测 kdefonts
+     存在时左列表只剩 X 核心字体）。 */
+  {
     QFontDatabase fdb;
     QStringList fams = fdb.families(false);
     for (QStringList::Iterator it = fams.begin(); it != fams.end(); ++it) {
@@ -350,8 +364,10 @@ void KFontManager::queryFonts(){
       if (!fn || !*fn) continue;
       if (fontlist.find(fn) == -1)
         fontlist.inSort(fn);
-      if (installedfontlist.find(fn) == -1)
-        installedfontlist.inSort(fn);
+      if (!have_installed) {
+        if (installedfontlist.find(fn) == -1)
+          installedfontlist.inSort(fn);
+      }
     }
   }
 
