@@ -2,6 +2,10 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-31（第四批：对接 GitHub 远端 kde1_utf8_zhcn）
+
+- 远端 `https://github.com/qadzhang/kde1_utf8_zhcn` 建仓初始提交（GPLv2 LICENSE）以 `--allow-unrelated-histories` 合并入库：根目录 LICENSE 为 GPLv2，与本项目许可口径一致（tqt3 选 GPLv2 侧、KDE 模块 GPL/LGPL，见 README 版权表）；本地分支 master 更名 main 与远端对齐，源码历史（含本日历史重写）完整保留。
+
 ## 2026-08-31（第三批：git 历史重写——tqt3-build 路径从全部历史清除）
 
 - **历史重写（filter-branch index-filter）**：上一批只把 tqt3-build 移出了索引，6697 条路径仍存在于 2026-08 底座迁移以来的历史提交中；本批对全部历史重写剔除该路径——历史中 `git log -- tqt3-build` 命中归零，重写后 HEAD 树与重写前逐字节一致（工作区零变化）。全部 commit hash 已变（含上一批两次提交），若已有远端需 force push。
