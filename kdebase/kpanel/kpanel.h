@@ -205,6 +205,23 @@ public:
   void kwmCommandReceived(QString);
   void dockWindowAdd(Window);
   void dockWindowRemove(Window);
+  /* [KDE1 Revival 2026] dock 图标右键退出：记录 dock 窗口、弹退出菜单 */
+  void dockAppContextMenu(Window w);
+  Window dockWindowAt(const QPoint &globalPos);
+  Window pendingDockContextWindow;
+public:
+  QWidget *dockAreaWidget() { return dock_area; }
+public slots:
+  void dockAppContextMenuSlot();
+  void dockClientsChanged(); /* [KDE1 Revival 2026] SNI 客户数变化重排 */
+  /* [KDE1 Revival 2026] XEmbed 系统托盘（_NET_SYSTEM_TRAY）：fcitx5、
+     钉钉等现代程序的指示栏协议。1999 年 kpanel 只有自家 KWM_DOCKWINDOW，
+     现代图标无处停靠——实现 manager 角色：
+     ① 启动时 acquire _NET_SYSTEM_TRAY_S<screen> selection 并广播 MANAGER；
+     ② 客户端经 SYSTEM_TRAY_REQUEST_DOCK 申请停靠 → 嵌入 dock_area；
+     ③ 客户端销毁时自动回收槽位。 */
+  void setupSystemTray();
+  void embedTrayClient(Window client);
 
 /*   void playSound(QString); */
 
@@ -333,6 +350,13 @@ private:
   QLabel *label_date;
   myToolTip *date_tip;
   QFrame *dock_area;
+  /* [KDE1 Revival 2026] 已停靠窗口清单（供右键退出定位目标） */
+  QList<Window> dock_windows;
+  Atom xembed_atom, manager_atom;
+  Window tray_manager_window;      /* selection owner 窗（即 dock_area 的 input-only 代理） */
+public:
+  /* MyApp::x11EventFilter 转发判断用 */
+  Atom tray_opcode_atom;
 
   QWidget *moving_button;
   QPoint moving_button_offset;

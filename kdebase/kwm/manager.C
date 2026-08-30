@@ -1756,9 +1756,20 @@ void Manager::manage(Window w, bool mapped){
 
   if (KWM::isDockWindow(w)){
     addDockWindow(w);
-    // [KDE1 Revival 2026] 此处不可 XMapWindow 放行：dock 原子不只面板用，
-    // kbgndwm/kikbd 的模块通信窗口也靠它保持隐身（实测放行后桌面左上角
-    // 出现游离窗口）。面板/任务栏的贴边问题另行处理（见 kpanel.C 标注）。
+    // [KDE1 Revival 2026] 此处不可无条件 XMapWindow 放行：dock 原子不只
+    // 面板用，kbgndwm/kikbd 的模块通信窗口也靠它保持隐身（实测放行后
+    // 桌面左上角出现游离窗口）。
+    // 但 XEmbed 系统托盘客户（kpanel 指示栏的 fcitx5/钉钉等图标，带
+    // _XEMBED_INFO 属性）必须真实映射显示——按属性精准放行。
+    {
+      Atom xembed_info = XInternAtom(qt_xdisplay(), "_XEMBED_INFO", False);
+      Atom rt; int rf; unsigned long n = 0, extra = 0; unsigned char *p = 0;
+      int has_xembed = (XGetWindowProperty(qt_xdisplay(), w, xembed_info, 0, 2,
+              False, XA_CARDINAL, &rt, &rf, &n, &extra, &p) == Success && p != 0);
+      if (p) XFree(p);
+      if (has_xembed)
+        XMapWindow(qt_xdisplay(), w);
+    }
     return;
   }
 

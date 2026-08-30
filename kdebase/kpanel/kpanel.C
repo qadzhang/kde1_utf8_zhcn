@@ -344,6 +344,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     label_date->adjustSize();
 
     dock_area = new QFrame(this);
+    pendingDockContextWindow = None; /* [KDE1 Revival 2026] */
+    dock_windows.setAutoDelete( true );
     dock_area->setFrameStyle(QFrame::Panel| QFrame::Sunken);
     dock_area->hide();
 

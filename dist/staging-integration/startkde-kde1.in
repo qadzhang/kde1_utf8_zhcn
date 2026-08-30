@@ -24,13 +24,20 @@ export PATH="$KDE1_PREFIX/bin:$PATH"
 export TQTDIR="$KDE1_PREFIX/tqt3"
 export LD_LIBRARY_PATH="$KDE1_PREFIX/lib:$KDE1_PREFIX/tqt3/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
-# 输入法：fcitx5 优先，fcitx 兜底（均未装则跳过）
+# 输入法：fcitx5 优先，fcitx 兜底（均未装则跳过）。
+# [KDE1 Revival 2026] 延迟启动：fcitx5 的指示栏图标经 XEmbed/SNI 停靠
+# 申请需在 kpanel 的托盘 manager（_NET_SYSTEM_TRAY selection）上线后
+# 才能命中——直接随脚本启动会早于 kpanel 而错失（fcitx5 不重试）。
+# 后台子壳等 kpanel 就绪再拉起；XMODIFIERS 已先导出不受影响。
 export XMODIFIERS=@im=fcitx
-if command -v fcitx5 >/dev/null 2>&1; then
-    fcitx5 -d >/dev/null 2>&1 &
-elif command -v fcitx >/dev/null 2>&1; then
-    fcitx -d >/dev/null 2>&1 &
-fi
+(
+    sleep 4
+    if command -v fcitx5 >/dev/null 2>&1; then
+        fcitx5 -d >/dev/null 2>&1 &
+    elif command -v fcitx >/dev/null 2>&1; then
+        fcitx -d >/dev/null 2>&1 &
+    fi
+) &
 
 # 音效兼容：KDE1 走 /dev/dsp（OSS），Debian 12 无该设备；
 # libpulsedsp（padsp 命令背后的预载库）把 OSS 调用转发到

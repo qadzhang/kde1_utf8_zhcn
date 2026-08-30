@@ -97,8 +97,12 @@ do_start() {
     #    DISPLAY 必须显式指向 :99——否则继承外层 shell 的 :0 会去宿主显示器
     #    注册 XIM，与宿主输入法冲突而永远 "Failed to open xim"。
     #    中文切换默认快捷键 Ctrl+Space；拼音来自 fcitx5-chinese-addons。
-    DISPLAY=$DISP XMODIFIERS=@im=fcitx setsid fcitx5 >"$RUN/fcitx.log" 2>&1 &
-    echo $! > "$RUN/fcitx.pid"
+    # [KDE1 Revival 2026] 延迟 4 秒启动：fcitx5 的托盘图标停靠申请需在
+    # kpanel 的 _NET_SYSTEM_TRAY manager 上线后发出（fcitx5 不重试），
+    # 而 kpanel 由 startkde（下方④）拉起。
+    ( sleep 4
+      DISPLAY=$DISP XMODIFIERS=@im=fcitx setsid fcitx5 >"$RUN/fcitx.log" 2>&1 &
+      echo $! > "$RUN/fcitx.pid" ) &
 
     # 音效兼容：libpulsedsp 把 OSS /dev/dsp 调用转发到 PulseAudio/PipeWire，
     # 探测顺序与 startkde-kde1.in 相同；未找到则跳过预载（无音效但不影响画面）

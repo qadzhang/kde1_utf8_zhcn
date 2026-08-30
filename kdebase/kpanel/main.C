@@ -10,6 +10,7 @@
 //   消失已回退；面板贴边问题已定位待续（详见 show() 处标注）
 
 #include "kpanel.h"
+#include "snitray.h"
 #include <qapp.h>
 #include <kwmmapp.h>
 #include <qdir.h>
@@ -26,6 +27,7 @@
 #include <sys/stat.h>
 
 kPanel *the_panel;
+SNITray *the_snitray; /* [KDE1 Revival 2026] SNI 托盘 host */
 int o_argc;
 char ** o_argv;
 
@@ -49,6 +51,28 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):
 }
 
 bool MyApp::x11EventFilter( XEvent * ev){
+  /* [KDE1 Revival 2026] XEmbed 系统托盘停靠申请转发：
+     _NET_SYSTEM_TRAY_OPCODE data.l[1]==0 即 SYSTEM_TRAY_REQUEST_DOCK */
+  if (ev->type == ClientMessage &&
+      ev->xclient.message_type == the_panel->tray_opcode_atom &&
+      ev->xclient.data.l[1] == 0){
+    the_panel->embedTrayClient((Window) ev->xclient.data.l[2]);
+    return True;
+  }
+
+  /* [KDE1 Revival 2026] dock 图标右键（kpanel 对 dock 窗口 select 了
+     ButtonPress 副本事件）：转投 Qt 事件循环内弹出“退出应用”菜单。
+     X 原始事件里不能直接弹 Qt 菜单（嵌套循环风险），singleShot(0) 转移。 */
+  if (ev->type == ButtonPress &&
+      ev->xbutton.button == 3 /* RightButton */ &&
+      the_panel->dockWindowAt(QPoint(ev->xbutton.x_root, ev->xbutton.y_root)) != None) {
+    the_panel->pendingDockContextWindow =
+      the_panel->dockWindowAt(QPoint(ev->xbutton.x_root, ev->xbutton.y_root));
+    XAllowEvents(qt_xdisplay(), AsyncPointer, CurrentTime);
+    QTimer::singleShot(0, the_panel, SLOT(dockAppContextMenuSlot()) );
+    return True; /* 该事件不再往下传 */
+  }
+
   if (ev->xany.window != None &&
       the_panel->parentOfSwallowed(ev->xany.window)){
     if (ev->type == ButtonPressMask){
@@ -158,6 +182,13 @@ int main( int argc, char ** argv ){
   }
 
   the_panel = new kPanel(&myapp);
+  the_panel->setupSystemTray(); /* [KDE1 Revival 2026] XEmbed 托盘 manager 上线 */
+  /* [KDE1 Revival 2026] SNI（DBus StatusNotifier）host：fcitx5 5.x 等
+     现代程序的默认托盘路径 */
+  the_snitray = new SNITray(the_panel->dockAreaWidget());
+  if (the_snitray->init())
+      QObject::connect(the_snitray, SIGNAL(clientsChanged()),
+                       the_panel, SLOT(dockClientsChanged()));
   the_panel->connect(&myapp, SIGNAL(init()),
 		     SLOT(kwmInit()));
   the_panel->connect(&myapp, SIGNAL(windowAdd(Window)),

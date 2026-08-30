@@ -389,12 +389,207 @@ void kPanel::layoutDockArea(){
 }
 
 void kPanel::dockWindowAdd(Window w){
+  /* [KDE1 Revival 2026] 幂等守卫：kwm 对已嵌入的 XEmbed 客户会随其
+     mapRequest 反复广播 dockwin_add——再次 reparent/map 会与 kwm 的
+     withdraw 形成嵌入↔撤管死循环（实测 Reparent/Map/Unmap 无限交替）。
+     清单里已有则只重排布局。 */
+  for (Window *pw = dock_windows.first(); pw; pw = dock_windows.next())
+    if (*pw == w) { layoutDockArea(); return; }
+
+  /* 同时 select ButtonPress：kpanel 得到 dock 图标上右键的副本事件
+     （原窗口应用照常收到），用于提供“退出应用”菜单 */
+  Window *dw = new Window;
+  *dw = w;
+  dock_windows.append(dw);
+  XSelectInput(qt_xdisplay(), w, ButtonPressMask | ButtonReleaseMask |
+                               StructureNotifyMask);
   XReparentWindow(qt_xdisplay(), w, dock_area->winId(), 0, 0);
   XMapWindow(qt_xdisplay(), w);
   layoutDockArea();
 }
-void kPanel::dockWindowRemove(Window){
+void kPanel::dockWindowRemove(Window w){
+  /* [KDE1 Revival 2026] 从两份清单摘除（w==None 表示全清） */
+  if (w == None) {
+    dock_windows.clear();
+    kwmmapp->dock_windows.clear();
+  } else {
+    for (Window *pw = dock_windows.first(); pw; pw = dock_windows.next())
+      if (*pw == w) { dock_windows.remove(); break; }
+    for (Window *pw = kwmmapp->dock_windows.first(); pw; pw = kwmmapp->dock_windows.next())
+      if (*pw == w) { kwmmapp->dock_windows.remove(); break; }
+  }
   layoutDockArea();
+}
+
+// 定位全局坐标命中的 dock 窗口（None = 未命中）
+Window kPanel::dockWindowAt(const QPoint &globalPos){
+  for (Window *pw = dock_windows.first(); pw; pw = dock_windows.next()){
+    XWindowAttributes attr;
+    if (XGetWindowAttributes(qt_xdisplay(), *pw, &attr) == 0)
+      continue;
+    if (attr.map_state != IsViewable)
+      continue;
+    int wx = attr.x + attr.border_width, wy = attr.y + attr.border_width;
+    // attr.x/y 是相对父窗（dock_area）的；dock_area 自身在屏幕上的原点：
+    Window root, parent, *children = 0;
+    unsigned int nchild;
+    if (XQueryTree(qt_xdisplay(), *pw, &root, &parent, &children, &nchild)) {
+      Window pp = parent;
+      XWindowAttributes pattr;
+      /* 沿父链只上溯一层（dock_area 直挂面板），用 dock_area 的 mapToGlobal */
+      if (XGetWindowAttributes(qt_xdisplay(), pp, &pattr) && pp == dock_area->winId()){
+        QPoint gp = dock_area->mapToGlobal(QPoint(wx, wy));
+        if (children) XFree(children);
+        if (globalPos.x() >= gp.x() && globalPos.x() < gp.x() + attr.width &&
+            globalPos.y() >= gp.y() && globalPos.y() < gp.y() + attr.height)
+          return *pw;
+        continue;
+      }
+      if (children) XFree(children);
+    }
+  }
+  return None;
+}
+
+// dock 图标右键菜单：退出应用（XKillClient 终止其 X 连接 = 退出进程）
+void kPanel::dockAppContextMenu(Window w){
+  QPopupMenu *p = new QPopupMenu();
+  p->insertItem(klocale->translate("Quit application"), w);
+  int id = p->exec(QCursor::pos());
+  if (id != -1)
+    XKillClient(qt_xdisplay(), (XID) id);
+  delete p;
+}
+
+// [KDE1 Revival 2026] SNI 客户数量变化 → 与 XEmbed 路径共用布局
+void kPanel::dockClientsChanged(){
+  layoutDockArea();
+}
+
+// QTimer::singleShot(0) 转移入口：X 事件过滤器不能直接弹 Qt 菜单
+void kPanel::dockAppContextMenuSlot(){
+  if (pendingDockContextWindow != None)
+    dockAppContextMenu(pendingDockContextWindow);
+}
+
+// ┌─ [KDE1 Revival 2026] XEmbed 系统托盘 manager ─────────────────────
+// │  What : 实现 freedesktop 系统托盘协议的 manager 角色
+// │  Why  : fcitx5/钉钉等现代程序以 _NET_SYSTEM_TRAY 协议找指示栏；
+// │         1999 kpanel 只支持自家 KWM_DOCKWINDOW 原子，现代图标无处
+// │         停靠（指示栏为空）
+// │  How  : ① dock_area 的 winId 作 selection owner 窗，acquire
+// │        _NET_SYSTEM_TRAY_S<screen>，并向 root 广播 ICCCM MANAGER
+// │        消息宣布 manager 上线；② 客户端回发 SYSTEM_TRAY_REQUEST_DOCK
+// │        （由 MyApp::x11EventFilter 转 embedTrayClient）；③ 嵌入即
+// │        reparent 到 dock_area + 发 XEMBED_EMBEDDED_NOTIFY；④ 客户端
+// │        退出经 DestroyNotify 由 dockWindowRemove 回收。
+void kPanel::setupSystemTray(){
+  char selname[64];
+  snprintf(selname, sizeof(selname), "_NET_SYSTEM_TRAY_S%d",
+           qt_xscreen());
+  Atom sel = XInternAtom(qt_xdisplay(), selname, False);
+  tray_opcode_atom = XInternAtom(qt_xdisplay(), "_NET_SYSTEM_TRAY_OPCODE", False);
+  xembed_atom      = XInternAtom(qt_xdisplay(), "_XEMBED", False);
+  manager_atom     = XInternAtom(qt_xdisplay(), "MANAGER", False);
+
+  tray_manager_window = dock_area->winId();
+  XSetSelectionOwner(qt_xdisplay(), sel, tray_manager_window, CurrentTime);
+  if (XGetSelectionOwner(qt_xdisplay(), sel) != tray_manager_window){
+      tqWarning("kpanel: acquire system tray selection failed");
+      return;
+  }
+
+  /* 广播 MANAGER（ICCCM 2.8）：告知全 X 客户端 manager 就绪 */
+  XEvent ev;
+  memset(&ev, 0, sizeof(ev));
+  ev.xclient.type = ClientMessage;
+  ev.xclient.window = qt_xrootwin();
+  ev.xclient.message_type = manager_atom;
+  ev.xclient.format = 32;
+  ev.xclient.data.l[0] = CurrentTime;
+  ev.xclient.data.l[1] = sel;
+  ev.xclient.data.l[2] = tray_manager_window;
+  XSendEvent(qt_xdisplay(), qt_xrootwin(), False,
+             StructureNotifyMask | SubstructureRedirectMask, &ev);
+  XSelectInput(qt_xdisplay(), dock_area->winId(),
+               SubstructureNotifyMask); /* 客户端退出回收 */
+
+  /* 监听 opcode 原子的 ClientMessage：KWMModuleApplication 的
+     x11EventFilter 只分发 KWM 原子，这里由 MyApp 前置转发 */
+
+  tqWarning("kpanel: system tray manager online (%s)", selname);
+}
+
+// 客户端停靠申请落地：reparent 到 dock_area + XEMBED_EMBEDDED_NOTIFY
+void kPanel::embedTrayClient(Window client){
+  /* [KDE1 Revival 2026] 幂等守卫：重复的停靠申请只处理一次（实测同一
+     窗口的申请会反复到达，重复 embed 会与 kwm 的管理形成循环） */
+  for (Window *pw = dock_windows.first(); pw; pw = dock_windows.next())
+    if (*pw == client) { layoutDockArea(); return; }
+  /* 同时登记进 kwmmapp 的老协议清单：layoutDockArea 数的是那份 */
+  Window *dw0 = new Window;
+  *dw0 = client;
+  kwmmapp->dock_windows.append(dw0);
+  /* [KDE1 Revival 2026] 幂等守卫
+  /* 嵌入记录进 dock 清单（右键退出/布局共用） */
+  Window *dw = new Window;
+  *dw = client;
+  dock_windows.append(dw);
+  XSelectInput(qt_xdisplay(), client, ButtonPressMask | ButtonReleaseMask |
+                               StructureNotifyMask | PropertyChangeMask);
+
+  /* [KDE1 Revival 2026] 关键时序：客户端多在 root 上自行 map，kwm 会先
+     按普通窗口加框管理；再 reparent 进面板后 kwm 的重配置又把它抢回
+     框架（实测窗口落在 BORDER=4/TITLEBAR=24 的 kwm 框架内）。设
+     KWM_DOCKWINDOW 属性后 kwm 的 mapRequest 对此窗口直接放行不管理；
+     已被管理的先 unmap 触发 kwm 放弃，再进面板。 */
+  /* [KDE1 Revival 2026] 走 kwm 的标准吞窗流程：先声明 dock 属性（kwm 从此
+     不再管理此窗的 mapRequest），再 XWithdrawWindow 触发 kwm 的干净移除
+     （与 kcontrol/KSwallowWidget 同款，KWM::prepareForSwallowing 内部等待
+     WithdrawnState）。不可用 XUnmapWindow——synthetic Unmap 会喂进 kwm 的
+     withdraw→hide→再管理循环（实测 Reparent/Map/Unmap 无限交替）。 */
+  KWM::setDockWindow(client);
+  KWM::prepareForSwallowing(client);
+  XReparentWindow(qt_xdisplay(), client, dock_area->winId(), 0, 0);
+  XResizeWindow(qt_xdisplay(), client, 24, 24);
+  XMapRaised(qt_xdisplay(), client);
+
+  /* XEmbed 规范：宿主 map 客户端时须置位其 _XEMBED_INFO 属性的
+     XEMBED_MAPPED 标志（位 0），客户端据此确认已被宿主接管 */
+  {
+      Atom xembed_info = XInternAtom(qt_xdisplay(), "_XEMBED_INFO", False);
+      Atom rtype;
+      int rfmt;
+      unsigned long n, extra;
+      unsigned char *prop = 0;
+      if (XGetWindowProperty(qt_xdisplay(), client, xembed_info, 0, 2, False,
+                             XA_CARDINAL, &rtype, &rfmt, &n, &extra, &prop) == Success
+          && prop && n >= 2){
+          unsigned long info[2];
+          info[0] = ((unsigned long *) prop)[0]; /* version */
+          info[1] = ((unsigned long *) prop)[1] | 1; /* flags |= XEMBED_MAPPED */
+          XChangeProperty(qt_xdisplay(), client, xembed_info, XA_CARDINAL, 32,
+                          PropModeReplace, (unsigned char *) info, 2);
+          XFree(prop);
+      } else if (prop)
+          XFree(prop);
+  }
+
+  /* XEmbed 协议握手：告知客户端新宿主 */
+  XEvent ev;
+  memset(&ev, 0, sizeof(ev));
+  ev.xclient.type = ClientMessage;
+  ev.xclient.window = client;
+  ev.xclient.message_type = xembed_atom;
+  ev.xclient.format = 32;
+  ev.xclient.data.l[0] = CurrentTime;
+  ev.xclient.data.l[1] = 0; /* XEMBED_EMBEDDED_NOTIFY */
+  ev.xclient.data.l[2] = dock_area->winId();
+  ev.xclient.data.l[3] = 0; /* protocol version */
+  XSendEvent(qt_xdisplay(), client, False, NoEventMask, &ev);
+
+  layoutDockArea();
+  tqWarning("kpanel: tray client 0x%lx embedded", (unsigned long) client);
 }
 
 // void kPanel::playSound(QString e){

@@ -20,6 +20,7 @@
  */
 
 #include <kapp.h>
+#include <qtimer.h>
 #include <qwidget.h>
 #include "kmoon.moc"
 #include <kwm.h>
@@ -67,7 +68,10 @@ void MoonWidget::reactOn(int index)
     if (index == 0)
 	showAbout();
     if (index == 2)
-	kapp->quit();
+	/* [KDE1 Revival 2026] TQt3 下 popup->exec() 的模态循环内直接
+	   kapp->quit() 只退出菜单循环、主循环照跑（应用不退）。延迟到
+	   模态循环结束后再退出。 */
+	QTimer::singleShot( 0, kapp, SLOT( quit() ) );
 }
 
 void MoonWidget::calcStatus( time_t time )
