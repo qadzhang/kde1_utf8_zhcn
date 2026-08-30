@@ -2,6 +2,11 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-31（第二批：git 仓库卫生整理——tqt3-build 误入库清除 + 忽略规则误伤修复）
+
+- **tqt3-build/ 移出版本库**：该目录是 tqt3 快照的构建副本（build.sh 生成、clean.sh 清理），因 tqt3 上游 .gitignore 只挡了 Makefile/bin 等，6696 个源码副本文件曾被误跟踪；git rm --cached 清出索引并在根 .gitignore 显式声明 tqt3-build/——随之 git archive 导出的源码包不再携带冗余副本。
+- **误伤的上游源码文件强制入库（23 个）**：根 .gitignore 撤销 *.deb/*.tar.gz 等全局规则（打包产物只在 dist/，目录级忽略已覆盖；全局规则误伤 kdebase/pics/locolor-icons.tar.gz 上游资源）；kdebase/kdelibs 上游 .gitignore 的 Makefile 规则误伤的 4 个 1999 年原生 Makefile（bsd-port、konsole/tests、mediatool/Documentation）、tqt3/.gitignore 误伤的 18 个快照原生文件（Makefile、bin/tqtrename140、tutorial/t1–t15 的 .pro）均 git add -f 入库——保证 clone 后源码树完整可构建。
+
 ## 2026-08-31（版本口径 1.2.0 RC1 + README「缘起」）
 
 - **版本进入 RC：口径统一为 1.2.0 RC1**：kapp.h 的 KDE_VERSION_STRING 改 `1.2.0rc1`（无空格写法——kfm 的 User-Agent 以该宏拼接，UA 串中空格非法）；package.sh 包版本改 Debian 规范写法 `1.2.0~rc1-1`（`~` 保证 dpkg 排序早于将来的正式版 `1.2.0-1`，升级路径正确）；package.sh / debian/control 各包描述、kde1.desktop 会话名（lightdm 菜单显示 KDE 1.2.0 RC1 Revival）、README 版本说明五处同步；kdelibs 起七模块增量重编并全量刷新 staging 与 dist/deb、dist/src 产物（旧 1.2.0-1 产物清除）。

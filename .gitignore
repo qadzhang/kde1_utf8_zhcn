@@ -1,11 +1,17 @@
-# 构建产物与暂存区（clean.sh 可整体清理）
+# ┌─ What : 声明不纳入版本库的生成物（构建目录、暂存区、打包产物）
+# │  Why  : 这些均可由 build.sh / package.sh 重新生成，入库只会污染源码包；
+# │         打包产物只出现在 dist/ 下，故只对 dist/* 整体忽略，
+# │         不用 *.deb / *.tar.gz 等全局规则——那会误伤源码树自带的资源
+# │         （如 kdebase/pics/locolor-icons.tar.gz 是 1999 年上游原带文件）
+# │  Who  : git add/status 依据；clean.sh 的清理范围与本文件保持同口径
+# │  When : 任何 git 操作时生效
+# │  Where: 仓库根；子目录另有上游历史 .gitignore（kdebase/kdelibs/tqt3），
+# │         它们误伤的源码原生文件已 git add -f 强制入库（已跟踪即不再受忽略影响）
+# │  How  : 目录级忽略——staging/（DESTDIR 暂存）、*/build/（模块构建树）、
+# │         tqt3-build/（tqt3 快照的构建副本，含打入的补丁）、dist/*（打包产物，
+# │         白名单放行 dist/staging-integration/ 的会话集成模板）
 staging/
 dist/*
 !dist/staging-integration/
 */build/
-# 打包临时物
-*.deb
-*.dsc
-*.tar.xz
-*.tar.gz
-*.changes
+tqt3-build/
