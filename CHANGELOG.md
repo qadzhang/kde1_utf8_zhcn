@@ -2,6 +2,13 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-30（第三批：包版本口径统一 1.2.0 + 按模块拆包六件套）
+
+- **包版本口径统一为复活版 1.2.0**：kapp.h 的 KDE_VERSION_STRING 上一批已提升为 1.2.0（kcontrol 首页显示随之变化），package.sh/debian/control 的包版本与描述同步（Version 1.2.0-1），Qt 1.44 残留表述清除。
+- **拆包方案落地为按模块六件套**：kde1-core（tqt3+kdelibs+kdebase 必需）/ kde1-games / kde1-utils / kde1-network / kde1-toys 四个独立可选包（各 Depends core 版本锁定）/ kde1 元包（Depends core，Recommends 四个可选包与输入法/音效/打印推荐——可选包可单独不装）；kde1-apps 撤销。package.sh、debian/control、.dsc Binary 清单、AGENTS.md §1 目标 5 四处同步。逐包验证内容归属正确无串包（games 无 kcalc 等）。
+- **staging 全量刷新 + krn 编译修复**：kdenetwork/krn 补 mimelib 头搜索路径（与 kmail 同款）后编译归零，kdenetwork 随整体刷新入包；staging 120 个二进制与 deb 逐文件 md5 核对一致。
+- **实机升级口径确认**：同包名升级 dpkg 按旧清单自动清理旧文件（含 qt1 底座旧版），dpkg -i 三/六包直接覆盖安装。
+
 ## 2026-08-30（第二批：控制中心模块拉起 + 背景布局/壁纸三问题闭环）
 
 - **kcontrol 树选模块拉不起（控制中心里点任何设置项无反应）根治**：configlist.cpp 的 execute() 用 KProcess 裸名 execvp 沿 PATH 搜索 kcmdisplay 等模块二进制——非 startkde 包装环境 PATH 不含 /usr/kde1/bin，execve 全部 ENOENT（strace 实证逐路径失败）。修复：KDEDIR 存在且裸名可在 $KDEDIR/bin 命中时直接拼绝对路径，PATH 正常环境行为不变。终验：树选「背景」→ 模块进程拉起 → KWM 吞窗 → 完整背景设置页嵌入控制中心。附带确认 KTreeList 键盘语义（+/− 展开折叠、Return 选中执行，1999 年原生无 Right/Left 分支）。

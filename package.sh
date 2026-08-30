@@ -44,8 +44,16 @@ for i in kdelibs kdebase kdegames kdeutils kdenetwork kdetoys; do
 done
 
 # ── 2. 组装内容树（增量 install，秒级完成）
+# 包拆分（AGENTS.md §1 目标 5"按模块合理拆分核心包与可选应用包"）：
+#   kde1-core        —— tqt3 + kdelibs + kdebase（桌面必需）
+#   kde1-games       —— kdegames（可选）
+#   kde1-utils       —— kdeutils（可选）
+#   kde1-network     —— kdenetwork（可选）
+#   kde1-toys        —— kdetoys（可选）
+#   kde1             —— 元包（会话集成；依赖 core，Recommends 四个可选包）
 rm -rf "$PKGTMP"
-mkdir -p "$PKGTMP/core" "$PKGTMP/apps" "$OUTDEB" "$OUTSRC"
+mkdir -p "$PKGTMP/core" "$PKGTMP/games" "$PKGTMP/utils" "$PKGTMP/network" "$PKGTMP/toys" \
+         "$OUTDEB" "$OUTSRC"
 # 链接期需经 LD_LIBRARY_PATH 找到 staging 里的间接依赖库（与 build.sh 同因：
 # kjots1 等程序链接时，libkfile.so 的间接依赖 libkfm.so.2 由此解析）
 LD_LIBRARY_PATH="$STAGING/usr/kde1/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
@@ -66,12 +74,13 @@ cp -r tqt3-build/mkspecs/* "$PKGTMP/core/usr/kde1/tqt3/mkspecs/" 2>/dev/null || 
 for i in kdelibs kdebase; do
     ( cd "$i/build" && LD_LIBRARY_PATH="$STAGING/usr/kde1/lib:$STAGING/usr/kde1/tqt3/lib" make install DESTDIR="$PKGTMP/core" > /dev/null 2>&1 )
 done
-echo "=== 组装 apps 树（四个应用模块）"
-for i in kdegames kdeutils kdenetwork kdetoys; do
-    ( cd "$i/build" && make install DESTDIR="$PKGTMP/apps" > /dev/null 2>&1 )
-done
+echo "=== 组装四个可选应用包树（games/utils/network/toys 各归各包）"
+( cd kdegames/build  && make install DESTDIR="$PKGTMP/games"   > /dev/null 2>&1 )
+( cd kdeutils/build  && make install DESTDIR="$PKGTMP/utils"   > /dev/null 2>&1 )
+( cd kdenetwork/build && make install DESTDIR="$PKGTMP/network" > /dev/null 2>&1 )
+( cd kdetoys/build   && make install DESTDIR="$PKGTMP/toys"    > /dev/null 2>&1 )
 # 1999 年个别脚本被 install 成 005（属主无读权，如 kfmsu2），统一修复属主读写位
-chmod -R u+rwX "$PKGTMP/core" "$PKGTMP/apps"
+chmod -R u+rwX "$PKGTMP/core" "$PKGTMP/games" "$PKGTMP/utils" "$PKGTMP/network" "$PKGTMP/toys"
 
 # ── 控制文件公共生成函数：$1=内容树目录名 $2=包名 $3=依赖 $4=推荐 $5=描述
 mkctrl() {
@@ -102,13 +111,31 @@ mkctrl core kde1-core \
     "KDE 1.2.0 core desktop (TQt3, kdelibs, kdebase) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/core" "$OUTDEB/kde1-core_${VERSION}-${REL}_amd64.deb"
 
-# ── 4. kde1-apps
-echo "=== 打包 kde1-apps"
-mkctrl apps kde1-apps \
+# ── 4. 四个可选应用包（按模块各归各包；依赖 core，版本锁定保证同批二进制）
+echo "=== 打包 kde1-games / kde1-utils / kde1-network / kde1-toys"
+mkctrl games kde1-games \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
-    "KDE 1.2.0 applications (games, utils, network, toys) - restored"
-dpkg-deb --root-owner-group -b "$PKGTMP/apps" "$OUTDEB/kde1-apps_${VERSION}-${REL}_amd64.deb"
+    "KDE 1.2.0 games (kdegames) - restored"
+dpkg-deb --root-owner-group -b "$PKGTMP/games" "$OUTDEB/kde1-games_${VERSION}-${REL}_amd64.deb"
+
+mkctrl utils kde1-utils \
+    "kde1-core (= ${VERSION}-${REL})" \
+    "" \
+    "KDE 1.2.0 utilities (kdeutils) - restored"
+dpkg-deb --root-owner-group -b "$PKGTMP/utils" "$OUTDEB/kde1-utils_${VERSION}-${REL}_amd64.deb"
+
+mkctrl network kde1-network \
+    "kde1-core (= ${VERSION}-${REL})" \
+    "" \
+    "KDE 1.2.0 network applications (kdenetwork) - restored"
+dpkg-deb --root-owner-group -b "$PKGTMP/network" "$OUTDEB/kde1-network_${VERSION}-${REL}_amd64.deb"
+
+mkctrl toys kde1-toys \
+    "kde1-core (= ${VERSION}-${REL})" \
+    "" \
+    "KDE 1.2.0 toys (kdetoys) - restored"
+dpkg-deb --root-owner-group -b "$PKGTMP/toys" "$OUTDEB/kde1-toys_${VERSION}-${REL}_amd64.deb"
 
 # ── 5. kde1 元包：会话集成（零手工配置，见 AGENTS.md §1 目标 5/6）
 echo "=== 打包 kde1 元包（会话集成）"
@@ -127,8 +154,8 @@ Architecture: amd64
 Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
 Section: x11
 Priority: optional
-Depends: kde1-core (= ${VERSION}-${REL}), kde1-apps (= ${VERSION}-${REL})
-Recommends: fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
+Depends: kde1-core (= ${VERSION}-${REL})
+Recommends: kde1-games (= ${VERSION}-${REL}), kde1-utils (= ${VERSION}-${REL}), kde1-network (= ${VERSION}-${REL}), kde1-toys (= ${VERSION}-${REL}), fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
 Description: KDE 1.2.0 Revival - session integration metapackage
  Installs the lightdm session entry (KDE 1.2.0 Revival) and the
  startkde-kde1 wrapper which sets KDEDIR/PATH/LD_LIBRARY_PATH, starts
@@ -152,7 +179,7 @@ tar -cJf "$OUTSRC/kde1_${VERSION}-${REL}.debian.tar.xz" -C "$DEBSRC" "kde1_${VER
 cat > "$OUTSRC/kde1_${VERSION}-${REL}.dsc" << EOF
 Format: 3.0 (native)
 Source: kde1
-Binary: kde1, kde1-core, kde1-apps
+Binary: kde1, kde1-core, kde1-games, kde1-utils, kde1-network, kde1-toys
 Version: ${VERSION}-${REL}
 Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
 Architecture: amd64

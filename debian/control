@@ -18,14 +18,33 @@ Description: KDE 1.2.0 core desktop (TQt3, kdelibs, kdebase) - restored
  The classic KDE 1.1.2 desktop (1999), restored to run natively on Debian 12
  with full Simplified Chinese (UTF-8) support.
 
-Package: kde1-apps
+Package: kde1-games
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
-Description: KDE 1.2.0 applications (games, utils, network, toys) - restored
+Description: KDE 1.2.0 games (kdegames) - restored
+
+Package: kde1-utils
+Architecture: amd64
+Depends: kde1-core (= ${binary:Version})
+Description: KDE 1.2.0 utilities (kdeutils) - restored
+
+Package: kde1-network
+Architecture: amd64
+Depends: kde1-core (= ${binary:Version})
+Description: KDE 1.2.0 network applications (kdenetwork) - restored
+
+Package: kde1-toys
+Architecture: amd64
+Depends: kde1-core (= ${binary:Version})
+Description: KDE 1.2.0 toys (kdetoys) - restored
 
 Package: kde1
 Architecture: amd64
-Depends: kde1-core (= ${binary:Version}), kde1-apps (= ${binary:Version})
-Recommends: fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
+Depends: kde1-core (= ${binary:Version})
+Recommends: kde1-games (= ${binary:Version}), kde1-utils (= ${binary:Version}),
+ kde1-network (= ${binary:Version}), kde1-toys (= ${binary:Version}),
+ fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
 Description: KDE 1.2.0 Revival - session integration metapackage
- lightdm session entry and startkde-kde1 wrapper; zero manual configuration.
+ Installs the lightdm session entry and startkde-kde1 wrapper; zero manual
+ configuration. Application module packages (games/utils/network/toys) are
+ recommended but individually optional.
