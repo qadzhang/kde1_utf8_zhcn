@@ -26,7 +26,9 @@
 //   Modified for the KDE1 Revival Project, 2026
 //   [2026-08-30] 版本提升 1.1.2 → 1.2.0（本项目复活版版本号；
 //   原上游宏 RELEASE=5 与字符串 "1.1.2" 本就不一致，一并统一）
-#define KDE_VERSION_STRING "1.2.0"
+//   [2026-08-31] 进入 RC 阶段：1.2.0 → 1.2.0rc1（人读文本写法 "1.2.0 RC1"；
+//   本宏刻意不带空格——kfm 的 User-Agent 以本宏拼接，UA 串中空格非法）
+#define KDE_VERSION_STRING "1.2.0rc1"
 #define KDE_VERSION_MAJOR 1
 #define KDE_VERSION_MINOR 2
 #define KDE_VERSION_RELEASE 0

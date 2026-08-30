@@ -27,7 +27,7 @@
 set -e
 
 ROOT="$PWD"
-VERSION="1.2.0"
+VERSION="1.2.0~rc1"
 REL="1"
 STAGING="$ROOT/staging"
 DIST="$ROOT/dist"
@@ -109,7 +109,7 @@ echo "=== 打包 kde1-core"
 mkctrl core kde1-core \
     "libx11-6, libxext6, libxmu6, libxpm4, libjpeg62-turbo, libpng16-16, zlib1g, libtiff6, libxft2, libfontconfig1, libfreetype6, libwebkit2gtk-4.1-0" \
     "fonts-noto-cjk" \
-    "KDE 1.2.0 core desktop (TQt3, kdelibs, kdebase) - restored"
+    "KDE 1.2.0 RC1 core desktop (TQt3, kdelibs, kdebase) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/core" "$OUTDEB/kde1-core_${VERSION}-${REL}_amd64.deb"
 
 # ── 4. 四个可选应用包（按模块各归各包；依赖 core，版本锁定保证同批二进制）
@@ -117,31 +117,31 @@ echo "=== 打包 kde1-games / kde1-utils / kde1-network / kde1-toys"
 mkctrl games kde1-games \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
-    "KDE 1.2.0 games (kdegames) - restored"
+    "KDE 1.2.0 RC1 games (kdegames) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/games" "$OUTDEB/kde1-games_${VERSION}-${REL}_amd64.deb"
 
 mkctrl graphics kde1-graphics \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
-    "KDE 1.2.0 graphics applications (kdegraphics) - restored"
+    "KDE 1.2.0 RC1 graphics applications (kdegraphics) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/graphics" "$OUTDEB/kde1-graphics_${VERSION}-${REL}_amd64.deb"
 
 mkctrl utils kde1-utils \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
-    "KDE 1.2.0 utilities (kdeutils) - restored"
+    "KDE 1.2.0 RC1 utilities (kdeutils) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/utils" "$OUTDEB/kde1-utils_${VERSION}-${REL}_amd64.deb"
 
 mkctrl network kde1-network \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
-    "KDE 1.2.0 network applications (kdenetwork) - restored"
+    "KDE 1.2.0 RC1 network applications (kdenetwork) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/network" "$OUTDEB/kde1-network_${VERSION}-${REL}_amd64.deb"
 
 mkctrl toys kde1-toys \
     "kde1-core (= ${VERSION}-${REL})" \
     "" \
-    "KDE 1.2.0 toys (kdetoys) - restored"
+    "KDE 1.2.0 RC1 toys (kdetoys) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/toys" "$OUTDEB/kde1-toys_${VERSION}-${REL}_amd64.deb"
 
 # ── 5. kde1 元包：会话集成（零手工配置，见 AGENTS.md §1 目标 5/6）
@@ -163,8 +163,8 @@ Section: x11
 Priority: optional
 Depends: kde1-core (= ${VERSION}-${REL})
 Recommends: kde1-games (= ${VERSION}-${REL}), kde1-graphics (= ${VERSION}-${REL}), kde1-utils (= ${VERSION}-${REL}), kde1-network (= ${VERSION}-${REL}), kde1-toys (= ${VERSION}-${REL}), fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
-Description: KDE 1.2.0 Revival - session integration metapackage
- Installs the lightdm session entry (KDE 1.2.0 Revival) and the
+Description: KDE 1.2.0 RC1 Revival - session integration metapackage
+ Installs the lightdm session entry (KDE 1.2.0 RC1 Revival) and the
  startkde-kde1 wrapper which sets KDEDIR/PATH/LD_LIBRARY_PATH, starts
  fcitx5/fcitx for XIM input, and preloads padsp so 1999-era OSS sounds
  route to PipeWire/PulseAudio. Zero manual configuration.

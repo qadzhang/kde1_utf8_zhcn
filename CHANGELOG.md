@@ -2,6 +2,11 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-31（版本口径 1.2.0 RC1 + README「缘起」）
+
+- **版本进入 RC：口径统一为 1.2.0 RC1**：kapp.h 的 KDE_VERSION_STRING 改 `1.2.0rc1`（无空格写法——kfm 的 User-Agent 以该宏拼接，UA 串中空格非法）；package.sh 包版本改 Debian 规范写法 `1.2.0~rc1-1`（`~` 保证 dpkg 排序早于将来的正式版 `1.2.0-1`，升级路径正确）；package.sh / debian/control 各包描述、kde1.desktop 会话名（lightdm 菜单显示 KDE 1.2.0 RC1 Revival）、README 版本说明五处同步；kdelibs 起七模块增量重编并全量刷新 staging 与 dist/deb、dist/src 产物（旧 1.2.0-1 产物清除）。
+- **README 新增「缘起」一节**：记录项目动机——1999 年初遇 KDE 1 的"白月光"，到 AI 时代（GLM-4.7 用至今）复活白月光；点明"复活不是回到过去，而是把它带到现代"的路线基调。
+
 ## 2026-08-30（第三批：包版本口径统一 1.2.0 + 按模块拆包六件套）
 
 - **包版本口径统一为复活版 1.2.0**：kapp.h 的 KDE_VERSION_STRING 上一批已提升为 1.2.0（kcontrol 首页显示随之变化），package.sh/debian/control 的包版本与描述同步（Version 1.2.0-1），Qt 1.44 残留表述清除。

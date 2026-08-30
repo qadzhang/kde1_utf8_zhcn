@@ -14,34 +14,34 @@ Depends: libx11-6, libxext6, libxmu6, libxpm4, libjpeg62-turbo, libpng16-16,
  zlib1g, libtiff6, libxft2, libfontconfig1, libfreetype6,
  libwebkit2gtk-4.1-0
 Recommends: fonts-noto-cjk
-Description: KDE 1.2.0 core desktop (TQt3, kdelibs, kdebase) - restored
+Description: KDE 1.2.0 RC1 core desktop (TQt3, kdelibs, kdebase) - restored
  The classic KDE 1.1.2 desktop (1999), restored to run natively on Debian 12
  with full Simplified Chinese (UTF-8) support.
 
 Package: kde1-games
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
-Description: KDE 1.2.0 games (kdegames) - restored
+Description: KDE 1.2.0 RC1 games (kdegames) - restored
 
 Package: kde1-graphics
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
-Description: KDE 1.2.0 graphics applications (kdegraphics) - restored
+Description: KDE 1.2.0 RC1 graphics applications (kdegraphics) - restored
 
 Package: kde1-utils
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
-Description: KDE 1.2.0 utilities (kdeutils) - restored
+Description: KDE 1.2.0 RC1 utilities (kdeutils) - restored
 
 Package: kde1-network
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
-Description: KDE 1.2.0 network applications (kdenetwork) - restored
+Description: KDE 1.2.0 RC1 network applications (kdenetwork) - restored
 
 Package: kde1-toys
 Architecture: amd64
 Depends: kde1-core (= ${binary:Version})
-Description: KDE 1.2.0 toys (kdetoys) - restored
+Description: KDE 1.2.0 RC1 toys (kdetoys) - restored
 
 Package: kde1
 Architecture: amd64
@@ -50,7 +50,7 @@ Recommends: kde1-games (= ${binary:Version}), kde1-graphics (= ${binary:Version}
  kde1-utils (= ${binary:Version}),
  kde1-network (= ${binary:Version}), kde1-toys (= ${binary:Version}),
  fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
-Description: KDE 1.2.0 Revival - session integration metapackage
+Description: KDE 1.2.0 RC1 Revival - session integration metapackage
  Installs the lightdm session entry and startkde-kde1 wrapper; zero manual
  configuration. Application module packages (games/utils/network/toys) are
  recommended but individually optional.
