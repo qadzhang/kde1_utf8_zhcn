@@ -660,8 +660,9 @@ HTMLTextInput::HTMLTextInput( QWidget *parent, const char *n, const char *v,
 	ascent = size.height() - descent;
 	width = size.width();
 
-	connect( widget, SIGNAL( textChanged( const char * ) ),
-			SLOT( slotTextChanged( const char * ) ) );
+	// [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)——const char* 版连接静默失败
+	connect( widget, SIGNAL( textChanged( const TQString & ) ),
+			SLOT( slotTextChanged( const TQString & ) ) );
 	connect( widget, SIGNAL( returnPressed() ),
 			SLOT( slotReturnPressed() ) );
 }
@@ -685,7 +686,7 @@ void HTMLTextInput::resetElement()
 	((QLineEdit *)widget)->setText( _defText );
 }
 
-void HTMLTextInput::slotTextChanged( const char *t )
+void HTMLTextInput::slotTextChanged( const TQString &t )
 {
 	setValue( t );
 }

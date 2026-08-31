@@ -229,10 +229,12 @@ void EditButton::mouseReleaseEvent( QMouseEvent * _mouse )
       data = (QString) "file://" + data;
       if( dndData != 0 )
 	delete dndData;
-      dndData = new char[ data.length() + 1 ];
-      memcpy( dndData, (const char *) data, data.length() );
-      dndData[ data.length() ] = 0;
-      dndSize = data.length() + 1;
+      // [KDE1 Revival 2026] length() 是 UTF-16 码元数——中文路径按字节深拷贝
+      int dndBytes = strlen( (const char *) data );
+      dndData = new char[ dndBytes + 1 ];
+      memcpy( dndData, (const char *) data, dndBytes );
+      dndData[ dndBytes ] = 0;
+      dndSize = dndBytes + 1;
       dndType = DndURL;
       XChangeProperty( kapp->getDisplay(), root, kapp->getDndSelectionAtom(), 
 		       XA_STRING, 8,

@@ -128,10 +128,11 @@ signals:
 
 private slots:
 
-      void 	family_chosen_slot(const char* );
-      void      size_chosen_slot(const char* );
-      void      weight_chosen_slot(const char*);
-      void      style_chosen_slot(const char*);
+      // [KDE1 Revival 2026] 四槽签名改 int：与 activated(int) 连接匹配（charset_chosen_slot(int) 同形态）
+      void 	family_chosen_slot(int );
+      void      size_chosen_slot(int );
+      void      weight_chosen_slot(int);
+      void      style_chosen_slot(int);
       void      display_example(const QFont &font);
       void      charset_chosen_slot(int index);
       void 	setColors();

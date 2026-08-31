@@ -100,8 +100,10 @@ void testDir( const char *_name, bool showMsg = FALSE )
 void copyDirectoryFile(const char *filename, const QString& dir)
 {
     if (!QFile::exists(dir + "/.directory")) {
+	// [KDE1 Revival 2026] 路径加单引号防空格/中文目录断词（对齐 kfmpaths
+	// 同款修复；sprintf 的 %s 参数走 fromUtf8，中文路径本身不乱码）
 	QString cmd;
-	cmd.sprintf( "cp %s/kfm/%s %s/.directory", kapp->kde_datadir().data(), 
+	cmd.sprintf( "cp '%s/kfm/%s' '%s/.directory'", kapp->kde_datadir().data(), 
 		     filename, dir.data() );
 	system( cmd.data() );
     }

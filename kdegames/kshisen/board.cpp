@@ -404,13 +404,24 @@ QPixmap *Board::lighten(QPixmap *src) {
   const float FACTOR = 1.3;
 
   QImage img = src->convertToImage();
+  /* [KDE1 Revival 2026] What: 高彩图统一升到 32bpp 后按 QRgb 值级提亮
+   * Why : 原循环以 src->width()*4 裸字节遍历，仅对 32bpp 成立——15/16/24bpp
+   *       图会越界读出扫描行缓冲，且逐字节提亮在字节序上还会弄混 R/B 分量；
+   *       值级 qRed/qGreen/qBlue 只动 RGB 三分量，alpha 保持不动
+   * Who : Board::lighten——瓦片高亮路径（下落标记时逐格调用）
+   * When: 每次提亮调用执行；8bpp 调色板图仍走下方原分支（pixelIndex
+   *       依赖调色板，不能转 32bpp）
+   * How : convertDepth(32) 返回新图，必须赋回 img 变量再用；随后逐行
+   *       scanLine 转 QRgb*，逐像素以 qRgb(MIN(...),MIN(...),MIN(...)) 写回 */
   if(img.depth() > 8) { // at least high-color
-    for(int y = 0; y < src->height(); y++) {
-      uchar *p = (uchar *)img.scanLine(y);
-      for(int x = 0; x < src->width() * 4; x++) {
-	*p = (unsigned char)MIN(255, (int)(FACTOR * (*p)));
-	p++;
-      }
+    if(img.depth() != 32)
+      img = img.convertDepth(32);
+    for(int y = 0; y < img.height(); y++) {
+      QRgb *p = (QRgb *)img.scanLine(y);
+      for(int x = 0; x < img.width(); x++, p++)
+	*p = qRgb(MIN(255, (int)(FACTOR * qRed(*p))),
+	          MIN(255, (int)(FACTOR * qGreen(*p))),
+	          MIN(255, (int)(FACTOR * qBlue(*p))));
     }
   } else { // image has a palette
     // get background color index

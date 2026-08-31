@@ -45,7 +45,9 @@ CardBox::CardBox( const QPixmap &pix, QWidget *parent )
 
   QPushButton *button = new QPushButton( i18n("OK"), this, "button" );
   connect( button, SIGNAL(clicked()), SLOT(accept()) );
-  QFont font( "Helvetica", 12 );
+  // [KDE1 Revival 2026] 弃用硬编码字族（fontconfig 默认族），保留字号与下行的 Bold 字重
+  QFont font;
+  font.setPointSize(12);
   font.setWeight( QFont::Bold );
   button->setFont( font );
   w = QMAX( w, button->width() );

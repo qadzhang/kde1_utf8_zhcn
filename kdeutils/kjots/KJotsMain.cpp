@@ -259,8 +259,9 @@ KJotsMain::KJotsMain(const char* name)
 	   SLOT(rebuildList( QList<TextEntry> *)) );
   connect( this, SIGNAL(entryMoved(int)), subj_list, SLOT( select(int)) );
   connect( subj_list, SIGNAL(entryMoved(int)), this, SLOT( barMoved(int)) );
-  connect( le_subject, SIGNAL(textChanged(const char *)), subj_list, 
-	   SLOT(entryChanged(const char*)) );
+  // [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，改接 TQString 版（entryChanged 槽签名同步）
+  connect( le_subject, SIGNAL(textChanged(const TQString&)), subj_list, 
+	   SLOT(entryChanged(const TQString&)) );
   me_text->setEnabled(FALSE);
   le_subject->setEnabled(FALSE);
   current = 0;

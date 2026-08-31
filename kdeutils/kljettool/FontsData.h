@@ -40,11 +40,12 @@ public slots:
 
 protected slots:
 
-    virtual void SymbolSetComboSelected(const char*);
-    virtual void LanguageComboBoxSelected(const char*);
-    virtual void Fontnumberselected(const char*);
-    virtual void Pitchselected(const char*);
-    virtual void PointSizeselected(const char*);
+    // [KDE1 Revival 2026] 槽签名 TQt3 化：组合框槽收 int、行编辑槽收 TQString（匹配原生信号）
+    virtual void SymbolSetComboSelected(int);
+    virtual void LanguageComboBoxSelected(int);
+    virtual void Fontnumberselected(const TQString&);
+    virtual void Pitchselected(const TQString&);
+    virtual void PointSizeselected(const TQString&);
 
 protected:
     QComboBox* LanguageComboBox;

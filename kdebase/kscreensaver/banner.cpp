@@ -203,8 +203,9 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	fixed_height(ed);
 	tl2->addWidget(ed);
 	ed->setText( message );
-	connect( ed, SIGNAL( textChanged( const char * ) ), 
-			SLOT( slotMessage( const char * ) ) );
+	// [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)
+	connect( ed, SIGNAL( textChanged( const TQString & ) ), 
+			SLOT( slotMessage( const TQString & ) ) );
 
 	KButtonBox *bbox = new KButtonBox(this);	
 	button = bbox->addButton( glocale->translate("About"));
@@ -325,7 +326,7 @@ void KBannerSetup::slotSpeed( int num )
 		saver->setSpeed( speed );
 }
 
-void KBannerSetup::slotMessage( const char *msg )
+void KBannerSetup::slotMessage( const TQString &msg )
 {
 	message = msg;
 	if ( saver )

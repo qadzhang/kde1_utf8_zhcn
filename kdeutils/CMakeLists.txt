@@ -5,6 +5,12 @@ project (kdeutils)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 
+# [KDE1 Revival 2026] rpath：把最终安装前缀的库目录烧进 ELF（DT_RUNPATH），
+# 用户在任意桌面（如 XFCE）直接运行 /usr/kde1/bin 下程序不再报
+# "libtqt-mt.so.3: cannot open shared object file"——无需手设
+# LD_LIBRARY_PATH。开发期 staging 树不受影响（LD_LIBRARY_PATH 优先于 rpath）。
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib" "${CMAKE_INSTALL_PREFIX}/tqt3/lib")
+
 find_package(KDE1 REQUIRED)
 #find_package(uulib REQUIRED)
 

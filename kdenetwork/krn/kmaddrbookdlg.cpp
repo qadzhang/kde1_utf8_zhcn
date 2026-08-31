@@ -121,8 +121,9 @@ KMAddrBookEditDlg::KMAddrBookEditDlg(KMAddrBook* aAddrBook, const char* aCap):
   mGrid.setColStretch(3,10);
   mGrid.activate();
 
-  connect(&mListBox, SIGNAL(highlighted(const char*)), 
-	  SLOT(slotLbxHighlighted(const char*)));
+  // [KDE1 Revival 2026] TQt3 的 TQListBox 无 highlighted(const char*) 信号，改接 TQString 版（槽签名同步）
+  connect(&mListBox, SIGNAL(highlighted(const TQString&)), 
+	  SLOT(slotLbxHighlighted(const TQString&)));
   connect(&mBtnOk, SIGNAL(clicked()), SLOT(slotOk()));
   connect(&mBtnCancel, SIGNAL(clicked()), SLOT(slotCancel()));
   connect(&mBtnAdd, SIGNAL(clicked()), SLOT(slotAdd()));
@@ -142,7 +143,8 @@ KMAddrBookEditDlg::~KMAddrBookEditDlg()
 
 
 //-----------------------------------------------------------------------------
-void KMAddrBookEditDlg::slotLbxHighlighted(const char* aItem)
+// [KDE1 Revival 2026] 槽签名 TQString 化：setText 直接收 TQString
+void KMAddrBookEditDlg::slotLbxHighlighted(const TQString& aItem)
 {
   if (mIndex>=0)
     mListBox.changeItem(mEdtAddress.text(), mIndex);

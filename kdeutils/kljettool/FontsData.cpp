@@ -42,8 +42,9 @@ FontsData::FontsData
 	LanguageComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
 	LanguageComboBox->setGeometry( 130, 30, 100, 25 );
 
-	connect( LanguageComboBox, SIGNAL(activated(const char*)), 
-		 SLOT(LanguageComboBoxSelected(const char*)) );
+	// [KDE1 Revival 2026] TQt3 的 TQComboBox 无 activated(const char*) 信号，两处改接 activated(int)；行编辑改 TQString 版
+	connect( LanguageComboBox, SIGNAL(activated(int)), 
+		 SLOT(LanguageComboBoxSelected(int)) );
 
 	LanguageComboBox->setSizeLimit( 10 );
 	LanguageComboBox->setAutoResize( FALSE );
@@ -61,8 +62,8 @@ FontsData::FontsData
 	SymbolSetCombo = new QComboBox( FALSE, this, "SymbolCombo" );
 	SymbolSetCombo->setGeometry( 130, 70, 100, 25 );
 
-	connect( SymbolSetCombo, SIGNAL(activated(const char*)), 
-		 SLOT(SymbolSetComboSelected(const char*)) );
+	connect( SymbolSetCombo, SIGNAL(activated(int)), 
+		 SLOT(SymbolSetComboSelected(int)) );
 
 	SymbolSetCombo->setSizeLimit( 8 );
 	SymbolSetCombo->setAutoResize( FALSE );
@@ -111,8 +112,8 @@ FontsData::FontsData
 	Font->setMaxLength( 32767 );
 	Font->setEchoMode( QLineEdit::Normal );
 	Font->setFrame( TRUE );
-	connect(Font,SIGNAL(textChanged(const char*)),this,
-			    SLOT(Fontnumberselected(const char*)));
+	connect(Font,SIGNAL(textChanged(const TQString&)),this,
+			    SLOT(Fontnumberselected(const TQString&)));
 
 	tmpQLabel = new QLabel( this, "Label_7" );
 	tmpQLabel->setGeometry( 240, 150, 40, 30 );
@@ -132,8 +133,8 @@ FontsData::FontsData
 	Pitch->setMaxLength( 32767 );
 	Pitch->setEchoMode( QLineEdit::Normal );
 	Pitch->setFrame( TRUE );
-	connect(Pitch,SIGNAL(textChanged(const char*)),this,
-			    SLOT(Pitchselected(const char*)));
+	connect(Pitch,SIGNAL(textChanged(const TQString&)),this,
+			    SLOT(Pitchselected(const TQString&)));
 
 
 	tmpQLabel = new QLabel( this, "Label_9" );
@@ -148,8 +149,8 @@ FontsData::FontsData
 	PointSize->setMaxLength( 32767 );
 	PointSize->setEchoMode( QLineEdit::Normal );
 	PointSize->setFrame( TRUE );
-	connect(PointSize,SIGNAL(textChanged(const char*)),this,
-			    SLOT(PointSizeselected(const char*)));
+	connect(PointSize,SIGNAL(textChanged(const TQString&)),this,
+			    SLOT(PointSizeselected(const TQString&)));
 
 	tmpQLabel = new QLabel( this, "Label_10" );
 	tmpQLabel->setGeometry( 240, 185, 50, 30 );
@@ -166,29 +167,32 @@ FontsData::~FontsData()
 }
 
 
-void FontsData::LanguageComboBoxSelected(const char* language)
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void FontsData::LanguageComboBoxSelected(int index)
 {
 
   if(!data)
     return;
 
-  data->Language = language;
+  data->Language = LanguageComboBox->text(index);
 
 }
 
 
-void FontsData::SymbolSetComboSelected(const char* symset)
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void FontsData::SymbolSetComboSelected(int index)
 {
 
   if(!data)
     return;
 
-  data->Symset = symset;
+  data->Symset = SymbolSetCombo->text(index);
 
 }
 
 
-void FontsData::Fontnumberselected(const char* fn){
+// [KDE1 Revival 2026] 槽签名 TQString 化：data 成员本就是 QString，直接赋值
+void FontsData::Fontnumberselected(const TQString& fn){
 
 
   if(!data)
@@ -199,7 +203,8 @@ void FontsData::Fontnumberselected(const char* fn){
 
 }
 
-void FontsData::Pitchselected(const char* pt){
+// [KDE1 Revival 2026] 槽签名 TQString 化：data 成员本就是 QString，直接赋值
+void FontsData::Pitchselected(const TQString& pt){
 
   if(!data)
     return;
@@ -209,7 +214,8 @@ void FontsData::Pitchselected(const char* pt){
 }
 
 
-void FontsData::PointSizeselected(const char* ps){
+// [KDE1 Revival 2026] 槽签名 TQString 化：data 成员本就是 QString，直接赋值
+void FontsData::PointSizeselected(const TQString& ps){
 
 
   if(!data)

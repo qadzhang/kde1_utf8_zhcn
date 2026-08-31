@@ -87,7 +87,7 @@ KPasswordDlg::KPasswordDlg( QWidget *parent, bool s ) : QWidget( parent )
 	stars = s;
 	password = "";
 
-	QFont font( "helvetica", 18 );
+	QFont font; font.setPointSize(18); // [KDE1 Revival 2026] 弃硬编码字族
 	QFontMetrics fm(font);
 	QString query = passwordQuery(TRUE); /* Two lines of text */
 

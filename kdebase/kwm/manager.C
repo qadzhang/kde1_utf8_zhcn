@@ -3533,8 +3533,12 @@ void Manager::processSaveYourself(){
   }
 
   // release the mouse and the keyboard which we grabbed before
-  XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
-  XAllowEvents(qt_xdisplay(), ReplayKeyboard, CurrentTime);
+  // [KDE1 Revival 2026] XAllowEvents(ReplayPointer) 对 GrabModeAsync 的主动
+  // grab 并不解除 grab——root 指针 grab 悬挂会吞掉后续全部鼠标事件（注销
+  // 对话框点击失效的共犯），改为显式解除（kwm 处理被动 grab 的自身惯用法
+  // 也是 ReplayPointer 后补 XUngrabPointer，见 main.C buttonPressEventFilter）
+  XUngrabPointer(qt_xdisplay(), CurrentTime);
+  XUngrabKeyboard(qt_xdisplay(), CurrentTime);
 }
 
 // ┌─ What : 判断一条会话恢复命令是否属于 KDE1 桌面核心组件

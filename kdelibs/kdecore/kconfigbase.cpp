@@ -1011,7 +1011,9 @@ const char* KConfigBase::writeEntry( const char* pKey, const QFont& rFont,
     aCharset=kapp->getCharsets()->name(rFont);
   }
   else aCharset="default";
-  aValue.sprintf( "%s,%d,%d,%s,%d,%d", rFont.family(), rFont.pointSize(),
+  // [KDE1 Revival 2026] family() 返回 TQString 对象——varargs 直传读出垃圾，
+  // 字体配置落盘全毁；先转 utf8() 字节串
+  aValue.sprintf( "%s,%d,%d,%s,%d,%d", rFont.family().utf8().data(), rFont.pointSize(),
 				  rFont.styleHint(), (const char *)aCharset,
 				  rFont.weight(), nFontBits );
 

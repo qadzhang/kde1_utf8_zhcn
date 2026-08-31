@@ -58,7 +58,7 @@ toolBar->setToggle(5,TRUE);
    le = new QMultiLineEdit( this, "lineEdit" );
     le->setGeometry( 10, 70, 420, 160 );
     le->setReadOnly(1);
-    	QFont font( "fixed", 10 );
+    	QFont font; font.setPointSize(10); font.setStyleHint(QFont::TypeWriter); // [KDE1 Revival 2026] 弃硬编码字族
 	font.setStyleHint( (QFont::StyleHint)0 );
 	font.setCharSet( (QFont::CharSet)0 );
 	le->setFont( font );
@@ -454,7 +454,7 @@ QString sstr;
 	tmpQCheckBox = new QCheckBox( w, "CheckBox_1" );
 	tmpQCheckBox->setGeometry( 10, 30, 160, 30 );
 	
-		QFont font( "helvetica", 14, 50, 0 );
+		QFont font; font.setPointSize(14); // [KDE1 Revival 2026] 弃硬编码字族
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		tmpQCheckBox->setFont( font );

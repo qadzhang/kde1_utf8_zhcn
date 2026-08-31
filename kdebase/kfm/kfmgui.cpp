@@ -597,10 +597,12 @@ void KfmGui::initToolBar()
 	      completion, SLOT (make_completion()));
     connect ( lined, SIGNAL (rotation()),
 	      completion, SLOT (make_rotation()));
-    connect ( lined, SIGNAL (textChanged(const char *)),
-	      completion, SLOT (edited(const char *)));
-    connect ( completion, SIGNAL (setText (const char *)),
-	      lined, SLOT (setText (const char *)));
+    // [KDE1 Revival 2026] TQLineEdit 仅有 textChanged(const TQString&) 与
+    // setText(const TQString&)——const char* 版连接静默失败，地址栏补全双向全断
+    connect ( lined, SIGNAL (textChanged(const TQString &)),
+	      completion, SLOT (edited(const TQString &)));
+    connect ( completion, SIGNAL (setText (const TQString &)),
+	      lined, SLOT (setText (const TQString &)));
     addToolBar( toolbarURL );
     toolbarURL->setFullWidth( TRUE );
     toolbarURL->setItemAutoSized( TOOLBAR_URL_ID, TRUE );

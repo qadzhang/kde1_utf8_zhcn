@@ -435,8 +435,9 @@ DNSWidget::DNSWidget( QWidget *parent, bool isnewaccount, const char *name )
   dnsipaddr = new IPLineEdit(this);
   connect(dnsipaddr, SIGNAL(returnPressed()), 
 	  SLOT(adddns()));
-  connect(dnsipaddr, SIGNAL(textChanged(const char *)), 
-	  SLOT(DNS_Edit_Changed(const char *)));
+  // [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，改接 TQString 版（槽签名同步）
+  connect(dnsipaddr, SIGNAL(textChanged(const TQString&)), 
+	  SLOT(DNS_Edit_Changed(const TQString&)));
   FIXED_HEIGHT(dnsipaddr);
   l110->addWidget(dnsipaddr, 4);
   l110->addStretch(3);
@@ -524,10 +525,10 @@ DNSWidget::DNSWidget( QWidget *parent, bool isnewaccount, const char *name )
   tl->activate();
 }
 
-void DNSWidget::DNS_Edit_Changed(const char *text) {
+// [KDE1 Revival 2026] 槽签名 TQString 化：直接用参数做正则匹配（原经 QString(text) 转手）
+void DNSWidget::DNS_Edit_Changed(const TQString &text) {
   QRegExp r("[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+");
-  QString s(text);
-  add->setEnabled(s.find(r) != -1);
+  add->setEnabled(text.find(r) != -1);
 }
 
 void DNSWidget::DNS_Entry_Selected(int) {

@@ -492,7 +492,8 @@ void KPaint::initMenus()
 */
 
   QString about;
-  about.sprintf(i18n("KPaint version %s\n\n"
+  // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+  about = kde_sprintf(i18n("KPaint version %s\n\n"
 		"(c) %s\n\n"
 		"KPaint is released under the\n"
 		"GNU Public License agreement,\n"

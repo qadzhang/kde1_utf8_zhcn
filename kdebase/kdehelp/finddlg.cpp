@@ -42,8 +42,9 @@ KFindTextDialog::KFindTextDialog( QWidget *parent, const char *name )
     QLineEdit *edit = new QLineEdit( this );
     edit->setFixedHeight( edit->sizeHint().height() );
     edit->setFocus();
-    connect( edit, SIGNAL( textChanged( const char * ) ),
-		    SLOT( slotTextChanged( const char * ) ) );
+    // [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)
+    connect( edit, SIGNAL( textChanged( const TQString & ) ),
+		    SLOT( slotTextChanged( const TQString & ) ) );
 
     hl->addWidget( label );
     hl->addWidget( edit );
@@ -79,7 +80,7 @@ KFindTextDialog::KFindTextDialog( QWidget *parent, const char *name )
     rExp.setCaseSensitive( false );
 }
 
-void KFindTextDialog::slotTextChanged( const char *t )
+void KFindTextDialog::slotTextChanged( const TQString &t )
 {
     rExp = TQRegExp(t);  // TQt3 迁移
 }

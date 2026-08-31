@@ -63,13 +63,18 @@ void kimgio_tiff_read( QImageIO *io )
 
 	// set channel order to Qt order
 	// FIXME: Right now they are the same, but will it change?
-
-//	for( int ctr = (image.numBytes() / sizeof(uint32))+1; ctr ; ctr-- ) {
-//		// TODO: manage alpha with TIFFGetA
-//		*data = qRgb( TIFFGetR( *data ), 
-//			TIFFGetG( *data ), TIFFGetB( *data ) );
-//		data++;
-//	}
+	// [KDE1 Revival 2026] 启用此转换循环：TIFFReadRGBAImage 输出的 uint32 是
+	// 0xAABBGGRR（R 在低字节，TIFFGetR(x)=x&0xff），Qt1 时代恰与本机字节序
+	// 的 QImage 内存布局巧合一致，故当年注释掉；TQt3 的 QRgb 为 0xAARRGGBB
+	// 值语义，直灌必然红蓝对调——按通道取值经 qRgba 重组，字节序无关。
+	{
+	    uint32 *px = data;
+	    for( int ctr = (image.numBytes() / sizeof(uint32)); ctr ; ctr-- ) {
+		*px = qRgba( TIFFGetR( *px ),
+			TIFFGetG( *px ), TIFFGetB( *px ), TIFFGetA( *px ) );
+		px++;
+	    }
+	}
 	TIFFClose( tiff );
 
 	io->setImage( image );

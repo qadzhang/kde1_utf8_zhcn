@@ -1480,6 +1480,18 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
     register QRgb *p;
     uchar  *b;
     int	    y;
+    /* [KDE1 Revival 2026] What: 深度守卫——src 非 32bpp 时先升到 32bpp 临时图再抖动
+     * Why : 下方循环按 q[i*4+chan] 每像素 4 字节裸读，8/16bpp 图会越界读出
+     *       扫描行缓冲且分量完全错位（KIcon 调色板图即为 8bpp）
+     * Who : kdither_32_to_8 本体；唯一调用方 mapToKDEPalette()
+     * When: 每次函数调用入口执行一次
+     * How : convertDepth(32) 返回全新图像对象，须用函数级局部变量 tmp32
+     *       接住（不可对临时值直接取址），随后把指针 src 改指临时图继续 */
+    QImage tmp32;
+    if ( src->depth() != 32 ) {
+	tmp32 = src->convertDepth(32);
+	src = &tmp32;
+    }
 	
 	//printf("kconvert_32_to_8\n");
 	
@@ -1599,26 +1611,33 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
 			}
 		    }
 		}
+		// [KDE1 Revival 2026] 修正 INDEXOF 分支与字节序的对应关系：
+		// TQt3 32bpp 在 little-endian 上内存序 B,G,R,A（chan0 读到蓝、chan2 读到红），
+		// INDEXOF 的第一参数是红色分量——故 LE 分支须用 INDEXOF(pv[2],pv[1],pv[0])；
+		// big-endian 上内存序 A,R,G,B（偏移 endian 后 chan0 恰为红）——用原序。
+		// （原代码两分支正好写反，与 kdelibs/kdecore/kpixmap.cpp 2026-09 修复对齐）
 		if (endian) {
 		    for (x=0; x<sw; x++) {
-			*b++ = INDEXOF(pv[2][x],pv[1][x],pv[0][x]);
+			*b++ = INDEXOF(pv[0][x],pv[1][x],pv[2][x]);
 		    }
 		} else {
 		    for (x=0; x<sw; x++) {
-			*b++ = INDEXOF(pv[0][x],pv[1][x],pv[2][x]);
+			*b++ = INDEXOF(pv[2][x],pv[1][x],pv[0][x]);
 		    }
 		}
 	}
 
-	delete line1[0];
-	delete line2[0];
-	delete line1[1];
-	delete line2[1];
-	delete line1[2];
-	delete line2[2];
-	delete pv[0];
-	delete pv[1];
-	delete pv[2];
+	// [KDE1 Revival 2026] new[] 申请的数组须配 delete[]（原 delete 是未定义行为，
+	// 与 kpixmap.cpp 修复版对齐）
+	delete [] line1[0];
+	delete [] line2[0];
+	delete [] line1[1];
+	delete [] line2[1];
+	delete [] line1[2];
+	delete [] line2[2];
+	delete [] pv[0];
+	delete [] pv[1];
+	delete [] pv[2];
 	
 #undef MAX_R
 #undef MAX_G

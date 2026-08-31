@@ -161,4 +161,5 @@ void showTask();
 // sound event.
 void switchActivateClient(Client*, bool do_not_raise = false);
 
+
 #endif /* MAIN_H */

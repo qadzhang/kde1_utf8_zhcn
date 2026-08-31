@@ -49,7 +49,8 @@ KIntegerLine::KIntegerLine( QWidget *parent,
       break;
     }
 
-  connect( this, SIGNAL( textChanged( const char* ) ),
+  // [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)——const char* 版连接静默失败
+  connect( this, SIGNAL( textChanged( const TQString& ) ),
 		   this, SLOT( internalValueChanged() ) );
 }
 

@@ -68,7 +68,7 @@ private slots:
 	void slotBold( bool );
 	void slotItalic( bool );
 	void slotSpeed( int );
-	void slotMessage( const char * );
+	void slotMessage( const TQString & );
 	void slotOkPressed();
 	void slotAbout();
 

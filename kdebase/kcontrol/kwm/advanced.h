@@ -89,7 +89,7 @@ class myListBrowser : public QWidget {
  protected:
 
  protected slots:
-  void bEditChanged(const char *);
+  void bEditChanged(const TQString &);
   void addIt();
   void deleteIt();
   void itemSelected();

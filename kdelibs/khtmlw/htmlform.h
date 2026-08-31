@@ -298,7 +298,7 @@ public:
 	virtual void resetElement();
 
 protected slots:
-	void slotTextChanged( const char * );
+	void slotTextChanged( const TQString & );
 	void slotReturnPressed();
 
 signals:

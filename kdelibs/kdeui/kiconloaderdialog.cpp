@@ -274,11 +274,14 @@ void KIconLoaderDialog::init()
   cancel->setGeometry(325, 200, 80, 30);
   connect( ok, SIGNAL(clicked()), this, SLOT(accept()) );
   connect( cancel, SIGNAL(clicked()), this, SLOT(reject()) );
-  connect( canvas, SIGNAL(nameChanged(const char *)), l_name, SLOT(setText(const char *)) );
+  // [KDE1 Revival 2026] TQLabel 槽只有 setText(const TQString&)——const char* 槽不存在
+connect( canvas, SIGNAL(nameChanged(const char *)), l_name, SLOT(setText(const TQString&)) );
   connect( canvas, SIGNAL(doubleClicked()), this, SLOT(accept()) );
   connect( canvas, SIGNAL(interrupted()), this, SLOT(needReload()) );
   connect( i_filter, SIGNAL(returnPressed()), this, SLOT(filterChanged()) );
-  connect( cb_dirs, SIGNAL(activated(const char *)), this, SLOT(dirChanged(const char*)) );
+  // [KDE1 Revival 2026] TQComboBox 仅有 activated(int) 信号（const char* 版不存在）——
+// 原连接静默失败，目录切换从不生效
+connect( cb_dirs, SIGNAL(activated(int)), this, SLOT(dirChanged(int)) );
   setDir(icon_loader->getDirList());
   resize( 470, 350 );
   setMinimumSize( 470, 250 );
@@ -347,9 +350,10 @@ void KIconLoaderDialog::filterChanged()
   canvas->loadDir( cb_dirs->currentText(), i_filter->text() );
 }
 
-void KIconLoaderDialog::dirChanged(const char * dir)
+void KIconLoaderDialog::dirChanged(int index)
 {
-  canvas->loadDir( dir, i_filter->text() );
+  // [KDE1 Revival 2026] 槽随 activated(int) 改签名，目录名按下标取回
+  canvas->loadDir( cb_dirs->text(index), i_filter->text() );
 }
 
 QPixmap KIconLoaderDialog::selectIcon( QString &name, const QString &filter)

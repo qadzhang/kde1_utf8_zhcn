@@ -62,8 +62,9 @@ GeneralWidget::GeneralWidget( QWidget *parent, const char *name)
   pppdtimeout->setMaxLength(TIMEOUT_SIZE);
   pppdtimeout->setMinimumWidth(pppdtimeout->sizeHint().width()/4);
   pppdtimeout->setText(gpppdata.pppdTimeout());
-  connect(pppdtimeout, SIGNAL(textChanged(const char*)),
-	  SLOT(pppdtimeoutchanged(const char*)));
+  // [KDE1 Revival 2026] TQt3 的 KIntegerLine 无 textChanged 信号，改接原生 valueChanged(int)（槽签名同步）
+  connect(pppdtimeout, SIGNAL(valueChanged(int)),
+	  SLOT(pppdtimeoutchanged(int)));
   l1->addWidget(pppdtimeout);
   KQuickHelp::add(label6,
   KQuickHelp::add(pppdtimeout, 
@@ -188,8 +189,9 @@ void GeneralWidget::quit_toggled(bool on){
 }
 
 
-void GeneralWidget::pppdtimeoutchanged(const char *n) {
-  gpppdata.setpppdTimeout(n);
+// [KDE1 Revival 2026] 槽改接 valueChanged(int)：回存值转十进制串（setpppdTimeout 收 C 串）
+void GeneralWidget::pppdtimeoutchanged(int n) {
+  gpppdata.setpppdTimeout(QString::number(n));
 
 }
 
@@ -394,8 +396,8 @@ ModemWidget::ModemWidget( QWidget *parent, const char *name)
   modemtimeout->setMaxLength(TIMEOUT_SIZE);
   modemtimeout->setMinimumWidth(fontMetrics().width('8')*3);
   modemtimeout->setText(gpppdata.modemTimeout());
-  connect(modemtimeout, SIGNAL(textChanged(const char*)),
-	  SLOT(modemtimeoutchanged(const char*)));  
+  connect(modemtimeout, SIGNAL(valueChanged(int)),
+	  SLOT(modemtimeoutchanged(int)));  
   l2->addWidget(modemtimeout, 1);
 
   labeltmp = newLabel(i18n("Seconds"), this);
@@ -452,8 +454,9 @@ void ModemWidget::modemlockfilechanged(bool set) {
 }
 
 
-void ModemWidget::modemtimeoutchanged(const char *n) {
-  gpppdata.setModemTimeout(n);
+// [KDE1 Revival 2026] 槽改接 valueChanged(int)：回存值转十进制串（setModemTimeout 收 C 串）
+void ModemWidget::modemtimeoutchanged(int n) {
+  gpppdata.setModemTimeout(QString::number(n));
 }
 
 
@@ -483,8 +486,8 @@ ModemWidget2::ModemWidget2( QWidget *parent, const char *name)
   busywait->setMaxLength(TIMEOUT_SIZE);
   busywait->setText(gpppdata.busyWait());
   busywait->setMinimumWidth(busywait->sizeHint().width()/3);
-  connect(busywait, SIGNAL(textChanged(const char*)),
-	  SLOT(busywaitchanged(const char*)));
+  connect(busywait, SIGNAL(valueChanged(int)),
+	  SLOT(busywaitchanged(int)));
   l10->addWidget(busywait);
 
   labeltmp = newLabel(i18n("Seconds"), this);
@@ -614,8 +617,9 @@ void ModemWidget2::use_cdline_toggled(bool on) {
 }
 #endif
 
-void ModemWidget2::busywaitchanged(const char *n) {
-  gpppdata.setbusyWait(n);
+// [KDE1 Revival 2026] 槽改接 valueChanged(int)：回存值转十进制串（setbusyWait 收 C 串）
+void ModemWidget2::busywaitchanged(int n) {
+  gpppdata.setbusyWait(QString::number(n));
 }
 
 

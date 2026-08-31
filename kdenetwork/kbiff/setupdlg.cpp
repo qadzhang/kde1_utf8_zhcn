@@ -132,12 +132,13 @@ TRACEINIT("KBiffSetup::KBiffSetup()");
 	mailboxTab = new KBiffMailboxTab(the_profile, tabctl);
 	aboutTab   = new KBiffAboutTab(tabctl); 
 
-	connect(comboProfile, SIGNAL(highlighted(const char *)),
-	        generalTab, SLOT(readConfig(const char *)));
-	connect(comboProfile, SIGNAL(highlighted(const char *)),
-	        newmailTab, SLOT(readConfig(const char *)));
-	connect(comboProfile, SIGNAL(highlighted(const char *)),
-	        mailboxTab, SLOT(readConfig(const char *)));
+	// [KDE1 Revival 2026] TQt3 的 TQComboBox 无 highlighted(const char*) 信号，改接 TQString 版（三个 tab 槽签名同步）
+	connect(comboProfile, SIGNAL(highlighted(const TQString&)),
+	        generalTab, SLOT(readConfig(const TQString&)));
+	connect(comboProfile, SIGNAL(highlighted(const TQString&)),
+	        newmailTab, SLOT(readConfig(const TQString&)));
+	connect(comboProfile, SIGNAL(highlighted(const TQString&)),
+	        mailboxTab, SLOT(readConfig(const TQString&)));
 
 	// add the tabs
 	tabctl->addTab(generalTab, i18n("General"));
@@ -684,7 +685,8 @@ const int KBiffGeneralTab::getPoll() const
 	return QString(editPoll->text()).toInt();
 }
 
-void KBiffGeneralTab::readConfig(const char* profile)
+// [KDE1 Revival 2026] 槽签名 TQString 化：接收 highlighted(const TQString&)（setGroup 经隐式转换收 C 串）
+void KBiffGeneralTab::readConfig(const TQString& profile)
 {
 TRACEINIT("KBiffGeneralTab::readConfig()");
 	// open the config file
@@ -825,13 +827,15 @@ TRACEINIT("KBiffNewMailTab::testPlaySound()");
 	}
 }
 
-void KBiffNewMailTab::readConfig(const char* profile)
+// [KDE1 Revival 2026] 槽签名 TQString 化：接收 highlighted(const TQString&)
+void KBiffNewMailTab::readConfig(const TQString& profile)
 {
 TRACEINIT("KBiffNewMailTab::readConfig()");
 	// open the config file
 	KSimpleConfig *config = new KSimpleConfig(CONFIG_FILE, true);
 
-	TRACEF("profile = %s", profile);
+	// [KDE1 Revival 2026] profile 已 TQString 化：varargs 处显式转 C 串
+	TRACEF("profile = %s", (const char*)profile);
 	config->setGroup(profile);
 
 	checkRunCommand->setChecked(config->readBoolEntry("RunCommand", false));
@@ -982,8 +986,9 @@ TRACEINIT("KBiffMailboxAdvanced::KBiffMailboxAdvanced()");
 	port->setMinimumSize(50, 25);
 	layout->addWidget(port, 1, 1);
 
-	connect(port, SIGNAL(textChanged(const char*)),
-	              SLOT(portModified(const char*)));
+	// [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，改接 TQString 版（portModified 槽签名同步）
+	connect(port, SIGNAL(textChanged(const TQString&)),
+	              SLOT(portModified(const TQString&)));
 
 	QBoxLayout *button_layout = new QBoxLayout(QBoxLayout::LeftToRight, 12);
 	layout->addLayout(button_layout, 5, 2);
@@ -1034,10 +1039,11 @@ void KBiffMailboxAdvanced::setPort(unsigned int the_port, bool enable)
 	port->setText(QString().setNum(the_port));
 }
 
-void KBiffMailboxAdvanced::portModified(const char *text)
+// [KDE1 Revival 2026] 槽签名 TQString 化：toInt 直接取自参数（原 QString(text) 转手）
+void KBiffMailboxAdvanced::portModified(const TQString &text)
 {
 	KBiffURL url = getMailbox();
-	url.setPort(QString(text).toInt());
+	url.setPort(text.toInt());
 	setMailbox(url);
 }
 
@@ -1221,7 +1227,8 @@ TRACEINIT("KBiffMailboxTab::~KBiffMailboxTab()");
 	delete mailboxHash;
 }
 
-void KBiffMailboxTab::readConfig(const char* profile)
+// [KDE1 Revival 2026] 槽签名 TQString 化：接收 highlighted(const TQString&)
+void KBiffMailboxTab::readConfig(const TQString& profile)
 {
 TRACEINIT("KBiffMailboxTab::readConfig()");
 	// initialize some variables that need initing

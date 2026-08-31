@@ -134,7 +134,8 @@ public slots:
 protected slots:
   void adddns();
   void removedns();
-  void DNS_Edit_Changed(const char *);
+  // [KDE1 Revival 2026] 槽签名 TQString 化：与 textChanged(const TQString&) 连接匹配
+  void DNS_Edit_Changed(const TQString &);
   void DNS_Entry_Selected(int);
 
 private:

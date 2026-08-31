@@ -44,6 +44,12 @@ export XMODIFIERS=@im=fcitx
     fi
 ) &
 
+# [KDE1 Revival 2026] libpulsedsp 连 PulseAudio/PipeWire 走 XDG runtime 目录
+# （systemd 会话通常已设；干净环境缺失时 padsp 静默丢流，实测补齐后有流）
+if [ -z "${XDG_RUNTIME_DIR:-}" ] && [ -d "/run/user/$(id -u)" ]; then
+    export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+fi
+
 # 音效兼容：KDE1 走 /dev/dsp（OSS），Debian 12 无该设备；
 # libpulsedsp（padsp 命令背后的预载库）把 OSS 调用转发到
 # PipeWire/PulseAudio。注意 LD_PRELOAD 必须是库文件路径——

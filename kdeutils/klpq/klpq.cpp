@@ -398,7 +398,8 @@ void Klpq::remove()
   QString word;
   word.setNum(job);
   QString ask;
-  ask.sprintf( klocale->translate("Do you really want to remove job No %d"), job );
+  // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf：TQString::sprintf 对 UTF-8 译文按字节升位会乱码
+  ask = kde_sprintf( klocale->translate("Do you really want to remove job No %d"), job );
   if( KMsgBox::yesNo( this, "Klpq", (const char *) ask ) == 1 )
     {
       QString progname;
@@ -418,7 +419,8 @@ void Klpq::makeTop()
   QString word;
   word.setNum(job);
   QString ask;
-  ask.sprintf( klocale->translate("Do you really want to move job No\n%d\non top of queue"), job);
+  // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf：TQString::sprintf 对 UTF-8 译文按字节升位会乱码
+  ask = kde_sprintf( klocale->translate("Do you really want to move job No\n%d\non top of queue"), job);
   if( KMsgBox::yesNo( this, "Klpq", (const char *) ask) == 1 )
     {
       lpc->clearArguments();

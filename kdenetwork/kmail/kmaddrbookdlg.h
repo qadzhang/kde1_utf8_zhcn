@@ -54,7 +54,8 @@ protected slots:
   void slotCancel();
   void slotAdd();
   void slotRemove();
-  void slotLbxHighlighted(const char* item);
+  // [KDE1 Revival 2026] 槽签名 TQString 化：与 highlighted(const TQString&) 连接匹配
+  void slotLbxHighlighted(const TQString& item);
 
 protected:
   KMAddrBook* mAddrBook;

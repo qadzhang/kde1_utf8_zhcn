@@ -85,12 +85,14 @@ open_ksirc::open_ksirc
 
   insertGroupList();
 
-  setGroup("Recent");
+  // [KDE1 Revival 2026] setGroup 槽改收索引：insertGroupList 恒以 "Recent" 为第 0 项
+  setGroup(0);
 
-  connect(ComboB_ServerGroup, SIGNAL(activated( const char * )),
-          this, SLOT(setGroup( const char * )));
-  connect(ComboB_ServerName,  SIGNAL(activated( const char * )),
-          this, SLOT(setServer( const char * )));
+  // [KDE1 Revival 2026] TQt3 的 TQComboBox 无 activated(const char*) 信号，两处改接 activated(int)（槽签名同步为 int）
+  connect(ComboB_ServerGroup, SIGNAL(activated( int )),
+          this, SLOT(setGroup( int )));
+  connect(ComboB_ServerName,  SIGNAL(activated( int )),
+          this, SLOT(setServer( int )));
 
   connect(PB_Connect, SIGNAL(pressed()), this, SLOT(clickConnect()));
   connect(PB_Edit, SIGNAL(pressed()), this, SLOT(clickEdit()));
@@ -148,8 +150,10 @@ void open_ksirc::insertServerList( const char * group )
 // note that this only takes the first occurrance if there is two
 // entiies with the same server.
 
-void open_ksirc::setServer( const char * serveraddress )
+// [KDE1 Revival 2026] 槽签名改 int（activated(int)）：文本从 ComboB_ServerName 按索引取
+void open_ksirc::setServer( int index )
 {
+  QString serveraddress = ComboB_ServerName->text( index );
   QListBox *newListBox  = new  QListBox();
   Server *serv;
   QList<port> portlist; 
@@ -157,7 +161,8 @@ void open_ksirc::setServer( const char * serveraddress )
   bool defaultport = FALSE; 
 
   for ( serv=Groups.first(); serv != 0; serv=Groups.next() ) {
-    if (strcmp(serv->server(), serveraddress) == 0) {
+    // [KDE1 Revival 2026] serveraddress 已 TQString 化：strcmp 改 TQString==（tqt3 补丁保证 UTF-8 语义）
+    if (serv->server() == serveraddress) {
       setServerDesc( serv->serverdesc() );
       portlist = serv->ports();
       for ( p=portlist.last(); p != 0; p=portlist.prev() ) {
@@ -189,11 +194,14 @@ void open_ksirc::setServerDesc( QString description )
   }
 }
 
-void open_ksirc::setGroup( const char * group )
+// [KDE1 Revival 2026] 槽签名改 int（activated(int)）：组名从 ComboB_ServerGroup 按索引取
+void open_ksirc::setGroup( int index )
 {
+  QString group = ComboB_ServerGroup->text( index );
   insertServerList( group );
   if (ComboB_ServerName->count() > 0) {
-    setServer( ComboB_ServerName->text( 0 ));
+    // [KDE1 Revival 2026] setServer 已改收索引：直接传第 0 项
+    setServer( 0 );
   } else {
     setServerDesc( "" );
     ComboB_ServerPort->setEditText("6667");

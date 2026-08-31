@@ -26,7 +26,12 @@ void import_graphic (char *filter, QImageIO *image)
 
   tmpFileName = tmpnam(NULL);
 
-  sprintf (cmdBuf, "%s %s > %s", filter, image->fileName(), tmpFileName);
+  /* [KDE1 Revival 2026] fileName() 返回 TQString 对象——varargs 直传把对象指针
+     当 char* 解引用出垃圾命令行；先转 utf8() 字节串（TQCString 局部保生命周期） */
+  {
+    TQCString fname = image->fileName().utf8();
+    snprintf (cmdBuf, CMDBUFLEN, "%s %s > %s", filter, fname.data(), tmpFileName);
+  }
 //  printf (cmdBuf);
 //  fflush (stdout);
 

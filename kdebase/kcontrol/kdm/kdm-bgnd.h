@@ -59,7 +59,7 @@ protected slots:
 	void slotSelectColor1( const QColor &col );
 	void slotSelectColor2( const QColor &col );
 	void slotBrowse();
-	void slotWallpaper( const char * );
+	void slotWallpaper( int index ); // [KDE1 Revival 2026] TQComboBox 仅 activated(int)
 	void slotWallpaperMode( int );
 	void slotColorMode( int );
 	void slotQDrop( QDropEvent* );

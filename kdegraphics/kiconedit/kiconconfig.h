@@ -55,7 +55,8 @@ public:
   void setPath(QString);
   
 public slots:
-  void slotTextChanged(const char*);
+  // [KDE1 Revival 2026] 槽签名随 TQLineEdit 信号改 const TQString&
+  void slotTextChanged(const TQString &);
   void slotBrowse();
 
 protected:

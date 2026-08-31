@@ -43,9 +43,10 @@ protected slots:
     virtual void Dpi300ButtonClicked();
     virtual void Dpi600ButtonClicked();
     virtual void EconomyButtonClicked();
-    virtual void ResolutionComboBoxClicked(const char*);
-    virtual void DensityComboClicked(const char*);
-    virtual void PrinterComboClicked(const char*);
+    // [KDE1 Revival 2026] 槽签名改 int：与 activated(int) 连接匹配
+    virtual void ResolutionComboBoxClicked(int);
+    virtual void DensityComboClicked(int);
+    virtual void PrinterComboClicked(int);
     virtual void PresentationButtonClicked();
 
 protected:

@@ -273,7 +273,7 @@ void StringListEditWidget::newItem()
   // ############################################################################
 }
 
-void StringListEditWidget::itemChanged(const char* text)
+void StringListEditWidget::itemChanged(const TQString& text)
 {
   REQUIRE(lbStrings->currentItem()!=-1 || lbStrings->count()==0);
   // ############################################################################

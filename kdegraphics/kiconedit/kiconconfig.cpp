@@ -35,11 +35,13 @@ KTemplateEditDlg::KTemplateEditDlg(QWidget *parent) : QDialog(parent, 0, true)
 
   ln_name = new QLineEdit(this);
   ln_name->setFixedHeight(20);
-  connect( ln_name, SIGNAL(textChanged(const char *)), SLOT(slotTextChanged(const char*)) );
+  // [KDE1 Revival 2026] TQLineEdit 仅有 textChanged(const TQString&) 信号——原 const char* 连接静默失败
+  connect( ln_name, SIGNAL(textChanged(const TQString &)), SLOT(slotTextChanged(const TQString &)) );
 
   ln_path = new QLineEdit(this);
   ln_path->setFixedHeight(20);
-  connect( ln_path, SIGNAL(textChanged(const char *)), SLOT(slotTextChanged(const char*)) );
+  // [KDE1 Revival 2026] 同上（路径输入行）
+  connect( ln_path, SIGNAL(textChanged(const TQString &)), SLOT(slotTextChanged(const TQString &)) );
 
   QBoxLayout *ml = new QVBoxLayout(this, 10);
   //ml->addWidget(grp, 10, AlignLeft);
@@ -73,7 +75,8 @@ KTemplateEditDlg::KTemplateEditDlg(QWidget *parent) : QDialog(parent, 0, true)
   ml->activate();
 }
 
-void KTemplateEditDlg::slotTextChanged(const char *)
+// [KDE1 Revival 2026] 槽签名随信号改 const TQString&（函数体经 ln_name->text() 取值，不受影响）
+void KTemplateEditDlg::slotTextChanged(const TQString &)
 {
   QString name = ln_name->text(), path = ln_path->text();
   if(name.length() && path.length())

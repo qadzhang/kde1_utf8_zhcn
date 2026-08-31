@@ -43,7 +43,8 @@ signals:
 
 public slots:
   void rebuildList( QList<TextEntry> *);
-  void entryChanged(const char *);
+  // [KDE1 Revival 2026] 槽签名 TQString 化：与 textChanged(const TQString&) 连接匹配
+  void entryChanged(const TQString &);
   void select( int );
 
 protected slots:

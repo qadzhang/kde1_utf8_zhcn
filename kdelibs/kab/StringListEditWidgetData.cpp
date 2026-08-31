@@ -63,7 +63,8 @@ StringListEditWidgetData::StringListEditWidgetData
 	leLine->setGeometry( 10, 10, 230, 30 );
 	leLine->setMinimumSize( 10, 10 );
 	leLine->setMaximumSize( 32767, 32767 );
-	connect( leLine, SIGNAL(textChanged(const char*)), SLOT(itemChanged(const char*)) );
+	// [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)——const char* 版连接静默失败
+	connect( leLine, SIGNAL(textChanged(const TQString&)), SLOT(itemChanged(const TQString&)) );
 	leLine->setText( "" );
 	leLine->setMaxLength( 32767 );
 	leLine->setEchoMode( QLineEdit::Normal );
@@ -99,7 +100,7 @@ void StringListEditWidgetData::downPressed()
 void StringListEditWidgetData::deletePressed()
 {
 }
-void StringListEditWidgetData::itemChanged(const char*)
+void StringListEditWidgetData::itemChanged(const TQString&)
 {
 }
 void StringListEditWidgetData::newItem()

@@ -324,7 +324,15 @@ bool Minicli::do_grabbing(){
   if (XGrabKeyboard(qt_xdisplay(), lineedit->winId(),True,GrabModeAsync,
 		    GrabModeAsync,CurrentTime) != GrabSuccess)
     return False;
-  lineedit->grabMouse();
+  // [KDE1 Revival 2026] 模态指针抓取改裸 XGrabPointer(CurrentTime)，理由同 logout.C
+  // [KDE1 Revival 2026] 模态指针抓取改裸 XGrabPointer(CurrentTime)：TQt3 的
+  // QWidget::grabMouse 以内部时间戳 tqt_x_time 请求——在注销链路的同步调用栈
+  // 里早于 server 最近一次 grab 而被拒（GrabInvalidTime），鼠标事件被悬挂的
+  // root grab 吞掉（"注销窗口点不动"根因）。裸调用以 CurrentTime 抓到本对话
+  // 框并 confine，owner_events=True 保持 Qt 子部件事件路由不变。
+  XGrabPointer(qt_xdisplay(), winId(), True,
+	       ButtonPressMask|ButtonReleaseMask|ButtonMotionMask|PointerMotionMask,
+	       GrabModeAsync, GrabModeAsync, winId(), None, CurrentTime);
 //   XGrabServer(qt_xdisplay());
   do_not_draw = true;
   raise();

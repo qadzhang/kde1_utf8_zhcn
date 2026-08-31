@@ -43,7 +43,7 @@ KFMExec::KFMExec( int argc, char **argv )
 	    if ( u.isMalformed() )
 	    {
 		QString err;
-		err.sprintf( klocale->translate("The URL %s\nis malformed"), argv[ i - 1 ] );
+		err = kde_sprintf( klocale->translate("The URL %s\nis malformed"), argv[ i - 1 ] );
 		QMessageBox::message( klocale->translate( "KFM Error" ), err );
 	    }
 	    // Must KFM fetch the file ?
@@ -132,7 +132,7 @@ void KFMExec::slotFinished()
 	if ( stat( s, &buff ) == 0 && times[i++] != buff.st_mtime )
 	{
 	    QString tmp;
-	    tmp.sprintf( klocale->translate( "The file\n%s\nhas been modified.\nDo you want to save it?" ), s );
+	    tmp = kde_sprintf( klocale->translate( "The file\n%s\nhas been modified.\nDo you want to save it?" ), s );
 	    if ( QMessageBox::query( klocale->translate( "KFM Question" ), tmp ) )
 	    {
 		KFM *kfm = new KFM;

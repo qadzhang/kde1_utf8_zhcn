@@ -30,6 +30,7 @@
 #include <kcharsets.h>
 
 #include "manager.h"
+#include "main.h"
 
 extern Manager* manager;
 
@@ -212,7 +213,10 @@ void Klogout::SetPointerGrab(QPoint pos){
     return;
   if (w->topLevelWidget() == this){
     if (w != mouseGrabber()){
-      mouseGrabber()->releaseMouse();
+      // [KDE1 Revival 2026] grab 可能因时间戳过期失败（mouseGrabber()==NULL），
+      // TQt3 下 NULL 解引用即崩溃——防御后直接迁移 grab 到目标 widget
+      if (mouseGrabber())
+        mouseGrabber()->releaseMouse();
       w->removeEventFilter(this);
       w->installEventFilter(this);
       w->setMouseTracking(true);
@@ -259,14 +263,23 @@ bool Klogout::do_grabbing(){
   do_not_draw = true;
   show();
   XSetInputFocus (qt_xdisplay(), winId(), RevertToParent, CurrentTime);
-  if (XGrabKeyboard(qt_xdisplay(), winId(),True,GrabModeAsync,
-  		    GrabModeAsync,CurrentTime) != GrabSuccess){
+  int gk = XGrabKeyboard(qt_xdisplay(), winId(),True,GrabModeAsync,
+  		    GrabModeAsync,CurrentTime);
+  if (gk != GrabSuccess){
+    // [KDE1 Revival 2026] 诊断：grab 失败码（1=AlreadyGrabbed 被抢先 等）
+    fprintf(stderr, "kwm: Klogout XGrabKeyboard 失败码 %d\n", gk);
     XUngrabServer(qt_xdisplay());
     return False;
   }
   raise();
-  button->grabMouse();
-  SetPointerGrab(QCursor::pos());
+  // [KDE1 Revival 2026] 模态指针抓取改裸 XGrabPointer(CurrentTime)：TQt3 的
+  // QWidget::grabMouse 以内部时间戳 tqt_x_time 请求——在注销链路的同步调用栈
+  // 里早于 server 最近一次 grab 而被拒（GrabInvalidTime），鼠标事件被悬挂的
+  // root grab 吞掉（"注销窗口点不动"根因）。裸调用以 CurrentTime 抓到本对话
+  // 框并 confine，owner_events=True 保持 Qt 子部件事件路由不变。
+  XGrabPointer(qt_xdisplay(), winId(), True,
+	       ButtonPressMask|ButtonReleaseMask|ButtonMotionMask|PointerMotionMask,
+	       GrabModeAsync, GrabModeAsync, winId(), None, CurrentTime);
   button->setFocus();
   
   return True;
@@ -299,6 +312,8 @@ void Klogout::cleanup(){
   XUngrabServer(qt_xdisplay());
   if (mouseGrabber())
     mouseGrabber()->releaseMouse();
+  // [KDE1 Revival 2026] 裸 XGrabPointer 的对称释放（幂等，无 grab 时无害）
+  XUngrabPointer(qt_xdisplay(), CurrentTime);
   hide();
   do_not_draw = false;
   if (reactive){

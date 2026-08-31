@@ -78,9 +78,7 @@
 #include "print.h"
 #include "options.h"
 
-#ifndef DOCS_PATH
-#define DOCS_PATH "/usr/local/kde/doc/HTML/kfax/kfax.html"
-#endif
+// [KDE1 Revival 2026] 删除死宏 DOCS_PATH（/usr/local/kde 路径早已失效，全目录无引用）
 
 #define Pimage(p)	((XImage *)(p)->extra)
 

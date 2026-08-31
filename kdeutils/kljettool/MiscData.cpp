@@ -68,7 +68,8 @@ MiscData::MiscData
 
 	PageProtectCombo = new QComboBox( FALSE, this, "ComboBox_6" );
 	PageProtectCombo->setGeometry( 180, 60, 100, 25 );
-	connect( PageProtectCombo, SIGNAL(activated(const char*)), SLOT(PageProtectSelected(const char*)) );
+	// [KDE1 Revival 2026] TQt3 的 TQComboBox 无 activated(const char*) 信号，两处改接 activated(int)（槽签名同步）
+	connect( PageProtectCombo, SIGNAL(activated(int)), SLOT(PageProtectSelected(int)) );
 	PageProtectCombo->setSizeLimit( 10 );
 	PageProtectCombo->setAutoResize( FALSE );
 	PageProtectCombo->insertItem( "on" );
@@ -83,7 +84,7 @@ MiscData::MiscData
 
 	PowerSaveCombo = new QComboBox( FALSE, this, "ComboBox_7" );
 	PowerSaveCombo->setGeometry( 180, 115, 100, 25 );
-	connect( PowerSaveCombo, SIGNAL(activated(const char*)), SLOT(PowerSaveComboSelected(const char*)) );
+	connect( PowerSaveCombo, SIGNAL(activated(int)), SLOT(PowerSaveComboSelected(int)) );
 	PowerSaveCombo->setSizeLimit( 10 );
 	PowerSaveCombo->setAutoResize( FALSE );
 	PowerSaveCombo->insertItem( "0" );
@@ -171,20 +172,22 @@ void MiscData::DosButtonClicked()
   }
 
 }
-void MiscData::PageProtectSelected(const char* pp)
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void MiscData::PageProtectSelected(int index)
 {
   if(!data)
     return;
 
-  data->Pageprotect = pp;
+  data->Pageprotect = PageProtectCombo->text(index);
   
 }
-void MiscData::PowerSaveComboSelected(const char* ps)
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void MiscData::PowerSaveComboSelected(int index)
 {
   if(!data)
     return;
 
-  data->Powersave = ps;
+  data->Powersave = PowerSaveCombo->text(index);
 
 }
 

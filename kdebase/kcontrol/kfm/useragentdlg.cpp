@@ -57,8 +57,9 @@ UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
   lay->addWidget(onserverED,1,2);
   //CT
 
-  connect( onserverED, SIGNAL( textChanged( const char* ) ),
-		   SLOT( textChanged( const char* ) ) );
+  // [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)——const char* 版连接静默失败
+  connect( onserverED, SIGNAL( textChanged( const TQString& ) ),
+		   SLOT( textChanged( const TQString& ) ) );
   // Commented out because in a kcontrol module  Return => OK
   // One can use 'Alt+A' instead (English version at least)
   //connect( onserverED, SIGNAL( returnPressed() ),
@@ -79,8 +80,9 @@ UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
   lay->addWidget(loginasED,2,2);
   //CT
 
-  connect( loginasED, SIGNAL( textChanged( const char* ) ),
-		   SLOT( textChanged( const char* ) ) );
+  // [KDE1 Revival 2026] 同上
+  connect( loginasED, SIGNAL( textChanged( const TQString& ) ),
+		   SLOT( textChanged( const TQString& ) ) );
   // connect( loginasED, SIGNAL( returnPressed() ),
   //  SLOT( returnPressed() ) );
 
@@ -122,8 +124,9 @@ UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
 
   bindingsLB->setMultiSelection( false );
   bindingsLB->setScrollBar( true );
-  connect( bindingsLB, SIGNAL( highlighted( const char* ) ),
-		   SLOT( listboxHighlighted( const char* ) ) );
+  // [KDE1 Revival 2026] TQListBox 仅有 highlighted(int) 信号
+  connect( bindingsLB, SIGNAL( highlighted( int ) ),
+		   SLOT( listboxHighlighted( int ) ) );
 
   loadSettings();
   setMinimumSize(480,300);
@@ -186,12 +189,13 @@ void UserAgentOptions::saveSettings()
     g_pConfig->sync();
 }
 
-void UserAgentOptions::textChanged( const char* )
+void UserAgentOptions::textChanged( const TQString& )
 {
-  const char *login = loginasED->text();
-  const char *server = onserverED->text();
+  // [KDE1 Revival 2026] 原 const char* 悬垂指针（text() 临时对象语句末析构）一并修掉
+  TQString login = loginasED->text();
+  TQString server = onserverED->text();
 
-  if( login && login[0] && server && server[0] )
+  if( !login.isEmpty() && !server.isEmpty() )
 	addPB->setEnabled( true );
   else
 	addPB->setEnabled( false );
@@ -219,13 +223,14 @@ void UserAgentOptions::deleteClicked()
   if( bindingsLB->count() ) 
 	bindingsLB->removeItem( highlighted_item );
   if( !bindingsLB->count() ) // no more items
-    listboxHighlighted("");  
+    listboxHighlighted( 0 );  
 }
 
 
-void UserAgentOptions::listboxHighlighted( const char* _itemtext )
+void UserAgentOptions::listboxHighlighted( int index )
 {
-  QString itemtext( _itemtext );
+  // [KDE1 Revival 2026] TQListBox 仅有 highlighted(int)——槽内按下标取文本
+  QString itemtext = bindingsLB->text( index );
   int colonpos = itemtext.find( ':' );
   onserverED->setText( itemtext.left( colonpos ) );
   loginasED->setText( itemtext.right( itemtext.length() - colonpos - 1) );

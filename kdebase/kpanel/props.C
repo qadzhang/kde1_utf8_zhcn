@@ -166,6 +166,24 @@ void kPanel::parseMenus(){
 	personal_menu->createMenu(personal_pmi->getQPopupMenu(), this);
       }
       delete tmp;
+
+      /* [KDE1 Revival 2026] personal applnk 的「现代应用」子树提升为 K 菜单
+	 顶层分类：startkde 调用 gen-xdg-apps.py 把 /usr/share/applications
+	 的 XDG 条目转换为 ~/.kde/share/applnk/Modern/（每次登录幂等重建，
+	 随系统装卸增减）——现代软件由此直接出现在 K 菜单顶层，而不是埋在
+	 Personal 子菜单深处（参考现代系统桌面的应用菜单聚合设计） */
+      {
+	PMenu *modern_menu = new PMenu;
+	modern_menu->setAltSort(foldersFirst);
+	QString modern_dir = personal + "/Modern";
+	if (QDir(modern_dir).exists()) {
+	  modern_menu->parse(QDir(modern_dir));
+	  PMenuItem *modern_pmi = new PMenuItem;
+	  QFileInfo mfi(modern_dir);
+	  if (modern_pmi->parse(&mfi, modern_menu) >= 0)
+	    pmenu->add(modern_pmi);
+	}
+      }
     }
 
     pmenu_add = new PMenu(*pmenu);

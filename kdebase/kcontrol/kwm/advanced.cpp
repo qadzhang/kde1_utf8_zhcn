@@ -300,8 +300,9 @@ myListBrowser::myListBrowser(const char *title, QWidget *parent, const char *nam
   bEdit->setMinimumSize(bEdit->size());
   lay->addWidget(bEdit,1,0);
 
-  connect(bEdit, SIGNAL(textChanged(const char *)),
-	  this, SLOT(bEditChanged(const char *)));
+  // [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)
+  connect(bEdit, SIGNAL(textChanged(const TQString &)),
+	  this, SLOT(bEditChanged(const TQString &)));
 
   bAdd = new QPushButton("+",browserBox);
   bAdd->adjustSize();
@@ -372,8 +373,8 @@ void myListBrowser::feedList(QStrList *thisList) {
   victimList = thisList;
 }
 
-void myListBrowser::bEditChanged(const char *a) {
-  bool not_empty = strcmp(a, "");
+void myListBrowser::bEditChanged(const TQString &a) {
+  bool not_empty = !a.isEmpty();
   bAdd->setEnabled(not_empty);
   bDel->setEnabled(not_empty);
 }

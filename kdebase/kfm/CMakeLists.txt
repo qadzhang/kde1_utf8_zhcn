@@ -62,6 +62,12 @@ install(FILES kfmsu startkde kde unpack
     PERMISSIONS OWNER_EXECUTE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ
     DESTINATION ${KDE1_BINDIR})
 
+# [KDE1 Revival 2026] 现代应用菜单生成器（startkde 每次登录调用，
+# /usr/share/applications → K 菜单「现代应用」子树）
+install(FILES gen-xdg-apps.py
+    PERMISSIONS OWNER_EXECUTE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ
+    DESTINATION ${KDE1_BINDIR})
+
 install(FILES config/kfmrc config/desktop DESTINATION ${KDE1_CONFDIR})
 install(FILES magic DESTINATION ${KDE1_MIMEDIR})
 

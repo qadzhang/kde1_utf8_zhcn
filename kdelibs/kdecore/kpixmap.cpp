@@ -155,13 +155,18 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
 			}
 		    }
 		}
+		// [KDE1 Revival 2026] 修正 INDEXOF 分支与字节序的对应关系：
+		// TQt3 32bpp 在 little-endian 上内存序 B,G,R,A（chan0 读到蓝、chan2 读到红），
+		// INDEXOF 的第一参数是红色分量——故 LE 分支须用 INDEXOF(pv[2],pv[1],pv[0])；
+		// big-endian 上内存序 A,R,G,B（偏移 endian 后 chan0 恰为红）——用原序。
+		// （原代码两分支正好写反，仅 8bpp 屏 + LowOnly/WebColor 模式触发）
 		if (endian) {
 		    for (x=0; x<sw; x++) {
-			*b++ = INDEXOF(pv[2][x],pv[1][x],pv[0][x]);
+			*b++ = INDEXOF(pv[0][x],pv[1][x],pv[2][x]);
 		    }
 		} else {
 		    for (x=0; x<sw; x++) {
-			*b++ = INDEXOF(pv[0][x],pv[1][x],pv[2][x]);
+			*b++ = INDEXOF(pv[2][x],pv[1][x],pv[0][x]);
 		    }
 		}
 	}

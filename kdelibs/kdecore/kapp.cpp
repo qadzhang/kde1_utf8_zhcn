@@ -1206,8 +1206,10 @@ void KApplication::buildSearchPaths()
 
   if ( !kdePathRc.isNull() )
     {
-      char *start, *end, *workPath = new char [ kdePathRc.length() + 1 ];
-	  strcpy( workPath, kdePathRc );
+      // [KDE1 Revival 2026] length() 是 UTF-16 码元数——非 ASCII 路径按字节深拷贝
+      TQCString pb = kdePathRc.utf8();
+      char *start, *end, *workPath = new char [ pb.size() ];
+	  memcpy( workPath, pb.data(), pb.size() );
 	  start = workPath;
 	  while ( start )
 		{

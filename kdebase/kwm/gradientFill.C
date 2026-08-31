@@ -1,3 +1,8 @@
+//   Modified for the KDE1 Revival Project, 2026
+//   Maintainer: <维护者姓名> <邮箱>
+//   Modifications written with GLM-5.3 (Z.ai)
+//     （渐变生成由 Qt1 字节级写入改为 qRgb 值级写入，修复 TQt3 下红蓝对调）
+
 #include "gradientFill.h"
 #include <dither.h>
 #include <qimage.h>
@@ -21,32 +26,24 @@ void kwm_gradientFill(KPixmap &pm, QColor ca, QColor cb, bool upDown) {
     int d_blue = (c_blue_b - c_blue_a) / w;
 
     QImage img(w, h, 32);
-    uchar *p = img.scanLine(0);
+
+    // ┌─ What : 逐列计算渐变色并以 qRgb() 值级写入 32bpp 图像行缓冲
+    // │  Why  : Qt1 时代按 R,G,B,X 逐字节写入 little-endian 分支的字节流，在
+    // │         TQt3 下是红蓝对调（TQt3 32bpp 内存序为 B,G,R,A，QRgb=0xFFRRGGBB）
+    // │         ——蓝白标题栏变红黑的根因；值级写入不依赖字节序，两代语义一致
+    // │  When : kwm 标题条 H_SHADED/V_SHADED 装饰构造期（client.C 两处调用）
+    // │  How  : 固定点 16.16 累加通道值 → 右移 16 取 8 位 → qRgb(r,g,b) 组合
+    // │         alpha 0xff 由 qRgb 自动置位（convertFromImage 按 0xFFRRGGBB 解读）
+    uint *p = (uint *)img.scanLine(0);
 
     int r = c_red_a, g = c_green_a, b = c_blue_a;
 
-    if (QImage::systemByteOrder() == QImage::BigEndian) {
-      for(int x = 0; x < w; x++) {
-	*p++ = 0;
-	*p++ = b >> 16;
-	*p++ = g >> 16;
-	*p++ = r >> 16;
+    for(int x = 0; x < w; x++) {
+      *p++ = qRgb(r >> 16, g >> 16, b >> 16);
 
-	r += d_red;
-	g += d_green;
-	b += d_blue;
-      }
-    } else {
-      for(int x = 0; x < w; x++) {
-	*p++ = r >> 16;
-	*p++ = g >> 16;
-	*p++ = b >> 16;
-	*p++ = 0;
-
-	r += d_red;
-	g += d_green;
-	b += d_blue;
-      }
+      r += d_red;
+      g += d_green;
+      b += d_blue;
     }
 
     uchar *src = img.scanLine(0);

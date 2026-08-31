@@ -103,8 +103,9 @@ void PLineEdit::setWidget(QObject *_le)
 
   lineedit = (QLineEdit *) _le;
   if(lineedit != 0){
-    connect(lineedit, SIGNAL(textChanged(const char *)),
-	    this, SLOT(updateText(const char *)));
+    // [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，改接 TQString 版（updateText 槽签名同步）
+    connect(lineedit, SIGNAL(textChanged(const TQString&)),
+	    this, SLOT(updateText(const TQString&)));
     connect(lineedit, SIGNAL(returnPressed()),
 	    this, SLOT(returnPress()));
   }
@@ -118,15 +119,17 @@ QLineEdit *PLineEdit::widget()
   return lineedit;
 }
 
-void PLineEdit::updateText(const char *text){
+// [KDE1 Revival 2026] 槽签名 TQString 化：先落 UTF-8 C 串（TQCString 局部变量保生命周期）再量长/拷贝
+void PLineEdit::updateText(const TQString &text){
   PukeMessage pmRet;
+  QCString cstr(text.utf8());
 
   pmRet.iCommand = PUKE_LINED_GET_TEXT_ACK;
   pmRet.iWinId = widgetIden().iWinId;
   pmRet.iArg = 0;
-  pmRet.iTextSize = strlen(text);
-  pmRet.cArg = new char[strlen(text)+1];
-  strcpy(pmRet.cArg, text);
+  pmRet.iTextSize = strlen(cstr);
+  pmRet.cArg = new char[strlen(cstr)+1];
+  strcpy(pmRet.cArg, cstr);
   emit outputMessage(widgetIden().fd, &pmRet);
   delete[] pmRet.cArg;
 }

@@ -203,8 +203,9 @@ KSpellDlg::KSpellDlg (QWidget *, const char *name,
 
 	
 
-	connect (editbox,SIGNAL (textChanged (const char *)),
-		  this, SLOT (textChanged (const char *)));
+	// [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)——const char* 版连接静默失败
+	connect (editbox,SIGNAL (textChanged (const TQString &)),
+		  this, SLOT (textChanged (const TQString &)));
 	connect (editbox,SIGNAL (returnPressed ()),
 		  this, SLOT (replace ()));
 	
@@ -272,7 +273,7 @@ void KSpellDlg::standby (void)
   qpbrepa->setEnabled (FALSE);
 }
 
-void KSpellDlg::textChanged (const char *)
+void KSpellDlg::textChanged (const TQString &)
 {
   qpbrep->setEnabled (TRUE);
   qpbrepa->setEnabled (TRUE);

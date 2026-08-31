@@ -3,6 +3,14 @@
 #  DEFAULT KDE STARTUP SCRIPT ( KDE-1.1 )
 #
 
+# [KDE1 Revival 2026] 现代应用菜单：把 /usr/share/applications 的 XDG
+# desktop 条目转换为 K 菜单「现代应用」子树（~/.kde/share/applnk/Modern/），
+# 每次登录幂等重建——KDE1 里可直接启动系统已装的全部现代 GUI 程序。
+# python3 未装则跳过（菜单无该分类，不影响会话）。
+if command -v python3 >/dev/null 2>&1; then
+    python3 "$KDEDIR/bin/gen-xdg-apps.py" 2>/dev/null &
+fi
+
 # initialize the configuration first.
 
 kcontrol -init

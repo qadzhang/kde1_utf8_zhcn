@@ -103,16 +103,17 @@ PrinterData::PrinterData
 
 	PrinterComboBox = new QComboBox( FALSE, this, "ComboBox_4" );
 	PrinterComboBox->setGeometry( 35, 150, 105, 25 );
-	connect( PrinterComboBox, SIGNAL(activated(const char*)), 
-		 SLOT(PrinterComboClicked(const char*)) );
+	// [KDE1 Revival 2026] TQt3 的 TQComboBox 无 activated(const char*) 信号，三处改接 activated(int)（槽签名同步）
+	connect( PrinterComboBox, SIGNAL(activated(int)), 
+		 SLOT(PrinterComboClicked(int)) );
 
 	PrinterComboBox->setSizeLimit( 10 );
 	PrinterComboBox->setAutoResize( FALSE );
 
 	DensityComboBox = new QComboBox( FALSE, this, "ComboBox_4" );
 	DensityComboBox->setGeometry( 180, 150, 105, 25 );
-	connect( DensityComboBox, SIGNAL(activated(const char*)), 
-		 SLOT(DensityComboClicked(const char*)) );
+	connect( DensityComboBox, SIGNAL(activated(int)), 
+		 SLOT(DensityComboClicked(int)) );
 
 	DensityComboBox->setSizeLimit( 10 );
 	DensityComboBox->setAutoResize( FALSE );
@@ -124,8 +125,8 @@ PrinterData::PrinterData
 
 	ResolutionComboBox = new QComboBox( FALSE, this, "ComboBox_5" );
 	ResolutionComboBox->setGeometry( 180, 210, 105, 25 );
-	connect( ResolutionComboBox, SIGNAL(activated(const char*)), 
-		 SLOT(ResolutionComboBoxClicked(const char*)) );
+	connect( ResolutionComboBox, SIGNAL(activated(int)), 
+		 SLOT(ResolutionComboBoxClicked(int)) );
 
 	ResolutionComboBox->setSizeLimit( 10 );
 	ResolutionComboBox->setAutoResize( FALSE );
@@ -206,29 +207,32 @@ void PrinterData::Dpi600ButtonClicked()
   }
 }
 
-void PrinterData::DensityComboClicked(const char* den)
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void PrinterData::DensityComboClicked(int index)
 {
   if(!data)
     return;
   
-  data->Density = den;
+  data->Density = DensityComboBox->text(index);
 
 }
 
-void PrinterData::PrinterComboClicked(const char* printer)
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void PrinterData::PrinterComboClicked(int index)
 {
   if(!data)
     return;
   
-  data->Printer = printer;
+  data->Printer = PrinterComboBox->text(index);
 
 }
-void PrinterData::ResolutionComboBoxClicked(const char* res)
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void PrinterData::ResolutionComboBoxClicked(int index)
 {
 
   if(!data)
     return;
   
-  data->RET = res;
+  data->RET = ResolutionComboBox->text(index);
 
 }

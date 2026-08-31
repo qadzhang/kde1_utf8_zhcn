@@ -227,10 +227,10 @@ void KHelpWindow::readOptions()
 	if ( !qs.isEmpty() )
 		fontBase = qs.toInt();
 
-	qs = "times";
-	standardFont = config->readEntry( "StandardFont", qs );
-	qs = "courier";
-	fixedFont = config->readEntry( "FixedFont", qs );
+	// [KDE1 Revival 2026] 弃硬编码 times/courier 默认值（无 CJK 字形）——
+	// 空值时由字体协商回退默认族
+	standardFont = config->readEntry( "StandardFont" );
+	fixedFont = config->readEntry( "FixedFont" );
 
 	bgColor = config->readColorEntry( "BgColor", &white );
 	textColor = config->readColorEntry( "TextColor", &black );
@@ -1568,9 +1568,11 @@ bool KHelpWindow::x11Event( XEvent *xevent )
 		    evt.xselection.time = req->time;
 		    if ( req->target == XA_STRING )
 		    {
+			// [KDE1 Revival 2026] length() 是 UTF-16 码元数——中文选中文字
+			// 每字符 3 字节，按码元数写属性必截断；按 UTF-8 字节数写
 			XChangeProperty ( qt_xdisplay(), req->requestor,
 				req->property, XA_STRING, 8, PropModeReplace,
-				(uchar *)text.data(), text.length() );
+				(uchar *)text.data(), strlen(text.data()) );
 			evt.xselection.property = req->property;
 		    }
 		    XSendEvent( qt_xdisplay(), req->requestor, False, 0, &evt );

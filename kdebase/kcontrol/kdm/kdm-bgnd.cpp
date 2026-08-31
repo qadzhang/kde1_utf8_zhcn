@@ -151,8 +151,9 @@ void KDMBackgroundWidget::setupPage(QWidget *)
 	wpCombo->insertItem( wallpaper );
 	wpCombo->setCurrentItem( wpCombo->count()-1 );
       }
-      connect( wpCombo, SIGNAL( activated( const char * ) ),
-		SLOT( slotWallpaper( const char * )  )  );
+      // [KDE1 Revival 2026] TQComboBox 仅有 activated(int) 信号——原连接静默失败
+      connect( wpCombo, SIGNAL( activated( int ) ),
+		SLOT( slotWallpaper( int )  )  );
       wpCombo->setFixedHeight(wpCombo->sizeHint().height());
 
       button = new QPushButton( klocale->translate("Browse..."), rGroup );
@@ -347,9 +348,11 @@ void KDMBackgroundWidget::setMonitor()
   QApplication::restoreOverrideCursor();
 }
 
-void KDMBackgroundWidget::slotWallpaper( const char *filename )
+void KDMBackgroundWidget::slotWallpaper( int index )
 {
-  if ( filename )
+  // [KDE1 Revival 2026] 槽随 activated(int) 改签名，壁纸名按下标取回
+  TQString filename = wpCombo->text( index );
+  if ( !filename.isEmpty() )
   {
     if ( loadWallpaper( filename ) == TRUE )
 	setMonitor();

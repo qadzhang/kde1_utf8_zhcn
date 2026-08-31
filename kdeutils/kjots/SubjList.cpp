@@ -64,10 +64,11 @@ void SubjList::select( int index )
   lb_subj->setCurrentItem(index);
 }
 
-void SubjList::entryChanged( const char * new_subj)
+// [KDE1 Revival 2026] 槽签名 TQString 化：比较去掉 (QString) 转手，changeItem 直收 TQString
+void SubjList::entryChanged( const TQString & new_subj)
 {
   QString temp = lb_subj->text(current);
-  if( temp == (QString) new_subj )
+  if( temp == new_subj )
     return;
   lb_subj->setAutoUpdate(FALSE);
   /*

@@ -97,7 +97,7 @@ void WidgetCanvas::drawSampleWidgets()
 	pmTitle.gradientFill( iaTitle, iaBlend, FALSE );
 	paint.drawPixmap( 20, 10, pmTitle ); 
    
-    QFont fnt("Helvetica", 12, QFont::Bold);
+    QFont fnt; fnt.setPointSize(12); fnt.setBold(true); // [KDE1 Revival 2026] 弃硬编码字族
     KApplication::getKApplication()->getCharsets()->setQFont(fnt);
     paint.setFont( fnt );
     paint.setPen( iaTxt );

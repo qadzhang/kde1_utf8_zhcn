@@ -93,8 +93,9 @@ private slots:
   void helpbutton();
   void setup();
   void rulesetLoadError();
-  void usernameChanged( const char *);
-  void passwordChanged( const char *);
+  // [KDE1 Revival 2026] 槽签名 TQString 化：与 textChanged(const TQString&) 连接匹配
+  void usernameChanged( const TQString &);
+  void passwordChanged( const TQString &);
   void enterPressedInID();
   void enterPressedInPW();
 

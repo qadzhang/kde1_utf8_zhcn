@@ -102,7 +102,8 @@ startupdata::startupdata
 	SLE_Nicks->setGeometry( 200, 190, 180, 30 );
 	SLE_Nicks->setMinimumSize( 10, 10 );
 	SLE_Nicks->setMaximumSize( 32767, 32767 );
-	connect( SLE_Nicks, SIGNAL(textChanged(const char*)), SLOT(sle_add_update(const char*)) );
+	// [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，改接 TQString 版（空槽签名同步）
+	connect( SLE_Nicks, SIGNAL(textChanged(const TQString&)), SLOT(sle_add_update(const TQString&)) );
 	SLE_Nicks->setText( "" );
 	SLE_Nicks->setMaxLength( 32767 );
 	SLE_Nicks->setEchoMode( QLineEdit::Normal );
@@ -126,7 +127,8 @@ void startupdata::nicks_delete()
 void startupdata::nicks_add()
 {
 }
-void startupdata::sle_add_update(const char*)
+// [KDE1 Revival 2026] 槽签名 TQString 化（空槽体，仅为连接匹配）
+void startupdata::sle_add_update(const TQString&)
 {
 }
 

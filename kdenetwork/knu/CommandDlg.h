@@ -135,7 +135,8 @@ public slots:
   void selectAll() {commandTextArea->selectAll();};
 
 protected slots:
-    virtual void slotEnableGoBtn(const char *);
+    // [KDE1 Revival 2026] 槽签名 TQString 化：与 textChanged(const TQString&) 连接匹配
+    virtual void slotEnableGoBtn(const TQString &);
     void slotStopCommand();
     virtual void slotLauchCommand();
 };

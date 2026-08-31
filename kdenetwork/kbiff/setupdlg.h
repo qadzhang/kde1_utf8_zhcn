@@ -121,7 +121,8 @@ public:
 	const bool  getSessionManagement() const;
 
 public slots:
-	void readConfig(const char *profile);
+	// [KDE1 Revival 2026] 槽签名 TQString 化：接收 highlighted(const TQString&)
+	void readConfig(const TQString &profile);
 	void saveConfig(const char *profile);
 
 private:
@@ -152,7 +153,7 @@ public:
 	const bool getStatus() const;
 
 public slots:
-	void readConfig(const char *profile);
+	void readConfig(const TQString &profile);
 	void saveConfig(const char *profile);
 
 protected slots:
@@ -198,7 +199,8 @@ public:
 	void setAsync(bool on);
 
 protected slots:
-	void portModified(const char* text);
+	// [KDE1 Revival 2026] 槽签名 TQString 化：与 textChanged(const TQString&) 连接匹配
+	void portModified(const TQString& text);
 	void preauthModified(bool toggled);
 	void keepaliveModified(bool toggled);
 	void asyncModified(bool toggled);
@@ -225,7 +227,7 @@ public:
 	const QList<KBiffURL> getMailboxList() const;
 
 public slots:
-	void readConfig(const char *profile);
+	void readConfig(const TQString &profile);
 	void saveConfig(const char *profile);
 
 protected slots:

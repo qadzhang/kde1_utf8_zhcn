@@ -60,7 +60,9 @@ KornOptData::KornOptData
 	cancelButton = new QPushButton( this, "CancelButton" );
 	cancelButton->setGeometry( 300, 320, 100, 30 );
 	{
-		QFont font( "helvetica", 12, 63, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		cancelButton->setFont( font );
@@ -81,7 +83,9 @@ KornOptData::KornOptData
 	tmpQLabel = new QLabel( this, "Label_1" );
 	tmpQLabel->setGeometry( 20, 20, 100, 20 );
 	{
-		QFont font( "helvetica", 12, 63, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		tmpQLabel->setFont( font );
@@ -161,7 +165,8 @@ KornOptData::KornOptData
 
 	notifyCmd = new QLineEdit( this, "LineEdit_10" );
 	notifyCmd->setGeometry( 240, 220, 150, 30 );
-	connect( notifyCmd, SIGNAL(textChanged(const char*)), SLOT(dataChanged(const char*)) );
+	// [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，改接 TQString 版（空槽签名同步）
+	connect( notifyCmd, SIGNAL(textChanged(const TQString&)), SLOT(dataChanged(const TQString&)) );
 	notifyCmd->setText( "" );
 	notifyCmd->setMaxLength( 32767 );
 	notifyCmd->setEchoMode( QLineEdit::Normal );
@@ -209,7 +214,8 @@ void KornOptData::deleteBox()
 void KornOptData::dataChanged()
 {
 }
-void KornOptData::dataChanged(const char*)
+// [KDE1 Revival 2026] 槽签名 TQString 化（空槽体，仅为连接匹配）
+void KornOptData::dataChanged(const TQString&)
 {
 }
 

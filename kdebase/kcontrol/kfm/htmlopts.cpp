@@ -91,8 +91,9 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 
     getFontList( standardFonts, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
     m_pStandard->insertStrList( &standardFonts );
-    connect( m_pStandard, SIGNAL( activated( const char * ) ),
-             SLOT( slotStandardFont( const char * ) ) );
+    // [KDE1 Revival 2026] TQComboBox 仅有 activated(int) 信号——槽内取文本
+    connect( m_pStandard, SIGNAL( activated( int ) ),
+             SLOT( slotStandardFont( int ) ) );
   
     label = new QLabel( i18n( "Fixed Font"), this );
     label->adjustSize();
@@ -107,8 +108,8 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
     getFontList( fixedFonts, "-*-*-*-*-*-*-*-*-*-*-m-*-*-*" );
     m_pFixed->insertStrList( &fixedFonts );
   
-    connect( m_pFixed, SIGNAL( activated( const char * ) ),
-             SLOT( slotFixedFont( const char * ) ) );
+    connect( m_pFixed, SIGNAL( activated( int ) ),
+             SLOT( slotFixedFont( int ) ) );
   
     // default charset Lars Knoll 17Nov98 (moved by David)
     label = new QLabel( i18n( "Default Charset"), this );
@@ -125,8 +126,8 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
     m_pCharset->adjustSize();
     m_pCharset->setMinimumSize(m_pCharset->size());
     lay->addWidget(m_pCharset,5,2);
-    connect( m_pCharset, SIGNAL( activated( const char * ) ),
-             SLOT( slotCharset( const char * ) ) );
+    connect( m_pCharset, SIGNAL( activated( int ) ),
+             SLOT( slotCharset( int ) ) );
 
     connect( bg, SIGNAL( clicked( int ) ), SLOT( slotFontSize( int ) ) );
 
@@ -184,19 +185,19 @@ void KFontOptions::slotFontSize( int i )
     fSize = i+3;
 }
 
-void KFontOptions::slotStandardFont( const char *n )
+void KFontOptions::slotStandardFont( int index )
 {
-    stdName = n;
+    stdName = m_pStandard->text( index );
 }
 
-void KFontOptions::slotFixedFont( const char *n )
+void KFontOptions::slotFixedFont( int index )
 {
-    fixedName = n;
+    fixedName = m_pFixed->text( index );
 }
 
-void KFontOptions::slotCharset( const char *n )
+void KFontOptions::slotCharset( int index )
 {
-    charsetName = n;
+    charsetName = m_pCharset->text( index );
 }
 
 void KFontOptions::loadSettings()

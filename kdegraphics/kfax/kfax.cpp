@@ -392,7 +392,8 @@ void TopLevel::setupMenuBar(){
 
 
   QString about;
-  about.sprintf(i18n("\nKFax %s\n\n"
+  // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+  about = kde_sprintf(i18n("\nKFax %s\n\n"
 		     "Copyright 1997-98\n"
                      "Bernd Johannes Wuebben\n"
                      "wuebben@kde.org"), KFAXVERSION);
@@ -992,7 +993,8 @@ void TopLevel::printIt(){
   if(width <= 0.0 || height <=0.0 ){
 
     QString str;
-    str.sprintf(i18n("Invalid page dimensions:\nWidth %.2f Height %.2f\n"),
+    // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+    str = kde_sprintf(i18n("Invalid page dimensions:\nWidth %.2f Height %.2f\n"),
 		width,height);
     QMessageBox::warning(this, "KFax",str.data(), "OK",0);
 
@@ -1008,7 +1010,8 @@ void TopLevel::printIt(){
 
     if(psfile == NULL){
       QString str;
-      str.sprintf(i18n("Can't print to \"%s\"\n"),pi.cmd.data());
+      // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+      str = kde_sprintf(i18n("Can't print to \"%s\"\n"),pi.cmd.data());
       QMessageBox::warning(this, "KFax",str.data(), i18n("OK"),0);
       return;
     }
@@ -1019,7 +1022,8 @@ void TopLevel::printIt(){
     psfile = fopen(pi.file.data(),"w");
     if(psfile == NULL){
       QString str;
-      str.sprintf(i18n("Couldn't create %s\n"),pi.file.data());
+      // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+      str = kde_sprintf(i18n("Couldn't create %s\n"),pi.file.data());
       QMessageBox::warning(this,"KFax",str.data(), i18n("OK"),0);
       return;
     }
@@ -2397,7 +2401,8 @@ void TopLevel::uiUpdate(){
     }
     
     QString pagestr;
-    pagestr.sprintf(i18n("P.%d of %d"),currentpage,pages);
+    // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+    pagestr = kde_sprintf(i18n("P.%d of %d"),currentpage,pages);
 
     statusbar->changeItem(pagestr.data(), ID_PAGE_NO);
 
@@ -2408,12 +2413,14 @@ void TopLevel::uiUpdate(){
 
     QString wh;
 
-    wh.sprintf(i18n("W: %d H: %d"),Image->width,Image->height);
+    // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+    wh = kde_sprintf(i18n("W: %d H: %d"),Image->width,Image->height);
     statusbar->changeItem(wh.data(), ID_INS_OVR);
     }
 
     QString resolution;
-    resolution.sprintf(i18n("Res: %s"),thispage->vres ? i18n("Fine") : i18n("Normal"));
+    // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+    resolution = kde_sprintf(i18n("Res: %s"),thispage->vres ? i18n("Fine") : i18n("Normal"));
     statusbar->changeItem(resolution.data(), ID_GENERAL);
 
     statusbar->changeItem(thispage->name,ID_FNAME);

@@ -45,9 +45,10 @@ protected slots:
     virtual void AutoContinueCheckBoxClicked();
     virtual void LandscapeCheckBoxClicked();
     virtual void ProtraitCheckBoxClicked();
-    virtual void FormatSelected(const char*);
-    virtual void copiesChanged(const char*);
-    virtual void linesChanged(const char*);
+    // [KDE1 Revival 2026] 槽签名 TQt3 化：组合框槽收 int、行编辑槽收 TQString（匹配原生信号）
+    virtual void FormatSelected(int);
+    virtual void copiesChanged(const TQString&);
+    virtual void linesChanged(const TQString&);
 
 protected:
 

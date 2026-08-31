@@ -459,9 +459,10 @@ class FontChanger : public QObject {
     FontChanger(QWidget *parent, int x, int y);
     void setRef(ItemFont *);
   protected slots:
-    void familyChanged(const char *);
+    // [KDE1 Revival 2026] 槽签名改 int：与 activated(int) 连接匹配（sizeChanged(int) 同形态）
+    void familyChanged(int);
     void sizeChanged(int);
-    void charsetChanged(const char *);
+    void charsetChanged(int);
   protected:
     void displayCharsets();
     ItemFont *font;

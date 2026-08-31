@@ -47,10 +47,11 @@ protected slots:
     virtual void InitializeClicked();
     virtual void HelpClicked();
     virtual void AboutClicked();
-    virtual void PageProtectSelected(const char*);
+    // [KDE1 Revival 2026] 槽签名改 int：与 activated(int) 连接匹配
+    virtual void PageProtectSelected(int);
     virtual void DosButtonClicked();
     virtual void EjectButtonClicked();
-    virtual void PowerSaveComboSelected(const char*);
+    virtual void PowerSaveComboSelected(int);
     virtual void UnixButtonClicked();
 
 protected:

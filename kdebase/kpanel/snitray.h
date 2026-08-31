@@ -37,6 +37,11 @@ struct SNIClient {
     // [KDE1 Revival 2026] 本 item 的 IconPixmap Get 调用序号——dbus 侧
     // 在 send 时分配，reply 以之路由回对应 item（多 item 并发取图不串线）
     dbus_uint32_t iconSerial;
+    // [KDE1 Revival 2026] 图标获取状态机：0=空闲；1=已发 IconPixmap 的
+    // Get 等应答；2=IconPixmap 空/失败后改发 IconName 等应答。
+    // fcitx5 等以主题图标名工作的 item 其 IconPixmap 为空数组，必须走
+    // IconName → XDG 图标主题目录查找的回退链，否则图标永远空白
+    int iconState;
 };
 
 class SNITray : public QObject
@@ -54,17 +59,26 @@ public:
     QPtrList<SNIClient> clients;
     int count() const { return clients.count(); }
 
+    // [KDE1 Revival 2026] 点击转发：按 X 窗口找 item / 发送 SNI 交互方法
+    SNIClient *clientByWindow(Window w);
+    void sendClick(SNIClient *c, int button, int x_root, int y_root);
+
 signals:
     void clientsChanged();
 
 public slots:
     void slotDispatch();
+    /* [KDE1 Revival 2026] DBus 写缓冲延迟冲刷——filter 栈内同步 flush 与
+       dispatch 循环死锁，统一经 zero-timer 转移到事件循环 */
+    void slotFlush();
 private:
     void handleItemRegister(const char *service, const char *path);
     void handleItemUnregister(const char *service);
     void emitItemChange(const char *member, const char *service);
     void renderIcon(SNIClient *c, const unsigned char *argb,
                     int w, int h);
+    void renderQImage(SNIClient *c, const QImage &image); // 通用渲染出口
+    void requestIconName(SNIClient *c);  // IconPixmap 失败/为空时的回退链
     static DBusHandlerResult messageFilter(DBusConnection *, DBusMessage *, void *);
     SNIClient *clientByService(const QString &service);
 

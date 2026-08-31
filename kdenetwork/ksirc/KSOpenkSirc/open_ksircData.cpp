@@ -29,7 +29,9 @@ open_ksircData::open_ksircData
 	PB_Connect->setMinimumSize( 10, 10 );
 	PB_Connect->setMaximumSize( 32767, 32767 );
 	{
-		QFont font( "helvetica", 12, 63, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		PB_Connect->setFont( font );
@@ -76,7 +78,9 @@ open_ksircData::open_ksircData
 	dlgedit_Label_2->setMinimumSize( 10, 10 );
 	dlgedit_Label_2->setMaximumSize( 32767, 32767 );
 	{
-		QFont font( "helvetica", 12, 75, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		dlgedit_Label_2->setFont( font );
@@ -93,7 +97,9 @@ open_ksircData::open_ksircData
 	dlgedit_Label_3->setMinimumSize( 10, 10 );
 	dlgedit_Label_3->setMaximumSize( 32767, 32767 );
 	{
-		QFont font( "helvetica", 12, 75, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		dlgedit_Label_3->setFont( font );
@@ -110,7 +116,9 @@ open_ksircData::open_ksircData
 	dlgedit_Label_4->setMinimumSize( 10, 10 );
 	dlgedit_Label_4->setMaximumSize( 32767, 32767 );
 	{
-		QFont font( "helvetica", 12, 75, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		dlgedit_Label_4->setFont( font );
@@ -137,7 +145,9 @@ open_ksircData::open_ksircData
 	dlgedit_Label_6->setMinimumSize( 10, 10 );
 	dlgedit_Label_6->setMaximumSize( 32767, 32767 );
 	{
-		QFont font( "helvetica", 12, 75, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		dlgedit_Label_6->setFont( font );

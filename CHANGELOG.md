@@ -2,6 +2,21 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-09-01（用户八项报障根治 + minelnk 关联大修 + ai-code-testing 全项目二次排查 + 现代 XDG 应用菜单）
+
+- **问题1 颜色错误（窗口边条红黑/kfract/PNG 色错）根治**：Qt1→TQt3 字节序语义差异四处同族修复——kwm/gradientFill.C 与 ksirc/KMDIMgrBase.cpp 的渐变生成由字节级 R,G,B,X 逐字节写入改为 qRgb 值级写入；kimgio/pngr.cpp 读写双向补 `png_set_bgr`/filler(0xff)（顺带恢复被注释的调色板 PLTE 写出）、tiffr.cpp 启用 TIFFGetR 通道重组、kpixmap.cpp 的 kdither_32_to_8 INDEXOF 字节序分支交换（8bpp 潜伏）。视觉验证：标题条蓝白渐变、RGB 测试图无交换、PNG 读写往返程序 PASS。
+- **问题2 ksnapshot 修复**：字体方块（QFont("courier") 硬编码）→默认族；保存类型失效根因是 formatBox 的 `activated(const char*)` 信号在 TQt3 不存在（kdegraphics 纳入时漏网）——改 activated(int)+槽取文本；formats.cpp 的 numFormats=5→7（XPM/PNM 原本进不了格式表）、GIF/PNM 改走 TQt3 内置（原空 handler 覆盖内置反废掉读写）；delayEdit/filenameEdit 的 textChanged 同修。
+- **问题3 注销窗口鼠标点不动根治**：processSaveYourself 结尾 XAllowEvents(Replay) 改 XUngrabPointer/XUngrabKeyboard（主动 grab 的 Replay 不解除，root grab 悬挂吞鼠标）；四对话框（logout/warning/taskmgr/minicli）grabMouse 改裸 XGrabPointer(CurrentTime, confine)（TQt3 的 grabMouse 携带过期 tqt_x_time 必被 GrabInvalidTime 拒绝）；showLogout 的 while 重试加安全阀防死循环。实测鼠标点击"注销"按钮成功注销会话。
+- **问题4 现代软件菜单**：新增 gen-xdg-apps.py（startkde 每次登录把 /usr/share/applications 的 XDG desktop 条目幂等转换为 ~/.kde/share/applnk/Modern/ 子树，含中文双键/图标解析复制/Terminal 包装）；kpanel parseMenus 将 Modern 子树提升为 K 菜单**顶层**分类「现代应用」。实测 K 菜单出现该分类且全中文；xdg-open 链路实证（SystemOpen→kview 打开 png）。
+- **问题5 fcitx5 SNI 托盘根治（三重根因）**：①对象路径——按总线名注册时默认 "/"，fcitx5 的 item 在 /StatusNotifierItem，图标 Get 恒 error；②Get 应答的 VARIANT 容器缺类型签名——libdbus 断言直接 abort 整个 kpanel；③dbus_connection_flush 在 filter 栈内死锁 + libdbus 缓冲滞留使 QSocketNotifier 失效——改 zero-timer 延迟冲刷 + 100ms 周期 dispatch 兜底。另补 IconName 回退链（空 IconPixmap 数组→按名查图标；全主题扫描+symbolic 后缀剥离，fcitx5 的 input-keyboard-symbolic 命中 Tango）；点击转发 Activate/ContextMenu/SecondaryActivate（左键切换输入法、右键弹 fcitx5 菜单）；XEmbed 右键不再被 kpanel 退出菜单截走（改 Shift+右键）。实测：图标渲染、左右键 dbus 调用送达、面板重启后自动重连。
+- **问题6 跨桌面直接运行**：七个模块 CMake 统一 CMAKE_INSTALL_RPATH 烧入 /usr/kde1/lib 与 /usr/kde1/tqt3/lib——XFCE 等环境直接运行 /usr/kde1/bin 程序不再报 libtqt-mt.so.3 缺失。
+- **问题7 窗口划过图标变黑**：全项目 grab 泄漏根治（问题3 同源）后沙箱复测拖动窗口扫过图标区 0 差异像素；疑为 grab 悬挂冻结事件路由导致图标收不到重绘。真机表现待用户确认。
+- **问题8 音效桥**：libpulsedsp 预载方案实测通过（/dev/dsp 直写测试在 PulseAudio 侧出现 sink-input）；sandbox.sh 与 startkde-kde1 补 XDG_RUNTIME_DIR 探测（干净环境缺失时 padsp 静默丢流）。
+- **minelnk 文件关联大修（参考现代系统）**：51 个 mimelnk 补 Comment[zh_CN]（对齐现代 KDE 类型描述术语）；DefaultApp 补 12 处（text/html→kfm 双内核、C/C++/shell 源码→kwrite）；新建 applnk/Internet/kfm.kdelnk（text/html 默认程序须存在于 applnk 树）；kpaint 补 MimeType 声明（此前 90/102 条目无声明致"打开方式"列表近乎全空）。
+- **ai-code-testing 全项目静态审查批量修复（三路并行审查 + 逐一实修）**：①信号静默失效约 40 处（kdelibs 8 + kdebase 14 + 五模块 19——knu Go 键、kppp DNS、kljettool 全部 13 处、kfontmanager 4 处、kfm 地址栏补全双向、htmlopts 字体设置、useragentdlg、kwrite 高亮配置等，全部 activated(int)/textChanged(TQString)/highlighted 适配）；②varargs 传 TQString 对象 4 处（krootprop×2/kconfigbase 字体落盘/netpbm——编译静默通过运行期读对象指针为垃圾，新识别缺陷族）；③UTF-8 堆溢出 7 处（kfm 中文链接 href/target、kcharsets copy()、kdehelp selection/书签、kmenuedit DnD——length() 按 UTF-16 码元分配而 strcpy 按 UTF-8 字节复制）；④翻译格式串 sprintf 乱码 30+ 处（kfax 7/kghostview 3/kiojob 5/scrnsave/karm/knotes/klpq 等统一改 kde_sprintf）；⑤QFont 西文字族硬编码 25 处清零（kwrite/kedit 正文 courier、控制中心标题 times、ksirc/korn 设计器文件等——中文环境 tofu 根源之一）；⑥健壮性：kicongrid kdither 深度守卫+字节序、kshisen lighten 32bpp 假设越界、karchie 烧录路径、kdehelp fopen 空指针、useragentdlg 悬垂指针、kfm cp 引号。
+- **验证体系**：全部修复经沙箱实测闭环——颜色（视觉模型核验蓝白渐变/RGB 无交换）、注销（真注销成功）、SNI（dbus 方法调用实证）、音效（PulseAudio sink-input 实证）、9 应用批量视觉回归（菜单全中文无乱码）。
+- 重打包 7 deb + sdeb；kdelibs/kdebase/kdenetwork/kdegames/kdegraphics/kdeutils/kdetoys 全量重编装载。
+
 ## 2026-08-31（第五批：全项目 UTF-8/健壮性二次审查 + 翻译补齐 + 逐应用视觉验收）
 
 - **二次审查修复（上批未提交改动的复检）**：① kwrite 视图层 UTF-8 修复此前误写入不被编译的上游死副本（kwrite_view.cpp 等 6 个文件，CMake 实际编译 kwview.cpp），已移植到 kwview.cpp 并删除全部死副本；② kwdoc.cpp 三个测宽/定位函数补空行/行尾守卫（TextLine 空行时 getText() 返回 NULL，&getText()[z] 野指针读段错误）；③ kquickhelp 换行分支补 return（多行 WhatsThis 首行后内容全部不渲染）；④ kdetoys/kdeutils/kdenetwork/kdegraphics 四份 common/config.h 的 13 个目录宏残留 /opt/kde1 → KDEDIR 拼接；⑤ kfwin 缩进、kvt 死变量、fuzz 产物 ELF 入 .gitignore。

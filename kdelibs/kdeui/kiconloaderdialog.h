@@ -142,7 +142,7 @@ public:
 
 protected slots:
   void filterChanged();
-  void dirChanged(const char *);
+  void dirChanged(int); // [KDE1 Revival 2026] TQComboBox 仅 activated(int)，槽内按索引取文本
   void reject();
   void needReload();
   

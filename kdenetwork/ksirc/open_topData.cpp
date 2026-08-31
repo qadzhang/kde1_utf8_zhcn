@@ -31,7 +31,9 @@ open_topData::open_topData
 	dlgedit_Label_1->setMinimumSize( 10, 10 );
 	dlgedit_Label_1->setMaximumSize( 32767, 32767 );
 	{
-		QFont font( "helvetica", 12, 63, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		dlgedit_Label_1->setFont( font );
@@ -45,7 +47,9 @@ open_topData::open_topData
 	okButton->setMinimumSize( 10, 10 );
 	okButton->setMaximumSize( 32767, 32767 );
 	{
-		QFont font( "helvetica", 12, 63, 0 );
+		// [KDE1 Revival 2026] 弃用硬编码字族与 1999 年权重参数，保留字号 12（fontconfig 默认族）
+		QFont font;
+		font.setPointSize(12);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		okButton->setFont( font );

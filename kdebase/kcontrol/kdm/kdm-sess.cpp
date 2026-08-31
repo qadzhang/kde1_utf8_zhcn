@@ -81,8 +81,9 @@ void KDMSessionsWidget::setupPage(QWidget *)
 
       session_lined = new QLineEdit(group2);
       session_lined->setFixedHeight(session_lined->sizeHint().height());
-      connect(session_lined, SIGNAL(textChanged(const char*)),
-              SLOT(slotCheckNewSession(const char*)));
+      // [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)
+      connect(session_lined, SIGNAL(textChanged(const TQString&)),
+              SLOT(slotCheckNewSession(const TQString&)));
       connect(session_lined, SIGNAL(returnPressed()),
               SLOT(slotAddSessionType()));
 
@@ -172,10 +173,9 @@ void KDMSessionsWidget::slotSessionHighlighted(int s)
     sessionslb->centerCurrentItem();
 }
 
-void KDMSessionsWidget::slotCheckNewSession(const char *s)
+void KDMSessionsWidget::slotCheckNewSession(const TQString &s)
 {
-  QString str = s;
-  btnadd->setEnabled(str.length() > 0);
+  btnadd->setEnabled(s.length() > 0);
 }
 
 void KDMSessionsWidget::slotSessionUp()

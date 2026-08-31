@@ -2705,8 +2705,13 @@ void KHTMLWidget::parseA( HTMLClueV *_clue, const char *str )
 	}
 	if ( !target && !baseTarget.isEmpty() )
 	{
-	    target = new char [ baseTarget.length()+1 ];
-	    strcpy( target, baseTarget );
+	    // [KDE1 Revival 2026] length() 是 UTF-16 码元数——中文 target 每字符 3 字节
+	    // 会堆越界；按 utf8() 字节数组深拷贝
+	    {
+		TQCString tb = baseTarget.utf8();
+		target = new char [ tb.size() ];
+		memcpy( target, tb.data(), tb.size() );
+	    }
 	    parsedTargets.append( target );
 	}
 	if ( !tmpurl.isEmpty() )
@@ -2719,8 +2724,12 @@ void KHTMLWidget::parseA( HTMLClueV *_clue, const char *str )
 	    if ( settings->underlineLinks )
 		underline = true;
 	    selectFont();
-	    url = new char [ tmpurl.length() + 1 ];
-	    strcpy( url, tmpurl.data() );
+	    // [KDE1 Revival 2026] 同上——中文链接 href 按字节数深拷贝防越界
+	    {
+		TQCString ub = tmpurl.utf8();
+		url = new char [ ub.size() ];
+		memcpy( url, ub.data(), ub.size() );
+	    }
 	    parsedURLs.append( url );
 	}
     }

@@ -171,8 +171,11 @@ void BookmarkTokenizer::write( const char *str )
 		       tqDebug("Converted to: %s, len: %i\n",(const char *)res,len);
 		       if ( len > 0 )
 		       {
-			   memcpy(dest,(const char *)res,res.length());
-			   dest+=res.length();
+			   // [KDE1 Revival 2026] length() 是 UTF-16 码元数——中文
+			   // 实体转换结果按 UTF-8 字节数拷贝防截断
+			   int resBytes = strlen((const char *)res);
+			   memcpy(dest,(const char *)res,resBytes);
+			   dest+=resBytes;
 			   src+=len;
 		       }
 		       else

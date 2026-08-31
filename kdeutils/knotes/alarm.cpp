@@ -55,7 +55,8 @@ AlarmDlg::AlarmDlg(KPostit *parent, const char *name)
     this->setFocusPolicy(QWidget::StrongFocus);
 
     QString str;
-    str.sprintf(klocale->translate("Alarm Timer for: %s"),postit->name.data());
+    // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf：TQString::sprintf 对 UTF-8 译文按字节升位会乱码
+    str = kde_sprintf(klocale->translate("Alarm Timer for: %s"),postit->name.data());
 
     frame1 = new QGroupBox(str.data(), this, "frame1");
     

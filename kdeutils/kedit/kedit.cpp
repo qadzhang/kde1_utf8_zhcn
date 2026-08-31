@@ -1673,7 +1673,9 @@ void TopLevel::readSettings(){
 
 	// let's set the defaults
 
-	generalFont = QFont ("courier", 12, QFont::Normal);
+	// [KDE1 Revival 2026] 弃用硬编码字族（fontconfig 默认族），保留字号 12（字重默认即 Normal）
+	generalFont = QFont();
+	generalFont.setPointSize(12);
 	editor_width = 550;
 	editor_height = 400;
 	hide_statusbar = FALSE;

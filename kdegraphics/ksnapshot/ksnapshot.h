@@ -38,10 +38,12 @@ public slots:
   void autoRaiseToggledSlot();
   void hideSelfToggledSlot();
   void grabWindowToggledSlot();
-  void filenameChangedSlot(const char *);
-  void formatChangedSlot(const char *);
+  // [KDE1 Revival 2026] 槽签名随 TQLineEdit 信号改 const TQString&
+  void filenameChangedSlot(const TQString &);
+  void formatChangedSlot(int);
   void browsePressedSlot();
-  void delayChangedSlot(const char *text);
+  // [KDE1 Revival 2026] 同上
+  void delayChangedSlot(const TQString &text);
   void helpSlot();
   void closeSlot();
   void showPreviewSlot();

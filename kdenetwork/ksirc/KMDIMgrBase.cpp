@@ -495,16 +495,15 @@ void KMDITitleLabel::kwm_gradientFill(KPixmap &pm, QColor ca, QColor cb,
     int d_green = (c_green_b - c_green_a) / w;
     int d_blue = (c_blue_b - c_blue_a) / w;
 
+    // [KDE1 Revival 2026] 值级 qRgb 写入替代 Qt1 字节级 R,G,B,X 逐字节写入——
+    // TQt3 32bpp 内存序为 B,G,R,A，字节级写法红蓝对调（与 kwm/gradientFill.C 同源修复）
     QImage img(w, h, 32);
-    uchar *p = img.scanLine(0);
+    uint *p = (uint *)img.scanLine(0);
 
     int r = c_red_a, g = c_green_a, b = c_blue_a;
     for(int x = 0; x < w; x++) {
-      *p++ = r >> 16;
-      *p++ = g >> 16;
-      *p++ = b >> 16;
-      p++;
-      
+      *p++ = qRgb(r >> 16, g >> 16, b >> 16);
+
       r += d_red;
       g += d_green;
       b += d_blue;

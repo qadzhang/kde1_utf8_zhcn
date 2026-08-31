@@ -1442,7 +1442,7 @@ int main(int argc, char **argv)
   // TODO: make default font and font sizes configurable
   KConfig *cfg = kapp->getConfig();
   cfg->setGroup("kvt");
-  QFont fntDef("fixed", 10);
+  QFont fntDef; fntDef.setPointSize(10); fntDef.setStyleHint(QFont::TypeWriter); // [KDE1 Revival 2026] 弃硬编码 "fixed" 改等宽提示
   fntDef = cfg->readFontEntry("defaultFont", &fntDef);
   kvt_fnt2.setPointSize(cfg->readNumEntry("fontSize2", 7));
   kvt_fnt3.setPointSize(cfg->readNumEntry("fontSize3", 10));

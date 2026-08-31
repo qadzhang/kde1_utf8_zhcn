@@ -55,7 +55,7 @@ protected slots:
         void slotAddSessionType();
         void slotRemoveSessionType();
         void slotSessionHighlighted(int);
-        void slotCheckNewSession(const char*);
+        void slotCheckNewSession(const TQString&);
         void slotSessionUp();
         void slotSessionDown();
 

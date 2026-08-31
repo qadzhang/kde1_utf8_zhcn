@@ -197,9 +197,15 @@ int main(int argc, char *argv[])
 	key_t key = ftok( getenv( "HOME" ), (char)rand() );
 	msgqid = msgget( key, IPC_CREAT | 0600 );
 
+	// [KDE1 Revival 2026] fopen 失败（HOME 只读/磁盘满）时 fprintf 直接解引用
+	// NULL 即段错误——检查后降级为 stderr 提示
 	fp = fopen( pidFile, "w" );
-	fprintf( fp, "%ld %d\n", (long)getpid(), msgqid );
-	fclose( fp );
+	if ( fp ) {
+	    fprintf( fp, "%ld %d\n", (long)getpid(), msgqid );
+	    fclose( fp );
+	} else {
+	    fprintf( stderr, "kdehelp: 无法写入 %s：%s\n", pidFile, strerror(errno) );
+	}
 
 	// so that everything is cleaned up
 	catchSignals();

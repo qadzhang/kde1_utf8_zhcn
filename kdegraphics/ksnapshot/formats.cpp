@@ -3,7 +3,8 @@
 #include "gif.h"
 #include "eps.h"
 
-static int numFormats= 5;
+// [KDE1 Revival 2026] 实际条目共 7 个，原值 5 使 XPM/PNM 未进格式列表
+static int numFormats= 7;
 
 static FormatRecord formatlist[]= {
   {
@@ -15,8 +16,10 @@ static FormatRecord formatlist[]= {
     0, 0,
   }, 
   {
+    // [KDE1 Revival 2026] GIF 改走 TQt3 内置编解码（003 补丁已启用；原
+    // 自定义注册把读 handler 置空，反而废掉了内置 GIF 读取）
     "GIF",
-    FormatRecord::WriteFormat,
+    FormatRecord::InternalFormat | FormatRecord::ReadFormat | FormatRecord::WriteFormat,
     "^GIF[0-9][0-9][a-z]",
     "*.gif",
     "gif",
@@ -55,8 +58,10 @@ static FormatRecord formatlist[]= {
     0, 0,
   },
   {
+    // [KDE1 Revival 2026] 原 flags=0 会以空 handler 覆盖 TQt3 内置 PNM
+    // 读写（读写出错）；改 InternalFormat 声明，读写均由 TQt3 qppmio 提供
     "PNM",
-    0,
+    FormatRecord::InternalFormat | FormatRecord::ReadFormat | FormatRecord::WriteFormat,
     "*.pbm *.pgm *.ppm",
     "ppm",
     0, 0

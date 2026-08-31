@@ -213,6 +213,7 @@ public:
 #define strnicmp  strncasecmp
 #define qstrdup   tqstrdup
 #define qRgb      tqRgb
+#define qRgba     tqRgba
 #define qAddPostRoutine tqAddPostRoutine
 #define qSetRgb   tqSetRgb
 

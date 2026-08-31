@@ -21,7 +21,8 @@ mainWidget::mainWidget(QWidget *parent , const char *name)
   KIconLoader iconLoader;
 
   QLabel *heading = new QLabel(klocale->translate("KDE Control Center"),this);
-  QFont font("times",18,QFont::Bold);
+  // [KDE1 Revival 2026] 弃硬编码 "times"（无 CJK 字形）改默认族
+  QFont font; font.setPointSize(18); font.setBold(true);
   KApplication::getKApplication()->getCharsets()->setQFont(font);
   pmap = iconLoader.loadIcon("kdekcc.xpm");
   heading->setFont(font);
@@ -38,9 +39,9 @@ void mainWidget::paintEvent(QPaintEvent *)
   char buf[512];
   QPainter p(this);
   
-  QFont normalFont("times",12,QFont::Normal);
+  QFont normalFont; normalFont.setPointSize(12);
   KApplication::getKApplication()->getCharsets()->setQFont(normalFont);
-  QFont boldFont("times",12,QFont::Bold);
+  QFont boldFont; boldFont.setPointSize(12); boldFont.setBold(true);
   KApplication::getKApplication()->getCharsets()->setQFont(boldFont);
 
   // center the pixmap horizontally

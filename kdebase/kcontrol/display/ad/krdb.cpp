@@ -117,7 +117,7 @@ int main( int argc, char ** argv )
 	
 	QColor col, backCol;
 	
-	QFont fnt( "helvetica", 12 );
+	QFont fnt; fnt.setPointSize(12); // [KDE1 Revival 2026] 弃硬编码字族改默认族
 	
 	KConfig *config = kapp->getConfig();
 	

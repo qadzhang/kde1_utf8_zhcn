@@ -191,7 +191,8 @@ void KarmWindow::makeMenus()
 	_helpMenu = new QPopupMenu;
 
 	QString about;
-	about.sprintf( i18n("%s %s -- Sirtaj Singh Kang\n"
+	// [KDE1 Revival 2026] 翻译格式串走 kde_sprintf：TQString::sprintf 对 UTF-8 译文按字节升位会乱码
+	about = kde_sprintf( i18n("%s %s -- Sirtaj Singh Kang\n"
 			"taj@kde.org, Oct 1997\n\n"
 			"The K Desktop Environment"), 
 			_karm->KarmName.data(), KARM_VERSION);

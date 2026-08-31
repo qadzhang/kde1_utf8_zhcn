@@ -61,7 +61,9 @@ void KSnapShot::buildGui()
 {
   QString s;
   QPixmap previewPixmap;
-  QFont titleFont("courier");
+  // [KDE1 Revival 2026] 弃硬编码 "courier" 字族——现代 fontconfig 无此名，
+  // 缺 CJK 字形时中文环境渲染为方块；改用默认字族（仅保留字号/粗体设定）
+  QFont titleFont;
   
   titleFont.setPointSize(24);
   titleFont.setBold(true);
@@ -91,7 +93,8 @@ void KSnapShot::buildGui()
   titleLayout->addWidget(titleLabel);
 
   QString about;
-  about.sprintf(i18n(
+  // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+  about = kde_sprintf(i18n(
 		     "Press the `Grab' button, then click\n"
 		     "on a window to grab it.\n\n"
 		     "KSnapshot is copyright Richard Moore (rich@kde.org)\n"
@@ -255,12 +258,16 @@ void KSnapShot::buildGui()
   connect(closeButton, SIGNAL(clicked()), this, SLOT(closeSlot()));
   connect(saveButton, SIGNAL(clicked()), this, SLOT(saveSlot()));
   connect(browseButton, SIGNAL(clicked()), this, SLOT(browsePressedSlot()));
-  connect(formatBox, SIGNAL(activated(const char *)), this, SLOT(formatChangedSlot(const char *)));
+  // [KDE1 Revival 2026] TQComboBox 仅存在 activated(int) 信号（const char*
+  // 版为 Qt1 专有）——原连接静默失败，保存类型选择从不生效（恒按 GIF 保存）
+  connect(formatBox, SIGNAL(activated(int)), this, SLOT(formatChangedSlot(int)));
   connect(hideSelfCheck, SIGNAL(toggled(bool)), this, SLOT(hideSelfToggledSlot()));
   connect(autoRaiseCheck, SIGNAL(toggled(bool)), this, SLOT(autoRaiseToggledSlot()));
   connect(grabWindowCheck, SIGNAL(toggled(bool)), this, SLOT(grabWindowToggledSlot()));
-  connect(delayEdit, SIGNAL(textChanged(const char *)), this, SLOT(delayChangedSlot(const char *)));
-  connect(filenameEdit, SIGNAL(textChanged(const char *)), this, SLOT(filenameChangedSlot(const char *)));
+  // [KDE1 Revival 2026] TQLineEdit 仅有 textChanged(const TQString&) 信号（const char*
+  // 版为 Qt1 专有）——原连接静默失败，延迟秒数与文件名输入从不生效
+  connect(delayEdit, SIGNAL(textChanged(const TQString &)), this, SLOT(delayChangedSlot(const TQString &)));
+  connect(filenameEdit, SIGNAL(textChanged(const TQString &)), this, SLOT(filenameChangedSlot(const TQString &)));
   connect(previewButton, SIGNAL(clicked()), this, SLOT(showPreviewSlot()));
 }
 
@@ -411,20 +418,25 @@ void KSnapShot::grabWindowToggledSlot()
   grabDesktop_= !grabDesktop_;
 }
 
-void KSnapShot::filenameChangedSlot(const char *text)
+// [KDE1 Revival 2026] 槽签名随信号改 const TQString&
+void KSnapShot::filenameChangedSlot(const TQString &text)
 {
   filename_= text;
 }
 
-void KSnapShot::delayChangedSlot(const char *text)
+// [KDE1 Revival 2026] 同上；槽体 s=text 对 TQString 仍成立
+void KSnapShot::delayChangedSlot(const TQString &text)
 {
   QString s;
   s= text;
   delay_= s.toInt();
 }
 
-void KSnapShot::formatChangedSlot(const char *format)
+void KSnapShot::formatChangedSlot(int index)
 {
+  // [KDE1 Revival 2026] 槽签名随信号改 activated(int)，格式名按下标取回
+  QString fmtname = formatBox->text(index);
+  const char *format = fmtname;
   QFileInfo fi(filename_);
 
   QString s;

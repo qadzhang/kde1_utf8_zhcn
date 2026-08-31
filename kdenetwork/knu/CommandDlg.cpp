@@ -118,8 +118,9 @@ CommandDlg::CommandDlg(QString,
   commandArgs->setMaximumSize(0x7fffffff  /* TQt3 迁移 */, widgetHeight);
   connect(commandArgs, SIGNAL(returnPressed()), 
 	  this, SLOT(slotLauchCommand()));
-  connect(commandArgs, SIGNAL(textChanged(const char*)), 
-	  this, SLOT(slotEnableGoBtn(const char*)));
+  // [KDE1 Revival 2026] TQt3 的 TQLineEdit 无 textChanged(const char*) 信号，改接 TQString 版（否则静默失效）
+  connect(commandArgs, SIGNAL(textChanged(const TQString&)), 
+	  this, SLOT(slotEnableGoBtn(const TQString&)));
   commandArgs->setMaxLength(1024);
   commandArgs->setEchoMode(QLineEdit::Normal);
   commandArgs->setFrame(TRUE);
@@ -244,9 +245,10 @@ CommandDlg::tabDeselected()
  * the go button.
  */
 void
-CommandDlg::slotEnableGoBtn(const char *args)
+CommandDlg::slotEnableGoBtn(const TQString &args)
 {
-  if (strlen(args) == 0) {
+  // [KDE1 Revival 2026] 参数已 TQString 化：空判由 strlen 改 isEmpty()
+  if (args.isEmpty()) {
     if (isGoBtnEnabled) {
       isGoBtnEnabled = FALSE;
       commandGoBtn->setEnabled(isGoBtnEnabled);

@@ -39,8 +39,9 @@ PaperData::PaperData
 
 	FormatComboBox = new QComboBox( FALSE, this, "FormatCombo" );
 	FormatComboBox->setGeometry( 25, 60, 100, 25 );
-	connect( FormatComboBox, SIGNAL(activated(const char*)), 
-		 SLOT(FormatSelected(const char*)) );
+	// [KDE1 Revival 2026] TQt3 的 TQComboBox 无 activated(const char*) 信号，改接 activated(int)（槽签名同步）
+	connect( FormatComboBox, SIGNAL(activated(int)), 
+		 SLOT(FormatSelected(int)) );
 	FormatComboBox->setSizeLimit( 10 );
 	FormatComboBox->setAutoResize( FALSE );
 	FormatComboBox->insertItem( "A4" );
@@ -72,8 +73,9 @@ PaperData::PaperData
 	numberofcopies->setMaxLength( 32767 );
 	numberofcopies->setEchoMode( QLineEdit::Normal );
 	numberofcopies->setFrame( TRUE );
-	connect(numberofcopies,SIGNAL(textChanged(const char*)),this,
-		SLOT(copiesChanged(const char*)));
+	// [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，两处改接 TQString 版（槽签名同步）
+	connect(numberofcopies,SIGNAL(textChanged(const TQString&)),this,
+		SLOT(copiesChanged(const TQString&)));
 
 	tmpQLabel = new QLabel( this, "LengthLabel" );
 	tmpQLabel->setGeometry( 25, 160, 100, 20 );
@@ -87,8 +89,8 @@ PaperData::PaperData
 	LengthEdit->setMaxLength( 32767 );
 	LengthEdit->setEchoMode( QLineEdit::Normal );
 	LengthEdit->setFrame( TRUE );
-	connect(LengthEdit,SIGNAL(textChanged(const char*)),this,
-		SLOT(linesChanged(const char*)));
+	connect(LengthEdit,SIGNAL(textChanged(const TQString&)),this,
+		SLOT(linesChanged(const TQString&)));
 
 	OrientButtonGroup = new QButtonGroup( this, "OrientationGroup" );
 	OrientButtonGroup->setGeometry( 145, 30, 170, 90 );
@@ -145,12 +147,13 @@ PaperData::PaperData
 PaperData::~PaperData()
 {
 }
-void PaperData::FormatSelected(const char* format)
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void PaperData::FormatSelected(int index)
 {
   if(!data)
     return;
 
-  data->Format = format;
+  data->Format = FormatComboBox->text(index);
 
 }
 void PaperData::ProtraitCheckBoxClicked()
@@ -202,7 +205,8 @@ void PaperData::AutoContinueCheckBoxClicked()
 }
 
 
-void PaperData::copiesChanged(const char *ncopies){
+// [KDE1 Revival 2026] 槽签名 TQString 化：data 成员本就是 QString，直接赋值
+void PaperData::copiesChanged(const TQString &ncopies){
 
   if(!data)
     return;
@@ -212,7 +216,8 @@ void PaperData::copiesChanged(const char *ncopies){
 
 }
 
-void PaperData::linesChanged(const char *nlines){
+// [KDE1 Revival 2026] 槽签名 TQString 化：data 成员本就是 QString，直接赋值
+void PaperData::linesChanged(const TQString &nlines){
 
   if(!data)
     return;

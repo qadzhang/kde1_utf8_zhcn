@@ -119,7 +119,8 @@ bool Data::initialize(){
 
   if(printpipe == NULL){
     QString str;
-    str.sprintf(  i18n("Unable to print with:\n %s"),cmd.data());
+    // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf：TQString::sprintf 对 UTF-8 译文按字节升位会乱码
+    str = kde_sprintf( i18n("Unable to print with:\n %s"),cmd.data());
     QMessageBox::message(i18n("Sorry"),str.data(),i18n("OK"));
     return FALSE;
   }

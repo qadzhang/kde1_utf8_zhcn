@@ -27,8 +27,9 @@ public:
     virtual ~open_ksirc();
 
 protected slots:
-  void setGroup( const char * );
-  void setServer( const char * );
+  // [KDE1 Revival 2026] 两槽改收 int：与 activated(int) 连接匹配
+  void setGroup( int );
+  void setServer( int );
   void clickConnect();
   void clickCancel();
   void clickEdit();

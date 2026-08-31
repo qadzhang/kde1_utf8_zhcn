@@ -30,7 +30,7 @@ IconPathDialogData::IconPathDialogData
 	tmpQLabel = new QLabel( this, "Label_1" );
 	tmpQLabel->setGeometry( 16, 16, 224, 24 );
 	{
-		QFont font( "helvetica", 12, 63, 0 );
+		QFont font; font.setPointSize(12); // [KDE1 Revival 2026] 弃硬编码字族
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		tmpQLabel->setFont( font );
@@ -42,7 +42,7 @@ IconPathDialogData::IconPathDialogData
 	tmpQLabel = new QLabel( this, "Label_2" );
 	tmpQLabel->setGeometry( 16, 48, 184, 24 );
 	{
-		QFont font( "helvetica", 12, 63, 0 );
+		QFont font; font.setPointSize(12); // [KDE1 Revival 2026] 弃硬编码字族
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		tmpQLabel->setFont( font );

@@ -101,7 +101,8 @@ serverchanneldata::serverchanneldata
 	SLE_Servers->setGeometry( 230, 110, 150, 30 );
 	SLE_Servers->setMinimumSize( 10, 10 );
 	SLE_Servers->setMaximumSize( 32767, 32767 );
-	connect( SLE_Servers, SIGNAL(textChanged(const char*)), SLOT(servers_sle_update(const char*)) );
+	// [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，两处改接 TQString 版（空槽签名同步）
+	connect( SLE_Servers, SIGNAL(textChanged(const TQString&)), SLOT(servers_sle_update(const TQString&)) );
 	SLE_Servers->setText( "" );
 	SLE_Servers->setMaxLength( 32767 );
 	SLE_Servers->setEchoMode( QLineEdit::Normal );
@@ -111,7 +112,7 @@ serverchanneldata::serverchanneldata
 	SLE_Channels->setGeometry( 230, 260, 150, 30 );
 	SLE_Channels->setMinimumSize( 10, 10 );
 	SLE_Channels->setMaximumSize( 32767, 32767 );
-	connect( SLE_Channels, SIGNAL(textChanged(const char*)), SLOT(channels_sle_update(const char*)) );
+	connect( SLE_Channels, SIGNAL(textChanged(const TQString&)), SLOT(channels_sle_update(const TQString&)) );
 	SLE_Channels->setText( "" );
 	SLE_Channels->setMaxLength( 32767 );
 	SLE_Channels->setEchoMode( QLineEdit::Normal );
@@ -144,10 +145,12 @@ void serverchanneldata::servers_delete()
 void serverchanneldata::servers_add()
 {
 }
-void serverchanneldata::servers_sle_update(const char*)
+// [KDE1 Revival 2026] 槽签名 TQString 化（空槽体，仅为连接匹配）
+void serverchanneldata::servers_sle_update(const TQString&)
 {
 }
-void serverchanneldata::channels_sle_update(const char*)
+// [KDE1 Revival 2026] 槽签名 TQString 化（空槽体，仅为连接匹配）
+void serverchanneldata::channels_sle_update(const TQString&)
 {
 }
 

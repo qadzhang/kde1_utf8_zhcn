@@ -404,8 +404,11 @@ const KCharsetConversionResult & KCharsetConverter::convertTag(const char *tag
 
 char * KCharsetConversionResult::copy()const{
 
-  char *ptr=new char [cText.length()+1];
-  strcpy(ptr,cText);
+  // [KDE1 Revival 2026] length() 是 UTF-16 码元数——中文转换结果每字符 3 字节
+  // 会堆越界；按 utf8() 字节数组深拷贝
+  TQCString cb = cText.utf8();
+  char *ptr = new char [ cb.size() ];
+  memcpy( ptr, cb.data(), cb.size() );
   return ptr;
 }
    

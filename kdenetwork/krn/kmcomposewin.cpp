@@ -156,8 +156,9 @@ KMComposeWin::KMComposeWin(KMMessage *aMsg) : KMComposeWinInherited(),
 
   if(!mShowToolBar) enableToolBar(KToolBar::Hide);	
 
-  connect(&mEdtSubject,SIGNAL(textChanged(const char *)),
-	  SLOT(slotUpdWinTitle(const char *)));
+  // [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，改接 TQString 版（槽签名同步）
+  connect(&mEdtSubject,SIGNAL(textChanged(const TQString&)),
+	  SLOT(slotUpdWinTitle(const TQString&)));
   connect(&mBtnTo,SIGNAL(clicked()),SLOT(slotAddrBookTo()));
   connect(&mBtnCc,SIGNAL(clicked()),SLOT(slotAddrBookCc()));
   connect(&mBtnBcc,SIGNAL(clicked()),SLOT(slotAddrBookBcc()));
@@ -1463,9 +1464,10 @@ void KMComposeWin::slotToDo()
 
 
 //-----------------------------------------------------------------------------
-void KMComposeWin::slotUpdWinTitle(const char *text)
+// [KDE1 Revival 2026] 槽签名 TQString 化：空判由指针检查改 isEmpty()
+void KMComposeWin::slotUpdWinTitle(const TQString &text)
 {
-  if (!text || *text=='\0')
+  if (text.isEmpty())
        setCaption("("+QString(i18n("unnamed"))+")");
   else setCaption(text);
 }

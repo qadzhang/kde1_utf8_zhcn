@@ -152,7 +152,10 @@ void cardMaps::setBackSide(QPixmap *pm) {
     back->fill( darkRed );         // initialize pixmap
     QPainter p;                           
     p.begin( back );                       
-    QFont f( "times", 17, QFont::Black );
+    // [KDE1 Revival 2026] 弃用硬编码字族，保留字号 17 与 Black 字重（下行 StyleHint 仍提示衬线）
+    QFont f;
+    f.setPointSize(17);
+    f.setWeight( QFont::Black );
     f.setStyleHint( QFont::Times );
     p.setFont(f);
     QRect br = p.fontMetrics().boundingRect( "KDEI");

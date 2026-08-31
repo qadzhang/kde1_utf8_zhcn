@@ -136,10 +136,11 @@ fontsDlg::fontsDlg(QWidget* parent,const char* name):Inherited( parent, name, TR
 
     connect (fixedFontName,SIGNAL(activated(int)),this,SLOT(syncFonts(int)));
     connect (stdFontName,SIGNAL(activated(int)),this,SLOT(syncFonts(int)));
+    // [KDE1 Revival 2026] 配置缺省值弃 helvetica/courier：置 null 走 fontconfig 默认族
     stdFontName->setCurrentItem(stdfl->find
-                                (conf->readEntry("StandardFont",QString("helvetica").data())));
+                                (conf->readEntry("StandardFont",QString::null)));
     fixedFontName->setCurrentItem(fixedfl->find
-                                  (conf->readEntry("FixedFont",QString("courier").data())));
+                                  (conf->readEntry("FixedFont",QString::null)));
 
     conf->setGroup("Reader");
     hdrstyle->setCurrentItem(conf->readNumEntry

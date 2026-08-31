@@ -1673,7 +1673,7 @@ void KIOJob::slaveIsReady()
 	    if ( dlg )
 	    {
 		QString buffer;
-		buffer.sprintf( i18n("File %i/%i"), cmCount - cmSrcURLList.count() + 1, cmCount );
+		buffer = kde_sprintf( i18n("File %i/%i"), cmCount - cmSrcURLList.count() + 1, cmCount );
 		line1->setText( buffer );
 
 		QString curFile;
@@ -1734,7 +1734,7 @@ void KIOJob::slaveIsReady()
 	    if ( dlg )
 	    {
 		QString buffer;
-		buffer.sprintf( i18n("File %i/%i"), 
+		buffer = kde_sprintf( i18n("File %i/%i"), 
 			 cmCount - cmSrcURLList.count() + 1, cmCount );	    
 		line1->setText( buffer );
 
@@ -1783,7 +1783,7 @@ void KIOJob::slaveIsReady()
 	    if ( dlg != 0L )
 	    {
 		QString buffer;
-		buffer.sprintf( i18n("File %i/%i"), cmCount - mvDelURLList.count() + 1, cmCount );	    
+		buffer = kde_sprintf( i18n("File %i/%i"), cmCount - mvDelURLList.count() + 1, cmCount );	    
 		line1->setText( buffer );
 
 		QString curFile;
@@ -1816,9 +1816,9 @@ void KIOJob::slaveIsReady()
 	    {
 		QString buffer;
 		if ( action == KIOJob::JOB_MOUNT )
-		    buffer.sprintf( i18n("Mounting %s ..."), mntDev.data() );
+		    buffer = kde_sprintf( i18n("Mounting %s ..."), mntDev.data() );
 		else
-		    buffer.sprintf( i18n("Unmounting %s ..."), mntPoint.data() );
+		    buffer = kde_sprintf( i18n("Unmounting %s ..."), mntPoint.data() );
 		line1->setText( buffer );
 	    }
 	    

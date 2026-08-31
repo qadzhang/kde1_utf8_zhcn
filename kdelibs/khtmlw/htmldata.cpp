@@ -33,9 +33,9 @@ HTMLSettings::HTMLSettings()
     memcpy( fontSizes, defaultFontSizes, sizeof(fontSizes) );
     fontBaseSize  = 3;
     fontBaseColor = black;
-    fontBaseFace  = "times";
+    fontBaseFace  = ""; // [KDE1 Revival 2026] 弃硬编码 times（缺 CJK 字形）——空走默认族
 
-    fixedFontFace = "courier";
+    fixedFontFace = ""; // [KDE1 Revival 2026] 同上
 
     linkColor     = k1c_blue;
     vLinkColor    = darkMagenta;

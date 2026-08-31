@@ -80,8 +80,9 @@ SearchDialog::SearchDialog(QWidget* parent, const char* name)
       widget->comboSelector->insertItem(Descriptions[count]);
     }
   connect(widget->comboSelector, SIGNAL(activated(int)), SLOT(keySelected(int)));
-  connect(widget->lePattern, SIGNAL(textChanged(const char*)), 
-	  SLOT(valueChanged(const char*)));
+  // [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)——const char* 版连接静默失败
+  connect(widget->lePattern, SIGNAL(textChanged(const TQString&)), 
+	  SLOT(valueChanged(const TQString&)));
   connect(widget, SIGNAL(sizeChanged()), SLOT(initializeGeometry()));
   keySelected(0);
   resize(minimumSize());
@@ -105,11 +106,12 @@ void SearchDialog::keySelected(int index)
   // ############################################################################
 }
 
-void SearchDialog::valueChanged(const char* value)
+void SearchDialog::valueChanged(const TQString& value)
 {
   // ############################################################################
-  L("SearchDialog::valueChanged: new value %s.\n", value);
-  data=value;
+  L("SearchDialog::valueChanged: new value %s.\n", value.utf8().data());
+  // [KDE1 Revival 2026] data 为 std::string——TQString 经 utf8 字节串转换
+  { TQCString v = value.utf8(); data = v.data() ? v.data() : ""; }
   // ############################################################################
 }
 

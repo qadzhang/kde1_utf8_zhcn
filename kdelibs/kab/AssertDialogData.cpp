@@ -51,7 +51,8 @@ AssertDialogData::AssertDialogData
 	labelHeadline->setMinimumSize( 10, 10 );
 	labelHeadline->setMaximumSize( 32767, 32767 );
 	{
-		QFont font( "helvetica", 14, 50, 1 );
+		// [KDE1 Revival 2026] 弃硬编码 "helvetica"（缺 CJK 字形）改默认族
+		QFont font; font.setPointSize(14);
 		font.setStyleHint( (QFont::StyleHint)0 );
 		font.setCharSet( (QFont::CharSet)0 );
 		labelHeadline->setFont( font );

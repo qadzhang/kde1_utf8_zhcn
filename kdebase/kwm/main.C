@@ -361,7 +361,20 @@ static void showLogout(){
   klogout->prepareToShow(unsaved_data, pseudo_session, no_session);
   delete no_session;
   delete unsaved_data;
-  while (!klogout->do_grabbing());
+  /* [KDE1 Revival 2026] while 重试加安全阀：XGrabKeyboard 被其他客户端抢先
+     （AlreadyGrabbed）时原无限循环会让 kwm 卡死烧 CPU（X 窗口疯狂创建销毁，
+     实测桌面全瘫）。带诊断输出，最多 50 次；超限放弃 grab 直接显示对话框
+     （键盘模态缺失仅影响快捷键，鼠标操作完整可用）。 */
+  {
+    int retry = 0;
+    while (!klogout->do_grabbing()) {
+      if (++retry > 50) {
+        fprintf(stderr, "kwm: logout 对话框 grab 重试超限，放弃键盘 grab 继续显示\n");
+        break;
+      }
+      usleep(10000);
+    }
+  }
 }
 
 void showTask(){
@@ -535,6 +548,24 @@ void switchActivateClient(Client* c, bool do_not_raise){
 }
 
 
+// ┌─ What : 主动刷新 TQt3 的 X 事件时间戳 tqt_x_time 到"当前"服务器时间
+// │  Why  : TQt3 的 grabMouse()/releaseMouse() 以 tqt_x_time 作 XGrabPointer/
+// │         XUngrabPointer 的时间戳参数，而该变量只在 Qt 事件循环处理
+// │         输入/属性事件时更新。kwm 的注销链路（logout ClientMessage 的同步
+// │         调用栈一口气执行完毕）里 processSaveYourself 用 CurrentTime 抓
+// │         root 指针，把 server 的 last-pointer-grab-time 推进到"现在"；
+// │         随后 Klogout::do_grabbing 的 grabMouse() 携带过期的 tqt_x_time
+// │         → X server 以 GrabInvalidTime 拒绝 → 悬挂的 root grab 吞掉全部
+// │         鼠标事件——"注销窗口鼠标点不动、回车有效"的根因（Qt1 的
+// │         grabMouse 用 CurrentTime 无此问题；kwin 后续版本以同款属性自环
+// │         手法解决，此处对齐该成熟做法）
+// │  Who  : Klogout/KWarning/Ktask/MiniCli 的 do_grabbing 与 release 路径
+// │  When : 每次模态对话框 grabMouse 之前（时间戳必须晚于最近一次 grab）
+// │  Where: kwm 进程内；仅刷新时间戳，不改任何窗口状态
+// │  How  : ① 向 root 追加一次性属性制造 PropertyNotify 事件
+// │         → ② XSync 保证事件已入队 → ③ kapp->processEvents() 让 Qt
+// │         处理该事件（x11ProcessEvent 的 xproperty 分支更新 tqt_x_time）
+// │         → ④ 删除属性（其 PropertyNotify 再刷新一次，无害）
 void logout(){
   showWarning(klocale->translate("Preparing session ... "), false);
   XUngrabServer(qt_xdisplay());

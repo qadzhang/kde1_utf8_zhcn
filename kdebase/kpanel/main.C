@@ -60,11 +60,28 @@ bool MyApp::x11EventFilter( XEvent * ev){
     return True;
   }
 
+  /* [KDE1 Revival 2026] SNI 托盘图标点击 → 转发 SNI 交互方法：
+     左键 Activate、右键 ContextMenu、其余 SecondaryActivate。
+     这些 24x24 窗口是 kpanel 经 XCreateSimpleWindow 自建的（非 TQt 窗口），
+     事件吞掉（return True）防止进入 Qt 事件循环后无人认领。 */
+  if (ev->type == ButtonPress && the_snitray){
+    SNIClient *sni = the_snitray->clientByWindow(ev->xbutton.window);
+    if (sni){
+      the_snitray->sendClick(sni, ev->xbutton.button,
+                             ev->xbutton.x_root, ev->xbutton.y_root);
+      return True;
+    }
+  }
+
   /* [KDE1 Revival 2026] dock 图标右键（kpanel 对 dock 窗口 select 了
-     ButtonPress 副本事件）：转投 Qt 事件循环内弹出“退出应用”菜单。
-     X 原始事件里不能直接弹 Qt 菜单（嵌套循环风险），singleShot(0) 转移。 */
+     ButtonPress 副本事件）：转投 Qt 事件循环内弹出"退出应用"菜单。
+     X 原始事件里不能直接弹 Qt 菜单（嵌套循环风险），singleShot(0) 转移。
+     [KDE1 Revival 2026] 改为 Shift+右键触发——普通右键按现代系统托盘
+     语义留给嵌入应用自己的菜单（kpanel 吞掉普通右键会让 fcitx5 等
+     XEmbed 托盘永远打不开右键菜单）。 */
   if (ev->type == ButtonPress &&
       ev->xbutton.button == 3 /* RightButton */ &&
+      (ev->xbutton.state & ShiftMask) &&
       the_panel->dockWindowAt(QPoint(ev->xbutton.x_root, ev->xbutton.y_root)) != None) {
     the_panel->pendingDockContextWindow =
       the_panel->dockWindowAt(QPoint(ev->xbutton.x_root, ev->xbutton.y_root));

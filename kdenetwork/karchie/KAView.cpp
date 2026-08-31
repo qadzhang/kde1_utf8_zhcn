@@ -47,9 +47,11 @@
 
 /* Static members */
 const int KAViewSearchterm::offsetwidth = 5;
-const char KAViewSearchterm::searchFilePixName[] = "/usr/local/kde/share/icons/mini/document.xpm";
-const char KAViewSearchterm::searchPathPixName[] = "/usr/local/kde/share/icons/mini/folder.xpm";
-const char KAViewSearchterm::searchHostPixName[] = "/usr/local/kde/lib/pics/toolbar/home.xpm";
+// [KDE1 Revival 2026] 弃 1999 烧录绝对路径（/usr/local/kde 现代系统不存在，
+// 图标加载恒失败）——改 KDE1 图标名，经 KIconLoader 在 $KDEDIR/share/icons 解析
+const char KAViewSearchterm::searchFilePixName[] = "document.xpm";
+const char KAViewSearchterm::searchPathPixName[] = "folder.xpm";
+const char KAViewSearchterm::searchHostPixName[] = "home.xpm";
 
 
 

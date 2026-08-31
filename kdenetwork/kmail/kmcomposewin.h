@@ -168,7 +168,8 @@ public slots:
   void slotMarkAll();
 
   /** Change window title to given string. */
-  void slotUpdWinTitle(const char *);
+  // [KDE1 Revival 2026] 槽签名 TQString 化：与 textChanged(const TQString&) 连接匹配
+  void slotUpdWinTitle(const TQString &);
 
   /** Append signature file to the end of the text in the editor. */
   void slotAppendSignature();

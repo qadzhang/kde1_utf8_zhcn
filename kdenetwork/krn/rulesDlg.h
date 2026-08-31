@@ -27,7 +27,8 @@ public:
     KIntLineEdit *gvalue;
 
 public slots:
-    void editRule(const char *name);
+    // [KDE1 Revival 2026] 槽签名 TQString 化：与 highlighted(const TQString&) 连接匹配
+    void editRule(const TQString &name);
     void saveRuleAs();
     void saveRule();
     void deleteRule();

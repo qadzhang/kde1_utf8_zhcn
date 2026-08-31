@@ -87,9 +87,20 @@ void kimgio_png_read( QImageIO *io )
 	}
 
 	if( ! (png_get_color_type(png_ptr, png_info) & PNG_COLOR_MASK_ALPHA) ) {
-		tqDebug( "using filler" );
-		png_set_filler( png_ptr, 0, PNG_FILLER_BEFORE );
+		// [KDE1 Revival 2026] filler 字节与位置按 TQt3 内存约定设置：
+		// TQt3 32bpp 在 little-endian 上为 B,G,R,0xFF（QRgb=0xFFRRGGBB）。
+		// 原实现 filler(0, BEFORE) 得 X,R,G,B 字节流再 >>8 ——那是 Qt1 的
+		// R,G,B,X 内存假设，在 TQt3 下红蓝对调（PNG 颜色错误的根因）。
+		png_set_filler( png_ptr, 0xff, PNG_FILLER_AFTER );
 	}
+
+	// [KDE1 Revival 2026] 字节流按 TQt3 约定重排（与 tqt3 qpngio.cpp 同款）：
+	// little-endian 上 png_set_bgr 把 libpng 的 R,G,B(A) 输出翻转成 B,G,R(A)；
+	// big-endian 上 png_set_swap_alpha 把 RGBA 变 ARGB（0xAARRGGBB 的大端字节序）。
+	if ( QImage::systemByteOrder() == QImage::BigEndian )
+		png_set_swap_alpha( png_ptr );
+	else
+		png_set_bgr( png_ptr );
 
 	passes = png_set_interlace_handling ( png_ptr );
 
@@ -125,15 +136,8 @@ void kimgio_png_read( QImageIO *io )
 			png_get_color_type(png_ptr, png_info) );
 		image.setAlphaBuffer(true);
 	}
-	else {
-		unsigned *pixels = (unsigned *) image.bits();
-		for( unsigned row = 0; row < png_get_image_height(png_ptr, png_info); row++ ) {
-			for( int i = 0; i < image.width(); i++ ) {
-				*pixels = *pixels >> 8;
-				pixels++;
-			}
-		}
-	}
+	// [KDE1 Revival 2026] 删除原 >>8 移位后处理循环——filler+bgr 已把字节流
+	// 直接排成 TQt3 约定的 B,G,R,0xFF，无需再按 Qt1 的 R,G,B,X 假设移位。
 
 	png_read_end( png_ptr, png_info );
 
@@ -226,13 +230,17 @@ void kimgio_png_write( QImageIO *iio )
 	/* set the palette if there is one.  REQUIRED for indexed-color images */
 
 	if(numcolors > 0) {
-/*		info_ptr->palette = (png_colorp)png_malloc(png_ptr, numcolors * sizeof (png_color));
+		// [KDE1 Revival 2026] 恢复被注释的调色板写出（原代码声明 PALETTE
+		// 色彩类型却从不 set PLTE，libpng 必然报错，8bpp 图存 PNG 从未成功）。
+		// png_color 通道经 qRed/qGreen/qBlue 值级取色，不涉字节序。
+		png_colorp palette = (png_colorp)png_malloc(png_ptr,
+			numcolors * sizeof(png_color));
 		for(int i = 0; i < numcolors; i++) {
-			info_ptr->palette[i].red = qRed(image.color(i));
-			info_ptr->palette[i].blue = qBlue(image.color(i));
-			info_ptr->palette[i].green = qGreen(image.color(i));
+			palette[i].red = qRed(image.color(i));
+			palette[i].green = qGreen(image.color(i));
+			palette[i].blue = qBlue(image.color(i));
 		}
-		png_set_PLTE(png_ptr, info_ptr, info_ptr->palette, numcolors);*/
+		png_set_PLTE(png_ptr, info_ptr, palette, numcolors);
 	}
 
 	//optional significant bit chunk
@@ -288,13 +296,24 @@ void kimgio_png_write( QImageIO *iio )
 
 	// Get rid of filler (OR ALPHA) bytes, pack XRGB/RGBX/ARGB/RGBA into
 	// RGB (4 channels -> 3 channels). The second parameter is not used.
-	if ( depth == 8 && !image.hasAlphaBuffer() )
+	// [KDE1 Revival 2026] 条件修正：32bpp 直色图像（无调色板、无 alpha）都需
+	// 去 filler；原 depth==8 条件把 32bpp 也算了进去本无大碍，但调色板图像
+	// 决不能进此分支（palette 无 filler 概念，libpng 会报错）。
+	if ( colortype != PNG_COLOR_TYPE_PALETTE && !image.hasAlphaBuffer() )
 		png_set_filler(png_ptr, 0,
-	    QImage::systemByteOrder() == QImage::BigEndian ?
-		PNG_FILLER_BEFORE : PNG_FILLER_AFTER);
+		    QImage::systemByteOrder() == QImage::BigEndian ?
+			PNG_FILLER_BEFORE : PNG_FILLER_AFTER);
 
 	// flip BGR pixels to RGB
-	//png_set_bgr(png_ptr);
+	// [KDE1 Revival 2026] 启用：TQt3 32bpp 内存序为 B,G,R(A)，little-endian
+	// 上必须经 png_set_bgr 翻转回 R,G,B(A) 才是 PNG 文件格式——原注释掉后
+	// 写出的 PNG 红蓝对调；big-endian 上 png_set_swap_alpha 把 ARGB 转 RGBA。
+	if ( colortype != PNG_COLOR_TYPE_PALETTE ) {
+	    if ( QImage::systemByteOrder() == QImage::BigEndian )
+		png_set_swap_alpha(png_ptr);
+	    else
+		png_set_bgr(png_ptr);
+	}
 
 	// swap bytes of 16-bit files to most significant byte first
 	//png_set_swap(png_ptr);

@@ -145,7 +145,7 @@ KPrepareDlg::KPrepareDlg( QWidget *parent ) : QWidget( parent )
         frame->setFrameStyle( QFrame::Panel | QFrame::Raised );
         frame->setLineWidth( 2 );
 
-	QFont font( "helvetica", 18 );
+	QFont font; font.setPointSize(18); // [KDE1 Revival 2026] 弃硬编码字族
 	KApplication::getKApplication()->getCharsets()->setQFont(font);
 
 	label = new QLabel( 0, frame );

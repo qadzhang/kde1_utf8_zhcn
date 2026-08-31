@@ -103,13 +103,11 @@ void KFontOptions::readOptions()
 	else
 		fSize = 3;
 
+	// [KDE1 Revival 2026] 弃硬编码 times/courier 兜底（无 CJK 字形）——
+	// 空值走默认族
 	stdName = config->readEntry( "StandardFont" );
-	if ( stdName.isEmpty() )
-		stdName = "times";
 
 	fixedName = config->readEntry( "FixedFont" );
-	if ( fixedName.isEmpty() )
-		fixedName = "courier";
 }
 
 void KFontOptions::getFontList( QStrList &list, const char *pattern )

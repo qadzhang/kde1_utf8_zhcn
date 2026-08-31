@@ -49,7 +49,8 @@ public:
   GeneralWidget( QWidget *parent=0, const char *name=0 );
 
 private slots:
-  void 	pppdtimeoutchanged(const char *n);
+  // [KDE1 Revival 2026] 槽改接 valueChanged(int)，签名同步为 int
+  void 	pppdtimeoutchanged(int n);
   void 	caption_toggled(bool);
   void  iconify_toggled(bool on); 
   void 	redial_toggled(bool on);
@@ -86,7 +87,7 @@ public:
 private slots:
   void 	setmodemdc(int);
   void 	setflowcontrol(int);
-  void 	modemtimeoutchanged(const char*);
+  void 	modemtimeoutchanged(int);
   void 	modemlockfilechanged(bool);
   void 	setenter(int);
   void  speed_selection(int);
@@ -116,7 +117,7 @@ public:
   ModemWidget2( QWidget *parent=0, const char *name=0 );
 
 private slots:
-  void 	busywaitchanged(const char*);
+  void 	busywaitchanged(int);
   //  void 	use_cdline_toggled(bool);
   void 	modemcmdsbutton();
   void 	terminal();

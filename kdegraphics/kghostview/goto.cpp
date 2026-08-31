@@ -120,14 +120,16 @@ void GoTo::init()
 	temp.sprintf( "%d", part+1);
 	partLine->setText( temp );
 	
-	temp.sprintf( i18n("of %d"), num_parts+1);
+	// [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+	temp = kde_sprintf( i18n("of %d"), num_parts+1);
 	partLabel->setText( temp );
 	partLabel->setMinimumSize( partLabel->sizeHint() );
 	
 	temp.sprintf( "%d", page+1);
 	pageLine->setText( temp );
 	
-	temp.sprintf( i18n("of %d"), pages);
+	// [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+	temp = kde_sprintf( i18n("of %d"), pages);
 	pageLabel->setText( temp );
 	pageLabel->setMinimumSize( pageLabel->sizeHint() );	
 }
@@ -144,7 +146,8 @@ void GoTo::partChange()
 		pages=pages_in_part[part];
 		temp.sprintf( "%d", page+1);
 		pageLine->setText( temp );
-		temp.sprintf( i18n("of %d"), pages);
+		// [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+		temp = kde_sprintf( i18n("of %d"), pages);
 		pageLabel->setText( temp );
 	} else {
 		temp.sprintf( "%d", part+1);

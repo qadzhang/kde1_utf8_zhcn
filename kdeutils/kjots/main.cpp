@@ -78,7 +78,8 @@ int main( int argc, char **argv )
   if( !config->hasKey("execFtp") )
     config->writeEntry("execFtp", "kfmclient1 openURL %u");
   if( !config->hasKey("EFontFamily") )
-    config->writeEntry("EFontFamily", "helvetica");
+    // [KDE1 Revival 2026] 首次写入值弃 "helvetica"：置 null 让读取方走 fontconfig 默认族
+    config->writeEntry("EFontFamily", QString::null);
   if( !config->hasKey("EFontSize") )
     config->writeEntry("EFontSize", 12);
   if( !config->hasKey("EFontWeight") )

@@ -72,7 +72,7 @@ protected slots:
 	void slotScreenSaver( int );
 	void slotSetup();
 	void slotTest();
-	void slotTimeoutChanged( const char *);
+	void slotTimeoutChanged( const TQString &);
 	void slotLock( bool );
 	void slotAllowRoot( bool );
 	void slotStars( bool );

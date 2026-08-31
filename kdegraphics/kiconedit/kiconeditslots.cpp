@@ -463,14 +463,16 @@ void KIconEdit::slotUpdateStatusScaling(int s, bool show)
 void KIconEdit::slotUpdateStatusColors(uint)
 {
   QString str;
-  str.sprintf(i18n("Colors: %u"), grid->numColors());
+  // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+  str = kde_sprintf(i18n("Colors: %u"), grid->numColors());
   statusbar->changeItem( str.data(), 3);
 }
 
 void KIconEdit::slotUpdateStatusColors(uint n, uint *)
 {
   QString str;
-  str.sprintf(i18n("Colors: %u"), n);
+  // [KDE1 Revival 2026] 翻译格式串走 kde_sprintf（防中文译文乱码）
+  str = kde_sprintf(i18n("Colors: %u"), n);
   statusbar->changeItem( str.data(), 3);
 }
 

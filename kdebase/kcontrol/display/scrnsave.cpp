@@ -258,8 +258,9 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	waitEdit->setText( str );
 	waitEdit->setMaxLength(4);
 	waitEdit->adjustSize();
-       	connect( waitEdit, SIGNAL( textChanged( const char * ) ),
-		 SLOT( slotTimeoutChanged( const char * ) ) );
+	// [KDE1 Revival 2026] TQLineEdit 只有 textChanged(const TQString&)
+       	connect( waitEdit, SIGNAL( textChanged( const TQString & ) ),
+		 SLOT( slotTimeoutChanged( const TQString & ) ) );
 			
 	QLabel *label = new QLabel( waitEdit, i18n("&Wait for"), group );
 	label->adjustSize();
@@ -393,7 +394,8 @@ void KScreenSaver::readSettings( int )
 		else
 			bUseSaver = false;
 	} else
-		saverFile.sprintf( i18n("No screensaver") );
+		// [KDE1 Revival 2026] 译文经 sprintf 逐字节升位必乱码，改直接赋值
+		saverFile = i18n("No screensaver");
 
 	xtimeout = config->readNumEntry( "Timeout" );
 	
@@ -446,7 +448,7 @@ void KScreenSaver::setDefaults()
 	slotScreenSaver( 0 );
 	ssList->setCurrentItem( 0 );
 	ssList->centerCurrentItem();
-	slotTimeoutChanged( "1" );
+	slotTimeoutChanged( TQString::fromLatin1("1") );
 	slotPriorityChanged( 0 );
 	slotLock( false );
 	slotAllowRoot( false );
@@ -642,7 +644,8 @@ void KScreenSaver::slotScreenSaver( int indx )
 {
 	if ( indx == 0 )
 	{
-		saverFile.sprintf( i18n("No screensaver") );
+		// [KDE1 Revival 2026] 同上
+		saverFile = i18n("No screensaver");
 		setupBt->setEnabled( FALSE );
 		testBt->setEnabled( FALSE );
 		bUseSaver = false;
@@ -705,9 +708,9 @@ void KScreenSaver::slotTest()
 	testBt->setEnabled(TRUE);
 }
 
-void KScreenSaver::slotTimeoutChanged( const char *to )
+void KScreenSaver::slotTimeoutChanged( const TQString &to )
 {
-	xtimeout = atoi( to ) * 60;
+	xtimeout = to.toInt() * 60;
 
 	if ( xtimeout <= 0 )
 		xtimeout = 60;

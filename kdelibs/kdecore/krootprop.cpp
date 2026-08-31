@@ -43,7 +43,9 @@ void KRootProp::sync()
     	while ( it.current() ) {
 
 			QString *value = propDict.find( it.currentKey() );
-        	keyvalue.sprintf( "%s=%s\n", it.currentKey(), value->data() );
+		// [KDE1 Revival 2026] currentKey() 返回 TQString 对象——varargs 直传会把
+		// 对象指针当 char* 读出垃圾；先转 utf8() 字节串（含中文键名亦正确）
+        	keyvalue.sprintf( "%s=%s\n", it.currentKey().utf8().data(), value->data() );
 			propString += keyvalue;
         	++it;
 		}
@@ -298,7 +300,9 @@ QString KRootProp::writeEntry( const QString& rKey, const QFont& rFont )
   if( rFont.rawMode() )
 	nFontBits = nFontBits | 0x20;
 
-  aValue.sprintf( "%s,%d,%d,%d,%d,%d", rFont.family(), rFont.pointSize(),
+  // [KDE1 Revival 2026] family() 返回 TQString 对象——varargs 直传读出垃圾，
+  // 字体配置落盘全毁；先转 utf8() 字节串
+  aValue.sprintf( "%s,%d,%d,%d,%d,%d", rFont.family().utf8().data(), rFont.pointSize(),
 				  rFont.styleHint(), rFont.charSet(), rFont.weight(),
 				  nFontBits );
 

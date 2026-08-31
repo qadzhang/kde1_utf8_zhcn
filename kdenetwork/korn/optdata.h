@@ -43,7 +43,8 @@ protected slots:
     virtual void boxSelect(int);
     virtual void newBox();
     virtual void okClicked();
-    virtual void dataChanged(const char*);
+    // [KDE1 Revival 2026] 槽签名 TQString 化：与 textChanged(const TQString&) 连接匹配
+    virtual void dataChanged(const TQString&);
     virtual void deleteBox();
 
 protected:

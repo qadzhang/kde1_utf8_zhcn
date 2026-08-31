@@ -31,7 +31,7 @@ protected slots:
 protected:
   void resizeEvent(QResizeEvent*);
   void newItem(); // overloaded slot
-  void itemChanged(const char*); // dito
+  void itemChanged(const TQString&); // dito [KDE1 Revival 2026] TQt3 信号签名
   void upPressed();
   void downPressed();
   void deletePressed();

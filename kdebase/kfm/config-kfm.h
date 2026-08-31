@@ -50,8 +50,9 @@ void debugC( const char *msg , ...);
 //CT
 
 // lets be modern .. -- Bernd
-#define DEFAULT_VIEW_FONT "helvetica"
-#define DEFAULT_VIEW_FIXED_FONT "courier"
+// [KDE1 Revival 2026] 弃硬编码西文字族（现代 fontconfig 无此名且缺 CJK 字形）
+#define DEFAULT_VIEW_FONT ""
+#define DEFAULT_VIEW_FIXED_FONT ""
 
 // the default size of the kfm browswer windows
 // these are optimized sizes displaying a maximum number

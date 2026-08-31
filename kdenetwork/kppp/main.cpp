@@ -792,11 +792,12 @@ void KPPPWidget::resetaccounts() {
     }
 
 
-  connect(ID_Edit, SIGNAL(textChanged(const char *)),
- 	  this, SLOT(usernameChanged(const char *)));
+  // [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，两处改接 TQString 版（槽签名同步）
+  connect(ID_Edit, SIGNAL(textChanged(const TQString&)),
+ 	  this, SLOT(usernameChanged(const TQString&)));
 
-  connect(PW_Edit, SIGNAL(textChanged(const char *)),
- 	  this, SLOT(passwordChanged(const char *)));
+  connect(PW_Edit, SIGNAL(textChanged(const TQString&)),
+ 	  this, SLOT(passwordChanged(const TQString&)));
 }
 
 
@@ -1203,13 +1204,14 @@ void KPPPWidget::stopAccounting() {
 }
 
 
-void KPPPWidget::usernameChanged(const char *) {
+// [KDE1 Revival 2026] 槽签名 TQString 化（槽体本就重读 ID_Edit->text()，无需改动）
+void KPPPWidget::usernameChanged(const TQString &) {
   // store username for later use
   gpppdata.setStoredUsername(ID_Edit->text());
 }
 
 
-void KPPPWidget::passwordChanged(const char *) {
+void KPPPWidget::passwordChanged(const TQString &) {
     // store the password if so requested
   if(gpppdata.storePassword())
     gpppdata.setStoredPassword(PW_Edit->text());

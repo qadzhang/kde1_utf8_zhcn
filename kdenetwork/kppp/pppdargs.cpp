@@ -55,8 +55,9 @@ PPPdArguments::PPPdArguments(QWidget *parent, const char *name)
   connect(argument, SIGNAL(returnPressed()), 
 	  SLOT(addbutton()));
   l11->addWidget(argument);
-  connect(argument, SIGNAL(textChanged(const char *)),
-	  this, SLOT(textChanged(const char *)));
+  // [KDE1 Revival 2026] TQt3 无 textChanged(const char*) 信号，改接 TQString 版（槽签名同步）
+  connect(argument, SIGNAL(textChanged(const TQString&)),
+	  this, SLOT(textChanged(const TQString&)));
 
   arguments = new QListBox(this);
   arguments->setMinimumSize(1, fontMetrics().lineSpacing()*10);
@@ -147,8 +148,9 @@ void PPPdArguments::init() {
 }
 
 
-void PPPdArguments::textChanged(const char *s) {
-  add->setEnabled(strlen(s) > 0);
+// [KDE1 Revival 2026] 槽签名 TQString 化：空判由 strlen 改 isEmpty()
+void PPPdArguments::textChanged(const TQString &s) {
+  add->setEnabled(!s.isEmpty());
 }
 
 

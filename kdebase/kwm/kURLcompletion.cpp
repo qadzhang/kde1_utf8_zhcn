@@ -37,7 +37,7 @@ KURLCompletion::~KURLCompletion()
 }
 
 /* public slot */
-void KURLCompletion::edited (const char *text)
+void KURLCompletion::edited (const TQString &text)
 {
 	the_text = text;
 	if (!self_update)

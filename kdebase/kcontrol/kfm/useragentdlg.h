@@ -35,11 +35,11 @@ public:
   virtual void defaultSettings();
   
 private slots:
-  void textChanged( const char* );
+  void textChanged( const TQString& );
 //  void returnPressed();
   void addClicked();
   void deleteClicked();
-  void listboxHighlighted( const char* );
+  void listboxHighlighted( int index );
   
 private:
   QLabel* onserverLA;

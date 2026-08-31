@@ -304,7 +304,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     {
         QString tempstr;
 	int size = buff.st_size;
-	tempstr.sprintf(klocale->translate("Size: %i"), size );
+	tempstr = kde_sprintf(klocale->translate("Size: %i"), size );
 	l = new QLabel( tempstr.data(), this );
 	// BL: layout mngt
 	l->setFixedSize(l->sizeHint());

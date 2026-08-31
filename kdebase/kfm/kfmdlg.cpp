@@ -30,10 +30,11 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
 		  completion, SLOT (make_completion()));
 	connect ( edit, SIGNAL (rotation()),
 		  completion, SLOT (make_rotation()));
-	connect ( edit, SIGNAL (textChanged(const char *)),
-		  completion, SLOT (edited(const char *)));
-	connect ( completion, SIGNAL (setText (const char *)),
-		  edit, SLOT (setText (const char *)));
+	// [KDE1 Revival 2026] TQLineEdit 仅有 textChanged/setText 的 TQString 版
+	connect ( edit, SIGNAL (textChanged(const TQString &)),
+		  completion, SLOT (edited(const TQString &)));
+	connect ( completion, SIGNAL (setText (const TQString &)),
+		  edit, SLOT (setText (const TQString &)));
     }
     else
 	    completion = 0L;
@@ -99,10 +100,11 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
 	      completion, SLOT (make_completion()));
     connect ( edit, SIGNAL (rotation()),
 	      completion, SLOT (make_rotation()));
-    connect ( edit, SIGNAL (textChanged(const char *)),
-	      completion, SLOT (edited(const char *)));
-    connect ( completion, SIGNAL (setText (const char *)),
-	      edit, SLOT (setText (const char *)));
+    // [KDE1 Revival 2026] TQLineEdit 仅有 textChanged/setText 的 TQString 版
+    connect ( edit, SIGNAL (textChanged(const TQString &)),
+	      completion, SLOT (edited(const TQString &)));
+    connect ( completion, SIGNAL (setText (const TQString &)),
+	      edit, SLOT (setText (const TQString &)));
   }
   else
     completion = 0L;

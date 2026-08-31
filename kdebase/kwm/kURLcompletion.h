@@ -22,10 +22,12 @@ class KURLCompletion : public QObject
 public slots:
     void make_completion ();
     void make_rotation ();
-    void edited (const char *);
+    // [KDE1 Revival 2026] TQLineEdit 的 textChanged 是 TQString 版——槽签名同步
+    void edited (const TQString &);
     
 signals:
-    void setText (const char *);
+    // [KDE1 Revival 2026] 接收方 TQLineEdit 只有 setText(const TQString&) 槽
+    void setText (const TQString &);
 	
 public:
     KURLCompletion( const char *dir = "");

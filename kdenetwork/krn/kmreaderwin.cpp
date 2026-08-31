@@ -113,8 +113,9 @@ void KMReaderWin::readConfig(void)
   mViewer->setStandardFont(kstrToFont(mBodyFont).family());
   //mViewer->setFixedFont(mFixedFont);
 #else
-  mViewer->setStandardFont(config->readEntry("StandardFont","helvetica"));
-  mViewer->setFixedFont(config->readEntry("FixedFont","courier"));
+  // [KDE1 Revival 2026] 配置缺省值弃 helvetica/courier：置 null 走 fontconfig 默认族
+  mViewer->setStandardFont(config->readEntry("StandardFont",QString::null));
+  mViewer->setFixedFont(config->readEntry("FixedFont",QString::null));
 #endif
   update();
 }

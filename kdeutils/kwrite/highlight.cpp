@@ -574,7 +574,8 @@ ItemStyle::ItemStyle(const QColor &col, const QColor &selCol,
   : col(col), selCol(selCol), bold(bold), italic(italic) {
 }
 
-ItemFont::ItemFont() : family("courier"), size(12), charset("") {
+// [KDE1 Revival 2026] 弃用硬编码字族：family 置空让 QFont 走 fontconfig 默认族（保留字号）
+ItemFont::ItemFont() : family(QString::null), size(12), charset("") {
 }
 
 ItemData::ItemData(const char *name, int defStyleNum)
@@ -1569,7 +1570,8 @@ void HlManager::getDefaults(ItemStyleList &list, ItemFont &font) {
   }
 
   config->setGroup("Default Font");
-  font.family = config->readEntry("Family","courier");
+  // [KDE1 Revival 2026] 配置缺省值弃 "courier"：置 null 让 QFont 走 fontconfig 默认族
+  font.family = config->readEntry("Family",QString::null);
   font.size = config->readNumEntry("Size",12);
   font.charset = config->readEntry("Charset","ISO-8859-1");
 }
@@ -1781,7 +1783,8 @@ FontChanger::FontChanger(QWidget *parent, int x, int y)
 
   familyCombo = new QComboBox(true,parent);
   label = new QLabel(familyCombo,i18n("Family:"),parent);
-  connect(familyCombo,SIGNAL(activated(const char *)),SLOT(familyChanged(const char *)));
+  // [KDE1 Revival 2026] TQt3 的 TQComboBox 无 activated(const char*) 信号，两处改接 activated(int)（sizeCombo 的 activated(int) 是同函数现成样板）
+  connect(familyCombo,SIGNAL(activated(int)),SLOT(familyChanged(int)));
   familyCombo->insertStrList(&fontList);
 
   r.setRect(x,y,160,25);
@@ -1806,7 +1809,7 @@ FontChanger::FontChanger(QWidget *parent, int x, int y)
 
   charsetCombo = new QComboBox(true,parent);
   label = new QLabel(charsetCombo,i18n("Charset:"),parent);
-  connect(charsetCombo,SIGNAL(activated(const char *)),SLOT(charsetChanged(const char *)));
+  connect(charsetCombo,SIGNAL(activated(int)),SLOT(charsetChanged(int)));
 
 //  KCharsets *charsets=KApplication::getKApplication()->getCharsets();
 //  QStrList lst = charsets->displayable(selFont.family());
@@ -1840,9 +1843,10 @@ found:
   displayCharsets();
 }
 
-void FontChanger::familyChanged(const char *family) {
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void FontChanger::familyChanged(int index) {
 
-  font->family = family;
+  font->family = familyCombo->text(index);
   displayCharsets();
 }
 
@@ -1851,9 +1855,10 @@ void FontChanger::sizeChanged(int n) {
   font->size = fontSizes[n];;
 }
 
-void FontChanger::charsetChanged(const char *charset) {
+// [KDE1 Revival 2026] 槽改收索引（activated(int)）：文本从组合框按索引取
+void FontChanger::charsetChanged(int index) {
 
-  font->charset = charset;
+  font->charset = charsetCombo->text(index);
   //KCharset(chset).setQFont(font);
 }
 

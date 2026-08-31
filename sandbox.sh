@@ -105,6 +105,12 @@ do_start() {
       DISPLAY=$DISP XMODIFIERS=@im=fcitx setsid fcitx5 -r >"$RUN/fcitx.log" 2>&1 &
       echo $! > "$RUN/fcitx.pid" ) &
 
+# [KDE1 Revival 2026] libpulsedsp 连 PulseAudio/PipeWire 走 XDG runtime 目录
+# （systemd 会话通常已设；干净环境缺失时 padsp 静默丢流，实测补齐后有流）
+if [ -z "${XDG_RUNTIME_DIR:-}" ] && [ -d "/run/user/$(id -u)" ]; then
+    export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+fi
+
     # 音效兼容：libpulsedsp 把 OSS /dev/dsp 调用转发到 PulseAudio/PipeWire，
     # 探测顺序与 startkde-kde1.in 相同；未找到则跳过预载（无音效但不影响画面）
     PULSEDSP=""

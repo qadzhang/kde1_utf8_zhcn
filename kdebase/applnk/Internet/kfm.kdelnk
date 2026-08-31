@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+# Written with GLM-5.3 (Z.ai) for the KDE1 Revival Project
+# [KDE1 Revival 2026] text/html 的默认打开程序：kfm 双内核（1999 原始渲染器
+# + WebKit2GTK 现代内核，View 菜单/Ctrl+Shift+W 切换）。
+Exec=kfm %u -caption "%c" %i %m
+Icon=kfm.xpm
+DocPath=kfm/index.html
+MimeType=text/html;
+Terminal=0
+Name=File Manager
+Name[zh_CN.UTF-8]=文件管理器
+Name[zh_CN]=文件管理器
+Comment=File Manager and Web Browser
+Comment[zh_CN.UTF-8]=文件管理器与网页浏览器
+Comment[zh_CN]=文件管理器与网页浏览器

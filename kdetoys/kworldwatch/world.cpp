@@ -33,7 +33,9 @@ void TimeTip::maybeTip(const QPoint &pos)
 World::World(QWidget *parent)
   : QWidget(parent)
 {
-  QFont        font("Courier", 10);
+  // [KDE1 Revival 2026] 弃用硬编码字族（交给 fontconfig 默认族），保留字号：仅作度量用
+  QFont        font;
+  font.setPointSize(10);
   QFontMetrics metric(font);
   KIconLoader  iconLoader;
 

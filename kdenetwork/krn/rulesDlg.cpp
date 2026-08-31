@@ -72,8 +72,9 @@ rulesDlg::rulesDlg():QDialog(0,0,true)
 
     list=(QListBox *)(l->addListBox("rulenames",&names)->widget);
     list->setMinimumWidth(100);
-    connect (list,SIGNAL(highlighted(const char*)),
-             this,SLOT(editRule(const char*)));
+    // [KDE1 Revival 2026] TQt3 的 TQListBox 无 highlighted(const char*) 信号，改接 TQString 版（槽签名同步）
+    connect (list,SIGNAL(highlighted(const TQString&)),
+             this,SLOT(editRule(const TQString&)));
                        
 
     l->addGroup ("rulbut","");
@@ -159,7 +160,8 @@ rulesDlg::~rulesDlg()
 }
 
 
-void rulesDlg::editRule(const char *name)
+// [KDE1 Revival 2026] 槽签名 TQString 化：rule->load 经隐式转换仍收 C 串
+void rulesDlg::editRule(const TQString &name)
 {
     rule=new Rule(0,0,Rule::Sender,false,false);
     rule->load(name);
