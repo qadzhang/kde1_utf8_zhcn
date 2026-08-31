@@ -1227,6 +1227,25 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
   return FALSE;
 }
 
+/* [KDE1 Revival 2026] XIM 提交（fcitx5/fcitx 上屏文本）→ pty。
+   What : 把输入法提交的整段 Unicode 文本按 UTF-8 字节送进终端子进程
+   Why  : kvt 键路径 lookup_key 只处理单字节（QKeyEvent::ascii 对 IME
+          提交恒为 0），无此钩子则中文根本无法键入终端
+   Who  : TQt3 XIM 层（焦点部件）；pyp 侧是 send_string（command.c）
+   When : 用户在输入法候选窗上选定词条的瞬间（IMEnd 同步送达）
+   Where: main.C（Qt 事件层）→ command.c send_string（写 master pty）
+   How  : text() 取 TQString → utf8() 转 UTF-8 字节流 → 逐字节写 pty；
+          终端侧按字节入格、渲染段经 XftDrawStringUtf8 上屏 */
+void kVt::imEndEvent( TQIMEvent *e )
+{
+  QString t = e->text();
+  if ( t.isEmpty() )
+    return;
+  QCString u = t.utf8();
+  send_string( (unsigned char *)u.data(), u.length() );
+  e->accept();
+}
+
 void kVt::scrolling( int value){
   MyWinInfo.offset =  length - value - (high - low);
   screen_refresh();
@@ -1393,6 +1412,25 @@ int main(int argc, char **argv)
       argc = i;
       argv[i] = 0;
     }
+  }
+
+  /* [2026-08-31] XIM 风格注入 root（输入法自绘预编辑窗）：kvt 无内嵌
+     文本部件，on-the-spot 的预编辑无处可画（用户敲拼音看不到已输入串）；
+     root 风格下 fcitx5/fcitx 在自己的浮窗里显示预编辑与候选，提交文本
+     经 kVt::imEndEvent 写入 pty。-inputstyle 是 TQt3 内建命令行参数，
+     QApplication 构造时消费后自动从 argv 移除，不污染 kvt 自己的参数 */
+  static char style_arg1[] = "-inputstyle";
+  static char style_arg2[] = "root";
+  char *xim_argv[2] = { style_arg1, style_arg2 };
+  {
+    char **newargv = new char*[argc + 3];
+    int n = 0;
+    for (int k = 0; k < argc; k++) newargv[n++] = argv[k];
+    newargv[n++] = style_arg1;
+    newargv[n++] = style_arg2;
+    newargv[n] = 0;
+    argv = newargv;
+    argc = n;
   }
 
   // create the QT Application

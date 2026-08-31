@@ -390,11 +390,12 @@ void TopLevel::setupToolBar(){
 void TopLevel::setupStatusBar(){
 
     statusbar = new KStatusBar( this );
-    statusbar->insertItem("Line:000000 Col: 000", ID_LINE_COLUMN);
+    /* [2026-08-31] 状态栏占位文本 i18n 化（首帧闪现英文原是硬编码） */
+    statusbar->insertItem(i18n("Line:000000 Col: 000"), ID_LINE_COLUMN);
     statusbar->insertItem("XXX", ID_INS_OVR);
     statusbar->insertItem("", ID_GENERAL);
 
-    statusbar->changeItem("Line: 1 Col: 1", ID_LINE_COLUMN);
+    statusbar->changeItem(i18n("Line: 1 Col: 1"), ID_LINE_COLUMN);
     statusbar->changeItem("INS", ID_INS_OVR);
     statusbar->changeItem("", ID_GENERAL);
 
@@ -923,7 +924,9 @@ void TopLevel::mail(){
 
   QString cmd;
   /*  cmd = mailcmd;*/
-  cmd = cmd.sprintf(mailcmd.data(),
+  /* [2026-08-31] 格式串来自配置（mailcmd），译文/主题/收件人均可含中文——
+     改 kde_sprintf：格式串与 %s 参数全链 UTF-8 安全 */
+  cmd = kde_sprintf(mailcmd.data(),
 		    maildlg->getSubject().data(),maildlg->getRecipient().data());
 
   /*  printf("%s\n",cmd.data());*/

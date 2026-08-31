@@ -264,7 +264,14 @@ void HexWidget::openURL(const char *_url, KIND_OF_OPEN _mode)
 	return;
     }
     
-    tmpFile.sprintf( "file:/tmp/khexdit%li", time( 0L ) );
+    /* [2026-08-31] 可预测临时名（同秒碰撞/符号链接竞争）改 mkstemp */
+    char tmpl[] = "/tmp/khexditXXXXXX";
+    int tfd = mkstemp( tmpl );
+    if ( tfd < 0 )
+      strcpy( tmpl, "/tmp/khexdit.tmp" );
+    else
+      close( tfd );
+    tmpFile = TQString( "file:" ) + tmpl;
     connect( kfm, SIGNAL( finished() ), SLOT( slotKFMFinished() ) );
   
     kfm->copy( netFile.data(), tmpFile.data() );

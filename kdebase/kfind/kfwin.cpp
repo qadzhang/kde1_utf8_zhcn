@@ -132,10 +132,12 @@ void KfindWindow::updateResults(const char *file )
     char str[PATH_MAX];
     int count;
     
-    QStrList *strl= new QStrList (TRUE);
+        QStrList *strl= new QStrList (TRUE);
     FILE *f = fopen(file,"rb");
     if (f==0)
       {
+	/* [2026-08-31] 错误分支补 delete：原实现直接 return 泄漏刚 new 的清单 */
+	delete strl;
 	sprintf(str,i18n("%d file(s) found"),0);
 	emit statusChanged(str);
 	return;
@@ -148,6 +150,36 @@ void KfindWindow::updateResults(const char *file )
       {
         str[0] = 0;
         fgets( str, 1023, f );
+        /* [2026-08-31] 超 1022 字节的长行会被 fgets 截断在 UTF-8 字符中间：
+           只裁尾部残缺序列（完整尾字符保留——首版无差别回退会误删完整字
+           符，修订算法与 ksame/HighScore.cpp 的 utf8_trim_boundary 一致，
+           该算法经 tools/utf8-boundary-fuzz.c 200 万模糊样本验证） */
+        /* [2026-08-31 三次修订] 循环收口（同 ksame utf8_trim_boundary，
+           经 tools/utf8-boundary-fuzz.c 200 万模糊样本验证）：只裁尾部
+           残缺序列，完整尾字符保留，坏尾巴反复暴露反复裁，有界收敛 */
+        for (;;) {
+          int L = strlen( str );
+          if ( L <= 0 ) break;
+          unsigned char last = (unsigned char)str[L-1];
+          if ( ( last & 0xC0 ) == 0x80 ) {
+            int p = L - 1;
+            while ( p >= 0 && ( (unsigned char)str[p] & 0xC0 ) == 0x80 )
+              p--;
+            if ( p < 0 ) { str[0] = 0; break; }
+            int need = 1;
+            unsigned char b = (unsigned char)str[p];
+            if ( (b & 0xE0) == 0xC0 ) need = 2;
+            else if ( (b & 0xF0) == 0xE0 ) need = 3;
+            else if ( (b & 0xF8) == 0xF0 ) need = 4;
+            int conts = need - 1;
+            int have = L - 1 - p;
+            if ( have < conts ) { str[p] = 0; continue; }
+            if ( have > conts ) { str[p + need] = 0; continue; }
+            break;
+          }
+          if ( last >= 0xC0 && last < 0xF8 ) { str[L-1] = 0; continue; }
+          break;
+        }
         if ( str[0] != 0 )
           {
             // Delete trailing '\n'

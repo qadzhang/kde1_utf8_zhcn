@@ -126,6 +126,12 @@ class KWriteDoc : QObject {
     ~KWriteDoc();
 
     int lastLine() const;
+
+    /* [KDE1 Revival 2026] UTF-8 字符边界辅助（验收目标 8：光标移动/删除/
+       计数按字符边界精确操作——kwrite 文档以字节存储，本组函数把字节位置
+       语义提升为"UTF-8 字符"粒度；纯 ASCII 行为与原先逐字节完全一致） */
+    int charLen(TextLine *textLine, int pos);       // pos 处一个 UTF-8 字符的字节长
+    int charLenBefore(TextLine *textLine, int pos); // pos 前一个 UTF-8 字符的字节长
     TextLine *textLine(int line);
     int textLength(int line);
     void tagLines(int start, int end);

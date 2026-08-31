@@ -61,7 +61,7 @@ Field::Field(QWidget *parent, const char *name)
 	pt->drawLine(4, 17, 17, 4);
 	pt->end();
 	
-	setFont( QFont("Helvetica", 13, QFont::Bold) );
+	setFont( QFont("", 13, QFont::Bold) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	
 	msg = new QLabel(this);
 	msg->hide();

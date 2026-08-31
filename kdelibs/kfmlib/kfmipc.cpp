@@ -33,8 +33,10 @@ void write_int( int _fd, int _value )
 
 void write_double( int _fd, double _value )
 {
-    char buffer[10];
-    sprintf( buffer, "%f ", _value );
+    // [2026-08-31] %f 默认 6 位小数，|值|>=1000 即溢出原 10 字节栈缓冲——
+    // 改 snprintf 带长度上限（截断而非越界）
+    char buffer[32];
+    snprintf( buffer, sizeof(buffer), "%.6f ", _value );
     write( _fd, (const char*)buffer, strlen(buffer) );
 }
 

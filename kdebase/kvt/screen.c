@@ -1672,6 +1672,24 @@ void scr_make_selection(int time)
 
       tx=(j+MyWinInfo.saved_lines-MyWinInfo.offset)*
 	(MyWinInfo.cwidth+1);
+
+      /* [KDE1 Revival 2026] 选区按 UTF-8 字符边界扩张（验收目标 8）：
+         kvt 逐字节存格（一个汉字占 3 格），鼠标可落在续字节格上——
+         不扩张则复制出的串从续字节起/止，是断裂的非法 UTF-8，粘贴到
+         现代程序即乱码（破坏"与现代应用双向复制粘贴中文"）。
+         扩张法：起点向左跳过全部 0x80-0xBF 续字节（落在前导字节上）；
+         终点向右吞掉跟随的续字节（补全最后一个多字节字符） */
+      {
+	int guard;
+	for (guard = 0; guard < 8 && a > 0 &&
+	       (((unsigned char)cScreen->text[tx+a]) & 0xC0) == 0x80;
+	     a--, guard++)
+	  ;
+	for (guard = 0; guard < 8 && b < MyWinInfo.cwidth - 1 &&
+	       (((unsigned char)cScreen->text[tx+b+1]) & 0xC0) == 0x80;
+	     b++, guard++)
+	  ;
+      }
       if(((tx + a) < 0)||
 	 ((tx+b)>=(MyWinInfo.saved_lines+MyWinInfo.cheight)*
 	  (MyWinInfo.cwidth+1)))
@@ -1721,6 +1739,9 @@ void scr_paste_selection()
 
   send_string(s,strlen(s));
 
+  /* [KDE1 Revival 2026] kvt_get_selection 返回 strdup 副本——原实现每次
+     粘贴泄漏一份选区拷贝（长期会话积累），用后释放 */
+  free(s);
 }
 
 

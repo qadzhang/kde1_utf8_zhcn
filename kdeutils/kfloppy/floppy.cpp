@@ -113,7 +113,7 @@ FloppyData::FloppyData
 
 	progress = new KProgress( this, "Progress" );
 	progress->setGeometry( 20, 325, 320, 30 );
-	progress->setFont(QFont("Helvetica",12,QFont::Normal));
+	progress->setFont(QFont("",12,QFont::Normal)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	progress->setBarColor(QApplication::winStyleHighlightColor());
 
 	frame = new QLabel( this, "NewsWindow" );
@@ -291,6 +291,13 @@ bool FloppyData::findDevice()
   }
 
 
+  /* [2026-08-31] 密度别名回退：fd0H1440/fd0u1440 等密度设备节点需要
+     fdutils（现代 Debian 默认无）；两者都不可写时退回裸设备 /dev/fd0
+     （内核自动按介质密度识别），而不是直接报错拒格式化 */
+  if( access(device.data(),W_OK) < 0 && mdev && access(mdev.data(),W_OK) == 0){
+      device = mdev;
+  }
+
   if( access(device.data(),W_OK) < 0){
 
     QString str;
@@ -311,15 +318,22 @@ bool FloppyData::findDevice()
 
 bool FloppyData::findExecutables(){
 
-
+  /* [KDE1 Revival 2026-08-31] ext2 格式化改用系统现代 mke2fs：
+   * What : 探测并记录 mke2fs 的绝对路径（Debian 12 的 e2fsprogs 必装）
+   * Why  : 1999 年的 kmke2fs 是内嵌 e2fsprogs-1.10 的私有补丁构建
+   *        （e2fs/ 子目录），章程 §6.8 禁止内嵌旧库副本；现代 mke2fs
+   *        的命令行（[-c] 设备）与本调用点完全兼容
+   * When : FloppyData 构造（启动探测）
+   * How  : 依次探测 /usr/sbin、/sbin（Debian 12 merged-usr 两者覆盖）
+   *        与 PATH 各目录；命中记入 mke2fsPath 供 format 流程 exec */
   bool mkformat = false;
   bool mkdosfs  = false;
   bool mke2fs   = false;
   bool ok 	= true;
-  
+
   QFileInfo info;
   QString directory;
- 
+
   directory = mykapp->kde_bindir();
 
   info.setFile(directory + "/kfdformat");
@@ -327,9 +341,22 @@ bool FloppyData::findExecutables(){
     mkformat = true;
   }
 
-  info.setFile(directory + "/kmke2fs");
-  if (info.isExecutable()){
-    mke2fs = true;
+  mke2fsPath = "";
+  static const char *cand[] = { "/usr/sbin/mke2fs", "/sbin/mke2fs", 0L };
+  for (int ci = 0; cand[ci]; ci++) {
+    info.setFile(cand[ci]);
+    if (info.isExecutable()) { mke2fs = true; mke2fsPath = cand[ci]; break; }
+  }
+  if (!mke2fs) {              // PATH 兜底（用户 PATH 含 sbin 的情形）
+    char *pathEnv = getenv("PATH");
+    if (pathEnv) {
+      QStringList dirs = QStringList::split(':', QString(pathEnv));
+      for (QStringList::Iterator it = dirs.begin(); it != dirs.end(); ++it) {
+        if ((*it).isEmpty()) continue;
+        info.setFile(*it + "/mke2fs");
+        if (info.isExecutable()) { mke2fs = true; mke2fsPath = *it + "/mke2fs"; break; }
+      }
+    }
   }
 
   info.setFile(directory + "/kmkdosfs");
@@ -338,12 +365,12 @@ bool FloppyData::findExecutables(){
   }
 
   if(!mkformat){
-
+    /* [2026-08-31] 原的 str.sprintf(i18n(...))：TQString::sprintf 格式串按
+       Latin-1 逐字节升位，中文译文渲染为豆腐块；无参文案直接赋值 */
     QString str;
-    str.sprintf(
-		i18n(
+    str = i18n(
        	"Cannot find kfdformat\nkfdformat is part of the KFloppy distribution.\n"
-	"Please install KFloppy properly."));
+	"Please install KFloppy properly.");
     QMessageBox::critical(this,
 			  i18n("KFloppy"),
 		       str.data());
@@ -354,12 +381,12 @@ bool FloppyData::findExecutables(){
   }
 
   if( !mke2fs){
-
+    /* [2026-08-31] 同上豆腐块修复；文案改为指向系统 e2fsprogs（本项目
+       已弃内嵌 kmke2fs，改用现代 mke2fs，见 findExecutables 注释） */
     QString str;
-    str.sprintf(
-		i18n(
-          "Cannot find kmke2fs\nkmke2fs is part of the KFloppy distribution.\n"
-	  "Please install KFloppy properly."));
+    str = i18n(
+          "Cannot find mke2fs\nmke2fs is part of the e2fsprogs package.\n"
+	  "Please install e2fsprogs properly.");
     QMessageBox::critical(this,
 		       i18n("KFloppy"),
 		       str.data());
@@ -369,13 +396,11 @@ bool FloppyData::findExecutables(){
   }
 
   if( !mkdosfs){
-
+    /* [2026-08-31] 同上豆腐块修复 */
     QString str;
-    str.sprintf(
-		i18n(
+    str = i18n(
 		"Cannot find kmkdosfs\nkmkdosfs is part of the KFloppy distribution.\n"
-		"Please install KFloppy properly.")
-		);
+		"Please install KFloppy properly.");
     QMessageBox::critical(this,
 		       i18n("KFloppy"),
 		       str.data());
@@ -479,10 +504,7 @@ void FloppyData::format(){
 
   if(!result){
     QString str;
-    str.sprintf(
-		i18n(
-		"Cannot start a new program: fork() failed."
-		));
+    str = i18n("Cannot start a new program: fork() failed.");  /* [2026-08-31] 豆腐块 sprintf 修复 */
     QMessageBox::critical(this,
 		       i18n("KFloppy"),
 		       str.data());
@@ -864,7 +886,7 @@ void FloppyData::createfilesystem(){
   }
   else{
 
-    proc->setExecutable("kmke2fs");
+    proc->setExecutable(mke2fsPath);   /* [2026-08-31] 系统 mke2fs 绝对路径（findExecutables 探测） */
 
     if(!quickerase)
       *proc << "-c" ;
@@ -887,10 +909,7 @@ void FloppyData::createfilesystem(){
 
   if(!result){
     QString str;
-    str.sprintf(
-		i18n(
-		"Cannot start a new program\nfork() failed.")
-		);
+    str = i18n("Cannot start a new program\nfork() failed.");  /* [2026-08-31] 豆腐块 sprintf 修复 */
     QMessageBox::critical(this,
 		       i18n("KFloppy"),
 		       str.data());

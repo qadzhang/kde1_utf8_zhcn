@@ -43,13 +43,27 @@
 QString HTMLElement::encodeString( const QString &e )
 {
 	static char *safe = "$-._!*(),"; /* RFC 1738 */
-	unsigned pos = 0;
+	// 伪代码：
+	//   1. 把 e 整串转成 UTF-8 字节流（TQCString）
+	//   2. 逐字节扫描：
+	//        a. 字母/数字/safe 字符 → 原样追加
+	//        b. 空格 → '+'
+	//        c. '\n' → "%0D%0A"（表单换行规范化为 CRLF）
+	//        d. '\r' → 跳过
+	//        e. 其余字节（含中文的多字节序列）→ %XX 十六进制转义
+	// [2026-08-31] Why：原实现逐 TQChar 取单字节——非 Latin-1 字符（中文）
+	//   高位被丢弃得 0，编出 "%00%00"（与 KURL::encodeURL 修复前同族缺陷）；
+	//   现代浏览器对表单值的 percent-encoding 正是按 UTF-8 字节流进行的，
+	//   本修法与其对齐（What's Here 表单提交中文可被现代站点正确解码）
+	// Who：kfm 旧内核 HTML 表单 GET/POST 的 x-www-form-urlencoded 编码（17 调用点）
+	// When：表单 submit 时对每个字段名/字段值调用
+	TQCString utf = e.utf8();
 	QString encoded;
 	char buffer[5];
 
-	while ( pos < e.length() )
+	for ( const char *p = utf.data(); p && *p; p++ )
 	{
-		unsigned char c = (unsigned char) e[pos];
+		unsigned char c = (unsigned char)*p;
 
 		if ( (( c >= 'A') && ( c <= 'Z')) ||
 		     (( c >= 'a') && ( c <= 'z')) ||
@@ -57,7 +71,7 @@ QString HTMLElement::encodeString( const QString &e )
 		     (strchr(safe, c))
 		   )
 		{
-			encoded += c;
+			encoded += (char)c;
 		}
 		else if ( c == ' ' )
 		{
@@ -72,7 +86,6 @@ QString HTMLElement::encodeString( const QString &e )
 			sprintf( buffer, "%%%02X", (int)c );
 			encoded += buffer;
 		}
-		pos++;
 	}
 
 	return encoded;

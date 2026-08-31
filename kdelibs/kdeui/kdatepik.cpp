@@ -163,8 +163,9 @@ KDatePicker::KDatePicker(QWidget *parent, QDate dt, const char *name)
 		     old_cg.base());
   m_header->setPalette(QPalette(new_cg,new_cg,new_cg));
    
-  m_footer->setFont(QFont("Arial", fontsize, QFont::Bold));
-  m_header->setFont(QFont("Times", fontsize+2/*, QFont::Bold*/));   
+  // [2026-08-31] 页眉/页脚字体改默认族（原 Arial/Times 无 CJK 字形，中文年月 tofu）
+  { QFont ff; ff.setPointSize(fontsize); ff.setBold(true); m_footer->setFont(ff); }
+  { QFont hf; hf.setPointSize(fontsize+2); m_header->setFont(hf); }
 }
 
 

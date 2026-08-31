@@ -296,6 +296,13 @@ void KFixedTopWidget::setFrameBorderWidth(int size){
 
 }
 
+/* [2026-08-31] 见头文件注释：显示后重算（构造期 isVisible 恒 false 的补偿） */
+void KFixedTopWidget::showEvent( QShowEvent * )
+{
+  if ( nores == 0 )
+    updateRects();
+}
+
 void KFixedTopWidget::resizeEvent( QResizeEvent * )
 {
   //menu resizes themself

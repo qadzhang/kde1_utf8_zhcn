@@ -5,6 +5,7 @@
 #define ALLOW_GUI 1
 
 #include "kmmessage.h"
+#include <qtextcodec.h> /* [2026-08-31] 正文按 charset 转 Unicode */
 #include "kmmsgpart.h"
 #include "kmmsginfo.h"
 #include "kpgp.h"
@@ -1075,7 +1076,38 @@ const QString KMMessage::bodyDecoded(void) const
     dwstr = dwsrc;
     break;
   }
-  return TQString::fromLatin1(dwstr.c_str(), dwstr.length()+1);  /* TQt3 迁移 */
+  /* [2026-08-31] 解码产物是按部件 charset 编码的原始字节——fromLatin1 会
+     把 >=0x80 字节升位成 U+0080..FF（中文正文双重编码乱码）。改为：部件
+     声明了 charset 且 TQt3 有对应 codec 时按之转换；否则按 UTF-8（现代
+     邮件主流）解码，非法序列由 TQt3 替换符兜底不崩溃 */
+  {
+    QCString bytes( (int)dwstr.size() + 1 );
+    if ( dwstr.size() )
+      memcpy( bytes.data(), dwstr.data(), dwstr.size() );
+    bytes[(int)dwstr.size()] = '\0';
+
+    /* charset() 声明被 #if defined CHARSETS 守卫（构建未定义该宏），
+       就地解析 ContentType 的 charset 参数（逻辑与其实现一致） */
+    TQString cs;
+    {
+        DwMediaType &mType = mMsg->Headers().ContentType();
+        mType.Parse();
+        DwParameter *param = mType.FirstParameter();
+        while ( param ) {
+            if ( param->Attribute() == "charset" ) {
+                cs = TQString( param->Value().c_str() );
+                break;
+            }
+            param = param->Next();
+        }
+    }
+    TQTextCodec *codec = 0;
+    if ( !cs.isEmpty() )
+      codec = TQTextCodec::codecForName( cs.latin1() );
+    if ( codec )
+      return codec->toUnicode( bytes );
+    return TQString::fromUtf8( bytes );
+  }
 }
 
 

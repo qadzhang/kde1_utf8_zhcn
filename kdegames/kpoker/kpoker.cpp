@@ -53,8 +53,8 @@ extern "C" {
 
 
 CardImages    *cardImage;
-QFont LHLabelSmallFont("Helvetica",10);
-QFont LHLabelVerySmallFont("Helvetica",8);
+QFont LHLabelSmallFont("",10);       /* [2026-08-31] 空族=TQt 默认族（Helvetica 无 CJK 字形，中文按钮/标签 tofu） */
+QFont LHLabelVerySmallFont("",8);    /* [2026-08-31] 同上 */
 
 
 kpok::kpok(QWidget *parent, const char *name) 
@@ -86,7 +86,7 @@ kpok::kpok(QWidget *parent, const char *name)
 	kacc->connectItem("Quit", qApp, SLOT(quit()));
 	kacc->connectItem("New", this, SLOT(initPoker()));
 	
-	QFont myFixedFont("Helvetica",12);
+	QFont myFixedFont("",12);          /* [2026-08-31] 同上 */
 
 	drawButton = new QPushButton(this,0);
 	
@@ -102,7 +102,7 @@ kpok::kpok(QWidget *parent, const char *name)
 	  }
 	
 	
-	QFont wonFont("Helvetica", 14, QFont::Bold);
+	QFont wonFont("", 14, QFont::Bold);  /* [2026-08-31] 同上 */
 	wonLabel = new QLabel(this, 0);
 	
 	wonLabel->hide();
@@ -111,7 +111,7 @@ kpok::kpok(QWidget *parent, const char *name)
 	wonLabel->move(this->width() /2  - wonLabel->width() / 2, wonLabelVDist);
 	
 	
-	QFont clickToHoldFont("Helvetica", 11);
+	QFont clickToHoldFont("", 11);       /* [2026-08-31] 同上 */
 	clickToHold = new QLabel(this,0);
 	
 	clickToHold->hide();
@@ -402,7 +402,7 @@ void kpok::setCard(int num, int value)
 void kpok::setHand(const char *newHand)
 {
    char buf[255];
-   QFont LHFont("Helvetica",12);
+   QFont LHFont("",12);              /* [2026-08-31] 同上 */
    sprintf(buf,"%s: %s",locale->translate("Last Hand"), newHand); // locale
 
    LHLabel->setFont(LHFont);
@@ -654,7 +654,7 @@ void kpok::paintEvent( QPaintEvent *)
       return;
 
 
-   QFont wonFont("Helvetica", 18, QFont::Bold);
+   QFont wonFont("", 18, QFont::Bold); /* [2026-08-31] 同上 */
    
    QFontMetrics fm = QFontMetrics(wonFont);
 
@@ -680,11 +680,14 @@ void kpok::paintEvent( QPaintEvent *)
    p.setFont( wonFont );
    p.setPen( QColor(0,0,0) );
    
-   while ( t[i].latin1() ) {
+   /* [2026-08-31] 按 TQChar 整字符迭代：latin1() 对中文等非 Latin-1 字符
+      返回 0——「你赢了 $」在第一个汉字处循环即终止，动画区一片空白 */
+   while ( i < (int)t.length() ) {
       int i16 = (fCount+i) & 15;
-      
-      p.drawText( x, y-sin_tbl[i16]*h/800, TQString(QChar(t[i].latin1())) );  /* TQt3 迁移 */
-      x += fm.width( TQString(QChar(t[i].latin1())) );
+      TQString ch( t[i] );
+
+      p.drawText( x, y-sin_tbl[i16]*h/800, ch );
+      x += fm.width( ch );
       i++;
    }
    p.end();

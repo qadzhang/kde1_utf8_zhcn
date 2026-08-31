@@ -445,133 +445,122 @@ msgstr ""
 #, fuzzy
 #~ msgid "Processes &Tree"
 #~ msgstr "进程"
-
 #, fuzzy
 #~ msgid "&Performance"
 #~ msgstr "性能"
-
 #, fuzzy
 #~ msgid "Refresh rate: Medium"
 #~ msgstr "刷新"
-
 #, fuzzy
 #~ msgid "Refresh rate: Fast"
 #~ msgstr "刷新"
-
 #, fuzzy
 #~ msgid "Kill Task"
 #~ msgstr "结束任务"
-
 #, fuzzy
 #~ msgid "Sort by ID"
 #~ msgstr "排序方式"
-
 #, fuzzy
 #~ msgid "Sort by Name"
 #~ msgstr "排序方式"
-
 #, fuzzy
 #~ msgid "Sort by Owner (UID)"
 #~ msgstr "属主 (UID)"
-
 #~ msgid "CPU load"
 #~ msgstr "CPU 负载"
-
 #, fuzzy
 #~ msgid "Swap history"
 #~ msgstr "CPU 负载历史记录"
-
 #, fuzzy
 #~ msgid "procID"
 #~ msgstr "进程 ID"
-
 #, fuzzy
 #~ msgid "Processes List"
 #~ msgstr "进程"
-
 #, fuzzy
 #~ msgid "Processes Tree"
 #~ msgstr "进程"
-
 #, fuzzy
 #~ msgid "About..."
 #~ msgstr "关于..."
-
 #~ msgid "Ok"
 #~ msgstr "确定"
-
 #~ msgid "About Taskmanager"
 #~ msgstr "关于任务管理器"
-
-#~ msgid "Quit"
-#~ msgstr "离开"
-
 #~ msgid "Help"
 #~ msgstr "帮助"
-
 #~ msgid "Process viewer settings..."
 #~ msgstr "进程查看程序设定..."
-
 #~ msgid "File"
 #~ msgstr "文件"
-
 #~ msgid "Settings"
 #~ msgstr "设定"
-
 #~ msgid "Process viewer settings"
 #~ msgstr "进程查看程序设定"
-
 #~ msgid "Update interval"
 #~ msgstr "更新间隔"
-
 #~ msgid "Slow"
 #~ msgstr "慢"
-
 #~ msgid "Medium"
 #~ msgstr "中"
-
 #~ msgid "High"
 #~ msgstr "高"
-
 #~ msgid "Custom"
 #~ msgstr "自定义"
-
 #~ msgid "Load (%CPU)"
 #~ msgstr "负载 (%CPU)"
-
 #~ msgid "Misc settings"
 #~ msgstr "其它设定"
-
 #~ msgid "Error"
 #~ msgstr "错误"
-
 #~ msgid "The update interval value mustbe greater than zero"
 #~ msgstr "更新间隔值必须大于零"
-
 #~ msgid "Warning"
 #~ msgstr "警告"
-
-#~ msgid ""
-#~ "You have specified a very fast update ratio.\n"
-#~ "This may generate a noticeable load onyour system."
-#~ msgstr ""
-#~ "你指定了一个非常快的的更新速率.\n"
-#~ "这可能会在你的系统上产生非常显著的负载."
-
 #~ msgid "Performance monitor settings"
 #~ msgstr "性能监视器设置"
-
 #~ msgid "Properties..."
 #~ msgstr "特性..."
-
 #~ msgid "General"
 #~ msgstr "一般"
-
 #~ msgid "Sorry"
 #~ msgstr "抱歉"
-
 #~ msgid "Not yet implemented.\n"
 #~ msgstr "还没有实现.\n"
-
 #~ msgid "Not implemented yet"
 #~ msgstr "还没有实现"
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&File"
+msgstr "文件(&F)"
+
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Quit"
+msgstr "退出"
+
+msgid "Stop"
+msgstr "停止"
+
+# [KDE1 Revival 2026-08-31] 应用特有词条人工补译
+msgid "Buffer (MB)"
+msgstr "缓冲 (MB)"
+
+msgid "Cache (MB)"
+msgstr "缓存 (MB)"
+
+msgid "Program (MB)"
+msgstr "程序 (MB)"
+
+msgid "Swap (MB)"
+msgstr "交换 (MB)"
+

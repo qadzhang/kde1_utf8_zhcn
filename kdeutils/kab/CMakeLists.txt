@@ -10,7 +10,7 @@ include_directories(
     ${KDE1_INCLUDE_DIR}
 )
 
-add_definitions(-Dlinux)
+add_definitions(-Dlinux -DNDEBUG)  # [2026-08-31] 生产构建关闭 kab 断言（debug.h 的 CHECK/REQUIRE/ENSURE 本为调试构建准备；空库启动断言恒假导致用户看到"发现了一个bug"对话框）
 
 set(kab_SRCS
     main.cc

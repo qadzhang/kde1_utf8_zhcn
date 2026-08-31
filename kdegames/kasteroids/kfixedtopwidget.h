@@ -123,6 +123,10 @@ public:
   
 protected:
 	void resizeEvent( QResizeEvent *e);
+	/* [2026-08-31] 显示后重算布局：updateRects 依赖 kmenubar->isVisible()，
+	   构造期（窗口未显示）恒为 false——布局按"无菜单栏"算死，菜单栏叠进
+	   内容区顶。showEvent 在窗口真正可见后触发一次完整重算 */
+	void showEvent( QShowEvent *e);
 	void focusInEvent ( QFocusEvent *);
 	void focusOutEvent ( QFocusEvent *);
 

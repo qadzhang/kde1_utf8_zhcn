@@ -141,6 +141,60 @@ HighScore::add(int board, int score,int colors) {
 	  show();
      }
 }
+/* [KDE1 Revival 2026] UTF-8 边界收尾：高分玩家名的存储定长 16 字节（1999
+   原格式，%16s/%16c 读写、旧存档兼容），截断可能落在多字节字符中间——
+   只裁掉尾部残缺序列，完整的多字节字符保留。
+   [2026-08-31 三轮修订] ① 首版无差别回退会误删完整尾字符（模糊测试
+   抓出）；② 比较差一（have 数续字节、need 含前导，须比 need-1）；
+   ③ 循环收口：裁一刀后暴露的新尾巴也可能是坏序列，循环至稳定。
+   算法经 tools/utf8-boundary-fuzz.c 200 万随机样本验证全部契约。
+   What : 收尾 buf 使其以 ASCII 或完整多字节字符结束
+   Who  : HighScore::add/load/store 的三处玩家名定长截断
+   When : 每次读/写高分表前
+   How  : 循环：尾字节为续字节(0x80-0xBF) → 回溯到前导 p，have<need-1
+          裁到 p（残缺）、have>need-1 裁到 p+need（悬挂续字节）、相等
+          即完整收尾返回；尾字节为有效前导(C2-F4) → 缺后续，裁掉；
+          其余（ASCII/无效前导单字节）返回。每轮 strlen 严格递减 */
+static void utf8_trim_boundary( char *buf )
+{
+    for (;;) {
+        int L = strlen( buf );
+        if ( L <= 0 )
+            return;
+        unsigned char last = (unsigned char)buf[L-1];
+        if ( ( last & 0xC0 ) == 0x80 ) {           /* 尾字节是续字节 */
+            int p = L - 1;
+            while ( p >= 0 && ( (unsigned char)buf[p] & 0xC0 ) == 0x80 )
+                p--;
+            if ( p < 0 ) {                         /* 全是孤立续字节 */
+                buf[0] = 0;
+                return;
+            }
+            unsigned char b = (unsigned char)buf[p];
+            int need = 1;                          /* 前导声明的总字节长 */
+            if ( (b & 0xE0) == 0xC0 ) need = 2;
+            else if ( (b & 0xF0) == 0xE0 ) need = 3;
+            else if ( (b & 0xF8) == 0xF0 ) need = 4;
+            int conts = need - 1;                  /* 应配续字节数 */
+            int have = L - 1 - p;                  /* 实际续字节数 */
+            if ( have < conts ) {                  /* 残缺序列：整段裁掉 */
+                buf[p] = 0;
+                continue;
+            }
+            if ( have > conts ) {                  /* 前导完整后续悬挂：裁悬挂段 */
+                buf[p + need] = 0;
+                continue;
+            }
+            return;                                /* 完整字符收尾 */
+        }
+        if ( last >= 0xC0 && last < 0xF8 ) {       /* 尾字节是缺后续的有效前导 */
+            buf[L-1] = 0;
+            continue;
+        }
+        return;                                    /* ASCII / 无效前导单字节 */
+    }
+}
+
 void 
 HighScore::add(int board, int score,int colors,char *name) {
      int i;
@@ -152,6 +206,7 @@ HighScore::add(int board, int score,int colors,char *name) {
      }
      if (!*playername) strncpy(playername,klocale->translate("Anonymous"),16);
      playername[16]=0;
+     utf8_trim_boundary( playername );      /* [2026-08-31] 截断回退到字符边界 */
      for (i=hiscore_used;i>0;i--) {
 	  if (score<=hiscore[i-1].score) break;
 	  if (i<HS_MAXENTRY) {
@@ -164,6 +219,7 @@ HighScore::add(int board, int score,int colors,char *name) {
 	  hiscore[i].colors=colors;
 	  strncpy(hiscore[i].name,playername,16);
 	  hiscore[i].name[16]=0;
+	  utf8_trim_boundary( hiscore[i].name ); /* [2026-08-31] 同上 */
 	  if (hiscore_used<HS_MAXENTRY) hiscore_used++;
 	  store();
      }
@@ -188,10 +244,19 @@ HighScore::load() {
 	      &hiscore[i].score,
 	      &hiscore[i].colors,
 	      hiscore[i].name);
+       /* [2026-08-31] %16c 定长拷贝可能带回尾随空格垫充与残缺字节：
+          先裁空格再按 UTF-8 边界收尾 */
+       {
+            int L = 16;
+            while ( L > 0 && hiscore[i].name[L-1] == ' ' )
+                 hiscore[i].name[--L] = 0;
+            utf8_trim_boundary( hiscore[i].name );
+       }
        hiscore_used++;
   }
   strncpy(playername,conf->readEntry("LastPlayer","NoNaMe"),16);
   playername[16]=0;
+  utf8_trim_boundary( playername );          /* [2026-08-31] 截断回退到字符边界 */
   conf->setGroup(oldgrp.data());
 }
 

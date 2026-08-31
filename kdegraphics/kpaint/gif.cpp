@@ -198,10 +198,13 @@ done:
   else
       imageio->setStatus(1);
   if (GifFile) {
+      /* [2026-08-31] giflib5 的 DGifCloseFile 即 free(GifFile)——原实现 close
+         后再读 GifFile->SHeight 属释放后读（布局敏感 UB）。先存高度再关 */
+      int sheight = GifFile->SHeight;
       if (DGifCloseFile(GifFile, &gifErr) == GIF_ERROR)
           gif_report_error("DGifCloseFile", gifErr);
       if (ScreenBuffer)
-          gif_free_screen(ScreenBuffer, GifFile->SHeight);
+          gif_free_screen(ScreenBuffer, sheight);
   }
 }
 
@@ -237,7 +240,10 @@ void write_gif_file(QImageIO *imageio)
          256 * sizeof(GifColorType));
 
   // giflib5：写模式标志后移为错误出参（WriteMode 恒真由 EGif 语义承担）
-  if ((GifFile = EGifOpenFileName(imageio->fileName(), 1, &gifErr)) == NULL) {
+  /* [2026-08-31] 第二参 TestExistence 1→0：原设置下已存在的文件不会被
+     截断，EGifOpenFileName 返回 NULL——图像编辑器「保存/另存覆盖」主路径
+     必然失败。giflib 文档：TRUE 且文件存在则不销毁原文件 */
+  if ((GifFile = EGifOpenFileName(imageio->fileName(), 0, &gifErr)) == NULL) {
       gif_report_error("EGifOpenFileName", gifErr);
       GifFreeMapObject(imageColourmap);
       GifFreeMapObject(screenColourmap);
@@ -264,9 +270,12 @@ void write_gif_file(QImageIO *imageio)
   }
 
   for (i = 0; i < imageio->image().height(); i++) {
+      /* [2026-08-31] 第三参是行长（GifPixelType 个数=像素数）——原传
+         bytesPerLine()，TQt3 扫描行 32 位对齐，width%4!=0 时每行多写
+         填充字节，输出 GIF 数据量与 ImageDescriptor 声明不符（图损坏） */
       if (EGifPutLine(GifFile,
                       (GifPixelType *) imageio->image().scanLine(i),
-                      imageio->image().bytesPerLine()) == GIF_ERROR) {
+                      imageio->image().width()) == GIF_ERROR) {
           gif_report_error("EGifPutLine", GifFile->Error);
           goto wfail;
       }

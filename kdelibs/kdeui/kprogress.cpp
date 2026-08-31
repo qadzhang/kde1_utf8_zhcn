@@ -56,7 +56,8 @@ void KProgress::initialize()
 	bar_text_color = kapp->selectTextColor;
 	text_color = kapp->textColor;
 	setBackgroundColor( kapp->windowColor );
-	setFont(QFont("helvetica", 12, QFont::Bold));
+	// [2026-08-31] 进度字体改全局字体族加粗（原 helvetica 无 CJK 字形，中文文案 tofu）
+	{ QFont pf = kapp->generalFont; pf.setPointSize(12); pf.setBold(true); setFont(pf); }
 	text_enabled = TRUE;
 	adjustStyle();
 }

@@ -1980,86 +1980,89 @@ msgid "Hayes(tm) compatible modem"
 msgstr "Hayes(tm) 兼容调制解调器"
 
 #, fuzzy
-#~ msgid ""
-#~ "kppp can not find:\n"
-#~ " %s\n"
-#~ "Please install pppd properly and/or adjust\n"
-#~ "the location of the pppd executable on\n"
-#~ "the PPP tab of the setup dialog.\n"
-#~ "This will insure that kppp can find the\n"
-#~ "PPP daemon.\n"
-#~ "Thank You"
-#~ msgstr ""
-#~ "kppp 找不到:\n"
-#~ " %s\n"
-#~ "请正确安装 pppd , 并且在设置对话的 PPP 表中\n"
-#~ "调整好 pppd 的执行文件的位置.\n"
-#~ "谢谢"
-
-#~ msgid ""
-#~ "The application-specific config file\n"
-#~ "could not be opened neither\n"
-#~ "read-write nor read-only"
-#~ msgstr ""
-#~ "程序定义的配置文件既不能以读写方式\n"
-#~ "打开,也不能以只读打开"
-
 #, fuzzy
 #~ msgid "Verify your password."
 #~ msgstr "保存密码"
-
-#~ msgid "Insert"
-#~ msgstr "插入"
-
-#~ msgid ""
-#~ "\n"
-#~ "A dialer and front-end to pppd\n"
-#~ "\n"
-#~ "Copyright (c) 1997\n"
-#~ "Bernd Johannes Wuebben\n"
-#~ "wuebben@math.cornell.edu"
-#~ msgstr ""
-#~ "\n"
-#~ "拨号程序,pppd 的前端\n"
-#~ "\n"
-#~ "Copyright (c) 1997\n"
-#~ "Bernd Johannes Wuebben\n"
-#~ "wuebben@math.cornell.edu"
-
-#~ msgid ""
-#~ "With contributions from:\n"
-#~ "\n"
-#~ "Mario Weilguni\n"
-#~ "Markus Wuebben\n"
-#~ "Jesus Fuentes Saavedra\n"
-#~ "Harri Porten\n"
-#~ "Peter Silva"
-#~ msgstr ""
-#~ "得到以下人的帮助:\n"
-#~ "\n"
-#~ "   Mario Weilguni\n"
-#~ "   Markus Wuebben\n"
-#~ "   Jesus Fuentes Saavedra\n"
-#~ "   Harri Porten\n"
-#~ "   Peter Silva"
-
 #~ msgid "Restore Defaults"
 #~ msgstr "恢复默认值"
-
 #~ msgid "Can't open Modem"
 #~ msgstr "不能打开调制解调器"
-
 #~ msgid "Sorry, the modem is busy"
 #~ msgstr "抱歉,调制解调器正忙"
-
 #~ msgid "tcgetattr() failed\n"
 #~ msgstr "tcgetattr() 失败\n"
-
 #~ msgid "tcsetattr() failed\n"
 #~ msgstr "tcsetattr() 失败\n"
-
 #~ msgid "Use default script"
 #~ msgstr "使用默认脚本"
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&Close"
+msgstr "关闭(&C)"
 
-#~ msgid "Restore"
-#~ msgstr "恢复"
+msgid "&File"
+msgstr "文件(&F)"
+
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Could not load %s !"
+msgstr "Não consegui carregar %s !"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Insert"
+msgstr "插入"
+
+msgid "No"
+msgstr "否"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Quit"
+msgstr "退出"
+
+msgid "Remove"
+msgstr "删除"
+
+msgid "Restore"
+msgstr "Restaurar"
+
+msgid "Sorry"
+msgstr "抱歉"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Yes"
+msgstr "是"
+
+# [KDE1 Revival 2026-08-31] 应用特有词条人工补译
+msgid "You have launched pppd before the remote server "
+msgstr "您在远程服务器"
+

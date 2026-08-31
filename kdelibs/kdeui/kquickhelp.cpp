@@ -421,41 +421,40 @@ QString KQuickHelpWindow::token() {
   bool  backslash = false;
 
   while(tokIndex < (int)txt.length()) {
-    char c = txt[tokIndex++].latin1();  // TQt3 迁移：TQCharRef 需显式取字节
+    // [2026-08-31] 按 TQChar 整字符处理：原先 latin1() 取字节，中文等非 Latin-1
+    // 字符得 0——`t += '\0'` 把 NUL 拼进帮助文本，WhatsThis 中文首字处即截断/出框。
+    // 标记符（\\、\n、<、>）均为 ASCII，TQChar 比较语义与原 switch 等价
+    TQChar ch = txt[tokIndex++];
 
     if(backslash) {
       backslash = false;
-      t += c;
-    } else {
-      switch(c) {
-      case '\\':
+      t += ch;
+    } else if ( ch == '\\' ) {
 	backslash = true;
-	break;
-
-      case '\n':
-	if(t.length() == 0)
+    } else if ( ch == '\n' ) {
+	/* [2026-08-31] 原 switch 版本两个分支都无条件 return t；重写时空
+	   分支漏了 return——"<br>" 后继续吸收正文，paint() 对 < 开头 token
+	   做前缀匹配命中换行后丢弃余文，多行 WhatsThis 首行之后全部不渲染 */
+	if(t.length() == 0) {
 	  t = "<br>";
-	else
+	  return t;
+	} else {
 	  tokIndex--;
-	return t;
-
-      case '<':
+	  return t;
+	}
+    } else if ( ch == '<' ) {
 	if(t.length() == 0)
-	  t += c;
+	  t += ch;
 	else {
 	  tokIndex--;
 	  return t;
 	}
-	break;
-
-      case '>':
+    } else if ( ch == '>' ) {
 	if(t.left(1) == "<") // bad token
-	  t += c;
+	  t += ch;
 	return t;
-
-      default:
-	t += c;
-      }
+    } else {
+	t += ch;
     }
   }
 

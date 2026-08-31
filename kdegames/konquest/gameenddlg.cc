@@ -61,7 +61,7 @@ GameEndDlg::turnCountChange( int newTurnCount )
     
     addTurns = newTurnCount;
 
-    newLbl.sprintf( i18n("Add %d turns"), addTurns );
+    newLbl = kde_sprintf( i18n("Add %d turns"), addTurns ); /* [2026-08-31] 同上 */
 
     turnCountLbl->setText( newLbl);
 

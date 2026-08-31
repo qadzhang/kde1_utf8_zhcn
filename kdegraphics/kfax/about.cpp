@@ -48,7 +48,7 @@ About::About(QWidget *parent) : QDialog(parent, "About KFax", TRUE) {
 
   QLabel *l;
   l = new QLabel("KFax", this);
-  l->setFont(QFont("Utopia", 26, QFont::Normal));
+  l->setFont(QFont("", 26, QFont::Normal)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 
   l->setGeometry((width() - l->sizeHint().width())/2, 60,
 		 l->sizeHint().width(), 

@@ -276,10 +276,10 @@ void AboutBox::paintEvent(QPaintEvent *)
 {
   QPainter p(this);
 
-  p.setFont(QFont("Courier", 14, QFont::Bold));
+  p.setFont(QFont("", 14, QFont::Bold)); /* [2026-08-31] 默认族（Courier 无 CJK，中文关于文本 tofu） */
   p.setBackgroundMode(TransparentMode);
   p.drawText(0,0,width(),3*height()/4, AlignCenter, 
-    klocale->translate("The KDE World Wide Watch\n\nwritten by Matthias H�lzer\n(hoelzer@physik.uni-wuerzburg.de)"));
+    klocale->translate("The KDE World Wide Watch\n\nwritten by Matthias Hölzer\n(hoelzer@physik.uni-wuerzburg.de)"));
 }
 
 

@@ -107,7 +107,7 @@ EOF
 # ── 3. kde1-core
 echo "=== 打包 kde1-core"
 mkctrl core kde1-core \
-    "libx11-6, libxext6, libxmu6, libxpm4, libjpeg62-turbo, libpng16-16, zlib1g, libtiff6, libxft2, libfontconfig1, libfreetype6, libwebkit2gtk-4.1-0" \
+    "libx11-6, libxext6, libxmu6, libxpm4, libsm6, libice6, libxrender1, libxinerama1, libxcursor1, libxi6, libxft2, libfontconfig1, libfreetype6, libgl1, libglu1-mesa, libjpeg62-turbo, libpng16-16, libgif7, libwebp7, libtiff6, zlib1g, libssl3, libdbus-1-3, libcrypt1, libtinfo6, libgdbm6, libkpathsea6, libstdc++6, libgcc-s1, libwebkit2gtk-4.1-0" \
     "fonts-noto-cjk" \
     "KDE 1.2.0 RC1 core desktop (TQt3, kdelibs, kdebase) - restored"
 dpkg-deb --root-owner-group -b "$PKGTMP/core" "$OUTDEB/kde1-core_${VERSION}-${REL}_amd64.deb"
@@ -162,12 +162,15 @@ Maintainer: KDE1 Revival Project <maintainer@kde1-revival.local>
 Section: x11
 Priority: optional
 Depends: kde1-core (= ${VERSION}-${REL})
-Recommends: kde1-games (= ${VERSION}-${REL}), kde1-graphics (= ${VERSION}-${REL}), kde1-utils (= ${VERSION}-${REL}), kde1-network (= ${VERSION}-${REL}), kde1-toys (= ${VERSION}-${REL}), fcitx5 | fcitx, pulseaudio-utils, cups-bsd, cups
+Recommends: kde1-games (= ${VERSION}-${REL}), kde1-graphics (= ${VERSION}-${REL}), kde1-utils (= ${VERSION}-${REL}), kde1-network (= ${VERSION}-${REL}), kde1-toys (= ${VERSION}-${REL}), cups-bsd, cups
+Suggests: fcitx5 | fcitx, pulseaudio-utils | osspd, xterm
 Description: KDE 1.2.0 RC1 Revival - session integration metapackage
  Installs the lightdm session entry (KDE 1.2.0 RC1 Revival) and the
- startkde-kde1 wrapper which sets KDEDIR/PATH/LD_LIBRARY_PATH, starts
- fcitx5/fcitx for XIM input, and preloads padsp so 1999-era OSS sounds
- route to PipeWire/PulseAudio. Zero manual configuration.
+ startkde-kde1 wrapper which sets KDEDIR/PATH/LD_LIBRARY_PATH,
+ conditionally starts fcitx5/fcitx (XIM input, if installed) and
+ preloads libpulsedsp so 1999-era OSS sounds route to
+ PipeWire/PulseAudio (if pulseaudio-utils installed). Zero manual
+ configuration.
 EOF
 dpkg-deb --root-owner-group -b "$META" "$OUTDEB/kde1_${VERSION}-${REL}_amd64.deb"
 

@@ -12,6 +12,8 @@
 //   "kfm <N>/kpanel <N>" 噪音条目（详见函数内注释）
 
 #include "kpanel.h"
+#include "snitray.h" /* [KDE1 Revival 2026] SNI 图标参与 dock 区布局 */
+extern SNITray *the_snitray; /* main.C 定义 */
 #include <qapp.h>
 #include <qmsgbox.h>
 #include <stdio.h>
@@ -352,7 +354,14 @@ void kPanel::windowRaise(Window /* w */){
 
 
 void kPanel::layoutDockArea(){
-  if (kwmmapp->dock_windows.count() == 0){
+  /* [KDE1 Revival 2026] 计数与定位合并两套托盘客户：
+   *   ① kwmmapp->dock_windows：1999 年 KWM_DOCKWINDOW/XEmbed 协议客户
+   *   ② the_snitray->clients：DBus SNI 协议客户（fcitx5 5.x 等现代程序）
+   * 原实现只数 ①——现代系统常态是 SNI-only，dock_area 被整块 hide() 连 SNI
+   * 图标一起藏掉；且 SNI 窗从不参与 XMoveResizeWindow，全部堆在创建位 (0,0)。 */
+  int sni_count = (the_snitray ? the_snitray->count() : 0);
+  int total = kwmmapp->dock_windows.count() + sni_count;
+  if (total == 0){
     dock_area->hide();
     return;
   }
@@ -361,9 +370,9 @@ void kPanel::layoutDockArea(){
   if (orientation == vertical){
     dock_area->setGeometry(dock_area->x(),
 			   dock_area->y() + dock_area->height()
-			   - kwmmapp->dock_windows.count() * 24 - 2,
+			   - total * 24 - 2,
 			   dock_area->width(),
-			   kwmmapp->dock_windows.count() * 24 + 2);
+			   total * 24 + 2);
     i = 0;
     for (w = kwmmapp->dock_windows.first(); w;
 	 w = kwmmapp->dock_windows.next()){
@@ -371,11 +380,18 @@ void kPanel::layoutDockArea(){
 			dock_area->width()/2-12, 1+ i * 24, 24, 24);
       i++;
     }
+    if (the_snitray)
+      for (SNIClient *c = the_snitray->clients.first(); c;
+	   c = the_snitray->clients.next()){
+	XMoveResizeWindow(qt_xdisplay(), c->win,
+			  dock_area->width()/2-12, 1 + i * 24, 24, 24);
+	i++;
+      }
   }else {
     dock_area->setGeometry(dock_area->x() + dock_area->width()
-			   - kwmmapp->dock_windows.count() * 24 - 2,
+			   - total * 24 - 2,
 			   dock_area->y(),
-			   kwmmapp->dock_windows.count() * 24 + 2,
+			   total * 24 + 2,
 			   dock_area->height());
     i = 0;
     for (w = kwmmapp->dock_windows.first(); w;
@@ -384,6 +400,13 @@ void kPanel::layoutDockArea(){
 			1 + i * 24, dock_area->height()/2-12, 24, 24);
       i++;
     }
+    if (the_snitray)
+      for (SNIClient *c = the_snitray->clients.first(); c;
+	   c = the_snitray->clients.next()){
+	XMoveResizeWindow(qt_xdisplay(), c->win,
+			  1 + i * 24, dock_area->height()/2-12, 24, 24);
+	i++;
+      }
   }
   dock_area->show();
 }

@@ -49,8 +49,12 @@ KpgpBase::setMessage(const QString mess)
 {
   clear();
   input = mess;
+  /* [2026-08-31] 补缺失的 return（原函数无返回语句——返回值是调用方
+     kmmessage/kpgp 的门控条件，读未定义寄存器属 UB）；语义取
+     "已设置且（若有 PGP 块）解密成功"：decrypt 返回 OK(0) 视为成功 */
   if(input.find("-----BEGIN PGP") != -1)
-    decrypt();
+    return decrypt() == OK;
+  return TRUE;
 }
 
 QString 

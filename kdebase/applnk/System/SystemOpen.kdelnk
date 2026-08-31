@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+Type=Application
+# [KDE1 Revival 2026] 现代系统委托入口：KDE1 自身无法处理的文件类型
+# （音视频/webp/svg/deb 等）交给 freedesktop 生态的默认程序——
+# xdg-open 按 mimeapps.list 决定打开方式，与 XFCE 等现代桌面行为一致
+Exec=xdg-open %f
+Icon=exec.xpm
+Terminal=0
+Name=Open with System Default
+Name[zh_CN.UTF-8]=用系统默认程序打开
+Name[zh_CN]=用系统默认程序打开
+Comment=Delegate to the modern desktop default application (xdg-open)
+Comment[zh_CN.UTF-8]=交给现代桌面的默认应用程序（xdg-open）
+Comment[zh_CN]=交给现代桌面的默认应用程序（xdg-open）
+MimeType=allfiles;

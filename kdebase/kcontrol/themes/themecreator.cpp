@@ -329,8 +329,11 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
       fname = fname.left(i);
     }
     else ext = TQString();
-    for (j=i-1, num=0; j>=0 && fname[j].latin1()>='0' && fname[j].latin1()<='9'; j--)
-      num = num*10 + (int)(fname[j].latin1() - '0');  /* TQt3 迁移 */
+    /* [2026-08-31] 数字判定改 TQChar::isDigit()：latin1() 取低 8 位，
+       CJK 字符低字节可能恰好落在 '0'-'9'（如 U+4E38→0x38），中文主题
+       文件名会解析出错误的自动编号 */
+    for (j=i-1, num=0; j>=0 && fname[j].isDigit(); j--)
+      num = num*10 + (int)(fname[j].digitValue());
     j++;
     num++;
     fname[j] = '\0';

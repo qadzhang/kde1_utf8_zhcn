@@ -35,7 +35,7 @@ CopyrightDialog::CopyrightDialog( QWidget *parent, const char *name )
 	copyrightBox->setGeometry( 2, 2, frame->width()-4,
 	frame->height()-4 );
 	copyrightBox->setFrameStyle( QFrame::NoFrame );
-	copyrightBox->setFont( QFont("courier", 12) );
+	copyrightBox->setFont( QFont("", 12) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	copyrightBox->setReadOnly( TRUE );
 	
 	copyrightBox->setText(i18n("\n"

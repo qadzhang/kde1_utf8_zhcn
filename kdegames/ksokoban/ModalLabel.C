@@ -30,7 +30,7 @@ ModalLabel::checkBounds (QFontMetrics &met, char *str)
 
 ModalLabel::ModalLabel (const char *text, QWidget *parent, const char * name, WFlags f)
   : QLabel (text, parent, name, f) {
-  QFont font ("helvetica", 24, QFont::Bold);
+  QFont font ("", 24, QFont::Bold);  /* [2026-08-31] 默认族（helvetica 无 CJK，「关卡完成」tofu） */
   QFontMetrics fontMet (font);
 
   char *str = new char[strlen(text)+1];

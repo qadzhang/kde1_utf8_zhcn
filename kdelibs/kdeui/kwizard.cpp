@@ -527,8 +527,10 @@ int KWizard::addPage(KWizardPage *p)
   }
 
   //tqDebug("enabled buttons");
+  // [2026-08-31] 翻译格式串走 kde_sprintf：TQString::sprintf 会把译文里的中文按
+  // Latin-1 逐字节升位（zh_CN 译文「第%d页,共%d页」上屏即乱码）
   QString strpagina;
-  strpagina.sprintf(klocale->translate("Page %d of %d"), pwiz->current+1, pwiz->numpages);
+  strpagina = kde_sprintf(klocale->translate("Page %d of %d"), pwiz->current+1, pwiz->numpages);
   if(pwiz->numpages > 1)
     pwiz->pagina->setText(strpagina.data());
   else
@@ -674,8 +676,9 @@ void KWizard::gotoPage(int p)
 
   pwiz->current = p;
 
+  // [2026-08-31] 同 addPage：翻译格式串走 kde_sprintf 防 UTF-8 译文乱码
   QString strpagina;
-  strpagina.sprintf(klocale->translate("Page %d of %d"), pwiz->current+1, pwiz->numpages);
+  strpagina = kde_sprintf(klocale->translate("Page %d of %d"), pwiz->current+1, pwiz->numpages);
   if(pwiz->numpages > 1)
     pwiz->pagina->setText(strpagina.data());
   else

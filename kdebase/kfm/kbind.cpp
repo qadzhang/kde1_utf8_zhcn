@@ -530,7 +530,12 @@ KMimeType* KMimeType::findType( const char *_url )
 	    int pattern_len = strlen( s );
             if (!pattern_len)
                continue;
-	    int len = filename.length();	
+	    /* [2026-08-31] 字节长度修正：filename 是 TQString——length() 是
+	       UTF-16 字符数而 data() 是 UTF-8 字节流。中文名（如 单击测试.png
+	       = 9 字符 17 字节）用字符数去索引字节流做 "*.png" 后缀匹配，比对
+	       落在字符串中段 → 永不失配成功 → 回落 octet-stream → 双击无反应
+	       （用户报障"基本没有文件类型能打开"的中文文件名侧根因） */
+	    int len = filename.data() ? strlen( filename.data() ) : 0;	
 
 	    if ( s[ pattern_len - 1 ] == '*' && len + 1 >= pattern_len )
 	    {

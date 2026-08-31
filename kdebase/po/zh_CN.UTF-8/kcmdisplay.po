@@ -555,24 +555,89 @@ msgstr "默认"
 
 #: fontchooser.cpp:265
 msgid "any"
-msgstr "任何"
+msgstr "任意"
 
 #~ msgid "Fonts etc."
 #~ msgstr "字体及其他"
-
 #
 #~ msgid "Desktop fonts"
 #~ msgstr "桌面字体"
-
 #~ msgid "&Fonts etc."
 #~ msgstr "字体及其他[&F]"
-
 #, fuzzy
 #~ msgid "One Des&ktop"
 #~ msgstr "桌面"
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&Cancel"
+msgstr "取消(&C)"
 
-#~ msgid "&Remove"
-#~ msgstr "去掉[&R]"
+msgid "&Delete"
+msgstr "删除(&D)"
 
-#~ msgid "Default"
-#~ msgstr "默认"
+msgid "&Fonts"
+msgstr "&Fonty"
+
+msgid "&OK"
+msgstr "确定(&O)"
+
+msgid "&Remove"
+msgstr "删除(&R)"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "File"
+msgstr "文件"
+
+msgid "Fonts"
+msgstr "字体"
+
+msgid "Large"
+msgstr "Grande"
+
+msgid "Normal"
+msgstr "Normalno"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Open"
+msgstr "打开"
+
+msgid "Panel"
+msgstr "Kontrolleiste"
+
+msgid "Save"
+msgstr "保存"
+
+# [KDE1 Revival 2026-08-31] 应用特有词条人工补译
+msgid "&Enter a name for the new color scheme\n"
+msgstr "输入新配色方案的名称(&E)\n"
+
+msgid "File manager and desktop icons"
+msgstr "文件管理器和桌面图标"
+
+msgid "Icon style"
+msgstr "图标样式"
+
+msgid "Icons style"
+msgstr "图标样式"
+
+msgid "Other"
+msgstr "其他"
+
+msgid "Please choose a unique name for the new color\n"
+msgstr "请为新配色方案选择一个唯一的名称\n"
+
+msgid "Sorry, this type of URL is currently unsupported"
+msgstr "抱歉，目前不支持这种类型的 URL"
+
+msgid "The icon style change will not all be applied until you restart KDE."
+msgstr "图标样式的更改要在重新启动 KDE 之后才能全部生效。"
+

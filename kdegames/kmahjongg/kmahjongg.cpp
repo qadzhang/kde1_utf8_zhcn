@@ -1660,7 +1660,8 @@ bool BoardWidget::loadBackground(
         if( bShowError )
 	{
             QString strMsg;
-            strMsg.sprintf( i18n("Failed to load image:\n%s"), pszFileName );
+            /* [2026-08-31] 翻译格式串走 kde_sprintf（防译文中文乱码） */
+            strMsg = kde_sprintf( i18n("Failed to load image:\n%s"), pszFileName );
             showMessage( strMsg );
 	}
         return( false );
@@ -1671,7 +1672,7 @@ bool BoardWidget::loadBackground(
         if( bShowError )
 	{
             QString strMsg;
-            strMsg.sprintf( i18n( "Sorry, this image uses %d colors.\n"
+            strMsg = kde_sprintf( i18n( "Sorry, this image uses %d colors.\n"
                                   "Maximum allowed is %d"),
                             qiBgnd.numColors(), 128 - iTilesNumColors );
             showMessage( strMsg );

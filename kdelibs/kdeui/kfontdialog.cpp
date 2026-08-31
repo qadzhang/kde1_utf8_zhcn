@@ -281,7 +281,7 @@ KFontDialog::KFontDialog( QWidget *parent, const char *name,
   box1layout->addWidget(family_combo, 1, 2);
   family_combo->setInsertionPolicy(QComboBox::NoInsertion);
   
-  /* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å·ï¼æ§½æ¹æç´¢å¼åææ¬ */
+  /* [KDE1 Revival 2026] TQComboBox 仅有 activated(int) 信号，槽改按索引取文本 */
 	  connect( family_combo, SIGNAL(activated(int)),
 	  SLOT(family_chosen_slot(int)) );
   

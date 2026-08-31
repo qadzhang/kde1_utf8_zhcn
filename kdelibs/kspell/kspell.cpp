@@ -259,12 +259,18 @@ KSpell::cleanFputsWord (const char *s, bool appendCR)
 {
   QString qs(s);
 
-  for (unsigned int i=0;i<qs.length();i++)
+  for (unsigned int i=0;i<qs.length();)
   {
     //we need some puctuation for ornaments
     if (qs.at(i)!='\'' && qs.at(i)!='\"')
       if (ispunct(qs.at(i).latin1()) || isspace(qs.at(i).latin1()))
+	{
+	  // [2026-08-31] remove 后后续字符前移，i 必须原地重查（原 ++ 跳位，
+	  // 连续标点如 "a,,b" 会残留第二个逗号）
 	  qs.remove(i,1);
+	  continue;
+	}
+    i++;
   }
   
   return proc->fputs ((const char*) qs, appendCR);

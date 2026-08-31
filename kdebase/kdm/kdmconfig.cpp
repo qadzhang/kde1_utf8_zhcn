@@ -230,7 +230,7 @@ KDMConfig::getConfig()
             _greetFont->setRawMode( true);
           }
      } else
-          _greetFont = new QFont( "times", 24, QFont::Black);
+          _greetFont = new QFont( "", 24, QFont::Black); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 
      if( greet_string.isEmpty())
           _greetString = new QString( hostname);

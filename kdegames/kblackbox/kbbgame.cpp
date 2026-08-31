@@ -412,7 +412,9 @@ void KBBGame::about()
 
 void KBBGame::aboutQt()
 {
-  /* TQt3 迁移：aboutQt 已删——改标准消息框 */ QMessageBox::information( 0, trans->translate("Qt information"), trans->translate("TQt3 runtime") );
+  /* [2026-08-31] TQt3 提供 TQMessageBox::aboutTQt——恢复标准 About Qt 对话框
+     （原迁移改成两个单词的空桩对话框属降级实现） */
+  QMessageBox::aboutTQt( 0, trans->translate("Qt information") );
 }
 
 void KBBGame::help()
@@ -486,13 +488,15 @@ void KBBGame::gameFinished()
     if (ballsPlaced == balls) {
       getResults();
       abortGame();
-      s.sprintf( trans->translate("Your final score is: %d."), score );
+      /* [2026-08-31] 翻译格式串走 kde_sprintf：TQString::sprintf 逐字节 Latin-1
+         升位格式串，zh_CN 译文「你的最后得分是: %d.」必乱码 */
+      s = kde_sprintf( trans->translate("Your final score is: %d."), score );
       if (score <= (balls*3))
 	mb.setButtonText( 0, trans->translate("Wow!") );
       else
 	mb.setButtonText( 0, trans->translate("Damned!") );
     } else {
-      s.sprintf( trans->translate(
+      s = kde_sprintf( trans->translate(
                  "You should place %d balls!\nYou have placed %d."),
 		balls, ballsPlaced );
       mb.setButtonText( 0, trans->translate("D'accord") );

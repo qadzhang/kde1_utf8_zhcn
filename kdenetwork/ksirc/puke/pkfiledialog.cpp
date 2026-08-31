@@ -78,9 +78,12 @@ void PKFileDialog::messageHandler(int fd, PukeMessage *pm)
     pmRet.iCommand = PUKE_KBFD_FILE_SELECTED_ACK;
     pmRet.iWinId = pm->iWinId;
     pmRet.iArg = 0;
-    pmRet.cArg = new char[widget()->selectedFile().length()];
-    memcpy(pmRet.cArg, widget()->selectedFile().data(), widget()->selectedFile().length());
-    pmRet.iTextSize = widget()->selectedFile().length();
+    /* [2026-08-31] 按 UTF-8 字节数分配/拷贝/上报：原用 length()（UTF-16
+       字符数），中文文件名 3 字节/字符——缓冲只拷了前缀，对端拿到断头路径 */
+    QCString sel = widget()->selectedFile().utf8();
+    pmRet.cArg = new char[sel.length() + 1];
+    memcpy(pmRet.cArg, sel.data(), sel.length() + 1);
+    pmRet.iTextSize = sel.length();
     emit outputMessage(widgetIden().fd, &pmRet);
     delete pmRet.cArg;
     break;

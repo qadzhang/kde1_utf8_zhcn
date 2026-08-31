@@ -4,7 +4,7 @@ Type=MimeType
 MimeType=application/pdf
 Icon=pdf.xpm
 Patterns=*.pdf;*.PDF;
-DefaultApp=acroread
+DefaultApp=kghostview
 Comment=Pdf Document
 Comment[ca]=Document pdf
 Comment[cs]=PDF dokument
@@ -28,3 +28,5 @@ Comment[sk]=PDF dokument
 Comment[sl]=Spis PDF
 Comment[sv]=Dokument i PDF-format
 
+Comment[zh_CN.UTF-8]=PDF 文档
+Comment[zh_CN]=PDF 文档

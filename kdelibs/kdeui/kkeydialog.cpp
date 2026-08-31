@@ -465,7 +465,8 @@ KKeyChooser::KKeyChooser( QDict<KKeyEntry> *aKeyDict, QWidget *parent ,
 	
 	lNotConfig = new QLabel(fCArea);
 	lNotConfig->resize(0,0);
-	lNotConfig->setFont( QFont("Helvetica", 14, QFont::Bold) );
+	// [2026-08-31] 提示字体改默认族加粗（原 Helvetica 无 CJK 字形，中文提示 tofu）
+	{ QFont nf; nf.setPointSize(14); nf.setBold(true); lNotConfig->setFont(nf); }
 	lNotConfig->setAlignment( AlignCenter );
 	lNotConfig->setFrameStyle( QFrame::Panel | QFrame::Sunken );
 	if ( wList->count()==0 )
@@ -1031,11 +1032,13 @@ bool KKeyChooser::isKeyPresent()
 			QString keyName = keyToString( *gIt.current() );
 			
 			QString str;
-			str.sprintf( i18n(
+			// [2026-08-31] TQString::sprintf 对格式串逐字节 Latin-1 升位，中文译文
+			// 必乱码——改用 q1compat 的 UTF-8 安全 kde_sprintf（格式串经 fromUtf8 解码）
+			str = kde_sprintf( i18n(
 				"The %s key combination has already been allocated\nto the global %s action.\n\nPlease choose a unique key combination."),
 				keyName.data(),
 				actionName.data() );
-				
+
 			QMessageBox::warning( this, i18n("Global key conflict"), str.data() );
 			
 			return TRUE;
@@ -1058,11 +1061,12 @@ bool KKeyChooser::isKeyPresent()
 			QString keyName = keyToString( *sIt.current() );
 			
 			QString str;
-			str.sprintf( i18n(
+			// [2026-08-31] 同上：翻译格式串必须走 kde_sprintf，防止中文按字节升位乱码
+			str = kde_sprintf( i18n(
 				"The %s key combination has already been allocated\nto the standard %s action.\n\nPlease choose a unique key combination."),
 				keyName.data(),
 				actionName.data() );
-				
+
 			QMessageBox::warning( this, i18n("Standard key conflict"), str.data() );
 			
 			return TRUE;
@@ -1082,11 +1086,12 @@ bool KKeyChooser::isKeyPresent()
 			QString keyName = keyToString( aIt->current()->aConfigKeyCode );
 			
 			QString str;
-			str.sprintf( i18n(
+			// [2026-08-31] 同上：翻译格式串必须走 kde_sprintf，防止中文按字节升位乱码
+			str = kde_sprintf( i18n(
 				"The %s key combination has already been allocated\nto the %s action.\n\nPlease choose a unique key combination."),
 				keyName.data(),
 				actionName.data() );
-				
+
 			QMessageBox::warning( this, i18n("Key conflict"), str.data() );
 			
 			return TRUE;

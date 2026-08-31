@@ -94,7 +94,7 @@ int main( int argc, char ** argv )
   putenv(ld_path.data());
 
   kConfig->setGroup("GlobalOptions");
-  kSircConfig->defaultfont = kConfig->readFontEntry("MainFont", new  QFont("fixed"));
+  kSircConfig->defaultfont = kConfig->readFontEntry("MainFont", new  QFont("")); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   kConfig->setGroup("General");
   kSircConfig->DisplayMode = kConfig->readNumEntry("DisplayMode", 0);
   kSircConfig->WindowLength = kConfig->readNumEntry("WindowLength", 200);

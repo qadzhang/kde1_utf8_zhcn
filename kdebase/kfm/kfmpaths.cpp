@@ -119,11 +119,18 @@ void KFMPaths::initPaths()
       if ( access( tpl, F_OK ) != 0 ) {
           FILE *tf = fopen( tpl, "w" );
           if ( tf ) {
+              /* [2026-08-31] Exec 双重修复：① kdelnk 的 Exec 由 kfm 直接
+               * fork+execvp 执行、全程无 shell，"$HOME" 永不展开（双击即打开
+               * 字面路径 file:$HOME/模板 而报错）；② 应写入上方 initPaths 刚
+               * 解析出的 XDG_TEMPLATES_DIR 绝对路径（中文系统即 ~/模板，
+               * 英文系统 ~/Templates——不再各自硬编码） */
               fprintf( tf,
                   "# KDE Config File\n"
                   "[KDE Desktop Entry]\n"
                   "Type=Application\n"
-                  "Exec=kfmclient1 folder %%u file:$HOME/模板\n"
+                  "Exec=kfmclient1 folder %%u file:%s\n",
+                  templatePath->data() );
+              fprintf( tf,
                   "Icon=folder.xpm\n"
                   "MiniIcon=folder.xpm\n"
                   "Terminal=0\n"

@@ -163,6 +163,84 @@ char TextLine::getChar( int pos ) const {
   return ' ';
 }
 
+/* ────────────────────────────────────────────────────────────────────
+ * [KDE1 Revival 2026] UTF-8 字符边界辅助（kwrite 中文支持核心）
+ * What : 把 kwrite 的"字节位置"语义提升为"UTF-8 字符"粒度
+ * Why  : kwrite 文档按字节存储（TextLine::text 是 char*），1999 年一切
+ *        光标操作按单字节移动——中文一个字符占 3 字节，逐字节移动会把
+ *        光标插进字符中间（渲染出乱码、退格删除半个字符）。验收目标 8
+ *        要求一切文本交互按 UTF-8 字符边界精确操作
+ * Who  : textWidth/textPos/paintTextLine（渲染与定位）、cursorLeft/Right
+ *        （光标移动）、backspace/del（删除）、cursorX（列号显示）
+ * When : 每次光标移动/删除/渲染涉及非 ASCII 文本时；ASCII 文本退化为
+ *        原字节语义（len==1），行为与 1999 完全一致
+ * Where: kwdoc.cpp 全局
+ * How  : 伪代码：
+ *   utf8_seq_len(c)：前导字节 11xxxxxx→2、1110→3、11110→4，其余 1
+ *   charLen(tl, pos)：
+ *     取字节 c=text[pos]（越界=1）；是续字节（孤立损坏）→ 1；
+ *     是前导字节 → min(seq_len, 行长-pos)（防尾残序列越界）
+ *   charLenBefore(tl, pos)：
+ *     从 pos-1 起向左跳过全部续字节（至多 3 个）落在前导字节上，
+ *     返回 pos-该位置 的距离（即前一字符的字节长）
+ * ──────────────────────────────────────────────────────────────────── */
+static inline int utf8_seq_len( unsigned char c )
+{
+  if ( (c & 0xE0) == 0xC0 ) return 2;
+  if ( (c & 0xF0) == 0xE0 ) return 3;
+  if ( (c & 0xF8) == 0xF0 ) return 4;
+  return 1;
+}
+
+int KWriteDoc::charLen( TextLine *textLine, int pos ) {
+  if ( !textLine ) return 1;
+  int len = textLine->length();
+  if ( pos < 0 || pos >= len ) return 1;
+  unsigned char c = (unsigned char) textLine->getChar( pos );
+  if ( (c & 0xC0) == 0x80 ) return 1;          // 孤立续字节：按 1 处理（防死循环）
+  int l = utf8_seq_len( c );
+  if ( pos + l > len ) l = len - pos;          // 尾部残缺序列：截到行尾
+  /* [2026-08-31 模糊测试发现] 前导字节声明的续字节须逐一核实——畸形流
+     中（如二进制文件 0xE0 后跟 ASCII）声明长度会吞掉后续 ASCII 字符，
+     且与 charLenBefore 的回退步数不一致（光标往返漂移）。按实际续字节
+     run 收敛（200 万随机样本往返验证） */
+  for ( int k = 1; k < l; k++ )
+    if ( ( (unsigned char) textLine->getChar( pos + k ) & 0xC0 ) != 0x80 ) {
+      l = k;
+      break;
+    }
+  return l;
+}
+
+int KWriteDoc::charLenBefore( TextLine *textLine, int pos ) {
+  if ( !textLine ) return 1;
+  int len = textLine->length();
+  if ( pos <= 0 ) return 1;
+  if ( pos > len ) pos = len;
+  /* [2026-08-31 模糊测试驱动重写] 与 charLen 严格互逆（左移必可右移回原位）：
+     前一字节非续字节 → 它自己就是一个字符，回退它的 charLen；
+     前一字节是续字节 → 回溯声明它的前导：前导按实际续字节收敛的
+     charLen 恰好覆盖到 pos 则整字符回退；否则该续字节在声明 run 之外
+     （畸形流），按"孤立续字节视作单字符"语义回退 1。
+     200 万随机畸形样本往返验证 */
+  int p = pos - 1;
+  unsigned char cp = (unsigned char) textLine->getChar( p );
+  if ( ! ((cp & 0xC0) == 0x80) )
+    return charLen( textLine, p );
+  int q = p, guard = 0;
+  while ( q > 0 && guard < 3 &&
+          ( (unsigned char) textLine->getChar( q ) & 0xC0 ) == 0x80 ) {
+    q--;
+    guard++;
+  }
+  if ( ( (unsigned char) textLine->getChar( q ) & 0xC0 ) == 0x80 )
+    return 1;                                // 孤立续字节 run：buf[p] 自成单字符
+  int cl = charLen( textLine, q );
+  if ( q + cl == pos )
+    return cl;                               // 前导字符恰好收口于 pos
+  return 1;                                  // buf[p] 在前导声明之外：自成单字符
+}
+
 void TextLine::setAttribs(int attribute, int start, int end) {
   int z;
 
@@ -294,8 +372,22 @@ int TextLine::cursorX(int pos, int tabChars) {
 
   l = (pos < len) ? pos : len;
   x = 0;
-  for (z = 0; z < l; z++) {
-    if (text[z] == '\t') x += tabChars - (x % tabChars); else x++;
+  /* [KDE1 Revival 2026] 列号按 UTF-8 字符计（原按字节——光标在同一行第
+     一个汉字后就显示"列 3"，与用户感知的字符位置不符） */
+  for (z = 0; z < l; ) {
+    if (text[z] == '\t') {
+      x += tabChars - (x % tabChars);
+      z++;
+    } else {
+      unsigned char c = (unsigned char) text[z];
+      int cl = 1;
+      if ( (c & 0xE0) == 0xC0 ) cl = 2;
+      else if ( (c & 0xF0) == 0xE0 ) cl = 3;
+      else if ( (c & 0xF8) == 0xF0 ) cl = 4;
+      if ( z + cl > l ) cl = l - z;
+      x++;
+      z += cl;
+    }
   }
   if (pos > len) x += pos - len;
   return x;
@@ -790,8 +882,11 @@ void KWriteDoc::backspace(KWriteView *view, VConfig &c) {
 
   if (c.cursor.x > 0) {
     if (!(c.flags & cfBackspaceIndent)) {
-      c.cursor.x--;
-      recordReplace(c.cursor,1);
+      /* [KDE1 Revival 2026] 退格按整 UTF-8 字符删除（原删 1 字节——
+         中文要按 3 次退格且中间态是非法 UTF-8） */
+      int cl = charLenBefore(contents.at(c.cursor.y), c.cursor.x);
+      c.cursor.x -= cl;
+      recordReplace(c.cursor, cl);
     } else {
       TextLine *textLine;
       int pos, l;
@@ -806,7 +901,7 @@ void KWriteDoc::backspace(KWriteView *view, VConfig &c) {
           goto found;
         }
       }
-      l = 1;//del one char
+      l = charLenBefore(contents.at(c.cursor.y), c.cursor.x);//del one char
       found:
       c.cursor.x -= l;
       recordReplace(c.cursor,l);
@@ -824,7 +919,8 @@ void KWriteDoc::del(KWriteView *view, VConfig &c) {
 
   if (c.cursor.x < contents.at(c.cursor.y)->length()) {
     recordStart(c.cursor);
-    recordReplace(c.cursor,1);
+    /* [KDE1 Revival 2026] Delete 按整 UTF-8 字符删除（原删 1 字节） */
+    recordReplace(c.cursor, charLen(contents.at(c.cursor.y), c.cursor.x));
     recordEnd(view,c);
   } else {
     if (c.cursor.y < (int) contents.count() -1) {
@@ -1037,15 +1133,36 @@ void KWriteDoc::updateViews(KWriteView *exclude) {
 
 int KWriteDoc::textWidth(TextLine *textLine, int cursorX) {
   int x;
-  int z;
+  int z, cl;
   char ch;
   Attribute *a;
+  const char *raw;
+  int len;
 
   x = 0;
-  for (z = 0; z < cursorX; z++) {
+  z = 0;
+  /* [KDE1 Revival 2026] 逐 UTF-8 字符测宽：多字节字符整段 fromUtf8 后经
+     字体度量取宽（原逐字节 width(&ch,1) 把中文按 3 个假 Latin-1 字符计宽，
+     定位全错）；z 越过 cursorX 即停（cursorX 恒在字符边界上）。
+     空行守卫 [2026-08-31]：TextLine 构造 text(0L)——空行 getText() 返回
+     NULL，&getText()[z] 在 z>=1 时是地址 z（野指针读即崩）；cursorX 大于
+     行长（防御）同样越界。取 raw 一次并钳制 cursorX<=len，空行直接返回 0 */
+  raw = textLine->getText();
+  len = textLine->length();
+  if (cursorX > len) cursorX = len;
+  if (!raw || cursorX <= 0) return 0;
+  while (z < cursorX) {
     ch = textLine->getChar(z);
-    a = &attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
+    if (ch == '\t') {
+      x += tabWidth - (x % tabWidth);
+      z++;
+    } else {
+      a = &attribs[textLine->getAttr(z)];
+      cl = charLen(textLine, z);
+      if (cl > cursorX - z) cl = cursorX - z;
+      x += a->fm.width(TQString::fromUtf8(raw + z, cl));
+      z += cl;
+    }
   }
   return x;
 }
@@ -1064,6 +1181,7 @@ int KWriteDoc::textWidth(bool wrapCursor, PointStruc &cursor, int xPos) {
   int z;
   char ch;
   Attribute *a;
+  const char *raw;
 
   if (cursor.y < 0) cursor.y = 0;
   if (cursor.y >= (int) contents.count()) cursor.y = (int) contents.count() -1;
@@ -1071,15 +1189,30 @@ int KWriteDoc::textWidth(bool wrapCursor, PointStruc &cursor, int xPos) {
   len = textLine->length();
 
   x = oldX = z = 0;
-  while (x < xPos && (!wrapCursor || z < len)) {
+  /* [KDE1 Revival 2026] 逐 UTF-8 字符推进：z 步进按字符字节长（原 z++ 把
+     点击位置换算进多字节字符中间，光标插进字符里渲染出乱码）。
+     空行/行尾守卫 [2026-08-31]：循环原先不按 len 收口（!wrapCursor 分支），
+     空行（text==NULL）上 x 恒为 0 → z 无界推进 → &getText()[z] 读野地址
+     段错误。两种模式统一以 z<len 收口：越过行尾的点击本就应落在行尾，
+     raw 为 NULL 时循环体不执行（len==0），一并免疫 */
+  raw = textLine->getText();
+  while (x < xPos && z < len && raw) {
     oldX = x;
     ch = textLine->getChar(z);
-    a = &attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
-    z++;
+    if (ch == '\t') {
+      x += tabWidth - (x % tabWidth);
+      z++;
+    } else {
+      a = &attribs[textLine->getAttr(z)];
+      int cl = charLen(textLine, z);
+      x += a->fm.width(TQString::fromUtf8(raw + z, cl));
+      z += cl;
+    }
   }
   if (xPos - oldX < x - xPos && z > 0) {
-    z--;
+    /* [2026-08-31] 回退一步按前一字符实际字节长（原 z-- 会落进多字节
+       字符中间——与 textPos 的同类回退保持一致） */
+    z -= charLenBefore(textLine, z);
     x = oldX;
   }
   cursor.x = z;
@@ -1089,21 +1222,34 @@ int KWriteDoc::textWidth(bool wrapCursor, PointStruc &cursor, int xPos) {
 int KWriteDoc::textPos(TextLine *textLine, int xPos) {
   int len;
   int x, oldX;
-  int z;
+  int z, cl;
   char ch;
   Attribute *a;
+  const char *raw;
 
   len = textLine->length();
 
   x = oldX = z = 0;
-  while (x < xPos) { // && z < len) {
+  /* [KDE1 Revival 2026] 逐 UTF-8 字符推进（同 textWidth 的理由）；
+     结尾回退一步时按前一字符的实际字节长回退（原 z-- 会落到字符中间）。
+     空行/行尾守卫 [2026-08-31]：循环按 len 收口（原条件把 z<len 注释
+     掉了），点击越过行尾一律落在行尾字节位置；raw==NULL（空行）循环
+     不执行——免疫 &getText()[z] 野指针读 */
+  raw = textLine->getText();
+  while (x < xPos && z < len && raw) {
     oldX = x;
     ch = textLine->getChar(z);
-    a = &attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
-    z++;
+    if (ch == '\t') {
+      x += tabWidth - (x % tabWidth);
+      z++;
+    } else {
+      a = &attribs[textLine->getAttr(z)];
+      cl = charLen(textLine, z);
+      x += a->fm.width(TQString::fromUtf8(raw + z, cl));
+      z += cl;
+    }
   }
-  if (xPos - oldX < x - xPos && z > 0) z--;
+  if (xPos - oldX < x - xPos && z > 0) z -= charLenBefore(textLine, z);
   return z;
 }
 
@@ -1634,6 +1780,18 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
 //printf("text = ");
   textLine = contents.at(line);
 
+  /* [KDE1 Revival 2026] 三个循环全部逐 UTF-8 字符化：
+   *   ① 跳到可见区起点：按字符字节长步进 z
+   *   ② 背景条带（选区/属性）：同上步进
+   *   ③ 字形绘制：多字节字符整段 fromUtf8 后 drawText 一次画出，
+   *     前进量按整字符实测宽度（原逐字节 drawText(&ch,1) 把中文画成
+   *     3 个假 Latin-1 字形=豆腐块，宽度也按 3 个单字节字宽计） */
+  int cl;
+  const char *raw = textLine->getText();
+  if ( !raw )
+    raw = "";                 /* [2026-08-31] 空行 text 可能为 NULL（首版在此崩溃） */
+  int llen = textLine->length();
+
   z = 0;
   x = 0;
   do {
@@ -1641,13 +1799,19 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
     ch = textLine->getChar(z);
     if (ch == '\t') {
       x += tabWidth - (x % tabWidth);
+      z++;
     } else {
       a = &attribs[textLine->getAttr(z)];
-      x += a->fm.width(&ch,1);
+      cl = charLen(textLine, z);
+      /* [2026-08-31] 行尾守卫：z 越过 llen 后按空格计宽（不 deref raw） */
+      if ( z < llen )
+        x += a->fm.width(TQString::fromUtf8(&raw[z], cl));
+      else
+        x += a->fm.width(' ');
+      z += cl;
     }
-    z++;
   } while (x <= xStart);
-  zc = z - 1;
+  zc = z - charLenBefore(textLine, z);
 
   xs = xStart;
   attr = textLine->getRawAttr(zc);
@@ -1661,11 +1825,16 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
     ch = textLine->getChar(z);
     if (ch == '\t') {
       x += tabWidth - (x % tabWidth);
+      z++;
     } else {
       a = &attribs[attr & taAttrMask];
-      x += a->fm.width(&ch,1);
+      cl = charLen(textLine, z);
+      if ( z < llen )
+        x += a->fm.width(TQString::fromUtf8(&raw[z], cl));
+      else
+        x += a->fm.width(' ');
+      z += cl;
     }
-    z++;
   }
   paint.fillRect(xs - xStart,y,xEnd - xs,fontHeight,colors[attr >> taShift]);
 //int len = textLine->length();
@@ -1675,6 +1844,7 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
     ch = textLine->getChar(zc);
     if (ch == '\t') {
       xc += tabWidth - (xc % tabWidth);
+      zc++;
     } else {
       nextAttr = textLine->getRawAttr(zc);
       if (nextAttr != attr) {
@@ -1683,11 +1853,17 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
         if (attr & taSelectMask) paint.setPen(a->selCol); else paint.setPen(a->col);
         paint.setFont(a->font);
       }
-      paint.drawText(xc - xStart,y,&ch,1);
-      xc += a->fm.width(&ch,1);
-//if (zc < len) printf("%c",ch);
+      /* [2026-08-31] 越过行尾即收笔：首版缺此守卫，空行/异常行 zc 越界
+         解引用（实测空文件崩溃于 fromUtf8(NULL+1)） */
+      if ( zc >= llen )
+        break;
+      cl = charLen(textLine, zc);
+      if (zc + cl > llen) cl = llen - zc;
+      if (cl < 1) cl = 1;
+      paint.drawText(xc - xStart, y, TQString::fromUtf8(&raw[zc], cl));
+      xc += a->fm.width(TQString::fromUtf8(&raw[zc], cl));
+      zc += cl;
     }
-    zc++;
   }
 
 //printf("\n");

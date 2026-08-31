@@ -274,7 +274,7 @@ void Rattler::pause()
 	stop();
 
 	label = new QLabel(this);
-	label->setFont( QFont( "Times", 16, QFont::Bold ) );
+	label->setFont( QFont( "", 16, QFont::Bold ) /* [2026-08-31] 默认族（Times 无 CJK） */ );
 	label->setText(klocale->translate("Game Paused\n Press F3 to resume\n"));
 	label->setAlignment( AlignCenter );
 	label->setFrameStyle( QFrame::Panel | QFrame::Raised );

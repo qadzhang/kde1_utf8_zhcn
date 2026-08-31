@@ -634,7 +634,9 @@ void KToolBarButton::modeChange()
   //Jesus, I must have been drunk...
   if (toolBarButton) // I might be a menuBarButton
   {
-    buttonFont.setFamily("Helvetica");
+    // [2026-08-31] 按钮字体族不再硬编码 Helvetica（无 CJK 字形，中文按钮名
+    // tofu）——沿用全局 generalFont 的字体族，仅保留 10pt 不加粗的层级设定
+    buttonFont.setFamily(kapp->generalFont.family());
     buttonFont.setPointSize(10);
     buttonFont.setBold(false);
     buttonFont.setItalic(false);

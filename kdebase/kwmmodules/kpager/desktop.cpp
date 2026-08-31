@@ -59,7 +59,7 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     
     drawWinMode=pixmap;
     KConfig *kcfg=(KApplication::getKApplication())->getConfig();
-    QFont *defaultfont=new QFont("helvetica",12);
+    QFont *defaultfont=new QFont("",12); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
     desktopfont=new QFont(kcfg->readFontEntry("DesktopFont",defaultfont));
     delete defaultfont;
     

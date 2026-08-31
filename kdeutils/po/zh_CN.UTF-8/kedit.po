@@ -237,7 +237,7 @@ msgstr "自动缩进模式: 关闭"
 #: kedit.cpp:1130
 #, c-format
 msgid "Line: %d Col: %d"
-msgstr "行数: %d 列数: %d"
+msgstr "行：%d 列：%d"
 
 #: filldlg.cpp:35 kedit.cpp:1147
 msgid "KEdit Options"
@@ -530,3 +530,138 @@ msgstr "必须指定收件人"
 
 #~ msgid "&About..."
 #~ msgstr "有关[&A]..."
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&Background Color"
+msgstr "Cor de &Fundo"
+
+msgid "&Close"
+msgstr "关闭(&C)"
+
+msgid "&Copy"
+msgstr "复制(&C)"
+
+msgid "&Edit"
+msgstr "编辑(&E)"
+
+msgid "&File"
+msgstr "文件(&F)"
+
+msgid "&Foreground Color"
+msgstr "Cor do &Texto"
+
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "&Open..."
+msgstr "打开(&O)..."
+
+msgid "&Options"
+msgstr "选项(&O)"
+
+msgid "&Paste"
+msgstr "粘贴(&P)"
+
+msgid "&Print..."
+msgstr "打印(&P)..."
+
+msgid "&Save"
+msgstr "保存(&S)"
+
+msgid "C&ut"
+msgstr "剪切(&T)"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Cut"
+msgstr "剪切"
+
+msgid "E&xit"
+msgstr "退出(&X)"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Malformed URL"
+msgstr "URL 格式错误"
+
+msgid "No"
+msgstr "否"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Open..."
+msgstr "打开..."
+
+msgid "Paste"
+msgstr "粘贴"
+
+msgid "Replace"
+msgstr "替换"
+
+msgid "S&ave as..."
+msgstr "另存为(&A)..."
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Save as..."
+msgstr "Salvar como..."
+
+msgid "Sorry"
+msgstr "抱歉"
+
+msgid "Untitled"
+msgstr "尚未命名"
+
+msgid "Yes"
+msgstr "是"
+
+# [KDE1 Revival 2026-08-31] 应用特有词条人工补译
+msgid "A Document with this Name exists already\n"
+msgstr "已存在同名文档\n"
+
+msgid "Beginning of document reached.\n"
+msgstr "已到达文档开头。\n"
+
+msgid "Could not pipe the contents"
+msgstr "无法通过管道输出内容"
+
+msgid "Could not save the document.\n"
+msgstr "无法保存文档。\n"
+
+msgid "Could not save the file.\n"
+msgstr "无法保存文件。\n"
+
+msgid "End of document reached.\n"
+msgstr "已到达文档末尾。\n"
+
+msgid "KEdit is already waiting\n"
+msgstr "KEdit 已在等待\n"
+
+msgid "The current Document has been modified.\n"
+msgstr "当前文档已被修改。\n"
+
+msgid "The current document has been modified.\n"
+msgstr "当前文档已被修改。\n"
+
+msgid "There are windows with modified content open.\n"
+msgstr "还有内容已被修改的窗口处于打开状态。\n"
+
+msgid "This Document has been modified.\n"
+msgstr "文档已被修改。\n"
+
+msgid "You do not have write permission "
+msgstr "您没有写权限 "
+
+# [KDE1 Revival 2026-08-31] 补充
+msgid "Line:000000 Col: 000"
+msgstr "行：000000 列：000"
+
+msgid "Line: 1 Col: 1"
+msgstr "行：1 列：1"
+

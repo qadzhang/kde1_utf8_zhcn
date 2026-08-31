@@ -50,8 +50,11 @@ void KRootProp::sync()
 
 		XChangeProperty(kde_display, root, at,
 			XA_STRING, 8, PropModeReplace,
-			(unsigned char *)propString.data(), propString.length());
-			
+			// [2026-08-31] 长度须按字节计：data() 输出 UTF-8 字节而 length()
+			// 是 UTF-16 字符数，含中文即截断（与 kwm.cpp setQStringProperty 同族修法）
+			(unsigned char *)propString.data(),
+			strlen( propString.data() ) );
+
 		propDict.clear();
 	}
 }
@@ -116,23 +119,23 @@ void KRootProp::setProp( const QString& rProp )
 QString KRootProp::readEntry( const QString& rKey, 
 			    const char* pDefault ) const 
 {
+	// [2026-08-31] 修复原实现两处缺陷：① key 不存在且给了 pDefault 时对 NULL
+	// 指针调 sprintf 必崩（原代码 aValue 从未指向有效对象）；② pDefault 被当
+	// 格式串——内含 % 会按格式符读取不存在的变参（UB），改为直接按 UTF-8 构串
 	if( !propDict.isEmpty() ) {
-	
+
 		QString *aValue = propDict[ rKey.data() ];
 
-		if (!aValue && pDefault )
-			aValue->sprintf( pDefault );
-
-		return *aValue;
-	} else {
-	
-		QString aValue;
-		
-		if ( pDefault )
-			aValue.sprintf( pDefault );
-			
-		return aValue;
+		if ( aValue )
+			return *aValue;
 	}
+
+	QString aValue;
+
+	if ( pDefault )
+		aValue = TQString::fromUtf8( pDefault );
+
+	return aValue;
 }
 
 int KRootProp::readNumEntry( const QString& rKey, int nDefault ) const
@@ -262,17 +265,12 @@ QColor KRootProp::readColorEntry( const QString& rKey,
 
 QString KRootProp::writeEntry( const QString& rKey, const QString& rValue )
 {
-	QString *aValue = new QString();
-	
-	if( propDict[ rKey.data() ] )
-		aValue = propDict[ rKey.data() ];
-
+	// [2026-08-31] 修复原实现：先 new 再按存在性改指导致首对象泄漏；且 aValue
+	// 永不为 NULL，尾部判空 sprintf 是反逻辑死代码——QDict::replace 本就完成
+	// 「覆盖旧值并接管其删除」，直接写入即可
 	propDict.replace( rKey.data(), new QString( rValue.data() ) );
-	
-	if ( !aValue )
-		aValue->sprintf(rValue);
-	
-	return *aValue;
+
+	return rValue;
 }
 
 QString KRootProp::writeEntry( const QString& rKey, int nValue )

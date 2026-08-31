@@ -9,6 +9,8 @@
 #include <qpdevmet.h>
 #include <qstring.h>
 #include "eps.h"
+#include <stdlib.h>   /* [2026-08-31] mkstemp */
+#include <unistd.h>   /* [2026-08-31] close */
 
 // This is a wrapper in case the filter is being used in an app other
 // than ksnapshot.
@@ -27,7 +29,14 @@ void write_eps_image(QImageIO *imageio)
 
   // Make up a name for the temporary file
   QString tempname;
-  tempname.sprintf("/tmp/ksnapshot%i", time( 0L ));
+  /* [2026-08-31] 可预测临时名改 mkstemp（防同秒碰撞/符号链接竞争） */
+  char tmpl[] = "/tmp/ksnapshotXXXXXX";
+  int tfd = mkstemp( tmpl );
+  if ( tfd < 0 )
+    strcpy( tmpl, "/tmp/ksnapshot.tmp" );
+  else
+    close( tfd );
+  tempname = tmpl;
   psOut.setOutputFileName(tempname);
 
   // painting the pixmap to the "printer" which is a file

@@ -334,7 +334,7 @@ KDMShutdown::bye_bye()
 int main(int argc, char **argv)
 {
      QApplication app( argc, argv);
-     app.setFont( QFont( "helvetica", 18));
+     app.setFont( QFont( "", 18)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
      KDMShutdown sd( 0, 0,"Hej", "echo shutdown", "echo restart");
      app.setMainWidget( &sd);
      return sd.exec();

@@ -73,6 +73,11 @@ protected:
     void    resizeEvent( QResizeEvent * );
     bool eventFilter( QObject *, QEvent * );
 	void styleChange( GUIStyle );
+    /* [KDE1 Revival 2026] XIM 输入法提交事件：kvt 是自绘终端（不经
+       TQt3 文本部件），TQt3 把 fcitx5/fcitx 的 XIM 提交文本经 IMEnd
+       送达焦点部件——在此把提交串按 UTF-8 字节写入 pty，实现终端
+       中文键入（验收目标 8：任何文本交互处感知不到单字节时代） */
+    void    imEndEvent( TQIMEvent * );
 
 private:
 

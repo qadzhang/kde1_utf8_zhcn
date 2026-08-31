@@ -6,6 +6,8 @@
 #include <pwd.h>
 #include <stddef.h>
 #include <sys/wait.h>				// [KDE1 Revival 2026] 双内核子进程回收
+#include <errno.h>				// [2026-08-31] EINTR 重试判定
+#include <signal.h>				// [2026-08-31] SIGKILL 兜底
 
 #include <qpopmenu.h>
 #include <qcursor.h>
@@ -669,18 +671,25 @@ void KfmGui::slotWebEngine()
         if ( !XGetWindowAttributes( qt_xdisplay(), parent, &wa ) ) {
             return;
         }
-        fprintf(stderr, "[kde1-revival] socket=%lu 尺寸 %dx%d\n",
-                (unsigned long)webEngineSocket, wa.width, wa.height);
         webEngineSocket = (unsigned long)XCreateSimpleWindow(
             qt_xdisplay(), parent, 0, 0,
             (unsigned)wa.width, (unsigned)wa.height, 0, 0, 0xffffff );
+        if ( !webEngineSocket )          // socket 创建失败即中止
+            return;
         XMapWindow( qt_xdisplay(), (Window)webEngineSocket );
         XFlush( qt_xdisplay() );
+        fprintf(stderr, "[kde1-revival] webview socket=%lu 尺寸 %dx%d\n",
+                webEngineSocket, wa.width, wa.height);
 
         // fork 子进程：stdin 用管道，stdout/stderr 继承
         int fds[2];
-        if ( pipe( fds ) != 0 )
+        if ( pipe( fds ) != 0 ) {
+            /* [2026-08-31] pipe 失败回滚已建 socket（原实现泄漏窗口且
+               webEngineOn 未置位，下次 toggle 再叠一个） */
+            XDestroyWindow( qt_xdisplay(), (Window)webEngineSocket );
+            webEngineSocket = 0;
             return;
+        }
         webEnginePid = fork();
         if ( webEnginePid == 0 ) {
             close( fds[1] );
@@ -689,23 +698,34 @@ void KfmGui::slotWebEngine()
             snprintf( xidbuf, sizeof(xidbuf), "%lu", webEngineSocket );
             args[0] = (char*)"kde1-webview";
             args[1] = xidbuf;
-            args[2] = (char *)view->getURL();		// 初始 URL
+            const char *initurl = view->getURL();
+            /* [2026-08-31] 空视图守卫：getURL 可能为 0/空串，传空参数
+               会使子进程 argc 回落 example.com 之外再被 execvp 当非法参数 */
+            args[2] = (char*)( initurl && *initurl ? initurl
+                                                   : "about:blank" );
             args[3] = 0;
             execvp( "kde1-webview", args );
             _exit(127);			// exec 失败
+        }
+        if ( webEnginePid < 0 ) {
+            /* [2026-08-31] fork 失败同样回滚（原实现照常置 webEngineOn） */
+            close( fds[0] ); close( fds[1] );
+            XDestroyWindow( qt_xdisplay(), (Window)webEngineSocket );
+            webEngineSocket = 0;
+            webEnginePid = -1;
+            return;
         }
         close( fds[0] );
         webEngineIn = fds[1];
         webEngineOn = true;
         view->repaint();
     } else {
-        // 关闭：管道 EOF 令子进程自行退出，随后清理 socket
+        /* 关闭：管道 EOF 令子进程自行退出。退出后的收尸交由全局 SIGCHLD
+         * 处理器（main.cpp sig_handler 的 waitpid(-1, WNOHANG) 循环）——
+         * [2026-08-31] 移除 UI 线程内阻塞 waitpid：它与 SIGCHLD 抢收子进程
+         * （多数时候返回 ECHILD），且 webview 卡死时 kfm 界面会跟着冻结 */
         if ( webEngineIn >= 0 ) { close( webEngineIn ); webEngineIn = -1; }
-        if ( webEnginePid > 0 ) {
-            int st;
-            waitpid( webEnginePid, &st, 0 );
-            webEnginePid = -1;
-        }
+        webEnginePid = -1;
         if ( webEngineSocket ) {
             XDestroyWindow( qt_xdisplay(), (Window)webEngineSocket );
             webEngineSocket = 0;
@@ -724,8 +744,21 @@ void KfmGui::webEngineNavigate( const char *url )
         return;
     char buf[2048];
     int n = snprintf( buf, sizeof(buf), "URL %s\n", url );
-    if ( n > 0 )
-        write( webEngineIn, buf, (size_t)n );
+    if ( n <= 0 )
+        return;
+    if ( n >= (int)sizeof(buf) )
+        n = (int)sizeof(buf) - 1;		// snprintf 截断防护
+    /* [2026-08-31] 循环写全：管道缓冲不足时的短写会让 webview 收到半行命令 */
+    const char *p = buf;
+    while ( n > 0 ) {
+        ssize_t w = write( webEngineIn, p, (size_t)n );
+        if ( w <= 0 ) {
+            if ( w < 0 && errno == EINTR )
+                continue;
+            break;			// 管道破裂：子进程已退出，静默放弃
+        }
+        p += w; n -= (int)w;
+    }
 }
 
 bool KfmGui::webEngineActive()
@@ -875,7 +908,9 @@ void KfmGui::openFilteredURL ( const char * _url )
         {
     		url = getenv( "KDEURL" );
 		    if ( url.isEmpty() )
-			    url = "http://www.kde.org";
+			    /* [2026-08-31] 默认主页 http→https：明文 http 会被现代站点
+			       重定向，旧内核不跟随跳转即白屏；https 由新内核可开 */
+			    url = "https://www.kde.org";
         }
         // No protocol, but begins with www? (sven)
     	else if ( url.find( "www.", 0, false ) == 0 )
@@ -2245,11 +2280,23 @@ KfmGui::~KfmGui()
     // [KDE1 Revival 2026] 双内核：退出前结束新内核子进程（复用关闭逻辑）
     if ( webEngineOn ) {
         if ( webEngineIn >= 0 ) { close( webEngineIn ); webEngineIn = -1; }
+        /* [2026-08-31] 有界等待替代无限阻塞：EOF 后 webview 自行退出，此处
+           至多等 2 秒（100x20ms 循环），超时 SIGKILL 兜底——原 waitpid(0)
+           无限期阻塞会在 webview 卡死时连 kfm 退出一起冻住 */
         if ( webEnginePid > 0 ) {
+            for ( int i = 0; i < 100; i++ ) {
+                int st;
+                if ( waitpid( webEnginePid, &st, WNOHANG ) == webEnginePid )
+                    goto reaped;
+                usleep( 20000 );
+            }
+            kill( webEnginePid, SIGKILL );
             int st;
-            waitpid( webEnginePid, &st, 0 );
-            webEnginePid = -1;
+            while ( waitpid( webEnginePid, &st, 0 ) < 0 && errno == EINTR )
+                ;
         }
+      reaped:
+        webEnginePid = -1;
         if ( webEngineSocket ) {
             XDestroyWindow( qt_xdisplay(), (Window)webEngineSocket );
             webEngineSocket = 0;

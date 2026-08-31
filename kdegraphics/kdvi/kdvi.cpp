@@ -927,7 +927,7 @@ void kdvi::selectSmall()
 void kdvi::shrinkChanged(int s)
 {
 	QString t;
-	t.sprintf(i18n("Shrink: %d"), s );
+	t = kde_sprintf(i18n("Shrink: %d"), s ); /* [2026-08-31] 翻译格式串走 kde_sprintf */
 	statusBar->changeItem( t, ID_STAT_SHRINK);
 }
 

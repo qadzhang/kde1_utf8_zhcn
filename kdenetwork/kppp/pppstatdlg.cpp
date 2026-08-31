@@ -279,7 +279,7 @@ void PPPStatsDlg::paintGraph() {
   
   // plot scale line
   p.setPen(text);
-  p.setFont(QFont("fixed", 8));
+  p.setFont(QFont("", 8)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   QRect r;
   QString s;
   s = kde_sprintf(i18n("%d kb/s"), max/1024);

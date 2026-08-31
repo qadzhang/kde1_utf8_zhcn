@@ -171,7 +171,7 @@ int main( int argc, char ** argv )
 	s.prepend( "#define ITALIC_FONT " );
 	preproc += s;
 
-	fnt = config->readFontEntry( "fixedFont", new QFont( "fixed", 12 ) );
+	fnt = config->readFontEntry( "fixedFont", new QFont( "", 12 ) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	s = fontString( fnt, Fixed );
 	s += "\n";
 	s.prepend( "#define FIXED_FONT " );

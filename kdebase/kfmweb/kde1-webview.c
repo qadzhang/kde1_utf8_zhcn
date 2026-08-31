@@ -53,12 +53,6 @@ static gboolean on_stdin(GIOChannel *src, GIOCondition cond, gpointer data)
     return TRUE;				/* 继续监听 */
 }
 
-static gboolean quit_on_eof(gpointer data)
-{
-    gtk_main_quit();
-    return FALSE;
-}
-
 int main(int argc, char **argv)
 {
     if (argc < 2) {
@@ -81,7 +75,9 @@ int main(int argc, char **argv)
     GIOChannel *ch = g_io_channel_unix_new(STDIN_FILENO);
     g_io_add_watch(ch, G_IO_IN | G_IO_HUP | G_IO_ERR, on_stdin, NULL);
     g_io_channel_unref(ch);
-    g_idle_add(quit_on_eof, NULL);		/* 占位：EOF 由 watch 的 FALSE 触发 */
+    /* [2026-08-31] 移除 g_idle_add(quit_on_eof)：idle 回调在主循环第一次空闲即
+       执行——曾导致 webview 一加载完就自杀退出（表现为新内核窗口闪退）。EOF
+       退出语义已由 IO watch 返回 FALSE 正确实现，无需任何占位注册 */
 
     gtk_main();
     return 0;

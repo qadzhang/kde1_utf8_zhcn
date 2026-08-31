@@ -53,7 +53,7 @@ void HexFile::init() {
     UseBig = false;
     sideEdit = LEFT;
     datamap=new QPixmap();
-    dispFont=new QFont("courier", 14);
+    dispFont=new QFont("", 14); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
     filename = 0L;
     setFont(*dispFont);
     setBackgroundColor( background );

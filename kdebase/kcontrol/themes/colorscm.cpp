@@ -138,7 +138,7 @@ void WidgetCanvas::drawSampleWidgets()
   paint.setPen( inactiveTitleColor );
   paint.drawRect( 5, 5, width()-30, 20 );
     
-  paint.setFont( QFont("Helvetica", 12, QFont::Bold) );
+  paint.setFont( QFont("", 12, QFont::Bold) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   paint.setPen( inactiveTextColor );
   paint.drawText( (width()-25)/2-40, 20, i18n("Inactive window") );
   textLen = paint.fontMetrics().width(  i18n("Inactive window") );
@@ -154,7 +154,7 @@ void WidgetCanvas::drawSampleWidgets()
   paint.setBrush( activeTitleColor );paint.setPen( activeTitleColor );
   paint.drawRect( 25, 30+5, width()-32, 20 ); 
     
-  paint.setFont( QFont("Helvetica", 12, QFont::Bold) );
+  paint.setFont( QFont("", 12, QFont::Bold) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   paint.setPen( activeTextColor );
   paint.drawText( 30+5+width()-32-(width()-32)/2-50, 45+5,  i18n("Active window") );
   textLen = paint.fontMetrics().width(  i18n("Active window" ));
@@ -166,7 +166,7 @@ void WidgetCanvas::drawSampleWidgets()
   
   qDrawShadePanel ( &paint, 25, 55, width()-32, 28, cg, FALSE, 2, &brush);
     
-  paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
+  paint.setFont( QFont("", 12, QFont::Normal) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   paint.setPen(textColor );
   textLen = paint.fontMetrics().width( i18n("File") );
   qDrawShadePanel ( &paint, 30, 52+5+2, textLen + 10, 21, cg, FALSE, 2, &brush);
@@ -175,7 +175,7 @@ void WidgetCanvas::drawSampleWidgets()
   hotspots[4] = HotSpot( QRect( 35, 62, textLen, 14 ), 5 ); 
   hotspots[5] = HotSpot( QRect( 27, 52+5, 33, 21 ), 4 ); 
     
-  paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
+  paint.setFont( QFont("", 12, QFont::Normal) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   paint.setPen( textColor );
   paint.drawText( 35 + textLen + 20, 69+5, i18n("Edit") );
   textLen = paint.fontMetrics().width( i18n("Edit") );
@@ -188,7 +188,7 @@ void WidgetCanvas::drawSampleWidgets()
   qDrawShadePanel ( &paint, 25, 80+5-4, width()-7-25-2, 
 		    height(), cg, TRUE, 2, &brush);
     
-  paint.setFont( QFont("Helvetica", 14, QFont::Normal) );
+  paint.setFont( QFont("", 14, QFont::Normal) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   paint.setPen( windowTextColor );
   paint.drawText( 200, 127-10, i18n( "Window text") );
   textLen = paint.fontMetrics().width( i18n("Window text") );
@@ -205,14 +205,14 @@ void WidgetCanvas::drawSampleWidgets()
   brush.setColor( backgroundColor );
   qDrawShadePanel ( &paint, 30, 80, 84, height(), cg, FALSE, 2, &brush);
 
-  paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
+  paint.setFont( QFont("", 12, QFont::Normal) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   paint.setPen( lightGray.dark() );
   paint.drawText( 38, 97, i18n("Disabled") );
     
   qDrawShadePanel ( &paint, 32, 101, 80, 25, cg, FALSE, 2,
 		    &brush);
    
-  paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
+  paint.setFont( QFont("", 12, QFont::Normal) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   paint.setPen( textColor );
   paint.drawText( 38, 119, i18n("Selected") );
   textLen = paint.fontMetrics().width( i18n("Selected") );

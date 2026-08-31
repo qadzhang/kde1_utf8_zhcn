@@ -1876,8 +1876,8 @@ KGhostview::openFile( QString name )
       else
 	{
 	  
-	  oldfilename.sprintf( filename.data() );
-	  filename.sprintf( name.data() );
+	  oldfilename = filename;   /* [2026-08-31] Qt1 sprintf 拷贝惯用法改赋值：sprintf 格式串逐字节 Latin-1 升位，中文文件名变乱码（且文件名含 % 即 UB） */
+	  filename = name;         /* [2026-08-31] 同上 */
 	  if ( psfile )
 	    {
 	      fclose( psfile );
@@ -1898,8 +1898,8 @@ KGhostview::openFile( QString name )
   else
     {
       
-      oldfilename.sprintf( filename.data() );
-      filename.sprintf( name.data() );
+      oldfilename = filename;   /* [2026-08-31] Qt1 sprintf 拷贝惯用法改赋值：sprintf 格式串逐字节 Latin-1 升位，中文文件名变乱码（且文件名含 % 即 UB） */
+      filename = name;         /* [2026-08-31] 同上 */
       if ( psfile ) fclose( psfile );
       psfile = 0;
       
@@ -2640,7 +2640,7 @@ void KGhostview::show_page(int number)
 			fclose(psfile);
 			psfile = fopen(filename, "r");
 			mtime = sbuf.st_mtime;
-			oldfilename.sprintf( filename.data() );
+			oldfilename = filename;   /* [2026-08-31] Qt1 sprintf 拷贝惯用法改赋值：sprintf 格式串逐字节 Latin-1 升位，中文文件名变乱码（且文件名含 % 即 UB） */
 			new_file(number);
 		}
     }
@@ -2701,12 +2701,16 @@ void KGhostview::show_page(int number)
   
   if(toc_text) {
 		if(num_parts==0) {
-			part_string.sprintf( i18n("Sc.1 ") );
+			/* [2026-08-31] 翻译串禁止当 TQString::sprintf 格式串（逐字节
+			   Latin-1 升位，中文乱码）：无参的直接赋值，带 %d 的走
+			   kde_sprintf；char[20] 缓冲用 C sprintf 拷 UTF-8 字节无害
+			   （后续 QString+char* 经 codecForCStrings 按 UTF-8 解码） */
+			part_string = i18n("Sc.1 ");
 			sprintf(part_total_label, i18n("of 1    "));
 			if(number==-1)
-				page_string.sprintf(i18n("P.1 "));
+				page_string = i18n("P.1 ");
 			else
-				page_string.sprintf(i18n("P.%d "), number+1);
+				page_string = kde_sprintf(i18n("P.%d "), number+1);
 		} else {
 			int cumulative_pages=0;
 			int k, part;
@@ -2719,9 +2723,9 @@ void KGhostview::show_page(int number)
 			cumulative_pages-=pages_in_part[k];
 			part=k-1;
 
-			page_string.sprintf( i18n("P.%d "), number+1-cumulative_pages);
+			page_string = kde_sprintf( i18n("P.%d "), number+1-cumulative_pages); /* [2026-08-31] 翻译格式串走 kde_sprintf */
 
-			part_string.sprintf( i18n("Sc.%d "), part+2);
+			part_string = kde_sprintf( i18n("Sc.%d "), part+2); /* [2026-08-31] 同上 */
 
 			part=k;
 			if(pages_in_part[part]==0) {

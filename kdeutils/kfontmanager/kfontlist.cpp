@@ -47,7 +47,7 @@ KFontList::KFontList (QWidget * parent, const char *name)
 
   eframe = new QMultiLineEdit(this,"edit");
   //  eframe->setGeometry(10,10, 400, 400);
-  eframe->setFont(QFont("fixed",10));
+  eframe->setFont(QFont("",10)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   setMinimumSize (100, 100);
 
   readSettings();

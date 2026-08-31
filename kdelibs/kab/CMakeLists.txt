@@ -1,3 +1,5 @@
+add_definitions(-DNDEBUG)  # [2026-08-31] 生产构建关闭 kab 断言（上游意图，见 debug.h）
+
 include_directories(
     ${KDELIBS_SOURCE_DIR}/kdecore
     ${KDELIBS_SOURCE_DIR}/kdeui

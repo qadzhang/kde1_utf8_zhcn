@@ -308,7 +308,8 @@ GameBoard::turn( void )
     }
 
     QString turnStr;
-    turnStr.sprintf( i18n("Turn #: %2d of %2d"), turnNumber, lastTurn );
+    /* [2026-08-31] 翻译格式串走 kde_sprintf（zh_CN 译文「回合#…」含中文，逐字节升位必乱码） */
+    turnStr = kde_sprintf( i18n("Turn #: %2d of %2d"), turnNumber, lastTurn );
 
     turnCounter->setText( turnStr );
 

@@ -92,14 +92,15 @@ void KDateTable::paintCell( QPainter *p, int row, int col )
   if (row==0) 
     { // paint headline
       p->setPen(darkBlue);
-      p->setFont(QFont("Arial", fontsize, QFont::Bold, false));
+      // [2026-08-31] 表头字体改默认族（原 Arial 无 CJK 字形，本地化月名/星期 tofu）
+      { QFont hf; hf.setPointSize(fontsize); hf.setBold(true); p->setFont(hf); }
       p->drawText(0, 0, w, h, AlignCenter, Days[col]);
       p->setPen(black);
       p->moveTo(0, h-1);
       p->lineTo(w-1, h-1);
     } else { // paint day cell
       int nDay = dayNum(row, col);
-      p->setFont(QFont("Arial", fontsize));
+      { QFont df; df.setPointSize(fontsize); p->setFont(df); }
       /* Will be implemented the next time: the preset date
        * will be drawn with a gray background to give feedback 
        * to the user. --Mirko

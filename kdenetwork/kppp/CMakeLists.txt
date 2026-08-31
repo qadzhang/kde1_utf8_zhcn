@@ -85,3 +85,23 @@ target_link_libraries(kppp
 
 install(TARGETS kppp RUNTIME DESTINATION ${KDE1_BINDIR})
 install(FILES Kppp.kdelnk DESTINATION ${KDE1_APPSDIR}/Internet)
+
+# [KDE1 Revival 2026-08-31] 运行时资源随包安装（对应 1999 Makefile.am 的
+# pixmaps/Rules 两个 SUBDIRS 安装规则，此前 CMake 化时遗漏——kppp 启动
+# 即因加载 share/apps/kppp/pics/modemboth.xpm 失败弹"Could not load"错误框）：
+# ① pixmaps → share/apps/kppp/pics（docking/pppstatdlg/acctselect 等按名加载）
+# ② Rules 各国计费规则 → share/apps/kppp/Rules/<国家>（计费引擎按目录检索）
+install(FILES
+    pixmaps/Terminal.xpm pixmaps/back.xpm pixmaps/exit.xpm pixmaps/fileopen.xpm
+    pixmaps/finish.xpm pixmaps/help.xpm pixmaps/kppplogo.xpm pixmaps/modemboth.xpm
+    pixmaps/modemleft.xpm pixmaps/modemnone.xpm pixmaps/modemright.xpm pixmaps/phone.xpm
+    pixmaps/start.xpm pixmaps/terminal_both.xpm pixmaps/terminal_left.xpm
+    pixmaps/terminal_right.xpm pixmaps/dock_none.xpm pixmaps/dock_left.xpm
+    pixmaps/dock_right.xpm pixmaps/dock_both.xpm pixmaps/exclamation.xpm
+    DESTINATION ${KDE1_DATADIR}/kppp/pics)
+file(GLOB_RECURSE KPPP_RULES "Rules/*")
+foreach(rule ${KPPP_RULES})
+    if(IS_DIRECTORY ${rule})
+        install(DIRECTORY ${rule} DESTINATION ${KDE1_DATADIR}/kppp/Rules)
+    endif()
+endforeach()

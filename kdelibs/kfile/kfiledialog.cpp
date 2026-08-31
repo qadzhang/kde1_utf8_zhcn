@@ -204,7 +204,7 @@ void KFileBaseDialog::init()
 				  locationEdit->height());
     locationEdit->setFixedHeight(locationLabel->height());
 
-    /* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å· */
+    /* [KDE1 Revival 2026] TQComboBox 仅有 activated(int) 信号 */
     connect(locationEdit, SIGNAL(activated(int)),
 	    SLOT(locationChanged(int)));
 
@@ -468,8 +468,9 @@ QString KFileBaseDialog::selectedFile()
       return 0;
 
     KURL u = filename_.data();
+    // [2026-08-31] KURL::path() 内部已做惰性解码，外层再 decodeURL 属二次解码：
+    // 字面含 %XX 形态的文件名（如 "100%2Fbak"）会被错误还原成 "100/bak"
     QString path = u.path();
-    KURL::decodeURL(path);
     return path;
 }
 

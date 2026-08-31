@@ -45,7 +45,7 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KLJetTool", TRUE) {
 
   QLabel *l;
   l = new QLabel(i18n("KLjetTool"), this);
-  l->setFont(QFont("Helvetica", 19, QFont::Bold));
+  l->setFont(QFont("", 19, QFont::Bold)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   l->setGeometry(145,40,100,30);
 
   QString s;

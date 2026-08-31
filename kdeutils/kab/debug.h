@@ -80,7 +80,10 @@ inline void LG(...) {}
 extern string AuthorEmailAddress;
 // ##############################################################################
 // we use our own kind of assertions here: colorful, cute and impressive bugs!
-#if ! defined NDEBUG || defined DEBUG
+/* [KDE1 Revival 2026-08-31] 断言开关改 defined(KAB_DEBUG)：TQt3 的
+   ntqglobal.h 全局 #define DEBUG 与本开关撞名致 NDEBUG 失效（详见
+   kdelibs/kab/debug.h 同款注释） */
+#if defined(KAB_DEBUG)
 #define assert(x) evaluate_assertion(x, __FILE__, __LINE__, #x)
 #define CHECK(x)  evaluate_assertion(x, __FILE__, __LINE__, #x)
 #define REQUIRE(x) evaluate_assertion(x, __FILE__, __LINE__, #x)

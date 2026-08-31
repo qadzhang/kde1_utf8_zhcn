@@ -39,7 +39,8 @@ welcomeWin::welcomeWin
     f.close();
   }
   else{
-    DisplayDialog->insertItem(new  ircListItem("Unable to open release notes file!!", &red, DisplayDialog));
+    /* [2026-08-31] 硬编码英文改 i18n（资源文件现已随包安装，此为兜底提示） */
+    DisplayDialog->insertItem(new  ircListItem(i18n("Unable to open release notes file!!"), &red, DisplayDialog));
   }
   DisplayDialog->updateScrollBars();
 }

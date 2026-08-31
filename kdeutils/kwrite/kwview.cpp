@@ -136,7 +136,11 @@ KWriteView::~KWriteView() {
 
 void KWriteView::cursorLeft(VConfig &c) {
 
-  cursor.x--;
+  /* [KDE1 Revival 2026] 左移一个 UTF-8 字符：退过前一字符的完整字节长
+     （前导+续字节）——原 x-- 把光标插进多字节字符中间，渲染出乱码。
+     本修复原误写入不被编译的上游死副本 kwrite_view.cpp，现落到 kwview.cpp
+     （CMakeLists KWRITE_SRCS 实际编译本文件） */
+  cursor.x -= kWriteDoc->charLenBefore(kWriteDoc->textLine(cursor.y), cursor.x);
   if (c.flags & cfWrapCursor && cursor.x < 0 && cursor.y > 0) {
     cursor.y--;
     cursor.x = kWriteDoc->textLength(cursor.y);
@@ -154,7 +158,8 @@ void KWriteView::cursorRight(VConfig &c) {
       cursor.x = -1;
     }
   }  
-  cursor.x++;
+  /* [KDE1 Revival 2026] 右移一个 UTF-8 字符：前进该字符的完整字节长 */
+  cursor.x += kWriteDoc->charLen(kWriteDoc->textLine(cursor.y), cursor.x);
   cOldXPos = cXPos = kWriteDoc->textWidth(cursor);
   update(c);
 }
@@ -697,14 +702,21 @@ X      : cut
 
   getVConfig(c);
 
-  if ((e->ascii() >= 32 || e->ascii() == '\t')
-    && e->key() != Key_Delete && e->key() != Key_Backspace) {
-//    printf("input %d\n",e->ascii());
+  /* [KDE1 Revival 2026] 输入改走 TQKeyEvent::text()：TQt3 的 ascii() 对
+     非 Latin-1 输入恒为 0——XIM 提交的中文（IME 上屏串）在原分支直接被
+     丢弃。text() 取完整 Unicode 串，按 UTF-8 字节交给 insert() 入文档 */
+  TQString inputText = e->text();
+  if (!inputText.isEmpty()
+      && (inputText[0].unicode() >= 32 || inputText[0] == '\t')
+      && e->key() != Key_Delete && e->key() != Key_Backspace) {
     if (c.flags & cfDelOnInput) {
       kWriteDoc->delMarkedText(this,c);
       getVConfig(c);
     }
-    kWriteDoc->insertChar(this,c,e->ascii());
+    if ( inputText.length() == 1 && inputText[0].unicode() < 128 )
+      kWriteDoc->insertChar(this, c, inputText[0].latin1());  // ASCII 单字符保留 insertChar（自动括号/Tab 替换等编辑特性所在）
+    else
+      kWriteDoc->insert(this, c, inputText.utf8());           // 中文/多字符输入
   } else {
     if (e->state() & ShiftButton) c.flags |= cfMark;
 

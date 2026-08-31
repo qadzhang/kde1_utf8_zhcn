@@ -155,6 +155,15 @@ void MoonWidget::renderGraphic()
     old_h = height();
     QPixmap t;
     t.convertFromImage(*moons->at(counter), AvoidDither);
+    /* [2026-08-31] 加载失败守卫：moon*.gif 缺失/GIF 解码未启用时 moons->at
+       是 null QImage，t 宽高为 0——除零得 inf 缩放矩阵，画出一团黑。回退
+       画纯色月亮占位（不崩溃） */
+    if ( t.width() <= 0 || t.height() <= 0 ) {
+        QPixmap pm( width(), height() );
+        pm.fill( yellow );
+        bitBlt( this, 0, 0, &pm );
+        return;
+    }
     QWMatrix m;
     m.scale(float(width()) / t.width(),
 	    float(height()) / t.height());

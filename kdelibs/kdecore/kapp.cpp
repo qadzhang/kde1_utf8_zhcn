@@ -1306,9 +1306,16 @@ void KApplication::readSettings()
   //  Initialize fonts to default first or it won't work !!
 		
   pCharsets->setDefault(klocale->charset());
-  generalFont = QFont("helvetica", 12, QFont::Normal);
+  // [2026-08-31] 默认字体族不再指定西文字面量：fontconfig 会把 helvetica 替换为
+  // 无 CJK 字形的拉丁字体（TQt3 无逐字形回退，中文即 tofu）。TQFont 默认构造
+  // 走系统默认字体族（Debian 经 fontconfig 命中 Noto 系，中英文皆可渲染）；
+  // 等宽需求用 StyleHint(TypeWriter) 表达而非 "fixed" 字面量
+  generalFont = QFont();
+  generalFont.setPointSize(12);
   pCharsets->setQFont(generalFont);
-  fixedFont = QFont("fixed", 12, QFont::Normal);
+  fixedFont = QFont();
+  fixedFont.setPointSize(12);
+  fixedFont.setStyleHint(QFont::TypeWriter);
   pCharsets->setQFont(fixedFont);
 
   config->setGroup( "General" );
@@ -1516,9 +1523,10 @@ static QString kde_runtime_resource_dir(const char* burned)
     if (burned && !strncmp(burned, "KDEDIR", 6))
 	return QString(env && *env ? env : KDEDIR) + QString(burned + 6);
     if (env && *env) {
-	static const char burned_prefix[] = "/usr/kde1";
-	if (!strncmp(burned, burned_prefix, sizeof(burned_prefix)-1))
-	    return QString(env) + QString(burned + sizeof(burned_prefix)-1);
+	// [2026-08-31] 烧录前缀改用构建注入的 KDEDIR 宏（原为字面量 "/usr/kde1"，
+	// --prefix 重建时此处与实际烧入值脱节，沙箱重定向静默失效）
+	if (!strncmp(burned, KDEDIR, sizeof(KDEDIR)-1))
+	    return QString(env) + QString(burned + sizeof(KDEDIR)-1);
     }
     return QString(burned);
 }

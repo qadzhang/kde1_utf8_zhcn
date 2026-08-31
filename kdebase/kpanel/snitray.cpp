@@ -43,7 +43,7 @@ extern "C" {
 }
 
 SNITray::SNITray(QWidget *da, QObject *parent)
-  : QObject(parent), dockArea(da), conn(0), notifier(0), lastStamp(0)
+  : QObject(parent), dockArea(da), conn(0), notifier(0)
 {
     clients.setAutoDelete(true);
 }
@@ -82,10 +82,21 @@ bool SNITray::init()
     }
 
     /* Host 角色注册信号：告知 item 端 host 已就绪 */
-    const char *host_sig = "org.kde.StatusNotifierHostRegistered";
     dbus_bus_add_match(conn,
         "type='signal',interface='org.kde.StatusNotifierWatcher',member="
         "StatusNotifierHostRegistered", &err);
+    dbus_error_free(&err);
+
+    /* [2026-08-31] 补 NameOwnerChanged 订阅：libdbus 裸连接不过滤器推送，
+       不加 match rule 永远收不到该广播——SNI 客户端（fcitx5 等）退出后
+       指示栏残留永久空格子即此根因（本机 dbus-daemon 实测证实） */
+    dbus_bus_add_match(conn,
+        "type='signal',sender='org.freedesktop.DBus',"
+        "interface='org.freedesktop.DBus',member='NameOwnerChanged'", &err);
+    if (dbus_error_is_set(&err)) {
+        fprintf(stderr, "kpanel SNI: NameOwnerChanged match failed: %s\n",
+                err.message);
+    }
     dbus_error_free(&err);
 
     dbus_connection_add_filter(conn, messageFilter, this, 0);
@@ -192,6 +203,24 @@ DBusHandlerResult SNITray::messageFilter(DBusConnection *c, DBusMessage *m,
             if (strcmp(prop, "IsStatusNotifierHostAllowed") == 0) {
                 dbus_bool_t v = TRUE;
                 dbus_message_iter_append_basic(&vit, DBUS_TYPE_BOOLEAN, &v);
+            } else if (strcmp(prop, "IsStatusNotifierHostRegistered") == 0) {
+                /* [2026-08-31] SNI 规范标准属性：item 端（含 fcitx5）探测
+                   host 存活即查此属性，缺失会误判无 host 而回退别的路径 */
+                dbus_bool_t v = TRUE;
+                dbus_message_iter_append_basic(&vit, DBUS_TYPE_BOOLEAN, &v);
+            } else if (strcmp(prop, "RegisteredStatusNotifierItems") == 0) {
+                /* [2026-08-31] 已注册 item 清单（as）——供其他观察者同步状态 */
+                DBusMessageIter ait;
+                dbus_message_iter_open_container(&vit, DBUS_TYPE_ARRAY,
+                                                 DBUS_TYPE_STRING_AS_STRING, &ait);
+                for (SNIClient *cl = self->clients.first(); cl;
+                     cl = self->clients.next()) {
+                    const char *svc = cl->service.latin1();
+                    /* latin1 对总线名（纯 ASCII）无损；防御性跳过空值 */
+                    if (svc && *svc)
+                        dbus_message_iter_append_basic(&ait, DBUS_TYPE_STRING, &svc);
+                }
+                dbus_message_iter_close_container(&vit, &ait);
             } else if (strcmp(prop, "ProtocolVersion") == 0) {
                 dbus_int32_t v = 0;
                 dbus_message_iter_append_basic(&vit, DBUS_TYPE_INT32, &v);
@@ -283,7 +312,10 @@ DBusHandlerResult SNITray::messageFilter(DBusConnection *c, DBusMessage *m,
         if (dbus_message_iter_next(&it) &&
             dbus_message_iter_get_arg_type(&it) == DBUS_TYPE_STRING)
             dbus_message_iter_get_basic(&it, &newo);
-        if (name && old && newo && name[0] == ':' &&
+        /* [2026-08-31] 放开 name[0]==':' 限定：item 可能以总线名注册
+           （fcitx5 = org.fcitx.Fcitx5）也可能以唯一名+路径注册——退出时
+           两条 NameOwnerChanged 都会到达，按 service 匹配哪条命中摘哪条 */
+        if (name && old && newo &&
             strcmp(newo, "") == 0 && strcmp(old, "") != 0)
             self->handleItemUnregister(name);
         /* 信号继续传递，不做 HANDLED */
@@ -301,15 +333,17 @@ void SNITray::handleItemRegister(const char *service, const char *path)
     c->service = service;
     c->objectPath = path;
     Display *d = qt_xdisplay();
+    int scr = DefaultScreen(d);
+    int depth = DefaultDepth(d, scr); /* [2026-08-31] 深度随屏而非硬编码 24 */
     Window parent = dockArea->winId();
     c->win = XCreateSimpleWindow(d, parent, 0, 0, 24, 24, 0,
-                                 BlackPixel(d, DefaultScreen(d)),
-                                 WhitePixel(d, DefaultScreen(d)));
+                                 BlackPixel(d, scr), WhitePixel(d, scr));
     XSelectInput(d, c->win, ExposureMask | ButtonPressMask);
-    c->pix = XCreatePixmap(d, c->win, 24, 24, 24);
+    c->pix = XCreatePixmap(d, c->win, 24, 24, depth);
     XMapWindow(d, c->win);
     clients.append(c);
     emit clientsChanged();
+    emitItemChange("StatusNotifierItemRegistered", service);
 
     /* 异步读 IconPixmap 属性。
      * [KDE1 Revival 2026] serial 必须经 dbus_connection_send 的出参取得——
@@ -339,8 +373,28 @@ void SNITray::handleItemUnregister(const char *service)
         return;
     if (c->pix) XFreePixmap(qt_xdisplay(), c->pix);
     if (c->win) XDestroyWindow(qt_xdisplay(), c->win);
+    /* 先取串再 remove——SNIClient 由清单托管删除，remove 后 c 悬垂 */
+    QString svc = c->service;
     clients.remove(c);
     emit clientsChanged();
+    emitItemChange("StatusNotifierItemUnregistered", svc.latin1());
+}
+
+/* [2026-08-31] 按规范向总线广播 item 注册/注销信号——其他 SNI 观察
+   者（及部分 item 端）依赖它们同步状态 */
+void SNITray::emitItemChange(const char *member, const char *service)
+{
+    if (!conn || !service || !*service)
+        return;
+    DBusMessage *sig = dbus_message_new_signal(
+        "/StatusNotifierWatcher", "org.kde.StatusNotifierWatcher", member);
+    if (!sig)
+        return;
+    dbus_message_append_args(sig, DBUS_TYPE_STRING, &service,
+                             DBUS_TYPE_INVALID);
+    dbus_connection_send(conn, sig, 0);
+    dbus_message_unref(sig);
+    dbus_connection_flush(conn);
 }
 
 SNIClient *SNITray::clientByService(const QString &service)
@@ -360,6 +414,8 @@ void SNITray::renderIcon(SNIClient *c, const unsigned char *argb,
     if (!c || w <= 0 || h <= 0)
         return;
     Display *d = qt_xdisplay();
+    int scr = DefaultScreen(d);
+    int depth = DefaultDepth(d, scr); /* [2026-08-31] 深度随屏而非硬编码 24 */
     QImage img(w, h, 32);
     for (int y = 0; y < h; y++) {
         unsigned int *dst = (unsigned int *) img.scanLine(y);
@@ -371,8 +427,8 @@ void SNITray::renderIcon(SNIClient *c, const unsigned char *argb,
     }
     QImage scaled = img.smoothScale(24, 24);
 
-    Pixmap newpix = XCreatePixmap(d, c->win, 24, 24, 24);
-    XImage *xi = XCreateImage(d, DefaultVisual(d, DefaultScreen(d)), 24,
+    Pixmap newpix = XCreatePixmap(d, c->win, 24, 24, depth);
+    XImage *xi = XCreateImage(d, DefaultVisual(d, scr), depth,
                               ZPixmap, 0, 0, 24, 24, 32, 0);
     if (xi) {
         char *xdata = (char *) malloc(xi->bytes_per_line * 24);

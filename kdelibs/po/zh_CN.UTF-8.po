@@ -22,7 +22,7 @@ msgstr "(未知条件)"
 
 #: kab/AssertDialog.cpp:39
 msgid "You have found a bug in "
-msgstr "你发现了一个bug在 "
+msgstr "您在 "
 
 #: kab/AssertDialog.cpp:45
 msgid "Ignore the error, possibly causing much more damage"
@@ -103,7 +103,6 @@ msgstr ""
 "关闭.\n"
 "程序会保持在使用对话框以前的\n"
 "状态."
-
 
 #: kab/DialogBase.cpp:57 kdeui/kkeydialog.cpp:242 kdeui/knotebook.cpp:247
 #: kdeui/kwizard.cpp:228 po/texts.cpp:36
@@ -2434,165 +2433,7 @@ msgstr ""
 msgid "Mail program started."
 msgstr "Mail程序起动了."
 
-#
-#, fuzzy
-#~ msgid "Never"
-#~ msgstr "十一月"
 
-#, fuzzy
-#~ msgid ""
-#~ "Could not write to\n"
-#~ "%s"
-#~ msgstr "无法保存这份文件.\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "Could not start process\n"
-#~ "%s"
-#~ msgstr "无法保存这份文件.\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "Malformed URL\n"
-#~ "%s"
-#~ msgstr "不正确的 URL"
-
-#, fuzzy
-#~ msgid ""
-#~ "The file or directory\n"
-#~ "%s\n"
-#~ "does not exist"
-#~ msgstr "指定的文件不存在"
-
-#, fuzzy
-#~ msgid ""
-#~ "Could not make directory\n"
-#~ "%s"
-#~ msgstr "一个目录"
-
-#, fuzzy
-#~ msgid ""
-#~ "Could not enter directory\n"
-#~ "%s"
-#~ msgstr "无法保存这份文件.\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "Could not change permissions for\n"
-#~ "%s"
-#~ msgstr "没有权限写入这个文件\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "Could not connect to host\n"
-#~ "%s"
-#~ msgstr "无法保存这份文件.\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "Could not access\n"
-#~ "%s"
-#~ msgstr "无法保存这份文件.\n"
-
-#~ msgid "Ok"
-#~ msgstr "确定"
-
-#, fuzzy
-#~ msgid "&Browser"
-#~ msgstr "浏览..."
-
-#, fuzzy
-#~ msgid "The file %s does already exist. Do you really want to overwrite it ?"
-#~ msgstr ""
-#~ "存在相同名字的文件\n"
-#~ "要覆盖吗 ?"
-
-#, fuzzy
-#~ msgid "Stalled"
-#~ msgstr "风格"
-
-#, fuzzy
-#~ msgid "Scanning "
-#~ msgstr "警告"
-
-#, fuzzy
-#~ msgid "Creating dir "
-#~ msgstr "建立新的文件夹"
-
-#, fuzzy
-#~ msgid "Rename"
-#~ msgstr "去除"
-
-#, fuzzy
-#~ msgid "Resume"
-#~ msgstr "去除"
-
-#, fuzzy
-#~ msgid "Resume All"
-#~ msgstr "全部替换"
-
-#, fuzzy
-#~ msgid "Malformed URL\n"
-#~ msgstr "不正确的 URL"
-
-#, fuzzy
-#~ msgid "Can not write"
-#~ msgstr "无法保存这份文件.\n"
-
-#
-#, fuzzy
-#~ msgid "Permission denied!"
-#~ msgstr "权限"
-
-#
-#, fuzzy
-#~ msgid "Mount"
-#~ msgstr "星期一"
-
-#
-#, fuzzy
-#~ msgid "Comment:"
-#~ msgstr "内容:"
-
-#
-#, fuzzy
-#~ msgid "Search"
-#~ msgstr "三月"
-
-#, fuzzy
-#~ msgid "contains"
-#~ msgstr "内容"
-
-#~ msgid "&New"
-#~ msgstr "新建(&N)"
-
-#~ msgid "&New..."
-#~ msgstr "新的(&N)..."
-
-#~ msgid "Move"
-#~ msgstr "移动"
-
-#~ msgid "&Previous"
-#~ msgstr "前一页(&P)"
-
-#~ msgid "&Next"
-#~ msgstr "下一页(&N)"
-
-#~ msgid "Small"
-#~ msgstr "小型"
-
-#~ msgid "Medium"
-#~ msgstr "中型"
-
-#~ msgid "Large"
-#~ msgstr "大型"
-
-#~ msgid "(none)"
-#~ msgstr "(无)"
-
-#~ msgid "None"
-#~ msgstr "无"
-
-#
-#~ msgid "&Ok"
-#~ msgstr "确定(&O)"
+# [KDE1 Revival 2026-08-31] kab 断言弹窗改单条格式串
+msgid "You have found a bug in %s."
+msgstr "程序 %s 存在一个缺陷。"

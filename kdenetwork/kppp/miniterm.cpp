@@ -241,7 +241,7 @@ void MiniTerm::help() {
 MyTerm::MyTerm(QWidget *parent, const char* name)
   : QMultiLineEdit(parent, name)
 {
-   this->setFont(QFont("courier",12,QFont::Normal));  
+   this->setFont(QFont("",12,QFont::Normal)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 }
 
 void MyTerm::keyPressEvent(QKeyEvent *k) {

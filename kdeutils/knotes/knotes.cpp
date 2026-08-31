@@ -491,8 +491,10 @@ void KPostit::quit(){
   remove( pidFile.data() );
   writeSettings();
   if(!savealarms()){
+    /* [2026-08-31] 翻译串当 TQString::sprintf 格式串会把中文译文按字节
+       Latin-1 升位出乱码——无参文案直接赋值即可 */
     QString str;
-    str.sprintf(klocale->translate("Could not save KNote Alarms\n"));
+    str = klocale->translate("Could not save KNote Alarms\n");
     QMessageBox::warning(
 			 this,
 			 klocale->translate("Sorry"),
@@ -1076,8 +1078,10 @@ bool KPostit::insertFile(const char* filename){
 
 
   if( !file.open( IO_ReadOnly )) {
+    /* [2026-08-31] 翻译格式串带 %s（中文文件名）——走 kde_sprintf，
+       %s 经 fromUtf8 解码，格式串明文段同样按 UTF-8 处理 */
     QString string;
-    string.sprintf(klocale->translate("Could not load:\n %s"),filename);
+    string = kde_sprintf(klocale->translate("Could not load:\n %s"),filename);
     QMessageBox::warning(
 			 this,
 			 klocale->translate("Sorry"),
@@ -1687,7 +1691,8 @@ void alarmConsistencyCheck(){
     if (KPostit::PostitFilesList.find(KPostit::AlarmList.current()->name.data()) == -1){
 
       QString str;
-      str.sprintf(klocale->translate("Found an alarm to which the underlying\n"\
+      /* [2026-08-31] 翻译格式串带 %s（中文便签名）——走 kde_sprintf（同上） */
+      str = kde_sprintf(klocale->translate("Found an alarm to which the underlying\n"\
 		  "KNotes file:\n"\
 		  "%s\n no longer exists.\n\n"\
 		  "I will correct the Problem for you.")
@@ -1831,7 +1836,7 @@ void readSettings()
 
   KConfig *config = mykapp->getConfig();
   config->setGroup( "Font" );
-  QFont defaultFont("helvetica",12);
+  QFont defaultFont("",12);  /* [2026-08-31] 空族=系统默认族（helvetica 无 CJK 字形，便笺中文全豆腐块） */
   postitdefaults.font = config->readFontEntry("Font", &defaultFont);
 
   config->setGroup("Colors");

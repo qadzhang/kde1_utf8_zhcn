@@ -273,7 +273,7 @@ void KiKbdConfig::setDefaults()
   bakColor  = QColor(0, 128, 128);
   capsColor = QColor(128, 0, 128);
   altColor  = QColor(128, 128, 0);
-  font      = QFont("Helvetica");
+  font      = QFont(""); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   maps.clear(); maps.append("en");
   markDataChanged();
 }

@@ -113,11 +113,11 @@ void KDMFontWidget::loadSettings()
   c->setGroup("KDM");
 
   // Read the fonts
-  stdfont.setFamily("Helvetica");
+  stdfont.setFamily(QString::null); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   stdfont = c->readFontEntry("StdFont", &stdfont);
-  failfont.setFamily("Courier");
+  failfont.setFamily(QString::null); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   failfont = c->readFontEntry("FailFont", &failfont);
-  greetfont.setFamily("Helvetica");
+  greetfont.setFamily(QString::null); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   greetfont = c->readFontEntry("GreetFont", &greetfont);
 
   delete c;

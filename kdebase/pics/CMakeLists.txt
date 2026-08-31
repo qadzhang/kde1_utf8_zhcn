@@ -1,5 +1,11 @@
 add_subdirectory(wallpapers)
 
+# [KDE1 Revival 2026] 五个 kdelnk 引用落空的图标补齐（Help/advanced/
+# properties 引用 kdehelp.xpm、winprops.xpm；smbstatus、background 同理）
+install_icon(kdehelp.xpm "")
+install_icon(winprops.xpm "")
+install_icon(smbstatus.xpm "")
+install_icon(background.xpm "")
 install_icon(3floppy_mount.xpm "")
 install_icon(3floppy_unmount.xpm "")
 install_icon(5floppy_mount.xpm "")

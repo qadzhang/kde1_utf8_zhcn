@@ -2,6 +2,17 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-08-31（第五批：全项目 UTF-8/健壮性二次审查 + 翻译补齐 + 逐应用视觉验收）
+
+- **二次审查修复（上批未提交改动的复检）**：① kwrite 视图层 UTF-8 修复此前误写入不被编译的上游死副本（kwrite_view.cpp 等 6 个文件，CMake 实际编译 kwview.cpp），已移植到 kwview.cpp 并删除全部死副本；② kwdoc.cpp 三个测宽/定位函数补空行/行尾守卫（TextLine 空行时 getText() 返回 NULL，&getText()[z] 野指针读段错误）；③ kquickhelp 换行分支补 return（多行 WhatsThis 首行后内容全部不渲染）；④ kdetoys/kdeutils/kdenetwork/kdegraphics 四份 common/config.h 的 13 个目录宏残留 /opt/kde1 → KDEDIR 拼接；⑤ kfwin 缩进、kvt 死变量、fuzz 产物 ELF 入 .gitignore。
+- **启动可用性修复（5 个应用此前启动即卡死/弹错）**：① kiconedit 自装的消息处理器把每条 TQt 警告弹成模态框——UTF-8 环境下 KCharset 警告必然出现，启动即卡死；改为仅写 stderr，主窗口恢复出现。② kdelibs/kab 断言开关 `!NDEBUG||DEBUG` 与 TQt3 ntqglobal.h 的全局 `#define DEBUG` 撞名致 NDEBUG 永久失效（空库启动断言恒假弹"发现了一个缺陷"框）——断言改由专属 KAB_DEBUG 显式开启（两份 debug.h 同改），生产构建关闭；kab 断言弹窗文案由三段拼接改单条 %s 格式串走 kde_sprintf。③ kppp 的 CMake 化遗漏 pixmaps/Rules 运行时资源安装规则，启动即弹"Could not load modemboth.xpm"——补齐安装。④ ksirc 同漏 relnotes/ksirc.pl/filters.pl/sirc.help.gz 安装，欢迎窗恒报"Unable to open release notes file!!"——补齐并把 relnotes 数据文件中文化。⑤ kfloppy 弃内嵌 kmke2fs（章程 §6.8 禁内嵌旧库）改探测系统 mke2fs 绝对路径，配套新文案。
+- **kasteroids HUD 裁切根治**：KFixedTopWidget::updateRects 依赖 kmenubar->isVisible()，而构造期窗口未显示恒为 false——布局按"无菜单栏"算死，菜单栏永久叠进 HUD 行（中文标签只剩下半截）。补 showEvent 触发显示后重算；HUD 字体 24pt→14pt（1999 位图字体实高 26px vs Xft 48px，回到原视觉比例）；弃失效的 freeze 改 view/mainWin 定尺寸。kcalc 单选钮 37px 硬编码宽度致 Hex/Dec/Oct/Bin 截断——按字体度量动态计算并级联窗宽。klpq 首启对话框加宽修中文截断。kedit 状态栏、kdvi/kghostview 状态栏残留词条补译。
+- **翻译补齐（覆盖率静态分析驱动）**：新增 tools/po-standard-terms.py（全仓库 po 频次提炼术语表 + KDE6 权威兜底）、po-surgery.py（msgid 去重/原位替换/fuzzy 清理/gettext 0.21 废弃条目冲突处理）、apply-manual-translations.py——标准词批补约 430 条 + 应用特有人工翻译约 130 条 + 空 msgstr/fuzzy 修复；新建 kodo.po；kasteroids "Ships"→"飞船数" 等术语校正；全部 po 过 msgfmt。
+- **硬编码清扫**：28 个文件 QFont("helvetica/times/courier/fixed"…) 西文字面族 → 默认族（无 CJK 字形渲染 tofu）；scrnsave 屏保目录 /usr/local/kde/bin → 运行时解析；删除 kghostview 死副本 main.h 与 1999 内嵌 config/ 目录。
+- **健壮性（ai-code-testing 适配执行）**：模糊测试工具扩至 5 契约 × 200 万畸形样本（新增 kwrite charLen/charLenBefore 划分与往返契约），抓出并修复 2 个真缺陷——charLen 前导字节声明长度未按实际续字节收敛（畸形流吞后续 ASCII）、charLenBefore 与 charLen 往返不对称（光标漂移）；蜕变测试 ALL PASS；静态分析修复 kpgp 两处崩溃级缺陷（char 当 const char* 追加野指针、setMessage 缺 return 的 UB）。
+- **文档同步**：AGENTS.md 补丁数量口径与 tqt3-patches/README.md 对齐（2 个）。
+- **打包依赖全量核对与修订**：对 staging 全部 ELF 做 ldd 直链扫描 + dpkg -S 反查——kde1-core Depends 从 11 项补齐至 30 项（新增 libsm6/libice6/libxrender1/libxinerama1/libxcursor1/libxi6（TQt3 会话与 X 扩展）、libgl1/libglu1-mesa（TQt3 OpenGL）、libgif7（kpaint）、libwebp7（kimgio）、libdbus-1-3（kpanel SNI 托盘）、libcrypt1（kcheckpass/kdm）、libtinfo6（kvt）、libgdbm6（krn）、libkpathsea6（kdvi TeTeX 字体查找）、libssl3、libstdc++6/libgcc-s1）；kde1 元包的 fcitx5|fcitx 与 pulseaudio-utils 从 Recommends 降为 Suggests（startkde-kde1 包装脚本对二者均为条件守卫，未装即跳过；OSS 音效桥另备 osspd 备选）——输入法与音效桥属运行时可选增强，非桌面必需。
+
 ## 2026-08-31（第四批：对接 GitHub 远端 kde1_utf8_zhcn）
 
 - 远端 `https://github.com/qadzhang/kde1_utf8_zhcn` 建仓初始提交（GPLv2 LICENSE）以 `--allow-unrelated-histories` 合并入库：根目录 LICENSE 为 GPLv2，与本项目许可口径一致（tqt3 选 GPLv2 侧、KDE 模块 GPL/LGPL，见 README 版权表）；本地分支 master 更名 main 与远端对齐，源码历史（含本日历史重写）完整保留。

@@ -80,7 +80,13 @@ inline void LG(...) {}
 extern string AuthorEmailAddress;
 // ##############################################################################
 // we use our own kind of assertions here: colorful, cute and impressive bugs!
-#if ! defined NDEBUG || defined DEBUG
+/* [KDE1 Revival 2026-08-31] 断言开关从 `!NDEBUG || DEBUG` 改为
+   `defined(KAB_DEBUG)`：TQt3 的 ntqglobal.h 在非 QT_NO_DEBUG 构建里
+   全局 #define DEBUG（TQt3 内部调试开关），与本文件的 kab 调试开关
+   撞名——1999 年 Qt1 无此宏，迁移后 NDEBUG 因此永久失效，空库启动
+   断言恒假导致 kab 每次启动都弹"发现了一个缺陷"对话框。改用本文件
+   专属的 KAB_DEBUG 显式开启，生产构建默认关闭 */
+#if defined(KAB_DEBUG)
 #define assert(x) evaluate_assertion(x, __FILE__, __LINE__, #x)
 #define CHECK(x)  evaluate_assertion(x, __FILE__, __LINE__, #x)
 #define REQUIRE(x) evaluate_assertion(x, __FILE__, __LINE__, #x)

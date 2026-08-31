@@ -1,5 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
+DefaultApp=kwrite
 Comment=Tcl file
 Comment[ca]=Fitxer Tcl
 Comment[cs]=Program v jazyce TCL
@@ -26,3 +27,5 @@ Icon=unknown.xpm
 Type=MimeType
 MimeType=text/x-tcl
 Patterns=*.tcl;*.tk;
+Comment[zh_CN.UTF-8]=Tcl 脚本
+Comment[zh_CN]=Tcl 脚本

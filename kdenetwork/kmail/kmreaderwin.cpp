@@ -713,118 +713,129 @@ void KMReaderWin::writePartIcon(KMMessagePart* aMsgPart, int aPartNum)
 const QString KMReaderWin::strToHtml(const QString aStr, bool aDecodeQP,
 				     bool aPreserveBlanks) const
 {
-  QString qpstr, iStr, result;
-  char ch, *pos, str[256];
-  int i, i1, x, len;
-  int maxLen = 30000;
-  char htmlStr[maxLen+256];
-  char* htmlPos;
+  /* ┌──────────────────────────────────────────────────────────────────┐
+   │ [2026-08-31] 全量重写（KDE1 Revival）                              │
+   │ What : 文本 → HTML 片段（转义、空白展开、URL/邮箱自动加链接）       │
+   │ Why  : 原实现用 30KB 定长栈缓冲 + HTML_ADD 宏 strcpy 不做边界复查：
+   │        连续空格按 6 字节/格展开、URL/邮箱分支单次可写数百字节，均
+   │        在内层循环进行——超长行直接栈越界（1999 原有缺陷）。且逐字节
+   │        扫描 data()，中文被当作单字节过启发式。改为 TQString 拼接
+   │        （缓冲随需增长，无上限问题）+ TQChar 迭代（ASCII 启发式只
+   │        作用于 ASCII，非 ASCII 字符原样入串）
+   │ Who  : 邮件头/正文/附件名上屏路径
+   │ When : 每次渲染消息（含每行文本）
+   │ Where: kmreaderwin.cpp（kmail 专属，krn 无此拷贝）
+   │ How  : 伪代码：
+   │   1. aDecodeQP → 先过 RFC2047 解码
+   │   2. 逐 TQChar：
+   │      a. aPreserveBlanks：空格串逐格输出 &nbsp;；Tab 展开到 8 格对齐
+   │      b. < > & \n 输出对应 HTML 实体/<BR>
+   │      c. http:/ftp:/mailto: 起头 → 取 ASCII 串至空白或 255 字符为
+   │         URL，尾部孤立标点（'/' 除外）回退，包 <A HREF>
+   │      d. '@' → 前后扫 ASCII 邮箱字符（alnum @ . _ - * [ ]）组完整
+   │         地址；回退结果串中已按普通字符输出的前段，>3 字符包 mailto
+   │      e. 其余字符（含全部非 ASCII/中文）原样输出
+   └──────────────────────────────────────────────────────────────────┘ */
+  QString result;
+  QString qpstr = aDecodeQP ? KMMsgBase::decodeRFC1522String(aStr) : aStr;
+  const TQString &s = qpstr;
 
-  if (aDecodeQP) qpstr = KMMsgBase::decodeRFC1522String(aStr);
-  else qpstr = aStr;
-
-#define HTML_ADD(str,len) strcpy(htmlPos,str),htmlPos+=len
-
-  htmlPos = htmlStr;
-  for (pos=qpstr.data(),x=0; *pos; pos++,x++)
+  for ( uint i = 0; i < s.length(); i++ )
   {
-    if ((int)(htmlPos-htmlStr) >= maxLen)
-    {
-      *htmlPos = '\0';
-      result += htmlStr;
-      htmlPos = htmlStr;
-    }
+    TQChar ch = s[i];
 
-    ch = *pos;
-    if (aPreserveBlanks)
+    if ( aPreserveBlanks )
     {
-      if (ch==' ')
+      if ( ch == ' ' )
       {
-        while (*pos==' ')
+        while ( i < s.length() && s[i] == ' ' )
         {
-          HTML_ADD("&nbsp;", 6);
-          pos++, x++;
+          result += "&nbsp;";
+          i++;
         }
-        pos--, x--;
-
+        i--;
         continue;
       }
-      else if (ch=='\t')
+      else if ( ch == '\t' )
       {
-	do
-	{
-	  HTML_ADD("&nbsp;", 6);
-	  x++;
-	}
-	while((x&7) != 0);
+        int x = (int)i;
+        do { result += "&nbsp;"; x++; } while ( ( x & 7 ) != 0 );
+        continue;
       }
-      // else aPreserveBlanks = FALSE;
-    }
-    if (ch=='<') HTML_ADD("&lt;", 4);
-    else if (ch=='>') HTML_ADD("&gt;", 4);
-    else if (ch=='\n') HTML_ADD("<BR>", 4);
-    else if (ch=='&') HTML_ADD("&amp;", 5);
-    else if ((ch=='h' && strncmp(pos,"http:", 5)==0) ||
-	     (ch=='f' && strncmp(pos,"ftp:", 4)==0) ||
-	     (ch=='m' && strncmp(pos,"mailto:", 7)==0))
-    {
-      for (i=0; *pos && *pos>' ' && i<255; i++, pos++)
-	str[i] = *pos;
-      pos--;
-      while (i>0 && ispunct(str[i-1]) && str[i-1]!='/')
-      {
-	i--;
-	pos--;
-      }
-      str[i] = '\0';
-      HTML_ADD("<A HREF=\"", 9);
-      HTML_ADD(str, strlen(str));
-      HTML_ADD("\">", 2);
-      HTML_ADD(str, strlen(str));
-      HTML_ADD("</A>", 4);
-    }
-    else if (ch=='@')
-    {
-      char *startofstring = qpstr.data();
-      char *startpos = pos;
-      for (i=0; pos >= startofstring && *pos 
-	     && (isalnum(*pos) 
-		 || *pos=='@' || *pos=='.' || *pos=='_'||*pos=='-' 
-		 || *pos=='*' || *pos=='[' || *pos==']') 
-	     && i<255; i++, pos--)
-	{
-	}
-      i1 = i;
-      pos++; 
-      for (i=0; *pos && (isalnum(*pos)||*pos=='@'||*pos=='.'||
-			 *pos=='_'||*pos=='-' || *pos=='*'  || *pos=='[' || *pos==']') 
-	     && i<255; i++, pos++)
-      {
-	iStr += *pos;
-      }
-      pos--;
-      len = iStr.length();
-      while (len>2 && ispunct(*pos) && (pos > startpos))
-      {
-	len--;
-	pos--;
-      }
-      iStr.truncate(len);
-
-      htmlPos -= (i1 - 1);
-      if (iStr.length()>3)
-	iStr = "<A HREF=\"mailto:" + iStr + "\">" + iStr + "</A>";
-      HTML_ADD(iStr.data(), iStr.length());
-      iStr = "";
     }
 
-    else *htmlPos++ = ch;
+    if ( ch == '<' ) result += "&lt;";
+    else if ( ch == '>' ) result += "&gt;";
+    else if ( ch == '\n' ) result += "<BR>";
+    else if ( ch == '&' ) result += "&amp;";
+    else if ( ( ch == 'h' && s.mid( i, 5 ).lower() == "http:" ) ||
+	      ( ch == 'f' && s.mid( i, 4 ).lower() == "ftp:" ) ||
+	      ( ch == 'm' && s.mid( i, 7 ).lower() == "mailto:" ) )
+    {
+      QString url;
+      uint j = i;
+      while ( j < s.length() && url.length() < 255 )
+      {
+        ushort u = s[j].unicode();
+        if ( u <= 32 || u >= 127 ) break;   // URL 取 ASCII 可见字符段
+        url += s[j];
+        j++;
+      }
+      while ( url.length() > 0 &&
+              url[(int)url.length()-1].isPunct() &&
+              url[(int)url.length()-1] != '/' )
+      {
+        url.truncate( url.length() - 1 );
+        j--;
+      }
+      result += "<A HREF=\"" + url + "\">" + url + "</A>";
+      i = j - 1;
+    }
+    else if ( ch == '@' )
+    {
+      static const ushort ok[] = { '@', '.', '_', '-', '*', '[', ']', 0 };
+      // 前扫：@ 前的 ASCII 邮箱字符（这些字符已按普通文本进了结果串，
+      // 后面按长度回退再统一替换为链接）
+      int b = (int)i;
+      while ( b > 0 )
+      {
+        ushort u = s[b-1].unicode();
+        bool good = ( u >= 'a' && u <= 'z' ) || ( u >= 'A' && u <= 'Z' ) ||
+                    ( u >= '0' && u <= '9' );
+        for ( int k = 0; ok[k] && !good; k++ ) if ( u == ok[k] ) good = TRUE;
+        if ( !good ) break;
+        b--;
+        if ( (int)i - b >= 255 ) break;
+      }
+      // 后扫：@ 起的 ASCII 邮箱字符
+      int e = (int)i;
+      while ( e < (int)s.length() )
+      {
+        ushort u = s[e].unicode();
+        bool good = ( u >= 'a' && u <= 'z' ) || ( u >= 'A' && u <= 'Z' ) ||
+                    ( u >= '0' && u <= '9' );
+        for ( int k = 0; ok[k] && !good; k++ ) if ( u == ok[k] ) good = TRUE;
+        if ( !good ) break;
+        e++;
+        if ( e - (int)i >= 255 ) break;
+      }
+      int backLen = (int)i - b;             // 已按普通文本输出的前段长度
+      if ( backLen > 0 )
+        result.truncate( result.length() - backLen );
+      QString addr = s.mid( b, e - b );
+      if ( addr.length() > 3 )
+        result += "<A HREF=\"mailto:" + addr + "\">" + addr + "</A>";
+      else
+        result += addr;
+      i = e - 1;
+    }
+    else
+      result += ch;
   }
 
-  *htmlPos = '\0';
-  result += htmlStr;
   return result;
 }
+
 
 
 //-----------------------------------------------------------------------------

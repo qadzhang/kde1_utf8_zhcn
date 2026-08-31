@@ -1,5 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
+DefaultApp=kwrite
 Comment=TeX file
 Comment[ca]=Fitxer TeX
 Comment[cs]=Dokument sázecího systému TeX
@@ -26,3 +27,5 @@ Icon=tex.xpm
 Type=MimeType
 MimeType=text/x-tex
 Patterns=*.tex;*.ltx;*.sty;*.cls;*.TEX;*.LTX;*.STY;*.CLS;
+Comment[zh_CN.UTF-8]=TeX æ–‡æ¡£
+Comment[zh_CN]=TeX æ–‡æ¡£

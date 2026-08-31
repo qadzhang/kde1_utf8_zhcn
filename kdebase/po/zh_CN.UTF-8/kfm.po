@@ -1533,161 +1533,181 @@ msgstr ""
 
 #~ msgid "Unknown binding"
 #~ msgstr "未知的关联"
-
 #~ msgid "Dont know what to do"
 #~ msgstr "不知道该如何做"
-
 #, fuzzy
 #~ msgid "Move here"
 #~ msgstr "移动"
-
 #, fuzzy
 #~ msgid "Link here"
 #~ msgstr "链接"
-
 #~ msgid "Working Directory"
 #~ msgstr "工作目录"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "请改变 ~/.kde/share/apps/kfm/magic\n"
-#~ "中的口令"
-
-#~ msgid ""
-#~ "Could not rename the file or directory\n"
-#~ "The destination seems to already exist\n"
-#~ msgstr ""
-#~ "无法更改文件或目录名\n"
-#~ "或许目的名称已经存在\n"
-
 #~ msgid "Installing Templates"
 #~ msgstr "正在安装模板"
-
 #~ msgid "Small"
 #~ msgstr "小型"
-
 #~ msgid "Medium"
 #~ msgstr "中型"
-
 #~ msgid "Large"
 #~ msgstr "大型"
-
 #~ msgid "Standard Font"
 #~ msgstr "标准字体"
-
 #~ msgid "Fixed Font"
 #~ msgstr "等宽字体"
-
 #~ msgid "Background Color:"
 #~ msgstr "背景颜色:"
-
 #~ msgid "Normal Text Color:"
 #~ msgstr "一般本文颜色:"
-
 #~ msgid "URL Link Color:"
 #~ msgstr "URL 链接颜色:"
-
 #~ msgid "Followed Link Color:"
 #~ msgstr "访问过的链接颜色:"
-
 #~ msgid "Change cursor over link."
 #~ msgstr "在链接上改变光标."
-
 #
 #~ msgid "Horizontal Root Grid Spacing:"
 #~ msgstr "水平格子间距:"
-
 #
 #~ msgid "Vertical Root Grid Spacing:"
 #~ msgstr "垂直格子间距:"
-
 #, fuzzy
 #~ msgid "&Transparent Text for Root Icons."
 #~ msgstr "图标用透明的文字."
-
 #, fuzzy
 #~ msgid "Icon foreground color:"
 #~ msgstr "背景颜色:"
-
 #, fuzzy
 #~ msgid "Icon background color:"
 #~ msgstr "背景颜色:"
-
 #~ msgid "On server:"
 #~ msgstr "服务器:"
-
 #~ msgid "login as:"
 #~ msgstr "登录为:"
-
 #~ msgid "Known bindings:"
 #~ msgstr "已知的关联"
-
 #~ msgid "Don't forget to save your settings!"
 #~ msgstr "别忘了保存设置!"
-
 #
 #~ msgid "Use proxy"
 #~ msgstr "使用代理"
-
 #~ msgid "No Proxy for:"
 #~ msgstr "以下不采用代理:"
-
 #~ msgid "&Proxy"
 #~ msgstr "代理[&P]"
-
 #~ msgid "User &Agent"
 #~ msgstr "用户代理[&A]"
-
 #~ msgid "&Colors"
 #~ msgstr "颜色[&C]"
-
 #
 #~ msgid "&Other"
 #~ msgstr "其他[&O]"
-
 #, fuzzy
 #~ msgid "KFM Preferences Settings"
 #~ msgstr "KFM 浏览器设置"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "错误: 拖放 URL 到自己本身"
-
 #~ msgid "&Visual Schnauzer"
 #~ msgstr "小图标[&V]"
-
 #, fuzzy
 #~ msgid "Name"
 #~ msgstr "文件全名"
-
 #~ msgid "Browse"
 #~ msgstr "浏览"
-
 #~ msgid "&Quit..."
 #~ msgstr "离开[&Q]..."
-
 #~ msgid "&About..."
 #~ msgstr "有关[&A]..."
-
 #~ msgid "About KFM"
 #~ msgstr "关于 KFM"
-
-#~ msgid "Stop"
-#~ msgstr "停止"
-
 #~ msgid "Properties"
 #~ msgstr "特性"
-
 #~ msgid "Font Size"
 #~ msgstr "字体大小"
-
-#~ msgid "Continue"
-#~ msgstr "继续"
-
 #~ msgid "&Fonts"
 #~ msgstr "字体[&F]"
-
 #: kfmgui.cpp
 msgid "Browse with &WebKit Engine"
 msgstr "用 WebKit 新内核浏览(&W)"
+
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&Close"
+msgstr "关闭(&C)"
+
+msgid "&Copy"
+msgstr "复制(&C)"
+
+msgid "&Delete"
+msgstr "删除(&D)"
+
+msgid "&Edit"
+msgstr "编辑(&E)"
+
+msgid "&File"
+msgstr "文件(&F)"
+
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "&Options"
+msgstr "选项(&O)"
+
+msgid "&Paste"
+msgstr "粘贴(&P)"
+
+msgid "&Print..."
+msgstr "打印(&P)..."
+
+msgid "&View"
+msgstr "查看(&V)"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "Back"
+msgstr "后退"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Clear"
+msgstr "清除"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "No"
+msgstr "否"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Paste"
+msgstr "粘贴"
+
+msgid "Reload"
+msgstr "重新加载"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Yes"
+msgstr "是"
+
+# [KDE1 Revival 2026-08-31] 应用特有词条人工补译
+msgid "Cannot execute request.\n"
+msgstr "无法执行请求。\n"
+
+msgid "Could not load"
+msgstr "无法加载"
+
+msgid "ERROR: You dropped some URL over itself"
+msgstr "错误：您把一个 URL 拖放到了它自身上"
+

@@ -188,3 +188,31 @@ msgid ""
 msgstr ""
 "%s 是 mount 上的.\n"
 "请先 unmount 软盘."
+
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "About"
+msgstr "关于"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Quit"
+msgstr "退出"
+
+# [KDE1 Revival 2026-08-31] 应用特有词条人工补译
+msgid "Cannot access floppy or floppy drive\n"
+msgstr "无法访问软盘或软盘驱动器\n"
+
+msgid "Cannot format: "
+msgstr "无法格式化："
+
+msgid "The floppy was sucessfully formatted.\n"
+msgstr "软盘格式化成功。\n"
+
+# [KDE1 Revival 2026-08-31] 改用系统 mke2fs 后的新文案
+msgid "Cannot find mke2fs\nmke2fs is part of the e2fsprogs package.\nPlease install e2fsprogs properly."
+msgstr "找不到 mke2fs\nmke2fs 属于 e2fsprogs 软件包。\n请正确安装 e2fsprogs。"
+

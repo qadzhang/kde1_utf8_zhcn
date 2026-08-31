@@ -138,6 +138,25 @@ void KLocale::splitLocale(const QString& aStr,
     }  
 }
 
+// [KDE1 Revival 2026] 改名二进制的 mo 存在性检查：kdvi1 之类打包改名后，
+// 翻译目录仍按上游原名（kdvi.mo）安装——语言目录扫描（KLocale 构造内）
+// 必须同时接受两种目录名，否则改名应用的语言解析整体落空（菜单全英文）。
+// 与构造函数后段的 insertCatalogue(base) 回退配套（那是 translate 期的
+// 目录清单扩充；本函数是 init 期的命中判定）。
+static bool klocale_mo_exists( QDir &d, const char *catalogue )
+{
+    if ( d.exists( QString( catalogue ) + ".mo" ) )
+        return true;
+    int clen = 0;
+    while ( catalogue[clen] != '\0' ) clen++;
+    if ( clen > 1 && catalogue[clen-1] == '1' ) {
+        QString base = QString::fromUtf8( catalogue, clen - 1 );
+        if ( d.exists( base + ".mo" ) )
+            return true;
+    }
+    return false;
+}
+
 #ifdef ENABLE_NLS
 
 KLocale::KLocale( const char *catalogue )
@@ -266,7 +285,7 @@ KLocale::KLocale( const char *catalogue )
 	int i;
 	for(i=0; i<3; i++) {
 	  QDir d(directory + "/" + lng[i] + "/LC_MESSAGES");
-	  if (d.exists(QString(catalogue) + ".mo") &&
+	  if (klocale_mo_exists(d, catalogue) &&      /* [2026-08-31] 改名回退感知 */
 	      d.exists(QString(SYSTEM_MESSAGES) + ".mo"))
 	      {
 		  lang = lng[i];
@@ -295,7 +314,7 @@ KLocale::KLocale( const char *catalogue )
 	    if (!(*it).startsWith(want) || (*it).find('.') < 0)
 	      continue;
 	    QDir d(directory + "/" + (*it) + "/LC_MESSAGES");
-	    if (d.exists(QString(catalogue) + ".mo") &&
+	    if (klocale_mo_exists(d, catalogue) &&      /* [2026-08-31] 改名回退感知 */
 		d.exists(QString(SYSTEM_MESSAGES) + ".mo"))
 	      {
 		  lang = (*it);
@@ -320,10 +339,12 @@ KLocale::KLocale( const char *catalogue )
     if (set_locale_vars){
         // set environment variables for all categories
 	// maybe we should treat LC_NUMERIC differently (netscape problem)
-	QString stmp;
+	// [2026-08-31] glibc putenv 不拷贝缓冲：原写法 stmp 每轮重赋值/析构后
+	// environ 条目全部悬挂（读环境变量的子进程拿到野指针）。改为 strdup
+	// 常驻后 putenv——每语言类别一次小额常驻泄漏，正确性优先
         for(int i=0;_categories[i]!=0;i++) {
-	  stmp = QString(_categories[i])+ "=" + getLocale(_categories[i]);
- 	  putenv( stmp.data() );
+	  QString stmp = QString(_categories[i])+ "=" + getLocale(_categories[i]);
+ 	  putenv( strdup( stmp.data() ) );
 	}
     }
     // we should use LC_CTYPE, not LC_MESSAGES for charset

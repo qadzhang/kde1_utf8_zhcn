@@ -1,5 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
+DefaultApp=kwrite
 Comment=Java sources
 Comment[ca]=Fonts Java
 Comment[cs]=Zdrojov� k�d v jazyku Java
@@ -26,3 +27,5 @@ Icon=java_src.xpm
 Type=MimeType
 MimeType=text/x-java
 Patterns=*.java;
+Comment[zh_CN.UTF-8]=Java 源文件
+Comment[zh_CN]=Java 源文件

@@ -63,7 +63,7 @@ cardMaps::cardMaps( QObject* parent ) : QObject(parent, 0) {
     p.drawText(0, 150, 510, 20, AlignCenter, 
 	       i18n("please wait, loading cards..."));
     
-    p.setFont(QFont("Times", 24));
+    p.setFont(QFont("", 24)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
     p.drawText(0, 0, 510, 40, AlignCenter, 
 	       i18n("KPat - a Solitaire game"));  
 

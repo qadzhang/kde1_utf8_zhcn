@@ -34,7 +34,6 @@ struct SNIClient {
     QString objectPath;   // item 对象路径
     Window   win;         // kpanel 自建的 24x24 内容窗（dock_area 子窗）
     Pixmap   pix;         // 内容后备位图
-    GC       gc;
     // [KDE1 Revival 2026] 本 item 的 IconPixmap Get 调用序号——dbus 侧
     // 在 send 时分配，reply 以之路由回对应 item（多 item 并发取图不串线）
     dbus_uint32_t iconSerial;
@@ -48,7 +47,9 @@ public:
     ~SNITray();
 
     bool init();                    // 连接 DBus、请求名、注册回调
-    void relayout();                // 与 kPanel::layoutDockArea 联动（数量回调）
+    /* [2026-08-31] 声明收敛：删除从未实现的 relayout()/registerWatcher()/
+       fetchIcon() 与从未使用的 lastStamp/SNIClient::gc——头文件承诺与
+       实现一致（kPanel 经 clientsChanged 信号联动重排，无需 relayout） */
 
     QPtrList<SNIClient> clients;
     int count() const { return clients.count(); }
@@ -59,10 +60,9 @@ signals:
 public slots:
     void slotDispatch();
 private:
-    bool registerWatcher();
     void handleItemRegister(const char *service, const char *path);
     void handleItemUnregister(const char *service);
-    void fetchIcon(SNIClient *c);   // 异步读 IconPixmap（Get 属性回调绘制）
+    void emitItemChange(const char *member, const char *service);
     void renderIcon(SNIClient *c, const unsigned char *argb,
                     int w, int h);
     static DBusHandlerResult messageFilter(DBusConnection *, DBusMessage *, void *);
@@ -71,6 +71,5 @@ private:
     QWidget  *dockArea;
     DBusConnection *conn;
     QSocketNotifier *notifier;
-    unsigned long lastStamp;
 };
 #endif

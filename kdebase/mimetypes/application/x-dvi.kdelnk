@@ -1,5 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
+DefaultApp=kdvi
 Comment=TeX Device Independent file
 Comment[ca]=Fitxer DVI (Device Independent) TeX
 Comment[cs]=TeX DVI soubor
@@ -25,3 +26,5 @@ Icon=dvi.xpm
 Type=MimeType
 MimeType=application/x-dvi
 Patterns=*.dvi;*.DVI;
+Comment[zh_CN.UTF-8]=DVI 文档
+Comment[zh_CN]=DVI 文档

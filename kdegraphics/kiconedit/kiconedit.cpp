@@ -516,7 +516,8 @@ bool KIconEdit::setupMenuBar()
   menubar->insertSeparator();
 
   QString about;
-  about.sprintf(i18n("KDE Icon Editor\n\n"
+  /* [2026-08-31] 翻译格式串走 kde_sprintf（防译文中文乱码） */
+  about = kde_sprintf(i18n("KDE Icon Editor\n\n"
                      "A graphics drawing program for creating\n"
                      "icons using the KDE icon palette\n\n"
                      "Copyright 1998 by Thomas Tanghus\n"

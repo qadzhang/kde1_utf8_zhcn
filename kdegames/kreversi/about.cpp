@@ -58,7 +58,7 @@ About::About(QWidget *parent) : QDialog(parent, "About kreversi", TRUE) {
 
   QLabel *l;
   l = new QLabel("kreversi", this);
-  l->setFont(QFont("Times", 25, QFont::Bold));
+  l->setFont(QFont("", 25, QFont::Bold)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   l->setFixedSize(l->sizeHint());
 
   QString s;

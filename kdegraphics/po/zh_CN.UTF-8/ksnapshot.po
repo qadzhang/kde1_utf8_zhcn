@@ -44,11 +44,28 @@ msgid ""
 "and is released under LGPL\n"
 "\n"
 "Version: %s"
-msgstr ""
+msgstr "按下“抓取”按钮，然后点击\n要抓取的窗口。\n\nKSnapshot 版权所有 Richard Moore (rich@kde.org)\n以 LGPL 许可发布\n\n版本：%s"
 
 #: ksnapshot.cpp:460
 #, c-format
 msgid ""
 "KSnapshot was unable to save the image to\n"
 "%s."
-msgstr ""
+msgstr "KSnapshot 无法将图像保存到\n%s。"
+
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "Browse..."
+msgstr "浏览..."
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Save"
+msgstr "保存"
+

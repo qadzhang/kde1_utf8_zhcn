@@ -63,32 +63,32 @@ void KMMessagePart::setBody(const QString aStr)
 //-----------------------------------------------------------------------------
 void KMMessagePart::setBodyEncoded(const QString aStr)
 {
+  /* [2026-08-31] 重写（KDE1 Revival）：
+   * What : 把 Unicode 正文按 CTE（QP/base64/8bit）编码存入 mBody
+   * Why  : 原实现是 Qt1「truncate 后 memcpy 写 data()」惯用法——TQt3 下
+   *        data() 是 UTF-8 字节缓存：null 串返回 NULL 直接段错误；写缓存
+   *        后 UTF-16 视图长度/内容永久失步；且 aStr.length()（字符数）被
+   *        当字节数用。改为显式 utf8() 取字节串，编码结果经 fromUtf8 构串
+   * How  : aStr.utf8() 取 UTF-8 字节 → DwString(bytes) → QP/B 编码 →
+   *        mBody = fromUtf8(编码结果)（编码产物恒为 ASCII，双通道等价）
+   * Who/When/Where : 撰写/保存邮件部件时（kmail 与 krn 同款拷贝同步改） */
   DwString dwResult, dwSrc;
   int encoding = contentTransferEncoding();
-  int len;
-
-  mBodySize = aStr.length() - 1;  /* TQt3 迁移 */
+  QCString bytes = aStr.utf8();
+  bytes.detach();
+  mBodySize = bytes.length();
 
   switch (encoding)
   {
   case DwMime::kCteQuotedPrintable:
-    dwSrc = DwString(aStr.latin1(), aStr.length()-1);  /* TQt3 迁移 */
+    dwSrc = DwString(bytes.data(), bytes.length());
     DwEncodeQuotedPrintable(dwSrc, dwResult);
-    len = dwResult.size();
-    mBody.truncate(len);
-    memcpy(mBody.data(), dwResult.c_str(), len+1);
+    mBody = TQString::fromUtf8(dwResult.c_str(), dwResult.length());
     break;
   case DwMime::kCteBase64:
-    dwSrc = DwString(aStr.latin1(), aStr.length()-1);  /* TQt3 迁移 */
+    dwSrc = DwString(bytes.data(), bytes.length());
     DwEncodeBase64(dwSrc, dwResult);
-    len = dwResult.size();
-    mBody.truncate(len);
-    memcpy(mBody.data(), dwResult.c_str(), len+1);
-    break;
-    len = aStr.length()-1;  /* TQt3 迁移 */
-    dwSrc = DwString(aStr.data(), len);
-    DwEncodeBase64(dwSrc, dwResult);
-    mBody = QString::fromLatin1(dwResult.c_str(), dwResult.size());  /* TQt3 迁移 */
+    mBody = TQString::fromUtf8(dwResult.c_str(), dwResult.length());
     break;
   default:
     tqDebug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
@@ -102,45 +102,46 @@ void KMMessagePart::setBodyEncoded(const QString aStr)
 }
 
 
+
 //-----------------------------------------------------------------------------
 const QString KMMessagePart::bodyDecoded(void) const
 {
+  /* [2026-08-31] 重写（KDE1 Revival）：
+   * What : 按 CTE 解码部件体为 Unicode
+   * Why  : 原实现 memcpy 写 data()（null 段错误 + 缓存失步 + 字符数/字节
+   *        数错配三连锁，见 setBodyEncoded 注释）。解码产物是按 charset
+   *        编码的原始字节——经 fromUtf8 统一入 TQString（8bit 邮件按其
+   *        声明 charset 的正确转换在 kmmessage 层处理）
+   * How  : mBody.utf8() 字节 → DwString → QP/B 解码 → fromUtf8 构串 */
   DwString dwResult, dwSrc;
-  QString result;
   int encoding = contentTransferEncoding();
-  int len;
 
   switch (encoding)
   {
   case DwMime::kCteQuotedPrintable:
-    dwSrc = DwString(mBody.latin1(), mBody.length());  /* TQt3 迁移:QString 字节访问 */
-    DwDecodeQuotedPrintable(dwSrc, dwResult);
-    len = dwResult.size() + 1;
-    /* TQt3 迁移:Qt1 的 QString 字节缓冲(resize/data)已死;经 latin1 字节串桥接 */
-    result = TQString(TQCString(dwResult.c_str(), len));
-#if 0
-    result = dwResult.c_str();
-#endif
-    break;
+    {
+      QCString bytes = mBody.utf8();
+      dwSrc = DwString(bytes.data(), bytes.length());
+      DwDecodeQuotedPrintable(dwSrc, dwResult);
+      return TQString::fromUtf8(dwResult.c_str(), dwResult.length());
+    }
   case DwMime::kCteBase64:
-    dwSrc = DwString(mBody.latin1(), mBody.length());  /* TQt3 迁移:QString 字节访问 */
-    DwDecodeBase64(dwSrc, dwResult);
-    len = dwResult.size() + 1;
-    /* TQt3 迁移:Qt1 的 QString 字节缓冲(resize/data)已死;经 latin1 字节串桥接 */
-    result = TQString(TQCString(dwResult.c_str(), len));
-    break;
+    {
+      QCString bytes = mBody.utf8();
+      dwSrc = DwString(bytes.data(), bytes.length());
+      DwDecodeBase64(dwSrc, dwResult);
+      return TQString::fromUtf8(dwResult.c_str(), dwResult.length());
+    }
   default:
     tqDebug("WARNING -- unknown encoding `%s'. Assuming 8bit.", 
 	  (const char*)cteStr());
   case DwMime::kCte7bit:
   case DwMime::kCte8bit:
   case DwMime::kCteBinary:
-    result = mBody;
-    break;
+    return mBody;
   }
-
-  return result;
 }
+
 
 
 //-----------------------------------------------------------------------------

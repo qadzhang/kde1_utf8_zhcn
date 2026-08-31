@@ -123,12 +123,13 @@ static const char* aConfigFileName[] =
   // below!!!
   "/etc/kderc",
   KDEDIR"/share/config/kderc",
-  "/usr/lib/KDE/system.kderc",
-  "/usr/local/lib/KDE/system.kderc",
   "~/.kderc",
 };
 
-const int CONFIGFILECOUNT = 5; // number of entries in aConfigFileName[]
+// [2026-08-31] 移除 1999 年的 /usr/lib/KDE/system.kderc 两个死路径：本项目
+// 前缀为 /usr/kde1（KDEDIR 宏），Debian 12 上该两路径永不存在，留着徒增
+// 无效探测与被外部文件劫持的风险（CONFIGFILECOUNT 同步 5→3）
+const int CONFIGFILECOUNT = 3; // number of entries in aConfigFileName[]
 
 
 static QString stringToPrintable(const QString& s){

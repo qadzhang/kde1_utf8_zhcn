@@ -188,6 +188,13 @@ target_link_libraries(ksirc
 
 install(TARGETS ksirc RUNTIME DESTINATION ${KDE1_BINDIR})
 
+# [2026-08-31] 运行时数据文件（对应 Makefile.am 的 misc_DATA →
+# $(kde_datadir)/ksirc/）：relnotes（欢迎窗读取，缺失则报
+# "Unable to open release notes file!!"）、ksirc.pl/filters.pl
+# （IRC 功能脚本）、sirc.help.gz（帮助）
+install(FILES relnotes ksirc.pl filters.pl sirc.help.gz
+    DESTINATION ${KDE1_DATADIR}/ksirc)
+
 # ── ksticker 独立跑马灯程序(当年 bin_PROGRAMS)──
 TQT3_WRAP_CPP(KSTICKER_MOC ${CMAKE_CURRENT_SOURCE_DIR}/KSTicker/main.h)
 add_executable(ksticker KSTicker/main.cpp KSTicker/kspainter.cpp ${KSTICKER_MOC})

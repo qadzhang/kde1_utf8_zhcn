@@ -689,15 +689,18 @@ Kpgp::canonicalAdress(QString _adress)
 	return _adress.mid(index,index2-index);
   
   if((index = _adress.find("@")) == -1)
-  { 
+  {
     // local adress
     char hostname[1024];
     gethostname(hostname,1024);
-    QString adress = '<';
+    /* [2026-08-31] TQt3 的 TQString 无 +=(char) 重载——原先 '<'/'@'/'>'
+       单字符被 -fpermissive 静默转成 const char*（指针值 0x3C 等野指针），
+       本地地址路径一走即崩；改单字节字符串字面量走 +=(const char*) */
+    QString adress = "<";
     adress += _adress;
-    adress += '@';
+    adress += "@";
     adress += hostname;
-    adress += '>';
+    adress += ">";
     return adress;
   }
   else

@@ -246,7 +246,9 @@ notetiff(char *name)
 		break;
 	    case 279:		/* StripByteCounts */
 		if (count != nstrips) {
-		  str.sprintf("In file %s\nStrpisPerImage tag 273=%ls,tag279=%ld\n",
+		  /* [2026-08-31] %ls→%d：TQt3 vsprintf 按 const ushort* 取参，
+		     传 int 实参会读野指针崩溃（仅畸形 StripByteCounts 的 TIFF 触发） */
+		  str.sprintf("In file %s\nStrpisPerImage tag 273=%d,tag279=%ld\n",
 			      name, nstrips,(long int) count);
 		  kfaxerror("Message",str.data());
 		  goto realbad;

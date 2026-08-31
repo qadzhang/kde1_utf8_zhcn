@@ -279,7 +279,9 @@ void KImageViewer::about()
 {
 	QString aboutText;
 	
-	aboutText.sprintf( i18n( "KView -- Graphics viewer. %s\n"
+	/* [2026-08-31] 翻译格式串走 kde_sprintf（TQString::sprintf 格式串逐字节
+	   Latin-1 升位，中文译文乱码） */
+	aboutText = kde_sprintf( i18n( "KView -- Graphics viewer. %s\n"
 		"\nSirtaj S. Kang (taj@kde.org)\n" ), KVIEW_VERSION );
 
 	QMessageBox::about( this, i18n("About KView"), aboutText );
@@ -635,7 +637,7 @@ void KImageViewer::loadFile( const char *file, const char *url )
 	if( _canvas->status() != KImageCanvas::OK ) {
 
 		QString msg;
-		msg.sprintf(i18n("Couldn't load %s"), url);
+		msg = kde_sprintf(i18n("Couldn't load %s"), url); /* [2026-08-31] 同上 */
 		message( msg );
 	}
 	else {

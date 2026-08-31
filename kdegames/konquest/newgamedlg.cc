@@ -159,7 +159,7 @@ NewGameDlg::changeNeutralPlanets( int newValue )
 {
     QString newText;
 
-    newText.sprintf( i18n("Number of Neutral Planets: %2d"), newValue );
+    newText = kde_sprintf( i18n("Number of Neutral Planets: %2d"), newValue ); /* [2026-08-31] kde_sprintf 防译文乱码 */
 
     neutralPlanetLbl->setText( newText );
 
@@ -171,7 +171,7 @@ NewGameDlg::changeTurnCount( int newTurnCount )
 {
     QString newText;
 
-    newText.sprintf( i18n("Number of turns: %2d"), newTurnCount );
+    newText = kde_sprintf( i18n("Number of turns: %2d"), newTurnCount ); /* [2026-08-31] 同上 */
 
     turnCountLbl->setText( newText );
 }

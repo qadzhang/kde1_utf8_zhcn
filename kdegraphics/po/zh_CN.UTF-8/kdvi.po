@@ -56,12 +56,11 @@ msgstr "这是什么?DVI 的问题!\n"
 
 #: dviwin.cpp:508
 msgid "File status changed."
-msgstr ""
+msgstr "文件状态已改变。"
 
 #: dviwin.cpp:513 kdvi.cpp:937
-#, fuzzy
 msgid "File reloaded."
-msgstr "文件重新载入"
+msgstr "文件已重新加载。"
 
 #: kdvi.cpp:93
 msgid "No document"
@@ -81,12 +80,11 @@ msgstr "重绘"
 
 #: kdvi.cpp:115
 msgid "Preferences ..."
-msgstr "设置..."
+msgstr "首选项..."
 
 #: kdvi.cpp:173
-#, fuzzy
 msgid "&New"
-msgstr "下一页[&P]"
+msgstr "新建(&N)"
 
 #: kdvi.cpp:174
 msgid "&Open ..."
@@ -456,12 +454,11 @@ msgstr "大文本按钮设到收缩因子"
 
 #: kdvi.cpp:913
 msgid "Small text button set to shrink factor "
-msgstr "小文本按钮设到收缩因子"
+msgstr "小文字按钮设为缩放系数 "
 
 #: kdvi.cpp:931
-#, fuzzy, c-format
 msgid "Shrink: %d"
-msgstr "收缩: xx"
+msgstr "缩放：%d"
 
 #: marklist.cpp:37
 msgid "Mark current"
@@ -683,14 +680,52 @@ msgstr "n-up"
 msgid "Printing method"
 msgstr "打印方式"
 
-#~ msgid "Appearance"
-#~ msgstr "外观"
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&File"
+msgstr "文件(&F)"
 
-#~ msgid "Fonts"
-#~ msgstr "字体"
+msgid "&Help"
+msgstr "帮助(&H)"
 
-#~ msgid "Print"
-#~ msgstr "打印"
+msgid "&Options"
+msgstr "选项(&O)"
 
-#~ msgid "&Remove"
-#~ msgstr "删除[&R]"
+msgid "&Remove"
+msgstr "删除(&R)"
+
+msgid "&View"
+msgstr "查看(&V)"
+
+msgid "Appearance"
+msgstr "外观"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "E&xit"
+msgstr "退出(&X)"
+
+msgid "File"
+msgstr "文件"
+
+msgid "Fonts"
+msgstr "字体"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Print"
+msgstr "打印"
+
+msgid "Quit"
+msgstr "退出"
+
+msgid "Warning"
+msgstr "警告"
+

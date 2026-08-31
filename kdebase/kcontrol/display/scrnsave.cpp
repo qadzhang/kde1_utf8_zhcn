@@ -38,7 +38,21 @@
 #include "scrnsave.h"
 #include "scrnsave.moc"
 
-#define SCREENSAVER_DIR	"/usr/local/kde/bin"
+/* ────────────────────────────────────────────────────────────────────
+ * [KDE1 Revival 2026-08-31] 屏保二进制目录运行时解析
+ * What : 返回屏保（*.kss1）所在 bin 目录
+ * Why  : 1999 年写死 /usr/local/kde/bin（本机永不存在，屏保列表恒空）；
+ *        KApplication::kdedir() 是 protected，KControl 模块够不着——
+ *        故按 kapp.cpp 同语义自取：KDEDIR 环境变量 → 安装前缀回退
+ * When : saverWidget 构造（打开屏保设置页）时调用一次
+ * How  : getenv 命中即拼接 "/bin"；未设回退 /usr/kde1（deb 安装前缀）
+ * ──────────────────────────────────────────────────────────────────── */
+static QString screensaver_dir()
+{
+	const char *env = getenv( "KDEDIR" );
+	return QString( env ? env : "/usr/kde1" ) + "/bin";
+}
+#define SCREENSAVER_DIR	screensaver_dir()
 #define CORNER_SIZE		15
 
 CornerButton::CornerButton( QWidget *parent, int num, char _action )
@@ -350,7 +364,7 @@ void KScreenSaver::readSettings( int )
 	       &xprefer_blanking, &xallow_exposures );
 
 	QString str;
-	saverLocation = SCREENSAVER_DIR;
+	saverLocation = SCREENSAVER_DIR;   /* [2026-08-31] 见上方 screensaver_dir() */
 
 //Antonio - Added support to parse the old config file for KDE 1.0 users
 

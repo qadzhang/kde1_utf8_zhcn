@@ -435,7 +435,7 @@ CommandDlg::slotCmdStdout(KProcess *, char *buffer, int buflen)
   } else {
     //buffer[buflen] = 0;		// mark eot
     //tqDebug("stdout> %s", buffer);
-    receivedLine = new TQString( TQString::fromLatin1(buffer, buflen) );  /* TQt3 迁移 */
+    receivedLine = new TQString( TQString::fromUtf8(buffer, buflen) ); /* [2026-08-31] 进程输出按 UTF-8 解码（原 fromLatin1 高位字节升位乱码） */  /* TQt3 迁移 */
   }
 
   // goto end of data

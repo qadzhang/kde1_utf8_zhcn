@@ -160,44 +160,73 @@ void KFMManager::writeWrapped( char *_str, int _maxlen )
 	return;
     }
 
-    for (width=0, part=_str, pos=_str; *pos; pos++)
+    /* [KDE1 Revival 2026] UTF-8 断行重写：原实现逐字节测宽、可在 UTF-8
+       续字节中间落 *pos='\0'——中文文件名被拦腰截断产生非法 UTF-8（上屏
+       豆腐块）。伪代码：
+         1. 先按 UTF-8 前导字节把 [part, 终止0) 切成字符区间表（起点+字节长）
+         2. 逐字符用 TQFontMetrics::width(TQString) 累计像素宽
+         3. 累计将超 _maxlen 时：回看前 8 个字符找分隔符（标点/数字/大写
+            变化——沿用 1999 启发式），否则就在当前字符前断
+         4. 断点必落在字符边界：临时把该字节置 NUL 输出前段、写 <br>、还原
+         5. 末段照常输出
+       （SHORT_VIEW 150px 窄列与超长中文文件名由此不再切半字） */
     {
-	charWidth = labelFontMetrics->width( *pos );
-	if ( width+charWidth >= _maxlen )
-	{
-	    // search for a suitable separator in the previous 8 characters
-	    for (sepPos=pos, j=0; j<8 && sepPos>part; j++, sepPos--)
-	    {
-		/* if (ispunct(*sepPos) || isdigit(*sepPos)) break;
-		   if (isupper(*sepPos) && !isupper(*(sepPos-1))) break;
-	    }
-	    if (j<8 && j>0)
-	    {
-		pos = sepPos;
-		//width = width - XTextWidth (fs, pos, j); */
-		if (ispunct(*sepPos) || isdigit(*sepPos))
-                {
-                    pos = sepPos;
-                    break;
-                }
-                if (isupper(*sepPos) && !isupper(*(sepPos-1)))
-                {
-                    pos = sepPos;
-                    break;
-               }               
-	    }
-	    
-	    c = *pos;
-	    *pos = '\0';
-	    view->writeHTMLquoted ( part );
-	    view->write( "<br>" );
-	    *pos = c;
-	    part = pos;
-	    width = 0;
-	}
-	width += charWidth;
+      struct UTF8Char { char *start; int len; };
+      int total = strlen( _str );
+      UTF8Char *chars = new UTF8Char[ total + 1 ];
+      int nch = 0;
+      for ( char *p = _str; *p; ) {
+          int len = 1;
+          unsigned char b = (unsigned char)*p;
+          if ( (b & 0x80) != 0 ) {
+              if ( (b & 0xE0) == 0xC0 ) len = 2;
+              else if ( (b & 0xF0) == 0xE0 ) len = 3;
+              else if ( (b & 0xF8) == 0xF0 ) len = 4;
+          }
+          /* 孤立续字节按 1 字节处理（防越界）；正常序列跳过续字节 */
+          chars[nch].start = p;
+          chars[nch].len = len;
+          nch++;
+          p += len;
+          if ( p > _str + total ) { p = _str + total; }  // 防御：截尾残串
+      }
+      int ci;
+      int lineStartCi = 0;   // 当前行首字符下标
+      width = 0;
+      part = _str;
+      for ( ci = 0; ci < nch; ci++ ) {
+          TQString ch( TQString::fromUtf8( chars[ci].start, chars[ci].len ) );
+          charWidth = labelFontMetrics->width( ch );
+          if ( width + charWidth >= _maxlen ) {
+              // 回看本行前 8 个字符找合适分隔位（沿用 1999 启发式，按字符步进）
+              int breakCi = ci;
+              for ( int sj = 1; sj <= 8 && ci - sj > lineStartCi; sj++ ) {
+                  char *sp = chars[ci - sj].start;
+                  char prev = *( sp - 1 ); // 前一字符末字节（ASCII 时即本体）
+                  if ( ispunct( (unsigned char)*sp ) ||
+                       isdigit( (unsigned char)*sp ) ) { breakCi = ci - sj; break; }
+                  if ( isupper( (unsigned char)*sp ) &&
+                       !isupper( (unsigned char)prev ) ) { breakCi = ci - sj; break; }
+              }
+              char *pos = chars[breakCi].start;
+              c = *pos;
+              *pos = '\0';
+              view->writeHTMLquoted ( part );
+              view->write( "<br>" );
+              *pos = c;
+              part = pos;
+              lineStartCi = breakCi;
+              // 新行宽度从断点字符重新累计（断点..当前字符前）
+              width = 0;
+              for ( int k = breakCi; k < ci; k++ )
+                  width += labelFontMetrics->width(
+                      TQString::fromUtf8( chars[k].start, chars[k].len ) );
+          }
+          width += charWidth;
+      }
+      if (*part) view->writeHTMLquoted ( part );
+      delete [] chars;
     }
-    if (*part) view->writeHTMLquoted ( part );
 }            
 
 bool KFMManager::eventFilter( QObject *ob, QEvent *ev )

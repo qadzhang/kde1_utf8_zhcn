@@ -88,30 +88,32 @@ void PixServer::draw(int pos, PixMap pix, int i = 0)
 
 void PixServer::initPixmaps()
 {
+    /* [2026-08-31] 每张图 load 后检查 isNull（同文件 brick 的既有做法）：
+       图缺失时直接返回，避免对 null 源 bitBlt 切出一屏空块 */
     QPixmap PIXMAP;
 
-    PIXMAP.load((const char *)(pixDir + "snake1.xpm"));
+    if (!PIXMAP.load((const char *)(pixDir + "snake1.xpm")) || PIXMAP.isNull()) return;
     for (int x = 0 ; x < 18; x++){
 	compuSnakePix[x].resize(16, 16);
 	bitBlt(&compuSnakePix[x] ,0,0, &PIXMAP,x*16, 0, 16, 16, CopyROP, TRUE);
 	compuSnakePix[x].setMask(compuSnakePix[x].createHeuristicMask());
     }
 
-    PIXMAP.load((const char *)(pixDir + "snake2.xpm"));
+    if (!PIXMAP.load((const char *)(pixDir + "snake2.xpm")) || PIXMAP.isNull()) return;
     for (int x = 0 ; x < 18; x++){
 	samyPix[x].resize(16, 16);
 	bitBlt(&samyPix[x] ,0,0, &PIXMAP,x*16, 0, 16, 16, CopyROP, TRUE);
 	samyPix[x].setMask(samyPix[x].createHeuristicMask());
     }
 
-    PIXMAP.load((const char *)(pixDir + "ball.xpm"));
+    if (!PIXMAP.load((const char *)(pixDir + "ball.xpm")) || PIXMAP.isNull()) return;
     for (int x = 0 ; x < 4; x++){
 	ballPix[x].resize(16, 16);
 	bitBlt(&ballPix[x] ,0,0, &PIXMAP,x*16, 0, 16, 16, CopyROP, TRUE);
 	ballPix[x].setMask(ballPix[x].createHeuristicMask());
     }
 
-    PIXMAP.load((const char *)(pixDir + "apples.xpm"));
+    if (!PIXMAP.load((const char *)(pixDir + "apples.xpm")) || PIXMAP.isNull()) return;
     for (int x = 0 ; x < 2; x++){
 	applePix[x].resize(16, 16);
 	bitBlt(&applePix[x] ,0,0, &PIXMAP,x*16, 0, 16, 16, CopyROP, TRUE);

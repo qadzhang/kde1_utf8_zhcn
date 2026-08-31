@@ -7,7 +7,7 @@ KFileFilter::KFileFilter( QWidget *parent, const char *name)
     : QComboBox(true, parent, name), filters(0)
 {
     setInsertionPolicy(NoInsertion);
-    /* [KDE1 Revival 2026] TQComboBox ä»æ activated(int) ä¿¡å· */
+    /* [KDE1 Revival 2026] TQComboBox 仅有 activated(int) 信号 */
     connect(this, SIGNAL(activated(int)), SLOT(changed(int)));
 }
 

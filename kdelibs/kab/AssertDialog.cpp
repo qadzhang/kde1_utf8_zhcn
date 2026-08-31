@@ -36,7 +36,15 @@ AssertDialog::AssertDialog(QWidget* parent, const char* name)
   // -----
   connect(kapp, SIGNAL(appearanceChanged()), SLOT(initializeGeometry()));
   // -----
-  temp=std::string(i18n("You have found a bug in "))+(const char*)kapp->appName()+".";  // TQt3 迁移：appName 返回 QString
+  /* [2026-08-31] 原"i18n(前缀)+appName+句点"三段拼接在中文里组不出通顺
+     句（译文只能迁就拼接序）；改为单条 %s 格式串走 kde_sprintf，译文
+     可自然表达"程序 kab 存在缺陷"。std::string temp 保留（类成员语义
+     不动），经 utf8().data() 显式降回字节串 */
+  {
+    TQString unified = kde_sprintf(i18n("You have found a bug in %s."),
+                                   (const char*)kapp->appName());
+    temp = std::string( unified.utf8().data() );
+  }
   labelHeadline->setText(temp.c_str());
   // pixmap.load("bug_3d.xpm");
   labelImage->setPixmap(pixmap);

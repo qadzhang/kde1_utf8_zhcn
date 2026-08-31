@@ -1004,7 +1004,7 @@ void KSircTopLevel::showTicker() /*FOLD00*/
   ticker = new  KSTicker(0, "ticker", WStyle_NormalBorder);
   ticker->setCaption(caption);
   kConfig->setGroup("TickerDefaults");
-  ticker->setFont(kConfig->readFontEntry("font", new  QFont("fixed")));
+  ticker->setFont(kConfig->readFontEntry("font", new  QFont(""))); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   ticker->setSpeed(kConfig->readNumEntry("tick", 30), 
 		   kConfig->readNumEntry("step", 3));
   QColorGroup cg = QColorGroup(*kSircConfig->colour_text, colorGroup().mid(), 

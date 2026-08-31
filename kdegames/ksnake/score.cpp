@@ -78,7 +78,7 @@ QString Score::getPlayerName() {
     QLabel *label  = new QLabel(klocale->translate("you have achieved a high score!\n please enter your name"),
 				dlg);
     label->setAlignment(AlignCenter);
-    label->setFont( QFont( "Times", 16, QFont::Bold ) );
+    label->setFont( QFont( "", 16, QFont::Bold ) /* [2026-08-31] 默认族（Times 无 CJK） */ );
 
     QLineEdit *le = new QLineEdit(dlg);
     le->setFocus();
@@ -205,26 +205,26 @@ ScoreBox::ScoreBox( QWidget *parent, const char *name , int current)
 
     label = new QLabel(this);
     label->setFrameStyle( QFrame::Panel   | QFrame::Raised );
-    label->setFont( QFont( "Times", 18, QFont::Bold ) );
+    label->setFont( QFont( "", 18, QFont::Bold ) );
     label->setAlignment( AlignCenter );
 
     for ( int x = 0; x < 5; x++) {
 
 	QLabel *l = new QLabel(this);
 	CHECK_PTR(l);
-	l->setFont( QFont( "Times", 16, QFont::Bold ) );
+	l->setFont( QFont( "", 16, QFont::Bold ) /* [2026-08-31] 默认族（Times 无 CJK） */ );
 	l->setAlignment( AlignRight );
 	date[x] = l;
 
 	QLabel *l1 = new QLabel(this);
 	CHECK_PTR(l1);
-	l1->setFont( QFont( "Times", 16, QFont::Bold ) );
+	l1->setFont( QFont( "", 16, QFont::Bold ) /* [2026-08-31] 默认族（Times 无 CJK） */ );
 	l1->setAlignment( AlignRight );
 	points[x] = l1;
 
 	QLabel *l2 = new QLabel(this);
 	CHECK_PTR(l2);
-	l2->setFont( QFont( "Times", 16, QFont::Bold ) );
+	l2->setFont( QFont( "", 16, QFont::Bold ) /* [2026-08-31] 默认族（Times 无 CJK） */ );
 	l2->setAlignment( AlignLeft );
 	player[x] = l2;
     }
@@ -245,7 +245,7 @@ void ScoreBox::setTitle( const char *s )
 
 void ScoreBox::setScore( int x, int p, const char * pl, const char *dt)
 {
-    if (x > 5)
+    if (x >= 5)   /* [2026-08-31] 数组 [5] 越界差一（x==5 时 date/points/player 越界写） */
 	return;
 
     if (p == 0) {

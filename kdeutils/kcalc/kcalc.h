@@ -357,7 +357,12 @@ public slots:
 public:
 
      DefStruct kcalcdefaults;
- 
+
+     /* [2026-08-31] 顶行总宽（帮助钮+显示区+边距）：main() 的
+	setFixedSize 经此取动态窗宽——1999 年是 9+100+9+233+9=360 硬编码，
+	单选钮改按字体度量计宽后显示区会级联加宽，窗宽须随之 */
+     int calculatorWidth() const { return 9 + helpbuttonwidth + 9 + displaywidth + 9; }
+
 private:
 
     QTimer* selection_timer;

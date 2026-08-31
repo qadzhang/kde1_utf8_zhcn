@@ -134,13 +134,14 @@ void PlanetInfo::showPlanet( Planet *planet )
             temp = i18n("Owner : ") + p->planet->getPlayer()->getName();
             owner->setText( temp );
 
-            temp.sprintf( i18n("Ships : %d"),  p->ships );
+            /* [2026-08-31] 翻译格式串走 kde_sprintf（TQString::sprintf 对格式串逐字节 Latin-1 升位，中文译文乱码） */
+            temp = kde_sprintf( i18n("Ships : %d"),  p->ships );
             ships->setText( temp );
 
-            temp.sprintf( i18n("Production : %d"), p->production );
+            temp = kde_sprintf( i18n("Production : %d"), p->production );
             production->setText( temp );
 
-            temp.sprintf( i18n("Kill Percent : %.3f"), p->killRate );
+            temp = kde_sprintf( i18n("Kill Percent : %.3f"), p->killRate );
             kill_percent->setText( temp );
         }
     }

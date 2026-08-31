@@ -1824,64 +1824,128 @@ msgstr "&7位 ASCII 编码"
 
 #: charsetsDlg.cpp:84
 msgid "&Qute unknonw characters"
-msgstr "括起未知字符[&Q]"
-
-#~ msgid ""
-#~ "Cannot modify a\n"
-#~ "system folder."
-#~ msgstr ""
-#~ "不能修改系统\n"
-#~ "的邮件夹"
-
-#~ msgid ""
-#~ "Are you sure you want to discard the\n"
-#~ "contents of the folder \"%s\" ?"
-#~ msgstr ""
-#~ "你确定要丢弃邮件夹 \"%s\"\n"
-#~ "的所有内容 ?"
-
-#~ msgid ""
-#~ "Changing fonts currently only occurs when a new\n"
-#~ "window is opened or kmail is restarted"
-#~ msgstr ""
-#~ "现阶段改变字体只有在打开新的窗口或重新启动\n"
-#~ "kmail 时才能生效"
-
-#~ msgid "Could not create temporary file"
-#~ msgstr "不能建立临时文件"
-
-#~ msgid "Could not save temporary file %s"
-#~ msgstr "不能保存临时文件 %s"
-
-#~ msgid "Error during PGP:"
-#~ msgstr "PGP 加密错误:"
-
-#~ msgid "Message signed by"
-#~ msgstr "信件签名人为"
-
-#~ msgid "Message has a bad signature from"
-#~ msgstr "信件签名是坏的, 它来自"
-
-#~ msgid "End PGP signed message"
-#~ msgstr "PGP 签名信件结束"
+msgstr "引用未知字符(&Q)"
 
 #, fuzzy
-#~ msgid ""
-#~ "Could not find public keys matching the\n"
-#~ "userid(s) %s. These persons won't be able\n"
-#~ "to read the message."
-#~ msgstr ""
-#~ "%s 的公开密钥没有找到.\n"
-#~ "收信人将无法解密信件."
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&Cancel"
+msgstr "取消(&C)"
 
-#~ msgid "&Remove"
-#~ msgstr "删除[&R]"
+msgid "&Close"
+msgstr "关闭(&C)"
 
-#~ msgid "Fonts"
-#~ msgstr "字体"
+msgid "&Copy"
+msgstr "复制(&C)"
 
-#~ msgid "Appearance"
-#~ msgstr "外观"
+msgid "&Delete"
+msgstr "删除(&D)"
 
-#~ msgid "&Ok"
-#~ msgstr "确定[&O]"
+msgid "&Edit"
+msgstr "编辑(&E)"
+
+msgid "&File"
+msgstr "文件(&F)"
+
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "&Insert"
+msgstr "插入(&I)"
+
+msgid "&OK"
+msgstr "确定(&O)"
+
+msgid "&Options"
+msgstr "选项(&O)"
+
+msgid "&Print..."
+msgstr "打印(&P)..."
+
+msgid "&Quit"
+msgstr "退出(&Q)"
+
+msgid "&Remove"
+msgstr "删除(&R)"
+
+msgid "&View"
+msgstr "查看(&V)"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Appearance"
+msgstr "外观"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Cut"
+msgstr "剪切"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Fonts"
+msgstr "字体"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Layout"
+msgstr "布局"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Open..."
+msgstr "打开..."
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Paste"
+msgstr "粘贴"
+
+msgid "Remove"
+msgstr "删除"
+
+msgid "Save as..."
+msgstr "Salvar como..."
+
+msgid "Undo"
+msgstr "撤销"
+
+msgid "Warning"
+msgstr "警告"
+
+# [KDE1 Revival 2026-08-31] 应用特有词条人工补译
+msgid ", %_=space"
+msgstr "，%_=空格"
+
+msgid "Automatically send receive- and read confirmations"
+msgstr "自动发送接收和已读确认"
+
+msgid "Compact all folders"
+msgstr "压缩全部文件夹"
+
+msgid "Compact all folders on exit"
+msgstr "退出时压缩全部文件夹"
+
+msgid "Failed to create temporary attachment directory '%s': %s"
+msgstr "创建临时附件目录 \"%s\" 失败：%s"
+
+msgid "execute"
+msgstr "执行"
+
+msgid "forward to"
+msgstr "转发到"
+

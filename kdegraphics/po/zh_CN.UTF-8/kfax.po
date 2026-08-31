@@ -230,12 +230,11 @@ msgstr "跳至开头"
 
 #: kfax.cpp:473
 msgid "Go to end"
-msgstr "跳至最后"
+msgstr "转到末尾"
 
 #: kfax.cpp:479
-#, fuzzy
 msgid "Zoom in"
-msgstr "放大[&I]"
+msgstr "放大"
 
 #: kfax.cpp:482
 #, fuzzy
@@ -263,17 +262,17 @@ msgstr "保存到位置:"
 msgid ""
 "Invalid page dimensions:\n"
 "Width %.2f Height %.2f\n"
-msgstr ""
+msgstr "页面尺寸无效：\n宽 %.2f 高 %.2f\n"
 
 #: kfax.cpp:1011
 #, c-format
 msgid "Can't print to \"%s\"\n"
-msgstr ""
+msgstr "无法打印到 \"%s\"\n"
 
 #: kfax.cpp:1022
 #, c-format
 msgid "Couldn't create %s\n"
-msgstr ""
+msgstr "无法创建 %s\n"
 
 #: kfax.cpp:1092
 msgid "Saving ..."
@@ -287,14 +286,14 @@ msgstr "正在载入..."
 msgid ""
 "Failure in 'copy file()'\n"
 "Couldn't save file!"
-msgstr ""
+msgstr "执行 'copy file()' 失败\n无法保存文件！"
 
 #: kfax.cpp:1139 kfax.cpp:1201
 msgid ""
 "KFax is already waiting\n"
 "for an internet job to finish\n"
 "Please wait until has finished\n"
-msgstr ""
+msgstr "KFax 已在等待\n一个网络任务完成\n请稍候直至其结束\n"
 
 #: kfax.cpp:1191
 #, c-format
@@ -322,14 +321,14 @@ msgid ""
 "A file with this name already exists\n"
 "Do you want to overwrite it?\n"
 "\n"
-msgstr ""
+msgstr "同名文件已存在\n要覆盖它吗？\n\n"
 
 #: faxinput.cpp:111
 #, c-format
 msgid ""
 "Unable to open:\n"
 "%s\n"
-msgstr ""
+msgstr "无法打开：\n%s\n"
 
 #: print.cpp:62
 msgid "Print Command:"
@@ -343,10 +342,63 @@ msgstr "浏览"
 msgid ""
 "You must enter a print command such as \"lpr\"\n"
 " if you wish to print to a printer."
-msgstr ""
+msgstr "如果您想要打印到打印机，必须输入打印命令，例如 \"lpr\"\n。"
 
 #~ msgid "&About..."
 #~ msgstr "有关[&A]..."
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&File"
+msgstr "文件(&F)"
 
-#~ msgid "Version "
-#~ msgstr "版本 "
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "&Options"
+msgstr "选项(&O)"
+
+msgid "&Print..."
+msgstr "打印(&P)..."
+
+msgid "&View"
+msgstr "查看(&V)"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "E&xit"
+msgstr "退出(&X)"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Malformed URL"
+msgstr "URL 格式错误"
+
+msgid "No"
+msgstr "否"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Version "
+msgstr "Versão "
+
+msgid "Yes"
+msgstr "是"
+
+# [KDE1 Revival 2026-08-31] 应用特有词条人工补译
+msgid "About KFax"
+msgstr "关于 KFax"
+
+msgid "Failure in 'copy file()'\n"
+msgstr "执行 'copy file()' 失败\n"
+
+msgid "KFax is already waiting\n"
+msgstr "KFax 已在等待\n"
+
+msgid "You must enter a file name if you wish to "
+msgstr "如果您想要"
+
+msgid "You must enter a print command such as \"lpr\"\n "
+msgstr "您必须输入打印命令，例如 \"lpr\"\n "
+

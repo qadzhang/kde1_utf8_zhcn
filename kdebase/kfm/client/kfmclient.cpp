@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <kurl.h> /* [2026-08-31] URL 百分号编码 */
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
@@ -239,6 +240,10 @@ int doIt( int argc, char **argv )
     }
     else if ( strcmp( argv[1], "exec" ) == 0 )
     {
+	/* [2026-08-31] 注：勿在此对 URL 做 encodeURL——kfm 的 IPC/browse
+	   管线自行编解码，外层预编码会造成双重编码使 slave 卡死（实测）。
+	   中文文件名的正确匹配在 KMimeType::findType 的字节长度修正
+	   （kbind.cpp），与本处无关 */
 	if ( argc == 3 )
 	{
 	    kfm.exec( argv[2], 0L );

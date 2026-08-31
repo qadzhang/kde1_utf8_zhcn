@@ -1667,7 +1667,7 @@ TRACEINIT("KBiffAboutTab::KBiffAboutTab()");
 	KURLLabel *logo = new KURLLabel(this);
 	logo->setPixmap(logo_pixmap);
 	logo->move(10,10);
-	logo->setFont(QFont("helvetica", 24, QFont::Bold));
+	logo->setFont(QFont("", 24, QFont::Bold)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	logo->setURL("http://www.pobox.com/~kurt_granroth/kbiff");
 	logo->setText(i18n("KBiff"));
 	logo->setAlignment( TQt::AlignRight );  /* TQt3 迁移 */
@@ -1683,13 +1683,13 @@ TRACEINIT("KBiffAboutTab::KBiffAboutTab()");
 	x = logo_pixmap.width() + 15;
 	y = 10;
 
-	QFontMetrics big_fm(QFont("helvetica", 24, QFont::Bold));
-	QFontMetrics small_fm(QFont("helvetica", 12));
+	QFontMetrics big_fm(QFont("", 24, QFont::Bold)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
+	QFontMetrics small_fm(QFont("", 12)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 
 	y += big_fm.lineSpacing();
 
 	QLabel *version = new QLabel(this);
-	version->setFont(QFont("helvetica", 12));
+	version->setFont(QFont("", 12)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	QString ver_str;
 	ver_str = kde_sprintf(i18n("Version %s\n\nCopyright (C) 1999\nKurt Granroth"), "2.3.10a");
 	version->setText(ver_str);
@@ -1701,7 +1701,7 @@ TRACEINIT("KBiffAboutTab::KBiffAboutTab()");
 	KURLLabel *email = new KURLLabel(this);
 	email->setText("granroth@kde.org");
 	email->setURL("granroth@kde.org");
-	email->setFont(QFont("helvetica", 12));
+	email->setFont(QFont("", 12)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	email->setUnderline(false);
 	email->setGlow(false);
 	email->setFloat();

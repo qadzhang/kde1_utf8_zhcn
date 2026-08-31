@@ -97,47 +97,55 @@
 /* Define if you have S_ISSOCK */
 #define HAVE_S_ISSOCK 1
 
+/* ────────────────────────────────────────────────────────────────────
+ * [KDE1 Revival 2026-08-31] 安装前缀修正：1999 年 configure 生成的这份
+ * 头文件带着上游安装期前缀 /opt/kde1（前次只改了 KDEDIR 一处，其余
+ * 13 个目录宏漏网）。本项目安装前缀唯一为 /usr/kde1（与 kdelibs 的
+ * kconfig.cpp 一致），全部目录宏改为 KDEDIR 字面量拼接——前缀单点
+ * 维护，今后再变只改 KDEDIR 一行。
+ * ──────────────────────────────────────────────────────────────────── */
+
 /* This is the prefix of the below paths. This may change in the future */
-#define KDEDIR "/opt/kde1"
+#define KDEDIR "/usr/kde1"
 
 /* Where your docs should go to. */
-#define KDE_HTMLDIR "/opt/kde1/share/doc/HTML"
+#define KDE_HTMLDIR KDEDIR "/share/doc/HTML"
 
 /* Where your application file (.kdelnk) should go to. */
-#define KDE_APPSDIR "/opt/kde1/share/applnk"
+#define KDE_APPSDIR KDEDIR "/share/applnk"
 
 /* Where your icon should go to. */
-#define KDE_ICONDIR "/opt/kde1/share/icons"
+#define KDE_ICONDIR KDEDIR "/share/icons"
 
  /* Where your sound data should go to. */
-#define KDE_SOUNDDIR "/opt/kde1/share/sounds"
+#define KDE_SOUNDDIR KDEDIR "/share/sounds"
 
 /* Where you install application data. */
-#define KDE_DATADIR "/opt/kde1/share/apps"
+#define KDE_DATADIR KDEDIR "/share/apps"
 
 /* Where translation files should go to. */
-#define KDE_LOCALE "/opt/kde1/share/locale"
+#define KDE_LOCALE KDEDIR "/share/locale"
 
 /* Where cgi-bin executables should go to. */
-#define KDE_CGIDIR "/opt/kde1/cgi-bin"
+#define KDE_CGIDIR KDEDIR "/cgi-bin"
 
 /* Where mimetypes should go to. */
-#define KDE_MIMEDIR "/opt/kde1/share/mimelnk"
+#define KDE_MIMEDIR KDEDIR "/share/mimelnk"
 
 /* Where mimetypes should go to. */
-#define KDE_TOOLBARDIR "/opt/kde1/share/toolbar"
+#define KDE_TOOLBARDIR KDEDIR "/share/toolbar"
 
 /* Where general wallpapers should go to. */
-#define KDE_WALLPAPERDIR "/opt/kde1/share/wallpapers"
+#define KDE_WALLPAPERDIR KDEDIR "/share/wallpapers"
 
 /* Where binaries should be installed. */
-#define KDE_BINDIR "/opt/kde1/bin"
+#define KDE_BINDIR KDEDIR "/bin"
 
 /* Where KDE parts should be installed. */
-#define KDE_PARTSDIR "/opt/kde1/parts"
+#define KDE_PARTSDIR KDEDIR "/parts"
 
 /* Where KDE config files should be installed */
-#define KDE_CONFIGDIR "/opt/kde1/share/config"
+#define KDE_CONFIGDIR KDEDIR "/share/config"
 
 /* If the platform supports strdup */
 #define HAVE_STRDUP 1

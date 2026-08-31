@@ -54,7 +54,7 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 {
 	int i;
 	
-	fnt = QFont( "helvetica", 12 );
+	fnt = QFont( "", 12 ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	changed = False;
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10, 5 );

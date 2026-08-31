@@ -28,7 +28,7 @@ KSTicker::KSTicker(QWidget * parent, const char * name, WFlags f)  /*FOLD00*/
 
   bAtEnd = FALSE;
 
-  setFont(QFont("fixed"));
+  setFont(QFont("")); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
   // ring = "Hi";
   ring = "";
   SInfo *si = new  SInfo;

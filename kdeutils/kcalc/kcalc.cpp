@@ -79,9 +79,35 @@ QtCalculator :: QtCalculator( QWidget *parent, const char *name )
 
   readSettings();
  
-  QFont buttonfont( "-misc-fixed-medium-*-semicondensed-*-13-*-*-*-*-*-*-*" );
-  buttonfont.setRawMode( true );
-  
+  /* [2026-08-31] 原生 X 核心 XLFD 字体名（misc fixed 位图字体）无 CJK
+     字形——进制/角度分组标签的中文译文渲染为豆腐块。改默认族（经
+     fontconfig 命中等宽 CJK 字体），保留等宽诉求用 StyleHint 表达 */
+  QFont buttonfont;
+  buttonfont.setPointSize( 13 );
+  buttonfont.setStyleHint( QFont::TypeWriter );
+  /* [2026-08-31] 去掉 setRawMode(true)：raw 模式配套的是原 XLFD 字面名
+     （字体名不经字体匹配器直接解释），现在用默认族 + StyleHint 表达等宽
+     诉求，raw 模式反而绕过 fontconfig 回退，必须摘除 */
+
+  /* [2026-08-31] 单选钮宽度按字体度量动态计算：1999 年点阵字体下 37px
+     够画圆点+3 字符，Xft 抗锯齿字体更宽导致 Hex/Dec/Oct/Bin 被裁成
+     He/De/Oc/Bi。级联推导：radiobuttonwidth ← 最宽标签实测宽 + 指示器
+     与边距 22px；分组框宽 ← 按钮排布公式（10 + n*w + 间距 + 10）反推；
+     顶行（显示区）随之加宽保持与按钮行同宽。main() 经 calculatorWidth()
+     取最终窗宽，不再各自硬编码 233/360 */
+  {
+    QFontMetrics rb_fm( buttonfont );
+    int max_label = rb_fm.width( "Hex" );      // 7 个标签中最宽（Hex/Oct/Dec/Bin/Deg/Rad/Gra）
+    if ( rb_fm.width( "Oct" ) > max_label ) max_label = rb_fm.width( "Oct" );
+    radiobuttonwidth  = max_label + 22;        // 22 = 单选指示器 + 左右留白
+    anglegroupwidth   = 36 + 3 * radiobuttonwidth;   // 10 + 3w + 2*8 + 10（近似原公式）
+    basegroupwidth    = 44 + 4 * radiobuttonwidth;   // 10 + 4w + 3*8 + 10
+    int button_row    = 9 + basegroupwidth + 9 + anglegroupwidth + 9;
+    int display_row   = 9 + helpbuttonwidth + 9 + displaywidth + 9;
+    if ( button_row > display_row )
+      displaywidth += button_row - display_row;
+  }
+
   // Set the window caption/title
 
   connect(mykapp,SIGNAL(kdisplayPaletteChanged()),this,SLOT(set_colors()));
@@ -95,7 +121,7 @@ QtCalculator :: QtCalculator( QWidget *parent, const char *name )
   pb = new QPushButton( this, "helpbutton" );
   pb->setText( "kCalc" );
   pb->setGeometry(myxmargin,myymargin, helpbuttonwidth,helpbuttonheight );
-  pb->setFont( QFont("times",12,QFont::Bold,FALSE) );   
+  { QFont bf; bf.setPointSize(12); bf.setBold(TRUE); pb->setFont(bf); }  /* [2026-08-31] times 无 CJK——默认族 */
   QToolTip::add( pb, i18n("KCalc Setup/Help") );
 
   connect( pb, SIGNAL(clicked()), SLOT(configclicked()) );
@@ -132,8 +158,8 @@ QtCalculator :: QtCalculator( QWidget *parent, const char *name )
   CHECK_PTR( statusERRORLabel );
   statusERRORLabel->setFrameStyle( QFrame::Panel | QFrame::Sunken );
   statusERRORLabel->setAlignment( AlignLeft|AlignVCenter );
-  statusERRORLabel->setGeometry(108 ,218,9 + 100 + 9 + 233 + 9 - 100 - 16, 20);   
-  statusERRORLabel->setFont(QFont("Hevetica",12));  
+  statusERRORLabel->setGeometry(108 ,218,9 + 100 + 9 + displaywidth + 9 - 100 - 16, 20);   /* [2026-08-31] 233→displaywidth（随字体度量级联加宽） */
+  { QFont ef; ef.setPointSize(12); statusERRORLabel->setFont(ef); } /* [2026-08-31] "Hevetica" 拼写错误致静默回退——改默认族 */  
 
   // create angle button group
 
@@ -1651,7 +1677,7 @@ void QtCalculator::readSettings()
   config->setGroup( "Font" );
     
   kcalcdefaults.font = config->readFontEntry("Font",
-	new QFont("helvetica",16,QFont::Bold));
+	new QFont("",16,QFont::Bold)); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 
   config->setGroup("Colors");
   QColor tmpC(189, 255, 222);
@@ -1920,9 +1946,9 @@ int main( int argc, char **argv )
 
     mykapp->setTopWidget( calc );
 
-    // calc->setGeometry(300, 100, 9 + 100 + 9 + 233 + 9, 220);   
+    // calc->setGeometry(300, 100, 9 + 100 + 9 + 233 + 9, 220);
 
-    calc->setFixedSize( 9 + 100 + 9 + 233 + 9, 239);   
+    calc->setFixedSize( calc->calculatorWidth(), 239);   /* [2026-08-31] 窗宽随字体度量动态取（原 9+100+9+233+9=360 硬编码） */
     calc->show();
     return mykapp->exec();
 }

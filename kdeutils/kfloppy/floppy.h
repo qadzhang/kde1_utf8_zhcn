@@ -117,6 +117,7 @@ private:
 	QString densityconfig;
 	QString filesystemconfig;
 	QString mdev;
+	QString mke2fsPath;   /* [2026-08-31] 系统 mke2fs 绝对路径（findExecutables 探测，替代内嵌 kmke2fs） */
 	KConfig *config;
 
 	QString formatstring;

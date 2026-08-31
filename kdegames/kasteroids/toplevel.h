@@ -50,6 +50,8 @@ private:
 
     bool   sound;
     KAudio *kas;
+    /* [2026-08-31] 深拷贝字符串字典：autoDelete 负责退出时统一释放
+       （原存 TQString 悬垂指针，见 toplevel.cpp readSettings 注释） */
     QDict<char> soundDict;
 
     // waiting for user to press Enter to launch a ship

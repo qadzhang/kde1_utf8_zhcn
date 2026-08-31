@@ -390,9 +390,9 @@ int KEdit::insertFile(){
 
     QString d;
     if ( !filename.isEmpty() )
-      d.sprintf( QFileInfo( filename ).dirPath() );
+      d = QFileInfo( filename ).dirPath();   /* [2026-08-31] sprintf 拷贝改赋值：路径含 % 即格式串 UB、含中文按字节升位乱码 */
     else
-      d.sprintf( QDir::currentDirPath() );
+      d = QDir::currentDirPath();             /* [2026-08-31] 同上 */
 
     file_to_insert = KFileDialog::getOpenFileName(d.data(),"*");
 
@@ -477,9 +477,9 @@ int KEdit::openFile(int mode)
     QString d;
 
     if ( !filename.isEmpty() )
-      d.sprintf( QFileInfo( filename ).dirPath() );
+      d = QFileInfo( filename ).dirPath();   /* [2026-08-31] sprintf 拷贝改赋值：路径含 % 即格式串 UB、含中文按字节升位乱码 */
     else
-      d.sprintf( QDir::currentDirPath() );
+      d = QDir::currentDirPath();             /* [2026-08-31] 同上 */
 
     fname = KFileDialog::getOpenFileName(d.data(),"*");
 
@@ -1644,9 +1644,9 @@ try_again:
 
 
     if ( !filename.isEmpty() )
-      d.sprintf( QFileInfo( filename ).dirPath() );
+      d = QFileInfo( filename ).dirPath();   /* [2026-08-31] sprintf 拷贝改赋值：路径含 % 即格式串 UB、含中文按字节升位乱码 */
     else
-      d.sprintf( QDir::currentDirPath() );
+      d = QDir::currentDirPath();             /* [2026-08-31] 同上 */
 
     tmpfilename2 = KFileDialog::getSaveFileName(d.data(),"*");
 

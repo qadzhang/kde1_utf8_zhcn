@@ -156,10 +156,14 @@ bool KCharset::isRegistered()const{
 
 QFont::CharSet KCharset::qtCharset()const{
 
+  /* [2026-08-31] entry==NULL 的告警静默：本路线（TQt3 底座）下 KDE1
+     字符集层是残留物——字体配置读入时按现代字体名查 KDE1 字符集表
+     必然 miss，返回 AnyCharSet 让 TQt3 原生 Unicode 体系接管即正确
+     行为。原 tqWarning 每应用启动必刷屏（且 kiconedit 一度把警告弹
+     成模态框直接卡死），降为静默返回 */
   if (!entry) {
-    tqWarning("KCharset: Wrong charset!\n");
     return QFont::AnyCharSet;
-  }  
+  }
   if (!stricmp(name(),"any")) return QFont::AnyCharSet;
   if (entry) return entry->qtCharset;
   return QFont::AnyCharSet;
@@ -168,9 +172,8 @@ QFont::CharSet KCharset::qtCharset()const{
 int KCharset::bits()const{
 
   if (!entry) {
-    tqWarning("KCharset: Wrong charset!\n");
-    return 8;
-  }  
+    return 8;   /* [2026-08-31] 同上：告警静默，默认 8 位 */
+  }
   if ( stricmp(name(),"unicode") == 0 ) return 16;
   else if ( stricmp(name(),"iso-10640") == 0 ) return 16;
   else if ( stricmp(name(),"us-ascii") ==0 ) return 7;
@@ -181,9 +184,8 @@ int KCharset::bits()const{
 
 QFont &KCharset::setQFont(QFont &fnt){
   if (!entry) {
-    tqWarning("KCharset: Wrong charset!\n");
-    return fnt;
-  }  
+    return fnt;   /* [2026-08-31] 同 qtCharset()：告警静默（UTF-8 环境下属预期路径） */
+  }
   if ( (stricmp(charsets->name(fnt),name()) == 0)
      || data->charsetOfFace(entry,fnt.family())) return fnt;
      

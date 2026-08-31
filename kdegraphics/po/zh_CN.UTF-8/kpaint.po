@@ -32,27 +32,23 @@ msgstr "圆形"
 #
 #: depthdialog.cpp:23
 msgid "Image Depth:"
-msgstr "图象颜色深度:"
+msgstr "图像深度："
 
 #: depthdialog.cpp:30
-#, fuzzy
 msgid "1 (2 Colours)"
-msgstr "8 (256 色)"
+msgstr "1（2 色）"
 
 #: depthdialog.cpp:31
-#, fuzzy
 msgid "4 (16 Colours)"
-msgstr "8 (256 色)"
+msgstr "4（16 色）"
 
 #: depthdialog.cpp:32
-#, fuzzy
 msgid "8 (256 Colours)"
-msgstr "8 (256 色)"
+msgstr "8（256 色）"
 
 #: depthdialog.cpp:33
-#, fuzzy
 msgid "15 (32k Colours)"
-msgstr "8 (256 色)"
+msgstr "15（32k 色）"
 
 #: depthdialog.cpp:34
 #, fuzzy
@@ -61,7 +57,7 @@ msgstr "8 (256 色)"
 
 #: depthdialog.cpp:35
 msgid "24 (True Colour)"
-msgstr "24 (真彩色)"
+msgstr "24（真彩色）"
 
 #: depthdialog.cpp:36
 #, fuzzy
@@ -408,67 +404,77 @@ msgstr "圆角"
 
 #~ msgid "KPaint"
 #~ msgstr "KPaint"
-
 #, fuzzy
 #~ msgid "(c) "
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
 #~ "(c) "
-
-#~ msgid ""
-#~ "\n"
-#~ "(c) Richard J. Moore 1997 Released under GPL see LICENSE for details\n"
-#~ msgstr ""
-#~ "\n"
-#~ "(c) Richard J. Moore 1997 Released under GPL see LICENSE for details\n"
-
 #~ msgid "Usage: "
 #~ msgstr "用法: "
-
 #~ msgid " [url | filename]\n"
 #~ msgstr " [url | filename]\n"
-
 #~ msgid "Exit"
 #~ msgstr "退出"
-
 #~ msgid "Open Location:"
 #~ msgstr "打开位置:"
-
 #~ msgid "Save to Location:"
 #~ msgstr "保存到位置:"
-
 #~ msgid "1 (Bitmap)"
 #~ msgstr "1 (位图)"
-
-#~ msgid "Continue"
-#~ msgstr "继续"
-
 #~ msgid "KPaint: Malformed URL"
 #~ msgstr "KPaint: 不正确的 URL"
-
-#~ msgid ""
-#~ "Error: Malformed URL\n"
-#~ "KPaint does not understand the specifed URL, check it's correct."
-#~ msgstr ""
-#~ "错误: 不正确的 URL\n"
-#~ "KPaint 无法解释指定的 URL, 请确认是否正确."
-
-#~ msgid ""
-#~ "KPaint is already accessing a remote file, you must\n"
-#~ "cancel the current remote job or wait for it to complete."
-#~ msgstr ""
-#~ "KPaint 已在读取一个远程文件,你必须取消当前的\n"
-#~ "远程任务或等待它完成"
-
 #~ msgid "KPaint: Could not find KFM"
 #~ msgstr "KPaint: 找不到 KFM"
-
 #~ msgid "Error: KPaint could not find a running KFM or start one itself."
 #~ msgstr "错误: KPaint 找不到运行中的 KFM 或无法运行 KFM."
-
 #~ msgid "KPaint: Network Load Failed"
 #~ msgstr "KPaint: 网络读取失败"
-
 #~ msgid "KPaint: Could not start KFM"
 #~ msgstr "KPaint: 无法打开 KFM"
+# [KDE1 Revival 2026-08-31] 标准词批量补齐（对齐 KDE6 zh_CN 术语）
+msgid "&Edit"
+msgstr "编辑(&E)"
+
+msgid "&File"
+msgstr "文件(&F)"
+
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "&Options"
+msgstr "选项(&O)"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "Browse..."
+msgstr "浏览..."
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Cut"
+msgstr "剪切"
+
+msgid "E&xit"
+msgstr "退出(&X)"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Paste"
+msgstr "粘贴"
+

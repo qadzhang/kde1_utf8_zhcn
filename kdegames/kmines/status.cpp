@@ -68,7 +68,7 @@ KStatus::KStatus(QWidget *parent, const char *name)
 	left->setFrameStyle(  QFrame::Panel | QFrame::Sunken );
 	left->installEventFilter(parent);
 	
-	setFont( QFont("Times", 14, QFont::Bold) );
+	setFont( QFont("", 14, QFont::Bold) ); /* [2026-08-31] 默认族：原硬编码西文字族无 CJK 字形，中文渲染 tofu */
 	
 	mesg = new QLabel(this);
 	mesg->setAlignment( AlignCenter );

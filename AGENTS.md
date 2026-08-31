@@ -30,7 +30,7 @@
 | 目录 | 内容 |
 |---|---|
 | `tqt3/` | TQt3 r14.1.6 pristine 快照（Trinity 的 Qt3 分支，GPLv2；**绝不直接修改**，修改一律走 `tqt3-patches/`） |
-| `tqt3-patches/` | 对 tqt3 的补丁（构建时打入 `tqt3-build/`；当前 1 个：qstring 的 TQString==const char* 遵循 codecForCStrings 语义，修复 UTF-8 中文比较） |
+| `tqt3-patches/` | 对 tqt3 的补丁（构建时打入 `tqt3-build/`；当前 2 个：qstring 的 TQString==const char* 遵循 codecForCStrings 语义修复 UTF-8 中文比较、启用内建 GIF 编解码；数量与清单以 `tqt3-patches/README.md` 为准） |
 | `port/` | KDE1→TQt3 迁移脚手架（strangler fig 模式）：`q1compat.h`（Q→TQ 映射 + tq 函数族）、331 个转发头、两个生成器脚本；全部模块显式 TQ 化后整体拆除 |
 | `kdelibs/` | KDE 1.1.2 基础库（kdecore、kdeui 等） |
 | `kdebase/` | KDE 1.1.2 基础应用（kwm、kpanel、kfm、kvt、kdm 等） |
