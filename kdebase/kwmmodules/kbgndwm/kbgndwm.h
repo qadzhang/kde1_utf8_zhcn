@@ -63,27 +63,6 @@ protected:
   virtual void timerEvent( QTimerEvent * );
   int last_root_w, last_root_h;
 
-  /* [KDE1 Revival 2026] 全屏壁纸画布（对齐 Trinity kdesktop 架构）
-   * ┌─ What : 一块覆盖全屏的 OR(override-redirect) 窗口，壁纸 pixmap
-   * │        设为它的窗口背景——暴露重绘由 X 服务器按画布自身的
-   * │        背景属性填充，不再单纯依赖根窗填充语义
-   * │  Why  : 1999 方案只设根窗背景，暴露路径脆弱（VirtualBox 等
-   * │        动态分辨率场景出现大片黑区/残留，用户 2026-09-01 截图
-   * │        实测）。KDE2+/Trinity 的 kdesktop 即全屏桌面窗口自绘。
-   * │  Who  : KBGndManager 私有；click 全部穿透（不选按钮事件掩码，
-   * │        按键事件落回根窗，krootwm 桌面菜单/行为不受影响）
-   * │  When : 构造时创建并映射一次；此后随分辨率变化 resize
-   * │  Where: kbgndwm.h/.cpp；X 层用 OR + XLowerWindow 压底
-   * │  How  : 伪代码——
-   * │        1. 顶层 QWidget → winId() 先建窗
-   * │        2. XChangeWindowAttributes 设 override_redirect=1
-   * │           （kwm 初始扫描与 MapRequest 均不管理 OR 窗）
-   * │        3. XSelectInput 仅留 Exposure|StructureNotify（去按钮）
-   * │        4. show() → XLowerWindow 压到堆叠最底（kfm 图标窗之下）
-   * │        5. 壁纸渲染结果经 setBackgroundPixmap 设给画布与根窗双份
-   * └────────────────────────────────────────────────────────────── */
-  QWidget *canvas;
-
 public slots:
   void desktopChange( int );
   void commandReceived( QString );

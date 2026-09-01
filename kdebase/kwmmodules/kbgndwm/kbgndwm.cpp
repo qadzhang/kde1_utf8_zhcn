@@ -14,7 +14,6 @@
 #include <kprocess.h>
 #include <kstring.h>
 #include <qapp.h> /* [KDE1 Revival 2026] qt_xdisplay/qt_xrootwin（分辨率监视用） */
-#include <ntqwmatrix.h> /* [KDE1 Revival 2026] 分辨率变化过渡帧的 xForm 拉伸 */
 #include "kbgndwm.h"
 #include "config-kbgndwm.h"
 
@@ -48,7 +47,7 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
       last_root_w = QApplication::desktop()->width();
       last_root_h = QApplication::desktop()->height();
     }
-    startTimer( 200 ); /* [2026-09-01] 200ms 快轮询：分辨率变化即时感知（XGetGeometry 一次往返开销可忽略） */
+    startTimer( 1000 ); /* 分辨率感知轮询（无画布需维护，1s 足够） */
   }
 
   // [KDE1 Revival 2026] 全屏壁纸画布在首次渲染后创建（见 applyDesktop
@@ -107,36 +106,12 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 
   applyDesktop( current );
 
-  /* [KDE1 Revival 2026] 创建全屏壁纸画布（5W1H 见 kbgndwm.h 声明处）。
-   * How: ① 首次渲染已完成，取渲染结果 → ② 顶层窗建窗并设 Qt/X 双层
-   *      背景（映射前 X 背景属性即携带壁纸，服务器首次填充即为壁纸）
-   *      → ③ override_redirect=1（kwm 初始扫描与 MapRequest 均不管理）
-   *      → ④ 事件掩码仅 Exposure|StructureNotify（点击穿透到根窗，
-   *      krootwm 桌面菜单不受影响）→ ⑤ 映射后 XLowerWindow 压底。 */
-  if ( !canvas ) {
-    const QPixmap *wp0 = QApplication::desktop()->backgroundPixmap();
-    canvas = new QWidget( 0, "kbgndwm_canvas",
-			  WStyle_Customize | WStyle_NoBorder );
-    canvas->setGeometry( 0, 0, last_root_w, last_root_h );
-    if ( wp0 && !wp0->isNull() )
-      canvas->setBackgroundPixmap( *wp0 );
-    canvas->winId(); /* 强制先建 X 窗，属性须在映射前就位 */
-    XSetWindowAttributes wa;
-    wa.override_redirect = True;
-    XChangeWindowAttributes( qt_xdisplay(), canvas->winId(),
-			     CWOverrideRedirect, &wa );
-    XSelectInput( qt_xdisplay(), canvas->winId(),
-		  ExposureMask | StructureNotifyMask );
-    canvas->show();
-    XSelectInput( qt_xdisplay(), canvas->winId(),
-		  ExposureMask | StructureNotifyMask ); /* show 后再钉一次 */
-    if ( wp0 && !wp0->isNull() )
-      /* 已映射状态再钉一次 X 层背景，保证服务器填充与壁纸一致 */
-      XSetWindowBackgroundPixmap( qt_xdisplay(), canvas->winId(),
-				  wp0->handle() );
-    XLowerWindow( qt_xdisplay(), canvas->winId() );
-    XFlush( qt_xdisplay() );
-  }
+  /* [KDE1 Revival 2026] 画布方案已拆除（2026-09-01 真实 Xorg 实测推翻）：
+   * 全屏 OR 画布在 vboxvideo 真机会话中把根窗盖黑（Qt/X 双层背景在
+   * 该环境下填充失效），且 timerEvent 的画布同步在背景 pixmap 替换后
+   * 引用悬垂句柄导致段错误。1999 年的根窗背景机制（XSetWindowBackground
+   * Pixmap + 服务器端暴露填充）在真实 Xorg 上实测完好——本模块回归
+   * 纯根背景方案，仅保留分辨率热变更时的重渲染与全屏重铺。 */
 
   QString command;
   if ( oneDesktopMode )
@@ -273,58 +248,25 @@ void KBGndManager::timerEvent( QTimerEvent * )
   if ( !XGetGeometry( qt_xdisplay(), qt_xrootwin(), &root_ret,
 		      &x_ret, &y_ret, &rw, &rh, &border, &depth ) )
     return;
+  if ( (int) rw == last_root_w && (int) rh == last_root_h )
+    return;
 
-  bool resized = ( (int) rw != last_root_w || (int) rh != last_root_h );
-  if ( resized ) {
-    fprintf( stderr, "kbgndwm: 屏幕分辨率已变更为 %dx%d，壁纸按新尺寸重渲染\n",
-	     (int) rw, (int) rh );
+  fprintf( stderr, "kbgndwm: 屏幕分辨率已变更为 %dx%d，壁纸按新尺寸重渲染\n",
+	   (int) rw, (int) rh );
+  last_root_w = (int) rw;
+  last_root_h = (int) rh;
 
-    /* [2026-09-01] 过渡帧：先把旧壁纸立即拉伸到新尺寸设上（QWMatrix
-     * xForm 毫秒级），桌面在精渲染完成前也保持视觉连续——否则
-     * 5120x2880 级壁纸的精渲染耗时秒级，期间桌面黑/错位（真机
-     * "背景刷新有问题"观感的主要来源） */
-    const QPixmap *prev = QApplication::desktop()->backgroundPixmap();
-    if ( canvas && prev && !prev->isNull() && prev->width() > 1 ) {
-      QWMatrix m;
-      m.scale( (double) rw / prev->width(), (double) rh / prev->height() );
-      QPixmap stretched = prev->xForm( m );
-      canvas->setGeometry( 0, 0, (int) rw, (int) rh );
-      canvas->setBackgroundPixmap( stretched );
-      XSetWindowBackgroundPixmap( qt_xdisplay(), canvas->winId(),
-				  stretched.handle() );
-      XClearArea( qt_xdisplay(), qt_xrootwin(), 0, 0, 0, 0, True );
-      XFlush( qt_xdisplay() );
-    }
-
-    last_root_w = (int) rw;
-    last_root_h = (int) rh;
-    QPixmapCache::clear();
-    applyDesktop( current );
-  }
-
-  /* [KDE1 Revival 2026] 画布每个 tick 都同步：KBackground::apply 对
-   * 图片壁纸走 startTimer(0) 延迟渲染，构造器里同步时背景尚未就绪
-   * （实测首启灰屏）——tick 粒度 2 秒补齐足够；已映射窗口必须手动
-   * XSetWindowBackgroundPixmap 才会刷新 X 层背景属性。 */
-  if ( canvas ) {
-    const QPixmap *wp = QApplication::desktop()->backgroundPixmap();
-    if ( wp && !wp->isNull() ) {
-      if ( wp->width() != canvas->width() || wp->height() != canvas->height() )
-        canvas->setGeometry( 0, 0, wp->width(), wp->height() );
-      canvas->setBackgroundPixmap( *wp );
-      XSetWindowBackgroundPixmap( qt_xdisplay(), canvas->winId(),
-                                  wp->handle() );
-      canvas->update();
-      XLowerWindow( qt_xdisplay(), canvas->winId() );
-    }
-  }
-
-  if ( resized ) {
-    XClearArea( qt_xdisplay(), qt_xrootwin(),
-                0, 0, 0, 0,  /* 0 宽高 = 整窗 */
-                True );
-    XFlush( qt_xdisplay() );
-  }
+  /* [KDE1 Revival 2026] 分辨率热变更：清缓存 → 按新尺寸重渲染并设根窗
+   * 背景（KBackground::apply 内部经 qApp->desktop()->setBackgroundPixmap）
+   * → XClearArea 全屏重铺。XSetWindowBackgroundPixmap 只改属性不重绘，
+   * 必须显式 Clear 才能用新背景填充整个根窗；期间旧背景（平铺态）短暂
+   * 可见属正常过渡，无黑屏。 */
+  QPixmapCache::clear();
+  applyDesktop( current );
+  XClearArea( qt_xdisplay(), qt_xrootwin(),
+	      0, 0, 0, 0,  /* 0 宽高 = 整窗 */
+	      True );
+  XFlush( qt_xdisplay() );
 }
 
 void KBGndManager::cacheDesktop()
