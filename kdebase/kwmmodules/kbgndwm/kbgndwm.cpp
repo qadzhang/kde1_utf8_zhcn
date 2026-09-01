@@ -14,6 +14,7 @@
 #include <kprocess.h>
 #include <kstring.h>
 #include <qapp.h> /* [KDE1 Revival 2026] qt_xdisplay/qt_xrootwin（分辨率监视用） */
+#include <ntqwmatrix.h> /* [KDE1 Revival 2026] 分辨率变化过渡帧的 xForm 拉伸 */
 #include "kbgndwm.h"
 #include "config-kbgndwm.h"
 
@@ -47,7 +48,7 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
       last_root_w = QApplication::desktop()->width();
       last_root_h = QApplication::desktop()->height();
     }
-    startTimer( 2000 );
+    startTimer( 200 ); /* [2026-09-01] 200ms 快轮询：分辨率变化即时感知（XGetGeometry 一次往返开销可忽略） */
   }
 
   // [KDE1 Revival 2026] 全屏壁纸画布在首次渲染后创建（见 applyDesktop
@@ -277,6 +278,24 @@ void KBGndManager::timerEvent( QTimerEvent * )
   if ( resized ) {
     fprintf( stderr, "kbgndwm: 屏幕分辨率已变更为 %dx%d，壁纸按新尺寸重渲染\n",
 	     (int) rw, (int) rh );
+
+    /* [2026-09-01] 过渡帧：先把旧壁纸立即拉伸到新尺寸设上（QWMatrix
+     * xForm 毫秒级），桌面在精渲染完成前也保持视觉连续——否则
+     * 5120x2880 级壁纸的精渲染耗时秒级，期间桌面黑/错位（真机
+     * "背景刷新有问题"观感的主要来源） */
+    const QPixmap *prev = QApplication::desktop()->backgroundPixmap();
+    if ( canvas && prev && !prev->isNull() && prev->width() > 1 ) {
+      QWMatrix m;
+      m.scale( (double) rw / prev->width(), (double) rh / prev->height() );
+      QPixmap stretched = prev->xForm( m );
+      canvas->setGeometry( 0, 0, (int) rw, (int) rh );
+      canvas->setBackgroundPixmap( stretched );
+      XSetWindowBackgroundPixmap( qt_xdisplay(), canvas->winId(),
+				  stretched.handle() );
+      XClearArea( qt_xdisplay(), qt_xrootwin(), 0, 0, 0, 0, True );
+      XFlush( qt_xdisplay() );
+    }
+
     last_root_w = (int) rw;
     last_root_h = (int) rh;
     QPixmapCache::clear();

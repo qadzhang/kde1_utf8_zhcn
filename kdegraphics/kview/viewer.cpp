@@ -6,6 +6,9 @@
 */
 
 #include<assert.h>
+#include<ctype.h>
+#include<stdlib.h>
+#include<ntqcstring.h>
 #include<stdio.h>
 
 #include<qpopmenu.h>
@@ -38,6 +41,33 @@
 #include"filtlist.h"
 
 #include"ilistdlg.h"
+
+/* [KDE1 Revival 2026] URL 显示解码（kview 标题栏乱码修复）
+ * ┌─ What : 把 KFM 传来的 percent-encoded URL（如
+ * │        file:/home/user/%E6%88%AA%E5%9B%BE01.jpg）解码为可读文字
+ * │        （file:/home/user/截图01.jpg）
+ * │  Why  : KFM 传递的 URL 按规范百分号编码，kview 原样拼进窗口标题，
+ * │        中文文件名在标题栏/任务栏全部显示为 %XX 转义（用户实测）
+ * │  Who  : KSnapShot 式的 loadURL 成功路径（setCaption 处）
+ * │  How  : 字节级扫描：%XX 还原为字节，其余照抄；结果按 UTF-8 解码
+ * │        （与全局 codecForCStrings 语义一致）
+ * └────────────────────────────────────────────────────────────── */
+static QString kviewDecodeURL( const char *url )
+{
+  TQCString out;
+  const char *p = url;
+  while ( *p ) {
+    if ( p[0] == '%' && isxdigit( (unsigned char) p[1] )
+                  && isxdigit( (unsigned char) p[2] ) ) {
+      char hex[3] = { p[1], p[2], 0 };
+      out += (char) strtol( hex, 0, 16 );
+      p += 3;
+    } else
+      out += *p++;
+  }
+  out += '\0';
+  return TQString::fromUtf8( out.data() );
+}
 
 enum {
 	StatProgress,
@@ -647,7 +677,8 @@ void KImageViewer::loadFile( const char *file, const char *url )
 		}
 
 		// set caption
-		QString cap = url;
+		// [KDE1 Revival 2026] 标题用解码后的 URL（中文文件名可读）
+		QString cap = kviewDecodeURL( url );
 		cap += " (";
 		cap += kapp->appName().data();
 		cap += ")";
