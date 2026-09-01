@@ -13,6 +13,7 @@
 #include <kwm.h>
 #include <kprocess.h>
 #include <kstring.h>
+#include <qapp.h> /* [KDE1 Revival 2026] qt_xdisplay/qt_xrootwin（分辨率监视用） */
 #include "kbgndwm.h"
 #include "config-kbgndwm.h"
 
@@ -30,6 +31,24 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
   this->setGeometry( -100,-100, 10, 10);
 
   readSettings();
+
+  // [KDE1 Revival 2026] 分辨率热变更监视起表：以 X 级真值（XGetGeometry）
+  // 初始化基准几何，之后每 2 秒 timerEvent 比对（机制与边界见 kbgndwm.h
+  // 的 5W1H 注释）。放在 readSettings 之后、applyDesktop 之前，首次
+  // 渲染即用真值尺寸
+  {
+    Window root_ret; int x_ret, y_ret;
+    unsigned int rw, rh, border, depth;
+    if ( XGetGeometry( qt_xdisplay(), qt_xrootwin(), &root_ret,
+		       &x_ret, &y_ret, &rw, &rh, &border, &depth ) ) {
+      last_root_w = (int) rw;
+      last_root_h = (int) rh;
+    } else {
+      last_root_w = QApplication::desktop()->width();
+      last_root_h = QApplication::desktop()->height();
+    }
+    startTimer( 2000 );
+  }
 
   desktops = new KBackground [ MAX_DESKTOPS ];
 
@@ -197,6 +216,41 @@ void KBGndManager::commandReceived( QString com )
 void KBGndManager::applyDesktop( int d )
 {
   desktops[d].apply();
+}
+
+
+
+/* [KDE1 Revival 2026] 分辨率热变更监视（5W1H 见 kbgndwm.h 声明处）
+ * How  : ① XGetGeometry 直查根窗真值（TQt3 -no-xrandr 下 desktop()
+ *          缓存永不过期，不可作依据）；② 与上次记录相同 → 返回；
+ *        ③ 不同 → 记录新值 → QPixmapCache::clear()（缓存里全是旧尺寸
+ *          的渲染结果，必须全部作废）→ applyDesktop(current) 按新
+ *          尺寸重渲染并重设根窗背景 → ④ XClearArea 全屏清填：
+ *          服务器立即用新背景 pixmap 重铺整个根窗，残留的旧壁纸
+ *          "背影"当场消失，无需等下一次暴露 */
+void KBGndManager::timerEvent( QTimerEvent * )
+{
+  Window root_ret;
+  int x_ret, y_ret;
+  unsigned int rw, rh, border, depth;
+  if ( !XGetGeometry( qt_xdisplay(), qt_xrootwin(), &root_ret,
+		      &x_ret, &y_ret, &rw, &rh, &border, &depth ) )
+    return;
+  if ( (int) rw == last_root_w && (int) rh == last_root_h )
+    return;
+
+  fprintf( stderr, "kbgndwm: 屏幕分辨率已变更为 %dx%d，壁纸按新尺寸重渲染\n",
+	   (int) rw, (int) rh );
+
+  last_root_w = (int) rw;
+  last_root_h = (int) rh;
+
+  QPixmapCache::clear();
+  applyDesktop( current );
+  XClearArea( qt_xdisplay(), qt_xrootwin(),
+	      0, 0, 0, 0,  /* 0 宽高 = 整窗 */
+	      True );
+  XFlush( qt_xdisplay() );
 }
 
 

@@ -249,9 +249,15 @@ int main( int argc, char ** argv ){
   // connect to kwm as docking module
   myapp.connectToKWM(true);
   // [KDE1 Revival 2026] 曾试验 show() 前登记 KWM_DOCKWINDOW 以求 kwm 免管理、
-  // 面板贴边——但主窗口随之整体消失（TQt3 顶层窗口生命周期与 dock 免管理
-  // 的交互未摸清），已回退。面板贴边问题待续（现状：kwm 智能摆位致面板
-  // 高于底缘约一个自身高度，功能无碍）。
+  // 面板贴边——但主窗口随之整体消失（机理已明：KWM_DOCKWINDOW 是"面板
+  // 停靠图标"协议，kwm 收到后经 dockWindowAdd 信号把窗口嵌进 kpanel 自家
+  // 停靠区，面板窗口因此"消失"），已回退。
+  // [2026-09-01] 改用 KDE1 原生的 KWM_WIN_DECORATION=noDecoration 客户自
+  // 声明（kwm 的 manage() 两条路径——启动期初始扫描与 MapRequest——都会
+  // 读取并优先尊重客户声明）：面板/任务栏不再被加框，配合 kwm 侧的
+  // "贴边窗口豁免钳制"，面板稳定贴底不再被智能摆位推离屏幕边缘。
+  // winId() 强制先创建 X 窗口，确保属性先于任何映射/扫描存在。
+  KWM::setDecoration( the_panel->winId(), KWM::noDecoration );
   the_panel->launchSwallowedApplications();
   the_panel->show();
   the_panel->raise();

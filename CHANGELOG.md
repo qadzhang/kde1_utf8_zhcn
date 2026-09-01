@@ -2,6 +2,13 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-09-01（第三批：用户三项复现报障根治——任务栏宽度截断、字体清单问号、桌面壁纸"背影"）
+
+- **任务栏/面板宽度截断（改分辨率后永远停在旧宽度）三层根治**：① kwm 的伪会话代理重放——kwmrc `proxyprops=` 持久化了旧分辨率会话的面板几何，kwm manage() 匹配 WM_COMMAND 后无条件重放，把面板窗口强改回旧尺寸（xtrace 协议抓包 + 删除该行实测坐实：1920 屏面板被钉死 1280x45@915，删除即 1920x45@0,931）；修复为 **USPosition 窗口跳过几何重放**（应用明确声明位置的场景，尊重应用；命中条目仍消费以自净），getWMNormalHints 相应提前。② kpanel 全部布局尺寸改经 `kpanel_screen_size()`（XGetGeometry 直查根窗真值）——TQt3 `-no-xrandr` 下 `QApplication::desktop()` 宽高为构造期一次性缓存（qdesktopwidget_x11.cpp `d->rects`），热改分辨率后永不过期，轮询自愈重启后面板仍按旧宽布局。③ kpanel 面板/任务栏/tooltip 三个 chrome 顶层窗声明 `KWM_WIN_DECORATION=noDecoration`（KDE1 原生协议），杜绝会话启动竞态下被 kwm 加框+智能摆位（复现过一次：任务栏被框成 "kpanel<2>" 推离屏幕顶缘）。沙箱三连重启 + 投毒 kwmrc 回归 + `kpanel:restart` 重启链全部验收通过；1920x976 场景面板/任务栏满宽贴边。
+- **桌面壁纸"背影"残留（弹窗关闭后桌面错位斑块）根治**：kbgndwm 渲染壁纸的尺寸取自同一 desktop() 过期缓存——热改分辨率后根窗背景 pixmap 仍是旧尺寸，任何暴露重填（弹窗 unmap、窗口关闭）都按错位平铺填充；kbgndwm 新增 2 秒 XGetGeometry 根窗监视（与 kpanel 同款），变化即 `QPixmapCache::clear()` + 按新尺寸重渲染重设根窗背景 + `XClearArea` 全屏重铺；渲染尺寸一律改走 `kbg_root_size()`（bg.cpp 文件局部真值助手）。
+- **控制中心字体清单汉字变 "?????" 根治（两层）**：① fontchooser.cpp（kcmdisplay）与 htmlopts.cpp（kcmkfm）的 getFontList 把字族名经 `font.latin1()` 存入 QStrList——非 ASCII 字族名（Noto CJK/文泉驿本地化名）逐字符打成 '?'；改存 `utf8()` 字节（codecForCStrings=UTF-8 下无损往返，strcmp 两侧同码）。② TQt3 的 Qt1 兼容插入重载 `TQComboBox::insertItem(const char*)`/`insertStrList` 与 `TQListBox` 同族六处硬编码 `TQString::fromLatin1`，无视全局 UTF-8 codec——新增 `tqt3-patches/005-compat-insert-follows-codec.patch` 改为 `fromAscii`（遵循 codecForCStrings，未设 codec 时行为不变，纯 ASCII 零影响）。实测字体清单文泉驿系列中文名完整显示。
+- **杂项**：kcmdisplay 简体中文 po 中 `&Fonts` 误译 "&Fonty" 更正为 "字体(&F)"；sandbox.sh 支持 `KDE1_SANDBOX_GEOM` 覆盖沙箱分辨率（大屏场景验证用）。
+
 ## 2026-09-01（第二批：用户八项报障底层根治——Qt1→Qt3 语义差异全项目清剿 + 托盘交互补全）
 
 - **问题6 窗口激活不置顶（层级永远等于打开顺序）根治**：kwm 的 raiseClient 把 top_windows（dock 窗名单）直接拼进 XRestackWindows 数组——kpanel 把 kbgndwm/kwmsound 图标嵌入面板后这些窗不再是根子窗且永不销毁，残留名单使 X 协议的兄弟窗校验失败、**全体置顶操作静默失效**（gdb 断点实证 raiseClient 已执行而堆叠不变；XRestackWindows 数组序语义经实验确认为自顶向下）。三层修复：reparentNotify 维护 top_windows（嵌入面板即移出、返回根即恢复）+ raiseClient 组数组时防御性过滤非根子窗 + 实测验证（点 kfm 标题栏 550ms 内从底层升顶、Alt+Tab/点击激活全链恢复）。

@@ -1866,6 +1866,9 @@ void Manager::manage(Window w, bool mapped){
   		 );
 
     getWindowProtocols(c);
+    // [KDE1 Revival 2026] getWMNormalHints 提前到代理重放判定之前——
+    // 须先拿到 c->size.flags（USPosition）才能判断是否跳过重放
+    getWMNormalHints(c);
     // pseudo sessionmanagement proxy
     c->command = xgetprop(c->window, XA_WM_COMMAND);
     c->machine = getprop(c->window, wm_client_machine);
@@ -1875,7 +1878,15 @@ void Manager::manage(Window w, bool mapped){
       for (i=0; i<proxy_hints->count(); i++){
 	if (s == proxy_hints->at(i)){
 	  QString d = proxy_props->at(i);
-	  KWM::setProperties(c->window, d);
+	  /* [KDE1 Revival 2026] USPosition 窗口跳过代理几何重放（用户报障
+	   * "面板永远 1280 宽"根治）。代理机制本意是让手改重启的应用找回
+	   * 旧状态；但 kpanel/kwm 这类按当前屏幕自行定位的组件都带
+	   * USPosition 提示——旧分辨率会话存下的几何经此无限重放，面板
+	   * 重启多少次都被毒化回旧尺寸（实测 kwmrc proxyprops=
+	   * "…915+1280+45…"，1920 屏下面板被强改回 1280x45@915）。
+	   * 命中的陈旧条目仍从列表移除（自动自净），仅不回放。 */
+	  if ( !(c->size.flags & USPosition) )
+	    KWM::setProperties(c->window, d);
 	  pseudo_session_management = true;
 	  XSync(qt_xdisplay(), False);
 	  proxy_hints->removeRef(0);
@@ -1981,7 +1992,6 @@ void Manager::manage(Window w, bool mapped){
   if (hints)
     XFree(hints);
 
-  getWMNormalHints(c);
 
 
   if (c->size.flags & PPosition) {

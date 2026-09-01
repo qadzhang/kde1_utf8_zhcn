@@ -51,6 +51,25 @@ enum Position {top_left, bottom_right};
 enum TaskbarPosition {hidden, top, bottom, taskbar_top_left};
 
 void restart_the_panel();
+
+/* [KDE1 Revival 2026] 屏幕真实尺寸（分辨率热变更根治的基石）
+ * ┌─ What : 经 XGetGeometry 直查根窗当前几何，写回 *w/*h
+ * │  Why  : TQt3 以 -no-xrandr 构建，QApplication::desktop() 的宽高是
+ * │        构造时刻的一次性缓存（qdesktopwidget_x11.cpp 的 d->rects），
+ * │        虚拟机登录后热改分辨率（如 1280x976→1920x976）后永不过期——
+ * │        面板重启后仍按缓存旧宽布局，即用户 2026-09-01 报障的
+ * │        "面板始终 1280 宽、右侧缺失"。XGetGeometry 是 X 协议级
+ * │        实时查询，恒为真值。
+ * │  Who  : kpanel 全部布局代码（构造器/doGeometry/弹出菜单钳位/
+ * │        tooltip 定位/自动隐藏动画/迷你面板）；与 kwm 侧 manager.h
+ * │        的实时几何助手同一思路
+ * │  When : 每次需要屏幕尺寸时调用（一次 X 往返，成本可忽略）
+ * │  Where: 声明 kpanel.h，实现 tools.C
+ * │  How  : XGetGeometry( qt_xdisplay(), qt_xrootwin() ) 取 w/h；
+ * │        极端失败（根窗无效，实际不可能）回退 desktop() 缓存值
+ * └────────────────────────────────────────────────────────────── */
+void kpanel_screen_size( int *w, int *h );
+
 extern char* applications_path;
 extern char* personal_applications_path;
 extern char* personal_applications_path_name;

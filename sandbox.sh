@@ -74,7 +74,10 @@ do_start() {
     rm -f /tmp/.X99-lock /tmp/.X99-unix/X99 2>/dev/null
 
     # ① Xvfb：沙箱的"屏幕"。-nolisten tcp 只留本机 unix 套接字，不对外网开放
-    Xvfb $DISP -screen 0 1280x960x24 -dpi 96 -nolisten tcp >"$RUN/xvfb.log" 2>&1 &
+    #    [KDE1 Revival 2026] 几何可用 KDE1_SANDBOX_GEOM 覆盖（如 1920x976，
+    #    用于验证用户 VirtualBox 大屏场景：面板满宽、壁纸铺满、字体清单）
+    XVFB_GEOM="${KDE1_SANDBOX_GEOM:-1280x960}"
+    Xvfb $DISP -screen 0 ${XVFB_GEOM}x24 -dpi 96 -nolisten tcp >"$RUN/xvfb.log" 2>&1 &
     echo $! > "$RUN/xvfb.pid"
     sleep 1
     if ! is_alive "$RUN/xvfb.pid"; then

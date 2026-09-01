@@ -14,6 +14,8 @@
 #include <stdlib.h>
 
 #include <X11/Xatom.h>
+/* [KDE1 Revival 2026] kbg_root_size 用 XGetGeometry；Xlib 头必须在 TQt
+ * 头之后包含——Xlib 的 Unsorted 等宏会破坏 TQDir 的枚举名 */
 
 #include <qimage.h>
 #include <qfile.h>
@@ -28,6 +30,9 @@
 #include <kwm.h>
 #include <kurl.h>
 #include <kprocess.h>
+
+#include <X11/Xlib.h> /* [KDE1 Revival 2026] kbg_root_size 用 XGetGeometry；
+ Xlib 头须在 TQt 头之后——其 Unsorted 等宏会破坏 TQDir 枚举名 */
 
 #include "bg.h"
 #include "bg.moc"
@@ -285,9 +290,37 @@ void KBackground::doRandomize(bool fromTimer)
   }
 }
 
+/* [KDE1 Revival 2026] 屏幕真实尺寸（壁纸"背影"残留根治的基石）
+ * ┌─ What : 经 XGetGeometry 直查根窗当前几何
+ * │  Why  : TQt3 以 -no-xrandr 构建，QApplication::desktop() 的宽高是
+ * │        构造时刻的一次性缓存（qdesktopwidget_x11.cpp 的 d->rects），
+ * │        热改分辨率后永不过期——壁纸按旧尺寸渲染，根窗背景随
+ * │        弹出菜单关闭等暴露重填时错位平铺，形成桌面"背影"
+ * │        （用户 2026-09-01 截图实测：1280 壁纸平铺出 1920 桌面）。
+ * │  Who  : KBackground::apply() 全部渲染尺寸；kbgndwm.cpp 的
+ * │        分辨率监视定时器同源
+ * │  When : 每次 apply 渲染前调用
+ * │  Where: bg.cpp（文件局部）
+ * │  How  : XGetGeometry( qt_xdisplay(), qt_xrootwin() )；失败才回退
+ * │        desktop() 缓存
+ * └────────────────────────────────────────────────────────────── */
+static void kbg_root_size( int *w, int *h )
+{
+    Window root_ret;
+    int x_ret, y_ret;
+    unsigned int rw, rh, border, depth;
+    if ( XGetGeometry( qt_xdisplay(), qt_xrootwin(), &root_ret,
+		       &x_ret, &y_ret, &rw, &rh, &border, &depth ) ) {
+	*w = (int) rw;
+	*h = (int) rh;
+    } else {
+	*w = QApplication::desktop()->width();
+	*h = QApplication::desktop()->height();
+    }
+}
+
 QPixmap *KBackground::loadWallpaper()
 {
-
   if( !bUseWallpaper ) return 0;
 
   QString filename;
@@ -333,8 +366,13 @@ void KBackground::apply()
   uint w=0, h=0;
 
   if (wpPixmap) {
-    w = QApplication::desktop()->width();
-    h = QApplication::desktop()->height();
+    /* [KDE1 Revival 2026] 渲染尺寸取屏幕真值（kbg_root_size），弃用
+       desktop() 过期缓存——否则热改分辨率后壁纸按旧尺寸渲染，
+       根窗暴露重填错位成"背影" */
+    int render_w = 0, render_h = 0;
+    kbg_root_size( &render_w, &render_h );
+    w = (uint) render_w;
+    h = (uint) render_h;
 
     bgPixmap = new QPixmap;
   }
@@ -355,13 +393,13 @@ void KBackground::apply()
 
 	if ( orMode == Portrait ) {
 
-	  pmDesktop.resize( 20, QApplication::desktop()->height() );
-	  pmDesktop.gradientFill( color2, color1, true, numColors );
+		  pmDesktop.resize( 20, (int) h ); /* [KDE1 Revival 2026] 真值 h */
+		  pmDesktop.gradientFill( color2, color1, true, numColors );
 
-	} else {
-	  pmDesktop.resize( QApplication::desktop()->width(), 20 );
-	  pmDesktop.gradientFill( color2, color1, false, numColors );
-	}
+		} else {
+		  pmDesktop.resize( (int) w, 20 ); /* [KDE1 Revival 2026] 真值 w */
+		  pmDesktop.gradientFill( color2, color1, false, numColors );
+		}
 
 	delete bgPixmap;
 	bgPixmap = new QPixmap();

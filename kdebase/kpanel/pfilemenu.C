@@ -890,7 +890,10 @@ void PFileMenu::fixMenuPosition()
   int menu_height = (this->cmenu->count() - count_separators)
                      * PFileMenu::entryHeight + 2 * count_separators;
 
-  int new_y = QApplication::desktop()->height() - menu_height;
+  /* [KDE1 Revival 2026] 屏幕真值（XGetGeometry，见 kpanel.h） */
+  int pf_screen_w, pf_screen_h;
+  kpanel_screen_size( &pf_screen_w, &pf_screen_h );
+  int new_y = pf_screen_h - menu_height;
 
   if (this->cmenu->y() > new_y)
     this->cmenu->move(this->cmenu->x(), new_y -2);

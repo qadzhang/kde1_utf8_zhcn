@@ -478,10 +478,13 @@ int kPanel::show_popup(QPopupMenu* popup, QWidget* button, bool isTaskButton){
       else
 	yp = button->mapToGlobal(QPoint(0,0)).y() - popup->height();
     }
-    if (yp + popup->height() > QApplication::desktop()->height())
+    /* [KDE1 Revival 2026] 屏幕真值钳位（见 kpanel.h kpanel_screen_size） */
+    int screen_w, screen_h;
+    kpanel_screen_size( &screen_w, &screen_h );
+    if (yp + popup->height() > screen_h)
       yp = button->y()+button->height()-popup->height();
     if (yp < 0)
-      yp = QApplication::desktop()->height()-popup->height()+button->height();
+      yp = screen_h-popup->height()+button->height();
   }
   else {
     if (taskbar_position == taskbar_top_left){
@@ -841,6 +844,24 @@ void kPanel::delete_button(QWidget* button){
   }
 }
 
+/* [KDE1 Revival 2026] 屏幕真实尺寸——实现（5W1H 见 kpanel.h 声明处）
+ * How  : XGetGeometry 直查根窗；查询失败（理论上仅根窗已销毁时）
+ *        才回退 desktop() 缓存，保证任何路径都有可用尺寸 */
+void kpanel_screen_size( int *w, int *h )
+{
+    Window root_ret;
+    int x_ret, y_ret;
+    unsigned int rw, rh, border, depth;
+    if ( XGetGeometry( qt_xdisplay(), qt_xrootwin(), &root_ret,
+		       &x_ret, &y_ret, &rw, &rh, &border, &depth ) ) {
+	*w = (int) rw;
+	*h = (int) rh;
+    } else {
+	*w = QApplication::desktop()->width();
+	*h = QApplication::desktop()->height();
+    }
+}
+
 void kPanel::cleanup(){
      int i;
      Window *w;
@@ -878,10 +899,13 @@ void kPanel::showSystem(){
 void kPanel::tipTimerDone(){
   info_label->move(QCursor::pos().x()+6, QCursor::pos().y()+16);
   // make sure it is visible
-  if (info_label->y() + info_label->height() > QApplication::desktop()->height())
+  /* [KDE1 Revival 2026] 屏幕真值钳位（XGetGeometry），原因见 kpanel.h */
+  int tip_screen_w, tip_screen_h;
+  kpanel_screen_size( &tip_screen_w, &tip_screen_h );
+  if (info_label->y() + info_label->height() > tip_screen_h)
     info_label->move(info_label->x(),
 		     QCursor::pos().y()-16 - info_label->height());
-  if (info_label->x() + info_label->width() > QApplication::desktop()->width())
+  if (info_label->x() + info_label->width() > tip_screen_w)
     info_label->move(QCursor::pos().x()-6 - info_label->width(),
 		     info_label->y());
 
@@ -922,7 +946,9 @@ void kPanel::showMiniPanel ()
 
   int mh = taskbar_height;
 
-  int h = QApplication::desktop()->height();
+  /* [KDE1 Revival 2026] 屏幕真值（XGetGeometry），原因见 kpanel.h */
+  int mini_screen_w, h;
+  kpanel_screen_size( &mini_screen_w, &h );
 
   if (miniPanelHidden) {
 

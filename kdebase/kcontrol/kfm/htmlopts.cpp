@@ -154,6 +154,10 @@ void KFontOptions::getFontList( QStrList &list, const char *pattern )
     // │  When : KFontOptions 构造时一次性枚举
     // │  How  : fontconfig 全量字族 → strchr(pattern,'m') 判定等宽需求 →
     // │        advance 判定过滤 → 过滤 open look → 去重入表
+    // │  [2026-09-01 修复] QStrList 须存 UTF-8 字节：原 font.latin1() 把
+    // │        非 ASCII 字族名（Noto CJK 本地化名等）打成 '?'，下拉列表
+    // │        显示"?????"。codecForCStrings=UTF-8 下 utf8() 字节无损
+    // │        往返，QComboBox 取回时按 UTF-8 解码还原。
     // └───────────────────────────────────────────────────────────────────
     bool want_fixed = ( strchr( pattern, 'm' ) != NULL );
     TQFontDatabase db;
@@ -169,9 +173,9 @@ void KFontOptions::getFontList( QStrList &list, const char *pattern )
         TQString font = *it;
         if ( font.find( "open look", 0, false ) >= 0 )
             continue;
-        if ( list.find( font.latin1() ) != -1 )
+        if ( list.find( font.utf8() ) != -1 )
             continue;
-        list.append( font.latin1() );
+        list.append( font.utf8() );
     }
 }
 

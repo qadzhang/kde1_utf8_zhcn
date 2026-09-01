@@ -214,6 +214,12 @@ void KFontChooser::getFontList( QStrList &list, bool fixed )
 	// │        2. fixed=true 时仅保留 i/M/W advance 相等的字族
 	// │        3. kdefonts 自定义清单存在且非空 → 与其取交（仅显示既有
 	// │           又可用的字族），否则返回全量
+	// │  [2026-09-01 修复] QStrList 须存 UTF-8 字节：原先 font.latin1()
+	// │        把非 ASCII 字族名（Noto CJK 的本地化名等）逐字符打成 '?'，
+	// │        下拉列表遂显示一排"?????"（用户 2026-09-01 截图实测）。
+	// │        全局 codecForCStrings=UTF-8 下 QString(const char*) 按
+	// │        UTF-8 解码，utf8() 字节入表可无损往返；行 80 的
+	// │        strcmp(fnt.family(), …) 两侧同为 UTF-8，比较依然成立。
 	// └───────────────────────────────────────────────────────────────────
 	QStrList lstSys;
 	{
@@ -230,9 +236,9 @@ void KFontChooser::getFontList( QStrList &list, bool fixed )
 			TQString font = *it;
 			if ( font.find( "open look", 0, false ) >= 0 )
 				continue;
-			if ( lstSys.find( font.latin1() ) != -1 )
+			if ( lstSys.find( font.utf8() ) != -1 )
 				continue;
-			lstSys.inSort( font.latin1() );
+			lstSys.inSort( font.utf8() );
 		}
 	}
 

@@ -327,8 +327,10 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     QPushButton* tmp_push_button = 0;
     QButton* tmp_button = 0;
-    int w = QApplication::desktop()->width();
-    int h = QApplication::desktop()->height();
+    /* [KDE1 Revival 2026] 布局用屏幕真值（XGetGeometry），弃用 desktop()
+       缓存——分辨率热变更后缓存永不过期，致面板按旧尺寸布局 */
+    int w, h;
+    kpanel_screen_size( &w, &h );
 
 
     label_date = new QLabel(this);
@@ -411,12 +413,23 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     // [KDE1 Revival 2026] 曾试验登记 KWM_DOCKWINDOW（setDockWindow）求贴边，
     // 与主面板同批回退——dock 化后任务栏整体消失，机理待查（见 main.C 标注）。
+    // [2026-09-01] 任务栏/面板被 kwm 加框摆位的间歇性回归根治：向 kwm 声明
+    // KWM_WIN_DECORATION=noDecoration（KDE1 原生协议，客户自声明优先于
+    // kwm 默认，启动期初始扫描与 MapRequest 两条管理路径都会读取）。
+    // 背景机理：TaskbarPosition=top 时任务栏是独立顶层窗，会话启动若
+    // 其映射早于 kwm 初始窗口扫描，会被当成普通客户加框+挪位（用户
+    // 报障"任务栏没有修复"的实锤形态之一；实测偶发，沙箱两次启动
+    // 一次复现）。winId() 强制先行创建 X 窗口，保证任何扫描/映射前
+    // 属性已在窗口上。
+    KWM::setDecoration( taskbar_frame->winId(), KWM::noDecoration );
 
     connect(taskbar_frame, SIGNAL(showMe()), SLOT(showTaskbar()));
     connect(taskbar_frame, SIGNAL(hideMe()), SLOT(hideTaskbar()));
 
     info_label = new QLabel(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
     info_label->setMouseTracking(true);
+    /* [KDE1 Revival 2026] 同 taskbar_frame：向 kwm 声明无装饰，防被加框摆位 */
+    KWM::setDecoration( info_label->winId(), KWM::noDecoration );
     info_label_is_sleeping = False;
     {
       QColorGroup g( black, QColor(255,255,220),
@@ -1712,8 +1725,11 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 
    int space = 0;
 
-   int w = QApplication::desktop()->width();
-   int h = QApplication::desktop()->height();
+   /* [KDE1 Revival 2026] 屏幕真值（XGetGeometry）替代 desktop() 缓存：
+      本函数决定面板窗口自身几何与 KWM 窗口区域，若用过期缓存，热改
+      分辨率后面板重启仍按旧宽布局（用户报障的根因） */
+   int w, h;
+   kpanel_screen_size( &w, &h );
    int pw = width()+space; // panel...
    int ph = height()+space;
    int px = x();

@@ -1023,17 +1023,22 @@ void kPanel::enterEvent( QEvent *){
   }
   if (!autoHidden)
     return;
+  /* [KDE1 Revival 2026] 自动隐藏/复位的动画目标坐标改用屏幕真值
+     （XGetGeometry，见 kpanel.h kpanel_screen_size）——desktop() 缓存
+     在热改分辨率后永不过期，会把面板动画到旧屏幕边缘之外 */
+  int anim_screen_w, anim_screen_h;
+  kpanel_screen_size( &anim_screen_w, &anim_screen_h );
   if (orientation == horizontal){
     if (position == top_left)
       animateMove (this, 0,0,4*autoHideSpeed);
     else
-      animateMove(this, 0, QApplication::desktop()->height()-height(), -4*autoHideSpeed);
+      animateMove(this, 0, anim_screen_h-height(), -4*autoHideSpeed);
   }
   else {
     if (position == top_left)
       animateMove (this, 0,0, 4*autoHideSpeed);
     else
-      animateMove (this, QApplication::desktop()->width()-width(),0, -4*autoHideSpeed);
+      animateMove (this, anim_screen_w-width(),0, -4*autoHideSpeed);
 
   }
   autoHidden = false;
