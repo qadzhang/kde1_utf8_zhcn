@@ -57,6 +57,24 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 
   desktops = new KBackground [ MAX_DESKTOPS ];
 
+  /* [KDE1 Revival 2026] KDE3 kdesktop 式桌面画布：隐藏创建（等待首次
+   * 渲染完成由 bg.cpp kbg_apply_wallpaper 映射），winId() 先行建窗后
+   * 设 override_redirect（kwm 不管理）与最小事件掩码（点击穿透到
+   * 根窗——kfm 桌面图标与 krootwm 右键菜单不受影响，实测验证）。 */
+  canvas = new TQWidget( 0, "kbgndwm_canvas",
+			 WStyle_Customize | WStyle_NoBorder | WStyle_Tool );
+  canvas->setGeometry( 0, 0, last_root_w, last_root_h );
+  canvas->winId();
+  {
+    XSetWindowAttributes wa;
+    wa.override_redirect = True;
+    wa.event_mask = ExposureMask | StructureNotifyMask;
+    XChangeWindowAttributes( qt_xdisplay(), canvas->winId(),
+			     CWOverrideRedirect | CWEventMask, &wa );
+  }
+  for ( int i = 0; i < MAX_DESKTOPS; i++ )
+    desktops[i].setOwnerCanvas( canvas );
+
   for ( int i = 0; i < MAX_DESKTOPS; i++ )
     desktops[i].readSettings( i, oneDesktopMode, desktop );
 
@@ -105,13 +123,6 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 	   this, SLOT( slotDropEvent( KDNDDropZone *) ) );
 
   applyDesktop( current );
-
-  /* [KDE1 Revival 2026] 画布方案已拆除（2026-09-01 真实 Xorg 实测推翻）：
-   * 全屏 OR 画布在 vboxvideo 真机会话中把根窗盖黑（Qt/X 双层背景在
-   * 该环境下填充失效），且 timerEvent 的画布同步在背景 pixmap 替换后
-   * 引用悬垂句柄导致段错误。1999 年的根窗背景机制（XSetWindowBackground
-   * Pixmap + 服务器端暴露填充）在真实 Xorg 上实测完好——本模块回归
-   * 纯根背景方案，仅保留分辨率热变更时的重渲染与全屏重铺。 */
 
   QString command;
   if ( oneDesktopMode )
@@ -262,6 +273,13 @@ void KBGndManager::timerEvent( QTimerEvent * )
    * 必须显式 Clear 才能用新背景填充整个根窗；期间旧背景（平铺态）短暂
    * 可见属正常过渡，无黑屏。 */
   QPixmapCache::clear();
+  if ( canvas && canvas->isVisible() ) {
+    /* [KDE1 Revival 2026] 先把画布拉到新尺寸并立即 repaint：erase-pixmap
+     * 仍是旧壁纸（服务端平铺填充边缘），画面不断档；精渲染完成后由
+     * kbg_apply_wallpaper 推送新 erase-pixmap 并 repaint 换新 */
+    canvas->setGeometry( 0, 0, last_root_w, last_root_h );
+    canvas->repaint();
+  }
   applyDesktop( current );
   XClearArea( qt_xdisplay(), qt_xrootwin(),
 	      0, 0, 0, 0,  /* 0 宽高 = 整窗 */

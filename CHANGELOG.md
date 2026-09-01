@@ -2,6 +2,12 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-09-02（第七批：按用户指令移植 KDE3 kdesktop 画布配方——背景/菜单/刷新三症根治 + XIM 崩溃窗口消除）
+
+- **方法论**：Xvfb 沙箱与真机 Xorg 测试床均无法复现用户报障（同操作全绿），唯一硬差异是用户 lightdm 会话登录时的段错误风暴（journal 实锤：kcmdisplay 于 libX11 段错误 + 11 个被限流同类）。按用户指令拉取 KDE3 血统的 Trinity kdesktop 源码（bgmanager.cpp）对照移植。
+- **KDE3 kdesktop 配方移植（"兼容层"）**：TDE 源码证实桌面画面由 kdesktop 自有全屏窗口承载：`m_pDesktop->setErasePixmap(*ep); m_pDesktop->repaint();`——而非依赖根窗的服务端背景填充（vmware 类驱动上不可靠）。kbgndwm 据此重写画布：① bg.cpp 五处上屏点统一经 kbg_apply_wallpaper()：根窗背景照设（kfm 透明等消费方），同时设画布 erase-pixmap 并立即 repaint；② 画布隐藏创建（override_redirect、仅 Exposure|StructureNotify——点击穿透实测正常），首次渲染完成时映射并 XLowerWindow 压底；③ 延迟渲染（startTimer(0)）的落点直接推送画布——根除上一版轮询式同步在 pixmap 替换瞬间的悬垂指针崩溃（此前真机 gdb 实锤段错误点）；④ 分辨率变化画布先行 resize+repaint 保持画面连续，精渲染完成后换新。真机 Xorg（vmware 驱动、用户 5120x2880 原图）全套验收：全新会话画布可见承载壁纸、右键菜单点击穿透、刷新桌面零黑屏、K 菜单开合零残留、xrandr 热改分辨率往返画面连续。上一版 setBackgroundPixmap 画布在同测试床整屏黑——erase-pixmap+repaint 配方即差异所在。
+- **XIM 崩溃窗口消除（startkde 包装）**：原脚本导出 XMODIFIERS=@im=fcitx 后 sleep 4 才启动 fcitx5——登录进程在 libX11 段错误的风暴期与此窗口精确重合（kcmdisplay 崩溃时间 = 登录瞬间，fcitx5 +4s 才存在）。改为立即启动：SNI 托盘经 DBus watcher 名监听自动重试停靠（kpanel 上线即挂），无需延迟。真机全新会话验证：零新增段错误。
+
 ## 2026-09-01（第六批：真实 Xorg 实机复现推翻画布方案——壁纸/菜单/刷新三症同根根治）
 
 - **方法论升级**：Xvfb 沙箱自始至终无法复现用户报障（同操作在沙箱全绿），本批在真机上以 root 起真实 Xorg（vboxvideo 驱动）+ lightdm 同款 startkde 完整会话，终于稳定复现：**登录即整屏黑**（仅面板可见），与用户"点刷新桌面就黑掉、菜单残留"同源。

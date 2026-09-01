@@ -63,6 +63,13 @@ protected:
   virtual void timerEvent( QTimerEvent * );
   int last_root_w, last_root_h;
 
+  /* [KDE1 Revival 2026] KDE3 kdesktop 式全屏桌面画布（兼容层）。
+   * 创建于构造器（隐藏、override_redirect、仅暴露/结构事件——
+   * 点击穿透到根窗，kfm 图标/krootwm 菜单不受影响）；首次渲染
+   * 完成时由 bg.cpp kbg_apply_wallpaper 映射并压底。画面承载者，
+   * 与根窗服务端填充语义解耦（详见 bg.cpp 的 5W1H）。 */
+  TQWidget *canvas;
+
 public slots:
   void desktopChange( int );
   void commandReceived( QString );

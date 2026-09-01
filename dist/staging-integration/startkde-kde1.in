@@ -35,8 +35,12 @@ export LD_LIBRARY_PATH="$KDE1_PREFIX/lib:$KDE1_PREFIX/tqt3/lib${LD_LIBRARY_PATH:
 #   （经其 IPC 优雅替换，属 fcitx5 官方设计用法，非修改现代软件）。
 # 后台子壳等 kpanel 就绪再拉起；XMODIFIERS 已先导出不受影响。
 export XMODIFIERS=@im=fcitx
+# [2026-09-02] 立即启动（原 sleep 4 延迟）：① 消除 XMODIFIERS 已导出而
+# 输入法尚不存在的窗口期——真机会话实测该窗口期内登录进程在 libX11
+# 段错误（journal 记录 kcmdisplay + 11 个被限流的同类崩溃）；② 托盘
+# 停靠本就无需等待：fcitx5 的 SNI 客户端经 DBus NameOwnerChanged 监听
+# watcher 上线，kpanel 的 org.kde.StatusNotifierWatcher 就绪后自动挂载。
 (
-    sleep 4
     if command -v fcitx5 >/dev/null 2>&1; then
         fcitx5 -r -d >/dev/null 2>&1 &
     elif command -v fcitx >/dev/null 2>&1; then

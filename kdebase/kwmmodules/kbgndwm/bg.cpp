@@ -304,6 +304,61 @@ void KBackground::doRandomize(bool fromTimer)
  * │  How  : XGetGeometry( qt_xdisplay(), qt_xrootwin() )；失败才回退
  * │        desktop() 缓存
  * └────────────────────────────────────────────────────────────── */
+/* [KDE1 Revival 2026] KDE3/TDE kdesktop 配方的桌面画布（"兼容层"）
+ * ┌─ What : 全部壁纸上屏点统一经此助手：根窗背景照旧设置（kfm 透明等
+ * │        消费方仍读根窗），同时把渲染结果设为画布的 erase-pixmap
+ * │        并立即 repaint——画面实际由 kbgndwm 的全屏画布窗承载
+ * │  Why  : 参照 KDE3 kdesktop bgmanager.cpp 的 setPixmap()：
+ * │            m_pDesktop->setErasePixmap(*ep); m_pDesktop->repaint();
+ * │        服务端根窗背景填充在 vmware 类驱动/DM 残留状态下不可靠
+ * │        （用户实测刷新桌面黑屏、菜单关闭残留；真机 Xorg 复现），
+ * │        kdesktop 自 KDE2 起改用自有桌面窗 + erase-pixmap + 显式
+ * │        重绘承载画面。erase-pixmap 与 repaint 的组合保证映射/
+ * │        暴露时由本进程在场控制的重绘立即生效，与驱动实现解耦。
+ * │  Who  : KBackground::apply() 各分支与延迟渲染 timerEvent
+ * │  When : 每次渲染结果产生时（含 startTimer(0) 延迟路径——这是
+ * │        此前画布同步悬垂崩溃的根源：轮询式读取桌面背景在 pixmap
+ * │        替换瞬间踩已释放对象；改为渲染落点直接推送，零竞态）
+ * │  Where: bg.cpp 文件局部
+ * │  How  : setErasePixmap(pm) + repaint()；首次上屏时映射画布并
+ * │        XLowerWindow 压底（画布属性 override_redirect/输入透明
+ * │        在 kbgndwm.cpp 创建时已就位）
+ * └────────────────────────────────────────────────────────────── */
+static TQWidget *kbg_canvas_owner = 0;
+
+void KBackground::setOwnerCanvas( TQWidget *c )
+{
+  kbg_canvas_owner = c;
+}
+
+static void kbg_apply_wallpaper( const TQPixmap &pm )
+{
+  qApp->desktop()->setBackgroundPixmap( pm );
+  if ( kbg_canvas_owner ) {
+    if ( !kbg_canvas_owner->isVisible() ) {
+      kbg_canvas_owner->show();
+      XLowerWindow( qt_xdisplay(), kbg_canvas_owner->winId() );
+      XFlush( qt_xdisplay() );
+    }
+    kbg_canvas_owner->setErasePixmap( pm );
+    kbg_canvas_owner->repaint();
+  }
+}
+
+static void kbg_apply_wallpaper_color( const TQColor &c )
+{
+  qApp->desktop()->setBackgroundColor( c );
+  if ( kbg_canvas_owner ) {
+    if ( !kbg_canvas_owner->isVisible() ) {
+      kbg_canvas_owner->show();
+      XLowerWindow( qt_xdisplay(), kbg_canvas_owner->winId() );
+      XFlush( qt_xdisplay() );
+    }
+    kbg_canvas_owner->setBackgroundColor( c );
+    kbg_canvas_owner->repaint();
+  }
+}
+
 static void kbg_root_size( int *w, int *h )
 {
     Window root_ret;
@@ -354,7 +409,7 @@ void KBackground::apply()
   if ( bgPixmap )
     {
       //      tqDebug( "Desktop background found in cache" );
-      qApp->desktop()->setBackgroundPixmap( *bgPixmap );
+      kbg_apply_wallpaper( *bgPixmap );
       setPixmapProperty( bgPixmap );
       bgPixmap = 0;
       applied = true;
@@ -406,7 +461,7 @@ void KBackground::apply()
 		
 	if (! wpPixmap ) {
 
-	  qApp->desktop()->setBackgroundPixmap(pmDesktop);
+	  kbg_apply_wallpaper(pmDesktop);
           setPixmapProperty( &pmDesktop );
 	  *bgPixmap = pmDesktop;
 
@@ -438,7 +493,7 @@ void KBackground::apply()
 	bgPixmap = new QPixmap(w, h);
 	bgPixmap->fill( color1 );
       } else {
-	qApp->desktop()->setBackgroundColor( color1 );
+	kbg_apply_wallpaper_color( color1 );
 	applied = true;
       }
       break;
@@ -466,7 +521,7 @@ void KBackground::apply()
 	bgPixmap = new QPixmap();
 
 	if (! wpPixmap ) {
-	  qApp->desktop()->setBackgroundPixmap(tile);
+	  kbg_apply_wallpaper(tile);
           setPixmapProperty( &pmDesktop );
 	  *bgPixmap = tile;
 	  applied = true;
@@ -754,7 +809,7 @@ void KBackground::timerEvent( QTimerEvent * )
   if ( !bgPixmap )
     return;
 
-  qApp->desktop()->setBackgroundPixmap( *bgPixmap );
+  kbg_apply_wallpaper( *bgPixmap );
   setPixmapProperty( bgPixmap );
   delete bgPixmap;
   bgPixmap = 0;

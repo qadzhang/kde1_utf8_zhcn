@@ -30,6 +30,10 @@ public:
   // cancel an apply which has not yet been completed
   void cancel();
   void readSettings( int num, bool one, int desknum );
+  /* [KDE1 Revival 2026] KDE3 kdesktop 式桌面画布宿主：渲染结果除设根窗
+   * 背景外同步设画布 erase-pixmap 并立即 repaint（画面由画布承载，
+   * 不依赖根窗的服务端填充语义——vmware 类驱动上后者不可靠） */
+  void setOwnerCanvas( TQWidget *c );
 
   const QString &getName() const
     { return name; }
@@ -47,6 +51,9 @@ public:
   void setImmediately( const char* _wallpaper, int mode );
 
     void doRandomize(bool fromTimer = FALSE);
+private:
+  TQWidget *kbg_canvas;
+
 public slots:
   void randomize();
 
