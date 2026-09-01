@@ -22,6 +22,7 @@ kfontmanager.gmo
 kikbd.gmo
 klock.gmo
 kmenuedit.gmo
+kthememgr.gmo
 konsole.gmo
 kpager.gmo
 kpanel.gmo

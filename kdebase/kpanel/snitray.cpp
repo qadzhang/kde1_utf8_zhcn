@@ -1028,12 +1028,15 @@ int SNITray::menuFill(TQPopupMenu *pop, const char *service,
         pop->insertSeparator();
         inserted = 1;
     } else if (label[0] || iconname) {
-        /* '_' 助记符转 '&'（两套助记约定） */
-        QString text;
-        for (char *p = label; *p; p++) {
-            if (*p == '_') text += '&';
-            else text += *p;
-        }
+        /* [2026-09-01] 字符集修复：label 是 DBus 的 UTF-8 串，原先逐
+         * 字节 text += *p 会把多字节序列的每个字节当独立 Latin-1 码位
+         * （中文"拼"=3 字节变 3 个假字符→菜单显示为方块）。现按
+         * fromUtf8 整串解码后再做助记符转换；DBusMenu 约定 "__" 转义
+         * 为字面 '_'，先占位再替换防连锁。 */
+        QString text = TQString::fromUtf8( label );
+        text.replace( TQString("__"), TQString(QChar(1)) );
+        text.replace( TQString("_"), TQString("&") );
+        text.replace( TQString(QChar(1)), TQString("_") );
         int iid;
         if (iconname && *iconname) {
             QString file = sniFindIconFile(iconname);

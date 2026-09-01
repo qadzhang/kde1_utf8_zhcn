@@ -14,6 +14,7 @@
 #ifdef HAVE_LIBJPEG
 
 #include<stdio.h>
+#include<stdlib.h> /* [KDE1 Revival 2026] malloc/free（JPEG 写实现） */
 #include<assert.h>
 #include<sys/types.h>
 
@@ -69,13 +70,68 @@ typedef struct {
 
 /////////////////////
 //
-// No JPEG save support yet
+// [KDE1 Revival 2026] JPEG 写实现（原为空桩："No JPEG save support
+// yet"——桩被注册为 "JPEG" 格式处理器后，ksnapshot 等一切经 kimgio
+// 的 JPEG 保存都是"文件已建、零字节写入、返回失败"。改用 Debian 12
+// 现行 libjpeg 压缩 API 真实现：jpeg_create_compress 三板斧，质量
+// 固定 75（与主流截图工具默认一致），逐行 RGB 喂扫描线。
 //
 
-void kimgio_jpeg_write(QImageIO *)
+void kimgio_jpeg_write(QImageIO * iio)
 {
-    fprintf(stderr, "JPEG saving unimplemented.\n");
-    return;
+    QImage img = iio->image();
+    if ( img.isNull() ) {
+	iio->setStatus( 1 );
+	return;
+    }
+
+    FILE *outfile = fopen( iio->fileName(), "wb" );
+    if ( !outfile ) {
+	iio->setStatus( 1 );
+	return;
+    }
+
+    struct jpeg_compress_struct cinfo;
+    struct jpeg_error_mgr jerr;
+
+    cinfo.err = jpeg_std_error( &jerr );
+    jpeg_create_compress( &cinfo );
+    jpeg_stdio_dest( &cinfo, outfile );
+
+    cinfo.image_width      = img.width();
+    cinfo.image_height     = img.height();
+    cinfo.input_components = 3;
+    cinfo.in_color_space   = JCS_RGB;
+
+    jpeg_set_defaults( &cinfo );
+    jpeg_set_quality( &cinfo, 75, TRUE );
+    jpeg_start_compress( &cinfo, TRUE );
+
+    int w = img.width();
+    JSAMPLE *row = (JSAMPLE *) malloc( (size_t) w * 3 );
+    if ( !row ) {
+	jpeg_destroy_compress( &cinfo );
+	fclose( outfile );
+	iio->setStatus( 1 );
+	return;
+    }
+
+    while ( cinfo.next_scanline < cinfo.image_height ) {
+	const QRgb *src = (const QRgb *) img.scanLine( cinfo.next_scanline );
+	for ( int x = 0; x < w; x++ ) {
+	    row[ x * 3 + 0 ] = qRed( src[x] );
+	    row[ x * 3 + 1 ] = qGreen( src[x] );
+	    row[ x * 3 + 2 ] = qBlue( src[x] );
+	}
+	JSAMPROW rp = row;
+	jpeg_write_scanlines( &cinfo, &rp, 1 );
+    }
+
+    free( row );
+    jpeg_finish_compress( &cinfo );
+    jpeg_destroy_compress( &cinfo );
+    fclose( outfile );
+    iio->setStatus( 0 );
 }
 
 

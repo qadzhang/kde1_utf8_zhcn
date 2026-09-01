@@ -2,6 +2,13 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-09-01（第四批：真机会话复检四项——壁纸画布化、ksnapshot 可保存、fcitx 菜单字符集、主题管理器汉化）
+
+- **壁纸/桌面背景架构升级为全屏画布（对齐 Trinity kdesktop 的桌面窗口方案，上网调研确认）**：1999 年 kbgndwm 只设一次根窗背景，暴露填充语义脆弱（动态分辨率/驱动差异下出现大片黑区与错位斑块，真机截图实测）。kbgndwm 现创建覆盖全屏的 override-redirect 画布窗：壁纸渲染结果同时设为画布与根窗的背景（双份兜底），暴露区由 X 服务器按画布自身背景属性填充；画布不选按钮事件掩码，点击全部穿透到根窗（krootwm 桌面菜单实测不受影响）；映射后 XLowerWindow 压底。连带修复画布首启灰屏（KBackground::apply 对图片壁纸走 startTimer(0) 延迟渲染，画布同步必须在事件循环后补齐——timerEvent 每 tick 无条件同步画布的 Qt/X 双层背景）。Xvfb 无法运行中改分辨率，已用 1920x976 全新会话+点击穿透+kpanel:restart 验证；真机中途改分辨率场景留待用户复检。
+- **ksnapshot 无法保存根治（kdelibs/kimgio 的 JPEG 写是 1999 年空桩）**：`kdelibs/kimgio/jpeg.cpp` 的 `kimgio_jpeg_write` 仅 fprintf 后返回——libkimgio 把它注册为 "JPEG" 格式处理器后覆盖 Qt 内置编码器，ksnapshot 保存 JPEG 必然"文件已建、零字节、返回失败"（沙箱复现 0 字节文件；独立测试证明 Qt 内置 JPEG 编码正常）。改用现行 libjpeg 压缩 API 真实现（质量 75）。另给 ksnapshot 格式表补入 PNG（Qt/kimgio 均为真实现，无损截图首选）。
+- **fcitx 托盘指示器菜单字符集（方块）修复**：SNITray::menuFill 用 `text += *p` 逐字节构造标签——UTF-8 多字节序列每字节被当独立 Latin-1 码位（中文全部变方块）。改 `TQString::fromUtf8` 整串解码，DBusMenu 助记符按约定 "__"→"_" 转义后 "_"→"&"。
+- **主题管理器全页汉化**：kcontrol/themes 模块（kthememgr）此前**没有任何中文 po**——新增 `kthememgr.po`（106 条全译，术语对齐 KDE6 zh_CN），注册进 zh_CN po 构建；`kthememgr.kdelnk` 补 Name/Comment 中文字段（模块树显示"主题管理器"）。沙箱实测：标题/选项卡（安装器/内容/关于）/按钮（添加/保存/另存为/创建/删除/确定/应用/取消）全部中文。
+
 ## 2026-09-01（第三批：用户三项复现报障根治——任务栏宽度截断、字体清单问号、桌面壁纸"背影"）
 
 - **任务栏/面板宽度截断（改分辨率后永远停在旧宽度）三层根治**：① kwm 的伪会话代理重放——kwmrc `proxyprops=` 持久化了旧分辨率会话的面板几何，kwm manage() 匹配 WM_COMMAND 后无条件重放，把面板窗口强改回旧尺寸（xtrace 协议抓包 + 删除该行实测坐实：1920 屏面板被钉死 1280x45@915，删除即 1920x45@0,931）；修复为 **USPosition 窗口跳过几何重放**（应用明确声明位置的场景，尊重应用；命中条目仍消费以自净），getWMNormalHints 相应提前。② kpanel 全部布局尺寸改经 `kpanel_screen_size()`（XGetGeometry 直查根窗真值）——TQt3 `-no-xrandr` 下 `QApplication::desktop()` 宽高为构造期一次性缓存（qdesktopwidget_x11.cpp `d->rects`），热改分辨率后永不过期，轮询自愈重启后面板仍按旧宽布局。③ kpanel 面板/任务栏/tooltip 三个 chrome 顶层窗声明 `KWM_WIN_DECORATION=noDecoration`（KDE1 原生协议），杜绝会话启动竞态下被 kwm 加框+智能摆位（复现过一次：任务栏被框成 "kpanel<2>" 推离屏幕顶缘）。沙箱三连重启 + 投毒 kwmrc 回归 + `kpanel:restart` 重启链全部验收通过；1920x976 场景面板/任务栏满宽贴边。

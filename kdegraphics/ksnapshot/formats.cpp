@@ -16,6 +16,16 @@ static FormatRecord formatlist[]= {
     0, 0,
   }, 
   {
+    // [KDE1 Revival 2026] PNG：Qt3 内置与 kimgio 的 PNG 读写均为真实现，
+    // 截图无损格式首选（原格式表没有 PNG，只能选 JPEG/GIF）
+    "PNG",
+    FormatRecord::InternalFormat | FormatRecord::ReadFormat | FormatRecord::WriteFormat,
+    "^.PNG",
+    "*.png",
+    "png",
+    0, 0,
+  },
+  {
     // [KDE1 Revival 2026] GIF 改走 TQt3 内置编解码（003 补丁已启用；原
     // 自定义注册把读 handler 置空，反而废掉了内置 GIF 读取）
     "GIF",
