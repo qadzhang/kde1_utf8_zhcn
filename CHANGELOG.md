@@ -2,6 +2,21 @@
 
 > 本文件是全项目**唯一**允许记录修改历史的地方。条目新的在最上，一次工作对应一条。其余所有文档（agent.md、README.md 等）禁止出现过程性/日志式内容，只保留当前最终状态。
 
+## 2026-09-01（第二批：用户八项报障底层根治——Qt1→Qt3 语义差异全项目清剿 + 托盘交互补全）
+
+- **问题6 窗口激活不置顶（层级永远等于打开顺序）根治**：kwm 的 raiseClient 把 top_windows（dock 窗名单）直接拼进 XRestackWindows 数组——kpanel 把 kbgndwm/kwmsound 图标嵌入面板后这些窗不再是根子窗且永不销毁，残留名单使 X 协议的兄弟窗校验失败、**全体置顶操作静默失效**（gdb 断点实证 raiseClient 已执行而堆叠不变；XRestackWindows 数组序语义经实验确认为自顶向下）。三层修复：reparentNotify 维护 top_windows（嵌入面板即移出、返回根即恢复）+ raiseClient 组数组时防御性过滤非根子窗 + 实测验证（点 kfm 标题栏 550ms 内从底层升顶、Alt+Tab/点击激活全链恢复）。
+- **问题4 kedit 滚轮滚动内容逐格消失/载入正文空白——Qt1→Qt3 视口事件路由断裂（本轮最大根因）**：KEdit 覆写 eventFilter 直接 return FALSE，**遮蔽了 TQScrollView::eventFilter**——TQt3 中它是视口（viewport）全部事件（重绘/鼠标/滚轮）的总路由，被遮蔽即全部静默丢弃：载入后正文永不绘制（空白）、滚轮滚动暴露带不重绘（内容逐格消失）、鼠标选择失灵。Qt1 的 QTableView 家族无此路由，1999 年的覆写才无害。实证链条：kedit 载入 148 行文档不显示→输入单字符仅显示该字符→构造最小复现器二分（裸 TQMultiLineEdit 正常/子类化即坏/子类+基类转发的 eventFilter 即好）→锁定遮蔽。修复：eventFilter 交回基类（kdeutils/kdelibs 两份 KEdit + kfind 的 MyQListBox 同族同修）。
+- **问题4 续：repaint/viewport 语义断裂全项目清剿**：Qt1 的 QTableView 家族内容画在自己身上（repaint() 即全量重绘），TQt3 起画在 viewport() 子窗（对部件本体 repaint() 只重绘画框）。q1compat.h 新增公共助手 kde1_full_repaint（视口类部件先 viewport()->repaint() 再画框），全项目审计替换 18 处：knotes 便笺载入、kjots 编辑器与主题列表、kfind 结果列表、klpq 状态列表、ktop 进程表、ksirc 主窗、themes 安装器列表、kedit/kdelibs-KEdit 的 repaintAll 与载入收尾。
+- **问题4 续：kedit 配置字族校验**：历史 keditrc 存有损坏字族名（UTF-8 替换符开头乱码），fontconfig 无匹配时 TQt3 静默回退度量异常的兜底字体、正文被巨型字形铺成全黑——readSettings 增加 QFontInfo 实际字族与请求字族一致性校验，不一致回退默认族。另 kedit 增加 wheelEvent 接管（按行滚动+内容区同步全量重绘）。
+- **问题3/5 图标遮挡变黑/显示底层三重根治**：① tqt3-patches 新增 **004**——弹出菜单与工具窗不再请求 X11 save-under（X.Org 官方声明 save-under/backing-store 从非保证且有实现缺陷、现代工具链已弃用；实验实证本机 server 在 OR 窗卸载后暴露区填黑）；② kfm 桌面图标窗改 NoBackground（默认黑背景像素是"变黑"的直接来源，paintEvent 本就全量重绘无需衬底）+ XShape 空掩码防护；③ **kfm IPC use-after-free 根治**——kpanel 每次 K 菜单点击即断开 IPC，kfm 端在模态错误框的嵌套事件循环里 closeEvent→delete this 释放仍在调用栈上的对象（kfm 崩溃/半死→图标永不重绘→一切遮挡黑块滞留、菜单全失效的统一根源）——kfmserver_ipc/kioserver_ipc/kfmclient_ipc 共 15 处 delete this 改 deleteLater。
+- **问题1 现代 XDG 菜单应用无法启动 + 之后全部菜单失效根治**：四重叠加——① gen-xdg-apps.py 生成的 kdelnk 缺 `Type=Application`（kfm 按 Type 分派，缺失走错误框不启动）已补；② 上述 IPC use-after-free（点一次 Modern 条目→弹错→kfm 崩→此后 KFM::init 探测不到 kfm→所有菜单静默无效）已修；③ KFM::init 自愈——kfm 未运行时自动后台拉起 kfm -d（$KDEDIR/bin 解析绝对路径）+3 秒短轮询，替换 1999 年 allowRestart 门控+sleep(10) 的死代码阻塞路径；magic 文件异常改 stderr 告警不再模态弹窗；④ kbind 占位符补 %F/%U（现代 desktop 条目普遍携带，原样透传成为字面参数）。实测 kfmclient exec Modern/uxterm 条目：uxterm 启动、kfm 存活。
+- **问题2 面板浮空/宽度截断/指示区消失根治**：TQt3 以 -no-xrandr 构建，Qt 的屏幕宽高永不过期更新——面板 1999 年只在构造时按当时屏幕布局一次，VMware 动态改分辨率后即浮空错位（实测面板按旧屏 1288 宽摆放、新屏 1920）。修复：kpanel 增 2 秒周期 XGetGeometry 直查根窗几何，变化即整面板 restart 重建（复用既有重启路径，托盘/任务栏状态自恢复）；kwm 全部 32 处 QApplication::desktop() 取值改为 XGetGeometry 实时助手（kwmScreenGeometry，200ms 缓存+根窗 ConfigureNotify 失效），分辨率热变更下钳制/最大化/摆位/Alt+Tab 全部即时正确。
+- **问题7 控制中心字体页看不到系统字体根治**：fontchooser.cpp 与 htmlopts.cpp 的字体枚举仍走 1999 年 XListFonts（XLFD）——现代 fontconfig 字体（Noto CJK 等）完全不在其列。改 TQFontDatabase::families()（等宽判定用 i/M/W advance 相等法，对齐 kfontdialog/konsole 先例），死代码 XLFD 版一并退役。实测字体下拉 20+ 字族。
+- **问题8 kpaint 工具栏乱色块根治**：CMake 化时遗漏 toolpics 的安装规则（Makefile.am 有、CMakeLists 无）——line/rectangle/spraycan 等 16 个工具 XPM 从未进包，运行期 new QPixmap(空路径) 得空图。补安装规则 + text.cpp 的 largetext.xpm 路径修正（原指从未安装的全局 toolbar 文件，改 kpaint/toolbar 并从 kdvi/pix 安装该文件）。
+- **fcitx5 托盘"看得见点不着"+白框底图根治**：① 白框——SNI 图标窗默认白底像素 + symbolic 图标透明像素直接落屏（RGB 残值为白），渲染前按 alpha 把前景合成到面板底色、空窗底色改面板灰；② 右键无反应——fcitx5 的菜单走 com.canonical.dbusmenu 协议（调 ContextMenu 方法毫无反应），kpanel 实现**最小 DBusMenu 代理**：查 Menu 属性→AboutToShow→GetLayout 递归渲染 TQPopupMenu（label/type/icon-name/enabled/toggle/separator/子菜单，VARIANT 包 STRUCT 双层 recurse——单层即触发 libdbus 断言 abort，实测修复）→条目点击回发 Event(clicked)。实测：右键弹出 fcitx5 七项中文菜单、点击有响应、kpanel 全程稳定。
+- **Qt1→Qt3 视口鼠标事件路由族修复**：官方 porting 指引确认 Qt2 起视口事件改走 viewportXxxEvent——ktop 进程表右键杀进程菜单、ksirc 聊天文本拖选（两处列表）、kfm 目录列表双击导航共 4 类覆写静默失效，全部改 viewport* 处理器。
+- 全量重编 tqt3（含 004 补丁）+六模块并刷新 staging；沙箱回归逐项通过（置顶/滚轮/菜单启动/托盘右键/字体页/kpaint 图标）；重打包 7 deb + sdeb。
+
 ## 2026-09-01（用户八项报障根治 + minelnk 关联大修 + ai-code-testing 全项目二次排查 + 现代 XDG 应用菜单）
 
 - **问题1 颜色错误（窗口边条红黑/kfract/PNG 色错）根治**：Qt1→TQt3 字节序语义差异四处同族修复——kwm/gradientFill.C 与 ksirc/KMDIMgrBase.cpp 的渐变生成由字节级 R,G,B,X 逐字节写入改为 qRgb 值级写入；kimgio/pngr.cpp 读写双向补 `png_set_bgr`/filler(0xff)（顺带恢复被注释的调色板 PLTE 写出）、tiffr.cpp 启用 TIFFGetR 通道重组、kpixmap.cpp 的 kdither_32_to_8 INDEXOF 字节序分支交换（8bpp 潜伏）。视觉验证：标题条蓝白渐变、RGB 测试图无交换、PNG 读写往返程序 PASS。

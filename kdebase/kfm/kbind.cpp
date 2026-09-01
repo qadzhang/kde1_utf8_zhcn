@@ -1838,6 +1838,18 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     }
     
     int i;
+    // ┌─ [KDE1 Revival 2026] 补 %F/%U（多文件/多 URL 形态）占位符替换
+    // │  What : 把 Exec 串里的 %F 按单文件、%U 按单 URL 替换（与 %f/%u 同值）
+    // │  Why  : 现代 XDG desktop 条目普遍携带 %F/%U（gen-xdg-apps.py 保留），
+    // │        而 1999 年的替换表只认 %f/%u——%F/%U 会作为字面参数传给程序
+    // │        （如 mousepad 收到参数 "%U"）。KDE1 无多文件语义，退化为单值
+    // │        是最贴近原意的等价行为
+    // │  When : runAsApplication 组装命令行时（菜单启动/双击打开全走此路）
+    // └───────────────────────────────────────────────────────────────────
+    while ( ( i = exec.find( "%F" ) ) != -1 )
+	exec.replace( i, 2, f.data() );
+    while ( ( i = exec.find( "%U" ) ) != -1 )
+	exec.replace( i, 2, u.data() );
     while ( ( i = exec.find( "%f" ) ) != -1 )
 	exec.replace( i, 2, f.data() );
     while ( ( i = exec.find( "%u" ) ) != -1 )

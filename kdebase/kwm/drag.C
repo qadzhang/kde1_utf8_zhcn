@@ -217,16 +217,16 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
     y = ev.xmotion.y_root;
   }
   if (x < 1 || y < 1 ||
-      x >= QApplication::desktop()->width()-1 ||
-      y >= QApplication::desktop()->height()-1){
+      x >= kwmScreenWidth()-1 ||
+      y >= kwmScreenHeight()-1){
     Manager::DesktopDirection d;
     if (y< 1)
       d = Manager::Up;
-    else if (y >= QApplication::desktop()->height()-1)
+    else if (y >= kwmScreenHeight()-1)
       d = Manager::Down;
     else if (x< 1)
       d = Manager::Left;
-    else if (x >= QApplication::desktop()->width()-1)
+    else if (x >= kwmScreenWidth()-1)
       d = Manager::Right;
     else{
       return false;
@@ -329,8 +329,8 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 	ry = ev.xmotion.y_root;
 	// electric borders
 	if (rx < 1 || ry < 1 ||
-	    rx >= QApplication::desktop()->width()-1 ||
-	    ry >= QApplication::desktop()->height()-1)
+	    rx >= kwmScreenWidth()-1 ||
+	    ry >= kwmScreenHeight()-1)
 	  if (only_moving)
 	    do_not_clear_rectangle =
 	      electricBorder(c, options.WindowMoveType == TRANSPARENT,

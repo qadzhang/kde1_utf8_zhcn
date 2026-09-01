@@ -141,7 +141,7 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
 
 
 void Ktask::prepareToShow(QStrList* strlist, int active){
-  int w = QApplication::desktop()->width()/3;
+  int w = kwmScreenWidth()/3;
   int h = 0;
 
   QFont fnt = kapp->generalFont;
@@ -178,7 +178,7 @@ void Ktask::prepareToShow(QStrList* strlist, int active){
   label->move(w/2-label->width()/2, 15);
   h = label->geometry().bottom() + 15;
 
-  listbox->setGeometry(5, h, w-10, QApplication::desktop()->height()/2);
+  listbox->setGeometry(5, h, w-10, kwmScreenHeight()/2);
   h = listbox->geometry().bottom() + 10;
 
   button->setGeometry((w/2-w/8-w/4)/2,
@@ -192,8 +192,8 @@ void Ktask::prepareToShow(QStrList* strlist, int active){
 			     w/4, 30);
   h = button_cancel->geometry().bottom()+10;
 
-  setGeometry(QApplication::desktop()->width()/2 - w/2,
-	      QApplication::desktop()->height()/2 - h/2,
+  setGeometry(kwmScreenWidth()/2 - w/2,
+	      kwmScreenHeight()/2 - h/2,
 	      w, h);
   frame->setGeometry(0,0, w, h);
 }

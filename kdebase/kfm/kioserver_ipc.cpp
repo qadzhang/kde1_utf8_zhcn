@@ -71,7 +71,7 @@ KIOSlaveIPC::~KIOSlaveIPC()
 void KIOSlaveIPC::closeEvent( KSocket * )
 {
   // printf("CLOSE EVENT\n");
-    delete this;
+    deleteLater();
     return;
 }
 
@@ -86,7 +86,7 @@ void KIOSlaveIPC::readEvent( KSocket * )
 	  if ( errno == EINTR )
 	    goto next;
 	  fprintf( stderr, "ERROR: KIOSlaveIPC::readEvent\n");
-	  delete this;
+	  deleteLater();
 	  return;
         }
 	
@@ -99,7 +99,7 @@ void KIOSlaveIPC::readEvent( KSocket * )
 	    if ( bodyLen <= 0 )
 	    {
 		fprintf( stderr, "ERROR: Invalid header\n");
-		delete this;
+		deleteLater();
 		return;
 	    }
 	    if ( pBody != 0L )
@@ -109,7 +109,7 @@ void KIOSlaveIPC::readEvent( KSocket * )
 	else if ( cHeader + n == 10 )
 	  {
 	    fprintf( stderr, "ERROR: Too long header\n");
-	    delete this;
+	    deleteLater();
 	    return;
 	}
 	else
@@ -117,7 +117,7 @@ void KIOSlaveIPC::readEvent( KSocket * )
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
 		fprintf( stderr, "ERROR: Header must be an int\n");
-		delete this;
+		deleteLater();
 		return;
 	    }
 
@@ -133,7 +133,7 @@ next2:
       if ( errno == EINTR )
 	goto next2;
       fprintf( stderr, "ERROR: KIOSlaveIPC::readEvent\n");
-      delete this;
+      deleteLater();
       return;
     }
 

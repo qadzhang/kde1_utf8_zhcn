@@ -60,6 +60,9 @@ public:
      */
     static void setSilent(bool _silent);
 
+    // [KDE1 Revival 2026] 供文件内自愈辅助函数查询静默标志（见 kfm.cpp）
+    static bool isSilent() { return silent; };
+
     /* This function is probably what you are looking for.  It can be
      * used to download a file from an arbitrary URL (source) to a
      * temporary file on the local filesystem (target). If the argument

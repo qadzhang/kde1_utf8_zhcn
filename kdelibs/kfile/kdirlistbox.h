@@ -44,8 +44,8 @@ public:
 protected:
     virtual void highlightItem(unsigned int item);
     virtual void keyPressEvent( QKeyEvent * );
-    virtual void mousePressEvent ( QMouseEvent * );
-    virtual void mouseDoubleClickEvent ( QMouseEvent * );
+    virtual void viewportMousePressEvent ( QMouseEvent * ); /* [KDE1 Revival 2026] Qt3 视口路由 */
+    virtual void viewportMouseDoubleClickEvent ( QMouseEvent * );
     virtual void clearView();
     virtual bool insertItem(const KFileInfo *i, int index);
     bool _acceptFiles;

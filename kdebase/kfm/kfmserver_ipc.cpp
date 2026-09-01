@@ -65,7 +65,21 @@ KfmServIpc::~KfmServIpc()
 
 void KfmServIpc::closeEvent( KSocket * )
 {
-    delete this;
+    // ┌─ [KDE1 Revival 2026] delete this → deleteLater（use-after-free 根治）
+    // │  What : 客户端断开（kpanel 每次 K 菜单点击后 delete KFM 即断连）时，
+    // │        把本连接对象的销毁推迟到事件循环而非当场 delete
+    // │  Why  : parse() 内可能打开模态 QMessageBox（如 kdelnk 缺 Type= 的
+    // │        错误框）进入嵌套事件循环——此刻对端 EOF 到达，socket 通知在
+    // │        嵌套循环里触发 closeEvent，原 delete this 会把仍在
+    // │        readEvent→parse 调用栈上的对象连同其 QSocketNotifier 一并
+    // │        释放，返回栈展开即踩已释放内存（kfm 崩溃/半死，之后 K 菜单
+    // │        全部静默失效的根源）。deleteLater 由事件循环在栈展开后销毁
+    // │  Who  : 本类及其派生 KFMClient 的全部断连/协议错误路径（本文件
+    // │        readEvent 各错误分支、kioserver_ipc/kfmclient_ipc 同族同步修）
+    // │  When : 每个客户端连接的生命周期终点
+    // │  How  : 投递 DeferredDelete 事件 → 嵌套栈安全展开 → 事件循环删除
+    // └───────────────────────────────────────────────────────────────────
+    deleteLater();
     return;
 }
 
@@ -80,7 +94,7 @@ void KfmServIpc::readEvent( KSocket * )
 	  if ( errno == EINTR )
 	    goto next;
 	  fprintf( stderr, "ERROR: KIOSlaveIPC::readEvent\n");
-	  delete this;
+	  deleteLater();
 	  return;
         }
 
@@ -93,7 +107,7 @@ void KfmServIpc::readEvent( KSocket * )
 	    if ( bodyLen <= 0 )
 	    {
 		fprintf( stderr, "ERROR: Invalid header\n");
-		delete this;
+		deleteLater();
 		return;
 	    }
 	    if ( pBody != 0L )
@@ -103,7 +117,7 @@ void KfmServIpc::readEvent( KSocket * )
 	else if ( cHeader + n == 10 )
 	{
 	    fprintf( stderr, "ERROR: Too long header\n");
-	    delete this;
+	    deleteLater();
 	    return;
 	}
 	else
@@ -111,7 +125,7 @@ void KfmServIpc::readEvent( KSocket * )
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
 		fprintf( stderr, "ERROR: Header must be an int\n");
-		delete this;
+		deleteLater();
 		return;
 	    }
 
@@ -127,7 +141,7 @@ next2:
       if ( errno == EINTR )
 	goto next2;
       fprintf( stderr, "ERROR: KIOSlaveIPC::readEvent\n");
-      delete this;
+      deleteLater();
       return;
     }
 

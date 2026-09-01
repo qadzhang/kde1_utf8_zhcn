@@ -692,7 +692,7 @@ void KJotsMain::deleteFolder()
   s_bar->setRange(0,0);
   s_bar->setValue(0);
   l_folder->setText("");
-  subj_list->repaint(TRUE);
+  subj_list->repaintList(); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 void KJotsMain::saveFolder()
@@ -714,7 +714,7 @@ void KJotsMain::nextEntry()
   entrylist.at(current)->subject = le_subject->text();
   me_text->setText( entrylist.at(++current)->text );
   me_text->deselect();
-  me_text->repaint();
+  kde1_full_repaint( me_text ); /* [KDE1 Revival 2026] viewport 语义桥 */
   emit entryMoved(current);
   le_subject->setText( entrylist.at(current)->subject );
   s_bar->setValue(current);
@@ -730,7 +730,7 @@ void KJotsMain::prevEntry()
   entrylist.at(current)->subject = le_subject->text();
   me_text->setText( entrylist.at(--current)->text );
   me_text->deselect();
-  me_text->repaint();
+  kde1_full_repaint( me_text ); /* [KDE1 Revival 2026] viewport 语义桥 */
   emit entryMoved(current);
   le_subject->setText( entrylist.at(current)->subject );
   s_bar->setValue(current);
@@ -795,7 +795,7 @@ void KJotsMain::barMoved( int new_value )
   current = new_value;
   me_text->setText( entrylist.at(current)->text );
   me_text->deselect();
-  me_text->repaint();
+  kde1_full_repaint( me_text ); /* [KDE1 Revival 2026] viewport 语义桥 */
   emit entryMoved(current);
   le_subject->setText( entrylist.at(current)->subject );
   s_bar->setValue(new_value);

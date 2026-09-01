@@ -173,28 +173,28 @@ static void setInfoBoxText(QString text, Window w){
   if (nw < infoLabel->fontMetrics().boundingRect(text).width())
     nw = infoLabel->fontMetrics().boundingRect(text).width();
 
-  if (nw > QApplication::desktop()->width()*2/3-12-d){
+  if (nw > kwmScreenWidth()*2/3-12-d){
     infoFrame->setGeometry(0,
-			   QApplication::desktop()->height()/2-30,
-			   QApplication::desktop()->width(),
+			   kwmScreenHeight()/2-30,
+			   kwmScreenWidth(),
 			   w!=None?83:60);
-    if (nw > QApplication::desktop()->width()-12-d)
+    if (nw > kwmScreenWidth()-12-d)
       infoLabel->setAlignment(AlignVCenter);
   }
   else
-    if (nw > QApplication::desktop()->width()/3-12-d){
-      infoFrame->setGeometry(QApplication::desktop()->width()/6,
-			     QApplication::desktop()->height()/2-30,
-			     QApplication::desktop()->width()*2/3,
+    if (nw > kwmScreenWidth()/3-12-d){
+      infoFrame->setGeometry(kwmScreenWidth()/6,
+			     kwmScreenHeight()/2-30,
+			     kwmScreenWidth()*2/3,
 			     w!=None?83:60);
       if (infoLabel->fontMetrics().boundingRect(text).width() >
-	  QApplication::desktop()->width()-12-d)
+	  kwmScreenWidth()-12-d)
 	infoLabel->setAlignment(AlignVCenter);
     }
     else
-      infoFrame->setGeometry(QApplication::desktop()->width()/3,
-			     QApplication::desktop()->height()/2-30,
-			     QApplication::desktop()->width()/3,
+      infoFrame->setGeometry(kwmScreenWidth()/3,
+			     kwmScreenHeight()/2-30,
+			     kwmScreenWidth()/3,
 			     w!=None?83:60);
   infoFrameInner->setGeometry(3, 3, infoFrame->width()-6, infoFrame->height()-6);
 
@@ -534,7 +534,7 @@ static void grabKey(KeySym keysym, unsigned int mod){
 // Like manager->activateClient but also raises the window and sends a
 // sound event.
 void switchActivateClient(Client* c, bool do_not_raise){
-  if (!c->geometry.intersects(QApplication::desktop()->rect())){
+  if (!c->geometry.intersects(kwmScreenGeometry())){
     // window not visible => place it again.
     manager->doPlacement(c);
     manager->sendConfig(c);
@@ -704,11 +704,11 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
       QRect g;
       QRect r = stringToRect(b, &g);
       if (r.isEmpty())
-	r = QApplication::desktop()->geometry();
+	r = kwmScreenGeometry();
       KWM::setWindowRegion(i, r);
     }
     else {
-      KWM::setWindowRegion(i, QApplication::desktop()->geometry());
+      KWM::setWindowRegion(i, kwmScreenGeometry());
     }
   }
 
@@ -1367,7 +1367,7 @@ void MyApp::writeConfiguration(){
 		       true, false, true);
     key.append("Region");
     QRect r = KWM::getWindowRegion(i);
-    if (r == QApplication::desktop()->geometry())
+    if (r == kwmScreenGeometry())
       r.setRect(0,0,0,0);
     config->writeEntry(key, rectToString(r));
   }
@@ -2073,6 +2073,11 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   case ConfigureNotify:
     DEBUG_EVENTS("ConfigureNotify", ev->xconfigure.window)
+    // [KDE1 Revival 2026] 根窗口自身被重配置（RandR 分辨率变更）：
+    // 失效 kwm 屏幕几何缓存（kwm 作为 WM 在根上持有 SubstructureRedirect，
+    // 依 RandR/ICCCM 约定必收到此事件；Qt 因 -no-xrandr 感知不到变更）
+    if (ev->xconfigure.window == qt_xrootwin())
+      kwmInvalidateScreenGeometry();
     // this is because Qt cannot handle (usually does not need to)
 
 	// SubstructureNotify events.

@@ -1704,6 +1704,21 @@ void TopLevel::readSettings(){
 
 	generalFont = config->readFontEntry("KEditFont", &generalFont);
 
+	/* ┌─ [KDE1 Revival 2026] 配置字族有效性校验
+	   │  What : 读入 KEditFont 后比对 QFontInfo 实际匹配字族与请求字族，
+	   │        不一致则清空字族回退默认
+	   │  Why  : 历史配置存有损坏的字族名（UTF-8 替换符开头的乱码），
+	   │        fontconfig 无匹配时 TQt3 静默回退到度量异常的兜底字体，
+	   │        正文被巨型字形整体覆盖成"全黑"（2026-09-01 实测复现：
+	   │        干净配置白底黑字正常、带旧配置全黑）。请求名==实际名才放行
+	   │  When : 每次读取配置（启动/应用设置）
+	   └──────────────────────────────────────────────────────────── */
+	{
+	    QFontInfo fi(generalFont);
+	    if ( TQString(fi.family()) != generalFont.family() )
+		generalFont.setFamily( TQString() );
+	}
+
 	/*	str = config->readEntry( "Family" );
 	if ( !str.isNull() )
 		generalFont.setFamily(str.data());

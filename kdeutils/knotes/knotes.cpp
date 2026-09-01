@@ -1102,7 +1102,7 @@ bool KPostit::insertFile(const char* filename){
 
   edit->setAutoUpdate(TRUE);
   file.close();
-  edit->repaint();
+  kde1_full_repaint( edit ); /* [KDE1 Revival 2026] viewport 语义桥 */
   return TRUE;
 
 }
@@ -1285,7 +1285,7 @@ void KPostit::set3DFrame(){
   options->setItemChecked(frame3dID,TRUE);
   //  edit->setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
   KWM::setDecoration(winId(), KWM::tinyDecoration);
-  edit->repaint();
+  kde1_full_repaint( edit ); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 void KPostit::setNoFrame(){
@@ -1295,7 +1295,7 @@ void KPostit::setNoFrame(){
   options->setItemChecked(frame3dID,FALSE);
   //  edit->setFrameStyle(QFrame::NoFrame);
   KWM::setDecoration(winId(), KWM::noDecoration);
-  edit->repaint();
+  kde1_full_repaint( edit ); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 void KPostit::toggleFrame(){

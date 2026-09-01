@@ -92,8 +92,6 @@ protected slots:
 protected:
 	void fillCharsetCombo();
 	void getFontList( QStrList &list, bool fixed = false );
-	void getFontList( QStrList &list, const char *pattern );
-	void addFont( QStrList &list, const char *xfont );
 	
 protected:
 	QFont fnt;

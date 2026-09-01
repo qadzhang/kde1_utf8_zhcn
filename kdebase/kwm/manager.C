@@ -197,7 +197,7 @@ void Manager::createBorderWindows(){
 
     current_border = None;
 
-    QRect r = QApplication::desktop()->rect();
+    QRect r = kwmScreenGeometry();
 
     XSetWindowAttributes attributes;
     unsigned long valuemask;
@@ -956,6 +956,35 @@ void Manager::shapeNotify(XShapeEvent *e){
 
 // notification of reparenting events
 void Manager::reparentNotify(XReparentEvent* e){
+  // ┌─ [KDE1 Revival 2026] dock/top 窗口 reparent 维护（问题6 根治）
+  // │  What : dock 窗被 reparent 离开根（kpanel 把 kbgndwm/kwmsound 图标
+  // │        嵌入面板 dock 区）时把它移出 top_windows；reparent 回根时
+  // │        仍在 dock_windows 名单者恢复加入
+  // │  Why  : top_windows 被 raiseClient/LowerClient 直接拼进
+  // │        XRestackWindows 的窗口数组——X 协议要求数组全体互为兄弟
+  // │        （同为根子窗）。dock 窗嵌入面板后不再是根子窗且永不销毁，
+  // │        残留在名单里使目标窗的 sibling 校验 BadMatch、整个置顶
+  // │        链静默失败——用户报障"层级永远等于打开顺序、激活也不
+  // │        到最上层"的根因（1999 年原版只在窗口销毁时清理名单）
+  // │  Who  : Manager::reparentNotify（kwm 对 top_windows 选了
+  // │        StructureNotifyMask，嵌入/退出的 ReparentNotify 必达）
+  // │  When : 任意窗口 reparent 事件（含 kpanel 嵌入 dock、面板退出后
+  // │        dock 窗返回根两种方向）
+  // │  How  : 伪代码——
+  // │        1. 新父不是根 且 窗口在 top_windows → removeTopWindow
+  // │        2. 新父是根 且 窗口在 dock_windows → addTopWindow（幂等）
+  // └───────────────────────────────────────────────────────────────────
+  if (e->parent != qt_xrootwin()) {
+      removeTopWindow(e->window);
+  } else {
+      for (Window* dw = dock_windows.first(); dw; dw = dock_windows.next()) {
+	  if (*dw == e->window) {
+	      addTopWindow(e->window);
+	      break;
+	  }
+      }
+  }
+
   // if sombody else reparents a window which is managed by kwm, we
   // have to give it free.
   Client* ec = getClient(e->event);
@@ -1095,10 +1124,10 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c, bool move_po
     if (!move_pointer)
       return;
     if(options.ElectricBorderPointerWarp == FULL_WARP){
-      QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()-3);
+      QCursor::setPos(QCursor::pos().x(), kwmScreenHeight()-3);
     }
     else if (options.ElectricBorderPointerWarp == MIDDLE_WARP){
-      QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()/2);
+      QCursor::setPos(QCursor::pos().x(), kwmScreenHeight()/2);
     }
     else{
       QCursor::setPos(QCursor::pos().x(), 3);
@@ -1125,10 +1154,10 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c, bool move_po
       QCursor::setPos(QCursor::pos().x(),3);
     }
     else if (options.ElectricBorderPointerWarp == MIDDLE_WARP){
-      QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()/2);
+      QCursor::setPos(QCursor::pos().x(), kwmScreenHeight()/2);
     }
     else{
-      QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()-3);
+      QCursor::setPos(QCursor::pos().x(), kwmScreenHeight()-3);
     }
 
     break;
@@ -1148,10 +1177,10 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c, bool move_po
     if (!move_pointer)
       return;
     if(options.ElectricBorderPointerWarp == FULL_WARP){
-      QCursor::setPos(QApplication::desktop()->width()-3, QCursor::pos().y());
+      QCursor::setPos(kwmScreenWidth()-3, QCursor::pos().y());
     }
     else if (options.ElectricBorderPointerWarp == MIDDLE_WARP){
-      QCursor::setPos(QApplication::desktop()->width()/2, QCursor::pos().y());
+      QCursor::setPos(kwmScreenWidth()/2, QCursor::pos().y());
     }
     else{
       QCursor::setPos(3, QCursor::pos().y());
@@ -1177,10 +1206,10 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c, bool move_po
       QCursor::setPos(3,QCursor::pos().y());
     }
     else if (options.ElectricBorderPointerWarp == MIDDLE_WARP){
-      QCursor::setPos(QApplication::desktop()->width()/2, QCursor::pos().y());
+      QCursor::setPos(kwmScreenWidth()/2, QCursor::pos().y());
     }
     else{
-      QCursor::setPos(QApplication::desktop()->width()-3, QCursor::pos().y());
+      QCursor::setPos(kwmScreenWidth()-3, QCursor::pos().y());
     }
     break;
   }
@@ -2024,7 +2053,7 @@ void Manager::manage(Window w, bool mapped){
       // │  How  : 几何完全在屏内 且 四边之一与屏幕边缘重合 → 豁免。
       // │        普通应用极少整边贴屏；即便贴屏，尊重其位置也是对的。
       // └──────────────────────────────────────────────────────────────────┘
-      QRect scrGeo = QApplication::desktop()->geometry();
+      QRect scrGeo = kwmScreenGeometry();
       bool edgeDocked =
 	  (c->geometry.x() >= scrGeo.x() && c->geometry.y() >= scrGeo.y()
 	   && c->geometry.right() <= scrGeo.right()
@@ -2428,8 +2457,21 @@ void Manager::raiseClient(Client* c){
   int i = 0;
   // top windows (such as the panel) are always taken into account (if
   // not stays on top )
+  // ┌─ [KDE1 Revival 2026] 防御：只收根子窗进 restack 数组
+  // │  XRestackWindows 要求数组全体互为兄弟（此处=根子窗）。被嵌入
+  // │  面板的 dock 窗不再是根子窗（正常应由 reparentNotify 移出名单，
+  // │  此处再兜底一次）——混入即目标窗 sibling BadMatch、全体置顶
+  // │  静默失败（问题6：堆叠永远等于打开顺序的根因）。
+  // └───────────────────────────────────────────────────────────────────
   if ( !ignore_stays_on_top_windows ) {
     for (Window* w = top_windows.last(); w; w = top_windows.prev() ) {
+      Window root_ret, parent_ret, *children_ret; unsigned int nchild;
+      if ( !XQueryTree(qt_xdisplay(), *w, &root_ret, &parent_ret,
+		       &children_ret, &nchild) )
+	continue;
+      if (children_ret) XFree(children_ret);
+      if (parent_ret != qt_xrootwin())
+	continue;
       new_stack[i] = *w;
       i++;
     }
@@ -3365,8 +3407,8 @@ void Manager::refreshScreen(){
     valuemask = (CWBackPixel | CWBackingStore);
     attributes.background_pixel = 0;
     Window w = XCreateWindow (qt_xdisplay(), qt_xrootwin(), 0, 0,
-			      QApplication::desktop()->width(),
-			      QApplication::desktop()->height(),
+			      kwmScreenWidth(),
+			      kwmScreenHeight(),
 			      (unsigned int) 0,
 			      CopyFromParent, (unsigned int) CopyFromParent,
 			      (Visual *) CopyFromParent, valuemask,
@@ -3582,6 +3624,58 @@ static bool isDesktopCoreCommand(const char *cmd)
         if (strlen(core[i]) == len && strncmp(slash, core[i], len) == 0)
             return true;
     return false;
+}
+
+// ┌─ [KDE1 Revival 2026] kwm 屏幕实时几何助手（分辨率热变更支持）
+// │  声明与设计说明见 manager.h 同名注释块。此处为实现：
+// │  What : kwmScreenGeometry() 以 XGetGeometry 直查根窗口实时尺寸；
+// │        kwmScreenWidth/Height() 为便捷封装；
+// │        kwmInvalidateScreenGeometry() 供根窗 ConfigureNotify 失效缓存
+// │  Why  : TQt3 以 -no-xrandr 构建，Qt 的 desktop() 宽高在 kwm 启动后
+// │        永不更新——虚拟机动态改分辨率后 kwm 全部按旧屏幕工作
+// │  When : 任意 kwm 逻辑取屏幕尺寸时；缓存 TTL 200ms 平衡实时性与
+// │        拖动热路径的 X 往返开销
+// │  How  : 伪代码——
+// │        1. 缓存有效且距上次查询 < 200ms → 直接返回缓存
+// │        2. XGetGeometry(qt_xrootwin()) 成功 → 更新缓存并返回
+// │        3. 失败（理论不应发生）→ 返回旧值兜底
+// └───────────────────────────────────────────────────────────────────
+static QRect kwm_screen_geo_cache;
+static QTime kwm_screen_geo_time;
+static bool kwm_screen_geo_valid = FALSE;
+
+void kwmInvalidateScreenGeometry()
+{
+    kwm_screen_geo_valid = FALSE;
+}
+
+QRect kwmScreenGeometry()
+{
+    QTime now = QTime::currentTime();
+    if ( kwm_screen_geo_valid
+	 && kwm_screen_geo_time.msecsTo( now ) < 200 )
+	return kwm_screen_geo_cache;
+
+    Window root_ret;
+    int x_ret, y_ret;
+    unsigned int w, h, border, depth;
+    if ( XGetGeometry( qt_xdisplay(), qt_xrootwin(), &root_ret,
+		       &x_ret, &y_ret, &w, &h, &border, &depth ) ) {
+	kwm_screen_geo_cache = QRect( 0, 0, (int)w, (int)h );
+	kwm_screen_geo_valid = TRUE;
+	kwm_screen_geo_time = now;
+    }
+    return kwm_screen_geo_cache;
+}
+
+int kwmScreenWidth()
+{
+    return kwmScreenGeometry().width();
+}
+
+int kwmScreenHeight()
+{
+    return kwmScreenGeometry().height();
 }
 
 // commands from clients which can do session management
@@ -4266,8 +4360,8 @@ KGreyerWidget::KGreyerWidget():
   QWidget(0,0,WStyle_Customize|WStyle_NoBorder)
 {
   setBackgroundMode(QWidget::NoBackground);
-  setGeometry(0,0, QApplication::desktop()->width(),
-		   QApplication::desktop()->height());
+  setGeometry(0,0, kwmScreenWidth(),
+		   kwmScreenHeight());
   show();
 }
 

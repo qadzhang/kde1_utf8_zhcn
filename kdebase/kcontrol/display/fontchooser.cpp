@@ -46,6 +46,10 @@
 #include <X11/Xos.h>
 #undef index  /* TQt3 迁移：Xos 的 index 宏炸 TQListBox::index 等方法名 */
 
+#include <ntqfontdatabase.h> /* [KDE1 Revival 2026] fontconfig font enum */
+#include <ntqfontmetrics.h>
+#include <ntqstringlist.h>
+
 #include "fontchooser.h"
 #include "fontchooser.moc"
 
@@ -187,72 +191,61 @@ void KFontChooser::setFont( QFont start_fnt, bool fixed )
 	fillCharsetCombo();
 }
 
-void KFontChooser::getFontList( QStrList &list, const char *pattern )
-{
-	int num;
-	char **xFonts = XListFonts( qt_xdisplay(), pattern, 2000, &num );
-
-	for ( int i = 0; i < num; i++ )
-	{
-		addFont( list, xFonts[i] );
-	}
-
-	XFreeFontNames( xFonts );
-}
+/* [KDE1 Revival 2026] XLFD 版 getFontList(pattern) 与 addFont(XLFD 解析) 随
+ * XListFonts 枚举通道一并退役删除（唯一调用方 getFontList(bool) 已改
+ * fontconfig，见上方注释块）。 */
 
 
 void KFontChooser::getFontList( QStrList &list, bool fixed )
 {
-	// Use KDE fonts if there is a KDE font list and check that the fonts
-	// exist on the server where the desktop is running.
-	
-	QStrList lstSys, lstKDE;
-	
-	if ( fixed ) {
-		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-m-*-*-*" );
-		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-c-*-*-*" );
-	} else
-		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
-		
-	if ( !kapp->getKDEFonts( &lstKDE ) ) {
+	// ┌─ [KDE1 Revival 2026] 字体枚举 fontconfig 化（XListFonts 替换）
+	// │  What : 以 TQFontDatabase::families() 枚举系统全部字族（fontconfig），
+	// │        替换 1999 年的 XListFonts(XLFD 模式匹配)；等宽清单用
+	// │        i/M/W 三字符 advance 相等法判定
+	// │  Why  : 现代 Debian 只剩极少 X 核心字体可被 XListFonts 列出——
+	// │        Noto Sans CJK 等现代中文字体完全不在结果里（用户报障：
+	// │        控制中心字体页看不到系统字体；kfontdialog/kfontmanager/
+	// │        konsole 已先行切换，此处为同族残留）。QFontInfo::fixedPitch
+	// │        在 TQt3/X11 下恒不可靠，故用 advance 判定（konsole 同款）
+	// │  Who  : 控制中心「字体」页的字族下拉（kcmdisplay）
+	// │  When : KFontChooser 构造（页面创建）时一次性枚举
+	// │  How  : 伪代码——
+	// │        1. TQFontDatabase 全量字族 → 过滤 open look → 去重排序入表
+	// │        2. fixed=true 时仅保留 i/M/W advance 相等的字族
+	// │        3. kdefonts 自定义清单存在且非空 → 与其取交（仅显示既有
+	// │           又可用的字族），否则返回全量
+	// └───────────────────────────────────────────────────────────────────
+	QStrList lstSys;
+	{
+		TQFontDatabase db;
+		TQStringList fams = db.families();
+		for ( TQStringList::Iterator it = fams.begin(); it != fams.end(); ++it ) {
+			if ( fixed ) {
+				TQFont probe( *it, 12 );
+				TQFontMetrics fm( probe );
+				if ( fm.width( 'i' ) != fm.width( 'M' )
+				     || fm.width( 'M' ) != fm.width( 'W' ) )
+					continue;
+			}
+			TQString font = *it;
+			if ( font.find( "open look", 0, false ) >= 0 )
+				continue;
+			if ( lstSys.find( font.latin1() ) != -1 )
+				continue;
+			lstSys.inSort( font.latin1() );
+		}
+	}
+
+	QStrList lstKDE;
+	if ( !kapp->getKDEFonts( &lstKDE ) || lstKDE.count() == 0 ) {
 		list = lstSys;
 		return;
 	}
-	
-	for( int i = 0; i < (int) lstKDE.count(); i++ ) {
+
+	for ( int i = 0; i < (int) lstKDE.count(); i++ ) {
 		if ( lstSys.find( lstKDE.at( i ) ) != -1 ) {
 			list.append( lstKDE.at( i ) );
 		}
-	}
-}
-
-void KFontChooser::addFont( QStrList &list, const char *xfont )
-{
-	const char *ptr = strchr( xfont, '-' );
-	if ( !ptr )
-		return;
-	
-	ptr = strchr( ptr + 1, '-' );
-	if ( !ptr )
-		return;
-
-	QString font = ptr + 1;
-
-	int pos;
-	if ( ( pos = font.find( '-' ) ) > 0 )
-	{
-		font.truncate( pos );
-
-		if ( font.find( "open look", 0, false ) >= 0 )
-			return;
-
-		QStrListIterator it( list );
-
-		for ( ; it.current(); ++it )
-			if ( it.current() == font )
-				return;
-
-		list.inSort( font );
 	}
 }
 

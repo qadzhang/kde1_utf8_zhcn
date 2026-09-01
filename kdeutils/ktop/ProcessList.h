@@ -165,7 +165,7 @@ signals:
 	void processSelected(int);
 
 protected:
-	virtual void mousePressEvent(QMouseEvent* e);
+	virtual void viewportMousePressEvent(QMouseEvent* e); /* [KDE1 Revival 2026] Qt3 视口事件路由 */
 
 private:
 	// items of table header RMB popup menu

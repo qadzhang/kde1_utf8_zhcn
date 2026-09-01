@@ -56,6 +56,49 @@ QString displayName()
   return d;
 }
 
+// ┌─ [KDE1 Revival 2026] kfm 自愈辅助（供 KFM::init 的非阻塞重启使用）
+// │  What : spawnKfmDaemon 按 $KDEDIR/bin 解析并后台拉起 kfm -d；
+// │        waitForKfmDaemon 以 100ms 步长轮询 pid 文件至多 3 秒
+// │  Why  : 见 KFM::init 头注释——kfm 掉线后桌面菜单/图标全失效，
+// │        需要无 UI 冻结的自动恢复；不用 fork+execl 是为避开库内 fork
+// │        与宿主应用 SIGCHLD 回收逻辑的竞态（shell 后台化即 DontCare）
+// │  How  : system("/…/kfm -d &") 立即返回；轮询读 pid 文件并 kill(pid,0)
+// │        确认存活后才放行 init 重试
+// └───────────────────────────────────────────────────────────────────
+static void spawnKfmDaemon()
+{
+    QString cmd = "kfm -d &";	// 退回 PATH（startkde 包装环境 PATH 已含）
+    const char *kdedir = getenv( "KDEDIR" );
+    if ( kdedir != 0L && kdedir[0] != 0 )
+    {
+	QString abs = QString( kdedir ) + "/bin/kfm";
+	if ( access( abs.data(), X_OK ) == 0 )
+	    cmd = abs + " -d &";
+    }
+    if (!KFM::isSilent()) tqWarning("KFM: 未运行，正在自动重启 kfm 守护进程");
+    system( cmd.data() );
+}
+
+static void waitForKfmDaemon( const QString &pidFile )
+{
+    for ( int i = 0; i < 30; i++ )
+    {
+	FILE *f = fopen( pidFile.data(), "rb" );
+	if ( f != 0L )
+	{
+	    char buf[64];
+	    buf[0] = 0;
+	    char *p = fgets( buf, 63, f );
+	    fclose( f );
+	    int pid = p ? atoi( buf ) : 0;
+	    if ( pid > 0 && kill( pid, 0 ) == 0 )
+		return;		// kfm 已就绪
+	}
+	usleep( 100 * 1000 );	// 100ms
+    }
+    if (!KFM::isSilent()) tqWarning("KFM: 等待 kfm 守护进程就绪超时（3 秒）");
+}
+
 KFM::KFM()
 {
     flag = 0;
@@ -128,27 +171,47 @@ void KFM::init()
 {
     QString file = KApplication::localkdedir() + "/share/apps/kfm/pid";
     file += displayName();
-    
+
+    // ┌─ [KDE1 Revival 2026] kfm 掉线自愈（非阻塞重启）+ 错误非模态化
+    // │  What : kfm 未运行/pid 失效时自动拉起 kfm -d 并短轮询等待，
+    // │        替换 1999 年 allowRestart 门控 + system("kfm -d &")+sleep(10)
+    // │        的阻塞重启；magic 文件异常改 stderr 告警（原为模态弹窗）
+    // │  Why  : kfm 一旦崩溃/退出，桌面所有 K 菜单启动、桌面图标刷新全部
+    // │        静默失效（用户只能注销重登）。原实现 sleep(10) 冻结调用方
+    // │        UI，且 allowRestart 从未被任何调用方置位——自愈路径实际是
+    // │        死代码；模态弹窗则会把 kpanel 冻在嵌套事件循环里
+    // │  Who  : kpanel（K 菜单/面板按钮）、krootwm（桌面图标双击）、
+    // │        任何经 KFM 类发起 IPC 的调用方
+    // │  When : 每个 KFM 对象构造（init）且 kfm 不在运行时，至多自愈一次
+    // │  Where: kdelibs/kfmlib/kfm.cpp；拉起路径按 $KDEDIR/bin 解析绝对
+    // │        路径（与 kcmdisplay 的 KProcess 拉起修复同思路）
+    // │  How  : 伪代码——
+    // │        1. pid 文件缺失或 pid 不存活 且 本对象未自愈过：
+    // │             fork+exec kfm -d（不阻塞 shell，DontCare 语义）
+    // │             → 最多轮询 3 秒等 pid 文件出现且 pid 存活
+    // │             → flag=1 防递归，重走 init 一次
+    // │        2. magic 文件缺失/损坏：tqWarning 到 stderr 后返回
+    // │           （不再 QMessageBox——调用方在点击路径上不能被模态框冻住）
+    // └───────────────────────────────────────────────────────────────────
     // Try to open the pid file
     FILE *f = fopen( file.data(), "rb" );
     if ( f == 0L )
     {
 	// Did we already try to start a new kfm ?
-	if ( flag == 0 && allowRestart )
+	if ( flag == 0 )
 	{
-	    // Try to start a new kfm
-	    system( "kfm -d &" );
-	    // dont try twice
+	    // Try to start a new kfm (self-heal, non-blocking)
 	    flag = 1;
-	    sleep( 10 );
+	    spawnKfmDaemon();
+	    waitForKfmDaemon( file );
 	    init();
 	    return;
 	}
-	
+
 	if (!silent) tqWarning("ERROR: KFM is not running");
 	return;
     }
-    
+
     // Read the PID
     char buffer[ 1024 ];
     buffer[0] = 0;
@@ -165,13 +228,13 @@ void KFM::init()
     if ( kill( pid, 0 ) != 0 )
     {
 	// Did we already try to start a new kfm ?
-	if ( flag == 0 && allowRestart )
+	if ( flag == 0 )
 	{
 	    flag = 1;
-	    // Try to start a new kfm
-	    system( "kfm -d &" );
-	    sleep( 10 );
+	    // Try to start a new kfm (self-heal, non-blocking)
 	    fclose( f );
+	    spawnKfmDaemon();
+	    waitForKfmDaemon( file );
 	    init();
 	    return;
 	}
@@ -207,21 +270,18 @@ void KFM::init()
     f = fopen( fn.data(), "rb" );
     if ( f == 0L )
     {
-	QString ErrorMessage;
-	ksprintf(&ErrorMessage, i18n("You dont have the file %s\n"
-				    "Could not do Authorization"), fn.data());
-	
-	QMessageBox::message( i18n("KFM Error"), ErrorMessage );
+	// [KDE1 Revival 2026] 模态弹窗改 stderr 告警：本函数运行在 kpanel
+	// 点击路径上，模态框会把面板冻在嵌套事件循环里（且无助于恢复）
+	if (!silent) tqWarning("KFM Error: You dont have the file %s\n"
+			       "Could not do Authorization", fn.data());
 	return;
     }
     char *p = fgets( buffer, 1023, f );
     fclose( f );
     if ( p == 0L )
     {
-	QString ErrorMessage;
-	ksprintf(&ErrorMessage, i18n("The file %s is corrupted\n"
-				    "Could not do Authorization"), fn.data());
-	QMessageBox::message( i18n("KFM Error"), ErrorMessage );
+	if (!silent) tqWarning("KFM Error: The file %s is corrupted\n"
+			       "Could not do Authorization", fn.data());
 	return;
     }
 

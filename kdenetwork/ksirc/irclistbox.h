@@ -54,9 +54,9 @@ protected slots:
   virtual void resizeEvent(QResizeEvent *);
   virtual int totalHeight ();
 
-  virtual void mousePressEvent(QMouseEvent *);
-  virtual void mouseReleaseEvent(QMouseEvent *);
-  virtual void mouseMoveEvent(QMouseEvent *);
+  virtual void viewportMousePressEvent(QMouseEvent *); /* [KDE1 Revival 2026] Qt3 视口路由 */
+  virtual void viewportMouseReleaseEvent(QMouseEvent *);
+  virtual void viewportMouseMoveEvent(QMouseEvent *);
 
   bool xlateToText(int x, int y, int *rrow, int *rline, int *rchar, ircListItem **);
 

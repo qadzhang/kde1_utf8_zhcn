@@ -28,6 +28,8 @@
 
 class QSocketNotifier;
 class QWidget;
+class TQPopupMenu;
+class TQPoint;
 
 struct SNIClient {
     QString service;      // DBus 总线唯一名（:1.x）
@@ -71,6 +73,13 @@ public slots:
     /* [KDE1 Revival 2026] DBus 写缓冲延迟冲刷——filter 栈内同步 flush 与
        dispatch 循环死锁，统一经 zero-timer 转移到事件循环 */
     void slotFlush();
+    /* [KDE1 Revival 2026, 2026-09-01] 右键菜单（DBusMenu 代理）：fcitx5 等
+       SNI item 的右键菜单走 com.canonical.dbusmenu 协议，须 host 侧拉取
+       GetLayout 渲染成 QPopupMenu 并回发点击事件——原实现只调
+       ContextMenu 方法，此类 item 毫无反应（托盘"看得见点不着"的另一半） */
+    void slotOpenMenu();
+    /* 代理菜单选中 → DBusMenu Event(clicked) 回发 */
+    void slotMenuActivated(int id);
 private:
     void handleItemRegister(const char *service, const char *path);
     void handleItemUnregister(const char *service);
@@ -81,6 +90,16 @@ private:
     void requestIconName(SNIClient *c);  // IconPixmap 失败/为空时的回退链
     static DBusHandlerResult messageFilter(DBusConnection *, DBusMessage *, void *);
     SNIClient *clientByService(const QString &service);
+    /* [2026-09-01] DBusMenu 代理 internals */
+    int  menuFill(TQPopupMenu *pop, const char *service, const char *menupath,
+                  DBusMessageIter *layoutIter, int depth);
+    void menuEvent(const char *service, const char *menupath,
+                   int itemid, const char *eventId);
+    SNIClient *menuPending;   // 待开菜单的 item（slotOpenMenu 消费后清空）
+    int menuPendingX, menuPendingY;
+    TQPopupMenu *menuActive;  // 正在显示的代理菜单（activated 回发事件）
+    QString menuService;      // 当前代理菜单对应的 item 总线名/菜单路径
+    QString menuPath;
 
     QWidget  *dockArea;
     DBusConnection *conn;

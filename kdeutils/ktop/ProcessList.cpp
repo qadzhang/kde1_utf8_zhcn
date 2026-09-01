@@ -395,7 +395,7 @@ ProcessList::update(void)
 	setAutoUpdateMode(lastmode);
 
     if(isVisible())
-		repaint();
+		kde1_full_repaint( this ); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 void 
@@ -829,7 +829,7 @@ ProcessList::handleRMBPopup(int item)
 }
 
 void 
-ProcessList::mousePressEvent(QMouseEvent* e)
+ProcessList::viewportMousePressEvent(QMouseEvent* e)
 {
     if ( e->button() == ScrollUpButton ) {
         scrollBy(0, -50);
@@ -880,5 +880,5 @@ ProcessList::mousePressEvent(QMouseEvent* e)
 		}
 	}
 	else
-		QListView::mousePressEvent(e);
+		TQListView::viewportMousePressEvent(e); /* [KDE1 Revival 2026] 基类视口处理器 */
 }

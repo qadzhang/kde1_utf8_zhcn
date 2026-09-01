@@ -20,6 +20,7 @@
 #include <kfm.h>
 #include <qbitmap.h>
 #include <ksimpleconfig.h>
+#include <X11/Xlib.h>	/* [KDE1 Revival 2026] checkScreenResize 直查根窗几何 */
 
 #define DEFAULT_BOX_WIDTH 45
 
@@ -865,6 +866,62 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     }
 
     initing = false;
+
+    // [KDE1 Revival 2026] 分辨率热变更监测：记录当前根窗实际几何，
+    // 2 秒周期比对（VMware 等动态改分辨率后面板需整体重建，见
+    // checkScreenResize 的 5W1H 注释）。XGetGeometry 直查根窗——
+    // TQt3 以 -no-xrandr 构建，Qt 的 desktop() 宽高永不过期更新。
+    {
+	Window root_ret; int x_ret, y_ret;
+	unsigned int w, h, border, depth;
+	if ( XGetGeometry( qt_xdisplay(), qt_xrootwin(), &root_ret,
+			   &x_ret, &y_ret, &w, &h, &border, &depth ) ) {
+	    last_screen_w = (int)w;
+	    last_screen_h = (int)h;
+	} else {
+	    last_screen_w = QApplication::desktop()->width();
+	    last_screen_h = QApplication::desktop()->height();
+	}
+	QTimer *screen_watch = new QTimer( this );
+	connect( screen_watch, SIGNAL(timeout()),
+		 SLOT(checkScreenResize()) );
+	screen_watch->start( 2000 );
+    }
+}
+
+// ┌─ [KDE1 Revival 2026] 分辨率热变更自愈（面板浮空/宽度截断根治）
+// │  What : 周期比对根窗口实际几何与上次记录，变化时整面板重启重建
+// │  Why  : 1999 年的面板只在构造时按当时屏幕尺寸布局一次（children
+// │        坐标 + 面板 setGeometry 一次性写死）。VMware/虚拟机在登录后
+// │        动态改分辨率（如 1288x960 → 1920x976）后：面板窗口仍按旧宽
+// │        度旧贴边坐标摆放——右段缺失、底部浮空、时钟/指示器越界不可
+// │        见（用户 2026-09-01 报障实测：面板 1288 宽、离底 21px）。
+// │        重算布局需复刻构造器 800 行的 children 排布，重启进程是最
+// │        小且语义完备的重建方式（复用既有 restart 路径，托盘/任务栏
+// │        按钮等全部状态由各组件自恢复）
+// │  Who  : kpanel 自身（构造器起的 2 秒 QTimer）
+// │  When : 每 2 秒检查一次；仅在实际几何变化时触发一次重启
+// │  Where: kdebase/kpanel/kpanel.C
+// │  How  : 伪代码——
+// │        1. XGetGeometry 取根窗当前 w/h（X 级真值）
+// │        2. 与 last_screen_w/h 相同 → 返回（99.99% 的常规路径）
+// │        3. 不同 → 更新记录 → restart()（cleanup + execvp 自重启，
+// │           构造器按新分辨率完整重建，含 KWM 工作区排除区重申报）
+// └───────────────────────────────────────────────────────────────────
+void kPanel::checkScreenResize()
+{
+    Window root_ret; int x_ret, y_ret;
+    unsigned int w, h, border, depth;
+    if ( !XGetGeometry( qt_xdisplay(), qt_xrootwin(), &root_ret,
+			&x_ret, &y_ret, &w, &h, &border, &depth ) )
+	return;
+    if ( (int)w == last_screen_w && (int)h == last_screen_h )
+	return;
+    last_screen_w = (int)w;
+    last_screen_h = (int)h;
+    tqWarning("kpanel: 屏幕分辨率已变更为 %dx%d，面板按新分辨率重建",
+	      (int)w, (int)h);
+    restart();
 }
 
 void kPanel::restart(){

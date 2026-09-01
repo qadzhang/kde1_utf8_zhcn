@@ -27,3 +27,18 @@ install(TARGETS kpaint1 RUNTIME DESTINATION ${KDE1_BINDIR})
 install_icon(kpaint.xpm "${KDE1_ICONDIR}")
 install(FILES mini-kpaint.xpm DESTINATION ${KDE1_ICONDIR}/mini RENAME kpaint.xpm)
 install(FILES kpaint.kdelnk DESTINATION ${KDE1_APPSDIR}/Graphics)
+
+# [KDE1 Revival 2026] 工具工具栏图标安装：1999 年 Makefile.am 的安装规则
+# 在 CMake 化时遗漏——line/rectangle/spraycan 等 XPM 从未进包，运行期
+# new QPixmap(绝对路径) 得空图，工具栏全是乱色块。largetext.xpm 取自
+# kdvi/pix（text.cpp 文本工具图标，KDE1 时代该文件从未被安装过）
+install(FILES
+    toolpics/circle.xpm toolpics/areaselect.xpm toolpics/line.xpm
+    toolpics/pen.xpm toolpics/spraycan.xpm toolpics/ellipse.xpm
+    toolpics/rectangle.xpm toolpics/roundangle.xpm toolpics/editpaste.xpm
+    toolpics/filenew.xpm toolpics/editcopy.xpm toolpics/fileopen.xpm
+    toolpics/editcut.xpm toolpics/filefloppy.xpm
+    "toolpics/viewmag+.xpm" "toolpics/viewmag-.xpm"
+    DESTINATION ${KDE1_DATADIR}/kpaint/toolbar)
+install(FILES ../kdvi/pix/largetext.xpm
+    DESTINATION ${KDE1_DATADIR}/kpaint/toolbar)

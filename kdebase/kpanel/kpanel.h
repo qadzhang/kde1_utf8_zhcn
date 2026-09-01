@@ -260,6 +260,13 @@ public slots:
 
   void restart();
 
+  /* [KDE1 Revival 2026] 分辨率热变更自愈：定时直查根窗口实际几何，
+   * 与上次记录不一致（VMware/虚拟机动态改分辨率）时整面板重启重建
+   * ——TQt3 以 -no-xrandr 构建，Qt 的 desktop() 宽高永不过期更新，
+   * 1999 年的面板只在构造时按当时屏幕布局一次（面板浮空/宽度截断
+   * 报障的根源）。实现见 kpanel.C checkScreenResize()。 */
+  void checkScreenResize();
+
 
   void slotDropEvent( KDNDDropZone *_zone );
 
@@ -295,6 +302,11 @@ protected:
 private slots:
     void slotUpdateClock();
     void slotSwallowedChildDied(KProcess *);
+
+private:
+  /* [KDE1 Revival 2026] 分辨率热变更检测（见公共槽 checkScreenResize 注释） */
+  int last_screen_w;
+  int last_screen_h;
 
 signals:
 

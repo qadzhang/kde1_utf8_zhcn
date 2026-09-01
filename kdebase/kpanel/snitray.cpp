@@ -36,6 +36,8 @@
 #include <qpixmap.h>
 #include <qimage.h>
 #include <qpainter.h>
+#include <ntqpopupmenu.h> /* [2026-09-01] DBusMenu 代理渲染 */
+#include <ntqpoint.h>
 
 #include "snitray.h"
 
@@ -55,7 +57,8 @@ extern "C" {
 static QString sniFindIconFile(const char *name);
 
 SNITray::SNITray(QWidget *da, QObject *parent)
-  : QObject(parent), dockArea(da), conn(0), notifier(0)
+  : QObject(parent), dockArea(da), conn(0), notifier(0),
+    menuPending(0), menuPendingX(0), menuPendingY(0), menuActive(0)
 {
     clients.setAutoDelete(true);
 }
@@ -421,8 +424,10 @@ void SNITray::handleItemRegister(const char *service, const char *path)
     int scr = DefaultScreen(d);
     int depth = DefaultDepth(d, scr); /* [2026-08-31] 深度随屏而非硬编码 24 */
     Window parent = dockArea->winId();
+    /* [2026-09-01] 底色用面板灰而非纯白——图标渲染前的空窗不再是刺眼白块 */
     c->win = XCreateSimpleWindow(d, parent, 0, 0, 24, 24, 0,
-                                 BlackPixel(d, scr), WhitePixel(d, scr));
+                                 BlackPixel(d, scr),
+                                 (unsigned long)((192 << 16) | (192 << 8) | 192));
     XSelectInput(d, c->win, ExposureMask | ButtonPressMask);
     c->pix = XCreatePixmap(d, c->win, 24, 24, depth);
     XMapWindow(d, c->win);
@@ -511,7 +516,10 @@ void SNITray::renderIcon(SNIClient *c, const unsigned char *argb,
 }
 
 /* [KDE1 Revival 2026] 通用渲染出口：QImage（0xAARRGGBB 值语义，来源不限）
-   → smoothScale 24x24 → XPutImage 画到后备位图 → 设为窗口背景位图 */
+   → smoothScale 24x24 → XPutImage 画到后备位图 → 设为窗口背景位图。
+   [2026-09-01] 透明像素合成面板底色：symbolic 图标（fcitx5 的键盘即此类）
+   大面积 alpha=0，若直接落屏其 RGB 残值（常为白）会成为"白框底图"——
+   渲染前先按 alpha 把前景色合成到 dock 区背景色上，彻底消除白底。 */
 void SNITray::renderQImage(SNIClient *c, const QImage &image)
 {
     if (!c || image.isNull())
@@ -519,6 +527,28 @@ void SNITray::renderQImage(SNIClient *c, const QImage &image)
     QImage scaled = image.smoothScale(24, 24);
     if (scaled.depth() != 32)
         scaled = scaled.convertDepth(32);
+
+    /* 合成底色：取 dock 区调色板背景（面板灰），失败回退 192,192,192 */
+    int bgr = 192, bgg = 192, bgb = 192;
+    {
+        TQColor bg = dockArea->palette().active().background();
+        bgr = bg.red(); bgg = bg.green(); bgb = bg.blue();
+    }
+    for (int y = 0; y < scaled.height(); y++) {
+        unsigned int *px = (unsigned int *) scaled.scanLine(y);
+        for (int x = 0; x < scaled.width(); x++) {
+            unsigned int v = px[x];
+            unsigned int a = (v >> 24) & 0xff;
+            if (a == 255)
+                continue;
+            unsigned int r = (v >> 16) & 0xff, g = (v >> 8) & 0xff, b = v & 0xff;
+            /* dst = (src*alpha + bg*(255-alpha)) / 255，合成后不透明 */
+            r = (r * a + bgr * (255 - a)) / 255;
+            g = (g * a + bgg * (255 - a)) / 255;
+            b = (b * a + bgb * (255 - a)) / 255;
+            px[x] = 0xff000000u | (r << 16) | (g << 8) | b;
+        }
+    }
 
     Display *d = qt_xdisplay();
     int scr = DefaultScreen(d);
@@ -720,9 +750,19 @@ void SNITray::sendClick(SNIClient *c, int button, int x_root, int y_root)
 {
     if (!c || !conn)
         return;
-    const char *method = (button == 1) ? "Activate"
-                        : (button == 3) ? "ContextMenu"
-                                        : "SecondaryActivate";
+    /* [2026-09-01] 右键改走 DBusMenu 代理：fcitx5 等 item 的菜单在
+       com.canonical.dbusmenu 上，调 ContextMenu 方法它们毫无反应——
+       host 侧必须自己拉 GetLayout 渲染（slotOpenMenu）。无 Menu 属性的
+       item 仍回退 ContextMenu 方法。左键/中键维持 SNI 方法不变。
+       本函数运行在 x11EventFilter 栈内，弹菜单经 singleShot 转事件循环。 */
+    if (button == 3) {
+        menuPending = c;
+        menuPendingX = x_root;
+        menuPendingY = y_root;
+        QTimer::singleShot(0, this, SLOT(slotOpenMenu()));
+        return;
+    }
+    const char *method = (button == 1) ? "Activate" : "SecondaryActivate";
     DBusMessage *m = dbus_message_new_method_call(
         c->service.utf8(), c->objectPath.utf8(),
         "org.kde.StatusNotifierItem", method);
@@ -732,6 +772,353 @@ void SNITray::sendClick(SNIClient *c, int button, int x_root, int y_root)
     dbus_message_append_args(m, DBUS_TYPE_INT32, &xi,
                                 DBUS_TYPE_INT32, &yi,
                                 DBUS_TYPE_INVALID);
+    dbus_connection_send(conn, m, 0);
+    dbus_message_unref(m);
+    QTimer::singleShot(0, this, SLOT(slotFlush()));
+}
+
+/* ┌─ What : SNI item 的右键菜单代理（com.canonical.dbusmenu → TQPopupMenu）
+// │  Why  : SNI 规范中 item 可把菜单放在 DBusMenu 上（fcitx5 即如此），
+// │        ContextMenu 方法对这类 item 是空操作——host 必须查询 item 的
+// │        Menu 属性、拉 GetLayout 树、自建菜单显示，选中后回发 Event
+// │  Who  : sendClick 的右键分支（经 zero-timer 进事件循环）
+// │  When : 用户右键点托盘图标
+// │  How  : 伪代码——
+// │        1. 同步 Get("org.kde.StatusNotifierItem","Menu") → 对象路径；
+// │           无/失败 → 回退发 ContextMenu(x,y) 方法后返回
+// │        2. com.canonical.dbusmenu AboutToShow(0)（让 item 现建菜单）
+// │        3. GetLayout(0,-1) → (ia{sv}av) 递归树 → menuFill 填 TQPopupMenu
+// │        4. popup->exec(屏幕坐标)；被选条目经 menuEvent 回发
+// │           Event(id,"clicked",variant,timestamp)
+// */
+void SNITray::slotOpenMenu()
+{
+    SNIClient *c = menuPending;
+    menuPending = 0;
+    if (!c || !conn)
+        return;
+
+    /* ① Menu 属性（对象路径） */
+    char menupath[256] = {0};
+    {
+        DBusMessage *m = dbus_message_new_method_call(
+            c->service.utf8(), c->objectPath.utf8(),
+            "org.freedesktop.DBus.Properties", "Get");
+        if (!m) return;
+        const char *iface = "org.kde.StatusNotifierItem";
+        const char *prop = "Menu";
+        DBusMessageIter it;
+        dbus_message_iter_init_append(m, &it);
+        dbus_message_iter_append_basic(&it, DBUS_TYPE_STRING, &iface);
+        dbus_message_iter_append_basic(&it, DBUS_TYPE_STRING, &prop);
+        DBusError err; dbus_error_init(&err);
+        DBusMessage *r = dbus_connection_send_with_reply_and_block(
+            conn, m, 700, &err);
+        dbus_message_unref(m);
+        if (!r) { dbus_error_free(&err); goto fallback; }
+        DBusMessageIter rit, vit;
+        dbus_message_iter_init(r, &rit);
+        if (dbus_message_iter_get_arg_type(&rit) == DBUS_TYPE_VARIANT) {
+            dbus_message_iter_recurse(&rit, &vit);
+            if (dbus_message_iter_get_arg_type(&vit) == DBUS_TYPE_OBJECT_PATH) {
+                const char *p = 0;
+                dbus_message_iter_get_basic(&vit, &p);
+                if (p) snprintf(menupath, sizeof(menupath), "%s", p);
+            }
+        }
+        dbus_message_unref(r);
+    }
+    if (menupath[0] != '/') goto fallback;
+
+    /* ② AboutToShow(0)：fcitx5 惰性构建菜单 */
+    {
+        DBusMessage *m = dbus_message_new_method_call(
+            c->service.utf8(), menupath, "com.canonical.dbusmenu", "AboutToShow");
+        if (m) {
+            dbus_int32_t zero = 0;
+            dbus_message_append_args(m, DBUS_TYPE_INT32, &zero,
+                                     DBUS_TYPE_INVALID);
+            DBusError err; dbus_error_init(&err);
+            DBusMessage *r = dbus_connection_send_with_reply_and_block(
+                conn, m, 700, &err);
+            dbus_message_unref(m);
+            if (r) dbus_message_unref(r);
+            dbus_error_free(&err);
+        }
+    }
+
+    /* ③ GetLayout(0, -1) → 树 */
+    {
+        DBusMessage *m = dbus_message_new_method_call(
+            c->service.utf8(), menupath, "com.canonical.dbusmenu", "GetLayout");
+        if (!m) return;
+        dbus_int32_t parent = 0, depth = -1;
+        const char *iface_props = "";
+        const char *empty_arr_sig = DBUS_TYPE_STRING_AS_STRING;
+        DBusMessageIter it, sub;
+        dbus_message_iter_init_append(m, &it);
+        dbus_message_iter_append_basic(&it, DBUS_TYPE_INT32, &parent);
+        dbus_message_iter_append_basic(&it, DBUS_TYPE_INT32, &depth);
+        dbus_message_iter_open_container(&it, DBUS_TYPE_ARRAY,
+                                         empty_arr_sig, &sub);
+        dbus_message_iter_close_container(&it, &sub);
+        DBusError err; dbus_error_init(&err);
+        DBusMessage *r = dbus_connection_send_with_reply_and_block(
+            conn, m, 1500, &err);
+        dbus_message_unref(m);
+        if (!r) { dbus_error_free(&err); goto fallback; }
+
+        /* 应答 (u revision, (ia{sv}av) layout) */
+        DBusMessageIter rit, lay;
+        dbus_message_iter_init(r, &rit);
+        if (dbus_message_iter_get_arg_type(&rit) != DBUS_TYPE_UINT32 ||
+            !dbus_message_iter_next(&rit) ||
+            dbus_message_iter_get_arg_type(&rit) != DBUS_TYPE_STRUCT) {
+            dbus_message_unref(r);
+            goto fallback;
+        }
+        dbus_message_iter_recurse(&rit, &lay);
+
+        TQPopupMenu *pop = new TQPopupMenu(dockArea, "sni_dbusmenu");
+        int n = menuFill(pop, c->service.utf8(), menupath, &lay, 0);
+        dbus_message_unref(r);
+        if (n <= 0) {
+            delete pop;
+            goto fallback;
+        }
+        menuActive = pop;
+        /* route activation back: activated(id) -> Event(id,"clicked"),
+           service/path passed via menuService/menuPath members */
+        menuService = c->service;
+        menuPath = menupath;
+        connect(pop, SIGNAL(activated(int)), SLOT(slotMenuActivated(int)));
+        pop->exec(TQPoint(menuPendingX, menuPendingY));
+        /* exec 返回即菜单已关；activated 信号在 menuEvent 路径回发 */
+        delete pop;
+        menuActive = 0;
+        return;
+    }
+
+fallback:
+    /* 无 DBusMenu 的 item：按 SNI 原始语义发 ContextMenu 方法 */
+    {
+        DBusMessage *m = dbus_message_new_method_call(
+            c->service.utf8(), c->objectPath.utf8(),
+            "org.kde.StatusNotifierItem", "ContextMenu");
+        if (!m) return;
+        dbus_int32_t xi = menuPendingX, yi = menuPendingY;
+        dbus_message_append_args(m, DBUS_TYPE_INT32, &xi,
+                                    DBUS_TYPE_INT32, &yi,
+                                    DBUS_TYPE_INVALID);
+        dbus_connection_send(conn, m, 0);
+        dbus_message_unref(m);
+        QTimer::singleShot(0, this, SLOT(slotFlush()));
+    }
+}
+
+/* ┌─ What : GetLayout 的 layout 结构 (ia{sv}av) → TQPopupMenu 条目递归填充
+// │  Why  : DBusMenu 条目属性 label/type/icon-name/enabled/toggle-state 对应
+// │        QPopupMenu 的文本/分隔线/图标/可用态/勾选态；子菜单为 children
+// │        变体数组（每项又是一棵 layout 树）
+// │  How  : 伪代码——
+// │        1. 取 id 与属性字典 a{sv}
+// │        2. type=="separator" → insertSeparator；否则 label 的 '_'
+// │           助记转 '&' 后 insertItem（带 icon-name 小图标、id 作 item id）
+// │        3. enabled==false → setItemEnabled(false)；
+// │           toggle-type=="checkmark" → setCheckable+setItemChecked
+// │        4. children 非空 → 递归建子 TQPopupMenu 挂本条（depth≤3 防环）
+// │        5. 选中回发经 menuActive 的 activated(int) → menuEvent
+// └──── 返回填入的条目数 */
+int SNITray::menuFill(TQPopupMenu *pop, const char *service,
+                      const char *menupath, DBusMessageIter *lay, int depth)
+{
+    if (!lay || depth > 3)
+        return 0;
+    dbus_int32_t id = -1;
+    dbus_message_iter_get_basic(lay, &id);
+
+    char label[256] = {0};
+    const char *iconname = 0;
+    bool issep = false, enabled = true, checkable = false;
+    int toggle_state = -1;
+    bool has_children = false;
+
+    if (dbus_message_iter_next(lay) &&
+        dbus_message_iter_get_arg_type(lay) == DBUS_TYPE_ARRAY) {
+        DBusMessageIter dict;
+        dbus_message_iter_recurse(lay, &dict);
+        while (dbus_message_iter_get_arg_type(&dict) == DBUS_TYPE_DICT_ENTRY) {
+            DBusMessageIter ent, val;
+            const char *key = 0;
+            dbus_message_iter_recurse(&dict, &ent);
+            if (dbus_message_iter_get_arg_type(&ent) == DBUS_TYPE_STRING)
+                dbus_message_iter_get_basic(&ent, &key);
+            if (key && dbus_message_iter_next(&ent)) {
+                dbus_message_iter_recurse(&ent, &val);
+                int vt = dbus_message_iter_get_arg_type(&val);
+                if (strcmp(key, "label") == 0 && vt == DBUS_TYPE_STRING) {
+                    const char *s = 0;
+                    dbus_message_iter_get_basic(&val, &s);
+                    if (s) snprintf(label, sizeof(label), "%s", s);
+                } else if (strcmp(key, "icon-name") == 0 &&
+                           vt == DBUS_TYPE_STRING) {
+                    dbus_message_iter_get_basic(&val, &iconname);
+                } else if (strcmp(key, "type") == 0 &&
+                           vt == DBUS_TYPE_STRING) {
+                    const char *s = 0;
+                    dbus_message_iter_get_basic(&val, &s);
+                    if (s && strcmp(s, "separator") == 0)
+                        issep = true;
+                } else if (strcmp(key, "enabled") == 0 &&
+                           vt == DBUS_TYPE_BOOLEAN) {
+                    dbus_bool_t b = TRUE;
+                    dbus_message_iter_get_basic(&val, &b);
+                    enabled = (b != FALSE);
+                } else if (strcmp(key, "toggle-type") == 0 &&
+                           vt == DBUS_TYPE_STRING) {
+                    const char *s = 0;
+                    dbus_message_iter_get_basic(&val, &s);
+                    if (s && strcmp(s, "checkmark") == 0)
+                        checkable = true;
+                } else if (strcmp(key, "toggle-state") == 0 &&
+                           vt == DBUS_TYPE_INT32) {
+                    dbus_int32_t v = 0;
+                    dbus_message_iter_get_basic(&val, &v);
+                    toggle_state = v;
+                } else if (strcmp(key, "children-display") == 0 &&
+                           vt == DBUS_TYPE_STRING) {
+                    const char *s = 0;
+                    dbus_message_iter_get_basic(&val, &s);
+                    if (s && strcmp(s, "submenu") == 0)
+                        has_children = true;
+                }
+            }
+            if (!dbus_message_iter_next(&dict))
+                break;
+        }
+    }
+
+    /* [2026-09-01] DBusMenu root-node fix: the GetLayout root usually
+       has NO label (just children-display=submenu) - real entries live
+       in children. We only recursed for labeled nodes before, so the
+       root parsed as an empty menu and fell back to ContextMenu
+       (dbus-monitor proved GetLayout succeeded). */
+    int inserted = 0;
+    if ( !label[0] && !iconname && !issep && has_children && dbus_message_iter_next(lay) ) {
+        if ( dbus_message_iter_get_arg_type(lay) == DBUS_TYPE_ARRAY ) {
+            DBusMessageIter kids0;
+            dbus_message_iter_recurse(lay, &kids0);
+            while ( dbus_message_iter_get_arg_type(&kids0) == DBUS_TYPE_VARIANT ) {
+                /* children elements are VARIANT wrapping STRUCT(ia{sv}av):
+                   two-level recurse required; get_basic on the struct
+                   trips the libdbus assertion "type struct not a basic
+                   type" and aborts kpanel (right-click crash root). */
+                DBusMessageIter val0, one0;
+                dbus_message_iter_recurse(&kids0, &val0);
+                if ( dbus_message_iter_get_arg_type(&val0) == DBUS_TYPE_STRUCT ) {
+                    dbus_message_iter_recurse(&val0, &one0);
+                    inserted += menuFill(pop, service, menupath, &one0, depth + 1);
+                }
+                dbus_message_iter_next(&kids0);
+            }
+        }
+        return inserted;
+    }
+    if (issep) {
+        pop->insertSeparator();
+        inserted = 1;
+    } else if (label[0] || iconname) {
+        /* '_' 助记符转 '&'（两套助记约定） */
+        QString text;
+        for (char *p = label; *p; p++) {
+            if (*p == '_') text += '&';
+            else text += *p;
+        }
+        int iid;
+        if (iconname && *iconname) {
+            QString file = sniFindIconFile(iconname);
+            if (!file.isNull()) {
+                QImage img(file);
+                if (!img.isNull()) {
+                    TQPixmap pm;
+                    pm.convertFromImage(img.smoothScale(16, 16));
+                    iid = pop->insertItem(pm, text, id);
+                } else
+                    iid = pop->insertItem(text, id);
+            } else
+                iid = pop->insertItem(text, id);
+        } else
+            iid = pop->insertItem(text, id);
+        if (!enabled)
+            pop->setItemEnabled(iid, false);
+        if (checkable) {
+            pop->setCheckable(true);
+            if (toggle_state == 1)
+                pop->setItemChecked(iid, true);
+        }
+        /* children：每个变体又是一棵 (ia{sv}av) 树 */
+        if (has_children && dbus_message_iter_next(lay) &&
+            dbus_message_iter_get_arg_type(lay) == DBUS_TYPE_ARRAY) {
+            DBusMessageIter kids;
+            dbus_message_iter_recurse(lay, &kids);
+            TQPopupMenu *sub = 0;
+            int cnt = 0;
+            while (dbus_message_iter_get_arg_type(&kids) == DBUS_TYPE_VARIANT) {
+                /* same two-level recurse as above */
+                DBusMessageIter val, one;
+                dbus_message_iter_recurse(&kids, &val);
+                if (dbus_message_iter_get_arg_type(&val) == DBUS_TYPE_STRUCT) {
+                    dbus_message_iter_recurse(&val, &one);
+                    if (!sub) {
+                        sub = new TQPopupMenu(pop, "sni_dbusmenu_sub");
+                        connect(sub, SIGNAL(activated(int)),
+                                SLOT(slotMenuActivated(int)));
+                    }
+                    cnt += menuFill(sub, service, menupath, &one, depth + 1);
+                }
+                dbus_message_iter_next(&kids);
+            }
+            if (sub) {
+                if (cnt > 0)
+                    pop->insertItem(text, sub, -(id + 10000)); /* 子菜单 */
+                else
+                    delete sub;
+            }
+        }
+        inserted = 1;
+    }
+    (void) service; (void) menupath;
+    return inserted;
+}
+
+/* [2026-09-01] 菜单选中回发：Event(id,"clicked",variant,timestamp) */
+/* [2026-09-01] QPopupMenu activated(int) -> DBusMenu Event(clicked) */
+void SNITray::slotMenuActivated(int id)
+{
+    if (id >= 0)
+        menuEvent(menuService.utf8(), menuPath.utf8(), id, "clicked");
+}
+
+void SNITray::menuEvent(const char *service, const char *menupath,
+                        int itemid, const char *eventId)
+{
+    if (!conn)
+        return;
+    DBusMessage *m = dbus_message_new_method_call(
+        service, menupath, "com.canonical.dbusmenu", "Event");
+    if (!m)
+        return;
+    dbus_int32_t iid = itemid;
+    dbus_int32_t ts = 0;
+    DBusMessageIter it, vit;
+    dbus_message_iter_init_append(m, &it);
+    dbus_message_iter_append_basic(&it, DBUS_TYPE_INT32, &iid);
+    dbus_message_iter_append_basic(&it, DBUS_TYPE_STRING, &eventId);
+    dbus_message_iter_open_container(&it, DBUS_TYPE_VARIANT,
+                                     DBUS_TYPE_INT32_AS_STRING, &vit);
+    dbus_message_iter_append_basic(&vit, DBUS_TYPE_INT32, &iid);
+    dbus_message_iter_close_container(&it, &vit);
+    dbus_message_iter_append_basic(&it, DBUS_TYPE_UINT32, &ts);
     dbus_connection_send(conn, m, 0);
     dbus_message_unref(m);
     QTimer::singleShot(0, this, SLOT(slotFlush()));

@@ -529,7 +529,7 @@ void Klpq::updateList()
   if( lb_list->count() )
     lb_list->setCurrentItem( 0 );
   lb_list->repaint(FALSE); 
-  lb_status->repaint(TRUE); 
+  kde1_full_repaint( lb_status ); /* [KDE1 Revival 2026] viewport 语义桥 */ 
   // --- exec lpc
   if( lpc_com == NotRunning )
     {

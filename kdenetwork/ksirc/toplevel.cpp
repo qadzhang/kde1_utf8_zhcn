@@ -563,7 +563,7 @@ void KSircTopLevel::sirc_receive(QString str) /*FOLD00*/
     mainw->setAutoUpdate(TRUE);
 
     mainw->scrollToBottom();
-    mainw->repaint(FALSE); // Repaint, but not need to erase and cause fliker.
+    kde1_full_repaint( mainw ); /* [KDE1 Revival 2026] viewport 语义桥 */ // Repaint, but not need to erase and cause fliker.
   }
   else{
     LineBuffer->append(str);

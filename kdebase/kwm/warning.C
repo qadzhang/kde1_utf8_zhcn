@@ -103,8 +103,8 @@ void KWarning::setText(const char* text, bool with_button){
   label->adjustSize();
   int w = QMAX(label->width() + 20, 100);
   int bh = with_button?80:20;
-  setGeometry(QApplication::desktop()->width()/2-w/2,
-	      (QApplication::desktop()->height()-label->height()-bh)/2,
+  setGeometry(kwmScreenWidth()/2-w/2,
+	      (kwmScreenHeight()-label->height()-bh)/2,
 	      w, label->height()+bh);
   label->setGeometry(4,10,w-8,label->height());
   if (with_button){

@@ -53,6 +53,23 @@
 // 实现见 manager.C。
 bool isDesktopCoreCommand(const char *cmd);
 
+// ┌─ [KDE1 Revival 2026] kwm 屏幕实时几何助手（分辨率热变更支持）
+// │  What : 以 XGetGeometry 直查根窗口几何，供 kwm 全部屏幕尺寸取值点使用
+// │  Why  : 本项目 TQt3 以 -no-xrandr 构建，QApplication::desktop() 的
+// │        宽高冻结在 kwm 启动那一刻——VMware/虚拟机动态改分辨率后
+// │        kwm 仍按旧屏幕钳制窗口/计算最大化/摆位（2026-09-01 用户报障：
+// │        分辨率变化后面板浮空、窗口管理错位）。直查 X 根窗绕开 Qt 缓存
+// │  Who  : manager.C/drag.C/taskmgr.C/warning.C/minicli.C/logout.C/main.C
+// │        中一切原 QApplication::desktop()->width()/height()/geometry() 调用点
+// │  When : 每次调用即时取值（200ms TTL 缓存防拖动热路径抖动）；
+// │        根窗 ConfigureNotify（RandR 变更）时 kwmInvalidateScreenGeometry 失效缓存
+// │  How  : XGetGeometry(qt_xrootwin()) → QRect；见 manager.C 实现
+// └───────────────────────────────────────────────────────────────────
+QRect kwmScreenGeometry();
+int kwmScreenWidth();
+int kwmScreenHeight();
+void kwmInvalidateScreenGeometry();
+
 class Manager : public QObject {
 Q_OBJECT
 public:

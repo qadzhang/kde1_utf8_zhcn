@@ -260,8 +260,8 @@ Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
 	      &kurlcompletion, SLOT (edited(const char *)));
     label = new QLabel(klocale->translate("Command:"), this);
     label->adjustSize();
-    setGeometry(QApplication::desktop()->width()/2 - 200,
-		QApplication::desktop()->height()/2 - 20,
+    setGeometry(kwmScreenWidth()/2 - 200,
+		kwmScreenHeight()/2 - 20,
 		400, 38);
 }
 void Minicli::resizeEvent(QResizeEvent *){

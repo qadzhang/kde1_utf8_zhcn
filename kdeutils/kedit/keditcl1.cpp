@@ -98,7 +98,24 @@ KEdit::~KEdit(){
 
 
 void KEdit::repaintAll(){
-    repaint(FALSE);
+    // ┌─ [KDE1 Revival 2026] 内容区全量重绘（Qt1→Qt3 语义修正）
+    // │  What : repaintAll 除画框外，对 viewport() 内容区做同步全量重绘
+    // │  Why  : Qt1 的 QMultiLineEdit 是 QTableView——内容画在自己身上，
+    // │        repaint() 即全量重绘正文；TQt3 的 TQTextEdit 内容画在
+    // │        viewport() 子窗，对编辑器本体 repaint() 只重绘画框——
+    // │        加载文件后正文从不刷新（初始空白）、滚轮滚动暴露带不
+    // │        重绘（内容逐格消失直至全空）皆源于此（用户 2026-09-01
+    // │        报障问题4；沙箱实测复现：滚 3 格内容剩一半、11 格全空）
+    // │  Who  : loadFile 载入完成、文本块替换等所有 Qt1 时代
+    // │        "setAutoUpdate(FALSE)…setAutoUpdate(TRUE);repaint()"
+    // │        防闪烁模式的收尾路径
+    // │  When : repaintTimer(0ms 单发) 与直接调用两路
+    // │  How  : viewport()->repaint()（擦除+绘制均由 TQTextEdit
+    // │        的 viewport 绘制路径完成）+ 本体 repaint(FALSE) 兼容画框
+    // └───────────────────────────────────────────────────────────────────
+    if ( viewport() )
+	viewport()->repaint();
+    repaint( FALSE );
 }
 
 int KEdit::currentLine(){
@@ -348,9 +365,10 @@ int KEdit::loadFile(QString name, int mode){
 #if QT_VERSION < 142
     repaint();
 #else
+    // [KDE1 Revival 2026] 载入完成的收尾重绘走内容区（见 repaintAll 注释）。
+    // repaintTimer(0ms 单发) → repaintAll() 已覆盖 viewport 全量重绘。
     if (!repaintTimer->isActive())
 	repaintTimer->start(0,TRUE);
-    repaint();
 #endif
 
     connect(this, SIGNAL(textChanged()), this, SLOT(setModified()));
@@ -1509,6 +1527,29 @@ QString KEdit::prefixString(QString string){
 
 }
 
+// ┌─ [KDE1 Revival 2026] 滚轮接管（问题4 根治之一）
+// │  What : 滚轮事件自行处理——按行滚动 + 内容区同步全量重绘
+// │  Why  : TQTextEdit(QScrollView) 滚动后的暴露带增量重绘在长文档下
+// │        不完整（沙箱实测：滚 3 格内容剩一半、11 格全空），滚动本身
+// │        正常但新暴露的带不重绘。全量同步重绘一次到位，1999 年规模
+// │        的文档毫无性能压力，且彻底规避增量机制
+// │  Who  : KEdit（kdeutils 副本；kdelibs/kdeui 的 KEdit 无滚轮路径需求）
+// │  When : 收到滚轮事件（Button4/5）
+// │  How  : delta/120 格数 ×3 行 × 行高 → scrollBy 像素滚动 →
+// │        viewport()->repaint() 全量重绘 → accept
+// └───────────────────────────────────────────────────────────────────
+void KEdit::wheelEvent( TQWheelEvent * e )
+{
+    int notches = -( e->delta() / 120 );
+    if ( notches == 0 )
+	notches = ( e->delta() < 0 ) ? 1 : -1;
+    int pixels = notches * 3 * fontMetrics().lineSpacing();
+    scrollBy( 0, pixels );
+    if ( viewport() )
+	viewport()->repaint();
+    e->accept();
+}
+
 void KEdit::mousePressEvent (QMouseEvent* e){
   if ( e->button() == ScrollUpButton ) {
       verticalScrollBar()->setValue(verticalScrollBar()->value() - fontMetrics().lineSpacing()  /* TQt3 迁移 */);
@@ -1817,13 +1858,17 @@ bool KEdit::eventFilter(QObject *o, QEvent *ev){
 
 
 
+  /* [KDE1 Revival 2026] eventFilter chains to base: TQScrollView::eventFilter
+   * routes ALL viewport events (paint/mouse/wheel); returning FALSE here
+   * silently dropped them - blank body after load, wheel erasure, dead
+   * mouse selection (harmless in Qt1 where QTableView had no such route). */
   if(ev->type() != Event_MouseButtonPress)
-    return FALSE;
+    return TQMultiLineEdit::eventFilter(o, ev);
 
   QMouseEvent *e = (QMouseEvent *)ev;
 
   if(e->button() != RightButton)
-    return FALSE;
+    return TQMultiLineEdit::eventFilter(o, ev);
 
   tmp_point = QCursor::pos();
 

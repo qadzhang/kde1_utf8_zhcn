@@ -21,10 +21,10 @@
 
 aListBox::~aListBox() {
 }
-void aListBox::mousePressEvent(QMouseEvent *e) /*fold00*/
+void aListBox::viewportMousePressEvent(QMouseEvent *e) /*fold00*/
 {
 
-  QListBox::mousePressEvent(e);
+  TQListBox::viewportMousePressEvent(e); /* [KDE1 Revival 2026] 基类视口处理器 */
 
   if(e->button() == RightButton){
     emit rightButtonPress(findItem(mapFromGlobal(cursor().pos()).y()));

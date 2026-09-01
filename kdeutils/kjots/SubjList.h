@@ -37,6 +37,10 @@ public:
   SubjList( QWidget* parent = NULL, const char* name = NULL );
   virtual ~SubjList() {}
 
+  /* [KDE1 Revival 2026] Qt1→Qt3 语义桥：QListBox 内容画在 viewport() 子窗，
+   * 外部对包装器/列表的"全量刷新"须经 kde1_full_repaint（见 q1compat.h） */
+  void repaintList() { kde1_full_repaint( lb_subj ); }
+
 signals:
   void hidden();
   void entryMoved(int);

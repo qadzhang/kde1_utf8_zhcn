@@ -196,8 +196,8 @@ void Klogout::prepareToShow(const QStrList* strlist1,
 			     w/3, 30);
   h = button_cancel->geometry().bottom()+15;
   
-  setGeometry(QApplication::desktop()->width()/2 - w/2,
-	      QApplication::desktop()->height()/2 - h/2,
+  setGeometry(kwmScreenWidth()/2 - w/2,
+	      kwmScreenHeight()/2 - h/2,
 	      w, h);
   frame->setGeometry(0,0, w, h);
 }

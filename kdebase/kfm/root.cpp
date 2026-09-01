@@ -1570,10 +1570,22 @@ void KRootIcon::init()
 
     p2.end();
 
-    if ( bSelected )
-      setBackgroundColor( black );
-    else
-      setBackgroundColor( root->iconBackground() );
+    // ┌─ [KDE1 Revival 2026] 图标窗口背景改 NoBackground（遮挡后变黑根治）
+    // │  What : 桌面图标窗口不再以颜色作 X 背景像素（原 setBackgroundColor，
+    // │        默认值是 config-kfm.h 的 DEFAULT_ICON_BG=black），改为
+    // │        NoBackground——服务端对暴露区不做任何预填充
+    // │  Why  : 图标窗是 XShape 异形窗（形状=图标位图掩码∪文字像素）。
+    // │        弹窗/窗口划过后服务端按窗口背景像素填充暴露区再发 Expose，
+    // │        kfm 若因任何原因（进程忙/事件延迟）未即时重绘，暴露区就以
+    // │        黑色背景像素形态滞留——即"图标变黑"报障（X.Org 明示暴露
+    // │        重绘责任在客户端，背景像素只是临时衬底）。paintEvent 本就
+    // │        完整重绘形状内全部可见内容（bitBlt 图标+fillRect 文字带+
+    // │        drawText），无需服务端衬底
+    // │  Who  : kfm 桌面全部 KRootIcon（Style=1 透明标签与 Style=0 通用）
+    // │  When : init() 计算完形状掩码后（与原 setBackgroundColor 同位置）
+    // │  Where: kdebase/kfm/root.cpp
+    // └───────────────────────────────────────────────────────────────────
+    setBackgroundMode( NoBackground );
 
     this->width = w;
     this->height = pixmap->height() + 5 + ascent + descent + 4;
@@ -1613,7 +1625,11 @@ void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
 
 void KRootIcon::resizeEvent( QResizeEvent * )
 {
-    XShapeCombineMask( x11Display(), winId(), ShapeBounding, 0, 0, mask.handle(), ShapeSet );
+    // [KDE1 Revival 2026] 空掩码防护：构造早期（init() 之前）若先收到
+    // resize，mask 尚为 0x0——以空位图 ShapeSet 会把形状清成全透
+    // （图标整体消失）。仅在掩码有效时设置形状。
+    if ( !mask.isNull() )
+	XShapeCombineMask( x11Display(), winId(), ShapeBounding, 0, 0, mask.handle(), ShapeSet );
 }
 
 void KRootIcon::paintEvent( QPaintEvent * )

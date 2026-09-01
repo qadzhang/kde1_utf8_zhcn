@@ -179,9 +179,12 @@ Text::pixmap()
 {
   QString pixdir;
 
-  pixdir= myapp->kde_toolbardir().copy();
-  //  pixdir.append("/kpaint/toolbar/");
-  pixdir.append("/largetext.xpm");
+  // [KDE1 Revival 2026] 图标路径修正：原指全局 toolbar 目录的
+  // largetext.xpm（该文件从未安装，KDE1 时代即缺——文本工具按钮
+  // 一直是空位/乱色块）。改与其它工具一致指向 kpaint/toolbar，
+  // largetext.xpm 由 CMake 从 kdvi/pix 安装过来（同属 kdegraphics）
+  pixdir= myapp->kde_datadir().copy();
+  pixdir.append("/kpaint/toolbar/largetext.xpm");
   return new QPixmap(pixdir);
 }
 

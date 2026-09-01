@@ -81,7 +81,12 @@ KEdit::~KEdit(){
 }
 
 void KEdit::repaintAll(){
-    repaint(FALSE);
+    // [KDE1 Revival 2026] Qt1→Qt3 语义修正：内容画在 viewport() 子窗，
+    // 仅对本体 repaint() 只重绘画框（载入后正文空白/滚动内容消失的根源）。
+    // 详见 port/q1compat.h 的 kde1_full_repaint 说明与 kdeutils/kedit 同款修复。
+    if ( viewport() )
+	viewport()->repaint();
+    repaint( FALSE );
 }
 
 
@@ -1803,13 +1808,17 @@ bool KEdit::eventFilter(QObject *o, QEvent *ev){
 
 
 
+  /* [KDE1 Revival 2026] eventFilter chains to base: TQScrollView::eventFilter
+   * routes ALL viewport events (paint/mouse/wheel); returning FALSE here
+   * silently dropped them - blank body after load, wheel erasure, dead
+   * mouse selection (harmless in Qt1 where QTableView had no such route). */
   if(ev->type() != Event_MouseButtonPress)
-    return FALSE;
+    return TQMultiLineEdit::eventFilter(o, ev);
 
   QMouseEvent *e = (QMouseEvent *)ev;
 
   if(e->button() != RightButton)
-    return FALSE;
+    return TQMultiLineEdit::eventFilter(o, ev);
 
   tmp_point = QCursor::pos();
 

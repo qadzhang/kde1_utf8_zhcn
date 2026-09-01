@@ -74,6 +74,41 @@
 #include <ntqcursor.h>
 #include <ntqtimer.h>
 #include <ntqstyle.h>
+/* [KDE1 Revival 2026] repaint 语义桥需要的滚动视口基类（kde1_full_repaint） */
+#include <ntqscrollview.h>
+
+/* ┌─ [KDE1 Revival 2026] kde1_full_repaint —— Qt1→Qt3 全量重绘语义桥
+ * │  What : 对任意部件做"Qt1 语义的全量重绘"——若部件属 TQScrollView 家族
+ * │        （TQTextEdit/TQMultiLineEdit/TQListView/TQListBox…），先同步
+ * │        重绘 viewport() 内容区再重绘画框；普通部件则直接 repaint()
+ * │  Why  : Qt1 的 QTableView 家族（QMultiLineEdit/QListView/QListBox）把
+ * │        内容画在自己身上，repaint() 即重绘正文；TQt3 起内容移入
+ * │        viewport() 子窗，对部件本体 repaint() 只重绘画框——KDE1 代码
+ * │        遍布的 "setAutoUpdate(FALSE)…;repaint();" 防闪烁收尾在此语义
+ * │        下静默失效（正文永不刷新：kedit 载入后空白/滚轮滚动内容逐格
+ * │        消失、knotes 便笺载入后空白、kjots/kfind/klpq/ktop 列表不刷新）
+ * │  Who  : 全部经 -include 注入本头的 KDE1 模块；调用方传任意 TQWidget*
+ * │  When : 任何"想要整体刷新一个视口类部件"的场合（替代裸 repaint()）
+ * │  Where: port/q1compat.h（此处定义）；ksirc 的 irclistbox 迁移时已手工
+ * │        使用同型 viewport()->repaint() 补丁，是本助手的先例
+ * │  How  : 伪代码——
+ * │        1. inherits("TQScrollView")？→ viewport() 存在则其 repaint()
+ * │           （擦除+绘制由视口子类的绘制路径完成），再本体 repaint(FALSE)
+ * │        2. 否则 → w->repaint()（与 Qt1 行为一致）
+ * └─────────────────────────────────────────────────────────────────── */
+inline void kde1_full_repaint( TQWidget *w )
+{
+    if ( w == 0 )
+	return;
+    if ( w->inherits( "TQScrollView" ) ) {
+	TQScrollView *sv = (TQScrollView *)w;
+	if ( sv->viewport() )
+	    sv->viewport()->repaint();
+	w->repaint( false );
+    } else {
+	w->repaint();
+    }
+}
 
 /* Qt1 qwindefs.h 的定宽整数 typedef（TQt3 已无此头；KDE1 的 krootprop 等
  * 以 UINT8 书写） */

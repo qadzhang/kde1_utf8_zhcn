@@ -76,7 +76,7 @@ signals:
    void rightButtonPress(int index);
 
 protected:
-  virtual void mousePressEvent ( QMouseEvent * );
+  virtual void viewportMousePressEvent ( QMouseEvent * ); /* [KDE1 Revival 2026] Qt3 视口路由 */
   virtual int findSep();
   virtual int searchFor(QString nick, bool &found, bool top);
 

@@ -543,6 +543,10 @@ protected:
     void 	mousePressEvent  ( QMouseEvent* );
     void 	mouseReleaseEvent( QMouseEvent* );
     void 	mouseMoveEvent 	 ( QMouseEvent* );
+    /* [KDE1 Revival 2026] 滚轮接管：滚动后同步全量重绘内容区——
+     * TQTextEdit 的滚动带增量重绘在长中文文档下暴露带不重绘
+     * （内容逐格消失，问题4），全量重绘一次到位。 */
+    void 	wheelEvent	 ( TQWheelEvent* );
 
 
 private:

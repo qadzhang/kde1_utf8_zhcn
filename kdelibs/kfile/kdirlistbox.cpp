@@ -142,7 +142,7 @@ bool KDirListBoxItem::isItalic() const {
     return italic;
 }
 
-void KDirListBox::mousePressEvent ( QMouseEvent *inEvent )
+void KDirListBox::viewportMousePressEvent ( QMouseEvent *inEvent )
 {
     int index = this->findItem(inEvent->pos().y());
     if (index == -1 || inEvent->button() != LeftButton)
@@ -204,7 +204,7 @@ KDirListBox::KDirListBox( bool s, QDir::SortSpec sorting,
     setSorting(QDir::Name);
 }
 
-void KDirListBox::mouseDoubleClickEvent ( QMouseEvent *inEvent )
+void KDirListBox::viewportMouseDoubleClickEvent ( QMouseEvent *inEvent )
 {
    if ( !useSingle() && inEvent->button() == LeftButton ) {
        int newItem = this->findItem(inEvent->pos().y());

@@ -216,7 +216,7 @@ void KSircListBox::updateTableSize() /*fold00*/
   thDirty = TRUE;
 }
 
-void KSircListBox::mousePressEvent(QMouseEvent *me){ /*FOLD00*/
+void KSircListBox::viewportMousePressEvent(QMouseEvent *me){ /*FOLD00*/
 
   if(me->button() == LeftButton){
     selecting = TRUE; // We're set to select, starting watching the action
@@ -229,7 +229,7 @@ void KSircListBox::mousePressEvent(QMouseEvent *me){ /*FOLD00*/
   }
 }
 
-void KSircListBox::mouseReleaseEvent(QMouseEvent *me){ /*FOLD00*/
+void KSircListBox::viewportMouseReleaseEvent(QMouseEvent *me){ /*FOLD00*/
 
   if(me->button() == LeftButton){
     disconnect(kApp->clipboard(), SIGNAL(dataChanged()),
@@ -315,7 +315,7 @@ void KSircListBox::clearSelection() { /*FOLD00*/
 //  cerr << "Got clear\n";
 }
 
-void KSircListBox::mouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
+void KSircListBox::viewportMouseMoveEvent(QMouseEvent *me){ /*FOLD00*/
 
   if(selecting == TRUE){
     int row = -2, line = -2, rchar = -2;

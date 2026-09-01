@@ -9,6 +9,9 @@
 // End of the KControl port, added 'kfmclient configure' call.
 // (c) David Faure 1998
 
+#include <ntqfontdatabase.h>
+#include <ntqfontmetrics.h>
+#include <ntqstringlist.h>
 #include <qbttngrp.h>
 #include <qchkbox.h>
 #include <qcolor.h>
@@ -138,47 +141,41 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 
 void KFontOptions::getFontList( QStrList &list, const char *pattern )
 {
-    int num;
-  
-    char **xFonts = XListFonts( qt_xdisplay(), pattern, 2000, &num );
-  
-    for ( int i = 0; i < num; i++ )
-    {
-        addFont( list, xFonts[i] );
-    }
-  
-    XFreeFontNames( xFonts );
-}
-
-void KFontOptions::addFont( QStrList &list, const char *xfont )
-{
-    const char *ptr = strchr( xfont, '-' );
-    if ( !ptr )
-        return;
-	
-    ptr = strchr( ptr + 1, '-' );
-    if ( !ptr )
-        return;
-
-    QString font = ptr + 1;
-
-    int pos;
-    if ( ( pos = font.find( '-' ) ) > 0 )
-    {
-        font.truncate( pos );
-    
+    // ┌─ [KDE1 Revival 2026] 字体枚举 fontconfig 化（XListFonts 替换）
+    // │  What : 以 TQFontDatabase::families() 枚举系统字族替换 1999 年的
+    // │        XListFonts(XLFD)；pattern 参数退役——原调用方仅按
+    // │        "-p-"(比例)/"-m-"(等宽) 两种模式区分，改为参数为
+    // │        "-*-*-m-*" 类等宽模式时用 i/M/W advance 相等法过滤
+    // │  Why  : 现代 Debian 的字体（Noto CJK 等）不经 X 核心字体体系注册，
+    // │        XListFonts 列不出——kfm 字体设置页"标准/等宽字体"下拉
+    // │        只剩遗留 XLFD 字体甚至全空（与控制中心字体页同族缺陷，
+    // │        kfontdialog/fontchooser 已先行切换）
+    // │  Who  : kfm 设置「字体」页（kcmkfm）标准/等宽字体下拉
+    // │  When : KFontOptions 构造时一次性枚举
+    // │  How  : fontconfig 全量字族 → strchr(pattern,'m') 判定等宽需求 →
+    // │        advance 判定过滤 → 过滤 open look → 去重入表
+    // └───────────────────────────────────────────────────────────────────
+    bool want_fixed = ( strchr( pattern, 'm' ) != NULL );
+    TQFontDatabase db;
+    TQStringList fams = db.families();
+    for ( TQStringList::Iterator it = fams.begin(); it != fams.end(); ++it ) {
+        if ( want_fixed ) {
+            TQFont probe( *it, 12 );
+            TQFontMetrics fm( probe );
+            if ( fm.width( 'i' ) != fm.width( 'M' )
+                 || fm.width( 'M' ) != fm.width( 'W' ) )
+                continue;
+        }
+        TQString font = *it;
         if ( font.find( "open look", 0, false ) >= 0 )
-            return;
-    
-        QStrListIterator it( list );
-    
-        for ( ; it.current(); ++it )
-            if ( it.current() == font )
-                return;
-    
-        list.append( font );
+            continue;
+        if ( list.find( font.latin1() ) != -1 )
+            continue;
+        list.append( font.latin1() );
     }
 }
+
+/* addFont(XLFD parse) removed with the XListFonts channel */
 
 void KFontOptions::slotFontSize( int i )
 {

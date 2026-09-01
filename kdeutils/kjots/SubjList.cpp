@@ -55,7 +55,7 @@ void SubjList::rebuildList( QList<TextEntry> * new_list )
       lb_subj->insertItem(item->subject);
     }
   lb_subj->setUpdatesEnabled(TRUE);
-  lb_subj->repaint();
+  kde1_full_repaint( lb_subj ); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 void SubjList::select( int index )
@@ -78,7 +78,7 @@ void SubjList::entryChanged( const TQString & new_subj)
   lb_subj->changeItem(new_subj, current );
   lb_subj->setCurrentItem(current);
   lb_subj->setAutoUpdate(TRUE);
-  lb_subj->repaint();
+  kde1_full_repaint( lb_subj ); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 #include "SubjList.moc"

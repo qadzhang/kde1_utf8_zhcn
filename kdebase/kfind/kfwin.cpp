@@ -58,7 +58,7 @@ public:
     QListBox(parent, name) {
   }
 
-  virtual bool eventFilter(QObject *, QEvent *e) {
+  virtual bool eventFilter(QObject *o, QEvent *e) {
     if(e->type() == Event_KeyPress || e->type() == TQEvent::Accel  /* TQt3 迁移 */) {
       QKeyEvent *k = (QKeyEvent *)e;
       if(k->key() == Key_PageUp ||
@@ -67,8 +67,10 @@ public:
 	return TRUE;
       }
     }
-    
-    return FALSE;
+
+    /* [KDE1 Revival 2026] chain to base: TQScrollView::eventFilter routes
+       viewport events; bare FALSE drops them (list never paints/mouses) */
+    return TQListBox::eventFilter(o, e);
   }
 };
   
@@ -237,7 +239,7 @@ void KfindWindow::selectAll() {
   for(int i = 0; i < (int)lbx->count(); i++)
     lbx->setSelected(i, TRUE);
   lbx->setAutoUpdate(TRUE);
-  lbx->repaint();
+  kde1_full_repaint( lbx ); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 void KfindWindow::invertSelection() {
@@ -247,7 +249,7 @@ void KfindWindow::invertSelection() {
   for(int i = 0; i < (int)lbx->count(); i++)
     lbx->setSelected(i, !lbx->isSelected(i));
   lbx->setAutoUpdate(TRUE);
-  lbx->repaint();
+  kde1_full_repaint( lbx ); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 void KfindWindow::unselectAll() {
@@ -257,7 +259,7 @@ void KfindWindow::unselectAll() {
   for(int i = 0; i < (int)lbx->count(); i++)
     lbx->setSelected(i, FALSE);
   lbx->setAutoUpdate(TRUE);
-  lbx->repaint();
+  kde1_full_repaint( lbx ); /* [KDE1 Revival 2026] viewport 语义桥 */
 }
 
 void KfindWindow::saveResults()

@@ -71,7 +71,7 @@ void KfmIpc::readEvent( KSocket * )
 	    if ( bodyLen <= 0 )
 	    {
 		printf("ERROR: Invalid header\n");
-		delete this;
+		deleteLater();
 		return;
 	    }
 	    if ( pBody != 0L )
@@ -81,7 +81,7 @@ void KfmIpc::readEvent( KSocket * )
 	else if ( cHeader + n == 10 )
 	{
 	    printf("ERROR: Too long header\n");
-	    delete this;
+	    deleteLater();
 	    return;
 	}
 	else
@@ -89,7 +89,7 @@ void KfmIpc::readEvent( KSocket * )
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
 		printf("ERROR: Header must be an int\n");
-		delete this;
+		deleteLater();
 		return;
 	    }
 

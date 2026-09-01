@@ -1,0 +1,90 @@
+# KDE1 Revival Project 补丁 004
+# 主题：弹出菜单/工具窗不再请求 X11 save-under（遮挡后黑块显示层根治）
+#
+# ┌─ What : 去掉 TQt3 对 popup（QPopupMenu 等覆盖重定向窗）与 WStyle_Tool
+# │        工具窗的 CWSaveUnder 窗口属性请求（两处）
+# │  Why  : save-under 是 1990 年代的省重绘优化——弹窗关闭时由 X server
+# │        恢复被遮区域。X.Org 官方明确："backing-store 与 save-under 从来
+# │        不是保证，且有真实实现缺陷，应用必须正确响应 Expose"
+# │        （Adam Jackson，xorg 邮件列表 2009）。现代工具链（GTK4 等）弹窗
+# │        已不依赖它。本项目实机（Xorg 1.21 + vmware 驱动，save-unders NO）
+# │        出现弹窗关闭后被遮区域填黑/残留损坏，Xvfb 沙箱则复现不出——
+# │        唯一的窗口属性差异即 save-under 请求。去除后暴露区一律走
+# │        客户端 Expose 重绘（TQt3/KDE1 均完整处理，与 XFCE 行为一致）
+# │  Who  : 所有 TQt3 程序的弹出菜单、下拉框、工具提示、工具窗
+# │  When : 窗口创建（TQWidget::create）时
+# │  Where: tqt3/src/kernel/qwidget_x11.cpp
+# │  How  : WStyle_Tool 分支删除 wsa.save_under/CWSaveUnder 两行；
+# │        popup 分支的 XChangeWindowAttributes 掩码去掉 CWSaveUnder
+#
+# 操作：build.sh 在建立 tqt3-build/ 时按文件名序自动打入本补丁；
+#       已有构建树可 (cd tqt3-build && patch -p1 --forward < 本文件) 增量重编。
+
+--- a/src/kernel/qwidget_x11.cpp	2026-09-01 11:40:59.614406899 +0800
++++ b/src/kernel/qwidget_x11.cpp	2026-09-01 11:41:23.304879698 +0800
+@@ -579,10 +579,13 @@
+ 	    if ( testWFlags( WStyle_Maximize ) )
+ 		mwmhints.decorations |= (1L << 6); // MWM_DECOR_MAXIMIZE
+ 
+-	    if (testWFlags(WStyle_Tool)) {
+-		wsa.save_under = True;
+-		wsa_mask |= CWSaveUnder;
+-	    }
++	    // [KDE1 Revival 2026, patch 004] WStyle_Tool no longer requests X11
++	    // save-under: per X.Org (A. Jackson, xorg list 2009) save-under and
++	    // backing-store have never been guarantees and carry real bugs;
++	    // modern toolkits dropped them. Some drivers (vmware) leave black
++	    // blocks on the restore path of override-redirect unmap. Exposed
++	    // regions are left to client Expose redraw (TQt3 handles fully).
++	    // was: wsa.save_under = True; wsa_mask |= CWSaveUnder;
+ 	} else if (testWFlags(WType_Dialog)) {
+ 	    setWFlags(WStyle_NormalBorder | WStyle_Title |
+ 		      WStyle_SysMenu | WStyle_ContextHelp);
+@@ -628,8 +631,11 @@
+ 	// do no initialization
+     } else if ( popup ) {			// popup widget
+ 	wsa.override_redirect = True;
+-	wsa.save_under = True;
+-	XChangeWindowAttributes( dpy, id, CWOverrideRedirect | CWSaveUnder,
++	// [KDE1 Revival 2026, patch 004] popups no longer request save-under
++	// (same rationale as the WStyle_Tool note above; GTK4 popups are
++	// plain override-redirect + client redraw).
++	// was: XChangeWindowAttributes(... CWOverrideRedirect | CWSaveUnder ...)
++	XChangeWindowAttributes( dpy, id, CWOverrideRedirect,
+ 				 &wsa );
+ 	XClassHint class_hint;
+ 	class_hint.res_name = (char *) tqAppName(); // application name
+--- a/src/kernel/qwidget_x11.cpp	2026-09-01 11:40:59.614406899 +0800
++++ b/src/kernel/qwidget_x11.cpp	2026-09-01 11:41:23.304879698 +0800
+@@ -579,10 +579,13 @@
+ 	    if ( testWFlags( WStyle_Maximize ) )
+ 		mwmhints.decorations |= (1L << 6); // MWM_DECOR_MAXIMIZE
+ 
+-	    if (testWFlags(WStyle_Tool)) {
+-		wsa.save_under = True;
+-		wsa_mask |= CWSaveUnder;
+-	    }
++	    // [KDE1 Revival 2026, patch 004] WStyle_Tool no longer requests X11
++	    // save-under: per X.Org (A. Jackson, xorg list 2009) save-under and
++	    // backing-store have never been guarantees and carry real bugs;
++	    // modern toolkits dropped them. Some drivers (vmware) leave black
++	    // blocks on the restore path of override-redirect unmap. Exposed
++	    // regions are left to client Expose redraw (TQt3 handles fully).
++	    // was: wsa.save_under = True; wsa_mask |= CWSaveUnder;
+ 	} else if (testWFlags(WType_Dialog)) {
+ 	    setWFlags(WStyle_NormalBorder | WStyle_Title |
+ 		      WStyle_SysMenu | WStyle_ContextHelp);
+@@ -628,8 +631,11 @@
+ 	// do no initialization
+     } else if ( popup ) {			// popup widget
+ 	wsa.override_redirect = True;
+-	wsa.save_under = True;
+-	XChangeWindowAttributes( dpy, id, CWOverrideRedirect | CWSaveUnder,
++	// [KDE1 Revival 2026, patch 004] popups no longer request save-under
++	// (same rationale as the WStyle_Tool note above; GTK4 popups are
++	// plain override-redirect + client redraw).
++	// was: XChangeWindowAttributes(... CWOverrideRedirect | CWSaveUnder ...)
++	XChangeWindowAttributes( dpy, id, CWOverrideRedirect,
+ 				 &wsa );
+ 	XClassHint class_hint;
+ 	class_hint.res_name = (char *) tqAppName(); // application name

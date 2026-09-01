@@ -163,7 +163,7 @@ static void addToList(QListBox *list, QString name)
     list->setAutoUpdate( update );
     list->setCurrentItem(findItem(list, name)); 
     if ( update )
-       list->repaint();
+       kde1_full_repaint( list ); /* [KDE1 Revival 2026] viewport 语义桥 */
     sSettingTheme = false;
     return;
   }
@@ -177,7 +177,7 @@ static void addToList(QListBox *list, QString name)
   list->setAutoUpdate( update );
   list->setCurrentItem(findItem(list, name)); 
   if ( update )
-     list->repaint();
+     kde1_full_repaint( list ); /* [KDE1 Revival 2026] viewport 语义桥 */
   sSettingTheme = false;
 }
 
